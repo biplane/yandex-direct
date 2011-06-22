@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="biplane_yandex_direct.api.factory" class="Biplane\YandexDirectBundle\Factory\ApiServiceFactory">
+            <argument type="service" id="biplane_yandex_direct.client.factory" />
+            <argument type="service" id="biplane_yandex_direct.profile.manager" />
+            <argument /> <!-- default profile name -->
+        </service>
+
+        <service id="biplane_yandex_direct.client.factory" class="Biplane\YandexDirectBundle\Factory\ClientFactory" />
+
+        <service id="biplane_yandex_direct.profile.manager" class="Biplane\YandexDirectBundle\Profile\ProfileManager">
+            <argument type="collection" />
+        </service>
+    </services>
+</container>

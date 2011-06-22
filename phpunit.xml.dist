@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<phpunit backupGlobals="false"
+         backupStaticAttributes="false"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         processIsolation="false"
+         stopOnFailure="false"
+         syntaxCheck="false"
+         bootstrap="./../../../../app/bootstrap.php.cache">
+
+    <testsuites>
+        <testsuite name="YandexDirectBundle Test Suite">
+            <directory suffix="Test.php">./Tests</directory>
+        </testsuite>
+    </testsuites>
+
+    <groups>
+        <exclude>
+            <group>yandex_api</group>
+        </exclude>
+    </groups>
+
+    <filter>
+        <whitelist>
+            <directory>.</directory>
+            <exclude>
+                <directory>./Resources</directory>
+                <directory>./Tests</directory>
+            </exclude>
+        </whitelist>
+    </filter>
+
+    <php>
+        <var name="PROXY_HOST" value="" />
+        <var name="PROXY_PORT" value="" />
+        <var name="YANDEX_LOCAL_CERT" value="" />
+    </php>
+
+</phpunit>
