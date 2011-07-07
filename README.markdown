@@ -11,19 +11,19 @@ YandexDirectBundle
 
   1. Использование **submodule**
 
-        git submodule add git@git.assembla.com:yandexdirectbundle.git vendor/bundles/Biplane/YandexDirectBundle
+         git submodule add git@git.assembla.com:yandexdirectbundle.git vendor/bundles/Biplane/YandexDirectBundle
 
   2. Использование скрипта **vendors**
 
      Нужно добавить следующие строчки в `deps` файл:
 
-        [BiplaneYandexDirectBundle]
-            git=git@git.assembla.com:yandexdirectbundle.git
-            target=/bundles/Biplane/YandexDirectBundle
+         [BiplaneYandexDirectBundle]
+             git=git@git.assembla.com:yandexdirectbundle.git
+             target=/bundles/Biplane/YandexDirectBundle
 
      И запустить скрипт (для Win-платфоры необходимо указать интерпретатор - `php.exe`):
 
-        ./bin/vendors install
+         ./bin/vendors install
 
 Зарегестрируйте bundle в `app/AppKernel`:
 
