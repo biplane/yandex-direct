@@ -17,7 +17,7 @@ use Biplane\YandexDirectBundle\Factory\ConverterFactory;
  */
 class SoapClient extends \SoapClient implements ClientInterface
 {
-    const ENDPOINT = 'https://soap.direct.yandex.ru/wsdl/v4/';
+    const ENDPOINT = 'http://soap.direct.yandex.ru/wsdl/v4/';
     const API_NS = 'API';
     const INVALID_NS = 'http://namespaces.soaplite.com/perl';
 
