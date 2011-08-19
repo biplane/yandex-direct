@@ -163,11 +163,13 @@ class SoapClient extends \SoapClient implements ClientInterface
     {
         $response = parent::__doRequest($request, $location, $action, $version, $one_way);
 
-        $xml = new \SimpleXMLElement($response);
-        $nss = array_flip($xml->getDocNamespaces(true));
+        if (!empty($response)) {
+            $xml = new \SimpleXMLElement($response);
+            $nss = array_flip($xml->getDocNamespaces(true));
 
-        if (isset($nss[self::INVALID_NS]) && isset($nss[self::API_NS])) {
-            $response = str_replace($nss[self::INVALID_NS].':', $nss[self::API_NS].':', $response);
+            if (isset($nss[self::INVALID_NS]) && isset($nss[self::API_NS])) {
+                $response = str_replace($nss[self::INVALID_NS].':', $nss[self::API_NS].':', $response);
+            }
         }
 
         return $response;
