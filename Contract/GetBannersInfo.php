@@ -28,7 +28,7 @@ class GetBannersInfo
      */
     protected $GetPhrases;
 
-    public function __construct(array $campaignIds = array(), array $bannerIds = array(), BannersFilterInfo $filter = null, $getPhrases = null)
+    public function __construct(array $campaignIds = array(), array $bannerIds = null, BannersFilterInfo $filter = null, $getPhrases = null)
     {
         $this->CampaignIDS = $campaignIds;
         $this->BannerIDS = $bannerIds;
