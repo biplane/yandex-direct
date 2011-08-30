@@ -205,7 +205,7 @@ class SoapClient extends \SoapClient implements ClientInterface
                 $message .= "\n" . $ex->detail;
             }
 
-            throw new ApiException($message, $ex->getCode(), $ex);
+            throw ApiException::create($message, $methodName, $ex);
         }
     }
 
