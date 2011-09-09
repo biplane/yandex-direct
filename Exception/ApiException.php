@@ -9,6 +9,11 @@ namespace Biplane\YandexDirectBundle\Exception;
  */
 class ApiException extends \RuntimeException
 {
+    /**
+     * Нет статистики для данной кампании.
+     */
+    const CAMPAIGN_STATS_NOT_FOUND = 2;
+
     private $apiMethod;
 
     /**
