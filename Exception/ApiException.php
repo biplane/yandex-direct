@@ -29,12 +29,13 @@ class ApiException extends \RuntimeException
      *
      * @param string $message
      * @param string|null $apiMethod
+     * @param int $code
      * @param \Exception|null $previous
      * @return ApiException
      */
-    public static function create($message, $apiMethod = null, \Exception $previous = null)
+    public static function create($message, $apiMethod = null, $code = 0, \Exception $previous = null)
     {
-        return new static($message, 0, $previous, $apiMethod);
+        return new static($message, $code, $previous, $apiMethod);
     }
 
     /**
