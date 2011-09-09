@@ -7,6 +7,9 @@ namespace Biplane\YandexDirectBundle\Contract;
  */
 class ReportInfo
 {
+    const STATUS_DONE = 'Done';
+    const STATUS_PENDING = 'Pending';
+
     /**
      * @var int
      */
