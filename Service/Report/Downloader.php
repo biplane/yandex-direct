@@ -2,7 +2,6 @@
 
 namespace Biplane\YandexDirectBundle\Service\Report;
 
-use Biplane\YandexDirectBundle\Profile\ProfileManager;
 use Biplane\YandexDirectBundle\Configuration\AbstractConfiguration;
 use Biplane\YandexDirectBundle\Configuration\AuthTokenConfiguration;
 use Biplane\YandexDirectBundle\Configuration\CertificateConfiguration;
@@ -14,25 +13,27 @@ use Biplane\YandexDirectBundle\Configuration\CertificateConfiguration;
  */
 class Downloader
 {
-    private $profileManager;
+    /**
+     * @var \Biplane\YandexDirectBundle\Configuration\AbstractConfiguration
+     */
+    private $config;
 
-    public function __construct(ProfileManager $profileManager)
+    public function __construct(AbstractConfiguration $config)
     {
-        $this->profileManager = $profileManager;
+        $this->config = $config;
     }
 
-    public function download($url, $profileName)
+    public function download($url)
     {
-        $config = $this->profileManager->get($profileName)->getConfiguration();
-        if ($config instanceof CertificateConfiguration) {
+        if ($this->config instanceof CertificateConfiguration) {
             $context = stream_context_create(array(
                 'ssl' => array(
-                    'local_cert' => $config->getHttpsCertificate(),
-                    'passphrase' => $config->getPassphrase()
+                    'local_cert' => $this->config->getHttpsCertificate(),
+                    'passphrase' => $this->config->getPassphrase()
                 )
             ));
             return file_get_contents($url, 0, $context);
-        } else if ($config instanceof AuthTokenConfiguration) {
+        } else if ($this->config instanceof AuthTokenConfiguration) {
             throw new \RuntimeException('Not yet implemented.');
         }
 

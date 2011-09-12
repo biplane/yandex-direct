@@ -4,7 +4,6 @@ namespace Biplane\YandexDirectBundle\Service\Report;
 
 use Biplane\YandexDirectBundle\Contract;
 use Biplane\YandexDirectBundle\Proxy\YandexApiService;
-use Biplane\YandexDirectBundle\Factory\ApiServiceFactory;
 
 /**
  * ReportService
@@ -16,25 +15,18 @@ class ReportService
     const MAX_REPORTS = 5;
 
     /**
-     * @var \Biplane\YandexDirectBundle\Factory\ApiServiceFactory
+     * @var \Biplane\YandexDirectBundle\Proxy\YandexApiService
      */
-    private $apiFactory;
+    private $apiService;
     /**
      * @var \Biplane\YandexDirectBundle\Report\Service\ReportDownloader
      */
     private $downloader;
 
-    private $profileName;
-
-    public function __construct(ApiServiceFactory $apiFactory, Downloader $downloader)
+    public function __construct(YandexApiService $apiService, Downloader $downloader)
     {
-        $this->apiFactory = $apiFactory;
+        $this->apiService = $apiService;
         $this->downloader = $downloader;
-    }
-
-    public function setProfileName($profileName)
-    {
-        $this->profileName = $profileName;
     }
 
     /**
@@ -47,8 +39,7 @@ class ReportService
      */
     public function getReport($campaignId, \DateTime $startDate, \DateTime $endDate, array $groupByColumns = array(), array $filter = array())
     {
-        $apiService = $this->createApiService();
-        if (count($apiService->getReportList()) >= self::MAX_REPORTS) {
+        if (count($this->apiService->getReportList()) >= self::MAX_REPORTS) {
             throw new \RuntimeException(sprintf('Unable to create new report. Maximum number of "%d" reports reached.', self::MAX_REPORTS));
         }
 
@@ -73,36 +64,23 @@ class ReportService
             $newReportInfo->setFilter($filterInfo);
         }
         // создаем
-        $reportId = $apiService->createNewReport($newReportInfo);
+        $reportId = $this->apiService->createNewReport($newReportInfo);
         do {
             sleep(15);
-            $reportInfo = $this->getReportInfo($apiService, $reportId);
+            $reportInfo = $this->getReportInfo($reportId);
         } while ($reportInfo->getStatusReport() === Contract\ReportInfo::STATUS_PENDING);
         // скачиваем
-        $content = $this->downloader->download($reportInfo->getUrl(), $this->profileName);
+        $content = $this->downloader->download($reportInfo->getUrl());
         // удаляем
-        $apiService->deleteReport($reportId);
+        $this->apiService->deleteReport($reportId);
 
         return $content;
     }
 
-    /**
-     * @throws \InvalidArgumentException
-     * @return \Biplane\YandexDirectBundle\Proxy\YandexApiService
-     */
-    private function createApiService()
-    {
-        if ($this->profileName === null) {
-            throw new \InvalidArgumentException('Profile name for API service not defined.');
-        }
-
-        return $this->apiFactory->createApiService($this->profileName);
-    }
-
-    private function getReportInfo(YandexApiService $apiService, $reportId)
+    private function getReportInfo($reportId)
     {
         /** @var $report \Biplane\YandexDirectBundle\Contract\ReportInfo */
-        foreach ($apiService->getReportList() as $report) {
+        foreach ($this->apiService->getReportList() as $report) {
             if ($report->getReportID() === $reportId) {
                 return $report;
             }

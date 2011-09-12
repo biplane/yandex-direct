@@ -3,6 +3,7 @@
 namespace Biplane\YandexDirectBundle\Service\Report;
 
 use Biplane\YandexDirectBundle\Factory\ApiServiceFactory;
+use Biplane\YandexDirectBundle\Profile\ProfileManager;
 
 /**
  * Factory
@@ -16,21 +17,21 @@ class Factory
      */
     private $apiFactory;
     /**
-     * @var \Biplane\YandexDirectBundle\Report\Service\ReportDownloader
+     * @var \Biplane\YandexDirectBundle\Profile\ProfileManager
      */
-    private $downloader;
+    private $profileManager;
 
-    public function __construct(ApiServiceFactory $apiFactory, Downloader $downloader)
+    public function __construct(ApiServiceFactory $apiFactory, ProfileManager $profileManager)
     {
         $this->apiFactory = $apiFactory;
-        $this->downloader = $downloader;
+        $this->profileManager = $profileManager;
     }
 
     public function create($profileName)
     {
-        $service = new ReportService($this->apiFactory, $this->downloader);
-        $service->setProfileName($profileName);
+        $apiService = $this->apiFactory->createApiService($profileName);
+        $downloader = new Downloader($this->profileManager->get($profileName)->getConfiguration());
 
-        return $service;
+        return new ReportService($apiService, $downloader);
     }
 }
