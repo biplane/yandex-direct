@@ -130,7 +130,7 @@ class JsonClient implements ClientInterface
                 $message .= "\n" . $jsonData['error_detail'];
             }
 
-            throw ApiException::create($message, $methodName);
+            throw ApiException::create($message, $methodName, $jsonData['error_code']);
         }
         else if (!is_array($jsonData) || !isset($jsonData['data'])) {
             throw new \RuntimeException("Invalid response.\n" . $jsonData);
