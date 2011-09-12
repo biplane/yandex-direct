@@ -39,10 +39,6 @@ class ReportService
      */
     public function getReport($campaignId, \DateTime $startDate, \DateTime $endDate, array $groupByColumns = array(), array $filter = array())
     {
-        if (count($this->apiService->getReportList()) >= self::MAX_REPORTS) {
-            throw new \RuntimeException(sprintf('Unable to create new report. Maximum number of "%d" reports reached.', self::MAX_REPORTS));
-        }
-
         $newReportInfo = new Contract\NewReportInfo();
         $newReportInfo->setCampaignID($campaignId)
             ->setStartDate($startDate->format('Y-m-d'))
@@ -63,8 +59,17 @@ class ReportService
             }
             $newReportInfo->setFilter($filterInfo);
         }
+
+        return $this->getReportFromContract($newReportInfo);
+    }
+
+    public function getReportFromContract(Contract\NewReportInfo $contract)
+    {
+        if ($this->isFullQueue()) {
+            throw new \RuntimeException(sprintf('Unable to create new report. Maximum number of "%d" reports reached.', self::MAX_REPORTS));
+        }
         // создаем
-        $reportId = $this->apiService->createNewReport($newReportInfo);
+        $reportId = $this->apiService->createNewReport($contract);
         do {
             sleep(15);
             $reportInfo = $this->getReportInfo($reportId);
@@ -87,6 +92,11 @@ class ReportService
         }
 
         throw new \LogicException(sprintf('Report info #%d not found.', $reportId));
+    }
+
+    public function isFullQueue()
+    {
+        return count($this->apiService->getReportList()) >= self::MAX_REPORTS;
     }
 
     private function checkGroupByColumns(array $columns)
