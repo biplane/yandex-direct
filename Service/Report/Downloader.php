@@ -1,6 +1,6 @@
 <?php
 
-namespace Biplane\YandexDirectBundle\Service;
+namespace Biplane\YandexDirectBundle\Service\Report;
 
 use Biplane\YandexDirectBundle\Profile\ProfileManager;
 use Biplane\YandexDirectBundle\Configuration\AbstractConfiguration;
@@ -8,11 +8,11 @@ use Biplane\YandexDirectBundle\Configuration\AuthTokenConfiguration;
 use Biplane\YandexDirectBundle\Configuration\CertificateConfiguration;
 
 /**
- * ReportDownloader
+ * Downloader
  *
  * @author Alexey Popkov <a.popkov@biplane.ru>
  */
-class ReportDownloader
+class Downloader
 {
     private $profileManager;
 

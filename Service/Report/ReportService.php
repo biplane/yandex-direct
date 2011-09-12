@@ -1,9 +1,10 @@
 <?php
 
-namespace Biplane\YandexDirectBundle\Service;
+namespace Biplane\YandexDirectBundle\Service\Report;
 
 use Biplane\YandexDirectBundle\Contract;
 use Biplane\YandexDirectBundle\Proxy\YandexApiService;
+use Biplane\YandexDirectBundle\Factory\ApiServiceFactory;
 
 /**
  * ReportService
@@ -15,28 +16,41 @@ class ReportService
     const MAX_REPORTS = 5;
 
     /**
-     * @var \Biplane\YandexDirectBundle\Api\Service
+     * @var \Biplane\YandexDirectBundle\Factory\ApiServiceFactory
      */
-    private $apiService;
+    private $apiFactory;
+    /**
+     * @var \Biplane\YandexDirectBundle\Report\Service\ReportDownloader
+     */
+    private $downloader;
 
-    public function __construct(YandexApiService $apiService, ReportDownloader $downloader)
+    private $profileName;
+
+    public function __construct(ApiServiceFactory $apiFactory, Downloader $downloader)
     {
-        $this->apiService = $apiService;
+        $this->apiFactory = $apiFactory;
         $this->downloader = $downloader;
     }
 
+    public function setProfileName($profileName)
+    {
+        $this->profileName = $profileName;
+    }
+
     /**
-     * @param $profile Название профиля, через который будет скачиваться будущий отчет
-     * @param $campaignId Идентификатор кампании, для которой требуется сформировать отчет.
+     * @param $campaignId Идентификатор кампании, для которой требуется сформировать отчет
      * @param \DateTime $startDate Дата начала отчетного периода
      * @param \DateTime $endDate Дата окончания отчетного периода
      * @param array $groupByColumns Массив, определяющий состав столбцов в отчете
      * @param array $filter Массив с параметрами фильтрации записей для отчета
      * @return null|string
      */
-    public function createReport($profile, $campaignId, \DateTime $startDate, \DateTime $endDate, array $groupByColumns = array(), array $filter = array())
+    public function getReport($campaignId, \DateTime $startDate, \DateTime $endDate, array $groupByColumns = array(), array $filter = array())
     {
-        $this->checkMaxReports();
+        $apiService = $this->createApiService();
+        if (count($apiService->getReportList()) >= self::MAX_REPORTS) {
+            throw new \RuntimeException(sprintf('Unable to create new report. Maximum number of "%d" reports reached.', self::MAX_REPORTS));
+        }
 
         $newReportInfo = new Contract\NewReportInfo();
         $newReportInfo->setCampaignID($campaignId)
@@ -59,36 +73,42 @@ class ReportService
             $newReportInfo->setFilter($filterInfo);
         }
         // создаем
-        $reportId = $this->apiService->createNewReport($newReportInfo);
+        $reportId = $apiService->createNewReport($newReportInfo);
         do {
             sleep(15);
-            $reportInfo = $this->getReportInfo($reportId);
+            $reportInfo = $this->getReportInfo($apiService, $reportId);
         } while ($reportInfo->getStatusReport() === Contract\ReportInfo::STATUS_PENDING);
         // скачиваем
-        $content = $this->downloader->download($reportInfo->getUrl(), $profile);
+        $content = $this->downloader->download($reportInfo->getUrl(), $this->profileName);
         // удаляем
-        $this->apiService->deleteReport($reportId);
+        $apiService->deleteReport($reportId);
 
         return $content;
     }
 
-    public function getReportInfo($reportId)
+    /**
+     * @throws \InvalidArgumentException
+     * @return \Biplane\YandexDirectBundle\Proxy\YandexApiService
+     */
+    private function createApiService()
+    {
+        if ($this->profileName === null) {
+            throw new \InvalidArgumentException('Profile name for API service not defined.');
+        }
+
+        return $this->apiFactory->createApiService($this->profileName);
+    }
+
+    private function getReportInfo(YandexApiService $apiService, $reportId)
     {
         /** @var $report \Biplane\YandexDirectBundle\Contract\ReportInfo */
-        foreach ($this->apiService->getReportList() as $report) {
+        foreach ($apiService->getReportList() as $report) {
             if ($report->getReportID() === $reportId) {
                 return $report;
             }
         }
 
         throw new \LogicException(sprintf('Report info #%d not found.', $reportId));
-    }
-
-    private function checkMaxReports()
-    {
-        if (count($this->apiService->getReportList()) >= self::MAX_REPORTS) {
-            throw new \RuntimeException(sprintf('Unable to create new report. Maximum number of "%d" reports reached.', self::MAX_REPORTS));
-        }
     }
 
     private function checkGroupByColumns(array $columns)
