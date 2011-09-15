@@ -30,6 +30,8 @@ class ReportService
     }
 
     /**
+     * Метод-хелпер для создания отчетов по параметрам, а не по контратку.
+     *
      * @param $campaignId Идентификатор кампании, для которой требуется сформировать отчет
      * @param \DateTime $startDate Дата начала отчетного периода
      * @param \DateTime $endDate Дата окончания отчетного периода
@@ -48,13 +50,13 @@ class ReportService
         }
         if (count($filter)) {
             $filterInfo = new Contract\NewReportFilterInfo();
-            if (is_array($filter['Banner']) && count($filter['Banner'])) {
+            if (isset($filter['Banner']) && is_array($filter['Banner']) && count($filter['Banner'])) {
                 $filterInfo->setBanner($filter['Banner']);
             }
-            if (is_array($filter['Geo']) && count($filter['Geo'])) {
+            if (isset($filter['Geo']) && is_array($filter['Geo']) && count($filter['Geo'])) {
                 $filterInfo->setGeo($filter['Geo']);
             }
-            if (is_array($filter['Phrase']) && count($filter['Phrase'])) {
+            if (isset($filter['Phrase']) && is_array($filter['Phrase']) && count($filter['Phrase'])) {
                 $filterInfo->setPhrase($filter['Phrase']);
             }
             $newReportInfo->setFilter($filterInfo);
@@ -63,6 +65,13 @@ class ReportService
         return $this->getReportFromContract($newReportInfo);
     }
 
+    /**
+     * Создание и выкачивание отчета через готовый контракт.
+     *
+     * @throws \RuntimeException
+     * @param \Biplane\YandexDirectBundle\Contract\NewReportInfo $contract
+     * @return null|string
+     */
     public function getReportFromContract(Contract\NewReportInfo $contract)
     {
         if ($this->isFullQueue()) {
