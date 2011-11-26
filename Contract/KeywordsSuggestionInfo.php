@@ -4,6 +4,7 @@ namespace Biplane\YandexDirectBundle\Contract;
 
 /**
  * @codeCoverageIgnore
+ * @SuppressWarnings(PHPMD)
  */
 class KeywordsSuggestionInfo
 {
