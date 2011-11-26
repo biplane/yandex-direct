@@ -18,8 +18,10 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 class BiplaneYandexDirectExtension extends Extension
 {
     /**
-     * @param array $configs
-     * @param ContainerBuilder $container
+     * Loads a specific configuration.
+     *
+     * @param array            $config    An array of configuration values
+     * @param ContainerBuilder $container A ContainerBuilder instance
      *
      * @throws \InvalidArgumentException When provided tag is not defined in this extension
      */
@@ -28,11 +30,7 @@ class BiplaneYandexDirectExtension extends Extension
         $loader = new XmlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
         $loader->load('services.xml');
         
-        $processor = new Processor();
-        $configuration = new Configuration();
-
-        $config = $processor->processConfiguration($configuration, $configs);
-
+        $config = $this->processConfiguration(new Configuration(), $configs);
         // коллекция профилей
         $profilesDefs = array();
 
@@ -44,29 +42,33 @@ class BiplaneYandexDirectExtension extends Extension
             if (isset($options['cert'])) {
                 $configDef
                     ->setClass('Biplane\\YandexDirectBundle\\Configuration\\CertificateConfiguration')
-                    ->addArgument($options['cert']['local_cert'])
-                ;
+                    ->addArgument($options['cert']['local_cert']);
             }
             else if (isset($options['token'])) {
                 $configDef
                     ->setClass('Biplane\\YandexDirectBundle\\Configuration\\AuthTokenConfiguration')
                     ->addArgument($options['token']['login'])
                     ->addArgument($options['token']['application_id'])
-                    ->addArgument($options['token']['token'])
-                ;
+                    ->addArgument($options['token']['token']);
             }
 
             $profileDef = new Definition('Biplane\\YandexDirectBundle\\Profile\\Profile');
             $profileDef
                 ->addArgument($options['type'])
-                ->addArgument($configDef)
-            ;
+                ->addArgument($configDef);
 
             $profilesDefs[$name] = $profileDef;
         }
 
-        $container->getDefinition('biplane_yandex_direct.api.factory')
-            ->replaceArgument(2, $config['default_profile']);
+//        if (empty($config['default_profile']) && count($profilesDefs) > 0) {
+//            $profileNames = array_keys($profilesDefs);
+//            $config['default_profile'] = reset($profileNames);
+//        }
+
+        if (!empty($config['default_profile'])) {
+            $container->getDefinition('biplane_yandex_direct.api.factory')
+                ->addMethodCall('setDefaultProfile', array($config['default_profile']));
+        }
 
         $container->getDefinition('biplane_yandex_direct.profile.manager')
             ->replaceArgument(0, $profilesDefs);

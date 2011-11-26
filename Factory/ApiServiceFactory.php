@@ -17,33 +17,54 @@ class ApiServiceFactory
     private $defaultProfile;
 
     /**
-     * @param ClientFactory $clientFactory
-     * @param ProfileManager $profileManager
-     * @param string $defaultProfile Имя профиля по умолчанию.
+     * Constructor.
      *
-     * @throws \LogicException Когда профиль по умолчанию не существует.
+     * @param ClientFactory  $clientFactory  The client factory
+     * @param ProfileManager $profileManager The profile manager
      */
-    public function __construct(ClientFactory $clientFactory, ProfileManager $profileManager, $defaultProfile)
+    public function __construct(ClientFactory $clientFactory, ProfileManager $profileManager)
     {
-        if (!$profileManager->has($defaultProfile)) {
-            throw new \LogicException(sprintf('Default profile "%s" does not exist.', $defaultProfile));
-        }
-
         $this->clientFactory = $clientFactory;
         $this->profileManager = $profileManager;
-        $this->defaultProfile = $defaultProfile;
     }
 
     /**
-     * @param string $profileName Profile nam or null (usage default profile).
-     * @return YandexApiService
+     * Sets the default profile name.
      *
-     * @throws \InvalidArgumentException Когда профиль $profileName не существует.
+     * @param string $profileName A profile name
+     *
+     * @throws \InvalidArgumentException When profile by specified name does not exist
+     */
+    public function setDefaultProfile($profileName)
+    {
+        if (!$this->profileManager->has($profileName)) {
+            throw new \InvalidArgumentException(sprintf('Profile named "%s" does not exist.', $profileName));
+        }
+
+        $this->defaultProfile = $profileName;
+    }
+
+    /**
+     * Creates a proxy of API service.
+     *
+     * @param string|null $profileName A profile name or null (will be used the default profile)
+     *
+     * @return YandexApiService A proxy of API serivce
+     *
+     * @throws \InvalidArgumentException When profile by specified name does not exist
+     * @throws \InvalidArgumentException When profile name is null and the default profile is not defained
      */
     public function createApiService($profileName = null)
     {
         if ($profileName === null) {
-            $profileName = $this->defaultProfile;
+            if ($this->defaultProfile !== null) {
+                $profileName = $this->defaultProfile;
+            }
+            else {
+                throw new \InvalidArgumentException(
+                    'Profile name cannot be null, because the default profile is not defined.'
+                );
+            }
         }
 
         if (!$this->profileManager->has($profileName)) {

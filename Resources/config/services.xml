@@ -7,10 +7,9 @@
         <service id="biplane_yandex_direct.api.factory" class="Biplane\YandexDirectBundle\Factory\ApiServiceFactory">
             <argument type="service" id="biplane_yandex_direct.client.factory" />
             <argument type="service" id="biplane_yandex_direct.profile.manager" />
-            <argument /> <!-- default profile name -->
         </service>
 
-        <service id="biplane_yandex_direct.client.factory" class="Biplane\YandexDirectBundle\Factory\ClientFactory" />
+        <service id="biplane_yandex_direct.client.factory" class="Biplane\YandexDirectBundle\Factory\ClientFactory" public="false" />
 
         <service id="biplane_yandex_direct.profile.manager" class="Biplane\YandexDirectBundle\Profile\ProfileManager">
             <argument type="collection" />

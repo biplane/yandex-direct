@@ -27,9 +27,9 @@ class Configuration implements ConfigurationInterface
         $rootNode
             ->fixXmlConfig('profile')
             ->children()
-                ->scalarNode('default_profile')->isRequired()->end()
+                ->scalarNode('default_profile')->defaultNull()->end()
                 ->arrayNode('profiles')
-                    ->requiresAtLeastOneElement()
+                    ->canBeUnset()
                     ->useAttributeAsKey('name')
                     ->prototype('array')
                         ->children()

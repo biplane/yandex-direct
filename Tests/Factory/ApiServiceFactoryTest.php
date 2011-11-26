@@ -19,18 +19,12 @@ class ApiServiceFactoryTest extends \PHPUnit_Framework_TestCase
      */
     private $clientFactory;
 
-    protected function setUp()
-    {
-        $this->profileManager = $this->getMock('Biplane\\YandexDirectBundle\\Profile\\ProfileManager');
-        $this->clientFactory = $this->getMock('Biplane\\YandexDirectBundle\\Factory\\ClientFactory');
-    }
-
     public function testCreateApiServiceByCustomProfile()
     {
         $this->profileManager
-            ->expects($this->exactly(2))
+            ->expects($this->once())
             ->method('has')
-            ->with($this->logicalOr($this->equalTo('default'), $this->equalTo('foo')))
+            ->with($this->equalTo('foo'))
             ->will($this->returnValue(true));
 
         $this->profileManager
@@ -44,9 +38,11 @@ class ApiServiceFactoryTest extends \PHPUnit_Framework_TestCase
             ->method('create')
             ->will($this->returnValue($this->getMock('Biplane\\YandexDirectBundle\\Proxy\\Client\\ClientInterface')));
 
-        $factory = new ApiServiceFactory($this->clientFactory, $this->profileManager, 'default');
+        $factory = new ApiServiceFactory($this->clientFactory, $this->profileManager);
 
-        $this->assertTrue($factory->createApiService('foo') instanceof YandexApiService, '->createApiService() returns object of type YandexApiService for profile "foo".');
+        $this->assertTrue($factory->createApiService('foo') instanceof YandexApiService,
+            '->createApiService() returns object of type YandexApiService for profile "foo".'
+        );
     }
 
     public function testCreateApiServiceByDefaultProfile()
@@ -68,15 +64,18 @@ class ApiServiceFactoryTest extends \PHPUnit_Framework_TestCase
             ->method('create')
             ->will($this->returnValue($this->getMock('Biplane\\YandexDirectBundle\\Proxy\\Client\\ClientInterface')));
 
-        $factory = new ApiServiceFactory($this->clientFactory, $this->profileManager, 'default');
+        $factory = new ApiServiceFactory($this->clientFactory, $this->profileManager);
+        $factory->setDefaultProfile('default');
 
-        $this->assertTrue($factory->createApiService() instanceof YandexApiService, '->createApiService() returns object of type YandexApiService for default profile.');
+        $this->assertTrue($factory->createApiService() instanceof YandexApiService,
+            '->createApiService() returns object of type YandexApiService for default profile.'
+        );
     }
 
     /**
-     * @expectedException \LogicException
+     * @expectedException \InvalidArgumentException
      */
-    public function testExceptionIsRaisedWhenDefaultProfileIsNotExists()
+    public function testThrowExceptionWhenDefaultProfileDoesNotExists()
     {
         $this->profileManager
             ->expects($this->once())
@@ -84,13 +83,15 @@ class ApiServiceFactoryTest extends \PHPUnit_Framework_TestCase
             ->with('default')
             ->will($this->returnValue(false));
 
-        new ApiServiceFactory($this->clientFactory, $this->profileManager, 'default');
+        $factory = new ApiServiceFactory($this->clientFactory, $this->profileManager);
+        $factory->setDefaultProfile('default');
     }
 
     /**
      * @expectedException \InvalidArgumentException
+     * @expectedExceptionMessage Profile named "foo" does not exist
      */
-    public function testExceptionIsRaisedWhenProfileIsNotExists()
+    public function testThrowExceptionWhenProfileDoesNotExists()
     {
         $this->profileManager
             ->expects($this->exactly(2))
@@ -106,11 +107,28 @@ class ApiServiceFactoryTest extends \PHPUnit_Framework_TestCase
             ->expects($this->never())
             ->method('create');
 
-        $factory = new ApiServiceFactory($this->clientFactory, $this->profileManager, 'default');
+        $factory = new ApiServiceFactory($this->clientFactory, $this->profileManager);
+        $factory->setDefaultProfile('default');
 
         $factory->createApiService('foo');
     }
 
+    /**
+     * @expectedException \InvalidArgumentException
+     * @expectedExceptionMessage Profile name cannot be null, because the default profile is not defined.
+     */
+    public function testThrowExceptionWhenProfileIsNullAndDefaultProfileIsNotDefained()
+    {
+        $factory = new ApiServiceFactory($this->clientFactory, $this->profileManager);
+
+        $factory->createApiService();
+    }
+
+    protected function setUp()
+    {
+        $this->profileManager = $this->getMock('Biplane\\YandexDirectBundle\\Profile\\ProfileManager');
+        $this->clientFactory = $this->getMock('Biplane\\YandexDirectBundle\\Factory\\ClientFactory');
+    }
 
     private function createProfileMock()
     {

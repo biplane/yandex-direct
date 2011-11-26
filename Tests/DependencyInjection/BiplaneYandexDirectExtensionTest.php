@@ -11,38 +11,51 @@ use Biplane\YandexDirectBundle\DependencyInjection\BiplaneYandexDirectExtension;
  */
 class BiplaneYandexDirectExtensionTest extends \PHPUnit_Framework_TestCase
 {
-    public function testConfigLoad()
-    {
-        $container = new ContainerBuilder();
-        $loader = new BiplaneYandexDirectExtension();
+    /**
+     * @var \Symfony\Component\DependencyInjection\ContainerBuilder;
+     */
+    private $container;
 
-        $loader->load(array(
+    /**
+     * @var \Biplane\YandexDirectBundle\DependencyInjection\BiplaneYandexDirectExtension;
+     */
+    private $extension;
+
+    public function testFullConfigLoad()
+    {
+        $this->extension->load(
             array(
-                'default_profile' => 'foo',
-                'profiles' => array(
-                    'foo' => array(
-                        'type' => 'soap',
-                        'cert' => array('local_cert' => 'path/to/local_cert'),
-                        'locale' => 'ru'
-                    ),
-                    'bar' => array(
-                        'type' => 'soap',
-                        'token' => array(
-                            'login' => 'yandex_login',
-                            'token' => 'TOKEN',
-                            'application_id' => 'APPLICATION-ID'
+                array(
+                    'default_profile' => 'foo',
+                    'profiles' => array(
+                        'foo' => array(
+                            'type' => 'soap',
+                            'cert' => array('local_cert' => 'path/to/local_cert'),
+                            'locale' => 'ru'
+                        ),
+                        'bar' => array(
+                            'type' => 'soap',
+                            'token' => array(
+                                'login' => 'yandex_login',
+                                'token' => 'TOKEN',
+                                'application_id' => 'APPLICATION-ID'
+                            )
                         )
                     )
                 )
-            )
-        ), $container);
+            ),
+            $this->container
+        );
 
-        $this->assertTrue($container->hasDefinition('biplane_yandex_direct.api.factory'));
-        $this->assertTrue($container->hasDefinition('biplane_yandex_direct.profile.manager'));
-        $this->assertTrue($container->hasDefinition('biplane_yandex_direct.client.factory'));
-        $this->assertEquals('foo', $container->getDefinition('biplane_yandex_direct.api.factory')->getArgument(2));
+        $this->assertTrue($this->container->hasDefinition('biplane_yandex_direct.api.factory'));
+        $this->assertTrue($this->container->hasDefinition('biplane_yandex_direct.profile.manager'));
+        $this->assertTrue($this->container->hasDefinition('biplane_yandex_direct.client.factory'));
+        $this->assertEquals(
+            array(array('setDefaultProfile', array('foo'))),
+            $this->container->getDefinition('biplane_yandex_direct.api.factory')->getMethodCalls()
+        );
 
-        $profiles = $container->getDefinition('biplane_yandex_direct.profile.manager')->getArgument(0);
+        $profiles = $this->container->getDefinition('biplane_yandex_direct.profile.manager')->getArgument(0);
 
         $this->assertArrayHasKey('foo', $profiles);
         $this->assertArrayHasKey('bar', $profiles);
@@ -64,5 +77,23 @@ class BiplaneYandexDirectExtensionTest extends \PHPUnit_Framework_TestCase
             ->addArgument('TOKEN');
 
         $this->assertEquals(array('soap', $configDef), $profiles['bar']->getArguments());
+    }
+
+    public function testEmptyConfigLoad()
+    {
+        $this->extension->load(array(), $this->container);
+
+        $this->assertFalse($this->container->getDefinition('biplane_yandex_direct.api.factory')->hasMethodCall('setDefaultProfile'));
+    }
+
+    protected function setUp()
+    {
+        $this->container = new ContainerBuilder();
+        $this->extension = new BiplaneYandexDirectExtension();
+    }
+
+    protected function tearDown()
+    {
+        unset($this->container, $this->extension);
     }
 }
