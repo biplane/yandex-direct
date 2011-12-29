@@ -37,7 +37,9 @@ class BiplaneYandexDirectExtension extends Extension
         foreach ($config['profiles'] as $name => $options) {
             // конфигурация для клиента
             $configDef = new Definition();
-            $configDef->setPublic(false);
+            $configDef
+                ->setPublic(false)
+                ->addMethodCall('setLocale', array($options['locale']));
 
             if (isset($options['cert'])) {
                 $configDef
