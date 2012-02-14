@@ -15,8 +15,7 @@
             <argument type="collection" />
         </service>
 
-        <!-- сервисы по созданию и выкачиванию отчетов -->
-        <service id="biplane_yandex_direct.report_service.factory" class="Biplane\YandexDirectBundle\Service\Report\Factory">
+        <service id="biplane_yandex_direct.service.factory" class="Biplane\YandexDirectBundle\Service\Factory">
             <argument type="service" id="biplane_yandex_direct.api.factory" />
             <argument type="service" id="biplane_yandex_direct.profile.manager" />
         </service>

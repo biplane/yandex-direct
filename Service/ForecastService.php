@@ -19,13 +19,12 @@ class ForecastService
     const MAX_QUEUE = 5;
     const MAX_PHRASES = 100;
 
-    /**
-     * @var \Biplane\YandexDirectBundle\Api\Service
-     */
     private $apiService;
 
     /**
-     * @param Service $apiService
+     * Constructor.
+     *
+     * @param YandexApiService $apiService The YandexApiService instance
      */
     public function __construct(YandexApiService $apiService)
     {
@@ -37,6 +36,7 @@ class ForecastService
      *
      * @param array $phrases
      * @param array $geoIds
+     *
      * @return int
      *
      * @throws ApiException
@@ -65,6 +65,7 @@ class ForecastService
      * Проверить статус прогноза можно через метод {@link isReady()}.
      *
      * @param int $forecastId
+     *
      * @return \Biplane\YandexDirectBundle\Contract\GetForecastInfo
      *
      * @throws ApiException
@@ -97,6 +98,7 @@ class ForecastService
      * Проверяет, готов ли прогноз с указанным ID или нет.
      * 
      * @param int $forecastId
+     *
      * @return bool
      *
      * @throws ApiException
@@ -117,18 +119,19 @@ class ForecastService
         throw new \LogicException(sprintf('Forecast #%d is not found.', $forecastId));
     }
 
-
     /**
-     * @param mixed $id
+     * Checks a forecast identifier.
+     *
+     * @param mixed $id A forecast identifier
      *
      * @throws \InvalidArgumentException
      */
     private function checkForecastId($id)
     {
         if (!is_int($id)) {
-            throw new \InvalidArgumentException(
-                sprintf('Expected a forecast ID of type the integer, %s given.', gettype($id))
-            );
+            throw new \InvalidArgumentException(sprintf(
+                'Expected a forecast ID of type the integer, %s given.', gettype($id)
+            ));
         }
         else if ($id < 1) {
             throw new \InvalidArgumentException('Forecast ID should be greater than 0.');

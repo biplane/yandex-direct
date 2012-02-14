@@ -13,16 +13,27 @@ use Biplane\YandexDirectBundle\Configuration\CertificateConfiguration;
  */
 class Downloader
 {
-    /**
-     * @var \Biplane\YandexDirectBundle\Configuration\AbstractConfiguration
-     */
     private $config;
 
+    /**
+     * Constructor.
+     *
+     * @param AbstractConfiguration $config The configuration
+     */
     public function __construct(AbstractConfiguration $config)
     {
         $this->config = $config;
     }
 
+    /**
+     * Downloads a content of report.
+     *
+     * @param string $url A report url
+     *
+     * @return null|string A report content or null
+     *
+     * @throws \LogicException
+     */
     public function download($url)
     {
         if ($this->config instanceof CertificateConfiguration) {
@@ -32,9 +43,10 @@ class Downloader
                     'passphrase' => $this->config->getPassphrase()
                 )
             ));
+
             return file_get_contents($url, 0, $context);
         } else if ($this->config instanceof AuthTokenConfiguration) {
-            throw new \RuntimeException('Not yet implemented.');
+            throw new \LogicException('Not yet implemented.');
         }
 
         return null;
