@@ -12,12 +12,11 @@ use Biplane\YandexDirectBundle\Exception\ApiException;
  */
 class YandexApiService
 {
-    /**
-     * @var \Biplane\YandexDirectBundle\Client\ClientInterface
-     */
     private $client;
 
     /**
+     * Constructor.
+     *
      * @param Client\ClientInterface $client
      */
     public function __construct(Client\ClientInterface $client)
@@ -26,6 +25,8 @@ class YandexApiService
     }
 
     /**
+     * Gets a content of last request.
+     *
      * @return string
      */
     public function getLastRequest()
@@ -34,6 +35,8 @@ class YandexApiService
     }
 
     /**
+     * Gets a content of last response.
+     *
      * @return string
      */
     public function getLastResponse()
@@ -42,7 +45,9 @@ class YandexApiService
     }
 
     /**
-     * @returns array
+     * Gets the number of the latest API version.
+     *
+     * @return int The number of the last API version
      */
     public function getVersion()
     {
@@ -50,8 +55,11 @@ class YandexApiService
     }
 
     /**
+     * Gets the personal information of all users, or of those that meet the filtering conditions.
+     *
      * @param Contract\ClientInfoRequest $ClientInfoRequest
-     * @returns Contract\ClientInfo[]
+     *
+     * @return Contract\ClientInfo[]
      */
     public function getClientsList(Contract\ClientInfoRequest $ClientInfoRequest)
     {
@@ -59,8 +67,11 @@ class YandexApiService
     }
 
     /**
+     * Gets a list of users associated with the specified user or agency.
+     *
      * @param Contract\GetSubClientsRequest $GetSubClientsRequest
-     * @returns Contract\ShortClientInfo[]
+     *
+     * @return Contract\ShortClientInfo[]
      */
     public function getSubClients(Contract\GetSubClientsRequest $GetSubClientsRequest)
     {
@@ -68,8 +79,11 @@ class YandexApiService
     }
 
     /**
+     * Sets the CPC for all phrases in the campaign, or only for those phrases that meet the filter conditions.
+     *
      * @param Contract\AutoPriceInfo $AutoPriceInfo
-     * @returns Contract\PhrasePriceInfo[]
+     *
+     * @return Contract\PhrasePriceInfo[]
      */
     public function setAutoPrice(Contract\AutoPriceInfo $AutoPriceInfo)
     {
@@ -77,8 +91,11 @@ class YandexApiService
     }
 
     /**
-     * @param int $id
-     * @returns array
+     * Deletes a campaign statistics report from the server.
+     *
+     * @param int $id The ID of the report to delete
+     *
+     * @return int 1 when the report is deleted successfully
      */
     public function deleteReport($id)
     {
@@ -86,8 +103,11 @@ class YandexApiService
     }
 
     /**
+     * Gets statistics for each day of the specified period for the specified campaign.
+     *
      * @param Contract\GetSummaryStatRequest $GetSummaryStatRequest
-     * @returns Contract\StatItem[]
+     *
+     * @return Contract\StatItem[]
      */
     public function getSummaryStat(Contract\GetSummaryStatRequest $GetSummaryStatRequest)
     {
@@ -95,8 +115,13 @@ class YandexApiService
     }
 
     /**
+     * Gets the campaign parameters.
+     *
      * @param Contract\CampaignIDInfo $CampaignIDInfo
-     * @returns Contract\CampaignInfo
+     *
+     * @return Contract\CampaignInfo
+     *
+     * @deprecated
      */
     public function getCampaignParams(Contract\CampaignIDInfo $CampaignIDInfo)
     {
@@ -104,8 +129,11 @@ class YandexApiService
     }
 
     /**
+     * Gets the parameters of one or more campaigns.
+     *
      * @param Contract\CampaignIDSInfo $CampaignIDSInfo
-     * @returns Contract\CampaignInfo[]
+     *
+     * @return Contract\CampaignInfo[]
      */
     public function getCampaignsParams(Contract\CampaignIDSInfo $CampaignIDSInfo)
     {
@@ -113,8 +141,11 @@ class YandexApiService
     }
 
     /**
-     * @param int $id
-     * @returns int
+     * Deletes a report on the server about the projected number of impressions, clicks and campaign spending.
+     *
+     * @param int $id The ID of the report to delete
+     *
+     * @return int If deletion was successful, the value 1 is returned
      */
     public function deleteForecastReport($id)
     {
@@ -122,8 +153,11 @@ class YandexApiService
     }
 
     /**
+     * Submits an ad with "Draft" status for moderation.
+     *
      * @param Contract\CampaignBidsInfo $CampaignBidsInfo
-     * @returns array
+     *
+     * @return int 1 when executed successfully
      */
     public function moderateBanners(Contract\CampaignBidsInfo $CampaignBidsInfo)
     {
@@ -131,8 +165,11 @@ class YandexApiService
     }
 
     /**
+     * Stops displaying ads.
+     *
      * @param Contract\CampaignBidsInfo $CampaignBidsInfo
-     * @returns array
+     *
+     * @return int 1 when executed successfully
      */
     public function stopBanners(Contract\CampaignBidsInfo $CampaignBidsInfo)
     {
@@ -140,8 +177,11 @@ class YandexApiService
     }
 
     /**
+     * Allows ad displays.
+     *
      * @param Contract\CampaignBidsInfo $CampaignBidsInfo
-     * @returns array
+     *
+     * @return int 1 when executed successfully
      */
     public function resumeBanners(Contract\CampaignBidsInfo $CampaignBidsInfo)
     {
@@ -149,8 +189,11 @@ class YandexApiService
     }
 
     /**
-     * @paramContract\CampaignBidsInfo $CampaignBidsInfo
-     * @returns array
+     * Archives the ad.
+     *
+     * @param Contract\CampaignBidsInfo $CampaignBidsInfo
+     *
+     * @return int 1 when executed successfully
      */
     public function archiveBanners(Contract\CampaignBidsInfo $CampaignBidsInfo)
     {
@@ -158,8 +201,11 @@ class YandexApiService
     }
 
     /**
+     * Removes an ad from the archive.
+     *
      * @param Contract\CampaignBidsInfo $CampaignBidsInfo
-     * @returns array
+     *
+     * @returns int 1 when executed successfully
      */
     public function unArchiveBanners(Contract\CampaignBidsInfo $CampaignBidsInfo)
     {
@@ -167,8 +213,14 @@ class YandexApiService
     }
 
     /**
+     * Deletes the ad.
+     *
+     * You can only delete an ad that has not been displayed and does not have any statistics yet.
+     * For other ads, archiving is available using the {@see archiveBanners} method.
+     *
      * @param Contract\CampaignBidsInfo $CampaignBidsInfo
-     * @returns array
+     *
+     * @return int 1 when deleted successfully
      */
     public function deleteBanners(Contract\CampaignBidsInfo $CampaignBidsInfo)
     {
@@ -176,8 +228,11 @@ class YandexApiService
     }
 
     /**
+     * Stops displaying the ads in the campaign.
+     *
      * @param Contract\CampaignIDInfo $CampaignIDInfo
-     * @returns array
+     *
+     * @return int 1 when executed successfully
      */
     public function stopCampaign(Contract\CampaignIDInfo $CampaignIDInfo)
     {
@@ -185,8 +240,11 @@ class YandexApiService
     }
 
     /**
+     * Deletes the campaign.
+     *
      * @param Contract\CampaignIDInfo $CampaignIDInfo
-     * @returns array
+     *
+     * @return int 1 when executed successfully
      */
     public function deleteCampaign(Contract\CampaignIDInfo $CampaignIDInfo)
     {
@@ -194,8 +252,11 @@ class YandexApiService
     }
 
     /**
+     * Removes the campaign from the archive.
+     *
      * @param Contract\CampaignIDInfo $CampaignIDInfo
-     * @returns array
+     *
+     * @return int 1 when executed successfully
      */
     public function unArchiveCampaign(Contract\CampaignIDInfo $CampaignIDInfo)
     {
@@ -203,8 +264,11 @@ class YandexApiService
     }
 
     /**
+     * Archives the campaign.
+     *
      * @param Contract\CampaignIDInfo $CampaignIDInfo
-     * @returns array
+     *
+     * @return int 1 when executed successfully
      */
     public function archiveCampaign(Contract\CampaignIDInfo $CampaignIDInfo)
     {
@@ -212,8 +276,11 @@ class YandexApiService
     }
 
     /**
+     * Allows ad displays for the campaign.
+     *
      * @param Contract\CampaignIDInfo $CampaignIDInfo
-     * @returns array
+     *
+     * @return int 1 when executed successfully
      */
     public function resumeCampaign(Contract\CampaignIDInfo $CampaignIDInfo)
     {
@@ -221,7 +288,13 @@ class YandexApiService
     }
 
     /**
-     * @returns Contract\ReportInfo[]
+     * Gets a list of campaign statistics reports that have been generated or are being generated.
+     *
+     * We don't recommend calling this method too often. On average, generating reports takes about
+     * one to two minutes, so repeating calls for checking report status every 10-20 seconds
+     * is frequent enough.
+     *
+     * @return Contract\ReportInfo[]
      */
     public function getReportList()
     {
@@ -229,7 +302,9 @@ class YandexApiService
     }
 
     /**
-     * @returns array
+     * Checks API availability and whether the user was successfully authorized.
+     *
+     * @return int 1 when user authorization was successful
      */
     public function pingAPI()
     {
@@ -237,26 +312,35 @@ class YandexApiService
     }
 
     /**
-     * @param array $string
-     * @returns Contract\ClientsUnitInfo[]
+     * Tells you how many points the user has.
+     *
+     * @param array $logins An array of user logins
+     *
+     * @return Contract\ClientsUnitInfo[]
      */
-    public function getClientsUnits(array $string)
+    public function getClientsUnits(array $logins)
     {
-        return $this->client->invoke('GetClientsUnits', array($string));
+        return $this->client->invoke('GetClientsUnits', array($logins));
     }
 
     /**
-     * @param array $string
-     * @returns Contract\ClientInfo[]
+     * Gets the user's personal data.
+     *
+     * @param array $logins An array of login names of the users whose personal data is being requested
+     *
+     * @return Contract\ClientInfo[]
      */
-    public function getClientInfo(array $string)
+    public function getClientInfo(array $logins)
     {
-        return $this->client->invoke('GetClientInfo', array($string));
+        return $this->client->invoke('GetClientInfo', array($logins));
     }
 
     /**
+     * Changes a user's personal data and permissions.
+     *
      * @param Contract\ClientInfo[] $ClientInfo
-     * @returns array
+     *
+     * @return int 1 when data has been changed successfully
      */
     public function updateClientInfo(array $ClientInfo)
     {
@@ -264,8 +348,11 @@ class YandexApiService
     }
 
     /**
+     * Gets ad parameters.
+     *
      * @param Contract\GetBannersInfo $GetBannersInfo
-     * @returns Contract\BannerInfo[]
+     *
+     * @return Contract\BannerInfo[]
      */
     public function getBanners(\Biplane\YandexDirectBundle\Contract\GetBannersInfo $GetBannersInfo)
     {
@@ -273,17 +360,24 @@ class YandexApiService
     }
 
     /**
-     * @param array $string
-     * @returns Contract\ShortCampaignInfo[]
+     * Gets a list of campaigns with brief information about them.
+     *
+     * @param array $logins An array of login names. Is used only when making the request
+     *                      on behalf of an advertising agency
+     *
+     * @return Contract\ShortCampaignInfo[]
      */
-    public function getCampaignsList(array $string)
+    public function getCampaignsList(array $logins = array())
     {
-        return $this->client->invoke('GetCampaignsList', array($string));
+        return $this->client->invoke('GetCampaignsList', array($logins));
     }
 
     /**
+     * Gets a list of campaigns that meet the filter conditions with brief information about these campaigns.
+     *
      * @param Contract\GetCampaignsInfo $GetCampaignsInfo
-     * @returns Contract\ShortCampaignInfo[]
+     *
+     * @return Contract\ShortCampaignInfo[]
      */
     public function getCampaignsListFilter(Contract\GetCampaignsInfo $GetCampaignsInfo)
     {
@@ -291,26 +385,35 @@ class YandexApiService
     }
 
     /**
-     * @param array $int
-     * @returns Contract\CampaignBalanceInfo[]
+     * Gets information about the campaign balance.
+     *
+     * @param array $ids An array of IDs for campaigns that you need to get information for
+     *
+     * @return Contract\CampaignBalanceInfo[]
      */
-    public function getBalance(array $int)
+    public function getBalance(array $ids)
     {
-        return $this->client->invoke('GetBalance', array($int));
+        return $this->client->invoke('GetBalance', array($ids));
     }
 
     /**
-     * @param array $int
-     * @returns Contract\BannerPhraseInfo[]
+     * Gets information about phrases.
+     *
+     * @param array $ids An array of BannerID ad IDs (no more than 1000)
+     *
+     * @return Contract\BannerPhraseInfo[]
      */
-    public function getBannerPhrases(array $int)
+    public function getBannerPhrases(array $ids)
     {
-        return $this->client->invoke('GetBannerPhrases', array($int));
+        return $this->client->invoke('GetBannerPhrases', array($ids));
     }
 
     /**
+     * Gets information about phrases and lets you limit what is included in returned data.
+     *
      * @param Contract\BannerPhrasesFilterRequestInfo $BannerPhrasesFilterRequestInfo
-     * @returns Contract\BannerPhraseInfo[]
+     *
+     * @return Contract\BannerPhraseInfo[]
      */
     public function getBannerPhrasesFilter(Contract\BannerPhrasesFilterRequestInfo $BannerPhrasesFilterRequestInfo)
     {
@@ -318,7 +421,9 @@ class YandexApiService
     }
 
     /**
-     * @returns Contract\RegionInfo[]
+     * Gets a list of regions registered in Yandex.Direct.
+     *
+     * @return Contract\RegionInfo[]
      */
     public function getRegions()
     {
@@ -326,8 +431,11 @@ class YandexApiService
     }
 
     /**
+     * Generates a campaign statistics report on the server.
+     *
      * @param Contract\NewReportInfo $NewReportInfo
-     * @returns array
+     *
+     * @return int The ID of the future report
      */
     public function createNewReport(Contract\NewReportInfo $NewReportInfo)
     {
@@ -335,8 +443,13 @@ class YandexApiService
     }
 
     /**
+     * Generates a report on the server about the projected number of impressions and clicks and campaign spending.
+     *
+     * The forecast is put together for one month for the specified phrases and Yandex.Catalog categories.
+     *
      * @param Contract\NewForecastInfo $NewForecastInfo
-     * @returns array
+     *
+     * @return int The ID of the future report
      */
     public function createNewForecast(Contract\NewForecastInfo $NewForecastInfo)
     {
@@ -344,8 +457,11 @@ class YandexApiService
     }
 
     /**
-     * @param int $id
-     * @returns Contract\GetForecastInfo
+     * Gets a report about the projected number of impressions, clicks and campaign spending.
+     *
+     * @param int $id The ID of the generated report
+     *
+     * @return Contract\GetForecastInfo
      */
     public function getForecast($id)
     {
@@ -353,7 +469,9 @@ class YandexApiService
     }
 
     /**
-     * @returns Contract\RubricInfo[]
+     * Gets a list of Yandex.Catalog categories.
+     *
+     * @return Contract\RubricInfo[]
      */
     public function getRubrics()
     {
@@ -361,7 +479,9 @@ class YandexApiService
     }
 
     /**
-     * @returns Contract\TimeZoneInfo[]
+     * Gets a list of time zones.
+     *
+     * @return Contract\TimeZoneInfo[]
      */
     public function getTimeZones()
     {
@@ -369,7 +489,10 @@ class YandexApiService
     }
 
     /**
-     * @returns Contract\ForecastStatusInfo[]
+     * Gets a list of reports that have been generated or are being generated about
+     * the projected number of impressions, clicks and campaign spending.
+     *
+     * @return Contract\ForecastStatusInfo[]
      */
     public function getForecastList()
     {
@@ -377,8 +500,14 @@ class YandexApiService
     }
 
     /**
+     * For phrases, it sets the CPC on Yandex search and in the Yandex Advertising Network,
+     * and also changes parameters for Autobudget and Autobroker.
+     *
+     * You can set prices for a maximum of 1000 phrases in a single request.
+     *
      * @param Contract\PhrasePriceInfo[] $PhrasePriceInfo
-     * @returns array
+     *
+     * @return int 1 when executed successfully
      */
     public function updatePrices(array $PhrasePriceInfo)
     {
@@ -386,8 +515,14 @@ class YandexApiService
     }
 
     /**
+     * Creates a campaign with the specified parameters, or changes the parameters of an existing campaign.
+     *
+     * When editing a campaign, it is important to set all the optional parameters, even if they are not being changed.
+     * If a parameter is omitted, its value may be replaced with the pre-set value.
+     *
      * @param Contract\CampaignInfo $CampaignInfo
-     * @returns array
+     *
+     * @return int The ID of the created or edited campaign
      */
     public function createOrUpdateCampaign(Contract\CampaignInfo $CampaignInfo)
     {
@@ -395,8 +530,14 @@ class YandexApiService
     }
 
     /**
+     * Creates an ad or edits the parameters of an existing ad.
+     *
+     * A campaign can have no more than 1000 ads, although the number of phrases per ad is not explicitly restricted.
+     * There is a limit on the total size of phrases: 4096 bytes per ad.
+     *
      * @param Contract\BannerInfo[] $BannerInfo
-     * @returns array
+     *
+     * @return array An array containing the IDs of created or updated ads
      */
     public function createOrUpdateBanners(array $BannerInfo)
     {
@@ -404,7 +545,9 @@ class YandexApiService
     }
 
     /**
-     * @returns Contract\VersionDesc[]
+     * Gets a list of API versions that are currently supported.
+     *
+     * @return Contract\VersionDesc[]
      */
     public function getAvailableVersions()
     {
@@ -412,8 +555,11 @@ class YandexApiService
     }
 
     /**
+     * Gets suggestions for keywords.
+     *
      * @param Contract\KeywordsSuggestionInfo $KeywordsSuggestionInfo
-     * @returns array
+     *
+     * @return array An array of suggestions for the keywords (up to 20 suggestions)
      */
     public function getKeywordsSuggestion(\Biplane\YandexDirectBundle\Contract\KeywordsSuggestionInfo $KeywordsSuggestionInfo)
     {
@@ -421,8 +567,11 @@ class YandexApiService
     }
 
     /**
+     * Registers a client of an advertising agency.
+     *
      * @param Contract\CreateNewSubclientRequest $CreateNewSubclientRequest
-     * @returns Contract\CreateNewSubclientResponse
+     *
+     * @return Contract\CreateNewSubclientResponse
      */
     public function createNewSubclient(Contract\CreateNewSubclientRequest $CreateNewSubclientRequest)
     {
@@ -430,8 +579,11 @@ class YandexApiService
     }
 
     /**
+     * Generates a search query statistics report on the server.
+     *
      * @param Contract\NewWordstatReportInfo $NewWordstatReportInfo
-     * @returns array
+     *
+     * @return int The ID of the future report
      */
     public function createNewWordstatReport(Contract\NewWordstatReportInfo $NewWordstatReportInfo)
     {
@@ -439,7 +591,9 @@ class YandexApiService
     }
 
     /**
-     * @returns Contract\WordstatReportStatusInfo[]
+     * Gets a list of query statistics reports that have been generated or are being generated.
+     *
+     * @return Contract\WordstatReportStatusInfo[]
      */
     public function getWordstatReportList()
     {
@@ -447,8 +601,11 @@ class YandexApiService
     }
 
     /**
-     * @param int $id
-     * @returns Contract\WordstatReportInfo[]
+     * Gets a search query statistics report.
+     *
+     * @param int $id The ID of the generated report
+     *
+     * @return Contract\WordstatReportInfo[]
      */
     public function getWordstatReport($id)
     {
@@ -456,8 +613,11 @@ class YandexApiService
     }
 
     /**
-     * @param int $id
-     * @returns array
+     * Deletes a search query statistics report.
+     *
+     * @param int $id The ID of the generated report
+     *
+     * @return int 1 when the report is deleted successfully
      *
      * @since v4
      */
@@ -467,8 +627,11 @@ class YandexApiService
     }
 
     /**
+     * Gets information about the Yandex.Metrica goals that are available for the campaign.
+     *
      * @param Contract\CampaignIDInfo $CampaignIDInfo
-     * @returns Contract\StatGoalInfo[]
+     *
+     * @return Contract\StatGoalInfo[]
      */
     public function getStatGoals(Contract\CampaignIDInfo $CampaignIDInfo)
     {
@@ -476,8 +639,12 @@ class YandexApiService
     }
 
     /**
+     * Checks for changes in campaigns and ads, as well as in the region and time zone directories,
+     * and in the Yandex.Catalog.
+     *
      * @param Contract\GetChangesRequest $GetChangesRequest
-     * @returns Contract\GetChangesResponse
+     *
+     * @return Contract\GetChangesResponse
      *
      * @since v4
      */
@@ -487,8 +654,11 @@ class YandexApiService
     }
 
     /**
+     * Transfers funds between campaigns.
+     *
      * @param Contract\TransferMoneyInfo $TransferMoneyInfo
-     * @returns array
+     *
+     * @return int 1 when executed successfully
      *
      * @since v4
      */
@@ -498,7 +668,9 @@ class YandexApiService
     }
 
     /**
-     * @returns Contract\CreditLimitsInfo
+     * Gets information about credit available to pay for campaigns.
+     *
+     * @return Contract\CreditLimitsInfo
      *
      * @since v4
      */
@@ -508,8 +680,11 @@ class YandexApiService
     }
 
     /**
+     * Generates an invoice in HTML format for paying for one or more campaigns.
+     *
      * @param Contract\CreateInvoiceInfo $CreateInvoiceInfo
-     * @returns array
+     *
+     * @return string If executed successfully, the method returns the URL of the payment invoice
      *
      * @since v4
      */
@@ -519,8 +694,11 @@ class YandexApiService
     }
 
     /**
+     * Pays for the campaign using available credit.
+     *
      * @param Contract\PayCampaignsInfo $PayCampaignsInfo
-     * @returns Contract\PayCampaignsResponse
+     *
+     * @return int 1 when executed successfully
      *
      * @since v4
      */

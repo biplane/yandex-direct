@@ -10,18 +10,25 @@ namespace Biplane\YandexDirectBundle\Proxy\Client;
 interface ClientInterface
 {
     /**
-     * @param string $method
-     * @param array $params
+     * Invokes API method with specified name.
+     *
+     * @param string $method A method name
+     * @param array  $params An array of parameters for API method
+     *
      * @return mixed
      */
     function invoke($method, array $params);
 
     /**
+     * Gets a content of last request.
+     *
      * @return string
      */
     function getLastRequest();
 
     /**
+     * Gets a content of last response.
+     *
      * @return string
      */
     function getLastResponse();

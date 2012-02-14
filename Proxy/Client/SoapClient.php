@@ -102,11 +102,10 @@ class SoapClient extends \SoapClient implements ClientInterface
     private $converterFactory;
 
     /**
-     * Creates a new instance of SoapClient class.
+     * Constructor.
      *
-     * @param ConfigurationInterface $configuration Options of API service.
-     *
-     * @throws \InvalidArgumentException
+     * @param AbstractConfiguration $configuration    The configuration
+     * @param ConverterFactory      $converterFactory A ConverterFactory instance
      */
     public function __construct(AbstractConfiguration $configuration, ConverterFactory $converterFactory)
     {
@@ -149,19 +148,20 @@ class SoapClient extends \SoapClient implements ClientInterface
     /**
      * Performs a SOAP request.
      *
-     * @param string $request The XML SOAP request.
+     * @param string $request  The XML SOAP request.
      * @param string $location The URL to request.
-     * @param string $action The SOAP action.
-     * @param int $version The SOAP version.
-     * @param int $one_way [optional] If one_way is set to 1, this method returns nothing.
-     *        Use this where a response is not expected.
+     * @param string $action   The SOAP action.
+     * @param int    $version  The SOAP version.
+     * @param int    $oneWay   If one_way is set to 1, this method returns nothing.
+     *                         Use this where a response is not expected.
+     *
      * @return string The XML SOAP response.
      *
      * @internal
      */
-    public function __doRequest($request, $location, $action, $version, $one_way = null)
+    public function __doRequest($request, $location, $action, $version, $oneWay = null)
     {
-        $response = parent::__doRequest($request, $location, $action, $version, $one_way);
+        $response = parent::__doRequest($request, $location, $action, $version, $oneWay);
 
         if (!empty($response)) {
             $xml = new \SimpleXMLElement($response);
@@ -176,12 +176,12 @@ class SoapClient extends \SoapClient implements ClientInterface
     }
 
     /**
-     * Вызывает метод веб-сервиса.
+     * Invokes API method with specified name.
      *
-     * @param string $methodName Имя метода.
-     * @param array $arguments Массив аргументов для вызываемого метода.
+     * @param string $method A method name
+     * @param array  $params An array of parameters for API method
      *
-     * @throws RemoteException
+     * @return mixed
      */
     public function invoke($methodName, array $arguments)
     {
@@ -213,17 +213,21 @@ class SoapClient extends \SoapClient implements ClientInterface
     }
 
     /**
+     * Gets a content of last response.
+     *
      * @return string
      */
-    function getLastResponse()
+    public function getLastResponse()
     {
         return $this->__getLastResponse();
     }
 
     /**
+     * Gets a content of last request.
+     *
      * @return string
      */
-    function getLastRequest()
+    public function getLastRequest()
     {
         return $this->__getLastRequest();
     }

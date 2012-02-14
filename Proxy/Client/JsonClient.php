@@ -40,6 +40,13 @@ class JsonClient implements ClientInterface
     private $lastRequest;
     private $lastResponse;
 
+    /**
+     * Constructor.
+     *
+     * @param AbstractConfiguration $configuration    The configuration
+     * @param ConverterFactory      $converterFactory A ConverterFactory instance
+     * @param JsonEncoder           $encoder          A JsonEncoder instance
+     */
     public function __construct(AbstractConfiguration $configuration, ConverterFactory $converterFactory, JsonEncoder $encoder)
     {
         $this->configuration = $configuration;
@@ -55,6 +62,14 @@ class JsonClient implements ClientInterface
         }
     }
 
+    /**
+     * Sets settings of HTTP proxy.
+     *
+     * @param string $host     A proxy host
+     * @param string $port     A proxy port
+     * @param string $user     A username for auth on proxy
+     * @param string $password A password for auth on proxy
+     */
     public function setProxy($host, $port, $user = null, $password = null)
     {
         $this->curlOptions[CURLOPT_PROXY] = $host;
@@ -65,6 +80,12 @@ class JsonClient implements ClientInterface
         }
     }
 
+    /**
+     * Sets the HTTPS client sertificate.
+     *
+     * @param string $localSert  A path to sertificate file
+     * @param string $passphrase The passphrase
+     */
     public function setHttpsSertificate($localSert, $passphrase)
     {
         $this->curlOptions[CURLOPT_SSLCERT] = $localSert;
@@ -72,9 +93,11 @@ class JsonClient implements ClientInterface
     }
 
     /**
+     * Gets a content of last response.
+     *
      * @return string
      */
-    function getLastResponse()
+    public function getLastResponse()
     {
         if ($this->lastResponse instanceof Response) {
             return (string)$this->lastResponse;
@@ -84,18 +107,22 @@ class JsonClient implements ClientInterface
     }
 
     /**
+     * Gets a content of last request.
+     *
      * @return string
      */
-    function getLastRequest()
+    public function getLastRequest()
     {
         return $this->lastRequest;
     }
 
     /**
-     * Вызывает метод веб-сервиса.
+     * Invokes API method with specified name.
      *
-     * @param string $methodName Имя метода.
-     * @param array $arguments Массив аргументов для вызываемого метода.
+     * @param string $method A method name
+     * @param array  $params An array of parameters for API method
+     *
+     * @return mixed
      *
      * @throws ApiException
      * @throws \RuntimeException
@@ -145,7 +172,10 @@ class JsonClient implements ClientInterface
 
 
     /**
+     * Makes HTTP request to server.
+     *
      * @param string $content
+     *
      * @return Response
      *
      * @throws \RuntimeException
