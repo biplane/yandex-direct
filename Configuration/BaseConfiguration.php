@@ -7,7 +7,7 @@ namespace Biplane\YandexDirectBundle\Configuration;
  *
  * @author Denis Vasilev <yethee@biplane.ru>
  */
-abstract class AbstractConfiguration
+abstract class BaseConfiguration
 {
     const LOCALE_RU = 'ru';
     const LOCALE_EN = 'en';
@@ -17,11 +17,23 @@ abstract class AbstractConfiguration
     protected $proxyHost;
     protected $proxyPort;
 
+    /**
+     * Gets the locale.
+     *
+     * @return string
+     */
     public function getLocale()
     {
         return $this->locale;
     }
 
+    /**
+     * Sets the locale.
+     *
+     * @param string $locale
+     *
+     * @throws \InvalidArgumentException
+     */
     public function setLocale($locale)
     {
         switch ($locale) {
@@ -31,24 +43,47 @@ abstract class AbstractConfiguration
                 $this->locale = $locale;
                 break;
             default:
-                throw new \InvalidArgumentException('Invalid locale. Case must be one of the following constants: LOCALE_RU, LOCALE_EN, LOCALE_UK');
+                throw new \InvalidArgumentException(
+                    'Invalid locale. Case must be one of the following constants: LOCALE_RU, LOCALE_EN or LOCALE_UK.'
+                );
         }
     }
 
+    /**
+     * Gets the proxy host.
+     *
+     * @return string
+     */
     public function getProxyHost()
     {
         return $this->proxyHost;
     }
 
+    /**
+     * Gets the proxy port.
+     *
+     * @return int
+     */
     public function getProxyPort()
     {
         return $this->proxyPort;
     }
 
+    /**
+     * Sets the proxy host and port.
+     *
+     * @param string $host The host
+     * @param int    $port The port
+     *
+     * @throws \InvalidArgumentException
+     */
     public function setProxy($host, $port)
     {
         if (!is_int($port)) {
-            throw new \InvalidArgumentException(sprintf('Port proxy must be the integer, recieved "%s" of type %s.', $port, gettype($port)));
+            throw new \InvalidArgumentException(sprintf(
+                'Proxy port should be the integer, given "%s" of type %s.',
+                $port, gettype($port)
+            ));
         }
 
         $this->proxyHost = $host;

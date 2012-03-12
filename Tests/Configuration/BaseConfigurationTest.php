@@ -2,21 +2,21 @@
 
 namespace Biplane\YandexDirectBundle\Tests\Configuration;
 
-use Biplane\YandexDirectBundle\Configuration\AbstractConfiguration;
+use Biplane\YandexDirectBundle\Configuration\BaseConfiguration;
 
 /**
  * @author Denis Vasilev <yethee@biplane.ru>
  */
-class AbstractConfigurationTest extends \PHPUnit_Framework_TestCase
+class BaseConfigurationTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var \Biplane\YandexDirectBundle\Configuration\AbstractConfiguration
+     * @var \Biplane\YandexDirectBundle\Configuration\BaseConfiguration
      */
     private $configuration;
 
     protected function setUp()
     {
-        $this->configuration = $this->getMockForAbstractClass('Biplane\\YandexDirectBundle\\Configuration\\AbstractConfiguration');
+        $this->configuration = $this->getMockForAbstractClass('Biplane\YandexDirectBundle\Configuration\BaseConfiguration');
     }
 
     public function testSetProxySettings()
@@ -58,9 +58,9 @@ class AbstractConfigurationTest extends \PHPUnit_Framework_TestCase
     public function localeProvider()
     {
         return array(
-            array(AbstractConfiguration::LOCALE_EN),
-            array(AbstractConfiguration::LOCALE_RU),
-            array(AbstractConfiguration::LOCALE_UA)
+            array(BaseConfiguration::LOCALE_EN),
+            array(BaseConfiguration::LOCALE_RU),
+            array(BaseConfiguration::LOCALE_UA)
         );
     }
 }

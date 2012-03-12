@@ -2,7 +2,7 @@
 
 namespace Biplane\YandexDirectBundle\Service\Report;
 
-use Biplane\YandexDirectBundle\Configuration\AbstractConfiguration;
+use Biplane\YandexDirectBundle\Configuration\BaseConfiguration;
 use Biplane\YandexDirectBundle\Configuration\AuthTokenConfiguration;
 use Biplane\YandexDirectBundle\Configuration\CertificateConfiguration;
 
@@ -18,9 +18,9 @@ class Downloader
     /**
      * Constructor.
      *
-     * @param AbstractConfiguration $config The configuration
+     * @param BaseConfiguration $config The configuration
      */
-    public function __construct(AbstractConfiguration $config)
+    public function __construct(BaseConfiguration $config)
     {
         $this->config = $config;
     }

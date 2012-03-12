@@ -7,7 +7,7 @@ namespace Biplane\YandexDirectBundle\Configuration;
  *
  * @author Denis Vasilev <yethee@biplane.ru>
  */
-class CertificateConfiguration extends AbstractConfiguration
+class CertificateConfiguration extends BaseConfiguration
 {
     private $localCert;
     private $passphrase;

@@ -4,7 +4,7 @@ namespace Biplane\YandexDirectBundle\Proxy\Client;
 
 use Biplane\YandexDirectBundle\Configuration\AuthTokenConfiguration;
 use Biplane\YandexDirectBundle\Configuration\CertificateConfiguration;
-use Biplane\YandexDirectBundle\Configuration\AbstractConfiguration;
+use Biplane\YandexDirectBundle\Configuration\BaseConfiguration;
 use Biplane\YandexDirectBundle\Converter\ConverterInterface;
 use Biplane\YandexDirectBundle\Exception\ApiException;
 use Biplane\YandexDirectBundle\Factory\ConverterFactory;
@@ -104,10 +104,10 @@ class SoapClient extends \SoapClient implements ClientInterface
     /**
      * Constructor.
      *
-     * @param AbstractConfiguration $configuration    The configuration
+     * @param BaseConfiguration $configuration    The configuration
      * @param ConverterFactory      $converterFactory A ConverterFactory instance
      */
-    public function __construct(AbstractConfiguration $configuration, ConverterFactory $converterFactory)
+    public function __construct(BaseConfiguration $configuration, ConverterFactory $converterFactory)
     {
         $this->converterFactory = $converterFactory;
 

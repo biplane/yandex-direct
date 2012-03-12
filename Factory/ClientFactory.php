@@ -6,7 +6,7 @@ use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Biplane\YandexDirectBundle\Proxy\Client\ClientInterface;
 use Biplane\YandexDirectBundle\Proxy\Client\JsonClient;
 use Biplane\YandexDirectBundle\Proxy\Client\SoapClient;
-use Biplane\YandexDirectBundle\Configuration\AbstractConfiguration;
+use Biplane\YandexDirectBundle\Configuration\BaseConfiguration;
 use Biplane\YandexDirectBundle\Configuration\AuthTokenConfiguration;
 use Biplane\YandexDirectBundle\Configuration\CertificateConfiguration;
 
@@ -27,7 +27,7 @@ class ClientFactory
 
     }
 
-    public function create($type, AbstractConfiguration $configuration)
+    public function create($type, BaseConfiguration $configuration)
     {
         $key = $type . spl_object_hash($configuration);
 

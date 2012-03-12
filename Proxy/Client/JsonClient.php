@@ -7,7 +7,7 @@ use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Biplane\YandexDirectBundle\Converter\ConverterInterface;
 use Biplane\YandexDirectBundle\Configuration\AuthTokenConfiguration;
 use Biplane\YandexDirectBundle\Configuration\CertificateConfiguration;
-use Biplane\YandexDirectBundle\Configuration\AbstractConfiguration;
+use Biplane\YandexDirectBundle\Configuration\BaseConfiguration;
 use Biplane\YandexDirectBundle\Factory\ConverterFactory;
 use Biplane\YandexDirectBundle\Exception\ApiException;
 
@@ -22,7 +22,7 @@ class JsonClient implements ClientInterface
     const ENDPOINT = 'https://soap.direct.yandex.ru/json-api/v4/';
 
     /**
-     * @var \Biplane\YandexDirectBundle\Configuration\AbstractConfiguration
+     * @var \Biplane\YandexDirectBundle\Configuration\BaseConfiguration
      */
     private $configuration;
     /**
@@ -43,11 +43,11 @@ class JsonClient implements ClientInterface
     /**
      * Constructor.
      *
-     * @param AbstractConfiguration $configuration    The configuration
+     * @param BaseConfiguration $configuration    The configuration
      * @param ConverterFactory      $converterFactory A ConverterFactory instance
      * @param JsonEncoder           $encoder          A JsonEncoder instance
      */
-    public function __construct(AbstractConfiguration $configuration, ConverterFactory $converterFactory, JsonEncoder $encoder)
+    public function __construct(BaseConfiguration $configuration, ConverterFactory $converterFactory, JsonEncoder $encoder)
     {
         $this->configuration = $configuration;
         $this->converterFactory = $converterFactory;

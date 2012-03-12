@@ -130,6 +130,11 @@ class ApiServiceFactoryTest extends \PHPUnit_Framework_TestCase
         $this->clientFactory = $this->getMock('Biplane\\YandexDirectBundle\\Factory\\ClientFactory');
     }
 
+    protected function tearDown()
+    {
+        unset($this->profileManager, $this->clientFactory);
+    }
+
     private function createProfileMock()
     {
         $mock = $this->getMockBuilder('Biplane\\YandexDirectBundle\\Profile\\Profile')
@@ -138,7 +143,7 @@ class ApiServiceFactoryTest extends \PHPUnit_Framework_TestCase
 
         $mock->expects($this->once())
             ->method('getConfiguration')
-            ->will($this->returnValue($this->getMockForAbstractClass('Biplane\\YandexDirectBundle\\Configuration\\AbstractConfiguration')));
+            ->will($this->returnValue($this->getMockForAbstractClass('Biplane\\YandexDirectBundle\\Configuration\\BaseConfiguration')));
 
         $mock->expects($this->once())
             ->method('getClientType')

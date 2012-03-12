@@ -16,7 +16,7 @@ class ProfileTest extends \PHPUnit_Framework_TestCase
      */
     public function testConstructorAndGetters($clientType)
     {
-        $configuration = $this->getMockForAbstractClass('Biplane\\YandexDirectBundle\\Configuration\\AbstractConfiguration');
+        $configuration = $this->getMockForAbstractClass('Biplane\\YandexDirectBundle\\Configuration\\BaseConfiguration');
         $profile = new Profile($clientType, $configuration);
 
         $this->assertEquals($clientType, $profile->getClientType());
@@ -28,7 +28,7 @@ class ProfileTest extends \PHPUnit_Framework_TestCase
      */
     public function testExceptionIsRaisedWhenInvalidClientType()
     {
-        new Profile('foo', $this->getMockForAbstractClass('Biplane\\YandexDirectBundle\\Configuration\\AbstractConfiguration'));
+        new Profile('foo', $this->getMockForAbstractClass('Biplane\\YandexDirectBundle\\Configuration\\BaseConfiguration'));
     }
 
     public function clientTypeProvider()

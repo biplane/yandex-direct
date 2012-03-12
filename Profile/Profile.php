@@ -2,7 +2,7 @@
 
 namespace Biplane\YandexDirectBundle\Profile;
 
-use Biplane\YandexDirectBundle\Configuration\AbstractConfiguration;
+use Biplane\YandexDirectBundle\Configuration\BaseConfiguration;
 
 /**
  * Profile
@@ -24,12 +24,14 @@ class Profile
     private $configuration;
 
     /**
-     * @param string $clientType
-     * @param AbstractConfiguration $configuration
+     * Constructor.
+     *
+     * @param string $clientType One of constants CLIENT_TYPE_SOAP or CLIENT_TYPE_JSON of this class
+     * @param BaseConfiguration $configuration An
      *
      * @throws \InvalidArgumentException
      */
-    public function __construct($clientType, AbstractConfiguration $configuration)
+    public function __construct($clientType, BaseConfiguration $configuration)
     {
         if (!in_array($clientType, self::$clientTypes)) {
             throw new \InvalidArgumentException(
@@ -49,7 +51,7 @@ class Profile
     }
 
     /**
-     * @return \Biplane\YandexDirectBundle\Configuration\AbstractConfiguration
+     * @return \Biplane\YandexDirectBundle\Configuration\BaseConfiguration
      */
     public function getConfiguration()
     {

@@ -7,7 +7,7 @@ namespace Biplane\YandexDirectBundle\Configuration;
  *
  * @author Denis Vasilev <yethee@biplane.ru>
  */
-class AuthTokenConfiguration extends AbstractConfiguration
+class AuthTokenConfiguration extends BaseConfiguration
 {
     /**
      * Логин пользователя, к данным которого приложение собирается получить доступ.
