@@ -20,8 +20,9 @@ class CertificateConfigurationTest extends \PHPUnit_Framework_TestCase
 
     public function testConstructorAndGetters()
     {
-        $configuration = new CertificateConfiguration($this->certFile, 'passphrase');
+        $configuration = new CertificateConfiguration('foo', $this->certFile, 'passphrase');
 
+        $this->assertEquals('foo', $configuration->getYandexLogin());
         $this->assertEquals($this->certFile, $configuration->getHttpsCertificate());
         $this->assertEquals('passphrase', $configuration->getPassphrase());
     }
@@ -30,6 +31,6 @@ class CertificateConfigurationTest extends \PHPUnit_Framework_TestCase
     {
         $this->setExpectedException('InvalidArgumentException');
 
-        new CertificateConfiguration('/invalid/path/to/file');
+        new CertificateConfiguration('foo', '/invalid/path/to/file');
     }
 }

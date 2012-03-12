@@ -31,14 +31,15 @@ class BiplaneYandexDirectExtensionTest extends \PHPUnit_Framework_TestCase
                         'foo' => array(
                             'type' => 'soap',
                             'cert' => array('local_cert' => 'path/to/local_cert'),
-                            'locale' => 'ru'
+                            'locale' => 'ru',
+                            'master_token' => 'MASTER-TOKEN',
                         ),
                         'bar' => array(
                             'type' => 'soap',
+                            'login' => 'yandex_login',
                             'token' => array(
-                                'login' => 'yandex_login',
                                 'token' => 'TOKEN',
-                                'application_id' => 'APPLICATION-ID'
+                                'application_id' => 'APPLICATION-ID',
                             )
                         )
                     )
@@ -64,8 +65,10 @@ class BiplaneYandexDirectExtensionTest extends \PHPUnit_Framework_TestCase
         $configDef
             ->setPublic(false)
             ->setClass('Biplane\\YandexDirectBundle\\Configuration\\CertificateConfiguration')
+            ->addArgument('foo')
             ->addArgument('path/to/local_cert')
-            ->addMethodCall('setLocale', array('ru'));
+            ->addMethodCall('setLocale', array('ru'))
+            ->addMethodCall('setMasterToken', array('MASTER-TOKEN'));
 
         $this->assertEquals(array('soap', $configDef), $profiles['foo']->getArguments());
 

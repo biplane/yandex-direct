@@ -26,8 +26,8 @@ class Profile
     /**
      * Constructor.
      *
-     * @param string $clientType One of constants CLIENT_TYPE_SOAP or CLIENT_TYPE_JSON of this class
-     * @param BaseConfiguration $configuration An
+     * @param string            $clientType    One of constants CLIENT_TYPE_SOAP or CLIENT_TYPE_JSON of this class
+     * @param BaseConfiguration $configuration The configuration
      *
      * @throws \InvalidArgumentException
      */

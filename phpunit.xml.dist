@@ -37,6 +37,7 @@
         <var name="PROXY_HOST" value="" />
         <var name="PROXY_PORT" value="" />
         <var name="YANDEX_LOCAL_CERT" value="" />
+        <var name="YANDEX_LOGIN" value="" />
     </php>
 
 </phpunit>

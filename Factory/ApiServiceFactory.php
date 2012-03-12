@@ -59,8 +59,7 @@ class ApiServiceFactory
         if ($profileName === null) {
             if ($this->defaultProfile !== null) {
                 $profileName = $this->defaultProfile;
-            }
-            else {
+            } else {
                 throw new \InvalidArgumentException(
                     'Profile name cannot be null, because the default profile is not defined.'
                 );

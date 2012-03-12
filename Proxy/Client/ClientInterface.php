@@ -12,12 +12,13 @@ interface ClientInterface
     /**
      * Invokes API method with specified name.
      *
-     * @param string $method A method name
-     * @param array  $params An array of parameters for API method
+     * @param string $method            A method name
+     * @param array  $params            An array of parameters for API method
+     * @param bool   $isFinancialMethod If true, when should be send the finance token
      *
      * @return mixed
      */
-    function invoke($method, array $params);
+    function invoke($method, array $params, $isFinancialMethod = false);
 
     /**
      * Gets a content of last request.

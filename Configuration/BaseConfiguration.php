@@ -16,6 +16,32 @@ abstract class BaseConfiguration
     protected $locale = self::LOCALE_EN;
     protected $proxyHost;
     protected $proxyPort;
+    protected $masterToken;
+    protected $yandexLogin;
+
+    /**
+     * Constructor.
+     *
+     * @param string $yandexLogin The yandex login
+     */
+    public function __construct($yandexLogin)
+    {
+        if (empty($yandexLogin)) {
+            throw new \InvalidArgumentException('Yandex login cannot be empty.');
+        }
+
+        $this->yandexLogin = (string)$yandexLogin;
+    }
+
+    /**
+     * Gets the yandex login.
+     *
+     * @return string
+     */
+    public function getYandexLogin()
+    {
+        return $this->yandexLogin;
+    }
 
     /**
      * Gets the locale.
@@ -88,5 +114,44 @@ abstract class BaseConfiguration
 
         $this->proxyHost = $host;
         $this->proxyPort = $port;
+    }
+
+    /**
+     * Gets the master token for financial operations.
+     *
+     * @return string
+     */
+    public function getMasterToken()
+    {
+        return $this->masterToken;
+    }
+
+    /**
+     * Sets the master token for financial operations.
+     *
+     * @param string $token
+     */
+    public function setMasterToken($token)
+    {
+        $this->masterToken = (string)$token ?: null;
+    }
+
+    /**
+     * Creates the finance token.
+     *
+     * @param string $methodName   The API method for which needed it token
+     * @param int    $operationNum A number of operation
+     *
+     * @return string
+     *
+     * @throws \LogicException When the master token is empty
+     */
+    public function createFinanceToken($methodName, $operationNum)
+    {
+        if ($this->masterToken === null) {
+            throw new \LogicException('Cannot be created the finance token when the master token is empty.');
+        }
+
+        return hash('sha256', $this->masterToken . $operationNum . $methodName . $this->yandexLogin);
     }
 }

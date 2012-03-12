@@ -119,17 +119,18 @@ class JsonClient implements ClientInterface
     /**
      * Invokes API method with specified name.
      *
-     * @param string $method A method name
-     * @param array  $params An array of parameters for API method
+     * @param string $method            A method name
+     * @param array  $params            An array of parameters for API method
+     * @param bool   $isFinancialMethod If true, when should be send the finance token
      *
      * @return mixed
      *
      * @throws ApiException
      * @throws \RuntimeException
      */
-    public function invoke($methodName, array $arguments)
+    public function invoke($methodName, array $params, $isFinancialMethod = false)
     {
-        $param = array_shift($arguments);
+        $param = array_shift($params);
 
         if (null !== $converter = $this->converterFactory->createForParameters($methodName)) {
             $param = $converter->toArray($param);

@@ -10,13 +10,6 @@ namespace Biplane\YandexDirectBundle\Configuration;
 class AuthTokenConfiguration extends BaseConfiguration
 {
     /**
-     * Логин пользователя, к данным которого приложение собирается получить доступ.
-     *
-     * @var string
-     */
-    private $login;
-
-    /**
      * Идентификатор приложения, присвоенный OAuth-сервером Яндекса
      *
      * @var string
@@ -30,12 +23,8 @@ class AuthTokenConfiguration extends BaseConfiguration
      */
     private $token;
     
-    public function __construct($login, $applicationId, $token)
+    public function __construct($yandexLogin, $applicationId, $token)
     {
-        if (empty($login)) {
-            throw new \InvalidArgumentException('Login cannot be empty.');
-        }
-
         if (empty($applicationId)) {
             throw new \InvalidArgumentException('Application ID cannot be empty.');
         }
@@ -44,7 +33,8 @@ class AuthTokenConfiguration extends BaseConfiguration
             throw new \InvalidArgumentException('Token cannot be empty');
         }
 
-        $this->login = $login;
+        parent::__construct($yandexLogin);
+
         $this->applicationId = $applicationId;
         $this->token = $token;
     }
@@ -52,11 +42,6 @@ class AuthTokenConfiguration extends BaseConfiguration
     public function getApplicationId()
     {
         return $this->applicationId;
-    }
-
-    public function getLogin()
-    {
-        return $this->login;
     }
 
     public function getToken()

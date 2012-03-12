@@ -143,7 +143,12 @@ class ApiServiceFactoryTest extends \PHPUnit_Framework_TestCase
 
         $mock->expects($this->once())
             ->method('getConfiguration')
-            ->will($this->returnValue($this->getMockForAbstractClass('Biplane\\YandexDirectBundle\\Configuration\\BaseConfiguration')));
+            ->will($this->returnValue(
+                $this->getMockForAbstractClass(
+                    'Biplane\\YandexDirectBundle\\Configuration\\BaseConfiguration',
+                    array('foo')
+                )
+            ));
 
         $mock->expects($this->once())
             ->method('getClientType')

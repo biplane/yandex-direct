@@ -49,6 +49,8 @@ class Configuration implements ConfigurationInterface
                                 ->end()
                             ->end()
                             ->booleanNode('is_agency')->defaultFalse()->end()
+                            ->scalarNode('login')->end()
+                            ->scalarNode('master_token')->end()
                         ->end()
                         ->append($this->getCertificateConfig())
                         ->append($this->getTokenConfig())
@@ -89,7 +91,6 @@ class Configuration implements ConfigurationInterface
         $node
             ->canBeUnset()
             ->children()
-                ->scalarNode('login')->isRequired()->cannotBeEmpty()->end()
                 ->scalarNode('application_id')->isRequired()->cannotBeEmpty()->end()
                 ->scalarNode('token')->isRequired()->cannotBeEmpty()->end()
             ->end();

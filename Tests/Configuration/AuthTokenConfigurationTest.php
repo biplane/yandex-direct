@@ -15,7 +15,7 @@ class AuthTokenConfigurationTest extends \PHPUnit_Framework_TestCase
     {
         $configuration = new AuthTokenConfiguration('login', 'applicationId', 'token');
 
-        $this->assertEquals('login', $configuration->getLogin());
+        $this->assertEquals('login', $configuration->getYandexLogin());
         $this->assertEquals('applicationId', $configuration->getApplicationId());
         $this->assertEquals('token', $configuration->getToken());
     }

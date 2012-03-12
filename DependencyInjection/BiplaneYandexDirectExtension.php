@@ -35,21 +35,29 @@ class BiplaneYandexDirectExtension extends Extension
         $profilesDefs = array();
 
         foreach ($config['profiles'] as $name => $options) {
+            if (empty($options['login'])) {
+                $options['login'] = $name;
+            }
+
             // конфигурация для клиента
             $configDef = new Definition();
             $configDef
                 ->setPublic(false)
                 ->addMethodCall('setLocale', array($options['locale']));
 
+            if (!empty($options['master_token'])) {
+                $configDef->addMethodCall('setMasterToken', array($options['master_token']));
+            }
+
             if (isset($options['cert'])) {
                 $configDef
                     ->setClass('Biplane\\YandexDirectBundle\\Configuration\\CertificateConfiguration')
+                    ->addArgument($options['login'])
                     ->addArgument($options['cert']['local_cert']);
-            }
-            else if (isset($options['token'])) {
+            } else if (isset($options['token'])) {
                 $configDef
                     ->setClass('Biplane\\YandexDirectBundle\\Configuration\\AuthTokenConfiguration')
-                    ->addArgument($options['token']['login'])
+                    ->addArgument($options['login'])
                     ->addArgument($options['token']['application_id'])
                     ->addArgument($options['token']['token']);
             }
@@ -61,11 +69,6 @@ class BiplaneYandexDirectExtension extends Extension
 
             $profilesDefs[$name] = $profileDef;
         }
-
-//        if (empty($config['default_profile']) && count($profilesDefs) > 0) {
-//            $profileNames = array_keys($profilesDefs);
-//            $config['default_profile'] = reset($profileNames);
-//        }
 
         if (!empty($config['default_profile'])) {
             $container->getDefinition('biplane_yandex_direct.api.factory')

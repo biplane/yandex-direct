@@ -664,7 +664,7 @@ class YandexApiService
      */
     public function transferMoney(Contract\TransferMoneyInfo $TransferMoneyInfo)
     {
-        return $this->client->invoke('TransferMoney', array($TransferMoneyInfo));
+        return $this->client->invoke('TransferMoney', array($TransferMoneyInfo), true);
     }
 
     /**
@@ -676,7 +676,7 @@ class YandexApiService
      */
     public function getCreditLimits()
     {
-        return $this->client->invoke('GetCreditLimits', array());
+        return $this->client->invoke('GetCreditLimits', array(), true);
     }
 
     /**
@@ -690,7 +690,7 @@ class YandexApiService
      */
     public function createInvoice(Contract\CreateInvoiceInfo $CreateInvoiceInfo)
     {
-        return $this->client->invoke('CreateInvoice', array($CreateInvoiceInfo));
+        return $this->client->invoke('CreateInvoice', array($CreateInvoiceInfo), true);
     }
 
     /**
@@ -704,6 +704,6 @@ class YandexApiService
      */
     public function payCampaigns(Contract\PayCampaignsInfo $PayCampaignsInfo)
     {
-        return $this->client->invoke('PayCampaigns', array($PayCampaignsInfo));
+        return $this->client->invoke('PayCampaigns', array($PayCampaignsInfo), true);
     }
 }

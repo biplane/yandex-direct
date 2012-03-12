@@ -14,11 +14,6 @@ class BaseConfigurationTest extends \PHPUnit_Framework_TestCase
      */
     private $configuration;
 
-    protected function setUp()
-    {
-        $this->configuration = $this->getMockForAbstractClass('Biplane\YandexDirectBundle\Configuration\BaseConfiguration');
-    }
-
     public function testSetProxySettings()
     {
         $this->configuration->setProxy('localhost', 8080);
@@ -36,7 +31,6 @@ class BaseConfigurationTest extends \PHPUnit_Framework_TestCase
 
     /**
      * @dataProvider localeProvider
-     * @param string $locale
      */
     public function testGetterAndSetterLocale($locale)
     {
@@ -52,6 +46,17 @@ class BaseConfigurationTest extends \PHPUnit_Framework_TestCase
         $this->configuration->setLocale('locale');
     }
 
+    public function testGetterAndSetterMasterToken()
+    {
+        $this->configuration->setMasterToken('foo');
+
+        $this->assertEquals('foo', $this->configuration->getMasterToken());
+
+        $this->configuration->setMasterToken(null);
+
+        $this->assertNull($this->configuration->getMasterToken());
+    }
+
     /**
      * @return array
      */
@@ -62,5 +67,18 @@ class BaseConfigurationTest extends \PHPUnit_Framework_TestCase
             array(BaseConfiguration::LOCALE_RU),
             array(BaseConfiguration::LOCALE_UA)
         );
+    }
+
+    protected function setUp()
+    {
+        $this->configuration = $this->getMockForAbstractClass(
+            'Biplane\YandexDirectBundle\Configuration\BaseConfiguration',
+            array('foo')
+        );
+    }
+
+    protected function tearDown()
+    {
+        unset($this->configuration);
     }
 }

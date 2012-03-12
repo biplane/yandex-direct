@@ -96,10 +96,8 @@ class SoapClient extends \SoapClient implements ClientInterface
      */
     private static $converterForMethods = array();
 
-    /**
-     * @var \Biplane\YandexDirectBundle\Proxy\Client\ConverterFactory
-     */
     private $converterFactory;
+    private $configuration;
 
     /**
      * Constructor.
@@ -109,6 +107,7 @@ class SoapClient extends \SoapClient implements ClientInterface
      */
     public function __construct(BaseConfiguration $configuration, ConverterFactory $converterFactory)
     {
+        $this->configuration = $configuration;
         $this->converterFactory = $converterFactory;
 
         $options = array(
@@ -126,7 +125,7 @@ class SoapClient extends \SoapClient implements ClientInterface
             $options['local_cert'] = $configuration->getHttpsCertificate();
             $options['passprase'] = $configuration->getPassphrase();
         } else if ($configuration instanceof AuthTokenConfiguration) {
-            $headers[] = new \SoapHeader(self::API_NS, 'login', $configuration->getLogin());
+            $headers[] = new \SoapHeader(self::API_NS, 'login', $configuration->getYandexLogin());
             $headers[] = new \SoapHeader(self::API_NS, 'token', $configuration->getToken());
             $headers[] = new \SoapHeader(self::API_NS, 'application_id', $configuration->getApplicationId());
         } else {
@@ -178,38 +177,47 @@ class SoapClient extends \SoapClient implements ClientInterface
     /**
      * Invokes API method with specified name.
      *
-     * @param string $method A method name
-     * @param array  $params An array of parameters for API method
+     * @param string $method            A method name
+     * @param array  $params            An array of parameters for API method
+     * @param bool   $isFinancialMethod If true, when should be send the finance token
      *
      * @return mixed
      */
-    public function invoke($methodName, array $arguments)
+    public function invoke($methodName, array $params, $isFinancialMethod = false)
     {
-        try {
-            $result = $this->__soapCall($methodName, $arguments);
+        $headers = array();
+        if ($isFinancialMethod) {
+            $operationNum = time();
+            $financeToken = $this->configuration->createFinanceToken($methodName, $operationNum);
 
-            // Если для метода нужно ручное преобразование,
-            // то пробуем создать конвертер через фабрику и выполнить преобразование
-            if (in_array($methodName, self::$converterForMethods)) {
-                if (null !== $converter = $this->converterFactory->createForResult($methodName)) {
-                    return $converter->toContract($result);
-                }
-            }
-
-            return $result;
+            $headers[] = new \SoapHeader(self::API_NS, 'finance_token', $financeToken);
+            $headers[] = new \SoapHeader(self::API_NS, 'operation_num', $operationNum);
         }
-        catch (\SoapFault $ex) {
+
+        try {
+            $result = $this->__soapCall($methodName, $params, array(), $headers);
+        } catch (\SoapFault $ex) {
             $code = 0;
             if (false !== $pos = strrpos($ex->faultcode, ':')) {
                 $code = substr($ex->faultcode, $pos+1);
             }
             $message = $ex->getMessage();
             if (!empty($ex->detail)) {
-                $message .= "\n" . $ex->detail;
+                $message .= "\nDetail: " . $ex->detail;
             }
 
             throw ApiException::create($message, $methodName, $code, $ex);
         }
+
+        // Если для метода нужно ручное преобразование,
+        // то пробуем создать конвертер через фабрику и выполнить преобразование
+        if (in_array($methodName, self::$converterForMethods)) {
+            if (null !== $converter = $this->converterFactory->createForResult($methodName)) {
+                return $converter->toContract($result);
+            }
+        }
+
+        return $result;
     }
 
     /**
