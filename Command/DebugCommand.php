@@ -29,6 +29,9 @@ class DebugCommand extends ContainerAwareCommand
             ->addOption('profile', null, InputOption::VALUE_OPTIONAL, 'The profile')
             ->addOption('id', null, InputOption::VALUE_OPTIONAL, 'The ID of entity, if needed for specified action')
             ->addOption('pid', null, InputOption::VALUE_OPTIONAL, 'The ID of parent entity, if needed for specified action')
+            ->addOption('ids', null, InputOption::VALUE_OPTIONAL, 'The ids of entities, separated by comma')
+            ->addOption('date', null, InputOption::VALUE_OPTIONAL, 'The date in format YYYY-MM-DD')
+            ->addOption('interval', null, InputOption::VALUE_OPTIONAL, 'The interval in days, used in combine with --date')
             ->setHelp(<<<EOF
 The <info>biplane:yandex_direct:debug</info> command make request to API
 and dump result to console.
@@ -46,6 +49,16 @@ and phrase ID (<info>--id</info> option)
 You can dump info for a campaign, by specified ID:
 
   <info>php app/console biplane:yandex_direct:debug campaign --id=2001911</info>
+
+You can dump info of stats for summary budgets of campaigns:
+
+  <info>php app/console biplane:yandex_direct:debug summary-stat --ids="1234,2367,2567"
+  <info>php app/console biplane:yandex_direct:debug summary-stat --ids="123,345" --date="2012-01-01"
+  <info>php app/console biplane:yandex_direct:debug summary-stat --ids="123,345" --date="2012-01-01" --interval=10
+
+You cand dump info for balance of campaigns:
+
+  <info>php app/console biplane:yandex_direct:debug balance --ids="1234,2367,2567"
 
 You can also optionally specify which profile use for connect to API with
 the <info>--profile</info> option:
@@ -78,6 +91,18 @@ EOF
                 break;
             case 'campaign':
                 $result = $this->getCampaign($serviceApi, $input->getOption('id'));
+                break;
+            case 'summary-stat':
+                $ids = $input->getOption('ids');
+                $ids = is_string($ids) ? explode(',', $ids) : array();
+
+                $result = $this->getSummaryStat($serviceApi, $ids, $input->getOption('date'), $input->getOption('interval'));
+                break;
+            case 'balance':
+                $ids = $input->getOption('ids');
+                $ids = is_string($ids) ? explode(',', $ids) : array();
+
+                $result = $serviceApi->getBalance($ids);
                 break;
             default:
                 $output->writeln(sprintf(
@@ -153,5 +178,29 @@ EOF
         }
 
         return null;
+    }
+
+    private function getSummaryStat(YandexApiService $api, array $ids, $date = null, $interval = null)
+    {
+        if (count($ids) == 0) {
+            throw new \InvalidArgumentException('Array of campaign IDs cannot be empty.');
+        }
+
+        $endDate = new \DateTime($date ?: 'yesterday');
+        $interval = (int)$interval ?: 7;
+
+        if ($interval < 1) {
+            throw new \InvalidArgumentException('Interval cannot be less than 1.');
+        }
+
+        $startDate = clone $endDate;
+        $startDate->sub(new \DateInterval('P' . $interval . 'D'));
+
+        $statRequest = new Contract\GetSummaryStatRequest();
+        $statRequest->setCampaignIDS($ids);
+        $statRequest->setStartDate($startDate->format('Y-m-d'));
+        $statRequest->setEndDate($endDate->format('Y-m-d'));
+
+        return $api->getSummaryStat($statRequest);
     }
 }
