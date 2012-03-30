@@ -96,6 +96,10 @@ class BannerInfo
      * @var string[]
      */
     protected $MinusKeywords;
+    /**
+     * @var string
+     */
+    protected $AutoMinusWords;
 
     /**
      * @return int
@@ -511,6 +515,26 @@ class BannerInfo
     public function setMinusKeywords(array $MinusKeywords)
     {
         $this->MinusKeywords = $MinusKeywords;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAutoMinusWords()
+    {
+        return $this->AutoMinusWords;
+    }
+
+    /**
+     * @param string $AutoMinusWords
+     *
+     * @return BannerInfo
+     */
+    public function setAutoMinusWords($AutoMinusWords)
+    {
+        $this->AutoMinusWords = $AutoMinusWords;
 
         return $this;
     }

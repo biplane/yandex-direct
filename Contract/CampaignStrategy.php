@@ -28,6 +28,10 @@ class CampaignStrategy
      * @var string
      */
     protected $StrategyName;
+    /**
+     * @var int
+     */
+    protected $GoalID;
 
     /**
      * @return float
@@ -120,6 +124,25 @@ class CampaignStrategy
     public function setStrategyName($StrategyName)
     {
         $this->StrategyName = $StrategyName;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getGoalID()
+    {
+        return $this->GoalID;
+    }
+
+    /**
+     * @param int $GoalID
+     * @return CampaignStrategy
+     */
+    public function setGoalID($GoalID)
+    {
+        $this->GoalID = $GoalID;
 
         return $this;
     }

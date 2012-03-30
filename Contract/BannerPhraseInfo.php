@@ -138,10 +138,6 @@ class BannerPhraseInfo
      * @var PhraseUserParams
      */
     protected $UserParams;
-    /**
-     * @var float
-     */
-    protected $Market;
 
     /**
      * @param string $phrase
@@ -723,25 +719,6 @@ class BannerPhraseInfo
     public function setUserParams(PhraseUserParams $UserParams)
     {
         $this->UserParams = $UserParams;
-
-        return $this;
-    }
-
-    /**
-     * @return float
-     */
-    public function getMarket()
-    {
-        return $this->Market;
-    }
-
-    /**
-     * @param float $value
-     * @return BannerPhraseInfo
-     */
-    public function setMarket($value)
-    {
-        $this->Market = (float)$value;
 
         return $this;
     }

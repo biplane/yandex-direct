@@ -20,6 +20,10 @@ class CampaignBalanceInfo
      * @var float
      */
     protected $Rest;
+    /**
+     * @var float
+     */
+    protected $SumAvailableForTransfer;
 
     /**
      * @return int
@@ -74,6 +78,25 @@ class CampaignBalanceInfo
     public function setRest($Rest)
     {
         $this->Rest = $Rest;
+
+        return $this;
+    }
+
+    /**
+     * @return float
+     */
+    public function getSumAvailableForTransfer()
+    {
+        return $this->SumAvailableForTransfer;
+    }
+
+    /**
+     * @param float $SumAvailableForTransfer
+     * @return CampaignBalanceInfo
+     */
+    public function setSumAvailableForTransfer($SumAvailableForTransfer)
+    {
+        $this->SumAvailableForTransfer = $SumAvailableForTransfer;
 
         return $this;
     }

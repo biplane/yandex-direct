@@ -28,6 +28,14 @@ class GetBannersInfo
      * @var string
      */
     protected $GetPhrases;
+    /**
+     * @var int
+     */
+    protected $Limit;
+    /**
+     * @var int
+     */
+    protected $Offset;
 
     public function __construct(array $campaignIds = array(), array $bannerIds = null, BannersFilterInfo $filter = null, $getPhrases = null)
     {
@@ -113,6 +121,44 @@ class GetBannersInfo
     public function setGetPhrases($GetPhrases)
     {
         $this->GetPhrases = $GetPhrases;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getLimit()
+    {
+        return $this->Limit;
+    }
+
+    /**
+     * @param int $Limit
+     * @return GetBannersInfo
+     */
+    public function setLimit($Limit)
+    {
+        $this->Limit = $Limit;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getOffset()
+    {
+        return $this->Offset;
+    }
+
+    /**
+     * @param int $Offset
+     * @return GetBannersInfo
+     */
+    public function setOffset($Offset)
+    {
+        $this->Offset = $Offset;
 
         return $this;
     }

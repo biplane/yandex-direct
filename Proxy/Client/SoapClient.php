@@ -17,7 +17,7 @@ use Biplane\YandexDirectBundle\Factory\ConverterFactory;
  */
 class SoapClient extends \SoapClient implements ClientInterface
 {
-    const ENDPOINT = 'http://soap.direct.yandex.ru/wsdl/v4/';
+    const ENDPOINT = 'http://soap.direct.yandex.ru/live/v4/wsdl/';
     const API_NS = 'API';
     const INVALID_NS = 'http://namespaces.soaplite.com/perl';
 
@@ -29,8 +29,13 @@ class SoapClient extends \SoapClient implements ClientInterface
         'CampaignIDSInfo' => 'Biplane\YandexDirectBundle\Contract\CampaignIDSInfo',
         'CampaignInfo' => 'Biplane\YandexDirectBundle\Contract\CampaignInfo',
         'CampaignStrategy' => 'Biplane\YandexDirectBundle\Contract\CampaignStrategy',
+        'CampaignContextStrategy' => 'Biplane\YandexDirectBundle\Contract\CampaignContextStrategy',
         'SmsNotificationInfo' => 'Biplane\YandexDirectBundle\Contract\SmsNotificationInfo',
         'EmailNotificationInfo' => 'Biplane\YandexDirectBundle\Contract\EmailNotificationInfo',
+        'EventsLogItem' => 'Biplane\YandexDirectBundle\Contract\EventsLogItem',
+        'EventsLogItemAttributes' => 'Biplane\YandexDirectBundle\Contract\EventsLogItemAttributes',
+        'GetEventsLogFilter' => 'Biplane\YandexDirectBundle\Contract\GetEventsLogFilter',
+        'GetEventsLogRequest' => 'Biplane\YandexDirectBundle\Contract\GetEventsLogRequest',
         'CampaignBalanceInfo' => 'Biplane\YandexDirectBundle\Contract\CampaignBalanceInfo',
         'ShortCampaignInfo' => 'Biplane\YandexDirectBundle\Contract\ShortCampaignInfo',
         'ClientsUnitInfo' => 'Biplane\YandexDirectBundle\Contract\ClientsUnitInfo',
@@ -53,7 +58,6 @@ class SoapClient extends \SoapClient implements ClientInterface
         'PayCampElement' => 'Biplane\YandexDirectBundle\Contract\PayCampElement',
         'CreateInvoiceInfo' => 'Biplane\YandexDirectBundle\Contract\CreateInvoiceInfo',
         'PayCampaignsInfo' => 'Biplane\YandexDirectBundle\Contract\PayCampaignsInfo',
-        'PayCampaignsResponse' => 'Biplane\YandexDirectBundle\Contract\PayCampaignsResponse',
         'BannerInfo' => 'Biplane\YandexDirectBundle\Contract\BannerInfo',
         'Sitelink' => 'Biplane\YandexDirectBundle\Contract\Sitelink',
         'RejectReason' => 'Biplane\YandexDirectBundle\Contract\RejectReason',

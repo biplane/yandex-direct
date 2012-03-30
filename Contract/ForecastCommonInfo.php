@@ -9,7 +9,7 @@ namespace Biplane\YandexDirectBundle\Contract;
 class ForecastCommonInfo
 {
     /**
-     * @var int
+     * @var string
      */
     protected $Geo;
     /**
@@ -42,7 +42,7 @@ class ForecastCommonInfo
     protected $PremiumMin;
 
     /**
-     * @return int
+     * @return string
      */
     public function getGeo()
     {
@@ -50,7 +50,7 @@ class ForecastCommonInfo
     }
 
     /**
-     * @param int $Geo
+     * @param string $Geo
      * @return ForecastCommonInfo
      */
     public function setGeo($Geo)

@@ -16,6 +16,10 @@ class TimeTargetItem
      * @var int[]
      */
     protected $Days;
+    /**
+     * @var int[]
+     */
+    protected $BidCoefs;
 
     /**
      * @return int[]
@@ -51,6 +55,25 @@ class TimeTargetItem
     public function setDays(array $Days)
     {
         $this->Days = $Days;
+
+        return $this;
+    }
+
+    /**
+     * @return int[]
+     */
+    public function getBidCoefs()
+    {
+        return $this->BidCoefs;
+    }
+
+    /**
+     * @param int[] $BidCoefs
+     * @return TimeTargetItem
+     */
+    public function setBidCoefs(array $BidCoefs)
+    {
+        $this->BidCoefs = $BidCoefs;
 
         return $this;
     }

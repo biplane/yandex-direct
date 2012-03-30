@@ -6,7 +6,7 @@ use Biplane\YandexDirectBundle\Contract;
 use Biplane\YandexDirectBundle\Exception\ApiException;
 
 /**
- * @version v4
+ * @version v4.live
  *
  * @codeCoverageIgnore
  */
@@ -705,5 +705,19 @@ class YandexApiService
     public function payCampaigns(Contract\PayCampaignsInfo $PayCampaignsInfo)
     {
         return $this->client->invoke('PayCampaigns', array($PayCampaignsInfo), true);
+    }
+
+    /**
+     * Gets the entries from the event log.
+     *
+     * @param Contract\GetEventsLogRequest $params
+     *
+     * @return Contract\EventsLogItem[]
+     *
+     * @since v4.live
+     */
+    public function getEventsLog(Contract\GetEventsLogRequest $params)
+    {
+        return $this->client->invoke('GetEventsLog', array($params));
     }
 }

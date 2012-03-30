@@ -25,6 +25,14 @@ class ShortCampaignInfo
      */
     protected $StartDate;
     /**
+     * @var string
+     */
+    protected $StrategyName;
+    /**
+     * @var string
+     */
+    protected $ContextStrategyName;
+    /**
      * @var float
      */
     protected $Sum;
@@ -149,6 +157,44 @@ class ShortCampaignInfo
     public function setStartDate($StartDate)
     {
         $this->StartDate = $StartDate;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getStrategyName()
+    {
+        return $this->StrategyName;
+    }
+
+    /**
+     * @param string $StrategyName
+     * @return ShortCampaignInfo
+     */
+    public function setStrategyName($StrategyName)
+    {
+        $this->StrategyName = $StrategyName;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getContextStrategyName()
+    {
+        return $this->ContextStrategyName;
+    }
+
+    /**
+     * @param string $ContextStrategyName
+     * @return ShortCampaignInfo
+     */
+    public function setContextStrategyName($ContextStrategyName)
+    {
+        $this->ContextStrategyName = $ContextStrategyName;
 
         return $this;
     }

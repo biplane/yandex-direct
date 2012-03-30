@@ -16,6 +16,14 @@ class GetCampaignsInfo
      * @var CampaignsFilterInfo
      */
     protected $Filter;
+    /**
+     * @var int
+     */
+    protected $Limit;
+    /**
+     * @var int
+     */
+    protected $Offset;
 
     /**
      * @return string[]
@@ -51,6 +59,44 @@ class GetCampaignsInfo
     public function setFilter(CampaignsFilterInfo $Filter)
     {
         $this->Filter = $Filter;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getLimit()
+    {
+        return $this->Limit;
+    }
+
+    /**
+     * @param int $Limit
+     * @return GetCampaignsInfo
+     */
+    public function setLimit($Limit)
+    {
+        $this->Limit = $Limit;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getOffset()
+    {
+        return $this->Offset;
+    }
+
+    /**
+     * @param int $Offset
+     * @return GetCampaignsInfo
+     */
+    public function setOffset($Offset)
+    {
+        $this->Offset = $Offset;
 
         return $this;
     }

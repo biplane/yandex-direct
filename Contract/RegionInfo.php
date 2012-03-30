@@ -20,6 +20,10 @@ class RegionInfo
      * @var string
      */
     protected $RegionName;
+    /**
+     * @var string
+     */
+    protected $RegionType;
 
     /**
      * @return int
@@ -74,6 +78,25 @@ class RegionInfo
     public function setRegionName($RegionName)
     {
         $this->RegionName = $RegionName;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getRegionType()
+    {
+        return $this->RegionType;
+    }
+
+    /**
+     * @param string $RegionType
+     * @return RegionInfo
+     */
+    public function setRegionType($RegionType)
+    {
+        $this->RegionType = $RegionType;
 
         return $this;
     }

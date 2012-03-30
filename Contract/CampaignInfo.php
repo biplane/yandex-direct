@@ -49,6 +49,10 @@ class CampaignInfo
      */
     protected $Strategy;
     /**
+     * @var CampaignContextStrategy
+     */
+    protected $ContextStrategy;
+    /**
      * @var string
      */
     protected $TradeType;
@@ -343,6 +347,25 @@ class CampaignInfo
     public function setStrategy(CampaignStrategy $Strategy)
     {
         $this->Strategy = $Strategy;
+
+        return $this;
+    }
+
+    /**
+     * @return CampaignContextStrategy
+     */
+    public function getContextStrategy()
+    {
+        return $this->ContextStrategy;
+    }
+
+    /**
+     * @param CampaignContextStrategy $ContextStrategy
+     * @return CampaignInfo
+     */
+    public function setContextStrategy(CampaignContextStrategy $ContextStrategy)
+    {
+        $this->ContextStrategy = $ContextStrategy;
 
         return $this;
     }
