@@ -94,12 +94,6 @@ class SoapClient extends \SoapClient implements ClientInterface
         'CreditLimitsItem' => 'Biplane\YandexDirectBundle\Contract\CreditLimitsItem'
     );
 
-    /**
-     * Список методов API, для которых нужно ручное преобразование.
-     * @var array
-     */
-    private static $converterForMethods = array();
-
     private $converterFactory;
     private $configuration;
 
@@ -211,14 +205,6 @@ class SoapClient extends \SoapClient implements ClientInterface
             }
 
             throw ApiException::create($this, $methodName, $message, $code, $ex);
-        }
-
-        // Если для метода нужно ручное преобразование,
-        // то пробуем создать конвертер через фабрику и выполнить преобразование
-        if (in_array($methodName, self::$converterForMethods)) {
-            if (null !== $converter = $this->converterFactory->createForResult($methodName)) {
-                return $converter->toContract($result);
-            }
         }
 
         return $result;
