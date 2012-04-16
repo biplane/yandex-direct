@@ -29,6 +29,16 @@ class ApiServiceFactory
     }
 
     /**
+     * Gets the name of default profile.
+     *
+     * @return string
+     */
+    public function getDefaultProfile()
+    {
+        return $this->defaultProfile;
+    }
+
+    /**
      * Sets the default profile name.
      *
      * @param string $profileName A profile name
