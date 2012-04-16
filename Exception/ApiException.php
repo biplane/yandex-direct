@@ -35,6 +35,15 @@ class ApiException extends \RuntimeException
     const INVALID_FINANCE_NUMBER = 351;
 
     /**
+     * Логин используется на Яндексе другим пользователем.
+     */
+    const LOGIN_DUPLICATE = 252;
+    /**
+     * Указанный логин занят.
+     */
+    const LOGIN_CREATING_ERROR = 253;
+
+    /**
      * Внутренняя ошибка сервера
      */
     const INTERNAL_ERROR = 500;
