@@ -52,13 +52,13 @@ You can dump info for a campaign, by specified ID:
 
 You can dump info of stats for summary budgets of campaigns:
 
-  <info>php app/console biplane:yandex_direct:debug summary-stat --ids="1234,2367,2567"
-  <info>php app/console biplane:yandex_direct:debug summary-stat --ids="123,345" --date="2012-01-01"
-  <info>php app/console biplane:yandex_direct:debug summary-stat --ids="123,345" --date="2012-01-01" --interval=10
+  <info>php app/console biplane:yandex_direct:debug summary-stat --ids="1234,2367,2567"</info>
+  <info>php app/console biplane:yandex_direct:debug summary-stat --ids="123,345" --date="2012-01-01"</info>
+  <info>php app/console biplane:yandex_direct:debug summary-stat --ids="123,345" --date="2012-01-01" --interval=10</info>
 
 You cand dump info for balance of campaigns:
 
-  <info>php app/console biplane:yandex_direct:debug balance --ids="1234,2367,2567"
+  <info>php app/console biplane:yandex_direct:debug balance --ids="1234,2367,2567"</info>
 
 You can also optionally specify which profile use for connect to API with
 the <info>--profile</info> option:
