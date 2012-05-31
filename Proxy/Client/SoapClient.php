@@ -199,12 +199,8 @@ class SoapClient extends \SoapClient implements ClientInterface
             if (false !== $pos = strrpos($ex->faultcode, ':')) {
                 $code = substr($ex->faultcode, $pos+1);
             }
-            $message = $ex->getMessage();
-            if (!empty($ex->detail)) {
-                $message .= "\nDetail: " . $ex->detail;
-            }
 
-            throw ApiException::create($this, $methodName, $message, $code, $ex);
+            throw ApiException::create($this, $methodName, $ex->getMessage(), $code, $ex->detail, $ex);
         }
 
         return $result;

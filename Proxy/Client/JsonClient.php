@@ -152,15 +152,10 @@ class JsonClient implements ClientInterface
         $jsonData = $this->encoder->decode($response->getContent(), 'json');
 
         if (isset($jsonData['error_code'])) {
-            $message = $jsonData['error_str'];
-
-            if (!empty($jsonData['error_detail'])) {
-                $message .= "\n" . $jsonData['error_detail'];
-            }
-
-            throw ApiException::create($this, $methodName, $message, $jsonData['error_code']);
-        }
-        else if (!is_array($jsonData) || !isset($jsonData['data'])) {
+            throw ApiException::create(
+                $this, $methodName, $jsonData['error_str'], $jsonData['error_code'], $jsonData['error_detail']
+            );
+        } else if (!is_array($jsonData) || !isset($jsonData['data'])) {
             throw new \RuntimeException("Invalid response.\n" . $jsonData);
         }
 

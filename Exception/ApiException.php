@@ -63,6 +63,7 @@ class ApiException extends \RuntimeException
     protected $client;
 
     private $apiMethod;
+    private $detailMessage;
 
     /**
      * Constructor.
@@ -84,17 +85,25 @@ class ApiException extends \RuntimeException
     /**
      * Creates a new instance of ApiException class.
      *
-     * @param ClientInterface $clien     A ClientInterface instance
-     * @param string          $apiMethod The name of API method
-     * @param string          $message   The message
-     * @param int             $code      The number of code exception
-     * @param \Exception|null $previous  The previous exception
+     * @param ClientInterface $clien         A ClientInterface instance
+     * @param string          $apiMethod     The name of API method
+     * @param string          $message       The message
+     * @param int             $code          The number of code exception
+     * @param string|null     $detailMessage The detail message
+     * @param \Exception|null $previous      The previous exception
      *
      * @return ApiException
      */
-    public static function create(ClientInterface $client, $apiMethod, $message, $code, \Exception $previous = null)
+    public static function create(ClientInterface $client, $apiMethod, $message, $code, $detailMessage = null, \Exception $previous = null)
     {
-        return new static($message, $code, $previous, $apiMethod, $client);
+        if (!empty($detailMessage)) {
+            $message .= "\nDetail: " . $detailMessage;
+        }
+
+        $exception = new static($message, $code, $previous, $apiMethod, $client);
+        $exception->setDetailMessage($detailMessage);
+
+        return $exception;
     }
 
     /**
@@ -133,5 +142,25 @@ class ApiException extends \RuntimeException
         }
 
         return null;
+    }
+
+    /**
+     * Gets the detail message.
+     *
+     * @return string
+     */
+    public function getDetailMessage()
+    {
+        return $this->detailMessage;
+    }
+
+    /**
+     * Sets the detail message.
+     *
+     * @param string $message
+     */
+    public function setDetailMessage($message)
+    {
+        $this->detailMessage = $message;
     }
 }
