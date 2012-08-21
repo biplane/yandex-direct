@@ -60,6 +60,19 @@ class ApiException extends \RuntimeException
      */
     const ACCESS_DENIED = 510;
 
+    /**
+     * Неверно указан тип кампании
+     */
+    const INVALID_CAMPAIGN_TYPE = 29;
+    /**
+     * Неверно указаны параметры кампании
+     */
+    const INVALID_CAMPAIGN_INFO = 111;
+    /**
+     * Недостаточно баллов
+     */
+    const DEFICIENCY_POINTS = 152;
+
     protected $client;
 
     private $apiMethod;
