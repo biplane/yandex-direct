@@ -13,11 +13,11 @@ class NewReportInfo
      */
     protected $CampaignID;
     /**
-     * @var date
+     * @var string
      */
     protected $StartDate;
     /**
-     * @var date
+     * @var string
      */
     protected $EndDate;
     /**
@@ -73,7 +73,7 @@ class NewReportInfo
     }
 
     /**
-     * @return date
+     * @return string
      */
     public function getStartDate()
     {
@@ -81,7 +81,7 @@ class NewReportInfo
     }
 
     /**
-     * @param date $StartDate
+     * @param string $StartDate
      * @return NewReportInfo
      */
     public function setStartDate($StartDate)
@@ -92,7 +92,7 @@ class NewReportInfo
     }
 
     /**
-     * @return date
+     * @return string
      */
     public function getEndDate()
     {
@@ -100,7 +100,7 @@ class NewReportInfo
     }
 
     /**
-     * @param date $EndDate
+     * @param string $EndDate
      * @return NewReportInfo
      */
     public function setEndDate($EndDate)
