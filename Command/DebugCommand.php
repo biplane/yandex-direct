@@ -104,6 +104,9 @@ EOF
 
                 $result = $serviceApi->getBalance($ids);
                 break;
+            case 'report-list':
+                $result = $serviceApi->getReportList();
+                break;
             default:
                 $output->writeln(sprintf(
                     '<error>Invalid action "%s". Allowed: banner, phrase, campaign</error>',
