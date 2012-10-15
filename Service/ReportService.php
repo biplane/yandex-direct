@@ -83,6 +83,7 @@ class ReportService
      * @return null|string
      *
      * @throws \RuntimeException
+     * @throws \Exception
      */
     public function getReportFromContract(Contract\NewReportInfo $contract)
     {
@@ -98,11 +99,18 @@ class ReportService
             $reportInfo = $this->getReportInfo($reportId);
         } while ($reportInfo->getStatusReport() === Contract\ReportInfo::STATUS_PENDING);
 
-        // скачиваем
-        $content = $this->downloader->download($reportInfo->getUrl());
+        try {
+            // скачиваем
+            $content = $this->downloader->download($reportInfo->getUrl());
 
-        // удаляем
-        $this->apiService->deleteReport($reportId);
+            // удаляем
+            $this->apiService->deleteReport($reportId);
+        } catch (\Exception $ex) {
+            // удаляем
+            $this->apiService->deleteReport($reportId);
+
+            throw $ex;
+        }
 
         return $content;
     }
