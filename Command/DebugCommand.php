@@ -109,7 +109,7 @@ EOF
                 break;
             default:
                 $output->writeln(sprintf(
-                    '<error>Invalid action "%s". Allowed: banner, phrase, campaign</error>',
+                    '<error>Invalid action "%s". Allowed: banner, phrase, campaign, summary-stat, balance, report-list</error>',
                     $input->getArgument('action')
                 ));
 
