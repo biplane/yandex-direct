@@ -40,26 +40,35 @@ class ReportService
      *
      * @return null|string
      */
-    public function getReport($campaignId, \DateTime $startDate, \DateTime $endDate, array $groupByColumns = array(), array $filter = array())
+    public function getReport(
+        $campaignId, \DateTime $startDate, \DateTime $endDate,
+        array $groupByColumns = array(), array $filter = array()
+    )
     {
         $newReportInfo = new Contract\NewReportInfo();
         $newReportInfo->setCampaignID($campaignId)
             ->setStartDate($startDate->format('Y-m-d'))
             ->setEndDate($endDate->format('Y-m-d'));
+
         if (count($groupByColumns) && $this->checkGroupByColumns($groupByColumns)) {
             $newReportInfo->setGroupByColumns($groupByColumns);
         }
+
         if (count($filter)) {
             $filterInfo = new Contract\NewReportFilterInfo();
+
             if (isset($filter['Banner']) && is_array($filter['Banner']) && count($filter['Banner'])) {
                 $filterInfo->setBanner($filter['Banner']);
             }
+
             if (isset($filter['Geo']) && is_array($filter['Geo']) && count($filter['Geo'])) {
                 $filterInfo->setGeo($filter['Geo']);
             }
+
             if (isset($filter['Phrase']) && is_array($filter['Phrase']) && count($filter['Phrase'])) {
                 $filterInfo->setPhrase($filter['Phrase']);
             }
+
             $newReportInfo->setFilter($filterInfo);
         }
 
@@ -72,20 +81,26 @@ class ReportService
      * @param Contract\NewReportInfo $contract
      *
      * @return null|string
+     *
+     * @throws \RuntimeException
      */
     public function getReportFromContract(Contract\NewReportInfo $contract)
     {
         if ($this->isFullQueue()) {
             throw new \RuntimeException(sprintf('Unable to create new report. Maximum number of "%d" reports reached.', self::MAX_REPORTS));
         }
+
         // создаем
         $reportId = $this->apiService->createNewReport($contract);
+
         do {
             sleep(15);
             $reportInfo = $this->getReportInfo($reportId);
         } while ($reportInfo->getStatusReport() === Contract\ReportInfo::STATUS_PENDING);
+
         // скачиваем
         $content = $this->downloader->download($reportInfo->getUrl());
+
         // удаляем
         $this->apiService->deleteReport($reportId);
 
@@ -135,6 +150,7 @@ class ReportService
     private function checkGroupByColumns(array $columns)
     {
         $valid = array('clBanner', 'clDate', 'clPage', 'clGeo', 'clPhrase', 'clStatGoals', 'clPositionType');
+
         foreach ($columns as $column) {
             if (!in_array($column, $valid)) {
                 throw new \InvalidArgumentException(sprintf('Undefined group column "%s"', $column));
