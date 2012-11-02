@@ -101,7 +101,9 @@ class SoapClient extends \SoapClient implements ClientInterface
      * Constructor.
      *
      * @param BaseConfiguration $configuration    The configuration
-     * @param ConverterFactory      $converterFactory A ConverterFactory instance
+     * @param ConverterFactory  $converterFactory A ConverterFactory instance
+     *
+     * @throws \InvalidArgumentException
      */
     public function __construct(BaseConfiguration $configuration, ConverterFactory $converterFactory)
     {
@@ -175,11 +177,13 @@ class SoapClient extends \SoapClient implements ClientInterface
     /**
      * Invokes API method with specified name.
      *
-     * @param string $method            A method name
+     * @param string $methodName        A method name
      * @param array  $params            An array of parameters for API method
      * @param bool   $isFinancialMethod If true, when should be send the finance token
      *
      * @return mixed
+     *
+     * @throws ApiException
      */
     public function invoke($methodName, array $params, $isFinancialMethod = false)
     {
