@@ -77,9 +77,19 @@ class ApiException extends \RuntimeException
     const INVALID_CAMPAIGN_INFO = 111;
 
     /**
+     * Неверный BannerID.
+     */
+    const INVALID_BANNER_ID = 23;
+
+    /**
      * Недостаточно баллов.
      */
     const DEFICIENCY_POINTS = 152;
+
+    /**
+     * Параметры запроса указаны неверно.
+     */
+    const INCORRECT_PARAMETERS = 71;
 
     protected $client;
 
