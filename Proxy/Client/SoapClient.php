@@ -219,7 +219,7 @@ class SoapClient extends \SoapClient implements ClientInterface
      */
     public function getLastResponse()
     {
-        return $this->__getLastResponse();
+        return $this->__getLastResponseHeaders() . "\n\n" . $this->__getLastResponse();
     }
 
     /**
@@ -229,6 +229,6 @@ class SoapClient extends \SoapClient implements ClientInterface
      */
     public function getLastRequest()
     {
-        return $this->__getLastRequest();
+        return $this->__getLastRequestHeaders() . "\n\n" . $this->__getLastRequest();
     }
 }
