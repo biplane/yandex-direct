@@ -17,20 +17,22 @@ class ApiException extends \RuntimeException
     const CAMPAIGN_STATS_NOT_FOUND = 2;
 
     /**
-     * Ошибка авторизации
+     * Ошибка авторизации.
      */
     const AUTHORIZATION_ERROR = 53;
+
     /**
-     * Недостаточно прав
+     * Недостаточно прав.
      */
     const INSUFFICIENT_PRIVILEGES = 54;
 
     /**
-     * Неверный токен для финансовых операций
+     * Неверный токен для финансовых операций.
      */
     const INVALID_FINANCE_TOKEN = 350;
+
     /**
-     * Неверный номер финансовой операции
+     * Неверный номер финансовой операции.
      */
     const INVALID_FINANCE_NUMBER = 351;
 
@@ -38,38 +40,44 @@ class ApiException extends \RuntimeException
      * Логин используется на Яндексе другим пользователем.
      */
     const LOGIN_DUPLICATE = 252;
+
     /**
      * Указанный логин занят.
      */
     const LOGIN_CREATING_ERROR = 253;
 
     /**
-     * Внутренняя ошибка сервера
+     * Внутренняя ошибка сервера.
      */
     const INTERNAL_ERROR = 500;
+
     /**
-     * Неверный запрос
+     * Неверный запрос.
      */
     const BAD_REQUEST = 501;
+
     /**
-     * Превышен лимит одновременных запросов
+     * Превышен лимит одновременных запросов.
      */
     const EXCEEDED_LIMIT_CONCURRENT_REQUESTS = 506;
+
     /**
-     * Доступ заблокирован
+     * Доступ заблокирован.
      */
     const ACCESS_DENIED = 510;
 
     /**
-     * Неверно указан тип кампании
+     * Неверно указан тип кампании.
      */
     const INVALID_CAMPAIGN_TYPE = 29;
+
     /**
-     * Неверно указаны параметры кампании
+     * Неверно указаны параметры кампании.
      */
     const INVALID_CAMPAIGN_INFO = 111;
+
     /**
-     * Недостаточно баллов
+     * Недостаточно баллов.
      */
     const DEFICIENCY_POINTS = 152;
 
@@ -85,9 +93,11 @@ class ApiException extends \RuntimeException
      * @param int             $code      The number of code exception
      * @param \Exception|null $previous  The previous exception
      * @param string          $apiMethod The name of API method
-     * @param ClientInterface $clien     A ClientInterface instance
+     * @param ClientInterface $client    A ClientInterface instance
      */
-    public function __construct($message, $code = 0, \Exception $previous = null, $apiMethod = null, ClientInterface $client = null)
+    public function __construct(
+        $message, $code = 0, \Exception $previous = null, $apiMethod = null, ClientInterface $client = null
+    )
     {
         parent::__construct($message, (int)$code, $previous);
 
@@ -98,7 +108,7 @@ class ApiException extends \RuntimeException
     /**
      * Creates a new instance of ApiException class.
      *
-     * @param ClientInterface $clien         A ClientInterface instance
+     * @param ClientInterface $client        A ClientInterface instance
      * @param string          $apiMethod     The name of API method
      * @param string          $message       The message
      * @param int             $code          The number of code exception
@@ -107,7 +117,9 @@ class ApiException extends \RuntimeException
      *
      * @return ApiException
      */
-    public static function create(ClientInterface $client, $apiMethod, $message, $code, $detailMessage = null, \Exception $previous = null)
+    public static function create(
+        ClientInterface $client, $apiMethod, $message, $code, $detailMessage = null, \Exception $previous = null
+    )
     {
         if (!empty($detailMessage)) {
             $message .= "\nDetail: " . $detailMessage;
