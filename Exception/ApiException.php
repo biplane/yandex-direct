@@ -82,6 +82,16 @@ class ApiException extends \RuntimeException
     const INVALID_BANNER_ID = 23;
 
     /**
+     * Неверно задан параметр BannerID.
+     */
+    const INVALID_BANNER = 27;
+
+    /**
+     * Неверно задан параметр PhraseID.
+     */
+    const INVALID_PHRASE_ID = 28;
+
+    /**
      * Недостаточно баллов.
      */
     const DEFICIENCY_POINTS = 152;
