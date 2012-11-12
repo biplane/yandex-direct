@@ -17,6 +17,26 @@ class ApiException extends \RuntimeException
     const CAMPAIGN_STATS_NOT_FOUND = 2;
 
     /**
+     * Неверный BannerID.
+     */
+    const INVALID_BANNER_ID = 23;
+
+    /**
+     * Неверно задан параметр BannerID.
+     */
+    const INVALID_BANNER = 27;
+
+    /**
+     * Неверно задан параметр PhraseID.
+     */
+    const INVALID_PHRASE_ID = 28;
+
+    /**
+     * Неверно указан тип кампании.
+     */
+    const INVALID_CAMPAIGN_TYPE = 29;
+
+    /**
      * Ошибка авторизации.
      */
     const AUTHORIZATION_ERROR = 53;
@@ -27,14 +47,54 @@ class ApiException extends \RuntimeException
     const INSUFFICIENT_PRIVILEGES = 54;
 
     /**
-     * Неверный токен для финансовых операций.
+     * Параметры запроса указаны неверно.
      */
-    const INVALID_FINANCE_TOKEN = 350;
+    const INCORRECT_PARAMETERS = 71;
 
     /**
-     * Неверный номер финансовой операции.
+     * Неверно указаны параметры кампании.
      */
-    const INVALID_FINANCE_NUMBER = 351;
+    const INVALID_CAMPAIGN_INFO = 111;
+
+    /**
+     * Неправильно описана структура BannerInfo.
+     */
+    const INVALID_BANNER_INFO = 151;
+
+    /**
+     * Недостаточно баллов.
+     */
+    const DEFICIENCY_POINTS = 152;
+
+    /**
+     * Превышен лимит баннеров в запросе.
+     */
+    const OVERFLOW_BANNERS = 153;
+
+    /**
+     * Структура PointOnMap заполнена неверно.
+     */
+    const INVALID_POINTONMAP_STRUCT = 154;
+
+    /**
+     * Запрещено менять ContextPrice для активных на поиске фраз.
+     */
+    const FORBIDDEN_CHANGE_CONTEXT_PRICE = 191;
+
+    /**
+     * Неверно указаны минус-слова.
+     */
+    const INVALID_MINUS_WORDS = 192;
+
+    /**
+     * Неверно указана цена.
+     */
+    const INVALID_PRICE = 242;
+
+    /**
+     * Неверно указано значение поля Autobroker.
+     */
+    const INVALID_AUTOBROKER_STATE = 243;
 
     /**
      * Логин используется на Яндексе другим пользователем.
@@ -45,6 +105,16 @@ class ApiException extends \RuntimeException
      * Указанный логин занят.
      */
     const LOGIN_CREATING_ERROR = 253;
+
+    /**
+     * Неверный токен для финансовых операций.
+     */
+    const INVALID_FINANCE_TOKEN = 350;
+
+    /**
+     * Неверный номер финансовой операции.
+     */
+    const INVALID_FINANCE_NUMBER = 351;
 
     /**
      * Внутренняя ошибка сервера.
@@ -65,41 +135,6 @@ class ApiException extends \RuntimeException
      * Доступ заблокирован.
      */
     const ACCESS_DENIED = 510;
-
-    /**
-     * Неверно указан тип кампании.
-     */
-    const INVALID_CAMPAIGN_TYPE = 29;
-
-    /**
-     * Неверно указаны параметры кампании.
-     */
-    const INVALID_CAMPAIGN_INFO = 111;
-
-    /**
-     * Неверный BannerID.
-     */
-    const INVALID_BANNER_ID = 23;
-
-    /**
-     * Неверно задан параметр BannerID.
-     */
-    const INVALID_BANNER = 27;
-
-    /**
-     * Неверно задан параметр PhraseID.
-     */
-    const INVALID_PHRASE_ID = 28;
-
-    /**
-     * Недостаточно баллов.
-     */
-    const DEFICIENCY_POINTS = 152;
-
-    /**
-     * Параметры запроса указаны неверно.
-     */
-    const INCORRECT_PARAMETERS = 71;
 
     protected $client;
 
