@@ -77,6 +77,11 @@ class ApiException extends \RuntimeException
     const INVALID_POINTONMAP_STRUCT = 154;
 
     /**
+     * Операция для рекламной кампании или объявления недоступна.
+     */
+    const OPERATION_NOT_ALLOWED = 155;
+
+    /**
      * Запрещено менять ContextPrice для активных на поиске фраз.
      */
     const FORBIDDEN_CHANGE_CONTEXT_PRICE = 191;
