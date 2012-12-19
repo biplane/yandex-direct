@@ -13,15 +13,27 @@ class GetSummaryStatRequest
      */
     protected $CampaignIDS;
     /**
-     * @var date
+     * @var string
      */
     protected $StartDate;
     /**
-     * @var date
+     * @var string
      */
     protected $EndDate;
 
     /**
+     * Creates a new instance.
+     *
+     * @return self
+     */
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * Gets the CampaignIDS.
+     *
      * @return int[]
      */
     public function getCampaignIDS()
@@ -30,7 +42,10 @@ class GetSummaryStatRequest
     }
 
     /**
+     * Sets the CampaignIDS.
+     *
      * @param int[] $CampaignIDS
+     *
      * @return GetSummaryStatRequest
      */
     public function setCampaignIDS(array $CampaignIDS)
@@ -41,7 +56,9 @@ class GetSummaryStatRequest
     }
 
     /**
-     * @return date
+     * Gets the StartDate.
+     *
+     * @return string
      */
     public function getStartDate()
     {
@@ -49,7 +66,10 @@ class GetSummaryStatRequest
     }
 
     /**
-     * @param date $StartDate
+     * Sets the StartDate.
+     *
+     * @param string $StartDate
+     *
      * @return GetSummaryStatRequest
      */
     public function setStartDate($StartDate)
@@ -60,7 +80,9 @@ class GetSummaryStatRequest
     }
 
     /**
-     * @return date
+     * Gets the EndDate.
+     *
+     * @return string
      */
     public function getEndDate()
     {
@@ -68,7 +90,10 @@ class GetSummaryStatRequest
     }
 
     /**
-     * @param date $EndDate
+     * Sets the EndDate.
+     *
+     * @param string $EndDate
+     *
      * @return GetSummaryStatRequest
      */
     public function setEndDate($EndDate)

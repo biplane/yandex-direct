@@ -30,6 +30,18 @@ class CreateNewSubclientResponse
     protected $ClientID;
 
     /**
+     * Creates a new instance.
+     *
+     * @return self
+     */
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * Gets the Login.
+     *
      * @return string
      */
     public function getLogin()
@@ -38,7 +50,10 @@ class CreateNewSubclientResponse
     }
 
     /**
+     * Sets the Login.
+     *
      * @param string $Login
+     *
      * @return CreateNewSubclientResponse
      */
     public function setLogin($Login)
@@ -49,6 +64,8 @@ class CreateNewSubclientResponse
     }
 
     /**
+     * Gets the Password.
+     *
      * @return string
      */
     public function getPassword()
@@ -57,7 +74,10 @@ class CreateNewSubclientResponse
     }
 
     /**
+     * Sets the Password.
+     *
      * @param string $Password
+     *
      * @return CreateNewSubclientResponse
      */
     public function setPassword($Password)
@@ -68,6 +88,8 @@ class CreateNewSubclientResponse
     }
 
     /**
+     * Gets the FIO.
+     *
      * @return string
      */
     public function getFIO()
@@ -76,7 +98,10 @@ class CreateNewSubclientResponse
     }
 
     /**
+     * Sets the FIO.
+     *
      * @param string $FIO
+     *
      * @return CreateNewSubclientResponse
      */
     public function setFIO($FIO)
@@ -87,6 +112,8 @@ class CreateNewSubclientResponse
     }
 
     /**
+     * Gets the Email.
+     *
      * @return string
      */
     public function getEmail()
@@ -95,7 +122,10 @@ class CreateNewSubclientResponse
     }
 
     /**
+     * Sets the Email.
+     *
      * @param string $Email
+     *
      * @return CreateNewSubclientResponse
      */
     public function setEmail($Email)
@@ -106,6 +136,8 @@ class CreateNewSubclientResponse
     }
 
     /**
+     * Gets the ClientID.
+     *
      * @return int
      */
     public function getClientID()
@@ -114,7 +146,10 @@ class CreateNewSubclientResponse
     }
 
     /**
+     * Sets the ClientID.
+     *
      * @param int $ClientID
+     *
      * @return CreateNewSubclientResponse
      */
     public function setClientID($ClientID)

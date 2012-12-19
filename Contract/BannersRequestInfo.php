@@ -6,12 +6,12 @@ namespace Biplane\YandexDirectBundle\Contract;
  * @codeCoverageIgnore
  * @SuppressWarnings(PHPMD)
  */
-class CampaignBidsInfo
+class BannersRequestInfo
 {
     /**
-     * @var int
+     * @var int[]
      */
-    protected $CampaignID;
+    protected $CampaignIDS;
     /**
      * @var int[]
      */
@@ -28,25 +28,25 @@ class CampaignBidsInfo
     }
 
     /**
-     * Gets the CampaignID.
+     * Gets the CampaignIDS.
      *
-     * @return int
+     * @return int[]
      */
-    public function getCampaignID()
+    public function getCampaignIDS()
     {
-        return $this->CampaignID;
+        return $this->CampaignIDS;
     }
 
     /**
-     * Sets the CampaignID.
+     * Sets the CampaignIDS.
      *
-     * @param int $CampaignID
+     * @param int[] $CampaignIDS
      *
-     * @return CampaignBidsInfo
+     * @return BannersRequestInfo
      */
-    public function setCampaignID($CampaignID)
+    public function setCampaignIDS(array $CampaignIDS)
     {
-        $this->CampaignID = $CampaignID;
+        $this->CampaignIDS = $CampaignIDS;
 
         return $this;
     }
@@ -66,7 +66,7 @@ class CampaignBidsInfo
      *
      * @param int[] $BannerIDS
      *
-     * @return CampaignBidsInfo
+     * @return BannersRequestInfo
      */
     public function setBannerIDS(array $BannerIDS)
     {

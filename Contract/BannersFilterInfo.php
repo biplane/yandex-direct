@@ -36,8 +36,28 @@ class BannersFilterInfo
      * @var string[]
      */
     protected $StatusArchive;
+    /**
+     * @var int[]
+     */
+    protected $TagIDS;
+    /**
+     * @var string[]
+     */
+    protected $Tags;
 
     /**
+     * Creates a new instance.
+     *
+     * @return self
+     */
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * Gets the StatusPhoneModerate.
+     *
      * @return string[]
      */
     public function getStatusPhoneModerate()
@@ -46,7 +66,10 @@ class BannersFilterInfo
     }
 
     /**
+     * Sets the StatusPhoneModerate.
+     *
      * @param string[] $StatusPhoneModerate
+     *
      * @return BannersFilterInfo
      */
     public function setStatusPhoneModerate(array $StatusPhoneModerate)
@@ -57,6 +80,8 @@ class BannersFilterInfo
     }
 
     /**
+     * Gets the StatusBannerModerate.
+     *
      * @return string[]
      */
     public function getStatusBannerModerate()
@@ -65,7 +90,10 @@ class BannersFilterInfo
     }
 
     /**
+     * Sets the StatusBannerModerate.
+     *
      * @param string[] $StatusBannerModerate
+     *
      * @return BannersFilterInfo
      */
     public function setStatusBannerModerate(array $StatusBannerModerate)
@@ -76,6 +104,8 @@ class BannersFilterInfo
     }
 
     /**
+     * Gets the StatusPhrasesModerate.
+     *
      * @return string[]
      */
     public function getStatusPhrasesModerate()
@@ -84,7 +114,10 @@ class BannersFilterInfo
     }
 
     /**
+     * Sets the StatusPhrasesModerate.
+     *
      * @param string[] $StatusPhrasesModerate
+     *
      * @return BannersFilterInfo
      */
     public function setStatusPhrasesModerate(array $StatusPhrasesModerate)
@@ -95,6 +128,8 @@ class BannersFilterInfo
     }
 
     /**
+     * Gets the StatusActivating.
+     *
      * @return string[]
      */
     public function getStatusActivating()
@@ -103,7 +138,10 @@ class BannersFilterInfo
     }
 
     /**
+     * Sets the StatusActivating.
+     *
      * @param string[] $StatusActivating
+     *
      * @return BannersFilterInfo
      */
     public function setStatusActivating(array $StatusActivating)
@@ -114,6 +152,8 @@ class BannersFilterInfo
     }
 
     /**
+     * Gets the StatusShow.
+     *
      * @return string[]
      */
     public function getStatusShow()
@@ -122,7 +162,10 @@ class BannersFilterInfo
     }
 
     /**
+     * Sets the StatusShow.
+     *
      * @param string[] $StatusShow
+     *
      * @return BannersFilterInfo
      */
     public function setStatusShow(array $StatusShow)
@@ -133,6 +176,8 @@ class BannersFilterInfo
     }
 
     /**
+     * Gets the IsActive.
+     *
      * @return string[]
      */
     public function getIsActive()
@@ -141,7 +186,10 @@ class BannersFilterInfo
     }
 
     /**
+     * Sets the IsActive.
+     *
      * @param string[] $IsActive
+     *
      * @return BannersFilterInfo
      */
     public function setIsActive(array $IsActive)
@@ -152,6 +200,8 @@ class BannersFilterInfo
     }
 
     /**
+     * Gets the StatusArchive.
+     *
      * @return string[]
      */
     public function getStatusArchive()
@@ -160,12 +210,63 @@ class BannersFilterInfo
     }
 
     /**
+     * Sets the StatusArchive.
+     *
      * @param string[] $StatusArchive
+     *
      * @return BannersFilterInfo
      */
     public function setStatusArchive(array $StatusArchive)
     {
         $this->StatusArchive = $StatusArchive;
+
+        return $this;
+    }
+
+    /**
+     * Gets the TagIDS.
+     *
+     * @return int[]
+     */
+    public function getTagIDS()
+    {
+        return $this->TagIDS;
+    }
+
+    /**
+     * Sets the TagIDS.
+     *
+     * @param int[] $TagIDS
+     *
+     * @return BannersFilterInfo
+     */
+    public function setTagIDS(array $TagIDS)
+    {
+        $this->TagIDS = $TagIDS;
+
+        return $this;
+    }
+
+    /**
+     * Gets the Tags.
+     *
+     * @return string[]
+     */
+    public function getTags()
+    {
+        return $this->Tags;
+    }
+
+    /**
+     * Sets the Tags.
+     *
+     * @param string[] $Tags
+     *
+     * @return BannersFilterInfo
+     */
+    public function setTags(array $Tags)
+    {
+        $this->Tags = $Tags;
 
         return $this;
     }

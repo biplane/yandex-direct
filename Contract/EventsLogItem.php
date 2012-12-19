@@ -4,6 +4,7 @@ namespace Biplane\YandexDirectBundle\Contract;
 
 /**
  * @codeCoverageIgnore
+ * @SuppressWarnings(PHPMD)
  */
 class EventsLogItem
 {
@@ -22,6 +23,10 @@ class EventsLogItem
     /**
      * @var string
      */
+    protected $TextDescription;
+    /**
+     * @var string
+     */
     protected $EventType;
     /**
      * @var string
@@ -37,6 +42,18 @@ class EventsLogItem
     protected $Attributes;
 
     /**
+     * Creates a new instance.
+     *
+     * @return self
+     */
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * Gets the CampaignID.
+     *
      * @return int
      */
     public function getCampaignID()
@@ -45,7 +62,10 @@ class EventsLogItem
     }
 
     /**
+     * Sets the CampaignID.
+     *
      * @param int $CampaignID
+     *
      * @return EventsLogItem
      */
     public function setCampaignID($CampaignID)
@@ -56,6 +76,8 @@ class EventsLogItem
     }
 
     /**
+     * Gets the BannerID.
+     *
      * @return int
      */
     public function getBannerID()
@@ -64,7 +86,10 @@ class EventsLogItem
     }
 
     /**
+     * Sets the BannerID.
+     *
      * @param int $BannerID
+     *
      * @return EventsLogItem
      */
     public function setBannerID($BannerID)
@@ -75,6 +100,8 @@ class EventsLogItem
     }
 
     /**
+     * Gets the PhraseID.
+     *
      * @return int
      */
     public function getPhraseID()
@@ -83,7 +110,10 @@ class EventsLogItem
     }
 
     /**
+     * Sets the PhraseID.
+     *
      * @param int $PhraseID
+     *
      * @return EventsLogItem
      */
     public function setPhraseID($PhraseID)
@@ -94,6 +124,32 @@ class EventsLogItem
     }
 
     /**
+     * Gets the TextDescription.
+     *
+     * @return string
+     */
+    public function getTextDescription()
+    {
+        return $this->TextDescription;
+    }
+
+    /**
+     * Sets the TextDescription.
+     *
+     * @param string $TextDescription
+     *
+     * @return EventsLogItem
+     */
+    public function setTextDescription($TextDescription)
+    {
+        $this->TextDescription = $TextDescription;
+
+        return $this;
+    }
+
+    /**
+     * Gets the EventType.
+     *
      * @return string
      */
     public function getEventType()
@@ -102,7 +158,10 @@ class EventsLogItem
     }
 
     /**
+     * Sets the EventType.
+     *
      * @param string $EventType
+     *
      * @return EventsLogItem
      */
     public function setEventType($EventType)
@@ -113,6 +172,8 @@ class EventsLogItem
     }
 
     /**
+     * Gets the Timestamp.
+     *
      * @return string
      */
     public function getTimestamp()
@@ -121,7 +182,10 @@ class EventsLogItem
     }
 
     /**
+     * Sets the Timestamp.
+     *
      * @param string $Timestamp
+     *
      * @return EventsLogItem
      */
     public function setTimestamp($Timestamp)
@@ -132,6 +196,8 @@ class EventsLogItem
     }
 
     /**
+     * Gets the EventName.
+     *
      * @return string
      */
     public function getEventName()
@@ -140,7 +206,10 @@ class EventsLogItem
     }
 
     /**
+     * Sets the EventName.
+     *
      * @param string $EventName
+     *
      * @return EventsLogItem
      */
     public function setEventName($EventName)
@@ -151,6 +220,8 @@ class EventsLogItem
     }
 
     /**
+     * Gets the Attributes.
+     *
      * @return EventsLogItemAttributes
      */
     public function getAttributes()
@@ -159,7 +230,10 @@ class EventsLogItem
     }
 
     /**
+     * Sets the Attributes.
+     *
      * @param EventsLogItemAttributes $Attributes
+     *
      * @return EventsLogItem
      */
     public function setAttributes(EventsLogItemAttributes $Attributes)

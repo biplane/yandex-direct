@@ -18,6 +18,18 @@ class CoverageInfo
     protected $Price;
 
     /**
+     * Creates a new instance.
+     *
+     * @return self
+     */
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * Gets the Probability.
+     *
      * @return float
      */
     public function getProbability()
@@ -26,7 +38,10 @@ class CoverageInfo
     }
 
     /**
+     * Sets the Probability.
+     *
      * @param float $Probability
+     *
      * @return CoverageInfo
      */
     public function setProbability($Probability)
@@ -37,6 +52,8 @@ class CoverageInfo
     }
 
     /**
+     * Gets the Price.
+     *
      * @return float
      */
     public function getPrice()
@@ -45,7 +62,10 @@ class CoverageInfo
     }
 
     /**
+     * Sets the Price.
+     *
      * @param float $Price
+     *
      * @return CoverageInfo
      */
     public function setPrice($Price)

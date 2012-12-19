@@ -18,6 +18,18 @@ class GetSubClientsRequest
     protected $Filter;
 
     /**
+     * Creates a new instance.
+     *
+     * @return self
+     */
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * Gets the Login.
+     *
      * @return string
      */
     public function getLogin()
@@ -26,7 +38,10 @@ class GetSubClientsRequest
     }
 
     /**
+     * Sets the Login.
+     *
      * @param string $Login
+     *
      * @return GetSubClientsRequest
      */
     public function setLogin($Login)
@@ -37,6 +52,8 @@ class GetSubClientsRequest
     }
 
     /**
+     * Gets the Filter.
+     *
      * @return ClientFilter
      */
     public function getFilter()
@@ -45,7 +62,10 @@ class GetSubClientsRequest
     }
 
     /**
+     * Sets the Filter.
+     *
      * @param ClientFilter $Filter
+     *
      * @return GetSubClientsRequest
      */
     public function setFilter(ClientFilter $Filter)

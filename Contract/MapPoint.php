@@ -34,6 +34,18 @@ class MapPoint
     protected $y2;
 
     /**
+     * Creates a new instance.
+     *
+     * @return self
+     */
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * Gets the x.
+     *
      * @return float
      */
     public function getX()
@@ -42,7 +54,10 @@ class MapPoint
     }
 
     /**
+     * Sets the x.
+     *
      * @param float $x
+     *
      * @return MapPoint
      */
     public function setX($x)
@@ -53,6 +68,8 @@ class MapPoint
     }
 
     /**
+     * Gets the y.
+     *
      * @return float
      */
     public function getY()
@@ -61,7 +78,10 @@ class MapPoint
     }
 
     /**
+     * Sets the y.
+     *
      * @param float $y
+     *
      * @return MapPoint
      */
     public function setY($y)
@@ -72,6 +92,8 @@ class MapPoint
     }
 
     /**
+     * Gets the x1.
+     *
      * @return float
      */
     public function getX1()
@@ -80,7 +102,10 @@ class MapPoint
     }
 
     /**
+     * Sets the x1.
+     *
      * @param float $x1
+     *
      * @return MapPoint
      */
     public function setX1($x1)
@@ -91,6 +116,8 @@ class MapPoint
     }
 
     /**
+     * Gets the y1.
+     *
      * @return float
      */
     public function getY1()
@@ -99,7 +126,10 @@ class MapPoint
     }
 
     /**
+     * Sets the y1.
+     *
      * @param float $y1
+     *
      * @return MapPoint
      */
     public function setY1($y1)
@@ -110,6 +140,8 @@ class MapPoint
     }
 
     /**
+     * Gets the x2.
+     *
      * @return float
      */
     public function getX2()
@@ -118,7 +150,10 @@ class MapPoint
     }
 
     /**
+     * Sets the x2.
+     *
      * @param float $x2
+     *
      * @return MapPoint
      */
     public function setX2($x2)
@@ -129,6 +164,8 @@ class MapPoint
     }
 
     /**
+     * Gets the y2.
+     *
      * @return float
      */
     public function getY2()
@@ -137,7 +174,10 @@ class MapPoint
     }
 
     /**
+     * Sets the y2.
+     *
      * @param float $y2
+     *
      * @return MapPoint
      */
     public function setY2($y2)

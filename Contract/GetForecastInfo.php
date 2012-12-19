@@ -22,6 +22,18 @@ class GetForecastInfo
     protected $Common;
 
     /**
+     * Creates a new instance.
+     *
+     * @return self
+     */
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * Gets the Categories.
+     *
      * @return BannerPhraseInfo[]
      */
     public function getCategories()
@@ -30,7 +42,10 @@ class GetForecastInfo
     }
 
     /**
+     * Sets the Categories.
+     *
      * @param BannerPhraseInfo[] $Categories
+     *
      * @return GetForecastInfo
      */
     public function setCategories(array $Categories)
@@ -41,6 +56,8 @@ class GetForecastInfo
     }
 
     /**
+     * Gets the Phrases.
+     *
      * @return BannerPhraseInfo[]
      */
     public function getPhrases()
@@ -49,7 +66,10 @@ class GetForecastInfo
     }
 
     /**
+     * Sets the Phrases.
+     *
      * @param BannerPhraseInfo[] $Phrases
+     *
      * @return GetForecastInfo
      */
     public function setPhrases(array $Phrases)
@@ -60,6 +80,8 @@ class GetForecastInfo
     }
 
     /**
+     * Gets the Common.
+     *
      * @return ForecastCommonInfo
      */
     public function getCommon()
@@ -68,7 +90,10 @@ class GetForecastInfo
     }
 
     /**
+     * Sets the Common.
+     *
      * @param ForecastCommonInfo $Common
+     *
      * @return GetForecastInfo
      */
     public function setCommon(ForecastCommonInfo $Common)

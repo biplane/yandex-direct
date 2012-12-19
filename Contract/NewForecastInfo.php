@@ -22,9 +22,23 @@ class NewForecastInfo
     protected $GeoID;
 
     /**
+     * Creates a new instance.
+     *
+     * @return self
+     */
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * Constructor.
+     *
      * @param array $categories Array of int.
      * @param array $geoIds Array of int.
      * @param array $phrases Array of string.
+     *
+     * @deprecated
      */
     public function __construct(array $categories = null, array $geoIds = null, array $phrases = null)
     {
@@ -34,6 +48,8 @@ class NewForecastInfo
     }
 
     /**
+     * Gets the Categories.
+     *
      * @return int[]
      */
     public function getCategories()
@@ -42,7 +58,10 @@ class NewForecastInfo
     }
 
     /**
+     * Sets the Categories.
+     *
      * @param int[] $Categories
+     *
      * @return NewForecastInfo
      */
     public function setCategories(array $Categories)
@@ -53,6 +72,8 @@ class NewForecastInfo
     }
 
     /**
+     * Gets the Phrases.
+     *
      * @return string[]
      */
     public function getPhrases()
@@ -61,7 +82,10 @@ class NewForecastInfo
     }
 
     /**
+     * Sets the Phrases.
+     *
      * @param string[] $Phrases
+     *
      * @return NewForecastInfo
      */
     public function setPhrases(array $Phrases)
@@ -72,6 +96,8 @@ class NewForecastInfo
     }
 
     /**
+     * Gets the GeoID.
+     *
      * @return int[]
      */
     public function getGeoID()
@@ -80,7 +106,10 @@ class NewForecastInfo
     }
 
     /**
+     * Sets the GeoID.
+     *
      * @param int[] $GeoID
+     *
      * @return NewForecastInfo
      */
     public function setGeoID(array $GeoID)

@@ -22,6 +22,18 @@ class TimeTargetItem
     protected $BidCoefs;
 
     /**
+     * Creates a new instance.
+     *
+     * @return self
+     */
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * Gets the Hours.
+     *
      * @return int[]
      */
     public function getHours()
@@ -30,7 +42,10 @@ class TimeTargetItem
     }
 
     /**
+     * Sets the Hours.
+     *
      * @param int[] $Hours
+     *
      * @return TimeTargetItem
      */
     public function setHours(array $Hours)
@@ -41,6 +56,8 @@ class TimeTargetItem
     }
 
     /**
+     * Gets the Days.
+     *
      * @return int[]
      */
     public function getDays()
@@ -49,7 +66,10 @@ class TimeTargetItem
     }
 
     /**
+     * Sets the Days.
+     *
      * @param int[] $Days
+     *
      * @return TimeTargetItem
      */
     public function setDays(array $Days)
@@ -60,6 +80,8 @@ class TimeTargetItem
     }
 
     /**
+     * Gets the BidCoefs.
+     *
      * @return int[]
      */
     public function getBidCoefs()
@@ -68,7 +90,10 @@ class TimeTargetItem
     }
 
     /**
+     * Sets the BidCoefs.
+     *
      * @param int[] $BidCoefs
+     *
      * @return TimeTargetItem
      */
     public function setBidCoefs(array $BidCoefs)

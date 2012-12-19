@@ -30,6 +30,18 @@ class EmailNotificationInfo
     protected $SendWarn;
 
     /**
+     * Creates a new instance.
+     *
+     * @return self
+     */
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * Gets the Email.
+     *
      * @return string
      */
     public function getEmail()
@@ -38,7 +50,10 @@ class EmailNotificationInfo
     }
 
     /**
+     * Sets the Email.
+     *
      * @param string $Email
+     *
      * @return EmailNotificationInfo
      */
     public function setEmail($Email)
@@ -49,6 +64,8 @@ class EmailNotificationInfo
     }
 
     /**
+     * Gets the WarnPlaceInterval.
+     *
      * @return int
      */
     public function getWarnPlaceInterval()
@@ -57,7 +74,10 @@ class EmailNotificationInfo
     }
 
     /**
+     * Sets the WarnPlaceInterval.
+     *
      * @param int $WarnPlaceInterval
+     *
      * @return EmailNotificationInfo
      */
     public function setWarnPlaceInterval($WarnPlaceInterval)
@@ -68,6 +88,8 @@ class EmailNotificationInfo
     }
 
     /**
+     * Gets the MoneyWarningValue.
+     *
      * @return int
      */
     public function getMoneyWarningValue()
@@ -76,7 +98,10 @@ class EmailNotificationInfo
     }
 
     /**
+     * Sets the MoneyWarningValue.
+     *
      * @param int $MoneyWarningValue
+     *
      * @return EmailNotificationInfo
      */
     public function setMoneyWarningValue($MoneyWarningValue)
@@ -87,6 +112,8 @@ class EmailNotificationInfo
     }
 
     /**
+     * Gets the SendAccNews.
+     *
      * @return string
      */
     public function getSendAccNews()
@@ -95,7 +122,10 @@ class EmailNotificationInfo
     }
 
     /**
+     * Sets the SendAccNews.
+     *
      * @param string $SendAccNews
+     *
      * @return EmailNotificationInfo
      */
     public function setSendAccNews($SendAccNews)
@@ -106,6 +136,8 @@ class EmailNotificationInfo
     }
 
     /**
+     * Gets the SendWarn.
+     *
      * @return string
      */
     public function getSendWarn()
@@ -114,7 +146,10 @@ class EmailNotificationInfo
     }
 
     /**
+     * Sets the SendWarn.
+     *
      * @param string $SendWarn
+     *
      * @return EmailNotificationInfo
      */
     public function setSendWarn($SendWarn)

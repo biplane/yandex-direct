@@ -34,6 +34,18 @@ class CampaignStrategy
     protected $GoalID;
 
     /**
+     * Creates a new instance.
+     *
+     * @return self
+     */
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * Gets the MaxPrice.
+     *
      * @return float
      */
     public function getMaxPrice()
@@ -42,7 +54,10 @@ class CampaignStrategy
     }
 
     /**
+     * Sets the MaxPrice.
+     *
      * @param float $MaxPrice
+     *
      * @return CampaignStrategy
      */
     public function setMaxPrice($MaxPrice)
@@ -53,6 +68,8 @@ class CampaignStrategy
     }
 
     /**
+     * Gets the AveragePrice.
+     *
      * @return float
      */
     public function getAveragePrice()
@@ -61,7 +78,10 @@ class CampaignStrategy
     }
 
     /**
+     * Sets the AveragePrice.
+     *
      * @param float $AveragePrice
+     *
      * @return CampaignStrategy
      */
     public function setAveragePrice($AveragePrice)
@@ -72,6 +92,8 @@ class CampaignStrategy
     }
 
     /**
+     * Gets the WeeklySumLimit.
+     *
      * @return float
      */
     public function getWeeklySumLimit()
@@ -80,7 +102,10 @@ class CampaignStrategy
     }
 
     /**
+     * Sets the WeeklySumLimit.
+     *
      * @param float $WeeklySumLimit
+     *
      * @return CampaignStrategy
      */
     public function setWeeklySumLimit($WeeklySumLimit)
@@ -91,6 +116,8 @@ class CampaignStrategy
     }
 
     /**
+     * Gets the ClicksPerWeek.
+     *
      * @return int
      */
     public function getClicksPerWeek()
@@ -99,7 +126,10 @@ class CampaignStrategy
     }
 
     /**
+     * Sets the ClicksPerWeek.
+     *
      * @param int $ClicksPerWeek
+     *
      * @return CampaignStrategy
      */
     public function setClicksPerWeek($ClicksPerWeek)
@@ -110,6 +140,8 @@ class CampaignStrategy
     }
 
     /**
+     * Gets the StrategyName.
+     *
      * @return string
      */
     public function getStrategyName()
@@ -118,7 +150,10 @@ class CampaignStrategy
     }
 
     /**
+     * Sets the StrategyName.
+     *
      * @param string $StrategyName
+     *
      * @return CampaignStrategy
      */
     public function setStrategyName($StrategyName)
@@ -129,6 +164,8 @@ class CampaignStrategy
     }
 
     /**
+     * Gets the GoalID.
+     *
      * @return int
      */
     public function getGoalID()
@@ -137,7 +174,10 @@ class CampaignStrategy
     }
 
     /**
+     * Sets the GoalID.
+     *
      * @param int $GoalID
+     *
      * @return CampaignStrategy
      */
     public function setGoalID($GoalID)

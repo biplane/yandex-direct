@@ -18,6 +18,18 @@ class TransferMoneyInfo
     protected $ToCampaigns;
 
     /**
+     * Creates a new instance.
+     *
+     * @return self
+     */
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * Gets the FromCampaigns.
+     *
      * @return PayCampElement[]
      */
     public function getFromCampaigns()
@@ -26,7 +38,10 @@ class TransferMoneyInfo
     }
 
     /**
+     * Sets the FromCampaigns.
+     *
      * @param PayCampElement[] $FromCampaigns
+     *
      * @return TransferMoneyInfo
      */
     public function setFromCampaigns(array $FromCampaigns)
@@ -37,6 +52,8 @@ class TransferMoneyInfo
     }
 
     /**
+     * Gets the ToCampaigns.
+     *
      * @return PayCampElement[]
      */
     public function getToCampaigns()
@@ -45,7 +62,10 @@ class TransferMoneyInfo
     }
 
     /**
+     * Sets the ToCampaigns.
+     *
      * @param PayCampElement[] $ToCampaigns
+     *
      * @return TransferMoneyInfo
      */
     public function setToCampaigns(array $ToCampaigns)

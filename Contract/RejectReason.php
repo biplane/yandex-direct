@@ -18,6 +18,18 @@ class RejectReason
     protected $Text;
 
     /**
+     * Creates a new instance.
+     *
+     * @return self
+     */
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * Gets the Type.
+     *
      * @return string
      */
     public function getType()
@@ -26,7 +38,10 @@ class RejectReason
     }
 
     /**
+     * Sets the Type.
+     *
      * @param string $Type
+     *
      * @return RejectReason
      */
     public function setType($Type)
@@ -37,6 +52,8 @@ class RejectReason
     }
 
     /**
+     * Gets the Text.
+     *
      * @return string
      */
     public function getText()
@@ -45,7 +62,10 @@ class RejectReason
     }
 
     /**
+     * Sets the Text.
+     *
      * @param string $Text
+     *
      * @return RejectReason
      */
     public function setText($Text)

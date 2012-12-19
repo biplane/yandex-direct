@@ -100,8 +100,24 @@ class BannerInfo
      * @var string
      */
     protected $AutoMinusWords;
+    /**
+     * @var string
+     */
+    protected $AgeLabel;
 
     /**
+     * Creates a new instance.
+     *
+     * @return self
+     */
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * Gets the BannerID.
+     *
      * @return int
      */
     public function getBannerID()
@@ -110,7 +126,10 @@ class BannerInfo
     }
 
     /**
+     * Sets the BannerID.
+     *
      * @param int $BannerID
+     *
      * @return BannerInfo
      */
     public function setBannerID($BannerID)
@@ -121,6 +140,8 @@ class BannerInfo
     }
 
     /**
+     * Gets the CampaignID.
+     *
      * @return int
      */
     public function getCampaignID()
@@ -129,7 +150,10 @@ class BannerInfo
     }
 
     /**
+     * Sets the CampaignID.
+     *
      * @param int $CampaignID
+     *
      * @return BannerInfo
      */
     public function setCampaignID($CampaignID)
@@ -140,6 +164,8 @@ class BannerInfo
     }
 
     /**
+     * Gets the Title.
+     *
      * @return string
      */
     public function getTitle()
@@ -148,7 +174,10 @@ class BannerInfo
     }
 
     /**
+     * Sets the Title.
+     *
      * @param string $Title
+     *
      * @return BannerInfo
      */
     public function setTitle($Title)
@@ -159,6 +188,8 @@ class BannerInfo
     }
 
     /**
+     * Gets the Text.
+     *
      * @return string
      */
     public function getText()
@@ -167,7 +198,10 @@ class BannerInfo
     }
 
     /**
+     * Sets the Text.
+     *
      * @param string $Text
+     *
      * @return BannerInfo
      */
     public function setText($Text)
@@ -178,6 +212,8 @@ class BannerInfo
     }
 
     /**
+     * Gets the Href.
+     *
      * @return string
      */
     public function getHref()
@@ -186,7 +222,10 @@ class BannerInfo
     }
 
     /**
+     * Sets the Href.
+     *
      * @param string $Href
+     *
      * @return BannerInfo
      */
     public function setHref($Href)
@@ -197,6 +236,8 @@ class BannerInfo
     }
 
     /**
+     * Gets the Domain.
+     *
      * @return string
      */
     public function getDomain()
@@ -205,7 +246,10 @@ class BannerInfo
     }
 
     /**
+     * Sets the Domain.
+     *
      * @param string $Domain
+     *
      * @return BannerInfo
      */
     public function setDomain($Domain)
@@ -216,6 +260,8 @@ class BannerInfo
     }
 
     /**
+     * Gets the Geo.
+     *
      * @return string
      */
     public function getGeo()
@@ -224,7 +270,10 @@ class BannerInfo
     }
 
     /**
+     * Sets the Geo.
+     *
      * @param string $Geo
+     *
      * @return BannerInfo
      */
     public function setGeo($Geo)
@@ -235,6 +284,8 @@ class BannerInfo
     }
 
     /**
+     * Gets the ContactInfo.
+     *
      * @return ContactInfo
      */
     public function getContactInfo()
@@ -243,7 +294,10 @@ class BannerInfo
     }
 
     /**
+     * Sets the ContactInfo.
+     *
      * @param ContactInfo $ContactInfo
+     *
      * @return BannerInfo
      */
     public function setContactInfo(ContactInfo $ContactInfo)
@@ -254,6 +308,8 @@ class BannerInfo
     }
 
     /**
+     * Gets the Phrases.
+     *
      * @return BannerPhraseInfo[]
      */
     public function getPhrases()
@@ -262,7 +318,10 @@ class BannerInfo
     }
 
     /**
+     * Sets the Phrases.
+     *
      * @param BannerPhraseInfo[] $Phrases
+     *
      * @return BannerInfo
      */
     public function setPhrases(array $Phrases)
@@ -273,6 +332,8 @@ class BannerInfo
     }
 
     /**
+     * Gets the StatusActivating.
+     *
      * @return string
      */
     public function getStatusActivating()
@@ -281,7 +342,10 @@ class BannerInfo
     }
 
     /**
+     * Sets the StatusActivating.
+     *
      * @param string $StatusActivating
+     *
      * @return BannerInfo
      */
     public function setStatusActivating($StatusActivating)
@@ -292,6 +356,8 @@ class BannerInfo
     }
 
     /**
+     * Gets the StatusArchive.
+     *
      * @return string
      */
     public function getStatusArchive()
@@ -300,7 +366,10 @@ class BannerInfo
     }
 
     /**
+     * Sets the StatusArchive.
+     *
      * @param string $StatusArchive
+     *
      * @return BannerInfo
      */
     public function setStatusArchive($StatusArchive)
@@ -311,6 +380,8 @@ class BannerInfo
     }
 
     /**
+     * Gets the StatusBannerModerate.
+     *
      * @return string
      */
     public function getStatusBannerModerate()
@@ -319,7 +390,10 @@ class BannerInfo
     }
 
     /**
+     * Sets the StatusBannerModerate.
+     *
      * @param string $StatusBannerModerate
+     *
      * @return BannerInfo
      */
     public function setStatusBannerModerate($StatusBannerModerate)
@@ -330,6 +404,8 @@ class BannerInfo
     }
 
     /**
+     * Gets the StatusPhrasesModerate.
+     *
      * @return string
      */
     public function getStatusPhrasesModerate()
@@ -338,7 +414,10 @@ class BannerInfo
     }
 
     /**
+     * Sets the StatusPhrasesModerate.
+     *
      * @param string $StatusPhrasesModerate
+     *
      * @return BannerInfo
      */
     public function setStatusPhrasesModerate($StatusPhrasesModerate)
@@ -349,6 +428,8 @@ class BannerInfo
     }
 
     /**
+     * Gets the StatusPhoneModerate.
+     *
      * @return string
      */
     public function getStatusPhoneModerate()
@@ -357,7 +438,10 @@ class BannerInfo
     }
 
     /**
+     * Sets the StatusPhoneModerate.
+     *
      * @param string $StatusPhoneModerate
+     *
      * @return BannerInfo
      */
     public function setStatusPhoneModerate($StatusPhoneModerate)
@@ -368,6 +452,8 @@ class BannerInfo
     }
 
     /**
+     * Gets the StatusShow.
+     *
      * @return string
      */
     public function getStatusShow()
@@ -376,7 +462,10 @@ class BannerInfo
     }
 
     /**
+     * Sets the StatusShow.
+     *
      * @param string $StatusShow
+     *
      * @return BannerInfo
      */
     public function setStatusShow($StatusShow)
@@ -387,6 +476,8 @@ class BannerInfo
     }
 
     /**
+     * Gets the IsActive.
+     *
      * @return string
      */
     public function getIsActive()
@@ -395,7 +486,10 @@ class BannerInfo
     }
 
     /**
+     * Sets the IsActive.
+     *
      * @param string $IsActive
+     *
      * @return BannerInfo
      */
     public function setIsActive($IsActive)
@@ -406,6 +500,8 @@ class BannerInfo
     }
 
     /**
+     * Gets the StatusSitelinksModerate.
+     *
      * @return string
      */
     public function getStatusSitelinksModerate()
@@ -414,7 +510,10 @@ class BannerInfo
     }
 
     /**
+     * Sets the StatusSitelinksModerate.
+     *
      * @param string $StatusSitelinksModerate
+     *
      * @return BannerInfo
      */
     public function setStatusSitelinksModerate($StatusSitelinksModerate)
@@ -425,6 +524,8 @@ class BannerInfo
     }
 
     /**
+     * Gets the Sitelinks.
+     *
      * @return Sitelink[]
      */
     public function getSitelinks()
@@ -433,7 +534,10 @@ class BannerInfo
     }
 
     /**
+     * Sets the Sitelinks.
+     *
      * @param Sitelink[] $Sitelinks
+     *
      * @return BannerInfo
      */
     public function setSitelinks(array $Sitelinks)
@@ -444,6 +548,8 @@ class BannerInfo
     }
 
     /**
+     * Gets the AdWarnings.
+     *
      * @return string[]
      */
     public function getAdWarnings()
@@ -452,7 +558,10 @@ class BannerInfo
     }
 
     /**
+     * Sets the AdWarnings.
+     *
      * @param string[] $AdWarnings
+     *
      * @return BannerInfo
      */
     public function setAdWarnings(array $AdWarnings)
@@ -463,6 +572,8 @@ class BannerInfo
     }
 
     /**
+     * Gets the FixedOnModeration.
+     *
      * @return string
      */
     public function getFixedOnModeration()
@@ -471,7 +582,10 @@ class BannerInfo
     }
 
     /**
+     * Sets the FixedOnModeration.
+     *
      * @param string $FixedOnModeration
+     *
      * @return BannerInfo
      */
     public function setFixedOnModeration($FixedOnModeration)
@@ -482,6 +596,8 @@ class BannerInfo
     }
 
     /**
+     * Gets the ModerateRejectionReasons.
+     *
      * @return RejectReason[]
      */
     public function getModerateRejectionReasons()
@@ -490,7 +606,10 @@ class BannerInfo
     }
 
     /**
+     * Sets the ModerateRejectionReasons.
+     *
      * @param RejectReason[] $ModerateRejectionReasons
+     *
      * @return BannerInfo
      */
     public function setModerateRejectionReasons(array $ModerateRejectionReasons)
@@ -501,6 +620,8 @@ class BannerInfo
     }
 
     /**
+     * Gets the MinusKeywords.
+     *
      * @return string[]
      */
     public function getMinusKeywords()
@@ -509,7 +630,10 @@ class BannerInfo
     }
 
     /**
+     * Sets the MinusKeywords.
+     *
      * @param string[] $MinusKeywords
+     *
      * @return BannerInfo
      */
     public function setMinusKeywords(array $MinusKeywords)
@@ -520,6 +644,8 @@ class BannerInfo
     }
 
     /**
+     * Gets the AutoMinusWords.
+     *
      * @return string
      */
     public function getAutoMinusWords()
@@ -528,6 +654,8 @@ class BannerInfo
     }
 
     /**
+     * Sets the AutoMinusWords.
+     *
      * @param string $AutoMinusWords
      *
      * @return BannerInfo
@@ -535,6 +663,30 @@ class BannerInfo
     public function setAutoMinusWords($AutoMinusWords)
     {
         $this->AutoMinusWords = $AutoMinusWords;
+
+        return $this;
+    }
+
+    /**
+     * Gets the AgeLabel.
+     *
+     * @return string
+     */
+    public function getAgeLabel()
+    {
+        return $this->AgeLabel;
+    }
+
+    /**
+     * Sets the AgeLabel.
+     *
+     * @param string $AgeLabel
+     *
+     * @return BannerInfo
+     */
+    public function setAgeLabel($AgeLabel)
+    {
+        $this->AgeLabel = $AgeLabel;
 
         return $this;
     }

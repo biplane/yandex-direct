@@ -24,8 +24,24 @@ class CreateNewSubclientRequest
      * @var string
      */
     protected $Surname;
+    /**
+     * @var string
+     */
+    protected $Currency;
 
     /**
+     * Creates a new instance.
+     *
+     * @return self
+     */
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * Gets the Login.
+     *
      * @return string
      */
     public function getLogin()
@@ -34,7 +50,10 @@ class CreateNewSubclientRequest
     }
 
     /**
+     * Sets the Login.
+     *
      * @param string $Login
+     *
      * @return CreateNewSubclientRequest
      */
     public function setLogin($Login)
@@ -45,6 +64,8 @@ class CreateNewSubclientRequest
     }
 
     /**
+     * Gets the AgencyLogin.
+     *
      * @return string
      */
     public function getAgencyLogin()
@@ -53,7 +74,10 @@ class CreateNewSubclientRequest
     }
 
     /**
+     * Sets the AgencyLogin.
+     *
      * @param string $AgencyLogin
+     *
      * @return CreateNewSubclientRequest
      */
     public function setAgencyLogin($AgencyLogin)
@@ -64,6 +88,8 @@ class CreateNewSubclientRequest
     }
 
     /**
+     * Gets the Name.
+     *
      * @return string
      */
     public function getName()
@@ -72,7 +98,10 @@ class CreateNewSubclientRequest
     }
 
     /**
+     * Sets the Name.
+     *
      * @param string $Name
+     *
      * @return CreateNewSubclientRequest
      */
     public function setName($Name)
@@ -83,6 +112,8 @@ class CreateNewSubclientRequest
     }
 
     /**
+     * Gets the Surname.
+     *
      * @return string
      */
     public function getSurname()
@@ -91,12 +122,39 @@ class CreateNewSubclientRequest
     }
 
     /**
+     * Sets the Surname.
+     *
      * @param string $Surname
+     *
      * @return CreateNewSubclientRequest
      */
     public function setSurname($Surname)
     {
         $this->Surname = $Surname;
+
+        return $this;
+    }
+
+    /**
+     * Gets the Currency.
+     *
+     * @return string
+     */
+    public function getCurrency()
+    {
+        return $this->Currency;
+    }
+
+    /**
+     * Sets the Currency.
+     *
+     * @param string $Currency
+     *
+     * @return CreateNewSubclientRequest
+     */
+    public function setCurrency($Currency)
+    {
+        $this->Currency = $Currency;
 
         return $this;
     }

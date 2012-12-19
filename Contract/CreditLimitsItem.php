@@ -22,6 +22,18 @@ class CreditLimitsItem
     protected $LimitSpent;
 
     /**
+     * Creates a new instance.
+     *
+     * @return self
+     */
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * Gets the ContractID.
+     *
      * @return string
      */
     public function getContractID()
@@ -30,7 +42,10 @@ class CreditLimitsItem
     }
 
     /**
+     * Sets the ContractID.
+     *
      * @param string $ContractID
+     *
      * @return CreditLimitsItem
      */
     public function setContractID($ContractID)
@@ -41,6 +56,8 @@ class CreditLimitsItem
     }
 
     /**
+     * Gets the Limit.
+     *
      * @return float
      */
     public function getLimit()
@@ -49,7 +66,10 @@ class CreditLimitsItem
     }
 
     /**
+     * Sets the Limit.
+     *
      * @param float $Limit
+     *
      * @return CreditLimitsItem
      */
     public function setLimit($Limit)
@@ -60,6 +80,8 @@ class CreditLimitsItem
     }
 
     /**
+     * Gets the LimitSpent.
+     *
      * @return float
      */
     public function getLimitSpent()
@@ -68,7 +90,10 @@ class CreditLimitsItem
     }
 
     /**
+     * Sets the LimitSpent.
+     *
      * @param float $LimitSpent
+     *
      * @return CreditLimitsItem
      */
     public function setLimitSpent($LimitSpent)

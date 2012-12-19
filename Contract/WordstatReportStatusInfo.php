@@ -18,6 +18,18 @@ class WordstatReportStatusInfo
     protected $StatusReport;
 
     /**
+     * Creates a new instance.
+     *
+     * @return self
+     */
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * Gets the ReportID.
+     *
      * @return int
      */
     public function getReportID()
@@ -26,7 +38,10 @@ class WordstatReportStatusInfo
     }
 
     /**
+     * Sets the ReportID.
+     *
      * @param int $ReportID
+     *
      * @return WordstatReportStatusInfo
      */
     public function setReportID($ReportID)
@@ -37,6 +52,8 @@ class WordstatReportStatusInfo
     }
 
     /**
+     * Gets the StatusReport.
+     *
      * @return string
      */
     public function getStatusReport()
@@ -45,7 +62,10 @@ class WordstatReportStatusInfo
     }
 
     /**
+     * Sets the StatusReport.
+     *
      * @param string $StatusReport
+     *
      * @return WordstatReportStatusInfo
      */
     public function setStatusReport($StatusReport)

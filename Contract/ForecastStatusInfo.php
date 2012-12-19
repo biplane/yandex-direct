@@ -21,6 +21,18 @@ class ForecastStatusInfo
     protected $StatusForecast;
 
     /**
+     * Creates a new instance.
+     *
+     * @return self
+     */
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * Gets the ForecastID.
+     *
      * @return int
      */
     public function getForecastID()
@@ -29,7 +41,10 @@ class ForecastStatusInfo
     }
 
     /**
+     * Sets the ForecastID.
+     *
      * @param int $ForecastID
+     *
      * @return ForecastStatusInfo
      */
     public function setForecastID($ForecastID)
@@ -40,6 +55,8 @@ class ForecastStatusInfo
     }
 
     /**
+     * Gets the StatusForecast.
+     *
      * @return string
      */
     public function getStatusForecast()
@@ -48,7 +65,10 @@ class ForecastStatusInfo
     }
 
     /**
+     * Sets the StatusForecast.
+     *
      * @param string $StatusForecast
+     *
      * @return ForecastStatusInfo
      */
     public function setStatusForecast($StatusForecast)

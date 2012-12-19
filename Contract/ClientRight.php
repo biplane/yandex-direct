@@ -18,6 +18,18 @@ class ClientRight
     protected $Value;
 
     /**
+     * Creates a new instance.
+     *
+     * @return self
+     */
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * Gets the RightName.
+     *
      * @return string
      */
     public function getRightName()
@@ -26,7 +38,10 @@ class ClientRight
     }
 
     /**
+     * Sets the RightName.
+     *
      * @param string $RightName
+     *
      * @return ClientRight
      */
     public function setRightName($RightName)
@@ -37,6 +52,8 @@ class ClientRight
     }
 
     /**
+     * Gets the Value.
+     *
      * @return string
      */
     public function getValue()
@@ -45,7 +62,10 @@ class ClientRight
     }
 
     /**
+     * Sets the Value.
+     *
      * @param string $Value
+     *
      * @return ClientRight
      */
     public function setValue($Value)

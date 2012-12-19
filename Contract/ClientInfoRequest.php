@@ -14,6 +14,18 @@ class ClientInfoRequest
     protected $Filter;
 
     /**
+     * Creates a new instance.
+     *
+     * @return self
+     */
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * Gets the Filter.
+     *
      * @return ClientFilter
      */
     public function getFilter()
@@ -22,7 +34,10 @@ class ClientInfoRequest
     }
 
     /**
+     * Sets the Filter.
+     *
      * @param ClientFilter $Filter
+     *
      * @return ClientInfoRequest
      */
     public function setFilter(ClientFilter $Filter)

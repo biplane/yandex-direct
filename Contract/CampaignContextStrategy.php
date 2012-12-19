@@ -4,6 +4,7 @@ namespace Biplane\YandexDirectBundle\Contract;
 
 /**
  * @codeCoverageIgnore
+ * @SuppressWarnings(PHPMD)
  */
 class CampaignContextStrategy
 {
@@ -23,8 +24,40 @@ class CampaignContextStrategy
      * @var int
      */
     protected $ContextPricePercent;
+    /**
+     * @var float
+     */
+    protected $MaxPrice;
+    /**
+     * @var float
+     */
+    protected $AveragePrice;
+    /**
+     * @var float
+     */
+    protected $WeeklySumLimit;
+    /**
+     * @var int
+     */
+    protected $ClicksPerWeek;
+    /**
+     * @var int
+     */
+    protected $GoalID;
 
     /**
+     * Creates a new instance.
+     *
+     * @return self
+     */
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * Gets the StrategyName.
+     *
      * @return string
      */
     public function getStrategyName()
@@ -33,7 +66,10 @@ class CampaignContextStrategy
     }
 
     /**
+     * Sets the StrategyName.
+     *
      * @param string $StrategyName
+     *
      * @return CampaignContextStrategy
      */
     public function setStrategyName($StrategyName)
@@ -44,6 +80,8 @@ class CampaignContextStrategy
     }
 
     /**
+     * Gets the ContextLimit.
+     *
      * @return string
      */
     public function getContextLimit()
@@ -52,7 +90,10 @@ class CampaignContextStrategy
     }
 
     /**
+     * Sets the ContextLimit.
+     *
      * @param string $ContextLimit
+     *
      * @return CampaignContextStrategy
      */
     public function setContextLimit($ContextLimit)
@@ -63,6 +104,8 @@ class CampaignContextStrategy
     }
 
     /**
+     * Gets the ContextLimitSum.
+     *
      * @return int
      */
     public function getContextLimitSum()
@@ -71,7 +114,10 @@ class CampaignContextStrategy
     }
 
     /**
+     * Sets the ContextLimitSum.
+     *
      * @param int $ContextLimitSum
+     *
      * @return CampaignContextStrategy
      */
     public function setContextLimitSum($ContextLimitSum)
@@ -82,6 +128,8 @@ class CampaignContextStrategy
     }
 
     /**
+     * Gets the ContextPricePercent.
+     *
      * @return int
      */
     public function getContextPricePercent()
@@ -90,12 +138,135 @@ class CampaignContextStrategy
     }
 
     /**
+     * Sets the ContextPricePercent.
+     *
      * @param int $ContextPricePercent
+     *
      * @return CampaignContextStrategy
      */
     public function setContextPricePercent($ContextPricePercent)
     {
         $this->ContextPricePercent = $ContextPricePercent;
+
+        return $this;
+    }
+
+    /**
+     * Gets the MaxPrice.
+     *
+     * @return float
+     */
+    public function getMaxPrice()
+    {
+        return $this->MaxPrice;
+    }
+
+    /**
+     * Sets the MaxPrice.
+     *
+     * @param float $MaxPrice
+     *
+     * @return CampaignContextStrategy
+     */
+    public function setMaxPrice($MaxPrice)
+    {
+        $this->MaxPrice = $MaxPrice;
+
+        return $this;
+    }
+
+    /**
+     * Gets the AveragePrice.
+     *
+     * @return float
+     */
+    public function getAveragePrice()
+    {
+        return $this->AveragePrice;
+    }
+
+    /**
+     * Sets the AveragePrice.
+     *
+     * @param float $AveragePrice
+     *
+     * @return CampaignContextStrategy
+     */
+    public function setAveragePrice($AveragePrice)
+    {
+        $this->AveragePrice = $AveragePrice;
+
+        return $this;
+    }
+
+    /**
+     * Gets the WeeklySumLimit.
+     *
+     * @return float
+     */
+    public function getWeeklySumLimit()
+    {
+        return $this->WeeklySumLimit;
+    }
+
+    /**
+     * Sets the WeeklySumLimit.
+     *
+     * @param float $WeeklySumLimit
+     *
+     * @return CampaignContextStrategy
+     */
+    public function setWeeklySumLimit($WeeklySumLimit)
+    {
+        $this->WeeklySumLimit = $WeeklySumLimit;
+
+        return $this;
+    }
+
+    /**
+     * Gets the ClicksPerWeek.
+     *
+     * @return int
+     */
+    public function getClicksPerWeek()
+    {
+        return $this->ClicksPerWeek;
+    }
+
+    /**
+     * Sets the ClicksPerWeek.
+     *
+     * @param int $ClicksPerWeek
+     *
+     * @return CampaignContextStrategy
+     */
+    public function setClicksPerWeek($ClicksPerWeek)
+    {
+        $this->ClicksPerWeek = $ClicksPerWeek;
+
+        return $this;
+    }
+
+    /**
+     * Gets the GoalID.
+     *
+     * @return int
+     */
+    public function getGoalID()
+    {
+        return $this->GoalID;
+    }
+
+    /**
+     * Sets the GoalID.
+     *
+     * @param int $GoalID
+     *
+     * @return CampaignContextStrategy
+     */
+    public function setGoalID($GoalID)
+    {
+        $this->GoalID = $GoalID;
 
         return $this;
     }

@@ -22,6 +22,18 @@ class PayCampaignsInfo
     protected $PayMethod;
 
     /**
+     * Creates a new instance.
+     *
+     * @return self
+     */
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * Gets the Payments.
+     *
      * @return PayCampElement[]
      */
     public function getPayments()
@@ -30,7 +42,10 @@ class PayCampaignsInfo
     }
 
     /**
+     * Sets the Payments.
+     *
      * @param PayCampElement[] $Payments
+     *
      * @return PayCampaignsInfo
      */
     public function setPayments(array $Payments)
@@ -41,6 +56,8 @@ class PayCampaignsInfo
     }
 
     /**
+     * Gets the ContractID.
+     *
      * @return string
      */
     public function getContractID()
@@ -49,7 +66,10 @@ class PayCampaignsInfo
     }
 
     /**
+     * Sets the ContractID.
+     *
      * @param string $ContractID
+     *
      * @return PayCampaignsInfo
      */
     public function setContractID($ContractID)
@@ -60,6 +80,8 @@ class PayCampaignsInfo
     }
 
     /**
+     * Gets the PayMethod.
+     *
      * @return string
      */
     public function getPayMethod()
@@ -68,7 +90,10 @@ class PayCampaignsInfo
     }
 
     /**
+     * Sets the PayMethod.
+     *
      * @param string $PayMethod
+     *
      * @return PayCampaignsInfo
      */
     public function setPayMethod($PayMethod)

@@ -13,7 +13,7 @@ class StatItem
      */
     protected $CampaignID;
     /**
-     * @var date
+     * @var string
      */
     protected $StatDate;
     /**
@@ -66,6 +66,18 @@ class StatItem
     protected $GoalCostContext;
 
     /**
+     * Creates a new instance.
+     *
+     * @return self
+     */
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * Gets the CampaignID.
+     *
      * @return int
      */
     public function getCampaignID()
@@ -74,7 +86,10 @@ class StatItem
     }
 
     /**
+     * Sets the CampaignID.
+     *
      * @param int $CampaignID
+     *
      * @return StatItem
      */
     public function setCampaignID($CampaignID)
@@ -85,7 +100,9 @@ class StatItem
     }
 
     /**
-     * @return date
+     * Gets the StatDate.
+     *
+     * @return string
      */
     public function getStatDate()
     {
@@ -93,7 +110,10 @@ class StatItem
     }
 
     /**
-     * @param date $StatDate
+     * Sets the StatDate.
+     *
+     * @param string $StatDate
+     *
      * @return StatItem
      */
     public function setStatDate($StatDate)
@@ -104,6 +124,8 @@ class StatItem
     }
 
     /**
+     * Gets the SumSearch.
+     *
      * @return float
      */
     public function getSumSearch()
@@ -112,7 +134,10 @@ class StatItem
     }
 
     /**
+     * Sets the SumSearch.
+     *
      * @param float $SumSearch
+     *
      * @return StatItem
      */
     public function setSumSearch($SumSearch)
@@ -123,6 +148,8 @@ class StatItem
     }
 
     /**
+     * Gets the SumContext.
+     *
      * @return float
      */
     public function getSumContext()
@@ -131,7 +158,10 @@ class StatItem
     }
 
     /**
+     * Sets the SumContext.
+     *
      * @param float $SumContext
+     *
      * @return StatItem
      */
     public function setSumContext($SumContext)
@@ -142,6 +172,8 @@ class StatItem
     }
 
     /**
+     * Gets the ShowsSearch.
+     *
      * @return int
      */
     public function getShowsSearch()
@@ -150,7 +182,10 @@ class StatItem
     }
 
     /**
+     * Sets the ShowsSearch.
+     *
      * @param int $ShowsSearch
+     *
      * @return StatItem
      */
     public function setShowsSearch($ShowsSearch)
@@ -161,6 +196,8 @@ class StatItem
     }
 
     /**
+     * Gets the ShowsContext.
+     *
      * @return int
      */
     public function getShowsContext()
@@ -169,7 +206,10 @@ class StatItem
     }
 
     /**
+     * Sets the ShowsContext.
+     *
      * @param int $ShowsContext
+     *
      * @return StatItem
      */
     public function setShowsContext($ShowsContext)
@@ -180,6 +220,8 @@ class StatItem
     }
 
     /**
+     * Gets the ClicksSearch.
+     *
      * @return int
      */
     public function getClicksSearch()
@@ -188,7 +230,10 @@ class StatItem
     }
 
     /**
+     * Sets the ClicksSearch.
+     *
      * @param int $ClicksSearch
+     *
      * @return StatItem
      */
     public function setClicksSearch($ClicksSearch)
@@ -199,6 +244,8 @@ class StatItem
     }
 
     /**
+     * Gets the ClicksContext.
+     *
      * @return int
      */
     public function getClicksContext()
@@ -207,7 +254,10 @@ class StatItem
     }
 
     /**
+     * Sets the ClicksContext.
+     *
      * @param int $ClicksContext
+     *
      * @return StatItem
      */
     public function setClicksContext($ClicksContext)
@@ -218,6 +268,8 @@ class StatItem
     }
 
     /**
+     * Gets the SessionDepthSearch.
+     *
      * @return float
      */
     public function getSessionDepthSearch()
@@ -226,7 +278,10 @@ class StatItem
     }
 
     /**
+     * Sets the SessionDepthSearch.
+     *
      * @param float $SessionDepthSearch
+     *
      * @return StatItem
      */
     public function setSessionDepthSearch($SessionDepthSearch)
@@ -237,6 +292,8 @@ class StatItem
     }
 
     /**
+     * Gets the SessionDepthContext.
+     *
      * @return float
      */
     public function getSessionDepthContext()
@@ -245,7 +302,10 @@ class StatItem
     }
 
     /**
+     * Sets the SessionDepthContext.
+     *
      * @param float $SessionDepthContext
+     *
      * @return StatItem
      */
     public function setSessionDepthContext($SessionDepthContext)
@@ -256,6 +316,8 @@ class StatItem
     }
 
     /**
+     * Gets the GoalConversionSearch.
+     *
      * @return float
      */
     public function getGoalConversionSearch()
@@ -264,7 +326,10 @@ class StatItem
     }
 
     /**
+     * Sets the GoalConversionSearch.
+     *
      * @param float $GoalConversionSearch
+     *
      * @return StatItem
      */
     public function setGoalConversionSearch($GoalConversionSearch)
@@ -275,6 +340,8 @@ class StatItem
     }
 
     /**
+     * Gets the GoalConversionContext.
+     *
      * @return float
      */
     public function getGoalConversionContext()
@@ -283,7 +350,10 @@ class StatItem
     }
 
     /**
+     * Sets the GoalConversionContext.
+     *
      * @param float $GoalConversionContext
+     *
      * @return StatItem
      */
     public function setGoalConversionContext($GoalConversionContext)
@@ -294,6 +364,8 @@ class StatItem
     }
 
     /**
+     * Gets the GoalCostSearch.
+     *
      * @return float
      */
     public function getGoalCostSearch()
@@ -302,7 +374,10 @@ class StatItem
     }
 
     /**
+     * Sets the GoalCostSearch.
+     *
      * @param float $GoalCostSearch
+     *
      * @return StatItem
      */
     public function setGoalCostSearch($GoalCostSearch)
@@ -313,6 +388,8 @@ class StatItem
     }
 
     /**
+     * Gets the GoalCostContext.
+     *
      * @return float
      */
     public function getGoalCostContext()
@@ -321,7 +398,10 @@ class StatItem
     }
 
     /**
+     * Sets the GoalCostContext.
+     *
      * @param float $GoalCostContext
+     *
      * @return StatItem
      */
     public function setGoalCostContext($GoalCostContext)

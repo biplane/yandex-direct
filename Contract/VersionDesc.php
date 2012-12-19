@@ -17,11 +17,23 @@ class VersionDesc
      */
     protected $LinkWSDL;
     /**
-     * @var date
+     * @var string
      */
     protected $BorderDate;
 
     /**
+     * Creates a new instance.
+     *
+     * @return self
+     */
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * Gets the VersionNumber.
+     *
      * @return int
      */
     public function getVersionNumber()
@@ -30,7 +42,10 @@ class VersionDesc
     }
 
     /**
+     * Sets the VersionNumber.
+     *
      * @param int $VersionNumber
+     *
      * @return VersionDesc
      */
     public function setVersionNumber($VersionNumber)
@@ -41,6 +56,8 @@ class VersionDesc
     }
 
     /**
+     * Gets the LinkWSDL.
+     *
      * @return string
      */
     public function getLinkWSDL()
@@ -49,7 +66,10 @@ class VersionDesc
     }
 
     /**
+     * Sets the LinkWSDL.
+     *
      * @param string $LinkWSDL
+     *
      * @return VersionDesc
      */
     public function setLinkWSDL($LinkWSDL)
@@ -60,7 +80,9 @@ class VersionDesc
     }
 
     /**
-     * @return date
+     * Gets the BorderDate.
+     *
+     * @return string
      */
     public function getBorderDate()
     {
@@ -68,7 +90,10 @@ class VersionDesc
     }
 
     /**
-     * @param date $BorderDate
+     * Sets the BorderDate.
+     *
+     * @param string $BorderDate
+     *
      * @return VersionDesc
      */
     public function setBorderDate($BorderDate)

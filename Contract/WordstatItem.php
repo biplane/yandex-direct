@@ -18,6 +18,18 @@ class WordstatItem
     protected $Shows;
 
     /**
+     * Creates a new instance.
+     *
+     * @return self
+     */
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * Gets the Phrase.
+     *
      * @return string
      */
     public function getPhrase()
@@ -26,7 +38,10 @@ class WordstatItem
     }
 
     /**
+     * Sets the Phrase.
+     *
      * @param string $Phrase
+     *
      * @return WordstatItem
      */
     public function setPhrase($Phrase)
@@ -37,6 +52,8 @@ class WordstatItem
     }
 
     /**
+     * Gets the Shows.
+     *
      * @return int
      */
     public function getShows()
@@ -45,7 +62,10 @@ class WordstatItem
     }
 
     /**
+     * Sets the Shows.
+     *
      * @param int $Shows
+     *
      * @return WordstatItem
      */
     public function setShows($Shows)

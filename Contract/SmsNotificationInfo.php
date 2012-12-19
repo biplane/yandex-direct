@@ -34,6 +34,18 @@ class SmsNotificationInfo
     protected $SmsTimeTo;
 
     /**
+     * Creates a new instance.
+     *
+     * @return self
+     */
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * Gets the MetricaSms.
+     *
      * @return string
      */
     public function getMetricaSms()
@@ -42,7 +54,10 @@ class SmsNotificationInfo
     }
 
     /**
+     * Sets the MetricaSms.
+     *
      * @param string $MetricaSms
+     *
      * @return SmsNotificationInfo
      */
     public function setMetricaSms($MetricaSms)
@@ -53,6 +68,8 @@ class SmsNotificationInfo
     }
 
     /**
+     * Gets the ModerateResultSms.
+     *
      * @return string
      */
     public function getModerateResultSms()
@@ -61,7 +78,10 @@ class SmsNotificationInfo
     }
 
     /**
+     * Sets the ModerateResultSms.
+     *
      * @param string $ModerateResultSms
+     *
      * @return SmsNotificationInfo
      */
     public function setModerateResultSms($ModerateResultSms)
@@ -72,6 +92,8 @@ class SmsNotificationInfo
     }
 
     /**
+     * Gets the MoneyInSms.
+     *
      * @return string
      */
     public function getMoneyInSms()
@@ -80,7 +102,10 @@ class SmsNotificationInfo
     }
 
     /**
+     * Sets the MoneyInSms.
+     *
      * @param string $MoneyInSms
+     *
      * @return SmsNotificationInfo
      */
     public function setMoneyInSms($MoneyInSms)
@@ -91,6 +116,8 @@ class SmsNotificationInfo
     }
 
     /**
+     * Gets the MoneyOutSms.
+     *
      * @return string
      */
     public function getMoneyOutSms()
@@ -99,7 +126,10 @@ class SmsNotificationInfo
     }
 
     /**
+     * Sets the MoneyOutSms.
+     *
      * @param string $MoneyOutSms
+     *
      * @return SmsNotificationInfo
      */
     public function setMoneyOutSms($MoneyOutSms)
@@ -110,6 +140,8 @@ class SmsNotificationInfo
     }
 
     /**
+     * Gets the SmsTimeFrom.
+     *
      * @return string
      */
     public function getSmsTimeFrom()
@@ -118,7 +150,10 @@ class SmsNotificationInfo
     }
 
     /**
+     * Sets the SmsTimeFrom.
+     *
      * @param string $SmsTimeFrom
+     *
      * @return SmsNotificationInfo
      */
     public function setSmsTimeFrom($SmsTimeFrom)
@@ -129,6 +164,8 @@ class SmsNotificationInfo
     }
 
     /**
+     * Gets the SmsTimeTo.
+     *
      * @return string
      */
     public function getSmsTimeTo()
@@ -137,7 +174,10 @@ class SmsNotificationInfo
     }
 
     /**
+     * Sets the SmsTimeTo.
+     *
      * @param string $SmsTimeTo
+     *
      * @return SmsNotificationInfo
      */
     public function setSmsTimeTo($SmsTimeTo)

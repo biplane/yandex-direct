@@ -26,6 +26,18 @@ class GetChangesRequest
     protected $Timestamp;
 
     /**
+     * Creates a new instance.
+     *
+     * @return self
+     */
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * Gets the CampaignIDS.
+     *
      * @return int[]
      */
     public function getCampaignIDS()
@@ -34,7 +46,10 @@ class GetChangesRequest
     }
 
     /**
+     * Sets the CampaignIDS.
+     *
      * @param int[] $CampaignIDS
+     *
      * @return GetChangesRequest
      */
     public function setCampaignIDS(array $CampaignIDS)
@@ -45,6 +60,8 @@ class GetChangesRequest
     }
 
     /**
+     * Gets the BannerIDS.
+     *
      * @return int[]
      */
     public function getBannerIDS()
@@ -53,7 +70,10 @@ class GetChangesRequest
     }
 
     /**
+     * Sets the BannerIDS.
+     *
      * @param int[] $BannerIDS
+     *
      * @return GetChangesRequest
      */
     public function setBannerIDS(array $BannerIDS)
@@ -64,6 +84,8 @@ class GetChangesRequest
     }
 
     /**
+     * Gets the Logins.
+     *
      * @return string[]
      */
     public function getLogins()
@@ -72,7 +94,10 @@ class GetChangesRequest
     }
 
     /**
+     * Sets the Logins.
+     *
      * @param string[] $Logins
+     *
      * @return GetChangesRequest
      */
     public function setLogins(array $Logins)
@@ -83,6 +108,8 @@ class GetChangesRequest
     }
 
     /**
+     * Gets the Timestamp.
+     *
      * @return string
      */
     public function getTimestamp()
@@ -91,7 +118,10 @@ class GetChangesRequest
     }
 
     /**
+     * Sets the Timestamp.
+     *
      * @param string $Timestamp
+     *
      * @return GetChangesRequest
      */
     public function setTimestamp($Timestamp)

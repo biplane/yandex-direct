@@ -14,6 +14,18 @@ class CampaignIDSInfo
     protected $CampaignIDS;
 
     /**
+     * Creates a new instance.
+     *
+     * @return self
+     */
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * Gets the CampaignIDS.
+     *
      * @return int[]
      */
     public function getCampaignIDS()
@@ -22,7 +34,10 @@ class CampaignIDSInfo
     }
 
     /**
+     * Sets the CampaignIDS.
+     *
      * @param int[] $CampaignIDS
+     *
      * @return CampaignIDSInfo
      */
     public function setCampaignIDS(array $CampaignIDS)

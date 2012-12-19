@@ -29,6 +29,10 @@ class GetBannersInfo
      */
     protected $GetPhrases;
     /**
+     * @var string[]
+     */
+    protected $FieldsNames;
+    /**
      * @var int
      */
     protected $Limit;
@@ -37,6 +41,26 @@ class GetBannersInfo
      */
     protected $Offset;
 
+    /**
+     * Creates a new instance.
+     *
+     * @return self
+     */
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * Constructor.
+     *
+     * @param array             $campaignIds
+     * @param array             $bannerIds
+     * @param BannersFilterInfo $filter
+     * @param null              $getPhrases
+     *
+     * @deprecated
+     */
     public function __construct(array $campaignIds = array(), array $bannerIds = null, BannersFilterInfo $filter = null, $getPhrases = null)
     {
         $this->CampaignIDS = $campaignIds;
@@ -46,6 +70,8 @@ class GetBannersInfo
     }
 
     /**
+     * Gets the CampaignIDS.
+     *
      * @return int[]
      */
     public function getCampaignIDS()
@@ -54,7 +80,10 @@ class GetBannersInfo
     }
 
     /**
+     * Sets the CampaignIDS.
+     *
      * @param int[] $CampaignIDS
+     *
      * @return GetBannersInfo
      */
     public function setCampaignIDS(array $CampaignIDS)
@@ -65,6 +94,8 @@ class GetBannersInfo
     }
 
     /**
+     * Gets the BannerIDS.
+     *
      * @return int[]
      */
     public function getBannerIDS()
@@ -73,7 +104,10 @@ class GetBannersInfo
     }
 
     /**
+     * Sets the BannerIDS.
+     *
      * @param int[] $BannerIDS
+     *
      * @return GetBannersInfo
      */
     public function setBannerIDS(array $BannerIDS)
@@ -84,6 +118,8 @@ class GetBannersInfo
     }
 
     /**
+     * Gets the Filter.
+     *
      * @return BannersFilterInfo
      */
     public function getFilter()
@@ -92,7 +128,10 @@ class GetBannersInfo
     }
 
     /**
+     * Sets the Filter.
+     *
      * @param BannersFilterInfo $Filter
+     *
      * @return GetBannersInfo
      */
     public function setFilter(BannersFilterInfo $Filter)
@@ -103,6 +142,8 @@ class GetBannersInfo
     }
 
     /**
+     * Gets the GetPhrases.
+     *
      * @return string
      *
      * @since v4
@@ -113,7 +154,10 @@ class GetBannersInfo
     }
 
     /**
+     * Sets the GetPhrases.
+     *
      * @param string $GetPhrases
+     *
      * @return GetBannersInfo
      *
      * @since v4
@@ -126,6 +170,36 @@ class GetBannersInfo
     }
 
     /**
+     * Gets the FieldsNames.
+     *
+     * @return string[]
+     *
+     * @since v4.live
+     */
+    public function getFieldsNames()
+    {
+        return $this->FieldsNames;
+    }
+
+    /**
+     * Sets the FieldsNames.
+     *
+     * @param string[] $FieldsNames
+     *
+     * @return GetBannersInfo
+     *
+     * @since v4.live
+     */
+    public function setFieldsNames(array $FieldsNames)
+    {
+        $this->FieldsNames = $FieldsNames;
+
+        return $this;
+    }
+
+    /**
+     * Gets the Limit.
+     *
      * @return int
      */
     public function getLimit()
@@ -134,7 +208,10 @@ class GetBannersInfo
     }
 
     /**
+     * Sets the Limit.
+     *
      * @param int $Limit
+     *
      * @return GetBannersInfo
      */
     public function setLimit($Limit)
@@ -145,6 +222,8 @@ class GetBannersInfo
     }
 
     /**
+     * Gets the Offset.
+     *
      * @return int
      */
     public function getOffset()
@@ -153,7 +232,10 @@ class GetBannersInfo
     }
 
     /**
+     * Sets the Offset.
+     *
      * @param int $Offset
+     *
      * @return GetBannersInfo
      */
     public function setOffset($Offset)

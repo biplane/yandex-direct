@@ -26,6 +26,18 @@ class RegionInfo
     protected $RegionType;
 
     /**
+     * Creates a new instance.
+     *
+     * @return self
+     */
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * Gets the RegionID.
+     *
      * @return int
      */
     public function getRegionID()
@@ -34,7 +46,10 @@ class RegionInfo
     }
 
     /**
+     * Sets the RegionID.
+     *
      * @param int $RegionID
+     *
      * @return RegionInfo
      */
     public function setRegionID($RegionID)
@@ -45,6 +60,8 @@ class RegionInfo
     }
 
     /**
+     * Gets the ParentID.
+     *
      * @return int
      */
     public function getParentID()
@@ -53,7 +70,10 @@ class RegionInfo
     }
 
     /**
+     * Sets the ParentID.
+     *
      * @param int $ParentID
+     *
      * @return RegionInfo
      */
     public function setParentID($ParentID)
@@ -64,6 +84,8 @@ class RegionInfo
     }
 
     /**
+     * Gets the RegionName.
+     *
      * @return string
      */
     public function getRegionName()
@@ -72,7 +94,10 @@ class RegionInfo
     }
 
     /**
+     * Sets the RegionName.
+     *
      * @param string $RegionName
+     *
      * @return RegionInfo
      */
     public function setRegionName($RegionName)
@@ -83,6 +108,8 @@ class RegionInfo
     }
 
     /**
+     * Gets the RegionType.
+     *
      * @return string
      */
     public function getRegionType()
@@ -91,7 +118,10 @@ class RegionInfo
     }
 
     /**
+     * Sets the RegionType.
+     *
      * @param string $RegionType
+     *
      * @return RegionInfo
      */
     public function setRegionType($RegionType)

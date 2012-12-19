@@ -22,6 +22,18 @@ class GetChangesIntData
     protected $NotFound;
 
     /**
+     * Creates a new instance.
+     *
+     * @return self
+     */
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * Gets the Updated.
+     *
      * @return int[]
      */
     public function getUpdated()
@@ -30,7 +42,10 @@ class GetChangesIntData
     }
 
     /**
+     * Sets the Updated.
+     *
      * @param int[] $Updated
+     *
      * @return GetChangesIntData
      */
     public function setUpdated(array $Updated)
@@ -41,6 +56,8 @@ class GetChangesIntData
     }
 
     /**
+     * Gets the NotUpdated.
+     *
      * @return int[]
      */
     public function getNotUpdated()
@@ -49,7 +66,10 @@ class GetChangesIntData
     }
 
     /**
+     * Sets the NotUpdated.
+     *
      * @param int[] $NotUpdated
+     *
      * @return GetChangesIntData
      */
     public function setNotUpdated(array $NotUpdated)
@@ -60,6 +80,8 @@ class GetChangesIntData
     }
 
     /**
+     * Gets the NotFound.
+     *
      * @return int[]
      */
     public function getNotFound()
@@ -68,7 +90,10 @@ class GetChangesIntData
     }
 
     /**
+     * Sets the NotFound.
+     *
      * @param int[] $NotFound
+     *
      * @return GetChangesIntData
      */
     public function setNotFound(array $NotFound)

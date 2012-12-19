@@ -4,6 +4,7 @@ namespace Biplane\YandexDirectBundle\Contract;
 
 /**
  * @codeCoverageIgnore
+ * @SuppressWarnings(PHPMD)
  */
 class EventsLogItemAttributes
 {
@@ -24,15 +25,35 @@ class EventsLogItemAttributes
      */
     protected $Payed;
     /**
-     * @var date
+     * @var string
      */
     protected $FinishDate;
     /**
      * @var string
      */
     protected $OldPlace;
+    /**
+     * @var string
+     */
+    protected $IsEditedByModerator;
+    /**
+     * @var string
+     */
+    protected $StopTime;
 
     /**
+     * Creates a new instance.
+     *
+     * @return self
+     */
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * Gets the ModerationResult.
+     *
      * @return string
      */
     public function getModerationResult()
@@ -41,7 +62,10 @@ class EventsLogItemAttributes
     }
 
     /**
+     * Sets the ModerationResult.
+     *
      * @param string $ModerationResult
+     *
      * @return EventsLogItemAttributes
      */
     public function setModerationResult($ModerationResult)
@@ -52,6 +76,8 @@ class EventsLogItemAttributes
     }
 
     /**
+     * Gets the MinPrice.
+     *
      * @return float
      */
     public function getMinPrice()
@@ -60,7 +86,10 @@ class EventsLogItemAttributes
     }
 
     /**
+     * Sets the MinPrice.
+     *
      * @param float $MinPrice
+     *
      * @return EventsLogItemAttributes
      */
     public function setMinPrice($MinPrice)
@@ -71,6 +100,8 @@ class EventsLogItemAttributes
     }
 
     /**
+     * Gets the Rest.
+     *
      * @return float
      */
     public function getRest()
@@ -79,7 +110,10 @@ class EventsLogItemAttributes
     }
 
     /**
+     * Sets the Rest.
+     *
      * @param float $Rest
+     *
      * @return EventsLogItemAttributes
      */
     public function setRest($Rest)
@@ -90,6 +124,8 @@ class EventsLogItemAttributes
     }
 
     /**
+     * Gets the Payed.
+     *
      * @return float
      */
     public function getPayed()
@@ -98,7 +134,10 @@ class EventsLogItemAttributes
     }
 
     /**
+     * Sets the Payed.
+     *
      * @param float $Payed
+     *
      * @return EventsLogItemAttributes
      */
     public function setPayed($Payed)
@@ -109,7 +148,9 @@ class EventsLogItemAttributes
     }
 
     /**
-     * @return date
+     * Gets the FinishDate.
+     *
+     * @return string
      */
     public function getFinishDate()
     {
@@ -117,7 +158,10 @@ class EventsLogItemAttributes
     }
 
     /**
-     * @param date $FinishDate
+     * Sets the FinishDate.
+     *
+     * @param string $FinishDate
+     *
      * @return EventsLogItemAttributes
      */
     public function setFinishDate($FinishDate)
@@ -128,6 +172,8 @@ class EventsLogItemAttributes
     }
 
     /**
+     * Gets the OldPlace.
+     *
      * @return string
      */
     public function getOldPlace()
@@ -136,12 +182,63 @@ class EventsLogItemAttributes
     }
 
     /**
+     * Sets the OldPlace.
+     *
      * @param string $OldPlace
+     *
      * @return EventsLogItemAttributes
      */
     public function setOldPlace($OldPlace)
     {
         $this->OldPlace = $OldPlace;
+
+        return $this;
+    }
+
+    /**
+     * Gets the IsEditedByModerator.
+     *
+     * @return string
+     */
+    public function getIsEditedByModerator()
+    {
+        return $this->IsEditedByModerator;
+    }
+
+    /**
+     * Sets the IsEditedByModerator.
+     *
+     * @param string $IsEditedByModerator
+     *
+     * @return EventsLogItemAttributes
+     */
+    public function setIsEditedByModerator($IsEditedByModerator)
+    {
+        $this->IsEditedByModerator = $IsEditedByModerator;
+
+        return $this;
+    }
+
+    /**
+     * Gets the StopTime.
+     *
+     * @return string
+     */
+    public function getStopTime()
+    {
+        return $this->StopTime;
+    }
+
+    /**
+     * Sets the StopTime.
+     *
+     * @param string $StopTime
+     *
+     * @return EventsLogItemAttributes
+     */
+    public function setStopTime($StopTime)
+    {
+        $this->StopTime = $StopTime;
 
         return $this;
     }

@@ -25,6 +25,18 @@ class ReportInfo
     protected $StatusReport;
 
     /**
+     * Creates a new instance.
+     *
+     * @return self
+     */
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * Gets the ReportID.
+     *
      * @return int
      */
     public function getReportID()
@@ -33,7 +45,10 @@ class ReportInfo
     }
 
     /**
+     * Sets the ReportID.
+     *
      * @param int $ReportID
+     *
      * @return ReportInfo
      */
     public function setReportID($ReportID)
@@ -44,6 +59,8 @@ class ReportInfo
     }
 
     /**
+     * Gets the Url.
+     *
      * @return string
      */
     public function getUrl()
@@ -52,7 +69,10 @@ class ReportInfo
     }
 
     /**
+     * Sets the Url.
+     *
      * @param string $Url
+     *
      * @return ReportInfo
      */
     public function setUrl($Url)
@@ -63,6 +83,8 @@ class ReportInfo
     }
 
     /**
+     * Gets the StatusReport.
+     *
      * @return string
      */
     public function getStatusReport()
@@ -71,7 +93,10 @@ class ReportInfo
     }
 
     /**
+     * Sets the StatusReport.
+     *
      * @param string $StatusReport
+     *
      * @return ReportInfo
      */
     public function setStatusReport($StatusReport)

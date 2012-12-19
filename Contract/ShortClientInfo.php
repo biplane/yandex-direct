@@ -22,6 +22,18 @@ class ShortClientInfo
     protected $Role;
 
     /**
+     * Creates a new instance.
+     *
+     * @return self
+     */
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * Gets the Login.
+     *
      * @return string
      */
     public function getLogin()
@@ -30,7 +42,10 @@ class ShortClientInfo
     }
 
     /**
+     * Sets the Login.
+     *
      * @param string $Login
+     *
      * @return ShortClientInfo
      */
     public function setLogin($Login)
@@ -41,6 +56,8 @@ class ShortClientInfo
     }
 
     /**
+     * Gets the FIO.
+     *
      * @return string
      */
     public function getFIO()
@@ -49,7 +66,10 @@ class ShortClientInfo
     }
 
     /**
+     * Sets the FIO.
+     *
      * @param string $FIO
+     *
      * @return ShortClientInfo
      */
     public function setFIO($FIO)
@@ -60,6 +80,8 @@ class ShortClientInfo
     }
 
     /**
+     * Gets the Role.
+     *
      * @return string
      */
     public function getRole()
@@ -68,7 +90,10 @@ class ShortClientInfo
     }
 
     /**
+     * Sets the Role.
+     *
      * @param string $Role
+     *
      * @return ShortClientInfo
      */
     public function setRole($Role)

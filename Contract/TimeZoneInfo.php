@@ -22,6 +22,18 @@ class TimeZoneInfo
     protected $Name;
 
     /**
+     * Creates a new instance.
+     *
+     * @return self
+     */
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * Gets the TimeZone.
+     *
      * @return string
      */
     public function getTimeZone()
@@ -30,7 +42,10 @@ class TimeZoneInfo
     }
 
     /**
+     * Sets the TimeZone.
+     *
      * @param string $TimeZone
+     *
      * @return TimeZoneInfo
      */
     public function setTimeZone($TimeZone)
@@ -41,6 +56,8 @@ class TimeZoneInfo
     }
 
     /**
+     * Gets the GMTOffset.
+     *
      * @return int
      */
     public function getGMTOffset()
@@ -49,7 +66,10 @@ class TimeZoneInfo
     }
 
     /**
+     * Sets the GMTOffset.
+     *
      * @param int $GMTOffset
+     *
      * @return TimeZoneInfo
      */
     public function setGMTOffset($GMTOffset)
@@ -60,6 +80,8 @@ class TimeZoneInfo
     }
 
     /**
+     * Gets the Name.
+     *
      * @return string
      */
     public function getName()
@@ -68,7 +90,10 @@ class TimeZoneInfo
     }
 
     /**
+     * Sets the Name.
+     *
      * @param string $Name
+     *
      * @return TimeZoneInfo
      */
     public function setName($Name)

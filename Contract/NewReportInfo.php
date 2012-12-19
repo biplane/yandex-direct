@@ -54,6 +54,18 @@ class NewReportInfo
     protected $CompressReport;
 
     /**
+     * Creates a new instance.
+     *
+     * @return self
+     */
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * Gets the CampaignID.
+     *
      * @return int
      */
     public function getCampaignID()
@@ -62,7 +74,10 @@ class NewReportInfo
     }
 
     /**
+     * Sets the CampaignID.
+     *
      * @param int $CampaignID
+     *
      * @return NewReportInfo
      */
     public function setCampaignID($CampaignID)
@@ -73,6 +88,8 @@ class NewReportInfo
     }
 
     /**
+     * Gets the StartDate.
+     *
      * @return string
      */
     public function getStartDate()
@@ -81,7 +98,10 @@ class NewReportInfo
     }
 
     /**
+     * Sets the StartDate.
+     *
      * @param string $StartDate
+     *
      * @return NewReportInfo
      */
     public function setStartDate($StartDate)
@@ -92,6 +112,8 @@ class NewReportInfo
     }
 
     /**
+     * Gets the EndDate.
+     *
      * @return string
      */
     public function getEndDate()
@@ -100,7 +122,10 @@ class NewReportInfo
     }
 
     /**
+     * Sets the EndDate.
+     *
      * @param string $EndDate
+     *
      * @return NewReportInfo
      */
     public function setEndDate($EndDate)
@@ -111,6 +136,8 @@ class NewReportInfo
     }
 
     /**
+     * Gets the GroupByColumns.
+     *
      * @return string[]
      */
     public function getGroupByColumns()
@@ -119,7 +146,10 @@ class NewReportInfo
     }
 
     /**
+     * Sets the GroupByColumns.
+     *
      * @param string[] $GroupByColumns
+     *
      * @return NewReportInfo
      */
     public function setGroupByColumns(array $GroupByColumns)
@@ -130,6 +160,8 @@ class NewReportInfo
     }
 
     /**
+     * Gets the Filter.
+     *
      * @return NewReportFilterInfo
      */
     public function getFilter()
@@ -138,7 +170,10 @@ class NewReportInfo
     }
 
     /**
+     * Sets the Filter.
+     *
      * @param NewReportFilterInfo $Filter
+     *
      * @return NewReportInfo
      */
     public function setFilter(NewReportFilterInfo $Filter)
@@ -149,6 +184,8 @@ class NewReportInfo
     }
 
     /**
+     * Gets the Limit.
+     *
      * @return int
      */
     public function getLimit()
@@ -157,7 +194,10 @@ class NewReportInfo
     }
 
     /**
+     * Sets the Limit.
+     *
      * @param int $Limit
+     *
      * @return NewReportInfo
      */
     public function setLimit($Limit)
@@ -168,6 +208,8 @@ class NewReportInfo
     }
 
     /**
+     * Gets the Offset.
+     *
      * @return int
      */
     public function getOffset()
@@ -176,7 +218,10 @@ class NewReportInfo
     }
 
     /**
+     * Sets the Offset.
+     *
      * @param int $Offset
+     *
      * @return NewReportInfo
      */
     public function setOffset($Offset)
@@ -187,6 +232,8 @@ class NewReportInfo
     }
 
     /**
+     * Gets the GroupByDate.
+     *
      * @return string
      */
     public function getGroupByDate()
@@ -195,7 +242,10 @@ class NewReportInfo
     }
 
     /**
+     * Sets the GroupByDate.
+     *
      * @param string $GroupByDate
+     *
      * @return NewReportInfo
      */
     public function setGroupByDate($GroupByDate)
@@ -206,6 +256,8 @@ class NewReportInfo
     }
 
     /**
+     * Gets the OrderBy.
+     *
      * @return string[]
      */
     public function getOrderBy()
@@ -214,7 +266,10 @@ class NewReportInfo
     }
 
     /**
+     * Sets the OrderBy.
+     *
      * @param string[] $OrderBy
+     *
      * @return NewReportInfo
      */
     public function setOrderBy(array $OrderBy)
@@ -225,6 +280,8 @@ class NewReportInfo
     }
 
     /**
+     * Gets the TypeResultReport.
+     *
      * @return string
      */
     public function getTypeResultReport()
@@ -233,7 +290,10 @@ class NewReportInfo
     }
 
     /**
+     * Sets the TypeResultReport.
+     *
      * @param string $TypeResultReport
+     *
      * @return NewReportInfo
      */
     public function setTypeResultReport($TypeResultReport)
@@ -244,6 +304,8 @@ class NewReportInfo
     }
 
     /**
+     * Gets the CompressReport.
+     *
      * @return int
      */
     public function getCompressReport()
@@ -252,7 +314,10 @@ class NewReportInfo
     }
 
     /**
+     * Sets the CompressReport.
+     *
      * @param int $CompressReport
+     *
      * @return NewReportInfo
      */
     public function setCompressReport($CompressReport)

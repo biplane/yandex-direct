@@ -14,6 +14,18 @@ class ClientFilter
     protected $StatusArch;
 
     /**
+     * Creates a new instance.
+     *
+     * @return self
+     */
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * Gets the StatusArch.
+     *
      * @return string
      */
     public function getStatusArch()
@@ -22,7 +34,10 @@ class ClientFilter
     }
 
     /**
+     * Sets the StatusArch.
+     *
      * @param string $StatusArch
+     *
      * @return ClientFilter
      */
     public function setStatusArch($StatusArch)

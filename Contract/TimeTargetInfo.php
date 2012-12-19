@@ -28,8 +28,24 @@ class TimeTargetInfo
      * @var string
      */
     protected $TimeZone;
+    /**
+     * @var string
+     */
+    protected $WorkingHolidays;
 
     /**
+     * Creates a new instance.
+     *
+     * @return self
+     */
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * Gets the ShowOnHolidays.
+     *
      * @return string
      */
     public function getShowOnHolidays()
@@ -38,7 +54,10 @@ class TimeTargetInfo
     }
 
     /**
+     * Sets the ShowOnHolidays.
+     *
      * @param string $ShowOnHolidays
+     *
      * @return TimeTargetInfo
      */
     public function setShowOnHolidays($ShowOnHolidays)
@@ -49,6 +68,8 @@ class TimeTargetInfo
     }
 
     /**
+     * Gets the HolidayShowFrom.
+     *
      * @return int
      */
     public function getHolidayShowFrom()
@@ -57,7 +78,10 @@ class TimeTargetInfo
     }
 
     /**
+     * Sets the HolidayShowFrom.
+     *
      * @param int $HolidayShowFrom
+     *
      * @return TimeTargetInfo
      */
     public function setHolidayShowFrom($HolidayShowFrom)
@@ -68,6 +92,8 @@ class TimeTargetInfo
     }
 
     /**
+     * Gets the HolidayShowTo.
+     *
      * @return int
      */
     public function getHolidayShowTo()
@@ -76,7 +102,10 @@ class TimeTargetInfo
     }
 
     /**
+     * Sets the HolidayShowTo.
+     *
      * @param int $HolidayShowTo
+     *
      * @return TimeTargetInfo
      */
     public function setHolidayShowTo($HolidayShowTo)
@@ -87,6 +116,8 @@ class TimeTargetInfo
     }
 
     /**
+     * Gets the DaysHours.
+     *
      * @return TimeTargetItem[]
      */
     public function getDaysHours()
@@ -95,7 +126,10 @@ class TimeTargetInfo
     }
 
     /**
+     * Sets the DaysHours.
+     *
      * @param TimeTargetItem[] $DaysHours
+     *
      * @return TimeTargetInfo
      */
     public function setDaysHours(array $DaysHours)
@@ -106,6 +140,8 @@ class TimeTargetInfo
     }
 
     /**
+     * Gets the TimeZone.
+     *
      * @return string
      */
     public function getTimeZone()
@@ -114,12 +150,39 @@ class TimeTargetInfo
     }
 
     /**
+     * Sets the TimeZone.
+     *
      * @param string $TimeZone
+     *
      * @return TimeTargetInfo
      */
     public function setTimeZone($TimeZone)
     {
         $this->TimeZone = $TimeZone;
+
+        return $this;
+    }
+
+    /**
+     * Gets the WorkingHolidays.
+     *
+     * @return string
+     */
+    public function getWorkingHolidays()
+    {
+        return $this->WorkingHolidays;
+    }
+
+    /**
+     * Sets the WorkingHolidays.
+     *
+     * @param string $WorkingHolidays
+     *
+     * @return TimeTargetInfo
+     */
+    public function setWorkingHolidays($WorkingHolidays)
+    {
+        $this->WorkingHolidays = $WorkingHolidays;
 
         return $this;
     }

@@ -26,6 +26,18 @@ class CampaignBalanceInfo
     protected $SumAvailableForTransfer;
 
     /**
+     * Creates a new instance.
+     *
+     * @return self
+     */
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * Gets the CampaignID.
+     *
      * @return int
      */
     public function getCampaignID()
@@ -34,7 +46,10 @@ class CampaignBalanceInfo
     }
 
     /**
+     * Sets the CampaignID.
+     *
      * @param int $CampaignID
+     *
      * @return CampaignBalanceInfo
      */
     public function setCampaignID($CampaignID)
@@ -45,6 +60,8 @@ class CampaignBalanceInfo
     }
 
     /**
+     * Gets the Sum.
+     *
      * @return float
      */
     public function getSum()
@@ -53,7 +70,10 @@ class CampaignBalanceInfo
     }
 
     /**
+     * Sets the Sum.
+     *
      * @param float $Sum
+     *
      * @return CampaignBalanceInfo
      */
     public function setSum($Sum)
@@ -64,6 +84,8 @@ class CampaignBalanceInfo
     }
 
     /**
+     * Gets the Rest.
+     *
      * @return float
      */
     public function getRest()
@@ -72,7 +94,10 @@ class CampaignBalanceInfo
     }
 
     /**
+     * Sets the Rest.
+     *
      * @param float $Rest
+     *
      * @return CampaignBalanceInfo
      */
     public function setRest($Rest)
@@ -83,6 +108,8 @@ class CampaignBalanceInfo
     }
 
     /**
+     * Gets the SumAvailableForTransfer.
+     *
      * @return float
      */
     public function getSumAvailableForTransfer()
@@ -91,7 +118,10 @@ class CampaignBalanceInfo
     }
 
     /**
+     * Sets the SumAvailableForTransfer.
+     *
      * @param float $SumAvailableForTransfer
+     *
      * @return CampaignBalanceInfo
      */
     public function setSumAvailableForTransfer($SumAvailableForTransfer)

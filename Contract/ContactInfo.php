@@ -86,6 +86,18 @@ class ContactInfo
     protected $PointOnMap;
 
     /**
+     * Creates a new instance.
+     *
+     * @return self
+     */
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * Gets the ContactPerson.
+     *
      * @return string
      */
     public function getContactPerson()
@@ -94,7 +106,10 @@ class ContactInfo
     }
 
     /**
+     * Sets the ContactPerson.
+     *
      * @param string $ContactPerson
+     *
      * @return ContactInfo
      */
     public function setContactPerson($ContactPerson)
@@ -105,6 +120,8 @@ class ContactInfo
     }
 
     /**
+     * Gets the Country.
+     *
      * @return string
      */
     public function getCountry()
@@ -113,7 +130,10 @@ class ContactInfo
     }
 
     /**
+     * Sets the Country.
+     *
      * @param string $Country
+     *
      * @return ContactInfo
      */
     public function setCountry($Country)
@@ -124,6 +144,8 @@ class ContactInfo
     }
 
     /**
+     * Gets the CountryCode.
+     *
      * @return string
      */
     public function getCountryCode()
@@ -132,7 +154,10 @@ class ContactInfo
     }
 
     /**
+     * Sets the CountryCode.
+     *
      * @param string $CountryCode
+     *
      * @return ContactInfo
      */
     public function setCountryCode($CountryCode)
@@ -143,6 +168,8 @@ class ContactInfo
     }
 
     /**
+     * Gets the City.
+     *
      * @return string
      */
     public function getCity()
@@ -151,7 +178,10 @@ class ContactInfo
     }
 
     /**
+     * Sets the City.
+     *
      * @param string $City
+     *
      * @return ContactInfo
      */
     public function setCity($City)
@@ -162,6 +192,8 @@ class ContactInfo
     }
 
     /**
+     * Gets the Street.
+     *
      * @return string
      */
     public function getStreet()
@@ -170,7 +202,10 @@ class ContactInfo
     }
 
     /**
+     * Sets the Street.
+     *
      * @param string $Street
+     *
      * @return ContactInfo
      */
     public function setStreet($Street)
@@ -181,6 +216,8 @@ class ContactInfo
     }
 
     /**
+     * Gets the House.
+     *
      * @return string
      */
     public function getHouse()
@@ -189,7 +226,10 @@ class ContactInfo
     }
 
     /**
+     * Sets the House.
+     *
      * @param string $House
+     *
      * @return ContactInfo
      */
     public function setHouse($House)
@@ -200,6 +240,8 @@ class ContactInfo
     }
 
     /**
+     * Gets the Build.
+     *
      * @return string
      */
     public function getBuild()
@@ -208,7 +250,10 @@ class ContactInfo
     }
 
     /**
+     * Sets the Build.
+     *
      * @param string $Build
+     *
      * @return ContactInfo
      */
     public function setBuild($Build)
@@ -219,6 +264,8 @@ class ContactInfo
     }
 
     /**
+     * Gets the Apart.
+     *
      * @return string
      */
     public function getApart()
@@ -227,7 +274,10 @@ class ContactInfo
     }
 
     /**
+     * Sets the Apart.
+     *
      * @param string $Apart
+     *
      * @return ContactInfo
      */
     public function setApart($Apart)
@@ -238,6 +288,8 @@ class ContactInfo
     }
 
     /**
+     * Gets the CityCode.
+     *
      * @return string
      */
     public function getCityCode()
@@ -246,7 +298,10 @@ class ContactInfo
     }
 
     /**
+     * Sets the CityCode.
+     *
      * @param string $CityCode
+     *
      * @return ContactInfo
      */
     public function setCityCode($CityCode)
@@ -257,6 +312,8 @@ class ContactInfo
     }
 
     /**
+     * Gets the Phone.
+     *
      * @return string
      */
     public function getPhone()
@@ -265,7 +322,10 @@ class ContactInfo
     }
 
     /**
+     * Sets the Phone.
+     *
      * @param string $Phone
+     *
      * @return ContactInfo
      */
     public function setPhone($Phone)
@@ -276,6 +336,8 @@ class ContactInfo
     }
 
     /**
+     * Gets the PhoneExt.
+     *
      * @return string
      */
     public function getPhoneExt()
@@ -284,7 +346,10 @@ class ContactInfo
     }
 
     /**
+     * Sets the PhoneExt.
+     *
      * @param string $PhoneExt
+     *
      * @return ContactInfo
      */
     public function setPhoneExt($PhoneExt)
@@ -295,6 +360,8 @@ class ContactInfo
     }
 
     /**
+     * Gets the CompanyName.
+     *
      * @return string
      */
     public function getCompanyName()
@@ -303,7 +370,10 @@ class ContactInfo
     }
 
     /**
+     * Sets the CompanyName.
+     *
      * @param string $CompanyName
+     *
      * @return ContactInfo
      */
     public function setCompanyName($CompanyName)
@@ -314,6 +384,8 @@ class ContactInfo
     }
 
     /**
+     * Gets the IMClient.
+     *
      * @return string
      */
     public function getIMClient()
@@ -322,7 +394,10 @@ class ContactInfo
     }
 
     /**
+     * Sets the IMClient.
+     *
      * @param string $IMClient
+     *
      * @return ContactInfo
      */
     public function setIMClient($IMClient)
@@ -333,6 +408,8 @@ class ContactInfo
     }
 
     /**
+     * Gets the IMLogin.
+     *
      * @return string
      */
     public function getIMLogin()
@@ -341,7 +418,10 @@ class ContactInfo
     }
 
     /**
+     * Sets the IMLogin.
+     *
      * @param string $IMLogin
+     *
      * @return ContactInfo
      */
     public function setIMLogin($IMLogin)
@@ -352,6 +432,8 @@ class ContactInfo
     }
 
     /**
+     * Gets the ExtraMessage.
+     *
      * @return string
      */
     public function getExtraMessage()
@@ -360,7 +442,10 @@ class ContactInfo
     }
 
     /**
+     * Sets the ExtraMessage.
+     *
      * @param string $ExtraMessage
+     *
      * @return ContactInfo
      */
     public function setExtraMessage($ExtraMessage)
@@ -371,6 +456,8 @@ class ContactInfo
     }
 
     /**
+     * Gets the ContactEmail.
+     *
      * @return string
      */
     public function getContactEmail()
@@ -379,7 +466,10 @@ class ContactInfo
     }
 
     /**
+     * Sets the ContactEmail.
+     *
      * @param string $ContactEmail
+     *
      * @return ContactInfo
      */
     public function setContactEmail($ContactEmail)
@@ -390,6 +480,8 @@ class ContactInfo
     }
 
     /**
+     * Gets the WorkTime.
+     *
      * @return string
      */
     public function getWorkTime()
@@ -398,7 +490,10 @@ class ContactInfo
     }
 
     /**
+     * Sets the WorkTime.
+     *
      * @param string $WorkTime
+     *
      * @return ContactInfo
      */
     public function setWorkTime($WorkTime)
@@ -409,6 +504,8 @@ class ContactInfo
     }
 
     /**
+     * Gets the OGRN.
+     *
      * @return string
      */
     public function getOGRN()
@@ -417,7 +514,10 @@ class ContactInfo
     }
 
     /**
+     * Sets the OGRN.
+     *
      * @param string $OGRN
+     *
      * @return ContactInfo
      */
     public function setOGRN($OGRN)
@@ -428,6 +528,8 @@ class ContactInfo
     }
 
     /**
+     * Gets the PointOnMap.
+     *
      * @return MapPoint
      */
     public function getPointOnMap()
@@ -436,7 +538,10 @@ class ContactInfo
     }
 
     /**
+     * Sets the PointOnMap.
+     *
      * @param MapPoint $PointOnMap
+     *
      * @return ContactInfo
      */
     public function setPointOnMap(MapPoint $PointOnMap)

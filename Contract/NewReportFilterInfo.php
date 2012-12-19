@@ -38,6 +38,18 @@ class NewReportFilterInfo
     protected $StatGoals;
 
     /**
+     * Creates a new instance.
+     *
+     * @return self
+     */
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * Gets the PageType.
+     *
      * @return string
      */
     public function getPageType()
@@ -46,7 +58,10 @@ class NewReportFilterInfo
     }
 
     /**
+     * Sets the PageType.
+     *
      * @param string $PageType
+     *
      * @return NewReportFilterInfo
      */
     public function setPageType($PageType)
@@ -57,6 +72,8 @@ class NewReportFilterInfo
     }
 
     /**
+     * Gets the PositionType.
+     *
      * @return string
      */
     public function getPositionType()
@@ -65,7 +82,10 @@ class NewReportFilterInfo
     }
 
     /**
+     * Sets the PositionType.
+     *
      * @param string $PositionType
+     *
      * @return NewReportFilterInfo
      */
     public function setPositionType($PositionType)
@@ -76,6 +96,8 @@ class NewReportFilterInfo
     }
 
     /**
+     * Gets the Banner.
+     *
      * @return int[]
      */
     public function getBanner()
@@ -84,7 +106,10 @@ class NewReportFilterInfo
     }
 
     /**
+     * Sets the Banner.
+     *
      * @param int[] $Banner
+     *
      * @return NewReportFilterInfo
      */
     public function setBanner(array $Banner)
@@ -95,6 +120,8 @@ class NewReportFilterInfo
     }
 
     /**
+     * Gets the Geo.
+     *
      * @return int[]
      */
     public function getGeo()
@@ -103,7 +130,10 @@ class NewReportFilterInfo
     }
 
     /**
+     * Sets the Geo.
+     *
      * @param int[] $Geo
+     *
      * @return NewReportFilterInfo
      */
     public function setGeo(array $Geo)
@@ -114,6 +144,8 @@ class NewReportFilterInfo
     }
 
     /**
+     * Gets the Phrase.
+     *
      * @return string[]
      */
     public function getPhrase()
@@ -122,7 +154,10 @@ class NewReportFilterInfo
     }
 
     /**
+     * Sets the Phrase.
+     *
      * @param string[] $Phrase
+     *
      * @return NewReportFilterInfo
      */
     public function setPhrase(array $Phrase)
@@ -133,6 +168,8 @@ class NewReportFilterInfo
     }
 
     /**
+     * Gets the PageName.
+     *
      * @return string[]
      */
     public function getPageName()
@@ -141,7 +178,10 @@ class NewReportFilterInfo
     }
 
     /**
+     * Sets the PageName.
+     *
      * @param string[] $PageName
+     *
      * @return NewReportFilterInfo
      */
     public function setPageName(array $PageName)
@@ -152,6 +192,8 @@ class NewReportFilterInfo
     }
 
     /**
+     * Gets the StatGoals.
+     *
      * @return int[]
      */
     public function getStatGoals()
@@ -160,7 +202,10 @@ class NewReportFilterInfo
     }
 
     /**
+     * Sets the StatGoals.
+     *
      * @param int[] $StatGoals
+     *
      * @return NewReportFilterInfo
      */
     public function setStatGoals(array $StatGoals)

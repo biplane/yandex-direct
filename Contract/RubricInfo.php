@@ -34,6 +34,18 @@ class RubricInfo
     protected $Checkable;
 
     /**
+     * Creates a new instance.
+     *
+     * @return self
+     */
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * Gets the ParentID.
+     *
      * @return int
      */
     public function getParentID()
@@ -42,7 +54,10 @@ class RubricInfo
     }
 
     /**
+     * Sets the ParentID.
+     *
      * @param int $ParentID
+     *
      * @return RubricInfo
      */
     public function setParentID($ParentID)
@@ -53,6 +68,8 @@ class RubricInfo
     }
 
     /**
+     * Gets the RubricID.
+     *
      * @return int
      */
     public function getRubricID()
@@ -61,7 +78,10 @@ class RubricInfo
     }
 
     /**
+     * Sets the RubricID.
+     *
      * @param int $RubricID
+     *
      * @return RubricInfo
      */
     public function setRubricID($RubricID)
@@ -72,6 +92,8 @@ class RubricInfo
     }
 
     /**
+     * Gets the Url.
+     *
      * @return string
      */
     public function getUrl()
@@ -80,7 +102,10 @@ class RubricInfo
     }
 
     /**
+     * Sets the Url.
+     *
      * @param string $Url
+     *
      * @return RubricInfo
      */
     public function setUrl($Url)
@@ -91,6 +116,8 @@ class RubricInfo
     }
 
     /**
+     * Gets the RubricFullName.
+     *
      * @return string
      */
     public function getRubricFullName()
@@ -99,7 +126,10 @@ class RubricInfo
     }
 
     /**
+     * Sets the RubricFullName.
+     *
      * @param string $RubricFullName
+     *
      * @return RubricInfo
      */
     public function setRubricFullName($RubricFullName)
@@ -110,6 +140,8 @@ class RubricInfo
     }
 
     /**
+     * Gets the RubricName.
+     *
      * @return string
      */
     public function getRubricName()
@@ -118,7 +150,10 @@ class RubricInfo
     }
 
     /**
+     * Sets the RubricName.
+     *
      * @param string $RubricName
+     *
      * @return RubricInfo
      */
     public function setRubricName($RubricName)
@@ -129,6 +164,8 @@ class RubricInfo
     }
 
     /**
+     * Gets the Checkable.
+     *
      * @return string
      */
     public function getCheckable()
@@ -137,7 +174,10 @@ class RubricInfo
     }
 
     /**
+     * Sets the Checkable.
+     *
      * @param string $Checkable
+     *
      * @return RubricInfo
      */
     public function setCheckable($Checkable)

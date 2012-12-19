@@ -18,6 +18,18 @@ class ClientsUnitInfo
     protected $UnitsRest;
 
     /**
+     * Creates a new instance.
+     *
+     * @return self
+     */
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * Gets the Login.
+     *
      * @return string
      */
     public function getLogin()
@@ -26,7 +38,10 @@ class ClientsUnitInfo
     }
 
     /**
+     * Sets the Login.
+     *
      * @param string $Login
+     *
      * @return ClientsUnitInfo
      */
     public function setLogin($Login)
@@ -37,6 +52,8 @@ class ClientsUnitInfo
     }
 
     /**
+     * Gets the UnitsRest.
+     *
      * @return int
      */
     public function getUnitsRest()
@@ -45,7 +62,10 @@ class ClientsUnitInfo
     }
 
     /**
+     * Sets the UnitsRest.
+     *
      * @param int $UnitsRest
+     *
      * @return ClientsUnitInfo
      */
     public function setUnitsRest($UnitsRest)

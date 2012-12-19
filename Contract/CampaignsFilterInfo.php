@@ -30,6 +30,18 @@ class CampaignsFilterInfo
     protected $StatusShow;
 
     /**
+     * Creates a new instance.
+     *
+     * @return self
+     */
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * Gets the StatusModerate.
+     *
      * @return string[]
      */
     public function getStatusModerate()
@@ -38,7 +50,10 @@ class CampaignsFilterInfo
     }
 
     /**
+     * Sets the StatusModerate.
+     *
      * @param string[] $StatusModerate
+     *
      * @return CampaignsFilterInfo
      */
     public function setStatusModerate(array $StatusModerate)
@@ -49,6 +64,8 @@ class CampaignsFilterInfo
     }
 
     /**
+     * Gets the IsActive.
+     *
      * @return string[]
      */
     public function getIsActive()
@@ -57,7 +74,10 @@ class CampaignsFilterInfo
     }
 
     /**
+     * Sets the IsActive.
+     *
      * @param string[] $IsActive
+     *
      * @return CampaignsFilterInfo
      */
     public function setIsActive(array $IsActive)
@@ -68,6 +88,8 @@ class CampaignsFilterInfo
     }
 
     /**
+     * Gets the StatusArchive.
+     *
      * @return string[]
      */
     public function getStatusArchive()
@@ -76,7 +98,10 @@ class CampaignsFilterInfo
     }
 
     /**
+     * Sets the StatusArchive.
+     *
      * @param string[] $StatusArchive
+     *
      * @return CampaignsFilterInfo
      */
     public function setStatusArchive(array $StatusArchive)
@@ -87,6 +112,8 @@ class CampaignsFilterInfo
     }
 
     /**
+     * Gets the StatusActivating.
+     *
      * @return string[]
      */
     public function getStatusActivating()
@@ -95,7 +122,10 @@ class CampaignsFilterInfo
     }
 
     /**
+     * Sets the StatusActivating.
+     *
      * @param string[] $StatusActivating
+     *
      * @return CampaignsFilterInfo
      */
     public function setStatusActivating(array $StatusActivating)
@@ -106,6 +136,8 @@ class CampaignsFilterInfo
     }
 
     /**
+     * Gets the StatusShow.
+     *
      * @return string[]
      */
     public function getStatusShow()
@@ -114,7 +146,10 @@ class CampaignsFilterInfo
     }
 
     /**
+     * Sets the StatusShow.
+     *
      * @param string[] $StatusShow
+     *
      * @return CampaignsFilterInfo
      */
     public function setStatusShow(array $StatusShow)

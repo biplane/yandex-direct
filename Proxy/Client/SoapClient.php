@@ -91,7 +91,12 @@ class SoapClient extends \SoapClient implements ClientInterface
         'CreateNewSubclientRequest' => 'Biplane\YandexDirectBundle\Contract\CreateNewSubclientRequest',
         'CreateNewSubclientResponse' => 'Biplane\YandexDirectBundle\Contract\CreateNewSubclientResponse',
         'CreditLimitsInfo' => 'Biplane\YandexDirectBundle\Contract\CreditLimitsInfo',
-        'CreditLimitsItem' => 'Biplane\YandexDirectBundle\Contract\CreditLimitsItem'
+        'CreditLimitsItem' => 'Biplane\YandexDirectBundle\Contract\CreditLimitsItem',
+        'BannersRequestInfo' => 'Biplane\YandexDirectBundle\Contract\BannersRequestInfo',
+        'TagInfo' => 'Biplane\YandexDirectBundle\Contract\TagInfo',
+        'CampaignTagsInfo' => 'Biplane\YandexDirectBundle\Contract\CampaignTagsInfo',
+        'BannerTagsInfo' => 'Biplane\YandexDirectBundle\Contract\BannerTagsInfo',
+        'StatGoalsCampaignIDInfo' => 'Biplane\YandexDirectBundle\Contract\StatGoalsCampaignIDInfo',
     );
 
     private $converterFactory;

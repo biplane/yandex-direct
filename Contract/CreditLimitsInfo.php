@@ -18,6 +18,18 @@ class CreditLimitsInfo
     protected $Limits;
 
     /**
+     * Creates a new instance.
+     *
+     * @return self
+     */
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * Gets the Currency.
+     *
      * @return string
      */
     public function getCurrency()
@@ -26,7 +38,10 @@ class CreditLimitsInfo
     }
 
     /**
+     * Sets the Currency.
+     *
      * @param string $Currency
+     *
      * @return CreditLimitsInfo
      */
     public function setCurrency($Currency)
@@ -37,6 +52,8 @@ class CreditLimitsInfo
     }
 
     /**
+     * Gets the Limits.
+     *
      * @return CreditLimitsItem[]
      */
     public function getLimits()
@@ -45,7 +62,10 @@ class CreditLimitsInfo
     }
 
     /**
+     * Sets the Limits.
+     *
      * @param CreditLimitsItem[] $Limits
+     *
      * @return CreditLimitsInfo
      */
     public function setLimits(array $Limits)

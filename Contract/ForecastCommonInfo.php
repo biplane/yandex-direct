@@ -42,6 +42,18 @@ class ForecastCommonInfo
     protected $PremiumMin;
 
     /**
+     * Creates a new instance.
+     *
+     * @return self
+     */
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * Gets the Geo.
+     *
      * @return string
      */
     public function getGeo()
@@ -50,7 +62,10 @@ class ForecastCommonInfo
     }
 
     /**
+     * Sets the Geo.
+     *
      * @param string $Geo
+     *
      * @return ForecastCommonInfo
      */
     public function setGeo($Geo)
@@ -61,6 +76,8 @@ class ForecastCommonInfo
     }
 
     /**
+     * Gets the Shows.
+     *
      * @return int
      */
     public function getShows()
@@ -69,7 +86,10 @@ class ForecastCommonInfo
     }
 
     /**
+     * Sets the Shows.
+     *
      * @param int $Shows
+     *
      * @return ForecastCommonInfo
      */
     public function setShows($Shows)
@@ -80,6 +100,8 @@ class ForecastCommonInfo
     }
 
     /**
+     * Gets the Clicks.
+     *
      * @return int
      */
     public function getClicks()
@@ -88,7 +110,10 @@ class ForecastCommonInfo
     }
 
     /**
+     * Sets the Clicks.
+     *
      * @param int $Clicks
+     *
      * @return ForecastCommonInfo
      */
     public function setClicks($Clicks)
@@ -99,6 +124,8 @@ class ForecastCommonInfo
     }
 
     /**
+     * Gets the FirstPlaceClicks.
+     *
      * @return int
      */
     public function getFirstPlaceClicks()
@@ -107,7 +134,10 @@ class ForecastCommonInfo
     }
 
     /**
+     * Sets the FirstPlaceClicks.
+     *
      * @param int $FirstPlaceClicks
+     *
      * @return ForecastCommonInfo
      */
     public function setFirstPlaceClicks($FirstPlaceClicks)
@@ -118,6 +148,8 @@ class ForecastCommonInfo
     }
 
     /**
+     * Gets the PremiumClicks.
+     *
      * @return int
      */
     public function getPremiumClicks()
@@ -126,7 +158,10 @@ class ForecastCommonInfo
     }
 
     /**
+     * Sets the PremiumClicks.
+     *
      * @param int $PremiumClicks
+     *
      * @return ForecastCommonInfo
      */
     public function setPremiumClicks($PremiumClicks)
@@ -137,6 +172,8 @@ class ForecastCommonInfo
     }
 
     /**
+     * Gets the Min.
+     *
      * @return float
      */
     public function getMin()
@@ -145,7 +182,10 @@ class ForecastCommonInfo
     }
 
     /**
+     * Sets the Min.
+     *
      * @param float $Min
+     *
      * @return ForecastCommonInfo
      */
     public function setMin($Min)
@@ -156,6 +196,8 @@ class ForecastCommonInfo
     }
 
     /**
+     * Gets the Max.
+     *
      * @return float
      */
     public function getMax()
@@ -164,7 +206,10 @@ class ForecastCommonInfo
     }
 
     /**
+     * Sets the Max.
+     *
      * @param float $Max
+     *
      * @return ForecastCommonInfo
      */
     public function setMax($Max)
@@ -175,6 +220,8 @@ class ForecastCommonInfo
     }
 
     /**
+     * Gets the PremiumMin.
+     *
      * @return float
      */
     public function getPremiumMin()
@@ -183,7 +230,10 @@ class ForecastCommonInfo
     }
 
     /**
+     * Sets the PremiumMin.
+     *
      * @param float $PremiumMin
+     *
      * @return ForecastCommonInfo
      */
     public function setPremiumMin($PremiumMin)

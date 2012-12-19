@@ -13,11 +13,23 @@ class CampaignStatChangeItem
      */
     protected $CampaignID;
     /**
-     * @var date
+     * @var string
      */
     protected $BorderDate;
 
     /**
+     * Creates a new instance.
+     *
+     * @return self
+     */
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * Gets the CampaignID.
+     *
      * @return int
      */
     public function getCampaignID()
@@ -26,7 +38,10 @@ class CampaignStatChangeItem
     }
 
     /**
+     * Sets the CampaignID.
+     *
      * @param int $CampaignID
+     *
      * @return CampaignStatChangeItem
      */
     public function setCampaignID($CampaignID)
@@ -37,7 +52,9 @@ class CampaignStatChangeItem
     }
 
     /**
-     * @return date
+     * Gets the BorderDate.
+     *
+     * @return string
      */
     public function getBorderDate()
     {
@@ -45,7 +62,10 @@ class CampaignStatChangeItem
     }
 
     /**
-     * @param date $BorderDate
+     * Sets the BorderDate.
+     *
+     * @param string $BorderDate
+     *
      * @return CampaignStatChangeItem
      */
     public function setBorderDate($BorderDate)

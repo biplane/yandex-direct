@@ -26,6 +26,18 @@ class GetCampaignsInfo
     protected $Offset;
 
     /**
+     * Creates a new instance.
+     *
+     * @return self
+     */
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * Gets the Logins.
+     *
      * @return string[]
      */
     public function getLogins()
@@ -34,7 +46,10 @@ class GetCampaignsInfo
     }
 
     /**
+     * Sets the Logins.
+     *
      * @param string[] $Logins
+     *
      * @return GetCampaignsInfo
      */
     public function setLogins(array $Logins)
@@ -45,6 +60,8 @@ class GetCampaignsInfo
     }
 
     /**
+     * Gets the Filter.
+     *
      * @return CampaignsFilterInfo
      */
     public function getFilter()
@@ -53,7 +70,10 @@ class GetCampaignsInfo
     }
 
     /**
+     * Sets the Filter.
+     *
      * @param CampaignsFilterInfo $Filter
+     *
      * @return GetCampaignsInfo
      */
     public function setFilter(CampaignsFilterInfo $Filter)
@@ -64,6 +84,8 @@ class GetCampaignsInfo
     }
 
     /**
+     * Gets the Limit.
+     *
      * @return int
      */
     public function getLimit()
@@ -72,7 +94,10 @@ class GetCampaignsInfo
     }
 
     /**
+     * Sets the Limit.
+     *
      * @param int $Limit
+     *
      * @return GetCampaignsInfo
      */
     public function setLimit($Limit)
@@ -83,6 +108,8 @@ class GetCampaignsInfo
     }
 
     /**
+     * Gets the Offset.
+     *
      * @return int
      */
     public function getOffset()
@@ -91,7 +118,10 @@ class GetCampaignsInfo
     }
 
     /**
+     * Sets the Offset.
+     *
      * @param int $Offset
+     *
      * @return GetCampaignsInfo
      */
     public function setOffset($Offset)

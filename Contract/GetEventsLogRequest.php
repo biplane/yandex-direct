@@ -4,6 +4,7 @@ namespace Biplane\YandexDirectBundle\Contract;
 
 /**
  * @codeCoverageIgnore
+ * @SuppressWarnings(PHPMD)
  */
 class GetEventsLogRequest
 {
@@ -20,6 +21,10 @@ class GetEventsLogRequest
      */
     protected $LastEventOnly;
     /**
+     * @var string
+     */
+    protected $WithTextDescription;
+    /**
      * @var string[]
      */
     protected $Logins;
@@ -29,6 +34,18 @@ class GetEventsLogRequest
     protected $Filter;
 
     /**
+     * Creates a new instance.
+     *
+     * @return self
+     */
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * Gets the TimestampFrom.
+     *
      * @return string
      */
     public function getTimestampFrom()
@@ -37,7 +54,10 @@ class GetEventsLogRequest
     }
 
     /**
+     * Sets the TimestampFrom.
+     *
      * @param string $TimestampFrom
+     *
      * @return GetEventsLogRequest
      */
     public function setTimestampFrom($TimestampFrom)
@@ -48,6 +68,8 @@ class GetEventsLogRequest
     }
 
     /**
+     * Gets the TimestampTo.
+     *
      * @return string
      */
     public function getTimestampTo()
@@ -56,7 +78,10 @@ class GetEventsLogRequest
     }
 
     /**
+     * Sets the TimestampTo.
+     *
      * @param string $TimestampTo
+     *
      * @return GetEventsLogRequest
      */
     public function setTimestampTo($TimestampTo)
@@ -67,6 +92,8 @@ class GetEventsLogRequest
     }
 
     /**
+     * Gets the LastEventOnly.
+     *
      * @return string
      */
     public function getLastEventOnly()
@@ -75,7 +102,10 @@ class GetEventsLogRequest
     }
 
     /**
+     * Sets the LastEventOnly.
+     *
      * @param string $LastEventOnly
+     *
      * @return GetEventsLogRequest
      */
     public function setLastEventOnly($LastEventOnly)
@@ -86,6 +116,32 @@ class GetEventsLogRequest
     }
 
     /**
+     * Gets the WithTextDescription.
+     *
+     * @return string
+     */
+    public function getWithTextDescription()
+    {
+        return $this->WithTextDescription;
+    }
+
+    /**
+     * Sets the WithTextDescription.
+     *
+     * @param string $WithTextDescription
+     *
+     * @return GetEventsLogRequest
+     */
+    public function setWithTextDescription($WithTextDescription)
+    {
+        $this->WithTextDescription = $WithTextDescription;
+
+        return $this;
+    }
+
+    /**
+     * Gets the Logins.
+     *
      * @return string[]
      */
     public function getLogins()
@@ -94,7 +150,10 @@ class GetEventsLogRequest
     }
 
     /**
+     * Sets the Logins.
+     *
      * @param string[] $Logins
+     *
      * @return GetEventsLogRequest
      */
     public function setLogins(array $Logins)
@@ -105,6 +164,8 @@ class GetEventsLogRequest
     }
 
     /**
+     * Gets the Filter.
+     *
      * @return GetEventsLogFilter
      */
     public function getFilter()
@@ -113,7 +174,10 @@ class GetEventsLogRequest
     }
 
     /**
+     * Sets the Filter.
+     *
      * @param GetEventsLogFilter $Filter
+     *
      * @return GetEventsLogRequest
      */
     public function setFilter(GetEventsLogFilter $Filter)

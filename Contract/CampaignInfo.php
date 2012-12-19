@@ -25,7 +25,7 @@ class CampaignInfo
      */
     protected $FIO;
     /**
-     * @var date
+     * @var string
      */
     protected $StartDate;
     /**
@@ -162,6 +162,18 @@ class CampaignInfo
     protected $SumAvailableForTransfer;
 
     /**
+     * Creates a new instance.
+     *
+     * @return self
+     */
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * Gets the Login.
+     *
      * @return string
      */
     public function getLogin()
@@ -170,7 +182,10 @@ class CampaignInfo
     }
 
     /**
+     * Sets the Login.
+     *
      * @param string $Login
+     *
      * @return CampaignInfo
      */
     public function setLogin($Login)
@@ -181,6 +196,8 @@ class CampaignInfo
     }
 
     /**
+     * Gets the CampaignID.
+     *
      * @return int
      */
     public function getCampaignID()
@@ -189,7 +206,10 @@ class CampaignInfo
     }
 
     /**
+     * Sets the CampaignID.
+     *
      * @param int $CampaignID
+     *
      * @return CampaignInfo
      */
     public function setCampaignID($CampaignID)
@@ -200,6 +220,8 @@ class CampaignInfo
     }
 
     /**
+     * Gets the Name.
+     *
      * @return string
      */
     public function getName()
@@ -208,7 +230,10 @@ class CampaignInfo
     }
 
     /**
+     * Sets the Name.
+     *
      * @param string $Name
+     *
      * @return CampaignInfo
      */
     public function setName($Name)
@@ -219,6 +244,8 @@ class CampaignInfo
     }
 
     /**
+     * Gets the FIO.
+     *
      * @return string
      */
     public function getFIO()
@@ -227,7 +254,10 @@ class CampaignInfo
     }
 
     /**
+     * Sets the FIO.
+     *
      * @param string $FIO
+     *
      * @return CampaignInfo
      */
     public function setFIO($FIO)
@@ -238,7 +268,9 @@ class CampaignInfo
     }
 
     /**
-     * @return date
+     * Gets the StartDate.
+     *
+     * @return string
      */
     public function getStartDate()
     {
@@ -246,7 +278,10 @@ class CampaignInfo
     }
 
     /**
-     * @param date $StartDate
+     * Sets the StartDate.
+     *
+     * @param string $StartDate
+     *
      * @return CampaignInfo
      */
     public function setStartDate($StartDate)
@@ -257,6 +292,8 @@ class CampaignInfo
     }
 
     /**
+     * Gets the Sum.
+     *
      * @return float
      */
     public function getSum()
@@ -265,7 +302,10 @@ class CampaignInfo
     }
 
     /**
+     * Sets the Sum.
+     *
      * @param float $Sum
+     *
      * @return CampaignInfo
      */
     public function setSum($Sum)
@@ -276,6 +316,8 @@ class CampaignInfo
     }
 
     /**
+     * Gets the Rest.
+     *
      * @return float
      */
     public function getRest()
@@ -284,7 +326,10 @@ class CampaignInfo
     }
 
     /**
+     * Sets the Rest.
+     *
      * @param float $Rest
+     *
      * @return CampaignInfo
      */
     public function setRest($Rest)
@@ -295,6 +340,8 @@ class CampaignInfo
     }
 
     /**
+     * Gets the Shows.
+     *
      * @return int
      */
     public function getShows()
@@ -303,7 +350,10 @@ class CampaignInfo
     }
 
     /**
+     * Sets the Shows.
+     *
      * @param int $Shows
+     *
      * @return CampaignInfo
      */
     public function setShows($Shows)
@@ -314,6 +364,8 @@ class CampaignInfo
     }
 
     /**
+     * Gets the Clicks.
+     *
      * @return int
      */
     public function getClicks()
@@ -322,7 +374,10 @@ class CampaignInfo
     }
 
     /**
+     * Sets the Clicks.
+     *
      * @param int $Clicks
+     *
      * @return CampaignInfo
      */
     public function setClicks($Clicks)
@@ -333,6 +388,8 @@ class CampaignInfo
     }
 
     /**
+     * Gets the Strategy.
+     *
      * @return CampaignStrategy
      */
     public function getStrategy()
@@ -341,7 +398,10 @@ class CampaignInfo
     }
 
     /**
+     * Sets the Strategy.
+     *
      * @param CampaignStrategy $Strategy
+     *
      * @return CampaignInfo
      */
     public function setStrategy(CampaignStrategy $Strategy)
@@ -352,6 +412,8 @@ class CampaignInfo
     }
 
     /**
+     * Gets the ContextStrategy.
+     *
      * @return CampaignContextStrategy
      */
     public function getContextStrategy()
@@ -360,7 +422,10 @@ class CampaignInfo
     }
 
     /**
+     * Sets the ContextStrategy.
+     *
      * @param CampaignContextStrategy $ContextStrategy
+     *
      * @return CampaignInfo
      */
     public function setContextStrategy(CampaignContextStrategy $ContextStrategy)
@@ -371,6 +436,8 @@ class CampaignInfo
     }
 
     /**
+     * Gets the TradeType.
+     *
      * @return string
      */
     public function getTradeType()
@@ -379,7 +446,10 @@ class CampaignInfo
     }
 
     /**
+     * Sets the TradeType.
+     *
      * @param string $TradeType
+     *
      * @return CampaignInfo
      */
     public function setTradeType($TradeType)
@@ -390,6 +460,8 @@ class CampaignInfo
     }
 
     /**
+     * Gets the SmsNotification.
+     *
      * @return SmsNotificationInfo
      */
     public function getSmsNotification()
@@ -398,7 +470,10 @@ class CampaignInfo
     }
 
     /**
+     * Sets the SmsNotification.
+     *
      * @param SmsNotificationInfo $SmsNotification
+     *
      * @return CampaignInfo
      */
     public function setSmsNotification(SmsNotificationInfo $SmsNotification)
@@ -409,6 +484,8 @@ class CampaignInfo
     }
 
     /**
+     * Gets the EmailNotification.
+     *
      * @return EmailNotificationInfo
      */
     public function getEmailNotification()
@@ -417,7 +494,10 @@ class CampaignInfo
     }
 
     /**
+     * Sets the EmailNotification.
+     *
      * @param EmailNotificationInfo $EmailNotification
+     *
      * @return CampaignInfo
      */
     public function setEmailNotification(EmailNotificationInfo $EmailNotification)
@@ -428,6 +508,8 @@ class CampaignInfo
     }
 
     /**
+     * Gets the StatusBehavior.
+     *
      * @return string
      */
     public function getStatusBehavior()
@@ -436,7 +518,10 @@ class CampaignInfo
     }
 
     /**
+     * Sets the StatusBehavior.
+     *
      * @param string $StatusBehavior
+     *
      * @return CampaignInfo
      */
     public function setStatusBehavior($StatusBehavior)
@@ -447,6 +532,8 @@ class CampaignInfo
     }
 
     /**
+     * Gets the Status.
+     *
      * @return string
      */
     public function getStatus()
@@ -455,7 +542,10 @@ class CampaignInfo
     }
 
     /**
+     * Sets the Status.
+     *
      * @param string $Status
+     *
      * @return CampaignInfo
      */
     public function setStatus($Status)
@@ -466,6 +556,8 @@ class CampaignInfo
     }
 
     /**
+     * Gets the TimeTarget.
+     *
      * @return TimeTargetInfo
      */
     public function getTimeTarget()
@@ -474,7 +566,10 @@ class CampaignInfo
     }
 
     /**
+     * Sets the TimeTarget.
+     *
      * @param TimeTargetInfo $TimeTarget
+     *
      * @return CampaignInfo
      */
     public function setTimeTarget(TimeTargetInfo $TimeTarget)
@@ -485,6 +580,8 @@ class CampaignInfo
     }
 
     /**
+     * Gets the StatusContextStop.
+     *
      * @return string
      */
     public function getStatusContextStop()
@@ -493,7 +590,10 @@ class CampaignInfo
     }
 
     /**
+     * Sets the StatusContextStop.
+     *
      * @param string $StatusContextStop
+     *
      * @return CampaignInfo
      */
     public function setStatusContextStop($StatusContextStop)
@@ -504,6 +604,8 @@ class CampaignInfo
     }
 
     /**
+     * Gets the ContextLimit.
+     *
      * @return string
      */
     public function getContextLimit()
@@ -512,7 +614,10 @@ class CampaignInfo
     }
 
     /**
+     * Sets the ContextLimit.
+     *
      * @param string $ContextLimit
+     *
      * @return CampaignInfo
      */
     public function setContextLimit($ContextLimit)
@@ -523,6 +628,8 @@ class CampaignInfo
     }
 
     /**
+     * Gets the ContextLimitSum.
+     *
      * @return int
      */
     public function getContextLimitSum()
@@ -531,7 +638,10 @@ class CampaignInfo
     }
 
     /**
+     * Sets the ContextLimitSum.
+     *
      * @param int $ContextLimitSum
+     *
      * @return CampaignInfo
      */
     public function setContextLimitSum($ContextLimitSum)
@@ -542,6 +652,8 @@ class CampaignInfo
     }
 
     /**
+     * Gets the ContextPricePercent.
+     *
      * @return int
      */
     public function getContextPricePercent()
@@ -550,7 +662,10 @@ class CampaignInfo
     }
 
     /**
+     * Sets the ContextPricePercent.
+     *
      * @param int $ContextPricePercent
+     *
      * @return CampaignInfo
      */
     public function setContextPricePercent($ContextPricePercent)
@@ -561,6 +676,8 @@ class CampaignInfo
     }
 
     /**
+     * Gets the AutoOptimization.
+     *
      * @return string
      */
     public function getAutoOptimization()
@@ -569,7 +686,10 @@ class CampaignInfo
     }
 
     /**
+     * Sets the AutoOptimization.
+     *
      * @param string $AutoOptimization
+     *
      * @return CampaignInfo
      */
     public function setAutoOptimization($AutoOptimization)
@@ -580,6 +700,8 @@ class CampaignInfo
     }
 
     /**
+     * Gets the StatusMetricaControl.
+     *
      * @return string
      */
     public function getStatusMetricaControl()
@@ -588,7 +710,10 @@ class CampaignInfo
     }
 
     /**
+     * Sets the StatusMetricaControl.
+     *
      * @param string $StatusMetricaControl
+     *
      * @return CampaignInfo
      */
     public function setStatusMetricaControl($StatusMetricaControl)
@@ -599,6 +724,8 @@ class CampaignInfo
     }
 
     /**
+     * Gets the DisabledDomains.
+     *
      * @return string
      */
     public function getDisabledDomains()
@@ -607,7 +734,10 @@ class CampaignInfo
     }
 
     /**
+     * Sets the DisabledDomains.
+     *
      * @param string $DisabledDomains
+     *
      * @return CampaignInfo
      */
     public function setDisabledDomains($DisabledDomains)
@@ -618,6 +748,8 @@ class CampaignInfo
     }
 
     /**
+     * Gets the DisabledIps.
+     *
      * @return string
      */
     public function getDisabledIps()
@@ -626,7 +758,10 @@ class CampaignInfo
     }
 
     /**
+     * Sets the DisabledIps.
+     *
      * @param string $DisabledIps
+     *
      * @return CampaignInfo
      */
     public function setDisabledIps($DisabledIps)
@@ -637,6 +772,8 @@ class CampaignInfo
     }
 
     /**
+     * Gets the StatusOpenStat.
+     *
      * @return string
      */
     public function getStatusOpenStat()
@@ -645,7 +782,10 @@ class CampaignInfo
     }
 
     /**
+     * Sets the StatusOpenStat.
+     *
      * @param string $StatusOpenStat
+     *
      * @return CampaignInfo
      */
     public function setStatusOpenStat($StatusOpenStat)
@@ -656,6 +796,8 @@ class CampaignInfo
     }
 
     /**
+     * Gets the ConsiderTimeTarget.
+     *
      * @return string
      */
     public function getConsiderTimeTarget()
@@ -664,7 +806,10 @@ class CampaignInfo
     }
 
     /**
+     * Sets the ConsiderTimeTarget.
+     *
      * @param string $ConsiderTimeTarget
+     *
      * @return CampaignInfo
      */
     public function setConsiderTimeTarget($ConsiderTimeTarget)
@@ -675,6 +820,8 @@ class CampaignInfo
     }
 
     /**
+     * Gets the ManagerName.
+     *
      * @return string
      */
     public function getManagerName()
@@ -683,7 +830,10 @@ class CampaignInfo
     }
 
     /**
+     * Sets the ManagerName.
+     *
      * @param string $ManagerName
+     *
      * @return CampaignInfo
      */
     public function setManagerName($ManagerName)
@@ -694,6 +844,8 @@ class CampaignInfo
     }
 
     /**
+     * Gets the AgencyName.
+     *
      * @return string
      */
     public function getAgencyName()
@@ -702,7 +854,10 @@ class CampaignInfo
     }
 
     /**
+     * Sets the AgencyName.
+     *
      * @param string $AgencyName
+     *
      * @return CampaignInfo
      */
     public function setAgencyName($AgencyName)
@@ -713,6 +868,8 @@ class CampaignInfo
     }
 
     /**
+     * Gets the StatusShow.
+     *
      * @return string
      */
     public function getStatusShow()
@@ -721,7 +878,10 @@ class CampaignInfo
     }
 
     /**
+     * Sets the StatusShow.
+     *
      * @param string $StatusShow
+     *
      * @return CampaignInfo
      */
     public function setStatusShow($StatusShow)
@@ -732,6 +892,8 @@ class CampaignInfo
     }
 
     /**
+     * Gets the StatusArchive.
+     *
      * @return string
      */
     public function getStatusArchive()
@@ -740,7 +902,10 @@ class CampaignInfo
     }
 
     /**
+     * Sets the StatusArchive.
+     *
      * @param string $StatusArchive
+     *
      * @return CampaignInfo
      */
     public function setStatusArchive($StatusArchive)
@@ -751,6 +916,8 @@ class CampaignInfo
     }
 
     /**
+     * Gets the StatusActivating.
+     *
      * @return string
      */
     public function getStatusActivating()
@@ -759,7 +926,10 @@ class CampaignInfo
     }
 
     /**
+     * Sets the StatusActivating.
+     *
      * @param string $StatusActivating
+     *
      * @return CampaignInfo
      */
     public function setStatusActivating($StatusActivating)
@@ -770,6 +940,8 @@ class CampaignInfo
     }
 
     /**
+     * Gets the StatusModerate.
+     *
      * @return string
      */
     public function getStatusModerate()
@@ -778,7 +950,10 @@ class CampaignInfo
     }
 
     /**
+     * Sets the StatusModerate.
+     *
      * @param string $StatusModerate
+     *
      * @return CampaignInfo
      */
     public function setStatusModerate($StatusModerate)
@@ -789,6 +964,8 @@ class CampaignInfo
     }
 
     /**
+     * Gets the IsActive.
+     *
      * @return string
      */
     public function getIsActive()
@@ -797,7 +974,10 @@ class CampaignInfo
     }
 
     /**
+     * Sets the IsActive.
+     *
      * @param string $IsActive
+     *
      * @return CampaignInfo
      */
     public function setIsActive($IsActive)
@@ -808,6 +988,8 @@ class CampaignInfo
     }
 
     /**
+     * Gets the MinusKeywords.
+     *
      * @return string[]
      */
     public function getMinusKeywords()
@@ -816,7 +998,10 @@ class CampaignInfo
     }
 
     /**
+     * Sets the MinusKeywords.
+     *
      * @param string[] $MinusKeywords
+     *
      * @return CampaignInfo
      */
     public function setMinusKeywords(array $MinusKeywords)
@@ -827,6 +1012,8 @@ class CampaignInfo
     }
 
     /**
+     * Gets the AddRelevantPhrases.
+     *
      * @return string
      */
     public function getAddRelevantPhrases()
@@ -835,7 +1022,10 @@ class CampaignInfo
     }
 
     /**
+     * Sets the AddRelevantPhrases.
+     *
      * @param string $AddRelevantPhrases
+     *
      * @return CampaignInfo
      */
     public function setAddRelevantPhrases($AddRelevantPhrases)
@@ -846,6 +1036,8 @@ class CampaignInfo
     }
 
     /**
+     * Gets the RelevantPhrasesBudgetLimit.
+     *
      * @return int
      */
     public function getRelevantPhrasesBudgetLimit()
@@ -854,7 +1046,10 @@ class CampaignInfo
     }
 
     /**
+     * Sets the RelevantPhrasesBudgetLimit.
+     *
      * @param int $RelevantPhrasesBudgetLimit
+     *
      * @return CampaignInfo
      */
     public function setRelevantPhrasesBudgetLimit($RelevantPhrasesBudgetLimit)
@@ -865,6 +1060,8 @@ class CampaignInfo
     }
 
     /**
+     * Gets the SumAvailableForTransfer.
+     *
      * @return float
      */
     public function getSumAvailableForTransfer()
@@ -873,7 +1070,10 @@ class CampaignInfo
     }
 
     /**
+     * Sets the SumAvailableForTransfer.
+     *
      * @param float $SumAvailableForTransfer
+     *
      * @return CampaignInfo
      */
     public function setSumAvailableForTransfer($SumAvailableForTransfer)

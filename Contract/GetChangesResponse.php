@@ -42,6 +42,18 @@ class GetChangesResponse
     protected $RegionsChanged;
 
     /**
+     * Creates a new instance.
+     *
+     * @return self
+     */
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * Gets the Campaigns.
+     *
      * @return GetChangesIntData
      */
     public function getCampaigns()
@@ -50,7 +62,10 @@ class GetChangesResponse
     }
 
     /**
+     * Sets the Campaigns.
+     *
      * @param GetChangesIntData $Campaigns
+     *
      * @return GetChangesResponse
      */
     public function setCampaigns(GetChangesIntData $Campaigns)
@@ -61,6 +76,8 @@ class GetChangesResponse
     }
 
     /**
+     * Gets the Banners.
+     *
      * @return GetChangesIntData
      */
     public function getBanners()
@@ -69,7 +86,10 @@ class GetChangesResponse
     }
 
     /**
+     * Sets the Banners.
+     *
      * @param GetChangesIntData $Banners
+     *
      * @return GetChangesResponse
      */
     public function setBanners(GetChangesIntData $Banners)
@@ -80,6 +100,8 @@ class GetChangesResponse
     }
 
     /**
+     * Gets the Logins.
+     *
      * @return GetChangesStringData
      */
     public function getLogins()
@@ -88,7 +110,10 @@ class GetChangesResponse
     }
 
     /**
+     * Sets the Logins.
+     *
      * @param GetChangesStringData $Logins
+     *
      * @return GetChangesResponse
      */
     public function setLogins(GetChangesStringData $Logins)
@@ -99,6 +124,8 @@ class GetChangesResponse
     }
 
     /**
+     * Gets the CampaignsStatChange.
+     *
      * @return CampaignStatChangeItem[]
      */
     public function getCampaignsStatChange()
@@ -107,7 +134,10 @@ class GetChangesResponse
     }
 
     /**
+     * Sets the CampaignsStatChange.
+     *
      * @param CampaignStatChangeItem[] $CampaignsStatChange
+     *
      * @return GetChangesResponse
      */
     public function setCampaignsStatChange(array $CampaignsStatChange)
@@ -118,6 +148,8 @@ class GetChangesResponse
     }
 
     /**
+     * Gets the Timestamp.
+     *
      * @return string
      */
     public function getTimestamp()
@@ -126,7 +158,10 @@ class GetChangesResponse
     }
 
     /**
+     * Sets the Timestamp.
+     *
      * @param string $Timestamp
+     *
      * @return GetChangesResponse
      */
     public function setTimestamp($Timestamp)
@@ -137,6 +172,8 @@ class GetChangesResponse
     }
 
     /**
+     * Gets the RubricsChanged.
+     *
      * @return string
      */
     public function getRubricsChanged()
@@ -145,7 +182,10 @@ class GetChangesResponse
     }
 
     /**
+     * Sets the RubricsChanged.
+     *
      * @param string $RubricsChanged
+     *
      * @return GetChangesResponse
      */
     public function setRubricsChanged($RubricsChanged)
@@ -156,6 +196,8 @@ class GetChangesResponse
     }
 
     /**
+     * Gets the TimeZonesChanged.
+     *
      * @return string
      */
     public function getTimeZonesChanged()
@@ -164,7 +206,10 @@ class GetChangesResponse
     }
 
     /**
+     * Sets the TimeZonesChanged.
+     *
      * @param string $TimeZonesChanged
+     *
      * @return GetChangesResponse
      */
     public function setTimeZonesChanged($TimeZonesChanged)
@@ -175,6 +220,8 @@ class GetChangesResponse
     }
 
     /**
+     * Gets the RegionsChanged.
+     *
      * @return string
      */
     public function getRegionsChanged()
@@ -183,7 +230,10 @@ class GetChangesResponse
     }
 
     /**
+     * Sets the RegionsChanged.
+     *
      * @param string $RegionsChanged
+     *
      * @return GetChangesResponse
      */
     public function setRegionsChanged($RegionsChanged)

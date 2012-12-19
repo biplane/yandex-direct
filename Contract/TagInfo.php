@@ -6,16 +6,16 @@ namespace Biplane\YandexDirectBundle\Contract;
  * @codeCoverageIgnore
  * @SuppressWarnings(PHPMD)
  */
-class Sitelink
+class TagInfo
 {
     /**
-     * @var string
+     * @var int
      */
-    protected $Title;
+    protected $TagID;
     /**
      * @var string
      */
-    protected $Href;
+    protected $Tag;
 
     /**
      * Creates a new instance.
@@ -28,49 +28,49 @@ class Sitelink
     }
 
     /**
-     * Gets the Title.
+     * Gets the TagID.
      *
-     * @return string
+     * @return int
      */
-    public function getTitle()
+    public function getTagID()
     {
-        return $this->Title;
+        return $this->TagID;
     }
 
     /**
-     * Sets the Title.
+     * Sets the TagID.
      *
-     * @param string $Title
+     * @param int $TagID
      *
-     * @return Sitelink
+     * @return TagInfo
      */
-    public function setTitle($Title)
+    public function setTagID($TagID)
     {
-        $this->Title = $Title;
+        $this->TagID = $TagID;
 
         return $this;
     }
 
     /**
-     * Gets the Href.
+     * Gets the Tag.
      *
      * @return string
      */
-    public function getHref()
+    public function getTag()
     {
-        return $this->Href;
+        return $this->Tag;
     }
 
     /**
-     * Sets the Href.
+     * Sets the Tag.
      *
-     * @param string $Href
+     * @param string $Tag
      *
-     * @return Sitelink
+     * @return TagInfo
      */
-    public function setHref($Href)
+    public function setTag($Tag)
     {
-        $this->Href = $Href;
+        $this->Tag = $Tag;
 
         return $this;
     }

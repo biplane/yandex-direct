@@ -13,7 +13,7 @@ class ClientInfo
      */
     protected $Phone;
     /**
-     * @var date
+     * @var string
      */
     protected $DateCreate;
     /**
@@ -36,6 +36,10 @@ class ClientInfo
      * @var float
      */
     protected $Discount;
+    /**
+     * @var float
+     */
+    protected $OverdraftSumAvailable;
     /**
      * @var string
      */
@@ -72,8 +76,24 @@ class ClientInfo
      * @var string[]
      */
     protected $ManagersLogins;
+    /**
+     * @var string
+     */
+    protected $Currency;
 
     /**
+     * Creates a new instance.
+     *
+     * @return self
+     */
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * Gets the Phone.
+     *
      * @return string
      */
     public function getPhone()
@@ -82,7 +102,10 @@ class ClientInfo
     }
 
     /**
+     * Sets the Phone.
+     *
      * @param string $Phone
+     *
      * @return ClientInfo
      */
     public function setPhone($Phone)
@@ -93,7 +116,9 @@ class ClientInfo
     }
 
     /**
-     * @return date
+     * Gets the DateCreate.
+     *
+     * @return string
      */
     public function getDateCreate()
     {
@@ -101,7 +126,10 @@ class ClientInfo
     }
 
     /**
-     * @param date $DateCreate
+     * Sets the DateCreate.
+     *
+     * @param string $DateCreate
+     *
      * @return ClientInfo
      */
     public function setDateCreate($DateCreate)
@@ -112,6 +140,8 @@ class ClientInfo
     }
 
     /**
+     * Gets the FIO.
+     *
      * @return string
      */
     public function getFIO()
@@ -120,7 +150,10 @@ class ClientInfo
     }
 
     /**
+     * Sets the FIO.
+     *
      * @param string $FIO
+     *
      * @return ClientInfo
      */
     public function setFIO($FIO)
@@ -131,6 +164,8 @@ class ClientInfo
     }
 
     /**
+     * Gets the Email.
+     *
      * @return string
      */
     public function getEmail()
@@ -139,7 +174,10 @@ class ClientInfo
     }
 
     /**
+     * Sets the Email.
+     *
      * @param string $Email
+     *
      * @return ClientInfo
      */
     public function setEmail($Email)
@@ -150,6 +188,8 @@ class ClientInfo
     }
 
     /**
+     * Gets the Login.
+     *
      * @return string
      */
     public function getLogin()
@@ -158,7 +198,10 @@ class ClientInfo
     }
 
     /**
+     * Sets the Login.
+     *
      * @param string $Login
+     *
      * @return ClientInfo
      */
     public function setLogin($Login)
@@ -169,6 +212,8 @@ class ClientInfo
     }
 
     /**
+     * Gets the StatusArch.
+     *
      * @return string
      */
     public function getStatusArch()
@@ -177,7 +222,10 @@ class ClientInfo
     }
 
     /**
+     * Sets the StatusArch.
+     *
      * @param string $StatusArch
+     *
      * @return ClientInfo
      */
     public function setStatusArch($StatusArch)
@@ -188,6 +236,8 @@ class ClientInfo
     }
 
     /**
+     * Gets the Discount.
+     *
      * @return float
      */
     public function getDiscount()
@@ -196,7 +246,10 @@ class ClientInfo
     }
 
     /**
+     * Sets the Discount.
+     *
      * @param float $Discount
+     *
      * @return ClientInfo
      */
     public function setDiscount($Discount)
@@ -207,6 +260,32 @@ class ClientInfo
     }
 
     /**
+     * Gets the OverdraftSumAvailable.
+     *
+     * @return float
+     */
+    public function getOverdraftSumAvailable()
+    {
+        return $this->OverdraftSumAvailable;
+    }
+
+    /**
+     * Sets the OverdraftSumAvailable.
+     *
+     * @param float $OverdraftSumAvailable
+     *
+     * @return ClientInfo
+     */
+    public function setOverdraftSumAvailable($OverdraftSumAvailable)
+    {
+        $this->OverdraftSumAvailable = $OverdraftSumAvailable;
+
+        return $this;
+    }
+
+    /**
+     * Gets the SmsPhone.
+     *
      * @return string
      */
     public function getSmsPhone()
@@ -215,7 +294,10 @@ class ClientInfo
     }
 
     /**
+     * Sets the SmsPhone.
+     *
      * @param string $SmsPhone
+     *
      * @return ClientInfo
      */
     public function setSmsPhone($SmsPhone)
@@ -226,6 +308,8 @@ class ClientInfo
     }
 
     /**
+     * Gets the CampaignEmails.
+     *
      * @return string[]
      */
     public function getCampaignEmails()
@@ -234,7 +318,10 @@ class ClientInfo
     }
 
     /**
+     * Sets the CampaignEmails.
+     *
      * @param string[] $CampaignEmails
+     *
      * @return ClientInfo
      */
     public function setCampaignEmails(array $CampaignEmails)
@@ -245,6 +332,8 @@ class ClientInfo
     }
 
     /**
+     * Gets the ClientRights.
+     *
      * @return ClientRight[]
      */
     public function getClientRights()
@@ -253,7 +342,10 @@ class ClientInfo
     }
 
     /**
+     * Sets the ClientRights.
+     *
      * @param ClientRight[] $ClientRights
+     *
      * @return ClientInfo
      */
     public function setClientRights(array $ClientRights)
@@ -264,6 +356,8 @@ class ClientInfo
     }
 
     /**
+     * Gets the Role.
+     *
      * @return string
      */
     public function getRole()
@@ -272,7 +366,10 @@ class ClientInfo
     }
 
     /**
+     * Sets the Role.
+     *
      * @param string $Role
+     *
      * @return ClientInfo
      */
     public function setRole($Role)
@@ -283,6 +380,8 @@ class ClientInfo
     }
 
     /**
+     * Gets the NonResident.
+     *
      * @return string
      */
     public function getNonResident()
@@ -291,7 +390,10 @@ class ClientInfo
     }
 
     /**
+     * Sets the NonResident.
+     *
      * @param string $NonResident
+     *
      * @return ClientInfo
      */
     public function setNonResident($NonResident)
@@ -302,6 +404,8 @@ class ClientInfo
     }
 
     /**
+     * Gets the SendNews.
+     *
      * @return string
      */
     public function getSendNews()
@@ -310,7 +414,10 @@ class ClientInfo
     }
 
     /**
+     * Sets the SendNews.
+     *
      * @param string $SendNews
+     *
      * @return ClientInfo
      */
     public function setSendNews($SendNews)
@@ -321,6 +428,8 @@ class ClientInfo
     }
 
     /**
+     * Gets the SendAccNews.
+     *
      * @return string
      */
     public function getSendAccNews()
@@ -329,7 +438,10 @@ class ClientInfo
     }
 
     /**
+     * Sets the SendAccNews.
+     *
      * @param string $SendAccNews
+     *
      * @return ClientInfo
      */
     public function setSendAccNews($SendAccNews)
@@ -340,6 +452,8 @@ class ClientInfo
     }
 
     /**
+     * Gets the SendWarn.
+     *
      * @return string
      */
     public function getSendWarn()
@@ -348,7 +462,10 @@ class ClientInfo
     }
 
     /**
+     * Sets the SendWarn.
+     *
      * @param string $SendWarn
+     *
      * @return ClientInfo
      */
     public function setSendWarn($SendWarn)
@@ -359,6 +476,8 @@ class ClientInfo
     }
 
     /**
+     * Gets the ManagersLogins.
+     *
      * @return string[]
      */
     public function getManagersLogins()
@@ -367,12 +486,39 @@ class ClientInfo
     }
 
     /**
+     * Sets the ManagersLogins.
+     *
      * @param string[] $ManagersLogins
+     *
      * @return ClientInfo
      */
     public function setManagersLogins(array $ManagersLogins)
     {
         $this->ManagersLogins = $ManagersLogins;
+
+        return $this;
+    }
+
+    /**
+     * Gets the Currency.
+     *
+     * @return string
+     */
+    public function getCurrency()
+    {
+        return $this->Currency;
+    }
+
+    /**
+     * Sets the Currency.
+     *
+     * @param string $Currency
+     *
+     * @return ClientInfo
+     */
+    public function setCurrency($Currency)
+    {
+        $this->Currency = $Currency;
 
         return $this;
     }

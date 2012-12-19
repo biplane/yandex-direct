@@ -26,6 +26,18 @@ class BannerPhrasesFilterRequestInfo
     protected $RequestPrices;
 
     /**
+     * Creates a new instance.
+     *
+     * @return self
+     */
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * Gets the BannerIDS.
+     *
      * @return int[]
      */
     public function getBannerIDS()
@@ -34,7 +46,10 @@ class BannerPhrasesFilterRequestInfo
     }
 
     /**
+     * Sets the BannerIDS.
+     *
      * @param int[] $BannerIDS
+     *
      * @return BannerPhrasesFilterRequestInfo
      */
     public function setBannerIDS(array $BannerIDS)
@@ -45,6 +60,8 @@ class BannerPhrasesFilterRequestInfo
     }
 
     /**
+     * Gets the FieldsNames.
+     *
      * @return string[]
      */
     public function getFieldsNames()
@@ -53,7 +70,10 @@ class BannerPhrasesFilterRequestInfo
     }
 
     /**
+     * Sets the FieldsNames.
+     *
      * @param string[] $FieldsNames
+     *
      * @return BannerPhrasesFilterRequestInfo
      */
     public function setFieldsNames(array $FieldsNames)
@@ -64,6 +84,8 @@ class BannerPhrasesFilterRequestInfo
     }
 
     /**
+     * Gets the ConsiderTimeTarget.
+     *
      * @return string
      */
     public function getConsiderTimeTarget()
@@ -72,7 +94,10 @@ class BannerPhrasesFilterRequestInfo
     }
 
     /**
+     * Sets the ConsiderTimeTarget.
+     *
      * @param string $ConsiderTimeTarget
+     *
      * @return BannerPhrasesFilterRequestInfo
      */
     public function setConsiderTimeTarget($ConsiderTimeTarget)
@@ -83,6 +108,8 @@ class BannerPhrasesFilterRequestInfo
     }
 
     /**
+     * Gets the RequestPrices.
+     *
      * @return string
      */
     public function getRequestPrices()
@@ -91,7 +118,10 @@ class BannerPhrasesFilterRequestInfo
     }
 
     /**
+     * Sets the RequestPrices.
+     *
      * @param string $RequestPrices
+     *
      * @return BannerPhrasesFilterRequestInfo
      */
     public function setRequestPrices($RequestPrices)

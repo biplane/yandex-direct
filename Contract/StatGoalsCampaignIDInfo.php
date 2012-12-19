@@ -6,16 +6,16 @@ namespace Biplane\YandexDirectBundle\Contract;
  * @codeCoverageIgnore
  * @SuppressWarnings(PHPMD)
  */
-class PayCampElement
+class StatGoalsCampaignIDInfo
 {
     /**
      * @var int
      */
     protected $CampaignID;
     /**
-     * @var float
+     * @var int[]
      */
-    protected $Sum;
+    protected $CampaignIDS;
 
     /**
      * Creates a new instance.
@@ -42,7 +42,7 @@ class PayCampElement
      *
      * @param int $CampaignID
      *
-     * @return PayCampElement
+     * @return StatGoalsCampaignIDInfo
      */
     public function setCampaignID($CampaignID)
     {
@@ -52,25 +52,25 @@ class PayCampElement
     }
 
     /**
-     * Gets the Sum.
+     * Gets the CampaignIDS.
      *
-     * @return float
+     * @return int[]
      */
-    public function getSum()
+    public function getCampaignIDS()
     {
-        return $this->Sum;
+        return $this->CampaignIDS;
     }
 
     /**
-     * Sets the Sum.
+     * Sets the CampaignIDS.
      *
-     * @param float $Sum
+     * @param int[] $CampaignIDS
      *
-     * @return PayCampElement
+     * @return StatGoalsCampaignIDInfo
      */
-    public function setSum($Sum)
+    public function setCampaignIDS(array $CampaignIDS)
     {
-        $this->Sum = $Sum;
+        $this->CampaignIDS = $CampaignIDS;
 
         return $this;
     }

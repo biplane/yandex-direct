@@ -4,6 +4,7 @@ namespace Biplane\YandexDirectBundle\Contract;
 
 /**
  * @codeCoverageIgnore
+ * @SuppressWarnings(PHPMD)
  */
 class GetEventsLogFilter
 {
@@ -25,6 +26,18 @@ class GetEventsLogFilter
     protected $EventType;
 
     /**
+     * Creates a new instance.
+     *
+     * @return self
+     */
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * Gets the CampaignIDS.
+     *
      * @return int[]
      */
     public function getCampaignIDS()
@@ -33,7 +46,10 @@ class GetEventsLogFilter
     }
 
     /**
+     * Sets the CampaignIDS.
+     *
      * @param int[] $CampaignIDS
+     *
      * @return GetEventsLogFilter
      */
     public function setCampaignIDS(array $CampaignIDS)
@@ -44,6 +60,8 @@ class GetEventsLogFilter
     }
 
     /**
+     * Gets the BannerIDS.
+     *
      * @return int[]
      */
     public function getBannerIDS()
@@ -52,7 +70,10 @@ class GetEventsLogFilter
     }
 
     /**
+     * Sets the BannerIDS.
+     *
      * @param int[] $BannerIDS
+     *
      * @return GetEventsLogFilter
      */
     public function setBannerIDS(array $BannerIDS)
@@ -63,6 +84,8 @@ class GetEventsLogFilter
     }
 
     /**
+     * Gets the PhraseIDS.
+     *
      * @return int[]
      */
     public function getPhraseIDS()
@@ -71,7 +94,10 @@ class GetEventsLogFilter
     }
 
     /**
+     * Sets the PhraseIDS.
+     *
      * @param int[] $PhraseIDS
+     *
      * @return GetEventsLogFilter
      */
     public function setPhraseIDS(array $PhraseIDS)
@@ -82,6 +108,8 @@ class GetEventsLogFilter
     }
 
     /**
+     * Gets the EventType.
+     *
      * @return string[]
      */
     public function getEventType()
@@ -90,7 +118,10 @@ class GetEventsLogFilter
     }
 
     /**
+     * Sets the EventType.
+     *
      * @param string[] $EventType
+     *
      * @return GetEventsLogFilter
      */
     public function setEventType(array $EventType)

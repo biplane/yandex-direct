@@ -21,7 +21,7 @@ class ShortCampaignInfo
      */
     protected $Name;
     /**
-     * @var date
+     * @var string
      */
     protected $StartDate;
     /**
@@ -86,6 +86,18 @@ class ShortCampaignInfo
     protected $AgencyName;
 
     /**
+     * Creates a new instance.
+     *
+     * @return self
+     */
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * Gets the CampaignID.
+     *
      * @return int
      */
     public function getCampaignID()
@@ -94,7 +106,10 @@ class ShortCampaignInfo
     }
 
     /**
+     * Sets the CampaignID.
+     *
      * @param int $CampaignID
+     *
      * @return ShortCampaignInfo
      */
     public function setCampaignID($CampaignID)
@@ -105,6 +120,8 @@ class ShortCampaignInfo
     }
 
     /**
+     * Gets the Login.
+     *
      * @return string
      */
     public function getLogin()
@@ -113,7 +130,10 @@ class ShortCampaignInfo
     }
 
     /**
+     * Sets the Login.
+     *
      * @param string $Login
+     *
      * @return ShortCampaignInfo
      */
     public function setLogin($Login)
@@ -124,6 +144,8 @@ class ShortCampaignInfo
     }
 
     /**
+     * Gets the Name.
+     *
      * @return string
      */
     public function getName()
@@ -132,7 +154,10 @@ class ShortCampaignInfo
     }
 
     /**
+     * Sets the Name.
+     *
      * @param string $Name
+     *
      * @return ShortCampaignInfo
      */
     public function setName($Name)
@@ -143,7 +168,9 @@ class ShortCampaignInfo
     }
 
     /**
-     * @return date
+     * Gets the StartDate.
+     *
+     * @return string
      */
     public function getStartDate()
     {
@@ -151,7 +178,10 @@ class ShortCampaignInfo
     }
 
     /**
-     * @param date $StartDate
+     * Sets the StartDate.
+     *
+     * @param string $StartDate
+     *
      * @return ShortCampaignInfo
      */
     public function setStartDate($StartDate)
@@ -162,6 +192,8 @@ class ShortCampaignInfo
     }
 
     /**
+     * Gets the StrategyName.
+     *
      * @return string
      */
     public function getStrategyName()
@@ -170,7 +202,10 @@ class ShortCampaignInfo
     }
 
     /**
+     * Sets the StrategyName.
+     *
      * @param string $StrategyName
+     *
      * @return ShortCampaignInfo
      */
     public function setStrategyName($StrategyName)
@@ -181,6 +216,8 @@ class ShortCampaignInfo
     }
 
     /**
+     * Gets the ContextStrategyName.
+     *
      * @return string
      */
     public function getContextStrategyName()
@@ -189,7 +226,10 @@ class ShortCampaignInfo
     }
 
     /**
+     * Sets the ContextStrategyName.
+     *
      * @param string $ContextStrategyName
+     *
      * @return ShortCampaignInfo
      */
     public function setContextStrategyName($ContextStrategyName)
@@ -200,6 +240,8 @@ class ShortCampaignInfo
     }
 
     /**
+     * Gets the Sum.
+     *
      * @return float
      */
     public function getSum()
@@ -208,7 +250,10 @@ class ShortCampaignInfo
     }
 
     /**
+     * Sets the Sum.
+     *
      * @param float $Sum
+     *
      * @return ShortCampaignInfo
      */
     public function setSum($Sum)
@@ -219,6 +264,8 @@ class ShortCampaignInfo
     }
 
     /**
+     * Gets the Rest.
+     *
      * @return float
      */
     public function getRest()
@@ -227,7 +274,10 @@ class ShortCampaignInfo
     }
 
     /**
+     * Sets the Rest.
+     *
      * @param float $Rest
+     *
      * @return ShortCampaignInfo
      */
     public function setRest($Rest)
@@ -238,6 +288,8 @@ class ShortCampaignInfo
     }
 
     /**
+     * Gets the SumAvailableForTransfer.
+     *
      * @return float
      */
     public function getSumAvailableForTransfer()
@@ -246,7 +298,10 @@ class ShortCampaignInfo
     }
 
     /**
+     * Sets the SumAvailableForTransfer.
+     *
      * @param float $SumAvailableForTransfer
+     *
      * @return ShortCampaignInfo
      */
     public function setSumAvailableForTransfer($SumAvailableForTransfer)
@@ -257,6 +312,8 @@ class ShortCampaignInfo
     }
 
     /**
+     * Gets the Shows.
+     *
      * @return int
      */
     public function getShows()
@@ -265,7 +322,10 @@ class ShortCampaignInfo
     }
 
     /**
+     * Sets the Shows.
+     *
      * @param int $Shows
+     *
      * @return ShortCampaignInfo
      */
     public function setShows($Shows)
@@ -276,6 +336,8 @@ class ShortCampaignInfo
     }
 
     /**
+     * Gets the Clicks.
+     *
      * @return int
      */
     public function getClicks()
@@ -284,7 +346,10 @@ class ShortCampaignInfo
     }
 
     /**
+     * Sets the Clicks.
+     *
      * @param int $Clicks
+     *
      * @return ShortCampaignInfo
      */
     public function setClicks($Clicks)
@@ -295,6 +360,8 @@ class ShortCampaignInfo
     }
 
     /**
+     * Gets the Status.
+     *
      * @return string
      */
     public function getStatus()
@@ -303,7 +370,10 @@ class ShortCampaignInfo
     }
 
     /**
+     * Sets the Status.
+     *
      * @param string $Status
+     *
      * @return ShortCampaignInfo
      */
     public function setStatus($Status)
@@ -314,6 +384,8 @@ class ShortCampaignInfo
     }
 
     /**
+     * Gets the StatusShow.
+     *
      * @return string
      */
     public function getStatusShow()
@@ -322,7 +394,10 @@ class ShortCampaignInfo
     }
 
     /**
+     * Sets the StatusShow.
+     *
      * @param string $StatusShow
+     *
      * @return ShortCampaignInfo
      */
     public function setStatusShow($StatusShow)
@@ -333,6 +408,8 @@ class ShortCampaignInfo
     }
 
     /**
+     * Gets the StatusArchive.
+     *
      * @return string
      */
     public function getStatusArchive()
@@ -341,7 +418,10 @@ class ShortCampaignInfo
     }
 
     /**
+     * Sets the StatusArchive.
+     *
      * @param string $StatusArchive
+     *
      * @return ShortCampaignInfo
      */
     public function setStatusArchive($StatusArchive)
@@ -352,6 +432,8 @@ class ShortCampaignInfo
     }
 
     /**
+     * Gets the StatusActivating.
+     *
      * @return string
      */
     public function getStatusActivating()
@@ -360,7 +442,10 @@ class ShortCampaignInfo
     }
 
     /**
+     * Sets the StatusActivating.
+     *
      * @param string $StatusActivating
+     *
      * @return ShortCampaignInfo
      */
     public function setStatusActivating($StatusActivating)
@@ -371,6 +456,8 @@ class ShortCampaignInfo
     }
 
     /**
+     * Gets the StatusModerate.
+     *
      * @return string
      */
     public function getStatusModerate()
@@ -379,7 +466,10 @@ class ShortCampaignInfo
     }
 
     /**
+     * Sets the StatusModerate.
+     *
      * @param string $StatusModerate
+     *
      * @return ShortCampaignInfo
      */
     public function setStatusModerate($StatusModerate)
@@ -390,6 +480,8 @@ class ShortCampaignInfo
     }
 
     /**
+     * Gets the IsActive.
+     *
      * @return string
      */
     public function getIsActive()
@@ -398,7 +490,10 @@ class ShortCampaignInfo
     }
 
     /**
+     * Sets the IsActive.
+     *
      * @param string $IsActive
+     *
      * @return ShortCampaignInfo
      */
     public function setIsActive($IsActive)
@@ -409,6 +504,8 @@ class ShortCampaignInfo
     }
 
     /**
+     * Gets the ManagerName.
+     *
      * @return string
      */
     public function getManagerName()
@@ -417,7 +514,10 @@ class ShortCampaignInfo
     }
 
     /**
+     * Sets the ManagerName.
+     *
      * @param string $ManagerName
+     *
      * @return ShortCampaignInfo
      */
     public function setManagerName($ManagerName)
@@ -428,6 +528,8 @@ class ShortCampaignInfo
     }
 
     /**
+     * Gets the AgencyName.
+     *
      * @return string
      */
     public function getAgencyName()
@@ -436,7 +538,10 @@ class ShortCampaignInfo
     }
 
     /**
+     * Sets the AgencyName.
+     *
      * @param string $AgencyName
+     *
      * @return ShortCampaignInfo
      */
     public function setAgencyName($AgencyName)

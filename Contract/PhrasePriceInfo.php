@@ -38,6 +38,18 @@ class PhrasePriceInfo
     protected $ContextPrice;
 
     /**
+     * Creates a new instance.
+     *
+     * @return self
+     */
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * Gets the PhraseID.
+     *
      * @return int
      */
     public function getPhraseID()
@@ -46,7 +58,10 @@ class PhrasePriceInfo
     }
 
     /**
+     * Sets the PhraseID.
+     *
      * @param int $PhraseID
+     *
      * @return PhrasePriceInfo
      */
     public function setPhraseID($PhraseID)
@@ -57,6 +72,8 @@ class PhrasePriceInfo
     }
 
     /**
+     * Gets the BannerID.
+     *
      * @return int
      */
     public function getBannerID()
@@ -65,7 +82,10 @@ class PhrasePriceInfo
     }
 
     /**
+     * Sets the BannerID.
+     *
      * @param int $BannerID
+     *
      * @return PhrasePriceInfo
      */
     public function setBannerID($BannerID)
@@ -76,6 +96,8 @@ class PhrasePriceInfo
     }
 
     /**
+     * Gets the CampaignID.
+     *
      * @return int
      */
     public function getCampaignID()
@@ -84,7 +106,10 @@ class PhrasePriceInfo
     }
 
     /**
+     * Sets the CampaignID.
+     *
      * @param int $CampaignID
+     *
      * @return PhrasePriceInfo
      */
     public function setCampaignID($CampaignID)
@@ -95,6 +120,8 @@ class PhrasePriceInfo
     }
 
     /**
+     * Gets the Price.
+     *
      * @return float
      */
     public function getPrice()
@@ -103,7 +130,10 @@ class PhrasePriceInfo
     }
 
     /**
+     * Sets the Price.
+     *
      * @param float $Price
+     *
      * @return PhrasePriceInfo
      */
     public function setPrice($Price)
@@ -114,6 +144,8 @@ class PhrasePriceInfo
     }
 
     /**
+     * Gets the AutoBroker.
+     *
      * @return string
      */
     public function getAutoBroker()
@@ -122,7 +154,10 @@ class PhrasePriceInfo
     }
 
     /**
+     * Sets the AutoBroker.
+     *
      * @param string $AutoBroker
+     *
      * @return PhrasePriceInfo
      */
     public function setAutoBroker($AutoBroker)
@@ -133,6 +168,8 @@ class PhrasePriceInfo
     }
 
     /**
+     * Gets the AutoBudgetPriority.
+     *
      * @return string
      */
     public function getAutoBudgetPriority()
@@ -141,7 +178,10 @@ class PhrasePriceInfo
     }
 
     /**
+     * Sets the AutoBudgetPriority.
+     *
      * @param string $AutoBudgetPriority
+     *
      * @return PhrasePriceInfo
      */
     public function setAutoBudgetPriority($AutoBudgetPriority)
@@ -152,6 +192,8 @@ class PhrasePriceInfo
     }
 
     /**
+     * Gets the ContextPrice.
+     *
      * @return float
      */
     public function getContextPrice()
@@ -160,7 +202,10 @@ class PhrasePriceInfo
     }
 
     /**
+     * Sets the ContextPrice.
+     *
      * @param float $ContextPrice
+     *
      * @return PhrasePriceInfo
      */
     public function setContextPrice($ContextPrice)

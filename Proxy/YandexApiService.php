@@ -629,13 +629,13 @@ class YandexApiService
     /**
      * Gets information about the Yandex.Metrica goals that are available for the campaign.
      *
-     * @param Contract\CampaignIDInfo $CampaignIDInfo
+     * @param Contract\StatGoalsCampaignIDInfo $params
      *
      * @return Contract\StatGoalInfo[]
      */
-    public function getStatGoals(Contract\CampaignIDInfo $CampaignIDInfo)
+    public function getStatGoals(Contract\StatGoalsCampaignIDInfo $params)
     {
-        return $this->client->invoke('GetStatGoals', array($CampaignIDInfo));
+        return $this->client->invoke('GetStatGoals', array($params));
     }
 
     /**
@@ -719,5 +719,61 @@ class YandexApiService
     public function getEventsLog(Contract\GetEventsLogRequest $params)
     {
         return $this->client->invoke('GetEventsLog', array($params));
+    }
+
+    /**
+     * Gets an array of tags for specific campaigns.
+     *
+     * @param Contract\CampaignIDSInfo $params
+     *
+     * @return Contract\CampaignTagsInfo[]
+     *
+     * @since v4.live
+     */
+    public function getCampaignsTags(Contract\CampaignIDSInfo $params)
+    {
+        return $this->client->invoke('GetCampaignsTags', array($params));
+    }
+
+    /**
+     * Updates tags of campaigns.
+     *
+     * @param Contract\CampaignTagsInfo[] $params
+     *
+     * @return Contract\CampaignTagsInfo[]
+     *
+     * @since v4.live
+     */
+    public function updateCampaignsTags(array $params)
+    {
+        return $this->client->invoke('UpdateCampaignsTags', array($params));
+    }
+
+    /**
+     * Gets an array of tags for specific banners.
+     *
+     * @param Contract\BannersRequestInfo $params
+     *
+     * @return Contract\BannerTagsInfo[]
+     *
+     * @since v4.live
+     */
+    public function getBannersTags(Contract\BannersRequestInfo $params)
+    {
+        return $this->client->invoke('GetBannersTags', array($params));
+    }
+
+    /**
+     * Updates tags of banners.
+     *
+     * @param Contract\BannerTagsInfo[] $params
+     *
+     * @return int
+     *
+     * @since v4.live
+     */
+    public function updateBannersTags(array $params)
+    {
+        return $this->client->invoke('UpdateBannersTags', array($params));
     }
 }
