@@ -2,7 +2,9 @@
 
 namespace Biplane\YandexDirectBundle\Service;
 
-use Biplane\YandexDirectBundle\Contract;
+use Biplane\YandexDirectBundle\Contract\NewReportInfo;
+use Biplane\YandexDirectBundle\Contract\NewReportFilterInfo;
+use Biplane\YandexDirectBundle\Contract\ReportInfo;
 use Biplane\YandexDirectBundle\Proxy\YandexApiService;
 
 /**
@@ -45,8 +47,8 @@ class ReportService
         array $groupByColumns = array(), array $filter = array()
     )
     {
-        $newReportInfo = new Contract\NewReportInfo();
-        $newReportInfo->setCampaignID($campaignId)
+        $newReportInfo = NewReportInfo::create()
+            ->setCampaignID($campaignId)
             ->setStartDate($startDate->format('Y-m-d'))
             ->setEndDate($endDate->format('Y-m-d'));
 
@@ -55,7 +57,7 @@ class ReportService
         }
 
         if (count($filter)) {
-            $filterInfo = new Contract\NewReportFilterInfo();
+            $filterInfo = new NewReportFilterInfo();
 
             if (isset($filter['Banner']) && is_array($filter['Banner']) && count($filter['Banner'])) {
                 $filterInfo->setBanner($filter['Banner']);
@@ -78,17 +80,20 @@ class ReportService
     /**
      * Создание и выкачивание отчета через готовый контракт.
      *
-     * @param Contract\NewReportInfo $contract
+     * @param NewReportInfo $contract
      *
      * @return null|string
      *
      * @throws \RuntimeException
      * @throws \Exception
      */
-    public function getReportFromContract(Contract\NewReportInfo $contract)
+    public function getReportFromContract(NewReportInfo $contract)
     {
         if ($this->isFullQueue()) {
-            throw new \RuntimeException(sprintf('Unable to create new report. Maximum number of "%d" reports reached.', self::MAX_REPORTS));
+            throw new \RuntimeException(sprintf(
+                'Unable to create new report. Maximum number of "%d" reports reached.',
+                self::MAX_REPORTS
+            ));
         }
 
         // создаем
@@ -97,7 +102,7 @@ class ReportService
         do {
             sleep(15);
             $reportInfo = $this->getReportInfo($reportId);
-        } while ($reportInfo->getStatusReport() === Contract\ReportInfo::STATUS_PENDING);
+        } while ($reportInfo->getStatusReport() === ReportInfo::STATUS_PENDING);
 
         try {
             // скачиваем
@@ -120,13 +125,12 @@ class ReportService
      *
      * @param int $reportId A report identifier
      *
-     * @return Contract\ReportInfo A ReportInfo instance
+     * @return ReportInfo A ReportInfo instance
      *
      * @throws \LogicException
      */
     private function getReportInfo($reportId)
     {
-        /** @var $report \Biplane\YandexDirectBundle\Contract\ReportInfo */
         foreach ($this->apiService->getReportList() as $report) {
             if ($report->getReportID() === $reportId) {
                 return $report;

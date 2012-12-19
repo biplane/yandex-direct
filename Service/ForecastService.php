@@ -50,8 +50,7 @@ class ForecastService
             );
         }
 
-        $params = new NewForecastInfo();
-        $params
+        $params = NewForecastInfo::create()
             ->setPhrases($phrases)
             ->setGeoID($geoIds);
 
