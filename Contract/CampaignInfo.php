@@ -53,6 +53,10 @@ class CampaignInfo
      */
     protected $ContextStrategy;
     /**
+     * @var int[]
+     */
+    protected $AdditionalMetrikaCounters;
+    /**
      * @var string
      */
     protected $TradeType;
@@ -431,6 +435,30 @@ class CampaignInfo
     public function setContextStrategy(CampaignContextStrategy $ContextStrategy)
     {
         $this->ContextStrategy = $ContextStrategy;
+
+        return $this;
+    }
+
+    /**
+     * Gets the AdditionalMetrikaCounters.
+     *
+     * @return int[]
+     */
+    public function getAdditionalMetrikaCounters()
+    {
+        return $this->AdditionalMetrikaCounters;
+    }
+
+    /**
+     * Sets the AdditionalMetrikaCounters.
+     *
+     * @param int[] $AdditionalMetrikaCounters
+     *
+     * @return CampaignInfo
+     */
+    public function setAdditionalMetrikaCounters(array $AdditionalMetrikaCounters)
+    {
+        $this->AdditionalMetrikaCounters = $AdditionalMetrikaCounters;
 
         return $this;
     }

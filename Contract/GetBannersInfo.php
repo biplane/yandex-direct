@@ -52,24 +52,6 @@ class GetBannersInfo
     }
 
     /**
-     * Constructor.
-     *
-     * @param array             $campaignIds
-     * @param array             $bannerIds
-     * @param BannersFilterInfo $filter
-     * @param null              $getPhrases
-     *
-     * @deprecated
-     */
-    public function __construct(array $campaignIds = array(), array $bannerIds = null, BannersFilterInfo $filter = null, $getPhrases = null)
-    {
-        $this->CampaignIDS = $campaignIds;
-        $this->BannerIDS = $bannerIds;
-        $this->Filter = $filter;
-        $this->GetPhrases = $getPhrases;
-    }
-
-    /**
      * Gets the CampaignIDS.
      *
      * @return int[]
@@ -145,8 +127,6 @@ class GetBannersInfo
      * Gets the GetPhrases.
      *
      * @return string
-     *
-     * @since v4
      */
     public function getGetPhrases()
     {
@@ -159,8 +139,6 @@ class GetBannersInfo
      * @param string $GetPhrases
      *
      * @return GetBannersInfo
-     *
-     * @since v4
      */
     public function setGetPhrases($GetPhrases)
     {
@@ -173,8 +151,6 @@ class GetBannersInfo
      * Gets the FieldsNames.
      *
      * @return string[]
-     *
-     * @since v4.live
      */
     public function getFieldsNames()
     {
@@ -187,8 +163,6 @@ class GetBannersInfo
      * @param string[] $FieldsNames
      *
      * @return GetBannersInfo
-     *
-     * @since v4.live
      */
     public function setFieldsNames(array $FieldsNames)
     {

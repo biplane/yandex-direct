@@ -21,8 +21,7 @@ abstract class ApiBaseTest extends \Biplane\YandexDirectBundle\Tests\TestCase
     {
         $client = $this->createClient();
 
-        $forecastInfo = new Contract\NewForecastInfo();
-        $forecastInfo
+        $forecastInfo = Contract\NewForecastInfo::create()
             ->setPhrases(array('купить слона', 'продать слона'));
 
         $result = $client->invoke('CreateNewForecast', array($forecastInfo));

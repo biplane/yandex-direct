@@ -132,7 +132,11 @@ EOF
             throw new \InvalidArgumentException('Banner ID cannot be less than 1.');
         }
 
-        return $api->getBanners(new Contract\GetBannersInfo(array(), array($bannerId), null, 'WithPrices'));
+        $request = Contract\GetBannersInfo::create()
+            ->setBannerIDS(array($bannerId))
+            ->setGetPhrases('WithPrices');
+
+        return $api->getBanners($request);
     }
 
     private function getBannerPhrase(YandexApiService $api, $bannerId, $phraseId)

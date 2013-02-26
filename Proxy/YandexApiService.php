@@ -433,13 +433,27 @@ class YandexApiService
     /**
      * Generates a campaign statistics report on the server.
      *
-     * @param Contract\NewReportInfo $NewReportInfo
+     * @param Contract\NewReportInfo $params
      *
      * @return int The ID of the future report
      */
-    public function createNewReport(Contract\NewReportInfo $NewReportInfo)
+    public function createNewReport(Contract\NewReportInfo $params)
     {
-        return $this->client->invoke('CreateNewReport', array($NewReportInfo));
+        return $this->client->invoke('CreateNewReport', array($params));
+    }
+
+    /**
+     * Gets statistics that campaign for a period not exceeding seven days.
+     *
+     * @param Contract\NewReportInfo $params
+     *
+     * @return Contract\GetBannersStatResponse
+     *
+     * @since v4.live
+     */
+    public function getBannersStat(Contract\NewReportInfo $params)
+    {
+        return $this->client->invoke('GetBannersStat', array($params));
     }
 
     /**

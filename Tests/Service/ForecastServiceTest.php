@@ -36,10 +36,14 @@ class ForecastServiceTest extends \PHPUnit_Framework_TestCase
             'букет'
         );
 
+        $params = Contract\NewForecastInfo::create()
+            ->setPhrases($phrases)
+            ->setGeoID(array());
+
         $this->apiService
             ->expects($this->once())
             ->method('createNewForecast')
-            ->with($this->equalTo(new Contract\NewForecastInfo(null, array(), $phrases)));
+            ->with($this->equalTo($params));
 
         $this->service->create($phrases);
     }

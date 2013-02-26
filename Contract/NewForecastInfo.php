@@ -32,22 +32,6 @@ class NewForecastInfo
     }
 
     /**
-     * Constructor.
-     *
-     * @param array $categories Array of int.
-     * @param array $geoIds Array of int.
-     * @param array $phrases Array of string.
-     *
-     * @deprecated
-     */
-    public function __construct(array $categories = null, array $geoIds = null, array $phrases = null)
-    {
-        $this->Categories = $categories;
-        $this->GeoID = $geoIds;
-        $this->Phrases = $phrases;
-    }
-
-    /**
      * Gets the Categories.
      *
      * @return int[]
