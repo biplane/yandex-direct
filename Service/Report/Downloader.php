@@ -13,6 +13,9 @@ use Biplane\YandexDirectBundle\Configuration\CertificateConfiguration;
  */
 class Downloader
 {
+    /**
+     * @var AuthTokenConfiguration|CertificateConfiguration
+     */
     private $config;
 
     /**
