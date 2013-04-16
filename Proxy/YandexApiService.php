@@ -51,7 +51,7 @@ class YandexApiService
      */
     public function getVersion()
     {
-        return $this->client->invoke('GetVersion', array());
+        return $this->invoke('GetVersion', array());
     }
 
     /**
@@ -63,7 +63,7 @@ class YandexApiService
      */
     public function getClientsList(Contract\ClientInfoRequest $ClientInfoRequest)
     {
-        return $this->client->invoke('GetClientsList', array($ClientInfoRequest));
+        return $this->invoke('GetClientsList', array($ClientInfoRequest));
     }
 
     /**
@@ -75,7 +75,7 @@ class YandexApiService
      */
     public function getSubClients(Contract\GetSubClientsRequest $GetSubClientsRequest)
     {
-        return $this->client->invoke('GetSubClients', array($GetSubClientsRequest));
+        return $this->invoke('GetSubClients', array($GetSubClientsRequest));
     }
 
     /**
@@ -87,7 +87,7 @@ class YandexApiService
      */
     public function setAutoPrice(Contract\AutoPriceInfo $AutoPriceInfo)
     {
-        return $this->client->invoke('SetAutoPrice', array($AutoPriceInfo));
+        return $this->invoke('SetAutoPrice', array($AutoPriceInfo));
     }
 
     /**
@@ -99,7 +99,7 @@ class YandexApiService
      */
     public function deleteReport($id)
     {
-        return $this->client->invoke('DeleteReport', array($id));
+        return $this->invoke('DeleteReport', array($id));
     }
 
     /**
@@ -111,7 +111,7 @@ class YandexApiService
      */
     public function getSummaryStat(Contract\GetSummaryStatRequest $GetSummaryStatRequest)
     {
-        return $this->client->invoke('GetSummaryStat', array($GetSummaryStatRequest));
+        return $this->invoke('GetSummaryStat', array($GetSummaryStatRequest));
     }
 
     /**
@@ -125,7 +125,7 @@ class YandexApiService
      */
     public function getCampaignParams(Contract\CampaignIDInfo $CampaignIDInfo)
     {
-        return $this->client->invoke('GetCampaignParams', array($CampaignIDInfo));
+        return $this->invoke('GetCampaignParams', array($CampaignIDInfo));
     }
 
     /**
@@ -137,7 +137,7 @@ class YandexApiService
      */
     public function getCampaignsParams(Contract\CampaignIDSInfo $CampaignIDSInfo)
     {
-        return $this->client->invoke('GetCampaignsParams', array($CampaignIDSInfo));
+        return $this->invoke('GetCampaignsParams', array($CampaignIDSInfo));
     }
 
     /**
@@ -149,7 +149,7 @@ class YandexApiService
      */
     public function deleteForecastReport($id)
     {
-        return $this->client->invoke('DeleteForecastReport', array($id));
+        return $this->invoke('DeleteForecastReport', array($id));
     }
 
     /**
@@ -161,7 +161,7 @@ class YandexApiService
      */
     public function moderateBanners(Contract\CampaignBidsInfo $CampaignBidsInfo)
     {
-        return $this->client->invoke('ModerateBanners', array($CampaignBidsInfo));
+        return $this->invoke('ModerateBanners', array($CampaignBidsInfo));
     }
 
     /**
@@ -173,7 +173,7 @@ class YandexApiService
      */
     public function stopBanners(Contract\CampaignBidsInfo $CampaignBidsInfo)
     {
-        return $this->client->invoke('StopBanners', array($CampaignBidsInfo));
+        return $this->invoke('StopBanners', array($CampaignBidsInfo));
     }
 
     /**
@@ -185,7 +185,7 @@ class YandexApiService
      */
     public function resumeBanners(Contract\CampaignBidsInfo $CampaignBidsInfo)
     {
-        return $this->client->invoke('ResumeBanners', array($CampaignBidsInfo));
+        return $this->invoke('ResumeBanners', array($CampaignBidsInfo));
     }
 
     /**
@@ -197,7 +197,7 @@ class YandexApiService
      */
     public function archiveBanners(Contract\CampaignBidsInfo $CampaignBidsInfo)
     {
-        return $this->client->invoke('ArchiveBanners', array($CampaignBidsInfo));
+        return $this->invoke('ArchiveBanners', array($CampaignBidsInfo));
     }
 
     /**
@@ -209,7 +209,7 @@ class YandexApiService
      */
     public function unArchiveBanners(Contract\CampaignBidsInfo $CampaignBidsInfo)
     {
-        return $this->client->invoke('UnArchiveBanners', array($CampaignBidsInfo));
+        return $this->invoke('UnArchiveBanners', array($CampaignBidsInfo));
     }
 
     /**
@@ -224,7 +224,7 @@ class YandexApiService
      */
     public function deleteBanners(Contract\CampaignBidsInfo $CampaignBidsInfo)
     {
-        return $this->client->invoke('DeleteBanners', array($CampaignBidsInfo));
+        return $this->invoke('DeleteBanners', array($CampaignBidsInfo));
     }
 
     /**
@@ -236,7 +236,7 @@ class YandexApiService
      */
     public function stopCampaign(Contract\CampaignIDInfo $CampaignIDInfo)
     {
-        return $this->client->invoke('StopCampaign', array($CampaignIDInfo));
+        return $this->invoke('StopCampaign', array($CampaignIDInfo));
     }
 
     /**
@@ -248,7 +248,7 @@ class YandexApiService
      */
     public function deleteCampaign(Contract\CampaignIDInfo $CampaignIDInfo)
     {
-        return $this->client->invoke('DeleteCampaign', array($CampaignIDInfo));
+        return $this->invoke('DeleteCampaign', array($CampaignIDInfo));
     }
 
     /**
@@ -260,7 +260,7 @@ class YandexApiService
      */
     public function unArchiveCampaign(Contract\CampaignIDInfo $CampaignIDInfo)
     {
-        return $this->client->invoke('UnArchiveCampaign', array($CampaignIDInfo));
+        return $this->invoke('UnArchiveCampaign', array($CampaignIDInfo));
     }
 
     /**
@@ -272,7 +272,7 @@ class YandexApiService
      */
     public function archiveCampaign(Contract\CampaignIDInfo $CampaignIDInfo)
     {
-        return $this->client->invoke('ArchiveCampaign', array($CampaignIDInfo));
+        return $this->invoke('ArchiveCampaign', array($CampaignIDInfo));
     }
 
     /**
@@ -284,7 +284,7 @@ class YandexApiService
      */
     public function resumeCampaign(Contract\CampaignIDInfo $CampaignIDInfo)
     {
-        return $this->client->invoke('ResumeCampaign', array($CampaignIDInfo));
+        return $this->invoke('ResumeCampaign', array($CampaignIDInfo));
     }
 
     /**
@@ -298,7 +298,7 @@ class YandexApiService
      */
     public function getReportList()
     {
-        return $this->client->invoke('GetReportList', array());
+        return $this->invoke('GetReportList', array());
     }
 
     /**
@@ -308,7 +308,7 @@ class YandexApiService
      */
     public function pingAPI()
     {
-        return $this->client->invoke('PingAPI', array());
+        return $this->invoke('PingAPI', array());
     }
 
     /**
@@ -320,7 +320,7 @@ class YandexApiService
      */
     public function getClientsUnits(array $logins)
     {
-        return $this->client->invoke('GetClientsUnits', array($logins));
+        return $this->invoke('GetClientsUnits', array($logins));
     }
 
     /**
@@ -332,7 +332,7 @@ class YandexApiService
      */
     public function getClientInfo(array $logins)
     {
-        return $this->client->invoke('GetClientInfo', array($logins));
+        return $this->invoke('GetClientInfo', array($logins));
     }
 
     /**
@@ -344,7 +344,7 @@ class YandexApiService
      */
     public function updateClientInfo(array $ClientInfo)
     {
-        return $this->client->invoke('UpdateClientInfo', array($ClientInfo));
+        return $this->invoke('UpdateClientInfo', array($ClientInfo));
     }
 
     /**
@@ -356,7 +356,7 @@ class YandexApiService
      */
     public function getBanners(\Biplane\YandexDirectBundle\Contract\GetBannersInfo $GetBannersInfo)
     {
-        return $this->client->invoke('GetBanners', array($GetBannersInfo));
+        return $this->invoke('GetBanners', array($GetBannersInfo));
     }
 
     /**
@@ -369,7 +369,7 @@ class YandexApiService
      */
     public function getCampaignsList(array $logins = array())
     {
-        return $this->client->invoke('GetCampaignsList', array($logins));
+        return $this->invoke('GetCampaignsList', array($logins));
     }
 
     /**
@@ -381,7 +381,7 @@ class YandexApiService
      */
     public function getCampaignsListFilter(Contract\GetCampaignsInfo $GetCampaignsInfo)
     {
-        return $this->client->invoke('GetCampaignsListFilter', array($GetCampaignsInfo));
+        return $this->invoke('GetCampaignsListFilter', array($GetCampaignsInfo));
     }
 
     /**
@@ -393,7 +393,7 @@ class YandexApiService
      */
     public function getBalance(array $ids)
     {
-        return $this->client->invoke('GetBalance', array($ids));
+        return $this->invoke('GetBalance', array($ids));
     }
 
     /**
@@ -405,7 +405,7 @@ class YandexApiService
      */
     public function getBannerPhrases(array $ids)
     {
-        return $this->client->invoke('GetBannerPhrases', array($ids));
+        return $this->invoke('GetBannerPhrases', array($ids));
     }
 
     /**
@@ -417,7 +417,7 @@ class YandexApiService
      */
     public function getBannerPhrasesFilter(Contract\BannerPhrasesFilterRequestInfo $BannerPhrasesFilterRequestInfo)
     {
-        return $this->client->invoke('GetBannerPhrasesFilter', array($BannerPhrasesFilterRequestInfo));
+        return $this->invoke('GetBannerPhrasesFilter', array($BannerPhrasesFilterRequestInfo));
     }
 
     /**
@@ -427,7 +427,7 @@ class YandexApiService
      */
     public function getRegions()
     {
-        return $this->client->invoke('GetRegions', array());
+        return $this->invoke('GetRegions', array());
     }
 
     /**
@@ -439,7 +439,7 @@ class YandexApiService
      */
     public function createNewReport(Contract\NewReportInfo $params)
     {
-        return $this->client->invoke('CreateNewReport', array($params));
+        return $this->invoke('CreateNewReport', array($params));
     }
 
     /**
@@ -453,7 +453,7 @@ class YandexApiService
      */
     public function getBannersStat(Contract\NewReportInfo $params)
     {
-        return $this->client->invoke('GetBannersStat', array($params));
+        return $this->invoke('GetBannersStat', array($params));
     }
 
     /**
@@ -467,7 +467,7 @@ class YandexApiService
      */
     public function createNewForecast(Contract\NewForecastInfo $NewForecastInfo)
     {
-        return $this->client->invoke('CreateNewForecast', array($NewForecastInfo));
+        return $this->invoke('CreateNewForecast', array($NewForecastInfo));
     }
 
     /**
@@ -479,7 +479,7 @@ class YandexApiService
      */
     public function getForecast($id)
     {
-        return $this->client->invoke('GetForecast', array($id));
+        return $this->invoke('GetForecast', array($id));
     }
 
     /**
@@ -489,7 +489,7 @@ class YandexApiService
      */
     public function getRubrics()
     {
-        return $this->client->invoke('GetRubrics', array());
+        return $this->invoke('GetRubrics', array());
     }
 
     /**
@@ -499,7 +499,7 @@ class YandexApiService
      */
     public function getTimeZones()
     {
-        return $this->client->invoke('GetTimeZones', array());
+        return $this->invoke('GetTimeZones', array());
     }
 
     /**
@@ -510,7 +510,7 @@ class YandexApiService
      */
     public function getForecastList()
     {
-        return $this->client->invoke('GetForecastList', array());
+        return $this->invoke('GetForecastList', array());
     }
 
     /**
@@ -525,7 +525,7 @@ class YandexApiService
      */
     public function updatePrices(array $PhrasePriceInfo)
     {
-        return $this->client->invoke('UpdatePrices', array($PhrasePriceInfo));
+        return $this->invoke('UpdatePrices', array($PhrasePriceInfo));
     }
 
     /**
@@ -540,7 +540,7 @@ class YandexApiService
      */
     public function createOrUpdateCampaign(Contract\CampaignInfo $CampaignInfo)
     {
-        return $this->client->invoke('CreateOrUpdateCampaign', array($CampaignInfo));
+        return $this->invoke('CreateOrUpdateCampaign', array($CampaignInfo));
     }
 
     /**
@@ -555,7 +555,7 @@ class YandexApiService
      */
     public function createOrUpdateBanners(array $BannerInfo)
     {
-        return $this->client->invoke('CreateOrUpdateBanners', array($BannerInfo));
+        return $this->invoke('CreateOrUpdateBanners', array($BannerInfo));
     }
 
     /**
@@ -565,7 +565,7 @@ class YandexApiService
      */
     public function getAvailableVersions()
     {
-        return $this->client->invoke('GetAvailableVersions', array());
+        return $this->invoke('GetAvailableVersions', array());
     }
 
     /**
@@ -577,7 +577,7 @@ class YandexApiService
      */
     public function getKeywordsSuggestion(\Biplane\YandexDirectBundle\Contract\KeywordsSuggestionInfo $KeywordsSuggestionInfo)
     {
-        return $this->client->invoke('GetKeywordsSuggestion', array($KeywordsSuggestionInfo));
+        return $this->invoke('GetKeywordsSuggestion', array($KeywordsSuggestionInfo));
     }
 
     /**
@@ -589,7 +589,7 @@ class YandexApiService
      */
     public function createNewSubclient(Contract\CreateNewSubclientRequest $CreateNewSubclientRequest)
     {
-        return $this->client->invoke('CreateNewSubclient', array($CreateNewSubclientRequest));
+        return $this->invoke('CreateNewSubclient', array($CreateNewSubclientRequest));
     }
 
     /**
@@ -601,7 +601,7 @@ class YandexApiService
      */
     public function createNewWordstatReport(Contract\NewWordstatReportInfo $NewWordstatReportInfo)
     {
-        return $this->client->invoke('CreateNewWordstatReport', array($NewWordstatReportInfo));
+        return $this->invoke('CreateNewWordstatReport', array($NewWordstatReportInfo));
     }
 
     /**
@@ -611,7 +611,7 @@ class YandexApiService
      */
     public function getWordstatReportList()
     {
-        return $this->client->invoke('GetWordstatReportList', array());
+        return $this->invoke('GetWordstatReportList', array());
     }
 
     /**
@@ -623,7 +623,7 @@ class YandexApiService
      */
     public function getWordstatReport($id)
     {
-        return $this->client->invoke('GetWordstatReport', array($id));
+        return $this->invoke('GetWordstatReport', array($id));
     }
 
     /**
@@ -637,7 +637,7 @@ class YandexApiService
      */
     public function deleteWordstatReport($id)
     {
-        return $this->client->invoke('DeleteWordstatReport', array($id));
+        return $this->invoke('DeleteWordstatReport', array($id));
     }
 
     /**
@@ -649,7 +649,7 @@ class YandexApiService
      */
     public function getStatGoals(Contract\StatGoalsCampaignIDInfo $params)
     {
-        return $this->client->invoke('GetStatGoals', array($params));
+        return $this->invoke('GetStatGoals', array($params));
     }
 
     /**
@@ -664,7 +664,7 @@ class YandexApiService
      */
     public function getChanges(Contract\GetChangesRequest $GetChangesRequest)
     {
-        return $this->client->invoke('GetChanges', array($GetChangesRequest));
+        return $this->invoke('GetChanges', array($GetChangesRequest));
     }
 
     /**
@@ -678,7 +678,7 @@ class YandexApiService
      */
     public function transferMoney(Contract\TransferMoneyInfo $TransferMoneyInfo)
     {
-        return $this->client->invoke('TransferMoney', array($TransferMoneyInfo), true);
+        return $this->invoke('TransferMoney', array($TransferMoneyInfo), true);
     }
 
     /**
@@ -690,7 +690,7 @@ class YandexApiService
      */
     public function getCreditLimits()
     {
-        return $this->client->invoke('GetCreditLimits', array(), true);
+        return $this->invoke('GetCreditLimits', array(), true);
     }
 
     /**
@@ -704,7 +704,7 @@ class YandexApiService
      */
     public function createInvoice(Contract\CreateInvoiceInfo $CreateInvoiceInfo)
     {
-        return $this->client->invoke('CreateInvoice', array($CreateInvoiceInfo), true);
+        return $this->invoke('CreateInvoice', array($CreateInvoiceInfo), true);
     }
 
     /**
@@ -718,7 +718,7 @@ class YandexApiService
      */
     public function payCampaigns(Contract\PayCampaignsInfo $PayCampaignsInfo)
     {
-        return $this->client->invoke('PayCampaigns', array($PayCampaignsInfo), true);
+        return $this->invoke('PayCampaigns', array($PayCampaignsInfo), true);
     }
 
     /**
@@ -732,7 +732,7 @@ class YandexApiService
      */
     public function getEventsLog(Contract\GetEventsLogRequest $params)
     {
-        return $this->client->invoke('GetEventsLog', array($params));
+        return $this->invoke('GetEventsLog', array($params));
     }
 
     /**
@@ -746,7 +746,7 @@ class YandexApiService
      */
     public function getCampaignsTags(Contract\CampaignIDSInfo $params)
     {
-        return $this->client->invoke('GetCampaignsTags', array($params));
+        return $this->invoke('GetCampaignsTags', array($params));
     }
 
     /**
@@ -760,7 +760,7 @@ class YandexApiService
      */
     public function updateCampaignsTags(array $params)
     {
-        return $this->client->invoke('UpdateCampaignsTags', array($params));
+        return $this->invoke('UpdateCampaignsTags', array($params));
     }
 
     /**
@@ -774,7 +774,7 @@ class YandexApiService
      */
     public function getBannersTags(Contract\BannersRequestInfo $params)
     {
-        return $this->client->invoke('GetBannersTags', array($params));
+        return $this->invoke('GetBannersTags', array($params));
     }
 
     /**
@@ -788,6 +788,20 @@ class YandexApiService
      */
     public function updateBannersTags(array $params)
     {
-        return $this->client->invoke('UpdateBannersTags', array($params));
+        return $this->invoke('UpdateBannersTags', array($params));
+    }
+
+    /**
+     * Invokes API method with specified name.
+     *
+     * @param string $method            A method name
+     * @param array  $params            An array of parameters for API method
+     * @param bool   $isFinancialMethod If true, when should be send the finance token
+     *
+     * @return mixed
+     */
+    private function invoke($method, array $params = array(), $isFinancialMethod = false)
+    {
+        return $this->client->invoke($method, $params, $isFinancialMethod);
     }
 }
