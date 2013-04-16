@@ -44,8 +44,8 @@ class JsonClient implements ClientInterface
      * Constructor.
      *
      * @param BaseConfiguration $configuration    The configuration
-     * @param ConverterFactory      $converterFactory A ConverterFactory instance
-     * @param JsonEncoder           $encoder          A JsonEncoder instance
+     * @param ConverterFactory  $converterFactory A ConverterFactory instance
+     * @param JsonEncoder       $encoder          A JsonEncoder instance
      */
     public function __construct(BaseConfiguration $configuration, ConverterFactory $converterFactory, JsonEncoder $encoder)
     {
