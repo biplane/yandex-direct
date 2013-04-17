@@ -7,6 +7,7 @@
         <service id="biplane_yandex_direct.api.factory" class="Biplane\YandexDirectBundle\Factory\ApiServiceFactory">
             <argument type="service" id="biplane_yandex_direct.client.factory" />
             <argument type="service" id="biplane_yandex_direct.profile.manager" />
+            <argument type="service" id="event_dispatcher" />
         </service>
 
         <service id="biplane_yandex_direct.client.factory" class="Biplane\YandexDirectBundle\Factory\ClientFactory" public="false" />

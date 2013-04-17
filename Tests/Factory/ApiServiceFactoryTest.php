@@ -14,10 +14,16 @@ class ApiServiceFactoryTest extends \PHPUnit_Framework_TestCase
      * @var \PHPUnit_Framework_MockObject_MockObject
      */
     private $profileManager;
+
     /**
      * @var \PHPUnit_Framework_MockObject_MockObject
      */
     private $clientFactory;
+
+    /**
+     * @var \PHPUnit_Framework_MockObject_MockObject
+     */
+    private $dispatcher;
 
     public function testCreateApiServiceByCustomProfile()
     {
@@ -38,7 +44,7 @@ class ApiServiceFactoryTest extends \PHPUnit_Framework_TestCase
             ->method('create')
             ->will($this->returnValue($this->getMock('Biplane\\YandexDirectBundle\\Proxy\\Client\\ClientInterface')));
 
-        $factory = new ApiServiceFactory($this->clientFactory, $this->profileManager);
+        $factory = new ApiServiceFactory($this->clientFactory, $this->profileManager, $this->dispatcher);
 
         $this->assertTrue($factory->createApiService('foo') instanceof YandexApiService,
             '->createApiService() returns object of type YandexApiService for profile "foo".'
@@ -64,7 +70,7 @@ class ApiServiceFactoryTest extends \PHPUnit_Framework_TestCase
             ->method('create')
             ->will($this->returnValue($this->getMock('Biplane\\YandexDirectBundle\\Proxy\\Client\\ClientInterface')));
 
-        $factory = new ApiServiceFactory($this->clientFactory, $this->profileManager);
+        $factory = new ApiServiceFactory($this->clientFactory, $this->profileManager, $this->dispatcher);
         $factory->setDefaultProfile('default');
 
         $this->assertTrue($factory->createApiService() instanceof YandexApiService,
@@ -83,7 +89,7 @@ class ApiServiceFactoryTest extends \PHPUnit_Framework_TestCase
             ->with('default')
             ->will($this->returnValue(false));
 
-        $factory = new ApiServiceFactory($this->clientFactory, $this->profileManager);
+        $factory = new ApiServiceFactory($this->clientFactory, $this->profileManager, $this->dispatcher);
         $factory->setDefaultProfile('default');
     }
 
@@ -107,7 +113,7 @@ class ApiServiceFactoryTest extends \PHPUnit_Framework_TestCase
             ->expects($this->never())
             ->method('create');
 
-        $factory = new ApiServiceFactory($this->clientFactory, $this->profileManager);
+        $factory = new ApiServiceFactory($this->clientFactory, $this->profileManager, $this->dispatcher);
         $factory->setDefaultProfile('default');
 
         $factory->createApiService('foo');
@@ -119,7 +125,7 @@ class ApiServiceFactoryTest extends \PHPUnit_Framework_TestCase
      */
     public function testThrowExceptionWhenProfileIsNullAndDefaultProfileIsNotDefained()
     {
-        $factory = new ApiServiceFactory($this->clientFactory, $this->profileManager);
+        $factory = new ApiServiceFactory($this->clientFactory, $this->profileManager, $this->dispatcher);
 
         $factory->createApiService();
     }
@@ -128,11 +134,12 @@ class ApiServiceFactoryTest extends \PHPUnit_Framework_TestCase
     {
         $this->profileManager = $this->getMock('Biplane\\YandexDirectBundle\\Profile\\ProfileManager');
         $this->clientFactory = $this->getMock('Biplane\\YandexDirectBundle\\Factory\\ClientFactory');
+        $this->dispatcher = $this->getMock('Symfony\\Component\\EventDispatcher\\EventDispatcherInterface');
     }
 
     protected function tearDown()
     {
-        unset($this->profileManager, $this->clientFactory);
+        unset($this->profileManager, $this->clientFactory, $this->dispatcher);
     }
 
     private function createProfileMock()

@@ -2,6 +2,7 @@
 
 namespace Biplane\YandexDirectBundle\Factory;
 
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Biplane\YandexDirectBundle\Profile\ProfileManager;
 use Biplane\YandexDirectBundle\Proxy\YandexApiService;
 
@@ -15,17 +16,24 @@ class ApiServiceFactory
     private $clientFactory;
     private $profileManager;
     private $defaultProfile;
+    private $dispatcher;
 
     /**
      * Constructor.
      *
-     * @param ClientFactory  $clientFactory  The client factory
-     * @param ProfileManager $profileManager The profile manager
+     * @param ClientFactory            $clientFactory  The client factory
+     * @param ProfileManager           $profileManager The profile manager
+     * @param EventDispatcherInterface $dispatcher     The event dispatcher
      */
-    public function __construct(ClientFactory $clientFactory, ProfileManager $profileManager)
+    public function __construct(
+        ClientFactory $clientFactory,
+        ProfileManager $profileManager,
+        EventDispatcherInterface $dispatcher
+    )
     {
         $this->clientFactory = $clientFactory;
         $this->profileManager = $profileManager;
+        $this->dispatcher = $dispatcher;
     }
 
     /**
@@ -84,7 +92,7 @@ class ApiServiceFactory
         $profile = $this->profileManager->get($profileName);
 
         $client = $this->clientFactory->create($profile->getClientType(), $profile->getConfiguration());
-        $service = new YandexApiService($client);
+        $service = new YandexApiService($this->dispatcher, $client, $profileName);
 
         return $service;
     }

@@ -2,8 +2,12 @@
 
 namespace Biplane\YandexDirectBundle\Proxy;
 
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Biplane\YandexDirectBundle\Contract;
-use Biplane\YandexDirectBundle\Exception\ApiException;
+use Biplane\YandexDirectBundle\Events;
+use Biplane\YandexDirectBundle\Event\PreCallEvent;
+use Biplane\YandexDirectBundle\Event\PostCallEvent;
+use Biplane\YandexDirectBundle\Event\FailCallEvent;
 
 /**
  * @version v4.live
@@ -12,16 +16,22 @@ use Biplane\YandexDirectBundle\Exception\ApiException;
  */
 class YandexApiService
 {
+    private $dispatcher;
     private $client;
+    private $profileName;
 
     /**
      * Constructor.
      *
-     * @param Client\ClientInterface $client
+     * @param EventDispatcherInterface $dispatcher  The event dispatcher
+     * @param Client\ClientInterface   $client      A ClientInterface implementation
+     * @param string                   $profileName A profile name
      */
-    public function __construct(Client\ClientInterface $client)
+    public function __construct(EventDispatcherInterface $dispatcher, Client\ClientInterface $client, $profileName)
     {
         $this->client = $client;
+        $this->dispatcher = $dispatcher;
+        $this->profileName = $profileName;
     }
 
     /**
@@ -354,7 +364,7 @@ class YandexApiService
      *
      * @return Contract\BannerInfo[]
      */
-    public function getBanners(\Biplane\YandexDirectBundle\Contract\GetBannersInfo $GetBannersInfo)
+    public function getBanners(Contract\GetBannersInfo $GetBannersInfo)
     {
         return $this->invoke('GetBanners', array($GetBannersInfo));
     }
@@ -575,7 +585,7 @@ class YandexApiService
      *
      * @return array An array of suggestions for the keywords (up to 20 suggestions)
      */
-    public function getKeywordsSuggestion(\Biplane\YandexDirectBundle\Contract\KeywordsSuggestionInfo $KeywordsSuggestionInfo)
+    public function getKeywordsSuggestion(Contract\KeywordsSuggestionInfo $KeywordsSuggestionInfo)
     {
         return $this->invoke('GetKeywordsSuggestion', array($KeywordsSuggestionInfo));
     }
@@ -798,10 +808,38 @@ class YandexApiService
      * @param array  $params            An array of parameters for API method
      * @param bool   $isFinancialMethod If true, when should be send the finance token
      *
+     * @throws \Exception
+     *
      * @return mixed
      */
     private function invoke($method, array $params = array(), $isFinancialMethod = false)
     {
-        return $this->client->invoke($method, $params, $isFinancialMethod);
+        $this->dispatcher->dispatch(Events::BEFORE_REQUEST, new PreCallEvent(
+            $this,
+            $method,
+            $this->profileName
+        ));
+
+        try {
+            $response = $this->client->invoke($method, $params, $isFinancialMethod);
+        } catch (\Exception $ex) {
+            $this->dispatcher->dispatch(Events::FAIL_REQUEST, new FailCallEvent(
+                $this,
+                $method,
+                $this->profileName,
+                $ex
+            ));
+
+            throw $ex;
+        }
+
+        $this->dispatcher->dispatch(Events::AFTER_REQUEST, new PostCallEvent(
+            $this,
+            $method,
+            $this->profileName,
+            $response
+        ));
+
+        return $response;
     }
 }
