@@ -64,6 +64,19 @@ class Configuration implements ConfigurationInterface
                         ->end()
                     ->end()
                 ->end()
+                ->arrayNode('limits')
+                    ->addDefaultsIfNotSet()
+                    ->children()
+                        ->scalarNode('max_connections')
+                            ->validate()
+                                ->always(function ($v) {
+                                    return $v >= 1 ? $v : null;
+                                })
+                            ->end()
+                            ->defaultValue(12)
+                        ->end()
+                    ->end()
+                ->end()
             ->end();
 
         return $treeBuilder;

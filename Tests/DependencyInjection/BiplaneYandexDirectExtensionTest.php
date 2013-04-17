@@ -42,6 +42,9 @@ class BiplaneYandexDirectExtensionTest extends \PHPUnit_Framework_TestCase
                                 'application_id' => 'APPLICATION-ID',
                             )
                         )
+                    ),
+                    'limits' => array(
+                        'max_connections' => 0
                     )
                 )
             ),
@@ -55,6 +58,7 @@ class BiplaneYandexDirectExtensionTest extends \PHPUnit_Framework_TestCase
             array(array('setDefaultProfile', array('foo'))),
             $this->container->getDefinition('biplane_yandex_direct.api.factory')->getMethodCalls()
         );
+        $this->assertFalse($this->container->hasDefinition('biplane_yandex_direct.event_subscriber.total_limits'));
 
         $profiles = $this->container->getDefinition('biplane_yandex_direct.profile.manager')->getArgument(0);
 
@@ -88,7 +92,11 @@ class BiplaneYandexDirectExtensionTest extends \PHPUnit_Framework_TestCase
     {
         $this->extension->load(array(), $this->container);
 
-        $this->assertFalse($this->container->getDefinition('biplane_yandex_direct.api.factory')->hasMethodCall('setDefaultProfile'));
+        $this->assertTrue($this->container->hasDefinition('biplane_yandex_direct.event_subscriber.total_limits'));
+        $this->assertEquals(
+            1,
+            $this->container->getDefinition('biplane_yandex_direct.event_subscriber.total_limits')->getArgument(1)
+        );
     }
 
     protected function setUp()

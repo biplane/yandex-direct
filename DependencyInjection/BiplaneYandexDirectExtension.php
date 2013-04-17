@@ -77,5 +77,25 @@ class BiplaneYandexDirectExtension extends Extension
 
         $container->getDefinition('biplane_yandex_direct.profile.manager')
             ->replaceArgument(0, $profilesDefs);
+
+        $this->applyApiLimits($config['limits'], $container);
+    }
+
+    /**
+     * Applies the API limits.
+     *
+     * @param array $limits The API limits configuration
+     *
+     * @param ContainerBuilder $container
+     */
+    private function applyApiLimits($limits, ContainerBuilder $container)
+    {
+        if (null !== $limit = $limits['max_connections']) {
+            $container
+                ->getDefinition('biplane_yandex_direct.event_subscriber.total_limits')
+                ->replaceArgument(1, $limit);
+        } else {
+            $container->removeDefinition('biplane_yandex_direct.event_subscriber.total_limits');
+        }
     }
 }

@@ -15,6 +15,7 @@ use Biplane\YandexDirectBundle\Event\PreCallEvent;
  */
 class TotalLimitListener implements EventSubscriberInterface
 {
+    const MAX_CONNECTIONS_WITH_YANDEX = 12;
     const SEMAPHORE_ID_PREFIX = 'total_limit_yandex_';
 
     private $factory;
@@ -26,10 +27,19 @@ class TotalLimitListener implements EventSubscriberInterface
      *
      * @param Factory $factory The factory
      * @param int     $limit   The synchronous connections limit
+     *
+     * @throws \InvalidArgumentException
      */
     public function __construct(Factory $factory, $limit = 1)
     {
         $this->factory = $factory;
+
+        if ($limit > self::MAX_CONNECTIONS_WITH_YANDEX) {
+            throw new \InvalidArgumentException(
+                'The connections limit value should be less than or equal to ' . self::MAX_CONNECTIONS_WITH_YANDEX
+            );
+        }
+
         $this->limit = $limit;
         $this->semaphores = array();
     }
