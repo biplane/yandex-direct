@@ -20,5 +20,17 @@
             <argument type="service" id="biplane_yandex_direct.api.factory" />
             <argument type="service" id="biplane_yandex_direct.profile.manager" />
         </service>
+
+        <service id="biplane_yandex_direct.ipc.factory" class="Biplane\SystemV\Factory" public="false">
+            <argument>%kernel.cache_dir%/ipc</argument>
+            <argument>10000000</argument>
+        </service>
+
+        <service id="biplane_yandex_direct.event_subscriber.total_limits" class="Biplane\YandexDirectBundle\EventListener\TotalLimitListener">
+            <argument type="service" id="biplane_yandex_direct.ipc.factory" />
+            <argument />
+
+            <tag name="kernel.event_subscriber" />
+        </service>
     </services>
 </container>
