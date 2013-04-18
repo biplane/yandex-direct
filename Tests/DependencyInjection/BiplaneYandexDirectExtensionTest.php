@@ -58,7 +58,7 @@ class BiplaneYandexDirectExtensionTest extends \PHPUnit_Framework_TestCase
             array(array('setDefaultProfile', array('foo'))),
             $this->container->getDefinition('biplane_yandex_direct.api.factory')->getMethodCalls()
         );
-        $this->assertFalse($this->container->hasDefinition('biplane_yandex_direct.event_subscriber.total_limits'));
+        $this->assertFalse($this->container->hasDefinition('biplane_yandex_direct.event_listener.total_limits'));
 
         $profiles = $this->container->getDefinition('biplane_yandex_direct.profile.manager')->getArgument(0);
 
@@ -92,10 +92,10 @@ class BiplaneYandexDirectExtensionTest extends \PHPUnit_Framework_TestCase
     {
         $this->extension->load(array(), $this->container);
 
-        $this->assertTrue($this->container->hasDefinition('biplane_yandex_direct.event_subscriber.total_limits'));
+        $this->assertTrue($this->container->hasDefinition('biplane_yandex_direct.event_listener.total_limits'));
         $this->assertEquals(
-            1,
-            $this->container->getDefinition('biplane_yandex_direct.event_subscriber.total_limits')->getArgument(1)
+            12,
+            $this->container->getDefinition('biplane_yandex_direct.event_listener.total_limits')->getArgument(1)
         );
     }
 

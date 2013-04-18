@@ -34,13 +34,14 @@ class TotalLimitListener implements EventSubscriberInterface
     {
         $this->factory = $factory;
 
-        if ($limit > self::MAX_CONNECTIONS_WITH_YANDEX) {
-            throw new \InvalidArgumentException(
-                'The connections limit value should be less than or equal to ' . self::MAX_CONNECTIONS_WITH_YANDEX
-            );
+        if ($limit < 1 || $limit > self::MAX_CONNECTIONS_WITH_YANDEX) {
+            throw new \InvalidArgumentException(sprintf(
+                'Connections limit must be between 1 and %d.',
+                self::MAX_CONNECTIONS_WITH_YANDEX
+            ));
         }
 
-        $this->limit = $limit;
+        $this->limit = (int)$limit;
         $this->semaphores = array();
     }
 
