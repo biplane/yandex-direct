@@ -4,12 +4,12 @@ namespace Biplane\YandexDirectBundle\Proxy\Client;
 
 use Symfony\Component\BrowserKit\Response;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
-use Biplane\YandexDirectBundle\Converter\ConverterInterface;
 use Biplane\YandexDirectBundle\Configuration\AuthTokenConfiguration;
 use Biplane\YandexDirectBundle\Configuration\CertificateConfiguration;
 use Biplane\YandexDirectBundle\Configuration\BaseConfiguration;
 use Biplane\YandexDirectBundle\Factory\ConverterFactory;
 use Biplane\YandexDirectBundle\Exception\ApiException;
+use Biplane\YandexDirectBundle\Exception\NetworkException;
 
 /**
  * JsonClient
@@ -126,6 +126,7 @@ class JsonClient implements ClientInterface
      * @return mixed
      *
      * @throws ApiException
+     * @throws NetworkException
      * @throws \RuntimeException
      */
     public function invoke($methodName, array $params, $isFinancialMethod = false)
@@ -148,7 +149,16 @@ class JsonClient implements ClientInterface
             $jsonData['token'] = $this->configuration->getToken();
         }
 
-        $response = $this->doRequest($this->encoder->encode($jsonData, 'json'));
+        try {
+            $response = $this->doRequest($this->encoder->encode($jsonData, 'json'));
+        } catch (\RuntimeException $ex) {
+            if (in_array($ex->getCode(), array(5, 6, 7))) {
+                throw NetworkException::create($this, $methodName, 'Could not connect to host', 0, null, $ex);
+            }
+
+            throw $ex;
+        }
+
         $jsonData = $this->encoder->decode($response->getContent(), 'json');
 
         if (isset($jsonData['error_code'])) {

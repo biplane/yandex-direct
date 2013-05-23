@@ -5,8 +5,8 @@ namespace Biplane\YandexDirectBundle\Proxy\Client;
 use Biplane\YandexDirectBundle\Configuration\AuthTokenConfiguration;
 use Biplane\YandexDirectBundle\Configuration\CertificateConfiguration;
 use Biplane\YandexDirectBundle\Configuration\BaseConfiguration;
-use Biplane\YandexDirectBundle\Converter\ConverterInterface;
 use Biplane\YandexDirectBundle\Exception\ApiException;
+use Biplane\YandexDirectBundle\Exception\NetworkException;
 use Biplane\YandexDirectBundle\Factory\ConverterFactory;
 
 /**
@@ -190,6 +190,7 @@ class SoapClient extends \SoapClient implements ClientInterface
      *
      * @return mixed
      *
+     * @throws NetworkException
      * @throws ApiException
      */
     public function invoke($methodName, array $params, $isFinancialMethod = false)
@@ -208,6 +209,10 @@ class SoapClient extends \SoapClient implements ClientInterface
         } catch (\SoapFault $ex) {
             $code = 0;
             $detail = property_exists($ex, 'detail') ? $ex->detail : null;
+
+            if (false !== strpos($ex->getMessage(), 'Could not connect to host')) {
+                throw NetworkException::create($this, $methodName, 'Could not connect to host', 0, null, $ex);
+            }
 
             if (false !== $pos = strrpos($ex->faultcode, ':')) {
                 $code = substr($ex->faultcode, $pos+1);
