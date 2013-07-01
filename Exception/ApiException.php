@@ -57,6 +57,11 @@ class ApiException extends \RuntimeException
     const INVALID_CAMPAIGN_INFO = 111;
 
     /**
+     * Превышен лимит количества кампаний.
+     */
+    const CAMPAIGNS_OVERFLOW = 114;
+
+    /**
      * Неправильно описана структура BannerInfo.
      */
     const INVALID_BANNER_INFO = 151;
