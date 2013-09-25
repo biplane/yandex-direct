@@ -207,15 +207,15 @@ class SoapClient extends \SoapClient implements ClientInterface
         try {
             $result = $this->__soapCall($methodName, $params, array(), $headers);
         } catch (\SoapFault $ex) {
+            if (strtolower($ex->faultcode) === 'http') {
+                throw NetworkException::create($this, $methodName, $ex->getMessage(), 0, null, $ex);
+            }
+
             $code = 0;
             $detail = property_exists($ex, 'detail') ? $ex->detail : null;
 
-            if (false !== strpos($ex->getMessage(), 'Could not connect to host')) {
-                throw NetworkException::create($this, $methodName, 'Could not connect to host', 0, null, $ex);
-            }
-
             if (false !== $pos = strrpos($ex->faultcode, ':')) {
-                $code = substr($ex->faultcode, $pos+1);
+                $code = substr($ex->faultcode, $pos + 1);
             }
 
             throw ApiException::create($this, $methodName, $ex->getMessage(), $code, $detail, $ex);
