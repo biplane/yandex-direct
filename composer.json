@@ -1,0 +1,13 @@
+{
+  "name": "biplane/yandex-direct-bundle",
+  "type": "symfony-bundle",
+  "require": {
+    "php": ">=5.3.3",
+    "symfony/console": "~2.1",
+    "symfony/framework-bundle": "~2.1"
+  },
+  "autoload": {
+    "psr-0": { "Biplane\\YandexDirectBundle": "" }
+  },
+  "target-dir": "Biplane/YandexDirectBundle"
+}

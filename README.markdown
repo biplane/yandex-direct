@@ -1,29 +1,66 @@
 YandexDirectBundle
 ==================
 
-Предоставляет инструменты по работе с API Яндекс.Директа.
+Предоставляет инструменты для работы с API Яндекс.Директа.
 
 Установка
 ---------
+
+### A) Через composer
+
+В `composer.json` необходимо добавить:
+
+```
+{
+  ...
+  "repositories: [{
+    "type": "vcs",
+    "url": "git@github.com:biplane/BiplaneYandexDirectBundle.git"
+  }],
+  ...
+  "require": {
+    ...
+    "biplane/yandex-direct-bundle": "dev-master"
+  }
+}
+```
+
+И обновите пакеты:
+
+```bash
+$ composer update
+```
+
+### B) Без менеджера пакетов
 
 Чтобы установить bundle, поместите его в vendor/bundles/Biplane/YandexDirectBundle вашего проекта.
 Варианты подключения:
 
   1. Использование **submodule**
 
-         git submodule add git@git.assembla.com:yandexdirectbundle.git vendor/bundles/Biplane/YandexDirectBundle
+         git submodule add git@github.com:biplane/BiplaneYandexDirectBundle.git vendor/bundles/Biplane/YandexDirectBundle
 
   2. Использование скрипта **vendors**
 
      Нужно добавить следующие строчки в `deps` файл:
 
          [BiplaneYandexDirectBundle]
-             git=git@git.assembla.com:yandexdirectbundle.git
+             git=git@github.com:biplane/BiplaneYandexDirectBundle.git
              target=/bundles/Biplane/YandexDirectBundle
 
      И запустить скрипт (для Win-платфоры необходимо указать интерпретатор - `php.exe`):
 
          ./bin/vendors install
+
+Зарегестрируйте namespace в `app/autoload.php`:
+
+    $loader->registerNamespaces(array(
+        'Biplane'               => __DIR__.'/../vendor/bundles'
+        // ...
+    ));
+
+Регистрация BiplaneYandexDirectBundle
+-------------------------------------
 
 Зарегестрируйте bundle в `app/AppKernel`:
 
@@ -35,14 +72,6 @@ YandexDirectBundle
             // ...
         )
     };
-
-Зарегестрируйте namespace в `app/autoload.php`:
-
-    $loader->registerNamespaces(array(
-        'Biplane'               => __DIR__.'/../vendor/bundles'
-        // ...
-    ));
-
 
 Конфигурация
 ------------
