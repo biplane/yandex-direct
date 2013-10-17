@@ -16,6 +16,10 @@ class PayCampElement
      * @var float
      */
     protected $Sum;
+    /**
+     * @var string
+     */
+    protected $Currency;
 
     /**
      * Creates a new instance.
@@ -71,6 +75,30 @@ class PayCampElement
     public function setSum($Sum)
     {
         $this->Sum = $Sum;
+
+        return $this;
+    }
+
+    /**
+     * Gets the Currency.
+     *
+     * @return string
+     */
+    public function getCurrency()
+    {
+        return $this->Currency;
+    }
+
+    /**
+     * Sets the Currency.
+     *
+     * @param string $Currency
+     *
+     * @return PayCampElement
+     */
+    public function setCurrency($Currency)
+    {
+        $this->Currency = $Currency;
 
         return $this;
     }

@@ -64,6 +64,10 @@ class StatItem
      * @var float
      */
     protected $GoalCostContext;
+    /**
+     * @var string
+     */
+    protected $Currency;
 
     /**
      * Creates a new instance.
@@ -407,6 +411,30 @@ class StatItem
     public function setGoalCostContext($GoalCostContext)
     {
         $this->GoalCostContext = $GoalCostContext;
+
+        return $this;
+    }
+
+    /**
+     * Gets the Currency.
+     *
+     * @return string
+     */
+    public function getCurrency()
+    {
+        return $this->Currency;
+    }
+
+    /**
+     * Sets the Currency.
+     *
+     * @param string $Currency
+     *
+     * @return StatItem
+     */
+    public function setCurrency($Currency)
+    {
+        $this->Currency = $Currency;
 
         return $this;
     }

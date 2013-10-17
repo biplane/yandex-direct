@@ -40,6 +40,10 @@ class EventsLogItemAttributes
      * @var string
      */
     protected $StopTime;
+    /**
+     * @var string
+     */
+    protected $Currency;
 
     /**
      * Creates a new instance.
@@ -239,6 +243,30 @@ class EventsLogItemAttributes
     public function setStopTime($StopTime)
     {
         $this->StopTime = $StopTime;
+
+        return $this;
+    }
+
+    /**
+     * Gets the Currency.
+     *
+     * @return string
+     */
+    public function getCurrency()
+    {
+        return $this->Currency;
+    }
+
+    /**
+     * Sets the Currency.
+     *
+     * @param string $Currency
+     *
+     * @return EventsLogItemAttributes
+     */
+    public function setCurrency($Currency)
+    {
+        $this->Currency = $Currency;
 
         return $this;
     }

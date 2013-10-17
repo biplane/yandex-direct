@@ -33,17 +33,21 @@ class BannerInfo
      */
     protected $Domain;
     /**
-     * @var string
-     */
-    protected $Geo;
-    /**
      * @var ContactInfo
      */
     protected $ContactInfo;
     /**
+     * @var string
+     */
+    protected $Geo;
+    /**
      * @var BannerPhraseInfo[]
      */
     protected $Phrases;
+    /**
+     * @var string[]
+     */
+    protected $MinusKeywords;
     /**
      * @var string
      */
@@ -93,9 +97,13 @@ class BannerInfo
      */
     protected $ModerateRejectionReasons;
     /**
-     * @var string[]
+     * @var int
      */
-    protected $MinusKeywords;
+    protected $AdGroupID;
+    /**
+     * @var string
+     */
+    protected $AdGroupName;
     /**
      * @var string
      */
@@ -104,6 +112,14 @@ class BannerInfo
      * @var string
      */
     protected $AgeLabel;
+    /**
+     * @var string
+     */
+    protected $AdImageHash;
+    /**
+     * @var string
+     */
+    protected $StatusAdImageModerate;
 
     /**
      * Creates a new instance.
@@ -260,30 +276,6 @@ class BannerInfo
     }
 
     /**
-     * Gets the Geo.
-     *
-     * @return string
-     */
-    public function getGeo()
-    {
-        return $this->Geo;
-    }
-
-    /**
-     * Sets the Geo.
-     *
-     * @param string $Geo
-     *
-     * @return BannerInfo
-     */
-    public function setGeo($Geo)
-    {
-        $this->Geo = $Geo;
-
-        return $this;
-    }
-
-    /**
      * Gets the ContactInfo.
      *
      * @return ContactInfo
@@ -308,6 +300,30 @@ class BannerInfo
     }
 
     /**
+     * Gets the Geo.
+     *
+     * @return string
+     */
+    public function getGeo()
+    {
+        return $this->Geo;
+    }
+
+    /**
+     * Sets the Geo.
+     *
+     * @param string $Geo
+     *
+     * @return BannerInfo
+     */
+    public function setGeo($Geo)
+    {
+        $this->Geo = $Geo;
+
+        return $this;
+    }
+
+    /**
      * Gets the Phrases.
      *
      * @return BannerPhraseInfo[]
@@ -327,6 +343,30 @@ class BannerInfo
     public function setPhrases(array $Phrases)
     {
         $this->Phrases = $Phrases;
+
+        return $this;
+    }
+
+    /**
+     * Gets the MinusKeywords.
+     *
+     * @return string[]
+     */
+    public function getMinusKeywords()
+    {
+        return $this->MinusKeywords;
+    }
+
+    /**
+     * Sets the MinusKeywords.
+     *
+     * @param string[] $MinusKeywords
+     *
+     * @return BannerInfo
+     */
+    public function setMinusKeywords(array $MinusKeywords)
+    {
+        $this->MinusKeywords = $MinusKeywords;
 
         return $this;
     }
@@ -620,25 +660,49 @@ class BannerInfo
     }
 
     /**
-     * Gets the MinusKeywords.
+     * Gets the AdGroupID.
      *
-     * @return string[]
+     * @return int
      */
-    public function getMinusKeywords()
+    public function getAdGroupID()
     {
-        return $this->MinusKeywords;
+        return $this->AdGroupID;
     }
 
     /**
-     * Sets the MinusKeywords.
+     * Sets the AdGroupID.
      *
-     * @param string[] $MinusKeywords
+     * @param int $AdGroupID
      *
      * @return BannerInfo
      */
-    public function setMinusKeywords(array $MinusKeywords)
+    public function setAdGroupID($AdGroupID)
     {
-        $this->MinusKeywords = $MinusKeywords;
+        $this->AdGroupID = $AdGroupID;
+
+        return $this;
+    }
+
+    /**
+     * Gets the AdGroupName.
+     *
+     * @return string
+     */
+    public function getAdGroupName()
+    {
+        return $this->AdGroupName;
+    }
+
+    /**
+     * Sets the AdGroupName.
+     *
+     * @param string $AdGroupName
+     *
+     * @return BannerInfo
+     */
+    public function setAdGroupName($AdGroupName)
+    {
+        $this->AdGroupName = $AdGroupName;
 
         return $this;
     }
@@ -687,6 +751,54 @@ class BannerInfo
     public function setAgeLabel($AgeLabel)
     {
         $this->AgeLabel = $AgeLabel;
+
+        return $this;
+    }
+
+    /**
+     * Gets the AdImageHash.
+     *
+     * @return string
+     */
+    public function getAdImageHash()
+    {
+        return $this->AdImageHash;
+    }
+
+    /**
+     * Sets the AdImageHash.
+     *
+     * @param string $AdImageHash
+     *
+     * @return BannerInfo
+     */
+    public function setAdImageHash($AdImageHash)
+    {
+        $this->AdImageHash = $AdImageHash;
+
+        return $this;
+    }
+
+    /**
+     * Gets the StatusAdImageModerate.
+     *
+     * @return string
+     */
+    public function getStatusAdImageModerate()
+    {
+        return $this->StatusAdImageModerate;
+    }
+
+    /**
+     * Sets the StatusAdImageModerate.
+     *
+     * @param string $StatusAdImageModerate
+     *
+     * @return BannerInfo
+     */
+    public function setStatusAdImageModerate($StatusAdImageModerate)
+    {
+        $this->StatusAdImageModerate = $StatusAdImageModerate;
 
         return $this;
     }

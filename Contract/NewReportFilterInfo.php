@@ -36,6 +36,10 @@ class NewReportFilterInfo
      * @var int[]
      */
     protected $StatGoals;
+    /**
+     * @var string
+     */
+    protected $WithImage;
 
     /**
      * Creates a new instance.
@@ -211,6 +215,30 @@ class NewReportFilterInfo
     public function setStatGoals(array $StatGoals)
     {
         $this->StatGoals = $StatGoals;
+
+        return $this;
+    }
+
+    /**
+     * Gets the WithImage.
+     *
+     * @return string
+     */
+    public function getWithImage()
+    {
+        return $this->WithImage;
+    }
+
+    /**
+     * Sets the WithImage.
+     *
+     * @param string $WithImage
+     *
+     * @return NewReportFilterInfo
+     */
+    public function setWithImage($WithImage)
+    {
+        $this->WithImage = $WithImage;
 
         return $this;
     }

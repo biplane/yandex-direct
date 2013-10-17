@@ -36,6 +36,10 @@ class PhrasePriceInfo
      * @var float
      */
     protected $ContextPrice;
+    /**
+     * @var string
+     */
+    protected $Currency;
 
     /**
      * Creates a new instance.
@@ -211,6 +215,30 @@ class PhrasePriceInfo
     public function setContextPrice($ContextPrice)
     {
         $this->ContextPrice = $ContextPrice;
+
+        return $this;
+    }
+
+    /**
+     * Gets the Currency.
+     *
+     * @return string
+     */
+    public function getCurrency()
+    {
+        return $this->Currency;
+    }
+
+    /**
+     * Sets the Currency.
+     *
+     * @param string $Currency
+     *
+     * @return PhrasePriceInfo
+     */
+    public function setCurrency($Currency)
+    {
+        $this->Currency = $Currency;
 
         return $this;
     }

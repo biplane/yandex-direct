@@ -6,12 +6,8 @@ namespace Biplane\YandexDirectBundle\Contract;
  * @codeCoverageIgnore
  * @SuppressWarnings(PHPMD)
  */
-class CampaignIDInfo
+class RetargetingRequestOptions
 {
-    /**
-     * @var int
-     */
-    protected $CampaignID;
     /**
      * @var string
      */
@@ -25,30 +21,6 @@ class CampaignIDInfo
     public static function create()
     {
         return new self();
-    }
-
-    /**
-     * Gets the CampaignID.
-     *
-     * @return int
-     */
-    public function getCampaignID()
-    {
-        return $this->CampaignID;
-    }
-
-    /**
-     * Sets the CampaignID.
-     *
-     * @param int $CampaignID
-     *
-     * @return CampaignIDInfo
-     */
-    public function setCampaignID($CampaignID)
-    {
-        $this->CampaignID = $CampaignID;
-
-        return $this;
     }
 
     /**
@@ -66,7 +38,7 @@ class CampaignIDInfo
      *
      * @param string $Currency
      *
-     * @return CampaignIDInfo
+     * @return RetargetingRequestOptions
      */
     public function setCurrency($Currency)
     {

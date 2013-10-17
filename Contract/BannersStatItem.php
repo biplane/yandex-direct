@@ -61,9 +61,17 @@ class BannersStatItem
      */
     protected $RubricID;
     /**
+     * @var int
+     */
+    protected $RetargetingID;
+    /**
      * @var string
      */
     protected $Phrase;
+    /**
+     * @var string
+     */
+    protected $StatType;
 
     /**
      * Creates a new instance.
@@ -388,6 +396,30 @@ class BannersStatItem
     }
 
     /**
+     * Gets the RetargetingID.
+     *
+     * @return int
+     */
+    public function getRetargetingID()
+    {
+        return $this->RetargetingID;
+    }
+
+    /**
+     * Sets the RetargetingID.
+     *
+     * @param int $RetargetingID
+     *
+     * @return BannersStatItem
+     */
+    public function setRetargetingID($RetargetingID)
+    {
+        $this->RetargetingID = $RetargetingID;
+
+        return $this;
+    }
+
+    /**
      * Gets the Phrase.
      *
      * @return string
@@ -407,6 +439,30 @@ class BannersStatItem
     public function setPhrase($Phrase)
     {
         $this->Phrase = $Phrase;
+
+        return $this;
+    }
+
+    /**
+     * Gets the StatType.
+     *
+     * @return string
+     */
+    public function getStatType()
+    {
+        return $this->StatType;
+    }
+
+    /**
+     * Sets the StatType.
+     *
+     * @param string $StatType
+     *
+     * @return BannersStatItem
+     */
+    public function setStatType($StatType)
+    {
+        $this->StatType = $StatType;
 
         return $this;
     }

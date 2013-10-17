@@ -84,6 +84,22 @@ class ShortCampaignInfo
      * @var string
      */
     protected $AgencyName;
+    /**
+     * @var string
+     */
+    protected $Currency;
+    /**
+     * @var string
+     */
+    protected $CampaignCurrency;
+    /**
+     * @var int
+     */
+    protected $SourceCampaignID;
+    /**
+     * @var float
+     */
+    protected $BonusDiscount;
 
     /**
      * Creates a new instance.
@@ -547,6 +563,102 @@ class ShortCampaignInfo
     public function setAgencyName($AgencyName)
     {
         $this->AgencyName = $AgencyName;
+
+        return $this;
+    }
+
+    /**
+     * Gets the Currency.
+     *
+     * @return string
+     */
+    public function getCurrency()
+    {
+        return $this->Currency;
+    }
+
+    /**
+     * Sets the Currency.
+     *
+     * @param string $Currency
+     *
+     * @return ShortCampaignInfo
+     */
+    public function setCurrency($Currency)
+    {
+        $this->Currency = $Currency;
+
+        return $this;
+    }
+
+    /**
+     * Gets the CampaignCurrency.
+     *
+     * @return string
+     */
+    public function getCampaignCurrency()
+    {
+        return $this->CampaignCurrency;
+    }
+
+    /**
+     * Sets the CampaignCurrency.
+     *
+     * @param string $CampaignCurrency
+     *
+     * @return ShortCampaignInfo
+     */
+    public function setCampaignCurrency($CampaignCurrency)
+    {
+        $this->CampaignCurrency = $CampaignCurrency;
+
+        return $this;
+    }
+
+    /**
+     * Gets the SourceCampaignID.
+     *
+     * @return int
+     */
+    public function getSourceCampaignID()
+    {
+        return $this->SourceCampaignID;
+    }
+
+    /**
+     * Sets the SourceCampaignID.
+     *
+     * @param int $SourceCampaignID
+     *
+     * @return ShortCampaignInfo
+     */
+    public function setSourceCampaignID($SourceCampaignID)
+    {
+        $this->SourceCampaignID = $SourceCampaignID;
+
+        return $this;
+    }
+
+    /**
+     * Gets the BonusDiscount.
+     *
+     * @return float
+     */
+    public function getBonusDiscount()
+    {
+        return $this->BonusDiscount;
+    }
+
+    /**
+     * Sets the BonusDiscount.
+     *
+     * @param float $BonusDiscount
+     *
+     * @return ShortCampaignInfo
+     */
+    public function setBonusDiscount($BonusDiscount)
+    {
+        $this->BonusDiscount = $BonusDiscount;
 
         return $this;
     }

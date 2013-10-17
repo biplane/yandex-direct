@@ -41,6 +41,10 @@ class CampaignContextStrategy
      */
     protected $ClicksPerWeek;
     /**
+     * @var float
+     */
+    protected $AverageCPA;
+    /**
      * @var int
      */
     protected $GoalID;
@@ -243,6 +247,30 @@ class CampaignContextStrategy
     public function setClicksPerWeek($ClicksPerWeek)
     {
         $this->ClicksPerWeek = $ClicksPerWeek;
+
+        return $this;
+    }
+
+    /**
+     * Gets the AverageCPA.
+     *
+     * @return float
+     */
+    public function getAverageCPA()
+    {
+        return $this->AverageCPA;
+    }
+
+    /**
+     * Sets the AverageCPA.
+     *
+     * @param float $AverageCPA
+     *
+     * @return CampaignContextStrategy
+     */
+    public function setAverageCPA($AverageCPA)
+    {
+        $this->AverageCPA = $AverageCPA;
 
         return $this;
     }

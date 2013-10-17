@@ -24,6 +24,10 @@ class GetCampaignsInfo
      * @var int
      */
     protected $Offset;
+    /**
+     * @var string
+     */
+    protected $CurrencySupported;
 
     /**
      * Creates a new instance.
@@ -127,6 +131,30 @@ class GetCampaignsInfo
     public function setOffset($Offset)
     {
         $this->Offset = $Offset;
+
+        return $this;
+    }
+
+    /**
+     * Gets the CurrencySupported.
+     *
+     * @return string
+     */
+    public function getCurrencySupported()
+    {
+        return $this->CurrencySupported;
+    }
+
+    /**
+     * Sets the CurrencySupported.
+     *
+     * @param string $CurrencySupported
+     *
+     * @return GetCampaignsInfo
+     */
+    public function setCurrencySupported($CurrencySupported)
+    {
+        $this->CurrencySupported = $CurrencySupported;
 
         return $this;
     }

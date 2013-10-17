@@ -20,6 +20,10 @@ class NewForecastInfo
      * @var int[]
      */
     protected $GeoID;
+    /**
+     * @var string
+     */
+    protected $Currency;
 
     /**
      * Creates a new instance.
@@ -99,6 +103,30 @@ class NewForecastInfo
     public function setGeoID(array $GeoID)
     {
         $this->GeoID = $GeoID;
+
+        return $this;
+    }
+
+    /**
+     * Gets the Currency.
+     *
+     * @return string
+     */
+    public function getCurrency()
+    {
+        return $this->Currency;
+    }
+
+    /**
+     * Sets the Currency.
+     *
+     * @param string $Currency
+     *
+     * @return NewForecastInfo
+     */
+    public function setCurrency($Currency)
+    {
+        $this->Currency = $Currency;
 
         return $this;
     }

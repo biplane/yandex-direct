@@ -802,6 +802,76 @@ class YandexApiService
     }
 
     /**
+     * Gets an array of RetargetingGoal instances.
+     *
+     * @param Contract\GetRetargetingGoalsRequest $params
+     *
+     * @return Contract\RetargetingGoal[]
+     *
+     * @since v4.live
+     */
+    public function getRetargetingGoals(Contract\GetRetargetingGoalsRequest $params)
+    {
+        return $this->invoke('GetRetargetingGoals', array($params));
+    }
+
+    /**
+     * Retargeting condition.
+     *
+     * @param Contract\RetargetingConditionRequest $params
+     *
+     * @return Contract\RetargetingConditionResponse
+     *
+     * @since v4.live
+     */
+    public function retargetingCondition(Contract\RetargetingConditionRequest $params)
+    {
+        return $this->invoke('RetargetingCondition', array($params));
+    }
+
+    /**
+     * Retargeting
+     *
+     * @param Contract\RetargetingRequest $params
+     *
+     * @return Contract\RetargetingResponse
+     *
+     * @since v4.live
+     */
+    public function retargeting(Contract\RetargetingRequest $params)
+    {
+        return $this->invoke('Retargeting', array($params));
+    }
+
+    /**
+     * Manages ad image.
+     *
+     * @param Contract\AdImageRequest $params
+     *
+     * @return Contract\AdImageResponse
+     *
+     * @since v4.live
+     */
+    public function adImage(Contract\AdImageRequest $params)
+    {
+        return $this->invoke('AdImage', array($params));
+    }
+
+    /**
+     * Manages associations of ad image.
+     *
+     * @param Contract\AdImageAssociationRequest $params
+     *
+     * @return Contract\AdImageAssociationResponse
+     *
+     * @since v4.live
+     */
+    public function adImageAssociation(Contract\AdImageAssociationRequest $params)
+    {
+        return $this->invoke('AdImageAssociation', array($params));
+    }
+
+    /**
      * Invokes API method with specified name.
      *
      * @param string $method            A method name

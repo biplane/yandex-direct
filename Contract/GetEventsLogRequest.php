@@ -32,6 +32,10 @@ class GetEventsLogRequest
      * @var GetEventsLogFilter
      */
     protected $Filter;
+    /**
+     * @var string
+     */
+    protected $Currency;
 
     /**
      * Creates a new instance.
@@ -183,6 +187,30 @@ class GetEventsLogRequest
     public function setFilter(GetEventsLogFilter $Filter)
     {
         $this->Filter = $Filter;
+
+        return $this;
+    }
+
+    /**
+     * Gets the Currency.
+     *
+     * @return string
+     */
+    public function getCurrency()
+    {
+        return $this->Currency;
+    }
+
+    /**
+     * Sets the Currency.
+     *
+     * @param string $Currency
+     *
+     * @return GetEventsLogRequest
+     */
+    public function setCurrency($Currency)
+    {
+        $this->Currency = $Currency;
 
         return $this;
     }

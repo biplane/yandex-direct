@@ -72,6 +72,14 @@ class AutoPriceInfo
      * @var string
      */
     protected $BannersType;
+    /**
+     * @var string
+     */
+    protected $DontWaitForPriceUpdate;
+    /**
+     * @var string
+     */
+    protected $Currency;
 
     /**
      * Creates a new instance.
@@ -463,6 +471,54 @@ class AutoPriceInfo
     public function setBannersType($BannersType)
     {
         $this->BannersType = $BannersType;
+
+        return $this;
+    }
+
+    /**
+     * Gets the DontWaitForPriceUpdate.
+     *
+     * @return string
+     */
+    public function getDontWaitForPriceUpdate()
+    {
+        return $this->DontWaitForPriceUpdate;
+    }
+
+    /**
+     * Sets the DontWaitForPriceUpdate.
+     *
+     * @param string $DontWaitForPriceUpdate
+     *
+     * @return AutoPriceInfo
+     */
+    public function setDontWaitForPriceUpdate($DontWaitForPriceUpdate)
+    {
+        $this->DontWaitForPriceUpdate = $DontWaitForPriceUpdate;
+
+        return $this;
+    }
+
+    /**
+     * Gets the Currency.
+     *
+     * @return string
+     */
+    public function getCurrency()
+    {
+        return $this->Currency;
+    }
+
+    /**
+     * Sets the Currency.
+     *
+     * @param string $Currency
+     *
+     * @return AutoPriceInfo
+     */
+    public function setCurrency($Currency)
+    {
+        $this->Currency = $Currency;
 
         return $this;
     }

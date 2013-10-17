@@ -139,6 +139,10 @@ class BannerPhraseInfo
      */
     protected $UserParams;
     /**
+     * @var int
+     */
+    protected $AdGroupID;
+    /**
      * @var string
      */
     protected $StatusPaused;
@@ -150,6 +154,10 @@ class BannerPhraseInfo
      * @var int
      */
     protected $ContextShows;
+    /**
+     * @var string
+     */
+    protected $Currency;
 
     /**
      * Creates a new instance.
@@ -882,6 +890,30 @@ class BannerPhraseInfo
     }
 
     /**
+     * Gets the AdGroupID.
+     *
+     * @return int
+     */
+    public function getAdGroupID()
+    {
+        return $this->AdGroupID;
+    }
+
+    /**
+     * Sets the AdGroupID.
+     *
+     * @param int $AdGroupID
+     *
+     * @return BannerPhraseInfo
+     */
+    public function setAdGroupID($AdGroupID)
+    {
+        $this->AdGroupID = $AdGroupID;
+
+        return $this;
+    }
+
+    /**
      * Gets the StatusPaused.
      *
      * @return string
@@ -949,6 +981,30 @@ class BannerPhraseInfo
     public function setContextShows($ContextShows)
     {
         $this->ContextShows = $ContextShows;
+
+        return $this;
+    }
+
+    /**
+     * Gets the Currency.
+     *
+     * @return string
+     */
+    public function getCurrency()
+    {
+        return $this->Currency;
+    }
+
+    /**
+     * Sets the Currency.
+     *
+     * @param string $Currency
+     *
+     * @return BannerPhraseInfo
+     */
+    public function setCurrency($Currency)
+    {
+        $this->Currency = $Currency;
 
         return $this;
     }

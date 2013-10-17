@@ -12,6 +12,10 @@ class CampaignIDSInfo
      * @var int[]
      */
     protected $CampaignIDS;
+    /**
+     * @var string
+     */
+    protected $Currency;
 
     /**
      * Creates a new instance.
@@ -43,6 +47,30 @@ class CampaignIDSInfo
     public function setCampaignIDS(array $CampaignIDS)
     {
         $this->CampaignIDS = $CampaignIDS;
+
+        return $this;
+    }
+
+    /**
+     * Gets the Currency.
+     *
+     * @return string
+     */
+    public function getCurrency()
+    {
+        return $this->Currency;
+    }
+
+    /**
+     * Sets the Currency.
+     *
+     * @param string $Currency
+     *
+     * @return CampaignIDSInfo
+     */
+    public function setCurrency($Currency)
+    {
+        $this->Currency = $Currency;
 
         return $this;
     }

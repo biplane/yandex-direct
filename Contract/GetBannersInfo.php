@@ -40,6 +40,10 @@ class GetBannersInfo
      * @var int
      */
     protected $Offset;
+    /**
+     * @var string
+     */
+    protected $Currency;
 
     /**
      * Creates a new instance.
@@ -215,6 +219,30 @@ class GetBannersInfo
     public function setOffset($Offset)
     {
         $this->Offset = $Offset;
+
+        return $this;
+    }
+
+    /**
+     * Gets the Currency.
+     *
+     * @return string
+     */
+    public function getCurrency()
+    {
+        return $this->Currency;
+    }
+
+    /**
+     * Sets the Currency.
+     *
+     * @param string $Currency
+     *
+     * @return GetBannersInfo
+     */
+    public function setCurrency($Currency)
+    {
+        $this->Currency = $Currency;
 
         return $this;
     }

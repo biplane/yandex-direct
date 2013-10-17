@@ -44,6 +44,10 @@ class BannersFilterInfo
      * @var string[]
      */
     protected $Tags;
+    /**
+     * @var string[]
+     */
+    protected $StatusAdImageModerate;
 
     /**
      * Creates a new instance.
@@ -267,6 +271,30 @@ class BannersFilterInfo
     public function setTags(array $Tags)
     {
         $this->Tags = $Tags;
+
+        return $this;
+    }
+
+    /**
+     * Gets the StatusAdImageModerate.
+     *
+     * @return string[]
+     */
+    public function getStatusAdImageModerate()
+    {
+        return $this->StatusAdImageModerate;
+    }
+
+    /**
+     * Sets the StatusAdImageModerate.
+     *
+     * @param string[] $StatusAdImageModerate
+     *
+     * @return BannersFilterInfo
+     */
+    public function setStatusAdImageModerate(array $StatusAdImageModerate)
+    {
+        $this->StatusAdImageModerate = $StatusAdImageModerate;
 
         return $this;
     }

@@ -49,6 +49,26 @@ class CampaignInfo
      */
     protected $Strategy;
     /**
+     * @var string
+     */
+    protected $ClickTrackingEnabled;
+    /**
+     * @var float
+     */
+    protected $BonusDiscount;
+    /**
+     * @var string
+     */
+    protected $Currency;
+    /**
+     * @var string
+     */
+    protected $CampaignCurrency;
+    /**
+     * @var int
+     */
+    protected $SourceCampaignID;
+    /**
      * @var CampaignContextStrategy
      */
     protected $ContextStrategy;
@@ -411,6 +431,126 @@ class CampaignInfo
     public function setStrategy(CampaignStrategy $Strategy)
     {
         $this->Strategy = $Strategy;
+
+        return $this;
+    }
+
+    /**
+     * Gets the ClickTrackingEnabled.
+     *
+     * @return string
+     */
+    public function getClickTrackingEnabled()
+    {
+        return $this->ClickTrackingEnabled;
+    }
+
+    /**
+     * Sets the ClickTrackingEnabled.
+     *
+     * @param string $ClickTrackingEnabled
+     *
+     * @return CampaignInfo
+     */
+    public function setClickTrackingEnabled($ClickTrackingEnabled)
+    {
+        $this->ClickTrackingEnabled = $ClickTrackingEnabled;
+
+        return $this;
+    }
+
+    /**
+     * Gets the BonusDiscount.
+     *
+     * @return float
+     */
+    public function getBonusDiscount()
+    {
+        return $this->BonusDiscount;
+    }
+
+    /**
+     * Sets the BonusDiscount.
+     *
+     * @param float $BonusDiscount
+     *
+     * @return CampaignInfo
+     */
+    public function setBonusDiscount($BonusDiscount)
+    {
+        $this->BonusDiscount = $BonusDiscount;
+
+        return $this;
+    }
+
+    /**
+     * Gets the Currency.
+     *
+     * @return string
+     */
+    public function getCurrency()
+    {
+        return $this->Currency;
+    }
+
+    /**
+     * Sets the Currency.
+     *
+     * @param string $Currency
+     *
+     * @return CampaignInfo
+     */
+    public function setCurrency($Currency)
+    {
+        $this->Currency = $Currency;
+
+        return $this;
+    }
+
+    /**
+     * Gets the CampaignCurrency.
+     *
+     * @return string
+     */
+    public function getCampaignCurrency()
+    {
+        return $this->CampaignCurrency;
+    }
+
+    /**
+     * Sets the CampaignCurrency.
+     *
+     * @param string $CampaignCurrency
+     *
+     * @return CampaignInfo
+     */
+    public function setCampaignCurrency($CampaignCurrency)
+    {
+        $this->CampaignCurrency = $CampaignCurrency;
+
+        return $this;
+    }
+
+    /**
+     * Gets the SourceCampaignID.
+     *
+     * @return int
+     */
+    public function getSourceCampaignID()
+    {
+        return $this->SourceCampaignID;
+    }
+
+    /**
+     * Sets the SourceCampaignID.
+     *
+     * @param int $SourceCampaignID
+     *
+     * @return CampaignInfo
+     */
+    public function setSourceCampaignID($SourceCampaignID)
+    {
+        $this->SourceCampaignID = $SourceCampaignID;
 
         return $this;
     }

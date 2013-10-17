@@ -16,6 +16,10 @@ class ClientRight
      * @var string
      */
     protected $Value;
+    /**
+     * @var string
+     */
+    protected $AgencyName;
 
     /**
      * Creates a new instance.
@@ -71,6 +75,30 @@ class ClientRight
     public function setValue($Value)
     {
         $this->Value = $Value;
+
+        return $this;
+    }
+
+    /**
+     * Gets the AgencyName.
+     *
+     * @return string
+     */
+    public function getAgencyName()
+    {
+        return $this->AgencyName;
+    }
+
+    /**
+     * Sets the AgencyName.
+     *
+     * @param string $AgencyName
+     *
+     * @return ClientRight
+     */
+    public function setAgencyName($AgencyName)
+    {
+        $this->AgencyName = $AgencyName;
 
         return $this;
     }

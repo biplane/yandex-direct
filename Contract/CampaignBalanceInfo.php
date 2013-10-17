@@ -24,6 +24,10 @@ class CampaignBalanceInfo
      * @var float
      */
     protected $SumAvailableForTransfer;
+    /**
+     * @var string
+     */
+    protected $Currency;
 
     /**
      * Creates a new instance.
@@ -127,6 +131,30 @@ class CampaignBalanceInfo
     public function setSumAvailableForTransfer($SumAvailableForTransfer)
     {
         $this->SumAvailableForTransfer = $SumAvailableForTransfer;
+
+        return $this;
+    }
+
+    /**
+     * Gets the Currency.
+     *
+     * @return string
+     */
+    public function getCurrency()
+    {
+        return $this->Currency;
+    }
+
+    /**
+     * Sets the Currency.
+     *
+     * @param string $Currency
+     *
+     * @return CampaignBalanceInfo
+     */
+    public function setCurrency($Currency)
+    {
+        $this->Currency = $Currency;
 
         return $this;
     }

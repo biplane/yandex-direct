@@ -43,6 +43,18 @@ class ClientInfo
     /**
      * @var string
      */
+    protected $Currency;
+    /**
+     * @var float
+     */
+    protected $VATRate;
+    /**
+     * @var string[]
+     */
+    protected $ClientCurrencies;
+    /**
+     * @var string
+     */
     protected $SmsPhone;
     /**
      * @var string[]
@@ -76,10 +88,6 @@ class ClientInfo
      * @var string[]
      */
     protected $ManagersLogins;
-    /**
-     * @var string
-     */
-    protected $Currency;
 
     /**
      * Creates a new instance.
@@ -279,6 +287,78 @@ class ClientInfo
     public function setOverdraftSumAvailable($OverdraftSumAvailable)
     {
         $this->OverdraftSumAvailable = $OverdraftSumAvailable;
+
+        return $this;
+    }
+
+    /**
+     * Gets the Currency.
+     *
+     * @return string
+     */
+    public function getCurrency()
+    {
+        return $this->Currency;
+    }
+
+    /**
+     * Sets the Currency.
+     *
+     * @param string $Currency
+     *
+     * @return ClientInfo
+     */
+    public function setCurrency($Currency)
+    {
+        $this->Currency = $Currency;
+
+        return $this;
+    }
+
+    /**
+     * Gets the VATRate.
+     *
+     * @return float
+     */
+    public function getVATRate()
+    {
+        return $this->VATRate;
+    }
+
+    /**
+     * Sets the VATRate.
+     *
+     * @param float $VATRate
+     *
+     * @return ClientInfo
+     */
+    public function setVATRate($VATRate)
+    {
+        $this->VATRate = $VATRate;
+
+        return $this;
+    }
+
+    /**
+     * Gets the ClientCurrencies.
+     *
+     * @return string[]
+     */
+    public function getClientCurrencies()
+    {
+        return $this->ClientCurrencies;
+    }
+
+    /**
+     * Sets the ClientCurrencies.
+     *
+     * @param string[] $ClientCurrencies
+     *
+     * @return ClientInfo
+     */
+    public function setClientCurrencies(array $ClientCurrencies)
+    {
+        $this->ClientCurrencies = $ClientCurrencies;
 
         return $this;
     }
@@ -495,30 +575,6 @@ class ClientInfo
     public function setManagersLogins(array $ManagersLogins)
     {
         $this->ManagersLogins = $ManagersLogins;
-
-        return $this;
-    }
-
-    /**
-     * Gets the Currency.
-     *
-     * @return string
-     */
-    public function getCurrency()
-    {
-        return $this->Currency;
-    }
-
-    /**
-     * Sets the Currency.
-     *
-     * @param string $Currency
-     *
-     * @return ClientInfo
-     */
-    public function setCurrency($Currency)
-    {
-        $this->Currency = $Currency;
 
         return $this;
     }

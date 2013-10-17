@@ -29,6 +29,10 @@ class CampaignStrategy
      */
     protected $StrategyName;
     /**
+     * @var float
+     */
+    protected $AverageCPA;
+    /**
      * @var int
      */
     protected $GoalID;
@@ -159,6 +163,30 @@ class CampaignStrategy
     public function setStrategyName($StrategyName)
     {
         $this->StrategyName = $StrategyName;
+
+        return $this;
+    }
+
+    /**
+     * Gets the AverageCPA.
+     *
+     * @return float
+     */
+    public function getAverageCPA()
+    {
+        return $this->AverageCPA;
+    }
+
+    /**
+     * Sets the AverageCPA.
+     *
+     * @param float $AverageCPA
+     *
+     * @return CampaignStrategy
+     */
+    public function setAverageCPA($AverageCPA)
+    {
+        $this->AverageCPA = $AverageCPA;
 
         return $this;
     }
