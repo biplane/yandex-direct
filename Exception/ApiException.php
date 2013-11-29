@@ -87,6 +87,11 @@ class ApiException extends \RuntimeException
     const OPERATION_NOT_ALLOWED = 155;
 
     /**
+     * Не позволяется изменение архивных кампаний или объявлений.
+     */
+    const FORBIDDEN_CHANGE_ARCHIVED_ITEM = 156;
+
+    /**
      * Запрещено менять ContextPrice для активных на поиске фраз.
      */
     const FORBIDDEN_CHANGE_CONTEXT_PRICE = 191;
