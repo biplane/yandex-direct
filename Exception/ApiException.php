@@ -12,6 +12,11 @@ use Biplane\YandexDirectBundle\Proxy\Client\ClientInterface;
 class ApiException extends \RuntimeException
 {
     /**
+     * Неверный идентификатор кампании CampaignID.
+     */
+    const INVALID_CAMPAIGN_ID = 1;
+
+    /**
      * Нет статистики для данной кампании.
      */
     const CAMPAIGN_STATS_NOT_FOUND = 2;
