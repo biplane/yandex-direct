@@ -23,7 +23,7 @@
         <mkdir dir="${basedir}/app/cache" />
 
         <exec executable="composer" failonerror="true">
-            <arg line="install" />
+            <arg line="update -n" />
         </exec>
     </target>
 
@@ -47,6 +47,8 @@
             <arg value="${basedir}/build/logs/phploc.csv" />
             <arg value="--exclude" />
             <arg value="vendor" />
+            <arg value="--exclude" />
+            <arg value="${basedir}/build" />
             <arg path="${basedir}" />
         </exec>
     </target>
@@ -56,7 +58,7 @@
             <arg value="--jdepend-xml=${basedir}/build/logs/jdepend.xml" />
             <arg value="--jdepend-chart=${basedir}/build/pdepend/dependencies.svg" />
             <arg value="--overview-pyramid=${basedir}/build/pdepend/overview-pyramid.svg" />
-            <arg value="--ignore=${basedir}/Tests,${basedir}/vendor" />
+            <arg value="--ignore=${basedir}/Tests,${basedir}/vendor,${basedir}/build" />
             <arg path="${basedir}" />
         </exec>
     </target>
@@ -67,7 +69,7 @@
             <arg value="text" />
             <arg value="${basedir}/phpmd.xml" />
             <arg value="--exclude" />
-            <arg value="${basedir}/Tests,${basedir}/vendor" />
+            <arg value="${basedir}/Tests,${basedir}/vendor,${basedir}/build" />
         </exec>
     </target>
 
@@ -79,14 +81,14 @@
             <arg value="--reportfile" />
             <arg value="${basedir}/build/logs/pmd.xml" />
             <arg value="--exclude" />
-            <arg value="${basedir}/Tests,${basedir}/vendor" />
+            <arg value="${basedir}/Tests,${basedir}/vendor,${basedir}/build" />
         </exec>
     </target>
 
     <target name="phpcs" description="Find coding standard violations using PHP_CodeSniffer and print human readable output. Intended for usage on the command line before committing.">
         <exec executable="phpcs">
             <arg value="--standard=${basedir}/phpcs.xml" />
-            <arg value="--ignore=build,Resources,vendor" />
+            <arg value="--ignore=build,Contract,Resources,vendor" />
             <arg path="${basedir}" />
         </exec>
     </target>
@@ -96,7 +98,7 @@
             <arg value="--report=checkstyle" />
             <arg value="--report-file=${basedir}/build/logs/checkstyle.xml" />
             <arg value="--standard=${basedir}/phpcs.xml" />
-            <arg value="--ignore=build,Resources,vendor" />
+            <arg value="--ignore=build,Contract,Resources,vendor" />
             <arg path="${basedir}" />
         </exec>
     </target>
@@ -109,6 +111,10 @@
             <arg value="vendor" />
             <arg value="--exclude" />
             <arg value="Tests" />
+            <arg value="--exclude" />
+            <arg value="Contract" />
+            <arg value="--exclude" />
+            <arg value="build" />
             <arg path="${basedir}" />
         </exec>
     </target>
@@ -126,7 +132,7 @@
             <arg value="--output" />
             <arg path="${basedir}/build/code-browser" />
             <arg value="--ignore" />
-            <arg value="Tests,vendor" />
+            <arg value="Tests,vendor,build" />
         </exec>
     </target>
 
