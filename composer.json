@@ -1,10 +1,16 @@
 {
   "name": "biplane/yandex-direct-bundle",
   "type": "symfony-bundle",
+  "repositories": [{
+    "type": "vcs",
+    "url": "git@github.com:biplane/common.git"
+  }],
   "require": {
     "php": ">=5.3.3",
     "symfony/console": "~2.1",
-    "symfony/framework-bundle": "~2.1"
+    "symfony/framework-bundle": "~2.1",
+    "symfony/serializer": "~2.1",
+    "biplane/common": "dev-master"
   },
   "autoload": {
     "psr-0": { "Biplane\\YandexDirectBundle": "" }

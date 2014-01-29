@@ -5,8 +5,6 @@ namespace Biplane\YandexDirectBundle\Tests\EventListener;
 use Biplane\YandexDirectBundle\EventListener\TotalLimitListener;
 
 /**
- * TotalLimitListenerTest description.
- *
  * @author Ural Davletshin <u.davletshin@biplane.ru>
  */
 class TotalLimitListenerTest extends \PHPUnit_Framework_TestCase
