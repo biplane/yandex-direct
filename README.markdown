@@ -78,24 +78,26 @@ $ composer update
 
 Пример конфигурации бандла:
 
-    biplane_yandex_direct:
-        default_profile: foo
-        profiles:
-            foo:
-                type:      soap
-                locale:    ru
-                is_agency: true
-                cert:
-                    local_cert: path/to/local_cert.pem
-            bar:
-                type:  json
-                token:
-                    login:          yandex_login
-                    application_id: APPLICATIONID
-                    token:          TOKEN
-            # другие профили
+```yml
+biplane_yandex_direct:
+    default_profile: foo
+    application_id:  APpL1C4T10NiD
+    profiles:
+        foo:
+            type:      soap
+            locale:    ru
+            is_agency: true
+            cert:      path/to/local_cert.pem
+        bar:
+            type:   json
+            locale: en
+            login:  mr.bar
+            token:  ACCESS-TOKEN
+        # другие профили
+```
 
-*В каждом профиле может быть указан только один тип авторизации, `cert` или `token`.*
+> NOTE: В одном профиле может быть указан либо путь к сертификату (`cert`), либо
+токен доступа (`token`) для OAuth авторизации.
 
 **Параметр `type`**
 
@@ -128,3 +130,30 @@ Unit tests
 
 Для изменения конфигурации PHPUnit для вашего окружения, скопируйте `vendor/bundles/Biplane/YandexDirectBundle/phpunit.xml.dist`
 в `vendor/bundles/Biplane/YandexDirectBundle/phpunit.xml` и добавьте свои настройки в phpunit.xml.
+
+
+Поддержка OAuth
+---------------
+
+Для получения авторизационного токена необходимо иметь идентификатор приложения (`application_id`).
+Если его нет, необходимо сперва [зарегистрировать приложение](http://api.yandex.ru/oauth/doc/dg/tasks/register-client.xml).
+
+> Если токен будет храниться в конфиге, то рекомендуется при регистрации приложения включить опцию *Клиент для разработки*
+
+### Получение токена
+
+Для получения токена необходимо в браузере перейти по этому адресу:
+
+    https://oauth.yandex.ru/authorize?response_type=token&client_id=<client_id>
+
+Где, `<client_id>` нужно заменить на идентификатор приложения.
+
+Далее необходимо авторизоваться под аккаунтом Яндекса, для которого предоставляется доступ к API,
+и поддтвердить доступ к Яндекс.Директу. После этого сервер перенаправит на страницу, и в адресе
+будут добавлены параметры:
+
+    #access_token=<token>[&expires_in=<seconds>][&state=<state>]
+
+Значение `<token>` нужно сохранить в конфиге для соответствующего профиля.
+
+[Официальная документация](http://api.yandex.ru/oauth/doc/dg/concepts/authorization-scheme.xml)
