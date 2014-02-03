@@ -18,20 +18,17 @@ class YandexApiService
 {
     private $dispatcher;
     private $client;
-    private $profileName;
 
     /**
      * Constructor.
      *
      * @param EventDispatcherInterface $dispatcher  The event dispatcher
      * @param Client\ClientInterface   $client      A ClientInterface implementation
-     * @param string                   $profileName A profile name
      */
-    public function __construct(EventDispatcherInterface $dispatcher, Client\ClientInterface $client, $profileName)
+    public function __construct(EventDispatcherInterface $dispatcher, Client\ClientInterface $client)
     {
         $this->client = $client;
         $this->dispatcher = $dispatcher;
-        $this->profileName = $profileName;
     }
 
     /**
@@ -887,7 +884,7 @@ class YandexApiService
         $this->dispatcher->dispatch(Events::BEFORE_REQUEST, new PreCallEvent(
             $this,
             $method,
-            $this->profileName
+            $this->client->getLogin()
         ));
 
         try {
@@ -896,7 +893,7 @@ class YandexApiService
             $this->dispatcher->dispatch(Events::FAIL_REQUEST, new FailCallEvent(
                 $this,
                 $method,
-                $this->profileName,
+                $this->client->getLogin(),
                 $ex
             ));
 
@@ -906,7 +903,7 @@ class YandexApiService
         $this->dispatcher->dispatch(Events::AFTER_REQUEST, new PostCallEvent(
             $this,
             $method,
-            $this->profileName,
+            $this->client->getLogin(),
             $response
         ));
 

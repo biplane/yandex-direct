@@ -13,7 +13,9 @@ class ProfileManager
     private $profiles;
 
     /**
-     * @param array $profiles
+     * Constructor.
+     *
+     * @param ProfileInterface[] $profiles A hash of names and ProfileInterface instances
      */
     public function __construct(array $profiles = array())
     {
@@ -25,7 +27,10 @@ class ProfileManager
     }
 
     /**
-     * @param string $name
+     * Determines whether this manager has profile with specific name.
+     *
+     * @param string $name The profile name
+     *
      * @return bool
      */
     public function has($name)
@@ -34,8 +39,11 @@ class ProfileManager
     }
 
     /**
-     * @param string $name
-     * @return Profile
+     * Gets a profile by name.
+     *
+     * @param string $name The profile name
+     *
+     * @return ProfileInterface
      *
      * @throws \InvalidArgumentException
      */
@@ -49,15 +57,19 @@ class ProfileManager
     }
 
     /**
-     * @param string $name
-     * @param Profile $profile
+     * Sets the profile to this manager.
+     *
+     * @param string           $name    The profile name
+     * @param ProfileInterface $profile A ProfileInterface instance
      */
-    public function set($name, Profile $profile)
+    public function set($name, ProfileInterface $profile)
     {
         $this->profiles[$name] = $profile;
     }
 
     /**
+     * Gets an array of profiles names.
+     *
      * @return array
      */
     public function getProfileNames()

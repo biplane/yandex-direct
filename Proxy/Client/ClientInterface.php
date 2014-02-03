@@ -18,19 +18,26 @@ interface ClientInterface
      *
      * @return mixed
      */
-    function invoke($method, array $params, $isFinancialMethod = false);
+    public function invoke($method, array $params, $isFinancialMethod = false);
+
+    /**
+     * Gets the Yandex account.
+     *
+     * @return string
+     */
+    public function getLogin();
 
     /**
      * Gets a content of last request.
      *
      * @return string
      */
-    function getLastRequest();
+    public function getLastRequest();
 
     /**
      * Gets a content of last response.
      *
      * @return string
      */
-    function getLastResponse();
+    public function getLastResponse();
 }

@@ -10,14 +10,10 @@ use Biplane\YandexDirectBundle\Event\PostCallEvent;
 use Biplane\YandexDirectBundle\Event\FailCallEvent;
 
 /**
- * YandexApiServiceTest.
- *
  * @author Ural Davletshin <u.davletshin@biplane.ru>
  */
 class YandexApiServiceTest extends \PHPUnit_Framework_TestCase
 {
-    const PROFILE = 'profile_name';
-
     /**
      * @var \PHPUnit_Framework_MockObject_MockObject
      */
@@ -28,6 +24,9 @@ class YandexApiServiceTest extends \PHPUnit_Framework_TestCase
      */
     private $client;
 
+    /**
+     * @var YandexApiService
+     */
     private $service;
 
     /**
@@ -35,7 +34,13 @@ class YandexApiServiceTest extends \PHPUnit_Framework_TestCase
      */
     public function testInvokeApiMethod($method, $params = array(), $success = true)
     {
-        $preEvent = new PreCallEvent($this->service, ucfirst($method), self::PROFILE);
+        $login = 'foo';
+
+        $this->client->expects($this->any())
+            ->method('getLogin')
+            ->will($this->returnValue($login));
+
+        $preEvent = new PreCallEvent($this->service, ucfirst($method), $login);
 
         $this->dispatcher->expects($this->at(0))
             ->method('dispatch')
@@ -44,12 +49,11 @@ class YandexApiServiceTest extends \PHPUnit_Framework_TestCase
         if ($success) {
             $stub = $this->returnValue($response = $this->createApiResult());
             $eventName = Events::AFTER_REQUEST;
-            $event = new PostCallEvent($this->service, ucfirst($method), self::PROFILE, $response);
-
+            $event = new PostCallEvent($this->service, ucfirst($method), $login, $response);
         } else {
             $stub = $this->throwException($ex = new \RuntimeException());
             $eventName = Events::FAIL_REQUEST;
-            $event = new FailCallEvent($this->service, ucfirst($method), self::PROFILE, $ex);
+            $event = new FailCallEvent($this->service, ucfirst($method), $login, $ex);
         }
 
         $this->dispatcher->expects($this->at(1))
@@ -120,10 +124,10 @@ class YandexApiServiceTest extends \PHPUnit_Framework_TestCase
 
     protected function setUp()
     {
-        $this->dispatcher = $this->getMock('Symfony\\Component\\EventDispatcher\\EventDispatcherInterface');
-        $this->client = $this->getMock('Biplane\\YandexDirectBundle\\Proxy\\Client\\ClientInterface');
+        $this->dispatcher = $this->getMock('Symfony\Component\EventDispatcher\EventDispatcherInterface');
+        $this->client = $this->getMock('Biplane\YandexDirectBundle\Proxy\Client\ClientInterface');
 
-        $this->service = new YandexApiService($this->dispatcher, $this->client, self::PROFILE);
+        $this->service = new YandexApiService($this->dispatcher, $this->client);
     }
 
     protected function tearDown()

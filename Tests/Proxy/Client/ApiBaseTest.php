@@ -3,14 +3,16 @@
 namespace Biplane\YandexDirectBundle\Tests\Proxy\Client;
 
 use Biplane\YandexDirectBundle\Contract;
+use Biplane\YandexDirectBundle\Proxy\Client\ClientInterface;
+use Biplane\YandexDirectBundle\Tests\TestCase;
 
 /**
  * @author Denis Vasilev <yethee@biplane.ru>
  */
-abstract class ApiBaseTest extends \Biplane\YandexDirectBundle\Tests\TestCase
+abstract class ApiBaseTest extends TestCase
 {
     /**
-     * @return \Biplane\YandexDirectBundle\Proxy\Client\ClientInterface
+     * @return ClientInterface
      */
     abstract protected function createClient();
 

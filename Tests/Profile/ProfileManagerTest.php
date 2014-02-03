@@ -12,8 +12,8 @@ class ProfileManagerTest extends \PHPUnit_Framework_TestCase
     public function testConstructor()
     {
         $manager = new ProfileManager(array(
-            'foo' => $this->createProfile(),
-            'bar' => $this->createProfile()
+            'foo' => $this->getProfileMock(),
+            'bar' => $this->getProfileMock()
         ));
 
         $this->assertTrue($manager->has('foo'));
@@ -22,7 +22,7 @@ class ProfileManagerTest extends \PHPUnit_Framework_TestCase
 
     public function testGetAndSetProfile()
     {
-        $profile = $this->createProfile();
+        $profile = $this->getProfileMock();
 
         $manager = new ProfileManager();
         $manager->set('foo', $profile);
@@ -42,7 +42,7 @@ class ProfileManagerTest extends \PHPUnit_Framework_TestCase
     public function testHasProfile()
     {
         $manager = new ProfileManager();
-        $manager->set('foo', $this->createProfile());
+        $manager->set('foo', $this->getProfileMock());
 
         $this->assertTrue($manager->has('foo'), '->has() returns true if the profile is set.');
         $this->assertFalse($manager->has('bar'), '->has() returns false if the profile is not set.');
@@ -54,16 +54,14 @@ class ProfileManagerTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals(array(), $manager->getProfileNames());
 
-        $manager->set('foo', $this->createProfile());
-        $manager->set('bar', $this->createProfile());
+        $manager->set('foo', $this->getProfileMock());
+        $manager->set('bar', $this->getProfileMock());
 
         $this->assertEquals(array('foo', 'bar'), $manager->getProfileNames());
     }
 
-    private function createProfile()
+    private function getProfileMock()
     {
-        return $this->getMockBuilder('Biplane\YandexDirectBundle\Profile\Profile')
-            ->disableOriginalConstructor()
-            ->getMock();
+        return $this->getMock('Biplane\YandexDirectBundle\Profile\ProfileInterface');
     }
 }

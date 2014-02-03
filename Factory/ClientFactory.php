@@ -3,12 +3,11 @@
 namespace Biplane\YandexDirectBundle\Factory;
 
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use Biplane\YandexDirectBundle\ClientTypes;
 use Biplane\YandexDirectBundle\Proxy\Client\ClientInterface;
 use Biplane\YandexDirectBundle\Proxy\Client\JsonClient;
 use Biplane\YandexDirectBundle\Proxy\Client\SoapClient;
 use Biplane\YandexDirectBundle\Configuration\BaseConfiguration;
-use Biplane\YandexDirectBundle\Configuration\AuthTokenConfiguration;
-use Biplane\YandexDirectBundle\Configuration\CertificateConfiguration;
 
 /**
  * ClientFactory
@@ -17,37 +16,37 @@ use Biplane\YandexDirectBundle\Configuration\CertificateConfiguration;
  */
 class ClientFactory
 {
-    const TYPE_SOAP = 'soap';
-    const TYPE_JSON = 'json';
+    private $clients = array();
 
-    static private $clients = array();
-
-    public function __construct()
-    {
-
-    }
-
+    /**
+     * Creates the client to communicate with API.
+     *
+     * @param string            $type The client type. One constant of ClientTypes enum
+     * @param BaseConfiguration $configuration The configuration
+     *
+     * @return ClientInterface
+     *
+     * @throws \InvalidArgumentException
+     */
     public function create($type, BaseConfiguration $configuration)
     {
         $key = $type . spl_object_hash($configuration);
 
-        if (isset(self::$clients[$key])) {
-            return self::$clients[$key];
+        if (isset($this->clients[$key])) {
+            return $this->clients[$key];
         }
-        
+
         switch ($type) {
-            case self::TYPE_SOAP:
-                $client = new SoapClient($configuration, new ConverterFactory());
+            case ClientTypes::TYPE_SOAP:
+                $client = new SoapClient($configuration);
                 break;
-            case self::TYPE_JSON:
+            case ClientTypes::TYPE_JSON:
                 $client = new JsonClient($configuration, new ConverterFactory(), new JsonEncoder());
                 break;
             default:
                 throw new \InvalidArgumentException(sprintf('The "%s" type of API client is not supported.', $type));
         }
 
-        self::$clients[$key] = $client;
-
-        return $client;
+        return $this->clients[$key] = $client;
     }
 }

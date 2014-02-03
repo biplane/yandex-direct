@@ -7,7 +7,7 @@ namespace Biplane\YandexDirectBundle;
  *
  * @author Ural Davletshin <u.davletshin@biplane.ru>
  */
-class Events 
+final class Events
 {
     /**
      * The BEFORE_REQUEST event occurs before requesting the Yandex Direct API method.

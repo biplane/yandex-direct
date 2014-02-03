@@ -7,7 +7,6 @@ use Biplane\YandexDirectBundle\Configuration\CertificateConfiguration;
 use Biplane\YandexDirectBundle\Configuration\BaseConfiguration;
 use Biplane\YandexDirectBundle\Exception\ApiException;
 use Biplane\YandexDirectBundle\Exception\NetworkException;
-use Biplane\YandexDirectBundle\Factory\ConverterFactory;
 
 /**
  * SoapClient
@@ -132,21 +131,18 @@ class SoapClient extends \SoapClient implements ClientInterface
         'AdImageAssociationActionResult' => 'Biplane\YandexDirectBundle\Contract\AdImageAssociationActionResult'
     );
 
-    private $converterFactory;
     private $configuration;
 
     /**
      * Constructor.
      *
-     * @param BaseConfiguration $configuration    The configuration
-     * @param ConverterFactory  $converterFactory A ConverterFactory instance
+     * @param BaseConfiguration $configuration The configuration
      *
      * @throws \InvalidArgumentException
      */
-    public function __construct(BaseConfiguration $configuration, ConverterFactory $converterFactory)
+    public function __construct(BaseConfiguration $configuration)
     {
         $this->configuration = $configuration;
-        $this->converterFactory = $converterFactory;
 
         $options = array(
             'classmap'     => self::$classmap,
@@ -157,7 +153,9 @@ class SoapClient extends \SoapClient implements ClientInterface
             'cache_wsdl'   => WSDL_CACHE_BOTH
         );
 
-        $headers = array(new \SoapHeader(self::API_NS, 'locale', $configuration->getLocale()));
+        $headers = array(
+            new \SoapHeader(self::API_NS, 'locale', $configuration->getLocale())
+        );
 
         if ($configuration instanceof CertificateConfiguration) {
             $options['local_cert'] = $configuration->getHttpsCertificate();
@@ -165,7 +163,6 @@ class SoapClient extends \SoapClient implements ClientInterface
         } else if ($configuration instanceof AuthTokenConfiguration) {
             $headers[] = new \SoapHeader(self::API_NS, 'login', $configuration->getYandexLogin());
             $headers[] = new \SoapHeader(self::API_NS, 'token', $configuration->getToken());
-            $headers[] = new \SoapHeader(self::API_NS, 'application_id', $configuration->getApplicationId());
         } else {
             throw new \InvalidArgumentException(sprintf(
                 'Configuration type "%" is not supported.', get_class($configuration)
@@ -213,20 +210,12 @@ class SoapClient extends \SoapClient implements ClientInterface
     }
 
     /**
-     * Invokes API method with specified name.
-     *
-     * @param string $methodName        A method name
-     * @param array  $params            An array of parameters for API method
-     * @param bool   $isFinancialMethod If true, when should be send the finance token
-     *
-     * @return mixed
-     *
-     * @throws NetworkException
-     * @throws ApiException
+     * {@inheritdoc}
      */
     public function invoke($methodName, array $params, $isFinancialMethod = false)
     {
         $headers = array();
+
         if ($isFinancialMethod) {
             $operationNum = time();
             $financeToken = $this->configuration->createFinanceToken($methodName, $operationNum);
@@ -256,9 +245,15 @@ class SoapClient extends \SoapClient implements ClientInterface
     }
 
     /**
-     * Gets a content of last response.
-     *
-     * @return string
+     * {@inheritdoc}
+     */
+    public function getLogin()
+    {
+        return $this->configuration->getYandexLogin();
+    }
+
+    /**
+     * {@inheritdoc}
      */
     public function getLastResponse()
     {
@@ -266,9 +261,7 @@ class SoapClient extends \SoapClient implements ClientInterface
     }
 
     /**
-     * Gets a content of last request.
-     *
-     * @return string
+     * {@inheritdoc}
      */
     public function getLastRequest()
     {

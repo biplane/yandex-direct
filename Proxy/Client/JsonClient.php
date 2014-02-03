@@ -14,6 +14,8 @@ use Biplane\YandexDirectBundle\Exception\NetworkException;
 /**
  * JsonClient
  *
+ * @TODO: Must be refactored to use JmsSerializer and Buzz
+ *
  * @author Denis Vasilev <yethee@biplane.ru>
  * @author Alexey Popkov <a.popkov@biplane.ru>
  */
@@ -114,6 +116,14 @@ class JsonClient implements ClientInterface
     public function getLastRequest()
     {
         return $this->lastRequest;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getLogin()
+    {
+        return $this->configuration->getYandexLogin();
     }
 
     /**
