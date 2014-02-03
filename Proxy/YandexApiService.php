@@ -675,60 +675,6 @@ class YandexApiService
     }
 
     /**
-     * Transfers funds between campaigns.
-     *
-     * @param Contract\TransferMoneyInfo $TransferMoneyInfo
-     *
-     * @return int 1 when executed successfully
-     *
-     * @since v4
-     */
-    public function transferMoney(Contract\TransferMoneyInfo $TransferMoneyInfo)
-    {
-        return $this->invoke('TransferMoney', array($TransferMoneyInfo), true);
-    }
-
-    /**
-     * Gets information about credit available to pay for campaigns.
-     *
-     * @return Contract\CreditLimitsInfo
-     *
-     * @since v4
-     */
-    public function getCreditLimits()
-    {
-        return $this->invoke('GetCreditLimits', array(), true);
-    }
-
-    /**
-     * Generates an invoice in HTML format for paying for one or more campaigns.
-     *
-     * @param Contract\CreateInvoiceInfo $CreateInvoiceInfo
-     *
-     * @return string If executed successfully, the method returns the URL of the payment invoice
-     *
-     * @since v4
-     */
-    public function createInvoice(Contract\CreateInvoiceInfo $CreateInvoiceInfo)
-    {
-        return $this->invoke('CreateInvoice', array($CreateInvoiceInfo), true);
-    }
-
-    /**
-     * Pays for the campaign using available credit.
-     *
-     * @param Contract\PayCampaignsInfo $PayCampaignsInfo
-     *
-     * @return int 1 when executed successfully
-     *
-     * @since v4
-     */
-    public function payCampaigns(Contract\PayCampaignsInfo $PayCampaignsInfo)
-    {
-        return $this->invoke('PayCampaigns', array($PayCampaignsInfo), true);
-    }
-
-    /**
      * Gets the entries from the event log.
      *
      * @param Contract\GetEventsLogRequest $params
@@ -799,6 +745,60 @@ class YandexApiService
     }
 
     /**
+     * Transfers funds between campaigns.
+     *
+     * @param Contract\TransferMoneyInfo $TransferMoneyInfo
+     *
+     * @return int 1 when executed successfully
+     *
+     * @since v4
+     */
+    public function transferMoney(Contract\TransferMoneyInfo $TransferMoneyInfo)
+    {
+        return $this->invoke('TransferMoney', array($TransferMoneyInfo), true);
+    }
+
+    /**
+     * Gets information about credit available to pay for campaigns.
+     *
+     * @return Contract\CreditLimitsInfo
+     *
+     * @since v4
+     */
+    public function getCreditLimits()
+    {
+        return $this->invoke('GetCreditLimits', array(), true);
+    }
+
+    /**
+     * Generates an invoice in HTML format for paying for one or more campaigns.
+     *
+     * @param Contract\CreateInvoiceInfo $CreateInvoiceInfo
+     *
+     * @return string If executed successfully, the method returns the URL of the payment invoice
+     *
+     * @since v4
+     */
+    public function createInvoice(Contract\CreateInvoiceInfo $CreateInvoiceInfo)
+    {
+        return $this->invoke('CreateInvoice', array($CreateInvoiceInfo), true);
+    }
+
+    /**
+     * Pays for the campaign using available credit.
+     *
+     * @param Contract\PayCampaignsInfo $PayCampaignsInfo
+     *
+     * @return int 1 when executed successfully
+     *
+     * @since v4
+     */
+    public function payCampaigns(Contract\PayCampaignsInfo $PayCampaignsInfo)
+    {
+        return $this->invoke('PayCampaigns', array($PayCampaignsInfo), true);
+    }
+
+    /**
      * Gets an array of RetargetingGoal instances.
      *
      * @param Contract\GetRetargetingGoalsRequest $params
@@ -866,6 +866,34 @@ class YandexApiService
     public function adImageAssociation(Contract\AdImageAssociationRequest $params)
     {
         return $this->invoke('AdImageAssociation', array($params));
+    }
+
+    /**
+     * Enables shared account for specific client.
+     *
+     * @param Contract\EnableSharedAccountRequest $params
+     *
+     * @return Contract\EnableSharedAccountResponse
+     *
+     * @since v4.live
+     */
+    public function enableSharedAccount(Contract\EnableSharedAccountRequest $params)
+    {
+        return $this->invoke('EnableSharedAccount', array($params));
+    }
+
+    /**
+     * Manages shared account.
+     *
+     * @param Contract\AccountManagementRequest $params
+     *
+     * @return Contract\AccountManagementResponse
+     *
+     * @since v4.live
+     */
+    public function AccountManagement(Contract\AccountManagementRequest $params)
+    {
+        return $this->invoke('AccountManagement', array($params));
     }
 
     /**

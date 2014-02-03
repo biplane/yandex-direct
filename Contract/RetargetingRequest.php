@@ -13,6 +13,10 @@ class RetargetingRequest
      */
     protected $Action;
     /**
+     * @var string
+     */
+    protected $Login;
+    /**
      * @var RetargetingSelectionCriteria
      */
     protected $SelectionCriteria;
@@ -55,6 +59,30 @@ class RetargetingRequest
     public function setAction($Action)
     {
         $this->Action = $Action;
+
+        return $this;
+    }
+
+    /**
+     * Gets the Login.
+     *
+     * @return string
+     */
+    public function getLogin()
+    {
+        return $this->Login;
+    }
+
+    /**
+     * Sets the Login.
+     *
+     * @param string $Login
+     *
+     * @return RetargetingRequest
+     */
+    public function setLogin($Login)
+    {
+        $this->Login = $Login;
 
         return $this;
     }

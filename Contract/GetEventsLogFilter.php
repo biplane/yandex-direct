@@ -21,6 +21,10 @@ class GetEventsLogFilter
      */
     protected $PhraseIDS;
     /**
+     * @var int[]
+     */
+    protected $AccountIDS;
+    /**
      * @var string[]
      */
     protected $EventType;
@@ -103,6 +107,30 @@ class GetEventsLogFilter
     public function setPhraseIDS(array $PhraseIDS)
     {
         $this->PhraseIDS = $PhraseIDS;
+
+        return $this;
+    }
+
+    /**
+     * Gets the AccountIDS.
+     *
+     * @return int[]
+     */
+    public function getAccountIDS()
+    {
+        return $this->AccountIDS;
+    }
+
+    /**
+     * Sets the AccountIDS.
+     *
+     * @param int[] $AccountIDS
+     *
+     * @return GetEventsLogFilter
+     */
+    public function setAccountIDS(array $AccountIDS)
+    {
+        $this->AccountIDS = $AccountIDS;
 
         return $this;
     }

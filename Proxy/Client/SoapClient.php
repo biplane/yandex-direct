@@ -28,6 +28,7 @@ class SoapClient extends \SoapClient implements ClientInterface
         'CampaignIDInfo' => 'Biplane\YandexDirectBundle\Contract\CampaignIDInfo',
         'CampaignIDSInfo' => 'Biplane\YandexDirectBundle\Contract\CampaignIDSInfo',
         'CampaignInfo' => 'Biplane\YandexDirectBundle\Contract\CampaignInfo',
+        'DayBudgetInfo' => 'Biplane\YandexDirectBundle\Contract\DayBudgetInfo',
         'CampaignStrategy' => 'Biplane\YandexDirectBundle\Contract\CampaignStrategy',
         'CampaignContextStrategy' => 'Biplane\YandexDirectBundle\Contract\CampaignContextStrategy',
         'SmsNotificationInfo' => 'Biplane\YandexDirectBundle\Contract\SmsNotificationInfo',
@@ -128,7 +129,16 @@ class SoapClient extends \SoapClient implements ClientInterface
         'AdImageAssociationSelectionCriteria' => 'Biplane\YandexDirectBundle\Contract\AdImageAssociationSelectionCriteria',
         'AdImageAssociation' => 'Biplane\YandexDirectBundle\Contract\AdImageAssociation',
         'AdImageAssociationResponse' => 'Biplane\YandexDirectBundle\Contract\AdImageAssociationResponse',
-        'AdImageAssociationActionResult' => 'Biplane\YandexDirectBundle\Contract\AdImageAssociationActionResult'
+        'AdImageAssociationActionResult' => 'Biplane\YandexDirectBundle\Contract\AdImageAssociationActionResult',
+        'EnableSharedAccountRequest' => 'Biplane\YandexDirectBundle\Contract\EnableSharedAccountRequest',
+        'EnableSharedAccountResponse' => 'Biplane\YandexDirectBundle\Contract\EnableSharedAccountResponse',
+        'AccountManagementRequest' => 'Biplane\YandexDirectBundle\Contract\AccountManagementRequest',
+        'AccountSelectionCriteria' => 'Biplane\YandexDirectBundle\Contract\AccountSelectionCriteria',
+        'Payment' => 'Biplane\YandexDirectBundle\Contract\Payment',
+        'Transfer' => 'Biplane\YandexDirectBundle\Contract\Transfer',
+        'Account' => 'Biplane\YandexDirectBundle\Contract\Account',
+        'AccountManagementResponse' => 'Biplane\YandexDirectBundle\Contract\AccountManagementResponse',
+        'AccountActionResult' => 'Biplane\YandexDirectBundle\Contract\AccountActionResult'
     );
 
     private $configuration;

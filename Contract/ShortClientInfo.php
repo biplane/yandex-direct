@@ -20,6 +20,10 @@ class ShortClientInfo
      * @var string
      */
     protected $Role;
+    /**
+     * @var string
+     */
+    protected $SharedAccountEnabled;
 
     /**
      * Creates a new instance.
@@ -99,6 +103,30 @@ class ShortClientInfo
     public function setRole($Role)
     {
         $this->Role = $Role;
+
+        return $this;
+    }
+
+    /**
+     * Gets the SharedAccountEnabled.
+     *
+     * @return string
+     */
+    public function getSharedAccountEnabled()
+    {
+        return $this->SharedAccountEnabled;
+    }
+
+    /**
+     * Sets the SharedAccountEnabled.
+     *
+     * @param string $SharedAccountEnabled
+     *
+     * @return ShortClientInfo
+     */
+    public function setSharedAccountEnabled($SharedAccountEnabled)
+    {
+        $this->SharedAccountEnabled = $SharedAccountEnabled;
 
         return $this;
     }

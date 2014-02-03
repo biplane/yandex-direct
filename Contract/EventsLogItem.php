@@ -21,6 +21,10 @@ class EventsLogItem
      */
     protected $PhraseID;
     /**
+     * @var int
+     */
+    protected $AccountID;
+    /**
      * @var string
      */
     protected $TextDescription;
@@ -119,6 +123,30 @@ class EventsLogItem
     public function setPhraseID($PhraseID)
     {
         $this->PhraseID = $PhraseID;
+
+        return $this;
+    }
+
+    /**
+     * Gets the AccountID.
+     *
+     * @return int
+     */
+    public function getAccountID()
+    {
+        return $this->AccountID;
+    }
+
+    /**
+     * Sets the AccountID.
+     *
+     * @param int $AccountID
+     *
+     * @return EventsLogItem
+     */
+    public function setAccountID($AccountID)
+    {
+        $this->AccountID = $AccountID;
 
         return $this;
     }

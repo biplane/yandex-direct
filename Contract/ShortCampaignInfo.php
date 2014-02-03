@@ -100,6 +100,10 @@ class ShortCampaignInfo
      * @var float
      */
     protected $BonusDiscount;
+    /**
+     * @var string
+     */
+    protected $DayBudgetEnabled;
 
     /**
      * Creates a new instance.
@@ -659,6 +663,30 @@ class ShortCampaignInfo
     public function setBonusDiscount($BonusDiscount)
     {
         $this->BonusDiscount = $BonusDiscount;
+
+        return $this;
+    }
+
+    /**
+     * Gets the DayBudgetEnabled.
+     *
+     * @return string
+     */
+    public function getDayBudgetEnabled()
+    {
+        return $this->DayBudgetEnabled;
+    }
+
+    /**
+     * Sets the DayBudgetEnabled.
+     *
+     * @param string $DayBudgetEnabled
+     *
+     * @return ShortCampaignInfo
+     */
+    public function setDayBudgetEnabled($DayBudgetEnabled)
+    {
+        $this->DayBudgetEnabled = $DayBudgetEnabled;
 
         return $this;
     }
