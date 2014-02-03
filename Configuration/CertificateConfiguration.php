@@ -3,7 +3,7 @@
 namespace Biplane\YandexDirectBundle\Configuration;
 
 /**
- * Конфигурация с авторизацией через SSL сертификат.
+ * Provides implementation of {@link BaseConfiguration} for authorization by SSL certificate.
  *
  * @author Denis Vasilev <yethee@biplane.ru>
  */

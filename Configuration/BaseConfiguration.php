@@ -13,7 +13,7 @@ abstract class BaseConfiguration
     const LOCALE_EN = 'en';
     const LOCALE_UA = 'ua';
 
-    protected $locale = self::LOCALE_EN;
+    protected $locale;
     protected $proxyHost;
     protected $proxyPort;
     protected $masterToken;
@@ -23,6 +23,8 @@ abstract class BaseConfiguration
      * Constructor.
      *
      * @param string $yandexLogin The yandex login
+     *
+     * @throws \InvalidArgumentException
      */
     public function __construct($yandexLogin)
     {
@@ -31,6 +33,7 @@ abstract class BaseConfiguration
         }
 
         $this->yandexLogin = (string)$yandexLogin;
+        $this->locale = self::LOCALE_EN;
     }
 
     /**
@@ -70,7 +73,7 @@ abstract class BaseConfiguration
                 break;
             default:
                 throw new \InvalidArgumentException(
-                    'Invalid locale. Case must be one of the following constants: LOCALE_RU, LOCALE_EN or LOCALE_UK.'
+                    'Invalid locale. Case must be one of the following constants: LOCALE_RU, LOCALE_EN or LOCALE_UA.'
                 );
         }
     }
