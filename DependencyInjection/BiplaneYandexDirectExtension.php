@@ -5,32 +5,24 @@ namespace Biplane\YandexDirectBundle\DependencyInjection;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
-use Symfony\Component\DependencyInjection\Reference;
 use Symfony\Component\Config\FileLocator;
-use Symfony\Component\Config\Definition\Processor;
-use Symfony\Component\HttpKernel\DependencyInjection\Extension;
+use Symfony\Component\HttpKernel\DependencyInjection\ConfigurableExtension;
 
 /**
  * BiplaneYandexDirectExtension
  *
  * @author Alexey Popkov <a.popkov@biplane.ru>
  */
-class BiplaneYandexDirectExtension extends Extension
+class BiplaneYandexDirectExtension extends ConfigurableExtension
 {
     /**
-     * Loads a specific configuration.
-     *
-     * @param array            $config    An array of configuration values
-     * @param ContainerBuilder $container A ContainerBuilder instance
-     *
-     * @throws \InvalidArgumentException When provided tag is not defined in this extension
+     * {@inheritdoc}
      */
-    public function load(array $configs, ContainerBuilder $container)
+    protected function loadInternal(array $config, ContainerBuilder $container)
     {
         $loader = new XmlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
         $loader->load('services.xml');
-        
-        $config = $this->processConfiguration(new Configuration(), $configs);
+
         // коллекция профилей
         $profilesDefs = array();
 
@@ -53,13 +45,12 @@ class BiplaneYandexDirectExtension extends Extension
                 $configDef
                     ->setClass('Biplane\\YandexDirectBundle\\Configuration\\CertificateConfiguration')
                     ->addArgument($options['login'])
-                    ->addArgument($options['cert']['local_cert']);
+                    ->addArgument($options['cert']);
             } else if (isset($options['token'])) {
                 $configDef
                     ->setClass('Biplane\\YandexDirectBundle\\Configuration\\AuthTokenConfiguration')
                     ->addArgument($options['login'])
-                    ->addArgument($options['token']['application_id'])
-                    ->addArgument($options['token']['token']);
+                    ->addArgument($options['token']);
             }
 
             $profileDef = new Definition('Biplane\\YandexDirectBundle\\Profile\\Profile');

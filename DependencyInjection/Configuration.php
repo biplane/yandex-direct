@@ -2,7 +2,6 @@
 
 namespace Biplane\YandexDirectBundle\DependencyInjection;
 
-use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 use Biplane\YandexDirectBundle\Factory\ClientFactory;
@@ -15,9 +14,7 @@ use Biplane\YandexDirectBundle\Factory\ClientFactory;
 class Configuration implements ConfigurationInterface
 {
     /**
-     * Generates the configuration tree builder.
-     *
-     * @return TreeBuilder The tree builder
+     * {@inheritdoc}
      */
     public function getConfigTreeBuilder()
     {
@@ -28,13 +25,17 @@ class Configuration implements ConfigurationInterface
             ->fixXmlConfig('profile')
             ->children()
                 ->scalarNode('default_profile')->defaultNull()->end()
+                ->scalarNode('application_id')
+                    ->defaultNull()
+                    ->info('The client ID for OAuth authorization.')
+                ->end()
                 ->arrayNode('profiles')
                     ->canBeUnset()
                     ->useAttributeAsKey('name')
                     ->prototype('array')
                         ->children()
                             ->scalarNode('type')
-                                ->isRequired()
+                                ->defaultValue('soap')
                                 ->validate()
                                     // TODO: запретим пока json клиент на уровне конфига
                                     ->ifNotInArray(array(/*ClientFactory::TYPE_JSON,*/ ClientFactory::TYPE_SOAP))
@@ -49,18 +50,20 @@ class Configuration implements ConfigurationInterface
                                 ->end()
                             ->end()
                             ->booleanNode('is_agency')->defaultFalse()->end()
-                            ->scalarNode('login')->end()
+                            ->scalarNode('login')->
+                                info('The Yandex account name. If empty, will be used a profile name')
+                            ->end()
                             ->scalarNode('master_token')->end()
+                            ->scalarNode('cert')->info('Path to a sertificate file (*.pem)')->end()
+                            ->scalarNode('token')->info('The access token for OAuth authorization')->end()
                         ->end()
-                        ->append($this->getCertificateConfig())
-                        ->append($this->getTokenConfig())
                         ->validate()
                             ->ifTrue(function($v) { return isset($v['cert']) && isset($v['token']); })
-                            ->thenInvalid('At the same time can not be specified the cert and token section.')
+                            ->thenInvalid('At the same time can not be specified the cert and the access token.')
                         ->end()
                         ->validate()
                             ->ifTrue(function($v) { return !isset($v['cert']) && !isset($v['token']); })
-                            ->thenInvalid('The cert or token section has to be specified.')
+                            ->thenInvalid('The cert or the access token has to be specified.')
                         ->end()
                     ->end()
                 ->end()
@@ -68,46 +71,17 @@ class Configuration implements ConfigurationInterface
                     ->addDefaultsIfNotSet()
                     ->children()
                         ->scalarNode('max_connections')
+                            ->defaultValue(12)
                             ->validate()
                                 ->always(function ($v) {
                                     return $v >= 1 ? $v : null;
                                 })
                             ->end()
-                            ->defaultValue(12)
                         ->end()
                     ->end()
                 ->end()
             ->end();
 
         return $treeBuilder;
-    }
-
-    private function getCertificateConfig()
-    {
-        $builder = new TreeBuilder();
-        $node = $builder->root('cert');
-
-        $node
-            ->canBeUnset()
-            ->children()
-                ->scalarNode('local_cert')->isRequired()->cannotBeEmpty()->end()
-            ->end();
-
-        return $node;
-    }
-
-    private function getTokenConfig()
-    {
-        $builder = new TreeBuilder();
-        $node = $builder->root('token');
-
-        $node
-            ->canBeUnset()
-            ->children()
-                ->scalarNode('application_id')->isRequired()->cannotBeEmpty()->end()
-                ->scalarNode('token')->isRequired()->cannotBeEmpty()->end()
-            ->end();
-
-        return $node;
     }
 }
