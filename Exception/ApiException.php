@@ -52,6 +52,11 @@ class ApiException extends \RuntimeException
     const INSUFFICIENT_PRIVILEGES = 54;
 
     /**
+     * Превышен лимит запросов.
+     */
+    const EXCEEDED_LIMIT_REQUESTS = 56;
+
+    /**
      * Параметры запроса указаны неверно.
      */
     const INCORRECT_PARAMETERS = 71;
