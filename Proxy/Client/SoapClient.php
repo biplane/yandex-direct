@@ -16,8 +16,8 @@ use Biplane\YandexDirectBundle\Exception\NetworkException;
  */
 class SoapClient extends \SoapClient implements ClientInterface
 {
-    const ENDPOINT = 'http://soap.direct.yandex.ru/live/v4/wsdl/';
-    const API_NS = 'API';
+    const ENDPOINT   = 'https://api.direct.yandex.ru/live/v4/wsdl/';
+    const API_NS     = 'API';
     const INVALID_NS = 'http://namespaces.soaplite.com/perl';
 
     private static $classmap = array(
