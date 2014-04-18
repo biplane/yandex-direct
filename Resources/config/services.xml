@@ -32,5 +32,7 @@
 
             <tag name="kernel.event_subscriber" />
         </service>
+
+        <service id="biplane_yandex_direct.auth" class="Biplane\YandexDirectBundle\Service\Authenticator" />
     </services>
 </container>

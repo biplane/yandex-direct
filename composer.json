@@ -10,6 +10,7 @@
     "symfony/console": "~2.1",
     "symfony/framework-bundle": "~2.1",
     "symfony/serializer": "~2.1",
+    "kriswallsmith/buzz": "v0.10",
     "biplane/common": "dev-master"
   },
   "autoload": {

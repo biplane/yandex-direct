@@ -23,6 +23,11 @@ class BiplaneYandexDirectExtension extends ConfigurableExtension
         $loader = new XmlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
         $loader->load('services.xml');
 
+        $container->getDefinition('biplane_yandex_direct.auth')->setArguments(array(
+            $config['application_id'],
+            $config['application_secret'],
+        ));
+
         // коллекция профилей
         $profilesDefs = array();
 

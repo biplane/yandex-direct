@@ -25,9 +25,10 @@ class BiplaneYandexDirectExtensionTest extends \PHPUnit_Framework_TestCase
     public function testFullConfigLoad()
     {
         $this->load(array(
-            'application_id'  => 'app_id',
-            'default_profile' => 'foo',
-            'profiles'        => array(
+            'application_id'     => 'app_id',
+            'application_secret' => 'secr3t',
+            'default_profile'    => 'foo',
+            'profiles'           => array(
                 'foo' => array(
                     'cert'         => 'path/to/local_cert',
                     'locale'       => 'en',
@@ -39,10 +40,15 @@ class BiplaneYandexDirectExtensionTest extends \PHPUnit_Framework_TestCase
                     'token' => 'ACCESS-TOKEN',
                 )
             ),
-            'limits'          => array(
+            'limits'             => array(
                 'max_connections' => 7
             )
         ));
+
+        $this->assertDICConstructorArguments(
+            $this->container->getDefinition('biplane_yandex_direct.auth'),
+            array('app_id', 'secr3t')
+        );
 
         $this->assertDICDefinitionMethodCallAt(
             0,
