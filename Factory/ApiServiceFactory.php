@@ -2,10 +2,11 @@
 
 namespace Biplane\YandexDirectBundle\Factory;
 
-use Symfony\Component\EventDispatcher\EventDispatcherInterface;
-use Biplane\YandexDirectBundle\Profile\ProfileInterface;
-use Biplane\YandexDirectBundle\Profile\ProfileManager;
+use Biplane\YandexDirectBundle\ClientTypes;
+use Biplane\YandexDirectBundle\Configuration\BaseConfiguration;
+use Biplane\YandexDirectBundle\Configuration\ConfigurationRegistry;
 use Biplane\YandexDirectBundle\Proxy\YandexApiService;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**
  * ApiFactory
@@ -15,7 +16,7 @@ use Biplane\YandexDirectBundle\Proxy\YandexApiService;
 class ApiServiceFactory
 {
     private $clientFactory;
-    private $profileManager;
+    private $configRegistry;
     private $defaultProfile;
     private $dispatcher;
 
@@ -23,17 +24,17 @@ class ApiServiceFactory
      * Constructor.
      *
      * @param ClientFactory            $clientFactory  The client factory
-     * @param ProfileManager           $profileManager The profile manager
+     * @param ConfigurationRegistry    $configRegistry The configurarions registry
      * @param EventDispatcherInterface $dispatcher     The event dispatcher
      */
     public function __construct(
         ClientFactory $clientFactory,
-        ProfileManager $profileManager,
+        ConfigurationRegistry $configRegistry,
         EventDispatcherInterface $dispatcher
     )
     {
         $this->clientFactory = $clientFactory;
-        $this->profileManager = $profileManager;
+        $this->configRegistry = $configRegistry;
         $this->dispatcher = $dispatcher;
     }
 
@@ -56,7 +57,7 @@ class ApiServiceFactory
      */
     public function setDefaultProfile($profileName)
     {
-        if (!$this->profileManager->has($profileName)) {
+        if (!$this->configRegistry->has($profileName)) {
             throw new \InvalidArgumentException(sprintf('Profile named "%s" does not exist.', $profileName));
         }
 
@@ -66,21 +67,21 @@ class ApiServiceFactory
     /**
      * Creates a proxy of API service.
      *
-     * If the profile is null, will be used the default profile.
+     * If the config is null, will be used the default profile.
      *
-     * @param ProfileInterface|string|null $profile The Profile object, profile name or null
+     * @param BaseConfiguration|string|null $config The configuration, profile name or null
+     * @param string                        $type   One constant of ClientTypes enumeration
      *
      * @return YandexApiService
      *
-     * @throws \InvalidArgumentException When profile by specified name does not exist
-     * @throws \InvalidArgumentException When profile name is null and the default profile is not defained
+     * @throws \InvalidArgumentException
      */
-    public function createApiService($profile = null)
+    public function createApiService($config = null, $type = ClientTypes::TYPE_SOAP)
     {
-        if (!$profile instanceof ProfileInterface) {
-            if ($profile === null) {
+        if (!$config instanceof BaseConfiguration) {
+            if ($config === null) {
                 if ($this->defaultProfile !== null) {
-                    $profile = $this->defaultProfile;
+                    $config = $this->defaultProfile;
                 } else {
                     throw new \InvalidArgumentException(
                         'Profile name cannot be null, because the default profile is not defined.'
@@ -88,12 +89,12 @@ class ApiServiceFactory
                 }
             }
 
-            $profile = $this->profileManager->get($profile);
+            $config = $this->configRegistry->get($config);
+
         }
 
-        $client = $this->clientFactory->create($profile->getType(), $profile->getConfiguration());
-        $service = new YandexApiService($this->dispatcher, $client);
+        $client = $this->clientFactory->create($type, $config);
 
-        return $service;
+        return new YandexApiService($this->dispatcher, $client);
     }
 }

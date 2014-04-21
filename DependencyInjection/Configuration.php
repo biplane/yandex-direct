@@ -4,7 +4,6 @@ namespace Biplane\YandexDirectBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
-use Biplane\YandexDirectBundle\ClientTypes;
 
 /**
  * Configuration
@@ -38,14 +37,6 @@ class Configuration implements ConfigurationInterface
                     ->useAttributeAsKey('name')
                     ->prototype('array')
                         ->children()
-                            ->scalarNode('type')
-                                ->defaultValue('soap')
-                                ->validate()
-                                    // TODO: запретим пока json клиент на уровне конфига
-                                    ->ifNotInArray(array(/*ClientTypes::TYPE_JSON,*/ ClientTypes::TYPE_SOAP))
-                                    ->thenInvalid('The "%s" client is not supported.')
-                                ->end()
-                            ->end()
                             ->scalarNode('locale')
                                 ->defaultValue('ru')
                                 ->validate()

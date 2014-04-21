@@ -2,10 +2,10 @@
 
 namespace Biplane\YandexDirectBundle\Tests\DependencyInjection;
 
+use Biplane\YandexDirectBundle\DependencyInjection\BiplaneYandexDirectExtension;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Reference;
-use Biplane\YandexDirectBundle\DependencyInjection\BiplaneYandexDirectExtension;
 
 /**
  * @author Denis Vasilev <yethee@biplane.ru>
@@ -35,7 +35,6 @@ class BiplaneYandexDirectExtensionTest extends \PHPUnit_Framework_TestCase
                     'master_token' => 'MASTER-TOKEN',
                 ),
                 'bar' => array(
-                    'type'  => 'soap',
                     'login' => 'yandex_login',
                     'token' => 'ACCESS-TOKEN',
                 )
@@ -61,39 +60,19 @@ class BiplaneYandexDirectExtensionTest extends \PHPUnit_Framework_TestCase
             array(new Reference('biplane_yandex_direct.ipc.factory'), 7)
         );
 
-        $profiles = $this->container->getDefinition('biplane_yandex_direct.profile.manager')->getArgument(0);
+        $profiles = $this->container->getDefinition('biplane_yandex_direct.config.registry')->getArgument(0);
 
         $this->assertArrayHasKey('foo', $profiles);
         $this->assertArrayHasKey('bar', $profiles);
 
-        $this->assertDICDefinitionClass(
-            $profiles['foo'],
-            'Biplane\YandexDirectBundle\Profile\Profile'
-        );
-        $this->assertEquals('soap', $profiles['foo']->getArgument(0));
-        $this->assertInstanceOf('Symfony\Component\DependencyInjection\Definition', $profiles['foo']->getArgument(1));
+        $this->assertDICDefinitionClass($profiles['foo'], 'Biplane\YandexDirectBundle\Configuration\CertificateConfiguration');
+        $this->assertDICConstructorArguments($profiles['foo'], array('foo', 'path/to/local_cert'));
+        $this->assertDICDefinitionMethodCallAt(0, $profiles['foo'], 'setLocale', array('en'));
+        $this->assertDICDefinitionMethodCallAt(1, $profiles['foo'], 'setMasterToken', array('MASTER-TOKEN'));
 
-        $this->assertDICDefinitionClass(
-            $profiles['foo']->getArgument(1),
-            'Biplane\YandexDirectBundle\Configuration\CertificateConfiguration'
-        );
-        $this->assertDICConstructorArguments($profiles['foo']->getArgument(1), array('foo', 'path/to/local_cert'));
-        $this->assertDICDefinitionMethodCallAt(0, $profiles['foo']->getArgument(1), 'setLocale', array('en'));
-        $this->assertDICDefinitionMethodCallAt(1, $profiles['foo']->getArgument(1), 'setMasterToken', array('MASTER-TOKEN'));
-
-        $this->assertDICDefinitionClass(
-            $profiles['bar'],
-            'Biplane\YandexDirectBundle\Profile\Profile'
-        );
-        $this->assertEquals('soap', $profiles['bar']->getArgument(0));
-        $this->assertInstanceOf('Symfony\Component\DependencyInjection\Definition', $profiles['bar']->getArgument(1));
-
-        $this->assertDICDefinitionClass(
-            $profiles['bar']->getArgument(1),
-            'Biplane\YandexDirectBundle\Configuration\AuthTokenConfiguration'
-        );
-        $this->assertDICConstructorArguments($profiles['bar']->getArgument(1), array('yandex_login', 'ACCESS-TOKEN'));
-        $this->assertDICDefinitionMethodCallAt(0, $profiles['bar']->getArgument(1), 'setLocale', array('ru'));
+        $this->assertDICDefinitionClass($profiles['bar'], 'Biplane\YandexDirectBundle\Configuration\AuthTokenConfiguration');
+        $this->assertDICConstructorArguments($profiles['bar'], array('yandex_login', 'ACCESS-TOKEN'));
+        $this->assertDICDefinitionMethodCallAt(0, $profiles['bar'], 'setLocale', array('ru'));
     }
 
     public function testEmptyConfigLoad()

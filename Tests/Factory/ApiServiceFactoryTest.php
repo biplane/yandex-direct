@@ -13,7 +13,7 @@ class ApiServiceFactoryTest extends \PHPUnit_Framework_TestCase
     /**
      * @var \PHPUnit_Framework_MockObject_MockObject
      */
-    private $profileManager;
+    private $configRegistry;
 
     /**
      * @var \PHPUnit_Framework_MockObject_MockObject
@@ -33,19 +33,18 @@ class ApiServiceFactoryTest extends \PHPUnit_Framework_TestCase
     public function testApiProxyShouldBeCreatedByProfileName()
     {
         $config = $this->getConfigurationMock('foo');
-        $profile = $this->getProfileMock($config);
 
-        $this->profileManager->expects($this->once())
+        $this->configRegistry->expects($this->once())
             ->method('get')
             ->with($this->equalTo('foo'))
-            ->will($this->returnValue($profile));
+            ->will($this->returnValue($config));
 
         $this->clientFactory->expects($this->once())
             ->method('create')
-            ->with($this->equalTo(ClientTypes::TYPE_SOAP), $this->identicalTo($config))
+            ->with($this->equalTo(ClientTypes::TYPE_JSON), $this->identicalTo($config))
             ->will($this->returnValue($this->getClientMock()));
 
-        $proxy = $this->factory->createApiService('foo');
+        $proxy = $this->factory->createApiService('foo', ClientTypes::TYPE_JSON);
 
         $this->assertInstanceOf('Biplane\YandexDirectBundle\Proxy\YandexApiService', $proxy);
     }
@@ -53,17 +52,16 @@ class ApiServiceFactoryTest extends \PHPUnit_Framework_TestCase
     public function testApiProxyShouldBeCreatedByDefaultProfile()
     {
         $config = $this->getConfigurationMock('bar');
-        $profile = $this->getProfileMock($config);
 
-        $this->profileManager->expects($this->once())
+        $this->configRegistry->expects($this->once())
             ->method('has')
             ->with($this->equalTo('default'))
             ->will($this->returnValue(true));
 
-        $this->profileManager->expects($this->once())
+        $this->configRegistry->expects($this->once())
             ->method('get')
             ->with($this->equalTo('default'))
-            ->will($this->returnValue($profile));
+            ->will($this->returnValue($config));
 
         $this->clientFactory->expects($this->once())
             ->method('create')
@@ -77,12 +75,26 @@ class ApiServiceFactoryTest extends \PHPUnit_Framework_TestCase
         $this->assertInstanceOf('Biplane\YandexDirectBundle\Proxy\YandexApiService', $proxy);
     }
 
+    public function testPorxyShouldBeCreatedBySpecificConfig()
+    {
+        $config = $this->getConfigurationMock('bar');
+
+        $this->clientFactory->expects($this->once())
+            ->method('create')
+            ->with($this->equalTo(ClientTypes::TYPE_SOAP), $this->identicalTo($config))
+            ->will($this->returnValue($this->getClientMock()));
+
+        $proxy = $this->factory->createApiService($config);
+
+        $this->assertInstanceOf('Biplane\YandexDirectBundle\Proxy\YandexApiService', $proxy);
+    }
+
     /**
      * @expectedException \InvalidArgumentException
      */
     public function testThrowExceptionWhenDefaultProfileDoesNotExists()
     {
-        $this->profileManager->expects($this->once())
+        $this->configRegistry->expects($this->once())
             ->method('has')
             ->with($this->equalTo('foo'))
             ->will($this->returnValue(false));
@@ -101,31 +113,16 @@ class ApiServiceFactoryTest extends \PHPUnit_Framework_TestCase
 
     protected function setUp()
     {
-        $this->profileManager = $this->getMock('Biplane\YandexDirectBundle\Profile\ProfileManager');
+        $this->configRegistry = $this->getMock('Biplane\YandexDirectBundle\Configuration\ConfigurationRegistry');
         $this->clientFactory = $this->getMock('Biplane\YandexDirectBundle\Factory\ClientFactory');
         $this->dispatcher = $this->getMock('Symfony\Component\EventDispatcher\EventDispatcherInterface');
 
-        $this->factory = new ApiServiceFactory($this->clientFactory, $this->profileManager, $this->dispatcher);
+        $this->factory = new ApiServiceFactory($this->clientFactory, $this->configRegistry, $this->dispatcher);
     }
 
     protected function tearDown()
     {
-        unset($this->profileManager, $this->clientFactory, $this->dispatcher, $this->factory);
-    }
-
-    private function getProfileMock($configuration)
-    {
-        $mock = $this->getMock('Biplane\YandexDirectBundle\Profile\ProfileInterface');
-
-        $mock->expects($this->once())
-            ->method('getConfiguration')
-            ->will($this->returnValue($configuration));
-
-        $mock->expects($this->once())
-            ->method('getType')
-            ->will($this->returnValue(ClientTypes::TYPE_SOAP));
-
-        return $mock;
+        unset($this->configRegistry, $this->clientFactory, $this->dispatcher, $this->factory);
     }
 
     private function getClientMock()

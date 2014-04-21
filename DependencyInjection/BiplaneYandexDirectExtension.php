@@ -37,7 +37,7 @@ class BiplaneYandexDirectExtension extends ConfigurableExtension
             }
 
             // конфигурация для клиента
-            $configDef = new Definition();
+            $profilesDefs[$name] = $configDef = new Definition();
             $configDef
                 ->setPublic(false)
                 ->addMethodCall('setLocale', array($options['locale']));
@@ -57,13 +57,6 @@ class BiplaneYandexDirectExtension extends ConfigurableExtension
                     ->addArgument($options['login'])
                     ->addArgument($options['token']);
             }
-
-            $profileDef = new Definition('Biplane\\YandexDirectBundle\\Profile\\Profile');
-            $profileDef
-                ->addArgument($options['type'])
-                ->addArgument($configDef);
-
-            $profilesDefs[$name] = $profileDef;
         }
 
         if (!empty($config['default_profile'])) {
@@ -71,8 +64,8 @@ class BiplaneYandexDirectExtension extends ConfigurableExtension
                 ->addMethodCall('setDefaultProfile', array($config['default_profile']));
         }
 
-        $container->getDefinition('biplane_yandex_direct.profile.manager')
-            ->replaceArgument(0, $profilesDefs);
+        $container->getDefinition('biplane_yandex_direct.config.registry')
+            ->addArgument($profilesDefs);
 
         $this->applyApiLimits($config['limits'], $container);
     }
