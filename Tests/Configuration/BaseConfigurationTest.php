@@ -22,12 +22,12 @@ class BaseConfigurationTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Symfony\Component\OptionsResolver\Exception\MissingOptionsException
+     * @expectedException \InvalidArgumentException
      */
     public function testThrowExceptionWhenSetMasterTokenAndLoginIsMissing()
     {
         $this->createConfig(array(
-            'master_token' => 'foo'
+            'master_token' => 'foo',
         ));
     }
 
@@ -53,6 +53,15 @@ class BaseConfigurationTest extends \PHPUnit_Framework_TestCase
             'ca556216659079c5e21ae6647560b3d4ad94b950a2d613974ab934e0a9f54d7d',
             $config->createFinanceToken('foo', 1)
         );
+    }
+
+    public function testLoginShouldBeNormalized()
+    {
+        $config = $this->createConfig(array(
+            'login' => 'p.g.Ivanov',
+        ));
+
+        $this->assertEquals('p-g-ivanov', $config->getYandexLogin());
     }
 
     /**

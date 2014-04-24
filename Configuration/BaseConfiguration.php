@@ -2,7 +2,6 @@
 
 namespace Biplane\YandexDirectBundle\Configuration;
 
-use Symfony\Component\OptionsResolver\Exception\MissingOptionsException;
 use Symfony\Component\OptionsResolver\Options;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
@@ -20,12 +19,23 @@ abstract class BaseConfiguration
 
     protected $options;
 
+    /**
+     * Constructor.
+     *
+     * @param array $options The options
+     *
+     * @throws \InvalidArgumentException
+     */
     public function __construct(array $options = array())
     {
         $resolver = new OptionsResolver();
         $this->setDefaultOptions($resolver);
 
         $this->options = $resolver->resolve($options);
+
+        if (!empty($this->options['master_token']) && empty($this->options['login'])) {
+            throw new \InvalidArgumentException('The login cannot be empty when the master token is set.');
+        }
     }
 
     /**
@@ -98,13 +108,7 @@ abstract class BaseConfiguration
         $resolver->setDefaults(array(
             'locale'       => self::LOCALE_EN,
             'master_token' => null,
-            'login'        => function (Options $options, $value) {
-                if (!empty($options['master_token'])) {
-                    throw new MissingOptionsException('The required option "login" is missing.');
-                }
-
-                return $value;
-            }
+            'login'        => null,
         ));
 
         $resolver->setAllowedValues(array(
@@ -114,6 +118,21 @@ abstract class BaseConfiguration
         $resolver->setAllowedTypes(array(
             'master_token' => array('null', 'string'),
             'login'        => array('null', 'string'),
+        ));
+
+
+        // Если логин пользователя содержит точки и символы верхнего регистра (заглавные буквы),
+        // то для получения нормализованного логина их следует заменить, соответственно, дефисами
+        // и символами нижнего регистра.
+        // http://api.yandex.ru/direct/doc/concepts/finance.xml#access
+        $resolver->setNormalizers(array(
+            'login' => function (Options $options, $value) {
+                if (is_string($value)) {
+                    return strtolower(str_replace('.', '-', $value));
+                }
+
+                return $value;
+            }
         ));
     }
 }
