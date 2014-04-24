@@ -912,7 +912,7 @@ class YandexApiService
         $this->dispatcher->dispatch(Events::BEFORE_REQUEST, new PreCallEvent(
             $this,
             $method,
-            $this->client->getLogin()
+            $this->client->getConfiguration()
         ));
 
         try {
@@ -921,7 +921,7 @@ class YandexApiService
             $this->dispatcher->dispatch(Events::FAIL_REQUEST, new FailCallEvent(
                 $this,
                 $method,
-                $this->client->getLogin(),
+                $this->client->getConfiguration(),
                 $ex
             ));
 
@@ -931,7 +931,7 @@ class YandexApiService
         $this->dispatcher->dispatch(Events::AFTER_REQUEST, new PostCallEvent(
             $this,
             $method,
-            $this->client->getLogin(),
+            $this->client->getConfiguration(),
             $response
         ));
 

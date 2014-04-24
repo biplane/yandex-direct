@@ -2,6 +2,8 @@
 
 namespace Biplane\YandexDirectBundle\Configuration;
 
+use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+
 /**
  * Provides implementation of {@link BaseConfiguration} for authorization by SSL certificate.
  *
@@ -9,28 +11,20 @@ namespace Biplane\YandexDirectBundle\Configuration;
  */
 class CertificateConfiguration extends BaseConfiguration
 {
-    private $localCert;
-    private $passphrase;
-
     /**
      * Constructor.
      *
-     * @param string $yandexLogin The yandex login
-     * @param string $localCert   Path to local certificate
-     * @param string $passphrase  The passphrase for certificate
+     * @param array $options The options
      *
-     * @throws \InvalidArgumentException
+     * \InvalidArgumentException
      */
-    public function __construct($yandexLogin, $localCert, $passphrase = '')
+    public function __construct(array $options = array())
     {
-        if (!is_readable($localCert)) {
+        parent::__construct($options);
+
+        if (!is_readable($this->options['cert_file'])) {
             throw new \InvalidArgumentException('Invalid HTTPS client certificate path.');
         }
-
-        parent::__construct($yandexLogin);
-
-        $this->localCert = $localCert;
-        $this->passphrase = (string)$passphrase;
     }
 
     /**
@@ -40,7 +34,7 @@ class CertificateConfiguration extends BaseConfiguration
      */
     public function getHttpsCertificate()
     {
-        return $this->localCert;
+        return $this->options['cert_file'];
     }
 
     /**
@@ -50,6 +44,27 @@ class CertificateConfiguration extends BaseConfiguration
      */
     public function getPassphrase()
     {
-        return $this->passphrase;
+        return $this->options['passphrase'];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getHashCode()
+    {
+        return md5($this->options['cert_file']);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function setDefaultOptions(OptionsResolverInterface $resolver)
+    {
+        parent::setDefaultOptions($resolver);
+
+        $resolver->setRequired(array('cert_file'));
+        $resolver->setDefaults(array(
+            'passphrase' => '',
+        ));
     }
 }

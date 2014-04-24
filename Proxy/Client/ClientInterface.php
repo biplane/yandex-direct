@@ -2,6 +2,8 @@
 
 namespace Biplane\YandexDirectBundle\Proxy\Client;
 
+use Biplane\YandexDirectBundle\Configuration\BaseConfiguration;
+
 /**
  * ClientInterface
  *
@@ -21,11 +23,11 @@ interface ClientInterface
     public function invoke($method, array $params, $isFinancialMethod = false);
 
     /**
-     * Gets the Yandex account.
+     * Gets the configuration.
      *
-     * @return string
+     * @return BaseConfiguration
      */
-    public function getLogin();
+    public function getConfiguration();
 
     /**
      * Gets a content of last request.

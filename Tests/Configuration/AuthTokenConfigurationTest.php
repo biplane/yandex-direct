@@ -9,25 +9,31 @@ use Biplane\YandexDirectBundle\Configuration\AuthTokenConfiguration;
  */
 class AuthTokenConfigurationTest extends \PHPUnit_Framework_TestCase
 {
-    public function testConstructorAndGetters()
+    public function testAccessTokenShouldBeSet()
     {
-        $configuration = new AuthTokenConfiguration('login', 'token');
+        $configuration = new AuthTokenConfiguration(array(
+            'access_token' => 'access_t0ken'
+        ));
 
-        $this->assertEquals('login', $configuration->getYandexLogin());
-        $this->assertEquals('token', $configuration->getToken());
+        $this->assertSame(AuthTokenConfiguration::LOCALE_EN, $configuration->getLocale());
+        $this->assertSame('access_t0ken', $configuration->getAccessToken());
     }
 
-    public function testExceptionIsRaisedWhenInvalidLogin()
+    /**
+     * @expectedException \Symfony\Component\OptionsResolver\Exception\MissingOptionsException
+     * @expectedExceptionMessage The required option "access_token" is missing.
+     */
+    public function testThrowExceptionWhenAccessTokenIsEmpty()
     {
-        $this->setExpectedException('InvalidArgumentException');
-
-        new AuthTokenConfiguration(null, 'token');
+        new AuthTokenConfiguration();
     }
 
-    public function testExceptionIsRaisedWhenInvalidToken()
+    public function testHashCodeShouldBeGenerated()
     {
-        $this->setExpectedException('InvalidArgumentException');
+        $configuration = new AuthTokenConfiguration(array(
+            'access_token' => 'foo'
+        ));
 
-        new AuthTokenConfiguration('login', null);
+        $this->assertEquals('acbd18db4cc2f85cedef654fccc4a4d8', $configuration->getHashCode());
     }
 }

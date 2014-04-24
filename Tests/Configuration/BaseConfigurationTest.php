@@ -10,51 +10,49 @@ use Biplane\YandexDirectBundle\Configuration\BaseConfiguration;
 class BaseConfigurationTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var \Biplane\YandexDirectBundle\Configuration\BaseConfiguration
+     * @dataProvider localeProvider
      */
-    private $configuration;
-
-    public function testSetProxySettings()
+    public function testLocaleShouldBeSet($locale)
     {
-        $this->configuration->setProxy('localhost', 8080);
+        $config = $this->createConfig(array(
+            'locale' => $locale
+        ));
 
-        $this->assertEquals('localhost', $this->configuration->getProxyHost());
-        $this->assertEquals(8080, $this->configuration->getProxyPort());
-    }
-
-    public function testExceptionIsRaisedWhenInvalidProxyPort()
-    {
-        $this->setExpectedException('InvalidArgumentException');
-
-        $this->configuration->setProxy('localhost', '123');
+        $this->assertSame($locale, $config->getLocale());
     }
 
     /**
-     * @dataProvider localeProvider
+     * @expectedException \Symfony\Component\OptionsResolver\Exception\MissingOptionsException
      */
-    public function testGetterAndSetterLocale($locale)
+    public function testThrowExceptionWhenSetMasterTokenAndLoginIsMissing()
     {
-        $this->configuration->setLocale($locale);
-
-        $this->assertEquals($locale, $this->configuration->getLocale());
+        $this->createConfig(array(
+            'master_token' => 'foo'
+        ));
     }
 
-    public function testExceptionIsRaisedWhenInvalidLocale()
+    public function testMasterTokenShouldBeSet()
     {
-        $this->setExpectedException('InvalidArgumentException');
+        $config = $this->createConfig(array(
+            'master_token' => 'foo',
+            'login'        => 'bar',
+        ));
 
-        $this->configuration->setLocale('locale');
+        $this->assertSame('foo', $config->getMasterToken());
+        $this->assertSame('bar', $config->getYandexLogin());
     }
 
-    public function testGetterAndSetterMasterToken()
+    public function testFinanceTokenShouldBeCreated()
     {
-        $this->configuration->setMasterToken('foo');
+        $config = $this->createConfig(array(
+            'master_token' => 't0ken',
+            'login'        => 'log1n',
+        ));
 
-        $this->assertEquals('foo', $this->configuration->getMasterToken());
-
-        $this->configuration->setMasterToken(null);
-
-        $this->assertNull($this->configuration->getMasterToken());
+        $this->assertEquals(
+            'ca556216659079c5e21ae6647560b3d4ad94b950a2d613974ab934e0a9f54d7d',
+            $config->createFinanceToken('foo', 1)
+        );
     }
 
     /**
@@ -69,16 +67,16 @@ class BaseConfigurationTest extends \PHPUnit_Framework_TestCase
         );
     }
 
-    protected function setUp()
+    /**
+     * @param array $options
+     *
+     * @return \PHPUnit_Framework_MockObject_MockObject|BaseConfiguration
+     */
+    private function createConfig(array $options)
     {
-        $this->configuration = $this->getMockForAbstractClass(
+        return $this->getMockForAbstractClass(
             'Biplane\YandexDirectBundle\Configuration\BaseConfiguration',
-            array('foo')
+            array($options)
         );
-    }
-
-    protected function tearDown()
-    {
-        unset($this->configuration);
     }
 }

@@ -132,9 +132,13 @@ class ApiServiceFactoryTest extends \PHPUnit_Framework_TestCase
 
     private function getConfigurationMock($login)
     {
+        $options = array(
+            'login' => $login
+        );
+
         return $this->getMockForAbstractClass(
             'Biplane\YandexDirectBundle\Configuration\BaseConfiguration',
-            array($login)
+            array($options)
         );
     }
 }

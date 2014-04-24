@@ -170,18 +170,12 @@ class SoapClient extends \SoapClient implements ClientInterface
         if ($configuration instanceof CertificateConfiguration) {
             $options['local_cert'] = $configuration->getHttpsCertificate();
             $options['passprase'] = $configuration->getPassphrase();
-        } else if ($configuration instanceof AuthTokenConfiguration) {
-            $headers[] = new \SoapHeader(self::API_NS, 'login', $configuration->getYandexLogin());
-            $headers[] = new \SoapHeader(self::API_NS, 'token', $configuration->getToken());
+        } elseif ($configuration instanceof AuthTokenConfiguration) {
+            $headers[] = new \SoapHeader(self::API_NS, 'token', $configuration->getAccessToken());
         } else {
             throw new \InvalidArgumentException(sprintf(
                 'Configuration type "%" is not supported.', get_class($configuration)
             ));
-        }
-
-        if ($configuration->getProxyHost() !== null) {
-            $options['proxy_host'] = $configuration->getProxyHost();
-            $options['proxy_port'] = $configuration->getProxyPort();
         }
 
         parent::__construct(self::ENDPOINT, $options);
@@ -257,9 +251,9 @@ class SoapClient extends \SoapClient implements ClientInterface
     /**
      * {@inheritdoc}
      */
-    public function getLogin()
+    public function getConfiguration()
     {
-        return $this->configuration->getYandexLogin();
+        return $this->configuration;
     }
 
     /**

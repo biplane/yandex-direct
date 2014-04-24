@@ -55,10 +55,6 @@ class JsonClient implements ClientInterface
         $this->converterFactory = $converterFactory;
         $this->encoder = $encoder;
 
-        if ($this->configuration->getProxyHost() !== null) {
-            $this->setProxy($this->configuration->getProxyHost(), $this->configuration->getProxyPort());
-        }
-
         if ($this->configuration instanceof CertificateConfiguration) {
             $this->setHttpsSertificate($this->configuration->getHttpsCertificate(), $this->configuration->getPassphrase());
         }
@@ -121,9 +117,9 @@ class JsonClient implements ClientInterface
     /**
      * {@inheritdoc}
      */
-    public function getLogin()
+    public function getConfiguration()
     {
-        return $this->configuration->getYandexLogin();
+        return $this->configuration;
     }
 
     /**

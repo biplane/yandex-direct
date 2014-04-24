@@ -52,8 +52,8 @@ class TotalLimitListener implements EventSubscriberInterface
     {
         return array(
             Events::BEFORE_REQUEST => 'acquireLock',
-            Events::AFTER_REQUEST => 'releaseLock',
-            Events::FAIL_REQUEST => 'releaseLock'
+            Events::AFTER_REQUEST  => 'releaseLock',
+            Events::FAIL_REQUEST   => 'releaseLock',
         );
     }
 
@@ -64,7 +64,7 @@ class TotalLimitListener implements EventSubscriberInterface
      */
     public function acquireLock(PreCallEvent $event)
     {
-        $this->getSemaphore($event->getYandexLogin())->acquire();
+        $this->getSemaphore($event->getConfiguration()->getHashCode())->acquire();
     }
 
     /**
@@ -74,7 +74,7 @@ class TotalLimitListener implements EventSubscriberInterface
      */
     public function releaseLock(PreCallEvent $event)
     {
-        $this->getSemaphore($event->getYandexLogin())->release();
+        $this->getSemaphore($event->getConfiguration()->getHashCode())->release();
     }
 
     /**

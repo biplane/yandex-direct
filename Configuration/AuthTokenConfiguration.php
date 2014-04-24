@@ -2,6 +2,8 @@
 
 namespace Biplane\YandexDirectBundle\Configuration;
 
+use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+
 /**
  * Provides implementation of {@link BaseConfiguration} for authorization by OAuth.
  *
@@ -9,34 +11,34 @@ namespace Biplane\YandexDirectBundle\Configuration;
  */
 class AuthTokenConfiguration extends BaseConfiguration
 {
-    private $token;
-
-    /**
-     * Constructor.
-     *
-     * @param string $yandexLogin The yandex login
-     * @param string $token       The access token
-     *
-     * @throws \InvalidArgumentException
-     */
-    public function __construct($yandexLogin, $token)
-    {
-        if (empty($token)) {
-            throw new \InvalidArgumentException('Token cannot be empty');
-        }
-
-        parent::__construct($yandexLogin);
-
-        $this->token = $token;
-    }
-
     /**
      * Gets the access token.
      *
      * @return string
      */
-    public function getToken()
+    public function getAccessToken()
     {
-        return $this->token;
+        return $this->options['access_token'];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getHashCode()
+    {
+        return md5($this->options['access_token']);
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function setDefaultOptions(OptionsResolverInterface $resolver)
+    {
+        parent::setDefaultOptions($resolver);
+
+        $resolver->setRequired(array('access_token'));
+        $resolver->setAllowedTypes(array(
+            'access_token' => 'string'
+        ));
     }
 }

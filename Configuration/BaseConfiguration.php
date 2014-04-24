@@ -2,8 +2,13 @@
 
 namespace Biplane\YandexDirectBundle\Configuration;
 
+use Symfony\Component\OptionsResolver\Exception\MissingOptionsException;
+use Symfony\Component\OptionsResolver\Options;
+use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+
 /**
- * Базовый объект конфигурации сервиса.
+ * Provides the base entity of configuration's profile.
  *
  * @author Denis Vasilev <yethee@biplane.ru>
  */
@@ -13,28 +18,22 @@ abstract class BaseConfiguration
     const LOCALE_EN = 'en';
     const LOCALE_UA = 'ua';
 
-    protected $locale;
-    protected $proxyHost;
-    protected $proxyPort;
-    protected $masterToken;
-    protected $yandexLogin;
+    protected $options;
+
+    public function __construct(array $options = array())
+    {
+        $resolver = new OptionsResolver();
+        $this->setDefaultOptions($resolver);
+
+        $this->options = $resolver->resolve($options);
+    }
 
     /**
-     * Constructor.
+     * Gets the hash code of this object.
      *
-     * @param string $yandexLogin The yandex login
-     *
-     * @throws \InvalidArgumentException
+     * @return string
      */
-    public function __construct($yandexLogin)
-    {
-        if (empty($yandexLogin)) {
-            throw new \InvalidArgumentException('Yandex login cannot be empty.');
-        }
-
-        $this->yandexLogin = (string)$yandexLogin;
-        $this->locale = self::LOCALE_EN;
-    }
+    abstract public function getHashCode();
 
     /**
      * Gets the yandex login.
@@ -43,7 +42,7 @@ abstract class BaseConfiguration
      */
     public function getYandexLogin()
     {
-        return $this->yandexLogin;
+        return $this->options['login'];
     }
 
     /**
@@ -53,70 +52,7 @@ abstract class BaseConfiguration
      */
     public function getLocale()
     {
-        return $this->locale;
-    }
-
-    /**
-     * Sets the locale.
-     *
-     * @param string $locale
-     *
-     * @throws \InvalidArgumentException
-     */
-    public function setLocale($locale)
-    {
-        switch ($locale) {
-            case self::LOCALE_EN:
-            case self::LOCALE_RU:
-            case self::LOCALE_UA:
-                $this->locale = $locale;
-                break;
-            default:
-                throw new \InvalidArgumentException(
-                    'Invalid locale. Case must be one of the following constants: LOCALE_RU, LOCALE_EN or LOCALE_UA.'
-                );
-        }
-    }
-
-    /**
-     * Gets the proxy host.
-     *
-     * @return string
-     */
-    public function getProxyHost()
-    {
-        return $this->proxyHost;
-    }
-
-    /**
-     * Gets the proxy port.
-     *
-     * @return int
-     */
-    public function getProxyPort()
-    {
-        return $this->proxyPort;
-    }
-
-    /**
-     * Sets the proxy host and port.
-     *
-     * @param string $host The host
-     * @param int    $port The port
-     *
-     * @throws \InvalidArgumentException
-     */
-    public function setProxy($host, $port)
-    {
-        if (!is_int($port)) {
-            throw new \InvalidArgumentException(sprintf(
-                'Proxy port should be the integer, given "%s" of type %s.',
-                $port, gettype($port)
-            ));
-        }
-
-        $this->proxyHost = $host;
-        $this->proxyPort = $port;
+        return $this->options['locale'];
     }
 
     /**
@@ -126,17 +62,7 @@ abstract class BaseConfiguration
      */
     public function getMasterToken()
     {
-        return $this->masterToken;
-    }
-
-    /**
-     * Sets the master token for financial operations.
-     *
-     * @param string $token
-     */
-    public function setMasterToken($token)
-    {
-        $this->masterToken = (string)$token ?: null;
+        return $this->options['master_token'];
     }
 
     /**
@@ -151,10 +77,43 @@ abstract class BaseConfiguration
      */
     public function createFinanceToken($methodName, $operationNum)
     {
-        if ($this->masterToken === null) {
-            throw new \LogicException('Cannot be created the finance token when the master token is empty.');
+        if (empty($this->options['master_token'])) {
+            throw new \LogicException('The finance token cannot be created when the master token is empty.');
         }
 
-        return hash('sha256', $this->masterToken . $operationNum . $methodName . $this->yandexLogin);
+        if (empty($this->options['login'])) {
+            throw new \LogicException('The finance token cannot be created when the login is empty.');
+        }
+
+        return hash('sha256', $this->options['master_token'] . $operationNum . $methodName . $this->options['login']);
+    }
+
+    /**
+     * Sets the default options.
+     *
+     * @param OptionsResolverInterface $resolver
+     */
+    protected function setDefaultOptions(OptionsResolverInterface $resolver)
+    {
+        $resolver->setDefaults(array(
+            'locale'       => self::LOCALE_EN,
+            'master_token' => null,
+            'login'        => function (Options $options, $value) {
+                if (!empty($options['master_token'])) {
+                    throw new MissingOptionsException('The required option "login" is missing.');
+                }
+
+                return $value;
+            }
+        ));
+
+        $resolver->setAllowedValues(array(
+            'locale' => array(self::LOCALE_EN, self::LOCALE_RU, self::LOCALE_UA),
+        ));
+
+        $resolver->setAllowedTypes(array(
+            'master_token' => array('null', 'string'),
+            'login'        => array('null', 'string'),
+        ));
     }
 }

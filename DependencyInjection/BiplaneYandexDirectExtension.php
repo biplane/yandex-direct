@@ -36,27 +36,19 @@ class BiplaneYandexDirectExtension extends ConfigurableExtension
                 $options['login'] = $name;
             }
 
-            // конфигурация для клиента
-            $profilesDefs[$name] = $configDef = new Definition();
-            $configDef
-                ->setPublic(false)
-                ->addMethodCall('setLocale', array($options['locale']));
-
-            if (!empty($options['master_token'])) {
-                $configDef->addMethodCall('setMasterToken', array($options['master_token']));
+            if (isset($options['cert_file'])) {
+                $configClass = 'Biplane\YandexDirectBundle\Configuration\CertificateConfiguration';
+            } elseif (isset($options['access_token'])) {
+                $configClass = 'Biplane\YandexDirectBundle\Configuration\AuthTokenConfiguration';
+            } else {
+                throw new \LogicException(sprintf(
+                    'Could not determine the class of config for profile "%s".',
+                    $name
+                ));
             }
 
-            if (isset($options['cert'])) {
-                $configDef
-                    ->setClass('Biplane\\YandexDirectBundle\\Configuration\\CertificateConfiguration')
-                    ->addArgument($options['login'])
-                    ->addArgument($options['cert']);
-            } else if (isset($options['token'])) {
-                $configDef
-                    ->setClass('Biplane\\YandexDirectBundle\\Configuration\\AuthTokenConfiguration')
-                    ->addArgument($options['login'])
-                    ->addArgument($options['token']);
-            }
+            $profilesDefs[$name] = $configDef = new Definition($configClass, $options);
+            $configDef->setPublic(false);
         }
 
         if (!empty($config['default_profile'])) {

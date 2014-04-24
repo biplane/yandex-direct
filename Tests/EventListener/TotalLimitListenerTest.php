@@ -65,19 +65,30 @@ class TotalLimitListenerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @param string $profile
+     * @param string $hash
      *
      * @return \PHPUnit_Framework_MockObject_MockObject
      */
-    private function getEventMock($profile)
+    private function getEventMock($hash)
     {
         $mock = $this->getMockBuilder('Biplane\YandexDirectBundle\Event\PreCallEvent')
             ->disableOriginalConstructor()
             ->getMock();
 
         $mock->expects($this->any())
-            ->method('getYandexLogin')
-            ->will($this->returnValue($profile));
+            ->method('getConfiguration')
+            ->will($this->returnValue($this->getConfigurationMock($hash)));
+
+        return $mock;
+    }
+
+    private function getConfigurationMock($hash = null)
+    {
+        $mock = $this->getMockForAbstractClass('Biplane\YandexDirectBundle\Configuration\BaseConfiguration');
+
+        $mock->expects($this->any())
+            ->method('getHashCode')
+            ->will($this->returnValue($hash));
 
         return $mock;
     }

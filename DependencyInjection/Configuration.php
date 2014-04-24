@@ -2,6 +2,7 @@
 
 namespace Biplane\YandexDirectBundle\DependencyInjection;
 
+use Biplane\YandexDirectBundle\Configuration\BaseConfiguration;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
@@ -37,27 +38,34 @@ class Configuration implements ConfigurationInterface
                     ->useAttributeAsKey('name')
                     ->prototype('array')
                         ->children()
-                            ->scalarNode('locale')
-                                ->defaultValue('ru')
-                                ->validate()
-                                    ->ifNotInArray(array('ru', 'en', 'ua'))
-                                    ->thenInvalid('The "%s" locale is not supported.')
-                                ->end()
+                            ->enumNode('locale')
+                                ->defaultValue(BaseConfiguration::LOCALE_RU)
+                                ->values(array(
+                                    BaseConfiguration::LOCALE_RU,
+                                    BaseConfiguration::LOCALE_EN,
+                                    BaseConfiguration::LOCALE_UA,
+                                ))
+                                ->info('The locale for localize message of errors.')
                             ->end()
-                            ->booleanNode('is_agency')->defaultFalse()->end()
-                            ->scalarNode('login')->
-                                info('The Yandex account name. If empty, will be used a profile name')
+                            ->scalarNode('login')
+                                ->info('The Yandex account name. If empty, will be used a profile name')
                             ->end()
-                            ->scalarNode('master_token')->end()
-                            ->scalarNode('cert')->info('Path to a sertificate file (*.pem)')->end()
-                            ->scalarNode('token')->info('The access token for OAuth authorization')->end()
+                            ->scalarNode('master_token')
+                                ->info('The master token needs for finance operations.')
+                            ->end()
+                            ->scalarNode('cert_file')
+                                ->info('Path to a sertificate file (*.pem)')
+                            ->end()
+                            ->scalarNode('access_token')
+                                ->info('The access token for OAuth authorization')
+                            ->end()
                         ->end()
                         ->validate()
-                            ->ifTrue(function($v) { return isset($v['cert']) && isset($v['token']); })
+                            ->ifTrue(function($v) { return isset($v['cert_file']) && isset($v['access_token']); })
                             ->thenInvalid('At the same time can not be specified the cert and the access token.')
                         ->end()
                         ->validate()
-                            ->ifTrue(function($v) { return !isset($v['cert']) && !isset($v['token']); })
+                            ->ifTrue(function($v) { return !isset($v['cert_file']) && !isset($v['access_token']); })
                             ->thenInvalid('The cert or the access token has to be specified.')
                         ->end()
                     ->end()

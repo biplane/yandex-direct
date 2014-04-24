@@ -34,13 +34,13 @@ class YandexApiServiceTest extends \PHPUnit_Framework_TestCase
      */
     public function testInvokeApiMethod($method, $params = array(), $success = true)
     {
-        $login = 'foo';
+        $config = $this->getConfigurationMock();
 
         $this->client->expects($this->any())
-            ->method('getLogin')
-            ->will($this->returnValue($login));
+            ->method('getConfiguration')
+            ->will($this->returnValue($config));
 
-        $preEvent = new PreCallEvent($this->service, ucfirst($method), $login);
+        $preEvent = new PreCallEvent($this->service, ucfirst($method), $config);
 
         $this->dispatcher->expects($this->at(0))
             ->method('dispatch')
@@ -49,11 +49,11 @@ class YandexApiServiceTest extends \PHPUnit_Framework_TestCase
         if ($success) {
             $stub = $this->returnValue($response = $this->createApiResult());
             $eventName = Events::AFTER_REQUEST;
-            $event = new PostCallEvent($this->service, ucfirst($method), $login, $response);
+            $event = new PostCallEvent($this->service, ucfirst($method), $config, $response);
         } else {
             $stub = $this->throwException($ex = new \RuntimeException());
             $eventName = Events::FAIL_REQUEST;
-            $event = new FailCallEvent($this->service, ucfirst($method), $login, $ex);
+            $event = new FailCallEvent($this->service, ucfirst($method), $config, $ex);
         }
 
         $this->dispatcher->expects($this->at(1))
@@ -141,5 +141,10 @@ class YandexApiServiceTest extends \PHPUnit_Framework_TestCase
     private function createApiResult()
     {
         return new \stdClass();
+    }
+
+    private function getConfigurationMock()
+    {
+        return $this->getMockForAbstractClass('Biplane\YandexDirectBundle\Configuration\BaseConfiguration');
     }
 }

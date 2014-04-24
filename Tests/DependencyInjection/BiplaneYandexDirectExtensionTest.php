@@ -30,13 +30,13 @@ class BiplaneYandexDirectExtensionTest extends \PHPUnit_Framework_TestCase
             'default_profile'    => 'foo',
             'profiles'           => array(
                 'foo' => array(
-                    'cert'         => 'path/to/local_cert',
+                    'cert_file'    => 'path/to/local_cert',
                     'locale'       => 'en',
                     'master_token' => 'MASTER-TOKEN',
                 ),
                 'bar' => array(
-                    'login' => 'yandex_login',
-                    'token' => 'ACCESS-TOKEN',
+                    'login'        => 'yandex_login',
+                    'access_token' => 'ACCESS-TOKEN',
                 )
             ),
             'limits'             => array(
@@ -66,13 +66,19 @@ class BiplaneYandexDirectExtensionTest extends \PHPUnit_Framework_TestCase
         $this->assertArrayHasKey('bar', $profiles);
 
         $this->assertDICDefinitionClass($profiles['foo'], 'Biplane\YandexDirectBundle\Configuration\CertificateConfiguration');
-        $this->assertDICConstructorArguments($profiles['foo'], array('foo', 'path/to/local_cert'));
-        $this->assertDICDefinitionMethodCallAt(0, $profiles['foo'], 'setLocale', array('en'));
-        $this->assertDICDefinitionMethodCallAt(1, $profiles['foo'], 'setMasterToken', array('MASTER-TOKEN'));
+        $this->assertDICConstructorArguments($profiles['foo'], array(
+            'login'        => 'foo',
+            'cert_file'    => 'path/to/local_cert',
+            'locale'       => 'en',
+            'master_token' => 'MASTER-TOKEN'
+        ));
 
         $this->assertDICDefinitionClass($profiles['bar'], 'Biplane\YandexDirectBundle\Configuration\AuthTokenConfiguration');
-        $this->assertDICConstructorArguments($profiles['bar'], array('yandex_login', 'ACCESS-TOKEN'));
-        $this->assertDICDefinitionMethodCallAt(0, $profiles['bar'], 'setLocale', array('ru'));
+        $this->assertDICConstructorArguments($profiles['bar'], array(
+            'login'        => 'yandex_login',
+            'access_token' => 'ACCESS-TOKEN',
+            'locale'       => 'ru',
+        ));
     }
 
     public function testEmptyConfigLoad()

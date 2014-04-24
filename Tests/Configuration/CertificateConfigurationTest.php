@@ -5,32 +5,37 @@ namespace Biplane\YandexDirectBundle\Tests\Configuration;
 use Biplane\YandexDirectBundle\Configuration\CertificateConfiguration;
 
 /**
- * CertificateConfigurationTest
- *
  * @author Alexey Popkov <a.popkov@biplane.ru>
  */
 class CertificateConfigurationTest extends \PHPUnit_Framework_TestCase
 {
-    private $certFile;
-
-    protected function setUp()
+    public function testCertFileShouldBeSet()
     {
-        $this->certFile = realpath(__DIR__ . '/Fixtures/cert.pem');
+        $config = new CertificateConfiguration(array(
+            'cert_file' => __FILE__,
+        ));
+
+        $this->assertEquals(__FILE__, $config->getHttpsCertificate());
+        $this->assertEmpty($config->getPassphrase());
+        $this->assertEquals(CertificateConfiguration::LOCALE_EN, $config->getLocale());
     }
 
-    public function testConstructorAndGetters()
+    /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testThrowExceptionWhenCertFileIsNotReadable()
     {
-        $configuration = new CertificateConfiguration('foo', $this->certFile, 'passphrase');
-
-        $this->assertEquals('foo', $configuration->getYandexLogin());
-        $this->assertEquals($this->certFile, $configuration->getHttpsCertificate());
-        $this->assertEquals('passphrase', $configuration->getPassphrase());
+        new CertificateConfiguration(array(
+            'cert_file' => 'bad_path_to_file',
+        ));
     }
 
-    public function testExceptionIsRaisedWhenInvalidLocalCert()
+    public function testHashCodeShouldBeGenerated()
     {
-        $this->setExpectedException('InvalidArgumentException');
+        $config = new CertificateConfiguration(array(
+            'cert_file' => __FILE__,
+        ));
 
-        new CertificateConfiguration('foo', '/invalid/path/to/file');
+        $this->assertEquals(md5(__FILE__), $config->getHashCode());
     }
 }
