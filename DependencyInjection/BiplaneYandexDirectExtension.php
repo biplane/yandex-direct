@@ -47,7 +47,7 @@ class BiplaneYandexDirectExtension extends ConfigurableExtension
                 ));
             }
 
-            $profilesDefs[$name] = $configDef = new Definition($configClass, $options);
+            $profilesDefs[$name] = $configDef = new Definition($configClass, array($options));
             $configDef->setPublic(false);
         }
 

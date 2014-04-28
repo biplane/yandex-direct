@@ -67,17 +67,21 @@ class BiplaneYandexDirectExtensionTest extends \PHPUnit_Framework_TestCase
 
         $this->assertDICDefinitionClass($profiles['foo'], 'Biplane\YandexDirectBundle\Configuration\CertificateConfiguration');
         $this->assertDICConstructorArguments($profiles['foo'], array(
-            'login'        => 'foo',
-            'cert_file'    => 'path/to/local_cert',
-            'locale'       => 'en',
-            'master_token' => 'MASTER-TOKEN'
+            0 => array(
+                'login'        => 'foo',
+                'cert_file'    => 'path/to/local_cert',
+                'locale'       => 'en',
+                'master_token' => 'MASTER-TOKEN'
+            )
         ));
 
         $this->assertDICDefinitionClass($profiles['bar'], 'Biplane\YandexDirectBundle\Configuration\AuthTokenConfiguration');
         $this->assertDICConstructorArguments($profiles['bar'], array(
-            'login'        => 'yandex_login',
-            'access_token' => 'ACCESS-TOKEN',
-            'locale'       => 'ru',
+            0 => array(
+                'login'        => 'yandex_login',
+                'access_token' => 'ACCESS-TOKEN',
+                'locale'       => 'ru',
+            )
         ));
     }
 
