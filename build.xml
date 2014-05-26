@@ -137,7 +137,7 @@
     </target>
 
     <target name="sami" description="Generate API documentation using Sami">
-        <exec executable="sami">
+        <exec executable="sami.php">
             <arg value="update" />
             <arg path="${basedir}/sami.php" />
         </exec>
