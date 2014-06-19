@@ -122,6 +122,11 @@ class ApiException extends \RuntimeException
     const INVALID_AUTOBROKER_STATE = 243;
 
     /**
+     * Неверный логин пользователя.
+     */
+    const LOGIN_INVALID = 251;
+
+    /**
      * Логин используется на Яндексе другим пользователем.
      */
     const LOGIN_DUPLICATE = 252;
