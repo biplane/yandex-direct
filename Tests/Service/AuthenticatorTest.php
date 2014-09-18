@@ -4,6 +4,7 @@ namespace Biplane\YandexDirectBundle\Tests\Service;
 
 use Biplane\YandexDirectBundle\Service\Authenticator;
 use Buzz\Message\Form\FormRequest;
+use Buzz\Message\Request;
 use Buzz\Message\Response;
 
 /**
@@ -81,5 +82,31 @@ class AuthenticatorTest extends \PHPUnit_Framework_TestCase
             ),
             $token
         );
+    }
+
+    public function testUserInfoShouldBeFetched()
+    {
+        $client = $this->getMock('Buzz\Client\ClientInterface');
+        $authenticator = new Authenticator('Id', 's$cr4t', $client);
+
+        $request = new Request();
+        $request->fromUrl('https://login.yandex.ru/info?format=json');
+        $request->addHeader('Authorization: OAuth access_token');
+
+        $client->expects($this->once())
+            ->method('send')
+            ->with($this->equalTo($request))
+            ->will($this->returnCallback(function($request, Response $response) {
+                $response->addHeader('HTTP 200 OK');
+                $response->addHeader('Content-type: application/json');
+                $response->addHeader('Content-Length: 120');
+                $response->setContent('{"login":"vasya","default_email":"test@yandex.ru","id":"1000034426","emails":["test@yandex.ru","other-test@yandex.ru"]}');
+            }));
+
+        $userInfo = $authenticator->getUserInfo('access_token');
+
+        $this->assertNotNull($userInfo);
+        $this->assertSame('1000034426', $userInfo->getId());
+        $this->assertSame('vasya', $userInfo->getLogin());
     }
 }

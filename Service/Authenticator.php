@@ -3,9 +3,11 @@
 namespace Biplane\YandexDirectBundle\Service;
 
 use Biplane\YandexDirectBundle\Exception\AuthException;
+use Biplane\YandexDirectBundle\UserInfo;
 use Buzz\Client\ClientInterface;
 use Buzz\Client\Curl;
 use Buzz\Message\Form\FormRequest;
+use Buzz\Message\Request;
 use Buzz\Message\Response;
 
 /**
@@ -100,5 +102,77 @@ class Authenticator
             'Could not authenticate. Reason: ' . $response->getContent(),
             $response->getStatusCode()
         );
+    }
+
+    /**
+     * Gets an info of user by the access token.
+     *
+     * @param string $token The access token
+     *
+     * @return UserInfo
+     *
+     * @throws AuthException
+     */
+    public function getUserInfo($token)
+    {
+        if (empty($token)) {
+            throw new \InvalidArgumentException('The access token cannot be empty.');
+        }
+
+        $request = new Request();
+        $response = new Response();
+
+        $request->setHost('https://login.yandex.ru');
+        $request->setResource('/info?format=json');
+        $request->addHeader('Authorization: OAuth ' .$token);
+
+        $this->client->send($request, $response);
+
+        if ($response->getStatusCode() === 200) {
+            return new UserInfo($this->jsonDecode($response->getContent()));
+        }
+
+        throw new AuthException(
+            'Could not fetch user info. Reason: ' . $response->getContent(),
+            $response->getStatusCode()
+        );
+    }
+
+    /**
+     * Decodes a JSON string.
+     *
+     * @param string $string The json string being decoded
+     *
+     * @return array
+     */
+    private function jsonDecode($string)
+    {
+        $decoded = json_decode($string, true);
+
+        if (JSON_ERROR_NONE === $errNumber = json_last_error()) {
+            return $decoded;
+        }
+
+        switch ($errNumber) {
+            case JSON_ERROR_DEPTH:
+                $message = 'Could not decode JSON, maximum stack depth exceeded.';
+                break;
+            case JSON_ERROR_STATE_MISMATCH:
+                $message = 'Could not decode JSON, underflow or the nodes mismatch.';
+                break;
+            case JSON_ERROR_CTRL_CHAR:
+                $message = 'Could not decode JSON, unexpected control character found.';
+                break;
+            case JSON_ERROR_SYNTAX:
+                $message = 'Could not decode JSON, syntax error - malformed JSON.';
+                break;
+            case JSON_ERROR_UTF8:
+                $message = 'Could not decode JSON, malformed UTF-8 characters (incorrectly encoded?)';
+                break;
+            default:
+                $message = 'Could not decode JSON.';
+        }
+
+        throw new \RuntimeException($message, $errNumber);
     }
 }
