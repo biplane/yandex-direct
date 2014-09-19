@@ -42,6 +42,11 @@ class ApiException extends \RuntimeException
     const INVALID_CAMPAIGN_TYPE = 29;
 
     /**
+     * Аутентификация временно недоступна.
+     */
+    const AUTHENTICATION_TEMPORARILY_UNAVAILABLE = 52;
+
+    /**
      * Ошибка авторизации.
      */
     const AUTHORIZATION_ERROR = 53;
@@ -137,6 +142,11 @@ class ApiException extends \RuntimeException
     const LOGIN_CREATING_ERROR = 253;
 
     /**
+     * Клиент не существует.
+     */
+    const CLIENT_NOT_EXIST = 259;
+
+    /**
      * Неверный токен для финансовых операций.
      */
     const INVALID_FINANCE_TOKEN = 350;
@@ -157,6 +167,11 @@ class ApiException extends \RuntimeException
     const BAD_REQUEST = 501;
 
     /**
+     * Сервис временно недоступен.
+     */
+    const TEMPORARILY_UNAVAILABLE = 503;
+
+    /**
      * Превышен лимит одновременных запросов.
      */
     const EXCEEDED_LIMIT_CONCURRENT_REQUESTS = 506;
@@ -165,6 +180,11 @@ class ApiException extends \RuntimeException
      * Доступ заблокирован.
      */
     const ACCESS_DENIED = 510;
+
+    /**
+     * Ваш логин не подключен к Яндекс.Директу.
+     */
+    const LOGIN_NOT_CONNECTED_TO_DIRECT = 513;
 
     protected $client;
 
@@ -181,9 +201,12 @@ class ApiException extends \RuntimeException
      * @param ClientInterface $client    A ClientInterface instance
      */
     public function __construct(
-        $message, $code = 0, \Exception $previous = null, $apiMethod = null, ClientInterface $client = null
-    )
-    {
+        $message,
+        $code = 0,
+        \Exception $previous = null,
+        $apiMethod = null,
+        ClientInterface $client = null
+    ) {
         parent::__construct($message, (int)$code, $previous);
 
         $this->apiMethod = $apiMethod;
@@ -203,9 +226,13 @@ class ApiException extends \RuntimeException
      * @return ApiException
      */
     public static function create(
-        ClientInterface $client, $apiMethod, $message, $code, $detailMessage = null, \Exception $previous = null
-    )
-    {
+        ClientInterface $client,
+        $apiMethod,
+        $message,
+        $code,
+        $detailMessage = null,
+        \Exception $previous = null
+    ) {
         if (!empty($detailMessage)) {
             $message .= "\nDetail: " . $detailMessage;
         }
