@@ -21,7 +21,7 @@ class UserInfoCommand extends ContainerAwareCommand
     protected function configure()
     {
         $this
-            ->setName('biplane:yandex_direct:user_info')
+            ->setName('biplane:yandex-direct:user-info')
             ->setDescription("Fetches user's info by the access token.")
             ->addArgument('token', InputArgument::REQUIRED, 'The access token.')
             ->setHelp(<<<EOF

@@ -2,13 +2,13 @@
 
 namespace Biplane\YandexDirectBundle\Command;
 
-use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
-use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Input\InputOption;
-use Symfony\Component\Console\Input\InputArgument;
-use Symfony\Component\Console\Output\OutputInterface;
 use Biplane\YandexDirectBundle\Contract;
 use Biplane\YandexDirectBundle\Proxy\YandexApiService;
+use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
+use Symfony\Component\Console\Input\InputArgument;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputOption;
+use Symfony\Component\Console\Output\OutputInterface;
 
 /**
  * ClearCommand
@@ -23,7 +23,7 @@ class ClearCommand extends ContainerAwareCommand
     protected function configure()
     {
         $this
-            ->setName('biplane:yandex_direct:clear')
+            ->setName('biplane:yandex-direct:clear')
             ->setDescription('Clears queue of reports or forecasts.')
             ->addArgument('type', InputArgument::REQUIRED, 'The queue type: report, wordstat or forecast')
             ->addOption('profile', null, InputOption::VALUE_OPTIONAL, 'The profile')

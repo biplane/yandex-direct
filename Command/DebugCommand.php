@@ -2,13 +2,13 @@
 
 namespace Biplane\YandexDirectBundle\Command;
 
-use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
-use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Input\InputOption;
-use Symfony\Component\Console\Input\InputArgument;
-use Symfony\Component\Console\Output\OutputInterface;
 use Biplane\YandexDirectBundle\Contract;
 use Biplane\YandexDirectBundle\Proxy\YandexApiService;
+use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
+use Symfony\Component\Console\Input\InputArgument;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Input\InputOption;
+use Symfony\Component\Console\Output\OutputInterface;
 
 /**
  * Provides helpers for debugging Yandex API.
@@ -23,7 +23,7 @@ class DebugCommand extends ContainerAwareCommand
     protected function configure()
     {
         $this
-            ->setName('biplane:yandex_direct:debug')
+            ->setName('biplane:yandex-direct:debug')
             ->setDescription('Dumps result of a method API to console')
             ->addArgument('action', InputArgument::REQUIRED, 'The action type')
             ->addOption('profile', null, InputOption::VALUE_OPTIONAL, 'The profile')
