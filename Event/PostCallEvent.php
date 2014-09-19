@@ -2,6 +2,7 @@
 
 namespace Biplane\YandexDirectBundle\Event;
 
+use Biplane\YandexDirectBundle\Configuration\BaseConfiguration;
 use Biplane\YandexDirectBundle\Proxy\YandexApiService;
 
 /**
@@ -16,14 +17,14 @@ class PostCallEvent extends PreCallEvent
     /**
      * Constructor.
      *
-     * @param YandexApiService $apiService  The yandex API service
-     * @param string           $methodName  An API method name
-     * @param string           $yandexLogin An account name
-     * @param mixed            $response    A response of API
+     * @param YandexApiService  $apiService The yandex API service
+     * @param string            $methodName An API method name
+     * @param BaseConfiguration $config     The configuration
+     * @param mixed             $response   A response of API
      */
-    public function __construct(YandexApiService $apiService, $methodName, $yandexLogin, $response)
+    public function __construct(YandexApiService $apiService, $methodName, BaseConfiguration $config, $response)
     {
-        parent::__construct($apiService, $methodName, $yandexLogin);
+        parent::__construct($apiService, $methodName, $config);
 
         $this->response = $response;
     }
