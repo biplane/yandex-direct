@@ -8,14 +8,20 @@ namespace Biplane\YandexDirectBundle\Contract;
  */
 class ClientRight
 {
+    const RIGHT_ALLOW_EDIT_CAMPAIGNS = 'AllowEditCampaigns';
+    const RIGHT_ALLOW_TRANSFER_MONEY = 'AllowTransferMoney';
+    const RIGHT_ALLOW_IMPORT_XLS     = 'AllowImportXLS';
+
     /**
      * @var string
      */
     protected $RightName;
+
     /**
      * @var string
      */
     protected $Value;
+
     /**
      * @var string
      */
