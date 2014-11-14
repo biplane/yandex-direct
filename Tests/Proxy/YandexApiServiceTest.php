@@ -46,6 +46,8 @@ class YandexApiServiceTest extends \PHPUnit_Framework_TestCase
             ->method('dispatch')
             ->with(Events::BEFORE_REQUEST, $preEvent);
 
+        $invokeParams = is_array($params) ? $params : array($params);
+
         if ($success) {
             $stub = $this->returnValue($response = $this->createApiResult());
             $eventName = Events::AFTER_REQUEST;
@@ -53,7 +55,7 @@ class YandexApiServiceTest extends \PHPUnit_Framework_TestCase
         } else {
             $stub = $this->throwException($ex = new \RuntimeException());
             $eventName = Events::FAIL_REQUEST;
-            $event = new FailCallEvent($this->service, ucfirst($method), $config, $ex);
+            $event = new FailCallEvent($this->service, ucfirst($method), $config, $invokeParams, $ex);
         }
 
         $this->dispatcher->expects($this->at(1))
@@ -62,7 +64,7 @@ class YandexApiServiceTest extends \PHPUnit_Framework_TestCase
 
         $this->client->expects($this->once())
             ->method('invoke')
-            ->with(ucfirst($method), is_array($params) ? $params : array($params))
+            ->with($this->equalTo(ucfirst($method)), $this->identicalTo($invokeParams))
             ->will($stub);
 
         try {

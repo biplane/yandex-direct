@@ -922,6 +922,7 @@ class YandexApiService
                 $this,
                 $method,
                 $this->client->getConfiguration(),
+                $params,
                 $ex
             ));
 
