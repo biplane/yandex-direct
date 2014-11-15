@@ -33,7 +33,7 @@ class FailCallEvent extends PreCallEvent
     ) {
         parent::__construct($apiService, $methodName, $config);
 
-        $this->methodParams = array();
+        $this->methodParams = $methodParams;
         $this->exception = $exception;
     }
 
