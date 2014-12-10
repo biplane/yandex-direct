@@ -3,9 +3,11 @@
 namespace Biplane\YandexDirectBundle\Service;
 
 use Biplane\YandexDirectBundle\Exception\AuthException;
+use Biplane\YandexDirectBundle\Exception\BuzzClientException;
 use Biplane\YandexDirectBundle\UserInfo;
 use Buzz\Client\ClientInterface;
 use Buzz\Client\Curl;
+use Buzz\Exception\ClientException;
 use Buzz\Message\Form\FormRequest;
 use Buzz\Message\Request;
 use Buzz\Message\Response;
@@ -79,6 +81,7 @@ class Authenticator
      * @return array The struct array('access_token' => string, 'expires_in' => integer)
      *
      * @throws AuthException
+     * @throws BuzzClientException
      */
     public function authenticate($code)
     {
@@ -92,7 +95,11 @@ class Authenticator
         $request->setField('client_id', $this->appId);
         $request->setField('client_secret', $this->appSecret);
 
-        $this->client->send($request, $response);
+        try {
+            $this->client->send($request, $response);
+        } catch (ClientException $ex) {
+            throw new BuzzClientException($ex, $request, $response);
+        }
 
         if ($response->getStatusCode() === 200) {
             return json_decode($response->getContent(), true);
@@ -112,6 +119,7 @@ class Authenticator
      * @return UserInfo
      *
      * @throws AuthException
+     * @throws BuzzClientException
      */
     public function getUserInfo($token)
     {
@@ -126,7 +134,11 @@ class Authenticator
         $request->setResource('/info?format=json');
         $request->addHeader('Authorization: OAuth ' .$token);
 
-        $this->client->send($request, $response);
+        try {
+            $this->client->send($request, $response);
+        } catch (ClientException $ex) {
+            throw new BuzzClientException($ex, $request, $response);
+        }
 
         if ($response->getStatusCode() === 200) {
             return new UserInfo($this->jsonDecode($response->getContent()));
