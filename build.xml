@@ -87,6 +87,8 @@
 
     <target name="phpcs" description="Find coding standard violations using PHP_CodeSniffer and print human readable output. Intended for usage on the command line before committing.">
         <exec executable="phpcs">
+            <arg value="--encoding=utf-8" />
+            <arg value="--extensions=php" />
             <arg value="--standard=${basedir}/phpcs.xml" />
             <arg value="--ignore=build,Contract,Resources,vendor" />
             <arg path="${basedir}" />
@@ -95,6 +97,8 @@
 
     <target name="phpcs-ci" description="Find coding standard violations using PHP_CodeSniffer creating a log file for the continuous integration server">
         <exec executable="phpcs" output="/dev/null">
+            <arg value="--encoding=utf-8" />
+            <arg value="--extensions=php" />
             <arg value="--report=checkstyle" />
             <arg value="--report-file=${basedir}/build/logs/checkstyle.xml" />
             <arg value="--standard=${basedir}/phpcs.xml" />
