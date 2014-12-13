@@ -90,7 +90,6 @@
             <arg value="--encoding=utf-8" />
             <arg value="--extensions=php" />
             <arg value="--standard=${basedir}/phpcs.xml" />
-            <arg value="--ignore=build,Contract,Resources,vendor" />
             <arg path="${basedir}" />
         </exec>
     </target>
@@ -102,7 +101,6 @@
             <arg value="--report=checkstyle" />
             <arg value="--report-file=${basedir}/build/logs/checkstyle.xml" />
             <arg value="--standard=${basedir}/phpcs.xml" />
-            <arg value="--ignore=build,Contract,Resources,vendor" />
             <arg path="${basedir}" />
         </exec>
     </target>
@@ -136,7 +134,11 @@
             <arg value="--output" />
             <arg path="${basedir}/build/code-browser" />
             <arg value="--ignore" />
-            <arg value="Tests,vendor,build" />
+            <arg value="Tests" />
+            <arg value="--ignore" />
+            <arg value="vendor" />
+            <arg value="--ignore" />
+            <arg value="build" />
         </exec>
     </target>
 
