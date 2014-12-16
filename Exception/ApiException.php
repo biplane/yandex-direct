@@ -67,6 +67,36 @@ class ApiException extends \RuntimeException
     const INCORRECT_PARAMETERS = 71;
 
     /**
+     * Неверный номер заявки на составление прогноза — параметр ForecastID.
+     */
+    const FORECAST_ID_INVALID = 72;
+
+    /**
+     * Прогноза бюджета с указанным идентификатором не создан.
+     */
+    const FORECAST_NOT_FOUND = 73;
+
+    /**
+     * Формирование прогноза бюджета не закончено.
+     */
+    const FORECAST_PENDING = 74;
+
+    /**
+     * Неверно задана фраза для расчета прогноза бюджета — параметр Phrases.
+     */
+    const FORECAST_PHRASE_INVALID = 76;
+
+    /**
+     * Неверно заданы регионы показа объявлений — параметр GeoID.
+     */
+    const FORECAST_GEO_INVALID = 77;
+
+    /**
+     * Отчет временно недоступен.
+     */
+    const FORECAST_NOT_AVAILABLE = 78;
+
+    /**
      * Неверно указаны параметры кампании.
      */
     const INVALID_CAMPAIGN_INFO = 111;
