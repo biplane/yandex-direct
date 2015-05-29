@@ -97,6 +97,10 @@ class BannerInfo
      */
     protected $ModerateRejectionReasons;
     /**
+     * @var string
+     */
+    protected $Type;
+    /**
      * @var int
      */
     protected $AdGroupID;
@@ -120,6 +124,10 @@ class BannerInfo
      * @var string
      */
     protected $StatusAdImageModerate;
+    /**
+     * @var int
+     */
+    protected $AdGroupMobileBidAdjustment;
 
     /**
      * Creates a new instance.
@@ -660,6 +668,30 @@ class BannerInfo
     }
 
     /**
+     * Gets the Type.
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->Type;
+    }
+
+    /**
+     * Sets the Type.
+     *
+     * @param string $Type
+     *
+     * @return BannerInfo
+     */
+    public function setType($Type)
+    {
+        $this->Type = $Type;
+
+        return $this;
+    }
+
+    /**
      * Gets the AdGroupID.
      *
      * @return int
@@ -799,6 +831,30 @@ class BannerInfo
     public function setStatusAdImageModerate($StatusAdImageModerate)
     {
         $this->StatusAdImageModerate = $StatusAdImageModerate;
+
+        return $this;
+    }
+
+    /**
+     * Gets the AdGroupMobileBidAdjustment.
+     *
+     * @return int
+     */
+    public function getAdGroupMobileBidAdjustment()
+    {
+        return $this->AdGroupMobileBidAdjustment;
+    }
+
+    /**
+     * Sets the AdGroupMobileBidAdjustment.
+     *
+     * @param int $AdGroupMobileBidAdjustment
+     *
+     * @return BannerInfo
+     */
+    public function setAdGroupMobileBidAdjustment($AdGroupMobileBidAdjustment)
+    {
+        $this->AdGroupMobileBidAdjustment = $AdGroupMobileBidAdjustment;
 
         return $this;
     }

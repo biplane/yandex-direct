@@ -55,6 +55,10 @@ class ClientInfo
     /**
      * @var string
      */
+    protected $DisplayStoreRating;
+    /**
+     * @var string
+     */
     protected $SmsPhone;
     /**
      * @var string[]
@@ -88,6 +92,10 @@ class ClientInfo
      * @var string[]
      */
     protected $ManagersLogins;
+    /**
+     * @var string
+     */
+    protected $SharedAccountEnabled;
 
     /**
      * Creates a new instance.
@@ -364,6 +372,30 @@ class ClientInfo
     }
 
     /**
+     * Gets the DisplayStoreRating.
+     *
+     * @return string
+     */
+    public function getDisplayStoreRating()
+    {
+        return $this->DisplayStoreRating;
+    }
+
+    /**
+     * Sets the DisplayStoreRating.
+     *
+     * @param string $DisplayStoreRating
+     *
+     * @return ClientInfo
+     */
+    public function setDisplayStoreRating($DisplayStoreRating)
+    {
+        $this->DisplayStoreRating = $DisplayStoreRating;
+
+        return $this;
+    }
+
+    /**
      * Gets the SmsPhone.
      *
      * @return string
@@ -575,6 +607,30 @@ class ClientInfo
     public function setManagersLogins(array $ManagersLogins)
     {
         $this->ManagersLogins = $ManagersLogins;
+
+        return $this;
+    }
+
+    /**
+     * Gets the SharedAccountEnabled.
+     *
+     * @return string
+     */
+    public function getSharedAccountEnabled()
+    {
+        return $this->SharedAccountEnabled;
+    }
+
+    /**
+     * Sets the SharedAccountEnabled.
+     *
+     * @param string $SharedAccountEnabled
+     *
+     * @return ClientInfo
+     */
+    public function setSharedAccountEnabled($SharedAccountEnabled)
+    {
+        $this->SharedAccountEnabled = $SharedAccountEnabled;
 
         return $this;
     }

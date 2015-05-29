@@ -22,8 +22,8 @@ class YandexApiService
     /**
      * Constructor.
      *
-     * @param EventDispatcherInterface $dispatcher  The event dispatcher
-     * @param Client\ClientInterface   $client      A ClientInterface implementation
+     * @param EventDispatcherInterface $dispatcher The event dispatcher
+     * @param Client\ClientInterface   $client     A ClientInterface implementation
      */
     public function __construct(EventDispatcherInterface $dispatcher, Client\ClientInterface $client)
     {
@@ -894,6 +894,20 @@ class YandexApiService
     public function AccountManagement(Contract\AccountManagementRequest $params)
     {
         return $this->invoke('AccountManagement', array($params));
+    }
+
+    /**
+     * Manages keywords.
+     *
+     * @param Contract\KeywordRequest $params
+     *
+     * @return Contract\KeywordResponse
+     *
+     * @since v4.live
+     */
+    public function keyword(Contract\KeywordRequest $params)
+    {
+        return $this->invoke('Keyword', array($params));
     }
 
     /**

@@ -72,6 +72,18 @@ class BannersStatItem
      * @var string
      */
     protected $StatType;
+    /**
+     * @var string
+     */
+    protected $DeviceType;
+    /**
+     * @var float
+     */
+    protected $ShowsAveragePosition;
+    /**
+     * @var float
+     */
+    protected $ClicksAveragePosition;
 
     /**
      * Creates a new instance.
@@ -463,6 +475,78 @@ class BannersStatItem
     public function setStatType($StatType)
     {
         $this->StatType = $StatType;
+
+        return $this;
+    }
+
+    /**
+     * Gets the DeviceType.
+     *
+     * @return string
+     */
+    public function getDeviceType()
+    {
+        return $this->DeviceType;
+    }
+
+    /**
+     * Sets the DeviceType.
+     *
+     * @param string $DeviceType
+     *
+     * @return BannersStatItem
+     */
+    public function setDeviceType($DeviceType)
+    {
+        $this->DeviceType = $DeviceType;
+
+        return $this;
+    }
+
+    /**
+     * Gets the ShowsAveragePosition.
+     *
+     * @return float
+     */
+    public function getShowsAveragePosition()
+    {
+        return $this->ShowsAveragePosition;
+    }
+
+    /**
+     * Sets the ShowsAveragePosition.
+     *
+     * @param float $ShowsAveragePosition
+     *
+     * @return BannersStatItem
+     */
+    public function setShowsAveragePosition($ShowsAveragePosition)
+    {
+        $this->ShowsAveragePosition = $ShowsAveragePosition;
+
+        return $this;
+    }
+
+    /**
+     * Gets the ClicksAveragePosition.
+     *
+     * @return float
+     */
+    public function getClicksAveragePosition()
+    {
+        return $this->ClicksAveragePosition;
+    }
+
+    /**
+     * Sets the ClicksAveragePosition.
+     *
+     * @param float $ClicksAveragePosition
+     *
+     * @return BannersStatItem
+     */
+    public function setClicksAveragePosition($ClicksAveragePosition)
+    {
+        $this->ClicksAveragePosition = $ClicksAveragePosition;
 
         return $this;
     }

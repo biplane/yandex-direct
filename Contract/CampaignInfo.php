@@ -77,6 +77,10 @@ class CampaignInfo
      */
     protected $AdditionalMetrikaCounters;
     /**
+     * @var int
+     */
+    protected $MobileBidAdjustment;
+    /**
      * @var string
      */
     protected $TradeType;
@@ -180,6 +184,22 @@ class CampaignInfo
      * @var int
      */
     protected $RelevantPhrasesBudgetLimit;
+    /**
+     * @var DayBudgetInfo
+     */
+    protected $DayBudget;
+    /**
+     * @var string
+     */
+    protected $DayBudgetEnabled;
+    /**
+     * @var string
+     */
+    protected $EnableRelatedKeywords;
+    /**
+     * @var string
+     */
+    protected $ExtendedAdTitleEnabled;
     /**
      * @var float
      */
@@ -599,6 +619,30 @@ class CampaignInfo
     public function setAdditionalMetrikaCounters(array $AdditionalMetrikaCounters)
     {
         $this->AdditionalMetrikaCounters = $AdditionalMetrikaCounters;
+
+        return $this;
+    }
+
+    /**
+     * Gets the MobileBidAdjustment.
+     *
+     * @return int
+     */
+    public function getMobileBidAdjustment()
+    {
+        return $this->MobileBidAdjustment;
+    }
+
+    /**
+     * Sets the MobileBidAdjustment.
+     *
+     * @param int $MobileBidAdjustment
+     *
+     * @return CampaignInfo
+     */
+    public function setMobileBidAdjustment($MobileBidAdjustment)
+    {
+        $this->MobileBidAdjustment = $MobileBidAdjustment;
 
         return $this;
     }
@@ -1223,6 +1267,102 @@ class CampaignInfo
     public function setRelevantPhrasesBudgetLimit($RelevantPhrasesBudgetLimit)
     {
         $this->RelevantPhrasesBudgetLimit = $RelevantPhrasesBudgetLimit;
+
+        return $this;
+    }
+
+    /**
+     * Gets the DayBudget.
+     *
+     * @return DayBudgetInfo
+     */
+    public function getDayBudget()
+    {
+        return $this->DayBudget;
+    }
+
+    /**
+     * Sets the DayBudget.
+     *
+     * @param DayBudgetInfo $DayBudget
+     *
+     * @return CampaignInfo
+     */
+    public function setDayBudget(DayBudgetInfo $DayBudget)
+    {
+        $this->DayBudget = $DayBudget;
+
+        return $this;
+    }
+
+    /**
+     * Gets the DayBudgetEnabled.
+     *
+     * @return string
+     */
+    public function getDayBudgetEnabled()
+    {
+        return $this->DayBudgetEnabled;
+    }
+
+    /**
+     * Sets the DayBudgetEnabled.
+     *
+     * @param string $DayBudgetEnabled
+     *
+     * @return CampaignInfo
+     */
+    public function setDayBudgetEnabled($DayBudgetEnabled)
+    {
+        $this->DayBudgetEnabled = $DayBudgetEnabled;
+
+        return $this;
+    }
+
+    /**
+     * Gets the EnableRelatedKeywords.
+     *
+     * @return string
+     */
+    public function getEnableRelatedKeywords()
+    {
+        return $this->EnableRelatedKeywords;
+    }
+
+    /**
+     * Sets the EnableRelatedKeywords.
+     *
+     * @param string $EnableRelatedKeywords
+     *
+     * @return CampaignInfo
+     */
+    public function setEnableRelatedKeywords($EnableRelatedKeywords)
+    {
+        $this->EnableRelatedKeywords = $EnableRelatedKeywords;
+
+        return $this;
+    }
+
+    /**
+     * Gets the ExtendedAdTitleEnabled.
+     *
+     * @return string
+     */
+    public function getExtendedAdTitleEnabled()
+    {
+        return $this->ExtendedAdTitleEnabled;
+    }
+
+    /**
+     * Sets the ExtendedAdTitleEnabled.
+     *
+     * @param string $ExtendedAdTitleEnabled
+     *
+     * @return CampaignInfo
+     */
+    public function setExtendedAdTitleEnabled($ExtendedAdTitleEnabled)
+    {
+        $this->ExtendedAdTitleEnabled = $ExtendedAdTitleEnabled;
 
         return $this;
     }

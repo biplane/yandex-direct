@@ -36,6 +36,14 @@ class GetEventsLogRequest
      * @var string
      */
     protected $Currency;
+    /**
+     * @var int
+     */
+    protected $Limit;
+    /**
+     * @var int
+     */
+    protected $Offset;
 
     /**
      * Creates a new instance.
@@ -211,6 +219,54 @@ class GetEventsLogRequest
     public function setCurrency($Currency)
     {
         $this->Currency = $Currency;
+
+        return $this;
+    }
+
+    /**
+     * Gets the Limit.
+     *
+     * @return int
+     */
+    public function getLimit()
+    {
+        return $this->Limit;
+    }
+
+    /**
+     * Sets the Limit.
+     *
+     * @param int $Limit
+     *
+     * @return GetEventsLogRequest
+     */
+    public function setLimit($Limit)
+    {
+        $this->Limit = $Limit;
+
+        return $this;
+    }
+
+    /**
+     * Gets the Offset.
+     *
+     * @return int
+     */
+    public function getOffset()
+    {
+        return $this->Offset;
+    }
+
+    /**
+     * Sets the Offset.
+     *
+     * @param int $Offset
+     *
+     * @return GetEventsLogRequest
+     */
+    public function setOffset($Offset)
+    {
+        $this->Offset = $Offset;
 
         return $this;
     }

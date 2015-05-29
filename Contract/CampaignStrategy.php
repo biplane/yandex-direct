@@ -36,6 +36,18 @@ class CampaignStrategy
      * @var int
      */
     protected $GoalID;
+    /**
+     * @var int
+     */
+    protected $ReserveReturn;
+    /**
+     * @var float
+     */
+    protected $ROICoef;
+    /**
+     * @var float
+     */
+    protected $Profitability;
 
     /**
      * Creates a new instance.
@@ -211,6 +223,78 @@ class CampaignStrategy
     public function setGoalID($GoalID)
     {
         $this->GoalID = $GoalID;
+
+        return $this;
+    }
+
+    /**
+     * Gets the ReserveReturn.
+     *
+     * @return int
+     */
+    public function getReserveReturn()
+    {
+        return $this->ReserveReturn;
+    }
+
+    /**
+     * Sets the ReserveReturn.
+     *
+     * @param int $ReserveReturn
+     *
+     * @return CampaignStrategy
+     */
+    public function setReserveReturn($ReserveReturn)
+    {
+        $this->ReserveReturn = $ReserveReturn;
+
+        return $this;
+    }
+
+    /**
+     * Gets the ROICoef.
+     *
+     * @return float
+     */
+    public function getROICoef()
+    {
+        return $this->ROICoef;
+    }
+
+    /**
+     * Sets the ROICoef.
+     *
+     * @param float $ROICoef
+     *
+     * @return CampaignStrategy
+     */
+    public function setROICoef($ROICoef)
+    {
+        $this->ROICoef = $ROICoef;
+
+        return $this;
+    }
+
+    /**
+     * Gets the Profitability.
+     *
+     * @return float
+     */
+    public function getProfitability()
+    {
+        return $this->Profitability;
+    }
+
+    /**
+     * Sets the Profitability.
+     *
+     * @param float $Profitability
+     *
+     * @return CampaignStrategy
+     */
+    public function setProfitability($Profitability)
+    {
+        $this->Profitability = $Profitability;
 
         return $this;
     }

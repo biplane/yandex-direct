@@ -19,6 +19,10 @@ class Retargeting
     /**
      * @var int
      */
+    protected $AdGroupID;
+    /**
+     * @var int
+     */
     protected $AdID;
     /**
      * @var int
@@ -95,6 +99,30 @@ class Retargeting
     public function setRetargetingID($RetargetingID)
     {
         $this->RetargetingID = $RetargetingID;
+
+        return $this;
+    }
+
+    /**
+     * Gets the AdGroupID.
+     *
+     * @return int
+     */
+    public function getAdGroupID()
+    {
+        return $this->AdGroupID;
+    }
+
+    /**
+     * Sets the AdGroupID.
+     *
+     * @param int $AdGroupID
+     *
+     * @return Retargeting
+     */
+    public function setAdGroupID($AdGroupID)
+    {
+        $this->AdGroupID = $AdGroupID;
 
         return $this;
     }

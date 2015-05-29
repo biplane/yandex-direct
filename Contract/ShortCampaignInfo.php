@@ -104,6 +104,14 @@ class ShortCampaignInfo
      * @var string
      */
     protected $DayBudgetEnabled;
+    /**
+     * @var string
+     */
+    protected $EnableRelatedKeywords;
+    /**
+     * @var string
+     */
+    protected $ExtendedAdTitleEnabled;
 
     /**
      * Creates a new instance.
@@ -687,6 +695,54 @@ class ShortCampaignInfo
     public function setDayBudgetEnabled($DayBudgetEnabled)
     {
         $this->DayBudgetEnabled = $DayBudgetEnabled;
+
+        return $this;
+    }
+
+    /**
+     * Gets the EnableRelatedKeywords.
+     *
+     * @return string
+     */
+    public function getEnableRelatedKeywords()
+    {
+        return $this->EnableRelatedKeywords;
+    }
+
+    /**
+     * Sets the EnableRelatedKeywords.
+     *
+     * @param string $EnableRelatedKeywords
+     *
+     * @return ShortCampaignInfo
+     */
+    public function setEnableRelatedKeywords($EnableRelatedKeywords)
+    {
+        $this->EnableRelatedKeywords = $EnableRelatedKeywords;
+
+        return $this;
+    }
+
+    /**
+     * Gets the ExtendedAdTitleEnabled.
+     *
+     * @return string
+     */
+    public function getExtendedAdTitleEnabled()
+    {
+        return $this->ExtendedAdTitleEnabled;
+    }
+
+    /**
+     * Sets the ExtendedAdTitleEnabled.
+     *
+     * @param string $ExtendedAdTitleEnabled
+     *
+     * @return ShortCampaignInfo
+     */
+    public function setExtendedAdTitleEnabled($ExtendedAdTitleEnabled)
+    {
+        $this->ExtendedAdTitleEnabled = $ExtendedAdTitleEnabled;
 
         return $this;
     }

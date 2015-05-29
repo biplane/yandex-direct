@@ -40,6 +40,10 @@ class NewReportFilterInfo
      * @var string
      */
     protected $WithImage;
+    /**
+     * @var string
+     */
+    protected $DeviceType;
 
     /**
      * Creates a new instance.
@@ -239,6 +243,30 @@ class NewReportFilterInfo
     public function setWithImage($WithImage)
     {
         $this->WithImage = $WithImage;
+
+        return $this;
+    }
+
+    /**
+     * Gets the DeviceType.
+     *
+     * @return string
+     */
+    public function getDeviceType()
+    {
+        return $this->DeviceType;
+    }
+
+    /**
+     * Sets the DeviceType.
+     *
+     * @param string $DeviceType
+     *
+     * @return NewReportFilterInfo
+     */
+    public function setDeviceType($DeviceType)
+    {
+        $this->DeviceType = $DeviceType;
 
         return $this;
     }
