@@ -137,6 +137,11 @@ class ApiException extends \RuntimeException
     const FORBIDDEN_CHANGE_ARCHIVED_ITEM = 156;
 
     /**
+     * Превышен лимит объявлений в кампании.
+     */
+    const CAMPAIGN_OVERFLOW_BANNERS = 157;
+
+    /**
      * Запрещено менять ContextPrice для активных на поиске фраз.
      */
     const FORBIDDEN_CHANGE_CONTEXT_PRICE = 191;
