@@ -1,21 +1,24 @@
 {
-  "name": "biplane/yandex-direct-bundle",
-  "type": "symfony-bundle",
+  "name": "biplane/yandex-direct",
+  "type": "library",
   "repositories": [{
     "type": "vcs",
     "url": "git@github.com:biplane/common.git"
   }],
   "require": {
     "php": ">=5.3.3",
-    "symfony/console": "~2.1",
-    "symfony/framework-bundle": "~2.2",
     "symfony/options-resolver": "~2.1",
-    "symfony/serializer": "~2.1",
     "kriswallsmith/buzz": "~0.12",
     "biplane/common": "dev-master"
   },
-  "autoload": {
-    "psr-0": { "Biplane\\YandexDirectBundle": "" }
+  "require-dev": {
+    "symfony/console": "~2.1",
+    "symfony/framework-bundle": "~2.2"
   },
-  "target-dir": "Biplane/YandexDirectBundle"
+  "autoload": {
+    "psr-4": { "Biplane\\": "src/" }
+  },
+  "autoload-dev": {
+    "psr-4": { "Biplane\\Tests\\": "tests/" }
+  }
 }

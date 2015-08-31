@@ -7,7 +7,7 @@ $iterator = Finder::create()
     ->files()
     ->name('*.php')
     ->in(__DIR__ . '/')
-    ->exclude(array('Tests', 'vendor'));
+    ->exclude(array('tests', 'vendor'));
 
 return new Sami($iterator, array(
     'theme'                => 'enhanced',
