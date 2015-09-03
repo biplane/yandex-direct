@@ -7,13 +7,13 @@ use Biplane\YandexDirect\Event\FailCallEvent;
 use Biplane\YandexDirect\Event\PostCallEvent;
 use Biplane\YandexDirect\Event\PreCallEvent;
 use Biplane\YandexDirect\Events;
-use Biplane\YandexDirect\Configuration;
+use Biplane\YandexDirect\User;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**
- * @version v4.live
+ * Provides proxy of API.
  *
- * @codeCoverageIgnore
+ * @version v4.live
  */
 class YandexApiService extends \SoapClient
 {
@@ -147,15 +147,15 @@ class YandexApiService extends \SoapClient
     );
 
     private $dispatcher;
-    private $config;
+    private $user;
 
     /**
      * Constructor.
      *
-     * @param EventDispatcherInterface $dispatcher    The event dispatcher
-     * @param Configuration            $configuration The configuration
+     * @param EventDispatcherInterface $dispatcher The event dispatcher
+     * @param User                     $user       The configuration
      */
-    public function __construct(EventDispatcherInterface $dispatcher, Configuration $configuration)
+    public function __construct(EventDispatcherInterface $dispatcher, User $user)
     {
         $options = array(
             'classmap'     => self::$classmap,
@@ -167,8 +167,8 @@ class YandexApiService extends \SoapClient
         );
 
         $headers = array(
-            new \SoapHeader(self::API_NS, 'locale', $configuration->getLocale()),
-            new \SoapHeader(self::API_NS, 'token', $configuration->getAccessToken())
+            new \SoapHeader(self::API_NS, 'locale', $user->getLocale()),
+            new \SoapHeader(self::API_NS, 'token', $user->getAccessToken())
         );
 
         parent::__construct(self::ENDPOINT, $options);
@@ -176,7 +176,7 @@ class YandexApiService extends \SoapClient
         $this->__setSoapHeaders($headers);
 
         $this->dispatcher = $dispatcher;
-        $this->config = $configuration;
+        $this->user = $user;
     }
 
     /**
@@ -1039,7 +1039,7 @@ class YandexApiService extends \SoapClient
      *
      * @since v4.live
      */
-    public function AccountManagement(Contract\AccountManagementRequest $params)
+    public function accountManagement(Contract\AccountManagementRequest $params)
     {
         return $this->invoke('AccountManagement', array($params));
     }
@@ -1103,7 +1103,7 @@ class YandexApiService extends \SoapClient
     {
         $this->dispatcher->dispatch(
             Events::BEFORE_REQUEST,
-            new PreCallEvent($this, $method, $this->config)
+            new PreCallEvent($method, $this->user)
         );
 
         try {
@@ -1111,7 +1111,7 @@ class YandexApiService extends \SoapClient
 
             if ($isFinancialMethod) {
                 $operationNum = time();
-                $financeToken = $this->config->createFinanceToken($method, $operationNum);
+                $financeToken = $this->user->createFinanceToken($method, $operationNum);
 
                 $headers[] = new \SoapHeader(self::API_NS, 'finance_token', $financeToken);
                 $headers[] = new \SoapHeader(self::API_NS, 'operation_num', $operationNum);
@@ -1125,7 +1125,7 @@ class YandexApiService extends \SoapClient
 
             $this->dispatcher->dispatch(
                 Events::FAIL_REQUEST,
-                new FailCallEvent($this, $method, $this->config, $params, $ex)
+                new FailCallEvent($method, $this->user, $params, $ex)
             );
 
             throw $ex;
@@ -1133,7 +1133,7 @@ class YandexApiService extends \SoapClient
 
         $this->dispatcher->dispatch(
             Events::AFTER_REQUEST,
-            new PostCallEvent($this, $method, $this->config, $response)
+            new PostCallEvent($method, $this->user, $response)
         );
 
         return $response;

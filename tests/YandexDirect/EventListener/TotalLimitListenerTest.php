@@ -76,15 +76,15 @@ class TotalLimitListenerTest extends \PHPUnit_Framework_TestCase
             ->getMock();
 
         $mock->expects($this->any())
-            ->method('getConfiguration')
-            ->willReturn($this->getConfigurationMock($hash));
+            ->method('getUser')
+            ->willReturn($this->getUserMock($hash));
 
         return $mock;
     }
 
-    private function getConfigurationMock($hash = null)
+    private function getUserMock($hash = null)
     {
-        $mock = $this->getMockBuilder('Biplane\YandexDirect\Configuration')
+        $mock = $this->getMockBuilder('Biplane\YandexDirect\User')
             ->disableOriginalConstructor()
             ->getMock();
 

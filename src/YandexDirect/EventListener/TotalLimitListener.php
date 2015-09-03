@@ -64,7 +64,7 @@ class TotalLimitListener implements EventSubscriberInterface
      */
     public function acquireLock(PreCallEvent $event)
     {
-        $this->getSemaphore($event->getConfiguration()->getHashCode())->acquire();
+        $this->getSemaphore($event->getUser()->getHashCode())->acquire();
     }
 
     /**
@@ -74,7 +74,7 @@ class TotalLimitListener implements EventSubscriberInterface
      */
     public function releaseLock(PreCallEvent $event)
     {
-        $this->getSemaphore($event->getConfiguration()->getHashCode())->release();
+        $this->getSemaphore($event->getUser()->getHashCode())->release();
     }
 
     /**

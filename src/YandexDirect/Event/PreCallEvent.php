@@ -2,8 +2,7 @@
 
 namespace Biplane\YandexDirect\Event;
 
-use Biplane\YandexDirect\Api\V4\YandexApiService;
-use Biplane\YandexDirect\Configuration;
+use Biplane\YandexDirect\User;
 use Symfony\Component\EventDispatcher\Event;
 
 /**
@@ -14,31 +13,18 @@ use Symfony\Component\EventDispatcher\Event;
 class PreCallEvent extends Event
 {
     private $methodName;
-    private $proxy;
-    private $config;
+    private $user;
 
     /**
      * Constructor.
      *
-     * @param YandexApiService $proxy      The yandex API service
-     * @param string           $methodName An API method name
-     * @param Configuration    $config     The configuration
+     * @param string $methodName An API method name
+     * @param User   $user       The user
      */
-    public function __construct(YandexApiService $proxy, $methodName, Configuration $config)
+    public function __construct($methodName, User $user)
     {
-        $this->proxy = $proxy;
         $this->methodName = $methodName;
-        $this->config = $config;
-    }
-
-    /**
-     * Returns the yandex API service.
-     *
-     * @return YandexApiService
-     */
-    public function getProxy()
-    {
-        return $this->proxy;
+        $this->user = $user;
     }
 
     /**
@@ -52,12 +38,12 @@ class PreCallEvent extends Event
     }
 
     /**
-     * Gets the configuration.
+     * Gets the user.
      *
-     * @return Configuration
+     * @return User
      */
-    public function getConfiguration()
+    public function getUser()
     {
-        return $this->config;
+        return $this->user;
     }
 }

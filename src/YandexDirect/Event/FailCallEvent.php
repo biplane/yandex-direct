@@ -2,8 +2,7 @@
 
 namespace Biplane\YandexDirect\Event;
 
-use Biplane\YandexDirect\Api\V4\YandexApiService;
-use Biplane\YandexDirect\Configuration;
+use Biplane\YandexDirect\User;
 
 /**
  * FailCallEvent.
@@ -18,20 +17,14 @@ class FailCallEvent extends PreCallEvent
     /**
      * Constructor.
      *
-     * @param YandexApiService $proxy        The yandex API service
-     * @param string           $methodName   An API method name
-     * @param Configuration    $config       The configuration
-     * @param array            $methodParams An array of parameters for API method
-     * @param \Exception       $exception    The thrown exception
+     * @param string     $methodName   An API method name
+     * @param User       $user         The configuration
+     * @param array      $methodParams An array of parameters for API method
+     * @param \Exception $exception    The thrown exception
      */
-    public function __construct(
-        YandexApiService $proxy,
-        $methodName,
-        Configuration $config,
-        array $methodParams,
-        \Exception $exception
-    ) {
-        parent::__construct($proxy, $methodName, $config);
+    public function __construct($methodName, User $user, array $methodParams, \Exception $exception)
+    {
+        parent::__construct($methodName, $user);
 
         $this->methodParams = $methodParams;
         $this->exception = $exception;

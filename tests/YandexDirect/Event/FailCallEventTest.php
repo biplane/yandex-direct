@@ -11,16 +11,14 @@ class FailCallEventTest extends TestCase
 {
     public function testConstructorAndGetters()
     {
-        $api = $this->getApiMock();
-        $config = $this->getConfigurationMock();
+        $user = $this->getUserMock();
         $methodName = 'Foo';
         $methodParams = array('FooParam');
         $exception = new \Exception();
 
-        $event = new FailCallEvent($api, $methodName, $config, $methodParams, $exception);
+        $event = new FailCallEvent($methodName, $user, $methodParams, $exception);
 
-        $this->assertSame($api, $event->getProxy());
-        $this->assertSame($config, $event->getConfiguration());
+        $this->assertSame($user, $event->getUser());
         $this->assertSame($methodName, $event->getMethodName());
         $this->assertSame($methodParams, $event->getMethodParams());
         $this->assertSame($exception, $event->getException());

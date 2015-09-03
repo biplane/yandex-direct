@@ -2,19 +2,19 @@
 
 namespace Biplane\Tests\YandexDirect;
 
-use Biplane\YandexDirect\Configuration;
+use Biplane\YandexDirect\User;
 
 /**
  * @author Denis Vasilev <yethee@auto-pilot.pro>
  */
-class ConfigurationTest extends \PHPUnit_Framework_TestCase
+class UserTest extends \PHPUnit_Framework_TestCase
 {
     public function getLocales()
     {
         return array(
-            array(Configuration::LOCALE_EN),
-            array(Configuration::LOCALE_RU),
-            array(Configuration::LOCALE_UA)
+            array(User::LOCALE_EN),
+            array(User::LOCALE_RU),
+            array(User::LOCALE_UA)
         );
     }
 
@@ -24,7 +24,7 @@ class ConfigurationTest extends \PHPUnit_Framework_TestCase
     public function testLocaleShouldBeSet($locale)
     {
 
-        $config = new Configuration(array(
+        $config = new User(array(
             'locale' => $locale,
             'access_token' => 'foo',
         ));
@@ -34,7 +34,7 @@ class ConfigurationTest extends \PHPUnit_Framework_TestCase
 
     public function testLoginShouldBeNormalized()
     {
-        $config = new Configuration(array(
+        $config = new User(array(
             'login' => 'p.g.Ivanov',
             'access_token' => 'foo',
         ));
@@ -47,7 +47,7 @@ class ConfigurationTest extends \PHPUnit_Framework_TestCase
      */
     public function testThrowExceptionWhenSetMasterTokenAndLoginIsMissing()
     {
-        new Configuration(array(
+        new User(array(
             'access_token' => 'foo',
             'master_token' => 'bar',
         ));
@@ -55,7 +55,7 @@ class ConfigurationTest extends \PHPUnit_Framework_TestCase
 
     public function testMasterTokenShouldBeSet()
     {
-        $config = new Configuration(array(
+        $config = new User(array(
             'master_token' => 'foo',
             'login'        => 'bar',
             'access_token' => 'token'
@@ -67,7 +67,7 @@ class ConfigurationTest extends \PHPUnit_Framework_TestCase
 
     public function testFinanceTokenShouldBeCreated()
     {
-        $config = new Configuration(array(
+        $config = new User(array(
             'master_token' => 't0ken',
             'login'        => 'log1n',
             'access_token' => 'foo'
@@ -81,10 +81,28 @@ class ConfigurationTest extends \PHPUnit_Framework_TestCase
 
     public function testHashCodeShouldBeGenerated()
     {
-        $configuration = new Configuration(array(
+        $user = new User(array(
             'access_token' => 'foo'
         ));
 
-        $this->assertEquals('acbd18db4cc2f85cedef654fccc4a4d8', $configuration->getHashCode());
+        $this->assertEquals('acbd18db4cc2f85cedef654fccc4a4d8', $user->getHashCode());
+    }
+
+    public function testEventDispatcherShouldBeCreatedWhenNotGiven()
+    {
+        $user = new User(array(
+            'access_token' => 'foo'
+        ));
+
+        $this->assertInstanceOf('Symfony\Component\EventDispatcher\EventDispatcher', $user->getEventDispatcher());
+    }
+
+    public function testApiServiceShouldBeCreated()
+    {
+        $user = new User(array(
+            'access_token' => 'foo'
+        ));
+
+        $this->assertInstanceOf('Biplane\YandexDirect\Api\V4\YandexApiService', $user->getApiService());
     }
 }

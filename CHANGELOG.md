@@ -56,6 +56,10 @@
      **Стало**
 
             public static function createFromFault(\SoapFault $fault, YandexApiService $proxy, $methodName)
+            
+ * **[BC BREAK]** Классы конфигурации, `AuthTokenConfiguration` и `CertificateConfiguration`, упразднены.
+   Вместо этого добавлен класс `Biplane\YandexDirect\User`, через который можно получить экземпляр сервиса
+   для работы с API.
 
  * **[BC BREAK]** Изменилось пространство имен для у классов событий.
 
@@ -68,6 +72,12 @@
 
         Biplane\YandexDirect\Event\PreCallEvent
         Biplane\YandexDirect\Events
+        
+   * Удален метод `getApiService`. Доступ к сервису API можно получить через метод `getUser`
+
+        $event->getUser()->getApiService();
+        
+   * Метод `getConfiguration` переименован в `getUser`, который теперь возвращает объект `Biplane\YandexDirect\User`.
 
  * **[BC BREAK]** Изменилось пространство имен для `Authenticator`
 

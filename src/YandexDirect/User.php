@@ -2,35 +2,46 @@
 
 namespace Biplane\YandexDirect;
 
+use Biplane\YandexDirect\Api\V4\YandexApiService;
+use Symfony\Component\EventDispatcher\EventDispatcher;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\OptionsResolver\Options;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**
- * Provides configuration for API services.
+ * Provides profile for APIs.
  *
  * @author Denis Vasilev <yethee@biplane.ru>
  */
-class Configuration
+class User
 {
     const LOCALE_RU = 'ru';
     const LOCALE_EN = 'en';
     const LOCALE_UA = 'ua';
 
     private $options;
+    private $dispatcher;
+    private $api;
 
     /**
      * Constructor.
      *
-     * @param array $options The options
+     * @param array                         $options    The options
+     * @param EventDispatcherInterface|null $dispatcher The event dispatcher
      *
      * @throws \InvalidArgumentException
      */
-    public function __construct(array $options = array())
+    public function __construct(array $options = array(), EventDispatcherInterface $dispatcher = null)
     {
         $resolver = new OptionsResolver();
         $this->setDefaultOptions($resolver);
 
+        if ($dispatcher === null) {
+            $dispatcher = new EventDispatcher();
+        }
+
         $this->options = $resolver->resolve($options);
+        $this->dispatcher = $dispatcher;
 
         if (!empty($this->options['master_token']) && empty($this->options['login'])) {
             throw new \InvalidArgumentException('The login cannot be empty when the master token is set.');
@@ -45,6 +56,16 @@ class Configuration
     public function getHashCode()
     {
         return md5($this->options['access_token']);
+    }
+
+    /**
+     * Gets the event dispatcher.
+     *
+     * @return EventDispatcherInterface
+     */
+    public function getEventDispatcher()
+    {
+        return $this->dispatcher;
     }
 
     /**
@@ -85,6 +106,20 @@ class Configuration
     public function getMasterToken()
     {
         return $this->options['master_token'];
+    }
+
+    /**
+     * Gets the proxy for API of version 4 Live.
+     *
+     * @return YandexApiService
+     */
+    public function getApiService()
+    {
+        if ($this->api === null) {
+            $this->api = new YandexApiService($this->dispatcher, $this);
+        }
+
+        return $this->api;
     }
 
     /**
@@ -132,9 +167,9 @@ class Configuration
                 'login'        => array('null', 'string'),
                 'access_token' => array('string')
             ))
-            // Åñëè ëîãèí ïîëüçîâàòåëÿ ñîäåðæèò òî÷êè è ñèìâîëû âåðõíåãî ðåãèñòðà (çàãëàâíûå áóêâû),
-            // òî äëÿ ïîëó÷åíèÿ íîðìàëèçîâàííîãî ëîãèíà èõ ñëåäóåò çàìåíèòü, ñîîòâåòñòâåííî, äåôèñàìè
-            // è ñèìâîëàìè íèæíåãî ðåãèñòðà.
+            // Ð•ÑÐ»Ð¸ Ð»Ð¾Ð³Ð¸Ð½ Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»Ñ ÑÐ¾Ð´ÐµÑ€Ð¶Ð¸Ñ‚ Ñ‚Ð¾Ñ‡ÐºÐ¸ Ð¸ ÑÐ¸Ð¼Ð²Ð¾Ð»Ñ‹ Ð²ÐµÑ€Ñ…Ð½ÐµÐ³Ð¾ Ñ€ÐµÐ³Ð¸ÑÑ‚Ñ€Ð° (Ð·Ð°Ð³Ð»Ð°Ð²Ð½Ñ‹Ðµ Ð±ÑƒÐºÐ²Ñ‹),
+            // Ñ‚Ð¾ Ð´Ð»Ñ Ð¿Ð¾Ð»ÑƒÑ‡ÐµÐ½Ð¸Ñ Ð½Ð¾Ñ€Ð¼Ð°Ð»Ð¸Ð·Ð¾Ð²Ð°Ð½Ð½Ð¾Ð³Ð¾ Ð»Ð¾Ð³Ð¸Ð½Ð° Ð¸Ñ… ÑÐ»ÐµÐ´ÑƒÐµÑ‚ Ð·Ð°Ð¼ÐµÐ½Ð¸Ñ‚ÑŒ, ÑÐ¾Ð¾Ñ‚Ð²ÐµÑ‚ÑÑ‚Ð²ÐµÐ½Ð½Ð¾, Ð´ÐµÑ„Ð¸ÑÐ°Ð¼Ð¸
+            // Ð¸ ÑÐ¸Ð¼Ð²Ð¾Ð»Ð°Ð¼Ð¸ Ð½Ð¸Ð¶Ð½ÐµÐ³Ð¾ Ñ€ÐµÐ³Ð¸ÑÑ‚Ñ€Ð°.
             // http://api.yandex.ru/direct/doc/concepts/finance.xml#access
             ->setNormalizers(array(
                 'login' => function (Options $options, $value) {

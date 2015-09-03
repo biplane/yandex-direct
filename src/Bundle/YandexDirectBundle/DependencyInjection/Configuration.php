@@ -2,7 +2,7 @@
 
 namespace Biplane\Bundle\YandexDirectBundle\DependencyInjection;
 
-use Biplane\YandexDirect\Configuration as Profile;
+use Biplane\YandexDirect\User as Profile;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 

@@ -9,16 +9,9 @@ namespace Biplane\Tests\YandexDirect\Event;
  */
 class TestCase extends \PHPUnit_Framework_TestCase
 {
-    protected function getApiMock()
+    protected function getUserMock()
     {
-        return $this->getMockBuilder('Biplane\YandexDirect\Api\V4\YandexApiService')
-            ->disableOriginalConstructor()
-            ->getMock();
-    }
-
-    protected function getConfigurationMock()
-    {
-        return $this->getMockBuilder('Biplane\YandexDirect\Configuration')
+        return $this->getMockBuilder('Biplane\YandexDirect\User')
             ->disableOriginalConstructor()
             ->getMock();
     }
