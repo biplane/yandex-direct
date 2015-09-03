@@ -1,8 +1,8 @@
 <?php
 
-namespace Biplane\Tests\YandexDirect;
+namespace Biplane\Tests\YandexDirect\Auth;
 
-use Biplane\YandexDirect\Authenticator;
+use Biplane\YandexDirect\Auth\Authenticator;
 use Buzz\Message\Form\FormRequest;
 use Buzz\Message\Request;
 use Buzz\Message\Response;

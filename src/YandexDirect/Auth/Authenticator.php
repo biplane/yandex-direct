@@ -1,6 +1,6 @@
 <?php
 
-namespace Biplane\YandexDirect;
+namespace Biplane\YandexDirect\Auth;
 
 use Biplane\YandexDirect\Exception\AuthException;
 use Biplane\YandexDirect\Exception\NetworkException;

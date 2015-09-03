@@ -69,6 +69,16 @@
         Biplane\YandexDirect\Event\PreCallEvent
         Biplane\YandexDirect\Events
 
+ * **[BC BREAK]** Изменилось пространство имен для `Authenticator`
+
+   **Было**
+
+        Biplane\YandexDirectBundle\Authenticator
+
+   **Стало**
+
+        Biplane\YandexDirect\Auth\Authenticator
+
  * **[BC BREAK]** Удалена поддержка JSON.
  * Удалена зависимость от библиотеки `biplane/common`.
 
