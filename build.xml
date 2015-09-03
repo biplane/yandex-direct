@@ -1,26 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<project name="BiplaneYandexDirectBundle" default="build">
+<project name="BiplaneYandexDirect" default="build">
+    <property name="dir.build" value="${basedir}/build" />
+    <property name="dir.src" value="${basedir}/src" />
+
     <target name="build" depends="prepare,quality,sami" />
 
     <target name="clean" description="Cleanup build artifacts">
-        <delete dir="${basedir}/build/api" />
-        <delete dir="${basedir}/build/code-browser" />
-        <delete dir="${basedir}/build/coverage" />
-        <delete dir="${basedir}/build/logs" />
-        <delete dir="${basedir}/build/pdepend" />
-        <delete dir="${basedir}/app/logs" />
-        <delete dir="${basedir}/app/cache" />
+        <delete dir="${dir.build}/api" />
+        <delete dir="${dir.build}/code-browser" />
+        <delete dir="${dir.build}/coverage" />
+        <delete dir="${dir.build}/logs" />
+        <delete dir="${dir.build}/pdepend" />
     </target>
 
     <target name="prepare" description="Prepare for build">
-        <mkdir dir="${basedir}/build/api" />
-        <mkdir dir="${basedir}/build/code-browser" />
-        <mkdir dir="${basedir}/build/coverage" />
-        <mkdir dir="${basedir}/build/logs" />
-        <mkdir dir="${basedir}/build/pdepend" />
-        <mkdir dir="${basedir}/app/logs" />
-        <mkdir dir="${basedir}/app/cache" />
+        <mkdir dir="${dir.build}/api" />
+        <mkdir dir="${dir.build}/code-browser" />
+        <mkdir dir="${dir.build}/coverage" />
+        <mkdir dir="${dir.build}/logs" />
+        <mkdir dir="${dir.build}/pdepend" />
 
         <exec executable="composer" failonerror="true">
             <arg line="update -n" />
@@ -33,9 +32,8 @@
         <apply executable="php" failonerror="true">
             <arg value="-l" />
 
-            <fileset dir="${basedir}">
+            <fileset dir="${dir.src}">
                 <include name="**/*.php" />
-                <exclude name="**/vendor/**"/>
                 <modified />
             </fileset>
         </apply>
@@ -44,53 +42,28 @@
     <target name="phploc" description="Measure project size using PHPLOC">
         <exec executable="phploc">
             <arg value="--log-csv" />
-            <arg value="${basedir}/build/logs/phploc.csv" />
-            <arg value="--exclude" />
-            <arg value="vendor" />
-            <arg value="--exclude" />
-            <arg value="${basedir}/build" />
-            <arg path="${basedir}" />
+            <arg value="${dir.build}/logs/phploc.csv" />
+            <arg path="${dir.src}" />
         </exec>
     </target>
 
     <target name="pdepend" description="Calculate software metrics using PHP_Depend">
         <exec executable="pdepend">
-            <arg value="--jdepend-xml=${basedir}/build/logs/jdepend.xml" />
-            <arg value="--jdepend-chart=${basedir}/build/pdepend/dependencies.svg" />
-            <arg value="--overview-pyramid=${basedir}/build/pdepend/overview-pyramid.svg" />
-            <arg value="--ignore=${basedir}/Tests,${basedir}/vendor,${basedir}/build" />
-            <arg path="${basedir}" />
-        </exec>
-    </target>
-
-    <target name="phpmd" description="Perform project mess detection using PHPMD and print human readable output. Intended for usage on the command line before committing.">
-        <exec executable="phpmd">
-            <arg path="${basedir}" />
-            <arg value="text" />
-            <arg value="${basedir}/phpmd.xml" />
-            <arg value="--exclude" />
-            <arg value="${basedir}/Tests,${basedir}/vendor,${basedir}/build" />
+            <arg value="--jdepend-xml=${dir.build}/logs/jdepend.xml" />
+            <arg value="--jdepend-chart=${dir.build}/pdepend/dependencies.svg" />
+            <arg value="--overview-pyramid=${dir.build}/pdepend/overview-pyramid.svg" />
+            <arg value="--ignore=*/Api/V4/Contract,*Bundle/Tests" />
+            <arg path="${dir.src}" />
         </exec>
     </target>
 
     <target name="phpmd-ci" description="Perform project mess detection using PHPMD creating a log file for the continuous integration server">
         <exec executable="phpmd">
-            <arg path="${basedir}" />
+            <arg path="${dir.src}" />
             <arg value="xml" />
-            <arg value="${basedir}/phpmd.xml" />
+            <arg value="${dir.build}/phpmd.xml" />
             <arg value="--reportfile" />
-            <arg value="${basedir}/build/logs/pmd.xml" />
-            <arg value="--exclude" />
-            <arg value="${basedir}/Tests,${basedir}/vendor,${basedir}/build" />
-        </exec>
-    </target>
-
-    <target name="phpcs" description="Find coding standard violations using PHP_CodeSniffer and print human readable output. Intended for usage on the command line before committing.">
-        <exec executable="phpcs">
-            <arg value="--encoding=utf-8" />
-            <arg value="--extensions=php" />
-            <arg value="--standard=${basedir}/phpcs.xml" />
-            <arg path="${basedir}" />
+            <arg value="${dir.build}/logs/pmd.xml" />
         </exec>
     </target>
 
@@ -99,25 +72,21 @@
             <arg value="--encoding=utf-8" />
             <arg value="--extensions=php" />
             <arg value="--report=checkstyle" />
-            <arg value="--report-file=${basedir}/build/logs/checkstyle.xml" />
-            <arg value="--standard=${basedir}/phpcs.xml" />
-            <arg path="${basedir}" />
+            <arg value="--report-file=${dir.build}/logs/checkstyle.xml" />
+            <arg value="--standard=${dir.build}/phpcs.xml" />
+            <arg path="${dir.src}" />
         </exec>
     </target>
 
     <target name="phpcpd" description="Find duplicate code using PHPCPD">
         <exec executable="phpcpd">
             <arg value="--log-pmd" />
-            <arg value="${basedir}/build/logs/pmd-cpd.xml" />
+            <arg value="${dir.build}/logs/pmd-cpd.xml" />
             <arg value="--exclude" />
-            <arg value="vendor" />
+            <arg value="Bundle/YandexDirectBundle/Tests" />
             <arg value="--exclude" />
-            <arg value="Tests" />
-            <arg value="--exclude" />
-            <arg value="Contract" />
-            <arg value="--exclude" />
-            <arg value="build" />
-            <arg path="${basedir}" />
+            <arg value="YandexDirect/Api/V4/Contract" />
+            <arg path="${dir.src}" />
         </exec>
     </target>
 
@@ -128,24 +97,18 @@
     <target name="phpcb" description="Aggregate tool output with PHP_CodeBrowser">
         <exec executable="phpcb">
             <arg value="--log" />
-            <arg path="${basedir}/build/logs" />
+            <arg path="${dir.build}/logs" />
             <arg value="--source" />
-            <arg path="${basedir}" />
+            <arg path="${dir.src}" />
             <arg value="--output" />
-            <arg path="${basedir}/build/code-browser" />
-            <arg value="--ignore" />
-            <arg value="Tests" />
-            <arg value="--ignore" />
-            <arg value="vendor" />
-            <arg value="--ignore" />
-            <arg value="build" />
+            <arg path="${dir.build}/code-browser" />
         </exec>
     </target>
 
     <target name="sami" description="Generate API documentation using Sami">
         <exec executable="sami.php">
             <arg value="update" />
-            <arg path="${basedir}/sami.php" />
+            <arg path="${dir.build}/sami.php" />
         </exec>
     </target>
 </project>

@@ -2,11 +2,8 @@
 <ruleset name="Biplane">
  <description>Biplane's coding standard</description>
 
- <exclude-pattern>*/build/*</exclude-pattern>
  <exclude-pattern>*/Contract/*</exclude-pattern>
  <exclude-pattern>*/Resources/*</exclude-pattern>
- <exclude-pattern>*/Tests/*</exclude-pattern>
- <exclude-pattern>*/vendor/*</exclude-pattern>
 
  <rule ref="PSR2" />
 </ruleset>

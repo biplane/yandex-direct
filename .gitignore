@@ -1,3 +1,6 @@
-/build
+build/*
+!build/phpcs.xml
+!build/phpmd.xml
+!build/sami.php
 /vendor
 /composer.lock
