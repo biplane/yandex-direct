@@ -17,5 +17,10 @@
   "autoload": {
     "psr-0": { "Biplane\\YandexDirectBundle": "" }
   },
-  "target-dir": "Biplane/YandexDirectBundle"
+  "target-dir": "Biplane/YandexDirectBundle",
+  "extra": {
+    "branch-alias": {
+      "dev-master": "2.x-dev"
+    }
+  }
 }
