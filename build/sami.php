@@ -8,8 +8,9 @@ use Symfony\Component\Finder\Finder;
 $iterator = Finder::create()
     ->files()
     ->name('*.php')
-    ->in(__DIR__ . '/../src')
-    ->exclude('Resources');
+    ->exclude('Resources')
+    ->exclude('Tests')
+    ->in(__DIR__ . '/../src');
 
 return new Sami($iterator, array(
     'title'                => 'Yandex.Direct API',
