@@ -49,10 +49,10 @@ class TotalLimitListenerTest extends \PHPUnit_Framework_TestCase
 
     protected function setUp()
     {
-        $this->factory = $this->getMockBuilder('Biplane\SystemV\Factory')
+        $this->factory = $this->getMockBuilder('Biplane\SysV\Factory')
             ->disableOriginalConstructor()
             ->getMock();
-        $this->semaphore = $this->getMockBuilder('Biplane\SystemV\Semaphore')
+        $this->semaphore = $this->getMockBuilder('Biplane\SysV\Semaphore')
             ->disableOriginalConstructor()
             ->getMock();
 

@@ -19,7 +19,7 @@
             <argument type="service" id="biplane_yandex_direct.config.registry" />
         </service>
 
-        <service id="biplane_yandex_direct.ipc.factory" class="Biplane\SystemV\Factory" public="false">
+        <service id="biplane_yandex_direct.ipc.factory" class="Biplane\SysV\Factory" public="false">
             <argument>%kernel.cache_dir%/ipc</argument>
             <argument>10000000</argument>
         </service>

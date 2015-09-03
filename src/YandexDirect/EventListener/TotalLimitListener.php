@@ -3,8 +3,8 @@
 namespace Biplane\YandexDirect\EventListener;
 
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-use Biplane\SystemV\Factory;
-use Biplane\SystemV\Semaphore;
+use Biplane\SysV\Factory;
+use Biplane\SysV\Semaphore;
 use Biplane\YandexDirect\Events;
 use Biplane\YandexDirect\Event\PreCallEvent;
 

@@ -1,15 +1,10 @@
 {
   "name": "biplane/yandex-direct",
   "type": "library",
-  "repositories": [{
-    "type": "vcs",
-    "url": "git@github.com:biplane/common.git"
-  }],
   "require": {
     "php": ">=5.3.3",
     "symfony/options-resolver": "~2.1",
-    "kriswallsmith/buzz": "~0.12",
-    "biplane/common": "dev-master"
+    "kriswallsmith/buzz": "~0.12"
   },
   "require-dev": {
     "symfony/console": "~2.1",

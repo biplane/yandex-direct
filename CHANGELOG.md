@@ -70,6 +70,7 @@
         Biplane\YandexDirect\Events
 
  * **[BC BREAK]** Удалена поддержка JSON.
+ * Удалена зависимость от библиотеки `biplane/common`.
 
 ## 2.0.0 [commit logs](https://github.com/biplane/BiplaneYandexDirectBundle/compare/1.0.0...2.0.0)
 
