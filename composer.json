@@ -20,5 +20,10 @@
   },
   "autoload-dev": {
     "psr-4": { "Biplane\\Tests\\": "tests/" }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "3.0.x-dev"
+    }
   }
 }
