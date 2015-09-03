@@ -4,7 +4,7 @@
 
     <testsuites>
         <testsuite name="Bundle Suite">
-            <directory suffix="Test.php">src/Bundle/Tests</directory>
+            <directory suffix="Test.php">src/Bundle/YandexDirectBundle/Tests</directory>
         </testsuite>
         <testsuite name="Library Suite">
             <directory suffix="Test.php">tests</directory>
@@ -18,9 +18,7 @@
     </groups>
 
     <logging>
-        <log type="coverage-html" target="build/coverage" title="BiplaneYandexDirectBundle"
-             charset="UTF-8" yui="true" highlight="true"
-             lowUpperBound="35" highLowerBound="70" />
+        <log type="coverage-html" target="build/coverage" lowUpperBound="35" highLowerBound="70" />
         <log type="coverage-clover" target="build/logs/clover.xml" />
         <log type="junit" target="build/logs/junit.xml" logIncompleteSkipped="false" />
     </logging>
@@ -29,10 +27,11 @@
         <whitelist>
             <directory suffix=".php">src</directory>
         </whitelist>
-        <blacklist>
-            <directory>tests</directory>
-            <directory>vendor</directory>
-        </blacklist>
+        <exclude>
+            <directory>src/Bundle/*Bundle/Resources</directory>
+            <!-- Exclude auto-generated code from the coverage report. -->
+            <directory>src/YandexDirect/Api/*/Contract</directory>
+        </exclude>
     </filter>
 
     <php>
