@@ -8,8 +8,10 @@
     "kriswallsmith/buzz": "~0.12"
   },
   "require-dev": {
+    "php": ">=5.4",
     "symfony/console": "~2.1",
-    "symfony/framework-bundle": "~2.2"
+    "symfony/framework-bundle": "~2.2",
+    "lstrojny/phpunit-function-mocker": "^0.2.0"
   },
   "autoload": {
     "psr-4": { "Biplane\\": "src/" }

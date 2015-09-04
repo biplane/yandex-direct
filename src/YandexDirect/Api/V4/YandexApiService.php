@@ -1122,7 +1122,7 @@ class YandexApiService extends \SoapClient
             $response = $this->__soapCall($method, $params, array(), $headers);
         } catch (\Exception $ex) {
             if ($ex instanceof \SoapFault) {
-                $ex = ApiException::createFromFault($ex, $this, $method);
+                $ex = ApiException::createFromFault($ex, $method, $requestId);
             }
 
             $this->dispatcher->dispatch(

@@ -2,8 +2,6 @@
 
 namespace Biplane\YandexDirect\Api\V4\Exception;
 
-use Biplane\YandexDirect\Api\V4\YandexApiService;
-
 /**
  * ApiException
  *
@@ -221,20 +219,19 @@ class ApiException extends \RuntimeException
      */
     const LOGIN_NOT_CONNECTED_TO_DIRECT = 513;
 
-    protected $proxy;
-
     private $apiMethod;
     private $detailMessage;
+    private $requestId;
 
     /**
      * Constructor.
      *
-     * @param string           $methodName The method name of API
-     * @param string           $message    The message
-     * @param string           $detail     The additional message
-     * @param int              $code       The number of code exception
-     * @param \Exception|null  $previous   The previous exception
-     * @param YandexApiService $proxy      The proxy of API
+     * @param string          $methodName The method name of API
+     * @param string          $message    The message
+     * @param string          $detail     The additional message
+     * @param int             $code       The number of code exception
+     * @param \Exception|null $previous   The previous exception
+     * @param string          $requestId  The request identifier
      */
     public function __construct(
         $methodName,
@@ -242,28 +239,28 @@ class ApiException extends \RuntimeException
         $detail = null,
         $code = 0,
         \Exception $previous = null,
-        YandexApiService $proxy = null
+        $requestId = null
     ) {
         parent::__construct($message, (int)$code, $previous);
 
         $this->apiMethod = $methodName;
-        $this->proxy = $proxy;
         $this->detailMessage = $detail;
+        $this->requestId = $requestId;
     }
 
     /**
      * Creates a new instance of exception by SoapFault object.
      *
-     * @param \SoapFault       $fault      The fault
-     * @param YandexApiService $proxy      The proxy of API
-     * @param string           $methodName The method name of API
+     * @param \SoapFault $fault      The fault
+     * @param string     $methodName The method name of API
+     * @param string     $requestId  The request identifier
      *
      * @return self
      */
-    public static function createFromFault(\SoapFault $fault, YandexApiService $proxy, $methodName)
+    public static function createFromFault(\SoapFault $fault, $methodName, $requestId)
     {
         if (strtolower($fault->faultcode) === 'http') {
-            return new NetworkException($methodName, $fault->getMessage(), null, 0, $fault, $proxy);
+            return new NetworkException($methodName, $fault->getMessage(), null, 0, $fault, $requestId);
         }
 
         $code = 0;
@@ -275,10 +272,20 @@ class ApiException extends \RuntimeException
         }
 
         if (!empty($detail)) {
-            $message .= "\nDetail: " . $detail;
+            $message .= "\n" . $detail;
         }
 
-        return new self($methodName, $message, $detail, $code, $fault, $proxy);
+        return new self($methodName, $message, $detail, $code, $fault, $requestId);
+    }
+
+    /**
+     * Gets the request identifier.
+     *
+     * @return string|null
+     */
+    public function getRequestId()
+    {
+        return $this->requestId;
     }
 
     /**
@@ -289,34 +296,6 @@ class ApiException extends \RuntimeException
     public function getMethodName()
     {
         return $this->apiMethod;
-    }
-
-    /**
-     * Gets the request content with headers.
-     *
-     * @return string|null The raw request or null
-     */
-    public function getRequest()
-    {
-        if ($this->proxy !== null) {
-            return $this->proxy->getLastRequest();
-        }
-
-        return null;
-    }
-
-    /**
-     * Gets the response content with headers.
-     *
-     * @return string|null The raw response or null
-     */
-    public function getResponse()
-    {
-        if ($this->proxy !== null) {
-            return $this->proxy->getLastResponse();
-        }
-
-        return null;
     }
 
     /**

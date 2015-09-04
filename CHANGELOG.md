@@ -55,7 +55,11 @@
 
      **Стало**
 
-            public static function createFromFault(\SoapFault $fault, YandexApiService $proxy, $methodName)
+            public static function createFromFault(\SoapFault $fault, $methodName, $requestId)
+            
+   * У класса `ApiException` удалены методы `getRequest` и `getResponse`.
+   
+   * У класса `ApiException` добавлен метод `getRequestId`.
             
  * **[BC BREAK]** Классы конфигурации, `AuthTokenConfiguration` и `CertificateConfiguration`, упразднены.
    Вместо этого добавлен класс `Biplane\YandexDirect\User`, через который можно получить экземпляр сервиса
