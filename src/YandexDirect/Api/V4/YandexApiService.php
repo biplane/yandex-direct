@@ -1106,6 +1106,8 @@ class YandexApiService extends \SoapClient
             new PreCallEvent($method, $params, $this->user)
         );
 
+        $requestId = md5($this->user->getHashCode() . ':' . time());
+
         try {
             $headers = array();
 
@@ -1125,7 +1127,7 @@ class YandexApiService extends \SoapClient
 
             $this->dispatcher->dispatch(
                 Events::FAIL_REQUEST,
-                new FailCallEvent($method, $params, $this->user, $ex)
+                new FailCallEvent($method, $params, $this->user, $requestId, $ex)
             );
 
             throw $ex;
@@ -1133,7 +1135,7 @@ class YandexApiService extends \SoapClient
 
         $this->dispatcher->dispatch(
             Events::AFTER_REQUEST,
-            new PostCallEvent($method, $params, $this->user, $response)
+            new PostCallEvent($method, $params, $this->user, $requestId, $response)
         );
 
         return $response;

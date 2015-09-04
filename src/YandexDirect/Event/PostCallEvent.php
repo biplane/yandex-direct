@@ -9,7 +9,7 @@ use Biplane\YandexDirect\User;
  *
  * @author Ural Davletshin <u.davletshin@biplane.ru>
  */
-class PostCallEvent extends PreCallEvent
+class PostCallEvent extends BaseAfterCallEvent
 {
     private $response;
 
@@ -19,11 +19,14 @@ class PostCallEvent extends PreCallEvent
      * @param string $methodName The method name of API
      * @param array  $params     The params for method of API
      * @param User   $user       The user
+     * @param string $requestId  The request identifer
      * @param mixed  $response   A response of API
+     *
+     * @throws \InvalidArgumentException
      */
-    public function __construct($methodName, array $params, User $user, $response)
+    public function __construct($methodName, array $params, User $user, $requestId, $response)
     {
-        parent::__construct($methodName, $params, $user);
+        parent::__construct($methodName, $params, $user, $requestId);
 
         $this->response = $response;
     }
