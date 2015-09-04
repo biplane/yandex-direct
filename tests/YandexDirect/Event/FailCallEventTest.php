@@ -16,7 +16,7 @@ class FailCallEventTest extends TestCase
         $methodParams = array('FooParam');
         $exception = new \Exception();
 
-        $event = new FailCallEvent($methodName, $user, $methodParams, $exception);
+        $event = new FailCallEvent($methodName, $methodParams, $user, $exception);
 
         $this->assertSame($user, $event->getUser());
         $this->assertSame($methodName, $event->getMethodName());

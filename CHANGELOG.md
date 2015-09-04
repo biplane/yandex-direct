@@ -78,6 +78,9 @@
         $event->getUser()->getApiService();
         
    * Метод `getConfiguration` переименован в `getUser`, который теперь возвращает объект `Biplane\YandexDirect\User`.
+   
+   * Добавлен метод `getMethodParams`, возвращающий массив с параметрами, 
+     которые будут/были переданы при вызове метода API.
 
  * **[BC BREAK]** Изменилось пространство имен для `Authenticator`
 

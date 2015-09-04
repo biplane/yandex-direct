@@ -12,21 +12,19 @@ use Biplane\YandexDirect\User;
 class FailCallEvent extends PreCallEvent
 {
     private $exception;
-    private $methodParams;
 
     /**
      * Constructor.
      *
-     * @param string     $methodName   An API method name
-     * @param User       $user         The configuration
-     * @param array      $methodParams An array of parameters for API method
-     * @param \Exception $exception    The thrown exception
+     * @param string     $methodName The method name of API
+     * @param array      $params     The params for method of API
+     * @param User       $user       The configuration
+     * @param \Exception $exception  The thrown exception
      */
-    public function __construct($methodName, User $user, array $methodParams, \Exception $exception)
+    public function __construct($methodName, array $params, User $user, \Exception $exception)
     {
-        parent::__construct($methodName, $user);
+        parent::__construct($methodName, $params, $user);
 
-        $this->methodParams = $methodParams;
         $this->exception = $exception;
     }
 
@@ -38,15 +36,5 @@ class FailCallEvent extends PreCallEvent
     public function getException()
     {
         return $this->exception;
-    }
-
-    /**
-     * Gets an array of parameters for API method.
-     *
-     * @return array
-     */
-    public function getMethodParams()
-    {
-        return $this->methodParams;
     }
 }

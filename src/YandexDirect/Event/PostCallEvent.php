@@ -16,13 +16,14 @@ class PostCallEvent extends PreCallEvent
     /**
      * Constructor.
      *
-     * @param string $methodName An API method name
+     * @param string $methodName The method name of API
+     * @param array  $params     The params for method of API
      * @param User   $user       The user
      * @param mixed  $response   A response of API
      */
-    public function __construct($methodName, User $user, $response)
+    public function __construct($methodName, array $params, User $user, $response)
     {
-        parent::__construct($methodName, $user);
+        parent::__construct($methodName, $params, $user);
 
         $this->response = $response;
     }

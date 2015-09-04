@@ -11,14 +11,16 @@ class PostCallEventTest extends TestCase
 {
     public function testConstructorAndGetters()
     {
-        $config = $this->getUserMock();
+        $user = $this->getUserMock();
         $methodName = 'Foo';
         $responce = 'Any responce';
+        $params = array('foo' => 'bar');
 
-        $event = new PostCallEvent($methodName, $config, $responce);
+        $event = new PostCallEvent($methodName, $params, $user, $responce);
 
-        $this->assertSame($config, $event->getUser());
+        $this->assertSame($user, $event->getUser());
         $this->assertSame($methodName, $event->getMethodName());
         $this->assertSame($responce, $event->getResponse());
+        $this->assertSame($params, $event->getMethodParams());
     }
 }

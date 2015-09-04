@@ -1103,7 +1103,7 @@ class YandexApiService extends \SoapClient
     {
         $this->dispatcher->dispatch(
             Events::BEFORE_REQUEST,
-            new PreCallEvent($method, $this->user)
+            new PreCallEvent($method, $params, $this->user)
         );
 
         try {
@@ -1125,7 +1125,7 @@ class YandexApiService extends \SoapClient
 
             $this->dispatcher->dispatch(
                 Events::FAIL_REQUEST,
-                new FailCallEvent($method, $this->user, $params, $ex)
+                new FailCallEvent($method, $params, $this->user, $ex)
             );
 
             throw $ex;
@@ -1133,7 +1133,7 @@ class YandexApiService extends \SoapClient
 
         $this->dispatcher->dispatch(
             Events::AFTER_REQUEST,
-            new PostCallEvent($method, $this->user, $response)
+            new PostCallEvent($method, $params, $this->user, $response)
         );
 
         return $response;
