@@ -2,21 +2,21 @@
 
 namespace Biplane\Tests\YandexDirect\Api\V4;
 
-use Biplane\YandexDirect\Api\V4\YandexApiService;
+use Biplane\YandexDirect\Api\SoapClient;
 use Biplane\YandexDirect\Event\FailCallEvent;
 use Biplane\YandexDirect\Event\PostCallEvent;
 use Biplane\YandexDirect\Event\PreCallEvent;
 use Biplane\YandexDirect\Events;
 
 /**
- * @author Denis Vasilev <yethee@auto-pilot.pro>
+ * @author Denis Vasilev <yethee@biplane.ru>
  */
-class YandexApiServiceTest extends \PHPUnit_Framework_TestCase
+class SoapClientTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @var YandexApiService|\PHPUnit_Framework_MockObject_MockObject
+     * @var SoapClient|\PHPUnit_Framework_MockObject_MockObject
      */
-    private $proxy;
+    private $client;
 
     /**
      * @var \PHPUnit_Framework_MockObject_MockObject
@@ -30,7 +30,7 @@ class YandexApiServiceTest extends \PHPUnit_Framework_TestCase
 
     public function testInvokeApiMethodShouldBeCompletedSuccessfully()
     {
-        $php = \PHPUnit_Extension_FunctionMocker::start($this, 'Biplane\YandexDirect\Api\V4')
+        $php = \PHPUnit_Extension_FunctionMocker::start($this, 'Biplane\YandexDirect\Api')
             ->mockFunction('time')
             ->getMock();
 
@@ -42,10 +42,9 @@ class YandexApiServiceTest extends \PHPUnit_Framework_TestCase
             ->method('getHashCode')
             ->willReturn('foo');
 
+        $methodName = 'SomeMethod';
+        $methodParams = array(new \stdClass());
         $response = 'response';
-        $params = array(
-            $this->getMock('Biplane\YandexDirect\Api\V4\Contract\KeywordRequest')
-        );
 
         $this->dispatcher->expects($this->at(0))
             ->method('dispatch')
@@ -53,10 +52,10 @@ class YandexApiServiceTest extends \PHPUnit_Framework_TestCase
                 $this->equalTo(Events::BEFORE_REQUEST),
                 $this->isInstanceOf('Biplane\YandexDirect\Event\PreCallEvent')
             )
-            ->willReturnCallback(function ($eventName, PreCallEvent $eventArgs) use ($params) {
+            ->willReturnCallback(function ($eventName, PreCallEvent $eventArgs) use ($methodName, $methodParams) {
                 $this->assertSame($this->user, $eventArgs->getUser());
-                $this->assertEquals('Keyword', $eventArgs->getMethodName());
-                $this->assertSame($params, $eventArgs->getMethodParams());
+                $this->assertEquals($methodName, $eventArgs->getMethodName());
+                $this->assertSame($methodParams, $eventArgs->getMethodParams());
             });
 
         $this->dispatcher->expects($this->at(1))
@@ -65,25 +64,25 @@ class YandexApiServiceTest extends \PHPUnit_Framework_TestCase
                 $this->equalTo(Events::AFTER_REQUEST),
                 $this->isInstanceOf('Biplane\YandexDirect\Event\PostCallEvent')
             )
-            ->willReturnCallback(function ($eventName, PostCallEvent $eventArgs) use ($params, $response) {
+            ->willReturnCallback(function ($eventName, PostCallEvent $eventArgs) use ($methodName, $methodParams, $response) {
                 $this->assertSame($this->user, $eventArgs->getUser());
-                $this->assertEquals('Keyword', $eventArgs->getMethodName());
-                $this->assertSame($params, $eventArgs->getMethodParams());
+                $this->assertEquals($methodName, $eventArgs->getMethodName());
+                $this->assertSame($methodParams, $eventArgs->getMethodParams());
                 $this->assertEquals($response, $eventArgs->getResponse());
                 $this->assertEquals('0b31f8e10bb3f7a2c51be252ce5d1fda', $eventArgs->getRequestId());
             });
 
-        $this->proxy->expects($this->once())
+        $this->client->expects($this->once())
             ->method('__soapCall')
             ->with(
-                $this->equalTo('Keyword'),
-                $this->identicalTo($params),
+                $this->equalTo($methodName),
+                $this->identicalTo($methodParams),
                 $this->anything(),
                 $this->identicalTo(array())
             )
             ->willReturn($response);
 
-        $this->assertEquals($response, $this->proxy->keyword($params[0]));
+        $this->assertEquals($response, $this->doInvoke($methodName, $methodParams));
     }
 
     /**
@@ -95,8 +94,9 @@ class YandexApiServiceTest extends \PHPUnit_Framework_TestCase
             ->method('getHashCode')
             ->willReturn('foo');
 
-        $params = array(
-            $this->getMock('Biplane\YandexDirect\Api\V4\Contract\GetChangesRequest')
+        $methodName = 'AnyMethod';
+        $methodParams = array(
+            'foo' => 'bar'
         );
 
         $this->dispatcher->expects($this->at(0))
@@ -105,10 +105,10 @@ class YandexApiServiceTest extends \PHPUnit_Framework_TestCase
                 $this->equalTo(Events::BEFORE_REQUEST),
                 $this->isInstanceOf('Biplane\YandexDirect\Event\PreCallEvent')
             )
-            ->willReturnCallback(function ($eventName, PreCallEvent $eventArgs) use ($params) {
+            ->willReturnCallback(function ($eventName, PreCallEvent $eventArgs) use ($methodName, $methodParams) {
                 $this->assertSame($this->user, $eventArgs->getUser());
-                $this->assertEquals('GetChanges', $eventArgs->getMethodName());
-                $this->assertSame($params, $eventArgs->getMethodParams());
+                $this->assertEquals($methodName, $eventArgs->getMethodName());
+                $this->assertSame($methodParams, $eventArgs->getMethodParams());
             });
 
         $this->dispatcher->expects($this->at(1))
@@ -117,29 +117,32 @@ class YandexApiServiceTest extends \PHPUnit_Framework_TestCase
                 $this->equalTo(Events::FAIL_REQUEST),
                 $this->isInstanceOf('Biplane\YandexDirect\Event\FailCallEvent')
             )
-            ->willReturnCallback(function ($eventName, FailCallEvent $eventArgs) use ($params) {
+            ->willReturnCallback(function ($eventName, FailCallEvent $eventArgs) use ($methodName, $methodParams) {
                 $this->assertSame($this->user, $eventArgs->getUser());
-                $this->assertEquals('GetChanges', $eventArgs->getMethodName());
-                $this->assertSame($params, $eventArgs->getMethodParams());
+                $this->assertEquals($methodName, $eventArgs->getMethodName());
+                $this->assertSame($methodParams, $eventArgs->getMethodParams());
                 $this->assertInstanceOf('Biplane\YandexDirect\Api\V4\Exception\ApiException', $eventArgs->getException());
             });
 
-        $this->proxy->expects($this->once())
+        $this->client->expects($this->once())
             ->method('__soapCall')
             ->with(
-                $this->equalTo('GetChanges'),
-                $this->identicalTo($params),
+                $this->equalTo($methodName),
+                $this->identicalTo($methodParams),
                 $this->anything(),
                 $this->identicalTo(array())
             )
             ->willThrowException(new \SoapFault('SOAP:54', 'Some error.'));
 
-        $this->proxy->getChanges($params[0]);
+        $this->doInvoke($methodName, $methodParams);
     }
 
-    public function testAdditionalHeadersShouldBeAssignWhenInvokeFinancialMethod()
+    /**
+     * @dataProvider provideFinancialMethods
+     */
+    public function testAdditionalHeadersShouldBeAssignWhenInvokeFinancialMethod($methodName)
     {
-        $php = \PHPUnit_Extension_FunctionMocker::start($this, 'Biplane\YandexDirect\Api\V4')
+        $php = \PHPUnit_Extension_FunctionMocker::start($this, 'Biplane\YandexDirect\Api')
             ->mockFunction('time')
             ->getMock();
 
@@ -153,13 +156,13 @@ class YandexApiServiceTest extends \PHPUnit_Framework_TestCase
 
         $this->user->expects($this->once())
             ->method('createFinanceToken')
-            ->with($this->equalTo('GetCreditLimits'), $this->equalTo(10009))
+            ->with($this->equalTo($methodName), $this->equalTo(10009))
             ->willReturn('finance-token');
 
-        $this->proxy->expects($this->once())
+        $this->client->expects($this->once())
             ->method('__soapCall')
             ->with(
-                $this->equalTo('GetCreditLimits'),
+                $this->equalTo($methodName),
                 $this->identicalTo(array()),
                 $this->anything(),
                 $this->equalTo(array(
@@ -168,7 +171,17 @@ class YandexApiServiceTest extends \PHPUnit_Framework_TestCase
                 ))
             );
 
-        $this->proxy->getCreditLimits();
+        $this->doInvoke($methodName, array());
+    }
+
+    public function provideFinancialMethods()
+    {
+        return array(
+            array('TransferMoney'),
+            array('GetCreditLimits'),
+            array('CreateInvoice'),
+            array('PayCampaigns')
+        );
     }
 
     protected function setUp()
@@ -178,17 +191,29 @@ class YandexApiServiceTest extends \PHPUnit_Framework_TestCase
             ->disableOriginalConstructor()
             ->getMock();
 
-        $this->proxy = $this->getMock(
-            'Biplane\YandexDirect\Api\V4\YandexApiService',
-            array('__soapCall'),
-            array($this->dispatcher, $this->user)
+        $options = array(
+            'uri'      => 'localhost',
+            'location' => 'localhost',
         );
+
+        $this->client = $this->getMockBuilder('Biplane\YandexDirect\Api\SoapClient')
+            ->setConstructorArgs(array(null, $this->dispatcher, $this->user, $options))
+            ->setMethods(array('__soapCall'))
+            ->getMock();
     }
 
     protected function tearDown()
     {
         \PHPUnit_Extension_FunctionMocker::tearDown();
 
-        unset($this->dispatcher, $this->proxy, $this->user);
+        unset($this->dispatcher, $this->client, $this->user);
+    }
+
+    private function doInvoke($method, array $params, $isFinancialMethod = false)
+    {
+        $reflection = new \ReflectionMethod($this->client, 'invoke');
+        $reflection->setAccessible(true);
+
+        return $reflection->invoke($this->client, $method, $params, $isFinancialMethod);
     }
 }

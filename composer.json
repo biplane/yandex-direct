@@ -11,7 +11,9 @@
     "php": ">=5.4",
     "symfony/console": "~2.1",
     "symfony/framework-bundle": "~2.2",
-    "lstrojny/phpunit-function-mocker": "^0.2.0"
+    "lstrojny/phpunit-function-mocker": "^0.2.0",
+    "wsdl2phpgenerator/wsdl2phpgenerator": "^3.2",
+    "zendframework/zend-code": "^2.5"
   },
   "autoload": {
     "psr-4": { "Biplane\\": "src/" }
