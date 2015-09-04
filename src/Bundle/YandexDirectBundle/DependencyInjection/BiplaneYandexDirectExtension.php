@@ -72,10 +72,10 @@ class BiplaneYandexDirectExtension extends ConfigurableExtension
     {
         if (null !== $limit = $limits['max_connections']) {
             $container
-                ->getDefinition('biplane_yandex_direct.event_listener.total_limits')
+                ->getDefinition('biplane_yandex_direct.event_listener.concurrent')
                 ->replaceArgument(1, $limit);
         } else {
-            $container->removeDefinition('biplane_yandex_direct.event_listener.total_limits');
+            $container->removeDefinition('biplane_yandex_direct.event_listener.concurrent');
         }
     }
 }

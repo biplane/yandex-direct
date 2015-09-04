@@ -24,7 +24,7 @@
             <argument>10000000</argument>
         </service>
 
-        <service id="biplane_yandex_direct.event_listener.total_limits" class="Biplane\YandexDirectBundle\EventListener\TotalLimitListener">
+        <service id="biplane_yandex_direct.event_listener.concurrent" class="Biplane\YandexDirect\EventListener\ConcurrentListener">
             <argument type="service" id="biplane_yandex_direct.ipc.factory" />
             <argument />
 

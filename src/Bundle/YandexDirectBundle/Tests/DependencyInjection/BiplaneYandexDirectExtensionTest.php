@@ -56,7 +56,7 @@ class BiplaneYandexDirectExtensionTest extends \PHPUnit_Framework_TestCase
             array('foo')
         );
         $this->assertDICConstructorArguments(
-            $this->container->getDefinition('biplane_yandex_direct.event_listener.total_limits'),
+            $this->container->getDefinition('biplane_yandex_direct.event_listener.concurrent'),
             array(new Reference('biplane_yandex_direct.ipc.factory'), 7)
         );
 
@@ -89,10 +89,10 @@ class BiplaneYandexDirectExtensionTest extends \PHPUnit_Framework_TestCase
     {
         $this->load(array());
 
-        $this->assertTrue($this->container->hasDefinition('biplane_yandex_direct.event_listener.total_limits'));
+        $this->assertTrue($this->container->hasDefinition('biplane_yandex_direct.event_listener.concurrent'));
         $this->assertEquals(
             12,
-            $this->container->getDefinition('biplane_yandex_direct.event_listener.total_limits')->getArgument(1)
+            $this->container->getDefinition('biplane_yandex_direct.event_listener.concurrent')->getArgument(1)
         );
     }
 
@@ -104,7 +104,7 @@ class BiplaneYandexDirectExtensionTest extends \PHPUnit_Framework_TestCase
             )
         ));
 
-        $this->assertFalse($this->container->hasDefinition('biplane_yandex_direct.event_listener.total_limits'));
+        $this->assertFalse($this->container->hasDefinition('biplane_yandex_direct.event_listener.concurrent'));
     }
 
     protected function setUp()

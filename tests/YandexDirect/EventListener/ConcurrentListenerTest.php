@@ -2,15 +2,13 @@
 
 namespace Biplane\Tests\YandexDirect\EventListener;
 
-use Biplane\YandexDirect\EventListener\TotalLimitListener;
+use Biplane\YandexDirect\EventListener\ConcurrentListener;
 
 /**
  * @author Ural Davletshin <u.davletshin@biplane.ru>
  */
-class TotalLimitListenerTest extends \PHPUnit_Framework_TestCase
+class ConcurrentListenerTest extends \PHPUnit_Framework_TestCase
 {
-    const LIMIT = 10;
-
     /**
      * @var \PHPUnit_Framework_MockObject_MockObject
      */
@@ -22,22 +20,22 @@ class TotalLimitListenerTest extends \PHPUnit_Framework_TestCase
     private $semaphore;
 
     /**
-     * @var TotalLimitListener
+     * @var ConcurrentListener
      */
     private $listener;
 
     public function testAcquireAndReleaseLocking()
     {
-        $profile = 'my_profile';
-        $event = $this->getEventMock($profile);
+        $event = $this->getEventMock('profile_hash');
 
         $this->factory->expects($this->once())
             ->method('createSemaphore')
-            ->with(TotalLimitListener::SEMAPHORE_ID_PREFIX . $profile, self::LIMIT)
-            ->will($this->returnValue($this->semaphore));
+            ->with($this->equalTo('api_profile_hash'), $this->equalTo(10))
+            ->willReturn($this->semaphore);
 
         $this->semaphore->expects($this->exactly(2))
             ->method('acquire');
+
         $this->semaphore->expects($this->exactly(2))
             ->method('release');
 
@@ -56,12 +54,12 @@ class TotalLimitListenerTest extends \PHPUnit_Framework_TestCase
             ->disableOriginalConstructor()
             ->getMock();
 
-        $this->listener = new TotalLimitListener($this->factory, self::LIMIT);
+        $this->listener = new ConcurrentListener($this->factory, 10);
     }
 
     protected function tearDown()
     {
-        unset ($this->factory, $this->semaphore, $this->listener);
+        unset($this->factory, $this->semaphore, $this->listener);
     }
 
     /**
