@@ -30,7 +30,8 @@
         <exclude>
             <directory>src/Bundle/*Bundle/Resources</directory>
             <!-- Exclude auto-generated code from the coverage report. -->
-            <directory>src/YandexDirect/Api/*/Contract</directory>
+            <directory>src/YandexDirect/Api/V4</directory>
+            <directory>src/YandexDirect/Api/V5</directory>
         </exclude>
     </filter>
 

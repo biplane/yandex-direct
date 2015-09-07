@@ -2,7 +2,8 @@
 <ruleset name="Biplane">
  <description>Biplane's coding standard</description>
 
- <exclude-pattern>*/Contract/*</exclude-pattern>
+ <exclude-pattern>*/Api/V4/*</exclude-pattern>
+ <exclude-pattern>*/Api/V5/*</exclude-pattern>
  <exclude-pattern>*/Resources/*</exclude-pattern>
 
  <rule ref="PSR2" />

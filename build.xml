@@ -52,7 +52,7 @@
             <arg value="--jdepend-xml=${dir.build}/logs/jdepend.xml" />
             <arg value="--jdepend-chart=${dir.build}/pdepend/dependencies.svg" />
             <arg value="--overview-pyramid=${dir.build}/pdepend/overview-pyramid.svg" />
-            <arg value="--ignore=*/Api/V4/Contract,*Bundle/Tests" />
+            <arg value="--ignore=*/Api/V4,*/Api/V5,*Bundle/Tests" />
             <arg path="${dir.src}" />
         </exec>
     </target>
@@ -85,7 +85,9 @@
             <arg value="--exclude" />
             <arg value="Bundle/YandexDirectBundle/Tests" />
             <arg value="--exclude" />
-            <arg value="YandexDirect/Api/V4/Contract" />
+            <arg value="YandexDirect/Api/V4" />
+            <arg value="--exclude" />
+            <arg value="YandexDirect/Api/V5" />
             <arg path="${dir.src}" />
         </exec>
     </target>
