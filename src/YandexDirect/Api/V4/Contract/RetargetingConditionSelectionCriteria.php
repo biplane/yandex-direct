@@ -3,24 +3,19 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class RetargetingConditionSelectionCriteria
 {
-    /**
-     * @var int[]
-     */
-    protected $RetargetingConditionIDS;
-    /**
-     * @var string[]
-     */
-    protected $Logins;
+
+    protected $RetargetingConditionIDS = null;
+
+    protected $Logins = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of RetargetingConditionSelectionCriteria.
      *
-     * @return self
+     * @return RetargetingConditionSelectionCriteria
      */
     public static function create()
     {
@@ -28,9 +23,9 @@ class RetargetingConditionSelectionCriteria
     }
 
     /**
-     * Gets the RetargetingConditionIDS.
+     * Gets RetargetingConditionIDS.
      *
-     * @return int[]
+     * @return int[]|null
      */
     public function getRetargetingConditionIDS()
     {
@@ -38,23 +33,22 @@ class RetargetingConditionSelectionCriteria
     }
 
     /**
-     * Sets the RetargetingConditionIDS.
+     * Sets RetargetingConditionIDS.
      *
-     * @param int[] $RetargetingConditionIDS
-     *
-     * @return RetargetingConditionSelectionCriteria
+     * @param array|null $value
+     * @return $this
      */
-    public function setRetargetingConditionIDS(array $RetargetingConditionIDS)
+    public function setRetargetingConditionIDS(array $value = null)
     {
-        $this->RetargetingConditionIDS = $RetargetingConditionIDS;
+        $this->RetargetingConditionIDS = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Logins.
+     * Gets Logins.
      *
-     * @return string[]
+     * @return string[]|null
      */
     public function getLogins()
     {
@@ -62,16 +56,18 @@ class RetargetingConditionSelectionCriteria
     }
 
     /**
-     * Sets the Logins.
+     * Sets Logins.
      *
-     * @param string[] $Logins
-     *
-     * @return RetargetingConditionSelectionCriteria
+     * @param array|null $value
+     * @return $this
      */
-    public function setLogins(array $Logins)
+    public function setLogins(array $value = null)
     {
-        $this->Logins = $Logins;
+        $this->Logins = $value;
 
         return $this;
     }
+
+
 }
+

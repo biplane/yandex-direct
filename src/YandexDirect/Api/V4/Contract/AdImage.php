@@ -3,36 +3,25 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class AdImage
 {
-    /**
-     * @var string
-     */
-    protected $Login;
-    /**
-     * @var string
-     */
-    protected $AdImageHash;
-    /**
-     * @var string
-     */
-    protected $AdImageURL;
-    /**
-     * @var string
-     */
-    protected $Assigned;
-    /**
-     * @var string
-     */
-    protected $Name;
+
+    protected $Login = null;
+
+    protected $AdImageHash = null;
+
+    protected $AdImageURL = null;
+
+    protected $Assigned = null;
+
+    protected $Name = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of AdImage.
      *
-     * @return self
+     * @return AdImage
      */
     public static function create()
     {
@@ -40,7 +29,7 @@ class AdImage
     }
 
     /**
-     * Gets the Login.
+     * Gets Login.
      *
      * @return string
      */
@@ -50,21 +39,20 @@ class AdImage
     }
 
     /**
-     * Sets the Login.
+     * Sets Login.
      *
-     * @param string $Login
-     *
-     * @return AdImage
+     * @param string $value
+     * @return $this
      */
-    public function setLogin($Login)
+    public function setLogin($value)
     {
-        $this->Login = $Login;
+        $this->Login = $value;
 
         return $this;
     }
 
     /**
-     * Gets the AdImageHash.
+     * Gets AdImageHash.
      *
      * @return string
      */
@@ -74,21 +62,20 @@ class AdImage
     }
 
     /**
-     * Sets the AdImageHash.
+     * Sets AdImageHash.
      *
-     * @param string $AdImageHash
-     *
-     * @return AdImage
+     * @param string $value
+     * @return $this
      */
-    public function setAdImageHash($AdImageHash)
+    public function setAdImageHash($value)
     {
-        $this->AdImageHash = $AdImageHash;
+        $this->AdImageHash = $value;
 
         return $this;
     }
 
     /**
-     * Gets the AdImageURL.
+     * Gets AdImageURL.
      *
      * @return string
      */
@@ -98,21 +85,20 @@ class AdImage
     }
 
     /**
-     * Sets the AdImageURL.
+     * Sets AdImageURL.
      *
-     * @param string $AdImageURL
-     *
-     * @return AdImage
+     * @param string $value
+     * @return $this
      */
-    public function setAdImageURL($AdImageURL)
+    public function setAdImageURL($value)
     {
-        $this->AdImageURL = $AdImageURL;
+        $this->AdImageURL = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Assigned.
+     * Gets Assigned.
      *
      * @return string
      */
@@ -122,23 +108,22 @@ class AdImage
     }
 
     /**
-     * Sets the Assigned.
+     * Sets Assigned.
      *
-     * @param string $Assigned
-     *
-     * @return AdImage
+     * @param string $value
+     * @return $this
      */
-    public function setAssigned($Assigned)
+    public function setAssigned($value)
     {
-        $this->Assigned = $Assigned;
+        $this->Assigned = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Name.
+     * Gets Name.
      *
-     * @return string
+     * @return string|null
      */
     public function getName()
     {
@@ -146,16 +131,18 @@ class AdImage
     }
 
     /**
-     * Sets the Name.
+     * Sets Name.
      *
-     * @param string $Name
-     *
-     * @return AdImage
+     * @param string|null $value
+     * @return $this
      */
-    public function setName($Name)
+    public function setName($value = null)
     {
-        $this->Name = $Name;
+        $this->Name = $value;
 
         return $this;
     }
+
+
 }
+

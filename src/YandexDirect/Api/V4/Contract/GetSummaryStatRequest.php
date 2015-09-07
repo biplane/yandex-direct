@@ -3,40 +3,29 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class GetSummaryStatRequest
 {
-    /**
-     * @var int[]
-     */
-    protected $CampaignIDS;
-    /**
-     * @var string
-     */
-    protected $StartDate;
-    /**
-     * @var string
-     */
-    protected $EndDate;
-    /**
-     * @var string
-     */
-    protected $Currency;
-    /**
-     * @var string
-     */
-    protected $IncludeVAT;
-    /**
-     * @var string
-     */
-    protected $IncludeDiscount;
+
+    protected $CampaignIDS = array(
+        
+    );
+
+    protected $StartDate = null;
+
+    protected $EndDate = null;
+
+    protected $Currency = null;
+
+    protected $IncludeVAT = null;
+
+    protected $IncludeDiscount = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of GetSummaryStatRequest.
      *
-     * @return self
+     * @return GetSummaryStatRequest
      */
     public static function create()
     {
@@ -44,7 +33,7 @@ class GetSummaryStatRequest
     }
 
     /**
-     * Gets the CampaignIDS.
+     * Gets CampaignIDS.
      *
      * @return int[]
      */
@@ -54,21 +43,20 @@ class GetSummaryStatRequest
     }
 
     /**
-     * Sets the CampaignIDS.
+     * Sets CampaignIDS.
      *
-     * @param int[] $CampaignIDS
-     *
-     * @return GetSummaryStatRequest
+     * @param array $value
+     * @return $this
      */
-    public function setCampaignIDS(array $CampaignIDS)
+    public function setCampaignIDS(array $value)
     {
-        $this->CampaignIDS = $CampaignIDS;
+        $this->CampaignIDS = $value;
 
         return $this;
     }
 
     /**
-     * Gets the StartDate.
+     * Gets StartDate.
      *
      * @return string
      */
@@ -78,21 +66,20 @@ class GetSummaryStatRequest
     }
 
     /**
-     * Sets the StartDate.
+     * Sets StartDate.
      *
-     * @param string $StartDate
-     *
-     * @return GetSummaryStatRequest
+     * @param string $value
+     * @return $this
      */
-    public function setStartDate($StartDate)
+    public function setStartDate($value)
     {
-        $this->StartDate = $StartDate;
+        $this->StartDate = $value;
 
         return $this;
     }
 
     /**
-     * Gets the EndDate.
+     * Gets EndDate.
      *
      * @return string
      */
@@ -102,23 +89,22 @@ class GetSummaryStatRequest
     }
 
     /**
-     * Sets the EndDate.
+     * Sets EndDate.
      *
-     * @param string $EndDate
-     *
-     * @return GetSummaryStatRequest
+     * @param string $value
+     * @return $this
      */
-    public function setEndDate($EndDate)
+    public function setEndDate($value)
     {
-        $this->EndDate = $EndDate;
+        $this->EndDate = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Currency.
+     * Gets Currency.
      *
-     * @return string
+     * @return string|null
      */
     public function getCurrency()
     {
@@ -126,23 +112,22 @@ class GetSummaryStatRequest
     }
 
     /**
-     * Sets the Currency.
+     * Sets Currency.
      *
-     * @param string $Currency
-     *
-     * @return GetSummaryStatRequest
+     * @param string|null $value
+     * @return $this
      */
-    public function setCurrency($Currency)
+    public function setCurrency($value = null)
     {
-        $this->Currency = $Currency;
+        $this->Currency = $value;
 
         return $this;
     }
 
     /**
-     * Gets the IncludeVAT.
+     * Gets IncludeVAT.
      *
-     * @return string
+     * @return string|null
      */
     public function getIncludeVAT()
     {
@@ -150,23 +135,22 @@ class GetSummaryStatRequest
     }
 
     /**
-     * Sets the IncludeVAT.
+     * Sets IncludeVAT.
      *
-     * @param string $IncludeVAT
-     *
-     * @return GetSummaryStatRequest
+     * @param string|null $value
+     * @return $this
      */
-    public function setIncludeVAT($IncludeVAT)
+    public function setIncludeVAT($value = null)
     {
-        $this->IncludeVAT = $IncludeVAT;
+        $this->IncludeVAT = $value;
 
         return $this;
     }
 
     /**
-     * Gets the IncludeDiscount.
+     * Gets IncludeDiscount.
      *
-     * @return string
+     * @return string|null
      */
     public function getIncludeDiscount()
     {
@@ -174,16 +158,18 @@ class GetSummaryStatRequest
     }
 
     /**
-     * Sets the IncludeDiscount.
+     * Sets IncludeDiscount.
      *
-     * @param string $IncludeDiscount
-     *
-     * @return GetSummaryStatRequest
+     * @param string|null $value
+     * @return $this
      */
-    public function setIncludeDiscount($IncludeDiscount)
+    public function setIncludeDiscount($value = null)
     {
-        $this->IncludeDiscount = $IncludeDiscount;
+        $this->IncludeDiscount = $value;
 
         return $this;
     }
+
+
 }
+

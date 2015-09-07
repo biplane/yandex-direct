@@ -3,28 +3,21 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class AdImageAssociationRequest
 {
-    /**
-     * @var string
-     */
-    protected $Action;
-    /**
-     * @var AdImageAssociationSelectionCriteria
-     */
-    protected $SelectionCriteria;
-    /**
-     * @var AdImageAssociation[]
-     */
-    protected $AdImageAssociations;
+
+    protected $Action = null;
+
+    protected $SelectionCriteria = null;
+
+    protected $AdImageAssociations = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of AdImageAssociationRequest.
      *
-     * @return self
+     * @return AdImageAssociationRequest
      */
     public static function create()
     {
@@ -32,7 +25,7 @@ class AdImageAssociationRequest
     }
 
     /**
-     * Gets the Action.
+     * Gets Action.
      *
      * @return string
      */
@@ -42,23 +35,22 @@ class AdImageAssociationRequest
     }
 
     /**
-     * Sets the Action.
+     * Sets Action.
      *
-     * @param string $Action
-     *
-     * @return AdImageAssociationRequest
+     * @param string $value
+     * @return $this
      */
-    public function setAction($Action)
+    public function setAction($value)
     {
-        $this->Action = $Action;
+        $this->Action = $value;
 
         return $this;
     }
 
     /**
-     * Gets the SelectionCriteria.
+     * Gets SelectionCriteria.
      *
-     * @return AdImageAssociationSelectionCriteria
+     * @return AdImageAssociationSelectionCriteria|null
      */
     public function getSelectionCriteria()
     {
@@ -66,23 +58,22 @@ class AdImageAssociationRequest
     }
 
     /**
-     * Sets the SelectionCriteria.
+     * Sets SelectionCriteria.
      *
-     * @param AdImageAssociationSelectionCriteria $SelectionCriteria
-     *
-     * @return AdImageAssociationRequest
+     * @param AdImageAssociationSelectionCriteria|null $value
+     * @return $this
      */
-    public function setSelectionCriteria(AdImageAssociationSelectionCriteria $SelectionCriteria)
+    public function setSelectionCriteria(AdImageAssociationSelectionCriteria $value = null)
     {
-        $this->SelectionCriteria = $SelectionCriteria;
+        $this->SelectionCriteria = $value;
 
         return $this;
     }
 
     /**
-     * Gets the AdImageAssociations.
+     * Gets AdImageAssociations.
      *
-     * @return AdImageAssociation[]
+     * @return AdImageAssociation[]|null
      */
     public function getAdImageAssociations()
     {
@@ -90,16 +81,18 @@ class AdImageAssociationRequest
     }
 
     /**
-     * Sets the AdImageAssociations.
+     * Sets AdImageAssociations.
      *
-     * @param AdImageAssociation[] $AdImageAssociations
-     *
-     * @return AdImageAssociationRequest
+     * @param array|null $value
+     * @return $this
      */
-    public function setAdImageAssociations(array $AdImageAssociations)
+    public function setAdImageAssociations(array $value = null)
     {
-        $this->AdImageAssociations = $AdImageAssociations;
+        $this->AdImageAssociations = $value;
 
         return $this;
     }
+
+
 }
+

@@ -3,28 +3,21 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class AdImageAssociationResponse
 {
-    /**
-     * @var AdImageAssociationActionResult[]
-     */
-    protected $ActionsResult;
-    /**
-     * @var AdImageAssociation[]
-     */
-    protected $AdImageAssociations;
-    /**
-     * @var int
-     */
-    protected $TotalObjectsCount;
+
+    protected $ActionsResult = null;
+
+    protected $AdImageAssociations = null;
+
+    protected $TotalObjectsCount = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of AdImageAssociationResponse.
      *
-     * @return self
+     * @return AdImageAssociationResponse
      */
     public static function create()
     {
@@ -32,9 +25,9 @@ class AdImageAssociationResponse
     }
 
     /**
-     * Gets the ActionsResult.
+     * Gets ActionsResult.
      *
-     * @return AdImageAssociationActionResult[]
+     * @return AdImageAssociationActionResult[]|null
      */
     public function getActionsResult()
     {
@@ -42,23 +35,22 @@ class AdImageAssociationResponse
     }
 
     /**
-     * Sets the ActionsResult.
+     * Sets ActionsResult.
      *
-     * @param AdImageAssociationActionResult[] $ActionsResult
-     *
-     * @return AdImageAssociationResponse
+     * @param array|null $value
+     * @return $this
      */
-    public function setActionsResult(array $ActionsResult)
+    public function setActionsResult(array $value = null)
     {
-        $this->ActionsResult = $ActionsResult;
+        $this->ActionsResult = $value;
 
         return $this;
     }
 
     /**
-     * Gets the AdImageAssociations.
+     * Gets AdImageAssociations.
      *
-     * @return AdImageAssociation[]
+     * @return AdImageAssociation[]|null
      */
     public function getAdImageAssociations()
     {
@@ -66,23 +58,22 @@ class AdImageAssociationResponse
     }
 
     /**
-     * Sets the AdImageAssociations.
+     * Sets AdImageAssociations.
      *
-     * @param AdImageAssociation[] $AdImageAssociations
-     *
-     * @return AdImageAssociationResponse
+     * @param array|null $value
+     * @return $this
      */
-    public function setAdImageAssociations(array $AdImageAssociations)
+    public function setAdImageAssociations(array $value = null)
     {
-        $this->AdImageAssociations = $AdImageAssociations;
+        $this->AdImageAssociations = $value;
 
         return $this;
     }
 
     /**
-     * Gets the TotalObjectsCount.
+     * Gets TotalObjectsCount.
      *
-     * @return int
+     * @return int|null
      */
     public function getTotalObjectsCount()
     {
@@ -90,16 +81,18 @@ class AdImageAssociationResponse
     }
 
     /**
-     * Sets the TotalObjectsCount.
+     * Sets TotalObjectsCount.
      *
-     * @param int $TotalObjectsCount
-     *
-     * @return AdImageAssociationResponse
+     * @param int|null $value
+     * @return $this
      */
-    public function setTotalObjectsCount($TotalObjectsCount)
+    public function setTotalObjectsCount($value = null)
     {
-        $this->TotalObjectsCount = $TotalObjectsCount;
+        $this->TotalObjectsCount = $value;
 
         return $this;
     }
+
+
 }
+

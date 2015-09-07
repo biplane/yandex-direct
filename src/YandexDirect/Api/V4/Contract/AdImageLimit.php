@@ -3,28 +3,21 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class AdImageLimit
 {
-    /**
-     * @var string
-     */
-    protected $Login;
-    /**
-     * @var int
-     */
-    protected $Capacity;
-    /**
-     * @var int
-     */
-    protected $Utilized;
+
+    protected $Login = null;
+
+    protected $Capacity = null;
+
+    protected $Utilized = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of AdImageLimit.
      *
-     * @return self
+     * @return AdImageLimit
      */
     public static function create()
     {
@@ -32,7 +25,7 @@ class AdImageLimit
     }
 
     /**
-     * Gets the Login.
+     * Gets Login.
      *
      * @return string
      */
@@ -42,21 +35,20 @@ class AdImageLimit
     }
 
     /**
-     * Sets the Login.
+     * Sets Login.
      *
-     * @param string $Login
-     *
-     * @return AdImageLimit
+     * @param string $value
+     * @return $this
      */
-    public function setLogin($Login)
+    public function setLogin($value)
     {
-        $this->Login = $Login;
+        $this->Login = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Capacity.
+     * Gets Capacity.
      *
      * @return int
      */
@@ -66,21 +58,20 @@ class AdImageLimit
     }
 
     /**
-     * Sets the Capacity.
+     * Sets Capacity.
      *
-     * @param int $Capacity
-     *
-     * @return AdImageLimit
+     * @param int $value
+     * @return $this
      */
-    public function setCapacity($Capacity)
+    public function setCapacity($value)
     {
-        $this->Capacity = $Capacity;
+        $this->Capacity = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Utilized.
+     * Gets Utilized.
      *
      * @return int
      */
@@ -90,16 +81,18 @@ class AdImageLimit
     }
 
     /**
-     * Sets the Utilized.
+     * Sets Utilized.
      *
-     * @param int $Utilized
-     *
-     * @return AdImageLimit
+     * @param int $value
+     * @return $this
      */
-    public function setUtilized($Utilized)
+    public function setUtilized($value)
     {
-        $this->Utilized = $Utilized;
+        $this->Utilized = $value;
 
         return $this;
     }
+
+
 }
+

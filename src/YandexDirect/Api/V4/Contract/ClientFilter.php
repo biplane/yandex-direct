@@ -3,20 +3,17 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class ClientFilter
 {
-    /**
-     * @var string
-     */
-    protected $StatusArch;
+
+    protected $StatusArch = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of ClientFilter.
      *
-     * @return self
+     * @return ClientFilter
      */
     public static function create()
     {
@@ -24,9 +21,9 @@ class ClientFilter
     }
 
     /**
-     * Gets the StatusArch.
+     * Gets StatusArch.
      *
-     * @return string
+     * @return string|null
      */
     public function getStatusArch()
     {
@@ -34,16 +31,18 @@ class ClientFilter
     }
 
     /**
-     * Sets the StatusArch.
+     * Sets StatusArch.
      *
-     * @param string $StatusArch
-     *
-     * @return ClientFilter
+     * @param string|null $value
+     * @return $this
      */
-    public function setStatusArch($StatusArch)
+    public function setStatusArch($value = null)
     {
-        $this->StatusArch = $StatusArch;
+        $this->StatusArch = $value;
 
         return $this;
     }
+
+
 }
+

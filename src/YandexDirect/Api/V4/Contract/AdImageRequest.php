@@ -3,32 +3,23 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class AdImageRequest
 {
-    /**
-     * @var string
-     */
-    protected $Action;
-    /**
-     * @var AdImageSelectionCriteria
-     */
-    protected $SelectionCriteria;
-    /**
-     * @var AdImageRaw[]
-     */
-    protected $AdImageRawData;
-    /**
-     * @var AdImageURL[]
-     */
-    protected $AdImageURLData;
+
+    protected $Action = null;
+
+    protected $SelectionCriteria = null;
+
+    protected $AdImageRawData = null;
+
+    protected $AdImageURLData = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of AdImageRequest.
      *
-     * @return self
+     * @return AdImageRequest
      */
     public static function create()
     {
@@ -36,7 +27,7 @@ class AdImageRequest
     }
 
     /**
-     * Gets the Action.
+     * Gets Action.
      *
      * @return string
      */
@@ -46,23 +37,22 @@ class AdImageRequest
     }
 
     /**
-     * Sets the Action.
+     * Sets Action.
      *
-     * @param string $Action
-     *
-     * @return AdImageRequest
+     * @param string $value
+     * @return $this
      */
-    public function setAction($Action)
+    public function setAction($value)
     {
-        $this->Action = $Action;
+        $this->Action = $value;
 
         return $this;
     }
 
     /**
-     * Gets the SelectionCriteria.
+     * Gets SelectionCriteria.
      *
-     * @return AdImageSelectionCriteria
+     * @return AdImageSelectionCriteria|null
      */
     public function getSelectionCriteria()
     {
@@ -70,23 +60,22 @@ class AdImageRequest
     }
 
     /**
-     * Sets the SelectionCriteria.
+     * Sets SelectionCriteria.
      *
-     * @param AdImageSelectionCriteria $SelectionCriteria
-     *
-     * @return AdImageRequest
+     * @param AdImageSelectionCriteria|null $value
+     * @return $this
      */
-    public function setSelectionCriteria(AdImageSelectionCriteria $SelectionCriteria)
+    public function setSelectionCriteria(AdImageSelectionCriteria $value = null)
     {
-        $this->SelectionCriteria = $SelectionCriteria;
+        $this->SelectionCriteria = $value;
 
         return $this;
     }
 
     /**
-     * Gets the AdImageRawData.
+     * Gets AdImageRawData.
      *
-     * @return AdImageRaw[]
+     * @return AdImageRaw[]|null
      */
     public function getAdImageRawData()
     {
@@ -94,23 +83,22 @@ class AdImageRequest
     }
 
     /**
-     * Sets the AdImageRawData.
+     * Sets AdImageRawData.
      *
-     * @param AdImageRaw[] $AdImageRawData
-     *
-     * @return AdImageRequest
+     * @param array|null $value
+     * @return $this
      */
-    public function setAdImageRawData(array $AdImageRawData)
+    public function setAdImageRawData(array $value = null)
     {
-        $this->AdImageRawData = $AdImageRawData;
+        $this->AdImageRawData = $value;
 
         return $this;
     }
 
     /**
-     * Gets the AdImageURLData.
+     * Gets AdImageURLData.
      *
-     * @return AdImageURL[]
+     * @return AdImageURL[]|null
      */
     public function getAdImageURLData()
     {
@@ -118,16 +106,18 @@ class AdImageRequest
     }
 
     /**
-     * Sets the AdImageURLData.
+     * Sets AdImageURLData.
      *
-     * @param AdImageURL[] $AdImageURLData
-     *
-     * @return AdImageRequest
+     * @param array|null $value
+     * @return $this
      */
-    public function setAdImageURLData(array $AdImageURLData)
+    public function setAdImageURLData(array $value = null)
     {
-        $this->AdImageURLData = $AdImageURLData;
+        $this->AdImageURLData = $value;
 
         return $this;
     }
+
+
 }
+

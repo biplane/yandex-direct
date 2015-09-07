@@ -3,36 +3,25 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class CreateNewSubclientRequest
 {
-    /**
-     * @var string
-     */
-    protected $Login;
-    /**
-     * @var string
-     */
-    protected $AgencyLogin;
-    /**
-     * @var string
-     */
-    protected $Name;
-    /**
-     * @var string
-     */
-    protected $Surname;
-    /**
-     * @var string
-     */
-    protected $Currency;
+
+    protected $Login = null;
+
+    protected $AgencyLogin = null;
+
+    protected $Name = null;
+
+    protected $Surname = null;
+
+    protected $Currency = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of CreateNewSubclientRequest.
      *
-     * @return self
+     * @return CreateNewSubclientRequest
      */
     public static function create()
     {
@@ -40,7 +29,7 @@ class CreateNewSubclientRequest
     }
 
     /**
-     * Gets the Login.
+     * Gets Login.
      *
      * @return string
      */
@@ -50,23 +39,22 @@ class CreateNewSubclientRequest
     }
 
     /**
-     * Sets the Login.
+     * Sets Login.
      *
-     * @param string $Login
-     *
-     * @return CreateNewSubclientRequest
+     * @param string $value
+     * @return $this
      */
-    public function setLogin($Login)
+    public function setLogin($value)
     {
-        $this->Login = $Login;
+        $this->Login = $value;
 
         return $this;
     }
 
     /**
-     * Gets the AgencyLogin.
+     * Gets AgencyLogin.
      *
-     * @return string
+     * @return string|null
      */
     public function getAgencyLogin()
     {
@@ -74,23 +62,22 @@ class CreateNewSubclientRequest
     }
 
     /**
-     * Sets the AgencyLogin.
+     * Sets AgencyLogin.
      *
-     * @param string $AgencyLogin
-     *
-     * @return CreateNewSubclientRequest
+     * @param string|null $value
+     * @return $this
      */
-    public function setAgencyLogin($AgencyLogin)
+    public function setAgencyLogin($value = null)
     {
-        $this->AgencyLogin = $AgencyLogin;
+        $this->AgencyLogin = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Name.
+     * Gets Name.
      *
-     * @return string
+     * @return string|null
      */
     public function getName()
     {
@@ -98,23 +85,22 @@ class CreateNewSubclientRequest
     }
 
     /**
-     * Sets the Name.
+     * Sets Name.
      *
-     * @param string $Name
-     *
-     * @return CreateNewSubclientRequest
+     * @param string|null $value
+     * @return $this
      */
-    public function setName($Name)
+    public function setName($value = null)
     {
-        $this->Name = $Name;
+        $this->Name = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Surname.
+     * Gets Surname.
      *
-     * @return string
+     * @return string|null
      */
     public function getSurname()
     {
@@ -122,23 +108,22 @@ class CreateNewSubclientRequest
     }
 
     /**
-     * Sets the Surname.
+     * Sets Surname.
      *
-     * @param string $Surname
-     *
-     * @return CreateNewSubclientRequest
+     * @param string|null $value
+     * @return $this
      */
-    public function setSurname($Surname)
+    public function setSurname($value = null)
     {
-        $this->Surname = $Surname;
+        $this->Surname = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Currency.
+     * Gets Currency.
      *
-     * @return string
+     * @return string|null
      */
     public function getCurrency()
     {
@@ -146,16 +131,18 @@ class CreateNewSubclientRequest
     }
 
     /**
-     * Sets the Currency.
+     * Sets Currency.
      *
-     * @param string $Currency
-     *
-     * @return CreateNewSubclientRequest
+     * @param string|null $value
+     * @return $this
      */
-    public function setCurrency($Currency)
+    public function setCurrency($value = null)
     {
-        $this->Currency = $Currency;
+        $this->Currency = $value;
 
         return $this;
     }
+
+
 }
+

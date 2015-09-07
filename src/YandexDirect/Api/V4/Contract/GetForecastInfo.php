@@ -3,28 +3,25 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class GetForecastInfo
 {
-    /**
-     * @var BannerPhraseInfo[]
-     */
-    protected $Categories;
-    /**
-     * @var BannerPhraseInfo[]
-     */
-    protected $Phrases;
-    /**
-     * @var ForecastCommonInfo
-     */
-    protected $Common;
+
+    protected $Categories = array(
+        
+    );
+
+    protected $Phrases = array(
+        
+    );
+
+    protected $Common = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of GetForecastInfo.
      *
-     * @return self
+     * @return GetForecastInfo
      */
     public static function create()
     {
@@ -32,7 +29,7 @@ class GetForecastInfo
     }
 
     /**
-     * Gets the Categories.
+     * Gets Categories.
      *
      * @return BannerPhraseInfo[]
      */
@@ -42,21 +39,20 @@ class GetForecastInfo
     }
 
     /**
-     * Sets the Categories.
+     * Sets Categories.
      *
-     * @param BannerPhraseInfo[] $Categories
-     *
-     * @return GetForecastInfo
+     * @param array $value
+     * @return $this
      */
-    public function setCategories(array $Categories)
+    public function setCategories(array $value)
     {
-        $this->Categories = $Categories;
+        $this->Categories = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Phrases.
+     * Gets Phrases.
      *
      * @return BannerPhraseInfo[]
      */
@@ -66,21 +62,20 @@ class GetForecastInfo
     }
 
     /**
-     * Sets the Phrases.
+     * Sets Phrases.
      *
-     * @param BannerPhraseInfo[] $Phrases
-     *
-     * @return GetForecastInfo
+     * @param array $value
+     * @return $this
      */
-    public function setPhrases(array $Phrases)
+    public function setPhrases(array $value)
     {
-        $this->Phrases = $Phrases;
+        $this->Phrases = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Common.
+     * Gets Common.
      *
      * @return ForecastCommonInfo
      */
@@ -90,16 +85,18 @@ class GetForecastInfo
     }
 
     /**
-     * Sets the Common.
+     * Sets Common.
      *
-     * @param ForecastCommonInfo $Common
-     *
-     * @return GetForecastInfo
+     * @param ForecastCommonInfo $value
+     * @return $this
      */
-    public function setCommon(ForecastCommonInfo $Common)
+    public function setCommon(ForecastCommonInfo $value)
     {
-        $this->Common = $Common;
+        $this->Common = $value;
 
         return $this;
     }
+
+
 }
+

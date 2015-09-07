@@ -3,28 +3,25 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class TimeTargetItem
 {
-    /**
-     * @var int[]
-     */
-    protected $Hours;
-    /**
-     * @var int[]
-     */
-    protected $Days;
-    /**
-     * @var int[]
-     */
-    protected $BidCoefs;
+
+    protected $Hours = array(
+        
+    );
+
+    protected $Days = array(
+        
+    );
+
+    protected $BidCoefs = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of TimeTargetItem.
      *
-     * @return self
+     * @return TimeTargetItem
      */
     public static function create()
     {
@@ -32,7 +29,7 @@ class TimeTargetItem
     }
 
     /**
-     * Gets the Hours.
+     * Gets Hours.
      *
      * @return int[]
      */
@@ -42,21 +39,20 @@ class TimeTargetItem
     }
 
     /**
-     * Sets the Hours.
+     * Sets Hours.
      *
-     * @param int[] $Hours
-     *
-     * @return TimeTargetItem
+     * @param array $value
+     * @return $this
      */
-    public function setHours(array $Hours)
+    public function setHours(array $value)
     {
-        $this->Hours = $Hours;
+        $this->Hours = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Days.
+     * Gets Days.
      *
      * @return int[]
      */
@@ -66,23 +62,22 @@ class TimeTargetItem
     }
 
     /**
-     * Sets the Days.
+     * Sets Days.
      *
-     * @param int[] $Days
-     *
-     * @return TimeTargetItem
+     * @param array $value
+     * @return $this
      */
-    public function setDays(array $Days)
+    public function setDays(array $value)
     {
-        $this->Days = $Days;
+        $this->Days = $value;
 
         return $this;
     }
 
     /**
-     * Gets the BidCoefs.
+     * Gets BidCoefs.
      *
-     * @return int[]
+     * @return int[]|null
      */
     public function getBidCoefs()
     {
@@ -90,16 +85,18 @@ class TimeTargetItem
     }
 
     /**
-     * Sets the BidCoefs.
+     * Sets BidCoefs.
      *
-     * @param int[] $BidCoefs
-     *
-     * @return TimeTargetItem
+     * @param array|null $value
+     * @return $this
      */
-    public function setBidCoefs(array $BidCoefs)
+    public function setBidCoefs(array $value = null)
     {
-        $this->BidCoefs = $BidCoefs;
+        $this->BidCoefs = $value;
 
         return $this;
     }
+
+
 }
+

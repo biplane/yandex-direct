@@ -3,36 +3,25 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class EmailNotificationInfo
 {
-    /**
-     * @var string
-     */
-    protected $Email;
-    /**
-     * @var int
-     */
-    protected $WarnPlaceInterval;
-    /**
-     * @var int
-     */
-    protected $MoneyWarningValue;
-    /**
-     * @var string
-     */
-    protected $SendAccNews;
-    /**
-     * @var string
-     */
-    protected $SendWarn;
+
+    protected $Email = null;
+
+    protected $WarnPlaceInterval = null;
+
+    protected $MoneyWarningValue = null;
+
+    protected $SendAccNews = null;
+
+    protected $SendWarn = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of EmailNotificationInfo.
      *
-     * @return self
+     * @return EmailNotificationInfo
      */
     public static function create()
     {
@@ -40,9 +29,9 @@ class EmailNotificationInfo
     }
 
     /**
-     * Gets the Email.
+     * Gets Email.
      *
-     * @return string
+     * @return string|null
      */
     public function getEmail()
     {
@@ -50,21 +39,20 @@ class EmailNotificationInfo
     }
 
     /**
-     * Sets the Email.
+     * Sets Email.
      *
-     * @param string $Email
-     *
-     * @return EmailNotificationInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setEmail($Email)
+    public function setEmail($value = null)
     {
-        $this->Email = $Email;
+        $this->Email = $value;
 
         return $this;
     }
 
     /**
-     * Gets the WarnPlaceInterval.
+     * Gets WarnPlaceInterval.
      *
      * @return int
      */
@@ -74,23 +62,22 @@ class EmailNotificationInfo
     }
 
     /**
-     * Sets the WarnPlaceInterval.
+     * Sets WarnPlaceInterval.
      *
-     * @param int $WarnPlaceInterval
-     *
-     * @return EmailNotificationInfo
+     * @param int $value
+     * @return $this
      */
-    public function setWarnPlaceInterval($WarnPlaceInterval)
+    public function setWarnPlaceInterval($value)
     {
-        $this->WarnPlaceInterval = $WarnPlaceInterval;
+        $this->WarnPlaceInterval = $value;
 
         return $this;
     }
 
     /**
-     * Gets the MoneyWarningValue.
+     * Gets MoneyWarningValue.
      *
-     * @return int
+     * @return int|null
      */
     public function getMoneyWarningValue()
     {
@@ -98,23 +85,22 @@ class EmailNotificationInfo
     }
 
     /**
-     * Sets the MoneyWarningValue.
+     * Sets MoneyWarningValue.
      *
-     * @param int $MoneyWarningValue
-     *
-     * @return EmailNotificationInfo
+     * @param int|null $value
+     * @return $this
      */
-    public function setMoneyWarningValue($MoneyWarningValue)
+    public function setMoneyWarningValue($value = null)
     {
-        $this->MoneyWarningValue = $MoneyWarningValue;
+        $this->MoneyWarningValue = $value;
 
         return $this;
     }
 
     /**
-     * Gets the SendAccNews.
+     * Gets SendAccNews.
      *
-     * @return string
+     * @return string|null
      */
     public function getSendAccNews()
     {
@@ -122,23 +108,22 @@ class EmailNotificationInfo
     }
 
     /**
-     * Sets the SendAccNews.
+     * Sets SendAccNews.
      *
-     * @param string $SendAccNews
-     *
-     * @return EmailNotificationInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setSendAccNews($SendAccNews)
+    public function setSendAccNews($value = null)
     {
-        $this->SendAccNews = $SendAccNews;
+        $this->SendAccNews = $value;
 
         return $this;
     }
 
     /**
-     * Gets the SendWarn.
+     * Gets SendWarn.
      *
-     * @return string
+     * @return string|null
      */
     public function getSendWarn()
     {
@@ -146,16 +131,18 @@ class EmailNotificationInfo
     }
 
     /**
-     * Sets the SendWarn.
+     * Sets SendWarn.
      *
-     * @param string $SendWarn
-     *
-     * @return EmailNotificationInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setSendWarn($SendWarn)
+    public function setSendWarn($value = null)
     {
-        $this->SendWarn = $SendWarn;
+        $this->SendWarn = $value;
 
         return $this;
     }
+
+
 }
+

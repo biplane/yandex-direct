@@ -3,34 +3,21 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class ClientRight
 {
-    const RIGHT_ALLOW_EDIT_CAMPAIGNS = 'AllowEditCampaigns';
-    const RIGHT_ALLOW_TRANSFER_MONEY = 'AllowTransferMoney';
-    const RIGHT_ALLOW_IMPORT_XLS     = 'AllowImportXLS';
+
+    protected $RightName = null;
+
+    protected $Value = null;
+
+    protected $AgencyName = null;
 
     /**
-     * @var string
-     */
-    protected $RightName;
-
-    /**
-     * @var string
-     */
-    protected $Value;
-
-    /**
-     * @var string
-     */
-    protected $AgencyName;
-
-    /**
-     * Creates a new instance.
+     * Creates a new instance of ClientRight.
      *
-     * @return self
+     * @return ClientRight
      */
     public static function create()
     {
@@ -38,7 +25,7 @@ class ClientRight
     }
 
     /**
-     * Gets the RightName.
+     * Gets RightName.
      *
      * @return string
      */
@@ -48,21 +35,20 @@ class ClientRight
     }
 
     /**
-     * Sets the RightName.
+     * Sets RightName.
      *
-     * @param string $RightName
-     *
-     * @return ClientRight
+     * @param string $value
+     * @return $this
      */
-    public function setRightName($RightName)
+    public function setRightName($value)
     {
-        $this->RightName = $RightName;
+        $this->RightName = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Value.
+     * Gets Value.
      *
      * @return string
      */
@@ -72,23 +58,22 @@ class ClientRight
     }
 
     /**
-     * Sets the Value.
+     * Sets Value.
      *
-     * @param string $Value
-     *
-     * @return ClientRight
+     * @param string $value
+     * @return $this
      */
-    public function setValue($Value)
+    public function setValue($value)
     {
-        $this->Value = $Value;
+        $this->Value = $value;
 
         return $this;
     }
 
     /**
-     * Gets the AgencyName.
+     * Gets AgencyName.
      *
-     * @return string
+     * @return string|null
      */
     public function getAgencyName()
     {
@@ -96,16 +81,18 @@ class ClientRight
     }
 
     /**
-     * Sets the AgencyName.
+     * Sets AgencyName.
      *
-     * @param string $AgencyName
-     *
-     * @return ClientRight
+     * @param string|null $value
+     * @return $this
      */
-    public function setAgencyName($AgencyName)
+    public function setAgencyName($value = null)
     {
-        $this->AgencyName = $AgencyName;
+        $this->AgencyName = $value;
 
         return $this;
     }
+
+
 }
+

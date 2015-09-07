@@ -3,24 +3,19 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class WordstatItem
 {
-    /**
-     * @var string
-     */
-    protected $Phrase;
-    /**
-     * @var int
-     */
-    protected $Shows;
+
+    protected $Phrase = null;
+
+    protected $Shows = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of WordstatItem.
      *
-     * @return self
+     * @return WordstatItem
      */
     public static function create()
     {
@@ -28,7 +23,7 @@ class WordstatItem
     }
 
     /**
-     * Gets the Phrase.
+     * Gets Phrase.
      *
      * @return string
      */
@@ -38,21 +33,20 @@ class WordstatItem
     }
 
     /**
-     * Sets the Phrase.
+     * Sets Phrase.
      *
-     * @param string $Phrase
-     *
-     * @return WordstatItem
+     * @param string $value
+     * @return $this
      */
-    public function setPhrase($Phrase)
+    public function setPhrase($value)
     {
-        $this->Phrase = $Phrase;
+        $this->Phrase = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Shows.
+     * Gets Shows.
      *
      * @return int
      */
@@ -62,16 +56,18 @@ class WordstatItem
     }
 
     /**
-     * Sets the Shows.
+     * Sets Shows.
      *
-     * @param int $Shows
-     *
-     * @return WordstatItem
+     * @param int $value
+     * @return $this
      */
-    public function setShows($Shows)
+    public function setShows($value)
     {
-        $this->Shows = $Shows;
+        $this->Shows = $value;
 
         return $this;
     }
+
+
 }
+

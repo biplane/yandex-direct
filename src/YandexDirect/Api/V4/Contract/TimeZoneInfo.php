@@ -3,28 +3,21 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class TimeZoneInfo
 {
-    /**
-     * @var string
-     */
-    protected $TimeZone;
-    /**
-     * @var int
-     */
-    protected $GMTOffset;
-    /**
-     * @var string
-     */
-    protected $Name;
+
+    protected $TimeZone = null;
+
+    protected $GMTOffset = null;
+
+    protected $Name = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of TimeZoneInfo.
      *
-     * @return self
+     * @return TimeZoneInfo
      */
     public static function create()
     {
@@ -32,7 +25,7 @@ class TimeZoneInfo
     }
 
     /**
-     * Gets the TimeZone.
+     * Gets TimeZone.
      *
      * @return string
      */
@@ -42,21 +35,20 @@ class TimeZoneInfo
     }
 
     /**
-     * Sets the TimeZone.
+     * Sets TimeZone.
      *
-     * @param string $TimeZone
-     *
-     * @return TimeZoneInfo
+     * @param string $value
+     * @return $this
      */
-    public function setTimeZone($TimeZone)
+    public function setTimeZone($value)
     {
-        $this->TimeZone = $TimeZone;
+        $this->TimeZone = $value;
 
         return $this;
     }
 
     /**
-     * Gets the GMTOffset.
+     * Gets GMTOffset.
      *
      * @return int
      */
@@ -66,21 +58,20 @@ class TimeZoneInfo
     }
 
     /**
-     * Sets the GMTOffset.
+     * Sets GMTOffset.
      *
-     * @param int $GMTOffset
-     *
-     * @return TimeZoneInfo
+     * @param int $value
+     * @return $this
      */
-    public function setGMTOffset($GMTOffset)
+    public function setGMTOffset($value)
     {
-        $this->GMTOffset = $GMTOffset;
+        $this->GMTOffset = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Name.
+     * Gets Name.
      *
      * @return string
      */
@@ -90,16 +81,18 @@ class TimeZoneInfo
     }
 
     /**
-     * Sets the Name.
+     * Sets Name.
      *
-     * @param string $Name
-     *
-     * @return TimeZoneInfo
+     * @param string $value
+     * @return $this
      */
-    public function setName($Name)
+    public function setName($value)
     {
-        $this->Name = $Name;
+        $this->Name = $value;
 
         return $this;
     }
+
+
 }
+

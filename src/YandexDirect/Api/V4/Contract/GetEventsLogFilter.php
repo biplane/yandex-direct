@@ -3,36 +3,25 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class GetEventsLogFilter
 {
-    /**
-     * @var int[]
-     */
-    protected $CampaignIDS;
-    /**
-     * @var int[]
-     */
-    protected $BannerIDS;
-    /**
-     * @var int[]
-     */
-    protected $PhraseIDS;
-    /**
-     * @var int[]
-     */
-    protected $AccountIDS;
-    /**
-     * @var string[]
-     */
-    protected $EventType;
+
+    protected $CampaignIDS = null;
+
+    protected $BannerIDS = null;
+
+    protected $PhraseIDS = null;
+
+    protected $AccountIDS = null;
+
+    protected $EventType = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of GetEventsLogFilter.
      *
-     * @return self
+     * @return GetEventsLogFilter
      */
     public static function create()
     {
@@ -40,9 +29,9 @@ class GetEventsLogFilter
     }
 
     /**
-     * Gets the CampaignIDS.
+     * Gets CampaignIDS.
      *
-     * @return int[]
+     * @return int[]|null
      */
     public function getCampaignIDS()
     {
@@ -50,23 +39,22 @@ class GetEventsLogFilter
     }
 
     /**
-     * Sets the CampaignIDS.
+     * Sets CampaignIDS.
      *
-     * @param int[] $CampaignIDS
-     *
-     * @return GetEventsLogFilter
+     * @param array|null $value
+     * @return $this
      */
-    public function setCampaignIDS(array $CampaignIDS)
+    public function setCampaignIDS(array $value = null)
     {
-        $this->CampaignIDS = $CampaignIDS;
+        $this->CampaignIDS = $value;
 
         return $this;
     }
 
     /**
-     * Gets the BannerIDS.
+     * Gets BannerIDS.
      *
-     * @return int[]
+     * @return int[]|null
      */
     public function getBannerIDS()
     {
@@ -74,23 +62,22 @@ class GetEventsLogFilter
     }
 
     /**
-     * Sets the BannerIDS.
+     * Sets BannerIDS.
      *
-     * @param int[] $BannerIDS
-     *
-     * @return GetEventsLogFilter
+     * @param array|null $value
+     * @return $this
      */
-    public function setBannerIDS(array $BannerIDS)
+    public function setBannerIDS(array $value = null)
     {
-        $this->BannerIDS = $BannerIDS;
+        $this->BannerIDS = $value;
 
         return $this;
     }
 
     /**
-     * Gets the PhraseIDS.
+     * Gets PhraseIDS.
      *
-     * @return int[]
+     * @return int[]|null
      */
     public function getPhraseIDS()
     {
@@ -98,23 +85,22 @@ class GetEventsLogFilter
     }
 
     /**
-     * Sets the PhraseIDS.
+     * Sets PhraseIDS.
      *
-     * @param int[] $PhraseIDS
-     *
-     * @return GetEventsLogFilter
+     * @param array|null $value
+     * @return $this
      */
-    public function setPhraseIDS(array $PhraseIDS)
+    public function setPhraseIDS(array $value = null)
     {
-        $this->PhraseIDS = $PhraseIDS;
+        $this->PhraseIDS = $value;
 
         return $this;
     }
 
     /**
-     * Gets the AccountIDS.
+     * Gets AccountIDS.
      *
-     * @return int[]
+     * @return int[]|null
      */
     public function getAccountIDS()
     {
@@ -122,23 +108,22 @@ class GetEventsLogFilter
     }
 
     /**
-     * Sets the AccountIDS.
+     * Sets AccountIDS.
      *
-     * @param int[] $AccountIDS
-     *
-     * @return GetEventsLogFilter
+     * @param array|null $value
+     * @return $this
      */
-    public function setAccountIDS(array $AccountIDS)
+    public function setAccountIDS(array $value = null)
     {
-        $this->AccountIDS = $AccountIDS;
+        $this->AccountIDS = $value;
 
         return $this;
     }
 
     /**
-     * Gets the EventType.
+     * Gets EventType.
      *
-     * @return string[]
+     * @return string[]|null
      */
     public function getEventType()
     {
@@ -146,16 +131,18 @@ class GetEventsLogFilter
     }
 
     /**
-     * Sets the EventType.
+     * Sets EventType.
      *
-     * @param string[] $EventType
-     *
-     * @return GetEventsLogFilter
+     * @param array|null $value
+     * @return $this
      */
-    public function setEventType(array $EventType)
+    public function setEventType(array $value = null)
     {
-        $this->EventType = $EventType;
+        $this->EventType = $value;
 
         return $this;
     }
+
+
 }
+

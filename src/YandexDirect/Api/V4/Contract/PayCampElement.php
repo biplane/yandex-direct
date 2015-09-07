@@ -3,28 +3,21 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class PayCampElement
 {
-    /**
-     * @var int
-     */
-    protected $CampaignID;
-    /**
-     * @var float
-     */
-    protected $Sum;
-    /**
-     * @var string
-     */
-    protected $Currency;
+
+    protected $CampaignID = null;
+
+    protected $Sum = null;
+
+    protected $Currency = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of PayCampElement.
      *
-     * @return self
+     * @return PayCampElement
      */
     public static function create()
     {
@@ -32,7 +25,7 @@ class PayCampElement
     }
 
     /**
-     * Gets the CampaignID.
+     * Gets CampaignID.
      *
      * @return int
      */
@@ -42,21 +35,20 @@ class PayCampElement
     }
 
     /**
-     * Sets the CampaignID.
+     * Sets CampaignID.
      *
-     * @param int $CampaignID
-     *
-     * @return PayCampElement
+     * @param int $value
+     * @return $this
      */
-    public function setCampaignID($CampaignID)
+    public function setCampaignID($value)
     {
-        $this->CampaignID = $CampaignID;
+        $this->CampaignID = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Sum.
+     * Gets Sum.
      *
      * @return float
      */
@@ -66,23 +58,22 @@ class PayCampElement
     }
 
     /**
-     * Sets the Sum.
+     * Sets Sum.
      *
-     * @param float $Sum
-     *
-     * @return PayCampElement
+     * @param float $value
+     * @return $this
      */
-    public function setSum($Sum)
+    public function setSum($value)
     {
-        $this->Sum = $Sum;
+        $this->Sum = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Currency.
+     * Gets Currency.
      *
-     * @return string
+     * @return string|null
      */
     public function getCurrency()
     {
@@ -90,16 +81,18 @@ class PayCampElement
     }
 
     /**
-     * Sets the Currency.
+     * Sets Currency.
      *
-     * @param string $Currency
-     *
-     * @return PayCampElement
+     * @param string|null $value
+     * @return $this
      */
-    public function setCurrency($Currency)
+    public function setCurrency($value = null)
     {
-        $this->Currency = $Currency;
+        $this->Currency = $value;
 
         return $this;
     }
+
+
 }
+

@@ -3,24 +3,19 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class RejectReason
 {
-    /**
-     * @var string
-     */
-    protected $Type;
-    /**
-     * @var string
-     */
-    protected $Text;
+
+    protected $Type = null;
+
+    protected $Text = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of RejectReason.
      *
-     * @return self
+     * @return RejectReason
      */
     public static function create()
     {
@@ -28,7 +23,7 @@ class RejectReason
     }
 
     /**
-     * Gets the Type.
+     * Gets Type.
      *
      * @return string
      */
@@ -38,21 +33,20 @@ class RejectReason
     }
 
     /**
-     * Sets the Type.
+     * Sets Type.
      *
-     * @param string $Type
-     *
-     * @return RejectReason
+     * @param string $value
+     * @return $this
      */
-    public function setType($Type)
+    public function setType($value)
     {
-        $this->Type = $Type;
+        $this->Type = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Text.
+     * Gets Text.
      *
      * @return string
      */
@@ -62,16 +56,18 @@ class RejectReason
     }
 
     /**
-     * Sets the Text.
+     * Sets Text.
      *
-     * @param string $Text
-     *
-     * @return RejectReason
+     * @param string $value
+     * @return $this
      */
-    public function setText($Text)
+    public function setText($value)
     {
-        $this->Text = $Text;
+        $this->Text = $value;
 
         return $this;
     }
+
+
 }
+

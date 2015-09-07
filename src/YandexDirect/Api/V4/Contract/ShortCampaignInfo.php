@@ -3,120 +3,67 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class ShortCampaignInfo
 {
-    /**
-     * @var int
-     */
-    protected $CampaignID;
-    /**
-     * @var string
-     */
-    protected $Login;
-    /**
-     * @var string
-     */
-    protected $Name;
-    /**
-     * @var string
-     */
-    protected $StartDate;
-    /**
-     * @var string
-     */
-    protected $StrategyName;
-    /**
-     * @var string
-     */
-    protected $ContextStrategyName;
-    /**
-     * @var float
-     */
-    protected $Sum;
-    /**
-     * @var float
-     */
-    protected $Rest;
-    /**
-     * @var float
-     */
-    protected $SumAvailableForTransfer;
-    /**
-     * @var int
-     */
-    protected $Shows;
-    /**
-     * @var int
-     */
-    protected $Clicks;
-    /**
-     * @var string
-     */
-    protected $Status;
-    /**
-     * @var string
-     */
-    protected $StatusShow;
-    /**
-     * @var string
-     */
-    protected $StatusArchive;
-    /**
-     * @var string
-     */
-    protected $StatusActivating;
-    /**
-     * @var string
-     */
-    protected $StatusModerate;
-    /**
-     * @var string
-     */
-    protected $IsActive;
-    /**
-     * @var string
-     */
-    protected $ManagerName;
-    /**
-     * @var string
-     */
-    protected $AgencyName;
-    /**
-     * @var string
-     */
-    protected $Currency;
-    /**
-     * @var string
-     */
-    protected $CampaignCurrency;
-    /**
-     * @var int
-     */
-    protected $SourceCampaignID;
-    /**
-     * @var float
-     */
-    protected $BonusDiscount;
-    /**
-     * @var string
-     */
-    protected $DayBudgetEnabled;
-    /**
-     * @var string
-     */
-    protected $EnableRelatedKeywords;
-    /**
-     * @var string
-     */
-    protected $ExtendedAdTitleEnabled;
+
+    protected $CampaignID = null;
+
+    protected $Login = null;
+
+    protected $Name = null;
+
+    protected $StartDate = null;
+
+    protected $StrategyName = null;
+
+    protected $ContextStrategyName = null;
+
+    protected $Sum = null;
+
+    protected $Rest = null;
+
+    protected $SumAvailableForTransfer = null;
+
+    protected $Shows = null;
+
+    protected $Clicks = null;
+
+    protected $Status = null;
+
+    protected $StatusShow = null;
+
+    protected $StatusArchive = null;
+
+    protected $StatusActivating = null;
+
+    protected $StatusModerate = null;
+
+    protected $IsActive = null;
+
+    protected $ManagerName = null;
+
+    protected $AgencyName = null;
+
+    protected $Currency = null;
+
+    protected $CampaignCurrency = null;
+
+    protected $SourceCampaignID = null;
+
+    protected $BonusDiscount = null;
+
+    protected $DayBudgetEnabled = null;
+
+    protected $EnableRelatedKeywords = null;
+
+    protected $ExtendedAdTitleEnabled = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of ShortCampaignInfo.
      *
-     * @return self
+     * @return ShortCampaignInfo
      */
     public static function create()
     {
@@ -124,7 +71,7 @@ class ShortCampaignInfo
     }
 
     /**
-     * Gets the CampaignID.
+     * Gets CampaignID.
      *
      * @return int
      */
@@ -134,21 +81,20 @@ class ShortCampaignInfo
     }
 
     /**
-     * Sets the CampaignID.
+     * Sets CampaignID.
      *
-     * @param int $CampaignID
-     *
-     * @return ShortCampaignInfo
+     * @param int $value
+     * @return $this
      */
-    public function setCampaignID($CampaignID)
+    public function setCampaignID($value)
     {
-        $this->CampaignID = $CampaignID;
+        $this->CampaignID = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Login.
+     * Gets Login.
      *
      * @return string
      */
@@ -158,21 +104,20 @@ class ShortCampaignInfo
     }
 
     /**
-     * Sets the Login.
+     * Sets Login.
      *
-     * @param string $Login
-     *
-     * @return ShortCampaignInfo
+     * @param string $value
+     * @return $this
      */
-    public function setLogin($Login)
+    public function setLogin($value)
     {
-        $this->Login = $Login;
+        $this->Login = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Name.
+     * Gets Name.
      *
      * @return string
      */
@@ -182,21 +127,20 @@ class ShortCampaignInfo
     }
 
     /**
-     * Sets the Name.
+     * Sets Name.
      *
-     * @param string $Name
-     *
-     * @return ShortCampaignInfo
+     * @param string $value
+     * @return $this
      */
-    public function setName($Name)
+    public function setName($value)
     {
-        $this->Name = $Name;
+        $this->Name = $value;
 
         return $this;
     }
 
     /**
-     * Gets the StartDate.
+     * Gets StartDate.
      *
      * @return string
      */
@@ -206,21 +150,20 @@ class ShortCampaignInfo
     }
 
     /**
-     * Sets the StartDate.
+     * Sets StartDate.
      *
-     * @param string $StartDate
-     *
-     * @return ShortCampaignInfo
+     * @param string $value
+     * @return $this
      */
-    public function setStartDate($StartDate)
+    public function setStartDate($value)
     {
-        $this->StartDate = $StartDate;
+        $this->StartDate = $value;
 
         return $this;
     }
 
     /**
-     * Gets the StrategyName.
+     * Gets StrategyName.
      *
      * @return string
      */
@@ -230,21 +173,20 @@ class ShortCampaignInfo
     }
 
     /**
-     * Sets the StrategyName.
+     * Sets StrategyName.
      *
-     * @param string $StrategyName
-     *
-     * @return ShortCampaignInfo
+     * @param string $value
+     * @return $this
      */
-    public function setStrategyName($StrategyName)
+    public function setStrategyName($value)
     {
-        $this->StrategyName = $StrategyName;
+        $this->StrategyName = $value;
 
         return $this;
     }
 
     /**
-     * Gets the ContextStrategyName.
+     * Gets ContextStrategyName.
      *
      * @return string
      */
@@ -254,21 +196,20 @@ class ShortCampaignInfo
     }
 
     /**
-     * Sets the ContextStrategyName.
+     * Sets ContextStrategyName.
      *
-     * @param string $ContextStrategyName
-     *
-     * @return ShortCampaignInfo
+     * @param string $value
+     * @return $this
      */
-    public function setContextStrategyName($ContextStrategyName)
+    public function setContextStrategyName($value)
     {
-        $this->ContextStrategyName = $ContextStrategyName;
+        $this->ContextStrategyName = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Sum.
+     * Gets Sum.
      *
      * @return float
      */
@@ -278,21 +219,20 @@ class ShortCampaignInfo
     }
 
     /**
-     * Sets the Sum.
+     * Sets Sum.
      *
-     * @param float $Sum
-     *
-     * @return ShortCampaignInfo
+     * @param float $value
+     * @return $this
      */
-    public function setSum($Sum)
+    public function setSum($value)
     {
-        $this->Sum = $Sum;
+        $this->Sum = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Rest.
+     * Gets Rest.
      *
      * @return float
      */
@@ -302,23 +242,22 @@ class ShortCampaignInfo
     }
 
     /**
-     * Sets the Rest.
+     * Sets Rest.
      *
-     * @param float $Rest
-     *
-     * @return ShortCampaignInfo
+     * @param float $value
+     * @return $this
      */
-    public function setRest($Rest)
+    public function setRest($value)
     {
-        $this->Rest = $Rest;
+        $this->Rest = $value;
 
         return $this;
     }
 
     /**
-     * Gets the SumAvailableForTransfer.
+     * Gets SumAvailableForTransfer.
      *
-     * @return float
+     * @return float|null
      */
     public function getSumAvailableForTransfer()
     {
@@ -326,21 +265,20 @@ class ShortCampaignInfo
     }
 
     /**
-     * Sets the SumAvailableForTransfer.
+     * Sets SumAvailableForTransfer.
      *
-     * @param float $SumAvailableForTransfer
-     *
-     * @return ShortCampaignInfo
+     * @param float|null $value
+     * @return $this
      */
-    public function setSumAvailableForTransfer($SumAvailableForTransfer)
+    public function setSumAvailableForTransfer($value = null)
     {
-        $this->SumAvailableForTransfer = $SumAvailableForTransfer;
+        $this->SumAvailableForTransfer = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Shows.
+     * Gets Shows.
      *
      * @return int
      */
@@ -350,21 +288,20 @@ class ShortCampaignInfo
     }
 
     /**
-     * Sets the Shows.
+     * Sets Shows.
      *
-     * @param int $Shows
-     *
-     * @return ShortCampaignInfo
+     * @param int $value
+     * @return $this
      */
-    public function setShows($Shows)
+    public function setShows($value)
     {
-        $this->Shows = $Shows;
+        $this->Shows = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Clicks.
+     * Gets Clicks.
      *
      * @return int
      */
@@ -374,23 +311,22 @@ class ShortCampaignInfo
     }
 
     /**
-     * Sets the Clicks.
+     * Sets Clicks.
      *
-     * @param int $Clicks
-     *
-     * @return ShortCampaignInfo
+     * @param int $value
+     * @return $this
      */
-    public function setClicks($Clicks)
+    public function setClicks($value)
     {
-        $this->Clicks = $Clicks;
+        $this->Clicks = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Status.
+     * Gets Status.
      *
-     * @return string
+     * @return string|null
      */
     public function getStatus()
     {
@@ -398,21 +334,20 @@ class ShortCampaignInfo
     }
 
     /**
-     * Sets the Status.
+     * Sets Status.
      *
-     * @param string $Status
-     *
-     * @return ShortCampaignInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setStatus($Status)
+    public function setStatus($value = null)
     {
-        $this->Status = $Status;
+        $this->Status = $value;
 
         return $this;
     }
 
     /**
-     * Gets the StatusShow.
+     * Gets StatusShow.
      *
      * @return string
      */
@@ -422,21 +357,20 @@ class ShortCampaignInfo
     }
 
     /**
-     * Sets the StatusShow.
+     * Sets StatusShow.
      *
-     * @param string $StatusShow
-     *
-     * @return ShortCampaignInfo
+     * @param string $value
+     * @return $this
      */
-    public function setStatusShow($StatusShow)
+    public function setStatusShow($value)
     {
-        $this->StatusShow = $StatusShow;
+        $this->StatusShow = $value;
 
         return $this;
     }
 
     /**
-     * Gets the StatusArchive.
+     * Gets StatusArchive.
      *
      * @return string
      */
@@ -446,21 +380,20 @@ class ShortCampaignInfo
     }
 
     /**
-     * Sets the StatusArchive.
+     * Sets StatusArchive.
      *
-     * @param string $StatusArchive
-     *
-     * @return ShortCampaignInfo
+     * @param string $value
+     * @return $this
      */
-    public function setStatusArchive($StatusArchive)
+    public function setStatusArchive($value)
     {
-        $this->StatusArchive = $StatusArchive;
+        $this->StatusArchive = $value;
 
         return $this;
     }
 
     /**
-     * Gets the StatusActivating.
+     * Gets StatusActivating.
      *
      * @return string
      */
@@ -470,21 +403,20 @@ class ShortCampaignInfo
     }
 
     /**
-     * Sets the StatusActivating.
+     * Sets StatusActivating.
      *
-     * @param string $StatusActivating
-     *
-     * @return ShortCampaignInfo
+     * @param string $value
+     * @return $this
      */
-    public function setStatusActivating($StatusActivating)
+    public function setStatusActivating($value)
     {
-        $this->StatusActivating = $StatusActivating;
+        $this->StatusActivating = $value;
 
         return $this;
     }
 
     /**
-     * Gets the StatusModerate.
+     * Gets StatusModerate.
      *
      * @return string
      */
@@ -494,23 +426,22 @@ class ShortCampaignInfo
     }
 
     /**
-     * Sets the StatusModerate.
+     * Sets StatusModerate.
      *
-     * @param string $StatusModerate
-     *
-     * @return ShortCampaignInfo
+     * @param string $value
+     * @return $this
      */
-    public function setStatusModerate($StatusModerate)
+    public function setStatusModerate($value)
     {
-        $this->StatusModerate = $StatusModerate;
+        $this->StatusModerate = $value;
 
         return $this;
     }
 
     /**
-     * Gets the IsActive.
+     * Gets IsActive.
      *
-     * @return string
+     * @return string|null
      */
     public function getIsActive()
     {
@@ -518,23 +449,22 @@ class ShortCampaignInfo
     }
 
     /**
-     * Sets the IsActive.
+     * Sets IsActive.
      *
-     * @param string $IsActive
-     *
-     * @return ShortCampaignInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setIsActive($IsActive)
+    public function setIsActive($value = null)
     {
-        $this->IsActive = $IsActive;
+        $this->IsActive = $value;
 
         return $this;
     }
 
     /**
-     * Gets the ManagerName.
+     * Gets ManagerName.
      *
-     * @return string
+     * @return string|null
      */
     public function getManagerName()
     {
@@ -542,23 +472,22 @@ class ShortCampaignInfo
     }
 
     /**
-     * Sets the ManagerName.
+     * Sets ManagerName.
      *
-     * @param string $ManagerName
-     *
-     * @return ShortCampaignInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setManagerName($ManagerName)
+    public function setManagerName($value = null)
     {
-        $this->ManagerName = $ManagerName;
+        $this->ManagerName = $value;
 
         return $this;
     }
 
     /**
-     * Gets the AgencyName.
+     * Gets AgencyName.
      *
-     * @return string
+     * @return string|null
      */
     public function getAgencyName()
     {
@@ -566,23 +495,22 @@ class ShortCampaignInfo
     }
 
     /**
-     * Sets the AgencyName.
+     * Sets AgencyName.
      *
-     * @param string $AgencyName
-     *
-     * @return ShortCampaignInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setAgencyName($AgencyName)
+    public function setAgencyName($value = null)
     {
-        $this->AgencyName = $AgencyName;
+        $this->AgencyName = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Currency.
+     * Gets Currency.
      *
-     * @return string
+     * @return string|null
      */
     public function getCurrency()
     {
@@ -590,23 +518,22 @@ class ShortCampaignInfo
     }
 
     /**
-     * Sets the Currency.
+     * Sets Currency.
      *
-     * @param string $Currency
-     *
-     * @return ShortCampaignInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setCurrency($Currency)
+    public function setCurrency($value = null)
     {
-        $this->Currency = $Currency;
+        $this->Currency = $value;
 
         return $this;
     }
 
     /**
-     * Gets the CampaignCurrency.
+     * Gets CampaignCurrency.
      *
-     * @return string
+     * @return string|null
      */
     public function getCampaignCurrency()
     {
@@ -614,23 +541,22 @@ class ShortCampaignInfo
     }
 
     /**
-     * Sets the CampaignCurrency.
+     * Sets CampaignCurrency.
      *
-     * @param string $CampaignCurrency
-     *
-     * @return ShortCampaignInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setCampaignCurrency($CampaignCurrency)
+    public function setCampaignCurrency($value = null)
     {
-        $this->CampaignCurrency = $CampaignCurrency;
+        $this->CampaignCurrency = $value;
 
         return $this;
     }
 
     /**
-     * Gets the SourceCampaignID.
+     * Gets SourceCampaignID.
      *
-     * @return int
+     * @return int|null
      */
     public function getSourceCampaignID()
     {
@@ -638,23 +564,22 @@ class ShortCampaignInfo
     }
 
     /**
-     * Sets the SourceCampaignID.
+     * Sets SourceCampaignID.
      *
-     * @param int $SourceCampaignID
-     *
-     * @return ShortCampaignInfo
+     * @param int|null $value
+     * @return $this
      */
-    public function setSourceCampaignID($SourceCampaignID)
+    public function setSourceCampaignID($value = null)
     {
-        $this->SourceCampaignID = $SourceCampaignID;
+        $this->SourceCampaignID = $value;
 
         return $this;
     }
 
     /**
-     * Gets the BonusDiscount.
+     * Gets BonusDiscount.
      *
-     * @return float
+     * @return float|null
      */
     public function getBonusDiscount()
     {
@@ -662,23 +587,22 @@ class ShortCampaignInfo
     }
 
     /**
-     * Sets the BonusDiscount.
+     * Sets BonusDiscount.
      *
-     * @param float $BonusDiscount
-     *
-     * @return ShortCampaignInfo
+     * @param float|null $value
+     * @return $this
      */
-    public function setBonusDiscount($BonusDiscount)
+    public function setBonusDiscount($value = null)
     {
-        $this->BonusDiscount = $BonusDiscount;
+        $this->BonusDiscount = $value;
 
         return $this;
     }
 
     /**
-     * Gets the DayBudgetEnabled.
+     * Gets DayBudgetEnabled.
      *
-     * @return string
+     * @return string|null
      */
     public function getDayBudgetEnabled()
     {
@@ -686,23 +610,22 @@ class ShortCampaignInfo
     }
 
     /**
-     * Sets the DayBudgetEnabled.
+     * Sets DayBudgetEnabled.
      *
-     * @param string $DayBudgetEnabled
-     *
-     * @return ShortCampaignInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setDayBudgetEnabled($DayBudgetEnabled)
+    public function setDayBudgetEnabled($value = null)
     {
-        $this->DayBudgetEnabled = $DayBudgetEnabled;
+        $this->DayBudgetEnabled = $value;
 
         return $this;
     }
 
     /**
-     * Gets the EnableRelatedKeywords.
+     * Gets EnableRelatedKeywords.
      *
-     * @return string
+     * @return string|null
      */
     public function getEnableRelatedKeywords()
     {
@@ -710,23 +633,22 @@ class ShortCampaignInfo
     }
 
     /**
-     * Sets the EnableRelatedKeywords.
+     * Sets EnableRelatedKeywords.
      *
-     * @param string $EnableRelatedKeywords
-     *
-     * @return ShortCampaignInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setEnableRelatedKeywords($EnableRelatedKeywords)
+    public function setEnableRelatedKeywords($value = null)
     {
-        $this->EnableRelatedKeywords = $EnableRelatedKeywords;
+        $this->EnableRelatedKeywords = $value;
 
         return $this;
     }
 
     /**
-     * Gets the ExtendedAdTitleEnabled.
+     * Gets ExtendedAdTitleEnabled.
      *
-     * @return string
+     * @return string|null
      */
     public function getExtendedAdTitleEnabled()
     {
@@ -734,16 +656,18 @@ class ShortCampaignInfo
     }
 
     /**
-     * Sets the ExtendedAdTitleEnabled.
+     * Sets ExtendedAdTitleEnabled.
      *
-     * @param string $ExtendedAdTitleEnabled
-     *
-     * @return ShortCampaignInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setExtendedAdTitleEnabled($ExtendedAdTitleEnabled)
+    public function setExtendedAdTitleEnabled($value = null)
     {
-        $this->ExtendedAdTitleEnabled = $ExtendedAdTitleEnabled;
+        $this->ExtendedAdTitleEnabled = $value;
 
         return $this;
     }
+
+
 }
+

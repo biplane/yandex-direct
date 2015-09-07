@@ -3,24 +3,19 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class RetargetingConditionResponse
 {
-    /**
-     * @var RetargetingConditionActionResult[]
-     */
-    protected $ActionsResult;
-    /**
-     * @var RetargetingCondition[]
-     */
-    protected $RetargetingConditions;
+
+    protected $ActionsResult = null;
+
+    protected $RetargetingConditions = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of RetargetingConditionResponse.
      *
-     * @return self
+     * @return RetargetingConditionResponse
      */
     public static function create()
     {
@@ -28,9 +23,9 @@ class RetargetingConditionResponse
     }
 
     /**
-     * Gets the ActionsResult.
+     * Gets ActionsResult.
      *
-     * @return RetargetingConditionActionResult[]
+     * @return RetargetingConditionActionResult[]|null
      */
     public function getActionsResult()
     {
@@ -38,23 +33,22 @@ class RetargetingConditionResponse
     }
 
     /**
-     * Sets the ActionsResult.
+     * Sets ActionsResult.
      *
-     * @param RetargetingConditionActionResult[] $ActionsResult
-     *
-     * @return RetargetingConditionResponse
+     * @param array|null $value
+     * @return $this
      */
-    public function setActionsResult(array $ActionsResult)
+    public function setActionsResult(array $value = null)
     {
-        $this->ActionsResult = $ActionsResult;
+        $this->ActionsResult = $value;
 
         return $this;
     }
 
     /**
-     * Gets the RetargetingConditions.
+     * Gets RetargetingConditions.
      *
-     * @return RetargetingCondition[]
+     * @return RetargetingCondition[]|null
      */
     public function getRetargetingConditions()
     {
@@ -62,16 +56,18 @@ class RetargetingConditionResponse
     }
 
     /**
-     * Sets the RetargetingConditions.
+     * Sets RetargetingConditions.
      *
-     * @param RetargetingCondition[] $RetargetingConditions
-     *
-     * @return RetargetingConditionResponse
+     * @param array|null $value
+     * @return $this
      */
-    public function setRetargetingConditions(array $RetargetingConditions)
+    public function setRetargetingConditions(array $value = null)
     {
-        $this->RetargetingConditions = $RetargetingConditions;
+        $this->RetargetingConditions = $value;
 
         return $this;
     }
+
+
 }
+

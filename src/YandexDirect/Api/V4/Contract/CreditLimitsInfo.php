@@ -3,24 +3,21 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class CreditLimitsInfo
 {
-    /**
-     * @var string
-     */
-    protected $Currency;
-    /**
-     * @var CreditLimitsItem[]
-     */
-    protected $Limits;
+
+    protected $Currency = null;
+
+    protected $Limits = array(
+        
+    );
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of CreditLimitsInfo.
      *
-     * @return self
+     * @return CreditLimitsInfo
      */
     public static function create()
     {
@@ -28,7 +25,7 @@ class CreditLimitsInfo
     }
 
     /**
-     * Gets the Currency.
+     * Gets Currency.
      *
      * @return string
      */
@@ -38,21 +35,20 @@ class CreditLimitsInfo
     }
 
     /**
-     * Sets the Currency.
+     * Sets Currency.
      *
-     * @param string $Currency
-     *
-     * @return CreditLimitsInfo
+     * @param string $value
+     * @return $this
      */
-    public function setCurrency($Currency)
+    public function setCurrency($value)
     {
-        $this->Currency = $Currency;
+        $this->Currency = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Limits.
+     * Gets Limits.
      *
      * @return CreditLimitsItem[]
      */
@@ -62,16 +58,18 @@ class CreditLimitsInfo
     }
 
     /**
-     * Sets the Limits.
+     * Sets Limits.
      *
-     * @param CreditLimitsItem[] $Limits
-     *
-     * @return CreditLimitsInfo
+     * @param array $value
+     * @return $this
      */
-    public function setLimits(array $Limits)
+    public function setLimits(array $value)
     {
-        $this->Limits = $Limits;
+        $this->Limits = $value;
 
         return $this;
     }
+
+
 }
+

@@ -3,52 +3,33 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class Account
 {
-    /**
-     * @var string
-     */
-    protected $AgencyName;
-    /**
-     * @var int
-     */
-    protected $AccountID;
-    /**
-     * @var float
-     */
-    protected $Amount;
-    /**
-     * @var float
-     */
-    protected $AmountAvailableForTransfer;
-    /**
-     * @var string
-     */
-    protected $Currency;
-    /**
-     * @var string
-     */
-    protected $Login;
-    /**
-     * @var float
-     */
-    protected $Discount;
-    /**
-     * @var SmsNotificationInfo
-     */
-    protected $SmsNotification;
-    /**
-     * @var EmailNotificationInfo
-     */
-    protected $EmailNotification;
+
+    protected $AgencyName = null;
+
+    protected $AccountID = null;
+
+    protected $Amount = null;
+
+    protected $AmountAvailableForTransfer = null;
+
+    protected $Currency = null;
+
+    protected $Login = null;
+
+    protected $Discount = null;
+
+    protected $SmsNotification = null;
+
+    protected $EmailNotification = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of Account.
      *
-     * @return self
+     * @return Account
      */
     public static function create()
     {
@@ -56,9 +37,9 @@ class Account
     }
 
     /**
-     * Gets the AgencyName.
+     * Gets AgencyName.
      *
-     * @return string
+     * @return string|null
      */
     public function getAgencyName()
     {
@@ -66,21 +47,20 @@ class Account
     }
 
     /**
-     * Sets the AgencyName.
+     * Sets AgencyName.
      *
-     * @param string $AgencyName
-     *
-     * @return Account
+     * @param string|null $value
+     * @return $this
      */
-    public function setAgencyName($AgencyName)
+    public function setAgencyName($value = null)
     {
-        $this->AgencyName = $AgencyName;
+        $this->AgencyName = $value;
 
         return $this;
     }
 
     /**
-     * Gets the AccountID.
+     * Gets AccountID.
      *
      * @return int
      */
@@ -90,23 +70,22 @@ class Account
     }
 
     /**
-     * Sets the AccountID.
+     * Sets AccountID.
      *
-     * @param int $AccountID
-     *
-     * @return Account
+     * @param int $value
+     * @return $this
      */
-    public function setAccountID($AccountID)
+    public function setAccountID($value)
     {
-        $this->AccountID = $AccountID;
+        $this->AccountID = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Amount.
+     * Gets Amount.
      *
-     * @return float
+     * @return float|null
      */
     public function getAmount()
     {
@@ -114,23 +93,22 @@ class Account
     }
 
     /**
-     * Sets the Amount.
+     * Sets Amount.
      *
-     * @param float $Amount
-     *
-     * @return Account
+     * @param float|null $value
+     * @return $this
      */
-    public function setAmount($Amount)
+    public function setAmount($value = null)
     {
-        $this->Amount = $Amount;
+        $this->Amount = $value;
 
         return $this;
     }
 
     /**
-     * Gets the AmountAvailableForTransfer.
+     * Gets AmountAvailableForTransfer.
      *
-     * @return float
+     * @return float|null
      */
     public function getAmountAvailableForTransfer()
     {
@@ -138,23 +116,22 @@ class Account
     }
 
     /**
-     * Sets the AmountAvailableForTransfer.
+     * Sets AmountAvailableForTransfer.
      *
-     * @param float $AmountAvailableForTransfer
-     *
-     * @return Account
+     * @param float|null $value
+     * @return $this
      */
-    public function setAmountAvailableForTransfer($AmountAvailableForTransfer)
+    public function setAmountAvailableForTransfer($value = null)
     {
-        $this->AmountAvailableForTransfer = $AmountAvailableForTransfer;
+        $this->AmountAvailableForTransfer = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Currency.
+     * Gets Currency.
      *
-     * @return string
+     * @return string|null
      */
     public function getCurrency()
     {
@@ -162,23 +139,22 @@ class Account
     }
 
     /**
-     * Sets the Currency.
+     * Sets Currency.
      *
-     * @param string $Currency
-     *
-     * @return Account
+     * @param string|null $value
+     * @return $this
      */
-    public function setCurrency($Currency)
+    public function setCurrency($value = null)
     {
-        $this->Currency = $Currency;
+        $this->Currency = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Login.
+     * Gets Login.
      *
-     * @return string
+     * @return string|null
      */
     public function getLogin()
     {
@@ -186,23 +162,22 @@ class Account
     }
 
     /**
-     * Sets the Login.
+     * Sets Login.
      *
-     * @param string $Login
-     *
-     * @return Account
+     * @param string|null $value
+     * @return $this
      */
-    public function setLogin($Login)
+    public function setLogin($value = null)
     {
-        $this->Login = $Login;
+        $this->Login = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Discount.
+     * Gets Discount.
      *
-     * @return float
+     * @return float|null
      */
     public function getDiscount()
     {
@@ -210,23 +185,22 @@ class Account
     }
 
     /**
-     * Sets the Discount.
+     * Sets Discount.
      *
-     * @param float $Discount
-     *
-     * @return Account
+     * @param float|null $value
+     * @return $this
      */
-    public function setDiscount($Discount)
+    public function setDiscount($value = null)
     {
-        $this->Discount = $Discount;
+        $this->Discount = $value;
 
         return $this;
     }
 
     /**
-     * Gets the SmsNotification.
+     * Gets SmsNotification.
      *
-     * @return SmsNotificationInfo
+     * @return SmsNotificationInfo|null
      */
     public function getSmsNotification()
     {
@@ -234,23 +208,22 @@ class Account
     }
 
     /**
-     * Sets the SmsNotification.
+     * Sets SmsNotification.
      *
-     * @param SmsNotificationInfo $SmsNotification
-     *
-     * @return Account
+     * @param SmsNotificationInfo|null $value
+     * @return $this
      */
-    public function setSmsNotification(SmsNotificationInfo $SmsNotification)
+    public function setSmsNotification(SmsNotificationInfo $value = null)
     {
-        $this->SmsNotification = $SmsNotification;
+        $this->SmsNotification = $value;
 
         return $this;
     }
 
     /**
-     * Gets the EmailNotification.
+     * Gets EmailNotification.
      *
-     * @return EmailNotificationInfo
+     * @return EmailNotificationInfo|null
      */
     public function getEmailNotification()
     {
@@ -258,16 +231,18 @@ class Account
     }
 
     /**
-     * Sets the EmailNotification.
+     * Sets EmailNotification.
      *
-     * @param EmailNotificationInfo $EmailNotification
-     *
-     * @return Account
+     * @param EmailNotificationInfo|null $value
+     * @return $this
      */
-    public function setEmailNotification(EmailNotificationInfo $EmailNotification)
+    public function setEmailNotification(EmailNotificationInfo $value = null)
     {
-        $this->EmailNotification = $EmailNotification;
+        $this->EmailNotification = $value;
 
         return $this;
     }
+
+
 }
+

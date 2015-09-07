@@ -3,92 +3,57 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class BannersStatItem
 {
-    /**
-     * @var float
-     */
-    protected $Sum;
-    /**
-     * @var float
-     */
-    protected $SumContext;
-    /**
-     * @var float
-     */
-    protected $SumSearch;
-    /**
-     * @var int
-     */
-    protected $Clicks;
-    /**
-     * @var int
-     */
-    protected $ClicksContext;
-    /**
-     * @var int
-     */
-    protected $ClicksSearch;
-    /**
-     * @var int
-     */
-    protected $Shows;
-    /**
-     * @var int
-     */
-    protected $ShowsContext;
-    /**
-     * @var int
-     */
-    protected $ShowsSearch;
-    /**
-     * @var string
-     */
-    protected $StatDate;
-    /**
-     * @var int
-     */
-    protected $BannerID;
-    /**
-     * @var int
-     */
-    protected $PhraseID;
-    /**
-     * @var int
-     */
-    protected $RubricID;
-    /**
-     * @var int
-     */
-    protected $RetargetingID;
-    /**
-     * @var string
-     */
-    protected $Phrase;
-    /**
-     * @var string
-     */
-    protected $StatType;
-    /**
-     * @var string
-     */
-    protected $DeviceType;
-    /**
-     * @var float
-     */
-    protected $ShowsAveragePosition;
-    /**
-     * @var float
-     */
-    protected $ClicksAveragePosition;
+
+    protected $Sum = null;
+
+    protected $SumContext = null;
+
+    protected $SumSearch = null;
+
+    protected $Clicks = null;
+
+    protected $ClicksContext = null;
+
+    protected $ClicksSearch = null;
+
+    protected $Shows = null;
+
+    protected $ShowsContext = null;
+
+    protected $ShowsSearch = null;
+
+    protected $StatDate = null;
+
+    protected $BannerID = null;
+
+    protected $PhraseID = null;
+
+    protected $RubricID = null;
+
+    protected $RetargetingID = null;
+
+    protected $Phrase = null;
+
+    protected $StatType = null;
+
+    protected $DeviceType = null;
+
+    protected $ShowsAveragePosition = null;
+
+    protected $ClicksAveragePosition = null;
+
+    protected $Revenue = null;
+
+    protected $ROI = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of BannersStatItem.
      *
-     * @return self
+     * @return BannersStatItem
      */
     public static function create()
     {
@@ -96,9 +61,9 @@ class BannersStatItem
     }
 
     /**
-     * Gets the Sum.
+     * Gets Sum.
      *
-     * @return float
+     * @return float|null
      */
     public function getSum()
     {
@@ -106,23 +71,22 @@ class BannersStatItem
     }
 
     /**
-     * Sets the Sum.
+     * Sets Sum.
      *
-     * @param float $Sum
-     *
-     * @return BannersStatItem
+     * @param float|null $value
+     * @return $this
      */
-    public function setSum($Sum)
+    public function setSum($value = null)
     {
-        $this->Sum = $Sum;
+        $this->Sum = $value;
 
         return $this;
     }
 
     /**
-     * Gets the SumContext.
+     * Gets SumContext.
      *
-     * @return float
+     * @return float|null
      */
     public function getSumContext()
     {
@@ -130,23 +94,22 @@ class BannersStatItem
     }
 
     /**
-     * Sets the SumContext.
+     * Sets SumContext.
      *
-     * @param float $SumContext
-     *
-     * @return BannersStatItem
+     * @param float|null $value
+     * @return $this
      */
-    public function setSumContext($SumContext)
+    public function setSumContext($value = null)
     {
-        $this->SumContext = $SumContext;
+        $this->SumContext = $value;
 
         return $this;
     }
 
     /**
-     * Gets the SumSearch.
+     * Gets SumSearch.
      *
-     * @return float
+     * @return float|null
      */
     public function getSumSearch()
     {
@@ -154,23 +117,22 @@ class BannersStatItem
     }
 
     /**
-     * Sets the SumSearch.
+     * Sets SumSearch.
      *
-     * @param float $SumSearch
-     *
-     * @return BannersStatItem
+     * @param float|null $value
+     * @return $this
      */
-    public function setSumSearch($SumSearch)
+    public function setSumSearch($value = null)
     {
-        $this->SumSearch = $SumSearch;
+        $this->SumSearch = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Clicks.
+     * Gets Clicks.
      *
-     * @return int
+     * @return int|null
      */
     public function getClicks()
     {
@@ -178,23 +140,22 @@ class BannersStatItem
     }
 
     /**
-     * Sets the Clicks.
+     * Sets Clicks.
      *
-     * @param int $Clicks
-     *
-     * @return BannersStatItem
+     * @param int|null $value
+     * @return $this
      */
-    public function setClicks($Clicks)
+    public function setClicks($value = null)
     {
-        $this->Clicks = $Clicks;
+        $this->Clicks = $value;
 
         return $this;
     }
 
     /**
-     * Gets the ClicksContext.
+     * Gets ClicksContext.
      *
-     * @return int
+     * @return int|null
      */
     public function getClicksContext()
     {
@@ -202,23 +163,22 @@ class BannersStatItem
     }
 
     /**
-     * Sets the ClicksContext.
+     * Sets ClicksContext.
      *
-     * @param int $ClicksContext
-     *
-     * @return BannersStatItem
+     * @param int|null $value
+     * @return $this
      */
-    public function setClicksContext($ClicksContext)
+    public function setClicksContext($value = null)
     {
-        $this->ClicksContext = $ClicksContext;
+        $this->ClicksContext = $value;
 
         return $this;
     }
 
     /**
-     * Gets the ClicksSearch.
+     * Gets ClicksSearch.
      *
-     * @return int
+     * @return int|null
      */
     public function getClicksSearch()
     {
@@ -226,23 +186,22 @@ class BannersStatItem
     }
 
     /**
-     * Sets the ClicksSearch.
+     * Sets ClicksSearch.
      *
-     * @param int $ClicksSearch
-     *
-     * @return BannersStatItem
+     * @param int|null $value
+     * @return $this
      */
-    public function setClicksSearch($ClicksSearch)
+    public function setClicksSearch($value = null)
     {
-        $this->ClicksSearch = $ClicksSearch;
+        $this->ClicksSearch = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Shows.
+     * Gets Shows.
      *
-     * @return int
+     * @return int|null
      */
     public function getShows()
     {
@@ -250,23 +209,22 @@ class BannersStatItem
     }
 
     /**
-     * Sets the Shows.
+     * Sets Shows.
      *
-     * @param int $Shows
-     *
-     * @return BannersStatItem
+     * @param int|null $value
+     * @return $this
      */
-    public function setShows($Shows)
+    public function setShows($value = null)
     {
-        $this->Shows = $Shows;
+        $this->Shows = $value;
 
         return $this;
     }
 
     /**
-     * Gets the ShowsContext.
+     * Gets ShowsContext.
      *
-     * @return int
+     * @return int|null
      */
     public function getShowsContext()
     {
@@ -274,23 +232,22 @@ class BannersStatItem
     }
 
     /**
-     * Sets the ShowsContext.
+     * Sets ShowsContext.
      *
-     * @param int $ShowsContext
-     *
-     * @return BannersStatItem
+     * @param int|null $value
+     * @return $this
      */
-    public function setShowsContext($ShowsContext)
+    public function setShowsContext($value = null)
     {
-        $this->ShowsContext = $ShowsContext;
+        $this->ShowsContext = $value;
 
         return $this;
     }
 
     /**
-     * Gets the ShowsSearch.
+     * Gets ShowsSearch.
      *
-     * @return int
+     * @return int|null
      */
     public function getShowsSearch()
     {
@@ -298,23 +255,22 @@ class BannersStatItem
     }
 
     /**
-     * Sets the ShowsSearch.
+     * Sets ShowsSearch.
      *
-     * @param int $ShowsSearch
-     *
-     * @return BannersStatItem
+     * @param int|null $value
+     * @return $this
      */
-    public function setShowsSearch($ShowsSearch)
+    public function setShowsSearch($value = null)
     {
-        $this->ShowsSearch = $ShowsSearch;
+        $this->ShowsSearch = $value;
 
         return $this;
     }
 
     /**
-     * Gets the StatDate.
+     * Gets StatDate.
      *
-     * @return string
+     * @return string|null
      */
     public function getStatDate()
     {
@@ -322,23 +278,22 @@ class BannersStatItem
     }
 
     /**
-     * Sets the StatDate.
+     * Sets StatDate.
      *
-     * @param string $StatDate
-     *
-     * @return BannersStatItem
+     * @param string|null $value
+     * @return $this
      */
-    public function setStatDate($StatDate)
+    public function setStatDate($value = null)
     {
-        $this->StatDate = $StatDate;
+        $this->StatDate = $value;
 
         return $this;
     }
 
     /**
-     * Gets the BannerID.
+     * Gets BannerID.
      *
-     * @return int
+     * @return int|null
      */
     public function getBannerID()
     {
@@ -346,23 +301,22 @@ class BannersStatItem
     }
 
     /**
-     * Sets the BannerID.
+     * Sets BannerID.
      *
-     * @param int $BannerID
-     *
-     * @return BannersStatItem
+     * @param int|null $value
+     * @return $this
      */
-    public function setBannerID($BannerID)
+    public function setBannerID($value = null)
     {
-        $this->BannerID = $BannerID;
+        $this->BannerID = $value;
 
         return $this;
     }
 
     /**
-     * Gets the PhraseID.
+     * Gets PhraseID.
      *
-     * @return int
+     * @return int|null
      */
     public function getPhraseID()
     {
@@ -370,23 +324,22 @@ class BannersStatItem
     }
 
     /**
-     * Sets the PhraseID.
+     * Sets PhraseID.
      *
-     * @param int $PhraseID
-     *
-     * @return BannersStatItem
+     * @param int|null $value
+     * @return $this
      */
-    public function setPhraseID($PhraseID)
+    public function setPhraseID($value = null)
     {
-        $this->PhraseID = $PhraseID;
+        $this->PhraseID = $value;
 
         return $this;
     }
 
     /**
-     * Gets the RubricID.
+     * Gets RubricID.
      *
-     * @return int
+     * @return int|null
      */
     public function getRubricID()
     {
@@ -394,23 +347,22 @@ class BannersStatItem
     }
 
     /**
-     * Sets the RubricID.
+     * Sets RubricID.
      *
-     * @param int $RubricID
-     *
-     * @return BannersStatItem
+     * @param int|null $value
+     * @return $this
      */
-    public function setRubricID($RubricID)
+    public function setRubricID($value = null)
     {
-        $this->RubricID = $RubricID;
+        $this->RubricID = $value;
 
         return $this;
     }
 
     /**
-     * Gets the RetargetingID.
+     * Gets RetargetingID.
      *
-     * @return int
+     * @return int|null
      */
     public function getRetargetingID()
     {
@@ -418,23 +370,22 @@ class BannersStatItem
     }
 
     /**
-     * Sets the RetargetingID.
+     * Sets RetargetingID.
      *
-     * @param int $RetargetingID
-     *
-     * @return BannersStatItem
+     * @param int|null $value
+     * @return $this
      */
-    public function setRetargetingID($RetargetingID)
+    public function setRetargetingID($value = null)
     {
-        $this->RetargetingID = $RetargetingID;
+        $this->RetargetingID = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Phrase.
+     * Gets Phrase.
      *
-     * @return string
+     * @return string|null
      */
     public function getPhrase()
     {
@@ -442,23 +393,22 @@ class BannersStatItem
     }
 
     /**
-     * Sets the Phrase.
+     * Sets Phrase.
      *
-     * @param string $Phrase
-     *
-     * @return BannersStatItem
+     * @param string|null $value
+     * @return $this
      */
-    public function setPhrase($Phrase)
+    public function setPhrase($value = null)
     {
-        $this->Phrase = $Phrase;
+        $this->Phrase = $value;
 
         return $this;
     }
 
     /**
-     * Gets the StatType.
+     * Gets StatType.
      *
-     * @return string
+     * @return string|null
      */
     public function getStatType()
     {
@@ -466,23 +416,22 @@ class BannersStatItem
     }
 
     /**
-     * Sets the StatType.
+     * Sets StatType.
      *
-     * @param string $StatType
-     *
-     * @return BannersStatItem
+     * @param string|null $value
+     * @return $this
      */
-    public function setStatType($StatType)
+    public function setStatType($value = null)
     {
-        $this->StatType = $StatType;
+        $this->StatType = $value;
 
         return $this;
     }
 
     /**
-     * Gets the DeviceType.
+     * Gets DeviceType.
      *
-     * @return string
+     * @return string|null
      */
     public function getDeviceType()
     {
@@ -490,23 +439,22 @@ class BannersStatItem
     }
 
     /**
-     * Sets the DeviceType.
+     * Sets DeviceType.
      *
-     * @param string $DeviceType
-     *
-     * @return BannersStatItem
+     * @param string|null $value
+     * @return $this
      */
-    public function setDeviceType($DeviceType)
+    public function setDeviceType($value = null)
     {
-        $this->DeviceType = $DeviceType;
+        $this->DeviceType = $value;
 
         return $this;
     }
 
     /**
-     * Gets the ShowsAveragePosition.
+     * Gets ShowsAveragePosition.
      *
-     * @return float
+     * @return float|null
      */
     public function getShowsAveragePosition()
     {
@@ -514,23 +462,22 @@ class BannersStatItem
     }
 
     /**
-     * Sets the ShowsAveragePosition.
+     * Sets ShowsAveragePosition.
      *
-     * @param float $ShowsAveragePosition
-     *
-     * @return BannersStatItem
+     * @param float|null $value
+     * @return $this
      */
-    public function setShowsAveragePosition($ShowsAveragePosition)
+    public function setShowsAveragePosition($value = null)
     {
-        $this->ShowsAveragePosition = $ShowsAveragePosition;
+        $this->ShowsAveragePosition = $value;
 
         return $this;
     }
 
     /**
-     * Gets the ClicksAveragePosition.
+     * Gets ClicksAveragePosition.
      *
-     * @return float
+     * @return float|null
      */
     public function getClicksAveragePosition()
     {
@@ -538,16 +485,64 @@ class BannersStatItem
     }
 
     /**
-     * Sets the ClicksAveragePosition.
+     * Sets ClicksAveragePosition.
      *
-     * @param float $ClicksAveragePosition
-     *
-     * @return BannersStatItem
+     * @param float|null $value
+     * @return $this
      */
-    public function setClicksAveragePosition($ClicksAveragePosition)
+    public function setClicksAveragePosition($value = null)
     {
-        $this->ClicksAveragePosition = $ClicksAveragePosition;
+        $this->ClicksAveragePosition = $value;
 
         return $this;
     }
+
+    /**
+     * Gets Revenue.
+     *
+     * @return float|null
+     */
+    public function getRevenue()
+    {
+        return $this->Revenue;
+    }
+
+    /**
+     * Sets Revenue.
+     *
+     * @param float|null $value
+     * @return $this
+     */
+    public function setRevenue($value = null)
+    {
+        $this->Revenue = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets ROI.
+     *
+     * @return float|null
+     */
+    public function getROI()
+    {
+        return $this->ROI;
+    }
+
+    /**
+     * Sets ROI.
+     *
+     * @param float|null $value
+     * @return $this
+     */
+    public function setROI($value = null)
+    {
+        $this->ROI = $value;
+
+        return $this;
+    }
+
+
 }
+

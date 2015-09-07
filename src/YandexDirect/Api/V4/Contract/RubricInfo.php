@@ -3,40 +3,27 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class RubricInfo
 {
-    /**
-     * @var int
-     */
-    protected $ParentID;
-    /**
-     * @var int
-     */
-    protected $RubricID;
-    /**
-     * @var string
-     */
-    protected $Url;
-    /**
-     * @var string
-     */
-    protected $RubricFullName;
-    /**
-     * @var string
-     */
-    protected $RubricName;
-    /**
-     * @var string
-     */
-    protected $Checkable;
+
+    protected $ParentID = null;
+
+    protected $RubricID = null;
+
+    protected $Url = null;
+
+    protected $RubricFullName = null;
+
+    protected $RubricName = null;
+
+    protected $Checkable = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of RubricInfo.
      *
-     * @return self
+     * @return RubricInfo
      */
     public static function create()
     {
@@ -44,7 +31,7 @@ class RubricInfo
     }
 
     /**
-     * Gets the ParentID.
+     * Gets ParentID.
      *
      * @return int
      */
@@ -54,21 +41,20 @@ class RubricInfo
     }
 
     /**
-     * Sets the ParentID.
+     * Sets ParentID.
      *
-     * @param int $ParentID
-     *
-     * @return RubricInfo
+     * @param int $value
+     * @return $this
      */
-    public function setParentID($ParentID)
+    public function setParentID($value)
     {
-        $this->ParentID = $ParentID;
+        $this->ParentID = $value;
 
         return $this;
     }
 
     /**
-     * Gets the RubricID.
+     * Gets RubricID.
      *
      * @return int
      */
@@ -78,21 +64,20 @@ class RubricInfo
     }
 
     /**
-     * Sets the RubricID.
+     * Sets RubricID.
      *
-     * @param int $RubricID
-     *
-     * @return RubricInfo
+     * @param int $value
+     * @return $this
      */
-    public function setRubricID($RubricID)
+    public function setRubricID($value)
     {
-        $this->RubricID = $RubricID;
+        $this->RubricID = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Url.
+     * Gets Url.
      *
      * @return string
      */
@@ -102,21 +87,20 @@ class RubricInfo
     }
 
     /**
-     * Sets the Url.
+     * Sets Url.
      *
-     * @param string $Url
-     *
-     * @return RubricInfo
+     * @param string $value
+     * @return $this
      */
-    public function setUrl($Url)
+    public function setUrl($value)
     {
-        $this->Url = $Url;
+        $this->Url = $value;
 
         return $this;
     }
 
     /**
-     * Gets the RubricFullName.
+     * Gets RubricFullName.
      *
      * @return string
      */
@@ -126,21 +110,20 @@ class RubricInfo
     }
 
     /**
-     * Sets the RubricFullName.
+     * Sets RubricFullName.
      *
-     * @param string $RubricFullName
-     *
-     * @return RubricInfo
+     * @param string $value
+     * @return $this
      */
-    public function setRubricFullName($RubricFullName)
+    public function setRubricFullName($value)
     {
-        $this->RubricFullName = $RubricFullName;
+        $this->RubricFullName = $value;
 
         return $this;
     }
 
     /**
-     * Gets the RubricName.
+     * Gets RubricName.
      *
      * @return string
      */
@@ -150,21 +133,20 @@ class RubricInfo
     }
 
     /**
-     * Sets the RubricName.
+     * Sets RubricName.
      *
-     * @param string $RubricName
-     *
-     * @return RubricInfo
+     * @param string $value
+     * @return $this
      */
-    public function setRubricName($RubricName)
+    public function setRubricName($value)
     {
-        $this->RubricName = $RubricName;
+        $this->RubricName = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Checkable.
+     * Gets Checkable.
      *
      * @return string
      */
@@ -174,16 +156,18 @@ class RubricInfo
     }
 
     /**
-     * Sets the Checkable.
+     * Sets Checkable.
      *
-     * @param string $Checkable
-     *
-     * @return RubricInfo
+     * @param string $value
+     * @return $this
      */
-    public function setCheckable($Checkable)
+    public function setCheckable($value)
     {
-        $this->Checkable = $Checkable;
+        $this->Checkable = $value;
 
         return $this;
     }
+
+
 }
+

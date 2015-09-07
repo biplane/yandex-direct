@@ -3,28 +3,21 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class EnableSharedAccountResponse
 {
-    /**
-     * @var Error[]
-     */
-    protected $Errors;
-    /**
-     * @var string
-     */
-    protected $Login;
-    /**
-     * @var int
-     */
-    protected $AccountID;
+
+    protected $Errors = null;
+
+    protected $Login = null;
+
+    protected $AccountID = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of EnableSharedAccountResponse.
      *
-     * @return self
+     * @return EnableSharedAccountResponse
      */
     public static function create()
     {
@@ -32,9 +25,9 @@ class EnableSharedAccountResponse
     }
 
     /**
-     * Gets the Errors.
+     * Gets Errors.
      *
-     * @return Error[]
+     * @return Error[]|null
      */
     public function getErrors()
     {
@@ -42,23 +35,22 @@ class EnableSharedAccountResponse
     }
 
     /**
-     * Sets the Errors.
+     * Sets Errors.
      *
-     * @param Error[] $Errors
-     *
-     * @return EnableSharedAccountResponse
+     * @param array|null $value
+     * @return $this
      */
-    public function setErrors(array $Errors)
+    public function setErrors(array $value = null)
     {
-        $this->Errors = $Errors;
+        $this->Errors = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Login.
+     * Gets Login.
      *
-     * @return string
+     * @return string|null
      */
     public function getLogin()
     {
@@ -66,23 +58,22 @@ class EnableSharedAccountResponse
     }
 
     /**
-     * Sets the Login.
+     * Sets Login.
      *
-     * @param string $Login
-     *
-     * @return EnableSharedAccountResponse
+     * @param string|null $value
+     * @return $this
      */
-    public function setLogin($Login)
+    public function setLogin($value = null)
     {
-        $this->Login = $Login;
+        $this->Login = $value;
 
         return $this;
     }
 
     /**
-     * Gets the AccountID.
+     * Gets AccountID.
      *
-     * @return int
+     * @return int|null
      */
     public function getAccountID()
     {
@@ -90,16 +81,18 @@ class EnableSharedAccountResponse
     }
 
     /**
-     * Sets the AccountID.
+     * Sets AccountID.
      *
-     * @param int $AccountID
-     *
-     * @return EnableSharedAccountResponse
+     * @param int|null $value
+     * @return $this
      */
-    public function setAccountID($AccountID)
+    public function setAccountID($value = null)
     {
-        $this->AccountID = $AccountID;
+        $this->AccountID = $value;
 
         return $this;
     }
+
+
 }
+

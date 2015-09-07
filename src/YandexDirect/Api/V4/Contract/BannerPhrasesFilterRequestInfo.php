@@ -3,36 +3,27 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class BannerPhrasesFilterRequestInfo
 {
-    /**
-     * @var int[]
-     */
-    protected $BannerIDS;
-    /**
-     * @var string[]
-     */
-    protected $FieldsNames;
-    /**
-     * @var string
-     */
-    protected $ConsiderTimeTarget;
-    /**
-     * @var string
-     */
-    protected $RequestPrices;
-    /**
-     * @var string
-     */
-    protected $Currency;
+
+    protected $BannerIDS = array(
+        
+    );
+
+    protected $FieldsNames = null;
+
+    protected $ConsiderTimeTarget = null;
+
+    protected $RequestPrices = null;
+
+    protected $Currency = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of BannerPhrasesFilterRequestInfo.
      *
-     * @return self
+     * @return BannerPhrasesFilterRequestInfo
      */
     public static function create()
     {
@@ -40,7 +31,7 @@ class BannerPhrasesFilterRequestInfo
     }
 
     /**
-     * Gets the BannerIDS.
+     * Gets BannerIDS.
      *
      * @return int[]
      */
@@ -50,23 +41,22 @@ class BannerPhrasesFilterRequestInfo
     }
 
     /**
-     * Sets the BannerIDS.
+     * Sets BannerIDS.
      *
-     * @param int[] $BannerIDS
-     *
-     * @return BannerPhrasesFilterRequestInfo
+     * @param array $value
+     * @return $this
      */
-    public function setBannerIDS(array $BannerIDS)
+    public function setBannerIDS(array $value)
     {
-        $this->BannerIDS = $BannerIDS;
+        $this->BannerIDS = $value;
 
         return $this;
     }
 
     /**
-     * Gets the FieldsNames.
+     * Gets FieldsNames.
      *
-     * @return string[]
+     * @return string[]|null
      */
     public function getFieldsNames()
     {
@@ -74,23 +64,22 @@ class BannerPhrasesFilterRequestInfo
     }
 
     /**
-     * Sets the FieldsNames.
+     * Sets FieldsNames.
      *
-     * @param string[] $FieldsNames
-     *
-     * @return BannerPhrasesFilterRequestInfo
+     * @param array|null $value
+     * @return $this
      */
-    public function setFieldsNames(array $FieldsNames)
+    public function setFieldsNames(array $value = null)
     {
-        $this->FieldsNames = $FieldsNames;
+        $this->FieldsNames = $value;
 
         return $this;
     }
 
     /**
-     * Gets the ConsiderTimeTarget.
+     * Gets ConsiderTimeTarget.
      *
-     * @return string
+     * @return string|null
      */
     public function getConsiderTimeTarget()
     {
@@ -98,23 +87,22 @@ class BannerPhrasesFilterRequestInfo
     }
 
     /**
-     * Sets the ConsiderTimeTarget.
+     * Sets ConsiderTimeTarget.
      *
-     * @param string $ConsiderTimeTarget
-     *
-     * @return BannerPhrasesFilterRequestInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setConsiderTimeTarget($ConsiderTimeTarget)
+    public function setConsiderTimeTarget($value = null)
     {
-        $this->ConsiderTimeTarget = $ConsiderTimeTarget;
+        $this->ConsiderTimeTarget = $value;
 
         return $this;
     }
 
     /**
-     * Gets the RequestPrices.
+     * Gets RequestPrices.
      *
-     * @return string
+     * @return string|null
      */
     public function getRequestPrices()
     {
@@ -122,23 +110,22 @@ class BannerPhrasesFilterRequestInfo
     }
 
     /**
-     * Sets the RequestPrices.
+     * Sets RequestPrices.
      *
-     * @param string $RequestPrices
-     *
-     * @return BannerPhrasesFilterRequestInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setRequestPrices($RequestPrices)
+    public function setRequestPrices($value = null)
     {
-        $this->RequestPrices = $RequestPrices;
+        $this->RequestPrices = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Currency.
+     * Gets Currency.
      *
-     * @return string
+     * @return string|null
      */
     public function getCurrency()
     {
@@ -146,16 +133,18 @@ class BannerPhrasesFilterRequestInfo
     }
 
     /**
-     * Sets the Currency.
+     * Sets Currency.
      *
-     * @param string $Currency
-     *
-     * @return BannerPhrasesFilterRequestInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setCurrency($Currency)
+    public function setCurrency($value = null)
     {
-        $this->Currency = $Currency;
+        $this->Currency = $value;
 
         return $this;
     }
+
+
 }
+

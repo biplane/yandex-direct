@@ -3,44 +3,29 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class StatGoalInfo
 {
-    /**
-     * @var int
-     */
-    protected $GoalID;
-    /**
-     * @var string
-     */
-    protected $Name;
-    /**
-     * @var string
-     */
-    protected $AvailableForStrategy;
-    /**
-     * @var string
-     */
-    protected $AvailableForContextStrategy;
-    /**
-     * @var int
-     */
-    protected $GoalsReached;
-    /**
-     * @var int
-     */
-    protected $ContextGoalsReached;
-    /**
-     * @var int
-     */
-    protected $CampaignID;
+
+    protected $GoalID = null;
+
+    protected $Name = null;
+
+    protected $AvailableForStrategy = null;
+
+    protected $AvailableForContextStrategy = null;
+
+    protected $GoalsReached = null;
+
+    protected $ContextGoalsReached = null;
+
+    protected $CampaignID = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of StatGoalInfo.
      *
-     * @return self
+     * @return StatGoalInfo
      */
     public static function create()
     {
@@ -48,7 +33,7 @@ class StatGoalInfo
     }
 
     /**
-     * Gets the GoalID.
+     * Gets GoalID.
      *
      * @return int
      */
@@ -58,21 +43,20 @@ class StatGoalInfo
     }
 
     /**
-     * Sets the GoalID.
+     * Sets GoalID.
      *
-     * @param int $GoalID
-     *
-     * @return StatGoalInfo
+     * @param int $value
+     * @return $this
      */
-    public function setGoalID($GoalID)
+    public function setGoalID($value)
     {
-        $this->GoalID = $GoalID;
+        $this->GoalID = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Name.
+     * Gets Name.
      *
      * @return string
      */
@@ -82,21 +66,20 @@ class StatGoalInfo
     }
 
     /**
-     * Sets the Name.
+     * Sets Name.
      *
-     * @param string $Name
-     *
-     * @return StatGoalInfo
+     * @param string $value
+     * @return $this
      */
-    public function setName($Name)
+    public function setName($value)
     {
-        $this->Name = $Name;
+        $this->Name = $value;
 
         return $this;
     }
 
     /**
-     * Gets the AvailableForStrategy.
+     * Gets AvailableForStrategy.
      *
      * @return string
      */
@@ -106,21 +89,20 @@ class StatGoalInfo
     }
 
     /**
-     * Sets the AvailableForStrategy.
+     * Sets AvailableForStrategy.
      *
-     * @param string $AvailableForStrategy
-     *
-     * @return StatGoalInfo
+     * @param string $value
+     * @return $this
      */
-    public function setAvailableForStrategy($AvailableForStrategy)
+    public function setAvailableForStrategy($value)
     {
-        $this->AvailableForStrategy = $AvailableForStrategy;
+        $this->AvailableForStrategy = $value;
 
         return $this;
     }
 
     /**
-     * Gets the AvailableForContextStrategy.
+     * Gets AvailableForContextStrategy.
      *
      * @return string
      */
@@ -130,21 +112,20 @@ class StatGoalInfo
     }
 
     /**
-     * Sets the AvailableForContextStrategy.
+     * Sets AvailableForContextStrategy.
      *
-     * @param string $AvailableForContextStrategy
-     *
-     * @return StatGoalInfo
+     * @param string $value
+     * @return $this
      */
-    public function setAvailableForContextStrategy($AvailableForContextStrategy)
+    public function setAvailableForContextStrategy($value)
     {
-        $this->AvailableForContextStrategy = $AvailableForContextStrategy;
+        $this->AvailableForContextStrategy = $value;
 
         return $this;
     }
 
     /**
-     * Gets the GoalsReached.
+     * Gets GoalsReached.
      *
      * @return int
      */
@@ -154,21 +135,20 @@ class StatGoalInfo
     }
 
     /**
-     * Sets the GoalsReached.
+     * Sets GoalsReached.
      *
-     * @param int $GoalsReached
-     *
-     * @return StatGoalInfo
+     * @param int $value
+     * @return $this
      */
-    public function setGoalsReached($GoalsReached)
+    public function setGoalsReached($value)
     {
-        $this->GoalsReached = $GoalsReached;
+        $this->GoalsReached = $value;
 
         return $this;
     }
 
     /**
-     * Gets the ContextGoalsReached.
+     * Gets ContextGoalsReached.
      *
      * @return int
      */
@@ -178,23 +158,22 @@ class StatGoalInfo
     }
 
     /**
-     * Sets the ContextGoalsReached.
+     * Sets ContextGoalsReached.
      *
-     * @param int $ContextGoalsReached
-     *
-     * @return StatGoalInfo
+     * @param int $value
+     * @return $this
      */
-    public function setContextGoalsReached($ContextGoalsReached)
+    public function setContextGoalsReached($value)
     {
-        $this->ContextGoalsReached = $ContextGoalsReached;
+        $this->ContextGoalsReached = $value;
 
         return $this;
     }
 
     /**
-     * Gets the CampaignID.
+     * Gets CampaignID.
      *
-     * @return int
+     * @return int|null
      */
     public function getCampaignID()
     {
@@ -202,16 +181,18 @@ class StatGoalInfo
     }
 
     /**
-     * Sets the CampaignID.
+     * Sets CampaignID.
      *
-     * @param int $CampaignID
-     *
-     * @return StatGoalInfo
+     * @param int|null $value
+     * @return $this
      */
-    public function setCampaignID($CampaignID)
+    public function setCampaignID($value = null)
     {
-        $this->CampaignID = $CampaignID;
+        $this->CampaignID = $value;
 
         return $this;
     }
+
+
 }
+

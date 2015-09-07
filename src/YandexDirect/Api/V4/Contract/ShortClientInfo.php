@@ -3,32 +3,23 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class ShortClientInfo
 {
-    /**
-     * @var string
-     */
-    protected $Login;
-    /**
-     * @var string
-     */
-    protected $FIO;
-    /**
-     * @var string
-     */
-    protected $Role;
-    /**
-     * @var string
-     */
-    protected $SharedAccountEnabled;
+
+    protected $Login = null;
+
+    protected $FIO = null;
+
+    protected $Role = null;
+
+    protected $SharedAccountEnabled = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of ShortClientInfo.
      *
-     * @return self
+     * @return ShortClientInfo
      */
     public static function create()
     {
@@ -36,9 +27,9 @@ class ShortClientInfo
     }
 
     /**
-     * Gets the Login.
+     * Gets Login.
      *
-     * @return string
+     * @return string|null
      */
     public function getLogin()
     {
@@ -46,23 +37,22 @@ class ShortClientInfo
     }
 
     /**
-     * Sets the Login.
+     * Sets Login.
      *
-     * @param string $Login
-     *
-     * @return ShortClientInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setLogin($Login)
+    public function setLogin($value = null)
     {
-        $this->Login = $Login;
+        $this->Login = $value;
 
         return $this;
     }
 
     /**
-     * Gets the FIO.
+     * Gets FIO.
      *
-     * @return string
+     * @return string|null
      */
     public function getFIO()
     {
@@ -70,23 +60,22 @@ class ShortClientInfo
     }
 
     /**
-     * Sets the FIO.
+     * Sets FIO.
      *
-     * @param string $FIO
-     *
-     * @return ShortClientInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setFIO($FIO)
+    public function setFIO($value = null)
     {
-        $this->FIO = $FIO;
+        $this->FIO = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Role.
+     * Gets Role.
      *
-     * @return string
+     * @return string|null
      */
     public function getRole()
     {
@@ -94,23 +83,22 @@ class ShortClientInfo
     }
 
     /**
-     * Sets the Role.
+     * Sets Role.
      *
-     * @param string $Role
-     *
-     * @return ShortClientInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setRole($Role)
+    public function setRole($value = null)
     {
-        $this->Role = $Role;
+        $this->Role = $value;
 
         return $this;
     }
 
     /**
-     * Gets the SharedAccountEnabled.
+     * Gets SharedAccountEnabled.
      *
-     * @return string
+     * @return string|null
      */
     public function getSharedAccountEnabled()
     {
@@ -118,16 +106,18 @@ class ShortClientInfo
     }
 
     /**
-     * Sets the SharedAccountEnabled.
+     * Sets SharedAccountEnabled.
      *
-     * @param string $SharedAccountEnabled
-     *
-     * @return ShortClientInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setSharedAccountEnabled($SharedAccountEnabled)
+    public function setSharedAccountEnabled($value = null)
     {
-        $this->SharedAccountEnabled = $SharedAccountEnabled;
+        $this->SharedAccountEnabled = $value;
 
         return $this;
     }
+
+
 }
+

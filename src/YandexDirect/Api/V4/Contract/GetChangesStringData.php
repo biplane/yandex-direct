@@ -3,28 +3,27 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class GetChangesStringData
 {
-    /**
-     * @var string[]
-     */
-    protected $Updated;
-    /**
-     * @var string[]
-     */
-    protected $NotUpdated;
-    /**
-     * @var string[]
-     */
-    protected $NotFound;
+
+    protected $Updated = array(
+        
+    );
+
+    protected $NotUpdated = array(
+        
+    );
+
+    protected $NotFound = array(
+        
+    );
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of GetChangesStringData.
      *
-     * @return self
+     * @return GetChangesStringData
      */
     public static function create()
     {
@@ -32,7 +31,7 @@ class GetChangesStringData
     }
 
     /**
-     * Gets the Updated.
+     * Gets Updated.
      *
      * @return string[]
      */
@@ -42,21 +41,20 @@ class GetChangesStringData
     }
 
     /**
-     * Sets the Updated.
+     * Sets Updated.
      *
-     * @param string[] $Updated
-     *
-     * @return GetChangesStringData
+     * @param array $value
+     * @return $this
      */
-    public function setUpdated(array $Updated)
+    public function setUpdated(array $value)
     {
-        $this->Updated = $Updated;
+        $this->Updated = $value;
 
         return $this;
     }
 
     /**
-     * Gets the NotUpdated.
+     * Gets NotUpdated.
      *
      * @return string[]
      */
@@ -66,21 +64,20 @@ class GetChangesStringData
     }
 
     /**
-     * Sets the NotUpdated.
+     * Sets NotUpdated.
      *
-     * @param string[] $NotUpdated
-     *
-     * @return GetChangesStringData
+     * @param array $value
+     * @return $this
      */
-    public function setNotUpdated(array $NotUpdated)
+    public function setNotUpdated(array $value)
     {
-        $this->NotUpdated = $NotUpdated;
+        $this->NotUpdated = $value;
 
         return $this;
     }
 
     /**
-     * Gets the NotFound.
+     * Gets NotFound.
      *
      * @return string[]
      */
@@ -90,16 +87,18 @@ class GetChangesStringData
     }
 
     /**
-     * Sets the NotFound.
+     * Sets NotFound.
      *
-     * @param string[] $NotFound
-     *
-     * @return GetChangesStringData
+     * @param array $value
+     * @return $this
      */
-    public function setNotFound(array $NotFound)
+    public function setNotFound(array $value)
     {
-        $this->NotFound = $NotFound;
+        $this->NotFound = $value;
 
         return $this;
     }
+
+
 }
+

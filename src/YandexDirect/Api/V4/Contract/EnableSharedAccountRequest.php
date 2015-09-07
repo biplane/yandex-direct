@@ -3,20 +3,17 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class EnableSharedAccountRequest
 {
-    /**
-     * @var string
-     */
-    protected $Login;
+
+    protected $Login = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of EnableSharedAccountRequest.
      *
-     * @return self
+     * @return EnableSharedAccountRequest
      */
     public static function create()
     {
@@ -24,7 +21,7 @@ class EnableSharedAccountRequest
     }
 
     /**
-     * Gets the Login.
+     * Gets Login.
      *
      * @return string
      */
@@ -34,16 +31,18 @@ class EnableSharedAccountRequest
     }
 
     /**
-     * Sets the Login.
+     * Sets Login.
      *
-     * @param string $Login
-     *
-     * @return EnableSharedAccountRequest
+     * @param string $value
+     * @return $this
      */
-    public function setLogin($Login)
+    public function setLogin($value)
     {
-        $this->Login = $Login;
+        $this->Login = $value;
 
         return $this;
     }
+
+
 }
+

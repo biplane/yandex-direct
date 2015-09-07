@@ -3,31 +3,21 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class ReportInfo
 {
-    const STATUS_DONE = 'Done';
-    const STATUS_PENDING = 'Pending';
+
+    protected $ReportID = null;
+
+    protected $Url = null;
+
+    protected $StatusReport = null;
 
     /**
-     * @var int
-     */
-    protected $ReportID;
-    /**
-     * @var string
-     */
-    protected $Url;
-    /**
-     * @var string
-     */
-    protected $StatusReport;
-
-    /**
-     * Creates a new instance.
+     * Creates a new instance of ReportInfo.
      *
-     * @return self
+     * @return ReportInfo
      */
     public static function create()
     {
@@ -35,7 +25,7 @@ class ReportInfo
     }
 
     /**
-     * Gets the ReportID.
+     * Gets ReportID.
      *
      * @return int
      */
@@ -45,21 +35,20 @@ class ReportInfo
     }
 
     /**
-     * Sets the ReportID.
+     * Sets ReportID.
      *
-     * @param int $ReportID
-     *
-     * @return ReportInfo
+     * @param int $value
+     * @return $this
      */
-    public function setReportID($ReportID)
+    public function setReportID($value)
     {
-        $this->ReportID = $ReportID;
+        $this->ReportID = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Url.
+     * Gets Url.
      *
      * @return string
      */
@@ -69,21 +58,20 @@ class ReportInfo
     }
 
     /**
-     * Sets the Url.
+     * Sets Url.
      *
-     * @param string $Url
-     *
-     * @return ReportInfo
+     * @param string $value
+     * @return $this
      */
-    public function setUrl($Url)
+    public function setUrl($value)
     {
-        $this->Url = $Url;
+        $this->Url = $value;
 
         return $this;
     }
 
     /**
-     * Gets the StatusReport.
+     * Gets StatusReport.
      *
      * @return string
      */
@@ -93,16 +81,18 @@ class ReportInfo
     }
 
     /**
-     * Sets the StatusReport.
+     * Sets StatusReport.
      *
-     * @param string $StatusReport
-     *
-     * @return ReportInfo
+     * @param string $value
+     * @return $this
      */
-    public function setStatusReport($StatusReport)
+    public function setStatusReport($value)
     {
-        $this->StatusReport = $StatusReport;
+        $this->StatusReport = $value;
 
         return $this;
     }
+
+
 }
+

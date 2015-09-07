@@ -3,28 +3,21 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class VersionDesc
 {
-    /**
-     * @var int
-     */
-    protected $VersionNumber;
-    /**
-     * @var string
-     */
-    protected $LinkWSDL;
-    /**
-     * @var string
-     */
-    protected $BorderDate;
+
+    protected $VersionNumber = null;
+
+    protected $LinkWSDL = null;
+
+    protected $BorderDate = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of VersionDesc.
      *
-     * @return self
+     * @return VersionDesc
      */
     public static function create()
     {
@@ -32,7 +25,7 @@ class VersionDesc
     }
 
     /**
-     * Gets the VersionNumber.
+     * Gets VersionNumber.
      *
      * @return int
      */
@@ -42,21 +35,20 @@ class VersionDesc
     }
 
     /**
-     * Sets the VersionNumber.
+     * Sets VersionNumber.
      *
-     * @param int $VersionNumber
-     *
-     * @return VersionDesc
+     * @param int $value
+     * @return $this
      */
-    public function setVersionNumber($VersionNumber)
+    public function setVersionNumber($value)
     {
-        $this->VersionNumber = $VersionNumber;
+        $this->VersionNumber = $value;
 
         return $this;
     }
 
     /**
-     * Gets the LinkWSDL.
+     * Gets LinkWSDL.
      *
      * @return string
      */
@@ -66,23 +58,22 @@ class VersionDesc
     }
 
     /**
-     * Sets the LinkWSDL.
+     * Sets LinkWSDL.
      *
-     * @param string $LinkWSDL
-     *
-     * @return VersionDesc
+     * @param string $value
+     * @return $this
      */
-    public function setLinkWSDL($LinkWSDL)
+    public function setLinkWSDL($value)
     {
-        $this->LinkWSDL = $LinkWSDL;
+        $this->LinkWSDL = $value;
 
         return $this;
     }
 
     /**
-     * Gets the BorderDate.
+     * Gets BorderDate.
      *
-     * @return string
+     * @return string|null
      */
     public function getBorderDate()
     {
@@ -90,16 +81,18 @@ class VersionDesc
     }
 
     /**
-     * Sets the BorderDate.
+     * Sets BorderDate.
      *
-     * @param string $BorderDate
-     *
-     * @return VersionDesc
+     * @param string|null $value
+     * @return $this
      */
-    public function setBorderDate($BorderDate)
+    public function setBorderDate($value = null)
     {
-        $this->BorderDate = $BorderDate;
+        $this->BorderDate = $value;
 
         return $this;
     }
+
+
 }
+

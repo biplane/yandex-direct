@@ -3,52 +3,33 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class GetBannersInfo
 {
-    const GETPHRASES_NO = 'No';
-    const GETPHRASES_YES = 'Yes';
-    const GETPHRASES_WITHPRICES = 'WithPrices';
+
+    protected $CampaignIDS = null;
+
+    protected $BannerIDS = null;
+
+    protected $Filter = null;
+
+    protected $GetPhrases = null;
+
+    protected $FieldsNames = null;
+
+    protected $Limit = null;
+
+    protected $Offset = null;
+
+    protected $Currency = null;
+
+    protected $AuctionBids = null;
 
     /**
-     * @var int[]
-     */
-    protected $CampaignIDS;
-    /**
-     * @var int[]
-     */
-    protected $BannerIDS;
-    /**
-     * @var BannersFilterInfo
-     */
-    protected $Filter;
-    /**
-     * @var string
-     */
-    protected $GetPhrases;
-    /**
-     * @var string[]
-     */
-    protected $FieldsNames;
-    /**
-     * @var int
-     */
-    protected $Limit;
-    /**
-     * @var int
-     */
-    protected $Offset;
-    /**
-     * @var string
-     */
-    protected $Currency;
-
-    /**
-     * Creates a new instance.
+     * Creates a new instance of GetBannersInfo.
      *
-     * @return self
+     * @return GetBannersInfo
      */
     public static function create()
     {
@@ -56,9 +37,9 @@ class GetBannersInfo
     }
 
     /**
-     * Gets the CampaignIDS.
+     * Gets CampaignIDS.
      *
-     * @return int[]
+     * @return int[]|null
      */
     public function getCampaignIDS()
     {
@@ -66,23 +47,22 @@ class GetBannersInfo
     }
 
     /**
-     * Sets the CampaignIDS.
+     * Sets CampaignIDS.
      *
-     * @param int[] $CampaignIDS
-     *
-     * @return GetBannersInfo
+     * @param array|null $value
+     * @return $this
      */
-    public function setCampaignIDS(array $CampaignIDS)
+    public function setCampaignIDS(array $value = null)
     {
-        $this->CampaignIDS = $CampaignIDS;
+        $this->CampaignIDS = $value;
 
         return $this;
     }
 
     /**
-     * Gets the BannerIDS.
+     * Gets BannerIDS.
      *
-     * @return int[]
+     * @return int[]|null
      */
     public function getBannerIDS()
     {
@@ -90,23 +70,22 @@ class GetBannersInfo
     }
 
     /**
-     * Sets the BannerIDS.
+     * Sets BannerIDS.
      *
-     * @param int[] $BannerIDS
-     *
-     * @return GetBannersInfo
+     * @param array|null $value
+     * @return $this
      */
-    public function setBannerIDS(array $BannerIDS)
+    public function setBannerIDS(array $value = null)
     {
-        $this->BannerIDS = $BannerIDS;
+        $this->BannerIDS = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Filter.
+     * Gets Filter.
      *
-     * @return BannersFilterInfo
+     * @return BannersFilterInfo|null
      */
     public function getFilter()
     {
@@ -114,23 +93,22 @@ class GetBannersInfo
     }
 
     /**
-     * Sets the Filter.
+     * Sets Filter.
      *
-     * @param BannersFilterInfo $Filter
-     *
-     * @return GetBannersInfo
+     * @param BannersFilterInfo|null $value
+     * @return $this
      */
-    public function setFilter(BannersFilterInfo $Filter)
+    public function setFilter(BannersFilterInfo $value = null)
     {
-        $this->Filter = $Filter;
+        $this->Filter = $value;
 
         return $this;
     }
 
     /**
-     * Gets the GetPhrases.
+     * Gets GetPhrases.
      *
-     * @return string
+     * @return string|null
      */
     public function getGetPhrases()
     {
@@ -138,23 +116,22 @@ class GetBannersInfo
     }
 
     /**
-     * Sets the GetPhrases.
+     * Sets GetPhrases.
      *
-     * @param string $GetPhrases
-     *
-     * @return GetBannersInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setGetPhrases($GetPhrases)
+    public function setGetPhrases($value = null)
     {
-        $this->GetPhrases = $GetPhrases;
+        $this->GetPhrases = $value;
 
         return $this;
     }
 
     /**
-     * Gets the FieldsNames.
+     * Gets FieldsNames.
      *
-     * @return string[]
+     * @return string[]|null
      */
     public function getFieldsNames()
     {
@@ -162,23 +139,22 @@ class GetBannersInfo
     }
 
     /**
-     * Sets the FieldsNames.
+     * Sets FieldsNames.
      *
-     * @param string[] $FieldsNames
-     *
-     * @return GetBannersInfo
+     * @param array|null $value
+     * @return $this
      */
-    public function setFieldsNames(array $FieldsNames)
+    public function setFieldsNames(array $value = null)
     {
-        $this->FieldsNames = $FieldsNames;
+        $this->FieldsNames = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Limit.
+     * Gets Limit.
      *
-     * @return int
+     * @return int|null
      */
     public function getLimit()
     {
@@ -186,23 +162,22 @@ class GetBannersInfo
     }
 
     /**
-     * Sets the Limit.
+     * Sets Limit.
      *
-     * @param int $Limit
-     *
-     * @return GetBannersInfo
+     * @param int|null $value
+     * @return $this
      */
-    public function setLimit($Limit)
+    public function setLimit($value = null)
     {
-        $this->Limit = $Limit;
+        $this->Limit = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Offset.
+     * Gets Offset.
      *
-     * @return int
+     * @return int|null
      */
     public function getOffset()
     {
@@ -210,23 +185,22 @@ class GetBannersInfo
     }
 
     /**
-     * Sets the Offset.
+     * Sets Offset.
      *
-     * @param int $Offset
-     *
-     * @return GetBannersInfo
+     * @param int|null $value
+     * @return $this
      */
-    public function setOffset($Offset)
+    public function setOffset($value = null)
     {
-        $this->Offset = $Offset;
+        $this->Offset = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Currency.
+     * Gets Currency.
      *
-     * @return string
+     * @return string|null
      */
     public function getCurrency()
     {
@@ -234,16 +208,41 @@ class GetBannersInfo
     }
 
     /**
-     * Sets the Currency.
+     * Sets Currency.
      *
-     * @param string $Currency
-     *
-     * @return GetBannersInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setCurrency($Currency)
+    public function setCurrency($value = null)
     {
-        $this->Currency = $Currency;
+        $this->Currency = $value;
 
         return $this;
     }
+
+    /**
+     * Gets AuctionBids.
+     *
+     * @return string|null
+     */
+    public function getAuctionBids()
+    {
+        return $this->AuctionBids;
+    }
+
+    /**
+     * Sets AuctionBids.
+     *
+     * @param string|null $value
+     * @return $this
+     */
+    public function setAuctionBids($value = null)
+    {
+        $this->AuctionBids = $value;
+
+        return $this;
+    }
+
+
 }
+

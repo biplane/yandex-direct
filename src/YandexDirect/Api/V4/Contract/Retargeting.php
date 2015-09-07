@@ -3,52 +3,33 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class Retargeting
 {
-    /**
-     * @var string[]
-     */
-    protected $Fields;
-    /**
-     * @var int
-     */
-    protected $RetargetingID;
-    /**
-     * @var int
-     */
-    protected $AdGroupID;
-    /**
-     * @var int
-     */
-    protected $AdID;
-    /**
-     * @var int
-     */
-    protected $RetargetingConditionID;
-    /**
-     * @var float
-     */
-    protected $ContextPrice;
-    /**
-     * @var string
-     */
-    protected $Currency;
-    /**
-     * @var string
-     */
-    protected $AutoBudgetPriority;
-    /**
-     * @var string
-     */
-    protected $StatusPaused;
+
+    protected $Fields = null;
+
+    protected $RetargetingID = null;
+
+    protected $AdGroupID = null;
+
+    protected $AdID = null;
+
+    protected $RetargetingConditionID = null;
+
+    protected $ContextPrice = null;
+
+    protected $Currency = null;
+
+    protected $AutoBudgetPriority = null;
+
+    protected $StatusPaused = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of Retargeting.
      *
-     * @return self
+     * @return Retargeting
      */
     public static function create()
     {
@@ -56,9 +37,9 @@ class Retargeting
     }
 
     /**
-     * Gets the Fields.
+     * Gets Fields.
      *
-     * @return string[]
+     * @return string[]|null
      */
     public function getFields()
     {
@@ -66,23 +47,22 @@ class Retargeting
     }
 
     /**
-     * Sets the Fields.
+     * Sets Fields.
      *
-     * @param string[] $Fields
-     *
-     * @return Retargeting
+     * @param array|null $value
+     * @return $this
      */
-    public function setFields(array $Fields)
+    public function setFields(array $value = null)
     {
-        $this->Fields = $Fields;
+        $this->Fields = $value;
 
         return $this;
     }
 
     /**
-     * Gets the RetargetingID.
+     * Gets RetargetingID.
      *
-     * @return int
+     * @return int|null
      */
     public function getRetargetingID()
     {
@@ -90,23 +70,22 @@ class Retargeting
     }
 
     /**
-     * Sets the RetargetingID.
+     * Sets RetargetingID.
      *
-     * @param int $RetargetingID
-     *
-     * @return Retargeting
+     * @param int|null $value
+     * @return $this
      */
-    public function setRetargetingID($RetargetingID)
+    public function setRetargetingID($value = null)
     {
-        $this->RetargetingID = $RetargetingID;
+        $this->RetargetingID = $value;
 
         return $this;
     }
 
     /**
-     * Gets the AdGroupID.
+     * Gets AdGroupID.
      *
-     * @return int
+     * @return int|null
      */
     public function getAdGroupID()
     {
@@ -114,23 +93,22 @@ class Retargeting
     }
 
     /**
-     * Sets the AdGroupID.
+     * Sets AdGroupID.
      *
-     * @param int $AdGroupID
-     *
-     * @return Retargeting
+     * @param int|null $value
+     * @return $this
      */
-    public function setAdGroupID($AdGroupID)
+    public function setAdGroupID($value = null)
     {
-        $this->AdGroupID = $AdGroupID;
+        $this->AdGroupID = $value;
 
         return $this;
     }
 
     /**
-     * Gets the AdID.
+     * Gets AdID.
      *
-     * @return int
+     * @return int|null
      */
     public function getAdID()
     {
@@ -138,23 +116,22 @@ class Retargeting
     }
 
     /**
-     * Sets the AdID.
+     * Sets AdID.
      *
-     * @param int $AdID
-     *
-     * @return Retargeting
+     * @param int|null $value
+     * @return $this
      */
-    public function setAdID($AdID)
+    public function setAdID($value = null)
     {
-        $this->AdID = $AdID;
+        $this->AdID = $value;
 
         return $this;
     }
 
     /**
-     * Gets the RetargetingConditionID.
+     * Gets RetargetingConditionID.
      *
-     * @return int
+     * @return int|null
      */
     public function getRetargetingConditionID()
     {
@@ -162,23 +139,22 @@ class Retargeting
     }
 
     /**
-     * Sets the RetargetingConditionID.
+     * Sets RetargetingConditionID.
      *
-     * @param int $RetargetingConditionID
-     *
-     * @return Retargeting
+     * @param int|null $value
+     * @return $this
      */
-    public function setRetargetingConditionID($RetargetingConditionID)
+    public function setRetargetingConditionID($value = null)
     {
-        $this->RetargetingConditionID = $RetargetingConditionID;
+        $this->RetargetingConditionID = $value;
 
         return $this;
     }
 
     /**
-     * Gets the ContextPrice.
+     * Gets ContextPrice.
      *
-     * @return float
+     * @return float|null
      */
     public function getContextPrice()
     {
@@ -186,23 +162,22 @@ class Retargeting
     }
 
     /**
-     * Sets the ContextPrice.
+     * Sets ContextPrice.
      *
-     * @param float $ContextPrice
-     *
-     * @return Retargeting
+     * @param float|null $value
+     * @return $this
      */
-    public function setContextPrice($ContextPrice)
+    public function setContextPrice($value = null)
     {
-        $this->ContextPrice = $ContextPrice;
+        $this->ContextPrice = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Currency.
+     * Gets Currency.
      *
-     * @return string
+     * @return string|null
      */
     public function getCurrency()
     {
@@ -210,23 +185,22 @@ class Retargeting
     }
 
     /**
-     * Sets the Currency.
+     * Sets Currency.
      *
-     * @param string $Currency
-     *
-     * @return Retargeting
+     * @param string|null $value
+     * @return $this
      */
-    public function setCurrency($Currency)
+    public function setCurrency($value = null)
     {
-        $this->Currency = $Currency;
+        $this->Currency = $value;
 
         return $this;
     }
 
     /**
-     * Gets the AutoBudgetPriority.
+     * Gets AutoBudgetPriority.
      *
-     * @return string
+     * @return string|null
      */
     public function getAutoBudgetPriority()
     {
@@ -234,23 +208,22 @@ class Retargeting
     }
 
     /**
-     * Sets the AutoBudgetPriority.
+     * Sets AutoBudgetPriority.
      *
-     * @param string $AutoBudgetPriority
-     *
-     * @return Retargeting
+     * @param string|null $value
+     * @return $this
      */
-    public function setAutoBudgetPriority($AutoBudgetPriority)
+    public function setAutoBudgetPriority($value = null)
     {
-        $this->AutoBudgetPriority = $AutoBudgetPriority;
+        $this->AutoBudgetPriority = $value;
 
         return $this;
     }
 
     /**
-     * Gets the StatusPaused.
+     * Gets StatusPaused.
      *
-     * @return string
+     * @return string|null
      */
     public function getStatusPaused()
     {
@@ -258,16 +231,18 @@ class Retargeting
     }
 
     /**
-     * Sets the StatusPaused.
+     * Sets StatusPaused.
      *
-     * @param string $StatusPaused
-     *
-     * @return Retargeting
+     * @param string|null $value
+     * @return $this
      */
-    public function setStatusPaused($StatusPaused)
+    public function setStatusPaused($value = null)
     {
-        $this->StatusPaused = $StatusPaused;
+        $this->StatusPaused = $value;
 
         return $this;
     }
+
+
 }
+

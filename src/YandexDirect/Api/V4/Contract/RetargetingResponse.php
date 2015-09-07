@@ -3,24 +3,19 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class RetargetingResponse
 {
-    /**
-     * @var RetargetingActionResult[]
-     */
-    protected $ActionsResult;
-    /**
-     * @var Retargeting[]
-     */
-    protected $Retargetings;
+
+    protected $ActionsResult = null;
+
+    protected $Retargetings = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of RetargetingResponse.
      *
-     * @return self
+     * @return RetargetingResponse
      */
     public static function create()
     {
@@ -28,9 +23,9 @@ class RetargetingResponse
     }
 
     /**
-     * Gets the ActionsResult.
+     * Gets ActionsResult.
      *
-     * @return RetargetingActionResult[]
+     * @return RetargetingActionResult[]|null
      */
     public function getActionsResult()
     {
@@ -38,23 +33,22 @@ class RetargetingResponse
     }
 
     /**
-     * Sets the ActionsResult.
+     * Sets ActionsResult.
      *
-     * @param RetargetingActionResult[] $ActionsResult
-     *
-     * @return RetargetingResponse
+     * @param array|null $value
+     * @return $this
      */
-    public function setActionsResult(array $ActionsResult)
+    public function setActionsResult(array $value = null)
     {
-        $this->ActionsResult = $ActionsResult;
+        $this->ActionsResult = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Retargetings.
+     * Gets Retargetings.
      *
-     * @return Retargeting[]
+     * @return Retargeting[]|null
      */
     public function getRetargetings()
     {
@@ -62,16 +56,18 @@ class RetargetingResponse
     }
 
     /**
-     * Sets the Retargetings.
+     * Sets Retargetings.
      *
-     * @param Retargeting[] $Retargetings
-     *
-     * @return RetargetingResponse
+     * @param array|null $value
+     * @return $this
      */
-    public function setRetargetings(array $Retargetings)
+    public function setRetargetings(array $value = null)
     {
-        $this->Retargetings = $Retargetings;
+        $this->Retargetings = $value;
 
         return $this;
     }
+
+
 }
+

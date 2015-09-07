@@ -3,48 +3,31 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class AdImageUpload
 {
-    /**
-     * @var string
-     */
-    protected $Login;
-    /**
-     * @var string
-     */
-    protected $AdImageHash;
-    /**
-     * @var string
-     */
-    protected $AdImageURL;
-    /**
-     * @var string
-     */
-    protected $SourceURL;
-    /**
-     * @var string
-     */
-    protected $Name;
-    /**
-     * @var Error
-     */
-    protected $Error;
-    /**
-     * @var int
-     */
-    protected $AdImageUploadTaskID;
-    /**
-     * @var string
-     */
-    protected $Status;
+
+    protected $Login = null;
+
+    protected $AdImageHash = null;
+
+    protected $AdImageURL = null;
+
+    protected $SourceURL = null;
+
+    protected $Name = null;
+
+    protected $Error = null;
+
+    protected $AdImageUploadTaskID = null;
+
+    protected $Status = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of AdImageUpload.
      *
-     * @return self
+     * @return AdImageUpload
      */
     public static function create()
     {
@@ -52,7 +35,7 @@ class AdImageUpload
     }
 
     /**
-     * Gets the Login.
+     * Gets Login.
      *
      * @return string
      */
@@ -62,21 +45,20 @@ class AdImageUpload
     }
 
     /**
-     * Sets the Login.
+     * Sets Login.
      *
-     * @param string $Login
-     *
-     * @return AdImageUpload
+     * @param string $value
+     * @return $this
      */
-    public function setLogin($Login)
+    public function setLogin($value)
     {
-        $this->Login = $Login;
+        $this->Login = $value;
 
         return $this;
     }
 
     /**
-     * Gets the AdImageHash.
+     * Gets AdImageHash.
      *
      * @return string
      */
@@ -86,21 +68,20 @@ class AdImageUpload
     }
 
     /**
-     * Sets the AdImageHash.
+     * Sets AdImageHash.
      *
-     * @param string $AdImageHash
-     *
-     * @return AdImageUpload
+     * @param string $value
+     * @return $this
      */
-    public function setAdImageHash($AdImageHash)
+    public function setAdImageHash($value)
     {
-        $this->AdImageHash = $AdImageHash;
+        $this->AdImageHash = $value;
 
         return $this;
     }
 
     /**
-     * Gets the AdImageURL.
+     * Gets AdImageURL.
      *
      * @return string
      */
@@ -110,21 +91,20 @@ class AdImageUpload
     }
 
     /**
-     * Sets the AdImageURL.
+     * Sets AdImageURL.
      *
-     * @param string $AdImageURL
-     *
-     * @return AdImageUpload
+     * @param string $value
+     * @return $this
      */
-    public function setAdImageURL($AdImageURL)
+    public function setAdImageURL($value)
     {
-        $this->AdImageURL = $AdImageURL;
+        $this->AdImageURL = $value;
 
         return $this;
     }
 
     /**
-     * Gets the SourceURL.
+     * Gets SourceURL.
      *
      * @return string
      */
@@ -134,23 +114,22 @@ class AdImageUpload
     }
 
     /**
-     * Sets the SourceURL.
+     * Sets SourceURL.
      *
-     * @param string $SourceURL
-     *
-     * @return AdImageUpload
+     * @param string $value
+     * @return $this
      */
-    public function setSourceURL($SourceURL)
+    public function setSourceURL($value)
     {
-        $this->SourceURL = $SourceURL;
+        $this->SourceURL = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Name.
+     * Gets Name.
      *
-     * @return string
+     * @return string|null
      */
     public function getName()
     {
@@ -158,23 +137,22 @@ class AdImageUpload
     }
 
     /**
-     * Sets the Name.
+     * Sets Name.
      *
-     * @param string $Name
-     *
-     * @return AdImageUpload
+     * @param string|null $value
+     * @return $this
      */
-    public function setName($Name)
+    public function setName($value = null)
     {
-        $this->Name = $Name;
+        $this->Name = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Error.
+     * Gets Error.
      *
-     * @return Error
+     * @return Error|null
      */
     public function getError()
     {
@@ -182,23 +160,22 @@ class AdImageUpload
     }
 
     /**
-     * Sets the Error.
+     * Sets Error.
      *
-     * @param Error $Error
-     *
-     * @return AdImageUpload
+     * @param Error|null $value
+     * @return $this
      */
-    public function setError(Error $Error)
+    public function setError(Error $value = null)
     {
-        $this->Error = $Error;
+        $this->Error = $value;
 
         return $this;
     }
 
     /**
-     * Gets the AdImageUploadTaskID.
+     * Gets AdImageUploadTaskID.
      *
-     * @return int
+     * @return int|null
      */
     public function getAdImageUploadTaskID()
     {
@@ -206,23 +183,22 @@ class AdImageUpload
     }
 
     /**
-     * Sets the AdImageUploadTaskID.
+     * Sets AdImageUploadTaskID.
      *
-     * @param int $AdImageUploadTaskID
-     *
-     * @return AdImageUpload
+     * @param int|null $value
+     * @return $this
      */
-    public function setAdImageUploadTaskID($AdImageUploadTaskID)
+    public function setAdImageUploadTaskID($value = null)
     {
-        $this->AdImageUploadTaskID = $AdImageUploadTaskID;
+        $this->AdImageUploadTaskID = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Status.
+     * Gets Status.
      *
-     * @return string
+     * @return string|null
      */
     public function getStatus()
     {
@@ -230,16 +206,18 @@ class AdImageUpload
     }
 
     /**
-     * Sets the Status.
+     * Sets Status.
      *
-     * @param string $Status
-     *
-     * @return AdImageUpload
+     * @param string|null $value
+     * @return $this
      */
-    public function setStatus($Status)
+    public function setStatus($value = null)
     {
-        $this->Status = $Status;
+        $this->Status = $value;
 
         return $this;
     }
+
+
 }
+

@@ -3,24 +3,19 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class GetSubClientsRequest
 {
-    /**
-     * @var string
-     */
-    protected $Login;
-    /**
-     * @var ClientFilter
-     */
-    protected $Filter;
+
+    protected $Login = null;
+
+    protected $Filter = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of GetSubClientsRequest.
      *
-     * @return self
+     * @return GetSubClientsRequest
      */
     public static function create()
     {
@@ -28,9 +23,9 @@ class GetSubClientsRequest
     }
 
     /**
-     * Gets the Login.
+     * Gets Login.
      *
-     * @return string
+     * @return string|null
      */
     public function getLogin()
     {
@@ -38,23 +33,22 @@ class GetSubClientsRequest
     }
 
     /**
-     * Sets the Login.
+     * Sets Login.
      *
-     * @param string $Login
-     *
-     * @return GetSubClientsRequest
+     * @param string|null $value
+     * @return $this
      */
-    public function setLogin($Login)
+    public function setLogin($value = null)
     {
-        $this->Login = $Login;
+        $this->Login = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Filter.
+     * Gets Filter.
      *
-     * @return ClientFilter
+     * @return ClientFilter|null
      */
     public function getFilter()
     {
@@ -62,16 +56,18 @@ class GetSubClientsRequest
     }
 
     /**
-     * Sets the Filter.
+     * Sets Filter.
      *
-     * @param ClientFilter $Filter
-     *
-     * @return GetSubClientsRequest
+     * @param ClientFilter|null $value
+     * @return $this
      */
-    public function setFilter(ClientFilter $Filter)
+    public function setFilter(ClientFilter $value = null)
     {
-        $this->Filter = $Filter;
+        $this->Filter = $value;
 
         return $this;
     }
+
+
 }
+

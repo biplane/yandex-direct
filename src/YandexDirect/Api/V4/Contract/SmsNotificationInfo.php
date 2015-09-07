@@ -3,40 +3,27 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class SmsNotificationInfo
 {
-    /**
-     * @var string
-     */
-    protected $MetricaSms;
-    /**
-     * @var string
-     */
-    protected $ModerateResultSms;
-    /**
-     * @var string
-     */
-    protected $MoneyInSms;
-    /**
-     * @var string
-     */
-    protected $MoneyOutSms;
-    /**
-     * @var string
-     */
-    protected $SmsTimeFrom;
-    /**
-     * @var string
-     */
-    protected $SmsTimeTo;
+
+    protected $MetricaSms = null;
+
+    protected $ModerateResultSms = null;
+
+    protected $MoneyInSms = null;
+
+    protected $MoneyOutSms = null;
+
+    protected $SmsTimeFrom = null;
+
+    protected $SmsTimeTo = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of SmsNotificationInfo.
      *
-     * @return self
+     * @return SmsNotificationInfo
      */
     public static function create()
     {
@@ -44,9 +31,9 @@ class SmsNotificationInfo
     }
 
     /**
-     * Gets the MetricaSms.
+     * Gets MetricaSms.
      *
-     * @return string
+     * @return string|null
      */
     public function getMetricaSms()
     {
@@ -54,23 +41,22 @@ class SmsNotificationInfo
     }
 
     /**
-     * Sets the MetricaSms.
+     * Sets MetricaSms.
      *
-     * @param string $MetricaSms
-     *
-     * @return SmsNotificationInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setMetricaSms($MetricaSms)
+    public function setMetricaSms($value = null)
     {
-        $this->MetricaSms = $MetricaSms;
+        $this->MetricaSms = $value;
 
         return $this;
     }
 
     /**
-     * Gets the ModerateResultSms.
+     * Gets ModerateResultSms.
      *
-     * @return string
+     * @return string|null
      */
     public function getModerateResultSms()
     {
@@ -78,23 +64,22 @@ class SmsNotificationInfo
     }
 
     /**
-     * Sets the ModerateResultSms.
+     * Sets ModerateResultSms.
      *
-     * @param string $ModerateResultSms
-     *
-     * @return SmsNotificationInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setModerateResultSms($ModerateResultSms)
+    public function setModerateResultSms($value = null)
     {
-        $this->ModerateResultSms = $ModerateResultSms;
+        $this->ModerateResultSms = $value;
 
         return $this;
     }
 
     /**
-     * Gets the MoneyInSms.
+     * Gets MoneyInSms.
      *
-     * @return string
+     * @return string|null
      */
     public function getMoneyInSms()
     {
@@ -102,23 +87,22 @@ class SmsNotificationInfo
     }
 
     /**
-     * Sets the MoneyInSms.
+     * Sets MoneyInSms.
      *
-     * @param string $MoneyInSms
-     *
-     * @return SmsNotificationInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setMoneyInSms($MoneyInSms)
+    public function setMoneyInSms($value = null)
     {
-        $this->MoneyInSms = $MoneyInSms;
+        $this->MoneyInSms = $value;
 
         return $this;
     }
 
     /**
-     * Gets the MoneyOutSms.
+     * Gets MoneyOutSms.
      *
-     * @return string
+     * @return string|null
      */
     public function getMoneyOutSms()
     {
@@ -126,23 +110,22 @@ class SmsNotificationInfo
     }
 
     /**
-     * Sets the MoneyOutSms.
+     * Sets MoneyOutSms.
      *
-     * @param string $MoneyOutSms
-     *
-     * @return SmsNotificationInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setMoneyOutSms($MoneyOutSms)
+    public function setMoneyOutSms($value = null)
     {
-        $this->MoneyOutSms = $MoneyOutSms;
+        $this->MoneyOutSms = $value;
 
         return $this;
     }
 
     /**
-     * Gets the SmsTimeFrom.
+     * Gets SmsTimeFrom.
      *
-     * @return string
+     * @return string|null
      */
     public function getSmsTimeFrom()
     {
@@ -150,23 +133,22 @@ class SmsNotificationInfo
     }
 
     /**
-     * Sets the SmsTimeFrom.
+     * Sets SmsTimeFrom.
      *
-     * @param string $SmsTimeFrom
-     *
-     * @return SmsNotificationInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setSmsTimeFrom($SmsTimeFrom)
+    public function setSmsTimeFrom($value = null)
     {
-        $this->SmsTimeFrom = $SmsTimeFrom;
+        $this->SmsTimeFrom = $value;
 
         return $this;
     }
 
     /**
-     * Gets the SmsTimeTo.
+     * Gets SmsTimeTo.
      *
-     * @return string
+     * @return string|null
      */
     public function getSmsTimeTo()
     {
@@ -174,16 +156,18 @@ class SmsNotificationInfo
     }
 
     /**
-     * Sets the SmsTimeTo.
+     * Sets SmsTimeTo.
      *
-     * @param string $SmsTimeTo
-     *
-     * @return SmsNotificationInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setSmsTimeTo($SmsTimeTo)
+    public function setSmsTimeTo($value = null)
     {
-        $this->SmsTimeTo = $SmsTimeTo;
+        $this->SmsTimeTo = $value;
 
         return $this;
     }
+
+
 }
+

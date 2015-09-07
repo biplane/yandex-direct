@@ -3,28 +3,21 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class AdImageAssociationActionResult
 {
-    /**
-     * @var Warning[]
-     */
-    protected $Warnings;
-    /**
-     * @var Error[]
-     */
-    protected $Errors;
-    /**
-     * @var int
-     */
-    protected $AdID;
+
+    protected $Warnings = null;
+
+    protected $Errors = null;
+
+    protected $AdID = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of AdImageAssociationActionResult.
      *
-     * @return self
+     * @return AdImageAssociationActionResult
      */
     public static function create()
     {
@@ -32,9 +25,9 @@ class AdImageAssociationActionResult
     }
 
     /**
-     * Gets the Warnings.
+     * Gets Warnings.
      *
-     * @return Warning[]
+     * @return Warning[]|null
      */
     public function getWarnings()
     {
@@ -42,23 +35,22 @@ class AdImageAssociationActionResult
     }
 
     /**
-     * Sets the Warnings.
+     * Sets Warnings.
      *
-     * @param Warning[] $Warnings
-     *
-     * @return AdImageAssociationActionResult
+     * @param array|null $value
+     * @return $this
      */
-    public function setWarnings(array $Warnings)
+    public function setWarnings(array $value = null)
     {
-        $this->Warnings = $Warnings;
+        $this->Warnings = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Errors.
+     * Gets Errors.
      *
-     * @return Error[]
+     * @return Error[]|null
      */
     public function getErrors()
     {
@@ -66,23 +58,22 @@ class AdImageAssociationActionResult
     }
 
     /**
-     * Sets the Errors.
+     * Sets Errors.
      *
-     * @param Error[] $Errors
-     *
-     * @return AdImageAssociationActionResult
+     * @param array|null $value
+     * @return $this
      */
-    public function setErrors(array $Errors)
+    public function setErrors(array $value = null)
     {
-        $this->Errors = $Errors;
+        $this->Errors = $value;
 
         return $this;
     }
 
     /**
-     * Gets the AdID.
+     * Gets AdID.
      *
-     * @return int
+     * @return int|null
      */
     public function getAdID()
     {
@@ -90,16 +81,18 @@ class AdImageAssociationActionResult
     }
 
     /**
-     * Sets the AdID.
+     * Sets AdID.
      *
-     * @param int $AdID
-     *
-     * @return AdImageAssociationActionResult
+     * @param int|null $value
+     * @return $this
      */
-    public function setAdID($AdID)
+    public function setAdID($value = null)
     {
-        $this->AdID = $AdID;
+        $this->AdID = $value;
 
         return $this;
     }
+
+
 }
+

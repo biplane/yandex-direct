@@ -3,48 +3,31 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class PhrasePriceInfo
 {
-    /**
-     * @var int
-     */
-    protected $PhraseID;
-    /**
-     * @var int
-     */
-    protected $BannerID;
-    /**
-     * @var int
-     */
-    protected $CampaignID;
-    /**
-     * @var float
-     */
-    protected $Price;
-    /**
-     * @var string
-     */
-    protected $AutoBroker;
-    /**
-     * @var string
-     */
-    protected $AutoBudgetPriority;
-    /**
-     * @var float
-     */
-    protected $ContextPrice;
-    /**
-     * @var string
-     */
-    protected $Currency;
+
+    protected $PhraseID = null;
+
+    protected $BannerID = null;
+
+    protected $CampaignID = null;
+
+    protected $Price = null;
+
+    protected $AutoBroker = null;
+
+    protected $AutoBudgetPriority = null;
+
+    protected $ContextPrice = null;
+
+    protected $Currency = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of PhrasePriceInfo.
      *
-     * @return self
+     * @return PhrasePriceInfo
      */
     public static function create()
     {
@@ -52,7 +35,7 @@ class PhrasePriceInfo
     }
 
     /**
-     * Gets the PhraseID.
+     * Gets PhraseID.
      *
      * @return int
      */
@@ -62,23 +45,22 @@ class PhrasePriceInfo
     }
 
     /**
-     * Sets the PhraseID.
+     * Sets PhraseID.
      *
-     * @param int $PhraseID
-     *
-     * @return PhrasePriceInfo
+     * @param int $value
+     * @return $this
      */
-    public function setPhraseID($PhraseID)
+    public function setPhraseID($value)
     {
-        $this->PhraseID = $PhraseID;
+        $this->PhraseID = $value;
 
         return $this;
     }
 
     /**
-     * Gets the BannerID.
+     * Gets BannerID.
      *
-     * @return int
+     * @return int|null
      */
     public function getBannerID()
     {
@@ -86,23 +68,22 @@ class PhrasePriceInfo
     }
 
     /**
-     * Sets the BannerID.
+     * Sets BannerID.
      *
-     * @param int $BannerID
-     *
-     * @return PhrasePriceInfo
+     * @param int|null $value
+     * @return $this
      */
-    public function setBannerID($BannerID)
+    public function setBannerID($value = null)
     {
-        $this->BannerID = $BannerID;
+        $this->BannerID = $value;
 
         return $this;
     }
 
     /**
-     * Gets the CampaignID.
+     * Gets CampaignID.
      *
-     * @return int
+     * @return int|null
      */
     public function getCampaignID()
     {
@@ -110,23 +91,22 @@ class PhrasePriceInfo
     }
 
     /**
-     * Sets the CampaignID.
+     * Sets CampaignID.
      *
-     * @param int $CampaignID
-     *
-     * @return PhrasePriceInfo
+     * @param int|null $value
+     * @return $this
      */
-    public function setCampaignID($CampaignID)
+    public function setCampaignID($value = null)
     {
-        $this->CampaignID = $CampaignID;
+        $this->CampaignID = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Price.
+     * Gets Price.
      *
-     * @return float
+     * @return float|null
      */
     public function getPrice()
     {
@@ -134,23 +114,22 @@ class PhrasePriceInfo
     }
 
     /**
-     * Sets the Price.
+     * Sets Price.
      *
-     * @param float $Price
-     *
-     * @return PhrasePriceInfo
+     * @param float|null $value
+     * @return $this
      */
-    public function setPrice($Price)
+    public function setPrice($value = null)
     {
-        $this->Price = $Price;
+        $this->Price = $value;
 
         return $this;
     }
 
     /**
-     * Gets the AutoBroker.
+     * Gets AutoBroker.
      *
-     * @return string
+     * @return string|null
      */
     public function getAutoBroker()
     {
@@ -158,23 +137,22 @@ class PhrasePriceInfo
     }
 
     /**
-     * Sets the AutoBroker.
+     * Sets AutoBroker.
      *
-     * @param string $AutoBroker
-     *
-     * @return PhrasePriceInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setAutoBroker($AutoBroker)
+    public function setAutoBroker($value = null)
     {
-        $this->AutoBroker = $AutoBroker;
+        $this->AutoBroker = $value;
 
         return $this;
     }
 
     /**
-     * Gets the AutoBudgetPriority.
+     * Gets AutoBudgetPriority.
      *
-     * @return string
+     * @return string|null
      */
     public function getAutoBudgetPriority()
     {
@@ -182,23 +160,22 @@ class PhrasePriceInfo
     }
 
     /**
-     * Sets the AutoBudgetPriority.
+     * Sets AutoBudgetPriority.
      *
-     * @param string $AutoBudgetPriority
-     *
-     * @return PhrasePriceInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setAutoBudgetPriority($AutoBudgetPriority)
+    public function setAutoBudgetPriority($value = null)
     {
-        $this->AutoBudgetPriority = $AutoBudgetPriority;
+        $this->AutoBudgetPriority = $value;
 
         return $this;
     }
 
     /**
-     * Gets the ContextPrice.
+     * Gets ContextPrice.
      *
-     * @return float
+     * @return float|null
      */
     public function getContextPrice()
     {
@@ -206,23 +183,22 @@ class PhrasePriceInfo
     }
 
     /**
-     * Sets the ContextPrice.
+     * Sets ContextPrice.
      *
-     * @param float $ContextPrice
-     *
-     * @return PhrasePriceInfo
+     * @param float|null $value
+     * @return $this
      */
-    public function setContextPrice($ContextPrice)
+    public function setContextPrice($value = null)
     {
-        $this->ContextPrice = $ContextPrice;
+        $this->ContextPrice = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Currency.
+     * Gets Currency.
      *
-     * @return string
+     * @return string|null
      */
     public function getCurrency()
     {
@@ -230,16 +206,18 @@ class PhrasePriceInfo
     }
 
     /**
-     * Sets the Currency.
+     * Sets Currency.
      *
-     * @param string $Currency
-     *
-     * @return PhrasePriceInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setCurrency($Currency)
+    public function setCurrency($value = null)
     {
-        $this->Currency = $Currency;
+        $this->Currency = $value;
 
         return $this;
     }
+
+
 }
+

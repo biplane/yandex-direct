@@ -3,24 +3,19 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class CampaignTagsInfo
 {
-    /**
-     * @var int
-     */
-    protected $CampaignID;
-    /**
-     * @var TagInfo[]
-     */
-    protected $Tags;
+
+    protected $CampaignID = null;
+
+    protected $Tags = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of CampaignTagsInfo.
      *
-     * @return self
+     * @return CampaignTagsInfo
      */
     public static function create()
     {
@@ -28,7 +23,7 @@ class CampaignTagsInfo
     }
 
     /**
-     * Gets the CampaignID.
+     * Gets CampaignID.
      *
      * @return int
      */
@@ -38,23 +33,22 @@ class CampaignTagsInfo
     }
 
     /**
-     * Sets the CampaignID.
+     * Sets CampaignID.
      *
-     * @param int $CampaignID
-     *
-     * @return CampaignTagsInfo
+     * @param int $value
+     * @return $this
      */
-    public function setCampaignID($CampaignID)
+    public function setCampaignID($value)
     {
-        $this->CampaignID = $CampaignID;
+        $this->CampaignID = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Tags.
+     * Gets Tags.
      *
-     * @return TagInfo[]
+     * @return TagInfo[]|null
      */
     public function getTags()
     {
@@ -62,16 +56,18 @@ class CampaignTagsInfo
     }
 
     /**
-     * Sets the Tags.
+     * Sets Tags.
      *
-     * @param TagInfo[] $Tags
-     *
-     * @return CampaignTagsInfo
+     * @param array|null $value
+     * @return $this
      */
-    public function setTags(array $Tags)
+    public function setTags(array $value = null)
     {
-        $this->Tags = $Tags;
+        $this->Tags = $value;
 
         return $this;
     }
+
+
 }
+

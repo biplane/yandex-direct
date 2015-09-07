@@ -3,27 +3,19 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class ForecastStatusInfo
 {
-    const STATUS_DONE = 'Done';
-    const STATUS_PENDING = 'Pending';
+
+    protected $ForecastID = null;
+
+    protected $StatusForecast = null;
 
     /**
-     * @var int
-     */
-    protected $ForecastID;
-    /**
-     * @var string
-     */
-    protected $StatusForecast;
-
-    /**
-     * Creates a new instance.
+     * Creates a new instance of ForecastStatusInfo.
      *
-     * @return self
+     * @return ForecastStatusInfo
      */
     public static function create()
     {
@@ -31,7 +23,7 @@ class ForecastStatusInfo
     }
 
     /**
-     * Gets the ForecastID.
+     * Gets ForecastID.
      *
      * @return int
      */
@@ -41,21 +33,20 @@ class ForecastStatusInfo
     }
 
     /**
-     * Sets the ForecastID.
+     * Sets ForecastID.
      *
-     * @param int $ForecastID
-     *
-     * @return ForecastStatusInfo
+     * @param int $value
+     * @return $this
      */
-    public function setForecastID($ForecastID)
+    public function setForecastID($value)
     {
-        $this->ForecastID = $ForecastID;
+        $this->ForecastID = $value;
 
         return $this;
     }
 
     /**
-     * Gets the StatusForecast.
+     * Gets StatusForecast.
      *
      * @return string
      */
@@ -65,16 +56,18 @@ class ForecastStatusInfo
     }
 
     /**
-     * Sets the StatusForecast.
+     * Sets StatusForecast.
      *
-     * @param string $StatusForecast
-     *
-     * @return ForecastStatusInfo
+     * @param string $value
+     * @return $this
      */
-    public function setStatusForecast($StatusForecast)
+    public function setStatusForecast($value)
     {
-        $this->StatusForecast = $StatusForecast;
+        $this->StatusForecast = $value;
 
         return $this;
     }
+
+
 }
+

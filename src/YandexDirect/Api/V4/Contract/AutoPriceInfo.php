@@ -3,88 +3,51 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class AutoPriceInfo
 {
-    /**
-     * @var int
-     */
-    protected $CampaignID;
-    /**
-     * @var int[]
-     */
-    protected $BannerIDS;
-    /**
-     * @var int[]
-     */
-    protected $PhraseIDS;
-    /**
-     * @var string
-     */
-    protected $Mode;
-    /**
-     * @var float
-     */
-    protected $SinglePrice;
-    /**
-     * @var string
-     */
-    protected $PriceBase;
-    /**
-     * @var string
-     */
-    protected $ProcBase;
-    /**
-     * @var float
-     */
-    protected $MaxPrice;
-    /**
-     * @var int
-     */
-    protected $Proc;
-    /**
-     * @var string
-     */
-    protected $UpdatePhrases;
-    /**
-     * @var string
-     */
-    protected $UpdateCategories;
-    /**
-     * @var int
-     */
-    protected $Scope;
-    /**
-     * @var string
-     */
-    protected $PhrasesType;
-    /**
-     * @var float
-     */
-    protected $Price;
-    /**
-     * @var float
-     */
-    protected $ContextPrice;
-    /**
-     * @var string
-     */
-    protected $BannersType;
-    /**
-     * @var string
-     */
-    protected $DontWaitForPriceUpdate;
-    /**
-     * @var string
-     */
-    protected $Currency;
+
+    protected $CampaignID = null;
+
+    protected $BannerIDS = null;
+
+    protected $PhraseIDS = null;
+
+    protected $Mode = null;
+
+    protected $SinglePrice = null;
+
+    protected $PriceBase = null;
+
+    protected $ProcBase = null;
+
+    protected $MaxPrice = null;
+
+    protected $Proc = null;
+
+    protected $UpdatePhrases = null;
+
+    protected $UpdateCategories = null;
+
+    protected $Scope = null;
+
+    protected $PhrasesType = null;
+
+    protected $Price = null;
+
+    protected $ContextPrice = null;
+
+    protected $BannersType = null;
+
+    protected $DontWaitForPriceUpdate = null;
+
+    protected $Currency = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of AutoPriceInfo.
      *
-     * @return self
+     * @return AutoPriceInfo
      */
     public static function create()
     {
@@ -92,7 +55,7 @@ class AutoPriceInfo
     }
 
     /**
-     * Gets the CampaignID.
+     * Gets CampaignID.
      *
      * @return int
      */
@@ -102,23 +65,22 @@ class AutoPriceInfo
     }
 
     /**
-     * Sets the CampaignID.
+     * Sets CampaignID.
      *
-     * @param int $CampaignID
-     *
-     * @return AutoPriceInfo
+     * @param int $value
+     * @return $this
      */
-    public function setCampaignID($CampaignID)
+    public function setCampaignID($value)
     {
-        $this->CampaignID = $CampaignID;
+        $this->CampaignID = $value;
 
         return $this;
     }
 
     /**
-     * Gets the BannerIDS.
+     * Gets BannerIDS.
      *
-     * @return int[]
+     * @return int[]|null
      */
     public function getBannerIDS()
     {
@@ -126,23 +88,22 @@ class AutoPriceInfo
     }
 
     /**
-     * Sets the BannerIDS.
+     * Sets BannerIDS.
      *
-     * @param int[] $BannerIDS
-     *
-     * @return AutoPriceInfo
+     * @param array|null $value
+     * @return $this
      */
-    public function setBannerIDS(array $BannerIDS)
+    public function setBannerIDS(array $value = null)
     {
-        $this->BannerIDS = $BannerIDS;
+        $this->BannerIDS = $value;
 
         return $this;
     }
 
     /**
-     * Gets the PhraseIDS.
+     * Gets PhraseIDS.
      *
-     * @return int[]
+     * @return int[]|null
      */
     public function getPhraseIDS()
     {
@@ -150,21 +111,20 @@ class AutoPriceInfo
     }
 
     /**
-     * Sets the PhraseIDS.
+     * Sets PhraseIDS.
      *
-     * @param int[] $PhraseIDS
-     *
-     * @return AutoPriceInfo
+     * @param array|null $value
+     * @return $this
      */
-    public function setPhraseIDS(array $PhraseIDS)
+    public function setPhraseIDS(array $value = null)
     {
-        $this->PhraseIDS = $PhraseIDS;
+        $this->PhraseIDS = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Mode.
+     * Gets Mode.
      *
      * @return string
      */
@@ -174,23 +134,22 @@ class AutoPriceInfo
     }
 
     /**
-     * Sets the Mode.
+     * Sets Mode.
      *
-     * @param string $Mode
-     *
-     * @return AutoPriceInfo
+     * @param string $value
+     * @return $this
      */
-    public function setMode($Mode)
+    public function setMode($value)
     {
-        $this->Mode = $Mode;
+        $this->Mode = $value;
 
         return $this;
     }
 
     /**
-     * Gets the SinglePrice.
+     * Gets SinglePrice.
      *
-     * @return float
+     * @return float|null
      */
     public function getSinglePrice()
     {
@@ -198,23 +157,22 @@ class AutoPriceInfo
     }
 
     /**
-     * Sets the SinglePrice.
+     * Sets SinglePrice.
      *
-     * @param float $SinglePrice
-     *
-     * @return AutoPriceInfo
+     * @param float|null $value
+     * @return $this
      */
-    public function setSinglePrice($SinglePrice)
+    public function setSinglePrice($value = null)
     {
-        $this->SinglePrice = $SinglePrice;
+        $this->SinglePrice = $value;
 
         return $this;
     }
 
     /**
-     * Gets the PriceBase.
+     * Gets PriceBase.
      *
-     * @return string
+     * @return string|null
      */
     public function getPriceBase()
     {
@@ -222,23 +180,22 @@ class AutoPriceInfo
     }
 
     /**
-     * Sets the PriceBase.
+     * Sets PriceBase.
      *
-     * @param string $PriceBase
-     *
-     * @return AutoPriceInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setPriceBase($PriceBase)
+    public function setPriceBase($value = null)
     {
-        $this->PriceBase = $PriceBase;
+        $this->PriceBase = $value;
 
         return $this;
     }
 
     /**
-     * Gets the ProcBase.
+     * Gets ProcBase.
      *
-     * @return string
+     * @return string|null
      */
     public function getProcBase()
     {
@@ -246,23 +203,22 @@ class AutoPriceInfo
     }
 
     /**
-     * Sets the ProcBase.
+     * Sets ProcBase.
      *
-     * @param string $ProcBase
-     *
-     * @return AutoPriceInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setProcBase($ProcBase)
+    public function setProcBase($value = null)
     {
-        $this->ProcBase = $ProcBase;
+        $this->ProcBase = $value;
 
         return $this;
     }
 
     /**
-     * Gets the MaxPrice.
+     * Gets MaxPrice.
      *
-     * @return float
+     * @return float|null
      */
     public function getMaxPrice()
     {
@@ -270,23 +226,22 @@ class AutoPriceInfo
     }
 
     /**
-     * Sets the MaxPrice.
+     * Sets MaxPrice.
      *
-     * @param float $MaxPrice
-     *
-     * @return AutoPriceInfo
+     * @param float|null $value
+     * @return $this
      */
-    public function setMaxPrice($MaxPrice)
+    public function setMaxPrice($value = null)
     {
-        $this->MaxPrice = $MaxPrice;
+        $this->MaxPrice = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Proc.
+     * Gets Proc.
      *
-     * @return int
+     * @return int|null
      */
     public function getProc()
     {
@@ -294,23 +249,22 @@ class AutoPriceInfo
     }
 
     /**
-     * Sets the Proc.
+     * Sets Proc.
      *
-     * @param int $Proc
-     *
-     * @return AutoPriceInfo
+     * @param int|null $value
+     * @return $this
      */
-    public function setProc($Proc)
+    public function setProc($value = null)
     {
-        $this->Proc = $Proc;
+        $this->Proc = $value;
 
         return $this;
     }
 
     /**
-     * Gets the UpdatePhrases.
+     * Gets UpdatePhrases.
      *
-     * @return string
+     * @return string|null
      */
     public function getUpdatePhrases()
     {
@@ -318,23 +272,22 @@ class AutoPriceInfo
     }
 
     /**
-     * Sets the UpdatePhrases.
+     * Sets UpdatePhrases.
      *
-     * @param string $UpdatePhrases
-     *
-     * @return AutoPriceInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setUpdatePhrases($UpdatePhrases)
+    public function setUpdatePhrases($value = null)
     {
-        $this->UpdatePhrases = $UpdatePhrases;
+        $this->UpdatePhrases = $value;
 
         return $this;
     }
 
     /**
-     * Gets the UpdateCategories.
+     * Gets UpdateCategories.
      *
-     * @return string
+     * @return string|null
      */
     public function getUpdateCategories()
     {
@@ -342,23 +295,22 @@ class AutoPriceInfo
     }
 
     /**
-     * Sets the UpdateCategories.
+     * Sets UpdateCategories.
      *
-     * @param string $UpdateCategories
-     *
-     * @return AutoPriceInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setUpdateCategories($UpdateCategories)
+    public function setUpdateCategories($value = null)
     {
-        $this->UpdateCategories = $UpdateCategories;
+        $this->UpdateCategories = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Scope.
+     * Gets Scope.
      *
-     * @return int
+     * @return int|null
      */
     public function getScope()
     {
@@ -366,23 +318,22 @@ class AutoPriceInfo
     }
 
     /**
-     * Sets the Scope.
+     * Sets Scope.
      *
-     * @param int $Scope
-     *
-     * @return AutoPriceInfo
+     * @param int|null $value
+     * @return $this
      */
-    public function setScope($Scope)
+    public function setScope($value = null)
     {
-        $this->Scope = $Scope;
+        $this->Scope = $value;
 
         return $this;
     }
 
     /**
-     * Gets the PhrasesType.
+     * Gets PhrasesType.
      *
-     * @return string
+     * @return string|null
      */
     public function getPhrasesType()
     {
@@ -390,23 +341,22 @@ class AutoPriceInfo
     }
 
     /**
-     * Sets the PhrasesType.
+     * Sets PhrasesType.
      *
-     * @param string $PhrasesType
-     *
-     * @return AutoPriceInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setPhrasesType($PhrasesType)
+    public function setPhrasesType($value = null)
     {
-        $this->PhrasesType = $PhrasesType;
+        $this->PhrasesType = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Price.
+     * Gets Price.
      *
-     * @return float
+     * @return float|null
      */
     public function getPrice()
     {
@@ -414,23 +364,22 @@ class AutoPriceInfo
     }
 
     /**
-     * Sets the Price.
+     * Sets Price.
      *
-     * @param float $Price
-     *
-     * @return AutoPriceInfo
+     * @param float|null $value
+     * @return $this
      */
-    public function setPrice($Price)
+    public function setPrice($value = null)
     {
-        $this->Price = $Price;
+        $this->Price = $value;
 
         return $this;
     }
 
     /**
-     * Gets the ContextPrice.
+     * Gets ContextPrice.
      *
-     * @return float
+     * @return float|null
      */
     public function getContextPrice()
     {
@@ -438,23 +387,22 @@ class AutoPriceInfo
     }
 
     /**
-     * Sets the ContextPrice.
+     * Sets ContextPrice.
      *
-     * @param float $ContextPrice
-     *
-     * @return AutoPriceInfo
+     * @param float|null $value
+     * @return $this
      */
-    public function setContextPrice($ContextPrice)
+    public function setContextPrice($value = null)
     {
-        $this->ContextPrice = $ContextPrice;
+        $this->ContextPrice = $value;
 
         return $this;
     }
 
     /**
-     * Gets the BannersType.
+     * Gets BannersType.
      *
-     * @return string
+     * @return string|null
      */
     public function getBannersType()
     {
@@ -462,23 +410,22 @@ class AutoPriceInfo
     }
 
     /**
-     * Sets the BannersType.
+     * Sets BannersType.
      *
-     * @param string $BannersType
-     *
-     * @return AutoPriceInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setBannersType($BannersType)
+    public function setBannersType($value = null)
     {
-        $this->BannersType = $BannersType;
+        $this->BannersType = $value;
 
         return $this;
     }
 
     /**
-     * Gets the DontWaitForPriceUpdate.
+     * Gets DontWaitForPriceUpdate.
      *
-     * @return string
+     * @return string|null
      */
     public function getDontWaitForPriceUpdate()
     {
@@ -486,23 +433,22 @@ class AutoPriceInfo
     }
 
     /**
-     * Sets the DontWaitForPriceUpdate.
+     * Sets DontWaitForPriceUpdate.
      *
-     * @param string $DontWaitForPriceUpdate
-     *
-     * @return AutoPriceInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setDontWaitForPriceUpdate($DontWaitForPriceUpdate)
+    public function setDontWaitForPriceUpdate($value = null)
     {
-        $this->DontWaitForPriceUpdate = $DontWaitForPriceUpdate;
+        $this->DontWaitForPriceUpdate = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Currency.
+     * Gets Currency.
      *
-     * @return string
+     * @return string|null
      */
     public function getCurrency()
     {
@@ -510,16 +456,18 @@ class AutoPriceInfo
     }
 
     /**
-     * Sets the Currency.
+     * Sets Currency.
      *
-     * @param string $Currency
-     *
-     * @return AutoPriceInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setCurrency($Currency)
+    public function setCurrency($value = null)
     {
-        $this->Currency = $Currency;
+        $this->Currency = $value;
 
         return $this;
     }
+
+
 }
+

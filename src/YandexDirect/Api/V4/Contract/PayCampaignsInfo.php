@@ -3,28 +3,23 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class PayCampaignsInfo
 {
-    /**
-     * @var PayCampElement[]
-     */
-    protected $Payments;
-    /**
-     * @var string
-     */
-    protected $ContractID;
-    /**
-     * @var string
-     */
-    protected $PayMethod;
+
+    protected $Payments = array(
+        
+    );
+
+    protected $ContractID = null;
+
+    protected $PayMethod = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of PayCampaignsInfo.
      *
-     * @return self
+     * @return PayCampaignsInfo
      */
     public static function create()
     {
@@ -32,7 +27,7 @@ class PayCampaignsInfo
     }
 
     /**
-     * Gets the Payments.
+     * Gets Payments.
      *
      * @return PayCampElement[]
      */
@@ -42,23 +37,22 @@ class PayCampaignsInfo
     }
 
     /**
-     * Sets the Payments.
+     * Sets Payments.
      *
-     * @param PayCampElement[] $Payments
-     *
-     * @return PayCampaignsInfo
+     * @param array $value
+     * @return $this
      */
-    public function setPayments(array $Payments)
+    public function setPayments(array $value)
     {
-        $this->Payments = $Payments;
+        $this->Payments = $value;
 
         return $this;
     }
 
     /**
-     * Gets the ContractID.
+     * Gets ContractID.
      *
-     * @return string
+     * @return string|null
      */
     public function getContractID()
     {
@@ -66,21 +60,20 @@ class PayCampaignsInfo
     }
 
     /**
-     * Sets the ContractID.
+     * Sets ContractID.
      *
-     * @param string $ContractID
-     *
-     * @return PayCampaignsInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setContractID($ContractID)
+    public function setContractID($value = null)
     {
-        $this->ContractID = $ContractID;
+        $this->ContractID = $value;
 
         return $this;
     }
 
     /**
-     * Gets the PayMethod.
+     * Gets PayMethod.
      *
      * @return string
      */
@@ -90,16 +83,18 @@ class PayCampaignsInfo
     }
 
     /**
-     * Sets the PayMethod.
+     * Sets PayMethod.
      *
-     * @param string $PayMethod
-     *
-     * @return PayCampaignsInfo
+     * @param string $value
+     * @return $this
      */
-    public function setPayMethod($PayMethod)
+    public function setPayMethod($value)
     {
-        $this->PayMethod = $PayMethod;
+        $this->PayMethod = $value;
 
         return $this;
     }
+
+
 }
+

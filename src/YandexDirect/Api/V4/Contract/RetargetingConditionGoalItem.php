@@ -3,24 +3,19 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class RetargetingConditionGoalItem
 {
-    /**
-     * @var int
-     */
-    protected $Time;
-    /**
-     * @var int
-     */
-    protected $GoalID;
+
+    protected $Time = null;
+
+    protected $GoalID = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of RetargetingConditionGoalItem.
      *
-     * @return self
+     * @return RetargetingConditionGoalItem
      */
     public static function create()
     {
@@ -28,7 +23,7 @@ class RetargetingConditionGoalItem
     }
 
     /**
-     * Gets the Time.
+     * Gets Time.
      *
      * @return int
      */
@@ -38,21 +33,20 @@ class RetargetingConditionGoalItem
     }
 
     /**
-     * Sets the Time.
+     * Sets Time.
      *
-     * @param int $Time
-     *
-     * @return RetargetingConditionGoalItem
+     * @param int $value
+     * @return $this
      */
-    public function setTime($Time)
+    public function setTime($value)
     {
-        $this->Time = $Time;
+        $this->Time = $value;
 
         return $this;
     }
 
     /**
-     * Gets the GoalID.
+     * Gets GoalID.
      *
      * @return int
      */
@@ -62,16 +56,18 @@ class RetargetingConditionGoalItem
     }
 
     /**
-     * Sets the GoalID.
+     * Sets GoalID.
      *
-     * @param int $GoalID
-     *
-     * @return RetargetingConditionGoalItem
+     * @param int $value
+     * @return $this
      */
-    public function setGoalID($GoalID)
+    public function setGoalID($value)
     {
-        $this->GoalID = $GoalID;
+        $this->GoalID = $value;
 
         return $this;
     }
+
+
 }
+

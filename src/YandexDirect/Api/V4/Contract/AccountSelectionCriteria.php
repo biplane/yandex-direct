@@ -3,24 +3,19 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class AccountSelectionCriteria
 {
-    /**
-     * @var string[]
-     */
-    protected $Logins;
-    /**
-     * @var int[]
-     */
-    protected $AccountIDS;
+
+    protected $Logins = null;
+
+    protected $AccountIDS = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of AccountSelectionCriteria.
      *
-     * @return self
+     * @return AccountSelectionCriteria
      */
     public static function create()
     {
@@ -28,9 +23,9 @@ class AccountSelectionCriteria
     }
 
     /**
-     * Gets the Logins.
+     * Gets Logins.
      *
-     * @return string[]
+     * @return string[]|null
      */
     public function getLogins()
     {
@@ -38,23 +33,22 @@ class AccountSelectionCriteria
     }
 
     /**
-     * Sets the Logins.
+     * Sets Logins.
      *
-     * @param string[] $Logins
-     *
-     * @return AccountSelectionCriteria
+     * @param array|null $value
+     * @return $this
      */
-    public function setLogins(array $Logins)
+    public function setLogins(array $value = null)
     {
-        $this->Logins = $Logins;
+        $this->Logins = $value;
 
         return $this;
     }
 
     /**
-     * Gets the AccountIDS.
+     * Gets AccountIDS.
      *
-     * @return int[]
+     * @return int[]|null
      */
     public function getAccountIDS()
     {
@@ -62,16 +56,18 @@ class AccountSelectionCriteria
     }
 
     /**
-     * Sets the AccountIDS.
+     * Sets AccountIDS.
      *
-     * @param int[] $AccountIDS
-     *
-     * @return AccountSelectionCriteria
+     * @param array|null $value
+     * @return $this
      */
-    public function setAccountIDS(array $AccountIDS)
+    public function setAccountIDS(array $value = null)
     {
-        $this->AccountIDS = $AccountIDS;
+        $this->AccountIDS = $value;
 
         return $this;
     }
+
+
 }
+

@@ -3,28 +3,21 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class AdImageURL
 {
-    /**
-     * @var string
-     */
-    protected $Login;
-    /**
-     * @var string
-     */
-    protected $URL;
-    /**
-     * @var string
-     */
-    protected $Name;
+
+    protected $Login = null;
+
+    protected $URL = null;
+
+    protected $Name = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of AdImageURL.
      *
-     * @return self
+     * @return AdImageURL
      */
     public static function create()
     {
@@ -32,9 +25,9 @@ class AdImageURL
     }
 
     /**
-     * Gets the Login.
+     * Gets Login.
      *
-     * @return string
+     * @return string|null
      */
     public function getLogin()
     {
@@ -42,21 +35,20 @@ class AdImageURL
     }
 
     /**
-     * Sets the Login.
+     * Sets Login.
      *
-     * @param string $Login
-     *
-     * @return AdImageURL
+     * @param string|null $value
+     * @return $this
      */
-    public function setLogin($Login)
+    public function setLogin($value = null)
     {
-        $this->Login = $Login;
+        $this->Login = $value;
 
         return $this;
     }
 
     /**
-     * Gets the URL.
+     * Gets URL.
      *
      * @return string
      */
@@ -66,21 +58,20 @@ class AdImageURL
     }
 
     /**
-     * Sets the URL.
+     * Sets URL.
      *
-     * @param string $URL
-     *
-     * @return AdImageURL
+     * @param string $value
+     * @return $this
      */
-    public function setURL($URL)
+    public function setURL($value)
     {
-        $this->URL = $URL;
+        $this->URL = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Name.
+     * Gets Name.
      *
      * @return string
      */
@@ -90,16 +81,18 @@ class AdImageURL
     }
 
     /**
-     * Sets the Name.
+     * Sets Name.
      *
-     * @param string $Name
-     *
-     * @return AdImageURL
+     * @param string $value
+     * @return $this
      */
-    public function setName($Name)
+    public function setName($value)
     {
-        $this->Name = $Name;
+        $this->Name = $value;
 
         return $this;
     }
+
+
 }
+

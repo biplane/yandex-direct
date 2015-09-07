@@ -3,24 +3,19 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class WordstatReportStatusInfo
 {
-    /**
-     * @var int
-     */
-    protected $ReportID;
-    /**
-     * @var string
-     */
-    protected $StatusReport;
+
+    protected $ReportID = null;
+
+    protected $StatusReport = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of WordstatReportStatusInfo.
      *
-     * @return self
+     * @return WordstatReportStatusInfo
      */
     public static function create()
     {
@@ -28,7 +23,7 @@ class WordstatReportStatusInfo
     }
 
     /**
-     * Gets the ReportID.
+     * Gets ReportID.
      *
      * @return int
      */
@@ -38,21 +33,20 @@ class WordstatReportStatusInfo
     }
 
     /**
-     * Sets the ReportID.
+     * Sets ReportID.
      *
-     * @param int $ReportID
-     *
-     * @return WordstatReportStatusInfo
+     * @param int $value
+     * @return $this
      */
-    public function setReportID($ReportID)
+    public function setReportID($value)
     {
-        $this->ReportID = $ReportID;
+        $this->ReportID = $value;
 
         return $this;
     }
 
     /**
-     * Gets the StatusReport.
+     * Gets StatusReport.
      *
      * @return string
      */
@@ -62,16 +56,18 @@ class WordstatReportStatusInfo
     }
 
     /**
-     * Sets the StatusReport.
+     * Sets StatusReport.
      *
-     * @param string $StatusReport
-     *
-     * @return WordstatReportStatusInfo
+     * @param string $value
+     * @return $this
      */
-    public function setStatusReport($StatusReport)
+    public function setStatusReport($value)
     {
-        $this->StatusReport = $StatusReport;
+        $this->StatusReport = $value;
 
         return $this;
     }
+
+
 }
+

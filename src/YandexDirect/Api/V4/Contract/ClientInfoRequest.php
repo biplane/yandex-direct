@@ -3,20 +3,17 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class ClientInfoRequest
 {
-    /**
-     * @var ClientFilter
-     */
-    protected $Filter;
+
+    protected $Filter = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of ClientInfoRequest.
      *
-     * @return self
+     * @return ClientInfoRequest
      */
     public static function create()
     {
@@ -24,9 +21,9 @@ class ClientInfoRequest
     }
 
     /**
-     * Gets the Filter.
+     * Gets Filter.
      *
-     * @return ClientFilter
+     * @return ClientFilter|null
      */
     public function getFilter()
     {
@@ -34,16 +31,18 @@ class ClientInfoRequest
     }
 
     /**
-     * Sets the Filter.
+     * Sets Filter.
      *
-     * @param ClientFilter $Filter
-     *
-     * @return ClientInfoRequest
+     * @param ClientFilter|null $value
+     * @return $this
      */
-    public function setFilter(ClientFilter $Filter)
+    public function setFilter(ClientFilter $value = null)
     {
-        $this->Filter = $Filter;
+        $this->Filter = $value;
 
         return $this;
     }
+
+
 }
+

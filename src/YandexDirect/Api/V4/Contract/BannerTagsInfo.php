@@ -3,24 +3,19 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class BannerTagsInfo
 {
-    /**
-     * @var int
-     */
-    protected $BannerID;
-    /**
-     * @var int[]
-     */
-    protected $TagIDS;
+
+    protected $BannerID = null;
+
+    protected $TagIDS = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of BannerTagsInfo.
      *
-     * @return self
+     * @return BannerTagsInfo
      */
     public static function create()
     {
@@ -28,7 +23,7 @@ class BannerTagsInfo
     }
 
     /**
-     * Gets the BannerID.
+     * Gets BannerID.
      *
      * @return int
      */
@@ -38,23 +33,22 @@ class BannerTagsInfo
     }
 
     /**
-     * Sets the BannerID.
+     * Sets BannerID.
      *
-     * @param int $BannerID
-     *
-     * @return BannerTagsInfo
+     * @param int $value
+     * @return $this
      */
-    public function setBannerID($BannerID)
+    public function setBannerID($value)
     {
-        $this->BannerID = $BannerID;
+        $this->BannerID = $value;
 
         return $this;
     }
 
     /**
-     * Gets the TagIDS.
+     * Gets TagIDS.
      *
-     * @return int[]
+     * @return int[]|null
      */
     public function getTagIDS()
     {
@@ -62,16 +56,18 @@ class BannerTagsInfo
     }
 
     /**
-     * Sets the TagIDS.
+     * Sets TagIDS.
      *
-     * @param int[] $TagIDS
-     *
-     * @return BannerTagsInfo
+     * @param array|null $value
+     * @return $this
      */
-    public function setTagIDS(array $TagIDS)
+    public function setTagIDS(array $value = null)
     {
-        $this->TagIDS = $TagIDS;
+        $this->TagIDS = $value;
 
         return $this;
     }
+
+
 }
+

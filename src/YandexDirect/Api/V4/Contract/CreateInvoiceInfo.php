@@ -3,20 +3,19 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class CreateInvoiceInfo
 {
-    /**
-     * @var PayCampElement[]
-     */
-    protected $Payments;
+
+    protected $Payments = array(
+        
+    );
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of CreateInvoiceInfo.
      *
-     * @return self
+     * @return CreateInvoiceInfo
      */
     public static function create()
     {
@@ -24,7 +23,7 @@ class CreateInvoiceInfo
     }
 
     /**
-     * Gets the Payments.
+     * Gets Payments.
      *
      * @return PayCampElement[]
      */
@@ -34,16 +33,18 @@ class CreateInvoiceInfo
     }
 
     /**
-     * Sets the Payments.
+     * Sets Payments.
      *
-     * @param PayCampElement[] $Payments
-     *
-     * @return CreateInvoiceInfo
+     * @param array $value
+     * @return $this
      */
-    public function setPayments(array $Payments)
+    public function setPayments(array $value)
     {
-        $this->Payments = $Payments;
+        $this->Payments = $value;
 
         return $this;
     }
+
+
 }
+

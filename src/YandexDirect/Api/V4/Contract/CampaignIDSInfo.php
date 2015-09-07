@@ -3,24 +3,21 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class CampaignIDSInfo
 {
-    /**
-     * @var int[]
-     */
-    protected $CampaignIDS;
-    /**
-     * @var string
-     */
-    protected $Currency;
+
+    protected $CampaignIDS = array(
+        
+    );
+
+    protected $Currency = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of CampaignIDSInfo.
      *
-     * @return self
+     * @return CampaignIDSInfo
      */
     public static function create()
     {
@@ -28,7 +25,7 @@ class CampaignIDSInfo
     }
 
     /**
-     * Gets the CampaignIDS.
+     * Gets CampaignIDS.
      *
      * @return int[]
      */
@@ -38,23 +35,22 @@ class CampaignIDSInfo
     }
 
     /**
-     * Sets the CampaignIDS.
+     * Sets CampaignIDS.
      *
-     * @param int[] $CampaignIDS
-     *
-     * @return CampaignIDSInfo
+     * @param array $value
+     * @return $this
      */
-    public function setCampaignIDS(array $CampaignIDS)
+    public function setCampaignIDS(array $value)
     {
-        $this->CampaignIDS = $CampaignIDS;
+        $this->CampaignIDS = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Currency.
+     * Gets Currency.
      *
-     * @return string
+     * @return string|null
      */
     public function getCurrency()
     {
@@ -62,16 +58,18 @@ class CampaignIDSInfo
     }
 
     /**
-     * Sets the Currency.
+     * Sets Currency.
      *
-     * @param string $Currency
-     *
-     * @return CampaignIDSInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setCurrency($Currency)
+    public function setCurrency($value = null)
     {
-        $this->Currency = $Currency;
+        $this->Currency = $value;
 
         return $this;
     }
+
+
 }
+

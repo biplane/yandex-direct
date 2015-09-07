@@ -3,48 +3,31 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class GetChangesResponse
 {
-    /**
-     * @var GetChangesIntData
-     */
-    protected $Campaigns;
-    /**
-     * @var GetChangesIntData
-     */
-    protected $Banners;
-    /**
-     * @var GetChangesStringData
-     */
-    protected $Logins;
-    /**
-     * @var CampaignStatChangeItem[]
-     */
-    protected $CampaignsStatChange;
-    /**
-     * @var string
-     */
-    protected $Timestamp;
-    /**
-     * @var string
-     */
-    protected $RubricsChanged;
-    /**
-     * @var string
-     */
-    protected $TimeZonesChanged;
-    /**
-     * @var string
-     */
-    protected $RegionsChanged;
+
+    protected $Campaigns = null;
+
+    protected $Banners = null;
+
+    protected $Logins = null;
+
+    protected $CampaignsStatChange = null;
+
+    protected $Timestamp = null;
+
+    protected $RubricsChanged = null;
+
+    protected $TimeZonesChanged = null;
+
+    protected $RegionsChanged = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of GetChangesResponse.
      *
-     * @return self
+     * @return GetChangesResponse
      */
     public static function create()
     {
@@ -52,9 +35,9 @@ class GetChangesResponse
     }
 
     /**
-     * Gets the Campaigns.
+     * Gets Campaigns.
      *
-     * @return GetChangesIntData
+     * @return GetChangesIntData|null
      */
     public function getCampaigns()
     {
@@ -62,23 +45,22 @@ class GetChangesResponse
     }
 
     /**
-     * Sets the Campaigns.
+     * Sets Campaigns.
      *
-     * @param GetChangesIntData $Campaigns
-     *
-     * @return GetChangesResponse
+     * @param GetChangesIntData|null $value
+     * @return $this
      */
-    public function setCampaigns(GetChangesIntData $Campaigns)
+    public function setCampaigns(GetChangesIntData $value = null)
     {
-        $this->Campaigns = $Campaigns;
+        $this->Campaigns = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Banners.
+     * Gets Banners.
      *
-     * @return GetChangesIntData
+     * @return GetChangesIntData|null
      */
     public function getBanners()
     {
@@ -86,23 +68,22 @@ class GetChangesResponse
     }
 
     /**
-     * Sets the Banners.
+     * Sets Banners.
      *
-     * @param GetChangesIntData $Banners
-     *
-     * @return GetChangesResponse
+     * @param GetChangesIntData|null $value
+     * @return $this
      */
-    public function setBanners(GetChangesIntData $Banners)
+    public function setBanners(GetChangesIntData $value = null)
     {
-        $this->Banners = $Banners;
+        $this->Banners = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Logins.
+     * Gets Logins.
      *
-     * @return GetChangesStringData
+     * @return GetChangesStringData|null
      */
     public function getLogins()
     {
@@ -110,23 +91,22 @@ class GetChangesResponse
     }
 
     /**
-     * Sets the Logins.
+     * Sets Logins.
      *
-     * @param GetChangesStringData $Logins
-     *
-     * @return GetChangesResponse
+     * @param GetChangesStringData|null $value
+     * @return $this
      */
-    public function setLogins(GetChangesStringData $Logins)
+    public function setLogins(GetChangesStringData $value = null)
     {
-        $this->Logins = $Logins;
+        $this->Logins = $value;
 
         return $this;
     }
 
     /**
-     * Gets the CampaignsStatChange.
+     * Gets CampaignsStatChange.
      *
-     * @return CampaignStatChangeItem[]
+     * @return CampaignStatChangeItem[]|null
      */
     public function getCampaignsStatChange()
     {
@@ -134,21 +114,20 @@ class GetChangesResponse
     }
 
     /**
-     * Sets the CampaignsStatChange.
+     * Sets CampaignsStatChange.
      *
-     * @param CampaignStatChangeItem[] $CampaignsStatChange
-     *
-     * @return GetChangesResponse
+     * @param array|null $value
+     * @return $this
      */
-    public function setCampaignsStatChange(array $CampaignsStatChange)
+    public function setCampaignsStatChange(array $value = null)
     {
-        $this->CampaignsStatChange = $CampaignsStatChange;
+        $this->CampaignsStatChange = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Timestamp.
+     * Gets Timestamp.
      *
      * @return string
      */
@@ -158,23 +137,22 @@ class GetChangesResponse
     }
 
     /**
-     * Sets the Timestamp.
+     * Sets Timestamp.
      *
-     * @param string $Timestamp
-     *
-     * @return GetChangesResponse
+     * @param string $value
+     * @return $this
      */
-    public function setTimestamp($Timestamp)
+    public function setTimestamp($value)
     {
-        $this->Timestamp = $Timestamp;
+        $this->Timestamp = $value;
 
         return $this;
     }
 
     /**
-     * Gets the RubricsChanged.
+     * Gets RubricsChanged.
      *
-     * @return string
+     * @return string|null
      */
     public function getRubricsChanged()
     {
@@ -182,23 +160,22 @@ class GetChangesResponse
     }
 
     /**
-     * Sets the RubricsChanged.
+     * Sets RubricsChanged.
      *
-     * @param string $RubricsChanged
-     *
-     * @return GetChangesResponse
+     * @param string|null $value
+     * @return $this
      */
-    public function setRubricsChanged($RubricsChanged)
+    public function setRubricsChanged($value = null)
     {
-        $this->RubricsChanged = $RubricsChanged;
+        $this->RubricsChanged = $value;
 
         return $this;
     }
 
     /**
-     * Gets the TimeZonesChanged.
+     * Gets TimeZonesChanged.
      *
-     * @return string
+     * @return string|null
      */
     public function getTimeZonesChanged()
     {
@@ -206,23 +183,22 @@ class GetChangesResponse
     }
 
     /**
-     * Sets the TimeZonesChanged.
+     * Sets TimeZonesChanged.
      *
-     * @param string $TimeZonesChanged
-     *
-     * @return GetChangesResponse
+     * @param string|null $value
+     * @return $this
      */
-    public function setTimeZonesChanged($TimeZonesChanged)
+    public function setTimeZonesChanged($value = null)
     {
-        $this->TimeZonesChanged = $TimeZonesChanged;
+        $this->TimeZonesChanged = $value;
 
         return $this;
     }
 
     /**
-     * Gets the RegionsChanged.
+     * Gets RegionsChanged.
      *
-     * @return string
+     * @return string|null
      */
     public function getRegionsChanged()
     {
@@ -230,16 +206,18 @@ class GetChangesResponse
     }
 
     /**
-     * Sets the RegionsChanged.
+     * Sets RegionsChanged.
      *
-     * @param string $RegionsChanged
-     *
-     * @return GetChangesResponse
+     * @param string|null $value
+     * @return $this
      */
-    public function setRegionsChanged($RegionsChanged)
+    public function setRegionsChanged($value = null)
     {
-        $this->RegionsChanged = $RegionsChanged;
+        $this->RegionsChanged = $value;
 
         return $this;
     }
+
+
 }
+

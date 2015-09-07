@@ -3,28 +3,27 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class GetChangesIntData
 {
-    /**
-     * @var int[]
-     */
-    protected $Updated;
-    /**
-     * @var int[]
-     */
-    protected $NotUpdated;
-    /**
-     * @var int[]
-     */
-    protected $NotFound;
+
+    protected $Updated = array(
+        
+    );
+
+    protected $NotUpdated = array(
+        
+    );
+
+    protected $NotFound = array(
+        
+    );
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of GetChangesIntData.
      *
-     * @return self
+     * @return GetChangesIntData
      */
     public static function create()
     {
@@ -32,7 +31,7 @@ class GetChangesIntData
     }
 
     /**
-     * Gets the Updated.
+     * Gets Updated.
      *
      * @return int[]
      */
@@ -42,21 +41,20 @@ class GetChangesIntData
     }
 
     /**
-     * Sets the Updated.
+     * Sets Updated.
      *
-     * @param int[] $Updated
-     *
-     * @return GetChangesIntData
+     * @param array $value
+     * @return $this
      */
-    public function setUpdated(array $Updated)
+    public function setUpdated(array $value)
     {
-        $this->Updated = $Updated;
+        $this->Updated = $value;
 
         return $this;
     }
 
     /**
-     * Gets the NotUpdated.
+     * Gets NotUpdated.
      *
      * @return int[]
      */
@@ -66,21 +64,20 @@ class GetChangesIntData
     }
 
     /**
-     * Sets the NotUpdated.
+     * Sets NotUpdated.
      *
-     * @param int[] $NotUpdated
-     *
-     * @return GetChangesIntData
+     * @param array $value
+     * @return $this
      */
-    public function setNotUpdated(array $NotUpdated)
+    public function setNotUpdated(array $value)
     {
-        $this->NotUpdated = $NotUpdated;
+        $this->NotUpdated = $value;
 
         return $this;
     }
 
     /**
-     * Gets the NotFound.
+     * Gets NotFound.
      *
      * @return int[]
      */
@@ -90,16 +87,18 @@ class GetChangesIntData
     }
 
     /**
-     * Sets the NotFound.
+     * Sets NotFound.
      *
-     * @param int[] $NotFound
-     *
-     * @return GetChangesIntData
+     * @param array $value
+     * @return $this
      */
-    public function setNotFound(array $NotFound)
+    public function setNotFound(array $value)
     {
-        $this->NotFound = $NotFound;
+        $this->NotFound = $value;
 
         return $this;
     }
+
+
 }
+

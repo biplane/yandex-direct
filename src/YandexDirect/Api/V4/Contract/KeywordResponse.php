@@ -3,20 +3,17 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class KeywordResponse
 {
-    /**
-     * @var KeywordActionResult[]
-     */
-    protected $ActionsResult;
+
+    protected $ActionsResult = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of KeywordResponse.
      *
-     * @return self
+     * @return KeywordResponse
      */
     public static function create()
     {
@@ -24,9 +21,9 @@ class KeywordResponse
     }
 
     /**
-     * Gets the ActionsResult.
+     * Gets ActionsResult.
      *
-     * @return KeywordActionResult[]
+     * @return KeywordActionResult[]|null
      */
     public function getActionsResult()
     {
@@ -34,16 +31,18 @@ class KeywordResponse
     }
 
     /**
-     * Sets the ActionsResult.
+     * Sets ActionsResult.
      *
-     * @param KeywordActionResult[] $ActionsResult
-     *
-     * @return KeywordResponse
+     * @param array|null $value
+     * @return $this
      */
-    public function setActionsResult(array $ActionsResult)
+    public function setActionsResult(array $value = null)
     {
-        $this->ActionsResult = $ActionsResult;
+        $this->ActionsResult = $value;
 
         return $this;
     }
+
+
 }
+

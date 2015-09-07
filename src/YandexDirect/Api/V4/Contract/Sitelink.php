@@ -3,24 +3,19 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class Sitelink
 {
-    /**
-     * @var string
-     */
-    protected $Title;
-    /**
-     * @var string
-     */
-    protected $Href;
+
+    protected $Title = null;
+
+    protected $Href = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of Sitelink.
      *
-     * @return self
+     * @return Sitelink
      */
     public static function create()
     {
@@ -28,7 +23,7 @@ class Sitelink
     }
 
     /**
-     * Gets the Title.
+     * Gets Title.
      *
      * @return string
      */
@@ -38,21 +33,20 @@ class Sitelink
     }
 
     /**
-     * Sets the Title.
+     * Sets Title.
      *
-     * @param string $Title
-     *
-     * @return Sitelink
+     * @param string $value
+     * @return $this
      */
-    public function setTitle($Title)
+    public function setTitle($value)
     {
-        $this->Title = $Title;
+        $this->Title = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Href.
+     * Gets Href.
      *
      * @return string
      */
@@ -62,16 +56,18 @@ class Sitelink
     }
 
     /**
-     * Sets the Href.
+     * Sets Href.
      *
-     * @param string $Href
-     *
-     * @return Sitelink
+     * @param string $value
+     * @return $this
      */
-    public function setHref($Href)
+    public function setHref($value)
     {
-        $this->Href = $Href;
+        $this->Href = $value;
 
         return $this;
     }
+
+
 }
+

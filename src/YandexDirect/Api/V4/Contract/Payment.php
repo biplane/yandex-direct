@@ -3,36 +3,25 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class Payment
 {
-    /**
-     * @var int
-     */
-    protected $AccountID;
-    /**
-     * @var float
-     */
-    protected $Amount;
-    /**
-     * @var string
-     */
-    protected $Origin;
-    /**
-     * @var string
-     */
-    protected $Contract;
-    /**
-     * @var string
-     */
-    protected $Currency;
+
+    protected $AccountID = null;
+
+    protected $Amount = null;
+
+    protected $Origin = null;
+
+    protected $Contract = null;
+
+    protected $Currency = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of Payment.
      *
-     * @return self
+     * @return Payment
      */
     public static function create()
     {
@@ -40,7 +29,7 @@ class Payment
     }
 
     /**
-     * Gets the AccountID.
+     * Gets AccountID.
      *
      * @return int
      */
@@ -50,21 +39,20 @@ class Payment
     }
 
     /**
-     * Sets the AccountID.
+     * Sets AccountID.
      *
-     * @param int $AccountID
-     *
-     * @return Payment
+     * @param int $value
+     * @return $this
      */
-    public function setAccountID($AccountID)
+    public function setAccountID($value)
     {
-        $this->AccountID = $AccountID;
+        $this->AccountID = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Amount.
+     * Gets Amount.
      *
      * @return float
      */
@@ -74,23 +62,22 @@ class Payment
     }
 
     /**
-     * Sets the Amount.
+     * Sets Amount.
      *
-     * @param float $Amount
-     *
-     * @return Payment
+     * @param float $value
+     * @return $this
      */
-    public function setAmount($Amount)
+    public function setAmount($value)
     {
-        $this->Amount = $Amount;
+        $this->Amount = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Origin.
+     * Gets Origin.
      *
-     * @return string
+     * @return string|null
      */
     public function getOrigin()
     {
@@ -98,23 +85,22 @@ class Payment
     }
 
     /**
-     * Sets the Origin.
+     * Sets Origin.
      *
-     * @param string $Origin
-     *
-     * @return Payment
+     * @param string|null $value
+     * @return $this
      */
-    public function setOrigin($Origin)
+    public function setOrigin($value = null)
     {
-        $this->Origin = $Origin;
+        $this->Origin = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Contract.
+     * Gets Contract.
      *
-     * @return string
+     * @return string|null
      */
     public function getContract()
     {
@@ -122,23 +108,22 @@ class Payment
     }
 
     /**
-     * Sets the Contract.
+     * Sets Contract.
      *
-     * @param string $Contract
-     *
-     * @return Payment
+     * @param string|null $value
+     * @return $this
      */
-    public function setContract($Contract)
+    public function setContract($value = null)
     {
-        $this->Contract = $Contract;
+        $this->Contract = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Currency.
+     * Gets Currency.
      *
-     * @return string
+     * @return string|null
      */
     public function getCurrency()
     {
@@ -146,16 +131,18 @@ class Payment
     }
 
     /**
-     * Sets the Currency.
+     * Sets Currency.
      *
-     * @param string $Currency
-     *
-     * @return Payment
+     * @param string|null $value
+     * @return $this
      */
-    public function setCurrency($Currency)
+    public function setCurrency($value = null)
     {
-        $this->Currency = $Currency;
+        $this->Currency = $value;
 
         return $this;
     }
+
+
 }
+

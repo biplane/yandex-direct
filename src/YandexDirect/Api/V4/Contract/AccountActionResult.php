@@ -3,32 +3,23 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class AccountActionResult
 {
-    /**
-     * @var Error[]
-     */
-    protected $Errors;
-    /**
-     * @var int
-     */
-    protected $AccountID;
-    /**
-     * @var string
-     */
-    protected $Login;
-    /**
-     * @var string
-     */
-    protected $URL;
+
+    protected $Errors = null;
+
+    protected $AccountID = null;
+
+    protected $Login = null;
+
+    protected $URL = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of AccountActionResult.
      *
-     * @return self
+     * @return AccountActionResult
      */
     public static function create()
     {
@@ -36,9 +27,9 @@ class AccountActionResult
     }
 
     /**
-     * Gets the Errors.
+     * Gets Errors.
      *
-     * @return Error[]
+     * @return Error[]|null
      */
     public function getErrors()
     {
@@ -46,23 +37,22 @@ class AccountActionResult
     }
 
     /**
-     * Sets the Errors.
+     * Sets Errors.
      *
-     * @param Error[] $Errors
-     *
-     * @return AccountActionResult
+     * @param array|null $value
+     * @return $this
      */
-    public function setErrors(array $Errors)
+    public function setErrors(array $value = null)
     {
-        $this->Errors = $Errors;
+        $this->Errors = $value;
 
         return $this;
     }
 
     /**
-     * Gets the AccountID.
+     * Gets AccountID.
      *
-     * @return int
+     * @return int|null
      */
     public function getAccountID()
     {
@@ -70,23 +60,22 @@ class AccountActionResult
     }
 
     /**
-     * Sets the AccountID.
+     * Sets AccountID.
      *
-     * @param int $AccountID
-     *
-     * @return AccountActionResult
+     * @param int|null $value
+     * @return $this
      */
-    public function setAccountID($AccountID)
+    public function setAccountID($value = null)
     {
-        $this->AccountID = $AccountID;
+        $this->AccountID = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Login.
+     * Gets Login.
      *
-     * @return string
+     * @return string|null
      */
     public function getLogin()
     {
@@ -94,23 +83,22 @@ class AccountActionResult
     }
 
     /**
-     * Sets the Login.
+     * Sets Login.
      *
-     * @param string $Login
-     *
-     * @return AccountActionResult
+     * @param string|null $value
+     * @return $this
      */
-    public function setLogin($Login)
+    public function setLogin($value = null)
     {
-        $this->Login = $Login;
+        $this->Login = $value;
 
         return $this;
     }
 
     /**
-     * Gets the URL.
+     * Gets URL.
      *
-     * @return string
+     * @return string|null
      */
     public function getURL()
     {
@@ -118,16 +106,18 @@ class AccountActionResult
     }
 
     /**
-     * Sets the URL.
+     * Sets URL.
      *
-     * @param string $URL
-     *
-     * @return AccountActionResult
+     * @param string|null $value
+     * @return $this
      */
-    public function setURL($URL)
+    public function setURL($value = null)
     {
-        $this->URL = $URL;
+        $this->URL = $value;
 
         return $this;
     }
+
+
 }
+

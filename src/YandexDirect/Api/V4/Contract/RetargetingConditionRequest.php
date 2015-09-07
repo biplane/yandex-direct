@@ -3,28 +3,21 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class RetargetingConditionRequest
 {
-    /**
-     * @var string
-     */
-    protected $Action;
-    /**
-     * @var RetargetingConditionSelectionCriteria
-     */
-    protected $SelectionCriteria;
-    /**
-     * @var RetargetingCondition[]
-     */
-    protected $RetargetingConditions;
+
+    protected $Action = null;
+
+    protected $SelectionCriteria = null;
+
+    protected $RetargetingConditions = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of RetargetingConditionRequest.
      *
-     * @return self
+     * @return RetargetingConditionRequest
      */
     public static function create()
     {
@@ -32,7 +25,7 @@ class RetargetingConditionRequest
     }
 
     /**
-     * Gets the Action.
+     * Gets Action.
      *
      * @return string
      */
@@ -42,23 +35,22 @@ class RetargetingConditionRequest
     }
 
     /**
-     * Sets the Action.
+     * Sets Action.
      *
-     * @param string $Action
-     *
-     * @return RetargetingConditionRequest
+     * @param string $value
+     * @return $this
      */
-    public function setAction($Action)
+    public function setAction($value)
     {
-        $this->Action = $Action;
+        $this->Action = $value;
 
         return $this;
     }
 
     /**
-     * Gets the SelectionCriteria.
+     * Gets SelectionCriteria.
      *
-     * @return RetargetingConditionSelectionCriteria
+     * @return RetargetingConditionSelectionCriteria|null
      */
     public function getSelectionCriteria()
     {
@@ -66,23 +58,22 @@ class RetargetingConditionRequest
     }
 
     /**
-     * Sets the SelectionCriteria.
+     * Sets SelectionCriteria.
      *
-     * @param RetargetingConditionSelectionCriteria $SelectionCriteria
-     *
-     * @return RetargetingConditionRequest
+     * @param RetargetingConditionSelectionCriteria|null $value
+     * @return $this
      */
-    public function setSelectionCriteria(RetargetingConditionSelectionCriteria $SelectionCriteria)
+    public function setSelectionCriteria(RetargetingConditionSelectionCriteria $value = null)
     {
-        $this->SelectionCriteria = $SelectionCriteria;
+        $this->SelectionCriteria = $value;
 
         return $this;
     }
 
     /**
-     * Gets the RetargetingConditions.
+     * Gets RetargetingConditions.
      *
-     * @return RetargetingCondition[]
+     * @return RetargetingCondition[]|null
      */
     public function getRetargetingConditions()
     {
@@ -90,16 +81,18 @@ class RetargetingConditionRequest
     }
 
     /**
-     * Sets the RetargetingConditions.
+     * Sets RetargetingConditions.
      *
-     * @param RetargetingCondition[] $RetargetingConditions
-     *
-     * @return RetargetingConditionRequest
+     * @param array|null $value
+     * @return $this
      */
-    public function setRetargetingConditions(array $RetargetingConditions)
+    public function setRetargetingConditions(array $value = null)
     {
-        $this->RetargetingConditions = $RetargetingConditions;
+        $this->RetargetingConditions = $value;
 
         return $this;
     }
+
+
 }
+

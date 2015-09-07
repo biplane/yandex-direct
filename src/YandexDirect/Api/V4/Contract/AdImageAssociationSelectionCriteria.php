@@ -3,44 +3,29 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class AdImageAssociationSelectionCriteria
 {
-    /**
-     * @var string[]
-     */
-    protected $Logins;
-    /**
-     * @var string[]
-     */
-    protected $AdImageHashes;
-    /**
-     * @var string[]
-     */
-    protected $StatusAdImageModerate;
-    /**
-     * @var int[]
-     */
-    protected $AdIDS;
-    /**
-     * @var int[]
-     */
-    protected $CampaignIDS;
-    /**
-     * @var int
-     */
-    protected $Limit;
-    /**
-     * @var int
-     */
-    protected $Offset;
+
+    protected $Logins = null;
+
+    protected $AdImageHashes = null;
+
+    protected $StatusAdImageModerate = null;
+
+    protected $AdIDS = null;
+
+    protected $CampaignIDS = null;
+
+    protected $Limit = null;
+
+    protected $Offset = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of AdImageAssociationSelectionCriteria.
      *
-     * @return self
+     * @return AdImageAssociationSelectionCriteria
      */
     public static function create()
     {
@@ -48,9 +33,9 @@ class AdImageAssociationSelectionCriteria
     }
 
     /**
-     * Gets the Logins.
+     * Gets Logins.
      *
-     * @return string[]
+     * @return string[]|null
      */
     public function getLogins()
     {
@@ -58,23 +43,22 @@ class AdImageAssociationSelectionCriteria
     }
 
     /**
-     * Sets the Logins.
+     * Sets Logins.
      *
-     * @param string[] $Logins
-     *
-     * @return AdImageAssociationSelectionCriteria
+     * @param array|null $value
+     * @return $this
      */
-    public function setLogins(array $Logins)
+    public function setLogins(array $value = null)
     {
-        $this->Logins = $Logins;
+        $this->Logins = $value;
 
         return $this;
     }
 
     /**
-     * Gets the AdImageHashes.
+     * Gets AdImageHashes.
      *
-     * @return string[]
+     * @return string[]|null
      */
     public function getAdImageHashes()
     {
@@ -82,23 +66,22 @@ class AdImageAssociationSelectionCriteria
     }
 
     /**
-     * Sets the AdImageHashes.
+     * Sets AdImageHashes.
      *
-     * @param string[] $AdImageHashes
-     *
-     * @return AdImageAssociationSelectionCriteria
+     * @param array|null $value
+     * @return $this
      */
-    public function setAdImageHashes(array $AdImageHashes)
+    public function setAdImageHashes(array $value = null)
     {
-        $this->AdImageHashes = $AdImageHashes;
+        $this->AdImageHashes = $value;
 
         return $this;
     }
 
     /**
-     * Gets the StatusAdImageModerate.
+     * Gets StatusAdImageModerate.
      *
-     * @return string[]
+     * @return string[]|null
      */
     public function getStatusAdImageModerate()
     {
@@ -106,23 +89,22 @@ class AdImageAssociationSelectionCriteria
     }
 
     /**
-     * Sets the StatusAdImageModerate.
+     * Sets StatusAdImageModerate.
      *
-     * @param string[] $StatusAdImageModerate
-     *
-     * @return AdImageAssociationSelectionCriteria
+     * @param array|null $value
+     * @return $this
      */
-    public function setStatusAdImageModerate(array $StatusAdImageModerate)
+    public function setStatusAdImageModerate(array $value = null)
     {
-        $this->StatusAdImageModerate = $StatusAdImageModerate;
+        $this->StatusAdImageModerate = $value;
 
         return $this;
     }
 
     /**
-     * Gets the AdIDS.
+     * Gets AdIDS.
      *
-     * @return int[]
+     * @return int[]|null
      */
     public function getAdIDS()
     {
@@ -130,23 +112,22 @@ class AdImageAssociationSelectionCriteria
     }
 
     /**
-     * Sets the AdIDS.
+     * Sets AdIDS.
      *
-     * @param int[] $AdIDS
-     *
-     * @return AdImageAssociationSelectionCriteria
+     * @param array|null $value
+     * @return $this
      */
-    public function setAdIDS(array $AdIDS)
+    public function setAdIDS(array $value = null)
     {
-        $this->AdIDS = $AdIDS;
+        $this->AdIDS = $value;
 
         return $this;
     }
 
     /**
-     * Gets the CampaignIDS.
+     * Gets CampaignIDS.
      *
-     * @return int[]
+     * @return int[]|null
      */
     public function getCampaignIDS()
     {
@@ -154,23 +135,22 @@ class AdImageAssociationSelectionCriteria
     }
 
     /**
-     * Sets the CampaignIDS.
+     * Sets CampaignIDS.
      *
-     * @param int[] $CampaignIDS
-     *
-     * @return AdImageAssociationSelectionCriteria
+     * @param array|null $value
+     * @return $this
      */
-    public function setCampaignIDS(array $CampaignIDS)
+    public function setCampaignIDS(array $value = null)
     {
-        $this->CampaignIDS = $CampaignIDS;
+        $this->CampaignIDS = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Limit.
+     * Gets Limit.
      *
-     * @return int
+     * @return int|null
      */
     public function getLimit()
     {
@@ -178,23 +158,22 @@ class AdImageAssociationSelectionCriteria
     }
 
     /**
-     * Sets the Limit.
+     * Sets Limit.
      *
-     * @param int $Limit
-     *
-     * @return AdImageAssociationSelectionCriteria
+     * @param int|null $value
+     * @return $this
      */
-    public function setLimit($Limit)
+    public function setLimit($value = null)
     {
-        $this->Limit = $Limit;
+        $this->Limit = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Offset.
+     * Gets Offset.
      *
-     * @return int
+     * @return int|null
      */
     public function getOffset()
     {
@@ -202,16 +181,18 @@ class AdImageAssociationSelectionCriteria
     }
 
     /**
-     * Sets the Offset.
+     * Sets Offset.
      *
-     * @param int $Offset
-     *
-     * @return AdImageAssociationSelectionCriteria
+     * @param int|null $value
+     * @return $this
      */
-    public function setOffset($Offset)
+    public function setOffset($value = null)
     {
-        $this->Offset = $Offset;
+        $this->Offset = $value;
 
         return $this;
     }
+
+
 }
+

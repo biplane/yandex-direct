@@ -3,28 +3,21 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class RetargetingConditionActionResult
 {
-    /**
-     * @var Warning[]
-     */
-    protected $Warnings;
-    /**
-     * @var Error[]
-     */
-    protected $Errors;
-    /**
-     * @var int
-     */
-    protected $RetargetingConditionID;
+
+    protected $Warnings = null;
+
+    protected $Errors = null;
+
+    protected $RetargetingConditionID = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of RetargetingConditionActionResult.
      *
-     * @return self
+     * @return RetargetingConditionActionResult
      */
     public static function create()
     {
@@ -32,9 +25,9 @@ class RetargetingConditionActionResult
     }
 
     /**
-     * Gets the Warnings.
+     * Gets Warnings.
      *
-     * @return Warning[]
+     * @return Warning[]|null
      */
     public function getWarnings()
     {
@@ -42,23 +35,22 @@ class RetargetingConditionActionResult
     }
 
     /**
-     * Sets the Warnings.
+     * Sets Warnings.
      *
-     * @param Warning[] $Warnings
-     *
-     * @return RetargetingConditionActionResult
+     * @param array|null $value
+     * @return $this
      */
-    public function setWarnings(array $Warnings)
+    public function setWarnings(array $value = null)
     {
-        $this->Warnings = $Warnings;
+        $this->Warnings = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Errors.
+     * Gets Errors.
      *
-     * @return Error[]
+     * @return Error[]|null
      */
     public function getErrors()
     {
@@ -66,23 +58,22 @@ class RetargetingConditionActionResult
     }
 
     /**
-     * Sets the Errors.
+     * Sets Errors.
      *
-     * @param Error[] $Errors
-     *
-     * @return RetargetingConditionActionResult
+     * @param array|null $value
+     * @return $this
      */
-    public function setErrors(array $Errors)
+    public function setErrors(array $value = null)
     {
-        $this->Errors = $Errors;
+        $this->Errors = $value;
 
         return $this;
     }
 
     /**
-     * Gets the RetargetingConditionID.
+     * Gets RetargetingConditionID.
      *
-     * @return int
+     * @return int|null
      */
     public function getRetargetingConditionID()
     {
@@ -90,16 +81,18 @@ class RetargetingConditionActionResult
     }
 
     /**
-     * Sets the RetargetingConditionID.
+     * Sets RetargetingConditionID.
      *
-     * @param int $RetargetingConditionID
-     *
-     * @return RetargetingConditionActionResult
+     * @param int|null $value
+     * @return $this
      */
-    public function setRetargetingConditionID($RetargetingConditionID)
+    public function setRetargetingConditionID($value = null)
     {
-        $this->RetargetingConditionID = $RetargetingConditionID;
+        $this->RetargetingConditionID = $value;
 
         return $this;
     }
+
+
 }
+

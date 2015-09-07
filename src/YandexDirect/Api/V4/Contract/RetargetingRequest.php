@@ -3,36 +3,25 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class RetargetingRequest
 {
-    /**
-     * @var string
-     */
-    protected $Action;
-    /**
-     * @var string
-     */
-    protected $Login;
-    /**
-     * @var RetargetingSelectionCriteria
-     */
-    protected $SelectionCriteria;
-    /**
-     * @var Retargeting[]
-     */
-    protected $Retargetings;
-    /**
-     * @var RetargetingRequestOptions
-     */
-    protected $Options;
+
+    protected $Action = null;
+
+    protected $Login = null;
+
+    protected $SelectionCriteria = null;
+
+    protected $Retargetings = null;
+
+    protected $Options = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of RetargetingRequest.
      *
-     * @return self
+     * @return RetargetingRequest
      */
     public static function create()
     {
@@ -40,7 +29,7 @@ class RetargetingRequest
     }
 
     /**
-     * Gets the Action.
+     * Gets Action.
      *
      * @return string
      */
@@ -50,23 +39,22 @@ class RetargetingRequest
     }
 
     /**
-     * Sets the Action.
+     * Sets Action.
      *
-     * @param string $Action
-     *
-     * @return RetargetingRequest
+     * @param string $value
+     * @return $this
      */
-    public function setAction($Action)
+    public function setAction($value)
     {
-        $this->Action = $Action;
+        $this->Action = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Login.
+     * Gets Login.
      *
-     * @return string
+     * @return string|null
      */
     public function getLogin()
     {
@@ -74,23 +62,22 @@ class RetargetingRequest
     }
 
     /**
-     * Sets the Login.
+     * Sets Login.
      *
-     * @param string $Login
-     *
-     * @return RetargetingRequest
+     * @param string|null $value
+     * @return $this
      */
-    public function setLogin($Login)
+    public function setLogin($value = null)
     {
-        $this->Login = $Login;
+        $this->Login = $value;
 
         return $this;
     }
 
     /**
-     * Gets the SelectionCriteria.
+     * Gets SelectionCriteria.
      *
-     * @return RetargetingSelectionCriteria
+     * @return RetargetingSelectionCriteria|null
      */
     public function getSelectionCriteria()
     {
@@ -98,23 +85,22 @@ class RetargetingRequest
     }
 
     /**
-     * Sets the SelectionCriteria.
+     * Sets SelectionCriteria.
      *
-     * @param RetargetingSelectionCriteria $SelectionCriteria
-     *
-     * @return RetargetingRequest
+     * @param RetargetingSelectionCriteria|null $value
+     * @return $this
      */
-    public function setSelectionCriteria(RetargetingSelectionCriteria $SelectionCriteria)
+    public function setSelectionCriteria(RetargetingSelectionCriteria $value = null)
     {
-        $this->SelectionCriteria = $SelectionCriteria;
+        $this->SelectionCriteria = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Retargetings.
+     * Gets Retargetings.
      *
-     * @return Retargeting[]
+     * @return Retargeting[]|null
      */
     public function getRetargetings()
     {
@@ -122,23 +108,22 @@ class RetargetingRequest
     }
 
     /**
-     * Sets the Retargetings.
+     * Sets Retargetings.
      *
-     * @param Retargeting[] $Retargetings
-     *
-     * @return RetargetingRequest
+     * @param array|null $value
+     * @return $this
      */
-    public function setRetargetings(array $Retargetings)
+    public function setRetargetings(array $value = null)
     {
-        $this->Retargetings = $Retargetings;
+        $this->Retargetings = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Options.
+     * Gets Options.
      *
-     * @return RetargetingRequestOptions
+     * @return RetargetingRequestOptions|null
      */
     public function getOptions()
     {
@@ -146,16 +131,18 @@ class RetargetingRequest
     }
 
     /**
-     * Sets the Options.
+     * Sets Options.
      *
-     * @param RetargetingRequestOptions $Options
-     *
-     * @return RetargetingRequest
+     * @param RetargetingRequestOptions|null $value
+     * @return $this
      */
-    public function setOptions(RetargetingRequestOptions $Options)
+    public function setOptions(RetargetingRequestOptions $value = null)
     {
-        $this->Options = $Options;
+        $this->Options = $value;
 
         return $this;
     }
+
+
 }
+

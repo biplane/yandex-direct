@@ -3,24 +3,19 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class TagInfo
 {
-    /**
-     * @var int
-     */
-    protected $TagID;
-    /**
-     * @var string
-     */
-    protected $Tag;
+
+    protected $TagID = null;
+
+    protected $Tag = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of TagInfo.
      *
-     * @return self
+     * @return TagInfo
      */
     public static function create()
     {
@@ -28,7 +23,7 @@ class TagInfo
     }
 
     /**
-     * Gets the TagID.
+     * Gets TagID.
      *
      * @return int
      */
@@ -38,21 +33,20 @@ class TagInfo
     }
 
     /**
-     * Sets the TagID.
+     * Sets TagID.
      *
-     * @param int $TagID
-     *
-     * @return TagInfo
+     * @param int $value
+     * @return $this
      */
-    public function setTagID($TagID)
+    public function setTagID($value)
     {
-        $this->TagID = $TagID;
+        $this->TagID = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Tag.
+     * Gets Tag.
      *
      * @return string
      */
@@ -62,16 +56,18 @@ class TagInfo
     }
 
     /**
-     * Sets the Tag.
+     * Sets Tag.
      *
-     * @param string $Tag
-     *
-     * @return TagInfo
+     * @param string $value
+     * @return $this
      */
-    public function setTag($Tag)
+    public function setTag($value)
     {
-        $this->Tag = $Tag;
+        $this->Tag = $value;
 
         return $this;
     }
+
+
 }
+

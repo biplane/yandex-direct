@@ -3,24 +3,19 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class CampaignBidsInfo
 {
-    /**
-     * @var int
-     */
-    protected $CampaignID;
-    /**
-     * @var int[]
-     */
-    protected $BannerIDS;
+
+    protected $CampaignID = null;
+
+    protected $BannerIDS = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of CampaignBidsInfo.
      *
-     * @return self
+     * @return CampaignBidsInfo
      */
     public static function create()
     {
@@ -28,9 +23,9 @@ class CampaignBidsInfo
     }
 
     /**
-     * Gets the CampaignID.
+     * Gets CampaignID.
      *
-     * @return int
+     * @return int|null
      */
     public function getCampaignID()
     {
@@ -38,23 +33,22 @@ class CampaignBidsInfo
     }
 
     /**
-     * Sets the CampaignID.
+     * Sets CampaignID.
      *
-     * @param int $CampaignID
-     *
-     * @return CampaignBidsInfo
+     * @param int|null $value
+     * @return $this
      */
-    public function setCampaignID($CampaignID)
+    public function setCampaignID($value = null)
     {
-        $this->CampaignID = $CampaignID;
+        $this->CampaignID = $value;
 
         return $this;
     }
 
     /**
-     * Gets the BannerIDS.
+     * Gets BannerIDS.
      *
-     * @return int[]
+     * @return int[]|null
      */
     public function getBannerIDS()
     {
@@ -62,16 +56,18 @@ class CampaignBidsInfo
     }
 
     /**
-     * Sets the BannerIDS.
+     * Sets BannerIDS.
      *
-     * @param int[] $BannerIDS
-     *
-     * @return CampaignBidsInfo
+     * @param array|null $value
+     * @return $this
      */
-    public function setBannerIDS(array $BannerIDS)
+    public function setBannerIDS(array $value = null)
     {
-        $this->BannerIDS = $BannerIDS;
+        $this->BannerIDS = $value;
 
         return $this;
     }
+
+
 }
+

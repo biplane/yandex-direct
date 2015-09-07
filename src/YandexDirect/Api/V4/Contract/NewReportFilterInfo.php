@@ -3,52 +3,33 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class NewReportFilterInfo
 {
-    /**
-     * @var string
-     */
-    protected $PageType;
-    /**
-     * @var string
-     */
-    protected $PositionType;
-    /**
-     * @var int[]
-     */
-    protected $Banner;
-    /**
-     * @var int[]
-     */
-    protected $Geo;
-    /**
-     * @var string[]
-     */
-    protected $Phrase;
-    /**
-     * @var string[]
-     */
-    protected $PageName;
-    /**
-     * @var int[]
-     */
-    protected $StatGoals;
-    /**
-     * @var string
-     */
-    protected $WithImage;
-    /**
-     * @var string
-     */
-    protected $DeviceType;
+
+    protected $PageType = null;
+
+    protected $PositionType = null;
+
+    protected $Banner = null;
+
+    protected $Geo = null;
+
+    protected $Phrase = null;
+
+    protected $PageName = null;
+
+    protected $StatGoals = null;
+
+    protected $WithImage = null;
+
+    protected $DeviceType = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of NewReportFilterInfo.
      *
-     * @return self
+     * @return NewReportFilterInfo
      */
     public static function create()
     {
@@ -56,9 +37,9 @@ class NewReportFilterInfo
     }
 
     /**
-     * Gets the PageType.
+     * Gets PageType.
      *
-     * @return string
+     * @return string|null
      */
     public function getPageType()
     {
@@ -66,23 +47,22 @@ class NewReportFilterInfo
     }
 
     /**
-     * Sets the PageType.
+     * Sets PageType.
      *
-     * @param string $PageType
-     *
-     * @return NewReportFilterInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setPageType($PageType)
+    public function setPageType($value = null)
     {
-        $this->PageType = $PageType;
+        $this->PageType = $value;
 
         return $this;
     }
 
     /**
-     * Gets the PositionType.
+     * Gets PositionType.
      *
-     * @return string
+     * @return string|null
      */
     public function getPositionType()
     {
@@ -90,23 +70,22 @@ class NewReportFilterInfo
     }
 
     /**
-     * Sets the PositionType.
+     * Sets PositionType.
      *
-     * @param string $PositionType
-     *
-     * @return NewReportFilterInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setPositionType($PositionType)
+    public function setPositionType($value = null)
     {
-        $this->PositionType = $PositionType;
+        $this->PositionType = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Banner.
+     * Gets Banner.
      *
-     * @return int[]
+     * @return int[]|null
      */
     public function getBanner()
     {
@@ -114,23 +93,22 @@ class NewReportFilterInfo
     }
 
     /**
-     * Sets the Banner.
+     * Sets Banner.
      *
-     * @param int[] $Banner
-     *
-     * @return NewReportFilterInfo
+     * @param array|null $value
+     * @return $this
      */
-    public function setBanner(array $Banner)
+    public function setBanner(array $value = null)
     {
-        $this->Banner = $Banner;
+        $this->Banner = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Geo.
+     * Gets Geo.
      *
-     * @return int[]
+     * @return int[]|null
      */
     public function getGeo()
     {
@@ -138,23 +116,22 @@ class NewReportFilterInfo
     }
 
     /**
-     * Sets the Geo.
+     * Sets Geo.
      *
-     * @param int[] $Geo
-     *
-     * @return NewReportFilterInfo
+     * @param array|null $value
+     * @return $this
      */
-    public function setGeo(array $Geo)
+    public function setGeo(array $value = null)
     {
-        $this->Geo = $Geo;
+        $this->Geo = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Phrase.
+     * Gets Phrase.
      *
-     * @return string[]
+     * @return string[]|null
      */
     public function getPhrase()
     {
@@ -162,23 +139,22 @@ class NewReportFilterInfo
     }
 
     /**
-     * Sets the Phrase.
+     * Sets Phrase.
      *
-     * @param string[] $Phrase
-     *
-     * @return NewReportFilterInfo
+     * @param array|null $value
+     * @return $this
      */
-    public function setPhrase(array $Phrase)
+    public function setPhrase(array $value = null)
     {
-        $this->Phrase = $Phrase;
+        $this->Phrase = $value;
 
         return $this;
     }
 
     /**
-     * Gets the PageName.
+     * Gets PageName.
      *
-     * @return string[]
+     * @return string[]|null
      */
     public function getPageName()
     {
@@ -186,23 +162,22 @@ class NewReportFilterInfo
     }
 
     /**
-     * Sets the PageName.
+     * Sets PageName.
      *
-     * @param string[] $PageName
-     *
-     * @return NewReportFilterInfo
+     * @param array|null $value
+     * @return $this
      */
-    public function setPageName(array $PageName)
+    public function setPageName(array $value = null)
     {
-        $this->PageName = $PageName;
+        $this->PageName = $value;
 
         return $this;
     }
 
     /**
-     * Gets the StatGoals.
+     * Gets StatGoals.
      *
-     * @return int[]
+     * @return int[]|null
      */
     public function getStatGoals()
     {
@@ -210,23 +185,22 @@ class NewReportFilterInfo
     }
 
     /**
-     * Sets the StatGoals.
+     * Sets StatGoals.
      *
-     * @param int[] $StatGoals
-     *
-     * @return NewReportFilterInfo
+     * @param array|null $value
+     * @return $this
      */
-    public function setStatGoals(array $StatGoals)
+    public function setStatGoals(array $value = null)
     {
-        $this->StatGoals = $StatGoals;
+        $this->StatGoals = $value;
 
         return $this;
     }
 
     /**
-     * Gets the WithImage.
+     * Gets WithImage.
      *
-     * @return string
+     * @return string|null
      */
     public function getWithImage()
     {
@@ -234,23 +208,22 @@ class NewReportFilterInfo
     }
 
     /**
-     * Sets the WithImage.
+     * Sets WithImage.
      *
-     * @param string $WithImage
-     *
-     * @return NewReportFilterInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setWithImage($WithImage)
+    public function setWithImage($value = null)
     {
-        $this->WithImage = $WithImage;
+        $this->WithImage = $value;
 
         return $this;
     }
 
     /**
-     * Gets the DeviceType.
+     * Gets DeviceType.
      *
-     * @return string
+     * @return string|null
      */
     public function getDeviceType()
     {
@@ -258,16 +231,18 @@ class NewReportFilterInfo
     }
 
     /**
-     * Sets the DeviceType.
+     * Sets DeviceType.
      *
-     * @param string $DeviceType
-     *
-     * @return NewReportFilterInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setDeviceType($DeviceType)
+    public function setDeviceType($value = null)
     {
-        $this->DeviceType = $DeviceType;
+        $this->DeviceType = $value;
 
         return $this;
     }
+
+
 }
+

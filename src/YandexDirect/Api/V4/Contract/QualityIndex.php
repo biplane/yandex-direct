@@ -3,24 +3,21 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class QualityIndex
 {
-    /**
-     * @var float
-     */
-    protected $Value;
-    /**
-     * @var int[]
-     */
-    protected $References;
+
+    protected $Value = null;
+
+    protected $References = array(
+        
+    );
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of QualityIndex.
      *
-     * @return self
+     * @return QualityIndex
      */
     public static function create()
     {
@@ -28,7 +25,7 @@ class QualityIndex
     }
 
     /**
-     * Gets the Value.
+     * Gets Value.
      *
      * @return float
      */
@@ -38,21 +35,20 @@ class QualityIndex
     }
 
     /**
-     * Sets the Value.
+     * Sets Value.
      *
-     * @param float $Value
-     *
-     * @return QualityIndex
+     * @param float $value
+     * @return $this
      */
-    public function setValue($Value)
+    public function setValue($value)
     {
-        $this->Value = $Value;
+        $this->Value = $value;
 
         return $this;
     }
 
     /**
-     * Gets the References.
+     * Gets References.
      *
      * @return int[]
      */
@@ -62,16 +58,18 @@ class QualityIndex
     }
 
     /**
-     * Sets the References.
+     * Sets References.
      *
-     * @param int[] $References
-     *
-     * @return QualityIndex
+     * @param array $value
+     * @return $this
      */
-    public function setReferences(array $References)
+    public function setReferences(array $value)
     {
-        $this->References = $References;
+        $this->References = $value;
 
         return $this;
     }
+
+
 }
+

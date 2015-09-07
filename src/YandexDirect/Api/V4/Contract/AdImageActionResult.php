@@ -3,32 +3,23 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class AdImageActionResult
 {
-    /**
-     * @var Warning[]
-     */
-    protected $Warnings;
-    /**
-     * @var Error[]
-     */
-    protected $Errors;
-    /**
-     * @var int
-     */
-    protected $AdImageUploadTaskID;
-    /**
-     * @var string
-     */
-    protected $AdImageHash;
+
+    protected $Warnings = null;
+
+    protected $Errors = null;
+
+    protected $AdImageUploadTaskID = null;
+
+    protected $AdImageHash = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of AdImageActionResult.
      *
-     * @return self
+     * @return AdImageActionResult
      */
     public static function create()
     {
@@ -36,9 +27,9 @@ class AdImageActionResult
     }
 
     /**
-     * Gets the Warnings.
+     * Gets Warnings.
      *
-     * @return Warning[]
+     * @return Warning[]|null
      */
     public function getWarnings()
     {
@@ -46,23 +37,22 @@ class AdImageActionResult
     }
 
     /**
-     * Sets the Warnings.
+     * Sets Warnings.
      *
-     * @param Warning[] $Warnings
-     *
-     * @return AdImageActionResult
+     * @param array|null $value
+     * @return $this
      */
-    public function setWarnings(array $Warnings)
+    public function setWarnings(array $value = null)
     {
-        $this->Warnings = $Warnings;
+        $this->Warnings = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Errors.
+     * Gets Errors.
      *
-     * @return Error[]
+     * @return Error[]|null
      */
     public function getErrors()
     {
@@ -70,23 +60,22 @@ class AdImageActionResult
     }
 
     /**
-     * Sets the Errors.
+     * Sets Errors.
      *
-     * @param Error[] $Errors
-     *
-     * @return AdImageActionResult
+     * @param array|null $value
+     * @return $this
      */
-    public function setErrors(array $Errors)
+    public function setErrors(array $value = null)
     {
-        $this->Errors = $Errors;
+        $this->Errors = $value;
 
         return $this;
     }
 
     /**
-     * Gets the AdImageUploadTaskID.
+     * Gets AdImageUploadTaskID.
      *
-     * @return int
+     * @return int|null
      */
     public function getAdImageUploadTaskID()
     {
@@ -94,23 +83,22 @@ class AdImageActionResult
     }
 
     /**
-     * Sets the AdImageUploadTaskID.
+     * Sets AdImageUploadTaskID.
      *
-     * @param int $AdImageUploadTaskID
-     *
-     * @return AdImageActionResult
+     * @param int|null $value
+     * @return $this
      */
-    public function setAdImageUploadTaskID($AdImageUploadTaskID)
+    public function setAdImageUploadTaskID($value = null)
     {
-        $this->AdImageUploadTaskID = $AdImageUploadTaskID;
+        $this->AdImageUploadTaskID = $value;
 
         return $this;
     }
 
     /**
-     * Gets the AdImageHash.
+     * Gets AdImageHash.
      *
-     * @return string
+     * @return string|null
      */
     public function getAdImageHash()
     {
@@ -118,16 +106,18 @@ class AdImageActionResult
     }
 
     /**
-     * Sets the AdImageHash.
+     * Sets AdImageHash.
      *
-     * @param string $AdImageHash
-     *
-     * @return AdImageActionResult
+     * @param string|null $value
+     * @return $this
      */
-    public function setAdImageHash($AdImageHash)
+    public function setAdImageHash($value = null)
     {
-        $this->AdImageHash = $AdImageHash;
+        $this->AdImageHash = $value;
 
         return $this;
     }
+
+
 }
+

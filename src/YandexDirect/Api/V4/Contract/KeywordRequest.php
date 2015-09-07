@@ -3,28 +3,23 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class KeywordRequest
 {
-    /**
-     * @var string
-     */
-    protected $Action;
-    /**
-     * @var string
-     */
-    protected $Login;
-    /**
-     * @var int[]
-     */
-    protected $KeywordIDS;
+
+    protected $Action = null;
+
+    protected $Login = null;
+
+    protected $KeywordIDS = array(
+        
+    );
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of KeywordRequest.
      *
-     * @return self
+     * @return KeywordRequest
      */
     public static function create()
     {
@@ -32,7 +27,7 @@ class KeywordRequest
     }
 
     /**
-     * Gets the Action.
+     * Gets Action.
      *
      * @return string
      */
@@ -42,23 +37,22 @@ class KeywordRequest
     }
 
     /**
-     * Sets the Action.
+     * Sets Action.
      *
-     * @param string $Action
-     *
-     * @return KeywordRequest
+     * @param string $value
+     * @return $this
      */
-    public function setAction($Action)
+    public function setAction($value)
     {
-        $this->Action = $Action;
+        $this->Action = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Login.
+     * Gets Login.
      *
-     * @return string
+     * @return string|null
      */
     public function getLogin()
     {
@@ -66,21 +60,20 @@ class KeywordRequest
     }
 
     /**
-     * Sets the Login.
+     * Sets Login.
      *
-     * @param string $Login
-     *
-     * @return KeywordRequest
+     * @param string|null $value
+     * @return $this
      */
-    public function setLogin($Login)
+    public function setLogin($value = null)
     {
-        $this->Login = $Login;
+        $this->Login = $value;
 
         return $this;
     }
 
     /**
-     * Gets the KeywordIDS.
+     * Gets KeywordIDS.
      *
      * @return int[]
      */
@@ -90,16 +83,18 @@ class KeywordRequest
     }
 
     /**
-     * Sets the KeywordIDS.
+     * Sets KeywordIDS.
      *
-     * @param int[] $KeywordIDS
-     *
-     * @return KeywordRequest
+     * @param array $value
+     * @return $this
      */
-    public function setKeywordIDS(array $KeywordIDS)
+    public function setKeywordIDS(array $value)
     {
-        $this->KeywordIDS = $KeywordIDS;
+        $this->KeywordIDS = $value;
 
         return $this;
     }
+
+
 }
+

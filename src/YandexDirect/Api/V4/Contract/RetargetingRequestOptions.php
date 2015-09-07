@@ -3,20 +3,17 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class RetargetingRequestOptions
 {
-    /**
-     * @var string
-     */
-    protected $Currency;
+
+    protected $Currency = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of RetargetingRequestOptions.
      *
-     * @return self
+     * @return RetargetingRequestOptions
      */
     public static function create()
     {
@@ -24,9 +21,9 @@ class RetargetingRequestOptions
     }
 
     /**
-     * Gets the Currency.
+     * Gets Currency.
      *
-     * @return string
+     * @return string|null
      */
     public function getCurrency()
     {
@@ -34,16 +31,18 @@ class RetargetingRequestOptions
     }
 
     /**
-     * Sets the Currency.
+     * Sets Currency.
      *
-     * @param string $Currency
-     *
-     * @return RetargetingRequestOptions
+     * @param string|null $value
+     * @return $this
      */
-    public function setCurrency($Currency)
+    public function setCurrency($value = null)
     {
-        $this->Currency = $Currency;
+        $this->Currency = $value;
 
         return $this;
     }
+
+
 }
+

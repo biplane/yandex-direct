@@ -3,28 +3,21 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class CreditLimitsItem
 {
-    /**
-     * @var string
-     */
-    protected $ContractID;
-    /**
-     * @var float
-     */
-    protected $Limit;
-    /**
-     * @var float
-     */
-    protected $LimitSpent;
+
+    protected $ContractID = null;
+
+    protected $Limit = null;
+
+    protected $LimitSpent = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of CreditLimitsItem.
      *
-     * @return self
+     * @return CreditLimitsItem
      */
     public static function create()
     {
@@ -32,7 +25,7 @@ class CreditLimitsItem
     }
 
     /**
-     * Gets the ContractID.
+     * Gets ContractID.
      *
      * @return string
      */
@@ -42,21 +35,20 @@ class CreditLimitsItem
     }
 
     /**
-     * Sets the ContractID.
+     * Sets ContractID.
      *
-     * @param string $ContractID
-     *
-     * @return CreditLimitsItem
+     * @param string $value
+     * @return $this
      */
-    public function setContractID($ContractID)
+    public function setContractID($value)
     {
-        $this->ContractID = $ContractID;
+        $this->ContractID = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Limit.
+     * Gets Limit.
      *
      * @return float
      */
@@ -66,21 +58,20 @@ class CreditLimitsItem
     }
 
     /**
-     * Sets the Limit.
+     * Sets Limit.
      *
-     * @param float $Limit
-     *
-     * @return CreditLimitsItem
+     * @param float $value
+     * @return $this
      */
-    public function setLimit($Limit)
+    public function setLimit($value)
     {
-        $this->Limit = $Limit;
+        $this->Limit = $value;
 
         return $this;
     }
 
     /**
-     * Gets the LimitSpent.
+     * Gets LimitSpent.
      *
      * @return float
      */
@@ -90,16 +81,18 @@ class CreditLimitsItem
     }
 
     /**
-     * Sets the LimitSpent.
+     * Sets LimitSpent.
      *
-     * @param float $LimitSpent
-     *
-     * @return CreditLimitsItem
+     * @param float $value
+     * @return $this
      */
-    public function setLimitSpent($LimitSpent)
+    public function setLimitSpent($value)
     {
-        $this->LimitSpent = $LimitSpent;
+        $this->LimitSpent = $value;
 
         return $this;
     }
+
+
 }
+

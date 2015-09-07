@@ -3,24 +3,19 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class CampaignStatChangeItem
 {
-    /**
-     * @var int
-     */
-    protected $CampaignID;
-    /**
-     * @var string
-     */
-    protected $BorderDate;
+
+    protected $CampaignID = null;
+
+    protected $BorderDate = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of CampaignStatChangeItem.
      *
-     * @return self
+     * @return CampaignStatChangeItem
      */
     public static function create()
     {
@@ -28,7 +23,7 @@ class CampaignStatChangeItem
     }
 
     /**
-     * Gets the CampaignID.
+     * Gets CampaignID.
      *
      * @return int
      */
@@ -38,21 +33,20 @@ class CampaignStatChangeItem
     }
 
     /**
-     * Sets the CampaignID.
+     * Sets CampaignID.
      *
-     * @param int $CampaignID
-     *
-     * @return CampaignStatChangeItem
+     * @param int $value
+     * @return $this
      */
-    public function setCampaignID($CampaignID)
+    public function setCampaignID($value)
     {
-        $this->CampaignID = $CampaignID;
+        $this->CampaignID = $value;
 
         return $this;
     }
 
     /**
-     * Gets the BorderDate.
+     * Gets BorderDate.
      *
      * @return string
      */
@@ -62,16 +56,18 @@ class CampaignStatChangeItem
     }
 
     /**
-     * Sets the BorderDate.
+     * Sets BorderDate.
      *
-     * @param string $BorderDate
-     *
-     * @return CampaignStatChangeItem
+     * @param string $value
+     * @return $this
      */
-    public function setBorderDate($BorderDate)
+    public function setBorderDate($value)
     {
-        $this->BorderDate = $BorderDate;
+        $this->BorderDate = $value;
 
         return $this;
     }
+
+
 }
+

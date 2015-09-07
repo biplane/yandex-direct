@@ -3,20 +3,19 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class KeywordsSuggestionInfo
 {
-    /**
-     * @var string[]
-     */
-    protected $Keywords;
+
+    protected $Keywords = array(
+        
+    );
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of KeywordsSuggestionInfo.
      *
-     * @return self
+     * @return KeywordsSuggestionInfo
      */
     public static function create()
     {
@@ -24,7 +23,7 @@ class KeywordsSuggestionInfo
     }
 
     /**
-     * Gets the Keywords.
+     * Gets Keywords.
      *
      * @return string[]
      */
@@ -34,16 +33,18 @@ class KeywordsSuggestionInfo
     }
 
     /**
-     * Sets the Keywords.
+     * Sets Keywords.
      *
-     * @param string[] $Keywords
-     *
-     * @return KeywordsSuggestionInfo
+     * @param array $value
+     * @return $this
      */
-    public function setKeywords(array $Keywords)
+    public function setKeywords(array $value)
     {
-        $this->Keywords = $Keywords;
+        $this->Keywords = $value;
 
         return $this;
     }
+
+
 }
+

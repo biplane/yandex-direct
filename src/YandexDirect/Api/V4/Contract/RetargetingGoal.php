@@ -3,32 +3,25 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class RetargetingGoal
 {
-    /**
-     * @var int
-     */
-    protected $GoalID;
-    /**
-     * @var string
-     */
-    protected $Name;
-    /**
-     * @var string
-     */
-    protected $GoalDomain;
-    /**
-     * @var string
-     */
-    protected $Login;
+
+    protected $GoalID = null;
+
+    protected $Name = null;
+
+    protected $GoalDomain = null;
+
+    protected $Login = null;
+
+    protected $Type = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of RetargetingGoal.
      *
-     * @return self
+     * @return RetargetingGoal
      */
     public static function create()
     {
@@ -36,7 +29,7 @@ class RetargetingGoal
     }
 
     /**
-     * Gets the GoalID.
+     * Gets GoalID.
      *
      * @return int
      */
@@ -46,21 +39,20 @@ class RetargetingGoal
     }
 
     /**
-     * Sets the GoalID.
+     * Sets GoalID.
      *
-     * @param int $GoalID
-     *
-     * @return RetargetingGoal
+     * @param int $value
+     * @return $this
      */
-    public function setGoalID($GoalID)
+    public function setGoalID($value)
     {
-        $this->GoalID = $GoalID;
+        $this->GoalID = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Name.
+     * Gets Name.
      *
      * @return string
      */
@@ -70,21 +62,20 @@ class RetargetingGoal
     }
 
     /**
-     * Sets the Name.
+     * Sets Name.
      *
-     * @param string $Name
-     *
-     * @return RetargetingGoal
+     * @param string $value
+     * @return $this
      */
-    public function setName($Name)
+    public function setName($value)
     {
-        $this->Name = $Name;
+        $this->Name = $value;
 
         return $this;
     }
 
     /**
-     * Gets the GoalDomain.
+     * Gets GoalDomain.
      *
      * @return string
      */
@@ -94,21 +85,20 @@ class RetargetingGoal
     }
 
     /**
-     * Sets the GoalDomain.
+     * Sets GoalDomain.
      *
-     * @param string $GoalDomain
-     *
-     * @return RetargetingGoal
+     * @param string $value
+     * @return $this
      */
-    public function setGoalDomain($GoalDomain)
+    public function setGoalDomain($value)
     {
-        $this->GoalDomain = $GoalDomain;
+        $this->GoalDomain = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Login.
+     * Gets Login.
      *
      * @return string
      */
@@ -118,16 +108,41 @@ class RetargetingGoal
     }
 
     /**
-     * Sets the Login.
+     * Sets Login.
      *
-     * @param string $Login
-     *
-     * @return RetargetingGoal
+     * @param string $value
+     * @return $this
      */
-    public function setLogin($Login)
+    public function setLogin($value)
     {
-        $this->Login = $Login;
+        $this->Login = $value;
 
         return $this;
     }
+
+    /**
+     * Gets Type.
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->Type;
+    }
+
+    /**
+     * Sets Type.
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setType($value)
+    {
+        $this->Type = $value;
+
+        return $this;
+    }
+
+
 }
+

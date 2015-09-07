@@ -3,28 +3,21 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class AdImageRaw
 {
-    /**
-     * @var string
-     */
-    protected $Login;
-    /**
-     * @var string
-     */
-    protected $RawData;
-    /**
-     * @var string
-     */
-    protected $Name;
+
+    protected $Login = null;
+
+    protected $RawData = null;
+
+    protected $Name = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of AdImageRaw.
      *
-     * @return self
+     * @return AdImageRaw
      */
     public static function create()
     {
@@ -32,9 +25,9 @@ class AdImageRaw
     }
 
     /**
-     * Gets the Login.
+     * Gets Login.
      *
-     * @return string
+     * @return string|null
      */
     public function getLogin()
     {
@@ -42,21 +35,20 @@ class AdImageRaw
     }
 
     /**
-     * Sets the Login.
+     * Sets Login.
      *
-     * @param string $Login
-     *
-     * @return AdImageRaw
+     * @param string|null $value
+     * @return $this
      */
-    public function setLogin($Login)
+    public function setLogin($value = null)
     {
-        $this->Login = $Login;
+        $this->Login = $value;
 
         return $this;
     }
 
     /**
-     * Gets the RawData.
+     * Gets RawData.
      *
      * @return string
      */
@@ -66,21 +58,20 @@ class AdImageRaw
     }
 
     /**
-     * Sets the RawData.
+     * Sets RawData.
      *
-     * @param string $RawData
-     *
-     * @return AdImageRaw
+     * @param string $value
+     * @return $this
      */
-    public function setRawData($RawData)
+    public function setRawData($value)
     {
-        $this->RawData = $RawData;
+        $this->RawData = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Name.
+     * Gets Name.
      *
      * @return string
      */
@@ -90,16 +81,18 @@ class AdImageRaw
     }
 
     /**
-     * Sets the Name.
+     * Sets Name.
      *
-     * @param string $Name
-     *
-     * @return AdImageRaw
+     * @param string $value
+     * @return $this
      */
-    public function setName($Name)
+    public function setName($value)
     {
-        $this->Name = $Name;
+        $this->Name = $value;
 
         return $this;
     }
+
+
 }
+

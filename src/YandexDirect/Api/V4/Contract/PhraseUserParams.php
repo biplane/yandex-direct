@@ -3,24 +3,19 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class PhraseUserParams
 {
-    /**
-     * @var string
-     */
-    protected $Param1;
-    /**
-     * @var string
-     */
-    protected $Param2;
+
+    protected $Param1 = null;
+
+    protected $Param2 = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of PhraseUserParams.
      *
-     * @return self
+     * @return PhraseUserParams
      */
     public static function create()
     {
@@ -28,9 +23,9 @@ class PhraseUserParams
     }
 
     /**
-     * Gets the Param1.
+     * Gets Param1.
      *
-     * @return string
+     * @return string|null
      */
     public function getParam1()
     {
@@ -38,23 +33,22 @@ class PhraseUserParams
     }
 
     /**
-     * Sets the Param1.
+     * Sets Param1.
      *
-     * @param string $Param1
-     *
-     * @return PhraseUserParams
+     * @param string|null $value
+     * @return $this
      */
-    public function setParam1($Param1)
+    public function setParam1($value = null)
     {
-        $this->Param1 = $Param1;
+        $this->Param1 = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Param2.
+     * Gets Param2.
      *
-     * @return string
+     * @return string|null
      */
     public function getParam2()
     {
@@ -62,16 +56,18 @@ class PhraseUserParams
     }
 
     /**
-     * Sets the Param2.
+     * Sets Param2.
      *
-     * @param string $Param2
-     *
-     * @return PhraseUserParams
+     * @param string|null $value
+     * @return $this
      */
-    public function setParam2($Param2)
+    public function setParam2($value = null)
     {
-        $this->Param2 = $Param2;
+        $this->Param2 = $value;
 
         return $this;
     }
+
+
 }
+

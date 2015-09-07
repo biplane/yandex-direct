@@ -3,32 +3,23 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class GetChangesRequest
 {
-    /**
-     * @var int[]
-     */
-    protected $CampaignIDS;
-    /**
-     * @var int[]
-     */
-    protected $BannerIDS;
-    /**
-     * @var string[]
-     */
-    protected $Logins;
-    /**
-     * @var string
-     */
-    protected $Timestamp;
+
+    protected $CampaignIDS = null;
+
+    protected $BannerIDS = null;
+
+    protected $Logins = null;
+
+    protected $Timestamp = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of GetChangesRequest.
      *
-     * @return self
+     * @return GetChangesRequest
      */
     public static function create()
     {
@@ -36,9 +27,9 @@ class GetChangesRequest
     }
 
     /**
-     * Gets the CampaignIDS.
+     * Gets CampaignIDS.
      *
-     * @return int[]
+     * @return int[]|null
      */
     public function getCampaignIDS()
     {
@@ -46,23 +37,22 @@ class GetChangesRequest
     }
 
     /**
-     * Sets the CampaignIDS.
+     * Sets CampaignIDS.
      *
-     * @param int[] $CampaignIDS
-     *
-     * @return GetChangesRequest
+     * @param array|null $value
+     * @return $this
      */
-    public function setCampaignIDS(array $CampaignIDS)
+    public function setCampaignIDS(array $value = null)
     {
-        $this->CampaignIDS = $CampaignIDS;
+        $this->CampaignIDS = $value;
 
         return $this;
     }
 
     /**
-     * Gets the BannerIDS.
+     * Gets BannerIDS.
      *
-     * @return int[]
+     * @return int[]|null
      */
     public function getBannerIDS()
     {
@@ -70,23 +60,22 @@ class GetChangesRequest
     }
 
     /**
-     * Sets the BannerIDS.
+     * Sets BannerIDS.
      *
-     * @param int[] $BannerIDS
-     *
-     * @return GetChangesRequest
+     * @param array|null $value
+     * @return $this
      */
-    public function setBannerIDS(array $BannerIDS)
+    public function setBannerIDS(array $value = null)
     {
-        $this->BannerIDS = $BannerIDS;
+        $this->BannerIDS = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Logins.
+     * Gets Logins.
      *
-     * @return string[]
+     * @return string[]|null
      */
     public function getLogins()
     {
@@ -94,23 +83,22 @@ class GetChangesRequest
     }
 
     /**
-     * Sets the Logins.
+     * Sets Logins.
      *
-     * @param string[] $Logins
-     *
-     * @return GetChangesRequest
+     * @param array|null $value
+     * @return $this
      */
-    public function setLogins(array $Logins)
+    public function setLogins(array $value = null)
     {
-        $this->Logins = $Logins;
+        $this->Logins = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Timestamp.
+     * Gets Timestamp.
      *
-     * @return string
+     * @return string|null
      */
     public function getTimestamp()
     {
@@ -118,16 +106,18 @@ class GetChangesRequest
     }
 
     /**
-     * Sets the Timestamp.
+     * Sets Timestamp.
      *
-     * @param string $Timestamp
-     *
-     * @return GetChangesRequest
+     * @param string|null $value
+     * @return $this
      */
-    public function setTimestamp($Timestamp)
+    public function setTimestamp($value = null)
     {
-        $this->Timestamp = $Timestamp;
+        $this->Timestamp = $value;
 
         return $this;
     }
+
+
 }
+

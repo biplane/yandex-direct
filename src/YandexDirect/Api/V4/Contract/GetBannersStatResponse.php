@@ -3,32 +3,23 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class GetBannersStatResponse
 {
-    /**
-     * @var int
-     */
-    protected $CampaignID;
-    /**
-     * @var string
-     */
-    protected $StartDate;
-    /**
-     * @var string
-     */
-    protected $EndDate;
-    /**
-     * @var BannersStatItem[]
-     */
-    protected $Stat;
+
+    protected $CampaignID = null;
+
+    protected $StartDate = null;
+
+    protected $EndDate = null;
+
+    protected $Stat = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of GetBannersStatResponse.
      *
-     * @return self
+     * @return GetBannersStatResponse
      */
     public static function create()
     {
@@ -36,7 +27,7 @@ class GetBannersStatResponse
     }
 
     /**
-     * Gets the CampaignID.
+     * Gets CampaignID.
      *
      * @return int
      */
@@ -46,21 +37,20 @@ class GetBannersStatResponse
     }
 
     /**
-     * Sets the CampaignID.
+     * Sets CampaignID.
      *
-     * @param int $CampaignID
-     *
-     * @return GetBannersStatResponse
+     * @param int $value
+     * @return $this
      */
-    public function setCampaignID($CampaignID)
+    public function setCampaignID($value)
     {
-        $this->CampaignID = $CampaignID;
+        $this->CampaignID = $value;
 
         return $this;
     }
 
     /**
-     * Gets the StartDate.
+     * Gets StartDate.
      *
      * @return string
      */
@@ -70,21 +60,20 @@ class GetBannersStatResponse
     }
 
     /**
-     * Sets the StartDate.
+     * Sets StartDate.
      *
-     * @param string $StartDate
-     *
-     * @return GetBannersStatResponse
+     * @param string $value
+     * @return $this
      */
-    public function setStartDate($StartDate)
+    public function setStartDate($value)
     {
-        $this->StartDate = $StartDate;
+        $this->StartDate = $value;
 
         return $this;
     }
 
     /**
-     * Gets the EndDate.
+     * Gets EndDate.
      *
      * @return string
      */
@@ -94,23 +83,22 @@ class GetBannersStatResponse
     }
 
     /**
-     * Sets the EndDate.
+     * Sets EndDate.
      *
-     * @param string $EndDate
-     *
-     * @return GetBannersStatResponse
+     * @param string $value
+     * @return $this
      */
-    public function setEndDate($EndDate)
+    public function setEndDate($value)
     {
-        $this->EndDate = $EndDate;
+        $this->EndDate = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Stat.
+     * Gets Stat.
      *
-     * @return BannersStatItem[]
+     * @return BannersStatItem[]|null
      */
     public function getStat()
     {
@@ -118,16 +106,18 @@ class GetBannersStatResponse
     }
 
     /**
-     * Sets the Stat.
+     * Sets Stat.
      *
-     * @param BannersStatItem[] $Stat
-     *
-     * @return GetBannersStatResponse
+     * @param array|null $value
+     * @return $this
      */
-    public function setStat(array $Stat)
+    public function setStat(array $value = null)
     {
-        $this->Stat = $Stat;
+        $this->Stat = $value;
 
         return $this;
     }
+
+
 }
+

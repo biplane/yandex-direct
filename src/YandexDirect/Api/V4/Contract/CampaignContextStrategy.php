@@ -3,68 +3,41 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class CampaignContextStrategy
 {
-    /**
-     * @var string
-     */
-    protected $StrategyName;
-    /**
-     * @var string
-     */
-    protected $ContextLimit;
-    /**
-     * @var int
-     */
-    protected $ContextLimitSum;
-    /**
-     * @var int
-     */
-    protected $ContextPricePercent;
-    /**
-     * @var float
-     */
-    protected $MaxPrice;
-    /**
-     * @var float
-     */
-    protected $AveragePrice;
-    /**
-     * @var float
-     */
-    protected $WeeklySumLimit;
-    /**
-     * @var int
-     */
-    protected $ClicksPerWeek;
-    /**
-     * @var float
-     */
-    protected $AverageCPA;
-    /**
-     * @var int
-     */
-    protected $GoalID;
-    /**
-     * @var int
-     */
-    protected $ReserveReturn;
-    /**
-     * @var float
-     */
-    protected $ROICoef;
-    /**
-     * @var float
-     */
-    protected $Profitability;
+
+    protected $StrategyName = null;
+
+    protected $ContextLimit = null;
+
+    protected $ContextLimitSum = null;
+
+    protected $ContextPricePercent = null;
+
+    protected $MaxPrice = null;
+
+    protected $AveragePrice = null;
+
+    protected $WeeklySumLimit = null;
+
+    protected $ClicksPerWeek = null;
+
+    protected $AverageCPA = null;
+
+    protected $GoalID = null;
+
+    protected $ReserveReturn = null;
+
+    protected $ROICoef = null;
+
+    protected $Profitability = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of CampaignContextStrategy.
      *
-     * @return self
+     * @return CampaignContextStrategy
      */
     public static function create()
     {
@@ -72,7 +45,7 @@ class CampaignContextStrategy
     }
 
     /**
-     * Gets the StrategyName.
+     * Gets StrategyName.
      *
      * @return string
      */
@@ -82,23 +55,22 @@ class CampaignContextStrategy
     }
 
     /**
-     * Sets the StrategyName.
+     * Sets StrategyName.
      *
-     * @param string $StrategyName
-     *
-     * @return CampaignContextStrategy
+     * @param string $value
+     * @return $this
      */
-    public function setStrategyName($StrategyName)
+    public function setStrategyName($value)
     {
-        $this->StrategyName = $StrategyName;
+        $this->StrategyName = $value;
 
         return $this;
     }
 
     /**
-     * Gets the ContextLimit.
+     * Gets ContextLimit.
      *
-     * @return string
+     * @return string|null
      */
     public function getContextLimit()
     {
@@ -106,23 +78,22 @@ class CampaignContextStrategy
     }
 
     /**
-     * Sets the ContextLimit.
+     * Sets ContextLimit.
      *
-     * @param string $ContextLimit
-     *
-     * @return CampaignContextStrategy
+     * @param string|null $value
+     * @return $this
      */
-    public function setContextLimit($ContextLimit)
+    public function setContextLimit($value = null)
     {
-        $this->ContextLimit = $ContextLimit;
+        $this->ContextLimit = $value;
 
         return $this;
     }
 
     /**
-     * Gets the ContextLimitSum.
+     * Gets ContextLimitSum.
      *
-     * @return int
+     * @return int|null
      */
     public function getContextLimitSum()
     {
@@ -130,23 +101,22 @@ class CampaignContextStrategy
     }
 
     /**
-     * Sets the ContextLimitSum.
+     * Sets ContextLimitSum.
      *
-     * @param int $ContextLimitSum
-     *
-     * @return CampaignContextStrategy
+     * @param int|null $value
+     * @return $this
      */
-    public function setContextLimitSum($ContextLimitSum)
+    public function setContextLimitSum($value = null)
     {
-        $this->ContextLimitSum = $ContextLimitSum;
+        $this->ContextLimitSum = $value;
 
         return $this;
     }
 
     /**
-     * Gets the ContextPricePercent.
+     * Gets ContextPricePercent.
      *
-     * @return int
+     * @return int|null
      */
     public function getContextPricePercent()
     {
@@ -154,23 +124,22 @@ class CampaignContextStrategy
     }
 
     /**
-     * Sets the ContextPricePercent.
+     * Sets ContextPricePercent.
      *
-     * @param int $ContextPricePercent
-     *
-     * @return CampaignContextStrategy
+     * @param int|null $value
+     * @return $this
      */
-    public function setContextPricePercent($ContextPricePercent)
+    public function setContextPricePercent($value = null)
     {
-        $this->ContextPricePercent = $ContextPricePercent;
+        $this->ContextPricePercent = $value;
 
         return $this;
     }
 
     /**
-     * Gets the MaxPrice.
+     * Gets MaxPrice.
      *
-     * @return float
+     * @return float|null
      */
     public function getMaxPrice()
     {
@@ -178,23 +147,22 @@ class CampaignContextStrategy
     }
 
     /**
-     * Sets the MaxPrice.
+     * Sets MaxPrice.
      *
-     * @param float $MaxPrice
-     *
-     * @return CampaignContextStrategy
+     * @param float|null $value
+     * @return $this
      */
-    public function setMaxPrice($MaxPrice)
+    public function setMaxPrice($value = null)
     {
-        $this->MaxPrice = $MaxPrice;
+        $this->MaxPrice = $value;
 
         return $this;
     }
 
     /**
-     * Gets the AveragePrice.
+     * Gets AveragePrice.
      *
-     * @return float
+     * @return float|null
      */
     public function getAveragePrice()
     {
@@ -202,23 +170,22 @@ class CampaignContextStrategy
     }
 
     /**
-     * Sets the AveragePrice.
+     * Sets AveragePrice.
      *
-     * @param float $AveragePrice
-     *
-     * @return CampaignContextStrategy
+     * @param float|null $value
+     * @return $this
      */
-    public function setAveragePrice($AveragePrice)
+    public function setAveragePrice($value = null)
     {
-        $this->AveragePrice = $AveragePrice;
+        $this->AveragePrice = $value;
 
         return $this;
     }
 
     /**
-     * Gets the WeeklySumLimit.
+     * Gets WeeklySumLimit.
      *
-     * @return float
+     * @return float|null
      */
     public function getWeeklySumLimit()
     {
@@ -226,23 +193,22 @@ class CampaignContextStrategy
     }
 
     /**
-     * Sets the WeeklySumLimit.
+     * Sets WeeklySumLimit.
      *
-     * @param float $WeeklySumLimit
-     *
-     * @return CampaignContextStrategy
+     * @param float|null $value
+     * @return $this
      */
-    public function setWeeklySumLimit($WeeklySumLimit)
+    public function setWeeklySumLimit($value = null)
     {
-        $this->WeeklySumLimit = $WeeklySumLimit;
+        $this->WeeklySumLimit = $value;
 
         return $this;
     }
 
     /**
-     * Gets the ClicksPerWeek.
+     * Gets ClicksPerWeek.
      *
-     * @return int
+     * @return int|null
      */
     public function getClicksPerWeek()
     {
@@ -250,23 +216,22 @@ class CampaignContextStrategy
     }
 
     /**
-     * Sets the ClicksPerWeek.
+     * Sets ClicksPerWeek.
      *
-     * @param int $ClicksPerWeek
-     *
-     * @return CampaignContextStrategy
+     * @param int|null $value
+     * @return $this
      */
-    public function setClicksPerWeek($ClicksPerWeek)
+    public function setClicksPerWeek($value = null)
     {
-        $this->ClicksPerWeek = $ClicksPerWeek;
+        $this->ClicksPerWeek = $value;
 
         return $this;
     }
 
     /**
-     * Gets the AverageCPA.
+     * Gets AverageCPA.
      *
-     * @return float
+     * @return float|null
      */
     public function getAverageCPA()
     {
@@ -274,23 +239,22 @@ class CampaignContextStrategy
     }
 
     /**
-     * Sets the AverageCPA.
+     * Sets AverageCPA.
      *
-     * @param float $AverageCPA
-     *
-     * @return CampaignContextStrategy
+     * @param float|null $value
+     * @return $this
      */
-    public function setAverageCPA($AverageCPA)
+    public function setAverageCPA($value = null)
     {
-        $this->AverageCPA = $AverageCPA;
+        $this->AverageCPA = $value;
 
         return $this;
     }
 
     /**
-     * Gets the GoalID.
+     * Gets GoalID.
      *
-     * @return int
+     * @return int|null
      */
     public function getGoalID()
     {
@@ -298,23 +262,22 @@ class CampaignContextStrategy
     }
 
     /**
-     * Sets the GoalID.
+     * Sets GoalID.
      *
-     * @param int $GoalID
-     *
-     * @return CampaignContextStrategy
+     * @param int|null $value
+     * @return $this
      */
-    public function setGoalID($GoalID)
+    public function setGoalID($value = null)
     {
-        $this->GoalID = $GoalID;
+        $this->GoalID = $value;
 
         return $this;
     }
 
     /**
-     * Gets the ReserveReturn.
+     * Gets ReserveReturn.
      *
-     * @return int
+     * @return int|null
      */
     public function getReserveReturn()
     {
@@ -322,23 +285,22 @@ class CampaignContextStrategy
     }
 
     /**
-     * Sets the ReserveReturn.
+     * Sets ReserveReturn.
      *
-     * @param int $ReserveReturn
-     *
-     * @return CampaignContextStrategy
+     * @param int|null $value
+     * @return $this
      */
-    public function setReserveReturn($ReserveReturn)
+    public function setReserveReturn($value = null)
     {
-        $this->ReserveReturn = $ReserveReturn;
+        $this->ReserveReturn = $value;
 
         return $this;
     }
 
     /**
-     * Gets the ROICoef.
+     * Gets ROICoef.
      *
-     * @return float
+     * @return float|null
      */
     public function getROICoef()
     {
@@ -346,23 +308,22 @@ class CampaignContextStrategy
     }
 
     /**
-     * Sets the ROICoef.
+     * Sets ROICoef.
      *
-     * @param float $ROICoef
-     *
-     * @return CampaignContextStrategy
+     * @param float|null $value
+     * @return $this
      */
-    public function setROICoef($ROICoef)
+    public function setROICoef($value = null)
     {
-        $this->ROICoef = $ROICoef;
+        $this->ROICoef = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Profitability.
+     * Gets Profitability.
      *
-     * @return float
+     * @return float|null
      */
     public function getProfitability()
     {
@@ -370,16 +331,18 @@ class CampaignContextStrategy
     }
 
     /**
-     * Sets the Profitability.
+     * Sets Profitability.
      *
-     * @param float $Profitability
-     *
-     * @return CampaignContextStrategy
+     * @param float|null $value
+     * @return $this
      */
-    public function setProfitability($Profitability)
+    public function setProfitability($value = null)
     {
-        $this->Profitability = $Profitability;
+        $this->Profitability = $value;
 
         return $this;
     }
+
+
 }
+

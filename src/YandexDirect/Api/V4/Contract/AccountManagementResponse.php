@@ -3,24 +3,19 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class AccountManagementResponse
 {
-    /**
-     * @var AccountActionResult[]
-     */
-    protected $ActionsResult;
-    /**
-     * @var Account[]
-     */
-    protected $Accounts;
+
+    protected $ActionsResult = null;
+
+    protected $Accounts = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of AccountManagementResponse.
      *
-     * @return self
+     * @return AccountManagementResponse
      */
     public static function create()
     {
@@ -28,9 +23,9 @@ class AccountManagementResponse
     }
 
     /**
-     * Gets the ActionsResult.
+     * Gets ActionsResult.
      *
-     * @return AccountActionResult[]
+     * @return AccountActionResult[]|null
      */
     public function getActionsResult()
     {
@@ -38,23 +33,22 @@ class AccountManagementResponse
     }
 
     /**
-     * Sets the ActionsResult.
+     * Sets ActionsResult.
      *
-     * @param AccountActionResult[] $ActionsResult
-     *
-     * @return AccountManagementResponse
+     * @param array|null $value
+     * @return $this
      */
-    public function setActionsResult(array $ActionsResult)
+    public function setActionsResult(array $value = null)
     {
-        $this->ActionsResult = $ActionsResult;
+        $this->ActionsResult = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Accounts.
+     * Gets Accounts.
      *
-     * @return Account[]
+     * @return Account[]|null
      */
     public function getAccounts()
     {
@@ -62,16 +56,18 @@ class AccountManagementResponse
     }
 
     /**
-     * Sets the Accounts.
+     * Sets Accounts.
      *
-     * @param Account[] $Accounts
-     *
-     * @return AccountManagementResponse
+     * @param array|null $value
+     * @return $this
      */
-    public function setAccounts(array $Accounts)
+    public function setAccounts(array $value = null)
     {
-        $this->Accounts = $Accounts;
+        $this->Accounts = $value;
 
         return $this;
     }
+
+
 }
+

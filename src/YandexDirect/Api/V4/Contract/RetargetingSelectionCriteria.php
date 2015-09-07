@@ -3,28 +3,21 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class RetargetingSelectionCriteria
 {
-    /**
-     * @var int[]
-     */
-    protected $RetargetingConditionIDS;
-    /**
-     * @var int[]
-     */
-    protected $RetargetingIDS;
-    /**
-     * @var int[]
-     */
-    protected $AdIDS;
+
+    protected $RetargetingConditionIDS = null;
+
+    protected $RetargetingIDS = null;
+
+    protected $AdIDS = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of RetargetingSelectionCriteria.
      *
-     * @return self
+     * @return RetargetingSelectionCriteria
      */
     public static function create()
     {
@@ -32,9 +25,9 @@ class RetargetingSelectionCriteria
     }
 
     /**
-     * Gets the RetargetingConditionIDS.
+     * Gets RetargetingConditionIDS.
      *
-     * @return int[]
+     * @return int[]|null
      */
     public function getRetargetingConditionIDS()
     {
@@ -42,23 +35,22 @@ class RetargetingSelectionCriteria
     }
 
     /**
-     * Sets the RetargetingConditionIDS.
+     * Sets RetargetingConditionIDS.
      *
-     * @param int[] $RetargetingConditionIDS
-     *
-     * @return RetargetingSelectionCriteria
+     * @param array|null $value
+     * @return $this
      */
-    public function setRetargetingConditionIDS(array $RetargetingConditionIDS)
+    public function setRetargetingConditionIDS(array $value = null)
     {
-        $this->RetargetingConditionIDS = $RetargetingConditionIDS;
+        $this->RetargetingConditionIDS = $value;
 
         return $this;
     }
 
     /**
-     * Gets the RetargetingIDS.
+     * Gets RetargetingIDS.
      *
-     * @return int[]
+     * @return int[]|null
      */
     public function getRetargetingIDS()
     {
@@ -66,23 +58,22 @@ class RetargetingSelectionCriteria
     }
 
     /**
-     * Sets the RetargetingIDS.
+     * Sets RetargetingIDS.
      *
-     * @param int[] $RetargetingIDS
-     *
-     * @return RetargetingSelectionCriteria
+     * @param array|null $value
+     * @return $this
      */
-    public function setRetargetingIDS(array $RetargetingIDS)
+    public function setRetargetingIDS(array $value = null)
     {
-        $this->RetargetingIDS = $RetargetingIDS;
+        $this->RetargetingIDS = $value;
 
         return $this;
     }
 
     /**
-     * Gets the AdIDS.
+     * Gets AdIDS.
      *
-     * @return int[]
+     * @return int[]|null
      */
     public function getAdIDS()
     {
@@ -90,16 +81,18 @@ class RetargetingSelectionCriteria
     }
 
     /**
-     * Sets the AdIDS.
+     * Sets AdIDS.
      *
-     * @param int[] $AdIDS
-     *
-     * @return RetargetingSelectionCriteria
+     * @param array|null $value
+     * @return $this
      */
-    public function setAdIDS(array $AdIDS)
+    public function setAdIDS(array $value = null)
     {
-        $this->AdIDS = $AdIDS;
+        $this->AdIDS = $value;
 
         return $this;
     }
+
+
 }
+

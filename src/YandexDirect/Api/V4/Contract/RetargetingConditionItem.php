@@ -3,24 +3,21 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class RetargetingConditionItem
 {
-    /**
-     * @var string
-     */
-    protected $Type;
-    /**
-     * @var RetargetingConditionGoalItem[]
-     */
-    protected $Goals;
+
+    protected $Type = null;
+
+    protected $Goals = array(
+        
+    );
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of RetargetingConditionItem.
      *
-     * @return self
+     * @return RetargetingConditionItem
      */
     public static function create()
     {
@@ -28,7 +25,7 @@ class RetargetingConditionItem
     }
 
     /**
-     * Gets the Type.
+     * Gets Type.
      *
      * @return string
      */
@@ -38,21 +35,20 @@ class RetargetingConditionItem
     }
 
     /**
-     * Sets the Type.
+     * Sets Type.
      *
-     * @param string $Type
-     *
-     * @return RetargetingConditionItem
+     * @param string $value
+     * @return $this
      */
-    public function setType($Type)
+    public function setType($value)
     {
-        $this->Type = $Type;
+        $this->Type = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Goals.
+     * Gets Goals.
      *
      * @return RetargetingConditionGoalItem[]
      */
@@ -62,16 +58,18 @@ class RetargetingConditionItem
     }
 
     /**
-     * Sets the Goals.
+     * Sets Goals.
      *
-     * @param RetargetingConditionGoalItem[] $Goals
-     *
-     * @return RetargetingConditionItem
+     * @param array $value
+     * @return $this
      */
-    public function setGoals(array $Goals)
+    public function setGoals(array $value)
     {
-        $this->Goals = $Goals;
+        $this->Goals = $value;
 
         return $this;
     }
+
+
 }
+

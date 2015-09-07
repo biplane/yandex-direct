@@ -3,24 +3,19 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class ClientsUnitInfo
 {
-    /**
-     * @var string
-     */
-    protected $Login;
-    /**
-     * @var int
-     */
-    protected $UnitsRest;
+
+    protected $Login = null;
+
+    protected $UnitsRest = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of ClientsUnitInfo.
      *
-     * @return self
+     * @return ClientsUnitInfo
      */
     public static function create()
     {
@@ -28,7 +23,7 @@ class ClientsUnitInfo
     }
 
     /**
-     * Gets the Login.
+     * Gets Login.
      *
      * @return string
      */
@@ -38,21 +33,20 @@ class ClientsUnitInfo
     }
 
     /**
-     * Sets the Login.
+     * Sets Login.
      *
-     * @param string $Login
-     *
-     * @return ClientsUnitInfo
+     * @param string $value
+     * @return $this
      */
-    public function setLogin($Login)
+    public function setLogin($value)
     {
-        $this->Login = $Login;
+        $this->Login = $value;
 
         return $this;
     }
 
     /**
-     * Gets the UnitsRest.
+     * Gets UnitsRest.
      *
      * @return int
      */
@@ -62,16 +56,18 @@ class ClientsUnitInfo
     }
 
     /**
-     * Sets the UnitsRest.
+     * Sets UnitsRest.
      *
-     * @param int $UnitsRest
-     *
-     * @return ClientsUnitInfo
+     * @param int $value
+     * @return $this
      */
-    public function setUnitsRest($UnitsRest)
+    public function setUnitsRest($value)
     {
-        $this->UnitsRest = $UnitsRest;
+        $this->UnitsRest = $value;
 
         return $this;
     }
+
+
 }
+

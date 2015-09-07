@@ -3,24 +3,19 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class DayBudgetInfo
 {
-    /**
-     * @var float
-     */
-    protected $Amount;
-    /**
-     * @var string
-     */
-    protected $SpendMode;
+
+    protected $Amount = null;
+
+    protected $SpendMode = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of DayBudgetInfo.
      *
-     * @return self
+     * @return DayBudgetInfo
      */
     public static function create()
     {
@@ -28,7 +23,7 @@ class DayBudgetInfo
     }
 
     /**
-     * Gets the Amount.
+     * Gets Amount.
      *
      * @return float
      */
@@ -38,23 +33,22 @@ class DayBudgetInfo
     }
 
     /**
-     * Sets the Amount.
+     * Sets Amount.
      *
-     * @param float $Amount
-     *
-     * @return DayBudgetInfo
+     * @param float $value
+     * @return $this
      */
-    public function setAmount($Amount)
+    public function setAmount($value)
     {
-        $this->Amount = $Amount;
+        $this->Amount = $value;
 
         return $this;
     }
 
     /**
-     * Gets the SpendMode.
+     * Gets SpendMode.
      *
-     * @return string
+     * @return string|null
      */
     public function getSpendMode()
     {
@@ -62,16 +56,18 @@ class DayBudgetInfo
     }
 
     /**
-     * Sets the SpendMode.
+     * Sets SpendMode.
      *
-     * @param string $SpendMode
-     *
-     * @return DayBudgetInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setSpendMode($SpendMode)
+    public function setSpendMode($value = null)
     {
-        $this->SpendMode = $SpendMode;
+        $this->SpendMode = $value;
 
         return $this;
     }
+
+
 }
+

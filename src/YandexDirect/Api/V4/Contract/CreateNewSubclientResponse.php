@@ -3,36 +3,25 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class CreateNewSubclientResponse
 {
-    /**
-     * @var string
-     */
-    protected $Login;
-    /**
-     * @var string
-     */
-    protected $Password;
-    /**
-     * @var string
-     */
-    protected $FIO;
-    /**
-     * @var string
-     */
-    protected $Email;
-    /**
-     * @var int
-     */
-    protected $ClientID;
+
+    protected $Login = null;
+
+    protected $Password = null;
+
+    protected $FIO = null;
+
+    protected $Email = null;
+
+    protected $ClientID = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of CreateNewSubclientResponse.
      *
-     * @return self
+     * @return CreateNewSubclientResponse
      */
     public static function create()
     {
@@ -40,7 +29,7 @@ class CreateNewSubclientResponse
     }
 
     /**
-     * Gets the Login.
+     * Gets Login.
      *
      * @return string
      */
@@ -50,21 +39,20 @@ class CreateNewSubclientResponse
     }
 
     /**
-     * Sets the Login.
+     * Sets Login.
      *
-     * @param string $Login
-     *
-     * @return CreateNewSubclientResponse
+     * @param string $value
+     * @return $this
      */
-    public function setLogin($Login)
+    public function setLogin($value)
     {
-        $this->Login = $Login;
+        $this->Login = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Password.
+     * Gets Password.
      *
      * @return string
      */
@@ -74,21 +62,20 @@ class CreateNewSubclientResponse
     }
 
     /**
-     * Sets the Password.
+     * Sets Password.
      *
-     * @param string $Password
-     *
-     * @return CreateNewSubclientResponse
+     * @param string $value
+     * @return $this
      */
-    public function setPassword($Password)
+    public function setPassword($value)
     {
-        $this->Password = $Password;
+        $this->Password = $value;
 
         return $this;
     }
 
     /**
-     * Gets the FIO.
+     * Gets FIO.
      *
      * @return string
      */
@@ -98,21 +85,20 @@ class CreateNewSubclientResponse
     }
 
     /**
-     * Sets the FIO.
+     * Sets FIO.
      *
-     * @param string $FIO
-     *
-     * @return CreateNewSubclientResponse
+     * @param string $value
+     * @return $this
      */
-    public function setFIO($FIO)
+    public function setFIO($value)
     {
-        $this->FIO = $FIO;
+        $this->FIO = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Email.
+     * Gets Email.
      *
      * @return string
      */
@@ -122,21 +108,20 @@ class CreateNewSubclientResponse
     }
 
     /**
-     * Sets the Email.
+     * Sets Email.
      *
-     * @param string $Email
-     *
-     * @return CreateNewSubclientResponse
+     * @param string $value
+     * @return $this
      */
-    public function setEmail($Email)
+    public function setEmail($value)
     {
-        $this->Email = $Email;
+        $this->Email = $value;
 
         return $this;
     }
 
     /**
-     * Gets the ClientID.
+     * Gets ClientID.
      *
      * @return int
      */
@@ -146,16 +131,18 @@ class CreateNewSubclientResponse
     }
 
     /**
-     * Sets the ClientID.
+     * Sets ClientID.
      *
-     * @param int $ClientID
-     *
-     * @return CreateNewSubclientResponse
+     * @param int $value
+     * @return $this
      */
-    public function setClientID($ClientID)
+    public function setClientID($value)
     {
-        $this->ClientID = $ClientID;
+        $this->ClientID = $value;
 
         return $this;
     }
+
+
 }
+

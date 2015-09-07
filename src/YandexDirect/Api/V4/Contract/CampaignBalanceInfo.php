@@ -3,36 +3,25 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class CampaignBalanceInfo
 {
-    /**
-     * @var int
-     */
-    protected $CampaignID;
-    /**
-     * @var float
-     */
-    protected $Sum;
-    /**
-     * @var float
-     */
-    protected $Rest;
-    /**
-     * @var float
-     */
-    protected $SumAvailableForTransfer;
-    /**
-     * @var string
-     */
-    protected $Currency;
+
+    protected $CampaignID = null;
+
+    protected $Sum = null;
+
+    protected $Rest = null;
+
+    protected $SumAvailableForTransfer = null;
+
+    protected $Currency = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of CampaignBalanceInfo.
      *
-     * @return self
+     * @return CampaignBalanceInfo
      */
     public static function create()
     {
@@ -40,7 +29,7 @@ class CampaignBalanceInfo
     }
 
     /**
-     * Gets the CampaignID.
+     * Gets CampaignID.
      *
      * @return int
      */
@@ -50,21 +39,20 @@ class CampaignBalanceInfo
     }
 
     /**
-     * Sets the CampaignID.
+     * Sets CampaignID.
      *
-     * @param int $CampaignID
-     *
-     * @return CampaignBalanceInfo
+     * @param int $value
+     * @return $this
      */
-    public function setCampaignID($CampaignID)
+    public function setCampaignID($value)
     {
-        $this->CampaignID = $CampaignID;
+        $this->CampaignID = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Sum.
+     * Gets Sum.
      *
      * @return float
      */
@@ -74,21 +62,20 @@ class CampaignBalanceInfo
     }
 
     /**
-     * Sets the Sum.
+     * Sets Sum.
      *
-     * @param float $Sum
-     *
-     * @return CampaignBalanceInfo
+     * @param float $value
+     * @return $this
      */
-    public function setSum($Sum)
+    public function setSum($value)
     {
-        $this->Sum = $Sum;
+        $this->Sum = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Rest.
+     * Gets Rest.
      *
      * @return float
      */
@@ -98,21 +85,20 @@ class CampaignBalanceInfo
     }
 
     /**
-     * Sets the Rest.
+     * Sets Rest.
      *
-     * @param float $Rest
-     *
-     * @return CampaignBalanceInfo
+     * @param float $value
+     * @return $this
      */
-    public function setRest($Rest)
+    public function setRest($value)
     {
-        $this->Rest = $Rest;
+        $this->Rest = $value;
 
         return $this;
     }
 
     /**
-     * Gets the SumAvailableForTransfer.
+     * Gets SumAvailableForTransfer.
      *
      * @return float
      */
@@ -122,23 +108,22 @@ class CampaignBalanceInfo
     }
 
     /**
-     * Sets the SumAvailableForTransfer.
+     * Sets SumAvailableForTransfer.
      *
-     * @param float $SumAvailableForTransfer
-     *
-     * @return CampaignBalanceInfo
+     * @param float $value
+     * @return $this
      */
-    public function setSumAvailableForTransfer($SumAvailableForTransfer)
+    public function setSumAvailableForTransfer($value)
     {
-        $this->SumAvailableForTransfer = $SumAvailableForTransfer;
+        $this->SumAvailableForTransfer = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Currency.
+     * Gets Currency.
      *
-     * @return string
+     * @return string|null
      */
     public function getCurrency()
     {
@@ -146,16 +131,18 @@ class CampaignBalanceInfo
     }
 
     /**
-     * Sets the Currency.
+     * Sets Currency.
      *
-     * @param string $Currency
-     *
-     * @return CampaignBalanceInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setCurrency($Currency)
+    public function setCurrency($value = null)
     {
-        $this->Currency = $Currency;
+        $this->Currency = $value;
 
         return $this;
     }
+
+
 }
+

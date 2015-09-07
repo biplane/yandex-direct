@@ -3,36 +3,25 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class GetCampaignsInfo
 {
-    /**
-     * @var string[]
-     */
-    protected $Logins;
-    /**
-     * @var CampaignsFilterInfo
-     */
-    protected $Filter;
-    /**
-     * @var int
-     */
-    protected $Limit;
-    /**
-     * @var int
-     */
-    protected $Offset;
-    /**
-     * @var string
-     */
-    protected $CurrencySupported;
+
+    protected $Logins = null;
+
+    protected $Filter = null;
+
+    protected $Limit = null;
+
+    protected $Offset = null;
+
+    protected $CurrencySupported = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of GetCampaignsInfo.
      *
-     * @return self
+     * @return GetCampaignsInfo
      */
     public static function create()
     {
@@ -40,9 +29,9 @@ class GetCampaignsInfo
     }
 
     /**
-     * Gets the Logins.
+     * Gets Logins.
      *
-     * @return string[]
+     * @return string[]|null
      */
     public function getLogins()
     {
@@ -50,23 +39,22 @@ class GetCampaignsInfo
     }
 
     /**
-     * Sets the Logins.
+     * Sets Logins.
      *
-     * @param string[] $Logins
-     *
-     * @return GetCampaignsInfo
+     * @param array|null $value
+     * @return $this
      */
-    public function setLogins(array $Logins)
+    public function setLogins(array $value = null)
     {
-        $this->Logins = $Logins;
+        $this->Logins = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Filter.
+     * Gets Filter.
      *
-     * @return CampaignsFilterInfo
+     * @return CampaignsFilterInfo|null
      */
     public function getFilter()
     {
@@ -74,23 +62,22 @@ class GetCampaignsInfo
     }
 
     /**
-     * Sets the Filter.
+     * Sets Filter.
      *
-     * @param CampaignsFilterInfo $Filter
-     *
-     * @return GetCampaignsInfo
+     * @param CampaignsFilterInfo|null $value
+     * @return $this
      */
-    public function setFilter(CampaignsFilterInfo $Filter)
+    public function setFilter(CampaignsFilterInfo $value = null)
     {
-        $this->Filter = $Filter;
+        $this->Filter = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Limit.
+     * Gets Limit.
      *
-     * @return int
+     * @return int|null
      */
     public function getLimit()
     {
@@ -98,23 +85,22 @@ class GetCampaignsInfo
     }
 
     /**
-     * Sets the Limit.
+     * Sets Limit.
      *
-     * @param int $Limit
-     *
-     * @return GetCampaignsInfo
+     * @param int|null $value
+     * @return $this
      */
-    public function setLimit($Limit)
+    public function setLimit($value = null)
     {
-        $this->Limit = $Limit;
+        $this->Limit = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Offset.
+     * Gets Offset.
      *
-     * @return int
+     * @return int|null
      */
     public function getOffset()
     {
@@ -122,23 +108,22 @@ class GetCampaignsInfo
     }
 
     /**
-     * Sets the Offset.
+     * Sets Offset.
      *
-     * @param int $Offset
-     *
-     * @return GetCampaignsInfo
+     * @param int|null $value
+     * @return $this
      */
-    public function setOffset($Offset)
+    public function setOffset($value = null)
     {
-        $this->Offset = $Offset;
+        $this->Offset = $value;
 
         return $this;
     }
 
     /**
-     * Gets the CurrencySupported.
+     * Gets CurrencySupported.
      *
-     * @return string
+     * @return string|null
      */
     public function getCurrencySupported()
     {
@@ -146,16 +131,18 @@ class GetCampaignsInfo
     }
 
     /**
-     * Sets the CurrencySupported.
+     * Sets CurrencySupported.
      *
-     * @param string $CurrencySupported
-     *
-     * @return GetCampaignsInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setCurrencySupported($CurrencySupported)
+    public function setCurrencySupported($value = null)
     {
-        $this->CurrencySupported = $CurrencySupported;
+        $this->CurrencySupported = $value;
 
         return $this;
     }
+
+
 }
+

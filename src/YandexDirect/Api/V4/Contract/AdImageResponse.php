@@ -3,36 +3,25 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class AdImageResponse
 {
-    /**
-     * @var AdImage[]
-     */
-    protected $AdImages;
-    /**
-     * @var AdImageUpload[]
-     */
-    protected $AdImageUploads;
-    /**
-     * @var AdImageActionResult[]
-     */
-    protected $ActionsResult;
-    /**
-     * @var AdImageLimit[]
-     */
-    protected $AdImageLimits;
-    /**
-     * @var int
-     */
-    protected $TotalObjectsCount;
+
+    protected $AdImages = null;
+
+    protected $AdImageUploads = null;
+
+    protected $ActionsResult = null;
+
+    protected $AdImageLimits = null;
+
+    protected $TotalObjectsCount = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of AdImageResponse.
      *
-     * @return self
+     * @return AdImageResponse
      */
     public static function create()
     {
@@ -40,9 +29,9 @@ class AdImageResponse
     }
 
     /**
-     * Gets the AdImages.
+     * Gets AdImages.
      *
-     * @return AdImage[]
+     * @return AdImage[]|null
      */
     public function getAdImages()
     {
@@ -50,23 +39,22 @@ class AdImageResponse
     }
 
     /**
-     * Sets the AdImages.
+     * Sets AdImages.
      *
-     * @param AdImage[] $AdImages
-     *
-     * @return AdImageResponse
+     * @param array|null $value
+     * @return $this
      */
-    public function setAdImages(array $AdImages)
+    public function setAdImages(array $value = null)
     {
-        $this->AdImages = $AdImages;
+        $this->AdImages = $value;
 
         return $this;
     }
 
     /**
-     * Gets the AdImageUploads.
+     * Gets AdImageUploads.
      *
-     * @return AdImageUpload[]
+     * @return AdImageUpload[]|null
      */
     public function getAdImageUploads()
     {
@@ -74,23 +62,22 @@ class AdImageResponse
     }
 
     /**
-     * Sets the AdImageUploads.
+     * Sets AdImageUploads.
      *
-     * @param AdImageUpload[] $AdImageUploads
-     *
-     * @return AdImageResponse
+     * @param array|null $value
+     * @return $this
      */
-    public function setAdImageUploads(array $AdImageUploads)
+    public function setAdImageUploads(array $value = null)
     {
-        $this->AdImageUploads = $AdImageUploads;
+        $this->AdImageUploads = $value;
 
         return $this;
     }
 
     /**
-     * Gets the ActionsResult.
+     * Gets ActionsResult.
      *
-     * @return AdImageActionResult[]
+     * @return AdImageActionResult[]|null
      */
     public function getActionsResult()
     {
@@ -98,23 +85,22 @@ class AdImageResponse
     }
 
     /**
-     * Sets the ActionsResult.
+     * Sets ActionsResult.
      *
-     * @param AdImageActionResult[] $ActionsResult
-     *
-     * @return AdImageResponse
+     * @param array|null $value
+     * @return $this
      */
-    public function setActionsResult(array $ActionsResult)
+    public function setActionsResult(array $value = null)
     {
-        $this->ActionsResult = $ActionsResult;
+        $this->ActionsResult = $value;
 
         return $this;
     }
 
     /**
-     * Gets the AdImageLimits.
+     * Gets AdImageLimits.
      *
-     * @return AdImageLimit[]
+     * @return AdImageLimit[]|null
      */
     public function getAdImageLimits()
     {
@@ -122,23 +108,22 @@ class AdImageResponse
     }
 
     /**
-     * Sets the AdImageLimits.
+     * Sets AdImageLimits.
      *
-     * @param AdImageLimit[] $AdImageLimits
-     *
-     * @return AdImageResponse
+     * @param array|null $value
+     * @return $this
      */
-    public function setAdImageLimits(array $AdImageLimits)
+    public function setAdImageLimits(array $value = null)
     {
-        $this->AdImageLimits = $AdImageLimits;
+        $this->AdImageLimits = $value;
 
         return $this;
     }
 
     /**
-     * Gets the TotalObjectsCount.
+     * Gets TotalObjectsCount.
      *
-     * @return int
+     * @return int|null
      */
     public function getTotalObjectsCount()
     {
@@ -146,16 +131,18 @@ class AdImageResponse
     }
 
     /**
-     * Sets the TotalObjectsCount.
+     * Sets TotalObjectsCount.
      *
-     * @param int $TotalObjectsCount
-     *
-     * @return AdImageResponse
+     * @param int|null $value
+     * @return $this
      */
-    public function setTotalObjectsCount($TotalObjectsCount)
+    public function setTotalObjectsCount($value = null)
     {
-        $this->TotalObjectsCount = $TotalObjectsCount;
+        $this->TotalObjectsCount = $value;
 
         return $this;
     }
+
+
 }
+

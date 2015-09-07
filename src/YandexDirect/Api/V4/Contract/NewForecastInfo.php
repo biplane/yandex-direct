@@ -3,32 +3,25 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class NewForecastInfo
 {
-    /**
-     * @var int[]
-     */
-    protected $Categories;
-    /**
-     * @var string[]
-     */
-    protected $Phrases;
-    /**
-     * @var int[]
-     */
-    protected $GeoID;
-    /**
-     * @var string
-     */
-    protected $Currency;
+
+    protected $Categories = null;
+
+    protected $Phrases = null;
+
+    protected $GeoID = null;
+
+    protected $Currency = null;
+
+    protected $AuctionBids = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of NewForecastInfo.
      *
-     * @return self
+     * @return NewForecastInfo
      */
     public static function create()
     {
@@ -36,9 +29,9 @@ class NewForecastInfo
     }
 
     /**
-     * Gets the Categories.
+     * Gets Categories.
      *
-     * @return int[]
+     * @return int[]|null
      */
     public function getCategories()
     {
@@ -46,23 +39,22 @@ class NewForecastInfo
     }
 
     /**
-     * Sets the Categories.
+     * Sets Categories.
      *
-     * @param int[] $Categories
-     *
-     * @return NewForecastInfo
+     * @param array|null $value
+     * @return $this
      */
-    public function setCategories(array $Categories)
+    public function setCategories(array $value = null)
     {
-        $this->Categories = $Categories;
+        $this->Categories = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Phrases.
+     * Gets Phrases.
      *
-     * @return string[]
+     * @return string[]|null
      */
     public function getPhrases()
     {
@@ -70,23 +62,22 @@ class NewForecastInfo
     }
 
     /**
-     * Sets the Phrases.
+     * Sets Phrases.
      *
-     * @param string[] $Phrases
-     *
-     * @return NewForecastInfo
+     * @param array|null $value
+     * @return $this
      */
-    public function setPhrases(array $Phrases)
+    public function setPhrases(array $value = null)
     {
-        $this->Phrases = $Phrases;
+        $this->Phrases = $value;
 
         return $this;
     }
 
     /**
-     * Gets the GeoID.
+     * Gets GeoID.
      *
-     * @return int[]
+     * @return int[]|null
      */
     public function getGeoID()
     {
@@ -94,23 +85,22 @@ class NewForecastInfo
     }
 
     /**
-     * Sets the GeoID.
+     * Sets GeoID.
      *
-     * @param int[] $GeoID
-     *
-     * @return NewForecastInfo
+     * @param array|null $value
+     * @return $this
      */
-    public function setGeoID(array $GeoID)
+    public function setGeoID(array $value = null)
     {
-        $this->GeoID = $GeoID;
+        $this->GeoID = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Currency.
+     * Gets Currency.
      *
-     * @return string
+     * @return string|null
      */
     public function getCurrency()
     {
@@ -118,16 +108,41 @@ class NewForecastInfo
     }
 
     /**
-     * Sets the Currency.
+     * Sets Currency.
      *
-     * @param string $Currency
-     *
-     * @return NewForecastInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setCurrency($Currency)
+    public function setCurrency($value = null)
     {
-        $this->Currency = $Currency;
+        $this->Currency = $value;
 
         return $this;
     }
+
+    /**
+     * Gets AuctionBids.
+     *
+     * @return string|null
+     */
+    public function getAuctionBids()
+    {
+        return $this->AuctionBids;
+    }
+
+    /**
+     * Sets AuctionBids.
+     *
+     * @param string|null $value
+     * @return $this
+     */
+    public function setAuctionBids($value = null)
+    {
+        $this->AuctionBids = $value;
+
+        return $this;
+    }
+
+
 }
+

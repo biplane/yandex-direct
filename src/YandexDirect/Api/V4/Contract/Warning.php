@@ -3,28 +3,21 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class Warning
 {
-    /**
-     * @var int
-     */
-    protected $WarningCode;
-    /**
-     * @var string
-     */
-    protected $WarningString;
-    /**
-     * @var string
-     */
-    protected $Description;
+
+    protected $WarningCode = null;
+
+    protected $WarningString = null;
+
+    protected $Description = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of Warning.
      *
-     * @return self
+     * @return Warning
      */
     public static function create()
     {
@@ -32,7 +25,7 @@ class Warning
     }
 
     /**
-     * Gets the WarningCode.
+     * Gets WarningCode.
      *
      * @return int
      */
@@ -42,21 +35,20 @@ class Warning
     }
 
     /**
-     * Sets the WarningCode.
+     * Sets WarningCode.
      *
-     * @param int $WarningCode
-     *
-     * @return Warning
+     * @param int $value
+     * @return $this
      */
-    public function setWarningCode($WarningCode)
+    public function setWarningCode($value)
     {
-        $this->WarningCode = $WarningCode;
+        $this->WarningCode = $value;
 
         return $this;
     }
 
     /**
-     * Gets the WarningString.
+     * Gets WarningString.
      *
      * @return string
      */
@@ -66,23 +58,22 @@ class Warning
     }
 
     /**
-     * Sets the WarningString.
+     * Sets WarningString.
      *
-     * @param string $WarningString
-     *
-     * @return Warning
+     * @param string $value
+     * @return $this
      */
-    public function setWarningString($WarningString)
+    public function setWarningString($value)
     {
-        $this->WarningString = $WarningString;
+        $this->WarningString = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Description.
+     * Gets Description.
      *
-     * @return string
+     * @return string|null
      */
     public function getDescription()
     {
@@ -90,16 +81,18 @@ class Warning
     }
 
     /**
-     * Sets the Description.
+     * Sets Description.
      *
-     * @param string $Description
-     *
-     * @return Warning
+     * @param string|null $value
+     * @return $this
      */
-    public function setDescription($Description)
+    public function setDescription($value = null)
     {
-        $this->Description = $Description;
+        $this->Description = $value;
 
         return $this;
     }
+
+
 }
+

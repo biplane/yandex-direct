@@ -3,32 +3,23 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class Transfer
 {
-    /**
-     * @var int
-     */
-    protected $FromAccountID;
-    /**
-     * @var int
-     */
-    protected $ToAccountID;
-    /**
-     * @var float
-     */
-    protected $Amount;
-    /**
-     * @var string
-     */
-    protected $Currency;
+
+    protected $FromAccountID = null;
+
+    protected $ToAccountID = null;
+
+    protected $Amount = null;
+
+    protected $Currency = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of Transfer.
      *
-     * @return self
+     * @return Transfer
      */
     public static function create()
     {
@@ -36,7 +27,7 @@ class Transfer
     }
 
     /**
-     * Gets the FromAccountID.
+     * Gets FromAccountID.
      *
      * @return int
      */
@@ -46,21 +37,20 @@ class Transfer
     }
 
     /**
-     * Sets the FromAccountID.
+     * Sets FromAccountID.
      *
-     * @param int $FromAccountID
-     *
-     * @return Transfer
+     * @param int $value
+     * @return $this
      */
-    public function setFromAccountID($FromAccountID)
+    public function setFromAccountID($value)
     {
-        $this->FromAccountID = $FromAccountID;
+        $this->FromAccountID = $value;
 
         return $this;
     }
 
     /**
-     * Gets the ToAccountID.
+     * Gets ToAccountID.
      *
      * @return int
      */
@@ -70,21 +60,20 @@ class Transfer
     }
 
     /**
-     * Sets the ToAccountID.
+     * Sets ToAccountID.
      *
-     * @param int $ToAccountID
-     *
-     * @return Transfer
+     * @param int $value
+     * @return $this
      */
-    public function setToAccountID($ToAccountID)
+    public function setToAccountID($value)
     {
-        $this->ToAccountID = $ToAccountID;
+        $this->ToAccountID = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Amount.
+     * Gets Amount.
      *
      * @return float
      */
@@ -94,23 +83,22 @@ class Transfer
     }
 
     /**
-     * Sets the Amount.
+     * Sets Amount.
      *
-     * @param float $Amount
-     *
-     * @return Transfer
+     * @param float $value
+     * @return $this
      */
-    public function setAmount($Amount)
+    public function setAmount($value)
     {
-        $this->Amount = $Amount;
+        $this->Amount = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Currency.
+     * Gets Currency.
      *
-     * @return string
+     * @return string|null
      */
     public function getCurrency()
     {
@@ -118,16 +106,18 @@ class Transfer
     }
 
     /**
-     * Sets the Currency.
+     * Sets Currency.
      *
-     * @param string $Currency
-     *
-     * @return Transfer
+     * @param string|null $value
+     * @return $this
      */
-    public function setCurrency($Currency)
+    public function setCurrency($value = null)
     {
-        $this->Currency = $Currency;
+        $this->Currency = $value;
 
         return $this;
     }
+
+
 }
+

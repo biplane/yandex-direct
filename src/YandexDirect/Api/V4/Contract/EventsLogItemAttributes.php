@@ -3,52 +3,33 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class EventsLogItemAttributes
 {
-    /**
-     * @var string
-     */
-    protected $ModerationResult;
-    /**
-     * @var float
-     */
-    protected $MinPrice;
-    /**
-     * @var float
-     */
-    protected $Rest;
-    /**
-     * @var float
-     */
-    protected $Payed;
-    /**
-     * @var string
-     */
-    protected $FinishDate;
-    /**
-     * @var string
-     */
-    protected $OldPlace;
-    /**
-     * @var string
-     */
-    protected $IsEditedByModerator;
-    /**
-     * @var string
-     */
-    protected $StopTime;
-    /**
-     * @var string
-     */
-    protected $Currency;
+
+    protected $ModerationResult = null;
+
+    protected $MinPrice = null;
+
+    protected $Rest = null;
+
+    protected $Payed = null;
+
+    protected $FinishDate = null;
+
+    protected $OldPlace = null;
+
+    protected $IsEditedByModerator = null;
+
+    protected $StopTime = null;
+
+    protected $Currency = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of EventsLogItemAttributes.
      *
-     * @return self
+     * @return EventsLogItemAttributes
      */
     public static function create()
     {
@@ -56,9 +37,9 @@ class EventsLogItemAttributes
     }
 
     /**
-     * Gets the ModerationResult.
+     * Gets ModerationResult.
      *
-     * @return string
+     * @return string|null
      */
     public function getModerationResult()
     {
@@ -66,23 +47,22 @@ class EventsLogItemAttributes
     }
 
     /**
-     * Sets the ModerationResult.
+     * Sets ModerationResult.
      *
-     * @param string $ModerationResult
-     *
-     * @return EventsLogItemAttributes
+     * @param string|null $value
+     * @return $this
      */
-    public function setModerationResult($ModerationResult)
+    public function setModerationResult($value = null)
     {
-        $this->ModerationResult = $ModerationResult;
+        $this->ModerationResult = $value;
 
         return $this;
     }
 
     /**
-     * Gets the MinPrice.
+     * Gets MinPrice.
      *
-     * @return float
+     * @return float|null
      */
     public function getMinPrice()
     {
@@ -90,23 +70,22 @@ class EventsLogItemAttributes
     }
 
     /**
-     * Sets the MinPrice.
+     * Sets MinPrice.
      *
-     * @param float $MinPrice
-     *
-     * @return EventsLogItemAttributes
+     * @param float|null $value
+     * @return $this
      */
-    public function setMinPrice($MinPrice)
+    public function setMinPrice($value = null)
     {
-        $this->MinPrice = $MinPrice;
+        $this->MinPrice = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Rest.
+     * Gets Rest.
      *
-     * @return float
+     * @return float|null
      */
     public function getRest()
     {
@@ -114,23 +93,22 @@ class EventsLogItemAttributes
     }
 
     /**
-     * Sets the Rest.
+     * Sets Rest.
      *
-     * @param float $Rest
-     *
-     * @return EventsLogItemAttributes
+     * @param float|null $value
+     * @return $this
      */
-    public function setRest($Rest)
+    public function setRest($value = null)
     {
-        $this->Rest = $Rest;
+        $this->Rest = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Payed.
+     * Gets Payed.
      *
-     * @return float
+     * @return float|null
      */
     public function getPayed()
     {
@@ -138,23 +116,22 @@ class EventsLogItemAttributes
     }
 
     /**
-     * Sets the Payed.
+     * Sets Payed.
      *
-     * @param float $Payed
-     *
-     * @return EventsLogItemAttributes
+     * @param float|null $value
+     * @return $this
      */
-    public function setPayed($Payed)
+    public function setPayed($value = null)
     {
-        $this->Payed = $Payed;
+        $this->Payed = $value;
 
         return $this;
     }
 
     /**
-     * Gets the FinishDate.
+     * Gets FinishDate.
      *
-     * @return string
+     * @return string|null
      */
     public function getFinishDate()
     {
@@ -162,23 +139,22 @@ class EventsLogItemAttributes
     }
 
     /**
-     * Sets the FinishDate.
+     * Sets FinishDate.
      *
-     * @param string $FinishDate
-     *
-     * @return EventsLogItemAttributes
+     * @param string|null $value
+     * @return $this
      */
-    public function setFinishDate($FinishDate)
+    public function setFinishDate($value = null)
     {
-        $this->FinishDate = $FinishDate;
+        $this->FinishDate = $value;
 
         return $this;
     }
 
     /**
-     * Gets the OldPlace.
+     * Gets OldPlace.
      *
-     * @return string
+     * @return string|null
      */
     public function getOldPlace()
     {
@@ -186,23 +162,22 @@ class EventsLogItemAttributes
     }
 
     /**
-     * Sets the OldPlace.
+     * Sets OldPlace.
      *
-     * @param string $OldPlace
-     *
-     * @return EventsLogItemAttributes
+     * @param string|null $value
+     * @return $this
      */
-    public function setOldPlace($OldPlace)
+    public function setOldPlace($value = null)
     {
-        $this->OldPlace = $OldPlace;
+        $this->OldPlace = $value;
 
         return $this;
     }
 
     /**
-     * Gets the IsEditedByModerator.
+     * Gets IsEditedByModerator.
      *
-     * @return string
+     * @return string|null
      */
     public function getIsEditedByModerator()
     {
@@ -210,23 +185,22 @@ class EventsLogItemAttributes
     }
 
     /**
-     * Sets the IsEditedByModerator.
+     * Sets IsEditedByModerator.
      *
-     * @param string $IsEditedByModerator
-     *
-     * @return EventsLogItemAttributes
+     * @param string|null $value
+     * @return $this
      */
-    public function setIsEditedByModerator($IsEditedByModerator)
+    public function setIsEditedByModerator($value = null)
     {
-        $this->IsEditedByModerator = $IsEditedByModerator;
+        $this->IsEditedByModerator = $value;
 
         return $this;
     }
 
     /**
-     * Gets the StopTime.
+     * Gets StopTime.
      *
-     * @return string
+     * @return string|null
      */
     public function getStopTime()
     {
@@ -234,23 +208,22 @@ class EventsLogItemAttributes
     }
 
     /**
-     * Sets the StopTime.
+     * Sets StopTime.
      *
-     * @param string $StopTime
-     *
-     * @return EventsLogItemAttributes
+     * @param string|null $value
+     * @return $this
      */
-    public function setStopTime($StopTime)
+    public function setStopTime($value = null)
     {
-        $this->StopTime = $StopTime;
+        $this->StopTime = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Currency.
+     * Gets Currency.
      *
-     * @return string
+     * @return string|null
      */
     public function getCurrency()
     {
@@ -258,16 +231,18 @@ class EventsLogItemAttributes
     }
 
     /**
-     * Sets the Currency.
+     * Sets Currency.
      *
-     * @param string $Currency
-     *
-     * @return EventsLogItemAttributes
+     * @param string|null $value
+     * @return $this
      */
-    public function setCurrency($Currency)
+    public function setCurrency($value = null)
     {
-        $this->Currency = $Currency;
+        $this->Currency = $value;
 
         return $this;
     }
+
+
 }
+

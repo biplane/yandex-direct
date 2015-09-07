@@ -3,40 +3,27 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class AdImageSelectionCriteria
 {
-    /**
-     * @var string[]
-     */
-    protected $Logins;
-    /**
-     * @var string[]
-     */
-    protected $AdImageHashes;
-    /**
-     * @var int[]
-     */
-    protected $AdImageUploadTaskIDS;
-    /**
-     * @var string[]
-     */
-    protected $Assigned;
-    /**
-     * @var int
-     */
-    protected $Limit;
-    /**
-     * @var int
-     */
-    protected $Offset;
+
+    protected $Logins = null;
+
+    protected $AdImageHashes = null;
+
+    protected $AdImageUploadTaskIDS = null;
+
+    protected $Assigned = null;
+
+    protected $Limit = null;
+
+    protected $Offset = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of AdImageSelectionCriteria.
      *
-     * @return self
+     * @return AdImageSelectionCriteria
      */
     public static function create()
     {
@@ -44,9 +31,9 @@ class AdImageSelectionCriteria
     }
 
     /**
-     * Gets the Logins.
+     * Gets Logins.
      *
-     * @return string[]
+     * @return string[]|null
      */
     public function getLogins()
     {
@@ -54,23 +41,22 @@ class AdImageSelectionCriteria
     }
 
     /**
-     * Sets the Logins.
+     * Sets Logins.
      *
-     * @param string[] $Logins
-     *
-     * @return AdImageSelectionCriteria
+     * @param array|null $value
+     * @return $this
      */
-    public function setLogins(array $Logins)
+    public function setLogins(array $value = null)
     {
-        $this->Logins = $Logins;
+        $this->Logins = $value;
 
         return $this;
     }
 
     /**
-     * Gets the AdImageHashes.
+     * Gets AdImageHashes.
      *
-     * @return string[]
+     * @return string[]|null
      */
     public function getAdImageHashes()
     {
@@ -78,23 +64,22 @@ class AdImageSelectionCriteria
     }
 
     /**
-     * Sets the AdImageHashes.
+     * Sets AdImageHashes.
      *
-     * @param string[] $AdImageHashes
-     *
-     * @return AdImageSelectionCriteria
+     * @param array|null $value
+     * @return $this
      */
-    public function setAdImageHashes(array $AdImageHashes)
+    public function setAdImageHashes(array $value = null)
     {
-        $this->AdImageHashes = $AdImageHashes;
+        $this->AdImageHashes = $value;
 
         return $this;
     }
 
     /**
-     * Gets the AdImageUploadTaskIDS.
+     * Gets AdImageUploadTaskIDS.
      *
-     * @return int[]
+     * @return int[]|null
      */
     public function getAdImageUploadTaskIDS()
     {
@@ -102,23 +87,22 @@ class AdImageSelectionCriteria
     }
 
     /**
-     * Sets the AdImageUploadTaskIDS.
+     * Sets AdImageUploadTaskIDS.
      *
-     * @param int[] $AdImageUploadTaskIDS
-     *
-     * @return AdImageSelectionCriteria
+     * @param array|null $value
+     * @return $this
      */
-    public function setAdImageUploadTaskIDS(array $AdImageUploadTaskIDS)
+    public function setAdImageUploadTaskIDS(array $value = null)
     {
-        $this->AdImageUploadTaskIDS = $AdImageUploadTaskIDS;
+        $this->AdImageUploadTaskIDS = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Assigned.
+     * Gets Assigned.
      *
-     * @return string[]
+     * @return string[]|null
      */
     public function getAssigned()
     {
@@ -126,23 +110,22 @@ class AdImageSelectionCriteria
     }
 
     /**
-     * Sets the Assigned.
+     * Sets Assigned.
      *
-     * @param string[] $Assigned
-     *
-     * @return AdImageSelectionCriteria
+     * @param array|null $value
+     * @return $this
      */
-    public function setAssigned(array $Assigned)
+    public function setAssigned(array $value = null)
     {
-        $this->Assigned = $Assigned;
+        $this->Assigned = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Limit.
+     * Gets Limit.
      *
-     * @return int
+     * @return int|null
      */
     public function getLimit()
     {
@@ -150,23 +133,22 @@ class AdImageSelectionCriteria
     }
 
     /**
-     * Sets the Limit.
+     * Sets Limit.
      *
-     * @param int $Limit
-     *
-     * @return AdImageSelectionCriteria
+     * @param int|null $value
+     * @return $this
      */
-    public function setLimit($Limit)
+    public function setLimit($value = null)
     {
-        $this->Limit = $Limit;
+        $this->Limit = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Offset.
+     * Gets Offset.
      *
-     * @return int
+     * @return int|null
      */
     public function getOffset()
     {
@@ -174,16 +156,18 @@ class AdImageSelectionCriteria
     }
 
     /**
-     * Sets the Offset.
+     * Sets Offset.
      *
-     * @param int $Offset
-     *
-     * @return AdImageSelectionCriteria
+     * @param int|null $value
+     * @return $this
      */
-    public function setOffset($Offset)
+    public function setOffset($value = null)
     {
-        $this->Offset = $Offset;
+        $this->Offset = $value;
 
         return $this;
     }
+
+
 }
+

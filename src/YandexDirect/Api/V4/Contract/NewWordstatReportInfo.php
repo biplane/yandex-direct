@@ -3,24 +3,21 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class NewWordstatReportInfo
 {
-    /**
-     * @var string[]
-     */
-    protected $Phrases;
-    /**
-     * @var int[]
-     */
-    protected $GeoID;
+
+    protected $Phrases = array(
+        
+    );
+
+    protected $GeoID = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of NewWordstatReportInfo.
      *
-     * @return self
+     * @return NewWordstatReportInfo
      */
     public static function create()
     {
@@ -28,7 +25,7 @@ class NewWordstatReportInfo
     }
 
     /**
-     * Gets the Phrases.
+     * Gets Phrases.
      *
      * @return string[]
      */
@@ -38,23 +35,22 @@ class NewWordstatReportInfo
     }
 
     /**
-     * Sets the Phrases.
+     * Sets Phrases.
      *
-     * @param string[] $Phrases
-     *
-     * @return NewWordstatReportInfo
+     * @param array $value
+     * @return $this
      */
-    public function setPhrases(array $Phrases)
+    public function setPhrases(array $value)
     {
-        $this->Phrases = $Phrases;
+        $this->Phrases = $value;
 
         return $this;
     }
 
     /**
-     * Gets the GeoID.
+     * Gets GeoID.
      *
-     * @return int[]
+     * @return int[]|null
      */
     public function getGeoID()
     {
@@ -62,16 +58,18 @@ class NewWordstatReportInfo
     }
 
     /**
-     * Sets the GeoID.
+     * Sets GeoID.
      *
-     * @param int[] $GeoID
-     *
-     * @return NewWordstatReportInfo
+     * @param array|null $value
+     * @return $this
      */
-    public function setGeoID(array $GeoID)
+    public function setGeoID(array $value = null)
     {
-        $this->GeoID = $GeoID;
+        $this->GeoID = $value;
 
         return $this;
     }
+
+
 }
+

@@ -3,36 +3,25 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class CampaignsFilterInfo
 {
-    /**
-     * @var string[]
-     */
-    protected $StatusModerate;
-    /**
-     * @var string[]
-     */
-    protected $IsActive;
-    /**
-     * @var string[]
-     */
-    protected $StatusArchive;
-    /**
-     * @var string[]
-     */
-    protected $StatusActivating;
-    /**
-     * @var string[]
-     */
-    protected $StatusShow;
+
+    protected $StatusModerate = null;
+
+    protected $IsActive = null;
+
+    protected $StatusArchive = null;
+
+    protected $StatusActivating = null;
+
+    protected $StatusShow = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of CampaignsFilterInfo.
      *
-     * @return self
+     * @return CampaignsFilterInfo
      */
     public static function create()
     {
@@ -40,9 +29,9 @@ class CampaignsFilterInfo
     }
 
     /**
-     * Gets the StatusModerate.
+     * Gets StatusModerate.
      *
-     * @return string[]
+     * @return string[]|null
      */
     public function getStatusModerate()
     {
@@ -50,23 +39,22 @@ class CampaignsFilterInfo
     }
 
     /**
-     * Sets the StatusModerate.
+     * Sets StatusModerate.
      *
-     * @param string[] $StatusModerate
-     *
-     * @return CampaignsFilterInfo
+     * @param array|null $value
+     * @return $this
      */
-    public function setStatusModerate(array $StatusModerate)
+    public function setStatusModerate(array $value = null)
     {
-        $this->StatusModerate = $StatusModerate;
+        $this->StatusModerate = $value;
 
         return $this;
     }
 
     /**
-     * Gets the IsActive.
+     * Gets IsActive.
      *
-     * @return string[]
+     * @return string[]|null
      */
     public function getIsActive()
     {
@@ -74,23 +62,22 @@ class CampaignsFilterInfo
     }
 
     /**
-     * Sets the IsActive.
+     * Sets IsActive.
      *
-     * @param string[] $IsActive
-     *
-     * @return CampaignsFilterInfo
+     * @param array|null $value
+     * @return $this
      */
-    public function setIsActive(array $IsActive)
+    public function setIsActive(array $value = null)
     {
-        $this->IsActive = $IsActive;
+        $this->IsActive = $value;
 
         return $this;
     }
 
     /**
-     * Gets the StatusArchive.
+     * Gets StatusArchive.
      *
-     * @return string[]
+     * @return string[]|null
      */
     public function getStatusArchive()
     {
@@ -98,23 +85,22 @@ class CampaignsFilterInfo
     }
 
     /**
-     * Sets the StatusArchive.
+     * Sets StatusArchive.
      *
-     * @param string[] $StatusArchive
-     *
-     * @return CampaignsFilterInfo
+     * @param array|null $value
+     * @return $this
      */
-    public function setStatusArchive(array $StatusArchive)
+    public function setStatusArchive(array $value = null)
     {
-        $this->StatusArchive = $StatusArchive;
+        $this->StatusArchive = $value;
 
         return $this;
     }
 
     /**
-     * Gets the StatusActivating.
+     * Gets StatusActivating.
      *
-     * @return string[]
+     * @return string[]|null
      */
     public function getStatusActivating()
     {
@@ -122,23 +108,22 @@ class CampaignsFilterInfo
     }
 
     /**
-     * Sets the StatusActivating.
+     * Sets StatusActivating.
      *
-     * @param string[] $StatusActivating
-     *
-     * @return CampaignsFilterInfo
+     * @param array|null $value
+     * @return $this
      */
-    public function setStatusActivating(array $StatusActivating)
+    public function setStatusActivating(array $value = null)
     {
-        $this->StatusActivating = $StatusActivating;
+        $this->StatusActivating = $value;
 
         return $this;
     }
 
     /**
-     * Gets the StatusShow.
+     * Gets StatusShow.
      *
-     * @return string[]
+     * @return string[]|null
      */
     public function getStatusShow()
     {
@@ -146,16 +131,18 @@ class CampaignsFilterInfo
     }
 
     /**
-     * Sets the StatusShow.
+     * Sets StatusShow.
      *
-     * @param string[] $StatusShow
-     *
-     * @return CampaignsFilterInfo
+     * @param array|null $value
+     * @return $this
      */
-    public function setStatusShow(array $StatusShow)
+    public function setStatusShow(array $value = null)
     {
-        $this->StatusShow = $StatusShow;
+        $this->StatusShow = $value;
 
         return $this;
     }
+
+
 }
+

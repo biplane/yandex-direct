@@ -3,56 +3,35 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class CampaignStrategy
 {
-    /**
-     * @var float
-     */
-    protected $MaxPrice;
-    /**
-     * @var float
-     */
-    protected $AveragePrice;
-    /**
-     * @var float
-     */
-    protected $WeeklySumLimit;
-    /**
-     * @var int
-     */
-    protected $ClicksPerWeek;
-    /**
-     * @var string
-     */
-    protected $StrategyName;
-    /**
-     * @var float
-     */
-    protected $AverageCPA;
-    /**
-     * @var int
-     */
-    protected $GoalID;
-    /**
-     * @var int
-     */
-    protected $ReserveReturn;
-    /**
-     * @var float
-     */
-    protected $ROICoef;
-    /**
-     * @var float
-     */
-    protected $Profitability;
+
+    protected $MaxPrice = null;
+
+    protected $AveragePrice = null;
+
+    protected $WeeklySumLimit = null;
+
+    protected $ClicksPerWeek = null;
+
+    protected $StrategyName = null;
+
+    protected $AverageCPA = null;
+
+    protected $GoalID = null;
+
+    protected $ReserveReturn = null;
+
+    protected $ROICoef = null;
+
+    protected $Profitability = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of CampaignStrategy.
      *
-     * @return self
+     * @return CampaignStrategy
      */
     public static function create()
     {
@@ -60,9 +39,9 @@ class CampaignStrategy
     }
 
     /**
-     * Gets the MaxPrice.
+     * Gets MaxPrice.
      *
-     * @return float
+     * @return float|null
      */
     public function getMaxPrice()
     {
@@ -70,23 +49,22 @@ class CampaignStrategy
     }
 
     /**
-     * Sets the MaxPrice.
+     * Sets MaxPrice.
      *
-     * @param float $MaxPrice
-     *
-     * @return CampaignStrategy
+     * @param float|null $value
+     * @return $this
      */
-    public function setMaxPrice($MaxPrice)
+    public function setMaxPrice($value = null)
     {
-        $this->MaxPrice = $MaxPrice;
+        $this->MaxPrice = $value;
 
         return $this;
     }
 
     /**
-     * Gets the AveragePrice.
+     * Gets AveragePrice.
      *
-     * @return float
+     * @return float|null
      */
     public function getAveragePrice()
     {
@@ -94,23 +72,22 @@ class CampaignStrategy
     }
 
     /**
-     * Sets the AveragePrice.
+     * Sets AveragePrice.
      *
-     * @param float $AveragePrice
-     *
-     * @return CampaignStrategy
+     * @param float|null $value
+     * @return $this
      */
-    public function setAveragePrice($AveragePrice)
+    public function setAveragePrice($value = null)
     {
-        $this->AveragePrice = $AveragePrice;
+        $this->AveragePrice = $value;
 
         return $this;
     }
 
     /**
-     * Gets the WeeklySumLimit.
+     * Gets WeeklySumLimit.
      *
-     * @return float
+     * @return float|null
      */
     public function getWeeklySumLimit()
     {
@@ -118,23 +95,22 @@ class CampaignStrategy
     }
 
     /**
-     * Sets the WeeklySumLimit.
+     * Sets WeeklySumLimit.
      *
-     * @param float $WeeklySumLimit
-     *
-     * @return CampaignStrategy
+     * @param float|null $value
+     * @return $this
      */
-    public function setWeeklySumLimit($WeeklySumLimit)
+    public function setWeeklySumLimit($value = null)
     {
-        $this->WeeklySumLimit = $WeeklySumLimit;
+        $this->WeeklySumLimit = $value;
 
         return $this;
     }
 
     /**
-     * Gets the ClicksPerWeek.
+     * Gets ClicksPerWeek.
      *
-     * @return int
+     * @return int|null
      */
     public function getClicksPerWeek()
     {
@@ -142,21 +118,20 @@ class CampaignStrategy
     }
 
     /**
-     * Sets the ClicksPerWeek.
+     * Sets ClicksPerWeek.
      *
-     * @param int $ClicksPerWeek
-     *
-     * @return CampaignStrategy
+     * @param int|null $value
+     * @return $this
      */
-    public function setClicksPerWeek($ClicksPerWeek)
+    public function setClicksPerWeek($value = null)
     {
-        $this->ClicksPerWeek = $ClicksPerWeek;
+        $this->ClicksPerWeek = $value;
 
         return $this;
     }
 
     /**
-     * Gets the StrategyName.
+     * Gets StrategyName.
      *
      * @return string
      */
@@ -166,23 +141,22 @@ class CampaignStrategy
     }
 
     /**
-     * Sets the StrategyName.
+     * Sets StrategyName.
      *
-     * @param string $StrategyName
-     *
-     * @return CampaignStrategy
+     * @param string $value
+     * @return $this
      */
-    public function setStrategyName($StrategyName)
+    public function setStrategyName($value)
     {
-        $this->StrategyName = $StrategyName;
+        $this->StrategyName = $value;
 
         return $this;
     }
 
     /**
-     * Gets the AverageCPA.
+     * Gets AverageCPA.
      *
-     * @return float
+     * @return float|null
      */
     public function getAverageCPA()
     {
@@ -190,23 +164,22 @@ class CampaignStrategy
     }
 
     /**
-     * Sets the AverageCPA.
+     * Sets AverageCPA.
      *
-     * @param float $AverageCPA
-     *
-     * @return CampaignStrategy
+     * @param float|null $value
+     * @return $this
      */
-    public function setAverageCPA($AverageCPA)
+    public function setAverageCPA($value = null)
     {
-        $this->AverageCPA = $AverageCPA;
+        $this->AverageCPA = $value;
 
         return $this;
     }
 
     /**
-     * Gets the GoalID.
+     * Gets GoalID.
      *
-     * @return int
+     * @return int|null
      */
     public function getGoalID()
     {
@@ -214,23 +187,22 @@ class CampaignStrategy
     }
 
     /**
-     * Sets the GoalID.
+     * Sets GoalID.
      *
-     * @param int $GoalID
-     *
-     * @return CampaignStrategy
+     * @param int|null $value
+     * @return $this
      */
-    public function setGoalID($GoalID)
+    public function setGoalID($value = null)
     {
-        $this->GoalID = $GoalID;
+        $this->GoalID = $value;
 
         return $this;
     }
 
     /**
-     * Gets the ReserveReturn.
+     * Gets ReserveReturn.
      *
-     * @return int
+     * @return int|null
      */
     public function getReserveReturn()
     {
@@ -238,23 +210,22 @@ class CampaignStrategy
     }
 
     /**
-     * Sets the ReserveReturn.
+     * Sets ReserveReturn.
      *
-     * @param int $ReserveReturn
-     *
-     * @return CampaignStrategy
+     * @param int|null $value
+     * @return $this
      */
-    public function setReserveReturn($ReserveReturn)
+    public function setReserveReturn($value = null)
     {
-        $this->ReserveReturn = $ReserveReturn;
+        $this->ReserveReturn = $value;
 
         return $this;
     }
 
     /**
-     * Gets the ROICoef.
+     * Gets ROICoef.
      *
-     * @return float
+     * @return float|null
      */
     public function getROICoef()
     {
@@ -262,23 +233,22 @@ class CampaignStrategy
     }
 
     /**
-     * Sets the ROICoef.
+     * Sets ROICoef.
      *
-     * @param float $ROICoef
-     *
-     * @return CampaignStrategy
+     * @param float|null $value
+     * @return $this
      */
-    public function setROICoef($ROICoef)
+    public function setROICoef($value = null)
     {
-        $this->ROICoef = $ROICoef;
+        $this->ROICoef = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Profitability.
+     * Gets Profitability.
      *
-     * @return float
+     * @return float|null
      */
     public function getProfitability()
     {
@@ -286,16 +256,18 @@ class CampaignStrategy
     }
 
     /**
-     * Sets the Profitability.
+     * Sets Profitability.
      *
-     * @param float $Profitability
-     *
-     * @return CampaignStrategy
+     * @param float|null $value
+     * @return $this
      */
-    public function setProfitability($Profitability)
+    public function setProfitability($value = null)
     {
-        $this->Profitability = $Profitability;
+        $this->Profitability = $value;
 
         return $this;
     }
+
+
 }
+

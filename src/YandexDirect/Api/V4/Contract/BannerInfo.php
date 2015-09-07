@@ -3,136 +3,75 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class BannerInfo
 {
-    /**
-     * @var int
-     */
-    protected $BannerID;
-    /**
-     * @var int
-     */
-    protected $CampaignID;
-    /**
-     * @var string
-     */
-    protected $Title;
-    /**
-     * @var string
-     */
-    protected $Text;
-    /**
-     * @var string
-     */
-    protected $Href;
-    /**
-     * @var string
-     */
-    protected $Domain;
-    /**
-     * @var ContactInfo
-     */
-    protected $ContactInfo;
-    /**
-     * @var string
-     */
-    protected $Geo;
-    /**
-     * @var BannerPhraseInfo[]
-     */
-    protected $Phrases;
-    /**
-     * @var string[]
-     */
-    protected $MinusKeywords;
-    /**
-     * @var string
-     */
-    protected $StatusActivating;
-    /**
-     * @var string
-     */
-    protected $StatusArchive;
-    /**
-     * @var string
-     */
-    protected $StatusBannerModerate;
-    /**
-     * @var string
-     */
-    protected $StatusPhrasesModerate;
-    /**
-     * @var string
-     */
-    protected $StatusPhoneModerate;
-    /**
-     * @var string
-     */
-    protected $StatusShow;
-    /**
-     * @var string
-     */
-    protected $IsActive;
-    /**
-     * @var string
-     */
-    protected $StatusSitelinksModerate;
-    /**
-     * @var Sitelink[]
-     */
-    protected $Sitelinks;
-    /**
-     * @var string[]
-     */
-    protected $AdWarnings;
-    /**
-     * @var string
-     */
-    protected $FixedOnModeration;
-    /**
-     * @var RejectReason[]
-     */
-    protected $ModerateRejectionReasons;
-    /**
-     * @var string
-     */
-    protected $Type;
-    /**
-     * @var int
-     */
-    protected $AdGroupID;
-    /**
-     * @var string
-     */
-    protected $AdGroupName;
-    /**
-     * @var string
-     */
-    protected $AutoMinusWords;
-    /**
-     * @var string
-     */
-    protected $AgeLabel;
-    /**
-     * @var string
-     */
-    protected $AdImageHash;
-    /**
-     * @var string
-     */
-    protected $StatusAdImageModerate;
-    /**
-     * @var int
-     */
-    protected $AdGroupMobileBidAdjustment;
+
+    protected $BannerID = null;
+
+    protected $CampaignID = null;
+
+    protected $Title = null;
+
+    protected $Text = null;
+
+    protected $Href = null;
+
+    protected $Domain = null;
+
+    protected $ContactInfo = null;
+
+    protected $Geo = null;
+
+    protected $Phrases = null;
+
+    protected $MinusKeywords = null;
+
+    protected $StatusActivating = null;
+
+    protected $StatusArchive = null;
+
+    protected $StatusBannerModerate = null;
+
+    protected $StatusPhrasesModerate = null;
+
+    protected $StatusPhoneModerate = null;
+
+    protected $StatusShow = null;
+
+    protected $IsActive = null;
+
+    protected $StatusSitelinksModerate = null;
+
+    protected $Sitelinks = null;
+
+    protected $AdWarnings = null;
+
+    protected $FixedOnModeration = null;
+
+    protected $ModerateRejectionReasons = null;
+
+    protected $Type = null;
+
+    protected $AdGroupID = null;
+
+    protected $AdGroupName = null;
+
+    protected $AutoMinusWords = null;
+
+    protected $AgeLabel = null;
+
+    protected $AdImageHash = null;
+
+    protected $StatusAdImageModerate = null;
+
+    protected $AdGroupMobileBidAdjustment = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of BannerInfo.
      *
-     * @return self
+     * @return BannerInfo
      */
     public static function create()
     {
@@ -140,9 +79,9 @@ class BannerInfo
     }
 
     /**
-     * Gets the BannerID.
+     * Gets BannerID.
      *
-     * @return int
+     * @return int|null
      */
     public function getBannerID()
     {
@@ -150,23 +89,22 @@ class BannerInfo
     }
 
     /**
-     * Sets the BannerID.
+     * Sets BannerID.
      *
-     * @param int $BannerID
-     *
-     * @return BannerInfo
+     * @param int|null $value
+     * @return $this
      */
-    public function setBannerID($BannerID)
+    public function setBannerID($value = null)
     {
-        $this->BannerID = $BannerID;
+        $this->BannerID = $value;
 
         return $this;
     }
 
     /**
-     * Gets the CampaignID.
+     * Gets CampaignID.
      *
-     * @return int
+     * @return int|null
      */
     public function getCampaignID()
     {
@@ -174,23 +112,22 @@ class BannerInfo
     }
 
     /**
-     * Sets the CampaignID.
+     * Sets CampaignID.
      *
-     * @param int $CampaignID
-     *
-     * @return BannerInfo
+     * @param int|null $value
+     * @return $this
      */
-    public function setCampaignID($CampaignID)
+    public function setCampaignID($value = null)
     {
-        $this->CampaignID = $CampaignID;
+        $this->CampaignID = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Title.
+     * Gets Title.
      *
-     * @return string
+     * @return string|null
      */
     public function getTitle()
     {
@@ -198,23 +135,22 @@ class BannerInfo
     }
 
     /**
-     * Sets the Title.
+     * Sets Title.
      *
-     * @param string $Title
-     *
-     * @return BannerInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setTitle($Title)
+    public function setTitle($value = null)
     {
-        $this->Title = $Title;
+        $this->Title = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Text.
+     * Gets Text.
      *
-     * @return string
+     * @return string|null
      */
     public function getText()
     {
@@ -222,23 +158,22 @@ class BannerInfo
     }
 
     /**
-     * Sets the Text.
+     * Sets Text.
      *
-     * @param string $Text
-     *
-     * @return BannerInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setText($Text)
+    public function setText($value = null)
     {
-        $this->Text = $Text;
+        $this->Text = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Href.
+     * Gets Href.
      *
-     * @return string
+     * @return string|null
      */
     public function getHref()
     {
@@ -246,23 +181,22 @@ class BannerInfo
     }
 
     /**
-     * Sets the Href.
+     * Sets Href.
      *
-     * @param string $Href
-     *
-     * @return BannerInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setHref($Href)
+    public function setHref($value = null)
     {
-        $this->Href = $Href;
+        $this->Href = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Domain.
+     * Gets Domain.
      *
-     * @return string
+     * @return string|null
      */
     public function getDomain()
     {
@@ -270,23 +204,22 @@ class BannerInfo
     }
 
     /**
-     * Sets the Domain.
+     * Sets Domain.
      *
-     * @param string $Domain
-     *
-     * @return BannerInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setDomain($Domain)
+    public function setDomain($value = null)
     {
-        $this->Domain = $Domain;
+        $this->Domain = $value;
 
         return $this;
     }
 
     /**
-     * Gets the ContactInfo.
+     * Gets ContactInfo.
      *
-     * @return ContactInfo
+     * @return ContactInfo|null
      */
     public function getContactInfo()
     {
@@ -294,23 +227,22 @@ class BannerInfo
     }
 
     /**
-     * Sets the ContactInfo.
+     * Sets ContactInfo.
      *
-     * @param ContactInfo $ContactInfo
-     *
-     * @return BannerInfo
+     * @param ContactInfo|null $value
+     * @return $this
      */
-    public function setContactInfo(ContactInfo $ContactInfo)
+    public function setContactInfo(ContactInfo $value = null)
     {
-        $this->ContactInfo = $ContactInfo;
+        $this->ContactInfo = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Geo.
+     * Gets Geo.
      *
-     * @return string
+     * @return string|null
      */
     public function getGeo()
     {
@@ -318,23 +250,22 @@ class BannerInfo
     }
 
     /**
-     * Sets the Geo.
+     * Sets Geo.
      *
-     * @param string $Geo
-     *
-     * @return BannerInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setGeo($Geo)
+    public function setGeo($value = null)
     {
-        $this->Geo = $Geo;
+        $this->Geo = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Phrases.
+     * Gets Phrases.
      *
-     * @return BannerPhraseInfo[]
+     * @return BannerPhraseInfo[]|null
      */
     public function getPhrases()
     {
@@ -342,23 +273,22 @@ class BannerInfo
     }
 
     /**
-     * Sets the Phrases.
+     * Sets Phrases.
      *
-     * @param BannerPhraseInfo[] $Phrases
-     *
-     * @return BannerInfo
+     * @param array|null $value
+     * @return $this
      */
-    public function setPhrases(array $Phrases)
+    public function setPhrases(array $value = null)
     {
-        $this->Phrases = $Phrases;
+        $this->Phrases = $value;
 
         return $this;
     }
 
     /**
-     * Gets the MinusKeywords.
+     * Gets MinusKeywords.
      *
-     * @return string[]
+     * @return string[]|null
      */
     public function getMinusKeywords()
     {
@@ -366,23 +296,22 @@ class BannerInfo
     }
 
     /**
-     * Sets the MinusKeywords.
+     * Sets MinusKeywords.
      *
-     * @param string[] $MinusKeywords
-     *
-     * @return BannerInfo
+     * @param array|null $value
+     * @return $this
      */
-    public function setMinusKeywords(array $MinusKeywords)
+    public function setMinusKeywords(array $value = null)
     {
-        $this->MinusKeywords = $MinusKeywords;
+        $this->MinusKeywords = $value;
 
         return $this;
     }
 
     /**
-     * Gets the StatusActivating.
+     * Gets StatusActivating.
      *
-     * @return string
+     * @return string|null
      */
     public function getStatusActivating()
     {
@@ -390,23 +319,22 @@ class BannerInfo
     }
 
     /**
-     * Sets the StatusActivating.
+     * Sets StatusActivating.
      *
-     * @param string $StatusActivating
-     *
-     * @return BannerInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setStatusActivating($StatusActivating)
+    public function setStatusActivating($value = null)
     {
-        $this->StatusActivating = $StatusActivating;
+        $this->StatusActivating = $value;
 
         return $this;
     }
 
     /**
-     * Gets the StatusArchive.
+     * Gets StatusArchive.
      *
-     * @return string
+     * @return string|null
      */
     public function getStatusArchive()
     {
@@ -414,23 +342,22 @@ class BannerInfo
     }
 
     /**
-     * Sets the StatusArchive.
+     * Sets StatusArchive.
      *
-     * @param string $StatusArchive
-     *
-     * @return BannerInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setStatusArchive($StatusArchive)
+    public function setStatusArchive($value = null)
     {
-        $this->StatusArchive = $StatusArchive;
+        $this->StatusArchive = $value;
 
         return $this;
     }
 
     /**
-     * Gets the StatusBannerModerate.
+     * Gets StatusBannerModerate.
      *
-     * @return string
+     * @return string|null
      */
     public function getStatusBannerModerate()
     {
@@ -438,23 +365,22 @@ class BannerInfo
     }
 
     /**
-     * Sets the StatusBannerModerate.
+     * Sets StatusBannerModerate.
      *
-     * @param string $StatusBannerModerate
-     *
-     * @return BannerInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setStatusBannerModerate($StatusBannerModerate)
+    public function setStatusBannerModerate($value = null)
     {
-        $this->StatusBannerModerate = $StatusBannerModerate;
+        $this->StatusBannerModerate = $value;
 
         return $this;
     }
 
     /**
-     * Gets the StatusPhrasesModerate.
+     * Gets StatusPhrasesModerate.
      *
-     * @return string
+     * @return string|null
      */
     public function getStatusPhrasesModerate()
     {
@@ -462,23 +388,22 @@ class BannerInfo
     }
 
     /**
-     * Sets the StatusPhrasesModerate.
+     * Sets StatusPhrasesModerate.
      *
-     * @param string $StatusPhrasesModerate
-     *
-     * @return BannerInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setStatusPhrasesModerate($StatusPhrasesModerate)
+    public function setStatusPhrasesModerate($value = null)
     {
-        $this->StatusPhrasesModerate = $StatusPhrasesModerate;
+        $this->StatusPhrasesModerate = $value;
 
         return $this;
     }
 
     /**
-     * Gets the StatusPhoneModerate.
+     * Gets StatusPhoneModerate.
      *
-     * @return string
+     * @return string|null
      */
     public function getStatusPhoneModerate()
     {
@@ -486,23 +411,22 @@ class BannerInfo
     }
 
     /**
-     * Sets the StatusPhoneModerate.
+     * Sets StatusPhoneModerate.
      *
-     * @param string $StatusPhoneModerate
-     *
-     * @return BannerInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setStatusPhoneModerate($StatusPhoneModerate)
+    public function setStatusPhoneModerate($value = null)
     {
-        $this->StatusPhoneModerate = $StatusPhoneModerate;
+        $this->StatusPhoneModerate = $value;
 
         return $this;
     }
 
     /**
-     * Gets the StatusShow.
+     * Gets StatusShow.
      *
-     * @return string
+     * @return string|null
      */
     public function getStatusShow()
     {
@@ -510,23 +434,22 @@ class BannerInfo
     }
 
     /**
-     * Sets the StatusShow.
+     * Sets StatusShow.
      *
-     * @param string $StatusShow
-     *
-     * @return BannerInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setStatusShow($StatusShow)
+    public function setStatusShow($value = null)
     {
-        $this->StatusShow = $StatusShow;
+        $this->StatusShow = $value;
 
         return $this;
     }
 
     /**
-     * Gets the IsActive.
+     * Gets IsActive.
      *
-     * @return string
+     * @return string|null
      */
     public function getIsActive()
     {
@@ -534,23 +457,22 @@ class BannerInfo
     }
 
     /**
-     * Sets the IsActive.
+     * Sets IsActive.
      *
-     * @param string $IsActive
-     *
-     * @return BannerInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setIsActive($IsActive)
+    public function setIsActive($value = null)
     {
-        $this->IsActive = $IsActive;
+        $this->IsActive = $value;
 
         return $this;
     }
 
     /**
-     * Gets the StatusSitelinksModerate.
+     * Gets StatusSitelinksModerate.
      *
-     * @return string
+     * @return string|null
      */
     public function getStatusSitelinksModerate()
     {
@@ -558,23 +480,22 @@ class BannerInfo
     }
 
     /**
-     * Sets the StatusSitelinksModerate.
+     * Sets StatusSitelinksModerate.
      *
-     * @param string $StatusSitelinksModerate
-     *
-     * @return BannerInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setStatusSitelinksModerate($StatusSitelinksModerate)
+    public function setStatusSitelinksModerate($value = null)
     {
-        $this->StatusSitelinksModerate = $StatusSitelinksModerate;
+        $this->StatusSitelinksModerate = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Sitelinks.
+     * Gets Sitelinks.
      *
-     * @return Sitelink[]
+     * @return Sitelink[]|null
      */
     public function getSitelinks()
     {
@@ -582,23 +503,22 @@ class BannerInfo
     }
 
     /**
-     * Sets the Sitelinks.
+     * Sets Sitelinks.
      *
-     * @param Sitelink[] $Sitelinks
-     *
-     * @return BannerInfo
+     * @param array|null $value
+     * @return $this
      */
-    public function setSitelinks(array $Sitelinks)
+    public function setSitelinks(array $value = null)
     {
-        $this->Sitelinks = $Sitelinks;
+        $this->Sitelinks = $value;
 
         return $this;
     }
 
     /**
-     * Gets the AdWarnings.
+     * Gets AdWarnings.
      *
-     * @return string[]
+     * @return string[]|null
      */
     public function getAdWarnings()
     {
@@ -606,23 +526,22 @@ class BannerInfo
     }
 
     /**
-     * Sets the AdWarnings.
+     * Sets AdWarnings.
      *
-     * @param string[] $AdWarnings
-     *
-     * @return BannerInfo
+     * @param array|null $value
+     * @return $this
      */
-    public function setAdWarnings(array $AdWarnings)
+    public function setAdWarnings(array $value = null)
     {
-        $this->AdWarnings = $AdWarnings;
+        $this->AdWarnings = $value;
 
         return $this;
     }
 
     /**
-     * Gets the FixedOnModeration.
+     * Gets FixedOnModeration.
      *
-     * @return string
+     * @return string|null
      */
     public function getFixedOnModeration()
     {
@@ -630,23 +549,22 @@ class BannerInfo
     }
 
     /**
-     * Sets the FixedOnModeration.
+     * Sets FixedOnModeration.
      *
-     * @param string $FixedOnModeration
-     *
-     * @return BannerInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setFixedOnModeration($FixedOnModeration)
+    public function setFixedOnModeration($value = null)
     {
-        $this->FixedOnModeration = $FixedOnModeration;
+        $this->FixedOnModeration = $value;
 
         return $this;
     }
 
     /**
-     * Gets the ModerateRejectionReasons.
+     * Gets ModerateRejectionReasons.
      *
-     * @return RejectReason[]
+     * @return RejectReason[]|null
      */
     public function getModerateRejectionReasons()
     {
@@ -654,23 +572,22 @@ class BannerInfo
     }
 
     /**
-     * Sets the ModerateRejectionReasons.
+     * Sets ModerateRejectionReasons.
      *
-     * @param RejectReason[] $ModerateRejectionReasons
-     *
-     * @return BannerInfo
+     * @param array|null $value
+     * @return $this
      */
-    public function setModerateRejectionReasons(array $ModerateRejectionReasons)
+    public function setModerateRejectionReasons(array $value = null)
     {
-        $this->ModerateRejectionReasons = $ModerateRejectionReasons;
+        $this->ModerateRejectionReasons = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Type.
+     * Gets Type.
      *
-     * @return string
+     * @return string|null
      */
     public function getType()
     {
@@ -678,23 +595,22 @@ class BannerInfo
     }
 
     /**
-     * Sets the Type.
+     * Sets Type.
      *
-     * @param string $Type
-     *
-     * @return BannerInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setType($Type)
+    public function setType($value = null)
     {
-        $this->Type = $Type;
+        $this->Type = $value;
 
         return $this;
     }
 
     /**
-     * Gets the AdGroupID.
+     * Gets AdGroupID.
      *
-     * @return int
+     * @return int|null
      */
     public function getAdGroupID()
     {
@@ -702,23 +618,22 @@ class BannerInfo
     }
 
     /**
-     * Sets the AdGroupID.
+     * Sets AdGroupID.
      *
-     * @param int $AdGroupID
-     *
-     * @return BannerInfo
+     * @param int|null $value
+     * @return $this
      */
-    public function setAdGroupID($AdGroupID)
+    public function setAdGroupID($value = null)
     {
-        $this->AdGroupID = $AdGroupID;
+        $this->AdGroupID = $value;
 
         return $this;
     }
 
     /**
-     * Gets the AdGroupName.
+     * Gets AdGroupName.
      *
-     * @return string
+     * @return string|null
      */
     public function getAdGroupName()
     {
@@ -726,23 +641,22 @@ class BannerInfo
     }
 
     /**
-     * Sets the AdGroupName.
+     * Sets AdGroupName.
      *
-     * @param string $AdGroupName
-     *
-     * @return BannerInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setAdGroupName($AdGroupName)
+    public function setAdGroupName($value = null)
     {
-        $this->AdGroupName = $AdGroupName;
+        $this->AdGroupName = $value;
 
         return $this;
     }
 
     /**
-     * Gets the AutoMinusWords.
+     * Gets AutoMinusWords.
      *
-     * @return string
+     * @return string|null
      */
     public function getAutoMinusWords()
     {
@@ -750,23 +664,22 @@ class BannerInfo
     }
 
     /**
-     * Sets the AutoMinusWords.
+     * Sets AutoMinusWords.
      *
-     * @param string $AutoMinusWords
-     *
-     * @return BannerInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setAutoMinusWords($AutoMinusWords)
+    public function setAutoMinusWords($value = null)
     {
-        $this->AutoMinusWords = $AutoMinusWords;
+        $this->AutoMinusWords = $value;
 
         return $this;
     }
 
     /**
-     * Gets the AgeLabel.
+     * Gets AgeLabel.
      *
-     * @return string
+     * @return string|null
      */
     public function getAgeLabel()
     {
@@ -774,23 +687,22 @@ class BannerInfo
     }
 
     /**
-     * Sets the AgeLabel.
+     * Sets AgeLabel.
      *
-     * @param string $AgeLabel
-     *
-     * @return BannerInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setAgeLabel($AgeLabel)
+    public function setAgeLabel($value = null)
     {
-        $this->AgeLabel = $AgeLabel;
+        $this->AgeLabel = $value;
 
         return $this;
     }
 
     /**
-     * Gets the AdImageHash.
+     * Gets AdImageHash.
      *
-     * @return string
+     * @return string|null
      */
     public function getAdImageHash()
     {
@@ -798,23 +710,22 @@ class BannerInfo
     }
 
     /**
-     * Sets the AdImageHash.
+     * Sets AdImageHash.
      *
-     * @param string $AdImageHash
-     *
-     * @return BannerInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setAdImageHash($AdImageHash)
+    public function setAdImageHash($value = null)
     {
-        $this->AdImageHash = $AdImageHash;
+        $this->AdImageHash = $value;
 
         return $this;
     }
 
     /**
-     * Gets the StatusAdImageModerate.
+     * Gets StatusAdImageModerate.
      *
-     * @return string
+     * @return string|null
      */
     public function getStatusAdImageModerate()
     {
@@ -822,23 +733,22 @@ class BannerInfo
     }
 
     /**
-     * Sets the StatusAdImageModerate.
+     * Sets StatusAdImageModerate.
      *
-     * @param string $StatusAdImageModerate
-     *
-     * @return BannerInfo
+     * @param string|null $value
+     * @return $this
      */
-    public function setStatusAdImageModerate($StatusAdImageModerate)
+    public function setStatusAdImageModerate($value = null)
     {
-        $this->StatusAdImageModerate = $StatusAdImageModerate;
+        $this->StatusAdImageModerate = $value;
 
         return $this;
     }
 
     /**
-     * Gets the AdGroupMobileBidAdjustment.
+     * Gets AdGroupMobileBidAdjustment.
      *
-     * @return int
+     * @return int|null
      */
     public function getAdGroupMobileBidAdjustment()
     {
@@ -846,16 +756,18 @@ class BannerInfo
     }
 
     /**
-     * Sets the AdGroupMobileBidAdjustment.
+     * Sets AdGroupMobileBidAdjustment.
      *
-     * @param int $AdGroupMobileBidAdjustment
-     *
-     * @return BannerInfo
+     * @param int|null $value
+     * @return $this
      */
-    public function setAdGroupMobileBidAdjustment($AdGroupMobileBidAdjustment)
+    public function setAdGroupMobileBidAdjustment($value = null)
     {
-        $this->AdGroupMobileBidAdjustment = $AdGroupMobileBidAdjustment;
+        $this->AdGroupMobileBidAdjustment = $value;
 
         return $this;
     }
+
+
 }
+

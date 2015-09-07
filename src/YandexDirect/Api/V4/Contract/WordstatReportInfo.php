@@ -3,32 +3,23 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class WordstatReportInfo
 {
-    /**
-     * @var string
-     */
-    protected $Phrase;
-    /**
-     * @var int[]
-     */
-    protected $GeoID;
-    /**
-     * @var WordstatItem[]
-     */
-    protected $SearchedWith;
-    /**
-     * @var WordstatItem[]
-     */
-    protected $SearchedAlso;
+
+    protected $Phrase = null;
+
+    protected $GeoID = array();
+
+    protected $SearchedWith = array();
+
+    protected $SearchedAlso = array();
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of WordstatReportInfo.
      *
-     * @return self
+     * @return WordstatReportInfo
      */
     public static function create()
     {
@@ -36,7 +27,7 @@ class WordstatReportInfo
     }
 
     /**
-     * Gets the Phrase.
+     * Gets Phrase.
      *
      * @return string
      */
@@ -46,21 +37,20 @@ class WordstatReportInfo
     }
 
     /**
-     * Sets the Phrase.
+     * Sets Phrase.
      *
-     * @param string $Phrase
-     *
-     * @return WordstatReportInfo
+     * @param string $value
+     * @return $this
      */
-    public function setPhrase($Phrase)
+    public function setPhrase($value)
     {
-        $this->Phrase = $Phrase;
+        $this->Phrase = $value;
 
         return $this;
     }
 
     /**
-     * Gets the GeoID.
+     * Gets GeoID.
      *
      * @return int[]
      */
@@ -70,21 +60,20 @@ class WordstatReportInfo
     }
 
     /**
-     * Sets the GeoID.
+     * Sets GeoID.
      *
-     * @param int[] $GeoID
-     *
-     * @return WordstatReportInfo
+     * @param array $value
+     * @return $this
      */
-    public function setGeoID(array $GeoID)
+    public function setGeoID(array $value)
     {
-        $this->GeoID = $GeoID;
+        $this->GeoID = $value;
 
         return $this;
     }
 
     /**
-     * Gets the SearchedWith.
+     * Gets SearchedWith.
      *
      * @return WordstatItem[]
      */
@@ -94,21 +83,20 @@ class WordstatReportInfo
     }
 
     /**
-     * Sets the SearchedWith.
+     * Sets SearchedWith.
      *
-     * @param WordstatItem[] $SearchedWith
-     *
-     * @return WordstatReportInfo
+     * @param array $value
+     * @return $this
      */
-    public function setSearchedWith(array $SearchedWith)
+    public function setSearchedWith(array $value)
     {
-        $this->SearchedWith = $SearchedWith;
+        $this->SearchedWith = $value;
 
         return $this;
     }
 
     /**
-     * Gets the SearchedAlso.
+     * Gets SearchedAlso.
      *
      * @return WordstatItem[]
      */
@@ -118,16 +106,18 @@ class WordstatReportInfo
     }
 
     /**
-     * Sets the SearchedAlso.
+     * Sets SearchedAlso.
      *
-     * @param WordstatItem[] $SearchedAlso
-     *
-     * @return WordstatReportInfo
+     * @param array $value
+     * @return $this
      */
-    public function setSearchedAlso(array $SearchedAlso)
+    public function setSearchedAlso(array $value)
     {
-        $this->SearchedAlso = $SearchedAlso;
+        $this->SearchedAlso = $value;
 
         return $this;
     }
+
+
 }
+

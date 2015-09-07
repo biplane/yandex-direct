@@ -3,24 +3,19 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class CoverageInfo
 {
-    /**
-     * @var float
-     */
-    protected $Probability;
-    /**
-     * @var float
-     */
-    protected $Price;
+
+    protected $Probability = null;
+
+    protected $Price = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of CoverageInfo.
      *
-     * @return self
+     * @return CoverageInfo
      */
     public static function create()
     {
@@ -28,7 +23,7 @@ class CoverageInfo
     }
 
     /**
-     * Gets the Probability.
+     * Gets Probability.
      *
      * @return float
      */
@@ -38,21 +33,20 @@ class CoverageInfo
     }
 
     /**
-     * Sets the Probability.
+     * Sets Probability.
      *
-     * @param float $Probability
-     *
-     * @return CoverageInfo
+     * @param float $value
+     * @return $this
      */
-    public function setProbability($Probability)
+    public function setProbability($value)
     {
-        $this->Probability = $Probability;
+        $this->Probability = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Price.
+     * Gets Price.
      *
      * @return float
      */
@@ -62,16 +56,18 @@ class CoverageInfo
     }
 
     /**
-     * Sets the Price.
+     * Sets Price.
      *
-     * @param float $Price
-     *
-     * @return CoverageInfo
+     * @param float $value
+     * @return $this
      */
-    public function setPrice($Price)
+    public function setPrice($value)
     {
-        $this->Price = $Price;
+        $this->Price = $value;
 
         return $this;
     }
+
+
 }
+

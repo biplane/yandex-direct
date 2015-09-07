@@ -3,36 +3,25 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class AccountManagementRequest
 {
-    /**
-     * @var string
-     */
-    protected $Action;
-    /**
-     * @var AccountSelectionCriteria
-     */
-    protected $SelectionCriteria;
-    /**
-     * @var Payment[]
-     */
-    protected $Payments;
-    /**
-     * @var Transfer[]
-     */
-    protected $Transfers;
-    /**
-     * @var Account[]
-     */
-    protected $Accounts;
+
+    protected $Action = null;
+
+    protected $SelectionCriteria = null;
+
+    protected $Payments = null;
+
+    protected $Transfers = null;
+
+    protected $Accounts = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of AccountManagementRequest.
      *
-     * @return self
+     * @return AccountManagementRequest
      */
     public static function create()
     {
@@ -40,7 +29,7 @@ class AccountManagementRequest
     }
 
     /**
-     * Gets the Action.
+     * Gets Action.
      *
      * @return string
      */
@@ -50,23 +39,22 @@ class AccountManagementRequest
     }
 
     /**
-     * Sets the Action.
+     * Sets Action.
      *
-     * @param string $Action
-     *
-     * @return AccountManagementRequest
+     * @param string $value
+     * @return $this
      */
-    public function setAction($Action)
+    public function setAction($value)
     {
-        $this->Action = $Action;
+        $this->Action = $value;
 
         return $this;
     }
 
     /**
-     * Gets the SelectionCriteria.
+     * Gets SelectionCriteria.
      *
-     * @return AccountSelectionCriteria
+     * @return AccountSelectionCriteria|null
      */
     public function getSelectionCriteria()
     {
@@ -74,23 +62,22 @@ class AccountManagementRequest
     }
 
     /**
-     * Sets the SelectionCriteria.
+     * Sets SelectionCriteria.
      *
-     * @param AccountSelectionCriteria $SelectionCriteria
-     *
-     * @return AccountManagementRequest
+     * @param AccountSelectionCriteria|null $value
+     * @return $this
      */
-    public function setSelectionCriteria(AccountSelectionCriteria $SelectionCriteria)
+    public function setSelectionCriteria(AccountSelectionCriteria $value = null)
     {
-        $this->SelectionCriteria = $SelectionCriteria;
+        $this->SelectionCriteria = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Payments.
+     * Gets Payments.
      *
-     * @return Payment[]
+     * @return Payment[]|null
      */
     public function getPayments()
     {
@@ -98,23 +85,22 @@ class AccountManagementRequest
     }
 
     /**
-     * Sets the Payments.
+     * Sets Payments.
      *
-     * @param Payment[] $Payments
-     *
-     * @return AccountManagementRequest
+     * @param array|null $value
+     * @return $this
      */
-    public function setPayments(array $Payments)
+    public function setPayments(array $value = null)
     {
-        $this->Payments = $Payments;
+        $this->Payments = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Transfers.
+     * Gets Transfers.
      *
-     * @return Transfer[]
+     * @return Transfer[]|null
      */
     public function getTransfers()
     {
@@ -122,23 +108,22 @@ class AccountManagementRequest
     }
 
     /**
-     * Sets the Transfers.
+     * Sets Transfers.
      *
-     * @param Transfer[] $Transfers
-     *
-     * @return AccountManagementRequest
+     * @param array|null $value
+     * @return $this
      */
-    public function setTransfers(array $Transfers)
+    public function setTransfers(array $value = null)
     {
-        $this->Transfers = $Transfers;
+        $this->Transfers = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Accounts.
+     * Gets Accounts.
      *
-     * @return Account[]
+     * @return Account[]|null
      */
     public function getAccounts()
     {
@@ -146,16 +131,18 @@ class AccountManagementRequest
     }
 
     /**
-     * Sets the Accounts.
+     * Sets Accounts.
      *
-     * @param Account[] $Accounts
-     *
-     * @return AccountManagementRequest
+     * @param array|null $value
+     * @return $this
      */
-    public function setAccounts(array $Accounts)
+    public function setAccounts(array $value = null)
     {
-        $this->Accounts = $Accounts;
+        $this->Accounts = $value;
 
         return $this;
     }
+
+
 }
+

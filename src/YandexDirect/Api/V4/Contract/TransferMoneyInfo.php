@@ -3,24 +3,19 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class TransferMoneyInfo
 {
-    /**
-     * @var PayCampElement[]
-     */
-    protected $FromCampaigns;
-    /**
-     * @var PayCampElement[]
-     */
-    protected $ToCampaigns;
+
+    protected $FromCampaigns = array();
+
+    protected $ToCampaigns = array();
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of TransferMoneyInfo.
      *
-     * @return self
+     * @return TransferMoneyInfo
      */
     public static function create()
     {
@@ -28,7 +23,7 @@ class TransferMoneyInfo
     }
 
     /**
-     * Gets the FromCampaigns.
+     * Gets FromCampaigns.
      *
      * @return PayCampElement[]
      */
@@ -38,21 +33,20 @@ class TransferMoneyInfo
     }
 
     /**
-     * Sets the FromCampaigns.
+     * Sets FromCampaigns.
      *
-     * @param PayCampElement[] $FromCampaigns
-     *
-     * @return TransferMoneyInfo
+     * @param array $value
+     * @return $this
      */
-    public function setFromCampaigns(array $FromCampaigns)
+    public function setFromCampaigns(array $value)
     {
-        $this->FromCampaigns = $FromCampaigns;
+        $this->FromCampaigns = $value;
 
         return $this;
     }
 
     /**
-     * Gets the ToCampaigns.
+     * Gets ToCampaigns.
      *
      * @return PayCampElement[]
      */
@@ -62,16 +56,18 @@ class TransferMoneyInfo
     }
 
     /**
-     * Sets the ToCampaigns.
+     * Sets ToCampaigns.
      *
-     * @param PayCampElement[] $ToCampaigns
-     *
-     * @return TransferMoneyInfo
+     * @param array $value
+     * @return $this
      */
-    public function setToCampaigns(array $ToCampaigns)
+    public function setToCampaigns(array $value)
     {
-        $this->ToCampaigns = $ToCampaigns;
+        $this->ToCampaigns = $value;
 
         return $this;
     }
+
+
 }
+

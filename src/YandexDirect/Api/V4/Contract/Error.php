@@ -3,28 +3,21 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class Error
 {
-    /**
-     * @var int
-     */
-    protected $FaultCode;
-    /**
-     * @var string
-     */
-    protected $FaultString;
-    /**
-     * @var string
-     */
-    protected $FaultDetail;
+
+    protected $FaultCode = null;
+
+    protected $FaultString = null;
+
+    protected $FaultDetail = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of Error.
      *
-     * @return self
+     * @return Error
      */
     public static function create()
     {
@@ -32,7 +25,7 @@ class Error
     }
 
     /**
-     * Gets the FaultCode.
+     * Gets FaultCode.
      *
      * @return int
      */
@@ -42,21 +35,20 @@ class Error
     }
 
     /**
-     * Sets the FaultCode.
+     * Sets FaultCode.
      *
-     * @param int $FaultCode
-     *
-     * @return Error
+     * @param int $value
+     * @return $this
      */
-    public function setFaultCode($FaultCode)
+    public function setFaultCode($value)
     {
-        $this->FaultCode = $FaultCode;
+        $this->FaultCode = $value;
 
         return $this;
     }
 
     /**
-     * Gets the FaultString.
+     * Gets FaultString.
      *
      * @return string
      */
@@ -66,23 +58,22 @@ class Error
     }
 
     /**
-     * Sets the FaultString.
+     * Sets FaultString.
      *
-     * @param string $FaultString
-     *
-     * @return Error
+     * @param string $value
+     * @return $this
      */
-    public function setFaultString($FaultString)
+    public function setFaultString($value)
     {
-        $this->FaultString = $FaultString;
+        $this->FaultString = $value;
 
         return $this;
     }
 
     /**
-     * Gets the FaultDetail.
+     * Gets FaultDetail.
      *
-     * @return string
+     * @return string|null
      */
     public function getFaultDetail()
     {
@@ -90,16 +81,18 @@ class Error
     }
 
     /**
-     * Sets the FaultDetail.
+     * Sets FaultDetail.
      *
-     * @param string $FaultDetail
-     *
-     * @return Error
+     * @param string|null $value
+     * @return $this
      */
-    public function setFaultDetail($FaultDetail)
+    public function setFaultDetail($value = null)
     {
-        $this->FaultDetail = $FaultDetail;
+        $this->FaultDetail = $value;
 
         return $this;
     }
+
+
 }
+

@@ -3,48 +3,31 @@
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
- * @codeCoverageIgnore
- * @SuppressWarnings(PHPMD)
+ * Auto-generated code.
  */
 class ForecastCommonInfo
 {
-    /**
-     * @var string
-     */
-    protected $Geo;
-    /**
-     * @var int
-     */
-    protected $Shows;
-    /**
-     * @var int
-     */
-    protected $Clicks;
-    /**
-     * @var int
-     */
-    protected $FirstPlaceClicks;
-    /**
-     * @var int
-     */
-    protected $PremiumClicks;
-    /**
-     * @var float
-     */
-    protected $Min;
-    /**
-     * @var float
-     */
-    protected $Max;
-    /**
-     * @var float
-     */
-    protected $PremiumMin;
+
+    protected $Geo = null;
+
+    protected $Shows = null;
+
+    protected $Clicks = null;
+
+    protected $FirstPlaceClicks = null;
+
+    protected $PremiumClicks = null;
+
+    protected $Min = null;
+
+    protected $Max = null;
+
+    protected $PremiumMin = null;
 
     /**
-     * Creates a new instance.
+     * Creates a new instance of ForecastCommonInfo.
      *
-     * @return self
+     * @return ForecastCommonInfo
      */
     public static function create()
     {
@@ -52,7 +35,7 @@ class ForecastCommonInfo
     }
 
     /**
-     * Gets the Geo.
+     * Gets Geo.
      *
      * @return string
      */
@@ -62,21 +45,20 @@ class ForecastCommonInfo
     }
 
     /**
-     * Sets the Geo.
+     * Sets Geo.
      *
-     * @param string $Geo
-     *
-     * @return ForecastCommonInfo
+     * @param string $value
+     * @return $this
      */
-    public function setGeo($Geo)
+    public function setGeo($value)
     {
-        $this->Geo = $Geo;
+        $this->Geo = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Shows.
+     * Gets Shows.
      *
      * @return int
      */
@@ -86,21 +68,20 @@ class ForecastCommonInfo
     }
 
     /**
-     * Sets the Shows.
+     * Sets Shows.
      *
-     * @param int $Shows
-     *
-     * @return ForecastCommonInfo
+     * @param int $value
+     * @return $this
      */
-    public function setShows($Shows)
+    public function setShows($value)
     {
-        $this->Shows = $Shows;
+        $this->Shows = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Clicks.
+     * Gets Clicks.
      *
      * @return int
      */
@@ -110,21 +91,20 @@ class ForecastCommonInfo
     }
 
     /**
-     * Sets the Clicks.
+     * Sets Clicks.
      *
-     * @param int $Clicks
-     *
-     * @return ForecastCommonInfo
+     * @param int $value
+     * @return $this
      */
-    public function setClicks($Clicks)
+    public function setClicks($value)
     {
-        $this->Clicks = $Clicks;
+        $this->Clicks = $value;
 
         return $this;
     }
 
     /**
-     * Gets the FirstPlaceClicks.
+     * Gets FirstPlaceClicks.
      *
      * @return int
      */
@@ -134,21 +114,20 @@ class ForecastCommonInfo
     }
 
     /**
-     * Sets the FirstPlaceClicks.
+     * Sets FirstPlaceClicks.
      *
-     * @param int $FirstPlaceClicks
-     *
-     * @return ForecastCommonInfo
+     * @param int $value
+     * @return $this
      */
-    public function setFirstPlaceClicks($FirstPlaceClicks)
+    public function setFirstPlaceClicks($value)
     {
-        $this->FirstPlaceClicks = $FirstPlaceClicks;
+        $this->FirstPlaceClicks = $value;
 
         return $this;
     }
 
     /**
-     * Gets the PremiumClicks.
+     * Gets PremiumClicks.
      *
      * @return int
      */
@@ -158,21 +137,20 @@ class ForecastCommonInfo
     }
 
     /**
-     * Sets the PremiumClicks.
+     * Sets PremiumClicks.
      *
-     * @param int $PremiumClicks
-     *
-     * @return ForecastCommonInfo
+     * @param int $value
+     * @return $this
      */
-    public function setPremiumClicks($PremiumClicks)
+    public function setPremiumClicks($value)
     {
-        $this->PremiumClicks = $PremiumClicks;
+        $this->PremiumClicks = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Min.
+     * Gets Min.
      *
      * @return float
      */
@@ -182,21 +160,20 @@ class ForecastCommonInfo
     }
 
     /**
-     * Sets the Min.
+     * Sets Min.
      *
-     * @param float $Min
-     *
-     * @return ForecastCommonInfo
+     * @param float $value
+     * @return $this
      */
-    public function setMin($Min)
+    public function setMin($value)
     {
-        $this->Min = $Min;
+        $this->Min = $value;
 
         return $this;
     }
 
     /**
-     * Gets the Max.
+     * Gets Max.
      *
      * @return float
      */
@@ -206,21 +183,20 @@ class ForecastCommonInfo
     }
 
     /**
-     * Sets the Max.
+     * Sets Max.
      *
-     * @param float $Max
-     *
-     * @return ForecastCommonInfo
+     * @param float $value
+     * @return $this
      */
-    public function setMax($Max)
+    public function setMax($value)
     {
-        $this->Max = $Max;
+        $this->Max = $value;
 
         return $this;
     }
 
     /**
-     * Gets the PremiumMin.
+     * Gets PremiumMin.
      *
      * @return float
      */
@@ -230,16 +206,18 @@ class ForecastCommonInfo
     }
 
     /**
-     * Sets the PremiumMin.
+     * Sets PremiumMin.
      *
-     * @param float $PremiumMin
-     *
-     * @return ForecastCommonInfo
+     * @param float $value
+     * @return $this
      */
-    public function setPremiumMin($PremiumMin)
+    public function setPremiumMin($value)
     {
-        $this->PremiumMin = $PremiumMin;
+        $this->PremiumMin = $value;
 
         return $this;
     }
+
+
 }
+
