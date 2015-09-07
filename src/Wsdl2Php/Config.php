@@ -21,6 +21,11 @@ class Config extends BaseConfig
             'excludeTypes'      => array(),
             'excludeOperations' => array(),
             'fixApiNamespace'   => false,
+            'renameType'        => function ($typeName) {
+                return $typeName;
+            }
         ));
+
+        $resolver->setAllowedTypes('renameType', 'closure');
     }
 }

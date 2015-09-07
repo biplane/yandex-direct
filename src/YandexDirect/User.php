@@ -3,6 +3,13 @@
 namespace Biplane\YandexDirect;
 
 use Biplane\YandexDirect\Api\V4\YandexApiService;
+use Biplane\YandexDirect\Api\V5\AdGroups;
+use Biplane\YandexDirect\Api\V5\Ads;
+use Biplane\YandexDirect\Api\V5\Bids;
+use Biplane\YandexDirect\Api\V5\Changes;
+use Biplane\YandexDirect\Api\V5\Keywords;
+use Biplane\YandexDirect\Api\V5\Sitelinks;
+use Biplane\YandexDirect\Api\V5\VCards;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\OptionsResolver\Options;
@@ -19,9 +26,20 @@ class User
     const LOCALE_EN = 'en';
     const LOCALE_UA = 'ua';
 
+    private static $classMap = array(
+        'YandexApiService' => '\Biplane\YandexDirect\Api\V4\YandexApiService',
+        'AdGroups' => 'Biplane\YandexDirect\Api\V5\AdGroups',
+        'Ads' => 'Biplane\YandexDirect\Api\V5\Ads',
+        'Bids' => 'Biplane\YandexDirect\Api\V5\Bids',
+        'Changes' => 'Biplane\YandexDirect\Api\V5\Changes',
+        'Keywords' => 'Biplane\YandexDirect\Api\V5\Keywords',
+        'Sitelinks' => 'Biplane\YandexDirect\Api\V5\Sitelinks',
+        'VCards' => 'Biplane\YandexDirect\Api\V5\VCards',
+    );
+
     private $options;
     private $dispatcher;
-    private $api;
+    private $proxies;
 
     /**
      * Constructor.
@@ -42,6 +60,7 @@ class User
 
         $this->options = $resolver->resolve($options);
         $this->dispatcher = $dispatcher;
+        $this->proxies = array();
 
         if (!empty($this->options['master_token']) && empty($this->options['login'])) {
             throw new \InvalidArgumentException('The login cannot be empty when the master token is set.');
@@ -115,11 +134,77 @@ class User
      */
     public function getApiService()
     {
-        if ($this->api === null) {
-            $this->api = new YandexApiService($this->dispatcher, $this);
-        }
+        return $this->getProxy('YandexApiService');
+    }
 
-        return $this->api;
+    /**
+     * Gets the proxy of web-service for manage ad groups.
+     *
+     * @return AdGroups
+     */
+    public function getAdGroupsService()
+    {
+        return $this->getProxy('AdGroups');
+    }
+
+    /**
+     * Gets the proxy of web-service for manage ads.
+     *
+     * @return Ads
+     */
+    public function getAdsService()
+    {
+        return $this->getProxy('Ads');
+    }
+
+    /**
+     * Gets the proxy of web-service for manage bids.
+     *
+     * @return Bids
+     */
+    public function getBidsService()
+    {
+        return $this->getProxy('Bids');
+    }
+
+    /**
+     * Gets the proxy of web-service for manage changes.
+     *
+     * @return Changes
+     */
+    public function getChangesService()
+    {
+        return $this->getProxy('Changes');
+    }
+
+    /**
+     * Gets the proxy of web-service for manage keywords.
+     *
+     * @return Keywords
+     */
+    public function getKeywordsService()
+    {
+        return $this->getProxy('Keywords');
+    }
+
+    /**
+     * Gets the proxy of web-service for manage sitelinks.
+     *
+     * @return Sitelinks
+     */
+    public function getSitelinksService()
+    {
+        return $this->getProxy('Sitelinks');
+    }
+
+    /**
+     * Gets the proxy of web-service for manage VCards.
+     *
+     * @return VCards
+     */
+    public function getVCardsService()
+    {
+        return $this->getProxy('VCards');
     }
 
     /**
@@ -180,5 +265,14 @@ class User
                     return $value;
                 }
             ));
+    }
+
+    private function getProxy($serviceClass)
+    {
+        if (isset($this->proxies[$serviceClass])) {
+            return $this->proxies[$serviceClass];
+        }
+
+        return $this->proxies[$serviceClass] = new self::$classMap[$serviceClass]($this->dispatcher, $this);
     }
 }

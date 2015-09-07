@@ -105,4 +105,41 @@ class UserTest extends \PHPUnit_Framework_TestCase
 
         $this->assertInstanceOf('Biplane\YandexDirect\Api\V4\YandexApiService', $user->getApiService());
     }
+
+    public function getServicesProxies()
+    {
+        return array(
+            array('Biplane\YandexDirect\Api\V4\YandexApiService', 'getApiService'),
+            array('Biplane\YandexDirect\Api\V5\AdGroups', 'getAdGroupsService'),
+            array('Biplane\YandexDirect\Api\V5\Ads', 'getAdsService'),
+            array('Biplane\YandexDirect\Api\V5\Bids', 'getBidsService'),
+            array('Biplane\YandexDirect\Api\V5\Changes', 'getChangesService'),
+            array('Biplane\YandexDirect\Api\V5\Keywords', 'getKeywordsService'),
+            array('Biplane\YandexDirect\Api\V5\Sitelinks', 'getSitelinksService'),
+            array('Biplane\YandexDirect\Api\V5\VCards', 'getVCardsService'),
+        );
+    }
+
+    /**
+     * @dataProvider getServicesProxies
+     */
+    public function testServiceProxyShouldBeInstantiated($serviceClass, $method)
+    {
+        $user = new User(array(
+            'access_token' => 'foo'
+        ));
+
+        $this->assertInstanceOf($serviceClass, $user->$method());
+    }
+
+    public function testServiceProxyShouldBeCached()
+    {
+        $user = new User(array(
+            'access_token' => 'foo'
+        ));
+
+        $proxy = $user->getAdsService();
+
+        $this->assertSame($proxy, $user->getAdsService());
+    }
 }

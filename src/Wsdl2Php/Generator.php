@@ -2,6 +2,7 @@
 
 namespace Biplane\Wsdl2Php;
 
+use Doctrine\Common\Inflector\Inflector;
 use Wsdl2PhpGenerator\Generator as BaseGenerator;
 use Wsdl2PhpGenerator\Validator;
 use Wsdl2PhpGenerator\Xml\OperationNode;
@@ -25,8 +26,6 @@ use Zend\Code\Generator\ValueGenerator;
  */
 class Generator extends BaseGenerator
 {
-    private $wsdlTypes;
-
     /**
      * {@inheritdoc}
      */
@@ -35,41 +34,51 @@ class Generator extends BaseGenerator
         $this->log('Loading types');
 
         $excludedTypes = $this->config->get('excludeTypes');
+        $types = array();
 
-        foreach ($this->getTypesNodes() as $name => $type) {
-            if (in_array($type->getName(), $excludedTypes)) {
+        /** @var TypeNode $node */
+        foreach ($this->wsdl->getTypes() as $node) {
+            $types[$node->getName()] = $node;
+        }
+
+        foreach ($types as $name => $node) {
+            if (in_array($node->getName(), $excludedTypes)) {
                 continue;
             }
 
-            if ($type->isComplex() && !$type->isArray()) {
-                $generator = $this->createClassGenerator($type->getName(), true);
-                $this->types[$type->getName()] = $generator;
+            if ($node->isComplex() && !$node->isArray()) {
+                $generator = $this->createClassGenerator($node->getName(), true);
+                $this->types[$node->getName()] = array(
+                    'node'  => $node,
+                    'class' => $generator
+                );
 
-                if ($type->isAbstract()) {
+                if ($node->isAbstract()) {
                     $generator->addFlag(ClassGenerator::FLAG_ABSTRACT);
                 }
 
                 $methodFactory = $this->createMethodGenerator(
                     'create',
-                    'Creates a new instance of ' . $type->getName() . '.'
+                    'Creates a new instance of ' . $generator->getName() . '.'
                 );
                 $methodFactory->setStatic(true);
                 $methodFactory->setBody('return new self();');
-                $methodFactory->getDocBlock()->setTag(new ReturnTag($type->getName()));
+                $methodFactory->getDocBlock()->setTag(new ReturnTag($generator->getName()));
 
                 $generator->addMethodFromGenerator($methodFactory);
 
-                foreach ($type->getParts() as $fieldName => $fieldType) {
+                foreach ($node->getParts() as $fieldName => $fieldType) {
                     $fieldType = $this->validateType($fieldType);
-                    $isArray = $type->isElementArray($fieldName);
-                    $nullable = $type->isElementNillable($fieldName);
+                    $isArray = $node->isElementArray($fieldName);
+                    $nullable = $node->isElementNillable($fieldName) || $node->getElementMinOccurs($fieldName) === 0;
 
-                    /** @var $fieldTypeNode TypeNode */
-                    if (!$isArray && null !== $fieldTypeNode = $this->findTypeNode($fieldType)) {
-                        $isArray = $fieldTypeNode->isArray();
+                    if (!$isArray && isset($types[$fieldType])) {
+                        /** @var $fieldNode TypeNode */
+                        $fieldNode = $types[$fieldType];
+                        $isArray = $fieldNode->isArray();
                         $fieldType = $isArray
-                            ? $this->validateType($fieldTypeNode->getRestriction()) . '[]'
-                            : $fieldTypeNode->getName();
+                            ? $this->validateType($fieldNode->getRestriction()) . '[]'
+                            : $fieldNode->getName();
                     }
 
                     $propertyValue = new PropertyValueGenerator($isArray && !$nullable ? array() : null);
@@ -79,6 +88,30 @@ class Generator extends BaseGenerator
                         ->addMethodFromGenerator($this->createGetter($generator->getNamespaceName(), $fieldName, $fieldType, $isArray, $nullable))
                         ->addMethodFromGenerator($this->createSetter($generator->getNamespaceName(), $fieldName, $fieldType, $isArray, $nullable));
                 }
+            } elseif (count($enums = $node->getEnumerations()) > 0) {
+                $generator = $this->createClassGenerator($node->getName(), true);
+                $this->types[$node->getName()] = array(
+                    'node'  => $node,
+                    'class' => $generator
+                );
+
+                foreach ($enums as $value) {
+                    if (preg_match('/[a-z]/', $value)) {
+                        $name = Inflector::tableize($value);
+                    } else {
+                        $name = $value;
+                    }
+
+                    $generator->addConstant(strtoupper($name), $value);
+                }
+            }
+        }
+
+        foreach ($this->types as $item) {
+            $baseType = $item['node']->getBase();
+
+            if (isset($this->types[$baseType])) {
+                $item['class']->setExtendedClass($this->types[$baseType]['class']->getName());
             }
         }
 
@@ -102,12 +135,13 @@ class Generator extends BaseGenerator
 
         $classmap = array();
 
-        /** @var ClassGenerator $generator */
-        foreach ($this->types as $name => $generator) {
+        foreach ($this->types as $name => $item) {
+            /** @var ClassGenerator $class */
+            $class = $item['class'];
             $classmap[] = sprintf(
                 "        '%s' => '%s'",
                 $name,
-                $generator->getNamespaceName() . '\\' . $generator->getName()
+                $class->getNamespaceName() . '\\' . $class->getName()
             );
         }
 
@@ -187,10 +221,10 @@ CODE
 
         $dir = $this->ensureExistDir($dir . '/Contract');
 
-        foreach ($this->types as $type) {
+        foreach ($this->types as $item) {
             $generator = new FileGenerator();
-            $generator->setClass($type);
-            $generator->setFilename($dir . '/' . $type->getName() . '.php');
+            $generator->setClass($item['class']);
+            $generator->setFilename($dir . '/' . $item['class']->getName() . '.php');
 
             $generator->write();
         }
@@ -226,15 +260,17 @@ CODE
     private function setParameter($ns, MethodGenerator $generator, $name, $type, $isArray = false, $nullable = false)
     {
         if ($isArray) {
-            $type = 'array';
+            $typeHint = 'array';
         } elseif (null !== $typeNode = $this->findTypeNode($type)) {
-            $type = $this->resolveTypeName(
+            $typeHint = $this->resolveTypeName(
                 $typeNode->isArray() ? $typeNode->getRestriction() : $typeNode->getName(),
                 $ns
             );
+        } else {
+            $typeHint = $type;
         }
 
-        $paramGenerator = new ParameterGenerator($name, $type);
+        $paramGenerator = new ParameterGenerator($name, $typeHint);
         $generator->setParameter($paramGenerator);
 
         if ($nullable) {
@@ -256,7 +292,9 @@ CODE
 
     private function createClassGenerator($name, $isDataContract = false)
     {
-        $generator = new ClassGenerator($name);
+        $name = call_user_func($this->config->get('renameType'), $name);
+
+        $generator = new ClassGenerator(Inflector::classify($name));
         $generator->setDocBlock(new DocBlockGenerator('Auto-generated code.'));
         $generator->setNamespaceName($this->config->get('namespaceName') . ($isDataContract ? '\Contract' : ''));
 
@@ -345,30 +383,10 @@ CODE
         ));
     }
 
-    /**
-     * Gets the hash of names and TypeNode instances.
-     *
-     * @return TypeNode[]
-     */
-    private function getTypesNodes()
-    {
-        if ($this->wsdlTypes === null) {
-            $this->wsdlTypes = array();
-
-            foreach ($this->wsdl->getTypes() as $type) {
-                $this->wsdlTypes[$type->getName()] = $type;
-            }
-        }
-
-        return $this->wsdlTypes;
-    }
-
     private function findTypeNode($name)
     {
-        $types = $this->getTypesNodes();
-
-        if (isset($types[$name])) {
-            return $types[$name];
+        if (isset($this->types[$name])) {
+            return $this->types[$name]['node'];
         }
 
         return null;
@@ -405,7 +423,7 @@ CODE
     {
         if (isset($this->types[$type])) {
             /** @var ClassGenerator $class */
-            $class = $this->types[$type];
+            $class = $this->types[$type]['class'];
 
             $len = strlen($currentNamespace);
             $ns = $class->getNamespaceName();

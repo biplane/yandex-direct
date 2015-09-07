@@ -1,0 +1,98 @@
+<?php
+
+namespace Biplane\YandexDirect\Api\V5\Contract;
+
+/**
+ * Auto-generated code.
+ */
+class ExceptionNotification
+{
+
+    protected $Code = null;
+
+    protected $Message = null;
+
+    protected $Details = null;
+
+    /**
+     * Creates a new instance of ExceptionNotification.
+     *
+     * @return ExceptionNotification
+     */
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * Gets Code.
+     *
+     * @return int
+     */
+    public function getCode()
+    {
+        return $this->Code;
+    }
+
+    /**
+     * Sets Code.
+     *
+     * @param int $value
+     * @return $this
+     */
+    public function setCode($value)
+    {
+        $this->Code = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets Message.
+     *
+     * @return string
+     */
+    public function getMessage()
+    {
+        return $this->Message;
+    }
+
+    /**
+     * Sets Message.
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setMessage($value)
+    {
+        $this->Message = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets Details.
+     *
+     * @return string|null
+     */
+    public function getDetails()
+    {
+        return $this->Details;
+    }
+
+    /**
+     * Sets Details.
+     *
+     * @param string|null $value
+     * @return $this
+     */
+    public function setDetails($value = null)
+    {
+        $this->Details = $value;
+
+        return $this;
+    }
+
+
+}
+

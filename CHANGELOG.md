@@ -100,7 +100,10 @@
         Biplane\YandexDirect\Auth\Authenticator
 
  * **[BC BREAK]** Удалена поддержка JSON.
+ 
  * Удалена зависимость от библиотеки `biplane/common`.
+ 
+ * Добавлена поддержка Яндекс.Директ API версии 5.
 
 ## 2.0.0 [commit logs](https://github.com/biplane/BiplaneYandexDirectBundle/compare/1.0.0...2.0.0)
 
