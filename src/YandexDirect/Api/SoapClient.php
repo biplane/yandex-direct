@@ -2,7 +2,7 @@
 
 namespace Biplane\YandexDirect\Api;
 
-use Biplane\YandexDirect\Api\V4\Exception\ApiException;
+use Biplane\YandexDirect\Exception\ApiException;
 use Biplane\YandexDirect\Event\FailCallEvent;
 use Biplane\YandexDirect\Event\PostCallEvent;
 use Biplane\YandexDirect\Event\PreCallEvent;

@@ -2,8 +2,6 @@
 
 namespace Biplane\YandexDirect\Auth;
 
-use Biplane\YandexDirect\Exception\AuthException;
-use Biplane\YandexDirect\Exception\NetworkException;
 use Buzz\Client\ClientInterface;
 use Buzz\Client\Curl;
 use Buzz\Exception\ClientException;
@@ -16,7 +14,7 @@ use Buzz\Message\Response;
  *
  * Documentation: http://api.yandex.ru/oauth/doc/dg/reference/obtain-access-token.xml
  *
- * @author Denis Vasilev <yethee@auto-pilot.pro>
+ * @author Denis Vasilev <yethee@biplane.ru>
  */
 class Authenticator
 {
@@ -79,8 +77,8 @@ class Authenticator
      *
      * @return array The struct array('access_token' => string, 'expires_in' => integer)
      *
-     * @throws AuthException
-     * @throws NetworkException
+     * @throws Exception\AuthException
+     * @throws Exception\NetworkException
      */
     public function authenticate($code)
     {
@@ -97,14 +95,14 @@ class Authenticator
         try {
             $this->client->send($request, $response);
         } catch (ClientException $ex) {
-            throw new NetworkException($ex, $request, $response);
+            throw new Exception\NetworkException($ex, $request, $response);
         }
 
         if ($response->getStatusCode() === 200) {
             return json_decode($response->getContent(), true);
         }
 
-        throw new AuthException(
+        throw new Exception\AuthException(
             'Could not authenticate. Reason: ' . $response->getContent(),
             $response->getStatusCode()
         );
@@ -117,8 +115,8 @@ class Authenticator
      *
      * @return UserInfo
      *
-     * @throws AuthException
-     * @throws NetworkException
+     * @throws Exception\AuthException
+     * @throws Exception\NetworkException
      */
     public function getUserInfo($token)
     {
@@ -136,14 +134,14 @@ class Authenticator
         try {
             $this->client->send($request, $response);
         } catch (ClientException $ex) {
-            throw new NetworkException($ex, $request, $response);
+            throw new Exception\NetworkException($ex, $request, $response);
         }
 
         if ($response->getStatusCode() === 200) {
             return new UserInfo($this->jsonDecode($response->getContent()));
         }
 
-        throw new AuthException(
+        throw new Exception\AuthException(
             'Could not fetch user info. Reason: ' . $response->getContent(),
             $response->getStatusCode()
         );

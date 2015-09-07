@@ -7,7 +7,7 @@ namespace Biplane\YandexDirect\Auth;
  *
  * @link http://api.yandex.ru/login/doc/dg/reference/response.xml
  *
- * @author Denis Vasilev <yethee@auto-pilot.pro>
+ * @author Denis Vasilev <yethee@biplane.ru>
  */
 class UserInfo
 {

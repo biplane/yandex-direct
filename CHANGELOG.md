@@ -30,13 +30,13 @@
 
    **Стало**
 
-        Biplane\YandexDirect\Api\V4\Exception\ApiException
-        Biplane\YandexDirect\Api\V4\Exception\NetworkException
-        Biplane\YandexDirect\Exception\AuthException
+        Biplane\YandexDirect\Exception\ApiException
         Biplane\YandexDirect\Exception\NetworkException
+        Biplane\YandexDirect\Auth\Exception\AuthException
+        Biplane\YandexDirect\Auth\Exception\NetworkException
 
    * Класс `Biplane\YandexDirectBundle\Exception\BuzzClientException` переименован в
-     `Biplane\YandexDirect\Exception\NetworkException`.
+     `Biplane\YandexDirect\Auth\Exception\NetworkException`.
 
    * У класса `ApiException` изменилась сигнатура конструктора.
    

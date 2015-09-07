@@ -2,7 +2,7 @@
 
 namespace Biplane\Tests\YandexDirect\Api\V4\Exception;
 
-use Biplane\YandexDirect\Api\V4\Exception\ApiException;
+use Biplane\YandexDirect\Exception\ApiException;
 
 /**
  * @author Denis Vasilev <yethee@auto-pilot.pro>
@@ -15,7 +15,7 @@ class ApiExceptionTest extends \PHPUnit_Framework_TestCase
 
         $exception = ApiException::createFromFault($fault, 'foo', 'request-id');
 
-        $this->assertInstanceOf('Biplane\YandexDirect\Api\V4\Exception\NetworkException', $exception);
+        $this->assertInstanceOf('Biplane\YandexDirect\Exception\NetworkException', $exception);
         $this->assertEquals(0, $exception->getCode());
         $this->assertEquals('Connection timeout.', $exception->getMessage());
         $this->assertSame($fault, $exception->getPrevious());
@@ -29,7 +29,7 @@ class ApiExceptionTest extends \PHPUnit_Framework_TestCase
 
         $exception = ApiException::createFromFault($fault, 'foo', 'request-id');
 
-        $this->assertInstanceOf('Biplane\YandexDirect\Api\V4\Exception\ApiException', $exception);
+        $this->assertInstanceOf('Biplane\YandexDirect\Exception\ApiException', $exception);
         $this->assertEquals(54, $exception->getCode());
         $this->assertEquals('Access denied.', $exception->getMessage());
         $this->assertSame($fault, $exception->getPrevious());
@@ -43,7 +43,7 @@ class ApiExceptionTest extends \PHPUnit_Framework_TestCase
 
         $exception = ApiException::createFromFault($fault, 'foo', 'request-id');
 
-        $this->assertInstanceOf('Biplane\YandexDirect\Api\V4\Exception\ApiException', $exception);
+        $this->assertInstanceOf('Biplane\YandexDirect\Exception\ApiException', $exception);
         $this->assertEquals(27, $exception->getCode());
         $this->assertEquals("Invalid banner.\nTitle cannot be empty.", $exception->getMessage());
         $this->assertEquals('Title cannot be empty.', $exception->getDetailMessage());

@@ -1,6 +1,6 @@
 <?php
 
-namespace Biplane\YandexDirect\Api\V4\Exception;
+namespace Biplane\YandexDirect\Exception;
 
 /**
  * ApiException

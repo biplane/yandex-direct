@@ -86,7 +86,7 @@ class SoapClientTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Biplane\YandexDirect\Api\V4\Exception\ApiException
+     * @expectedException \Biplane\YandexDirect\Exception\ApiException
      */
     public function testInvokeApiMethodShouldThrowException()
     {
@@ -121,7 +121,7 @@ class SoapClientTest extends \PHPUnit_Framework_TestCase
                 $this->assertSame($this->user, $eventArgs->getUser());
                 $this->assertEquals($methodName, $eventArgs->getMethodName());
                 $this->assertSame($methodParams, $eventArgs->getMethodParams());
-                $this->assertInstanceOf('Biplane\YandexDirect\Api\V4\Exception\ApiException', $eventArgs->getException());
+                $this->assertInstanceOf('Biplane\YandexDirect\Exception\ApiException', $eventArgs->getException());
             });
 
         $this->client->expects($this->once())
