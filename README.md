@@ -1,12 +1,8 @@
-YandexDirectBundle
-==================
+# BiplaneYandexDirect
 
 Предоставляет инструменты для работы с API Яндекс.Директа.
 
-Установка
----------
-
-### A) Через composer
+## Установка
 
 В `composer.json` необходимо добавить:
 
@@ -20,47 +16,90 @@ YandexDirectBundle
   ...
   "require": {
     ...
-    "biplane/yandex-direct-bundle": "dev-master"
+    "biplane/yandex-direct": "~3.0"
   }
 }
 ```
 
-И обновите пакеты:
+И обновить пакеты:
 
 ```bash
-$ composer update
+$ composer install
 ```
 
-### B) Без менеджера пакетов
+## Использование
 
-Чтобы установить bundle, поместите его в vendor/bundles/Biplane/YandexDirectBundle вашего проекта.
-Варианты подключения:
+При использовании как отдельной библиотеки необходимо создать экземпляр `User`, где
+в опциях необходимо передать Access Token, для авторизации на серверах API.
 
-  1. Использование **submodule**
+Через этот объект можно работать с сервисами API. Поддерживаемые версии: **4 Live** и **5**.
 
-         git submodule add git@github.com:biplane/BiplaneYandexDirectBundle.git vendor/bundles/Biplane/YandexDirectBundle
+**Загрузка объявлений с использованием веб-сервиса [Ads](https://tech.yandex.ru/direct/doc/ref-v5/ads/ads-docpage/)**
 
-  2. Использование скрипта **vendors**
+В данном примере результатом будет массив всех включенных объявлений для рекламной кампании № 123.
+Метод сервиса возвращает объект `GetAdResponse`, у которого есть метод `getAds`. Последний вернет
+массив объектов `Biplane\YandexDirect\Api\V5\Contract\AdGetItem`.
 
-     Нужно добавить следующие строчки в `deps` файл:
+```php
+<?php
 
-         [BiplaneYandexDirectBundle]
-             git=git@github.com:biplane/BiplaneYandexDirectBundle.git
-             target=/bundles/Biplane/YandexDirectBundle
+use Biplane\YandexDirect\Api\V5\Contract\AdFieldEnum;
+use Biplane\YandexDirect\Api\V5\Contract\AdsSelectionCriteria;
+use Biplane\YandexDirect\Api\V5\Contract\GetAdRequest;
+use Biplane\YandexDirect\Api\V5\Contract\StateEnum;
+use Biplane\YandexDirect\User;
 
-     И запустить скрипт (для Win-платфоры необходимо указать интерпретатор - `php.exe`):
+$user = new User(array(
+    'access_token' => '<access_token>'
+));
 
-         ./bin/vendors install
-
-Зарегестрируйте namespace в `app/autoload.php`:
-
-    $loader->registerNamespaces(array(
-        'Biplane'               => __DIR__.'/../vendor/bundles'
-        // ...
+$criteria = AdsSelectionCriteria::create()
+    ->setCampaignIds(array(123))
+    ->setStates(array(StateEnum::ON));
+    
+$payload = GetAdRequest::create()
+    ->setSelectionCriteria($criteria)
+    ->setFieldNames(array(
+        AdFieldEnum::AD_CATEGORIES,
+        AdFieldEnum::AGE_LABEL,
+        AdFieldEnum::AD_GROUP_ID,
+        AdFieldEnum::ID,
+        AdFieldEnum::STATUS
     ));
 
-Регистрация BiplaneYandexDirectBundle
--------------------------------------
+$response = $user->getAdsService()->get($payload);
+
+foreach ($response->getAds() as $ad) {
+    // here $ad is instance of Biplane\YandexDirect\Api\V5\Contract\AdGetItem
+}
+```
+
+## Опции
+
+При создании нового экземпляра класса `Biplane\YandexDirect\User`, первым аргументом
+можно передать ассоциативный массив с опциями для данного экземпляра. Ниже перечислены
+поддерживаемые опции:
+
+**access_token** (обязательный параметр) - должен содержать маркер доступа для OAuth-авторизации. 
+[Авторизационные токены](https://tech.yandex.ru/direct/doc/dg-v4/concepts/auth-token-docpage/)
+
+**locale** (по умолчанию `en`) - задает язык ответных сообщений (статусы кампаний или баннеров; сообщения об ошибках). 
+Доступные значения: `ru`, `ua` и `en`. Рекомендуется использовать константы `User::LOCALE_???`.
+
+**master_token** - мастер-токен необходим для доступа к финансовым методам. 
+[Доступ к финансовым методам](https://tech.yandex.ru/direct/doc/dg-v4/concepts/finance-token-docpage/)
+
+**login** - логин, для которого задан **master_token**. Обязателен, если задан **master_token**.
+
+
+## Интеграция с Symfony
+
+Для интеграции в проект на Symfony можно использовать бандл - `BiplaneYandexDirectBundle`.
+
+> NOTE: Бандл совместим с Symfony версии 2.3 и выше.
+ 
+
+### Установка
 
 Зарегестрируйте bundle в `app/AppKernel`:
 
@@ -68,72 +107,29 @@ $ composer update
     {
         $bundles = array(
             // ...
-            new Biplane\YandexDirectBundle\BiplaneYandexDirectBundle(),
+            new Biplane\Bundle\YandexDirectBundle\BiplaneYandexDirectBundle(),
             // ...
         )
     };
 
-Конфигурация
-------------
 
-Пример конфигурации бандла:
+## Разработка
 
-```yml
-biplane_yandex_direct:
-    default_profile: foo
-    application_id:  APpL1C4T10NiD
-    profiles:
-        foo:
-            type:      soap
-            locale:    ru
-            is_agency: true
-            cert:      path/to/local_cert.pem
-        bar:
-            type:   json
-            locale: en
-            login:  mr.bar
-            token:  ACCESS-TOKEN
-        # другие профили
-```
-
-> NOTE: В одном профиле может быть указан либо путь к сертификату (`cert`), либо
-токен доступа (`token`) для OAuth авторизации.
-
-**Параметр `type`**
-
-Возможные значения: *soap* или *json*
-
-В настоящий момент поддерживается только soap.
-
-**Параметр `locale`**
-
-Возможные значения: *ru*, *en* или *ua*
-
-Данный параметр является необязательным. По умолчанию: *ru*.
-
-**Параметр `is_agency`**
-
-Возможные значения: *true* или *false*
-
-Данный параметр является необязательным. По умолчанию: *false*.
-
-
-Unit tests
-----------
+### Автоматическое тестирование
 
 Для запуска unit-тестов необходим PHPUnit версии не ниже *3.5.10*.
 
-Запуск набора тестов для бандла:
+Запуск набора тестов:
 
-    cd vendor/bundles/Biplane/YandexDirectBundle
-    phpunit
+```bash
+$ phpunit
+```
 
-Для изменения конфигурации PHPUnit для вашего окружения, скопируйте `vendor/bundles/Biplane/YandexDirectBundle/phpunit.xml.dist`
-в `vendor/bundles/Biplane/YandexDirectBundle/phpunit.xml` и добавьте свои настройки в phpunit.xml.
+Для изменения конфигурации PHPUnit для вашего окружения, скопируйте `phpunit.xml.dist`
+в `phpunit.xml` и добавьте свои настройки в phpunit.xml.
 
 
-Поддержка OAuth
----------------
+## OAuth
 
 Для получения авторизационного токена необходимо иметь идентификатор приложения (`application_id`).
 Если его нет, необходимо сперва [зарегистрировать приложение](http://api.yandex.ru/oauth/doc/dg/tasks/register-client.xml).
@@ -154,6 +150,6 @@ Unit tests
 
     #access_token=<token>[&expires_in=<seconds>][&state=<state>]
 
-Значение `<token>` нужно сохранить в конфиге для соответствующего профиля.
+Значение `<token>` нужно сохранить в конфиге и в последствии использовать при создании экземпляра `User`.
 
 [Официальная документация](http://api.yandex.ru/oauth/doc/dg/concepts/authorization-scheme.xml)
