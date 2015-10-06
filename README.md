@@ -11,7 +11,7 @@
   ...
   "repositories: [{
     "type": "vcs",
-    "url": "git@github.com:biplane/BiplaneYandexDirectBundle.git"
+    "url": "git@github.com:biplane/yandex-direct.git"
   }],
   ...
   "require": {
