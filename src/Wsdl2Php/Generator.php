@@ -46,47 +46,67 @@ class Generator extends BaseGenerator
                 continue;
             }
 
-            if ($node->isComplex() && !$node->isArray()) {
-                $generator = $this->createClassGenerator($node->getName(), true);
+            if ($node->isComplex()) {
                 $this->types[$node->getName()] = array(
                     'node'  => $node,
-                    'class' => $generator
+                    'class' => null
                 );
 
-                if ($node->isAbstract()) {
-                    $generator->addFlag(ClassGenerator::FLAG_ABSTRACT);
-                }
+                if (!$node->isArray()) {
+                    $generator = $this->createClassGenerator($node->getName(), true);
+                    $this->types[$node->getName()]['class'] = $generator;
 
-                $methodFactory = $this->createMethodGenerator(
-                    'create',
-                    'Creates a new instance of ' . $generator->getName() . '.'
-                );
-                $methodFactory->setStatic(true);
-                $methodFactory->setBody('return new self();');
-                $methodFactory->getDocBlock()->setTag(new ReturnTag($generator->getName()));
-
-                $generator->addMethodFromGenerator($methodFactory);
-
-                foreach ($node->getParts() as $fieldName => $fieldType) {
-                    $fieldType = $this->validateType($fieldType);
-                    $isArray = $node->isElementArray($fieldName);
-                    $nullable = $node->isElementNillable($fieldName) || $node->getElementMinOccurs($fieldName) === 0;
-
-                    if (!$isArray && isset($types[$fieldType])) {
-                        /** @var $fieldNode TypeNode */
-                        $fieldNode = $types[$fieldType];
-                        $isArray = $fieldNode->isArray();
-                        $fieldType = $isArray
-                            ? $this->validateType($fieldNode->getRestriction()) . '[]'
-                            : $fieldNode->getName();
+                    if ($node->isAbstract()) {
+                        $generator->addFlag(ClassGenerator::FLAG_ABSTRACT);
                     }
 
-                    $propertyValue = new PropertyValueGenerator($isArray && !$nullable ? array() : null);
+                    $methodFactory = $this->createMethodGenerator(
+                        'create',
+                        'Creates a new instance of ' . $generator->getName() . '.'
+                    );
+                    $methodFactory->setStatic(true);
+                    $methodFactory->setBody('return new self();');
+                    $methodFactory->getDocBlock()->setTag(new ReturnTag($generator->getName()));
 
-                    $generator
-                        ->addProperty($fieldName, $propertyValue, PropertyGenerator::FLAG_PROTECTED)
-                        ->addMethodFromGenerator($this->createGetter($generator->getNamespaceName(), $fieldName, $fieldType, $isArray, $nullable))
-                        ->addMethodFromGenerator($this->createSetter($generator->getNamespaceName(), $fieldName, $fieldType, $isArray, $nullable));
+                    $generator->addMethodFromGenerator($methodFactory);
+
+                    foreach ($node->getParts() as $fieldName => $fieldType) {
+                        $fieldType = $this->validateType($fieldType);
+                        $isArray = $node->isElementArray($fieldName);
+                        $nullable = $node->isElementNillable($fieldName) || $node->getElementMinOccurs($fieldName) === 0;
+
+                        if (!$isArray && isset($types[$fieldType])) {
+                            /** @var $fieldNode TypeNode */
+                            $fieldNode = $types[$fieldType];
+                            $isArray = $fieldNode->isArray();
+                            $fieldType = $isArray
+                                ? $this->validateType($fieldNode->getRestriction()) . '[]'
+                                :  $fieldNode->getName();
+                        }
+
+                        $propertyValue = new PropertyValueGenerator($isArray && !$nullable ? array() : null);
+
+                        $generator
+                            ->addProperty($fieldName, $propertyValue, PropertyGenerator::FLAG_PROTECTED)
+                            ->addMethodFromGenerator(
+                                $this->createGetter(
+                                    $generator->getNamespaceName(),
+                                    $fieldName,
+                                    $fieldType,
+                                    $isArray,
+                                    $nullable
+                                )
+                            )
+                            ->addMethodFromGenerator(
+                                $this->createSetter(
+                                    $generator->getNamespaceName(),
+                                    $fieldName,
+                                    $fieldType,
+                                    $isArray,
+                                    $nullable
+                                )
+                            );
+                    }
                 }
             } elseif (count($enums = $node->getEnumerations()) > 0) {
                 $generator = $this->createClassGenerator($node->getName(), true);
@@ -137,7 +157,10 @@ class Generator extends BaseGenerator
 
         foreach ($this->types as $name => $item) {
             /** @var ClassGenerator $class */
-            $class = $item['class'];
+            if (null === $class = $item['class']) {
+                continue;
+            }
+
             $classmap[] = sprintf(
                 "        '%s' => '%s'",
                 $name,
@@ -222,6 +245,10 @@ CODE
         $dir = $this->ensureExistDir($dir . '/Contract');
 
         foreach ($this->types as $item) {
+            if ($item['class'] === null) {
+                continue;
+            }
+
             $generator = new FileGenerator();
             $generator->setClass($item['class']);
             $generator->setFilename($dir . '/' . $item['class']->getName() . '.php');
@@ -262,10 +289,11 @@ CODE
         if ($isArray) {
             $typeHint = 'array';
         } elseif (null !== $typeNode = $this->findTypeNode($type)) {
-            $typeHint = $this->resolveTypeName(
-                $typeNode->isArray() ? $typeNode->getRestriction() : $typeNode->getName(),
-                $ns
-            );
+            if ($typeNode->isArray()) {
+                $typeHint = 'array';
+            } else {
+                $typeHint = $this->resolveTypeName($typeNode->getName(), $ns);
+            }
         } else {
             $typeHint = $type;
         }
@@ -383,6 +411,13 @@ CODE
         ));
     }
 
+    /**
+     * Finds the node by the type name.
+     *
+     * @param string $name
+     *
+     * @return TypeNode|null
+     */
     private function findTypeNode($name)
     {
         if (isset($this->types[$name])) {
