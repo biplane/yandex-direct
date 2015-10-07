@@ -39,7 +39,7 @@ class AccountActionResult
     /**
      * Sets Errors.
      *
-     * @param array|null $value
+     * @param Error[]|null $value
      * @return $this
      */
     public function setErrors(array $value = null)

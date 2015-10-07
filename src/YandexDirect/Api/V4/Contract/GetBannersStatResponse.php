@@ -108,7 +108,7 @@ class GetBannersStatResponse
     /**
      * Sets Stat.
      *
-     * @param array|null $value
+     * @param BannersStatItem[]|null $value
      * @return $this
      */
     public function setStat(array $value = null)

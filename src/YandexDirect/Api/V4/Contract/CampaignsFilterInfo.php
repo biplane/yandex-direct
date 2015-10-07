@@ -41,7 +41,7 @@ class CampaignsFilterInfo
     /**
      * Sets StatusModerate.
      *
-     * @param array|null $value
+     * @param string[]|null $value
      * @return $this
      */
     public function setStatusModerate(array $value = null)
@@ -64,7 +64,7 @@ class CampaignsFilterInfo
     /**
      * Sets IsActive.
      *
-     * @param array|null $value
+     * @param string[]|null $value
      * @return $this
      */
     public function setIsActive(array $value = null)
@@ -87,7 +87,7 @@ class CampaignsFilterInfo
     /**
      * Sets StatusArchive.
      *
-     * @param array|null $value
+     * @param string[]|null $value
      * @return $this
      */
     public function setStatusArchive(array $value = null)
@@ -110,7 +110,7 @@ class CampaignsFilterInfo
     /**
      * Sets StatusActivating.
      *
-     * @param array|null $value
+     * @param string[]|null $value
      * @return $this
      */
     public function setStatusActivating(array $value = null)
@@ -133,7 +133,7 @@ class CampaignsFilterInfo
     /**
      * Sets StatusShow.
      *
-     * @param array|null $value
+     * @param string[]|null $value
      * @return $this
      */
     public function setStatusShow(array $value = null)

@@ -275,7 +275,7 @@ class BannerInfo
     /**
      * Sets Phrases.
      *
-     * @param array|null $value
+     * @param BannerPhraseInfo[]|null $value
      * @return $this
      */
     public function setPhrases(array $value = null)
@@ -298,7 +298,7 @@ class BannerInfo
     /**
      * Sets MinusKeywords.
      *
-     * @param array|null $value
+     * @param string[]|null $value
      * @return $this
      */
     public function setMinusKeywords(array $value = null)
@@ -505,7 +505,7 @@ class BannerInfo
     /**
      * Sets Sitelinks.
      *
-     * @param array|null $value
+     * @param Sitelink[]|null $value
      * @return $this
      */
     public function setSitelinks(array $value = null)
@@ -528,7 +528,7 @@ class BannerInfo
     /**
      * Sets AdWarnings.
      *
-     * @param array|null $value
+     * @param string[]|null $value
      * @return $this
      */
     public function setAdWarnings(array $value = null)
@@ -574,7 +574,7 @@ class BannerInfo
     /**
      * Sets ModerateRejectionReasons.
      *
-     * @param array|null $value
+     * @param RejectReason[]|null $value
      * @return $this
      */
     public function setModerateRejectionReasons(array $value = null)

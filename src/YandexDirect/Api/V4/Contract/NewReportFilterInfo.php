@@ -26,6 +26,10 @@ class NewReportFilterInfo
 
     protected $DeviceType = null;
 
+    protected $Age = null;
+
+    protected $Gender = null;
+
     /**
      * Creates a new instance of NewReportFilterInfo.
      *
@@ -95,7 +99,7 @@ class NewReportFilterInfo
     /**
      * Sets Banner.
      *
-     * @param array|null $value
+     * @param int[]|null $value
      * @return $this
      */
     public function setBanner(array $value = null)
@@ -118,7 +122,7 @@ class NewReportFilterInfo
     /**
      * Sets Geo.
      *
-     * @param array|null $value
+     * @param int[]|null $value
      * @return $this
      */
     public function setGeo(array $value = null)
@@ -141,7 +145,7 @@ class NewReportFilterInfo
     /**
      * Sets Phrase.
      *
-     * @param array|null $value
+     * @param string[]|null $value
      * @return $this
      */
     public function setPhrase(array $value = null)
@@ -164,7 +168,7 @@ class NewReportFilterInfo
     /**
      * Sets PageName.
      *
-     * @param array|null $value
+     * @param string[]|null $value
      * @return $this
      */
     public function setPageName(array $value = null)
@@ -187,7 +191,7 @@ class NewReportFilterInfo
     /**
      * Sets StatGoals.
      *
-     * @param array|null $value
+     * @param int[]|null $value
      * @return $this
      */
     public function setStatGoals(array $value = null)
@@ -239,6 +243,52 @@ class NewReportFilterInfo
     public function setDeviceType($value = null)
     {
         $this->DeviceType = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets Age.
+     *
+     * @return string[]|null
+     */
+    public function getAge()
+    {
+        return $this->Age;
+    }
+
+    /**
+     * Sets Age.
+     *
+     * @param string[]|null $value
+     * @return $this
+     */
+    public function setAge(array $value = null)
+    {
+        $this->Age = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets Gender.
+     *
+     * @return string[]|null
+     */
+    public function getGender()
+    {
+        return $this->Gender;
+    }
+
+    /**
+     * Sets Gender.
+     *
+     * @param string[]|null $value
+     * @return $this
+     */
+    public function setGender(array $value = null)
+    {
+        $this->Gender = $value;
 
         return $this;
     }

@@ -60,7 +60,7 @@ class RetargetingConditionItem
     /**
      * Sets Goals.
      *
-     * @param array $value
+     * @param RetargetingConditionGoalItem[] $value
      * @return $this
      */
     public function setGoals(array $value)

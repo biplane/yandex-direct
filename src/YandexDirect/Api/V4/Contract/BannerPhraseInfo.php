@@ -471,7 +471,7 @@ class BannerPhraseInfo
     /**
      * Sets ContextCoverage.
      *
-     * @param array|null $value
+     * @param CoverageInfo[]|null $value
      * @return $this
      */
     public function setContextCoverage(array $value = null)
@@ -540,7 +540,7 @@ class BannerPhraseInfo
     /**
      * Sets Prices.
      *
-     * @param array|null $value
+     * @param float[]|null $value
      * @return $this
      */
     public function setPrices(array $value = null)
@@ -563,7 +563,7 @@ class BannerPhraseInfo
     /**
      * Sets Coverage.
      *
-     * @param array|null $value
+     * @param CoverageInfo[]|null $value
      * @return $this
      */
     public function setCoverage(array $value = null)
@@ -793,7 +793,7 @@ class BannerPhraseInfo
     /**
      * Sets AuctionBids.
      *
-     * @param array|null $value
+     * @param PhraseAuctionBids[]|null $value
      * @return $this
      */
     public function setAuctionBids(array $value = null)

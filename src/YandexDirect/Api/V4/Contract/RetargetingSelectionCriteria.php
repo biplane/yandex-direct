@@ -37,7 +37,7 @@ class RetargetingSelectionCriteria
     /**
      * Sets RetargetingConditionIDS.
      *
-     * @param array|null $value
+     * @param int[]|null $value
      * @return $this
      */
     public function setRetargetingConditionIDS(array $value = null)
@@ -60,7 +60,7 @@ class RetargetingSelectionCriteria
     /**
      * Sets RetargetingIDS.
      *
-     * @param array|null $value
+     * @param int[]|null $value
      * @return $this
      */
     public function setRetargetingIDS(array $value = null)
@@ -83,7 +83,7 @@ class RetargetingSelectionCriteria
     /**
      * Sets AdIDS.
      *
-     * @param array|null $value
+     * @param int[]|null $value
      * @return $this
      */
     public function setAdIDS(array $value = null)

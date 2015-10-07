@@ -158,7 +158,7 @@ class AdImageAssociation
     /**
      * Sets ModerateRejectionReasons.
      *
-     * @param array|null $value
+     * @param RejectReason[]|null $value
      * @return $this
      */
     public function setModerateRejectionReasons(array $value = null)

@@ -35,7 +35,7 @@ class AccountSelectionCriteria
     /**
      * Sets Logins.
      *
-     * @param array|null $value
+     * @param string[]|null $value
      * @return $this
      */
     public function setLogins(array $value = null)
@@ -58,7 +58,7 @@ class AccountSelectionCriteria
     /**
      * Sets AccountIDS.
      *
-     * @param array|null $value
+     * @param int[]|null $value
      * @return $this
      */
     public function setAccountIDS(array $value = null)

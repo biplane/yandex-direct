@@ -116,7 +116,7 @@ class GetChangesResponse
     /**
      * Sets CampaignsStatChange.
      *
-     * @param array|null $value
+     * @param CampaignStatChangeItem[]|null $value
      * @return $this
      */
     public function setCampaignsStatChange(array $value = null)

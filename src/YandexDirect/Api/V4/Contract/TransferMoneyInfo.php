@@ -8,9 +8,13 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
 class TransferMoneyInfo
 {
 
-    protected $FromCampaigns = array();
+    protected $FromCampaigns = array(
+        
+    );
 
-    protected $ToCampaigns = array();
+    protected $ToCampaigns = array(
+        
+    );
 
     /**
      * Creates a new instance of TransferMoneyInfo.
@@ -35,7 +39,7 @@ class TransferMoneyInfo
     /**
      * Sets FromCampaigns.
      *
-     * @param array $value
+     * @param PayCampElement[] $value
      * @return $this
      */
     public function setFromCampaigns(array $value)
@@ -58,7 +62,7 @@ class TransferMoneyInfo
     /**
      * Sets ToCampaigns.
      *
-     * @param array $value
+     * @param PayCampElement[] $value
      * @return $this
      */
     public function setToCampaigns(array $value)

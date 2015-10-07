@@ -58,7 +58,7 @@ class StatGoalsCampaignIDInfo
     /**
      * Sets CampaignIDS.
      *
-     * @param array|null $value
+     * @param int[]|null $value
      * @return $this
      */
     public function setCampaignIDS(array $value = null)

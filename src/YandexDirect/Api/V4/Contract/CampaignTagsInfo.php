@@ -58,7 +58,7 @@ class CampaignTagsInfo
     /**
      * Sets Tags.
      *
-     * @param array|null $value
+     * @param TagInfo[]|null $value
      * @return $this
      */
     public function setTags(array $value = null)

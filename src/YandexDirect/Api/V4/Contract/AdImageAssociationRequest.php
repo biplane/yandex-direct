@@ -83,7 +83,7 @@ class AdImageAssociationRequest
     /**
      * Sets AdImageAssociations.
      *
-     * @param array|null $value
+     * @param AdImageAssociation[]|null $value
      * @return $this
      */
     public function setAdImageAssociations(array $value = null)

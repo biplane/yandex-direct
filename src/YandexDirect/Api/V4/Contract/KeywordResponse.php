@@ -33,7 +33,7 @@ class KeywordResponse
     /**
      * Sets ActionsResult.
      *
-     * @param array|null $value
+     * @param KeywordActionResult[]|null $value
      * @return $this
      */
     public function setActionsResult(array $value = null)

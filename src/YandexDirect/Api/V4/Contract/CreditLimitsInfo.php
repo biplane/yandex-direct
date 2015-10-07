@@ -60,7 +60,7 @@ class CreditLimitsInfo
     /**
      * Sets Limits.
      *
-     * @param array $value
+     * @param CreditLimitsItem[] $value
      * @return $this
      */
     public function setLimits(array $value)

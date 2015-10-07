@@ -37,7 +37,7 @@ class AdImageAssociationActionResult
     /**
      * Sets Warnings.
      *
-     * @param array|null $value
+     * @param Warning[]|null $value
      * @return $this
      */
     public function setWarnings(array $value = null)
@@ -60,7 +60,7 @@ class AdImageAssociationActionResult
     /**
      * Sets Errors.
      *
-     * @param array|null $value
+     * @param Error[]|null $value
      * @return $this
      */
     public function setErrors(array $value = null)

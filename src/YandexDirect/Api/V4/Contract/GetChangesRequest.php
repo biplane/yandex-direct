@@ -39,7 +39,7 @@ class GetChangesRequest
     /**
      * Sets CampaignIDS.
      *
-     * @param array|null $value
+     * @param int[]|null $value
      * @return $this
      */
     public function setCampaignIDS(array $value = null)
@@ -62,7 +62,7 @@ class GetChangesRequest
     /**
      * Sets BannerIDS.
      *
-     * @param array|null $value
+     * @param int[]|null $value
      * @return $this
      */
     public function setBannerIDS(array $value = null)
@@ -85,7 +85,7 @@ class GetChangesRequest
     /**
      * Sets Logins.
      *
-     * @param array|null $value
+     * @param string[]|null $value
      * @return $this
      */
     public function setLogins(array $value = null)

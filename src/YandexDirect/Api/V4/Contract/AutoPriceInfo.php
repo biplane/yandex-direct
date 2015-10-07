@@ -90,7 +90,7 @@ class AutoPriceInfo
     /**
      * Sets BannerIDS.
      *
-     * @param array|null $value
+     * @param int[]|null $value
      * @return $this
      */
     public function setBannerIDS(array $value = null)
@@ -113,7 +113,7 @@ class AutoPriceInfo
     /**
      * Sets PhraseIDS.
      *
-     * @param array|null $value
+     * @param int[]|null $value
      * @return $this
      */
     public function setPhraseIDS(array $value = null)

@@ -85,7 +85,7 @@ class AdImageRequest
     /**
      * Sets AdImageRawData.
      *
-     * @param array|null $value
+     * @param AdImageRaw[]|null $value
      * @return $this
      */
     public function setAdImageRawData(array $value = null)
@@ -108,7 +108,7 @@ class AdImageRequest
     /**
      * Sets AdImageURLData.
      *
-     * @param array|null $value
+     * @param AdImageURL[]|null $value
      * @return $this
      */
     public function setAdImageURLData(array $value = null)

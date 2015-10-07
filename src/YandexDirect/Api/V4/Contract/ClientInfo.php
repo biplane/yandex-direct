@@ -330,7 +330,7 @@ class ClientInfo
     /**
      * Sets ClientCurrencies.
      *
-     * @param array|null $value
+     * @param string[]|null $value
      * @return $this
      */
     public function setClientCurrencies(array $value = null)
@@ -399,7 +399,7 @@ class ClientInfo
     /**
      * Sets CampaignEmails.
      *
-     * @param array|null $value
+     * @param string[]|null $value
      * @return $this
      */
     public function setCampaignEmails(array $value = null)
@@ -422,7 +422,7 @@ class ClientInfo
     /**
      * Sets ClientRights.
      *
-     * @param array|null $value
+     * @param ClientRight[]|null $value
      * @return $this
      */
     public function setClientRights(array $value = null)
@@ -560,7 +560,7 @@ class ClientInfo
     /**
      * Sets ManagersLogins.
      *
-     * @param array|null $value
+     * @param string[]|null $value
      * @return $this
      */
     public function setManagersLogins(array $value = null)

@@ -37,7 +37,7 @@ class CampaignIDSInfo
     /**
      * Sets CampaignIDS.
      *
-     * @param array $value
+     * @param int[] $value
      * @return $this
      */
     public function setCampaignIDS(array $value)

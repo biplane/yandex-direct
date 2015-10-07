@@ -43,7 +43,7 @@ class GetChangesIntData
     /**
      * Sets Updated.
      *
-     * @param array $value
+     * @param int[] $value
      * @return $this
      */
     public function setUpdated(array $value)
@@ -66,7 +66,7 @@ class GetChangesIntData
     /**
      * Sets NotUpdated.
      *
-     * @param array $value
+     * @param int[] $value
      * @return $this
      */
     public function setNotUpdated(array $value)
@@ -89,7 +89,7 @@ class GetChangesIntData
     /**
      * Sets NotFound.
      *
-     * @param array $value
+     * @param int[] $value
      * @return $this
      */
     public function setNotFound(array $value)

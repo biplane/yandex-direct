@@ -114,7 +114,7 @@ class TimeTargetInfo
     /**
      * Sets DaysHours.
      *
-     * @param array $value
+     * @param TimeTargetItem[] $value
      * @return $this
      */
     public function setDaysHours(array $value)

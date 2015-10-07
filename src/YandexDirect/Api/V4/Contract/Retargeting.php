@@ -49,7 +49,7 @@ class Retargeting
     /**
      * Sets Fields.
      *
-     * @param array|null $value
+     * @param string[]|null $value
      * @return $this
      */
     public function setFields(array $value = null)

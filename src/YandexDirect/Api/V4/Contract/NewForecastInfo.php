@@ -41,7 +41,7 @@ class NewForecastInfo
     /**
      * Sets Categories.
      *
-     * @param array|null $value
+     * @param int[]|null $value
      * @return $this
      */
     public function setCategories(array $value = null)
@@ -64,7 +64,7 @@ class NewForecastInfo
     /**
      * Sets Phrases.
      *
-     * @param array|null $value
+     * @param string[]|null $value
      * @return $this
      */
     public function setPhrases(array $value = null)
@@ -87,7 +87,7 @@ class NewForecastInfo
     /**
      * Sets GeoID.
      *
-     * @param array|null $value
+     * @param int[]|null $value
      * @return $this
      */
     public function setGeoID(array $value = null)

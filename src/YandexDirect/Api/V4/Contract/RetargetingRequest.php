@@ -110,7 +110,7 @@ class RetargetingRequest
     /**
      * Sets Retargetings.
      *
-     * @param array|null $value
+     * @param Retargeting[]|null $value
      * @return $this
      */
     public function setRetargetings(array $value = null)

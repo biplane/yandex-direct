@@ -43,7 +43,7 @@ class BannerPhrasesFilterRequestInfo
     /**
      * Sets BannerIDS.
      *
-     * @param array $value
+     * @param int[] $value
      * @return $this
      */
     public function setBannerIDS(array $value)
@@ -66,7 +66,7 @@ class BannerPhrasesFilterRequestInfo
     /**
      * Sets FieldsNames.
      *
-     * @param array|null $value
+     * @param string[]|null $value
      * @return $this
      */
     public function setFieldsNames(array $value = null)

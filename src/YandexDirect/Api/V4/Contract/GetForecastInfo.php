@@ -41,7 +41,7 @@ class GetForecastInfo
     /**
      * Sets Categories.
      *
-     * @param array $value
+     * @param BannerPhraseInfo[] $value
      * @return $this
      */
     public function setCategories(array $value)
@@ -64,7 +64,7 @@ class GetForecastInfo
     /**
      * Sets Phrases.
      *
-     * @param array $value
+     * @param BannerPhraseInfo[] $value
      * @return $this
      */
     public function setPhrases(array $value)

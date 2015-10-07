@@ -499,7 +499,7 @@ class CampaignInfo
     /**
      * Sets AdditionalMetrikaCounters.
      *
-     * @param array|null $value
+     * @param int[]|null $value
      * @return $this
      */
     public function setAdditionalMetrikaCounters(array $value = null)
@@ -1074,7 +1074,7 @@ class CampaignInfo
     /**
      * Sets MinusKeywords.
      *
-     * @param array|null $value
+     * @param string[]|null $value
      * @return $this
      */
     public function setMinusKeywords(array $value = null)

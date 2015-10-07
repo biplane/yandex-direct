@@ -85,7 +85,7 @@ class KeywordRequest
     /**
      * Sets KeywordIDS.
      *
-     * @param array $value
+     * @param int[] $value
      * @return $this
      */
     public function setKeywordIDS(array $value)

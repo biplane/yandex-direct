@@ -37,7 +37,7 @@ class NewWordstatReportInfo
     /**
      * Sets Phrases.
      *
-     * @param array $value
+     * @param string[] $value
      * @return $this
      */
     public function setPhrases(array $value)
@@ -60,7 +60,7 @@ class NewWordstatReportInfo
     /**
      * Sets GeoID.
      *
-     * @param array|null $value
+     * @param int[]|null $value
      * @return $this
      */
     public function setGeoID(array $value = null)

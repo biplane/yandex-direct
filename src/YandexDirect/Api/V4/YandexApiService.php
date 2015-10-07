@@ -410,10 +410,10 @@ class YandexAPIService extends SoapClient
     /**
      * GetClientsUnits.
      *
-     * @param string $params
+     * @param string[] $params
      * @return Contract\ClientsUnitInfo[]
      */
-    public function getClientsUnits($params)
+    public function getClientsUnits(array $params)
     {
         return $this->invoke('GetClientsUnits', array($params));
     }
@@ -421,10 +421,10 @@ class YandexAPIService extends SoapClient
     /**
      * GetClientInfo.
      *
-     * @param string $params
+     * @param string[] $params
      * @return Contract\ClientInfo[]
      */
-    public function getClientInfo($params)
+    public function getClientInfo(array $params)
     {
         return $this->invoke('GetClientInfo', array($params));
     }
@@ -432,10 +432,10 @@ class YandexAPIService extends SoapClient
     /**
      * UpdateClientInfo.
      *
-     * @param Contract\ClientInfo $params
+     * @param Contract\ClientInfo[] $params
      * @return int
      */
-    public function updateClientInfo(Contract\ClientInfo $params)
+    public function updateClientInfo(array $params)
     {
         return $this->invoke('UpdateClientInfo', array($params));
     }
@@ -454,10 +454,10 @@ class YandexAPIService extends SoapClient
     /**
      * GetCampaignsList.
      *
-     * @param string $params
+     * @param string[] $params
      * @return Contract\ShortCampaignInfo[]
      */
-    public function getCampaignsList($params)
+    public function getCampaignsList(array $params)
     {
         return $this->invoke('GetCampaignsList', array($params));
     }
@@ -476,10 +476,10 @@ class YandexAPIService extends SoapClient
     /**
      * GetBalance.
      *
-     * @param int $params
+     * @param int[] $params
      * @return Contract\CampaignBalanceInfo[]
      */
-    public function getBalance($params)
+    public function getBalance(array $params)
     {
         return $this->invoke('GetBalance', array($params));
     }
@@ -487,10 +487,10 @@ class YandexAPIService extends SoapClient
     /**
      * GetBannerPhrases.
      *
-     * @param int $params
+     * @param int[] $params
      * @return Contract\BannerPhraseInfo[]
      */
-    public function getBannerPhrases($params)
+    public function getBannerPhrases(array $params)
     {
         return $this->invoke('GetBannerPhrases', array($params));
     }
@@ -593,10 +593,10 @@ class YandexAPIService extends SoapClient
     /**
      * UpdatePrices.
      *
-     * @param Contract\PhrasePriceInfo $params
+     * @param Contract\PhrasePriceInfo[] $params
      * @return int
      */
-    public function updatePrices(Contract\PhrasePriceInfo $params)
+    public function updatePrices(array $params)
     {
         return $this->invoke('UpdatePrices', array($params));
     }
@@ -615,10 +615,10 @@ class YandexAPIService extends SoapClient
     /**
      * CreateOrUpdateBanners.
      *
-     * @param Contract\BannerInfo $params
+     * @param Contract\BannerInfo[] $params
      * @return int[]
      */
-    public function createOrUpdateBanners(Contract\BannerInfo $params)
+    public function createOrUpdateBanners(array $params)
     {
         return $this->invoke('CreateOrUpdateBanners', array($params));
     }
@@ -745,10 +745,10 @@ class YandexAPIService extends SoapClient
     /**
      * UpdateCampaignsTags.
      *
-     * @param Contract\CampaignTagsInfo $params
+     * @param Contract\CampaignTagsInfo[] $params
      * @return Contract\CampaignTagsInfo[]
      */
-    public function updateCampaignsTags(Contract\CampaignTagsInfo $params)
+    public function updateCampaignsTags(array $params)
     {
         return $this->invoke('UpdateCampaignsTags', array($params));
     }
@@ -767,10 +767,10 @@ class YandexAPIService extends SoapClient
     /**
      * UpdateBannersTags.
      *
-     * @param Contract\BannerTagsInfo $params
+     * @param Contract\BannerTagsInfo[] $params
      * @return int
      */
-    public function updateBannersTags(Contract\BannerTagsInfo $params)
+    public function updateBannersTags(array $params)
     {
         return $this->invoke('UpdateBannersTags', array($params));
     }

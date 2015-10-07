@@ -58,7 +58,7 @@ class CampaignBidsInfo
     /**
      * Sets BannerIDS.
      *
-     * @param array|null $value
+     * @param int[]|null $value
      * @return $this
      */
     public function setBannerIDS(array $value = null)

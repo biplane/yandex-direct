@@ -60,7 +60,7 @@ class QualityIndex
     /**
      * Sets References.
      *
-     * @param array $value
+     * @param int[] $value
      * @return $this
      */
     public function setReferences(array $value)

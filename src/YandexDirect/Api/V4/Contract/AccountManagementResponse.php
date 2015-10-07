@@ -35,7 +35,7 @@ class AccountManagementResponse
     /**
      * Sets ActionsResult.
      *
-     * @param array|null $value
+     * @param AccountActionResult[]|null $value
      * @return $this
      */
     public function setActionsResult(array $value = null)
@@ -58,7 +58,7 @@ class AccountManagementResponse
     /**
      * Sets Accounts.
      *
-     * @param array|null $value
+     * @param Account[]|null $value
      * @return $this
      */
     public function setAccounts(array $value = null)

@@ -41,7 +41,7 @@ class TimeTargetItem
     /**
      * Sets Hours.
      *
-     * @param array $value
+     * @param int[] $value
      * @return $this
      */
     public function setHours(array $value)
@@ -64,7 +64,7 @@ class TimeTargetItem
     /**
      * Sets Days.
      *
-     * @param array $value
+     * @param int[] $value
      * @return $this
      */
     public function setDays(array $value)
@@ -87,7 +87,7 @@ class TimeTargetItem
     /**
      * Sets BidCoefs.
      *
-     * @param array|null $value
+     * @param int[]|null $value
      * @return $this
      */
     public function setBidCoefs(array $value = null)

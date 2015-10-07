@@ -35,7 +35,7 @@ class RetargetingResponse
     /**
      * Sets ActionsResult.
      *
-     * @param array|null $value
+     * @param RetargetingActionResult[]|null $value
      * @return $this
      */
     public function setActionsResult(array $value = null)
@@ -58,7 +58,7 @@ class RetargetingResponse
     /**
      * Sets Retargetings.
      *
-     * @param array|null $value
+     * @param Retargeting[]|null $value
      * @return $this
      */
     public function setRetargetings(array $value = null)

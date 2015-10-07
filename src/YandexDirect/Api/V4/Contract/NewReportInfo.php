@@ -128,7 +128,7 @@ class NewReportInfo
     /**
      * Sets GroupByColumns.
      *
-     * @param array|null $value
+     * @param string[]|null $value
      * @return $this
      */
     public function setGroupByColumns(array $value = null)
@@ -243,7 +243,7 @@ class NewReportInfo
     /**
      * Sets OrderBy.
      *
-     * @param array|null $value
+     * @param string[]|null $value
      * @return $this
      */
     public function setOrderBy(array $value = null)

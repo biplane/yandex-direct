@@ -41,7 +41,7 @@ class GetEventsLogFilter
     /**
      * Sets CampaignIDS.
      *
-     * @param array|null $value
+     * @param int[]|null $value
      * @return $this
      */
     public function setCampaignIDS(array $value = null)
@@ -64,7 +64,7 @@ class GetEventsLogFilter
     /**
      * Sets BannerIDS.
      *
-     * @param array|null $value
+     * @param int[]|null $value
      * @return $this
      */
     public function setBannerIDS(array $value = null)
@@ -87,7 +87,7 @@ class GetEventsLogFilter
     /**
      * Sets PhraseIDS.
      *
-     * @param array|null $value
+     * @param int[]|null $value
      * @return $this
      */
     public function setPhraseIDS(array $value = null)
@@ -110,7 +110,7 @@ class GetEventsLogFilter
     /**
      * Sets AccountIDS.
      *
-     * @param array|null $value
+     * @param int[]|null $value
      * @return $this
      */
     public function setAccountIDS(array $value = null)
@@ -133,7 +133,7 @@ class GetEventsLogFilter
     /**
      * Sets EventType.
      *
-     * @param array|null $value
+     * @param string[]|null $value
      * @return $this
      */
     public function setEventType(array $value = null)

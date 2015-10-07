@@ -45,7 +45,7 @@ class AdImageAssociationSelectionCriteria
     /**
      * Sets Logins.
      *
-     * @param array|null $value
+     * @param string[]|null $value
      * @return $this
      */
     public function setLogins(array $value = null)
@@ -68,7 +68,7 @@ class AdImageAssociationSelectionCriteria
     /**
      * Sets AdImageHashes.
      *
-     * @param array|null $value
+     * @param string[]|null $value
      * @return $this
      */
     public function setAdImageHashes(array $value = null)
@@ -91,7 +91,7 @@ class AdImageAssociationSelectionCriteria
     /**
      * Sets StatusAdImageModerate.
      *
-     * @param array|null $value
+     * @param string[]|null $value
      * @return $this
      */
     public function setStatusAdImageModerate(array $value = null)
@@ -114,7 +114,7 @@ class AdImageAssociationSelectionCriteria
     /**
      * Sets AdIDS.
      *
-     * @param array|null $value
+     * @param int[]|null $value
      * @return $this
      */
     public function setAdIDS(array $value = null)
@@ -137,7 +137,7 @@ class AdImageAssociationSelectionCriteria
     /**
      * Sets CampaignIDS.
      *
-     * @param array|null $value
+     * @param int[]|null $value
      * @return $this
      */
     public function setCampaignIDS(array $value = null)

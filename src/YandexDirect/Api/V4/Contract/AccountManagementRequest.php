@@ -87,7 +87,7 @@ class AccountManagementRequest
     /**
      * Sets Payments.
      *
-     * @param array|null $value
+     * @param Payment[]|null $value
      * @return $this
      */
     public function setPayments(array $value = null)
@@ -110,7 +110,7 @@ class AccountManagementRequest
     /**
      * Sets Transfers.
      *
-     * @param array|null $value
+     * @param Transfer[]|null $value
      * @return $this
      */
     public function setTransfers(array $value = null)
@@ -133,7 +133,7 @@ class AccountManagementRequest
     /**
      * Sets Accounts.
      *
-     * @param array|null $value
+     * @param Account[]|null $value
      * @return $this
      */
     public function setAccounts(array $value = null)

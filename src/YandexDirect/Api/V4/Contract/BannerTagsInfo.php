@@ -58,7 +58,7 @@ class BannerTagsInfo
     /**
      * Sets TagIDS.
      *
-     * @param array|null $value
+     * @param int[]|null $value
      * @return $this
      */
     public function setTagIDS(array $value = null)

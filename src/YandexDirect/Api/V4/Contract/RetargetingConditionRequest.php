@@ -83,7 +83,7 @@ class RetargetingConditionRequest
     /**
      * Sets RetargetingConditions.
      *
-     * @param array|null $value
+     * @param RetargetingCondition[]|null $value
      * @return $this
      */
     public function setRetargetingConditions(array $value = null)

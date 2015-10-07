@@ -68,7 +68,7 @@ class RetargetingCondition
     /**
      * Sets Fields.
      *
-     * @param array|null $value
+     * @param string[]|null $value
      * @return $this
      */
     public function setFields(array $value = null)
@@ -183,7 +183,7 @@ class RetargetingCondition
     /**
      * Sets RetargetingCondition.
      *
-     * @param array|null $value
+     * @param RetargetingConditionItem[]|null $value
      * @return $this
      */
     public function setRetargetingCondition(array $value = null)

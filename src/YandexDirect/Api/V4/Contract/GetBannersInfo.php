@@ -49,7 +49,7 @@ class GetBannersInfo
     /**
      * Sets CampaignIDS.
      *
-     * @param array|null $value
+     * @param int[]|null $value
      * @return $this
      */
     public function setCampaignIDS(array $value = null)
@@ -72,7 +72,7 @@ class GetBannersInfo
     /**
      * Sets BannerIDS.
      *
-     * @param array|null $value
+     * @param int[]|null $value
      * @return $this
      */
     public function setBannerIDS(array $value = null)
@@ -141,7 +141,7 @@ class GetBannersInfo
     /**
      * Sets FieldsNames.
      *
-     * @param array|null $value
+     * @param string[]|null $value
      * @return $this
      */
     public function setFieldsNames(array $value = null)
