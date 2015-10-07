@@ -3,14 +3,14 @@
   "type": "library",
   "require": {
     "php": ">=5.3.3",
-    "symfony/options-resolver": "~2.1",
-    "symfony/event-dispatcher": "~2.1",
+    "symfony/options-resolver": "~2.3",
+    "symfony/event-dispatcher": "~2.3",
     "kriswallsmith/buzz": "~0.12"
   },
   "require-dev": {
     "php": ">=5.4",
-    "symfony/console": "~2.1",
-    "symfony/framework-bundle": "~2.2",
+    "symfony/console": "~2.3",
+    "symfony/framework-bundle": "~2.3",
     "lstrojny/phpunit-function-mocker": "^0.2.0",
     "wsdl2phpgenerator/wsdl2phpgenerator": "^3.2",
     "zendframework/zend-code": "^2.5",
