@@ -50,11 +50,11 @@ class SharedMemory
      * @param int       $memorySize The memory size of bytes
      * @param int       $permission The optional permission bits
      */
-    public function __construct($key, Semaphore $semaphore, $memorySize = 10000000, $permission = 0666)
+    public function __construct($key, Semaphore $semaphore, $memorySize = 10000, $permission = 0666)
     {
         $this->key = (int)$key;
         $this->semaphore = $semaphore;
-        $this->memorySize = (int)$memorySize; // defaults: ~10 Мб
+        $this->memorySize = (int)$memorySize;
         $this->permissions = $permission;
 
         $this->numberLocks = 0;

@@ -20,7 +20,7 @@ class Factory
      *
      * @throws \RuntimeException When $path does not exist
      */
-    public function __construct($path, $defaultMemorySize)
+    public function __construct($path, $defaultMemorySize = 10000)
     {
         if (!is_dir($path)) {
             if (@mkdir($path, 0777, true) === false) {
