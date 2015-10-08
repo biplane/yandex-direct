@@ -108,7 +108,7 @@ abstract class SoapClient extends \SoapClient
 
             $this->dispatcher->dispatch(
                 Events::FAIL_REQUEST,
-                new FailCallEvent($method, $params, $this->user, $requestId, $ex)
+                new FailCallEvent($method, $params, $this->user, $requestId, $this, $ex)
             );
 
             throw $ex;
@@ -116,7 +116,7 @@ abstract class SoapClient extends \SoapClient
 
         $this->dispatcher->dispatch(
             Events::AFTER_REQUEST,
-            new PostCallEvent($method, $params, $this->user, $requestId, $response)
+            new PostCallEvent($method, $params, $this->user, $requestId, $this, $response)
         );
 
         return $response;

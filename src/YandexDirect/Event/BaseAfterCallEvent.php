@@ -2,6 +2,7 @@
 
 namespace Biplane\YandexDirect\Event;
 
+use Biplane\YandexDirect\Api\SoapClient;
 use Biplane\YandexDirect\User;
 
 /**
@@ -12,18 +13,20 @@ use Biplane\YandexDirect\User;
 abstract class BaseAfterCallEvent extends PreCallEvent
 {
     private $requestId;
+    private $client;
 
     /**
      * Constructor.
      *
-     * @param string $methodName The method name of API
-     * @param array  $params     The params for method of API
-     * @param User   $user       The user
-     * @param string $requestId  The request identifer
+     * @param string     $methodName The method name of API
+     * @param array      $params     The params for method of API
+     * @param User       $user       The user
+     * @param string     $requestId  The request identifer
+     * @param SoapClient $client     The SOAP client
      *
      * @throws \InvalidArgumentException
      */
-    public function __construct($methodName, array $params, User $user, $requestId)
+    public function __construct($methodName, array $params, User $user, $requestId, SoapClient $client)
     {
         parent::__construct($methodName, $params, $user);
 
@@ -32,6 +35,7 @@ abstract class BaseAfterCallEvent extends PreCallEvent
         }
 
         $this->requestId = $requestId;
+        $this->client = $client;
     }
 
     /**
@@ -42,5 +46,25 @@ abstract class BaseAfterCallEvent extends PreCallEvent
     public function getRequestId()
     {
         return $this->requestId;
+    }
+
+    /**
+     * Gets headers and content of HTTP request.
+     *
+     * @return string
+     */
+    public function getRequest()
+    {
+        return $this->client->getLastRequest();
+    }
+
+    /**
+     * Gets headers and content of HTTP response.
+     *
+     * @return string
+     */
+    public function getResponse()
+    {
+        return $this->client->getLastResponse();
     }
 }

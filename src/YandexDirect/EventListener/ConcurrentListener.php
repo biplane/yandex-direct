@@ -29,8 +29,8 @@ class ConcurrentListener implements EventSubscriberInterface
     {
         return array(
             Events::BEFORE_REQUEST => 'acquireLock',
-            Events::AFTER_REQUEST  => 'releaseLock',
-            Events::FAIL_REQUEST   => 'releaseLock',
+            Events::AFTER_REQUEST  => array('releaseLock', 1024),
+            Events::FAIL_REQUEST   => array('releaseLock', 1024),
         );
     }
 

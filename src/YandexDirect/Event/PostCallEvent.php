@@ -2,6 +2,7 @@
 
 namespace Biplane\YandexDirect\Event;
 
+use Biplane\YandexDirect\Api\SoapClient;
 use Biplane\YandexDirect\User;
 
 /**
@@ -11,33 +12,34 @@ use Biplane\YandexDirect\User;
  */
 class PostCallEvent extends BaseAfterCallEvent
 {
-    private $response;
+    private $result;
 
     /**
      * Constructor.
      *
-     * @param string $methodName The method name of API
-     * @param array  $params     The params for method of API
-     * @param User   $user       The user
-     * @param string $requestId  The request identifer
-     * @param mixed  $response   A response of API
+     * @param string     $methodName The method name of API
+     * @param array      $params     The params for method of API
+     * @param User       $user       The user
+     * @param string     $requestId  The request identifer
+     * @param SoapClient $client     The client
+     * @param mixed      $response   The result from API
      *
      * @throws \InvalidArgumentException
      */
-    public function __construct($methodName, array $params, User $user, $requestId, $response)
+    public function __construct($methodName, array $params, User $user, $requestId, SoapClient $client, $response)
     {
-        parent::__construct($methodName, $params, $user, $requestId);
+        parent::__construct($methodName, $params, $user, $requestId, $client);
 
-        $this->response = $response;
+        $this->result = $response;
     }
 
     /**
-     * Gets the last response of API.
+     * Gets the result from API.
      *
      * @return mixed
      */
-    public function getResponse()
+    public function getResult()
     {
-        return $this->response;
+        return $this->result;
     }
 }

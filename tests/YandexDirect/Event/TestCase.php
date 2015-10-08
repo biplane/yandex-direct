@@ -15,4 +15,11 @@ class TestCase extends \PHPUnit_Framework_TestCase
             ->disableOriginalConstructor()
             ->getMock();
     }
+
+    protected function getSoapClientMock()
+    {
+        return $this->getMockBuilder('Biplane\YandexDirect\Api\SoapClient')
+            ->disableOriginalConstructor()
+            ->getMock();
+    }
 }

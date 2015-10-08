@@ -2,6 +2,7 @@
 
 namespace Biplane\YandexDirect\Event;
 
+use Biplane\YandexDirect\Api\SoapClient;
 use Biplane\YandexDirect\User;
 
 /**
@@ -20,11 +21,12 @@ class FailCallEvent extends BaseAfterCallEvent
      * @param array      $params     The params for method of API
      * @param User       $user       The configuration
      * @param string     $requestId  The request identifer
+     * @param SoapClient $client     The SOAP client
      * @param \Exception $exception  The thrown exception
      */
-    public function __construct($methodName, array $params, User $user, $requestId, \Exception $exception)
+    public function __construct($methodName, array $params, User $user, $requestId, SoapClient $client, \Exception $exception)
     {
-        parent::__construct($methodName, $params, $user, $requestId);
+        parent::__construct($methodName, $params, $user, $requestId, $client);
 
         $this->exception = $exception;
     }

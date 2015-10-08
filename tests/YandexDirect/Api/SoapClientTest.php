@@ -68,7 +68,7 @@ class SoapClientTest extends \PHPUnit_Framework_TestCase
                 $this->assertSame($this->user, $eventArgs->getUser());
                 $this->assertEquals($methodName, $eventArgs->getMethodName());
                 $this->assertSame($methodParams, $eventArgs->getMethodParams());
-                $this->assertEquals($response, $eventArgs->getResponse());
+                $this->assertEquals($response, $eventArgs->getResult());
                 $this->assertEquals('0b31f8e10bb3f7a2c51be252ce5d1fda', $eventArgs->getRequestId());
             });
 

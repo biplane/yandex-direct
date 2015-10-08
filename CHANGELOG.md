@@ -77,6 +77,9 @@
         Biplane\YandexDirect\Event\PreCallEvent
         Biplane\YandexDirect\Events
         
+ * **[BC BREA]** Метод `getResponse` в `PostCallEvent`, возвращающий результат ответа от API,
+   был переименован в `getResult`.
+        
    * Удален метод `getApiService`. Доступ к сервису API можно получить через метод `getUser`
 
         $event->getUser()->getApiService();
@@ -88,6 +91,9 @@
      
    * Для `FailCallEvent` и `PostCallEvent` добавлен метод `getRequestId`, 
      который возвращает уникальных идентификатор запроса к API.
+     
+   * Для `FailCallEvent` и `PostCallEvent` добавлены методы `getRequest` и `getResponse`,
+     которые возвращают заголовки и контент HTTP-запроса и HTTP-ответа, соответственно.
 
  * **[BC BREAK]** Изменилось пространство имен для `Authenticator`
 
