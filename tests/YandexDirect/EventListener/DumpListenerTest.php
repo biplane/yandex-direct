@@ -24,7 +24,7 @@ class DumpListenerTest extends \PHPUnit_Framework_TestCase
      */
     public function testHandleFailEvent($level, $success)
     {
-        $id = uniqid();
+        $id = 'identifier';
 
         $listener = new DumpListener($this->dir, $level);
         $event = $this->getEventMock('FailCallEvent', $id, 'foo', 'bar');
@@ -32,11 +32,11 @@ class DumpListenerTest extends \PHPUnit_Framework_TestCase
         $listener->onFail($event);
 
         if ($success) {
-            $this->assertDumpFile($id . '_request', 'foo');
-            $this->assertDumpFile($id . '_response', 'bar');
+            $this->assertDumpFile('id/e/identifier_req.data', 'foo');
+            $this->assertDumpFile('id/e/identifier_resp.data', 'bar');
         } else {
-            $this->assertFileNotExists($this->dir . '/' . $id . '_request');
-            $this->assertFileNotExists($this->dir . '/' . $id . '_response');
+            $this->assertFileNotExists($this->dir . '/id/e/identifier_req.data');
+            $this->assertFileNotExists($this->dir . '/id/e/identifier_resp.data');
         }
     }
 
@@ -45,7 +45,7 @@ class DumpListenerTest extends \PHPUnit_Framework_TestCase
      */
     public function testHandlePostEvent($level, $success)
     {
-        $id = uniqid();
+        $id = 'identifier';
 
         $listener = new DumpListener($this->dir, $level);
         $event = $this->getEventMock('PostCallEvent', $id, 'foo', 'bar');
@@ -53,11 +53,11 @@ class DumpListenerTest extends \PHPUnit_Framework_TestCase
         $listener->onSuccess($event);
 
         if ($success) {
-            $this->assertDumpFile($id . '_request', 'foo');
-            $this->assertDumpFile($id . '_response', 'bar');
+            $this->assertDumpFile('id/e/identifier_req.data', 'foo');
+            $this->assertDumpFile('id/e/identifier_resp.data', 'bar');
         } else {
-            $this->assertFileNotExists($this->dir . '/' . $id . '_request');
-            $this->assertFileNotExists($this->dir . '/' . $id . '_response');
+            $this->assertFileNotExists($this->dir . '/id/e/identifier_req.data');
+            $this->assertFileNotExists($this->dir . '/id/e/identifier_resp.data');
         }
     }
 
@@ -85,12 +85,15 @@ class DumpListenerTest extends \PHPUnit_Framework_TestCase
     protected function tearDown()
     {
         if (is_dir($this->dir)) {
-            foreach (new \DirectoryIterator($this->dir) as $entry) {
-                if ($entry->isFile()) {
-                    unlink($entry->getPathname());
-                } elseif ($entry->isDir() && !$entry->isDot()) {
-                    rmdir($entry->getPathname());
-                }
+            // Implementation taken from http://stackoverflow.com/a/3352564.
+            $files = new \RecursiveIteratorIterator(
+                new \RecursiveDirectoryIterator($this->dir, \RecursiveDirectoryIterator::SKIP_DOTS),
+                \RecursiveIteratorIterator::CHILD_FIRST
+            );
+
+            foreach ($files as $fileInfo) {
+                $deleteFunction = ($fileInfo->isDir() ? 'rmdir' : 'unlink');
+                $deleteFunction($fileInfo->getRealPath());
             }
 
             rmdir($this->dir);

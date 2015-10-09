@@ -18,7 +18,7 @@ class DumpListener implements EventSubscriberInterface
     const LEVEL_FAIL_REQUEST = 1;
     const LEVEL_ALL_REQUEST  = 2;
 
-    private $dir;
+    private $rootDir;
     private $level;
 
     /**
@@ -43,13 +43,7 @@ class DumpListener implements EventSubscriberInterface
      */
     public function __construct($dir, $level = self::LEVEL_ALL_REQUEST)
     {
-        if (!is_dir($dir) && !@mkdir($dir, 0775, true)) {
-            throw new \RuntimeException(sprintf('Could not create directory "%s".', $dir));
-        }
-
-        if (!is_writable($dir)) {
-            throw new \RuntimeException(sprintf('The directory "%s" is not writable.', $dir));
-        }
+        $this->ensureDirectoryExists($dir);
 
         if (!in_array($level, array(self::LEVEL_ALL_REQUEST, self::LEVEL_FAIL_REQUEST))) {
             throw new \InvalidArgumentException(
@@ -57,10 +51,15 @@ class DumpListener implements EventSubscriberInterface
             );
         }
 
-        $this->dir = $dir;
+        $this->rootDir = $dir;
         $this->level = (int)$level;
     }
 
+    /**
+     * Handle the event.
+     *
+     * @param FailCallEvent $event
+     */
     public function onFail(FailCallEvent $event)
     {
         if ($this->level >= self::LEVEL_FAIL_REQUEST) {
@@ -68,6 +67,11 @@ class DumpListener implements EventSubscriberInterface
         }
     }
 
+    /**
+     * Handle the event.
+     *
+     * @param PostCallEvent $event
+     */
     public function onSuccess(PostCallEvent $event)
     {
         if ($this->level >= self::LEVEL_ALL_REQUEST) {
@@ -77,7 +81,23 @@ class DumpListener implements EventSubscriberInterface
 
     private function dump(BaseAfterCallEvent $event)
     {
-        file_put_contents($this->dir . '/' . $event->getRequestId() . '_request', $event->getRequest());
-        file_put_contents($this->dir . '/' . $event->getRequestId() . '_response', $event->getResponse());
+        $requestId = $event->getRequestId();
+        $dir = $this->rootDir . '/' . substr($requestId, 0, 2) . '/' . substr($requestId, 2, 1);
+
+        $this->ensureDirectoryExists($dir);
+
+        file_put_contents($dir . '/' . $requestId . '_req.data', $event->getRequest());
+        file_put_contents($dir . '/' . $requestId . '_resp.data', $event->getResponse());
+    }
+
+    private function ensureDirectoryExists($dir)
+    {
+        if (!is_dir($dir) && !@mkdir($dir, 0775, true)) {
+            throw new \RuntimeException(sprintf('Could not create directory "%s".', $dir));
+        }
+
+        if (!is_writable($dir)) {
+            throw new \RuntimeException(sprintf('The directory "%s" is not writable.', $dir));
+        }
     }
 }
