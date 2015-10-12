@@ -11,7 +11,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 /**
  * UserInfoCommand
  *
- * @author Denis Vasilev <yethee@auto-pilot.pro>
+ * @author Denis Vasilev <yethee@biplane.ru>
  */
 class UserInfoCommand extends ContainerAwareCommand
 {
