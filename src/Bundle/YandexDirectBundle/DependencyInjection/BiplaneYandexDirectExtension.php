@@ -2,10 +2,10 @@
 
 namespace Biplane\Bundle\YandexDirectBundle\DependencyInjection;
 
-use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Symfony\Component\DependencyInjection\Definition;
-use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
+use Biplane\YandexDirect\EventListener\DumpListener;
 use Symfony\Component\Config\FileLocator;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
 use Symfony\Component\HttpKernel\DependencyInjection\ConfigurableExtension;
 
 /**
@@ -23,59 +23,43 @@ class BiplaneYandexDirectExtension extends ConfigurableExtension
         $loader = new XmlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
         $loader->load('services.xml');
 
-        $container->getDefinition('biplane_yandex_direct.auth')->setArguments(array(
-            $config['application_id'],
-            $config['application_secret'],
-        ));
+        $factoryDef = $container->getDefinition('biplane_yandex_direct.factory');
+        $factoryDef->addArgument($config['locale']);
 
-        // коллекция профилей
-        $profilesDefs = array();
-
-        foreach ($config['profiles'] as $name => $options) {
-            if (empty($options['login'])) {
-                $options['login'] = $name;
-            }
-
-            if (isset($options['cert_file'])) {
-                $configClass = 'Biplane\YandexDirectBundle\Configuration\CertificateConfiguration';
-            } elseif (isset($options['access_token'])) {
-                $configClass = 'Biplane\YandexDirectBundle\Configuration\AuthTokenConfiguration';
-            } else {
-                throw new \LogicException(sprintf(
-                    'Could not determine the class of config for profile "%s".',
-                    $name
-                ));
-            }
-
-            $profilesDefs[$name] = $configDef = new Definition($configClass, array($options));
-            $configDef->setPublic(false);
+        if (isset($config['user'])) {
+            $factoryDef->addArgument($config['user']);
         }
 
-        if (!empty($config['default_profile'])) {
-            $container->getDefinition('biplane_yandex_direct.api.factory')
-                ->addMethodCall('setDefaultProfile', array($config['default_profile']));
+        if (isset($config['auth'])) {
+            $container->getDefinition('biplane_yandex_direct.auth')->setArguments(array(
+                $config['auth']['app_id'],
+                $config['auth']['app_secret'],
+            ));
+        } else {
+            $container->removeDefinition('biplane_yandex_direct.auth');
         }
 
-        $container->getDefinition('biplane_yandex_direct.config.registry')
-            ->addArgument($profilesDefs);
+        $container->getDefinition('biplane_yandex_direct.ipc_factory')
+            ->addArgument($config['ipc']['directory']);
 
-        $this->applyApiLimits($config['limits'], $container);
-    }
-
-    /**
-     * Applies the API limits.
-     *
-     * @param array            $limits    The API limits configuration
-     * @param ContainerBuilder $container A ContainerBuilder instance
-     */
-    private function applyApiLimits(array $limits, ContainerBuilder $container)
-    {
-        if (null !== $limit = $limits['max_connections']) {
-            $container
-                ->getDefinition('biplane_yandex_direct.event_listener.concurrent')
-                ->replaceArgument(1, $limit);
+        if ($config['concurrent_listener']['enabled']) {
+            $container->getDefinition('biplane_yandex_direct.event_listener.concurrent')
+                ->addArgument($config['concurrent_listener']['connections']);
         } else {
             $container->removeDefinition('biplane_yandex_direct.event_listener.concurrent');
+        }
+
+        if ($config['dump_listener']['enabled']) {
+            $levelMap = array(
+                'all' => DumpListener::LEVEL_ALL_REQUEST,
+                'only-fail' => DumpListener::LEVEL_FAIL_REQUEST
+            );
+
+            $container->getDefinition('biplane_yandex_direct.event_listener.dump')
+                ->addArgument($config['dump_listener']['directory'])
+                ->addArgument($levelMap[$config['dump_listener']['dump']]);
+        } else {
+            $container->removeDefinition('biplane_yandex_direct.event_listener.dump');
         }
     }
 }

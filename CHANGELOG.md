@@ -110,6 +110,18 @@
  * Удалена зависимость от библиотеки `biplane/common`.
  
  * Добавлена поддержка Яндекс.Директ API версии 5.
+ 
+ * **[BC BREAK]** Конфигурация бандла сильно изменилась. Больше не поддерживаются профили.
+   Так же изменилось полное имя бандла:
+ 
+    **Было**
+ 
+         Biplane\YandexDirectBundle\BiplaneYandexDirectBundle 
+ 
+    **Стало**
+ 
+         Biplane\Bundle\YandexDirectBundle\BiplaneYandexDirectBundle
+
 
 ## 2.0.0 [commit logs](https://github.com/biplane/BiplaneYandexDirectBundle/compare/1.0.0...2.0.0)
 

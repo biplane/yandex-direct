@@ -4,33 +4,22 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
-        <service id="biplane_yandex_direct.api.factory" class="Biplane\YandexDirectBundle\Factory\ApiServiceFactory">
-            <argument type="service" id="biplane_yandex_direct.client.factory" />
-            <argument type="service" id="biplane_yandex_direct.config.registry" />
+        <service id="biplane_yandex_direct.auth" class="Biplane\YandexDirect\Auth\Authenticator" />
+
+        <service id="biplane_yandex_direct.factory" class="Biplane\YandexDirectBundle\UserFactory">
             <argument type="service" id="event_dispatcher" />
         </service>
 
-        <service id="biplane_yandex_direct.client.factory" class="Biplane\YandexDirectBundle\Factory\ClientFactory" public="false" />
-
-        <service id="biplane_yandex_direct.config.registry" class="Biplane\YandexDirectBundle\Configuration\ConfigurationRegistry" />
-
-        <service id="biplane_yandex_direct.service.factory" class="Biplane\YandexDirectBundle\Service\Factory">
-            <argument type="service" id="biplane_yandex_direct.api.factory" />
-            <argument type="service" id="biplane_yandex_direct.config.registry" />
-        </service>
-
-        <service id="biplane_yandex_direct.ipc.factory" class="Biplane\SysV\Factory" public="false">
-            <argument>%kernel.cache_dir%/ipc</argument>
-            <argument>10000000</argument>
-        </service>
+        <service id="biplane_yandex_direct.ipc_factory" class="Biplane\SysV\Factory" public="false" />
 
         <service id="biplane_yandex_direct.event_listener.concurrent" class="Biplane\YandexDirect\EventListener\ConcurrentListener">
-            <argument type="service" id="biplane_yandex_direct.ipc.factory" />
-            <argument />
+            <argument type="service" id="biplane_yandex_direct.ipc_factory" />
 
             <tag name="kernel.event_subscriber" />
         </service>
 
-        <service id="biplane_yandex_direct.auth" class="Biplane\YandexDirect\Auth\Authenticator" />
+        <service id="biplane_yandex_direct.event_listener.dump" class="Biplane\YandexDirect\EventListener\DumpListener">
+            <tag name="kernel.event_subscriber" />
+        </service>
     </services>
 </container>

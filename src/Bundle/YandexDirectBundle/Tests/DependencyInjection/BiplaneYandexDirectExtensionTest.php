@@ -3,6 +3,8 @@
 namespace Biplane\YandexDirectBundle\Tests\DependencyInjection;
 
 use Biplane\Bundle\YandexDirectBundle\DependencyInjection\BiplaneYandexDirectExtension;
+use Biplane\YandexDirect\EventListener\DumpListener;
+use Biplane\YandexDirect\User;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\DependencyInjection\Reference;
@@ -22,89 +24,86 @@ class BiplaneYandexDirectExtensionTest extends \PHPUnit_Framework_TestCase
      */
     private $extension;
 
-    public function testFullConfigLoad()
+    public function testLoadWithDefaults()
+    {
+        $this->load(array());
+
+        $this->assertDICConstructorArguments(
+            $this->container->getDefinition('biplane_yandex_direct.factory'),
+            array(
+                new Reference('event_dispatcher'),
+                User::LOCALE_RU
+            )
+        );
+        $this->assertDICConstructorArguments(
+            $this->container->getDefinition('biplane_yandex_direct.ipc_factory'),
+            array('%kernel.cache_dir%/ipc')
+        );
+        $this->assertFalse($this->container->hasDefinition('biplane_yandex_direct.auth'));
+        $this->assertFalse($this->container->hasDefinition('biplane_yandex_direct.event_listener.concurrent'));
+        $this->assertFalse($this->container->hasDefinition('biplane_yandex_direct.event_listener.dump'));
+    }
+
+    public function testLoadWithUserOptions()
+    {
+        $userOptions = array(
+            'access_token' => 'foo'
+        );
+
+        $this->load(array(
+            'user' => $userOptions
+        ));
+
+        $this->assertDICConstructorArguments(
+            $this->container->getDefinition('biplane_yandex_direct.factory'),
+            array(
+                new Reference('event_dispatcher'),
+                User::LOCALE_RU,
+                $userOptions
+            )
+        );
+    }
+
+    public function testLoadWithAuthConfig()
     {
         $this->load(array(
-            'application_id'     => 'app_id',
-            'application_secret' => 'secr3t',
-            'default_profile'    => 'foo',
-            'profiles'           => array(
-                'foo' => array(
-                    'cert_file'    => 'path/to/local_cert',
-                    'locale'       => 'en',
-                    'master_token' => 'MASTER-TOKEN',
-                ),
-                'bar' => array(
-                    'login'        => 'yandex_login',
-                    'access_token' => 'ACCESS-TOKEN',
-                )
-            ),
-            'limits'             => array(
-                'max_connections' => 7
+            'auth' => array(
+                'app_id' => 'id',
+                'app_secret' => 'topsecret'
             )
         ));
 
         $this->assertDICConstructorArguments(
             $this->container->getDefinition('biplane_yandex_direct.auth'),
-            array('app_id', 'secr3t')
-        );
-
-        $this->assertDICDefinitionMethodCallAt(
-            0,
-            $this->container->getDefinition('biplane_yandex_direct.api.factory'),
-            'setDefaultProfile',
-            array('foo')
-        );
-        $this->assertDICConstructorArguments(
-            $this->container->getDefinition('biplane_yandex_direct.event_listener.concurrent'),
-            array(new Reference('biplane_yandex_direct.ipc.factory'), 7)
-        );
-
-        $profiles = $this->container->getDefinition('biplane_yandex_direct.config.registry')->getArgument(0);
-
-        $this->assertArrayHasKey('foo', $profiles);
-        $this->assertArrayHasKey('bar', $profiles);
-
-        $this->assertDICDefinitionClass($profiles['foo'], 'Biplane\YandexDirectBundle\Configuration\CertificateConfiguration');
-        $this->assertDICConstructorArguments($profiles['foo'], array(
-            0 => array(
-                'login'        => 'foo',
-                'cert_file'    => 'path/to/local_cert',
-                'locale'       => 'en',
-                'master_token' => 'MASTER-TOKEN'
-            )
-        ));
-
-        $this->assertDICDefinitionClass($profiles['bar'], 'Biplane\YandexDirectBundle\Configuration\AuthTokenConfiguration');
-        $this->assertDICConstructorArguments($profiles['bar'], array(
-            0 => array(
-                'login'        => 'yandex_login',
-                'access_token' => 'ACCESS-TOKEN',
-                'locale'       => 'ru',
-            )
-        ));
-    }
-
-    public function testEmptyConfigLoad()
-    {
-        $this->load(array());
-
-        $this->assertTrue($this->container->hasDefinition('biplane_yandex_direct.event_listener.concurrent'));
-        $this->assertEquals(
-            12,
-            $this->container->getDefinition('biplane_yandex_direct.event_listener.concurrent')->getArgument(1)
+            array('id', 'topsecret')
         );
     }
 
-    public function testDisableConnectionsLimit()
+    public function testLoadWhenConcurrentListenerIsEnabled()
     {
         $this->load(array(
-            'limits' => array(
-                'max_connections' => null,
-            )
+            'concurrent_listener' => true
         ));
 
-        $this->assertFalse($this->container->hasDefinition('biplane_yandex_direct.event_listener.concurrent'));
+        $this->assertDICConstructorArguments(
+            $this->container->getDefinition('biplane_yandex_direct.event_listener.concurrent'),
+            array(new Reference('biplane_yandex_direct.ipc_factory'), 12)
+        );
+    }
+
+    public function testLoadWhenDumpListenerIsEnabled()
+    {
+        $this->load(array(
+            'dump_listener' => true
+        ));
+
+        $this->assertDICConstructorArguments(
+            $this->container->getDefinition('biplane_yandex_direct.event_listener.dump'),
+            array(
+                '%kernel.cache_dir%/api_dumps',
+                DumpListener::LEVEL_ALL_REQUEST
+            )
+        );
     }
 
     protected function setUp()
@@ -128,39 +127,13 @@ class BiplaneYandexDirectExtensionTest extends \PHPUnit_Framework_TestCase
         );
     }
 
-    private function assertDICDefinitionClass(Definition $definition, $expectedClass)
-    {
-        $this->assertEquals(
-            $expectedClass,
-            $definition->getClass(),
-            'Expected Class of the DIC Container Service Definition is wrong.'
-        );
-    }
-
     private function assertDICConstructorArguments(Definition $definition, $args)
     {
-        $message = "Expected and actual DIC Service constructor arguments of definition '" .
-            $definition->getClass() .
-            "' don't match.";
+        $message = sprintf(
+            "Expected and actual DIC Service constructor arguments of definition '%s' don't match.",
+            $definition->getClass()
+        );
 
         $this->assertEquals($args, $definition->getArguments(), $message);
-    }
-
-    private function assertDICDefinitionMethodCallAt($pos, Definition $definition, $methodName, array $params = null)
-    {
-        $calls = $definition->getMethodCalls();
-        if (isset($calls[$pos][0])) {
-            $this->assertEquals($methodName, $calls[$pos][0], sprintf(
-                'Method "%s" is expected to be called at position %d.', $methodName, $pos
-            ));
-
-            if ($params !== null) {
-                $this->assertEquals($params, $calls[$pos][1], sprintf(
-                    'Expected parameters to methods "%s" do not match the actual parameters.', $methodName
-                ));
-            }
-        } else {
-            $this->fail(sprintf('Method "%s" is expected to be called at position %d.', $methodName, $pos));
-        }
     }
 }

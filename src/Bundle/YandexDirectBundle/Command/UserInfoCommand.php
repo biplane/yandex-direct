@@ -2,7 +2,7 @@
 
 namespace Biplane\Bundle\YandexDirectBundle\Command;
 
-use Biplane\YandexDirect\Authenticator;
+use Biplane\YandexDirect\Auth\Authenticator;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;

@@ -2,6 +2,7 @@
 
 Предоставляет инструменты для работы с API Яндекс.Директа.
 
+
 ## Установка
 
 В `composer.json` необходимо добавить:
@@ -26,6 +27,7 @@
 ```bash
 $ composer install
 ```
+
 
 ## Использование
 
@@ -73,6 +75,7 @@ foreach ($response->getAds() as $ad) {
     // here $ad is instance of Biplane\YandexDirect\Api\V5\Contract\AdGetItem
 }
 ```
+
 
 ## Опции
 
@@ -176,6 +179,51 @@ $user->getDispatcher()->addSubscriber($listener);
             // ...
         )
     };
+
+### Конфигурация
+
+```yaml
+biplane_yandex_direct:
+    auth:
+
+        # The identifier of application for OAuth authorization.
+        app_id:               ~ # Required
+
+        # The secret key of application for OAuth authorization.
+        app_secret:           ~ # Required
+
+    # The locale for localize message of errors.
+    locale:               ru # One of "ru"; "en"; "ua"
+    user:
+
+        # The access token for OAuth authorization
+        access_token:         ~ # Required
+
+        # The Yandex's login. Required when the master_token is set.
+        login:                ~
+
+        # The master token needs for finance operations.
+        master_token:         ~
+
+    # Restricts a number of concurrent connections to API.
+    concurrent_listener:
+        enabled:              false
+
+        # A number between 1 and 12.
+        connections:          12
+    dump_listener:
+        enabled:              false
+        directory:            '%kernel.cache_dir%/api_dumps'
+        dump:                 all # One of "all"; "only-fail"
+    ipc:
+        directory:            '%kernel.cache_dir%/ipc'
+```
+
+Если не задавать `auth.app_id` и `auth.app_secret`, то сервис `biplane_yandex_direct.auth` будет недоступен.
+
+В секции `biplane_yandex_direct.user` можно задать опции для доступа к API по умолчанию. Может быть удобно
+в случаях, когда приложение работает только с одним Яндекс-аккаунтом. Не нужно придумывать, где хранить
+маркер доступа и другие опции.
 
 
 ## Разработка
