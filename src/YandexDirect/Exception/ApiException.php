@@ -3,11 +3,11 @@
 namespace Biplane\YandexDirect\Exception;
 
 /**
- * ApiException
+ * Thrown when API returned error.
  *
  * @author Denis Vasilev <yethee@biplane.ru>
  */
-class ApiException extends \RuntimeException
+class ApiException extends RequestException
 {
     /**
      * Неверный идентификатор кампании CampaignID.
@@ -228,7 +228,6 @@ class ApiException extends \RuntimeException
      *
      * @param string          $methodName The method name of API
      * @param string          $message    The message
-     * @param string          $detail     The additional message
      * @param int             $code       The number of code exception
      * @param \Exception|null $previous   The previous exception
      * @param string          $requestId  The request identifier
@@ -236,7 +235,6 @@ class ApiException extends \RuntimeException
     public function __construct(
         $methodName,
         $message,
-        $detail = null,
         $code = 0,
         \Exception $previous = null,
         $requestId = null
@@ -244,7 +242,6 @@ class ApiException extends \RuntimeException
         parent::__construct($message, (int)$code, $previous);
 
         $this->apiMethod = $methodName;
-        $this->detailMessage = $detail;
         $this->requestId = $requestId;
     }
 

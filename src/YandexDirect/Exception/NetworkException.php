@@ -3,10 +3,10 @@
 namespace Biplane\YandexDirect\Exception;
 
 /**
- * Connection exception.
+ * Thrown when occur HTTP errors.
  *
  * @author Ural Davletshin <u.davletshin@biplane.ru>
  */
-class NetworkException extends ApiException
+class NetworkException extends RequestException
 {
 }

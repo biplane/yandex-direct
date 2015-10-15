@@ -2,11 +2,11 @@
 
 namespace Biplane\YandexDirect\Api;
 
-use Biplane\YandexDirect\Exception\ApiException;
 use Biplane\YandexDirect\Event\FailCallEvent;
 use Biplane\YandexDirect\Event\PostCallEvent;
 use Biplane\YandexDirect\Event\PreCallEvent;
 use Biplane\YandexDirect\Events;
+use Biplane\YandexDirect\Exception\NetworkException;
 use Biplane\YandexDirect\User;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
@@ -17,8 +17,28 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
  */
 abstract class SoapClient extends \SoapClient
 {
+    protected $user;
+
     private $dispatcher;
-    private $user;
+
+    /**
+     * Handles the fault.
+     *
+     * @param \SoapFault $fault      The thrown exception
+     * @param string     $requestId  The request identifier
+     * @param string     $methodName The name of API method
+     * @param array      $params     An array of parameters for API method
+     *
+     * @return \Exception
+     */
+    abstract protected function handleFault(\SoapFault $fault, $requestId, $methodName, array $params);
+
+    /**
+     * Gets the request identifier.
+     *
+     * @return string
+     */
+    abstract protected function getRequestId();
 
     /**
      * Constructor.
@@ -40,11 +60,6 @@ abstract class SoapClient extends \SoapClient
         );
 
         parent::__construct($wsdl, $defaults + $options);
-
-        $this->__setSoapHeaders(array(
-            new \SoapHeader('API', 'locale', $user->getLocale()),
-            new \SoapHeader('API', 'token', $user->getAccessToken())
-        ));
 
         $this->dispatcher = $dispatcher;
         $this->user = $user;
@@ -87,23 +102,17 @@ abstract class SoapClient extends \SoapClient
             new PreCallEvent($method, $params, $this->user)
         );
 
-        $requestId = md5($this->user->getHashCode() . ':' . time());
-
         try {
-            $headers = array();
-
-            if ($this->isFinancialMethod($method)) {
-                $operationNum = time();
-                $financeToken = $this->user->createFinanceToken($method, $operationNum);
-
-                $headers[] = new \SoapHeader('API', 'finance_token', $financeToken);
-                $headers[] = new \SoapHeader('API', 'operation_num', $operationNum);
-            }
-
-            $response = $this->__soapCall($method, $params, array(), $headers);
+            $response = $this->__soapCall($method, $params);
         } catch (\Exception $ex) {
+            $requestId = $this->getRequestId();
+
             if ($ex instanceof \SoapFault) {
-                $ex = ApiException::createFromFault($ex, $method, $requestId);
+                if (strtolower($ex->faultcode) === 'http') {
+                    $ex = new NetworkException($ex->getMessage(), 0, $ex);
+                } else {
+                    $ex = $this->handleFault($ex, $requestId, $method, $params);
+                }
             }
 
             $this->dispatcher->dispatch(
@@ -116,19 +125,9 @@ abstract class SoapClient extends \SoapClient
 
         $this->dispatcher->dispatch(
             Events::AFTER_REQUEST,
-            new PostCallEvent($method, $params, $this->user, $requestId, $this, $response)
+            new PostCallEvent($method, $params, $this->user, $this->getRequestId(), $this, $response)
         );
 
         return $response;
-    }
-
-    private function isFinancialMethod($methodName)
-    {
-        return in_array($methodName, array(
-            'TransferMoney',
-            'GetCreditLimits',
-            'CreateInvoice',
-            'PayCampaigns'
-        ));
     }
 }

@@ -20,12 +20,13 @@ class Config extends BaseConfig
             'soapClientClass'   => 'SoapClient',
             'excludeTypes'      => array(),
             'excludeOperations' => array(),
-            'fixApiNamespace'   => false,
             'renameType'        => function ($typeName) {
                 return $typeName;
             }
         ));
 
         $resolver->setAllowedTypes('renameType', 'closure');
+
+        $resolver->setRequired(array('baseSoapClientClass'));
     }
 }

@@ -1,8 +1,7 @@
 <?php
 
-namespace Biplane\Tests\YandexDirect\Api\V4;
+namespace Biplane\Tests\YandexDirect\Api;
 
-use Biplane\YandexDirect\Api\SoapClient;
 use Biplane\YandexDirect\Event\FailCallEvent;
 use Biplane\YandexDirect\Event\PostCallEvent;
 use Biplane\YandexDirect\Event\PreCallEvent;
@@ -11,37 +10,10 @@ use Biplane\YandexDirect\Events;
 /**
  * @author Denis Vasilev <yethee@biplane.ru>
  */
-class SoapClientTest extends \PHPUnit_Framework_TestCase
+class BaseClientTest extends BaseTestCase
 {
-    /**
-     * @var SoapClient|\PHPUnit_Framework_MockObject_MockObject
-     */
-    private $client;
-
-    /**
-     * @var \PHPUnit_Framework_MockObject_MockObject
-     */
-    private $dispatcher;
-
-    /**
-     * @var \PHPUnit_Framework_MockObject_MockObject
-     */
-    private $user;
-
     public function testInvokeApiMethodShouldBeCompletedSuccessfully()
     {
-        $php = \PHPUnit_Extension_FunctionMocker::start($this, 'Biplane\YandexDirect\Api')
-            ->mockFunction('time')
-            ->getMock();
-
-        $php->expects($this->any())
-            ->method('time')
-            ->willReturn(9999999);
-
-        $this->user->expects($this->once())
-            ->method('getHashCode')
-            ->willReturn('foo');
-
         $methodName = 'SomeMethod';
         $methodParams = array(new \stdClass());
         $response = 'response';
@@ -64,36 +36,34 @@ class SoapClientTest extends \PHPUnit_Framework_TestCase
                 $this->equalTo(Events::AFTER_REQUEST),
                 $this->isInstanceOf('Biplane\YandexDirect\Event\PostCallEvent')
             )
-            ->willReturnCallback(function ($eventName, PostCallEvent $eventArgs) use ($methodName, $methodParams, $response) {
-                $this->assertSame($this->user, $eventArgs->getUser());
-                $this->assertEquals($methodName, $eventArgs->getMethodName());
-                $this->assertSame($methodParams, $eventArgs->getMethodParams());
-                $this->assertEquals($response, $eventArgs->getResult());
-                $this->assertEquals('0b31f8e10bb3f7a2c51be252ce5d1fda', $eventArgs->getRequestId());
-            });
+            ->willReturnCallback(
+                function ($eventName, PostCallEvent $eventArgs) use ($methodName, $methodParams, $response) {
+                    $this->assertSame($this->user, $eventArgs->getUser());
+                    $this->assertEquals($methodName, $eventArgs->getMethodName());
+                    $this->assertSame($methodParams, $eventArgs->getMethodParams());
+                    $this->assertEquals($response, $eventArgs->getResult());
+                }
+            );
 
-        $this->client->expects($this->once())
+        $client = $this->getSoapClient();
+
+        $client->expects($this->once())
             ->method('__soapCall')
             ->with(
                 $this->equalTo($methodName),
-                $this->identicalTo($methodParams),
-                $this->anything(),
-                $this->identicalTo(array())
+                $this->identicalTo($methodParams)
             )
             ->willReturn($response);
 
-        $this->assertEquals($response, $this->doInvoke($methodName, $methodParams));
+        $this->assertEquals($response, $this->doInvoke($client, $methodName, $methodParams));
     }
 
     /**
-     * @expectedException \Biplane\YandexDirect\Exception\ApiException
+     * @expectedException \Biplane\YandexDirect\Exception\NetworkException
+     * @expectedExceptionMessage Could not connect to host.
      */
     public function testInvokeApiMethodShouldThrowException()
     {
-        $this->user->expects($this->once())
-            ->method('getHashCode')
-            ->willReturn('foo');
-
         $methodName = 'AnyMethod';
         $methodParams = array(
             'foo' => 'bar'
@@ -121,99 +91,24 @@ class SoapClientTest extends \PHPUnit_Framework_TestCase
                 $this->assertSame($this->user, $eventArgs->getUser());
                 $this->assertEquals($methodName, $eventArgs->getMethodName());
                 $this->assertSame($methodParams, $eventArgs->getMethodParams());
-                $this->assertInstanceOf('Biplane\YandexDirect\Exception\ApiException', $eventArgs->getException());
+                $this->assertInstanceOf('Biplane\YandexDirect\Exception\NetworkException', $eventArgs->getException());
             });
 
-        $this->client->expects($this->once())
+        $client = $this->getSoapClient();
+
+        $client->expects($this->once())
             ->method('__soapCall')
             ->with(
                 $this->equalTo($methodName),
-                $this->identicalTo($methodParams),
-                $this->anything(),
-                $this->identicalTo(array())
+                $this->identicalTo($methodParams)
             )
-            ->willThrowException(new \SoapFault('SOAP:54', 'Some error.'));
+            ->willThrowException(new \SoapFault('HTTP', 'Could not connect to host.'));
 
-        $this->doInvoke($methodName, $methodParams);
+        $this->doInvoke($client, $methodName, $methodParams);
     }
 
-    /**
-     * @dataProvider provideFinancialMethods
-     */
-    public function testAdditionalHeadersShouldBeAssignWhenInvokeFinancialMethod($methodName)
+    protected function getSoapClient()
     {
-        $php = \PHPUnit_Extension_FunctionMocker::start($this, 'Biplane\YandexDirect\Api')
-            ->mockFunction('time')
-            ->getMock();
-
-        $php->expects($this->any())
-            ->method('time')
-            ->willReturn(10009);
-
-        $this->user->expects($this->once())
-            ->method('getHashCode')
-            ->willReturn('foo');
-
-        $this->user->expects($this->once())
-            ->method('createFinanceToken')
-            ->with($this->equalTo($methodName), $this->equalTo(10009))
-            ->willReturn('finance-token');
-
-        $this->client->expects($this->once())
-            ->method('__soapCall')
-            ->with(
-                $this->equalTo($methodName),
-                $this->identicalTo(array()),
-                $this->anything(),
-                $this->equalTo(array(
-                    new \SoapHeader('API', 'finance_token', 'finance-token'),
-                    new \SoapHeader('API', 'operation_num', 10009)
-                ))
-            );
-
-        $this->doInvoke($methodName, array());
-    }
-
-    public function provideFinancialMethods()
-    {
-        return array(
-            array('TransferMoney'),
-            array('GetCreditLimits'),
-            array('CreateInvoice'),
-            array('PayCampaigns')
-        );
-    }
-
-    protected function setUp()
-    {
-        $this->dispatcher = $this->getMock('Symfony\Component\EventDispatcher\EventDispatcherInterface');
-        $this->user = $this->getMockBuilder('Biplane\YandexDirect\User')
-            ->disableOriginalConstructor()
-            ->getMock();
-
-        $options = array(
-            'uri'      => 'localhost',
-            'location' => 'localhost',
-        );
-
-        $this->client = $this->getMockBuilder('Biplane\YandexDirect\Api\SoapClient')
-            ->setConstructorArgs(array(null, $this->dispatcher, $this->user, $options))
-            ->setMethods(array('__soapCall'))
-            ->getMock();
-    }
-
-    protected function tearDown()
-    {
-        \PHPUnit_Extension_FunctionMocker::tearDown();
-
-        unset($this->dispatcher, $this->client, $this->user);
-    }
-
-    private function doInvoke($method, array $params, $isFinancialMethod = false)
-    {
-        $reflection = new \ReflectionMethod($this->client, 'invoke');
-        $reflection->setAccessible(true);
-
-        return $reflection->invoke($this->client, $method, $params, $isFinancialMethod);
+        return $this->createClient('Biplane\YandexDirect\Api\SoapClient', array('__soapCall'));
     }
 }

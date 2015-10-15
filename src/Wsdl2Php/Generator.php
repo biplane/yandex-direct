@@ -8,7 +8,6 @@ use Wsdl2PhpGenerator\Validator;
 use Wsdl2PhpGenerator\Xml\OperationNode;
 use Wsdl2PhpGenerator\Xml\TypeNode;
 use Zend\Code\Generator\ClassGenerator;
-use Zend\Code\Generator\DocBlock\Tag\GenericTag;
 use Zend\Code\Generator\DocBlock\Tag\ParamTag;
 use Zend\Code\Generator\DocBlock\Tag\ReturnTag;
 use Zend\Code\Generator\DocBlockGenerator;
@@ -147,11 +146,19 @@ class Generator extends BaseGenerator
         $this->log('Starting to load service ' . $service->getName());
 
         $this->service = $this->createClassGenerator($service->getName())
-            ->setExtendedClass($this->config->get('soapClientClass'))
             ->addConstant('ENDPOINT', $this->config->get('inputFile'))
-            ->addUse('Biplane\YandexDirect\Api\SoapClient')
             ->addUse('Biplane\YandexDirect\User')
             ->addUse('Symfony\Component\EventDispatcher\EventDispatcherInterface');
+
+        $baseClass = ltrim($this->config->get('baseSoapClientClass'), '\\');
+
+        if (false !== $pos = strrpos($baseClass, '\\')) {
+            $this->service
+                ->setExtendedClass(substr($baseClass, $pos + 1))
+                ->addUse(trim($baseClass, '\\'));
+        } else {
+            $this->service->setExtendedClass('\\' . $baseClass);
+        }
 
         $classmap = array();
 
@@ -184,35 +191,6 @@ CODE
         $this->setParameter($this->service->getNamespaceName(), $constructor, 'user', 'User');
 
         $this->service->addMethodFromGenerator($constructor);
-
-        if ($this->config->get('fixApiNamespace')) {
-            $doRequest = $this->createMethodGenerator('__doRequest', 'Performs a SOAP request.')
-            ->setBody(<<<CODE
-\$response = parent::__doRequest(\$request, \$location, \$action, \$version, \$oneWay);
-
-if (!empty(\$response)) {
-    \$xml = new \SimpleXMLElement(\$response);
-    \$nss = array_flip(\$xml->getDocNamespaces(true));
-    \$invalidNs = 'http://namespaces.soaplite.com/perl';
-
-    if (isset(\$nss[\$invalidNs]) && isset(\$nss['API'])) {
-        \$response = str_replace(\$nss[\$invalidNs] . ':', \$nss['API'] . ':', \$response);
-    }
-}
-
-return \$response;
-CODE
-            );
-            $this->setParameter($this->service->getNamespaceName(), $doRequest, 'request', 'string');
-            $this->setParameter($this->service->getNamespaceName(), $doRequest, 'location', 'string');
-            $this->setParameter($this->service->getNamespaceName(), $doRequest, 'action', 'string');
-            $this->setParameter($this->service->getNamespaceName(), $doRequest, 'version', 'int');
-            $this->setParameter($this->service->getNamespaceName(), $doRequest, 'oneWay', 'int', false, true);
-            $doRequest->getDocBlock()->setTag(new ReturnTag('string'));
-            $doRequest->getDocBlock()->setTag(new GenericTag('internal'));
-
-            $this->service->addMethodFromGenerator($doRequest);
-        }
 
         $excludedOperations = $this->config->get('excludeOperations');
 

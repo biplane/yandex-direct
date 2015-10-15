@@ -93,6 +93,9 @@ foreach ($response->getAds() as $ad) {
 [Доступ к финансовым методам](https://tech.yandex.ru/direct/doc/dg-v4/concepts/finance-token-docpage/)
 
 **login** - логин, для которого задан **master_token**. Обязателен, если задан **master_token**.
+Так же, эта опция **обязательна** при работе с API версии 5, когда используется **access_token**
+для агентского аккаунта. В этом случае необходимо указывать клиентский логин, с рекламными кампаниями
+которого подразумевается работать через API. Подробнее можно почитать [тут](https://tech.yandex.ru/direct/doc/dg/concepts/headers-docpage/#request).
 
 
 ## Обработчики событий

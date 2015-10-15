@@ -30,10 +30,6 @@ abstract class BaseAfterCallEvent extends PreCallEvent
     {
         parent::__construct($methodName, $params, $user);
 
-        if (empty($requestId)) {
-            throw new \InvalidArgumentException('Request ID cannot be empty.');
-        }
-
         $this->requestId = $requestId;
         $this->client = $client;
     }

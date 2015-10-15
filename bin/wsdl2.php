@@ -22,19 +22,20 @@ try {
 }
 
 $defaultOptions = array(
-    'outputDir'     => __DIR__ . '/../src/YandexDirect/Api/V5',
-    'namespaceName' => 'Biplane\YandexDirect\Api\V5',
+    'outputDir'           => __DIR__ . '/../src/YandexDirect/Api/V5',
+    'namespaceName'       => 'Biplane\YandexDirect\Api\V5',
+    'baseSoapClientClass' => 'Biplane\YandexDirect\Api\V5SoapClient',
 );
 
 switch ($argv->getArgument('service')) {
     case 'YandexApiService':
         $options = array(
-            'inputFile'         => 'https://api.direct.yandex.ru/live/v4/wsdl/',
-            'outputDir'         => __DIR__ . '/../src/YandexDirect/Api/V4',
-            'namespaceName'     => 'Biplane\YandexDirect\Api\V4',
-            'excludeTypes'      => array('PingAPI_XInfo', 'PingAPI_XStructInfo'),
-            'excludeOperations' => array('PingAPI_X', 'PingAPI'),
-            'fixApiNamespace'   => true,
+            'inputFile'           => 'https://api.direct.yandex.ru/live/v4/wsdl/',
+            'outputDir'           => __DIR__ . '/../src/YandexDirect/Api/V4',
+            'namespaceName'       => 'Biplane\YandexDirect\Api\V4',
+            'excludeTypes'        => array('PingAPI_XInfo', 'PingAPI_XStructInfo'),
+            'excludeOperations'   => array('PingAPI_X', 'PingAPI'),
+            'baseSoapClientClass' => 'Biplane\YandexDirect\Api\V4SoapClient'
         );
         break;
     case 'AdGroups':

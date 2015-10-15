@@ -37,29 +37,22 @@
 
    * Класс `Biplane\YandexDirectBundle\Exception\BuzzClientException` переименован в
      `Biplane\YandexDirect\Auth\Exception\NetworkException`.
-
-   * У класса `ApiException` изменилась сигнатура конструктора.
    
-   * Метод `ApiException::create` заменен на `ApiException::createFromFault`
-
-     **Было**
-
-            public static function create(
-                ClientInterface $client,
-                $apiMethod,
-                $message,
-                $code,
-                $detailMessage = null,
-                \Exception $previous = null
-            )
-
-     **Стало**
-
-            public static function createFromFault(\SoapFault $fault, $methodName, $requestId)
-            
-   * У класса `ApiException` удалены методы `getRequest` и `getResponse`.
+ * Изменения в `ApiException`:
+ 
+    * **[BC BREAK]** Изменилась сигнатура конструктора у класса `ApiException`.
+    
+    * **[BC BREAK]** Был удален метод-фабрика `create` у класса `ApiException`.
+             
+    * **[BC BREAK]** Удалены методы `getRequest` и `getResponse` у класса `ApiException`.
+    
+    * Добавлен метод `getRequestId` у класса `ApiException`.
    
-   * У класса `ApiException` добавлен метод `getRequestId`.
+ * Добавлен базовый тип исключения `Biplane\YandexDirect\Exception\RequestException`,
+   от него наследуются все остальные типы исключений в простренстве имен `Biplane\YandexDirect\Exception`.
+     
+ * **[BC BREAK]** Класс `Biplane\YandexDirect\Exception\NetworkException` теперь наследуется от
+   `Biplane\YandexDirect\Exception\RequestException`.
             
  * **[BC BREAK]** Классы конфигурации, `AuthTokenConfiguration` и `CertificateConfiguration`, упразднены.
    Вместо этого добавлен класс `Biplane\YandexDirect\User`, через который можно получить экземпляр сервиса

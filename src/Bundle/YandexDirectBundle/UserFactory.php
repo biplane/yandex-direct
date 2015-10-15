@@ -55,7 +55,7 @@ class UserFactory
             );
         }
 
-        $key = $options['access_token'];
+        $key = isset($options['login']) ? $options['login'] : $options['access_token'];
 
         if (!isset($this->users[$key])) {
             $this->users[$key] = new User($options + $this->defaultOptions, $this->dispatcher);
