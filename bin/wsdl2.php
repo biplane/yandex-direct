@@ -100,7 +100,7 @@ switch ($argv->getArgument('service')) {
             'renameType' => function ($typeName) {
                 return preg_replace(
                     '#^(Add|Delete|Get)(Request|Response)$#',
-                    '$1Keyword$2',
+                    '$1Sitelinks$2',
                     $typeName
                 );
             }
@@ -112,7 +112,7 @@ switch ($argv->getArgument('service')) {
             'renameType' => function ($typeName) {
                 return preg_replace(
                     '#^(Add|Delete|Get)(Request|Response)$#',
-                    '$1Keyword$2',
+                    '$1VCards$2',
                     $typeName
                 );
             }
