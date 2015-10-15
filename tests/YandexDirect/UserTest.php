@@ -113,6 +113,7 @@ class UserTest extends \PHPUnit_Framework_TestCase
             array('Biplane\YandexDirect\Api\V5\AdGroups', 'getAdGroupsService'),
             array('Biplane\YandexDirect\Api\V5\Ads', 'getAdsService'),
             array('Biplane\YandexDirect\Api\V5\Bids', 'getBidsService'),
+            array('Biplane\YandexDirect\Api\V5\BidModifiers', 'getBidModifiersService'),
             array('Biplane\YandexDirect\Api\V5\Changes', 'getChangesService'),
             array('Biplane\YandexDirect\Api\V5\Keywords', 'getKeywordsService'),
             array('Biplane\YandexDirect\Api\V5\Sitelinks', 'getSitelinksService'),

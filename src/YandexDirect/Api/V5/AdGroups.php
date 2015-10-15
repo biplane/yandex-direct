@@ -2,14 +2,14 @@
 
 namespace Biplane\YandexDirect\Api\V5;
 
-use Biplane\YandexDirect\Api\SoapClient;
 use Biplane\YandexDirect\User;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
+use Biplane\YandexDirect\Api\V5SoapClient;
 
 /**
  * Auto-generated code.
  */
-class AdGroups extends SoapClient
+class AdGroups extends V5SoapClient
 {
 
     const ENDPOINT = 'https://api.direct.yandex.com/v5/adgroups?wsdl';
@@ -27,6 +27,7 @@ class AdGroups extends SoapClient
                 'ExceptionNotification' => 'Biplane\YandexDirect\Api\V5\Contract\ExceptionNotification',
                 'LimitOffset' => 'Biplane\YandexDirect\Api\V5\Contract\LimitOffset',
                 'YesNoEnum' => 'Biplane\YandexDirect\Api\V5\Contract\YesNoEnum',
+                'CurrencyEnum' => 'Biplane\YandexDirect\Api\V5\Contract\CurrencyEnum',
                 'StateEnum' => 'Biplane\YandexDirect\Api\V5\Contract\StateEnum',
                 'PriorityEnum' => 'Biplane\YandexDirect\Api\V5\Contract\PriorityEnum',
                 'PositionEnum' => 'Biplane\YandexDirect\Api\V5\Contract\PositionEnum',
@@ -34,6 +35,7 @@ class AdGroups extends SoapClient
                 'ScopeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\ScopeEnum',
                 'AgeRangeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AgeRangeEnum',
                 'GenderEnum' => 'Biplane\YandexDirect\Api\V5\Contract\GenderEnum',
+                'Statistics' => 'Biplane\YandexDirect\Api\V5\Contract\Statistics',
                 'IdsCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\IdsCriteria',
                 'GetRequestGeneral' => 'Biplane\YandexDirect\Api\V5\Contract\GetRequestGeneral',
                 'GetResponseGeneral' => 'Biplane\YandexDirect\Api\V5\Contract\GetResponseGeneral',
@@ -47,14 +49,14 @@ class AdGroups extends SoapClient
                 'AdGroupAddItem' => 'Biplane\YandexDirect\Api\V5\Contract\AdGroupAddItem',
                 'AdGroupGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\AdGroupGetItem',
                 'AdGroupUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\AdGroupUpdateItem',
-                'GetRequest' => 'Biplane\YandexDirect\Api\V5\Contract\GetAdGroupRequest',
-                'GetResponse' => 'Biplane\YandexDirect\Api\V5\Contract\GetAdGroupResponse',
-                'AddRequest' => 'Biplane\YandexDirect\Api\V5\Contract\AddAdGroupRequest',
-                'AddResponse' => 'Biplane\YandexDirect\Api\V5\Contract\AddAdGroupResponse',
-                'UpdateRequest' => 'Biplane\YandexDirect\Api\V5\Contract\UpdateAdGroupRequest',
-                'UpdateResponse' => 'Biplane\YandexDirect\Api\V5\Contract\UpdateAdGroupResponse',
-                'DeleteRequest' => 'Biplane\YandexDirect\Api\V5\Contract\DeleteAdGroupRequest',
-                'DeleteResponse' => 'Biplane\YandexDirect\Api\V5\Contract\DeleteAdGroupResponse'
+                'GetRequest' => 'Biplane\YandexDirect\Api\V5\Contract\GetAdGroupsRequest',
+                'GetResponse' => 'Biplane\YandexDirect\Api\V5\Contract\GetAdGroupsResponse',
+                'AddRequest' => 'Biplane\YandexDirect\Api\V5\Contract\AddAdGroupsRequest',
+                'AddResponse' => 'Biplane\YandexDirect\Api\V5\Contract\AddAdGroupsResponse',
+                'UpdateRequest' => 'Biplane\YandexDirect\Api\V5\Contract\UpdateAdGroupsRequest',
+                'UpdateResponse' => 'Biplane\YandexDirect\Api\V5\Contract\UpdateAdGroupsResponse',
+                'DeleteRequest' => 'Biplane\YandexDirect\Api\V5\Contract\DeleteAdGroupsRequest',
+                'DeleteResponse' => 'Biplane\YandexDirect\Api\V5\Contract\DeleteAdGroupsResponse'
             )
         ));
     }
@@ -62,10 +64,10 @@ class AdGroups extends SoapClient
     /**
      * get.
      *
-     * @param Contract\GetAdGroupRequest $parameters
-     * @return Contract\GetAdGroupResponse
+     * @param Contract\GetAdGroupsRequest $parameters
+     * @return Contract\GetAdGroupsResponse
      */
-    public function get(Contract\GetAdGroupRequest $parameters)
+    public function get(Contract\GetAdGroupsRequest $parameters)
     {
         return $this->invoke('get', array($parameters));
     }
@@ -73,10 +75,10 @@ class AdGroups extends SoapClient
     /**
      * add.
      *
-     * @param Contract\AddAdGroupRequest $parameters
-     * @return Contract\AddAdGroupResponse
+     * @param Contract\AddAdGroupsRequest $parameters
+     * @return Contract\AddAdGroupsResponse
      */
-    public function add(Contract\AddAdGroupRequest $parameters)
+    public function add(Contract\AddAdGroupsRequest $parameters)
     {
         return $this->invoke('add', array($parameters));
     }
@@ -84,10 +86,10 @@ class AdGroups extends SoapClient
     /**
      * update.
      *
-     * @param Contract\UpdateAdGroupRequest $parameters
-     * @return Contract\UpdateAdGroupResponse
+     * @param Contract\UpdateAdGroupsRequest $parameters
+     * @return Contract\UpdateAdGroupsResponse
      */
-    public function update(Contract\UpdateAdGroupRequest $parameters)
+    public function update(Contract\UpdateAdGroupsRequest $parameters)
     {
         return $this->invoke('update', array($parameters));
     }
@@ -95,10 +97,10 @@ class AdGroups extends SoapClient
     /**
      * delete.
      *
-     * @param Contract\DeleteAdGroupRequest $parameters
-     * @return Contract\DeleteAdGroupResponse
+     * @param Contract\DeleteAdGroupsRequest $parameters
+     * @return Contract\DeleteAdGroupsResponse
      */
-    public function delete(Contract\DeleteAdGroupRequest $parameters)
+    public function delete(Contract\DeleteAdGroupsRequest $parameters)
     {
         return $this->invoke('delete', array($parameters));
     }

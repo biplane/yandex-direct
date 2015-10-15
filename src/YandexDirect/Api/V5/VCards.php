@@ -2,14 +2,14 @@
 
 namespace Biplane\YandexDirect\Api\V5;
 
-use Biplane\YandexDirect\Api\SoapClient;
 use Biplane\YandexDirect\User;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
+use Biplane\YandexDirect\Api\V5SoapClient;
 
 /**
  * Auto-generated code.
  */
-class VCards extends SoapClient
+class VCards extends V5SoapClient
 {
 
     const ENDPOINT = 'https://api.direct.yandex.com/v5/vcards?wsdl';
@@ -27,6 +27,7 @@ class VCards extends SoapClient
                 'ExceptionNotification' => 'Biplane\YandexDirect\Api\V5\Contract\ExceptionNotification',
                 'LimitOffset' => 'Biplane\YandexDirect\Api\V5\Contract\LimitOffset',
                 'YesNoEnum' => 'Biplane\YandexDirect\Api\V5\Contract\YesNoEnum',
+                'CurrencyEnum' => 'Biplane\YandexDirect\Api\V5\Contract\CurrencyEnum',
                 'StateEnum' => 'Biplane\YandexDirect\Api\V5\Contract\StateEnum',
                 'PriorityEnum' => 'Biplane\YandexDirect\Api\V5\Contract\PriorityEnum',
                 'PositionEnum' => 'Biplane\YandexDirect\Api\V5\Contract\PositionEnum',
@@ -34,6 +35,7 @@ class VCards extends SoapClient
                 'ScopeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\ScopeEnum',
                 'AgeRangeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AgeRangeEnum',
                 'GenderEnum' => 'Biplane\YandexDirect\Api\V5\Contract\GenderEnum',
+                'Statistics' => 'Biplane\YandexDirect\Api\V5\Contract\Statistics',
                 'IdsCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\IdsCriteria',
                 'GetRequestGeneral' => 'Biplane\YandexDirect\Api\V5\Contract\GetRequestGeneral',
                 'GetResponseGeneral' => 'Biplane\YandexDirect\Api\V5\Contract\GetResponseGeneral',
@@ -47,12 +49,12 @@ class VCards extends SoapClient
                 'MapPoint' => 'Biplane\YandexDirect\Api\V5\Contract\MapPoint',
                 'VCardAddItem' => 'Biplane\YandexDirect\Api\V5\Contract\VCardAddItem',
                 'VCardGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\VCardGetItem',
-                'GetRequest' => 'Biplane\YandexDirect\Api\V5\Contract\GetKeywordRequest',
-                'GetResponse' => 'Biplane\YandexDirect\Api\V5\Contract\GetKeywordResponse',
-                'AddRequest' => 'Biplane\YandexDirect\Api\V5\Contract\AddKeywordRequest',
-                'AddResponse' => 'Biplane\YandexDirect\Api\V5\Contract\AddKeywordResponse',
-                'DeleteRequest' => 'Biplane\YandexDirect\Api\V5\Contract\DeleteKeywordRequest',
-                'DeleteResponse' => 'Biplane\YandexDirect\Api\V5\Contract\DeleteKeywordResponse'
+                'GetRequest' => 'Biplane\YandexDirect\Api\V5\Contract\GetVCardsRequest',
+                'GetResponse' => 'Biplane\YandexDirect\Api\V5\Contract\GetVCardsResponse',
+                'AddRequest' => 'Biplane\YandexDirect\Api\V5\Contract\AddVCardsRequest',
+                'AddResponse' => 'Biplane\YandexDirect\Api\V5\Contract\AddVCardsResponse',
+                'DeleteRequest' => 'Biplane\YandexDirect\Api\V5\Contract\DeleteVCardsRequest',
+                'DeleteResponse' => 'Biplane\YandexDirect\Api\V5\Contract\DeleteVCardsResponse'
             )
         ));
     }
@@ -60,10 +62,10 @@ class VCards extends SoapClient
     /**
      * add.
      *
-     * @param Contract\AddKeywordRequest $parameters
-     * @return Contract\AddKeywordResponse
+     * @param Contract\AddVCardsRequest $parameters
+     * @return Contract\AddVCardsResponse
      */
-    public function add(Contract\AddKeywordRequest $parameters)
+    public function add(Contract\AddVCardsRequest $parameters)
     {
         return $this->invoke('add', array($parameters));
     }
@@ -71,10 +73,10 @@ class VCards extends SoapClient
     /**
      * get.
      *
-     * @param Contract\GetKeywordRequest $parameters
-     * @return Contract\GetKeywordResponse
+     * @param Contract\GetVCardsRequest $parameters
+     * @return Contract\GetVCardsResponse
      */
-    public function get(Contract\GetKeywordRequest $parameters)
+    public function get(Contract\GetVCardsRequest $parameters)
     {
         return $this->invoke('get', array($parameters));
     }
@@ -82,10 +84,10 @@ class VCards extends SoapClient
     /**
      * delete.
      *
-     * @param Contract\DeleteKeywordRequest $parameters
-     * @return Contract\DeleteKeywordResponse
+     * @param Contract\DeleteVCardsRequest $parameters
+     * @return Contract\DeleteVCardsResponse
      */
-    public function delete(Contract\DeleteKeywordRequest $parameters)
+    public function delete(Contract\DeleteVCardsRequest $parameters)
     {
         return $this->invoke('delete', array($parameters));
     }

@@ -2,14 +2,14 @@
 
 namespace Biplane\YandexDirect\Api\V4;
 
-use Biplane\YandexDirect\Api\SoapClient;
 use Biplane\YandexDirect\User;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
+use Biplane\YandexDirect\Api\V4SoapClient;
 
 /**
  * Auto-generated code.
  */
-class YandexAPIService extends SoapClient
+class YandexAPIService extends V4SoapClient
 {
     const ENDPOINT = 'https://api.direct.yandex.ru/live/v4/wsdl/';
 
@@ -58,6 +58,8 @@ class YandexAPIService extends SoapClient
                 'PayCampElement' => 'Biplane\YandexDirect\Api\V4\Contract\PayCampElement',
                 'CreateInvoiceInfo' => 'Biplane\YandexDirect\Api\V4\Contract\CreateInvoiceInfo',
                 'PayCampaignsInfo' => 'Biplane\YandexDirect\Api\V4\Contract\PayCampaignsInfo',
+                'PayCampaignsByCardInfo' => 'Biplane\YandexDirect\Api\V4\Contract\PayCampaignsByCardInfo',
+                'CheckPaymentInfo' => 'Biplane\YandexDirect\Api\V4\Contract\CheckPaymentInfo',
                 'BannerInfo' => 'Biplane\YandexDirect\Api\V4\Contract\BannerInfo',
                 'Sitelink' => 'Biplane\YandexDirect\Api\V4\Contract\Sitelink',
                 'RejectReason' => 'Biplane\YandexDirect\Api\V4\Contract\RejectReason',
@@ -148,34 +150,6 @@ class YandexAPIService extends SoapClient
                 'AccountActionResult' => 'Biplane\YandexDirect\Api\V4\Contract\AccountActionResult'
             )
         ));
-    }
-
-    /**
-     * Performs a SOAP request.
-     *
-     * @param string $request
-     * @param string $location
-     * @param string $action
-     * @param int $version
-     * @param int|null $oneWay
-     * @return string
-     * @internal
-     */
-    public function __doRequest($request, $location, $action, $version, $oneWay = null)
-    {
-        $response = parent::__doRequest($request, $location, $action, $version, $oneWay);
-
-        if (!empty($response)) {
-            $xml = new \SimpleXMLElement($response);
-            $nss = array_flip($xml->getDocNamespaces(true));
-            $invalidNs = 'http://namespaces.soaplite.com/perl';
-
-            if (isset($nss[$invalidNs]) && isset($nss['API'])) {
-                $response = str_replace($nss[$invalidNs] . ':', $nss['API'] . ':', $response);
-            }
-        }
-
-        return $response;
     }
 
     /**
@@ -816,6 +790,28 @@ class YandexAPIService extends SoapClient
     public function payCampaigns(Contract\PayCampaignsInfo $params)
     {
         return $this->invoke('PayCampaigns', array($params));
+    }
+
+    /**
+     * PayCampaignsByCard.
+     *
+     * @param Contract\PayCampaignsByCardInfo $params
+     * @return string
+     */
+    public function payCampaignsByCard(Contract\PayCampaignsByCardInfo $params)
+    {
+        return $this->invoke('PayCampaignsByCard', array($params));
+    }
+
+    /**
+     * CheckPayment.
+     *
+     * @param Contract\CheckPaymentInfo $params
+     * @return string
+     */
+    public function checkPayment(Contract\CheckPaymentInfo $params)
+    {
+        return $this->invoke('CheckPayment', array($params));
     }
 
     /**

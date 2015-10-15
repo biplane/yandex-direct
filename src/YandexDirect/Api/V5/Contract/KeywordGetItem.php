@@ -32,6 +32,8 @@ class KeywordGetItem
 
     protected $Productivity = null;
 
+    protected $Statistics = null;
+
     /**
      * Creates a new instance of KeywordGetItem.
      *
@@ -314,6 +316,29 @@ class KeywordGetItem
     public function setProductivity(KeywordProductivity $value = null)
     {
         $this->Productivity = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets Statistics.
+     *
+     * @return Statistics|null
+     */
+    public function getStatistics()
+    {
+        return $this->Statistics;
+    }
+
+    /**
+     * Sets Statistics.
+     *
+     * @param Statistics|null $value
+     * @return $this
+     */
+    public function setStatistics(Statistics $value = null)
+    {
+        $this->Statistics = $value;
 
         return $this;
     }

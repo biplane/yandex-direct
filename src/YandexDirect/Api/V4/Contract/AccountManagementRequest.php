@@ -18,6 +18,10 @@ class AccountManagementRequest
 
     protected $Accounts = null;
 
+    protected $PayMethodID = null;
+
+    protected $CustomTransactionID = null;
+
     /**
      * Creates a new instance of AccountManagementRequest.
      *
@@ -139,6 +143,52 @@ class AccountManagementRequest
     public function setAccounts(array $value = null)
     {
         $this->Accounts = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets PayMethodID.
+     *
+     * @return string|null
+     */
+    public function getPayMethodID()
+    {
+        return $this->PayMethodID;
+    }
+
+    /**
+     * Sets PayMethodID.
+     *
+     * @param string|null $value
+     * @return $this
+     */
+    public function setPayMethodID($value = null)
+    {
+        $this->PayMethodID = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets CustomTransactionID.
+     *
+     * @return string|null
+     */
+    public function getCustomTransactionID()
+    {
+        return $this->CustomTransactionID;
+    }
+
+    /**
+     * Sets CustomTransactionID.
+     *
+     * @param string|null $value
+     * @return $this
+     */
+    public function setCustomTransactionID($value = null)
+    {
+        $this->CustomTransactionID = $value;
 
         return $this;
     }

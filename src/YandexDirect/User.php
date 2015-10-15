@@ -5,6 +5,7 @@ namespace Biplane\YandexDirect;
 use Biplane\YandexDirect\Api\V4\YandexApiService;
 use Biplane\YandexDirect\Api\V5\AdGroups;
 use Biplane\YandexDirect\Api\V5\Ads;
+use Biplane\YandexDirect\Api\V5\BidModifiers;
 use Biplane\YandexDirect\Api\V5\Bids;
 use Biplane\YandexDirect\Api\V5\Changes;
 use Biplane\YandexDirect\Api\V5\Keywords;
@@ -31,6 +32,7 @@ class User
         'AdGroups' => 'Biplane\YandexDirect\Api\V5\AdGroups',
         'Ads' => 'Biplane\YandexDirect\Api\V5\Ads',
         'Bids' => 'Biplane\YandexDirect\Api\V5\Bids',
+        'BidModifiers' => 'Biplane\YandexDirect\Api\V5\BidModifiers',
         'Changes' => 'Biplane\YandexDirect\Api\V5\Changes',
         'Keywords' => 'Biplane\YandexDirect\Api\V5\Keywords',
         'Sitelinks' => 'Biplane\YandexDirect\Api\V5\Sitelinks',
@@ -165,6 +167,16 @@ class User
     public function getBidsService()
     {
         return $this->getProxy('Bids');
+    }
+
+    /**
+     * Gets the proxy of web-service for the adjustments of bids.
+     *
+     * @return BidModifiers
+     */
+    public function getBidModifiersService()
+    {
+        return $this->getProxy('BidModifiers');
     }
 
     /**

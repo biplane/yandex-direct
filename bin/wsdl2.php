@@ -42,7 +42,11 @@ switch ($argv->getArgument('service')) {
         $options = $defaultOptions + array(
             'inputFile'  => 'https://api.direct.yandex.com/v5/adgroups?wsdl',
             'renameType' => function ($typeName) {
-                return preg_replace('#^(Get|Add|Update|Delete)(Request|Response)$#', '$1AdGroup$2', $typeName);
+                return preg_replace(
+                    '#^(Add|Delete|Get|Update)(Request|Response)$#',
+                    '$1AdGroups$2',
+                    $typeName
+                );
             }
         );
         break;
@@ -51,8 +55,8 @@ switch ($argv->getArgument('service')) {
             'inputFile'  => 'https://api.direct.yandex.com/v5/ads?wsdl',
             'renameType' => function ($typeName) {
                 return preg_replace(
-                    '#^(Get|Add|Update|Delete|Archive|Unarchive|Unarchive|Suspend|Resume|Moderate)(Request|Response)$#',
-                    '$1Ad$2',
+                    '#^(Add|Archive|Delete|Get|Moderate|Resume|Suspend|Unarchive|Update)(Request|Response)$#',
+                    '$1Ads$2',
                     $typeName
                 );
             }
@@ -64,7 +68,19 @@ switch ($argv->getArgument('service')) {
             'renameType' => function ($typeName) {
                 return preg_replace(
                     '#^(Get|Set|SetAuto)(Request|Response)$#',
-                    '$1Bid$2',
+                    '$1Bids$2',
+                    $typeName
+                );
+            }
+        );
+        break;
+    case 'BidModifiers':
+        $options = $defaultOptions + array(
+            'inputFile'  => 'https://api.direct.yandex.com/v5/bidmodifiers?wsdl',
+            'renameType' => function ($typeName) {
+                return preg_replace(
+                    '#^(Add|Delete|Get|Set|Toggle)(Request|Response)$#',
+                    '$1BidModifiers$2',
                     $typeName
                 );
             }
@@ -76,7 +92,7 @@ switch ($argv->getArgument('service')) {
             'renameType' => function ($typeName) {
                 return preg_replace(
                     '#^(Check)(Request|Response)$#',
-                    '$1Change$2',
+                    '$1Changes$2',
                     $typeName
                 );
             }
@@ -88,7 +104,7 @@ switch ($argv->getArgument('service')) {
             'renameType' => function ($typeName) {
                 return preg_replace(
                     '#^(Add|Delete|Get|Resume|Suspend|Update)(Request|Response)$#',
-                    '$1Keyword$2',
+                    '$1Keywords$2',
                     $typeName
                 );
             }
@@ -134,6 +150,7 @@ function usage(InputDefinition $definition) {
     echo '               AdGroups (version: 5);' . PHP_EOL;
     echo '               Ads (version: 5);' . PHP_EOL;
     echo '               Bids (version: 5);' . PHP_EOL;
+    echo '               BidModifiers (version: 5);' . PHP_EOL;
     echo '               Changes (version: 5);' . PHP_EOL;
     echo '               Keywords (version: 5);' . PHP_EOL;
     echo '               Sitelinks (version: 5);' . PHP_EOL;

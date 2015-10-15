@@ -16,6 +16,10 @@ class AccountActionResult
 
     protected $URL = null;
 
+    protected $PurchaseToken = null;
+
+    protected $Status = null;
+
     /**
      * Creates a new instance of AccountActionResult.
      *
@@ -114,6 +118,52 @@ class AccountActionResult
     public function setURL($value = null)
     {
         $this->URL = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets PurchaseToken.
+     *
+     * @return string|null
+     */
+    public function getPurchaseToken()
+    {
+        return $this->PurchaseToken;
+    }
+
+    /**
+     * Sets PurchaseToken.
+     *
+     * @param string|null $value
+     * @return $this
+     */
+    public function setPurchaseToken($value = null)
+    {
+        $this->PurchaseToken = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets Status.
+     *
+     * @return string|null
+     */
+    public function getStatus()
+    {
+        return $this->Status;
+    }
+
+    /**
+     * Sets Status.
+     *
+     * @param string|null $value
+     * @return $this
+     */
+    public function setStatus($value = null)
+    {
+        $this->Status = $value;
 
         return $this;
     }

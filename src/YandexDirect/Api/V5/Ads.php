@@ -2,14 +2,14 @@
 
 namespace Biplane\YandexDirect\Api\V5;
 
-use Biplane\YandexDirect\Api\SoapClient;
 use Biplane\YandexDirect\User;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
+use Biplane\YandexDirect\Api\V5SoapClient;
 
 /**
  * Auto-generated code.
  */
-class Ads extends SoapClient
+class Ads extends V5SoapClient
 {
 
     const ENDPOINT = 'https://api.direct.yandex.com/v5/ads?wsdl';
@@ -27,6 +27,7 @@ class Ads extends SoapClient
                 'ExceptionNotification' => 'Biplane\YandexDirect\Api\V5\Contract\ExceptionNotification',
                 'LimitOffset' => 'Biplane\YandexDirect\Api\V5\Contract\LimitOffset',
                 'YesNoEnum' => 'Biplane\YandexDirect\Api\V5\Contract\YesNoEnum',
+                'CurrencyEnum' => 'Biplane\YandexDirect\Api\V5\Contract\CurrencyEnum',
                 'StateEnum' => 'Biplane\YandexDirect\Api\V5\Contract\StateEnum',
                 'PriorityEnum' => 'Biplane\YandexDirect\Api\V5\Contract\PriorityEnum',
                 'PositionEnum' => 'Biplane\YandexDirect\Api\V5\Contract\PositionEnum',
@@ -34,6 +35,7 @@ class Ads extends SoapClient
                 'ScopeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\ScopeEnum',
                 'AgeRangeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AgeRangeEnum',
                 'GenderEnum' => 'Biplane\YandexDirect\Api\V5\Contract\GenderEnum',
+                'Statistics' => 'Biplane\YandexDirect\Api\V5\Contract\Statistics',
                 'IdsCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\IdsCriteria',
                 'GetRequestGeneral' => 'Biplane\YandexDirect\Api\V5\Contract\GetRequestGeneral',
                 'GetResponseGeneral' => 'Biplane\YandexDirect\Api\V5\Contract\GetResponseGeneral',
@@ -58,24 +60,24 @@ class Ads extends SoapClient
                 'TextAdGetBase' => 'Biplane\YandexDirect\Api\V5\Contract\TextAdGetBase',
                 'AdGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\AdGetItem',
                 'TextAdGet' => 'Biplane\YandexDirect\Api\V5\Contract\TextAdGet',
-                'GetRequest' => 'Biplane\YandexDirect\Api\V5\Contract\GetAdRequest',
-                'GetResponse' => 'Biplane\YandexDirect\Api\V5\Contract\GetAdResponse',
-                'AddRequest' => 'Biplane\YandexDirect\Api\V5\Contract\AddAdRequest',
-                'AddResponse' => 'Biplane\YandexDirect\Api\V5\Contract\AddAdResponse',
-                'UpdateRequest' => 'Biplane\YandexDirect\Api\V5\Contract\UpdateAdRequest',
-                'UpdateResponse' => 'Biplane\YandexDirect\Api\V5\Contract\UpdateAdResponse',
-                'DeleteRequest' => 'Biplane\YandexDirect\Api\V5\Contract\DeleteAdRequest',
-                'DeleteResponse' => 'Biplane\YandexDirect\Api\V5\Contract\DeleteAdResponse',
-                'ArchiveRequest' => 'Biplane\YandexDirect\Api\V5\Contract\ArchiveAdRequest',
-                'ArchiveResponse' => 'Biplane\YandexDirect\Api\V5\Contract\ArchiveAdResponse',
-                'UnarchiveRequest' => 'Biplane\YandexDirect\Api\V5\Contract\UnarchiveAdRequest',
-                'UnarchiveResponse' => 'Biplane\YandexDirect\Api\V5\Contract\UnarchiveAdResponse',
-                'SuspendRequest' => 'Biplane\YandexDirect\Api\V5\Contract\SuspendAdRequest',
-                'SuspendResponse' => 'Biplane\YandexDirect\Api\V5\Contract\SuspendAdResponse',
-                'ResumeRequest' => 'Biplane\YandexDirect\Api\V5\Contract\ResumeAdRequest',
-                'ResumeResponse' => 'Biplane\YandexDirect\Api\V5\Contract\ResumeAdResponse',
-                'ModerateRequest' => 'Biplane\YandexDirect\Api\V5\Contract\ModerateAdRequest',
-                'ModerateResponse' => 'Biplane\YandexDirect\Api\V5\Contract\ModerateAdResponse'
+                'GetRequest' => 'Biplane\YandexDirect\Api\V5\Contract\GetAdsRequest',
+                'GetResponse' => 'Biplane\YandexDirect\Api\V5\Contract\GetAdsResponse',
+                'AddRequest' => 'Biplane\YandexDirect\Api\V5\Contract\AddAdsRequest',
+                'AddResponse' => 'Biplane\YandexDirect\Api\V5\Contract\AddAdsResponse',
+                'UpdateRequest' => 'Biplane\YandexDirect\Api\V5\Contract\UpdateAdsRequest',
+                'UpdateResponse' => 'Biplane\YandexDirect\Api\V5\Contract\UpdateAdsResponse',
+                'DeleteRequest' => 'Biplane\YandexDirect\Api\V5\Contract\DeleteAdsRequest',
+                'DeleteResponse' => 'Biplane\YandexDirect\Api\V5\Contract\DeleteAdsResponse',
+                'ArchiveRequest' => 'Biplane\YandexDirect\Api\V5\Contract\ArchiveAdsRequest',
+                'ArchiveResponse' => 'Biplane\YandexDirect\Api\V5\Contract\ArchiveAdsResponse',
+                'UnarchiveRequest' => 'Biplane\YandexDirect\Api\V5\Contract\UnarchiveAdsRequest',
+                'UnarchiveResponse' => 'Biplane\YandexDirect\Api\V5\Contract\UnarchiveAdsResponse',
+                'SuspendRequest' => 'Biplane\YandexDirect\Api\V5\Contract\SuspendAdsRequest',
+                'SuspendResponse' => 'Biplane\YandexDirect\Api\V5\Contract\SuspendAdsResponse',
+                'ResumeRequest' => 'Biplane\YandexDirect\Api\V5\Contract\ResumeAdsRequest',
+                'ResumeResponse' => 'Biplane\YandexDirect\Api\V5\Contract\ResumeAdsResponse',
+                'ModerateRequest' => 'Biplane\YandexDirect\Api\V5\Contract\ModerateAdsRequest',
+                'ModerateResponse' => 'Biplane\YandexDirect\Api\V5\Contract\ModerateAdsResponse'
             )
         ));
     }
@@ -83,10 +85,10 @@ class Ads extends SoapClient
     /**
      * add.
      *
-     * @param Contract\AddAdRequest $parameters
-     * @return Contract\AddAdResponse
+     * @param Contract\AddAdsRequest $parameters
+     * @return Contract\AddAdsResponse
      */
-    public function add(Contract\AddAdRequest $parameters)
+    public function add(Contract\AddAdsRequest $parameters)
     {
         return $this->invoke('add', array($parameters));
     }
@@ -94,10 +96,10 @@ class Ads extends SoapClient
     /**
      * update.
      *
-     * @param Contract\UpdateAdRequest $parameters
-     * @return Contract\UpdateAdResponse
+     * @param Contract\UpdateAdsRequest $parameters
+     * @return Contract\UpdateAdsResponse
      */
-    public function update(Contract\UpdateAdRequest $parameters)
+    public function update(Contract\UpdateAdsRequest $parameters)
     {
         return $this->invoke('update', array($parameters));
     }
@@ -105,10 +107,10 @@ class Ads extends SoapClient
     /**
      * get.
      *
-     * @param Contract\GetAdRequest $parameters
-     * @return Contract\GetAdResponse
+     * @param Contract\GetAdsRequest $parameters
+     * @return Contract\GetAdsResponse
      */
-    public function get(Contract\GetAdRequest $parameters)
+    public function get(Contract\GetAdsRequest $parameters)
     {
         return $this->invoke('get', array($parameters));
     }
@@ -116,10 +118,10 @@ class Ads extends SoapClient
     /**
      * delete.
      *
-     * @param Contract\DeleteAdRequest $parameters
-     * @return Contract\DeleteAdResponse
+     * @param Contract\DeleteAdsRequest $parameters
+     * @return Contract\DeleteAdsResponse
      */
-    public function delete(Contract\DeleteAdRequest $parameters)
+    public function delete(Contract\DeleteAdsRequest $parameters)
     {
         return $this->invoke('delete', array($parameters));
     }
@@ -127,10 +129,10 @@ class Ads extends SoapClient
     /**
      * archive.
      *
-     * @param Contract\ArchiveAdRequest $parameters
-     * @return Contract\ArchiveAdResponse
+     * @param Contract\ArchiveAdsRequest $parameters
+     * @return Contract\ArchiveAdsResponse
      */
-    public function archive(Contract\ArchiveAdRequest $parameters)
+    public function archive(Contract\ArchiveAdsRequest $parameters)
     {
         return $this->invoke('archive', array($parameters));
     }
@@ -138,10 +140,10 @@ class Ads extends SoapClient
     /**
      * unarchive.
      *
-     * @param Contract\UnarchiveAdRequest $parameters
-     * @return Contract\UnarchiveAdResponse
+     * @param Contract\UnarchiveAdsRequest $parameters
+     * @return Contract\UnarchiveAdsResponse
      */
-    public function unarchive(Contract\UnarchiveAdRequest $parameters)
+    public function unarchive(Contract\UnarchiveAdsRequest $parameters)
     {
         return $this->invoke('unarchive', array($parameters));
     }
@@ -149,10 +151,10 @@ class Ads extends SoapClient
     /**
      * suspend.
      *
-     * @param Contract\SuspendAdRequest $parameters
-     * @return Contract\SuspendAdResponse
+     * @param Contract\SuspendAdsRequest $parameters
+     * @return Contract\SuspendAdsResponse
      */
-    public function suspend(Contract\SuspendAdRequest $parameters)
+    public function suspend(Contract\SuspendAdsRequest $parameters)
     {
         return $this->invoke('suspend', array($parameters));
     }
@@ -160,10 +162,10 @@ class Ads extends SoapClient
     /**
      * resume.
      *
-     * @param Contract\ResumeAdRequest $parameters
-     * @return Contract\ResumeAdResponse
+     * @param Contract\ResumeAdsRequest $parameters
+     * @return Contract\ResumeAdsResponse
      */
-    public function resume(Contract\ResumeAdRequest $parameters)
+    public function resume(Contract\ResumeAdsRequest $parameters)
     {
         return $this->invoke('resume', array($parameters));
     }
@@ -171,10 +173,10 @@ class Ads extends SoapClient
     /**
      * moderate.
      *
-     * @param Contract\ModerateAdRequest $parameters
-     * @return Contract\ModerateAdResponse
+     * @param Contract\ModerateAdsRequest $parameters
+     * @return Contract\ModerateAdsResponse
      */
-    public function moderate(Contract\ModerateAdRequest $parameters)
+    public function moderate(Contract\ModerateAdsRequest $parameters)
     {
         return $this->invoke('moderate', array($parameters));
     }

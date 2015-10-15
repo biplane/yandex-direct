@@ -32,6 +32,8 @@ class KeywordFieldEnum
 
     const PRODUCTIVITY = 'Productivity';
 
+    const STATISTICS = 'Statistics';
+
 
 }
 

@@ -2,14 +2,14 @@
 
 namespace Biplane\YandexDirect\Api\V5;
 
-use Biplane\YandexDirect\Api\SoapClient;
 use Biplane\YandexDirect\User;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
+use Biplane\YandexDirect\Api\V5SoapClient;
 
 /**
  * Auto-generated code.
  */
-class Changes extends SoapClient
+class Changes extends V5SoapClient
 {
 
     const ENDPOINT = 'https://api.direct.yandex.com/v5/changes?wsdl';
@@ -27,6 +27,7 @@ class Changes extends SoapClient
                 'ExceptionNotification' => 'Biplane\YandexDirect\Api\V5\Contract\ExceptionNotification',
                 'LimitOffset' => 'Biplane\YandexDirect\Api\V5\Contract\LimitOffset',
                 'YesNoEnum' => 'Biplane\YandexDirect\Api\V5\Contract\YesNoEnum',
+                'CurrencyEnum' => 'Biplane\YandexDirect\Api\V5\Contract\CurrencyEnum',
                 'StateEnum' => 'Biplane\YandexDirect\Api\V5\Contract\StateEnum',
                 'PriorityEnum' => 'Biplane\YandexDirect\Api\V5\Contract\PriorityEnum',
                 'PositionEnum' => 'Biplane\YandexDirect\Api\V5\Contract\PositionEnum',
@@ -34,6 +35,7 @@ class Changes extends SoapClient
                 'ScopeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\ScopeEnum',
                 'AgeRangeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AgeRangeEnum',
                 'GenderEnum' => 'Biplane\YandexDirect\Api\V5\Contract\GenderEnum',
+                'Statistics' => 'Biplane\YandexDirect\Api\V5\Contract\Statistics',
                 'IdsCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\IdsCriteria',
                 'GetRequestGeneral' => 'Biplane\YandexDirect\Api\V5\Contract\GetRequestGeneral',
                 'GetResponseGeneral' => 'Biplane\YandexDirect\Api\V5\Contract\GetResponseGeneral',
@@ -47,9 +49,9 @@ class Changes extends SoapClient
                 'CampaignChangesItem' => 'Biplane\YandexDirect\Api\V5\Contract\CampaignChangesItem',
                 'CampaignChangesInEnum' => 'Biplane\YandexDirect\Api\V5\Contract\CampaignChangesInEnum',
                 'CheckCampaignsResponse' => 'Biplane\YandexDirect\Api\V5\Contract\CheckCampaignsResponse',
-                'CheckRequest' => 'Biplane\YandexDirect\Api\V5\Contract\CheckChangeRequest',
+                'CheckRequest' => 'Biplane\YandexDirect\Api\V5\Contract\CheckChangesRequest',
                 'CheckFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\CheckFieldEnum',
-                'CheckResponse' => 'Biplane\YandexDirect\Api\V5\Contract\CheckChangeResponse',
+                'CheckResponse' => 'Biplane\YandexDirect\Api\V5\Contract\CheckChangesResponse',
                 'CheckResponseModified' => 'Biplane\YandexDirect\Api\V5\Contract\CheckResponseModified',
                 'CampaignStatItem' => 'Biplane\YandexDirect\Api\V5\Contract\CampaignStatItem',
                 'CheckResponseIds' => 'Biplane\YandexDirect\Api\V5\Contract\CheckResponseIds'
@@ -82,10 +84,10 @@ class Changes extends SoapClient
     /**
      * check.
      *
-     * @param Contract\CheckChangeRequest $parameters
-     * @return Contract\CheckChangeResponse
+     * @param Contract\CheckChangesRequest $parameters
+     * @return Contract\CheckChangesResponse
      */
-    public function check(Contract\CheckChangeRequest $parameters)
+    public function check(Contract\CheckChangesRequest $parameters)
     {
         return $this->invoke('check', array($parameters));
     }
