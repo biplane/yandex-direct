@@ -18,7 +18,7 @@ class CurrencyEnum
 
     const KZT = 'KZT';
 
-    const TRY = 'TRY';
+    const aTRY = 'TRY';
 
     const UAH = 'UAH';
 

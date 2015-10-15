@@ -115,13 +115,13 @@ class Generator extends BaseGenerator
                 );
 
                 foreach ($enums as $value) {
-                    if (preg_match('/[a-z]/', $value)) {
-                        $name = Inflector::tableize($value);
-                    } else {
-                        $name = $value;
+                    $name = $value;
+
+                    if (preg_match('/[a-z]/', $name)) {
+                        $name = Inflector::tableize($name);
                     }
 
-                    $generator->addConstant(strtoupper($name), $value);
+                    $generator->addConstant(Validator::validateConstant(strtoupper($name)), $value);
                 }
             }
         }
