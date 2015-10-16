@@ -86,8 +86,8 @@ class DumpListener implements EventSubscriberInterface
 
         $this->ensureDirectoryExists($dir);
 
-        file_put_contents($dir . '/' . $requestId . '_req.data', $event->getRequest());
-        file_put_contents($dir . '/' . $requestId . '_resp.data', $event->getResponse());
+        $this->saveFile($dir . '/' . $requestId . '_req.data', $event->getRequest());
+        $this->saveFile($dir . '/' . $requestId . '_resp.data', $event->getResponse());
     }
 
     private function ensureDirectoryExists($dir)
@@ -99,5 +99,11 @@ class DumpListener implements EventSubscriberInterface
         if (!is_writable($dir)) {
             throw new \RuntimeException(sprintf('The directory "%s" is not writable.', $dir));
         }
+    }
+
+    private function saveFile($filename, $content)
+    {
+        file_put_contents($filename, $content);
+        chmod($filename, 0664);
     }
 }
