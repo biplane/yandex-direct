@@ -86,6 +86,18 @@ switch ($argv->getArgument('service')) {
             }
         );
         break;
+    case 'Campaigns':
+        $options = $defaultOptions + array(
+            'inputFile'  => 'https://api.direct.yandex.com/v5/campaigns?wsdl',
+            'renameType' => function ($typeName) {
+                return preg_replace(
+                    '#^(Add|Archive|Delete|Get|Resume|Suspend|Unarchive|Update)(Request|Response)$#',
+                    '$1Campaigns$2',
+                    $typeName
+                );
+            }
+        );
+        break;
     case 'Changes':
         $options = $defaultOptions + array(
             'inputFile'  => 'https://api.direct.yandex.com/v5/changes?wsdl',
@@ -151,6 +163,7 @@ function usage(InputDefinition $definition) {
     echo '               Ads (version: 5);' . PHP_EOL;
     echo '               Bids (version: 5);' . PHP_EOL;
     echo '               BidModifiers (version: 5);' . PHP_EOL;
+    echo '               Campaigns (version: 5);' . PHP_EOL;
     echo '               Changes (version: 5);' . PHP_EOL;
     echo '               Keywords (version: 5);' . PHP_EOL;
     echo '               Sitelinks (version: 5);' . PHP_EOL;

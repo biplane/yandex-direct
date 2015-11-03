@@ -7,6 +7,7 @@ use Biplane\YandexDirect\Api\V5\AdGroups;
 use Biplane\YandexDirect\Api\V5\Ads;
 use Biplane\YandexDirect\Api\V5\BidModifiers;
 use Biplane\YandexDirect\Api\V5\Bids;
+use Biplane\YandexDirect\Api\V5\Campaigns;
 use Biplane\YandexDirect\Api\V5\Changes;
 use Biplane\YandexDirect\Api\V5\Keywords;
 use Biplane\YandexDirect\Api\V5\Sitelinks;
@@ -33,6 +34,7 @@ class User
         'Ads' => 'Biplane\YandexDirect\Api\V5\Ads',
         'Bids' => 'Biplane\YandexDirect\Api\V5\Bids',
         'BidModifiers' => 'Biplane\YandexDirect\Api\V5\BidModifiers',
+        'Campaigns' => 'Biplane\YandexDirect\Api\V5\Campaigns',
         'Changes' => 'Biplane\YandexDirect\Api\V5\Changes',
         'Keywords' => 'Biplane\YandexDirect\Api\V5\Keywords',
         'Sitelinks' => 'Biplane\YandexDirect\Api\V5\Sitelinks',
@@ -177,6 +179,16 @@ class User
     public function getBidModifiersService()
     {
         return $this->getProxy('BidModifiers');
+    }
+
+    /**
+     * Gets the proxy of web-service for manage campaigns.
+     *
+     * @return Campaigns
+     */
+    public function getCampaignsService()
+    {
+        return $this->getProxy('Campaigns');
     }
 
     /**
