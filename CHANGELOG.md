@@ -1,6 +1,6 @@
 # Changelog
 
-## 3.0.0
+## 3.0.0 [commit logs](https://github.com/biplane/BiplaneYandexDirectBundle/compare/2.0.0...3.0.0)
 
  * **[BC BREAK]** Изменена структура проекта, чтобы можно было подключать как Bundle для проекта на Symfony 2
    так и использовать как отдельную библиотеку, без зависимости от фреймворка Syfmony.
