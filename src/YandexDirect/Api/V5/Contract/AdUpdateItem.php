@@ -12,6 +12,8 @@ class AdUpdateItem
 
     protected $TextAd = null;
 
+    protected $MobileAppAd = null;
+
     /**
      * Creates a new instance of AdUpdateItem.
      *
@@ -64,6 +66,29 @@ class AdUpdateItem
     public function setTextAd(TextAdUpdate $value = null)
     {
         $this->TextAd = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets MobileAppAd.
+     *
+     * @return MobileAppAdUpdate|null
+     */
+    public function getMobileAppAd()
+    {
+        return $this->MobileAppAd;
+    }
+
+    /**
+     * Sets MobileAppAd.
+     *
+     * @param MobileAppAdUpdate|null $value
+     * @return $this
+     */
+    public function setMobileAppAd(MobileAppAdUpdate $value = null)
+    {
+        $this->MobileAppAd = $value;
 
         return $this;
     }

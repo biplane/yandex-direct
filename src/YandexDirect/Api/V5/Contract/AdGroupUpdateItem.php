@@ -12,6 +12,8 @@ class AdGroupUpdateItem extends AdGroupBase
 
     protected $Name = null;
 
+    protected $MobileAppAdGroup = null;
+
     /**
      * Creates a new instance of AdGroupUpdateItem.
      *
@@ -64,6 +66,29 @@ class AdGroupUpdateItem extends AdGroupBase
     public function setName($value = null)
     {
         $this->Name = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets MobileAppAdGroup.
+     *
+     * @return MobileAppAdGroupUpdate|null
+     */
+    public function getMobileAppAdGroup()
+    {
+        return $this->MobileAppAdGroup;
+    }
+
+    /**
+     * Sets MobileAppAdGroup.
+     *
+     * @param MobileAppAdGroupUpdate|null $value
+     * @return $this
+     */
+    public function setMobileAppAdGroup(MobileAppAdGroupUpdate $value = null)
+    {
+        $this->MobileAppAdGroup = $value;
 
         return $this;
     }

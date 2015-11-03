@@ -18,6 +18,8 @@ class AdGroupAddItem
 
     protected $NegativeKeywords = null;
 
+    protected $MobileAppAdGroup = null;
+
     /**
      * Creates a new instance of AdGroupAddItem.
      *
@@ -77,7 +79,7 @@ class AdGroupAddItem
     /**
      * Gets RegionIds.
      *
-     * @return long[]
+     * @return int[]
      */
     public function getRegionIds()
     {
@@ -87,7 +89,7 @@ class AdGroupAddItem
     /**
      * Sets RegionIds.
      *
-     * @param long[] $value
+     * @param int[] $value
      * @return $this
      */
     public function setRegionIds(array $value)
@@ -100,7 +102,7 @@ class AdGroupAddItem
     /**
      * Gets NegativeKeywords.
      *
-     * @return struct[]|null
+     * @return string[]|null
      */
     public function getNegativeKeywords()
     {
@@ -110,12 +112,35 @@ class AdGroupAddItem
     /**
      * Sets NegativeKeywords.
      *
-     * @param struct[]|null $value
+     * @param string[]|null $value
      * @return $this
      */
     public function setNegativeKeywords(array $value = null)
     {
         $this->NegativeKeywords = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets MobileAppAdGroup.
+     *
+     * @return MobileAppAdGroupAdd|null
+     */
+    public function getMobileAppAdGroup()
+    {
+        return $this->MobileAppAdGroup;
+    }
+
+    /**
+     * Sets MobileAppAdGroup.
+     *
+     * @param MobileAppAdGroupAdd|null $value
+     * @return $this
+     */
+    public function setMobileAppAdGroup(MobileAppAdGroupAdd $value = null)
+    {
+        $this->MobileAppAdGroup = $value;
 
         return $this;
     }

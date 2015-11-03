@@ -108,7 +108,7 @@ class BidGetItem extends BidBase
     /**
      * Gets CompetitorsBids.
      *
-     * @return long[]|null
+     * @return int[]|null
      */
     public function getCompetitorsBids()
     {
@@ -118,7 +118,7 @@ class BidGetItem extends BidBase
     /**
      * Sets CompetitorsBids.
      *
-     * @param long[]|null $value
+     * @param int[]|null $value
      * @return $this
      */
     public function setCompetitorsBids(array $value = null)

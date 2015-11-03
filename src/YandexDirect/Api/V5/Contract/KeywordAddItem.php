@@ -12,6 +12,12 @@ class KeywordAddItem
 
     protected $AdGroupId = null;
 
+    protected $Bid = null;
+
+    protected $ContextBid = null;
+
+    protected $StrategyPriority = null;
+
     protected $UserParam1 = null;
 
     protected $UserParam2 = null;
@@ -68,6 +74,75 @@ class KeywordAddItem
     public function setAdGroupId($value)
     {
         $this->AdGroupId = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets Bid.
+     *
+     * @return int|null
+     */
+    public function getBid()
+    {
+        return $this->Bid;
+    }
+
+    /**
+     * Sets Bid.
+     *
+     * @param int|null $value
+     * @return $this
+     */
+    public function setBid($value = null)
+    {
+        $this->Bid = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets ContextBid.
+     *
+     * @return int|null
+     */
+    public function getContextBid()
+    {
+        return $this->ContextBid;
+    }
+
+    /**
+     * Sets ContextBid.
+     *
+     * @param int|null $value
+     * @return $this
+     */
+    public function setContextBid($value = null)
+    {
+        $this->ContextBid = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets StrategyPriority.
+     *
+     * @return PriorityEnum|null
+     */
+    public function getStrategyPriority()
+    {
+        return $this->StrategyPriority;
+    }
+
+    /**
+     * Sets StrategyPriority.
+     *
+     * @param PriorityEnum|null $value
+     * @return $this
+     */
+    public function setStrategyPriority(PriorityEnum $value = null)
+    {
+        $this->StrategyPriority = $value;
 
         return $this;
     }

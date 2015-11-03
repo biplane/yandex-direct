@@ -28,6 +28,8 @@ class AdGetItem
 
     protected $TextAd = null;
 
+    protected $MobileAppAd = null;
+
     /**
      * Creates a new instance of AdGetItem.
      *
@@ -179,7 +181,7 @@ class AdGetItem
     /**
      * Gets AdCategories.
      *
-     * @return struct[]|null
+     * @return AdCategoryEnum[]|null
      */
     public function getAdCategories()
     {
@@ -189,7 +191,7 @@ class AdGetItem
     /**
      * Sets AdCategories.
      *
-     * @param struct[]|null $value
+     * @param AdCategoryEnum[]|null $value
      * @return $this
      */
     public function setAdCategories(array $value = null)
@@ -264,6 +266,29 @@ class AdGetItem
     public function setTextAd(TextAdGet $value = null)
     {
         $this->TextAd = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets MobileAppAd.
+     *
+     * @return MobileAppAdGet|null
+     */
+    public function getMobileAppAd()
+    {
+        return $this->MobileAppAd;
+    }
+
+    /**
+     * Sets MobileAppAd.
+     *
+     * @param MobileAppAdGet|null $value
+     * @return $this
+     */
+    public function setMobileAppAd(MobileAppAdGet $value = null)
+    {
+        $this->MobileAppAd = $value;
 
         return $this;
     }

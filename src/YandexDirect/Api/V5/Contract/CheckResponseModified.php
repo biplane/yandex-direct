@@ -29,7 +29,7 @@ class CheckResponseModified
     /**
      * Gets CampaignIds.
      *
-     * @return long[]|null
+     * @return int[]|null
      */
     public function getCampaignIds()
     {
@@ -39,7 +39,7 @@ class CheckResponseModified
     /**
      * Sets CampaignIds.
      *
-     * @param long[]|null $value
+     * @param int[]|null $value
      * @return $this
      */
     public function setCampaignIds(array $value = null)
@@ -52,7 +52,7 @@ class CheckResponseModified
     /**
      * Gets AdGroupIds.
      *
-     * @return long[]|null
+     * @return int[]|null
      */
     public function getAdGroupIds()
     {
@@ -62,7 +62,7 @@ class CheckResponseModified
     /**
      * Sets AdGroupIds.
      *
-     * @param long[]|null $value
+     * @param int[]|null $value
      * @return $this
      */
     public function setAdGroupIds(array $value = null)
@@ -75,7 +75,7 @@ class CheckResponseModified
     /**
      * Gets AdIds.
      *
-     * @return long[]|null
+     * @return int[]|null
      */
     public function getAdIds()
     {
@@ -85,7 +85,7 @@ class CheckResponseModified
     /**
      * Sets AdIds.
      *
-     * @param long[]|null $value
+     * @param int[]|null $value
      * @return $this
      */
     public function setAdIds(array $value = null)

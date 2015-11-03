@@ -10,6 +10,8 @@ class AdAddItem extends AdAddItemBase
 
     protected $TextAd = null;
 
+    protected $MobileAppAd = null;
+
     /**
      * Creates a new instance of AdAddItem.
      *
@@ -39,6 +41,29 @@ class AdAddItem extends AdAddItemBase
     public function setTextAd(TextAdAdd $value = null)
     {
         $this->TextAd = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets MobileAppAd.
+     *
+     * @return MobileAppAdAdd|null
+     */
+    public function getMobileAppAd()
+    {
+        return $this->MobileAppAd;
+    }
+
+    /**
+     * Sets MobileAppAd.
+     *
+     * @param MobileAppAdAdd|null $value
+     * @return $this
+     */
+    public function setMobileAppAd(MobileAppAdAdd $value = null)
+    {
+        $this->MobileAppAd = $value;
 
         return $this;
     }

@@ -18,8 +18,6 @@ class AdCategoryEnum
 
     const MEDICINE = 'MEDICINE';
 
-    const PENDING = 'PENDING';
-
     const PSEUDO_WEAPON = 'PSEUDO_WEAPON';
 
     const TOBACCO = 'TOBACCO';

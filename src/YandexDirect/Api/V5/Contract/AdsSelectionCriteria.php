@@ -47,7 +47,7 @@ class AdsSelectionCriteria
     /**
      * Gets Ids.
      *
-     * @return long[]|null
+     * @return int[]|null
      */
     public function getIds()
     {
@@ -57,7 +57,7 @@ class AdsSelectionCriteria
     /**
      * Sets Ids.
      *
-     * @param long[]|null $value
+     * @param int[]|null $value
      * @return $this
      */
     public function setIds(array $value = null)
@@ -116,7 +116,7 @@ class AdsSelectionCriteria
     /**
      * Gets CampaignIds.
      *
-     * @return long[]|null
+     * @return int[]|null
      */
     public function getCampaignIds()
     {
@@ -126,7 +126,7 @@ class AdsSelectionCriteria
     /**
      * Sets CampaignIds.
      *
-     * @param long[]|null $value
+     * @param int[]|null $value
      * @return $this
      */
     public function setCampaignIds(array $value = null)
@@ -139,7 +139,7 @@ class AdsSelectionCriteria
     /**
      * Gets AdGroupIds.
      *
-     * @return long[]|null
+     * @return int[]|null
      */
     public function getAdGroupIds()
     {
@@ -149,7 +149,7 @@ class AdsSelectionCriteria
     /**
      * Sets AdGroupIds.
      *
-     * @param long[]|null $value
+     * @param int[]|null $value
      * @return $this
      */
     public function setAdGroupIds(array $value = null)
@@ -208,7 +208,7 @@ class AdsSelectionCriteria
     /**
      * Gets VCardIds.
      *
-     * @return long[]|null
+     * @return int[]|null
      */
     public function getVCardIds()
     {
@@ -218,7 +218,7 @@ class AdsSelectionCriteria
     /**
      * Sets VCardIds.
      *
-     * @param long[]|null $value
+     * @param int[]|null $value
      * @return $this
      */
     public function setVCardIds(array $value = null)
@@ -231,7 +231,7 @@ class AdsSelectionCriteria
     /**
      * Gets SitelinkSetIds.
      *
-     * @return long[]|null
+     * @return int[]|null
      */
     public function getSitelinkSetIds()
     {
@@ -241,7 +241,7 @@ class AdsSelectionCriteria
     /**
      * Sets SitelinkSetIds.
      *
-     * @param long[]|null $value
+     * @param int[]|null $value
      * @return $this
      */
     public function setSitelinkSetIds(array $value = null)

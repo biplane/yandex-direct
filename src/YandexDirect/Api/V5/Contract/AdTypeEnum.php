@@ -10,6 +10,8 @@ class AdTypeEnum
 
     const TEXT_AD = 'TEXT_AD';
 
+    const MOBILE_APP_AD = 'MOBILE_APP_AD';
+
 
 }
 

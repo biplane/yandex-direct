@@ -8,9 +8,9 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class Statistics
 {
 
-    protected $Impressions = null;
-
     protected $Clicks = null;
+
+    protected $Impressions = null;
 
     /**
      * Creates a new instance of Statistics.
@@ -20,29 +20,6 @@ class Statistics
     public static function create()
     {
         return new self();
-    }
-
-    /**
-     * Gets Impressions.
-     *
-     * @return int
-     */
-    public function getImpressions()
-    {
-        return $this->Impressions;
-    }
-
-    /**
-     * Sets Impressions.
-     *
-     * @param int $value
-     * @return $this
-     */
-    public function setImpressions($value)
-    {
-        $this->Impressions = $value;
-
-        return $this;
     }
 
     /**
@@ -64,6 +41,29 @@ class Statistics
     public function setClicks($value)
     {
         $this->Clicks = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets Impressions.
+     *
+     * @return int
+     */
+    public function getImpressions()
+    {
+        return $this->Impressions;
+    }
+
+    /**
+     * Sets Impressions.
+     *
+     * @param int $value
+     * @return $this
+     */
+    public function setImpressions($value)
+    {
+        $this->Impressions = $value;
 
         return $this;
     }

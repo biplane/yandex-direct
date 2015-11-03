@@ -27,7 +27,7 @@ class BidsSelectionCriteria
     /**
      * Gets CampaignIds.
      *
-     * @return long[]|null
+     * @return int[]|null
      */
     public function getCampaignIds()
     {
@@ -37,7 +37,7 @@ class BidsSelectionCriteria
     /**
      * Sets CampaignIds.
      *
-     * @param long[]|null $value
+     * @param int[]|null $value
      * @return $this
      */
     public function setCampaignIds(array $value = null)
@@ -50,7 +50,7 @@ class BidsSelectionCriteria
     /**
      * Gets AdGroupIds.
      *
-     * @return long[]|null
+     * @return int[]|null
      */
     public function getAdGroupIds()
     {
@@ -60,7 +60,7 @@ class BidsSelectionCriteria
     /**
      * Sets AdGroupIds.
      *
-     * @param long[]|null $value
+     * @param int[]|null $value
      * @return $this
      */
     public function setAdGroupIds(array $value = null)
@@ -73,7 +73,7 @@ class BidsSelectionCriteria
     /**
      * Gets KeywordIds.
      *
-     * @return long[]|null
+     * @return int[]|null
      */
     public function getKeywordIds()
     {
@@ -83,7 +83,7 @@ class BidsSelectionCriteria
     /**
      * Sets KeywordIds.
      *
-     * @param long[]|null $value
+     * @param int[]|null $value
      * @return $this
      */
     public function setKeywordIds(array $value = null)

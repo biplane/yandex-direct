@@ -20,6 +20,8 @@ class AdGroupFieldEnum
 
     const NEGATIVE_KEYWORDS = 'NegativeKeywords';
 
+    const TYPE = 'Type';
+
 
 }
 

@@ -31,7 +31,7 @@ class KeywordsSelectionCriteria
     /**
      * Gets Ids.
      *
-     * @return long[]|null
+     * @return int[]|null
      */
     public function getIds()
     {
@@ -41,7 +41,7 @@ class KeywordsSelectionCriteria
     /**
      * Sets Ids.
      *
-     * @param long[]|null $value
+     * @param int[]|null $value
      * @return $this
      */
     public function setIds(array $value = null)
@@ -54,7 +54,7 @@ class KeywordsSelectionCriteria
     /**
      * Gets AdGroupIds.
      *
-     * @return long[]|null
+     * @return int[]|null
      */
     public function getAdGroupIds()
     {
@@ -64,7 +64,7 @@ class KeywordsSelectionCriteria
     /**
      * Sets AdGroupIds.
      *
-     * @param long[]|null $value
+     * @param int[]|null $value
      * @return $this
      */
     public function setAdGroupIds(array $value = null)
@@ -77,7 +77,7 @@ class KeywordsSelectionCriteria
     /**
      * Gets CampaignIds.
      *
-     * @return long[]|null
+     * @return int[]|null
      */
     public function getCampaignIds()
     {
@@ -87,7 +87,7 @@ class KeywordsSelectionCriteria
     /**
      * Sets CampaignIds.
      *
-     * @param long[]|null $value
+     * @param int[]|null $value
      * @return $this
      */
     public function setCampaignIds(array $value = null)

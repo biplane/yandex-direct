@@ -32,7 +32,7 @@ class KeywordGetItem
 
     protected $Productivity = null;
 
-    protected $Statistics = null;
+    protected $StatisticsSearch = null;
 
     /**
      * Creates a new instance of KeywordGetItem.
@@ -321,24 +321,24 @@ class KeywordGetItem
     }
 
     /**
-     * Gets Statistics.
+     * Gets StatisticsSearch.
      *
      * @return Statistics|null
      */
-    public function getStatistics()
+    public function getStatisticsSearch()
     {
-        return $this->Statistics;
+        return $this->StatisticsSearch;
     }
 
     /**
-     * Sets Statistics.
+     * Sets StatisticsSearch.
      *
      * @param Statistics|null $value
      * @return $this
      */
-    public function setStatistics(Statistics $value = null)
+    public function setStatisticsSearch(Statistics $value = null)
     {
-        $this->Statistics = $value;
+        $this->StatisticsSearch = $value;
 
         return $this;
     }

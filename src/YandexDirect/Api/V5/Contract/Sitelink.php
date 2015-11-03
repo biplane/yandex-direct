@@ -12,6 +12,8 @@ class Sitelink
 
     protected $Href = null;
 
+    protected $Description = null;
+
     /**
      * Creates a new instance of Sitelink.
      *
@@ -64,6 +66,29 @@ class Sitelink
     public function setHref($value)
     {
         $this->Href = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets Description.
+     *
+     * @return string|null
+     */
+    public function getDescription()
+    {
+        return $this->Description;
+    }
+
+    /**
+     * Sets Description.
+     *
+     * @param string|null $value
+     * @return $this
+     */
+    public function setDescription($value = null)
+    {
+        $this->Description = $value;
 
         return $this;
     }

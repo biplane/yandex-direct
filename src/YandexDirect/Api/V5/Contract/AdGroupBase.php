@@ -25,7 +25,7 @@ class AdGroupBase
     /**
      * Gets RegionIds.
      *
-     * @return long[]|null
+     * @return int[]|null
      */
     public function getRegionIds()
     {
@@ -35,7 +35,7 @@ class AdGroupBase
     /**
      * Sets RegionIds.
      *
-     * @param long[]|null $value
+     * @param int[]|null $value
      * @return $this
      */
     public function setRegionIds(array $value = null)
@@ -48,7 +48,7 @@ class AdGroupBase
     /**
      * Gets NegativeKeywords.
      *
-     * @return struct[]|null
+     * @return string[]|null
      */
     public function getNegativeKeywords()
     {
@@ -58,7 +58,7 @@ class AdGroupBase
     /**
      * Sets NegativeKeywords.
      *
-     * @param struct[]|null $value
+     * @param string[]|null $value
      * @return $this
      */
     public function setNegativeKeywords(array $value = null)

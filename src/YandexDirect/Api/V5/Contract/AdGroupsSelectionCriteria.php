@@ -12,11 +12,15 @@ class AdGroupsSelectionCriteria
 
     protected $Ids = null;
 
+    protected $Types = null;
+
     protected $Statuses = null;
 
     protected $TagIds = null;
 
     protected $Tags = null;
+
+    protected $AppIconStatuses = null;
 
     /**
      * Creates a new instance of AdGroupsSelectionCriteria.
@@ -31,7 +35,7 @@ class AdGroupsSelectionCriteria
     /**
      * Gets CampaignIds.
      *
-     * @return long[]|null
+     * @return int[]|null
      */
     public function getCampaignIds()
     {
@@ -41,7 +45,7 @@ class AdGroupsSelectionCriteria
     /**
      * Sets CampaignIds.
      *
-     * @param long[]|null $value
+     * @param int[]|null $value
      * @return $this
      */
     public function setCampaignIds(array $value = null)
@@ -54,7 +58,7 @@ class AdGroupsSelectionCriteria
     /**
      * Gets Ids.
      *
-     * @return long[]|null
+     * @return int[]|null
      */
     public function getIds()
     {
@@ -64,7 +68,7 @@ class AdGroupsSelectionCriteria
     /**
      * Sets Ids.
      *
-     * @param long[]|null $value
+     * @param int[]|null $value
      * @return $this
      */
     public function setIds(array $value = null)
@@ -75,9 +79,32 @@ class AdGroupsSelectionCriteria
     }
 
     /**
+     * Gets Types.
+     *
+     * @return AdGroupTypesEnum[]|null
+     */
+    public function getTypes()
+    {
+        return $this->Types;
+    }
+
+    /**
+     * Sets Types.
+     *
+     * @param AdGroupTypesEnum[]|null $value
+     * @return $this
+     */
+    public function setTypes(array $value = null)
+    {
+        $this->Types = $value;
+
+        return $this;
+    }
+
+    /**
      * Gets Statuses.
      *
-     * @return StatusEnum[]|null
+     * @return StatusSelectionEnum[]|null
      */
     public function getStatuses()
     {
@@ -87,7 +114,7 @@ class AdGroupsSelectionCriteria
     /**
      * Sets Statuses.
      *
-     * @param StatusEnum[]|null $value
+     * @param StatusSelectionEnum[]|null $value
      * @return $this
      */
     public function setStatuses(array $value = null)
@@ -100,7 +127,7 @@ class AdGroupsSelectionCriteria
     /**
      * Gets TagIds.
      *
-     * @return long[]|null
+     * @return int[]|null
      */
     public function getTagIds()
     {
@@ -110,7 +137,7 @@ class AdGroupsSelectionCriteria
     /**
      * Sets TagIds.
      *
-     * @param long[]|null $value
+     * @param int[]|null $value
      * @return $this
      */
     public function setTagIds(array $value = null)
@@ -139,6 +166,29 @@ class AdGroupsSelectionCriteria
     public function setTags(array $value = null)
     {
         $this->Tags = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets AppIconStatuses.
+     *
+     * @return StatusSelectionEnum[]|null
+     */
+    public function getAppIconStatuses()
+    {
+        return $this->AppIconStatuses;
+    }
+
+    /**
+     * Sets AppIconStatuses.
+     *
+     * @param StatusSelectionEnum[]|null $value
+     * @return $this
+     */
+    public function setAppIconStatuses(array $value = null)
+    {
+        $this->AppIconStatuses = $value;
 
         return $this;
     }

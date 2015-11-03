@@ -25,7 +25,7 @@ class IdsCriteria
     /**
      * Gets Ids.
      *
-     * @return long[]
+     * @return int[]
      */
     public function getIds()
     {
@@ -35,7 +35,7 @@ class IdsCriteria
     /**
      * Sets Ids.
      *
-     * @param long[] $value
+     * @param int[] $value
      * @return $this
      */
     public function setIds(array $value)

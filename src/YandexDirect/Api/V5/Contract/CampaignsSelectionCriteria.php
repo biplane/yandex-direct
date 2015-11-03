@@ -31,7 +31,7 @@ class CampaignsSelectionCriteria
     /**
      * Gets Ids.
      *
-     * @return long[]|null
+     * @return int[]|null
      */
     public function getIds()
     {
@@ -41,7 +41,7 @@ class CampaignsSelectionCriteria
     /**
      * Sets Ids.
      *
-     * @param long[]|null $value
+     * @param int[]|null $value
      * @return $this
      */
     public function setIds(array $value = null)

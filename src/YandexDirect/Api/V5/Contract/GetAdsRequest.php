@@ -16,6 +16,8 @@ class GetAdsRequest extends GetRequestGeneral
 
     protected $TextAdFieldNames = null;
 
+    protected $MobileAppAdFieldNames = null;
+
     /**
      * Creates a new instance of GetAdsRequest.
      *
@@ -91,6 +93,29 @@ class GetAdsRequest extends GetRequestGeneral
     public function setTextAdFieldNames(array $value = null)
     {
         $this->TextAdFieldNames = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets MobileAppAdFieldNames.
+     *
+     * @return MobileAppAdFieldEnum[]|null
+     */
+    public function getMobileAppAdFieldNames()
+    {
+        return $this->MobileAppAdFieldNames;
+    }
+
+    /**
+     * Sets MobileAppAdFieldNames.
+     *
+     * @param MobileAppAdFieldEnum[]|null $value
+     * @return $this
+     */
+    public function setMobileAppAdFieldNames(array $value = null)
+    {
+        $this->MobileAppAdFieldNames = $value;
 
         return $this;
     }

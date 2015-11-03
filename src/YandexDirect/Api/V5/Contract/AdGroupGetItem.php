@@ -16,6 +16,10 @@ class AdGroupGetItem extends AdGroupBase
 
     protected $Status = null;
 
+    protected $Type = null;
+
+    protected $MobileAppAdGroup = null;
+
     /**
      * Creates a new instance of AdGroupGetItem.
      *
@@ -114,6 +118,52 @@ class AdGroupGetItem extends AdGroupBase
     public function setStatus(StatusEnum $value = null)
     {
         $this->Status = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets Type.
+     *
+     * @return AdGroupTypesEnum|null
+     */
+    public function getType()
+    {
+        return $this->Type;
+    }
+
+    /**
+     * Sets Type.
+     *
+     * @param AdGroupTypesEnum|null $value
+     * @return $this
+     */
+    public function setType(AdGroupTypesEnum $value = null)
+    {
+        $this->Type = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets MobileAppAdGroup.
+     *
+     * @return MobileAppAdGroupGet|null
+     */
+    public function getMobileAppAdGroup()
+    {
+        return $this->MobileAppAdGroup;
+    }
+
+    /**
+     * Sets MobileAppAdGroup.
+     *
+     * @param MobileAppAdGroupGet|null $value
+     * @return $this
+     */
+    public function setMobileAppAdGroup(MobileAppAdGroupGet $value = null)
+    {
+        $this->MobileAppAdGroup = $value;
 
         return $this;
     }
