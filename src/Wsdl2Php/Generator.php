@@ -70,7 +70,6 @@ class Generator extends BaseGenerator
                     $generator->addMethodFromGenerator($methodFactory);
 
                     foreach ($node->getParts() as $fieldName => $fieldType) {
-                        $fieldType = $this->validateType($fieldType);
                         $isArray = $node->isElementArray($fieldName);
                         $nullable = $node->isElementNillable($fieldName) || $node->getElementMinOccurs($fieldName) === 0;
 
@@ -78,9 +77,9 @@ class Generator extends BaseGenerator
                             /** @var $fieldNode TypeNode */
                             $fieldNode = $types[$fieldType];
                             $isArray = $fieldNode->isArray();
-                            $fieldType = $isArray
-                                ? $this->validateType($fieldNode->getRestriction()) . '[]'
-                                :  $fieldNode->getName();
+                            $fieldType = $isArray && !$fieldNode->isComplex()
+                                ? $fieldNode->getRestriction() . '[]'
+                                : $fieldNode->getName();
                         }
 
                         $propertyValue = new PropertyValueGenerator($isArray && !$nullable ? array() : null);
@@ -253,10 +252,19 @@ CODE
 
     private function validateType($type)
     {
+        if (substr($type, -2) === '[]') {
+            return $this->validateType(substr($type, 0, -2)) . '[]';
+        }
+
         $type = Validator::validateType($type);
 
-        if (strtolower($type) === 'date') {
-            return 'string';
+        switch (strtolower($type)) {
+            case 'date':
+                $type = 'string';
+                break;
+            case 'arrayofstring':
+                $type = 'string';
+                break;
         }
 
         return $type;
@@ -265,18 +273,18 @@ CODE
     private function setParameter($ns, MethodGenerator $generator, $name, $type, $isArray = false, $nullable = false)
     {
         if ($isArray) {
-            $typeHint = 'array';
+            $paramType = 'array';
         } elseif (null !== $typeNode = $this->findTypeNode($type)) {
             if ($typeNode->isArray()) {
-                $typeHint = 'array';
+                $paramType = 'array';
             } else {
-                $typeHint = $this->resolveTypeName($typeNode->getName(), $ns);
+                $paramType = $this->resolveTypeName($typeNode->getName(), $ns);
             }
         } else {
-            $typeHint = $type;
+            $paramType = $this->validateType($type);
         }
 
-        $paramGenerator = new ParameterGenerator($name, $typeHint);
+        $paramGenerator = new ParameterGenerator($name, $paramType);
         $generator->setParameter($paramGenerator);
 
         if ($nullable) {
@@ -417,12 +425,18 @@ CODE
 
         if ($typeNode !== null) {
             if ($typeNode->isArray()) {
-                $types[] = $this->resolveTypeName($typeNode->getRestriction(), $currentNamespace) . '[]';
+                $type = $typeNode->isComplex() ? $typeNode->getName() : $typeNode->getRestriction();
+
+                if (substr($type, 0, 7) === 'ArrayOf') {
+                    $type = substr($type, 7);
+                }
+
+                $types[] = $this->resolveTypeName($type, $currentNamespace) . '[]';
             } else {
                 $types[] = $this->resolveTypeName($typeNode->getName() . ($isArray ? '[]' : ''), $currentNamespace);
             }
         } else {
-            $types[] = $type;
+            $types[] = $type === '$this' ? $type : $this->validateType($type);
         }
 
         if ($nullable) {
@@ -435,21 +449,22 @@ CODE
     private function resolveTypeName($type, $currentNamespace)
     {
         if (isset($this->types[$type])) {
-            /** @var ClassGenerator $class */
             $class = $this->types[$type]['class'];
 
-            $len = strlen($currentNamespace);
-            $ns = $class->getNamespaceName();
+            if ($class instanceof ClassGenerator) {
+                $len = strlen($currentNamespace);
+                $ns  = $class->getNamespaceName();
 
-            if ($ns === $currentNamespace) {
-                return $class->getName();
+                if ($ns === $currentNamespace) {
+                    return $class->getName();
+                }
+
+                if (strlen($ns) >= $len && ($currentNamespace . '\\') === substr($ns, 0, $len + 1)) {
+                    $ns = substr($ns, $len + 1);
+                }
+
+                return $ns . '\\' . $class->getName();
             }
-
-            if (strlen($ns) >= $len && ($currentNamespace . '\\') === substr($ns, 0, $len + 1)) {
-                $ns = substr($ns, $len + 1);
-            }
-
-            return $ns . '\\' . $class->getName();
         }
 
         return $this->validateType($type);
