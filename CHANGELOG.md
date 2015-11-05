@@ -1,5 +1,10 @@
 # Changelog
 
+## 3.0.1 [commit logs](https://github.com/biplane/BiplaneYandexDirectBundle/compare/3.0.0...3.0.1)
+
+ * Исправлена ошибка, когда директория создавалась без прав на запись для группы,
+   так как на `mkdir` влияет `umask`.
+
 ## 3.0.0 [commit logs](https://github.com/biplane/BiplaneYandexDirectBundle/compare/2.0.0...3.0.0)
 
  * **[BC BREAK]** Изменена структура проекта, чтобы можно было подключать как Bundle для проекта на Symfony 2
