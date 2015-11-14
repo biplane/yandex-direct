@@ -74,12 +74,8 @@ class Generator extends BaseGenerator
                         $nullable = $node->isElementNillable($fieldName) || $node->getElementMinOccurs($fieldName) === 0;
 
                         if (!$isArray && isset($types[$fieldType])) {
-                            /** @var $fieldNode TypeNode */
-                            $fieldNode = $types[$fieldType];
-                            $isArray = $fieldNode->isArray();
-                            $fieldType = $isArray && !$fieldNode->isComplex()
-                                ? $fieldNode->getRestriction() . '[]'
-                                : $fieldNode->getName();
+                            $fieldType = $types[$fieldType];
+                            $isArray = $fieldType->isArray();
                         }
 
                         $propertyValue = new PropertyValueGenerator($isArray && !$nullable ? array() : null);
@@ -274,7 +270,7 @@ CODE
     {
         if ($isArray) {
             $paramType = 'array';
-        } elseif (null !== $typeNode = $this->findTypeNode($type)) {
+        } elseif (null !== $typeNode = $this->resolveTypeNode($type)) {
             if ($typeNode->isArray()) {
                 $paramType = 'array';
             } else {
@@ -398,16 +394,20 @@ CODE
     }
 
     /**
-     * Finds the node by the type name.
+     * Resolves the TypeNode for the specific type.
      *
-     * @param string $name
+     * @param TypeNode|string $type
      *
      * @return TypeNode|null
      */
-    private function findTypeNode($name)
+    private function resolveTypeNode($type)
     {
-        if (isset($this->types[$name])) {
-            return $this->types[$name]['node'];
+        if ($type instanceof TypeNode) {
+            return $type;
+        }
+
+        if (isset($this->types[$type])) {
+            return $this->types[$type]['node'];
         }
 
         return null;
@@ -415,25 +415,31 @@ CODE
 
     private function getTypeHint($type, $currentNamespace, $isArray = false, $nullable = false)
     {
-        if ($type instanceof TypeNode) {
-            $typeNode = $type;
-        } else {
-            $typeNode = $this->findTypeNode($type);
-        }
-
+        $typeNode = $this->resolveTypeNode($type);
         $types = array();
 
         if ($typeNode !== null) {
             if ($typeNode->isArray()) {
-                $type = $typeNode->isComplex() ? $typeNode->getName() : $typeNode->getRestriction();
+                $parts = $typeNode->getParts();
 
-                if (substr($type, 0, 7) === 'ArrayOf') {
-                    $type = substr($type, 7);
+                if (isset($parts[$typeNode->getName()])) {
+                    $type = $parts[$typeNode->getName()];
+                } elseif ($parts['Items']) {
+                    $type = $parts['Items'];
+                } else {
+                    throw new \RuntimeException(sprintf(
+                        'Could not determine type of element of array %s.',
+                        $typeNode->getName()
+                    ));
+                }
+
+                if (substr($type, -2) === '[]') {
+                    $type = substr($type, 0, -2);
                 }
 
                 $types[] = $this->resolveTypeName($type, $currentNamespace) . '[]';
             } else {
-                $types[] = $this->resolveTypeName($typeNode->getName() . ($isArray ? '[]' : ''), $currentNamespace);
+                $types[] = $this->resolveTypeName($typeNode->getName(), $currentNamespace) . ($isArray ? '[]' : '');
             }
         } else {
             $types[] = $type === '$this' ? $type : $this->validateType($type);
