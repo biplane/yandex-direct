@@ -93,7 +93,9 @@ class DumpListener implements EventSubscriberInterface
     private function ensureDirectoryExists($dir)
     {
         if (!is_dir($dir)) {
-            if (!@mkdir($dir, 0775, true)) {
+            $this->ensureDirectoryExists(dirname($dir));
+
+            if (!@mkdir($dir, 0775)) {
                 throw new \RuntimeException(sprintf('Could not create directory "%s".', $dir));
             }
 
