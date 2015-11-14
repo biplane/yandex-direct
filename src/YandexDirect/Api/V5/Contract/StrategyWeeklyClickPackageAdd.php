@@ -5,19 +5,19 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 /**
  * Auto-generated code.
  */
-class StrategyAverageCpi
+class StrategyWeeklyClickPackageAdd
 {
 
-    protected $AverageCpi = null;
+    protected $ClicksPerWeek = null;
 
-    protected $WeeklySpendLimit = null;
+    protected $AverageCpc = null;
 
     protected $BidCeiling = null;
 
     /**
-     * Creates a new instance of StrategyAverageCpi.
+     * Creates a new instance of StrategyWeeklyClickPackageAdd.
      *
-     * @return StrategyAverageCpi
+     * @return StrategyWeeklyClickPackageAdd
      */
     public static function create()
     {
@@ -25,47 +25,47 @@ class StrategyAverageCpi
     }
 
     /**
-     * Gets AverageCpi.
+     * Gets ClicksPerWeek.
      *
-     * @return int|null
+     * @return int
      */
-    public function getAverageCpi()
+    public function getClicksPerWeek()
     {
-        return $this->AverageCpi;
+        return $this->ClicksPerWeek;
     }
 
     /**
-     * Sets AverageCpi.
+     * Sets ClicksPerWeek.
      *
-     * @param int|null $value
+     * @param int $value
      * @return $this
      */
-    public function setAverageCpi($value = null)
+    public function setClicksPerWeek($value)
     {
-        $this->AverageCpi = $value;
+        $this->ClicksPerWeek = $value;
 
         return $this;
     }
 
     /**
-     * Gets WeeklySpendLimit.
+     * Gets AverageCpc.
      *
      * @return int|null
      */
-    public function getWeeklySpendLimit()
+    public function getAverageCpc()
     {
-        return $this->WeeklySpendLimit;
+        return $this->AverageCpc;
     }
 
     /**
-     * Sets WeeklySpendLimit.
+     * Sets AverageCpc.
      *
      * @param int|null $value
      * @return $this
      */
-    public function setWeeklySpendLimit($value = null)
+    public function setAverageCpc($value = null)
     {
-        $this->WeeklySpendLimit = $value;
+        $this->AverageCpc = $value;
 
         return $this;
     }

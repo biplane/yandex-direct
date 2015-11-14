@@ -29,7 +29,7 @@ class StrategyAverageCpa
     /**
      * Gets AverageCpa.
      *
-     * @return int
+     * @return int|null
      */
     public function getAverageCpa()
     {
@@ -39,10 +39,10 @@ class StrategyAverageCpa
     /**
      * Sets AverageCpa.
      *
-     * @param int $value
+     * @param int|null $value
      * @return $this
      */
-    public function setAverageCpa($value)
+    public function setAverageCpa($value = null)
     {
         $this->AverageCpa = $value;
 
@@ -52,7 +52,7 @@ class StrategyAverageCpa
     /**
      * Gets GoalId.
      *
-     * @return int
+     * @return int|null
      */
     public function getGoalId()
     {
@@ -62,10 +62,10 @@ class StrategyAverageCpa
     /**
      * Sets GoalId.
      *
-     * @param int $value
+     * @param int|null $value
      * @return $this
      */
-    public function setGoalId($value)
+    public function setGoalId($value = null)
     {
         $this->GoalId = $value;
 

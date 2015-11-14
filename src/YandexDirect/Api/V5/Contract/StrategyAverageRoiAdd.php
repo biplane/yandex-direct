@@ -5,7 +5,7 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 /**
  * Auto-generated code.
  */
-class StrategyAverageRoi
+class StrategyAverageRoiAdd
 {
 
     protected $ReserveReturn = null;
@@ -21,9 +21,9 @@ class StrategyAverageRoi
     protected $Profitability = null;
 
     /**
-     * Creates a new instance of StrategyAverageRoi.
+     * Creates a new instance of StrategyAverageRoiAdd.
      *
-     * @return StrategyAverageRoi
+     * @return StrategyAverageRoiAdd
      */
     public static function create()
     {
@@ -33,7 +33,7 @@ class StrategyAverageRoi
     /**
      * Gets ReserveReturn.
      *
-     * @return int|null
+     * @return int
      */
     public function getReserveReturn()
     {
@@ -43,10 +43,10 @@ class StrategyAverageRoi
     /**
      * Sets ReserveReturn.
      *
-     * @param int|null $value
+     * @param int $value
      * @return $this
      */
-    public function setReserveReturn($value = null)
+    public function setReserveReturn($value)
     {
         $this->ReserveReturn = $value;
 
@@ -56,7 +56,7 @@ class StrategyAverageRoi
     /**
      * Gets RoiCoef.
      *
-     * @return int|null
+     * @return int
      */
     public function getRoiCoef()
     {
@@ -66,10 +66,10 @@ class StrategyAverageRoi
     /**
      * Sets RoiCoef.
      *
-     * @param int|null $value
+     * @param int $value
      * @return $this
      */
-    public function setRoiCoef($value = null)
+    public function setRoiCoef($value)
     {
         $this->RoiCoef = $value;
 
@@ -79,7 +79,7 @@ class StrategyAverageRoi
     /**
      * Gets GoalId.
      *
-     * @return int|null
+     * @return int
      */
     public function getGoalId()
     {
@@ -89,10 +89,10 @@ class StrategyAverageRoi
     /**
      * Sets GoalId.
      *
-     * @param int|null $value
+     * @param int $value
      * @return $this
      */
-    public function setGoalId($value = null)
+    public function setGoalId($value)
     {
         $this->GoalId = $value;
 

@@ -5,7 +5,7 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 /**
  * Auto-generated code.
  */
-class MobileAppCampaignStrategy
+class TextCampaignStrategyAdd
 {
 
     protected $Search = null;
@@ -13,9 +13,9 @@ class MobileAppCampaignStrategy
     protected $Network = null;
 
     /**
-     * Creates a new instance of MobileAppCampaignStrategy.
+     * Creates a new instance of TextCampaignStrategyAdd.
      *
-     * @return MobileAppCampaignStrategy
+     * @return TextCampaignStrategyAdd
      */
     public static function create()
     {
@@ -25,7 +25,7 @@ class MobileAppCampaignStrategy
     /**
      * Gets Search.
      *
-     * @return MobileAppCampaignSearchStrategy|null
+     * @return TextCampaignSearchStrategyAdd
      */
     public function getSearch()
     {
@@ -35,10 +35,10 @@ class MobileAppCampaignStrategy
     /**
      * Sets Search.
      *
-     * @param MobileAppCampaignSearchStrategy|null $value
+     * @param TextCampaignSearchStrategyAdd $value
      * @return $this
      */
-    public function setSearch(MobileAppCampaignSearchStrategy $value = null)
+    public function setSearch(TextCampaignSearchStrategyAdd $value)
     {
         $this->Search = $value;
 
@@ -48,7 +48,7 @@ class MobileAppCampaignStrategy
     /**
      * Gets Network.
      *
-     * @return MobileAppCampaignNetworkStrategy|null
+     * @return TextCampaignNetworkStrategyAdd
      */
     public function getNetwork()
     {
@@ -58,10 +58,10 @@ class MobileAppCampaignStrategy
     /**
      * Sets Network.
      *
-     * @param MobileAppCampaignNetworkStrategy|null $value
+     * @param TextCampaignNetworkStrategyAdd $value
      * @return $this
      */
-    public function setNetwork(MobileAppCampaignNetworkStrategy $value = null)
+    public function setNetwork(TextCampaignNetworkStrategyAdd $value)
     {
         $this->Network = $value;
 

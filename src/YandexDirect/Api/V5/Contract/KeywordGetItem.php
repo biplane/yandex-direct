@@ -34,6 +34,8 @@ class KeywordGetItem
 
     protected $StatisticsSearch = null;
 
+    protected $StatisticsNetwork = null;
+
     /**
      * Creates a new instance of KeywordGetItem.
      *
@@ -339,6 +341,29 @@ class KeywordGetItem
     public function setStatisticsSearch(Statistics $value = null)
     {
         $this->StatisticsSearch = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets StatisticsNetwork.
+     *
+     * @return Statistics|null
+     */
+    public function getStatisticsNetwork()
+    {
+        return $this->StatisticsNetwork;
+    }
+
+    /**
+     * Sets StatisticsNetwork.
+     *
+     * @param Statistics|null $value
+     * @return $this
+     */
+    public function setStatisticsNetwork(Statistics $value = null)
+    {
+        $this->StatisticsNetwork = $value;
 
         return $this;
     }

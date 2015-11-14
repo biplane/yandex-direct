@@ -25,7 +25,7 @@ class TextCampaignStrategy
     /**
      * Gets Search.
      *
-     * @return TextCampaignSearchStrategy
+     * @return TextCampaignSearchStrategy|null
      */
     public function getSearch()
     {
@@ -35,10 +35,10 @@ class TextCampaignStrategy
     /**
      * Sets Search.
      *
-     * @param TextCampaignSearchStrategy $value
+     * @param TextCampaignSearchStrategy|null $value
      * @return $this
      */
-    public function setSearch(TextCampaignSearchStrategy $value)
+    public function setSearch(TextCampaignSearchStrategy $value = null)
     {
         $this->Search = $value;
 
@@ -48,7 +48,7 @@ class TextCampaignStrategy
     /**
      * Gets Network.
      *
-     * @return TextCampaignNetworkStrategy
+     * @return TextCampaignNetworkStrategy|null
      */
     public function getNetwork()
     {
@@ -58,10 +58,10 @@ class TextCampaignStrategy
     /**
      * Sets Network.
      *
-     * @param TextCampaignNetworkStrategy $value
+     * @param TextCampaignNetworkStrategy|null $value
      * @return $this
      */
-    public function setNetwork(TextCampaignNetworkStrategy $value)
+    public function setNetwork(TextCampaignNetworkStrategy $value = null)
     {
         $this->Network = $value;
 

@@ -5,7 +5,7 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 /**
  * Auto-generated code.
  */
-class StrategyAverageCpc
+class StrategyAverageCpcAdd
 {
 
     protected $AverageCpc = null;
@@ -13,9 +13,9 @@ class StrategyAverageCpc
     protected $WeeklySpendLimit = null;
 
     /**
-     * Creates a new instance of StrategyAverageCpc.
+     * Creates a new instance of StrategyAverageCpcAdd.
      *
-     * @return StrategyAverageCpc
+     * @return StrategyAverageCpcAdd
      */
     public static function create()
     {
@@ -25,7 +25,7 @@ class StrategyAverageCpc
     /**
      * Gets AverageCpc.
      *
-     * @return int|null
+     * @return int
      */
     public function getAverageCpc()
     {
@@ -35,10 +35,10 @@ class StrategyAverageCpc
     /**
      * Sets AverageCpc.
      *
-     * @param int|null $value
+     * @param int $value
      * @return $this
      */
-    public function setAverageCpc($value = null)
+    public function setAverageCpc($value)
     {
         $this->AverageCpc = $value;
 

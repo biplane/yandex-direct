@@ -27,7 +27,7 @@ class StrategyWeeklyClickPackage
     /**
      * Gets ClicksPerWeek.
      *
-     * @return int
+     * @return int|null
      */
     public function getClicksPerWeek()
     {
@@ -37,10 +37,10 @@ class StrategyWeeklyClickPackage
     /**
      * Sets ClicksPerWeek.
      *
-     * @param int $value
+     * @param int|null $value
      * @return $this
      */
-    public function setClicksPerWeek($value)
+    public function setClicksPerWeek($value = null)
     {
         $this->ClicksPerWeek = $value;
 

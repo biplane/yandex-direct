@@ -25,7 +25,7 @@ class TextCampaignAddItem extends TextCampaignBase
     /**
      * Gets BiddingStrategy.
      *
-     * @return TextCampaignStrategy
+     * @return TextCampaignStrategyAdd
      */
     public function getBiddingStrategy()
     {
@@ -35,10 +35,10 @@ class TextCampaignAddItem extends TextCampaignBase
     /**
      * Sets BiddingStrategy.
      *
-     * @param TextCampaignStrategy $value
+     * @param TextCampaignStrategyAdd $value
      * @return $this
      */
-    public function setBiddingStrategy(TextCampaignStrategy $value)
+    public function setBiddingStrategy(TextCampaignStrategyAdd $value)
     {
         $this->BiddingStrategy = $value;
 

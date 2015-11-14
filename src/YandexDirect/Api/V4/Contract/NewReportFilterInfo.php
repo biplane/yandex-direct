@@ -30,6 +30,10 @@ class NewReportFilterInfo
 
     protected $Gender = null;
 
+    protected $CarrierType = null;
+
+    protected $MobilePlatform = null;
+
     /**
      * Creates a new instance of NewReportFilterInfo.
      *
@@ -289,6 +293,52 @@ class NewReportFilterInfo
     public function setGender(array $value = null)
     {
         $this->Gender = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets CarrierType.
+     *
+     * @return string[]|null
+     */
+    public function getCarrierType()
+    {
+        return $this->CarrierType;
+    }
+
+    /**
+     * Sets CarrierType.
+     *
+     * @param string[]|null $value
+     * @return $this
+     */
+    public function setCarrierType(array $value = null)
+    {
+        $this->CarrierType = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets MobilePlatform.
+     *
+     * @return string[]|null
+     */
+    public function getMobilePlatform()
+    {
+        return $this->MobilePlatform;
+    }
+
+    /**
+     * Sets MobilePlatform.
+     *
+     * @param string[]|null $value
+     * @return $this
+     */
+    public function setMobilePlatform(array $value = null)
+    {
+        $this->MobilePlatform = $value;
 
         return $this;
     }

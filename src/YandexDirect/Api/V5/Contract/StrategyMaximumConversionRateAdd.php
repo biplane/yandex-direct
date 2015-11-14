@@ -5,15 +5,15 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 /**
  * Auto-generated code.
  */
-class StrategyMaximumConversionRate extends StrategyWeeklyBudgetBase
+class StrategyMaximumConversionRateAdd extends StrategyWeeklyBudgetAddBase
 {
 
     protected $GoalId = null;
 
     /**
-     * Creates a new instance of StrategyMaximumConversionRate.
+     * Creates a new instance of StrategyMaximumConversionRateAdd.
      *
-     * @return StrategyMaximumConversionRate
+     * @return StrategyMaximumConversionRateAdd
      */
     public static function create()
     {
@@ -23,7 +23,7 @@ class StrategyMaximumConversionRate extends StrategyWeeklyBudgetBase
     /**
      * Gets GoalId.
      *
-     * @return int|null
+     * @return int
      */
     public function getGoalId()
     {
@@ -33,10 +33,10 @@ class StrategyMaximumConversionRate extends StrategyWeeklyBudgetBase
     /**
      * Sets GoalId.
      *
-     * @param int|null $value
+     * @param int $value
      * @return $this
      */
-    public function setGoalId($value = null)
+    public function setGoalId($value)
     {
         $this->GoalId = $value;
 

@@ -5,21 +5,46 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 /**
  * Auto-generated code.
  */
-class StrategyWeeklyBudgetBase
+class StrategyAverageCpiAdd
 {
+
+    protected $AverageCpi = null;
 
     protected $WeeklySpendLimit = null;
 
     protected $BidCeiling = null;
 
     /**
-     * Creates a new instance of StrategyWeeklyBudgetBase.
+     * Creates a new instance of StrategyAverageCpiAdd.
      *
-     * @return StrategyWeeklyBudgetBase
+     * @return StrategyAverageCpiAdd
      */
     public static function create()
     {
         return new self();
+    }
+
+    /**
+     * Gets AverageCpi.
+     *
+     * @return int
+     */
+    public function getAverageCpi()
+    {
+        return $this->AverageCpi;
+    }
+
+    /**
+     * Sets AverageCpi.
+     *
+     * @param int $value
+     * @return $this
+     */
+    public function setAverageCpi($value)
+    {
+        $this->AverageCpi = $value;
+
+        return $this;
     }
 
     /**

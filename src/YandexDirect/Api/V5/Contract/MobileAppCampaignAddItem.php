@@ -25,7 +25,7 @@ class MobileAppCampaignAddItem
     /**
      * Gets BiddingStrategy.
      *
-     * @return MobileAppCampaignStrategy
+     * @return MobileAppCampaignStrategyAdd
      */
     public function getBiddingStrategy()
     {
@@ -35,10 +35,10 @@ class MobileAppCampaignAddItem
     /**
      * Sets BiddingStrategy.
      *
-     * @param MobileAppCampaignStrategy $value
+     * @param MobileAppCampaignStrategyAdd $value
      * @return $this
      */
-    public function setBiddingStrategy(MobileAppCampaignStrategy $value)
+    public function setBiddingStrategy(MobileAppCampaignStrategyAdd $value)
     {
         $this->BiddingStrategy = $value;
 

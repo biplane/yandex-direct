@@ -34,6 +34,8 @@ class KeywordFieldEnum
 
     const STATISTICS_SEARCH = 'StatisticsSearch';
 
+    const STATISTICS_NETWORK = 'StatisticsNetwork';
+
 
 }
 

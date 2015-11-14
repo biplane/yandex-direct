@@ -5,7 +5,7 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 /**
  * Auto-generated code.
  */
-class StrategyWeeklyBudgetBase
+class StrategyWeeklyBudgetAddBase
 {
 
     protected $WeeklySpendLimit = null;
@@ -13,9 +13,9 @@ class StrategyWeeklyBudgetBase
     protected $BidCeiling = null;
 
     /**
-     * Creates a new instance of StrategyWeeklyBudgetBase.
+     * Creates a new instance of StrategyWeeklyBudgetAddBase.
      *
-     * @return StrategyWeeklyBudgetBase
+     * @return StrategyWeeklyBudgetAddBase
      */
     public static function create()
     {
@@ -25,7 +25,7 @@ class StrategyWeeklyBudgetBase
     /**
      * Gets WeeklySpendLimit.
      *
-     * @return int|null
+     * @return int
      */
     public function getWeeklySpendLimit()
     {
@@ -35,10 +35,10 @@ class StrategyWeeklyBudgetBase
     /**
      * Sets WeeklySpendLimit.
      *
-     * @param int|null $value
+     * @param int $value
      * @return $this
      */
-    public function setWeeklySpendLimit($value = null)
+    public function setWeeklySpendLimit($value)
     {
         $this->WeeklySpendLimit = $value;
 

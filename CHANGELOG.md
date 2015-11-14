@@ -1,9 +1,11 @@
 # Changelog
 
-## 3.0.2
+## 3.0.2 [commit logs](https://github.com/biplane/BiplaneYandexDirectBundle/compare/3.0.1...3.0.2)
 
  * Исправлена ошибка с отсутствием прав на запись, когда директория создается рекурсивно
    с помощью функции `mkdir`.
+   
+ * Обновлены клиенты для работы с API. Включают изменения в API от 09.11.2015. 
 
 ## 3.0.1 [commit logs](https://github.com/biplane/BiplaneYandexDirectBundle/compare/3.0.0...3.0.1)
 
