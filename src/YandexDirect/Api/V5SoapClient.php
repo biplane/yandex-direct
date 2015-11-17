@@ -48,7 +48,7 @@ class V5SoapClient extends SoapClient
         if (is_object($detail) && property_exists($detail, 'FaultResponse')) {
             return new ApiException(
                 $methodName,
-                $detail->FaultResponse->errorDetail,
+                $detail->FaultResponse->errorDetail ?: $fault->getMessage(),
                 $detail->FaultResponse->errorCode,
                 $fault,
                 $this->getRequestId()
