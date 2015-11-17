@@ -2,7 +2,7 @@
 
 namespace Biplane\YandexDirect;
 
-use Biplane\YandexDirect\Api\V4\YandexApiService;
+use Biplane\YandexDirect\Api\V4\YandexAPIService;
 use Biplane\YandexDirect\Api\V5\AdGroups;
 use Biplane\YandexDirect\Api\V5\Ads;
 use Biplane\YandexDirect\Api\V5\BidModifiers;
@@ -29,7 +29,7 @@ class User
     const LOCALE_UA = 'ua';
 
     private static $classMap = array(
-        'YandexApiService' => '\Biplane\YandexDirect\Api\V4\YandexApiService',
+        'YandexApiService' => '\Biplane\YandexDirect\Api\V4\YandexAPIService',
         'AdGroups' => 'Biplane\YandexDirect\Api\V5\AdGroups',
         'Ads' => 'Biplane\YandexDirect\Api\V5\Ads',
         'Bids' => 'Biplane\YandexDirect\Api\V5\Bids',
@@ -134,7 +134,7 @@ class User
     /**
      * Gets the proxy for API of version 4 Live.
      *
-     * @return YandexApiService
+     * @return YandexAPIService
      */
     public function getApiService()
     {
