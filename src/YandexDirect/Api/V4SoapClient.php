@@ -89,7 +89,7 @@ class V4SoapClient extends SoapClient
     /**
      * {@inheritdoc}
      */
-    protected function handleFault(\SoapFault $fault, $requestId, $methodName, array $params)
+    protected function handleFault(\SoapFault $fault, $methodName, array $params)
     {
         $code = 0;
         $detail = property_exists($fault, 'detail') ? $fault->detail : null;
@@ -98,7 +98,7 @@ class V4SoapClient extends SoapClient
             $code = (int)substr($fault->faultcode, $pos + 1);
         }
 
-        return new ApiException($methodName, $detail ?: $fault->getMessage(), $code, $fault, $requestId);
+        return new ApiException($methodName, $detail ?: $fault->getMessage(), $code, $fault, $this->getRequestId());
     }
 
     private function isFinancialMethod($methodName, array $params)

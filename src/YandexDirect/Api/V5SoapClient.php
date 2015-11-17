@@ -41,7 +41,7 @@ class V5SoapClient extends SoapClient
     /**
      * {@inheritdoc}
      */
-    protected function handleFault(\SoapFault $fault, $requestId, $methodName, array $params)
+    protected function handleFault(\SoapFault $fault, $methodName, array $params)
     {
         $detail = property_exists($fault, 'detail') ? $fault->detail : null;
 
@@ -51,11 +51,11 @@ class V5SoapClient extends SoapClient
                 $detail->FaultResponse->errorDetail,
                 $detail->FaultResponse->errorCode,
                 $fault,
-                $requestId
+                $this->getRequestId()
             );
         }
 
-        return new ApiException($methodName, $fault->getMessage(), 0, $fault, $requestId);
+        return new ApiException($methodName, $fault->getMessage(), 0, $fault, $this->getRequestId());
     }
 
     private function createHttpHeaders(User $user)

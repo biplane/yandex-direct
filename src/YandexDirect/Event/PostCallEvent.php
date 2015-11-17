@@ -20,15 +20,14 @@ class PostCallEvent extends BaseAfterCallEvent
      * @param string     $methodName The method name of API
      * @param array      $params     The params for method of API
      * @param User       $user       The user
-     * @param string     $requestId  The request identifer
      * @param SoapClient $client     The client
      * @param mixed      $response   The result from API
      *
      * @throws \InvalidArgumentException
      */
-    public function __construct($methodName, array $params, User $user, $requestId, SoapClient $client, $response)
+    public function __construct($methodName, array $params, User $user, SoapClient $client, $response)
     {
-        parent::__construct($methodName, $params, $user, $requestId, $client);
+        parent::__construct($methodName, $params, $user, $client);
 
         $this->result = $response;
     }

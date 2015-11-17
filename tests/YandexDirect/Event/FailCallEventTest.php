@@ -26,7 +26,11 @@ class FailCallEventTest extends TestCase
             ->method('getLastResponse')
             ->willReturn('response content');
 
-        $event = new FailCallEvent($methodName, $methodParams, $user, $requestId, $client, $exception);
+        $client->expects($this->any())
+            ->method('getRequestId')
+            ->willReturn($requestId);
+
+        $event = new FailCallEvent($methodName, $methodParams, $user, $client, $exception);
 
         $this->assertSame($user, $event->getUser());
         $this->assertSame($methodName, $event->getMethodName());

@@ -26,7 +26,11 @@ class PostCallEventTest extends TestCase
             ->method('getLastResponse')
             ->willReturn('response content');
 
-        $event = new PostCallEvent($methodName, $params, $user, $requestId, $client, $result);
+        $client->expects($this->any())
+            ->method('getRequestId')
+            ->willReturn($requestId);
+
+        $event = new PostCallEvent($methodName, $params, $user, $client, $result);
 
         $this->assertSame($user, $event->getUser());
         $this->assertSame($methodName, $event->getMethodName());

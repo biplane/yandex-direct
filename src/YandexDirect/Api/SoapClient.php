@@ -31,13 +31,12 @@ abstract class SoapClient extends \SoapClient
      * Handles the fault.
      *
      * @param \SoapFault $fault      The thrown exception
-     * @param string     $requestId  The request identifier
      * @param string     $methodName The name of API method
      * @param array      $params     An array of parameters for API method
      *
      * @return \Exception
      */
-    abstract protected function handleFault(\SoapFault $fault, $requestId, $methodName, array $params);
+    abstract protected function handleFault(\SoapFault $fault, $methodName, array $params);
 
     /**
      * Constructor.
@@ -104,19 +103,17 @@ abstract class SoapClient extends \SoapClient
         try {
             $response = $this->__soapCall($method, $params);
         } catch (\Exception $ex) {
-            $requestId = $this->getRequestId();
-
             if ($ex instanceof \SoapFault) {
                 if (strtolower($ex->faultcode) === 'http') {
                     $ex = new NetworkException($ex->getMessage(), 0, $ex);
                 } else {
-                    $ex = $this->handleFault($ex, $requestId, $method, $params);
+                    $ex = $this->handleFault($ex, $method, $params);
                 }
             }
 
             $this->dispatcher->dispatch(
                 Events::FAIL_REQUEST,
-                new FailCallEvent($method, $params, $this->user, $requestId, $this, $ex)
+                new FailCallEvent($method, $params, $this->user, $this, $ex)
             );
 
             throw $ex;
@@ -124,7 +121,7 @@ abstract class SoapClient extends \SoapClient
 
         $this->dispatcher->dispatch(
             Events::AFTER_REQUEST,
-            new PostCallEvent($method, $params, $this->user, $this->getRequestId(), $this, $response)
+            new PostCallEvent($method, $params, $this->user, $this, $response)
         );
 
         return $response;
