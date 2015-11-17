@@ -1,6 +1,6 @@
 # Changelog
 
-## 3.1.0
+## 3.1.0 [commit logs](https://github.com/biplane/BiplaneYandexDirectBundle/compare/3.0.2...3.1.0)
 
  * Изменен уровень доступа для метода `SoapClient::getRequestId`, с `protected` на `public`.
    Метод вернет ID последнего запроса к API или null, если запросов не было.
