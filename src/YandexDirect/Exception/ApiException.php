@@ -219,21 +219,21 @@ class ApiException extends RequestException
      */
     const LOGIN_NOT_CONNECTED_TO_DIRECT = 513;
 
-    private $apiMethod;
+    private $methodRef;
     private $detailMessage;
     private $requestId;
 
     /**
      * Constructor.
      *
-     * @param string          $methodName The method name of API
-     * @param string          $message    The message
-     * @param int             $code       The number of code exception
-     * @param \Exception|null $previous   The previous exception
-     * @param string          $requestId  The request identifier
+     * @param string          $methodRef The fullname of called API method
+     * @param string          $message   The message
+     * @param int             $code      The number of code exception
+     * @param \Exception|null $previous  The previous exception
+     * @param string          $requestId The request identifier
      */
     public function __construct(
-        $methodName,
+        $methodRef,
         $message,
         $code = 0,
         \Exception $previous = null,
@@ -241,38 +241,8 @@ class ApiException extends RequestException
     ) {
         parent::__construct($message, (int)$code, $previous);
 
-        $this->apiMethod = $methodName;
+        $this->methodRef = $methodRef;
         $this->requestId = $requestId;
-    }
-
-    /**
-     * Creates a new instance of exception by SoapFault object.
-     *
-     * @param \SoapFault $fault      The fault
-     * @param string     $methodName The method name of API
-     * @param string     $requestId  The request identifier
-     *
-     * @return self
-     */
-    public static function createFromFault(\SoapFault $fault, $methodName, $requestId)
-    {
-        if (strtolower($fault->faultcode) === 'http') {
-            return new NetworkException($methodName, $fault->getMessage(), null, 0, $fault, $requestId);
-        }
-
-        $code = 0;
-        $message = $fault->getMessage();
-        $detail = property_exists($fault, 'detail') ? $fault->detail : null;
-
-        if (false !== $pos = strrpos($fault->faultcode, ':')) {
-            $code = substr($fault->faultcode, $pos + 1);
-        }
-
-        if (!empty($detail)) {
-            $message .= "\n" . $detail;
-        }
-
-        return new self($methodName, $message, $detail, $code, $fault, $requestId);
     }
 
     /**
@@ -286,13 +256,29 @@ class ApiException extends RequestException
     }
 
     /**
-     * Gets a method name of API.
+     * Gets the name of called method of API.
      *
      * @return string|null
      */
     public function getMethodName()
     {
-        return $this->apiMethod;
+        if (!empty($this->methodRef)) {
+            return substr($this->methodRef, strpos($this->methodRef, ':') + 1);
+        }
+
+        return null;
+    }
+
+    /**
+     * Gets the reference of called API method.
+     *
+     * Returns string in format {ServiceName}:{MethodName}
+     *
+     * @return string
+     */
+    public function getMethodRef()
+    {
+        return $this->methodRef;
     }
 
     /**
