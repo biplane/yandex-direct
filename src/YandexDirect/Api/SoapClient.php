@@ -30,13 +30,13 @@ abstract class SoapClient extends \SoapClient
     /**
      * Handles the fault.
      *
-     * @param \SoapFault $fault      The thrown exception
-     * @param string     $methodName The name of API method
-     * @param array      $params     An array of parameters for API method
+     * @param \SoapFault $fault     The thrown exception
+     * @param string     $methodRef The fullname of called API method
+     * @param array      $params    An array of parameters for API method
      *
      * @return \Exception
      */
-    abstract protected function handleFault(\SoapFault $fault, $methodName, array $params);
+    abstract protected function handleFault(\SoapFault $fault, $methodRef, array $params);
 
     /**
      * Constructor.
@@ -95,9 +95,17 @@ abstract class SoapClient extends \SoapClient
      */
     protected function invoke($method, array $params = array())
     {
+        $qualifiedClassName = get_class($this);
+
+        if (false !== $pos = strrpos($qualifiedClassName, '\\')) {
+            $methodRef = substr($qualifiedClassName, $pos + 1) . ':' . $method;
+        } else {
+            $methodRef = $qualifiedClassName . ':' . $method;
+        }
+
         $this->dispatcher->dispatch(
             Events::BEFORE_REQUEST,
-            new PreCallEvent($method, $params, $this->user)
+            new PreCallEvent($methodRef, $params, $this->user)
         );
 
         try {
@@ -107,13 +115,13 @@ abstract class SoapClient extends \SoapClient
                 if (strtolower($ex->faultcode) === 'http') {
                     $ex = new NetworkException($ex->getMessage(), 0, $ex);
                 } else {
-                    $ex = $this->handleFault($ex, $method, $params);
+                    $ex = $this->handleFault($ex, $methodRef, $params);
                 }
             }
 
             $this->dispatcher->dispatch(
                 Events::FAIL_REQUEST,
-                new FailCallEvent($method, $params, $this->user, $this, $ex)
+                new FailCallEvent($methodRef, $params, $this->user, $this, $ex)
             );
 
             throw $ex;
@@ -121,7 +129,7 @@ abstract class SoapClient extends \SoapClient
 
         $this->dispatcher->dispatch(
             Events::AFTER_REQUEST,
-            new PostCallEvent($method, $params, $this->user, $this, $response)
+            new PostCallEvent($methodRef, $params, $this->user, $this, $response)
         );
 
         return $response;

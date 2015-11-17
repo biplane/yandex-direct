@@ -17,15 +17,15 @@ class FailCallEvent extends BaseAfterCallEvent
     /**
      * Constructor.
      *
-     * @param string     $methodName The method name of API
-     * @param array      $params     The params for method of API
-     * @param User       $user       The configuration
-     * @param SoapClient $client     The SOAP client
-     * @param \Exception $exception  The thrown exception
+     * @param string     $methodRef The fullname of API method
+     * @param array      $params    The params for method of API
+     * @param User       $user      The configuration
+     * @param SoapClient $client    The SOAP client
+     * @param \Exception $exception The thrown exception
      */
-    public function __construct($methodName, array $params, User $user, SoapClient $client, \Exception $exception)
+    public function __construct($methodRef, array $params, User $user, SoapClient $client, \Exception $exception)
     {
-        parent::__construct($methodName, $params, $user, $client);
+        parent::__construct($methodRef, $params, $user, $client);
 
         $this->exception = $exception;
     }

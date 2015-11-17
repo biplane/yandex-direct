@@ -4,6 +4,11 @@
 
  * Изменен уровень доступа для метода `SoapClient::getRequestId`, с `protected` на `public`.
    Метод вернет ID последнего запроса к API или null, если запросов не было.
+   
+ * В классы событий и `ApiException` добавлен метод `getMethodRef`, который возвращает
+   полное имя метода (включая название сервиса) в формате `{ServiceName}:{MethodName}`.
+   Где, `{ServiceName}` - имя сервиса. Например, **Bids** или **YandexAPIService**;
+   `{MethodName}` - имя вызываемого метода API. Например, **Get** или **GetCampaignsParams**.
 
 ## 3.0.2 [commit logs](https://github.com/biplane/BiplaneYandexDirectBundle/compare/3.0.1...3.0.2)
 

@@ -13,7 +13,7 @@ class PostCallEventTest extends TestCase
     {
         $user = $this->getUserMock();
         $client = $this->getSoapClientMock();
-        $methodName = 'Foo';
+        $methodRef = 'X:Foo';
         $result = 'Any responce';
         $params = array('foo' => 'bar');
         $requestId = 'request-id';
@@ -30,10 +30,11 @@ class PostCallEventTest extends TestCase
             ->method('getRequestId')
             ->willReturn($requestId);
 
-        $event = new PostCallEvent($methodName, $params, $user, $client, $result);
+        $event = new PostCallEvent($methodRef, $params, $user, $client, $result);
 
         $this->assertSame($user, $event->getUser());
-        $this->assertSame($methodName, $event->getMethodName());
+        $this->assertSame($methodRef, $event->getMethodRef());
+        $this->assertSame('Foo', $event->getMethodName());
         $this->assertSame($result, $event->getResult());
         $this->assertSame($params, $event->getMethodParams());
         $this->assertSame($requestId, $event->getRequestId());

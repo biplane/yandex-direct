@@ -246,6 +246,36 @@ class ApiException extends RequestException
     }
 
     /**
+     * Creates a new instance of exception by SoapFault object.
+     *
+     * @param \SoapFault $fault      The fault
+     * @param string     $methodName The method name of API
+     * @param string     $requestId  The request identifier
+     *
+     * @return self
+     */
+    public static function createFromFault(\SoapFault $fault, $methodName, $requestId)
+    {
+        if (strtolower($fault->faultcode) === 'http') {
+            return new NetworkException($methodName, $fault->getMessage(), null, 0, $fault, $requestId);
+        }
+
+        $code = 0;
+        $message = $fault->getMessage();
+        $detail = property_exists($fault, 'detail') ? $fault->detail : null;
+
+        if (false !== $pos = strrpos($fault->faultcode, ':')) {
+            $code = substr($fault->faultcode, $pos + 1);
+        }
+
+        if (!empty($detail)) {
+            $message .= "\n" . $detail;
+        }
+
+        return new self($methodName, $message, $detail, $code, $fault, $requestId);
+    }
+
+    /**
      * Gets the request identifier.
      *
      * @return string|null

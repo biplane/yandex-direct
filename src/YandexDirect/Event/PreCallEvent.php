@@ -12,32 +12,50 @@ use Symfony\Component\EventDispatcher\Event;
  */
 class PreCallEvent extends Event
 {
-    private $methodName;
+    private $methodRef;
     private $params;
     private $user;
 
     /**
      * Constructor.
      *
-     * @param string $methodName The method name of API
-     * @param array  $params     The params for method of API
-     * @param User   $user       The user
+     * @param string $methodRef The fullname of API method
+     * @param array  $params    The params for method of API
+     * @param User   $user      The user
      */
-    public function __construct($methodName, array $params, User $user)
+    public function __construct($methodRef, array $params, User $user)
     {
-        $this->methodName = $methodName;
-        $this->params = $params;
-        $this->user = $user;
+        $this->methodRef = $methodRef;
+        $this->params    = $params;
+        $this->user      = $user;
     }
 
     /**
      * Gets the method name of API.
      *
-     * @return string
+     * @return string|null
      */
     public function getMethodName()
     {
-        return $this->methodName;
+        if (!empty($this->methodRef)) {
+            return substr($this->methodRef, strpos($this->methodRef, ':') + 1);
+        }
+
+        return null;
+    }
+
+    /**
+     * Gets the fullname of API method.
+     *
+     * Returns string in format {ServiceName}:{MethodName}
+     * Where, {ServiceName} - local class name of proxy
+     *  {MethodName} - the name of API method
+     *
+     * @return string
+     */
+    public function getMethodRef()
+    {
+        return $this->methodRef;
     }
 
     /**

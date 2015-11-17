@@ -13,7 +13,7 @@ class FailCallEventTest extends TestCase
     {
         $user = $this->getUserMock();
         $client = $this->getSoapClientMock();
-        $methodName = 'Foo';
+        $methodRef = 'X:Foo';
         $methodParams = array('FooParam');
         $requestId = 'request-id';
         $exception = new \Exception();
@@ -30,10 +30,11 @@ class FailCallEventTest extends TestCase
             ->method('getRequestId')
             ->willReturn($requestId);
 
-        $event = new FailCallEvent($methodName, $methodParams, $user, $client, $exception);
+        $event = new FailCallEvent($methodRef, $methodParams, $user, $client, $exception);
 
         $this->assertSame($user, $event->getUser());
-        $this->assertSame($methodName, $event->getMethodName());
+        $this->assertSame($methodRef, $event->getMethodRef());
+        $this->assertSame('Foo', $event->getMethodName());
         $this->assertSame($methodParams, $event->getMethodParams());
         $this->assertSame($exception, $event->getException());
         $this->assertSame($requestId, $event->getRequestId());
