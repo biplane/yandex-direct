@@ -27,6 +27,20 @@ class V5SoapClient extends SoapClient
     /**
      * {@inheritdoc}
      */
+    public function getRequestId()
+    {
+        $headers = $this->__getLastResponseHeaders();
+
+        if (!empty($headers) && preg_match('/^RequestId: ([a-z\d]+)(\r|)$/im', $headers, $m)) {
+            return $m[1];
+        }
+
+        return null;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     protected function handleFault(\SoapFault $fault, $requestId, $methodName, array $params)
     {
         $detail = property_exists($fault, 'detail') ? $fault->detail : null;
@@ -42,18 +56,6 @@ class V5SoapClient extends SoapClient
         }
 
         return new ApiException($methodName, $fault->getMessage(), 0, $fault, $requestId);
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    protected function getRequestId()
-    {
-        if (preg_match('/^RequestId: ([a-z\d]+)(\r|)$/im', $this->__getLastResponseHeaders(), $m)) {
-            return $m[1];
-        }
-
-        return null;
     }
 
     private function createHttpHeaders(User $user)

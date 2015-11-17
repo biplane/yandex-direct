@@ -17,10 +17,6 @@ class V4BaseClientTest extends BaseTestCase
      */
     public function testSoapFaultShouldBeWrappedToApiException()
     {
-        $php = \PHPUnit_Extension_FunctionMocker::start($this, 'Biplane\YandexDirect\Api')
-            ->mockFunction('time')
-            ->getMock();
-
         $methodName = 'Foo';
         $methodParams = array();
         $fault = new \SoapFault(
@@ -30,19 +26,15 @@ class V4BaseClientTest extends BaseTestCase
             'Недостаточно прав для выполнения запрошенной операции.'
         );
 
-        $php->expects($this->any())
-            ->method('time')
-            ->willReturn(10009);
-
-        $this->user->expects($this->atLeastOnce())
-            ->method('getHashCode')
-            ->willReturn('foo');
-
-        $client = $this->getSoapClient();
+        $client = $this->getSoapClient('__soapCall', 'getRequestId');
 
         $client->expects($this->once())
             ->method('__soapCall')
             ->willThrowException($fault);
+
+        $client->expects($this->once())
+            ->method('getRequestId')
+            ->willReturn('f961bef9be62959982b56053366a57f2');
 
         try {
             $this->doInvoke($client, $methodName, $methodParams);
@@ -73,10 +65,6 @@ class V4BaseClientTest extends BaseTestCase
         if (count($params) === 1) {
             $usedMethod = $params[0]->getAction();
         }
-
-        $this->user->expects($this->atLeastOnce())
-            ->method('getHashCode')
-            ->willReturn('foo');
 
         $this->user->expects($this->once())
             ->method('createFinanceToken')

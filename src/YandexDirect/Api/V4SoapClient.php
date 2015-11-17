@@ -14,6 +14,8 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
  */
 class V4SoapClient extends SoapClient
 {
+    private $requestId;
+
     public function __construct($wsdl, EventDispatcherInterface $dispatcher, User $user, array $options = array())
     {
         parent::__construct($wsdl, $dispatcher, $user, $options);
@@ -26,11 +28,21 @@ class V4SoapClient extends SoapClient
 
     /**
      * {@inheritdoc}
+     */
+    public function getRequestId()
+    {
+        return $this->requestId;
+    }
+
+    /**
+     * {@inheritdoc}
      *
      * @internal
      */
     public function __doRequest($request, $location, $action, $version, $oneWay = null)
     {
+        $this->requestId = md5($this->user->getHashCode() . ':' . time());
+
         $response = parent::__doRequest($request, $location, $action, $version, $oneWay);
 
         if (!empty($response)) {
@@ -87,14 +99,6 @@ class V4SoapClient extends SoapClient
         }
 
         return new ApiException($methodName, $detail ?: $fault->getMessage(), $code, $fault, $requestId);
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    protected function getRequestId()
-    {
-        return md5($this->user->getHashCode() . ':' . time());
     }
 
     private function isFinancialMethod($methodName, array $params)

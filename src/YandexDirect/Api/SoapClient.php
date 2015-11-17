@@ -18,8 +18,14 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 abstract class SoapClient extends \SoapClient
 {
     protected $user;
+    protected $dispatcher;
 
-    private $dispatcher;
+    /**
+     * Gets the identifier of the latest request.
+     *
+     * @return string|null
+     */
+    abstract public function getRequestId();
 
     /**
      * Handles the fault.
@@ -32,13 +38,6 @@ abstract class SoapClient extends \SoapClient
      * @return \Exception
      */
     abstract protected function handleFault(\SoapFault $fault, $requestId, $methodName, array $params);
-
-    /**
-     * Gets the request identifier.
-     *
-     * @return string
-     */
-    abstract protected function getRequestId();
 
     /**
      * Constructor.
