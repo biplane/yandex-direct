@@ -12,6 +12,8 @@ class AdUpdateItem
 
     protected $TextAd = null;
 
+    protected $DynamicTextAd = null;
+
     protected $MobileAppAd = null;
 
     /**
@@ -66,6 +68,29 @@ class AdUpdateItem
     public function setTextAd(TextAdUpdate $value = null)
     {
         $this->TextAd = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets DynamicTextAd.
+     *
+     * @return DynamicTextAdUpdate|null
+     */
+    public function getDynamicTextAd()
+    {
+        return $this->DynamicTextAd;
+    }
+
+    /**
+     * Sets DynamicTextAd.
+     *
+     * @param DynamicTextAdUpdate|null $value
+     * @return $this
+     */
+    public function setDynamicTextAd(DynamicTextAdUpdate $value = null)
+    {
+        $this->DynamicTextAd = $value;
 
         return $this;
     }

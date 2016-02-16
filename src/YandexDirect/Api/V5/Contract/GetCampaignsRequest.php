@@ -18,6 +18,8 @@ class GetCampaignsRequest extends GetRequestGeneral
 
     protected $MobileAppCampaignFieldNames = null;
 
+    protected $DynamicTextCampaignFieldNames = null;
+
     /**
      * Creates a new instance of GetCampaignsRequest.
      *
@@ -116,6 +118,29 @@ class GetCampaignsRequest extends GetRequestGeneral
     public function setMobileAppCampaignFieldNames(array $value = null)
     {
         $this->MobileAppCampaignFieldNames = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets DynamicTextCampaignFieldNames.
+     *
+     * @return DynamicTextCampaignFieldEnum[]|null
+     */
+    public function getDynamicTextCampaignFieldNames()
+    {
+        return $this->DynamicTextCampaignFieldNames;
+    }
+
+    /**
+     * Sets DynamicTextCampaignFieldNames.
+     *
+     * @param DynamicTextCampaignFieldEnum[]|null $value
+     * @return $this
+     */
+    public function setDynamicTextCampaignFieldNames(array $value = null)
+    {
+        $this->DynamicTextCampaignFieldNames = $value;
 
         return $this;
     }

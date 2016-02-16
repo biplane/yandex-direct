@@ -11,6 +11,7 @@ use Biplane\YandexDirect\Api\V4SoapClient;
  */
 class YandexAPIService extends V4SoapClient
 {
+
     const ENDPOINT = 'https://api.direct.yandex.ru/live/v4/wsdl/';
 
     /**
@@ -25,6 +26,8 @@ class YandexAPIService extends V4SoapClient
             'classmap' => array(
                 'NewReportFilterInfo' => 'Biplane\YandexDirect\Api\V4\Contract\NewReportFilterInfo',
                 'NewReportInfo' => 'Biplane\YandexDirect\Api\V4\Contract\NewReportInfo',
+                'CreateOfflineReportRequest' => 'Biplane\YandexDirect\Api\V4\Contract\CreateOfflineReportRequest',
+                'OfflineReportInfo' => 'Biplane\YandexDirect\Api\V4\Contract\OfflineReportInfo',
                 'TimeZoneInfo' => 'Biplane\YandexDirect\Api\V4\Contract\TimeZoneInfo',
                 'StatGoalsCampaignIDInfo' => 'Biplane\YandexDirect\Api\V4\Contract\StatGoalsCampaignIDInfo',
                 'CampaignIDInfo' => 'Biplane\YandexDirect\Api\V4\Contract\CampaignIDInfo',
@@ -900,5 +903,37 @@ class YandexAPIService extends V4SoapClient
     public function keyword(Contract\KeywordRequest $params)
     {
         return $this->invoke('Keyword', array($params));
+    }
+
+    /**
+     * CreateOfflineReport.
+     *
+     * @param Contract\CreateOfflineReportRequest $params
+     * @return int
+     */
+    public function createOfflineReport(Contract\CreateOfflineReportRequest $params)
+    {
+        return $this->invoke('CreateOfflineReport', array($params));
+    }
+
+    /**
+     * DeleteOfflineReport.
+     *
+     * @param int $params
+     * @return int
+     */
+    public function deleteOfflineReport($params)
+    {
+        return $this->invoke('DeleteOfflineReport', array($params));
+    }
+
+    /**
+     * GetOfflineReportList.
+     *
+     * @return Contract\OfflineReportInfo[]
+     */
+    public function getOfflineReportList()
+    {
+        return $this->invoke('GetOfflineReportList', array());
     }
 }

@@ -36,6 +36,8 @@ class BannersStatItem
 
     protected $RetargetingID = null;
 
+    protected $WebpageID = null;
+
     protected $Phrase = null;
 
     protected $StatType = null;
@@ -378,6 +380,29 @@ class BannersStatItem
     public function setRetargetingID($value = null)
     {
         $this->RetargetingID = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets WebpageID.
+     *
+     * @return int|null
+     */
+    public function getWebpageID()
+    {
+        return $this->WebpageID;
+    }
+
+    /**
+     * Sets WebpageID.
+     *
+     * @param int|null $value
+     * @return $this
+     */
+    public function setWebpageID($value = null)
+    {
+        $this->WebpageID = $value;
 
         return $this;
     }

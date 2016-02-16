@@ -16,6 +16,8 @@ class GetAdGroupsRequest extends GetRequestGeneral
 
     protected $MobileAppAdGroupFieldNames = null;
 
+    protected $DynamicTextAdGroupFieldNames = null;
+
     /**
      * Creates a new instance of GetAdGroupsRequest.
      *
@@ -91,6 +93,29 @@ class GetAdGroupsRequest extends GetRequestGeneral
     public function setMobileAppAdGroupFieldNames(array $value = null)
     {
         $this->MobileAppAdGroupFieldNames = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets DynamicTextAdGroupFieldNames.
+     *
+     * @return DynamicTextAdGroupFieldEnum[]|null
+     */
+    public function getDynamicTextAdGroupFieldNames()
+    {
+        return $this->DynamicTextAdGroupFieldNames;
+    }
+
+    /**
+     * Sets DynamicTextAdGroupFieldNames.
+     *
+     * @param DynamicTextAdGroupFieldEnum[]|null $value
+     * @return $this
+     */
+    public function setDynamicTextAdGroupFieldNames(array $value = null)
+    {
+        $this->DynamicTextAdGroupFieldNames = $value;
 
         return $this;
     }

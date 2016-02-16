@@ -10,6 +10,8 @@ class AdAddItem extends AdAddItemBase
 
     protected $TextAd = null;
 
+    protected $DynamicTextAd = null;
+
     protected $MobileAppAd = null;
 
     /**
@@ -41,6 +43,29 @@ class AdAddItem extends AdAddItemBase
     public function setTextAd(TextAdAdd $value = null)
     {
         $this->TextAd = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets DynamicTextAd.
+     *
+     * @return DynamicTextAdAdd|null
+     */
+    public function getDynamicTextAd()
+    {
+        return $this->DynamicTextAd;
+    }
+
+    /**
+     * Sets DynamicTextAd.
+     *
+     * @param DynamicTextAdAdd|null $value
+     * @return $this
+     */
+    public function setDynamicTextAd(DynamicTextAdAdd $value = null)
+    {
+        $this->DynamicTextAd = $value;
 
         return $this;
     }

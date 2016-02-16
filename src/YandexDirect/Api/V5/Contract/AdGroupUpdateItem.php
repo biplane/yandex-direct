@@ -14,6 +14,8 @@ class AdGroupUpdateItem extends AdGroupBase
 
     protected $MobileAppAdGroup = null;
 
+    protected $DynamicTextAdGroup = null;
+
     /**
      * Creates a new instance of AdGroupUpdateItem.
      *
@@ -89,6 +91,29 @@ class AdGroupUpdateItem extends AdGroupBase
     public function setMobileAppAdGroup(MobileAppAdGroupUpdate $value = null)
     {
         $this->MobileAppAdGroup = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets DynamicTextAdGroup.
+     *
+     * @return DynamicTextAdGroup|null
+     */
+    public function getDynamicTextAdGroup()
+    {
+        return $this->DynamicTextAdGroup;
+    }
+
+    /**
+     * Sets DynamicTextAdGroup.
+     *
+     * @param DynamicTextAdGroup|null $value
+     * @return $this
+     */
+    public function setDynamicTextAdGroup(DynamicTextAdGroup $value = null)
+    {
+        $this->DynamicTextAdGroup = $value;
 
         return $this;
     }

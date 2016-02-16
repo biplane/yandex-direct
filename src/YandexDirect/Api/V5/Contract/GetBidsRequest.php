@@ -5,7 +5,7 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 /**
  * Auto-generated code.
  */
-class GetBidsRequest
+class GetBidsRequest extends GetRequestGeneral
 {
 
     protected $SelectionCriteria = null;

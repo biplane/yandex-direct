@@ -12,6 +12,8 @@ class CampaignTypeEnum
 
     const MOBILE_APP_CAMPAIGN = 'MOBILE_APP_CAMPAIGN';
 
+    const DYNAMIC_TEXT_CAMPAIGN = 'DYNAMIC_TEXT_CAMPAIGN';
+
 
 }
 

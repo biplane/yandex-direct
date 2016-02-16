@@ -20,6 +20,8 @@ class AdGroupGetItem extends AdGroupBase
 
     protected $MobileAppAdGroup = null;
 
+    protected $DynamicTextAdGroup = null;
+
     /**
      * Creates a new instance of AdGroupGetItem.
      *
@@ -164,6 +166,29 @@ class AdGroupGetItem extends AdGroupBase
     public function setMobileAppAdGroup(MobileAppAdGroupGet $value = null)
     {
         $this->MobileAppAdGroup = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets DynamicTextAdGroup.
+     *
+     * @return DynamicTextAdGroupGet|null
+     */
+    public function getDynamicTextAdGroup()
+    {
+        return $this->DynamicTextAdGroup;
+    }
+
+    /**
+     * Sets DynamicTextAdGroup.
+     *
+     * @param DynamicTextAdGroupGet|null $value
+     * @return $this
+     */
+    public function setDynamicTextAdGroup(DynamicTextAdGroupGet $value = null)
+    {
+        $this->DynamicTextAdGroup = $value;
 
         return $this;
     }

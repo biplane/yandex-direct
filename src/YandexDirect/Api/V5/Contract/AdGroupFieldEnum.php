@@ -22,6 +22,8 @@ class AdGroupFieldEnum
 
     const TYPE = 'Type';
 
+    const TRACKING_PARAMS = 'TrackingParams';
+
 
 }
 

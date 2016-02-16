@@ -28,6 +28,8 @@ class AdGetItem
 
     protected $TextAd = null;
 
+    protected $DynamicTextAd = null;
+
     protected $MobileAppAd = null;
 
     /**
@@ -266,6 +268,29 @@ class AdGetItem
     public function setTextAd(TextAdGet $value = null)
     {
         $this->TextAd = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets DynamicTextAd.
+     *
+     * @return DynamicTextAdGet|null
+     */
+    public function getDynamicTextAd()
+    {
+        return $this->DynamicTextAd;
+    }
+
+    /**
+     * Sets DynamicTextAd.
+     *
+     * @param DynamicTextAdGet|null $value
+     * @return $this
+     */
+    public function setDynamicTextAd(DynamicTextAdGet $value = null)
+    {
+        $this->DynamicTextAd = $value;
 
         return $this;
     }

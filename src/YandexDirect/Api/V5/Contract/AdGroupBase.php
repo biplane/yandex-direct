@@ -12,6 +12,8 @@ class AdGroupBase
 
     protected $NegativeKeywords = null;
 
+    protected $TrackingParams = null;
+
     /**
      * Creates a new instance of AdGroupBase.
      *
@@ -64,6 +66,29 @@ class AdGroupBase
     public function setNegativeKeywords(array $value = null)
     {
         $this->NegativeKeywords = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets TrackingParams.
+     *
+     * @return string|null
+     */
+    public function getTrackingParams()
+    {
+        return $this->TrackingParams;
+    }
+
+    /**
+     * Sets TrackingParams.
+     *
+     * @param string|null $value
+     * @return $this
+     */
+    public function setTrackingParams($value = null)
+    {
+        $this->TrackingParams = $value;
 
         return $this;
     }

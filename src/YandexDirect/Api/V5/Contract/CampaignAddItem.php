@@ -26,6 +26,8 @@ class CampaignAddItem extends CampaignBase
 
     protected $MobileAppCampaign = null;
 
+    protected $DynamicTextCampaign = null;
+
     /**
      * Creates a new instance of CampaignAddItem.
      *
@@ -239,6 +241,29 @@ class CampaignAddItem extends CampaignBase
     public function setMobileAppCampaign(MobileAppCampaignAddItem $value = null)
     {
         $this->MobileAppCampaign = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets DynamicTextCampaign.
+     *
+     * @return DynamicTextCampaignAddItem|null
+     */
+    public function getDynamicTextCampaign()
+    {
+        return $this->DynamicTextCampaign;
+    }
+
+    /**
+     * Sets DynamicTextCampaign.
+     *
+     * @param DynamicTextCampaignAddItem|null $value
+     * @return $this
+     */
+    public function setDynamicTextCampaign(DynamicTextCampaignAddItem $value = null)
+    {
+        $this->DynamicTextCampaign = $value;
 
         return $this;
     }

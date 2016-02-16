@@ -18,7 +18,11 @@ class AdGroupAddItem
 
     protected $NegativeKeywords = null;
 
+    protected $TrackingParams = null;
+
     protected $MobileAppAdGroup = null;
+
+    protected $DynamicTextAdGroup = null;
 
     /**
      * Creates a new instance of AdGroupAddItem.
@@ -123,6 +127,29 @@ class AdGroupAddItem
     }
 
     /**
+     * Gets TrackingParams.
+     *
+     * @return string|null
+     */
+    public function getTrackingParams()
+    {
+        return $this->TrackingParams;
+    }
+
+    /**
+     * Sets TrackingParams.
+     *
+     * @param string|null $value
+     * @return $this
+     */
+    public function setTrackingParams($value = null)
+    {
+        $this->TrackingParams = $value;
+
+        return $this;
+    }
+
+    /**
      * Gets MobileAppAdGroup.
      *
      * @return MobileAppAdGroupAdd|null
@@ -141,6 +168,29 @@ class AdGroupAddItem
     public function setMobileAppAdGroup(MobileAppAdGroupAdd $value = null)
     {
         $this->MobileAppAdGroup = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets DynamicTextAdGroup.
+     *
+     * @return DynamicTextAdGroup|null
+     */
+    public function getDynamicTextAdGroup()
+    {
+        return $this->DynamicTextAdGroup;
+    }
+
+    /**
+     * Sets DynamicTextAdGroup.
+     *
+     * @param DynamicTextAdGroup|null $value
+     * @return $this
+     */
+    public function setDynamicTextAdGroup(DynamicTextAdGroup $value = null)
+    {
+        $this->DynamicTextAdGroup = $value;
 
         return $this;
     }

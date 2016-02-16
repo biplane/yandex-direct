@@ -5,7 +5,7 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 /**
  * Auto-generated code.
  */
-class GetBidsResponse
+class GetBidsResponse extends GetResponseGeneral
 {
 
     protected $Bids = null;
