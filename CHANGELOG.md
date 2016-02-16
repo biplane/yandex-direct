@@ -1,6 +1,6 @@
 # Changelog
 
-## 3.2.0
+## 3.2.0 [commit logs](https://github.com/biplane/BiplaneYandexDirectBundle/compare/3.1.0...3.2.0)
 
  * Обновлены контракты для совместимости с последней версией API, **4 Live** и **5**.
 
