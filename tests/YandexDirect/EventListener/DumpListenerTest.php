@@ -9,14 +9,17 @@ use Biplane\YandexDirect\EventListener\DumpListener;
  */
 class DumpListenerTest extends \PHPUnit_Framework_TestCase
 {
-    private $dir;
+    /**
+     * @var \PHPUnit_Framework_MockObject_MockObject
+     */
+    private $dumper;
 
     /**
      * @expectedException \InvalidArgumentException
      */
     public function testThrowExceptionWhenLevelIsInvalid()
     {
-        new DumpListener($this->dir, 0);
+        new DumpListener($this->dumper, 0);
     }
 
     /**
@@ -26,18 +29,19 @@ class DumpListenerTest extends \PHPUnit_Framework_TestCase
     {
         $id = 'identifier';
 
-        $listener = new DumpListener($this->dir, $level);
+        $listener = new DumpListener($this->dumper, $level);
         $event = $this->getEventMock('FailCallEvent', $id, 'foo', 'bar');
 
-        $listener->onFail($event);
-
         if ($success) {
-            $this->assertDumpFile('id/e/identifier_req.data', 'foo');
-            $this->assertDumpFile('id/e/identifier_resp.data', 'bar');
+            $this->dumper->expects($this->once())
+                ->method('dump')
+                ->with($id, 'foo', 'bar');
         } else {
-            $this->assertFileNotExists($this->dir . '/id/e/identifier_req.data');
-            $this->assertFileNotExists($this->dir . '/id/e/identifier_resp.data');
+            $this->dumper->expects($this->never())
+                ->method('dump');
         }
+
+        $listener->onFail($event);
     }
 
     /**
@@ -47,18 +51,19 @@ class DumpListenerTest extends \PHPUnit_Framework_TestCase
     {
         $id = 'identifier';
 
-        $listener = new DumpListener($this->dir, $level);
+        $listener = new DumpListener($this->dumper, $level);
         $event = $this->getEventMock('PostCallEvent', $id, 'foo', 'bar');
 
-        $listener->onSuccess($event);
-
         if ($success) {
-            $this->assertDumpFile('id/e/identifier_req.data', 'foo');
-            $this->assertDumpFile('id/e/identifier_resp.data', 'bar');
+            $this->dumper->expects($this->once())
+                ->method('dump')
+                ->with($id, 'foo', 'bar');
         } else {
-            $this->assertFileNotExists($this->dir . '/id/e/identifier_req.data');
-            $this->assertFileNotExists($this->dir . '/id/e/identifier_resp.data');
+            $this->dumper->expects($this->never())
+                ->method('dump');
         }
+
+        $listener->onSuccess($event);
     }
 
     public function getFailEvents()
@@ -79,25 +84,14 @@ class DumpListenerTest extends \PHPUnit_Framework_TestCase
 
     protected function setUp()
     {
-        $this->dir = sys_get_temp_dir() . '/dump_' . uniqid();
+        $this->dumper = $this->getMockBuilder('Biplane\YandexDirect\Helper\Dumper')
+            ->disableOriginalConstructor()
+            ->getMock();
     }
 
     protected function tearDown()
     {
-        if (is_dir($this->dir)) {
-            // Implementation taken from http://stackoverflow.com/a/3352564.
-            $files = new \RecursiveIteratorIterator(
-                new \RecursiveDirectoryIterator($this->dir, \RecursiveDirectoryIterator::SKIP_DOTS),
-                \RecursiveIteratorIterator::CHILD_FIRST
-            );
-
-            foreach ($files as $fileInfo) {
-                $deleteFunction = ($fileInfo->isDir() ? 'rmdir' : 'unlink');
-                $deleteFunction($fileInfo->getRealPath());
-            }
-
-            rmdir($this->dir);
-        }
+        unset($this->dumper);
     }
 
     private function getEventMock($eventClass, $requestId, $request, $response)
@@ -119,13 +113,5 @@ class DumpListenerTest extends \PHPUnit_Framework_TestCase
             ->willReturn($response);
 
         return $mock;
-    }
-
-    private function assertDumpFile($filename, $content)
-    {
-        $path = $this->dir . '/' . $filename;
-
-        $this->assertFileExists($path);
-        $this->assertEquals($content, file_get_contents($path));
     }
 }

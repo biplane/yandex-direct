@@ -6,6 +6,7 @@ use Biplane\YandexDirect\Event\BaseAfterCallEvent;
 use Biplane\YandexDirect\Event\FailCallEvent;
 use Biplane\YandexDirect\Event\PostCallEvent;
 use Biplane\YandexDirect\Events;
+use Biplane\YandexDirect\Helper\Dumper;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**
@@ -18,7 +19,7 @@ class DumpListener implements EventSubscriberInterface
     const LEVEL_FAIL_REQUEST = 1;
     const LEVEL_ALL_REQUEST  = 2;
 
-    private $rootDir;
+    private $dumper;
     private $level;
 
     /**
@@ -35,23 +36,20 @@ class DumpListener implements EventSubscriberInterface
     /**
      * Constructor.
      *
-     * @param string $dir   The directory to save dumps
-     * @param int    $level One of constants with prefix LEVEL_
+     * @param Dumper $dumper The helper
+     * @param int    $level  One of constants with prefix LEVEL_
      *
-     * @throws \RuntimeException
      * @throws \InvalidArgumentException
      */
-    public function __construct($dir, $level = self::LEVEL_ALL_REQUEST)
+    public function __construct(Dumper $dumper, $level = self::LEVEL_ALL_REQUEST)
     {
-        $this->ensureDirectoryExists($dir);
-
         if (!in_array($level, array(self::LEVEL_ALL_REQUEST, self::LEVEL_FAIL_REQUEST))) {
             throw new \InvalidArgumentException(
                 'The level must be one of constants with prefix LEVEL_.'
             );
         }
 
-        $this->rootDir = $dir;
+        $this->dumper = $dumper;
         $this->level = (int)$level;
     }
 
@@ -81,35 +79,6 @@ class DumpListener implements EventSubscriberInterface
 
     private function dump(BaseAfterCallEvent $event)
     {
-        $requestId = $event->getRequestId();
-        $dir = $this->rootDir . '/' . substr($requestId, 0, 2) . '/' . substr($requestId, 2, 1);
-
-        $this->ensureDirectoryExists($dir);
-
-        $this->saveFile($dir . '/' . $requestId . '_req.data', $event->getRequest());
-        $this->saveFile($dir . '/' . $requestId . '_resp.data', $event->getResponse());
-    }
-
-    private function ensureDirectoryExists($dir)
-    {
-        if (!is_dir($dir)) {
-            $this->ensureDirectoryExists(dirname($dir));
-
-            if (!@mkdir($dir, 0775)) {
-                throw new \RuntimeException(sprintf('Could not create directory "%s".', $dir));
-            }
-
-            chmod($dir, 0775);
-        }
-
-        if (!is_writable($dir)) {
-            throw new \RuntimeException(sprintf('The directory "%s" is not writable.', $dir));
-        }
-    }
-
-    private function saveFile($filename, $content)
-    {
-        file_put_contents($filename, $content);
-        chmod($filename, 0664);
+        $this->dumper->dump($event->getRequestId(), $event->getRequest(), $event->getResponse());
     }
 }

@@ -42,6 +42,9 @@ class BiplaneYandexDirectExtension extends ConfigurableExtension
         $container->getDefinition('biplane_yandex_direct.ipc_factory')
             ->addArgument($config['ipc']['directory']);
 
+        $container->getDefinition('biplane_yandex_direct.dumper')
+            ->addArgument($config['dump']['directory']);
+
         if ($config['concurrent_listener']['enabled']) {
             $container->getDefinition('biplane_yandex_direct.event_listener.concurrent')
                 ->addArgument($config['concurrent_listener']['connections']);
@@ -56,7 +59,6 @@ class BiplaneYandexDirectExtension extends ConfigurableExtension
             );
 
             $container->getDefinition('biplane_yandex_direct.event_listener.dump')
-                ->addArgument($config['dump_listener']['directory'])
                 ->addArgument($levelMap[$config['dump_listener']['dump']]);
         } else {
             $container->removeDefinition('biplane_yandex_direct.event_listener.dump');

@@ -1,5 +1,14 @@
 # Changelog
 
+## 3.2.0
+
+ * Логика сохранения данных запроса и ответа в файл вынесена в отдельный хелпер
+   `Biplane\YandexDirect\Helper\Dumper`
+ 
+ * **[BC BREAK]** Параметр `biplane_yandex_direct.dump_listener.directory` удален 
+   из в конфигурации бандла. Вместо него появился параметр `biplane_yandex_direct.dump.directory`
+   и сервис `biplane_yandex_direct.dumper`
+
 ## 3.1.0 [commit logs](https://github.com/biplane/BiplaneYandexDirectBundle/compare/3.0.2...3.1.0)
 
  * Изменен уровень доступа для метода `SoapClient::getRequestId`, с `protected` на `public`.

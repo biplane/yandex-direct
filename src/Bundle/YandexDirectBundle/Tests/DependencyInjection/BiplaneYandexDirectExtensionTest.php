@@ -39,6 +39,10 @@ class BiplaneYandexDirectExtensionTest extends \PHPUnit_Framework_TestCase
             $this->container->getDefinition('biplane_yandex_direct.ipc_factory'),
             array('%kernel.cache_dir%/ipc')
         );
+        $this->assertDICConstructorArguments(
+            $this->container->getDefinition('biplane_yandex_direct.dumper'),
+            array('%kernel.cache_dir%/api_dumps')
+        );
         $this->assertFalse($this->container->hasDefinition('biplane_yandex_direct.auth'));
         $this->assertFalse($this->container->hasDefinition('biplane_yandex_direct.event_listener.concurrent'));
         $this->assertFalse($this->container->hasDefinition('biplane_yandex_direct.event_listener.dump'));
@@ -100,7 +104,7 @@ class BiplaneYandexDirectExtensionTest extends \PHPUnit_Framework_TestCase
         $this->assertDICConstructorArguments(
             $this->container->getDefinition('biplane_yandex_direct.event_listener.dump'),
             array(
-                '%kernel.cache_dir%/api_dumps',
+            new Reference('biplane_yandex_direct.dumper'),
                 DumpListener::LEVEL_ALL_REQUEST
             )
         );
