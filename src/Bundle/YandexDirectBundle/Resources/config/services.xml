@@ -6,7 +6,7 @@
     <services>
         <service id="biplane_yandex_direct.auth" class="Biplane\YandexDirect\Auth\Authenticator" />
 
-        <service id="biplane_yandex_direct.factory" class="Biplane\YandexDirectBundle\UserFactory">
+        <service id="biplane_yandex_direct.factory" class="Biplane\Bundle\YandexDirectBundle\UserFactory">
             <argument type="service" id="event_dispatcher" />
         </service>
 
