@@ -22,7 +22,7 @@ class Campaigns extends V5SoapClient
      */
     public function __construct(EventDispatcherInterface $dispatcher, User $user)
     {
-        parent::__construct(self::ENDPOINT, $dispatcher, $user, array(
+        parent::__construct($user->resolveWsdl(self::ENDPOINT), $dispatcher, $user, array(
             'classmap' => array(
                 'MobileAppAdActionEnum' => 'Biplane\YandexDirect\Api\V5\Contract\MobileAppAdActionEnum',
                 'ExceptionNotification' => 'Biplane\YandexDirect\Api\V5\Contract\ExceptionNotification',
@@ -136,7 +136,9 @@ class Campaigns extends V5SoapClient
                 'SharedAccountFundsParam' => 'Biplane\YandexDirect\Api\V5\Contract\SharedAccountFundsParam',
                 'FundsParam' => 'Biplane\YandexDirect\Api\V5\Contract\FundsParam',
                 'CampaignAssistant' => 'Biplane\YandexDirect\Api\V5\Contract\CampaignAssistant',
+                'TimeTargetingBase' => 'Biplane\YandexDirect\Api\V5\Contract\TimeTargetingBase',
                 'TimeTargeting' => 'Biplane\YandexDirect\Api\V5\Contract\TimeTargeting',
+                'TimeTargetingAdd' => 'Biplane\YandexDirect\Api\V5\Contract\TimeTargetingAdd',
                 'CampaignBase' => 'Biplane\YandexDirect\Api\V5\Contract\CampaignBase',
                 'TextCampaignBase' => 'Biplane\YandexDirect\Api\V5\Contract\TextCampaignBase',
                 'DynamicTextCampaignBase' => 'Biplane\YandexDirect\Api\V5\Contract\DynamicTextCampaignBase',

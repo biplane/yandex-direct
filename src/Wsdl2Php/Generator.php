@@ -174,7 +174,7 @@ class Generator extends BaseGenerator
 
         $constructor = $this->createMethodGenerator('__construct', 'Constructor.')
             ->setBody(<<<CODE
-parent::__construct(self::ENDPOINT, \$dispatcher, \$user, array(
+parent::__construct(\$user->resolveWsdl(self::ENDPOINT), \$dispatcher, \$user, array(
     'classmap' => array(
 {$classmap}
     )

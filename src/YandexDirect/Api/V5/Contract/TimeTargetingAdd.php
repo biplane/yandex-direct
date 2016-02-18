@@ -5,15 +5,15 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 /**
  * Auto-generated code.
  */
-class TimeTargeting extends TimeTargetingBase
+class TimeTargetingAdd extends TimeTargetingBase
 {
 
     protected $HolidaysSchedule = null;
 
     /**
-     * Creates a new instance of TimeTargeting.
+     * Creates a new instance of TimeTargetingAdd.
      *
-     * @return TimeTargeting
+     * @return TimeTargetingAdd
      */
     public static function create()
     {

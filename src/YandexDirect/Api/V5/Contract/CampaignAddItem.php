@@ -28,6 +28,8 @@ class CampaignAddItem extends CampaignBase
 
     protected $DynamicTextCampaign = null;
 
+    protected $TimeTargeting = null;
+
     /**
      * Creates a new instance of CampaignAddItem.
      *
@@ -264,6 +266,29 @@ class CampaignAddItem extends CampaignBase
     public function setDynamicTextCampaign(DynamicTextCampaignAddItem $value = null)
     {
         $this->DynamicTextCampaign = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets TimeTargeting.
+     *
+     * @return TimeTargetingAdd|null
+     */
+    public function getTimeTargeting()
+    {
+        return $this->TimeTargeting;
+    }
+
+    /**
+     * Sets TimeTargeting.
+     *
+     * @param TimeTargetingAdd|null $value
+     * @return $this
+     */
+    public function setTimeTargeting(TimeTargetingAdd $value = null)
+    {
+        $this->TimeTargeting = $value;
 
         return $this;
     }

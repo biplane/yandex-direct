@@ -144,4 +144,29 @@ class UserTest extends \PHPUnit_Framework_TestCase
 
         $this->assertSame($proxy, $user->getAdsService());
     }
+
+    public function testResolveWSDLWhenSandboxIsDisabled()
+    {
+        $user = new User(array(
+            'access_token' => 'foo'
+        ));
+
+        $this->assertEquals(
+            'https://api.direct.yandex.ru/live/v4/wsdl/',
+            $user->resolveWsdl('https://api.direct.yandex.ru/live/v4/wsdl/')
+        );
+    }
+
+    public function testResolveWSDLWhenSandboxIsEnabled()
+    {
+        $user = new User(array(
+            'access_token' => 'foo',
+            'sandbox' => true,
+        ));
+
+        $this->assertEquals(
+            'https://api-sandbox.direct.yandex.ru/live/v4/wsdl/',
+            $user->resolveWsdl('https://api.direct.yandex.ru/live/v4/wsdl/')
+        );
+    }
 }

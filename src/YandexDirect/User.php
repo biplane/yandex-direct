@@ -255,6 +255,22 @@ class User
     }
 
     /**
+     * Resolves the URI to WSDL.
+     *
+     * @param string $uri The origin URI to WSDL file
+     *
+     * @return string
+     */
+    public function resolveWsdl($uri)
+    {
+        if ($this->options['sandbox']) {
+            return str_replace('api.direct.yandex.', 'api-sandbox.direct.yandex.', $uri);
+        }
+
+        return $uri;
+    }
+
+    /**
      * Sets the default options.
      *
      * @param OptionsResolver $resolver
@@ -267,6 +283,7 @@ class User
                 'locale'       => self::LOCALE_EN,
                 'master_token' => null,
                 'login'        => null,
+                'sandbox'      => false,
             ))
             ->setAllowedValues(array(
                 'locale' => array(self::LOCALE_EN, self::LOCALE_RU, self::LOCALE_UA)
@@ -274,7 +291,8 @@ class User
             ->setAllowedTypes(array(
                 'master_token' => array('null', 'string'),
                 'login'        => array('null', 'string'),
-                'access_token' => array('string')
+                'access_token' => array('string'),
+                'sandbox'      => array('bool'),
             ))
             // Если логин пользователя содержит точки и символы верхнего регистра (заглавные буквы),
             // то для получения нормализованного логина их следует заменить, соответственно, дефисами

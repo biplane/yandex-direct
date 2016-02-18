@@ -30,6 +30,10 @@ class BiplaneYandexDirectExtension extends ConfigurableExtension
             $factoryDef->addArgument($config['user']);
         }
 
+        if ($config['sandbox']) {
+            $factoryDef->addMethodCall('enableSandbox');
+        }
+
         if (isset($config['auth'])) {
             $container->getDefinition('biplane_yandex_direct.auth')->setArguments(array(
                 $config['auth']['app_id'],

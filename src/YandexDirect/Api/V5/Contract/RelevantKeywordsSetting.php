@@ -12,6 +12,8 @@ class RelevantKeywordsSetting
 
     protected $Mode = null;
 
+    protected $OptimizeGoalId = null;
+
     /**
      * Creates a new instance of RelevantKeywordsSetting.
      *
@@ -25,7 +27,7 @@ class RelevantKeywordsSetting
     /**
      * Gets BudgetPercent.
      *
-     * @return int
+     * @return int|null
      */
     public function getBudgetPercent()
     {
@@ -35,10 +37,10 @@ class RelevantKeywordsSetting
     /**
      * Sets BudgetPercent.
      *
-     * @param int $value
+     * @param int|null $value
      * @return $this
      */
-    public function setBudgetPercent($value)
+    public function setBudgetPercent($value = null)
     {
         $this->BudgetPercent = $value;
 
@@ -48,7 +50,7 @@ class RelevantKeywordsSetting
     /**
      * Gets Mode.
      *
-     * @return RelevantKeywordsModeEnum
+     * @return RelevantKeywordsModeEnum|null
      */
     public function getMode()
     {
@@ -58,12 +60,35 @@ class RelevantKeywordsSetting
     /**
      * Sets Mode.
      *
-     * @param RelevantKeywordsModeEnum $value
+     * @param RelevantKeywordsModeEnum|null $value
      * @return $this
      */
-    public function setMode(RelevantKeywordsModeEnum $value)
+    public function setMode(RelevantKeywordsModeEnum $value = null)
     {
         $this->Mode = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets OptimizeGoalId.
+     *
+     * @return int|null
+     */
+    public function getOptimizeGoalId()
+    {
+        return $this->OptimizeGoalId;
+    }
+
+    /**
+     * Sets OptimizeGoalId.
+     *
+     * @param int|null $value
+     * @return $this
+     */
+    public function setOptimizeGoalId($value = null)
+    {
+        $this->OptimizeGoalId = $value;
 
         return $this;
     }

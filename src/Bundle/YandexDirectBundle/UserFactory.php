@@ -34,6 +34,22 @@ class UserFactory
     }
 
     /**
+     * Enables the sandbox mode.
+     */
+    public function enableSandbox()
+    {
+        $this->defaultOptions['sandbox'] = true;
+    }
+
+    /**
+     * Disables the sandbox mode.
+     */
+    public function disableSandbox()
+    {
+        $this->defaultOptions['sandbox'] = false;
+    }
+
+    /**
      * Gets User object for the specific options.
      *
      * When the options is null will be try to create the default user.

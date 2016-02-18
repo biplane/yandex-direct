@@ -12,8 +12,6 @@ class CampaignBase
 
     protected $Notification = null;
 
-    protected $TimeTargeting = null;
-
     protected $TimeZone = null;
 
     /**
@@ -68,29 +66,6 @@ class CampaignBase
     public function setNotification(Notification $value = null)
     {
         $this->Notification = $value;
-
-        return $this;
-    }
-
-    /**
-     * Gets TimeTargeting.
-     *
-     * @return TimeTargeting|null
-     */
-    public function getTimeTargeting()
-    {
-        return $this->TimeTargeting;
-    }
-
-    /**
-     * Sets TimeTargeting.
-     *
-     * @param TimeTargeting|null $value
-     * @return $this
-     */
-    public function setTimeTargeting(TimeTargeting $value = null)
-    {
-        $this->TimeTargeting = $value;
 
         return $this;
     }

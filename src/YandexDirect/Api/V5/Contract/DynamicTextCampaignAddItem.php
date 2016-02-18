@@ -5,12 +5,14 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 /**
  * Auto-generated code.
  */
-class DynamicTextCampaignAddItem extends DynamicTextCampaignBase
+class DynamicTextCampaignAddItem
 {
 
     protected $BiddingStrategy = null;
 
     protected $Settings = null;
+
+    protected $CounterIds = null;
 
     /**
      * Creates a new instance of DynamicTextCampaignAddItem.
@@ -64,6 +66,29 @@ class DynamicTextCampaignAddItem extends DynamicTextCampaignBase
     public function setSettings(array $value = null)
     {
         $this->Settings = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets CounterIds.
+     *
+     * @return int[]|null
+     */
+    public function getCounterIds()
+    {
+        return $this->CounterIds;
+    }
+
+    /**
+     * Sets CounterIds.
+     *
+     * @param int[]|null $value
+     * @return $this
+     */
+    public function setCounterIds(array $value = null)
+    {
+        $this->CounterIds = $value;
 
         return $this;
     }

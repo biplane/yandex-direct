@@ -22,7 +22,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function __construct(EventDispatcherInterface $dispatcher, User $user)
     {
-        parent::__construct(self::ENDPOINT, $dispatcher, $user, array(
+        parent::__construct($user->resolveWsdl(self::ENDPOINT), $dispatcher, $user, array(
             'classmap' => array(
                 'NewReportFilterInfo' => 'Biplane\YandexDirect\Api\V4\Contract\NewReportFilterInfo',
                 'NewReportInfo' => 'Biplane\YandexDirect\Api\V4\Contract\NewReportInfo',

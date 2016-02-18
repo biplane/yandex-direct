@@ -110,6 +110,19 @@ class BiplaneYandexDirectExtensionTest extends \PHPUnit_Framework_TestCase
         );
     }
 
+    public function testLoadWhenSandboxIsEnabled()
+    {
+        $this->load(array(
+            'sandbox' => true,
+        ));
+
+        $this->assertDICDefinitionMethodCallAt(
+            0,
+            $this->container->getDefinition('biplane_yandex_direct.factory'),
+            'enableSandbox'
+        );
+    }
+
     protected function setUp()
     {
         $this->container = new ContainerBuilder();
@@ -139,5 +152,28 @@ class BiplaneYandexDirectExtensionTest extends \PHPUnit_Framework_TestCase
         );
 
         $this->assertEquals($args, $definition->getArguments(), $message);
+    }
+
+    private function assertDICDefinitionMethodCallAt($pos, Definition $definition, $methodName, array $params = null)
+    {
+        $calls = $definition->getMethodCalls();
+
+        if (isset($calls[$pos][0])) {
+            $this->assertEquals(
+                $methodName,
+                $calls[$pos][0],
+                sprintf('Method "%s" is expected to be called at position %d.', $methodName, $pos)
+            );
+
+            if ($params !== null) {
+                $this->assertEquals(
+                    $params,
+                    $calls[$pos][1],
+                    sprintf('Expected parameters to methods "%s" do not match the actual parameters.', $methodName)
+                );
+            }
+        } else {
+            $this->fail(sprintf('Method "%s" is expected to be called at position %d.', $methodName, $pos));
+        }
     }
 }

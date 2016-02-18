@@ -22,7 +22,7 @@ class Ads extends V5SoapClient
      */
     public function __construct(EventDispatcherInterface $dispatcher, User $user)
     {
-        parent::__construct(self::ENDPOINT, $dispatcher, $user, array(
+        parent::__construct($user->resolveWsdl(self::ENDPOINT), $dispatcher, $user, array(
             'classmap' => array(
                 'MobileAppAdActionEnum' => 'Biplane\YandexDirect\Api\V5\Contract\MobileAppAdActionEnum',
                 'ExceptionNotification' => 'Biplane\YandexDirect\Api\V5\Contract\ExceptionNotification',

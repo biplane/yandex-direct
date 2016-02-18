@@ -1,5 +1,19 @@
 # Changelog
 
+## 3.3.0
+
+ * В конфигурацию бандла добавлен параметр `sandbox` (`biplane_yandex_direct.sandbox`),
+   принимающий значение `true` или `false`.
+
+ * Добавлена поддержка [*Песочницы*](https://tech.yandex.ru/direct/doc/dg-v4/concepts/sandbox-init-docpage/).
+   Для активации режима работы с "Песочницей" при создании экземпляра `Biplane\YandexDirect\User` необходимо
+   передать опцию `sandbox` со значением `true`:
+   
+        new \Biplane\YandexDirect\User([
+            'sandbox' => true
+            ...
+        ]);
+
 ## 3.2.1 [commit logs](https://github.com/biplane/BiplaneYandexDirectBundle/compare/3.2.0...3.2.1)
 
  * Исправлена ошибка в определении сервиса `biplane_yandex_direct.factory`.

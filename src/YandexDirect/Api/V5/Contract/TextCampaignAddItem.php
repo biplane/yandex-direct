@@ -5,12 +5,16 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 /**
  * Auto-generated code.
  */
-class TextCampaignAddItem extends TextCampaignBase
+class TextCampaignAddItem
 {
 
     protected $BiddingStrategy = null;
 
     protected $Settings = null;
+
+    protected $CounterIds = null;
+
+    protected $RelevantKeywords = null;
 
     /**
      * Creates a new instance of TextCampaignAddItem.
@@ -64,6 +68,52 @@ class TextCampaignAddItem extends TextCampaignBase
     public function setSettings(array $value = null)
     {
         $this->Settings = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets CounterIds.
+     *
+     * @return int[]|null
+     */
+    public function getCounterIds()
+    {
+        return $this->CounterIds;
+    }
+
+    /**
+     * Sets CounterIds.
+     *
+     * @param int[]|null $value
+     * @return $this
+     */
+    public function setCounterIds(array $value = null)
+    {
+        $this->CounterIds = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets RelevantKeywords.
+     *
+     * @return RelevantKeywordsSetting|null
+     */
+    public function getRelevantKeywords()
+    {
+        return $this->RelevantKeywords;
+    }
+
+    /**
+     * Sets RelevantKeywords.
+     *
+     * @param RelevantKeywordsSetting|null $value
+     * @return $this
+     */
+    public function setRelevantKeywords(RelevantKeywordsSetting $value = null)
+    {
+        $this->RelevantKeywords = $value;
 
         return $this;
     }
