@@ -66,6 +66,17 @@ class DumpListenerTest extends \PHPUnit_Framework_TestCase
         $listener->onSuccess($event);
     }
 
+    public function testDontDumpWhenRequestIdIsEmpty()
+    {
+        $listener = new DumpListener($this->dumper);
+        $event = $this->getEventMock('FailCallEvent', null, 'foo', 'bar');
+
+        $this->dumper->expects($this->never())
+            ->method('dump');
+
+        $listener->onFail($event);
+    }
+
     public function getFailEvents()
     {
         return array(

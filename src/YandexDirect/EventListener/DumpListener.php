@@ -79,6 +79,10 @@ class DumpListener implements EventSubscriberInterface
 
     private function dump(BaseAfterCallEvent $event)
     {
-        $this->dumper->dump($event->getRequestId(), $event->getRequest(), $event->getResponse());
+        $requestId = $event->getRequestId();
+
+        if (!empty($requestId)) {
+            $this->dumper->dump($requestId, $event->getRequest(), $event->getResponse());
+        }
     }
 }
