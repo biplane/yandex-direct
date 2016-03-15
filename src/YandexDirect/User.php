@@ -277,6 +277,18 @@ class User
      */
     protected function setDefaultOptions(OptionsResolver $resolver)
     {
+        // Если логин пользователя содержит точки и символы верхнего регистра (заглавные буквы),
+        // то для получения нормализованного логина их следует заменить, соответственно, дефисами
+        // и символами нижнего регистра.
+        // http://api.yandex.ru/direct/doc/concepts/finance.xml#access
+        $loginNormalizer = function (Options $options, $value) {
+            if (is_string($value)) {
+                return strtolower(str_replace('.', '-', $value));
+            }
+
+            return $value;
+        };
+
         $resolver
             ->setRequired(array('access_token'))
             ->setDefaults(array(
@@ -284,29 +296,32 @@ class User
                 'master_token' => null,
                 'login'        => null,
                 'sandbox'      => false,
-            ))
-            ->setAllowedValues(array(
-                'locale' => array(self::LOCALE_EN, self::LOCALE_RU, self::LOCALE_UA)
-            ))
-            ->setAllowedTypes(array(
-                'master_token' => array('null', 'string'),
-                'login'        => array('null', 'string'),
-                'access_token' => array('string'),
-                'sandbox'      => array('bool'),
-            ))
-            // Если логин пользователя содержит точки и символы верхнего регистра (заглавные буквы),
-            // то для получения нормализованного логина их следует заменить, соответственно, дефисами
-            // и символами нижнего регистра.
-            // http://api.yandex.ru/direct/doc/concepts/finance.xml#access
-            ->setNormalizers(array(
-                'login' => function (Options $options, $value) {
-                    if (is_string($value)) {
-                        return strtolower(str_replace('.', '-', $value));
-                    }
-
-                    return $value;
-                }
             ));
+
+        // OptionsResolver 2.6+
+        if (method_exists($resolver, 'setNormalizer')) {
+            $resolver
+                ->setAllowedValues('locale', array(self::LOCALE_EN, self::LOCALE_RU, self::LOCALE_UA))
+                ->setAllowedTypes('master_token', array('null', 'string'))
+                ->setAllowedTypes('login', array('null', 'string'))
+                ->setAllowedTypes('access_token', 'string')
+                ->setAllowedTypes('sandbox', 'bool')
+                ->setNormalizer('login', $loginNormalizer);
+        } else {
+            $resolver
+                ->setAllowedValues(array(
+                    'locale' => array(self::LOCALE_EN, self::LOCALE_RU, self::LOCALE_UA)
+                ))
+                ->setAllowedTypes(array(
+                    'master_token' => array('null', 'string'),
+                    'login'        => array('null', 'string'),
+                    'access_token' => array('string'),
+                    'sandbox'      => array('bool'),
+                ))
+                ->setNormalizers(array(
+                    'login' => $loginNormalizer,
+                ));
+        }
     }
 
     private function getProxy($serviceClass)
