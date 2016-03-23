@@ -1,6 +1,6 @@
 # Changelog
 
-## 3.3.0
+## 3.3.0 [commit logs](https://github.com/biplane/BiplaneYandexDirectBundle/compare/3.2.1...3.3.0)
 
  * В конфигурацию бандла добавлен параметр `sandbox` (`biplane_yandex_direct.sandbox`),
    принимающий значение `true` или `false`.
@@ -13,6 +13,8 @@
             'sandbox' => true
             ...
         ]);
+
+ * Поддержка Symfony 2.8 и 3.0
 
 ## 3.2.1 [commit logs](https://github.com/biplane/BiplaneYandexDirectBundle/compare/3.2.0...3.2.1)
 
