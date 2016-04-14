@@ -5,7 +5,7 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 /**
  * Auto-generated code.
  */
-class CampaignStatusGetEnum
+class CampaignStatusSelectionEnum
 {
 
     const ACCEPTED = 'ACCEPTED';
@@ -15,8 +15,6 @@ class CampaignStatusGetEnum
     const MODERATION = 'MODERATION';
 
     const REJECTED = 'REJECTED';
-
-    const UNKNOWN = 'UNKNOWN';
 
 
 }

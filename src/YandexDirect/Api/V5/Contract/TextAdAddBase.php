@@ -14,6 +14,8 @@ class TextAdAddBase
 
     protected $SitelinkSetId = null;
 
+    protected $AdExtensionIds = null;
+
     /**
      * Creates a new instance of TextAdAddBase.
      *
@@ -89,6 +91,29 @@ class TextAdAddBase
     public function setSitelinkSetId($value = null)
     {
         $this->SitelinkSetId = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets AdExtensionIds.
+     *
+     * @return int[]|null
+     */
+    public function getAdExtensionIds()
+    {
+        return $this->AdExtensionIds;
+    }
+
+    /**
+     * Sets AdExtensionIds.
+     *
+     * @param int[]|null $value
+     * @return $this
+     */
+    public function setAdExtensionIds(array $value = null)
+    {
+        $this->AdExtensionIds = $value;
 
         return $this;
     }

@@ -157,7 +157,7 @@ class CampaignGetItem extends CampaignBase
     /**
      * Gets Status.
      *
-     * @return CampaignStatusGetEnum|null
+     * @return StatusEnum|null
      */
     public function getStatus()
     {
@@ -167,10 +167,10 @@ class CampaignGetItem extends CampaignBase
     /**
      * Sets Status.
      *
-     * @param CampaignStatusGetEnum|null $value
+     * @param StatusEnum|null $value
      * @return $this
      */
-    public function setStatus(CampaignStatusGetEnum $value = null)
+    public function setStatus(StatusEnum $value = null)
     {
         $this->Status = $value;
 

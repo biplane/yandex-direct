@@ -100,7 +100,7 @@ class CampaignsSelectionCriteria
     /**
      * Gets Statuses.
      *
-     * @return CampaignStatusEnum[]|null
+     * @return CampaignStatusSelectionEnum[]|null
      */
     public function getStatuses()
     {
@@ -110,7 +110,7 @@ class CampaignsSelectionCriteria
     /**
      * Sets Statuses.
      *
-     * @param CampaignStatusEnum[]|null $value
+     * @param CampaignStatusSelectionEnum[]|null $value
      * @return $this
      */
     public function setStatuses(array $value = null)

@@ -14,6 +14,8 @@ class TextAdUpdateBase
 
     protected $SitelinkSetId = null;
 
+    protected $CalloutSetting = null;
+
     /**
      * Creates a new instance of TextAdUpdateBase.
      *
@@ -89,6 +91,29 @@ class TextAdUpdateBase
     public function setSitelinkSetId($value = null)
     {
         $this->SitelinkSetId = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets CalloutSetting.
+     *
+     * @return AdExtensionSetting|null
+     */
+    public function getCalloutSetting()
+    {
+        return $this->CalloutSetting;
+    }
+
+    /**
+     * Sets CalloutSetting.
+     *
+     * @param AdExtensionSetting|null $value
+     * @return $this
+     */
+    public function setCalloutSetting(AdExtensionSetting $value = null)
+    {
+        $this->CalloutSetting = $value;
 
         return $this;
     }

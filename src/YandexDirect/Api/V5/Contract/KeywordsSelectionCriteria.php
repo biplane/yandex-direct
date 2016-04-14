@@ -100,7 +100,7 @@ class KeywordsSelectionCriteria
     /**
      * Gets States.
      *
-     * @return StateEnum[]|null
+     * @return KeywordStateSelectionEnum[]|null
      */
     public function getStates()
     {
@@ -110,7 +110,7 @@ class KeywordsSelectionCriteria
     /**
      * Sets States.
      *
-     * @param StateEnum[]|null $value
+     * @param KeywordStateSelectionEnum[]|null $value
      * @return $this
      */
     public function setStates(array $value = null)
@@ -123,7 +123,7 @@ class KeywordsSelectionCriteria
     /**
      * Gets Statuses.
      *
-     * @return StatusEnum[]|null
+     * @return KeywordStatusSelectionEnum[]|null
      */
     public function getStatuses()
     {
@@ -133,7 +133,7 @@ class KeywordsSelectionCriteria
     /**
      * Sets Statuses.
      *
-     * @param StatusEnum[]|null $value
+     * @param KeywordStatusSelectionEnum[]|null $value
      * @return $this
      */
     public function setStatuses(array $value = null)

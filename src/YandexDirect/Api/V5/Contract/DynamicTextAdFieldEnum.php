@@ -22,6 +22,8 @@ class DynamicTextAdFieldEnum
 
     const V_CARD_MODERATION = 'VCardModeration';
 
+    const AD_EXTENSIONS = 'AdExtensions';
+
 
 }
 

@@ -34,6 +34,8 @@ class AdsSelectionCriteria
 
     protected $AdImageModerationStatuses = null;
 
+    protected $AdExtensionIds = null;
+
     /**
      * Creates a new instance of AdsSelectionCriteria.
      *
@@ -70,7 +72,7 @@ class AdsSelectionCriteria
     /**
      * Gets States.
      *
-     * @return StateEnum[]|null
+     * @return AdStateSelectionEnum[]|null
      */
     public function getStates()
     {
@@ -80,7 +82,7 @@ class AdsSelectionCriteria
     /**
      * Sets States.
      *
-     * @param StateEnum[]|null $value
+     * @param AdStateSelectionEnum[]|null $value
      * @return $this
      */
     public function setStates(array $value = null)
@@ -93,7 +95,7 @@ class AdsSelectionCriteria
     /**
      * Gets Statuses.
      *
-     * @return StatusEnum[]|null
+     * @return AdStatusSelectionEnum[]|null
      */
     public function getStatuses()
     {
@@ -103,7 +105,7 @@ class AdsSelectionCriteria
     /**
      * Sets Statuses.
      *
-     * @param StatusEnum[]|null $value
+     * @param AdStatusSelectionEnum[]|null $value
      * @return $this
      */
     public function setStatuses(array $value = null)
@@ -277,7 +279,7 @@ class AdsSelectionCriteria
     /**
      * Gets VCardModerationStatuses.
      *
-     * @return StatusEnum[]|null
+     * @return ExtensionStatusSelectionEnum[]|null
      */
     public function getVCardModerationStatuses()
     {
@@ -287,7 +289,7 @@ class AdsSelectionCriteria
     /**
      * Sets VCardModerationStatuses.
      *
-     * @param StatusEnum[]|null $value
+     * @param ExtensionStatusSelectionEnum[]|null $value
      * @return $this
      */
     public function setVCardModerationStatuses(array $value = null)
@@ -300,7 +302,7 @@ class AdsSelectionCriteria
     /**
      * Gets SitelinksModerationStatuses.
      *
-     * @return StatusEnum[]|null
+     * @return ExtensionStatusSelectionEnum[]|null
      */
     public function getSitelinksModerationStatuses()
     {
@@ -310,7 +312,7 @@ class AdsSelectionCriteria
     /**
      * Sets SitelinksModerationStatuses.
      *
-     * @param StatusEnum[]|null $value
+     * @param ExtensionStatusSelectionEnum[]|null $value
      * @return $this
      */
     public function setSitelinksModerationStatuses(array $value = null)
@@ -323,7 +325,7 @@ class AdsSelectionCriteria
     /**
      * Gets AdImageModerationStatuses.
      *
-     * @return StatusEnum[]|null
+     * @return ExtensionStatusSelectionEnum[]|null
      */
     public function getAdImageModerationStatuses()
     {
@@ -333,12 +335,35 @@ class AdsSelectionCriteria
     /**
      * Sets AdImageModerationStatuses.
      *
-     * @param StatusEnum[]|null $value
+     * @param ExtensionStatusSelectionEnum[]|null $value
      * @return $this
      */
     public function setAdImageModerationStatuses(array $value = null)
     {
         $this->AdImageModerationStatuses = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets AdExtensionIds.
+     *
+     * @return int[]|null
+     */
+    public function getAdExtensionIds()
+    {
+        return $this->AdExtensionIds;
+    }
+
+    /**
+     * Sets AdExtensionIds.
+     *
+     * @param int[]|null $value
+     * @return $this
+     */
+    public function setAdExtensionIds(array $value = null)
+    {
+        $this->AdExtensionIds = $value;
 
         return $this;
     }

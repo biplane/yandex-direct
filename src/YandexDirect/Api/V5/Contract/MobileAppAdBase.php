@@ -16,6 +16,8 @@ class MobileAppAdBase
 
     protected $Action = null;
 
+    protected $AdImageHash = null;
+
     /**
      * Creates a new instance of MobileAppAdBase.
      *
@@ -114,6 +116,29 @@ class MobileAppAdBase
     public function setAction(MobileAppAdActionEnum $value = null)
     {
         $this->Action = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets AdImageHash.
+     *
+     * @return string|null
+     */
+    public function getAdImageHash()
+    {
+        return $this->AdImageHash;
+    }
+
+    /**
+     * Sets AdImageHash.
+     *
+     * @param string|null $value
+     * @return $this
+     */
+    public function setAdImageHash($value = null)
+    {
+        $this->AdImageHash = $value;
 
         return $this;
     }

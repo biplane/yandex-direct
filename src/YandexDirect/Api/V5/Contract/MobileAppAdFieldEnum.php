@@ -8,6 +8,8 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class MobileAppAdFieldEnum
 {
 
+    const AD_IMAGE_HASH = 'AdImageHash';
+
     const TITLE = 'Title';
 
     const TEXT = 'Text';
@@ -17,6 +19,8 @@ class MobileAppAdFieldEnum
     const ACTION = 'Action';
 
     const TRACKING_URL = 'TrackingUrl';
+
+    const AD_IMAGE_MODERATION = 'AdImageModeration';
 
 
 }

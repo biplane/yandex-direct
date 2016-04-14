@@ -104,7 +104,7 @@ class AdGroupsSelectionCriteria
     /**
      * Gets Statuses.
      *
-     * @return StatusSelectionEnum[]|null
+     * @return AdGroupStatusSelectionEnum[]|null
      */
     public function getStatuses()
     {
@@ -114,7 +114,7 @@ class AdGroupsSelectionCriteria
     /**
      * Sets Statuses.
      *
-     * @param StatusSelectionEnum[]|null $value
+     * @param AdGroupStatusSelectionEnum[]|null $value
      * @return $this
      */
     public function setStatuses(array $value = null)
@@ -173,7 +173,7 @@ class AdGroupsSelectionCriteria
     /**
      * Gets AppIconStatuses.
      *
-     * @return StatusSelectionEnum[]|null
+     * @return AdGroupAppIconStatusSelectionEnum[]|null
      */
     public function getAppIconStatuses()
     {
@@ -183,7 +183,7 @@ class AdGroupsSelectionCriteria
     /**
      * Sets AppIconStatuses.
      *
-     * @param StatusSelectionEnum[]|null $value
+     * @param AdGroupAppIconStatusSelectionEnum[]|null $value
      * @return $this
      */
     public function setAppIconStatuses(array $value = null)

@@ -5,7 +5,7 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 /**
  * Auto-generated code.
  */
-class StateEnum
+class AdStateSelectionEnum
 {
 
     const OFF = 'OFF';
@@ -17,10 +17,6 @@ class StateEnum
     const OFF_BY_MONITORING = 'OFF_BY_MONITORING';
 
     const ARCHIVED = 'ARCHIVED';
-
-    const DELETED = 'DELETED';
-
-    const UNKNOWN = 'UNKNOWN';
 
 
 }

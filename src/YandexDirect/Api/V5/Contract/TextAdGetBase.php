@@ -20,6 +20,8 @@ class TextAdGetBase
 
     protected $AdImageModeration = null;
 
+    protected $AdExtensions = null;
+
     /**
      * Creates a new instance of TextAdGetBase.
      *
@@ -164,6 +166,29 @@ class TextAdGetBase
     public function setAdImageModeration(ExtensionModeration $value = null)
     {
         $this->AdImageModeration = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets AdExtensions.
+     *
+     * @return AdExtensionAdGetItem[]|null
+     */
+    public function getAdExtensions()
+    {
+        return $this->AdExtensions;
+    }
+
+    /**
+     * Sets AdExtensions.
+     *
+     * @param AdExtensionAdGetItem[]|null $value
+     * @return $this
+     */
+    public function setAdExtensions(array $value = null)
+    {
+        $this->AdExtensions = $value;
 
         return $this;
     }

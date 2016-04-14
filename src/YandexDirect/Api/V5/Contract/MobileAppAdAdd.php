@@ -8,6 +8,8 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class MobileAppAdAdd
 {
 
+    protected $AdImageHash = null;
+
     protected $Text = null;
 
     protected $Title = null;
@@ -28,6 +30,29 @@ class MobileAppAdAdd
     public static function create()
     {
         return new self();
+    }
+
+    /**
+     * Gets AdImageHash.
+     *
+     * @return string|null
+     */
+    public function getAdImageHash()
+    {
+        return $this->AdImageHash;
+    }
+
+    /**
+     * Sets AdImageHash.
+     *
+     * @param string|null $value
+     * @return $this
+     */
+    public function setAdImageHash($value = null)
+    {
+        $this->AdImageHash = $value;
+
+        return $this;
     }
 
     /**
