@@ -141,9 +141,7 @@ class Generator extends BaseGenerator
         $this->log('Starting to load service ' . $service->getName());
 
         $this->service = $this->createClassGenerator($service->getName())
-            ->addConstant('ENDPOINT', $this->config->get('inputFile'))
-            ->addUse('Biplane\YandexDirect\User')
-            ->addUse('Symfony\Component\EventDispatcher\EventDispatcherInterface');
+            ->addConstant('ENDPOINT', $this->config->get('inputFile'));
 
         $baseClass = ltrim($this->config->get('baseSoapClientClass'), '\\');
 
@@ -154,6 +152,10 @@ class Generator extends BaseGenerator
         } else {
             $this->service->setExtendedClass('\\' . $baseClass);
         }
+
+        $this->service
+            ->addUse('Biplane\YandexDirect\User')
+            ->addUse('Symfony\Component\EventDispatcher\EventDispatcherInterface');
 
         $classmap = array();
 

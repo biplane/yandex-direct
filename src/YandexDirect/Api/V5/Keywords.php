@@ -2,9 +2,9 @@
 
 namespace Biplane\YandexDirect\Api\V5;
 
+use Biplane\YandexDirect\Api\V5SoapClient;
 use Biplane\YandexDirect\User;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
-use Biplane\YandexDirect\Api\V5SoapClient;
 
 /**
  * Auto-generated code.
