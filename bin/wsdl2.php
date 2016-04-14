@@ -38,6 +38,18 @@ switch ($argv->getArgument('service')) {
             'baseSoapClientClass' => 'Biplane\YandexDirect\Api\V4SoapClient'
         );
         break;
+    case 'AdExtensions':
+        $options = $defaultOptions + array(
+            'inputFile'  => 'https://api.direct.yandex.com/v5/adextensions?wsdl',
+            'renameType' => function ($typeName) {
+                return preg_replace(
+                    '#^(Add|Delete|Get)(Request|Response)$#',
+                    '$1AdExtensions$2',
+                    $typeName
+                );
+            }
+        );
+        break;
     case 'AdGroups':
         $options = $defaultOptions + array(
             'inputFile'  => 'https://api.direct.yandex.com/v5/adgroups?wsdl',
@@ -110,6 +122,30 @@ switch ($argv->getArgument('service')) {
             }
         );
         break;
+    case 'Dictionaries':
+        $options = $defaultOptions + array(
+            'inputFile'  => 'https://api.direct.yandex.com/v5/dictionaries?wsdl',
+            'renameType' => function ($typeName) {
+                return preg_replace(
+                    '#^(Get)(Request|Response)$#',
+                    '$1Dictionaries$2',
+                    $typeName
+                );
+            }
+        );
+        break;
+    case 'DynamicTextAdTargets':
+        $options = $defaultOptions + array(
+            'inputFile'  => 'https://api.direct.yandex.com/v5/dynamictextadtargets?wsdl',
+            'renameType' => function ($typeName) {
+                return preg_replace(
+                    '#^(Add|Delete|Suspend|Resume|Get|SetBids)(Request|Response)$#',
+                    '$1DynamicTextAdTargets$2',
+                    $typeName
+                );
+            }
+        );
+        break;
     case 'Keywords':
         $options = $defaultOptions + array(
             'inputFile'  => 'https://api.direct.yandex.com/v5/keywords?wsdl',
@@ -159,10 +195,13 @@ function usage(InputDefinition $definition) {
     echo '  php bin/wsdl2.php ' . $definition->getSynopsis() . PHP_EOL . PHP_EOL;
     echo '  <service> -- The name of API service. Supports:' . PHP_EOL;
     echo '               YandexApiService (version: 4 Live);' . PHP_EOL;
+    echo '               AdExtensions (version: 5);' . PHP_EOL;
     echo '               AdGroups (version: 5);' . PHP_EOL;
     echo '               Ads (version: 5);' . PHP_EOL;
     echo '               Bids (version: 5);' . PHP_EOL;
     echo '               BidModifiers (version: 5);' . PHP_EOL;
+    echo '               Dictionaries (version: 5);' . PHP_EOL;
+    echo '               DynamicTextAdTargets (version: 5);' . PHP_EOL;
     echo '               Campaigns (version: 5);' . PHP_EOL;
     echo '               Changes (version: 5);' . PHP_EOL;
     echo '               Keywords (version: 5);' . PHP_EOL;

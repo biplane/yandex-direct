@@ -1,5 +1,9 @@
 # Changelog
 
+## 3.4.0
+
+ * Добавлена поддержка сервисов `AdExtensions`, `Dictionaries` и `DynamicTextAdTargets`.
+
 ## 3.3.0 [commit logs](https://github.com/biplane/BiplaneYandexDirectBundle/compare/3.2.1...3.3.0)
 
  * В конфигурацию бандла добавлен параметр `sandbox` (`biplane_yandex_direct.sandbox`),

@@ -119,6 +119,9 @@ class UserTest extends \PHPUnit_Framework_TestCase
             array('Biplane\YandexDirect\Api\V5\Keywords', 'getKeywordsService'),
             array('Biplane\YandexDirect\Api\V5\Sitelinks', 'getSitelinksService'),
             array('Biplane\YandexDirect\Api\V5\VCards', 'getVCardsService'),
+            array('Biplane\YandexDirect\Api\V5\AdExtensions', 'getAdExtensionsService'),
+            array('Biplane\YandexDirect\Api\V5\Dictionaries', 'getDictionariesService'),
+            array('Biplane\YandexDirect\Api\V5\DynamicTextAdTargets', 'getDynamicTextAdTargetsService'),
         );
     }
 

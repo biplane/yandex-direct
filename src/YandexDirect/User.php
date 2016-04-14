@@ -3,12 +3,15 @@
 namespace Biplane\YandexDirect;
 
 use Biplane\YandexDirect\Api\V4\YandexAPIService;
+use Biplane\YandexDirect\Api\V5\AdExtensions;
 use Biplane\YandexDirect\Api\V5\AdGroups;
 use Biplane\YandexDirect\Api\V5\Ads;
 use Biplane\YandexDirect\Api\V5\BidModifiers;
 use Biplane\YandexDirect\Api\V5\Bids;
 use Biplane\YandexDirect\Api\V5\Campaigns;
 use Biplane\YandexDirect\Api\V5\Changes;
+use Biplane\YandexDirect\Api\V5\Dictionaries;
+use Biplane\YandexDirect\Api\V5\DynamicTextAdTargets;
 use Biplane\YandexDirect\Api\V5\Keywords;
 use Biplane\YandexDirect\Api\V5\Sitelinks;
 use Biplane\YandexDirect\Api\V5\VCards;
@@ -31,11 +34,14 @@ class User
     private static $classMap = array(
         'YandexApiService' => '\Biplane\YandexDirect\Api\V4\YandexAPIService',
         'AdGroups' => 'Biplane\YandexDirect\Api\V5\AdGroups',
+        'AdExtensions' => 'Biplane\YandexDirect\Api\V5\AdExtensions',
         'Ads' => 'Biplane\YandexDirect\Api\V5\Ads',
         'Bids' => 'Biplane\YandexDirect\Api\V5\Bids',
         'BidModifiers' => 'Biplane\YandexDirect\Api\V5\BidModifiers',
         'Campaigns' => 'Biplane\YandexDirect\Api\V5\Campaigns',
         'Changes' => 'Biplane\YandexDirect\Api\V5\Changes',
+        'Dictionaries' => 'Biplane\YandexDirect\Api\V5\Dictionaries',
+        'DynamicTextAdTargets' => 'Biplane\YandexDirect\Api\V5\DynamicTextAdTargets',
         'Keywords' => 'Biplane\YandexDirect\Api\V5\Keywords',
         'Sitelinks' => 'Biplane\YandexDirect\Api\V5\Sitelinks',
         'VCards' => 'Biplane\YandexDirect\Api\V5\VCards',
@@ -142,6 +148,16 @@ class User
     }
 
     /**
+     * Gets the proxy of web-service for manage ad's extensions.
+     *
+     * @return AdExtensions
+     */
+    public function getAdExtensionsService()
+    {
+        return $this->getProxy('AdExtensions');
+    }
+
+    /**
      * Gets the proxy of web-service for manage ad groups.
      *
      * @return AdGroups
@@ -199,6 +215,26 @@ class User
     public function getChangesService()
     {
         return $this->getProxy('Changes');
+    }
+
+    /**
+     * Gets the proxy of web-service for manage dictionaries.
+     *
+     * @return Dictionaries
+     */
+    public function getDictionariesService()
+    {
+        return $this->getProxy('Dictionaries');
+    }
+
+    /**
+     * Gets the proxy of web-service for manage dynamic text ads.
+     *
+     * @return DynamicTextAdTargets
+     */
+    public function getDynamicTextAdTargetsService()
+    {
+        return $this->getProxy('DynamicTextAdTargets');
     }
 
     /**
