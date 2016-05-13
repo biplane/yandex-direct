@@ -1,5 +1,10 @@
 # Changelog
 
+## master
+ 
+ * ID запроса для API версии 4 формируется на основании результата `microtime()`, 
+   для минимизации коллизий.
+
 ## 3.4.0 [commit logs](https://github.com/biplane/BiplaneYandexDirectBundle/compare/3.3.0...3.4.0)
 
  * Добавлены константы для некоторых новых ошибок.

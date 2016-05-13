@@ -41,7 +41,7 @@ class V4SoapClient extends SoapClient
      */
     public function __doRequest($request, $location, $action, $version, $oneWay = null)
     {
-        $this->requestId = md5($this->user->getHashCode() . ':' . time());
+        $this->requestId = substr(str_replace(' ', '', microtime()), 2);
 
         $response = parent::__doRequest($request, $location, $action, $version, $oneWay);
 
