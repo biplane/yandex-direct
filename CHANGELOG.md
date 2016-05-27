@@ -1,6 +1,6 @@
 # Changelog
 
-## master
+## 3.4.1 [commit logs](https://github.com/biplane/BiplaneYandexDirectBundle/compare/3.4.0...3.4.1)
 
  * Обновление контрактов данных и сервисов, для совместимости с последними изменениями
    в версиях **API 4 Live** и **API 5**.
