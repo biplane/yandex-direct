@@ -101,6 +101,7 @@ class YandexAPIService extends V4SoapClient
                 'GetChangesRequest' => 'Biplane\YandexDirect\Api\V4\Contract\GetChangesRequest',
                 'GetChangesResponse' => 'Biplane\YandexDirect\Api\V4\Contract\GetChangesResponse',
                 'GetChangesIntData' => 'Biplane\YandexDirect\Api\V4\Contract\GetChangesIntData',
+                'GetChangesLongData' => 'Biplane\YandexDirect\Api\V4\Contract\GetChangesLongData',
                 'GetChangesStringData' => 'Biplane\YandexDirect\Api\V4\Contract\GetChangesStringData',
                 'CampaignStatChangeItem' => 'Biplane\YandexDirect\Api\V4\Contract\CampaignStatChangeItem',
                 'CreateNewSubclientRequest' => 'Biplane\YandexDirect\Api\V4\Contract\CreateNewSubclientRequest',
@@ -936,4 +937,7 @@ class YandexAPIService extends V4SoapClient
     {
         return $this->invoke('GetOfflineReportList', array());
     }
+
+
 }
+

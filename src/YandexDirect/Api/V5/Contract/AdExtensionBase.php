@@ -12,6 +12,8 @@ class AdExtensionBase
 
     protected $Callout = null;
 
+    protected $State = null;
+
     protected $Status = null;
 
     protected $StatusClarification = null;
@@ -68,6 +70,29 @@ class AdExtensionBase
     public function setCallout(Callout $value = null)
     {
         $this->Callout = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets State.
+     *
+     * @return StateEnum|null
+     */
+    public function getState()
+    {
+        return $this->State;
+    }
+
+    /**
+     * Sets State.
+     *
+     * @param StateEnum|null $value
+     * @return $this
+     */
+    public function setState(StateEnum $value = null)
+    {
+        $this->State = $value;
 
         return $this;
     }

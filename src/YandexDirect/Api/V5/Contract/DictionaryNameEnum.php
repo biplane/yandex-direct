@@ -24,6 +24,8 @@ class DictionaryNameEnum
 
     const PRODUCTIVITY_ASSERTIONS = 'ProductivityAssertions';
 
+    const SUPPLY_SIDE_PLATFORMS = 'SupplySidePlatforms';
+
 
 }
 

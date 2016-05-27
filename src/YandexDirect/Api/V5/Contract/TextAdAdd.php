@@ -16,6 +16,8 @@ class TextAdAdd extends TextAdAddBase
 
     protected $Mobile = null;
 
+    protected $DisplayUrlPath = null;
+
     /**
      * Creates a new instance of TextAdAdd.
      *
@@ -114,6 +116,29 @@ class TextAdAdd extends TextAdAddBase
     public function setMobile(YesNoEnum $value)
     {
         $this->Mobile = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets DisplayUrlPath.
+     *
+     * @return string|null
+     */
+    public function getDisplayUrlPath()
+    {
+        return $this->DisplayUrlPath;
+    }
+
+    /**
+     * Sets DisplayUrlPath.
+     *
+     * @param string|null $value
+     * @return $this
+     */
+    public function setDisplayUrlPath($value = null)
+    {
+        $this->DisplayUrlPath = $value;
 
         return $this;
     }

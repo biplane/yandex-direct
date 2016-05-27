@@ -10,6 +10,8 @@ class AdExtensionGetItem extends AdExtensionBase
 
     protected $Id = null;
 
+    protected $Associated = null;
+
     /**
      * Creates a new instance of AdExtensionGetItem.
      *
@@ -39,6 +41,29 @@ class AdExtensionGetItem extends AdExtensionBase
     public function setId($value = null)
     {
         $this->Id = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets Associated.
+     *
+     * @return YesNoEnum|null
+     */
+    public function getAssociated()
+    {
+        return $this->Associated;
+    }
+
+    /**
+     * Sets Associated.
+     *
+     * @param YesNoEnum|null $value
+     * @return $this
+     */
+    public function setAssociated(YesNoEnum $value = null)
+    {
+        $this->Associated = $value;
 
         return $this;
     }

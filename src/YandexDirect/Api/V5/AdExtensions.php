@@ -52,6 +52,8 @@ class AdExtensions extends V5SoapClient
                 'MultiIdsActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\MultiIdsActionResult',
                 'ExtensionModeration' => 'Biplane\YandexDirect\Api\V5\Contract\ExtensionModeration',
                 'AdExtensionTypeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AdExtensionTypeEnum',
+                'AdExtensionStateSelectionEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AdExtensionStateSelectionEnum',
+                'AdExtensionStatusSelectionEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AdExtensionStatusSelectionEnum',
                 'Callout' => 'Biplane\YandexDirect\Api\V5\Contract\Callout',
                 'AdExtensionBase' => 'Biplane\YandexDirect\Api\V5\Contract\AdExtensionBase',
                 'AdExtension' => 'Biplane\YandexDirect\Api\V5\Contract\AdExtension',
@@ -65,7 +67,9 @@ class AdExtensions extends V5SoapClient
                 'GetRequest' => 'Biplane\YandexDirect\Api\V5\Contract\GetAdExtensionsRequest',
                 'GetResponse' => 'Biplane\YandexDirect\Api\V5\Contract\GetAdExtensionsResponse',
                 'AddRequest' => 'Biplane\YandexDirect\Api\V5\Contract\AddAdExtensionsRequest',
-                'AddResponse' => 'Biplane\YandexDirect\Api\V5\Contract\AddAdExtensionsResponse'
+                'AddResponse' => 'Biplane\YandexDirect\Api\V5\Contract\AddAdExtensionsResponse',
+                'DeleteRequest' => 'Biplane\YandexDirect\Api\V5\Contract\DeleteAdExtensionsRequest',
+                'DeleteResponse' => 'Biplane\YandexDirect\Api\V5\Contract\DeleteAdExtensionsResponse'
             )
         ));
     }
@@ -90,6 +94,17 @@ class AdExtensions extends V5SoapClient
     public function get(Contract\GetAdExtensionsRequest $parameters)
     {
         return $this->invoke('get', array($parameters));
+    }
+
+    /**
+     * delete.
+     *
+     * @param Contract\DeleteAdExtensionsRequest $parameters
+     * @return Contract\DeleteAdExtensionsResponse
+     */
+    public function delete(Contract\DeleteAdExtensionsRequest $parameters)
+    {
+        return $this->invoke('delete', array($parameters));
     }
 
 

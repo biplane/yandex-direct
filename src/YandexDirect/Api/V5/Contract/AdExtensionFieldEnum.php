@@ -12,9 +12,13 @@ class AdExtensionFieldEnum
 
     const TYPE = 'Type';
 
+    const STATE = 'State';
+
     const STATUS = 'Status';
 
     const STATUS_CLARIFICATION = 'StatusClarification';
+
+    const ASSOCIATED = 'Associated';
 
 
 }

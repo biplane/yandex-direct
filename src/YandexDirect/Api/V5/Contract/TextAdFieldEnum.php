@@ -24,6 +24,8 @@ class TextAdFieldEnum
 
     const V_CARD_ID = 'VCardId';
 
+    const DISPLAY_URL_PATH = 'DisplayUrlPath';
+
     const AD_IMAGE_MODERATION = 'AdImageModeration';
 
     const SITELINKS_MODERATION = 'SitelinksModeration';
@@ -31,6 +33,8 @@ class TextAdFieldEnum
     const V_CARD_MODERATION = 'VCardModeration';
 
     const AD_EXTENSIONS = 'AdExtensions';
+
+    const DISPLAY_URL_PATH_MODERATION = 'DisplayUrlPathModeration';
 
 
 }

@@ -60,7 +60,7 @@ class GetChangesResponse
     /**
      * Gets Banners.
      *
-     * @return GetChangesIntData|null
+     * @return GetChangesLongData|null
      */
     public function getBanners()
     {
@@ -70,10 +70,10 @@ class GetChangesResponse
     /**
      * Sets Banners.
      *
-     * @param GetChangesIntData|null $value
+     * @param GetChangesLongData|null $value
      * @return $this
      */
-    public function setBanners(GetChangesIntData $value = null)
+    public function setBanners(GetChangesLongData $value = null)
     {
         $this->Banners = $value;
 

@@ -60,6 +60,7 @@ class Dictionaries extends V5SoapClient
                 'AdCategoriesItem' => 'Biplane\YandexDirect\Api\V5\Contract\AdCategoriesItem',
                 'OperationSystemVersionsItem' => 'Biplane\YandexDirect\Api\V5\Contract\OperationSystemVersionsItem',
                 'ProductivityAssertionsItem' => 'Biplane\YandexDirect\Api\V5\Contract\ProductivityAssertionsItem',
+                'SupplySidePlatformsItem' => 'Biplane\YandexDirect\Api\V5\Contract\SupplySidePlatformsItem',
                 'GetRequest' => 'Biplane\YandexDirect\Api\V5\Contract\GetDictionariesRequest',
                 'GetResponse' => 'Biplane\YandexDirect\Api\V5\Contract\GetDictionariesResponse'
             )

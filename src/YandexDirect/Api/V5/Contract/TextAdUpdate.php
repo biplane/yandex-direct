@@ -16,6 +16,8 @@ class TextAdUpdate extends TextAdUpdateBase
 
     protected $AgeLabel = null;
 
+    protected $DisplayUrlPath = null;
+
     /**
      * Creates a new instance of TextAdUpdate.
      *
@@ -114,6 +116,29 @@ class TextAdUpdate extends TextAdUpdateBase
     public function setAgeLabel(AgeLabelEnum $value = null)
     {
         $this->AgeLabel = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets DisplayUrlPath.
+     *
+     * @return string|null
+     */
+    public function getDisplayUrlPath()
+    {
+        return $this->DisplayUrlPath;
+    }
+
+    /**
+     * Sets DisplayUrlPath.
+     *
+     * @param string|null $value
+     * @return $this
+     */
+    public function setDisplayUrlPath($value = null)
+    {
+        $this->DisplayUrlPath = $value;
 
         return $this;
     }

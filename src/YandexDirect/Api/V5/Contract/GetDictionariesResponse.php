@@ -24,6 +24,8 @@ class GetDictionariesResponse
 
     protected $ProductivityAssertions = null;
 
+    protected $SupplySidePlatforms = null;
+
     /**
      * Creates a new instance of GetDictionariesResponse.
      *
@@ -214,6 +216,29 @@ class GetDictionariesResponse
     public function setProductivityAssertions(array $value = null)
     {
         $this->ProductivityAssertions = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets SupplySidePlatforms.
+     *
+     * @return SupplySidePlatformsItem[]|null
+     */
+    public function getSupplySidePlatforms()
+    {
+        return $this->SupplySidePlatforms;
+    }
+
+    /**
+     * Sets SupplySidePlatforms.
+     *
+     * @param SupplySidePlatformsItem[]|null $value
+     * @return $this
+     */
+    public function setSupplySidePlatforms(array $value = null)
+    {
+        $this->SupplySidePlatforms = $value;
 
         return $this;
     }

@@ -18,6 +18,10 @@ class TextAdGet extends TextAdGetBase
 
     protected $DisplayDomain = null;
 
+    protected $DisplayUrlPath = null;
+
+    protected $DisplayUrlPathModeration = null;
+
     /**
      * Creates a new instance of TextAdGet.
      *
@@ -139,6 +143,52 @@ class TextAdGet extends TextAdGetBase
     public function setDisplayDomain($value = null)
     {
         $this->DisplayDomain = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets DisplayUrlPath.
+     *
+     * @return string|null
+     */
+    public function getDisplayUrlPath()
+    {
+        return $this->DisplayUrlPath;
+    }
+
+    /**
+     * Sets DisplayUrlPath.
+     *
+     * @param string|null $value
+     * @return $this
+     */
+    public function setDisplayUrlPath($value = null)
+    {
+        $this->DisplayUrlPath = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets DisplayUrlPathModeration.
+     *
+     * @return ExtensionModeration|null
+     */
+    public function getDisplayUrlPathModeration()
+    {
+        return $this->DisplayUrlPathModeration;
+    }
+
+    /**
+     * Sets DisplayUrlPathModeration.
+     *
+     * @param ExtensionModeration|null $value
+     * @return $this
+     */
+    public function setDisplayUrlPathModeration(ExtensionModeration $value = null)
+    {
+        $this->DisplayUrlPathModeration = $value;
 
         return $this;
     }

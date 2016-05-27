@@ -12,7 +12,11 @@ class AdExtensionsSelectionCriteria
 
     protected $Types = null;
 
+    protected $States = null;
+
     protected $Statuses = null;
+
+    protected $ModifiedSince = null;
 
     /**
      * Creates a new instance of AdExtensionsSelectionCriteria.
@@ -71,6 +75,29 @@ class AdExtensionsSelectionCriteria
     }
 
     /**
+     * Gets States.
+     *
+     * @return AdExtensionStateSelectionEnum[]|null
+     */
+    public function getStates()
+    {
+        return $this->States;
+    }
+
+    /**
+     * Sets States.
+     *
+     * @param AdExtensionStateSelectionEnum[]|null $value
+     * @return $this
+     */
+    public function setStates(array $value = null)
+    {
+        $this->States = $value;
+
+        return $this;
+    }
+
+    /**
      * Gets Statuses.
      *
      * @return ExtensionStatusSelectionEnum[]|null
@@ -89,6 +116,29 @@ class AdExtensionsSelectionCriteria
     public function setStatuses(array $value = null)
     {
         $this->Statuses = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets ModifiedSince.
+     *
+     * @return string|null
+     */
+    public function getModifiedSince()
+    {
+        return $this->ModifiedSince;
+    }
+
+    /**
+     * Sets ModifiedSince.
+     *
+     * @param string|null $value
+     * @return $this
+     */
+    public function setModifiedSince($value = null)
+    {
+        $this->ModifiedSince = $value;
 
         return $this;
     }
