@@ -8,7 +8,7 @@
     "kriswallsmith/buzz": "~0.12"
   },
   "require-dev": {
-    "php": ">=5.4",
+    "phpunit/phpunit": "~5.3",
     "symfony/console": "~2.3",
     "symfony/framework-bundle": "~2.3",
     "lstrojny/phpunit-function-mocker": "^0.2.0",
