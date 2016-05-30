@@ -1,46 +1,21 @@
-# BiplaneYandexDirect
+# Yandex.Direct API PHP Client
 
-Предоставляет инструменты для работы с API Яндекс.Директа.
+PHP library for [Yandex.Direct API](https://tech.yandex.ru/direct/).
 
+## Requirements
 
-## Установка
+ * PHP >= 5.3.3
+ * ext-soap
 
-В `composer.json` необходимо добавить:
+## Installation
 
-```
-{
-  ...
-  "repositories: [{
-    "type": "vcs",
-    "url": "git@github.com:biplane/yandex-direct.git"
-  }],
-  ...
-  "require": {
-    ...
-    "biplane/yandex-direct": "~3.0"
-  }
-}
-```
-
-И обновить пакеты:
+You may install this library via [Composer](https://getcomposer.org/).
 
 ```bash
-$ composer install
+$ composer require biplane/yandex-direct
 ```
 
-
-## Использование
-
-При использовании как отдельной библиотеки необходимо создать экземпляр `User`, где
-в опциях необходимо передать Access Token, для авторизации на серверах API.
-
-Через этот объект можно работать с сервисами API. Поддерживаемые версии: **4 Live** и **5**.
-
-**Загрузка объявлений с использованием веб-сервиса [Ads](https://tech.yandex.ru/direct/doc/ref-v5/ads/ads-docpage/)**
-
-В данном примере результатом будет массив всех включенных объявлений для рекламной кампании № 123.
-Метод сервиса возвращает объект `GetAdResponse`, у которого есть метод `getAds`. Последний вернет
-массив объектов `Biplane\YandexDirect\Api\V5\Contract\AdGetItem`.
+## Basic usage
 
 ```php
 <?php
@@ -52,7 +27,9 @@ use Biplane\YandexDirect\Api\V5\Contract\StateEnum;
 use Biplane\YandexDirect\User;
 
 $user = new User(array(
-    'access_token' => '<access_token>'
+    'access_token' => 'INSERT_YOUR_ACCESS_TOKEN',
+    'login' => 'YANDEX_DIRECT_CLIENT_LOGIN',
+    'locale' => User::LOCALE_RU,
 ));
 
 $criteria = AdsSelectionCriteria::create()
@@ -76,103 +53,92 @@ foreach ($response->getAds() as $ad) {
 }
 ```
 
+In this example will be fetched all actived ads for campaign with ID 123.
 
-## Опции
+## Options
 
-При создании нового экземпляра класса `Biplane\YandexDirect\User`, первым аргументом
-можно передать ассоциативный массив с опциями для данного экземпляра. Ниже перечислены
-поддерживаемые опции:
+The `Biplane\YandexDirect\User` object supported some options:
 
-**access_token** (обязательный параметр) - должен содержать маркер доступа для OAuth-авторизации. 
-[Авторизационные токены](https://tech.yandex.ru/direct/doc/dg-v4/concepts/auth-token-docpage/)
+#### access_token 
 
-**locale** (по умолчанию `en`) - задает язык ответных сообщений (статусы кампаний или баннеров; сообщения об ошибках). 
-Доступные значения: `ru`, `ua` и `en`. Рекомендуется использовать константы `User::LOCALE_???`.
+**Required**
 
-**master_token** - мастер-токен необходим для доступа к финансовым методам. 
-[Доступ к финансовым методам](https://tech.yandex.ru/direct/doc/dg-v4/concepts/finance-token-docpage/)
-
-**login** - логин, для которого задан **master_token**. Обязателен, если задан **master_token**.
-Так же, эта опция **обязательна** при работе с API версии 5, когда используется **access_token**
-для агентского аккаунта. В этом случае необходимо указывать клиентский логин, с рекламными кампаниями
-которого подразумевается работать через API. Подробнее можно почитать [тут](https://tech.yandex.ru/direct/doc/dg/concepts/headers-docpage/#request).
+The [access token](https://tech.yandex.ru/direct/doc/dg-v4/concepts/auth-token-docpage/) for OAuth 
 
 
-## Обработчики событий
+#### locale
+
+Default: `en`
+
+You can specify the locale for messages from API. Allowed values: `ru`, `ua` or `en`.
+
+#### master_token
+ 
+The master token needs for [access to financial methods](https://tech.yandex.ru/direct/doc/dg-v4/concepts/finance-token-docpage/). 
+
+#### login
+ 
+**Required** in some cases.
+
+The [client login](https://tech.yandex.ru/direct/doc/dg/concepts/headers-docpage/#request). 
+It's required for financial operations and when a request is made on behalf of the agency.
+
+## Event listeners
 
 ### ConcurrentListener
 
-Позволяет контроллировать количество одновременных подключений к API для одного пользователя (`User`)
-в рамках приложения. Если данный обработчик зарегестрирован, то перед каждым обращением к API будет 
-запрашиваться блокировка, и только после успешного получения блокировки будет выполнен запрос к API. 
+This listener limits the number of simultaneous connections to API within the app. 
+For this feature used Semaphore of [System V](http://docs.php.net/manual/en/book.sem.php).
 
-> Под ОС Windows работать не будет. Для работы данного функционала в PHP должно быть 
- доступно [расширение для работы с функциями System V](http://docs.php.net/manual/en/book.sem.php).
+> **NOTE:** Not available for Windows OS.
  
-Если приложение работает только с одним экземпляром `User`, то зарегестрировать обработчик можно так:
-
 ```php
 use Biplane\SysV\Factory;
 use Biplane\YandexDirect\EventListener\ConcurrentListener;
 
-$factory = new Factory('/var/ipc'); // задается директория, куда будут писаться файлы-токены
-                                    // для формирования ключей для семейства функций System V IPC
-                                    
+$factory = new Factory('/var/ipc');
+
 $listener = new ConcurrentListener($factory, 10);
 
 $user->getDispatcher()->addSubscriber($listener);
 ```
 
-Вторым аргументом в конструктор передается число (от 1 до 12), указывающее на максимальное
-количество одновременных запросов к API.
+The number of max connections (from 1 to 12) passed to the constuctor of `ConcurrentListener`
+as the second argument.  
 
 ### DumpListener
 
-Позволяет сохранять сетевую информацию, связанную с вызовом какого-либо метода API. Данный обработчик
-сохраняет заголовки и контент HTTP-запроса и ответа от сервера на диске. Имена файлов будут
-формироваться на основании ID запроса. 
+This listener allows write to file info about request and response from server. File names generated 
+on the basis of the [request identifier](https://tech.yandex.ru/direct/doc/dg/concepts/headers-docpage/#response)
 
-Например, если идентификатор запроса — `f812d307e856329329f739a09ea7ee10`, то будут созданы два файла
-в поддиректории, относительно указанной в конструкторе `DumpListener`:
+> **NOTE**: The request identifier will be generated on client side for API 4 requests.
 
-    f8/1/f812d307e856329329f739a09ea7ee10_req.data
-    f8/1/f812d307e856329329f739a09ea7ee10_resp.data
+Instance, for the RequestId `806811001464643172` will be created two files:
 
-> Получить ID запроса в какой-либо части приложения, например чтобы записать в лог, можно через объект события, 
-`FailCallEvent`, когда вызов метода API завершился с ошибкой, или `PostCallEvent`, когда вызов метода API 
-завершился успешно. Необходимо написать свой обработчик событий и подписаться на события 
-`biplane_yandex_direct.after_request` и `biplane_yandex_direct.fail_request`. 
+    80/6/806811001464643172_req.data
+    80/6/806811001464643172_resp.data
 
-Пример регистрации обработчика событий `DumpListener`, когда приложение работает с одним объектом `User`:
+You can get the RequestId from service instance or via the event object inside an event listener.
 
 ```php
 use Biplane\YandexDirect\EventListener\DumpListener;
 
-$listener = new DumpListener('/var/dumps');
+$listener = new DumpListener('/var/dumps', DumpListener::LEVEL_ALL_REQUEST);
 
 $user->getDispatcher()->addSubscriber($listener);
 ```
 
-Первым аргументом передаем путь, куда будут сохраняться файлы с дампом. 
+You can specify which requests should be dumped, all (`LEVEL_ALL_REQUEST`) or only with errors (`LEVEL_FAIL_REQUEST`).
 
-Так же вторым аргументом можно указать какие именно запросы записывать. По умолчанию записываются все запросы. 
-Используйте константы для данного аргумента:
+## Integration with Symfony
 
- * `DumpListener::LEVEL_FAIL_REQUEST` - будут записываться только те вызовы API, которые завершились с ошибкой.
- 
- * `DumpListener::LEVEL_ALL_REQUEST` - будут записываться все вызовы API.
+This project contains bundle for integration with Symfony framework.
 
+> **NOTE:** The bundle compatible with Symfony 2.3 or higher.
 
-## Интеграция с Symfony
+### Installation
 
-Для интеграции в проект на Symfony можно использовать бандл - `BiplaneYandexDirectBundle`.
-
-> NOTE: Бандл совместим с Symfony версии 2.3 и выше.
- 
-
-### Установка
-
-Зарегестрируйте bundle в `app/AppKernel`:
+Add the bundle to `app/AppKernel.php`:
 
     public function registerBundles()
     {
@@ -183,7 +149,7 @@ $user->getDispatcher()->addSubscriber($listener);
         )
     };
 
-### Конфигурация
+### Bundle configuration
 
 ```yaml
 biplane_yandex_direct:
@@ -222,48 +188,4 @@ biplane_yandex_direct:
         directory:            '%kernel.cache_dir%/ipc'
 ```
 
-Если не задавать `auth.app_id` и `auth.app_secret`, то сервис `biplane_yandex_direct.auth` будет недоступен.
-
-В секции `biplane_yandex_direct.user` можно задать опции для доступа к API по умолчанию. Может быть удобно
-в случаях, когда приложение работает только с одним Яндекс-аккаунтом. Не нужно придумывать, где хранить
-маркер доступа и другие опции.
-
-
-## Разработка
-
-### Автоматическое тестирование
-
-Запуск набора тестов:
-
-```bash
-$ vendor/bin/phpunit
-```
-
-Для изменения конфигурации PHPUnit для вашего окружения, скопируйте `phpunit.xml.dist`
-в `phpunit.xml` и добавьте свои настройки в phpunit.xml.
-
-
-## OAuth
-
-Для получения авторизационного токена необходимо иметь идентификатор приложения (`application_id`).
-Если его нет, необходимо сперва [зарегистрировать приложение](http://api.yandex.ru/oauth/doc/dg/tasks/register-client.xml).
-
-> Если токен будет храниться в конфиге, то рекомендуется при регистрации приложения включить опцию *Клиент для разработки*
-
-### Получение токена
-
-Для получения токена необходимо в браузере перейти по этому адресу:
-
-    https://oauth.yandex.ru/authorize?response_type=token&client_id=<client_id>
-
-Где, `<client_id>` нужно заменить на идентификатор приложения.
-
-Далее необходимо авторизоваться под аккаунтом Яндекса, для которого предоставляется доступ к API,
-и поддтвердить доступ к Яндекс.Директу. После этого сервер перенаправит на страницу, и в адресе
-будут добавлены параметры:
-
-    #access_token=<token>[&expires_in=<seconds>][&state=<state>]
-
-Значение `<token>` нужно сохранить в конфиге и в последствии использовать при создании экземпляра `User`.
-
-[Официальная документация](http://api.yandex.ru/oauth/doc/dg/concepts/authorization-scheme.xml)
+DI service `biplane_yandex_direct.auth` will not be registered, if `biplane_yandex_direct.auth` is not configured.
