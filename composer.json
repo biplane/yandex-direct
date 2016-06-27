@@ -1,6 +1,19 @@
 {
   "name": "biplane/yandex-direct",
   "type": "library",
+  "description": "PHP library for Yandex.Direct API",
+  "keywords": ["yandex", "yandex.direct", "Яндекс.Директ", "sdk"],
+  "authors": [
+    {
+      "name": "Denis",
+      "email": "liquid.yethee@hotmail.com"
+    },
+    {
+      "name": "Contributors",
+      "homepage": "https://github.com/biplane/yandex-direct/graphs/contributors"
+    }
+  ],
+  "license": "MIT",
   "require": {
     "php": ">=5.3.3",
     "symfony/options-resolver": "~2.3",
