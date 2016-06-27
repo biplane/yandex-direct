@@ -1,10 +1,10 @@
-# Yandex.Direct API PHP Client
+# Yandex.Direct API PHP Client [![Build Status](https://travis-ci.org/biplane/yandex-direct.svg?branch=master)](https://travis-ci.org/biplane/yandex-direct)
 
 PHP library for [Yandex.Direct API](https://tech.yandex.ru/direct/).
 
 ## Requirements
 
- * PHP >= 5.3.3
+ * PHP >= 5.4
  * ext-soap
 
 ## Installation
