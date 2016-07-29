@@ -61,7 +61,7 @@ class DailyBudget
      * @param DailyBudgetModeEnum $value
      * @return $this
      */
-    public function setMode(DailyBudgetModeEnum $value)
+    public function setMode($value)
     {
         $this->Mode = $value;
 

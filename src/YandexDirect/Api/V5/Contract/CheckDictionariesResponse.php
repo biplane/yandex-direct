@@ -40,7 +40,7 @@ class CheckDictionariesResponse
      * @param YesNoEnum|null $value
      * @return $this
      */
-    public function setTimeZonesChanged(YesNoEnum $value = null)
+    public function setTimeZonesChanged($value = null)
     {
         $this->TimeZonesChanged = $value;
 
@@ -63,7 +63,7 @@ class CheckDictionariesResponse
      * @param YesNoEnum|null $value
      * @return $this
      */
-    public function setRegionsChanged(YesNoEnum $value = null)
+    public function setRegionsChanged($value = null)
     {
         $this->RegionsChanged = $value;
 

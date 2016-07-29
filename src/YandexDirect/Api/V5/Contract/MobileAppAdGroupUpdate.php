@@ -63,7 +63,7 @@ class MobileAppAdGroupUpdate
      * @param TargetCarrierEnum|null $value
      * @return $this
      */
-    public function setTargetCarrier(TargetCarrierEnum $value = null)
+    public function setTargetCarrier($value = null)
     {
         $this->TargetCarrier = $value;
 

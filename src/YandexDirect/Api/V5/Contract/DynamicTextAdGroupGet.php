@@ -61,7 +61,7 @@ class DynamicTextAdGroupGet
      * @param DomainUrlProcessingStatusEnum|null $value
      * @return $this
      */
-    public function setDomainUrlProcessingStatus(DomainUrlProcessingStatusEnum $value = null)
+    public function setDomainUrlProcessingStatus($value = null)
     {
         $this->DomainUrlProcessingStatus = $value;
 

@@ -147,7 +147,7 @@ class CampaignGetItem extends CampaignBase
      * @param CampaignTypeGetEnum|null $value
      * @return $this
      */
-    public function setType(CampaignTypeGetEnum $value = null)
+    public function setType($value = null)
     {
         $this->Type = $value;
 
@@ -170,7 +170,7 @@ class CampaignGetItem extends CampaignBase
      * @param StatusEnum|null $value
      * @return $this
      */
-    public function setStatus(StatusEnum $value = null)
+    public function setStatus($value = null)
     {
         $this->Status = $value;
 
@@ -193,7 +193,7 @@ class CampaignGetItem extends CampaignBase
      * @param CampaignStateGetEnum|null $value
      * @return $this
      */
-    public function setState(CampaignStateGetEnum $value = null)
+    public function setState($value = null)
     {
         $this->State = $value;
 
@@ -216,7 +216,7 @@ class CampaignGetItem extends CampaignBase
      * @param CampaignStatusPaymentEnum|null $value
      * @return $this
      */
-    public function setStatusPayment(CampaignStatusPaymentEnum $value = null)
+    public function setStatusPayment($value = null)
     {
         $this->StatusPayment = $value;
 
@@ -308,7 +308,7 @@ class CampaignGetItem extends CampaignBase
      * @param CurrencyEnum|null $value
      * @return $this
      */
-    public function setCurrency(CurrencyEnum $value = null)
+    public function setCurrency($value = null)
     {
         $this->Currency = $value;
 

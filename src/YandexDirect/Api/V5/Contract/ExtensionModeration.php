@@ -38,7 +38,7 @@ class ExtensionModeration
      * @param StatusEnum $value
      * @return $this
      */
-    public function setStatus(StatusEnum $value)
+    public function setStatus($value)
     {
         $this->Status = $value;
 

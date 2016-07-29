@@ -119,7 +119,7 @@ class BidModifierGetItem
      * @param BidModifierLevelEnum|null $value
      * @return $this
      */
-    public function setLevel(BidModifierLevelEnum $value = null)
+    public function setLevel($value = null)
     {
         $this->Level = $value;
 
@@ -142,7 +142,7 @@ class BidModifierGetItem
      * @param BidModifierTypeEnum|null $value
      * @return $this
      */
-    public function setType(BidModifierTypeEnum $value = null)
+    public function setType($value = null)
     {
         $this->Type = $value;
 

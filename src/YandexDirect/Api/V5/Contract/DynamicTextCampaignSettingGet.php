@@ -38,7 +38,7 @@ class DynamicTextCampaignSettingGet
      * @param DynamicTextCampaignSettingsGetEnum $value
      * @return $this
      */
-    public function setOption(DynamicTextCampaignSettingsGetEnum $value)
+    public function setOption($value)
     {
         $this->Option = $value;
 
@@ -61,7 +61,7 @@ class DynamicTextCampaignSettingGet
      * @param YesNoEnum $value
      * @return $this
      */
-    public function setValue(YesNoEnum $value)
+    public function setValue($value)
     {
         $this->Value = $value;
 

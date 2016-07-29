@@ -38,7 +38,7 @@ class TextCampaignNetworkStrategyAdd extends TextCampaignStrategyAddBase
      * @param TextCampaignNetworkStrategyTypeEnum $value
      * @return $this
      */
-    public function setBiddingStrategyType(TextCampaignNetworkStrategyTypeEnum $value)
+    public function setBiddingStrategyType($value)
     {
         $this->BiddingStrategyType = $value;
 

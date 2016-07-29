@@ -36,7 +36,7 @@ class DynamicTextCampaignNetworkStrategyAdd
      * @param DynamicTextCampaignNetworkStrategyTypeEnum $value
      * @return $this
      */
-    public function setBiddingStrategyType(DynamicTextCampaignNetworkStrategyTypeEnum $value)
+    public function setBiddingStrategyType($value)
     {
         $this->BiddingStrategyType = $value;
 

@@ -94,7 +94,7 @@ class MobileAppAdGroupGet
      * @param TargetCarrierEnum|null $value
      * @return $this
      */
-    public function setTargetCarrier(TargetCarrierEnum $value = null)
+    public function setTargetCarrier($value = null)
     {
         $this->TargetCarrier = $value;
 
@@ -163,7 +163,7 @@ class MobileAppAdGroupGet
      * @param MobileOperatingSystemTypeEnum|null $value
      * @return $this
      */
-    public function setAppOperatingSystemType(MobileOperatingSystemTypeEnum $value = null)
+    public function setAppOperatingSystemType($value = null)
     {
         $this->AppOperatingSystemType = $value;
 
@@ -186,7 +186,7 @@ class MobileAppAdGroupGet
      * @param AppAvailabilityStatusEnum|null $value
      * @return $this
      */
-    public function setAppAvailabilityStatus(AppAvailabilityStatusEnum $value = null)
+    public function setAppAvailabilityStatus($value = null)
     {
         $this->AppAvailabilityStatus = $value;
 

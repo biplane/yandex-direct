@@ -38,7 +38,7 @@ class TextCampaignSetting
      * @param TextCampaignSettingsEnum $value
      * @return $this
      */
-    public function setOption(TextCampaignSettingsEnum $value)
+    public function setOption($value)
     {
         $this->Option = $value;
 
@@ -61,7 +61,7 @@ class TextCampaignSetting
      * @param YesNoEnum $value
      * @return $this
      */
-    public function setValue(YesNoEnum $value)
+    public function setValue($value)
     {
         $this->Value = $value;
 

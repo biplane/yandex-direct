@@ -113,7 +113,7 @@ class EmailSettings
      * @param YesNoEnum|null $value
      * @return $this
      */
-    public function setSendAccountNews(YesNoEnum $value = null)
+    public function setSendAccountNews($value = null)
     {
         $this->SendAccountNews = $value;
 
@@ -136,7 +136,7 @@ class EmailSettings
      * @param YesNoEnum|null $value
      * @return $this
      */
-    public function setSendWarnings(YesNoEnum $value = null)
+    public function setSendWarnings($value = null)
     {
         $this->SendWarnings = $value;
 

@@ -88,7 +88,7 @@ class RetargetingAdjustmentGet
      * @param YesNoEnum|null $value
      * @return $this
      */
-    public function setAccessible(YesNoEnum $value = null)
+    public function setAccessible($value = null)
     {
         $this->Accessible = $value;
 
@@ -111,7 +111,7 @@ class RetargetingAdjustmentGet
      * @param YesNoEnum|null $value
      * @return $this
      */
-    public function setEnabled(YesNoEnum $value = null)
+    public function setEnabled($value = null)
     {
         $this->Enabled = $value;
 

@@ -25,7 +25,7 @@ class BidSetAutoItem
     protected $ContextCoverage = null;
 
     protected $Scope = array(
-        
+
     );
 
     /**
@@ -146,7 +146,7 @@ class BidSetAutoItem
      * @param PositionEnum|null $value
      * @return $this
      */
-    public function setPosition(PositionEnum $value = null)
+    public function setPosition($value = null)
     {
         $this->Position = $value;
 
@@ -192,7 +192,7 @@ class BidSetAutoItem
      * @param CalculateByEnum|null $value
      * @return $this
      */
-    public function setCalculateBy(CalculateByEnum $value = null)
+    public function setCalculateBy($value = null)
     {
         $this->CalculateBy = $value;
 

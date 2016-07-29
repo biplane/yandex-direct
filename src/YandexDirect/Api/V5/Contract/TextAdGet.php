@@ -117,7 +117,7 @@ class TextAdGet extends TextAdGetBase
      * @param YesNoEnum|null $value
      * @return $this
      */
-    public function setMobile(YesNoEnum $value = null)
+    public function setMobile($value = null)
     {
         $this->Mobile = $value;
 

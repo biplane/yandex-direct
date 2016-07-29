@@ -113,7 +113,7 @@ class MobileAppAdBase
      * @param MobileAppAdActionEnum|null $value
      * @return $this
      */
-    public function setAction(MobileAppAdActionEnum $value = null)
+    public function setAction($value = null)
     {
         $this->Action = $value;
 

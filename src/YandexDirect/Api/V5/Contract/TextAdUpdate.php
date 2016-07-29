@@ -113,7 +113,7 @@ class TextAdUpdate extends TextAdUpdateBase
      * @param AgeLabelEnum|null $value
      * @return $this
      */
-    public function setAgeLabel(AgeLabelEnum $value = null)
+    public function setAgeLabel($value = null)
     {
         $this->AgeLabel = $value;
 

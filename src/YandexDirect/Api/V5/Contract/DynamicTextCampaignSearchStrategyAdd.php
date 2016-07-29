@@ -36,7 +36,7 @@ class DynamicTextCampaignSearchStrategyAdd extends DynamicTextCampaignStrategyAd
      * @param DynamicTextCampaignSearchStrategyTypeEnum $value
      * @return $this
      */
-    public function setBiddingStrategyType(DynamicTextCampaignSearchStrategyTypeEnum $value)
+    public function setBiddingStrategyType($value)
     {
         $this->BiddingStrategyType = $value;
 

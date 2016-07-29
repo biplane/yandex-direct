@@ -42,7 +42,7 @@ class DemographicsAdjustmentGet
      * @param GenderEnum|null $value
      * @return $this
      */
-    public function setGender(GenderEnum $value = null)
+    public function setGender($value = null)
     {
         $this->Gender = $value;
 
@@ -65,7 +65,7 @@ class DemographicsAdjustmentGet
      * @param AgeRangeEnum|null $value
      * @return $this
      */
-    public function setAge(AgeRangeEnum $value = null)
+    public function setAge($value = null)
     {
         $this->Age = $value;
 
@@ -111,7 +111,7 @@ class DemographicsAdjustmentGet
      * @param YesNoEnum|null $value
      * @return $this
      */
-    public function setEnabled(YesNoEnum $value = null)
+    public function setEnabled($value = null)
     {
         $this->Enabled = $value;
 

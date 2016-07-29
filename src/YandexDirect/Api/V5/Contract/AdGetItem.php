@@ -127,7 +127,7 @@ class AdGetItem
      * @param StatusEnum|null $value
      * @return $this
      */
-    public function setStatus(StatusEnum $value = null)
+    public function setStatus($value = null)
     {
         $this->Status = $value;
 
@@ -150,7 +150,7 @@ class AdGetItem
      * @param StateEnum|null $value
      * @return $this
      */
-    public function setState(StateEnum $value = null)
+    public function setState($value = null)
     {
         $this->State = $value;
 
@@ -219,7 +219,7 @@ class AdGetItem
      * @param AgeLabelEnum|null $value
      * @return $this
      */
-    public function setAgeLabel(AgeLabelEnum $value = null)
+    public function setAgeLabel($value = null)
     {
         $this->AgeLabel = $value;
 
@@ -242,7 +242,7 @@ class AdGetItem
      * @param AdTypeEnum|null $value
      * @return $this
      */
-    public function setType(AdTypeEnum $value = null)
+    public function setType($value = null)
     {
         $this->Type = $value;
 

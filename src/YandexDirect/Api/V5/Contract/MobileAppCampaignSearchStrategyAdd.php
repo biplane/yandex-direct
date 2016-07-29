@@ -36,7 +36,7 @@ class MobileAppCampaignSearchStrategyAdd extends MobileAppCampaignStrategyAddBas
      * @param MobileAppCampaignSearchStrategyTypeEnum $value
      * @return $this
      */
-    public function setBiddingStrategyType(MobileAppCampaignSearchStrategyTypeEnum $value)
+    public function setBiddingStrategyType($value)
     {
         $this->BiddingStrategyType = $value;
 

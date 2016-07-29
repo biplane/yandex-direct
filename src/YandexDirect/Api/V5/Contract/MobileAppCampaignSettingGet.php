@@ -38,7 +38,7 @@ class MobileAppCampaignSettingGet
      * @param MobileAppCampaignSettingsGetEnum $value
      * @return $this
      */
-    public function setOption(MobileAppCampaignSettingsGetEnum $value)
+    public function setOption($value)
     {
         $this->Option = $value;
 
@@ -61,7 +61,7 @@ class MobileAppCampaignSettingGet
      * @param YesNoEnum $value
      * @return $this
      */
-    public function setValue(YesNoEnum $value)
+    public function setValue($value)
     {
         $this->Value = $value;
 

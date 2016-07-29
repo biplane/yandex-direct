@@ -194,7 +194,7 @@ class WebpageGetItem
      * @param PriorityEnum|null $value
      * @return $this
      */
-    public function setStrategyPriority(PriorityEnum $value = null)
+    public function setStrategyPriority($value = null)
     {
         $this->StrategyPriority = $value;
 
@@ -217,7 +217,7 @@ class WebpageGetItem
      * @param StateEnum|null $value
      * @return $this
      */
-    public function setState(StateEnum $value = null)
+    public function setState($value = null)
     {
         $this->State = $value;
 
@@ -286,7 +286,7 @@ class WebpageGetItem
      * @param WebpageTypeEnum|null $value
      * @return $this
      */
-    public function setConditionType(WebpageTypeEnum $value = null)
+    public function setConditionType($value = null)
     {
         $this->ConditionType = $value;
 

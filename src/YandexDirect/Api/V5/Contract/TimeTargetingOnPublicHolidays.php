@@ -42,7 +42,7 @@ class TimeTargetingOnPublicHolidays
      * @param YesNoEnum $value
      * @return $this
      */
-    public function setSuspendOnHolidays(YesNoEnum $value)
+    public function setSuspendOnHolidays($value)
     {
         $this->SuspendOnHolidays = $value;
 

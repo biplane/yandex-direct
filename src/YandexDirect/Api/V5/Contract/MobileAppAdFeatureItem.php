@@ -38,7 +38,7 @@ class MobileAppAdFeatureItem
      * @param MobileAppFeatureEnum $value
      * @return $this
      */
-    public function setFeature(MobileAppFeatureEnum $value)
+    public function setFeature($value)
     {
         $this->Feature = $value;
 
@@ -61,7 +61,7 @@ class MobileAppAdFeatureItem
      * @param YesNoEnum $value
      * @return $this
      */
-    public function setEnabled(YesNoEnum $value)
+    public function setEnabled($value)
     {
         $this->Enabled = $value;
 

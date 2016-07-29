@@ -161,7 +161,7 @@ class BidSetItem
      * @param PriorityEnum|null $value
      * @return $this
      */
-    public function setStrategyPriority(PriorityEnum $value = null)
+    public function setStrategyPriority($value = null)
     {
         $this->StrategyPriority = $value;
 

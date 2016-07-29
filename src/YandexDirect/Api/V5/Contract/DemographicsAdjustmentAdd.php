@@ -40,7 +40,7 @@ class DemographicsAdjustmentAdd
      * @param GenderEnum|null $value
      * @return $this
      */
-    public function setGender(GenderEnum $value = null)
+    public function setGender($value = null)
     {
         $this->Gender = $value;
 
@@ -63,7 +63,7 @@ class DemographicsAdjustmentAdd
      * @param AgeRangeEnum|null $value
      * @return $this
      */
-    public function setAge(AgeRangeEnum $value = null)
+    public function setAge($value = null)
     {
         $this->Age = $value;
 

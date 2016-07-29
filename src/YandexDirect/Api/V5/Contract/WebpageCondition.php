@@ -13,7 +13,7 @@ class WebpageCondition
     protected $Operator = null;
 
     protected $Arguments = array(
-        
+
     );
 
     /**
@@ -42,7 +42,7 @@ class WebpageCondition
      * @param WebpageConditionOperandEnum $value
      * @return $this
      */
-    public function setOperand(WebpageConditionOperandEnum $value)
+    public function setOperand($value)
     {
         $this->Operand = $value;
 
@@ -65,7 +65,7 @@ class WebpageCondition
      * @param StringConditionOperatorEnum $value
      * @return $this
      */
-    public function setOperator(StringConditionOperatorEnum $value)
+    public function setOperator($value)
     {
         $this->Operator = $value;
 

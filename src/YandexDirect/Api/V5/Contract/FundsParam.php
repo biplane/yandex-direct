@@ -40,7 +40,7 @@ class FundsParam
      * @param CampaignFundsEnum $value
      * @return $this
      */
-    public function setMode(CampaignFundsEnum $value)
+    public function setMode($value)
     {
         $this->Mode = $value;
 

@@ -63,7 +63,7 @@ class RelevantKeywordsSetting
      * @param RelevantKeywordsModeEnum|null $value
      * @return $this
      */
-    public function setMode(RelevantKeywordsModeEnum $value = null)
+    public function setMode($value = null)
     {
         $this->Mode = $value;
 

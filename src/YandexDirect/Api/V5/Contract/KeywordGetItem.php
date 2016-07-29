@@ -200,7 +200,7 @@ class KeywordGetItem
      * @param PriorityEnum|null $value
      * @return $this
      */
-    public function setStrategyPriority(PriorityEnum $value = null)
+    public function setStrategyPriority($value = null)
     {
         $this->StrategyPriority = $value;
 
@@ -223,7 +223,7 @@ class KeywordGetItem
      * @param StateEnum|null $value
      * @return $this
      */
-    public function setState(StateEnum $value = null)
+    public function setState($value = null)
     {
         $this->State = $value;
 
@@ -246,7 +246,7 @@ class KeywordGetItem
      * @param StatusEnum|null $value
      * @return $this
      */
-    public function setStatus(StatusEnum $value = null)
+    public function setStatus($value = null)
     {
         $this->Status = $value;
 

@@ -61,7 +61,7 @@ class AdExtensionSettingItem
      * @param OperationEnum $value
      * @return $this
      */
-    public function setOperation(OperationEnum $value)
+    public function setOperation($value)
     {
         $this->Operation = $value;
 

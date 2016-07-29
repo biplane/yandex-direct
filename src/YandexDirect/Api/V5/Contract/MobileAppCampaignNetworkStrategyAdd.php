@@ -38,7 +38,7 @@ class MobileAppCampaignNetworkStrategyAdd extends MobileAppCampaignStrategyAddBa
      * @param MobileAppCampaignNetworkStrategyTypeEnum $value
      * @return $this
      */
-    public function setBiddingStrategyType(MobileAppCampaignNetworkStrategyTypeEnum $value)
+    public function setBiddingStrategyType($value)
     {
         $this->BiddingStrategyType = $value;
 

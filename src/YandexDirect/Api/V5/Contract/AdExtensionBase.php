@@ -44,7 +44,7 @@ class AdExtensionBase
      * @param AdExtensionTypeEnum|null $value
      * @return $this
      */
-    public function setType(AdExtensionTypeEnum $value = null)
+    public function setType($value = null)
     {
         $this->Type = $value;
 
@@ -90,7 +90,7 @@ class AdExtensionBase
      * @param StateEnum|null $value
      * @return $this
      */
-    public function setState(StateEnum $value = null)
+    public function setState($value = null)
     {
         $this->State = $value;
 
@@ -113,7 +113,7 @@ class AdExtensionBase
      * @param StatusEnum|null $value
      * @return $this
      */
-    public function setStatus(StatusEnum $value = null)
+    public function setStatus($value = null)
     {
         $this->Status = $value;
 

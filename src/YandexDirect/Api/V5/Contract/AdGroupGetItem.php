@@ -117,7 +117,7 @@ class AdGroupGetItem extends AdGroupBase
      * @param StatusEnum|null $value
      * @return $this
      */
-    public function setStatus(StatusEnum $value = null)
+    public function setStatus($value = null)
     {
         $this->Status = $value;
 
@@ -140,7 +140,7 @@ class AdGroupGetItem extends AdGroupBase
      * @param AdGroupTypesEnum|null $value
      * @return $this
      */
-    public function setType(AdGroupTypesEnum $value = null)
+    public function setType($value = null)
     {
         $this->Type = $value;
 

@@ -113,7 +113,7 @@ class TextAdAdd extends TextAdAddBase
      * @param YesNoEnum $value
      * @return $this
      */
-    public function setMobile(YesNoEnum $value)
+    public function setMobile($value)
     {
         $this->Mobile = $value;
 

@@ -38,7 +38,7 @@ class SearchPrices
      * @param PositionEnum|null $value
      * @return $this
      */
-    public function setPosition(PositionEnum $value = null)
+    public function setPosition($value = null)
     {
         $this->Position = $value;
 

@@ -88,7 +88,7 @@ class BidModifierToggleItem
      * @param BidModifierToggleTypeEnum $value
      * @return $this
      */
-    public function setType(BidModifierToggleTypeEnum $value)
+    public function setType($value)
     {
         $this->Type = $value;
 
@@ -111,7 +111,7 @@ class BidModifierToggleItem
      * @param YesNoEnum $value
      * @return $this
      */
-    public function setEnabled(YesNoEnum $value)
+    public function setEnabled($value)
     {
         $this->Enabled = $value;
 

@@ -61,7 +61,7 @@ class AdExtensionAdGetItem
      * @param AdExtensionTypeEnum $value
      * @return $this
      */
-    public function setType(AdExtensionTypeEnum $value)
+    public function setType($value)
     {
         $this->Type = $value;
 

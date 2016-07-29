@@ -86,7 +86,7 @@ class ToggleResult extends ActionResultBase
      * @param BidModifierToggleTypeEnum|null $value
      * @return $this
      */
-    public function setType(BidModifierToggleTypeEnum $value = null)
+    public function setType($value = null)
     {
         $this->Type = $value;
 

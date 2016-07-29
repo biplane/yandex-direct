@@ -11,7 +11,7 @@ class MobileAppAdGroupAdd
     protected $StoreUrl = null;
 
     protected $TargetDeviceType = array(
-        
+
     );
 
     protected $TargetCarrier = null;
@@ -90,7 +90,7 @@ class MobileAppAdGroupAdd
      * @param TargetCarrierEnum $value
      * @return $this
      */
-    public function setTargetCarrier(TargetCarrierEnum $value)
+    public function setTargetCarrier($value)
     {
         $this->TargetCarrier = $value;
 

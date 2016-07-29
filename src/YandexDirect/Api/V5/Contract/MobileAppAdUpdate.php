@@ -61,7 +61,7 @@ class MobileAppAdUpdate extends MobileAppAdBase
      * @param MobAppAgeLabelEnum|null $value
      * @return $this
      */
-    public function setAgeLabel(MobAppAgeLabelEnum $value = null)
+    public function setAgeLabel($value = null)
     {
         $this->AgeLabel = $value;
 

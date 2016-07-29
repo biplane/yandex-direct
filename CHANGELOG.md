@@ -1,11 +1,15 @@
 # Changelog
 
+## 3.4.2 [commit logs](https://github.com/biplane/BiplaneYandexDirectBundle/compare/3.4.1...3.4.2)
+
+ * Hot fix for issue #1
+
 ## 3.4.1 [commit logs](https://github.com/biplane/BiplaneYandexDirectBundle/compare/3.4.0...3.4.1)
 
  * Обновление контрактов данных и сервисов, для совместимости с последними изменениями
    в версиях **API 4 Live** и **API 5**.
- 
- * ID запроса для API версии 4 формируется на основании результата `microtime()`, 
+
+ * ID запроса для API версии 4 формируется на основании результата `microtime()`,
    для минимизации коллизий.
 
 ## 3.4.0 [commit logs](https://github.com/biplane/BiplaneYandexDirectBundle/compare/3.3.0...3.4.0)
@@ -22,7 +26,7 @@
  * Добавлена поддержка [*Песочницы*](https://tech.yandex.ru/direct/doc/dg-v4/concepts/sandbox-init-docpage/).
    Для активации режима работы с "Песочницей" при создании экземпляра `Biplane\YandexDirect\User` необходимо
    передать опцию `sandbox` со значением `true`:
-   
+
         new \Biplane\YandexDirect\User([
             'sandbox' => true
             ...
@@ -40,8 +44,8 @@
 
  * Логика сохранения данных запроса и ответа в файл вынесена в отдельный хелпер
    `Biplane\YandexDirect\Helper\Dumper`
- 
- * **[BC BREAK]** Параметр `biplane_yandex_direct.dump_listener.directory` удален 
+
+ * **[BC BREAK]** Параметр `biplane_yandex_direct.dump_listener.directory` удален
    из в конфигурации бандла. Вместо него появился параметр `biplane_yandex_direct.dump.directory`
    и сервис `biplane_yandex_direct.dumper`
 
@@ -49,7 +53,7 @@
 
  * Изменен уровень доступа для метода `SoapClient::getRequestId`, с `protected` на `public`.
    Метод вернет ID последнего запроса к API или null, если запросов не было.
-   
+
  * В классы событий и `ApiException` добавлен метод `getMethodRef`, который возвращает
    полное имя метода (включая название сервиса) в формате `{ServiceName}:{MethodName}`.
    Где, `{ServiceName}` - имя сервиса. Например, **Bids** или **YandexAPIService**;
@@ -61,8 +65,8 @@
 
  * Исправлена ошибка с отсутствием прав на запись, когда директория создается рекурсивно
    с помощью функции `mkdir`.
-   
- * Обновлены клиенты для работы с API. Включают изменения в API от 09.11.2015. 
+
+ * Обновлены клиенты для работы с API. Включают изменения в API от 09.11.2015.
 
 ## 3.0.1 [commit logs](https://github.com/biplane/BiplaneYandexDirectBundle/compare/3.0.0...3.0.1)
 

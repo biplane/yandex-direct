@@ -61,7 +61,7 @@ class AdExtensionGetItem extends AdExtensionBase
      * @param YesNoEnum|null $value
      * @return $this
      */
-    public function setAssociated(YesNoEnum $value = null)
+    public function setAssociated($value = null)
     {
         $this->Associated = $value;
 

@@ -61,7 +61,7 @@ class TimeTargetingBase
      * @param YesNoEnum $value
      * @return $this
      */
-    public function setConsiderWorkingWeekends(YesNoEnum $value)
+    public function setConsiderWorkingWeekends($value)
     {
         $this->ConsiderWorkingWeekends = $value;
 
