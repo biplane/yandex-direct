@@ -1,5 +1,10 @@
 # Changelog
 
+## master
+
+ * Бандл для интеграции с Symfony фреймфорком переехал в отдельный 
+   [репозиторий](https://github.com/biplane/BiplaneYandexDirectBundle).
+
 ## 3.4.2 [commit logs](https://github.com/biplane/BiplaneYandexDirectBundle/compare/3.4.1...3.4.2)
 
  * Hot fix for issue #1

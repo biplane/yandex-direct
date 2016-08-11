@@ -2,9 +2,6 @@
 
 <phpunit colors="true" bootstrap="vendor/autoload.php">
     <testsuites>
-        <testsuite name="Bundle Suite">
-            <directory suffix="Test.php">src/Bundle/YandexDirectBundle/Tests</directory>
-        </testsuite>
         <testsuite name="Library Suite">
             <directory suffix="Test.php">tests</directory>
         </testsuite>
@@ -21,8 +18,6 @@
             <directory suffix=".php">src</directory>
         </whitelist>
         <exclude>
-            <directory>src/Bundle/YandexDirectBundle/Resources</directory>
-            <directory>src/Bundle/YandexDirectBundle/Tests</directory>
             <!-- Exclude auto-generated code from the coverage report. -->
             <directory>src/YandexDirect/Api/V4</directory>
             <directory>src/YandexDirect/Api/V5</directory>
