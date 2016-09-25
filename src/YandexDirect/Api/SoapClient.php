@@ -57,7 +57,11 @@ abstract class SoapClient extends \SoapClient
             'features'     => SOAP_SINGLE_ELEMENT_ARRAYS,
         );
 
-        parent::__construct($wsdl, $defaults + $options);
+        if (!empty($user->getSoapOptions())) {
+            $defaults = $user->getSoapOptions() + $defaults;
+        }
+
+        parent::__construct($wsdl, $options + $defaults);
 
         $this->dispatcher = $dispatcher;
         $this->user = $user;

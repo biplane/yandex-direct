@@ -307,6 +307,16 @@ class User
     }
 
     /**
+     * Gets the generic options for the SOAP client.
+     *
+     * @return array
+     */
+    public function getSoapOptions()
+    {
+        return $this->options['soap_options'];
+    }
+
+    /**
      * Sets the default options.
      *
      * @param OptionsResolver $resolver
@@ -332,6 +342,7 @@ class User
                 'master_token' => null,
                 'login'        => null,
                 'sandbox'      => false,
+                'soap_options' => array(),
             ));
 
         // OptionsResolver 2.6+
@@ -353,6 +364,7 @@ class User
                     'login'        => array('null', 'string'),
                     'access_token' => array('string'),
                     'sandbox'      => array('bool'),
+                    'soap_options' => array('array'),
                 ))
                 ->setNormalizers(array(
                     'login' => $loginNormalizer,

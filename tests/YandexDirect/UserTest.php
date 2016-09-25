@@ -99,7 +99,10 @@ class UserTest extends \PHPUnit_Framework_TestCase
     public function testApiServiceShouldBeCreated()
     {
         $user = new User(array(
-            'access_token' => 'foo'
+            'access_token' => 'foo',
+            'soap_options' => array(
+                'cache_wsdl' => WSDL_CACHE_DISK,
+            ),
         ));
 
         $this->assertInstanceOf('Biplane\YandexDirect\Api\V4\YandexApiService', $user->getApiService());
@@ -130,7 +133,10 @@ class UserTest extends \PHPUnit_Framework_TestCase
     public function testServiceProxyShouldBeInstantiated($serviceClass, $method)
     {
         $user = new User(array(
-            'access_token' => 'foo'
+            'access_token' => 'foo',
+            'soap_options' => array(
+                'cache_wsdl' => WSDL_CACHE_DISK,
+            ),
         ));
 
         $this->assertInstanceOf($serviceClass, $user->$method());
@@ -139,7 +145,10 @@ class UserTest extends \PHPUnit_Framework_TestCase
     public function testServiceProxyShouldBeCached()
     {
         $user = new User(array(
-            'access_token' => 'foo'
+            'access_token' => 'foo',
+            'soap_options' => array(
+                'cache_wsdl' => WSDL_CACHE_DISK,
+            ),
         ));
 
         $proxy = $user->getAdsService();
