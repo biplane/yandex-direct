@@ -23,7 +23,6 @@ class UserTest extends \PHPUnit_Framework_TestCase
      */
     public function testLocaleShouldBeSet($locale)
     {
-
         $config = new User(array(
             'locale' => $locale,
             'access_token' => 'foo',

@@ -21,10 +21,9 @@
     "kriswallsmith/buzz": "~0.12"
   },
   "require-dev": {
-    "phpunit/phpunit": "^4.8.26",
+    "phpunit/phpunit": "~4.8|~5.5",
     "symfony/console": "~2.3",
-    "symfony/framework-bundle": "~2.3",
-    "lstrojny/phpunit-function-mocker": "^0.2.0",
+    "lstrojny/phpunit-function-mocker": "^0.3.0|^0.4.0",
     "wsdl2phpgenerator/wsdl2phpgenerator": "^3.2",
     "zendframework/zend-code": "^2.5",
     "doctrine/inflector": "^1.0"

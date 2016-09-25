@@ -23,7 +23,8 @@ abstract class BaseTestCase extends \PHPUnit_Framework_TestCase
 
     protected function setUp()
     {
-        $this->dispatcher = $this->getMock('Symfony\Component\EventDispatcher\EventDispatcherInterface');
+        $this->dispatcher = $this->getMockBuilder('Symfony\Component\EventDispatcher\EventDispatcherInterface')
+            ->getMock();
         $this->user = $this->getMockBuilder('Biplane\YandexDirect\User')
             ->disableOriginalConstructor()
             ->getMock();

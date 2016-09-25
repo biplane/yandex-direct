@@ -50,7 +50,7 @@ class AuthenticatorTest extends \PHPUnit_Framework_TestCase
 
     public function testAuthenticationShouldBeCompleted()
     {
-        $client = $this->getMock('Buzz\Client\ClientInterface');
+        $client = $this->getMockBuilder('Buzz\Client\ClientInterface')->getMock();
         $authenticator = new Authenticator('Id', 's$cr4t', $client);
 
         $request = new FormRequest();
@@ -86,7 +86,7 @@ class AuthenticatorTest extends \PHPUnit_Framework_TestCase
 
     public function testUserInfoShouldBeFetched()
     {
-        $client = $this->getMock('Buzz\Client\ClientInterface');
+        $client = $this->getMockBuilder('Buzz\Client\ClientInterface')->getMock();
         $authenticator = new Authenticator('Id', 's$cr4t', $client);
 
         $request = new Request();
