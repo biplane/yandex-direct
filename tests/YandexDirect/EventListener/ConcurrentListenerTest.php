@@ -4,9 +4,6 @@ namespace Biplane\Tests\YandexDirect\EventListener;
 
 use Biplane\YandexDirect\EventListener\ConcurrentListener;
 
-/**
- * @author Ural Davletshin <u.davletshin@biplane.ru>
- */
 class ConcurrentListenerTest extends \PHPUnit_Framework_TestCase
 {
     /**

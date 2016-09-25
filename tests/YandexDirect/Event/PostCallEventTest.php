@@ -4,9 +4,6 @@ namespace Biplane\Tests\YandexDirect\Event;
 
 use Biplane\YandexDirect\Event\PostCallEvent;
 
-/**
- * @author Denis Vasilev <yethee@auto-pilot.pro>
- */
 class PostCallEventTest extends TestCase
 {
     public function testConstructorAndGetters()

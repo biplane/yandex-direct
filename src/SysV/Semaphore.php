@@ -5,8 +5,8 @@ namespace Biplane\SysV;
 /**
  * Limits the number of processes that can access a resource concurrently.
  *
- * @author Alexey Popkov <a.popkov@biplane.ru>
- * @author Denis Vasilev <yethee@biplane.ru>
+ * @author Alexey Popkov
+ * @author Denis Vasilev
  */
 class Semaphore
 {

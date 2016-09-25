@@ -5,9 +5,6 @@ namespace Biplane\Tests\SysV;
 use Biplane\SysV\MessageQueue;
 use Biplane\SysV\Util;
 
-/**
- * @author Denis Vasilev <yethee@biplane.ru>
- */
 class MessageQueueTest extends TestCase
 {
     /**

@@ -5,7 +5,7 @@ namespace Biplane\YandexDirect\Exception;
 /**
  * Thrown when occur HTTP errors.
  *
- * @author Ural Davletshin <u.davletshin@biplane.ru>
+ * @author Ural Davletshin
  */
 class NetworkException extends RequestException
 {

@@ -5,9 +5,6 @@ namespace Biplane\Tests\YandexDirect\Api;
 use Biplane\YandexDirect\Api\V4\Contract\AccountManagementRequest;
 use Biplane\YandexDirect\Exception\ApiException;
 
-/**
- * @author Denis Vasilev <yethee@biplane.ru>
- */
 class V4BaseClientTest extends BaseTestCase
 {
     /**

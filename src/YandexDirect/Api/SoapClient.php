@@ -13,7 +13,7 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 /**
  * SoapClient
  *
- * @author Denis Vasilev <yethee@biplane.ru>
+ * @author Denis Vasilev
  */
 abstract class SoapClient extends \SoapClient
 {

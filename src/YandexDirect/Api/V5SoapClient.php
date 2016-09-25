@@ -9,7 +9,7 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 /**
  * V5SoapClient
  *
- * @author Denis Vasilev <yethee@biplane.ru>
+ * @author Denis Vasilev
  */
 class V5SoapClient extends SoapClient
 {

@@ -8,7 +8,7 @@ use Biplane\YandexDirect\User;
 /**
  * FailCallEvent.
  *
- * @author Ural Davletshin <u.davletshin@biplane.ru>
+ * @author Ural Davletshin
  */
 class FailCallEvent extends BaseAfterCallEvent
 {

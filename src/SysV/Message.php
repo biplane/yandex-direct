@@ -5,7 +5,7 @@ namespace Biplane\SysV;
 /**
  * Value object of message.
  *
- * @author Denis Vasilev <yethee@biplane.ru>
+ * @author Denis Vasilev
  */
 final class Message
 {

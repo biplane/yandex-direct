@@ -4,9 +4,6 @@ namespace Biplane\Tests\YandexDirect\Helper;
 
 use Biplane\YandexDirect\Helper\Dumper;
 
-/**
- * @author Denis Vasilev <yethee@biplane.ru>
- */
 class DumperTest extends \PHPUnit_Framework_TestCase
 {
     private $dir;

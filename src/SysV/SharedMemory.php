@@ -5,8 +5,8 @@ namespace Biplane\SysV;
 /**
  * Предоставляет интерфейс для работы с общей памятью.
  *
- * @author Alexey Popkov <a.popkov@biplane.ru>
- * @author Denis Vasilev <yethee@biplane.ru>
+ * @author Alexey Popkov
+ * @author Denis Vasilev
  */
 class SharedMemory
 {

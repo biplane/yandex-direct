@@ -4,9 +4,6 @@ namespace Biplane\Tests\YandexDirect\EventListener;
 
 use Biplane\YandexDirect\EventListener\DumpListener;
 
-/**
- * @author Denis Vasilev <yethee@biplane.ru>
- */
 class DumpListenerTest extends \PHPUnit_Framework_TestCase
 {
     /**

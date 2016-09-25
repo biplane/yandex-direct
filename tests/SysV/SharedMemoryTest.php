@@ -5,9 +5,6 @@ namespace Biplane\Tests\SysV;
 use Biplane\SysV\SharedMemory;
 use Biplane\SysV\Util;
 
-/**
- * @author Alexey Popkov <a.popkov@biplane.ru>
- */
 class SharedMemoryTest extends TestCase
 {
     /**

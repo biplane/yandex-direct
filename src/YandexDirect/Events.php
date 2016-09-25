@@ -5,7 +5,7 @@ namespace Biplane\YandexDirect;
 /**
  * Yandex Direct API events.
  *
- * @author Ural Davletshin <u.davletshin@biplane.ru>
+ * @author Ural Davletshin
  */
 final class Events
 {

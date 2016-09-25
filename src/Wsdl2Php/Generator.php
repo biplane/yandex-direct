@@ -21,7 +21,7 @@ use Zend\Code\Generator\ValueGenerator;
 /**
  * Generator
  *
- * @author Denis Vasilev <yethee@biplane.ru>
+ * @author Denis Vasilev
  */
 class Generator extends BaseGenerator
 {

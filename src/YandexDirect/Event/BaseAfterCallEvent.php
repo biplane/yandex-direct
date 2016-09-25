@@ -8,7 +8,7 @@ use Biplane\YandexDirect\User;
 /**
  * BaseAfterCallEvent
  *
- * @author Denis Vasilev <yethee@biplane.ru>
+ * @author Denis Vasilev
  */
 abstract class BaseAfterCallEvent extends PreCallEvent
 {

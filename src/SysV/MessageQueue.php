@@ -5,7 +5,7 @@ namespace Biplane\SysV;
 /**
  * Wrapper for functions msg_*
  *
- * @author Denis Vasilev <yethee@biplane.ru>
+ * @author Denis Vasilev
  */
 class MessageQueue
 {

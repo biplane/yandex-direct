@@ -5,7 +5,7 @@ namespace Biplane\SysV;
 /**
  * Util
  *
- * @author Denis Vasilev <yethee@biplane.ru>
+ * @author Denis Vasilev
  */
 final class Util
 {

@@ -7,7 +7,7 @@ use Biplane\YandexDirect\Api\SoapClient;
 /**
  * Dumper
  *
- * @author Denis Vasilev <yethee@biplane.ru>
+ * @author Denis Vasilev
  */
 class Dumper
 {

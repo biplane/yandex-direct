@@ -9,7 +9,7 @@ use Buzz\Message\Response;
 /**
  * NetworkException
  *
- * @author Denis Vasilev <yethee@biplane.ru>
+ * @author Denis Vasilev
  */
 class NetworkException extends \RuntimeException
 {

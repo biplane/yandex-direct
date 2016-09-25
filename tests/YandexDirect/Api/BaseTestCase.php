@@ -4,11 +4,6 @@ namespace Biplane\Tests\YandexDirect\Api;
 
 use Biplane\YandexDirect\Api\SoapClient;
 
-/**
- * BaseTestCase
- *
- * @author Denis Vasilev <yethee@biplane.ru>
- */
 abstract class BaseTestCase extends \PHPUnit_Framework_TestCase
 {
     /**

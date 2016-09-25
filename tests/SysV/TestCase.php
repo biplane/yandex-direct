@@ -2,9 +2,6 @@
 
 namespace Biplane\Tests\SysV;
 
-/**
- * @author Denis Vasilev <yethee@biplane.ru>
- */
 abstract class TestCase extends \PHPUnit_Framework_TestCase
 {
     protected function setUp()

@@ -8,7 +8,7 @@ use Biplane\YandexDirect\User;
 /**
  * PostCallEvent.
  *
- * @author Ural Davletshin <u.davletshin@biplane.ru>
+ * @author Ural Davletshin
  */
 class PostCallEvent extends BaseAfterCallEvent
 {

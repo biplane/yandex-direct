@@ -5,7 +5,7 @@ namespace Biplane\YandexDirect\Auth\Exception;
 /**
  * AuthException
  *
- * @author Denis Vasilev <yethee@biplane.ru>
+ * @author Denis Vasilev
  */
 class AuthException extends \RuntimeException
 {

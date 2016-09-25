@@ -5,7 +5,7 @@ namespace Biplane\YandexDirect\Exception;
 /**
  * Thrown when API returned error.
  *
- * @author Denis Vasilev <yethee@biplane.ru>
+ * @author Denis Vasilev
  */
 class ApiException extends RequestException
 {

@@ -5,9 +5,6 @@ namespace Biplane\Tests\SysV;
 use Biplane\SysV\Semaphore;
 use Biplane\SysV\Util;
 
-/**
- *  @author Denis Vasilev <yethee@biplane.ru>
- */
 class SemaphoreTest extends TestCase
 {
     /**

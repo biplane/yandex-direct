@@ -4,9 +4,6 @@ namespace Biplane\Tests\YandexDirect;
 
 use Biplane\YandexDirect\User;
 
-/**
- * @author Denis Vasilev <yethee@auto-pilot.pro>
- */
 class UserTest extends \PHPUnit_Framework_TestCase
 {
     public function getLocales()

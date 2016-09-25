@@ -14,7 +14,7 @@ use Buzz\Message\Response;
  *
  * Documentation: http://api.yandex.ru/oauth/doc/dg/reference/obtain-access-token.xml
  *
- * @author Denis Vasilev <yethee@biplane.ru>
+ * @author Denis Vasilev
  */
 class Authenticator
 {

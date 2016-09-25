@@ -12,7 +12,7 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 /**
  * This listener restricts concurrent connections to API.
  *
- * @author Ural Davletshin <u.davletshin@biplane.ru>
+ * @author Ural Davletshin
  */
 class ConcurrentListener implements EventSubscriberInterface
 {

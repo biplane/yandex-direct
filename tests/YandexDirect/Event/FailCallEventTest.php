@@ -4,9 +4,6 @@ namespace Biplane\Tests\YandexDirect\Event;
 
 use Biplane\YandexDirect\Event\FailCallEvent;
 
-/**
- * @author Denis Vasilev <yethee@auto-pilot.pro>
- */
 class FailCallEventTest extends TestCase
 {
     public function testConstructorAndGetters()

@@ -7,9 +7,6 @@ use Buzz\Message\Form\FormRequest;
 use Buzz\Message\Request;
 use Buzz\Message\Response;
 
-/**
- * @author Denis Vasilev <yethee@auto-pilot.pro>
- */
 class AuthenticatorTest extends \PHPUnit_Framework_TestCase
 {
     /**

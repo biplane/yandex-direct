@@ -8,7 +8,7 @@ use Wsdl2PhpGenerator\Config as BaseConfig;
 /**
  * Config
  *
- * @author Denis Vasilev <yethee@biplane.ru>
+ * @author Denis Vasilev
  */
 class Config extends BaseConfig
 {

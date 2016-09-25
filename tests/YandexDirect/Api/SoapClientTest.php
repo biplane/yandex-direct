@@ -7,9 +7,6 @@ use Biplane\YandexDirect\Event\PostCallEvent;
 use Biplane\YandexDirect\Event\PreCallEvent;
 use Biplane\YandexDirect\Events;
 
-/**
- * @author Denis Vasilev <yethee@biplane.ru>
- */
 class BaseClientTest extends BaseTestCase
 {
     public function testInvokeApiMethodShouldBeCompletedSuccessfully()

@@ -8,7 +8,7 @@ use Symfony\Component\EventDispatcher\Event;
 /**
  * PreCallEvent.
  *
- * @author Ural Davletshin <u.davletshin@biplane.ru>
+ * @author Ural Davletshin
  */
 class PreCallEvent extends Event
 {

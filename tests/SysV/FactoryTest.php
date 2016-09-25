@@ -4,9 +4,6 @@ namespace Biplane\Tests\SysV;
 
 use Biplane\SysV\Factory;
 
-/**
- * @author Denis Vasilev <yethee@biplane.ru>
- */
 class FactoryTest extends TestCase
 {
     private static $directory;

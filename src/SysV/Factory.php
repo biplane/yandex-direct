@@ -5,7 +5,7 @@ namespace Biplane\SysV;
 /**
  * Provides factory for creating components of the System V IPC.
  *
- * @author Denis Vasilev <yethee@biplane.ru>
+ * @author Denis Vasilev
  */
 class Factory
 {
