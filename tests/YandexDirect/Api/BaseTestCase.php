@@ -28,6 +28,8 @@ abstract class BaseTestCase extends \PHPUnit_Framework_TestCase
         $this->user = $this->getMockBuilder('Biplane\YandexDirect\User')
             ->disableOriginalConstructor()
             ->getMock();
+
+        $this->configureUser($this->user);
     }
 
     protected function tearDown()
@@ -35,6 +37,13 @@ abstract class BaseTestCase extends \PHPUnit_Framework_TestCase
         \PHPUnit_Extension_FunctionMocker::tearDown();
 
         unset($this->dispatcher, $this->client, $this->user);
+    }
+
+
+    protected function configureUser(\PHPUnit_Framework_MockObject_MockObject $user)
+    {
+        $user->method('getSoapOptions')
+            ->willReturn(array());
     }
 
     protected function createClient($soapClientClass, array $methods = array())
