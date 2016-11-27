@@ -1,0 +1,86 @@
+<?php
+
+namespace Biplane\Build\Wsdl2Php\Contract;
+
+use Biplane\Build\Wsdl2Php\ClassNameUtil;
+use Biplane\Build\Wsdl2Php\Helper\ContractGeneratorTrait;
+use Biplane\Build\Wsdl2Php\PhpTypeResolver;
+use Zend\Code\Generator\ClassGenerator;
+use Zend\Code\Generator\DocBlock\Tag\GenericTag;
+use Zend\Code\Generator\MethodGenerator;
+
+class ComplexType extends AbstractDataType implements GeneratorInterface
+{
+    use ContractGeneratorTrait;
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function buildClass(ClassGenerator $generator, PhpTypeResolver $typeResolver)
+    {
+        if ($this->type->isAbstract()) {
+            $generator->addFlag(ClassGenerator::FLAG_ABSTRACT);
+        }
+
+        if (null !== $baseType = $this->type->getBase()) {
+            $baseType = $typeResolver->resolve($baseType);
+
+            if (false !== strpos($baseType, '\\')) {
+                $generator->setExtendedClass(ClassNameUtil::qualifiedClassName($baseType, $this->namespace));
+            }
+        }
+
+        $generator->addMethodFromGenerator($this->createFactoryMethod($generator->getName()));
+
+        foreach ($this->type->getParts() as $elemName => $elemType) {
+            $isArray = $this->type->isElementArray($elemName);
+            $nullable = $this->type->isElementNillable($elemName) || $this->type->getElementMinOccurs($elemName) === 0;
+
+            $phpType = $typeResolver->resolve($elemType, $this->namespace);
+            $enumClass = $this->getEnumClass($elemType, $typeResolver);
+
+            if (substr($phpType, -2) === '[]') {
+                $isArray = true;
+            }
+
+            $generator->addPropertyFromGenerator($this->createProperty($elemName, $isArray, $nullable));
+            $generator->addMethodFromGenerator(
+                $this->addSeeTag(
+                    $this->createGetter($elemName, $phpType, $isArray, $nullable),
+                    $enumClass
+                )
+            );
+            $generator->addMethodFromGenerator(
+                $this->addSeeTag(
+                    $this->createSetter($elemName, $phpType, $isArray, $nullable),
+                    $enumClass
+                )
+            );
+        }
+    }
+
+    private function getEnumClass($wsdlType, PhpTypeResolver $resolver)
+    {
+        $types = $resolver->getTypes();
+
+        if (isset($types[$wsdlType]) && $types[$wsdlType] instanceof EnumType) {
+            return $types[$wsdlType]->getPhpIdentifier();
+        }
+
+        return null;
+    }
+
+    private function addSeeTag(MethodGenerator $generator, $enumClass)
+    {
+        if (null === $enumClass) {
+            return $generator;
+        }
+
+        $this->addTag(
+            $generator,
+            new GenericTag('see', ClassNameUtil::qualifiedClassName($enumClass, $this->namespace))
+        );
+
+        return $generator;
+    }
+}

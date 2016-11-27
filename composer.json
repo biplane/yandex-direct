@@ -23,17 +23,20 @@
   "require-dev": {
     "phpunit/phpunit": "~4.8.27|~5.5",
     "phpunit/phpunit-mock-objects": "^2.3.8|~3.0",
-    "symfony/console": "~2.3",
     "lstrojny/phpunit-function-mocker": "^0.3.0|^0.4.0",
-    "wsdl2phpgenerator/wsdl2phpgenerator": "^3.2",
-    "zendframework/zend-code": "^2.5",
-    "doctrine/inflector": "^1.0"
+    "wsdl2phpgenerator/wsdl2phpgenerator": "^3.4",
+    "zendframework/zend-code": "^2.6",
+    "doctrine/inflector": "^1.0",
+    "monolog/monolog": "^1.21"
   },
   "autoload": {
     "psr-4": { "Biplane\\": "src/" }
   },
   "autoload-dev": {
-    "psr-4": { "Biplane\\Tests\\": "tests/" }
+    "psr-4": {
+      "Biplane\\Tests\\": "tests/",
+      "Biplane\\Build\\": "build/"
+    }
   },
   "extra": {
     "branch-alias": {

@@ -1,0 +1,77 @@
+namespace Acme\Api;
+
+use Biplane\YandexDirect\Api\V5SoapClient;
+use Biplane\YandexDirect\User;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
+
+/**
+ * Auto-generated code.
+ */
+class AdGroups extends V5SoapClient
+{
+
+    const ENDPOINT = 'api/v5/adgroups.wsdl';
+
+    /**
+     * Constructor.
+     *
+     * @param EventDispatcherInterface $dispatcher
+     * @param User $user
+     */
+    public function __construct(EventDispatcherInterface $dispatcher, User $user)
+    {
+        parent::__construct($user->resolveWsdl(self::ENDPOINT), $dispatcher, $user, [
+            'classmap' => [
+                'GetRequest' => 'Acme\Api\Contract\GetRequest',
+                'AddRequest' => 'Acme\Api\Contract\AddRequest',
+                'AddResponse' => 'Acme\Api\Contract\AddResponse',
+            ]
+        ]);
+    }
+
+    /**
+     * get.
+     *
+     * @param Contract\GetRequest $parameters
+     * @return GetResponse
+     */
+    public function get(Contract\GetRequest $parameters)
+    {
+        return $this->invoke('get', [$parameters]);
+    }
+
+    /**
+     * add.
+     *
+     * @param Contract\AddRequest $parameters
+     * @return Contract\AddResponse
+     */
+    public function add(Contract\AddRequest $parameters)
+    {
+        return $this->invoke('add', [$parameters]);
+    }
+
+    /**
+     * update.
+     *
+     * @param UpdateRequest $parameters
+     * @return UpdateResponse
+     */
+    public function update(UpdateRequest $parameters)
+    {
+        return $this->invoke('update', [$parameters]);
+    }
+
+    /**
+     * delete.
+     *
+     * @param DeleteRequest $parameters
+     * @return DeleteResponse
+     */
+    public function delete(DeleteRequest $parameters)
+    {
+        return $this->invoke('delete', [$parameters]);
+    }
+
+
+}
