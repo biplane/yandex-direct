@@ -24,7 +24,7 @@
     "phpunit/phpunit": "~4.8.27|~5.5",
     "phpunit/phpunit-mock-objects": "^2.3.8|~3.0",
     "lstrojny/phpunit-function-mocker": "^0.3.0|^0.4.0",
-    "wsdl2phpgenerator/wsdl2phpgenerator": "^3.4",
+    "wsdl2phpgenerator/wsdl2phpgenerator": "dev-inline-type as 4.0.x-dev",
     "zendframework/zend-code": "^2.6",
     "doctrine/inflector": "^1.0",
     "monolog/monolog": "^1.21"
@@ -42,5 +42,11 @@
     "branch-alias": {
       "dev-master": "4.0.x-dev"
     }
-  }
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/yethee/wsdl2phpgenerator"
+    }
+  ]
 }
