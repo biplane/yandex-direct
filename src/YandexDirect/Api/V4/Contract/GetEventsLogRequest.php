@@ -29,7 +29,7 @@ class GetEventsLogRequest
     /**
      * Creates a new instance of GetEventsLogRequest.
      *
-     * @return GetEventsLogRequest
+     * @return self
      */
     public static function create()
     {
@@ -50,7 +50,7 @@ class GetEventsLogRequest
      * Sets TimestampFrom.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setTimestampFrom($value)
     {
@@ -73,7 +73,7 @@ class GetEventsLogRequest
      * Sets TimestampTo.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setTimestampTo($value = null)
     {
@@ -96,7 +96,7 @@ class GetEventsLogRequest
      * Sets LastEventOnly.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setLastEventOnly($value = null)
     {
@@ -119,7 +119,7 @@ class GetEventsLogRequest
      * Sets WithTextDescription.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setWithTextDescription($value = null)
     {
@@ -142,7 +142,7 @@ class GetEventsLogRequest
      * Sets Logins.
      *
      * @param string[]|null $value
-     * @return $this
+     * @return self
      */
     public function setLogins(array $value = null)
     {
@@ -165,7 +165,7 @@ class GetEventsLogRequest
      * Sets Filter.
      *
      * @param GetEventsLogFilter|null $value
-     * @return $this
+     * @return self
      */
     public function setFilter(GetEventsLogFilter $value = null)
     {
@@ -188,7 +188,7 @@ class GetEventsLogRequest
      * Sets Currency.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setCurrency($value = null)
     {
@@ -211,7 +211,7 @@ class GetEventsLogRequest
      * Sets Limit.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setLimit($value = null)
     {
@@ -234,7 +234,7 @@ class GetEventsLogRequest
      * Sets Offset.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setOffset($value = null)
     {

@@ -21,7 +21,7 @@ class AdImageResponse
     /**
      * Creates a new instance of AdImageResponse.
      *
-     * @return AdImageResponse
+     * @return self
      */
     public static function create()
     {
@@ -42,7 +42,7 @@ class AdImageResponse
      * Sets AdImages.
      *
      * @param AdImage[]|null $value
-     * @return $this
+     * @return self
      */
     public function setAdImages(array $value = null)
     {
@@ -65,7 +65,7 @@ class AdImageResponse
      * Sets AdImageUploads.
      *
      * @param AdImageUpload[]|null $value
-     * @return $this
+     * @return self
      */
     public function setAdImageUploads(array $value = null)
     {
@@ -88,7 +88,7 @@ class AdImageResponse
      * Sets ActionsResult.
      *
      * @param AdImageActionResult[]|null $value
-     * @return $this
+     * @return self
      */
     public function setActionsResult(array $value = null)
     {
@@ -111,7 +111,7 @@ class AdImageResponse
      * Sets AdImageLimits.
      *
      * @param AdImageLimit[]|null $value
-     * @return $this
+     * @return self
      */
     public function setAdImageLimits(array $value = null)
     {
@@ -134,7 +134,7 @@ class AdImageResponse
      * Sets TotalObjectsCount.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setTotalObjectsCount($value = null)
     {

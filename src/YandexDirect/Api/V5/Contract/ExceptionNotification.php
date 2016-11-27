@@ -17,7 +17,7 @@ class ExceptionNotification
     /**
      * Creates a new instance of ExceptionNotification.
      *
-     * @return ExceptionNotification
+     * @return self
      */
     public static function create()
     {
@@ -38,7 +38,7 @@ class ExceptionNotification
      * Sets Code.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setCode($value)
     {
@@ -61,7 +61,7 @@ class ExceptionNotification
      * Sets Message.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setMessage($value)
     {
@@ -84,7 +84,7 @@ class ExceptionNotification
      * Sets Details.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setDetails($value = null)
     {

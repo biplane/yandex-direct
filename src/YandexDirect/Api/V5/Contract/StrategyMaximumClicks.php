@@ -11,7 +11,7 @@ class StrategyMaximumClicks extends StrategyWeeklyBudgetBase
     /**
      * Creates a new instance of StrategyMaximumClicks.
      *
-     * @return StrategyMaximumClicks
+     * @return self
      */
     public static function create()
     {

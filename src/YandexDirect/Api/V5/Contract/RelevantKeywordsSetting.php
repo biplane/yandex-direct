@@ -17,7 +17,7 @@ class RelevantKeywordsSetting
     /**
      * Creates a new instance of RelevantKeywordsSetting.
      *
-     * @return RelevantKeywordsSetting
+     * @return self
      */
     public static function create()
     {
@@ -38,7 +38,7 @@ class RelevantKeywordsSetting
      * Sets BudgetPercent.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setBudgetPercent($value = null)
     {
@@ -50,7 +50,8 @@ class RelevantKeywordsSetting
     /**
      * Gets Mode.
      *
-     * @return RelevantKeywordsModeEnum|null
+     * @return string|null
+     * @see RelevantKeywordsModeEnum
      */
     public function getMode()
     {
@@ -60,8 +61,9 @@ class RelevantKeywordsSetting
     /**
      * Sets Mode.
      *
-     * @param RelevantKeywordsModeEnum|null $value
-     * @return $this
+     * @param string|null $value
+     * @return self
+     * @see RelevantKeywordsModeEnum
      */
     public function setMode($value = null)
     {
@@ -84,7 +86,7 @@ class RelevantKeywordsSetting
      * Sets OptimizeGoalId.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setOptimizeGoalId($value = null)
     {

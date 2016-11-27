@@ -15,7 +15,7 @@ class StatGoalsCampaignIDInfo
     /**
      * Creates a new instance of StatGoalsCampaignIDInfo.
      *
-     * @return StatGoalsCampaignIDInfo
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +36,7 @@ class StatGoalsCampaignIDInfo
      * Sets CampaignID.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setCampaignID($value = null)
     {
@@ -59,7 +59,7 @@ class StatGoalsCampaignIDInfo
      * Sets CampaignIDS.
      *
      * @param int[]|null $value
-     * @return $this
+     * @return self
      */
     public function setCampaignIDS(array $value = null)
     {

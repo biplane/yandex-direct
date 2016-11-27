@@ -17,7 +17,7 @@ class CampaignBase
     /**
      * Creates a new instance of CampaignBase.
      *
-     * @return CampaignBase
+     * @return self
      */
     public static function create()
     {
@@ -38,7 +38,7 @@ class CampaignBase
      * Sets ClientInfo.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setClientInfo($value = null)
     {
@@ -61,7 +61,7 @@ class CampaignBase
      * Sets Notification.
      *
      * @param Notification|null $value
-     * @return $this
+     * @return self
      */
     public function setNotification(Notification $value = null)
     {
@@ -84,7 +84,7 @@ class CampaignBase
      * Sets TimeZone.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setTimeZone($value = null)
     {

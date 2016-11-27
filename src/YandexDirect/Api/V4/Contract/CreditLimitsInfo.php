@@ -10,14 +10,12 @@ class CreditLimitsInfo
 
     protected $Currency = null;
 
-    protected $Limits = array(
-        
-    );
+    protected $Limits = [];
 
     /**
      * Creates a new instance of CreditLimitsInfo.
      *
-     * @return CreditLimitsInfo
+     * @return self
      */
     public static function create()
     {
@@ -38,7 +36,7 @@ class CreditLimitsInfo
      * Sets Currency.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setCurrency($value)
     {
@@ -61,7 +59,7 @@ class CreditLimitsInfo
      * Sets Limits.
      *
      * @param CreditLimitsItem[] $value
-     * @return $this
+     * @return self
      */
     public function setLimits(array $value)
     {

@@ -16,14 +16,12 @@ class CheckChangesRequest
 
     protected $Timestamp = null;
 
-    protected $FieldNames = array(
-        
-    );
+    protected $FieldNames = [];
 
     /**
      * Creates a new instance of CheckChangesRequest.
      *
-     * @return CheckChangesRequest
+     * @return self
      */
     public static function create()
     {
@@ -44,7 +42,7 @@ class CheckChangesRequest
      * Sets CampaignIds.
      *
      * @param int[]|null $value
-     * @return $this
+     * @return self
      */
     public function setCampaignIds(array $value = null)
     {
@@ -67,7 +65,7 @@ class CheckChangesRequest
      * Sets AdGroupIds.
      *
      * @param int[]|null $value
-     * @return $this
+     * @return self
      */
     public function setAdGroupIds(array $value = null)
     {
@@ -90,7 +88,7 @@ class CheckChangesRequest
      * Sets AdIds.
      *
      * @param int[]|null $value
-     * @return $this
+     * @return self
      */
     public function setAdIds(array $value = null)
     {
@@ -113,7 +111,7 @@ class CheckChangesRequest
      * Sets Timestamp.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setTimestamp($value)
     {
@@ -125,7 +123,8 @@ class CheckChangesRequest
     /**
      * Gets FieldNames.
      *
-     * @return CheckFieldEnum[]
+     * @return string[]
+     * @see CheckFieldEnum
      */
     public function getFieldNames()
     {
@@ -135,8 +134,9 @@ class CheckChangesRequest
     /**
      * Sets FieldNames.
      *
-     * @param CheckFieldEnum[] $value
-     * @return $this
+     * @param string[] $value
+     * @return self
+     * @see CheckFieldEnum
      */
     public function setFieldNames(array $value)
     {

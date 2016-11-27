@@ -27,7 +27,7 @@ class GetChangesResponse
     /**
      * Creates a new instance of GetChangesResponse.
      *
-     * @return GetChangesResponse
+     * @return self
      */
     public static function create()
     {
@@ -48,7 +48,7 @@ class GetChangesResponse
      * Sets Campaigns.
      *
      * @param GetChangesIntData|null $value
-     * @return $this
+     * @return self
      */
     public function setCampaigns(GetChangesIntData $value = null)
     {
@@ -71,7 +71,7 @@ class GetChangesResponse
      * Sets Banners.
      *
      * @param GetChangesLongData|null $value
-     * @return $this
+     * @return self
      */
     public function setBanners(GetChangesLongData $value = null)
     {
@@ -94,7 +94,7 @@ class GetChangesResponse
      * Sets Logins.
      *
      * @param GetChangesStringData|null $value
-     * @return $this
+     * @return self
      */
     public function setLogins(GetChangesStringData $value = null)
     {
@@ -117,7 +117,7 @@ class GetChangesResponse
      * Sets CampaignsStatChange.
      *
      * @param CampaignStatChangeItem[]|null $value
-     * @return $this
+     * @return self
      */
     public function setCampaignsStatChange(array $value = null)
     {
@@ -140,7 +140,7 @@ class GetChangesResponse
      * Sets Timestamp.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setTimestamp($value)
     {
@@ -163,7 +163,7 @@ class GetChangesResponse
      * Sets RubricsChanged.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setRubricsChanged($value = null)
     {
@@ -186,7 +186,7 @@ class GetChangesResponse
      * Sets TimeZonesChanged.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setTimeZonesChanged($value = null)
     {
@@ -209,7 +209,7 @@ class GetChangesResponse
      * Sets RegionsChanged.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setRegionsChanged($value = null)
     {

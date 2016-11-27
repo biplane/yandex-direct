@@ -17,7 +17,7 @@ class AdImageLimit
     /**
      * Creates a new instance of AdImageLimit.
      *
-     * @return AdImageLimit
+     * @return self
      */
     public static function create()
     {
@@ -38,7 +38,7 @@ class AdImageLimit
      * Sets Login.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setLogin($value)
     {
@@ -61,7 +61,7 @@ class AdImageLimit
      * Sets Capacity.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setCapacity($value)
     {
@@ -84,7 +84,7 @@ class AdImageLimit
      * Sets Utilized.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setUtilized($value)
     {

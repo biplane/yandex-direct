@@ -13,7 +13,7 @@ class KeywordResponse
     /**
      * Creates a new instance of KeywordResponse.
      *
-     * @return KeywordResponse
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class KeywordResponse
      * Sets ActionsResult.
      *
      * @param KeywordActionResult[]|null $value
-     * @return $this
+     * @return self
      */
     public function setActionsResult(array $value = null)
     {

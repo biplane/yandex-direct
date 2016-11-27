@@ -19,7 +19,7 @@ class KeywordActionResult
     /**
      * Creates a new instance of KeywordActionResult.
      *
-     * @return KeywordActionResult
+     * @return self
      */
     public static function create()
     {
@@ -40,7 +40,7 @@ class KeywordActionResult
      * Sets Warnings.
      *
      * @param Warning[]|null $value
-     * @return $this
+     * @return self
      */
     public function setWarnings(array $value = null)
     {
@@ -63,7 +63,7 @@ class KeywordActionResult
      * Sets Errors.
      *
      * @param Error[]|null $value
-     * @return $this
+     * @return self
      */
     public function setErrors(array $value = null)
     {
@@ -86,7 +86,7 @@ class KeywordActionResult
      * Sets KeywordID.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setKeywordID($value = null)
     {
@@ -109,7 +109,7 @@ class KeywordActionResult
      * Sets QualityIndex.
      *
      * @param QualityIndex|null $value
-     * @return $this
+     * @return self
      */
     public function setQualityIndex(QualityIndex $value = null)
     {

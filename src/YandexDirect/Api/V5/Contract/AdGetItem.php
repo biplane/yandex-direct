@@ -26,16 +26,22 @@ class AdGetItem
 
     protected $Type = null;
 
+    protected $Subtype = null;
+
     protected $TextAd = null;
 
     protected $DynamicTextAd = null;
 
     protected $MobileAppAd = null;
 
+    protected $TextImageAd = null;
+
+    protected $MobileAppImageAd = null;
+
     /**
      * Creates a new instance of AdGetItem.
      *
-     * @return AdGetItem
+     * @return self
      */
     public static function create()
     {
@@ -56,7 +62,7 @@ class AdGetItem
      * Sets Id.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setId($value = null)
     {
@@ -79,7 +85,7 @@ class AdGetItem
      * Sets CampaignId.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setCampaignId($value = null)
     {
@@ -102,7 +108,7 @@ class AdGetItem
      * Sets AdGroupId.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setAdGroupId($value = null)
     {
@@ -114,7 +120,8 @@ class AdGetItem
     /**
      * Gets Status.
      *
-     * @return StatusEnum|null
+     * @return string|null
+     * @see StatusEnum
      */
     public function getStatus()
     {
@@ -124,8 +131,9 @@ class AdGetItem
     /**
      * Sets Status.
      *
-     * @param StatusEnum|null $value
-     * @return $this
+     * @param string|null $value
+     * @return self
+     * @see StatusEnum
      */
     public function setStatus($value = null)
     {
@@ -137,7 +145,8 @@ class AdGetItem
     /**
      * Gets State.
      *
-     * @return StateEnum|null
+     * @return string|null
+     * @see StateEnum
      */
     public function getState()
     {
@@ -147,8 +156,9 @@ class AdGetItem
     /**
      * Sets State.
      *
-     * @param StateEnum|null $value
-     * @return $this
+     * @param string|null $value
+     * @return self
+     * @see StateEnum
      */
     public function setState($value = null)
     {
@@ -171,7 +181,7 @@ class AdGetItem
      * Sets StatusClarification.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setStatusClarification($value = null)
     {
@@ -183,7 +193,7 @@ class AdGetItem
     /**
      * Gets AdCategories.
      *
-     * @return AdCategoryEnum[]|null
+     * @return struct[]|null
      */
     public function getAdCategories()
     {
@@ -193,8 +203,8 @@ class AdGetItem
     /**
      * Sets AdCategories.
      *
-     * @param AdCategoryEnum[]|null $value
-     * @return $this
+     * @param struct[]|null $value
+     * @return self
      */
     public function setAdCategories(array $value = null)
     {
@@ -206,7 +216,8 @@ class AdGetItem
     /**
      * Gets AgeLabel.
      *
-     * @return AgeLabelEnum|null
+     * @return string|null
+     * @see AgeLabelEnum
      */
     public function getAgeLabel()
     {
@@ -216,8 +227,9 @@ class AdGetItem
     /**
      * Sets AgeLabel.
      *
-     * @param AgeLabelEnum|null $value
-     * @return $this
+     * @param string|null $value
+     * @return self
+     * @see AgeLabelEnum
      */
     public function setAgeLabel($value = null)
     {
@@ -229,7 +241,8 @@ class AdGetItem
     /**
      * Gets Type.
      *
-     * @return AdTypeEnum|null
+     * @return string|null
+     * @see AdTypeEnum
      */
     public function getType()
     {
@@ -239,12 +252,38 @@ class AdGetItem
     /**
      * Sets Type.
      *
-     * @param AdTypeEnum|null $value
-     * @return $this
+     * @param string|null $value
+     * @return self
+     * @see AdTypeEnum
      */
     public function setType($value = null)
     {
         $this->Type = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets Subtype.
+     *
+     * @return string|null
+     * @see AdSubtypeEnum
+     */
+    public function getSubtype()
+    {
+        return $this->Subtype;
+    }
+
+    /**
+     * Sets Subtype.
+     *
+     * @param string|null $value
+     * @return self
+     * @see AdSubtypeEnum
+     */
+    public function setSubtype($value = null)
+    {
+        $this->Subtype = $value;
 
         return $this;
     }
@@ -263,7 +302,7 @@ class AdGetItem
      * Sets TextAd.
      *
      * @param TextAdGet|null $value
-     * @return $this
+     * @return self
      */
     public function setTextAd(TextAdGet $value = null)
     {
@@ -286,7 +325,7 @@ class AdGetItem
      * Sets DynamicTextAd.
      *
      * @param DynamicTextAdGet|null $value
-     * @return $this
+     * @return self
      */
     public function setDynamicTextAd(DynamicTextAdGet $value = null)
     {
@@ -309,11 +348,57 @@ class AdGetItem
      * Sets MobileAppAd.
      *
      * @param MobileAppAdGet|null $value
-     * @return $this
+     * @return self
      */
     public function setMobileAppAd(MobileAppAdGet $value = null)
     {
         $this->MobileAppAd = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets TextImageAd.
+     *
+     * @return TextImageAdGet|null
+     */
+    public function getTextImageAd()
+    {
+        return $this->TextImageAd;
+    }
+
+    /**
+     * Sets TextImageAd.
+     *
+     * @param TextImageAdGet|null $value
+     * @return self
+     */
+    public function setTextImageAd(TextImageAdGet $value = null)
+    {
+        $this->TextImageAd = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets MobileAppImageAd.
+     *
+     * @return MobileAppImageAdGet|null
+     */
+    public function getMobileAppImageAd()
+    {
+        return $this->MobileAppImageAd;
+    }
+
+    /**
+     * Sets MobileAppImageAd.
+     *
+     * @param MobileAppImageAdGet|null $value
+     * @return self
+     */
+    public function setMobileAppImageAd(MobileAppImageAdGet $value = null)
+    {
+        $this->MobileAppImageAd = $value;
 
         return $this;
     }

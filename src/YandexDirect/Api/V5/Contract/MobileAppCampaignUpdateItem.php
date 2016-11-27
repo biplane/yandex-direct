@@ -15,7 +15,7 @@ class MobileAppCampaignUpdateItem
     /**
      * Creates a new instance of MobileAppCampaignUpdateItem.
      *
-     * @return MobileAppCampaignUpdateItem
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +36,7 @@ class MobileAppCampaignUpdateItem
      * Sets BiddingStrategy.
      *
      * @param MobileAppCampaignStrategy|null $value
-     * @return $this
+     * @return self
      */
     public function setBiddingStrategy(MobileAppCampaignStrategy $value = null)
     {
@@ -59,7 +59,7 @@ class MobileAppCampaignUpdateItem
      * Sets Settings.
      *
      * @param MobileAppCampaignSetting[]|null $value
-     * @return $this
+     * @return self
      */
     public function setSettings(array $value = null)
     {

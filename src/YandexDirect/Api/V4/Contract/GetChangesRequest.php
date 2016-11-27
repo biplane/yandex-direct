@@ -19,7 +19,7 @@ class GetChangesRequest
     /**
      * Creates a new instance of GetChangesRequest.
      *
-     * @return GetChangesRequest
+     * @return self
      */
     public static function create()
     {
@@ -40,7 +40,7 @@ class GetChangesRequest
      * Sets CampaignIDS.
      *
      * @param int[]|null $value
-     * @return $this
+     * @return self
      */
     public function setCampaignIDS(array $value = null)
     {
@@ -63,7 +63,7 @@ class GetChangesRequest
      * Sets BannerIDS.
      *
      * @param int[]|null $value
-     * @return $this
+     * @return self
      */
     public function setBannerIDS(array $value = null)
     {
@@ -86,7 +86,7 @@ class GetChangesRequest
      * Sets Logins.
      *
      * @param string[]|null $value
-     * @return $this
+     * @return self
      */
     public function setLogins(array $value = null)
     {
@@ -109,7 +109,7 @@ class GetChangesRequest
      * Sets Timestamp.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setTimestamp($value = null)
     {

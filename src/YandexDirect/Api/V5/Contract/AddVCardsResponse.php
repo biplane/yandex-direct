@@ -13,7 +13,7 @@ class AddVCardsResponse
     /**
      * Creates a new instance of AddVCardsResponse.
      *
-     * @return AddVCardsResponse
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class AddVCardsResponse
      * Sets AddResults.
      *
      * @param ActionResult[]|null $value
-     * @return $this
+     * @return self
      */
     public function setAddResults(array $value = null)
     {

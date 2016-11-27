@@ -15,7 +15,7 @@ class MobileAppAdFeatureItem
     /**
      * Creates a new instance of MobileAppAdFeatureItem.
      *
-     * @return MobileAppAdFeatureItem
+     * @return self
      */
     public static function create()
     {
@@ -25,7 +25,8 @@ class MobileAppAdFeatureItem
     /**
      * Gets Feature.
      *
-     * @return MobileAppFeatureEnum
+     * @return string
+     * @see MobileAppFeatureEnum
      */
     public function getFeature()
     {
@@ -35,8 +36,9 @@ class MobileAppAdFeatureItem
     /**
      * Sets Feature.
      *
-     * @param MobileAppFeatureEnum $value
-     * @return $this
+     * @param string $value
+     * @return self
+     * @see MobileAppFeatureEnum
      */
     public function setFeature($value)
     {
@@ -48,7 +50,8 @@ class MobileAppAdFeatureItem
     /**
      * Gets Enabled.
      *
-     * @return YesNoEnum
+     * @return string
+     * @see YesNoEnum
      */
     public function getEnabled()
     {
@@ -58,8 +61,9 @@ class MobileAppAdFeatureItem
     /**
      * Sets Enabled.
      *
-     * @param YesNoEnum $value
-     * @return $this
+     * @param string $value
+     * @return self
+     * @see YesNoEnum
      */
     public function setEnabled($value)
     {

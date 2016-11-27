@@ -17,7 +17,7 @@ class TimeZonesItem
     /**
      * Creates a new instance of TimeZonesItem.
      *
-     * @return TimeZonesItem
+     * @return self
      */
     public static function create()
     {
@@ -38,7 +38,7 @@ class TimeZonesItem
      * Sets TimeZone.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setTimeZone($value)
     {
@@ -61,7 +61,7 @@ class TimeZonesItem
      * Sets TimeZoneName.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setTimeZoneName($value)
     {
@@ -84,7 +84,7 @@ class TimeZonesItem
      * Sets UtcOffset.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setUtcOffset($value)
     {

@@ -13,7 +13,7 @@ class SetAutoBidsResponse
     /**
      * Creates a new instance of SetAutoBidsResponse.
      *
-     * @return SetAutoBidsResponse
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class SetAutoBidsResponse
      * Sets SetAutoResults.
      *
      * @param BidActionResult[]|null $value
-     * @return $this
+     * @return self
      */
     public function setSetAutoResults(array $value = null)
     {

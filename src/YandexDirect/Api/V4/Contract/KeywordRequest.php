@@ -12,14 +12,12 @@ class KeywordRequest
 
     protected $Login = null;
 
-    protected $KeywordIDS = array(
-        
-    );
+    protected $KeywordIDS = [];
 
     /**
      * Creates a new instance of KeywordRequest.
      *
-     * @return KeywordRequest
+     * @return self
      */
     public static function create()
     {
@@ -40,7 +38,7 @@ class KeywordRequest
      * Sets Action.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setAction($value)
     {
@@ -63,7 +61,7 @@ class KeywordRequest
      * Sets Login.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setLogin($value = null)
     {
@@ -86,7 +84,7 @@ class KeywordRequest
      * Sets KeywordIDS.
      *
      * @param int[] $value
-     * @return $this
+     * @return self
      */
     public function setKeywordIDS(array $value)
     {

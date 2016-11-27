@@ -8,14 +8,12 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class GetDictionariesRequest
 {
 
-    protected $DictionaryNames = array(
-        
-    );
+    protected $DictionaryNames = [];
 
     /**
      * Creates a new instance of GetDictionariesRequest.
      *
-     * @return GetDictionariesRequest
+     * @return self
      */
     public static function create()
     {
@@ -25,7 +23,8 @@ class GetDictionariesRequest
     /**
      * Gets DictionaryNames.
      *
-     * @return DictionaryNameEnum[]
+     * @return string[]
+     * @see DictionaryNameEnum
      */
     public function getDictionaryNames()
     {
@@ -35,8 +34,9 @@ class GetDictionariesRequest
     /**
      * Sets DictionaryNames.
      *
-     * @param DictionaryNameEnum[] $value
-     * @return $this
+     * @param string[] $value
+     * @return self
+     * @see DictionaryNameEnum
      */
     public function setDictionaryNames(array $value)
     {

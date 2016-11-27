@@ -19,7 +19,7 @@ class StrategyAverageCpaAdd
     /**
      * Creates a new instance of StrategyAverageCpaAdd.
      *
-     * @return StrategyAverageCpaAdd
+     * @return self
      */
     public static function create()
     {
@@ -40,7 +40,7 @@ class StrategyAverageCpaAdd
      * Sets AverageCpa.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setAverageCpa($value)
     {
@@ -63,7 +63,7 @@ class StrategyAverageCpaAdd
      * Sets GoalId.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setGoalId($value)
     {
@@ -86,7 +86,7 @@ class StrategyAverageCpaAdd
      * Sets WeeklySpendLimit.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setWeeklySpendLimit($value = null)
     {
@@ -109,7 +109,7 @@ class StrategyAverageCpaAdd
      * Sets BidCeiling.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setBidCeiling($value = null)
     {

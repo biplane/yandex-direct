@@ -13,7 +13,7 @@ class ArchiveCampaignsRequest
     /**
      * Creates a new instance of ArchiveCampaignsRequest.
      *
-     * @return ArchiveCampaignsRequest
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class ArchiveCampaignsRequest
      * Sets SelectionCriteria.
      *
      * @param IdsCriteria $value
-     * @return $this
+     * @return self
      */
     public function setSelectionCriteria(IdsCriteria $value)
     {

@@ -13,7 +13,7 @@ class GetCampaignsResponse extends GetResponseGeneral
     /**
      * Creates a new instance of GetCampaignsResponse.
      *
-     * @return GetCampaignsResponse
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class GetCampaignsResponse extends GetResponseGeneral
      * Sets Campaigns.
      *
      * @param CampaignGetItem[]|null $value
-     * @return $this
+     * @return self
      */
     public function setCampaigns(array $value = null)
     {

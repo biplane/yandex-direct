@@ -13,7 +13,7 @@ class ClientInfoRequest
     /**
      * Creates a new instance of ClientInfoRequest.
      *
-     * @return ClientInfoRequest
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class ClientInfoRequest
      * Sets Filter.
      *
      * @param ClientFilter|null $value
-     * @return $this
+     * @return self
      */
     public function setFilter(ClientFilter $value = null)
     {

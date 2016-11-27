@@ -8,16 +8,14 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
 class CampaignIDSInfo
 {
 
-    protected $CampaignIDS = array(
-        
-    );
+    protected $CampaignIDS = [];
 
     protected $Currency = null;
 
     /**
      * Creates a new instance of CampaignIDSInfo.
      *
-     * @return CampaignIDSInfo
+     * @return self
      */
     public static function create()
     {
@@ -38,7 +36,7 @@ class CampaignIDSInfo
      * Sets CampaignIDS.
      *
      * @param int[] $value
-     * @return $this
+     * @return self
      */
     public function setCampaignIDS(array $value)
     {
@@ -61,7 +59,7 @@ class CampaignIDSInfo
      * Sets Currency.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setCurrency($value = null)
     {

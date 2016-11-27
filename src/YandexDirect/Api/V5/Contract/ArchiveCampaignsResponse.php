@@ -13,7 +13,7 @@ class ArchiveCampaignsResponse
     /**
      * Creates a new instance of ArchiveCampaignsResponse.
      *
-     * @return ArchiveCampaignsResponse
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class ArchiveCampaignsResponse
      * Sets ArchiveResults.
      *
      * @param ActionResult[]|null $value
-     * @return $this
+     * @return self
      */
     public function setArchiveResults(array $value = null)
     {

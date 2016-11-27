@@ -17,7 +17,7 @@ class Warning
     /**
      * Creates a new instance of Warning.
      *
-     * @return Warning
+     * @return self
      */
     public static function create()
     {
@@ -38,7 +38,7 @@ class Warning
      * Sets WarningCode.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setWarningCode($value)
     {
@@ -61,7 +61,7 @@ class Warning
      * Sets WarningString.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setWarningString($value)
     {
@@ -84,7 +84,7 @@ class Warning
      * Sets Description.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setDescription($value = null)
     {

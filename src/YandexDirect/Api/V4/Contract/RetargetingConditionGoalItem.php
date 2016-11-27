@@ -15,7 +15,7 @@ class RetargetingConditionGoalItem
     /**
      * Creates a new instance of RetargetingConditionGoalItem.
      *
-     * @return RetargetingConditionGoalItem
+     * @return self
      */
     public static function create()
     {
@@ -25,7 +25,7 @@ class RetargetingConditionGoalItem
     /**
      * Gets Time.
      *
-     * @return int
+     * @return int|null
      */
     public function getTime()
     {
@@ -35,10 +35,10 @@ class RetargetingConditionGoalItem
     /**
      * Sets Time.
      *
-     * @param int $value
-     * @return $this
+     * @param int|null $value
+     * @return self
      */
-    public function setTime($value)
+    public function setTime($value = null)
     {
         $this->Time = $value;
 
@@ -59,7 +59,7 @@ class RetargetingConditionGoalItem
      * Sets GoalID.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setGoalID($value)
     {

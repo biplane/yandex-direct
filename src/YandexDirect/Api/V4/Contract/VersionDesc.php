@@ -17,7 +17,7 @@ class VersionDesc
     /**
      * Creates a new instance of VersionDesc.
      *
-     * @return VersionDesc
+     * @return self
      */
     public static function create()
     {
@@ -38,7 +38,7 @@ class VersionDesc
      * Sets VersionNumber.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setVersionNumber($value)
     {
@@ -61,7 +61,7 @@ class VersionDesc
      * Sets LinkWSDL.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setLinkWSDL($value)
     {
@@ -84,7 +84,7 @@ class VersionDesc
      * Sets BorderDate.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setBorderDate($value = null)
     {

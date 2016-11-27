@@ -8,14 +8,12 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class DeleteDynamicTextAdTargetsResponse
 {
 
-    protected $DeleteResults = array(
-        
-    );
+    protected $DeleteResults = [];
 
     /**
      * Creates a new instance of DeleteDynamicTextAdTargetsResponse.
      *
-     * @return DeleteDynamicTextAdTargetsResponse
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +34,7 @@ class DeleteDynamicTextAdTargetsResponse
      * Sets DeleteResults.
      *
      * @param ActionResult[] $value
-     * @return $this
+     * @return self
      */
     public function setDeleteResults(array $value)
     {

@@ -8,14 +8,12 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class UpdateKeywordsResponse
 {
 
-    protected $UpdateResults = array(
-        
-    );
+    protected $UpdateResults = [];
 
     /**
      * Creates a new instance of UpdateKeywordsResponse.
      *
-     * @return UpdateKeywordsResponse
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +34,7 @@ class UpdateKeywordsResponse
      * Sets UpdateResults.
      *
      * @param ActionResult[] $value
-     * @return $this
+     * @return self
      */
     public function setUpdateResults(array $value)
     {

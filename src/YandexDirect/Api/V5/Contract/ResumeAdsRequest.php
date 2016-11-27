@@ -13,7 +13,7 @@ class ResumeAdsRequest
     /**
      * Creates a new instance of ResumeAdsRequest.
      *
-     * @return ResumeAdsRequest
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class ResumeAdsRequest
      * Sets SelectionCriteria.
      *
      * @param IdsCriteria $value
-     * @return $this
+     * @return self
      */
     public function setSelectionCriteria(IdsCriteria $value)
     {

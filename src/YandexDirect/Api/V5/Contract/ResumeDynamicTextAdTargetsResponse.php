@@ -8,14 +8,12 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class ResumeDynamicTextAdTargetsResponse
 {
 
-    protected $ResumeResults = array(
-        
-    );
+    protected $ResumeResults = [];
 
     /**
      * Creates a new instance of ResumeDynamicTextAdTargetsResponse.
      *
-     * @return ResumeDynamicTextAdTargetsResponse
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +34,7 @@ class ResumeDynamicTextAdTargetsResponse
      * Sets ResumeResults.
      *
      * @param ActionResult[] $value
-     * @return $this
+     * @return self
      */
     public function setResumeResults(array $value)
     {

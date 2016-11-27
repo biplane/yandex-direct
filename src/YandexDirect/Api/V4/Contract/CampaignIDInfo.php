@@ -15,7 +15,7 @@ class CampaignIDInfo
     /**
      * Creates a new instance of CampaignIDInfo.
      *
-     * @return CampaignIDInfo
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +36,7 @@ class CampaignIDInfo
      * Sets CampaignID.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setCampaignID($value)
     {
@@ -59,7 +59,7 @@ class CampaignIDInfo
      * Sets Currency.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setCurrency($value = null)
     {

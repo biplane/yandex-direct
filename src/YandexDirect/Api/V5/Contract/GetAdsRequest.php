@@ -10,9 +10,7 @@ class GetAdsRequest extends GetRequestGeneral
 
     protected $SelectionCriteria = null;
 
-    protected $FieldNames = array(
-        
-    );
+    protected $FieldNames = [];
 
     protected $TextAdFieldNames = null;
 
@@ -20,10 +18,14 @@ class GetAdsRequest extends GetRequestGeneral
 
     protected $DynamicTextAdFieldNames = null;
 
+    protected $TextImageAdFieldNames = null;
+
+    protected $MobileAppImageAdFieldNames = null;
+
     /**
      * Creates a new instance of GetAdsRequest.
      *
-     * @return GetAdsRequest
+     * @return self
      */
     public static function create()
     {
@@ -44,7 +46,7 @@ class GetAdsRequest extends GetRequestGeneral
      * Sets SelectionCriteria.
      *
      * @param AdsSelectionCriteria $value
-     * @return $this
+     * @return self
      */
     public function setSelectionCriteria(AdsSelectionCriteria $value)
     {
@@ -56,7 +58,8 @@ class GetAdsRequest extends GetRequestGeneral
     /**
      * Gets FieldNames.
      *
-     * @return AdFieldEnum[]
+     * @return string[]
+     * @see AdFieldEnum
      */
     public function getFieldNames()
     {
@@ -66,8 +69,9 @@ class GetAdsRequest extends GetRequestGeneral
     /**
      * Sets FieldNames.
      *
-     * @param AdFieldEnum[] $value
-     * @return $this
+     * @param string[] $value
+     * @return self
+     * @see AdFieldEnum
      */
     public function setFieldNames(array $value)
     {
@@ -79,7 +83,8 @@ class GetAdsRequest extends GetRequestGeneral
     /**
      * Gets TextAdFieldNames.
      *
-     * @return TextAdFieldEnum[]|null
+     * @return string[]|null
+     * @see TextAdFieldEnum
      */
     public function getTextAdFieldNames()
     {
@@ -89,8 +94,9 @@ class GetAdsRequest extends GetRequestGeneral
     /**
      * Sets TextAdFieldNames.
      *
-     * @param TextAdFieldEnum[]|null $value
-     * @return $this
+     * @param string[]|null $value
+     * @return self
+     * @see TextAdFieldEnum
      */
     public function setTextAdFieldNames(array $value = null)
     {
@@ -102,7 +108,8 @@ class GetAdsRequest extends GetRequestGeneral
     /**
      * Gets MobileAppAdFieldNames.
      *
-     * @return MobileAppAdFieldEnum[]|null
+     * @return string[]|null
+     * @see MobileAppAdFieldEnum
      */
     public function getMobileAppAdFieldNames()
     {
@@ -112,8 +119,9 @@ class GetAdsRequest extends GetRequestGeneral
     /**
      * Sets MobileAppAdFieldNames.
      *
-     * @param MobileAppAdFieldEnum[]|null $value
-     * @return $this
+     * @param string[]|null $value
+     * @return self
+     * @see MobileAppAdFieldEnum
      */
     public function setMobileAppAdFieldNames(array $value = null)
     {
@@ -125,7 +133,8 @@ class GetAdsRequest extends GetRequestGeneral
     /**
      * Gets DynamicTextAdFieldNames.
      *
-     * @return DynamicTextAdFieldEnum[]|null
+     * @return string[]|null
+     * @see DynamicTextAdFieldEnum
      */
     public function getDynamicTextAdFieldNames()
     {
@@ -135,12 +144,63 @@ class GetAdsRequest extends GetRequestGeneral
     /**
      * Sets DynamicTextAdFieldNames.
      *
-     * @param DynamicTextAdFieldEnum[]|null $value
-     * @return $this
+     * @param string[]|null $value
+     * @return self
+     * @see DynamicTextAdFieldEnum
      */
     public function setDynamicTextAdFieldNames(array $value = null)
     {
         $this->DynamicTextAdFieldNames = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets TextImageAdFieldNames.
+     *
+     * @return string[]|null
+     * @see TextImageAdFieldEnum
+     */
+    public function getTextImageAdFieldNames()
+    {
+        return $this->TextImageAdFieldNames;
+    }
+
+    /**
+     * Sets TextImageAdFieldNames.
+     *
+     * @param string[]|null $value
+     * @return self
+     * @see TextImageAdFieldEnum
+     */
+    public function setTextImageAdFieldNames(array $value = null)
+    {
+        $this->TextImageAdFieldNames = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets MobileAppImageAdFieldNames.
+     *
+     * @return string[]|null
+     * @see MobileAppImageAdFieldEnum
+     */
+    public function getMobileAppImageAdFieldNames()
+    {
+        return $this->MobileAppImageAdFieldNames;
+    }
+
+    /**
+     * Sets MobileAppImageAdFieldNames.
+     *
+     * @param string[]|null $value
+     * @return self
+     * @see MobileAppImageAdFieldEnum
+     */
+    public function setMobileAppImageAdFieldNames(array $value = null)
+    {
+        $this->MobileAppImageAdFieldNames = $value;
 
         return $this;
     }

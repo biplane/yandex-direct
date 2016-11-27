@@ -13,7 +13,7 @@ class MobileAdjustmentAdd
     /**
      * Creates a new instance of MobileAdjustmentAdd.
      *
-     * @return MobileAdjustmentAdd
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class MobileAdjustmentAdd
      * Sets BidModifier.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setBidModifier($value)
     {

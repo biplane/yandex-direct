@@ -25,7 +25,7 @@ class MobileAppAdGroupGet
     /**
      * Creates a new instance of MobileAppAdGroupGet.
      *
-     * @return MobileAppAdGroupGet
+     * @return self
      */
     public static function create()
     {
@@ -46,7 +46,7 @@ class MobileAppAdGroupGet
      * Sets StoreUrl.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setStoreUrl($value = null)
     {
@@ -58,7 +58,8 @@ class MobileAppAdGroupGet
     /**
      * Gets TargetDeviceType.
      *
-     * @return TargetDeviceTypeEnum[]|null
+     * @return string[]|null
+     * @see TargetDeviceTypeEnum
      */
     public function getTargetDeviceType()
     {
@@ -68,8 +69,9 @@ class MobileAppAdGroupGet
     /**
      * Sets TargetDeviceType.
      *
-     * @param TargetDeviceTypeEnum[]|null $value
-     * @return $this
+     * @param string[]|null $value
+     * @return self
+     * @see TargetDeviceTypeEnum
      */
     public function setTargetDeviceType(array $value = null)
     {
@@ -81,7 +83,8 @@ class MobileAppAdGroupGet
     /**
      * Gets TargetCarrier.
      *
-     * @return TargetCarrierEnum|null
+     * @return string|null
+     * @see TargetCarrierEnum
      */
     public function getTargetCarrier()
     {
@@ -91,8 +94,9 @@ class MobileAppAdGroupGet
     /**
      * Sets TargetCarrier.
      *
-     * @param TargetCarrierEnum|null $value
-     * @return $this
+     * @param string|null $value
+     * @return self
+     * @see TargetCarrierEnum
      */
     public function setTargetCarrier($value = null)
     {
@@ -115,7 +119,7 @@ class MobileAppAdGroupGet
      * Sets TargetOperatingSystemVersion.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setTargetOperatingSystemVersion($value = null)
     {
@@ -138,7 +142,7 @@ class MobileAppAdGroupGet
      * Sets AppIconModeration.
      *
      * @param ExtensionModeration|null $value
-     * @return $this
+     * @return self
      */
     public function setAppIconModeration(ExtensionModeration $value = null)
     {
@@ -150,7 +154,8 @@ class MobileAppAdGroupGet
     /**
      * Gets AppOperatingSystemType.
      *
-     * @return MobileOperatingSystemTypeEnum|null
+     * @return string|null
+     * @see MobileOperatingSystemTypeEnum
      */
     public function getAppOperatingSystemType()
     {
@@ -160,8 +165,9 @@ class MobileAppAdGroupGet
     /**
      * Sets AppOperatingSystemType.
      *
-     * @param MobileOperatingSystemTypeEnum|null $value
-     * @return $this
+     * @param string|null $value
+     * @return self
+     * @see MobileOperatingSystemTypeEnum
      */
     public function setAppOperatingSystemType($value = null)
     {
@@ -173,7 +179,8 @@ class MobileAppAdGroupGet
     /**
      * Gets AppAvailabilityStatus.
      *
-     * @return AppAvailabilityStatusEnum|null
+     * @return string|null
+     * @see AppAvailabilityStatusEnum
      */
     public function getAppAvailabilityStatus()
     {
@@ -183,8 +190,9 @@ class MobileAppAdGroupGet
     /**
      * Sets AppAvailabilityStatus.
      *
-     * @param AppAvailabilityStatusEnum|null $value
-     * @return $this
+     * @param string|null $value
+     * @return self
+     * @see AppAvailabilityStatusEnum
      */
     public function setAppAvailabilityStatus($value = null)
     {

@@ -29,7 +29,7 @@ class GetBannersInfo
     /**
      * Creates a new instance of GetBannersInfo.
      *
-     * @return GetBannersInfo
+     * @return self
      */
     public static function create()
     {
@@ -50,7 +50,7 @@ class GetBannersInfo
      * Sets CampaignIDS.
      *
      * @param int[]|null $value
-     * @return $this
+     * @return self
      */
     public function setCampaignIDS(array $value = null)
     {
@@ -73,7 +73,7 @@ class GetBannersInfo
      * Sets BannerIDS.
      *
      * @param int[]|null $value
-     * @return $this
+     * @return self
      */
     public function setBannerIDS(array $value = null)
     {
@@ -96,7 +96,7 @@ class GetBannersInfo
      * Sets Filter.
      *
      * @param BannersFilterInfo|null $value
-     * @return $this
+     * @return self
      */
     public function setFilter(BannersFilterInfo $value = null)
     {
@@ -119,7 +119,7 @@ class GetBannersInfo
      * Sets GetPhrases.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setGetPhrases($value = null)
     {
@@ -142,7 +142,7 @@ class GetBannersInfo
      * Sets FieldsNames.
      *
      * @param string[]|null $value
-     * @return $this
+     * @return self
      */
     public function setFieldsNames(array $value = null)
     {
@@ -165,7 +165,7 @@ class GetBannersInfo
      * Sets Limit.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setLimit($value = null)
     {
@@ -188,7 +188,7 @@ class GetBannersInfo
      * Sets Offset.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setOffset($value = null)
     {
@@ -211,7 +211,7 @@ class GetBannersInfo
      * Sets Currency.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setCurrency($value = null)
     {
@@ -234,7 +234,7 @@ class GetBannersInfo
      * Sets AuctionBids.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setAuctionBids($value = null)
     {

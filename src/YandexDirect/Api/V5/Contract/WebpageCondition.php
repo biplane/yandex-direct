@@ -12,14 +12,12 @@ class WebpageCondition
 
     protected $Operator = null;
 
-    protected $Arguments = array(
-
-    );
+    protected $Arguments = [];
 
     /**
      * Creates a new instance of WebpageCondition.
      *
-     * @return WebpageCondition
+     * @return self
      */
     public static function create()
     {
@@ -29,7 +27,8 @@ class WebpageCondition
     /**
      * Gets Operand.
      *
-     * @return WebpageConditionOperandEnum
+     * @return string
+     * @see WebpageConditionOperandEnum
      */
     public function getOperand()
     {
@@ -39,8 +38,9 @@ class WebpageCondition
     /**
      * Sets Operand.
      *
-     * @param WebpageConditionOperandEnum $value
-     * @return $this
+     * @param string $value
+     * @return self
+     * @see WebpageConditionOperandEnum
      */
     public function setOperand($value)
     {
@@ -52,7 +52,8 @@ class WebpageCondition
     /**
      * Gets Operator.
      *
-     * @return StringConditionOperatorEnum
+     * @return string
+     * @see StringConditionOperatorEnum
      */
     public function getOperator()
     {
@@ -62,8 +63,9 @@ class WebpageCondition
     /**
      * Sets Operator.
      *
-     * @param StringConditionOperatorEnum $value
-     * @return $this
+     * @param string $value
+     * @return self
+     * @see StringConditionOperatorEnum
      */
     public function setOperator($value)
     {
@@ -86,7 +88,7 @@ class WebpageCondition
      * Sets Arguments.
      *
      * @param string[] $value
-     * @return $this
+     * @return self
      */
     public function setArguments(array $value)
     {

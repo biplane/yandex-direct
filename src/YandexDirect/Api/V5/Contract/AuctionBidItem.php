@@ -17,7 +17,7 @@ class AuctionBidItem
     /**
      * Creates a new instance of AuctionBidItem.
      *
-     * @return AuctionBidItem
+     * @return self
      */
     public static function create()
     {
@@ -38,7 +38,7 @@ class AuctionBidItem
      * Sets Position.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setPosition($value)
     {
@@ -61,7 +61,7 @@ class AuctionBidItem
      * Sets Bid.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setBid($value)
     {
@@ -84,7 +84,7 @@ class AuctionBidItem
      * Sets Price.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setPrice($value)
     {

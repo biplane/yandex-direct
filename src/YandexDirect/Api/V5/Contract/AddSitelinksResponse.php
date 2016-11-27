@@ -13,7 +13,7 @@ class AddSitelinksResponse
     /**
      * Creates a new instance of AddSitelinksResponse.
      *
-     * @return AddSitelinksResponse
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class AddSitelinksResponse
      * Sets AddResults.
      *
      * @param ActionResult[]|null $value
-     * @return $this
+     * @return self
      */
     public function setAddResults(array $value = null)
     {

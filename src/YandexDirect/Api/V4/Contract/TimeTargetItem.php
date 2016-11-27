@@ -8,20 +8,16 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
 class TimeTargetItem
 {
 
-    protected $Hours = array(
-        
-    );
+    protected $Hours = [];
 
-    protected $Days = array(
-        
-    );
+    protected $Days = [];
 
     protected $BidCoefs = null;
 
     /**
      * Creates a new instance of TimeTargetItem.
      *
-     * @return TimeTargetItem
+     * @return self
      */
     public static function create()
     {
@@ -42,7 +38,7 @@ class TimeTargetItem
      * Sets Hours.
      *
      * @param int[] $value
-     * @return $this
+     * @return self
      */
     public function setHours(array $value)
     {
@@ -65,7 +61,7 @@ class TimeTargetItem
      * Sets Days.
      *
      * @param int[] $value
-     * @return $this
+     * @return self
      */
     public function setDays(array $value)
     {
@@ -88,7 +84,7 @@ class TimeTargetItem
      * Sets BidCoefs.
      *
      * @param int[]|null $value
-     * @return $this
+     * @return self
      */
     public function setBidCoefs(array $value = null)
     {

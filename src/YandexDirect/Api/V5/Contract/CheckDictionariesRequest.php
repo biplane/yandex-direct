@@ -13,7 +13,7 @@ class CheckDictionariesRequest
     /**
      * Creates a new instance of CheckDictionariesRequest.
      *
-     * @return CheckDictionariesRequest
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class CheckDictionariesRequest
      * Sets Timestamp.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setTimestamp($value = null)
     {

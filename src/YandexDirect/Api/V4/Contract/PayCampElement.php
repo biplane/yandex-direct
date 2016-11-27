@@ -17,7 +17,7 @@ class PayCampElement
     /**
      * Creates a new instance of PayCampElement.
      *
-     * @return PayCampElement
+     * @return self
      */
     public static function create()
     {
@@ -38,7 +38,7 @@ class PayCampElement
      * Sets CampaignID.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setCampaignID($value)
     {
@@ -61,7 +61,7 @@ class PayCampElement
      * Sets Sum.
      *
      * @param float $value
-     * @return $this
+     * @return self
      */
     public function setSum($value)
     {
@@ -84,7 +84,7 @@ class PayCampElement
      * Sets Currency.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setCurrency($value = null)
     {

@@ -15,7 +15,7 @@ class BannerTagsInfo
     /**
      * Creates a new instance of BannerTagsInfo.
      *
-     * @return BannerTagsInfo
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +36,7 @@ class BannerTagsInfo
      * Sets BannerID.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setBannerID($value)
     {
@@ -59,7 +59,7 @@ class BannerTagsInfo
      * Sets TagIDS.
      *
      * @param int[]|null $value
-     * @return $this
+     * @return self
      */
     public function setTagIDS(array $value = null)
     {

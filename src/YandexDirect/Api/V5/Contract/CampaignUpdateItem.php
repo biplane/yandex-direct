@@ -35,7 +35,7 @@ class CampaignUpdateItem extends CampaignBase
     /**
      * Creates a new instance of CampaignUpdateItem.
      *
-     * @return CampaignUpdateItem
+     * @return self
      */
     public static function create()
     {
@@ -56,7 +56,7 @@ class CampaignUpdateItem extends CampaignBase
      * Sets Id.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setId($value)
     {
@@ -79,7 +79,7 @@ class CampaignUpdateItem extends CampaignBase
      * Sets Name.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setName($value = null)
     {
@@ -102,7 +102,7 @@ class CampaignUpdateItem extends CampaignBase
      * Sets StartDate.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setStartDate($value = null)
     {
@@ -125,7 +125,7 @@ class CampaignUpdateItem extends CampaignBase
      * Sets DailyBudget.
      *
      * @param DailyBudget|null $value
-     * @return $this
+     * @return self
      */
     public function setDailyBudget(DailyBudget $value = null)
     {
@@ -148,7 +148,7 @@ class CampaignUpdateItem extends CampaignBase
      * Sets EndDate.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setEndDate($value = null)
     {
@@ -160,7 +160,7 @@ class CampaignUpdateItem extends CampaignBase
     /**
      * Gets NegativeKeywords.
      *
-     * @return string[]|null
+     * @return struct[]|null
      */
     public function getNegativeKeywords()
     {
@@ -170,8 +170,8 @@ class CampaignUpdateItem extends CampaignBase
     /**
      * Sets NegativeKeywords.
      *
-     * @param string[]|null $value
-     * @return $this
+     * @param struct[]|null $value
+     * @return self
      */
     public function setNegativeKeywords(array $value = null)
     {
@@ -183,7 +183,7 @@ class CampaignUpdateItem extends CampaignBase
     /**
      * Gets BlockedIps.
      *
-     * @return string[]|null
+     * @return struct[]|null
      */
     public function getBlockedIps()
     {
@@ -193,8 +193,8 @@ class CampaignUpdateItem extends CampaignBase
     /**
      * Sets BlockedIps.
      *
-     * @param string[]|null $value
-     * @return $this
+     * @param struct[]|null $value
+     * @return self
      */
     public function setBlockedIps(array $value = null)
     {
@@ -206,7 +206,7 @@ class CampaignUpdateItem extends CampaignBase
     /**
      * Gets ExcludedSites.
      *
-     * @return string[]|null
+     * @return struct[]|null
      */
     public function getExcludedSites()
     {
@@ -216,8 +216,8 @@ class CampaignUpdateItem extends CampaignBase
     /**
      * Sets ExcludedSites.
      *
-     * @param string[]|null $value
-     * @return $this
+     * @param struct[]|null $value
+     * @return self
      */
     public function setExcludedSites(array $value = null)
     {
@@ -240,7 +240,7 @@ class CampaignUpdateItem extends CampaignBase
      * Sets TextCampaign.
      *
      * @param TextCampaignUpdateItem|null $value
-     * @return $this
+     * @return self
      */
     public function setTextCampaign(TextCampaignUpdateItem $value = null)
     {
@@ -263,7 +263,7 @@ class CampaignUpdateItem extends CampaignBase
      * Sets MobileAppCampaign.
      *
      * @param MobileAppCampaignUpdateItem|null $value
-     * @return $this
+     * @return self
      */
     public function setMobileAppCampaign(MobileAppCampaignUpdateItem $value = null)
     {
@@ -286,7 +286,7 @@ class CampaignUpdateItem extends CampaignBase
      * Sets DynamicTextCampaign.
      *
      * @param DynamicTextCampaignUpdateItem|null $value
-     * @return $this
+     * @return self
      */
     public function setDynamicTextCampaign(DynamicTextCampaignUpdateItem $value = null)
     {
@@ -309,7 +309,7 @@ class CampaignUpdateItem extends CampaignBase
      * Sets TimeTargeting.
      *
      * @param TimeTargeting|null $value
-     * @return $this
+     * @return self
      */
     public function setTimeTargeting(TimeTargeting $value = null)
     {

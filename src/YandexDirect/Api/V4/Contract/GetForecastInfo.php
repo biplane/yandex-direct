@@ -8,20 +8,16 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
 class GetForecastInfo
 {
 
-    protected $Categories = array(
-        
-    );
+    protected $Categories = [];
 
-    protected $Phrases = array(
-        
-    );
+    protected $Phrases = [];
 
     protected $Common = null;
 
     /**
      * Creates a new instance of GetForecastInfo.
      *
-     * @return GetForecastInfo
+     * @return self
      */
     public static function create()
     {
@@ -42,7 +38,7 @@ class GetForecastInfo
      * Sets Categories.
      *
      * @param BannerPhraseInfo[] $value
-     * @return $this
+     * @return self
      */
     public function setCategories(array $value)
     {
@@ -65,7 +61,7 @@ class GetForecastInfo
      * Sets Phrases.
      *
      * @param BannerPhraseInfo[] $value
-     * @return $this
+     * @return self
      */
     public function setPhrases(array $value)
     {
@@ -88,7 +84,7 @@ class GetForecastInfo
      * Sets Common.
      *
      * @param ForecastCommonInfo $value
-     * @return $this
+     * @return self
      */
     public function setCommon(ForecastCommonInfo $value)
     {

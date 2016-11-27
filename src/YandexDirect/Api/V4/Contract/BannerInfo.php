@@ -71,7 +71,7 @@ class BannerInfo
     /**
      * Creates a new instance of BannerInfo.
      *
-     * @return BannerInfo
+     * @return self
      */
     public static function create()
     {
@@ -92,7 +92,7 @@ class BannerInfo
      * Sets BannerID.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setBannerID($value = null)
     {
@@ -115,7 +115,7 @@ class BannerInfo
      * Sets CampaignID.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setCampaignID($value = null)
     {
@@ -138,7 +138,7 @@ class BannerInfo
      * Sets Title.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setTitle($value = null)
     {
@@ -161,7 +161,7 @@ class BannerInfo
      * Sets Text.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setText($value = null)
     {
@@ -184,7 +184,7 @@ class BannerInfo
      * Sets Href.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setHref($value = null)
     {
@@ -207,7 +207,7 @@ class BannerInfo
      * Sets Domain.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setDomain($value = null)
     {
@@ -230,7 +230,7 @@ class BannerInfo
      * Sets ContactInfo.
      *
      * @param ContactInfo|null $value
-     * @return $this
+     * @return self
      */
     public function setContactInfo(ContactInfo $value = null)
     {
@@ -253,7 +253,7 @@ class BannerInfo
      * Sets Geo.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setGeo($value = null)
     {
@@ -276,7 +276,7 @@ class BannerInfo
      * Sets Phrases.
      *
      * @param BannerPhraseInfo[]|null $value
-     * @return $this
+     * @return self
      */
     public function setPhrases(array $value = null)
     {
@@ -299,7 +299,7 @@ class BannerInfo
      * Sets MinusKeywords.
      *
      * @param string[]|null $value
-     * @return $this
+     * @return self
      */
     public function setMinusKeywords(array $value = null)
     {
@@ -322,7 +322,7 @@ class BannerInfo
      * Sets StatusActivating.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setStatusActivating($value = null)
     {
@@ -345,7 +345,7 @@ class BannerInfo
      * Sets StatusArchive.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setStatusArchive($value = null)
     {
@@ -368,7 +368,7 @@ class BannerInfo
      * Sets StatusBannerModerate.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setStatusBannerModerate($value = null)
     {
@@ -391,7 +391,7 @@ class BannerInfo
      * Sets StatusPhrasesModerate.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setStatusPhrasesModerate($value = null)
     {
@@ -414,7 +414,7 @@ class BannerInfo
      * Sets StatusPhoneModerate.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setStatusPhoneModerate($value = null)
     {
@@ -437,7 +437,7 @@ class BannerInfo
      * Sets StatusShow.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setStatusShow($value = null)
     {
@@ -460,7 +460,7 @@ class BannerInfo
      * Sets IsActive.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setIsActive($value = null)
     {
@@ -483,7 +483,7 @@ class BannerInfo
      * Sets StatusSitelinksModerate.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setStatusSitelinksModerate($value = null)
     {
@@ -506,7 +506,7 @@ class BannerInfo
      * Sets Sitelinks.
      *
      * @param Sitelink[]|null $value
-     * @return $this
+     * @return self
      */
     public function setSitelinks(array $value = null)
     {
@@ -529,7 +529,7 @@ class BannerInfo
      * Sets AdWarnings.
      *
      * @param string[]|null $value
-     * @return $this
+     * @return self
      */
     public function setAdWarnings(array $value = null)
     {
@@ -552,7 +552,7 @@ class BannerInfo
      * Sets FixedOnModeration.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setFixedOnModeration($value = null)
     {
@@ -575,7 +575,7 @@ class BannerInfo
      * Sets ModerateRejectionReasons.
      *
      * @param RejectReason[]|null $value
-     * @return $this
+     * @return self
      */
     public function setModerateRejectionReasons(array $value = null)
     {
@@ -598,7 +598,7 @@ class BannerInfo
      * Sets Type.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setType($value = null)
     {
@@ -621,7 +621,7 @@ class BannerInfo
      * Sets AdGroupID.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setAdGroupID($value = null)
     {
@@ -644,7 +644,7 @@ class BannerInfo
      * Sets AdGroupName.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setAdGroupName($value = null)
     {
@@ -667,7 +667,7 @@ class BannerInfo
      * Sets AutoMinusWords.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setAutoMinusWords($value = null)
     {
@@ -690,7 +690,7 @@ class BannerInfo
      * Sets AgeLabel.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setAgeLabel($value = null)
     {
@@ -713,7 +713,7 @@ class BannerInfo
      * Sets AdImageHash.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setAdImageHash($value = null)
     {
@@ -736,7 +736,7 @@ class BannerInfo
      * Sets StatusAdImageModerate.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setStatusAdImageModerate($value = null)
     {
@@ -759,7 +759,7 @@ class BannerInfo
      * Sets AdGroupMobileBidAdjustment.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setAdGroupMobileBidAdjustment($value = null)
     {

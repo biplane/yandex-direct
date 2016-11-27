@@ -21,7 +21,7 @@ class MobileAppAdBase
     /**
      * Creates a new instance of MobileAppAdBase.
      *
-     * @return MobileAppAdBase
+     * @return self
      */
     public static function create()
     {
@@ -42,7 +42,7 @@ class MobileAppAdBase
      * Sets Title.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setTitle($value = null)
     {
@@ -65,7 +65,7 @@ class MobileAppAdBase
      * Sets Text.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setText($value = null)
     {
@@ -88,7 +88,7 @@ class MobileAppAdBase
      * Sets TrackingUrl.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setTrackingUrl($value = null)
     {
@@ -100,7 +100,8 @@ class MobileAppAdBase
     /**
      * Gets Action.
      *
-     * @return MobileAppAdActionEnum|null
+     * @return string|null
+     * @see MobileAppAdActionEnum
      */
     public function getAction()
     {
@@ -110,8 +111,9 @@ class MobileAppAdBase
     /**
      * Sets Action.
      *
-     * @param MobileAppAdActionEnum|null $value
-     * @return $this
+     * @param string|null $value
+     * @return self
+     * @see MobileAppAdActionEnum
      */
     public function setAction($value = null)
     {
@@ -134,7 +136,7 @@ class MobileAppAdBase
      * Sets AdImageHash.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setAdImageHash($value = null)
     {

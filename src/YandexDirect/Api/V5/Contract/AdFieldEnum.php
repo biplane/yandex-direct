@@ -26,6 +26,8 @@ class AdFieldEnum
 
     const TYPE = 'Type';
 
+    const SUBTYPE = 'Subtype';
+
 
 }
 

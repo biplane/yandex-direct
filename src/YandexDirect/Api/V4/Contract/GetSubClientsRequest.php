@@ -15,7 +15,7 @@ class GetSubClientsRequest
     /**
      * Creates a new instance of GetSubClientsRequest.
      *
-     * @return GetSubClientsRequest
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +36,7 @@ class GetSubClientsRequest
      * Sets Login.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setLogin($value = null)
     {
@@ -59,7 +59,7 @@ class GetSubClientsRequest
      * Sets Filter.
      *
      * @param ClientFilter|null $value
-     * @return $this
+     * @return self
      */
     public function setFilter(ClientFilter $value = null)
     {

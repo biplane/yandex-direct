@@ -10,16 +10,14 @@ class GetAdExtensionsRequest extends GetRequestGeneral
 
     protected $SelectionCriteria = null;
 
-    protected $FieldNames = array(
-        
-    );
+    protected $FieldNames = [];
 
     protected $CalloutFieldNames = null;
 
     /**
      * Creates a new instance of GetAdExtensionsRequest.
      *
-     * @return GetAdExtensionsRequest
+     * @return self
      */
     public static function create()
     {
@@ -40,7 +38,7 @@ class GetAdExtensionsRequest extends GetRequestGeneral
      * Sets SelectionCriteria.
      *
      * @param AdExtensionsSelectionCriteria $value
-     * @return $this
+     * @return self
      */
     public function setSelectionCriteria(AdExtensionsSelectionCriteria $value)
     {
@@ -52,7 +50,8 @@ class GetAdExtensionsRequest extends GetRequestGeneral
     /**
      * Gets FieldNames.
      *
-     * @return AdExtensionFieldEnum[]
+     * @return string[]
+     * @see AdExtensionFieldEnum
      */
     public function getFieldNames()
     {
@@ -62,8 +61,9 @@ class GetAdExtensionsRequest extends GetRequestGeneral
     /**
      * Sets FieldNames.
      *
-     * @param AdExtensionFieldEnum[] $value
-     * @return $this
+     * @param string[] $value
+     * @return self
+     * @see AdExtensionFieldEnum
      */
     public function setFieldNames(array $value)
     {
@@ -75,7 +75,8 @@ class GetAdExtensionsRequest extends GetRequestGeneral
     /**
      * Gets CalloutFieldNames.
      *
-     * @return CalloutFieldEnum[]|null
+     * @return string[]|null
+     * @see CalloutFieldEnum
      */
     public function getCalloutFieldNames()
     {
@@ -85,8 +86,9 @@ class GetAdExtensionsRequest extends GetRequestGeneral
     /**
      * Sets CalloutFieldNames.
      *
-     * @param CalloutFieldEnum[]|null $value
-     * @return $this
+     * @param string[]|null $value
+     * @return self
+     * @see CalloutFieldEnum
      */
     public function setCalloutFieldNames(array $value = null)
     {

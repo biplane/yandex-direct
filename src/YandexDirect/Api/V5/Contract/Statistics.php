@@ -15,7 +15,7 @@ class Statistics
     /**
      * Creates a new instance of Statistics.
      *
-     * @return Statistics
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +36,7 @@ class Statistics
      * Sets Clicks.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setClicks($value)
     {
@@ -59,7 +59,7 @@ class Statistics
      * Sets Impressions.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setImpressions($value)
     {

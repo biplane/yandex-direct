@@ -8,14 +8,12 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class ToggleBidModifiersRequest
 {
 
-    protected $BidModifierToggleItems = array(
-        
-    );
+    protected $BidModifierToggleItems = [];
 
     /**
      * Creates a new instance of ToggleBidModifiersRequest.
      *
-     * @return ToggleBidModifiersRequest
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +34,7 @@ class ToggleBidModifiersRequest
      * Sets BidModifierToggleItems.
      *
      * @param BidModifierToggleItem[] $value
-     * @return $this
+     * @return self
      */
     public function setBidModifierToggleItems(array $value)
     {

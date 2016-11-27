@@ -13,7 +13,7 @@ class Callout
     /**
      * Creates a new instance of Callout.
      *
-     * @return Callout
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class Callout
      * Sets CalloutText.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setCalloutText($value)
     {

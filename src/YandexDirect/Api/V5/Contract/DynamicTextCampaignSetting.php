@@ -15,7 +15,7 @@ class DynamicTextCampaignSetting
     /**
      * Creates a new instance of DynamicTextCampaignSetting.
      *
-     * @return DynamicTextCampaignSetting
+     * @return self
      */
     public static function create()
     {
@@ -25,7 +25,8 @@ class DynamicTextCampaignSetting
     /**
      * Gets Option.
      *
-     * @return DynamicTextCampaignSettingsEnum
+     * @return string
+     * @see DynamicTextCampaignSettingsEnum
      */
     public function getOption()
     {
@@ -35,8 +36,9 @@ class DynamicTextCampaignSetting
     /**
      * Sets Option.
      *
-     * @param DynamicTextCampaignSettingsEnum $value
-     * @return $this
+     * @param string $value
+     * @return self
+     * @see DynamicTextCampaignSettingsEnum
      */
     public function setOption($value)
     {
@@ -48,7 +50,8 @@ class DynamicTextCampaignSetting
     /**
      * Gets Value.
      *
-     * @return YesNoEnum
+     * @return string
+     * @see YesNoEnum
      */
     public function getValue()
     {
@@ -58,8 +61,9 @@ class DynamicTextCampaignSetting
     /**
      * Sets Value.
      *
-     * @param YesNoEnum $value
-     * @return $this
+     * @param string $value
+     * @return self
+     * @see YesNoEnum
      */
     public function setValue($value)
     {

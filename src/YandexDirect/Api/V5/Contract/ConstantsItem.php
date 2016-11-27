@@ -15,7 +15,7 @@ class ConstantsItem
     /**
      * Creates a new instance of ConstantsItem.
      *
-     * @return ConstantsItem
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +36,7 @@ class ConstantsItem
      * Sets Name.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setName($value)
     {
@@ -59,7 +59,7 @@ class ConstantsItem
      * Sets Value.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setValue($value)
     {

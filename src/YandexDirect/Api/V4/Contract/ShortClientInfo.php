@@ -19,7 +19,7 @@ class ShortClientInfo
     /**
      * Creates a new instance of ShortClientInfo.
      *
-     * @return ShortClientInfo
+     * @return self
      */
     public static function create()
     {
@@ -40,7 +40,7 @@ class ShortClientInfo
      * Sets Login.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setLogin($value = null)
     {
@@ -63,7 +63,7 @@ class ShortClientInfo
      * Sets FIO.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setFIO($value = null)
     {
@@ -86,7 +86,7 @@ class ShortClientInfo
      * Sets Role.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setRole($value = null)
     {
@@ -109,7 +109,7 @@ class ShortClientInfo
      * Sets SharedAccountEnabled.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setSharedAccountEnabled($value = null)
     {

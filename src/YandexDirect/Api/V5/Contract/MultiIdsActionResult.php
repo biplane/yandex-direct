@@ -13,7 +13,7 @@ class MultiIdsActionResult extends ActionResultBase
     /**
      * Creates a new instance of MultiIdsActionResult.
      *
-     * @return MultiIdsActionResult
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class MultiIdsActionResult extends ActionResultBase
      * Sets Ids.
      *
      * @param int[]|null $value
-     * @return $this
+     * @return self
      */
     public function setIds(array $value = null)
     {

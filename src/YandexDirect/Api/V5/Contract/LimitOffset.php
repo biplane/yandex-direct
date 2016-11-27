@@ -15,7 +15,7 @@ class LimitOffset
     /**
      * Creates a new instance of LimitOffset.
      *
-     * @return LimitOffset
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +36,7 @@ class LimitOffset
      * Sets Limit.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setLimit($value = null)
     {
@@ -59,7 +59,7 @@ class LimitOffset
      * Sets Offset.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setOffset($value = null)
     {

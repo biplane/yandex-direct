@@ -17,7 +17,7 @@ class EnableSharedAccountResponse
     /**
      * Creates a new instance of EnableSharedAccountResponse.
      *
-     * @return EnableSharedAccountResponse
+     * @return self
      */
     public static function create()
     {
@@ -38,7 +38,7 @@ class EnableSharedAccountResponse
      * Sets Errors.
      *
      * @param Error[]|null $value
-     * @return $this
+     * @return self
      */
     public function setErrors(array $value = null)
     {
@@ -61,7 +61,7 @@ class EnableSharedAccountResponse
      * Sets Login.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setLogin($value = null)
     {
@@ -84,7 +84,7 @@ class EnableSharedAccountResponse
      * Sets AccountID.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setAccountID($value = null)
     {

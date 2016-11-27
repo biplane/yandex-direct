@@ -13,7 +13,7 @@ class ResumeDynamicTextAdTargetsRequest
     /**
      * Creates a new instance of ResumeDynamicTextAdTargetsRequest.
      *
-     * @return ResumeDynamicTextAdTargetsRequest
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class ResumeDynamicTextAdTargetsRequest
      * Sets SelectionCriteria.
      *
      * @param IdsCriteria $value
-     * @return $this
+     * @return self
      */
     public function setSelectionCriteria(IdsCriteria $value)
     {

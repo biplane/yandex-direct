@@ -13,7 +13,7 @@ class DynamicTextCampaignNetworkStrategyAdd
     /**
      * Creates a new instance of DynamicTextCampaignNetworkStrategyAdd.
      *
-     * @return DynamicTextCampaignNetworkStrategyAdd
+     * @return self
      */
     public static function create()
     {
@@ -23,7 +23,8 @@ class DynamicTextCampaignNetworkStrategyAdd
     /**
      * Gets BiddingStrategyType.
      *
-     * @return DynamicTextCampaignNetworkStrategyTypeEnum
+     * @return string
+     * @see DynamicTextCampaignNetworkStrategyTypeEnum
      */
     public function getBiddingStrategyType()
     {
@@ -33,8 +34,9 @@ class DynamicTextCampaignNetworkStrategyAdd
     /**
      * Sets BiddingStrategyType.
      *
-     * @param DynamicTextCampaignNetworkStrategyTypeEnum $value
-     * @return $this
+     * @param string $value
+     * @return self
+     * @see DynamicTextCampaignNetworkStrategyTypeEnum
      */
     public function setBiddingStrategyType($value)
     {

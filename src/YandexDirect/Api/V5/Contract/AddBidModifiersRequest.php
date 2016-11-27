@@ -8,14 +8,12 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class AddBidModifiersRequest
 {
 
-    protected $BidModifiers = array(
-        
-    );
+    protected $BidModifiers = [];
 
     /**
      * Creates a new instance of AddBidModifiersRequest.
      *
-     * @return AddBidModifiersRequest
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +34,7 @@ class AddBidModifiersRequest
      * Sets BidModifiers.
      *
      * @param BidModifierAddItem[] $value
-     * @return $this
+     * @return self
      */
     public function setBidModifiers(array $value)
     {

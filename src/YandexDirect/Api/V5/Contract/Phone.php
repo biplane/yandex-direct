@@ -19,7 +19,7 @@ class Phone
     /**
      * Creates a new instance of Phone.
      *
-     * @return Phone
+     * @return self
      */
     public static function create()
     {
@@ -40,7 +40,7 @@ class Phone
      * Sets CountryCode.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setCountryCode($value)
     {
@@ -63,7 +63,7 @@ class Phone
      * Sets CityCode.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setCityCode($value)
     {
@@ -86,7 +86,7 @@ class Phone
      * Sets PhoneNumber.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setPhoneNumber($value)
     {
@@ -109,7 +109,7 @@ class Phone
      * Sets Extension.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setExtension($value = null)
     {

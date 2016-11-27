@@ -13,7 +13,7 @@ class DynamicTextAdAdd extends TextAdAddBase
     /**
      * Creates a new instance of DynamicTextAdAdd.
      *
-     * @return DynamicTextAdAdd
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class DynamicTextAdAdd extends TextAdAddBase
      * Sets Text.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setText($value)
     {

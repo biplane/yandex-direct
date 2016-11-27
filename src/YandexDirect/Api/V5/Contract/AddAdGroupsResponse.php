@@ -8,14 +8,12 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class AddAdGroupsResponse
 {
 
-    protected $AddResults = array(
-        
-    );
+    protected $AddResults = [];
 
     /**
      * Creates a new instance of AddAdGroupsResponse.
      *
-     * @return AddAdGroupsResponse
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +34,7 @@ class AddAdGroupsResponse
      * Sets AddResults.
      *
      * @param ActionResult[] $value
-     * @return $this
+     * @return self
      */
     public function setAddResults(array $value)
     {

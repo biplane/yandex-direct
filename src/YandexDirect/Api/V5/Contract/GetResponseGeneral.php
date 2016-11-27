@@ -13,7 +13,7 @@ class GetResponseGeneral
     /**
      * Creates a new instance of GetResponseGeneral.
      *
-     * @return GetResponseGeneral
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class GetResponseGeneral
      * Sets LimitedBy.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setLimitedBy($value = null)
     {

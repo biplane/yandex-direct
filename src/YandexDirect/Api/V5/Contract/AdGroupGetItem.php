@@ -18,14 +18,18 @@ class AdGroupGetItem extends AdGroupBase
 
     protected $Type = null;
 
+    protected $Subtype = null;
+
     protected $MobileAppAdGroup = null;
 
     protected $DynamicTextAdGroup = null;
 
+    protected $DynamicTextFeedAdGroup = null;
+
     /**
      * Creates a new instance of AdGroupGetItem.
      *
-     * @return AdGroupGetItem
+     * @return self
      */
     public static function create()
     {
@@ -46,7 +50,7 @@ class AdGroupGetItem extends AdGroupBase
      * Sets Id.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setId($value = null)
     {
@@ -69,7 +73,7 @@ class AdGroupGetItem extends AdGroupBase
      * Sets Name.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setName($value = null)
     {
@@ -92,7 +96,7 @@ class AdGroupGetItem extends AdGroupBase
      * Sets CampaignId.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setCampaignId($value = null)
     {
@@ -104,7 +108,8 @@ class AdGroupGetItem extends AdGroupBase
     /**
      * Gets Status.
      *
-     * @return StatusEnum|null
+     * @return string|null
+     * @see StatusEnum
      */
     public function getStatus()
     {
@@ -114,8 +119,9 @@ class AdGroupGetItem extends AdGroupBase
     /**
      * Sets Status.
      *
-     * @param StatusEnum|null $value
-     * @return $this
+     * @param string|null $value
+     * @return self
+     * @see StatusEnum
      */
     public function setStatus($value = null)
     {
@@ -127,7 +133,8 @@ class AdGroupGetItem extends AdGroupBase
     /**
      * Gets Type.
      *
-     * @return AdGroupTypesEnum|null
+     * @return string|null
+     * @see AdGroupTypesEnum
      */
     public function getType()
     {
@@ -137,12 +144,38 @@ class AdGroupGetItem extends AdGroupBase
     /**
      * Sets Type.
      *
-     * @param AdGroupTypesEnum|null $value
-     * @return $this
+     * @param string|null $value
+     * @return self
+     * @see AdGroupTypesEnum
      */
     public function setType($value = null)
     {
         $this->Type = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets Subtype.
+     *
+     * @return string|null
+     * @see AdGroupSubtypeEnum
+     */
+    public function getSubtype()
+    {
+        return $this->Subtype;
+    }
+
+    /**
+     * Sets Subtype.
+     *
+     * @param string|null $value
+     * @return self
+     * @see AdGroupSubtypeEnum
+     */
+    public function setSubtype($value = null)
+    {
+        $this->Subtype = $value;
 
         return $this;
     }
@@ -161,7 +194,7 @@ class AdGroupGetItem extends AdGroupBase
      * Sets MobileAppAdGroup.
      *
      * @param MobileAppAdGroupGet|null $value
-     * @return $this
+     * @return self
      */
     public function setMobileAppAdGroup(MobileAppAdGroupGet $value = null)
     {
@@ -184,11 +217,34 @@ class AdGroupGetItem extends AdGroupBase
      * Sets DynamicTextAdGroup.
      *
      * @param DynamicTextAdGroupGet|null $value
-     * @return $this
+     * @return self
      */
     public function setDynamicTextAdGroup(DynamicTextAdGroupGet $value = null)
     {
         $this->DynamicTextAdGroup = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets DynamicTextFeedAdGroup.
+     *
+     * @return DynamicTextFeedAdGroupGet|null
+     */
+    public function getDynamicTextFeedAdGroup()
+    {
+        return $this->DynamicTextFeedAdGroup;
+    }
+
+    /**
+     * Sets DynamicTextFeedAdGroup.
+     *
+     * @param DynamicTextFeedAdGroupGet|null $value
+     * @return self
+     */
+    public function setDynamicTextFeedAdGroup(DynamicTextFeedAdGroupGet $value = null)
+    {
+        $this->DynamicTextFeedAdGroup = $value;
 
         return $this;
     }

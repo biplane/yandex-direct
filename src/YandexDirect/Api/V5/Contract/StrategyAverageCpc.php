@@ -15,7 +15,7 @@ class StrategyAverageCpc
     /**
      * Creates a new instance of StrategyAverageCpc.
      *
-     * @return StrategyAverageCpc
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +36,7 @@ class StrategyAverageCpc
      * Sets AverageCpc.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setAverageCpc($value = null)
     {
@@ -59,7 +59,7 @@ class StrategyAverageCpc
      * Sets WeeklySpendLimit.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setWeeklySpendLimit($value = null)
     {

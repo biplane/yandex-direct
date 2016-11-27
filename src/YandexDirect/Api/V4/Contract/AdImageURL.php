@@ -17,7 +17,7 @@ class AdImageURL
     /**
      * Creates a new instance of AdImageURL.
      *
-     * @return AdImageURL
+     * @return self
      */
     public static function create()
     {
@@ -38,7 +38,7 @@ class AdImageURL
      * Sets Login.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setLogin($value = null)
     {
@@ -61,7 +61,7 @@ class AdImageURL
      * Sets URL.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setURL($value)
     {
@@ -84,7 +84,7 @@ class AdImageURL
      * Sets Name.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setName($value)
     {

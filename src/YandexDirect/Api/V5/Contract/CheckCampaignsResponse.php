@@ -15,7 +15,7 @@ class CheckCampaignsResponse
     /**
      * Creates a new instance of CheckCampaignsResponse.
      *
-     * @return CheckCampaignsResponse
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +36,7 @@ class CheckCampaignsResponse
      * Sets Campaigns.
      *
      * @param CampaignChangesItem[]|null $value
-     * @return $this
+     * @return self
      */
     public function setCampaigns(array $value = null)
     {
@@ -59,7 +59,7 @@ class CheckCampaignsResponse
      * Sets Timestamp.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setTimestamp($value)
     {

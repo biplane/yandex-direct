@@ -19,7 +19,7 @@ class BidModifierToggleItem
     /**
      * Creates a new instance of BidModifierToggleItem.
      *
-     * @return BidModifierToggleItem
+     * @return self
      */
     public static function create()
     {
@@ -40,7 +40,7 @@ class BidModifierToggleItem
      * Sets CampaignId.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setCampaignId($value = null)
     {
@@ -63,7 +63,7 @@ class BidModifierToggleItem
      * Sets AdGroupId.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setAdGroupId($value = null)
     {
@@ -75,7 +75,8 @@ class BidModifierToggleItem
     /**
      * Gets Type.
      *
-     * @return BidModifierToggleTypeEnum
+     * @return string
+     * @see BidModifierToggleTypeEnum
      */
     public function getType()
     {
@@ -85,8 +86,9 @@ class BidModifierToggleItem
     /**
      * Sets Type.
      *
-     * @param BidModifierToggleTypeEnum $value
-     * @return $this
+     * @param string $value
+     * @return self
+     * @see BidModifierToggleTypeEnum
      */
     public function setType($value)
     {
@@ -98,7 +100,8 @@ class BidModifierToggleItem
     /**
      * Gets Enabled.
      *
-     * @return YesNoEnum
+     * @return string
+     * @see YesNoEnum
      */
     public function getEnabled()
     {
@@ -108,8 +111,9 @@ class BidModifierToggleItem
     /**
      * Sets Enabled.
      *
-     * @param YesNoEnum $value
-     * @return $this
+     * @param string $value
+     * @return self
+     * @see YesNoEnum
      */
     public function setEnabled($value)
     {

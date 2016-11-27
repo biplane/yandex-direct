@@ -19,7 +19,7 @@ class CampaignFundsParam
     /**
      * Creates a new instance of CampaignFundsParam.
      *
-     * @return CampaignFundsParam
+     * @return self
      */
     public static function create()
     {
@@ -40,7 +40,7 @@ class CampaignFundsParam
      * Sets Sum.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setSum($value)
     {
@@ -63,7 +63,7 @@ class CampaignFundsParam
      * Sets Balance.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setBalance($value)
     {
@@ -86,7 +86,7 @@ class CampaignFundsParam
      * Sets BalanceBonus.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setBalanceBonus($value)
     {
@@ -109,7 +109,7 @@ class CampaignFundsParam
      * Sets SumAvailableForTransfer.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setSumAvailableForTransfer($value = null)
     {

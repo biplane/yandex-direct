@@ -15,7 +15,7 @@ class StrategyNetworkDefault
     /**
      * Creates a new instance of StrategyNetworkDefault.
      *
-     * @return StrategyNetworkDefault
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +36,7 @@ class StrategyNetworkDefault
      * Sets LimitPercent.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setLimitPercent($value = null)
     {
@@ -59,7 +59,7 @@ class StrategyNetworkDefault
      * Sets BidPercent.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setBidPercent($value = null)
     {

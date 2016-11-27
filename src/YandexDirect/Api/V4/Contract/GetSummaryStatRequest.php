@@ -8,9 +8,7 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
 class GetSummaryStatRequest
 {
 
-    protected $CampaignIDS = array(
-        
-    );
+    protected $CampaignIDS = [];
 
     protected $StartDate = null;
 
@@ -25,7 +23,7 @@ class GetSummaryStatRequest
     /**
      * Creates a new instance of GetSummaryStatRequest.
      *
-     * @return GetSummaryStatRequest
+     * @return self
      */
     public static function create()
     {
@@ -46,7 +44,7 @@ class GetSummaryStatRequest
      * Sets CampaignIDS.
      *
      * @param int[] $value
-     * @return $this
+     * @return self
      */
     public function setCampaignIDS(array $value)
     {
@@ -69,7 +67,7 @@ class GetSummaryStatRequest
      * Sets StartDate.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setStartDate($value)
     {
@@ -92,7 +90,7 @@ class GetSummaryStatRequest
      * Sets EndDate.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setEndDate($value)
     {
@@ -115,7 +113,7 @@ class GetSummaryStatRequest
      * Sets Currency.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setCurrency($value = null)
     {
@@ -138,7 +136,7 @@ class GetSummaryStatRequest
      * Sets IncludeVAT.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setIncludeVAT($value = null)
     {
@@ -161,7 +159,7 @@ class GetSummaryStatRequest
      * Sets IncludeDiscount.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setIncludeDiscount($value = null)
     {

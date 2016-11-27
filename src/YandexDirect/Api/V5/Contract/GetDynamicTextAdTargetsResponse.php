@@ -13,7 +13,7 @@ class GetDynamicTextAdTargetsResponse extends GetResponseGeneral
     /**
      * Creates a new instance of GetDynamicTextAdTargetsResponse.
      *
-     * @return GetDynamicTextAdTargetsResponse
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class GetDynamicTextAdTargetsResponse extends GetResponseGeneral
      * Sets Webpages.
      *
      * @param WebpageGetItem[]|null $value
-     * @return $this
+     * @return self
      */
     public function setWebpages(array $value = null)
     {

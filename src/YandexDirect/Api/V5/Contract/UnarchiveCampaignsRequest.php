@@ -13,7 +13,7 @@ class UnarchiveCampaignsRequest
     /**
      * Creates a new instance of UnarchiveCampaignsRequest.
      *
-     * @return UnarchiveCampaignsRequest
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class UnarchiveCampaignsRequest
      * Sets SelectionCriteria.
      *
      * @param IdsCriteria $value
-     * @return $this
+     * @return self
      */
     public function setSelectionCriteria(IdsCriteria $value)
     {

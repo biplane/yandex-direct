@@ -13,7 +13,7 @@ class DeleteKeywordsRequest
     /**
      * Creates a new instance of DeleteKeywordsRequest.
      *
-     * @return DeleteKeywordsRequest
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class DeleteKeywordsRequest
      * Sets SelectionCriteria.
      *
      * @param IdsCriteria $value
-     * @return $this
+     * @return self
      */
     public function setSelectionCriteria(IdsCriteria $value)
     {

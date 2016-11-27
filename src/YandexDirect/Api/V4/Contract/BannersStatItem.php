@@ -55,7 +55,7 @@ class BannersStatItem
     /**
      * Creates a new instance of BannersStatItem.
      *
-     * @return BannersStatItem
+     * @return self
      */
     public static function create()
     {
@@ -76,7 +76,7 @@ class BannersStatItem
      * Sets Sum.
      *
      * @param float|null $value
-     * @return $this
+     * @return self
      */
     public function setSum($value = null)
     {
@@ -99,7 +99,7 @@ class BannersStatItem
      * Sets SumContext.
      *
      * @param float|null $value
-     * @return $this
+     * @return self
      */
     public function setSumContext($value = null)
     {
@@ -122,7 +122,7 @@ class BannersStatItem
      * Sets SumSearch.
      *
      * @param float|null $value
-     * @return $this
+     * @return self
      */
     public function setSumSearch($value = null)
     {
@@ -145,7 +145,7 @@ class BannersStatItem
      * Sets Clicks.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setClicks($value = null)
     {
@@ -168,7 +168,7 @@ class BannersStatItem
      * Sets ClicksContext.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setClicksContext($value = null)
     {
@@ -191,7 +191,7 @@ class BannersStatItem
      * Sets ClicksSearch.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setClicksSearch($value = null)
     {
@@ -214,7 +214,7 @@ class BannersStatItem
      * Sets Shows.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setShows($value = null)
     {
@@ -237,7 +237,7 @@ class BannersStatItem
      * Sets ShowsContext.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setShowsContext($value = null)
     {
@@ -260,7 +260,7 @@ class BannersStatItem
      * Sets ShowsSearch.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setShowsSearch($value = null)
     {
@@ -283,7 +283,7 @@ class BannersStatItem
      * Sets StatDate.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setStatDate($value = null)
     {
@@ -306,7 +306,7 @@ class BannersStatItem
      * Sets BannerID.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setBannerID($value = null)
     {
@@ -329,7 +329,7 @@ class BannersStatItem
      * Sets PhraseID.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setPhraseID($value = null)
     {
@@ -352,7 +352,7 @@ class BannersStatItem
      * Sets RubricID.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setRubricID($value = null)
     {
@@ -375,7 +375,7 @@ class BannersStatItem
      * Sets RetargetingID.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setRetargetingID($value = null)
     {
@@ -398,7 +398,7 @@ class BannersStatItem
      * Sets WebpageID.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setWebpageID($value = null)
     {
@@ -421,7 +421,7 @@ class BannersStatItem
      * Sets Phrase.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setPhrase($value = null)
     {
@@ -444,7 +444,7 @@ class BannersStatItem
      * Sets StatType.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setStatType($value = null)
     {
@@ -467,7 +467,7 @@ class BannersStatItem
      * Sets DeviceType.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setDeviceType($value = null)
     {
@@ -490,7 +490,7 @@ class BannersStatItem
      * Sets ShowsAveragePosition.
      *
      * @param float|null $value
-     * @return $this
+     * @return self
      */
     public function setShowsAveragePosition($value = null)
     {
@@ -513,7 +513,7 @@ class BannersStatItem
      * Sets ClicksAveragePosition.
      *
      * @param float|null $value
-     * @return $this
+     * @return self
      */
     public function setClicksAveragePosition($value = null)
     {
@@ -536,7 +536,7 @@ class BannersStatItem
      * Sets Revenue.
      *
      * @param float|null $value
-     * @return $this
+     * @return self
      */
     public function setRevenue($value = null)
     {
@@ -559,7 +559,7 @@ class BannersStatItem
      * Sets ROI.
      *
      * @param float|null $value
-     * @return $this
+     * @return self
      */
     public function setROI($value = null)
     {

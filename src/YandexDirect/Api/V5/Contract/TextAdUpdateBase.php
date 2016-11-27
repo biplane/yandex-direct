@@ -19,7 +19,7 @@ class TextAdUpdateBase
     /**
      * Creates a new instance of TextAdUpdateBase.
      *
-     * @return TextAdUpdateBase
+     * @return self
      */
     public static function create()
     {
@@ -40,7 +40,7 @@ class TextAdUpdateBase
      * Sets VCardId.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setVCardId($value = null)
     {
@@ -63,7 +63,7 @@ class TextAdUpdateBase
      * Sets AdImageHash.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setAdImageHash($value = null)
     {
@@ -86,7 +86,7 @@ class TextAdUpdateBase
      * Sets SitelinkSetId.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setSitelinkSetId($value = null)
     {
@@ -109,7 +109,7 @@ class TextAdUpdateBase
      * Sets CalloutSetting.
      *
      * @param AdExtensionSetting|null $value
-     * @return $this
+     * @return self
      */
     public function setCalloutSetting(AdExtensionSetting $value = null)
     {

@@ -15,7 +15,7 @@ class InstantMessenger
     /**
      * Creates a new instance of InstantMessenger.
      *
-     * @return InstantMessenger
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +36,7 @@ class InstantMessenger
      * Sets MessengerClient.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setMessengerClient($value)
     {
@@ -59,7 +59,7 @@ class InstantMessenger
      * Sets MessengerLogin.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setMessengerLogin($value)
     {

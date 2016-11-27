@@ -13,7 +13,7 @@ class DeleteCampaignsRequest
     /**
      * Creates a new instance of DeleteCampaignsRequest.
      *
-     * @return DeleteCampaignsRequest
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class DeleteCampaignsRequest
      * Sets SelectionCriteria.
      *
      * @param IdsCriteria $value
-     * @return $this
+     * @return self
      */
     public function setSelectionCriteria(IdsCriteria $value)
     {

@@ -8,14 +8,12 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class AddAdExtensionsRequest
 {
 
-    protected $AdExtensions = array(
-        
-    );
+    protected $AdExtensions = [];
 
     /**
      * Creates a new instance of AddAdExtensionsRequest.
      *
-     * @return AddAdExtensionsRequest
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +34,7 @@ class AddAdExtensionsRequest
      * Sets AdExtensions.
      *
      * @param AdExtensionAddItem[] $value
-     * @return $this
+     * @return self
      */
     public function setAdExtensions(array $value)
     {

@@ -12,9 +12,7 @@ class AdGroupAddItem
 
     protected $CampaignId = null;
 
-    protected $RegionIds = array(
-        
-    );
+    protected $RegionIds = [];
 
     protected $NegativeKeywords = null;
 
@@ -27,7 +25,7 @@ class AdGroupAddItem
     /**
      * Creates a new instance of AdGroupAddItem.
      *
-     * @return AdGroupAddItem
+     * @return self
      */
     public static function create()
     {
@@ -48,7 +46,7 @@ class AdGroupAddItem
      * Sets Name.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setName($value)
     {
@@ -71,7 +69,7 @@ class AdGroupAddItem
      * Sets CampaignId.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setCampaignId($value)
     {
@@ -94,7 +92,7 @@ class AdGroupAddItem
      * Sets RegionIds.
      *
      * @param int[] $value
-     * @return $this
+     * @return self
      */
     public function setRegionIds(array $value)
     {
@@ -106,7 +104,7 @@ class AdGroupAddItem
     /**
      * Gets NegativeKeywords.
      *
-     * @return string[]|null
+     * @return struct[]|null
      */
     public function getNegativeKeywords()
     {
@@ -116,8 +114,8 @@ class AdGroupAddItem
     /**
      * Sets NegativeKeywords.
      *
-     * @param string[]|null $value
-     * @return $this
+     * @param struct[]|null $value
+     * @return self
      */
     public function setNegativeKeywords(array $value = null)
     {
@@ -140,7 +138,7 @@ class AdGroupAddItem
      * Sets TrackingParams.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setTrackingParams($value = null)
     {
@@ -163,7 +161,7 @@ class AdGroupAddItem
      * Sets MobileAppAdGroup.
      *
      * @param MobileAppAdGroupAdd|null $value
-     * @return $this
+     * @return self
      */
     public function setMobileAppAdGroup(MobileAppAdGroupAdd $value = null)
     {
@@ -186,7 +184,7 @@ class AdGroupAddItem
      * Sets DynamicTextAdGroup.
      *
      * @param DynamicTextAdGroup|null $value
-     * @return $this
+     * @return self
      */
     public function setDynamicTextAdGroup(DynamicTextAdGroup $value = null)
     {

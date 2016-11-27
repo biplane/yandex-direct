@@ -19,7 +19,7 @@ class RegionInfo
     /**
      * Creates a new instance of RegionInfo.
      *
-     * @return RegionInfo
+     * @return self
      */
     public static function create()
     {
@@ -40,7 +40,7 @@ class RegionInfo
      * Sets RegionID.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setRegionID($value)
     {
@@ -63,7 +63,7 @@ class RegionInfo
      * Sets ParentID.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setParentID($value = null)
     {
@@ -86,7 +86,7 @@ class RegionInfo
      * Sets RegionName.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setRegionName($value)
     {
@@ -109,7 +109,7 @@ class RegionInfo
      * Sets RegionType.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setRegionType($value)
     {

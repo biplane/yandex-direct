@@ -10,22 +10,16 @@ class WordstatReportInfo
 
     protected $Phrase = null;
 
-    protected $GeoID = array(
-        
-    );
+    protected $GeoID = [];
 
-    protected $SearchedWith = array(
-        
-    );
+    protected $SearchedWith = [];
 
-    protected $SearchedAlso = array(
-        
-    );
+    protected $SearchedAlso = [];
 
     /**
      * Creates a new instance of WordstatReportInfo.
      *
-     * @return WordstatReportInfo
+     * @return self
      */
     public static function create()
     {
@@ -46,7 +40,7 @@ class WordstatReportInfo
      * Sets Phrase.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setPhrase($value)
     {
@@ -69,7 +63,7 @@ class WordstatReportInfo
      * Sets GeoID.
      *
      * @param int[] $value
-     * @return $this
+     * @return self
      */
     public function setGeoID(array $value)
     {
@@ -92,7 +86,7 @@ class WordstatReportInfo
      * Sets SearchedWith.
      *
      * @param WordstatItem[] $value
-     * @return $this
+     * @return self
      */
     public function setSearchedWith(array $value)
     {
@@ -115,7 +109,7 @@ class WordstatReportInfo
      * Sets SearchedAlso.
      *
      * @param WordstatItem[] $value
-     * @return $this
+     * @return self
      */
     public function setSearchedAlso(array $value)
     {

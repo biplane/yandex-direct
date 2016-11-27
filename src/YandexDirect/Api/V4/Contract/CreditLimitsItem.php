@@ -17,7 +17,7 @@ class CreditLimitsItem
     /**
      * Creates a new instance of CreditLimitsItem.
      *
-     * @return CreditLimitsItem
+     * @return self
      */
     public static function create()
     {
@@ -38,7 +38,7 @@ class CreditLimitsItem
      * Sets ContractID.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setContractID($value)
     {
@@ -61,7 +61,7 @@ class CreditLimitsItem
      * Sets Limit.
      *
      * @param float $value
-     * @return $this
+     * @return self
      */
     public function setLimit($value)
     {
@@ -84,7 +84,7 @@ class CreditLimitsItem
      * Sets LimitSpent.
      *
      * @param float $value
-     * @return $this
+     * @return self
      */
     public function setLimitSpent($value)
     {

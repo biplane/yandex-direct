@@ -13,7 +13,7 @@ class ModerateAdsResponse
     /**
      * Creates a new instance of ModerateAdsResponse.
      *
-     * @return ModerateAdsResponse
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class ModerateAdsResponse
      * Sets ModerateResults.
      *
      * @param ActionResult[]|null $value
-     * @return $this
+     * @return self
      */
     public function setModerateResults(array $value = null)
     {

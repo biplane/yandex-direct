@@ -10,14 +10,12 @@ class RetargetingConditionItem
 
     protected $Type = null;
 
-    protected $Goals = array(
-        
-    );
+    protected $Goals = [];
 
     /**
      * Creates a new instance of RetargetingConditionItem.
      *
-     * @return RetargetingConditionItem
+     * @return self
      */
     public static function create()
     {
@@ -38,7 +36,7 @@ class RetargetingConditionItem
      * Sets Type.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setType($value)
     {
@@ -61,7 +59,7 @@ class RetargetingConditionItem
      * Sets Goals.
      *
      * @param RetargetingConditionGoalItem[] $value
-     * @return $this
+     * @return self
      */
     public function setGoals(array $value)
     {

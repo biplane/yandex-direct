@@ -15,7 +15,7 @@ class MobileAppAdUpdate extends MobileAppAdBase
     /**
      * Creates a new instance of MobileAppAdUpdate.
      *
-     * @return MobileAppAdUpdate
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +36,7 @@ class MobileAppAdUpdate extends MobileAppAdBase
      * Sets Features.
      *
      * @param MobileAppAdFeatureItem[]|null $value
-     * @return $this
+     * @return self
      */
     public function setFeatures(array $value = null)
     {
@@ -48,7 +48,8 @@ class MobileAppAdUpdate extends MobileAppAdBase
     /**
      * Gets AgeLabel.
      *
-     * @return MobAppAgeLabelEnum|null
+     * @return string|null
+     * @see MobAppAgeLabelEnum
      */
     public function getAgeLabel()
     {
@@ -58,8 +59,9 @@ class MobileAppAdUpdate extends MobileAppAdBase
     /**
      * Sets AgeLabel.
      *
-     * @param MobAppAgeLabelEnum|null $value
-     * @return $this
+     * @param string|null $value
+     * @return self
+     * @see MobAppAgeLabelEnum
      */
     public function setAgeLabel($value = null)
     {

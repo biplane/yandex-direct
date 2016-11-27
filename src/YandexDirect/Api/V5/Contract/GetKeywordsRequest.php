@@ -10,14 +10,12 @@ class GetKeywordsRequest extends GetRequestGeneral
 
     protected $SelectionCriteria = null;
 
-    protected $FieldNames = array(
-        
-    );
+    protected $FieldNames = [];
 
     /**
      * Creates a new instance of GetKeywordsRequest.
      *
-     * @return GetKeywordsRequest
+     * @return self
      */
     public static function create()
     {
@@ -38,7 +36,7 @@ class GetKeywordsRequest extends GetRequestGeneral
      * Sets SelectionCriteria.
      *
      * @param KeywordsSelectionCriteria $value
-     * @return $this
+     * @return self
      */
     public function setSelectionCriteria(KeywordsSelectionCriteria $value)
     {
@@ -50,7 +48,8 @@ class GetKeywordsRequest extends GetRequestGeneral
     /**
      * Gets FieldNames.
      *
-     * @return KeywordFieldEnum[]
+     * @return string[]
+     * @see KeywordFieldEnum
      */
     public function getFieldNames()
     {
@@ -60,8 +59,9 @@ class GetKeywordsRequest extends GetRequestGeneral
     /**
      * Sets FieldNames.
      *
-     * @param KeywordFieldEnum[] $value
-     * @return $this
+     * @param string[] $value
+     * @return self
+     * @see KeywordFieldEnum
      */
     public function setFieldNames(array $value)
     {

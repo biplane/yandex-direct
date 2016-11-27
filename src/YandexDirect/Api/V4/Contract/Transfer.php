@@ -19,7 +19,7 @@ class Transfer
     /**
      * Creates a new instance of Transfer.
      *
-     * @return Transfer
+     * @return self
      */
     public static function create()
     {
@@ -40,7 +40,7 @@ class Transfer
      * Sets FromAccountID.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setFromAccountID($value)
     {
@@ -63,7 +63,7 @@ class Transfer
      * Sets ToAccountID.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setToAccountID($value)
     {
@@ -86,7 +86,7 @@ class Transfer
      * Sets Amount.
      *
      * @param float $value
-     * @return $this
+     * @return self
      */
     public function setAmount($value)
     {
@@ -109,7 +109,7 @@ class Transfer
      * Sets Currency.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setCurrency($value = null)
     {

@@ -13,7 +13,7 @@ class DeleteSitelinksRequest
     /**
      * Creates a new instance of DeleteSitelinksRequest.
      *
-     * @return DeleteSitelinksRequest
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class DeleteSitelinksRequest
      * Sets SelectionCriteria.
      *
      * @param IdsCriteria $value
-     * @return $this
+     * @return self
      */
     public function setSelectionCriteria(IdsCriteria $value)
     {

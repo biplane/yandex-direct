@@ -13,7 +13,7 @@ class SuspendAdsRequest
     /**
      * Creates a new instance of SuspendAdsRequest.
      *
-     * @return SuspendAdsRequest
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class SuspendAdsRequest
      * Sets SelectionCriteria.
      *
      * @param IdsCriteria $value
-     * @return $this
+     * @return self
      */
     public function setSelectionCriteria(IdsCriteria $value)
     {

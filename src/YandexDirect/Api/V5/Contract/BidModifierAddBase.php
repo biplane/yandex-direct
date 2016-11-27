@@ -15,7 +15,7 @@ class BidModifierAddBase
     /**
      * Creates a new instance of BidModifierAddBase.
      *
-     * @return BidModifierAddBase
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +36,7 @@ class BidModifierAddBase
      * Sets CampaignId.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setCampaignId($value = null)
     {
@@ -59,7 +59,7 @@ class BidModifierAddBase
      * Sets AdGroupId.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setAdGroupId($value = null)
     {

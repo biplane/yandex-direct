@@ -13,7 +13,7 @@ class GetAdExtensionsResponse extends GetResponseGeneral
     /**
      * Creates a new instance of GetAdExtensionsResponse.
      *
-     * @return GetAdExtensionsResponse
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class GetAdExtensionsResponse extends GetResponseGeneral
      * Sets AdExtensions.
      *
      * @param AdExtensionGetItem[]|null $value
-     * @return $this
+     * @return self
      */
     public function setAdExtensions(array $value = null)
     {

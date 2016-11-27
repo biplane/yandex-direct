@@ -13,7 +13,7 @@ class ModerateAdsRequest
     /**
      * Creates a new instance of ModerateAdsRequest.
      *
-     * @return ModerateAdsRequest
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class ModerateAdsRequest
      * Sets SelectionCriteria.
      *
      * @param IdsCriteria $value
-     * @return $this
+     * @return self
      */
     public function setSelectionCriteria(IdsCriteria $value)
     {

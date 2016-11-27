@@ -15,7 +15,7 @@ class BidActionResult extends BidBase
     /**
      * Creates a new instance of BidActionResult.
      *
-     * @return BidActionResult
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +36,7 @@ class BidActionResult extends BidBase
      * Sets Warnings.
      *
      * @param ExceptionNotification[]|null $value
-     * @return $this
+     * @return self
      */
     public function setWarnings(array $value = null)
     {
@@ -59,7 +59,7 @@ class BidActionResult extends BidBase
      * Sets Errors.
      *
      * @param ExceptionNotification[]|null $value
-     * @return $this
+     * @return self
      */
     public function setErrors(array $value = null)
     {

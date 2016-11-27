@@ -13,7 +13,7 @@ class GetRetargetingGoalsRequest
     /**
      * Creates a new instance of GetRetargetingGoalsRequest.
      *
-     * @return GetRetargetingGoalsRequest
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class GetRetargetingGoalsRequest
      * Sets Logins.
      *
      * @param string[]|null $value
-     * @return $this
+     * @return self
      */
     public function setLogins(array $value = null)
     {

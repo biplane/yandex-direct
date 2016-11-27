@@ -10,14 +10,12 @@ class GetSitelinksRequest extends GetRequestGeneral
 
     protected $SelectionCriteria = null;
 
-    protected $FieldNames = array(
-        
-    );
+    protected $FieldNames = [];
 
     /**
      * Creates a new instance of GetSitelinksRequest.
      *
-     * @return GetSitelinksRequest
+     * @return self
      */
     public static function create()
     {
@@ -38,7 +36,7 @@ class GetSitelinksRequest extends GetRequestGeneral
      * Sets SelectionCriteria.
      *
      * @param IdsCriteria|null $value
-     * @return $this
+     * @return self
      */
     public function setSelectionCriteria(IdsCriteria $value = null)
     {
@@ -50,7 +48,8 @@ class GetSitelinksRequest extends GetRequestGeneral
     /**
      * Gets FieldNames.
      *
-     * @return SitelinksSetFieldEnum[]
+     * @return string[]
+     * @see SitelinksSetFieldEnum
      */
     public function getFieldNames()
     {
@@ -60,8 +59,9 @@ class GetSitelinksRequest extends GetRequestGeneral
     /**
      * Sets FieldNames.
      *
-     * @param SitelinksSetFieldEnum[] $value
-     * @return $this
+     * @param string[] $value
+     * @return self
+     * @see SitelinksSetFieldEnum
      */
     public function setFieldNames(array $value)
     {

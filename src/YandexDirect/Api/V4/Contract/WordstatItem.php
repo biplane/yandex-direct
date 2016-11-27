@@ -15,7 +15,7 @@ class WordstatItem
     /**
      * Creates a new instance of WordstatItem.
      *
-     * @return WordstatItem
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +36,7 @@ class WordstatItem
      * Sets Phrase.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setPhrase($value)
     {
@@ -59,7 +59,7 @@ class WordstatItem
      * Sets Shows.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setShows($value)
     {

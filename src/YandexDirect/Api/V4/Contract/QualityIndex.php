@@ -10,14 +10,12 @@ class QualityIndex
 
     protected $Value = null;
 
-    protected $References = array(
-        
-    );
+    protected $References = [];
 
     /**
      * Creates a new instance of QualityIndex.
      *
-     * @return QualityIndex
+     * @return self
      */
     public static function create()
     {
@@ -38,7 +36,7 @@ class QualityIndex
      * Sets Value.
      *
      * @param float $value
-     * @return $this
+     * @return self
      */
     public function setValue($value)
     {
@@ -61,7 +59,7 @@ class QualityIndex
      * Sets References.
      *
      * @param int[] $value
-     * @return $this
+     * @return self
      */
     public function setReferences(array $value)
     {

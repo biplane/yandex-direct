@@ -21,7 +21,7 @@ class TextAdAdd extends TextAdAddBase
     /**
      * Creates a new instance of TextAdAdd.
      *
-     * @return TextAdAdd
+     * @return self
      */
     public static function create()
     {
@@ -42,7 +42,7 @@ class TextAdAdd extends TextAdAddBase
      * Sets Text.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setText($value)
     {
@@ -65,7 +65,7 @@ class TextAdAdd extends TextAdAddBase
      * Sets Title.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setTitle($value)
     {
@@ -88,7 +88,7 @@ class TextAdAdd extends TextAdAddBase
      * Sets Href.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setHref($value = null)
     {
@@ -100,7 +100,8 @@ class TextAdAdd extends TextAdAddBase
     /**
      * Gets Mobile.
      *
-     * @return YesNoEnum
+     * @return string
+     * @see YesNoEnum
      */
     public function getMobile()
     {
@@ -110,8 +111,9 @@ class TextAdAdd extends TextAdAddBase
     /**
      * Sets Mobile.
      *
-     * @param YesNoEnum $value
-     * @return $this
+     * @param string $value
+     * @return self
+     * @see YesNoEnum
      */
     public function setMobile($value)
     {
@@ -134,7 +136,7 @@ class TextAdAdd extends TextAdAddBase
      * Sets DisplayUrlPath.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setDisplayUrlPath($value = null)
     {

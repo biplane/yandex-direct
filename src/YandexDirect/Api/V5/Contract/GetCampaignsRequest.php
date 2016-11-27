@@ -10,9 +10,7 @@ class GetCampaignsRequest extends GetRequestGeneral
 
     protected $SelectionCriteria = null;
 
-    protected $FieldNames = array(
-        
-    );
+    protected $FieldNames = [];
 
     protected $TextCampaignFieldNames = null;
 
@@ -23,7 +21,7 @@ class GetCampaignsRequest extends GetRequestGeneral
     /**
      * Creates a new instance of GetCampaignsRequest.
      *
-     * @return GetCampaignsRequest
+     * @return self
      */
     public static function create()
     {
@@ -44,7 +42,7 @@ class GetCampaignsRequest extends GetRequestGeneral
      * Sets SelectionCriteria.
      *
      * @param CampaignsSelectionCriteria $value
-     * @return $this
+     * @return self
      */
     public function setSelectionCriteria(CampaignsSelectionCriteria $value)
     {
@@ -56,7 +54,8 @@ class GetCampaignsRequest extends GetRequestGeneral
     /**
      * Gets FieldNames.
      *
-     * @return CampaignFieldEnum[]
+     * @return string[]
+     * @see CampaignFieldEnum
      */
     public function getFieldNames()
     {
@@ -66,8 +65,9 @@ class GetCampaignsRequest extends GetRequestGeneral
     /**
      * Sets FieldNames.
      *
-     * @param CampaignFieldEnum[] $value
-     * @return $this
+     * @param string[] $value
+     * @return self
+     * @see CampaignFieldEnum
      */
     public function setFieldNames(array $value)
     {
@@ -79,7 +79,8 @@ class GetCampaignsRequest extends GetRequestGeneral
     /**
      * Gets TextCampaignFieldNames.
      *
-     * @return TextCampaignFieldEnum[]|null
+     * @return string[]|null
+     * @see TextCampaignFieldEnum
      */
     public function getTextCampaignFieldNames()
     {
@@ -89,8 +90,9 @@ class GetCampaignsRequest extends GetRequestGeneral
     /**
      * Sets TextCampaignFieldNames.
      *
-     * @param TextCampaignFieldEnum[]|null $value
-     * @return $this
+     * @param string[]|null $value
+     * @return self
+     * @see TextCampaignFieldEnum
      */
     public function setTextCampaignFieldNames(array $value = null)
     {
@@ -102,7 +104,8 @@ class GetCampaignsRequest extends GetRequestGeneral
     /**
      * Gets MobileAppCampaignFieldNames.
      *
-     * @return MobileAppCampaignFieldEnum[]|null
+     * @return string[]|null
+     * @see MobileAppCampaignFieldEnum
      */
     public function getMobileAppCampaignFieldNames()
     {
@@ -112,8 +115,9 @@ class GetCampaignsRequest extends GetRequestGeneral
     /**
      * Sets MobileAppCampaignFieldNames.
      *
-     * @param MobileAppCampaignFieldEnum[]|null $value
-     * @return $this
+     * @param string[]|null $value
+     * @return self
+     * @see MobileAppCampaignFieldEnum
      */
     public function setMobileAppCampaignFieldNames(array $value = null)
     {
@@ -125,7 +129,8 @@ class GetCampaignsRequest extends GetRequestGeneral
     /**
      * Gets DynamicTextCampaignFieldNames.
      *
-     * @return DynamicTextCampaignFieldEnum[]|null
+     * @return string[]|null
+     * @see DynamicTextCampaignFieldEnum
      */
     public function getDynamicTextCampaignFieldNames()
     {
@@ -135,8 +140,9 @@ class GetCampaignsRequest extends GetRequestGeneral
     /**
      * Sets DynamicTextCampaignFieldNames.
      *
-     * @param DynamicTextCampaignFieldEnum[]|null $value
-     * @return $this
+     * @param string[]|null $value
+     * @return self
+     * @see DynamicTextCampaignFieldEnum
      */
     public function setDynamicTextCampaignFieldNames(array $value = null)
     {

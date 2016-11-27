@@ -19,7 +19,7 @@ class AdImageActionResult
     /**
      * Creates a new instance of AdImageActionResult.
      *
-     * @return AdImageActionResult
+     * @return self
      */
     public static function create()
     {
@@ -40,7 +40,7 @@ class AdImageActionResult
      * Sets Warnings.
      *
      * @param Warning[]|null $value
-     * @return $this
+     * @return self
      */
     public function setWarnings(array $value = null)
     {
@@ -63,7 +63,7 @@ class AdImageActionResult
      * Sets Errors.
      *
      * @param Error[]|null $value
-     * @return $this
+     * @return self
      */
     public function setErrors(array $value = null)
     {
@@ -86,7 +86,7 @@ class AdImageActionResult
      * Sets AdImageUploadTaskID.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setAdImageUploadTaskID($value = null)
     {
@@ -109,7 +109,7 @@ class AdImageActionResult
      * Sets AdImageHash.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setAdImageHash($value = null)
     {

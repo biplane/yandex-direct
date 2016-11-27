@@ -15,7 +15,7 @@ class TextCampaignBase
     /**
      * Creates a new instance of TextCampaignBase.
      *
-     * @return TextCampaignBase
+     * @return self
      */
     public static function create()
     {
@@ -25,7 +25,7 @@ class TextCampaignBase
     /**
      * Gets CounterIds.
      *
-     * @return int[]|null
+     * @return struct[]|null
      */
     public function getCounterIds()
     {
@@ -35,8 +35,8 @@ class TextCampaignBase
     /**
      * Sets CounterIds.
      *
-     * @param int[]|null $value
-     * @return $this
+     * @param struct[]|null $value
+     * @return self
      */
     public function setCounterIds(array $value = null)
     {
@@ -59,7 +59,7 @@ class TextCampaignBase
      * Sets RelevantKeywords.
      *
      * @param RelevantKeywordsSetting|null $value
-     * @return $this
+     * @return self
      */
     public function setRelevantKeywords(RelevantKeywordsSetting $value = null)
     {

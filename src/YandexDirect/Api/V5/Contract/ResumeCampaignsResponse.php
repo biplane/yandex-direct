@@ -13,7 +13,7 @@ class ResumeCampaignsResponse
     /**
      * Creates a new instance of ResumeCampaignsResponse.
      *
-     * @return ResumeCampaignsResponse
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class ResumeCampaignsResponse
      * Sets ResumeResults.
      *
      * @param ActionResult[]|null $value
-     * @return $this
+     * @return self
      */
     public function setResumeResults(array $value = null)
     {

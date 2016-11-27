@@ -15,7 +15,7 @@ class MobileAppCampaignNetworkStrategy extends MobileAppCampaignStrategyBase
     /**
      * Creates a new instance of MobileAppCampaignNetworkStrategy.
      *
-     * @return MobileAppCampaignNetworkStrategy
+     * @return self
      */
     public static function create()
     {
@@ -25,7 +25,8 @@ class MobileAppCampaignNetworkStrategy extends MobileAppCampaignStrategyBase
     /**
      * Gets BiddingStrategyType.
      *
-     * @return MobileAppCampaignNetworkStrategyTypeEnum
+     * @return string
+     * @see MobileAppCampaignNetworkStrategyTypeEnum
      */
     public function getBiddingStrategyType()
     {
@@ -35,8 +36,9 @@ class MobileAppCampaignNetworkStrategy extends MobileAppCampaignStrategyBase
     /**
      * Sets BiddingStrategyType.
      *
-     * @param MobileAppCampaignNetworkStrategyTypeEnum $value
-     * @return $this
+     * @param string $value
+     * @return self
+     * @see MobileAppCampaignNetworkStrategyTypeEnum
      */
     public function setBiddingStrategyType($value)
     {
@@ -59,7 +61,7 @@ class MobileAppCampaignNetworkStrategy extends MobileAppCampaignStrategyBase
      * Sets NetworkDefault.
      *
      * @param StrategyNetworkDefault|null $value
-     * @return $this
+     * @return self
      */
     public function setNetworkDefault(StrategyNetworkDefault $value = null)
     {

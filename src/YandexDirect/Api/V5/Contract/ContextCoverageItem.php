@@ -15,7 +15,7 @@ class ContextCoverageItem
     /**
      * Creates a new instance of ContextCoverageItem.
      *
-     * @return ContextCoverageItem
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +36,7 @@ class ContextCoverageItem
      * Sets Probability.
      *
      * @param float $value
-     * @return $this
+     * @return self
      */
     public function setProbability($value)
     {
@@ -59,7 +59,7 @@ class ContextCoverageItem
      * Sets Price.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setPrice($value)
     {

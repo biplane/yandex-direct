@@ -13,7 +13,7 @@ class GetVCardsResponse extends GetResponseGeneral
     /**
      * Creates a new instance of GetVCardsResponse.
      *
-     * @return GetVCardsResponse
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class GetVCardsResponse extends GetResponseGeneral
      * Sets VCards.
      *
      * @param VCardGetItem[]|null $value
-     * @return $this
+     * @return self
      */
     public function setVCards(array $value = null)
     {

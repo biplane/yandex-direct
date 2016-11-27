@@ -13,7 +13,7 @@ class ToggleBidModifiersResponse
     /**
      * Creates a new instance of ToggleBidModifiersResponse.
      *
-     * @return ToggleBidModifiersResponse
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class ToggleBidModifiersResponse
      * Sets ToggleResults.
      *
      * @param ToggleResult[]|null $value
-     * @return $this
+     * @return self
      */
     public function setToggleResults(array $value = null)
     {

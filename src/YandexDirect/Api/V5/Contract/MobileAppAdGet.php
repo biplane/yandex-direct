@@ -15,7 +15,7 @@ class MobileAppAdGet extends MobileAppAdBase
     /**
      * Creates a new instance of MobileAppAdGet.
      *
-     * @return MobileAppAdGet
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +36,7 @@ class MobileAppAdGet extends MobileAppAdBase
      * Sets Features.
      *
      * @param MobileAppAdFeatureGetItem[]|null $value
-     * @return $this
+     * @return self
      */
     public function setFeatures(array $value = null)
     {
@@ -59,7 +59,7 @@ class MobileAppAdGet extends MobileAppAdBase
      * Sets AdImageModeration.
      *
      * @param ExtensionModeration|null $value
-     * @return $this
+     * @return self
      */
     public function setAdImageModeration(ExtensionModeration $value = null)
     {

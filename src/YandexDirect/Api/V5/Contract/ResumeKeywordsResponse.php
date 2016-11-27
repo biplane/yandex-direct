@@ -8,14 +8,12 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class ResumeKeywordsResponse
 {
 
-    protected $ResumeResults = array(
-        
-    );
+    protected $ResumeResults = [];
 
     /**
      * Creates a new instance of ResumeKeywordsResponse.
      *
-     * @return ResumeKeywordsResponse
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +34,7 @@ class ResumeKeywordsResponse
      * Sets ResumeResults.
      *
      * @param ActionResult[] $value
-     * @return $this
+     * @return self
      */
     public function setResumeResults(array $value)
     {

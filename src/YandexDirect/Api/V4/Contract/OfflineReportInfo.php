@@ -19,7 +19,7 @@ class OfflineReportInfo
     /**
      * Creates a new instance of OfflineReportInfo.
      *
-     * @return OfflineReportInfo
+     * @return self
      */
     public static function create()
     {
@@ -40,7 +40,7 @@ class OfflineReportInfo
      * Sets Type.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setType($value)
     {
@@ -63,7 +63,7 @@ class OfflineReportInfo
      * Sets Id.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setId($value)
     {
@@ -86,7 +86,7 @@ class OfflineReportInfo
      * Sets Status.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setStatus($value)
     {
@@ -109,7 +109,7 @@ class OfflineReportInfo
      * Sets Url.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setUrl($value = null)
     {

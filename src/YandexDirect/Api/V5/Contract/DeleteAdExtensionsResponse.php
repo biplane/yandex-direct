@@ -13,7 +13,7 @@ class DeleteAdExtensionsResponse
     /**
      * Creates a new instance of DeleteAdExtensionsResponse.
      *
-     * @return DeleteAdExtensionsResponse
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class DeleteAdExtensionsResponse
      * Sets DeleteResults.
      *
      * @param ActionResult[]|null $value
-     * @return $this
+     * @return self
      */
     public function setDeleteResults(array $value = null)
     {

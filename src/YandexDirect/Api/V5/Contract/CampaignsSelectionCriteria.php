@@ -21,7 +21,7 @@ class CampaignsSelectionCriteria
     /**
      * Creates a new instance of CampaignsSelectionCriteria.
      *
-     * @return CampaignsSelectionCriteria
+     * @return self
      */
     public static function create()
     {
@@ -42,7 +42,7 @@ class CampaignsSelectionCriteria
      * Sets Ids.
      *
      * @param int[]|null $value
-     * @return $this
+     * @return self
      */
     public function setIds(array $value = null)
     {
@@ -54,7 +54,8 @@ class CampaignsSelectionCriteria
     /**
      * Gets Types.
      *
-     * @return CampaignTypeEnum[]|null
+     * @return string[]|null
+     * @see CampaignTypeEnum
      */
     public function getTypes()
     {
@@ -64,8 +65,9 @@ class CampaignsSelectionCriteria
     /**
      * Sets Types.
      *
-     * @param CampaignTypeEnum[]|null $value
-     * @return $this
+     * @param string[]|null $value
+     * @return self
+     * @see CampaignTypeEnum
      */
     public function setTypes(array $value = null)
     {
@@ -77,7 +79,8 @@ class CampaignsSelectionCriteria
     /**
      * Gets States.
      *
-     * @return CampaignStateEnum[]|null
+     * @return string[]|null
+     * @see CampaignStateEnum
      */
     public function getStates()
     {
@@ -87,8 +90,9 @@ class CampaignsSelectionCriteria
     /**
      * Sets States.
      *
-     * @param CampaignStateEnum[]|null $value
-     * @return $this
+     * @param string[]|null $value
+     * @return self
+     * @see CampaignStateEnum
      */
     public function setStates(array $value = null)
     {
@@ -100,7 +104,8 @@ class CampaignsSelectionCriteria
     /**
      * Gets Statuses.
      *
-     * @return CampaignStatusSelectionEnum[]|null
+     * @return string[]|null
+     * @see CampaignStatusSelectionEnum
      */
     public function getStatuses()
     {
@@ -110,8 +115,9 @@ class CampaignsSelectionCriteria
     /**
      * Sets Statuses.
      *
-     * @param CampaignStatusSelectionEnum[]|null $value
-     * @return $this
+     * @param string[]|null $value
+     * @return self
+     * @see CampaignStatusSelectionEnum
      */
     public function setStatuses(array $value = null)
     {
@@ -123,7 +129,8 @@ class CampaignsSelectionCriteria
     /**
      * Gets StatusesPayment.
      *
-     * @return CampaignStatusPaymentEnum[]|null
+     * @return string[]|null
+     * @see CampaignStatusPaymentEnum
      */
     public function getStatusesPayment()
     {
@@ -133,8 +140,9 @@ class CampaignsSelectionCriteria
     /**
      * Sets StatusesPayment.
      *
-     * @param CampaignStatusPaymentEnum[]|null $value
-     * @return $this
+     * @param string[]|null $value
+     * @return self
+     * @see CampaignStatusPaymentEnum
      */
     public function setStatusesPayment(array $value = null)
     {

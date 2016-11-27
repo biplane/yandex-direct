@@ -2,14 +2,14 @@
 
 namespace Biplane\YandexDirect\Api\V5;
 
-use Biplane\YandexDirect\Api\V5SoapClient;
+use Biplane\YandexDirect\Api\SoapClientV5;
 use Biplane\YandexDirect\User;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**
  * Auto-generated code.
  */
-class Changes extends V5SoapClient
+class Changes extends SoapClientV5
 {
 
     const ENDPOINT = 'https://api.direct.yandex.com/v5/changes?wsdl';
@@ -22,8 +22,8 @@ class Changes extends V5SoapClient
      */
     public function __construct(EventDispatcherInterface $dispatcher, User $user)
     {
-        parent::__construct($user->resolveWsdl(self::ENDPOINT), $dispatcher, $user, array(
-            'classmap' => array(
+        parent::__construct($user->resolveWsdl(self::ENDPOINT), $dispatcher, $user, [
+            'classmap' => [
                 'MobileAppAdActionEnum' => 'Biplane\YandexDirect\Api\V5\Contract\MobileAppAdActionEnum',
                 'ExceptionNotification' => 'Biplane\YandexDirect\Api\V5\Contract\ExceptionNotification',
                 'LimitOffset' => 'Biplane\YandexDirect\Api\V5\Contract\LimitOffset',
@@ -41,6 +41,8 @@ class Changes extends V5SoapClient
                 'AgeRangeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AgeRangeEnum',
                 'GenderEnum' => 'Biplane\YandexDirect\Api\V5\Contract\GenderEnum',
                 'MobileOperatingSystemTypeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\MobileOperatingSystemTypeEnum',
+                'LangEnum' => 'Biplane\YandexDirect\Api\V5\Contract\LangEnum',
+                'RepresentativeRoleEnum' => 'Biplane\YandexDirect\Api\V5\Contract\RepresentativeRoleEnum',
                 'OperationEnum' => 'Biplane\YandexDirect\Api\V5\Contract\OperationEnum',
                 'Statistics' => 'Biplane\YandexDirect\Api\V5\Contract\Statistics',
                 'IdsCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\IdsCriteria',
@@ -49,8 +51,10 @@ class Changes extends V5SoapClient
                 'ApiExceptionMessage' => 'Biplane\YandexDirect\Api\V5\Contract\ApiExceptionMessage',
                 'ActionResultBase' => 'Biplane\YandexDirect\Api\V5\Contract\ActionResultBase',
                 'ActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\ActionResult',
+                'SetBidsActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\SetBidsActionResult',
                 'MultiIdsActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\MultiIdsActionResult',
                 'ExtensionModeration' => 'Biplane\YandexDirect\Api\V5\Contract\ExtensionModeration',
+                'SortOrderEnum' => 'Biplane\YandexDirect\Api\V5\Contract\SortOrderEnum',
                 'CheckDictionariesRequest' => 'Biplane\YandexDirect\Api\V5\Contract\CheckDictionariesRequest',
                 'CheckDictionariesResponse' => 'Biplane\YandexDirect\Api\V5\Contract\CheckDictionariesResponse',
                 'CheckCampaignsRequest' => 'Biplane\YandexDirect\Api\V5\Contract\CheckCampaignsRequest',
@@ -62,9 +66,9 @@ class Changes extends V5SoapClient
                 'CheckResponse' => 'Biplane\YandexDirect\Api\V5\Contract\CheckChangesResponse',
                 'CheckResponseModified' => 'Biplane\YandexDirect\Api\V5\Contract\CheckResponseModified',
                 'CampaignStatItem' => 'Biplane\YandexDirect\Api\V5\Contract\CampaignStatItem',
-                'CheckResponseIds' => 'Biplane\YandexDirect\Api\V5\Contract\CheckResponseIds'
-            )
-        ));
+                'CheckResponseIds' => 'Biplane\YandexDirect\Api\V5\Contract\CheckResponseIds',
+            ]
+        ]);
     }
 
     /**
@@ -75,7 +79,7 @@ class Changes extends V5SoapClient
      */
     public function checkDictionaries(Contract\CheckDictionariesRequest $parameters)
     {
-        return $this->invoke('checkDictionaries', array($parameters));
+        return $this->invoke('checkDictionaries', [$parameters]);
     }
 
     /**
@@ -86,7 +90,7 @@ class Changes extends V5SoapClient
      */
     public function checkCampaigns(Contract\CheckCampaignsRequest $parameters)
     {
-        return $this->invoke('checkCampaigns', array($parameters));
+        return $this->invoke('checkCampaigns', [$parameters]);
     }
 
     /**
@@ -97,7 +101,7 @@ class Changes extends V5SoapClient
      */
     public function check(Contract\CheckChangesRequest $parameters)
     {
-        return $this->invoke('check', array($parameters));
+        return $this->invoke('check', [$parameters]);
     }
 
 

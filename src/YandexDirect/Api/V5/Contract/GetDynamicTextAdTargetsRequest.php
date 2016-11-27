@@ -10,14 +10,12 @@ class GetDynamicTextAdTargetsRequest extends GetRequestGeneral
 
     protected $SelectionCriteria = null;
 
-    protected $FieldNames = array(
-        
-    );
+    protected $FieldNames = [];
 
     /**
      * Creates a new instance of GetDynamicTextAdTargetsRequest.
      *
-     * @return GetDynamicTextAdTargetsRequest
+     * @return self
      */
     public static function create()
     {
@@ -38,7 +36,7 @@ class GetDynamicTextAdTargetsRequest extends GetRequestGeneral
      * Sets SelectionCriteria.
      *
      * @param WebpagesSelectionCriteria $value
-     * @return $this
+     * @return self
      */
     public function setSelectionCriteria(WebpagesSelectionCriteria $value)
     {
@@ -50,7 +48,8 @@ class GetDynamicTextAdTargetsRequest extends GetRequestGeneral
     /**
      * Gets FieldNames.
      *
-     * @return WebpageFieldEnum[]
+     * @return string[]
+     * @see WebpageFieldEnum
      */
     public function getFieldNames()
     {
@@ -60,8 +59,9 @@ class GetDynamicTextAdTargetsRequest extends GetRequestGeneral
     /**
      * Sets FieldNames.
      *
-     * @param WebpageFieldEnum[] $value
-     * @return $this
+     * @param string[] $value
+     * @return self
+     * @see WebpageFieldEnum
      */
     public function setFieldNames(array $value)
     {

@@ -14,10 +14,14 @@ class AdAddItem extends AdAddItemBase
 
     protected $MobileAppAd = null;
 
+    protected $TextImageAd = null;
+
+    protected $MobileAppImageAd = null;
+
     /**
      * Creates a new instance of AdAddItem.
      *
-     * @return AdAddItem
+     * @return self
      */
     public static function create()
     {
@@ -38,7 +42,7 @@ class AdAddItem extends AdAddItemBase
      * Sets TextAd.
      *
      * @param TextAdAdd|null $value
-     * @return $this
+     * @return self
      */
     public function setTextAd(TextAdAdd $value = null)
     {
@@ -61,7 +65,7 @@ class AdAddItem extends AdAddItemBase
      * Sets DynamicTextAd.
      *
      * @param DynamicTextAdAdd|null $value
-     * @return $this
+     * @return self
      */
     public function setDynamicTextAd(DynamicTextAdAdd $value = null)
     {
@@ -84,11 +88,57 @@ class AdAddItem extends AdAddItemBase
      * Sets MobileAppAd.
      *
      * @param MobileAppAdAdd|null $value
-     * @return $this
+     * @return self
      */
     public function setMobileAppAd(MobileAppAdAdd $value = null)
     {
         $this->MobileAppAd = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets TextImageAd.
+     *
+     * @return TextImageAdAdd|null
+     */
+    public function getTextImageAd()
+    {
+        return $this->TextImageAd;
+    }
+
+    /**
+     * Sets TextImageAd.
+     *
+     * @param TextImageAdAdd|null $value
+     * @return self
+     */
+    public function setTextImageAd(TextImageAdAdd $value = null)
+    {
+        $this->TextImageAd = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets MobileAppImageAd.
+     *
+     * @return MobileAppImageAdAdd|null
+     */
+    public function getMobileAppImageAd()
+    {
+        return $this->MobileAppImageAd;
+    }
+
+    /**
+     * Sets MobileAppImageAd.
+     *
+     * @param MobileAppImageAdAdd|null $value
+     * @return self
+     */
+    public function setMobileAppImageAd(MobileAppImageAdAdd $value = null)
+    {
+        $this->MobileAppImageAd = $value;
 
         return $this;
     }

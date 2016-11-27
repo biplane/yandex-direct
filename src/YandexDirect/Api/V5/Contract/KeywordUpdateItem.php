@@ -19,7 +19,7 @@ class KeywordUpdateItem
     /**
      * Creates a new instance of KeywordUpdateItem.
      *
-     * @return KeywordUpdateItem
+     * @return self
      */
     public static function create()
     {
@@ -40,7 +40,7 @@ class KeywordUpdateItem
      * Sets Id.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setId($value)
     {
@@ -63,7 +63,7 @@ class KeywordUpdateItem
      * Sets Keyword.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setKeyword($value = null)
     {
@@ -86,7 +86,7 @@ class KeywordUpdateItem
      * Sets UserParam1.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setUserParam1($value = null)
     {
@@ -109,7 +109,7 @@ class KeywordUpdateItem
      * Sets UserParam2.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setUserParam2($value = null)
     {

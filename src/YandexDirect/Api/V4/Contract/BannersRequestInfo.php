@@ -15,7 +15,7 @@ class BannersRequestInfo
     /**
      * Creates a new instance of BannersRequestInfo.
      *
-     * @return BannersRequestInfo
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +36,7 @@ class BannersRequestInfo
      * Sets CampaignIDS.
      *
      * @param int[]|null $value
-     * @return $this
+     * @return self
      */
     public function setCampaignIDS(array $value = null)
     {
@@ -59,7 +59,7 @@ class BannersRequestInfo
      * Sets BannerIDS.
      *
      * @param int[]|null $value
-     * @return $this
+     * @return self
      */
     public function setBannerIDS(array $value = null)
     {

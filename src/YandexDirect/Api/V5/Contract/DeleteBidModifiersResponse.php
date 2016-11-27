@@ -13,7 +13,7 @@ class DeleteBidModifiersResponse
     /**
      * Creates a new instance of DeleteBidModifiersResponse.
      *
-     * @return DeleteBidModifiersResponse
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class DeleteBidModifiersResponse
      * Sets DeleteResults.
      *
      * @param ActionResult[]|null $value
-     * @return $this
+     * @return self
      */
     public function setDeleteResults(array $value = null)
     {

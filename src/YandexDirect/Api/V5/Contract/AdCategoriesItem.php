@@ -17,7 +17,7 @@ class AdCategoriesItem
     /**
      * Creates a new instance of AdCategoriesItem.
      *
-     * @return AdCategoriesItem
+     * @return self
      */
     public static function create()
     {
@@ -38,7 +38,7 @@ class AdCategoriesItem
      * Sets AdCategory.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setAdCategory($value)
     {
@@ -61,7 +61,7 @@ class AdCategoriesItem
      * Sets Description.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setDescription($value)
     {
@@ -84,7 +84,7 @@ class AdCategoriesItem
      * Sets Message.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setMessage($value)
     {

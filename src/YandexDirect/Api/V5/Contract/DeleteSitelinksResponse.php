@@ -13,7 +13,7 @@ class DeleteSitelinksResponse
     /**
      * Creates a new instance of DeleteSitelinksResponse.
      *
-     * @return DeleteSitelinksResponse
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class DeleteSitelinksResponse
      * Sets DeleteResults.
      *
      * @param ActionResult[]|null $value
-     * @return $this
+     * @return self
      */
     public function setDeleteResults(array $value = null)
     {

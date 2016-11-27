@@ -17,7 +17,7 @@ class BidsSelectionCriteria
     /**
      * Creates a new instance of BidsSelectionCriteria.
      *
-     * @return BidsSelectionCriteria
+     * @return self
      */
     public static function create()
     {
@@ -38,7 +38,7 @@ class BidsSelectionCriteria
      * Sets CampaignIds.
      *
      * @param int[]|null $value
-     * @return $this
+     * @return self
      */
     public function setCampaignIds(array $value = null)
     {
@@ -61,7 +61,7 @@ class BidsSelectionCriteria
      * Sets AdGroupIds.
      *
      * @param int[]|null $value
-     * @return $this
+     * @return self
      */
     public function setAdGroupIds(array $value = null)
     {
@@ -84,7 +84,7 @@ class BidsSelectionCriteria
      * Sets KeywordIds.
      *
      * @param int[]|null $value
-     * @return $this
+     * @return self
      */
     public function setKeywordIds(array $value = null)
     {

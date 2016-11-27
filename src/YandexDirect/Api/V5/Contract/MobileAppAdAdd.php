@@ -25,7 +25,7 @@ class MobileAppAdAdd
     /**
      * Creates a new instance of MobileAppAdAdd.
      *
-     * @return MobileAppAdAdd
+     * @return self
      */
     public static function create()
     {
@@ -46,7 +46,7 @@ class MobileAppAdAdd
      * Sets AdImageHash.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setAdImageHash($value = null)
     {
@@ -69,7 +69,7 @@ class MobileAppAdAdd
      * Sets Text.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setText($value)
     {
@@ -92,7 +92,7 @@ class MobileAppAdAdd
      * Sets Title.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setTitle($value)
     {
@@ -115,7 +115,7 @@ class MobileAppAdAdd
      * Sets TrackingUrl.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setTrackingUrl($value = null)
     {
@@ -127,7 +127,8 @@ class MobileAppAdAdd
     /**
      * Gets Action.
      *
-     * @return MobileAppAdActionEnum
+     * @return string
+     * @see MobileAppAdActionEnum
      */
     public function getAction()
     {
@@ -137,8 +138,9 @@ class MobileAppAdAdd
     /**
      * Sets Action.
      *
-     * @param MobileAppAdActionEnum $value
-     * @return $this
+     * @param string $value
+     * @return self
+     * @see MobileAppAdActionEnum
      */
     public function setAction($value)
     {
@@ -161,7 +163,7 @@ class MobileAppAdAdd
      * Sets Features.
      *
      * @param MobileAppAdFeatureItem[]|null $value
-     * @return $this
+     * @return self
      */
     public function setFeatures(array $value = null)
     {
@@ -173,7 +175,8 @@ class MobileAppAdAdd
     /**
      * Gets AgeLabel.
      *
-     * @return MobAppAgeLabelEnum|null
+     * @return string|null
+     * @see MobAppAgeLabelEnum
      */
     public function getAgeLabel()
     {
@@ -183,8 +186,9 @@ class MobileAppAdAdd
     /**
      * Sets AgeLabel.
      *
-     * @param MobAppAgeLabelEnum|null $value
-     * @return $this
+     * @param string|null $value
+     * @return self
+     * @see MobAppAgeLabelEnum
      */
     public function setAgeLabel($value = null)
     {

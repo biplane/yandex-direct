@@ -17,7 +17,7 @@ class FundsParam
     /**
      * Creates a new instance of FundsParam.
      *
-     * @return FundsParam
+     * @return self
      */
     public static function create()
     {
@@ -27,7 +27,8 @@ class FundsParam
     /**
      * Gets Mode.
      *
-     * @return CampaignFundsEnum
+     * @return string
+     * @see CampaignFundsEnum
      */
     public function getMode()
     {
@@ -37,8 +38,9 @@ class FundsParam
     /**
      * Sets Mode.
      *
-     * @param CampaignFundsEnum $value
-     * @return $this
+     * @param string $value
+     * @return self
+     * @see CampaignFundsEnum
      */
     public function setMode($value)
     {
@@ -61,7 +63,7 @@ class FundsParam
      * Sets CampaignFunds.
      *
      * @param CampaignFundsParam|null $value
-     * @return $this
+     * @return self
      */
     public function setCampaignFunds(CampaignFundsParam $value = null)
     {
@@ -84,7 +86,7 @@ class FundsParam
      * Sets SharedAccountFunds.
      *
      * @param SharedAccountFundsParam|null $value
-     * @return $this
+     * @return self
      */
     public function setSharedAccountFunds(SharedAccountFundsParam $value = null)
     {

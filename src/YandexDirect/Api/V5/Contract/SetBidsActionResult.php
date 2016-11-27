@@ -15,7 +15,7 @@ class SetBidsActionResult extends ActionResult
     /**
      * Creates a new instance of SetBidsActionResult.
      *
-     * @return SetBidsActionResult
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +36,7 @@ class SetBidsActionResult extends ActionResult
      * Sets CampaignId.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setCampaignId($value = null)
     {
@@ -59,7 +59,7 @@ class SetBidsActionResult extends ActionResult
      * Sets AdGroupId.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setAdGroupId($value = null)
     {

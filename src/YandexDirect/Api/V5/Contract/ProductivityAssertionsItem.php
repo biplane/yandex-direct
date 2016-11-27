@@ -17,7 +17,7 @@ class ProductivityAssertionsItem
     /**
      * Creates a new instance of ProductivityAssertionsItem.
      *
-     * @return ProductivityAssertionsItem
+     * @return self
      */
     public static function create()
     {
@@ -38,7 +38,7 @@ class ProductivityAssertionsItem
      * Sets Reference.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setReference($value)
     {
@@ -61,7 +61,7 @@ class ProductivityAssertionsItem
      * Sets Title.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setTitle($value)
     {
@@ -84,7 +84,7 @@ class ProductivityAssertionsItem
      * Sets Recommendation.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setRecommendation($value)
     {

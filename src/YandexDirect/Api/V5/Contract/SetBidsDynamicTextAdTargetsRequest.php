@@ -13,7 +13,7 @@ class SetBidsDynamicTextAdTargetsRequest
     /**
      * Creates a new instance of SetBidsDynamicTextAdTargetsRequest.
      *
-     * @return SetBidsDynamicTextAdTargetsRequest
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class SetBidsDynamicTextAdTargetsRequest
      * Sets Bids.
      *
      * @param SetBidsItem[]|null $value
-     * @return $this
+     * @return self
      */
     public function setBids(array $value = null)
     {

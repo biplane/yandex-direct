@@ -2,14 +2,14 @@
 
 namespace Biplane\YandexDirect\Api\V4;
 
-use Biplane\YandexDirect\Api\V4SoapClient;
+use Biplane\YandexDirect\Api\SoapClientV4;
 use Biplane\YandexDirect\User;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**
  * Auto-generated code.
  */
-class YandexAPIService extends V4SoapClient
+class YandexAPIService extends SoapClientV4
 {
 
     const ENDPOINT = 'https://api.direct.yandex.ru/live/v4/wsdl/';
@@ -22,8 +22,8 @@ class YandexAPIService extends V4SoapClient
      */
     public function __construct(EventDispatcherInterface $dispatcher, User $user)
     {
-        parent::__construct($user->resolveWsdl(self::ENDPOINT), $dispatcher, $user, array(
-            'classmap' => array(
+        parent::__construct($user->resolveWsdl(self::ENDPOINT), $dispatcher, $user, [
+            'classmap' => [
                 'NewReportFilterInfo' => 'Biplane\YandexDirect\Api\V4\Contract\NewReportFilterInfo',
                 'NewReportInfo' => 'Biplane\YandexDirect\Api\V4\Contract\NewReportInfo',
                 'CreateOfflineReportRequest' => 'Biplane\YandexDirect\Api\V4\Contract\CreateOfflineReportRequest',
@@ -151,9 +151,9 @@ class YandexAPIService extends V4SoapClient
                 'Transfer' => 'Biplane\YandexDirect\Api\V4\Contract\Transfer',
                 'Account' => 'Biplane\YandexDirect\Api\V4\Contract\Account',
                 'AccountManagementResponse' => 'Biplane\YandexDirect\Api\V4\Contract\AccountManagementResponse',
-                'AccountActionResult' => 'Biplane\YandexDirect\Api\V4\Contract\AccountActionResult'
-            )
-        ));
+                'AccountActionResult' => 'Biplane\YandexDirect\Api\V4\Contract\AccountActionResult',
+            ]
+        ]);
     }
 
     /**
@@ -163,7 +163,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function getVersion()
     {
-        return $this->invoke('GetVersion', array());
+        return $this->invoke('GetVersion', []);
     }
 
     /**
@@ -174,7 +174,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function getClientsList(Contract\ClientInfoRequest $params)
     {
-        return $this->invoke('GetClientsList', array($params));
+        return $this->invoke('GetClientsList', [$params]);
     }
 
     /**
@@ -185,7 +185,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function getSubClients(Contract\GetSubClientsRequest $params)
     {
-        return $this->invoke('GetSubClients', array($params));
+        return $this->invoke('GetSubClients', [$params]);
     }
 
     /**
@@ -196,7 +196,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function setAutoPrice(Contract\AutoPriceInfo $params)
     {
-        return $this->invoke('SetAutoPrice', array($params));
+        return $this->invoke('SetAutoPrice', [$params]);
     }
 
     /**
@@ -207,7 +207,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function deleteReport($params)
     {
-        return $this->invoke('DeleteReport', array($params));
+        return $this->invoke('DeleteReport', [$params]);
     }
 
     /**
@@ -218,7 +218,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function getSummaryStat(Contract\GetSummaryStatRequest $params)
     {
-        return $this->invoke('GetSummaryStat', array($params));
+        return $this->invoke('GetSummaryStat', [$params]);
     }
 
     /**
@@ -229,7 +229,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function getCampaignParams(Contract\CampaignIDInfo $params)
     {
-        return $this->invoke('GetCampaignParams', array($params));
+        return $this->invoke('GetCampaignParams', [$params]);
     }
 
     /**
@@ -240,7 +240,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function getCampaignsParams(Contract\CampaignIDSInfo $params)
     {
-        return $this->invoke('GetCampaignsParams', array($params));
+        return $this->invoke('GetCampaignsParams', [$params]);
     }
 
     /**
@@ -251,7 +251,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function deleteForecastReport($params)
     {
-        return $this->invoke('DeleteForecastReport', array($params));
+        return $this->invoke('DeleteForecastReport', [$params]);
     }
 
     /**
@@ -262,7 +262,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function moderateBanners(Contract\CampaignBidsInfo $params)
     {
-        return $this->invoke('ModerateBanners', array($params));
+        return $this->invoke('ModerateBanners', [$params]);
     }
 
     /**
@@ -273,7 +273,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function stopBanners(Contract\CampaignBidsInfo $params)
     {
-        return $this->invoke('StopBanners', array($params));
+        return $this->invoke('StopBanners', [$params]);
     }
 
     /**
@@ -284,7 +284,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function resumeBanners(Contract\CampaignBidsInfo $params)
     {
-        return $this->invoke('ResumeBanners', array($params));
+        return $this->invoke('ResumeBanners', [$params]);
     }
 
     /**
@@ -295,7 +295,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function archiveBanners(Contract\CampaignBidsInfo $params)
     {
-        return $this->invoke('ArchiveBanners', array($params));
+        return $this->invoke('ArchiveBanners', [$params]);
     }
 
     /**
@@ -306,7 +306,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function unArchiveBanners(Contract\CampaignBidsInfo $params)
     {
-        return $this->invoke('UnArchiveBanners', array($params));
+        return $this->invoke('UnArchiveBanners', [$params]);
     }
 
     /**
@@ -317,7 +317,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function deleteBanners(Contract\CampaignBidsInfo $params)
     {
-        return $this->invoke('DeleteBanners', array($params));
+        return $this->invoke('DeleteBanners', [$params]);
     }
 
     /**
@@ -328,7 +328,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function stopCampaign(Contract\CampaignIDInfo $params)
     {
-        return $this->invoke('StopCampaign', array($params));
+        return $this->invoke('StopCampaign', [$params]);
     }
 
     /**
@@ -339,7 +339,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function deleteCampaign(Contract\CampaignIDInfo $params)
     {
-        return $this->invoke('DeleteCampaign', array($params));
+        return $this->invoke('DeleteCampaign', [$params]);
     }
 
     /**
@@ -350,7 +350,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function unArchiveCampaign(Contract\CampaignIDInfo $params)
     {
-        return $this->invoke('UnArchiveCampaign', array($params));
+        return $this->invoke('UnArchiveCampaign', [$params]);
     }
 
     /**
@@ -361,7 +361,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function archiveCampaign(Contract\CampaignIDInfo $params)
     {
-        return $this->invoke('ArchiveCampaign', array($params));
+        return $this->invoke('ArchiveCampaign', [$params]);
     }
 
     /**
@@ -372,7 +372,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function resumeCampaign(Contract\CampaignIDInfo $params)
     {
-        return $this->invoke('ResumeCampaign', array($params));
+        return $this->invoke('ResumeCampaign', [$params]);
     }
 
     /**
@@ -382,7 +382,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function getReportList()
     {
-        return $this->invoke('GetReportList', array());
+        return $this->invoke('GetReportList', []);
     }
 
     /**
@@ -393,7 +393,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function getClientsUnits(array $params)
     {
-        return $this->invoke('GetClientsUnits', array($params));
+        return $this->invoke('GetClientsUnits', [$params]);
     }
 
     /**
@@ -404,7 +404,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function getClientInfo(array $params)
     {
-        return $this->invoke('GetClientInfo', array($params));
+        return $this->invoke('GetClientInfo', [$params]);
     }
 
     /**
@@ -415,7 +415,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function updateClientInfo(array $params)
     {
-        return $this->invoke('UpdateClientInfo', array($params));
+        return $this->invoke('UpdateClientInfo', [$params]);
     }
 
     /**
@@ -426,7 +426,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function getBanners(Contract\GetBannersInfo $params)
     {
-        return $this->invoke('GetBanners', array($params));
+        return $this->invoke('GetBanners', [$params]);
     }
 
     /**
@@ -437,7 +437,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function getCampaignsList(array $params)
     {
-        return $this->invoke('GetCampaignsList', array($params));
+        return $this->invoke('GetCampaignsList', [$params]);
     }
 
     /**
@@ -448,7 +448,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function getCampaignsListFilter(Contract\GetCampaignsInfo $params)
     {
-        return $this->invoke('GetCampaignsListFilter', array($params));
+        return $this->invoke('GetCampaignsListFilter', [$params]);
     }
 
     /**
@@ -459,7 +459,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function getBalance(array $params)
     {
-        return $this->invoke('GetBalance', array($params));
+        return $this->invoke('GetBalance', [$params]);
     }
 
     /**
@@ -470,7 +470,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function getBannerPhrases(array $params)
     {
-        return $this->invoke('GetBannerPhrases', array($params));
+        return $this->invoke('GetBannerPhrases', [$params]);
     }
 
     /**
@@ -481,7 +481,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function getBannerPhrasesFilter(Contract\BannerPhrasesFilterRequestInfo $params)
     {
-        return $this->invoke('GetBannerPhrasesFilter', array($params));
+        return $this->invoke('GetBannerPhrasesFilter', [$params]);
     }
 
     /**
@@ -491,7 +491,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function getRegions()
     {
-        return $this->invoke('GetRegions', array());
+        return $this->invoke('GetRegions', []);
     }
 
     /**
@@ -502,7 +502,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function createNewReport(Contract\NewReportInfo $params)
     {
-        return $this->invoke('CreateNewReport', array($params));
+        return $this->invoke('CreateNewReport', [$params]);
     }
 
     /**
@@ -513,7 +513,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function getBannersStat(Contract\NewReportInfo $params)
     {
-        return $this->invoke('GetBannersStat', array($params));
+        return $this->invoke('GetBannersStat', [$params]);
     }
 
     /**
@@ -524,7 +524,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function createNewForecast(Contract\NewForecastInfo $params)
     {
-        return $this->invoke('CreateNewForecast', array($params));
+        return $this->invoke('CreateNewForecast', [$params]);
     }
 
     /**
@@ -535,7 +535,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function getForecast($params)
     {
-        return $this->invoke('GetForecast', array($params));
+        return $this->invoke('GetForecast', [$params]);
     }
 
     /**
@@ -545,7 +545,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function getRubrics()
     {
-        return $this->invoke('GetRubrics', array());
+        return $this->invoke('GetRubrics', []);
     }
 
     /**
@@ -555,7 +555,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function getTimeZones()
     {
-        return $this->invoke('GetTimeZones', array());
+        return $this->invoke('GetTimeZones', []);
     }
 
     /**
@@ -565,7 +565,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function getForecastList()
     {
-        return $this->invoke('GetForecastList', array());
+        return $this->invoke('GetForecastList', []);
     }
 
     /**
@@ -576,7 +576,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function updatePrices(array $params)
     {
-        return $this->invoke('UpdatePrices', array($params));
+        return $this->invoke('UpdatePrices', [$params]);
     }
 
     /**
@@ -587,7 +587,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function createOrUpdateCampaign(Contract\CampaignInfo $params)
     {
-        return $this->invoke('CreateOrUpdateCampaign', array($params));
+        return $this->invoke('CreateOrUpdateCampaign', [$params]);
     }
 
     /**
@@ -598,7 +598,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function createOrUpdateBanners(array $params)
     {
-        return $this->invoke('CreateOrUpdateBanners', array($params));
+        return $this->invoke('CreateOrUpdateBanners', [$params]);
     }
 
     /**
@@ -608,7 +608,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function getAvailableVersions()
     {
-        return $this->invoke('GetAvailableVersions', array());
+        return $this->invoke('GetAvailableVersions', []);
     }
 
     /**
@@ -619,7 +619,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function getKeywordsSuggestion(Contract\KeywordsSuggestionInfo $params)
     {
-        return $this->invoke('GetKeywordsSuggestion', array($params));
+        return $this->invoke('GetKeywordsSuggestion', [$params]);
     }
 
     /**
@@ -630,7 +630,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function createNewSubclient(Contract\CreateNewSubclientRequest $params)
     {
-        return $this->invoke('CreateNewSubclient', array($params));
+        return $this->invoke('CreateNewSubclient', [$params]);
     }
 
     /**
@@ -641,7 +641,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function createNewWordstatReport(Contract\NewWordstatReportInfo $params)
     {
-        return $this->invoke('CreateNewWordstatReport', array($params));
+        return $this->invoke('CreateNewWordstatReport', [$params]);
     }
 
     /**
@@ -651,7 +651,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function getWordstatReportList()
     {
-        return $this->invoke('GetWordstatReportList', array());
+        return $this->invoke('GetWordstatReportList', []);
     }
 
     /**
@@ -662,7 +662,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function getWordstatReport($params)
     {
-        return $this->invoke('GetWordstatReport', array($params));
+        return $this->invoke('GetWordstatReport', [$params]);
     }
 
     /**
@@ -673,7 +673,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function deleteWordstatReport($params)
     {
-        return $this->invoke('DeleteWordstatReport', array($params));
+        return $this->invoke('DeleteWordstatReport', [$params]);
     }
 
     /**
@@ -684,7 +684,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function getStatGoals(Contract\StatGoalsCampaignIDInfo $params)
     {
-        return $this->invoke('GetStatGoals', array($params));
+        return $this->invoke('GetStatGoals', [$params]);
     }
 
     /**
@@ -695,7 +695,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function getChanges(Contract\GetChangesRequest $params)
     {
-        return $this->invoke('GetChanges', array($params));
+        return $this->invoke('GetChanges', [$params]);
     }
 
     /**
@@ -706,7 +706,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function getEventsLog(Contract\GetEventsLogRequest $params)
     {
-        return $this->invoke('GetEventsLog', array($params));
+        return $this->invoke('GetEventsLog', [$params]);
     }
 
     /**
@@ -717,7 +717,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function getCampaignsTags(Contract\CampaignIDSInfo $params)
     {
-        return $this->invoke('GetCampaignsTags', array($params));
+        return $this->invoke('GetCampaignsTags', [$params]);
     }
 
     /**
@@ -728,7 +728,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function updateCampaignsTags(array $params)
     {
-        return $this->invoke('UpdateCampaignsTags', array($params));
+        return $this->invoke('UpdateCampaignsTags', [$params]);
     }
 
     /**
@@ -739,7 +739,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function getBannersTags(Contract\BannersRequestInfo $params)
     {
-        return $this->invoke('GetBannersTags', array($params));
+        return $this->invoke('GetBannersTags', [$params]);
     }
 
     /**
@@ -750,7 +750,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function updateBannersTags(array $params)
     {
-        return $this->invoke('UpdateBannersTags', array($params));
+        return $this->invoke('UpdateBannersTags', [$params]);
     }
 
     /**
@@ -761,7 +761,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function transferMoney(Contract\TransferMoneyInfo $params)
     {
-        return $this->invoke('TransferMoney', array($params));
+        return $this->invoke('TransferMoney', [$params]);
     }
 
     /**
@@ -771,7 +771,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function getCreditLimits()
     {
-        return $this->invoke('GetCreditLimits', array());
+        return $this->invoke('GetCreditLimits', []);
     }
 
     /**
@@ -782,7 +782,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function createInvoice(Contract\CreateInvoiceInfo $params)
     {
-        return $this->invoke('CreateInvoice', array($params));
+        return $this->invoke('CreateInvoice', [$params]);
     }
 
     /**
@@ -793,7 +793,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function payCampaigns(Contract\PayCampaignsInfo $params)
     {
-        return $this->invoke('PayCampaigns', array($params));
+        return $this->invoke('PayCampaigns', [$params]);
     }
 
     /**
@@ -804,7 +804,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function payCampaignsByCard(Contract\PayCampaignsByCardInfo $params)
     {
-        return $this->invoke('PayCampaignsByCard', array($params));
+        return $this->invoke('PayCampaignsByCard', [$params]);
     }
 
     /**
@@ -815,7 +815,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function checkPayment(Contract\CheckPaymentInfo $params)
     {
-        return $this->invoke('CheckPayment', array($params));
+        return $this->invoke('CheckPayment', [$params]);
     }
 
     /**
@@ -826,7 +826,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function getRetargetingGoals(Contract\GetRetargetingGoalsRequest $params)
     {
-        return $this->invoke('GetRetargetingGoals', array($params));
+        return $this->invoke('GetRetargetingGoals', [$params]);
     }
 
     /**
@@ -837,7 +837,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function retargetingCondition(Contract\RetargetingConditionRequest $params)
     {
-        return $this->invoke('RetargetingCondition', array($params));
+        return $this->invoke('RetargetingCondition', [$params]);
     }
 
     /**
@@ -848,7 +848,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function retargeting(Contract\RetargetingRequest $params)
     {
-        return $this->invoke('Retargeting', array($params));
+        return $this->invoke('Retargeting', [$params]);
     }
 
     /**
@@ -859,7 +859,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function adImage(Contract\AdImageRequest $params)
     {
-        return $this->invoke('AdImage', array($params));
+        return $this->invoke('AdImage', [$params]);
     }
 
     /**
@@ -870,7 +870,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function adImageAssociation(Contract\AdImageAssociationRequest $params)
     {
-        return $this->invoke('AdImageAssociation', array($params));
+        return $this->invoke('AdImageAssociation', [$params]);
     }
 
     /**
@@ -881,7 +881,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function enableSharedAccount(Contract\EnableSharedAccountRequest $params)
     {
-        return $this->invoke('EnableSharedAccount', array($params));
+        return $this->invoke('EnableSharedAccount', [$params]);
     }
 
     /**
@@ -892,7 +892,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function accountManagement(Contract\AccountManagementRequest $params)
     {
-        return $this->invoke('AccountManagement', array($params));
+        return $this->invoke('AccountManagement', [$params]);
     }
 
     /**
@@ -903,7 +903,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function keyword(Contract\KeywordRequest $params)
     {
-        return $this->invoke('Keyword', array($params));
+        return $this->invoke('Keyword', [$params]);
     }
 
     /**
@@ -914,7 +914,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function createOfflineReport(Contract\CreateOfflineReportRequest $params)
     {
-        return $this->invoke('CreateOfflineReport', array($params));
+        return $this->invoke('CreateOfflineReport', [$params]);
     }
 
     /**
@@ -925,7 +925,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function deleteOfflineReport($params)
     {
-        return $this->invoke('DeleteOfflineReport', array($params));
+        return $this->invoke('DeleteOfflineReport', [$params]);
     }
 
     /**
@@ -935,7 +935,7 @@ class YandexAPIService extends V4SoapClient
      */
     public function getOfflineReportList()
     {
-        return $this->invoke('GetOfflineReportList', array());
+        return $this->invoke('GetOfflineReportList', []);
     }
 
 

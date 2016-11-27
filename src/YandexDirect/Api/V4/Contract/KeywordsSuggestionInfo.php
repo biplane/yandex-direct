@@ -8,14 +8,12 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
 class KeywordsSuggestionInfo
 {
 
-    protected $Keywords = array(
-        
-    );
+    protected $Keywords = [];
 
     /**
      * Creates a new instance of KeywordsSuggestionInfo.
      *
-     * @return KeywordsSuggestionInfo
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +34,7 @@ class KeywordsSuggestionInfo
      * Sets Keywords.
      *
      * @param string[] $value
-     * @return $this
+     * @return self
      */
     public function setKeywords(array $value)
     {

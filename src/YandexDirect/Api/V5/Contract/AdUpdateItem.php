@@ -16,10 +16,14 @@ class AdUpdateItem
 
     protected $MobileAppAd = null;
 
+    protected $TextImageAd = null;
+
+    protected $MobileAppImageAd = null;
+
     /**
      * Creates a new instance of AdUpdateItem.
      *
-     * @return AdUpdateItem
+     * @return self
      */
     public static function create()
     {
@@ -40,7 +44,7 @@ class AdUpdateItem
      * Sets Id.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setId($value)
     {
@@ -63,7 +67,7 @@ class AdUpdateItem
      * Sets TextAd.
      *
      * @param TextAdUpdate|null $value
-     * @return $this
+     * @return self
      */
     public function setTextAd(TextAdUpdate $value = null)
     {
@@ -86,7 +90,7 @@ class AdUpdateItem
      * Sets DynamicTextAd.
      *
      * @param DynamicTextAdUpdate|null $value
-     * @return $this
+     * @return self
      */
     public function setDynamicTextAd(DynamicTextAdUpdate $value = null)
     {
@@ -109,11 +113,57 @@ class AdUpdateItem
      * Sets MobileAppAd.
      *
      * @param MobileAppAdUpdate|null $value
-     * @return $this
+     * @return self
      */
     public function setMobileAppAd(MobileAppAdUpdate $value = null)
     {
         $this->MobileAppAd = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets TextImageAd.
+     *
+     * @return TextImageAdUpdate|null
+     */
+    public function getTextImageAd()
+    {
+        return $this->TextImageAd;
+    }
+
+    /**
+     * Sets TextImageAd.
+     *
+     * @param TextImageAdUpdate|null $value
+     * @return self
+     */
+    public function setTextImageAd(TextImageAdUpdate $value = null)
+    {
+        $this->TextImageAd = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets MobileAppImageAd.
+     *
+     * @return MobileAppImageAdUpdate|null
+     */
+    public function getMobileAppImageAd()
+    {
+        return $this->MobileAppImageAd;
+    }
+
+    /**
+     * Sets MobileAppImageAd.
+     *
+     * @param MobileAppImageAdUpdate|null $value
+     * @return self
+     */
+    public function setMobileAppImageAd(MobileAppImageAdUpdate $value = null)
+    {
+        $this->MobileAppImageAd = $value;
 
         return $this;
     }

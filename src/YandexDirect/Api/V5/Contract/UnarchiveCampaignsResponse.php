@@ -13,7 +13,7 @@ class UnarchiveCampaignsResponse
     /**
      * Creates a new instance of UnarchiveCampaignsResponse.
      *
-     * @return UnarchiveCampaignsResponse
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class UnarchiveCampaignsResponse
      * Sets UnarchiveResults.
      *
      * @param ActionResult[]|null $value
-     * @return $this
+     * @return self
      */
     public function setUnarchiveResults(array $value = null)
     {

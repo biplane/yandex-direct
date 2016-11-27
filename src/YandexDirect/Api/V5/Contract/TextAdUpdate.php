@@ -21,7 +21,7 @@ class TextAdUpdate extends TextAdUpdateBase
     /**
      * Creates a new instance of TextAdUpdate.
      *
-     * @return TextAdUpdate
+     * @return self
      */
     public static function create()
     {
@@ -42,7 +42,7 @@ class TextAdUpdate extends TextAdUpdateBase
      * Sets Text.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setText($value = null)
     {
@@ -65,7 +65,7 @@ class TextAdUpdate extends TextAdUpdateBase
      * Sets Title.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setTitle($value = null)
     {
@@ -88,7 +88,7 @@ class TextAdUpdate extends TextAdUpdateBase
      * Sets Href.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setHref($value = null)
     {
@@ -100,7 +100,8 @@ class TextAdUpdate extends TextAdUpdateBase
     /**
      * Gets AgeLabel.
      *
-     * @return AgeLabelEnum|null
+     * @return string|null
+     * @see AgeLabelEnum
      */
     public function getAgeLabel()
     {
@@ -110,8 +111,9 @@ class TextAdUpdate extends TextAdUpdateBase
     /**
      * Sets AgeLabel.
      *
-     * @param AgeLabelEnum|null $value
-     * @return $this
+     * @param string|null $value
+     * @return self
+     * @see AgeLabelEnum
      */
     public function setAgeLabel($value = null)
     {
@@ -134,7 +136,7 @@ class TextAdUpdate extends TextAdUpdateBase
      * Sets DisplayUrlPath.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setDisplayUrlPath($value = null)
     {

@@ -8,9 +8,7 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
 class BannerPhrasesFilterRequestInfo
 {
 
-    protected $BannerIDS = array(
-        
-    );
+    protected $BannerIDS = [];
 
     protected $FieldsNames = null;
 
@@ -23,7 +21,7 @@ class BannerPhrasesFilterRequestInfo
     /**
      * Creates a new instance of BannerPhrasesFilterRequestInfo.
      *
-     * @return BannerPhrasesFilterRequestInfo
+     * @return self
      */
     public static function create()
     {
@@ -44,7 +42,7 @@ class BannerPhrasesFilterRequestInfo
      * Sets BannerIDS.
      *
      * @param int[] $value
-     * @return $this
+     * @return self
      */
     public function setBannerIDS(array $value)
     {
@@ -67,7 +65,7 @@ class BannerPhrasesFilterRequestInfo
      * Sets FieldsNames.
      *
      * @param string[]|null $value
-     * @return $this
+     * @return self
      */
     public function setFieldsNames(array $value = null)
     {
@@ -90,7 +88,7 @@ class BannerPhrasesFilterRequestInfo
      * Sets ConsiderTimeTarget.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setConsiderTimeTarget($value = null)
     {
@@ -113,7 +111,7 @@ class BannerPhrasesFilterRequestInfo
      * Sets RequestPrices.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setRequestPrices($value = null)
     {
@@ -136,7 +134,7 @@ class BannerPhrasesFilterRequestInfo
      * Sets Currency.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setCurrency($value = null)
     {

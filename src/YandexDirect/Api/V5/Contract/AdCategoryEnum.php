@@ -18,6 +18,8 @@ class AdCategoryEnum
 
     const MEDICINE = 'MEDICINE';
 
+    const PROJECT_DECLARATION = 'PROJECT_DECLARATION';
+
     const PSEUDO_WEAPON = 'PSEUDO_WEAPON';
 
     const TOBACCO = 'TOBACCO';

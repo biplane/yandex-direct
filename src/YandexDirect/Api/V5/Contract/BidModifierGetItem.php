@@ -27,7 +27,7 @@ class BidModifierGetItem
     /**
      * Creates a new instance of BidModifierGetItem.
      *
-     * @return BidModifierGetItem
+     * @return self
      */
     public static function create()
     {
@@ -48,7 +48,7 @@ class BidModifierGetItem
      * Sets CampaignId.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setCampaignId($value = null)
     {
@@ -71,7 +71,7 @@ class BidModifierGetItem
      * Sets AdGroupId.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setAdGroupId($value = null)
     {
@@ -94,7 +94,7 @@ class BidModifierGetItem
      * Sets Id.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setId($value = null)
     {
@@ -106,7 +106,8 @@ class BidModifierGetItem
     /**
      * Gets Level.
      *
-     * @return BidModifierLevelEnum|null
+     * @return string|null
+     * @see BidModifierLevelEnum
      */
     public function getLevel()
     {
@@ -116,8 +117,9 @@ class BidModifierGetItem
     /**
      * Sets Level.
      *
-     * @param BidModifierLevelEnum|null $value
-     * @return $this
+     * @param string|null $value
+     * @return self
+     * @see BidModifierLevelEnum
      */
     public function setLevel($value = null)
     {
@@ -129,7 +131,8 @@ class BidModifierGetItem
     /**
      * Gets Type.
      *
-     * @return BidModifierTypeEnum|null
+     * @return string|null
+     * @see BidModifierTypeEnum
      */
     public function getType()
     {
@@ -139,8 +142,9 @@ class BidModifierGetItem
     /**
      * Sets Type.
      *
-     * @param BidModifierTypeEnum|null $value
-     * @return $this
+     * @param string|null $value
+     * @return self
+     * @see BidModifierTypeEnum
      */
     public function setType($value = null)
     {
@@ -163,7 +167,7 @@ class BidModifierGetItem
      * Sets MobileAdjustment.
      *
      * @param MobileAdjustmentGet|null $value
-     * @return $this
+     * @return self
      */
     public function setMobileAdjustment(MobileAdjustmentGet $value = null)
     {
@@ -186,7 +190,7 @@ class BidModifierGetItem
      * Sets DemographicsAdjustment.
      *
      * @param DemographicsAdjustmentGet|null $value
-     * @return $this
+     * @return self
      */
     public function setDemographicsAdjustment(DemographicsAdjustmentGet $value = null)
     {
@@ -209,7 +213,7 @@ class BidModifierGetItem
      * Sets RetargetingAdjustment.
      *
      * @param RetargetingAdjustmentGet|null $value
-     * @return $this
+     * @return self
      */
     public function setRetargetingAdjustment(RetargetingAdjustmentGet $value = null)
     {

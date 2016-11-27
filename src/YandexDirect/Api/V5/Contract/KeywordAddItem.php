@@ -25,7 +25,7 @@ class KeywordAddItem
     /**
      * Creates a new instance of KeywordAddItem.
      *
-     * @return KeywordAddItem
+     * @return self
      */
     public static function create()
     {
@@ -46,7 +46,7 @@ class KeywordAddItem
      * Sets Keyword.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setKeyword($value)
     {
@@ -69,7 +69,7 @@ class KeywordAddItem
      * Sets AdGroupId.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setAdGroupId($value)
     {
@@ -92,7 +92,7 @@ class KeywordAddItem
      * Sets Bid.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setBid($value = null)
     {
@@ -115,7 +115,7 @@ class KeywordAddItem
      * Sets ContextBid.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setContextBid($value = null)
     {
@@ -127,7 +127,8 @@ class KeywordAddItem
     /**
      * Gets StrategyPriority.
      *
-     * @return PriorityEnum|null
+     * @return string|null
+     * @see PriorityEnum
      */
     public function getStrategyPriority()
     {
@@ -137,8 +138,9 @@ class KeywordAddItem
     /**
      * Sets StrategyPriority.
      *
-     * @param PriorityEnum|null $value
-     * @return $this
+     * @param string|null $value
+     * @return self
+     * @see PriorityEnum
      */
     public function setStrategyPriority($value = null)
     {
@@ -161,7 +163,7 @@ class KeywordAddItem
      * Sets UserParam1.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setUserParam1($value = null)
     {
@@ -184,7 +186,7 @@ class KeywordAddItem
      * Sets UserParam2.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setUserParam2($value = null)
     {

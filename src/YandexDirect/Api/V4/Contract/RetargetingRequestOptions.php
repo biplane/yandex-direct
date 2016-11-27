@@ -13,7 +13,7 @@ class RetargetingRequestOptions
     /**
      * Creates a new instance of RetargetingRequestOptions.
      *
-     * @return RetargetingRequestOptions
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class RetargetingRequestOptions
      * Sets Currency.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setCurrency($value = null)
     {

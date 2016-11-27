@@ -17,7 +17,7 @@ class ClientRight
     /**
      * Creates a new instance of ClientRight.
      *
-     * @return ClientRight
+     * @return self
      */
     public static function create()
     {
@@ -38,7 +38,7 @@ class ClientRight
      * Sets RightName.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setRightName($value)
     {
@@ -61,7 +61,7 @@ class ClientRight
      * Sets Value.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setValue($value)
     {
@@ -84,7 +84,7 @@ class ClientRight
      * Sets AgencyName.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setAgencyName($value = null)
     {

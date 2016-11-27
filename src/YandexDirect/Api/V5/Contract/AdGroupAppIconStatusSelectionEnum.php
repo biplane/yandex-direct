@@ -8,9 +8,9 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class AdGroupAppIconStatusSelectionEnum
 {
 
-    const MODERATION = 'MODERATION';
-
     const ACCEPTED = 'ACCEPTED';
+
+    const MODERATION = 'MODERATION';
 
     const REJECTED = 'REJECTED';
 

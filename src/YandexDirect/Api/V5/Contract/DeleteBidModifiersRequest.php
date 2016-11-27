@@ -13,7 +13,7 @@ class DeleteBidModifiersRequest
     /**
      * Creates a new instance of DeleteBidModifiersRequest.
      *
-     * @return DeleteBidModifiersRequest
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class DeleteBidModifiersRequest
      * Sets SelectionCriteria.
      *
      * @param IdsCriteria $value
-     * @return $this
+     * @return self
      */
     public function setSelectionCriteria(IdsCriteria $value)
     {

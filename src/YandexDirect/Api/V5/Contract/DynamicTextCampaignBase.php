@@ -13,7 +13,7 @@ class DynamicTextCampaignBase
     /**
      * Creates a new instance of DynamicTextCampaignBase.
      *
-     * @return DynamicTextCampaignBase
+     * @return self
      */
     public static function create()
     {
@@ -23,7 +23,7 @@ class DynamicTextCampaignBase
     /**
      * Gets CounterIds.
      *
-     * @return int[]|null
+     * @return struct[]|null
      */
     public function getCounterIds()
     {
@@ -33,8 +33,8 @@ class DynamicTextCampaignBase
     /**
      * Sets CounterIds.
      *
-     * @param int[]|null $value
-     * @return $this
+     * @param struct[]|null $value
+     * @return self
      */
     public function setCounterIds(array $value = null)
     {

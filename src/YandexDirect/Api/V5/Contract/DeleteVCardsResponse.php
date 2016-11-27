@@ -13,7 +13,7 @@ class DeleteVCardsResponse
     /**
      * Creates a new instance of DeleteVCardsResponse.
      *
-     * @return DeleteVCardsResponse
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class DeleteVCardsResponse
      * Sets DeleteResults.
      *
      * @param ActionResult[]|null $value
-     * @return $this
+     * @return self
      */
     public function setDeleteResults(array $value = null)
     {

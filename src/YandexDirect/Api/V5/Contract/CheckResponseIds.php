@@ -17,7 +17,7 @@ class CheckResponseIds
     /**
      * Creates a new instance of CheckResponseIds.
      *
-     * @return CheckResponseIds
+     * @return self
      */
     public static function create()
     {
@@ -38,7 +38,7 @@ class CheckResponseIds
      * Sets CampaignIds.
      *
      * @param int[]|null $value
-     * @return $this
+     * @return self
      */
     public function setCampaignIds(array $value = null)
     {
@@ -61,7 +61,7 @@ class CheckResponseIds
      * Sets AdGroupIds.
      *
      * @param int[]|null $value
-     * @return $this
+     * @return self
      */
     public function setAdGroupIds(array $value = null)
     {
@@ -84,7 +84,7 @@ class CheckResponseIds
      * Sets AdIds.
      *
      * @param int[]|null $value
-     * @return $this
+     * @return self
      */
     public function setAdIds(array $value = null)
     {

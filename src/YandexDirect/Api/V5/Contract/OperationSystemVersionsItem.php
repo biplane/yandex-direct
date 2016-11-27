@@ -15,7 +15,7 @@ class OperationSystemVersionsItem
     /**
      * Creates a new instance of OperationSystemVersionsItem.
      *
-     * @return OperationSystemVersionsItem
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +36,7 @@ class OperationSystemVersionsItem
      * Sets OsName.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setOsName($value)
     {
@@ -59,7 +59,7 @@ class OperationSystemVersionsItem
      * Sets OsVersion.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setOsVersion($value)
     {

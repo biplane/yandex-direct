@@ -10,14 +10,12 @@ class GetBidsRequest extends GetRequestGeneral
 
     protected $SelectionCriteria = null;
 
-    protected $FieldNames = array(
-        
-    );
+    protected $FieldNames = [];
 
     /**
      * Creates a new instance of GetBidsRequest.
      *
-     * @return GetBidsRequest
+     * @return self
      */
     public static function create()
     {
@@ -38,7 +36,7 @@ class GetBidsRequest extends GetRequestGeneral
      * Sets SelectionCriteria.
      *
      * @param BidsSelectionCriteria $value
-     * @return $this
+     * @return self
      */
     public function setSelectionCriteria(BidsSelectionCriteria $value)
     {
@@ -50,7 +48,8 @@ class GetBidsRequest extends GetRequestGeneral
     /**
      * Gets FieldNames.
      *
-     * @return BidFieldEnum[]
+     * @return string[]
+     * @see BidFieldEnum
      */
     public function getFieldNames()
     {
@@ -60,8 +59,9 @@ class GetBidsRequest extends GetRequestGeneral
     /**
      * Sets FieldNames.
      *
-     * @param BidFieldEnum[] $value
-     * @return $this
+     * @param string[] $value
+     * @return self
+     * @see BidFieldEnum
      */
     public function setFieldNames(array $value)
     {

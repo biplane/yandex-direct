@@ -15,7 +15,7 @@ class SharedAccountFundsParam
     /**
      * Creates a new instance of SharedAccountFundsParam.
      *
-     * @return SharedAccountFundsParam
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +36,7 @@ class SharedAccountFundsParam
      * Sets Refund.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setRefund($value = null)
     {
@@ -59,7 +59,7 @@ class SharedAccountFundsParam
      * Sets Spend.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setSpend($value = null)
     {

@@ -13,7 +13,7 @@ class AdExtensionAddItem
     /**
      * Creates a new instance of AdExtensionAddItem.
      *
-     * @return AdExtensionAddItem
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class AdExtensionAddItem
      * Sets Callout.
      *
      * @param Callout|null $value
-     * @return $this
+     * @return self
      */
     public function setCallout(Callout $value = null)
     {

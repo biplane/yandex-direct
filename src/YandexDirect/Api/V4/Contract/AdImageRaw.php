@@ -17,7 +17,7 @@ class AdImageRaw
     /**
      * Creates a new instance of AdImageRaw.
      *
-     * @return AdImageRaw
+     * @return self
      */
     public static function create()
     {
@@ -38,7 +38,7 @@ class AdImageRaw
      * Sets Login.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setLogin($value = null)
     {
@@ -61,7 +61,7 @@ class AdImageRaw
      * Sets RawData.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setRawData($value)
     {
@@ -84,7 +84,7 @@ class AdImageRaw
      * Sets Name.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setName($value)
     {

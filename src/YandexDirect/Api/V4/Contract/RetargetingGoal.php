@@ -21,7 +21,7 @@ class RetargetingGoal
     /**
      * Creates a new instance of RetargetingGoal.
      *
-     * @return RetargetingGoal
+     * @return self
      */
     public static function create()
     {
@@ -42,7 +42,7 @@ class RetargetingGoal
      * Sets GoalID.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setGoalID($value)
     {
@@ -65,7 +65,7 @@ class RetargetingGoal
      * Sets Name.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setName($value)
     {
@@ -88,7 +88,7 @@ class RetargetingGoal
      * Sets GoalDomain.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setGoalDomain($value)
     {
@@ -111,7 +111,7 @@ class RetargetingGoal
      * Sets Login.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setLogin($value)
     {
@@ -134,7 +134,7 @@ class RetargetingGoal
      * Sets Type.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setType($value)
     {

@@ -15,7 +15,7 @@ class Notification
     /**
      * Creates a new instance of Notification.
      *
-     * @return Notification
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +36,7 @@ class Notification
      * Sets SmsSettings.
      *
      * @param SmsSettings|null $value
-     * @return $this
+     * @return self
      */
     public function setSmsSettings(SmsSettings $value = null)
     {
@@ -59,7 +59,7 @@ class Notification
      * Sets EmailSettings.
      *
      * @param EmailSettings|null $value
-     * @return $this
+     * @return self
      */
     public function setEmailSettings(EmailSettings $value = null)
     {

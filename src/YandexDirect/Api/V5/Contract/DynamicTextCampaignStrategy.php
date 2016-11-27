@@ -15,7 +15,7 @@ class DynamicTextCampaignStrategy
     /**
      * Creates a new instance of DynamicTextCampaignStrategy.
      *
-     * @return DynamicTextCampaignStrategy
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +36,7 @@ class DynamicTextCampaignStrategy
      * Sets Search.
      *
      * @param DynamicTextCampaignSearchStrategy|null $value
-     * @return $this
+     * @return self
      */
     public function setSearch(DynamicTextCampaignSearchStrategy $value = null)
     {
@@ -59,7 +59,7 @@ class DynamicTextCampaignStrategy
      * Sets Network.
      *
      * @param DynamicTextCampaignNetworkStrategy|null $value
-     * @return $this
+     * @return self
      */
     public function setNetwork(DynamicTextCampaignNetworkStrategy $value = null)
     {

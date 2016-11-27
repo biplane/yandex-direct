@@ -13,7 +13,7 @@ class CheckPaymentInfo
     /**
      * Creates a new instance of CheckPaymentInfo.
      *
-     * @return CheckPaymentInfo
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class CheckPaymentInfo
      * Sets CustomTransactionID.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setCustomTransactionID($value)
     {

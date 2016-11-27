@@ -29,7 +29,7 @@ class EventsLogItem
     /**
      * Creates a new instance of EventsLogItem.
      *
-     * @return EventsLogItem
+     * @return self
      */
     public static function create()
     {
@@ -50,7 +50,7 @@ class EventsLogItem
      * Sets CampaignID.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setCampaignID($value = null)
     {
@@ -73,7 +73,7 @@ class EventsLogItem
      * Sets BannerID.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setBannerID($value = null)
     {
@@ -96,7 +96,7 @@ class EventsLogItem
      * Sets PhraseID.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setPhraseID($value = null)
     {
@@ -119,7 +119,7 @@ class EventsLogItem
      * Sets AccountID.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setAccountID($value = null)
     {
@@ -142,7 +142,7 @@ class EventsLogItem
      * Sets TextDescription.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setTextDescription($value = null)
     {
@@ -165,7 +165,7 @@ class EventsLogItem
      * Sets EventType.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setEventType($value)
     {
@@ -188,7 +188,7 @@ class EventsLogItem
      * Sets Timestamp.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setTimestamp($value)
     {
@@ -211,7 +211,7 @@ class EventsLogItem
      * Sets EventName.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setEventName($value)
     {
@@ -234,7 +234,7 @@ class EventsLogItem
      * Sets Attributes.
      *
      * @param EventsLogItemAttributes|null $value
-     * @return $this
+     * @return self
      */
     public function setAttributes(EventsLogItemAttributes $value = null)
     {

@@ -33,7 +33,7 @@ class WebpageGetItem
     /**
      * Creates a new instance of WebpageGetItem.
      *
-     * @return WebpageGetItem
+     * @return self
      */
     public static function create()
     {
@@ -54,7 +54,7 @@ class WebpageGetItem
      * Sets Id.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setId($value = null)
     {
@@ -77,7 +77,7 @@ class WebpageGetItem
      * Sets AdGroupId.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setAdGroupId($value = null)
     {
@@ -100,7 +100,7 @@ class WebpageGetItem
      * Sets CampaignId.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setCampaignId($value = null)
     {
@@ -123,7 +123,7 @@ class WebpageGetItem
      * Sets Name.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setName($value = null)
     {
@@ -146,7 +146,7 @@ class WebpageGetItem
      * Sets Bid.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setBid($value = null)
     {
@@ -169,7 +169,7 @@ class WebpageGetItem
      * Sets ContextBid.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setContextBid($value = null)
     {
@@ -181,7 +181,8 @@ class WebpageGetItem
     /**
      * Gets StrategyPriority.
      *
-     * @return PriorityEnum|null
+     * @return string|null
+     * @see PriorityEnum
      */
     public function getStrategyPriority()
     {
@@ -191,8 +192,9 @@ class WebpageGetItem
     /**
      * Sets StrategyPriority.
      *
-     * @param PriorityEnum|null $value
-     * @return $this
+     * @param string|null $value
+     * @return self
+     * @see PriorityEnum
      */
     public function setStrategyPriority($value = null)
     {
@@ -204,7 +206,8 @@ class WebpageGetItem
     /**
      * Gets State.
      *
-     * @return StateEnum|null
+     * @return string|null
+     * @see StateEnum
      */
     public function getState()
     {
@@ -214,8 +217,9 @@ class WebpageGetItem
     /**
      * Sets State.
      *
-     * @param StateEnum|null $value
-     * @return $this
+     * @param string|null $value
+     * @return self
+     * @see StateEnum
      */
     public function setState($value = null)
     {
@@ -238,7 +242,7 @@ class WebpageGetItem
      * Sets StatusClarification.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setStatusClarification($value = null)
     {
@@ -261,7 +265,7 @@ class WebpageGetItem
      * Sets Conditions.
      *
      * @param WebpageCondition[]|null $value
-     * @return $this
+     * @return self
      */
     public function setConditions(array $value = null)
     {
@@ -273,7 +277,8 @@ class WebpageGetItem
     /**
      * Gets ConditionType.
      *
-     * @return WebpageTypeEnum|null
+     * @return string|null
+     * @see WebpageTypeEnum
      */
     public function getConditionType()
     {
@@ -283,8 +288,9 @@ class WebpageGetItem
     /**
      * Sets ConditionType.
      *
-     * @param WebpageTypeEnum|null $value
-     * @return $this
+     * @param string|null $value
+     * @return self
+     * @see WebpageTypeEnum
      */
     public function setConditionType($value = null)
     {

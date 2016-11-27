@@ -2,14 +2,14 @@
 
 namespace Biplane\YandexDirect\Api\V5;
 
-use Biplane\YandexDirect\Api\V5SoapClient;
+use Biplane\YandexDirect\Api\SoapClientV5;
 use Biplane\YandexDirect\User;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**
  * Auto-generated code.
  */
-class DynamicTextAdTargets extends V5SoapClient
+class DynamicTextAdTargets extends SoapClientV5
 {
 
     const ENDPOINT = 'https://api.direct.yandex.com/v5/dynamictextadtargets?wsdl';
@@ -22,8 +22,8 @@ class DynamicTextAdTargets extends V5SoapClient
      */
     public function __construct(EventDispatcherInterface $dispatcher, User $user)
     {
-        parent::__construct($user->resolveWsdl(self::ENDPOINT), $dispatcher, $user, array(
-            'classmap' => array(
+        parent::__construct($user->resolveWsdl(self::ENDPOINT), $dispatcher, $user, [
+            'classmap' => [
                 'MobileAppAdActionEnum' => 'Biplane\YandexDirect\Api\V5\Contract\MobileAppAdActionEnum',
                 'ExceptionNotification' => 'Biplane\YandexDirect\Api\V5\Contract\ExceptionNotification',
                 'LimitOffset' => 'Biplane\YandexDirect\Api\V5\Contract\LimitOffset',
@@ -41,6 +41,8 @@ class DynamicTextAdTargets extends V5SoapClient
                 'AgeRangeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AgeRangeEnum',
                 'GenderEnum' => 'Biplane\YandexDirect\Api\V5\Contract\GenderEnum',
                 'MobileOperatingSystemTypeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\MobileOperatingSystemTypeEnum',
+                'LangEnum' => 'Biplane\YandexDirect\Api\V5\Contract\LangEnum',
+                'RepresentativeRoleEnum' => 'Biplane\YandexDirect\Api\V5\Contract\RepresentativeRoleEnum',
                 'OperationEnum' => 'Biplane\YandexDirect\Api\V5\Contract\OperationEnum',
                 'Statistics' => 'Biplane\YandexDirect\Api\V5\Contract\Statistics',
                 'IdsCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\IdsCriteria',
@@ -49,8 +51,10 @@ class DynamicTextAdTargets extends V5SoapClient
                 'ApiExceptionMessage' => 'Biplane\YandexDirect\Api\V5\Contract\ApiExceptionMessage',
                 'ActionResultBase' => 'Biplane\YandexDirect\Api\V5\Contract\ActionResultBase',
                 'ActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\ActionResult',
+                'SetBidsActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\SetBidsActionResult',
                 'MultiIdsActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\MultiIdsActionResult',
                 'ExtensionModeration' => 'Biplane\YandexDirect\Api\V5\Contract\ExtensionModeration',
+                'SortOrderEnum' => 'Biplane\YandexDirect\Api\V5\Contract\SortOrderEnum',
                 'WebpageFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\WebpageFieldEnum',
                 'WebpageConditionOperandEnum' => 'Biplane\YandexDirect\Api\V5\Contract\WebpageConditionOperandEnum',
                 'WebpageTypeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\WebpageTypeEnum',
@@ -61,7 +65,6 @@ class DynamicTextAdTargets extends V5SoapClient
                 'WebpageCondition' => 'Biplane\YandexDirect\Api\V5\Contract\WebpageCondition',
                 'WebpageGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\WebpageGetItem',
                 'SetBidsItem' => 'Biplane\YandexDirect\Api\V5\Contract\SetBidsItem',
-                'SetBidsActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\SetBidsActionResult',
                 'AddRequest' => 'Biplane\YandexDirect\Api\V5\Contract\AddDynamicTextAdTargetsRequest',
                 'AddResponse' => 'Biplane\YandexDirect\Api\V5\Contract\AddDynamicTextAdTargetsResponse',
                 'GetRequest' => 'Biplane\YandexDirect\Api\V5\Contract\GetDynamicTextAdTargetsRequest',
@@ -73,9 +76,9 @@ class DynamicTextAdTargets extends V5SoapClient
                 'ResumeRequest' => 'Biplane\YandexDirect\Api\V5\Contract\ResumeDynamicTextAdTargetsRequest',
                 'ResumeResponse' => 'Biplane\YandexDirect\Api\V5\Contract\ResumeDynamicTextAdTargetsResponse',
                 'SetBidsRequest' => 'Biplane\YandexDirect\Api\V5\Contract\SetBidsDynamicTextAdTargetsRequest',
-                'SetBidsResponse' => 'Biplane\YandexDirect\Api\V5\Contract\SetBidsDynamicTextAdTargetsResponse'
-            )
-        ));
+                'SetBidsResponse' => 'Biplane\YandexDirect\Api\V5\Contract\SetBidsDynamicTextAdTargetsResponse',
+            ]
+        ]);
     }
 
     /**
@@ -86,7 +89,7 @@ class DynamicTextAdTargets extends V5SoapClient
      */
     public function add(Contract\AddDynamicTextAdTargetsRequest $parameters)
     {
-        return $this->invoke('add', array($parameters));
+        return $this->invoke('add', [$parameters]);
     }
 
     /**
@@ -97,7 +100,7 @@ class DynamicTextAdTargets extends V5SoapClient
      */
     public function get(Contract\GetDynamicTextAdTargetsRequest $parameters)
     {
-        return $this->invoke('get', array($parameters));
+        return $this->invoke('get', [$parameters]);
     }
 
     /**
@@ -108,7 +111,7 @@ class DynamicTextAdTargets extends V5SoapClient
      */
     public function delete(Contract\DeleteDynamicTextAdTargetsRequest $parameters)
     {
-        return $this->invoke('delete', array($parameters));
+        return $this->invoke('delete', [$parameters]);
     }
 
     /**
@@ -119,7 +122,7 @@ class DynamicTextAdTargets extends V5SoapClient
      */
     public function suspend(Contract\SuspendDynamicTextAdTargetsRequest $parameters)
     {
-        return $this->invoke('suspend', array($parameters));
+        return $this->invoke('suspend', [$parameters]);
     }
 
     /**
@@ -130,7 +133,7 @@ class DynamicTextAdTargets extends V5SoapClient
      */
     public function resume(Contract\ResumeDynamicTextAdTargetsRequest $parameters)
     {
-        return $this->invoke('resume', array($parameters));
+        return $this->invoke('resume', [$parameters]);
     }
 
     /**
@@ -141,7 +144,7 @@ class DynamicTextAdTargets extends V5SoapClient
      */
     public function setBids(Contract\SetBidsDynamicTextAdTargetsRequest $parameters)
     {
-        return $this->invoke('setBids', array($parameters));
+        return $this->invoke('setBids', [$parameters]);
     }
 
 

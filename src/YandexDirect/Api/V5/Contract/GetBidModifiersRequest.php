@@ -10,9 +10,7 @@ class GetBidModifiersRequest extends GetRequestGeneral
 
     protected $SelectionCriteria = null;
 
-    protected $FieldNames = array(
-        
-    );
+    protected $FieldNames = [];
 
     protected $MobileAdjustmentFieldNames = null;
 
@@ -23,7 +21,7 @@ class GetBidModifiersRequest extends GetRequestGeneral
     /**
      * Creates a new instance of GetBidModifiersRequest.
      *
-     * @return GetBidModifiersRequest
+     * @return self
      */
     public static function create()
     {
@@ -44,7 +42,7 @@ class GetBidModifiersRequest extends GetRequestGeneral
      * Sets SelectionCriteria.
      *
      * @param BidModifiersSelectionCriteria $value
-     * @return $this
+     * @return self
      */
     public function setSelectionCriteria(BidModifiersSelectionCriteria $value)
     {
@@ -56,7 +54,8 @@ class GetBidModifiersRequest extends GetRequestGeneral
     /**
      * Gets FieldNames.
      *
-     * @return BidModifierFieldEnum[]
+     * @return string[]
+     * @see BidModifierFieldEnum
      */
     public function getFieldNames()
     {
@@ -66,8 +65,9 @@ class GetBidModifiersRequest extends GetRequestGeneral
     /**
      * Sets FieldNames.
      *
-     * @param BidModifierFieldEnum[] $value
-     * @return $this
+     * @param string[] $value
+     * @return self
+     * @see BidModifierFieldEnum
      */
     public function setFieldNames(array $value)
     {
@@ -79,7 +79,8 @@ class GetBidModifiersRequest extends GetRequestGeneral
     /**
      * Gets MobileAdjustmentFieldNames.
      *
-     * @return MobileAdjustmentFieldEnum[]|null
+     * @return string[]|null
+     * @see MobileAdjustmentFieldEnum
      */
     public function getMobileAdjustmentFieldNames()
     {
@@ -89,8 +90,9 @@ class GetBidModifiersRequest extends GetRequestGeneral
     /**
      * Sets MobileAdjustmentFieldNames.
      *
-     * @param MobileAdjustmentFieldEnum[]|null $value
-     * @return $this
+     * @param string[]|null $value
+     * @return self
+     * @see MobileAdjustmentFieldEnum
      */
     public function setMobileAdjustmentFieldNames(array $value = null)
     {
@@ -102,7 +104,8 @@ class GetBidModifiersRequest extends GetRequestGeneral
     /**
      * Gets DemographicsAdjustmentFieldNames.
      *
-     * @return DemographicsAdjustmentFieldEnum[]|null
+     * @return string[]|null
+     * @see DemographicsAdjustmentFieldEnum
      */
     public function getDemographicsAdjustmentFieldNames()
     {
@@ -112,8 +115,9 @@ class GetBidModifiersRequest extends GetRequestGeneral
     /**
      * Sets DemographicsAdjustmentFieldNames.
      *
-     * @param DemographicsAdjustmentFieldEnum[]|null $value
-     * @return $this
+     * @param string[]|null $value
+     * @return self
+     * @see DemographicsAdjustmentFieldEnum
      */
     public function setDemographicsAdjustmentFieldNames(array $value = null)
     {
@@ -125,7 +129,8 @@ class GetBidModifiersRequest extends GetRequestGeneral
     /**
      * Gets RetargetingAdjustmentFieldNames.
      *
-     * @return RetargetingAdjustmentFieldEnum[]|null
+     * @return string[]|null
+     * @see RetargetingAdjustmentFieldEnum
      */
     public function getRetargetingAdjustmentFieldNames()
     {
@@ -135,8 +140,9 @@ class GetBidModifiersRequest extends GetRequestGeneral
     /**
      * Sets RetargetingAdjustmentFieldNames.
      *
-     * @param RetargetingAdjustmentFieldEnum[]|null $value
-     * @return $this
+     * @param string[]|null $value
+     * @return self
+     * @see RetargetingAdjustmentFieldEnum
      */
     public function setRetargetingAdjustmentFieldNames(array $value = null)
     {

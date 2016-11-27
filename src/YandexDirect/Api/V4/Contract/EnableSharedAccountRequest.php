@@ -13,7 +13,7 @@ class EnableSharedAccountRequest
     /**
      * Creates a new instance of EnableSharedAccountRequest.
      *
-     * @return EnableSharedAccountRequest
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class EnableSharedAccountRequest
      * Sets Login.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setLogin($value)
     {

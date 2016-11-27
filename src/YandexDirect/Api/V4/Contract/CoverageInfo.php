@@ -15,7 +15,7 @@ class CoverageInfo
     /**
      * Creates a new instance of CoverageInfo.
      *
-     * @return CoverageInfo
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +36,7 @@ class CoverageInfo
      * Sets Probability.
      *
      * @param float $value
-     * @return $this
+     * @return self
      */
     public function setProbability($value)
     {
@@ -59,7 +59,7 @@ class CoverageInfo
      * Sets Price.
      *
      * @param float $value
-     * @return $this
+     * @return self
      */
     public function setPrice($value)
     {

@@ -13,7 +13,7 @@ class UnarchiveAdsResponse
     /**
      * Creates a new instance of UnarchiveAdsResponse.
      *
-     * @return UnarchiveAdsResponse
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class UnarchiveAdsResponse
      * Sets UnarchiveResults.
      *
      * @param ActionResult[]|null $value
-     * @return $this
+     * @return self
      */
     public function setUnarchiveResults(array $value = null)
     {

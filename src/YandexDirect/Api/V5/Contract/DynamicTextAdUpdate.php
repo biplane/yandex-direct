@@ -13,7 +13,7 @@ class DynamicTextAdUpdate extends TextAdUpdateBase
     /**
      * Creates a new instance of DynamicTextAdUpdate.
      *
-     * @return DynamicTextAdUpdate
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class DynamicTextAdUpdate extends TextAdUpdateBase
      * Sets Text.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setText($value = null)
     {

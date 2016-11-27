@@ -13,7 +13,7 @@ class SupplySidePlatformsItem
     /**
      * Creates a new instance of SupplySidePlatformsItem.
      *
-     * @return SupplySidePlatformsItem
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class SupplySidePlatformsItem
      * Sets Title.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setTitle($value)
     {

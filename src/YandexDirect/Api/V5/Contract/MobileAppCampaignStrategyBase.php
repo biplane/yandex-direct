@@ -21,7 +21,7 @@ class MobileAppCampaignStrategyBase
     /**
      * Creates a new instance of MobileAppCampaignStrategyBase.
      *
-     * @return MobileAppCampaignStrategyBase
+     * @return self
      */
     public static function create()
     {
@@ -42,7 +42,7 @@ class MobileAppCampaignStrategyBase
      * Sets WbMaximumClicks.
      *
      * @param StrategyMaximumClicks|null $value
-     * @return $this
+     * @return self
      */
     public function setWbMaximumClicks(StrategyMaximumClicks $value = null)
     {
@@ -65,7 +65,7 @@ class MobileAppCampaignStrategyBase
      * Sets WbMaximumAppInstalls.
      *
      * @param StrategyMaximumAppInstalls|null $value
-     * @return $this
+     * @return self
      */
     public function setWbMaximumAppInstalls(StrategyMaximumAppInstalls $value = null)
     {
@@ -88,7 +88,7 @@ class MobileAppCampaignStrategyBase
      * Sets AverageCpc.
      *
      * @param StrategyAverageCpc|null $value
-     * @return $this
+     * @return self
      */
     public function setAverageCpc(StrategyAverageCpc $value = null)
     {
@@ -111,7 +111,7 @@ class MobileAppCampaignStrategyBase
      * Sets AverageCpi.
      *
      * @param StrategyAverageCpi|null $value
-     * @return $this
+     * @return self
      */
     public function setAverageCpi(StrategyAverageCpi $value = null)
     {
@@ -134,7 +134,7 @@ class MobileAppCampaignStrategyBase
      * Sets WeeklyClickPackage.
      *
      * @param StrategyWeeklyClickPackage|null $value
-     * @return $this
+     * @return self
      */
     public function setWeeklyClickPackage(StrategyWeeklyClickPackage $value = null)
     {

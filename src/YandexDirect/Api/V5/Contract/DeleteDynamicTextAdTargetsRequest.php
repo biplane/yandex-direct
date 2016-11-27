@@ -13,7 +13,7 @@ class DeleteDynamicTextAdTargetsRequest
     /**
      * Creates a new instance of DeleteDynamicTextAdTargetsRequest.
      *
-     * @return DeleteDynamicTextAdTargetsRequest
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class DeleteDynamicTextAdTargetsRequest
      * Sets SelectionCriteria.
      *
      * @param IdsCriteria $value
-     * @return $this
+     * @return self
      */
     public function setSelectionCriteria(IdsCriteria $value)
     {

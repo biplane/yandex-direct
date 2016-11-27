@@ -15,7 +15,7 @@ class TextCampaignGetItem extends TextCampaignBase
     /**
      * Creates a new instance of TextCampaignGetItem.
      *
-     * @return TextCampaignGetItem
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +36,7 @@ class TextCampaignGetItem extends TextCampaignBase
      * Sets BiddingStrategy.
      *
      * @param TextCampaignStrategy|null $value
-     * @return $this
+     * @return self
      */
     public function setBiddingStrategy(TextCampaignStrategy $value = null)
     {
@@ -59,7 +59,7 @@ class TextCampaignGetItem extends TextCampaignBase
      * Sets Settings.
      *
      * @param TextCampaignSettingGet[]|null $value
-     * @return $this
+     * @return self
      */
     public function setSettings(array $value = null)
     {

@@ -2,14 +2,14 @@
 
 namespace Biplane\YandexDirect\Api\V5;
 
-use Biplane\YandexDirect\Api\V5SoapClient;
+use Biplane\YandexDirect\Api\SoapClientV5;
 use Biplane\YandexDirect\User;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**
  * Auto-generated code.
  */
-class Bids extends V5SoapClient
+class Bids extends SoapClientV5
 {
 
     const ENDPOINT = 'https://api.direct.yandex.com/v5/bids?wsdl';
@@ -22,8 +22,8 @@ class Bids extends V5SoapClient
      */
     public function __construct(EventDispatcherInterface $dispatcher, User $user)
     {
-        parent::__construct($user->resolveWsdl(self::ENDPOINT), $dispatcher, $user, array(
-            'classmap' => array(
+        parent::__construct($user->resolveWsdl(self::ENDPOINT), $dispatcher, $user, [
+            'classmap' => [
                 'MobileAppAdActionEnum' => 'Biplane\YandexDirect\Api\V5\Contract\MobileAppAdActionEnum',
                 'ExceptionNotification' => 'Biplane\YandexDirect\Api\V5\Contract\ExceptionNotification',
                 'LimitOffset' => 'Biplane\YandexDirect\Api\V5\Contract\LimitOffset',
@@ -41,6 +41,8 @@ class Bids extends V5SoapClient
                 'AgeRangeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AgeRangeEnum',
                 'GenderEnum' => 'Biplane\YandexDirect\Api\V5\Contract\GenderEnum',
                 'MobileOperatingSystemTypeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\MobileOperatingSystemTypeEnum',
+                'LangEnum' => 'Biplane\YandexDirect\Api\V5\Contract\LangEnum',
+                'RepresentativeRoleEnum' => 'Biplane\YandexDirect\Api\V5\Contract\RepresentativeRoleEnum',
                 'OperationEnum' => 'Biplane\YandexDirect\Api\V5\Contract\OperationEnum',
                 'Statistics' => 'Biplane\YandexDirect\Api\V5\Contract\Statistics',
                 'IdsCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\IdsCriteria',
@@ -49,8 +51,10 @@ class Bids extends V5SoapClient
                 'ApiExceptionMessage' => 'Biplane\YandexDirect\Api\V5\Contract\ApiExceptionMessage',
                 'ActionResultBase' => 'Biplane\YandexDirect\Api\V5\Contract\ActionResultBase',
                 'ActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\ActionResult',
+                'SetBidsActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\SetBidsActionResult',
                 'MultiIdsActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\MultiIdsActionResult',
                 'ExtensionModeration' => 'Biplane\YandexDirect\Api\V5\Contract\ExtensionModeration',
+                'SortOrderEnum' => 'Biplane\YandexDirect\Api\V5\Contract\SortOrderEnum',
                 'BidFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\BidFieldEnum',
                 'CalculateByEnum' => 'Biplane\YandexDirect\Api\V5\Contract\CalculateByEnum',
                 'BidActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\BidActionResult',
@@ -68,9 +72,9 @@ class Bids extends V5SoapClient
                 'SetRequest' => 'Biplane\YandexDirect\Api\V5\Contract\SetBidsRequest',
                 'SetResponse' => 'Biplane\YandexDirect\Api\V5\Contract\SetBidsResponse',
                 'SetAutoRequest' => 'Biplane\YandexDirect\Api\V5\Contract\SetAutoBidsRequest',
-                'SetAutoResponse' => 'Biplane\YandexDirect\Api\V5\Contract\SetAutoBidsResponse'
-            )
-        ));
+                'SetAutoResponse' => 'Biplane\YandexDirect\Api\V5\Contract\SetAutoBidsResponse',
+            ]
+        ]);
     }
 
     /**
@@ -81,7 +85,7 @@ class Bids extends V5SoapClient
      */
     public function get(Contract\GetBidsRequest $parameters)
     {
-        return $this->invoke('get', array($parameters));
+        return $this->invoke('get', [$parameters]);
     }
 
     /**
@@ -92,7 +96,7 @@ class Bids extends V5SoapClient
      */
     public function set(Contract\SetBidsRequest $parameters)
     {
-        return $this->invoke('set', array($parameters));
+        return $this->invoke('set', [$parameters]);
     }
 
     /**
@@ -103,7 +107,7 @@ class Bids extends V5SoapClient
      */
     public function setAuto(Contract\SetAutoBidsRequest $parameters)
     {
-        return $this->invoke('setAuto', array($parameters));
+        return $this->invoke('setAuto', [$parameters]);
     }
 
 

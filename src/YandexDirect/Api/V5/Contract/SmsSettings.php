@@ -17,7 +17,7 @@ class SmsSettings
     /**
      * Creates a new instance of SmsSettings.
      *
-     * @return SmsSettings
+     * @return self
      */
     public static function create()
     {
@@ -27,7 +27,8 @@ class SmsSettings
     /**
      * Gets Events.
      *
-     * @return SmsEventsEnum[]|null
+     * @return string[]|null
+     * @see SmsEventsEnum
      */
     public function getEvents()
     {
@@ -37,8 +38,9 @@ class SmsSettings
     /**
      * Sets Events.
      *
-     * @param SmsEventsEnum[]|null $value
-     * @return $this
+     * @param string[]|null $value
+     * @return self
+     * @see SmsEventsEnum
      */
     public function setEvents(array $value = null)
     {
@@ -61,7 +63,7 @@ class SmsSettings
      * Sets TimeFrom.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setTimeFrom($value = null)
     {
@@ -84,7 +86,7 @@ class SmsSettings
      * Sets TimeTo.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setTimeTo($value = null)
     {

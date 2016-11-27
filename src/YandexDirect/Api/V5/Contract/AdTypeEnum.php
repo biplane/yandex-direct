@@ -14,6 +14,8 @@ class AdTypeEnum
 
     const DYNAMIC_TEXT_AD = 'DYNAMIC_TEXT_AD';
 
+    const IMAGE_AD = 'IMAGE_AD';
+
 
 }
 

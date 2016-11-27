@@ -15,7 +15,7 @@ class SitelinksSetGetItem
     /**
      * Creates a new instance of SitelinksSetGetItem.
      *
-     * @return SitelinksSetGetItem
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +36,7 @@ class SitelinksSetGetItem
      * Sets Id.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setId($value = null)
     {
@@ -59,7 +59,7 @@ class SitelinksSetGetItem
      * Sets Sitelinks.
      *
      * @param Sitelink[]|null $value
-     * @return $this
+     * @return self
      */
     public function setSitelinks(array $value = null)
     {

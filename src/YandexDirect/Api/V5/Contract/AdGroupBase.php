@@ -17,7 +17,7 @@ class AdGroupBase
     /**
      * Creates a new instance of AdGroupBase.
      *
-     * @return AdGroupBase
+     * @return self
      */
     public static function create()
     {
@@ -38,7 +38,7 @@ class AdGroupBase
      * Sets RegionIds.
      *
      * @param int[]|null $value
-     * @return $this
+     * @return self
      */
     public function setRegionIds(array $value = null)
     {
@@ -50,7 +50,7 @@ class AdGroupBase
     /**
      * Gets NegativeKeywords.
      *
-     * @return string[]|null
+     * @return struct[]|null
      */
     public function getNegativeKeywords()
     {
@@ -60,8 +60,8 @@ class AdGroupBase
     /**
      * Sets NegativeKeywords.
      *
-     * @param string[]|null $value
-     * @return $this
+     * @param struct[]|null $value
+     * @return self
      */
     public function setNegativeKeywords(array $value = null)
     {
@@ -84,7 +84,7 @@ class AdGroupBase
      * Sets TrackingParams.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setTrackingParams($value = null)
     {

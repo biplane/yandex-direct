@@ -2,14 +2,14 @@
 
 namespace Biplane\YandexDirect\Api\V5;
 
-use Biplane\YandexDirect\Api\V5SoapClient;
+use Biplane\YandexDirect\Api\SoapClientV5;
 use Biplane\YandexDirect\User;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**
  * Auto-generated code.
  */
-class Campaigns extends V5SoapClient
+class Campaigns extends SoapClientV5
 {
 
     const ENDPOINT = 'https://api.direct.yandex.com/v5/campaigns?wsdl';
@@ -22,8 +22,8 @@ class Campaigns extends V5SoapClient
      */
     public function __construct(EventDispatcherInterface $dispatcher, User $user)
     {
-        parent::__construct($user->resolveWsdl(self::ENDPOINT), $dispatcher, $user, array(
-            'classmap' => array(
+        parent::__construct($user->resolveWsdl(self::ENDPOINT), $dispatcher, $user, [
+            'classmap' => [
                 'MobileAppAdActionEnum' => 'Biplane\YandexDirect\Api\V5\Contract\MobileAppAdActionEnum',
                 'ExceptionNotification' => 'Biplane\YandexDirect\Api\V5\Contract\ExceptionNotification',
                 'LimitOffset' => 'Biplane\YandexDirect\Api\V5\Contract\LimitOffset',
@@ -41,6 +41,8 @@ class Campaigns extends V5SoapClient
                 'AgeRangeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AgeRangeEnum',
                 'GenderEnum' => 'Biplane\YandexDirect\Api\V5\Contract\GenderEnum',
                 'MobileOperatingSystemTypeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\MobileOperatingSystemTypeEnum',
+                'LangEnum' => 'Biplane\YandexDirect\Api\V5\Contract\LangEnum',
+                'RepresentativeRoleEnum' => 'Biplane\YandexDirect\Api\V5\Contract\RepresentativeRoleEnum',
                 'OperationEnum' => 'Biplane\YandexDirect\Api\V5\Contract\OperationEnum',
                 'Statistics' => 'Biplane\YandexDirect\Api\V5\Contract\Statistics',
                 'IdsCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\IdsCriteria',
@@ -49,8 +51,10 @@ class Campaigns extends V5SoapClient
                 'ApiExceptionMessage' => 'Biplane\YandexDirect\Api\V5\Contract\ApiExceptionMessage',
                 'ActionResultBase' => 'Biplane\YandexDirect\Api\V5\Contract\ActionResultBase',
                 'ActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\ActionResult',
+                'SetBidsActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\SetBidsActionResult',
                 'MultiIdsActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\MultiIdsActionResult',
                 'ExtensionModeration' => 'Biplane\YandexDirect\Api\V5\Contract\ExtensionModeration',
+                'SortOrderEnum' => 'Biplane\YandexDirect\Api\V5\Contract\SortOrderEnum',
                 'SmsEventsEnum' => 'Biplane\YandexDirect\Api\V5\Contract\SmsEventsEnum',
                 'CampaignStatusSelectionEnum' => 'Biplane\YandexDirect\Api\V5\Contract\CampaignStatusSelectionEnum',
                 'CampaignStateEnum' => 'Biplane\YandexDirect\Api\V5\Contract\CampaignStateEnum',
@@ -171,9 +175,9 @@ class Campaigns extends V5SoapClient
                 'SuspendRequest' => 'Biplane\YandexDirect\Api\V5\Contract\SuspendCampaignsRequest',
                 'SuspendResponse' => 'Biplane\YandexDirect\Api\V5\Contract\SuspendCampaignsResponse',
                 'ResumeRequest' => 'Biplane\YandexDirect\Api\V5\Contract\ResumeCampaignsRequest',
-                'ResumeResponse' => 'Biplane\YandexDirect\Api\V5\Contract\ResumeCampaignsResponse'
-            )
-        ));
+                'ResumeResponse' => 'Biplane\YandexDirect\Api\V5\Contract\ResumeCampaignsResponse',
+            ]
+        ]);
     }
 
     /**
@@ -184,7 +188,7 @@ class Campaigns extends V5SoapClient
      */
     public function add(Contract\AddCampaignsRequest $parameters)
     {
-        return $this->invoke('add', array($parameters));
+        return $this->invoke('add', [$parameters]);
     }
 
     /**
@@ -195,7 +199,7 @@ class Campaigns extends V5SoapClient
      */
     public function update(Contract\UpdateCampaignsRequest $parameters)
     {
-        return $this->invoke('update', array($parameters));
+        return $this->invoke('update', [$parameters]);
     }
 
     /**
@@ -206,7 +210,7 @@ class Campaigns extends V5SoapClient
      */
     public function get(Contract\GetCampaignsRequest $parameters)
     {
-        return $this->invoke('get', array($parameters));
+        return $this->invoke('get', [$parameters]);
     }
 
     /**
@@ -217,7 +221,7 @@ class Campaigns extends V5SoapClient
      */
     public function delete(Contract\DeleteCampaignsRequest $parameters)
     {
-        return $this->invoke('delete', array($parameters));
+        return $this->invoke('delete', [$parameters]);
     }
 
     /**
@@ -228,7 +232,7 @@ class Campaigns extends V5SoapClient
      */
     public function archive(Contract\ArchiveCampaignsRequest $parameters)
     {
-        return $this->invoke('archive', array($parameters));
+        return $this->invoke('archive', [$parameters]);
     }
 
     /**
@@ -239,7 +243,7 @@ class Campaigns extends V5SoapClient
      */
     public function unarchive(Contract\UnarchiveCampaignsRequest $parameters)
     {
-        return $this->invoke('unarchive', array($parameters));
+        return $this->invoke('unarchive', [$parameters]);
     }
 
     /**
@@ -250,7 +254,7 @@ class Campaigns extends V5SoapClient
      */
     public function suspend(Contract\SuspendCampaignsRequest $parameters)
     {
-        return $this->invoke('suspend', array($parameters));
+        return $this->invoke('suspend', [$parameters]);
     }
 
     /**
@@ -261,7 +265,7 @@ class Campaigns extends V5SoapClient
      */
     public function resume(Contract\ResumeCampaignsRequest $parameters)
     {
-        return $this->invoke('resume', array($parameters));
+        return $this->invoke('resume', [$parameters]);
     }
 
 

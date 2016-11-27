@@ -17,7 +17,7 @@ class DynamicTextCampaignAddItem
     /**
      * Creates a new instance of DynamicTextCampaignAddItem.
      *
-     * @return DynamicTextCampaignAddItem
+     * @return self
      */
     public static function create()
     {
@@ -38,7 +38,7 @@ class DynamicTextCampaignAddItem
      * Sets BiddingStrategy.
      *
      * @param DynamicTextCampaignStrategyAdd $value
-     * @return $this
+     * @return self
      */
     public function setBiddingStrategy(DynamicTextCampaignStrategyAdd $value)
     {
@@ -61,7 +61,7 @@ class DynamicTextCampaignAddItem
      * Sets Settings.
      *
      * @param DynamicTextCampaignSetting[]|null $value
-     * @return $this
+     * @return self
      */
     public function setSettings(array $value = null)
     {
@@ -73,7 +73,7 @@ class DynamicTextCampaignAddItem
     /**
      * Gets CounterIds.
      *
-     * @return int[]|null
+     * @return struct[]|null
      */
     public function getCounterIds()
     {
@@ -83,8 +83,8 @@ class DynamicTextCampaignAddItem
     /**
      * Sets CounterIds.
      *
-     * @param int[]|null $value
-     * @return $this
+     * @param struct[]|null $value
+     * @return self
      */
     public function setCounterIds(array $value = null)
     {

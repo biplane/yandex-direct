@@ -19,7 +19,7 @@ class RetargetingAdjustmentGet
     /**
      * Creates a new instance of RetargetingAdjustmentGet.
      *
-     * @return RetargetingAdjustmentGet
+     * @return self
      */
     public static function create()
     {
@@ -40,7 +40,7 @@ class RetargetingAdjustmentGet
      * Sets RetargetingConditionId.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setRetargetingConditionId($value = null)
     {
@@ -63,7 +63,7 @@ class RetargetingAdjustmentGet
      * Sets BidModifier.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setBidModifier($value = null)
     {
@@ -75,7 +75,8 @@ class RetargetingAdjustmentGet
     /**
      * Gets Accessible.
      *
-     * @return YesNoEnum|null
+     * @return string|null
+     * @see YesNoEnum
      */
     public function getAccessible()
     {
@@ -85,8 +86,9 @@ class RetargetingAdjustmentGet
     /**
      * Sets Accessible.
      *
-     * @param YesNoEnum|null $value
-     * @return $this
+     * @param string|null $value
+     * @return self
+     * @see YesNoEnum
      */
     public function setAccessible($value = null)
     {
@@ -98,7 +100,8 @@ class RetargetingAdjustmentGet
     /**
      * Gets Enabled.
      *
-     * @return YesNoEnum|null
+     * @return string|null
+     * @see YesNoEnum
      */
     public function getEnabled()
     {
@@ -108,8 +111,9 @@ class RetargetingAdjustmentGet
     /**
      * Sets Enabled.
      *
-     * @param YesNoEnum|null $value
-     * @return $this
+     * @param string|null $value
+     * @return self
+     * @see YesNoEnum
      */
     public function setEnabled($value = null)
     {

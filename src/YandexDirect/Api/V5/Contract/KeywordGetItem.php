@@ -39,7 +39,7 @@ class KeywordGetItem
     /**
      * Creates a new instance of KeywordGetItem.
      *
-     * @return KeywordGetItem
+     * @return self
      */
     public static function create()
     {
@@ -60,7 +60,7 @@ class KeywordGetItem
      * Sets Id.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setId($value = null)
     {
@@ -83,7 +83,7 @@ class KeywordGetItem
      * Sets Keyword.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setKeyword($value = null)
     {
@@ -106,7 +106,7 @@ class KeywordGetItem
      * Sets AdGroupId.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setAdGroupId($value = null)
     {
@@ -129,7 +129,7 @@ class KeywordGetItem
      * Sets CampaignId.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setCampaignId($value = null)
     {
@@ -152,7 +152,7 @@ class KeywordGetItem
      * Sets Bid.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setBid($value = null)
     {
@@ -175,7 +175,7 @@ class KeywordGetItem
      * Sets ContextBid.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setContextBid($value = null)
     {
@@ -187,7 +187,8 @@ class KeywordGetItem
     /**
      * Gets StrategyPriority.
      *
-     * @return PriorityEnum|null
+     * @return string|null
+     * @see PriorityEnum
      */
     public function getStrategyPriority()
     {
@@ -197,8 +198,9 @@ class KeywordGetItem
     /**
      * Sets StrategyPriority.
      *
-     * @param PriorityEnum|null $value
-     * @return $this
+     * @param string|null $value
+     * @return self
+     * @see PriorityEnum
      */
     public function setStrategyPriority($value = null)
     {
@@ -210,7 +212,8 @@ class KeywordGetItem
     /**
      * Gets State.
      *
-     * @return StateEnum|null
+     * @return string|null
+     * @see StateEnum
      */
     public function getState()
     {
@@ -220,8 +223,9 @@ class KeywordGetItem
     /**
      * Sets State.
      *
-     * @param StateEnum|null $value
-     * @return $this
+     * @param string|null $value
+     * @return self
+     * @see StateEnum
      */
     public function setState($value = null)
     {
@@ -233,7 +237,8 @@ class KeywordGetItem
     /**
      * Gets Status.
      *
-     * @return StatusEnum|null
+     * @return string|null
+     * @see StatusEnum
      */
     public function getStatus()
     {
@@ -243,8 +248,9 @@ class KeywordGetItem
     /**
      * Sets Status.
      *
-     * @param StatusEnum|null $value
-     * @return $this
+     * @param string|null $value
+     * @return self
+     * @see StatusEnum
      */
     public function setStatus($value = null)
     {
@@ -267,7 +273,7 @@ class KeywordGetItem
      * Sets UserParam1.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setUserParam1($value = null)
     {
@@ -290,7 +296,7 @@ class KeywordGetItem
      * Sets UserParam2.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setUserParam2($value = null)
     {
@@ -313,7 +319,7 @@ class KeywordGetItem
      * Sets Productivity.
      *
      * @param KeywordProductivity|null $value
-     * @return $this
+     * @return self
      */
     public function setProductivity(KeywordProductivity $value = null)
     {
@@ -336,7 +342,7 @@ class KeywordGetItem
      * Sets StatisticsSearch.
      *
      * @param Statistics|null $value
-     * @return $this
+     * @return self
      */
     public function setStatisticsSearch(Statistics $value = null)
     {
@@ -359,7 +365,7 @@ class KeywordGetItem
      * Sets StatisticsNetwork.
      *
      * @param Statistics|null $value
-     * @return $this
+     * @return self
      */
     public function setStatisticsNetwork(Statistics $value = null)
     {

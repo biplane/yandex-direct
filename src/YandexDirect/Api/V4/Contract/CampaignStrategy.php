@@ -31,7 +31,7 @@ class CampaignStrategy
     /**
      * Creates a new instance of CampaignStrategy.
      *
-     * @return CampaignStrategy
+     * @return self
      */
     public static function create()
     {
@@ -52,7 +52,7 @@ class CampaignStrategy
      * Sets MaxPrice.
      *
      * @param float|null $value
-     * @return $this
+     * @return self
      */
     public function setMaxPrice($value = null)
     {
@@ -75,7 +75,7 @@ class CampaignStrategy
      * Sets AveragePrice.
      *
      * @param float|null $value
-     * @return $this
+     * @return self
      */
     public function setAveragePrice($value = null)
     {
@@ -98,7 +98,7 @@ class CampaignStrategy
      * Sets WeeklySumLimit.
      *
      * @param float|null $value
-     * @return $this
+     * @return self
      */
     public function setWeeklySumLimit($value = null)
     {
@@ -121,7 +121,7 @@ class CampaignStrategy
      * Sets ClicksPerWeek.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setClicksPerWeek($value = null)
     {
@@ -144,7 +144,7 @@ class CampaignStrategy
      * Sets StrategyName.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setStrategyName($value)
     {
@@ -167,7 +167,7 @@ class CampaignStrategy
      * Sets AverageCPA.
      *
      * @param float|null $value
-     * @return $this
+     * @return self
      */
     public function setAverageCPA($value = null)
     {
@@ -190,7 +190,7 @@ class CampaignStrategy
      * Sets GoalID.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setGoalID($value = null)
     {
@@ -213,7 +213,7 @@ class CampaignStrategy
      * Sets ReserveReturn.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setReserveReturn($value = null)
     {
@@ -236,7 +236,7 @@ class CampaignStrategy
      * Sets ROICoef.
      *
      * @param float|null $value
-     * @return $this
+     * @return self
      */
     public function setROICoef($value = null)
     {
@@ -259,7 +259,7 @@ class CampaignStrategy
      * Sets Profitability.
      *
      * @param float|null $value
-     * @return $this
+     * @return self
      */
     public function setProfitability($value = null)
     {

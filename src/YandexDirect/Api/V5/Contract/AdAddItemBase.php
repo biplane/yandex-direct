@@ -13,7 +13,7 @@ class AdAddItemBase
     /**
      * Creates a new instance of AdAddItemBase.
      *
-     * @return AdAddItemBase
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class AdAddItemBase
      * Sets AdGroupId.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setAdGroupId($value)
     {

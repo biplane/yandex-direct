@@ -8,15 +8,15 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class AdGroupStatusSelectionEnum
 {
 
+    const ACCEPTED = 'ACCEPTED';
+
     const DRAFT = 'DRAFT';
 
     const MODERATION = 'MODERATION';
 
-    const PREACCEPTED = 'PREACCEPTED';
-
-    const ACCEPTED = 'ACCEPTED';
-
     const REJECTED = 'REJECTED';
+
+    const PREACCEPTED = 'PREACCEPTED';
 
 
 }

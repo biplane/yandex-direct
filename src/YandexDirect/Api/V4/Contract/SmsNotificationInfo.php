@@ -23,7 +23,7 @@ class SmsNotificationInfo
     /**
      * Creates a new instance of SmsNotificationInfo.
      *
-     * @return SmsNotificationInfo
+     * @return self
      */
     public static function create()
     {
@@ -44,7 +44,7 @@ class SmsNotificationInfo
      * Sets MetricaSms.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setMetricaSms($value = null)
     {
@@ -67,7 +67,7 @@ class SmsNotificationInfo
      * Sets ModerateResultSms.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setModerateResultSms($value = null)
     {
@@ -90,7 +90,7 @@ class SmsNotificationInfo
      * Sets MoneyInSms.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setMoneyInSms($value = null)
     {
@@ -113,7 +113,7 @@ class SmsNotificationInfo
      * Sets MoneyOutSms.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setMoneyOutSms($value = null)
     {
@@ -136,7 +136,7 @@ class SmsNotificationInfo
      * Sets SmsTimeFrom.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setSmsTimeFrom($value = null)
     {
@@ -159,7 +159,7 @@ class SmsNotificationInfo
      * Sets SmsTimeTo.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setSmsTimeTo($value = null)
     {

@@ -21,7 +21,7 @@ class CampaignsFilterInfo
     /**
      * Creates a new instance of CampaignsFilterInfo.
      *
-     * @return CampaignsFilterInfo
+     * @return self
      */
     public static function create()
     {
@@ -42,7 +42,7 @@ class CampaignsFilterInfo
      * Sets StatusModerate.
      *
      * @param string[]|null $value
-     * @return $this
+     * @return self
      */
     public function setStatusModerate(array $value = null)
     {
@@ -65,7 +65,7 @@ class CampaignsFilterInfo
      * Sets IsActive.
      *
      * @param string[]|null $value
-     * @return $this
+     * @return self
      */
     public function setIsActive(array $value = null)
     {
@@ -88,7 +88,7 @@ class CampaignsFilterInfo
      * Sets StatusArchive.
      *
      * @param string[]|null $value
-     * @return $this
+     * @return self
      */
     public function setStatusArchive(array $value = null)
     {
@@ -111,7 +111,7 @@ class CampaignsFilterInfo
      * Sets StatusActivating.
      *
      * @param string[]|null $value
-     * @return $this
+     * @return self
      */
     public function setStatusActivating(array $value = null)
     {
@@ -134,7 +134,7 @@ class CampaignsFilterInfo
      * Sets StatusShow.
      *
      * @param string[]|null $value
-     * @return $this
+     * @return self
      */
     public function setStatusShow(array $value = null)
     {

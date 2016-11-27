@@ -21,7 +21,7 @@ class GetEventsLogFilter
     /**
      * Creates a new instance of GetEventsLogFilter.
      *
-     * @return GetEventsLogFilter
+     * @return self
      */
     public static function create()
     {
@@ -42,7 +42,7 @@ class GetEventsLogFilter
      * Sets CampaignIDS.
      *
      * @param int[]|null $value
-     * @return $this
+     * @return self
      */
     public function setCampaignIDS(array $value = null)
     {
@@ -65,7 +65,7 @@ class GetEventsLogFilter
      * Sets BannerIDS.
      *
      * @param int[]|null $value
-     * @return $this
+     * @return self
      */
     public function setBannerIDS(array $value = null)
     {
@@ -88,7 +88,7 @@ class GetEventsLogFilter
      * Sets PhraseIDS.
      *
      * @param int[]|null $value
-     * @return $this
+     * @return self
      */
     public function setPhraseIDS(array $value = null)
     {
@@ -111,7 +111,7 @@ class GetEventsLogFilter
      * Sets AccountIDS.
      *
      * @param int[]|null $value
-     * @return $this
+     * @return self
      */
     public function setAccountIDS(array $value = null)
     {
@@ -134,7 +134,7 @@ class GetEventsLogFilter
      * Sets EventType.
      *
      * @param string[]|null $value
-     * @return $this
+     * @return self
      */
     public function setEventType(array $value = null)
     {

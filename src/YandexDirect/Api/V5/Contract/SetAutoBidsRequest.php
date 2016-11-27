@@ -8,14 +8,12 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class SetAutoBidsRequest
 {
 
-    protected $Bids = array(
-        
-    );
+    protected $Bids = [];
 
     /**
      * Creates a new instance of SetAutoBidsRequest.
      *
-     * @return SetAutoBidsRequest
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +34,7 @@ class SetAutoBidsRequest
      * Sets Bids.
      *
      * @param BidSetAutoItem[] $value
-     * @return $this
+     * @return self
      */
     public function setBids(array $value)
     {

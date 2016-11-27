@@ -15,7 +15,7 @@ class ActionResultBase
     /**
      * Creates a new instance of ActionResultBase.
      *
-     * @return ActionResultBase
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +36,7 @@ class ActionResultBase
      * Sets Warnings.
      *
      * @param ExceptionNotification[]|null $value
-     * @return $this
+     * @return self
      */
     public function setWarnings(array $value = null)
     {
@@ -59,7 +59,7 @@ class ActionResultBase
      * Sets Errors.
      *
      * @param ExceptionNotification[]|null $value
-     * @return $this
+     * @return self
      */
     public function setErrors(array $value = null)
     {

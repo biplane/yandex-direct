@@ -15,7 +15,7 @@ class AdExtensionGetItem extends AdExtensionBase
     /**
      * Creates a new instance of AdExtensionGetItem.
      *
-     * @return AdExtensionGetItem
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +36,7 @@ class AdExtensionGetItem extends AdExtensionBase
      * Sets Id.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setId($value = null)
     {
@@ -48,7 +48,8 @@ class AdExtensionGetItem extends AdExtensionBase
     /**
      * Gets Associated.
      *
-     * @return YesNoEnum|null
+     * @return string|null
+     * @see YesNoEnum
      */
     public function getAssociated()
     {
@@ -58,8 +59,9 @@ class AdExtensionGetItem extends AdExtensionBase
     /**
      * Sets Associated.
      *
-     * @param YesNoEnum|null $value
-     * @return $this
+     * @param string|null $value
+     * @return self
+     * @see YesNoEnum
      */
     public function setAssociated($value = null)
     {

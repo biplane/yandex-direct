@@ -15,7 +15,7 @@ class MobileAppCampaignSettingGet
     /**
      * Creates a new instance of MobileAppCampaignSettingGet.
      *
-     * @return MobileAppCampaignSettingGet
+     * @return self
      */
     public static function create()
     {
@@ -25,7 +25,8 @@ class MobileAppCampaignSettingGet
     /**
      * Gets Option.
      *
-     * @return MobileAppCampaignSettingsGetEnum
+     * @return string
+     * @see MobileAppCampaignSettingsGetEnum
      */
     public function getOption()
     {
@@ -35,8 +36,9 @@ class MobileAppCampaignSettingGet
     /**
      * Sets Option.
      *
-     * @param MobileAppCampaignSettingsGetEnum $value
-     * @return $this
+     * @param string $value
+     * @return self
+     * @see MobileAppCampaignSettingsGetEnum
      */
     public function setOption($value)
     {
@@ -48,7 +50,8 @@ class MobileAppCampaignSettingGet
     /**
      * Gets Value.
      *
-     * @return YesNoEnum
+     * @return string
+     * @see YesNoEnum
      */
     public function getValue()
     {
@@ -58,8 +61,9 @@ class MobileAppCampaignSettingGet
     /**
      * Sets Value.
      *
-     * @param YesNoEnum $value
-     * @return $this
+     * @param string $value
+     * @return self
+     * @see YesNoEnum
      */
     public function setValue($value)
     {

@@ -17,7 +17,7 @@ class Sitelink
     /**
      * Creates a new instance of Sitelink.
      *
-     * @return Sitelink
+     * @return self
      */
     public static function create()
     {
@@ -38,7 +38,7 @@ class Sitelink
      * Sets Title.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setTitle($value)
     {
@@ -61,7 +61,7 @@ class Sitelink
      * Sets Href.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setHref($value)
     {
@@ -84,7 +84,7 @@ class Sitelink
      * Sets Description.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setDescription($value = null)
     {

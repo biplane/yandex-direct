@@ -19,7 +19,7 @@ class WebpagesSelectionCriteria
     /**
      * Creates a new instance of WebpagesSelectionCriteria.
      *
-     * @return WebpagesSelectionCriteria
+     * @return self
      */
     public static function create()
     {
@@ -40,7 +40,7 @@ class WebpagesSelectionCriteria
      * Sets Ids.
      *
      * @param int[]|null $value
-     * @return $this
+     * @return self
      */
     public function setIds(array $value = null)
     {
@@ -63,7 +63,7 @@ class WebpagesSelectionCriteria
      * Sets AdGroupIds.
      *
      * @param int[]|null $value
-     * @return $this
+     * @return self
      */
     public function setAdGroupIds(array $value = null)
     {
@@ -86,7 +86,7 @@ class WebpagesSelectionCriteria
      * Sets CampaignIds.
      *
      * @param int[]|null $value
-     * @return $this
+     * @return self
      */
     public function setCampaignIds(array $value = null)
     {
@@ -98,7 +98,8 @@ class WebpagesSelectionCriteria
     /**
      * Gets States.
      *
-     * @return WebpageStateSelectionEnum[]|null
+     * @return string[]|null
+     * @see WebpageStateSelectionEnum
      */
     public function getStates()
     {
@@ -108,8 +109,9 @@ class WebpagesSelectionCriteria
     /**
      * Sets States.
      *
-     * @param WebpageStateSelectionEnum[]|null $value
-     * @return $this
+     * @param string[]|null $value
+     * @return self
+     * @see WebpageStateSelectionEnum
      */
     public function setStates(array $value = null)
     {

@@ -21,7 +21,7 @@ class CreateNewSubclientResponse
     /**
      * Creates a new instance of CreateNewSubclientResponse.
      *
-     * @return CreateNewSubclientResponse
+     * @return self
      */
     public static function create()
     {
@@ -42,7 +42,7 @@ class CreateNewSubclientResponse
      * Sets Login.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setLogin($value)
     {
@@ -65,7 +65,7 @@ class CreateNewSubclientResponse
      * Sets Password.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setPassword($value)
     {
@@ -88,7 +88,7 @@ class CreateNewSubclientResponse
      * Sets FIO.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setFIO($value)
     {
@@ -111,7 +111,7 @@ class CreateNewSubclientResponse
      * Sets Email.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setEmail($value)
     {
@@ -134,7 +134,7 @@ class CreateNewSubclientResponse
      * Sets ClientID.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setClientID($value)
     {

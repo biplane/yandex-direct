@@ -10,9 +10,7 @@ class CreateOfflineReportRequest
 
     protected $Type = null;
 
-    protected $CampaignIds = array(
-        
-    );
+    protected $CampaignIds = [];
 
     protected $StartDate = null;
 
@@ -24,14 +22,12 @@ class CreateOfflineReportRequest
 
     protected $GroupByDate = null;
 
-    protected $FieldNames = array(
-        
-    );
+    protected $FieldNames = [];
 
     /**
      * Creates a new instance of CreateOfflineReportRequest.
      *
-     * @return CreateOfflineReportRequest
+     * @return self
      */
     public static function create()
     {
@@ -52,7 +48,7 @@ class CreateOfflineReportRequest
      * Sets Type.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setType($value)
     {
@@ -75,7 +71,7 @@ class CreateOfflineReportRequest
      * Sets CampaignIds.
      *
      * @param int[] $value
-     * @return $this
+     * @return self
      */
     public function setCampaignIds(array $value)
     {
@@ -98,7 +94,7 @@ class CreateOfflineReportRequest
      * Sets StartDate.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setStartDate($value)
     {
@@ -121,7 +117,7 @@ class CreateOfflineReportRequest
      * Sets EndDate.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setEndDate($value)
     {
@@ -144,7 +140,7 @@ class CreateOfflineReportRequest
      * Sets ImpressionsThreshold.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setImpressionsThreshold($value = null)
     {
@@ -167,7 +163,7 @@ class CreateOfflineReportRequest
      * Sets ClicksThreshold.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setClicksThreshold($value = null)
     {
@@ -190,7 +186,7 @@ class CreateOfflineReportRequest
      * Sets GroupByDate.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setGroupByDate($value = null)
     {
@@ -213,7 +209,7 @@ class CreateOfflineReportRequest
      * Sets FieldNames.
      *
      * @param string[] $value
-     * @return $this
+     * @return self
      */
     public function setFieldNames(array $value)
     {

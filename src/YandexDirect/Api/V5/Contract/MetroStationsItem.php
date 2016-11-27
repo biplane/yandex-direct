@@ -17,7 +17,7 @@ class MetroStationsItem
     /**
      * Creates a new instance of MetroStationsItem.
      *
-     * @return MetroStationsItem
+     * @return self
      */
     public static function create()
     {
@@ -38,7 +38,7 @@ class MetroStationsItem
      * Sets GeoRegionId.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setGeoRegionId($value)
     {
@@ -61,7 +61,7 @@ class MetroStationsItem
      * Sets MetroStationId.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setMetroStationId($value)
     {
@@ -84,7 +84,7 @@ class MetroStationsItem
      * Sets MetroStationName.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setMetroStationName($value)
     {

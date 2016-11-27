@@ -23,7 +23,7 @@ class WebpageAddItem
     /**
      * Creates a new instance of WebpageAddItem.
      *
-     * @return WebpageAddItem
+     * @return self
      */
     public static function create()
     {
@@ -44,7 +44,7 @@ class WebpageAddItem
      * Sets Name.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setName($value)
     {
@@ -67,7 +67,7 @@ class WebpageAddItem
      * Sets AdGroupId.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setAdGroupId($value)
     {
@@ -90,7 +90,7 @@ class WebpageAddItem
      * Sets Conditions.
      *
      * @param WebpageCondition[]|null $value
-     * @return $this
+     * @return self
      */
     public function setConditions(array $value = null)
     {
@@ -113,7 +113,7 @@ class WebpageAddItem
      * Sets Bid.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setBid($value = null)
     {
@@ -136,7 +136,7 @@ class WebpageAddItem
      * Sets ContextBid.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setContextBid($value = null)
     {
@@ -148,7 +148,8 @@ class WebpageAddItem
     /**
      * Gets StrategyPriority.
      *
-     * @return PriorityEnum|null
+     * @return string|null
+     * @see PriorityEnum
      */
     public function getStrategyPriority()
     {
@@ -158,8 +159,9 @@ class WebpageAddItem
     /**
      * Sets StrategyPriority.
      *
-     * @param PriorityEnum|null $value
-     * @return $this
+     * @param string|null $value
+     * @return self
+     * @see PriorityEnum
      */
     public function setStrategyPriority($value = null)
     {

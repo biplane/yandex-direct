@@ -15,7 +15,7 @@ class DynamicTextAdGroupGet
     /**
      * Creates a new instance of DynamicTextAdGroupGet.
      *
-     * @return DynamicTextAdGroupGet
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +36,7 @@ class DynamicTextAdGroupGet
      * Sets DomainUrl.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setDomainUrl($value = null)
     {
@@ -48,7 +48,8 @@ class DynamicTextAdGroupGet
     /**
      * Gets DomainUrlProcessingStatus.
      *
-     * @return DomainUrlProcessingStatusEnum|null
+     * @return string|null
+     * @see SourceProcessingStatusEnum
      */
     public function getDomainUrlProcessingStatus()
     {
@@ -58,8 +59,9 @@ class DynamicTextAdGroupGet
     /**
      * Sets DomainUrlProcessingStatus.
      *
-     * @param DomainUrlProcessingStatusEnum|null $value
-     * @return $this
+     * @param string|null $value
+     * @return self
+     * @see SourceProcessingStatusEnum
      */
     public function setDomainUrlProcessingStatus($value = null)
     {

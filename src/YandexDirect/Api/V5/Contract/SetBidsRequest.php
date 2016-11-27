@@ -13,7 +13,7 @@ class SetBidsRequest
     /**
      * Creates a new instance of SetBidsRequest.
      *
-     * @return SetBidsRequest
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class SetBidsRequest
      * Sets Bids.
      *
      * @param BidSetItem[]|null $value
-     * @return $this
+     * @return self
      */
     public function setBids(array $value = null)
     {

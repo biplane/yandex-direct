@@ -13,7 +13,7 @@ class SuspendCampaignsRequest
     /**
      * Creates a new instance of SuspendCampaignsRequest.
      *
-     * @return SuspendCampaignsRequest
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class SuspendCampaignsRequest
      * Sets SelectionCriteria.
      *
      * @param IdsCriteria $value
-     * @return $this
+     * @return self
      */
     public function setSelectionCriteria(IdsCriteria $value)
     {

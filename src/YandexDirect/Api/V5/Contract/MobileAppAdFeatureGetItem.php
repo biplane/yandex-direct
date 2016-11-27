@@ -13,7 +13,7 @@ class MobileAppAdFeatureGetItem extends MobileAppAdFeatureItem
     /**
      * Creates a new instance of MobileAppAdFeatureGetItem.
      *
-     * @return MobileAppAdFeatureGetItem
+     * @return self
      */
     public static function create()
     {
@@ -23,7 +23,8 @@ class MobileAppAdFeatureGetItem extends MobileAppAdFeatureItem
     /**
      * Gets IsAvailable.
      *
-     * @return YesNoUnknownEnum
+     * @return string
+     * @see YesNoUnknownEnum
      */
     public function getIsAvailable()
     {
@@ -33,8 +34,9 @@ class MobileAppAdFeatureGetItem extends MobileAppAdFeatureItem
     /**
      * Sets IsAvailable.
      *
-     * @param YesNoUnknownEnum $value
-     * @return $this
+     * @param string $value
+     * @return self
+     * @see YesNoUnknownEnum
      */
     public function setIsAvailable($value)
     {

@@ -15,7 +15,7 @@ class ForecastStatusInfo
     /**
      * Creates a new instance of ForecastStatusInfo.
      *
-     * @return ForecastStatusInfo
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +36,7 @@ class ForecastStatusInfo
      * Sets ForecastID.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setForecastID($value)
     {
@@ -59,7 +59,7 @@ class ForecastStatusInfo
      * Sets StatusForecast.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setStatusForecast($value)
     {

@@ -17,7 +17,7 @@ class AdImageAssociationRequest
     /**
      * Creates a new instance of AdImageAssociationRequest.
      *
-     * @return AdImageAssociationRequest
+     * @return self
      */
     public static function create()
     {
@@ -38,7 +38,7 @@ class AdImageAssociationRequest
      * Sets Action.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setAction($value)
     {
@@ -61,7 +61,7 @@ class AdImageAssociationRequest
      * Sets SelectionCriteria.
      *
      * @param AdImageAssociationSelectionCriteria|null $value
-     * @return $this
+     * @return self
      */
     public function setSelectionCriteria(AdImageAssociationSelectionCriteria $value = null)
     {
@@ -84,7 +84,7 @@ class AdImageAssociationRequest
      * Sets AdImageAssociations.
      *
      * @param AdImageAssociation[]|null $value
-     * @return $this
+     * @return self
      */
     public function setAdImageAssociations(array $value = null)
     {

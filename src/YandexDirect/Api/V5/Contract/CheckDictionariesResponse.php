@@ -17,7 +17,7 @@ class CheckDictionariesResponse
     /**
      * Creates a new instance of CheckDictionariesResponse.
      *
-     * @return CheckDictionariesResponse
+     * @return self
      */
     public static function create()
     {
@@ -27,7 +27,8 @@ class CheckDictionariesResponse
     /**
      * Gets TimeZonesChanged.
      *
-     * @return YesNoEnum|null
+     * @return string|null
+     * @see YesNoEnum
      */
     public function getTimeZonesChanged()
     {
@@ -37,8 +38,9 @@ class CheckDictionariesResponse
     /**
      * Sets TimeZonesChanged.
      *
-     * @param YesNoEnum|null $value
-     * @return $this
+     * @param string|null $value
+     * @return self
+     * @see YesNoEnum
      */
     public function setTimeZonesChanged($value = null)
     {
@@ -50,7 +52,8 @@ class CheckDictionariesResponse
     /**
      * Gets RegionsChanged.
      *
-     * @return YesNoEnum|null
+     * @return string|null
+     * @see YesNoEnum
      */
     public function getRegionsChanged()
     {
@@ -60,8 +63,9 @@ class CheckDictionariesResponse
     /**
      * Sets RegionsChanged.
      *
-     * @param YesNoEnum|null $value
-     * @return $this
+     * @param string|null $value
+     * @return self
+     * @see YesNoEnum
      */
     public function setRegionsChanged($value = null)
     {
@@ -84,7 +88,7 @@ class CheckDictionariesResponse
      * Sets Timestamp.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setTimestamp($value)
     {

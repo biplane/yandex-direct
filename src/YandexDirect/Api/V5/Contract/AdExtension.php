@@ -13,7 +13,7 @@ class AdExtension extends AdExtensionBase
     /**
      * Creates a new instance of AdExtension.
      *
-     * @return AdExtension
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class AdExtension extends AdExtensionBase
      * Sets AdExtensionId.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setAdExtensionId($value = null)
     {

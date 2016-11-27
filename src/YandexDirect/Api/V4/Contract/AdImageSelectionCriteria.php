@@ -23,7 +23,7 @@ class AdImageSelectionCriteria
     /**
      * Creates a new instance of AdImageSelectionCriteria.
      *
-     * @return AdImageSelectionCriteria
+     * @return self
      */
     public static function create()
     {
@@ -44,7 +44,7 @@ class AdImageSelectionCriteria
      * Sets Logins.
      *
      * @param string[]|null $value
-     * @return $this
+     * @return self
      */
     public function setLogins(array $value = null)
     {
@@ -67,7 +67,7 @@ class AdImageSelectionCriteria
      * Sets AdImageHashes.
      *
      * @param string[]|null $value
-     * @return $this
+     * @return self
      */
     public function setAdImageHashes(array $value = null)
     {
@@ -90,7 +90,7 @@ class AdImageSelectionCriteria
      * Sets AdImageUploadTaskIDS.
      *
      * @param int[]|null $value
-     * @return $this
+     * @return self
      */
     public function setAdImageUploadTaskIDS(array $value = null)
     {
@@ -113,7 +113,7 @@ class AdImageSelectionCriteria
      * Sets Assigned.
      *
      * @param string[]|null $value
-     * @return $this
+     * @return self
      */
     public function setAssigned(array $value = null)
     {
@@ -136,7 +136,7 @@ class AdImageSelectionCriteria
      * Sets Limit.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setLimit($value = null)
     {
@@ -159,7 +159,7 @@ class AdImageSelectionCriteria
      * Sets Offset.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setOffset($value = null)
     {

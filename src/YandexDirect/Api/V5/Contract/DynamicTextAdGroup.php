@@ -13,7 +13,7 @@ class DynamicTextAdGroup
     /**
      * Creates a new instance of DynamicTextAdGroup.
      *
-     * @return DynamicTextAdGroup
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class DynamicTextAdGroup
      * Sets DomainUrl.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setDomainUrl($value)
     {

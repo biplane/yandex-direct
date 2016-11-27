@@ -10,9 +10,7 @@ class MobileAppAdGroupAdd
 
     protected $StoreUrl = null;
 
-    protected $TargetDeviceType = array(
-
-    );
+    protected $TargetDeviceType = [];
 
     protected $TargetCarrier = null;
 
@@ -21,7 +19,7 @@ class MobileAppAdGroupAdd
     /**
      * Creates a new instance of MobileAppAdGroupAdd.
      *
-     * @return MobileAppAdGroupAdd
+     * @return self
      */
     public static function create()
     {
@@ -42,7 +40,7 @@ class MobileAppAdGroupAdd
      * Sets StoreUrl.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setStoreUrl($value)
     {
@@ -54,7 +52,8 @@ class MobileAppAdGroupAdd
     /**
      * Gets TargetDeviceType.
      *
-     * @return TargetDeviceTypeEnum[]
+     * @return string[]
+     * @see TargetDeviceTypeEnum
      */
     public function getTargetDeviceType()
     {
@@ -64,8 +63,9 @@ class MobileAppAdGroupAdd
     /**
      * Sets TargetDeviceType.
      *
-     * @param TargetDeviceTypeEnum[] $value
-     * @return $this
+     * @param string[] $value
+     * @return self
+     * @see TargetDeviceTypeEnum
      */
     public function setTargetDeviceType(array $value)
     {
@@ -77,7 +77,8 @@ class MobileAppAdGroupAdd
     /**
      * Gets TargetCarrier.
      *
-     * @return TargetCarrierEnum
+     * @return string
+     * @see TargetCarrierEnum
      */
     public function getTargetCarrier()
     {
@@ -87,8 +88,9 @@ class MobileAppAdGroupAdd
     /**
      * Sets TargetCarrier.
      *
-     * @param TargetCarrierEnum $value
-     * @return $this
+     * @param string $value
+     * @return self
+     * @see TargetCarrierEnum
      */
     public function setTargetCarrier($value)
     {
@@ -111,7 +113,7 @@ class MobileAppAdGroupAdd
      * Sets TargetOperatingSystemVersion.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setTargetOperatingSystemVersion($value)
     {

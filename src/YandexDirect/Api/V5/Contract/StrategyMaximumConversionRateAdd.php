@@ -13,7 +13,7 @@ class StrategyMaximumConversionRateAdd extends StrategyWeeklyBudgetAddBase
     /**
      * Creates a new instance of StrategyMaximumConversionRateAdd.
      *
-     * @return StrategyMaximumConversionRateAdd
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class StrategyMaximumConversionRateAdd extends StrategyWeeklyBudgetAddBase
      * Sets GoalId.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setGoalId($value)
     {

@@ -13,7 +13,7 @@ class AddAdExtensionsResponse
     /**
      * Creates a new instance of AddAdExtensionsResponse.
      *
-     * @return AddAdExtensionsResponse
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class AddAdExtensionsResponse
      * Sets AddResults.
      *
      * @param ActionResult[]|null $value
-     * @return $this
+     * @return self
      */
     public function setAddResults(array $value = null)
     {

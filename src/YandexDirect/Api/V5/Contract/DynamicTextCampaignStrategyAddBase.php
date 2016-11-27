@@ -23,7 +23,7 @@ class DynamicTextCampaignStrategyAddBase
     /**
      * Creates a new instance of DynamicTextCampaignStrategyAddBase.
      *
-     * @return DynamicTextCampaignStrategyAddBase
+     * @return self
      */
     public static function create()
     {
@@ -44,7 +44,7 @@ class DynamicTextCampaignStrategyAddBase
      * Sets WbMaximumClicks.
      *
      * @param StrategyMaximumClicksAdd|null $value
-     * @return $this
+     * @return self
      */
     public function setWbMaximumClicks(StrategyMaximumClicksAdd $value = null)
     {
@@ -67,7 +67,7 @@ class DynamicTextCampaignStrategyAddBase
      * Sets WbMaximumConversionRate.
      *
      * @param StrategyMaximumConversionRateAdd|null $value
-     * @return $this
+     * @return self
      */
     public function setWbMaximumConversionRate(StrategyMaximumConversionRateAdd $value = null)
     {
@@ -90,7 +90,7 @@ class DynamicTextCampaignStrategyAddBase
      * Sets AverageCpc.
      *
      * @param StrategyAverageCpcAdd|null $value
-     * @return $this
+     * @return self
      */
     public function setAverageCpc(StrategyAverageCpcAdd $value = null)
     {
@@ -113,7 +113,7 @@ class DynamicTextCampaignStrategyAddBase
      * Sets AverageCpa.
      *
      * @param StrategyAverageCpaAdd|null $value
-     * @return $this
+     * @return self
      */
     public function setAverageCpa(StrategyAverageCpaAdd $value = null)
     {
@@ -136,7 +136,7 @@ class DynamicTextCampaignStrategyAddBase
      * Sets WeeklyClickPackage.
      *
      * @param StrategyWeeklyClickPackageAdd|null $value
-     * @return $this
+     * @return self
      */
     public function setWeeklyClickPackage(StrategyWeeklyClickPackageAdd $value = null)
     {
@@ -159,7 +159,7 @@ class DynamicTextCampaignStrategyAddBase
      * Sets AverageRoi.
      *
      * @param StrategyAverageRoiAdd|null $value
-     * @return $this
+     * @return self
      */
     public function setAverageRoi(StrategyAverageRoiAdd $value = null)
     {

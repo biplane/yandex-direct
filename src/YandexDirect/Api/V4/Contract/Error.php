@@ -17,7 +17,7 @@ class Error
     /**
      * Creates a new instance of Error.
      *
-     * @return Error
+     * @return self
      */
     public static function create()
     {
@@ -38,7 +38,7 @@ class Error
      * Sets FaultCode.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setFaultCode($value)
     {
@@ -61,7 +61,7 @@ class Error
      * Sets FaultString.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setFaultString($value)
     {
@@ -84,7 +84,7 @@ class Error
      * Sets FaultDetail.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setFaultDetail($value = null)
     {

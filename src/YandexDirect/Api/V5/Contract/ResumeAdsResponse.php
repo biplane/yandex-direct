@@ -13,7 +13,7 @@ class ResumeAdsResponse
     /**
      * Creates a new instance of ResumeAdsResponse.
      *
-     * @return ResumeAdsResponse
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class ResumeAdsResponse
      * Sets ResumeResults.
      *
      * @param ActionResult[]|null $value
-     * @return $this
+     * @return self
      */
     public function setResumeResults(array $value = null)
     {

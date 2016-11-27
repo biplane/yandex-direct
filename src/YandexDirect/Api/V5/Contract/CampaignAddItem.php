@@ -33,7 +33,7 @@ class CampaignAddItem extends CampaignBase
     /**
      * Creates a new instance of CampaignAddItem.
      *
-     * @return CampaignAddItem
+     * @return self
      */
     public static function create()
     {
@@ -54,7 +54,7 @@ class CampaignAddItem extends CampaignBase
      * Sets Name.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setName($value)
     {
@@ -77,7 +77,7 @@ class CampaignAddItem extends CampaignBase
      * Sets StartDate.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setStartDate($value)
     {
@@ -100,7 +100,7 @@ class CampaignAddItem extends CampaignBase
      * Sets DailyBudget.
      *
      * @param DailyBudget|null $value
-     * @return $this
+     * @return self
      */
     public function setDailyBudget(DailyBudget $value = null)
     {
@@ -123,7 +123,7 @@ class CampaignAddItem extends CampaignBase
      * Sets EndDate.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setEndDate($value = null)
     {
@@ -135,7 +135,7 @@ class CampaignAddItem extends CampaignBase
     /**
      * Gets NegativeKeywords.
      *
-     * @return string[]|null
+     * @return struct[]|null
      */
     public function getNegativeKeywords()
     {
@@ -145,8 +145,8 @@ class CampaignAddItem extends CampaignBase
     /**
      * Sets NegativeKeywords.
      *
-     * @param string[]|null $value
-     * @return $this
+     * @param struct[]|null $value
+     * @return self
      */
     public function setNegativeKeywords(array $value = null)
     {
@@ -158,7 +158,7 @@ class CampaignAddItem extends CampaignBase
     /**
      * Gets BlockedIps.
      *
-     * @return string[]|null
+     * @return struct[]|null
      */
     public function getBlockedIps()
     {
@@ -168,8 +168,8 @@ class CampaignAddItem extends CampaignBase
     /**
      * Sets BlockedIps.
      *
-     * @param string[]|null $value
-     * @return $this
+     * @param struct[]|null $value
+     * @return self
      */
     public function setBlockedIps(array $value = null)
     {
@@ -181,7 +181,7 @@ class CampaignAddItem extends CampaignBase
     /**
      * Gets ExcludedSites.
      *
-     * @return string[]|null
+     * @return struct[]|null
      */
     public function getExcludedSites()
     {
@@ -191,8 +191,8 @@ class CampaignAddItem extends CampaignBase
     /**
      * Sets ExcludedSites.
      *
-     * @param string[]|null $value
-     * @return $this
+     * @param struct[]|null $value
+     * @return self
      */
     public function setExcludedSites(array $value = null)
     {
@@ -215,7 +215,7 @@ class CampaignAddItem extends CampaignBase
      * Sets TextCampaign.
      *
      * @param TextCampaignAddItem|null $value
-     * @return $this
+     * @return self
      */
     public function setTextCampaign(TextCampaignAddItem $value = null)
     {
@@ -238,7 +238,7 @@ class CampaignAddItem extends CampaignBase
      * Sets MobileAppCampaign.
      *
      * @param MobileAppCampaignAddItem|null $value
-     * @return $this
+     * @return self
      */
     public function setMobileAppCampaign(MobileAppCampaignAddItem $value = null)
     {
@@ -261,7 +261,7 @@ class CampaignAddItem extends CampaignBase
      * Sets DynamicTextCampaign.
      *
      * @param DynamicTextCampaignAddItem|null $value
-     * @return $this
+     * @return self
      */
     public function setDynamicTextCampaign(DynamicTextCampaignAddItem $value = null)
     {
@@ -284,7 +284,7 @@ class CampaignAddItem extends CampaignBase
      * Sets TimeTargeting.
      *
      * @param TimeTargetingAdd|null $value
-     * @return $this
+     * @return self
      */
     public function setTimeTargeting(TimeTargetingAdd $value = null)
     {

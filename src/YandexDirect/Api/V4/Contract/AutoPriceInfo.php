@@ -47,7 +47,7 @@ class AutoPriceInfo
     /**
      * Creates a new instance of AutoPriceInfo.
      *
-     * @return AutoPriceInfo
+     * @return self
      */
     public static function create()
     {
@@ -68,7 +68,7 @@ class AutoPriceInfo
      * Sets CampaignID.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setCampaignID($value)
     {
@@ -91,7 +91,7 @@ class AutoPriceInfo
      * Sets BannerIDS.
      *
      * @param int[]|null $value
-     * @return $this
+     * @return self
      */
     public function setBannerIDS(array $value = null)
     {
@@ -114,7 +114,7 @@ class AutoPriceInfo
      * Sets PhraseIDS.
      *
      * @param int[]|null $value
-     * @return $this
+     * @return self
      */
     public function setPhraseIDS(array $value = null)
     {
@@ -137,7 +137,7 @@ class AutoPriceInfo
      * Sets Mode.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setMode($value)
     {
@@ -160,7 +160,7 @@ class AutoPriceInfo
      * Sets SinglePrice.
      *
      * @param float|null $value
-     * @return $this
+     * @return self
      */
     public function setSinglePrice($value = null)
     {
@@ -183,7 +183,7 @@ class AutoPriceInfo
      * Sets PriceBase.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setPriceBase($value = null)
     {
@@ -206,7 +206,7 @@ class AutoPriceInfo
      * Sets ProcBase.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setProcBase($value = null)
     {
@@ -229,7 +229,7 @@ class AutoPriceInfo
      * Sets MaxPrice.
      *
      * @param float|null $value
-     * @return $this
+     * @return self
      */
     public function setMaxPrice($value = null)
     {
@@ -252,7 +252,7 @@ class AutoPriceInfo
      * Sets Proc.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setProc($value = null)
     {
@@ -275,7 +275,7 @@ class AutoPriceInfo
      * Sets UpdatePhrases.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setUpdatePhrases($value = null)
     {
@@ -298,7 +298,7 @@ class AutoPriceInfo
      * Sets UpdateCategories.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setUpdateCategories($value = null)
     {
@@ -321,7 +321,7 @@ class AutoPriceInfo
      * Sets Scope.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setScope($value = null)
     {
@@ -344,7 +344,7 @@ class AutoPriceInfo
      * Sets PhrasesType.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setPhrasesType($value = null)
     {
@@ -367,7 +367,7 @@ class AutoPriceInfo
      * Sets Price.
      *
      * @param float|null $value
-     * @return $this
+     * @return self
      */
     public function setPrice($value = null)
     {
@@ -390,7 +390,7 @@ class AutoPriceInfo
      * Sets ContextPrice.
      *
      * @param float|null $value
-     * @return $this
+     * @return self
      */
     public function setContextPrice($value = null)
     {
@@ -413,7 +413,7 @@ class AutoPriceInfo
      * Sets BannersType.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setBannersType($value = null)
     {
@@ -436,7 +436,7 @@ class AutoPriceInfo
      * Sets DontWaitForPriceUpdate.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setDontWaitForPriceUpdate($value = null)
     {
@@ -459,7 +459,7 @@ class AutoPriceInfo
      * Sets Currency.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setCurrency($value = null)
     {

@@ -25,7 +25,7 @@ class TextAdGetBase
     /**
      * Creates a new instance of TextAdGetBase.
      *
-     * @return TextAdGetBase
+     * @return self
      */
     public static function create()
     {
@@ -46,7 +46,7 @@ class TextAdGetBase
      * Sets VCardId.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setVCardId($value = null)
     {
@@ -69,7 +69,7 @@ class TextAdGetBase
      * Sets AdImageHash.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setAdImageHash($value = null)
     {
@@ -92,7 +92,7 @@ class TextAdGetBase
      * Sets SitelinkSetId.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setSitelinkSetId($value = null)
     {
@@ -115,7 +115,7 @@ class TextAdGetBase
      * Sets VCardModeration.
      *
      * @param ExtensionModeration|null $value
-     * @return $this
+     * @return self
      */
     public function setVCardModeration(ExtensionModeration $value = null)
     {
@@ -138,7 +138,7 @@ class TextAdGetBase
      * Sets SitelinksModeration.
      *
      * @param ExtensionModeration|null $value
-     * @return $this
+     * @return self
      */
     public function setSitelinksModeration(ExtensionModeration $value = null)
     {
@@ -161,7 +161,7 @@ class TextAdGetBase
      * Sets AdImageModeration.
      *
      * @param ExtensionModeration|null $value
-     * @return $this
+     * @return self
      */
     public function setAdImageModeration(ExtensionModeration $value = null)
     {
@@ -184,7 +184,7 @@ class TextAdGetBase
      * Sets AdExtensions.
      *
      * @param AdExtensionAdGetItem[]|null $value
-     * @return $this
+     * @return self
      */
     public function setAdExtensions(array $value = null)
     {

@@ -15,7 +15,7 @@ class MobileAppCampaignStrategy
     /**
      * Creates a new instance of MobileAppCampaignStrategy.
      *
-     * @return MobileAppCampaignStrategy
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +36,7 @@ class MobileAppCampaignStrategy
      * Sets Search.
      *
      * @param MobileAppCampaignSearchStrategy|null $value
-     * @return $this
+     * @return self
      */
     public function setSearch(MobileAppCampaignSearchStrategy $value = null)
     {
@@ -59,7 +59,7 @@ class MobileAppCampaignStrategy
      * Sets Network.
      *
      * @param MobileAppCampaignNetworkStrategy|null $value
-     * @return $this
+     * @return self
      */
     public function setNetwork(MobileAppCampaignNetworkStrategy $value = null)
     {

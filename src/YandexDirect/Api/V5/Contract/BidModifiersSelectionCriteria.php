@@ -16,14 +16,12 @@ class BidModifiersSelectionCriteria
 
     protected $Types = null;
 
-    protected $Levels = array(
-        
-    );
+    protected $Levels = [];
 
     /**
      * Creates a new instance of BidModifiersSelectionCriteria.
      *
-     * @return BidModifiersSelectionCriteria
+     * @return self
      */
     public static function create()
     {
@@ -44,7 +42,7 @@ class BidModifiersSelectionCriteria
      * Sets CampaignIds.
      *
      * @param int[]|null $value
-     * @return $this
+     * @return self
      */
     public function setCampaignIds(array $value = null)
     {
@@ -67,7 +65,7 @@ class BidModifiersSelectionCriteria
      * Sets AdGroupIds.
      *
      * @param int[]|null $value
-     * @return $this
+     * @return self
      */
     public function setAdGroupIds(array $value = null)
     {
@@ -90,7 +88,7 @@ class BidModifiersSelectionCriteria
      * Sets Ids.
      *
      * @param int[]|null $value
-     * @return $this
+     * @return self
      */
     public function setIds(array $value = null)
     {
@@ -102,7 +100,8 @@ class BidModifiersSelectionCriteria
     /**
      * Gets Types.
      *
-     * @return BidModifierTypeEnum[]|null
+     * @return string[]|null
+     * @see BidModifierTypeEnum
      */
     public function getTypes()
     {
@@ -112,8 +111,9 @@ class BidModifiersSelectionCriteria
     /**
      * Sets Types.
      *
-     * @param BidModifierTypeEnum[]|null $value
-     * @return $this
+     * @param string[]|null $value
+     * @return self
+     * @see BidModifierTypeEnum
      */
     public function setTypes(array $value = null)
     {
@@ -125,7 +125,8 @@ class BidModifiersSelectionCriteria
     /**
      * Gets Levels.
      *
-     * @return BidModifierLevelEnum[]
+     * @return string[]
+     * @see BidModifierLevelEnum
      */
     public function getLevels()
     {
@@ -135,8 +136,9 @@ class BidModifiersSelectionCriteria
     /**
      * Sets Levels.
      *
-     * @param BidModifierLevelEnum[] $value
-     * @return $this
+     * @param string[] $value
+     * @return self
+     * @see BidModifierLevelEnum
      */
     public function setLevels(array $value)
     {

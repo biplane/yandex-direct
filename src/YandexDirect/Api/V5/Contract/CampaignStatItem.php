@@ -15,7 +15,7 @@ class CampaignStatItem
     /**
      * Creates a new instance of CampaignStatItem.
      *
-     * @return CampaignStatItem
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +36,7 @@ class CampaignStatItem
      * Sets CampaignId.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setCampaignId($value)
     {
@@ -59,7 +59,7 @@ class CampaignStatItem
      * Sets BorderDate.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setBorderDate($value)
     {

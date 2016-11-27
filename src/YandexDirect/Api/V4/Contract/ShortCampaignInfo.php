@@ -63,7 +63,7 @@ class ShortCampaignInfo
     /**
      * Creates a new instance of ShortCampaignInfo.
      *
-     * @return ShortCampaignInfo
+     * @return self
      */
     public static function create()
     {
@@ -84,7 +84,7 @@ class ShortCampaignInfo
      * Sets CampaignID.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setCampaignID($value)
     {
@@ -107,7 +107,7 @@ class ShortCampaignInfo
      * Sets Login.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setLogin($value)
     {
@@ -130,7 +130,7 @@ class ShortCampaignInfo
      * Sets Name.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setName($value)
     {
@@ -153,7 +153,7 @@ class ShortCampaignInfo
      * Sets StartDate.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setStartDate($value)
     {
@@ -176,7 +176,7 @@ class ShortCampaignInfo
      * Sets StrategyName.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setStrategyName($value)
     {
@@ -199,7 +199,7 @@ class ShortCampaignInfo
      * Sets ContextStrategyName.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setContextStrategyName($value)
     {
@@ -222,7 +222,7 @@ class ShortCampaignInfo
      * Sets Sum.
      *
      * @param float $value
-     * @return $this
+     * @return self
      */
     public function setSum($value)
     {
@@ -245,7 +245,7 @@ class ShortCampaignInfo
      * Sets Rest.
      *
      * @param float $value
-     * @return $this
+     * @return self
      */
     public function setRest($value)
     {
@@ -268,7 +268,7 @@ class ShortCampaignInfo
      * Sets SumAvailableForTransfer.
      *
      * @param float|null $value
-     * @return $this
+     * @return self
      */
     public function setSumAvailableForTransfer($value = null)
     {
@@ -291,7 +291,7 @@ class ShortCampaignInfo
      * Sets Shows.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setShows($value)
     {
@@ -314,7 +314,7 @@ class ShortCampaignInfo
      * Sets Clicks.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setClicks($value)
     {
@@ -337,7 +337,7 @@ class ShortCampaignInfo
      * Sets Status.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setStatus($value = null)
     {
@@ -360,7 +360,7 @@ class ShortCampaignInfo
      * Sets StatusShow.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setStatusShow($value)
     {
@@ -383,7 +383,7 @@ class ShortCampaignInfo
      * Sets StatusArchive.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setStatusArchive($value)
     {
@@ -406,7 +406,7 @@ class ShortCampaignInfo
      * Sets StatusActivating.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setStatusActivating($value)
     {
@@ -429,7 +429,7 @@ class ShortCampaignInfo
      * Sets StatusModerate.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setStatusModerate($value)
     {
@@ -452,7 +452,7 @@ class ShortCampaignInfo
      * Sets IsActive.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setIsActive($value = null)
     {
@@ -475,7 +475,7 @@ class ShortCampaignInfo
      * Sets ManagerName.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setManagerName($value = null)
     {
@@ -498,7 +498,7 @@ class ShortCampaignInfo
      * Sets AgencyName.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setAgencyName($value = null)
     {
@@ -521,7 +521,7 @@ class ShortCampaignInfo
      * Sets Currency.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setCurrency($value = null)
     {
@@ -544,7 +544,7 @@ class ShortCampaignInfo
      * Sets CampaignCurrency.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setCampaignCurrency($value = null)
     {
@@ -567,7 +567,7 @@ class ShortCampaignInfo
      * Sets SourceCampaignID.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setSourceCampaignID($value = null)
     {
@@ -590,7 +590,7 @@ class ShortCampaignInfo
      * Sets BonusDiscount.
      *
      * @param float|null $value
-     * @return $this
+     * @return self
      */
     public function setBonusDiscount($value = null)
     {
@@ -613,7 +613,7 @@ class ShortCampaignInfo
      * Sets DayBudgetEnabled.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setDayBudgetEnabled($value = null)
     {
@@ -636,7 +636,7 @@ class ShortCampaignInfo
      * Sets EnableRelatedKeywords.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setEnableRelatedKeywords($value = null)
     {
@@ -659,7 +659,7 @@ class ShortCampaignInfo
      * Sets ExtendedAdTitleEnabled.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setExtendedAdTitleEnabled($value = null)
     {

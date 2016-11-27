@@ -17,7 +17,7 @@ class TimeZoneInfo
     /**
      * Creates a new instance of TimeZoneInfo.
      *
-     * @return TimeZoneInfo
+     * @return self
      */
     public static function create()
     {
@@ -38,7 +38,7 @@ class TimeZoneInfo
      * Sets TimeZone.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setTimeZone($value)
     {
@@ -61,7 +61,7 @@ class TimeZoneInfo
      * Sets GMTOffset.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setGMTOffset($value)
     {
@@ -84,7 +84,7 @@ class TimeZoneInfo
      * Sets Name.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setName($value)
     {

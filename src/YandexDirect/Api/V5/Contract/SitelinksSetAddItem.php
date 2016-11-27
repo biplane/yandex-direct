@@ -8,14 +8,12 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class SitelinksSetAddItem
 {
 
-    protected $Sitelinks = array(
-        
-    );
+    protected $Sitelinks = [];
 
     /**
      * Creates a new instance of SitelinksSetAddItem.
      *
-     * @return SitelinksSetAddItem
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +34,7 @@ class SitelinksSetAddItem
      * Sets Sitelinks.
      *
      * @param Sitelink[] $value
-     * @return $this
+     * @return self
      */
     public function setSitelinks(array $value)
     {

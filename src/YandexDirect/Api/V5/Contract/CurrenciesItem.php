@@ -10,14 +10,12 @@ class CurrenciesItem
 
     protected $Currency = null;
 
-    protected $Properties = array(
-        
-    );
+    protected $Properties = [];
 
     /**
      * Creates a new instance of CurrenciesItem.
      *
-     * @return CurrenciesItem
+     * @return self
      */
     public static function create()
     {
@@ -38,7 +36,7 @@ class CurrenciesItem
      * Sets Currency.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setCurrency($value)
     {
@@ -61,7 +59,7 @@ class CurrenciesItem
      * Sets Properties.
      *
      * @param ConstantsItem[] $value
-     * @return $this
+     * @return self
      */
     public function setProperties(array $value)
     {

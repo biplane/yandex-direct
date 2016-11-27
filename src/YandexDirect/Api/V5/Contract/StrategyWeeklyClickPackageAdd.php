@@ -17,7 +17,7 @@ class StrategyWeeklyClickPackageAdd
     /**
      * Creates a new instance of StrategyWeeklyClickPackageAdd.
      *
-     * @return StrategyWeeklyClickPackageAdd
+     * @return self
      */
     public static function create()
     {
@@ -38,7 +38,7 @@ class StrategyWeeklyClickPackageAdd
      * Sets ClicksPerWeek.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setClicksPerWeek($value)
     {
@@ -61,7 +61,7 @@ class StrategyWeeklyClickPackageAdd
      * Sets AverageCpc.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setAverageCpc($value = null)
     {
@@ -84,7 +84,7 @@ class StrategyWeeklyClickPackageAdd
      * Sets BidCeiling.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setBidCeiling($value = null)
     {

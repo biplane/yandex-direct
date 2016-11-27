@@ -19,7 +19,7 @@ class DemographicsAdjustmentGet
     /**
      * Creates a new instance of DemographicsAdjustmentGet.
      *
-     * @return DemographicsAdjustmentGet
+     * @return self
      */
     public static function create()
     {
@@ -29,7 +29,8 @@ class DemographicsAdjustmentGet
     /**
      * Gets Gender.
      *
-     * @return GenderEnum|null
+     * @return string|null
+     * @see GenderEnum
      */
     public function getGender()
     {
@@ -39,8 +40,9 @@ class DemographicsAdjustmentGet
     /**
      * Sets Gender.
      *
-     * @param GenderEnum|null $value
-     * @return $this
+     * @param string|null $value
+     * @return self
+     * @see GenderEnum
      */
     public function setGender($value = null)
     {
@@ -52,7 +54,8 @@ class DemographicsAdjustmentGet
     /**
      * Gets Age.
      *
-     * @return AgeRangeEnum|null
+     * @return string|null
+     * @see AgeRangeEnum
      */
     public function getAge()
     {
@@ -62,8 +65,9 @@ class DemographicsAdjustmentGet
     /**
      * Sets Age.
      *
-     * @param AgeRangeEnum|null $value
-     * @return $this
+     * @param string|null $value
+     * @return self
+     * @see AgeRangeEnum
      */
     public function setAge($value = null)
     {
@@ -86,7 +90,7 @@ class DemographicsAdjustmentGet
      * Sets BidModifier.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setBidModifier($value = null)
     {
@@ -98,7 +102,8 @@ class DemographicsAdjustmentGet
     /**
      * Gets Enabled.
      *
-     * @return YesNoEnum|null
+     * @return string|null
+     * @see YesNoEnum
      */
     public function getEnabled()
     {
@@ -108,8 +113,9 @@ class DemographicsAdjustmentGet
     /**
      * Sets Enabled.
      *
-     * @param YesNoEnum|null $value
-     * @return $this
+     * @param string|null $value
+     * @return self
+     * @see YesNoEnum
      */
     public function setEnabled($value = null)
     {

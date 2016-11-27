@@ -2,14 +2,14 @@
 
 namespace Biplane\YandexDirect\Api\V5;
 
-use Biplane\YandexDirect\Api\V5SoapClient;
+use Biplane\YandexDirect\Api\SoapClientV5;
 use Biplane\YandexDirect\User;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**
  * Auto-generated code.
  */
-class AdGroups extends V5SoapClient
+class AdGroups extends SoapClientV5
 {
 
     const ENDPOINT = 'https://api.direct.yandex.com/v5/adgroups?wsdl';
@@ -22,8 +22,8 @@ class AdGroups extends V5SoapClient
      */
     public function __construct(EventDispatcherInterface $dispatcher, User $user)
     {
-        parent::__construct($user->resolveWsdl(self::ENDPOINT), $dispatcher, $user, array(
-            'classmap' => array(
+        parent::__construct($user->resolveWsdl(self::ENDPOINT), $dispatcher, $user, [
+            'classmap' => [
                 'MobileAppAdActionEnum' => 'Biplane\YandexDirect\Api\V5\Contract\MobileAppAdActionEnum',
                 'ExceptionNotification' => 'Biplane\YandexDirect\Api\V5\Contract\ExceptionNotification',
                 'LimitOffset' => 'Biplane\YandexDirect\Api\V5\Contract\LimitOffset',
@@ -41,6 +41,8 @@ class AdGroups extends V5SoapClient
                 'AgeRangeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AgeRangeEnum',
                 'GenderEnum' => 'Biplane\YandexDirect\Api\V5\Contract\GenderEnum',
                 'MobileOperatingSystemTypeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\MobileOperatingSystemTypeEnum',
+                'LangEnum' => 'Biplane\YandexDirect\Api\V5\Contract\LangEnum',
+                'RepresentativeRoleEnum' => 'Biplane\YandexDirect\Api\V5\Contract\RepresentativeRoleEnum',
                 'OperationEnum' => 'Biplane\YandexDirect\Api\V5\Contract\OperationEnum',
                 'Statistics' => 'Biplane\YandexDirect\Api\V5\Contract\Statistics',
                 'IdsCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\IdsCriteria',
@@ -49,15 +51,20 @@ class AdGroups extends V5SoapClient
                 'ApiExceptionMessage' => 'Biplane\YandexDirect\Api\V5\Contract\ApiExceptionMessage',
                 'ActionResultBase' => 'Biplane\YandexDirect\Api\V5\Contract\ActionResultBase',
                 'ActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\ActionResult',
+                'SetBidsActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\SetBidsActionResult',
                 'MultiIdsActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\MultiIdsActionResult',
                 'ExtensionModeration' => 'Biplane\YandexDirect\Api\V5\Contract\ExtensionModeration',
+                'SortOrderEnum' => 'Biplane\YandexDirect\Api\V5\Contract\SortOrderEnum',
                 'AdGroupFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AdGroupFieldEnum',
                 'MobileAppAdGroupFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\MobileAppAdGroupFieldEnum',
                 'DynamicTextAdGroupFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\DynamicTextAdGroupFieldEnum',
+                'DynamicTextFeedAdGroupFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\DynamicTextFeedAdGroupFieldEnum',
                 'AdGroupTypesEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AdGroupTypesEnum',
+                'AdGroupSubtypeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AdGroupSubtypeEnum',
                 'AdGroupStatusSelectionEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AdGroupStatusSelectionEnum',
                 'AdGroupAppIconStatusSelectionEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AdGroupAppIconStatusSelectionEnum',
-                'DomainUrlProcessingStatusEnum' => 'Biplane\YandexDirect\Api\V5\Contract\DomainUrlProcessingStatusEnum',
+                'SourceProcessingStatusEnum' => 'Biplane\YandexDirect\Api\V5\Contract\SourceProcessingStatusEnum',
+                'SourceTypeGetEnum' => 'Biplane\YandexDirect\Api\V5\Contract\SourceTypeGetEnum',
                 'AdGroupsSelectionCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\AdGroupsSelectionCriteria',
                 'AdGroupBase' => 'Biplane\YandexDirect\Api\V5\Contract\AdGroupBase',
                 'AdGroupAddItem' => 'Biplane\YandexDirect\Api\V5\Contract\AdGroupAddItem',
@@ -70,6 +77,8 @@ class AdGroups extends V5SoapClient
                 'MobileAppAdGroupAdd' => 'Biplane\YandexDirect\Api\V5\Contract\MobileAppAdGroupAdd',
                 'DynamicTextAdGroup' => 'Biplane\YandexDirect\Api\V5\Contract\DynamicTextAdGroup',
                 'DynamicTextAdGroupGet' => 'Biplane\YandexDirect\Api\V5\Contract\DynamicTextAdGroupGet',
+                'DynamicSourceGet' => 'Biplane\YandexDirect\Api\V5\Contract\DynamicSourceGet',
+                'DynamicTextFeedAdGroupGet' => 'Biplane\YandexDirect\Api\V5\Contract\DynamicTextFeedAdGroupGet',
                 'AdGroupUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\AdGroupUpdateItem',
                 'GetRequest' => 'Biplane\YandexDirect\Api\V5\Contract\GetAdGroupsRequest',
                 'GetResponse' => 'Biplane\YandexDirect\Api\V5\Contract\GetAdGroupsResponse',
@@ -78,9 +87,9 @@ class AdGroups extends V5SoapClient
                 'UpdateRequest' => 'Biplane\YandexDirect\Api\V5\Contract\UpdateAdGroupsRequest',
                 'UpdateResponse' => 'Biplane\YandexDirect\Api\V5\Contract\UpdateAdGroupsResponse',
                 'DeleteRequest' => 'Biplane\YandexDirect\Api\V5\Contract\DeleteAdGroupsRequest',
-                'DeleteResponse' => 'Biplane\YandexDirect\Api\V5\Contract\DeleteAdGroupsResponse'
-            )
-        ));
+                'DeleteResponse' => 'Biplane\YandexDirect\Api\V5\Contract\DeleteAdGroupsResponse',
+            ]
+        ]);
     }
 
     /**
@@ -91,7 +100,7 @@ class AdGroups extends V5SoapClient
      */
     public function get(Contract\GetAdGroupsRequest $parameters)
     {
-        return $this->invoke('get', array($parameters));
+        return $this->invoke('get', [$parameters]);
     }
 
     /**
@@ -102,7 +111,7 @@ class AdGroups extends V5SoapClient
      */
     public function add(Contract\AddAdGroupsRequest $parameters)
     {
-        return $this->invoke('add', array($parameters));
+        return $this->invoke('add', [$parameters]);
     }
 
     /**
@@ -113,7 +122,7 @@ class AdGroups extends V5SoapClient
      */
     public function update(Contract\UpdateAdGroupsRequest $parameters)
     {
-        return $this->invoke('update', array($parameters));
+        return $this->invoke('update', [$parameters]);
     }
 
     /**
@@ -124,7 +133,7 @@ class AdGroups extends V5SoapClient
      */
     public function delete(Contract\DeleteAdGroupsRequest $parameters)
     {
-        return $this->invoke('delete', array($parameters));
+        return $this->invoke('delete', [$parameters]);
     }
 
 

@@ -10,14 +10,12 @@ class CampaignChangesItem
 
     protected $CampaignId = null;
 
-    protected $ChangesIn = array(
-        
-    );
+    protected $ChangesIn = [];
 
     /**
      * Creates a new instance of CampaignChangesItem.
      *
-     * @return CampaignChangesItem
+     * @return self
      */
     public static function create()
     {
@@ -38,7 +36,7 @@ class CampaignChangesItem
      * Sets CampaignId.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setCampaignId($value)
     {
@@ -50,7 +48,8 @@ class CampaignChangesItem
     /**
      * Gets ChangesIn.
      *
-     * @return CampaignChangesInEnum[]
+     * @return string[]
+     * @see CampaignChangesInEnum
      */
     public function getChangesIn()
     {
@@ -60,8 +59,9 @@ class CampaignChangesItem
     /**
      * Sets ChangesIn.
      *
-     * @param CampaignChangesInEnum[] $value
-     * @return $this
+     * @param string[] $value
+     * @return self
+     * @see CampaignChangesInEnum
      */
     public function setChangesIn(array $value)
     {

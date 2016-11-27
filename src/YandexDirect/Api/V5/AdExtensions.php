@@ -2,14 +2,14 @@
 
 namespace Biplane\YandexDirect\Api\V5;
 
-use Biplane\YandexDirect\Api\V5SoapClient;
+use Biplane\YandexDirect\Api\SoapClientV5;
 use Biplane\YandexDirect\User;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**
  * Auto-generated code.
  */
-class AdExtensions extends V5SoapClient
+class AdExtensions extends SoapClientV5
 {
 
     const ENDPOINT = 'https://api.direct.yandex.com/v5/adextensions?wsdl';
@@ -22,8 +22,8 @@ class AdExtensions extends V5SoapClient
      */
     public function __construct(EventDispatcherInterface $dispatcher, User $user)
     {
-        parent::__construct($user->resolveWsdl(self::ENDPOINT), $dispatcher, $user, array(
-            'classmap' => array(
+        parent::__construct($user->resolveWsdl(self::ENDPOINT), $dispatcher, $user, [
+            'classmap' => [
                 'MobileAppAdActionEnum' => 'Biplane\YandexDirect\Api\V5\Contract\MobileAppAdActionEnum',
                 'ExceptionNotification' => 'Biplane\YandexDirect\Api\V5\Contract\ExceptionNotification',
                 'LimitOffset' => 'Biplane\YandexDirect\Api\V5\Contract\LimitOffset',
@@ -41,6 +41,8 @@ class AdExtensions extends V5SoapClient
                 'AgeRangeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AgeRangeEnum',
                 'GenderEnum' => 'Biplane\YandexDirect\Api\V5\Contract\GenderEnum',
                 'MobileOperatingSystemTypeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\MobileOperatingSystemTypeEnum',
+                'LangEnum' => 'Biplane\YandexDirect\Api\V5\Contract\LangEnum',
+                'RepresentativeRoleEnum' => 'Biplane\YandexDirect\Api\V5\Contract\RepresentativeRoleEnum',
                 'OperationEnum' => 'Biplane\YandexDirect\Api\V5\Contract\OperationEnum',
                 'Statistics' => 'Biplane\YandexDirect\Api\V5\Contract\Statistics',
                 'IdsCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\IdsCriteria',
@@ -49,8 +51,10 @@ class AdExtensions extends V5SoapClient
                 'ApiExceptionMessage' => 'Biplane\YandexDirect\Api\V5\Contract\ApiExceptionMessage',
                 'ActionResultBase' => 'Biplane\YandexDirect\Api\V5\Contract\ActionResultBase',
                 'ActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\ActionResult',
+                'SetBidsActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\SetBidsActionResult',
                 'MultiIdsActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\MultiIdsActionResult',
                 'ExtensionModeration' => 'Biplane\YandexDirect\Api\V5\Contract\ExtensionModeration',
+                'SortOrderEnum' => 'Biplane\YandexDirect\Api\V5\Contract\SortOrderEnum',
                 'AdExtensionTypeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AdExtensionTypeEnum',
                 'AdExtensionStateSelectionEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AdExtensionStateSelectionEnum',
                 'AdExtensionStatusSelectionEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AdExtensionStatusSelectionEnum',
@@ -69,9 +73,9 @@ class AdExtensions extends V5SoapClient
                 'AddRequest' => 'Biplane\YandexDirect\Api\V5\Contract\AddAdExtensionsRequest',
                 'AddResponse' => 'Biplane\YandexDirect\Api\V5\Contract\AddAdExtensionsResponse',
                 'DeleteRequest' => 'Biplane\YandexDirect\Api\V5\Contract\DeleteAdExtensionsRequest',
-                'DeleteResponse' => 'Biplane\YandexDirect\Api\V5\Contract\DeleteAdExtensionsResponse'
-            )
-        ));
+                'DeleteResponse' => 'Biplane\YandexDirect\Api\V5\Contract\DeleteAdExtensionsResponse',
+            ]
+        ]);
     }
 
     /**
@@ -82,7 +86,7 @@ class AdExtensions extends V5SoapClient
      */
     public function add(Contract\AddAdExtensionsRequest $parameters)
     {
-        return $this->invoke('add', array($parameters));
+        return $this->invoke('add', [$parameters]);
     }
 
     /**
@@ -93,7 +97,7 @@ class AdExtensions extends V5SoapClient
      */
     public function get(Contract\GetAdExtensionsRequest $parameters)
     {
-        return $this->invoke('get', array($parameters));
+        return $this->invoke('get', [$parameters]);
     }
 
     /**
@@ -104,7 +108,7 @@ class AdExtensions extends V5SoapClient
      */
     public function delete(Contract\DeleteAdExtensionsRequest $parameters)
     {
-        return $this->invoke('delete', array($parameters));
+        return $this->invoke('delete', [$parameters]);
     }
 
 

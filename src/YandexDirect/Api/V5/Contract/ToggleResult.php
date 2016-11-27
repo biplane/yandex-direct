@@ -17,7 +17,7 @@ class ToggleResult extends ActionResultBase
     /**
      * Creates a new instance of ToggleResult.
      *
-     * @return ToggleResult
+     * @return self
      */
     public static function create()
     {
@@ -38,7 +38,7 @@ class ToggleResult extends ActionResultBase
      * Sets CampaignId.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setCampaignId($value = null)
     {
@@ -61,7 +61,7 @@ class ToggleResult extends ActionResultBase
      * Sets AdGroupId.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setAdGroupId($value = null)
     {
@@ -73,7 +73,8 @@ class ToggleResult extends ActionResultBase
     /**
      * Gets Type.
      *
-     * @return BidModifierToggleTypeEnum|null
+     * @return string|null
+     * @see BidModifierToggleTypeEnum
      */
     public function getType()
     {
@@ -83,8 +84,9 @@ class ToggleResult extends ActionResultBase
     /**
      * Sets Type.
      *
-     * @param BidModifierToggleTypeEnum|null $value
-     * @return $this
+     * @param string|null $value
+     * @return self
+     * @see BidModifierToggleTypeEnum
      */
     public function setType($value = null)
     {

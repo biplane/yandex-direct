@@ -13,7 +13,7 @@ class ActionResult extends ActionResultBase
     /**
      * Creates a new instance of ActionResult.
      *
-     * @return ActionResult
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class ActionResult extends ActionResultBase
      * Sets Id.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setId($value = null)
     {

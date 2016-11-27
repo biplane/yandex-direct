@@ -24,6 +24,8 @@ class CurrencyEnum
 
     const USD = 'USD';
 
+    const BYN = 'BYN';
+
 
 }
 

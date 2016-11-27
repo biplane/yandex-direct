@@ -25,7 +25,7 @@ class TextAdGet extends TextAdGetBase
     /**
      * Creates a new instance of TextAdGet.
      *
-     * @return TextAdGet
+     * @return self
      */
     public static function create()
     {
@@ -46,7 +46,7 @@ class TextAdGet extends TextAdGetBase
      * Sets Text.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setText($value = null)
     {
@@ -69,7 +69,7 @@ class TextAdGet extends TextAdGetBase
      * Sets Title.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setTitle($value = null)
     {
@@ -92,7 +92,7 @@ class TextAdGet extends TextAdGetBase
      * Sets Href.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setHref($value = null)
     {
@@ -104,7 +104,8 @@ class TextAdGet extends TextAdGetBase
     /**
      * Gets Mobile.
      *
-     * @return YesNoEnum|null
+     * @return string|null
+     * @see YesNoEnum
      */
     public function getMobile()
     {
@@ -114,8 +115,9 @@ class TextAdGet extends TextAdGetBase
     /**
      * Sets Mobile.
      *
-     * @param YesNoEnum|null $value
-     * @return $this
+     * @param string|null $value
+     * @return self
+     * @see YesNoEnum
      */
     public function setMobile($value = null)
     {
@@ -138,7 +140,7 @@ class TextAdGet extends TextAdGetBase
      * Sets DisplayDomain.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setDisplayDomain($value = null)
     {
@@ -161,7 +163,7 @@ class TextAdGet extends TextAdGetBase
      * Sets DisplayUrlPath.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setDisplayUrlPath($value = null)
     {
@@ -184,7 +186,7 @@ class TextAdGet extends TextAdGetBase
      * Sets DisplayUrlPathModeration.
      *
      * @param ExtensionModeration|null $value
-     * @return $this
+     * @return self
      */
     public function setDisplayUrlPathModeration(ExtensionModeration $value = null)
     {

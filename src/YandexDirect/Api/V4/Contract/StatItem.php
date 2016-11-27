@@ -41,7 +41,7 @@ class StatItem
     /**
      * Creates a new instance of StatItem.
      *
-     * @return StatItem
+     * @return self
      */
     public static function create()
     {
@@ -62,7 +62,7 @@ class StatItem
      * Sets CampaignID.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setCampaignID($value)
     {
@@ -85,7 +85,7 @@ class StatItem
      * Sets StatDate.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setStatDate($value)
     {
@@ -108,7 +108,7 @@ class StatItem
      * Sets SumSearch.
      *
      * @param float|null $value
-     * @return $this
+     * @return self
      */
     public function setSumSearch($value = null)
     {
@@ -131,7 +131,7 @@ class StatItem
      * Sets SumContext.
      *
      * @param float|null $value
-     * @return $this
+     * @return self
      */
     public function setSumContext($value = null)
     {
@@ -154,7 +154,7 @@ class StatItem
      * Sets ShowsSearch.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setShowsSearch($value = null)
     {
@@ -177,7 +177,7 @@ class StatItem
      * Sets ShowsContext.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setShowsContext($value = null)
     {
@@ -200,7 +200,7 @@ class StatItem
      * Sets ClicksSearch.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setClicksSearch($value = null)
     {
@@ -223,7 +223,7 @@ class StatItem
      * Sets ClicksContext.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setClicksContext($value = null)
     {
@@ -246,7 +246,7 @@ class StatItem
      * Sets SessionDepthSearch.
      *
      * @param float|null $value
-     * @return $this
+     * @return self
      */
     public function setSessionDepthSearch($value = null)
     {
@@ -269,7 +269,7 @@ class StatItem
      * Sets SessionDepthContext.
      *
      * @param float|null $value
-     * @return $this
+     * @return self
      */
     public function setSessionDepthContext($value = null)
     {
@@ -292,7 +292,7 @@ class StatItem
      * Sets GoalConversionSearch.
      *
      * @param float|null $value
-     * @return $this
+     * @return self
      */
     public function setGoalConversionSearch($value = null)
     {
@@ -315,7 +315,7 @@ class StatItem
      * Sets GoalConversionContext.
      *
      * @param float|null $value
-     * @return $this
+     * @return self
      */
     public function setGoalConversionContext($value = null)
     {
@@ -338,7 +338,7 @@ class StatItem
      * Sets GoalCostSearch.
      *
      * @param float|null $value
-     * @return $this
+     * @return self
      */
     public function setGoalCostSearch($value = null)
     {
@@ -361,7 +361,7 @@ class StatItem
      * Sets GoalCostContext.
      *
      * @param float|null $value
-     * @return $this
+     * @return self
      */
     public function setGoalCostContext($value = null)
     {
@@ -384,7 +384,7 @@ class StatItem
      * Sets Currency.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setCurrency($value = null)
     {

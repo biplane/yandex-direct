@@ -15,7 +15,7 @@ class KeywordProductivity
     /**
      * Creates a new instance of KeywordProductivity.
      *
-     * @return KeywordProductivity
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +36,7 @@ class KeywordProductivity
      * Sets Value.
      *
      * @param float|null $value
-     * @return $this
+     * @return self
      */
     public function setValue($value = null)
     {
@@ -59,7 +59,7 @@ class KeywordProductivity
      * Sets References.
      *
      * @param int[]|null $value
-     * @return $this
+     * @return self
      */
     public function setReferences(array $value = null)
     {

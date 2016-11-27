@@ -13,7 +13,7 @@ class ContextCoverage
     /**
      * Creates a new instance of ContextCoverage.
      *
-     * @return ContextCoverage
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class ContextCoverage
      * Sets Items.
      *
      * @param ContextCoverageItem[]|null $value
-     * @return $this
+     * @return self
      */
     public function setItems(array $value = null)
     {

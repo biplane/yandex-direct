@@ -24,14 +24,12 @@ class BidSetAutoItem
 
     protected $ContextCoverage = null;
 
-    protected $Scope = array(
-
-    );
+    protected $Scope = [];
 
     /**
      * Creates a new instance of BidSetAutoItem.
      *
-     * @return BidSetAutoItem
+     * @return self
      */
     public static function create()
     {
@@ -52,7 +50,7 @@ class BidSetAutoItem
      * Sets CampaignId.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setCampaignId($value = null)
     {
@@ -75,7 +73,7 @@ class BidSetAutoItem
      * Sets AdGroupId.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setAdGroupId($value = null)
     {
@@ -98,7 +96,7 @@ class BidSetAutoItem
      * Sets KeywordId.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setKeywordId($value = null)
     {
@@ -121,7 +119,7 @@ class BidSetAutoItem
      * Sets MaxBid.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setMaxBid($value = null)
     {
@@ -133,7 +131,8 @@ class BidSetAutoItem
     /**
      * Gets Position.
      *
-     * @return PositionEnum|null
+     * @return string|null
+     * @see PositionEnum
      */
     public function getPosition()
     {
@@ -143,8 +142,9 @@ class BidSetAutoItem
     /**
      * Sets Position.
      *
-     * @param PositionEnum|null $value
-     * @return $this
+     * @param string|null $value
+     * @return self
+     * @see PositionEnum
      */
     public function setPosition($value = null)
     {
@@ -167,7 +167,7 @@ class BidSetAutoItem
      * Sets IncreasePercent.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setIncreasePercent($value = null)
     {
@@ -179,7 +179,8 @@ class BidSetAutoItem
     /**
      * Gets CalculateBy.
      *
-     * @return CalculateByEnum|null
+     * @return string|null
+     * @see CalculateByEnum
      */
     public function getCalculateBy()
     {
@@ -189,8 +190,9 @@ class BidSetAutoItem
     /**
      * Sets CalculateBy.
      *
-     * @param CalculateByEnum|null $value
-     * @return $this
+     * @param string|null $value
+     * @return self
+     * @see CalculateByEnum
      */
     public function setCalculateBy($value = null)
     {
@@ -213,7 +215,7 @@ class BidSetAutoItem
      * Sets ContextCoverage.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setContextCoverage($value = null)
     {
@@ -225,7 +227,8 @@ class BidSetAutoItem
     /**
      * Gets Scope.
      *
-     * @return ScopeEnum[]
+     * @return string[]
+     * @see ScopeEnum
      */
     public function getScope()
     {
@@ -235,8 +238,9 @@ class BidSetAutoItem
     /**
      * Sets Scope.
      *
-     * @param ScopeEnum[] $value
-     * @return $this
+     * @param string[] $value
+     * @return self
+     * @see ScopeEnum
      */
     public function setScope(array $value)
     {

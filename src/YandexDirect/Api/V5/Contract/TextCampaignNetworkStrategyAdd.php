@@ -15,7 +15,7 @@ class TextCampaignNetworkStrategyAdd extends TextCampaignStrategyAddBase
     /**
      * Creates a new instance of TextCampaignNetworkStrategyAdd.
      *
-     * @return TextCampaignNetworkStrategyAdd
+     * @return self
      */
     public static function create()
     {
@@ -25,7 +25,8 @@ class TextCampaignNetworkStrategyAdd extends TextCampaignStrategyAddBase
     /**
      * Gets BiddingStrategyType.
      *
-     * @return TextCampaignNetworkStrategyTypeEnum
+     * @return string
+     * @see TextCampaignNetworkStrategyTypeEnum
      */
     public function getBiddingStrategyType()
     {
@@ -35,8 +36,9 @@ class TextCampaignNetworkStrategyAdd extends TextCampaignStrategyAddBase
     /**
      * Sets BiddingStrategyType.
      *
-     * @param TextCampaignNetworkStrategyTypeEnum $value
-     * @return $this
+     * @param string $value
+     * @return self
+     * @see TextCampaignNetworkStrategyTypeEnum
      */
     public function setBiddingStrategyType($value)
     {
@@ -59,7 +61,7 @@ class TextCampaignNetworkStrategyAdd extends TextCampaignStrategyAddBase
      * Sets NetworkDefault.
      *
      * @param StrategyNetworkDefaultAdd|null $value
-     * @return $this
+     * @return self
      */
     public function setNetworkDefault(StrategyNetworkDefaultAdd $value = null)
     {

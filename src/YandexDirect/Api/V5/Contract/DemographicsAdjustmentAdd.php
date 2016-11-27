@@ -17,7 +17,7 @@ class DemographicsAdjustmentAdd
     /**
      * Creates a new instance of DemographicsAdjustmentAdd.
      *
-     * @return DemographicsAdjustmentAdd
+     * @return self
      */
     public static function create()
     {
@@ -27,7 +27,8 @@ class DemographicsAdjustmentAdd
     /**
      * Gets Gender.
      *
-     * @return GenderEnum|null
+     * @return string|null
+     * @see GenderEnum
      */
     public function getGender()
     {
@@ -37,8 +38,9 @@ class DemographicsAdjustmentAdd
     /**
      * Sets Gender.
      *
-     * @param GenderEnum|null $value
-     * @return $this
+     * @param string|null $value
+     * @return self
+     * @see GenderEnum
      */
     public function setGender($value = null)
     {
@@ -50,7 +52,8 @@ class DemographicsAdjustmentAdd
     /**
      * Gets Age.
      *
-     * @return AgeRangeEnum|null
+     * @return string|null
+     * @see AgeRangeEnum
      */
     public function getAge()
     {
@@ -60,8 +63,9 @@ class DemographicsAdjustmentAdd
     /**
      * Sets Age.
      *
-     * @param AgeRangeEnum|null $value
-     * @return $this
+     * @param string|null $value
+     * @return self
+     * @see AgeRangeEnum
      */
     public function setAge($value = null)
     {
@@ -84,7 +88,7 @@ class DemographicsAdjustmentAdd
      * Sets BidModifier.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setBidModifier($value)
     {

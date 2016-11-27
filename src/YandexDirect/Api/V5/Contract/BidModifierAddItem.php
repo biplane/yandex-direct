@@ -17,7 +17,7 @@ class BidModifierAddItem extends BidModifierAddBase
     /**
      * Creates a new instance of BidModifierAddItem.
      *
-     * @return BidModifierAddItem
+     * @return self
      */
     public static function create()
     {
@@ -38,7 +38,7 @@ class BidModifierAddItem extends BidModifierAddBase
      * Sets MobileAdjustment.
      *
      * @param MobileAdjustmentAdd|null $value
-     * @return $this
+     * @return self
      */
     public function setMobileAdjustment(MobileAdjustmentAdd $value = null)
     {
@@ -61,7 +61,7 @@ class BidModifierAddItem extends BidModifierAddBase
      * Sets DemographicsAdjustments.
      *
      * @param DemographicsAdjustmentAdd[]|null $value
-     * @return $this
+     * @return self
      */
     public function setDemographicsAdjustments(array $value = null)
     {
@@ -84,7 +84,7 @@ class BidModifierAddItem extends BidModifierAddBase
      * Sets RetargetingAdjustments.
      *
      * @param RetargetingAdjustmentAdd[]|null $value
-     * @return $this
+     * @return self
      */
     public function setRetargetingAdjustments(array $value = null)
     {

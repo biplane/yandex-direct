@@ -15,7 +15,7 @@ class CampaignAssistant
     /**
      * Creates a new instance of CampaignAssistant.
      *
-     * @return CampaignAssistant
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +36,7 @@ class CampaignAssistant
      * Sets Manager.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setManager($value = null)
     {
@@ -59,7 +59,7 @@ class CampaignAssistant
      * Sets Agency.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setAgency($value = null)
     {

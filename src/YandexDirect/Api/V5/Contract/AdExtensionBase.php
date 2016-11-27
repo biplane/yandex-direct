@@ -21,7 +21,7 @@ class AdExtensionBase
     /**
      * Creates a new instance of AdExtensionBase.
      *
-     * @return AdExtensionBase
+     * @return self
      */
     public static function create()
     {
@@ -31,7 +31,8 @@ class AdExtensionBase
     /**
      * Gets Type.
      *
-     * @return AdExtensionTypeEnum|null
+     * @return string|null
+     * @see AdExtensionTypeEnum
      */
     public function getType()
     {
@@ -41,8 +42,9 @@ class AdExtensionBase
     /**
      * Sets Type.
      *
-     * @param AdExtensionTypeEnum|null $value
-     * @return $this
+     * @param string|null $value
+     * @return self
+     * @see AdExtensionTypeEnum
      */
     public function setType($value = null)
     {
@@ -65,7 +67,7 @@ class AdExtensionBase
      * Sets Callout.
      *
      * @param Callout|null $value
-     * @return $this
+     * @return self
      */
     public function setCallout(Callout $value = null)
     {
@@ -77,7 +79,8 @@ class AdExtensionBase
     /**
      * Gets State.
      *
-     * @return StateEnum|null
+     * @return string|null
+     * @see StateEnum
      */
     public function getState()
     {
@@ -87,8 +90,9 @@ class AdExtensionBase
     /**
      * Sets State.
      *
-     * @param StateEnum|null $value
-     * @return $this
+     * @param string|null $value
+     * @return self
+     * @see StateEnum
      */
     public function setState($value = null)
     {
@@ -100,7 +104,8 @@ class AdExtensionBase
     /**
      * Gets Status.
      *
-     * @return StatusEnum|null
+     * @return string|null
+     * @see StatusEnum
      */
     public function getStatus()
     {
@@ -110,8 +115,9 @@ class AdExtensionBase
     /**
      * Sets Status.
      *
-     * @param StatusEnum|null $value
-     * @return $this
+     * @param string|null $value
+     * @return self
+     * @see StatusEnum
      */
     public function setStatus($value = null)
     {
@@ -134,7 +140,7 @@ class AdExtensionBase
      * Sets StatusClarification.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setStatusClarification($value = null)
     {

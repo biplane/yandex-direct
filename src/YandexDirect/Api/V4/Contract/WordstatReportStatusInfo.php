@@ -15,7 +15,7 @@ class WordstatReportStatusInfo
     /**
      * Creates a new instance of WordstatReportStatusInfo.
      *
-     * @return WordstatReportStatusInfo
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +36,7 @@ class WordstatReportStatusInfo
      * Sets ReportID.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setReportID($value)
     {
@@ -59,7 +59,7 @@ class WordstatReportStatusInfo
      * Sets StatusReport.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setStatusReport($value)
     {

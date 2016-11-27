@@ -17,7 +17,7 @@ class ReportInfo
     /**
      * Creates a new instance of ReportInfo.
      *
-     * @return ReportInfo
+     * @return self
      */
     public static function create()
     {
@@ -38,7 +38,7 @@ class ReportInfo
      * Sets ReportID.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setReportID($value)
     {
@@ -61,7 +61,7 @@ class ReportInfo
      * Sets Url.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setUrl($value)
     {
@@ -84,7 +84,7 @@ class ReportInfo
      * Sets StatusReport.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setStatusReport($value)
     {

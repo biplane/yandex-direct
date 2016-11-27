@@ -13,7 +13,7 @@ class DeleteAdsRequest
     /**
      * Creates a new instance of DeleteAdsRequest.
      *
-     * @return DeleteAdsRequest
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class DeleteAdsRequest
      * Sets SelectionCriteria.
      *
      * @param IdsCriteria $value
-     * @return $this
+     * @return self
      */
     public function setSelectionCriteria(IdsCriteria $value)
     {

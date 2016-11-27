@@ -13,7 +13,7 @@ class TimeTargeting extends TimeTargetingBase
     /**
      * Creates a new instance of TimeTargeting.
      *
-     * @return TimeTargeting
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class TimeTargeting extends TimeTargetingBase
      * Sets HolidaysSchedule.
      *
      * @param TimeTargetingOnPublicHolidays|null $value
-     * @return $this
+     * @return self
      */
     public function setHolidaysSchedule(TimeTargetingOnPublicHolidays $value = null)
     {

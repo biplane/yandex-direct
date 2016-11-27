@@ -15,7 +15,7 @@ class BidModifierSetItem
     /**
      * Creates a new instance of BidModifierSetItem.
      *
-     * @return BidModifierSetItem
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +36,7 @@ class BidModifierSetItem
      * Sets Id.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setId($value)
     {
@@ -59,7 +59,7 @@ class BidModifierSetItem
      * Sets BidModifier.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setBidModifier($value)
     {

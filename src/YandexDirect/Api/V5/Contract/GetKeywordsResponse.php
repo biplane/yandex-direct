@@ -13,7 +13,7 @@ class GetKeywordsResponse extends GetResponseGeneral
     /**
      * Creates a new instance of GetKeywordsResponse.
      *
-     * @return GetKeywordsResponse
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class GetKeywordsResponse extends GetResponseGeneral
      * Sets Keywords.
      *
      * @param KeywordGetItem[]|null $value
-     * @return $this
+     * @return self
      */
     public function setKeywords(array $value = null)
     {

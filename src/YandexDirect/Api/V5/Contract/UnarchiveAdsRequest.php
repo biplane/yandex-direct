@@ -13,7 +13,7 @@ class UnarchiveAdsRequest
     /**
      * Creates a new instance of UnarchiveAdsRequest.
      *
-     * @return UnarchiveAdsRequest
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class UnarchiveAdsRequest
      * Sets SelectionCriteria.
      *
      * @param IdsCriteria $value
-     * @return $this
+     * @return self
      */
     public function setSelectionCriteria(IdsCriteria $value)
     {

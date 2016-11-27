@@ -15,7 +15,7 @@ class DynamicTextCampaignUpdateItem extends DynamicTextCampaignBase
     /**
      * Creates a new instance of DynamicTextCampaignUpdateItem.
      *
-     * @return DynamicTextCampaignUpdateItem
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +36,7 @@ class DynamicTextCampaignUpdateItem extends DynamicTextCampaignBase
      * Sets BiddingStrategy.
      *
      * @param DynamicTextCampaignStrategy|null $value
-     * @return $this
+     * @return self
      */
     public function setBiddingStrategy(DynamicTextCampaignStrategy $value = null)
     {
@@ -59,7 +59,7 @@ class DynamicTextCampaignUpdateItem extends DynamicTextCampaignBase
      * Sets Settings.
      *
      * @param DynamicTextCampaignSetting[]|null $value
-     * @return $this
+     * @return self
      */
     public function setSettings(array $value = null)
     {

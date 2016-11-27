@@ -17,7 +17,7 @@ class BidBase
     /**
      * Creates a new instance of BidBase.
      *
-     * @return BidBase
+     * @return self
      */
     public static function create()
     {
@@ -38,7 +38,7 @@ class BidBase
      * Sets CampaignId.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setCampaignId($value = null)
     {
@@ -61,7 +61,7 @@ class BidBase
      * Sets AdGroupId.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setAdGroupId($value = null)
     {
@@ -84,7 +84,7 @@ class BidBase
      * Sets KeywordId.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setKeywordId($value = null)
     {

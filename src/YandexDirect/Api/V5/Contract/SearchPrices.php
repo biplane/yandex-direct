@@ -15,7 +15,7 @@ class SearchPrices
     /**
      * Creates a new instance of SearchPrices.
      *
-     * @return SearchPrices
+     * @return self
      */
     public static function create()
     {
@@ -25,7 +25,8 @@ class SearchPrices
     /**
      * Gets Position.
      *
-     * @return PositionEnum|null
+     * @return string|null
+     * @see PositionEnum
      */
     public function getPosition()
     {
@@ -35,8 +36,9 @@ class SearchPrices
     /**
      * Sets Position.
      *
-     * @param PositionEnum|null $value
-     * @return $this
+     * @param string|null $value
+     * @return self
+     * @see PositionEnum
      */
     public function setPosition($value = null)
     {
@@ -59,7 +61,7 @@ class SearchPrices
      * Sets Price.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setPrice($value = null)
     {

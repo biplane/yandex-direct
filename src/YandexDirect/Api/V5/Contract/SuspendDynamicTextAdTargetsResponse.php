@@ -8,14 +8,12 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class SuspendDynamicTextAdTargetsResponse
 {
 
-    protected $SuspendResults = array(
-        
-    );
+    protected $SuspendResults = [];
 
     /**
      * Creates a new instance of SuspendDynamicTextAdTargetsResponse.
      *
-     * @return SuspendDynamicTextAdTargetsResponse
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +34,7 @@ class SuspendDynamicTextAdTargetsResponse
      * Sets SuspendResults.
      *
      * @param ActionResult[] $value
-     * @return $this
+     * @return self
      */
     public function setSuspendResults(array $value)
     {

@@ -27,7 +27,7 @@ class PhrasePriceInfo
     /**
      * Creates a new instance of PhrasePriceInfo.
      *
-     * @return PhrasePriceInfo
+     * @return self
      */
     public static function create()
     {
@@ -48,7 +48,7 @@ class PhrasePriceInfo
      * Sets PhraseID.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setPhraseID($value)
     {
@@ -71,7 +71,7 @@ class PhrasePriceInfo
      * Sets BannerID.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setBannerID($value = null)
     {
@@ -94,7 +94,7 @@ class PhrasePriceInfo
      * Sets CampaignID.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setCampaignID($value = null)
     {
@@ -117,7 +117,7 @@ class PhrasePriceInfo
      * Sets Price.
      *
      * @param float|null $value
-     * @return $this
+     * @return self
      */
     public function setPrice($value = null)
     {
@@ -140,7 +140,7 @@ class PhrasePriceInfo
      * Sets AutoBroker.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setAutoBroker($value = null)
     {
@@ -163,7 +163,7 @@ class PhrasePriceInfo
      * Sets AutoBudgetPriority.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setAutoBudgetPriority($value = null)
     {
@@ -186,7 +186,7 @@ class PhrasePriceInfo
      * Sets ContextPrice.
      *
      * @param float|null $value
-     * @return $this
+     * @return self
      */
     public function setContextPrice($value = null)
     {
@@ -209,7 +209,7 @@ class PhrasePriceInfo
      * Sets Currency.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setCurrency($value = null)
     {

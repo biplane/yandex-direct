@@ -19,7 +19,7 @@ class TextCampaignAddItem
     /**
      * Creates a new instance of TextCampaignAddItem.
      *
-     * @return TextCampaignAddItem
+     * @return self
      */
     public static function create()
     {
@@ -40,7 +40,7 @@ class TextCampaignAddItem
      * Sets BiddingStrategy.
      *
      * @param TextCampaignStrategyAdd $value
-     * @return $this
+     * @return self
      */
     public function setBiddingStrategy(TextCampaignStrategyAdd $value)
     {
@@ -63,7 +63,7 @@ class TextCampaignAddItem
      * Sets Settings.
      *
      * @param TextCampaignSetting[]|null $value
-     * @return $this
+     * @return self
      */
     public function setSettings(array $value = null)
     {
@@ -75,7 +75,7 @@ class TextCampaignAddItem
     /**
      * Gets CounterIds.
      *
-     * @return int[]|null
+     * @return struct[]|null
      */
     public function getCounterIds()
     {
@@ -85,8 +85,8 @@ class TextCampaignAddItem
     /**
      * Sets CounterIds.
      *
-     * @param int[]|null $value
-     * @return $this
+     * @param struct[]|null $value
+     * @return self
      */
     public function setCounterIds(array $value = null)
     {
@@ -109,7 +109,7 @@ class TextCampaignAddItem
      * Sets RelevantKeywords.
      *
      * @param RelevantKeywordsSetting|null $value
-     * @return $this
+     * @return self
      */
     public function setRelevantKeywords(RelevantKeywordsSetting $value = null)
     {

@@ -23,7 +23,7 @@ class AccountActionResult
     /**
      * Creates a new instance of AccountActionResult.
      *
-     * @return AccountActionResult
+     * @return self
      */
     public static function create()
     {
@@ -44,7 +44,7 @@ class AccountActionResult
      * Sets Errors.
      *
      * @param Error[]|null $value
-     * @return $this
+     * @return self
      */
     public function setErrors(array $value = null)
     {
@@ -67,7 +67,7 @@ class AccountActionResult
      * Sets AccountID.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setAccountID($value = null)
     {
@@ -90,7 +90,7 @@ class AccountActionResult
      * Sets Login.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setLogin($value = null)
     {
@@ -113,7 +113,7 @@ class AccountActionResult
      * Sets URL.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setURL($value = null)
     {
@@ -136,7 +136,7 @@ class AccountActionResult
      * Sets PurchaseToken.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setPurchaseToken($value = null)
     {
@@ -159,7 +159,7 @@ class AccountActionResult
      * Sets Status.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setStatus($value = null)
     {

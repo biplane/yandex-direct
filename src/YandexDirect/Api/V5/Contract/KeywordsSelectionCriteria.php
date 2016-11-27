@@ -18,10 +18,12 @@ class KeywordsSelectionCriteria
 
     protected $Statuses = null;
 
+    protected $ModifiedSince = null;
+
     /**
      * Creates a new instance of KeywordsSelectionCriteria.
      *
-     * @return KeywordsSelectionCriteria
+     * @return self
      */
     public static function create()
     {
@@ -42,7 +44,7 @@ class KeywordsSelectionCriteria
      * Sets Ids.
      *
      * @param int[]|null $value
-     * @return $this
+     * @return self
      */
     public function setIds(array $value = null)
     {
@@ -65,7 +67,7 @@ class KeywordsSelectionCriteria
      * Sets AdGroupIds.
      *
      * @param int[]|null $value
-     * @return $this
+     * @return self
      */
     public function setAdGroupIds(array $value = null)
     {
@@ -88,7 +90,7 @@ class KeywordsSelectionCriteria
      * Sets CampaignIds.
      *
      * @param int[]|null $value
-     * @return $this
+     * @return self
      */
     public function setCampaignIds(array $value = null)
     {
@@ -100,7 +102,8 @@ class KeywordsSelectionCriteria
     /**
      * Gets States.
      *
-     * @return KeywordStateSelectionEnum[]|null
+     * @return string[]|null
+     * @see KeywordStateSelectionEnum
      */
     public function getStates()
     {
@@ -110,8 +113,9 @@ class KeywordsSelectionCriteria
     /**
      * Sets States.
      *
-     * @param KeywordStateSelectionEnum[]|null $value
-     * @return $this
+     * @param string[]|null $value
+     * @return self
+     * @see KeywordStateSelectionEnum
      */
     public function setStates(array $value = null)
     {
@@ -123,7 +127,8 @@ class KeywordsSelectionCriteria
     /**
      * Gets Statuses.
      *
-     * @return KeywordStatusSelectionEnum[]|null
+     * @return string[]|null
+     * @see KeywordStatusSelectionEnum
      */
     public function getStatuses()
     {
@@ -133,12 +138,36 @@ class KeywordsSelectionCriteria
     /**
      * Sets Statuses.
      *
-     * @param KeywordStatusSelectionEnum[]|null $value
-     * @return $this
+     * @param string[]|null $value
+     * @return self
+     * @see KeywordStatusSelectionEnum
      */
     public function setStatuses(array $value = null)
     {
         $this->Statuses = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets ModifiedSince.
+     *
+     * @return string|null
+     */
+    public function getModifiedSince()
+    {
+        return $this->ModifiedSince;
+    }
+
+    /**
+     * Sets ModifiedSince.
+     *
+     * @param string|null $value
+     * @return self
+     */
+    public function setModifiedSince($value = null)
+    {
+        $this->ModifiedSince = $value;
 
         return $this;
     }

@@ -13,7 +13,7 @@ class GetBidModifiersResponse extends GetResponseGeneral
     /**
      * Creates a new instance of GetBidModifiersResponse.
      *
-     * @return GetBidModifiersResponse
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class GetBidModifiersResponse extends GetResponseGeneral
      * Sets BidModifiers.
      *
      * @param BidModifierGetItem[]|null $value
-     * @return $this
+     * @return self
      */
     public function setBidModifiers(array $value = null)
     {

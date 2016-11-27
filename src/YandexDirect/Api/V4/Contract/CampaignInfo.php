@@ -111,7 +111,7 @@ class CampaignInfo
     /**
      * Creates a new instance of CampaignInfo.
      *
-     * @return CampaignInfo
+     * @return self
      */
     public static function create()
     {
@@ -132,7 +132,7 @@ class CampaignInfo
      * Sets Login.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setLogin($value)
     {
@@ -155,7 +155,7 @@ class CampaignInfo
      * Sets CampaignID.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setCampaignID($value)
     {
@@ -178,7 +178,7 @@ class CampaignInfo
      * Sets Name.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setName($value)
     {
@@ -201,7 +201,7 @@ class CampaignInfo
      * Sets FIO.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setFIO($value)
     {
@@ -224,7 +224,7 @@ class CampaignInfo
      * Sets StartDate.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setStartDate($value = null)
     {
@@ -247,7 +247,7 @@ class CampaignInfo
      * Sets Sum.
      *
      * @param float|null $value
-     * @return $this
+     * @return self
      */
     public function setSum($value = null)
     {
@@ -270,7 +270,7 @@ class CampaignInfo
      * Sets Rest.
      *
      * @param float|null $value
-     * @return $this
+     * @return self
      */
     public function setRest($value = null)
     {
@@ -293,7 +293,7 @@ class CampaignInfo
      * Sets Shows.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setShows($value = null)
     {
@@ -316,7 +316,7 @@ class CampaignInfo
      * Sets Clicks.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setClicks($value = null)
     {
@@ -339,7 +339,7 @@ class CampaignInfo
      * Sets Strategy.
      *
      * @param CampaignStrategy|null $value
-     * @return $this
+     * @return self
      */
     public function setStrategy(CampaignStrategy $value = null)
     {
@@ -362,7 +362,7 @@ class CampaignInfo
      * Sets ClickTrackingEnabled.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setClickTrackingEnabled($value = null)
     {
@@ -385,7 +385,7 @@ class CampaignInfo
      * Sets BonusDiscount.
      *
      * @param float|null $value
-     * @return $this
+     * @return self
      */
     public function setBonusDiscount($value = null)
     {
@@ -408,7 +408,7 @@ class CampaignInfo
      * Sets Currency.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setCurrency($value = null)
     {
@@ -431,7 +431,7 @@ class CampaignInfo
      * Sets CampaignCurrency.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setCampaignCurrency($value = null)
     {
@@ -454,7 +454,7 @@ class CampaignInfo
      * Sets SourceCampaignID.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setSourceCampaignID($value = null)
     {
@@ -477,7 +477,7 @@ class CampaignInfo
      * Sets ContextStrategy.
      *
      * @param CampaignContextStrategy|null $value
-     * @return $this
+     * @return self
      */
     public function setContextStrategy(CampaignContextStrategy $value = null)
     {
@@ -500,7 +500,7 @@ class CampaignInfo
      * Sets AdditionalMetrikaCounters.
      *
      * @param int[]|null $value
-     * @return $this
+     * @return self
      */
     public function setAdditionalMetrikaCounters(array $value = null)
     {
@@ -523,7 +523,7 @@ class CampaignInfo
      * Sets MobileBidAdjustment.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setMobileBidAdjustment($value = null)
     {
@@ -546,7 +546,7 @@ class CampaignInfo
      * Sets TradeType.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setTradeType($value = null)
     {
@@ -569,7 +569,7 @@ class CampaignInfo
      * Sets SmsNotification.
      *
      * @param SmsNotificationInfo|null $value
-     * @return $this
+     * @return self
      */
     public function setSmsNotification(SmsNotificationInfo $value = null)
     {
@@ -592,7 +592,7 @@ class CampaignInfo
      * Sets EmailNotification.
      *
      * @param EmailNotificationInfo|null $value
-     * @return $this
+     * @return self
      */
     public function setEmailNotification(EmailNotificationInfo $value = null)
     {
@@ -615,7 +615,7 @@ class CampaignInfo
      * Sets StatusBehavior.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setStatusBehavior($value = null)
     {
@@ -638,7 +638,7 @@ class CampaignInfo
      * Sets Status.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setStatus($value = null)
     {
@@ -661,7 +661,7 @@ class CampaignInfo
      * Sets TimeTarget.
      *
      * @param TimeTargetInfo|null $value
-     * @return $this
+     * @return self
      */
     public function setTimeTarget(TimeTargetInfo $value = null)
     {
@@ -684,7 +684,7 @@ class CampaignInfo
      * Sets StatusContextStop.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setStatusContextStop($value = null)
     {
@@ -707,7 +707,7 @@ class CampaignInfo
      * Sets ContextLimit.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setContextLimit($value = null)
     {
@@ -730,7 +730,7 @@ class CampaignInfo
      * Sets ContextLimitSum.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setContextLimitSum($value = null)
     {
@@ -753,7 +753,7 @@ class CampaignInfo
      * Sets ContextPricePercent.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setContextPricePercent($value = null)
     {
@@ -776,7 +776,7 @@ class CampaignInfo
      * Sets AutoOptimization.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setAutoOptimization($value = null)
     {
@@ -799,7 +799,7 @@ class CampaignInfo
      * Sets StatusMetricaControl.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setStatusMetricaControl($value = null)
     {
@@ -822,7 +822,7 @@ class CampaignInfo
      * Sets DisabledDomains.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setDisabledDomains($value = null)
     {
@@ -845,7 +845,7 @@ class CampaignInfo
      * Sets DisabledIps.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setDisabledIps($value = null)
     {
@@ -868,7 +868,7 @@ class CampaignInfo
      * Sets StatusOpenStat.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setStatusOpenStat($value = null)
     {
@@ -891,7 +891,7 @@ class CampaignInfo
      * Sets ConsiderTimeTarget.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setConsiderTimeTarget($value = null)
     {
@@ -914,7 +914,7 @@ class CampaignInfo
      * Sets ManagerName.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setManagerName($value = null)
     {
@@ -937,7 +937,7 @@ class CampaignInfo
      * Sets AgencyName.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setAgencyName($value = null)
     {
@@ -960,7 +960,7 @@ class CampaignInfo
      * Sets StatusShow.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setStatusShow($value = null)
     {
@@ -983,7 +983,7 @@ class CampaignInfo
      * Sets StatusArchive.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setStatusArchive($value = null)
     {
@@ -1006,7 +1006,7 @@ class CampaignInfo
      * Sets StatusActivating.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setStatusActivating($value = null)
     {
@@ -1029,7 +1029,7 @@ class CampaignInfo
      * Sets StatusModerate.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setStatusModerate($value = null)
     {
@@ -1052,7 +1052,7 @@ class CampaignInfo
      * Sets IsActive.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setIsActive($value = null)
     {
@@ -1075,7 +1075,7 @@ class CampaignInfo
      * Sets MinusKeywords.
      *
      * @param string[]|null $value
-     * @return $this
+     * @return self
      */
     public function setMinusKeywords(array $value = null)
     {
@@ -1098,7 +1098,7 @@ class CampaignInfo
      * Sets AddRelevantPhrases.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setAddRelevantPhrases($value = null)
     {
@@ -1121,7 +1121,7 @@ class CampaignInfo
      * Sets RelevantPhrasesBudgetLimit.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setRelevantPhrasesBudgetLimit($value = null)
     {
@@ -1144,7 +1144,7 @@ class CampaignInfo
      * Sets DayBudget.
      *
      * @param DayBudgetInfo|null $value
-     * @return $this
+     * @return self
      */
     public function setDayBudget(DayBudgetInfo $value = null)
     {
@@ -1167,7 +1167,7 @@ class CampaignInfo
      * Sets DayBudgetEnabled.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setDayBudgetEnabled($value = null)
     {
@@ -1190,7 +1190,7 @@ class CampaignInfo
      * Sets EnableRelatedKeywords.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setEnableRelatedKeywords($value = null)
     {
@@ -1213,7 +1213,7 @@ class CampaignInfo
      * Sets ExtendedAdTitleEnabled.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setExtendedAdTitleEnabled($value = null)
     {
@@ -1236,7 +1236,7 @@ class CampaignInfo
      * Sets MaintainNetworkCPC.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setMaintainNetworkCPC($value = null)
     {
@@ -1259,7 +1259,7 @@ class CampaignInfo
      * Sets SumAvailableForTransfer.
      *
      * @param float|null $value
-     * @return $this
+     * @return self
      */
     public function setSumAvailableForTransfer($value = null)
     {

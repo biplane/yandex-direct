@@ -10,14 +10,12 @@ class GetVCardsRequest extends GetRequestGeneral
 
     protected $SelectionCriteria = null;
 
-    protected $FieldNames = array(
-        
-    );
+    protected $FieldNames = [];
 
     /**
      * Creates a new instance of GetVCardsRequest.
      *
-     * @return GetVCardsRequest
+     * @return self
      */
     public static function create()
     {
@@ -38,7 +36,7 @@ class GetVCardsRequest extends GetRequestGeneral
      * Sets SelectionCriteria.
      *
      * @param IdsCriteria|null $value
-     * @return $this
+     * @return self
      */
     public function setSelectionCriteria(IdsCriteria $value = null)
     {
@@ -50,7 +48,8 @@ class GetVCardsRequest extends GetRequestGeneral
     /**
      * Gets FieldNames.
      *
-     * @return VCardFieldEnum[]
+     * @return string[]
+     * @see VCardFieldEnum
      */
     public function getFieldNames()
     {
@@ -60,8 +59,9 @@ class GetVCardsRequest extends GetRequestGeneral
     /**
      * Sets FieldNames.
      *
-     * @param VCardFieldEnum[] $value
-     * @return $this
+     * @param string[] $value
+     * @return self
+     * @see VCardFieldEnum
      */
     public function setFieldNames(array $value)
     {

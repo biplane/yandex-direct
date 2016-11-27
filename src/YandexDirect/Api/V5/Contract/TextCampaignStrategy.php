@@ -15,7 +15,7 @@ class TextCampaignStrategy
     /**
      * Creates a new instance of TextCampaignStrategy.
      *
-     * @return TextCampaignStrategy
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +36,7 @@ class TextCampaignStrategy
      * Sets Search.
      *
      * @param TextCampaignSearchStrategy|null $value
-     * @return $this
+     * @return self
      */
     public function setSearch(TextCampaignSearchStrategy $value = null)
     {
@@ -59,7 +59,7 @@ class TextCampaignStrategy
      * Sets Network.
      *
      * @param TextCampaignNetworkStrategy|null $value
-     * @return $this
+     * @return self
      */
     public function setNetwork(TextCampaignNetworkStrategy $value = null)
     {

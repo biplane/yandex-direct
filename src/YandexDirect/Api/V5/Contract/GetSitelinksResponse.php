@@ -13,7 +13,7 @@ class GetSitelinksResponse extends GetResponseGeneral
     /**
      * Creates a new instance of GetSitelinksResponse.
      *
-     * @return GetSitelinksResponse
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class GetSitelinksResponse extends GetResponseGeneral
      * Sets SitelinksSets.
      *
      * @param SitelinksSetGetItem[]|null $value
-     * @return $this
+     * @return self
      */
     public function setSitelinksSets(array $value = null)
     {

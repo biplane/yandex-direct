@@ -15,7 +15,7 @@ class AccountSelectionCriteria
     /**
      * Creates a new instance of AccountSelectionCriteria.
      *
-     * @return AccountSelectionCriteria
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +36,7 @@ class AccountSelectionCriteria
      * Sets Logins.
      *
      * @param string[]|null $value
-     * @return $this
+     * @return self
      */
     public function setLogins(array $value = null)
     {
@@ -59,7 +59,7 @@ class AccountSelectionCriteria
      * Sets AccountIDS.
      *
      * @param int[]|null $value
-     * @return $this
+     * @return self
      */
     public function setAccountIDS(array $value = null)
     {

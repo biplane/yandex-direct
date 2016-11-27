@@ -15,7 +15,7 @@ class AdExtensionSettingItem
     /**
      * Creates a new instance of AdExtensionSettingItem.
      *
-     * @return AdExtensionSettingItem
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +36,7 @@ class AdExtensionSettingItem
      * Sets AdExtensionId.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setAdExtensionId($value)
     {
@@ -48,7 +48,8 @@ class AdExtensionSettingItem
     /**
      * Gets Operation.
      *
-     * @return OperationEnum
+     * @return string
+     * @see OperationEnum
      */
     public function getOperation()
     {
@@ -58,8 +59,9 @@ class AdExtensionSettingItem
     /**
      * Sets Operation.
      *
-     * @param OperationEnum $value
-     * @return $this
+     * @param string $value
+     * @return self
+     * @see OperationEnum
      */
     public function setOperation($value)
     {

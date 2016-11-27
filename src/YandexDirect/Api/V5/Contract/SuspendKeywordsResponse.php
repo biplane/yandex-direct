@@ -8,14 +8,12 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class SuspendKeywordsResponse
 {
 
-    protected $SuspendResults = array(
-        
-    );
+    protected $SuspendResults = [];
 
     /**
      * Creates a new instance of SuspendKeywordsResponse.
      *
-     * @return SuspendKeywordsResponse
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +34,7 @@ class SuspendKeywordsResponse
      * Sets SuspendResults.
      *
      * @param ActionResult[] $value
-     * @return $this
+     * @return self
      */
     public function setSuspendResults(array $value)
     {

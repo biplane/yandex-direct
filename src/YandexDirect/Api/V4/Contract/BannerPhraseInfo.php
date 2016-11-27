@@ -83,7 +83,7 @@ class BannerPhraseInfo
     /**
      * Creates a new instance of BannerPhraseInfo.
      *
-     * @return BannerPhraseInfo
+     * @return self
      */
     public static function create()
     {
@@ -104,7 +104,7 @@ class BannerPhraseInfo
      * Sets Phrase.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setPhrase($value = null)
     {
@@ -127,7 +127,7 @@ class BannerPhraseInfo
      * Sets IsRubric.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setIsRubric($value = null)
     {
@@ -150,7 +150,7 @@ class BannerPhraseInfo
      * Sets Clicks.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setClicks($value = null)
     {
@@ -173,7 +173,7 @@ class BannerPhraseInfo
      * Sets FirstPlaceClicks.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setFirstPlaceClicks($value = null)
     {
@@ -196,7 +196,7 @@ class BannerPhraseInfo
      * Sets PremiumClicks.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setPremiumClicks($value = null)
     {
@@ -219,7 +219,7 @@ class BannerPhraseInfo
      * Sets Shows.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setShows($value = null)
     {
@@ -242,7 +242,7 @@ class BannerPhraseInfo
      * Sets Min.
      *
      * @param float|null $value
-     * @return $this
+     * @return self
      */
     public function setMin($value = null)
     {
@@ -265,7 +265,7 @@ class BannerPhraseInfo
      * Sets Max.
      *
      * @param float|null $value
-     * @return $this
+     * @return self
      */
     public function setMax($value = null)
     {
@@ -288,7 +288,7 @@ class BannerPhraseInfo
      * Sets PremiumMin.
      *
      * @param float|null $value
-     * @return $this
+     * @return self
      */
     public function setPremiumMin($value = null)
     {
@@ -311,7 +311,7 @@ class BannerPhraseInfo
      * Sets PremiumMax.
      *
      * @param float|null $value
-     * @return $this
+     * @return self
      */
     public function setPremiumMax($value = null)
     {
@@ -334,7 +334,7 @@ class BannerPhraseInfo
      * Sets CTR.
      *
      * @param float|null $value
-     * @return $this
+     * @return self
      */
     public function setCTR($value = null)
     {
@@ -357,7 +357,7 @@ class BannerPhraseInfo
      * Sets FirstPlaceCTR.
      *
      * @param float|null $value
-     * @return $this
+     * @return self
      */
     public function setFirstPlaceCTR($value = null)
     {
@@ -380,7 +380,7 @@ class BannerPhraseInfo
      * Sets PremiumCTR.
      *
      * @param float|null $value
-     * @return $this
+     * @return self
      */
     public function setPremiumCTR($value = null)
     {
@@ -403,7 +403,7 @@ class BannerPhraseInfo
      * Sets LowCTRWarning.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setLowCTRWarning($value = null)
     {
@@ -426,7 +426,7 @@ class BannerPhraseInfo
      * Sets LowCTR.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setLowCTR($value = null)
     {
@@ -449,7 +449,7 @@ class BannerPhraseInfo
      * Sets ContextPrice.
      *
      * @param float|null $value
-     * @return $this
+     * @return self
      */
     public function setContextPrice($value = null)
     {
@@ -472,7 +472,7 @@ class BannerPhraseInfo
      * Sets ContextCoverage.
      *
      * @param CoverageInfo[]|null $value
-     * @return $this
+     * @return self
      */
     public function setContextCoverage(array $value = null)
     {
@@ -495,7 +495,7 @@ class BannerPhraseInfo
      * Sets BannerID.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setBannerID($value = null)
     {
@@ -518,7 +518,7 @@ class BannerPhraseInfo
      * Sets Price.
      *
      * @param float|null $value
-     * @return $this
+     * @return self
      */
     public function setPrice($value = null)
     {
@@ -541,7 +541,7 @@ class BannerPhraseInfo
      * Sets Prices.
      *
      * @param float[]|null $value
-     * @return $this
+     * @return self
      */
     public function setPrices(array $value = null)
     {
@@ -564,7 +564,7 @@ class BannerPhraseInfo
      * Sets Coverage.
      *
      * @param CoverageInfo[]|null $value
-     * @return $this
+     * @return self
      */
     public function setCoverage(array $value = null)
     {
@@ -587,7 +587,7 @@ class BannerPhraseInfo
      * Sets AutoBroker.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setAutoBroker($value = null)
     {
@@ -610,7 +610,7 @@ class BannerPhraseInfo
      * Sets PhraseID.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setPhraseID($value)
     {
@@ -633,7 +633,7 @@ class BannerPhraseInfo
      * Sets CurrentOnSearch.
      *
      * @param float|null $value
-     * @return $this
+     * @return self
      */
     public function setCurrentOnSearch($value = null)
     {
@@ -656,7 +656,7 @@ class BannerPhraseInfo
      * Sets CampaignID.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setCampaignID($value = null)
     {
@@ -679,7 +679,7 @@ class BannerPhraseInfo
      * Sets MinPrice.
      *
      * @param float|null $value
-     * @return $this
+     * @return self
      */
     public function setMinPrice($value = null)
     {
@@ -702,7 +702,7 @@ class BannerPhraseInfo
      * Sets AutoBudgetPriority.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setAutoBudgetPriority($value = null)
     {
@@ -725,7 +725,7 @@ class BannerPhraseInfo
      * Sets StatusPhraseModerate.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setStatusPhraseModerate($value = null)
     {
@@ -748,7 +748,7 @@ class BannerPhraseInfo
      * Sets ContextLowCTR.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setContextLowCTR($value = null)
     {
@@ -771,7 +771,7 @@ class BannerPhraseInfo
      * Sets UserParams.
      *
      * @param PhraseUserParams|null $value
-     * @return $this
+     * @return self
      */
     public function setUserParams(PhraseUserParams $value = null)
     {
@@ -794,7 +794,7 @@ class BannerPhraseInfo
      * Sets AuctionBids.
      *
      * @param PhraseAuctionBids[]|null $value
-     * @return $this
+     * @return self
      */
     public function setAuctionBids(array $value = null)
     {
@@ -817,7 +817,7 @@ class BannerPhraseInfo
      * Sets AdGroupID.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setAdGroupID($value = null)
     {
@@ -840,7 +840,7 @@ class BannerPhraseInfo
      * Sets StatusPaused.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setStatusPaused($value = null)
     {
@@ -863,7 +863,7 @@ class BannerPhraseInfo
      * Sets ContextClicks.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setContextClicks($value = null)
     {
@@ -886,7 +886,7 @@ class BannerPhraseInfo
      * Sets ContextShows.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setContextShows($value = null)
     {
@@ -909,7 +909,7 @@ class BannerPhraseInfo
      * Sets Currency.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setCurrency($value = null)
     {

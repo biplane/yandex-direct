@@ -8,22 +8,16 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
 class GetChangesIntData
 {
 
-    protected $Updated = array(
-        
-    );
+    protected $Updated = [];
 
-    protected $NotUpdated = array(
-        
-    );
+    protected $NotUpdated = [];
 
-    protected $NotFound = array(
-        
-    );
+    protected $NotFound = [];
 
     /**
      * Creates a new instance of GetChangesIntData.
      *
-     * @return GetChangesIntData
+     * @return self
      */
     public static function create()
     {
@@ -44,7 +38,7 @@ class GetChangesIntData
      * Sets Updated.
      *
      * @param int[] $value
-     * @return $this
+     * @return self
      */
     public function setUpdated(array $value)
     {
@@ -67,7 +61,7 @@ class GetChangesIntData
      * Sets NotUpdated.
      *
      * @param int[] $value
-     * @return $this
+     * @return self
      */
     public function setNotUpdated(array $value)
     {
@@ -90,7 +84,7 @@ class GetChangesIntData
      * Sets NotFound.
      *
      * @param int[] $value
-     * @return $this
+     * @return self
      */
     public function setNotFound(array $value)
     {

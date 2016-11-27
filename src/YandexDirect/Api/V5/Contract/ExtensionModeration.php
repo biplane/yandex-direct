@@ -15,7 +15,7 @@ class ExtensionModeration
     /**
      * Creates a new instance of ExtensionModeration.
      *
-     * @return ExtensionModeration
+     * @return self
      */
     public static function create()
     {
@@ -25,7 +25,8 @@ class ExtensionModeration
     /**
      * Gets Status.
      *
-     * @return StatusEnum
+     * @return string
+     * @see StatusEnum
      */
     public function getStatus()
     {
@@ -35,8 +36,9 @@ class ExtensionModeration
     /**
      * Sets Status.
      *
-     * @param StatusEnum $value
-     * @return $this
+     * @param string $value
+     * @return self
+     * @see StatusEnum
      */
     public function setStatus($value)
     {
@@ -59,7 +61,7 @@ class ExtensionModeration
      * Sets StatusClarification.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setStatusClarification($value = null)
     {

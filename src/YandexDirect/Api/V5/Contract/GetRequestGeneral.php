@@ -13,7 +13,7 @@ class GetRequestGeneral
     /**
      * Creates a new instance of GetRequestGeneral.
      *
-     * @return GetRequestGeneral
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class GetRequestGeneral
      * Sets Page.
      *
      * @param LimitOffset|null $value
-     * @return $this
+     * @return self
      */
     public function setPage(LimitOffset $value = null)
     {

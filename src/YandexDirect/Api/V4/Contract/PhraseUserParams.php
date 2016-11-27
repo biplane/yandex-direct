@@ -15,7 +15,7 @@ class PhraseUserParams
     /**
      * Creates a new instance of PhraseUserParams.
      *
-     * @return PhraseUserParams
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +36,7 @@ class PhraseUserParams
      * Sets Param1.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setParam1($value = null)
     {
@@ -59,7 +59,7 @@ class PhraseUserParams
      * Sets Param2.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setParam2($value = null)
     {

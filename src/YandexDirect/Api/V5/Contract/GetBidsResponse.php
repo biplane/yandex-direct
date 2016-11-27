@@ -13,7 +13,7 @@ class GetBidsResponse extends GetResponseGeneral
     /**
      * Creates a new instance of GetBidsResponse.
      *
-     * @return GetBidsResponse
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class GetBidsResponse extends GetResponseGeneral
      * Sets Bids.
      *
      * @param BidGetItem[]|null $value
-     * @return $this
+     * @return self
      */
     public function setBids(array $value = null)
     {

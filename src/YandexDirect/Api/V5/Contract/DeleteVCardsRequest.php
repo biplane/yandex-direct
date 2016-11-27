@@ -13,7 +13,7 @@ class DeleteVCardsRequest
     /**
      * Creates a new instance of DeleteVCardsRequest.
      *
-     * @return DeleteVCardsRequest
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class DeleteVCardsRequest
      * Sets SelectionCriteria.
      *
      * @param IdsCriteria $value
-     * @return $this
+     * @return self
      */
     public function setSelectionCriteria(IdsCriteria $value)
     {

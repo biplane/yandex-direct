@@ -8,14 +8,12 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class AddKeywordsRequest
 {
 
-    protected $Keywords = array(
-        
-    );
+    protected $Keywords = [];
 
     /**
      * Creates a new instance of AddKeywordsRequest.
      *
-     * @return AddKeywordsRequest
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +34,7 @@ class AddKeywordsRequest
      * Sets Keywords.
      *
      * @param KeywordAddItem[] $value
-     * @return $this
+     * @return self
      */
     public function setKeywords(array $value)
     {

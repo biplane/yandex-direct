@@ -15,7 +15,7 @@ class ClientsUnitInfo
     /**
      * Creates a new instance of ClientsUnitInfo.
      *
-     * @return ClientsUnitInfo
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +36,7 @@ class ClientsUnitInfo
      * Sets Login.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setLogin($value)
     {
@@ -59,7 +59,7 @@ class ClientsUnitInfo
      * Sets UnitsRest.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setUnitsRest($value)
     {

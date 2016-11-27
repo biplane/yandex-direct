@@ -15,7 +15,7 @@ class AccountManagementResponse
     /**
      * Creates a new instance of AccountManagementResponse.
      *
-     * @return AccountManagementResponse
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +36,7 @@ class AccountManagementResponse
      * Sets ActionsResult.
      *
      * @param AccountActionResult[]|null $value
-     * @return $this
+     * @return self
      */
     public function setActionsResult(array $value = null)
     {
@@ -59,7 +59,7 @@ class AccountManagementResponse
      * Sets Accounts.
      *
      * @param Account[]|null $value
-     * @return $this
+     * @return self
      */
     public function setAccounts(array $value = null)
     {

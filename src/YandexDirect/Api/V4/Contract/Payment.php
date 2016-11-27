@@ -21,7 +21,7 @@ class Payment
     /**
      * Creates a new instance of Payment.
      *
-     * @return Payment
+     * @return self
      */
     public static function create()
     {
@@ -42,7 +42,7 @@ class Payment
      * Sets AccountID.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setAccountID($value)
     {
@@ -65,7 +65,7 @@ class Payment
      * Sets Amount.
      *
      * @param float $value
-     * @return $this
+     * @return self
      */
     public function setAmount($value)
     {
@@ -88,7 +88,7 @@ class Payment
      * Sets Origin.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setOrigin($value = null)
     {
@@ -111,7 +111,7 @@ class Payment
      * Sets Contract.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setContract($value = null)
     {
@@ -134,7 +134,7 @@ class Payment
      * Sets Currency.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setCurrency($value = null)
     {

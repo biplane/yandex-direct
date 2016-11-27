@@ -29,7 +29,7 @@ class Account
     /**
      * Creates a new instance of Account.
      *
-     * @return Account
+     * @return self
      */
     public static function create()
     {
@@ -50,7 +50,7 @@ class Account
      * Sets AgencyName.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setAgencyName($value = null)
     {
@@ -73,7 +73,7 @@ class Account
      * Sets AccountID.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setAccountID($value)
     {
@@ -96,7 +96,7 @@ class Account
      * Sets Amount.
      *
      * @param float|null $value
-     * @return $this
+     * @return self
      */
     public function setAmount($value = null)
     {
@@ -119,7 +119,7 @@ class Account
      * Sets AmountAvailableForTransfer.
      *
      * @param float|null $value
-     * @return $this
+     * @return self
      */
     public function setAmountAvailableForTransfer($value = null)
     {
@@ -142,7 +142,7 @@ class Account
      * Sets Currency.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setCurrency($value = null)
     {
@@ -165,7 +165,7 @@ class Account
      * Sets Login.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setLogin($value = null)
     {
@@ -188,7 +188,7 @@ class Account
      * Sets Discount.
      *
      * @param float|null $value
-     * @return $this
+     * @return self
      */
     public function setDiscount($value = null)
     {
@@ -211,7 +211,7 @@ class Account
      * Sets SmsNotification.
      *
      * @param SmsNotificationInfo|null $value
-     * @return $this
+     * @return self
      */
     public function setSmsNotification(SmsNotificationInfo $value = null)
     {
@@ -234,7 +234,7 @@ class Account
      * Sets EmailNotification.
      *
      * @param EmailNotificationInfo|null $value
-     * @return $this
+     * @return self
      */
     public function setEmailNotification(EmailNotificationInfo $value = null)
     {

@@ -13,7 +13,7 @@ class DynamicTextAdGet extends TextAdGetBase
     /**
      * Creates a new instance of DynamicTextAdGet.
      *
-     * @return DynamicTextAdGet
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class DynamicTextAdGet extends TextAdGetBase
      * Sets Text.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setText($value = null)
     {

@@ -13,7 +13,7 @@ class GetAdsResponse extends GetResponseGeneral
     /**
      * Creates a new instance of GetAdsResponse.
      *
-     * @return GetAdsResponse
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class GetAdsResponse extends GetResponseGeneral
      * Sets Ads.
      *
      * @param AdGetItem[]|null $value
-     * @return $this
+     * @return self
      */
     public function setAds(array $value = null)
     {

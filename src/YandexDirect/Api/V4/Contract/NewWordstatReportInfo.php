@@ -8,16 +8,14 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
 class NewWordstatReportInfo
 {
 
-    protected $Phrases = array(
-        
-    );
+    protected $Phrases = [];
 
     protected $GeoID = null;
 
     /**
      * Creates a new instance of NewWordstatReportInfo.
      *
-     * @return NewWordstatReportInfo
+     * @return self
      */
     public static function create()
     {
@@ -38,7 +36,7 @@ class NewWordstatReportInfo
      * Sets Phrases.
      *
      * @param string[] $value
-     * @return $this
+     * @return self
      */
     public function setPhrases(array $value)
     {
@@ -61,7 +59,7 @@ class NewWordstatReportInfo
      * Sets GeoID.
      *
      * @param int[]|null $value
-     * @return $this
+     * @return self
      */
     public function setGeoID(array $value = null)
     {

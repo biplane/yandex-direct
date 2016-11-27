@@ -8,14 +8,12 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class DeleteKeywordsResponse
 {
 
-    protected $DeleteResults = array(
-        
-    );
+    protected $DeleteResults = [];
 
     /**
      * Creates a new instance of DeleteKeywordsResponse.
      *
-     * @return DeleteKeywordsResponse
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +34,7 @@ class DeleteKeywordsResponse
      * Sets DeleteResults.
      *
      * @param ActionResult[] $value
-     * @return $this
+     * @return self
      */
     public function setDeleteResults(array $value)
     {

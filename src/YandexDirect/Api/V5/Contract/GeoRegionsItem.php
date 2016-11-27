@@ -19,7 +19,7 @@ class GeoRegionsItem
     /**
      * Creates a new instance of GeoRegionsItem.
      *
-     * @return GeoRegionsItem
+     * @return self
      */
     public static function create()
     {
@@ -40,7 +40,7 @@ class GeoRegionsItem
      * Sets GeoRegionId.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setGeoRegionId($value)
     {
@@ -63,7 +63,7 @@ class GeoRegionsItem
      * Sets GeoRegionName.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setGeoRegionName($value)
     {
@@ -86,7 +86,7 @@ class GeoRegionsItem
      * Sets GeoRegionType.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setGeoRegionType($value)
     {
@@ -109,7 +109,7 @@ class GeoRegionsItem
      * Sets ParentId.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setParentId($value = null)
     {

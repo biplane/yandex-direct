@@ -17,7 +17,7 @@ class PhraseAuctionBids
     /**
      * Creates a new instance of PhraseAuctionBids.
      *
-     * @return PhraseAuctionBids
+     * @return self
      */
     public static function create()
     {
@@ -38,7 +38,7 @@ class PhraseAuctionBids
      * Sets Position.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setPosition($value = null)
     {
@@ -61,7 +61,7 @@ class PhraseAuctionBids
      * Sets Bid.
      *
      * @param float|null $value
-     * @return $this
+     * @return self
      */
     public function setBid($value = null)
     {
@@ -84,7 +84,7 @@ class PhraseAuctionBids
      * Sets Price.
      *
      * @param float|null $value
-     * @return $this
+     * @return self
      */
     public function setPrice($value = null)
     {

@@ -11,7 +11,7 @@ class StrategyMaximumAppInstallsAdd extends StrategyWeeklyBudgetAddBase
     /**
      * Creates a new instance of StrategyMaximumAppInstallsAdd.
      *
-     * @return StrategyMaximumAppInstallsAdd
+     * @return self
      */
     public static function create()
     {

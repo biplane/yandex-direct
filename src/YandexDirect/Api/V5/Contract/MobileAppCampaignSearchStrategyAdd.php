@@ -13,7 +13,7 @@ class MobileAppCampaignSearchStrategyAdd extends MobileAppCampaignStrategyAddBas
     /**
      * Creates a new instance of MobileAppCampaignSearchStrategyAdd.
      *
-     * @return MobileAppCampaignSearchStrategyAdd
+     * @return self
      */
     public static function create()
     {
@@ -23,7 +23,8 @@ class MobileAppCampaignSearchStrategyAdd extends MobileAppCampaignStrategyAddBas
     /**
      * Gets BiddingStrategyType.
      *
-     * @return MobileAppCampaignSearchStrategyTypeEnum
+     * @return string
+     * @see MobileAppCampaignSearchStrategyTypeEnum
      */
     public function getBiddingStrategyType()
     {
@@ -33,8 +34,9 @@ class MobileAppCampaignSearchStrategyAdd extends MobileAppCampaignStrategyAddBas
     /**
      * Sets BiddingStrategyType.
      *
-     * @param MobileAppCampaignSearchStrategyTypeEnum $value
-     * @return $this
+     * @param string $value
+     * @return self
+     * @see MobileAppCampaignSearchStrategyTypeEnum
      */
     public function setBiddingStrategyType($value)
     {

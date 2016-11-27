@@ -21,7 +21,7 @@ class AdImage
     /**
      * Creates a new instance of AdImage.
      *
-     * @return AdImage
+     * @return self
      */
     public static function create()
     {
@@ -42,7 +42,7 @@ class AdImage
      * Sets Login.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setLogin($value)
     {
@@ -65,7 +65,7 @@ class AdImage
      * Sets AdImageHash.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setAdImageHash($value)
     {
@@ -88,7 +88,7 @@ class AdImage
      * Sets AdImageURL.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setAdImageURL($value)
     {
@@ -111,7 +111,7 @@ class AdImage
      * Sets Assigned.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setAssigned($value)
     {
@@ -134,7 +134,7 @@ class AdImage
      * Sets Name.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setName($value = null)
     {

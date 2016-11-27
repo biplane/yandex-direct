@@ -13,7 +13,7 @@ class ArchiveAdsRequest
     /**
      * Creates a new instance of ArchiveAdsRequest.
      *
-     * @return ArchiveAdsRequest
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class ArchiveAdsRequest
      * Sets SelectionCriteria.
      *
      * @param IdsCriteria $value
-     * @return $this
+     * @return self
      */
     public function setSelectionCriteria(IdsCriteria $value)
     {

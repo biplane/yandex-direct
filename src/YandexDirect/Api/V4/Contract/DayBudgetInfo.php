@@ -15,7 +15,7 @@ class DayBudgetInfo
     /**
      * Creates a new instance of DayBudgetInfo.
      *
-     * @return DayBudgetInfo
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +36,7 @@ class DayBudgetInfo
      * Sets Amount.
      *
      * @param float $value
-     * @return $this
+     * @return self
      */
     public function setAmount($value)
     {
@@ -59,7 +59,7 @@ class DayBudgetInfo
      * Sets SpendMode.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setSpendMode($value = null)
     {

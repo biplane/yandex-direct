@@ -19,7 +19,7 @@ class CheckChangesResponse
     /**
      * Creates a new instance of CheckChangesResponse.
      *
-     * @return CheckChangesResponse
+     * @return self
      */
     public static function create()
     {
@@ -40,7 +40,7 @@ class CheckChangesResponse
      * Sets Modified.
      *
      * @param CheckResponseModified|null $value
-     * @return $this
+     * @return self
      */
     public function setModified(CheckResponseModified $value = null)
     {
@@ -63,7 +63,7 @@ class CheckChangesResponse
      * Sets NotFound.
      *
      * @param CheckResponseIds|null $value
-     * @return $this
+     * @return self
      */
     public function setNotFound(CheckResponseIds $value = null)
     {
@@ -86,7 +86,7 @@ class CheckChangesResponse
      * Sets Unprocessed.
      *
      * @param CheckResponseIds|null $value
-     * @return $this
+     * @return self
      */
     public function setUnprocessed(CheckResponseIds $value = null)
     {
@@ -109,7 +109,7 @@ class CheckChangesResponse
      * Sets Timestamp.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setTimestamp($value = null)
     {

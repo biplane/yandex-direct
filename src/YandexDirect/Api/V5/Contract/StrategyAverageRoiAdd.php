@@ -23,7 +23,7 @@ class StrategyAverageRoiAdd
     /**
      * Creates a new instance of StrategyAverageRoiAdd.
      *
-     * @return StrategyAverageRoiAdd
+     * @return self
      */
     public static function create()
     {
@@ -44,7 +44,7 @@ class StrategyAverageRoiAdd
      * Sets ReserveReturn.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setReserveReturn($value)
     {
@@ -67,7 +67,7 @@ class StrategyAverageRoiAdd
      * Sets RoiCoef.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setRoiCoef($value)
     {
@@ -90,7 +90,7 @@ class StrategyAverageRoiAdd
      * Sets GoalId.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setGoalId($value)
     {
@@ -113,7 +113,7 @@ class StrategyAverageRoiAdd
      * Sets WeeklySpendLimit.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setWeeklySpendLimit($value = null)
     {
@@ -136,7 +136,7 @@ class StrategyAverageRoiAdd
      * Sets BidCeiling.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setBidCeiling($value = null)
     {
@@ -159,7 +159,7 @@ class StrategyAverageRoiAdd
      * Sets Profitability.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setProfitability($value = null)
     {

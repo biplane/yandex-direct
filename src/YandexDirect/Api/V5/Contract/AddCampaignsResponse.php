@@ -13,7 +13,7 @@ class AddCampaignsResponse
     /**
      * Creates a new instance of AddCampaignsResponse.
      *
-     * @return AddCampaignsResponse
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class AddCampaignsResponse
      * Sets AddResults.
      *
      * @param ActionResult[]|null $value
-     * @return $this
+     * @return self
      */
     public function setAddResults(array $value = null)
     {

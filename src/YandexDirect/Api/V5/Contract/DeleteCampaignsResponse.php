@@ -13,7 +13,7 @@ class DeleteCampaignsResponse
     /**
      * Creates a new instance of DeleteCampaignsResponse.
      *
-     * @return DeleteCampaignsResponse
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class DeleteCampaignsResponse
      * Sets DeleteResults.
      *
      * @param ActionResult[]|null $value
-     * @return $this
+     * @return self
      */
     public function setDeleteResults(array $value = null)
     {

@@ -8,14 +8,12 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class AddCampaignsRequest
 {
 
-    protected $Campaigns = array(
-        
-    );
+    protected $Campaigns = [];
 
     /**
      * Creates a new instance of AddCampaignsRequest.
      *
-     * @return AddCampaignsRequest
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +34,7 @@ class AddCampaignsRequest
      * Sets Campaigns.
      *
      * @param CampaignAddItem[] $value
-     * @return $this
+     * @return self
      */
     public function setCampaigns(array $value)
     {

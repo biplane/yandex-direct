@@ -37,7 +37,7 @@ class NewReportFilterInfo
     /**
      * Creates a new instance of NewReportFilterInfo.
      *
-     * @return NewReportFilterInfo
+     * @return self
      */
     public static function create()
     {
@@ -58,7 +58,7 @@ class NewReportFilterInfo
      * Sets PageType.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setPageType($value = null)
     {
@@ -81,7 +81,7 @@ class NewReportFilterInfo
      * Sets PositionType.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setPositionType($value = null)
     {
@@ -104,7 +104,7 @@ class NewReportFilterInfo
      * Sets Banner.
      *
      * @param int[]|null $value
-     * @return $this
+     * @return self
      */
     public function setBanner(array $value = null)
     {
@@ -127,7 +127,7 @@ class NewReportFilterInfo
      * Sets Geo.
      *
      * @param int[]|null $value
-     * @return $this
+     * @return self
      */
     public function setGeo(array $value = null)
     {
@@ -150,7 +150,7 @@ class NewReportFilterInfo
      * Sets Phrase.
      *
      * @param string[]|null $value
-     * @return $this
+     * @return self
      */
     public function setPhrase(array $value = null)
     {
@@ -173,7 +173,7 @@ class NewReportFilterInfo
      * Sets PageName.
      *
      * @param string[]|null $value
-     * @return $this
+     * @return self
      */
     public function setPageName(array $value = null)
     {
@@ -196,7 +196,7 @@ class NewReportFilterInfo
      * Sets StatGoals.
      *
      * @param int[]|null $value
-     * @return $this
+     * @return self
      */
     public function setStatGoals(array $value = null)
     {
@@ -219,7 +219,7 @@ class NewReportFilterInfo
      * Sets WithImage.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setWithImage($value = null)
     {
@@ -242,7 +242,7 @@ class NewReportFilterInfo
      * Sets DeviceType.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setDeviceType($value = null)
     {
@@ -265,7 +265,7 @@ class NewReportFilterInfo
      * Sets Age.
      *
      * @param string[]|null $value
-     * @return $this
+     * @return self
      */
     public function setAge(array $value = null)
     {
@@ -288,7 +288,7 @@ class NewReportFilterInfo
      * Sets Gender.
      *
      * @param string[]|null $value
-     * @return $this
+     * @return self
      */
     public function setGender(array $value = null)
     {
@@ -311,7 +311,7 @@ class NewReportFilterInfo
      * Sets CarrierType.
      *
      * @param string[]|null $value
-     * @return $this
+     * @return self
      */
     public function setCarrierType(array $value = null)
     {
@@ -334,7 +334,7 @@ class NewReportFilterInfo
      * Sets MobilePlatform.
      *
      * @param string[]|null $value
-     * @return $this
+     * @return self
      */
     public function setMobilePlatform(array $value = null)
     {

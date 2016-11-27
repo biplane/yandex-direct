@@ -8,14 +8,12 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class UpdateAdsRequest
 {
 
-    protected $Ads = array(
-        
-    );
+    protected $Ads = [];
 
     /**
      * Creates a new instance of UpdateAdsRequest.
      *
-     * @return UpdateAdsRequest
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +34,7 @@ class UpdateAdsRequest
      * Sets Ads.
      *
      * @param AdUpdateItem[] $value
-     * @return $this
+     * @return self
      */
     public function setAds(array $value)
     {

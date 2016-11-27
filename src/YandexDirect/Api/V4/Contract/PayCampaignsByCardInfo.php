@@ -12,14 +12,12 @@ class PayCampaignsByCardInfo
 
     protected $CustomTransactionID = null;
 
-    protected $Payments = array(
-        
-    );
+    protected $Payments = [];
 
     /**
      * Creates a new instance of PayCampaignsByCardInfo.
      *
-     * @return PayCampaignsByCardInfo
+     * @return self
      */
     public static function create()
     {
@@ -40,7 +38,7 @@ class PayCampaignsByCardInfo
      * Sets PayMethodID.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setPayMethodID($value)
     {
@@ -63,7 +61,7 @@ class PayCampaignsByCardInfo
      * Sets CustomTransactionID.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setCustomTransactionID($value)
     {
@@ -86,7 +84,7 @@ class PayCampaignsByCardInfo
      * Sets Payments.
      *
      * @param PayCampElement[] $value
-     * @return $this
+     * @return self
      */
     public function setPayments(array $value)
     {

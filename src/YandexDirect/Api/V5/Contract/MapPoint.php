@@ -23,7 +23,7 @@ class MapPoint
     /**
      * Creates a new instance of MapPoint.
      *
-     * @return MapPoint
+     * @return self
      */
     public static function create()
     {
@@ -44,7 +44,7 @@ class MapPoint
      * Sets X.
      *
      * @param float $value
-     * @return $this
+     * @return self
      */
     public function setX($value)
     {
@@ -67,7 +67,7 @@ class MapPoint
      * Sets Y.
      *
      * @param float $value
-     * @return $this
+     * @return self
      */
     public function setY($value)
     {
@@ -90,7 +90,7 @@ class MapPoint
      * Sets X1.
      *
      * @param float $value
-     * @return $this
+     * @return self
      */
     public function setX1($value)
     {
@@ -113,7 +113,7 @@ class MapPoint
      * Sets Y1.
      *
      * @param float $value
-     * @return $this
+     * @return self
      */
     public function setY1($value)
     {
@@ -136,7 +136,7 @@ class MapPoint
      * Sets X2.
      *
      * @param float $value
-     * @return $this
+     * @return self
      */
     public function setX2($value)
     {
@@ -159,7 +159,7 @@ class MapPoint
      * Sets Y2.
      *
      * @param float $value
-     * @return $this
+     * @return self
      */
     public function setY2($value)
     {

@@ -15,7 +15,7 @@ class TimeTargetingBase
     /**
      * Creates a new instance of TimeTargetingBase.
      *
-     * @return TimeTargetingBase
+     * @return self
      */
     public static function create()
     {
@@ -25,7 +25,7 @@ class TimeTargetingBase
     /**
      * Gets Schedule.
      *
-     * @return string[]|null
+     * @return struct[]|null
      */
     public function getSchedule()
     {
@@ -35,8 +35,8 @@ class TimeTargetingBase
     /**
      * Sets Schedule.
      *
-     * @param string[]|null $value
-     * @return $this
+     * @param struct[]|null $value
+     * @return self
      */
     public function setSchedule(array $value = null)
     {
@@ -48,7 +48,8 @@ class TimeTargetingBase
     /**
      * Gets ConsiderWorkingWeekends.
      *
-     * @return YesNoEnum
+     * @return string
+     * @see YesNoEnum
      */
     public function getConsiderWorkingWeekends()
     {
@@ -58,8 +59,9 @@ class TimeTargetingBase
     /**
      * Sets ConsiderWorkingWeekends.
      *
-     * @param YesNoEnum $value
-     * @return $this
+     * @param string $value
+     * @return self
+     * @see YesNoEnum
      */
     public function setConsiderWorkingWeekends($value)
     {

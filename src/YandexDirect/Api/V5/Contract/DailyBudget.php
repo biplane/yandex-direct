@@ -15,7 +15,7 @@ class DailyBudget
     /**
      * Creates a new instance of DailyBudget.
      *
-     * @return DailyBudget
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +36,7 @@ class DailyBudget
      * Sets Amount.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setAmount($value)
     {
@@ -48,7 +48,8 @@ class DailyBudget
     /**
      * Gets Mode.
      *
-     * @return DailyBudgetModeEnum
+     * @return string
+     * @see DailyBudgetModeEnum
      */
     public function getMode()
     {
@@ -58,8 +59,9 @@ class DailyBudget
     /**
      * Sets Mode.
      *
-     * @param DailyBudgetModeEnum $value
-     * @return $this
+     * @param string $value
+     * @return self
+     * @see DailyBudgetModeEnum
      */
     public function setMode($value)
     {

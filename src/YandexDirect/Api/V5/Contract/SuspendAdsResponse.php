@@ -13,7 +13,7 @@ class SuspendAdsResponse
     /**
      * Creates a new instance of SuspendAdsResponse.
      *
-     * @return SuspendAdsResponse
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class SuspendAdsResponse
      * Sets SuspendResults.
      *
      * @param ActionResult[]|null $value
-     * @return $this
+     * @return self
      */
     public function setSuspendResults(array $value = null)
     {

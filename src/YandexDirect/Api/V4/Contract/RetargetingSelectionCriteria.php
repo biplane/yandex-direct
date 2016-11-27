@@ -17,7 +17,7 @@ class RetargetingSelectionCriteria
     /**
      * Creates a new instance of RetargetingSelectionCriteria.
      *
-     * @return RetargetingSelectionCriteria
+     * @return self
      */
     public static function create()
     {
@@ -38,7 +38,7 @@ class RetargetingSelectionCriteria
      * Sets RetargetingConditionIDS.
      *
      * @param int[]|null $value
-     * @return $this
+     * @return self
      */
     public function setRetargetingConditionIDS(array $value = null)
     {
@@ -61,7 +61,7 @@ class RetargetingSelectionCriteria
      * Sets RetargetingIDS.
      *
      * @param int[]|null $value
-     * @return $this
+     * @return self
      */
     public function setRetargetingIDS(array $value = null)
     {
@@ -84,7 +84,7 @@ class RetargetingSelectionCriteria
      * Sets AdIDS.
      *
      * @param int[]|null $value
-     * @return $this
+     * @return self
      */
     public function setAdIDS(array $value = null)
     {

@@ -15,7 +15,7 @@ class CampaignTagsInfo
     /**
      * Creates a new instance of CampaignTagsInfo.
      *
-     * @return CampaignTagsInfo
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +36,7 @@ class CampaignTagsInfo
      * Sets CampaignID.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setCampaignID($value)
     {
@@ -59,7 +59,7 @@ class CampaignTagsInfo
      * Sets Tags.
      *
      * @param TagInfo[]|null $value
-     * @return $this
+     * @return self
      */
     public function setTags(array $value = null)
     {

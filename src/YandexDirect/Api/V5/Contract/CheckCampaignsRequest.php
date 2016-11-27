@@ -13,7 +13,7 @@ class CheckCampaignsRequest
     /**
      * Creates a new instance of CheckCampaignsRequest.
      *
-     * @return CheckCampaignsRequest
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class CheckCampaignsRequest
      * Sets Timestamp.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setTimestamp($value)
     {

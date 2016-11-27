@@ -23,7 +23,7 @@ class SetBidsItem
     /**
      * Creates a new instance of SetBidsItem.
      *
-     * @return SetBidsItem
+     * @return self
      */
     public static function create()
     {
@@ -44,7 +44,7 @@ class SetBidsItem
      * Sets CampaignId.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setCampaignId($value = null)
     {
@@ -67,7 +67,7 @@ class SetBidsItem
      * Sets AdGroupId.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setAdGroupId($value = null)
     {
@@ -90,7 +90,7 @@ class SetBidsItem
      * Sets Id.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setId($value = null)
     {
@@ -113,7 +113,7 @@ class SetBidsItem
      * Sets Bid.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setBid($value = null)
     {
@@ -136,7 +136,7 @@ class SetBidsItem
      * Sets ContextBid.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setContextBid($value = null)
     {
@@ -148,7 +148,8 @@ class SetBidsItem
     /**
      * Gets StrategyPriority.
      *
-     * @return PriorityEnum|null
+     * @return string|null
+     * @see PriorityEnum
      */
     public function getStrategyPriority()
     {
@@ -158,8 +159,9 @@ class SetBidsItem
     /**
      * Sets StrategyPriority.
      *
-     * @param PriorityEnum|null $value
-     * @return $this
+     * @param string|null $value
+     * @return self
+     * @see PriorityEnum
      */
     public function setStrategyPriority($value = null)
     {

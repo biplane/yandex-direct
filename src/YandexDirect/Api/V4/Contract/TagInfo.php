@@ -15,7 +15,7 @@ class TagInfo
     /**
      * Creates a new instance of TagInfo.
      *
-     * @return TagInfo
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +36,7 @@ class TagInfo
      * Sets TagID.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setTagID($value)
     {
@@ -59,7 +59,7 @@ class TagInfo
      * Sets Tag.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setTag($value)
     {

@@ -15,7 +15,7 @@ class RetargetingResponse
     /**
      * Creates a new instance of RetargetingResponse.
      *
-     * @return RetargetingResponse
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +36,7 @@ class RetargetingResponse
      * Sets ActionsResult.
      *
      * @param RetargetingActionResult[]|null $value
-     * @return $this
+     * @return self
      */
     public function setActionsResult(array $value = null)
     {
@@ -59,7 +59,7 @@ class RetargetingResponse
      * Sets Retargetings.
      *
      * @param Retargeting[]|null $value
-     * @return $this
+     * @return self
      */
     public function setRetargetings(array $value = null)
     {

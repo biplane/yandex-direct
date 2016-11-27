@@ -13,7 +13,7 @@ class TextCampaignSearchStrategyAdd extends TextCampaignStrategyAddBase
     /**
      * Creates a new instance of TextCampaignSearchStrategyAdd.
      *
-     * @return TextCampaignSearchStrategyAdd
+     * @return self
      */
     public static function create()
     {
@@ -23,7 +23,8 @@ class TextCampaignSearchStrategyAdd extends TextCampaignStrategyAddBase
     /**
      * Gets BiddingStrategyType.
      *
-     * @return TextCampaignSearchStrategyTypeEnum
+     * @return string
+     * @see TextCampaignSearchStrategyTypeEnum
      */
     public function getBiddingStrategyType()
     {
@@ -33,8 +34,9 @@ class TextCampaignSearchStrategyAdd extends TextCampaignStrategyAddBase
     /**
      * Sets BiddingStrategyType.
      *
-     * @param TextCampaignSearchStrategyTypeEnum $value
-     * @return $this
+     * @param string $value
+     * @return self
+     * @see TextCampaignSearchStrategyTypeEnum
      */
     public function setBiddingStrategyType($value)
     {

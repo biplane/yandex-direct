@@ -13,7 +13,7 @@ class AddBidModifiersResponse
     /**
      * Creates a new instance of AddBidModifiersResponse.
      *
-     * @return AddBidModifiersResponse
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class AddBidModifiersResponse
      * Sets AddResults.
      *
      * @param MultiIdsActionResult[]|null $value
-     * @return $this
+     * @return self
      */
     public function setAddResults(array $value = null)
     {

@@ -13,7 +13,7 @@ class SuspendKeywordsRequest
     /**
      * Creates a new instance of SuspendKeywordsRequest.
      *
-     * @return SuspendKeywordsRequest
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class SuspendKeywordsRequest
      * Sets SelectionCriteria.
      *
      * @param IdsCriteria $value
-     * @return $this
+     * @return self
      */
     public function setSelectionCriteria(IdsCriteria $value)
     {

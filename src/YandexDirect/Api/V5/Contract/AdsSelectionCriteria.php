@@ -39,7 +39,7 @@ class AdsSelectionCriteria
     /**
      * Creates a new instance of AdsSelectionCriteria.
      *
-     * @return AdsSelectionCriteria
+     * @return self
      */
     public static function create()
     {
@@ -60,7 +60,7 @@ class AdsSelectionCriteria
      * Sets Ids.
      *
      * @param int[]|null $value
-     * @return $this
+     * @return self
      */
     public function setIds(array $value = null)
     {
@@ -72,7 +72,8 @@ class AdsSelectionCriteria
     /**
      * Gets States.
      *
-     * @return AdStateSelectionEnum[]|null
+     * @return string[]|null
+     * @see AdStateSelectionEnum
      */
     public function getStates()
     {
@@ -82,8 +83,9 @@ class AdsSelectionCriteria
     /**
      * Sets States.
      *
-     * @param AdStateSelectionEnum[]|null $value
-     * @return $this
+     * @param string[]|null $value
+     * @return self
+     * @see AdStateSelectionEnum
      */
     public function setStates(array $value = null)
     {
@@ -95,7 +97,8 @@ class AdsSelectionCriteria
     /**
      * Gets Statuses.
      *
-     * @return AdStatusSelectionEnum[]|null
+     * @return string[]|null
+     * @see AdStatusSelectionEnum
      */
     public function getStatuses()
     {
@@ -105,8 +108,9 @@ class AdsSelectionCriteria
     /**
      * Sets Statuses.
      *
-     * @param AdStatusSelectionEnum[]|null $value
-     * @return $this
+     * @param string[]|null $value
+     * @return self
+     * @see AdStatusSelectionEnum
      */
     public function setStatuses(array $value = null)
     {
@@ -129,7 +133,7 @@ class AdsSelectionCriteria
      * Sets CampaignIds.
      *
      * @param int[]|null $value
-     * @return $this
+     * @return self
      */
     public function setCampaignIds(array $value = null)
     {
@@ -152,7 +156,7 @@ class AdsSelectionCriteria
      * Sets AdGroupIds.
      *
      * @param int[]|null $value
-     * @return $this
+     * @return self
      */
     public function setAdGroupIds(array $value = null)
     {
@@ -164,7 +168,8 @@ class AdsSelectionCriteria
     /**
      * Gets Types.
      *
-     * @return AdTypeEnum[]|null
+     * @return string[]|null
+     * @see AdTypeEnum
      */
     public function getTypes()
     {
@@ -174,8 +179,9 @@ class AdsSelectionCriteria
     /**
      * Sets Types.
      *
-     * @param AdTypeEnum[]|null $value
-     * @return $this
+     * @param string[]|null $value
+     * @return self
+     * @see AdTypeEnum
      */
     public function setTypes(array $value = null)
     {
@@ -187,7 +193,8 @@ class AdsSelectionCriteria
     /**
      * Gets Mobile.
      *
-     * @return YesNoEnum|null
+     * @return string|null
+     * @see YesNoEnum
      */
     public function getMobile()
     {
@@ -197,8 +204,9 @@ class AdsSelectionCriteria
     /**
      * Sets Mobile.
      *
-     * @param YesNoEnum|null $value
-     * @return $this
+     * @param string|null $value
+     * @return self
+     * @see YesNoEnum
      */
     public function setMobile($value = null)
     {
@@ -221,7 +229,7 @@ class AdsSelectionCriteria
      * Sets VCardIds.
      *
      * @param int[]|null $value
-     * @return $this
+     * @return self
      */
     public function setVCardIds(array $value = null)
     {
@@ -244,7 +252,7 @@ class AdsSelectionCriteria
      * Sets SitelinkSetIds.
      *
      * @param int[]|null $value
-     * @return $this
+     * @return self
      */
     public function setSitelinkSetIds(array $value = null)
     {
@@ -267,7 +275,7 @@ class AdsSelectionCriteria
      * Sets AdImageHashes.
      *
      * @param string[]|null $value
-     * @return $this
+     * @return self
      */
     public function setAdImageHashes(array $value = null)
     {
@@ -279,7 +287,8 @@ class AdsSelectionCriteria
     /**
      * Gets VCardModerationStatuses.
      *
-     * @return ExtensionStatusSelectionEnum[]|null
+     * @return string[]|null
+     * @see ExtensionStatusSelectionEnum
      */
     public function getVCardModerationStatuses()
     {
@@ -289,8 +298,9 @@ class AdsSelectionCriteria
     /**
      * Sets VCardModerationStatuses.
      *
-     * @param ExtensionStatusSelectionEnum[]|null $value
-     * @return $this
+     * @param string[]|null $value
+     * @return self
+     * @see ExtensionStatusSelectionEnum
      */
     public function setVCardModerationStatuses(array $value = null)
     {
@@ -302,7 +312,8 @@ class AdsSelectionCriteria
     /**
      * Gets SitelinksModerationStatuses.
      *
-     * @return ExtensionStatusSelectionEnum[]|null
+     * @return string[]|null
+     * @see ExtensionStatusSelectionEnum
      */
     public function getSitelinksModerationStatuses()
     {
@@ -312,8 +323,9 @@ class AdsSelectionCriteria
     /**
      * Sets SitelinksModerationStatuses.
      *
-     * @param ExtensionStatusSelectionEnum[]|null $value
-     * @return $this
+     * @param string[]|null $value
+     * @return self
+     * @see ExtensionStatusSelectionEnum
      */
     public function setSitelinksModerationStatuses(array $value = null)
     {
@@ -325,7 +337,8 @@ class AdsSelectionCriteria
     /**
      * Gets AdImageModerationStatuses.
      *
-     * @return ExtensionStatusSelectionEnum[]|null
+     * @return string[]|null
+     * @see ExtensionStatusSelectionEnum
      */
     public function getAdImageModerationStatuses()
     {
@@ -335,8 +348,9 @@ class AdsSelectionCriteria
     /**
      * Sets AdImageModerationStatuses.
      *
-     * @param ExtensionStatusSelectionEnum[]|null $value
-     * @return $this
+     * @param string[]|null $value
+     * @return self
+     * @see ExtensionStatusSelectionEnum
      */
     public function setAdImageModerationStatuses(array $value = null)
     {
@@ -359,7 +373,7 @@ class AdsSelectionCriteria
      * Sets AdExtensionIds.
      *
      * @param int[]|null $value
-     * @return $this
+     * @return self
      */
     public function setAdExtensionIds(array $value = null)
     {

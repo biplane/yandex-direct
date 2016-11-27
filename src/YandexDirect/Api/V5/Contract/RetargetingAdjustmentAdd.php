@@ -15,7 +15,7 @@ class RetargetingAdjustmentAdd
     /**
      * Creates a new instance of RetargetingAdjustmentAdd.
      *
-     * @return RetargetingAdjustmentAdd
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +36,7 @@ class RetargetingAdjustmentAdd
      * Sets RetargetingConditionId.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setRetargetingConditionId($value)
     {
@@ -59,7 +59,7 @@ class RetargetingAdjustmentAdd
      * Sets BidModifier.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setBidModifier($value)
     {

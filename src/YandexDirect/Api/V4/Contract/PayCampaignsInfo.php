@@ -8,9 +8,7 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
 class PayCampaignsInfo
 {
 
-    protected $Payments = array(
-        
-    );
+    protected $Payments = [];
 
     protected $ContractID = null;
 
@@ -19,7 +17,7 @@ class PayCampaignsInfo
     /**
      * Creates a new instance of PayCampaignsInfo.
      *
-     * @return PayCampaignsInfo
+     * @return self
      */
     public static function create()
     {
@@ -40,7 +38,7 @@ class PayCampaignsInfo
      * Sets Payments.
      *
      * @param PayCampElement[] $value
-     * @return $this
+     * @return self
      */
     public function setPayments(array $value)
     {
@@ -63,7 +61,7 @@ class PayCampaignsInfo
      * Sets ContractID.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setContractID($value = null)
     {
@@ -86,7 +84,7 @@ class PayCampaignsInfo
      * Sets PayMethod.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setPayMethod($value)
     {

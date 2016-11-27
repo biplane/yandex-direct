@@ -25,7 +25,7 @@ class StatGoalInfo
     /**
      * Creates a new instance of StatGoalInfo.
      *
-     * @return StatGoalInfo
+     * @return self
      */
     public static function create()
     {
@@ -46,7 +46,7 @@ class StatGoalInfo
      * Sets GoalID.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setGoalID($value)
     {
@@ -69,7 +69,7 @@ class StatGoalInfo
      * Sets Name.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setName($value)
     {
@@ -92,7 +92,7 @@ class StatGoalInfo
      * Sets AvailableForStrategy.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setAvailableForStrategy($value)
     {
@@ -115,7 +115,7 @@ class StatGoalInfo
      * Sets AvailableForContextStrategy.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setAvailableForContextStrategy($value)
     {
@@ -138,7 +138,7 @@ class StatGoalInfo
      * Sets GoalsReached.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setGoalsReached($value)
     {
@@ -161,7 +161,7 @@ class StatGoalInfo
      * Sets ContextGoalsReached.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setContextGoalsReached($value)
     {
@@ -184,7 +184,7 @@ class StatGoalInfo
      * Sets CampaignID.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setCampaignID($value = null)
     {

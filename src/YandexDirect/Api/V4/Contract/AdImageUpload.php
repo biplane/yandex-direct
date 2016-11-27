@@ -27,7 +27,7 @@ class AdImageUpload
     /**
      * Creates a new instance of AdImageUpload.
      *
-     * @return AdImageUpload
+     * @return self
      */
     public static function create()
     {
@@ -48,7 +48,7 @@ class AdImageUpload
      * Sets Login.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setLogin($value)
     {
@@ -71,7 +71,7 @@ class AdImageUpload
      * Sets AdImageHash.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setAdImageHash($value)
     {
@@ -94,7 +94,7 @@ class AdImageUpload
      * Sets AdImageURL.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setAdImageURL($value)
     {
@@ -117,7 +117,7 @@ class AdImageUpload
      * Sets SourceURL.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setSourceURL($value)
     {
@@ -140,7 +140,7 @@ class AdImageUpload
      * Sets Name.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setName($value = null)
     {
@@ -163,7 +163,7 @@ class AdImageUpload
      * Sets Error.
      *
      * @param Error|null $value
-     * @return $this
+     * @return self
      */
     public function setError(Error $value = null)
     {
@@ -186,7 +186,7 @@ class AdImageUpload
      * Sets AdImageUploadTaskID.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setAdImageUploadTaskID($value = null)
     {
@@ -209,7 +209,7 @@ class AdImageUpload
      * Sets Status.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setStatus($value = null)
     {

@@ -15,7 +15,7 @@ class StrategyWeeklyBudgetAddBase
     /**
      * Creates a new instance of StrategyWeeklyBudgetAddBase.
      *
-     * @return StrategyWeeklyBudgetAddBase
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +36,7 @@ class StrategyWeeklyBudgetAddBase
      * Sets WeeklySpendLimit.
      *
      * @param int $value
-     * @return $this
+     * @return self
      */
     public function setWeeklySpendLimit($value)
     {
@@ -59,7 +59,7 @@ class StrategyWeeklyBudgetAddBase
      * Sets BidCeiling.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setBidCeiling($value = null)
     {

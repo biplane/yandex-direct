@@ -13,7 +13,7 @@ class ClientFilter
     /**
      * Creates a new instance of ClientFilter.
      *
-     * @return ClientFilter
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class ClientFilter
      * Sets StatusArch.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setStatusArch($value = null)
     {

@@ -21,7 +21,7 @@ class AdExtensionsSelectionCriteria
     /**
      * Creates a new instance of AdExtensionsSelectionCriteria.
      *
-     * @return AdExtensionsSelectionCriteria
+     * @return self
      */
     public static function create()
     {
@@ -42,7 +42,7 @@ class AdExtensionsSelectionCriteria
      * Sets Ids.
      *
      * @param int[]|null $value
-     * @return $this
+     * @return self
      */
     public function setIds(array $value = null)
     {
@@ -54,7 +54,8 @@ class AdExtensionsSelectionCriteria
     /**
      * Gets Types.
      *
-     * @return AdExtensionTypeEnum[]|null
+     * @return string[]|null
+     * @see AdExtensionTypeEnum
      */
     public function getTypes()
     {
@@ -64,8 +65,9 @@ class AdExtensionsSelectionCriteria
     /**
      * Sets Types.
      *
-     * @param AdExtensionTypeEnum[]|null $value
-     * @return $this
+     * @param string[]|null $value
+     * @return self
+     * @see AdExtensionTypeEnum
      */
     public function setTypes(array $value = null)
     {
@@ -77,7 +79,8 @@ class AdExtensionsSelectionCriteria
     /**
      * Gets States.
      *
-     * @return AdExtensionStateSelectionEnum[]|null
+     * @return string[]|null
+     * @see AdExtensionStateSelectionEnum
      */
     public function getStates()
     {
@@ -87,8 +90,9 @@ class AdExtensionsSelectionCriteria
     /**
      * Sets States.
      *
-     * @param AdExtensionStateSelectionEnum[]|null $value
-     * @return $this
+     * @param string[]|null $value
+     * @return self
+     * @see AdExtensionStateSelectionEnum
      */
     public function setStates(array $value = null)
     {
@@ -100,7 +104,8 @@ class AdExtensionsSelectionCriteria
     /**
      * Gets Statuses.
      *
-     * @return ExtensionStatusSelectionEnum[]|null
+     * @return string[]|null
+     * @see ExtensionStatusSelectionEnum
      */
     public function getStatuses()
     {
@@ -110,8 +115,9 @@ class AdExtensionsSelectionCriteria
     /**
      * Sets Statuses.
      *
-     * @param ExtensionStatusSelectionEnum[]|null $value
-     * @return $this
+     * @param string[]|null $value
+     * @return self
+     * @see ExtensionStatusSelectionEnum
      */
     public function setStatuses(array $value = null)
     {
@@ -134,7 +140,7 @@ class AdExtensionsSelectionCriteria
      * Sets ModifiedSince.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setModifiedSince($value = null)
     {

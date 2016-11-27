@@ -13,7 +13,7 @@ class SetBidsResponse
     /**
      * Creates a new instance of SetBidsResponse.
      *
-     * @return SetBidsResponse
+     * @return self
      */
     public static function create()
     {
@@ -34,7 +34,7 @@ class SetBidsResponse
      * Sets SetResults.
      *
      * @param BidActionResult[]|null $value
-     * @return $this
+     * @return self
      */
     public function setSetResults(array $value = null)
     {

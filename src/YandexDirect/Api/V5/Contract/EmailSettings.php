@@ -21,7 +21,7 @@ class EmailSettings
     /**
      * Creates a new instance of EmailSettings.
      *
-     * @return EmailSettings
+     * @return self
      */
     public static function create()
     {
@@ -42,7 +42,7 @@ class EmailSettings
      * Sets Email.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setEmail($value = null)
     {
@@ -65,7 +65,7 @@ class EmailSettings
      * Sets CheckPositionInterval.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setCheckPositionInterval($value = null)
     {
@@ -88,7 +88,7 @@ class EmailSettings
      * Sets WarningBalance.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setWarningBalance($value = null)
     {
@@ -100,7 +100,8 @@ class EmailSettings
     /**
      * Gets SendAccountNews.
      *
-     * @return YesNoEnum|null
+     * @return string|null
+     * @see YesNoEnum
      */
     public function getSendAccountNews()
     {
@@ -110,8 +111,9 @@ class EmailSettings
     /**
      * Sets SendAccountNews.
      *
-     * @param YesNoEnum|null $value
-     * @return $this
+     * @param string|null $value
+     * @return self
+     * @see YesNoEnum
      */
     public function setSendAccountNews($value = null)
     {
@@ -123,7 +125,8 @@ class EmailSettings
     /**
      * Gets SendWarnings.
      *
-     * @return YesNoEnum|null
+     * @return string|null
+     * @see YesNoEnum
      */
     public function getSendWarnings()
     {
@@ -133,8 +136,9 @@ class EmailSettings
     /**
      * Sets SendWarnings.
      *
-     * @param YesNoEnum|null $value
-     * @return $this
+     * @param string|null $value
+     * @return self
+     * @see YesNoEnum
      */
     public function setSendWarnings($value = null)
     {

@@ -15,7 +15,7 @@ class RejectReason
     /**
      * Creates a new instance of RejectReason.
      *
-     * @return RejectReason
+     * @return self
      */
     public static function create()
     {
@@ -36,7 +36,7 @@ class RejectReason
      * Sets Type.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setType($value)
     {
@@ -59,7 +59,7 @@ class RejectReason
      * Sets Text.
      *
      * @param string $value
-     * @return $this
+     * @return self
      */
     public function setText($value)
     {

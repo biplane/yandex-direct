@@ -21,7 +21,7 @@ class GetCampaignsInfo
     /**
      * Creates a new instance of GetCampaignsInfo.
      *
-     * @return GetCampaignsInfo
+     * @return self
      */
     public static function create()
     {
@@ -42,7 +42,7 @@ class GetCampaignsInfo
      * Sets Logins.
      *
      * @param string[]|null $value
-     * @return $this
+     * @return self
      */
     public function setLogins(array $value = null)
     {
@@ -65,7 +65,7 @@ class GetCampaignsInfo
      * Sets Filter.
      *
      * @param CampaignsFilterInfo|null $value
-     * @return $this
+     * @return self
      */
     public function setFilter(CampaignsFilterInfo $value = null)
     {
@@ -88,7 +88,7 @@ class GetCampaignsInfo
      * Sets Limit.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setLimit($value = null)
     {
@@ -111,7 +111,7 @@ class GetCampaignsInfo
      * Sets Offset.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setOffset($value = null)
     {
@@ -134,7 +134,7 @@ class GetCampaignsInfo
      * Sets CurrencySupported.
      *
      * @param string|null $value
-     * @return $this
+     * @return self
      */
     public function setCurrencySupported($value = null)
     {

@@ -29,7 +29,7 @@ class BidGetItem extends BidBase
     /**
      * Creates a new instance of BidGetItem.
      *
-     * @return BidGetItem
+     * @return self
      */
     public static function create()
     {
@@ -50,7 +50,7 @@ class BidGetItem extends BidBase
      * Sets Bid.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setBid($value = null)
     {
@@ -73,7 +73,7 @@ class BidGetItem extends BidBase
      * Sets ContextBid.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setContextBid($value = null)
     {
@@ -85,7 +85,8 @@ class BidGetItem extends BidBase
     /**
      * Gets StrategyPriority.
      *
-     * @return PriorityEnum|null
+     * @return string|null
+     * @see PriorityEnum
      */
     public function getStrategyPriority()
     {
@@ -95,8 +96,9 @@ class BidGetItem extends BidBase
     /**
      * Sets StrategyPriority.
      *
-     * @param PriorityEnum|null $value
-     * @return $this
+     * @param string|null $value
+     * @return self
+     * @see PriorityEnum
      */
     public function setStrategyPriority($value = null)
     {
@@ -119,7 +121,7 @@ class BidGetItem extends BidBase
      * Sets CompetitorsBids.
      *
      * @param int[]|null $value
-     * @return $this
+     * @return self
      */
     public function setCompetitorsBids(array $value = null)
     {
@@ -142,7 +144,7 @@ class BidGetItem extends BidBase
      * Sets SearchPrices.
      *
      * @param SearchPrices[]|null $value
-     * @return $this
+     * @return self
      */
     public function setSearchPrices(array $value = null)
     {
@@ -165,7 +167,7 @@ class BidGetItem extends BidBase
      * Sets ContextCoverage.
      *
      * @param ContextCoverage|null $value
-     * @return $this
+     * @return self
      */
     public function setContextCoverage(ContextCoverage $value = null)
     {
@@ -188,7 +190,7 @@ class BidGetItem extends BidBase
      * Sets MinSearchPrice.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setMinSearchPrice($value = null)
     {
@@ -211,7 +213,7 @@ class BidGetItem extends BidBase
      * Sets CurrentSearchPrice.
      *
      * @param int|null $value
-     * @return $this
+     * @return self
      */
     public function setCurrentSearchPrice($value = null)
     {
@@ -234,7 +236,7 @@ class BidGetItem extends BidBase
      * Sets AuctionBids.
      *
      * @param AuctionBidItem[]|null $value
-     * @return $this
+     * @return self
      */
     public function setAuctionBids(array $value = null)
     {
