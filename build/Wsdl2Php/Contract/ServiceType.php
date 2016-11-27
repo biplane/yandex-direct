@@ -55,11 +55,11 @@ class ServiceType extends AbstractType implements GeneratorInterface
     private function getBaseClientClass($wsdl)
     {
         if (false !== strpos($wsdl, '/v4/')) {
-            return 'Biplane\YandexDirect\Api\V4SoapClient';
+            return 'Biplane\YandexDirect\Api\SoapClientV4';
         }
 
         if (false !== strpos($wsdl, '/v5/')) {
-            return 'Biplane\YandexDirect\Api\V5SoapClient';
+            return 'Biplane\YandexDirect\Api\SoapClientV5';
         }
 
         throw new \RuntimeException(sprintf('Could not resolve the generic client type by WSDL: %s', $wsdl));

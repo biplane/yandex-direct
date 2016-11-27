@@ -1,13 +1,13 @@
 namespace Acme\Api;
 
-use Biplane\YandexDirect\Api\V5SoapClient;
+use Biplane\YandexDirect\Api\SoapClientV5;
 use Biplane\YandexDirect\User;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**
  * Auto-generated code.
  */
-class AdGroups extends V5SoapClient
+class AdGroups extends SoapClientV5
 {
 
     const ENDPOINT = 'api/v5/adgroups.wsdl';

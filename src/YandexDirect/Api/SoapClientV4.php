@@ -8,11 +8,11 @@ use Biplane\YandexDirect\User;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**
- * V4SoapClient
+ * SoapClientV4
  *
  * @author Denis Vasilev
  */
-class V4SoapClient extends SoapClient
+class SoapClientV4 extends SoapClient
 {
     private $requestId;
 

@@ -7,11 +7,11 @@ use Biplane\YandexDirect\User;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**
- * V5SoapClient
+ * SoapClientV5
  *
  * @author Denis Vasilev
  */
-class V5SoapClient extends SoapClient
+class SoapClientV5 extends SoapClient
 {
     public function __construct($wsdl, EventDispatcherInterface $dispatcher, User $user, array $options = array())
     {

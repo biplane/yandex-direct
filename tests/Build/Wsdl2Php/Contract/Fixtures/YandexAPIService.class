@@ -1,13 +1,13 @@
 namespace Acme\Api;
 
-use Biplane\YandexDirect\Api\V4SoapClient;
+use Biplane\YandexDirect\Api\SoapClientV4;
 use Biplane\YandexDirect\User;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**
  * Auto-generated code.
  */
-class YandexAPIService extends V4SoapClient
+class YandexAPIService extends SoapClientV4
 {
 
     const ENDPOINT = 'api/v4/wsdl';

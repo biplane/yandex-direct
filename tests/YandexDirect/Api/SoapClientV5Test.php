@@ -4,7 +4,7 @@ namespace Biplane\Tests\YandexDirect\Api;
 
 use Biplane\YandexDirect\Exception\ApiException;
 
-class V5SoapClientTest extends BaseTestCase
+class SoapClientV5Test extends BaseTestCase
 {
     /**
      * @expectedException \Biplane\YandexDirect\Exception\ApiException
@@ -60,6 +60,6 @@ class V5SoapClientTest extends BaseTestCase
             $methods = array('__soapCall');
         }
 
-        return $this->createClient('Biplane\YandexDirect\Api\V5SoapClient', $methods);
+        return $this->createClient('Biplane\YandexDirect\Api\SoapClientV5', $methods);
     }
 }
