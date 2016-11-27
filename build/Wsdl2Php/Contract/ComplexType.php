@@ -63,6 +63,10 @@ class ComplexType extends AbstractDataType implements GeneratorInterface
     {
         $types = $resolver->getTypes();
 
+        if (substr($wsdlType, -2) === '[]') {
+            $wsdlType = substr($wsdlType, 0, -2);
+        }
+
         if (isset($types[$wsdlType]) && $types[$wsdlType] instanceof EnumType) {
             return $types[$wsdlType]->getPhpIdentifier();
         }

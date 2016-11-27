@@ -35,4 +35,24 @@ class ComplexTypeTest extends TestCase
         $this->assertEquals('Foo\Api\Contract\AdGroupGetItem', $complexType->resolvePhpType($typeResolver));
         $this->assertClassGenerator('AdGroupGetItem.class', $generator);
     }
+
+    public function testEmbeddedType()
+    {
+        $wsdlTypes = $this->loadTypes('adgroups.wsdl');
+        $complexType = new ComplexType(
+            $this->findType('GetRequest', $wsdlTypes),
+            'GetRequest',
+            'Acme\Api\Contract'
+        );
+        $typeResolver = new PhpTypeResolver([
+            'AdGroupsSelectionCriteria' => $this->createComplexType('AdGroupsSelectionCriteria', 'Acme\Api\Contract', $wsdlTypes),
+            'AdGroupFieldEnum' => $this->createEnumType('AdGroupFieldEnum', 'Acme\Api\Contract', $wsdlTypes),
+            'MobileAppAdGroupFieldEnum' => $this->createEnumType('MobileAppAdGroupFieldEnum', 'Acme\Api\Contract', $wsdlTypes),
+        ]);
+
+        $generator = $complexType->generate($typeResolver);
+
+        $this->assertEquals('Acme\Api\Contract\GetRequest', $complexType->getPhpIdentifier());
+        $this->assertClassGenerator('GetRequest.class', $generator);
+    }
 }
