@@ -29,7 +29,7 @@
     "monolog/monolog": "^1.21"
   },
   "autoload": {
-    "psr-4": { "Biplane\\": "src/" }
+    "psr-4": { "Biplane\\YandexDirect\\": "src/" }
   },
   "autoload-dev": {
     "psr-4": {
