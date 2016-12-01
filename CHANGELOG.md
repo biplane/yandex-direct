@@ -7,6 +7,8 @@
    
  * `Biplane\YandexDirect\Api\V4SoapClient` переименован в `Biplane\YandexDirect\Api\SoapClientV4`,
    `Biplane\YandexDirect\Api\V5SoapClient` переименован в `Biplane\YandexDirect\Api\SoapClientV5`.
+   
+ * Удален `ConcurrentListener`.
 
 ## 3.4.2 [commit logs](https://github.com/biplane/BiplaneYandexDirectBundle/compare/3.4.1...3.4.2)
 

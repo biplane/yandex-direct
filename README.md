@@ -87,27 +87,6 @@ It's required for financial operations and when a request is made on behalf of t
 
 ## Event listeners
 
-### ConcurrentListener
-
-This listener limits the number of simultaneous connections to API within the app. 
-For this feature used Semaphore of [System V](http://docs.php.net/manual/en/book.sem.php).
-
-> **NOTE:** Not available for Windows OS.
- 
-```php
-use Biplane\SysV\Factory;
-use Biplane\YandexDirect\EventListener\ConcurrentListener;
-
-$factory = new Factory('/var/ipc');
-
-$listener = new ConcurrentListener($factory, 10);
-
-$user->getDispatcher()->addSubscriber($listener);
-```
-
-The number of max connections (from 1 to 12) passed to the constuctor of `ConcurrentListener`
-as the second argument.  
-
 ### DumpListener
 
 This listener allows write to file info about request and response from server. File names generated 
