@@ -28,25 +28,27 @@ use Biplane\YandexDirect\Api\V5\Contract\GetAdRequest;
 use Biplane\YandexDirect\Api\V5\Contract\StateEnum;
 use Biplane\YandexDirect\User;
 
-$user = new User(array(
+$user = new User([
     'access_token' => 'INSERT_YOUR_ACCESS_TOKEN',
     'login' => 'YANDEX_DIRECT_CLIENT_LOGIN',
     'locale' => User::LOCALE_RU,
-));
+]);
 
 $criteria = AdsSelectionCriteria::create()
-    ->setCampaignIds(array(123))
-    ->setStates(array(StateEnum::ON));
+    ->setCampaignIds([123])
+    ->setStates([
+        StateEnum::ON,
+    ]);
     
 $payload = GetAdRequest::create()
     ->setSelectionCriteria($criteria)
-    ->setFieldNames(array(
+    ->setFieldNames([
         AdFieldEnum::AD_CATEGORIES,
         AdFieldEnum::AGE_LABEL,
         AdFieldEnum::AD_GROUP_ID,
         AdFieldEnum::ID,
-        AdFieldEnum::STATUS
-    ));
+        AdFieldEnum::STATUS,
+    ]);
 
 $response = $user->getAdsService()->get($payload);
 
@@ -63,16 +65,13 @@ The `Biplane\YandexDirect\User` object supported some options:
 
 #### access_token 
 
-**Required**
-
-The [access token](https://tech.yandex.ru/direct/doc/dg-v4/concepts/auth-token-docpage/) for OAuth 
-
+The [access token](https://tech.yandex.ru/direct/doc/dg-v4/concepts/auth-token-docpage/) for OAuth. **Required** 
 
 #### locale
 
-Default: `en`
+You can specify the locale for messages from API. Allowed values: `ru`, `ua` or `en`. 
 
-You can specify the locale for messages from API. Allowed values: `ru`, `ua` or `en`.
+Default: `en`
 
 #### master_token
  
@@ -80,10 +79,8 @@ The master token needs for [access to financial methods](https://tech.yandex.ru/
 
 #### login
  
-**Required** in some cases.
-
 The [client login](https://tech.yandex.ru/direct/doc/dg/concepts/headers-docpage/#request). 
-It's required for financial operations and when a request is made on behalf of the agency.
+It's **required** for financial operations and when a request is made on behalf of the agency.
 
 ## Event listeners
 
