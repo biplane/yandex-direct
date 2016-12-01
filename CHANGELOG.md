@@ -9,6 +9,9 @@
    `Biplane\YandexDirect\Api\V5SoapClient` переименован в `Biplane\YandexDirect\Api\SoapClientV5`.
    
  * Удален `ConcurrentListener`.
+ 
+ * Удален `Authenticator`. Для получения токена можно использовать отдельные решения,
+   например, [aego/oauth2-yandex](https://github.com/rakeev/oauth2-yandex).
 
 ## 3.4.2 [commit logs](https://github.com/biplane/BiplaneYandexDirectBundle/compare/3.4.1...3.4.2)
 
