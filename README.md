@@ -24,7 +24,7 @@ $ composer require biplane/yandex-direct
 
 use Biplane\YandexDirect\Api\V5\Contract\AdFieldEnum;
 use Biplane\YandexDirect\Api\V5\Contract\AdsSelectionCriteria;
-use Biplane\YandexDirect\Api\V5\Contract\GetAdRequest;
+use Biplane\YandexDirect\Api\V5\Contract\GetAdsRequest;
 use Biplane\YandexDirect\Api\V5\Contract\StateEnum;
 use Biplane\YandexDirect\User;
 
@@ -40,7 +40,7 @@ $criteria = AdsSelectionCriteria::create()
         StateEnum::ON,
     ]);
     
-$payload = GetAdRequest::create()
+$payload = GetAdsRequest::create()
     ->setSelectionCriteria($criteria)
     ->setFieldNames([
         AdFieldEnum::AD_CATEGORIES,
@@ -81,6 +81,38 @@ The master token needs for [access to financial methods](https://tech.yandex.ru/
  
 The [client login](https://tech.yandex.ru/direct/doc/dg/concepts/headers-docpage/#request). 
 It's **required** for financial operations and when a request is made on behalf of the agency.
+
+## Supported API Services
+
+You can get the proxy of a service through the `User` object, to interact with Yandex.Direct API.
+
+* `User::getApiService()` - Service for API Live 4.
+
+* `User::getAdExtensionsService()` - Service for manage ad's extensions (API 5).
+
+* `User::getAdGroupsService()` - Service for for manage ad groups (API 5).
+
+* `User::getAdsService()` - Service for manage ads (API 5).
+
+* `User::getBidsService()` - Service for manage bids (API 5).
+
+* `User::getBidModifiersService()` - Service for the adjustments of bids (API 5).
+
+* `User::getCampaignsService()` - Service for manage campaigns (API 5).
+
+* `User::getChangesService()` - Service to check for changes (API 5).
+
+* `User::getClientsService()` - Service for manage clients (API 5).
+
+* `User::getDictionariesService()` - Service for fetch info about dictionaries (API 5).
+
+* `User::getDynamicTextAdTargetsService()` - Service for manage dynamic text ads (API 5).
+
+* `User::getKeywordsService()` - Service for manage keywords (API 5).
+
+* `User::getSitelinksService()` - Service for manage sitelinks (API 5).
+
+* `User::getVCardsService()` - Service for manage VCards (API 5).
 
 ## Event listeners
 

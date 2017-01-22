@@ -210,7 +210,7 @@ class User
     }
 
     /**
-     * Gets the proxy of web-service for manage changes.
+     * Gets the proxy of web-service to check for changes.
      *
      * @return Changes
      */
@@ -230,7 +230,7 @@ class User
     }
 
     /**
-     * Gets the proxy of web-service for manage dictionaries.
+     * Gets the proxy of web-service for fetch info about dictionaries.
      *
      * @return Dictionaries
      */
