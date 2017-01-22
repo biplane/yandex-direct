@@ -10,6 +10,7 @@ use Biplane\YandexDirect\Api\V5\BidModifiers;
 use Biplane\YandexDirect\Api\V5\Bids;
 use Biplane\YandexDirect\Api\V5\Campaigns;
 use Biplane\YandexDirect\Api\V5\Changes;
+use Biplane\YandexDirect\Api\V5\Clients;
 use Biplane\YandexDirect\Api\V5\Dictionaries;
 use Biplane\YandexDirect\Api\V5\DynamicTextAdTargets;
 use Biplane\YandexDirect\Api\V5\Keywords;
@@ -40,6 +41,7 @@ class User
         'BidModifiers' => 'Biplane\YandexDirect\Api\V5\BidModifiers',
         'Campaigns' => 'Biplane\YandexDirect\Api\V5\Campaigns',
         'Changes' => 'Biplane\YandexDirect\Api\V5\Changes',
+        'Clients' => 'Biplane\YandexDirect\Api\V5\Clients',
         'Dictionaries' => 'Biplane\YandexDirect\Api\V5\Dictionaries',
         'DynamicTextAdTargets' => 'Biplane\YandexDirect\Api\V5\DynamicTextAdTargets',
         'Keywords' => 'Biplane\YandexDirect\Api\V5\Keywords',
@@ -215,6 +217,16 @@ class User
     public function getChangesService()
     {
         return $this->getProxy('Changes');
+    }
+
+    /**
+     * Gets the proxy of web-service for manage clients.
+     *
+     * @return Clients
+     */
+    public function getClientsService()
+    {
+        return $this->getProxy('Clients');
     }
 
     /**

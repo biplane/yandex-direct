@@ -26,6 +26,8 @@ class DictionaryNameEnum
 
     const SUPPLY_SIDE_PLATFORMS = 'SupplySidePlatforms';
 
+    const INTERESTS = 'Interests';
+
 
 }
 

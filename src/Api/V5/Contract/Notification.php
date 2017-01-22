@@ -8,9 +8,13 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class Notification
 {
 
-    protected $SmsSettings = null;
+    protected $Email = null;
 
-    protected $EmailSettings = null;
+    protected $EmailSubscriptions = [];
+
+    protected $Lang = null;
+
+    protected $SmsPhoneNumber = null;
 
     /**
      * Creates a new instance of Notification.
@@ -23,47 +27,95 @@ class Notification
     }
 
     /**
-     * Gets SmsSettings.
+     * Gets Email.
      *
-     * @return SmsSettings|null
+     * @return string
      */
-    public function getSmsSettings()
+    public function getEmail()
     {
-        return $this->SmsSettings;
+        return $this->Email;
     }
 
     /**
-     * Sets SmsSettings.
+     * Sets Email.
      *
-     * @param SmsSettings|null $value
+     * @param string $value
      * @return self
      */
-    public function setSmsSettings(SmsSettings $value = null)
+    public function setEmail($value)
     {
-        $this->SmsSettings = $value;
+        $this->Email = $value;
 
         return $this;
     }
 
     /**
-     * Gets EmailSettings.
+     * Gets EmailSubscriptions.
      *
-     * @return EmailSettings|null
+     * @return EmailSubscriptionItem[]
      */
-    public function getEmailSettings()
+    public function getEmailSubscriptions()
     {
-        return $this->EmailSettings;
+        return $this->EmailSubscriptions;
     }
 
     /**
-     * Sets EmailSettings.
+     * Sets EmailSubscriptions.
      *
-     * @param EmailSettings|null $value
+     * @param EmailSubscriptionItem[] $value
      * @return self
      */
-    public function setEmailSettings(EmailSettings $value = null)
+    public function setEmailSubscriptions(array $value)
     {
-        $this->EmailSettings = $value;
+        $this->EmailSubscriptions = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets Lang.
+     *
+     * @return string
+     * @see LangEnum
+     */
+    public function getLang()
+    {
+        return $this->Lang;
+    }
+
+    /**
+     * Sets Lang.
+     *
+     * @param string $value
+     * @return self
+     * @see LangEnum
+     */
+    public function setLang($value)
+    {
+        $this->Lang = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets SmsPhoneNumber.
+     *
+     * @return string
+     */
+    public function getSmsPhoneNumber()
+    {
+        return $this->SmsPhoneNumber;
+    }
+
+    /**
+     * Sets SmsPhoneNumber.
+     *
+     * @param string $value
+     * @return self
+     */
+    public function setSmsPhoneNumber($value)
+    {
+        $this->SmsPhoneNumber = $value;
 
         return $this;
     }

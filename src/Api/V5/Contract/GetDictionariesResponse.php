@@ -26,6 +26,8 @@ class GetDictionariesResponse
 
     protected $SupplySidePlatforms = null;
 
+    protected $Interests = null;
+
     /**
      * Creates a new instance of GetDictionariesResponse.
      *
@@ -239,6 +241,29 @@ class GetDictionariesResponse
     public function setSupplySidePlatforms(array $value = null)
     {
         $this->SupplySidePlatforms = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets Interests.
+     *
+     * @return InterestsItem[]|null
+     */
+    public function getInterests()
+    {
+        return $this->Interests;
+    }
+
+    /**
+     * Sets Interests.
+     *
+     * @param InterestsItem[]|null $value
+     * @return self
+     */
+    public function setInterests(array $value = null)
+    {
+        $this->Interests = $value;
 
         return $this;
     }

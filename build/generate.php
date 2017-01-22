@@ -208,6 +208,17 @@ generate($generator, [
     }
 ] + $defaultOptions);
 
+generate($generator, [
+    'inputFile' => 'https://api.direct.yandex.com/v5/clients?wsdl',
+    'renameType' => function ($typeName) {
+        return preg_replace(
+            '#^(Get)(Request|Response)$#',
+            '$1Clients$2',
+            $typeName
+        );
+    }
+] + $defaultOptions);
+
 function generate(Generator $generator, array $options)
 {
     static $reflProp;

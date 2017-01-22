@@ -9,10 +9,10 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 /**
  * Auto-generated code.
  */
-class Dictionaries extends SoapClientV5
+class Clients extends SoapClientV5
 {
 
-    const ENDPOINT = 'https://api.direct.yandex.com/v5/dictionaries?wsdl';
+    const ENDPOINT = 'https://api.direct.yandex.com/v5/clients?wsdl';
 
     /**
      * Constructor.
@@ -55,19 +55,21 @@ class Dictionaries extends SoapClientV5
                 'MultiIdsActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\MultiIdsActionResult',
                 'ExtensionModeration' => 'Biplane\YandexDirect\Api\V5\Contract\ExtensionModeration',
                 'SortOrderEnum' => 'Biplane\YandexDirect\Api\V5\Contract\SortOrderEnum',
-                'DictionaryNameEnum' => 'Biplane\YandexDirect\Api\V5\Contract\DictionaryNameEnum',
-                'CurrenciesItem' => 'Biplane\YandexDirect\Api\V5\Contract\CurrenciesItem',
-                'MetroStationsItem' => 'Biplane\YandexDirect\Api\V5\Contract\MetroStationsItem',
-                'GeoRegionsItem' => 'Biplane\YandexDirect\Api\V5\Contract\GeoRegionsItem',
-                'TimeZonesItem' => 'Biplane\YandexDirect\Api\V5\Contract\TimeZonesItem',
-                'ConstantsItem' => 'Biplane\YandexDirect\Api\V5\Contract\ConstantsItem',
-                'AdCategoriesItem' => 'Biplane\YandexDirect\Api\V5\Contract\AdCategoriesItem',
-                'OperationSystemVersionsItem' => 'Biplane\YandexDirect\Api\V5\Contract\OperationSystemVersionsItem',
-                'ProductivityAssertionsItem' => 'Biplane\YandexDirect\Api\V5\Contract\ProductivityAssertionsItem',
-                'SupplySidePlatformsItem' => 'Biplane\YandexDirect\Api\V5\Contract\SupplySidePlatformsItem',
-                'InterestsItem' => 'Biplane\YandexDirect\Api\V5\Contract\InterestsItem',
-                'GetRequest' => 'Biplane\YandexDirect\Api\V5\Contract\GetDictionariesRequest',
-                'GetResponse' => 'Biplane\YandexDirect\Api\V5\Contract\GetDictionariesResponse',
+                'ClientFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\ClientFieldEnum',
+                'ClientRestrictionEnum' => 'Biplane\YandexDirect\Api\V5\Contract\ClientRestrictionEnum',
+                'ClientSettingGetEnum' => 'Biplane\YandexDirect\Api\V5\Contract\ClientSettingGetEnum',
+                'PrivilegeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\PrivilegeEnum',
+                'EmailSubscriptionEnum' => 'Biplane\YandexDirect\Api\V5\Contract\EmailSubscriptionEnum',
+                'EmailSubscriptionItem' => 'Biplane\YandexDirect\Api\V5\Contract\EmailSubscriptionItem',
+                'Notification' => 'Biplane\YandexDirect\Api\V5\Contract\Notification',
+                'ClientRestrictionItem' => 'Biplane\YandexDirect\Api\V5\Contract\ClientRestrictionItem',
+                'ClientSettingItemGet' => 'Biplane\YandexDirect\Api\V5\Contract\ClientSettingItemGet',
+                'Grant' => 'Biplane\YandexDirect\Api\V5\Contract\Grant',
+                'Representative' => 'Biplane\YandexDirect\Api\V5\Contract\Representative',
+                'ClientBaseItem' => 'Biplane\YandexDirect\Api\V5\Contract\ClientBaseItem',
+                'ClientGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\ClientGetItem',
+                'GetRequest' => 'Biplane\YandexDirect\Api\V5\Contract\GetClientsRequest',
+                'GetResponse' => 'Biplane\YandexDirect\Api\V5\Contract\GetClientsResponse',
             ]
         ]);
     }
@@ -75,10 +77,10 @@ class Dictionaries extends SoapClientV5
     /**
      * get.
      *
-     * @param Contract\GetDictionariesRequest $parameters
-     * @return Contract\GetDictionariesResponse
+     * @param Contract\GetClientsRequest $parameters
+     * @return Contract\GetClientsResponse
      */
-    public function get(Contract\GetDictionariesRequest $parameters)
+    public function get(Contract\GetClientsRequest $parameters)
     {
         return $this->invoke('get', [$parameters]);
     }

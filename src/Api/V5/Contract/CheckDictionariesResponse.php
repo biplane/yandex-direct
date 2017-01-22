@@ -12,6 +12,8 @@ class CheckDictionariesResponse
 
     protected $RegionsChanged = null;
 
+    protected $InterestsChanged = null;
+
     protected $Timestamp = null;
 
     /**
@@ -70,6 +72,31 @@ class CheckDictionariesResponse
     public function setRegionsChanged($value = null)
     {
         $this->RegionsChanged = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets InterestsChanged.
+     *
+     * @return string|null
+     * @see YesNoEnum
+     */
+    public function getInterestsChanged()
+    {
+        return $this->InterestsChanged;
+    }
+
+    /**
+     * Sets InterestsChanged.
+     *
+     * @param string|null $value
+     * @return self
+     * @see YesNoEnum
+     */
+    public function setInterestsChanged($value = null)
+    {
+        $this->InterestsChanged = $value;
 
         return $this;
     }
