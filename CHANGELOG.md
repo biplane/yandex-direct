@@ -1,6 +1,6 @@
 # Changelog
 
-## master
+## 4.0 [commit logs](https://github.com/biplane/BiplaneYandexDirectBundle/compare/3.4.2...4.0)
 
  * Бандл для интеграции с Symfony фреймфорком переехал в отдельный 
    [репозиторий](https://github.com/biplane/BiplaneYandexDirectBundle).
