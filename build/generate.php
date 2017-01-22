@@ -18,13 +18,13 @@ $generator = new Generator();
 $generator->setLogger($logger);
 
 $defaultOptions = [
-    'outputDir' => __DIR__ . '/../src/YandexDirect/Api/V5',
+    'outputDir' => __DIR__ . '/../src/Api/V5',
     'namespaceName' => 'Biplane\YandexDirect\Api\V5',
 ];
 
 generate($generator, [
     'inputFile' => 'https://api.direct.yandex.ru/live/v4/wsdl/',
-    'outputDir' => __DIR__ . '/../src/YandexDirect/Api/V4',
+    'outputDir' => __DIR__ . '/../src/Api/V4',
     'namespaceName' => 'Biplane\YandexDirect\Api\V4',
     'excludeTypes' => ['PingAPI_XInfo', 'PingAPI_XStructInfo'],
     'excludeOperations' => ['PingAPI_X', 'PingAPI'],
