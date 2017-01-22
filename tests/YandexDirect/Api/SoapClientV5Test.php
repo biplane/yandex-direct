@@ -52,6 +52,42 @@ class SoapClientV5Test extends BaseTestCase
         }
     }
 
+    public function testGetUnits()
+    {
+        $client = $this->getSoapClient('__getLastResponseHeaders');
+
+        $client->expects($this->once())
+            ->method('__getLastResponseHeaders')
+            ->willReturn(
+                "HTTP/1.1 200 OK\r\n" .
+                "Content-Type: text/xml\r\n" .
+                "RequestId: 2289555458481966563\r\n" .
+                "Units: 50/39750/40000\r\n" .
+                "X-XSS-Protection: 1; mode=block\r\n"
+            );
+
+        $units = $client->getUnits();
+
+        $this->assertSame(50, $units->getSpent());
+        $this->assertSame(39750, $units->getRest());
+        $this->assertSame(40000, $units->getLimit());
+    }
+
+    public function testGetUnitsWhenHeaderNotFound()
+    {
+        $client = $this->getSoapClient('__getLastResponseHeaders');
+
+        $client->expects($this->once())
+            ->method('__getLastResponseHeaders')
+            ->willReturn(null);
+
+        $units = $client->getUnits();
+
+        $this->assertSame(-1, $units->getSpent());
+        $this->assertSame(-1, $units->getRest());
+        $this->assertSame(-1, $units->getLimit());
+    }
+
     protected function getSoapClient()
     {
         $methods = func_get_args();

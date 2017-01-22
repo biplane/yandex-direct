@@ -12,6 +12,10 @@
  
  * Удален `Authenticator`. Для получения токена можно использовать отдельные решения,
    например, [aego/oauth2-yandex](https://github.com/rakeev/oauth2-yandex).
+   
+ * В сервисы для API 5 добавлен метод `getUnits`, который возвращает информацию
+   о баллах (заголовок [Units](https://tech.yandex.ru/direct/doc/dg/concepts/headers-docpage/#units)), 
+   актуальную для последнего запроса к API. 
 
 ## 3.4.2 [commit logs](https://github.com/biplane/BiplaneYandexDirectBundle/compare/3.4.1...3.4.2)
 

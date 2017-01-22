@@ -39,6 +39,24 @@ class SoapClientV5 extends SoapClient
     }
 
     /**
+     * Gets info about units for the last request.
+     *
+     * @see https://tech.yandex.ru/direct/doc/dg/concepts/headers-docpage/#units
+     *
+     * @return Units
+     */
+    public function getUnits()
+    {
+        $headers = $this->__getLastResponseHeaders();
+
+        if (!empty($headers) && preg_match('@^Units: (\d+)/(\d+)/(\d+)@m', $headers, $m)) {
+            return new Units($m[1], $m[2], $m[3]);
+        }
+
+        return new Units(-1, -1, -1);
+    }
+
+    /**
      * {@inheritdoc}
      */
     protected function handleFault(\SoapFault $fault, $methodRef, array $params)
