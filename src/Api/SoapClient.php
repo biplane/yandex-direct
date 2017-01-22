@@ -53,7 +53,7 @@ abstract class SoapClient extends \SoapClient
             'encoding'     => 'UTF-8',
             'trace'        => true,
             'exception'    => true,
-            'cache_wsdl'   => WSDL_CACHE_BOTH,
+            'cache_wsdl'   => version_compare(PHP_VERSION, '7.0') >= 0 ? WSDL_CACHE_DISK : WSDL_CACHE_BOTH,
             'features'     => SOAP_SINGLE_ELEMENT_ARRAYS,
         );
 
