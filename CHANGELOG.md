@@ -15,7 +15,14 @@
    
  * В сервисы для API 5 добавлен метод `getUnits`, который возвращает информацию
    о баллах (заголовок [Units](https://tech.yandex.ru/direct/doc/dg/concepts/headers-docpage/#units)), 
-   актуальную для последнего запроса к API. 
+   актуальную для последнего запроса к API.
+   
+ * Из `YandexAPIService` удалены методы: CreateOrUpdateCampaign, GetCampaignsList,
+   GetCampaignsListFilter, GetCampaignsParams, GetCampaignParams, DeleteCampaign,
+   ResumeCampaign, StopCampaign, ArchiveCampaign, UnArchiveCampaign, SetAutoPrice,
+   UpdatePrices, CreateOrUpdateBanners, GetBanners, DeleteBanners, ModerateBanners,
+   ResumeBanners, StopBanners, ArchiveBanners, UnArchiveBanners, GetBannerPhrases,
+   GetBannerPhrasesFilter, Keyword, GetChanges.
 
 ## 3.4.2 [commit logs](https://github.com/biplane/BiplaneYandexDirectBundle/compare/3.4.1...3.4.2)
 

@@ -30,16 +30,12 @@ class YandexAPIService extends SoapClientV4
                 'OfflineReportInfo' => 'Biplane\YandexDirect\Api\V4\Contract\OfflineReportInfo',
                 'TimeZoneInfo' => 'Biplane\YandexDirect\Api\V4\Contract\TimeZoneInfo',
                 'StatGoalsCampaignIDInfo' => 'Biplane\YandexDirect\Api\V4\Contract\StatGoalsCampaignIDInfo',
-                'CampaignIDInfo' => 'Biplane\YandexDirect\Api\V4\Contract\CampaignIDInfo',
-                'CampaignIDSInfo' => 'Biplane\YandexDirect\Api\V4\Contract\CampaignIDSInfo',
-                'CampaignInfo' => 'Biplane\YandexDirect\Api\V4\Contract\CampaignInfo',
                 'DayBudgetInfo' => 'Biplane\YandexDirect\Api\V4\Contract\DayBudgetInfo',
                 'CampaignStrategy' => 'Biplane\YandexDirect\Api\V4\Contract\CampaignStrategy',
                 'CampaignContextStrategy' => 'Biplane\YandexDirect\Api\V4\Contract\CampaignContextStrategy',
                 'SmsNotificationInfo' => 'Biplane\YandexDirect\Api\V4\Contract\SmsNotificationInfo',
                 'EmailNotificationInfo' => 'Biplane\YandexDirect\Api\V4\Contract\EmailNotificationInfo',
                 'CampaignBalanceInfo' => 'Biplane\YandexDirect\Api\V4\Contract\CampaignBalanceInfo',
-                'ShortCampaignInfo' => 'Biplane\YandexDirect\Api\V4\Contract\ShortCampaignInfo',
                 'ClientsUnitInfo' => 'Biplane\YandexDirect\Api\V4\Contract\ClientsUnitInfo',
                 'RubricInfo' => 'Biplane\YandexDirect\Api\V4\Contract\RubricInfo',
                 'ForecastStatusInfo' => 'Biplane\YandexDirect\Api\V4\Contract\ForecastStatusInfo',
@@ -52,9 +48,6 @@ class YandexAPIService extends SoapClientV4
                 'TimeTargetInfo' => 'Biplane\YandexDirect\Api\V4\Contract\TimeTargetInfo',
                 'TimeTargetItem' => 'Biplane\YandexDirect\Api\V4\Contract\TimeTargetItem',
                 'CoverageInfo' => 'Biplane\YandexDirect\Api\V4\Contract\CoverageInfo',
-                'BannerPhrasesFilterRequestInfo' => 'Biplane\YandexDirect\Api\V4\Contract\BannerPhrasesFilterRequestInfo',
-                'PhrasePriceInfo' => 'Biplane\YandexDirect\Api\V4\Contract\PhrasePriceInfo',
-                'BannerPhraseInfo' => 'Biplane\YandexDirect\Api\V4\Contract\BannerPhraseInfo',
                 'PhraseUserParams' => 'Biplane\YandexDirect\Api\V4\Contract\PhraseUserParams',
                 'PhraseAuctionBids' => 'Biplane\YandexDirect\Api\V4\Contract\PhraseAuctionBids',
                 'TransferMoneyInfo' => 'Biplane\YandexDirect\Api\V4\Contract\TransferMoneyInfo',
@@ -63,14 +56,10 @@ class YandexAPIService extends SoapClientV4
                 'PayCampaignsInfo' => 'Biplane\YandexDirect\Api\V4\Contract\PayCampaignsInfo',
                 'PayCampaignsByCardInfo' => 'Biplane\YandexDirect\Api\V4\Contract\PayCampaignsByCardInfo',
                 'CheckPaymentInfo' => 'Biplane\YandexDirect\Api\V4\Contract\CheckPaymentInfo',
-                'BannerInfo' => 'Biplane\YandexDirect\Api\V4\Contract\BannerInfo',
                 'Sitelink' => 'Biplane\YandexDirect\Api\V4\Contract\Sitelink',
                 'RejectReason' => 'Biplane\YandexDirect\Api\V4\Contract\RejectReason',
-                'CampaignBidsInfo' => 'Biplane\YandexDirect\Api\V4\Contract\CampaignBidsInfo',
-                'GetCampaignsInfo' => 'Biplane\YandexDirect\Api\V4\Contract\GetCampaignsInfo',
                 'CampaignsFilterInfo' => 'Biplane\YandexDirect\Api\V4\Contract\CampaignsFilterInfo',
                 'BannersFilterInfo' => 'Biplane\YandexDirect\Api\V4\Contract\BannersFilterInfo',
-                'GetBannersInfo' => 'Biplane\YandexDirect\Api\V4\Contract\GetBannersInfo',
                 'NewForecastInfo' => 'Biplane\YandexDirect\Api\V4\Contract\NewForecastInfo',
                 'ForecastCommonInfo' => 'Biplane\YandexDirect\Api\V4\Contract\ForecastCommonInfo',
                 'GetForecastInfo' => 'Biplane\YandexDirect\Api\V4\Contract\GetForecastInfo',
@@ -79,7 +68,6 @@ class YandexAPIService extends SoapClientV4
                 'WordstatReportInfo' => 'Biplane\YandexDirect\Api\V4\Contract\WordstatReportInfo',
                 'WordstatItem' => 'Biplane\YandexDirect\Api\V4\Contract\WordstatItem',
                 'StatGoalInfo' => 'Biplane\YandexDirect\Api\V4\Contract\StatGoalInfo',
-                'AutoPriceInfo' => 'Biplane\YandexDirect\Api\V4\Contract\AutoPriceInfo',
                 'ClientInfo' => 'Biplane\YandexDirect\Api\V4\Contract\ClientInfo',
                 'ShortClientInfo' => 'Biplane\YandexDirect\Api\V4\Contract\ShortClientInfo',
                 'GetSubClientsRequest' => 'Biplane\YandexDirect\Api\V4\Contract\GetSubClientsRequest',
@@ -98,8 +86,6 @@ class YandexAPIService extends SoapClientV4
                 'BannerTagsInfo' => 'Biplane\YandexDirect\Api\V4\Contract\BannerTagsInfo',
                 'BannersStatItem' => 'Biplane\YandexDirect\Api\V4\Contract\BannersStatItem',
                 'GetBannersStatResponse' => 'Biplane\YandexDirect\Api\V4\Contract\GetBannersStatResponse',
-                'GetChangesRequest' => 'Biplane\YandexDirect\Api\V4\Contract\GetChangesRequest',
-                'GetChangesResponse' => 'Biplane\YandexDirect\Api\V4\Contract\GetChangesResponse',
                 'GetChangesIntData' => 'Biplane\YandexDirect\Api\V4\Contract\GetChangesIntData',
                 'GetChangesLongData' => 'Biplane\YandexDirect\Api\V4\Contract\GetChangesLongData',
                 'GetChangesStringData' => 'Biplane\YandexDirect\Api\V4\Contract\GetChangesStringData',
@@ -130,10 +116,8 @@ class YandexAPIService extends SoapClientV4
                 'AdImageRaw' => 'Biplane\YandexDirect\Api\V4\Contract\AdImageRaw',
                 'AdImageURL' => 'Biplane\YandexDirect\Api\V4\Contract\AdImageURL',
                 'AdImageResponse' => 'Biplane\YandexDirect\Api\V4\Contract\AdImageResponse',
-                'KeywordRequest' => 'Biplane\YandexDirect\Api\V4\Contract\KeywordRequest',
                 'KeywordActionResult' => 'Biplane\YandexDirect\Api\V4\Contract\KeywordActionResult',
                 'QualityIndex' => 'Biplane\YandexDirect\Api\V4\Contract\QualityIndex',
-                'KeywordResponse' => 'Biplane\YandexDirect\Api\V4\Contract\KeywordResponse',
                 'AdImageLimit' => 'Biplane\YandexDirect\Api\V4\Contract\AdImageLimit',
                 'AdImage' => 'Biplane\YandexDirect\Api\V4\Contract\AdImage',
                 'AdImageUpload' => 'Biplane\YandexDirect\Api\V4\Contract\AdImageUpload',
@@ -189,17 +173,6 @@ class YandexAPIService extends SoapClientV4
     }
 
     /**
-     * SetAutoPrice.
-     *
-     * @param Contract\AutoPriceInfo $params
-     * @return Contract\PhrasePriceInfo[]
-     */
-    public function setAutoPrice(Contract\AutoPriceInfo $params)
-    {
-        return $this->invoke('SetAutoPrice', [$params]);
-    }
-
-    /**
      * DeleteReport.
      *
      * @param int $params
@@ -222,28 +195,6 @@ class YandexAPIService extends SoapClientV4
     }
 
     /**
-     * GetCampaignParams.
-     *
-     * @param Contract\CampaignIDInfo $params
-     * @return Contract\CampaignInfo
-     */
-    public function getCampaignParams(Contract\CampaignIDInfo $params)
-    {
-        return $this->invoke('GetCampaignParams', [$params]);
-    }
-
-    /**
-     * GetCampaignsParams.
-     *
-     * @param Contract\CampaignIDSInfo $params
-     * @return Contract\CampaignInfo[]
-     */
-    public function getCampaignsParams(Contract\CampaignIDSInfo $params)
-    {
-        return $this->invoke('GetCampaignsParams', [$params]);
-    }
-
-    /**
      * DeleteForecastReport.
      *
      * @param int $params
@@ -252,127 +203,6 @@ class YandexAPIService extends SoapClientV4
     public function deleteForecastReport($params)
     {
         return $this->invoke('DeleteForecastReport', [$params]);
-    }
-
-    /**
-     * ModerateBanners.
-     *
-     * @param Contract\CampaignBidsInfo $params
-     * @return int
-     */
-    public function moderateBanners(Contract\CampaignBidsInfo $params)
-    {
-        return $this->invoke('ModerateBanners', [$params]);
-    }
-
-    /**
-     * StopBanners.
-     *
-     * @param Contract\CampaignBidsInfo $params
-     * @return int
-     */
-    public function stopBanners(Contract\CampaignBidsInfo $params)
-    {
-        return $this->invoke('StopBanners', [$params]);
-    }
-
-    /**
-     * ResumeBanners.
-     *
-     * @param Contract\CampaignBidsInfo $params
-     * @return int
-     */
-    public function resumeBanners(Contract\CampaignBidsInfo $params)
-    {
-        return $this->invoke('ResumeBanners', [$params]);
-    }
-
-    /**
-     * ArchiveBanners.
-     *
-     * @param Contract\CampaignBidsInfo $params
-     * @return int
-     */
-    public function archiveBanners(Contract\CampaignBidsInfo $params)
-    {
-        return $this->invoke('ArchiveBanners', [$params]);
-    }
-
-    /**
-     * UnArchiveBanners.
-     *
-     * @param Contract\CampaignBidsInfo $params
-     * @return int
-     */
-    public function unArchiveBanners(Contract\CampaignBidsInfo $params)
-    {
-        return $this->invoke('UnArchiveBanners', [$params]);
-    }
-
-    /**
-     * DeleteBanners.
-     *
-     * @param Contract\CampaignBidsInfo $params
-     * @return int
-     */
-    public function deleteBanners(Contract\CampaignBidsInfo $params)
-    {
-        return $this->invoke('DeleteBanners', [$params]);
-    }
-
-    /**
-     * StopCampaign.
-     *
-     * @param Contract\CampaignIDInfo $params
-     * @return int
-     */
-    public function stopCampaign(Contract\CampaignIDInfo $params)
-    {
-        return $this->invoke('StopCampaign', [$params]);
-    }
-
-    /**
-     * DeleteCampaign.
-     *
-     * @param Contract\CampaignIDInfo $params
-     * @return int
-     */
-    public function deleteCampaign(Contract\CampaignIDInfo $params)
-    {
-        return $this->invoke('DeleteCampaign', [$params]);
-    }
-
-    /**
-     * UnArchiveCampaign.
-     *
-     * @param Contract\CampaignIDInfo $params
-     * @return int
-     */
-    public function unArchiveCampaign(Contract\CampaignIDInfo $params)
-    {
-        return $this->invoke('UnArchiveCampaign', [$params]);
-    }
-
-    /**
-     * ArchiveCampaign.
-     *
-     * @param Contract\CampaignIDInfo $params
-     * @return int
-     */
-    public function archiveCampaign(Contract\CampaignIDInfo $params)
-    {
-        return $this->invoke('ArchiveCampaign', [$params]);
-    }
-
-    /**
-     * ResumeCampaign.
-     *
-     * @param Contract\CampaignIDInfo $params
-     * @return int
-     */
-    public function resumeCampaign(Contract\CampaignIDInfo $params)
-    {
-        return $this->invoke('ResumeCampaign', [$params]);
     }
 
     /**
@@ -419,39 +249,6 @@ class YandexAPIService extends SoapClientV4
     }
 
     /**
-     * GetBanners.
-     *
-     * @param Contract\GetBannersInfo $params
-     * @return Contract\BannerInfo[]
-     */
-    public function getBanners(Contract\GetBannersInfo $params)
-    {
-        return $this->invoke('GetBanners', [$params]);
-    }
-
-    /**
-     * GetCampaignsList.
-     *
-     * @param string[] $params
-     * @return Contract\ShortCampaignInfo[]
-     */
-    public function getCampaignsList(array $params)
-    {
-        return $this->invoke('GetCampaignsList', [$params]);
-    }
-
-    /**
-     * GetCampaignsListFilter.
-     *
-     * @param Contract\GetCampaignsInfo $params
-     * @return Contract\ShortCampaignInfo[]
-     */
-    public function getCampaignsListFilter(Contract\GetCampaignsInfo $params)
-    {
-        return $this->invoke('GetCampaignsListFilter', [$params]);
-    }
-
-    /**
      * GetBalance.
      *
      * @param int[] $params
@@ -460,28 +257,6 @@ class YandexAPIService extends SoapClientV4
     public function getBalance(array $params)
     {
         return $this->invoke('GetBalance', [$params]);
-    }
-
-    /**
-     * GetBannerPhrases.
-     *
-     * @param int[] $params
-     * @return Contract\BannerPhraseInfo[]
-     */
-    public function getBannerPhrases(array $params)
-    {
-        return $this->invoke('GetBannerPhrases', [$params]);
-    }
-
-    /**
-     * GetBannerPhrasesFilter.
-     *
-     * @param Contract\BannerPhrasesFilterRequestInfo $params
-     * @return Contract\BannerPhraseInfo[]
-     */
-    public function getBannerPhrasesFilter(Contract\BannerPhrasesFilterRequestInfo $params)
-    {
-        return $this->invoke('GetBannerPhrasesFilter', [$params]);
     }
 
     /**
@@ -566,39 +341,6 @@ class YandexAPIService extends SoapClientV4
     public function getForecastList()
     {
         return $this->invoke('GetForecastList', []);
-    }
-
-    /**
-     * UpdatePrices.
-     *
-     * @param Contract\PhrasePriceInfo[] $params
-     * @return int
-     */
-    public function updatePrices(array $params)
-    {
-        return $this->invoke('UpdatePrices', [$params]);
-    }
-
-    /**
-     * CreateOrUpdateCampaign.
-     *
-     * @param Contract\CampaignInfo $params
-     * @return int
-     */
-    public function createOrUpdateCampaign(Contract\CampaignInfo $params)
-    {
-        return $this->invoke('CreateOrUpdateCampaign', [$params]);
-    }
-
-    /**
-     * CreateOrUpdateBanners.
-     *
-     * @param Contract\BannerInfo[] $params
-     * @return int[]
-     */
-    public function createOrUpdateBanners(array $params)
-    {
-        return $this->invoke('CreateOrUpdateBanners', [$params]);
     }
 
     /**
@@ -688,17 +430,6 @@ class YandexAPIService extends SoapClientV4
     }
 
     /**
-     * GetChanges.
-     *
-     * @param Contract\GetChangesRequest $params
-     * @return Contract\GetChangesResponse
-     */
-    public function getChanges(Contract\GetChangesRequest $params)
-    {
-        return $this->invoke('GetChanges', [$params]);
-    }
-
-    /**
      * GetEventsLog.
      *
      * @param Contract\GetEventsLogRequest $params
@@ -712,10 +443,10 @@ class YandexAPIService extends SoapClientV4
     /**
      * GetCampaignsTags.
      *
-     * @param Contract\CampaignIDSInfo $params
+     * @param CampaignIDSInfo $params
      * @return Contract\CampaignTagsInfo[]
      */
-    public function getCampaignsTags(Contract\CampaignIDSInfo $params)
+    public function getCampaignsTags(CampaignIDSInfo $params)
     {
         return $this->invoke('GetCampaignsTags', [$params]);
     }
@@ -893,17 +624,6 @@ class YandexAPIService extends SoapClientV4
     public function accountManagement(Contract\AccountManagementRequest $params)
     {
         return $this->invoke('AccountManagement', [$params]);
-    }
-
-    /**
-     * Keyword.
-     *
-     * @param Contract\KeywordRequest $params
-     * @return Contract\KeywordResponse
-     */
-    public function keyword(Contract\KeywordRequest $params)
-    {
-        return $this->invoke('Keyword', [$params]);
     }
 
     /**
