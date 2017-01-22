@@ -7,7 +7,7 @@ namespace Biplane\YandexDirect\Api;
  *
  * @author Denis Vasilev
  */
-class Units
+class Units implements \JsonSerializable
 {
     private $limit;
     private $rest;
@@ -55,5 +55,17 @@ class Units
     public function getSpent()
     {
         return $this->spent;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function jsonSerialize()
+    {
+        return [
+            'spent' => $this->spent,
+            'rest' => $this->rest,
+            'limit' => $this->limit,
+        ];
     }
 }
