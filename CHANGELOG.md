@@ -1,6 +1,6 @@
 # Changelog
 
-## 4.0 [commit logs](https://github.com/biplane/BiplaneYandexDirectBundle/compare/3.4.2...4.0)
+## 4.0 [commit logs](https://github.com/biplane/yandex-direct/compare/3.4.2...4.0)
 
  * Бандл для интеграции с Symfony фреймфорком переехал в отдельный 
    [репозиторий](https://github.com/biplane/BiplaneYandexDirectBundle).
@@ -24,11 +24,11 @@
    ResumeBanners, StopBanners, ArchiveBanners, UnArchiveBanners, GetBannerPhrases,
    GetBannerPhrasesFilter, Keyword, GetChanges.
 
-## 3.4.2 [commit logs](https://github.com/biplane/BiplaneYandexDirectBundle/compare/3.4.1...3.4.2)
+## 3.4.2 [commit logs](https://github.com/biplane/yandex-direct/compare/3.4.1...3.4.2)
 
  * Hot fix for issue #1
 
-## 3.4.1 [commit logs](https://github.com/biplane/BiplaneYandexDirectBundle/compare/3.4.0...3.4.1)
+## 3.4.1 [commit logs](https://github.com/biplane/yandex-direct/compare/3.4.0...3.4.1)
 
  * Обновление контрактов данных и сервисов, для совместимости с последними изменениями
    в версиях **API 4 Live** и **API 5**.
@@ -36,13 +36,13 @@
  * ID запроса для API версии 4 формируется на основании результата `microtime()`,
    для минимизации коллизий.
 
-## 3.4.0 [commit logs](https://github.com/biplane/BiplaneYandexDirectBundle/compare/3.3.0...3.4.0)
+## 3.4.0 [commit logs](https://github.com/biplane/yandex-direct/compare/3.3.0...3.4.0)
 
  * Добавлены константы для некоторых новых ошибок.
 
  * Добавлена поддержка сервисов `AdExtensions`, `Dictionaries` и `DynamicTextAdTargets`.
 
-## 3.3.0 [commit logs](https://github.com/biplane/BiplaneYandexDirectBundle/compare/3.2.1...3.3.0)
+## 3.3.0 [commit logs](https://github.com/biplane/yandex-direct/compare/3.2.1...3.3.0)
 
  * В конфигурацию бандла добавлен параметр `sandbox` (`biplane_yandex_direct.sandbox`),
    принимающий значение `true` или `false`.
@@ -58,11 +58,11 @@
 
  * Поддержка Symfony 2.8 и 3.0
 
-## 3.2.1 [commit logs](https://github.com/biplane/BiplaneYandexDirectBundle/compare/3.2.0...3.2.1)
+## 3.2.1 [commit logs](https://github.com/biplane/yandex-direct/compare/3.2.0...3.2.1)
 
  * Исправлена ошибка в определении сервиса `biplane_yandex_direct.factory`.
 
-## 3.2.0 [commit logs](https://github.com/biplane/BiplaneYandexDirectBundle/compare/3.1.0...3.2.0)
+## 3.2.0 [commit logs](https://github.com/biplane/yandex-direct/compare/3.1.0...3.2.0)
 
  * Обновлены контракты для совместимости с последней версией API, **4 Live** и **5**.
 
@@ -73,7 +73,7 @@
    из в конфигурации бандла. Вместо него появился параметр `biplane_yandex_direct.dump.directory`
    и сервис `biplane_yandex_direct.dumper`
 
-## 3.1.0 [commit logs](https://github.com/biplane/BiplaneYandexDirectBundle/compare/3.0.2...3.1.0)
+## 3.1.0 [commit logs](https://github.com/biplane/yandex-direct/compare/3.0.2...3.1.0)
 
  * Изменен уровень доступа для метода `SoapClient::getRequestId`, с `protected` на `public`.
    Метод вернет ID последнего запроса к API или null, если запросов не было.
@@ -85,19 +85,19 @@
 
  * **[BC BREAK]** Класс `YandexApiService` переименован в `YandexAPIService`, для соответствия с WSDL.
 
-## 3.0.2 [commit logs](https://github.com/biplane/BiplaneYandexDirectBundle/compare/3.0.1...3.0.2)
+## 3.0.2 [commit logs](https://github.com/biplane/yandex-direct/compare/3.0.1...3.0.2)
 
  * Исправлена ошибка с отсутствием прав на запись, когда директория создается рекурсивно
    с помощью функции `mkdir`.
 
  * Обновлены клиенты для работы с API. Включают изменения в API от 09.11.2015.
 
-## 3.0.1 [commit logs](https://github.com/biplane/BiplaneYandexDirectBundle/compare/3.0.0...3.0.1)
+## 3.0.1 [commit logs](https://github.com/biplane/yandex-direct/compare/3.0.0...3.0.1)
 
  * Исправлена ошибка, когда директория создавалась без прав на запись для группы,
    так как на `mkdir` влияет `umask`.
 
-## 3.0.0 [commit logs](https://github.com/biplane/BiplaneYandexDirectBundle/compare/2.0.0...3.0.0)
+## 3.0.0 [commit logs](https://github.com/biplane/yandex-direct/compare/2.0.0...3.0.0)
 
  * **[BC BREAK]** Изменена структура проекта, чтобы можно было подключать как Bundle для проекта на Symfony 2
    так и использовать как отдельную библиотеку, без зависимости от фреймворка Syfmony.
@@ -213,7 +213,7 @@
          Biplane\Bundle\YandexDirectBundle\BiplaneYandexDirectBundle
 
 
-## 2.0.0 [commit logs](https://github.com/biplane/BiplaneYandexDirectBundle/compare/1.0.0...2.0.0)
+## 2.0.0 [commit logs](https://github.com/biplane/yandex-direct/compare/1.0.0...2.0.0)
 
  * Переход на версию Live 4.
 
