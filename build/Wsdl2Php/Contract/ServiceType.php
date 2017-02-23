@@ -15,7 +15,6 @@ class ServiceType extends AbstractType implements GeneratorInterface
 {
     use ContractGeneratorTrait;
 
-    private $service;
     private $wsdlUri;
     private $operations = [];
 
@@ -23,7 +22,6 @@ class ServiceType extends AbstractType implements GeneratorInterface
     {
         parent::__construct($service->getName(), $namespace);
 
-        $this->service = $service;
         $this->wsdlUri = $wsdlUri;
     }
 
