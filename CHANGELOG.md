@@ -1,6 +1,6 @@
 # Changelog
 
-## master
+## 4.0.1 [commit logs](https://github.com/biplane/yandex-direct/compare/4.0...4.0.1)
 
 * В объекты событий, `PostCallEvent` и `FailCallEvent` добавлен метод `getUnits`.
 
