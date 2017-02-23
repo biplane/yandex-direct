@@ -1,5 +1,9 @@
 # Changelog
 
+## master
+
+* В объекты событий, `PostCallEvent` и `FailCallEvent` добавлен метод `getUnits`.
+
 ## 4.0 [commit logs](https://github.com/biplane/yandex-direct/compare/3.4.2...4.0)
 
  * Бандл для интеграции с Symfony фреймфорком переехал в отдельный 

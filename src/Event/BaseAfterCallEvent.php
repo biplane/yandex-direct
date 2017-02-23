@@ -3,6 +3,8 @@
 namespace Biplane\YandexDirect\Event;
 
 use Biplane\YandexDirect\Api\SoapClient;
+use Biplane\YandexDirect\Api\SoapClientV5;
+use Biplane\YandexDirect\Api\Units;
 use Biplane\YandexDirect\User;
 
 /**
@@ -59,5 +61,19 @@ abstract class BaseAfterCallEvent extends PreCallEvent
     public function getResponse()
     {
         return $this->client->getLastResponse();
+    }
+
+    /**
+     * Gets info about units.
+     *
+     * @return Units
+     */
+    public function getUnits()
+    {
+        if ($this->client instanceof SoapClientV5) {
+            return $this->client->getUnits();
+        }
+
+        return new Units(-1, -1, -1);
     }
 }
