@@ -22,6 +22,8 @@ class AdGroupsSelectionCriteria
 
     protected $AppIconStatuses = null;
 
+    protected $ServingStatuses = null;
+
     /**
      * Creates a new instance of AdGroupsSelectionCriteria.
      *
@@ -195,6 +197,31 @@ class AdGroupsSelectionCriteria
     public function setAppIconStatuses(array $value = null)
     {
         $this->AppIconStatuses = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets ServingStatuses.
+     *
+     * @return string[]|null
+     * @see ServingStatusEnum
+     */
+    public function getServingStatuses()
+    {
+        return $this->ServingStatuses;
+    }
+
+    /**
+     * Sets ServingStatuses.
+     *
+     * @param string[]|null $value
+     * @return self
+     * @see ServingStatusEnum
+     */
+    public function setServingStatuses(array $value = null)
+    {
+        $this->ServingStatuses = $value;
 
         return $this;
     }

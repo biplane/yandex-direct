@@ -14,6 +14,8 @@ class BidsSelectionCriteria
 
     protected $KeywordIds = null;
 
+    protected $ServingStatuses = null;
+
     /**
      * Creates a new instance of BidsSelectionCriteria.
      *
@@ -89,6 +91,31 @@ class BidsSelectionCriteria
     public function setKeywordIds(array $value = null)
     {
         $this->KeywordIds = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets ServingStatuses.
+     *
+     * @return string[]|null
+     * @see ServingStatusEnum
+     */
+    public function getServingStatuses()
+    {
+        return $this->ServingStatuses;
+    }
+
+    /**
+     * Sets ServingStatuses.
+     *
+     * @param string[]|null $value
+     * @return self
+     * @see ServingStatusEnum
+     */
+    public function setServingStatuses(array $value = null)
+    {
+        $this->ServingStatuses = $value;
 
         return $this;
     }

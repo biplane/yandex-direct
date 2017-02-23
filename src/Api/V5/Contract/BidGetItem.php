@@ -26,6 +26,8 @@ class BidGetItem extends BidBase
 
     protected $AuctionBids = null;
 
+    protected $ServingStatus = null;
+
     /**
      * Creates a new instance of BidGetItem.
      *
@@ -241,6 +243,31 @@ class BidGetItem extends BidBase
     public function setAuctionBids(array $value = null)
     {
         $this->AuctionBids = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets ServingStatus.
+     *
+     * @return string|null
+     * @see ServingStatusEnum
+     */
+    public function getServingStatus()
+    {
+        return $this->ServingStatus;
+    }
+
+    /**
+     * Sets ServingStatus.
+     *
+     * @param string|null $value
+     * @return self
+     * @see ServingStatusEnum
+     */
+    public function setServingStatus($value = null)
+    {
+        $this->ServingStatus = $value;
 
         return $this;
     }

@@ -36,6 +36,8 @@ class KeywordFieldEnum
 
     const STATISTICS_NETWORK = 'StatisticsNetwork';
 
+    const SERVING_STATUS = 'ServingStatus';
+
 
 }
 

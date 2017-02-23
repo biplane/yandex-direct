@@ -26,6 +26,8 @@ class AdGroupFieldEnum
 
     const SUBTYPE = 'Subtype';
 
+    const SERVING_STATUS = 'ServingStatus';
+
 
 }
 

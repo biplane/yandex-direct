@@ -32,6 +32,8 @@ class BidFieldEnum
 
     const AUCTION_BIDS = 'AuctionBids';
 
+    const SERVING_STATUS = 'ServingStatus';
+
 
 }
 

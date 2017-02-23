@@ -20,6 +20,8 @@ class KeywordsSelectionCriteria
 
     protected $ModifiedSince = null;
 
+    protected $ServingStatuses = null;
+
     /**
      * Creates a new instance of KeywordsSelectionCriteria.
      *
@@ -168,6 +170,31 @@ class KeywordsSelectionCriteria
     public function setModifiedSince($value = null)
     {
         $this->ModifiedSince = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets ServingStatuses.
+     *
+     * @return string[]|null
+     * @see ServingStatusEnum
+     */
+    public function getServingStatuses()
+    {
+        return $this->ServingStatuses;
+    }
+
+    /**
+     * Sets ServingStatuses.
+     *
+     * @param string[]|null $value
+     * @return self
+     * @see ServingStatusEnum
+     */
+    public function setServingStatuses(array $value = null)
+    {
+        $this->ServingStatuses = $value;
 
         return $this;
     }
