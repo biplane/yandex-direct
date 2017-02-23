@@ -4,7 +4,7 @@ namespace Biplane\Tests\YandexDirect\EventListener;
 
 use Biplane\YandexDirect\EventListener\DumpListener;
 
-class DumpListenerTest extends \PHPUnit_Framework_TestCase
+class DumpListenerTest extends TestCase
 {
     /**
      * @var \PHPUnit_Framework_MockObject_MockObject
@@ -100,26 +100,5 @@ class DumpListenerTest extends \PHPUnit_Framework_TestCase
     protected function tearDown()
     {
         unset($this->dumper);
-    }
-
-    private function getEventMock($eventClass, $requestId, $request, $response)
-    {
-        $mock = $this->getMockBuilder('Biplane\\YandexDirect\\Event\\' . $eventClass)
-            ->disableOriginalConstructor()
-            ->getMock();
-
-        $mock->expects($this->any())
-            ->method('getRequestId')
-            ->willReturn($requestId);
-
-        $mock->expects($this->any())
-            ->method('getRequest')
-            ->willReturn($request);
-
-        $mock->expects($this->any())
-            ->method('getResponse')
-            ->willReturn($response);
-
-        return $mock;
     }
 }

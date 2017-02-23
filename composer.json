@@ -29,6 +29,9 @@
     "doctrine/inflector": "^1.0",
     "monolog/monolog": "^1.21"
   },
+  "suggest": {
+    "monolog/monolog": "For LoggerListener"
+  },
   "autoload": {
     "psr-4": { "Biplane\\YandexDirect\\": "src/" }
   },

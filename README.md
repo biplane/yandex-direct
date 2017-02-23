@@ -138,4 +138,23 @@ $listener = new DumpListener('/var/dumps', DumpListener::LEVEL_ALL_REQUEST);
 $user->getDispatcher()->addSubscriber($listener);
 ```
 
-You can specify which requests should be dumped, all (`LEVEL_ALL_REQUEST`) or only with errors (`LEVEL_FAIL_REQUEST`).
+You can specify which requests should be dumped, all (`LEVEL_ALL_REQUEST`) 
+or only with errors (`LEVEL_FAIL_REQUEST`).
+
+### LoggerListener
+
+This listener allows to log errors from API, with the different level for network, 
+temporary errors.
+
+```php
+use Biplane\YandexDirect\EventListener\LoggerListener;
+
+$listener = new LoggerListener($logger);
+
+$user->getDispatcher()->addSubscriber($listener);
+```
+
+Example a message in log:
+
+    [1970-01-01 23:59:59] app.NOTICE: Call YandexAPIService:AccountManagement completed with network error: Error Fetching http headers {"method":"YandexAPIService:AccountManagement","login":null,"request_id":"794841001487675763","error":"Error Fetching http headers"} []
+
