@@ -169,4 +169,14 @@ class UserTest extends \PHPUnit_Framework_TestCase
             $user->resolveWsdl('https://api.direct.yandex.ru/live/v4/wsdl/')
         );
     }
+
+    public function testUseOperatorUnits()
+    {
+        $user = new User([
+            'access_token' => 'foo',
+            'use_operator_units' => true,
+        ]);
+
+        $this->assertTrue($user->useOperatorUnits());
+    }
 }

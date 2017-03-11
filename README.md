@@ -82,6 +82,20 @@ The master token needs for [access to financial methods](https://tech.yandex.ru/
 The [client login](https://tech.yandex.ru/direct/doc/dg/concepts/headers-docpage/#request). 
 It's **required** for financial operations and when a request is made on behalf of the agency.
 
+#### use_operator_units
+
+Enables to use an agency's units instead of an advertiser.
+See [documentation](https://tech.yandex.ru/direct/doc/dg/concepts/headers-docpage/#use-operator-units) for details.
+
+Default: `false`
+
+#### sandbox
+
+This option allows to enable the sandbox.
+See [documentation](https://tech.yandex.ru/direct/doc/dg/best-practice/quick-start-docpage/#sandbox) for details.
+
+Default: `false`
+
 ## Supported API Services
 
 You can get the proxy of a service through the `User` object, to interact with Yandex.Direct API.

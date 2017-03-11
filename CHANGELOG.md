@@ -4,6 +4,9 @@
 
 * Добавлен `LoggerListener`.
 
+* Добавлена поддержка заголовка [Use-Operator-Units](https://tech.yandex.ru/direct/doc/dg/concepts/headers-docpage/#use-operator-units).
+  Issue #3.
+
 ## 4.0.1 [commit logs](https://github.com/biplane/yandex-direct/compare/4.0...4.0.1)
 
 * В объекты событий, `PostCallEvent` и `FailCallEvent` добавлен метод `getUnits`.

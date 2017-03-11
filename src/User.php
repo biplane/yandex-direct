@@ -140,6 +140,16 @@ class User
     }
 
     /**
+     * Determines whether should be used units of agency.
+     *
+     * @return bool
+     */
+    public function useOperatorUnits()
+    {
+        return $this->options['use_operator_units'];
+    }
+
+    /**
      * Gets the proxy for API of version 4 Live.
      *
      * @return YandexAPIService
@@ -354,6 +364,7 @@ class User
                 'master_token' => null,
                 'login' => null,
                 'sandbox' => false,
+                'use_operator_units' => false,
                 'soap_options' => [],
             ]);
 
@@ -365,6 +376,7 @@ class User
                 ->setAllowedTypes('login', ['null', 'string'])
                 ->setAllowedTypes('access_token', 'string')
                 ->setAllowedTypes('sandbox', 'bool')
+                ->setAllowedTypes('use_operator_units', 'bool')
                 ->setNormalizer('login', $loginNormalizer);
         } else {
             $resolver
@@ -376,6 +388,7 @@ class User
                     'login' => ['null', 'string'],
                     'access_token' => ['string'],
                     'sandbox' => ['bool'],
+                    'use_operator_units' => ['bool'],
                     'soap_options' => ['array'],
                 ])
                 ->setNormalizers([

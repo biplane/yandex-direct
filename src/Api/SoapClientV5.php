@@ -87,6 +87,10 @@ class SoapClientV5 extends SoapClient
             $headers[] = 'Client-Login: ' . $user->getLogin();
         }
 
+        if ($user->useOperatorUnits()) {
+            $headers[] = 'Use-Operator-Units: true';
+        }
+
         return implode("\r\n", $headers);
     }
 }
