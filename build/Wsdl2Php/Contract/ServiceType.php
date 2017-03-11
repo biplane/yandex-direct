@@ -131,7 +131,7 @@ CODE
         $generator->setBody(sprintf(
             "return \$this->invoke('%s', [%s]);",
             $operation->getName(),
-            join(', ', $params)
+            implode(', ', $params)
         ));
 
         if (!empty($operation->getReturns())) {

@@ -27,7 +27,8 @@
     "wsdl2phpgenerator/wsdl2phpgenerator": "dev-inline-type as 4.0.x-dev",
     "zendframework/zend-code": "^2.6",
     "doctrine/inflector": "^1.0",
-    "monolog/monolog": "^1.21"
+    "monolog/monolog": "^1.21",
+    "friendsofphp/php-cs-fixer": "^2.1"
   },
   "suggest": {
     "monolog/monolog": "For LoggerListener"
@@ -45,6 +46,15 @@
     "branch-alias": {
       "dev-master": "4.1.x-dev"
     }
+  },
+  "scripts": {
+    "check": [
+      "@cs-check",
+      "@test"
+    ],
+    "cs-check": "php-cs-fixer fix -v --diff --dry-run",
+    "cs-fix": "php-cs-fixer fix -v --diff",
+    "test": "phpunit --colors=always"
   },
   "repositories": [
     {

@@ -8,7 +8,7 @@ use Biplane\YandexDirect\Api\Units;
 use Biplane\YandexDirect\User;
 
 /**
- * BaseAfterCallEvent
+ * BaseAfterCallEvent.
  *
  * @author Denis Vasilev
  */

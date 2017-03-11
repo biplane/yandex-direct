@@ -35,6 +35,4 @@ class EnumType extends AbstractDataType implements GeneratorInterface
             $generator->addConstant(Validator::validateConstant(strtoupper($name)), $value);
         }
     }
-
-
 }

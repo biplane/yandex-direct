@@ -17,7 +17,7 @@ class Config extends BaseConfig
             'excludeOperations' => [],
             'renameType' => function ($typeName) {
                 return $typeName;
-            }
+            },
         ]);
 
         $resolver->setAllowedTypes('renameType', 'closure');

@@ -12,7 +12,7 @@ class PostCallEventTest extends TestCase
         $client = $this->getSoapClientMock();
         $methodRef = 'X:Foo';
         $result = 'Any responce';
-        $params = array('foo' => 'bar');
+        $params = ['foo' => 'bar'];
         $requestId = 'request-id';
 
         $client->expects($this->any())

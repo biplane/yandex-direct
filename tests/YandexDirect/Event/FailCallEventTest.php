@@ -11,7 +11,7 @@ class FailCallEventTest extends TestCase
         $user = $this->getUserMock();
         $client = $this->getSoapClientMock();
         $methodRef = 'X:Foo';
-        $methodParams = array('FooParam');
+        $methodParams = ['FooParam'];
         $requestId = 'request-id';
         $exception = new \Exception();
 

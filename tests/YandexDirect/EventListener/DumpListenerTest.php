@@ -76,18 +76,18 @@ class DumpListenerTest extends TestCase
 
     public function getFailEvents()
     {
-        return array(
-            array(DumpListener::LEVEL_FAIL_REQUEST, true),
-            array(DumpListener::LEVEL_ALL_REQUEST, true),
-        );
+        return [
+            [DumpListener::LEVEL_FAIL_REQUEST, true],
+            [DumpListener::LEVEL_ALL_REQUEST, true],
+        ];
     }
 
     public function getPostEvents()
     {
-        return array(
-            array(DumpListener::LEVEL_FAIL_REQUEST, false),
-            array(DumpListener::LEVEL_ALL_REQUEST, true),
-        );
+        return [
+            [DumpListener::LEVEL_FAIL_REQUEST, false],
+            [DumpListener::LEVEL_ALL_REQUEST, true],
+        ];
     }
 
     protected function setUp()

@@ -5,7 +5,7 @@ namespace Biplane\Tests\YandexDirect\Api;
 use Biplane\YandexDirect\Api\V4\Contract\AccountManagementRequest;
 use Biplane\YandexDirect\Exception\ApiException;
 
-class BaseClientV4Test extends BaseTestCase
+class SoapClientV4Test extends BaseTestCase
 {
     /**
      * @expectedException \Biplane\YandexDirect\Exception\ApiException
@@ -15,7 +15,7 @@ class BaseClientV4Test extends BaseTestCase
     public function testSoapFaultShouldBeWrappedToApiException()
     {
         $methodName = 'Foo';
-        $methodParams = array();
+        $methodParams = [];
         $fault = new \SoapFault(
             'ENV:54',
             'Недостаточно прав',
@@ -47,7 +47,7 @@ class BaseClientV4Test extends BaseTestCase
     /**
      * @dataProvider getFinancialMethods
      */
-    public function testAdditionalHeadersShouldBeAssignWhenInvokeFinancialMethod($methodName, array $params = array())
+    public function testAdditionalHeadersShouldBeAssignWhenInvokeFinancialMethod($methodName, array $params = [])
     {
         $php = \PHPUnit_Extension_FunctionMocker::start($this, 'Biplane\YandexDirect\Api')
             ->mockFunction('time')
@@ -83,15 +83,15 @@ class BaseClientV4Test extends BaseTestCase
 
     public function getFinancialMethods()
     {
-        return array(
-            array('TransferMoney'),
-            array('GetCreditLimits'),
-            array('CreateInvoice'),
-            array('PayCampaigns'),
-            array('AccountManagement', array(AccountManagementRequest::create()->setAction('Deposit'))),
-            array('AccountManagement', array(AccountManagementRequest::create()->setAction('Invoice'))),
-            array('AccountManagement', array(AccountManagementRequest::create()->setAction('TransferMoney'))),
-        );
+        return [
+            ['TransferMoney'],
+            ['GetCreditLimits'],
+            ['CreateInvoice'],
+            ['PayCampaigns'],
+            ['AccountManagement', [AccountManagementRequest::create()->setAction('Deposit')]],
+            ['AccountManagement', [AccountManagementRequest::create()->setAction('Invoice')]],
+            ['AccountManagement', [AccountManagementRequest::create()->setAction('TransferMoney')]],
+        ];
     }
 
     protected function getSoapClient()
@@ -99,7 +99,7 @@ class BaseClientV4Test extends BaseTestCase
         $methods = func_get_args();
 
         if (empty($methods)) {
-            $methods = array('__soapCall');
+            $methods = ['__soapCall'];
         }
 
         return $this->createClient('Biplane\YandexDirect\Api\SoapClientV4', $methods);

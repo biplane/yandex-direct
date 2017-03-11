@@ -32,7 +32,7 @@ class User
     const LOCALE_EN = 'en';
     const LOCALE_UA = 'ua';
 
-    private static $classMap = array(
+    private static $classMap = [
         'YandexApiService' => '\Biplane\YandexDirect\Api\V4\YandexAPIService',
         'AdGroups' => 'Biplane\YandexDirect\Api\V5\AdGroups',
         'AdExtensions' => 'Biplane\YandexDirect\Api\V5\AdExtensions',
@@ -47,7 +47,7 @@ class User
         'Keywords' => 'Biplane\YandexDirect\Api\V5\Keywords',
         'Sitelinks' => 'Biplane\YandexDirect\Api\V5\Sitelinks',
         'VCards' => 'Biplane\YandexDirect\Api\V5\VCards',
-    );
+    ];
 
     private $options;
     private $dispatcher;
@@ -61,7 +61,7 @@ class User
      *
      * @throws \InvalidArgumentException
      */
-    public function __construct(array $options = array(), EventDispatcherInterface $dispatcher = null)
+    public function __construct(array $options = [], EventDispatcherInterface $dispatcher = null)
     {
         $resolver = new OptionsResolver();
         $this->setDefaultOptions($resolver);
@@ -72,7 +72,7 @@ class User
 
         $this->options = $resolver->resolve($options);
         $this->dispatcher = $dispatcher;
-        $this->proxies = array();
+        $this->proxies = [];
 
         if (!empty($this->options['master_token']) && empty($this->options['login'])) {
             throw new \InvalidArgumentException('The login cannot be empty when the master token is set.');
@@ -285,9 +285,9 @@ class User
      * @param string $methodName   The API method for which needed it token
      * @param int    $operationNum A number of operation
      *
-     * @return string
-     *
      * @throws \LogicException When the master token is empty
+     *
+     * @return string
      */
     public function createFinanceToken($methodName, $operationNum)
     {
@@ -348,39 +348,39 @@ class User
         };
 
         $resolver
-            ->setRequired(array('access_token'))
-            ->setDefaults(array(
-                'locale'       => self::LOCALE_EN,
+            ->setRequired(['access_token'])
+            ->setDefaults([
+                'locale' => self::LOCALE_EN,
                 'master_token' => null,
-                'login'        => null,
-                'sandbox'      => false,
-                'soap_options' => array(),
-            ));
+                'login' => null,
+                'sandbox' => false,
+                'soap_options' => [],
+            ]);
 
         // OptionsResolver 2.6+
         if (method_exists($resolver, 'setNormalizer')) {
             $resolver
-                ->setAllowedValues('locale', array(self::LOCALE_EN, self::LOCALE_RU, self::LOCALE_UA))
-                ->setAllowedTypes('master_token', array('null', 'string'))
-                ->setAllowedTypes('login', array('null', 'string'))
+                ->setAllowedValues('locale', [self::LOCALE_EN, self::LOCALE_RU, self::LOCALE_UA])
+                ->setAllowedTypes('master_token', ['null', 'string'])
+                ->setAllowedTypes('login', ['null', 'string'])
                 ->setAllowedTypes('access_token', 'string')
                 ->setAllowedTypes('sandbox', 'bool')
                 ->setNormalizer('login', $loginNormalizer);
         } else {
             $resolver
-                ->setAllowedValues(array(
-                    'locale' => array(self::LOCALE_EN, self::LOCALE_RU, self::LOCALE_UA)
-                ))
-                ->setAllowedTypes(array(
-                    'master_token' => array('null', 'string'),
-                    'login'        => array('null', 'string'),
-                    'access_token' => array('string'),
-                    'sandbox'      => array('bool'),
-                    'soap_options' => array('array'),
-                ))
-                ->setNormalizers(array(
+                ->setAllowedValues([
+                    'locale' => [self::LOCALE_EN, self::LOCALE_RU, self::LOCALE_UA],
+                ])
+                ->setAllowedTypes([
+                    'master_token' => ['null', 'string'],
+                    'login' => ['null', 'string'],
+                    'access_token' => ['string'],
+                    'sandbox' => ['bool'],
+                    'soap_options' => ['array'],
+                ])
+                ->setNormalizers([
                     'login' => $loginNormalizer,
-                ));
+                ]);
         }
     }
 

@@ -11,7 +11,7 @@ use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
 
 $logger = new Logger('build', [
-    new StreamHandler('php://output')
+    new StreamHandler('php://output'),
 ]);
 
 $generator = new Generator();
@@ -84,7 +84,7 @@ generate($generator, [
             '$1AdExtensions$2',
             $typeName
         );
-    }
+    },
 ] + $defaultOptions);
 
 generate($generator, [
@@ -95,7 +95,7 @@ generate($generator, [
             '$1AdGroups$2',
             $typeName
         );
-    }
+    },
 ] + $defaultOptions);
 
 generate($generator, [
@@ -106,7 +106,7 @@ generate($generator, [
             '$1Ads$2',
             $typeName
         );
-    }
+    },
 ] + $defaultOptions);
 
 generate($generator, [
@@ -117,7 +117,7 @@ generate($generator, [
             '$1Bids$2',
             $typeName
         );
-    }
+    },
 ] + $defaultOptions);
 
 generate($generator, [
@@ -128,7 +128,7 @@ generate($generator, [
             '$1BidModifiers$2',
             $typeName
         );
-    }
+    },
 ] + $defaultOptions);
 
 generate($generator, [
@@ -139,7 +139,7 @@ generate($generator, [
             '$1Campaigns$2',
             $typeName
         );
-    }
+    },
 ] + $defaultOptions);
 
 generate($generator, [
@@ -150,7 +150,7 @@ generate($generator, [
             '$1Changes$2',
             $typeName
         );
-    }
+    },
 ] + $defaultOptions);
 
 generate($generator, [
@@ -161,7 +161,7 @@ generate($generator, [
             '$1Dictionaries$2',
             $typeName
         );
-    }
+    },
 ] + $defaultOptions);
 
 generate($generator, [
@@ -172,8 +172,8 @@ generate($generator, [
             '$1DynamicTextAdTargets$2',
             $typeName
         );
-    }
-]  + $defaultOptions);
+    },
+] + $defaultOptions);
 
 generate($generator, [
     'inputFile' => 'https://api.direct.yandex.com/v5/keywords?wsdl',
@@ -183,7 +183,7 @@ generate($generator, [
             '$1Keywords$2',
             $typeName
         );
-    }
+    },
 ] + $defaultOptions);
 
 generate($generator, [
@@ -194,18 +194,18 @@ generate($generator, [
             '$1Sitelinks$2',
             $typeName
         );
-    }
+    },
 ] + $defaultOptions);
 
 generate($generator, [
-    'inputFile'  => 'https://api.direct.yandex.com/v5/vcards?wsdl',
+    'inputFile' => 'https://api.direct.yandex.com/v5/vcards?wsdl',
     'renameType' => function ($typeName) {
         return preg_replace(
             '#^(Add|Delete|Get)(Request|Response)$#',
             '$1VCards$2',
             $typeName
         );
-    }
+    },
 ] + $defaultOptions);
 
 generate($generator, [
@@ -216,7 +216,7 @@ generate($generator, [
             '$1Clients$2',
             $typeName
         );
-    }
+    },
 ] + $defaultOptions);
 
 function generate(Generator $generator, array $options)

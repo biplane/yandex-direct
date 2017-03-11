@@ -5,7 +5,7 @@ namespace Biplane\YandexDirect\Helper;
 use Biplane\YandexDirect\Api\SoapClient;
 
 /**
- * Dumper
+ * Dumper.
  *
  * @author Denis Vasilev
  */

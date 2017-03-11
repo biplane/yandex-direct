@@ -7,12 +7,12 @@ use Biplane\YandexDirect\Event\PostCallEvent;
 use Biplane\YandexDirect\Event\PreCallEvent;
 use Biplane\YandexDirect\Events;
 
-class BaseClientTest extends BaseTestCase
+class SoapClientTest extends BaseTestCase
 {
     public function testInvokeApiMethodShouldBeCompletedSuccessfully()
     {
         $methodName = 'SomeMethod';
-        $methodParams = array(new \stdClass());
+        $methodParams = [new \stdClass()];
         $response = 'response';
 
         $this->dispatcher->expects($this->at(0))
@@ -62,9 +62,9 @@ class BaseClientTest extends BaseTestCase
     public function testInvokeApiMethodShouldThrowException()
     {
         $methodName = 'AnyMethod';
-        $methodParams = array(
-            'foo' => 'bar'
-        );
+        $methodParams = [
+            'foo' => 'bar',
+        ];
 
         $this->dispatcher->expects($this->at(0))
             ->method('dispatch')
@@ -106,6 +106,6 @@ class BaseClientTest extends BaseTestCase
 
     protected function getSoapClient()
     {
-        return $this->createClient('Biplane\YandexDirect\Api\SoapClient', array('__soapCall'));
+        return $this->createClient('Biplane\YandexDirect\Api\SoapClient', ['__soapCall']);
     }
 }

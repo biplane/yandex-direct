@@ -26,8 +26,8 @@ class PreCallEvent extends Event
     public function __construct($methodRef, array $params, User $user)
     {
         $this->methodRef = $methodRef;
-        $this->params    = $params;
-        $this->user      = $user;
+        $this->params = $params;
+        $this->user = $user;
     }
 
     /**

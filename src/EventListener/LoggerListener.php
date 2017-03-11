@@ -25,7 +25,7 @@ class LoggerListener implements EventSubscriberInterface
     public static function getSubscribedEvents()
     {
         return [
-            Events::FAIL_REQUEST  => 'onException',
+            Events::FAIL_REQUEST => 'onException',
         ];
     }
 

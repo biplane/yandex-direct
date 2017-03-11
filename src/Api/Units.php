@@ -3,7 +3,7 @@
 namespace Biplane\YandexDirect\Api;
 
 /**
- * Units
+ * Units.
  *
  * @author Denis Vasilev
  */

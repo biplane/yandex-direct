@@ -11,7 +11,7 @@ use Biplane\YandexDirect\User;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**
- * SoapClient
+ * SoapClient.
  *
  * @author Denis Vasilev
  */
@@ -46,16 +46,16 @@ abstract class SoapClient extends \SoapClient
      * @param User                     $user       The profile
      * @param array                    $options    The options
      */
-    public function __construct($wsdl, EventDispatcherInterface $dispatcher, User $user, array $options = array())
+    public function __construct($wsdl, EventDispatcherInterface $dispatcher, User $user, array $options = [])
     {
-        $defaults = array(
+        $defaults = [
             'soap_version' => SOAP_1_1,
-            'encoding'     => 'UTF-8',
-            'trace'        => true,
-            'exception'    => true,
-            'cache_wsdl'   => WSDL_CACHE_DISK,
-            'features'     => SOAP_SINGLE_ELEMENT_ARRAYS,
-        );
+            'encoding' => 'UTF-8',
+            'trace' => true,
+            'exception' => true,
+            'cache_wsdl' => WSDL_CACHE_DISK,
+            'features' => SOAP_SINGLE_ELEMENT_ARRAYS,
+        ];
 
         parent::__construct($wsdl, $options + $user->getSoapOptions() + $defaults);
 
@@ -93,7 +93,7 @@ abstract class SoapClient extends \SoapClient
      *
      * @return mixed
      */
-    protected function invoke($method, array $params = array())
+    protected function invoke($method, array $params = [])
     {
         $qualifiedClassName = get_class($this);
 

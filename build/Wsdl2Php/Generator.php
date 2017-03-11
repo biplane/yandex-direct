@@ -31,7 +31,7 @@ class Generator implements GeneratorInterface
         $options = $config->get('soapClientOptions');
 
         if (empty($options['features'])
-            || (($options['features'] & SOAP_SINGLE_ELEMENT_ARRAYS) != SOAP_SINGLE_ELEMENT_ARRAYS)
+            || (($options['features'] & SOAP_SINGLE_ELEMENT_ARRAYS) !== SOAP_SINGLE_ELEMENT_ARRAYS)
         ) {
             $message = 'SoapClient option feature SOAP_SINGLE_ELEMENT_ARRAYS is not set.' .
                 ' This is not recommended as data types in DocBlocks for array properties will not be' .

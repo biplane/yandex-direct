@@ -7,19 +7,19 @@ use Biplane\YandexDirect\User;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**
- * SoapClientV5
+ * SoapClientV5.
  *
  * @author Denis Vasilev
  */
 class SoapClientV5 extends SoapClient
 {
-    public function __construct($wsdl, EventDispatcherInterface $dispatcher, User $user, array $options = array())
+    public function __construct($wsdl, EventDispatcherInterface $dispatcher, User $user, array $options = [])
     {
-        $options['stream_context'] = stream_context_create(array(
-            'http' => array(
-                'header' => $this->createHttpHeaders($user)
-            )
-        ));
+        $options['stream_context'] = stream_context_create([
+            'http' => [
+                'header' => $this->createHttpHeaders($user),
+            ],
+        ]);
 
         parent::__construct($wsdl, $dispatcher, $user, $options);
     }
@@ -78,15 +78,15 @@ class SoapClientV5 extends SoapClient
 
     private function createHttpHeaders(User $user)
     {
-        $headers = array(
+        $headers = [
             'Authorization: Bearer ' . $user->getAccessToken(),
-            'Accept-Language: ' . $user->getLocale()
-        );
+            'Accept-Language: ' . $user->getLocale(),
+        ];
 
         if ($user->getLogin() !== null) {
             $headers[] = 'Client-Login: ' . $user->getLogin();
         }
 
-        return join("\r\n", $headers);
+        return implode("\r\n", $headers);
     }
 }

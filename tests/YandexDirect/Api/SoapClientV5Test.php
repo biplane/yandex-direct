@@ -14,7 +14,7 @@ class SoapClientV5Test extends BaseTestCase
     public function testSoapFaultShouldBeWrappedToApiException()
     {
         $methodName = 'Foo';
-        $methodParams = array();
+        $methodParams = [];
 
         $faultResponse = new \stdClass();
         $faultResponse->errorCode = 53;
@@ -93,7 +93,7 @@ class SoapClientV5Test extends BaseTestCase
         $methods = func_get_args();
 
         if (empty($methods)) {
-            $methods = array('__soapCall');
+            $methods = ['__soapCall'];
         }
 
         return $this->createClient('Biplane\YandexDirect\Api\SoapClientV5', $methods);

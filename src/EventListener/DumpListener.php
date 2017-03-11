@@ -10,14 +10,14 @@ use Biplane\YandexDirect\Helper\Dumper;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**
- * DumpListener
+ * DumpListener.
  *
  * @author Denis Vasilev
  */
 class DumpListener implements EventSubscriberInterface
 {
     const LEVEL_FAIL_REQUEST = 1;
-    const LEVEL_ALL_REQUEST  = 2;
+    const LEVEL_ALL_REQUEST = 2;
 
     private $dumper;
     private $level;
@@ -27,10 +27,10 @@ class DumpListener implements EventSubscriberInterface
      */
     public static function getSubscribedEvents()
     {
-        return array(
-            Events::AFTER_REQUEST => array('onSuccess', 256),
-            Events::FAIL_REQUEST  => array('onFail', 256),
-        );
+        return [
+            Events::AFTER_REQUEST => ['onSuccess', 256],
+            Events::FAIL_REQUEST => ['onFail', 256],
+        ];
     }
 
     /**
@@ -43,7 +43,7 @@ class DumpListener implements EventSubscriberInterface
      */
     public function __construct(Dumper $dumper, $level = self::LEVEL_ALL_REQUEST)
     {
-        if (!in_array($level, array(self::LEVEL_ALL_REQUEST, self::LEVEL_FAIL_REQUEST))) {
+        if (!in_array($level, [self::LEVEL_ALL_REQUEST, self::LEVEL_FAIL_REQUEST])) {
             throw new \InvalidArgumentException(
                 'The level must be one of constants with prefix LEVEL_.'
             );

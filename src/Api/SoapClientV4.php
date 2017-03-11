@@ -8,7 +8,7 @@ use Biplane\YandexDirect\User;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**
- * SoapClientV4
+ * SoapClientV4.
  *
  * @author Denis Vasilev
  */
@@ -16,14 +16,14 @@ class SoapClientV4 extends SoapClient
 {
     private $requestId;
 
-    public function __construct($wsdl, EventDispatcherInterface $dispatcher, User $user, array $options = array())
+    public function __construct($wsdl, EventDispatcherInterface $dispatcher, User $user, array $options = [])
     {
         parent::__construct($wsdl, $dispatcher, $user, $options);
 
-        $this->__setSoapHeaders(array(
+        $this->__setSoapHeaders([
             new \SoapHeader('API', 'locale', $user->getLocale()),
-            new \SoapHeader('API', 'token', $user->getAccessToken())
-        ));
+            new \SoapHeader('API', 'token', $user->getAccessToken()),
+        ]);
     }
 
     /**
@@ -76,7 +76,7 @@ class SoapClientV4 extends SoapClient
             $financeToken = $this->user->createFinanceToken($usedMethod, $operationNum);
 
             if (!is_array($inputHeaders)) {
-                $inputHeaders = array();
+                $inputHeaders = [];
             }
 
             $inputHeaders[] = new \SoapHeader('API', 'finance_token', $financeToken);
@@ -107,17 +107,17 @@ class SoapClientV4 extends SoapClient
             /** @var AccountManagementRequest $request */
             $request = $params[0];
 
-            if (in_array($request->getAction(), array('Deposit', 'Invoice', 'TransferMoney'))) {
+            if (in_array($request->getAction(), ['Deposit', 'Invoice', 'TransferMoney'])) {
                 return true;
             }
         }
 
-        if (in_array($methodName, array(
+        if (in_array($methodName, [
             'TransferMoney',
             'GetCreditLimits',
             'CreateInvoice',
             'PayCampaigns',
-        ))) {
+        ])) {
             return true;
         }
 

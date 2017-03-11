@@ -34,22 +34,21 @@ abstract class BaseTestCase extends \PHPUnit_Framework_TestCase
         unset($this->dispatcher, $this->client, $this->user);
     }
 
-
     protected function configureUser(\PHPUnit_Framework_MockObject_MockObject $user)
     {
         $user->method('getSoapOptions')
-            ->willReturn(array());
+            ->willReturn([]);
     }
 
-    protected function createClient($soapClientClass, array $methods = array())
+    protected function createClient($soapClientClass, array $methods = [])
     {
-        $options = array(
-            'uri'      => 'localhost',
+        $options = [
+            'uri' => 'localhost',
             'location' => 'localhost',
-        );
+        ];
 
         return $this->getMockBuilder($soapClientClass)
-            ->setConstructorArgs(array(null, $this->dispatcher, $this->user, $options))
+            ->setConstructorArgs([null, $this->dispatcher, $this->user, $options])
             ->setMethods($methods)
             ->getMockForAbstractClass();
     }
