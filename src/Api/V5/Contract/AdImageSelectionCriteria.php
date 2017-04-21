@@ -1,0 +1,75 @@
+<?php
+
+namespace Biplane\YandexDirect\Api\V5\Contract;
+
+/**
+ * Auto-generated code.
+ */
+class AdImageSelectionCriteria
+{
+
+    protected $AdImageHashes = null;
+
+    protected $Associated = null;
+
+    /**
+     * Creates a new instance of AdImageSelectionCriteria.
+     *
+     * @return self
+     */
+    public static function create()
+    {
+        return new self();
+    }
+
+    /**
+     * Gets AdImageHashes.
+     *
+     * @return string[]|null
+     */
+    public function getAdImageHashes()
+    {
+        return $this->AdImageHashes;
+    }
+
+    /**
+     * Sets AdImageHashes.
+     *
+     * @param string[]|null $value
+     * @return self
+     */
+    public function setAdImageHashes(array $value = null)
+    {
+        $this->AdImageHashes = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets Associated.
+     *
+     * @return string|null
+     * @see YesNoEnum
+     */
+    public function getAssociated()
+    {
+        return $this->Associated;
+    }
+
+    /**
+     * Sets Associated.
+     *
+     * @param string|null $value
+     * @return self
+     * @see YesNoEnum
+     */
+    public function setAssociated($value = null)
+    {
+        $this->Associated = $value;
+
+        return $this;
+    }
+
+
+}
+

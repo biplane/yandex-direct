@@ -18,6 +18,8 @@ class AdGroupFieldEnum
 
     const REGION_IDS = 'RegionIds';
 
+    const RESTRICTED_REGION_IDS = 'RestrictedRegionIds';
+
     const NEGATIVE_KEYWORDS = 'NegativeKeywords';
 
     const TYPE = 'Type';

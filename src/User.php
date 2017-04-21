@@ -5,6 +5,7 @@ namespace Biplane\YandexDirect;
 use Biplane\YandexDirect\Api\V4\YandexAPIService;
 use Biplane\YandexDirect\Api\V5\AdExtensions;
 use Biplane\YandexDirect\Api\V5\AdGroups;
+use Biplane\YandexDirect\Api\V5\AdImages;
 use Biplane\YandexDirect\Api\V5\Ads;
 use Biplane\YandexDirect\Api\V5\BidModifiers;
 use Biplane\YandexDirect\Api\V5\Bids;
@@ -14,6 +15,7 @@ use Biplane\YandexDirect\Api\V5\Clients;
 use Biplane\YandexDirect\Api\V5\Dictionaries;
 use Biplane\YandexDirect\Api\V5\DynamicTextAdTargets;
 use Biplane\YandexDirect\Api\V5\Keywords;
+use Biplane\YandexDirect\Api\V5\KeywordsResearch;
 use Biplane\YandexDirect\Api\V5\Sitelinks;
 use Biplane\YandexDirect\Api\V5\VCards;
 use Symfony\Component\EventDispatcher\EventDispatcher;
@@ -36,6 +38,7 @@ class User
         'YandexApiService' => '\Biplane\YandexDirect\Api\V4\YandexAPIService',
         'AdGroups' => 'Biplane\YandexDirect\Api\V5\AdGroups',
         'AdExtensions' => 'Biplane\YandexDirect\Api\V5\AdExtensions',
+        'AdImages' => 'Biplane\YandexDirect\Api\V5\AdImages',
         'Ads' => 'Biplane\YandexDirect\Api\V5\Ads',
         'Bids' => 'Biplane\YandexDirect\Api\V5\Bids',
         'BidModifiers' => 'Biplane\YandexDirect\Api\V5\BidModifiers',
@@ -45,6 +48,7 @@ class User
         'Dictionaries' => 'Biplane\YandexDirect\Api\V5\Dictionaries',
         'DynamicTextAdTargets' => 'Biplane\YandexDirect\Api\V5\DynamicTextAdTargets',
         'Keywords' => 'Biplane\YandexDirect\Api\V5\Keywords',
+        'KeywordsResearch' => 'Biplane\YandexDirect\Api\V5\KeywordsResearch',
         'Sitelinks' => 'Biplane\YandexDirect\Api\V5\Sitelinks',
         'VCards' => 'Biplane\YandexDirect\Api\V5\VCards',
     ];
@@ -180,6 +184,16 @@ class User
     }
 
     /**
+     * Gets the proxy of web-service for manage ad images.
+     *
+     * @return AdImages
+     */
+    public function getAdImagesService()
+    {
+        return $this->getProxy('AdImages');
+    }
+
+    /**
      * Gets the proxy of web-service for manage ads.
      *
      * @return Ads
@@ -267,6 +281,16 @@ class User
     public function getKeywordsService()
     {
         return $this->getProxy('Keywords');
+    }
+
+    /**
+     * Gets the proxy of web-service to get forecast of impressions for keywords.
+     *
+     * @return KeywordsResearch
+     */
+    public function getKeywordsResearchService()
+    {
+        return $this->getProxy('KeywordsResearch');
     }
 
     /**

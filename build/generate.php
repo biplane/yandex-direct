@@ -99,6 +99,17 @@ generate($generator, [
 ] + $defaultOptions);
 
 generate($generator, [
+    'inputFile' => 'https://api.direct.yandex.com/v5/adimages?wsdl',
+    'renameType' => function ($typeName) {
+        return preg_replace(
+            '#^(Add|Delete|Get)(Request|Response)$#',
+            '$1AdImages$2',
+            $typeName
+        );
+    },
+] + $defaultOptions);
+
+generate($generator, [
     'inputFile' => 'https://api.direct.yandex.com/v5/ads?wsdl',
     'renameType' => function ($typeName) {
         return preg_replace(
@@ -154,6 +165,17 @@ generate($generator, [
 ] + $defaultOptions);
 
 generate($generator, [
+    'inputFile' => 'https://api.direct.yandex.com/v5/clients?wsdl',
+    'renameType' => function ($typeName) {
+        return preg_replace(
+            '#^(Get)(Request|Response)$#',
+            '$1Clients$2',
+            $typeName
+        );
+    },
+] + $defaultOptions);
+
+generate($generator, [
     'inputFile' => 'https://api.direct.yandex.com/v5/dictionaries?wsdl',
     'renameType' => function ($typeName) {
         return preg_replace(
@@ -187,6 +209,17 @@ generate($generator, [
 ] + $defaultOptions);
 
 generate($generator, [
+    'inputFile' => 'https://api.direct.yandex.com/v5/keywordsresearch?wsdl',
+    'renameType' => function ($typeName) {
+        return preg_replace(
+            '#^(HasSearchVolume)(Request|Response)$#',
+            '$1Keywords$2',
+            $typeName
+        );
+    },
+] + $defaultOptions);
+
+generate($generator, [
     'inputFile' => 'https://api.direct.yandex.com/v5/sitelinks?wsdl',
     'renameType' => function ($typeName) {
         return preg_replace(
@@ -203,17 +236,6 @@ generate($generator, [
         return preg_replace(
             '#^(Add|Delete|Get)(Request|Response)$#',
             '$1VCards$2',
-            $typeName
-        );
-    },
-] + $defaultOptions);
-
-generate($generator, [
-    'inputFile' => 'https://api.direct.yandex.com/v5/clients?wsdl',
-    'renameType' => function ($typeName) {
-        return preg_replace(
-            '#^(Get)(Request|Response)$#',
-            '$1Clients$2',
             $typeName
         );
     },

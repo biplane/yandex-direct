@@ -9,10 +9,10 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 /**
  * Auto-generated code.
  */
-class Clients extends SoapClientV5
+class AdImages extends SoapClientV5
 {
 
-    const ENDPOINT = 'https://api.direct.yandex.com/v5/clients?wsdl';
+    const ENDPOINT = 'https://api.direct.yandex.com/v5/adimages?wsdl';
 
     /**
      * Constructor.
@@ -56,35 +56,55 @@ class Clients extends SoapClientV5
                 'MultiIdsActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\MultiIdsActionResult',
                 'ExtensionModeration' => 'Biplane\YandexDirect\Api\V5\Contract\ExtensionModeration',
                 'SortOrderEnum' => 'Biplane\YandexDirect\Api\V5\Contract\SortOrderEnum',
-                'ClientRestrictionEnum' => 'Biplane\YandexDirect\Api\V5\Contract\ClientRestrictionEnum',
-                'ClientSettingGetEnum' => 'Biplane\YandexDirect\Api\V5\Contract\ClientSettingGetEnum',
-                'PrivilegeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\PrivilegeEnum',
-                'EmailSubscriptionEnum' => 'Biplane\YandexDirect\Api\V5\Contract\EmailSubscriptionEnum',
-                'EmailSubscriptionItem' => 'Biplane\YandexDirect\Api\V5\Contract\EmailSubscriptionItem',
-                'NotificationGeneralClients' => 'Biplane\YandexDirect\Api\V5\Contract\NotificationGeneralClients',
-                'Notification' => 'Biplane\YandexDirect\Api\V5\Contract\Notification',
-                'ClientRestrictionItem' => 'Biplane\YandexDirect\Api\V5\Contract\ClientRestrictionItem',
-                'ClientSettingItemGet' => 'Biplane\YandexDirect\Api\V5\Contract\ClientSettingItemGet',
-                'Grant' => 'Biplane\YandexDirect\Api\V5\Contract\Grant',
-                'Representative' => 'Biplane\YandexDirect\Api\V5\Contract\Representative',
-                'ClientBaseItem' => 'Biplane\YandexDirect\Api\V5\Contract\ClientBaseItem',
-                'ClientGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\ClientGetItem',
-                'ClientFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\ClientFieldEnum',
-                'GetRequest' => 'Biplane\YandexDirect\Api\V5\Contract\GetClientsRequest',
-                'GetResponse' => 'Biplane\YandexDirect\Api\V5\Contract\GetClientsResponse',
+                'AdImageFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AdImageFieldEnum',
+                'AdImageTypeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AdImageTypeEnum',
+                'AdImageSubtypeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AdImageSubtypeEnum',
+                'AdImageAddItem' => 'Biplane\YandexDirect\Api\V5\Contract\AdImageAddItem',
+                'AdImageGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\AdImageGetItem',
+                'AdImageSelectionCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\AdImageSelectionCriteria',
+                'AdImageHashesCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\AdImageHashesCriteria',
+                'AdImageActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\AdImageActionResult',
+                'GetRequest' => 'Biplane\YandexDirect\Api\V5\Contract\GetAdImagesRequest',
+                'GetResponse' => 'Biplane\YandexDirect\Api\V5\Contract\GetAdImagesResponse',
+                'AddRequest' => 'Biplane\YandexDirect\Api\V5\Contract\AddAdImagesRequest',
+                'AddResponse' => 'Biplane\YandexDirect\Api\V5\Contract\AddAdImagesResponse',
+                'DeleteRequest' => 'Biplane\YandexDirect\Api\V5\Contract\DeleteAdImagesRequest',
+                'DeleteResponse' => 'Biplane\YandexDirect\Api\V5\Contract\DeleteAdImagesResponse',
             ]
         ]);
     }
 
     /**
+     * add.
+     *
+     * @param Contract\AddAdImagesRequest $parameters
+     * @return Contract\AddAdImagesResponse
+     */
+    public function add(Contract\AddAdImagesRequest $parameters)
+    {
+        return $this->invoke('add', [$parameters]);
+    }
+
+    /**
      * get.
      *
-     * @param Contract\GetClientsRequest $parameters
-     * @return Contract\GetClientsResponse
+     * @param Contract\GetAdImagesRequest $parameters
+     * @return Contract\GetAdImagesResponse
      */
-    public function get(Contract\GetClientsRequest $parameters)
+    public function get(Contract\GetAdImagesRequest $parameters)
     {
         return $this->invoke('get', [$parameters]);
+    }
+
+    /**
+     * delete.
+     *
+     * @param Contract\DeleteAdImagesRequest $parameters
+     * @return Contract\DeleteAdImagesResponse
+     */
+    public function delete(Contract\DeleteAdImagesRequest $parameters)
+    {
+        return $this->invoke('delete', [$parameters]);
     }
 
 

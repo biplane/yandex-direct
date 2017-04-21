@@ -6,6 +6,10 @@
 
 * Добавлена поддержка заголовка [Use-Operator-Units](https://tech.yandex.ru/direct/doc/dg/concepts/headers-docpage/#use-operator-units).
   Issue #3.
+  
+* Добавлена поддержка сервисов 
+  [AdImages](https://tech.yandex.ru/direct/doc/ref-v5/adimages/adimages-docpage/) 
+  и [KeywordsResearch](https://tech.yandex.ru/direct/doc/ref-v5/keywordsresearch/keywordsresearch-docpage/)
 
 ## 4.0.1 [commit logs](https://github.com/biplane/yandex-direct/compare/4.0...4.0.1)
 

@@ -28,6 +28,8 @@ class AdGroupGetItem extends AdGroupBase
 
     protected $ServingStatus = null;
 
+    protected $RestrictedRegionIds = null;
+
     /**
      * Creates a new instance of AdGroupGetItem.
      *
@@ -272,6 +274,29 @@ class AdGroupGetItem extends AdGroupBase
     public function setServingStatus($value = null)
     {
         $this->ServingStatus = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets RestrictedRegionIds.
+     *
+     * @return struct[]|null
+     */
+    public function getRestrictedRegionIds()
+    {
+        return $this->RestrictedRegionIds;
+    }
+
+    /**
+     * Sets RestrictedRegionIds.
+     *
+     * @param struct[]|null $value
+     * @return self
+     */
+    public function setRestrictedRegionIds(array $value = null)
+    {
+        $this->RestrictedRegionIds = $value;
 
         return $this;
     }

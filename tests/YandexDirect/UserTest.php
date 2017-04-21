@@ -106,19 +106,21 @@ class UserTest extends \PHPUnit_Framework_TestCase
     {
         return [
             ['Biplane\YandexDirect\Api\V4\YandexApiService', 'getApiService'],
+            ['Biplane\YandexDirect\Api\V5\AdExtensions', 'getAdExtensionsService'],
             ['Biplane\YandexDirect\Api\V5\AdGroups', 'getAdGroupsService'],
+            ['Biplane\YandexDirect\Api\V5\AdImages', 'getAdImagesService'],
             ['Biplane\YandexDirect\Api\V5\Ads', 'getAdsService'],
             ['Biplane\YandexDirect\Api\V5\Bids', 'getBidsService'],
             ['Biplane\YandexDirect\Api\V5\BidModifiers', 'getBidModifiersService'],
             ['Biplane\YandexDirect\Api\V5\Campaigns', 'getCampaignsService'],
             ['Biplane\YandexDirect\Api\V5\Changes', 'getChangesService'],
             ['Biplane\YandexDirect\Api\V5\Clients', 'getClientsService'],
-            ['Biplane\YandexDirect\Api\V5\Keywords', 'getKeywordsService'],
-            ['Biplane\YandexDirect\Api\V5\Sitelinks', 'getSitelinksService'],
-            ['Biplane\YandexDirect\Api\V5\VCards', 'getVCardsService'],
-            ['Biplane\YandexDirect\Api\V5\AdExtensions', 'getAdExtensionsService'],
             ['Biplane\YandexDirect\Api\V5\Dictionaries', 'getDictionariesService'],
             ['Biplane\YandexDirect\Api\V5\DynamicTextAdTargets', 'getDynamicTextAdTargetsService'],
+            ['Biplane\YandexDirect\Api\V5\Keywords', 'getKeywordsService'],
+            ['Biplane\YandexDirect\Api\V5\KeywordsResearch', 'getKeywordsResearchService'],
+            ['Biplane\YandexDirect\Api\V5\Sitelinks', 'getSitelinksService'],
+            ['Biplane\YandexDirect\Api\V5\VCards', 'getVCardsService'],
         ];
     }
 

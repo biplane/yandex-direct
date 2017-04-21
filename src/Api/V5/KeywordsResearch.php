@@ -9,10 +9,10 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 /**
  * Auto-generated code.
  */
-class Clients extends SoapClientV5
+class KeywordsResearch extends SoapClientV5
 {
 
-    const ENDPOINT = 'https://api.direct.yandex.com/v5/clients?wsdl';
+    const ENDPOINT = 'https://api.direct.yandex.com/v5/keywordsresearch?wsdl';
 
     /**
      * Constructor.
@@ -56,35 +56,24 @@ class Clients extends SoapClientV5
                 'MultiIdsActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\MultiIdsActionResult',
                 'ExtensionModeration' => 'Biplane\YandexDirect\Api\V5\Contract\ExtensionModeration',
                 'SortOrderEnum' => 'Biplane\YandexDirect\Api\V5\Contract\SortOrderEnum',
-                'ClientRestrictionEnum' => 'Biplane\YandexDirect\Api\V5\Contract\ClientRestrictionEnum',
-                'ClientSettingGetEnum' => 'Biplane\YandexDirect\Api\V5\Contract\ClientSettingGetEnum',
-                'PrivilegeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\PrivilegeEnum',
-                'EmailSubscriptionEnum' => 'Biplane\YandexDirect\Api\V5\Contract\EmailSubscriptionEnum',
-                'EmailSubscriptionItem' => 'Biplane\YandexDirect\Api\V5\Contract\EmailSubscriptionItem',
-                'NotificationGeneralClients' => 'Biplane\YandexDirect\Api\V5\Contract\NotificationGeneralClients',
-                'Notification' => 'Biplane\YandexDirect\Api\V5\Contract\Notification',
-                'ClientRestrictionItem' => 'Biplane\YandexDirect\Api\V5\Contract\ClientRestrictionItem',
-                'ClientSettingItemGet' => 'Biplane\YandexDirect\Api\V5\Contract\ClientSettingItemGet',
-                'Grant' => 'Biplane\YandexDirect\Api\V5\Contract\Grant',
-                'Representative' => 'Biplane\YandexDirect\Api\V5\Contract\Representative',
-                'ClientBaseItem' => 'Biplane\YandexDirect\Api\V5\Contract\ClientBaseItem',
-                'ClientGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\ClientGetItem',
-                'ClientFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\ClientFieldEnum',
-                'GetRequest' => 'Biplane\YandexDirect\Api\V5\Contract\GetClientsRequest',
-                'GetResponse' => 'Biplane\YandexDirect\Api\V5\Contract\GetClientsResponse',
+                'HasSearchVolumeFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\HasSearchVolumeFieldEnum',
+                'HasSearchVolumeItem' => 'Biplane\YandexDirect\Api\V5\Contract\HasSearchVolumeItem',
+                'HasSearchVolumeSelectionCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\HasSearchVolumeSelectionCriteria',
+                'HasSearchVolumeRequest' => 'Biplane\YandexDirect\Api\V5\Contract\HasSearchVolumeKeywordsRequest',
+                'HasSearchVolumeResponse' => 'Biplane\YandexDirect\Api\V5\Contract\HasSearchVolumeKeywordsResponse',
             ]
         ]);
     }
 
     /**
-     * get.
+     * hasSearchVolume.
      *
-     * @param Contract\GetClientsRequest $parameters
-     * @return Contract\GetClientsResponse
+     * @param Contract\HasSearchVolumeKeywordsRequest $parameters
+     * @return Contract\HasSearchVolumeKeywordsResponse
      */
-    public function get(Contract\GetClientsRequest $parameters)
+    public function hasSearchVolume(Contract\HasSearchVolumeKeywordsRequest $parameters)
     {
-        return $this->invoke('get', [$parameters]);
+        return $this->invoke('hasSearchVolume', [$parameters]);
     }
 
 
