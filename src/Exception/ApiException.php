@@ -27,6 +27,7 @@ class ApiException extends RequestException
     const FORECAST_PHRASE_INVALID = 76;
     const FORECAST_GEO_INVALID = 77;
     const FORECAST_NOT_AVAILABLE = 78;
+    const WORDSTAT_REPORT_IS_BEING_GENERATED = 92;
     const INVALID_CAMPAIGN_INFO = 111;
     const CAMPAIGNS_OVERFLOW = 114;
     const INVALID_BANNER_INFO = 151;
