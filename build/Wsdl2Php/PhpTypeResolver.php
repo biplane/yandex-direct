@@ -52,6 +52,7 @@ class PhpTypeResolver
 
         switch (strtolower($type)) {
             case 'date':
+            case 'base64binary':
                 return 'string';
             case 'arrayofstring':
                 return 'string[]';

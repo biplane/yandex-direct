@@ -61,6 +61,7 @@ class PhpTypeResolverTest extends \PHPUnit_Framework_TestCase
             ['date', 'string'],
             ['string', 'string'],
             ['date[]', 'string[]'],
+            ['base64Binary', 'string'],
         ];
     }
 

@@ -25,7 +25,7 @@ class AdImageAddItem
     /**
      * Gets ImageData.
      *
-     * @return base64Binary
+     * @return string
      */
     public function getImageData()
     {
@@ -35,10 +35,10 @@ class AdImageAddItem
     /**
      * Sets ImageData.
      *
-     * @param base64Binary $value
+     * @param string $value
      * @return self
      */
-    public function setImageData(base64Binary $value)
+    public function setImageData($value)
     {
         $this->ImageData = $value;
 
