@@ -82,7 +82,8 @@ class ServiceType extends AbstractType implements GeneratorInterface
 
         $generator = new MethodGenerator('__construct');
         $generator->setDocBlock('Constructor.');
-        $generator->setBody(<<<CODE
+        $generator->setBody(
+            <<<CODE
         parent::__construct(\$user->resolveWsdl(self::ENDPOINT), \$dispatcher, \$user, [
     'classmap' => [
 {$classmap}
