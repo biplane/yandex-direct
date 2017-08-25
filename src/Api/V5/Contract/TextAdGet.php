@@ -12,6 +12,8 @@ class TextAdGet extends TextAdGetBase
 
     protected $Title = null;
 
+    protected $Title2 = null;
+
     protected $Href = null;
 
     protected $Mobile = null;
@@ -21,6 +23,8 @@ class TextAdGet extends TextAdGetBase
     protected $DisplayUrlPath = null;
 
     protected $DisplayUrlPathModeration = null;
+
+    protected $VideoExtension = null;
 
     /**
      * Creates a new instance of TextAdGet.
@@ -74,6 +78,29 @@ class TextAdGet extends TextAdGetBase
     public function setTitle($value = null)
     {
         $this->Title = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets Title2.
+     *
+     * @return string|null
+     */
+    public function getTitle2()
+    {
+        return $this->Title2;
+    }
+
+    /**
+     * Sets Title2.
+     *
+     * @param string|null $value
+     * @return self
+     */
+    public function setTitle2($value = null)
+    {
+        $this->Title2 = $value;
 
         return $this;
     }
@@ -191,6 +218,29 @@ class TextAdGet extends TextAdGetBase
     public function setDisplayUrlPathModeration(ExtensionModeration $value = null)
     {
         $this->DisplayUrlPathModeration = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets VideoExtension.
+     *
+     * @return VideoExtensionGetItem|null
+     */
+    public function getVideoExtension()
+    {
+        return $this->VideoExtension;
+    }
+
+    /**
+     * Sets VideoExtension.
+     *
+     * @param VideoExtensionGetItem|null $value
+     * @return self
+     */
+    public function setVideoExtension(VideoExtensionGetItem $value = null)
+    {
+        $this->VideoExtension = $value;
 
         return $this;
     }

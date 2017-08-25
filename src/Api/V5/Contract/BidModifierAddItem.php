@@ -14,6 +14,8 @@ class BidModifierAddItem extends BidModifierAddBase
 
     protected $RetargetingAdjustments = null;
 
+    protected $RegionalAdjustments = null;
+
     /**
      * Creates a new instance of BidModifierAddItem.
      *
@@ -89,6 +91,29 @@ class BidModifierAddItem extends BidModifierAddBase
     public function setRetargetingAdjustments(array $value = null)
     {
         $this->RetargetingAdjustments = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets RegionalAdjustments.
+     *
+     * @return RegionalAdjustmentAdd[]|null
+     */
+    public function getRegionalAdjustments()
+    {
+        return $this->RegionalAdjustments;
+    }
+
+    /**
+     * Sets RegionalAdjustments.
+     *
+     * @param RegionalAdjustmentAdd[]|null $value
+     * @return self
+     */
+    public function setRegionalAdjustments(array $value = null)
+    {
+        $this->RegionalAdjustments = $value;
 
         return $this;
     }

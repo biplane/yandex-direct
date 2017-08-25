@@ -5,10 +5,14 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 /**
  * Auto-generated code.
  */
-class Notification extends NotificationGeneralClients
+class Notification
 {
 
-    protected $SmsPhoneNumber = null;
+    protected $Email = null;
+
+    protected $EmailSubscriptions = [];
+
+    protected $Lang = null;
 
     /**
      * Creates a new instance of Notification.
@@ -21,24 +25,72 @@ class Notification extends NotificationGeneralClients
     }
 
     /**
-     * Gets SmsPhoneNumber.
+     * Gets Email.
      *
      * @return string
      */
-    public function getSmsPhoneNumber()
+    public function getEmail()
     {
-        return $this->SmsPhoneNumber;
+        return $this->Email;
     }
 
     /**
-     * Sets SmsPhoneNumber.
+     * Sets Email.
      *
      * @param string $value
      * @return self
      */
-    public function setSmsPhoneNumber($value)
+    public function setEmail($value)
     {
-        $this->SmsPhoneNumber = $value;
+        $this->Email = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets EmailSubscriptions.
+     *
+     * @return EmailSubscriptionItem[]
+     */
+    public function getEmailSubscriptions()
+    {
+        return $this->EmailSubscriptions;
+    }
+
+    /**
+     * Sets EmailSubscriptions.
+     *
+     * @param EmailSubscriptionItem[] $value
+     * @return self
+     */
+    public function setEmailSubscriptions(array $value)
+    {
+        $this->EmailSubscriptions = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets Lang.
+     *
+     * @return string
+     * @see LangEnum
+     */
+    public function getLang()
+    {
+        return $this->Lang;
+    }
+
+    /**
+     * Sets Lang.
+     *
+     * @param string $value
+     * @return self
+     * @see LangEnum
+     */
+    public function setLang($value)
+    {
+        $this->Lang = $value;
 
         return $this;
     }

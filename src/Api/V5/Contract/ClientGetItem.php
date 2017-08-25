@@ -193,7 +193,7 @@ class ClientGetItem extends ClientBaseItem
     /**
      * Gets Grants.
      *
-     * @return Grant[]|null
+     * @return GrantGetItem[]|null
      */
     public function getGrants()
     {
@@ -203,7 +203,7 @@ class ClientGetItem extends ClientBaseItem
     /**
      * Sets Grants.
      *
-     * @param Grant[]|null $value
+     * @param GrantGetItem[]|null $value
      * @return self
      */
     public function setGrants(array $value = null)
@@ -239,7 +239,7 @@ class ClientGetItem extends ClientBaseItem
     /**
      * Gets Notification.
      *
-     * @return Notification|null
+     * @return NotificationGet|null
      */
     public function getNotification()
     {
@@ -249,10 +249,10 @@ class ClientGetItem extends ClientBaseItem
     /**
      * Sets Notification.
      *
-     * @param Notification|null $value
+     * @param NotificationGet|null $value
      * @return self
      */
-    public function setNotification(Notification $value = null)
+    public function setNotification(NotificationGet $value = null)
     {
         $this->Notification = $value;
 
@@ -331,7 +331,7 @@ class ClientGetItem extends ClientBaseItem
     /**
      * Gets Settings.
      *
-     * @return ClientSettingItemGet[]|null
+     * @return ClientSettingGetItem[]|null
      */
     public function getSettings()
     {
@@ -341,7 +341,7 @@ class ClientGetItem extends ClientBaseItem
     /**
      * Sets Settings.
      *
-     * @param ClientSettingItemGet[]|null $value
+     * @param ClientSettingGetItem[]|null $value
      * @return self
      */
     public function setSettings(array $value = null)

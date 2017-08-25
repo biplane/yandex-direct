@@ -5,46 +5,21 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 /**
  * Auto-generated code.
  */
-class Grant
+class GrantItem
 {
-
-    protected $Agency = null;
 
     protected $Privilege = null;
 
     protected $Value = null;
 
     /**
-     * Creates a new instance of Grant.
+     * Creates a new instance of GrantItem.
      *
      * @return self
      */
     public static function create()
     {
         return new self();
-    }
-
-    /**
-     * Gets Agency.
-     *
-     * @return string|null
-     */
-    public function getAgency()
-    {
-        return $this->Agency;
-    }
-
-    /**
-     * Sets Agency.
-     *
-     * @param string|null $value
-     * @return self
-     */
-    public function setAgency($value = null)
-    {
-        $this->Agency = $value;
-
-        return $this;
     }
 
     /**

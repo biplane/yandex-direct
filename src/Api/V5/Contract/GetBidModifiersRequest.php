@@ -18,6 +18,8 @@ class GetBidModifiersRequest extends GetRequestGeneral
 
     protected $RetargetingAdjustmentFieldNames = null;
 
+    protected $RegionalAdjustmentFieldNames = null;
+
     /**
      * Creates a new instance of GetBidModifiersRequest.
      *
@@ -147,6 +149,31 @@ class GetBidModifiersRequest extends GetRequestGeneral
     public function setRetargetingAdjustmentFieldNames(array $value = null)
     {
         $this->RetargetingAdjustmentFieldNames = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets RegionalAdjustmentFieldNames.
+     *
+     * @return string[]|null
+     * @see RegionalAdjustmentFieldEnum
+     */
+    public function getRegionalAdjustmentFieldNames()
+    {
+        return $this->RegionalAdjustmentFieldNames;
+    }
+
+    /**
+     * Sets RegionalAdjustmentFieldNames.
+     *
+     * @param string[]|null $value
+     * @return self
+     * @see RegionalAdjustmentFieldEnum
+     */
+    public function setRegionalAdjustmentFieldNames(array $value = null)
+    {
+        $this->RegionalAdjustmentFieldNames = $value;
 
         return $this;
     }

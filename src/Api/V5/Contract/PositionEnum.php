@@ -22,6 +22,8 @@ class PositionEnum
 
     const P13 = 'P13';
 
+    const P14 = 'P14';
+
     const P21 = 'P21';
 
     const P22 = 'P22';

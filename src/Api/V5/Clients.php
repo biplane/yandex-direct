@@ -54,24 +54,35 @@ class Clients extends SoapClientV5
                 'ActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\ActionResult',
                 'SetBidsActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\SetBidsActionResult',
                 'MultiIdsActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\MultiIdsActionResult',
+                'ClientsActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\ClientsActionResult',
                 'ExtensionModeration' => 'Biplane\YandexDirect\Api\V5\Contract\ExtensionModeration',
                 'SortOrderEnum' => 'Biplane\YandexDirect\Api\V5\Contract\SortOrderEnum',
                 'ClientRestrictionEnum' => 'Biplane\YandexDirect\Api\V5\Contract\ClientRestrictionEnum',
                 'ClientSettingGetEnum' => 'Biplane\YandexDirect\Api\V5\Contract\ClientSettingGetEnum',
+                'ClientSettingAddEnum' => 'Biplane\YandexDirect\Api\V5\Contract\ClientSettingAddEnum',
+                'ClientSettingUpdateEnum' => 'Biplane\YandexDirect\Api\V5\Contract\ClientSettingUpdateEnum',
                 'PrivilegeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\PrivilegeEnum',
                 'EmailSubscriptionEnum' => 'Biplane\YandexDirect\Api\V5\Contract\EmailSubscriptionEnum',
                 'EmailSubscriptionItem' => 'Biplane\YandexDirect\Api\V5\Contract\EmailSubscriptionItem',
-                'NotificationGeneralClients' => 'Biplane\YandexDirect\Api\V5\Contract\NotificationGeneralClients',
                 'Notification' => 'Biplane\YandexDirect\Api\V5\Contract\Notification',
+                'NotificationAdd' => 'Biplane\YandexDirect\Api\V5\Contract\NotificationAdd',
+                'NotificationUpdate' => 'Biplane\YandexDirect\Api\V5\Contract\NotificationUpdate',
+                'NotificationGet' => 'Biplane\YandexDirect\Api\V5\Contract\NotificationGet',
                 'ClientRestrictionItem' => 'Biplane\YandexDirect\Api\V5\Contract\ClientRestrictionItem',
-                'ClientSettingItemGet' => 'Biplane\YandexDirect\Api\V5\Contract\ClientSettingItemGet',
-                'Grant' => 'Biplane\YandexDirect\Api\V5\Contract\Grant',
+                'ClientSettingGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\ClientSettingGetItem',
+                'ClientSettingAddItem' => 'Biplane\YandexDirect\Api\V5\Contract\ClientSettingAddItem',
+                'ClientSettingUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\ClientSettingUpdateItem',
+                'GrantItem' => 'Biplane\YandexDirect\Api\V5\Contract\GrantItem',
+                'GrantGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\GrantGetItem',
                 'Representative' => 'Biplane\YandexDirect\Api\V5\Contract\Representative',
                 'ClientBaseItem' => 'Biplane\YandexDirect\Api\V5\Contract\ClientBaseItem',
                 'ClientGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\ClientGetItem',
+                'ClientUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\ClientUpdateItem',
                 'ClientFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\ClientFieldEnum',
                 'GetRequest' => 'Biplane\YandexDirect\Api\V5\Contract\GetClientsRequest',
                 'GetResponse' => 'Biplane\YandexDirect\Api\V5\Contract\GetClientsResponse',
+                'UpdateRequest' => 'Biplane\YandexDirect\Api\V5\Contract\UpdateRequest',
+                'UpdateResponse' => 'Biplane\YandexDirect\Api\V5\Contract\UpdateResponse',
             ]
         ]);
     }
@@ -85,6 +96,17 @@ class Clients extends SoapClientV5
     public function get(Contract\GetClientsRequest $parameters)
     {
         return $this->invoke('get', [$parameters]);
+    }
+
+    /**
+     * update.
+     *
+     * @param Contract\UpdateRequest $parameters
+     * @return Contract\UpdateResponse
+     */
+    public function update(Contract\UpdateRequest $parameters)
+    {
+        return $this->invoke('update', [$parameters]);
     }
 
 

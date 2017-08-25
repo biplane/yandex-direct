@@ -12,11 +12,15 @@ class TextAdUpdate extends TextAdUpdateBase
 
     protected $Title = null;
 
+    protected $Title2 = null;
+
     protected $Href = null;
 
     protected $AgeLabel = null;
 
     protected $DisplayUrlPath = null;
+
+    protected $VideoExtension = null;
 
     /**
      * Creates a new instance of TextAdUpdate.
@@ -70,6 +74,29 @@ class TextAdUpdate extends TextAdUpdateBase
     public function setTitle($value = null)
     {
         $this->Title = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets Title2.
+     *
+     * @return string|null
+     */
+    public function getTitle2()
+    {
+        return $this->Title2;
+    }
+
+    /**
+     * Sets Title2.
+     *
+     * @param string|null $value
+     * @return self
+     */
+    public function setTitle2($value = null)
+    {
+        $this->Title2 = $value;
 
         return $this;
     }
@@ -141,6 +168,29 @@ class TextAdUpdate extends TextAdUpdateBase
     public function setDisplayUrlPath($value = null)
     {
         $this->DisplayUrlPath = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets VideoExtension.
+     *
+     * @return VideoExtensionUpdateItem|null
+     */
+    public function getVideoExtension()
+    {
+        return $this->VideoExtension;
+    }
+
+    /**
+     * Sets VideoExtension.
+     *
+     * @param VideoExtensionUpdateItem|null $value
+     * @return self
+     */
+    public function setVideoExtension(VideoExtensionUpdateItem $value = null)
+    {
+        $this->VideoExtension = $value;
 
         return $this;
     }

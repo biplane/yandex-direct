@@ -24,6 +24,8 @@ class BidModifierGetItem
 
     protected $RetargetingAdjustment = null;
 
+    protected $RegionalAdjustment = null;
+
     /**
      * Creates a new instance of BidModifierGetItem.
      *
@@ -218,6 +220,29 @@ class BidModifierGetItem
     public function setRetargetingAdjustment(RetargetingAdjustmentGet $value = null)
     {
         $this->RetargetingAdjustment = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets RegionalAdjustment.
+     *
+     * @return RegionalAdjustmentGet|null
+     */
+    public function getRegionalAdjustment()
+    {
+        return $this->RegionalAdjustment;
+    }
+
+    /**
+     * Sets RegionalAdjustment.
+     *
+     * @param RegionalAdjustmentGet|null $value
+     * @return self
+     */
+    public function setRegionalAdjustment(RegionalAdjustmentGet $value = null)
+    {
+        $this->RegionalAdjustment = $value;
 
         return $this;
     }

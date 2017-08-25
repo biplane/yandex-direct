@@ -18,12 +18,6 @@ class DynamicTextCampaignSearchStrategyTypeEnum
 
     const IMPRESSIONS_BELOW_SEARCH = 'IMPRESSIONS_BELOW_SEARCH';
 
-    const LOWEST_COST = 'LOWEST_COST';
-
-    const LOWEST_COST_GUARANTEE = 'LOWEST_COST_GUARANTEE';
-
-    const LOWEST_COST_PREMIUM = 'LOWEST_COST_PREMIUM';
-
     const UNKNOWN = 'UNKNOWN';
 
     const WB_MAXIMUM_CLICKS = 'WB_MAXIMUM_CLICKS';
@@ -31,6 +25,8 @@ class DynamicTextCampaignSearchStrategyTypeEnum
     const WEEKLY_CLICK_PACKAGE = 'WEEKLY_CLICK_PACKAGE';
 
     const AVERAGE_ROI = 'AVERAGE_ROI';
+
+    const SERVING_OFF = 'SERVING_OFF';
 
 
 }

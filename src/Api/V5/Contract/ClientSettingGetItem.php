@@ -5,7 +5,7 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 /**
  * Auto-generated code.
  */
-class ClientSettingItemGet
+class ClientSettingGetItem
 {
 
     protected $Option = null;
@@ -13,7 +13,7 @@ class ClientSettingItemGet
     protected $Value = null;
 
     /**
-     * Creates a new instance of ClientSettingItemGet.
+     * Creates a new instance of ClientSettingGetItem.
      *
      * @return self
      */

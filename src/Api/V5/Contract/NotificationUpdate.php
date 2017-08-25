@@ -5,17 +5,17 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 /**
  * Auto-generated code.
  */
-class NotificationGeneralClients
+class NotificationUpdate
 {
 
     protected $Email = null;
 
-    protected $EmailSubscriptions = [];
+    protected $EmailSubscriptions = null;
 
     protected $Lang = null;
 
     /**
-     * Creates a new instance of NotificationGeneralClients.
+     * Creates a new instance of NotificationUpdate.
      *
      * @return self
      */
@@ -27,7 +27,7 @@ class NotificationGeneralClients
     /**
      * Gets Email.
      *
-     * @return string
+     * @return string|null
      */
     public function getEmail()
     {
@@ -37,10 +37,10 @@ class NotificationGeneralClients
     /**
      * Sets Email.
      *
-     * @param string $value
+     * @param string|null $value
      * @return self
      */
-    public function setEmail($value)
+    public function setEmail($value = null)
     {
         $this->Email = $value;
 
@@ -50,7 +50,7 @@ class NotificationGeneralClients
     /**
      * Gets EmailSubscriptions.
      *
-     * @return EmailSubscriptionItem[]
+     * @return EmailSubscriptionItem[]|null
      */
     public function getEmailSubscriptions()
     {
@@ -60,10 +60,10 @@ class NotificationGeneralClients
     /**
      * Sets EmailSubscriptions.
      *
-     * @param EmailSubscriptionItem[] $value
+     * @param EmailSubscriptionItem[]|null $value
      * @return self
      */
-    public function setEmailSubscriptions(array $value)
+    public function setEmailSubscriptions(array $value = null)
     {
         $this->EmailSubscriptions = $value;
 
@@ -73,7 +73,7 @@ class NotificationGeneralClients
     /**
      * Gets Lang.
      *
-     * @return string
+     * @return string|null
      * @see LangEnum
      */
     public function getLang()
@@ -84,11 +84,11 @@ class NotificationGeneralClients
     /**
      * Sets Lang.
      *
-     * @param string $value
+     * @param string|null $value
      * @return self
      * @see LangEnum
      */
-    public function setLang($value)
+    public function setLang($value = null)
     {
         $this->Lang = $value;
 

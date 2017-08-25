@@ -18,12 +18,6 @@ class TextCampaignSearchStrategyTypeEnum
 
     const IMPRESSIONS_BELOW_SEARCH = 'IMPRESSIONS_BELOW_SEARCH';
 
-    const LOWEST_COST = 'LOWEST_COST';
-
-    const LOWEST_COST_GUARANTEE = 'LOWEST_COST_GUARANTEE';
-
-    const LOWEST_COST_PREMIUM = 'LOWEST_COST_PREMIUM';
-
     const SERVING_OFF = 'SERVING_OFF';
 
     const UNKNOWN = 'UNKNOWN';

@@ -20,6 +20,8 @@ class TextAdFieldEnum
 
     const TITLE = 'Title';
 
+    const TITLE2 = 'Title2';
+
     const MOBILE = 'Mobile';
 
     const V_CARD_ID = 'VCardId';
@@ -35,6 +37,8 @@ class TextAdFieldEnum
     const AD_EXTENSIONS = 'AdExtensions';
 
     const DISPLAY_URL_PATH_MODERATION = 'DisplayUrlPathModeration';
+
+    const VIDEO_EXTENSION = 'VideoExtension';
 
 
 }

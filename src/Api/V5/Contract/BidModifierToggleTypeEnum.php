@@ -12,6 +12,8 @@ class BidModifierToggleTypeEnum
 
     const RETARGETING_ADJUSTMENT = 'RETARGETING_ADJUSTMENT';
 
+    const REGIONAL_ADJUSTMENT = 'REGIONAL_ADJUSTMENT';
+
 
 }
 
