@@ -45,6 +45,8 @@ generate($generator, [
         'KeywordRequest',
         'KeywordResponse',
         'GetCampaignsInfo',
+        'CreateOfflineReportRequest',
+        'OfflineReportInfo',
     ],
     'excludeOperations' => [
         'PingAPI_X',
@@ -73,6 +75,9 @@ generate($generator, [
         'GetBannerPhrasesFilter',
         'Keyword',
         'GetChanges',
+        'CreateOfflineReport',
+        'DeleteOfflineReport',
+        'GetOfflineReportList',
     ],
 ] + $defaultOptions);
 

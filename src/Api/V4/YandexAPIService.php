@@ -26,8 +26,6 @@ class YandexAPIService extends SoapClientV4
             'classmap' => [
                 'NewReportFilterInfo' => 'Biplane\YandexDirect\Api\V4\Contract\NewReportFilterInfo',
                 'NewReportInfo' => 'Biplane\YandexDirect\Api\V4\Contract\NewReportInfo',
-                'CreateOfflineReportRequest' => 'Biplane\YandexDirect\Api\V4\Contract\CreateOfflineReportRequest',
-                'OfflineReportInfo' => 'Biplane\YandexDirect\Api\V4\Contract\OfflineReportInfo',
                 'TimeZoneInfo' => 'Biplane\YandexDirect\Api\V4\Contract\TimeZoneInfo',
                 'StatGoalsCampaignIDInfo' => 'Biplane\YandexDirect\Api\V4\Contract\StatGoalsCampaignIDInfo',
                 'DayBudgetInfo' => 'Biplane\YandexDirect\Api\V4\Contract\DayBudgetInfo',
@@ -624,38 +622,6 @@ class YandexAPIService extends SoapClientV4
     public function accountManagement(Contract\AccountManagementRequest $params)
     {
         return $this->invoke('AccountManagement', [$params]);
-    }
-
-    /**
-     * CreateOfflineReport.
-     *
-     * @param Contract\CreateOfflineReportRequest $params
-     * @return int
-     */
-    public function createOfflineReport(Contract\CreateOfflineReportRequest $params)
-    {
-        return $this->invoke('CreateOfflineReport', [$params]);
-    }
-
-    /**
-     * DeleteOfflineReport.
-     *
-     * @param int $params
-     * @return int
-     */
-    public function deleteOfflineReport($params)
-    {
-        return $this->invoke('DeleteOfflineReport', [$params]);
-    }
-
-    /**
-     * GetOfflineReportList.
-     *
-     * @return Contract\OfflineReportInfo[]
-     */
-    public function getOfflineReportList()
-    {
-        return $this->invoke('GetOfflineReportList', []);
     }
 
 
