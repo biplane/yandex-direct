@@ -121,6 +121,7 @@ class UserTest extends \PHPUnit_Framework_TestCase
             ['Biplane\YandexDirect\Api\V5\KeywordsResearch', 'getKeywordsResearchService'],
             ['Biplane\YandexDirect\Api\V5\Sitelinks', 'getSitelinksService'],
             ['Biplane\YandexDirect\Api\V5\VCards', 'getVCardsService'],
+            ['Biplane\YandexDirect\Api\V5\Reports', 'getReportsService'],
         ];
     }
 

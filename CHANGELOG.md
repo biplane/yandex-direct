@@ -13,6 +13,8 @@
   
 * Удалена поддержка устаревших методов `CreateOfflineReport`, `DeleteOfflineReport`
   и `GetOfflineReportList`.
+  
+* Добавлена поддержка [API для работы с отчётами](https://tech.yandex.ru/direct/doc/reports/reports-docpage/).
 
 ## 4.0.1 [commit logs](https://github.com/biplane/yandex-direct/compare/4.0...4.0.1)
 

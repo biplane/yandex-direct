@@ -16,6 +16,7 @@ use Biplane\YandexDirect\Api\V5\Dictionaries;
 use Biplane\YandexDirect\Api\V5\DynamicTextAdTargets;
 use Biplane\YandexDirect\Api\V5\Keywords;
 use Biplane\YandexDirect\Api\V5\KeywordsResearch;
+use Biplane\YandexDirect\Api\V5\Reports;
 use Biplane\YandexDirect\Api\V5\Sitelinks;
 use Biplane\YandexDirect\Api\V5\VCards;
 use Symfony\Component\EventDispatcher\EventDispatcher;
@@ -51,6 +52,7 @@ class User
         'KeywordsResearch' => 'Biplane\YandexDirect\Api\V5\KeywordsResearch',
         'Sitelinks' => 'Biplane\YandexDirect\Api\V5\Sitelinks',
         'VCards' => 'Biplane\YandexDirect\Api\V5\VCards',
+        'Reports' => 'Biplane\YandexDirect\Api\V5\Reports',
     ];
 
     private $options;
@@ -314,6 +316,16 @@ class User
     }
 
     /**
+     * Gets the reports service.
+     *
+     * @return Reports
+     */
+    public function getReportsService()
+    {
+        return $this->getProxy('Reports');
+    }
+
+    /**
      * Creates the finance token.
      *
      * @param string $methodName   The API method for which needed it token
@@ -427,6 +439,12 @@ class User
             return $this->proxies[$serviceClass];
         }
 
-        return $this->proxies[$serviceClass] = new self::$classMap[$serviceClass]($this->dispatcher, $this);
+        if ($serviceClass === 'Reports') {
+            $service = new self::$classMap[$serviceClass]($this);
+        } else {
+            $service = new self::$classMap[$serviceClass]($this->dispatcher, $this);
+        }
+
+        return $this->proxies[$serviceClass] = $service;
     }
 }
