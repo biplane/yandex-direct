@@ -38,7 +38,6 @@ generate($generator, [
         'GetBannersInfo',
         'BannerInfo',
         'ShortCampaignInfo',
-        'BannerPhraseInfo',
         'BannerPhrasesFilterRequestInfo',
         'GetChangesRequest',
         'GetChangesResponse',
