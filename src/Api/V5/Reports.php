@@ -3,6 +3,7 @@
 namespace Biplane\YandexDirect\Api\V5;
 
 use Biplane\YandexDirect\Api\V5\Report\ReportDefinitionBuilder;
+use Biplane\YandexDirect\Api\V5\Report\ReportOptions;
 use Biplane\YandexDirect\Api\V5\Report\ReportResult;
 use Biplane\YandexDirect\Exception\ApiException;
 use Biplane\YandexDirect\Exception\NetworkException;
@@ -11,7 +12,6 @@ use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\RequestOptions;
 use Psr\Http\Message\ResponseInterface;
-use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**
  * Reports.
@@ -24,7 +24,6 @@ class Reports
 
     private $user;
     private $httpClient;
-    private $optionsResolver;
 
     /**
      * Constructor.
@@ -40,36 +39,6 @@ class Reports
 
         $this->user = $user;
         $this->httpClient = $httpClient;
-        $this->optionsResolver = new OptionsResolver();
-
-        $this->optionsResolver->setDefaults([
-            'processing_mode' => 'auto',
-            'return_money_in_micros' => true,
-            'skip_report_header' => false,
-            'skip_column_header' => false,
-            'skip_report_summary' => false,
-        ]);
-
-        // OptionsResolver 2.6+
-        if (method_exists($this->optionsResolver, 'setNormalizer')) {
-            $this->optionsResolver
-                ->setAllowedValues('processing_mode', ['auto', 'online', 'offline'])
-                ->setAllowedTypes('return_money_in_micros', 'bool')
-                ->setAllowedTypes('skip_report_header', 'bool')
-                ->setAllowedTypes('skip_column_header', 'bool')
-                ->setAllowedTypes('skip_report_summary', 'bool');
-        } else {
-            $this->optionsResolver
-                ->setAllowedValues([
-                    'processing_mode', ['auto', 'online', 'offline'],
-                ])
-                ->setAllowedTypes([
-                    'return_money_in_micros' => ['bool'],
-                    'skip_report_header' => ['bool'],
-                    'skip_column_header' => ['bool'],
-                    'skip_report_summary' => ['bool'],
-                ]);
-        }
     }
 
     /**
@@ -78,20 +47,14 @@ class Reports
      * The status can be ready or pending.
      *
      * @param ReportDefinitionBuilder|string $reportDefinition The report definition
-     * @param array                          $options {
-     *     @var string $processing_mode        One of auto, online or offline
-     *     @var bool   $return_money_in_micros Default true
-     *     @var bool   $skip_report_header     Default false
-     *     @var bool   $skip_report_summary    Default false
-     *     @var bool   $skip_column_header     Default false
-     * }
+     * @param ReportOptions|null             $options          The report options
      *
      * @return ReportResult
      *
      * @throws ApiException
      * @throws NetworkException
      */
-    public function get($reportDefinition, array $options = [])
+    public function get($reportDefinition, ReportOptions $options = null)
     {
         $requestOptions = $this->buildRequestOptions($reportDefinition, $options);
         $response = $this->request($requestOptions);
@@ -105,22 +68,15 @@ class Reports
      * The script will be wait while report will not be ready.
      *
      * @param ReportDefinitionBuilder|string $reportDefinition The report definition
-     * @param array                          $options {
-     *     @var string $processing_mode        One of auto, online or offline
-     *     @var bool   $return_money_in_micros Default true
-     *     @var bool   $skip_report_header     Default false
-     *     @var bool   $skip_report_summary    Default false
-     *     @var bool   $skip_column_header     Default false
-     * }
-     *
-     * @param int|null                       $retryInterval An amount of delay between requests, in seconds
+     * @param ReportOptions|null             $options          The report options
+     * @param int|null                       $retryInterval    An amount of delay between requests, in seconds
      *
      * @return ReportResult
      *
      * @throws ApiException
      * @throws NetworkException
      */
-    public function getReady($reportDefinition, array $options = [], $retryInterval = null)
+    public function getReady($reportDefinition, ReportOptions $options = null, $retryInterval = null)
     {
         $requestOptions = $this->buildRequestOptions($reportDefinition, $options);
         $response = $this->waitReady($requestOptions, $retryInterval ?: 0);
@@ -131,22 +87,16 @@ class Reports
     /**
      * Downloads and save report to the specified file.
      *
-     * @param string                         $reportFile The path to report file
+     * @param string                         $reportFile       The path to report file
      * @param ReportDefinitionBuilder|string $reportDefinition The report definition
-     * @param array                          $options {
-     *     @var string $processing_mode        One of auto, online or offline
-     *     @var bool   $return_money_in_micros Default true
-     *     @var bool   $skip_report_header     Default false
-     *     @var bool   $skip_report_summary    Default false
-     *     @var bool   $skip_column_header     Default false
-     * }
-     * @param int|null                       $retryInterval An amount of delay between requests, in seconds
+     * @param ReportOptions|null             $options          The report options
+     * @param int|null                       $retryInterval    An amount of delay between requests, in seconds
      *
      * @throws ApiException
      * @throws NetworkException
      * @throws \Exception
      */
-    public function download($reportFile, $reportDefinition, array $options = [], $retryInterval = null)
+    public function download($reportFile, $reportDefinition, ReportOptions $options = null, $retryInterval = null)
     {
         $requestOptions = $this->buildRequestOptions($reportDefinition, $options);
         $requestOptions[RequestOptions::SINK] = $reportFile;
@@ -230,34 +180,36 @@ class Reports
         );
     }
 
-    private function buildRequestOptions($reportDefinition, array $reportOptions)
+    private function buildRequestOptions($reportDefinition, ReportOptions $reportOptions = null)
     {
         if ($reportDefinition instanceof Report\ReportDefinitionBuilder) {
             $reportDefinition = $reportDefinition->build();
         }
 
-        $options = $this->optionsResolver->resolve($reportOptions);
+        if (null === $reportOptions) {
+            $reportOptions = new ReportOptions();
+        }
 
         $headers = [
             'Authorization' => sprintf('Bearer %s', $this->user->getAccessToken()),
             'Accept-Language' => $this->user->getLocale(),
             'Client-Login' => $this->user->getLogin(),
-            'processingMode' => $options['processing_mode'],
+            'processingMode' => $reportOptions->getProcessingMode(),
         ];
 
-        if (!$options['return_money_in_micros']) {
+        if ($reportOptions->getReturnMoneyFormat() !== ReportOptions::RETURN_MONEY_FORMAT_MICROS) {
             $headers['returnMoneyInMicros'] = 'false';
         }
 
-        if ($options['skip_report_header']) {
+        if ($reportOptions->isSkipReportHeader()) {
             $headers['skipReportHeader'] = 'true';
         }
 
-        if ($options['skip_column_header']) {
+        if ($reportOptions->isSkipColumnHeader()) {
             $headers['skipColumnHeader'] = 'true';
         }
 
-        if ($options['skip_report_summary']) {
+        if ($reportOptions->isSkipReportSummary()) {
             $headers['skipReportSummary'] = 'true';
         }
 

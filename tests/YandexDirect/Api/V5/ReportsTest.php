@@ -2,6 +2,7 @@
 
 namespace Biplane\Tests\YandexDirect\Api\V5;
 
+use Biplane\YandexDirect\Api\V5\Report\ReportOptions;
 use Biplane\YandexDirect\Api\V5\Reports;
 use Biplane\YandexDirect\Exception\ApiException;
 use Biplane\YandexDirect\User;
@@ -89,6 +90,12 @@ class ReportsTest extends \PHPUnit_Framework_TestCase
     public function testCreateReportWithCustomOptions()
     {
         $reportDefinition = '<ReportDefinition />';
+        $reportOptions = (new ReportOptions())
+            ->setProcessingMode(ReportOptions::PROCESSING_MODE_OFFLINE)
+            ->returnMoneyAsFloat()
+            ->skipColumnHeader()
+            ->skipReportHeader()
+            ->skipReportSummary();
 
         $this->mockHandler->append(new Response(201));
 
@@ -97,13 +104,7 @@ class ReportsTest extends \PHPUnit_Framework_TestCase
             'login' => 'bar'
         ]);
 
-        $result = $service->get($reportDefinition, [
-            'processing_mode' => 'offline',
-            'return_money_in_micros' => false,
-            'skip_report_header' => true,
-            'skip_column_header' => true,
-            'skip_report_summary' => true,
-        ]);
+        $result = $service->get($reportDefinition, $reportOptions);
 
         $this->assertFalse($result->isReady());
         $this->assertRequest($this->mockHandler->getLastRequest(), $reportDefinition, [
