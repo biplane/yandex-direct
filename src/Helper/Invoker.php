@@ -3,7 +3,6 @@
 namespace Biplane\YandexDirect\Helper;
 
 use Biplane\YandexDirect\Exception\ApiException;
-use Biplane\YandexDirect\Exception\AttemptOverflowException;
 use Biplane\YandexDirect\Exception\NetworkException;
 use Biplane\YandexDirect\Exception\RequestException;
 
@@ -58,20 +57,18 @@ class Invoker
         $attempts = 0;
 
         while ($attempts < $this->maxAttempts) {
+            ++$attempts;
+
             try {
                 return $callback($attempts);
             } catch (RequestException $ex) {
-                if ($this->canRetry($ex)) {
+                if ($attempts < $this->maxAttempts && $this->canRetry($ex)) {
                     usleep($this->getDelay($attempts) * 1000000);
                 } else {
                     throw $ex;
                 }
             }
-
-            ++$attempts;
         }
-
-        throw new AttemptOverflowException(sprintf('Max attempts (%d) is reached.', $this->maxAttempts));
     }
 
     /**

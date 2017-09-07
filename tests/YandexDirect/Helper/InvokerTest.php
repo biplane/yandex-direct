@@ -66,7 +66,7 @@ class InvokerTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException \Biplane\YandexDirect\Exception\AttemptOverflowException
+     * @expectedException \Biplane\YandexDirect\Exception\NetworkException
      */
     public function testThrowExceptionWhenMaxAttemptsIsReached()
     {
