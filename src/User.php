@@ -378,7 +378,7 @@ class User
     /**
      * Gets the invoker.
      *
-     * @return Invoker
+     * @return callable
      */
     public function getInvoker()
     {
