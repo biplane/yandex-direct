@@ -167,13 +167,17 @@ class Reports
 
     private function request(array $requestOptions)
     {
-        $response = $this->httpClient->post(self::ENDPOINT, $requestOptions);
+        $invoker = $this->user->getInvoker();
 
-        if ($response->getStatusCode() >= 200 && $response->getStatusCode() <= 202) {
-            return $response;
-        }
+        return $invoker(function () use ($requestOptions) {
+            $response = $this->httpClient->post(self::ENDPOINT, $requestOptions);
 
-        throw $this->createException($response);
+            if ($response->getStatusCode() >= 200 && $response->getStatusCode() <= 202) {
+                return $response;
+            }
+
+            throw $this->createException($response);
+        });
     }
 
     private function waitReady(array $requestOptions, $retryInterval)

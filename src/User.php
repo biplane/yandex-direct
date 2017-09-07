@@ -19,6 +19,7 @@ use Biplane\YandexDirect\Api\V5\KeywordsResearch;
 use Biplane\YandexDirect\Api\V5\Reports;
 use Biplane\YandexDirect\Api\V5\Sitelinks;
 use Biplane\YandexDirect\Api\V5\VCards;
+use Biplane\YandexDirect\Helper\Invoker;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\OptionsResolver\Options;
@@ -375,6 +376,16 @@ class User
     }
 
     /**
+     * Gets the invoker.
+     *
+     * @return Invoker
+     */
+    public function getInvoker()
+    {
+        return $this->options['invoker'];
+    }
+
+    /**
      * Sets the default options.
      *
      * @param OptionsResolver $resolver
@@ -393,6 +404,18 @@ class User
             return $value;
         };
 
+        $invokerNormalizer = function (Options $options, $value) {
+            if (null === $value) {
+                return new Invoker(
+                    $options['retry_max_attempts'],
+                    $options['retry_factor'],
+                    $options['retry_max_delay']
+                );
+            }
+
+            return $value;
+        };
+
         $resolver
             ->setRequired(['access_token'])
             ->setDefaults([
@@ -402,6 +425,10 @@ class User
                 'sandbox' => false,
                 'use_operator_units' => false,
                 'soap_options' => [],
+                'invoker' => null,
+                'retry_factor' => 1,
+                'retry_max_attempts' => 3,
+                'retry_max_delay' => 60,
             ]);
 
         // OptionsResolver 2.6+
@@ -413,7 +440,12 @@ class User
                 ->setAllowedTypes('access_token', 'string')
                 ->setAllowedTypes('sandbox', 'bool')
                 ->setAllowedTypes('use_operator_units', 'bool')
-                ->setNormalizer('login', $loginNormalizer);
+                ->setAllowedTypes('invoker', ['null', 'callable'])
+                ->setAllowedTypes('retry_factor', 'int')
+                ->setAllowedTypes('retry_max_attempts', 'int')
+                ->setAllowedTypes('retry_max_delay', ['int', 'float'])
+                ->setNormalizer('login', $loginNormalizer)
+                ->setNormalizer('invoker', $invokerNormalizer);
         } else {
             $resolver
                 ->setAllowedValues([
@@ -426,9 +458,14 @@ class User
                     'sandbox' => ['bool'],
                     'use_operator_units' => ['bool'],
                     'soap_options' => ['array'],
+                    'invoker' => ['null', 'callable'],
+                    'retry_factor' => 'int',
+                    'retry_max_attempts' => 'int',
+                    'retry_max_delay' => ['int', 'float'],
                 ])
                 ->setNormalizers([
                     'login' => $loginNormalizer,
+                    'invoker' => $invokerNormalizer,
                 ]);
         }
     }

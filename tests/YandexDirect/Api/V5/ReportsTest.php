@@ -214,7 +214,10 @@ XML;
 
         $service = $this->createService([
             'access_token' => 'foo',
-            'login' => 'bar'
+            'login' => 'bar',
+            'invoker' => function (callable $callback) {
+                return $callback();
+            }
         ]);
 
         $service->get($reportDefinition);

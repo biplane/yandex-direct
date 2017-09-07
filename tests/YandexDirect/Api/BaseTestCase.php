@@ -38,6 +38,10 @@ abstract class BaseTestCase extends \PHPUnit_Framework_TestCase
     {
         $user->method('getSoapOptions')
             ->willReturn([]);
+        $user->method('getInvoker')
+            ->willReturn(function (callable $callback) {
+                return $callback();
+            });
     }
 
     protected function createClient($soapClientClass, array $methods = [])

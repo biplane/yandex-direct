@@ -4,6 +4,9 @@
 
 * Восстановлен `Biplane\YandexDirect\Api\V4\Contract\BannerPhraseInfo`. Данная структура
   необходима для метода `YandexAPIService::getForecast()`.
+  
+* Добавлена возможность повторного вызова метода API, если предыдущий вызов завершился
+  с ошибкой и её можно классифицировать как временную.
 
 ## 4.1.0-beta1 [commit logs](https://github.com/biplane/yandex-direct/compare/4.0.1...4.1.0-beta1)
 

@@ -103,35 +103,39 @@ abstract class SoapClient extends \SoapClient
             $methodRef = $qualifiedClassName . ':' . $method;
         }
 
-        $this->dispatcher->dispatch(
-            Events::BEFORE_REQUEST,
-            new PreCallEvent($methodRef, $params, $this->user)
-        );
+        $invoker = $this->user->getInvoker();
 
-        try {
-            $response = $this->__soapCall($method, $params);
-        } catch (\Exception $ex) {
-            if ($ex instanceof \SoapFault) {
-                if (strtolower($ex->faultcode) === 'http') {
-                    $ex = new NetworkException($ex->getMessage(), 0, $ex);
-                } else {
-                    $ex = $this->handleFault($ex, $methodRef, $params);
+        return $invoker(function () use ($methodRef, $method, $params) {
+            $this->dispatcher->dispatch(
+                Events::BEFORE_REQUEST,
+                new PreCallEvent($methodRef, $params, $this->user)
+            );
+
+            try {
+                $response = $this->__soapCall($method, $params);
+            } catch (\Exception $ex) {
+                if ($ex instanceof \SoapFault) {
+                    if (strtolower($ex->faultcode) === 'http') {
+                        $ex = new NetworkException($ex->getMessage(), 0, $ex);
+                    } else {
+                        $ex = $this->handleFault($ex, $methodRef, $params);
+                    }
                 }
+
+                $this->dispatcher->dispatch(
+                    Events::FAIL_REQUEST,
+                    new FailCallEvent($methodRef, $params, $this->user, $this, $ex)
+                );
+
+                throw $ex;
             }
 
             $this->dispatcher->dispatch(
-                Events::FAIL_REQUEST,
-                new FailCallEvent($methodRef, $params, $this->user, $this, $ex)
+                Events::AFTER_REQUEST,
+                new PostCallEvent($methodRef, $params, $this->user, $this, $response)
             );
 
-            throw $ex;
-        }
-
-        $this->dispatcher->dispatch(
-            Events::AFTER_REQUEST,
-            new PostCallEvent($methodRef, $params, $this->user, $this, $response)
-        );
-
-        return $response;
+            return $response;
+        });
     }
 }
