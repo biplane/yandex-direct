@@ -22,6 +22,10 @@
         getReady(ReportRequest $request, $retryInterval = null);
         download($reportFile, ReportRequest $request, $retryInterval = null);
 
+* Для сервиса `Biplane\YandexDirect\Api\V5\Reports` добавлена поддержка событий,
+  `biplane_yandex_direct.before_request`, `biplane_yandex_direct.after_request`
+  и `biplane_yandex_direct.fail_request`.
+
 ## 4.1.0-beta1 [commit logs](https://github.com/biplane/yandex-direct/compare/4.0.1...4.1.0-beta1)
 
 * Добавлен `LoggerListener`.

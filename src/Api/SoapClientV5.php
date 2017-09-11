@@ -76,6 +76,14 @@ class SoapClientV5 extends SoapClient
         return new ApiException($methodRef, $fault->getMessage(), 0, $fault, $this->getRequestId());
     }
 
+    /**
+     * {@inheritdoc}
+     */
+    protected function fetchUtits()
+    {
+        return $this->getUnits();
+    }
+
     private function createHttpHeaders(User $user)
     {
         $headers = [

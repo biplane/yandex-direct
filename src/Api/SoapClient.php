@@ -2,6 +2,7 @@
 
 namespace Biplane\YandexDirect\Api;
 
+use Biplane\YandexDirect\ClientInterface;
 use Biplane\YandexDirect\Event\FailCallEvent;
 use Biplane\YandexDirect\Event\PostCallEvent;
 use Biplane\YandexDirect\Event\PreCallEvent;
@@ -15,17 +16,10 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
  *
  * @author Denis Vasilev
  */
-abstract class SoapClient extends \SoapClient
+abstract class SoapClient extends \SoapClient implements ClientInterface
 {
     protected $user;
     protected $dispatcher;
-
-    /**
-     * Gets the identifier of the latest request.
-     *
-     * @return string|null
-     */
-    abstract public function getRequestId();
 
     /**
      * Handles the fault.
@@ -37,6 +31,13 @@ abstract class SoapClient extends \SoapClient
      * @return \Exception
      */
     abstract protected function handleFault(\SoapFault $fault, $methodRef, array $params);
+
+    /**
+     * Gets an information about units.
+     *
+     * @return Units|null
+     */
+    abstract protected function fetchUtits();
 
     /**
      * Constructor.
@@ -64,9 +65,7 @@ abstract class SoapClient extends \SoapClient
     }
 
     /**
-     * Gets a content of the last request.
-     *
-     * @return string
+     * {@inheritdoc}
      */
     public function getLastRequest()
     {
@@ -74,9 +73,7 @@ abstract class SoapClient extends \SoapClient
     }
 
     /**
-     * Gets a content of the last response.
-     *
-     * @return string
+     * {@inheritdoc}
      */
     public function getLastResponse()
     {
@@ -124,7 +121,7 @@ abstract class SoapClient extends \SoapClient
 
                 $this->dispatcher->dispatch(
                     Events::FAIL_REQUEST,
-                    new FailCallEvent($methodRef, $params, $this->user, $this, $ex)
+                    new FailCallEvent($methodRef, $params, $this->user, $this, $ex, $this->fetchUtits())
                 );
 
                 throw $ex;
@@ -132,7 +129,7 @@ abstract class SoapClient extends \SoapClient
 
             $this->dispatcher->dispatch(
                 Events::AFTER_REQUEST,
-                new PostCallEvent($methodRef, $params, $this->user, $this, $response)
+                new PostCallEvent($methodRef, $params, $this->user, $this, $response, $this->fetchUtits())
             );
 
             return $response;

@@ -2,9 +2,8 @@
 
 namespace Biplane\YandexDirect\Event;
 
-use Biplane\YandexDirect\Api\SoapClient;
-use Biplane\YandexDirect\Api\SoapClientV5;
 use Biplane\YandexDirect\Api\Units;
+use Biplane\YandexDirect\ClientInterface;
 use Biplane\YandexDirect\User;
 
 /**
@@ -15,22 +14,29 @@ use Biplane\YandexDirect\User;
 abstract class BaseAfterCallEvent extends PreCallEvent
 {
     private $client;
+    private $units;
 
     /**
      * Constructor.
      *
-     * @param string     $methodRef The fullname of API method
-     * @param array      $params    The params for method of API
-     * @param User       $user      The user
-     * @param SoapClient $client    The SOAP client
+     * @param string          $methodRef The fullname of API method
+     * @param array           $params    The params for method of API
+     * @param User            $user      The user
+     * @param ClientInterface $client    The client for API service
+     * @param Units|null      $units     Information of units
      *
      * @throws \InvalidArgumentException
      */
-    public function __construct($methodRef, array $params, User $user, SoapClient $client)
+    public function __construct($methodRef, array $params, User $user, ClientInterface $client, Units $units = null)
     {
         parent::__construct($methodRef, $params, $user);
 
+        if (null === $units) {
+            $units = new Units(-1, -1, -1);
+        }
+
         $this->client = $client;
+        $this->units = $units;
     }
 
     /**
@@ -70,10 +76,6 @@ abstract class BaseAfterCallEvent extends PreCallEvent
      */
     public function getUnits()
     {
-        if ($this->client instanceof SoapClientV5) {
-            return $this->client->getUnits();
-        }
-
-        return new Units(-1, -1, -1);
+        return $this->units;
     }
 }

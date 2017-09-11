@@ -101,6 +101,14 @@ class SoapClientV4 extends SoapClient
         return new ApiException($methodRef, $detail ?: $fault->getMessage(), $code, $fault, $this->getRequestId());
     }
 
+    /**
+     * {@inheritdoc}
+     */
+    protected function fetchUtits()
+    {
+        return null;
+    }
+
     private function isFinancialMethod($methodName, array $params)
     {
         if ($methodName === 'AccountManagement') {

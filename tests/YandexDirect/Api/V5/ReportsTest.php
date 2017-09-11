@@ -4,6 +4,10 @@ namespace Biplane\Tests\YandexDirect\Api\V5;
 
 use Biplane\YandexDirect\Api\V5\Report\ReportRequest;
 use Biplane\YandexDirect\Api\V5\Reports;
+use Biplane\YandexDirect\Event\FailCallEvent;
+use Biplane\YandexDirect\Event\PostCallEvent;
+use Biplane\YandexDirect\Event\PreCallEvent;
+use Biplane\YandexDirect\Events;
 use Biplane\YandexDirect\Exception\ApiException;
 use Biplane\YandexDirect\User;
 use GuzzleHttp\Client;
@@ -12,6 +16,7 @@ use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
 use GuzzleHttp\RequestOptions;
 use Psr\Http\Message\RequestInterface;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**
  * @author Denis Vasilev
@@ -19,9 +24,15 @@ use Psr\Http\Message\RequestInterface;
 class ReportsTest extends \PHPUnit_Framework_TestCase
 {
     /**
+     * @var \PHPUnit_Framework_MockObject_MockObject
+     */
+    private $dispatcher;
+
+    /**
      * @var MockHandler
      */
     private $mockHandler;
+
     private $reportFile;
 
     public function testGetResultWhenNewReportIsCreated()
@@ -29,12 +40,27 @@ class ReportsTest extends \PHPUnit_Framework_TestCase
         $reportRequest = (new ReportRequest())
             ->setDefinition('<ReportDefinition />');
 
-        $this->mockHandler->append(new Response(201));
+        $this->mockHandler->append($response = new Response(201));
 
-        $service = $this->createService([
+        $user = $this->createUser([
             'access_token' => 'foo',
-            'login' => 'bar'
+            'login' => 'bar',
         ]);
+        $service = $this->createService($user);
+
+        $this->dispatcher->expects($this->at(0))
+            ->method('dispatch')
+            ->with(Events::BEFORE_REQUEST, new PreCallEvent('Reports:request', [$reportRequest], $user));
+
+        $this->dispatcher->expects($this->at(1))
+            ->method('dispatch')
+            ->with(Events::AFTER_REQUEST, new PostCallEvent(
+                'Reports:request',
+                [$reportRequest],
+                $user,
+                $service,
+                $response->getBody()
+            ));
 
         $result = $service->get($reportRequest);
 
@@ -57,7 +83,7 @@ class ReportsTest extends \PHPUnit_Framework_TestCase
         $service = $this->createService([
             'access_token' => 'foo',
             'locale' => 'ru',
-            'login' => 'bar'
+            'login' => 'bar',
         ]);
 
         $result = $service->get($reportRequest);
@@ -81,7 +107,7 @@ class ReportsTest extends \PHPUnit_Framework_TestCase
 
         $service = $this->createService([
             'access_token' => 'foo',
-            'login' => 'bar'
+            'login' => 'bar',
         ]);
 
         $result = $service->get($reportRequest);
@@ -104,7 +130,7 @@ class ReportsTest extends \PHPUnit_Framework_TestCase
 
         $service = $this->createService([
             'access_token' => 'foo',
-            'login' => 'bar'
+            'login' => 'bar',
         ]);
 
         $result = $service->get($reportRequest);
@@ -138,7 +164,7 @@ class ReportsTest extends \PHPUnit_Framework_TestCase
 
         $service = $this->createService([
             'access_token' => 'foo',
-            'login' => 'bar'
+            'login' => 'bar',
         ]);
 
         $result = $service->getReady($reportRequest);
@@ -179,6 +205,7 @@ class ReportsTest extends \PHPUnit_Framework_TestCase
     {
         $reportRequest = (new ReportRequest())
             ->setDefinition('<ReportDefinition />');
+
         $reportDownloadError = <<<XML
 <?xml version="1.0" encoding="UTF-8"?>
 <reports:reportDownloadError xmlns:reports="http://api.direct.yandex.com/v5/reports">
@@ -192,15 +219,30 @@ class ReportsTest extends \PHPUnit_Framework_TestCase
 XML;
         $this->mockHandler->append(new Response(400, [], $reportDownloadError));
 
-        $service = $this->createService([
+        $user = $this->createUser([
             'access_token' => 'foo',
             'login' => 'bar'
         ]);
+        $service = $this->createService($user);
+
+        $this->dispatcher->expects($this->at(0))
+            ->method('dispatch')
+            ->with(Events::BEFORE_REQUEST, new PreCallEvent('Reports:request', [$reportRequest], $user));
+
+        $this->dispatcher->expects($this->at(1))
+            ->method('dispatch')
+            ->with(Events::FAIL_REQUEST, new FailCallEvent(
+                'Reports:request',
+                [$reportRequest],
+                $user,
+                $service,
+                new ApiException('Reports:request', 'Token not entered', 53, null, '2773184281650080533')
+            ));
 
         try {
             $service->get($reportRequest);
         } catch (ApiException $ex) {
-            $this->assertEquals('Reports:get', $ex->getMethodRef());
+            $this->assertEquals('Reports:request', $ex->getMethodRef());
             $this->assertEquals('2773184281650080533', $ex->getRequestId());
             $this->assertEquals('Token not entered', $ex->getMessage());
             $this->assertSame(53, $ex->getCode());
@@ -261,8 +303,88 @@ XML;
         $this->assertEmpty(file_get_contents($this->reportFile));
     }
 
+    public function testLastRequest()
+    {
+        $reportRequest = (new ReportRequest())
+            ->setDefinition('<ReportDefinition />')
+            ->setProcessingMode(ReportRequest::PROCESSING_MODE_OFFLINE)
+            ->returnMoneyAsFloat();
+
+        $this->mockHandler->append(new Response(201));
+
+        $service = $this->createService([
+            'access_token' => 'foo',
+            'login' => 'bar'
+        ]);
+
+        $service->get($reportRequest);
+
+        $request = <<<REQ
+POST /v5/reports HTTP/1.1
+Host: api.direct.yandex.com
+Authorization: Bearer foo
+Accept-Language: en
+Client-Login: bar
+processingMode: offline
+returnMoneyInMicros: false
+
+<ReportDefinition />
+REQ;
+
+        $this->assertEquals(str_replace("\n", "\r\n", $request), $service->getLastRequest());
+    }
+
+    public function testLastResponse()
+    {
+        $reportRequest = (new ReportRequest())
+            ->setDefinition('<ReportDefinition />');
+
+        $this->mockHandler->append(new Response(201));
+
+        $service = $this->createService([
+            'access_token' => 'foo',
+            'login' => 'bar'
+        ]);
+
+        $service->get($reportRequest);
+
+        $this->assertEquals("HTTP/1.1 201 Created\r\n\r\n", $service->getLastResponse());
+    }
+
+    public function testRequestId()
+    {
+        $reportRequest = (new ReportRequest())
+            ->setDefinition('<ReportDefinition />');
+
+        $this->mockHandler->append(new Response(202, [
+            'retryIn' => '1',
+            'RequestId' => 'request-id',
+        ]));
+
+        $service = $this->createService([
+            'access_token' => 'foo',
+            'login' => 'bar'
+        ]);
+
+        $service->get($reportRequest);
+
+        $response = <<<RESP
+HTTP/1.1 202 Accepted
+retryIn: 1
+RequestId: request-id
+
+
+RESP;
+
+        $this->assertEquals('request-id', $service->getRequestId());
+        $this->assertEquals(str_replace("\n", "\r\n", $response), $service->getLastResponse());
+
+    }
+
     protected function setUp()
     {
+        $this->dispatcher = $this->getMockBuilder(EventDispatcherInterface::class)
+            ->getMock();
         $this->mockHandler = new MockHandler();
         $this->reportFile = sys_get_temp_dir() . '/report.tsv';
 
@@ -273,19 +395,27 @@ XML;
 
     protected function tearDown()
     {
-        unset($this->mockHandler);
+        unset($this->mockHandler, $this->dispatcher);
 
         if (is_file($this->reportFile)) {
             unlink($this->reportFile);
         }
     }
 
-    private function createService(array $userOptions)
+    private function createUser(array $options)
     {
-        $user = new User($userOptions);
+        return new User($options, $this->dispatcher);
+    }
+
+    private function createService($user)
+    {
         $httpClient = new Client([
             'handler' => HandlerStack::create($this->mockHandler),
         ]);
+
+        if (is_array($user)) {
+            $user = $this->createUser($user);
+        }
 
         return new Reports($user, $httpClient);
     }

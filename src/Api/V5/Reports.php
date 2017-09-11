@@ -5,26 +5,56 @@ namespace Biplane\YandexDirect\Api\V5;
 use Biplane\YandexDirect\Api\V5\Report\ReportDefinitionBuilder;
 use Biplane\YandexDirect\Api\V5\Report\ReportRequest;
 use Biplane\YandexDirect\Api\V5\Report\ReportResult;
+use Biplane\YandexDirect\ClientInterface as ApiClientInterface;
+use Biplane\YandexDirect\Event\FailCallEvent;
+use Biplane\YandexDirect\Event\PostCallEvent;
+use Biplane\YandexDirect\Event\PreCallEvent;
+use Biplane\YandexDirect\Events;
 use Biplane\YandexDirect\Exception\ApiException;
 use Biplane\YandexDirect\Exception\NetworkException;
 use Biplane\YandexDirect\Exception\ReportDefinitionException;
 use Biplane\YandexDirect\User;
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
+use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
+use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**
  * Reports.
  *
  * @author Denis Vasilev
  */
-class Reports
+class Reports implements ApiClientInterface
 {
     const ENDPOINT = 'https://api.direct.yandex.com/v5/reports';
 
+    /**
+     * @var User
+     */
     private $user;
+
+    /**
+     * @var ClientInterface
+     */
     private $httpClient;
+
+    /**
+     * @var EventDispatcherInterface
+     */
+    private $dispatcher;
+
+    /**
+     * @var RequestInterface
+     */
+    private $lastRequest;
+
+    /**
+     * @var ResponseInterface
+     */
+    private $lastResponse;
 
     /**
      * Constructor.
@@ -40,6 +70,7 @@ class Reports
 
         $this->user = $user;
         $this->httpClient = $httpClient;
+        $this->dispatcher = $user->getEventDispatcher();
     }
 
     /**
@@ -57,8 +88,7 @@ class Reports
      */
     public function get(ReportRequest $reportRequest)
     {
-        $requestOptions = $this->buildRequestOptions($reportRequest);
-        $response = $this->request($requestOptions);
+        $response = $this->request($reportRequest);
 
         return new ReportResult($response);
     }
@@ -79,8 +109,7 @@ class Reports
      */
     public function getReady(ReportRequest $reportRequest, $retryInterval = null)
     {
-        $requestOptions = $this->buildRequestOptions($reportRequest);
-        $response = $this->waitReady($requestOptions, $retryInterval ?: 0);
+        $response = $this->waitReady($reportRequest, $retryInterval ?: 0);
 
         return new ReportResult($response);
     }
@@ -99,11 +128,10 @@ class Reports
      */
     public function download($reportFile, ReportRequest $reportRequest, $retryInterval = null)
     {
-        $requestOptions = $this->buildRequestOptions($reportRequest);
-        $requestOptions[RequestOptions::SINK] = $reportFile;
-
         try {
-            $this->waitReady($requestOptions, $retryInterval ?: 0);
+            $this->waitReady($reportRequest, $retryInterval ?: 0, [
+                RequestOptions::SINK => $reportFile,
+            ]);
         } catch (\Exception $ex) {
             if (is_file($reportFile) && is_writable($reportFile)) {
                 if (false !== $fh = fopen($reportFile, 'w')) {
@@ -116,25 +144,132 @@ class Reports
         }
     }
 
-    private function request(array $requestOptions)
+    /**
+     * {@inheritdoc}
+     */
+    public function getRequestId()
     {
+        if (null !== $this->lastResponse && $this->lastResponse->hasHeader('RequestId')) {
+            return $this->lastResponse->getHeaderLine('RequestId');
+        }
+
+        return null;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getLastRequest()
+    {
+        if (null !== $this->lastRequest) {
+            $request = sprintf(
+                "%s %s HTTP/%s\r\n",
+                $this->lastRequest->getMethod(),
+                $this->lastRequest->getUri()->getPath(),
+                $this->lastRequest->getProtocolVersion()
+            );
+
+            foreach ($this->lastRequest->getHeaders() as $name => $values) {
+                $request .= $name . ': ' . implode(', ', $values) . "\r\n";
+            }
+
+            $request .= "\r\n";
+            $request .= (string)$this->lastRequest->getBody();
+
+            return $request;
+        }
+
+        return null;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getLastResponse()
+    {
+        if (null !== $this->lastResponse) {
+            $response = sprintf(
+                "HTTP/%s %s %s\r\n",
+                $this->lastResponse->getProtocolVersion(),
+                $this->lastResponse->getStatusCode(),
+                $this->lastResponse->getReasonPhrase()
+            );
+
+            foreach ($this->lastResponse->getHeaders() as $name => $values) {
+                $response .= $name . ': ' . implode(', ', $values) . "\r\n";
+            }
+
+            $response .= "\r\n";
+            $response .= (string)$this->lastResponse->getBody();
+
+            return $response;
+        }
+
+        return null;
+    }
+
+    /**
+     * @param ReportRequest $reportRequest
+     * @param array         $options
+     *
+     * @return ResponseInterface
+     */
+    private function request(ReportRequest $reportRequest, array $options = [])
+    {
+        $reportDefinition = $reportRequest->getDefinition();
+
+        if (empty($reportDefinition)) {
+            throw new ReportDefinitionException(sprintf(
+                'The report definition cannot be empty. Was expected XML document. You can build it with builder %s.',
+                ReportDefinitionBuilder::class
+            ));
+        }
+
+        $request = new Request(
+            'POST',
+            self::ENDPOINT,
+            $this->buildRequestHeaders($reportRequest),
+            $reportDefinition
+        );
         $invoker = $this->user->getInvoker();
 
-        return $invoker(function () use ($requestOptions) {
-            $response = $this->httpClient->post(self::ENDPOINT, $requestOptions);
+        return $invoker(function () use ($request, $options, $reportRequest) {
+            $this->lastRequest = $request;
+
+            $event = new PreCallEvent('Reports:request', [$reportRequest], $this->user);
+            $this->dispatcher->dispatch(Events::BEFORE_REQUEST, $event);
+
+            $response = $this->httpClient->send($request, $options + [
+                RequestOptions::HTTP_ERRORS => false,
+            ]);
+            $this->lastResponse = $response;
 
             if ($response->getStatusCode() >= 200 && $response->getStatusCode() <= 202) {
+                $event = new PostCallEvent(
+                    'Reports:request',
+                    [$reportRequest],
+                    $this->user,
+                    $this,
+                    $response->getBody()
+                );
+                $this->dispatcher->dispatch(Events::AFTER_REQUEST, $event);
+
                 return $response;
             }
 
-            throw $this->createException($response);
+            $exception = $this->createException($response);
+
+            $event = new FailCallEvent('Reports:request', [$reportRequest], $this->user, $this, $exception);
+            $this->dispatcher->dispatch(Events::FAIL_REQUEST, $event);
+
+            throw $exception;
         });
     }
 
-    private function waitReady(array $requestOptions, $retryInterval)
+    private function waitReady(ReportRequest $reportRequest, $retryInterval, array $options = [])
     {
         while (true) {
-            $response = $this->request($requestOptions);
+            $response = $this->request($reportRequest, $options);
 
             if ($response->getStatusCode() === 200) {
                 return $response;
@@ -166,7 +301,7 @@ class Reports
                 $errorDetail = $xpath->evaluate('string(/r:reportDownloadError/r:ApiError/r:errorDetail)');
 
                 return new ApiException(
-                    'Reports:get',
+                    'Reports:request',
                     $errorDetail ?: $errorMessage,
                     (int)$errorCode,
                     null,
@@ -181,17 +316,8 @@ class Reports
         );
     }
 
-    private function buildRequestOptions(ReportRequest $reportRequest)
+    private function buildRequestHeaders(ReportRequest $reportRequest)
     {
-        $reportDefinition = $reportRequest->getDefinition();
-
-        if (empty($reportDefinition)) {
-            throw new ReportDefinitionException(sprintf(
-                'The report definition cannot be empty. Was expected XML document. You can build it with builder %s.',
-                ReportDefinitionBuilder::class
-            ));
-        }
-
         $headers = [
             'Authorization' => sprintf('Bearer %s', $this->user->getAccessToken()),
             'Accept-Language' => $this->user->getLocale(),
@@ -215,10 +341,6 @@ class Reports
             $headers['skipReportSummary'] = 'true';
         }
 
-        return [
-            RequestOptions::BODY => $reportDefinition,
-            RequestOptions::HTTP_ERRORS => false,
-            RequestOptions::HEADERS => $headers,
-        ];
+        return $headers;
     }
 }
