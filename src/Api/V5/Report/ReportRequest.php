@@ -3,11 +3,11 @@
 namespace Biplane\YandexDirect\Api\V5\Report;
 
 /**
- * ReportOptions
+ * ReportRequest.
  *
  * @author Denis Vasilev
  */
-class ReportOptions
+class ReportRequest
 {
     const PROCESSING_MODE_AUTO = 'auto';
     const PROCESSING_MODE_ONLINE = 'online';
@@ -21,6 +21,7 @@ class ReportOptions
     private $skipColumnHeader = false;
     private $skipReportHeader = false;
     private $skipReportSummary = false;
+    private $definition;
 
     public function getProcessingMode()
     {
@@ -119,6 +120,34 @@ class ReportOptions
     public function includeReportSummary()
     {
         $this->skipReportSummary = false;
+
+        return $this;
+    }
+
+    /**
+     * Gets the report definition.
+     *
+     * @return string
+     */
+    public function getDefinition()
+    {
+        return $this->definition;
+    }
+
+    /**
+     * Sets the report definition.
+     *
+     * @param ReportDefinitionBuilder|string $reportDefinition The report definition, XML document
+     *
+     * @return self
+     */
+    public function setDefinition($reportDefinition)
+    {
+        if ($reportDefinition instanceof ReportDefinitionBuilder) {
+            $reportDefinition = $reportDefinition->build();
+        }
+
+        $this->definition = $reportDefinition;
 
         return $this;
     }

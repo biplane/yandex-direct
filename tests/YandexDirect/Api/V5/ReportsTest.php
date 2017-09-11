@@ -2,7 +2,7 @@
 
 namespace Biplane\Tests\YandexDirect\Api\V5;
 
-use Biplane\YandexDirect\Api\V5\Report\ReportOptions;
+use Biplane\YandexDirect\Api\V5\Report\ReportRequest;
 use Biplane\YandexDirect\Api\V5\Reports;
 use Biplane\YandexDirect\Exception\ApiException;
 use Biplane\YandexDirect\User;
@@ -26,7 +26,8 @@ class ReportsTest extends \PHPUnit_Framework_TestCase
 
     public function testGetResultWhenNewReportIsCreated()
     {
-        $reportDefinition = '<ReportDefinition />';
+        $reportRequest = (new ReportRequest())
+            ->setDefinition('<ReportDefinition />');
 
         $this->mockHandler->append(new Response(201));
 
@@ -35,10 +36,10 @@ class ReportsTest extends \PHPUnit_Framework_TestCase
             'login' => 'bar'
         ]);
 
-        $result = $service->get($reportDefinition);
+        $result = $service->get($reportRequest);
 
         $this->assertFalse($result->isReady());
-        $this->assertRequest($this->mockHandler->getLastRequest(), $reportDefinition, [
+        $this->assertRequest($this->mockHandler->getLastRequest(), $reportRequest->getDefinition(), [
             'Authorization' => 'Bearer foo',
             'Accept-Language' => 'en',
             'Client-Login' => 'bar',
@@ -48,7 +49,8 @@ class ReportsTest extends \PHPUnit_Framework_TestCase
 
     public function testGetResultWhenReportIsProcessing()
     {
-        $reportDefinition = '<ReportDefinition />';
+        $reportRequest = (new ReportRequest())
+            ->setDefinition('<ReportDefinition />');
 
         $this->mockHandler->append(new Response(202));
 
@@ -58,10 +60,10 @@ class ReportsTest extends \PHPUnit_Framework_TestCase
             'login' => 'bar'
         ]);
 
-        $result = $service->get($reportDefinition);
+        $result = $service->get($reportRequest);
 
         $this->assertFalse($result->isReady());
-        $this->assertRequest($this->mockHandler->getLastRequest(), $reportDefinition, [
+        $this->assertRequest($this->mockHandler->getLastRequest(), $reportRequest->getDefinition(), [
             'Authorization' => 'Bearer foo',
             'Accept-Language' => 'ru',
             'Client-Login' => 'bar',
@@ -71,7 +73,8 @@ class ReportsTest extends \PHPUnit_Framework_TestCase
 
     public function testGetResultWhenReportIsReady()
     {
-        $reportDefinition = '<ReportDefinition />';
+        $reportRequest = (new ReportRequest())
+            ->setDefinition('<ReportDefinition />');
         $reportContent = 'report data';
 
         $this->mockHandler->append(new Response(200, [], $reportContent));
@@ -81,7 +84,7 @@ class ReportsTest extends \PHPUnit_Framework_TestCase
             'login' => 'bar'
         ]);
 
-        $result = $service->get($reportDefinition);
+        $result = $service->get($reportRequest);
 
         $this->assertTrue($result->isReady());
         $this->assertEquals($reportContent, $result->getData());
@@ -89,9 +92,9 @@ class ReportsTest extends \PHPUnit_Framework_TestCase
 
     public function testCreateReportWithCustomOptions()
     {
-        $reportDefinition = '<ReportDefinition />';
-        $reportOptions = (new ReportOptions())
-            ->setProcessingMode(ReportOptions::PROCESSING_MODE_OFFLINE)
+        $reportRequest = (new ReportRequest())
+            ->setDefinition('<ReportDefinition />')
+            ->setProcessingMode(ReportRequest::PROCESSING_MODE_OFFLINE)
             ->returnMoneyAsFloat()
             ->skipColumnHeader()
             ->skipReportHeader()
@@ -104,10 +107,10 @@ class ReportsTest extends \PHPUnit_Framework_TestCase
             'login' => 'bar'
         ]);
 
-        $result = $service->get($reportDefinition, $reportOptions);
+        $result = $service->get($reportRequest);
 
         $this->assertFalse($result->isReady());
-        $this->assertRequest($this->mockHandler->getLastRequest(), $reportDefinition, [
+        $this->assertRequest($this->mockHandler->getLastRequest(), $reportRequest->getDefinition(), [
             'Authorization' => 'Bearer foo',
             'Accept-Language' => 'en',
             'Client-Login' => 'bar',
@@ -121,7 +124,8 @@ class ReportsTest extends \PHPUnit_Framework_TestCase
 
     public function testWaitBuildingReport()
     {
-        $reportDefinition = '<ReportDefinition />';
+        $reportRequest = (new ReportRequest())
+            ->setDefinition('<ReportDefinition />');
         $reportContent = 'report data';
 
         $this->mockHandler->append(
@@ -137,7 +141,7 @@ class ReportsTest extends \PHPUnit_Framework_TestCase
             'login' => 'bar'
         ]);
 
-        $result = $service->getReady($reportDefinition);
+        $result = $service->getReady($reportRequest);
 
         $this->assertTrue($result->isReady());
         $this->assertEquals($reportContent, $result->getData());
@@ -145,7 +149,8 @@ class ReportsTest extends \PHPUnit_Framework_TestCase
 
     public function testDownloadReport()
     {
-        $reportDefinition = '<ReportDefinition />';
+        $reportRequest = (new ReportRequest())
+            ->setDefinition('<ReportDefinition />');
         $reportContent = 'report data';
 
         $this->mockHandler->append(
@@ -158,7 +163,7 @@ class ReportsTest extends \PHPUnit_Framework_TestCase
             'login' => 'bar'
         ]);
 
-        $service->download($this->reportFile, $reportDefinition);
+        $service->download($this->reportFile, $reportRequest);
 
         $requestOptions = $this->mockHandler->getLastOptions();
 
@@ -172,7 +177,8 @@ class ReportsTest extends \PHPUnit_Framework_TestCase
      */
     public function testThrowApiExceptionWhenBadRequest()
     {
-        $reportDefinition = '<ReportDefinition />';
+        $reportRequest = (new ReportRequest())
+            ->setDefinition('<ReportDefinition />');
         $reportDownloadError = <<<XML
 <?xml version="1.0" encoding="UTF-8"?>
 <reports:reportDownloadError xmlns:reports="http://api.direct.yandex.com/v5/reports">
@@ -192,7 +198,7 @@ XML;
         ]);
 
         try {
-            $service->get($reportDefinition);
+            $service->get($reportRequest);
         } catch (ApiException $ex) {
             $this->assertEquals('Reports:get', $ex->getMethodRef());
             $this->assertEquals('2773184281650080533', $ex->getRequestId());
@@ -209,7 +215,8 @@ XML;
      */
     public function testThrowNetworkException()
     {
-        $reportDefinition = '<ReportDefinition />';
+        $reportRequest = (new ReportRequest())
+            ->setDefinition('<ReportDefinition />');
 
         $this->mockHandler->append(new Response(500, [], 'Internal server error'));
 
@@ -221,12 +228,13 @@ XML;
             }
         ]);
 
-        $service->get($reportDefinition);
+        $service->get($reportRequest);
     }
 
     public function testReportFileShouldBeEmptyWhenDownloadFailed()
     {
-        $reportDefinition = '<ReportDefinition />';
+        $reportRequest = (new ReportRequest())
+            ->setDefinition('<ReportDefinition />');
         $reportDownloadError = <<<XML
 <?xml version="1.0" encoding="UTF-8"?>
 <reports:reportDownloadError xmlns:reports="http://api.direct.yandex.com/v5/reports">
@@ -246,7 +254,7 @@ XML;
         ]);
 
         try {
-            $service->download($this->reportFile, $reportDefinition);
+            $service->download($this->reportFile, $reportRequest);
         } catch (\Exception $ex) {
         }
 

@@ -3,10 +3,11 @@
 namespace Biplane\YandexDirect\Api\V5;
 
 use Biplane\YandexDirect\Api\V5\Report\ReportDefinitionBuilder;
-use Biplane\YandexDirect\Api\V5\Report\ReportOptions;
+use Biplane\YandexDirect\Api\V5\Report\ReportRequest;
 use Biplane\YandexDirect\Api\V5\Report\ReportResult;
 use Biplane\YandexDirect\Exception\ApiException;
 use Biplane\YandexDirect\Exception\NetworkException;
+use Biplane\YandexDirect\Exception\ReportDefinitionException;
 use Biplane\YandexDirect\User;
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
@@ -46,17 +47,17 @@ class Reports
      *
      * The status can be ready or pending.
      *
-     * @param ReportDefinitionBuilder|string $reportDefinition The report definition
-     * @param ReportOptions|null             $options          The report options
+     * @param ReportRequest $reportRequest The report request
      *
      * @return ReportResult
      *
      * @throws ApiException
      * @throws NetworkException
+     * @throws ReportDefinitionException
      */
-    public function get($reportDefinition, ReportOptions $options = null)
+    public function get(ReportRequest $reportRequest)
     {
-        $requestOptions = $this->buildRequestOptions($reportDefinition, $options);
+        $requestOptions = $this->buildRequestOptions($reportRequest);
         $response = $this->request($requestOptions);
 
         return new ReportResult($response);
@@ -67,18 +68,18 @@ class Reports
      *
      * The script will be wait while report will not be ready.
      *
-     * @param ReportDefinitionBuilder|string $reportDefinition The report definition
-     * @param ReportOptions|null             $options          The report options
-     * @param int|null                       $retryInterval    An amount of delay between requests, in seconds
+     * @param ReportRequest $reportRequest The report request
+     * @param int|null      $retryInterval An amount of delay between requests, in seconds
      *
      * @return ReportResult
      *
      * @throws ApiException
      * @throws NetworkException
+     * @throws ReportDefinitionException
      */
-    public function getReady($reportDefinition, ReportOptions $options = null, $retryInterval = null)
+    public function getReady(ReportRequest $reportRequest, $retryInterval = null)
     {
-        $requestOptions = $this->buildRequestOptions($reportDefinition, $options);
+        $requestOptions = $this->buildRequestOptions($reportRequest);
         $response = $this->waitReady($requestOptions, $retryInterval ?: 0);
 
         return new ReportResult($response);
@@ -87,18 +88,18 @@ class Reports
     /**
      * Downloads and save report to the specified file.
      *
-     * @param string                         $reportFile       The path to report file
-     * @param ReportDefinitionBuilder|string $reportDefinition The report definition
-     * @param ReportOptions|null             $options          The report options
-     * @param int|null                       $retryInterval    An amount of delay between requests, in seconds
+     * @param string        $reportFile    The path to report file
+     * @param ReportRequest $reportRequest The report request
+     * @param int|null      $retryInterval An amount of delay between requests, in seconds
      *
      * @throws ApiException
      * @throws NetworkException
+     * @throws ReportDefinitionException
      * @throws \Exception
      */
-    public function download($reportFile, $reportDefinition, ReportOptions $options = null, $retryInterval = null)
+    public function download($reportFile, ReportRequest $reportRequest, $retryInterval = null)
     {
-        $requestOptions = $this->buildRequestOptions($reportDefinition, $options);
+        $requestOptions = $this->buildRequestOptions($reportRequest);
         $requestOptions[RequestOptions::SINK] = $reportFile;
 
         try {
@@ -180,36 +181,37 @@ class Reports
         );
     }
 
-    private function buildRequestOptions($reportDefinition, ReportOptions $reportOptions = null)
+    private function buildRequestOptions(ReportRequest $reportRequest)
     {
-        if ($reportDefinition instanceof Report\ReportDefinitionBuilder) {
-            $reportDefinition = $reportDefinition->build();
-        }
+        $reportDefinition = $reportRequest->getDefinition();
 
-        if (null === $reportOptions) {
-            $reportOptions = new ReportOptions();
+        if (empty($reportDefinition)) {
+            throw new ReportDefinitionException(sprintf(
+                'The report definition cannot be empty. Was expected XML document. You can build it with builder %s.',
+                ReportDefinitionBuilder::class
+            ));
         }
 
         $headers = [
             'Authorization' => sprintf('Bearer %s', $this->user->getAccessToken()),
             'Accept-Language' => $this->user->getLocale(),
             'Client-Login' => $this->user->getLogin(),
-            'processingMode' => $reportOptions->getProcessingMode(),
+            'processingMode' => $reportRequest->getProcessingMode(),
         ];
 
-        if ($reportOptions->getReturnMoneyFormat() !== ReportOptions::RETURN_MONEY_FORMAT_MICROS) {
+        if ($reportRequest->getReturnMoneyFormat() !== ReportRequest::RETURN_MONEY_FORMAT_MICROS) {
             $headers['returnMoneyInMicros'] = 'false';
         }
 
-        if ($reportOptions->isSkipReportHeader()) {
+        if ($reportRequest->isSkipReportHeader()) {
             $headers['skipReportHeader'] = 'true';
         }
 
-        if ($reportOptions->isSkipColumnHeader()) {
+        if ($reportRequest->isSkipColumnHeader()) {
             $headers['skipColumnHeader'] = 'true';
         }
 
-        if ($reportOptions->isSkipReportSummary()) {
+        if ($reportRequest->isSkipReportSummary()) {
             $headers['skipReportSummary'] = 'true';
         }
 
