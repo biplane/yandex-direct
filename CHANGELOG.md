@@ -7,6 +7,20 @@
   
 * Добавлена возможность повторного вызова метода API, если предыдущий вызов завершился
   с ошибкой и её можно классифицировать как временную.
+  
+* Изменена сигнатура методов у сервиса `Biplane\YandexDirect\Api\V5\Reports` (PR #8).
+
+  **Было**
+
+        get($reportDefinition, array $options = null);
+        getReady($reportDefinition, array $options = null, $retryInterval = null);
+        download($reportFile, $reportDefinition, array $options = null, $retryInterval = null);
+
+  **Стало**
+
+        get(ReportRequest $request);
+        getReady(ReportRequest $request, $retryInterval = null);
+        download($reportFile, ReportRequest $request, $retryInterval = null);
 
 ## 4.1.0-beta1 [commit logs](https://github.com/biplane/yandex-direct/compare/4.0.1...4.1.0-beta1)
 
