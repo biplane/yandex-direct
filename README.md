@@ -39,7 +39,7 @@ $criteria = AdsSelectionCriteria::create()
     ->setStates([
         StateEnum::ON,
     ]);
-    
+
 $payload = GetAdsRequest::create()
     ->setSelectionCriteria($criteria)
     ->setFieldNames([
@@ -74,11 +74,11 @@ You can specify the locale for messages from API. Allowed values: `ru`, `ua` or 
 Default: `en`
 
 #### master_token
- 
+
 The master token needs for [access to financial methods](https://tech.yandex.ru/direct/doc/dg-v4/concepts/finance-token-docpage/). 
 
 #### login
- 
+
 The [client login](https://tech.yandex.ru/direct/doc/dg/concepts/headers-docpage/#request). 
 It's **required** for financial operations and when a request is made on behalf of the agency.
 

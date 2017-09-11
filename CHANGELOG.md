@@ -4,10 +4,10 @@
 
 * Восстановлен `Biplane\YandexDirect\Api\V4\Contract\BannerPhraseInfo`. Данная структура
   необходима для метода `YandexAPIService::getForecast()`.
-  
+
 * Добавлена возможность повторного вызова метода API, если предыдущий вызов завершился
   с ошибкой и её можно классифицировать как временную.
-  
+
 * Изменена сигнатура методов у сервиса `Biplane\YandexDirect\Api\V5\Reports` (PR #8).
 
   **Было**
@@ -28,14 +28,14 @@
 
 * Добавлена поддержка заголовка [Use-Operator-Units](https://tech.yandex.ru/direct/doc/dg/concepts/headers-docpage/#use-operator-units).
   Issue #3.
-  
+
 * Добавлена поддержка сервисов 
   [AdImages](https://tech.yandex.ru/direct/doc/ref-v5/adimages/adimages-docpage/) 
   и [KeywordsResearch](https://tech.yandex.ru/direct/doc/ref-v5/keywordsresearch/keywordsresearch-docpage/)
-  
+
 * Удалена поддержка устаревших методов `CreateOfflineReport`, `DeleteOfflineReport`
   и `GetOfflineReportList`.
-  
+
 * Добавлена поддержка [API для работы с отчётами](https://tech.yandex.ru/direct/doc/reports/reports-docpage/).
 
 ## 4.0.1 [commit logs](https://github.com/biplane/yandex-direct/compare/4.0...4.0.1)
@@ -49,19 +49,19 @@
 
  * Бандл для интеграции с Symfony фреймфорком переехал в отдельный 
    [репозиторий](https://github.com/biplane/BiplaneYandexDirectBundle).
-   
+
  * `Biplane\YandexDirect\Api\V4SoapClient` переименован в `Biplane\YandexDirect\Api\SoapClientV4`,
    `Biplane\YandexDirect\Api\V5SoapClient` переименован в `Biplane\YandexDirect\Api\SoapClientV5`.
-   
+
  * Удален `ConcurrentListener`.
- 
+
  * Удален `Authenticator`. Для получения токена можно использовать отдельные решения,
    например, [aego/oauth2-yandex](https://github.com/rakeev/oauth2-yandex).
-   
+
  * В сервисы для API 5 добавлен метод `getUnits`, который возвращает информацию
    о баллах (заголовок [Units](https://tech.yandex.ru/direct/doc/dg/concepts/headers-docpage/#units)), 
    актуальную для последнего запроса к API.
-   
+
  * Из `YandexAPIService` удалены методы: CreateOrUpdateCampaign, GetCampaignsList,
    GetCampaignsListFilter, GetCampaignsParams, GetCampaignParams, DeleteCampaign,
    ResumeCampaign, StopCampaign, ArchiveCampaign, UnArchiveCampaign, SetAutoPrice,
