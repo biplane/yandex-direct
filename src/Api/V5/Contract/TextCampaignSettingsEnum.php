@@ -32,6 +32,8 @@ class TextCampaignSettingsEnum
 
     const MAINTAIN_NETWORK_CPC = 'MAINTAIN_NETWORK_CPC';
 
+    const ENABLE_COMPANY_INFO = 'ENABLE_COMPANY_INFO';
+
 
 }
 

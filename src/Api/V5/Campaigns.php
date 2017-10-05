@@ -131,6 +131,7 @@ class Campaigns extends SoapClientV5
                 'SmsSettings' => 'Biplane\YandexDirect\Api\V5\Contract\SmsSettings',
                 'EmailSettings' => 'Biplane\YandexDirect\Api\V5\Contract\EmailSettings',
                 'TimeTargetingOnPublicHolidays' => 'Biplane\YandexDirect\Api\V5\Contract\TimeTargetingOnPublicHolidays',
+                'RelevantKeywordsSettingAdd' => 'Biplane\YandexDirect\Api\V5\Contract\RelevantKeywordsSettingAdd',
                 'RelevantKeywordsSetting' => 'Biplane\YandexDirect\Api\V5\Contract\RelevantKeywordsSetting',
                 'DailyBudget' => 'Biplane\YandexDirect\Api\V5\Contract\DailyBudget',
                 'TextCampaignSetting' => 'Biplane\YandexDirect\Api\V5\Contract\TextCampaignSetting',

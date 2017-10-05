@@ -9,10 +9,10 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 /**
  * Auto-generated code.
  */
-class Clients extends SoapClientV5
+class RetargetingLists extends SoapClientV5
 {
 
-    const ENDPOINT = 'https://api.direct.yandex.com/v5/clients?wsdl';
+    const ENDPOINT = 'https://api.direct.yandex.com/v5/retargetinglists?wsdl';
 
     /**
      * Constructor.
@@ -57,32 +57,24 @@ class Clients extends SoapClientV5
                 'ClientsActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\ClientsActionResult',
                 'ExtensionModeration' => 'Biplane\YandexDirect\Api\V5\Contract\ExtensionModeration',
                 'SortOrderEnum' => 'Biplane\YandexDirect\Api\V5\Contract\SortOrderEnum',
-                'ClientRestrictionEnum' => 'Biplane\YandexDirect\Api\V5\Contract\ClientRestrictionEnum',
-                'ClientSettingGetEnum' => 'Biplane\YandexDirect\Api\V5\Contract\ClientSettingGetEnum',
-                'ClientSettingAddEnum' => 'Biplane\YandexDirect\Api\V5\Contract\ClientSettingAddEnum',
-                'ClientSettingUpdateEnum' => 'Biplane\YandexDirect\Api\V5\Contract\ClientSettingUpdateEnum',
-                'PrivilegeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\PrivilegeEnum',
-                'EmailSubscriptionEnum' => 'Biplane\YandexDirect\Api\V5\Contract\EmailSubscriptionEnum',
-                'EmailSubscriptionItem' => 'Biplane\YandexDirect\Api\V5\Contract\EmailSubscriptionItem',
-                'Notification' => 'Biplane\YandexDirect\Api\V5\Contract\Notification',
-                'NotificationAdd' => 'Biplane\YandexDirect\Api\V5\Contract\NotificationAdd',
-                'NotificationUpdate' => 'Biplane\YandexDirect\Api\V5\Contract\NotificationUpdate',
-                'NotificationGet' => 'Biplane\YandexDirect\Api\V5\Contract\NotificationGet',
-                'ClientRestrictionItem' => 'Biplane\YandexDirect\Api\V5\Contract\ClientRestrictionItem',
-                'ClientSettingGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\ClientSettingGetItem',
-                'ClientSettingAddItem' => 'Biplane\YandexDirect\Api\V5\Contract\ClientSettingAddItem',
-                'ClientSettingUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\ClientSettingUpdateItem',
-                'GrantItem' => 'Biplane\YandexDirect\Api\V5\Contract\GrantItem',
-                'GrantGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\GrantGetItem',
-                'Representative' => 'Biplane\YandexDirect\Api\V5\Contract\Representative',
-                'ClientBaseItem' => 'Biplane\YandexDirect\Api\V5\Contract\ClientBaseItem',
-                'ClientGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\ClientGetItem',
-                'ClientUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\ClientUpdateItem',
-                'ClientFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\ClientFieldEnum',
-                'GetRequest' => 'Biplane\YandexDirect\Api\V5\Contract\GetClientsRequest',
-                'GetResponse' => 'Biplane\YandexDirect\Api\V5\Contract\GetClientsResponse',
-                'UpdateRequest' => 'Biplane\YandexDirect\Api\V5\Contract\UpdateClientsRequest',
-                'UpdateResponse' => 'Biplane\YandexDirect\Api\V5\Contract\UpdateClientsResponse',
+                'RetargetingListFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\RetargetingListFieldEnum',
+                'RetargetingListScopeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\RetargetingListScopeEnum',
+                'RetargetingListRuleOperatorEnum' => 'Biplane\YandexDirect\Api\V5\Contract\RetargetingListRuleOperatorEnum',
+                'RetargetingListSelectionCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\RetargetingListSelectionCriteria',
+                'RetargetingListRuleArgumentItem' => 'Biplane\YandexDirect\Api\V5\Contract\RetargetingListRuleArgumentItem',
+                'RetargetingListRuleItem' => 'Biplane\YandexDirect\Api\V5\Contract\RetargetingListRuleItem',
+                'RetargetingListBase' => 'Biplane\YandexDirect\Api\V5\Contract\RetargetingListBase',
+                'RetargetingListGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\RetargetingListGetItem',
+                'RetargetingListUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\RetargetingListUpdateItem',
+                'RetargetingListAddItem' => 'Biplane\YandexDirect\Api\V5\Contract\RetargetingListAddItem',
+                'GetRequest' => 'Biplane\YandexDirect\Api\V5\Contract\GetRetargetingListsRequest',
+                'GetResponse' => 'Biplane\YandexDirect\Api\V5\Contract\GetRetargetingListsResponse',
+                'AddRequest' => 'Biplane\YandexDirect\Api\V5\Contract\AddRetargetingListsRequest',
+                'AddResponse' => 'Biplane\YandexDirect\Api\V5\Contract\AddRetargetingListsResponse',
+                'UpdateRequest' => 'Biplane\YandexDirect\Api\V5\Contract\UpdateRetargetingListsRequest',
+                'UpdateResponse' => 'Biplane\YandexDirect\Api\V5\Contract\UpdateRetargetingListsResponse',
+                'DeleteRequest' => 'Biplane\YandexDirect\Api\V5\Contract\DeleteRetargetingListsRequest',
+                'DeleteResponse' => 'Biplane\YandexDirect\Api\V5\Contract\DeleteRetargetingListsResponse',
             ]
         ]);
     }
@@ -90,23 +82,45 @@ class Clients extends SoapClientV5
     /**
      * get.
      *
-     * @param Contract\GetClientsRequest $parameters
-     * @return Contract\GetClientsResponse
+     * @param Contract\GetRetargetingListsRequest $parameters
+     * @return Contract\GetRetargetingListsResponse
      */
-    public function get(Contract\GetClientsRequest $parameters)
+    public function get(Contract\GetRetargetingListsRequest $parameters)
     {
         return $this->invoke('get', [$parameters]);
     }
 
     /**
+     * add.
+     *
+     * @param Contract\AddRetargetingListsRequest $parameters
+     * @return Contract\AddRetargetingListsResponse
+     */
+    public function add(Contract\AddRetargetingListsRequest $parameters)
+    {
+        return $this->invoke('add', [$parameters]);
+    }
+
+    /**
      * update.
      *
-     * @param Contract\UpdateClientsRequest $parameters
-     * @return Contract\UpdateClientsResponse
+     * @param Contract\UpdateRetargetingListsRequest $parameters
+     * @return Contract\UpdateRetargetingListsResponse
      */
-    public function update(Contract\UpdateClientsRequest $parameters)
+    public function update(Contract\UpdateRetargetingListsRequest $parameters)
     {
         return $this->invoke('update', [$parameters]);
+    }
+
+    /**
+     * delete.
+     *
+     * @param Contract\DeleteRetargetingListsRequest $parameters
+     * @return Contract\DeleteRetargetingListsResponse
+     */
+    public function delete(Contract\DeleteRetargetingListsRequest $parameters)
+    {
+        return $this->invoke('delete', [$parameters]);
     }
 
 

@@ -1,5 +1,23 @@
 # Changelog
 
+# master
+
+* Добавлена поддержка сервисов [AgencyClients](https://tech.yandex.ru/direct/doc/ref-v5/agencyclients/agencyclients-docpage/)
+  и [RetargetingLists](https://tech.yandex.ru/direct/doc/ref-v5/retargetinglists/retargetinglists-docpage/).
+
+* Добавлена поддержка метода `Update` в сервис `Biplane\YandexDirect\Api\V5\Contract\Clients`,
+  переименованы некоторые классы:
+  
+  **Было**
+
+        Biplane\YandexDirect\Api\V5\Contract\UpdateRequest
+        Biplane\YandexDirect\Api\V5\Contract\UpdateResponse
+
+  **Стало**
+
+        Biplane\YandexDirect\Api\V5\Contract\UpdateClientsRequest
+        Biplane\YandexDirect\Api\V5\Contract\UpdateClientsResponse
+
 ## 4.1.0-beta2 [commit logs](https://github.com/biplane/yandex-direct/compare/4.1.0-beta1...4.1.0-beta2)
 
 * Восстановлен `Biplane\YandexDirect\Api\V4\Contract\BannerPhraseInfo`. Данная структура

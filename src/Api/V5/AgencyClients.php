@@ -9,10 +9,10 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 /**
  * Auto-generated code.
  */
-class Clients extends SoapClientV5
+class AgencyClients extends SoapClientV5
 {
 
-    const ENDPOINT = 'https://api.direct.yandex.com/v5/clients?wsdl';
+    const ENDPOINT = 'https://api.direct.yandex.com/v5/agencyclients?wsdl';
 
     /**
      * Constructor.
@@ -78,11 +78,15 @@ class Clients extends SoapClientV5
                 'ClientBaseItem' => 'Biplane\YandexDirect\Api\V5\Contract\ClientBaseItem',
                 'ClientGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\ClientGetItem',
                 'ClientUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\ClientUpdateItem',
-                'ClientFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\ClientFieldEnum',
-                'GetRequest' => 'Biplane\YandexDirect\Api\V5\Contract\GetClientsRequest',
-                'GetResponse' => 'Biplane\YandexDirect\Api\V5\Contract\GetClientsResponse',
-                'UpdateRequest' => 'Biplane\YandexDirect\Api\V5\Contract\UpdateClientsRequest',
-                'UpdateResponse' => 'Biplane\YandexDirect\Api\V5\Contract\UpdateClientsResponse',
+                'AgencyClientFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AgencyClientFieldEnum',
+                'AgencyClientsSelectionCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\AgencyClientsSelectionCriteria',
+                'AgencyClientUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\AgencyClientUpdateItem',
+                'GetRequest' => 'Biplane\YandexDirect\Api\V5\Contract\GetAgencyClientsRequest',
+                'GetResponse' => 'Biplane\YandexDirect\Api\V5\Contract\GetAgencyClientsResponse',
+                'AddRequest' => 'Biplane\YandexDirect\Api\V5\Contract\AddAgencyClientsRequest',
+                'AddResponse' => 'Biplane\YandexDirect\Api\V5\Contract\AddAgencyClientsResponse',
+                'UpdateRequest' => 'Biplane\YandexDirect\Api\V5\Contract\UpdateAgencyClientsRequest',
+                'UpdateResponse' => 'Biplane\YandexDirect\Api\V5\Contract\UpdateAgencyClientsResponse',
             ]
         ]);
     }
@@ -90,21 +94,32 @@ class Clients extends SoapClientV5
     /**
      * get.
      *
-     * @param Contract\GetClientsRequest $parameters
-     * @return Contract\GetClientsResponse
+     * @param Contract\GetAgencyClientsRequest $parameters
+     * @return Contract\GetAgencyClientsResponse
      */
-    public function get(Contract\GetClientsRequest $parameters)
+    public function get(Contract\GetAgencyClientsRequest $parameters)
     {
         return $this->invoke('get', [$parameters]);
     }
 
     /**
+     * add.
+     *
+     * @param Contract\AddAgencyClientsRequest $parameters
+     * @return Contract\AddAgencyClientsResponse
+     */
+    public function add(Contract\AddAgencyClientsRequest $parameters)
+    {
+        return $this->invoke('add', [$parameters]);
+    }
+
+    /**
      * update.
      *
-     * @param Contract\UpdateClientsRequest $parameters
-     * @return Contract\UpdateClientsResponse
+     * @param Contract\UpdateAgencyClientsRequest $parameters
+     * @return Contract\UpdateAgencyClientsResponse
      */
-    public function update(Contract\UpdateClientsRequest $parameters)
+    public function update(Contract\UpdateAgencyClientsRequest $parameters)
     {
         return $this->invoke('update', [$parameters]);
     }

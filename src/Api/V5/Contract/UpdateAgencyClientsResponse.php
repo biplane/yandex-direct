@@ -5,13 +5,13 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 /**
  * Auto-generated code.
  */
-class UpdateResponse
+class UpdateAgencyClientsResponse
 {
 
     protected $UpdateResults = [];
 
     /**
-     * Creates a new instance of UpdateResponse.
+     * Creates a new instance of UpdateAgencyClientsResponse.
      *
      * @return self
      */

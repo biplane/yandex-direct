@@ -125,6 +125,17 @@ generate($generator, [
 ] + $defaultOptions);
 
 generate($generator, [
+    'inputFile' => 'https://api.direct.yandex.com/v5/agencyclients?wsdl',
+    'renameType' => function ($typeName) {
+        return preg_replace(
+            '#^(Add|Get|Update)(Request|Response)$#',
+            '$1AgencyClients$2',
+            $typeName
+        );
+    },
+] + $defaultOptions);
+
+generate($generator, [
     'inputFile' => 'https://api.direct.yandex.com/v5/bids?wsdl',
     'renameType' => function ($typeName) {
         return preg_replace(
@@ -172,7 +183,7 @@ generate($generator, [
     'inputFile' => 'https://api.direct.yandex.com/v5/clients?wsdl',
     'renameType' => function ($typeName) {
         return preg_replace(
-            '#^(Get)(Request|Response)$#',
+            '#^(Get|Update)(Request|Response)$#',
             '$1Clients$2',
             $typeName
         );
@@ -218,6 +229,17 @@ generate($generator, [
         return preg_replace(
             '#^(HasSearchVolume)(Request|Response)$#',
             '$1Keywords$2',
+            $typeName
+        );
+    },
+] + $defaultOptions);
+
+generate($generator, [
+    'inputFile' => 'https://api.direct.yandex.com/v5/retargetinglists?wsdl',
+    'renameType' => function ($typeName) {
+        return preg_replace(
+            '#^(Add|Delete|Get|Update)(Request|Response)$#',
+            '$1RetargetingLists$2',
             $typeName
         );
     },

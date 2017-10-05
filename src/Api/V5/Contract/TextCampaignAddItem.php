@@ -98,7 +98,7 @@ class TextCampaignAddItem
     /**
      * Gets RelevantKeywords.
      *
-     * @return RelevantKeywordsSetting|null
+     * @return RelevantKeywordsSettingAdd|null
      */
     public function getRelevantKeywords()
     {
@@ -108,10 +108,10 @@ class TextCampaignAddItem
     /**
      * Sets RelevantKeywords.
      *
-     * @param RelevantKeywordsSetting|null $value
+     * @param RelevantKeywordsSettingAdd|null $value
      * @return self
      */
-    public function setRelevantKeywords(RelevantKeywordsSetting $value = null)
+    public function setRelevantKeywords(RelevantKeywordsSettingAdd $value = null)
     {
         $this->RelevantKeywords = $value;
 

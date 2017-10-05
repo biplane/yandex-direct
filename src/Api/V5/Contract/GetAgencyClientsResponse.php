@@ -5,13 +5,13 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 /**
  * Auto-generated code.
  */
-class UpdateRequest
+class GetAgencyClientsResponse extends GetResponseGeneral
 {
 
-    protected $Clients = [];
+    protected $Clients = null;
 
     /**
-     * Creates a new instance of UpdateRequest.
+     * Creates a new instance of GetAgencyClientsResponse.
      *
      * @return self
      */
@@ -23,7 +23,7 @@ class UpdateRequest
     /**
      * Gets Clients.
      *
-     * @return ClientUpdateItem[]
+     * @return ClientGetItem[]|null
      */
     public function getClients()
     {
@@ -33,10 +33,10 @@ class UpdateRequest
     /**
      * Sets Clients.
      *
-     * @param ClientUpdateItem[] $value
+     * @param ClientGetItem[]|null $value
      * @return self
      */
-    public function setClients(array $value)
+    public function setClients(array $value = null)
     {
         $this->Clients = $value;
 

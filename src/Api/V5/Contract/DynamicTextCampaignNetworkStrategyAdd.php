@@ -5,10 +5,12 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 /**
  * Auto-generated code.
  */
-class DynamicTextCampaignNetworkStrategyAdd
+class DynamicTextCampaignNetworkStrategyAdd extends DynamicTextCampaignStrategyAddBase
 {
 
     protected $BiddingStrategyType = null;
+
+    protected $NetworkDefault = null;
 
     /**
      * Creates a new instance of DynamicTextCampaignNetworkStrategyAdd.
@@ -41,6 +43,29 @@ class DynamicTextCampaignNetworkStrategyAdd
     public function setBiddingStrategyType($value)
     {
         $this->BiddingStrategyType = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets NetworkDefault.
+     *
+     * @return StrategyNetworkDefaultAdd|null
+     */
+    public function getNetworkDefault()
+    {
+        return $this->NetworkDefault;
+    }
+
+    /**
+     * Sets NetworkDefault.
+     *
+     * @param StrategyNetworkDefaultAdd|null $value
+     * @return self
+     */
+    public function setNetworkDefault(StrategyNetworkDefaultAdd $value = null)
+    {
+        $this->NetworkDefault = $value;
 
         return $this;
     }

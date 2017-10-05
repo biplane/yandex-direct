@@ -7,6 +7,7 @@ use Biplane\YandexDirect\Api\V5\AdExtensions;
 use Biplane\YandexDirect\Api\V5\AdGroups;
 use Biplane\YandexDirect\Api\V5\AdImages;
 use Biplane\YandexDirect\Api\V5\Ads;
+use Biplane\YandexDirect\Api\V5\AgencyClients;
 use Biplane\YandexDirect\Api\V5\BidModifiers;
 use Biplane\YandexDirect\Api\V5\Bids;
 use Biplane\YandexDirect\Api\V5\Campaigns;
@@ -17,6 +18,7 @@ use Biplane\YandexDirect\Api\V5\DynamicTextAdTargets;
 use Biplane\YandexDirect\Api\V5\Keywords;
 use Biplane\YandexDirect\Api\V5\KeywordsResearch;
 use Biplane\YandexDirect\Api\V5\Reports;
+use Biplane\YandexDirect\Api\V5\RetargetingLists;
 use Biplane\YandexDirect\Api\V5\Sitelinks;
 use Biplane\YandexDirect\Api\V5\VCards;
 use Biplane\YandexDirect\Helper\Invoker;
@@ -42,6 +44,7 @@ class User
         'AdExtensions' => 'Biplane\YandexDirect\Api\V5\AdExtensions',
         'AdImages' => 'Biplane\YandexDirect\Api\V5\AdImages',
         'Ads' => 'Biplane\YandexDirect\Api\V5\Ads',
+        'AgencyClients' => 'Biplane\YandexDirect\Api\V5\AgencyClients',
         'Bids' => 'Biplane\YandexDirect\Api\V5\Bids',
         'BidModifiers' => 'Biplane\YandexDirect\Api\V5\BidModifiers',
         'Campaigns' => 'Biplane\YandexDirect\Api\V5\Campaigns',
@@ -51,6 +54,7 @@ class User
         'DynamicTextAdTargets' => 'Biplane\YandexDirect\Api\V5\DynamicTextAdTargets',
         'Keywords' => 'Biplane\YandexDirect\Api\V5\Keywords',
         'KeywordsResearch' => 'Biplane\YandexDirect\Api\V5\KeywordsResearch',
+        'RetargetingLists' => 'Biplane\YandexDirect\Api\V5\RetargetingLists',
         'Sitelinks' => 'Biplane\YandexDirect\Api\V5\Sitelinks',
         'VCards' => 'Biplane\YandexDirect\Api\V5\VCards',
         'Reports' => 'Biplane\YandexDirect\Api\V5\Reports',
@@ -207,6 +211,16 @@ class User
     }
 
     /**
+     * Gets the proxy of web-service for manage an agency's clients.
+     *
+     * @return AgencyClients
+     */
+    public function getAgencyClientsService()
+    {
+        return $this->getProxy('AgencyClients');
+    }
+
+    /**
      * Gets the proxy of web-service for manage bids.
      *
      * @return Bids
@@ -294,6 +308,16 @@ class User
     public function getKeywordsResearchService()
     {
         return $this->getProxy('KeywordsResearch');
+    }
+
+    /**
+     * Gets the proxy of web-service for manage lists of retargeting.
+     *
+     * @return RetargetingLists
+     */
+    public function getRetargetingListsService()
+    {
+        return $this->getProxy('RetargetingLists');
     }
 
     /**
