@@ -57,7 +57,12 @@ class LoggerListener implements EventSubscriberInterface
                 'error' => $exception->getMessage(),
             ]);
         } else {
-            $this->logger->log($logLevel, 'Call {method} completed with exception.', [
+            $message = sprintf(
+                'Call {method} completed with exception %s: %s',
+                get_class($exception),
+                $exception->getMessage()
+            );
+            $this->logger->log($logLevel, $message, [
                 'method' => $event->getMethodRef(),
                 'request_id' => $event->getRequestId(),
                 'login' => $event->getUser()->getLogin(),
