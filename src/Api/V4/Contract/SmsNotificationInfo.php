@@ -16,6 +16,8 @@ class SmsNotificationInfo
 
     protected $MoneyOutSms = null;
 
+    protected $PausedByDayBudgetSms = null;
+
     protected $SmsTimeFrom = null;
 
     protected $SmsTimeTo = null;
@@ -118,6 +120,29 @@ class SmsNotificationInfo
     public function setMoneyOutSms($value = null)
     {
         $this->MoneyOutSms = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets PausedByDayBudgetSms.
+     *
+     * @return string|null
+     */
+    public function getPausedByDayBudgetSms()
+    {
+        return $this->PausedByDayBudgetSms;
+    }
+
+    /**
+     * Sets PausedByDayBudgetSms.
+     *
+     * @param string|null $value
+     * @return self
+     */
+    public function setPausedByDayBudgetSms($value = null)
+    {
+        $this->PausedByDayBudgetSms = $value;
 
         return $this;
     }

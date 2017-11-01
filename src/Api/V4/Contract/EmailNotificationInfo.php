@@ -14,6 +14,8 @@ class EmailNotificationInfo
 
     protected $MoneyWarningValue = null;
 
+    protected $PausedByDayBudget = null;
+
     protected $SendAccNews = null;
 
     protected $SendWarn = null;
@@ -93,6 +95,29 @@ class EmailNotificationInfo
     public function setMoneyWarningValue($value = null)
     {
         $this->MoneyWarningValue = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets PausedByDayBudget.
+     *
+     * @return string|null
+     */
+    public function getPausedByDayBudget()
+    {
+        return $this->PausedByDayBudget;
+    }
+
+    /**
+     * Sets PausedByDayBudget.
+     *
+     * @param string|null $value
+     * @return self
+     */
+    public function setPausedByDayBudget($value = null)
+    {
+        $this->PausedByDayBudget = $value;
 
         return $this;
     }

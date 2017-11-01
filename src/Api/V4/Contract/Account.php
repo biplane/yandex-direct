@@ -12,6 +12,8 @@ class Account
 
     protected $AccountID = null;
 
+    protected $AccountDayBudget = null;
+
     protected $Amount = null;
 
     protected $AmountAvailableForTransfer = null;
@@ -78,6 +80,29 @@ class Account
     public function setAccountID($value)
     {
         $this->AccountID = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets AccountDayBudget.
+     *
+     * @return AccountDayBudgetInfo|null
+     */
+    public function getAccountDayBudget()
+    {
+        return $this->AccountDayBudget;
+    }
+
+    /**
+     * Sets AccountDayBudget.
+     *
+     * @param AccountDayBudgetInfo|null $value
+     * @return self
+     */
+    public function setAccountDayBudget(AccountDayBudgetInfo $value = null)
+    {
+        $this->AccountDayBudget = $value;
 
         return $this;
     }

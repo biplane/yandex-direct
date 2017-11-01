@@ -132,6 +132,7 @@ class YandexAPIService extends SoapClientV4
                 'AccountSelectionCriteria' => 'Biplane\YandexDirect\Api\V4\Contract\AccountSelectionCriteria',
                 'Payment' => 'Biplane\YandexDirect\Api\V4\Contract\Payment',
                 'Transfer' => 'Biplane\YandexDirect\Api\V4\Contract\Transfer',
+                'AccountDayBudgetInfo' => 'Biplane\YandexDirect\Api\V4\Contract\AccountDayBudgetInfo',
                 'Account' => 'Biplane\YandexDirect\Api\V4\Contract\Account',
                 'AccountManagementResponse' => 'Biplane\YandexDirect\Api\V4\Contract\AccountManagementResponse',
                 'AccountActionResult' => 'Biplane\YandexDirect\Api\V4\Contract\AccountActionResult',
