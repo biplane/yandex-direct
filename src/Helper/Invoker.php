@@ -56,7 +56,7 @@ class Invoker
     {
         $attempts = 0;
 
-        while ($attempts < $this->maxAttempts) {
+        while (true) {
             ++$attempts;
 
             try {
