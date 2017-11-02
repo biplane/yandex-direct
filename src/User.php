@@ -38,28 +38,6 @@ class User
     const LOCALE_EN = 'en';
     const LOCALE_UA = 'ua';
 
-    private static $classMap = [
-        'YandexApiService' => '\Biplane\YandexDirect\Api\V4\YandexAPIService',
-        'AdGroups' => 'Biplane\YandexDirect\Api\V5\AdGroups',
-        'AdExtensions' => 'Biplane\YandexDirect\Api\V5\AdExtensions',
-        'AdImages' => 'Biplane\YandexDirect\Api\V5\AdImages',
-        'Ads' => 'Biplane\YandexDirect\Api\V5\Ads',
-        'AgencyClients' => 'Biplane\YandexDirect\Api\V5\AgencyClients',
-        'Bids' => 'Biplane\YandexDirect\Api\V5\Bids',
-        'BidModifiers' => 'Biplane\YandexDirect\Api\V5\BidModifiers',
-        'Campaigns' => 'Biplane\YandexDirect\Api\V5\Campaigns',
-        'Changes' => 'Biplane\YandexDirect\Api\V5\Changes',
-        'Clients' => 'Biplane\YandexDirect\Api\V5\Clients',
-        'Dictionaries' => 'Biplane\YandexDirect\Api\V5\Dictionaries',
-        'DynamicTextAdTargets' => 'Biplane\YandexDirect\Api\V5\DynamicTextAdTargets',
-        'Keywords' => 'Biplane\YandexDirect\Api\V5\Keywords',
-        'KeywordsResearch' => 'Biplane\YandexDirect\Api\V5\KeywordsResearch',
-        'RetargetingLists' => 'Biplane\YandexDirect\Api\V5\RetargetingLists',
-        'Sitelinks' => 'Biplane\YandexDirect\Api\V5\Sitelinks',
-        'VCards' => 'Biplane\YandexDirect\Api\V5\VCards',
-        'Reports' => 'Biplane\YandexDirect\Api\V5\Reports',
-    ];
-
     private $options;
     private $dispatcher;
     private $proxies;
@@ -167,7 +145,7 @@ class User
      */
     public function getApiService()
     {
-        return $this->getProxy('YandexApiService');
+        return $this->getProxy(YandexAPIService::class);
     }
 
     /**
@@ -177,7 +155,7 @@ class User
      */
     public function getAdExtensionsService()
     {
-        return $this->getProxy('AdExtensions');
+        return $this->getProxy(AdExtensions::class);
     }
 
     /**
@@ -187,7 +165,7 @@ class User
      */
     public function getAdGroupsService()
     {
-        return $this->getProxy('AdGroups');
+        return $this->getProxy(AdGroups::class);
     }
 
     /**
@@ -197,7 +175,7 @@ class User
      */
     public function getAdImagesService()
     {
-        return $this->getProxy('AdImages');
+        return $this->getProxy(AdImages::class);
     }
 
     /**
@@ -207,7 +185,7 @@ class User
      */
     public function getAdsService()
     {
-        return $this->getProxy('Ads');
+        return $this->getProxy(Ads::class);
     }
 
     /**
@@ -217,7 +195,7 @@ class User
      */
     public function getAgencyClientsService()
     {
-        return $this->getProxy('AgencyClients');
+        return $this->getProxy(AgencyClients::class);
     }
 
     /**
@@ -227,7 +205,7 @@ class User
      */
     public function getBidsService()
     {
-        return $this->getProxy('Bids');
+        return $this->getProxy(Bids::class);
     }
 
     /**
@@ -237,7 +215,7 @@ class User
      */
     public function getBidModifiersService()
     {
-        return $this->getProxy('BidModifiers');
+        return $this->getProxy(BidModifiers::class);
     }
 
     /**
@@ -247,7 +225,7 @@ class User
      */
     public function getCampaignsService()
     {
-        return $this->getProxy('Campaigns');
+        return $this->getProxy(Campaigns::class);
     }
 
     /**
@@ -257,7 +235,7 @@ class User
      */
     public function getChangesService()
     {
-        return $this->getProxy('Changes');
+        return $this->getProxy(Changes::class);
     }
 
     /**
@@ -267,7 +245,7 @@ class User
      */
     public function getClientsService()
     {
-        return $this->getProxy('Clients');
+        return $this->getProxy(Clients::class);
     }
 
     /**
@@ -277,7 +255,7 @@ class User
      */
     public function getDictionariesService()
     {
-        return $this->getProxy('Dictionaries');
+        return $this->getProxy(Dictionaries::class);
     }
 
     /**
@@ -287,7 +265,7 @@ class User
      */
     public function getDynamicTextAdTargetsService()
     {
-        return $this->getProxy('DynamicTextAdTargets');
+        return $this->getProxy(DynamicTextAdTargets::class);
     }
 
     /**
@@ -297,7 +275,7 @@ class User
      */
     public function getKeywordsService()
     {
-        return $this->getProxy('Keywords');
+        return $this->getProxy(Keywords::class);
     }
 
     /**
@@ -307,7 +285,7 @@ class User
      */
     public function getKeywordsResearchService()
     {
-        return $this->getProxy('KeywordsResearch');
+        return $this->getProxy(KeywordsResearch::class);
     }
 
     /**
@@ -317,7 +295,7 @@ class User
      */
     public function getRetargetingListsService()
     {
-        return $this->getProxy('RetargetingLists');
+        return $this->getProxy(RetargetingLists::class);
     }
 
     /**
@@ -327,7 +305,7 @@ class User
      */
     public function getSitelinksService()
     {
-        return $this->getProxy('Sitelinks');
+        return $this->getProxy(Sitelinks::class);
     }
 
     /**
@@ -337,7 +315,7 @@ class User
      */
     public function getVCardsService()
     {
-        return $this->getProxy('VCards');
+        return $this->getProxy(VCards::class);
     }
 
     /**
@@ -347,7 +325,7 @@ class User
      */
     public function getReportsService()
     {
-        return $this->getProxy('Reports');
+        return $this->getProxy(Reports::class);
     }
 
     /**
@@ -500,10 +478,10 @@ class User
             return $this->proxies[$serviceClass];
         }
 
-        if ($serviceClass === 'Reports') {
-            $service = new self::$classMap[$serviceClass]($this);
+        if ($serviceClass === Reports::class) {
+            $service = new $serviceClass($this);
         } else {
-            $service = new self::$classMap[$serviceClass]($this->dispatcher, $this);
+            $service = new $serviceClass($this->dispatcher, $this);
         }
 
         return $this->proxies[$serviceClass] = $service;

@@ -2,6 +2,8 @@
 
 namespace Biplane\Tests\YandexDirect;
 
+use Biplane\YandexDirect\Api\V4\YandexAPIService;
+use Biplane\YandexDirect\Api\V5;
 use Biplane\YandexDirect\User;
 
 class UserTest extends \PHPUnit_Framework_TestCase
@@ -105,25 +107,25 @@ class UserTest extends \PHPUnit_Framework_TestCase
     public function getServicesProxies()
     {
         return [
-            ['Biplane\YandexDirect\Api\V4\YandexApiService', 'getApiService'],
-            ['Biplane\YandexDirect\Api\V5\AdExtensions', 'getAdExtensionsService'],
-            ['Biplane\YandexDirect\Api\V5\AdGroups', 'getAdGroupsService'],
-            ['Biplane\YandexDirect\Api\V5\AdImages', 'getAdImagesService'],
-            ['Biplane\YandexDirect\Api\V5\Ads', 'getAdsService'],
-            ['Biplane\YandexDirect\Api\V5\AgencyClients', 'getAgencyClientsService'],
-            ['Biplane\YandexDirect\Api\V5\Bids', 'getBidsService'],
-            ['Biplane\YandexDirect\Api\V5\BidModifiers', 'getBidModifiersService'],
-            ['Biplane\YandexDirect\Api\V5\Campaigns', 'getCampaignsService'],
-            ['Biplane\YandexDirect\Api\V5\Changes', 'getChangesService'],
-            ['Biplane\YandexDirect\Api\V5\Clients', 'getClientsService'],
-            ['Biplane\YandexDirect\Api\V5\Dictionaries', 'getDictionariesService'],
-            ['Biplane\YandexDirect\Api\V5\DynamicTextAdTargets', 'getDynamicTextAdTargetsService'],
-            ['Biplane\YandexDirect\Api\V5\Keywords', 'getKeywordsService'],
-            ['Biplane\YandexDirect\Api\V5\KeywordsResearch', 'getKeywordsResearchService'],
-            ['Biplane\YandexDirect\Api\V5\RetargetingLists', 'getRetargetingListsService'],
-            ['Biplane\YandexDirect\Api\V5\Sitelinks', 'getSitelinksService'],
-            ['Biplane\YandexDirect\Api\V5\VCards', 'getVCardsService'],
-            ['Biplane\YandexDirect\Api\V5\Reports', 'getReportsService'],
+            [YandexAPIService::class, 'getApiService'],
+            [V5\AdExtensions::class, 'getAdExtensionsService'],
+            [V5\AdGroups::class, 'getAdGroupsService'],
+            [V5\AdImages::class, 'getAdImagesService'],
+            [V5\Ads::class, 'getAdsService'],
+            [V5\AgencyClients::class, 'getAgencyClientsService'],
+            [V5\Bids::class, 'getBidsService'],
+            [V5\BidModifiers::class, 'getBidModifiersService'],
+            [V5\Campaigns::class, 'getCampaignsService'],
+            [V5\Changes::class, 'getChangesService'],
+            [V5\Clients::class, 'getClientsService'],
+            [V5\Dictionaries::class, 'getDictionariesService'],
+            [V5\DynamicTextAdTargets::class, 'getDynamicTextAdTargetsService'],
+            [V5\Keywords::class, 'getKeywordsService'],
+            [V5\KeywordsResearch::class, 'getKeywordsResearchService'],
+            [V5\RetargetingLists::class, 'getRetargetingListsService'],
+            [V5\Sitelinks::class, 'getSitelinksService'],
+            [V5\VCards::class, 'getVCardsService'],
+            [V5\Reports::class, 'getReportsService'],
         ];
     }
 
