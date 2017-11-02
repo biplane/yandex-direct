@@ -3,6 +3,7 @@
 namespace Biplane\Tests\YandexDirect\EventListener;
 
 use Biplane\YandexDirect\EventListener\DumpListener;
+use Biplane\YandexDirect\Helper\Dumper;
 
 class DumpListenerTest extends TestCase
 {
@@ -92,7 +93,7 @@ class DumpListenerTest extends TestCase
 
     protected function setUp()
     {
-        $this->dumper = $this->getMockBuilder('Biplane\YandexDirect\Helper\Dumper')
+        $this->dumper = $this->getMockBuilder(Dumper::class)
             ->disableOriginalConstructor()
             ->getMock();
     }

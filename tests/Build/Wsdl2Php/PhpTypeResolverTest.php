@@ -2,6 +2,7 @@
 
 namespace Biplane\Tests\Build\Wsdl2Php;
 
+use Biplane\Build\Wsdl2Php\Contract\AbstractDataType;
 use Biplane\Build\Wsdl2Php\PhpTypeResolver;
 
 class PhpTypeResolverTest extends \PHPUnit_Framework_TestCase
@@ -67,7 +68,7 @@ class PhpTypeResolverTest extends \PHPUnit_Framework_TestCase
 
     private function createComplexTypeMock($phpType)
     {
-        $mock = $this->getMockBuilder('Biplane\Build\Wsdl2Php\Contract\AbstractDataType')
+        $mock = $this->getMockBuilder(AbstractDataType::class)
             ->disableOriginalConstructor()
             ->setMethods(['resolvePhpType'])
             ->getMockForAbstractClass();

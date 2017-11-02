@@ -6,6 +6,7 @@ use Biplane\Build\Wsdl2Php\Contract\ArrayType;
 use Biplane\Build\Wsdl2Php\Contract\ComplexType;
 use Biplane\Build\Wsdl2Php\Contract\EnumType;
 use Wsdl2PhpGenerator\Config;
+use Wsdl2PhpGenerator\Xml\SchemaDocument;
 use Wsdl2PhpGenerator\Xml\TypeNode;
 use Wsdl2PhpGenerator\Xml\WsdlDocument;
 use Zend\Code\Generator\ClassGenerator;
@@ -14,7 +15,7 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
 {
     protected function setUp()
     {
-        $reflProp = new \ReflectionProperty('Wsdl2PhpGenerator\Xml\SchemaDocument', 'loadedUrls');
+        $reflProp = new \ReflectionProperty(SchemaDocument::class, 'loadedUrls');
         $reflProp->setAccessible(true);
         $reflProp->setValue(null, []);
     }

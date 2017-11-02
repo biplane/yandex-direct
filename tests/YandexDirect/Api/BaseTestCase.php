@@ -3,6 +3,8 @@
 namespace Biplane\Tests\YandexDirect\Api;
 
 use Biplane\YandexDirect\Api\SoapClient;
+use Biplane\YandexDirect\User;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 abstract class BaseTestCase extends \PHPUnit_Framework_TestCase
 {
@@ -18,9 +20,8 @@ abstract class BaseTestCase extends \PHPUnit_Framework_TestCase
 
     protected function setUp()
     {
-        $this->dispatcher = $this->getMockBuilder('Symfony\Component\EventDispatcher\EventDispatcherInterface')
-            ->getMock();
-        $this->user = $this->getMockBuilder('Biplane\YandexDirect\User')
+        $this->dispatcher = $this->getMockBuilder(EventDispatcherInterface::class)->getMock();
+        $this->user = $this->getMockBuilder(User::class)
             ->disableOriginalConstructor()
             ->getMock();
 

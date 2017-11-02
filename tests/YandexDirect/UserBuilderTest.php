@@ -4,6 +4,7 @@ namespace Biplane\Tests\YandexDirect;
 
 use Biplane\YandexDirect\User;
 use Biplane\YandexDirect\UserBuilder;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 class UserBuilderTest extends \PHPUnit_Framework_TestCase
 {
@@ -20,7 +21,7 @@ class UserBuilderTest extends \PHPUnit_Framework_TestCase
             ->enableUseOperatorUnits()
             ->getUser();
 
-        $this->assertInstanceOf('Biplane\YandexDirect\User', $user);
+        $this->assertInstanceOf(User::class, $user);
         $this->assertSame($dispatcher, $user->getEventDispatcher());
         $this->assertEquals('access token', $user->getAccessToken());
         $this->assertEquals(User::LOCALE_RU, $user->getLocale());
@@ -58,6 +59,6 @@ class UserBuilderTest extends \PHPUnit_Framework_TestCase
 
     private function getDispatcherMock()
     {
-        return $this->getMockBuilder('Symfony\Component\EventDispatcher\EventDispatcherInterface')->getMock();
+        return $this->getMockBuilder(EventDispatcherInterface::class)->getMock();
     }
 }

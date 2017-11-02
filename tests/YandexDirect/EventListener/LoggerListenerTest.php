@@ -5,6 +5,8 @@ namespace Biplane\Tests\YandexDirect\EventListener;
 use Biplane\YandexDirect\EventListener\LoggerListener;
 use Biplane\YandexDirect\Exception\ApiException;
 use Biplane\YandexDirect\Exception\NetworkException;
+use Biplane\YandexDirect\User;
+use Psr\Log\LoggerInterface;
 use Psr\Log\LogLevel;
 
 class LoggerListenerTest extends TestCase
@@ -100,7 +102,7 @@ class LoggerListenerTest extends TestCase
 
     protected function setUp()
     {
-        $this->logger = $this->getMockBuilder('Psr\Log\LoggerInterface')->getMock();
+        $this->logger = $this->getMockBuilder(LoggerInterface::class)->getMock();
 
         $this->listener = new LoggerListener($this->logger);
     }
@@ -112,7 +114,7 @@ class LoggerListenerTest extends TestCase
 
     private function getUserMock($login)
     {
-        $mock = $this->getMockBuilder('Biplane\YandexDirect\User')
+        $mock = $this->getMockBuilder(User::class)
             ->disableOriginalConstructor()
             ->getMock();
 

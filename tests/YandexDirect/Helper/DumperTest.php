@@ -2,6 +2,7 @@
 
 namespace Biplane\Tests\YandexDirect\Helper;
 
+use Biplane\YandexDirect\Api\SoapClient;
 use Biplane\YandexDirect\Helper\Dumper;
 
 class DumperTest extends \PHPUnit_Framework_TestCase
@@ -32,7 +33,7 @@ class DumperTest extends \PHPUnit_Framework_TestCase
     {
         $dumper = new Dumper($this->dir);
 
-        $client = $this->getMockBuilder('Biplane\YandexDirect\Api\SoapClient')
+        $client = $this->getMockBuilder(SoapClient::class)
             ->disableOriginalConstructor()
             ->getMock();
 

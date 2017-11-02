@@ -5,6 +5,7 @@ namespace Biplane\Tests\YandexDirect;
 use Biplane\YandexDirect\Api\V4\YandexAPIService;
 use Biplane\YandexDirect\Api\V5;
 use Biplane\YandexDirect\User;
+use Symfony\Component\EventDispatcher\EventDispatcher;
 
 class UserTest extends \PHPUnit_Framework_TestCase
 {
@@ -92,7 +93,7 @@ class UserTest extends \PHPUnit_Framework_TestCase
             'access_token' => 'foo',
         ]);
 
-        $this->assertInstanceOf('Symfony\Component\EventDispatcher\EventDispatcher', $user->getEventDispatcher());
+        $this->assertInstanceOf(EventDispatcher::class, $user->getEventDispatcher());
     }
 
     public function testApiServiceShouldBeCreated()
@@ -101,7 +102,7 @@ class UserTest extends \PHPUnit_Framework_TestCase
             'access_token' => 'foo',
         ]);
 
-        $this->assertInstanceOf('Biplane\YandexDirect\Api\V4\YandexApiService', $user->getApiService());
+        $this->assertInstanceOf(YandexAPIService::class, $user->getApiService());
     }
 
     public function getServicesProxies()

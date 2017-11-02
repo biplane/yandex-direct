@@ -2,10 +2,12 @@
 
 namespace Biplane\Tests\YandexDirect\Api;
 
+use Biplane\YandexDirect\Api\SoapClient;
 use Biplane\YandexDirect\Event\FailCallEvent;
 use Biplane\YandexDirect\Event\PostCallEvent;
 use Biplane\YandexDirect\Event\PreCallEvent;
 use Biplane\YandexDirect\Events;
+use Biplane\YandexDirect\Exception\NetworkException;
 
 class SoapClientTest extends BaseTestCase
 {
@@ -19,7 +21,7 @@ class SoapClientTest extends BaseTestCase
             ->method('dispatch')
             ->with(
                 $this->equalTo(Events::BEFORE_REQUEST),
-                $this->isInstanceOf('Biplane\YandexDirect\Event\PreCallEvent')
+                $this->isInstanceOf(PreCallEvent::class)
             )
             ->willReturnCallback(function ($eventName, PreCallEvent $eventArgs) use ($methodName, $methodParams) {
                 $this->assertSame($this->user, $eventArgs->getUser());
@@ -31,7 +33,7 @@ class SoapClientTest extends BaseTestCase
             ->method('dispatch')
             ->with(
                 $this->equalTo(Events::AFTER_REQUEST),
-                $this->isInstanceOf('Biplane\YandexDirect\Event\PostCallEvent')
+                $this->isInstanceOf(PostCallEvent::class)
             )
             ->willReturnCallback(
                 function ($eventName, PostCallEvent $eventArgs) use ($methodName, $methodParams, $response) {
@@ -70,7 +72,7 @@ class SoapClientTest extends BaseTestCase
             ->method('dispatch')
             ->with(
                 $this->equalTo(Events::BEFORE_REQUEST),
-                $this->isInstanceOf('Biplane\YandexDirect\Event\PreCallEvent')
+                $this->isInstanceOf(PreCallEvent::class)
             )
             ->willReturnCallback(function ($eventName, PreCallEvent $eventArgs) use ($methodName, $methodParams) {
                 $this->assertSame($this->user, $eventArgs->getUser());
@@ -82,13 +84,13 @@ class SoapClientTest extends BaseTestCase
             ->method('dispatch')
             ->with(
                 $this->equalTo(Events::FAIL_REQUEST),
-                $this->isInstanceOf('Biplane\YandexDirect\Event\FailCallEvent')
+                $this->isInstanceOf(FailCallEvent::class)
             )
             ->willReturnCallback(function ($eventName, FailCallEvent $eventArgs) use ($methodName, $methodParams) {
                 $this->assertSame($this->user, $eventArgs->getUser());
                 $this->assertEquals($methodName, $eventArgs->getMethodName());
                 $this->assertSame($methodParams, $eventArgs->getMethodParams());
-                $this->assertInstanceOf('Biplane\YandexDirect\Exception\NetworkException', $eventArgs->getException());
+                $this->assertInstanceOf(NetworkException::class, $eventArgs->getException());
             });
 
         $client = $this->getSoapClient();
@@ -106,6 +108,6 @@ class SoapClientTest extends BaseTestCase
 
     protected function getSoapClient()
     {
-        return $this->createClient('Biplane\YandexDirect\Api\SoapClient', ['__soapCall']);
+        return $this->createClient(SoapClient::class, ['__soapCall']);
     }
 }

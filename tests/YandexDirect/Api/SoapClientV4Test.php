@@ -2,6 +2,7 @@
 
 namespace Biplane\Tests\YandexDirect\Api;
 
+use Biplane\YandexDirect\Api\SoapClientV4;
 use Biplane\YandexDirect\Api\V4\Contract\AccountManagementRequest;
 use Biplane\YandexDirect\Exception\ApiException;
 
@@ -102,6 +103,6 @@ class SoapClientV4Test extends BaseTestCase
             $methods = ['__soapCall'];
         }
 
-        return $this->createClient('Biplane\YandexDirect\Api\SoapClientV4', $methods);
+        return $this->createClient(SoapClientV4::class, $methods);
     }
 }
