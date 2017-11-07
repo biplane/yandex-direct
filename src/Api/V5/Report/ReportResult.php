@@ -71,11 +71,28 @@ class ReportResult
      * @param resource|string $destination
      *
      * @throws LogicException When the report is not ready yet
+     * @throws \RuntimeException When a file could not be opened for write
+     * @throws \InvalidArgumentException When the destination is invalid
      */
     public function save($destination)
     {
         if (!$this->isReady()) {
             throw new LogicException('The report is not ready yet.');
+        }
+
+        if (is_string($destination)) {
+            $fh = fopen($destination, 'w');
+
+            if (!is_resource($fh)) {
+                throw new \RuntimeException(sprintf('Could not open file "%s" for write.', $destination));
+            }
+
+            $destination = $fh;
+        } elseif (!is_resource($destination)) {
+            throw new \InvalidArgumentException(
+                'The destination must be string with path to a file or a file descriptor, but given "%s".',
+                is_object($destination) ? get_class($destination) : gettype($destination)
+            );
         }
 
         $destStream = GuzzleFunc\stream_for($destination);

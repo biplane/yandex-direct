@@ -2,6 +2,8 @@
 
 # master
 
+* Исправлена ошибка в методе `ReportResult::save`.
+
 # 4.1.0 [commit logs](https://github.com/biplane/yandex-direct/compare/4.1.0-beta2...4.1.0)
 
 * Добавлена поддержка сервисов [AgencyClients](https://tech.yandex.ru/direct/doc/ref-v5/agencyclients/agencyclients-docpage/)
