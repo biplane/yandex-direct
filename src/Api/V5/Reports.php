@@ -289,10 +289,12 @@ class Reports implements ApiClientInterface
 
     private function createException(ResponseInterface $response)
     {
-        if ($response->getStatusCode() === 400) {
+        $content = (string)$response->getBody();
+
+        if (false !== strpos($content, '<reports:reportDownloadError')) {
             $doc = new \DOMDocument();
 
-            if ($doc->loadXML((string)$response->getBody())) {
+            if ($doc->loadXML($content)) {
                 $xpath = new \DOMXPath($doc);
                 $xpath->registerNamespace('r', ReportDefinitionBuilder::XML_NAMESPACE);
                 $requestId = $xpath->evaluate('string(/r:reportDownloadError/r:ApiError/r:requestId)');
@@ -311,7 +313,7 @@ class Reports implements ApiClientInterface
         }
 
         return new NetworkException(
-            "Could not download report, server's response: " . $response->getBody(),
+            "Could not download report, server's response: " . $content,
             $response->getStatusCode()
         );
     }
