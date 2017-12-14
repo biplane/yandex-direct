@@ -38,6 +38,10 @@ class AdGetItem
 
     protected $MobileAppImageAd = null;
 
+    protected $TextAdBuilderAd = null;
+
+    protected $MobileAppAdBuilderAd = null;
+
     /**
      * Creates a new instance of AdGetItem.
      *
@@ -399,6 +403,52 @@ class AdGetItem
     public function setMobileAppImageAd(MobileAppImageAdGet $value = null)
     {
         $this->MobileAppImageAd = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets TextAdBuilderAd.
+     *
+     * @return TextAdBuilderAdGet|null
+     */
+    public function getTextAdBuilderAd()
+    {
+        return $this->TextAdBuilderAd;
+    }
+
+    /**
+     * Sets TextAdBuilderAd.
+     *
+     * @param TextAdBuilderAdGet|null $value
+     * @return self
+     */
+    public function setTextAdBuilderAd(TextAdBuilderAdGet $value = null)
+    {
+        $this->TextAdBuilderAd = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets MobileAppAdBuilderAd.
+     *
+     * @return MobileAppAdBuilderAdGet|null
+     */
+    public function getMobileAppAdBuilderAd()
+    {
+        return $this->MobileAppAdBuilderAd;
+    }
+
+    /**
+     * Sets MobileAppAdBuilderAd.
+     *
+     * @param MobileAppAdBuilderAdGet|null $value
+     * @return self
+     */
+    public function setMobileAppAdBuilderAd(MobileAppAdBuilderAdGet $value = null)
+    {
+        $this->MobileAppAdBuilderAd = $value;
 
         return $this;
     }

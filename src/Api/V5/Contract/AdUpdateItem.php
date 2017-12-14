@@ -20,6 +20,10 @@ class AdUpdateItem
 
     protected $MobileAppImageAd = null;
 
+    protected $TextAdBuilderAd = null;
+
+    protected $MobileAppAdBuilderAd = null;
+
     /**
      * Creates a new instance of AdUpdateItem.
      *
@@ -164,6 +168,52 @@ class AdUpdateItem
     public function setMobileAppImageAd(MobileAppImageAdUpdate $value = null)
     {
         $this->MobileAppImageAd = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets TextAdBuilderAd.
+     *
+     * @return TextAdBuilderAdUpdate|null
+     */
+    public function getTextAdBuilderAd()
+    {
+        return $this->TextAdBuilderAd;
+    }
+
+    /**
+     * Sets TextAdBuilderAd.
+     *
+     * @param TextAdBuilderAdUpdate|null $value
+     * @return self
+     */
+    public function setTextAdBuilderAd(TextAdBuilderAdUpdate $value = null)
+    {
+        $this->TextAdBuilderAd = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets MobileAppAdBuilderAd.
+     *
+     * @return MobileAppAdBuilderAdUpdate|null
+     */
+    public function getMobileAppAdBuilderAd()
+    {
+        return $this->MobileAppAdBuilderAd;
+    }
+
+    /**
+     * Sets MobileAppAdBuilderAd.
+     *
+     * @param MobileAppAdBuilderAdUpdate|null $value
+     * @return self
+     */
+    public function setMobileAppAdBuilderAd(MobileAppAdBuilderAdUpdate $value = null)
+    {
+        $this->MobileAppAdBuilderAd = $value;
 
         return $this;
     }

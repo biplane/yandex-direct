@@ -18,6 +18,10 @@ class AdAddItem extends AdAddItemBase
 
     protected $MobileAppImageAd = null;
 
+    protected $TextAdBuilderAd = null;
+
+    protected $MobileAppAdBuilderAd = null;
+
     /**
      * Creates a new instance of AdAddItem.
      *
@@ -139,6 +143,52 @@ class AdAddItem extends AdAddItemBase
     public function setMobileAppImageAd(MobileAppImageAdAdd $value = null)
     {
         $this->MobileAppImageAd = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets TextAdBuilderAd.
+     *
+     * @return TextAdBuilderAdAdd|null
+     */
+    public function getTextAdBuilderAd()
+    {
+        return $this->TextAdBuilderAd;
+    }
+
+    /**
+     * Sets TextAdBuilderAd.
+     *
+     * @param TextAdBuilderAdAdd|null $value
+     * @return self
+     */
+    public function setTextAdBuilderAd(TextAdBuilderAdAdd $value = null)
+    {
+        $this->TextAdBuilderAd = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets MobileAppAdBuilderAd.
+     *
+     * @return MobileAppAdBuilderAdAdd|null
+     */
+    public function getMobileAppAdBuilderAd()
+    {
+        return $this->MobileAppAdBuilderAd;
+    }
+
+    /**
+     * Sets MobileAppAdBuilderAd.
+     *
+     * @param MobileAppAdBuilderAdAdd|null $value
+     * @return self
+     */
+    public function setMobileAppAdBuilderAd(MobileAppAdBuilderAdAdd $value = null)
+    {
+        $this->MobileAppAdBuilderAd = $value;
 
         return $this;
     }

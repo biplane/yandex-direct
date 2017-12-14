@@ -22,6 +22,10 @@ class GetAdsRequest extends GetRequestGeneral
 
     protected $MobileAppImageAdFieldNames = null;
 
+    protected $TextAdBuilderAdFieldNames = null;
+
+    protected $MobileAppAdBuilderAdFieldNames = null;
+
     /**
      * Creates a new instance of GetAdsRequest.
      *
@@ -201,6 +205,56 @@ class GetAdsRequest extends GetRequestGeneral
     public function setMobileAppImageAdFieldNames(array $value = null)
     {
         $this->MobileAppImageAdFieldNames = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets TextAdBuilderAdFieldNames.
+     *
+     * @return string[]|null
+     * @see TextAdBuilderAdFieldEnum
+     */
+    public function getTextAdBuilderAdFieldNames()
+    {
+        return $this->TextAdBuilderAdFieldNames;
+    }
+
+    /**
+     * Sets TextAdBuilderAdFieldNames.
+     *
+     * @param string[]|null $value
+     * @return self
+     * @see TextAdBuilderAdFieldEnum
+     */
+    public function setTextAdBuilderAdFieldNames(array $value = null)
+    {
+        $this->TextAdBuilderAdFieldNames = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets MobileAppAdBuilderAdFieldNames.
+     *
+     * @return string[]|null
+     * @see MobileAppAdBuilderAdFieldEnum
+     */
+    public function getMobileAppAdBuilderAdFieldNames()
+    {
+        return $this->MobileAppAdBuilderAdFieldNames;
+    }
+
+    /**
+     * Sets MobileAppAdBuilderAdFieldNames.
+     *
+     * @param string[]|null $value
+     * @return self
+     * @see MobileAppAdBuilderAdFieldEnum
+     */
+    public function setMobileAppAdBuilderAdFieldNames(array $value = null)
+    {
+        $this->MobileAppAdBuilderAdFieldNames = $value;
 
         return $this;
     }

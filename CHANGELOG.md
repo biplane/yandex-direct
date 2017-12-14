@@ -2,6 +2,8 @@
 
 # master
 
+* Добавлена поддержка типов объявлений, `TEXT_AD_BUILDER_AD` и `MOBILE_APP_AD_BUILDER_AD`.
+
 * Исправлена ошибка в методе `ReportResult::save`.
 
 # 4.1.0 [commit logs](https://github.com/biplane/yandex-direct/compare/4.1.0-beta2...4.1.0)

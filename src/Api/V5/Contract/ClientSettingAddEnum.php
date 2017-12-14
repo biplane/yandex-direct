@@ -12,6 +12,8 @@ class ClientSettingAddEnum
 
     const DISPLAY_STORE_RATING = 'DISPLAY_STORE_RATING';
 
+    const SHARED_ACCOUNT_ENABLED = 'SHARED_ACCOUNT_ENABLED';
+
 
 }
 
