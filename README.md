@@ -6,7 +6,7 @@ PHP library for [Yandex.Direct API](https://tech.yandex.ru/direct/).
 
 ## Requirements
 
- * PHP >= 5.5
+ * PHP >= 5.6
  * ext-soap
 
 ## Installation
