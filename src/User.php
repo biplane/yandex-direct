@@ -15,6 +15,7 @@ use Biplane\YandexDirect\Api\V5\Changes;
 use Biplane\YandexDirect\Api\V5\Clients;
 use Biplane\YandexDirect\Api\V5\Dictionaries;
 use Biplane\YandexDirect\Api\V5\DynamicTextAdTargets;
+use Biplane\YandexDirect\Api\V5\KeywordBids;
 use Biplane\YandexDirect\Api\V5\Keywords;
 use Biplane\YandexDirect\Api\V5\KeywordsResearch;
 use Biplane\YandexDirect\Api\V5\Reports;
@@ -266,6 +267,16 @@ class User
     public function getDynamicTextAdTargetsService()
     {
         return $this->getProxy(DynamicTextAdTargets::class);
+    }
+
+    /**
+     * Gets the proxy of web-service for manage bids for keywords.
+     *
+     * @return KeywordBids
+     */
+    public function getKeywordBidsService()
+    {
+        return $this->getProxy(KeywordBids::class);
     }
 
     /**

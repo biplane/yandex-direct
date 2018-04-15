@@ -2,6 +2,8 @@
 
 # master
 
+* Добавлена поддержка сервиса [KeywordBids](https://tech.yandex.ru/direct/doc/ref-v5/keywordbids/keywordbids-docpage/).
+
 # 4.2.0 [commit logs](https://github.com/biplane/yandex-direct/compare/4.1.1...4.2.0)
 
 * Добавлена поддержка Symfony 4.x

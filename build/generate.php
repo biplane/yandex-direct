@@ -213,6 +213,17 @@ generate($generator, [
 ] + $defaultOptions);
 
 generate($generator, [
+    'inputFile' => 'https://api.direct.yandex.com/v5/keywordbids?wsdl',
+    'renameType' => function ($typeName) {
+        return preg_replace(
+            '#^(Get|Set)(Request|Response)$#',
+            '$1KeywordBids$2',
+            $typeName
+        );
+    },
+] + $defaultOptions);
+
+generate($generator, [
     'inputFile' => 'https://api.direct.yandex.com/v5/keywords?wsdl',
     'renameType' => function ($typeName) {
         return preg_replace(

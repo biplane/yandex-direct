@@ -16,6 +16,8 @@ class BidModifierAddItem extends BidModifierAddBase
 
     protected $RegionalAdjustments = null;
 
+    protected $VideoAdjustment = null;
+
     /**
      * Creates a new instance of BidModifierAddItem.
      *
@@ -114,6 +116,29 @@ class BidModifierAddItem extends BidModifierAddBase
     public function setRegionalAdjustments(array $value = null)
     {
         $this->RegionalAdjustments = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets VideoAdjustment.
+     *
+     * @return VideoAdjustmentAdd|null
+     */
+    public function getVideoAdjustment()
+    {
+        return $this->VideoAdjustment;
+    }
+
+    /**
+     * Sets VideoAdjustment.
+     *
+     * @param VideoAdjustmentAdd|null $value
+     * @return self
+     */
+    public function setVideoAdjustment(VideoAdjustmentAdd $value = null)
+    {
+        $this->VideoAdjustment = $value;
 
         return $this;
     }

@@ -121,6 +121,7 @@ class UserTest extends \PHPUnit_Framework_TestCase
             [V5\Clients::class, 'getClientsService'],
             [V5\Dictionaries::class, 'getDictionariesService'],
             [V5\DynamicTextAdTargets::class, 'getDynamicTextAdTargetsService'],
+            [V5\KeywordBids::class, 'getKeywordBidsService'],
             [V5\Keywords::class, 'getKeywordsService'],
             [V5\KeywordsResearch::class, 'getKeywordsResearchService'],
             [V5\RetargetingLists::class, 'getRetargetingListsService'],

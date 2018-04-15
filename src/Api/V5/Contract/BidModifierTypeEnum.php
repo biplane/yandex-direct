@@ -16,6 +16,8 @@ class BidModifierTypeEnum
 
     const REGIONAL_ADJUSTMENT = 'REGIONAL_ADJUSTMENT';
 
+    const VIDEO_ADJUSTMENT = 'VIDEO_ADJUSTMENT';
+
 
 }
 

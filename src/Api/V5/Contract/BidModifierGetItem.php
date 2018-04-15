@@ -26,6 +26,8 @@ class BidModifierGetItem
 
     protected $RegionalAdjustment = null;
 
+    protected $VideoAdjustment = null;
+
     /**
      * Creates a new instance of BidModifierGetItem.
      *
@@ -243,6 +245,29 @@ class BidModifierGetItem
     public function setRegionalAdjustment(RegionalAdjustmentGet $value = null)
     {
         $this->RegionalAdjustment = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets VideoAdjustment.
+     *
+     * @return VideoAdjustmentGet|null
+     */
+    public function getVideoAdjustment()
+    {
+        return $this->VideoAdjustment;
+    }
+
+    /**
+     * Sets VideoAdjustment.
+     *
+     * @param VideoAdjustmentGet|null $value
+     * @return self
+     */
+    public function setVideoAdjustment(VideoAdjustmentGet $value = null)
+    {
+        $this->VideoAdjustment = $value;
 
         return $this;
     }

@@ -20,6 +20,8 @@ class GetBidModifiersRequest extends GetRequestGeneral
 
     protected $RegionalAdjustmentFieldNames = null;
 
+    protected $VideoAdjustmentFieldNames = null;
+
     /**
      * Creates a new instance of GetBidModifiersRequest.
      *
@@ -174,6 +176,31 @@ class GetBidModifiersRequest extends GetRequestGeneral
     public function setRegionalAdjustmentFieldNames(array $value = null)
     {
         $this->RegionalAdjustmentFieldNames = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets VideoAdjustmentFieldNames.
+     *
+     * @return string[]|null
+     * @see VideoAdjustmentFieldEnum
+     */
+    public function getVideoAdjustmentFieldNames()
+    {
+        return $this->VideoAdjustmentFieldNames;
+    }
+
+    /**
+     * Sets VideoAdjustmentFieldNames.
+     *
+     * @param string[]|null $value
+     * @return self
+     * @see VideoAdjustmentFieldEnum
+     */
+    public function setVideoAdjustmentFieldNames(array $value = null)
+    {
+        $this->VideoAdjustmentFieldNames = $value;
 
         return $this;
     }

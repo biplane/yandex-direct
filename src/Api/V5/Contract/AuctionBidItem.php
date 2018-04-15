@@ -8,7 +8,7 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class AuctionBidItem
 {
 
-    protected $Position = null;
+    protected $TrafficVolume = null;
 
     protected $Bid = null;
 
@@ -25,24 +25,24 @@ class AuctionBidItem
     }
 
     /**
-     * Gets Position.
+     * Gets TrafficVolume.
      *
-     * @return string
+     * @return int
      */
-    public function getPosition()
+    public function getTrafficVolume()
     {
-        return $this->Position;
+        return $this->TrafficVolume;
     }
 
     /**
-     * Sets Position.
+     * Sets TrafficVolume.
      *
-     * @param string $value
+     * @param int $value
      * @return self
      */
-    public function setPosition($value)
+    public function setTrafficVolume($value)
     {
-        $this->Position = $value;
+        $this->TrafficVolume = $value;
 
         return $this;
     }
