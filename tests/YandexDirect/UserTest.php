@@ -5,9 +5,10 @@ namespace Biplane\Tests\YandexDirect;
 use Biplane\YandexDirect\Api\V4\YandexAPIService;
 use Biplane\YandexDirect\Api\V5;
 use Biplane\YandexDirect\User;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 
-class UserTest extends \PHPUnit_Framework_TestCase
+class UserTest extends TestCase
 {
     public function getLocales()
     {
@@ -38,7 +39,7 @@ class UserTest extends \PHPUnit_Framework_TestCase
             'access_token' => 'foo',
         ]);
 
-        $this->assertEquals('p-g-ivanov', $config->getLogin());
+        self::assertEquals('p-g-ivanov', $config->getLogin());
     }
 
     /**
@@ -60,8 +61,8 @@ class UserTest extends \PHPUnit_Framework_TestCase
             'access_token' => 'token',
         ]);
 
-        $this->assertSame('foo', $config->getMasterToken());
-        $this->assertSame('bar', $config->getLogin());
+        self::assertSame('foo', $config->getMasterToken());
+        self::assertSame('bar', $config->getLogin());
     }
 
     public function testFinanceTokenShouldBeCreated()
@@ -72,7 +73,7 @@ class UserTest extends \PHPUnit_Framework_TestCase
             'access_token' => 'foo',
         ]);
 
-        $this->assertEquals(
+        self::assertEquals(
             'ca556216659079c5e21ae6647560b3d4ad94b950a2d613974ab934e0a9f54d7d',
             $config->createFinanceToken('foo', 1)
         );
@@ -84,7 +85,7 @@ class UserTest extends \PHPUnit_Framework_TestCase
             'access_token' => 'foo',
         ]);
 
-        $this->assertEquals('acbd18db4cc2f85cedef654fccc4a4d8', $user->getHashCode());
+        self::assertEquals('acbd18db4cc2f85cedef654fccc4a4d8', $user->getHashCode());
     }
 
     public function testEventDispatcherShouldBeCreatedWhenNotGiven()
@@ -93,7 +94,7 @@ class UserTest extends \PHPUnit_Framework_TestCase
             'access_token' => 'foo',
         ]);
 
-        $this->assertInstanceOf(EventDispatcher::class, $user->getEventDispatcher());
+        self::assertInstanceOf(EventDispatcher::class, $user->getEventDispatcher());
     }
 
     public function testApiServiceShouldBeCreated()
@@ -102,7 +103,7 @@ class UserTest extends \PHPUnit_Framework_TestCase
             'access_token' => 'foo',
         ]);
 
-        $this->assertInstanceOf(YandexAPIService::class, $user->getApiService());
+        self::assertInstanceOf(YandexAPIService::class, $user->getApiService());
     }
 
     public function getServicesProxies()
@@ -140,7 +141,7 @@ class UserTest extends \PHPUnit_Framework_TestCase
             'access_token' => 'foo',
         ]);
 
-        $this->assertInstanceOf($serviceClass, $user->$method());
+        self::assertInstanceOf($serviceClass, $user->$method());
     }
 
     public function testServiceProxyShouldBeCached()
@@ -151,7 +152,7 @@ class UserTest extends \PHPUnit_Framework_TestCase
 
         $proxy = $user->getAdsService();
 
-        $this->assertSame($proxy, $user->getAdsService());
+        self::assertSame($proxy, $user->getAdsService());
     }
 
     public function testResolveWSDLWhenSandboxIsDisabled()
@@ -160,7 +161,7 @@ class UserTest extends \PHPUnit_Framework_TestCase
             'access_token' => 'foo',
         ]);
 
-        $this->assertEquals(
+        self::assertEquals(
             'https://api.direct.yandex.ru/live/v4/wsdl/',
             $user->resolveWsdl('https://api.direct.yandex.ru/live/v4/wsdl/')
         );
@@ -173,7 +174,7 @@ class UserTest extends \PHPUnit_Framework_TestCase
             'sandbox' => true,
         ]);
 
-        $this->assertEquals(
+        self::assertEquals(
             'https://api-sandbox.direct.yandex.ru/live/v4/wsdl/',
             $user->resolveWsdl('https://api.direct.yandex.ru/live/v4/wsdl/')
         );
@@ -186,6 +187,6 @@ class UserTest extends \PHPUnit_Framework_TestCase
             'use_operator_units' => true,
         ]);
 
-        $this->assertTrue($user->useOperatorUnits());
+        self::assertTrue($user->useOperatorUnits());
     }
 }

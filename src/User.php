@@ -442,45 +442,19 @@ class User
                 'retry_factor' => 1,
                 'retry_max_attempts' => 3,
                 'retry_max_delay' => 60,
-            ]);
-
-        // OptionsResolver 2.6+
-        if (method_exists($resolver, 'setNormalizer')) {
-            $resolver
-                ->setAllowedValues('locale', [self::LOCALE_EN, self::LOCALE_RU, self::LOCALE_UA])
-                ->setAllowedTypes('master_token', ['null', 'string'])
-                ->setAllowedTypes('login', ['null', 'string'])
-                ->setAllowedTypes('access_token', 'string')
-                ->setAllowedTypes('sandbox', 'bool')
-                ->setAllowedTypes('use_operator_units', 'bool')
-                ->setAllowedTypes('invoker', ['null', 'callable'])
-                ->setAllowedTypes('retry_factor', 'int')
-                ->setAllowedTypes('retry_max_attempts', 'int')
-                ->setAllowedTypes('retry_max_delay', ['int', 'float'])
-                ->setNormalizer('login', $loginNormalizer)
-                ->setNormalizer('invoker', $invokerNormalizer);
-        } else {
-            $resolver
-                ->setAllowedValues([
-                    'locale' => [self::LOCALE_EN, self::LOCALE_RU, self::LOCALE_UA],
-                ])
-                ->setAllowedTypes([
-                    'master_token' => ['null', 'string'],
-                    'login' => ['null', 'string'],
-                    'access_token' => ['string'],
-                    'sandbox' => ['bool'],
-                    'use_operator_units' => ['bool'],
-                    'soap_options' => ['array'],
-                    'invoker' => ['null', 'callable'],
-                    'retry_factor' => 'int',
-                    'retry_max_attempts' => 'int',
-                    'retry_max_delay' => ['int', 'float'],
-                ])
-                ->setNormalizers([
-                    'login' => $loginNormalizer,
-                    'invoker' => $invokerNormalizer,
-                ]);
-        }
+            ])
+            ->setAllowedValues('locale', [self::LOCALE_EN, self::LOCALE_RU, self::LOCALE_UA])
+            ->setAllowedTypes('master_token', ['null', 'string'])
+            ->setAllowedTypes('login', ['null', 'string'])
+            ->setAllowedTypes('access_token', 'string')
+            ->setAllowedTypes('sandbox', 'bool')
+            ->setAllowedTypes('use_operator_units', 'bool')
+            ->setAllowedTypes('invoker', ['null', 'callable'])
+            ->setAllowedTypes('retry_factor', 'int')
+            ->setAllowedTypes('retry_max_attempts', 'int')
+            ->setAllowedTypes('retry_max_delay', ['int', 'float'])
+            ->setNormalizer('login', $loginNormalizer)
+            ->setNormalizer('invoker', $invokerNormalizer);
     }
 
     private function getProxy($serviceClass)

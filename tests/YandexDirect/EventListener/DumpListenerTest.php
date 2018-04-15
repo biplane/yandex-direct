@@ -31,12 +31,11 @@ class DumpListenerTest extends TestCase
         $event = $this->getEventMock('FailCallEvent', $id, 'foo', 'bar');
 
         if ($success) {
-            $this->dumper->expects($this->once())
+            $this->dumper->expects(self::once())
                 ->method('dump')
                 ->with($id, 'foo', 'bar');
         } else {
-            $this->dumper->expects($this->never())
-                ->method('dump');
+            $this->dumper->expects(self::never())->method('dump');
         }
 
         $listener->onFail($event);
@@ -53,12 +52,11 @@ class DumpListenerTest extends TestCase
         $event = $this->getEventMock('PostCallEvent', $id, 'foo', 'bar');
 
         if ($success) {
-            $this->dumper->expects($this->once())
+            $this->dumper->expects(self::once())
                 ->method('dump')
                 ->with($id, 'foo', 'bar');
         } else {
-            $this->dumper->expects($this->never())
-                ->method('dump');
+            $this->dumper->expects(self::never())->method('dump');
         }
 
         $listener->onSuccess($event);
@@ -69,8 +67,7 @@ class DumpListenerTest extends TestCase
         $listener = new DumpListener($this->dumper);
         $event = $this->getEventMock('FailCallEvent', null, 'foo', 'bar');
 
-        $this->dumper->expects($this->never())
-            ->method('dump');
+        $this->dumper->expects(self::never())->method('dump');
 
         $listener->onFail($event);
     }
@@ -93,9 +90,7 @@ class DumpListenerTest extends TestCase
 
     protected function setUp()
     {
-        $this->dumper = $this->getMockBuilder(Dumper::class)
-            ->disableOriginalConstructor()
-            ->getMock();
+        $this->dumper = $this->createMock(Dumper::class);
     }
 
     protected function tearDown()

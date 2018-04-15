@@ -26,20 +26,20 @@ class SoapClientV4Test extends BaseTestCase
 
         $client = $this->getSoapClient('__soapCall', 'getRequestId');
 
-        $client->expects($this->once())
+        $client->expects(self::once())
             ->method('__soapCall')
             ->willThrowException($fault);
 
-        $client->expects($this->once())
+        $client->expects(self::once())
             ->method('getRequestId')
             ->willReturn('f961bef9be62959982b56053366a57f2');
 
         try {
             $this->doInvoke($client, $methodName, $methodParams);
         } catch (ApiException $ex) {
-            $this->assertSame($fault, $ex->getPrevious());
-            $this->assertEquals('f961bef9be62959982b56053366a57f2', $ex->getRequestId());
-            $this->assertEquals($methodName, $ex->getMethodName());
+            self::assertSame($fault, $ex->getPrevious());
+            self::assertEquals('f961bef9be62959982b56053366a57f2', $ex->getRequestId());
+            self::assertEquals($methodName, $ex->getMethodName());
 
             throw $ex;
         }
@@ -54,7 +54,7 @@ class SoapClientV4Test extends BaseTestCase
             ->mockFunction('time')
             ->getMock();
 
-        $php->expects($this->any())
+        $php->expects(self::any())
             ->method('time')
             ->willReturn(10009);
 
@@ -64,18 +64,18 @@ class SoapClientV4Test extends BaseTestCase
             $usedMethod = $params[0]->getAction();
         }
 
-        $this->user->expects($this->once())
+        $this->user->expects(self::once())
             ->method('createFinanceToken')
-            ->with($this->equalTo($usedMethod), $this->equalTo(10009))
+            ->with($usedMethod, 10009)
             ->willReturn('finance-token');
 
         $client = $this->getSoapClient('__doRequest');
 
-        $client->expects($this->once())
+        $client->expects(self::once())
             ->method('__doRequest')
-            ->with($this->logicalAnd(
-                $this->stringContains('<ns2:operation_num>10009</ns2:operation_num>'),
-                $this->stringContains('<ns2:finance_token>finance-token</ns2:finance_token>')
+            ->with(self::logicalAnd(
+                self::stringContains('<ns2:operation_num>10009</ns2:operation_num>'),
+                self::stringContains('<ns2:finance_token>finance-token</ns2:finance_token>')
             ))
             ->willReturn('<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"><SOAP-ENV:Body></SOAP-ENV:Body></SOAP-ENV:Envelope>');
 

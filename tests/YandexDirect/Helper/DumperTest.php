@@ -4,8 +4,9 @@ namespace Biplane\Tests\YandexDirect\Helper;
 
 use Biplane\YandexDirect\Api\SoapClient;
 use Biplane\YandexDirect\Helper\Dumper;
+use PHPUnit\Framework\TestCase;
 
-class DumperTest extends \PHPUnit_Framework_TestCase
+class DumperTest extends TestCase
 {
     private $dir;
 
@@ -15,8 +16,8 @@ class DumperTest extends \PHPUnit_Framework_TestCase
 
         $dumper->dump('identifier', 'request data', 'response data');
 
-        $this->assertDumpFile('id/e/identifier_req.data', 'request data');
-        $this->assertDumpFile('id/e/identifier_resp.data', 'response data');
+        self::assertDumpFile('id/e/identifier_req.data', 'request data');
+        self::assertDumpFile('id/e/identifier_resp.data', 'response data');
     }
 
     /**
@@ -33,26 +34,24 @@ class DumperTest extends \PHPUnit_Framework_TestCase
     {
         $dumper = new Dumper($this->dir);
 
-        $client = $this->getMockBuilder(SoapClient::class)
-            ->disableOriginalConstructor()
-            ->getMock();
+        $client = $this->createMock(SoapClient::class);
 
-        $client->expects($this->any())
+        $client->expects(self::any())
             ->method('getRequestId')
             ->willReturn('request-id');
 
-        $client->expects($this->once())
+        $client->expects(self::once())
             ->method('getLastRequest')
             ->willReturn('request data');
 
-        $client->expects($this->once())
+        $client->expects(self::once())
             ->method('getLastResponse')
             ->willReturn('response data');
 
         $dumper->dumpLastRequest($client);
 
-        $this->assertDumpFile('re/q/request-id_req.data', 'request data');
-        $this->assertDumpFile('re/q/request-id_resp.data', 'response data');
+        self::assertDumpFile('re/q/request-id_req.data', 'request data');
+        self::assertDumpFile('re/q/request-id_resp.data', 'response data');
     }
 
     protected function setUp()
@@ -82,7 +81,7 @@ class DumperTest extends \PHPUnit_Framework_TestCase
     {
         $path = $this->dir . '/' . $filename;
 
-        $this->assertFileExists($path);
-        $this->assertEquals($content, file_get_contents($path));
+        self::assertFileExists($path);
+        self::assertEquals($content, file_get_contents($path));
     }
 }

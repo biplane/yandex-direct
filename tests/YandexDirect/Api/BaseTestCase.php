@@ -4,9 +4,10 @@ namespace Biplane\Tests\YandexDirect\Api;
 
 use Biplane\YandexDirect\Api\SoapClient;
 use Biplane\YandexDirect\User;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
-abstract class BaseTestCase extends \PHPUnit_Framework_TestCase
+abstract class BaseTestCase extends TestCase
 {
     /**
      * @var \PHPUnit_Framework_MockObject_MockObject
@@ -20,10 +21,8 @@ abstract class BaseTestCase extends \PHPUnit_Framework_TestCase
 
     protected function setUp()
     {
-        $this->dispatcher = $this->getMockBuilder(EventDispatcherInterface::class)->getMock();
-        $this->user = $this->getMockBuilder(User::class)
-            ->disableOriginalConstructor()
-            ->getMock();
+        $this->dispatcher = $this->createMock(EventDispatcherInterface::class);
+        $this->user = $this->createMock(User::class);
 
         $this->configureUser($this->user);
     }
@@ -37,12 +36,10 @@ abstract class BaseTestCase extends \PHPUnit_Framework_TestCase
 
     protected function configureUser(\PHPUnit_Framework_MockObject_MockObject $user)
     {
-        $user->method('getSoapOptions')
-            ->willReturn([]);
-        $user->method('getInvoker')
-            ->willReturn(function (callable $callback) {
-                return $callback();
-            });
+        $user->method('getSoapOptions')->willReturn([]);
+        $user->method('getInvoker')->willReturn(function (callable $callback) {
+            return $callback();
+        });
     }
 
     protected function createClient($soapClientClass, array $methods = [])

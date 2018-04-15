@@ -5,13 +5,14 @@ namespace Biplane\Tests\Build\Wsdl2Php\Contract;
 use Biplane\Build\Wsdl2Php\Contract\ArrayType;
 use Biplane\Build\Wsdl2Php\Contract\ComplexType;
 use Biplane\Build\Wsdl2Php\Contract\EnumType;
+use PHPUnit\Framework\TestCase as BaseTestCase;
 use Wsdl2PhpGenerator\Config;
 use Wsdl2PhpGenerator\Xml\SchemaDocument;
 use Wsdl2PhpGenerator\Xml\TypeNode;
 use Wsdl2PhpGenerator\Xml\WsdlDocument;
 use Zend\Code\Generator\ClassGenerator;
 
-abstract class TestCase extends \PHPUnit_Framework_TestCase
+abstract class TestCase extends BaseTestCase
 {
     protected function setUp()
     {
@@ -50,7 +51,7 @@ abstract class TestCase extends \PHPUnit_Framework_TestCase
 
     protected function assertClassGenerator($fixtureName, ClassGenerator $generator)
     {
-        $this->assertStringEqualsFile(__DIR__ . '/Fixtures/' . $fixtureName, $generator->generate(), $fixtureName);
+        self::assertStringEqualsFile(__DIR__ . '/Fixtures/' . $fixtureName, $generator->generate(), $fixtureName);
     }
 
     protected function createEnumType($wsdlType, $namespace, array $types)

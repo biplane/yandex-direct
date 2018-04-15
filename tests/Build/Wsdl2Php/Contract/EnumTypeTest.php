@@ -15,9 +15,9 @@ class EnumTypeTest extends TestCase
 
         $generator = $enumType->generate($typeResolver);
 
-        $this->assertEquals('string', $enumType->resolvePhpType($typeResolver));
-        $this->assertEquals('Foo\Api\Contract\AdGroupTypesEnum', $enumType->getPhpIdentifier());
-        $this->assertClassGenerator('AdGroupTypesEnum.class', $generator);
+        self::assertEquals('string', $enumType->resolvePhpType($typeResolver));
+        self::assertEquals('Foo\Api\Contract\AdGroupTypesEnum', $enumType->getPhpIdentifier());
+        self::assertClassGenerator('AdGroupTypesEnum.class', $generator);
     }
 
     public function testContractShouldBeGeneratedForEnumerationWithNormalizeNames()
@@ -28,9 +28,9 @@ class EnumTypeTest extends TestCase
 
         $generator = $enumType->generate($typeResolver);
 
-        $this->assertEquals('string', $enumType->resolvePhpType($typeResolver));
-        $this->assertEquals('Foo\Api\Contract\AdGroupFieldEnum', $enumType->getPhpIdentifier());
-        $this->assertClassGenerator('AdGroupFieldEnum.class', $generator);
+        self::assertEquals('string', $enumType->resolvePhpType($typeResolver));
+        self::assertEquals('Foo\Api\Contract\AdGroupFieldEnum', $enumType->getPhpIdentifier());
+        self::assertClassGenerator('AdGroupFieldEnum.class', $generator);
     }
 
     public function testContractShouldBeGeneratedForTypeDefinedInExternalSchema()
@@ -41,8 +41,8 @@ class EnumTypeTest extends TestCase
 
         $generator = $enumType->generate($typeResolver);
 
-        $this->assertEquals('string', $enumType->resolvePhpType($typeResolver));
-        $this->assertEquals('Foo\Api\Contract\StatusEnum', $enumType->getPhpIdentifier());
-        $this->assertClassGenerator('StatusEnum.class', $generator);
+        self::assertEquals('string', $enumType->resolvePhpType($typeResolver));
+        self::assertEquals('Foo\Api\Contract\StatusEnum', $enumType->getPhpIdentifier());
+        self::assertClassGenerator('StatusEnum.class', $generator);
     }
 }

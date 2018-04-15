@@ -25,18 +25,15 @@ class LoggerListenerTest extends TestCase
     {
         $event = $this->getEventMock('FailCallEvent', 'request-id');
 
-        $event->method('getMethodRef')
-            ->willReturn('methodName');
+        $event->method('getMethodRef')->willReturn('methodName');
+        $event->method('getUser')->willReturn($this->getUserMock('foo'));
+        $event->method('getException')->willReturn(
+            new NetworkException('Could not connect to host')
+        );
 
-        $event->method('getUser')
-            ->willReturn($this->getUserMock('foo'));
-
-        $event->method('getException')
-            ->willReturn(new NetworkException('Could not connect to host'));
-
-        $this->logger->expects($this->once())
+        $this->logger->expects(self::once())
             ->method('log')
-            ->with(LogLevel::NOTICE, $this->stringContains('network error'), [
+            ->with(LogLevel::NOTICE, self::stringContains('network error'), [
                 'method' => 'methodName',
                 'login' => 'foo',
                 'request_id' => 'request-id',
@@ -51,18 +48,13 @@ class LoggerListenerTest extends TestCase
         $exception = new ApiException('methodName', 'Message');
         $event = $this->getEventMock('FailCallEvent', 'request-id');
 
-        $event->method('getMethodRef')
-            ->willReturn('methodName');
+        $event->method('getMethodRef')->willReturn('methodName');
+        $event->method('getUser')->willReturn($this->getUserMock('foo'));
+        $event->method('getException')->willReturn($exception);
 
-        $event->method('getUser')
-            ->willReturn($this->getUserMock('foo'));
-
-        $event->method('getException')
-            ->willReturn($exception);
-
-        $this->logger->expects($this->once())
+        $this->logger->expects(self::once())
             ->method('log')
-            ->with(LogLevel::CRITICAL, $this->stringContains('completed with exception'), [
+            ->with(LogLevel::CRITICAL, self::stringContains('completed with exception'), [
                 'method' => 'methodName',
                 'login' => 'foo',
                 'request_id' => 'request-id',
@@ -78,18 +70,13 @@ class LoggerListenerTest extends TestCase
         $exception = new ApiException('methodName', 'Message', ApiException::SERVER_TEMPORARILY_UNAVAILABLE);
         $event = $this->getEventMock('FailCallEvent', 'request-id');
 
-        $event->method('getMethodRef')
-            ->willReturn('methodName');
+        $event->method('getMethodRef')->willReturn('methodName');
+        $event->method('getUser')->willReturn($this->getUserMock('foo'));
+        $event->method('getException')->willReturn($exception);
 
-        $event->method('getUser')
-            ->willReturn($this->getUserMock('foo'));
-
-        $event->method('getException')
-            ->willReturn($exception);
-
-        $this->logger->expects($this->once())
+        $this->logger->expects(self::once())
             ->method('log')
-            ->with(LogLevel::WARNING, $this->stringContains('completed with exception'), [
+            ->with(LogLevel::WARNING, self::stringContains('completed with exception'), [
                 'method' => 'methodName',
                 'login' => 'foo',
                 'request_id' => 'request-id',
@@ -102,8 +89,7 @@ class LoggerListenerTest extends TestCase
 
     protected function setUp()
     {
-        $this->logger = $this->getMockBuilder(LoggerInterface::class)->getMock();
-
+        $this->logger = $this->createMock(LoggerInterface::class);
         $this->listener = new LoggerListener($this->logger);
     }
 
@@ -114,12 +100,8 @@ class LoggerListenerTest extends TestCase
 
     private function getUserMock($login)
     {
-        $mock = $this->getMockBuilder(User::class)
-            ->disableOriginalConstructor()
-            ->getMock();
-
-        $mock->method('getLogin')
-            ->willReturn($login);
+        $mock = $this->createMock(User::class);
+        $mock->method('getLogin')->willReturn($login);
 
         return $mock;
     }

@@ -4,9 +4,10 @@ namespace Biplane\Tests\YandexDirect;
 
 use Biplane\YandexDirect\User;
 use Biplane\YandexDirect\UserBuilder;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
-class UserBuilderTest extends \PHPUnit_Framework_TestCase
+class UserBuilderTest extends TestCase
 {
     public function testBuild()
     {
@@ -21,13 +22,13 @@ class UserBuilderTest extends \PHPUnit_Framework_TestCase
             ->enableUseOperatorUnits()
             ->getUser();
 
-        $this->assertInstanceOf(User::class, $user);
-        $this->assertSame($dispatcher, $user->getEventDispatcher());
-        $this->assertEquals('access token', $user->getAccessToken());
-        $this->assertEquals(User::LOCALE_RU, $user->getLocale());
-        $this->assertEquals('foo', $user->getLogin());
-        $this->assertEquals('master token', $user->getMasterToken());
-        $this->assertTrue($user->useOperatorUnits());
+        self::assertInstanceOf(User::class, $user);
+        self::assertSame($dispatcher, $user->getEventDispatcher());
+        self::assertEquals('access token', $user->getAccessToken());
+        self::assertEquals(User::LOCALE_RU, $user->getLocale());
+        self::assertEquals('foo', $user->getLogin());
+        self::assertEquals('master token', $user->getMasterToken());
+        self::assertTrue($user->useOperatorUnits());
     }
 
     public function testResetBuilder()
@@ -41,9 +42,9 @@ class UserBuilderTest extends \PHPUnit_Framework_TestCase
             ->enableUseOperatorUnits()
             ->getUser();
 
-        $this->assertEquals('access token', $user1->getAccessToken());
-        $this->assertEquals('foo', $user1->getLogin());
-        $this->assertTrue($user1->useOperatorUnits());
+        self::assertEquals('access token', $user1->getAccessToken());
+        self::assertEquals('foo', $user1->getLogin());
+        self::assertTrue($user1->useOperatorUnits());
 
         $builder->reset();
 
@@ -51,14 +52,14 @@ class UserBuilderTest extends \PHPUnit_Framework_TestCase
             ->setAccessToken('token')
             ->getUser();
 
-        $this->assertNotSame($user1, $user2);
-        $this->assertEquals('token', $user2->getAccessToken());
-        $this->assertNull($user2->getLogin());
-        $this->assertFalse($user2->useOperatorUnits());
+        self::assertNotSame($user1, $user2);
+        self::assertEquals('token', $user2->getAccessToken());
+        self::assertNull($user2->getLogin());
+        self::assertFalse($user2->useOperatorUnits());
     }
 
     private function getDispatcherMock()
     {
-        return $this->getMockBuilder(EventDispatcherInterface::class)->getMock();
+        return $this->createMock(EventDispatcherInterface::class);
     }
 }

@@ -5,8 +5,9 @@ namespace Biplane\Tests\YandexDirect\Helper;
 use Biplane\YandexDirect\Exception\ApiException;
 use Biplane\YandexDirect\Exception\NetworkException;
 use Biplane\YandexDirect\Helper\Invoker;
+use PHPUnit\Framework\TestCase;
 
-class InvokerTest extends \PHPUnit_Framework_TestCase
+class InvokerTest extends TestCase
 {
     public function testInvokeWithoutErrors()
     {
@@ -19,8 +20,8 @@ class InvokerTest extends \PHPUnit_Framework_TestCase
             return 'callback result';
         });
 
-        $this->assertEquals('callback result', $result);
-        $this->assertSame(1, $attempts);
+        self::assertEquals('callback result', $result);
+        self::assertSame(1, $attempts);
     }
 
     public function testRetryInvokeWhenErrorIsTemporarily()
@@ -42,8 +43,8 @@ class InvokerTest extends \PHPUnit_Framework_TestCase
             return 'callback result';
         });
 
-        $this->assertEquals('callback result', $result);
-        $this->assertSame(2, $attempts);
+        self::assertEquals('callback result', $result);
+        self::assertSame(2, $attempts);
     }
 
     public function testRetryInvokeWhenNetworkErrorIsTemporarily()
@@ -61,8 +62,8 @@ class InvokerTest extends \PHPUnit_Framework_TestCase
             return 'callback result';
         });
 
-        $this->assertEquals('callback result', $result);
-        $this->assertSame(2, $attempts);
+        self::assertEquals('callback result', $result);
+        self::assertSame(2, $attempts);
     }
 
     /**

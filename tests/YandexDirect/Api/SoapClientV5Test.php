@@ -28,11 +28,11 @@ class SoapClientV5Test extends BaseTestCase
 
         $client = $this->getSoapClient('__soapCall', '__getLastResponseHeaders');
 
-        $client->expects($this->once())
+        $client->expects(self::once())
             ->method('__soapCall')
             ->willThrowException($fault);
 
-        $client->expects($this->any())
+        $client->expects(self::any())
             ->method('__getLastResponseHeaders')
             ->willReturn(
                 "HTTP/1.1 200 OK\r\n" .
@@ -45,9 +45,9 @@ class SoapClientV5Test extends BaseTestCase
         try {
             $this->doInvoke($client, $methodName, $methodParams);
         } catch (ApiException $ex) {
-            $this->assertSame($fault, $ex->getPrevious());
-            $this->assertEquals('2289555458481966563', $ex->getRequestId());
-            $this->assertEquals($methodName, $ex->getMethodName());
+            self::assertSame($fault, $ex->getPrevious());
+            self::assertEquals('2289555458481966563', $ex->getRequestId());
+            self::assertEquals($methodName, $ex->getMethodName());
 
             throw $ex;
         }
@@ -57,7 +57,7 @@ class SoapClientV5Test extends BaseTestCase
     {
         $client = $this->getSoapClient('__getLastResponseHeaders');
 
-        $client->expects($this->once())
+        $client->expects(self::once())
             ->method('__getLastResponseHeaders')
             ->willReturn(
                 "HTTP/1.1 200 OK\r\n" .
@@ -69,24 +69,24 @@ class SoapClientV5Test extends BaseTestCase
 
         $units = $client->getUnits();
 
-        $this->assertSame(50, $units->getSpent());
-        $this->assertSame(39750, $units->getRest());
-        $this->assertSame(40000, $units->getLimit());
+        self::assertSame(50, $units->getSpent());
+        self::assertSame(39750, $units->getRest());
+        self::assertSame(40000, $units->getLimit());
     }
 
     public function testGetUnitsWhenHeaderNotFound()
     {
         $client = $this->getSoapClient('__getLastResponseHeaders');
 
-        $client->expects($this->once())
+        $client->expects(self::once())
             ->method('__getLastResponseHeaders')
             ->willReturn(null);
 
         $units = $client->getUnits();
 
-        $this->assertSame(-1, $units->getSpent());
-        $this->assertSame(-1, $units->getRest());
-        $this->assertSame(-1, $units->getLimit());
+        self::assertSame(-1, $units->getSpent());
+        self::assertSame(-1, $units->getRest());
+        self::assertSame(-1, $units->getLimit());
     }
 
     protected function getSoapClient()

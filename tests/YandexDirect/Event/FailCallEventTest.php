@@ -15,27 +15,27 @@ class FailCallEventTest extends TestCase
         $requestId = 'request-id';
         $exception = new \Exception();
 
-        $client->expects($this->any())
+        $client->expects(self::any())
             ->method('getLastRequest')
             ->willReturn('request content');
 
-        $client->expects($this->any())
+        $client->expects(self::any())
             ->method('getLastResponse')
             ->willReturn('response content');
 
-        $client->expects($this->any())
+        $client->expects(self::any())
             ->method('getRequestId')
             ->willReturn($requestId);
 
         $event = new FailCallEvent($methodRef, $methodParams, $user, $client, $exception);
 
-        $this->assertSame($user, $event->getUser());
-        $this->assertSame($methodRef, $event->getMethodRef());
-        $this->assertSame('Foo', $event->getMethodName());
-        $this->assertSame($methodParams, $event->getMethodParams());
-        $this->assertSame($exception, $event->getException());
-        $this->assertSame($requestId, $event->getRequestId());
-        $this->assertSame('request content', $event->getRequest());
-        $this->assertSame('response content', $event->getResponse());
+        self::assertSame($user, $event->getUser());
+        self::assertSame($methodRef, $event->getMethodRef());
+        self::assertSame('Foo', $event->getMethodName());
+        self::assertSame($methodParams, $event->getMethodParams());
+        self::assertSame($exception, $event->getException());
+        self::assertSame($requestId, $event->getRequestId());
+        self::assertSame('request content', $event->getRequest());
+        self::assertSame('response content', $event->getResponse());
     }
 }

@@ -4,20 +4,17 @@ namespace Biplane\Tests\YandexDirect\Event;
 
 use Biplane\YandexDirect\Api\SoapClient;
 use Biplane\YandexDirect\User;
+use PHPUnit\Framework\TestCase as BaseTestCase;
 
-class TestCase extends \PHPUnit_Framework_TestCase
+class TestCase extends BaseTestCase
 {
     protected function getUserMock()
     {
-        return $this->getMockBuilder(User::class)
-            ->disableOriginalConstructor()
-            ->getMock();
+        return $this->createMock(User::class);
     }
 
     protected function getSoapClientMock()
     {
-        return $this->getMockBuilder(SoapClient::class)
-            ->disableOriginalConstructor()
-            ->getMock();
+        return $this->createMock(SoapClient::class);
     }
 }

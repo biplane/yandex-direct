@@ -26,8 +26,8 @@ class ServiceTypeTest extends TestCase
 
         $generator = $serviceType->generate($typeResolver);
 
-        $this->assertEquals('Acme\Api\AdGroups', $serviceType->getPhpIdentifier());
-        $this->assertClassGenerator('AdGroups.class', $generator);
+        self::assertEquals('Acme\Api\AdGroups', $serviceType->getPhpIdentifier());
+        self::assertClassGenerator('AdGroups.class', $generator);
     }
 
     public function testGenerateWithResolveArrayTypeForReturnValue()
@@ -52,7 +52,7 @@ class ServiceTypeTest extends TestCase
 
         $generator = $serviceType->generate($typeResolver);
 
-        $this->assertEquals('Acme\Api\YandexAPIService', $serviceType->getPhpIdentifier());
-        $this->assertClassGenerator('YandexAPIService.class', $generator);
+        self::assertEquals('Acme\Api\YandexAPIService', $serviceType->getPhpIdentifier());
+        self::assertClassGenerator('YandexAPIService.class', $generator);
     }
 }

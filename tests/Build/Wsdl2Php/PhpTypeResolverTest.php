@@ -4,8 +4,9 @@ namespace Biplane\Tests\Build\Wsdl2Php;
 
 use Biplane\Build\Wsdl2Php\Contract\AbstractDataType;
 use Biplane\Build\Wsdl2Php\PhpTypeResolver;
+use PHPUnit\Framework\TestCase;
 
-class PhpTypeResolverTest extends \PHPUnit_Framework_TestCase
+class PhpTypeResolverTest extends TestCase
 {
     /**
      * @dataProvider getSimpleTypes
@@ -14,7 +15,7 @@ class PhpTypeResolverTest extends \PHPUnit_Framework_TestCase
     {
         $resolver = new PhpTypeResolver([]);
 
-        $this->assertEquals($phpType, $resolver->resolve($wsdlType));
+        self::assertEquals($phpType, $resolver->resolve($wsdlType));
     }
 
     public function testResolveComplexType()
@@ -24,7 +25,7 @@ class PhpTypeResolverTest extends \PHPUnit_Framework_TestCase
             'secondType' => $this->createComplexTypeMock('Foo\Bar\SecondType'),
         ]);
 
-        $this->assertEquals('Foo\Bar\FirstType', $resolver->resolve('firstType'));
+        self::assertEquals('Foo\Bar\FirstType', $resolver->resolve('firstType'));
     }
 
     public function testResolveComplexTypeLikeArray()
@@ -34,7 +35,7 @@ class PhpTypeResolverTest extends \PHPUnit_Framework_TestCase
             'secondType' => $this->createComplexTypeMock('Foo\Bar\SecondType'),
         ]);
 
-        $this->assertEquals('Foo\Bar\SecondType[]', $resolver->resolve('secondType[]'));
+        self::assertEquals('Foo\Bar\SecondType[]', $resolver->resolve('secondType[]'));
     }
 
     public function testResolveComplexTypeWithRelativeNamespace()
@@ -43,7 +44,7 @@ class PhpTypeResolverTest extends \PHPUnit_Framework_TestCase
             'firstType' => $this->createComplexTypeMock('Acme\Api\Contract\FirstType'),
         ]);
 
-        $this->assertEquals('Contract\FirstType', $resolver->resolve('firstType', 'Acme\Api'));
+        self::assertEquals('Contract\FirstType', $resolver->resolve('firstType', 'Acme\Api'));
     }
 
     public function testResolveComplexTypeWhenInputNamespaceIsDifferent()
@@ -52,7 +53,7 @@ class PhpTypeResolverTest extends \PHPUnit_Framework_TestCase
             'firstType' => $this->createComplexTypeMock('Acme\Api\Contract\FirstType'),
         ]);
 
-        $this->assertEquals('Acme\Api\Contract\FirstType', $resolver->resolve('firstType', 'Foo\Api'));
+        self::assertEquals('Acme\Api\Contract\FirstType', $resolver->resolve('firstType', 'Foo\Api'));
     }
 
     public function getSimpleTypes()
@@ -73,7 +74,7 @@ class PhpTypeResolverTest extends \PHPUnit_Framework_TestCase
             ->setMethods(['resolvePhpType'])
             ->getMockForAbstractClass();
 
-        $mock->expects($this->any())
+        $mock->expects(self::any())
             ->method('resolvePhpType')
             ->willReturn($phpType);
 

@@ -18,6 +18,6 @@ class ArrayTypeTest extends TestCase
 
         $arrayType = new ArrayType($type, 'ArrayOfCampaignInfo', 'Acme\Api\Contract');
 
-        $this->assertEquals('Acme\Api\Contract\CampaignInfo[]', $arrayType->resolvePhpType($typeResolver));
+        self::assertEquals('Acme\Api\Contract\CampaignInfo[]', $arrayType->resolvePhpType($typeResolver));
     }
 }

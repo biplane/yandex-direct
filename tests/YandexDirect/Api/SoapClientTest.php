@@ -17,44 +17,41 @@ class SoapClientTest extends BaseTestCase
         $methodParams = [new \stdClass()];
         $response = 'response';
 
-        $this->dispatcher->expects($this->at(0))
+        $this->dispatcher->expects(self::at(0))
             ->method('dispatch')
             ->with(
-                $this->equalTo(Events::BEFORE_REQUEST),
-                $this->isInstanceOf(PreCallEvent::class)
+                self::equalTo(Events::BEFORE_REQUEST),
+                self::isInstanceOf(PreCallEvent::class)
             )
             ->willReturnCallback(function ($eventName, PreCallEvent $eventArgs) use ($methodName, $methodParams) {
-                $this->assertSame($this->user, $eventArgs->getUser());
-                $this->assertEquals($methodName, $eventArgs->getMethodName());
-                $this->assertSame($methodParams, $eventArgs->getMethodParams());
+                self::assertSame($this->user, $eventArgs->getUser());
+                self::assertEquals($methodName, $eventArgs->getMethodName());
+                self::assertSame($methodParams, $eventArgs->getMethodParams());
             });
 
-        $this->dispatcher->expects($this->at(1))
+        $this->dispatcher->expects(self::at(1))
             ->method('dispatch')
             ->with(
-                $this->equalTo(Events::AFTER_REQUEST),
-                $this->isInstanceOf(PostCallEvent::class)
+                self::equalTo(Events::AFTER_REQUEST),
+                self::isInstanceOf(PostCallEvent::class)
             )
             ->willReturnCallback(
                 function ($eventName, PostCallEvent $eventArgs) use ($methodName, $methodParams, $response) {
-                    $this->assertSame($this->user, $eventArgs->getUser());
-                    $this->assertEquals($methodName, $eventArgs->getMethodName());
-                    $this->assertSame($methodParams, $eventArgs->getMethodParams());
-                    $this->assertEquals($response, $eventArgs->getResult());
+                    self::assertSame($this->user, $eventArgs->getUser());
+                    self::assertEquals($methodName, $eventArgs->getMethodName());
+                    self::assertSame($methodParams, $eventArgs->getMethodParams());
+                    self::assertEquals($response, $eventArgs->getResult());
                 }
             );
 
         $client = $this->getSoapClient();
 
-        $client->expects($this->once())
+        $client->expects(self::once())
             ->method('__soapCall')
-            ->with(
-                $this->equalTo($methodName),
-                $this->identicalTo($methodParams)
-            )
+            ->with(self::equalTo($methodName), self::identicalTo($methodParams))
             ->willReturn($response);
 
-        $this->assertEquals($response, $this->doInvoke($client, $methodName, $methodParams));
+        self::assertEquals($response, $this->doInvoke($client, $methodName, $methodParams));
     }
 
     /**
@@ -68,39 +65,30 @@ class SoapClientTest extends BaseTestCase
             'foo' => 'bar',
         ];
 
-        $this->dispatcher->expects($this->at(0))
+        $this->dispatcher->expects(self::at(0))
             ->method('dispatch')
-            ->with(
-                $this->equalTo(Events::BEFORE_REQUEST),
-                $this->isInstanceOf(PreCallEvent::class)
-            )
+            ->with(self::equalTo(Events::BEFORE_REQUEST), self::isInstanceOf(PreCallEvent::class))
             ->willReturnCallback(function ($eventName, PreCallEvent $eventArgs) use ($methodName, $methodParams) {
-                $this->assertSame($this->user, $eventArgs->getUser());
-                $this->assertEquals($methodName, $eventArgs->getMethodName());
-                $this->assertSame($methodParams, $eventArgs->getMethodParams());
+                self::assertSame($this->user, $eventArgs->getUser());
+                self::assertEquals($methodName, $eventArgs->getMethodName());
+                self::assertSame($methodParams, $eventArgs->getMethodParams());
             });
 
-        $this->dispatcher->expects($this->at(1))
+        $this->dispatcher->expects(self::at(1))
             ->method('dispatch')
-            ->with(
-                $this->equalTo(Events::FAIL_REQUEST),
-                $this->isInstanceOf(FailCallEvent::class)
-            )
+            ->with(self::equalTo(Events::FAIL_REQUEST), self::isInstanceOf(FailCallEvent::class))
             ->willReturnCallback(function ($eventName, FailCallEvent $eventArgs) use ($methodName, $methodParams) {
-                $this->assertSame($this->user, $eventArgs->getUser());
-                $this->assertEquals($methodName, $eventArgs->getMethodName());
-                $this->assertSame($methodParams, $eventArgs->getMethodParams());
-                $this->assertInstanceOf(NetworkException::class, $eventArgs->getException());
+                self::assertSame($this->user, $eventArgs->getUser());
+                self::assertEquals($methodName, $eventArgs->getMethodName());
+                self::assertSame($methodParams, $eventArgs->getMethodParams());
+                self::assertInstanceOf(NetworkException::class, $eventArgs->getException());
             });
 
         $client = $this->getSoapClient();
 
-        $client->expects($this->once())
+        $client->expects(self::once())
             ->method('__soapCall')
-            ->with(
-                $this->equalTo($methodName),
-                $this->identicalTo($methodParams)
-            )
+            ->with(self::equalTo($methodName), self::identicalTo($methodParams))
             ->willThrowException(new \SoapFault('HTTP', 'Could not connect to host.'));
 
         $this->doInvoke($client, $methodName, $methodParams);

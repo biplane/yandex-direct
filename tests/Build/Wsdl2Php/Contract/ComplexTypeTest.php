@@ -15,8 +15,8 @@ class ComplexTypeTest extends TestCase
 
         $generator = $complexType->generate($typeResolver);
 
-        $this->assertEquals('Foo\Api\Contract\AdGroupsSelectionCriteria', $complexType->resolvePhpType($typeResolver));
-        $this->assertClassGenerator('AdGroupsSelectionCriteria.class', $generator);
+        self::assertEquals('Foo\Api\Contract\AdGroupsSelectionCriteria', $complexType->resolvePhpType($typeResolver));
+        self::assertClassGenerator('AdGroupsSelectionCriteria.class', $generator);
     }
 
     public function testGenerateWithExtendsAndResolvingEnumsType()
@@ -32,8 +32,8 @@ class ComplexTypeTest extends TestCase
 
         $generator = $complexType->generate($typeResolver);
 
-        $this->assertEquals('Foo\Api\Contract\AdGroupGetItem', $complexType->resolvePhpType($typeResolver));
-        $this->assertClassGenerator('AdGroupGetItem.class', $generator);
+        self::assertEquals('Foo\Api\Contract\AdGroupGetItem', $complexType->resolvePhpType($typeResolver));
+        self::assertClassGenerator('AdGroupGetItem.class', $generator);
     }
 
     public function testEmbeddedType()
@@ -52,7 +52,7 @@ class ComplexTypeTest extends TestCase
 
         $generator = $complexType->generate($typeResolver);
 
-        $this->assertEquals('Acme\Api\Contract\GetRequest', $complexType->getPhpIdentifier());
-        $this->assertClassGenerator('GetRequest.class', $generator);
+        self::assertEquals('Acme\Api\Contract\GetRequest', $complexType->getPhpIdentifier());
+        self::assertClassGenerator('GetRequest.class', $generator);
     }
 }

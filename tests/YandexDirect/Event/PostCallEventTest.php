@@ -15,27 +15,27 @@ class PostCallEventTest extends TestCase
         $params = ['foo' => 'bar'];
         $requestId = 'request-id';
 
-        $client->expects($this->any())
+        $client->expects(self::any())
             ->method('getLastRequest')
             ->willReturn('request content');
 
-        $client->expects($this->any())
+        $client->expects(self::any())
             ->method('getLastResponse')
             ->willReturn('response content');
 
-        $client->expects($this->any())
+        $client->expects(self::any())
             ->method('getRequestId')
             ->willReturn($requestId);
 
         $event = new PostCallEvent($methodRef, $params, $user, $client, $result);
 
-        $this->assertSame($user, $event->getUser());
-        $this->assertSame($methodRef, $event->getMethodRef());
-        $this->assertSame('Foo', $event->getMethodName());
-        $this->assertSame($result, $event->getResult());
-        $this->assertSame($params, $event->getMethodParams());
-        $this->assertSame($requestId, $event->getRequestId());
-        $this->assertSame('request content', $event->getRequest());
-        $this->assertSame('response content', $event->getResponse());
+        self::assertSame($user, $event->getUser());
+        self::assertSame($methodRef, $event->getMethodRef());
+        self::assertSame('Foo', $event->getMethodName());
+        self::assertSame($result, $event->getResult());
+        self::assertSame($params, $event->getMethodParams());
+        self::assertSame($requestId, $event->getRequestId());
+        self::assertSame('request content', $event->getRequest());
+        self::assertSame('response content', $event->getResponse());
     }
 }
