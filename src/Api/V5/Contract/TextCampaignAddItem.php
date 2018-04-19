@@ -10,11 +10,14 @@ class TextCampaignAddItem
 
     protected $BiddingStrategy = null;
 
-    protected $Settings = null;
+//    Can be omit.
+//    protected $Settings = null;
 
-    protected $CounterIds = null;
+//    Can be omit.
+//    protected $CounterIds = null;
 
-    protected $RelevantKeywords = null;
+//    Can be omit.
+//    protected $RelevantKeywords = null;
 
     /**
      * Creates a new instance of TextCampaignAddItem.
@@ -56,7 +59,7 @@ class TextCampaignAddItem
      */
     public function getSettings()
     {
-        return $this->Settings;
+        return isset($this->Settings) ? $this->Settings : null;
     }
 
     /**
@@ -79,7 +82,7 @@ class TextCampaignAddItem
      */
     public function getCounterIds()
     {
-        return $this->CounterIds;
+        return isset($this->CounterIds) ? $this->CounterIds : null;
     }
 
     /**
@@ -102,7 +105,7 @@ class TextCampaignAddItem
      */
     public function getRelevantKeywords()
     {
-        return $this->RelevantKeywords;
+        return isset($this->RelevantKeywords) ? $this->RelevantKeywords : null;
     }
 
     /**

@@ -8,7 +8,8 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class UnarchiveAdsResponse
 {
 
-    protected $UnarchiveResults = null;
+//    Can be omit.
+//    protected $UnarchiveResults = null;
 
     /**
      * Creates a new instance of UnarchiveAdsResponse.
@@ -27,7 +28,7 @@ class UnarchiveAdsResponse
      */
     public function getUnarchiveResults()
     {
-        return $this->UnarchiveResults;
+        return isset($this->UnarchiveResults) ? $this->UnarchiveResults : null;
     }
 
     /**

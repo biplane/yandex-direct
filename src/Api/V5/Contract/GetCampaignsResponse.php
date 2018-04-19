@@ -8,7 +8,8 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class GetCampaignsResponse extends GetResponseGeneral
 {
 
-    protected $Campaigns = null;
+//    Can be omit.
+//    protected $Campaigns = null;
 
     /**
      * Creates a new instance of GetCampaignsResponse.
@@ -27,7 +28,7 @@ class GetCampaignsResponse extends GetResponseGeneral
      */
     public function getCampaigns()
     {
-        return $this->Campaigns;
+        return isset($this->Campaigns) ? $this->Campaigns : null;
     }
 
     /**

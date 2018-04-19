@@ -10,7 +10,8 @@ class StrategyWeeklyBudgetAddBase
 
     protected $WeeklySpendLimit = null;
 
-    protected $BidCeiling = null;
+//    Can be omit.
+//    protected $BidCeiling = null;
 
     /**
      * Creates a new instance of StrategyWeeklyBudgetAddBase.
@@ -52,7 +53,7 @@ class StrategyWeeklyBudgetAddBase
      */
     public function getBidCeiling()
     {
-        return $this->BidCeiling;
+        return isset($this->BidCeiling) ? $this->BidCeiling : null;
     }
 
     /**

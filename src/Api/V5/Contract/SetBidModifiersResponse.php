@@ -8,7 +8,8 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class SetBidModifiersResponse
 {
 
-    protected $SetResults = null;
+//    Can be omit.
+//    protected $SetResults = null;
 
     /**
      * Creates a new instance of SetBidModifiersResponse.
@@ -27,7 +28,7 @@ class SetBidModifiersResponse
      */
     public function getSetResults()
     {
-        return $this->SetResults;
+        return isset($this->SetResults) ? $this->SetResults : null;
     }
 
     /**

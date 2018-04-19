@@ -8,41 +8,59 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class VCardGetItem
 {
 
-    protected $Id = null;
+//    Can be omit.
+//    protected $Id = null;
 
-    protected $CampaignId = null;
+//    Can be omit.
+//    protected $CampaignId = null;
 
-    protected $Country = null;
+//    Can be omit.
+//    protected $Country = null;
 
-    protected $City = null;
+//    Can be omit.
+//    protected $City = null;
 
-    protected $WorkTime = null;
+//    Can be omit.
+//    protected $WorkTime = null;
 
-    protected $Phone = null;
+//    Can be omit.
+//    protected $Phone = null;
 
-    protected $Street = null;
+//    Can be omit.
+//    protected $Street = null;
 
-    protected $House = null;
+//    Can be omit.
+//    protected $House = null;
 
-    protected $Building = null;
+//    Can be omit.
+//    protected $Building = null;
 
-    protected $Apartment = null;
+//    Can be omit.
+//    protected $Apartment = null;
 
-    protected $InstantMessenger = null;
+//    Can be omit.
+//    protected $InstantMessenger = null;
 
-    protected $CompanyName = null;
+//    Can be omit.
+//    protected $CompanyName = null;
 
-    protected $ExtraMessage = null;
+//    Can be omit.
+//    protected $ExtraMessage = null;
 
-    protected $ContactEmail = null;
+//    Can be omit.
+//    protected $ContactEmail = null;
 
-    protected $Ogrn = null;
+//    Can be omit.
+//    protected $Ogrn = null;
 
-    protected $MetroStationId = null;
+//    Can be omit.
+//    protected $MetroStationId = null;
 
-    protected $PointOnMap = null;
+//    Can be omit.
+//    protected $PointOnMap = null;
 
-    protected $ContactPerson = null;
+//    Can be omit.
+//    protected $ContactPerson = null;
 
     /**
      * Creates a new instance of VCardGetItem.
@@ -61,7 +79,7 @@ class VCardGetItem
      */
     public function getId()
     {
-        return $this->Id;
+        return isset($this->Id) ? $this->Id : null;
     }
 
     /**
@@ -84,7 +102,7 @@ class VCardGetItem
      */
     public function getCampaignId()
     {
-        return $this->CampaignId;
+        return isset($this->CampaignId) ? $this->CampaignId : null;
     }
 
     /**
@@ -107,7 +125,7 @@ class VCardGetItem
      */
     public function getCountry()
     {
-        return $this->Country;
+        return isset($this->Country) ? $this->Country : null;
     }
 
     /**
@@ -130,7 +148,7 @@ class VCardGetItem
      */
     public function getCity()
     {
-        return $this->City;
+        return isset($this->City) ? $this->City : null;
     }
 
     /**
@@ -153,7 +171,7 @@ class VCardGetItem
      */
     public function getWorkTime()
     {
-        return $this->WorkTime;
+        return isset($this->WorkTime) ? $this->WorkTime : null;
     }
 
     /**
@@ -176,7 +194,7 @@ class VCardGetItem
      */
     public function getPhone()
     {
-        return $this->Phone;
+        return isset($this->Phone) ? $this->Phone : null;
     }
 
     /**
@@ -199,7 +217,7 @@ class VCardGetItem
      */
     public function getStreet()
     {
-        return $this->Street;
+        return isset($this->Street) ? $this->Street : null;
     }
 
     /**
@@ -222,7 +240,7 @@ class VCardGetItem
      */
     public function getHouse()
     {
-        return $this->House;
+        return isset($this->House) ? $this->House : null;
     }
 
     /**
@@ -245,7 +263,7 @@ class VCardGetItem
      */
     public function getBuilding()
     {
-        return $this->Building;
+        return isset($this->Building) ? $this->Building : null;
     }
 
     /**
@@ -268,7 +286,7 @@ class VCardGetItem
      */
     public function getApartment()
     {
-        return $this->Apartment;
+        return isset($this->Apartment) ? $this->Apartment : null;
     }
 
     /**
@@ -291,7 +309,7 @@ class VCardGetItem
      */
     public function getInstantMessenger()
     {
-        return $this->InstantMessenger;
+        return isset($this->InstantMessenger) ? $this->InstantMessenger : null;
     }
 
     /**
@@ -314,7 +332,7 @@ class VCardGetItem
      */
     public function getCompanyName()
     {
-        return $this->CompanyName;
+        return isset($this->CompanyName) ? $this->CompanyName : null;
     }
 
     /**
@@ -337,7 +355,7 @@ class VCardGetItem
      */
     public function getExtraMessage()
     {
-        return $this->ExtraMessage;
+        return isset($this->ExtraMessage) ? $this->ExtraMessage : null;
     }
 
     /**
@@ -360,7 +378,7 @@ class VCardGetItem
      */
     public function getContactEmail()
     {
-        return $this->ContactEmail;
+        return isset($this->ContactEmail) ? $this->ContactEmail : null;
     }
 
     /**
@@ -383,7 +401,7 @@ class VCardGetItem
      */
     public function getOgrn()
     {
-        return $this->Ogrn;
+        return isset($this->Ogrn) ? $this->Ogrn : null;
     }
 
     /**
@@ -406,7 +424,7 @@ class VCardGetItem
      */
     public function getMetroStationId()
     {
-        return $this->MetroStationId;
+        return isset($this->MetroStationId) ? $this->MetroStationId : null;
     }
 
     /**
@@ -429,7 +447,7 @@ class VCardGetItem
      */
     public function getPointOnMap()
     {
-        return $this->PointOnMap;
+        return isset($this->PointOnMap) ? $this->PointOnMap : null;
     }
 
     /**
@@ -452,7 +470,7 @@ class VCardGetItem
      */
     public function getContactPerson()
     {
-        return $this->ContactPerson;
+        return isset($this->ContactPerson) ? $this->ContactPerson : null;
     }
 
     /**

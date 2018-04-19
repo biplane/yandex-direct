@@ -8,11 +8,14 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class MobileAppAdGroupUpdate
 {
 
-    protected $TargetDeviceType = null;
+//    Can be omit.
+//    protected $TargetDeviceType = null;
 
-    protected $TargetCarrier = null;
+//    Can be omit.
+//    protected $TargetCarrier = null;
 
-    protected $TargetOperatingSystemVersion = null;
+//    Can be omit.
+//    protected $TargetOperatingSystemVersion = null;
 
     /**
      * Creates a new instance of MobileAppAdGroupUpdate.
@@ -32,7 +35,7 @@ class MobileAppAdGroupUpdate
      */
     public function getTargetDeviceType()
     {
-        return $this->TargetDeviceType;
+        return isset($this->TargetDeviceType) ? $this->TargetDeviceType : null;
     }
 
     /**
@@ -57,7 +60,7 @@ class MobileAppAdGroupUpdate
      */
     public function getTargetCarrier()
     {
-        return $this->TargetCarrier;
+        return isset($this->TargetCarrier) ? $this->TargetCarrier : null;
     }
 
     /**
@@ -81,7 +84,7 @@ class MobileAppAdGroupUpdate
      */
     public function getTargetOperatingSystemVersion()
     {
-        return $this->TargetOperatingSystemVersion;
+        return isset($this->TargetOperatingSystemVersion) ? $this->TargetOperatingSystemVersion : null;
     }
 
     /**

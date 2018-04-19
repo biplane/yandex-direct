@@ -8,7 +8,8 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class CheckCampaignsResponse
 {
 
-    protected $Campaigns = null;
+//    Can be omit.
+//    protected $Campaigns = null;
 
     protected $Timestamp = null;
 
@@ -29,7 +30,7 @@ class CheckCampaignsResponse
      */
     public function getCampaigns()
     {
-        return $this->Campaigns;
+        return isset($this->Campaigns) ? $this->Campaigns : null;
     }
 
     /**

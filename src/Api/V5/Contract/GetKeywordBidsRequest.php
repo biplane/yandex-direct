@@ -12,9 +12,11 @@ class GetKeywordBidsRequest extends GetRequestGeneral
 
     protected $FieldNames = [];
 
-    protected $SearchFieldNames = null;
+//    Can be omit.
+//    protected $SearchFieldNames = null;
 
-    protected $NetworkFieldNames = null;
+//    Can be omit.
+//    protected $NetworkFieldNames = null;
 
     /**
      * Creates a new instance of GetKeywordBidsRequest.
@@ -82,7 +84,7 @@ class GetKeywordBidsRequest extends GetRequestGeneral
      */
     public function getSearchFieldNames()
     {
-        return $this->SearchFieldNames;
+        return isset($this->SearchFieldNames) ? $this->SearchFieldNames : null;
     }
 
     /**
@@ -107,7 +109,7 @@ class GetKeywordBidsRequest extends GetRequestGeneral
      */
     public function getNetworkFieldNames()
     {
-        return $this->NetworkFieldNames;
+        return isset($this->NetworkFieldNames) ? $this->NetworkFieldNames : null;
     }
 
     /**

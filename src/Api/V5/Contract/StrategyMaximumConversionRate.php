@@ -8,7 +8,8 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class StrategyMaximumConversionRate extends StrategyWeeklyBudgetBase
 {
 
-    protected $GoalId = null;
+//    Can be omit.
+//    protected $GoalId = null;
 
     /**
      * Creates a new instance of StrategyMaximumConversionRate.
@@ -27,7 +28,7 @@ class StrategyMaximumConversionRate extends StrategyWeeklyBudgetBase
      */
     public function getGoalId()
     {
-        return $this->GoalId;
+        return isset($this->GoalId) ? $this->GoalId : null;
     }
 
     /**

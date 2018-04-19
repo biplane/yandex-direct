@@ -10,7 +10,8 @@ class MobileAppCampaignAddItem
 
     protected $BiddingStrategy = null;
 
-    protected $Settings = null;
+//    Can be omit.
+//    protected $Settings = null;
 
     /**
      * Creates a new instance of MobileAppCampaignAddItem.
@@ -52,7 +53,7 @@ class MobileAppCampaignAddItem
      */
     public function getSettings()
     {
-        return $this->Settings;
+        return isset($this->Settings) ? $this->Settings : null;
     }
 
     /**

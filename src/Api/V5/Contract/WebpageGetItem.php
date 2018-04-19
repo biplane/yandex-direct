@@ -8,27 +8,38 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class WebpageGetItem
 {
 
-    protected $Id = null;
+//    Can be omit.
+//    protected $Id = null;
 
-    protected $AdGroupId = null;
+//    Can be omit.
+//    protected $AdGroupId = null;
 
-    protected $CampaignId = null;
+//    Can be omit.
+//    protected $CampaignId = null;
 
-    protected $Name = null;
+//    Can be omit.
+//    protected $Name = null;
 
-    protected $Bid = null;
+//    Can be omit.
+//    protected $Bid = null;
 
-    protected $ContextBid = null;
+//    Can be omit.
+//    protected $ContextBid = null;
 
-    protected $StrategyPriority = null;
+//    Can be omit.
+//    protected $StrategyPriority = null;
 
-    protected $State = null;
+//    Can be omit.
+//    protected $State = null;
 
-    protected $StatusClarification = null;
+//    Can be omit.
+//    protected $StatusClarification = null;
 
-    protected $Conditions = null;
+//    Can be omit.
+//    protected $Conditions = null;
 
-    protected $ConditionType = null;
+//    Can be omit.
+//    protected $ConditionType = null;
 
     /**
      * Creates a new instance of WebpageGetItem.
@@ -47,7 +58,7 @@ class WebpageGetItem
      */
     public function getId()
     {
-        return $this->Id;
+        return isset($this->Id) ? $this->Id : null;
     }
 
     /**
@@ -70,7 +81,7 @@ class WebpageGetItem
      */
     public function getAdGroupId()
     {
-        return $this->AdGroupId;
+        return isset($this->AdGroupId) ? $this->AdGroupId : null;
     }
 
     /**
@@ -93,7 +104,7 @@ class WebpageGetItem
      */
     public function getCampaignId()
     {
-        return $this->CampaignId;
+        return isset($this->CampaignId) ? $this->CampaignId : null;
     }
 
     /**
@@ -116,7 +127,7 @@ class WebpageGetItem
      */
     public function getName()
     {
-        return $this->Name;
+        return isset($this->Name) ? $this->Name : null;
     }
 
     /**
@@ -139,7 +150,7 @@ class WebpageGetItem
      */
     public function getBid()
     {
-        return $this->Bid;
+        return isset($this->Bid) ? $this->Bid : null;
     }
 
     /**
@@ -162,7 +173,7 @@ class WebpageGetItem
      */
     public function getContextBid()
     {
-        return $this->ContextBid;
+        return isset($this->ContextBid) ? $this->ContextBid : null;
     }
 
     /**
@@ -186,7 +197,7 @@ class WebpageGetItem
      */
     public function getStrategyPriority()
     {
-        return $this->StrategyPriority;
+        return isset($this->StrategyPriority) ? $this->StrategyPriority : null;
     }
 
     /**
@@ -211,7 +222,7 @@ class WebpageGetItem
      */
     public function getState()
     {
-        return $this->State;
+        return isset($this->State) ? $this->State : null;
     }
 
     /**
@@ -235,7 +246,7 @@ class WebpageGetItem
      */
     public function getStatusClarification()
     {
-        return $this->StatusClarification;
+        return isset($this->StatusClarification) ? $this->StatusClarification : null;
     }
 
     /**
@@ -258,7 +269,7 @@ class WebpageGetItem
      */
     public function getConditions()
     {
-        return $this->Conditions;
+        return isset($this->Conditions) ? $this->Conditions : null;
     }
 
     /**
@@ -282,7 +293,7 @@ class WebpageGetItem
      */
     public function getConditionType()
     {
-        return $this->ConditionType;
+        return isset($this->ConditionType) ? $this->ConditionType : null;
     }
 
     /**

@@ -12,11 +12,14 @@ class GetAdGroupsRequest extends GetRequestGeneral
 
     protected $FieldNames = [];
 
-    protected $MobileAppAdGroupFieldNames = null;
+//    Can be omit.
+//    protected $MobileAppAdGroupFieldNames = null;
 
-    protected $DynamicTextAdGroupFieldNames = null;
+//    Can be omit.
+//    protected $DynamicTextAdGroupFieldNames = null;
 
-    protected $DynamicTextFeedAdGroupFieldNames = null;
+//    Can be omit.
+//    protected $DynamicTextFeedAdGroupFieldNames = null;
 
     /**
      * Creates a new instance of GetAdGroupsRequest.
@@ -84,7 +87,7 @@ class GetAdGroupsRequest extends GetRequestGeneral
      */
     public function getMobileAppAdGroupFieldNames()
     {
-        return $this->MobileAppAdGroupFieldNames;
+        return isset($this->MobileAppAdGroupFieldNames) ? $this->MobileAppAdGroupFieldNames : null;
     }
 
     /**
@@ -109,7 +112,7 @@ class GetAdGroupsRequest extends GetRequestGeneral
      */
     public function getDynamicTextAdGroupFieldNames()
     {
-        return $this->DynamicTextAdGroupFieldNames;
+        return isset($this->DynamicTextAdGroupFieldNames) ? $this->DynamicTextAdGroupFieldNames : null;
     }
 
     /**
@@ -134,7 +137,7 @@ class GetAdGroupsRequest extends GetRequestGeneral
      */
     public function getDynamicTextFeedAdGroupFieldNames()
     {
-        return $this->DynamicTextFeedAdGroupFieldNames;
+        return isset($this->DynamicTextFeedAdGroupFieldNames) ? $this->DynamicTextFeedAdGroupFieldNames : null;
     }
 
     /**

@@ -8,23 +8,32 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class TextAdGet extends TextAdGetBase
 {
 
-    protected $Text = null;
+//    Can be omit.
+//    protected $Text = null;
 
-    protected $Title = null;
+//    Can be omit.
+//    protected $Title = null;
 
-    protected $Title2 = null;
+//    Can be omit.
+//    protected $Title2 = null;
 
-    protected $Href = null;
+//    Can be omit.
+//    protected $Href = null;
 
-    protected $Mobile = null;
+//    Can be omit.
+//    protected $Mobile = null;
 
-    protected $DisplayDomain = null;
+//    Can be omit.
+//    protected $DisplayDomain = null;
 
-    protected $DisplayUrlPath = null;
+//    Can be omit.
+//    protected $DisplayUrlPath = null;
 
-    protected $DisplayUrlPathModeration = null;
+//    Can be omit.
+//    protected $DisplayUrlPathModeration = null;
 
-    protected $VideoExtension = null;
+//    Can be omit.
+//    protected $VideoExtension = null;
 
     /**
      * Creates a new instance of TextAdGet.
@@ -43,7 +52,7 @@ class TextAdGet extends TextAdGetBase
      */
     public function getText()
     {
-        return $this->Text;
+        return isset($this->Text) ? $this->Text : null;
     }
 
     /**
@@ -66,7 +75,7 @@ class TextAdGet extends TextAdGetBase
      */
     public function getTitle()
     {
-        return $this->Title;
+        return isset($this->Title) ? $this->Title : null;
     }
 
     /**
@@ -89,7 +98,7 @@ class TextAdGet extends TextAdGetBase
      */
     public function getTitle2()
     {
-        return $this->Title2;
+        return isset($this->Title2) ? $this->Title2 : null;
     }
 
     /**
@@ -112,7 +121,7 @@ class TextAdGet extends TextAdGetBase
      */
     public function getHref()
     {
-        return $this->Href;
+        return isset($this->Href) ? $this->Href : null;
     }
 
     /**
@@ -136,7 +145,7 @@ class TextAdGet extends TextAdGetBase
      */
     public function getMobile()
     {
-        return $this->Mobile;
+        return isset($this->Mobile) ? $this->Mobile : null;
     }
 
     /**
@@ -160,7 +169,7 @@ class TextAdGet extends TextAdGetBase
      */
     public function getDisplayDomain()
     {
-        return $this->DisplayDomain;
+        return isset($this->DisplayDomain) ? $this->DisplayDomain : null;
     }
 
     /**
@@ -183,7 +192,7 @@ class TextAdGet extends TextAdGetBase
      */
     public function getDisplayUrlPath()
     {
-        return $this->DisplayUrlPath;
+        return isset($this->DisplayUrlPath) ? $this->DisplayUrlPath : null;
     }
 
     /**
@@ -206,7 +215,7 @@ class TextAdGet extends TextAdGetBase
      */
     public function getDisplayUrlPathModeration()
     {
-        return $this->DisplayUrlPathModeration;
+        return isset($this->DisplayUrlPathModeration) ? $this->DisplayUrlPathModeration : null;
     }
 
     /**
@@ -229,7 +238,7 @@ class TextAdGet extends TextAdGetBase
      */
     public function getVideoExtension()
     {
-        return $this->VideoExtension;
+        return isset($this->VideoExtension) ? $this->VideoExtension : null;
     }
 
     /**

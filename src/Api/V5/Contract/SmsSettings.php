@@ -8,11 +8,14 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class SmsSettings
 {
 
-    protected $Events = null;
+//    Can be omit.
+//    protected $Events = null;
 
-    protected $TimeFrom = null;
+//    Can be omit.
+//    protected $TimeFrom = null;
 
-    protected $TimeTo = null;
+//    Can be omit.
+//    protected $TimeTo = null;
 
     /**
      * Creates a new instance of SmsSettings.
@@ -32,7 +35,7 @@ class SmsSettings
      */
     public function getEvents()
     {
-        return $this->Events;
+        return isset($this->Events) ? $this->Events : null;
     }
 
     /**
@@ -56,7 +59,7 @@ class SmsSettings
      */
     public function getTimeFrom()
     {
-        return $this->TimeFrom;
+        return isset($this->TimeFrom) ? $this->TimeFrom : null;
     }
 
     /**
@@ -79,7 +82,7 @@ class SmsSettings
      */
     public function getTimeTo()
     {
-        return $this->TimeTo;
+        return isset($this->TimeTo) ? $this->TimeTo : null;
     }
 
     /**

@@ -8,7 +8,8 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class ModerateAdsResponse
 {
 
-    protected $ModerateResults = null;
+//    Can be omit.
+//    protected $ModerateResults = null;
 
     /**
      * Creates a new instance of ModerateAdsResponse.
@@ -27,7 +28,7 @@ class ModerateAdsResponse
      */
     public function getModerateResults()
     {
-        return $this->ModerateResults;
+        return isset($this->ModerateResults) ? $this->ModerateResults : null;
     }
 
     /**

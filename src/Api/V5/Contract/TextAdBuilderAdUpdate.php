@@ -8,7 +8,8 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class TextAdBuilderAdUpdate extends AdBuilderAdUpdateBase
 {
 
-    protected $Href = null;
+//    Can be omit.
+//    protected $Href = null;
 
     /**
      * Creates a new instance of TextAdBuilderAdUpdate.
@@ -27,7 +28,7 @@ class TextAdBuilderAdUpdate extends AdBuilderAdUpdateBase
      */
     public function getHref()
     {
-        return $this->Href;
+        return isset($this->Href) ? $this->Href : null;
     }
 
     /**

@@ -10,7 +10,8 @@ class VideoExtensionGetItem
 
     protected $CreativeId = null;
 
-    protected $Status = null;
+//    Can be omit.
+//    protected $Status = null;
 
     protected $ThumbnailUrl = null;
 
@@ -57,7 +58,7 @@ class VideoExtensionGetItem
      */
     public function getStatus()
     {
-        return $this->Status;
+        return isset($this->Status) ? $this->Status : null;
     }
 
     /**

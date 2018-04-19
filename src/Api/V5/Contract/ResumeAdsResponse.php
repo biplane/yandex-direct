@@ -8,7 +8,8 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class ResumeAdsResponse
 {
 
-    protected $ResumeResults = null;
+//    Can be omit.
+//    protected $ResumeResults = null;
 
     /**
      * Creates a new instance of ResumeAdsResponse.
@@ -27,7 +28,7 @@ class ResumeAdsResponse
      */
     public function getResumeResults()
     {
-        return $this->ResumeResults;
+        return isset($this->ResumeResults) ? $this->ResumeResults : null;
     }
 
     /**

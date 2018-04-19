@@ -8,35 +8,50 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class KeywordGetItem
 {
 
-    protected $Id = null;
+//    Can be omit.
+//    protected $Id = null;
 
-    protected $Keyword = null;
+//    Can be omit.
+//    protected $Keyword = null;
 
-    protected $AdGroupId = null;
+//    Can be omit.
+//    protected $AdGroupId = null;
 
-    protected $CampaignId = null;
+//    Can be omit.
+//    protected $CampaignId = null;
 
-    protected $Bid = null;
+//    Can be omit.
+//    protected $Bid = null;
 
-    protected $ContextBid = null;
+//    Can be omit.
+//    protected $ContextBid = null;
 
-    protected $StrategyPriority = null;
+//    Can be omit.
+//    protected $StrategyPriority = null;
 
-    protected $State = null;
+//    Can be omit.
+//    protected $State = null;
 
-    protected $Status = null;
+//    Can be omit.
+//    protected $Status = null;
 
-    protected $UserParam1 = null;
+//    Can be omit.
+//    protected $UserParam1 = null;
 
-    protected $UserParam2 = null;
+//    Can be omit.
+//    protected $UserParam2 = null;
 
-    protected $Productivity = null;
+//    Can be omit.
+//    protected $Productivity = null;
 
-    protected $StatisticsSearch = null;
+//    Can be omit.
+//    protected $StatisticsSearch = null;
 
-    protected $StatisticsNetwork = null;
+//    Can be omit.
+//    protected $StatisticsNetwork = null;
 
-    protected $ServingStatus = null;
+//    Can be omit.
+//    protected $ServingStatus = null;
 
     /**
      * Creates a new instance of KeywordGetItem.
@@ -55,7 +70,7 @@ class KeywordGetItem
      */
     public function getId()
     {
-        return $this->Id;
+        return isset($this->Id) ? $this->Id : null;
     }
 
     /**
@@ -78,7 +93,7 @@ class KeywordGetItem
      */
     public function getKeyword()
     {
-        return $this->Keyword;
+        return isset($this->Keyword) ? $this->Keyword : null;
     }
 
     /**
@@ -101,7 +116,7 @@ class KeywordGetItem
      */
     public function getAdGroupId()
     {
-        return $this->AdGroupId;
+        return isset($this->AdGroupId) ? $this->AdGroupId : null;
     }
 
     /**
@@ -124,7 +139,7 @@ class KeywordGetItem
      */
     public function getCampaignId()
     {
-        return $this->CampaignId;
+        return isset($this->CampaignId) ? $this->CampaignId : null;
     }
 
     /**
@@ -147,7 +162,7 @@ class KeywordGetItem
      */
     public function getBid()
     {
-        return $this->Bid;
+        return isset($this->Bid) ? $this->Bid : null;
     }
 
     /**
@@ -170,7 +185,7 @@ class KeywordGetItem
      */
     public function getContextBid()
     {
-        return $this->ContextBid;
+        return isset($this->ContextBid) ? $this->ContextBid : null;
     }
 
     /**
@@ -194,7 +209,7 @@ class KeywordGetItem
      */
     public function getStrategyPriority()
     {
-        return $this->StrategyPriority;
+        return isset($this->StrategyPriority) ? $this->StrategyPriority : null;
     }
 
     /**
@@ -219,7 +234,7 @@ class KeywordGetItem
      */
     public function getState()
     {
-        return $this->State;
+        return isset($this->State) ? $this->State : null;
     }
 
     /**
@@ -244,7 +259,7 @@ class KeywordGetItem
      */
     public function getStatus()
     {
-        return $this->Status;
+        return isset($this->Status) ? $this->Status : null;
     }
 
     /**
@@ -268,7 +283,7 @@ class KeywordGetItem
      */
     public function getUserParam1()
     {
-        return $this->UserParam1;
+        return isset($this->UserParam1) ? $this->UserParam1 : null;
     }
 
     /**
@@ -291,7 +306,7 @@ class KeywordGetItem
      */
     public function getUserParam2()
     {
-        return $this->UserParam2;
+        return isset($this->UserParam2) ? $this->UserParam2 : null;
     }
 
     /**
@@ -314,7 +329,7 @@ class KeywordGetItem
      */
     public function getProductivity()
     {
-        return $this->Productivity;
+        return isset($this->Productivity) ? $this->Productivity : null;
     }
 
     /**
@@ -337,7 +352,7 @@ class KeywordGetItem
      */
     public function getStatisticsSearch()
     {
-        return $this->StatisticsSearch;
+        return isset($this->StatisticsSearch) ? $this->StatisticsSearch : null;
     }
 
     /**
@@ -360,7 +375,7 @@ class KeywordGetItem
      */
     public function getStatisticsNetwork()
     {
-        return $this->StatisticsNetwork;
+        return isset($this->StatisticsNetwork) ? $this->StatisticsNetwork : null;
     }
 
     /**
@@ -384,7 +399,7 @@ class KeywordGetItem
      */
     public function getServingStatus()
     {
-        return $this->ServingStatus;
+        return isset($this->ServingStatus) ? $this->ServingStatus : null;
     }
 
     /**

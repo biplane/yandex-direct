@@ -12,13 +12,17 @@ class WebpageAddItem
 
     protected $AdGroupId = null;
 
-    protected $Conditions = null;
+//    Can be omit.
+//    protected $Conditions = null;
 
-    protected $Bid = null;
+//    Can be omit.
+//    protected $Bid = null;
 
-    protected $ContextBid = null;
+//    Can be omit.
+//    protected $ContextBid = null;
 
-    protected $StrategyPriority = null;
+//    Can be omit.
+//    protected $StrategyPriority = null;
 
     /**
      * Creates a new instance of WebpageAddItem.
@@ -83,7 +87,7 @@ class WebpageAddItem
      */
     public function getConditions()
     {
-        return $this->Conditions;
+        return isset($this->Conditions) ? $this->Conditions : null;
     }
 
     /**
@@ -106,7 +110,7 @@ class WebpageAddItem
      */
     public function getBid()
     {
-        return $this->Bid;
+        return isset($this->Bid) ? $this->Bid : null;
     }
 
     /**
@@ -129,7 +133,7 @@ class WebpageAddItem
      */
     public function getContextBid()
     {
-        return $this->ContextBid;
+        return isset($this->ContextBid) ? $this->ContextBid : null;
     }
 
     /**
@@ -153,7 +157,7 @@ class WebpageAddItem
      */
     public function getStrategyPriority()
     {
-        return $this->StrategyPriority;
+        return isset($this->StrategyPriority) ? $this->StrategyPriority : null;
     }
 
     /**

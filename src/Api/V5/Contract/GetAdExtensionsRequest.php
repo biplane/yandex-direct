@@ -12,7 +12,8 @@ class GetAdExtensionsRequest extends GetRequestGeneral
 
     protected $FieldNames = [];
 
-    protected $CalloutFieldNames = null;
+//    Can be omit.
+//    protected $CalloutFieldNames = null;
 
     /**
      * Creates a new instance of GetAdExtensionsRequest.
@@ -80,7 +81,7 @@ class GetAdExtensionsRequest extends GetRequestGeneral
      */
     public function getCalloutFieldNames()
     {
-        return $this->CalloutFieldNames;
+        return isset($this->CalloutFieldNames) ? $this->CalloutFieldNames : null;
     }
 
     /**

@@ -8,9 +8,11 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class StrategyWeeklyBudgetBase
 {
 
-    protected $WeeklySpendLimit = null;
+//    Can be omit.
+//    protected $WeeklySpendLimit = null;
 
-    protected $BidCeiling = null;
+//    Can be omit.
+//    protected $BidCeiling = null;
 
     /**
      * Creates a new instance of StrategyWeeklyBudgetBase.
@@ -29,7 +31,7 @@ class StrategyWeeklyBudgetBase
      */
     public function getWeeklySpendLimit()
     {
-        return $this->WeeklySpendLimit;
+        return isset($this->WeeklySpendLimit) ? $this->WeeklySpendLimit : null;
     }
 
     /**
@@ -52,7 +54,7 @@ class StrategyWeeklyBudgetBase
      */
     public function getBidCeiling()
     {
-        return $this->BidCeiling;
+        return isset($this->BidCeiling) ? $this->BidCeiling : null;
     }
 
     /**

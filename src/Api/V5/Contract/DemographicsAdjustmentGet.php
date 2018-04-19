@@ -8,13 +8,17 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class DemographicsAdjustmentGet
 {
 
-    protected $Gender = null;
+//    Can be omit.
+//    protected $Gender = null;
 
-    protected $Age = null;
+//    Can be omit.
+//    protected $Age = null;
 
-    protected $BidModifier = null;
+//    Can be omit.
+//    protected $BidModifier = null;
 
-    protected $Enabled = null;
+//    Can be omit.
+//    protected $Enabled = null;
 
     /**
      * Creates a new instance of DemographicsAdjustmentGet.
@@ -34,7 +38,7 @@ class DemographicsAdjustmentGet
      */
     public function getGender()
     {
-        return $this->Gender;
+        return isset($this->Gender) ? $this->Gender : null;
     }
 
     /**
@@ -59,7 +63,7 @@ class DemographicsAdjustmentGet
      */
     public function getAge()
     {
-        return $this->Age;
+        return isset($this->Age) ? $this->Age : null;
     }
 
     /**
@@ -83,7 +87,7 @@ class DemographicsAdjustmentGet
      */
     public function getBidModifier()
     {
-        return $this->BidModifier;
+        return isset($this->BidModifier) ? $this->BidModifier : null;
     }
 
     /**
@@ -107,7 +111,7 @@ class DemographicsAdjustmentGet
      */
     public function getEnabled()
     {
-        return $this->Enabled;
+        return isset($this->Enabled) ? $this->Enabled : null;
     }
 
     /**

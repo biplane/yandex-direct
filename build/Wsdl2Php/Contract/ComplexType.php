@@ -3,6 +3,7 @@
 namespace Biplane\Build\Wsdl2Php\Contract;
 
 use Biplane\Build\Wsdl2Php\ClassNameUtil;
+use Biplane\Build\Wsdl2Php\Code\OmitPropertyGenerator;
 use Biplane\Build\Wsdl2Php\Helper\ContractGeneratorTrait;
 use Biplane\Build\Wsdl2Php\PhpTypeResolver;
 use Zend\Code\Generator\ClassGenerator;
@@ -34,7 +35,8 @@ class ComplexType extends AbstractDataType implements GeneratorInterface
 
         foreach ($this->type->getParts() as $elemName => $elemType) {
             $isArray = $this->type->isElementArray($elemName);
-            $nullable = $this->type->isElementNillable($elemName) || $this->type->getElementMinOccurs($elemName) === 0;
+            $canBeOmitted = $this->type->getElementMinOccurs($elemName) === 0;
+            $nullable = $this->type->isElementNillable($elemName) || $canBeOmitted;
 
             $phpType = $typeResolver->resolve($elemType, $this->namespace);
             $enumClass = $this->getEnumClass($elemType, $typeResolver);
@@ -43,10 +45,15 @@ class ComplexType extends AbstractDataType implements GeneratorInterface
                 $isArray = true;
             }
 
-            $generator->addPropertyFromGenerator($this->createProperty($elemName, $isArray, $nullable));
+            if ($canBeOmitted) {
+                $generator->addPropertyFromGenerator(new OmitPropertyGenerator($elemName));
+            } else {
+                $generator->addPropertyFromGenerator($this->createProperty($elemName, $isArray, $nullable));
+            }
+
             $generator->addMethodFromGenerator(
                 $this->addSeeTag(
-                    $this->createGetter($elemName, $phpType, $isArray, $nullable),
+                    $this->createGetter($elemName, $phpType, $isArray, $nullable, $canBeOmitted),
                     $enumClass
                 )
             );

@@ -10,9 +10,11 @@ class FundsParam
 
     protected $Mode = null;
 
-    protected $CampaignFunds = null;
+//    Can be omit.
+//    protected $CampaignFunds = null;
 
-    protected $SharedAccountFunds = null;
+//    Can be omit.
+//    protected $SharedAccountFunds = null;
 
     /**
      * Creates a new instance of FundsParam.
@@ -56,7 +58,7 @@ class FundsParam
      */
     public function getCampaignFunds()
     {
-        return $this->CampaignFunds;
+        return isset($this->CampaignFunds) ? $this->CampaignFunds : null;
     }
 
     /**
@@ -79,7 +81,7 @@ class FundsParam
      */
     public function getSharedAccountFunds()
     {
-        return $this->SharedAccountFunds;
+        return isset($this->SharedAccountFunds) ? $this->SharedAccountFunds : null;
     }
 
     /**

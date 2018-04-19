@@ -8,11 +8,14 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class DynamicSourceGet
 {
 
-    protected $Source = null;
+//    Can be omit.
+//    protected $Source = null;
 
-    protected $SourceType = null;
+//    Can be omit.
+//    protected $SourceType = null;
 
-    protected $SourceProcessingStatus = null;
+//    Can be omit.
+//    protected $SourceProcessingStatus = null;
 
     /**
      * Creates a new instance of DynamicSourceGet.
@@ -31,7 +34,7 @@ class DynamicSourceGet
      */
     public function getSource()
     {
-        return $this->Source;
+        return isset($this->Source) ? $this->Source : null;
     }
 
     /**
@@ -55,7 +58,7 @@ class DynamicSourceGet
      */
     public function getSourceType()
     {
-        return $this->SourceType;
+        return isset($this->SourceType) ? $this->SourceType : null;
     }
 
     /**
@@ -80,7 +83,7 @@ class DynamicSourceGet
      */
     public function getSourceProcessingStatus()
     {
-        return $this->SourceProcessingStatus;
+        return isset($this->SourceProcessingStatus) ? $this->SourceProcessingStatus : null;
     }
 
     /**

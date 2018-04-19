@@ -8,35 +8,50 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class ClientGetItem extends ClientBaseItem
 {
 
-    protected $AccountQuality = null;
+//    Can be omit.
+//    protected $AccountQuality = null;
 
-    protected $Archived = null;
+//    Can be omit.
+//    protected $Archived = null;
 
-    protected $ClientId = null;
+//    Can be omit.
+//    protected $ClientId = null;
 
-    protected $CountryId = null;
+//    Can be omit.
+//    protected $CountryId = null;
 
-    protected $CreatedAt = null;
+//    Can be omit.
+//    protected $CreatedAt = null;
 
-    protected $Currency = null;
+//    Can be omit.
+//    protected $Currency = null;
 
-    protected $Grants = null;
+//    Can be omit.
+//    protected $Grants = null;
 
-    protected $Login = null;
+//    Can be omit.
+//    protected $Login = null;
 
-    protected $Notification = null;
+//    Can be omit.
+//    protected $Notification = null;
 
-    protected $OverdraftSumAvailable = null;
+//    Can be omit.
+//    protected $OverdraftSumAvailable = null;
 
-    protected $Representatives = null;
+//    Can be omit.
+//    protected $Representatives = null;
 
-    protected $Restrictions = null;
+//    Can be omit.
+//    protected $Restrictions = null;
 
-    protected $Settings = null;
+//    Can be omit.
+//    protected $Settings = null;
 
-    protected $Type = null;
+//    Can be omit.
+//    protected $Type = null;
 
-    protected $VatRate = null;
+//    Can be omit.
+//    protected $VatRate = null;
 
     /**
      * Creates a new instance of ClientGetItem.
@@ -55,7 +70,7 @@ class ClientGetItem extends ClientBaseItem
      */
     public function getAccountQuality()
     {
-        return $this->AccountQuality;
+        return isset($this->AccountQuality) ? $this->AccountQuality : null;
     }
 
     /**
@@ -79,7 +94,7 @@ class ClientGetItem extends ClientBaseItem
      */
     public function getArchived()
     {
-        return $this->Archived;
+        return isset($this->Archived) ? $this->Archived : null;
     }
 
     /**
@@ -103,7 +118,7 @@ class ClientGetItem extends ClientBaseItem
      */
     public function getClientId()
     {
-        return $this->ClientId;
+        return isset($this->ClientId) ? $this->ClientId : null;
     }
 
     /**
@@ -126,7 +141,7 @@ class ClientGetItem extends ClientBaseItem
      */
     public function getCountryId()
     {
-        return $this->CountryId;
+        return isset($this->CountryId) ? $this->CountryId : null;
     }
 
     /**
@@ -149,7 +164,7 @@ class ClientGetItem extends ClientBaseItem
      */
     public function getCreatedAt()
     {
-        return $this->CreatedAt;
+        return isset($this->CreatedAt) ? $this->CreatedAt : null;
     }
 
     /**
@@ -173,7 +188,7 @@ class ClientGetItem extends ClientBaseItem
      */
     public function getCurrency()
     {
-        return $this->Currency;
+        return isset($this->Currency) ? $this->Currency : null;
     }
 
     /**
@@ -197,7 +212,7 @@ class ClientGetItem extends ClientBaseItem
      */
     public function getGrants()
     {
-        return $this->Grants;
+        return isset($this->Grants) ? $this->Grants : null;
     }
 
     /**
@@ -220,7 +235,7 @@ class ClientGetItem extends ClientBaseItem
      */
     public function getLogin()
     {
-        return $this->Login;
+        return isset($this->Login) ? $this->Login : null;
     }
 
     /**
@@ -243,7 +258,7 @@ class ClientGetItem extends ClientBaseItem
      */
     public function getNotification()
     {
-        return $this->Notification;
+        return isset($this->Notification) ? $this->Notification : null;
     }
 
     /**
@@ -266,7 +281,7 @@ class ClientGetItem extends ClientBaseItem
      */
     public function getOverdraftSumAvailable()
     {
-        return $this->OverdraftSumAvailable;
+        return isset($this->OverdraftSumAvailable) ? $this->OverdraftSumAvailable : null;
     }
 
     /**
@@ -289,7 +304,7 @@ class ClientGetItem extends ClientBaseItem
      */
     public function getRepresentatives()
     {
-        return $this->Representatives;
+        return isset($this->Representatives) ? $this->Representatives : null;
     }
 
     /**
@@ -312,7 +327,7 @@ class ClientGetItem extends ClientBaseItem
      */
     public function getRestrictions()
     {
-        return $this->Restrictions;
+        return isset($this->Restrictions) ? $this->Restrictions : null;
     }
 
     /**
@@ -335,7 +350,7 @@ class ClientGetItem extends ClientBaseItem
      */
     public function getSettings()
     {
-        return $this->Settings;
+        return isset($this->Settings) ? $this->Settings : null;
     }
 
     /**
@@ -358,7 +373,7 @@ class ClientGetItem extends ClientBaseItem
      */
     public function getType()
     {
-        return $this->Type;
+        return isset($this->Type) ? $this->Type : null;
     }
 
     /**
@@ -381,7 +396,7 @@ class ClientGetItem extends ClientBaseItem
      */
     public function getVatRate()
     {
-        return $this->VatRate;
+        return isset($this->VatRate) ? $this->VatRate : null;
     }
 
     /**

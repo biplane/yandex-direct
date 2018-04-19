@@ -8,7 +8,8 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class GetResponseGeneral
 {
 
-    protected $LimitedBy = null;
+//    Can be omit.
+//    protected $LimitedBy = null;
 
     /**
      * Creates a new instance of GetResponseGeneral.
@@ -27,7 +28,7 @@ class GetResponseGeneral
      */
     public function getLimitedBy()
     {
-        return $this->LimitedBy;
+        return isset($this->LimitedBy) ? $this->LimitedBy : null;
     }
 
     /**

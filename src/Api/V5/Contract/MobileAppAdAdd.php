@@ -8,19 +8,23 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class MobileAppAdAdd
 {
 
-    protected $AdImageHash = null;
+//    Can be omit.
+//    protected $AdImageHash = null;
 
     protected $Text = null;
 
     protected $Title = null;
 
-    protected $TrackingUrl = null;
+//    Can be omit.
+//    protected $TrackingUrl = null;
 
     protected $Action = null;
 
-    protected $Features = null;
+//    Can be omit.
+//    protected $Features = null;
 
-    protected $AgeLabel = null;
+//    Can be omit.
+//    protected $AgeLabel = null;
 
     /**
      * Creates a new instance of MobileAppAdAdd.
@@ -39,7 +43,7 @@ class MobileAppAdAdd
      */
     public function getAdImageHash()
     {
-        return $this->AdImageHash;
+        return isset($this->AdImageHash) ? $this->AdImageHash : null;
     }
 
     /**
@@ -108,7 +112,7 @@ class MobileAppAdAdd
      */
     public function getTrackingUrl()
     {
-        return $this->TrackingUrl;
+        return isset($this->TrackingUrl) ? $this->TrackingUrl : null;
     }
 
     /**
@@ -156,7 +160,7 @@ class MobileAppAdAdd
      */
     public function getFeatures()
     {
-        return $this->Features;
+        return isset($this->Features) ? $this->Features : null;
     }
 
     /**
@@ -180,7 +184,7 @@ class MobileAppAdAdd
      */
     public function getAgeLabel()
     {
-        return $this->AgeLabel;
+        return isset($this->AgeLabel) ? $this->AgeLabel : null;
     }
 
     /**

@@ -8,11 +8,14 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class AdGroupBase
 {
 
-    protected $RegionIds = null;
+//    Can be omit.
+//    protected $RegionIds = null;
 
-    protected $NegativeKeywords = null;
+//    Can be omit.
+//    protected $NegativeKeywords = null;
 
-    protected $TrackingParams = null;
+//    Can be omit.
+//    protected $TrackingParams = null;
 
     /**
      * Creates a new instance of AdGroupBase.
@@ -31,7 +34,7 @@ class AdGroupBase
      */
     public function getRegionIds()
     {
-        return $this->RegionIds;
+        return isset($this->RegionIds) ? $this->RegionIds : null;
     }
 
     /**
@@ -54,7 +57,7 @@ class AdGroupBase
      */
     public function getNegativeKeywords()
     {
-        return $this->NegativeKeywords;
+        return isset($this->NegativeKeywords) ? $this->NegativeKeywords : null;
     }
 
     /**
@@ -77,7 +80,7 @@ class AdGroupBase
      */
     public function getTrackingParams()
     {
-        return $this->TrackingParams;
+        return isset($this->TrackingParams) ? $this->TrackingParams : null;
     }
 
     /**

@@ -8,13 +8,17 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class RetargetingAdjustmentGet
 {
 
-    protected $RetargetingConditionId = null;
+//    Can be omit.
+//    protected $RetargetingConditionId = null;
 
-    protected $BidModifier = null;
+//    Can be omit.
+//    protected $BidModifier = null;
 
-    protected $Accessible = null;
+//    Can be omit.
+//    protected $Accessible = null;
 
-    protected $Enabled = null;
+//    Can be omit.
+//    protected $Enabled = null;
 
     /**
      * Creates a new instance of RetargetingAdjustmentGet.
@@ -33,7 +37,7 @@ class RetargetingAdjustmentGet
      */
     public function getRetargetingConditionId()
     {
-        return $this->RetargetingConditionId;
+        return isset($this->RetargetingConditionId) ? $this->RetargetingConditionId : null;
     }
 
     /**
@@ -56,7 +60,7 @@ class RetargetingAdjustmentGet
      */
     public function getBidModifier()
     {
-        return $this->BidModifier;
+        return isset($this->BidModifier) ? $this->BidModifier : null;
     }
 
     /**
@@ -80,7 +84,7 @@ class RetargetingAdjustmentGet
      */
     public function getAccessible()
     {
-        return $this->Accessible;
+        return isset($this->Accessible) ? $this->Accessible : null;
     }
 
     /**
@@ -105,7 +109,7 @@ class RetargetingAdjustmentGet
      */
     public function getEnabled()
     {
-        return $this->Enabled;
+        return isset($this->Enabled) ? $this->Enabled : null;
     }
 
     /**

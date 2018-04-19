@@ -8,7 +8,8 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class TimeTargetingBase
 {
 
-    protected $Schedule = null;
+//    Can be omit.
+//    protected $Schedule = null;
 
     protected $ConsiderWorkingWeekends = null;
 
@@ -29,7 +30,7 @@ class TimeTargetingBase
      */
     public function getSchedule()
     {
-        return $this->Schedule;
+        return isset($this->Schedule) ? $this->Schedule : null;
     }
 
     /**

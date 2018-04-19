@@ -8,9 +8,11 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class Network
 {
 
-    protected $Bid = null;
+//    Can be omit.
+//    protected $Bid = null;
 
-    protected $Coverage = null;
+//    Can be omit.
+//    protected $Coverage = null;
 
     /**
      * Creates a new instance of Network.
@@ -29,7 +31,7 @@ class Network
      */
     public function getBid()
     {
-        return $this->Bid;
+        return isset($this->Bid) ? $this->Bid : null;
     }
 
     /**
@@ -52,7 +54,7 @@ class Network
      */
     public function getCoverage()
     {
-        return $this->Coverage;
+        return isset($this->Coverage) ? $this->Coverage : null;
     }
 
     /**

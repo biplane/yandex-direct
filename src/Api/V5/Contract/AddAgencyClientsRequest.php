@@ -18,9 +18,11 @@ class AddAgencyClientsRequest
 
     protected $Notification = null;
 
-    protected $Settings = null;
+//    Can be omit.
+//    protected $Settings = null;
 
-    protected $Grants = null;
+//    Can be omit.
+//    protected $Grants = null;
 
     /**
      * Creates a new instance of AddAgencyClientsRequest.
@@ -156,7 +158,7 @@ class AddAgencyClientsRequest
      */
     public function getSettings()
     {
-        return $this->Settings;
+        return isset($this->Settings) ? $this->Settings : null;
     }
 
     /**
@@ -179,7 +181,7 @@ class AddAgencyClientsRequest
      */
     public function getGrants()
     {
-        return $this->Grants;
+        return isset($this->Grants) ? $this->Grants : null;
     }
 
     /**

@@ -8,7 +8,8 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class SetBidsDynamicTextAdTargetsResponse
 {
 
-    protected $SetBidsResults = null;
+//    Can be omit.
+//    protected $SetBidsResults = null;
 
     /**
      * Creates a new instance of SetBidsDynamicTextAdTargetsResponse.
@@ -27,7 +28,7 @@ class SetBidsDynamicTextAdTargetsResponse
      */
     public function getSetBidsResults()
     {
-        return $this->SetBidsResults;
+        return isset($this->SetBidsResults) ? $this->SetBidsResults : null;
     }
 
     /**

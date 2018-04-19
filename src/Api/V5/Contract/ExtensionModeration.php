@@ -10,7 +10,8 @@ class ExtensionModeration
 
     protected $Status = null;
 
-    protected $StatusClarification = null;
+//    Can be omit.
+//    protected $StatusClarification = null;
 
     /**
      * Creates a new instance of ExtensionModeration.
@@ -54,7 +55,7 @@ class ExtensionModeration
      */
     public function getStatusClarification()
     {
-        return $this->StatusClarification;
+        return isset($this->StatusClarification) ? $this->StatusClarification : null;
     }
 
     /**

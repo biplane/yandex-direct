@@ -8,33 +8,47 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class AdsSelectionCriteria
 {
 
-    protected $Ids = null;
+//    Can be omit.
+//    protected $Ids = null;
 
-    protected $States = null;
+//    Can be omit.
+//    protected $States = null;
 
-    protected $Statuses = null;
+//    Can be omit.
+//    protected $Statuses = null;
 
-    protected $CampaignIds = null;
+//    Can be omit.
+//    protected $CampaignIds = null;
 
-    protected $AdGroupIds = null;
+//    Can be omit.
+//    protected $AdGroupIds = null;
 
-    protected $Types = null;
+//    Can be omit.
+//    protected $Types = null;
 
-    protected $Mobile = null;
+//    Can be omit.
+//    protected $Mobile = null;
 
-    protected $VCardIds = null;
+//    Can be omit.
+//    protected $VCardIds = null;
 
-    protected $SitelinkSetIds = null;
+//    Can be omit.
+//    protected $SitelinkSetIds = null;
 
-    protected $AdImageHashes = null;
+//    Can be omit.
+//    protected $AdImageHashes = null;
 
-    protected $VCardModerationStatuses = null;
+//    Can be omit.
+//    protected $VCardModerationStatuses = null;
 
-    protected $SitelinksModerationStatuses = null;
+//    Can be omit.
+//    protected $SitelinksModerationStatuses = null;
 
-    protected $AdImageModerationStatuses = null;
+//    Can be omit.
+//    protected $AdImageModerationStatuses = null;
 
-    protected $AdExtensionIds = null;
+//    Can be omit.
+//    protected $AdExtensionIds = null;
 
     /**
      * Creates a new instance of AdsSelectionCriteria.
@@ -53,7 +67,7 @@ class AdsSelectionCriteria
      */
     public function getIds()
     {
-        return $this->Ids;
+        return isset($this->Ids) ? $this->Ids : null;
     }
 
     /**
@@ -77,7 +91,7 @@ class AdsSelectionCriteria
      */
     public function getStates()
     {
-        return $this->States;
+        return isset($this->States) ? $this->States : null;
     }
 
     /**
@@ -102,7 +116,7 @@ class AdsSelectionCriteria
      */
     public function getStatuses()
     {
-        return $this->Statuses;
+        return isset($this->Statuses) ? $this->Statuses : null;
     }
 
     /**
@@ -126,7 +140,7 @@ class AdsSelectionCriteria
      */
     public function getCampaignIds()
     {
-        return $this->CampaignIds;
+        return isset($this->CampaignIds) ? $this->CampaignIds : null;
     }
 
     /**
@@ -149,7 +163,7 @@ class AdsSelectionCriteria
      */
     public function getAdGroupIds()
     {
-        return $this->AdGroupIds;
+        return isset($this->AdGroupIds) ? $this->AdGroupIds : null;
     }
 
     /**
@@ -173,7 +187,7 @@ class AdsSelectionCriteria
      */
     public function getTypes()
     {
-        return $this->Types;
+        return isset($this->Types) ? $this->Types : null;
     }
 
     /**
@@ -198,7 +212,7 @@ class AdsSelectionCriteria
      */
     public function getMobile()
     {
-        return $this->Mobile;
+        return isset($this->Mobile) ? $this->Mobile : null;
     }
 
     /**
@@ -222,7 +236,7 @@ class AdsSelectionCriteria
      */
     public function getVCardIds()
     {
-        return $this->VCardIds;
+        return isset($this->VCardIds) ? $this->VCardIds : null;
     }
 
     /**
@@ -245,7 +259,7 @@ class AdsSelectionCriteria
      */
     public function getSitelinkSetIds()
     {
-        return $this->SitelinkSetIds;
+        return isset($this->SitelinkSetIds) ? $this->SitelinkSetIds : null;
     }
 
     /**
@@ -268,7 +282,7 @@ class AdsSelectionCriteria
      */
     public function getAdImageHashes()
     {
-        return $this->AdImageHashes;
+        return isset($this->AdImageHashes) ? $this->AdImageHashes : null;
     }
 
     /**
@@ -292,7 +306,7 @@ class AdsSelectionCriteria
      */
     public function getVCardModerationStatuses()
     {
-        return $this->VCardModerationStatuses;
+        return isset($this->VCardModerationStatuses) ? $this->VCardModerationStatuses : null;
     }
 
     /**
@@ -317,7 +331,7 @@ class AdsSelectionCriteria
      */
     public function getSitelinksModerationStatuses()
     {
-        return $this->SitelinksModerationStatuses;
+        return isset($this->SitelinksModerationStatuses) ? $this->SitelinksModerationStatuses : null;
     }
 
     /**
@@ -342,7 +356,7 @@ class AdsSelectionCriteria
      */
     public function getAdImageModerationStatuses()
     {
-        return $this->AdImageModerationStatuses;
+        return isset($this->AdImageModerationStatuses) ? $this->AdImageModerationStatuses : null;
     }
 
     /**
@@ -366,7 +380,7 @@ class AdsSelectionCriteria
      */
     public function getAdExtensionIds()
     {
-        return $this->AdExtensionIds;
+        return isset($this->AdExtensionIds) ? $this->AdExtensionIds : null;
     }
 
     /**

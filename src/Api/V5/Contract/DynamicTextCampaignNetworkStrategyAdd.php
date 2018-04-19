@@ -10,7 +10,8 @@ class DynamicTextCampaignNetworkStrategyAdd extends DynamicTextCampaignStrategyA
 
     protected $BiddingStrategyType = null;
 
-    protected $NetworkDefault = null;
+//    Can be omit.
+//    protected $NetworkDefault = null;
 
     /**
      * Creates a new instance of DynamicTextCampaignNetworkStrategyAdd.
@@ -54,7 +55,7 @@ class DynamicTextCampaignNetworkStrategyAdd extends DynamicTextCampaignStrategyA
      */
     public function getNetworkDefault()
     {
-        return $this->NetworkDefault;
+        return isset($this->NetworkDefault) ? $this->NetworkDefault : null;
     }
 
     /**

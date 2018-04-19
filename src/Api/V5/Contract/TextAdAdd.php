@@ -12,15 +12,19 @@ class TextAdAdd extends TextAdAddBase
 
     protected $Title = null;
 
-    protected $Title2 = null;
+//    Can be omit.
+//    protected $Title2 = null;
 
-    protected $Href = null;
+//    Can be omit.
+//    protected $Href = null;
 
     protected $Mobile = null;
 
-    protected $DisplayUrlPath = null;
+//    Can be omit.
+//    protected $DisplayUrlPath = null;
 
-    protected $VideoExtension = null;
+//    Can be omit.
+//    protected $VideoExtension = null;
 
     /**
      * Creates a new instance of TextAdAdd.
@@ -85,7 +89,7 @@ class TextAdAdd extends TextAdAddBase
      */
     public function getTitle2()
     {
-        return $this->Title2;
+        return isset($this->Title2) ? $this->Title2 : null;
     }
 
     /**
@@ -108,7 +112,7 @@ class TextAdAdd extends TextAdAddBase
      */
     public function getHref()
     {
-        return $this->Href;
+        return isset($this->Href) ? $this->Href : null;
     }
 
     /**
@@ -156,7 +160,7 @@ class TextAdAdd extends TextAdAddBase
      */
     public function getDisplayUrlPath()
     {
-        return $this->DisplayUrlPath;
+        return isset($this->DisplayUrlPath) ? $this->DisplayUrlPath : null;
     }
 
     /**
@@ -179,7 +183,7 @@ class TextAdAdd extends TextAdAddBase
      */
     public function getVideoExtension()
     {
-        return $this->VideoExtension;
+        return isset($this->VideoExtension) ? $this->VideoExtension : null;
     }
 
     /**

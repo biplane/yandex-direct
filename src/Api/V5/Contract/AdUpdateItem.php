@@ -10,19 +10,26 @@ class AdUpdateItem
 
     protected $Id = null;
 
-    protected $TextAd = null;
+//    Can be omit.
+//    protected $TextAd = null;
 
-    protected $DynamicTextAd = null;
+//    Can be omit.
+//    protected $DynamicTextAd = null;
 
-    protected $MobileAppAd = null;
+//    Can be omit.
+//    protected $MobileAppAd = null;
 
-    protected $TextImageAd = null;
+//    Can be omit.
+//    protected $TextImageAd = null;
 
-    protected $MobileAppImageAd = null;
+//    Can be omit.
+//    protected $MobileAppImageAd = null;
 
-    protected $TextAdBuilderAd = null;
+//    Can be omit.
+//    protected $TextAdBuilderAd = null;
 
-    protected $MobileAppAdBuilderAd = null;
+//    Can be omit.
+//    protected $MobileAppAdBuilderAd = null;
 
     /**
      * Creates a new instance of AdUpdateItem.
@@ -64,7 +71,7 @@ class AdUpdateItem
      */
     public function getTextAd()
     {
-        return $this->TextAd;
+        return isset($this->TextAd) ? $this->TextAd : null;
     }
 
     /**
@@ -87,7 +94,7 @@ class AdUpdateItem
      */
     public function getDynamicTextAd()
     {
-        return $this->DynamicTextAd;
+        return isset($this->DynamicTextAd) ? $this->DynamicTextAd : null;
     }
 
     /**
@@ -110,7 +117,7 @@ class AdUpdateItem
      */
     public function getMobileAppAd()
     {
-        return $this->MobileAppAd;
+        return isset($this->MobileAppAd) ? $this->MobileAppAd : null;
     }
 
     /**
@@ -133,7 +140,7 @@ class AdUpdateItem
      */
     public function getTextImageAd()
     {
-        return $this->TextImageAd;
+        return isset($this->TextImageAd) ? $this->TextImageAd : null;
     }
 
     /**
@@ -156,7 +163,7 @@ class AdUpdateItem
      */
     public function getMobileAppImageAd()
     {
-        return $this->MobileAppImageAd;
+        return isset($this->MobileAppImageAd) ? $this->MobileAppImageAd : null;
     }
 
     /**
@@ -179,7 +186,7 @@ class AdUpdateItem
      */
     public function getTextAdBuilderAd()
     {
-        return $this->TextAdBuilderAd;
+        return isset($this->TextAdBuilderAd) ? $this->TextAdBuilderAd : null;
     }
 
     /**
@@ -202,7 +209,7 @@ class AdUpdateItem
      */
     public function getMobileAppAdBuilderAd()
     {
-        return $this->MobileAppAdBuilderAd;
+        return isset($this->MobileAppAdBuilderAd) ? $this->MobileAppAdBuilderAd : null;
     }
 
     /**

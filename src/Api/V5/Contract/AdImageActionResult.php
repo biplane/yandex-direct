@@ -8,7 +8,8 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class AdImageActionResult extends ActionResultBase
 {
 
-    protected $AdImageHash = null;
+//    Can be omit.
+//    protected $AdImageHash = null;
 
     /**
      * Creates a new instance of AdImageActionResult.
@@ -27,7 +28,7 @@ class AdImageActionResult extends ActionResultBase
      */
     public function getAdImageHash()
     {
-        return $this->AdImageHash;
+        return isset($this->AdImageHash) ? $this->AdImageHash : null;
     }
 
     /**

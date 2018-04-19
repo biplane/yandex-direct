@@ -8,9 +8,11 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class AgencyClientsSelectionCriteria
 {
 
-    protected $Logins = null;
+//    Can be omit.
+//    protected $Logins = null;
 
-    protected $Archived = null;
+//    Can be omit.
+//    protected $Archived = null;
 
     /**
      * Creates a new instance of AgencyClientsSelectionCriteria.
@@ -29,7 +31,7 @@ class AgencyClientsSelectionCriteria
      */
     public function getLogins()
     {
-        return $this->Logins;
+        return isset($this->Logins) ? $this->Logins : null;
     }
 
     /**
@@ -53,7 +55,7 @@ class AgencyClientsSelectionCriteria
      */
     public function getArchived()
     {
-        return $this->Archived;
+        return isset($this->Archived) ? $this->Archived : null;
     }
 
     /**

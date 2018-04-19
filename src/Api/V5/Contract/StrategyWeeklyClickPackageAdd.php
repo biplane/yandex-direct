@@ -10,9 +10,11 @@ class StrategyWeeklyClickPackageAdd
 
     protected $ClicksPerWeek = null;
 
-    protected $AverageCpc = null;
+//    Can be omit.
+//    protected $AverageCpc = null;
 
-    protected $BidCeiling = null;
+//    Can be omit.
+//    protected $BidCeiling = null;
 
     /**
      * Creates a new instance of StrategyWeeklyClickPackageAdd.
@@ -54,7 +56,7 @@ class StrategyWeeklyClickPackageAdd
      */
     public function getAverageCpc()
     {
-        return $this->AverageCpc;
+        return isset($this->AverageCpc) ? $this->AverageCpc : null;
     }
 
     /**
@@ -77,7 +79,7 @@ class StrategyWeeklyClickPackageAdd
      */
     public function getBidCeiling()
     {
-        return $this->BidCeiling;
+        return isset($this->BidCeiling) ? $this->BidCeiling : null;
     }
 
     /**

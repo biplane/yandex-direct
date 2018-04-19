@@ -8,11 +8,14 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class KeywordBidBase
 {
 
-    protected $CampaignId = null;
+//    Can be omit.
+//    protected $CampaignId = null;
 
-    protected $AdGroupId = null;
+//    Can be omit.
+//    protected $AdGroupId = null;
 
-    protected $KeywordId = null;
+//    Can be omit.
+//    protected $KeywordId = null;
 
     /**
      * Creates a new instance of KeywordBidBase.
@@ -31,7 +34,7 @@ class KeywordBidBase
      */
     public function getCampaignId()
     {
-        return $this->CampaignId;
+        return isset($this->CampaignId) ? $this->CampaignId : null;
     }
 
     /**
@@ -54,7 +57,7 @@ class KeywordBidBase
      */
     public function getAdGroupId()
     {
-        return $this->AdGroupId;
+        return isset($this->AdGroupId) ? $this->AdGroupId : null;
     }
 
     /**
@@ -77,7 +80,7 @@ class KeywordBidBase
      */
     public function getKeywordId()
     {
-        return $this->KeywordId;
+        return isset($this->KeywordId) ? $this->KeywordId : null;
     }
 
     /**

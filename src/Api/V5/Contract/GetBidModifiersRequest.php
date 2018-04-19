@@ -12,15 +12,20 @@ class GetBidModifiersRequest extends GetRequestGeneral
 
     protected $FieldNames = [];
 
-    protected $MobileAdjustmentFieldNames = null;
+//    Can be omit.
+//    protected $MobileAdjustmentFieldNames = null;
 
-    protected $DemographicsAdjustmentFieldNames = null;
+//    Can be omit.
+//    protected $DemographicsAdjustmentFieldNames = null;
 
-    protected $RetargetingAdjustmentFieldNames = null;
+//    Can be omit.
+//    protected $RetargetingAdjustmentFieldNames = null;
 
-    protected $RegionalAdjustmentFieldNames = null;
+//    Can be omit.
+//    protected $RegionalAdjustmentFieldNames = null;
 
-    protected $VideoAdjustmentFieldNames = null;
+//    Can be omit.
+//    protected $VideoAdjustmentFieldNames = null;
 
     /**
      * Creates a new instance of GetBidModifiersRequest.
@@ -88,7 +93,7 @@ class GetBidModifiersRequest extends GetRequestGeneral
      */
     public function getMobileAdjustmentFieldNames()
     {
-        return $this->MobileAdjustmentFieldNames;
+        return isset($this->MobileAdjustmentFieldNames) ? $this->MobileAdjustmentFieldNames : null;
     }
 
     /**
@@ -113,7 +118,7 @@ class GetBidModifiersRequest extends GetRequestGeneral
      */
     public function getDemographicsAdjustmentFieldNames()
     {
-        return $this->DemographicsAdjustmentFieldNames;
+        return isset($this->DemographicsAdjustmentFieldNames) ? $this->DemographicsAdjustmentFieldNames : null;
     }
 
     /**
@@ -138,7 +143,7 @@ class GetBidModifiersRequest extends GetRequestGeneral
      */
     public function getRetargetingAdjustmentFieldNames()
     {
-        return $this->RetargetingAdjustmentFieldNames;
+        return isset($this->RetargetingAdjustmentFieldNames) ? $this->RetargetingAdjustmentFieldNames : null;
     }
 
     /**
@@ -163,7 +168,7 @@ class GetBidModifiersRequest extends GetRequestGeneral
      */
     public function getRegionalAdjustmentFieldNames()
     {
-        return $this->RegionalAdjustmentFieldNames;
+        return isset($this->RegionalAdjustmentFieldNames) ? $this->RegionalAdjustmentFieldNames : null;
     }
 
     /**
@@ -188,7 +193,7 @@ class GetBidModifiersRequest extends GetRequestGeneral
      */
     public function getVideoAdjustmentFieldNames()
     {
-        return $this->VideoAdjustmentFieldNames;
+        return isset($this->VideoAdjustmentFieldNames) ? $this->VideoAdjustmentFieldNames : null;
     }
 
     /**

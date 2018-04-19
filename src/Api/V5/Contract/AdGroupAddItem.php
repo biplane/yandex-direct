@@ -14,13 +14,17 @@ class AdGroupAddItem
 
     protected $RegionIds = [];
 
-    protected $NegativeKeywords = null;
+//    Can be omit.
+//    protected $NegativeKeywords = null;
 
-    protected $TrackingParams = null;
+//    Can be omit.
+//    protected $TrackingParams = null;
 
-    protected $MobileAppAdGroup = null;
+//    Can be omit.
+//    protected $MobileAppAdGroup = null;
 
-    protected $DynamicTextAdGroup = null;
+//    Can be omit.
+//    protected $DynamicTextAdGroup = null;
 
     /**
      * Creates a new instance of AdGroupAddItem.
@@ -108,7 +112,7 @@ class AdGroupAddItem
      */
     public function getNegativeKeywords()
     {
-        return $this->NegativeKeywords;
+        return isset($this->NegativeKeywords) ? $this->NegativeKeywords : null;
     }
 
     /**
@@ -131,7 +135,7 @@ class AdGroupAddItem
      */
     public function getTrackingParams()
     {
-        return $this->TrackingParams;
+        return isset($this->TrackingParams) ? $this->TrackingParams : null;
     }
 
     /**
@@ -154,7 +158,7 @@ class AdGroupAddItem
      */
     public function getMobileAppAdGroup()
     {
-        return $this->MobileAppAdGroup;
+        return isset($this->MobileAppAdGroup) ? $this->MobileAppAdGroup : null;
     }
 
     /**
@@ -177,7 +181,7 @@ class AdGroupAddItem
      */
     public function getDynamicTextAdGroup()
     {
-        return $this->DynamicTextAdGroup;
+        return isset($this->DynamicTextAdGroup) ? $this->DynamicTextAdGroup : null;
     }
 
     /**

@@ -8,19 +8,26 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class AdImageGetItem
 {
 
-    protected $AdImageHash = null;
+//    Can be omit.
+//    protected $AdImageHash = null;
 
-    protected $Name = null;
+//    Can be omit.
+//    protected $Name = null;
 
-    protected $Associated = null;
+//    Can be omit.
+//    protected $Associated = null;
 
-    protected $Type = null;
+//    Can be omit.
+//    protected $Type = null;
 
-    protected $Subtype = null;
+//    Can be omit.
+//    protected $Subtype = null;
 
-    protected $OriginalUrl = null;
+//    Can be omit.
+//    protected $OriginalUrl = null;
 
-    protected $PreviewUrl = null;
+//    Can be omit.
+//    protected $PreviewUrl = null;
 
     /**
      * Creates a new instance of AdImageGetItem.
@@ -39,7 +46,7 @@ class AdImageGetItem
      */
     public function getAdImageHash()
     {
-        return $this->AdImageHash;
+        return isset($this->AdImageHash) ? $this->AdImageHash : null;
     }
 
     /**
@@ -62,7 +69,7 @@ class AdImageGetItem
      */
     public function getName()
     {
-        return $this->Name;
+        return isset($this->Name) ? $this->Name : null;
     }
 
     /**
@@ -86,7 +93,7 @@ class AdImageGetItem
      */
     public function getAssociated()
     {
-        return $this->Associated;
+        return isset($this->Associated) ? $this->Associated : null;
     }
 
     /**
@@ -111,7 +118,7 @@ class AdImageGetItem
      */
     public function getType()
     {
-        return $this->Type;
+        return isset($this->Type) ? $this->Type : null;
     }
 
     /**
@@ -136,7 +143,7 @@ class AdImageGetItem
      */
     public function getSubtype()
     {
-        return $this->Subtype;
+        return isset($this->Subtype) ? $this->Subtype : null;
     }
 
     /**
@@ -160,7 +167,7 @@ class AdImageGetItem
      */
     public function getOriginalUrl()
     {
-        return $this->OriginalUrl;
+        return isset($this->OriginalUrl) ? $this->OriginalUrl : null;
     }
 
     /**
@@ -183,7 +190,7 @@ class AdImageGetItem
      */
     public function getPreviewUrl()
     {
-        return $this->PreviewUrl;
+        return isset($this->PreviewUrl) ? $this->PreviewUrl : null;
     }
 
     /**

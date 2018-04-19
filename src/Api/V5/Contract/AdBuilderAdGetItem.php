@@ -10,9 +10,11 @@ class AdBuilderAdGetItem
 
     protected $CreativeId = null;
 
-    protected $ThumbnailUrl = null;
+//    Can be omit.
+//    protected $ThumbnailUrl = null;
 
-    protected $PreviewUrl = null;
+//    Can be omit.
+//    protected $PreviewUrl = null;
 
     /**
      * Creates a new instance of AdBuilderAdGetItem.
@@ -54,7 +56,7 @@ class AdBuilderAdGetItem
      */
     public function getThumbnailUrl()
     {
-        return $this->ThumbnailUrl;
+        return isset($this->ThumbnailUrl) ? $this->ThumbnailUrl : null;
     }
 
     /**
@@ -77,7 +79,7 @@ class AdBuilderAdGetItem
      */
     public function getPreviewUrl()
     {
-        return $this->PreviewUrl;
+        return isset($this->PreviewUrl) ? $this->PreviewUrl : null;
     }
 
     /**

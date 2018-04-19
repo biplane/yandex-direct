@@ -8,9 +8,11 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class AdExtensionGetItem extends AdExtensionBase
 {
 
-    protected $Id = null;
+//    Can be omit.
+//    protected $Id = null;
 
-    protected $Associated = null;
+//    Can be omit.
+//    protected $Associated = null;
 
     /**
      * Creates a new instance of AdExtensionGetItem.
@@ -29,7 +31,7 @@ class AdExtensionGetItem extends AdExtensionBase
      */
     public function getId()
     {
-        return $this->Id;
+        return isset($this->Id) ? $this->Id : null;
     }
 
     /**
@@ -53,7 +55,7 @@ class AdExtensionGetItem extends AdExtensionBase
      */
     public function getAssociated()
     {
-        return $this->Associated;
+        return isset($this->Associated) ? $this->Associated : null;
     }
 
     /**

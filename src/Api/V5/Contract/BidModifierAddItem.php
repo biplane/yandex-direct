@@ -8,15 +8,20 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class BidModifierAddItem extends BidModifierAddBase
 {
 
-    protected $MobileAdjustment = null;
+//    Can be omit.
+//    protected $MobileAdjustment = null;
 
-    protected $DemographicsAdjustments = null;
+//    Can be omit.
+//    protected $DemographicsAdjustments = null;
 
-    protected $RetargetingAdjustments = null;
+//    Can be omit.
+//    protected $RetargetingAdjustments = null;
 
-    protected $RegionalAdjustments = null;
+//    Can be omit.
+//    protected $RegionalAdjustments = null;
 
-    protected $VideoAdjustment = null;
+//    Can be omit.
+//    protected $VideoAdjustment = null;
 
     /**
      * Creates a new instance of BidModifierAddItem.
@@ -35,7 +40,7 @@ class BidModifierAddItem extends BidModifierAddBase
      */
     public function getMobileAdjustment()
     {
-        return $this->MobileAdjustment;
+        return isset($this->MobileAdjustment) ? $this->MobileAdjustment : null;
     }
 
     /**
@@ -58,7 +63,7 @@ class BidModifierAddItem extends BidModifierAddBase
      */
     public function getDemographicsAdjustments()
     {
-        return $this->DemographicsAdjustments;
+        return isset($this->DemographicsAdjustments) ? $this->DemographicsAdjustments : null;
     }
 
     /**
@@ -81,7 +86,7 @@ class BidModifierAddItem extends BidModifierAddBase
      */
     public function getRetargetingAdjustments()
     {
-        return $this->RetargetingAdjustments;
+        return isset($this->RetargetingAdjustments) ? $this->RetargetingAdjustments : null;
     }
 
     /**
@@ -104,7 +109,7 @@ class BidModifierAddItem extends BidModifierAddBase
      */
     public function getRegionalAdjustments()
     {
-        return $this->RegionalAdjustments;
+        return isset($this->RegionalAdjustments) ? $this->RegionalAdjustments : null;
     }
 
     /**
@@ -127,7 +132,7 @@ class BidModifierAddItem extends BidModifierAddBase
      */
     public function getVideoAdjustment()
     {
-        return $this->VideoAdjustment;
+        return isset($this->VideoAdjustment) ? $this->VideoAdjustment : null;
     }
 
     /**

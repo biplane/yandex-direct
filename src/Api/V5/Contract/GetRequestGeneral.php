@@ -8,7 +8,8 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class GetRequestGeneral
 {
 
-    protected $Page = null;
+//    Can be omit.
+//    protected $Page = null;
 
     /**
      * Creates a new instance of GetRequestGeneral.
@@ -27,7 +28,7 @@ class GetRequestGeneral
      */
     public function getPage()
     {
-        return $this->Page;
+        return isset($this->Page) ? $this->Page : null;
     }
 
     /**

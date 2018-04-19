@@ -8,7 +8,8 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class DynamicTextAdUpdate extends TextAdUpdateBase
 {
 
-    protected $Text = null;
+//    Can be omit.
+//    protected $Text = null;
 
     /**
      * Creates a new instance of DynamicTextAdUpdate.
@@ -27,7 +28,7 @@ class DynamicTextAdUpdate extends TextAdUpdateBase
      */
     public function getText()
     {
-        return $this->Text;
+        return isset($this->Text) ? $this->Text : null;
     }
 
     /**

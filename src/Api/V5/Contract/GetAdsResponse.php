@@ -8,7 +8,8 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class GetAdsResponse extends GetResponseGeneral
 {
 
-    protected $Ads = null;
+//    Can be omit.
+//    protected $Ads = null;
 
     /**
      * Creates a new instance of GetAdsResponse.
@@ -27,7 +28,7 @@ class GetAdsResponse extends GetResponseGeneral
      */
     public function getAds()
     {
-        return $this->Ads;
+        return isset($this->Ads) ? $this->Ads : null;
     }
 
     /**

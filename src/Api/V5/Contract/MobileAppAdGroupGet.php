@@ -8,19 +8,26 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class MobileAppAdGroupGet
 {
 
-    protected $StoreUrl = null;
+//    Can be omit.
+//    protected $StoreUrl = null;
 
-    protected $TargetDeviceType = null;
+//    Can be omit.
+//    protected $TargetDeviceType = null;
 
-    protected $TargetCarrier = null;
+//    Can be omit.
+//    protected $TargetCarrier = null;
 
-    protected $TargetOperatingSystemVersion = null;
+//    Can be omit.
+//    protected $TargetOperatingSystemVersion = null;
 
-    protected $AppIconModeration = null;
+//    Can be omit.
+//    protected $AppIconModeration = null;
 
-    protected $AppOperatingSystemType = null;
+//    Can be omit.
+//    protected $AppOperatingSystemType = null;
 
-    protected $AppAvailabilityStatus = null;
+//    Can be omit.
+//    protected $AppAvailabilityStatus = null;
 
     /**
      * Creates a new instance of MobileAppAdGroupGet.
@@ -39,7 +46,7 @@ class MobileAppAdGroupGet
      */
     public function getStoreUrl()
     {
-        return $this->StoreUrl;
+        return isset($this->StoreUrl) ? $this->StoreUrl : null;
     }
 
     /**
@@ -63,7 +70,7 @@ class MobileAppAdGroupGet
      */
     public function getTargetDeviceType()
     {
-        return $this->TargetDeviceType;
+        return isset($this->TargetDeviceType) ? $this->TargetDeviceType : null;
     }
 
     /**
@@ -88,7 +95,7 @@ class MobileAppAdGroupGet
      */
     public function getTargetCarrier()
     {
-        return $this->TargetCarrier;
+        return isset($this->TargetCarrier) ? $this->TargetCarrier : null;
     }
 
     /**
@@ -112,7 +119,7 @@ class MobileAppAdGroupGet
      */
     public function getTargetOperatingSystemVersion()
     {
-        return $this->TargetOperatingSystemVersion;
+        return isset($this->TargetOperatingSystemVersion) ? $this->TargetOperatingSystemVersion : null;
     }
 
     /**
@@ -135,7 +142,7 @@ class MobileAppAdGroupGet
      */
     public function getAppIconModeration()
     {
-        return $this->AppIconModeration;
+        return isset($this->AppIconModeration) ? $this->AppIconModeration : null;
     }
 
     /**
@@ -159,7 +166,7 @@ class MobileAppAdGroupGet
      */
     public function getAppOperatingSystemType()
     {
-        return $this->AppOperatingSystemType;
+        return isset($this->AppOperatingSystemType) ? $this->AppOperatingSystemType : null;
     }
 
     /**
@@ -184,7 +191,7 @@ class MobileAppAdGroupGet
      */
     public function getAppAvailabilityStatus()
     {
-        return $this->AppAvailabilityStatus;
+        return isset($this->AppAvailabilityStatus) ? $this->AppAvailabilityStatus : null;
     }
 
     /**

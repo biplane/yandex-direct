@@ -8,49 +8,71 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class CampaignGetItem extends CampaignBase
 {
 
-    protected $Id = null;
+//    Can be omit.
+//    protected $Id = null;
 
-    protected $Name = null;
+//    Can be omit.
+//    protected $Name = null;
 
-    protected $StartDate = null;
+//    Can be omit.
+//    protected $StartDate = null;
 
-    protected $Type = null;
+//    Can be omit.
+//    protected $Type = null;
 
-    protected $Status = null;
+//    Can be omit.
+//    protected $Status = null;
 
-    protected $State = null;
+//    Can be omit.
+//    protected $State = null;
 
-    protected $StatusPayment = null;
+//    Can be omit.
+//    protected $StatusPayment = null;
 
-    protected $StatusClarification = null;
+//    Can be omit.
+//    protected $StatusClarification = null;
 
-    protected $SourceId = null;
+//    Can be omit.
+//    protected $SourceId = null;
 
-    protected $Statistics = null;
+//    Can be omit.
+//    protected $Statistics = null;
 
-    protected $Currency = null;
+//    Can be omit.
+//    protected $Currency = null;
 
-    protected $Funds = null;
+//    Can be omit.
+//    protected $Funds = null;
 
-    protected $RepresentedBy = null;
+//    Can be omit.
+//    protected $RepresentedBy = null;
 
-    protected $DailyBudget = null;
+//    Can be omit.
+//    protected $DailyBudget = null;
 
-    protected $EndDate = null;
+//    Can be omit.
+//    protected $EndDate = null;
 
-    protected $NegativeKeywords = null;
+//    Can be omit.
+//    protected $NegativeKeywords = null;
 
-    protected $BlockedIps = null;
+//    Can be omit.
+//    protected $BlockedIps = null;
 
-    protected $ExcludedSites = null;
+//    Can be omit.
+//    protected $ExcludedSites = null;
 
-    protected $TextCampaign = null;
+//    Can be omit.
+//    protected $TextCampaign = null;
 
-    protected $MobileAppCampaign = null;
+//    Can be omit.
+//    protected $MobileAppCampaign = null;
 
-    protected $DynamicTextCampaign = null;
+//    Can be omit.
+//    protected $DynamicTextCampaign = null;
 
-    protected $TimeTargeting = null;
+//    Can be omit.
+//    protected $TimeTargeting = null;
 
     /**
      * Creates a new instance of CampaignGetItem.
@@ -69,7 +91,7 @@ class CampaignGetItem extends CampaignBase
      */
     public function getId()
     {
-        return $this->Id;
+        return isset($this->Id) ? $this->Id : null;
     }
 
     /**
@@ -92,7 +114,7 @@ class CampaignGetItem extends CampaignBase
      */
     public function getName()
     {
-        return $this->Name;
+        return isset($this->Name) ? $this->Name : null;
     }
 
     /**
@@ -115,7 +137,7 @@ class CampaignGetItem extends CampaignBase
      */
     public function getStartDate()
     {
-        return $this->StartDate;
+        return isset($this->StartDate) ? $this->StartDate : null;
     }
 
     /**
@@ -139,7 +161,7 @@ class CampaignGetItem extends CampaignBase
      */
     public function getType()
     {
-        return $this->Type;
+        return isset($this->Type) ? $this->Type : null;
     }
 
     /**
@@ -164,7 +186,7 @@ class CampaignGetItem extends CampaignBase
      */
     public function getStatus()
     {
-        return $this->Status;
+        return isset($this->Status) ? $this->Status : null;
     }
 
     /**
@@ -189,7 +211,7 @@ class CampaignGetItem extends CampaignBase
      */
     public function getState()
     {
-        return $this->State;
+        return isset($this->State) ? $this->State : null;
     }
 
     /**
@@ -214,7 +236,7 @@ class CampaignGetItem extends CampaignBase
      */
     public function getStatusPayment()
     {
-        return $this->StatusPayment;
+        return isset($this->StatusPayment) ? $this->StatusPayment : null;
     }
 
     /**
@@ -238,7 +260,7 @@ class CampaignGetItem extends CampaignBase
      */
     public function getStatusClarification()
     {
-        return $this->StatusClarification;
+        return isset($this->StatusClarification) ? $this->StatusClarification : null;
     }
 
     /**
@@ -261,7 +283,7 @@ class CampaignGetItem extends CampaignBase
      */
     public function getSourceId()
     {
-        return $this->SourceId;
+        return isset($this->SourceId) ? $this->SourceId : null;
     }
 
     /**
@@ -284,7 +306,7 @@ class CampaignGetItem extends CampaignBase
      */
     public function getStatistics()
     {
-        return $this->Statistics;
+        return isset($this->Statistics) ? $this->Statistics : null;
     }
 
     /**
@@ -308,7 +330,7 @@ class CampaignGetItem extends CampaignBase
      */
     public function getCurrency()
     {
-        return $this->Currency;
+        return isset($this->Currency) ? $this->Currency : null;
     }
 
     /**
@@ -332,7 +354,7 @@ class CampaignGetItem extends CampaignBase
      */
     public function getFunds()
     {
-        return $this->Funds;
+        return isset($this->Funds) ? $this->Funds : null;
     }
 
     /**
@@ -355,7 +377,7 @@ class CampaignGetItem extends CampaignBase
      */
     public function getRepresentedBy()
     {
-        return $this->RepresentedBy;
+        return isset($this->RepresentedBy) ? $this->RepresentedBy : null;
     }
 
     /**
@@ -378,7 +400,7 @@ class CampaignGetItem extends CampaignBase
      */
     public function getDailyBudget()
     {
-        return $this->DailyBudget;
+        return isset($this->DailyBudget) ? $this->DailyBudget : null;
     }
 
     /**
@@ -401,7 +423,7 @@ class CampaignGetItem extends CampaignBase
      */
     public function getEndDate()
     {
-        return $this->EndDate;
+        return isset($this->EndDate) ? $this->EndDate : null;
     }
 
     /**
@@ -424,7 +446,7 @@ class CampaignGetItem extends CampaignBase
      */
     public function getNegativeKeywords()
     {
-        return $this->NegativeKeywords;
+        return isset($this->NegativeKeywords) ? $this->NegativeKeywords : null;
     }
 
     /**
@@ -447,7 +469,7 @@ class CampaignGetItem extends CampaignBase
      */
     public function getBlockedIps()
     {
-        return $this->BlockedIps;
+        return isset($this->BlockedIps) ? $this->BlockedIps : null;
     }
 
     /**
@@ -470,7 +492,7 @@ class CampaignGetItem extends CampaignBase
      */
     public function getExcludedSites()
     {
-        return $this->ExcludedSites;
+        return isset($this->ExcludedSites) ? $this->ExcludedSites : null;
     }
 
     /**
@@ -493,7 +515,7 @@ class CampaignGetItem extends CampaignBase
      */
     public function getTextCampaign()
     {
-        return $this->TextCampaign;
+        return isset($this->TextCampaign) ? $this->TextCampaign : null;
     }
 
     /**
@@ -516,7 +538,7 @@ class CampaignGetItem extends CampaignBase
      */
     public function getMobileAppCampaign()
     {
-        return $this->MobileAppCampaign;
+        return isset($this->MobileAppCampaign) ? $this->MobileAppCampaign : null;
     }
 
     /**
@@ -539,7 +561,7 @@ class CampaignGetItem extends CampaignBase
      */
     public function getDynamicTextCampaign()
     {
-        return $this->DynamicTextCampaign;
+        return isset($this->DynamicTextCampaign) ? $this->DynamicTextCampaign : null;
     }
 
     /**
@@ -562,7 +584,7 @@ class CampaignGetItem extends CampaignBase
      */
     public function getTimeTargeting()
     {
-        return $this->TimeTargeting;
+        return isset($this->TimeTargeting) ? $this->TimeTargeting : null;
     }
 
     /**

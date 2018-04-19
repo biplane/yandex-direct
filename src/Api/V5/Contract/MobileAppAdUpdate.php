@@ -8,9 +8,11 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class MobileAppAdUpdate extends MobileAppAdBase
 {
 
-    protected $Features = null;
+//    Can be omit.
+//    protected $Features = null;
 
-    protected $AgeLabel = null;
+//    Can be omit.
+//    protected $AgeLabel = null;
 
     /**
      * Creates a new instance of MobileAppAdUpdate.
@@ -29,7 +31,7 @@ class MobileAppAdUpdate extends MobileAppAdBase
      */
     public function getFeatures()
     {
-        return $this->Features;
+        return isset($this->Features) ? $this->Features : null;
     }
 
     /**
@@ -53,7 +55,7 @@ class MobileAppAdUpdate extends MobileAppAdBase
      */
     public function getAgeLabel()
     {
-        return $this->AgeLabel;
+        return isset($this->AgeLabel) ? $this->AgeLabel : null;
     }
 
     /**

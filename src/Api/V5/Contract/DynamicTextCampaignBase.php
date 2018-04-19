@@ -8,7 +8,8 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class DynamicTextCampaignBase
 {
 
-    protected $CounterIds = null;
+//    Can be omit.
+//    protected $CounterIds = null;
 
     /**
      * Creates a new instance of DynamicTextCampaignBase.
@@ -27,7 +28,7 @@ class DynamicTextCampaignBase
      */
     public function getCounterIds()
     {
-        return $this->CounterIds;
+        return isset($this->CounterIds) ? $this->CounterIds : null;
     }
 
     /**

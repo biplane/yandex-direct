@@ -10,11 +10,14 @@ class KeywordUpdateItem
 
     protected $Id = null;
 
-    protected $Keyword = null;
+//    Can be omit.
+//    protected $Keyword = null;
 
-    protected $UserParam1 = null;
+//    Can be omit.
+//    protected $UserParam1 = null;
 
-    protected $UserParam2 = null;
+//    Can be omit.
+//    protected $UserParam2 = null;
 
     /**
      * Creates a new instance of KeywordUpdateItem.
@@ -56,7 +59,7 @@ class KeywordUpdateItem
      */
     public function getKeyword()
     {
-        return $this->Keyword;
+        return isset($this->Keyword) ? $this->Keyword : null;
     }
 
     /**
@@ -79,7 +82,7 @@ class KeywordUpdateItem
      */
     public function getUserParam1()
     {
-        return $this->UserParam1;
+        return isset($this->UserParam1) ? $this->UserParam1 : null;
     }
 
     /**
@@ -102,7 +105,7 @@ class KeywordUpdateItem
      */
     public function getUserParam2()
     {
-        return $this->UserParam2;
+        return isset($this->UserParam2) ? $this->UserParam2 : null;
     }
 
     /**

@@ -8,7 +8,8 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class MobileAppAdBuilderAdAdd extends AdBuilderAdAddBase
 {
 
-    protected $TrackingUrl = null;
+//    Can be omit.
+//    protected $TrackingUrl = null;
 
     /**
      * Creates a new instance of MobileAppAdBuilderAdAdd.
@@ -27,7 +28,7 @@ class MobileAppAdBuilderAdAdd extends AdBuilderAdAddBase
      */
     public function getTrackingUrl()
     {
-        return $this->TrackingUrl;
+        return isset($this->TrackingUrl) ? $this->TrackingUrl : null;
     }
 
     /**

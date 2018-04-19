@@ -8,9 +8,11 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class TextCampaignBase
 {
 
-    protected $CounterIds = null;
+//    Can be omit.
+//    protected $CounterIds = null;
 
-    protected $RelevantKeywords = null;
+//    Can be omit.
+//    protected $RelevantKeywords = null;
 
     /**
      * Creates a new instance of TextCampaignBase.
@@ -29,7 +31,7 @@ class TextCampaignBase
      */
     public function getCounterIds()
     {
-        return $this->CounterIds;
+        return isset($this->CounterIds) ? $this->CounterIds : null;
     }
 
     /**
@@ -52,7 +54,7 @@ class TextCampaignBase
      */
     public function getRelevantKeywords()
     {
-        return $this->RelevantKeywords;
+        return isset($this->RelevantKeywords) ? $this->RelevantKeywords : null;
     }
 
     /**

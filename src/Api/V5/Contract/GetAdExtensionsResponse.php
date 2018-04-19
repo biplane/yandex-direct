@@ -8,7 +8,8 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class GetAdExtensionsResponse extends GetResponseGeneral
 {
 
-    protected $AdExtensions = null;
+//    Can be omit.
+//    protected $AdExtensions = null;
 
     /**
      * Creates a new instance of GetAdExtensionsResponse.
@@ -27,7 +28,7 @@ class GetAdExtensionsResponse extends GetResponseGeneral
      */
     public function getAdExtensions()
     {
-        return $this->AdExtensions;
+        return isset($this->AdExtensions) ? $this->AdExtensions : null;
     }
 
     /**

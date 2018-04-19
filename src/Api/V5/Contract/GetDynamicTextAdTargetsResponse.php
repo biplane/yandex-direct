@@ -8,7 +8,8 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class GetDynamicTextAdTargetsResponse extends GetResponseGeneral
 {
 
-    protected $Webpages = null;
+//    Can be omit.
+//    protected $Webpages = null;
 
     /**
      * Creates a new instance of GetDynamicTextAdTargetsResponse.
@@ -27,7 +28,7 @@ class GetDynamicTextAdTargetsResponse extends GetResponseGeneral
      */
     public function getWebpages()
     {
-        return $this->Webpages;
+        return isset($this->Webpages) ? $this->Webpages : null;
     }
 
     /**

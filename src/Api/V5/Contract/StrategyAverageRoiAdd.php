@@ -14,11 +14,14 @@ class StrategyAverageRoiAdd
 
     protected $GoalId = null;
 
-    protected $WeeklySpendLimit = null;
+//    Can be omit.
+//    protected $WeeklySpendLimit = null;
 
-    protected $BidCeiling = null;
+//    Can be omit.
+//    protected $BidCeiling = null;
 
-    protected $Profitability = null;
+//    Can be omit.
+//    protected $Profitability = null;
 
     /**
      * Creates a new instance of StrategyAverageRoiAdd.
@@ -106,7 +109,7 @@ class StrategyAverageRoiAdd
      */
     public function getWeeklySpendLimit()
     {
-        return $this->WeeklySpendLimit;
+        return isset($this->WeeklySpendLimit) ? $this->WeeklySpendLimit : null;
     }
 
     /**
@@ -129,7 +132,7 @@ class StrategyAverageRoiAdd
      */
     public function getBidCeiling()
     {
-        return $this->BidCeiling;
+        return isset($this->BidCeiling) ? $this->BidCeiling : null;
     }
 
     /**
@@ -152,7 +155,7 @@ class StrategyAverageRoiAdd
      */
     public function getProfitability()
     {
-        return $this->Profitability;
+        return isset($this->Profitability) ? $this->Profitability : null;
     }
 
     /**

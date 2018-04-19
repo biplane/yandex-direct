@@ -8,9 +8,11 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class StrategyNetworkDefaultAdd
 {
 
-    protected $LimitPercent = null;
+//    Can be omit.
+//    protected $LimitPercent = null;
 
-    protected $BidPercent = null;
+//    Can be omit.
+//    protected $BidPercent = null;
 
     /**
      * Creates a new instance of StrategyNetworkDefaultAdd.
@@ -29,7 +31,7 @@ class StrategyNetworkDefaultAdd
      */
     public function getLimitPercent()
     {
-        return $this->LimitPercent;
+        return isset($this->LimitPercent) ? $this->LimitPercent : null;
     }
 
     /**
@@ -52,7 +54,7 @@ class StrategyNetworkDefaultAdd
      */
     public function getBidPercent()
     {
-        return $this->BidPercent;
+        return isset($this->BidPercent) ? $this->BidPercent : null;
     }
 
     /**

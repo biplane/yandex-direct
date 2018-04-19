@@ -8,11 +8,14 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class CheckDictionariesResponse
 {
 
-    protected $TimeZonesChanged = null;
+//    Can be omit.
+//    protected $TimeZonesChanged = null;
 
-    protected $RegionsChanged = null;
+//    Can be omit.
+//    protected $RegionsChanged = null;
 
-    protected $InterestsChanged = null;
+//    Can be omit.
+//    protected $InterestsChanged = null;
 
     protected $Timestamp = null;
 
@@ -34,7 +37,7 @@ class CheckDictionariesResponse
      */
     public function getTimeZonesChanged()
     {
-        return $this->TimeZonesChanged;
+        return isset($this->TimeZonesChanged) ? $this->TimeZonesChanged : null;
     }
 
     /**
@@ -59,7 +62,7 @@ class CheckDictionariesResponse
      */
     public function getRegionsChanged()
     {
-        return $this->RegionsChanged;
+        return isset($this->RegionsChanged) ? $this->RegionsChanged : null;
     }
 
     /**
@@ -84,7 +87,7 @@ class CheckDictionariesResponse
      */
     public function getInterestsChanged()
     {
-        return $this->InterestsChanged;
+        return isset($this->InterestsChanged) ? $this->InterestsChanged : null;
     }
 
     /**

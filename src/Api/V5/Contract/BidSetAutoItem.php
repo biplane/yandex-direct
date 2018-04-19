@@ -8,21 +8,29 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class BidSetAutoItem
 {
 
-    protected $CampaignId = null;
+//    Can be omit.
+//    protected $CampaignId = null;
 
-    protected $AdGroupId = null;
+//    Can be omit.
+//    protected $AdGroupId = null;
 
-    protected $KeywordId = null;
+//    Can be omit.
+//    protected $KeywordId = null;
 
-    protected $MaxBid = null;
+//    Can be omit.
+//    protected $MaxBid = null;
 
-    protected $Position = null;
+//    Can be omit.
+//    protected $Position = null;
 
-    protected $IncreasePercent = null;
+//    Can be omit.
+//    protected $IncreasePercent = null;
 
-    protected $CalculateBy = null;
+//    Can be omit.
+//    protected $CalculateBy = null;
 
-    protected $ContextCoverage = null;
+//    Can be omit.
+//    protected $ContextCoverage = null;
 
     protected $Scope = [];
 
@@ -43,7 +51,7 @@ class BidSetAutoItem
      */
     public function getCampaignId()
     {
-        return $this->CampaignId;
+        return isset($this->CampaignId) ? $this->CampaignId : null;
     }
 
     /**
@@ -66,7 +74,7 @@ class BidSetAutoItem
      */
     public function getAdGroupId()
     {
-        return $this->AdGroupId;
+        return isset($this->AdGroupId) ? $this->AdGroupId : null;
     }
 
     /**
@@ -89,7 +97,7 @@ class BidSetAutoItem
      */
     public function getKeywordId()
     {
-        return $this->KeywordId;
+        return isset($this->KeywordId) ? $this->KeywordId : null;
     }
 
     /**
@@ -112,7 +120,7 @@ class BidSetAutoItem
      */
     public function getMaxBid()
     {
-        return $this->MaxBid;
+        return isset($this->MaxBid) ? $this->MaxBid : null;
     }
 
     /**
@@ -136,7 +144,7 @@ class BidSetAutoItem
      */
     public function getPosition()
     {
-        return $this->Position;
+        return isset($this->Position) ? $this->Position : null;
     }
 
     /**
@@ -160,7 +168,7 @@ class BidSetAutoItem
      */
     public function getIncreasePercent()
     {
-        return $this->IncreasePercent;
+        return isset($this->IncreasePercent) ? $this->IncreasePercent : null;
     }
 
     /**
@@ -184,7 +192,7 @@ class BidSetAutoItem
      */
     public function getCalculateBy()
     {
-        return $this->CalculateBy;
+        return isset($this->CalculateBy) ? $this->CalculateBy : null;
     }
 
     /**
@@ -208,7 +216,7 @@ class BidSetAutoItem
      */
     public function getContextCoverage()
     {
-        return $this->ContextCoverage;
+        return isset($this->ContextCoverage) ? $this->ContextCoverage : null;
     }
 
     /**

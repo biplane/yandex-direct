@@ -8,25 +8,35 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class BidModifierGetItem
 {
 
-    protected $CampaignId = null;
+//    Can be omit.
+//    protected $CampaignId = null;
 
-    protected $AdGroupId = null;
+//    Can be omit.
+//    protected $AdGroupId = null;
 
-    protected $Id = null;
+//    Can be omit.
+//    protected $Id = null;
 
-    protected $Level = null;
+//    Can be omit.
+//    protected $Level = null;
 
-    protected $Type = null;
+//    Can be omit.
+//    protected $Type = null;
 
-    protected $MobileAdjustment = null;
+//    Can be omit.
+//    protected $MobileAdjustment = null;
 
-    protected $DemographicsAdjustment = null;
+//    Can be omit.
+//    protected $DemographicsAdjustment = null;
 
-    protected $RetargetingAdjustment = null;
+//    Can be omit.
+//    protected $RetargetingAdjustment = null;
 
-    protected $RegionalAdjustment = null;
+//    Can be omit.
+//    protected $RegionalAdjustment = null;
 
-    protected $VideoAdjustment = null;
+//    Can be omit.
+//    protected $VideoAdjustment = null;
 
     /**
      * Creates a new instance of BidModifierGetItem.
@@ -45,7 +55,7 @@ class BidModifierGetItem
      */
     public function getCampaignId()
     {
-        return $this->CampaignId;
+        return isset($this->CampaignId) ? $this->CampaignId : null;
     }
 
     /**
@@ -68,7 +78,7 @@ class BidModifierGetItem
      */
     public function getAdGroupId()
     {
-        return $this->AdGroupId;
+        return isset($this->AdGroupId) ? $this->AdGroupId : null;
     }
 
     /**
@@ -91,7 +101,7 @@ class BidModifierGetItem
      */
     public function getId()
     {
-        return $this->Id;
+        return isset($this->Id) ? $this->Id : null;
     }
 
     /**
@@ -115,7 +125,7 @@ class BidModifierGetItem
      */
     public function getLevel()
     {
-        return $this->Level;
+        return isset($this->Level) ? $this->Level : null;
     }
 
     /**
@@ -140,7 +150,7 @@ class BidModifierGetItem
      */
     public function getType()
     {
-        return $this->Type;
+        return isset($this->Type) ? $this->Type : null;
     }
 
     /**
@@ -164,7 +174,7 @@ class BidModifierGetItem
      */
     public function getMobileAdjustment()
     {
-        return $this->MobileAdjustment;
+        return isset($this->MobileAdjustment) ? $this->MobileAdjustment : null;
     }
 
     /**
@@ -187,7 +197,7 @@ class BidModifierGetItem
      */
     public function getDemographicsAdjustment()
     {
-        return $this->DemographicsAdjustment;
+        return isset($this->DemographicsAdjustment) ? $this->DemographicsAdjustment : null;
     }
 
     /**
@@ -210,7 +220,7 @@ class BidModifierGetItem
      */
     public function getRetargetingAdjustment()
     {
-        return $this->RetargetingAdjustment;
+        return isset($this->RetargetingAdjustment) ? $this->RetargetingAdjustment : null;
     }
 
     /**
@@ -233,7 +243,7 @@ class BidModifierGetItem
      */
     public function getRegionalAdjustment()
     {
-        return $this->RegionalAdjustment;
+        return isset($this->RegionalAdjustment) ? $this->RegionalAdjustment : null;
     }
 
     /**
@@ -256,7 +266,7 @@ class BidModifierGetItem
      */
     public function getVideoAdjustment()
     {
-        return $this->VideoAdjustment;
+        return isset($this->VideoAdjustment) ? $this->VideoAdjustment : null;
     }
 
     /**

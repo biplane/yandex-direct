@@ -8,7 +8,8 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class GrantGetItem extends GrantItem
 {
 
-    protected $Agency = null;
+//    Can be omit.
+//    protected $Agency = null;
 
     /**
      * Creates a new instance of GrantGetItem.
@@ -27,7 +28,7 @@ class GrantGetItem extends GrantItem
      */
     public function getAgency()
     {
-        return $this->Agency;
+        return isset($this->Agency) ? $this->Agency : null;
     }
 
     /**

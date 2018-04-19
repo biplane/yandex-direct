@@ -8,7 +8,8 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class TimeTargetingAdd extends TimeTargetingBase
 {
 
-    protected $HolidaysSchedule = null;
+//    Can be omit.
+//    protected $HolidaysSchedule = null;
 
     /**
      * Creates a new instance of TimeTargetingAdd.
@@ -27,7 +28,7 @@ class TimeTargetingAdd extends TimeTargetingBase
      */
     public function getHolidaysSchedule()
     {
-        return $this->HolidaysSchedule;
+        return isset($this->HolidaysSchedule) ? $this->HolidaysSchedule : null;
     }
 
     /**

@@ -8,7 +8,8 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class MultiIdsActionResult extends ActionResultBase
 {
 
-    protected $Ids = null;
+//    Can be omit.
+//    protected $Ids = null;
 
     /**
      * Creates a new instance of MultiIdsActionResult.
@@ -27,7 +28,7 @@ class MultiIdsActionResult extends ActionResultBase
      */
     public function getIds()
     {
-        return $this->Ids;
+        return isset($this->Ids) ? $this->Ids : null;
     }
 
     /**

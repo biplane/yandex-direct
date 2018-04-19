@@ -8,7 +8,8 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class MobileAppImageAdGet extends ImageAdGetBase
 {
 
-    protected $TrackingUrl = null;
+//    Can be omit.
+//    protected $TrackingUrl = null;
 
     /**
      * Creates a new instance of MobileAppImageAdGet.
@@ -27,7 +28,7 @@ class MobileAppImageAdGet extends ImageAdGetBase
      */
     public function getTrackingUrl()
     {
-        return $this->TrackingUrl;
+        return isset($this->TrackingUrl) ? $this->TrackingUrl : null;
     }
 
     /**

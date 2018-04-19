@@ -8,13 +8,17 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class BidsSelectionCriteria
 {
 
-    protected $CampaignIds = null;
+//    Can be omit.
+//    protected $CampaignIds = null;
 
-    protected $AdGroupIds = null;
+//    Can be omit.
+//    protected $AdGroupIds = null;
 
-    protected $KeywordIds = null;
+//    Can be omit.
+//    protected $KeywordIds = null;
 
-    protected $ServingStatuses = null;
+//    Can be omit.
+//    protected $ServingStatuses = null;
 
     /**
      * Creates a new instance of BidsSelectionCriteria.
@@ -33,7 +37,7 @@ class BidsSelectionCriteria
      */
     public function getCampaignIds()
     {
-        return $this->CampaignIds;
+        return isset($this->CampaignIds) ? $this->CampaignIds : null;
     }
 
     /**
@@ -56,7 +60,7 @@ class BidsSelectionCriteria
      */
     public function getAdGroupIds()
     {
-        return $this->AdGroupIds;
+        return isset($this->AdGroupIds) ? $this->AdGroupIds : null;
     }
 
     /**
@@ -79,7 +83,7 @@ class BidsSelectionCriteria
      */
     public function getKeywordIds()
     {
-        return $this->KeywordIds;
+        return isset($this->KeywordIds) ? $this->KeywordIds : null;
     }
 
     /**
@@ -103,7 +107,7 @@ class BidsSelectionCriteria
      */
     public function getServingStatuses()
     {
-        return $this->ServingStatuses;
+        return isset($this->ServingStatuses) ? $this->ServingStatuses : null;
     }
 
     /**

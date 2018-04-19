@@ -8,7 +8,8 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class GetClientsResponse
 {
 
-    protected $Clients = null;
+//    Can be omit.
+//    protected $Clients = null;
 
     /**
      * Creates a new instance of GetClientsResponse.
@@ -27,7 +28,7 @@ class GetClientsResponse
      */
     public function getClients()
     {
-        return $this->Clients;
+        return isset($this->Clients) ? $this->Clients : null;
     }
 
     /**

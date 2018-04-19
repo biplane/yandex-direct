@@ -12,7 +12,8 @@ class ExceptionNotification
 
     protected $Message = null;
 
-    protected $Details = null;
+//    Can be omit.
+//    protected $Details = null;
 
     /**
      * Creates a new instance of ExceptionNotification.
@@ -77,7 +78,7 @@ class ExceptionNotification
      */
     public function getDetails()
     {
-        return $this->Details;
+        return isset($this->Details) ? $this->Details : null;
     }
 
     /**

@@ -8,17 +8,23 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class StrategyAverageRoi
 {
 
-    protected $ReserveReturn = null;
+//    Can be omit.
+//    protected $ReserveReturn = null;
 
-    protected $RoiCoef = null;
+//    Can be omit.
+//    protected $RoiCoef = null;
 
-    protected $GoalId = null;
+//    Can be omit.
+//    protected $GoalId = null;
 
-    protected $WeeklySpendLimit = null;
+//    Can be omit.
+//    protected $WeeklySpendLimit = null;
 
-    protected $BidCeiling = null;
+//    Can be omit.
+//    protected $BidCeiling = null;
 
-    protected $Profitability = null;
+//    Can be omit.
+//    protected $Profitability = null;
 
     /**
      * Creates a new instance of StrategyAverageRoi.
@@ -37,7 +43,7 @@ class StrategyAverageRoi
      */
     public function getReserveReturn()
     {
-        return $this->ReserveReturn;
+        return isset($this->ReserveReturn) ? $this->ReserveReturn : null;
     }
 
     /**
@@ -60,7 +66,7 @@ class StrategyAverageRoi
      */
     public function getRoiCoef()
     {
-        return $this->RoiCoef;
+        return isset($this->RoiCoef) ? $this->RoiCoef : null;
     }
 
     /**
@@ -83,7 +89,7 @@ class StrategyAverageRoi
      */
     public function getGoalId()
     {
-        return $this->GoalId;
+        return isset($this->GoalId) ? $this->GoalId : null;
     }
 
     /**
@@ -106,7 +112,7 @@ class StrategyAverageRoi
      */
     public function getWeeklySpendLimit()
     {
-        return $this->WeeklySpendLimit;
+        return isset($this->WeeklySpendLimit) ? $this->WeeklySpendLimit : null;
     }
 
     /**
@@ -129,7 +135,7 @@ class StrategyAverageRoi
      */
     public function getBidCeiling()
     {
-        return $this->BidCeiling;
+        return isset($this->BidCeiling) ? $this->BidCeiling : null;
     }
 
     /**
@@ -152,7 +158,7 @@ class StrategyAverageRoi
      */
     public function getProfitability()
     {
-        return $this->Profitability;
+        return isset($this->Profitability) ? $this->Profitability : null;
     }
 
     /**

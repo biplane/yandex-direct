@@ -8,9 +8,11 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class KeywordProductivity
 {
 
-    protected $Value = null;
+//    Can be omit.
+//    protected $Value = null;
 
-    protected $References = null;
+//    Can be omit.
+//    protected $References = null;
 
     /**
      * Creates a new instance of KeywordProductivity.
@@ -29,7 +31,7 @@ class KeywordProductivity
      */
     public function getValue()
     {
-        return $this->Value;
+        return isset($this->Value) ? $this->Value : null;
     }
 
     /**
@@ -52,7 +54,7 @@ class KeywordProductivity
      */
     public function getReferences()
     {
-        return $this->References;
+        return isset($this->References) ? $this->References : null;
     }
 
     /**

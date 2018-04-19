@@ -8,9 +8,11 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class CampaignAssistant
 {
 
-    protected $Manager = null;
+//    Can be omit.
+//    protected $Manager = null;
 
-    protected $Agency = null;
+//    Can be omit.
+//    protected $Agency = null;
 
     /**
      * Creates a new instance of CampaignAssistant.
@@ -29,7 +31,7 @@ class CampaignAssistant
      */
     public function getManager()
     {
-        return $this->Manager;
+        return isset($this->Manager) ? $this->Manager : null;
     }
 
     /**
@@ -52,7 +54,7 @@ class CampaignAssistant
      */
     public function getAgency()
     {
-        return $this->Agency;
+        return isset($this->Agency) ? $this->Agency : null;
     }
 
     /**

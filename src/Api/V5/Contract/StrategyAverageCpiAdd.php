@@ -10,9 +10,11 @@ class StrategyAverageCpiAdd
 
     protected $AverageCpi = null;
 
-    protected $WeeklySpendLimit = null;
+//    Can be omit.
+//    protected $WeeklySpendLimit = null;
 
-    protected $BidCeiling = null;
+//    Can be omit.
+//    protected $BidCeiling = null;
 
     /**
      * Creates a new instance of StrategyAverageCpiAdd.
@@ -54,7 +56,7 @@ class StrategyAverageCpiAdd
      */
     public function getWeeklySpendLimit()
     {
-        return $this->WeeklySpendLimit;
+        return isset($this->WeeklySpendLimit) ? $this->WeeklySpendLimit : null;
     }
 
     /**
@@ -77,7 +79,7 @@ class StrategyAverageCpiAdd
      */
     public function getBidCeiling()
     {
-        return $this->BidCeiling;
+        return isset($this->BidCeiling) ? $this->BidCeiling : null;
     }
 
     /**

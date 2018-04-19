@@ -8,17 +8,23 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class SetBidsItem
 {
 
-    protected $CampaignId = null;
+//    Can be omit.
+//    protected $CampaignId = null;
 
-    protected $AdGroupId = null;
+//    Can be omit.
+//    protected $AdGroupId = null;
 
-    protected $Id = null;
+//    Can be omit.
+//    protected $Id = null;
 
-    protected $Bid = null;
+//    Can be omit.
+//    protected $Bid = null;
 
-    protected $ContextBid = null;
+//    Can be omit.
+//    protected $ContextBid = null;
 
-    protected $StrategyPriority = null;
+//    Can be omit.
+//    protected $StrategyPriority = null;
 
     /**
      * Creates a new instance of SetBidsItem.
@@ -37,7 +43,7 @@ class SetBidsItem
      */
     public function getCampaignId()
     {
-        return $this->CampaignId;
+        return isset($this->CampaignId) ? $this->CampaignId : null;
     }
 
     /**
@@ -60,7 +66,7 @@ class SetBidsItem
      */
     public function getAdGroupId()
     {
-        return $this->AdGroupId;
+        return isset($this->AdGroupId) ? $this->AdGroupId : null;
     }
 
     /**
@@ -83,7 +89,7 @@ class SetBidsItem
      */
     public function getId()
     {
-        return $this->Id;
+        return isset($this->Id) ? $this->Id : null;
     }
 
     /**
@@ -106,7 +112,7 @@ class SetBidsItem
      */
     public function getBid()
     {
-        return $this->Bid;
+        return isset($this->Bid) ? $this->Bid : null;
     }
 
     /**
@@ -129,7 +135,7 @@ class SetBidsItem
      */
     public function getContextBid()
     {
-        return $this->ContextBid;
+        return isset($this->ContextBid) ? $this->ContextBid : null;
     }
 
     /**
@@ -153,7 +159,7 @@ class SetBidsItem
      */
     public function getStrategyPriority()
     {
-        return $this->StrategyPriority;
+        return isset($this->StrategyPriority) ? $this->StrategyPriority : null;
     }
 
     /**

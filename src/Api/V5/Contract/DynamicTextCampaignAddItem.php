@@ -10,9 +10,11 @@ class DynamicTextCampaignAddItem
 
     protected $BiddingStrategy = null;
 
-    protected $Settings = null;
+//    Can be omit.
+//    protected $Settings = null;
 
-    protected $CounterIds = null;
+//    Can be omit.
+//    protected $CounterIds = null;
 
     /**
      * Creates a new instance of DynamicTextCampaignAddItem.
@@ -54,7 +56,7 @@ class DynamicTextCampaignAddItem
      */
     public function getSettings()
     {
-        return $this->Settings;
+        return isset($this->Settings) ? $this->Settings : null;
     }
 
     /**
@@ -77,7 +79,7 @@ class DynamicTextCampaignAddItem
      */
     public function getCounterIds()
     {
-        return $this->CounterIds;
+        return isset($this->CounterIds) ? $this->CounterIds : null;
     }
 
     /**

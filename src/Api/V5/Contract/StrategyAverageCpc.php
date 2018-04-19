@@ -8,9 +8,11 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class StrategyAverageCpc
 {
 
-    protected $AverageCpc = null;
+//    Can be omit.
+//    protected $AverageCpc = null;
 
-    protected $WeeklySpendLimit = null;
+//    Can be omit.
+//    protected $WeeklySpendLimit = null;
 
     /**
      * Creates a new instance of StrategyAverageCpc.
@@ -29,7 +31,7 @@ class StrategyAverageCpc
      */
     public function getAverageCpc()
     {
-        return $this->AverageCpc;
+        return isset($this->AverageCpc) ? $this->AverageCpc : null;
     }
 
     /**
@@ -52,7 +54,7 @@ class StrategyAverageCpc
      */
     public function getWeeklySpendLimit()
     {
-        return $this->WeeklySpendLimit;
+        return isset($this->WeeklySpendLimit) ? $this->WeeklySpendLimit : null;
     }
 
     /**

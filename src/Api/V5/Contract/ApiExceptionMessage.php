@@ -12,7 +12,8 @@ class ApiExceptionMessage
 
     protected $errorCode = null;
 
-    protected $errorDetail = null;
+//    Can be omit.
+//    protected $errorDetail = null;
 
     /**
      * Creates a new instance of ApiExceptionMessage.
@@ -77,7 +78,7 @@ class ApiExceptionMessage
      */
     public function getErrorDetail()
     {
-        return $this->errorDetail;
+        return isset($this->errorDetail) ? $this->errorDetail : null;
     }
 
     /**

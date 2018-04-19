@@ -14,7 +14,8 @@ class CampaignFundsParam
 
     protected $BalanceBonus = null;
 
-    protected $SumAvailableForTransfer = null;
+//    Can be omit.
+//    protected $SumAvailableForTransfer = null;
 
     /**
      * Creates a new instance of CampaignFundsParam.
@@ -102,7 +103,7 @@ class CampaignFundsParam
      */
     public function getSumAvailableForTransfer()
     {
-        return $this->SumAvailableForTransfer;
+        return isset($this->SumAvailableForTransfer) ? $this->SumAvailableForTransfer : null;
     }
 
     /**

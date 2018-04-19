@@ -10,7 +10,8 @@ class StrategyAverageCpcAdd
 
     protected $AverageCpc = null;
 
-    protected $WeeklySpendLimit = null;
+//    Can be omit.
+//    protected $WeeklySpendLimit = null;
 
     /**
      * Creates a new instance of StrategyAverageCpcAdd.
@@ -52,7 +53,7 @@ class StrategyAverageCpcAdd
      */
     public function getWeeklySpendLimit()
     {
-        return $this->WeeklySpendLimit;
+        return isset($this->WeeklySpendLimit) ? $this->WeeklySpendLimit : null;
     }
 
     /**

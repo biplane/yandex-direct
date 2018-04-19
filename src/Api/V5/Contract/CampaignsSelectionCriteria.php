@@ -8,15 +8,20 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class CampaignsSelectionCriteria
 {
 
-    protected $Ids = null;
+//    Can be omit.
+//    protected $Ids = null;
 
-    protected $Types = null;
+//    Can be omit.
+//    protected $Types = null;
 
-    protected $States = null;
+//    Can be omit.
+//    protected $States = null;
 
-    protected $Statuses = null;
+//    Can be omit.
+//    protected $Statuses = null;
 
-    protected $StatusesPayment = null;
+//    Can be omit.
+//    protected $StatusesPayment = null;
 
     /**
      * Creates a new instance of CampaignsSelectionCriteria.
@@ -35,7 +40,7 @@ class CampaignsSelectionCriteria
      */
     public function getIds()
     {
-        return $this->Ids;
+        return isset($this->Ids) ? $this->Ids : null;
     }
 
     /**
@@ -59,7 +64,7 @@ class CampaignsSelectionCriteria
      */
     public function getTypes()
     {
-        return $this->Types;
+        return isset($this->Types) ? $this->Types : null;
     }
 
     /**
@@ -84,7 +89,7 @@ class CampaignsSelectionCriteria
      */
     public function getStates()
     {
-        return $this->States;
+        return isset($this->States) ? $this->States : null;
     }
 
     /**
@@ -109,7 +114,7 @@ class CampaignsSelectionCriteria
      */
     public function getStatuses()
     {
-        return $this->Statuses;
+        return isset($this->Statuses) ? $this->Statuses : null;
     }
 
     /**
@@ -134,7 +139,7 @@ class CampaignsSelectionCriteria
      */
     public function getStatusesPayment()
     {
-        return $this->StatusesPayment;
+        return isset($this->StatusesPayment) ? $this->StatusesPayment : null;
     }
 
     /**

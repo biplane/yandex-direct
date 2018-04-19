@@ -8,7 +8,8 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class ActionResult extends ActionResultBase
 {
 
-    protected $Id = null;
+//    Can be omit.
+//    protected $Id = null;
 
     /**
      * Creates a new instance of ActionResult.
@@ -27,7 +28,7 @@ class ActionResult extends ActionResultBase
      */
     public function getId()
     {
-        return $this->Id;
+        return isset($this->Id) ? $this->Id : null;
     }
 
     /**

@@ -8,7 +8,8 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class SuspendCampaignsResponse
 {
 
-    protected $SuspendResults = null;
+//    Can be omit.
+//    protected $SuspendResults = null;
 
     /**
      * Creates a new instance of SuspendCampaignsResponse.
@@ -27,7 +28,7 @@ class SuspendCampaignsResponse
      */
     public function getSuspendResults()
     {
-        return $this->SuspendResults;
+        return isset($this->SuspendResults) ? $this->SuspendResults : null;
     }
 
     /**

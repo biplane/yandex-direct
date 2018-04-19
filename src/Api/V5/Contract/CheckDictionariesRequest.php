@@ -8,7 +8,8 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class CheckDictionariesRequest
 {
 
-    protected $Timestamp = null;
+//    Can be omit.
+//    protected $Timestamp = null;
 
     /**
      * Creates a new instance of CheckDictionariesRequest.
@@ -27,7 +28,7 @@ class CheckDictionariesRequest
      */
     public function getTimestamp()
     {
-        return $this->Timestamp;
+        return isset($this->Timestamp) ? $this->Timestamp : null;
     }
 
     /**

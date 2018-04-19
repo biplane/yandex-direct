@@ -8,9 +8,11 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class MobileAppAdGet extends MobileAppAdBase
 {
 
-    protected $Features = null;
+//    Can be omit.
+//    protected $Features = null;
 
-    protected $AdImageModeration = null;
+//    Can be omit.
+//    protected $AdImageModeration = null;
 
     /**
      * Creates a new instance of MobileAppAdGet.
@@ -29,7 +31,7 @@ class MobileAppAdGet extends MobileAppAdBase
      */
     public function getFeatures()
     {
-        return $this->Features;
+        return isset($this->Features) ? $this->Features : null;
     }
 
     /**
@@ -52,7 +54,7 @@ class MobileAppAdGet extends MobileAppAdBase
      */
     public function getAdImageModeration()
     {
-        return $this->AdImageModeration;
+        return isset($this->AdImageModeration) ? $this->AdImageModeration : null;
     }
 
     /**

@@ -8,9 +8,11 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class SearchPrices
 {
 
-    protected $Position = null;
+//    Can be omit.
+//    protected $Position = null;
 
-    protected $Price = null;
+//    Can be omit.
+//    protected $Price = null;
 
     /**
      * Creates a new instance of SearchPrices.
@@ -30,7 +32,7 @@ class SearchPrices
      */
     public function getPosition()
     {
-        return $this->Position;
+        return isset($this->Position) ? $this->Position : null;
     }
 
     /**
@@ -54,7 +56,7 @@ class SearchPrices
      */
     public function getPrice()
     {
-        return $this->Price;
+        return isset($this->Price) ? $this->Price : null;
     }
 
     /**

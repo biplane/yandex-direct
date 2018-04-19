@@ -8,11 +8,14 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class RegionalAdjustmentGet
 {
 
-    protected $RegionId = null;
+//    Can be omit.
+//    protected $RegionId = null;
 
-    protected $BidModifier = null;
+//    Can be omit.
+//    protected $BidModifier = null;
 
-    protected $Enabled = null;
+//    Can be omit.
+//    protected $Enabled = null;
 
     /**
      * Creates a new instance of RegionalAdjustmentGet.
@@ -31,7 +34,7 @@ class RegionalAdjustmentGet
      */
     public function getRegionId()
     {
-        return $this->RegionId;
+        return isset($this->RegionId) ? $this->RegionId : null;
     }
 
     /**
@@ -54,7 +57,7 @@ class RegionalAdjustmentGet
      */
     public function getBidModifier()
     {
-        return $this->BidModifier;
+        return isset($this->BidModifier) ? $this->BidModifier : null;
     }
 
     /**
@@ -78,7 +81,7 @@ class RegionalAdjustmentGet
      */
     public function getEnabled()
     {
-        return $this->Enabled;
+        return isset($this->Enabled) ? $this->Enabled : null;
     }
 
     /**

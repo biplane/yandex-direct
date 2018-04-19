@@ -8,13 +8,17 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class WebpagesSelectionCriteria
 {
 
-    protected $Ids = null;
+//    Can be omit.
+//    protected $Ids = null;
 
-    protected $AdGroupIds = null;
+//    Can be omit.
+//    protected $AdGroupIds = null;
 
-    protected $CampaignIds = null;
+//    Can be omit.
+//    protected $CampaignIds = null;
 
-    protected $States = null;
+//    Can be omit.
+//    protected $States = null;
 
     /**
      * Creates a new instance of WebpagesSelectionCriteria.
@@ -33,7 +37,7 @@ class WebpagesSelectionCriteria
      */
     public function getIds()
     {
-        return $this->Ids;
+        return isset($this->Ids) ? $this->Ids : null;
     }
 
     /**
@@ -56,7 +60,7 @@ class WebpagesSelectionCriteria
      */
     public function getAdGroupIds()
     {
-        return $this->AdGroupIds;
+        return isset($this->AdGroupIds) ? $this->AdGroupIds : null;
     }
 
     /**
@@ -79,7 +83,7 @@ class WebpagesSelectionCriteria
      */
     public function getCampaignIds()
     {
-        return $this->CampaignIds;
+        return isset($this->CampaignIds) ? $this->CampaignIds : null;
     }
 
     /**
@@ -103,7 +107,7 @@ class WebpagesSelectionCriteria
      */
     public function getStates()
     {
-        return $this->States;
+        return isset($this->States) ? $this->States : null;
     }
 
     /**

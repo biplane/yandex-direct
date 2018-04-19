@@ -8,7 +8,8 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class GetSitelinksResponse extends GetResponseGeneral
 {
 
-    protected $SitelinksSets = null;
+//    Can be omit.
+//    protected $SitelinksSets = null;
 
     /**
      * Creates a new instance of GetSitelinksResponse.
@@ -27,7 +28,7 @@ class GetSitelinksResponse extends GetResponseGeneral
      */
     public function getSitelinksSets()
     {
-        return $this->SitelinksSets;
+        return isset($this->SitelinksSets) ? $this->SitelinksSets : null;
     }
 
     /**

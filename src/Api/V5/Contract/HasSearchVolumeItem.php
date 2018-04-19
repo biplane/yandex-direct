@@ -8,17 +8,23 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class HasSearchVolumeItem
 {
 
-    protected $Keyword = null;
+//    Can be omit.
+//    protected $Keyword = null;
 
-    protected $RegionIds = null;
+//    Can be omit.
+//    protected $RegionIds = null;
 
-    protected $AllDevices = null;
+//    Can be omit.
+//    protected $AllDevices = null;
 
-    protected $MobilePhones = null;
+//    Can be omit.
+//    protected $MobilePhones = null;
 
-    protected $Tablets = null;
+//    Can be omit.
+//    protected $Tablets = null;
 
-    protected $Desktops = null;
+//    Can be omit.
+//    protected $Desktops = null;
 
     /**
      * Creates a new instance of HasSearchVolumeItem.
@@ -37,7 +43,7 @@ class HasSearchVolumeItem
      */
     public function getKeyword()
     {
-        return $this->Keyword;
+        return isset($this->Keyword) ? $this->Keyword : null;
     }
 
     /**
@@ -60,7 +66,7 @@ class HasSearchVolumeItem
      */
     public function getRegionIds()
     {
-        return $this->RegionIds;
+        return isset($this->RegionIds) ? $this->RegionIds : null;
     }
 
     /**
@@ -84,7 +90,7 @@ class HasSearchVolumeItem
      */
     public function getAllDevices()
     {
-        return $this->AllDevices;
+        return isset($this->AllDevices) ? $this->AllDevices : null;
     }
 
     /**
@@ -109,7 +115,7 @@ class HasSearchVolumeItem
      */
     public function getMobilePhones()
     {
-        return $this->MobilePhones;
+        return isset($this->MobilePhones) ? $this->MobilePhones : null;
     }
 
     /**
@@ -134,7 +140,7 @@ class HasSearchVolumeItem
      */
     public function getTablets()
     {
-        return $this->Tablets;
+        return isset($this->Tablets) ? $this->Tablets : null;
     }
 
     /**
@@ -159,7 +165,7 @@ class HasSearchVolumeItem
      */
     public function getDesktops()
     {
-        return $this->Desktops;
+        return isset($this->Desktops) ? $this->Desktops : null;
     }
 
     /**

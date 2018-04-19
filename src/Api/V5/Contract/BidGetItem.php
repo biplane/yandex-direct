@@ -8,25 +8,35 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class BidGetItem extends BidBase
 {
 
-    protected $Bid = null;
+//    Can be omit.
+//    protected $Bid = null;
 
-    protected $ContextBid = null;
+//    Can be omit.
+//    protected $ContextBid = null;
 
-    protected $StrategyPriority = null;
+//    Can be omit.
+//    protected $StrategyPriority = null;
 
-    protected $CompetitorsBids = null;
+//    Can be omit.
+//    protected $CompetitorsBids = null;
 
-    protected $SearchPrices = null;
+//    Can be omit.
+//    protected $SearchPrices = null;
 
-    protected $ContextCoverage = null;
+//    Can be omit.
+//    protected $ContextCoverage = null;
 
-    protected $MinSearchPrice = null;
+//    Can be omit.
+//    protected $MinSearchPrice = null;
 
-    protected $CurrentSearchPrice = null;
+//    Can be omit.
+//    protected $CurrentSearchPrice = null;
 
-    protected $AuctionBids = null;
+//    Can be omit.
+//    protected $AuctionBids = null;
 
-    protected $ServingStatus = null;
+//    Can be omit.
+//    protected $ServingStatus = null;
 
     /**
      * Creates a new instance of BidGetItem.
@@ -45,7 +55,7 @@ class BidGetItem extends BidBase
      */
     public function getBid()
     {
-        return $this->Bid;
+        return isset($this->Bid) ? $this->Bid : null;
     }
 
     /**
@@ -68,7 +78,7 @@ class BidGetItem extends BidBase
      */
     public function getContextBid()
     {
-        return $this->ContextBid;
+        return isset($this->ContextBid) ? $this->ContextBid : null;
     }
 
     /**
@@ -92,7 +102,7 @@ class BidGetItem extends BidBase
      */
     public function getStrategyPriority()
     {
-        return $this->StrategyPriority;
+        return isset($this->StrategyPriority) ? $this->StrategyPriority : null;
     }
 
     /**
@@ -116,7 +126,7 @@ class BidGetItem extends BidBase
      */
     public function getCompetitorsBids()
     {
-        return $this->CompetitorsBids;
+        return isset($this->CompetitorsBids) ? $this->CompetitorsBids : null;
     }
 
     /**
@@ -139,7 +149,7 @@ class BidGetItem extends BidBase
      */
     public function getSearchPrices()
     {
-        return $this->SearchPrices;
+        return isset($this->SearchPrices) ? $this->SearchPrices : null;
     }
 
     /**
@@ -162,7 +172,7 @@ class BidGetItem extends BidBase
      */
     public function getContextCoverage()
     {
-        return $this->ContextCoverage;
+        return isset($this->ContextCoverage) ? $this->ContextCoverage : null;
     }
 
     /**
@@ -185,7 +195,7 @@ class BidGetItem extends BidBase
      */
     public function getMinSearchPrice()
     {
-        return $this->MinSearchPrice;
+        return isset($this->MinSearchPrice) ? $this->MinSearchPrice : null;
     }
 
     /**
@@ -208,7 +218,7 @@ class BidGetItem extends BidBase
      */
     public function getCurrentSearchPrice()
     {
-        return $this->CurrentSearchPrice;
+        return isset($this->CurrentSearchPrice) ? $this->CurrentSearchPrice : null;
     }
 
     /**
@@ -231,7 +241,7 @@ class BidGetItem extends BidBase
      */
     public function getAuctionBids()
     {
-        return $this->AuctionBids;
+        return isset($this->AuctionBids) ? $this->AuctionBids : null;
     }
 
     /**
@@ -255,7 +265,7 @@ class BidGetItem extends BidBase
      */
     public function getServingStatus()
     {
-        return $this->ServingStatus;
+        return isset($this->ServingStatus) ? $this->ServingStatus : null;
     }
 
     /**

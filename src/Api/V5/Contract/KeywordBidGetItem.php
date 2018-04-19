@@ -8,13 +8,17 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class KeywordBidGetItem extends KeywordBidBase
 {
 
-    protected $ServingStatus = null;
+//    Can be omit.
+//    protected $ServingStatus = null;
 
-    protected $StrategyPriority = null;
+//    Can be omit.
+//    protected $StrategyPriority = null;
 
-    protected $Search = null;
+//    Can be omit.
+//    protected $Search = null;
 
-    protected $Network = null;
+//    Can be omit.
+//    protected $Network = null;
 
     /**
      * Creates a new instance of KeywordBidGetItem.
@@ -34,7 +38,7 @@ class KeywordBidGetItem extends KeywordBidBase
      */
     public function getServingStatus()
     {
-        return $this->ServingStatus;
+        return isset($this->ServingStatus) ? $this->ServingStatus : null;
     }
 
     /**
@@ -59,7 +63,7 @@ class KeywordBidGetItem extends KeywordBidBase
      */
     public function getStrategyPriority()
     {
-        return $this->StrategyPriority;
+        return isset($this->StrategyPriority) ? $this->StrategyPriority : null;
     }
 
     /**
@@ -83,7 +87,7 @@ class KeywordBidGetItem extends KeywordBidBase
      */
     public function getSearch()
     {
-        return $this->Search;
+        return isset($this->Search) ? $this->Search : null;
     }
 
     /**
@@ -106,7 +110,7 @@ class KeywordBidGetItem extends KeywordBidBase
      */
     public function getNetwork()
     {
-        return $this->Network;
+        return isset($this->Network) ? $this->Network : null;
     }
 
     /**

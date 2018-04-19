@@ -8,7 +8,8 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class UpdateCampaignsResponse
 {
 
-    protected $UpdateResults = null;
+//    Can be omit.
+//    protected $UpdateResults = null;
 
     /**
      * Creates a new instance of UpdateCampaignsResponse.
@@ -27,7 +28,7 @@ class UpdateCampaignsResponse
      */
     public function getUpdateResults()
     {
-        return $this->UpdateResults;
+        return isset($this->UpdateResults) ? $this->UpdateResults : null;
     }
 
     /**

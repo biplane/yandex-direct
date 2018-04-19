@@ -8,7 +8,8 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class ToggleBidModifiersResponse
 {
 
-    protected $ToggleResults = null;
+//    Can be omit.
+//    protected $ToggleResults = null;
 
     /**
      * Creates a new instance of ToggleBidModifiersResponse.
@@ -27,7 +28,7 @@ class ToggleBidModifiersResponse
      */
     public function getToggleResults()
     {
-        return $this->ToggleResults;
+        return isset($this->ToggleResults) ? $this->ToggleResults : null;
     }
 
     /**

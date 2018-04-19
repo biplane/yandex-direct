@@ -8,9 +8,11 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class SharedAccountFundsParam
 {
 
-    protected $Refund = null;
+//    Can be omit.
+//    protected $Refund = null;
 
-    protected $Spend = null;
+//    Can be omit.
+//    protected $Spend = null;
 
     /**
      * Creates a new instance of SharedAccountFundsParam.
@@ -29,7 +31,7 @@ class SharedAccountFundsParam
      */
     public function getRefund()
     {
-        return $this->Refund;
+        return isset($this->Refund) ? $this->Refund : null;
     }
 
     /**
@@ -52,7 +54,7 @@ class SharedAccountFundsParam
      */
     public function getSpend()
     {
-        return $this->Spend;
+        return isset($this->Spend) ? $this->Spend : null;
     }
 
     /**

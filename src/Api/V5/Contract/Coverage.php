@@ -8,7 +8,8 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class Coverage
 {
 
-    protected $CoverageItems = null;
+//    Can be omit.
+//    protected $CoverageItems = null;
 
     /**
      * Creates a new instance of Coverage.
@@ -27,7 +28,7 @@ class Coverage
      */
     public function getCoverageItems()
     {
-        return $this->CoverageItems;
+        return isset($this->CoverageItems) ? $this->CoverageItems : null;
     }
 
     /**

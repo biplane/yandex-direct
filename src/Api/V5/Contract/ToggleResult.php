@@ -8,11 +8,14 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class ToggleResult extends ActionResultBase
 {
 
-    protected $CampaignId = null;
+//    Can be omit.
+//    protected $CampaignId = null;
 
-    protected $AdGroupId = null;
+//    Can be omit.
+//    protected $AdGroupId = null;
 
-    protected $Type = null;
+//    Can be omit.
+//    protected $Type = null;
 
     /**
      * Creates a new instance of ToggleResult.
@@ -31,7 +34,7 @@ class ToggleResult extends ActionResultBase
      */
     public function getCampaignId()
     {
-        return $this->CampaignId;
+        return isset($this->CampaignId) ? $this->CampaignId : null;
     }
 
     /**
@@ -54,7 +57,7 @@ class ToggleResult extends ActionResultBase
      */
     public function getAdGroupId()
     {
-        return $this->AdGroupId;
+        return isset($this->AdGroupId) ? $this->AdGroupId : null;
     }
 
     /**
@@ -78,7 +81,7 @@ class ToggleResult extends ActionResultBase
      */
     public function getType()
     {
-        return $this->Type;
+        return isset($this->Type) ? $this->Type : null;
     }
 
     /**

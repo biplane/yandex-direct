@@ -8,11 +8,14 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class StrategyAverageCpi
 {
 
-    protected $AverageCpi = null;
+//    Can be omit.
+//    protected $AverageCpi = null;
 
-    protected $WeeklySpendLimit = null;
+//    Can be omit.
+//    protected $WeeklySpendLimit = null;
 
-    protected $BidCeiling = null;
+//    Can be omit.
+//    protected $BidCeiling = null;
 
     /**
      * Creates a new instance of StrategyAverageCpi.
@@ -31,7 +34,7 @@ class StrategyAverageCpi
      */
     public function getAverageCpi()
     {
-        return $this->AverageCpi;
+        return isset($this->AverageCpi) ? $this->AverageCpi : null;
     }
 
     /**
@@ -54,7 +57,7 @@ class StrategyAverageCpi
      */
     public function getWeeklySpendLimit()
     {
-        return $this->WeeklySpendLimit;
+        return isset($this->WeeklySpendLimit) ? $this->WeeklySpendLimit : null;
     }
 
     /**
@@ -77,7 +80,7 @@ class StrategyAverageCpi
      */
     public function getBidCeiling()
     {
-        return $this->BidCeiling;
+        return isset($this->BidCeiling) ? $this->BidCeiling : null;
     }
 
     /**

@@ -8,15 +8,20 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class AdExtensionBase
 {
 
-    protected $Type = null;
+//    Can be omit.
+//    protected $Type = null;
 
-    protected $Callout = null;
+//    Can be omit.
+//    protected $Callout = null;
 
-    protected $State = null;
+//    Can be omit.
+//    protected $State = null;
 
-    protected $Status = null;
+//    Can be omit.
+//    protected $Status = null;
 
-    protected $StatusClarification = null;
+//    Can be omit.
+//    protected $StatusClarification = null;
 
     /**
      * Creates a new instance of AdExtensionBase.
@@ -36,7 +41,7 @@ class AdExtensionBase
      */
     public function getType()
     {
-        return $this->Type;
+        return isset($this->Type) ? $this->Type : null;
     }
 
     /**
@@ -60,7 +65,7 @@ class AdExtensionBase
      */
     public function getCallout()
     {
-        return $this->Callout;
+        return isset($this->Callout) ? $this->Callout : null;
     }
 
     /**
@@ -84,7 +89,7 @@ class AdExtensionBase
      */
     public function getState()
     {
-        return $this->State;
+        return isset($this->State) ? $this->State : null;
     }
 
     /**
@@ -109,7 +114,7 @@ class AdExtensionBase
      */
     public function getStatus()
     {
-        return $this->Status;
+        return isset($this->Status) ? $this->Status : null;
     }
 
     /**
@@ -133,7 +138,7 @@ class AdExtensionBase
      */
     public function getStatusClarification()
     {
-        return $this->StatusClarification;
+        return isset($this->StatusClarification) ? $this->StatusClarification : null;
     }
 
     /**

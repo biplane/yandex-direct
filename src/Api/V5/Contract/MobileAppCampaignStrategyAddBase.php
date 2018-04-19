@@ -8,15 +8,20 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class MobileAppCampaignStrategyAddBase
 {
 
-    protected $WbMaximumClicks = null;
+//    Can be omit.
+//    protected $WbMaximumClicks = null;
 
-    protected $WbMaximumAppInstalls = null;
+//    Can be omit.
+//    protected $WbMaximumAppInstalls = null;
 
-    protected $AverageCpc = null;
+//    Can be omit.
+//    protected $AverageCpc = null;
 
-    protected $AverageCpi = null;
+//    Can be omit.
+//    protected $AverageCpi = null;
 
-    protected $WeeklyClickPackage = null;
+//    Can be omit.
+//    protected $WeeklyClickPackage = null;
 
     /**
      * Creates a new instance of MobileAppCampaignStrategyAddBase.
@@ -35,7 +40,7 @@ class MobileAppCampaignStrategyAddBase
      */
     public function getWbMaximumClicks()
     {
-        return $this->WbMaximumClicks;
+        return isset($this->WbMaximumClicks) ? $this->WbMaximumClicks : null;
     }
 
     /**
@@ -58,7 +63,7 @@ class MobileAppCampaignStrategyAddBase
      */
     public function getWbMaximumAppInstalls()
     {
-        return $this->WbMaximumAppInstalls;
+        return isset($this->WbMaximumAppInstalls) ? $this->WbMaximumAppInstalls : null;
     }
 
     /**
@@ -81,7 +86,7 @@ class MobileAppCampaignStrategyAddBase
      */
     public function getAverageCpc()
     {
-        return $this->AverageCpc;
+        return isset($this->AverageCpc) ? $this->AverageCpc : null;
     }
 
     /**
@@ -104,7 +109,7 @@ class MobileAppCampaignStrategyAddBase
      */
     public function getAverageCpi()
     {
-        return $this->AverageCpi;
+        return isset($this->AverageCpi) ? $this->AverageCpi : null;
     }
 
     /**
@@ -127,7 +132,7 @@ class MobileAppCampaignStrategyAddBase
      */
     public function getWeeklyClickPackage()
     {
-        return $this->WeeklyClickPackage;
+        return isset($this->WeeklyClickPackage) ? $this->WeeklyClickPackage : null;
     }
 
     /**

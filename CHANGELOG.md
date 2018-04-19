@@ -2,6 +2,13 @@
 
 # master
 
+* Добавлена поддержка [редактирования отдельных параметров](https://tech.yandex.ru/direct/doc/dg/best-practice/part-update-docpage/).
+  Если нужно сбросить значение для какого-то параметра, необходимо явным образом 
+  вызвать соответствующий метод со значением `null`.
+
+        TextAdUpdate::create()
+            ->setTitle2(null);
+
 # 4.3.0 [commit logs](https://github.com/biplane/yandex-direct/compare/4.2.0...4.3.0)
 
 * Добавлена поддержка сервиса [KeywordBids](https://tech.yandex.ru/direct/doc/ref-v5/keywordbids/keywordbids-docpage/).

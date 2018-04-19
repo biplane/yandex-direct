@@ -8,7 +8,8 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class SetAutoBidsResponse
 {
 
-    protected $SetAutoResults = null;
+//    Can be omit.
+//    protected $SetAutoResults = null;
 
     /**
      * Creates a new instance of SetAutoBidsResponse.
@@ -27,7 +28,7 @@ class SetAutoBidsResponse
      */
     public function getSetAutoResults()
     {
-        return $this->SetAutoResults;
+        return isset($this->SetAutoResults) ? $this->SetAutoResults : null;
     }
 
     /**

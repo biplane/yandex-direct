@@ -8,11 +8,14 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class RetargetingListBase
 {
 
-    protected $Name = null;
+//    Can be omit.
+//    protected $Name = null;
 
-    protected $Description = null;
+//    Can be omit.
+//    protected $Description = null;
 
-    protected $Rules = null;
+//    Can be omit.
+//    protected $Rules = null;
 
     /**
      * Creates a new instance of RetargetingListBase.
@@ -31,7 +34,7 @@ class RetargetingListBase
      */
     public function getName()
     {
-        return $this->Name;
+        return isset($this->Name) ? $this->Name : null;
     }
 
     /**
@@ -54,7 +57,7 @@ class RetargetingListBase
      */
     public function getDescription()
     {
-        return $this->Description;
+        return isset($this->Description) ? $this->Description : null;
     }
 
     /**
@@ -77,7 +80,7 @@ class RetargetingListBase
      */
     public function getRules()
     {
-        return $this->Rules;
+        return isset($this->Rules) ? $this->Rules : null;
     }
 
     /**

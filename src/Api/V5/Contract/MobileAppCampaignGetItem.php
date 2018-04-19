@@ -8,9 +8,11 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class MobileAppCampaignGetItem
 {
 
-    protected $BiddingStrategy = null;
+//    Can be omit.
+//    protected $BiddingStrategy = null;
 
-    protected $Settings = null;
+//    Can be omit.
+//    protected $Settings = null;
 
     /**
      * Creates a new instance of MobileAppCampaignGetItem.
@@ -29,7 +31,7 @@ class MobileAppCampaignGetItem
      */
     public function getBiddingStrategy()
     {
-        return $this->BiddingStrategy;
+        return isset($this->BiddingStrategy) ? $this->BiddingStrategy : null;
     }
 
     /**
@@ -52,7 +54,7 @@ class MobileAppCampaignGetItem
      */
     public function getSettings()
     {
-        return $this->Settings;
+        return isset($this->Settings) ? $this->Settings : null;
     }
 
     /**

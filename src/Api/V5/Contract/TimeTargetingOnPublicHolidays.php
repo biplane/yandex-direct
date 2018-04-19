@@ -10,11 +10,14 @@ class TimeTargetingOnPublicHolidays
 
     protected $SuspendOnHolidays = null;
 
-    protected $BidPercent = null;
+//    Can be omit.
+//    protected $BidPercent = null;
 
-    protected $StartHour = null;
+//    Can be omit.
+//    protected $StartHour = null;
 
-    protected $EndHour = null;
+//    Can be omit.
+//    protected $EndHour = null;
 
     /**
      * Creates a new instance of TimeTargetingOnPublicHolidays.
@@ -58,7 +61,7 @@ class TimeTargetingOnPublicHolidays
      */
     public function getBidPercent()
     {
-        return $this->BidPercent;
+        return isset($this->BidPercent) ? $this->BidPercent : null;
     }
 
     /**
@@ -81,7 +84,7 @@ class TimeTargetingOnPublicHolidays
      */
     public function getStartHour()
     {
-        return $this->StartHour;
+        return isset($this->StartHour) ? $this->StartHour : null;
     }
 
     /**
@@ -104,7 +107,7 @@ class TimeTargetingOnPublicHolidays
      */
     public function getEndHour()
     {
-        return $this->EndHour;
+        return isset($this->EndHour) ? $this->EndHour : null;
     }
 
     /**

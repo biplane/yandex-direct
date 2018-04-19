@@ -8,9 +8,11 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class DynamicTextCampaignStrategy
 {
 
-    protected $Search = null;
+//    Can be omit.
+//    protected $Search = null;
 
-    protected $Network = null;
+//    Can be omit.
+//    protected $Network = null;
 
     /**
      * Creates a new instance of DynamicTextCampaignStrategy.
@@ -29,7 +31,7 @@ class DynamicTextCampaignStrategy
      */
     public function getSearch()
     {
-        return $this->Search;
+        return isset($this->Search) ? $this->Search : null;
     }
 
     /**
@@ -52,7 +54,7 @@ class DynamicTextCampaignStrategy
      */
     public function getNetwork()
     {
-        return $this->Network;
+        return isset($this->Network) ? $this->Network : null;
     }
 
     /**

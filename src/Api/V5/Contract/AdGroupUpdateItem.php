@@ -10,11 +10,14 @@ class AdGroupUpdateItem extends AdGroupBase
 
     protected $Id = null;
 
-    protected $Name = null;
+//    Can be omit.
+//    protected $Name = null;
 
-    protected $MobileAppAdGroup = null;
+//    Can be omit.
+//    protected $MobileAppAdGroup = null;
 
-    protected $DynamicTextAdGroup = null;
+//    Can be omit.
+//    protected $DynamicTextAdGroup = null;
 
     /**
      * Creates a new instance of AdGroupUpdateItem.
@@ -56,7 +59,7 @@ class AdGroupUpdateItem extends AdGroupBase
      */
     public function getName()
     {
-        return $this->Name;
+        return isset($this->Name) ? $this->Name : null;
     }
 
     /**
@@ -79,7 +82,7 @@ class AdGroupUpdateItem extends AdGroupBase
      */
     public function getMobileAppAdGroup()
     {
-        return $this->MobileAppAdGroup;
+        return isset($this->MobileAppAdGroup) ? $this->MobileAppAdGroup : null;
     }
 
     /**
@@ -102,7 +105,7 @@ class AdGroupUpdateItem extends AdGroupBase
      */
     public function getDynamicTextAdGroup()
     {
-        return $this->DynamicTextAdGroup;
+        return isset($this->DynamicTextAdGroup) ? $this->DynamicTextAdGroup : null;
     }
 
     /**

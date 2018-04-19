@@ -10,7 +10,8 @@ class MobileAppCampaignNetworkStrategy extends MobileAppCampaignStrategyBase
 
     protected $BiddingStrategyType = null;
 
-    protected $NetworkDefault = null;
+//    Can be omit.
+//    protected $NetworkDefault = null;
 
     /**
      * Creates a new instance of MobileAppCampaignNetworkStrategy.
@@ -54,7 +55,7 @@ class MobileAppCampaignNetworkStrategy extends MobileAppCampaignStrategyBase
      */
     public function getNetworkDefault()
     {
-        return $this->NetworkDefault;
+        return isset($this->NetworkDefault) ? $this->NetworkDefault : null;
     }
 
     /**

@@ -10,7 +10,8 @@ class AgencyClientUpdateItem extends ClientUpdateItem
 
     protected $ClientId = null;
 
-    protected $Grants = null;
+//    Can be omit.
+//    protected $Grants = null;
 
     /**
      * Creates a new instance of AgencyClientUpdateItem.
@@ -52,7 +53,7 @@ class AgencyClientUpdateItem extends ClientUpdateItem
      */
     public function getGrants()
     {
-        return $this->Grants;
+        return isset($this->Grants) ? $this->Grants : null;
     }
 
     /**

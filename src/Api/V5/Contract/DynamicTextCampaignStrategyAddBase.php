@@ -8,17 +8,23 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class DynamicTextCampaignStrategyAddBase
 {
 
-    protected $WbMaximumClicks = null;
+//    Can be omit.
+//    protected $WbMaximumClicks = null;
 
-    protected $WbMaximumConversionRate = null;
+//    Can be omit.
+//    protected $WbMaximumConversionRate = null;
 
-    protected $AverageCpc = null;
+//    Can be omit.
+//    protected $AverageCpc = null;
 
-    protected $AverageCpa = null;
+//    Can be omit.
+//    protected $AverageCpa = null;
 
-    protected $WeeklyClickPackage = null;
+//    Can be omit.
+//    protected $WeeklyClickPackage = null;
 
-    protected $AverageRoi = null;
+//    Can be omit.
+//    protected $AverageRoi = null;
 
     /**
      * Creates a new instance of DynamicTextCampaignStrategyAddBase.
@@ -37,7 +43,7 @@ class DynamicTextCampaignStrategyAddBase
      */
     public function getWbMaximumClicks()
     {
-        return $this->WbMaximumClicks;
+        return isset($this->WbMaximumClicks) ? $this->WbMaximumClicks : null;
     }
 
     /**
@@ -60,7 +66,7 @@ class DynamicTextCampaignStrategyAddBase
      */
     public function getWbMaximumConversionRate()
     {
-        return $this->WbMaximumConversionRate;
+        return isset($this->WbMaximumConversionRate) ? $this->WbMaximumConversionRate : null;
     }
 
     /**
@@ -83,7 +89,7 @@ class DynamicTextCampaignStrategyAddBase
      */
     public function getAverageCpc()
     {
-        return $this->AverageCpc;
+        return isset($this->AverageCpc) ? $this->AverageCpc : null;
     }
 
     /**
@@ -106,7 +112,7 @@ class DynamicTextCampaignStrategyAddBase
      */
     public function getAverageCpa()
     {
-        return $this->AverageCpa;
+        return isset($this->AverageCpa) ? $this->AverageCpa : null;
     }
 
     /**
@@ -129,7 +135,7 @@ class DynamicTextCampaignStrategyAddBase
      */
     public function getWeeklyClickPackage()
     {
-        return $this->WeeklyClickPackage;
+        return isset($this->WeeklyClickPackage) ? $this->WeeklyClickPackage : null;
     }
 
     /**
@@ -152,7 +158,7 @@ class DynamicTextCampaignStrategyAddBase
      */
     public function getAverageRoi()
     {
-        return $this->AverageRoi;
+        return isset($this->AverageRoi) ? $this->AverageRoi : null;
     }
 
     /**

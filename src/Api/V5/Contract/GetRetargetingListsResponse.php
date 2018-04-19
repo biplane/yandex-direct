@@ -8,7 +8,8 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class GetRetargetingListsResponse extends GetResponseGeneral
 {
 
-    protected $RetargetingLists = null;
+//    Can be omit.
+//    protected $RetargetingLists = null;
 
     /**
      * Creates a new instance of GetRetargetingListsResponse.
@@ -27,7 +28,7 @@ class GetRetargetingListsResponse extends GetResponseGeneral
      */
     public function getRetargetingLists()
     {
-        return $this->RetargetingLists;
+        return isset($this->RetargetingLists) ? $this->RetargetingLists : null;
     }
 
     /**

@@ -8,13 +8,17 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class AddAgencyClientsResponse extends ActionResultBase
 {
 
-    protected $Login = null;
+//    Can be omit.
+//    protected $Login = null;
 
-    protected $Password = null;
+//    Can be omit.
+//    protected $Password = null;
 
-    protected $Email = null;
+//    Can be omit.
+//    protected $Email = null;
 
-    protected $ClientId = null;
+//    Can be omit.
+//    protected $ClientId = null;
 
     /**
      * Creates a new instance of AddAgencyClientsResponse.
@@ -33,7 +37,7 @@ class AddAgencyClientsResponse extends ActionResultBase
      */
     public function getLogin()
     {
-        return $this->Login;
+        return isset($this->Login) ? $this->Login : null;
     }
 
     /**
@@ -56,7 +60,7 @@ class AddAgencyClientsResponse extends ActionResultBase
      */
     public function getPassword()
     {
-        return $this->Password;
+        return isset($this->Password) ? $this->Password : null;
     }
 
     /**
@@ -79,7 +83,7 @@ class AddAgencyClientsResponse extends ActionResultBase
      */
     public function getEmail()
     {
-        return $this->Email;
+        return isset($this->Email) ? $this->Email : null;
     }
 
     /**
@@ -102,7 +106,7 @@ class AddAgencyClientsResponse extends ActionResultBase
      */
     public function getClientId()
     {
-        return $this->ClientId;
+        return isset($this->ClientId) ? $this->ClientId : null;
     }
 
     /**

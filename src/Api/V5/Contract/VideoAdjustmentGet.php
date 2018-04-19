@@ -8,7 +8,8 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class VideoAdjustmentGet
 {
 
-    protected $BidModifier = null;
+//    Can be omit.
+//    protected $BidModifier = null;
 
     /**
      * Creates a new instance of VideoAdjustmentGet.
@@ -27,7 +28,7 @@ class VideoAdjustmentGet
      */
     public function getBidModifier()
     {
-        return $this->BidModifier;
+        return isset($this->BidModifier) ? $this->BidModifier : null;
     }
 
     /**

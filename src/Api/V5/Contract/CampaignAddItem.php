@@ -12,23 +12,32 @@ class CampaignAddItem extends CampaignBase
 
     protected $StartDate = null;
 
-    protected $DailyBudget = null;
+//    Can be omit.
+//    protected $DailyBudget = null;
 
-    protected $EndDate = null;
+//    Can be omit.
+//    protected $EndDate = null;
 
-    protected $NegativeKeywords = null;
+//    Can be omit.
+//    protected $NegativeKeywords = null;
 
-    protected $BlockedIps = null;
+//    Can be omit.
+//    protected $BlockedIps = null;
 
-    protected $ExcludedSites = null;
+//    Can be omit.
+//    protected $ExcludedSites = null;
 
-    protected $TextCampaign = null;
+//    Can be omit.
+//    protected $TextCampaign = null;
 
-    protected $MobileAppCampaign = null;
+//    Can be omit.
+//    protected $MobileAppCampaign = null;
 
-    protected $DynamicTextCampaign = null;
+//    Can be omit.
+//    protected $DynamicTextCampaign = null;
 
-    protected $TimeTargeting = null;
+//    Can be omit.
+//    protected $TimeTargeting = null;
 
     /**
      * Creates a new instance of CampaignAddItem.
@@ -93,7 +102,7 @@ class CampaignAddItem extends CampaignBase
      */
     public function getDailyBudget()
     {
-        return $this->DailyBudget;
+        return isset($this->DailyBudget) ? $this->DailyBudget : null;
     }
 
     /**
@@ -116,7 +125,7 @@ class CampaignAddItem extends CampaignBase
      */
     public function getEndDate()
     {
-        return $this->EndDate;
+        return isset($this->EndDate) ? $this->EndDate : null;
     }
 
     /**
@@ -139,7 +148,7 @@ class CampaignAddItem extends CampaignBase
      */
     public function getNegativeKeywords()
     {
-        return $this->NegativeKeywords;
+        return isset($this->NegativeKeywords) ? $this->NegativeKeywords : null;
     }
 
     /**
@@ -162,7 +171,7 @@ class CampaignAddItem extends CampaignBase
      */
     public function getBlockedIps()
     {
-        return $this->BlockedIps;
+        return isset($this->BlockedIps) ? $this->BlockedIps : null;
     }
 
     /**
@@ -185,7 +194,7 @@ class CampaignAddItem extends CampaignBase
      */
     public function getExcludedSites()
     {
-        return $this->ExcludedSites;
+        return isset($this->ExcludedSites) ? $this->ExcludedSites : null;
     }
 
     /**
@@ -208,7 +217,7 @@ class CampaignAddItem extends CampaignBase
      */
     public function getTextCampaign()
     {
-        return $this->TextCampaign;
+        return isset($this->TextCampaign) ? $this->TextCampaign : null;
     }
 
     /**
@@ -231,7 +240,7 @@ class CampaignAddItem extends CampaignBase
      */
     public function getMobileAppCampaign()
     {
-        return $this->MobileAppCampaign;
+        return isset($this->MobileAppCampaign) ? $this->MobileAppCampaign : null;
     }
 
     /**
@@ -254,7 +263,7 @@ class CampaignAddItem extends CampaignBase
      */
     public function getDynamicTextCampaign()
     {
-        return $this->DynamicTextCampaign;
+        return isset($this->DynamicTextCampaign) ? $this->DynamicTextCampaign : null;
     }
 
     /**
@@ -277,7 +286,7 @@ class CampaignAddItem extends CampaignBase
      */
     public function getTimeTargeting()
     {
-        return $this->TimeTargeting;
+        return isset($this->TimeTargeting) ? $this->TimeTargeting : null;
     }
 
     /**

@@ -8,9 +8,11 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class Search
 {
 
-    protected $Bid = null;
+//    Can be omit.
+//    protected $Bid = null;
 
-    protected $AuctionBids = null;
+//    Can be omit.
+//    protected $AuctionBids = null;
 
     /**
      * Creates a new instance of Search.
@@ -29,7 +31,7 @@ class Search
      */
     public function getBid()
     {
-        return $this->Bid;
+        return isset($this->Bid) ? $this->Bid : null;
     }
 
     /**
@@ -52,7 +54,7 @@ class Search
      */
     public function getAuctionBids()
     {
-        return $this->AuctionBids;
+        return isset($this->AuctionBids) ? $this->AuctionBids : null;
     }
 
     /**

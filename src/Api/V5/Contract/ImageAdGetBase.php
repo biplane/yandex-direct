@@ -8,7 +8,8 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class ImageAdGetBase
 {
 
-    protected $AdImageHash = null;
+//    Can be omit.
+//    protected $AdImageHash = null;
 
     /**
      * Creates a new instance of ImageAdGetBase.
@@ -27,7 +28,7 @@ class ImageAdGetBase
      */
     public function getAdImageHash()
     {
-        return $this->AdImageHash;
+        return isset($this->AdImageHash) ? $this->AdImageHash : null;
     }
 
     /**

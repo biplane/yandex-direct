@@ -8,9 +8,11 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class AdImageSelectionCriteria
 {
 
-    protected $AdImageHashes = null;
+//    Can be omit.
+//    protected $AdImageHashes = null;
 
-    protected $Associated = null;
+//    Can be omit.
+//    protected $Associated = null;
 
     /**
      * Creates a new instance of AdImageSelectionCriteria.
@@ -29,7 +31,7 @@ class AdImageSelectionCriteria
      */
     public function getAdImageHashes()
     {
-        return $this->AdImageHashes;
+        return isset($this->AdImageHashes) ? $this->AdImageHashes : null;
     }
 
     /**
@@ -53,7 +55,7 @@ class AdImageSelectionCriteria
      */
     public function getAssociated()
     {
-        return $this->Associated;
+        return isset($this->Associated) ? $this->Associated : null;
     }
 
     /**

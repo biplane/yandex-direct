@@ -8,15 +8,20 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class EmailSettings
 {
 
-    protected $Email = null;
+//    Can be omit.
+//    protected $Email = null;
 
-    protected $CheckPositionInterval = null;
+//    Can be omit.
+//    protected $CheckPositionInterval = null;
 
-    protected $WarningBalance = null;
+//    Can be omit.
+//    protected $WarningBalance = null;
 
-    protected $SendAccountNews = null;
+//    Can be omit.
+//    protected $SendAccountNews = null;
 
-    protected $SendWarnings = null;
+//    Can be omit.
+//    protected $SendWarnings = null;
 
     /**
      * Creates a new instance of EmailSettings.
@@ -35,7 +40,7 @@ class EmailSettings
      */
     public function getEmail()
     {
-        return $this->Email;
+        return isset($this->Email) ? $this->Email : null;
     }
 
     /**
@@ -58,7 +63,7 @@ class EmailSettings
      */
     public function getCheckPositionInterval()
     {
-        return $this->CheckPositionInterval;
+        return isset($this->CheckPositionInterval) ? $this->CheckPositionInterval : null;
     }
 
     /**
@@ -81,7 +86,7 @@ class EmailSettings
      */
     public function getWarningBalance()
     {
-        return $this->WarningBalance;
+        return isset($this->WarningBalance) ? $this->WarningBalance : null;
     }
 
     /**
@@ -105,7 +110,7 @@ class EmailSettings
      */
     public function getSendAccountNews()
     {
-        return $this->SendAccountNews;
+        return isset($this->SendAccountNews) ? $this->SendAccountNews : null;
     }
 
     /**
@@ -130,7 +135,7 @@ class EmailSettings
      */
     public function getSendWarnings()
     {
-        return $this->SendWarnings;
+        return isset($this->SendWarnings) ? $this->SendWarnings : null;
     }
 
     /**

@@ -8,11 +8,14 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class NotificationUpdate
 {
 
-    protected $Email = null;
+//    Can be omit.
+//    protected $Email = null;
 
-    protected $EmailSubscriptions = null;
+//    Can be omit.
+//    protected $EmailSubscriptions = null;
 
-    protected $Lang = null;
+//    Can be omit.
+//    protected $Lang = null;
 
     /**
      * Creates a new instance of NotificationUpdate.
@@ -31,7 +34,7 @@ class NotificationUpdate
      */
     public function getEmail()
     {
-        return $this->Email;
+        return isset($this->Email) ? $this->Email : null;
     }
 
     /**
@@ -54,7 +57,7 @@ class NotificationUpdate
      */
     public function getEmailSubscriptions()
     {
-        return $this->EmailSubscriptions;
+        return isset($this->EmailSubscriptions) ? $this->EmailSubscriptions : null;
     }
 
     /**
@@ -78,7 +81,7 @@ class NotificationUpdate
      */
     public function getLang()
     {
-        return $this->Lang;
+        return isset($this->Lang) ? $this->Lang : null;
     }
 
     /**

@@ -8,9 +8,11 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class DynamicTextAdGroupGet
 {
 
-    protected $DomainUrl = null;
+//    Can be omit.
+//    protected $DomainUrl = null;
 
-    protected $DomainUrlProcessingStatus = null;
+//    Can be omit.
+//    protected $DomainUrlProcessingStatus = null;
 
     /**
      * Creates a new instance of DynamicTextAdGroupGet.
@@ -29,7 +31,7 @@ class DynamicTextAdGroupGet
      */
     public function getDomainUrl()
     {
-        return $this->DomainUrl;
+        return isset($this->DomainUrl) ? $this->DomainUrl : null;
     }
 
     /**
@@ -53,7 +55,7 @@ class DynamicTextAdGroupGet
      */
     public function getDomainUrlProcessingStatus()
     {
-        return $this->DomainUrlProcessingStatus;
+        return isset($this->DomainUrlProcessingStatus) ? $this->DomainUrlProcessingStatus : null;
     }
 
     /**

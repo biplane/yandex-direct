@@ -8,25 +8,35 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class GetDictionariesResponse
 {
 
-    protected $Currencies = null;
+//    Can be omit.
+//    protected $Currencies = null;
 
-    protected $MetroStations = null;
+//    Can be omit.
+//    protected $MetroStations = null;
 
-    protected $GeoRegions = null;
+//    Can be omit.
+//    protected $GeoRegions = null;
 
-    protected $TimeZones = null;
+//    Can be omit.
+//    protected $TimeZones = null;
 
-    protected $Constants = null;
+//    Can be omit.
+//    protected $Constants = null;
 
-    protected $AdCategories = null;
+//    Can be omit.
+//    protected $AdCategories = null;
 
-    protected $OperationSystemVersions = null;
+//    Can be omit.
+//    protected $OperationSystemVersions = null;
 
-    protected $ProductivityAssertions = null;
+//    Can be omit.
+//    protected $ProductivityAssertions = null;
 
-    protected $SupplySidePlatforms = null;
+//    Can be omit.
+//    protected $SupplySidePlatforms = null;
 
-    protected $Interests = null;
+//    Can be omit.
+//    protected $Interests = null;
 
     /**
      * Creates a new instance of GetDictionariesResponse.
@@ -45,7 +55,7 @@ class GetDictionariesResponse
      */
     public function getCurrencies()
     {
-        return $this->Currencies;
+        return isset($this->Currencies) ? $this->Currencies : null;
     }
 
     /**
@@ -68,7 +78,7 @@ class GetDictionariesResponse
      */
     public function getMetroStations()
     {
-        return $this->MetroStations;
+        return isset($this->MetroStations) ? $this->MetroStations : null;
     }
 
     /**
@@ -91,7 +101,7 @@ class GetDictionariesResponse
      */
     public function getGeoRegions()
     {
-        return $this->GeoRegions;
+        return isset($this->GeoRegions) ? $this->GeoRegions : null;
     }
 
     /**
@@ -114,7 +124,7 @@ class GetDictionariesResponse
      */
     public function getTimeZones()
     {
-        return $this->TimeZones;
+        return isset($this->TimeZones) ? $this->TimeZones : null;
     }
 
     /**
@@ -137,7 +147,7 @@ class GetDictionariesResponse
      */
     public function getConstants()
     {
-        return $this->Constants;
+        return isset($this->Constants) ? $this->Constants : null;
     }
 
     /**
@@ -160,7 +170,7 @@ class GetDictionariesResponse
      */
     public function getAdCategories()
     {
-        return $this->AdCategories;
+        return isset($this->AdCategories) ? $this->AdCategories : null;
     }
 
     /**
@@ -183,7 +193,7 @@ class GetDictionariesResponse
      */
     public function getOperationSystemVersions()
     {
-        return $this->OperationSystemVersions;
+        return isset($this->OperationSystemVersions) ? $this->OperationSystemVersions : null;
     }
 
     /**
@@ -206,7 +216,7 @@ class GetDictionariesResponse
      */
     public function getProductivityAssertions()
     {
-        return $this->ProductivityAssertions;
+        return isset($this->ProductivityAssertions) ? $this->ProductivityAssertions : null;
     }
 
     /**
@@ -229,7 +239,7 @@ class GetDictionariesResponse
      */
     public function getSupplySidePlatforms()
     {
-        return $this->SupplySidePlatforms;
+        return isset($this->SupplySidePlatforms) ? $this->SupplySidePlatforms : null;
     }
 
     /**
@@ -252,7 +262,7 @@ class GetDictionariesResponse
      */
     public function getInterests()
     {
-        return $this->Interests;
+        return isset($this->Interests) ? $this->Interests : null;
     }
 
     /**

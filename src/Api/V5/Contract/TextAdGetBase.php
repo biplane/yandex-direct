@@ -8,19 +8,26 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class TextAdGetBase
 {
 
-    protected $VCardId = null;
+//    Can be omit.
+//    protected $VCardId = null;
 
-    protected $AdImageHash = null;
+//    Can be omit.
+//    protected $AdImageHash = null;
 
-    protected $SitelinkSetId = null;
+//    Can be omit.
+//    protected $SitelinkSetId = null;
 
-    protected $VCardModeration = null;
+//    Can be omit.
+//    protected $VCardModeration = null;
 
-    protected $SitelinksModeration = null;
+//    Can be omit.
+//    protected $SitelinksModeration = null;
 
-    protected $AdImageModeration = null;
+//    Can be omit.
+//    protected $AdImageModeration = null;
 
-    protected $AdExtensions = null;
+//    Can be omit.
+//    protected $AdExtensions = null;
 
     /**
      * Creates a new instance of TextAdGetBase.
@@ -39,7 +46,7 @@ class TextAdGetBase
      */
     public function getVCardId()
     {
-        return $this->VCardId;
+        return isset($this->VCardId) ? $this->VCardId : null;
     }
 
     /**
@@ -62,7 +69,7 @@ class TextAdGetBase
      */
     public function getAdImageHash()
     {
-        return $this->AdImageHash;
+        return isset($this->AdImageHash) ? $this->AdImageHash : null;
     }
 
     /**
@@ -85,7 +92,7 @@ class TextAdGetBase
      */
     public function getSitelinkSetId()
     {
-        return $this->SitelinkSetId;
+        return isset($this->SitelinkSetId) ? $this->SitelinkSetId : null;
     }
 
     /**
@@ -108,7 +115,7 @@ class TextAdGetBase
      */
     public function getVCardModeration()
     {
-        return $this->VCardModeration;
+        return isset($this->VCardModeration) ? $this->VCardModeration : null;
     }
 
     /**
@@ -131,7 +138,7 @@ class TextAdGetBase
      */
     public function getSitelinksModeration()
     {
-        return $this->SitelinksModeration;
+        return isset($this->SitelinksModeration) ? $this->SitelinksModeration : null;
     }
 
     /**
@@ -154,7 +161,7 @@ class TextAdGetBase
      */
     public function getAdImageModeration()
     {
-        return $this->AdImageModeration;
+        return isset($this->AdImageModeration) ? $this->AdImageModeration : null;
     }
 
     /**
@@ -177,7 +184,7 @@ class TextAdGetBase
      */
     public function getAdExtensions()
     {
-        return $this->AdExtensions;
+        return isset($this->AdExtensions) ? $this->AdExtensions : null;
     }
 
     /**

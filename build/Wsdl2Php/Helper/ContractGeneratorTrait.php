@@ -27,11 +27,16 @@ trait ContractGeneratorTrait
         return $generator;
     }
 
-    protected function createGetter($elemName, $phpType, $isArray, $isNullable)
+    protected function createGetter($elemName, $phpType, $isArray, $isNullable, $camBeOmitted = false)
     {
         $generator = new MethodGenerator('get' . ucfirst($elemName));
         $generator->setDocBlock(sprintf('Gets %s.', $elemName));
-        $generator->setBody(sprintf('return $this->%s;', $elemName));
+
+        if ($camBeOmitted) {
+            $generator->setBody(sprintf('return isset($this->%1$s) ? $this->%1$s : null;', $elemName));
+        } else {
+            $generator->setBody(sprintf('return $this->%s;', $elemName));
+        }
 
         $this->addTag($generator, $this->createReturnTag($phpType, $isArray, $isNullable));
 

@@ -8,11 +8,14 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class CampaignBase
 {
 
-    protected $ClientInfo = null;
+//    Can be omit.
+//    protected $ClientInfo = null;
 
-    protected $Notification = null;
+//    Can be omit.
+//    protected $Notification = null;
 
-    protected $TimeZone = null;
+//    Can be omit.
+//    protected $TimeZone = null;
 
     /**
      * Creates a new instance of CampaignBase.
@@ -31,7 +34,7 @@ class CampaignBase
      */
     public function getClientInfo()
     {
-        return $this->ClientInfo;
+        return isset($this->ClientInfo) ? $this->ClientInfo : null;
     }
 
     /**
@@ -54,7 +57,7 @@ class CampaignBase
      */
     public function getNotification()
     {
-        return $this->Notification;
+        return isset($this->Notification) ? $this->Notification : null;
     }
 
     /**
@@ -77,7 +80,7 @@ class CampaignBase
      */
     public function getTimeZone()
     {
-        return $this->TimeZone;
+        return isset($this->TimeZone) ? $this->TimeZone : null;
     }
 
     /**

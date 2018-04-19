@@ -8,7 +8,8 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class GetKeywordBidsResponse extends GetResponseGeneral
 {
 
-    protected $KeywordBids = null;
+//    Can be omit.
+//    protected $KeywordBids = null;
 
     /**
      * Creates a new instance of GetKeywordBidsResponse.
@@ -27,7 +28,7 @@ class GetKeywordBidsResponse extends GetResponseGeneral
      */
     public function getKeywordBids()
     {
-        return $this->KeywordBids;
+        return isset($this->KeywordBids) ? $this->KeywordBids : null;
     }
 
     /**

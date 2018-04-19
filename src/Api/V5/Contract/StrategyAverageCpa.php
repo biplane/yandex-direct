@@ -8,13 +8,17 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class StrategyAverageCpa
 {
 
-    protected $AverageCpa = null;
+//    Can be omit.
+//    protected $AverageCpa = null;
 
-    protected $GoalId = null;
+//    Can be omit.
+//    protected $GoalId = null;
 
-    protected $WeeklySpendLimit = null;
+//    Can be omit.
+//    protected $WeeklySpendLimit = null;
 
-    protected $BidCeiling = null;
+//    Can be omit.
+//    protected $BidCeiling = null;
 
     /**
      * Creates a new instance of StrategyAverageCpa.
@@ -33,7 +37,7 @@ class StrategyAverageCpa
      */
     public function getAverageCpa()
     {
-        return $this->AverageCpa;
+        return isset($this->AverageCpa) ? $this->AverageCpa : null;
     }
 
     /**
@@ -56,7 +60,7 @@ class StrategyAverageCpa
      */
     public function getGoalId()
     {
-        return $this->GoalId;
+        return isset($this->GoalId) ? $this->GoalId : null;
     }
 
     /**
@@ -79,7 +83,7 @@ class StrategyAverageCpa
      */
     public function getWeeklySpendLimit()
     {
-        return $this->WeeklySpendLimit;
+        return isset($this->WeeklySpendLimit) ? $this->WeeklySpendLimit : null;
     }
 
     /**
@@ -102,7 +106,7 @@ class StrategyAverageCpa
      */
     public function getBidCeiling()
     {
-        return $this->BidCeiling;
+        return isset($this->BidCeiling) ? $this->BidCeiling : null;
     }
 
     /**

@@ -8,7 +8,8 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class GetRetargetingListsRequest extends GetRequestGeneral
 {
 
-    protected $SelectionCriteria = null;
+//    Can be omit.
+//    protected $SelectionCriteria = null;
 
     protected $FieldNames = [];
 
@@ -29,7 +30,7 @@ class GetRetargetingListsRequest extends GetRequestGeneral
      */
     public function getSelectionCriteria()
     {
-        return $this->SelectionCriteria;
+        return isset($this->SelectionCriteria) ? $this->SelectionCriteria : null;
     }
 
     /**

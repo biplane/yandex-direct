@@ -12,19 +12,26 @@ class GetAdsRequest extends GetRequestGeneral
 
     protected $FieldNames = [];
 
-    protected $TextAdFieldNames = null;
+//    Can be omit.
+//    protected $TextAdFieldNames = null;
 
-    protected $MobileAppAdFieldNames = null;
+//    Can be omit.
+//    protected $MobileAppAdFieldNames = null;
 
-    protected $DynamicTextAdFieldNames = null;
+//    Can be omit.
+//    protected $DynamicTextAdFieldNames = null;
 
-    protected $TextImageAdFieldNames = null;
+//    Can be omit.
+//    protected $TextImageAdFieldNames = null;
 
-    protected $MobileAppImageAdFieldNames = null;
+//    Can be omit.
+//    protected $MobileAppImageAdFieldNames = null;
 
-    protected $TextAdBuilderAdFieldNames = null;
+//    Can be omit.
+//    protected $TextAdBuilderAdFieldNames = null;
 
-    protected $MobileAppAdBuilderAdFieldNames = null;
+//    Can be omit.
+//    protected $MobileAppAdBuilderAdFieldNames = null;
 
     /**
      * Creates a new instance of GetAdsRequest.
@@ -92,7 +99,7 @@ class GetAdsRequest extends GetRequestGeneral
      */
     public function getTextAdFieldNames()
     {
-        return $this->TextAdFieldNames;
+        return isset($this->TextAdFieldNames) ? $this->TextAdFieldNames : null;
     }
 
     /**
@@ -117,7 +124,7 @@ class GetAdsRequest extends GetRequestGeneral
      */
     public function getMobileAppAdFieldNames()
     {
-        return $this->MobileAppAdFieldNames;
+        return isset($this->MobileAppAdFieldNames) ? $this->MobileAppAdFieldNames : null;
     }
 
     /**
@@ -142,7 +149,7 @@ class GetAdsRequest extends GetRequestGeneral
      */
     public function getDynamicTextAdFieldNames()
     {
-        return $this->DynamicTextAdFieldNames;
+        return isset($this->DynamicTextAdFieldNames) ? $this->DynamicTextAdFieldNames : null;
     }
 
     /**
@@ -167,7 +174,7 @@ class GetAdsRequest extends GetRequestGeneral
      */
     public function getTextImageAdFieldNames()
     {
-        return $this->TextImageAdFieldNames;
+        return isset($this->TextImageAdFieldNames) ? $this->TextImageAdFieldNames : null;
     }
 
     /**
@@ -192,7 +199,7 @@ class GetAdsRequest extends GetRequestGeneral
      */
     public function getMobileAppImageAdFieldNames()
     {
-        return $this->MobileAppImageAdFieldNames;
+        return isset($this->MobileAppImageAdFieldNames) ? $this->MobileAppImageAdFieldNames : null;
     }
 
     /**
@@ -217,7 +224,7 @@ class GetAdsRequest extends GetRequestGeneral
      */
     public function getTextAdBuilderAdFieldNames()
     {
-        return $this->TextAdBuilderAdFieldNames;
+        return isset($this->TextAdBuilderAdFieldNames) ? $this->TextAdBuilderAdFieldNames : null;
     }
 
     /**
@@ -242,7 +249,7 @@ class GetAdsRequest extends GetRequestGeneral
      */
     public function getMobileAppAdBuilderAdFieldNames()
     {
-        return $this->MobileAppAdBuilderAdFieldNames;
+        return isset($this->MobileAppAdBuilderAdFieldNames) ? $this->MobileAppAdBuilderAdFieldNames : null;
     }
 
     /**

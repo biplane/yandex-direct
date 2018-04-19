@@ -8,15 +8,20 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class MobileAppAdBase
 {
 
-    protected $Title = null;
+//    Can be omit.
+//    protected $Title = null;
 
-    protected $Text = null;
+//    Can be omit.
+//    protected $Text = null;
 
-    protected $TrackingUrl = null;
+//    Can be omit.
+//    protected $TrackingUrl = null;
 
-    protected $Action = null;
+//    Can be omit.
+//    protected $Action = null;
 
-    protected $AdImageHash = null;
+//    Can be omit.
+//    protected $AdImageHash = null;
 
     /**
      * Creates a new instance of MobileAppAdBase.
@@ -35,7 +40,7 @@ class MobileAppAdBase
      */
     public function getTitle()
     {
-        return $this->Title;
+        return isset($this->Title) ? $this->Title : null;
     }
 
     /**
@@ -58,7 +63,7 @@ class MobileAppAdBase
      */
     public function getText()
     {
-        return $this->Text;
+        return isset($this->Text) ? $this->Text : null;
     }
 
     /**
@@ -81,7 +86,7 @@ class MobileAppAdBase
      */
     public function getTrackingUrl()
     {
-        return $this->TrackingUrl;
+        return isset($this->TrackingUrl) ? $this->TrackingUrl : null;
     }
 
     /**
@@ -105,7 +110,7 @@ class MobileAppAdBase
      */
     public function getAction()
     {
-        return $this->Action;
+        return isset($this->Action) ? $this->Action : null;
     }
 
     /**
@@ -129,7 +134,7 @@ class MobileAppAdBase
      */
     public function getAdImageHash()
     {
-        return $this->AdImageHash;
+        return isset($this->AdImageHash) ? $this->AdImageHash : null;
     }
 
     /**

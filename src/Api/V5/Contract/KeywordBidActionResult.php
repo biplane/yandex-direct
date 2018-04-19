@@ -8,9 +8,11 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class KeywordBidActionResult extends KeywordBidBase
 {
 
-    protected $Warnings = null;
+//    Can be omit.
+//    protected $Warnings = null;
 
-    protected $Errors = null;
+//    Can be omit.
+//    protected $Errors = null;
 
     /**
      * Creates a new instance of KeywordBidActionResult.
@@ -29,7 +31,7 @@ class KeywordBidActionResult extends KeywordBidBase
      */
     public function getWarnings()
     {
-        return $this->Warnings;
+        return isset($this->Warnings) ? $this->Warnings : null;
     }
 
     /**
@@ -52,7 +54,7 @@ class KeywordBidActionResult extends KeywordBidBase
      */
     public function getErrors()
     {
-        return $this->Errors;
+        return isset($this->Errors) ? $this->Errors : null;
     }
 
     /**

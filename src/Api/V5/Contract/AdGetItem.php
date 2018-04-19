@@ -8,39 +8,56 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class AdGetItem
 {
 
-    protected $Id = null;
+//    Can be omit.
+//    protected $Id = null;
 
-    protected $CampaignId = null;
+//    Can be omit.
+//    protected $CampaignId = null;
 
-    protected $AdGroupId = null;
+//    Can be omit.
+//    protected $AdGroupId = null;
 
-    protected $Status = null;
+//    Can be omit.
+//    protected $Status = null;
 
-    protected $State = null;
+//    Can be omit.
+//    protected $State = null;
 
-    protected $StatusClarification = null;
+//    Can be omit.
+//    protected $StatusClarification = null;
 
-    protected $AdCategories = null;
+//    Can be omit.
+//    protected $AdCategories = null;
 
-    protected $AgeLabel = null;
+//    Can be omit.
+//    protected $AgeLabel = null;
 
-    protected $Type = null;
+//    Can be omit.
+//    protected $Type = null;
 
-    protected $Subtype = null;
+//    Can be omit.
+//    protected $Subtype = null;
 
-    protected $TextAd = null;
+//    Can be omit.
+//    protected $TextAd = null;
 
-    protected $DynamicTextAd = null;
+//    Can be omit.
+//    protected $DynamicTextAd = null;
 
-    protected $MobileAppAd = null;
+//    Can be omit.
+//    protected $MobileAppAd = null;
 
-    protected $TextImageAd = null;
+//    Can be omit.
+//    protected $TextImageAd = null;
 
-    protected $MobileAppImageAd = null;
+//    Can be omit.
+//    protected $MobileAppImageAd = null;
 
-    protected $TextAdBuilderAd = null;
+//    Can be omit.
+//    protected $TextAdBuilderAd = null;
 
-    protected $MobileAppAdBuilderAd = null;
+//    Can be omit.
+//    protected $MobileAppAdBuilderAd = null;
 
     /**
      * Creates a new instance of AdGetItem.
@@ -59,7 +76,7 @@ class AdGetItem
      */
     public function getId()
     {
-        return $this->Id;
+        return isset($this->Id) ? $this->Id : null;
     }
 
     /**
@@ -82,7 +99,7 @@ class AdGetItem
      */
     public function getCampaignId()
     {
-        return $this->CampaignId;
+        return isset($this->CampaignId) ? $this->CampaignId : null;
     }
 
     /**
@@ -105,7 +122,7 @@ class AdGetItem
      */
     public function getAdGroupId()
     {
-        return $this->AdGroupId;
+        return isset($this->AdGroupId) ? $this->AdGroupId : null;
     }
 
     /**
@@ -129,7 +146,7 @@ class AdGetItem
      */
     public function getStatus()
     {
-        return $this->Status;
+        return isset($this->Status) ? $this->Status : null;
     }
 
     /**
@@ -154,7 +171,7 @@ class AdGetItem
      */
     public function getState()
     {
-        return $this->State;
+        return isset($this->State) ? $this->State : null;
     }
 
     /**
@@ -178,7 +195,7 @@ class AdGetItem
      */
     public function getStatusClarification()
     {
-        return $this->StatusClarification;
+        return isset($this->StatusClarification) ? $this->StatusClarification : null;
     }
 
     /**
@@ -201,7 +218,7 @@ class AdGetItem
      */
     public function getAdCategories()
     {
-        return $this->AdCategories;
+        return isset($this->AdCategories) ? $this->AdCategories : null;
     }
 
     /**
@@ -225,7 +242,7 @@ class AdGetItem
      */
     public function getAgeLabel()
     {
-        return $this->AgeLabel;
+        return isset($this->AgeLabel) ? $this->AgeLabel : null;
     }
 
     /**
@@ -250,7 +267,7 @@ class AdGetItem
      */
     public function getType()
     {
-        return $this->Type;
+        return isset($this->Type) ? $this->Type : null;
     }
 
     /**
@@ -275,7 +292,7 @@ class AdGetItem
      */
     public function getSubtype()
     {
-        return $this->Subtype;
+        return isset($this->Subtype) ? $this->Subtype : null;
     }
 
     /**
@@ -299,7 +316,7 @@ class AdGetItem
      */
     public function getTextAd()
     {
-        return $this->TextAd;
+        return isset($this->TextAd) ? $this->TextAd : null;
     }
 
     /**
@@ -322,7 +339,7 @@ class AdGetItem
      */
     public function getDynamicTextAd()
     {
-        return $this->DynamicTextAd;
+        return isset($this->DynamicTextAd) ? $this->DynamicTextAd : null;
     }
 
     /**
@@ -345,7 +362,7 @@ class AdGetItem
      */
     public function getMobileAppAd()
     {
-        return $this->MobileAppAd;
+        return isset($this->MobileAppAd) ? $this->MobileAppAd : null;
     }
 
     /**
@@ -368,7 +385,7 @@ class AdGetItem
      */
     public function getTextImageAd()
     {
-        return $this->TextImageAd;
+        return isset($this->TextImageAd) ? $this->TextImageAd : null;
     }
 
     /**
@@ -391,7 +408,7 @@ class AdGetItem
      */
     public function getMobileAppImageAd()
     {
-        return $this->MobileAppImageAd;
+        return isset($this->MobileAppImageAd) ? $this->MobileAppImageAd : null;
     }
 
     /**
@@ -414,7 +431,7 @@ class AdGetItem
      */
     public function getTextAdBuilderAd()
     {
-        return $this->TextAdBuilderAd;
+        return isset($this->TextAdBuilderAd) ? $this->TextAdBuilderAd : null;
     }
 
     /**
@@ -437,7 +454,7 @@ class AdGetItem
      */
     public function getMobileAppAdBuilderAd()
     {
-        return $this->MobileAppAdBuilderAd;
+        return isset($this->MobileAppAdBuilderAd) ? $this->MobileAppAdBuilderAd : null;
     }
 
     /**

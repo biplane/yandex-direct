@@ -8,13 +8,17 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class CheckChangesResponse
 {
 
-    protected $Modified = null;
+//    Can be omit.
+//    protected $Modified = null;
 
-    protected $NotFound = null;
+//    Can be omit.
+//    protected $NotFound = null;
 
-    protected $Unprocessed = null;
+//    Can be omit.
+//    protected $Unprocessed = null;
 
-    protected $Timestamp = null;
+//    Can be omit.
+//    protected $Timestamp = null;
 
     /**
      * Creates a new instance of CheckChangesResponse.
@@ -33,7 +37,7 @@ class CheckChangesResponse
      */
     public function getModified()
     {
-        return $this->Modified;
+        return isset($this->Modified) ? $this->Modified : null;
     }
 
     /**
@@ -56,7 +60,7 @@ class CheckChangesResponse
      */
     public function getNotFound()
     {
-        return $this->NotFound;
+        return isset($this->NotFound) ? $this->NotFound : null;
     }
 
     /**
@@ -79,7 +83,7 @@ class CheckChangesResponse
      */
     public function getUnprocessed()
     {
-        return $this->Unprocessed;
+        return isset($this->Unprocessed) ? $this->Unprocessed : null;
     }
 
     /**
@@ -102,7 +106,7 @@ class CheckChangesResponse
      */
     public function getTimestamp()
     {
-        return $this->Timestamp;
+        return isset($this->Timestamp) ? $this->Timestamp : null;
     }
 
     /**

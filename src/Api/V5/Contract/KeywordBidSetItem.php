@@ -8,17 +8,23 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class KeywordBidSetItem
 {
 
-    protected $CampaignId = null;
+//    Can be omit.
+//    protected $CampaignId = null;
 
-    protected $AdGroupId = null;
+//    Can be omit.
+//    protected $AdGroupId = null;
 
-    protected $KeywordId = null;
+//    Can be omit.
+//    protected $KeywordId = null;
 
-    protected $SearchBid = null;
+//    Can be omit.
+//    protected $SearchBid = null;
 
-    protected $NetworkBid = null;
+//    Can be omit.
+//    protected $NetworkBid = null;
 
-    protected $StrategyPriority = null;
+//    Can be omit.
+//    protected $StrategyPriority = null;
 
     /**
      * Creates a new instance of KeywordBidSetItem.
@@ -37,7 +43,7 @@ class KeywordBidSetItem
      */
     public function getCampaignId()
     {
-        return $this->CampaignId;
+        return isset($this->CampaignId) ? $this->CampaignId : null;
     }
 
     /**
@@ -60,7 +66,7 @@ class KeywordBidSetItem
      */
     public function getAdGroupId()
     {
-        return $this->AdGroupId;
+        return isset($this->AdGroupId) ? $this->AdGroupId : null;
     }
 
     /**
@@ -83,7 +89,7 @@ class KeywordBidSetItem
      */
     public function getKeywordId()
     {
-        return $this->KeywordId;
+        return isset($this->KeywordId) ? $this->KeywordId : null;
     }
 
     /**
@@ -106,7 +112,7 @@ class KeywordBidSetItem
      */
     public function getSearchBid()
     {
-        return $this->SearchBid;
+        return isset($this->SearchBid) ? $this->SearchBid : null;
     }
 
     /**
@@ -129,7 +135,7 @@ class KeywordBidSetItem
      */
     public function getNetworkBid()
     {
-        return $this->NetworkBid;
+        return isset($this->NetworkBid) ? $this->NetworkBid : null;
     }
 
     /**
@@ -153,7 +159,7 @@ class KeywordBidSetItem
      */
     public function getStrategyPriority()
     {
-        return $this->StrategyPriority;
+        return isset($this->StrategyPriority) ? $this->StrategyPriority : null;
     }
 
     /**

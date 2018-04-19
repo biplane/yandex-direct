@@ -10,7 +10,8 @@ class RetargetingListAddItem
 
     protected $Name = null;
 
-    protected $Description = null;
+//    Can be omit.
+//    protected $Description = null;
 
     protected $Rules = [];
 
@@ -54,7 +55,7 @@ class RetargetingListAddItem
      */
     public function getDescription()
     {
-        return $this->Description;
+        return isset($this->Description) ? $this->Description : null;
     }
 
     /**

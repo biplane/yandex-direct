@@ -8,7 +8,8 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class ContextCoverage
 {
 
-    protected $Items = null;
+//    Can be omit.
+//    protected $Items = null;
 
     /**
      * Creates a new instance of ContextCoverage.
@@ -27,7 +28,7 @@ class ContextCoverage
      */
     public function getItems()
     {
-        return $this->Items;
+        return isset($this->Items) ? $this->Items : null;
     }
 
     /**

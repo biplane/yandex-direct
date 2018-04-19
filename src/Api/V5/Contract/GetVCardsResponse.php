@@ -8,7 +8,8 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class GetVCardsResponse extends GetResponseGeneral
 {
 
-    protected $VCards = null;
+//    Can be omit.
+//    protected $VCards = null;
 
     /**
      * Creates a new instance of GetVCardsResponse.
@@ -27,7 +28,7 @@ class GetVCardsResponse extends GetResponseGeneral
      */
     public function getVCards()
     {
-        return $this->VCards;
+        return isset($this->VCards) ? $this->VCards : null;
     }
 
     /**

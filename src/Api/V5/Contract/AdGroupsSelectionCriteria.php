@@ -8,21 +8,29 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class AdGroupsSelectionCriteria
 {
 
-    protected $CampaignIds = null;
+//    Can be omit.
+//    protected $CampaignIds = null;
 
-    protected $Ids = null;
+//    Can be omit.
+//    protected $Ids = null;
 
-    protected $Types = null;
+//    Can be omit.
+//    protected $Types = null;
 
-    protected $Statuses = null;
+//    Can be omit.
+//    protected $Statuses = null;
 
-    protected $TagIds = null;
+//    Can be omit.
+//    protected $TagIds = null;
 
-    protected $Tags = null;
+//    Can be omit.
+//    protected $Tags = null;
 
-    protected $AppIconStatuses = null;
+//    Can be omit.
+//    protected $AppIconStatuses = null;
 
-    protected $ServingStatuses = null;
+//    Can be omit.
+//    protected $ServingStatuses = null;
 
     /**
      * Creates a new instance of AdGroupsSelectionCriteria.
@@ -41,7 +49,7 @@ class AdGroupsSelectionCriteria
      */
     public function getCampaignIds()
     {
-        return $this->CampaignIds;
+        return isset($this->CampaignIds) ? $this->CampaignIds : null;
     }
 
     /**
@@ -64,7 +72,7 @@ class AdGroupsSelectionCriteria
      */
     public function getIds()
     {
-        return $this->Ids;
+        return isset($this->Ids) ? $this->Ids : null;
     }
 
     /**
@@ -88,7 +96,7 @@ class AdGroupsSelectionCriteria
      */
     public function getTypes()
     {
-        return $this->Types;
+        return isset($this->Types) ? $this->Types : null;
     }
 
     /**
@@ -113,7 +121,7 @@ class AdGroupsSelectionCriteria
      */
     public function getStatuses()
     {
-        return $this->Statuses;
+        return isset($this->Statuses) ? $this->Statuses : null;
     }
 
     /**
@@ -137,7 +145,7 @@ class AdGroupsSelectionCriteria
      */
     public function getTagIds()
     {
-        return $this->TagIds;
+        return isset($this->TagIds) ? $this->TagIds : null;
     }
 
     /**
@@ -160,7 +168,7 @@ class AdGroupsSelectionCriteria
      */
     public function getTags()
     {
-        return $this->Tags;
+        return isset($this->Tags) ? $this->Tags : null;
     }
 
     /**
@@ -184,7 +192,7 @@ class AdGroupsSelectionCriteria
      */
     public function getAppIconStatuses()
     {
-        return $this->AppIconStatuses;
+        return isset($this->AppIconStatuses) ? $this->AppIconStatuses : null;
     }
 
     /**
@@ -209,7 +217,7 @@ class AdGroupsSelectionCriteria
      */
     public function getServingStatuses()
     {
-        return $this->ServingStatuses;
+        return isset($this->ServingStatuses) ? $this->ServingStatuses : null;
     }
 
     /**

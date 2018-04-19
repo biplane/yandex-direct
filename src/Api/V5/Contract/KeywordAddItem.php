@@ -12,15 +12,20 @@ class KeywordAddItem
 
     protected $AdGroupId = null;
 
-    protected $Bid = null;
+//    Can be omit.
+//    protected $Bid = null;
 
-    protected $ContextBid = null;
+//    Can be omit.
+//    protected $ContextBid = null;
 
-    protected $StrategyPriority = null;
+//    Can be omit.
+//    protected $StrategyPriority = null;
 
-    protected $UserParam1 = null;
+//    Can be omit.
+//    protected $UserParam1 = null;
 
-    protected $UserParam2 = null;
+//    Can be omit.
+//    protected $UserParam2 = null;
 
     /**
      * Creates a new instance of KeywordAddItem.
@@ -85,7 +90,7 @@ class KeywordAddItem
      */
     public function getBid()
     {
-        return $this->Bid;
+        return isset($this->Bid) ? $this->Bid : null;
     }
 
     /**
@@ -108,7 +113,7 @@ class KeywordAddItem
      */
     public function getContextBid()
     {
-        return $this->ContextBid;
+        return isset($this->ContextBid) ? $this->ContextBid : null;
     }
 
     /**
@@ -132,7 +137,7 @@ class KeywordAddItem
      */
     public function getStrategyPriority()
     {
-        return $this->StrategyPriority;
+        return isset($this->StrategyPriority) ? $this->StrategyPriority : null;
     }
 
     /**
@@ -156,7 +161,7 @@ class KeywordAddItem
      */
     public function getUserParam1()
     {
-        return $this->UserParam1;
+        return isset($this->UserParam1) ? $this->UserParam1 : null;
     }
 
     /**
@@ -179,7 +184,7 @@ class KeywordAddItem
      */
     public function getUserParam2()
     {
-        return $this->UserParam2;
+        return isset($this->UserParam2) ? $this->UserParam2 : null;
     }
 
     /**

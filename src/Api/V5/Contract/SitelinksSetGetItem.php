@@ -8,9 +8,11 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class SitelinksSetGetItem
 {
 
-    protected $Id = null;
+//    Can be omit.
+//    protected $Id = null;
 
-    protected $Sitelinks = null;
+//    Can be omit.
+//    protected $Sitelinks = null;
 
     /**
      * Creates a new instance of SitelinksSetGetItem.
@@ -29,7 +31,7 @@ class SitelinksSetGetItem
      */
     public function getId()
     {
-        return $this->Id;
+        return isset($this->Id) ? $this->Id : null;
     }
 
     /**
@@ -52,7 +54,7 @@ class SitelinksSetGetItem
      */
     public function getSitelinks()
     {
-        return $this->Sitelinks;
+        return isset($this->Sitelinks) ? $this->Sitelinks : null;
     }
 
     /**

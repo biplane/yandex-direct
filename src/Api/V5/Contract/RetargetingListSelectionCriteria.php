@@ -8,7 +8,8 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class RetargetingListSelectionCriteria
 {
 
-    protected $Ids = null;
+//    Can be omit.
+//    protected $Ids = null;
 
     /**
      * Creates a new instance of RetargetingListSelectionCriteria.
@@ -27,7 +28,7 @@ class RetargetingListSelectionCriteria
      */
     public function getIds()
     {
-        return $this->Ids;
+        return isset($this->Ids) ? $this->Ids : null;
     }
 
     /**

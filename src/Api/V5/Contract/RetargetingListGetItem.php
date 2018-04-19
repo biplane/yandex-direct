@@ -8,11 +8,14 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class RetargetingListGetItem extends RetargetingListBase
 {
 
-    protected $Id = null;
+//    Can be omit.
+//    protected $Id = null;
 
-    protected $IsAvailable = null;
+//    Can be omit.
+//    protected $IsAvailable = null;
 
-    protected $Scope = null;
+//    Can be omit.
+//    protected $Scope = null;
 
     /**
      * Creates a new instance of RetargetingListGetItem.
@@ -31,7 +34,7 @@ class RetargetingListGetItem extends RetargetingListBase
      */
     public function getId()
     {
-        return $this->Id;
+        return isset($this->Id) ? $this->Id : null;
     }
 
     /**
@@ -55,7 +58,7 @@ class RetargetingListGetItem extends RetargetingListBase
      */
     public function getIsAvailable()
     {
-        return $this->IsAvailable;
+        return isset($this->IsAvailable) ? $this->IsAvailable : null;
     }
 
     /**
@@ -80,7 +83,7 @@ class RetargetingListGetItem extends RetargetingListBase
      */
     public function getScope()
     {
-        return $this->Scope;
+        return isset($this->Scope) ? $this->Scope : null;
     }
 
     /**

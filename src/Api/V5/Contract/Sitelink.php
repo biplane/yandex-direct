@@ -12,7 +12,8 @@ class Sitelink
 
     protected $Href = null;
 
-    protected $Description = null;
+//    Can be omit.
+//    protected $Description = null;
 
     /**
      * Creates a new instance of Sitelink.
@@ -77,7 +78,7 @@ class Sitelink
      */
     public function getDescription()
     {
-        return $this->Description;
+        return isset($this->Description) ? $this->Description : null;
     }
 
     /**

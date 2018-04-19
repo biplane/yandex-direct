@@ -8,13 +8,17 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class CheckResponseModified
 {
 
-    protected $CampaignIds = null;
+//    Can be omit.
+//    protected $CampaignIds = null;
 
-    protected $AdGroupIds = null;
+//    Can be omit.
+//    protected $AdGroupIds = null;
 
-    protected $AdIds = null;
+//    Can be omit.
+//    protected $AdIds = null;
 
-    protected $CampaignsStat = null;
+//    Can be omit.
+//    protected $CampaignsStat = null;
 
     /**
      * Creates a new instance of CheckResponseModified.
@@ -33,7 +37,7 @@ class CheckResponseModified
      */
     public function getCampaignIds()
     {
-        return $this->CampaignIds;
+        return isset($this->CampaignIds) ? $this->CampaignIds : null;
     }
 
     /**
@@ -56,7 +60,7 @@ class CheckResponseModified
      */
     public function getAdGroupIds()
     {
-        return $this->AdGroupIds;
+        return isset($this->AdGroupIds) ? $this->AdGroupIds : null;
     }
 
     /**
@@ -79,7 +83,7 @@ class CheckResponseModified
      */
     public function getAdIds()
     {
-        return $this->AdIds;
+        return isset($this->AdIds) ? $this->AdIds : null;
     }
 
     /**
@@ -102,7 +106,7 @@ class CheckResponseModified
      */
     public function getCampaignsStat()
     {
-        return $this->CampaignsStat;
+        return isset($this->CampaignsStat) ? $this->CampaignsStat : null;
     }
 
     /**

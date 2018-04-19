@@ -8,7 +8,8 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class AuctionBids
 {
 
-    protected $AuctionBidItems = null;
+//    Can be omit.
+//    protected $AuctionBidItems = null;
 
     /**
      * Creates a new instance of AuctionBids.
@@ -27,7 +28,7 @@ class AuctionBids
      */
     public function getAuctionBidItems()
     {
-        return $this->AuctionBidItems;
+        return isset($this->AuctionBidItems) ? $this->AuctionBidItems : null;
     }
 
     /**

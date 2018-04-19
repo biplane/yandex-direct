@@ -8,13 +8,17 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class TextAdUpdateBase
 {
 
-    protected $VCardId = null;
+//    Can be omit.
+//    protected $VCardId = null;
 
-    protected $AdImageHash = null;
+//    Can be omit.
+//    protected $AdImageHash = null;
 
-    protected $SitelinkSetId = null;
+//    Can be omit.
+//    protected $SitelinkSetId = null;
 
-    protected $CalloutSetting = null;
+//    Can be omit.
+//    protected $CalloutSetting = null;
 
     /**
      * Creates a new instance of TextAdUpdateBase.
@@ -33,7 +37,7 @@ class TextAdUpdateBase
      */
     public function getVCardId()
     {
-        return $this->VCardId;
+        return isset($this->VCardId) ? $this->VCardId : null;
     }
 
     /**
@@ -56,7 +60,7 @@ class TextAdUpdateBase
      */
     public function getAdImageHash()
     {
-        return $this->AdImageHash;
+        return isset($this->AdImageHash) ? $this->AdImageHash : null;
     }
 
     /**
@@ -79,7 +83,7 @@ class TextAdUpdateBase
      */
     public function getSitelinkSetId()
     {
-        return $this->SitelinkSetId;
+        return isset($this->SitelinkSetId) ? $this->SitelinkSetId : null;
     }
 
     /**
@@ -102,7 +106,7 @@ class TextAdUpdateBase
      */
     public function getCalloutSetting()
     {
-        return $this->CalloutSetting;
+        return isset($this->CalloutSetting) ? $this->CalloutSetting : null;
     }
 
     /**

@@ -12,11 +12,14 @@ class GetCampaignsRequest extends GetRequestGeneral
 
     protected $FieldNames = [];
 
-    protected $TextCampaignFieldNames = null;
+//    Can be omit.
+//    protected $TextCampaignFieldNames = null;
 
-    protected $MobileAppCampaignFieldNames = null;
+//    Can be omit.
+//    protected $MobileAppCampaignFieldNames = null;
 
-    protected $DynamicTextCampaignFieldNames = null;
+//    Can be omit.
+//    protected $DynamicTextCampaignFieldNames = null;
 
     /**
      * Creates a new instance of GetCampaignsRequest.
@@ -84,7 +87,7 @@ class GetCampaignsRequest extends GetRequestGeneral
      */
     public function getTextCampaignFieldNames()
     {
-        return $this->TextCampaignFieldNames;
+        return isset($this->TextCampaignFieldNames) ? $this->TextCampaignFieldNames : null;
     }
 
     /**
@@ -109,7 +112,7 @@ class GetCampaignsRequest extends GetRequestGeneral
      */
     public function getMobileAppCampaignFieldNames()
     {
-        return $this->MobileAppCampaignFieldNames;
+        return isset($this->MobileAppCampaignFieldNames) ? $this->MobileAppCampaignFieldNames : null;
     }
 
     /**
@@ -134,7 +137,7 @@ class GetCampaignsRequest extends GetRequestGeneral
      */
     public function getDynamicTextCampaignFieldNames()
     {
-        return $this->DynamicTextCampaignFieldNames;
+        return isset($this->DynamicTextCampaignFieldNames) ? $this->DynamicTextCampaignFieldNames : null;
     }
 
     /**

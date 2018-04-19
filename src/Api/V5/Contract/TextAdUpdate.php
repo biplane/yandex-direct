@@ -8,19 +8,26 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class TextAdUpdate extends TextAdUpdateBase
 {
 
-    protected $Text = null;
+//    Can be omit.
+//    protected $Text = null;
 
-    protected $Title = null;
+//    Can be omit.
+//    protected $Title = null;
 
-    protected $Title2 = null;
+//    Can be omit.
+//    protected $Title2 = null;
 
-    protected $Href = null;
+//    Can be omit.
+//    protected $Href = null;
 
-    protected $AgeLabel = null;
+//    Can be omit.
+//    protected $AgeLabel = null;
 
-    protected $DisplayUrlPath = null;
+//    Can be omit.
+//    protected $DisplayUrlPath = null;
 
-    protected $VideoExtension = null;
+//    Can be omit.
+//    protected $VideoExtension = null;
 
     /**
      * Creates a new instance of TextAdUpdate.
@@ -39,7 +46,7 @@ class TextAdUpdate extends TextAdUpdateBase
      */
     public function getText()
     {
-        return $this->Text;
+        return isset($this->Text) ? $this->Text : null;
     }
 
     /**
@@ -62,7 +69,7 @@ class TextAdUpdate extends TextAdUpdateBase
      */
     public function getTitle()
     {
-        return $this->Title;
+        return isset($this->Title) ? $this->Title : null;
     }
 
     /**
@@ -85,7 +92,7 @@ class TextAdUpdate extends TextAdUpdateBase
      */
     public function getTitle2()
     {
-        return $this->Title2;
+        return isset($this->Title2) ? $this->Title2 : null;
     }
 
     /**
@@ -108,7 +115,7 @@ class TextAdUpdate extends TextAdUpdateBase
      */
     public function getHref()
     {
-        return $this->Href;
+        return isset($this->Href) ? $this->Href : null;
     }
 
     /**
@@ -132,7 +139,7 @@ class TextAdUpdate extends TextAdUpdateBase
      */
     public function getAgeLabel()
     {
-        return $this->AgeLabel;
+        return isset($this->AgeLabel) ? $this->AgeLabel : null;
     }
 
     /**
@@ -156,7 +163,7 @@ class TextAdUpdate extends TextAdUpdateBase
      */
     public function getDisplayUrlPath()
     {
-        return $this->DisplayUrlPath;
+        return isset($this->DisplayUrlPath) ? $this->DisplayUrlPath : null;
     }
 
     /**
@@ -179,7 +186,7 @@ class TextAdUpdate extends TextAdUpdateBase
      */
     public function getVideoExtension()
     {
-        return $this->VideoExtension;
+        return isset($this->VideoExtension) ? $this->VideoExtension : null;
     }
 
     /**

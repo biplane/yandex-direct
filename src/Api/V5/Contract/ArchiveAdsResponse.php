@@ -8,7 +8,8 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class ArchiveAdsResponse
 {
 
-    protected $ArchiveResults = null;
+//    Can be omit.
+//    protected $ArchiveResults = null;
 
     /**
      * Creates a new instance of ArchiveAdsResponse.
@@ -27,7 +28,7 @@ class ArchiveAdsResponse
      */
     public function getArchiveResults()
     {
-        return $this->ArchiveResults;
+        return isset($this->ArchiveResults) ? $this->ArchiveResults : null;
     }
 
     /**

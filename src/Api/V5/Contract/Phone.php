@@ -14,7 +14,8 @@ class Phone
 
     protected $PhoneNumber = null;
 
-    protected $Extension = null;
+//    Can be omit.
+//    protected $Extension = null;
 
     /**
      * Creates a new instance of Phone.
@@ -102,7 +103,7 @@ class Phone
      */
     public function getExtension()
     {
-        return $this->Extension;
+        return isset($this->Extension) ? $this->Extension : null;
     }
 
     /**

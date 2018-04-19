@@ -8,13 +8,17 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class BidModifiersSelectionCriteria
 {
 
-    protected $CampaignIds = null;
+//    Can be omit.
+//    protected $CampaignIds = null;
 
-    protected $AdGroupIds = null;
+//    Can be omit.
+//    protected $AdGroupIds = null;
 
-    protected $Ids = null;
+//    Can be omit.
+//    protected $Ids = null;
 
-    protected $Types = null;
+//    Can be omit.
+//    protected $Types = null;
 
     protected $Levels = [];
 
@@ -35,7 +39,7 @@ class BidModifiersSelectionCriteria
      */
     public function getCampaignIds()
     {
-        return $this->CampaignIds;
+        return isset($this->CampaignIds) ? $this->CampaignIds : null;
     }
 
     /**
@@ -58,7 +62,7 @@ class BidModifiersSelectionCriteria
      */
     public function getAdGroupIds()
     {
-        return $this->AdGroupIds;
+        return isset($this->AdGroupIds) ? $this->AdGroupIds : null;
     }
 
     /**
@@ -81,7 +85,7 @@ class BidModifiersSelectionCriteria
      */
     public function getIds()
     {
-        return $this->Ids;
+        return isset($this->Ids) ? $this->Ids : null;
     }
 
     /**
@@ -105,7 +109,7 @@ class BidModifiersSelectionCriteria
      */
     public function getTypes()
     {
-        return $this->Types;
+        return isset($this->Types) ? $this->Types : null;
     }
 
     /**

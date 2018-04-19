@@ -8,7 +8,8 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class DeleteCampaignsResponse
 {
 
-    protected $DeleteResults = null;
+//    Can be omit.
+//    protected $DeleteResults = null;
 
     /**
      * Creates a new instance of DeleteCampaignsResponse.
@@ -27,7 +28,7 @@ class DeleteCampaignsResponse
      */
     public function getDeleteResults()
     {
-        return $this->DeleteResults;
+        return isset($this->DeleteResults) ? $this->DeleteResults : null;
     }
 
     /**

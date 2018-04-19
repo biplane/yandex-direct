@@ -8,7 +8,8 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class GetBidsResponse extends GetResponseGeneral
 {
 
-    protected $Bids = null;
+//    Can be omit.
+//    protected $Bids = null;
 
     /**
      * Creates a new instance of GetBidsResponse.
@@ -27,7 +28,7 @@ class GetBidsResponse extends GetResponseGeneral
      */
     public function getBids()
     {
-        return $this->Bids;
+        return isset($this->Bids) ? $this->Bids : null;
     }
 
     /**

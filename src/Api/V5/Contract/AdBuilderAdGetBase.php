@@ -8,7 +8,8 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class AdBuilderAdGetBase
 {
 
-    protected $Creative = null;
+//    Can be omit.
+//    protected $Creative = null;
 
     /**
      * Creates a new instance of AdBuilderAdGetBase.
@@ -27,7 +28,7 @@ class AdBuilderAdGetBase
      */
     public function getCreative()
     {
-        return $this->Creative;
+        return isset($this->Creative) ? $this->Creative : null;
     }
 
     /**

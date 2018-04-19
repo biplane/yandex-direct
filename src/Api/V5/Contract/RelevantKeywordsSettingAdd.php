@@ -10,9 +10,11 @@ class RelevantKeywordsSettingAdd
 
     protected $BudgetPercent = null;
 
-    protected $Mode = null;
+//    Can be omit.
+//    protected $Mode = null;
 
-    protected $OptimizeGoalId = null;
+//    Can be omit.
+//    protected $OptimizeGoalId = null;
 
     /**
      * Creates a new instance of RelevantKeywordsSettingAdd.
@@ -55,7 +57,7 @@ class RelevantKeywordsSettingAdd
      */
     public function getMode()
     {
-        return $this->Mode;
+        return isset($this->Mode) ? $this->Mode : null;
     }
 
     /**
@@ -79,7 +81,7 @@ class RelevantKeywordsSettingAdd
      */
     public function getOptimizeGoalId()
     {
-        return $this->OptimizeGoalId;
+        return isset($this->OptimizeGoalId) ? $this->OptimizeGoalId : null;
     }
 
     /**

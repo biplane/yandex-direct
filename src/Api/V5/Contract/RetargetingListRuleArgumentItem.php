@@ -8,7 +8,8 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class RetargetingListRuleArgumentItem
 {
 
-    protected $MembershipLifeSpan = null;
+//    Can be omit.
+//    protected $MembershipLifeSpan = null;
 
     protected $ExternalId = null;
 
@@ -29,7 +30,7 @@ class RetargetingListRuleArgumentItem
      */
     public function getMembershipLifeSpan()
     {
-        return $this->MembershipLifeSpan;
+        return isset($this->MembershipLifeSpan) ? $this->MembershipLifeSpan : null;
     }
 
     /**

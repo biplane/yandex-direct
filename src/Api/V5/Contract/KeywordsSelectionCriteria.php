@@ -8,19 +8,26 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class KeywordsSelectionCriteria
 {
 
-    protected $Ids = null;
+//    Can be omit.
+//    protected $Ids = null;
 
-    protected $AdGroupIds = null;
+//    Can be omit.
+//    protected $AdGroupIds = null;
 
-    protected $CampaignIds = null;
+//    Can be omit.
+//    protected $CampaignIds = null;
 
-    protected $States = null;
+//    Can be omit.
+//    protected $States = null;
 
-    protected $Statuses = null;
+//    Can be omit.
+//    protected $Statuses = null;
 
-    protected $ModifiedSince = null;
+//    Can be omit.
+//    protected $ModifiedSince = null;
 
-    protected $ServingStatuses = null;
+//    Can be omit.
+//    protected $ServingStatuses = null;
 
     /**
      * Creates a new instance of KeywordsSelectionCriteria.
@@ -39,7 +46,7 @@ class KeywordsSelectionCriteria
      */
     public function getIds()
     {
-        return $this->Ids;
+        return isset($this->Ids) ? $this->Ids : null;
     }
 
     /**
@@ -62,7 +69,7 @@ class KeywordsSelectionCriteria
      */
     public function getAdGroupIds()
     {
-        return $this->AdGroupIds;
+        return isset($this->AdGroupIds) ? $this->AdGroupIds : null;
     }
 
     /**
@@ -85,7 +92,7 @@ class KeywordsSelectionCriteria
      */
     public function getCampaignIds()
     {
-        return $this->CampaignIds;
+        return isset($this->CampaignIds) ? $this->CampaignIds : null;
     }
 
     /**
@@ -109,7 +116,7 @@ class KeywordsSelectionCriteria
      */
     public function getStates()
     {
-        return $this->States;
+        return isset($this->States) ? $this->States : null;
     }
 
     /**
@@ -134,7 +141,7 @@ class KeywordsSelectionCriteria
      */
     public function getStatuses()
     {
-        return $this->Statuses;
+        return isset($this->Statuses) ? $this->Statuses : null;
     }
 
     /**
@@ -158,7 +165,7 @@ class KeywordsSelectionCriteria
      */
     public function getModifiedSince()
     {
-        return $this->ModifiedSince;
+        return isset($this->ModifiedSince) ? $this->ModifiedSince : null;
     }
 
     /**
@@ -182,7 +189,7 @@ class KeywordsSelectionCriteria
      */
     public function getServingStatuses()
     {
-        return $this->ServingStatuses;
+        return isset($this->ServingStatuses) ? $this->ServingStatuses : null;
     }
 
     /**
