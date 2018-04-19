@@ -38,7 +38,7 @@ class StrategyAverageCpc
      * Sets AverageCpc.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setAverageCpc($value = null)
     {
@@ -61,7 +61,7 @@ class StrategyAverageCpc
      * Sets WeeklySpendLimit.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setWeeklySpendLimit($value = null)
     {

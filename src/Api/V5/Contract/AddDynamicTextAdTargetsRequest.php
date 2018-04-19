@@ -34,7 +34,7 @@ class AddDynamicTextAdTargetsRequest
      * Sets Webpages.
      *
      * @param WebpageAddItem[] $value
-     * @return self
+     * @return $this
      */
     public function setWebpages(array $value)
     {

@@ -34,7 +34,7 @@ class EnableSharedAccountRequest
      * Sets Login.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setLogin($value)
     {

@@ -35,7 +35,7 @@ class DynamicTextCampaignSearchStrategyAdd extends DynamicTextCampaignStrategyAd
      * Sets BiddingStrategyType.
      *
      * @param string $value
-     * @return self
+     * @return $this
      * @see DynamicTextCampaignSearchStrategyTypeEnum
      */
     public function setBiddingStrategyType($value)

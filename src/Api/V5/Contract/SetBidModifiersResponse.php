@@ -35,7 +35,7 @@ class SetBidModifiersResponse
      * Sets SetResults.
      *
      * @param ActionResult[]|null $value
-     * @return self
+     * @return $this
      */
     public function setSetResults(array $value = null)
     {

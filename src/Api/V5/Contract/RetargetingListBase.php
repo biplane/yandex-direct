@@ -41,7 +41,7 @@ class RetargetingListBase
      * Sets Name.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setName($value = null)
     {
@@ -64,7 +64,7 @@ class RetargetingListBase
      * Sets Description.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setDescription($value = null)
     {
@@ -87,7 +87,7 @@ class RetargetingListBase
      * Sets Rules.
      *
      * @param RetargetingListRuleItem[]|null $value
-     * @return self
+     * @return $this
      */
     public function setRules(array $value = null)
     {

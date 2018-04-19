@@ -39,7 +39,7 @@ class WebpageCondition
      * Sets Operand.
      *
      * @param string $value
-     * @return self
+     * @return $this
      * @see WebpageConditionOperandEnum
      */
     public function setOperand($value)
@@ -64,7 +64,7 @@ class WebpageCondition
      * Sets Operator.
      *
      * @param string $value
-     * @return self
+     * @return $this
      * @see StringConditionOperatorEnum
      */
     public function setOperator($value)
@@ -88,7 +88,7 @@ class WebpageCondition
      * Sets Arguments.
      *
      * @param string[] $value
-     * @return self
+     * @return $this
      */
     public function setArguments(array $value)
     {

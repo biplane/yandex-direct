@@ -38,7 +38,7 @@ class Warning
      * Sets WarningCode.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setWarningCode($value)
     {
@@ -61,7 +61,7 @@ class Warning
      * Sets WarningString.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setWarningString($value)
     {
@@ -84,7 +84,7 @@ class Warning
      * Sets Description.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setDescription($value = null)
     {

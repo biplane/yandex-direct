@@ -34,7 +34,7 @@ class AddSitelinksRequest
      * Sets SitelinksSets.
      *
      * @param SitelinksSetAddItem[] $value
-     * @return self
+     * @return $this
      */
     public function setSitelinksSets(array $value)
     {

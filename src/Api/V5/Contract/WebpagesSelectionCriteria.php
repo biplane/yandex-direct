@@ -44,7 +44,7 @@ class WebpagesSelectionCriteria
      * Sets Ids.
      *
      * @param int[]|null $value
-     * @return self
+     * @return $this
      */
     public function setIds(array $value = null)
     {
@@ -67,7 +67,7 @@ class WebpagesSelectionCriteria
      * Sets AdGroupIds.
      *
      * @param int[]|null $value
-     * @return self
+     * @return $this
      */
     public function setAdGroupIds(array $value = null)
     {
@@ -90,7 +90,7 @@ class WebpagesSelectionCriteria
      * Sets CampaignIds.
      *
      * @param int[]|null $value
-     * @return self
+     * @return $this
      */
     public function setCampaignIds(array $value = null)
     {
@@ -114,7 +114,7 @@ class WebpagesSelectionCriteria
      * Sets States.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      * @see WebpageStateSelectionEnum
      */
     public function setStates(array $value = null)

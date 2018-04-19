@@ -35,7 +35,7 @@ class GetDynamicTextAdTargetsResponse extends GetResponseGeneral
      * Sets Webpages.
      *
      * @param WebpageGetItem[]|null $value
-     * @return self
+     * @return $this
      */
     public function setWebpages(array $value = null)
     {

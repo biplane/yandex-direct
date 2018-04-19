@@ -34,7 +34,7 @@ class RetargetingRequestOptions
      * Sets Currency.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setCurrency($value = null)
     {

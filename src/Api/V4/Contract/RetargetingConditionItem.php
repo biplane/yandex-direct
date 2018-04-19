@@ -36,7 +36,7 @@ class RetargetingConditionItem
      * Sets Type.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setType($value)
     {
@@ -59,7 +59,7 @@ class RetargetingConditionItem
      * Sets Goals.
      *
      * @param RetargetingConditionGoalItem[] $value
-     * @return self
+     * @return $this
      */
     public function setGoals(array $value)
     {

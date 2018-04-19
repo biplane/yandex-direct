@@ -36,7 +36,7 @@ class BannersRequestInfo
      * Sets CampaignIDS.
      *
      * @param int[]|null $value
-     * @return self
+     * @return $this
      */
     public function setCampaignIDS(array $value = null)
     {
@@ -59,7 +59,7 @@ class BannersRequestInfo
      * Sets BannerIDS.
      *
      * @param int[]|null $value
-     * @return self
+     * @return $this
      */
     public function setBannerIDS(array $value = null)
     {

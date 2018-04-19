@@ -38,7 +38,7 @@ class ClientRight
      * Sets RightName.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setRightName($value)
     {
@@ -61,7 +61,7 @@ class ClientRight
      * Sets Value.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setValue($value)
     {
@@ -84,7 +84,7 @@ class ClientRight
      * Sets AgencyName.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setAgencyName($value = null)
     {

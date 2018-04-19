@@ -36,7 +36,7 @@ class CurrenciesItem
      * Sets Currency.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setCurrency($value)
     {
@@ -59,7 +59,7 @@ class CurrenciesItem
      * Sets Properties.
      *
      * @param ConstantsItem[] $value
-     * @return self
+     * @return $this
      */
     public function setProperties(array $value)
     {

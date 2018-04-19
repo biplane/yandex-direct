@@ -35,7 +35,7 @@ class GetCampaignsResponse extends GetResponseGeneral
      * Sets Campaigns.
      *
      * @param CampaignGetItem[]|null $value
-     * @return self
+     * @return $this
      */
     public function setCampaigns(array $value = null)
     {

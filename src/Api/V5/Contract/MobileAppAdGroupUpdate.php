@@ -42,7 +42,7 @@ class MobileAppAdGroupUpdate
      * Sets TargetDeviceType.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      * @see TargetDeviceTypeEnum
      */
     public function setTargetDeviceType(array $value = null)
@@ -67,7 +67,7 @@ class MobileAppAdGroupUpdate
      * Sets TargetCarrier.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see TargetCarrierEnum
      */
     public function setTargetCarrier($value = null)
@@ -91,7 +91,7 @@ class MobileAppAdGroupUpdate
      * Sets TargetOperatingSystemVersion.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setTargetOperatingSystemVersion($value = null)
     {

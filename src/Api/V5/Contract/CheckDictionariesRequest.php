@@ -35,7 +35,7 @@ class CheckDictionariesRequest
      * Sets Timestamp.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setTimestamp($value = null)
     {

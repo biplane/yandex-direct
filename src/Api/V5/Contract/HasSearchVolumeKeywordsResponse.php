@@ -34,7 +34,7 @@ class HasSearchVolumeKeywordsResponse
      * Sets HasSearchVolumeResults.
      *
      * @param HasSearchVolumeItem[] $value
-     * @return self
+     * @return $this
      */
     public function setHasSearchVolumeResults(array $value)
     {

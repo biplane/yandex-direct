@@ -35,7 +35,7 @@ class GetAdGroupsResponse extends GetResponseGeneral
      * Sets AdGroups.
      *
      * @param AdGroupGetItem[]|null $value
-     * @return self
+     * @return $this
      */
     public function setAdGroups(array $value = null)
     {

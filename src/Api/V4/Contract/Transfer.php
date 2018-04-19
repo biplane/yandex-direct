@@ -40,7 +40,7 @@ class Transfer
      * Sets FromAccountID.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setFromAccountID($value)
     {
@@ -63,7 +63,7 @@ class Transfer
      * Sets ToAccountID.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setToAccountID($value)
     {
@@ -86,7 +86,7 @@ class Transfer
      * Sets Amount.
      *
      * @param float $value
-     * @return self
+     * @return $this
      */
     public function setAmount($value)
     {
@@ -109,7 +109,7 @@ class Transfer
      * Sets Currency.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setCurrency($value = null)
     {

@@ -35,7 +35,7 @@ class AdBuilderAdGetBase
      * Sets Creative.
      *
      * @param AdBuilderAdGetItem|null $value
-     * @return self
+     * @return $this
      */
     public function setCreative(AdBuilderAdGetItem $value = null)
     {

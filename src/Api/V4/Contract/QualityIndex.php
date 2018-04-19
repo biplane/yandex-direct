@@ -36,7 +36,7 @@ class QualityIndex
      * Sets Value.
      *
      * @param float $value
-     * @return self
+     * @return $this
      */
     public function setValue($value)
     {
@@ -59,7 +59,7 @@ class QualityIndex
      * Sets References.
      *
      * @param int[] $value
-     * @return self
+     * @return $this
      */
     public function setReferences(array $value)
     {

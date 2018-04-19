@@ -41,7 +41,7 @@ class DynamicSourceGet
      * Sets Source.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setSource($value = null)
     {
@@ -65,7 +65,7 @@ class DynamicSourceGet
      * Sets SourceType.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see SourceTypeGetEnum
      */
     public function setSourceType($value = null)
@@ -90,7 +90,7 @@ class DynamicSourceGet
      * Sets SourceProcessingStatus.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see SourceProcessingStatusEnum
      */
     public function setSourceProcessingStatus($value = null)

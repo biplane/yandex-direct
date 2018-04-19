@@ -50,7 +50,7 @@ class DynamicTextCampaignStrategyBase
      * Sets WbMaximumClicks.
      *
      * @param StrategyMaximumClicks|null $value
-     * @return self
+     * @return $this
      */
     public function setWbMaximumClicks(StrategyMaximumClicks $value = null)
     {
@@ -73,7 +73,7 @@ class DynamicTextCampaignStrategyBase
      * Sets WbMaximumConversionRate.
      *
      * @param StrategyMaximumConversionRate|null $value
-     * @return self
+     * @return $this
      */
     public function setWbMaximumConversionRate(StrategyMaximumConversionRate $value = null)
     {
@@ -96,7 +96,7 @@ class DynamicTextCampaignStrategyBase
      * Sets AverageCpc.
      *
      * @param StrategyAverageCpc|null $value
-     * @return self
+     * @return $this
      */
     public function setAverageCpc(StrategyAverageCpc $value = null)
     {
@@ -119,7 +119,7 @@ class DynamicTextCampaignStrategyBase
      * Sets AverageCpa.
      *
      * @param StrategyAverageCpa|null $value
-     * @return self
+     * @return $this
      */
     public function setAverageCpa(StrategyAverageCpa $value = null)
     {
@@ -142,7 +142,7 @@ class DynamicTextCampaignStrategyBase
      * Sets WeeklyClickPackage.
      *
      * @param StrategyWeeklyClickPackage|null $value
-     * @return self
+     * @return $this
      */
     public function setWeeklyClickPackage(StrategyWeeklyClickPackage $value = null)
     {
@@ -165,7 +165,7 @@ class DynamicTextCampaignStrategyBase
      * Sets AverageRoi.
      *
      * @param StrategyAverageRoi|null $value
-     * @return self
+     * @return $this
      */
     public function setAverageRoi(StrategyAverageRoi $value = null)
     {

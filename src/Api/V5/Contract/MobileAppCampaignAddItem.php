@@ -37,7 +37,7 @@ class MobileAppCampaignAddItem
      * Sets BiddingStrategy.
      *
      * @param MobileAppCampaignStrategyAdd $value
-     * @return self
+     * @return $this
      */
     public function setBiddingStrategy(MobileAppCampaignStrategyAdd $value)
     {
@@ -60,7 +60,7 @@ class MobileAppCampaignAddItem
      * Sets Settings.
      *
      * @param MobileAppCampaignSetting[]|null $value
-     * @return self
+     * @return $this
      */
     public function setSettings(array $value = null)
     {

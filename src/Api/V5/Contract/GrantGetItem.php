@@ -35,7 +35,7 @@ class GrantGetItem extends GrantItem
      * Sets Agency.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setAgency($value = null)
     {

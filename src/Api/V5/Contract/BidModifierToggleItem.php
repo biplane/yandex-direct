@@ -42,7 +42,7 @@ class BidModifierToggleItem
      * Sets CampaignId.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setCampaignId($value = null)
     {
@@ -65,7 +65,7 @@ class BidModifierToggleItem
      * Sets AdGroupId.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setAdGroupId($value = null)
     {
@@ -89,7 +89,7 @@ class BidModifierToggleItem
      * Sets Type.
      *
      * @param string $value
-     * @return self
+     * @return $this
      * @see BidModifierToggleTypeEnum
      */
     public function setType($value)
@@ -114,7 +114,7 @@ class BidModifierToggleItem
      * Sets Enabled.
      *
      * @param string $value
-     * @return self
+     * @return $this
      * @see YesNoEnum
      */
     public function setEnabled($value)

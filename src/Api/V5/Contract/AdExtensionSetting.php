@@ -34,7 +34,7 @@ class AdExtensionSetting
      * Sets AdExtensions.
      *
      * @param AdExtensionSettingItem[] $value
-     * @return self
+     * @return $this
      */
     public function setAdExtensions(array $value)
     {

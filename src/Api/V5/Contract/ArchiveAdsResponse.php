@@ -35,7 +35,7 @@ class ArchiveAdsResponse
      * Sets ArchiveResults.
      *
      * @param ActionResult[]|null $value
-     * @return self
+     * @return $this
      */
     public function setArchiveResults(array $value = null)
     {

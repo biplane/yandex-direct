@@ -36,7 +36,7 @@ class CreditLimitsInfo
      * Sets Currency.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setCurrency($value)
     {
@@ -59,7 +59,7 @@ class CreditLimitsInfo
      * Sets Limits.
      *
      * @param CreditLimitsItem[] $value
-     * @return self
+     * @return $this
      */
     public function setLimits(array $value)
     {

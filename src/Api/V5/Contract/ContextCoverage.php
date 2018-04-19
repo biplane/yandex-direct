@@ -35,7 +35,7 @@ class ContextCoverage
      * Sets Items.
      *
      * @param ContextCoverageItem[]|null $value
-     * @return self
+     * @return $this
      */
     public function setItems(array $value = null)
     {

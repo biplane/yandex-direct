@@ -50,7 +50,7 @@ class MobileAppAdAdd
      * Sets AdImageHash.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setAdImageHash($value = null)
     {
@@ -73,7 +73,7 @@ class MobileAppAdAdd
      * Sets Text.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setText($value)
     {
@@ -96,7 +96,7 @@ class MobileAppAdAdd
      * Sets Title.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setTitle($value)
     {
@@ -119,7 +119,7 @@ class MobileAppAdAdd
      * Sets TrackingUrl.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setTrackingUrl($value = null)
     {
@@ -143,7 +143,7 @@ class MobileAppAdAdd
      * Sets Action.
      *
      * @param string $value
-     * @return self
+     * @return $this
      * @see MobileAppAdActionEnum
      */
     public function setAction($value)
@@ -167,7 +167,7 @@ class MobileAppAdAdd
      * Sets Features.
      *
      * @param MobileAppAdFeatureItem[]|null $value
-     * @return self
+     * @return $this
      */
     public function setFeatures(array $value = null)
     {
@@ -191,7 +191,7 @@ class MobileAppAdAdd
      * Sets AgeLabel.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see MobAppAgeLabelEnum
      */
     public function setAgeLabel($value = null)

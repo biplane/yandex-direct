@@ -36,7 +36,7 @@ class GetAgencyClientsRequest extends GetRequestGeneral
      * Sets SelectionCriteria.
      *
      * @param AgencyClientsSelectionCriteria $value
-     * @return self
+     * @return $this
      */
     public function setSelectionCriteria(AgencyClientsSelectionCriteria $value)
     {
@@ -60,7 +60,7 @@ class GetAgencyClientsRequest extends GetRequestGeneral
      * Sets FieldNames.
      *
      * @param string[] $value
-     * @return self
+     * @return $this
      * @see AgencyClientFieldEnum
      */
     public function setFieldNames(array $value)

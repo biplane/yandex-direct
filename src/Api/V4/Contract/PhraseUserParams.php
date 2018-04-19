@@ -36,7 +36,7 @@ class PhraseUserParams
      * Sets Param1.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setParam1($value = null)
     {
@@ -59,7 +59,7 @@ class PhraseUserParams
      * Sets Param2.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setParam2($value = null)
     {

@@ -38,7 +38,7 @@ class MobileAppCampaignNetworkStrategyAdd extends MobileAppCampaignStrategyAddBa
      * Sets BiddingStrategyType.
      *
      * @param string $value
-     * @return self
+     * @return $this
      * @see MobileAppCampaignNetworkStrategyTypeEnum
      */
     public function setBiddingStrategyType($value)
@@ -62,7 +62,7 @@ class MobileAppCampaignNetworkStrategyAdd extends MobileAppCampaignStrategyAddBa
      * Sets NetworkDefault.
      *
      * @param StrategyNetworkDefaultAdd|null $value
-     * @return self
+     * @return $this
      */
     public function setNetworkDefault(StrategyNetworkDefaultAdd $value = null)
     {

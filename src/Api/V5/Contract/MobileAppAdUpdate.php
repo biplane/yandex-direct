@@ -38,7 +38,7 @@ class MobileAppAdUpdate extends MobileAppAdBase
      * Sets Features.
      *
      * @param MobileAppAdFeatureItem[]|null $value
-     * @return self
+     * @return $this
      */
     public function setFeatures(array $value = null)
     {
@@ -62,7 +62,7 @@ class MobileAppAdUpdate extends MobileAppAdBase
      * Sets AgeLabel.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see MobAppAgeLabelEnum
      */
     public function setAgeLabel($value = null)

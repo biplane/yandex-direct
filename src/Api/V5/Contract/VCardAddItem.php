@@ -77,7 +77,7 @@ class VCardAddItem
      * Sets CampaignId.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setCampaignId($value)
     {
@@ -100,7 +100,7 @@ class VCardAddItem
      * Sets Country.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setCountry($value)
     {
@@ -123,7 +123,7 @@ class VCardAddItem
      * Sets City.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setCity($value)
     {
@@ -146,7 +146,7 @@ class VCardAddItem
      * Sets CompanyName.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setCompanyName($value)
     {
@@ -169,7 +169,7 @@ class VCardAddItem
      * Sets WorkTime.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setWorkTime($value)
     {
@@ -192,7 +192,7 @@ class VCardAddItem
      * Sets Phone.
      *
      * @param Phone $value
-     * @return self
+     * @return $this
      */
     public function setPhone(Phone $value)
     {
@@ -215,7 +215,7 @@ class VCardAddItem
      * Sets Street.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setStreet($value = null)
     {
@@ -238,7 +238,7 @@ class VCardAddItem
      * Sets House.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setHouse($value = null)
     {
@@ -261,7 +261,7 @@ class VCardAddItem
      * Sets Building.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setBuilding($value = null)
     {
@@ -284,7 +284,7 @@ class VCardAddItem
      * Sets Apartment.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setApartment($value = null)
     {
@@ -307,7 +307,7 @@ class VCardAddItem
      * Sets InstantMessenger.
      *
      * @param InstantMessenger|null $value
-     * @return self
+     * @return $this
      */
     public function setInstantMessenger(InstantMessenger $value = null)
     {
@@ -330,7 +330,7 @@ class VCardAddItem
      * Sets ExtraMessage.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setExtraMessage($value = null)
     {
@@ -353,7 +353,7 @@ class VCardAddItem
      * Sets ContactEmail.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setContactEmail($value = null)
     {
@@ -376,7 +376,7 @@ class VCardAddItem
      * Sets Ogrn.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setOgrn($value = null)
     {
@@ -399,7 +399,7 @@ class VCardAddItem
      * Sets MetroStationId.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setMetroStationId($value = null)
     {
@@ -422,7 +422,7 @@ class VCardAddItem
      * Sets PointOnMap.
      *
      * @param MapPoint|null $value
-     * @return self
+     * @return $this
      */
     public function setPointOnMap(MapPoint $value = null)
     {
@@ -445,7 +445,7 @@ class VCardAddItem
      * Sets ContactPerson.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setContactPerson($value = null)
     {

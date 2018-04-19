@@ -77,7 +77,7 @@ class KeywordGetItem
      * Sets Id.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setId($value = null)
     {
@@ -100,7 +100,7 @@ class KeywordGetItem
      * Sets Keyword.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setKeyword($value = null)
     {
@@ -123,7 +123,7 @@ class KeywordGetItem
      * Sets AdGroupId.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setAdGroupId($value = null)
     {
@@ -146,7 +146,7 @@ class KeywordGetItem
      * Sets CampaignId.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setCampaignId($value = null)
     {
@@ -169,7 +169,7 @@ class KeywordGetItem
      * Sets Bid.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setBid($value = null)
     {
@@ -192,7 +192,7 @@ class KeywordGetItem
      * Sets ContextBid.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setContextBid($value = null)
     {
@@ -216,7 +216,7 @@ class KeywordGetItem
      * Sets StrategyPriority.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see PriorityEnum
      */
     public function setStrategyPriority($value = null)
@@ -241,7 +241,7 @@ class KeywordGetItem
      * Sets State.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see StateEnum
      */
     public function setState($value = null)
@@ -266,7 +266,7 @@ class KeywordGetItem
      * Sets Status.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see StatusEnum
      */
     public function setStatus($value = null)
@@ -290,7 +290,7 @@ class KeywordGetItem
      * Sets UserParam1.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setUserParam1($value = null)
     {
@@ -313,7 +313,7 @@ class KeywordGetItem
      * Sets UserParam2.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setUserParam2($value = null)
     {
@@ -336,7 +336,7 @@ class KeywordGetItem
      * Sets Productivity.
      *
      * @param KeywordProductivity|null $value
-     * @return self
+     * @return $this
      */
     public function setProductivity(KeywordProductivity $value = null)
     {
@@ -359,7 +359,7 @@ class KeywordGetItem
      * Sets StatisticsSearch.
      *
      * @param Statistics|null $value
-     * @return self
+     * @return $this
      */
     public function setStatisticsSearch(Statistics $value = null)
     {
@@ -382,7 +382,7 @@ class KeywordGetItem
      * Sets StatisticsNetwork.
      *
      * @param Statistics|null $value
-     * @return self
+     * @return $this
      */
     public function setStatisticsNetwork(Statistics $value = null)
     {
@@ -406,7 +406,7 @@ class KeywordGetItem
      * Sets ServingStatus.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see ServingStatusEnum
      */
     public function setServingStatus($value = null)

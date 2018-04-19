@@ -35,7 +35,7 @@ class DynamicTextAdGet extends TextAdGetBase
      * Sets Text.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setText($value = null)
     {

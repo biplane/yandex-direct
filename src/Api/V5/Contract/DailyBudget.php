@@ -36,7 +36,7 @@ class DailyBudget
      * Sets Amount.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setAmount($value)
     {
@@ -60,7 +60,7 @@ class DailyBudget
      * Sets Mode.
      *
      * @param string $value
-     * @return self
+     * @return $this
      * @see DailyBudgetModeEnum
      */
     public function setMode($value)

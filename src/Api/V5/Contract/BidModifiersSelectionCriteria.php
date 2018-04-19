@@ -46,7 +46,7 @@ class BidModifiersSelectionCriteria
      * Sets CampaignIds.
      *
      * @param int[]|null $value
-     * @return self
+     * @return $this
      */
     public function setCampaignIds(array $value = null)
     {
@@ -69,7 +69,7 @@ class BidModifiersSelectionCriteria
      * Sets AdGroupIds.
      *
      * @param int[]|null $value
-     * @return self
+     * @return $this
      */
     public function setAdGroupIds(array $value = null)
     {
@@ -92,7 +92,7 @@ class BidModifiersSelectionCriteria
      * Sets Ids.
      *
      * @param int[]|null $value
-     * @return self
+     * @return $this
      */
     public function setIds(array $value = null)
     {
@@ -116,7 +116,7 @@ class BidModifiersSelectionCriteria
      * Sets Types.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      * @see BidModifierTypeEnum
      */
     public function setTypes(array $value = null)
@@ -141,7 +141,7 @@ class BidModifiersSelectionCriteria
      * Sets Levels.
      *
      * @param string[] $value
-     * @return self
+     * @return $this
      * @see BidModifierLevelEnum
      */
     public function setLevels(array $value)

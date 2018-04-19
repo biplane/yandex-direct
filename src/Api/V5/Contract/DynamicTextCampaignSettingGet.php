@@ -37,7 +37,7 @@ class DynamicTextCampaignSettingGet
      * Sets Option.
      *
      * @param string $value
-     * @return self
+     * @return $this
      * @see DynamicTextCampaignSettingsGetEnum
      */
     public function setOption($value)
@@ -62,7 +62,7 @@ class DynamicTextCampaignSettingGet
      * Sets Value.
      *
      * @param string $value
-     * @return self
+     * @return $this
      * @see YesNoEnum
      */
     public function setValue($value)

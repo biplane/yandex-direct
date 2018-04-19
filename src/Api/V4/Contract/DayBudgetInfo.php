@@ -36,7 +36,7 @@ class DayBudgetInfo
      * Sets Amount.
      *
      * @param float $value
-     * @return self
+     * @return $this
      */
     public function setAmount($value)
     {
@@ -59,7 +59,7 @@ class DayBudgetInfo
      * Sets SpendMode.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setSpendMode($value = null)
     {

@@ -45,7 +45,7 @@ class GetAdGroupsRequest extends GetRequestGeneral
      * Sets SelectionCriteria.
      *
      * @param AdGroupsSelectionCriteria $value
-     * @return self
+     * @return $this
      */
     public function setSelectionCriteria(AdGroupsSelectionCriteria $value)
     {
@@ -69,7 +69,7 @@ class GetAdGroupsRequest extends GetRequestGeneral
      * Sets FieldNames.
      *
      * @param string[] $value
-     * @return self
+     * @return $this
      * @see AdGroupFieldEnum
      */
     public function setFieldNames(array $value)
@@ -94,7 +94,7 @@ class GetAdGroupsRequest extends GetRequestGeneral
      * Sets MobileAppAdGroupFieldNames.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      * @see MobileAppAdGroupFieldEnum
      */
     public function setMobileAppAdGroupFieldNames(array $value = null)
@@ -119,7 +119,7 @@ class GetAdGroupsRequest extends GetRequestGeneral
      * Sets DynamicTextAdGroupFieldNames.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      * @see DynamicTextAdGroupFieldEnum
      */
     public function setDynamicTextAdGroupFieldNames(array $value = null)
@@ -144,7 +144,7 @@ class GetAdGroupsRequest extends GetRequestGeneral
      * Sets DynamicTextFeedAdGroupFieldNames.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      * @see DynamicTextFeedAdGroupFieldEnum
      */
     public function setDynamicTextFeedAdGroupFieldNames(array $value = null)

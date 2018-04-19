@@ -37,7 +37,7 @@ class TimeTargetingBase
      * Sets Schedule.
      *
      * @param struct[]|null $value
-     * @return self
+     * @return $this
      */
     public function setSchedule(array $value = null)
     {
@@ -61,7 +61,7 @@ class TimeTargetingBase
      * Sets ConsiderWorkingWeekends.
      *
      * @param string $value
-     * @return self
+     * @return $this
      * @see YesNoEnum
      */
     public function setConsiderWorkingWeekends($value)

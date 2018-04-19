@@ -37,7 +37,7 @@ class MobileAppAdFeatureItem
      * Sets Feature.
      *
      * @param string $value
-     * @return self
+     * @return $this
      * @see MobileAppFeatureEnum
      */
     public function setFeature($value)
@@ -62,7 +62,7 @@ class MobileAppAdFeatureItem
      * Sets Enabled.
      *
      * @param string $value
-     * @return self
+     * @return $this
      * @see YesNoEnum
      */
     public function setEnabled($value)

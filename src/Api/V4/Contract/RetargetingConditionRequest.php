@@ -38,7 +38,7 @@ class RetargetingConditionRequest
      * Sets Action.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setAction($value)
     {
@@ -61,7 +61,7 @@ class RetargetingConditionRequest
      * Sets SelectionCriteria.
      *
      * @param RetargetingConditionSelectionCriteria|null $value
-     * @return self
+     * @return $this
      */
     public function setSelectionCriteria(RetargetingConditionSelectionCriteria $value = null)
     {
@@ -84,7 +84,7 @@ class RetargetingConditionRequest
      * Sets RetargetingConditions.
      *
      * @param RetargetingCondition[]|null $value
-     * @return self
+     * @return $this
      */
     public function setRetargetingConditions(array $value = null)
     {

@@ -36,7 +36,7 @@ class RetargetingConditionResponse
      * Sets ActionsResult.
      *
      * @param RetargetingConditionActionResult[]|null $value
-     * @return self
+     * @return $this
      */
     public function setActionsResult(array $value = null)
     {
@@ -59,7 +59,7 @@ class RetargetingConditionResponse
      * Sets RetargetingConditions.
      *
      * @param RetargetingCondition[]|null $value
-     * @return self
+     * @return $this
      */
     public function setRetargetingConditions(array $value = null)
     {

@@ -42,7 +42,7 @@ class NewForecastInfo
      * Sets Categories.
      *
      * @param int[]|null $value
-     * @return self
+     * @return $this
      */
     public function setCategories(array $value = null)
     {
@@ -65,7 +65,7 @@ class NewForecastInfo
      * Sets Phrases.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      */
     public function setPhrases(array $value = null)
     {
@@ -88,7 +88,7 @@ class NewForecastInfo
      * Sets GeoID.
      *
      * @param int[]|null $value
-     * @return self
+     * @return $this
      */
     public function setGeoID(array $value = null)
     {
@@ -111,7 +111,7 @@ class NewForecastInfo
      * Sets Currency.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setCurrency($value = null)
     {
@@ -134,7 +134,7 @@ class NewForecastInfo
      * Sets AuctionBids.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setAuctionBids($value = null)
     {

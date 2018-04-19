@@ -38,7 +38,7 @@ class DynamicTextCampaignStrategy
      * Sets Search.
      *
      * @param DynamicTextCampaignSearchStrategy|null $value
-     * @return self
+     * @return $this
      */
     public function setSearch(DynamicTextCampaignSearchStrategy $value = null)
     {
@@ -61,7 +61,7 @@ class DynamicTextCampaignStrategy
      * Sets Network.
      *
      * @param DynamicTextCampaignNetworkStrategy|null $value
-     * @return self
+     * @return $this
      */
     public function setNetwork(DynamicTextCampaignNetworkStrategy $value = null)
     {

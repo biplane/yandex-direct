@@ -36,7 +36,7 @@ class RejectReason
      * Sets Type.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setType($value)
     {
@@ -59,7 +59,7 @@ class RejectReason
      * Sets Text.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setText($value)
     {

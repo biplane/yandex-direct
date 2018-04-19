@@ -44,7 +44,7 @@ class BidsSelectionCriteria
      * Sets CampaignIds.
      *
      * @param int[]|null $value
-     * @return self
+     * @return $this
      */
     public function setCampaignIds(array $value = null)
     {
@@ -67,7 +67,7 @@ class BidsSelectionCriteria
      * Sets AdGroupIds.
      *
      * @param int[]|null $value
-     * @return self
+     * @return $this
      */
     public function setAdGroupIds(array $value = null)
     {
@@ -90,7 +90,7 @@ class BidsSelectionCriteria
      * Sets KeywordIds.
      *
      * @param int[]|null $value
-     * @return self
+     * @return $this
      */
     public function setKeywordIds(array $value = null)
     {
@@ -114,7 +114,7 @@ class BidsSelectionCriteria
      * Sets ServingStatuses.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      * @see ServingStatusEnum
      */
     public function setServingStatuses(array $value = null)

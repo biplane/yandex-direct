@@ -38,7 +38,7 @@ class PayCampElement
      * Sets CampaignID.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setCampaignID($value)
     {
@@ -61,7 +61,7 @@ class PayCampElement
      * Sets Sum.
      *
      * @param float $value
-     * @return self
+     * @return $this
      */
     public function setSum($value)
     {
@@ -84,7 +84,7 @@ class PayCampElement
      * Sets Currency.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setCurrency($value = null)
     {

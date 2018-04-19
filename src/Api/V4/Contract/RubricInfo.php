@@ -44,7 +44,7 @@ class RubricInfo
      * Sets ParentID.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setParentID($value)
     {
@@ -67,7 +67,7 @@ class RubricInfo
      * Sets RubricID.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setRubricID($value)
     {
@@ -90,7 +90,7 @@ class RubricInfo
      * Sets Url.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setUrl($value)
     {
@@ -113,7 +113,7 @@ class RubricInfo
      * Sets RubricFullName.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setRubricFullName($value)
     {
@@ -136,7 +136,7 @@ class RubricInfo
      * Sets RubricName.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setRubricName($value)
     {
@@ -159,7 +159,7 @@ class RubricInfo
      * Sets Checkable.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setCheckable($value)
     {

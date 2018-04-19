@@ -38,7 +38,7 @@ class AdImageAssociationResponse
      * Sets ActionsResult.
      *
      * @param AdImageAssociationActionResult[]|null $value
-     * @return self
+     * @return $this
      */
     public function setActionsResult(array $value = null)
     {
@@ -61,7 +61,7 @@ class AdImageAssociationResponse
      * Sets AdImageAssociations.
      *
      * @param AdImageAssociation[]|null $value
-     * @return self
+     * @return $this
      */
     public function setAdImageAssociations(array $value = null)
     {
@@ -84,7 +84,7 @@ class AdImageAssociationResponse
      * Sets TotalObjectsCount.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setTotalObjectsCount($value = null)
     {

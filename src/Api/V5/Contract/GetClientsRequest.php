@@ -35,7 +35,7 @@ class GetClientsRequest
      * Sets FieldNames.
      *
      * @param string[] $value
-     * @return self
+     * @return $this
      * @see ClientFieldEnum
      */
     public function setFieldNames(array $value)

@@ -35,7 +35,7 @@ class MobileAppImageAdGet extends ImageAdGetBase
      * Sets TrackingUrl.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setTrackingUrl($value = null)
     {

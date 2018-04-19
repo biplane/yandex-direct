@@ -34,7 +34,7 @@ class AddKeywordsRequest
      * Sets Keywords.
      *
      * @param KeywordAddItem[] $value
-     * @return self
+     * @return $this
      */
     public function setKeywords(array $value)
     {

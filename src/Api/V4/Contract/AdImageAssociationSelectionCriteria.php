@@ -46,7 +46,7 @@ class AdImageAssociationSelectionCriteria
      * Sets Logins.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      */
     public function setLogins(array $value = null)
     {
@@ -69,7 +69,7 @@ class AdImageAssociationSelectionCriteria
      * Sets AdImageHashes.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      */
     public function setAdImageHashes(array $value = null)
     {
@@ -92,7 +92,7 @@ class AdImageAssociationSelectionCriteria
      * Sets StatusAdImageModerate.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      */
     public function setStatusAdImageModerate(array $value = null)
     {
@@ -115,7 +115,7 @@ class AdImageAssociationSelectionCriteria
      * Sets AdIDS.
      *
      * @param int[]|null $value
-     * @return self
+     * @return $this
      */
     public function setAdIDS(array $value = null)
     {
@@ -138,7 +138,7 @@ class AdImageAssociationSelectionCriteria
      * Sets CampaignIDS.
      *
      * @param int[]|null $value
-     * @return self
+     * @return $this
      */
     public function setCampaignIDS(array $value = null)
     {
@@ -161,7 +161,7 @@ class AdImageAssociationSelectionCriteria
      * Sets Limit.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setLimit($value = null)
     {
@@ -184,7 +184,7 @@ class AdImageAssociationSelectionCriteria
      * Sets Offset.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setOffset($value = null)
     {

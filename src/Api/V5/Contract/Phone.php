@@ -41,7 +41,7 @@ class Phone
      * Sets CountryCode.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setCountryCode($value)
     {
@@ -64,7 +64,7 @@ class Phone
      * Sets CityCode.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setCityCode($value)
     {
@@ -87,7 +87,7 @@ class Phone
      * Sets PhoneNumber.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setPhoneNumber($value)
     {
@@ -110,7 +110,7 @@ class Phone
      * Sets Extension.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setExtension($value = null)
     {

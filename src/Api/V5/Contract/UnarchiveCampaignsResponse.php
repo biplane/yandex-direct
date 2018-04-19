@@ -35,7 +35,7 @@ class UnarchiveCampaignsResponse
      * Sets UnarchiveResults.
      *
      * @param ActionResult[]|null $value
-     * @return self
+     * @return $this
      */
     public function setUnarchiveResults(array $value = null)
     {

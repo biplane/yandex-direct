@@ -35,7 +35,7 @@ class AdExtension extends AdExtensionBase
      * Sets AdExtensionId.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setAdExtensionId($value = null)
     {

@@ -38,7 +38,7 @@ class MobileAppAdGet extends MobileAppAdBase
      * Sets Features.
      *
      * @param MobileAppAdFeatureGetItem[]|null $value
-     * @return self
+     * @return $this
      */
     public function setFeatures(array $value = null)
     {
@@ -61,7 +61,7 @@ class MobileAppAdGet extends MobileAppAdBase
      * Sets AdImageModeration.
      *
      * @param ExtensionModeration|null $value
-     * @return self
+     * @return $this
      */
     public function setAdImageModeration(ExtensionModeration $value = null)
     {

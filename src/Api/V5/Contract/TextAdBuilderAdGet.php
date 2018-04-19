@@ -35,7 +35,7 @@ class TextAdBuilderAdGet extends AdBuilderAdGetBase
      * Sets Href.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setHref($value = null)
     {

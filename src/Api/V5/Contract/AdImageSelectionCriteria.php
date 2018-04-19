@@ -38,7 +38,7 @@ class AdImageSelectionCriteria
      * Sets AdImageHashes.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      */
     public function setAdImageHashes(array $value = null)
     {
@@ -62,7 +62,7 @@ class AdImageSelectionCriteria
      * Sets Associated.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see YesNoEnum
      */
     public function setAssociated($value = null)

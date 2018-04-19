@@ -38,7 +38,7 @@ class AgencyClientsSelectionCriteria
      * Sets Logins.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      */
     public function setLogins(array $value = null)
     {
@@ -62,7 +62,7 @@ class AgencyClientsSelectionCriteria
      * Sets Archived.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see YesNoEnum
      */
     public function setArchived($value = null)

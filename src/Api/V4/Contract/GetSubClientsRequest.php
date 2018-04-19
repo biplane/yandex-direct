@@ -36,7 +36,7 @@ class GetSubClientsRequest
      * Sets Login.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setLogin($value = null)
     {
@@ -59,7 +59,7 @@ class GetSubClientsRequest
      * Sets Filter.
      *
      * @param ClientFilter|null $value
-     * @return self
+     * @return $this
      */
     public function setFilter(ClientFilter $value = null)
     {

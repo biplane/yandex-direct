@@ -35,7 +35,7 @@ class ClientsActionResult extends ActionResultBase
      * Sets ClientId.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setClientId($value = null)
     {

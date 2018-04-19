@@ -58,7 +58,7 @@ class BidSetAutoItem
      * Sets CampaignId.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setCampaignId($value = null)
     {
@@ -81,7 +81,7 @@ class BidSetAutoItem
      * Sets AdGroupId.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setAdGroupId($value = null)
     {
@@ -104,7 +104,7 @@ class BidSetAutoItem
      * Sets KeywordId.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setKeywordId($value = null)
     {
@@ -127,7 +127,7 @@ class BidSetAutoItem
      * Sets MaxBid.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setMaxBid($value = null)
     {
@@ -151,7 +151,7 @@ class BidSetAutoItem
      * Sets Position.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see PositionEnum
      */
     public function setPosition($value = null)
@@ -175,7 +175,7 @@ class BidSetAutoItem
      * Sets IncreasePercent.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setIncreasePercent($value = null)
     {
@@ -199,7 +199,7 @@ class BidSetAutoItem
      * Sets CalculateBy.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see CalculateByEnum
      */
     public function setCalculateBy($value = null)
@@ -223,7 +223,7 @@ class BidSetAutoItem
      * Sets ContextCoverage.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setContextCoverage($value = null)
     {
@@ -247,7 +247,7 @@ class BidSetAutoItem
      * Sets Scope.
      *
      * @param string[] $value
-     * @return self
+     * @return $this
      * @see ScopeEnum
      */
     public function setScope(array $value)

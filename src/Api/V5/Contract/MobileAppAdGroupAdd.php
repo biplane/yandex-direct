@@ -40,7 +40,7 @@ class MobileAppAdGroupAdd
      * Sets StoreUrl.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setStoreUrl($value)
     {
@@ -64,7 +64,7 @@ class MobileAppAdGroupAdd
      * Sets TargetDeviceType.
      *
      * @param string[] $value
-     * @return self
+     * @return $this
      * @see TargetDeviceTypeEnum
      */
     public function setTargetDeviceType(array $value)
@@ -89,7 +89,7 @@ class MobileAppAdGroupAdd
      * Sets TargetCarrier.
      *
      * @param string $value
-     * @return self
+     * @return $this
      * @see TargetCarrierEnum
      */
     public function setTargetCarrier($value)
@@ -113,7 +113,7 @@ class MobileAppAdGroupAdd
      * Sets TargetOperatingSystemVersion.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setTargetOperatingSystemVersion($value)
     {

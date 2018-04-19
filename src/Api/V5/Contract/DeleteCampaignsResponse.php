@@ -35,7 +35,7 @@ class DeleteCampaignsResponse
      * Sets DeleteResults.
      *
      * @param ActionResult[]|null $value
-     * @return self
+     * @return $this
      */
     public function setDeleteResults(array $value = null)
     {

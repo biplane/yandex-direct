@@ -41,7 +41,7 @@ class NotificationUpdate
      * Sets Email.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setEmail($value = null)
     {
@@ -64,7 +64,7 @@ class NotificationUpdate
      * Sets EmailSubscriptions.
      *
      * @param EmailSubscriptionItem[]|null $value
-     * @return self
+     * @return $this
      */
     public function setEmailSubscriptions(array $value = null)
     {
@@ -88,7 +88,7 @@ class NotificationUpdate
      * Sets Lang.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see LangEnum
      */
     public function setLang($value = null)

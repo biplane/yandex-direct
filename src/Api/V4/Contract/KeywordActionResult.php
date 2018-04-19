@@ -40,7 +40,7 @@ class KeywordActionResult
      * Sets Warnings.
      *
      * @param Warning[]|null $value
-     * @return self
+     * @return $this
      */
     public function setWarnings(array $value = null)
     {
@@ -63,7 +63,7 @@ class KeywordActionResult
      * Sets Errors.
      *
      * @param Error[]|null $value
-     * @return self
+     * @return $this
      */
     public function setErrors(array $value = null)
     {
@@ -86,7 +86,7 @@ class KeywordActionResult
      * Sets KeywordID.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setKeywordID($value = null)
     {
@@ -109,7 +109,7 @@ class KeywordActionResult
      * Sets QualityIndex.
      *
      * @param QualityIndex|null $value
-     * @return self
+     * @return $this
      */
     public function setQualityIndex(QualityIndex $value = null)
     {

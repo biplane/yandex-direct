@@ -34,7 +34,7 @@ class SupplySidePlatformsItem
      * Sets Title.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setTitle($value)
     {

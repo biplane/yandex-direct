@@ -37,7 +37,7 @@ class GetAdImagesRequest extends GetRequestGeneral
      * Sets SelectionCriteria.
      *
      * @param AdImageSelectionCriteria|null $value
-     * @return self
+     * @return $this
      */
     public function setSelectionCriteria(AdImageSelectionCriteria $value = null)
     {
@@ -61,7 +61,7 @@ class GetAdImagesRequest extends GetRequestGeneral
      * Sets FieldNames.
      *
      * @param string[] $value
-     * @return self
+     * @return $this
      * @see AdImageFieldEnum
      */
     public function setFieldNames(array $value)

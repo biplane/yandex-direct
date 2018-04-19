@@ -46,7 +46,7 @@ class RetargetingCondition
      * Sets IsAccessible.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setIsAccessible($value = null)
     {
@@ -69,7 +69,7 @@ class RetargetingCondition
      * Sets Fields.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      */
     public function setFields(array $value = null)
     {
@@ -92,7 +92,7 @@ class RetargetingCondition
      * Sets RetargetingConditionName.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setRetargetingConditionName($value = null)
     {
@@ -115,7 +115,7 @@ class RetargetingCondition
      * Sets RetargetingConditionDescription.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setRetargetingConditionDescription($value = null)
     {
@@ -138,7 +138,7 @@ class RetargetingCondition
      * Sets Login.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setLogin($value = null)
     {
@@ -161,7 +161,7 @@ class RetargetingCondition
      * Sets RetargetingConditionID.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setRetargetingConditionID($value = null)
     {
@@ -184,7 +184,7 @@ class RetargetingCondition
      * Sets RetargetingCondition.
      *
      * @param RetargetingConditionItem[]|null $value
-     * @return self
+     * @return $this
      */
     public function setRetargetingCondition(array $value = null)
     {

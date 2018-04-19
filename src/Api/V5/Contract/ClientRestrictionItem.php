@@ -37,7 +37,7 @@ class ClientRestrictionItem
      * Sets Element.
      *
      * @param string $value
-     * @return self
+     * @return $this
      * @see ClientRestrictionEnum
      */
     public function setElement($value)
@@ -61,7 +61,7 @@ class ClientRestrictionItem
      * Sets Value.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setValue($value)
     {

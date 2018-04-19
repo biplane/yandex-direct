@@ -38,7 +38,7 @@ class AdImageRaw
      * Sets Login.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setLogin($value = null)
     {
@@ -61,7 +61,7 @@ class AdImageRaw
      * Sets RawData.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setRawData($value)
     {
@@ -84,7 +84,7 @@ class AdImageRaw
      * Sets Name.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setName($value)
     {

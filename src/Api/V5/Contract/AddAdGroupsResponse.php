@@ -34,7 +34,7 @@ class AddAdGroupsResponse
      * Sets AddResults.
      *
      * @param ActionResult[] $value
-     * @return self
+     * @return $this
      */
     public function setAddResults(array $value)
     {

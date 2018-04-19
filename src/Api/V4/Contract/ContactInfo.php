@@ -70,7 +70,7 @@ class ContactInfo
      * Sets ContactPerson.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setContactPerson($value = null)
     {
@@ -93,7 +93,7 @@ class ContactInfo
      * Sets Country.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setCountry($value)
     {
@@ -116,7 +116,7 @@ class ContactInfo
      * Sets CountryCode.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setCountryCode($value)
     {
@@ -139,7 +139,7 @@ class ContactInfo
      * Sets City.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setCity($value)
     {
@@ -162,7 +162,7 @@ class ContactInfo
      * Sets Street.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setStreet($value = null)
     {
@@ -185,7 +185,7 @@ class ContactInfo
      * Sets House.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setHouse($value = null)
     {
@@ -208,7 +208,7 @@ class ContactInfo
      * Sets Build.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setBuild($value = null)
     {
@@ -231,7 +231,7 @@ class ContactInfo
      * Sets Apart.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setApart($value = null)
     {
@@ -254,7 +254,7 @@ class ContactInfo
      * Sets CityCode.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setCityCode($value)
     {
@@ -277,7 +277,7 @@ class ContactInfo
      * Sets Phone.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setPhone($value)
     {
@@ -300,7 +300,7 @@ class ContactInfo
      * Sets PhoneExt.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setPhoneExt($value = null)
     {
@@ -323,7 +323,7 @@ class ContactInfo
      * Sets CompanyName.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setCompanyName($value)
     {
@@ -346,7 +346,7 @@ class ContactInfo
      * Sets IMClient.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setIMClient($value = null)
     {
@@ -369,7 +369,7 @@ class ContactInfo
      * Sets IMLogin.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setIMLogin($value = null)
     {
@@ -392,7 +392,7 @@ class ContactInfo
      * Sets ExtraMessage.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setExtraMessage($value = null)
     {
@@ -415,7 +415,7 @@ class ContactInfo
      * Sets ContactEmail.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setContactEmail($value = null)
     {
@@ -438,7 +438,7 @@ class ContactInfo
      * Sets WorkTime.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setWorkTime($value)
     {
@@ -461,7 +461,7 @@ class ContactInfo
      * Sets OGRN.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setOGRN($value = null)
     {
@@ -484,7 +484,7 @@ class ContactInfo
      * Sets PointOnMap.
      *
      * @param MapPoint|null $value
-     * @return self
+     * @return $this
      */
     public function setPointOnMap(MapPoint $value = null)
     {

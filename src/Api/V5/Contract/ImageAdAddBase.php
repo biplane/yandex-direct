@@ -34,7 +34,7 @@ class ImageAdAddBase
      * Sets AdImageHash.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setAdImageHash($value)
     {

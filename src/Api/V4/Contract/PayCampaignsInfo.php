@@ -38,7 +38,7 @@ class PayCampaignsInfo
      * Sets Payments.
      *
      * @param PayCampElement[] $value
-     * @return self
+     * @return $this
      */
     public function setPayments(array $value)
     {
@@ -61,7 +61,7 @@ class PayCampaignsInfo
      * Sets ContractID.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setContractID($value = null)
     {
@@ -84,7 +84,7 @@ class PayCampaignsInfo
      * Sets PayMethod.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setPayMethod($value)
     {

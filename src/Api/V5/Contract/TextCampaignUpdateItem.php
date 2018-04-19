@@ -38,7 +38,7 @@ class TextCampaignUpdateItem extends TextCampaignBase
      * Sets BiddingStrategy.
      *
      * @param TextCampaignStrategy|null $value
-     * @return self
+     * @return $this
      */
     public function setBiddingStrategy(TextCampaignStrategy $value = null)
     {
@@ -61,7 +61,7 @@ class TextCampaignUpdateItem extends TextCampaignBase
      * Sets Settings.
      *
      * @param TextCampaignSetting[]|null $value
-     * @return self
+     * @return $this
      */
     public function setSettings(array $value = null)
     {

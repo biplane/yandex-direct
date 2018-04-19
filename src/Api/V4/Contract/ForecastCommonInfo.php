@@ -48,7 +48,7 @@ class ForecastCommonInfo
      * Sets Geo.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setGeo($value)
     {
@@ -71,7 +71,7 @@ class ForecastCommonInfo
      * Sets Shows.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setShows($value)
     {
@@ -94,7 +94,7 @@ class ForecastCommonInfo
      * Sets Clicks.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setClicks($value)
     {
@@ -117,7 +117,7 @@ class ForecastCommonInfo
      * Sets FirstPlaceClicks.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setFirstPlaceClicks($value)
     {
@@ -140,7 +140,7 @@ class ForecastCommonInfo
      * Sets PremiumClicks.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setPremiumClicks($value)
     {
@@ -163,7 +163,7 @@ class ForecastCommonInfo
      * Sets Min.
      *
      * @param float $value
-     * @return self
+     * @return $this
      */
     public function setMin($value)
     {
@@ -186,7 +186,7 @@ class ForecastCommonInfo
      * Sets Max.
      *
      * @param float $value
-     * @return self
+     * @return $this
      */
     public function setMax($value)
     {
@@ -209,7 +209,7 @@ class ForecastCommonInfo
      * Sets PremiumMin.
      *
      * @param float $value
-     * @return self
+     * @return $this
      */
     public function setPremiumMin($value)
     {

@@ -50,7 +50,7 @@ class EventsLogItem
      * Sets CampaignID.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setCampaignID($value = null)
     {
@@ -73,7 +73,7 @@ class EventsLogItem
      * Sets BannerID.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setBannerID($value = null)
     {
@@ -96,7 +96,7 @@ class EventsLogItem
      * Sets PhraseID.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setPhraseID($value = null)
     {
@@ -119,7 +119,7 @@ class EventsLogItem
      * Sets AccountID.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setAccountID($value = null)
     {
@@ -142,7 +142,7 @@ class EventsLogItem
      * Sets TextDescription.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setTextDescription($value = null)
     {
@@ -165,7 +165,7 @@ class EventsLogItem
      * Sets EventType.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setEventType($value)
     {
@@ -188,7 +188,7 @@ class EventsLogItem
      * Sets Timestamp.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setTimestamp($value)
     {
@@ -211,7 +211,7 @@ class EventsLogItem
      * Sets EventName.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setEventName($value)
     {
@@ -234,7 +234,7 @@ class EventsLogItem
      * Sets Attributes.
      *
      * @param EventsLogItemAttributes|null $value
-     * @return self
+     * @return $this
      */
     public function setAttributes(EventsLogItemAttributes $value = null)
     {

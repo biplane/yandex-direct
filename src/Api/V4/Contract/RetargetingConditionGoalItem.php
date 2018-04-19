@@ -36,7 +36,7 @@ class RetargetingConditionGoalItem
      * Sets Time.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setTime($value = null)
     {
@@ -59,7 +59,7 @@ class RetargetingConditionGoalItem
      * Sets GoalID.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setGoalID($value)
     {

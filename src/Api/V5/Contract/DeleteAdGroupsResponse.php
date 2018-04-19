@@ -34,7 +34,7 @@ class DeleteAdGroupsResponse
      * Sets DeleteResults.
      *
      * @param ActionResult[] $value
-     * @return self
+     * @return $this
      */
     public function setDeleteResults(array $value)
     {

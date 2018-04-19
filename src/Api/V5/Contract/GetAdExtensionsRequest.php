@@ -39,7 +39,7 @@ class GetAdExtensionsRequest extends GetRequestGeneral
      * Sets SelectionCriteria.
      *
      * @param AdExtensionsSelectionCriteria $value
-     * @return self
+     * @return $this
      */
     public function setSelectionCriteria(AdExtensionsSelectionCriteria $value)
     {
@@ -63,7 +63,7 @@ class GetAdExtensionsRequest extends GetRequestGeneral
      * Sets FieldNames.
      *
      * @param string[] $value
-     * @return self
+     * @return $this
      * @see AdExtensionFieldEnum
      */
     public function setFieldNames(array $value)
@@ -88,7 +88,7 @@ class GetAdExtensionsRequest extends GetRequestGeneral
      * Sets CalloutFieldNames.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      * @see CalloutFieldEnum
      */
     public function setCalloutFieldNames(array $value = null)

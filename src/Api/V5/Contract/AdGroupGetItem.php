@@ -65,7 +65,7 @@ class AdGroupGetItem extends AdGroupBase
      * Sets Id.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setId($value = null)
     {
@@ -88,7 +88,7 @@ class AdGroupGetItem extends AdGroupBase
      * Sets Name.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setName($value = null)
     {
@@ -111,7 +111,7 @@ class AdGroupGetItem extends AdGroupBase
      * Sets CampaignId.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setCampaignId($value = null)
     {
@@ -135,7 +135,7 @@ class AdGroupGetItem extends AdGroupBase
      * Sets Status.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see StatusEnum
      */
     public function setStatus($value = null)
@@ -160,7 +160,7 @@ class AdGroupGetItem extends AdGroupBase
      * Sets Type.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see AdGroupTypesEnum
      */
     public function setType($value = null)
@@ -185,7 +185,7 @@ class AdGroupGetItem extends AdGroupBase
      * Sets Subtype.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see AdGroupSubtypeEnum
      */
     public function setSubtype($value = null)
@@ -209,7 +209,7 @@ class AdGroupGetItem extends AdGroupBase
      * Sets MobileAppAdGroup.
      *
      * @param MobileAppAdGroupGet|null $value
-     * @return self
+     * @return $this
      */
     public function setMobileAppAdGroup(MobileAppAdGroupGet $value = null)
     {
@@ -232,7 +232,7 @@ class AdGroupGetItem extends AdGroupBase
      * Sets DynamicTextAdGroup.
      *
      * @param DynamicTextAdGroupGet|null $value
-     * @return self
+     * @return $this
      */
     public function setDynamicTextAdGroup(DynamicTextAdGroupGet $value = null)
     {
@@ -255,7 +255,7 @@ class AdGroupGetItem extends AdGroupBase
      * Sets DynamicTextFeedAdGroup.
      *
      * @param DynamicTextFeedAdGroupGet|null $value
-     * @return self
+     * @return $this
      */
     public function setDynamicTextFeedAdGroup(DynamicTextFeedAdGroupGet $value = null)
     {
@@ -279,7 +279,7 @@ class AdGroupGetItem extends AdGroupBase
      * Sets ServingStatus.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see ServingStatusEnum
      */
     public function setServingStatus($value = null)
@@ -303,7 +303,7 @@ class AdGroupGetItem extends AdGroupBase
      * Sets RestrictedRegionIds.
      *
      * @param struct[]|null $value
-     * @return self
+     * @return $this
      */
     public function setRestrictedRegionIds(array $value = null)
     {

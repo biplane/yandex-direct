@@ -34,7 +34,7 @@ class DynamicTextAdAdd extends TextAdAddBase
      * Sets Text.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setText($value)
     {

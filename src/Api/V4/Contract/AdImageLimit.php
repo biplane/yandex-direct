@@ -38,7 +38,7 @@ class AdImageLimit
      * Sets Login.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setLogin($value)
     {
@@ -61,7 +61,7 @@ class AdImageLimit
      * Sets Capacity.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setCapacity($value)
     {
@@ -84,7 +84,7 @@ class AdImageLimit
      * Sets Utilized.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setUtilized($value)
     {

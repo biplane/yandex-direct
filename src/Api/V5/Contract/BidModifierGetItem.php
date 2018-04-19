@@ -62,7 +62,7 @@ class BidModifierGetItem
      * Sets CampaignId.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setCampaignId($value = null)
     {
@@ -85,7 +85,7 @@ class BidModifierGetItem
      * Sets AdGroupId.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setAdGroupId($value = null)
     {
@@ -108,7 +108,7 @@ class BidModifierGetItem
      * Sets Id.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setId($value = null)
     {
@@ -132,7 +132,7 @@ class BidModifierGetItem
      * Sets Level.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see BidModifierLevelEnum
      */
     public function setLevel($value = null)
@@ -157,7 +157,7 @@ class BidModifierGetItem
      * Sets Type.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see BidModifierTypeEnum
      */
     public function setType($value = null)
@@ -181,7 +181,7 @@ class BidModifierGetItem
      * Sets MobileAdjustment.
      *
      * @param MobileAdjustmentGet|null $value
-     * @return self
+     * @return $this
      */
     public function setMobileAdjustment(MobileAdjustmentGet $value = null)
     {
@@ -204,7 +204,7 @@ class BidModifierGetItem
      * Sets DemographicsAdjustment.
      *
      * @param DemographicsAdjustmentGet|null $value
-     * @return self
+     * @return $this
      */
     public function setDemographicsAdjustment(DemographicsAdjustmentGet $value = null)
     {
@@ -227,7 +227,7 @@ class BidModifierGetItem
      * Sets RetargetingAdjustment.
      *
      * @param RetargetingAdjustmentGet|null $value
-     * @return self
+     * @return $this
      */
     public function setRetargetingAdjustment(RetargetingAdjustmentGet $value = null)
     {
@@ -250,7 +250,7 @@ class BidModifierGetItem
      * Sets RegionalAdjustment.
      *
      * @param RegionalAdjustmentGet|null $value
-     * @return self
+     * @return $this
      */
     public function setRegionalAdjustment(RegionalAdjustmentGet $value = null)
     {
@@ -273,7 +273,7 @@ class BidModifierGetItem
      * Sets VideoAdjustment.
      *
      * @param VideoAdjustmentGet|null $value
-     * @return self
+     * @return $this
      */
     public function setVideoAdjustment(VideoAdjustmentGet $value = null)
     {

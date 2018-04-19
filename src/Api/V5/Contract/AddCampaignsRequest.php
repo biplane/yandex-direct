@@ -34,7 +34,7 @@ class AddCampaignsRequest
      * Sets Campaigns.
      *
      * @param CampaignAddItem[] $value
-     * @return self
+     * @return $this
      */
     public function setCampaigns(array $value)
     {

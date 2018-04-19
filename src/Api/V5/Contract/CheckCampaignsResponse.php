@@ -37,7 +37,7 @@ class CheckCampaignsResponse
      * Sets Campaigns.
      *
      * @param CampaignChangesItem[]|null $value
-     * @return self
+     * @return $this
      */
     public function setCampaigns(array $value = null)
     {
@@ -60,7 +60,7 @@ class CheckCampaignsResponse
      * Sets Timestamp.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setTimestamp($value)
     {

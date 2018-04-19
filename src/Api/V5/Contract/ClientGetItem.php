@@ -77,7 +77,7 @@ class ClientGetItem extends ClientBaseItem
      * Sets AccountQuality.
      *
      * @param float|null $value
-     * @return self
+     * @return $this
      */
     public function setAccountQuality($value = null)
     {
@@ -101,7 +101,7 @@ class ClientGetItem extends ClientBaseItem
      * Sets Archived.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see YesNoEnum
      */
     public function setArchived($value = null)
@@ -125,7 +125,7 @@ class ClientGetItem extends ClientBaseItem
      * Sets ClientId.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setClientId($value = null)
     {
@@ -148,7 +148,7 @@ class ClientGetItem extends ClientBaseItem
      * Sets CountryId.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setCountryId($value = null)
     {
@@ -171,7 +171,7 @@ class ClientGetItem extends ClientBaseItem
      * Sets CreatedAt.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setCreatedAt($value = null)
     {
@@ -195,7 +195,7 @@ class ClientGetItem extends ClientBaseItem
      * Sets Currency.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see CurrencyEnum
      */
     public function setCurrency($value = null)
@@ -219,7 +219,7 @@ class ClientGetItem extends ClientBaseItem
      * Sets Grants.
      *
      * @param GrantGetItem[]|null $value
-     * @return self
+     * @return $this
      */
     public function setGrants(array $value = null)
     {
@@ -242,7 +242,7 @@ class ClientGetItem extends ClientBaseItem
      * Sets Login.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setLogin($value = null)
     {
@@ -265,7 +265,7 @@ class ClientGetItem extends ClientBaseItem
      * Sets Notification.
      *
      * @param NotificationGet|null $value
-     * @return self
+     * @return $this
      */
     public function setNotification(NotificationGet $value = null)
     {
@@ -288,7 +288,7 @@ class ClientGetItem extends ClientBaseItem
      * Sets OverdraftSumAvailable.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setOverdraftSumAvailable($value = null)
     {
@@ -311,7 +311,7 @@ class ClientGetItem extends ClientBaseItem
      * Sets Representatives.
      *
      * @param Representative[]|null $value
-     * @return self
+     * @return $this
      */
     public function setRepresentatives(array $value = null)
     {
@@ -334,7 +334,7 @@ class ClientGetItem extends ClientBaseItem
      * Sets Restrictions.
      *
      * @param ClientRestrictionItem[]|null $value
-     * @return self
+     * @return $this
      */
     public function setRestrictions(array $value = null)
     {
@@ -357,7 +357,7 @@ class ClientGetItem extends ClientBaseItem
      * Sets Settings.
      *
      * @param ClientSettingGetItem[]|null $value
-     * @return self
+     * @return $this
      */
     public function setSettings(array $value = null)
     {
@@ -380,7 +380,7 @@ class ClientGetItem extends ClientBaseItem
      * Sets Type.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setType($value = null)
     {
@@ -403,7 +403,7 @@ class ClientGetItem extends ClientBaseItem
      * Sets VatRate.
      *
      * @param float|null $value
-     * @return self
+     * @return $this
      */
     public function setVatRate($value = null)
     {

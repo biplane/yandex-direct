@@ -44,7 +44,7 @@ class GetSummaryStatRequest
      * Sets CampaignIDS.
      *
      * @param int[] $value
-     * @return self
+     * @return $this
      */
     public function setCampaignIDS(array $value)
     {
@@ -67,7 +67,7 @@ class GetSummaryStatRequest
      * Sets StartDate.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setStartDate($value)
     {
@@ -90,7 +90,7 @@ class GetSummaryStatRequest
      * Sets EndDate.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setEndDate($value)
     {
@@ -113,7 +113,7 @@ class GetSummaryStatRequest
      * Sets Currency.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setCurrency($value = null)
     {
@@ -136,7 +136,7 @@ class GetSummaryStatRequest
      * Sets IncludeVAT.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setIncludeVAT($value = null)
     {
@@ -159,7 +159,7 @@ class GetSummaryStatRequest
      * Sets IncludeDiscount.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setIncludeDiscount($value = null)
     {

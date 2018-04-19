@@ -34,7 +34,7 @@ class GetRetargetingGoalsRequest
      * Sets Logins.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      */
     public function setLogins(array $value = null)
     {

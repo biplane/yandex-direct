@@ -36,7 +36,7 @@ class TagInfo
      * Sets TagID.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setTagID($value)
     {
@@ -59,7 +59,7 @@ class TagInfo
      * Sets Tag.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setTag($value)
     {

@@ -44,7 +44,7 @@ class TextAdUpdateBase
      * Sets VCardId.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setVCardId($value = null)
     {
@@ -67,7 +67,7 @@ class TextAdUpdateBase
      * Sets AdImageHash.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setAdImageHash($value = null)
     {
@@ -90,7 +90,7 @@ class TextAdUpdateBase
      * Sets SitelinkSetId.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setSitelinkSetId($value = null)
     {
@@ -113,7 +113,7 @@ class TextAdUpdateBase
      * Sets CalloutSetting.
      *
      * @param AdExtensionSetting|null $value
-     * @return self
+     * @return $this
      */
     public function setCalloutSetting(AdExtensionSetting $value = null)
     {

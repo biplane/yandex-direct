@@ -35,7 +35,7 @@ class TextCampaignSearchStrategyAdd extends TextCampaignStrategyAddBase
      * Sets BiddingStrategyType.
      *
      * @param string $value
-     * @return self
+     * @return $this
      * @see TextCampaignSearchStrategyTypeEnum
      */
     public function setBiddingStrategyType($value)

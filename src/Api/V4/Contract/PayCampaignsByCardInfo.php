@@ -38,7 +38,7 @@ class PayCampaignsByCardInfo
      * Sets PayMethodID.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setPayMethodID($value)
     {
@@ -61,7 +61,7 @@ class PayCampaignsByCardInfo
      * Sets CustomTransactionID.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setCustomTransactionID($value)
     {
@@ -84,7 +84,7 @@ class PayCampaignsByCardInfo
      * Sets Payments.
      *
      * @param PayCampElement[] $value
-     * @return self
+     * @return $this
      */
     public function setPayments(array $value)
     {

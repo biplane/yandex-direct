@@ -42,7 +42,7 @@ class RetargetingRequest
      * Sets Action.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setAction($value)
     {
@@ -65,7 +65,7 @@ class RetargetingRequest
      * Sets Login.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setLogin($value = null)
     {
@@ -88,7 +88,7 @@ class RetargetingRequest
      * Sets SelectionCriteria.
      *
      * @param RetargetingSelectionCriteria|null $value
-     * @return self
+     * @return $this
      */
     public function setSelectionCriteria(RetargetingSelectionCriteria $value = null)
     {
@@ -111,7 +111,7 @@ class RetargetingRequest
      * Sets Retargetings.
      *
      * @param Retargeting[]|null $value
-     * @return self
+     * @return $this
      */
     public function setRetargetings(array $value = null)
     {
@@ -134,7 +134,7 @@ class RetargetingRequest
      * Sets Options.
      *
      * @param RetargetingRequestOptions|null $value
-     * @return self
+     * @return $this
      */
     public function setOptions(RetargetingRequestOptions $value = null)
     {

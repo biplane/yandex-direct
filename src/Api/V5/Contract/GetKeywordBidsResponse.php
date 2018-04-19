@@ -35,7 +35,7 @@ class GetKeywordBidsResponse extends GetResponseGeneral
      * Sets KeywordBids.
      *
      * @param KeywordBidGetItem[]|null $value
-     * @return self
+     * @return $this
      */
     public function setKeywordBids(array $value = null)
     {

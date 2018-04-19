@@ -36,7 +36,7 @@ class BannerTagsInfo
      * Sets BannerID.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setBannerID($value)
     {
@@ -59,7 +59,7 @@ class BannerTagsInfo
      * Sets TagIDS.
      *
      * @param int[]|null $value
-     * @return self
+     * @return $this
      */
     public function setTagIDS(array $value = null)
     {

@@ -53,7 +53,7 @@ class KeywordsSelectionCriteria
      * Sets Ids.
      *
      * @param int[]|null $value
-     * @return self
+     * @return $this
      */
     public function setIds(array $value = null)
     {
@@ -76,7 +76,7 @@ class KeywordsSelectionCriteria
      * Sets AdGroupIds.
      *
      * @param int[]|null $value
-     * @return self
+     * @return $this
      */
     public function setAdGroupIds(array $value = null)
     {
@@ -99,7 +99,7 @@ class KeywordsSelectionCriteria
      * Sets CampaignIds.
      *
      * @param int[]|null $value
-     * @return self
+     * @return $this
      */
     public function setCampaignIds(array $value = null)
     {
@@ -123,7 +123,7 @@ class KeywordsSelectionCriteria
      * Sets States.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      * @see KeywordStateSelectionEnum
      */
     public function setStates(array $value = null)
@@ -148,7 +148,7 @@ class KeywordsSelectionCriteria
      * Sets Statuses.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      * @see KeywordStatusSelectionEnum
      */
     public function setStatuses(array $value = null)
@@ -172,7 +172,7 @@ class KeywordsSelectionCriteria
      * Sets ModifiedSince.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setModifiedSince($value = null)
     {
@@ -196,7 +196,7 @@ class KeywordsSelectionCriteria
      * Sets ServingStatuses.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      * @see ServingStatusEnum
      */
     public function setServingStatuses(array $value = null)

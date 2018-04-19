@@ -34,7 +34,7 @@ class Callout
      * Sets CalloutText.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setCalloutText($value)
     {

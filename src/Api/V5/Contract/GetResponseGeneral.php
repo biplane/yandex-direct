@@ -35,7 +35,7 @@ class GetResponseGeneral
      * Sets LimitedBy.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setLimitedBy($value = null)
     {

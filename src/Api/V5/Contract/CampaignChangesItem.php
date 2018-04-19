@@ -36,7 +36,7 @@ class CampaignChangesItem
      * Sets CampaignId.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setCampaignId($value)
     {
@@ -60,7 +60,7 @@ class CampaignChangesItem
      * Sets ChangesIn.
      *
      * @param string[] $value
-     * @return self
+     * @return $this
      * @see CampaignChangesInEnum
      */
     public function setChangesIn(array $value)

@@ -38,7 +38,7 @@ class GetForecastInfo
      * Sets Categories.
      *
      * @param BannerPhraseInfo[] $value
-     * @return self
+     * @return $this
      */
     public function setCategories(array $value)
     {
@@ -61,7 +61,7 @@ class GetForecastInfo
      * Sets Phrases.
      *
      * @param BannerPhraseInfo[] $value
-     * @return self
+     * @return $this
      */
     public function setPhrases(array $value)
     {
@@ -84,7 +84,7 @@ class GetForecastInfo
      * Sets Common.
      *
      * @param ForecastCommonInfo $value
-     * @return self
+     * @return $this
      */
     public function setCommon(ForecastCommonInfo $value)
     {

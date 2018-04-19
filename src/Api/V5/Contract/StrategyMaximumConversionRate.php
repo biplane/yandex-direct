@@ -35,7 +35,7 @@ class StrategyMaximumConversionRate extends StrategyWeeklyBudgetBase
      * Sets GoalId.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setGoalId($value = null)
     {

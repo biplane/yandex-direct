@@ -34,7 +34,7 @@ class DynamicTextAdGroup
      * Sets DomainUrl.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setDomainUrl($value)
     {

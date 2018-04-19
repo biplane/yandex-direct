@@ -38,7 +38,7 @@ class AdImageAssociationRequest
      * Sets Action.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setAction($value)
     {
@@ -61,7 +61,7 @@ class AdImageAssociationRequest
      * Sets SelectionCriteria.
      *
      * @param AdImageAssociationSelectionCriteria|null $value
-     * @return self
+     * @return $this
      */
     public function setSelectionCriteria(AdImageAssociationSelectionCriteria $value = null)
     {
@@ -84,7 +84,7 @@ class AdImageAssociationRequest
      * Sets AdImageAssociations.
      *
      * @param AdImageAssociation[]|null $value
-     * @return self
+     * @return $this
      */
     public function setAdImageAssociations(array $value = null)
     {

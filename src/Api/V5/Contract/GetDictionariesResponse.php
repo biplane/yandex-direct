@@ -62,7 +62,7 @@ class GetDictionariesResponse
      * Sets Currencies.
      *
      * @param CurrenciesItem[]|null $value
-     * @return self
+     * @return $this
      */
     public function setCurrencies(array $value = null)
     {
@@ -85,7 +85,7 @@ class GetDictionariesResponse
      * Sets MetroStations.
      *
      * @param MetroStationsItem[]|null $value
-     * @return self
+     * @return $this
      */
     public function setMetroStations(array $value = null)
     {
@@ -108,7 +108,7 @@ class GetDictionariesResponse
      * Sets GeoRegions.
      *
      * @param GeoRegionsItem[]|null $value
-     * @return self
+     * @return $this
      */
     public function setGeoRegions(array $value = null)
     {
@@ -131,7 +131,7 @@ class GetDictionariesResponse
      * Sets TimeZones.
      *
      * @param TimeZonesItem[]|null $value
-     * @return self
+     * @return $this
      */
     public function setTimeZones(array $value = null)
     {
@@ -154,7 +154,7 @@ class GetDictionariesResponse
      * Sets Constants.
      *
      * @param ConstantsItem[]|null $value
-     * @return self
+     * @return $this
      */
     public function setConstants(array $value = null)
     {
@@ -177,7 +177,7 @@ class GetDictionariesResponse
      * Sets AdCategories.
      *
      * @param AdCategoriesItem[]|null $value
-     * @return self
+     * @return $this
      */
     public function setAdCategories(array $value = null)
     {
@@ -200,7 +200,7 @@ class GetDictionariesResponse
      * Sets OperationSystemVersions.
      *
      * @param OperationSystemVersionsItem[]|null $value
-     * @return self
+     * @return $this
      */
     public function setOperationSystemVersions(array $value = null)
     {
@@ -223,7 +223,7 @@ class GetDictionariesResponse
      * Sets ProductivityAssertions.
      *
      * @param ProductivityAssertionsItem[]|null $value
-     * @return self
+     * @return $this
      */
     public function setProductivityAssertions(array $value = null)
     {
@@ -246,7 +246,7 @@ class GetDictionariesResponse
      * Sets SupplySidePlatforms.
      *
      * @param SupplySidePlatformsItem[]|null $value
-     * @return self
+     * @return $this
      */
     public function setSupplySidePlatforms(array $value = null)
     {
@@ -269,7 +269,7 @@ class GetDictionariesResponse
      * Sets Interests.
      *
      * @param InterestsItem[]|null $value
-     * @return self
+     * @return $this
      */
     public function setInterests(array $value = null)
     {

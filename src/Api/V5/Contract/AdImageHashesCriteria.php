@@ -34,7 +34,7 @@ class AdImageHashesCriteria
      * Sets AdImageHashes.
      *
      * @param string[] $value
-     * @return self
+     * @return $this
      */
     public function setAdImageHashes(array $value)
     {

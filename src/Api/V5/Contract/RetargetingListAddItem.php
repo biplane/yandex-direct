@@ -39,7 +39,7 @@ class RetargetingListAddItem
      * Sets Name.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setName($value)
     {
@@ -62,7 +62,7 @@ class RetargetingListAddItem
      * Sets Description.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setDescription($value = null)
     {
@@ -85,7 +85,7 @@ class RetargetingListAddItem
      * Sets Rules.
      *
      * @param RetargetingListRuleItem[] $value
-     * @return self
+     * @return $this
      */
     public function setRules(array $value)
     {

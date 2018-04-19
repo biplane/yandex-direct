@@ -65,7 +65,7 @@ class WebpageGetItem
      * Sets Id.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setId($value = null)
     {
@@ -88,7 +88,7 @@ class WebpageGetItem
      * Sets AdGroupId.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setAdGroupId($value = null)
     {
@@ -111,7 +111,7 @@ class WebpageGetItem
      * Sets CampaignId.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setCampaignId($value = null)
     {
@@ -134,7 +134,7 @@ class WebpageGetItem
      * Sets Name.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setName($value = null)
     {
@@ -157,7 +157,7 @@ class WebpageGetItem
      * Sets Bid.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setBid($value = null)
     {
@@ -180,7 +180,7 @@ class WebpageGetItem
      * Sets ContextBid.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setContextBid($value = null)
     {
@@ -204,7 +204,7 @@ class WebpageGetItem
      * Sets StrategyPriority.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see PriorityEnum
      */
     public function setStrategyPriority($value = null)
@@ -229,7 +229,7 @@ class WebpageGetItem
      * Sets State.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see StateEnum
      */
     public function setState($value = null)
@@ -253,7 +253,7 @@ class WebpageGetItem
      * Sets StatusClarification.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setStatusClarification($value = null)
     {
@@ -276,7 +276,7 @@ class WebpageGetItem
      * Sets Conditions.
      *
      * @param WebpageCondition[]|null $value
-     * @return self
+     * @return $this
      */
     public function setConditions(array $value = null)
     {
@@ -300,7 +300,7 @@ class WebpageGetItem
      * Sets ConditionType.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see WebpageTypeEnum
      */
     public function setConditionType($value = null)

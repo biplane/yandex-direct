@@ -38,7 +38,7 @@ class AdExtensionGetItem extends AdExtensionBase
      * Sets Id.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setId($value = null)
     {
@@ -62,7 +62,7 @@ class AdExtensionGetItem extends AdExtensionBase
      * Sets Associated.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see YesNoEnum
      */
     public function setAssociated($value = null)

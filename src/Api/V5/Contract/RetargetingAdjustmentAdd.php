@@ -36,7 +36,7 @@ class RetargetingAdjustmentAdd
      * Sets RetargetingConditionId.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setRetargetingConditionId($value)
     {
@@ -59,7 +59,7 @@ class RetargetingAdjustmentAdd
      * Sets BidModifier.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setBidModifier($value)
     {

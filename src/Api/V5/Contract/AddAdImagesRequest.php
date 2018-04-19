@@ -34,7 +34,7 @@ class AddAdImagesRequest
      * Sets AdImages.
      *
      * @param AdImageAddItem[] $value
-     * @return self
+     * @return $this
      */
     public function setAdImages(array $value)
     {

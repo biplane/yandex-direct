@@ -42,7 +42,7 @@ class CreateNewSubclientResponse
      * Sets Login.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setLogin($value)
     {
@@ -65,7 +65,7 @@ class CreateNewSubclientResponse
      * Sets Password.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setPassword($value)
     {
@@ -88,7 +88,7 @@ class CreateNewSubclientResponse
      * Sets FIO.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setFIO($value)
     {
@@ -111,7 +111,7 @@ class CreateNewSubclientResponse
      * Sets Email.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setEmail($value)
     {
@@ -134,7 +134,7 @@ class CreateNewSubclientResponse
      * Sets ClientID.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setClientID($value)
     {

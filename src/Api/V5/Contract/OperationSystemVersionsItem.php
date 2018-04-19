@@ -36,7 +36,7 @@ class OperationSystemVersionsItem
      * Sets OsName.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setOsName($value)
     {
@@ -59,7 +59,7 @@ class OperationSystemVersionsItem
      * Sets OsVersion.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setOsVersion($value)
     {

@@ -41,7 +41,7 @@ class CampaignBase
      * Sets ClientInfo.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setClientInfo($value = null)
     {
@@ -64,7 +64,7 @@ class CampaignBase
      * Sets Notification.
      *
      * @param Notification|null $value
-     * @return self
+     * @return $this
      */
     public function setNotification(Notification $value = null)
     {
@@ -87,7 +87,7 @@ class CampaignBase
      * Sets TimeZone.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setTimeZone($value = null)
     {

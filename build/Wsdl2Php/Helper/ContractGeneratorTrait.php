@@ -51,7 +51,7 @@ trait ContractGeneratorTrait
         $generator->setParameter($this->createParameter('value', $phpType, $isArray, $isNullable));
 
         $this->addTag($generator, $this->createParamTag('value', $phpType, $isArray, $isNullable));
-        $this->addTag($generator, $this->createReturnTag('self'));
+        $this->addTag($generator, $this->createReturnTag('$this'));
 
         return $generator;
     }

@@ -38,7 +38,7 @@ class ReportInfo
      * Sets ReportID.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setReportID($value)
     {
@@ -61,7 +61,7 @@ class ReportInfo
      * Sets Url.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setUrl($value)
     {
@@ -84,7 +84,7 @@ class ReportInfo
      * Sets StatusReport.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setStatusReport($value)
     {

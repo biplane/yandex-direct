@@ -35,7 +35,7 @@ class SetKeywordBidsResponse
      * Sets SetResults.
      *
      * @param KeywordBidActionResult[]|null $value
-     * @return self
+     * @return $this
      */
     public function setSetResults(array $value = null)
     {

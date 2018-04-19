@@ -53,7 +53,7 @@ class AdImageGetItem
      * Sets AdImageHash.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setAdImageHash($value = null)
     {
@@ -76,7 +76,7 @@ class AdImageGetItem
      * Sets Name.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setName($value = null)
     {
@@ -100,7 +100,7 @@ class AdImageGetItem
      * Sets Associated.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see YesNoEnum
      */
     public function setAssociated($value = null)
@@ -125,7 +125,7 @@ class AdImageGetItem
      * Sets Type.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see AdImageTypeEnum
      */
     public function setType($value = null)
@@ -150,7 +150,7 @@ class AdImageGetItem
      * Sets Subtype.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see AdImageSubtypeEnum
      */
     public function setSubtype($value = null)
@@ -174,7 +174,7 @@ class AdImageGetItem
      * Sets OriginalUrl.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setOriginalUrl($value = null)
     {
@@ -197,7 +197,7 @@ class AdImageGetItem
      * Sets PreviewUrl.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setPreviewUrl($value = null)
     {

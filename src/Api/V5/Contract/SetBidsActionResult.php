@@ -38,7 +38,7 @@ class SetBidsActionResult extends ActionResult
      * Sets CampaignId.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setCampaignId($value = null)
     {
@@ -61,7 +61,7 @@ class SetBidsActionResult extends ActionResult
      * Sets AdGroupId.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setAdGroupId($value = null)
     {

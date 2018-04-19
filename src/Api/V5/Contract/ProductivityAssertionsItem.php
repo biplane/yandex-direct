@@ -38,7 +38,7 @@ class ProductivityAssertionsItem
      * Sets Reference.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setReference($value)
     {
@@ -61,7 +61,7 @@ class ProductivityAssertionsItem
      * Sets Title.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setTitle($value)
     {
@@ -84,7 +84,7 @@ class ProductivityAssertionsItem
      * Sets Recommendation.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setRecommendation($value)
     {

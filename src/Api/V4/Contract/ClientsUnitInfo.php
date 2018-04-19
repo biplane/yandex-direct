@@ -36,7 +36,7 @@ class ClientsUnitInfo
      * Sets Login.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setLogin($value)
     {
@@ -59,7 +59,7 @@ class ClientsUnitInfo
      * Sets UnitsRest.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setUnitsRest($value)
     {

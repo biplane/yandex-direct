@@ -38,7 +38,7 @@ class MobileAppCampaignStrategy
      * Sets Search.
      *
      * @param MobileAppCampaignSearchStrategy|null $value
-     * @return self
+     * @return $this
      */
     public function setSearch(MobileAppCampaignSearchStrategy $value = null)
     {
@@ -61,7 +61,7 @@ class MobileAppCampaignStrategy
      * Sets Network.
      *
      * @param MobileAppCampaignNetworkStrategy|null $value
-     * @return self
+     * @return $this
      */
     public function setNetwork(MobileAppCampaignNetworkStrategy $value = null)
     {

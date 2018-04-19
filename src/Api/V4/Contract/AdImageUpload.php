@@ -48,7 +48,7 @@ class AdImageUpload
      * Sets Login.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setLogin($value)
     {
@@ -71,7 +71,7 @@ class AdImageUpload
      * Sets AdImageHash.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setAdImageHash($value)
     {
@@ -94,7 +94,7 @@ class AdImageUpload
      * Sets AdImageURL.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setAdImageURL($value)
     {
@@ -117,7 +117,7 @@ class AdImageUpload
      * Sets SourceURL.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setSourceURL($value)
     {
@@ -140,7 +140,7 @@ class AdImageUpload
      * Sets Name.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setName($value = null)
     {
@@ -163,7 +163,7 @@ class AdImageUpload
      * Sets Error.
      *
      * @param Error|null $value
-     * @return self
+     * @return $this
      */
     public function setError(Error $value = null)
     {
@@ -186,7 +186,7 @@ class AdImageUpload
      * Sets AdImageUploadTaskID.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setAdImageUploadTaskID($value = null)
     {
@@ -209,7 +209,7 @@ class AdImageUpload
      * Sets Status.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setStatus($value = null)
     {

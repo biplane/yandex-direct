@@ -38,7 +38,7 @@ class AdCategoriesItem
      * Sets AdCategory.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setAdCategory($value)
     {
@@ -61,7 +61,7 @@ class AdCategoriesItem
      * Sets Description.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setDescription($value)
     {
@@ -84,7 +84,7 @@ class AdCategoriesItem
      * Sets Message.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setMessage($value)
     {

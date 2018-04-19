@@ -35,7 +35,7 @@ class DeleteAdImagesResponse
      * Sets DeleteResults.
      *
      * @param AdImageActionResult[]|null $value
-     * @return self
+     * @return $this
      */
     public function setDeleteResults(array $value = null)
     {

@@ -36,7 +36,7 @@ class WordstatItem
      * Sets Phrase.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setPhrase($value)
     {
@@ -59,7 +59,7 @@ class WordstatItem
      * Sets Shows.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setShows($value)
     {

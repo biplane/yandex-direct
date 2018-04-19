@@ -38,7 +38,7 @@ class DynamicTextAdGroupGet
      * Sets DomainUrl.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setDomainUrl($value = null)
     {
@@ -62,7 +62,7 @@ class DynamicTextAdGroupGet
      * Sets DomainUrlProcessingStatus.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see SourceProcessingStatusEnum
      */
     public function setDomainUrlProcessingStatus($value = null)

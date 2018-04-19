@@ -38,7 +38,7 @@ class Representative
      * Sets Email.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setEmail($value)
     {
@@ -61,7 +61,7 @@ class Representative
      * Sets Login.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setLogin($value)
     {
@@ -85,7 +85,7 @@ class Representative
      * Sets Role.
      *
      * @param string $value
-     * @return self
+     * @return $this
      * @see RepresentativeRoleEnum
      */
     public function setRole($value)

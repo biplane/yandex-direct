@@ -36,7 +36,7 @@ class ForecastStatusInfo
      * Sets ForecastID.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setForecastID($value)
     {
@@ -59,7 +59,7 @@ class ForecastStatusInfo
      * Sets StatusForecast.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setStatusForecast($value)
     {

@@ -38,7 +38,7 @@ class TextCampaignBase
      * Sets CounterIds.
      *
      * @param struct[]|null $value
-     * @return self
+     * @return $this
      */
     public function setCounterIds(array $value = null)
     {
@@ -61,7 +61,7 @@ class TextCampaignBase
      * Sets RelevantKeywords.
      *
      * @param RelevantKeywordsSetting|null $value
-     * @return self
+     * @return $this
      */
     public function setRelevantKeywords(RelevantKeywordsSetting $value = null)
     {

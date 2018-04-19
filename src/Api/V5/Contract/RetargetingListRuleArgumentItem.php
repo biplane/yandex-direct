@@ -37,7 +37,7 @@ class RetargetingListRuleArgumentItem
      * Sets MembershipLifeSpan.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setMembershipLifeSpan($value = null)
     {
@@ -60,7 +60,7 @@ class RetargetingListRuleArgumentItem
      * Sets ExternalId.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setExternalId($value)
     {

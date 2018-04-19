@@ -38,7 +38,7 @@ class VersionDesc
      * Sets VersionNumber.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setVersionNumber($value)
     {
@@ -61,7 +61,7 @@ class VersionDesc
      * Sets LinkWSDL.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setLinkWSDL($value)
     {
@@ -84,7 +84,7 @@ class VersionDesc
      * Sets BorderDate.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setBorderDate($value = null)
     {

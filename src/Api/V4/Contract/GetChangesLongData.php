@@ -38,7 +38,7 @@ class GetChangesLongData
      * Sets Updated.
      *
      * @param int[] $value
-     * @return self
+     * @return $this
      */
     public function setUpdated(array $value)
     {
@@ -61,7 +61,7 @@ class GetChangesLongData
      * Sets NotUpdated.
      *
      * @param int[] $value
-     * @return self
+     * @return $this
      */
     public function setNotUpdated(array $value)
     {
@@ -84,7 +84,7 @@ class GetChangesLongData
      * Sets NotFound.
      *
      * @param int[] $value
-     * @return self
+     * @return $this
      */
     public function setNotFound(array $value)
     {

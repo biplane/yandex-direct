@@ -44,7 +44,7 @@ class TimeTargetingOnPublicHolidays
      * Sets SuspendOnHolidays.
      *
      * @param string $value
-     * @return self
+     * @return $this
      * @see YesNoEnum
      */
     public function setSuspendOnHolidays($value)
@@ -68,7 +68,7 @@ class TimeTargetingOnPublicHolidays
      * Sets BidPercent.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setBidPercent($value = null)
     {
@@ -91,7 +91,7 @@ class TimeTargetingOnPublicHolidays
      * Sets StartHour.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setStartHour($value = null)
     {
@@ -114,7 +114,7 @@ class TimeTargetingOnPublicHolidays
      * Sets EndHour.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setEndHour($value = null)
     {

@@ -34,7 +34,7 @@ class IdsCriteria
      * Sets Ids.
      *
      * @param int[] $value
-     * @return self
+     * @return $this
      */
     public function setIds(array $value)
     {

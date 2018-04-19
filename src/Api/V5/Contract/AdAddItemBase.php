@@ -34,7 +34,7 @@ class AdAddItemBase
      * Sets AdGroupId.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setAdGroupId($value)
     {

@@ -50,7 +50,7 @@ class TextAdAdd extends TextAdAddBase
      * Sets Text.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setText($value)
     {
@@ -73,7 +73,7 @@ class TextAdAdd extends TextAdAddBase
      * Sets Title.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setTitle($value)
     {
@@ -96,7 +96,7 @@ class TextAdAdd extends TextAdAddBase
      * Sets Title2.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setTitle2($value = null)
     {
@@ -119,7 +119,7 @@ class TextAdAdd extends TextAdAddBase
      * Sets Href.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setHref($value = null)
     {
@@ -143,7 +143,7 @@ class TextAdAdd extends TextAdAddBase
      * Sets Mobile.
      *
      * @param string $value
-     * @return self
+     * @return $this
      * @see YesNoEnum
      */
     public function setMobile($value)
@@ -167,7 +167,7 @@ class TextAdAdd extends TextAdAddBase
      * Sets DisplayUrlPath.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setDisplayUrlPath($value = null)
     {
@@ -190,7 +190,7 @@ class TextAdAdd extends TextAdAddBase
      * Sets VideoExtension.
      *
      * @param VideoExtensionAddItem|null $value
-     * @return self
+     * @return $this
      */
     public function setVideoExtension(VideoExtensionAddItem $value = null)
     {

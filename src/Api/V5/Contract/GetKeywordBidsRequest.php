@@ -42,7 +42,7 @@ class GetKeywordBidsRequest extends GetRequestGeneral
      * Sets SelectionCriteria.
      *
      * @param KeywordBidsSelectionCriteria $value
-     * @return self
+     * @return $this
      */
     public function setSelectionCriteria(KeywordBidsSelectionCriteria $value)
     {
@@ -66,7 +66,7 @@ class GetKeywordBidsRequest extends GetRequestGeneral
      * Sets FieldNames.
      *
      * @param string[] $value
-     * @return self
+     * @return $this
      * @see KeywordBidFieldEnum
      */
     public function setFieldNames(array $value)
@@ -91,7 +91,7 @@ class GetKeywordBidsRequest extends GetRequestGeneral
      * Sets SearchFieldNames.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      * @see KeywordBidSearchFieldEnum
      */
     public function setSearchFieldNames(array $value = null)
@@ -116,7 +116,7 @@ class GetKeywordBidsRequest extends GetRequestGeneral
      * Sets NetworkFieldNames.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      * @see KeywordBidNetworkFieldEnum
      */
     public function setNetworkFieldNames(array $value = null)

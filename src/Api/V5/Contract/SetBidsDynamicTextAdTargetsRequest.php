@@ -34,7 +34,7 @@ class SetBidsDynamicTextAdTargetsRequest
      * Sets Bids.
      *
      * @param SetBidsItem[]|null $value
-     * @return self
+     * @return $this
      */
     public function setBids(array $value = null)
     {

@@ -34,7 +34,7 @@ class UpdateClientsResponse
      * Sets UpdateResults.
      *
      * @param ClientsActionResult[] $value
-     * @return self
+     * @return $this
      */
     public function setUpdateResults(array $value)
     {

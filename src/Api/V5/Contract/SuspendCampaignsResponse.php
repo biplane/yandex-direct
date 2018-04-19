@@ -35,7 +35,7 @@ class SuspendCampaignsResponse
      * Sets SuspendResults.
      *
      * @param ActionResult[]|null $value
-     * @return self
+     * @return $this
      */
     public function setSuspendResults(array $value = null)
     {

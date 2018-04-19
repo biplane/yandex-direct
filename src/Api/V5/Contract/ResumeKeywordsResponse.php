@@ -34,7 +34,7 @@ class ResumeKeywordsResponse
      * Sets ResumeResults.
      *
      * @param ActionResult[] $value
-     * @return self
+     * @return $this
      */
     public function setResumeResults(array $value)
     {

@@ -78,7 +78,7 @@ class ClientInfo
      * Sets Phone.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setPhone($value = null)
     {
@@ -101,7 +101,7 @@ class ClientInfo
      * Sets DateCreate.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setDateCreate($value = null)
     {
@@ -124,7 +124,7 @@ class ClientInfo
      * Sets FIO.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setFIO($value)
     {
@@ -147,7 +147,7 @@ class ClientInfo
      * Sets Email.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setEmail($value)
     {
@@ -170,7 +170,7 @@ class ClientInfo
      * Sets Login.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setLogin($value)
     {
@@ -193,7 +193,7 @@ class ClientInfo
      * Sets StatusArch.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setStatusArch($value = null)
     {
@@ -216,7 +216,7 @@ class ClientInfo
      * Sets Discount.
      *
      * @param float|null $value
-     * @return self
+     * @return $this
      */
     public function setDiscount($value = null)
     {
@@ -239,7 +239,7 @@ class ClientInfo
      * Sets OverdraftSumAvailable.
      *
      * @param float|null $value
-     * @return self
+     * @return $this
      */
     public function setOverdraftSumAvailable($value = null)
     {
@@ -262,7 +262,7 @@ class ClientInfo
      * Sets OverdraftSumAvailableInCurrency.
      *
      * @param float|null $value
-     * @return self
+     * @return $this
      */
     public function setOverdraftSumAvailableInCurrency($value = null)
     {
@@ -285,7 +285,7 @@ class ClientInfo
      * Sets Currency.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setCurrency($value = null)
     {
@@ -308,7 +308,7 @@ class ClientInfo
      * Sets VATRate.
      *
      * @param float|null $value
-     * @return self
+     * @return $this
      */
     public function setVATRate($value = null)
     {
@@ -331,7 +331,7 @@ class ClientInfo
      * Sets ClientCurrencies.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      */
     public function setClientCurrencies(array $value = null)
     {
@@ -354,7 +354,7 @@ class ClientInfo
      * Sets DisplayStoreRating.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setDisplayStoreRating($value = null)
     {
@@ -377,7 +377,7 @@ class ClientInfo
      * Sets SmsPhone.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setSmsPhone($value = null)
     {
@@ -400,7 +400,7 @@ class ClientInfo
      * Sets CampaignEmails.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      */
     public function setCampaignEmails(array $value = null)
     {
@@ -423,7 +423,7 @@ class ClientInfo
      * Sets ClientRights.
      *
      * @param ClientRight[]|null $value
-     * @return self
+     * @return $this
      */
     public function setClientRights(array $value = null)
     {
@@ -446,7 +446,7 @@ class ClientInfo
      * Sets Role.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setRole($value = null)
     {
@@ -469,7 +469,7 @@ class ClientInfo
      * Sets NonResident.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setNonResident($value = null)
     {
@@ -492,7 +492,7 @@ class ClientInfo
      * Sets SendNews.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setSendNews($value = null)
     {
@@ -515,7 +515,7 @@ class ClientInfo
      * Sets SendAccNews.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setSendAccNews($value = null)
     {
@@ -538,7 +538,7 @@ class ClientInfo
      * Sets SendWarn.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setSendWarn($value = null)
     {
@@ -561,7 +561,7 @@ class ClientInfo
      * Sets ManagersLogins.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      */
     public function setManagersLogins(array $value = null)
     {
@@ -584,7 +584,7 @@ class ClientInfo
      * Sets SharedAccountEnabled.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setSharedAccountEnabled($value = null)
     {

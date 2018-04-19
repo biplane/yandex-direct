@@ -36,7 +36,7 @@ class InstantMessenger
      * Sets MessengerClient.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setMessengerClient($value)
     {
@@ -59,7 +59,7 @@ class InstantMessenger
      * Sets MessengerLogin.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setMessengerLogin($value)
     {

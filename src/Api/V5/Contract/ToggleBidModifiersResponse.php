@@ -35,7 +35,7 @@ class ToggleBidModifiersResponse
      * Sets ToggleResults.
      *
      * @param ToggleResult[]|null $value
-     * @return self
+     * @return $this
      */
     public function setToggleResults(array $value = null)
     {

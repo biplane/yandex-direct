@@ -34,7 +34,7 @@ class AddAdGroupsRequest
      * Sets AdGroups.
      *
      * @param AdGroupAddItem[] $value
-     * @return self
+     * @return $this
      */
     public function setAdGroups(array $value)
     {

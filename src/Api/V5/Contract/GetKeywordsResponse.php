@@ -35,7 +35,7 @@ class GetKeywordsResponse extends GetResponseGeneral
      * Sets Keywords.
      *
      * @param KeywordGetItem[]|null $value
-     * @return self
+     * @return $this
      */
     public function setKeywords(array $value = null)
     {

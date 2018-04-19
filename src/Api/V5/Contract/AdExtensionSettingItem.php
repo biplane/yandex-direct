@@ -36,7 +36,7 @@ class AdExtensionSettingItem
      * Sets AdExtensionId.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setAdExtensionId($value)
     {
@@ -60,7 +60,7 @@ class AdExtensionSettingItem
      * Sets Operation.
      *
      * @param string $value
-     * @return self
+     * @return $this
      * @see OperationEnum
      */
     public function setOperation($value)

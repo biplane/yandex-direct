@@ -50,7 +50,7 @@ class Retargeting
      * Sets Fields.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      */
     public function setFields(array $value = null)
     {
@@ -73,7 +73,7 @@ class Retargeting
      * Sets RetargetingID.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setRetargetingID($value = null)
     {
@@ -96,7 +96,7 @@ class Retargeting
      * Sets AdGroupID.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setAdGroupID($value = null)
     {
@@ -119,7 +119,7 @@ class Retargeting
      * Sets AdID.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setAdID($value = null)
     {
@@ -142,7 +142,7 @@ class Retargeting
      * Sets RetargetingConditionID.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setRetargetingConditionID($value = null)
     {
@@ -165,7 +165,7 @@ class Retargeting
      * Sets ContextPrice.
      *
      * @param float|null $value
-     * @return self
+     * @return $this
      */
     public function setContextPrice($value = null)
     {
@@ -188,7 +188,7 @@ class Retargeting
      * Sets Currency.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setCurrency($value = null)
     {
@@ -211,7 +211,7 @@ class Retargeting
      * Sets AutoBudgetPriority.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setAutoBudgetPriority($value = null)
     {
@@ -234,7 +234,7 @@ class Retargeting
      * Sets StatusPaused.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setStatusPaused($value = null)
     {

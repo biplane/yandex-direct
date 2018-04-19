@@ -55,7 +55,7 @@ class AdUpdateItem
      * Sets Id.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setId($value)
     {
@@ -78,7 +78,7 @@ class AdUpdateItem
      * Sets TextAd.
      *
      * @param TextAdUpdate|null $value
-     * @return self
+     * @return $this
      */
     public function setTextAd(TextAdUpdate $value = null)
     {
@@ -101,7 +101,7 @@ class AdUpdateItem
      * Sets DynamicTextAd.
      *
      * @param DynamicTextAdUpdate|null $value
-     * @return self
+     * @return $this
      */
     public function setDynamicTextAd(DynamicTextAdUpdate $value = null)
     {
@@ -124,7 +124,7 @@ class AdUpdateItem
      * Sets MobileAppAd.
      *
      * @param MobileAppAdUpdate|null $value
-     * @return self
+     * @return $this
      */
     public function setMobileAppAd(MobileAppAdUpdate $value = null)
     {
@@ -147,7 +147,7 @@ class AdUpdateItem
      * Sets TextImageAd.
      *
      * @param TextImageAdUpdate|null $value
-     * @return self
+     * @return $this
      */
     public function setTextImageAd(TextImageAdUpdate $value = null)
     {
@@ -170,7 +170,7 @@ class AdUpdateItem
      * Sets MobileAppImageAd.
      *
      * @param MobileAppImageAdUpdate|null $value
-     * @return self
+     * @return $this
      */
     public function setMobileAppImageAd(MobileAppImageAdUpdate $value = null)
     {
@@ -193,7 +193,7 @@ class AdUpdateItem
      * Sets TextAdBuilderAd.
      *
      * @param TextAdBuilderAdUpdate|null $value
-     * @return self
+     * @return $this
      */
     public function setTextAdBuilderAd(TextAdBuilderAdUpdate $value = null)
     {
@@ -216,7 +216,7 @@ class AdUpdateItem
      * Sets MobileAppAdBuilderAd.
      *
      * @param MobileAppAdBuilderAdUpdate|null $value
-     * @return self
+     * @return $this
      */
     public function setMobileAppAdBuilderAd(MobileAppAdBuilderAdUpdate $value = null)
     {

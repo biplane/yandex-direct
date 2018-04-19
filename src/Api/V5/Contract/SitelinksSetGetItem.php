@@ -38,7 +38,7 @@ class SitelinksSetGetItem
      * Sets Id.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setId($value = null)
     {
@@ -61,7 +61,7 @@ class SitelinksSetGetItem
      * Sets Sitelinks.
      *
      * @param Sitelink[]|null $value
-     * @return self
+     * @return $this
      */
     public function setSitelinks(array $value = null)
     {

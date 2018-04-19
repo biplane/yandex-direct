@@ -41,7 +41,7 @@ class FundsParam
      * Sets Mode.
      *
      * @param string $value
-     * @return self
+     * @return $this
      * @see CampaignFundsEnum
      */
     public function setMode($value)
@@ -65,7 +65,7 @@ class FundsParam
      * Sets CampaignFunds.
      *
      * @param CampaignFundsParam|null $value
-     * @return self
+     * @return $this
      */
     public function setCampaignFunds(CampaignFundsParam $value = null)
     {
@@ -88,7 +88,7 @@ class FundsParam
      * Sets SharedAccountFunds.
      *
      * @param SharedAccountFundsParam|null $value
-     * @return self
+     * @return $this
      */
     public function setSharedAccountFunds(SharedAccountFundsParam $value = null)
     {

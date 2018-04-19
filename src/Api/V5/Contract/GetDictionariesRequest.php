@@ -35,7 +35,7 @@ class GetDictionariesRequest
      * Sets DictionaryNames.
      *
      * @param string[] $value
-     * @return self
+     * @return $this
      * @see DictionaryNameEnum
      */
     public function setDictionaryNames(array $value)

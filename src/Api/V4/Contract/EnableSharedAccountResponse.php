@@ -38,7 +38,7 @@ class EnableSharedAccountResponse
      * Sets Errors.
      *
      * @param Error[]|null $value
-     * @return self
+     * @return $this
      */
     public function setErrors(array $value = null)
     {
@@ -61,7 +61,7 @@ class EnableSharedAccountResponse
      * Sets Login.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setLogin($value = null)
     {
@@ -84,7 +84,7 @@ class EnableSharedAccountResponse
      * Sets AccountID.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setAccountID($value = null)
     {

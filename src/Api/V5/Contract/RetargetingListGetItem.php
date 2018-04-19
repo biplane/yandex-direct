@@ -41,7 +41,7 @@ class RetargetingListGetItem extends RetargetingListBase
      * Sets Id.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setId($value = null)
     {
@@ -65,7 +65,7 @@ class RetargetingListGetItem extends RetargetingListBase
      * Sets IsAvailable.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see YesNoEnum
      */
     public function setIsAvailable($value = null)
@@ -90,7 +90,7 @@ class RetargetingListGetItem extends RetargetingListBase
      * Sets Scope.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see RetargetingListScopeEnum
      */
     public function setScope($value = null)

@@ -35,7 +35,7 @@ class AdExtensionAddItem
      * Sets Callout.
      *
      * @param Callout|null $value
-     * @return self
+     * @return $this
      */
     public function setCallout(Callout $value = null)
     {

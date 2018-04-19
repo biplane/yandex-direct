@@ -38,7 +38,7 @@ class DynamicTextCampaignNetworkStrategy extends DynamicTextCampaignStrategyBase
      * Sets BiddingStrategyType.
      *
      * @param string $value
-     * @return self
+     * @return $this
      * @see DynamicTextCampaignNetworkStrategyTypeEnum
      */
     public function setBiddingStrategyType($value)
@@ -62,7 +62,7 @@ class DynamicTextCampaignNetworkStrategy extends DynamicTextCampaignStrategyBase
      * Sets NetworkDefault.
      *
      * @param StrategyNetworkDefault|null $value
-     * @return self
+     * @return $this
      */
     public function setNetworkDefault(StrategyNetworkDefault $value = null)
     {

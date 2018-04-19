@@ -37,7 +37,7 @@ class GetVCardsRequest extends GetRequestGeneral
      * Sets SelectionCriteria.
      *
      * @param IdsCriteria|null $value
-     * @return self
+     * @return $this
      */
     public function setSelectionCriteria(IdsCriteria $value = null)
     {
@@ -61,7 +61,7 @@ class GetVCardsRequest extends GetRequestGeneral
      * Sets FieldNames.
      *
      * @param string[] $value
-     * @return self
+     * @return $this
      * @see VCardFieldEnum
      */
     public function setFieldNames(array $value)

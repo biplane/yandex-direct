@@ -36,7 +36,7 @@ class RetargetingListRuleItem
      * Sets Arguments.
      *
      * @param RetargetingListRuleArgumentItem[] $value
-     * @return self
+     * @return $this
      */
     public function setArguments(array $value)
     {
@@ -60,7 +60,7 @@ class RetargetingListRuleItem
      * Sets Operator.
      *
      * @param string $value
-     * @return self
+     * @return $this
      * @see RetargetingListRuleOperatorEnum
      */
     public function setOperator($value)

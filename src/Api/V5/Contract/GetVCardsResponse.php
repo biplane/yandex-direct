@@ -35,7 +35,7 @@ class GetVCardsResponse extends GetResponseGeneral
      * Sets VCards.
      *
      * @param VCardGetItem[]|null $value
-     * @return self
+     * @return $this
      */
     public function setVCards(array $value = null)
     {

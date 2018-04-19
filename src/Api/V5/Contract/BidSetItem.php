@@ -50,7 +50,7 @@ class BidSetItem
      * Sets CampaignId.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setCampaignId($value = null)
     {
@@ -73,7 +73,7 @@ class BidSetItem
      * Sets AdGroupId.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setAdGroupId($value = null)
     {
@@ -96,7 +96,7 @@ class BidSetItem
      * Sets KeywordId.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setKeywordId($value = null)
     {
@@ -119,7 +119,7 @@ class BidSetItem
      * Sets Bid.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setBid($value = null)
     {
@@ -142,7 +142,7 @@ class BidSetItem
      * Sets ContextBid.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setContextBid($value = null)
     {
@@ -166,7 +166,7 @@ class BidSetItem
      * Sets StrategyPriority.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see PriorityEnum
      */
     public function setStrategyPriority($value = null)

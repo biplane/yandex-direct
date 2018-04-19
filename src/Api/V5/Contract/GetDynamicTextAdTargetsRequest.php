@@ -36,7 +36,7 @@ class GetDynamicTextAdTargetsRequest extends GetRequestGeneral
      * Sets SelectionCriteria.
      *
      * @param WebpagesSelectionCriteria $value
-     * @return self
+     * @return $this
      */
     public function setSelectionCriteria(WebpagesSelectionCriteria $value)
     {
@@ -60,7 +60,7 @@ class GetDynamicTextAdTargetsRequest extends GetRequestGeneral
      * Sets FieldNames.
      *
      * @param string[] $value
-     * @return self
+     * @return $this
      * @see WebpageFieldEnum
      */
     public function setFieldNames(array $value)

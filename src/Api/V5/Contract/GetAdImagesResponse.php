@@ -35,7 +35,7 @@ class GetAdImagesResponse extends GetResponseGeneral
      * Sets AdImages.
      *
      * @param AdImageGetItem[]|null $value
-     * @return self
+     * @return $this
      */
     public function setAdImages(array $value = null)
     {

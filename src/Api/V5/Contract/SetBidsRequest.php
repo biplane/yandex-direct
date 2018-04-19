@@ -34,7 +34,7 @@ class SetBidsRequest
      * Sets Bids.
      *
      * @param BidSetItem[]|null $value
-     * @return self
+     * @return $this
      */
     public function setBids(array $value = null)
     {

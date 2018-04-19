@@ -38,7 +38,7 @@ class StrategyNetworkDefaultAdd
      * Sets LimitPercent.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setLimitPercent($value = null)
     {
@@ -61,7 +61,7 @@ class StrategyNetworkDefaultAdd
      * Sets BidPercent.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setBidPercent($value = null)
     {

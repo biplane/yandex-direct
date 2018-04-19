@@ -34,7 +34,7 @@ class UpdateAdsRequest
      * Sets Ads.
      *
      * @param AdUpdateItem[] $value
-     * @return self
+     * @return $this
      */
     public function setAds(array $value)
     {

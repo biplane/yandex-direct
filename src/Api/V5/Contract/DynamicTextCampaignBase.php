@@ -35,7 +35,7 @@ class DynamicTextCampaignBase
      * Sets CounterIds.
      *
      * @param struct[]|null $value
-     * @return self
+     * @return $this
      */
     public function setCounterIds(array $value = null)
     {

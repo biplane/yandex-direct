@@ -38,7 +38,7 @@ class Error
      * Sets FaultCode.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setFaultCode($value)
     {
@@ -61,7 +61,7 @@ class Error
      * Sets FaultString.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setFaultString($value)
     {
@@ -84,7 +84,7 @@ class Error
      * Sets FaultDetail.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setFaultDetail($value = null)
     {

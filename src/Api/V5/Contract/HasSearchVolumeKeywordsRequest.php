@@ -36,7 +36,7 @@ class HasSearchVolumeKeywordsRequest
      * Sets SelectionCriteria.
      *
      * @param HasSearchVolumeSelectionCriteria $value
-     * @return self
+     * @return $this
      */
     public function setSelectionCriteria(HasSearchVolumeSelectionCriteria $value)
     {
@@ -60,7 +60,7 @@ class HasSearchVolumeKeywordsRequest
      * Sets FieldNames.
      *
      * @param string[] $value
-     * @return self
+     * @return $this
      * @see HasSearchVolumeFieldEnum
      */
     public function setFieldNames(array $value)

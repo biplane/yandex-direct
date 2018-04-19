@@ -47,7 +47,7 @@ class BidModifierAddItem extends BidModifierAddBase
      * Sets MobileAdjustment.
      *
      * @param MobileAdjustmentAdd|null $value
-     * @return self
+     * @return $this
      */
     public function setMobileAdjustment(MobileAdjustmentAdd $value = null)
     {
@@ -70,7 +70,7 @@ class BidModifierAddItem extends BidModifierAddBase
      * Sets DemographicsAdjustments.
      *
      * @param DemographicsAdjustmentAdd[]|null $value
-     * @return self
+     * @return $this
      */
     public function setDemographicsAdjustments(array $value = null)
     {
@@ -93,7 +93,7 @@ class BidModifierAddItem extends BidModifierAddBase
      * Sets RetargetingAdjustments.
      *
      * @param RetargetingAdjustmentAdd[]|null $value
-     * @return self
+     * @return $this
      */
     public function setRetargetingAdjustments(array $value = null)
     {
@@ -116,7 +116,7 @@ class BidModifierAddItem extends BidModifierAddBase
      * Sets RegionalAdjustments.
      *
      * @param RegionalAdjustmentAdd[]|null $value
-     * @return self
+     * @return $this
      */
     public function setRegionalAdjustments(array $value = null)
     {
@@ -139,7 +139,7 @@ class BidModifierAddItem extends BidModifierAddBase
      * Sets VideoAdjustment.
      *
      * @param VideoAdjustmentAdd|null $value
-     * @return self
+     * @return $this
      */
     public function setVideoAdjustment(VideoAdjustmentAdd $value = null)
     {

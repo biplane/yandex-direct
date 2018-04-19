@@ -47,7 +47,7 @@ class MobileAppAdBase
      * Sets Title.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setTitle($value = null)
     {
@@ -70,7 +70,7 @@ class MobileAppAdBase
      * Sets Text.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setText($value = null)
     {
@@ -93,7 +93,7 @@ class MobileAppAdBase
      * Sets TrackingUrl.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setTrackingUrl($value = null)
     {
@@ -117,7 +117,7 @@ class MobileAppAdBase
      * Sets Action.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see MobileAppAdActionEnum
      */
     public function setAction($value = null)
@@ -141,7 +141,7 @@ class MobileAppAdBase
      * Sets AdImageHash.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setAdImageHash($value = null)
     {

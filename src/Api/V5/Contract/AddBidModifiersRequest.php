@@ -34,7 +34,7 @@ class AddBidModifiersRequest
      * Sets BidModifiers.
      *
      * @param BidModifierAddItem[] $value
-     * @return self
+     * @return $this
      */
     public function setBidModifiers(array $value)
     {

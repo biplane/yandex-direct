@@ -36,7 +36,7 @@ class NetworkCoverageItem
      * Sets Probability.
      *
      * @param float $value
-     * @return self
+     * @return $this
      */
     public function setProbability($value)
     {
@@ -59,7 +59,7 @@ class NetworkCoverageItem
      * Sets Bid.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setBid($value)
     {

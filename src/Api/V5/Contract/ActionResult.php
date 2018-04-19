@@ -35,7 +35,7 @@ class ActionResult extends ActionResultBase
      * Sets Id.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setId($value = null)
     {

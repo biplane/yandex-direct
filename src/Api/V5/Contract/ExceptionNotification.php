@@ -39,7 +39,7 @@ class ExceptionNotification
      * Sets Code.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setCode($value)
     {
@@ -62,7 +62,7 @@ class ExceptionNotification
      * Sets Message.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setMessage($value)
     {
@@ -85,7 +85,7 @@ class ExceptionNotification
      * Sets Details.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setDetails($value = null)
     {

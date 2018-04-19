@@ -34,7 +34,7 @@ class UpdateAdGroupsRequest
      * Sets AdGroups.
      *
      * @param AdGroupUpdateItem[] $value
-     * @return self
+     * @return $this
      */
     public function setAdGroups(array $value)
     {

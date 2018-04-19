@@ -34,7 +34,7 @@ class VideoAdjustmentAdd
      * Sets BidModifier.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setBidModifier($value)
     {

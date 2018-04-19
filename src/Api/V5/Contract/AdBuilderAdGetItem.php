@@ -40,7 +40,7 @@ class AdBuilderAdGetItem
      * Sets CreativeId.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setCreativeId($value)
     {
@@ -63,7 +63,7 @@ class AdBuilderAdGetItem
      * Sets ThumbnailUrl.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setThumbnailUrl($value = null)
     {
@@ -86,7 +86,7 @@ class AdBuilderAdGetItem
      * Sets PreviewUrl.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setPreviewUrl($value = null)
     {

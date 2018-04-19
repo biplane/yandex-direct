@@ -35,7 +35,7 @@ class GetRequestGeneral
      * Sets Page.
      *
      * @param LimitOffset|null $value
-     * @return self
+     * @return $this
      */
     public function setPage(LimitOffset $value = null)
     {

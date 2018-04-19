@@ -48,7 +48,7 @@ class AddAgencyClientsRequest
      * Sets Login.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setLogin($value)
     {
@@ -71,7 +71,7 @@ class AddAgencyClientsRequest
      * Sets FirstName.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setFirstName($value)
     {
@@ -94,7 +94,7 @@ class AddAgencyClientsRequest
      * Sets LastName.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setLastName($value)
     {
@@ -118,7 +118,7 @@ class AddAgencyClientsRequest
      * Sets Currency.
      *
      * @param string $value
-     * @return self
+     * @return $this
      * @see CurrencyEnum
      */
     public function setCurrency($value)
@@ -142,7 +142,7 @@ class AddAgencyClientsRequest
      * Sets Notification.
      *
      * @param NotificationAdd $value
-     * @return self
+     * @return $this
      */
     public function setNotification(NotificationAdd $value)
     {
@@ -165,7 +165,7 @@ class AddAgencyClientsRequest
      * Sets Settings.
      *
      * @param ClientSettingAddItem[]|null $value
-     * @return self
+     * @return $this
      */
     public function setSettings(array $value = null)
     {
@@ -188,7 +188,7 @@ class AddAgencyClientsRequest
      * Sets Grants.
      *
      * @param GrantItem[]|null $value
-     * @return self
+     * @return $this
      */
     public function setGrants(array $value = null)
     {

@@ -34,7 +34,7 @@ class SetKeywordBidsRequest
      * Sets KeywordBids.
      *
      * @param KeywordBidSetItem[] $value
-     * @return self
+     * @return $this
      */
     public function setKeywordBids(array $value)
     {

@@ -46,7 +46,7 @@ class AccountManagementRequest
      * Sets Action.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setAction($value)
     {
@@ -69,7 +69,7 @@ class AccountManagementRequest
      * Sets SelectionCriteria.
      *
      * @param AccountSelectionCriteria|null $value
-     * @return self
+     * @return $this
      */
     public function setSelectionCriteria(AccountSelectionCriteria $value = null)
     {
@@ -92,7 +92,7 @@ class AccountManagementRequest
      * Sets Payments.
      *
      * @param Payment[]|null $value
-     * @return self
+     * @return $this
      */
     public function setPayments(array $value = null)
     {
@@ -115,7 +115,7 @@ class AccountManagementRequest
      * Sets Transfers.
      *
      * @param Transfer[]|null $value
-     * @return self
+     * @return $this
      */
     public function setTransfers(array $value = null)
     {
@@ -138,7 +138,7 @@ class AccountManagementRequest
      * Sets Accounts.
      *
      * @param Account[]|null $value
-     * @return self
+     * @return $this
      */
     public function setAccounts(array $value = null)
     {
@@ -161,7 +161,7 @@ class AccountManagementRequest
      * Sets PayMethodID.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setPayMethodID($value = null)
     {
@@ -184,7 +184,7 @@ class AccountManagementRequest
      * Sets CustomTransactionID.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setCustomTransactionID($value = null)
     {

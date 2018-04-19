@@ -38,7 +38,7 @@ class RetargetingSelectionCriteria
      * Sets RetargetingConditionIDS.
      *
      * @param int[]|null $value
-     * @return self
+     * @return $this
      */
     public function setRetargetingConditionIDS(array $value = null)
     {
@@ -61,7 +61,7 @@ class RetargetingSelectionCriteria
      * Sets RetargetingIDS.
      *
      * @param int[]|null $value
-     * @return self
+     * @return $this
      */
     public function setRetargetingIDS(array $value = null)
     {
@@ -84,7 +84,7 @@ class RetargetingSelectionCriteria
      * Sets AdIDS.
      *
      * @param int[]|null $value
-     * @return self
+     * @return $this
      */
     public function setAdIDS(array $value = null)
     {

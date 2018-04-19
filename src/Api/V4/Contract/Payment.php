@@ -42,7 +42,7 @@ class Payment
      * Sets AccountID.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setAccountID($value)
     {
@@ -65,7 +65,7 @@ class Payment
      * Sets Amount.
      *
      * @param float $value
-     * @return self
+     * @return $this
      */
     public function setAmount($value)
     {
@@ -88,7 +88,7 @@ class Payment
      * Sets Origin.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setOrigin($value = null)
     {
@@ -111,7 +111,7 @@ class Payment
      * Sets Contract.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setContract($value = null)
     {
@@ -134,7 +134,7 @@ class Payment
      * Sets Currency.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setCurrency($value = null)
     {

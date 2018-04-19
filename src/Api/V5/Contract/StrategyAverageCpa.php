@@ -44,7 +44,7 @@ class StrategyAverageCpa
      * Sets AverageCpa.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setAverageCpa($value = null)
     {
@@ -67,7 +67,7 @@ class StrategyAverageCpa
      * Sets GoalId.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setGoalId($value = null)
     {
@@ -90,7 +90,7 @@ class StrategyAverageCpa
      * Sets WeeklySpendLimit.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setWeeklySpendLimit($value = null)
     {
@@ -113,7 +113,7 @@ class StrategyAverageCpa
      * Sets BidCeiling.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setBidCeiling($value = null)
     {

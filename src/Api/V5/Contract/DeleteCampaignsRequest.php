@@ -34,7 +34,7 @@ class DeleteCampaignsRequest
      * Sets SelectionCriteria.
      *
      * @param IdsCriteria $value
-     * @return self
+     * @return $this
      */
     public function setSelectionCriteria(IdsCriteria $value)
     {

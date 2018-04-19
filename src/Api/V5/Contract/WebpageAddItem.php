@@ -48,7 +48,7 @@ class WebpageAddItem
      * Sets Name.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setName($value)
     {
@@ -71,7 +71,7 @@ class WebpageAddItem
      * Sets AdGroupId.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setAdGroupId($value)
     {
@@ -94,7 +94,7 @@ class WebpageAddItem
      * Sets Conditions.
      *
      * @param WebpageCondition[]|null $value
-     * @return self
+     * @return $this
      */
     public function setConditions(array $value = null)
     {
@@ -117,7 +117,7 @@ class WebpageAddItem
      * Sets Bid.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setBid($value = null)
     {
@@ -140,7 +140,7 @@ class WebpageAddItem
      * Sets ContextBid.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setContextBid($value = null)
     {
@@ -164,7 +164,7 @@ class WebpageAddItem
      * Sets StrategyPriority.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see PriorityEnum
      */
     public function setStrategyPriority($value = null)

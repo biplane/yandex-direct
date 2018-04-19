@@ -45,7 +45,7 @@ class KeywordBidGetItem extends KeywordBidBase
      * Sets ServingStatus.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see ServingStatusEnum
      */
     public function setServingStatus($value = null)
@@ -70,7 +70,7 @@ class KeywordBidGetItem extends KeywordBidBase
      * Sets StrategyPriority.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see PriorityEnum
      */
     public function setStrategyPriority($value = null)
@@ -94,7 +94,7 @@ class KeywordBidGetItem extends KeywordBidBase
      * Sets Search.
      *
      * @param Search|null $value
-     * @return self
+     * @return $this
      */
     public function setSearch(Search $value = null)
     {
@@ -117,7 +117,7 @@ class KeywordBidGetItem extends KeywordBidBase
      * Sets Network.
      *
      * @param Network|null $value
-     * @return self
+     * @return $this
      */
     public function setNetwork(Network $value = null)
     {

@@ -38,7 +38,7 @@ class DynamicTextCampaignGetItem extends DynamicTextCampaignBase
      * Sets BiddingStrategy.
      *
      * @param DynamicTextCampaignStrategy|null $value
-     * @return self
+     * @return $this
      */
     public function setBiddingStrategy(DynamicTextCampaignStrategy $value = null)
     {
@@ -61,7 +61,7 @@ class DynamicTextCampaignGetItem extends DynamicTextCampaignBase
      * Sets Settings.
      *
      * @param DynamicTextCampaignSettingGet[]|null $value
-     * @return self
+     * @return $this
      */
     public function setSettings(array $value = null)
     {

@@ -44,7 +44,7 @@ class CheckDictionariesResponse
      * Sets TimeZonesChanged.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see YesNoEnum
      */
     public function setTimeZonesChanged($value = null)
@@ -69,7 +69,7 @@ class CheckDictionariesResponse
      * Sets RegionsChanged.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see YesNoEnum
      */
     public function setRegionsChanged($value = null)
@@ -94,7 +94,7 @@ class CheckDictionariesResponse
      * Sets InterestsChanged.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see YesNoEnum
      */
     public function setInterestsChanged($value = null)
@@ -118,7 +118,7 @@ class CheckDictionariesResponse
      * Sets Timestamp.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setTimestamp($value)
     {

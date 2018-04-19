@@ -38,7 +38,7 @@ class BidActionResult extends BidBase
      * Sets Warnings.
      *
      * @param ExceptionNotification[]|null $value
-     * @return self
+     * @return $this
      */
     public function setWarnings(array $value = null)
     {
@@ -61,7 +61,7 @@ class BidActionResult extends BidBase
      * Sets Errors.
      *
      * @param ExceptionNotification[]|null $value
-     * @return self
+     * @return $this
      */
     public function setErrors(array $value = null)
     {

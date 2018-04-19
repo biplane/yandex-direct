@@ -59,7 +59,7 @@ class TextAdGet extends TextAdGetBase
      * Sets Text.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setText($value = null)
     {
@@ -82,7 +82,7 @@ class TextAdGet extends TextAdGetBase
      * Sets Title.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setTitle($value = null)
     {
@@ -105,7 +105,7 @@ class TextAdGet extends TextAdGetBase
      * Sets Title2.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setTitle2($value = null)
     {
@@ -128,7 +128,7 @@ class TextAdGet extends TextAdGetBase
      * Sets Href.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setHref($value = null)
     {
@@ -152,7 +152,7 @@ class TextAdGet extends TextAdGetBase
      * Sets Mobile.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see YesNoEnum
      */
     public function setMobile($value = null)
@@ -176,7 +176,7 @@ class TextAdGet extends TextAdGetBase
      * Sets DisplayDomain.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setDisplayDomain($value = null)
     {
@@ -199,7 +199,7 @@ class TextAdGet extends TextAdGetBase
      * Sets DisplayUrlPath.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setDisplayUrlPath($value = null)
     {
@@ -222,7 +222,7 @@ class TextAdGet extends TextAdGetBase
      * Sets DisplayUrlPathModeration.
      *
      * @param ExtensionModeration|null $value
-     * @return self
+     * @return $this
      */
     public function setDisplayUrlPathModeration(ExtensionModeration $value = null)
     {
@@ -245,7 +245,7 @@ class TextAdGet extends TextAdGetBase
      * Sets VideoExtension.
      *
      * @param VideoExtensionGetItem|null $value
-     * @return self
+     * @return $this
      */
     public function setVideoExtension(VideoExtensionGetItem $value = null)
     {

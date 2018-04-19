@@ -40,7 +40,7 @@ class StrategyWeeklyClickPackageAdd
      * Sets ClicksPerWeek.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setClicksPerWeek($value)
     {
@@ -63,7 +63,7 @@ class StrategyWeeklyClickPackageAdd
      * Sets AverageCpc.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setAverageCpc($value = null)
     {
@@ -86,7 +86,7 @@ class StrategyWeeklyClickPackageAdd
      * Sets BidCeiling.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setBidCeiling($value = null)
     {

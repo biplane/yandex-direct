@@ -74,7 +74,7 @@ class AdsSelectionCriteria
      * Sets Ids.
      *
      * @param int[]|null $value
-     * @return self
+     * @return $this
      */
     public function setIds(array $value = null)
     {
@@ -98,7 +98,7 @@ class AdsSelectionCriteria
      * Sets States.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      * @see AdStateSelectionEnum
      */
     public function setStates(array $value = null)
@@ -123,7 +123,7 @@ class AdsSelectionCriteria
      * Sets Statuses.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      * @see AdStatusSelectionEnum
      */
     public function setStatuses(array $value = null)
@@ -147,7 +147,7 @@ class AdsSelectionCriteria
      * Sets CampaignIds.
      *
      * @param int[]|null $value
-     * @return self
+     * @return $this
      */
     public function setCampaignIds(array $value = null)
     {
@@ -170,7 +170,7 @@ class AdsSelectionCriteria
      * Sets AdGroupIds.
      *
      * @param int[]|null $value
-     * @return self
+     * @return $this
      */
     public function setAdGroupIds(array $value = null)
     {
@@ -194,7 +194,7 @@ class AdsSelectionCriteria
      * Sets Types.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      * @see AdTypeEnum
      */
     public function setTypes(array $value = null)
@@ -219,7 +219,7 @@ class AdsSelectionCriteria
      * Sets Mobile.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see YesNoEnum
      */
     public function setMobile($value = null)
@@ -243,7 +243,7 @@ class AdsSelectionCriteria
      * Sets VCardIds.
      *
      * @param int[]|null $value
-     * @return self
+     * @return $this
      */
     public function setVCardIds(array $value = null)
     {
@@ -266,7 +266,7 @@ class AdsSelectionCriteria
      * Sets SitelinkSetIds.
      *
      * @param int[]|null $value
-     * @return self
+     * @return $this
      */
     public function setSitelinkSetIds(array $value = null)
     {
@@ -289,7 +289,7 @@ class AdsSelectionCriteria
      * Sets AdImageHashes.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      */
     public function setAdImageHashes(array $value = null)
     {
@@ -313,7 +313,7 @@ class AdsSelectionCriteria
      * Sets VCardModerationStatuses.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      * @see ExtensionStatusSelectionEnum
      */
     public function setVCardModerationStatuses(array $value = null)
@@ -338,7 +338,7 @@ class AdsSelectionCriteria
      * Sets SitelinksModerationStatuses.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      * @see ExtensionStatusSelectionEnum
      */
     public function setSitelinksModerationStatuses(array $value = null)
@@ -363,7 +363,7 @@ class AdsSelectionCriteria
      * Sets AdImageModerationStatuses.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      * @see ExtensionStatusSelectionEnum
      */
     public function setAdImageModerationStatuses(array $value = null)
@@ -387,7 +387,7 @@ class AdsSelectionCriteria
      * Sets AdExtensionIds.
      *
      * @param int[]|null $value
-     * @return self
+     * @return $this
      */
     public function setAdExtensionIds(array $value = null)
     {

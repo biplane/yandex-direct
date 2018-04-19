@@ -36,7 +36,7 @@ class RetargetingConditionSelectionCriteria
      * Sets RetargetingConditionIDS.
      *
      * @param int[]|null $value
-     * @return self
+     * @return $this
      */
     public function setRetargetingConditionIDS(array $value = null)
     {
@@ -59,7 +59,7 @@ class RetargetingConditionSelectionCriteria
      * Sets Logins.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      */
     public function setLogins(array $value = null)
     {

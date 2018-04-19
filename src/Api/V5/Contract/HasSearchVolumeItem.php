@@ -50,7 +50,7 @@ class HasSearchVolumeItem
      * Sets Keyword.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setKeyword($value = null)
     {
@@ -73,7 +73,7 @@ class HasSearchVolumeItem
      * Sets RegionIds.
      *
      * @param int[]|null $value
-     * @return self
+     * @return $this
      */
     public function setRegionIds(array $value = null)
     {
@@ -97,7 +97,7 @@ class HasSearchVolumeItem
      * Sets AllDevices.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see YesNoEnum
      */
     public function setAllDevices($value = null)
@@ -122,7 +122,7 @@ class HasSearchVolumeItem
      * Sets MobilePhones.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see YesNoEnum
      */
     public function setMobilePhones($value = null)
@@ -147,7 +147,7 @@ class HasSearchVolumeItem
      * Sets Tablets.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see YesNoEnum
      */
     public function setTablets($value = null)
@@ -172,7 +172,7 @@ class HasSearchVolumeItem
      * Sets Desktops.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see YesNoEnum
      */
     public function setDesktops($value = null)

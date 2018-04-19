@@ -35,7 +35,7 @@ class TimeTargetingAdd extends TimeTargetingBase
      * Sets HolidaysSchedule.
      *
      * @param TimeTargetingOnPublicHolidays|null $value
-     * @return self
+     * @return $this
      */
     public function setHolidaysSchedule(TimeTargetingOnPublicHolidays $value = null)
     {

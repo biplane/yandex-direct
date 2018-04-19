@@ -47,7 +47,7 @@ class CampaignsSelectionCriteria
      * Sets Ids.
      *
      * @param int[]|null $value
-     * @return self
+     * @return $this
      */
     public function setIds(array $value = null)
     {
@@ -71,7 +71,7 @@ class CampaignsSelectionCriteria
      * Sets Types.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      * @see CampaignTypeEnum
      */
     public function setTypes(array $value = null)
@@ -96,7 +96,7 @@ class CampaignsSelectionCriteria
      * Sets States.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      * @see CampaignStateEnum
      */
     public function setStates(array $value = null)
@@ -121,7 +121,7 @@ class CampaignsSelectionCriteria
      * Sets Statuses.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      * @see CampaignStatusSelectionEnum
      */
     public function setStatuses(array $value = null)
@@ -146,7 +146,7 @@ class CampaignsSelectionCriteria
      * Sets StatusesPayment.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      * @see CampaignStatusPaymentEnum
      */
     public function setStatusesPayment(array $value = null)

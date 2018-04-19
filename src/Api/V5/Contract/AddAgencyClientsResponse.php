@@ -44,7 +44,7 @@ class AddAgencyClientsResponse extends ActionResultBase
      * Sets Login.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setLogin($value = null)
     {
@@ -67,7 +67,7 @@ class AddAgencyClientsResponse extends ActionResultBase
      * Sets Password.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setPassword($value = null)
     {
@@ -90,7 +90,7 @@ class AddAgencyClientsResponse extends ActionResultBase
      * Sets Email.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setEmail($value = null)
     {
@@ -113,7 +113,7 @@ class AddAgencyClientsResponse extends ActionResultBase
      * Sets ClientId.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setClientId($value = null)
     {

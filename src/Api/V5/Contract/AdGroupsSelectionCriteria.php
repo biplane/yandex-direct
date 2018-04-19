@@ -56,7 +56,7 @@ class AdGroupsSelectionCriteria
      * Sets CampaignIds.
      *
      * @param int[]|null $value
-     * @return self
+     * @return $this
      */
     public function setCampaignIds(array $value = null)
     {
@@ -79,7 +79,7 @@ class AdGroupsSelectionCriteria
      * Sets Ids.
      *
      * @param int[]|null $value
-     * @return self
+     * @return $this
      */
     public function setIds(array $value = null)
     {
@@ -103,7 +103,7 @@ class AdGroupsSelectionCriteria
      * Sets Types.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      * @see AdGroupTypesEnum
      */
     public function setTypes(array $value = null)
@@ -128,7 +128,7 @@ class AdGroupsSelectionCriteria
      * Sets Statuses.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      * @see AdGroupStatusSelectionEnum
      */
     public function setStatuses(array $value = null)
@@ -152,7 +152,7 @@ class AdGroupsSelectionCriteria
      * Sets TagIds.
      *
      * @param int[]|null $value
-     * @return self
+     * @return $this
      */
     public function setTagIds(array $value = null)
     {
@@ -175,7 +175,7 @@ class AdGroupsSelectionCriteria
      * Sets Tags.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      */
     public function setTags(array $value = null)
     {
@@ -199,7 +199,7 @@ class AdGroupsSelectionCriteria
      * Sets AppIconStatuses.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      * @see AdGroupAppIconStatusSelectionEnum
      */
     public function setAppIconStatuses(array $value = null)
@@ -224,7 +224,7 @@ class AdGroupsSelectionCriteria
      * Sets ServingStatuses.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      * @see ServingStatusEnum
      */
     public function setServingStatuses(array $value = null)

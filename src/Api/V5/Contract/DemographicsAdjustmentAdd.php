@@ -41,7 +41,7 @@ class DemographicsAdjustmentAdd
      * Sets Gender.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see GenderEnum
      */
     public function setGender($value = null)
@@ -66,7 +66,7 @@ class DemographicsAdjustmentAdd
      * Sets Age.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see AgeRangeEnum
      */
     public function setAge($value = null)
@@ -90,7 +90,7 @@ class DemographicsAdjustmentAdd
      * Sets BidModifier.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setBidModifier($value)
     {

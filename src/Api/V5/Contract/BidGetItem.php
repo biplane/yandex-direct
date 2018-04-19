@@ -62,7 +62,7 @@ class BidGetItem extends BidBase
      * Sets Bid.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setBid($value = null)
     {
@@ -85,7 +85,7 @@ class BidGetItem extends BidBase
      * Sets ContextBid.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setContextBid($value = null)
     {
@@ -109,7 +109,7 @@ class BidGetItem extends BidBase
      * Sets StrategyPriority.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see PriorityEnum
      */
     public function setStrategyPriority($value = null)
@@ -133,7 +133,7 @@ class BidGetItem extends BidBase
      * Sets CompetitorsBids.
      *
      * @param int[]|null $value
-     * @return self
+     * @return $this
      */
     public function setCompetitorsBids(array $value = null)
     {
@@ -156,7 +156,7 @@ class BidGetItem extends BidBase
      * Sets SearchPrices.
      *
      * @param SearchPrices[]|null $value
-     * @return self
+     * @return $this
      */
     public function setSearchPrices(array $value = null)
     {
@@ -179,7 +179,7 @@ class BidGetItem extends BidBase
      * Sets ContextCoverage.
      *
      * @param ContextCoverage|null $value
-     * @return self
+     * @return $this
      */
     public function setContextCoverage(ContextCoverage $value = null)
     {
@@ -202,7 +202,7 @@ class BidGetItem extends BidBase
      * Sets MinSearchPrice.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setMinSearchPrice($value = null)
     {
@@ -225,7 +225,7 @@ class BidGetItem extends BidBase
      * Sets CurrentSearchPrice.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setCurrentSearchPrice($value = null)
     {
@@ -248,7 +248,7 @@ class BidGetItem extends BidBase
      * Sets AuctionBids.
      *
      * @param AuctionBidItem[]|null $value
-     * @return self
+     * @return $this
      */
     public function setAuctionBids(array $value = null)
     {
@@ -272,7 +272,7 @@ class BidGetItem extends BidBase
      * Sets ServingStatus.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see ServingStatusEnum
      */
     public function setServingStatus($value = null)

@@ -50,7 +50,7 @@ class AdGroupAddItem
      * Sets Name.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setName($value)
     {
@@ -73,7 +73,7 @@ class AdGroupAddItem
      * Sets CampaignId.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setCampaignId($value)
     {
@@ -96,7 +96,7 @@ class AdGroupAddItem
      * Sets RegionIds.
      *
      * @param int[] $value
-     * @return self
+     * @return $this
      */
     public function setRegionIds(array $value)
     {
@@ -119,7 +119,7 @@ class AdGroupAddItem
      * Sets NegativeKeywords.
      *
      * @param struct[]|null $value
-     * @return self
+     * @return $this
      */
     public function setNegativeKeywords(array $value = null)
     {
@@ -142,7 +142,7 @@ class AdGroupAddItem
      * Sets TrackingParams.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setTrackingParams($value = null)
     {
@@ -165,7 +165,7 @@ class AdGroupAddItem
      * Sets MobileAppAdGroup.
      *
      * @param MobileAppAdGroupAdd|null $value
-     * @return self
+     * @return $this
      */
     public function setMobileAppAdGroup(MobileAppAdGroupAdd $value = null)
     {
@@ -188,7 +188,7 @@ class AdGroupAddItem
      * Sets DynamicTextAdGroup.
      *
      * @param DynamicTextAdGroup|null $value
-     * @return self
+     * @return $this
      */
     public function setDynamicTextAdGroup(DynamicTextAdGroup $value = null)
     {

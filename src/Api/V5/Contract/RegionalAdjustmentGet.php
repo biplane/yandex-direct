@@ -41,7 +41,7 @@ class RegionalAdjustmentGet
      * Sets RegionId.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setRegionId($value = null)
     {
@@ -64,7 +64,7 @@ class RegionalAdjustmentGet
      * Sets BidModifier.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setBidModifier($value = null)
     {
@@ -88,7 +88,7 @@ class RegionalAdjustmentGet
      * Sets Enabled.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see YesNoEnum
      */
     public function setEnabled($value = null)

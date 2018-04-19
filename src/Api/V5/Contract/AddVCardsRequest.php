@@ -34,7 +34,7 @@ class AddVCardsRequest
      * Sets VCards.
      *
      * @param VCardAddItem[] $value
-     * @return self
+     * @return $this
      */
     public function setVCards(array $value)
     {

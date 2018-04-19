@@ -38,7 +38,7 @@ class PhraseAuctionBids
      * Sets Position.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setPosition($value = null)
     {
@@ -61,7 +61,7 @@ class PhraseAuctionBids
      * Sets Bid.
      *
      * @param float|null $value
-     * @return self
+     * @return $this
      */
     public function setBid($value = null)
     {
@@ -84,7 +84,7 @@ class PhraseAuctionBids
      * Sets Price.
      *
      * @param float|null $value
-     * @return self
+     * @return $this
      */
     public function setPrice($value = null)
     {

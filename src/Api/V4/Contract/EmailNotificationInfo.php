@@ -44,7 +44,7 @@ class EmailNotificationInfo
      * Sets Email.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setEmail($value = null)
     {
@@ -67,7 +67,7 @@ class EmailNotificationInfo
      * Sets WarnPlaceInterval.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setWarnPlaceInterval($value)
     {
@@ -90,7 +90,7 @@ class EmailNotificationInfo
      * Sets MoneyWarningValue.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setMoneyWarningValue($value = null)
     {
@@ -113,7 +113,7 @@ class EmailNotificationInfo
      * Sets PausedByDayBudget.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setPausedByDayBudget($value = null)
     {
@@ -136,7 +136,7 @@ class EmailNotificationInfo
      * Sets SendAccNews.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setSendAccNews($value = null)
     {
@@ -159,7 +159,7 @@ class EmailNotificationInfo
      * Sets SendWarn.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setSendWarn($value = null)
     {

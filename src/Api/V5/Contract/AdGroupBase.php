@@ -41,7 +41,7 @@ class AdGroupBase
      * Sets RegionIds.
      *
      * @param int[]|null $value
-     * @return self
+     * @return $this
      */
     public function setRegionIds(array $value = null)
     {
@@ -64,7 +64,7 @@ class AdGroupBase
      * Sets NegativeKeywords.
      *
      * @param struct[]|null $value
-     * @return self
+     * @return $this
      */
     public function setNegativeKeywords(array $value = null)
     {
@@ -87,7 +87,7 @@ class AdGroupBase
      * Sets TrackingParams.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setTrackingParams($value = null)
     {

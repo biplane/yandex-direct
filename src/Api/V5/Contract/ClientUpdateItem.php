@@ -38,7 +38,7 @@ class ClientUpdateItem extends ClientBaseItem
      * Sets Notification.
      *
      * @param NotificationUpdate|null $value
-     * @return self
+     * @return $this
      */
     public function setNotification(NotificationUpdate $value = null)
     {
@@ -61,7 +61,7 @@ class ClientUpdateItem extends ClientBaseItem
      * Sets Settings.
      *
      * @param ClientSettingUpdateItem[]|null $value
-     * @return self
+     * @return $this
      */
     public function setSettings(array $value = null)
     {

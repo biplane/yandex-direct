@@ -35,7 +35,7 @@ class GetSitelinksResponse extends GetResponseGeneral
      * Sets SitelinksSets.
      *
      * @param SitelinksSetGetItem[]|null $value
-     * @return self
+     * @return $this
      */
     public function setSitelinksSets(array $value = null)
     {

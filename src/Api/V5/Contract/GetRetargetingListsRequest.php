@@ -37,7 +37,7 @@ class GetRetargetingListsRequest extends GetRequestGeneral
      * Sets SelectionCriteria.
      *
      * @param RetargetingListSelectionCriteria|null $value
-     * @return self
+     * @return $this
      */
     public function setSelectionCriteria(RetargetingListSelectionCriteria $value = null)
     {
@@ -61,7 +61,7 @@ class GetRetargetingListsRequest extends GetRequestGeneral
      * Sets FieldNames.
      *
      * @param string[] $value
-     * @return self
+     * @return $this
      * @see RetargetingListFieldEnum
      */
     public function setFieldNames(array $value)

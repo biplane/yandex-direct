@@ -34,7 +34,7 @@ class UpdateCampaignsRequest
      * Sets Campaigns.
      *
      * @param CampaignUpdateItem[] $value
-     * @return self
+     * @return $this
      */
     public function setCampaigns(array $value)
     {

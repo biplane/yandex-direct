@@ -35,7 +35,7 @@ class AuctionBids
      * Sets AuctionBidItems.
      *
      * @param AuctionBidItem[]|null $value
-     * @return self
+     * @return $this
      */
     public function setAuctionBidItems(array $value = null)
     {

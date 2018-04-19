@@ -51,7 +51,7 @@ class GetBidModifiersRequest extends GetRequestGeneral
      * Sets SelectionCriteria.
      *
      * @param BidModifiersSelectionCriteria $value
-     * @return self
+     * @return $this
      */
     public function setSelectionCriteria(BidModifiersSelectionCriteria $value)
     {
@@ -75,7 +75,7 @@ class GetBidModifiersRequest extends GetRequestGeneral
      * Sets FieldNames.
      *
      * @param string[] $value
-     * @return self
+     * @return $this
      * @see BidModifierFieldEnum
      */
     public function setFieldNames(array $value)
@@ -100,7 +100,7 @@ class GetBidModifiersRequest extends GetRequestGeneral
      * Sets MobileAdjustmentFieldNames.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      * @see MobileAdjustmentFieldEnum
      */
     public function setMobileAdjustmentFieldNames(array $value = null)
@@ -125,7 +125,7 @@ class GetBidModifiersRequest extends GetRequestGeneral
      * Sets DemographicsAdjustmentFieldNames.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      * @see DemographicsAdjustmentFieldEnum
      */
     public function setDemographicsAdjustmentFieldNames(array $value = null)
@@ -150,7 +150,7 @@ class GetBidModifiersRequest extends GetRequestGeneral
      * Sets RetargetingAdjustmentFieldNames.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      * @see RetargetingAdjustmentFieldEnum
      */
     public function setRetargetingAdjustmentFieldNames(array $value = null)
@@ -175,7 +175,7 @@ class GetBidModifiersRequest extends GetRequestGeneral
      * Sets RegionalAdjustmentFieldNames.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      * @see RegionalAdjustmentFieldEnum
      */
     public function setRegionalAdjustmentFieldNames(array $value = null)
@@ -200,7 +200,7 @@ class GetBidModifiersRequest extends GetRequestGeneral
      * Sets VideoAdjustmentFieldNames.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      * @see VideoAdjustmentFieldEnum
      */
     public function setVideoAdjustmentFieldNames(array $value = null)

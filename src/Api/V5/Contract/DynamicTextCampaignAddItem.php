@@ -40,7 +40,7 @@ class DynamicTextCampaignAddItem
      * Sets BiddingStrategy.
      *
      * @param DynamicTextCampaignStrategyAdd $value
-     * @return self
+     * @return $this
      */
     public function setBiddingStrategy(DynamicTextCampaignStrategyAdd $value)
     {
@@ -63,7 +63,7 @@ class DynamicTextCampaignAddItem
      * Sets Settings.
      *
      * @param DynamicTextCampaignSetting[]|null $value
-     * @return self
+     * @return $this
      */
     public function setSettings(array $value = null)
     {
@@ -86,7 +86,7 @@ class DynamicTextCampaignAddItem
      * Sets CounterIds.
      *
      * @param struct[]|null $value
-     * @return self
+     * @return $this
      */
     public function setCounterIds(array $value = null)
     {

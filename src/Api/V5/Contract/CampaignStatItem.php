@@ -36,7 +36,7 @@ class CampaignStatItem
      * Sets CampaignId.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setCampaignId($value)
     {
@@ -59,7 +59,7 @@ class CampaignStatItem
      * Sets BorderDate.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setBorderDate($value)
     {

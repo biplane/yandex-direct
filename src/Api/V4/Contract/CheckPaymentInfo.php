@@ -34,7 +34,7 @@ class CheckPaymentInfo
      * Sets CustomTransactionID.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setCustomTransactionID($value)
     {

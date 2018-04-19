@@ -35,7 +35,7 @@ class AddAdImagesResponse
      * Sets AddResults.
      *
      * @param AdImageActionResult[]|null $value
-     * @return self
+     * @return $this
      */
     public function setAddResults(array $value = null)
     {

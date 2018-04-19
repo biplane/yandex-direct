@@ -36,7 +36,7 @@ class ConstantsItem
      * Sets Name.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setName($value)
     {
@@ -59,7 +59,7 @@ class ConstantsItem
      * Sets Value.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setValue($value)
     {

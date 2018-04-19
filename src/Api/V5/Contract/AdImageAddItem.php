@@ -36,7 +36,7 @@ class AdImageAddItem
      * Sets ImageData.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setImageData($value)
     {
@@ -59,7 +59,7 @@ class AdImageAddItem
      * Sets Name.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setName($value)
     {

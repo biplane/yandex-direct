@@ -34,7 +34,7 @@ class ClientInfoRequest
      * Sets Filter.
      *
      * @param ClientFilter|null $value
-     * @return self
+     * @return $this
      */
     public function setFilter(ClientFilter $value = null)
     {

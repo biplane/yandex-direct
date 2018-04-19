@@ -57,7 +57,7 @@ class GetAdsRequest extends GetRequestGeneral
      * Sets SelectionCriteria.
      *
      * @param AdsSelectionCriteria $value
-     * @return self
+     * @return $this
      */
     public function setSelectionCriteria(AdsSelectionCriteria $value)
     {
@@ -81,7 +81,7 @@ class GetAdsRequest extends GetRequestGeneral
      * Sets FieldNames.
      *
      * @param string[] $value
-     * @return self
+     * @return $this
      * @see AdFieldEnum
      */
     public function setFieldNames(array $value)
@@ -106,7 +106,7 @@ class GetAdsRequest extends GetRequestGeneral
      * Sets TextAdFieldNames.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      * @see TextAdFieldEnum
      */
     public function setTextAdFieldNames(array $value = null)
@@ -131,7 +131,7 @@ class GetAdsRequest extends GetRequestGeneral
      * Sets MobileAppAdFieldNames.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      * @see MobileAppAdFieldEnum
      */
     public function setMobileAppAdFieldNames(array $value = null)
@@ -156,7 +156,7 @@ class GetAdsRequest extends GetRequestGeneral
      * Sets DynamicTextAdFieldNames.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      * @see DynamicTextAdFieldEnum
      */
     public function setDynamicTextAdFieldNames(array $value = null)
@@ -181,7 +181,7 @@ class GetAdsRequest extends GetRequestGeneral
      * Sets TextImageAdFieldNames.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      * @see TextImageAdFieldEnum
      */
     public function setTextImageAdFieldNames(array $value = null)
@@ -206,7 +206,7 @@ class GetAdsRequest extends GetRequestGeneral
      * Sets MobileAppImageAdFieldNames.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      * @see MobileAppImageAdFieldEnum
      */
     public function setMobileAppImageAdFieldNames(array $value = null)
@@ -231,7 +231,7 @@ class GetAdsRequest extends GetRequestGeneral
      * Sets TextAdBuilderAdFieldNames.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      * @see TextAdBuilderAdFieldEnum
      */
     public function setTextAdBuilderAdFieldNames(array $value = null)
@@ -256,7 +256,7 @@ class GetAdsRequest extends GetRequestGeneral
      * Sets MobileAppAdBuilderAdFieldNames.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      * @see MobileAppAdBuilderAdFieldEnum
      */
     public function setMobileAppAdBuilderAdFieldNames(array $value = null)

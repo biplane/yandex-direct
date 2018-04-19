@@ -38,7 +38,7 @@ class CreditLimitsItem
      * Sets ContractID.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setContractID($value)
     {
@@ -61,7 +61,7 @@ class CreditLimitsItem
      * Sets Limit.
      *
      * @param float $value
-     * @return self
+     * @return $this
      */
     public function setLimit($value)
     {
@@ -84,7 +84,7 @@ class CreditLimitsItem
      * Sets LimitSpent.
      *
      * @param float $value
-     * @return self
+     * @return $this
      */
     public function setLimitSpent($value)
     {

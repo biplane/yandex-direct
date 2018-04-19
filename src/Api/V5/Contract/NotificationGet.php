@@ -34,7 +34,7 @@ class NotificationGet extends Notification
      * Sets SmsPhoneNumber.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setSmsPhoneNumber($value)
     {

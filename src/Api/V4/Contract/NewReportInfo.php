@@ -60,7 +60,7 @@ class NewReportInfo
      * Sets CampaignID.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setCampaignID($value)
     {
@@ -83,7 +83,7 @@ class NewReportInfo
      * Sets StartDate.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setStartDate($value)
     {
@@ -106,7 +106,7 @@ class NewReportInfo
      * Sets EndDate.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setEndDate($value)
     {
@@ -129,7 +129,7 @@ class NewReportInfo
      * Sets GroupByColumns.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      */
     public function setGroupByColumns(array $value = null)
     {
@@ -152,7 +152,7 @@ class NewReportInfo
      * Sets Filter.
      *
      * @param NewReportFilterInfo|null $value
-     * @return self
+     * @return $this
      */
     public function setFilter(NewReportFilterInfo $value = null)
     {
@@ -175,7 +175,7 @@ class NewReportInfo
      * Sets Limit.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setLimit($value = null)
     {
@@ -198,7 +198,7 @@ class NewReportInfo
      * Sets Offset.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setOffset($value = null)
     {
@@ -221,7 +221,7 @@ class NewReportInfo
      * Sets GroupByDate.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setGroupByDate($value = null)
     {
@@ -244,7 +244,7 @@ class NewReportInfo
      * Sets OrderBy.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      */
     public function setOrderBy(array $value = null)
     {
@@ -267,7 +267,7 @@ class NewReportInfo
      * Sets TypeResultReport.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setTypeResultReport($value = null)
     {
@@ -290,7 +290,7 @@ class NewReportInfo
      * Sets CompressReport.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setCompressReport($value = null)
     {
@@ -313,7 +313,7 @@ class NewReportInfo
      * Sets Currency.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setCurrency($value = null)
     {
@@ -336,7 +336,7 @@ class NewReportInfo
      * Sets IncludeVAT.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setIncludeVAT($value = null)
     {
@@ -359,7 +359,7 @@ class NewReportInfo
      * Sets IncludeDiscount.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setIncludeDiscount($value = null)
     {

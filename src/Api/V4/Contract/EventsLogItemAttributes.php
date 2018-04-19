@@ -50,7 +50,7 @@ class EventsLogItemAttributes
      * Sets ModerationResult.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setModerationResult($value = null)
     {
@@ -73,7 +73,7 @@ class EventsLogItemAttributes
      * Sets MinPrice.
      *
      * @param float|null $value
-     * @return self
+     * @return $this
      */
     public function setMinPrice($value = null)
     {
@@ -96,7 +96,7 @@ class EventsLogItemAttributes
      * Sets Rest.
      *
      * @param float|null $value
-     * @return self
+     * @return $this
      */
     public function setRest($value = null)
     {
@@ -119,7 +119,7 @@ class EventsLogItemAttributes
      * Sets Payed.
      *
      * @param float|null $value
-     * @return self
+     * @return $this
      */
     public function setPayed($value = null)
     {
@@ -142,7 +142,7 @@ class EventsLogItemAttributes
      * Sets FinishDate.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setFinishDate($value = null)
     {
@@ -165,7 +165,7 @@ class EventsLogItemAttributes
      * Sets OldPlace.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setOldPlace($value = null)
     {
@@ -188,7 +188,7 @@ class EventsLogItemAttributes
      * Sets IsEditedByModerator.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setIsEditedByModerator($value = null)
     {
@@ -211,7 +211,7 @@ class EventsLogItemAttributes
      * Sets StopTime.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setStopTime($value = null)
     {
@@ -234,7 +234,7 @@ class EventsLogItemAttributes
      * Sets Currency.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setCurrency($value = null)
     {

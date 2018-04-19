@@ -35,7 +35,7 @@ class GetRetargetingListsResponse extends GetResponseGeneral
      * Sets RetargetingLists.
      *
      * @param RetargetingListGetItem[]|null $value
-     * @return self
+     * @return $this
      */
     public function setRetargetingLists(array $value = null)
     {

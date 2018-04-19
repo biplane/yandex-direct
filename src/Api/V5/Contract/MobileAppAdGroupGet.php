@@ -53,7 +53,7 @@ class MobileAppAdGroupGet
      * Sets StoreUrl.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setStoreUrl($value = null)
     {
@@ -77,7 +77,7 @@ class MobileAppAdGroupGet
      * Sets TargetDeviceType.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      * @see TargetDeviceTypeEnum
      */
     public function setTargetDeviceType(array $value = null)
@@ -102,7 +102,7 @@ class MobileAppAdGroupGet
      * Sets TargetCarrier.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see TargetCarrierEnum
      */
     public function setTargetCarrier($value = null)
@@ -126,7 +126,7 @@ class MobileAppAdGroupGet
      * Sets TargetOperatingSystemVersion.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setTargetOperatingSystemVersion($value = null)
     {
@@ -149,7 +149,7 @@ class MobileAppAdGroupGet
      * Sets AppIconModeration.
      *
      * @param ExtensionModeration|null $value
-     * @return self
+     * @return $this
      */
     public function setAppIconModeration(ExtensionModeration $value = null)
     {
@@ -173,7 +173,7 @@ class MobileAppAdGroupGet
      * Sets AppOperatingSystemType.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see MobileOperatingSystemTypeEnum
      */
     public function setAppOperatingSystemType($value = null)
@@ -198,7 +198,7 @@ class MobileAppAdGroupGet
      * Sets AppAvailabilityStatus.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see AppAvailabilityStatusEnum
      */
     public function setAppAvailabilityStatus($value = null)

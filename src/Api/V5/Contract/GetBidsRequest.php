@@ -36,7 +36,7 @@ class GetBidsRequest extends GetRequestGeneral
      * Sets SelectionCriteria.
      *
      * @param BidsSelectionCriteria $value
-     * @return self
+     * @return $this
      */
     public function setSelectionCriteria(BidsSelectionCriteria $value)
     {
@@ -60,7 +60,7 @@ class GetBidsRequest extends GetRequestGeneral
      * Sets FieldNames.
      *
      * @param string[] $value
-     * @return self
+     * @return $this
      * @see BidFieldEnum
      */
     public function setFieldNames(array $value)

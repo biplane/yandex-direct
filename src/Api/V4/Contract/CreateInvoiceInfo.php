@@ -34,7 +34,7 @@ class CreateInvoiceInfo
      * Sets Payments.
      *
      * @param PayCampElement[] $value
-     * @return self
+     * @return $this
      */
     public function setPayments(array $value)
     {

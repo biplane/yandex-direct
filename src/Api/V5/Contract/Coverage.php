@@ -35,7 +35,7 @@ class Coverage
      * Sets CoverageItems.
      *
      * @param NetworkCoverageItem[]|null $value
-     * @return self
+     * @return $this
      */
     public function setCoverageItems(array $value = null)
     {

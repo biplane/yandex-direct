@@ -36,7 +36,7 @@ class GetKeywordsRequest extends GetRequestGeneral
      * Sets SelectionCriteria.
      *
      * @param KeywordsSelectionCriteria $value
-     * @return self
+     * @return $this
      */
     public function setSelectionCriteria(KeywordsSelectionCriteria $value)
     {
@@ -60,7 +60,7 @@ class GetKeywordsRequest extends GetRequestGeneral
      * Sets FieldNames.
      *
      * @param string[] $value
-     * @return self
+     * @return $this
      * @see KeywordFieldEnum
      */
     public function setFieldNames(array $value)

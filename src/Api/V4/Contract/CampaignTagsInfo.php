@@ -36,7 +36,7 @@ class CampaignTagsInfo
      * Sets CampaignID.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setCampaignID($value)
     {
@@ -59,7 +59,7 @@ class CampaignTagsInfo
      * Sets Tags.
      *
      * @param TagInfo[]|null $value
-     * @return self
+     * @return $this
      */
     public function setTags(array $value = null)
     {

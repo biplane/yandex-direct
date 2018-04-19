@@ -58,7 +58,7 @@ class CampaignContextStrategy
      * Sets StrategyName.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setStrategyName($value)
     {
@@ -81,7 +81,7 @@ class CampaignContextStrategy
      * Sets ContextLimit.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setContextLimit($value = null)
     {
@@ -104,7 +104,7 @@ class CampaignContextStrategy
      * Sets ContextLimitSum.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setContextLimitSum($value = null)
     {
@@ -127,7 +127,7 @@ class CampaignContextStrategy
      * Sets ContextPricePercent.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setContextPricePercent($value = null)
     {
@@ -150,7 +150,7 @@ class CampaignContextStrategy
      * Sets MaxPrice.
      *
      * @param float|null $value
-     * @return self
+     * @return $this
      */
     public function setMaxPrice($value = null)
     {
@@ -173,7 +173,7 @@ class CampaignContextStrategy
      * Sets AveragePrice.
      *
      * @param float|null $value
-     * @return self
+     * @return $this
      */
     public function setAveragePrice($value = null)
     {
@@ -196,7 +196,7 @@ class CampaignContextStrategy
      * Sets WeeklySumLimit.
      *
      * @param float|null $value
-     * @return self
+     * @return $this
      */
     public function setWeeklySumLimit($value = null)
     {
@@ -219,7 +219,7 @@ class CampaignContextStrategy
      * Sets ClicksPerWeek.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setClicksPerWeek($value = null)
     {
@@ -242,7 +242,7 @@ class CampaignContextStrategy
      * Sets AverageCPA.
      *
      * @param float|null $value
-     * @return self
+     * @return $this
      */
     public function setAverageCPA($value = null)
     {
@@ -265,7 +265,7 @@ class CampaignContextStrategy
      * Sets GoalID.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setGoalID($value = null)
     {
@@ -288,7 +288,7 @@ class CampaignContextStrategy
      * Sets ReserveReturn.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setReserveReturn($value = null)
     {
@@ -311,7 +311,7 @@ class CampaignContextStrategy
      * Sets ROICoef.
      *
      * @param float|null $value
-     * @return self
+     * @return $this
      */
     public function setROICoef($value = null)
     {
@@ -334,7 +334,7 @@ class CampaignContextStrategy
      * Sets Profitability.
      *
      * @param float|null $value
-     * @return self
+     * @return $this
      */
     public function setProfitability($value = null)
     {

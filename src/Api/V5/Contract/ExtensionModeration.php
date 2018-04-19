@@ -38,7 +38,7 @@ class ExtensionModeration
      * Sets Status.
      *
      * @param string $value
-     * @return self
+     * @return $this
      * @see StatusEnum
      */
     public function setStatus($value)
@@ -62,7 +62,7 @@ class ExtensionModeration
      * Sets StatusClarification.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setStatusClarification($value = null)
     {

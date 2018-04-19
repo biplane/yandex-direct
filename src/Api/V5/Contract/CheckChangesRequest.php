@@ -45,7 +45,7 @@ class CheckChangesRequest
      * Sets CampaignIds.
      *
      * @param int[]|null $value
-     * @return self
+     * @return $this
      */
     public function setCampaignIds(array $value = null)
     {
@@ -68,7 +68,7 @@ class CheckChangesRequest
      * Sets AdGroupIds.
      *
      * @param int[]|null $value
-     * @return self
+     * @return $this
      */
     public function setAdGroupIds(array $value = null)
     {
@@ -91,7 +91,7 @@ class CheckChangesRequest
      * Sets AdIds.
      *
      * @param int[]|null $value
-     * @return self
+     * @return $this
      */
     public function setAdIds(array $value = null)
     {
@@ -114,7 +114,7 @@ class CheckChangesRequest
      * Sets Timestamp.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setTimestamp($value)
     {
@@ -138,7 +138,7 @@ class CheckChangesRequest
      * Sets FieldNames.
      *
      * @param string[] $value
-     * @return self
+     * @return $this
      * @see CheckFieldEnum
      */
     public function setFieldNames(array $value)

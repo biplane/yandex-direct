@@ -40,7 +40,7 @@ class ShortClientInfo
      * Sets Login.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setLogin($value = null)
     {
@@ -63,7 +63,7 @@ class ShortClientInfo
      * Sets FIO.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setFIO($value = null)
     {
@@ -86,7 +86,7 @@ class ShortClientInfo
      * Sets Role.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setRole($value = null)
     {
@@ -109,7 +109,7 @@ class ShortClientInfo
      * Sets SharedAccountEnabled.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setSharedAccountEnabled($value = null)
     {

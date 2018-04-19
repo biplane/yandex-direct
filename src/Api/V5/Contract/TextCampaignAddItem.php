@@ -43,7 +43,7 @@ class TextCampaignAddItem
      * Sets BiddingStrategy.
      *
      * @param TextCampaignStrategyAdd $value
-     * @return self
+     * @return $this
      */
     public function setBiddingStrategy(TextCampaignStrategyAdd $value)
     {
@@ -66,7 +66,7 @@ class TextCampaignAddItem
      * Sets Settings.
      *
      * @param TextCampaignSetting[]|null $value
-     * @return self
+     * @return $this
      */
     public function setSettings(array $value = null)
     {
@@ -89,7 +89,7 @@ class TextCampaignAddItem
      * Sets CounterIds.
      *
      * @param struct[]|null $value
-     * @return self
+     * @return $this
      */
     public function setCounterIds(array $value = null)
     {
@@ -112,7 +112,7 @@ class TextCampaignAddItem
      * Sets RelevantKeywords.
      *
      * @param RelevantKeywordsSettingAdd|null $value
-     * @return self
+     * @return $this
      */
     public function setRelevantKeywords(RelevantKeywordsSettingAdd $value = null)
     {

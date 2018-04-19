@@ -42,7 +42,7 @@ class SmsSettings
      * Sets Events.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      * @see SmsEventsEnum
      */
     public function setEvents(array $value = null)
@@ -66,7 +66,7 @@ class SmsSettings
      * Sets TimeFrom.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setTimeFrom($value = null)
     {
@@ -89,7 +89,7 @@ class SmsSettings
      * Sets TimeTo.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setTimeTo($value = null)
     {

@@ -36,7 +36,7 @@ class HasSearchVolumeSelectionCriteria
      * Sets RegionIds.
      *
      * @param int[] $value
-     * @return self
+     * @return $this
      */
     public function setRegionIds(array $value)
     {
@@ -59,7 +59,7 @@ class HasSearchVolumeSelectionCriteria
      * Sets Keywords.
      *
      * @param string[] $value
-     * @return self
+     * @return $this
      */
     public function setKeywords(array $value)
     {

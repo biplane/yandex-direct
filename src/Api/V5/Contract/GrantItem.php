@@ -37,7 +37,7 @@ class GrantItem
      * Sets Privilege.
      *
      * @param string $value
-     * @return self
+     * @return $this
      * @see PrivilegeEnum
      */
     public function setPrivilege($value)
@@ -62,7 +62,7 @@ class GrantItem
      * Sets Value.
      *
      * @param string $value
-     * @return self
+     * @return $this
      * @see YesNoEnum
      */
     public function setValue($value)

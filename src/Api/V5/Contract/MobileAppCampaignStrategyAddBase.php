@@ -47,7 +47,7 @@ class MobileAppCampaignStrategyAddBase
      * Sets WbMaximumClicks.
      *
      * @param StrategyMaximumClicksAdd|null $value
-     * @return self
+     * @return $this
      */
     public function setWbMaximumClicks(StrategyMaximumClicksAdd $value = null)
     {
@@ -70,7 +70,7 @@ class MobileAppCampaignStrategyAddBase
      * Sets WbMaximumAppInstalls.
      *
      * @param StrategyMaximumAppInstallsAdd|null $value
-     * @return self
+     * @return $this
      */
     public function setWbMaximumAppInstalls(StrategyMaximumAppInstallsAdd $value = null)
     {
@@ -93,7 +93,7 @@ class MobileAppCampaignStrategyAddBase
      * Sets AverageCpc.
      *
      * @param StrategyAverageCpcAdd|null $value
-     * @return self
+     * @return $this
      */
     public function setAverageCpc(StrategyAverageCpcAdd $value = null)
     {
@@ -116,7 +116,7 @@ class MobileAppCampaignStrategyAddBase
      * Sets AverageCpi.
      *
      * @param StrategyAverageCpiAdd|null $value
-     * @return self
+     * @return $this
      */
     public function setAverageCpi(StrategyAverageCpiAdd $value = null)
     {
@@ -139,7 +139,7 @@ class MobileAppCampaignStrategyAddBase
      * Sets WeeklyClickPackage.
      *
      * @param StrategyWeeklyClickPackageAdd|null $value
-     * @return self
+     * @return $this
      */
     public function setWeeklyClickPackage(StrategyWeeklyClickPackageAdd $value = null)
     {

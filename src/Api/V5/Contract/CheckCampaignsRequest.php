@@ -34,7 +34,7 @@ class CheckCampaignsRequest
      * Sets Timestamp.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setTimestamp($value)
     {

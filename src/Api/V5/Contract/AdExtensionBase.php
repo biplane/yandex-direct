@@ -48,7 +48,7 @@ class AdExtensionBase
      * Sets Type.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see AdExtensionTypeEnum
      */
     public function setType($value = null)
@@ -72,7 +72,7 @@ class AdExtensionBase
      * Sets Callout.
      *
      * @param Callout|null $value
-     * @return self
+     * @return $this
      */
     public function setCallout(Callout $value = null)
     {
@@ -96,7 +96,7 @@ class AdExtensionBase
      * Sets State.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see StateEnum
      */
     public function setState($value = null)
@@ -121,7 +121,7 @@ class AdExtensionBase
      * Sets Status.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see StatusEnum
      */
     public function setStatus($value = null)
@@ -145,7 +145,7 @@ class AdExtensionBase
      * Sets StatusClarification.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setStatusClarification($value = null)
     {

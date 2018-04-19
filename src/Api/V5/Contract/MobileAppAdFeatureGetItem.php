@@ -35,7 +35,7 @@ class MobileAppAdFeatureGetItem extends MobileAppAdFeatureItem
      * Sets IsAvailable.
      *
      * @param string $value
-     * @return self
+     * @return $this
      * @see YesNoUnknownEnum
      */
     public function setIsAvailable($value)

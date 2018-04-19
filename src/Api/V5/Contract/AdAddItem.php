@@ -53,7 +53,7 @@ class AdAddItem extends AdAddItemBase
      * Sets TextAd.
      *
      * @param TextAdAdd|null $value
-     * @return self
+     * @return $this
      */
     public function setTextAd(TextAdAdd $value = null)
     {
@@ -76,7 +76,7 @@ class AdAddItem extends AdAddItemBase
      * Sets DynamicTextAd.
      *
      * @param DynamicTextAdAdd|null $value
-     * @return self
+     * @return $this
      */
     public function setDynamicTextAd(DynamicTextAdAdd $value = null)
     {
@@ -99,7 +99,7 @@ class AdAddItem extends AdAddItemBase
      * Sets MobileAppAd.
      *
      * @param MobileAppAdAdd|null $value
-     * @return self
+     * @return $this
      */
     public function setMobileAppAd(MobileAppAdAdd $value = null)
     {
@@ -122,7 +122,7 @@ class AdAddItem extends AdAddItemBase
      * Sets TextImageAd.
      *
      * @param TextImageAdAdd|null $value
-     * @return self
+     * @return $this
      */
     public function setTextImageAd(TextImageAdAdd $value = null)
     {
@@ -145,7 +145,7 @@ class AdAddItem extends AdAddItemBase
      * Sets MobileAppImageAd.
      *
      * @param MobileAppImageAdAdd|null $value
-     * @return self
+     * @return $this
      */
     public function setMobileAppImageAd(MobileAppImageAdAdd $value = null)
     {
@@ -168,7 +168,7 @@ class AdAddItem extends AdAddItemBase
      * Sets TextAdBuilderAd.
      *
      * @param TextAdBuilderAdAdd|null $value
-     * @return self
+     * @return $this
      */
     public function setTextAdBuilderAd(TextAdBuilderAdAdd $value = null)
     {
@@ -191,7 +191,7 @@ class AdAddItem extends AdAddItemBase
      * Sets MobileAppAdBuilderAd.
      *
      * @param MobileAppAdBuilderAdAdd|null $value
-     * @return self
+     * @return $this
      */
     public function setMobileAppAdBuilderAd(MobileAppAdBuilderAdAdd $value = null)
     {

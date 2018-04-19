@@ -43,7 +43,7 @@ class AdGroupUpdateItem extends AdGroupBase
      * Sets Id.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setId($value)
     {
@@ -66,7 +66,7 @@ class AdGroupUpdateItem extends AdGroupBase
      * Sets Name.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setName($value = null)
     {
@@ -89,7 +89,7 @@ class AdGroupUpdateItem extends AdGroupBase
      * Sets MobileAppAdGroup.
      *
      * @param MobileAppAdGroupUpdate|null $value
-     * @return self
+     * @return $this
      */
     public function setMobileAppAdGroup(MobileAppAdGroupUpdate $value = null)
     {
@@ -112,7 +112,7 @@ class AdGroupUpdateItem extends AdGroupBase
      * Sets DynamicTextAdGroup.
      *
      * @param DynamicTextAdGroup|null $value
-     * @return self
+     * @return $this
      */
     public function setDynamicTextAdGroup(DynamicTextAdGroup $value = null)
     {

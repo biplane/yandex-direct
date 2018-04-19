@@ -40,7 +40,7 @@ class InterestsItem
      * Sets InterestId.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setInterestId($value)
     {
@@ -63,7 +63,7 @@ class InterestsItem
      * Sets ParentId.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setParentId($value = null)
     {
@@ -86,7 +86,7 @@ class InterestsItem
      * Sets Name.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setName($value)
     {
@@ -110,7 +110,7 @@ class InterestsItem
      * Sets IsTargetable.
      *
      * @param string $value
-     * @return self
+     * @return $this
      * @see YesNoEnum
      */
     public function setIsTargetable($value)

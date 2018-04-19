@@ -39,7 +39,7 @@ class Sitelink
      * Sets Title.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setTitle($value)
     {
@@ -62,7 +62,7 @@ class Sitelink
      * Sets Href.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setHref($value)
     {
@@ -85,7 +85,7 @@ class Sitelink
      * Sets Description.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setDescription($value = null)
     {

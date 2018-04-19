@@ -34,7 +34,7 @@ class SitelinksSetAddItem
      * Sets Sitelinks.
      *
      * @param Sitelink[] $value
-     * @return self
+     * @return $this
      */
     public function setSitelinks(array $value)
     {

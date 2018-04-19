@@ -63,7 +63,7 @@ class CampaignAddItem extends CampaignBase
      * Sets Name.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setName($value)
     {
@@ -86,7 +86,7 @@ class CampaignAddItem extends CampaignBase
      * Sets StartDate.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setStartDate($value)
     {
@@ -109,7 +109,7 @@ class CampaignAddItem extends CampaignBase
      * Sets DailyBudget.
      *
      * @param DailyBudget|null $value
-     * @return self
+     * @return $this
      */
     public function setDailyBudget(DailyBudget $value = null)
     {
@@ -132,7 +132,7 @@ class CampaignAddItem extends CampaignBase
      * Sets EndDate.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setEndDate($value = null)
     {
@@ -155,7 +155,7 @@ class CampaignAddItem extends CampaignBase
      * Sets NegativeKeywords.
      *
      * @param struct[]|null $value
-     * @return self
+     * @return $this
      */
     public function setNegativeKeywords(array $value = null)
     {
@@ -178,7 +178,7 @@ class CampaignAddItem extends CampaignBase
      * Sets BlockedIps.
      *
      * @param struct[]|null $value
-     * @return self
+     * @return $this
      */
     public function setBlockedIps(array $value = null)
     {
@@ -201,7 +201,7 @@ class CampaignAddItem extends CampaignBase
      * Sets ExcludedSites.
      *
      * @param struct[]|null $value
-     * @return self
+     * @return $this
      */
     public function setExcludedSites(array $value = null)
     {
@@ -224,7 +224,7 @@ class CampaignAddItem extends CampaignBase
      * Sets TextCampaign.
      *
      * @param TextCampaignAddItem|null $value
-     * @return self
+     * @return $this
      */
     public function setTextCampaign(TextCampaignAddItem $value = null)
     {
@@ -247,7 +247,7 @@ class CampaignAddItem extends CampaignBase
      * Sets MobileAppCampaign.
      *
      * @param MobileAppCampaignAddItem|null $value
-     * @return self
+     * @return $this
      */
     public function setMobileAppCampaign(MobileAppCampaignAddItem $value = null)
     {
@@ -270,7 +270,7 @@ class CampaignAddItem extends CampaignBase
      * Sets DynamicTextCampaign.
      *
      * @param DynamicTextCampaignAddItem|null $value
-     * @return self
+     * @return $this
      */
     public function setDynamicTextCampaign(DynamicTextCampaignAddItem $value = null)
     {
@@ -293,7 +293,7 @@ class CampaignAddItem extends CampaignBase
      * Sets TimeTargeting.
      *
      * @param TimeTargetingAdd|null $value
-     * @return self
+     * @return $this
      */
     public function setTimeTargeting(TimeTargetingAdd $value = null)
     {

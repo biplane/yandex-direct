@@ -39,7 +39,7 @@ class SearchPrices
      * Sets Position.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see PositionEnum
      */
     public function setPosition($value = null)
@@ -63,7 +63,7 @@ class SearchPrices
      * Sets Price.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setPrice($value = null)
     {

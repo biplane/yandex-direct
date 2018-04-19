@@ -38,7 +38,7 @@ class KeywordProductivity
      * Sets Value.
      *
      * @param float|null $value
-     * @return self
+     * @return $this
      */
     public function setValue($value = null)
     {
@@ -61,7 +61,7 @@ class KeywordProductivity
      * Sets References.
      *
      * @param int[]|null $value
-     * @return self
+     * @return $this
      */
     public function setReferences(array $value = null)
     {

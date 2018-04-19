@@ -35,7 +35,7 @@ class MultiIdsActionResult extends ActionResultBase
      * Sets Ids.
      *
      * @param int[]|null $value
-     * @return self
+     * @return $this
      */
     public function setIds(array $value = null)
     {

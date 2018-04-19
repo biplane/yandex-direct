@@ -83,7 +83,7 @@ class AdGetItem
      * Sets Id.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setId($value = null)
     {
@@ -106,7 +106,7 @@ class AdGetItem
      * Sets CampaignId.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setCampaignId($value = null)
     {
@@ -129,7 +129,7 @@ class AdGetItem
      * Sets AdGroupId.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setAdGroupId($value = null)
     {
@@ -153,7 +153,7 @@ class AdGetItem
      * Sets Status.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see StatusEnum
      */
     public function setStatus($value = null)
@@ -178,7 +178,7 @@ class AdGetItem
      * Sets State.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see StateEnum
      */
     public function setState($value = null)
@@ -202,7 +202,7 @@ class AdGetItem
      * Sets StatusClarification.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setStatusClarification($value = null)
     {
@@ -225,7 +225,7 @@ class AdGetItem
      * Sets AdCategories.
      *
      * @param struct[]|null $value
-     * @return self
+     * @return $this
      */
     public function setAdCategories(array $value = null)
     {
@@ -249,7 +249,7 @@ class AdGetItem
      * Sets AgeLabel.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see AgeLabelEnum
      */
     public function setAgeLabel($value = null)
@@ -274,7 +274,7 @@ class AdGetItem
      * Sets Type.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see AdTypeEnum
      */
     public function setType($value = null)
@@ -299,7 +299,7 @@ class AdGetItem
      * Sets Subtype.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see AdSubtypeEnum
      */
     public function setSubtype($value = null)
@@ -323,7 +323,7 @@ class AdGetItem
      * Sets TextAd.
      *
      * @param TextAdGet|null $value
-     * @return self
+     * @return $this
      */
     public function setTextAd(TextAdGet $value = null)
     {
@@ -346,7 +346,7 @@ class AdGetItem
      * Sets DynamicTextAd.
      *
      * @param DynamicTextAdGet|null $value
-     * @return self
+     * @return $this
      */
     public function setDynamicTextAd(DynamicTextAdGet $value = null)
     {
@@ -369,7 +369,7 @@ class AdGetItem
      * Sets MobileAppAd.
      *
      * @param MobileAppAdGet|null $value
-     * @return self
+     * @return $this
      */
     public function setMobileAppAd(MobileAppAdGet $value = null)
     {
@@ -392,7 +392,7 @@ class AdGetItem
      * Sets TextImageAd.
      *
      * @param TextImageAdGet|null $value
-     * @return self
+     * @return $this
      */
     public function setTextImageAd(TextImageAdGet $value = null)
     {
@@ -415,7 +415,7 @@ class AdGetItem
      * Sets MobileAppImageAd.
      *
      * @param MobileAppImageAdGet|null $value
-     * @return self
+     * @return $this
      */
     public function setMobileAppImageAd(MobileAppImageAdGet $value = null)
     {
@@ -438,7 +438,7 @@ class AdGetItem
      * Sets TextAdBuilderAd.
      *
      * @param TextAdBuilderAdGet|null $value
-     * @return self
+     * @return $this
      */
     public function setTextAdBuilderAd(TextAdBuilderAdGet $value = null)
     {
@@ -461,7 +461,7 @@ class AdGetItem
      * Sets MobileAppAdBuilderAd.
      *
      * @param MobileAppAdBuilderAdGet|null $value
-     * @return self
+     * @return $this
      */
     public function setMobileAppAdBuilderAd(MobileAppAdBuilderAdGet $value = null)
     {

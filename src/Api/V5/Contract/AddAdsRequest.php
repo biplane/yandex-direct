@@ -34,7 +34,7 @@ class AddAdsRequest
      * Sets Ads.
      *
      * @param AdAddItem[] $value
-     * @return self
+     * @return $this
      */
     public function setAds(array $value)
     {

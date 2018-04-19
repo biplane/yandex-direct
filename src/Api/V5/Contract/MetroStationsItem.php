@@ -38,7 +38,7 @@ class MetroStationsItem
      * Sets GeoRegionId.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setGeoRegionId($value)
     {
@@ -61,7 +61,7 @@ class MetroStationsItem
      * Sets MetroStationId.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setMetroStationId($value)
     {
@@ -84,7 +84,7 @@ class MetroStationsItem
      * Sets MetroStationName.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setMetroStationName($value)
     {

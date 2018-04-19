@@ -47,7 +47,7 @@ class StrategyAverageRoiAdd
      * Sets ReserveReturn.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setReserveReturn($value)
     {
@@ -70,7 +70,7 @@ class StrategyAverageRoiAdd
      * Sets RoiCoef.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setRoiCoef($value)
     {
@@ -93,7 +93,7 @@ class StrategyAverageRoiAdd
      * Sets GoalId.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setGoalId($value)
     {
@@ -116,7 +116,7 @@ class StrategyAverageRoiAdd
      * Sets WeeklySpendLimit.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setWeeklySpendLimit($value = null)
     {
@@ -139,7 +139,7 @@ class StrategyAverageRoiAdd
      * Sets BidCeiling.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setBidCeiling($value = null)
     {
@@ -162,7 +162,7 @@ class StrategyAverageRoiAdd
      * Sets Profitability.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setProfitability($value = null)
     {

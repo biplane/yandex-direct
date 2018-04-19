@@ -34,7 +34,7 @@ class UpdateRetargetingListsRequest
      * Sets RetargetingLists.
      *
      * @param RetargetingListUpdateItem[] $value
-     * @return self
+     * @return $this
      */
     public function setRetargetingLists(array $value)
     {

@@ -38,7 +38,7 @@ class Search
      * Sets Bid.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setBid($value = null)
     {
@@ -61,7 +61,7 @@ class Search
      * Sets AuctionBids.
      *
      * @param AuctionBids|null $value
-     * @return self
+     * @return $this
      */
     public function setAuctionBids(AuctionBids $value = null)
     {

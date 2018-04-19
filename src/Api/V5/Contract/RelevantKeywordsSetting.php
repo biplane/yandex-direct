@@ -41,7 +41,7 @@ class RelevantKeywordsSetting
      * Sets BudgetPercent.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setBudgetPercent($value = null)
     {
@@ -65,7 +65,7 @@ class RelevantKeywordsSetting
      * Sets Mode.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see RelevantKeywordsModeEnum
      */
     public function setMode($value = null)
@@ -89,7 +89,7 @@ class RelevantKeywordsSetting
      * Sets OptimizeGoalId.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setOptimizeGoalId($value = null)
     {

@@ -44,7 +44,7 @@ class CheckResponseModified
      * Sets CampaignIds.
      *
      * @param int[]|null $value
-     * @return self
+     * @return $this
      */
     public function setCampaignIds(array $value = null)
     {
@@ -67,7 +67,7 @@ class CheckResponseModified
      * Sets AdGroupIds.
      *
      * @param int[]|null $value
-     * @return self
+     * @return $this
      */
     public function setAdGroupIds(array $value = null)
     {
@@ -90,7 +90,7 @@ class CheckResponseModified
      * Sets AdIds.
      *
      * @param int[]|null $value
-     * @return self
+     * @return $this
      */
     public function setAdIds(array $value = null)
     {
@@ -113,7 +113,7 @@ class CheckResponseModified
      * Sets CampaignsStat.
      *
      * @param CampaignStatItem[]|null $value
-     * @return self
+     * @return $this
      */
     public function setCampaignsStat(array $value = null)
     {

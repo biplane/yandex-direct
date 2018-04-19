@@ -52,7 +52,7 @@ class BannersFilterInfo
      * Sets StatusPhoneModerate.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      */
     public function setStatusPhoneModerate(array $value = null)
     {
@@ -75,7 +75,7 @@ class BannersFilterInfo
      * Sets StatusBannerModerate.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      */
     public function setStatusBannerModerate(array $value = null)
     {
@@ -98,7 +98,7 @@ class BannersFilterInfo
      * Sets StatusPhrasesModerate.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      */
     public function setStatusPhrasesModerate(array $value = null)
     {
@@ -121,7 +121,7 @@ class BannersFilterInfo
      * Sets StatusActivating.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      */
     public function setStatusActivating(array $value = null)
     {
@@ -144,7 +144,7 @@ class BannersFilterInfo
      * Sets StatusShow.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      */
     public function setStatusShow(array $value = null)
     {
@@ -167,7 +167,7 @@ class BannersFilterInfo
      * Sets IsActive.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      */
     public function setIsActive(array $value = null)
     {
@@ -190,7 +190,7 @@ class BannersFilterInfo
      * Sets StatusArchive.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      */
     public function setStatusArchive(array $value = null)
     {
@@ -213,7 +213,7 @@ class BannersFilterInfo
      * Sets TagIDS.
      *
      * @param int[]|null $value
-     * @return self
+     * @return $this
      */
     public function setTagIDS(array $value = null)
     {
@@ -236,7 +236,7 @@ class BannersFilterInfo
      * Sets Tags.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      */
     public function setTags(array $value = null)
     {
@@ -259,7 +259,7 @@ class BannersFilterInfo
      * Sets StatusAdImageModerate.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      */
     public function setStatusAdImageModerate(array $value = null)
     {

@@ -43,7 +43,7 @@ class KeywordUpdateItem
      * Sets Id.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setId($value)
     {
@@ -66,7 +66,7 @@ class KeywordUpdateItem
      * Sets Keyword.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setKeyword($value = null)
     {
@@ -89,7 +89,7 @@ class KeywordUpdateItem
      * Sets UserParam1.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setUserParam1($value = null)
     {
@@ -112,7 +112,7 @@ class KeywordUpdateItem
      * Sets UserParam2.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setUserParam2($value = null)
     {

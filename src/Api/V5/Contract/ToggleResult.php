@@ -41,7 +41,7 @@ class ToggleResult extends ActionResultBase
      * Sets CampaignId.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setCampaignId($value = null)
     {
@@ -64,7 +64,7 @@ class ToggleResult extends ActionResultBase
      * Sets AdGroupId.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setAdGroupId($value = null)
     {
@@ -88,7 +88,7 @@ class ToggleResult extends ActionResultBase
      * Sets Type.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see BidModifierToggleTypeEnum
      */
     public function setType($value = null)

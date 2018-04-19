@@ -36,7 +36,7 @@ class BidModifierSetItem
      * Sets Id.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setId($value)
     {
@@ -59,7 +59,7 @@ class BidModifierSetItem
      * Sets BidModifier.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setBidModifier($value)
     {

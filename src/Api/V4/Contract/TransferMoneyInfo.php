@@ -36,7 +36,7 @@ class TransferMoneyInfo
      * Sets FromCampaigns.
      *
      * @param PayCampElement[] $value
-     * @return self
+     * @return $this
      */
     public function setFromCampaigns(array $value)
     {
@@ -59,7 +59,7 @@ class TransferMoneyInfo
      * Sets ToCampaigns.
      *
      * @param PayCampElement[] $value
-     * @return self
+     * @return $this
      */
     public function setToCampaigns(array $value)
     {

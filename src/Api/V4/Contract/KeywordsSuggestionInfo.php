@@ -34,7 +34,7 @@ class KeywordsSuggestionInfo
      * Sets Keywords.
      *
      * @param string[] $value
-     * @return self
+     * @return $this
      */
     public function setKeywords(array $value)
     {

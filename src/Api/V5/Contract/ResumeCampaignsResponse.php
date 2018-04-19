@@ -35,7 +35,7 @@ class ResumeCampaignsResponse
      * Sets ResumeResults.
      *
      * @param ActionResult[]|null $value
-     * @return self
+     * @return $this
      */
     public function setResumeResults(array $value = null)
     {

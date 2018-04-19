@@ -44,7 +44,7 @@ class RetargetingAdjustmentGet
      * Sets RetargetingConditionId.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setRetargetingConditionId($value = null)
     {
@@ -67,7 +67,7 @@ class RetargetingAdjustmentGet
      * Sets BidModifier.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setBidModifier($value = null)
     {
@@ -91,7 +91,7 @@ class RetargetingAdjustmentGet
      * Sets Accessible.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see YesNoEnum
      */
     public function setAccessible($value = null)
@@ -116,7 +116,7 @@ class RetargetingAdjustmentGet
      * Sets Enabled.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see YesNoEnum
      */
     public function setEnabled($value = null)

@@ -44,7 +44,7 @@ class MapPoint
      * Sets x.
      *
      * @param float $value
-     * @return self
+     * @return $this
      */
     public function setX($value)
     {
@@ -67,7 +67,7 @@ class MapPoint
      * Sets y.
      *
      * @param float $value
-     * @return self
+     * @return $this
      */
     public function setY($value)
     {
@@ -90,7 +90,7 @@ class MapPoint
      * Sets x1.
      *
      * @param float $value
-     * @return self
+     * @return $this
      */
     public function setX1($value)
     {
@@ -113,7 +113,7 @@ class MapPoint
      * Sets y1.
      *
      * @param float $value
-     * @return self
+     * @return $this
      */
     public function setY1($value)
     {
@@ -136,7 +136,7 @@ class MapPoint
      * Sets x2.
      *
      * @param float $value
-     * @return self
+     * @return $this
      */
     public function setX2($value)
     {
@@ -159,7 +159,7 @@ class MapPoint
      * Sets y2.
      *
      * @param float $value
-     * @return self
+     * @return $this
      */
     public function setY2($value)
     {

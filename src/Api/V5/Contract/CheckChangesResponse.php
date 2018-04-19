@@ -44,7 +44,7 @@ class CheckChangesResponse
      * Sets Modified.
      *
      * @param CheckResponseModified|null $value
-     * @return self
+     * @return $this
      */
     public function setModified(CheckResponseModified $value = null)
     {
@@ -67,7 +67,7 @@ class CheckChangesResponse
      * Sets NotFound.
      *
      * @param CheckResponseIds|null $value
-     * @return self
+     * @return $this
      */
     public function setNotFound(CheckResponseIds $value = null)
     {
@@ -90,7 +90,7 @@ class CheckChangesResponse
      * Sets Unprocessed.
      *
      * @param CheckResponseIds|null $value
-     * @return self
+     * @return $this
      */
     public function setUnprocessed(CheckResponseIds $value = null)
     {
@@ -113,7 +113,7 @@ class CheckChangesResponse
      * Sets Timestamp.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setTimestamp($value = null)
     {

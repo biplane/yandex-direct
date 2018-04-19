@@ -35,7 +35,7 @@ class MobileAdjustmentGet
      * Sets BidModifier.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setBidModifier($value = null)
     {

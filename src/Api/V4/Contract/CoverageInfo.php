@@ -36,7 +36,7 @@ class CoverageInfo
      * Sets Probability.
      *
      * @param float $value
-     * @return self
+     * @return $this
      */
     public function setProbability($value)
     {
@@ -59,7 +59,7 @@ class CoverageInfo
      * Sets Price.
      *
      * @param float $value
-     * @return self
+     * @return $this
      */
     public function setPrice($value)
     {

@@ -35,7 +35,7 @@ class ModerateAdsResponse
      * Sets ModerateResults.
      *
      * @param ActionResult[]|null $value
-     * @return self
+     * @return $this
      */
     public function setModerateResults(array $value = null)
     {

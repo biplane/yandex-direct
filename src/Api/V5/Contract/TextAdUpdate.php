@@ -53,7 +53,7 @@ class TextAdUpdate extends TextAdUpdateBase
      * Sets Text.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setText($value = null)
     {
@@ -76,7 +76,7 @@ class TextAdUpdate extends TextAdUpdateBase
      * Sets Title.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setTitle($value = null)
     {
@@ -99,7 +99,7 @@ class TextAdUpdate extends TextAdUpdateBase
      * Sets Title2.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setTitle2($value = null)
     {
@@ -122,7 +122,7 @@ class TextAdUpdate extends TextAdUpdateBase
      * Sets Href.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setHref($value = null)
     {
@@ -146,7 +146,7 @@ class TextAdUpdate extends TextAdUpdateBase
      * Sets AgeLabel.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see AgeLabelEnum
      */
     public function setAgeLabel($value = null)
@@ -170,7 +170,7 @@ class TextAdUpdate extends TextAdUpdateBase
      * Sets DisplayUrlPath.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setDisplayUrlPath($value = null)
     {
@@ -193,7 +193,7 @@ class TextAdUpdate extends TextAdUpdateBase
      * Sets VideoExtension.
      *
      * @param VideoExtensionUpdateItem|null $value
-     * @return self
+     * @return $this
      */
     public function setVideoExtension(VideoExtensionUpdateItem $value = null)
     {

@@ -35,7 +35,7 @@ class GetClientsResponse
      * Sets Clients.
      *
      * @param ClientGetItem[]|null $value
-     * @return self
+     * @return $this
      */
     public function setClients(array $value = null)
     {

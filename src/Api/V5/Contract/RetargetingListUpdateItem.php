@@ -34,7 +34,7 @@ class RetargetingListUpdateItem extends RetargetingListBase
      * Sets Id.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setId($value)
     {

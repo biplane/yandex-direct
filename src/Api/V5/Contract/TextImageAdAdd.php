@@ -34,7 +34,7 @@ class TextImageAdAdd extends ImageAdAddBase
      * Sets Href.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setHref($value)
     {

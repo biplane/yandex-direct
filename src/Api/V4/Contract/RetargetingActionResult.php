@@ -38,7 +38,7 @@ class RetargetingActionResult
      * Sets Warnings.
      *
      * @param Warning[]|null $value
-     * @return self
+     * @return $this
      */
     public function setWarnings(array $value = null)
     {
@@ -61,7 +61,7 @@ class RetargetingActionResult
      * Sets Errors.
      *
      * @param Error[]|null $value
-     * @return self
+     * @return $this
      */
     public function setErrors(array $value = null)
     {
@@ -84,7 +84,7 @@ class RetargetingActionResult
      * Sets RetargetingID.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setRetargetingID($value = null)
     {

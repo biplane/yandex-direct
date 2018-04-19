@@ -34,7 +34,7 @@ class UpdateKeywordsRequest
      * Sets Keywords.
      *
      * @param KeywordUpdateItem[] $value
-     * @return self
+     * @return $this
      */
     public function setKeywords(array $value)
     {

@@ -40,7 +40,7 @@ class GeoRegionsItem
      * Sets GeoRegionId.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setGeoRegionId($value)
     {
@@ -63,7 +63,7 @@ class GeoRegionsItem
      * Sets GeoRegionName.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setGeoRegionName($value)
     {
@@ -86,7 +86,7 @@ class GeoRegionsItem
      * Sets GeoRegionType.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setGeoRegionType($value)
     {
@@ -109,7 +109,7 @@ class GeoRegionsItem
      * Sets ParentId.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setParentId($value = null)
     {

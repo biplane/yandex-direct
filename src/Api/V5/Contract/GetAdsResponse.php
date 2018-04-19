@@ -35,7 +35,7 @@ class GetAdsResponse extends GetResponseGeneral
      * Sets Ads.
      *
      * @param AdGetItem[]|null $value
-     * @return self
+     * @return $this
      */
     public function setAds(array $value = null)
     {

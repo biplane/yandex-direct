@@ -38,7 +38,7 @@ class LimitOffset
      * Sets Limit.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setLimit($value = null)
     {
@@ -61,7 +61,7 @@ class LimitOffset
      * Sets Offset.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setOffset($value = null)
     {

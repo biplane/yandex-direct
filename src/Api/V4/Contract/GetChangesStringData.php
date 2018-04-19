@@ -38,7 +38,7 @@ class GetChangesStringData
      * Sets Updated.
      *
      * @param string[] $value
-     * @return self
+     * @return $this
      */
     public function setUpdated(array $value)
     {
@@ -61,7 +61,7 @@ class GetChangesStringData
      * Sets NotUpdated.
      *
      * @param string[] $value
-     * @return self
+     * @return $this
      */
     public function setNotUpdated(array $value)
     {
@@ -84,7 +84,7 @@ class GetChangesStringData
      * Sets NotFound.
      *
      * @param string[] $value
-     * @return self
+     * @return $this
      */
     public function setNotFound(array $value)
     {

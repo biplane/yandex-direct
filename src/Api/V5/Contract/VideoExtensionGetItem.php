@@ -41,7 +41,7 @@ class VideoExtensionGetItem
      * Sets CreativeId.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setCreativeId($value)
     {
@@ -65,7 +65,7 @@ class VideoExtensionGetItem
      * Sets Status.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see StatusEnum
      */
     public function setStatus($value = null)
@@ -89,7 +89,7 @@ class VideoExtensionGetItem
      * Sets ThumbnailUrl.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setThumbnailUrl($value)
     {
@@ -112,7 +112,7 @@ class VideoExtensionGetItem
      * Sets PreviewUrl.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setPreviewUrl($value)
     {

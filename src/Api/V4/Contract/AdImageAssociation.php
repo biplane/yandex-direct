@@ -44,7 +44,7 @@ class AdImageAssociation
      * Sets AdID.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setAdID($value)
     {
@@ -67,7 +67,7 @@ class AdImageAssociation
      * Sets AdImageHash.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setAdImageHash($value = null)
     {
@@ -90,7 +90,7 @@ class AdImageAssociation
      * Sets Login.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setLogin($value = null)
     {
@@ -113,7 +113,7 @@ class AdImageAssociation
      * Sets CampaignID.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setCampaignID($value = null)
     {
@@ -136,7 +136,7 @@ class AdImageAssociation
      * Sets StatusAdImageModerate.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setStatusAdImageModerate($value = null)
     {
@@ -159,7 +159,7 @@ class AdImageAssociation
      * Sets ModerateRejectionReasons.
      *
      * @param RejectReason[]|null $value
-     * @return self
+     * @return $this
      */
     public function setModerateRejectionReasons(array $value = null)
     {

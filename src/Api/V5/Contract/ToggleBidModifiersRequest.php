@@ -34,7 +34,7 @@ class ToggleBidModifiersRequest
      * Sets BidModifierToggleItems.
      *
      * @param BidModifierToggleItem[] $value
-     * @return self
+     * @return $this
      */
     public function setBidModifierToggleItems(array $value)
     {

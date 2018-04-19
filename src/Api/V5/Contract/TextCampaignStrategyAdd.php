@@ -36,7 +36,7 @@ class TextCampaignStrategyAdd
      * Sets Search.
      *
      * @param TextCampaignSearchStrategyAdd $value
-     * @return self
+     * @return $this
      */
     public function setSearch(TextCampaignSearchStrategyAdd $value)
     {
@@ -59,7 +59,7 @@ class TextCampaignStrategyAdd
      * Sets Network.
      *
      * @param TextCampaignNetworkStrategyAdd $value
-     * @return self
+     * @return $this
      */
     public function setNetwork(TextCampaignNetworkStrategyAdd $value)
     {

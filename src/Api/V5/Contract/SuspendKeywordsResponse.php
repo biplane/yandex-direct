@@ -34,7 +34,7 @@ class SuspendKeywordsResponse
      * Sets SuspendResults.
      *
      * @param ActionResult[] $value
-     * @return self
+     * @return $this
      */
     public function setSuspendResults(array $value)
     {

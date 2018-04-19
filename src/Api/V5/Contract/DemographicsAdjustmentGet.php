@@ -45,7 +45,7 @@ class DemographicsAdjustmentGet
      * Sets Gender.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see GenderEnum
      */
     public function setGender($value = null)
@@ -70,7 +70,7 @@ class DemographicsAdjustmentGet
      * Sets Age.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see AgeRangeEnum
      */
     public function setAge($value = null)
@@ -94,7 +94,7 @@ class DemographicsAdjustmentGet
      * Sets BidModifier.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setBidModifier($value = null)
     {
@@ -118,7 +118,7 @@ class DemographicsAdjustmentGet
      * Sets Enabled.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see YesNoEnum
      */
     public function setEnabled($value = null)

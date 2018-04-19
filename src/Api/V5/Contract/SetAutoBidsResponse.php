@@ -35,7 +35,7 @@ class SetAutoBidsResponse
      * Sets SetAutoResults.
      *
      * @param BidActionResult[]|null $value
-     * @return self
+     * @return $this
      */
     public function setSetAutoResults(array $value = null)
     {

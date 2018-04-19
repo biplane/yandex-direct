@@ -38,7 +38,7 @@ class CampaignAssistant
      * Sets Manager.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setManager($value = null)
     {
@@ -61,7 +61,7 @@ class CampaignAssistant
      * Sets Agency.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setAgency($value = null)
     {

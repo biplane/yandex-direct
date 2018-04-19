@@ -36,7 +36,7 @@ class RegionalAdjustmentAdd
      * Sets RegionId.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setRegionId($value)
     {
@@ -59,7 +59,7 @@ class RegionalAdjustmentAdd
      * Sets BidModifier.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setBidModifier($value)
     {

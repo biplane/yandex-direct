@@ -42,7 +42,7 @@ class GetEventsLogFilter
      * Sets CampaignIDS.
      *
      * @param int[]|null $value
-     * @return self
+     * @return $this
      */
     public function setCampaignIDS(array $value = null)
     {
@@ -65,7 +65,7 @@ class GetEventsLogFilter
      * Sets BannerIDS.
      *
      * @param int[]|null $value
-     * @return self
+     * @return $this
      */
     public function setBannerIDS(array $value = null)
     {
@@ -88,7 +88,7 @@ class GetEventsLogFilter
      * Sets PhraseIDS.
      *
      * @param int[]|null $value
-     * @return self
+     * @return $this
      */
     public function setPhraseIDS(array $value = null)
     {
@@ -111,7 +111,7 @@ class GetEventsLogFilter
      * Sets AccountIDS.
      *
      * @param int[]|null $value
-     * @return self
+     * @return $this
      */
     public function setAccountIDS(array $value = null)
     {
@@ -134,7 +134,7 @@ class GetEventsLogFilter
      * Sets EventType.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      */
     public function setEventType(array $value = null)
     {

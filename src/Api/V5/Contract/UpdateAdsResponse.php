@@ -35,7 +35,7 @@ class UpdateAdsResponse
      * Sets UpdateResults.
      *
      * @param ActionResult[]|null $value
-     * @return self
+     * @return $this
      */
     public function setUpdateResults(array $value = null)
     {

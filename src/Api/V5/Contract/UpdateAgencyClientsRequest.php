@@ -34,7 +34,7 @@ class UpdateAgencyClientsRequest
      * Sets Clients.
      *
      * @param AgencyClientUpdateItem[] $value
-     * @return self
+     * @return $this
      */
     public function setClients(array $value)
     {

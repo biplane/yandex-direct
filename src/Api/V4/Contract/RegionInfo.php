@@ -40,7 +40,7 @@ class RegionInfo
      * Sets RegionID.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setRegionID($value)
     {
@@ -63,7 +63,7 @@ class RegionInfo
      * Sets ParentID.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setParentID($value = null)
     {
@@ -86,7 +86,7 @@ class RegionInfo
      * Sets RegionName.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setRegionName($value)
     {
@@ -109,7 +109,7 @@ class RegionInfo
      * Sets RegionType.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setRegionType($value)
     {

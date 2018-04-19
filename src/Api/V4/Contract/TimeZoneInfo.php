@@ -38,7 +38,7 @@ class TimeZoneInfo
      * Sets TimeZone.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setTimeZone($value)
     {
@@ -61,7 +61,7 @@ class TimeZoneInfo
      * Sets GMTOffset.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setGMTOffset($value)
     {
@@ -84,7 +84,7 @@ class TimeZoneInfo
      * Sets Name.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setName($value)
     {

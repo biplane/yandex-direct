@@ -34,7 +34,7 @@ class ClientFilter
      * Sets StatusArch.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setStatusArch($value = null)
     {

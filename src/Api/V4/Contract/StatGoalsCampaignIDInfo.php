@@ -36,7 +36,7 @@ class StatGoalsCampaignIDInfo
      * Sets CampaignID.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setCampaignID($value = null)
     {
@@ -59,7 +59,7 @@ class StatGoalsCampaignIDInfo
      * Sets CampaignIDS.
      *
      * @param int[]|null $value
-     * @return self
+     * @return $this
      */
     public function setCampaignIDS(array $value = null)
     {

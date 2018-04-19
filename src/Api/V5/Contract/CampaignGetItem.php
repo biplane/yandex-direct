@@ -98,7 +98,7 @@ class CampaignGetItem extends CampaignBase
      * Sets Id.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setId($value = null)
     {
@@ -121,7 +121,7 @@ class CampaignGetItem extends CampaignBase
      * Sets Name.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setName($value = null)
     {
@@ -144,7 +144,7 @@ class CampaignGetItem extends CampaignBase
      * Sets StartDate.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setStartDate($value = null)
     {
@@ -168,7 +168,7 @@ class CampaignGetItem extends CampaignBase
      * Sets Type.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see CampaignTypeGetEnum
      */
     public function setType($value = null)
@@ -193,7 +193,7 @@ class CampaignGetItem extends CampaignBase
      * Sets Status.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see StatusEnum
      */
     public function setStatus($value = null)
@@ -218,7 +218,7 @@ class CampaignGetItem extends CampaignBase
      * Sets State.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see CampaignStateGetEnum
      */
     public function setState($value = null)
@@ -243,7 +243,7 @@ class CampaignGetItem extends CampaignBase
      * Sets StatusPayment.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see CampaignStatusPaymentEnum
      */
     public function setStatusPayment($value = null)
@@ -267,7 +267,7 @@ class CampaignGetItem extends CampaignBase
      * Sets StatusClarification.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setStatusClarification($value = null)
     {
@@ -290,7 +290,7 @@ class CampaignGetItem extends CampaignBase
      * Sets SourceId.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setSourceId($value = null)
     {
@@ -313,7 +313,7 @@ class CampaignGetItem extends CampaignBase
      * Sets Statistics.
      *
      * @param Statistics|null $value
-     * @return self
+     * @return $this
      */
     public function setStatistics(Statistics $value = null)
     {
@@ -337,7 +337,7 @@ class CampaignGetItem extends CampaignBase
      * Sets Currency.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see CurrencyEnum
      */
     public function setCurrency($value = null)
@@ -361,7 +361,7 @@ class CampaignGetItem extends CampaignBase
      * Sets Funds.
      *
      * @param FundsParam|null $value
-     * @return self
+     * @return $this
      */
     public function setFunds(FundsParam $value = null)
     {
@@ -384,7 +384,7 @@ class CampaignGetItem extends CampaignBase
      * Sets RepresentedBy.
      *
      * @param CampaignAssistant|null $value
-     * @return self
+     * @return $this
      */
     public function setRepresentedBy(CampaignAssistant $value = null)
     {
@@ -407,7 +407,7 @@ class CampaignGetItem extends CampaignBase
      * Sets DailyBudget.
      *
      * @param DailyBudget|null $value
-     * @return self
+     * @return $this
      */
     public function setDailyBudget(DailyBudget $value = null)
     {
@@ -430,7 +430,7 @@ class CampaignGetItem extends CampaignBase
      * Sets EndDate.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setEndDate($value = null)
     {
@@ -453,7 +453,7 @@ class CampaignGetItem extends CampaignBase
      * Sets NegativeKeywords.
      *
      * @param struct[]|null $value
-     * @return self
+     * @return $this
      */
     public function setNegativeKeywords(array $value = null)
     {
@@ -476,7 +476,7 @@ class CampaignGetItem extends CampaignBase
      * Sets BlockedIps.
      *
      * @param struct[]|null $value
-     * @return self
+     * @return $this
      */
     public function setBlockedIps(array $value = null)
     {
@@ -499,7 +499,7 @@ class CampaignGetItem extends CampaignBase
      * Sets ExcludedSites.
      *
      * @param struct[]|null $value
-     * @return self
+     * @return $this
      */
     public function setExcludedSites(array $value = null)
     {
@@ -522,7 +522,7 @@ class CampaignGetItem extends CampaignBase
      * Sets TextCampaign.
      *
      * @param TextCampaignGetItem|null $value
-     * @return self
+     * @return $this
      */
     public function setTextCampaign(TextCampaignGetItem $value = null)
     {
@@ -545,7 +545,7 @@ class CampaignGetItem extends CampaignBase
      * Sets MobileAppCampaign.
      *
      * @param MobileAppCampaignGetItem|null $value
-     * @return self
+     * @return $this
      */
     public function setMobileAppCampaign(MobileAppCampaignGetItem $value = null)
     {
@@ -568,7 +568,7 @@ class CampaignGetItem extends CampaignBase
      * Sets DynamicTextCampaign.
      *
      * @param DynamicTextCampaignGetItem|null $value
-     * @return self
+     * @return $this
      */
     public function setDynamicTextCampaign(DynamicTextCampaignGetItem $value = null)
     {
@@ -591,7 +591,7 @@ class CampaignGetItem extends CampaignBase
      * Sets TimeTargeting.
      *
      * @param TimeTargeting|null $value
-     * @return self
+     * @return $this
      */
     public function setTimeTargeting(TimeTargeting $value = null)
     {

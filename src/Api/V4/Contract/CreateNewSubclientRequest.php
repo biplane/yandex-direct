@@ -42,7 +42,7 @@ class CreateNewSubclientRequest
      * Sets Login.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setLogin($value)
     {
@@ -65,7 +65,7 @@ class CreateNewSubclientRequest
      * Sets AgencyLogin.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setAgencyLogin($value = null)
     {
@@ -88,7 +88,7 @@ class CreateNewSubclientRequest
      * Sets Name.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setName($value = null)
     {
@@ -111,7 +111,7 @@ class CreateNewSubclientRequest
      * Sets Surname.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setSurname($value = null)
     {
@@ -134,7 +134,7 @@ class CreateNewSubclientRequest
      * Sets Currency.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setCurrency($value = null)
     {

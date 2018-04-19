@@ -37,7 +37,7 @@ class EmailSubscriptionItem
      * Sets Option.
      *
      * @param string $value
-     * @return self
+     * @return $this
      * @see EmailSubscriptionEnum
      */
     public function setOption($value)
@@ -62,7 +62,7 @@ class EmailSubscriptionItem
      * Sets Value.
      *
      * @param string $value
-     * @return self
+     * @return $this
      * @see YesNoEnum
      */
     public function setValue($value)

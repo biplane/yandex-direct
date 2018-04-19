@@ -44,7 +44,7 @@ class TimeTargetInfo
      * Sets ShowOnHolidays.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setShowOnHolidays($value = null)
     {
@@ -67,7 +67,7 @@ class TimeTargetInfo
      * Sets HolidayShowFrom.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setHolidayShowFrom($value = null)
     {
@@ -90,7 +90,7 @@ class TimeTargetInfo
      * Sets HolidayShowTo.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setHolidayShowTo($value = null)
     {
@@ -113,7 +113,7 @@ class TimeTargetInfo
      * Sets DaysHours.
      *
      * @param TimeTargetItem[] $value
-     * @return self
+     * @return $this
      */
     public function setDaysHours(array $value)
     {
@@ -136,7 +136,7 @@ class TimeTargetInfo
      * Sets TimeZone.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setTimeZone($value = null)
     {
@@ -159,7 +159,7 @@ class TimeTargetInfo
      * Sets WorkingHolidays.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setWorkingHolidays($value = null)
     {

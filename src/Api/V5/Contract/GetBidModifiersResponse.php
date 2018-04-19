@@ -35,7 +35,7 @@ class GetBidModifiersResponse extends GetResponseGeneral
      * Sets BidModifiers.
      *
      * @param BidModifierGetItem[]|null $value
-     * @return self
+     * @return $this
      */
     public function setBidModifiers(array $value = null)
     {

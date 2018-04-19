@@ -40,7 +40,7 @@ class StrategyAverageCpiAdd
      * Sets AverageCpi.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setAverageCpi($value)
     {
@@ -63,7 +63,7 @@ class StrategyAverageCpiAdd
      * Sets WeeklySpendLimit.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setWeeklySpendLimit($value = null)
     {
@@ -86,7 +86,7 @@ class StrategyAverageCpiAdd
      * Sets BidCeiling.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setBidCeiling($value = null)
     {

@@ -36,7 +36,7 @@ class WordstatReportStatusInfo
      * Sets ReportID.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setReportID($value)
     {
@@ -59,7 +59,7 @@ class WordstatReportStatusInfo
      * Sets StatusReport.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setStatusReport($value)
     {

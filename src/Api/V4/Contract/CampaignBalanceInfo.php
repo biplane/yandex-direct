@@ -42,7 +42,7 @@ class CampaignBalanceInfo
      * Sets CampaignID.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setCampaignID($value)
     {
@@ -65,7 +65,7 @@ class CampaignBalanceInfo
      * Sets Sum.
      *
      * @param float $value
-     * @return self
+     * @return $this
      */
     public function setSum($value)
     {
@@ -88,7 +88,7 @@ class CampaignBalanceInfo
      * Sets Rest.
      *
      * @param float $value
-     * @return self
+     * @return $this
      */
     public function setRest($value)
     {
@@ -111,7 +111,7 @@ class CampaignBalanceInfo
      * Sets SumAvailableForTransfer.
      *
      * @param float $value
-     * @return self
+     * @return $this
      */
     public function setSumAvailableForTransfer($value)
     {
@@ -134,7 +134,7 @@ class CampaignBalanceInfo
      * Sets Currency.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setCurrency($value = null)
     {

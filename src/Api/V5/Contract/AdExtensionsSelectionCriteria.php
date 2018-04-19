@@ -47,7 +47,7 @@ class AdExtensionsSelectionCriteria
      * Sets Ids.
      *
      * @param int[]|null $value
-     * @return self
+     * @return $this
      */
     public function setIds(array $value = null)
     {
@@ -71,7 +71,7 @@ class AdExtensionsSelectionCriteria
      * Sets Types.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      * @see AdExtensionTypeEnum
      */
     public function setTypes(array $value = null)
@@ -96,7 +96,7 @@ class AdExtensionsSelectionCriteria
      * Sets States.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      * @see AdExtensionStateSelectionEnum
      */
     public function setStates(array $value = null)
@@ -121,7 +121,7 @@ class AdExtensionsSelectionCriteria
      * Sets Statuses.
      *
      * @param string[]|null $value
-     * @return self
+     * @return $this
      * @see ExtensionStatusSelectionEnum
      */
     public function setStatuses(array $value = null)
@@ -145,7 +145,7 @@ class AdExtensionsSelectionCriteria
      * Sets ModifiedSince.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setModifiedSince($value = null)
     {

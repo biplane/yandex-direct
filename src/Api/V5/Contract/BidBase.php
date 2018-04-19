@@ -41,7 +41,7 @@ class BidBase
      * Sets CampaignId.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setCampaignId($value = null)
     {
@@ -64,7 +64,7 @@ class BidBase
      * Sets AdGroupId.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setAdGroupId($value = null)
     {
@@ -87,7 +87,7 @@ class BidBase
      * Sets KeywordId.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setKeywordId($value = null)
     {

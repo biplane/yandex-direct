@@ -42,7 +42,7 @@ class AdImageResponse
      * Sets AdImages.
      *
      * @param AdImage[]|null $value
-     * @return self
+     * @return $this
      */
     public function setAdImages(array $value = null)
     {
@@ -65,7 +65,7 @@ class AdImageResponse
      * Sets AdImageUploads.
      *
      * @param AdImageUpload[]|null $value
-     * @return self
+     * @return $this
      */
     public function setAdImageUploads(array $value = null)
     {
@@ -88,7 +88,7 @@ class AdImageResponse
      * Sets ActionsResult.
      *
      * @param AdImageActionResult[]|null $value
-     * @return self
+     * @return $this
      */
     public function setActionsResult(array $value = null)
     {
@@ -111,7 +111,7 @@ class AdImageResponse
      * Sets AdImageLimits.
      *
      * @param AdImageLimit[]|null $value
-     * @return self
+     * @return $this
      */
     public function setAdImageLimits(array $value = null)
     {
@@ -134,7 +134,7 @@ class AdImageResponse
      * Sets TotalObjectsCount.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setTotalObjectsCount($value = null)
     {

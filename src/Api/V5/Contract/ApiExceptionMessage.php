@@ -39,7 +39,7 @@ class ApiExceptionMessage
      * Sets requestId.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setRequestId($value = null)
     {
@@ -62,7 +62,7 @@ class ApiExceptionMessage
      * Sets errorCode.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setErrorCode($value = null)
     {
@@ -85,7 +85,7 @@ class ApiExceptionMessage
      * Sets errorDetail.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setErrorDetail($value = null)
     {

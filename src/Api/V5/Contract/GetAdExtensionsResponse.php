@@ -35,7 +35,7 @@ class GetAdExtensionsResponse extends GetResponseGeneral
      * Sets AdExtensions.
      *
      * @param AdExtensionGetItem[]|null $value
-     * @return self
+     * @return $this
      */
     public function setAdExtensions(array $value = null)
     {

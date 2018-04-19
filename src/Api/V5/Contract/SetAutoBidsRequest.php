@@ -34,7 +34,7 @@ class SetAutoBidsRequest
      * Sets Bids.
      *
      * @param BidSetAutoItem[] $value
-     * @return self
+     * @return $this
      */
     public function setBids(array $value)
     {

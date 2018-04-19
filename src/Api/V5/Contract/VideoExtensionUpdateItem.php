@@ -35,7 +35,7 @@ class VideoExtensionUpdateItem
      * Sets CreativeId.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setCreativeId($value = null)
     {

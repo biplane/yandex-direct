@@ -47,7 +47,7 @@ class EmailSettings
      * Sets Email.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setEmail($value = null)
     {
@@ -70,7 +70,7 @@ class EmailSettings
      * Sets CheckPositionInterval.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setCheckPositionInterval($value = null)
     {
@@ -93,7 +93,7 @@ class EmailSettings
      * Sets WarningBalance.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setWarningBalance($value = null)
     {
@@ -117,7 +117,7 @@ class EmailSettings
      * Sets SendAccountNews.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see YesNoEnum
      */
     public function setSendAccountNews($value = null)
@@ -142,7 +142,7 @@ class EmailSettings
      * Sets SendWarnings.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      * @see YesNoEnum
      */
     public function setSendWarnings($value = null)

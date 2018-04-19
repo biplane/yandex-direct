@@ -40,7 +40,7 @@ class WordstatReportInfo
      * Sets Phrase.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setPhrase($value)
     {
@@ -63,7 +63,7 @@ class WordstatReportInfo
      * Sets GeoID.
      *
      * @param int[] $value
-     * @return self
+     * @return $this
      */
     public function setGeoID(array $value)
     {
@@ -86,7 +86,7 @@ class WordstatReportInfo
      * Sets SearchedWith.
      *
      * @param WordstatItem[] $value
-     * @return self
+     * @return $this
      */
     public function setSearchedWith(array $value)
     {
@@ -109,7 +109,7 @@ class WordstatReportInfo
      * Sets SearchedAlso.
      *
      * @param WordstatItem[] $value
-     * @return self
+     * @return $this
      */
     public function setSearchedAlso(array $value)
     {

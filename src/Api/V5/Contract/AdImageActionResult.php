@@ -35,7 +35,7 @@ class AdImageActionResult extends ActionResultBase
      * Sets AdImageHash.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setAdImageHash($value = null)
     {

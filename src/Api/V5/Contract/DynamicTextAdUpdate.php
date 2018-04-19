@@ -35,7 +35,7 @@ class DynamicTextAdUpdate extends TextAdUpdateBase
      * Sets Text.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setText($value = null)
     {

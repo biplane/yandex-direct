@@ -34,7 +34,7 @@ class DeleteAdImagesRequest
      * Sets SelectionCriteria.
      *
      * @param AdImageHashesCriteria $value
-     * @return self
+     * @return $this
      */
     public function setSelectionCriteria(AdImageHashesCriteria $value)
     {

@@ -37,7 +37,7 @@ class AgencyClientUpdateItem extends ClientUpdateItem
      * Sets ClientId.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setClientId($value)
     {
@@ -60,7 +60,7 @@ class AgencyClientUpdateItem extends ClientUpdateItem
      * Sets Grants.
      *
      * @param GrantItem[]|null $value
-     * @return self
+     * @return $this
      */
     public function setGrants(array $value = null)
     {

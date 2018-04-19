@@ -34,7 +34,7 @@ class UpdateAdGroupsResponse
      * Sets UpdateResults.
      *
      * @param ActionResult[] $value
-     * @return self
+     * @return $this
      */
     public function setUpdateResults(array $value)
     {

@@ -37,7 +37,7 @@ class StrategyWeeklyBudgetAddBase
      * Sets WeeklySpendLimit.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setWeeklySpendLimit($value)
     {
@@ -60,7 +60,7 @@ class StrategyWeeklyBudgetAddBase
      * Sets BidCeiling.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setBidCeiling($value = null)
     {

@@ -40,7 +40,7 @@ class AdImageRequest
      * Sets Action.
      *
      * @param string $value
-     * @return self
+     * @return $this
      */
     public function setAction($value)
     {
@@ -63,7 +63,7 @@ class AdImageRequest
      * Sets SelectionCriteria.
      *
      * @param AdImageSelectionCriteria|null $value
-     * @return self
+     * @return $this
      */
     public function setSelectionCriteria(AdImageSelectionCriteria $value = null)
     {
@@ -86,7 +86,7 @@ class AdImageRequest
      * Sets AdImageRawData.
      *
      * @param AdImageRaw[]|null $value
-     * @return self
+     * @return $this
      */
     public function setAdImageRawData(array $value = null)
     {
@@ -109,7 +109,7 @@ class AdImageRequest
      * Sets AdImageURLData.
      *
      * @param AdImageURL[]|null $value
-     * @return self
+     * @return $this
      */
     public function setAdImageURLData(array $value = null)
     {

@@ -35,7 +35,7 @@ class GetBidsResponse extends GetResponseGeneral
      * Sets Bids.
      *
      * @param BidGetItem[]|null $value
-     * @return self
+     * @return $this
      */
     public function setBids(array $value = null)
     {

@@ -38,7 +38,7 @@ class SharedAccountFundsParam
      * Sets Refund.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setRefund($value = null)
     {
@@ -61,7 +61,7 @@ class SharedAccountFundsParam
      * Sets Spend.
      *
      * @param int|null $value
-     * @return self
+     * @return $this
      */
     public function setSpend($value = null)
     {

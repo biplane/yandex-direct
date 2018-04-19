@@ -38,7 +38,7 @@ class AuctionBidItem
      * Sets TrafficVolume.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setTrafficVolume($value)
     {
@@ -61,7 +61,7 @@ class AuctionBidItem
      * Sets Bid.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setBid($value)
     {
@@ -84,7 +84,7 @@ class AuctionBidItem
      * Sets Price.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setPrice($value)
     {

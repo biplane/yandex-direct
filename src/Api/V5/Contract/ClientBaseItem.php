@@ -38,7 +38,7 @@ class ClientBaseItem
      * Sets ClientInfo.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setClientInfo($value = null)
     {
@@ -61,7 +61,7 @@ class ClientBaseItem
      * Sets Phone.
      *
      * @param string|null $value
-     * @return self
+     * @return $this
      */
     public function setPhone($value = null)
     {

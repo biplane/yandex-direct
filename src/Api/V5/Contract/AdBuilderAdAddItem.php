@@ -34,7 +34,7 @@ class AdBuilderAdAddItem
      * Sets CreativeId.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setCreativeId($value)
     {

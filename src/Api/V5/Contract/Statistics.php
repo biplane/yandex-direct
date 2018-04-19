@@ -36,7 +36,7 @@ class Statistics
      * Sets Clicks.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setClicks($value)
     {
@@ -59,7 +59,7 @@ class Statistics
      * Sets Impressions.
      *
      * @param int $value
-     * @return self
+     * @return $this
      */
     public function setImpressions($value)
     {
