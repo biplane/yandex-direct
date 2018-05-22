@@ -32,7 +32,6 @@ generate($generator, [
         'AutoPriceInfo',
         'PhrasePriceInfo',
         'CampaignIDInfo',
-        'CampaignIDSInfo',
         'CampaignInfo',
         'CampaignBidsInfo',
         'GetBannersInfo',

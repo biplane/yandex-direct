@@ -2,6 +2,8 @@
 
 # master
 
+* Исправлена ошибка с отсутствующим классом для контракта `CampaignIDSInfo`.
+
 # 4.4.0 [commit logs](https://github.com/biplane/yandex-direct/compare/4.3.0...4.4.0)
 
 * Добавлена поддержка [редактирования отдельных параметров](https://tech.yandex.ru/direct/doc/dg/best-practice/part-update-docpage/).

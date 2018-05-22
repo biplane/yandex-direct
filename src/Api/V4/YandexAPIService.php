@@ -28,6 +28,7 @@ class YandexAPIService extends SoapClientV4
                 'NewReportInfo' => 'Biplane\YandexDirect\Api\V4\Contract\NewReportInfo',
                 'TimeZoneInfo' => 'Biplane\YandexDirect\Api\V4\Contract\TimeZoneInfo',
                 'StatGoalsCampaignIDInfo' => 'Biplane\YandexDirect\Api\V4\Contract\StatGoalsCampaignIDInfo',
+                'CampaignIDSInfo' => 'Biplane\YandexDirect\Api\V4\Contract\CampaignIDSInfo',
                 'DayBudgetInfo' => 'Biplane\YandexDirect\Api\V4\Contract\DayBudgetInfo',
                 'CampaignStrategy' => 'Biplane\YandexDirect\Api\V4\Contract\CampaignStrategy',
                 'CampaignContextStrategy' => 'Biplane\YandexDirect\Api\V4\Contract\CampaignContextStrategy',
@@ -443,10 +444,10 @@ class YandexAPIService extends SoapClientV4
     /**
      * GetCampaignsTags.
      *
-     * @param CampaignIDSInfo $params
+     * @param Contract\CampaignIDSInfo $params
      * @return Contract\CampaignTagsInfo[]
      */
-    public function getCampaignsTags(CampaignIDSInfo $params)
+    public function getCampaignsTags(Contract\CampaignIDSInfo $params)
     {
         return $this->invoke('GetCampaignsTags', [$params]);
     }
