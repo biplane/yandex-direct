@@ -58,6 +58,8 @@ class PhpTypeResolver
                 return 'string[]';
             case 'arrayofinteger':
                 return 'int[]';
+            case 'arrayoflong':
+                return 'float[]';
         }
 
         return $type;
