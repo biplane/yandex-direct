@@ -8,9 +8,15 @@ use Biplane\YandexDirect\Api\V5\Report\FilterOperatorEnum;
 use Biplane\YandexDirect\Api\V5\Report\ReportDefinitionBuilder;
 use Biplane\YandexDirect\Api\V5\Report\ReportTypeEnum;
 use Biplane\YandexDirect\Exception\ReportDefinitionException;
+use VCR\VCR;
 
 class ReportDefinitionBuilderTest extends \PHPUnit_Framework_TestCase
 {
+    public static function setUpBeforeClass()
+    {
+        VCR::turnOff();
+    }
+
     public function testBuildWithDefaults()
     {
         $builder = new ReportDefinitionBuilder(false);

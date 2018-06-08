@@ -2,6 +2,56 @@
 
 # master
 
+* Исправлено преобразование данных для WSDL-типов: `ArrayOfString`, `ArrayOfInterger` и `ArrayOfLong`.
+  Теперь соответствующие геттеры в контрактах данных будут возвращать массив,
+  в соответствии с аннотацией в PHPDoc. 
+  Например, `Biplane\YandexDirect\Api\V5\Contract\CampaignGetItem::getNegativeKeywords()`:
+  
+  **Было**
+
+        print_r($campaign->getNegativeKeywords())
+        
+        > stdClass Object
+        > (
+        >     [Items] => Array
+        >         (
+        >             [0] => бесплатно
+        >             [1] => плохие отзывы
+        >             [2] => самостоятельно
+        >         )
+        > )
+
+  **Стало**
+
+        print_r($campaign->getNegativeKeywords())
+        
+        > Array
+        > (
+        >     [0] => бесплатно
+        >     [1] => плохие отзывы
+        >     [2] => самостоятельно
+        > )
+
+  Список методов, которых коснулось изменение:
+  
+  * `Biplane\YandexDirect\Api\V5\Contract\AdGroupAddItem::getNegativeKeywords()`
+  * `Biplane\YandexDirect\Api\V5\Contract\AdGroupBase::getNegativeKeywords()`
+  * `Biplane\YandexDirect\Api\V5\Contract\AdGroupGetItem::getRestrictedRegionIds()`
+  * `Biplane\YandexDirect\Api\V5\Contract\CampaignAddItem::getNegativeKeywords()`
+  * `Biplane\YandexDirect\Api\V5\Contract\CampaignAddItem::getBlockedIps()`
+  * `Biplane\YandexDirect\Api\V5\Contract\CampaignAddItem::getExcludedSites()`
+  * `Biplane\YandexDirect\Api\V5\Contract\CampaignGetItem::getNegativeKeywords()`
+  * `Biplane\YandexDirect\Api\V5\Contract\CampaignGetItem::getBlockedIps()`
+  * `Biplane\YandexDirect\Api\V5\Contract\CampaignGetItem::getExcludedSites()`
+  * `Biplane\YandexDirect\Api\V5\Contract\CampaignUpdateItem::getNegativeKeywords()`
+  * `Biplane\YandexDirect\Api\V5\Contract\CampaignUpdateItem::getBlockedIps()`
+  * `Biplane\YandexDirect\Api\V5\Contract\CampaignUpdateItem::getExcludedSites()`
+  * `Biplane\YandexDirect\Api\V5\Contract\DynamicTextCampaignAddItem::getCounterIds()`
+  * `Biplane\YandexDirect\Api\V5\Contract\DynamicTextCampaignBase::getCounterIds()`
+  * `Biplane\YandexDirect\Api\V5\Contract\TextCampaignAddItem::getCounterIds()`
+  * `Biplane\YandexDirect\Api\V5\Contract\TextCampaignBase::getCounterIds()`
+  * `Biplane\YandexDirect\Api\V5\Contract\TimeTargetingBase::getSchedule()`
+
 # 4.4.1 [commit logs](https://github.com/biplane/yandex-direct/compare/4.4.0...4.4.1)
 
 * Исправлена ошибка с отсутствующим классом для контракта `CampaignIDSInfo`.

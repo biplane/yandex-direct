@@ -13,6 +13,8 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
  */
 class SoapClientV5 extends SoapClient
 {
+    const GENERAL_NS = 'http://api.direct.yandex.com/v5/general';
+
     public function __construct($wsdl, EventDispatcherInterface $dispatcher, User $user, array $options = [])
     {
         $options['stream_context'] = stream_context_create([
@@ -20,6 +22,26 @@ class SoapClientV5 extends SoapClient
                 'header' => $this->createHttpHeaders($user),
             ],
         ]);
+
+        $typemap = isset($options['typemap']) ? $options['typemap'] : [];
+
+        array_unshift($typemap, [
+            'type_ns' => self::GENERAL_NS,
+            'type_name' => 'ArrayOfString',
+            'from_xml' => __NAMESPACE__ . '\\parseArrayOfString',
+        ]);
+        array_unshift($typemap, [
+            'type_ns' => self::GENERAL_NS,
+            'type_name' => 'ArrayOfInteger',
+            'from_xml' => __NAMESPACE__ . '\\parseArrayOfInt',
+        ]);
+        array_unshift($typemap, [
+            'type_ns' => self::GENERAL_NS,
+            'type_name' => 'ArrayOfLong',
+            'from_xml' => __NAMESPACE__ . '\\parseArrayOfLong',
+        ]);
+
+        $options['typemap'] = $typemap;
 
         parent::__construct($wsdl, $dispatcher, $user, $options);
     }

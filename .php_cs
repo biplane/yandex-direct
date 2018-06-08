@@ -120,7 +120,7 @@ return PhpCsFixer\Config::create()
         'strict_comparison' => true,
         'strict_param' => false,
         'ternary_operator_spaces' => true,
-        'ternary_to_null_coalescing' => true,
+        'ternary_to_null_coalescing' => false,
         'trailing_comma_in_multiline_array' => true,
         'trim_array_spaces' => true,
         'unary_operator_spaces' => true,

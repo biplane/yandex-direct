@@ -1,0 +1,29 @@
+
+-
+    request:
+        method: POST
+        url: 'https://soap.direct.yandex.ru/v5/campaigns'
+        headers:
+            Host: soap.direct.yandex.ru
+            Content-Type: 'text/xml; charset=utf-8;'
+            SOAPAction: 'http://api.direct.yandex.com/v5/campaigns/get'
+        body: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://api.direct.yandex.com/v5/campaigns\"><SOAP-ENV:Body><ns1:GetRequest><SelectionCriteria><Ids>31946025</Ids></SelectionCriteria><FieldNames>Id</FieldNames><FieldNames>NegativeKeywords</FieldNames><TextCampaignFieldNames>CounterIds</TextCampaignFieldNames></ns1:GetRequest></SOAP-ENV:Body></SOAP-ENV:Envelope>\n"
+    response:
+        status:
+            http_version: '1.1'
+            code: '200'
+            message: OK
+        headers:
+            Server: nginx
+            Date: 'Fri, 08 Jun 2018 08:56:32 GMT'
+            Content-Type: 'text/xml; charset=utf-8'
+            Transfer-Encoding: chunked
+            Connection: close
+            Units: 11/141244/160000
+            Units-Used-Login: foo
+            RequestId: '1892848824861693349'
+            X-Frame-Options: SAMEORIGIN
+            X-Content-Type-Options: nosniff
+            X-XSS-Protection: '1; mode=block'
+            Content-Security-Policy: 'default-src ''none'''
+        body: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\"><SOAP-ENV:Body><ns2:GetResponse xmlns:ns2=\"http://api.direct.yandex.com/v5/campaigns\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"><Campaigns><Id>31946025</Id><NegativeKeywords><Items>бесплатно</Items><Items>плохие отзывы</Items><Items>самостоятельно</Items></NegativeKeywords><TextCampaign><CounterIds><Items>123</Items></CounterIds></TextCampaign></Campaigns></ns2:GetResponse></SOAP-ENV:Body></SOAP-ENV:Envelope>\n"
