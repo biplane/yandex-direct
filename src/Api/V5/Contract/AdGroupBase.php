@@ -53,7 +53,7 @@ class AdGroupBase
     /**
      * Gets NegativeKeywords.
      *
-     * @return struct[]|null
+     * @return string[]|null
      */
     public function getNegativeKeywords()
     {
@@ -63,7 +63,7 @@ class AdGroupBase
     /**
      * Sets NegativeKeywords.
      *
-     * @param struct[]|null $value
+     * @param string[]|null $value
      * @return $this
      */
     public function setNegativeKeywords(array $value = null)

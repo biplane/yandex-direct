@@ -26,7 +26,7 @@ class TimeTargetingBase
     /**
      * Gets Schedule.
      *
-     * @return struct[]|null
+     * @return string[]|null
      */
     public function getSchedule()
     {
@@ -36,7 +36,7 @@ class TimeTargetingBase
     /**
      * Sets Schedule.
      *
-     * @param struct[]|null $value
+     * @param string[]|null $value
      * @return $this
      */
     public function setSchedule(array $value = null)

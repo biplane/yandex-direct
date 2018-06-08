@@ -78,7 +78,7 @@ class TextCampaignAddItem
     /**
      * Gets CounterIds.
      *
-     * @return struct[]|null
+     * @return int[]|null
      */
     public function getCounterIds()
     {
@@ -88,7 +88,7 @@ class TextCampaignAddItem
     /**
      * Sets CounterIds.
      *
-     * @param struct[]|null $value
+     * @param int[]|null $value
      * @return $this
      */
     public function setCounterIds(array $value = null)

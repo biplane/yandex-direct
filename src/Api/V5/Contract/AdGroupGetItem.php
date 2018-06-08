@@ -292,7 +292,7 @@ class AdGroupGetItem extends AdGroupBase
     /**
      * Gets RestrictedRegionIds.
      *
-     * @return struct[]|null
+     * @return float[]|null
      */
     public function getRestrictedRegionIds()
     {
@@ -302,7 +302,7 @@ class AdGroupGetItem extends AdGroupBase
     /**
      * Sets RestrictedRegionIds.
      *
-     * @param struct[]|null $value
+     * @param float[]|null $value
      * @return $this
      */
     public function setRestrictedRegionIds(array $value = null)

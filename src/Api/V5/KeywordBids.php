@@ -70,11 +70,17 @@ class KeywordBids extends SoapClientV5
                 'KeywordBidBase' => 'Biplane\YandexDirect\Api\V5\Contract\KeywordBidBase',
                 'KeywordBidGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\KeywordBidGetItem',
                 'KeywordBidSetItem' => 'Biplane\YandexDirect\Api\V5\Contract\KeywordBidSetItem',
+                'KeywordBidSetAutoItem' => 'Biplane\YandexDirect\Api\V5\Contract\KeywordBidSetAutoItem',
+                'BiddingRule' => 'Biplane\YandexDirect\Api\V5\Contract\BiddingRule',
+                'SearchByTrafficVolume' => 'Biplane\YandexDirect\Api\V5\Contract\SearchByTrafficVolume',
+                'NetworkByCoverage' => 'Biplane\YandexDirect\Api\V5\Contract\NetworkByCoverage',
                 'KeywordBidActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\KeywordBidActionResult',
                 'GetRequest' => 'Biplane\YandexDirect\Api\V5\Contract\GetKeywordBidsRequest',
                 'GetResponse' => 'Biplane\YandexDirect\Api\V5\Contract\GetKeywordBidsResponse',
                 'SetRequest' => 'Biplane\YandexDirect\Api\V5\Contract\SetKeywordBidsRequest',
                 'SetResponse' => 'Biplane\YandexDirect\Api\V5\Contract\SetKeywordBidsResponse',
+                'SetAutoRequest' => 'Biplane\YandexDirect\Api\V5\Contract\SetAutoRequest',
+                'SetAutoResponse' => 'Biplane\YandexDirect\Api\V5\Contract\SetAutoResponse',
             ]
         ]);
     }
@@ -99,6 +105,17 @@ class KeywordBids extends SoapClientV5
     public function set(Contract\SetKeywordBidsRequest $parameters)
     {
         return $this->invoke('set', [$parameters]);
+    }
+
+    /**
+     * setAuto.
+     *
+     * @param Contract\SetAutoRequest $parameters
+     * @return Contract\SetAutoResponse
+     */
+    public function setAuto(Contract\SetAutoRequest $parameters)
+    {
+        return $this->invoke('setAuto', [$parameters]);
     }
 
 

@@ -171,7 +171,7 @@ class CampaignUpdateItem extends CampaignBase
     /**
      * Gets NegativeKeywords.
      *
-     * @return struct[]|null
+     * @return string[]|null
      */
     public function getNegativeKeywords()
     {
@@ -181,7 +181,7 @@ class CampaignUpdateItem extends CampaignBase
     /**
      * Sets NegativeKeywords.
      *
-     * @param struct[]|null $value
+     * @param string[]|null $value
      * @return $this
      */
     public function setNegativeKeywords(array $value = null)
@@ -194,7 +194,7 @@ class CampaignUpdateItem extends CampaignBase
     /**
      * Gets BlockedIps.
      *
-     * @return struct[]|null
+     * @return string[]|null
      */
     public function getBlockedIps()
     {
@@ -204,7 +204,7 @@ class CampaignUpdateItem extends CampaignBase
     /**
      * Sets BlockedIps.
      *
-     * @param struct[]|null $value
+     * @param string[]|null $value
      * @return $this
      */
     public function setBlockedIps(array $value = null)
@@ -217,7 +217,7 @@ class CampaignUpdateItem extends CampaignBase
     /**
      * Gets ExcludedSites.
      *
-     * @return struct[]|null
+     * @return string[]|null
      */
     public function getExcludedSites()
     {
@@ -227,7 +227,7 @@ class CampaignUpdateItem extends CampaignBase
     /**
      * Sets ExcludedSites.
      *
-     * @param struct[]|null $value
+     * @param string[]|null $value
      * @return $this
      */
     public function setExcludedSites(array $value = null)
