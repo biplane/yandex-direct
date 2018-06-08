@@ -2,6 +2,8 @@
 
 # master
 
+# 4.5.0 [commit logs](https://github.com/biplane/yandex-direct/compare/4.4.1...4.5.0)
+
 * Исправления в генерации PHPDoc.
 
 * Исправлено преобразование данных для WSDL-типов: `ArrayOfString`, `ArrayOfInterger` и `ArrayOfLong`.
