@@ -99,6 +99,11 @@ generate($generator, [
             $typeName
         );
     },
+    'excludeTypes' => [
+        'ArrayOfString',
+        'ArrayOfInteger',
+        'ArrayOfLong',
+    ],
 ] + $defaultOptions);
 
 generate($generator, [
@@ -110,6 +115,11 @@ generate($generator, [
             $typeName
         );
     },
+    'excludeTypes' => [
+        'ArrayOfString',
+        'ArrayOfInteger',
+        'ArrayOfLong',
+    ],
 ] + $defaultOptions);
 
 generate($generator, [
@@ -121,6 +131,11 @@ generate($generator, [
             $typeName
         );
     },
+    'excludeTypes' => [
+        'ArrayOfString',
+        'ArrayOfInteger',
+        'ArrayOfLong',
+    ],
 ] + $defaultOptions);
 
 generate($generator, [
@@ -132,6 +147,11 @@ generate($generator, [
             $typeName
         );
     },
+    'excludeTypes' => [
+        'ArrayOfString',
+        'ArrayOfInteger',
+        'ArrayOfLong',
+    ],
 ] + $defaultOptions);
 
 generate($generator, [
@@ -143,6 +163,11 @@ generate($generator, [
             $typeName
         );
     },
+    'excludeTypes' => [
+        'ArrayOfString',
+        'ArrayOfInteger',
+        'ArrayOfLong',
+    ],
 ] + $defaultOptions);
 
 generate($generator, [
@@ -154,6 +179,11 @@ generate($generator, [
             $typeName
         );
     },
+    'excludeTypes' => [
+        'ArrayOfString',
+        'ArrayOfInteger',
+        'ArrayOfLong',
+    ],
 ] + $defaultOptions);
 
 generate($generator, [
@@ -165,6 +195,11 @@ generate($generator, [
             $typeName
         );
     },
+    'excludeTypes' => [
+        'ArrayOfString',
+        'ArrayOfInteger',
+        'ArrayOfLong',
+    ],
 ] + $defaultOptions);
 
 generate($generator, [
@@ -176,6 +211,11 @@ generate($generator, [
             $typeName
         );
     },
+    'excludeTypes' => [
+        'ArrayOfString',
+        'ArrayOfInteger',
+        'ArrayOfLong',
+    ],
 ] + $defaultOptions);
 
 generate($generator, [
@@ -187,6 +227,11 @@ generate($generator, [
             $typeName
         );
     },
+    'excludeTypes' => [
+        'ArrayOfString',
+        'ArrayOfInteger',
+        'ArrayOfLong',
+    ],
 ] + $defaultOptions);
 
 generate($generator, [
@@ -198,6 +243,11 @@ generate($generator, [
             $typeName
         );
     },
+    'excludeTypes' => [
+        'ArrayOfString',
+        'ArrayOfInteger',
+        'ArrayOfLong',
+    ],
 ] + $defaultOptions);
 
 generate($generator, [
@@ -209,6 +259,11 @@ generate($generator, [
             $typeName
         );
     },
+    'excludeTypes' => [
+        'ArrayOfString',
+        'ArrayOfInteger',
+        'ArrayOfLong',
+    ],
 ] + $defaultOptions);
 
 generate($generator, [
@@ -220,6 +275,11 @@ generate($generator, [
             $typeName
         );
     },
+    'excludeTypes' => [
+        'ArrayOfString',
+        'ArrayOfInteger',
+        'ArrayOfLong',
+    ],
 ] + $defaultOptions);
 
 generate($generator, [
@@ -231,6 +291,11 @@ generate($generator, [
             $typeName
         );
     },
+    'excludeTypes' => [
+        'ArrayOfString',
+        'ArrayOfInteger',
+        'ArrayOfLong',
+    ],
 ] + $defaultOptions);
 
 generate($generator, [
@@ -242,6 +307,11 @@ generate($generator, [
             $typeName
         );
     },
+    'excludeTypes' => [
+        'ArrayOfString',
+        'ArrayOfInteger',
+        'ArrayOfLong',
+    ],
 ] + $defaultOptions);
 
 generate($generator, [
@@ -253,6 +323,11 @@ generate($generator, [
             $typeName
         );
     },
+    'excludeTypes' => [
+        'ArrayOfString',
+        'ArrayOfInteger',
+        'ArrayOfLong',
+    ],
 ] + $defaultOptions);
 
 generate($generator, [
@@ -264,6 +339,11 @@ generate($generator, [
             $typeName
         );
     },
+    'excludeTypes' => [
+        'ArrayOfString',
+        'ArrayOfInteger',
+        'ArrayOfLong',
+    ],
 ] + $defaultOptions);
 
 generate($generator, [
@@ -275,6 +355,11 @@ generate($generator, [
             $typeName
         );
     },
+    'excludeTypes' => [
+        'ArrayOfString',
+        'ArrayOfInteger',
+        'ArrayOfLong',
+    ],
 ] + $defaultOptions);
 
 function generate(Generator $generator, array $options)
