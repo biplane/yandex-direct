@@ -62,6 +62,12 @@ class KeywordsResearch extends SoapClientV5
                 'HasSearchVolumeSelectionCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\HasSearchVolumeSelectionCriteria',
                 'HasSearchVolumeRequest' => 'Biplane\YandexDirect\Api\V5\Contract\HasSearchVolumeKeywordsRequest',
                 'HasSearchVolumeResponse' => 'Biplane\YandexDirect\Api\V5\Contract\HasSearchVolumeKeywordsResponse',
+                'DeduplicateRequestItem' => 'Biplane\YandexDirect\Api\V5\Contract\DeduplicateRequestItem',
+                'DeduplicateRequest' => 'Biplane\YandexDirect\Api\V5\Contract\DeduplicateRequest',
+                'DeduplicateErrorItem' => 'Biplane\YandexDirect\Api\V5\Contract\DeduplicateErrorItem',
+                'DeduplicateResponseAddItem' => 'Biplane\YandexDirect\Api\V5\Contract\DeduplicateResponseAddItem',
+                'DeduplicateResponseUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\DeduplicateResponseUpdateItem',
+                'DeduplicateResponse' => 'Biplane\YandexDirect\Api\V5\Contract\DeduplicateResponse',
             ]
         ]);
     }
@@ -75,6 +81,17 @@ class KeywordsResearch extends SoapClientV5
     public function hasSearchVolume(Contract\HasSearchVolumeKeywordsRequest $parameters)
     {
         return $this->invoke('hasSearchVolume', [$parameters]);
+    }
+
+    /**
+     * deduplicate.
+     *
+     * @param Contract\DeduplicateRequest $parameters
+     * @return Contract\DeduplicateResponse
+     */
+    public function deduplicate(Contract\DeduplicateRequest $parameters)
+    {
+        return $this->invoke('deduplicate', [$parameters]);
     }
 
 

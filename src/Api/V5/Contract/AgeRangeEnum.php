@@ -18,6 +18,10 @@ class AgeRangeEnum
 
     const AGE_45 = 'AGE_45';
 
+    const AGE_45_54 = 'AGE_45_54';
+
+    const AGE_55 = 'AGE_55';
+
 
 }
 

@@ -2,6 +2,9 @@
 
 # master
 
+* Обновлены контракты данных и сервисы, для совместимости с последними изменениями
+  в **API 5**.
+
 # 4.5.0 [commit logs](https://github.com/biplane/yandex-direct/compare/4.4.1...4.5.0)
 
 * Исправления в генерации PHPDoc.

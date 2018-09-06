@@ -5,14 +5,17 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 /**
  * Auto-generated code.
  */
-class BidActionResult extends BidBase
+class BidActionResult extends ActionResultBase
 {
 
 //    Can be omit.
-//    protected $Warnings = null;
+//    protected $CampaignId = null;
 
 //    Can be omit.
-//    protected $Errors = null;
+//    protected $AdGroupId = null;
+
+//    Can be omit.
+//    protected $KeywordId = null;
 
     /**
      * Creates a new instance of BidActionResult.
@@ -25,47 +28,70 @@ class BidActionResult extends BidBase
     }
 
     /**
-     * Gets Warnings.
+     * Gets CampaignId.
      *
-     * @return ExceptionNotification[]|null
+     * @return int|null
      */
-    public function getWarnings()
+    public function getCampaignId()
     {
-        return isset($this->Warnings) ? $this->Warnings : null;
+        return isset($this->CampaignId) ? $this->CampaignId : null;
     }
 
     /**
-     * Sets Warnings.
+     * Sets CampaignId.
      *
-     * @param ExceptionNotification[]|null $value
+     * @param int|null $value
      * @return $this
      */
-    public function setWarnings(array $value = null)
+    public function setCampaignId($value = null)
     {
-        $this->Warnings = $value;
+        $this->CampaignId = $value;
 
         return $this;
     }
 
     /**
-     * Gets Errors.
+     * Gets AdGroupId.
      *
-     * @return ExceptionNotification[]|null
+     * @return int|null
      */
-    public function getErrors()
+    public function getAdGroupId()
     {
-        return isset($this->Errors) ? $this->Errors : null;
+        return isset($this->AdGroupId) ? $this->AdGroupId : null;
     }
 
     /**
-     * Sets Errors.
+     * Sets AdGroupId.
      *
-     * @param ExceptionNotification[]|null $value
+     * @param int|null $value
      * @return $this
      */
-    public function setErrors(array $value = null)
+    public function setAdGroupId($value = null)
     {
-        $this->Errors = $value;
+        $this->AdGroupId = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets KeywordId.
+     *
+     * @return int|null
+     */
+    public function getKeywordId()
+    {
+        return isset($this->KeywordId) ? $this->KeywordId : null;
+    }
+
+    /**
+     * Sets KeywordId.
+     *
+     * @param int|null $value
+     * @return $this
+     */
+    public function setKeywordId($value = null)
+    {
+        $this->KeywordId = $value;
 
         return $this;
     }

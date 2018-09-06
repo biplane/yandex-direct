@@ -5,7 +5,7 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 /**
  * Auto-generated code.
  */
-class BidGetItem extends BidBase
+class BidGetItem extends BidActionResult
 {
 
 //    Can be omit.
