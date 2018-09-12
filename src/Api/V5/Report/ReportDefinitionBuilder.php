@@ -26,6 +26,8 @@ class ReportDefinitionBuilder
     private $includeDiscount = false;
     private $orderBy = [];
     private $filters = [];
+    private $goals = [];
+    private $attributionModels = [];
     private $schema;
 
     /**
@@ -77,6 +79,57 @@ class ReportDefinitionBuilder
     public function setFieldNames(array $names)
     {
         $this->fieldNames = $names;
+
+        return $this;
+    }
+
+    public function addGoal($goal)
+    {
+        if (empty($goal)) {
+            throw new \InvalidArgumentException('Goal ID cannot be empty.');
+        }
+
+        if (!in_array($goal, $this->goals)) {
+            if (count($this->goals) === 10) {
+                throw new \OverflowException(sprintf(
+                    'You cannot add a goal "%s" to report. Goals limit (10) reached.',
+                    $goal
+                ));
+            }
+
+            $this->goals[] = $goal;
+        }
+
+        return $this;
+    }
+
+    public function setGoals(array $goals)
+    {
+        $this->goals = [];
+
+        foreach ($goals as $goal) {
+            $this->addGoal($goal);
+        }
+
+        return $this;
+    }
+
+    public function addAttributionModel($attributionModel)
+    {
+        if (!in_array($attributionModel, $this->attributionModels)) {
+            $this->attributionModels[] = $attributionModel;
+        }
+
+        return $this;
+    }
+
+    public function setAttributionModels(array $attributionModels)
+    {
+        $this->attributionModels = [];
+
+        foreach ($attributionModels as $attributionModel) {
+            $this->addAttributionModel($attributionModel);
+        }
 
         return $this;
     }
@@ -191,6 +244,20 @@ class ReportDefinitionBuilder
 
         foreach ($this->orderBy as $orderBy) {
             $root->appendChild($this->createOrderByElement($document, $orderBy[0], $orderBy[1]));
+        }
+
+        foreach ($this->goals as $goal) {
+            $root->appendChild($document->createElementNS(self::XML_NAMESPACE, 'Goals', $goal));
+        }
+
+        if (!empty($this->goals)) {
+            foreach ($this->attributionModels as $attributionModel) {
+                $root->appendChild($document->createElementNS(
+                    self::XML_NAMESPACE,
+                    'AttributionModels',
+                    $attributionModel
+                ));
+            }
         }
 
         $root->appendChild($document->createElementNS(self::XML_NAMESPACE, 'ReportName', $this->reportName));

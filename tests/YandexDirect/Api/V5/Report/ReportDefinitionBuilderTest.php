@@ -2,6 +2,7 @@
 
 namespace Biplane\Tests\YandexDirect\Api\V5\Report;
 
+use Biplane\YandexDirect\Api\V5\Report\AttributionModelEnum;
 use Biplane\YandexDirect\Api\V5\Report\DateRangeTypeEnum;
 use Biplane\YandexDirect\Api\V5\Report\FieldEnum;
 use Biplane\YandexDirect\Api\V5\Report\FilterOperatorEnum;
@@ -133,6 +134,107 @@ XML;
 </ReportDefinition>
 XML;
       $this->assertXmlStringEqualsXmlString($expected, $reportDefinition);
+    }
+
+    public function testBuildWithGoals()
+    {
+        $builder = new ReportDefinitionBuilder(false);
+        $builder
+            ->setReportName('foo')
+            ->setReportType(ReportTypeEnum::ACCOUNT_PERFORMANCE_REPORT)
+            ->setDateRangeType(DateRangeTypeEnum::YESTERDAY)
+            ->setFieldNames([
+                FieldEnum::AD_ID,
+                FieldEnum::CRITERIA_ID,
+            ])
+            ->setGoals(['123', '567', '123']);
+
+        $reportDefinition = $builder->build();
+
+        $expected = <<<XML
+<?xml version="1.0" encoding="utf-8"?>
+<ReportDefinition xmlns="http://api.direct.yandex.com/v5/reports">
+    <SelectionCriteria />
+    <FieldNames>AdId</FieldNames>
+    <FieldNames>CriteriaId</FieldNames>
+    <Goals>123</Goals>
+    <Goals>567</Goals>
+    <ReportName>foo</ReportName>
+    <ReportType>ACCOUNT_PERFORMANCE_REPORT</ReportType>
+    <DateRangeType>YESTERDAY</DateRangeType>
+    <Format>TSV</Format>
+    <IncludeVAT>NO</IncludeVAT>
+    <IncludeDiscount>NO</IncludeDiscount>
+</ReportDefinition>
+XML;
+        $this->assertXmlStringEqualsXmlString($expected, $reportDefinition);
+    }
+
+    public function testBuildWithGoalsAndAttributionModels()
+    {
+        $builder = new ReportDefinitionBuilder(false);
+        $builder
+            ->setReportName('foo')
+            ->setReportType(ReportTypeEnum::ACCOUNT_PERFORMANCE_REPORT)
+            ->setDateRangeType(DateRangeTypeEnum::YESTERDAY)
+            ->setFieldNames([
+                FieldEnum::AD_ID,
+                FieldEnum::CRITERIA_ID,
+            ])
+            ->addGoal('123')
+            ->addAttributionModel(AttributionModelEnum::LC);
+
+        $reportDefinition = $builder->build();
+
+        $expected = <<<XML
+<?xml version="1.0" encoding="utf-8"?>
+<ReportDefinition xmlns="http://api.direct.yandex.com/v5/reports">
+    <SelectionCriteria />
+    <FieldNames>AdId</FieldNames>
+    <FieldNames>CriteriaId</FieldNames>
+    <Goals>123</Goals>
+    <AttributionModels>LC</AttributionModels>
+    <ReportName>foo</ReportName>
+    <ReportType>ACCOUNT_PERFORMANCE_REPORT</ReportType>
+    <DateRangeType>YESTERDAY</DateRangeType>
+    <Format>TSV</Format>
+    <IncludeVAT>NO</IncludeVAT>
+    <IncludeDiscount>NO</IncludeDiscount>
+</ReportDefinition>
+XML;
+        $this->assertXmlStringEqualsXmlString($expected, $reportDefinition);
+    }
+
+    public function testBuildWithAttributionModelsAndNoGoals()
+    {
+        $builder = new ReportDefinitionBuilder(false);
+        $builder
+            ->setReportName('foo')
+            ->setReportType(ReportTypeEnum::ACCOUNT_PERFORMANCE_REPORT)
+            ->setDateRangeType(DateRangeTypeEnum::YESTERDAY)
+            ->setFieldNames([
+                FieldEnum::AD_ID,
+                FieldEnum::CRITERIA_ID,
+            ])
+            ->addAttributionModel(AttributionModelEnum::LC);
+
+        $reportDefinition = $builder->build();
+
+        $expected = <<<XML
+<?xml version="1.0" encoding="utf-8"?>
+<ReportDefinition xmlns="http://api.direct.yandex.com/v5/reports">
+    <SelectionCriteria />
+    <FieldNames>AdId</FieldNames>
+    <FieldNames>CriteriaId</FieldNames>
+    <ReportName>foo</ReportName>
+    <ReportType>ACCOUNT_PERFORMANCE_REPORT</ReportType>
+    <DateRangeType>YESTERDAY</DateRangeType>
+    <Format>TSV</Format>
+    <IncludeVAT>NO</IncludeVAT>
+    <IncludeDiscount>NO</IncludeDiscount>
+</ReportDefinition>
+XML;
+        $this->assertXmlStringEqualsXmlString($expected, $reportDefinition);
     }
 
     public function testBuildWithoutValidation()
