@@ -18,16 +18,19 @@ final class FieldEnum
     const AUDIENCE_TARGET_ID = 'AudienceTargetId';
     const AVG_CLICK_POSITION = 'AvgClickPosition';
     const AVG_CPC = 'AvgCpc';
+    const AVG_CPM = 'AvgCpm';
+    const AVG_IMPRESSION_FREQUENCY = 'AvgImpressionFrequency';
     const AVG_IMPRESSION_POSITION = 'AvgImpressionPosition';
     const AVG_PAGEVIEWS = 'AvgPageviews';
+    const AVG_TRAFFIC_VOLUME = 'AvgTrafficVolume';
     const BOUNCE_RATE = 'BounceRate';
     const BOUNCES = 'Bounces';
     const CAMPAIGN_ID = 'CampaignId';
     const CAMPAIGN_NAME = 'CampaignName';
     const CAMPAIGN_TYPE = 'CampaignType';
     const CARRIER_TYPE = 'CarrierType';
-    const CLICK_TYPE = 'ClickType';
     const CLICKS = 'Clicks';
+    const CLICK_TYPE = 'ClickType';
     const CONVERSION_RATE = 'ConversionRate';
     const CONVERSIONS = 'Conversions';
     const COST = 'Cost';
@@ -37,6 +40,7 @@ final class FieldEnum
     const CRITERIA_TYPE = 'CriteriaType';
     const CRITERION = 'Criterion';
     const CRITERION_ID = 'CriterionId';
+    const CRITERION_TYPE = 'CriterionType';
     const CTR = 'Ctr';
     const DATE = 'Date';
     const DEVICE = 'Device';
@@ -45,6 +49,7 @@ final class FieldEnum
     const GENDER = 'Gender';
     const GOALS_ROI = 'GoalsRoi';
     const IMPRESSION_SHARE = 'ImpressionShare';
+    const IMPRESSION_REACH = 'ImpressionReach';
     const IMPRESSIONS = 'Impressions';
     const KEYWORD = 'Keyword';
     const LOCATION_OF_PRESENCE_ID = 'LocationOfPresenceId';
@@ -64,5 +69,7 @@ final class FieldEnum
     const TARGETING_LOCATION_ID = 'TargetingLocationId';
     const TARGETING_LOCATION_NAME = 'TargetingLocationName';
     const WEEK = 'Week';
+    const WEIGHTED_CTR = 'WeightedCtr';
+    const WEIGHTED_IMPRESSIONS = 'WeightedImpressions';
     const YEAR = 'Year';
 }
