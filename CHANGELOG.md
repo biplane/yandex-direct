@@ -2,6 +2,8 @@
 
 # master
 
+# 4.6.0 [commit logs](https://github.com/biplane/yandex-direct/compare/4.5.0...4.6.0)
+
 * В `ReportDefinitionBuilder` добавлена поддержка входных параметров:
   `Goals` и `AttributionModels`. (Issue #11) 
 
