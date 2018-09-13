@@ -234,18 +234,6 @@ class ReportDefinitionBuilder
 
         $root->appendChild($this->createSelectionCriteriaElement($document));
 
-        foreach ($this->fieldNames as $fieldName) {
-            $root->appendChild($document->createElementNS(self::XML_NAMESPACE, 'FieldNames', $fieldName));
-        }
-
-        if (null !== $this->page) {
-            $root->appendChild($this->createPageElement($document, $this->page));
-        }
-
-        foreach ($this->orderBy as $orderBy) {
-            $root->appendChild($this->createOrderByElement($document, $orderBy[0], $orderBy[1]));
-        }
-
         foreach ($this->goals as $goal) {
             $root->appendChild($document->createElementNS(self::XML_NAMESPACE, 'Goals', $goal));
         }
@@ -258,6 +246,18 @@ class ReportDefinitionBuilder
                     $attributionModel
                 ));
             }
+        }
+
+        foreach ($this->fieldNames as $fieldName) {
+            $root->appendChild($document->createElementNS(self::XML_NAMESPACE, 'FieldNames', $fieldName));
+        }
+
+        if (null !== $this->page) {
+            $root->appendChild($this->createPageElement($document, $this->page));
+        }
+
+        foreach ($this->orderBy as $orderBy) {
+            $root->appendChild($this->createOrderByElement($document, $orderBy[0], $orderBy[1]));
         }
 
         $root->appendChild($document->createElementNS(self::XML_NAMESPACE, 'ReportName', $this->reportName));

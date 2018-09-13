@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:rdef="http://api.direct.yandex.com/v5/reports" xmlns:general="http://api.direct.yandex.com/v5/general" targetNamespace="http://api.direct.yandex.com/v5/reports" elementFormDefault="qualified">
+    <xsd:import namespace="http://api.direct.yandex.com/v5/general" schemaLocation="https://soap.direct.yandex.ru/v5/general.xsd"/>
+    <xsd:element name="ReportDefinition">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element minOccurs="1" maxOccurs="1" name="SelectionCriteria" type="rdef:SelectionCriteria"/>
+                <xsd:element minOccurs="0" maxOccurs="unbounded" name="Goals" type="xsd:string"/>
+                <xsd:element minOccurs="0" maxOccurs="unbounded" name="AttributionModels" type="rdef:AttributionModelEnum"/>
+                <xsd:element minOccurs="1" maxOccurs="unbounded" name="FieldNames" type="rdef:FieldEnum"/>
+                <xsd:element minOccurs="0" maxOccurs="1" name="Page" type="rdef:Page"/>
+                <xsd:element minOccurs="0" maxOccurs="unbounded" name="OrderBy" type="rdef:OrderBy"/>
+                <xsd:element minOccurs="1" maxOccurs="1" name="ReportName" type="xsd:string"/>
+                <xsd:element minOccurs="1" maxOccurs="1" name="ReportType" type="rdef:ReportTypeEnum"/>
+                <xsd:element minOccurs="1" maxOccurs="1" name="DateRangeType" type="rdef:DateRangeTypeEnum"/>
+                <xsd:element minOccurs="1" maxOccurs="1" name="Format" type="rdef:FormatEnum"/>
+                <xsd:element minOccurs="1" maxOccurs="1" name="IncludeVAT" type="general:YesNoEnum"/>
+                <xsd:element minOccurs="1" maxOccurs="1" name="IncludeDiscount" type="general:YesNoEnum"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:complexType name="SelectionCriteria">
+        <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="DateFrom" type="xsd:string"/>
+            <xsd:element minOccurs="0" maxOccurs="1" name="DateTo" type="xsd:string"/>
+            <xsd:element minOccurs="0" maxOccurs="unbounded" name="Filter" type="rdef:FilterItem"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:simpleType name="AttributionModelEnum">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="FC"/>
+            <xsd:enumeration value="LC"/>
+            <xsd:enumeration value="LSC"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="FieldEnum">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="AdFormat"/>
+            <xsd:enumeration value="AdGroupId"/>
+            <xsd:enumeration value="AdGroupName"/>
+            <xsd:enumeration value="AdId"/>
+            <xsd:enumeration value="AdNetworkType"/>
+            <xsd:enumeration value="Age"/>
+            <xsd:enumeration value="AudienceTargetId"/>
+            <xsd:enumeration value="AvgClickPosition"/>
+            <xsd:enumeration value="AvgCpc"/>
+            <xsd:enumeration value="AvgCpm"/>
+            <xsd:enumeration value="AvgImpressionFrequency"/>
+            <xsd:enumeration value="AvgImpressionPosition"/>
+            <xsd:enumeration value="AvgPageviews"/>
+            <xsd:enumeration value="AvgTrafficVolume"/>
+            <xsd:enumeration value="BounceRate"/>
+            <xsd:enumeration value="Bounces"/>
+            <xsd:enumeration value="CampaignId"/>
+            <xsd:enumeration value="CampaignName"/>
+            <xsd:enumeration value="CampaignType"/>
+            <xsd:enumeration value="CarrierType"/>
+            <xsd:enumeration value="ClickType"/>
+            <xsd:enumeration value="Clicks"/>
+            <xsd:enumeration value="ConversionRate"/>
+            <xsd:enumeration value="Conversions"/>
+            <xsd:enumeration value="Cost"/>
+            <xsd:enumeration value="CostPerConversion"/>
+            <xsd:enumeration value="Criteria"/>
+            <xsd:enumeration value="CriteriaId"/>
+            <xsd:enumeration value="CriteriaType"/>
+            <xsd:enumeration value="CriterionType"/>
+            <xsd:enumeration value="Criterion"/>
+            <xsd:enumeration value="CriterionId"/>
+            <xsd:enumeration value="Ctr"/>
+            <xsd:enumeration value="Date"/>
+            <xsd:enumeration value="Device"/>
+            <xsd:enumeration value="DynamicTextAdTargetId"/>
+            <xsd:enumeration value="ExternalNetworkName"/>
+            <xsd:enumeration value="Gender"/>
+            <xsd:enumeration value="GoalsRoi"/>
+            <xsd:enumeration value="ImpressionShare"/>
+            <xsd:enumeration value="Impressions"/>
+            <xsd:enumeration value="Keyword"/>
+            <xsd:enumeration value="LocationOfPresenceId"/>
+            <xsd:enumeration value="LocationOfPresenceName"/>
+            <xsd:enumeration value="MatchType"/>
+            <xsd:enumeration value="MatchedKeyword"/>
+            <xsd:enumeration value="MobilePlatform"/>
+            <xsd:enumeration value="Month"/>
+            <xsd:enumeration value="Placement"/>
+            <xsd:enumeration value="Quarter"/>
+            <xsd:enumeration value="Query"/>
+            <xsd:enumeration value="ImpressionReach"/>
+            <xsd:enumeration value="Revenue"/>
+            <xsd:enumeration value="RlAdjustmentId"/>
+            <xsd:enumeration value="Sessions"/>
+            <xsd:enumeration value="Slot"/>
+            <xsd:enumeration value="SmartBannerFilterId"/>
+            <xsd:enumeration value="TargetingLocationId"/>
+            <xsd:enumeration value="TargetingLocationName"/>
+            <xsd:enumeration value="Week"/>
+            <xsd:enumeration value="WeightedCtr"/>
+            <xsd:enumeration value="WeightedImpressions"/>
+            <xsd:enumeration value="Year"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:complexType name="FilterItem">
+        <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Field" type="rdef:FieldEnum"/>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Operator" type="rdef:FilterOperatorEnum"/>
+            <xsd:element minOccurs="1" maxOccurs="unbounded" name="Values" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="OrderBy">
+        <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Field" type="rdef:FieldEnum"/>
+            <xsd:element minOccurs="0" maxOccurs="1" name="SortOrder" type="general:SortOrderEnum"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="Page">
+        <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Limit" type="xsd:long"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:simpleType name="FilterOperatorEnum">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="DOES_NOT_START_WITH_ALL_IGNORE_CASE"/>
+            <xsd:enumeration value="DOES_NOT_START_WITH_IGNORE_CASE"/>
+            <xsd:enumeration value="EQUALS"/>
+            <xsd:enumeration value="GREATER_THAN"/>
+            <xsd:enumeration value="IN"/>
+            <xsd:enumeration value="LESS_THAN"/>
+            <xsd:enumeration value="NOT_EQUALS"/>
+            <xsd:enumeration value="NOT_IN"/>
+            <xsd:enumeration value="STARTS_WITH_ANY_IGNORE_CASE"/>
+            <xsd:enumeration value="STARTS_WITH_IGNORE_CASE"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="ReportTypeEnum">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="ACCOUNT_PERFORMANCE_REPORT"/>
+            <xsd:enumeration value="ADGROUP_PERFORMANCE_REPORT"/>
+            <xsd:enumeration value="AD_PERFORMANCE_REPORT"/>
+            <xsd:enumeration value="CAMPAIGN_PERFORMANCE_REPORT"/>
+            <xsd:enumeration value="CRITERIA_PERFORMANCE_REPORT"/>
+            <xsd:enumeration value="CUSTOM_REPORT"/>
+            <xsd:enumeration value="REACH_AND_FREQUENCY_PERFORMANCE_REPORT"/>
+            <xsd:enumeration value="SEARCH_QUERY_PERFORMANCE_REPORT"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="DateRangeTypeEnum">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="ALL_TIME"/>
+            <xsd:enumeration value="AUTO"/>
+            <xsd:enumeration value="CUSTOM_DATE"/>
+            <xsd:enumeration value="LAST_14_DAYS"/>
+            <xsd:enumeration value="LAST_30_DAYS"/>
+            <xsd:enumeration value="LAST_365_DAYS"/>
+            <xsd:enumeration value="LAST_3_DAYS"/>
+            <xsd:enumeration value="LAST_5_DAYS"/>
+            <xsd:enumeration value="LAST_7_DAYS"/>
+            <xsd:enumeration value="LAST_90_DAYS"/>
+            <xsd:enumeration value="LAST_BUSINESS_WEEK"/>
+            <xsd:enumeration value="LAST_MONTH"/>
+            <xsd:enumeration value="LAST_WEEK"/>
+            <xsd:enumeration value="LAST_WEEK_SUN_SAT"/>
+            <xsd:enumeration value="THIS_MONTH"/>
+            <xsd:enumeration value="THIS_WEEK_MON_TODAY"/>
+            <xsd:enumeration value="THIS_WEEK_SUN_TODAY"/>
+            <xsd:enumeration value="TODAY"/>
+            <xsd:enumeration value="YESTERDAY"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="FormatEnum">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="TSV"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:element name="reportDownloadError">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element minOccurs="1" maxOccurs="1" name="ApiError" type="rdef:ApiError"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:complexType name="ApiError">
+        <xsd:sequence>
+            <xsd:element name="requestId" type="xsd:string" nillable="false" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="errorCode" type="xsd:int" nillable="false" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="errorMessage" type="xsd:string" nillable="false" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="errorDetail" type="xsd:string" nillable="false" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

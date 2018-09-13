@@ -20,7 +20,7 @@ class ReportDefinitionBuilderTest extends \PHPUnit_Framework_TestCase
 
     public function testBuildWithDefaults()
     {
-        $builder = new ReportDefinitionBuilder(false);
+        $builder = new ReportDefinitionBuilder(__DIR__ . '/fixtures/reports.xsd');
         $builder
             ->setReportName('foo')
             ->setReportType(ReportTypeEnum::ACCOUNT_PERFORMANCE_REPORT)
@@ -47,7 +47,7 @@ XML;
 
     public function testBuildWithCustomDate()
     {
-        $builder = new ReportDefinitionBuilder(false);
+        $builder = new ReportDefinitionBuilder(__DIR__ . '/fixtures/reports.xsd');
         $builder
             ->setReportName('foo')
             ->setReportType(ReportTypeEnum::ACCOUNT_PERFORMANCE_REPORT)
@@ -77,7 +77,7 @@ XML;
 
     public function testBuildWithCustomParams()
     {
-        $builder = new ReportDefinitionBuilder(false);
+        $builder = new ReportDefinitionBuilder(__DIR__ . '/fixtures/reports.xsd');
         $builder
             ->setReportName('foo')
             ->setReportType(ReportTypeEnum::ACCOUNT_PERFORMANCE_REPORT)
@@ -138,7 +138,7 @@ XML;
 
     public function testBuildWithGoals()
     {
-        $builder = new ReportDefinitionBuilder(false);
+        $builder = new ReportDefinitionBuilder(__DIR__ . '/fixtures/reports.xsd');
         $builder
             ->setReportName('foo')
             ->setReportType(ReportTypeEnum::ACCOUNT_PERFORMANCE_REPORT)
@@ -155,10 +155,10 @@ XML;
 <?xml version="1.0" encoding="utf-8"?>
 <ReportDefinition xmlns="http://api.direct.yandex.com/v5/reports">
     <SelectionCriteria />
-    <FieldNames>AdId</FieldNames>
-    <FieldNames>CriteriaId</FieldNames>
     <Goals>123</Goals>
     <Goals>567</Goals>
+    <FieldNames>AdId</FieldNames>
+    <FieldNames>CriteriaId</FieldNames>
     <ReportName>foo</ReportName>
     <ReportType>ACCOUNT_PERFORMANCE_REPORT</ReportType>
     <DateRangeType>YESTERDAY</DateRangeType>
@@ -172,7 +172,7 @@ XML;
 
     public function testBuildWithGoalsAndAttributionModels()
     {
-        $builder = new ReportDefinitionBuilder(false);
+        $builder = new ReportDefinitionBuilder(__DIR__ . '/fixtures/reports.xsd');
         $builder
             ->setReportName('foo')
             ->setReportType(ReportTypeEnum::ACCOUNT_PERFORMANCE_REPORT)
@@ -190,10 +190,10 @@ XML;
 <?xml version="1.0" encoding="utf-8"?>
 <ReportDefinition xmlns="http://api.direct.yandex.com/v5/reports">
     <SelectionCriteria />
-    <FieldNames>AdId</FieldNames>
-    <FieldNames>CriteriaId</FieldNames>
     <Goals>123</Goals>
     <AttributionModels>LC</AttributionModels>
+    <FieldNames>AdId</FieldNames>
+    <FieldNames>CriteriaId</FieldNames>
     <ReportName>foo</ReportName>
     <ReportType>ACCOUNT_PERFORMANCE_REPORT</ReportType>
     <DateRangeType>YESTERDAY</DateRangeType>
@@ -207,7 +207,7 @@ XML;
 
     public function testBuildWithAttributionModelsAndNoGoals()
     {
-        $builder = new ReportDefinitionBuilder(false);
+        $builder = new ReportDefinitionBuilder(__DIR__ . '/fixtures/reports.xsd');
         $builder
             ->setReportName('foo')
             ->setReportType(ReportTypeEnum::ACCOUNT_PERFORMANCE_REPORT)
