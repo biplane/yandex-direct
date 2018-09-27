@@ -2,6 +2,8 @@
 
 # master
 
+# 4.7.0 [commit logs](https://github.com/biplane/yandex-direct/compare/4.6.1...4.7.0)
+
 * Добавлена поддержка медийных кампаний.
 
 # 4.6.1 [commit logs](https://github.com/biplane/yandex-direct/compare/4.6.0...4.6.1)
