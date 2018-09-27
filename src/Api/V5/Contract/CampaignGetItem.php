@@ -72,6 +72,9 @@ class CampaignGetItem extends CampaignBase
 //    protected $DynamicTextCampaign = null;
 
 //    Can be omit.
+//    protected $CpmBannerCampaign = null;
+
+//    Can be omit.
 //    protected $TimeTargeting = null;
 
     /**
@@ -573,6 +576,29 @@ class CampaignGetItem extends CampaignBase
     public function setDynamicTextCampaign(DynamicTextCampaignGetItem $value = null)
     {
         $this->DynamicTextCampaign = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets CpmBannerCampaign.
+     *
+     * @return CpmBannerCampaignGetItem|null
+     */
+    public function getCpmBannerCampaign()
+    {
+        return isset($this->CpmBannerCampaign) ? $this->CpmBannerCampaign : null;
+    }
+
+    /**
+     * Sets CpmBannerCampaign.
+     *
+     * @param CpmBannerCampaignGetItem|null $value
+     * @return $this
+     */
+    public function setCpmBannerCampaign(CpmBannerCampaignGetItem $value = null)
+    {
+        $this->CpmBannerCampaign = $value;
 
         return $this;
     }

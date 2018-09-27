@@ -21,6 +21,9 @@ class GetCampaignsRequest extends GetRequestGeneral
 //    Can be omit.
 //    protected $DynamicTextCampaignFieldNames = null;
 
+//    Can be omit.
+//    protected $CpmBannerCampaignFieldNames = null;
+
     /**
      * Creates a new instance of GetCampaignsRequest.
      *
@@ -150,6 +153,31 @@ class GetCampaignsRequest extends GetRequestGeneral
     public function setDynamicTextCampaignFieldNames(array $value = null)
     {
         $this->DynamicTextCampaignFieldNames = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets CpmBannerCampaignFieldNames.
+     *
+     * @return string[]|null
+     * @see CpmBannerCampaignFieldEnum
+     */
+    public function getCpmBannerCampaignFieldNames()
+    {
+        return isset($this->CpmBannerCampaignFieldNames) ? $this->CpmBannerCampaignFieldNames : null;
+    }
+
+    /**
+     * Sets CpmBannerCampaignFieldNames.
+     *
+     * @param string[]|null $value
+     * @return $this
+     * @see CpmBannerCampaignFieldEnum
+     */
+    public function setCpmBannerCampaignFieldNames(array $value = null)
+    {
+        $this->CpmBannerCampaignFieldNames = $value;
 
         return $this;
     }

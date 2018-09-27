@@ -29,6 +29,9 @@ class AdAddItem extends AdAddItemBase
 //    Can be omit.
 //    protected $MobileAppAdBuilderAd = null;
 
+//    Can be omit.
+//    protected $CpmBannerAdBuilderAd = null;
+
     /**
      * Creates a new instance of AdAddItem.
      *
@@ -196,6 +199,29 @@ class AdAddItem extends AdAddItemBase
     public function setMobileAppAdBuilderAd(MobileAppAdBuilderAdAdd $value = null)
     {
         $this->MobileAppAdBuilderAd = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets CpmBannerAdBuilderAd.
+     *
+     * @return CpmBannerAdBuilderAdAdd|null
+     */
+    public function getCpmBannerAdBuilderAd()
+    {
+        return isset($this->CpmBannerAdBuilderAd) ? $this->CpmBannerAdBuilderAd : null;
+    }
+
+    /**
+     * Sets CpmBannerAdBuilderAd.
+     *
+     * @param CpmBannerAdBuilderAdAdd|null $value
+     * @return $this
+     */
+    public function setCpmBannerAdBuilderAd(CpmBannerAdBuilderAdAdd $value = null)
+    {
+        $this->CpmBannerAdBuilderAd = $value;
 
         return $this;
     }

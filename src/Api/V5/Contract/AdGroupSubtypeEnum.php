@@ -14,6 +14,10 @@ class AdGroupSubtypeEnum
 
     const NONE = 'NONE';
 
+    const KEYWORDS = 'KEYWORDS';
+
+    const USER_PROFILE = 'USER_PROFILE';
+
 
 }
 

@@ -60,6 +60,7 @@ class RetargetingLists extends SoapClientV5
                 'RetargetingListFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\RetargetingListFieldEnum',
                 'RetargetingListScopeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\RetargetingListScopeEnum',
                 'RetargetingListRuleOperatorEnum' => 'Biplane\YandexDirect\Api\V5\Contract\RetargetingListRuleOperatorEnum',
+                'RetargetingListTypeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\RetargetingListTypeEnum',
                 'RetargetingListSelectionCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\RetargetingListSelectionCriteria',
                 'RetargetingListRuleArgumentItem' => 'Biplane\YandexDirect\Api\V5\Contract\RetargetingListRuleArgumentItem',
                 'RetargetingListRuleItem' => 'Biplane\YandexDirect\Api\V5\Contract\RetargetingListRuleItem',

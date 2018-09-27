@@ -68,6 +68,11 @@ class Dictionaries extends SoapClientV5
                 'ProductivityAssertionsItem' => 'Biplane\YandexDirect\Api\V5\Contract\ProductivityAssertionsItem',
                 'SupplySidePlatformsItem' => 'Biplane\YandexDirect\Api\V5\Contract\SupplySidePlatformsItem',
                 'InterestsItem' => 'Biplane\YandexDirect\Api\V5\Contract\InterestsItem',
+                'CanSelectEnum' => 'Biplane\YandexDirect\Api\V5\Contract\CanSelectEnum',
+                'InterestTypeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\InterestTypeEnum',
+                'AudienceCriteriaTypesItem' => 'Biplane\YandexDirect\Api\V5\Contract\AudienceCriteriaTypesItem',
+                'AudienceDemographicProfilesItem' => 'Biplane\YandexDirect\Api\V5\Contract\AudienceDemographicProfilesItem',
+                'AudienceInterestsItem' => 'Biplane\YandexDirect\Api\V5\Contract\AudienceInterestsItem',
                 'GetRequest' => 'Biplane\YandexDirect\Api\V5\Contract\GetDictionariesRequest',
                 'GetResponse' => 'Biplane\YandexDirect\Api\V5\Contract\GetDictionariesResponse',
             ]

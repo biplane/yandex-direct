@@ -81,6 +81,8 @@ class AdGroups extends SoapClientV5
                 'DynamicTextAdGroupGet' => 'Biplane\YandexDirect\Api\V5\Contract\DynamicTextAdGroupGet',
                 'DynamicSourceGet' => 'Biplane\YandexDirect\Api\V5\Contract\DynamicSourceGet',
                 'DynamicTextFeedAdGroupGet' => 'Biplane\YandexDirect\Api\V5\Contract\DynamicTextFeedAdGroupGet',
+                'CpmBannerKeywordsAdGroupAdd' => 'Biplane\YandexDirect\Api\V5\Contract\CpmBannerKeywordsAdGroupAdd',
+                'CpmBannerUserProfileAdGroupAdd' => 'Biplane\YandexDirect\Api\V5\Contract\CpmBannerUserProfileAdGroupAdd',
                 'AdGroupUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\AdGroupUpdateItem',
                 'GetRequest' => 'Biplane\YandexDirect\Api\V5\Contract\GetAdGroupsRequest',
                 'GetResponse' => 'Biplane\YandexDirect\Api\V5\Contract\GetAdGroupsResponse',

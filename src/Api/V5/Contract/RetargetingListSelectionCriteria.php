@@ -9,6 +9,9 @@ class RetargetingListSelectionCriteria
 {
 
 //    Can be omit.
+//    protected $Types = null;
+
+//    Can be omit.
 //    protected $Ids = null;
 
     /**
@@ -19,6 +22,31 @@ class RetargetingListSelectionCriteria
     public static function create()
     {
         return new self();
+    }
+
+    /**
+     * Gets Types.
+     *
+     * @return string[]|null
+     * @see RetargetingListTypeEnum
+     */
+    public function getTypes()
+    {
+        return isset($this->Types) ? $this->Types : null;
+    }
+
+    /**
+     * Sets Types.
+     *
+     * @param string[]|null $value
+     * @return $this
+     * @see RetargetingListTypeEnum
+     */
+    public function setTypes(array $value = null)
+    {
+        $this->Types = $value;
+
+        return $this;
     }
 
     /**

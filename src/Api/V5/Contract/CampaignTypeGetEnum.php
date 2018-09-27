@@ -14,6 +14,8 @@ class CampaignTypeGetEnum
 
     const DYNAMIC_TEXT_CAMPAIGN = 'DYNAMIC_TEXT_CAMPAIGN';
 
+    const CPM_BANNER_CAMPAIGN = 'CPM_BANNER_CAMPAIGN';
+
     const UNKNOWN = 'UNKNOWN';
 
 

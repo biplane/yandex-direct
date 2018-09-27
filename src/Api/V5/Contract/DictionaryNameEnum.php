@@ -28,6 +28,12 @@ class DictionaryNameEnum
 
     const INTERESTS = 'Interests';
 
+    const AUDIENCE_CRITERIA_TYPES = 'AudienceCriteriaTypes';
+
+    const AUDIENCE_DEMOGRAPHIC_PROFILES = 'AudienceDemographicProfiles';
+
+    const AUDIENCE_INTERESTS = 'AudienceInterests';
+
 
 }
 

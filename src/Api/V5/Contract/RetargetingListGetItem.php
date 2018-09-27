@@ -9,6 +9,9 @@ class RetargetingListGetItem extends RetargetingListBase
 {
 
 //    Can be omit.
+//    protected $Type = null;
+
+//    Can be omit.
 //    protected $Id = null;
 
 //    Can be omit.
@@ -25,6 +28,31 @@ class RetargetingListGetItem extends RetargetingListBase
     public static function create()
     {
         return new self();
+    }
+
+    /**
+     * Gets Type.
+     *
+     * @return string|null
+     * @see RetargetingListTypeEnum
+     */
+    public function getType()
+    {
+        return isset($this->Type) ? $this->Type : null;
+    }
+
+    /**
+     * Sets Type.
+     *
+     * @param string|null $value
+     * @return $this
+     * @see RetargetingListTypeEnum
+     */
+    public function setType($value = null)
+    {
+        $this->Type = $value;
+
+        return $this;
     }
 
     /**

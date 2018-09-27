@@ -59,6 +59,9 @@ class AdGetItem
 //    Can be omit.
 //    protected $MobileAppAdBuilderAd = null;
 
+//    Can be omit.
+//    protected $CpmBannerAdBuilderAd = null;
+
     /**
      * Creates a new instance of AdGetItem.
      *
@@ -466,6 +469,29 @@ class AdGetItem
     public function setMobileAppAdBuilderAd(MobileAppAdBuilderAdGet $value = null)
     {
         $this->MobileAppAdBuilderAd = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets CpmBannerAdBuilderAd.
+     *
+     * @return CpmBannerAdBuilderAdGet|null
+     */
+    public function getCpmBannerAdBuilderAd()
+    {
+        return isset($this->CpmBannerAdBuilderAd) ? $this->CpmBannerAdBuilderAd : null;
+    }
+
+    /**
+     * Sets CpmBannerAdBuilderAd.
+     *
+     * @param CpmBannerAdBuilderAdGet|null $value
+     * @return $this
+     */
+    public function setCpmBannerAdBuilderAd(CpmBannerAdBuilderAdGet $value = null)
+    {
+        $this->CpmBannerAdBuilderAd = $value;
 
         return $this;
     }

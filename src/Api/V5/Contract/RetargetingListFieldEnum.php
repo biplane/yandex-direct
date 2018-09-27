@@ -8,6 +8,8 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class RetargetingListFieldEnum
 {
 
+    const TYPE = 'Type';
+
     const ID = 'Id';
 
     const NAME = 'Name';

@@ -12,6 +12,8 @@ class RetargetingListScopeEnum
 
     const FOR_ADJUSTMENTS_ONLY = 'FOR_ADJUSTMENTS_ONLY';
 
+    const FOR_TARGETS_ONLY = 'FOR_TARGETS_ONLY';
+
 
 }
 

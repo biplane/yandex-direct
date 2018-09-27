@@ -8,6 +8,9 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class RetargetingListAddItem
 {
 
+//    Can be omit.
+//    protected $Type = null;
+
     protected $Name = null;
 
 //    Can be omit.
@@ -23,6 +26,31 @@ class RetargetingListAddItem
     public static function create()
     {
         return new self();
+    }
+
+    /**
+     * Gets Type.
+     *
+     * @return string|null
+     * @see RetargetingListTypeEnum
+     */
+    public function getType()
+    {
+        return isset($this->Type) ? $this->Type : null;
+    }
+
+    /**
+     * Sets Type.
+     *
+     * @param string|null $value
+     * @return $this
+     * @see RetargetingListTypeEnum
+     */
+    public function setType($value = null)
+    {
+        $this->Type = $value;
+
+        return $this;
     }
 
     /**

@@ -31,6 +31,9 @@ class AdUpdateItem
 //    Can be omit.
 //    protected $MobileAppAdBuilderAd = null;
 
+//    Can be omit.
+//    protected $CpmBannerAdBuilderAd = null;
+
     /**
      * Creates a new instance of AdUpdateItem.
      *
@@ -221,6 +224,29 @@ class AdUpdateItem
     public function setMobileAppAdBuilderAd(MobileAppAdBuilderAdUpdate $value = null)
     {
         $this->MobileAppAdBuilderAd = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets CpmBannerAdBuilderAd.
+     *
+     * @return CpmBannerAdBuilderAdUpdate|null
+     */
+    public function getCpmBannerAdBuilderAd()
+    {
+        return isset($this->CpmBannerAdBuilderAd) ? $this->CpmBannerAdBuilderAd : null;
+    }
+
+    /**
+     * Sets CpmBannerAdBuilderAd.
+     *
+     * @param CpmBannerAdBuilderAdUpdate|null $value
+     * @return $this
+     */
+    public function setCpmBannerAdBuilderAd(CpmBannerAdBuilderAdUpdate $value = null)
+    {
+        $this->CpmBannerAdBuilderAd = $value;
 
         return $this;
     }

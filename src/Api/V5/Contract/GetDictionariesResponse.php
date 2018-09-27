@@ -38,6 +38,15 @@ class GetDictionariesResponse
 //    Can be omit.
 //    protected $Interests = null;
 
+//    Can be omit.
+//    protected $AudienceCriteriaTypes = null;
+
+//    Can be omit.
+//    protected $AudienceDemographicProfiles = null;
+
+//    Can be omit.
+//    protected $AudienceInterests = null;
+
     /**
      * Creates a new instance of GetDictionariesResponse.
      *
@@ -274,6 +283,75 @@ class GetDictionariesResponse
     public function setInterests(array $value = null)
     {
         $this->Interests = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets AudienceCriteriaTypes.
+     *
+     * @return AudienceCriteriaTypesItem[]|null
+     */
+    public function getAudienceCriteriaTypes()
+    {
+        return isset($this->AudienceCriteriaTypes) ? $this->AudienceCriteriaTypes : null;
+    }
+
+    /**
+     * Sets AudienceCriteriaTypes.
+     *
+     * @param AudienceCriteriaTypesItem[]|null $value
+     * @return $this
+     */
+    public function setAudienceCriteriaTypes(array $value = null)
+    {
+        $this->AudienceCriteriaTypes = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets AudienceDemographicProfiles.
+     *
+     * @return AudienceDemographicProfilesItem[]|null
+     */
+    public function getAudienceDemographicProfiles()
+    {
+        return isset($this->AudienceDemographicProfiles) ? $this->AudienceDemographicProfiles : null;
+    }
+
+    /**
+     * Sets AudienceDemographicProfiles.
+     *
+     * @param AudienceDemographicProfilesItem[]|null $value
+     * @return $this
+     */
+    public function setAudienceDemographicProfiles(array $value = null)
+    {
+        $this->AudienceDemographicProfiles = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets AudienceInterests.
+     *
+     * @return AudienceInterestsItem[]|null
+     */
+    public function getAudienceInterests()
+    {
+        return isset($this->AudienceInterests) ? $this->AudienceInterests : null;
+    }
+
+    /**
+     * Sets AudienceInterests.
+     *
+     * @param AudienceInterestsItem[]|null $value
+     * @return $this
+     */
+    public function setAudienceInterests(array $value = null)
+    {
+        $this->AudienceInterests = $value;
 
         return $this;
     }

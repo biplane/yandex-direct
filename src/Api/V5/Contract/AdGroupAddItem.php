@@ -26,6 +26,12 @@ class AdGroupAddItem
 //    Can be omit.
 //    protected $DynamicTextAdGroup = null;
 
+//    Can be omit.
+//    protected $CpmBannerKeywordsAdGroup = null;
+
+//    Can be omit.
+//    protected $CpmBannerUserProfileAdGroup = null;
+
     /**
      * Creates a new instance of AdGroupAddItem.
      *
@@ -193,6 +199,52 @@ class AdGroupAddItem
     public function setDynamicTextAdGroup(DynamicTextAdGroup $value = null)
     {
         $this->DynamicTextAdGroup = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets CpmBannerKeywordsAdGroup.
+     *
+     * @return CpmBannerKeywordsAdGroupAdd|null
+     */
+    public function getCpmBannerKeywordsAdGroup()
+    {
+        return isset($this->CpmBannerKeywordsAdGroup) ? $this->CpmBannerKeywordsAdGroup : null;
+    }
+
+    /**
+     * Sets CpmBannerKeywordsAdGroup.
+     *
+     * @param CpmBannerKeywordsAdGroupAdd|null $value
+     * @return $this
+     */
+    public function setCpmBannerKeywordsAdGroup(CpmBannerKeywordsAdGroupAdd $value = null)
+    {
+        $this->CpmBannerKeywordsAdGroup = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets CpmBannerUserProfileAdGroup.
+     *
+     * @return CpmBannerUserProfileAdGroupAdd|null
+     */
+    public function getCpmBannerUserProfileAdGroup()
+    {
+        return isset($this->CpmBannerUserProfileAdGroup) ? $this->CpmBannerUserProfileAdGroup : null;
+    }
+
+    /**
+     * Sets CpmBannerUserProfileAdGroup.
+     *
+     * @param CpmBannerUserProfileAdGroupAdd|null $value
+     * @return $this
+     */
+    public function setCpmBannerUserProfileAdGroup(CpmBannerUserProfileAdGroupAdd $value = null)
+    {
+        $this->CpmBannerUserProfileAdGroup = $value;
 
         return $this;
     }

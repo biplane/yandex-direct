@@ -33,6 +33,9 @@ class GetAdsRequest extends GetRequestGeneral
 //    Can be omit.
 //    protected $MobileAppAdBuilderAdFieldNames = null;
 
+//    Can be omit.
+//    protected $CpmBannerAdBuilderAdFieldNames = null;
+
     /**
      * Creates a new instance of GetAdsRequest.
      *
@@ -262,6 +265,31 @@ class GetAdsRequest extends GetRequestGeneral
     public function setMobileAppAdBuilderAdFieldNames(array $value = null)
     {
         $this->MobileAppAdBuilderAdFieldNames = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets CpmBannerAdBuilderAdFieldNames.
+     *
+     * @return string[]|null
+     * @see CpmBannerAdBuilderAdFieldEnum
+     */
+    public function getCpmBannerAdBuilderAdFieldNames()
+    {
+        return isset($this->CpmBannerAdBuilderAdFieldNames) ? $this->CpmBannerAdBuilderAdFieldNames : null;
+    }
+
+    /**
+     * Sets CpmBannerAdBuilderAdFieldNames.
+     *
+     * @param string[]|null $value
+     * @return $this
+     * @see CpmBannerAdBuilderAdFieldEnum
+     */
+    public function setCpmBannerAdBuilderAdFieldNames(array $value = null)
+    {
+        $this->CpmBannerAdBuilderAdFieldNames = $value;
 
         return $this;
     }
