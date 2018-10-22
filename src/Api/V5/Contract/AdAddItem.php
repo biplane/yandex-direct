@@ -32,6 +32,9 @@ class AdAddItem extends AdAddItemBase
 //    Can be omit.
 //    protected $CpmBannerAdBuilderAd = null;
 
+//    Can be omit.
+//    protected $CpcVideoAdBuilderAd = null;
+
     /**
      * Creates a new instance of AdAddItem.
      *
@@ -222,6 +225,29 @@ class AdAddItem extends AdAddItemBase
     public function setCpmBannerAdBuilderAd(CpmBannerAdBuilderAdAdd $value = null)
     {
         $this->CpmBannerAdBuilderAd = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets CpcVideoAdBuilderAd.
+     *
+     * @return CpcVideoAdBuilderAdAdd|null
+     */
+    public function getCpcVideoAdBuilderAd()
+    {
+        return isset($this->CpcVideoAdBuilderAd) ? $this->CpcVideoAdBuilderAd : null;
+    }
+
+    /**
+     * Sets CpcVideoAdBuilderAd.
+     *
+     * @param CpcVideoAdBuilderAdAdd|null $value
+     * @return $this
+     */
+    public function setCpcVideoAdBuilderAd(CpcVideoAdBuilderAdAdd $value = null)
+    {
+        $this->CpcVideoAdBuilderAd = $value;
 
         return $this;
     }

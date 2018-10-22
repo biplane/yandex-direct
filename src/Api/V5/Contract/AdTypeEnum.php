@@ -16,6 +16,8 @@ class AdTypeEnum
 
     const IMAGE_AD = 'IMAGE_AD';
 
+    const CPC_VIDEO_AD = 'CPC_VIDEO_AD';
+
     const CPM_BANNER_AD = 'CPM_BANNER_AD';
 
 
