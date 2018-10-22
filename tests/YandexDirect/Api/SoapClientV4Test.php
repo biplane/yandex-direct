@@ -48,8 +48,11 @@ class SoapClientV4Test extends BaseTestCase
     /**
      * @dataProvider getFinancialMethods
      */
-    public function testAdditionalHeadersShouldBeAssignWhenInvokeFinancialMethod($methodName, array $params = [])
-    {
+    public function testAdditionalHeadersShouldBeAssignWhenInvokeFinancialMethod(
+        $usedMethod,
+        $methodName,
+        array $params = []
+    ) {
         $php = \PHPUnit_Extension_FunctionMocker::start($this, 'Biplane\YandexDirect\Api')
             ->mockFunction('time')
             ->getMock();
@@ -57,12 +60,6 @@ class SoapClientV4Test extends BaseTestCase
         $php->expects(self::any())
             ->method('time')
             ->willReturn(10009);
-
-        $usedMethod = $methodName;
-
-        if (count($params) === 1) {
-            $usedMethod = $params[0]->getAction();
-        }
 
         $this->user->expects(self::once())
             ->method('createFinanceToken')
@@ -85,13 +82,19 @@ class SoapClientV4Test extends BaseTestCase
     public function getFinancialMethods()
     {
         return [
-            ['TransferMoney'],
-            ['GetCreditLimits'],
-            ['CreateInvoice'],
-            ['PayCampaigns'],
-            ['AccountManagement', [AccountManagementRequest::create()->setAction('Deposit')]],
-            ['AccountManagement', [AccountManagementRequest::create()->setAction('Invoice')]],
-            ['AccountManagement', [AccountManagementRequest::create()->setAction('TransferMoney')]],
+            ['TransferMoney', 'TransferMoney'],
+            ['GetCreditLimits', 'GetCreditLimits'],
+            ['CreateInvoice', 'CreateInvoice'],
+            ['PayCampaigns', 'PayCampaigns'],
+            ['AccountManagementDeposit', 'AccountManagement', [
+                AccountManagementRequest::create()->setAction('Deposit'),
+            ]],
+            ['AccountManagementInvoice', 'AccountManagement', [
+                AccountManagementRequest::create()->setAction('Invoice'),
+            ]],
+            ['AccountManagementTransferMoney', 'AccountManagement', [
+                AccountManagementRequest::create()->setAction('TransferMoney'),
+            ]],
         ];
     }
 

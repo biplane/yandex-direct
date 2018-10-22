@@ -69,7 +69,7 @@ class SoapClientV4 extends SoapClient
             $usedMethod = $methodName;
 
             if ($methodName === 'AccountManagement') {
-                $usedMethod = $arguments[0]->getAction();
+                $usedMethod .= $arguments[0]->getAction();
             }
 
             $operationNum = time();
