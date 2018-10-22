@@ -2,7 +2,8 @@
 
 # master
 
-* Исправлена ошибка при формировании финансового токена для метода `AccountManagement` (fix #13)
+* Исправлена ошибка при формировании финансового токена для метода `AccountManagement` 
+  (fix [#13](https://github.com/biplane/yandex-direct/issues/13))
 
 # 4.7.0 [commit logs](https://github.com/biplane/yandex-direct/compare/4.6.1...4.7.0)
 
@@ -10,12 +11,13 @@
 
 # 4.6.1 [commit logs](https://github.com/biplane/yandex-direct/compare/4.6.0...4.6.1)
 
-* Исправлена ошибка, когда XML-документ с описанием запроса не соответствует схеме. #12
+* Исправлена ошибка, когда XML-документ с описанием запроса не соответствует схеме. 
+  (fix [#12](https://github.com/biplane/yandex-direct/issues/12))
 
 # 4.6.0 [commit logs](https://github.com/biplane/yandex-direct/compare/4.5.0...4.6.0)
 
 * В `ReportDefinitionBuilder` добавлена поддержка входных параметров:
-  `Goals` и `AttributionModels`. (Issue #11) 
+  `Goals` и `AttributionModels`. (close [#11](https://github.com/biplane/yandex-direct/issues/11)) 
 
 * Обновлены контракты данных и сервисы, для совместимости с последними изменениями
   в **API 5**.
