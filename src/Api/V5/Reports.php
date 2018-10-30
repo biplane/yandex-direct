@@ -109,9 +109,7 @@ class Reports implements ApiClientInterface
      */
     public function getReady(ReportRequest $reportRequest, $retryInterval = null)
     {
-        $response = $this->waitReady($reportRequest, $retryInterval ?: 0);
-
-        return new ReportResult($response);
+        return $this->waitReady($reportRequest, $retryInterval ?: 0);
     }
 
     /**
@@ -269,20 +267,13 @@ class Reports implements ApiClientInterface
     private function waitReady(ReportRequest $reportRequest, $retryInterval, array $options = [])
     {
         while (true) {
-            $response = $this->request($reportRequest, $options);
+            $result = new ReportResult($this->request($reportRequest, $options));
 
-            if ($response->getStatusCode() === 200) {
-                return $response;
+            if ($result->isReady()) {
+                return $result;
             }
 
-            if ($retryInterval > 0) {
-                $delay = $retryInterval;
-            } elseif ($response->hasHeader('retryIn')) {
-                $delay = (int)$response->getHeader('retryIn')[0];
-            } else {
-                $delay = 1;
-            }
-
+            $delay = max(1, $retryInterval > 0 ? $retryInterval : $result->retryIn());
             sleep($delay);
         }
     }

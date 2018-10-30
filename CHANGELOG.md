@@ -2,6 +2,9 @@
 
 # master
 
+* В `ReportResult` добавлены методы, `retryIn` и `reportsInQueue`. 
+  Для предоставления доступа к [заголовкам ответа](https://tech.yandex.ru/direct/doc/reports/headers-docpage/#ariaid-title3).
+
 # 4.7.1 [commit logs](https://github.com/biplane/yandex-direct/compare/4.7.0...4.7.1)
 
 * Исправлена ошибка при формировании финансового токена для метода `AccountManagement` 

@@ -40,6 +40,34 @@ class ReportResult
     }
 
     /**
+     * Gets an interval to check that report is ready, in seconds.
+     *
+     * @return int|null
+     */
+    public function retryIn()
+    {
+        if ($this->response->hasHeader('retryIn')) {
+            return (int)$this->response->getHeader('retryIn')[0];
+        }
+
+        return null;
+    }
+
+    /**
+     * Gets a quantity of offline-reports in queue.
+     *
+     * @return int|null
+     */
+    public function reportsInQueue()
+    {
+        if ($this->response->hasHeader('reportsInQueue')) {
+            return (int)$this->response->getHeader('reportsInQueue')[0];
+        }
+
+        return null;
+    }
+
+    /**
      * Determines whether the report is ready for download.
      *
      * @return bool
