@@ -1,6 +1,6 @@
 # Changelog
 
-# master
+# 4.8.0 [commit logs](https://github.com/biplane/yandex-direct/compare/4.7.1...4.8.0)
 
 * В `ReportResult` добавлены методы, `retryIn` и `reportsInQueue`. 
   Для предоставления доступа к [заголовкам ответа](https://tech.yandex.ru/direct/doc/reports/headers-docpage/#ariaid-title3).
