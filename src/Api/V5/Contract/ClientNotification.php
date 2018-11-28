@@ -5,7 +5,7 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 /**
  * Auto-generated code.
  */
-class Notification
+class ClientNotification
 {
 
     protected $Email = null;
@@ -15,7 +15,7 @@ class Notification
     protected $Lang = null;
 
     /**
-     * Creates a new instance of Notification.
+     * Creates a new instance of ClientNotification.
      *
      * @return self
      */

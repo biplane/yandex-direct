@@ -1,5 +1,18 @@
 # Changelog
 
+# master
+
+* Исправлен конфликт типа `Notification` между сервисами `Campaigns` и `AgencyClients`/`Clients`.
+  
+  Класс `Biplane\YandexDirect\Api\V5\Contract\Notification` удален. Вместо этого
+  нужно использовать `Biplane\YandexDirect\Api\V5\Contract\CampaignNotification`
+  или `Biplane\YandexDirect\Api\V5\Contract\ClientNotification`.
+  
+  Так же переименованы следующие классы:
+  
+  * `NotificationAdd` -> `ClientNotificationAdd`
+  * `NotificationGet` -> `ClientNotificationGet`
+
 # 4.8.0 [commit logs](https://github.com/biplane/yandex-direct/compare/4.7.1...4.8.0)
 
 * В `ReportResult` добавлены методы, `retryIn` и `reportsInQueue`. 

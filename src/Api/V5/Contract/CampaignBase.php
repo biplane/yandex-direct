@@ -53,7 +53,7 @@ class CampaignBase
     /**
      * Gets Notification.
      *
-     * @return Notification|null
+     * @return CampaignNotification|null
      */
     public function getNotification()
     {
@@ -63,10 +63,10 @@ class CampaignBase
     /**
      * Sets Notification.
      *
-     * @param Notification|null $value
+     * @param CampaignNotification|null $value
      * @return $this
      */
-    public function setNotification(Notification $value = null)
+    public function setNotification(CampaignNotification $value = null)
     {
         $this->Notification = $value;
 

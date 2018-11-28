@@ -254,7 +254,7 @@ class ClientGetItem extends ClientBaseItem
     /**
      * Gets Notification.
      *
-     * @return NotificationGet|null
+     * @return ClientNotificationGet|null
      */
     public function getNotification()
     {
@@ -264,10 +264,10 @@ class ClientGetItem extends ClientBaseItem
     /**
      * Sets Notification.
      *
-     * @param NotificationGet|null $value
+     * @param ClientNotificationGet|null $value
      * @return $this
      */
-    public function setNotification(NotificationGet $value = null)
+    public function setNotification(ClientNotificationGet $value = null)
     {
         $this->Notification = $value;
 

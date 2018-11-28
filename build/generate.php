@@ -141,6 +141,10 @@ generate($generator, [
 generate($generator, [
     'inputFile' => 'https://api.direct.yandex.com/v5/agencyclients?wsdl',
     'renameType' => function ($typeName) {
+        if (false !== strpos($typeName, 'Notification')) {
+            return preg_replace('#^Notification(Add|Get)?$#', 'Client$0', $typeName);
+        }
+
         return preg_replace(
             '#^(Add|Get|Update)(Request|Response)$#',
             '$1AgencyClients$2',
@@ -189,6 +193,10 @@ generate($generator, [
 generate($generator, [
     'inputFile' => 'https://api.direct.yandex.com/v5/campaigns?wsdl',
     'renameType' => function ($typeName) {
+        if ('Notification' === $typeName) {
+            return 'CampaignNotification';
+        }
+
         return preg_replace(
             '#^(Add|Archive|Delete|Get|Resume|Suspend|Unarchive|Update)(Request|Response)$#',
             '$1Campaigns$2',
@@ -221,6 +229,10 @@ generate($generator, [
 generate($generator, [
     'inputFile' => 'https://api.direct.yandex.com/v5/clients?wsdl',
     'renameType' => function ($typeName) {
+        if (false !== strpos($typeName, 'Notification')) {
+            return preg_replace('#^Notification(Add|Get)?$#', 'Client$0', $typeName);
+        }
+
         return preg_replace(
             '#^(Get|Update)(Request|Response)$#',
             '$1Clients$2',

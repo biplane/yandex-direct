@@ -150,7 +150,7 @@ class Campaigns extends SoapClientV5
                 'MobileAppCampaignStrategyAdd' => 'Biplane\YandexDirect\Api\V5\Contract\MobileAppCampaignStrategyAdd',
                 'DynamicTextCampaignStrategyAdd' => 'Biplane\YandexDirect\Api\V5\Contract\DynamicTextCampaignStrategyAdd',
                 'CpmBannerCampaignStrategyAdd' => 'Biplane\YandexDirect\Api\V5\Contract\CpmBannerCampaignStrategyAdd',
-                'Notification' => 'Biplane\YandexDirect\Api\V5\Contract\Notification',
+                'Notification' => 'Biplane\YandexDirect\Api\V5\Contract\CampaignNotification',
                 'SmsSettings' => 'Biplane\YandexDirect\Api\V5\Contract\SmsSettings',
                 'EmailSettings' => 'Biplane\YandexDirect\Api\V5\Contract\EmailSettings',
                 'TimeTargetingOnPublicHolidays' => 'Biplane\YandexDirect\Api\V5\Contract\TimeTargetingOnPublicHolidays',

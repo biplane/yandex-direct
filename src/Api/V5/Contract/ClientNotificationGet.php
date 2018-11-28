@@ -5,13 +5,13 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 /**
  * Auto-generated code.
  */
-class NotificationGet extends Notification
+class ClientNotificationGet extends ClientNotification
 {
 
     protected $SmsPhoneNumber = null;
 
     /**
-     * Creates a new instance of NotificationGet.
+     * Creates a new instance of ClientNotificationGet.
      *
      * @return self
      */

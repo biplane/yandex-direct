@@ -5,11 +5,11 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 /**
  * Auto-generated code.
  */
-class NotificationAdd extends Notification
+class ClientNotificationAdd extends ClientNotification
 {
 
     /**
-     * Creates a new instance of NotificationAdd.
+     * Creates a new instance of ClientNotificationAdd.
      *
      * @return self
      */

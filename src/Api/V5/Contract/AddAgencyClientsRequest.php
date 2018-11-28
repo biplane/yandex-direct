@@ -131,7 +131,7 @@ class AddAgencyClientsRequest
     /**
      * Gets Notification.
      *
-     * @return NotificationAdd
+     * @return ClientNotificationAdd
      */
     public function getNotification()
     {
@@ -141,10 +141,10 @@ class AddAgencyClientsRequest
     /**
      * Sets Notification.
      *
-     * @param NotificationAdd $value
+     * @param ClientNotificationAdd $value
      * @return $this
      */
-    public function setNotification(NotificationAdd $value)
+    public function setNotification(ClientNotificationAdd $value)
     {
         $this->Notification = $value;
 
