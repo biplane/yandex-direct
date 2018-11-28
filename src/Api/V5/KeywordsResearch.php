@@ -63,6 +63,7 @@ class KeywordsResearch extends SoapClientV5
                 'HasSearchVolumeRequest' => 'Biplane\YandexDirect\Api\V5\Contract\HasSearchVolumeKeywordsRequest',
                 'HasSearchVolumeResponse' => 'Biplane\YandexDirect\Api\V5\Contract\HasSearchVolumeKeywordsResponse',
                 'DeduplicateRequestItem' => 'Biplane\YandexDirect\Api\V5\Contract\DeduplicateRequestItem',
+                'DeduplicateOperationEnum' => 'Biplane\YandexDirect\Api\V5\Contract\DeduplicateOperationEnum',
                 'DeduplicateRequest' => 'Biplane\YandexDirect\Api\V5\Contract\DeduplicateRequest',
                 'DeduplicateErrorItem' => 'Biplane\YandexDirect\Api\V5\Contract\DeduplicateErrorItem',
                 'DeduplicateResponseAddItem' => 'Biplane\YandexDirect\Api\V5\Contract\DeduplicateResponseAddItem',
