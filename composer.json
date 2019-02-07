@@ -28,7 +28,7 @@
     "zendframework/zend-code": "^2.6",
     "doctrine/inflector": "^1.0",
     "monolog/monolog": "^1.21",
-    "friendsofphp/php-cs-fixer": "^2.1",
+    "friendsofphp/php-cs-fixer": "^2.14",
     "php-vcr/php-vcr": "^1.4"
   },
   "suggest": {
