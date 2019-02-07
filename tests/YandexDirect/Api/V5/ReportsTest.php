@@ -16,6 +16,7 @@ use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
 use GuzzleHttp\RequestOptions;
 use Psr\Http\Message\RequestInterface;
+use SebastianBergmann\CodeCoverage\Report\Xml\Report;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**
@@ -146,6 +147,31 @@ class ReportsTest extends \PHPUnit_Framework_TestCase
             'skipColumnHeader' => 'true',
             'skipReportSummary' => 'true',
         ]);
+    }
+
+    public function testConnectToSandbox()
+    {
+        $reportRequest = (new ReportRequest())
+            ->setDefinition('<ReportDefinition />')
+            ->setProcessingMode(ReportRequest::PROCESSING_MODE_OFFLINE);
+
+        $this->mockHandler->append(new Response(201));
+
+        $service = $this->createService([
+            'access_token' => 'foo',
+            'login' => 'bar',
+            'sandbox' => true,
+        ]);
+
+        $result = $service->get($reportRequest);
+
+        $this->assertFalse($result->isReady());
+        $this->assertRequest($this->mockHandler->getLastRequest(), $reportRequest->getDefinition(), [
+            'Authorization' => 'Bearer foo',
+            'Accept-Language' => 'en',
+            'Client-Login' => 'bar',
+            'processingMode' => 'offline',
+        ], 'https://api-sandbox.direct.yandex.com/v5/reports');
     }
 
     public function testWaitBuildingReport()
@@ -420,9 +446,9 @@ RESP;
         return new Reports($user, $httpClient);
     }
 
-    private function assertRequest(RequestInterface $request, $body, array $headers)
+    private function assertRequest(RequestInterface $request, $body, array $headers, $endpoint = Reports::ENDPOINT)
     {
-        $this->assertEquals(Reports::ENDPOINT, $request->getUri());
+        $this->assertEquals($endpoint, $request->getUri());
         $this->assertEquals($body, $request->getBody());
 
         foreach ($headers as $name => $expected) {
