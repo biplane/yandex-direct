@@ -16,7 +16,6 @@ use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
 use GuzzleHttp\RequestOptions;
 use Psr\Http\Message\RequestInterface;
-use SebastianBergmann\CodeCoverage\Report\Xml\Report;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**
