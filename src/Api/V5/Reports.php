@@ -225,7 +225,7 @@ class Reports implements ApiClientInterface
 
         $request = new Request(
             'POST',
-            self::ENDPOINT,
+            $this->user->resolveWsdl(self::ENDPOINT),
             $this->buildRequestHeaders($reportRequest),
             $reportDefinition
         );
