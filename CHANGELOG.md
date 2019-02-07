@@ -2,6 +2,8 @@
 
 # master
 
+* Добавлена поддержка *Песочницы* для сервиса `Reports` (PR [#16](https://github.com/biplane/yandex-direct/pull/16))
+
 # 4.9.0 [commit logs](https://github.com/biplane/yandex-direct/compare/4.8.0...4.9.0)
 
 * Исправлен конфликт типа `Notification` между сервисами `Campaigns` и `AgencyClients`/`Clients`.
