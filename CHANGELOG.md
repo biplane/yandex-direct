@@ -2,6 +2,9 @@
 
 # master
 
+* Обновлены контракты данных и сервисы, для совместимости с последними изменениями **API**
+  (включая изменения от 11.03.2019).
+
 # 4.9.1 [commit logs](https://github.com/biplane/yandex-direct/compare/4.9.0...4.9.1)
 
 * Добавлена поддержка *Песочницы* для сервиса `Reports` (PR [#16](https://github.com/biplane/yandex-direct/pull/16))

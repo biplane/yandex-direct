@@ -10,6 +10,9 @@ class MobileAdjustmentAdd
 
     protected $BidModifier = null;
 
+//    Can be omit.
+//    protected $OperatingSystemType = null;
+
     /**
      * Creates a new instance of MobileAdjustmentAdd.
      *
@@ -39,6 +42,31 @@ class MobileAdjustmentAdd
     public function setBidModifier($value)
     {
         $this->BidModifier = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets OperatingSystemType.
+     *
+     * @return string|null
+     * @see OperatingSystemTypeEnum
+     */
+    public function getOperatingSystemType()
+    {
+        return isset($this->OperatingSystemType) ? $this->OperatingSystemType : null;
+    }
+
+    /**
+     * Sets OperatingSystemType.
+     *
+     * @param string|null $value
+     * @return $this
+     * @see OperatingSystemTypeEnum
+     */
+    public function setOperatingSystemType($value = null)
+    {
+        $this->OperatingSystemType = $value;
 
         return $this;
     }

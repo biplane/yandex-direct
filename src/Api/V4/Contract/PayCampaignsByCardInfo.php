@@ -14,6 +14,8 @@ class PayCampaignsByCardInfo
 
     protected $Payments = [];
 
+    protected $Version = null;
+
     /**
      * Creates a new instance of PayCampaignsByCardInfo.
      *
@@ -89,6 +91,29 @@ class PayCampaignsByCardInfo
     public function setPayments(array $value)
     {
         $this->Payments = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets Version.
+     *
+     * @return string|null
+     */
+    public function getVersion()
+    {
+        return $this->Version;
+    }
+
+    /**
+     * Sets Version.
+     *
+     * @param string|null $value
+     * @return $this
+     */
+    public function setVersion($value = null)
+    {
+        $this->Version = $value;
 
         return $this;
     }

@@ -16,6 +16,8 @@ class TextCampaignFieldEnum
 
     const BIDDING_STRATEGY = 'BiddingStrategy';
 
+    const PRIORITY_GOALS = 'PriorityGoals';
+
 
 }
 

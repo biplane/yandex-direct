@@ -22,6 +22,8 @@ class AccountManagementRequest
 
     protected $CustomTransactionID = null;
 
+    protected $Version = null;
+
     /**
      * Creates a new instance of AccountManagementRequest.
      *
@@ -189,6 +191,29 @@ class AccountManagementRequest
     public function setCustomTransactionID($value = null)
     {
         $this->CustomTransactionID = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets Version.
+     *
+     * @return string|null
+     */
+    public function getVersion()
+    {
+        return $this->Version;
+    }
+
+    /**
+     * Sets Version.
+     *
+     * @param string|null $value
+     * @return $this
+     */
+    public function setVersion($value = null)
+    {
+        $this->Version = $value;
 
         return $this;
     }

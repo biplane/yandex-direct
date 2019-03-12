@@ -19,6 +19,9 @@ class TextCampaignAddItem
 //    Can be omit.
 //    protected $RelevantKeywords = null;
 
+//    Can be omit.
+//    protected $PriorityGoals = null;
+
     /**
      * Creates a new instance of TextCampaignAddItem.
      *
@@ -117,6 +120,29 @@ class TextCampaignAddItem
     public function setRelevantKeywords(RelevantKeywordsSettingAdd $value = null)
     {
         $this->RelevantKeywords = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets PriorityGoals.
+     *
+     * @return PriorityGoalsArray|null
+     */
+    public function getPriorityGoals()
+    {
+        return isset($this->PriorityGoals) ? $this->PriorityGoals : null;
+    }
+
+    /**
+     * Sets PriorityGoals.
+     *
+     * @param PriorityGoalsArray|null $value
+     * @return $this
+     */
+    public function setPriorityGoals(PriorityGoalsArray $value = null)
+    {
+        $this->PriorityGoals = $value;
 
         return $this;
     }

@@ -27,6 +27,9 @@ class BidModifierGetItem
 //    protected $MobileAdjustment = null;
 
 //    Can be omit.
+//    protected $DesktopAdjustment = null;
+
+//    Can be omit.
 //    protected $DemographicsAdjustment = null;
 
 //    Can be omit.
@@ -186,6 +189,29 @@ class BidModifierGetItem
     public function setMobileAdjustment(MobileAdjustmentGet $value = null)
     {
         $this->MobileAdjustment = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets DesktopAdjustment.
+     *
+     * @return DesktopAdjustmentGet|null
+     */
+    public function getDesktopAdjustment()
+    {
+        return isset($this->DesktopAdjustment) ? $this->DesktopAdjustment : null;
+    }
+
+    /**
+     * Sets DesktopAdjustment.
+     *
+     * @param DesktopAdjustmentGet|null $value
+     * @return $this
+     */
+    public function setDesktopAdjustment(DesktopAdjustmentGet $value = null)
+    {
+        $this->DesktopAdjustment = $value;
 
         return $this;
     }
