@@ -72,4 +72,5 @@ final class FieldEnum
     const WEIGHTED_CTR = 'WeightedCtr';
     const WEIGHTED_IMPRESSIONS = 'WeightedImpressions';
     const YEAR = 'Year';
+    const PROFIT = 'Profit';
 }
