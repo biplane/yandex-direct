@@ -4,7 +4,6 @@ namespace Biplane\YandexDirect\Api\V5\Report;
 
 /**
  * FieldEnum.
- 
  *
  * @author Denis Vasilev
  */
