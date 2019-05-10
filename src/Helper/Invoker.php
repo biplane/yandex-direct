@@ -92,6 +92,7 @@ class Invoker
                 ApiException::OPERATION_ERROR,
                 ApiException::EXCEEDED_LIMIT_CONCURRENT_REQUESTS,
                 ApiException::TEMPORARILY_UNAVAILABLE,
+                ApiException::INTERNAL_ERROR,
             ]);
         }
 
