@@ -35,6 +35,9 @@ class TextAdGet extends TextAdGetBase
 //    Can be omit.
 //    protected $VideoExtension = null;
 
+//    Can be omit.
+//    protected $PriceExtension = null;
+
     /**
      * Creates a new instance of TextAdGet.
      *
@@ -250,6 +253,29 @@ class TextAdGet extends TextAdGetBase
     public function setVideoExtension(VideoExtensionGetItem $value = null)
     {
         $this->VideoExtension = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets PriceExtension.
+     *
+     * @return PriceExtensionGetItem|null
+     */
+    public function getPriceExtension()
+    {
+        return isset($this->PriceExtension) ? $this->PriceExtension : null;
+    }
+
+    /**
+     * Sets PriceExtension.
+     *
+     * @param PriceExtensionGetItem|null $value
+     * @return $this
+     */
+    public function setPriceExtension(PriceExtensionGetItem $value = null)
+    {
+        $this->PriceExtension = $value;
 
         return $this;
     }

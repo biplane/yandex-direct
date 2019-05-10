@@ -29,6 +29,9 @@ class TextAdUpdate extends TextAdUpdateBase
 //    Can be omit.
 //    protected $VideoExtension = null;
 
+//    Can be omit.
+//    protected $PriceExtension = null;
+
     /**
      * Creates a new instance of TextAdUpdate.
      *
@@ -198,6 +201,29 @@ class TextAdUpdate extends TextAdUpdateBase
     public function setVideoExtension(VideoExtensionUpdateItem $value = null)
     {
         $this->VideoExtension = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets PriceExtension.
+     *
+     * @return PriceExtensionUpdateItem|null
+     */
+    public function getPriceExtension()
+    {
+        return isset($this->PriceExtension) ? $this->PriceExtension : null;
+    }
+
+    /**
+     * Sets PriceExtension.
+     *
+     * @param PriceExtensionUpdateItem|null $value
+     * @return $this
+     */
+    public function setPriceExtension(PriceExtensionUpdateItem $value = null)
+    {
+        $this->PriceExtension = $value;
 
         return $this;
     }

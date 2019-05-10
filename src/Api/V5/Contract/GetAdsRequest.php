@@ -16,6 +16,9 @@ class GetAdsRequest extends GetRequestGeneral
 //    protected $TextAdFieldNames = null;
 
 //    Can be omit.
+//    protected $TextAdPriceExtensionFieldNames = null;
+
+//    Can be omit.
 //    protected $MobileAppAdFieldNames = null;
 
 //    Can be omit.
@@ -118,6 +121,31 @@ class GetAdsRequest extends GetRequestGeneral
     public function setTextAdFieldNames(array $value = null)
     {
         $this->TextAdFieldNames = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets TextAdPriceExtensionFieldNames.
+     *
+     * @return string[]|null
+     * @see TextAdPriceExtensionFieldEnum
+     */
+    public function getTextAdPriceExtensionFieldNames()
+    {
+        return isset($this->TextAdPriceExtensionFieldNames) ? $this->TextAdPriceExtensionFieldNames : null;
+    }
+
+    /**
+     * Sets TextAdPriceExtensionFieldNames.
+     *
+     * @param string[]|null $value
+     * @return $this
+     * @see TextAdPriceExtensionFieldEnum
+     */
+    public function setTextAdPriceExtensionFieldNames(array $value = null)
+    {
+        $this->TextAdPriceExtensionFieldNames = $value;
 
         return $this;
     }

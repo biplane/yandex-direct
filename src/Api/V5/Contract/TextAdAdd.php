@@ -26,6 +26,9 @@ class TextAdAdd extends TextAdAddBase
 //    Can be omit.
 //    protected $VideoExtension = null;
 
+//    Can be omit.
+//    protected $PriceExtension = null;
+
     /**
      * Creates a new instance of TextAdAdd.
      *
@@ -195,6 +198,29 @@ class TextAdAdd extends TextAdAddBase
     public function setVideoExtension(VideoExtensionAddItem $value = null)
     {
         $this->VideoExtension = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets PriceExtension.
+     *
+     * @return PriceExtensionAddItem|null
+     */
+    public function getPriceExtension()
+    {
+        return isset($this->PriceExtension) ? $this->PriceExtension : null;
+    }
+
+    /**
+     * Sets PriceExtension.
+     *
+     * @param PriceExtensionAddItem|null $value
+     * @return $this
+     */
+    public function setPriceExtension(PriceExtensionAddItem $value = null)
+    {
+        $this->PriceExtension = $value;
 
         return $this;
     }
