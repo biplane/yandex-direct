@@ -32,6 +32,9 @@ class TextAdUpdate extends TextAdUpdateBase
 //    Can be omit.
 //    protected $PriceExtension = null;
 
+//    Can be omit.
+//    protected $TurboPageId = null;
+
     /**
      * Creates a new instance of TextAdUpdate.
      *
@@ -224,6 +227,29 @@ class TextAdUpdate extends TextAdUpdateBase
     public function setPriceExtension(PriceExtensionUpdateItem $value = null)
     {
         $this->PriceExtension = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets TurboPageId.
+     *
+     * @return int|null
+     */
+    public function getTurboPageId()
+    {
+        return isset($this->TurboPageId) ? $this->TurboPageId : null;
+    }
+
+    /**
+     * Sets TurboPageId.
+     *
+     * @param int|null $value
+     * @return $this
+     */
+    public function setTurboPageId($value = null)
+    {
+        $this->TurboPageId = $value;
 
         return $this;
     }

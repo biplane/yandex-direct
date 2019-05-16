@@ -40,6 +40,10 @@ class TextAdFieldEnum
 
     const VIDEO_EXTENSION = 'VideoExtension';
 
+    const TURBO_PAGE_ID = 'TurboPageId';
+
+    const TURBO_PAGE_MODERATION = 'TurboPageModeration';
+
 
 }
 

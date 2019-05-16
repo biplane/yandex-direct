@@ -50,7 +50,7 @@ class SitelinksSetGetItem
     /**
      * Gets Sitelinks.
      *
-     * @return Sitelink[]|null
+     * @return SitelinkGetItem[]|null
      */
     public function getSitelinks()
     {
@@ -60,7 +60,7 @@ class SitelinksSetGetItem
     /**
      * Sets Sitelinks.
      *
-     * @param Sitelink[]|null $value
+     * @param SitelinkGetItem[]|null $value
      * @return $this
      */
     public function setSitelinks(array $value = null)

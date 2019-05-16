@@ -14,6 +14,10 @@ class CpmBannerAdBuilderAdFieldEnum
 
     const TRACKING_PIXELS = 'TrackingPixels';
 
+    const TURBO_PAGE_ID = 'TurboPageId';
+
+    const TURBO_PAGE_MODERATION = 'TurboPageModeration';
+
 
 }
 

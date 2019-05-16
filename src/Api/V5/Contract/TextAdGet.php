@@ -38,6 +38,12 @@ class TextAdGet extends TextAdGetBase
 //    Can be omit.
 //    protected $PriceExtension = null;
 
+//    Can be omit.
+//    protected $TurboPageId = null;
+
+//    Can be omit.
+//    protected $TurboPageModeration = null;
+
     /**
      * Creates a new instance of TextAdGet.
      *
@@ -276,6 +282,52 @@ class TextAdGet extends TextAdGetBase
     public function setPriceExtension(PriceExtensionGetItem $value = null)
     {
         $this->PriceExtension = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets TurboPageId.
+     *
+     * @return int|null
+     */
+    public function getTurboPageId()
+    {
+        return isset($this->TurboPageId) ? $this->TurboPageId : null;
+    }
+
+    /**
+     * Sets TurboPageId.
+     *
+     * @param int|null $value
+     * @return $this
+     */
+    public function setTurboPageId($value = null)
+    {
+        $this->TurboPageId = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets TurboPageModeration.
+     *
+     * @return ExtensionModeration|null
+     */
+    public function getTurboPageModeration()
+    {
+        return isset($this->TurboPageModeration) ? $this->TurboPageModeration : null;
+    }
+
+    /**
+     * Sets TurboPageModeration.
+     *
+     * @param ExtensionModeration|null $value
+     * @return $this
+     */
+    public function setTurboPageModeration(ExtensionModeration $value = null)
+    {
+        $this->TurboPageModeration = $value;
 
         return $this;
     }

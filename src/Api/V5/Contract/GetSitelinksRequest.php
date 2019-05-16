@@ -11,7 +11,11 @@ class GetSitelinksRequest extends GetRequestGeneral
 //    Can be omit.
 //    protected $SelectionCriteria = null;
 
-    protected $FieldNames = [];
+//    Can be omit.
+//    protected $FieldNames = null;
+
+//    Can be omit.
+//    protected $SitelinkFieldNames = null;
 
     /**
      * Creates a new instance of GetSitelinksRequest.
@@ -49,24 +53,49 @@ class GetSitelinksRequest extends GetRequestGeneral
     /**
      * Gets FieldNames.
      *
-     * @return string[]
+     * @return string[]|null
      * @see SitelinksSetFieldEnum
      */
     public function getFieldNames()
     {
-        return $this->FieldNames;
+        return isset($this->FieldNames) ? $this->FieldNames : null;
     }
 
     /**
      * Sets FieldNames.
      *
-     * @param string[] $value
+     * @param string[]|null $value
      * @return $this
      * @see SitelinksSetFieldEnum
      */
-    public function setFieldNames(array $value)
+    public function setFieldNames(array $value = null)
     {
         $this->FieldNames = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets SitelinkFieldNames.
+     *
+     * @return string[]|null
+     * @see SitelinkFieldEnum
+     */
+    public function getSitelinkFieldNames()
+    {
+        return isset($this->SitelinkFieldNames) ? $this->SitelinkFieldNames : null;
+    }
+
+    /**
+     * Sets SitelinkFieldNames.
+     *
+     * @param string[]|null $value
+     * @return $this
+     * @see SitelinkFieldEnum
+     */
+    public function setSitelinkFieldNames(array $value = null)
+    {
+        $this->SitelinkFieldNames = $value;
 
         return $this;
     }

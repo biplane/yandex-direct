@@ -12,6 +12,10 @@ class TextImageAdFieldEnum
 
     const HREF = 'Href';
 
+    const TURBO_PAGE_ID = 'TurboPageId';
+
+    const TURBO_PAGE_MODERATION = 'TurboPageModeration';
+
 
 }
 

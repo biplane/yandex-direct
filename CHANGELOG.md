@@ -2,6 +2,13 @@
 
 # master
 
+* Обновлены сервисы и контракты данных для совместимости с имзенениями в API от 15 мая 2019 г.
+  
+  В сервисе `Sitelinks` есть изменения, нарушающие обратную совместимость.
+  Метод `SitelinksSetGetItem::getItems()` возвращает массив объектов
+  `Biplane\YandexDirect\Api\V5\Contract\SitelinkAddItem`, вместо
+  `Biplane\YandexDirect\Api\V5\Contract\Sitelink`.
+
 # 4.11.0 [commit logs](https://github.com/biplane/yandex-direct/compare/4.10.0...4.11.0)
 
 * Для ошибок с кодом `500` резрешен повторный запрос.

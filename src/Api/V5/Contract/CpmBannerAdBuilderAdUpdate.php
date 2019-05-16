@@ -14,6 +14,9 @@ class CpmBannerAdBuilderAdUpdate extends AdBuilderAdUpdateBase
 //    Can be omit.
 //    protected $TrackingPixels = null;
 
+//    Can be omit.
+//    protected $TurboPageId = null;
+
     /**
      * Creates a new instance of CpmBannerAdBuilderAdUpdate.
      *
@@ -66,6 +69,29 @@ class CpmBannerAdBuilderAdUpdate extends AdBuilderAdUpdateBase
     public function setTrackingPixels(array $value = null)
     {
         $this->TrackingPixels = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets TurboPageId.
+     *
+     * @return int|null
+     */
+    public function getTurboPageId()
+    {
+        return isset($this->TurboPageId) ? $this->TurboPageId : null;
+    }
+
+    /**
+     * Sets TurboPageId.
+     *
+     * @param int|null $value
+     * @return $this
+     */
+    public function setTurboPageId($value = null)
+    {
+        $this->TurboPageId = $value;
 
         return $this;
     }

@@ -23,7 +23,7 @@ class SitelinksSetAddItem
     /**
      * Gets Sitelinks.
      *
-     * @return Sitelink[]
+     * @return SitelinkAddItem[]
      */
     public function getSitelinks()
     {
@@ -33,7 +33,7 @@ class SitelinksSetAddItem
     /**
      * Sets Sitelinks.
      *
-     * @param Sitelink[] $value
+     * @param SitelinkAddItem[] $value
      * @return $this
      */
     public function setSitelinks(array $value)

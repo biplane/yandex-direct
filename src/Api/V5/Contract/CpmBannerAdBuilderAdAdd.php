@@ -8,10 +8,14 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class CpmBannerAdBuilderAdAdd extends AdBuilderAdAddBase
 {
 
-    protected $Href = null;
+//    Can be omit.
+//    protected $Href = null;
 
 //    Can be omit.
 //    protected $TrackingPixels = null;
+
+//    Can be omit.
+//    protected $TurboPageId = null;
 
     /**
      * Creates a new instance of CpmBannerAdBuilderAdAdd.
@@ -26,20 +30,20 @@ class CpmBannerAdBuilderAdAdd extends AdBuilderAdAddBase
     /**
      * Gets Href.
      *
-     * @return string
+     * @return string|null
      */
     public function getHref()
     {
-        return $this->Href;
+        return isset($this->Href) ? $this->Href : null;
     }
 
     /**
      * Sets Href.
      *
-     * @param string $value
+     * @param string|null $value
      * @return $this
      */
-    public function setHref($value)
+    public function setHref($value = null)
     {
         $this->Href = $value;
 
@@ -65,6 +69,29 @@ class CpmBannerAdBuilderAdAdd extends AdBuilderAdAddBase
     public function setTrackingPixels(array $value = null)
     {
         $this->TrackingPixels = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets TurboPageId.
+     *
+     * @return int|null
+     */
+    public function getTurboPageId()
+    {
+        return isset($this->TurboPageId) ? $this->TurboPageId : null;
+    }
+
+    /**
+     * Sets TurboPageId.
+     *
+     * @param int|null $value
+     * @return $this
+     */
+    public function setTurboPageId($value = null)
+    {
+        $this->TurboPageId = $value;
 
         return $this;
     }

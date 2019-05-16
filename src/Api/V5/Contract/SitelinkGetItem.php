@@ -5,18 +5,23 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 /**
  * Auto-generated code.
  */
-class Sitelink
+class SitelinkGetItem
 {
 
-    protected $Title = null;
+//    Can be omit.
+//    protected $Title = null;
 
-    protected $Href = null;
+//    Can be omit.
+//    protected $Href = null;
 
 //    Can be omit.
 //    protected $Description = null;
 
+//    Can be omit.
+//    protected $TurboPageId = null;
+
     /**
-     * Creates a new instance of Sitelink.
+     * Creates a new instance of SitelinkGetItem.
      *
      * @return self
      */
@@ -28,20 +33,20 @@ class Sitelink
     /**
      * Gets Title.
      *
-     * @return string
+     * @return string|null
      */
     public function getTitle()
     {
-        return $this->Title;
+        return isset($this->Title) ? $this->Title : null;
     }
 
     /**
      * Sets Title.
      *
-     * @param string $value
+     * @param string|null $value
      * @return $this
      */
-    public function setTitle($value)
+    public function setTitle($value = null)
     {
         $this->Title = $value;
 
@@ -51,20 +56,20 @@ class Sitelink
     /**
      * Gets Href.
      *
-     * @return string
+     * @return string|null
      */
     public function getHref()
     {
-        return $this->Href;
+        return isset($this->Href) ? $this->Href : null;
     }
 
     /**
      * Sets Href.
      *
-     * @param string $value
+     * @param string|null $value
      * @return $this
      */
-    public function setHref($value)
+    public function setHref($value = null)
     {
         $this->Href = $value;
 
@@ -90,6 +95,29 @@ class Sitelink
     public function setDescription($value = null)
     {
         $this->Description = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets TurboPageId.
+     *
+     * @return int|null
+     */
+    public function getTurboPageId()
+    {
+        return isset($this->TurboPageId) ? $this->TurboPageId : null;
+    }
+
+    /**
+     * Sets TurboPageId.
+     *
+     * @param int|null $value
+     * @return $this
+     */
+    public function setTurboPageId($value = null)
+    {
+        $this->TurboPageId = $value;
 
         return $this;
     }
