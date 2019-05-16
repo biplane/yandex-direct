@@ -1,6 +1,6 @@
 # Changelog
 
-# master
+# 4.12.0 [commit logs](https://github.com/biplane/yandex-direct/compare/4.11.0...4.12.0)
 
 * Обновлены сервисы и контракты данных для совместимости с имзенениями в API от 15 мая 2019 г.
   
