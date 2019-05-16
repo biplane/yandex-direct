@@ -6,7 +6,7 @@
   
   В сервисе `Sitelinks` есть изменения, нарушающие обратную совместимость.
   Метод `SitelinksSetGetItem::getItems()` возвращает массив объектов
-  `Biplane\YandexDirect\Api\V5\Contract\SitelinkAddItem`, вместо
+  `Biplane\YandexDirect\Api\V5\Contract\SitelinkGetItem`, вместо
   `Biplane\YandexDirect\Api\V5\Contract\Sitelink`.
 
 # 4.11.0 [commit logs](https://github.com/biplane/yandex-direct/compare/4.10.0...4.11.0)
