@@ -159,7 +159,6 @@ class Campaigns extends SoapClientV5
                 'RelevantKeywordsSetting' => 'Biplane\YandexDirect\Api\V5\Contract\RelevantKeywordsSetting',
                 'PriorityGoalsItem' => 'Biplane\YandexDirect\Api\V5\Contract\PriorityGoalsItem',
                 'PriorityGoalsUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\PriorityGoalsUpdateItem',
-                'PriorityGoalsArray' => 'Biplane\YandexDirect\Api\V5\Contract\PriorityGoalsArray',
                 'PriorityGoalsUpdateSetting' => 'Biplane\YandexDirect\Api\V5\Contract\PriorityGoalsUpdateSetting',
                 'FrequencyCapSetting' => 'Biplane\YandexDirect\Api\V5\Contract\FrequencyCapSetting',
                 'DailyBudget' => 'Biplane\YandexDirect\Api\V5\Contract\DailyBudget',

@@ -65,12 +65,12 @@ class Generator implements GeneratorInterface
 
         /** @var TypeNode $node */
         foreach ($wsdl->getTypes() as $node) {
-            if (in_array($node->getName(), $excludedTypes) || isset($types[$node->getName()])) {
+            if (in_array($node->getName(), $excludedTypes, true) || isset($types[$node->getName()])) {
                 continue;
             }
 
             if ($node->isComplex()) {
-                if ($node->isArray()) {
+                if (NodeUtil::isArray($node)) {
                     $type = new Contract\ArrayType($node, $renameType($node->getName()), $namespace);
                 } else {
                     $type = new Contract\ComplexType($node, $renameType($node->getName()), $namespace);

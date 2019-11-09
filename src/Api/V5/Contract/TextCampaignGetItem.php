@@ -76,7 +76,7 @@ class TextCampaignGetItem extends TextCampaignBase
     /**
      * Gets PriorityGoals.
      *
-     * @return PriorityGoalsArray|null
+     * @return PriorityGoalsItem[]|null
      */
     public function getPriorityGoals()
     {
@@ -86,10 +86,10 @@ class TextCampaignGetItem extends TextCampaignBase
     /**
      * Sets PriorityGoals.
      *
-     * @param PriorityGoalsArray|null $value
+     * @param PriorityGoalsItem[]|null $value
      * @return $this
      */
-    public function setPriorityGoals(PriorityGoalsArray $value = null)
+    public function setPriorityGoals(array $value = null)
     {
         $this->PriorityGoals = $value;
 
