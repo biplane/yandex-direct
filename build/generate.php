@@ -343,6 +343,22 @@ generate($generator, [
 ] + $defaultOptions);
 
 generate($generator, [
+    'inputFile' => 'https://api.direct.yandex.com/v5/negativekeywordsharedsets?wsdl',
+    'renameType' => function ($typeName) {
+        return preg_replace(
+            '#^(Add|Delete|Get|Update)(Request|Response)$#',
+            '$1NegativeKeywordSharedSets$2',
+            $typeName
+        );
+    },
+    'excludeTypes' => [
+        'ArrayOfString',
+        'ArrayOfInteger',
+        'ArrayOfLong',
+    ],
+] + $defaultOptions);
+
+generate($generator, [
     'inputFile' => 'https://api.direct.yandex.com/v5/retargetinglists?wsdl',
     'renameType' => function ($typeName) {
         return preg_replace(

@@ -134,6 +134,8 @@ You can get the proxy of a service through the `User` object, to interact with Y
 
 * `User::getLeadsService()` - API 5
 
+* `User::getNegativeKeywordSharedSetsService()` - API 5
+
 * `User::getRetargetingListsService()` - Service for manage lists of retargeting (API 5).
 
 * `User::getSitelinksService()` - Service for manage sitelinks (API 5).

@@ -126,6 +126,7 @@ class UserTest extends TestCase
             [V5\Keywords::class, 'getKeywordsService'],
             [V5\KeywordsResearch::class, 'getKeywordsResearchService'],
             [V5\Leads::class, 'getLeadsService'],
+            [V5\NegativeKeywordSharedSets::class, 'getNegativeKeywordSharedSetsService'],
             [V5\RetargetingLists::class, 'getRetargetingListsService'],
             [V5\Sitelinks::class, 'getSitelinksService'],
             [V5\TurboPages::class, 'getTurboPagesService'],

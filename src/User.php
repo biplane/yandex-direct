@@ -19,6 +19,7 @@ use Biplane\YandexDirect\Api\V5\KeywordBids;
 use Biplane\YandexDirect\Api\V5\Keywords;
 use Biplane\YandexDirect\Api\V5\KeywordsResearch;
 use Biplane\YandexDirect\Api\V5\Leads;
+use Biplane\YandexDirect\Api\V5\NegativeKeywordSharedSets;
 use Biplane\YandexDirect\Api\V5\Reports;
 use Biplane\YandexDirect\Api\V5\RetargetingLists;
 use Biplane\YandexDirect\Api\V5\Sitelinks;
@@ -309,6 +310,16 @@ class User
     public function getLeadsService()
     {
         return $this->getProxy(Leads::class);
+    }
+
+    /**
+     * Gets the proxy of web-service to manage shared sets of negative keywords.
+     *
+     * @return NegativeKeywordSharedSets
+     */
+    public function getNegativeKeywordSharedSetsService()
+    {
+        return $this->getProxy(NegativeKeywordSharedSets::class);
     }
 
     /**
