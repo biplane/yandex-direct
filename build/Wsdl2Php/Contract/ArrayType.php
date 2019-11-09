@@ -11,6 +11,12 @@ class ArrayType extends AbstractDataType
      */
     public function resolvePhpType(PhpTypeResolver $typeResolver)
     {
+        $parts = $this->type->getParts();
+
+        if (count($parts) === 1 && isset($parts['Items']) && substr($parts['Items'], -2) === '[]') {
+            return $typeResolver->resolve($parts['Items']);
+        }
+
         return $typeResolver->resolve($this->type->getRestriction() . '[]');
     }
 }

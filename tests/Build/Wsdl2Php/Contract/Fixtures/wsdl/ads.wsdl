@@ -1,0 +1,1204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:ns="http://api.direct.yandex.com/v5/ads"
+                  xmlns:general="http://api.direct.yandex.com/v5/general"
+                  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Ads"
+                  xmlns:ext="http://api.direct.yandex.com/v5/adextensiontypes"
+                  targetNamespace="http://api.direct.yandex.com/v5/ads">
+    <wsdl:types>
+        <xsd:schema targetNamespace="http://api.direct.yandex.com/v5/ads">
+            <xsd:import namespace="http://api.direct.yandex.com/v5/general" schemaLocation="general.xsd" />
+            <xsd:import namespace="http://api.direct.yandex.com/v5/adextensiontypes" schemaLocation="adextensiontypes.xsd" />
+            <!-- ENUMERATES -->
+            <xsd:simpleType name="AdCategoryEnum">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="ABORTION"/>
+                    <xsd:enumeration value="ALCOHOL"/>
+                    <xsd:enumeration value="BABY_FOOD"/>
+                    <xsd:enumeration value="DIETARY_SUPPLEMENTS"/>
+                    <xsd:enumeration value="MEDICINE"/>
+                    <xsd:enumeration value="PROJECT_DECLARATION"/>
+                    <xsd:enumeration value="PSEUDO_WEAPON"/>
+                    <xsd:enumeration value="TOBACCO"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="AgeLabelEnum">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="MONTHS_0"/>
+                    <xsd:enumeration value="MONTHS_1"/>
+                    <xsd:enumeration value="MONTHS_2"/>
+                    <xsd:enumeration value="MONTHS_3"/>
+                    <xsd:enumeration value="MONTHS_4"/>
+                    <xsd:enumeration value="MONTHS_5"/>
+                    <xsd:enumeration value="MONTHS_6"/>
+                    <xsd:enumeration value="MONTHS_7"/>
+                    <xsd:enumeration value="MONTHS_8"/>
+                    <xsd:enumeration value="MONTHS_9"/>
+                    <xsd:enumeration value="MONTHS_10"/>
+                    <xsd:enumeration value="MONTHS_11"/>
+                    <xsd:enumeration value="MONTHS_12"/>
+                    <xsd:enumeration value="AGE_0"/>
+                    <xsd:enumeration value="AGE_6"/>
+                    <xsd:enumeration value="AGE_12"/>
+                    <xsd:enumeration value="AGE_16"/>
+                    <xsd:enumeration value="AGE_18"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="MobAppAgeLabelEnum">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="AGE_0"/>
+                    <xsd:enumeration value="AGE_6"/>
+                    <xsd:enumeration value="AGE_12"/>
+                    <xsd:enumeration value="AGE_16"/>
+                    <xsd:enumeration value="AGE_18"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="AdFieldEnum">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="AdCategories"/>
+                    <xsd:enumeration value="AgeLabel"/>
+                    <xsd:enumeration value="AdGroupId"/>
+                    <xsd:enumeration value="CampaignId"/>
+                    <xsd:enumeration value="Id"/>
+                    <xsd:enumeration value="State"/>
+                    <xsd:enumeration value="Status"/>
+                    <xsd:enumeration value="StatusClarification"/>
+                    <xsd:enumeration value="Type"/>
+                    <xsd:enumeration value="Subtype"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="AdStateSelectionEnum">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="OFF" />
+                    <xsd:enumeration value="ON" />
+                    <xsd:enumeration value="SUSPENDED" />
+                    <xsd:enumeration value="OFF_BY_MONITORING" />
+                    <xsd:enumeration value="ARCHIVED" />
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="AdStatusSelectionEnum">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="DRAFT" />
+                    <xsd:enumeration value="MODERATION" />
+                    <xsd:enumeration value="PREACCEPTED" />
+                    <xsd:enumeration value="ACCEPTED" />
+                    <xsd:enumeration value="REJECTED" />
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="TextAdFieldEnum">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="AdImageHash"/>
+                    <xsd:enumeration value="DisplayDomain"/>
+                    <xsd:enumeration value="Href"/>
+                    <xsd:enumeration value="SitelinkSetId"/>
+                    <xsd:enumeration value="Text"/>
+                    <xsd:enumeration value="Title"/>
+                    <xsd:enumeration value="Title2"/>
+                    <xsd:enumeration value="Mobile"/>
+                    <xsd:enumeration value="VCardId"/>
+                    <xsd:enumeration value="DisplayUrlPath"/>
+                    <xsd:enumeration value="AdImageModeration"/>
+                    <xsd:enumeration value="SitelinksModeration"/>
+                    <xsd:enumeration value="VCardModeration"/>
+                    <xsd:enumeration value="AdExtensions"/>
+                    <xsd:enumeration value="DisplayUrlPathModeration"/>
+                    <xsd:enumeration value="VideoExtension"/>
+                    <xsd:enumeration value="TurboPageId"/>
+                    <xsd:enumeration value="TurboPageModeration"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="TextAdPriceExtensionFieldEnum">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="Price"/>
+                    <xsd:enumeration value="OldPrice"/>
+                    <xsd:enumeration value="PriceCurrency"/>
+                    <xsd:enumeration value="PriceQualifier"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="DynamicTextAdFieldEnum">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="AdImageHash"/>
+                    <xsd:enumeration value="SitelinkSetId"/>
+                    <xsd:enumeration value="Text"/>
+                    <xsd:enumeration value="VCardId"/>
+                    <xsd:enumeration value="AdImageModeration"/>
+                    <xsd:enumeration value="SitelinksModeration"/>
+                    <xsd:enumeration value="VCardModeration"/>
+                    <xsd:enumeration value="AdExtensions"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="MobileAppAdFieldEnum">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="AdImageHash"/>
+                    <xsd:enumeration value="Title" />
+                    <xsd:enumeration value="Text" />
+                    <xsd:enumeration value="Features" />
+                    <xsd:enumeration value="Action" />
+                    <xsd:enumeration value="TrackingUrl" />
+                    <xsd:enumeration value="AdImageModeration"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="TextImageAdFieldEnum">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="AdImageHash"/>
+                    <xsd:enumeration value="Href"/>
+                    <xsd:enumeration value="TurboPageId"/>
+                    <xsd:enumeration value="TurboPageModeration"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="MobileAppImageAdFieldEnum">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="AdImageHash"/>
+                    <xsd:enumeration value="TrackingUrl"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="TextAdBuilderAdFieldEnum">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="Creative"/>
+                    <xsd:enumeration value="Href"/>
+                    <xsd:enumeration value="TurboPageId"/>
+                    <xsd:enumeration value="TurboPageModeration"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="MobileAppAdBuilderAdFieldEnum">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="Creative"/>
+                    <xsd:enumeration value="TrackingUrl"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="CpmBannerAdBuilderAdFieldEnum">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="Creative"/>
+                    <xsd:enumeration value="Href"/>
+                    <xsd:enumeration value="TrackingPixels"/>
+                    <xsd:enumeration value="TurboPageId"/>
+                    <xsd:enumeration value="TurboPageModeration"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="CpcVideoAdBuilderAdFieldEnum">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="Creative"/>
+                    <xsd:enumeration value="Href"/>
+                    <xsd:enumeration value="TurboPageId"/>
+                    <xsd:enumeration value="TurboPageModeration"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="CpmVideoAdBuilderAdFieldEnum">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="Creative"/>
+                    <xsd:enumeration value="Href"/>
+                    <xsd:enumeration value="TrackingPixels"/>
+                    <xsd:enumeration value="TurboPageId"/>
+                    <xsd:enumeration value="TurboPageModeration"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="AdTypeEnum">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="TEXT_AD"/>
+                    <xsd:enumeration value="MOBILE_APP_AD"/>
+                    <xsd:enumeration value="DYNAMIC_TEXT_AD"/>
+                    <xsd:enumeration value="IMAGE_AD"/>
+                    <xsd:enumeration value="CPC_VIDEO_AD"/>
+                    <xsd:enumeration value="CPM_BANNER_AD"/>
+                    <xsd:enumeration value="CPM_VIDEO_AD"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="AdSubtypeEnum">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="MOBILE_APP_AD_BUILDER_AD"/>
+                    <xsd:enumeration value="MOBILE_APP_IMAGE_AD"/>
+                    <xsd:enumeration value="NONE"/>
+                    <xsd:enumeration value="TEXT_AD_BUILDER_AD"/>
+                    <xsd:enumeration value="TEXT_IMAGE_AD"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="MobileAppFeatureEnum">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="PRICE" />
+                    <xsd:enumeration value="ICON" />
+                    <xsd:enumeration value="CUSTOMER_RATING" />
+                    <xsd:enumeration value="RATINGS" />
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="PriceCurrencyEnum">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="RUB" />
+                    <xsd:enumeration value="UAH" />
+                    <xsd:enumeration value="BYN" />
+                    <xsd:enumeration value="USD" />
+                    <xsd:enumeration value="EUR" />
+                    <xsd:enumeration value="KZT" />
+                    <xsd:enumeration value="TRY" />
+                    <xsd:enumeration value="CHF" />
+                    <xsd:enumeration value="UZS" />
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="PriceQualifierEnum">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="NONE" />
+                    <xsd:enumeration value="FROM" />
+                    <xsd:enumeration value="UP_TO" />
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:complexType name="ArrayOfAdCategoryEnum">
+                <xsd:sequence>
+                    <xsd:element name="Items" type="ns:AdCategoryEnum" minOccurs="1" maxOccurs="unbounded" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <!-- END ENUMERATES -->
+            <xsd:complexType name="AdExtensionAdGetItem">
+                <xsd:sequence>
+                    <xsd:element name="AdExtensionId" type="xsd:long" minOccurs="1" maxOccurs="1"/>
+                    <xsd:element name="Type" type="ext:AdExtensionTypeEnum" minOccurs="1" maxOccurs="1"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="VideoExtensionGetItem">
+                <xsd:sequence>
+                    <xsd:element name="CreativeId" type="xsd:long" minOccurs="1" maxOccurs="1"/>
+                    <xsd:element name="Status" type="general:StatusEnum" minOccurs="0" maxOccurs="1"/>
+                    <xsd:element name="ThumbnailUrl" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+                    <xsd:element name="PreviewUrl" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="TrackingPixelGetItem">
+                <xsd:sequence>
+                    <xsd:element name="TrackingPixel" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+                    <xsd:element name="Provider" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="TrackingPixelGetArray">
+                <xsd:sequence>
+                    <xsd:element name="Items" type="ns:TrackingPixelGetItem" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="VideoExtensionAddItem">
+                <xsd:sequence>
+                    <xsd:element name="CreativeId" type="xsd:long" minOccurs="0" maxOccurs="1"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="VideoExtensionUpdateItem">
+                <xsd:sequence>
+                    <xsd:element name="CreativeId" type="xsd:long" minOccurs="0" maxOccurs="1" nillable="true"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="PriceExtensionAddItem">
+                <xsd:sequence>
+                    <xsd:element name="Price" type="xsd:long" minOccurs="1" maxOccurs="1"/>
+                    <xsd:element name="OldPrice" type="xsd:long" minOccurs="0" maxOccurs="1"/>
+                    <xsd:element name="PriceQualifier" type="ns:PriceQualifierEnum" minOccurs="1" maxOccurs="1"/>
+                    <xsd:element name="PriceCurrency" type="ns:PriceCurrencyEnum" minOccurs="1" maxOccurs="1"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="PriceExtensionUpdateItem">
+                <xsd:sequence>
+                    <xsd:element name="Price" type="xsd:long" minOccurs="0" maxOccurs="1"/>
+                    <xsd:element name="OldPrice" type="xsd:long" minOccurs="0" maxOccurs="1" nillable="true"/>
+                    <xsd:element name="PriceQualifier" type="ns:PriceQualifierEnum" minOccurs="0" maxOccurs="1"/>
+                    <xsd:element name="PriceCurrency" type="ns:PriceCurrencyEnum" minOccurs="0" maxOccurs="1"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="PriceExtensionGetItem">
+                <xsd:sequence>
+                    <xsd:element name="Price" type="xsd:long" minOccurs="0" maxOccurs="1"/>
+                    <xsd:element name="OldPrice" type="xsd:long" minOccurs="0" maxOccurs="1" nillable="true"/>
+                    <xsd:element name="PriceQualifier" type="ns:PriceQualifierEnum" minOccurs="0" maxOccurs="1"/>
+                    <xsd:element name="PriceCurrency" type="ns:PriceCurrencyEnum" minOccurs="0" maxOccurs="1"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="MobileAppAdFeatureItem">
+                <xsd:sequence>
+                    <xsd:element name="Feature" type="ns:MobileAppFeatureEnum" minOccurs="1" maxOccurs="1" />
+                    <xsd:element name="Enabled" type="general:YesNoEnum" minOccurs="1" maxOccurs="1" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="MobileAppAdFeatureGetItem">
+                <xsd:complexContent>
+                    <xsd:extension base="ns:MobileAppAdFeatureItem">
+                        <xsd:sequence>
+                            <xsd:element name="IsAvailable" type="general:YesNoUnknownEnum" minOccurs="1" maxOccurs="1" />
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="MobileAppAdBase">
+                <xsd:sequence>
+                    <xsd:element name="Title" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                    <xsd:element name="Text" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                    <xsd:element name="TrackingUrl" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+                    <xsd:element name="Action" type="general:MobileAppAdActionEnum" minOccurs="0" maxOccurs="1" />
+                    <xsd:element name="AdImageHash" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <!-- Add Operation Types -->
+            <xsd:complexType name="AdAddItemBase">
+                <xsd:sequence>
+                    <xsd:element name="AdGroupId" type="xsd:long" minOccurs="1" maxOccurs="1"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="TextAdAddBase">
+                <xsd:sequence>
+                    <xsd:element name="VCardId" type="xsd:long" minOccurs="0" maxOccurs="1"/>
+                    <xsd:element name="AdImageHash" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                    <xsd:element name="SitelinkSetId" type="xsd:long" minOccurs="0" maxOccurs="1"/>
+                    <xsd:element name="AdExtensionIds" type="xsd:long" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="AdAddItem">
+                <xsd:complexContent>
+                    <xsd:extension base="ns:AdAddItemBase">
+                        <xsd:sequence>
+                            <!-- Choice: Required one of:  -->
+                            <xsd:element name="TextAd" type="ns:TextAdAdd" minOccurs="0" maxOccurs="1"/>
+                            <xsd:element name="DynamicTextAd" type="ns:DynamicTextAdAdd" minOccurs="0" maxOccurs="1"/>
+                            <xsd:element name="MobileAppAd" type="ns:MobileAppAdAdd" minOccurs="0" maxOccurs="1"/>
+                            <xsd:element name="TextImageAd" type="ns:TextImageAdAdd" minOccurs="0" maxOccurs="1"/>
+                            <xsd:element name="MobileAppImageAd" type="ns:MobileAppImageAdAdd" minOccurs="0" maxOccurs="1"/>
+                            <xsd:element name="TextAdBuilderAd" type="ns:TextAdBuilderAdAdd" minOccurs="0" maxOccurs="1"/>
+                            <xsd:element name="MobileAppAdBuilderAd" type="ns:MobileAppAdBuilderAdAdd" minOccurs="0" maxOccurs="1"/>
+                            <xsd:element name="CpmBannerAdBuilderAd" type="ns:CpmBannerAdBuilderAdAdd" minOccurs="0" maxOccurs="1"/>
+                            <xsd:element name="CpcVideoAdBuilderAd" type="ns:CpcVideoAdBuilderAdAdd" minOccurs="0" maxOccurs="1"/>
+                            <xsd:element name="CpmVideoAdBuilderAd" type="ns:CpmVideoAdBuilderAdAdd" minOccurs="0" maxOccurs="1"/>
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="TextAdAdd">
+                <xsd:complexContent>
+                    <xsd:extension base="ns:TextAdAddBase">
+                        <xsd:sequence>
+                            <xsd:element name="Text" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+                            <xsd:element name="Title" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+                            <xsd:element name="Title2" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                            <xsd:element name="Href" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                            <xsd:element name="Mobile" type="general:YesNoEnum" minOccurs="1" maxOccurs="1"/>
+                            <xsd:element name="DisplayUrlPath" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                            <xsd:element name="VideoExtension" type="ns:VideoExtensionAddItem" minOccurs="0" maxOccurs="1"/>
+                            <xsd:element name="PriceExtension" type="ns:PriceExtensionAddItem" minOccurs="0" maxOccurs="1"/>
+                            <xsd:element name="TurboPageId" type="xsd:long" minOccurs="0" maxOccurs="1"/>
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="DynamicTextAdAdd">
+                <xsd:complexContent>
+                    <xsd:extension base="ns:TextAdAddBase">
+                        <xsd:sequence>
+                            <xsd:element name="Text" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="MobileAppAdAdd">
+                <xsd:sequence>
+                    <xsd:element name="AdImageHash" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                    <xsd:element name="Text" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+                    <xsd:element name="Title" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+                    <xsd:element name="TrackingUrl" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                    <xsd:element name="Action" type="general:MobileAppAdActionEnum" minOccurs="1" maxOccurs="1" />
+                    <xsd:element name="Features" type="ns:MobileAppAdFeatureItem" minOccurs="0" maxOccurs="unbounded" />
+                    <xsd:element name="AgeLabel" type="ns:MobAppAgeLabelEnum" minOccurs="0" maxOccurs="1" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="ImageAdAddBase">
+                <xsd:sequence>
+                    <xsd:element name="AdImageHash" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="TextImageAdAdd">
+                <xsd:complexContent>
+                    <xsd:extension base="ns:ImageAdAddBase">
+                        <xsd:sequence>
+                            <xsd:element name="Href" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                            <xsd:element name="TurboPageId" type="xsd:long" minOccurs="0" maxOccurs="1"/>
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="MobileAppImageAdAdd">
+                <xsd:complexContent>
+                    <xsd:extension base="ns:ImageAdAddBase">
+                        <xsd:sequence>
+                            <xsd:element name="TrackingUrl" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="AdBuilderAdAddItem">
+                <xsd:sequence>
+                    <xsd:element name="CreativeId" type="xsd:long" minOccurs="1" maxOccurs="1"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="AdBuilderAdAddBase">
+                <xsd:sequence>
+                    <xsd:element name="Creative" type="ns:AdBuilderAdAddItem" minOccurs="1" maxOccurs="1"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="TextAdBuilderAdAdd">
+                <xsd:complexContent>
+                    <xsd:extension base="ns:AdBuilderAdAddBase">
+                        <xsd:sequence>
+                            <xsd:element name="Href" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                            <xsd:element name="TurboPageId" type="xsd:long" minOccurs="0" maxOccurs="1"/>
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="MobileAppAdBuilderAdAdd">
+                <xsd:complexContent>
+                    <xsd:extension base="ns:AdBuilderAdAddBase">
+                        <xsd:sequence>
+                            <xsd:element name="TrackingUrl" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="CpmBannerAdBuilderAdAdd">
+                <xsd:complexContent>
+                    <xsd:extension base="ns:AdBuilderAdAddBase">
+                        <xsd:sequence>
+                            <xsd:element name="Href" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                            <xsd:element name="TrackingPixels" type="general:ArrayOfString" minOccurs="0" maxOccurs="1"/>
+                            <xsd:element name="TurboPageId" type="xsd:long" minOccurs="0" maxOccurs="1"/>
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="CpcVideoAdBuilderAdAdd">
+                <xsd:complexContent>
+                    <xsd:extension base="ns:AdBuilderAdAddBase">
+                        <xsd:sequence>
+                            <xsd:element name="Href" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                            <xsd:element name="TurboPageId" type="xsd:long" minOccurs="0" maxOccurs="1"/>
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="CpmVideoAdBuilderAdAdd">
+                <xsd:complexContent>
+                    <xsd:extension base="ns:AdBuilderAdAddBase">
+                        <xsd:sequence>
+                            <xsd:element name="Href" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                            <xsd:element name="TrackingPixels" type="general:ArrayOfString" minOccurs="0" maxOccurs="1"/>
+                            <xsd:element name="TurboPageId" type="xsd:long" minOccurs="0" maxOccurs="1"/>
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <!-- Update Operation Types -->
+            <xsd:complexType name="AdUpdateItem">
+                <xsd:sequence>
+                    <xsd:element name="Id" type="xsd:long" minOccurs="1" maxOccurs="1"/>
+                    <!-- Choice: Required one of:  -->
+                    <xsd:element name="TextAd" type="ns:TextAdUpdate" minOccurs="0" maxOccurs="1"/>
+                    <xsd:element name="DynamicTextAd" type="ns:DynamicTextAdUpdate" minOccurs="0" maxOccurs="1"/>
+                    <xsd:element name="MobileAppAd" type="ns:MobileAppAdUpdate" minOccurs="0" maxOccurs="1"/>
+                    <xsd:element name="TextImageAd" type="ns:TextImageAdUpdate" minOccurs="0" maxOccurs="1"/>
+                    <xsd:element name="MobileAppImageAd" type="ns:MobileAppImageAdUpdate" minOccurs="0" maxOccurs="1"/>
+                    <xsd:element name="TextAdBuilderAd" type="ns:TextAdBuilderAdUpdate" minOccurs="0" maxOccurs="1"/>
+                    <xsd:element name="MobileAppAdBuilderAd" type="ns:MobileAppAdBuilderAdUpdate" minOccurs="0" maxOccurs="1"/>
+                    <xsd:element name="CpcVideoAdBuilderAd" type="ns:CpcVideoAdBuilderAdUpdate" minOccurs="0" maxOccurs="1"/>
+                    <xsd:element name="CpmBannerAdBuilderAd" type="ns:CpmBannerAdBuilderAdUpdate" minOccurs="0" maxOccurs="1"/>
+                    <xsd:element name="CpmVideoAdBuilderAd" type="ns:CpmVideoAdBuilderAdUpdate" minOccurs="0" maxOccurs="1"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="TextAdUpdateBase">
+                <xsd:sequence>
+                    <xsd:element name="VCardId" type="xsd:long" minOccurs="0" maxOccurs="1" nillable="true"/>
+                    <xsd:element name="AdImageHash" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+                    <xsd:element name="SitelinkSetId" type="xsd:long" minOccurs="0" maxOccurs="1" nillable="true"/>
+                    <xsd:element name="CalloutSetting" type="ext:AdExtensionSetting" minOccurs="0" maxOccurs="1" nillable="true"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="TextAdUpdate">
+                <xsd:complexContent>
+                    <xsd:extension base="ns:TextAdUpdateBase">
+                        <xsd:sequence>
+                            <xsd:element name="Text" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                            <xsd:element name="Title" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                            <xsd:element name="Title2" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+                            <xsd:element name="Href" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+                            <xsd:element name="AgeLabel" type="ns:AgeLabelEnum" minOccurs="0" maxOccurs="1"/>
+                            <xsd:element name="DisplayUrlPath" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+                            <xsd:element name="VideoExtension" type="ns:VideoExtensionUpdateItem" minOccurs="0" maxOccurs="1"/>
+                            <xsd:element name="PriceExtension" type="ns:PriceExtensionUpdateItem" minOccurs="0" maxOccurs="1" nillable="true"/>
+                            <xsd:element name="TurboPageId" type="xsd:long" minOccurs="0" maxOccurs="1" nillable="true"/>
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="DynamicTextAdUpdate">
+                <xsd:complexContent>
+                    <xsd:extension base="ns:TextAdUpdateBase">
+                        <xsd:sequence>
+                            <xsd:element name="Text" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="MobileAppAdUpdate">
+                <xsd:complexContent>
+                    <xsd:extension base="ns:MobileAppAdBase">
+                        <xsd:sequence>
+                            <xsd:element name="Features" type="ns:MobileAppAdFeatureItem" minOccurs="0" maxOccurs="unbounded"/>
+                            <xsd:element name="AgeLabel" type="ns:MobAppAgeLabelEnum" minOccurs="0" maxOccurs="1" />
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="ImageAdUpdateBase">
+                <xsd:sequence>
+                    <xsd:element name="AdImageHash" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="TextImageAdUpdate">
+                <xsd:complexContent>
+                    <xsd:extension base="ns:ImageAdUpdateBase">
+                        <xsd:sequence>
+                            <xsd:element name="Href" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+                            <xsd:element name="TurboPageId" type="xsd:long" minOccurs="0" maxOccurs="1" nillable="true"/>
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="MobileAppImageAdUpdate">
+                <xsd:complexContent>
+                    <xsd:extension base="ns:ImageAdUpdateBase">
+                        <xsd:sequence>
+                            <xsd:element name="TrackingUrl" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="AdBuilderAdUpdateItem">
+                <xsd:sequence>
+                    <xsd:element name="CreativeId" type="xsd:long" minOccurs="1" maxOccurs="1"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="AdBuilderAdUpdateBase">
+                <xsd:sequence>
+                    <xsd:element name="Creative" type="ns:AdBuilderAdUpdateItem" minOccurs="0" maxOccurs="1"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="TextAdBuilderAdUpdate">
+                <xsd:complexContent>
+                    <xsd:extension base="ns:AdBuilderAdUpdateBase">
+                        <xsd:sequence>
+                            <xsd:element name="Href" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+                            <xsd:element name="TurboPageId" type="xsd:long" minOccurs="0" maxOccurs="1" nillable="true"/>
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="MobileAppAdBuilderAdUpdate">
+                <xsd:complexContent>
+                    <xsd:extension base="ns:AdBuilderAdUpdateBase">
+                        <xsd:sequence>
+                            <xsd:element name="TrackingUrl" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="CpmBannerAdBuilderAdUpdate">
+                <xsd:complexContent>
+                    <xsd:extension base="ns:AdBuilderAdUpdateBase">
+                        <xsd:sequence>
+                            <xsd:element name="Href" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+                            <xsd:element name="TrackingPixels" type="general:ArrayOfString" minOccurs="0" maxOccurs="1" nillable="true"/>
+                            <xsd:element name="TurboPageId" type="xsd:long" minOccurs="0" maxOccurs="1" nillable="true"/>
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="CpcVideoAdBuilderAdUpdate">
+                <xsd:complexContent>
+                    <xsd:extension base="ns:AdBuilderAdUpdateBase">
+                        <xsd:sequence>
+                            <xsd:element name="Href" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+                            <xsd:element name="TurboPageId" type="xsd:long" minOccurs="0" maxOccurs="1" nillable="true"/>
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="CpmVideoAdBuilderAdUpdate">
+                <xsd:complexContent>
+                    <xsd:extension base="ns:AdBuilderAdUpdateBase">
+                        <xsd:sequence>
+                            <xsd:element name="Href" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+                            <xsd:element name="TrackingPixels" type="general:ArrayOfString" minOccurs="0" maxOccurs="1" nillable="true"/>
+                            <xsd:element name="TurboPageId" type="xsd:long" minOccurs="0" maxOccurs="1" nillable="true"/>
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <!-- Get Operation Types -->
+            <xsd:complexType name="AdsSelectionCriteria">
+                <xsd:sequence>
+                    <xsd:element name="Ids" type="xsd:long" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element name="States" type="ns:AdStateSelectionEnum" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element name="Statuses" type="ns:AdStatusSelectionEnum" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element name="CampaignIds" type="xsd:long" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element name="AdGroupIds" type="xsd:long" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element name="Types" type="ns:AdTypeEnum" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element name="Mobile" type="general:YesNoEnum" minOccurs="0" maxOccurs="1"/>
+                    <xsd:element name="VCardIds" type="xsd:long" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element name="SitelinkSetIds" type="xsd:long" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element name="AdImageHashes" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element name="VCardModerationStatuses" type="general:ExtensionStatusSelectionEnum" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element name="SitelinksModerationStatuses" type="general:ExtensionStatusSelectionEnum" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element name="AdImageModerationStatuses" type="general:ExtensionStatusSelectionEnum" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element name="AdExtensionIds" type="xsd:long" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="TextAdGetBase">
+                <xsd:sequence>
+                    <xsd:element name="VCardId" type="xsd:long" minOccurs="0" maxOccurs="1" nillable="true"/>
+                    <xsd:element name="AdImageHash" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+                    <xsd:element name="SitelinkSetId" type="xsd:long" minOccurs="0" maxOccurs="1" nillable="true"/>
+                    <xsd:element name="VCardModeration" type="general:ExtensionModeration" minOccurs="0" maxOccurs="1" nillable="true"/>
+                    <xsd:element name="SitelinksModeration" type="general:ExtensionModeration" minOccurs="0" maxOccurs="1" nillable="true"/>
+                    <xsd:element name="AdImageModeration" type="general:ExtensionModeration" minOccurs="0" maxOccurs="1" nillable="true"/>
+                    <xsd:element name="AdExtensions" type="ns:AdExtensionAdGetItem" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="TextAdGet">
+                <xsd:complexContent>
+                    <xsd:extension base="ns:TextAdGetBase">
+                        <xsd:sequence>
+                            <xsd:element name="Text" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                            <xsd:element name="Title" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                            <xsd:element name="Title2" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+                            <xsd:element name="Href" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+                            <xsd:element name="Mobile" type="general:YesNoEnum" minOccurs="0" maxOccurs="1"/>
+                            <xsd:element name="DisplayDomain" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+                            <xsd:element name="DisplayUrlPath" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+                            <xsd:element name="DisplayUrlPathModeration" type="general:ExtensionModeration" minOccurs="0" maxOccurs="1" nillable="true"/>
+                            <xsd:element name="VideoExtension" type="ns:VideoExtensionGetItem" minOccurs="0" maxOccurs="1" nillable="true"/>
+                            <xsd:element name="PriceExtension" type="ns:PriceExtensionGetItem" minOccurs="0" maxOccurs="1" nillable="true"/>
+                            <xsd:element name="TurboPageId" type="xsd:long" minOccurs="0" maxOccurs="1" nillable="true"/>
+                            <xsd:element name="TurboPageModeration" type="general:ExtensionModeration" minOccurs="0" maxOccurs="1" nillable="true"/>
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="DynamicTextAdGet">
+                <xsd:complexContent>
+                    <xsd:extension base="ns:TextAdGetBase">
+                        <xsd:sequence>
+                            <xsd:element name="Text" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="MobileAppAdGet">
+                <xsd:complexContent>
+                    <xsd:extension base="ns:MobileAppAdBase">
+                        <xsd:sequence>
+                            <xsd:element name="Features" type="ns:MobileAppAdFeatureGetItem" minOccurs="0" maxOccurs="unbounded"/>
+                            <xsd:element name="AdImageModeration" type="general:ExtensionModeration" minOccurs="0" maxOccurs="1" nillable="true"/>
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="ImageAdGetBase">
+                <xsd:sequence>
+                    <xsd:element name="AdImageHash" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="TextImageAdGet">
+                <xsd:complexContent>
+                    <xsd:extension base="ns:ImageAdGetBase">
+                        <xsd:sequence>
+                            <xsd:element name="Href" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+                            <xsd:element name="TurboPageId" type="xsd:long" minOccurs="0" maxOccurs="1" nillable="true"/>
+                            <xsd:element name="TurboPageModeration" type="general:ExtensionModeration" minOccurs="0" maxOccurs="1" nillable="true"/>
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="MobileAppImageAdGet">
+                <xsd:complexContent>
+                    <xsd:extension base="ns:ImageAdGetBase">
+                        <xsd:sequence>
+                            <xsd:element name="TrackingUrl" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="AdBuilderAdGetItem">
+                <xsd:sequence>
+                    <xsd:element name="CreativeId" type="xsd:long" minOccurs="1" maxOccurs="1"/>
+                    <xsd:element name="ThumbnailUrl" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                    <xsd:element name="PreviewUrl" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="AdBuilderAdGetBase">
+                <xsd:sequence>
+                    <xsd:element name="Creative" type="ns:AdBuilderAdGetItem" minOccurs="0" maxOccurs="1"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="TextAdBuilderAdGet">
+                <xsd:complexContent>
+                    <xsd:extension base="ns:AdBuilderAdGetBase">
+                        <xsd:sequence>
+                            <xsd:element name="Href" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+                            <xsd:element name="TurboPageId" type="xsd:long" minOccurs="0" maxOccurs="1" nillable="true"/>
+                            <xsd:element name="TurboPageModeration" type="general:ExtensionModeration" minOccurs="0" maxOccurs="1" nillable="true"/>
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="MobileAppAdBuilderAdGet">
+                <xsd:complexContent>
+                    <xsd:extension base="ns:AdBuilderAdGetBase">
+                        <xsd:sequence>
+                            <xsd:element name="TrackingUrl" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="CpcVideoAdBuilderAdGet">
+                <xsd:complexContent>
+                    <xsd:extension base="ns:AdBuilderAdGetBase">
+                        <xsd:sequence>
+                            <xsd:element name="Href" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+                            <xsd:element name="TurboPageId" type="xsd:long" minOccurs="0" maxOccurs="1" nillable="true"/>
+                            <xsd:element name="TurboPageModeration" type="general:ExtensionModeration" minOccurs="0" maxOccurs="1" nillable="true"/>
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="CpmBannerAdBuilderAdGet">
+                <xsd:complexContent>
+                    <xsd:extension base="ns:AdBuilderAdGetBase">
+                        <xsd:sequence>
+                            <xsd:element name="Href" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+                            <xsd:element name="TrackingPixels" type="ns:TrackingPixelGetArray" minOccurs="0" maxOccurs="1" nillable="true"/>
+                            <xsd:element name="TurboPageId" type="xsd:long" minOccurs="0" maxOccurs="1" nillable="true"/>
+                            <xsd:element name="TurboPageModeration" type="general:ExtensionModeration" minOccurs="0" maxOccurs="1" nillable="true"/>
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="CpmVideoAdBuilderAdGet">
+                <xsd:complexContent>
+                    <xsd:extension base="ns:AdBuilderAdGetBase">
+                        <xsd:sequence>
+                            <xsd:element name="Href" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true"/>
+                            <xsd:element name="TrackingPixels" type="ns:TrackingPixelGetArray" minOccurs="0" maxOccurs="1" nillable="true"/>
+                            <xsd:element name="TurboPageId" type="xsd:long" minOccurs="0" maxOccurs="1" nillable="true"/>
+                            <xsd:element name="TurboPageModeration" type="general:ExtensionModeration" minOccurs="0" maxOccurs="1" nillable="true"/>
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:complexType name="AdGetItem">
+                <xsd:sequence>
+                    <xsd:element name="Id" type="xsd:long" minOccurs="0" maxOccurs="1"/>
+                    <xsd:element name="CampaignId" type="xsd:long" minOccurs="0" maxOccurs="1"/>
+                    <xsd:element name="AdGroupId" type="xsd:long" minOccurs="0" maxOccurs="1"/>
+                    <xsd:element name="Status" type="general:StatusEnum" minOccurs="0" maxOccurs="1"/>
+                    <xsd:element name="State" type="general:StateEnum" minOccurs="0" maxOccurs="1"/>
+                    <!-- Some description for status and state. If requested, can be empty
+                    nillable='true' -->
+                    <xsd:element name="StatusClarification" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                    <!-- Category, if requested can be empty nillable='true' -->
+                    <xsd:element name="AdCategories" type="ns:ArrayOfAdCategoryEnum" minOccurs="0" maxOccurs="1" nillable="true"/>
+                    <!-- AgeLabel, if requested can be empty nillable='true' -->
+                    <xsd:element name="AgeLabel" type="ns:AgeLabelEnum" minOccurs="0" maxOccurs="1" nillable="true"/>
+                    <xsd:element name="Type" type="ns:AdTypeEnum" minOccurs="0" maxOccurs="1"/>
+                    <xsd:element name="Subtype" type="ns:AdSubtypeEnum" minOccurs="0" maxOccurs="1"/>
+                    <xsd:element name="TextAd" type="ns:TextAdGet" minOccurs="0" maxOccurs="1"/>
+                    <xsd:element name="DynamicTextAd" type="ns:DynamicTextAdGet" minOccurs="0" maxOccurs="1"/>
+                    <xsd:element name="MobileAppAd" type="ns:MobileAppAdGet" minOccurs="0" maxOccurs="1"/>
+                    <xsd:element name="TextImageAd" type="ns:TextImageAdGet" minOccurs="0" maxOccurs="1"/>
+                    <xsd:element name="MobileAppImageAd" type="ns:MobileAppImageAdGet" minOccurs="0" maxOccurs="1"/>
+                    <xsd:element name="TextAdBuilderAd" type="ns:TextAdBuilderAdGet" minOccurs="0" maxOccurs="1"/>
+                    <xsd:element name="MobileAppAdBuilderAd" type="ns:MobileAppAdBuilderAdGet" minOccurs="0" maxOccurs="1"/>
+                    <xsd:element name="CpmBannerAdBuilderAd" type="ns:CpmBannerAdBuilderAdGet" minOccurs="0" maxOccurs="1"/>
+                    <xsd:element name="CpcVideoAdBuilderAd" type="ns:CpcVideoAdBuilderAdGet" minOccurs="0" maxOccurs="1"/>
+                    <xsd:element name="CpmVideoAdBuilderAd" type="ns:CpmVideoAdBuilderAdGet" minOccurs="0" maxOccurs="1"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <!-- Methods -->
+            <xsd:element name="GetRequest">
+                <xsd:complexType>
+                    <xsd:complexContent>
+                        <xsd:extension base="general:GetRequestGeneral">
+                            <xsd:sequence>
+                                <xsd:element name="SelectionCriteria" type="ns:AdsSelectionCriteria" minOccurs="1" maxOccurs="1"/>
+                                <xsd:element name="FieldNames" type="ns:AdFieldEnum" minOccurs="1" maxOccurs="unbounded"/>
+                                <xsd:element name="TextAdFieldNames" type="ns:TextAdFieldEnum" minOccurs="0" maxOccurs="unbounded"/>
+                                <xsd:element name="TextAdPriceExtensionFieldNames" type="ns:TextAdPriceExtensionFieldEnum" minOccurs="0" maxOccurs="unbounded"/>
+                                <xsd:element name="MobileAppAdFieldNames" type="ns:MobileAppAdFieldEnum" minOccurs="0" maxOccurs="unbounded"/>
+                                <xsd:element name="DynamicTextAdFieldNames" type="ns:DynamicTextAdFieldEnum" minOccurs="0" maxOccurs="unbounded"/>
+                                <xsd:element name="TextImageAdFieldNames" type="ns:TextImageAdFieldEnum" minOccurs="0" maxOccurs="unbounded"/>
+                                <xsd:element name="MobileAppImageAdFieldNames" type="ns:MobileAppImageAdFieldEnum" minOccurs="0" maxOccurs="unbounded"/>
+                                <xsd:element name="TextAdBuilderAdFieldNames" type="ns:TextAdBuilderAdFieldEnum" minOccurs="0" maxOccurs="unbounded"/>
+                                <xsd:element name="MobileAppAdBuilderAdFieldNames" type="ns:MobileAppAdBuilderAdFieldEnum" minOccurs="0" maxOccurs="unbounded"/>
+                                <xsd:element name="CpmBannerAdBuilderAdFieldNames" type="ns:CpmBannerAdBuilderAdFieldEnum" minOccurs="0" maxOccurs="unbounded"/>
+                                <xsd:element name="CpcVideoAdBuilderAdFieldNames" type="ns:CpcVideoAdBuilderAdFieldEnum" minOccurs="0" maxOccurs="unbounded"/>
+                                <xsd:element name="CpmVideoAdBuilderAdFieldNames" type="ns:CpmVideoAdBuilderAdFieldEnum" minOccurs="0" maxOccurs="unbounded"/>
+                            </xsd:sequence>
+                        </xsd:extension>
+                    </xsd:complexContent>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="GetResponse">
+                <xsd:complexType>
+                    <xsd:complexContent>
+                        <xsd:extension base="general:GetResponseGeneral">
+                            <xsd:sequence>
+                                <xsd:element name="Ads" type="ns:AdGetItem" minOccurs="0" maxOccurs="unbounded"/>
+                            </xsd:sequence>
+                        </xsd:extension>
+                    </xsd:complexContent>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="AddRequest">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="Ads" type="ns:AdAddItem" minOccurs="1" maxOccurs="unbounded"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="AddResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="AddResults" type="general:ActionResult" minOccurs="0" maxOccurs="unbounded"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="UpdateRequest">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="Ads" type="ns:AdUpdateItem" minOccurs="1" maxOccurs="unbounded"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="UpdateResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="UpdateResults" type="general:ActionResult" minOccurs="0" maxOccurs="unbounded"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="DeleteRequest">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="SelectionCriteria" type="general:IdsCriteria" minOccurs="1" maxOccurs="1"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="DeleteResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="DeleteResults" type="general:ActionResult" minOccurs="0" maxOccurs="unbounded"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="ArchiveRequest">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="SelectionCriteria" type="general:IdsCriteria" minOccurs="1" maxOccurs="1"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="ArchiveResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="ArchiveResults" type="general:ActionResult" minOccurs="0" maxOccurs="unbounded"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="UnarchiveRequest">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="SelectionCriteria" type="general:IdsCriteria" minOccurs="1" maxOccurs="1"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="UnarchiveResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="UnarchiveResults" type="general:ActionResult" minOccurs="0" maxOccurs="unbounded"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="SuspendRequest">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="SelectionCriteria" type="general:IdsCriteria" minOccurs="1" maxOccurs="1"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="SuspendResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="SuspendResults" type="general:ActionResult" minOccurs="0" maxOccurs="unbounded"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="ResumeRequest">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="SelectionCriteria" type="general:IdsCriteria" minOccurs="1" maxOccurs="1"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="ResumeResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="ResumeResults" type="general:ActionResult" minOccurs="0" maxOccurs="unbounded"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="ModerateRequest">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="SelectionCriteria" type="general:IdsCriteria" minOccurs="1" maxOccurs="1"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="ModerateResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="ModerateResults" type="general:ActionResult" minOccurs="0" maxOccurs="unbounded"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:schema>
+    </wsdl:types>
+    <wsdl:message name="ApiException">
+        <wsdl:part element="general:FaultResponse" name="faultMessage"/>
+    </wsdl:message>
+    <!-- ADD -->
+    <wsdl:message name="AddOperationRequest">
+        <wsdl:part element="ns:AddRequest" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="AddOperationResponse">
+        <wsdl:part name="parameters" element="ns:AddResponse"/>
+    </wsdl:message>
+    <!-- UPDATE -->
+    <wsdl:message name="UpdateOperationRequest">
+        <wsdl:part name="parameters" element="ns:UpdateRequest"/>
+    </wsdl:message>
+    <wsdl:message name="UpdateOperationResponse">
+        <wsdl:part name="parameters" element="ns:UpdateResponse"/>
+    </wsdl:message>
+    <!-- GET -->
+    <wsdl:message name="GetOperationRequest">
+        <wsdl:part name="parameters" element="ns:GetRequest"/>
+    </wsdl:message>
+    <wsdl:message name="GetOperationResponse">
+        <wsdl:part name="parameters" element="ns:GetResponse"/>
+    </wsdl:message>
+    <!-- DELETE -->
+    <wsdl:message name="DeleteOperationRequest">
+        <wsdl:part name="parameters" element="ns:DeleteRequest"/>
+    </wsdl:message>
+    <wsdl:message name="DeleteOperationResponse">
+        <wsdl:part name="parameters" element="ns:DeleteResponse"/>
+    </wsdl:message>
+    <!-- ARCHIVE -->
+    <wsdl:message name="ArchiveOperationRequest">
+        <wsdl:part name="parameters" element="ns:ArchiveRequest"/>
+    </wsdl:message>
+    <wsdl:message name="ArchiveOperationResponse">
+        <wsdl:part name="parameters" element="ns:ArchiveResponse"/>
+    </wsdl:message>
+    <!-- UNARCHIVE -->
+    <wsdl:message name="UnarchiveOperationRequest">
+        <wsdl:part name="parameters" element="ns:UnarchiveRequest"/>
+    </wsdl:message>
+    <wsdl:message name="UnarchiveOperationResponse">
+        <wsdl:part name="parameters" element="ns:UnarchiveResponse"/>
+    </wsdl:message>
+    <!-- SUSPEND -->
+    <wsdl:message name="SuspendOperationRequest">
+        <wsdl:part name="parameters" element="ns:SuspendRequest"/>
+    </wsdl:message>
+    <wsdl:message name="SuspendOperationResponse">
+        <wsdl:part name="parameters" element="ns:SuspendResponse"/>
+    </wsdl:message>
+    <!-- RESUME -->
+    <wsdl:message name="ResumeOperationRequest">
+        <wsdl:part name="parameters" element="ns:ResumeRequest"/>
+    </wsdl:message>
+    <wsdl:message name="ResumeOperationResponse">
+        <wsdl:part name="parameters" element="ns:ResumeResponse"/>
+    </wsdl:message>
+    <!-- MODERATE -->
+    <wsdl:message name="ModerateOperationRequest">
+        <wsdl:part name="parameters" element="ns:ModerateRequest"/>
+    </wsdl:message>
+    <wsdl:message name="ModerateOperationResponse">
+        <wsdl:part name="parameters" element="ns:ModerateResponse"/>
+    </wsdl:message>
+    <!-- PORT -->
+    <wsdl:portType name="AdsPort">
+        <wsdl:operation name="add">
+            <wsdl:input message="ns:AddOperationRequest" name="addRequest"/>
+            <wsdl:output message="ns:AddOperationResponse"/>
+            <wsdl:fault message="ns:ApiException" name="ApiException"/>
+        </wsdl:operation>
+        <wsdl:operation name="update">
+            <wsdl:input message="ns:UpdateOperationRequest" name="updateRequest"/>
+            <wsdl:output message="ns:UpdateOperationResponse"/>
+            <wsdl:fault message="ns:ApiException" name="ApiException"/>
+        </wsdl:operation>
+        <wsdl:operation name="get">
+            <wsdl:input message="ns:GetOperationRequest" name="getRequest"/>
+            <wsdl:output message="ns:GetOperationResponse"/>
+            <wsdl:fault message="ns:ApiException" name="ApiException"/>
+        </wsdl:operation>
+        <wsdl:operation name="delete">
+            <wsdl:input message="ns:DeleteOperationRequest" name="deleteRequest"/>
+            <wsdl:output message="ns:DeleteOperationResponse"/>
+            <wsdl:fault message="ns:ApiException" name="ApiException"/>
+        </wsdl:operation>
+        <wsdl:operation name="archive">
+            <wsdl:input message="ns:ArchiveOperationRequest" name="archiveRequest"/>
+            <wsdl:output message="ns:ArchiveOperationResponse"/>
+            <wsdl:fault message="ns:ApiException" name="ApiException"/>
+        </wsdl:operation>
+        <wsdl:operation name="unarchive">
+            <wsdl:input message="ns:UnarchiveOperationRequest" name="unarchiveRequest"/>
+            <wsdl:output message="ns:UnarchiveOperationResponse"/>
+            <wsdl:fault message="ns:ApiException" name="ApiException"/>
+        </wsdl:operation>
+        <wsdl:operation name="suspend">
+            <wsdl:input message="ns:SuspendOperationRequest" name="suspendRequest"/>
+            <wsdl:output message="ns:SuspendOperationResponse"/>
+            <wsdl:fault message="ns:ApiException" name="ApiException"/>
+        </wsdl:operation>
+        <wsdl:operation name="resume">
+            <wsdl:input message="ns:ResumeOperationRequest" name="resumeRequest"/>
+            <wsdl:output message="ns:ResumeOperationResponse"/>
+            <wsdl:fault message="ns:ApiException" name="ApiException"/>
+        </wsdl:operation>
+        <wsdl:operation name="moderate">
+            <wsdl:input message="ns:ModerateOperationRequest" name="moderateRequest"/>
+            <wsdl:output message="ns:ModerateOperationResponse"/>
+            <wsdl:fault message="ns:ApiException" name="ApiException"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <!-- BINDING -->
+    <wsdl:binding name="AdsSOAP" type="ns:AdsPort">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="add">
+            <soap:operation soapAction="http://api.direct.yandex.com/v5/ads/add"/>
+            <wsdl:input name="addRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ApiException">
+                <soap:fault name="ApiException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="update">
+            <soap:operation soapAction="http://api.direct.yandex.com/v5/ads/update"/>
+            <wsdl:input name="updateRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ApiException">
+                <soap:fault name="ApiException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="get">
+            <soap:operation soapAction="http://api.direct.yandex.com/v5/ads/get"/>
+            <wsdl:input name="getRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ApiException">
+                <soap:fault name="ApiException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="delete">
+            <soap:operation soapAction="http://api.direct.yandex.com/v5/ads/delete"/>
+            <wsdl:input name="deleteRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ApiException">
+                <soap:fault name="ApiException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="archive">
+            <soap:operation soapAction="http://api.direct.yandex.com/v5/ads/archive"/>
+            <wsdl:input name="archiveRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ApiException">
+                <soap:fault name="ApiException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="unarchive">
+            <soap:operation soapAction="http://api.direct.yandex.com/v5/ads/unarchive"/>
+            <wsdl:input name="unarchiveRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ApiException">
+                <soap:fault name="ApiException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="suspend">
+            <soap:operation soapAction="http://api.direct.yandex.com/v5/ads/suspend"/>
+            <wsdl:input name="suspendRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ApiException">
+                <soap:fault name="ApiException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="resume">
+            <soap:operation soapAction="http://api.direct.yandex.com/v5/ads/resume"/>
+            <wsdl:input name="resumeRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ApiException">
+                <soap:fault name="ApiException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="moderate">
+            <soap:operation soapAction="http://api.direct.yandex.com/v5/ads/moderate"/>
+            <wsdl:input name="moderateRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ApiException">
+                <soap:fault name="ApiException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:binding>
+    <!-- SERVICE -->
+    <wsdl:service name="Ads">
+        <wsdl:port binding="ns:AdsSOAP" name="AdsSOAP">
+            <soap:address location="https://soap.direct.yandex.ru/v5/ads"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://api.direct.yandex.com/v5/adextensiontypes"
+            xmlns:general="http://api.direct.yandex.com/v5/general"
+            xmlns:ext="http://api.direct.yandex.com/v5/adextensiontypes">
+    <xsd:import namespace="http://api.direct.yandex.com/v5/general" schemaLocation="general.xsd"/>
+    <xsd:simpleType name="AdExtensionTypeEnum">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="CALLOUT"/>
+            <xsd:enumeration value="UNKNOWN"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="AdExtensionStateSelectionEnum">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="ON"/>
+            <xsd:enumeration value="DELETED"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:simpleType name="AdExtensionStatusSelectionEnum">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="DRAFT" />
+            <xsd:enumeration value="MODERATION" />
+            <xsd:enumeration value="ACCEPTED" />
+            <xsd:enumeration value="REJECTED" />
+        </xsd:restriction>
+    </xsd:simpleType>
+    <xsd:complexType name="Callout">
+        <xsd:sequence>
+            <xsd:element name="CalloutText" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="AdExtensionBase">
+        <xsd:sequence>
+            <xsd:element name="Type" type="ext:AdExtensionTypeEnum" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Callout" type="ext:Callout" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="State" type="general:StateEnum" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="Status" type="general:StatusEnum" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="StatusClarification" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="AdExtension">
+        <xsd:complexContent>
+            <xsd:extension base="ext:AdExtensionBase">
+                <xsd:sequence>
+                    <xsd:element name="AdExtensionId" type="xsd:long" minOccurs="0" maxOccurs="1"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+    <xsd:complexType name="AdExtensionSettingItem">
+        <xsd:sequence>
+            <xsd:element name="AdExtensionId" type="xsd:long" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="Operation" type="general:OperationEnum" minOccurs="1" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="AdExtensionSetting">
+        <xsd:sequence>
+            <xsd:element name="AdExtensions" type="ext:AdExtensionSettingItem" minOccurs="1" maxOccurs="unbounded"/>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>

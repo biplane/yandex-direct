@@ -223,7 +223,7 @@ class AdGetItem
     /**
      * Gets AdCategories.
      *
-     * @return struct[]|null
+     * @return string[]|null
      */
     public function getAdCategories()
     {
@@ -233,7 +233,7 @@ class AdGetItem
     /**
      * Sets AdCategories.
      *
-     * @param struct[]|null $value
+     * @param string[]|null $value
      * @return $this
      */
     public function setAdCategories(array $value = null)
