@@ -22,6 +22,8 @@ class AdGroupFieldEnum
 
     const NEGATIVE_KEYWORDS = 'NegativeKeywords';
 
+    const NEGATIVE_KEYWORD_SHARED_SET_IDS = 'NegativeKeywordSharedSetIds';
+
     const TYPE = 'Type';
 
     const TRACKING_PARAMS = 'TrackingParams';

@@ -5,7 +5,7 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 /**
  * Auto-generated code.
  */
-class CpmBannerAdBuilderAdGet extends AdBuilderAdGetBase
+class CpmVideoAdBuilderAdUpdate extends AdBuilderAdUpdateBase
 {
 
 //    Can be omit.
@@ -17,11 +17,8 @@ class CpmBannerAdBuilderAdGet extends AdBuilderAdGetBase
 //    Can be omit.
 //    protected $TurboPageId = null;
 
-//    Can be omit.
-//    protected $TurboPageModeration = null;
-
     /**
-     * Creates a new instance of CpmBannerAdBuilderAdGet.
+     * Creates a new instance of CpmVideoAdBuilderAdUpdate.
      *
      * @return self
      */
@@ -56,7 +53,7 @@ class CpmBannerAdBuilderAdGet extends AdBuilderAdGetBase
     /**
      * Gets TrackingPixels.
      *
-     * @return TrackingPixelGetArray|null
+     * @return string[]|null
      */
     public function getTrackingPixels()
     {
@@ -66,10 +63,10 @@ class CpmBannerAdBuilderAdGet extends AdBuilderAdGetBase
     /**
      * Sets TrackingPixels.
      *
-     * @param TrackingPixelGetArray|null $value
+     * @param string[]|null $value
      * @return $this
      */
-    public function setTrackingPixels(TrackingPixelGetArray $value = null)
+    public function setTrackingPixels(array $value = null)
     {
         $this->TrackingPixels = $value;
 
@@ -95,29 +92,6 @@ class CpmBannerAdBuilderAdGet extends AdBuilderAdGetBase
     public function setTurboPageId($value = null)
     {
         $this->TurboPageId = $value;
-
-        return $this;
-    }
-
-    /**
-     * Gets TurboPageModeration.
-     *
-     * @return ExtensionModeration|null
-     */
-    public function getTurboPageModeration()
-    {
-        return isset($this->TurboPageModeration) ? $this->TurboPageModeration : null;
-    }
-
-    /**
-     * Sets TurboPageModeration.
-     *
-     * @param ExtensionModeration|null $value
-     * @return $this
-     */
-    public function setTurboPageModeration(ExtensionModeration $value = null)
-    {
-        $this->TurboPageModeration = $value;
 
         return $this;
     }

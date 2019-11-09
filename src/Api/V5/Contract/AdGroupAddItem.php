@@ -18,6 +18,9 @@ class AdGroupAddItem
 //    protected $NegativeKeywords = null;
 
 //    Can be omit.
+//    protected $NegativeKeywordSharedSetIds = null;
+
+//    Can be omit.
 //    protected $TrackingParams = null;
 
 //    Can be omit.
@@ -31,6 +34,9 @@ class AdGroupAddItem
 
 //    Can be omit.
 //    protected $CpmBannerUserProfileAdGroup = null;
+
+//    Can be omit.
+//    protected $CpmVideoAdGroup = null;
 
     /**
      * Creates a new instance of AdGroupAddItem.
@@ -130,6 +136,29 @@ class AdGroupAddItem
     public function setNegativeKeywords(array $value = null)
     {
         $this->NegativeKeywords = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets NegativeKeywordSharedSetIds.
+     *
+     * @return float[]|null
+     */
+    public function getNegativeKeywordSharedSetIds()
+    {
+        return isset($this->NegativeKeywordSharedSetIds) ? $this->NegativeKeywordSharedSetIds : null;
+    }
+
+    /**
+     * Sets NegativeKeywordSharedSetIds.
+     *
+     * @param float[]|null $value
+     * @return $this
+     */
+    public function setNegativeKeywordSharedSetIds(array $value = null)
+    {
+        $this->NegativeKeywordSharedSetIds = $value;
 
         return $this;
     }
@@ -245,6 +274,29 @@ class AdGroupAddItem
     public function setCpmBannerUserProfileAdGroup(CpmBannerUserProfileAdGroupAdd $value = null)
     {
         $this->CpmBannerUserProfileAdGroup = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets CpmVideoAdGroup.
+     *
+     * @return CpmVideoAdGroupAdd|null
+     */
+    public function getCpmVideoAdGroup()
+    {
+        return isset($this->CpmVideoAdGroup) ? $this->CpmVideoAdGroup : null;
+    }
+
+    /**
+     * Sets CpmVideoAdGroup.
+     *
+     * @param CpmVideoAdGroupAdd|null $value
+     * @return $this
+     */
+    public function setCpmVideoAdGroup(CpmVideoAdGroupAdd $value = null)
+    {
+        $this->CpmVideoAdGroup = $value;
 
         return $this;
     }

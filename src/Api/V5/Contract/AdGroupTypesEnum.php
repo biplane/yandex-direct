@@ -16,6 +16,8 @@ class AdGroupTypesEnum
 
     const CPM_BANNER_AD_GROUP = 'CPM_BANNER_AD_GROUP';
 
+    const CPM_VIDEO_AD_GROUP = 'CPM_VIDEO_AD_GROUP';
+
 
 }
 

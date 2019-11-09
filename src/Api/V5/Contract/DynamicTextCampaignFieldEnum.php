@@ -14,6 +14,10 @@ class DynamicTextCampaignFieldEnum
 
     const BIDDING_STRATEGY = 'BiddingStrategy';
 
+    const PRIORITY_GOALS = 'PriorityGoals';
+
+    const ATTRIBUTION_MODEL = 'AttributionModel';
+
 
 }
 

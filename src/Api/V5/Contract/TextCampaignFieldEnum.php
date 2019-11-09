@@ -18,6 +18,8 @@ class TextCampaignFieldEnum
 
     const PRIORITY_GOALS = 'PriorityGoals';
 
+    const ATTRIBUTION_MODEL = 'AttributionModel';
+
 
 }
 

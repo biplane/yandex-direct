@@ -24,6 +24,8 @@ class PriceCurrencyEnum
 
     const CHF = 'CHF';
 
+    const UZS = 'UZS';
+
 
 }
 

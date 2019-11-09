@@ -5,7 +5,7 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 /**
  * Auto-generated code.
  */
-class CpmBannerAdBuilderAdGet extends AdBuilderAdGetBase
+class CpmVideoAdBuilderAdGet extends AdBuilderAdGetBase
 {
 
 //    Can be omit.
@@ -21,7 +21,7 @@ class CpmBannerAdBuilderAdGet extends AdBuilderAdGetBase
 //    protected $TurboPageModeration = null;
 
     /**
-     * Creates a new instance of CpmBannerAdBuilderAdGet.
+     * Creates a new instance of CpmVideoAdBuilderAdGet.
      *
      * @return self
      */

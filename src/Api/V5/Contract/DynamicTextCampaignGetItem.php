@@ -14,6 +14,9 @@ class DynamicTextCampaignGetItem extends DynamicTextCampaignBase
 //    Can be omit.
 //    protected $Settings = null;
 
+//    Can be omit.
+//    protected $PriorityGoals = null;
+
     /**
      * Creates a new instance of DynamicTextCampaignGetItem.
      *
@@ -66,6 +69,29 @@ class DynamicTextCampaignGetItem extends DynamicTextCampaignBase
     public function setSettings(array $value = null)
     {
         $this->Settings = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets PriorityGoals.
+     *
+     * @return PriorityGoalsArray|null
+     */
+    public function getPriorityGoals()
+    {
+        return isset($this->PriorityGoals) ? $this->PriorityGoals : null;
+    }
+
+    /**
+     * Sets PriorityGoals.
+     *
+     * @param PriorityGoalsArray|null $value
+     * @return $this
+     */
+    public function setPriorityGoals(PriorityGoalsArray $value = null)
+    {
+        $this->PriorityGoals = $value;
 
         return $this;
     }

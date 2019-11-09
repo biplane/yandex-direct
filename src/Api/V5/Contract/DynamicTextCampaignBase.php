@@ -11,6 +11,9 @@ class DynamicTextCampaignBase
 //    Can be omit.
 //    protected $CounterIds = null;
 
+//    Can be omit.
+//    protected $AttributionModel = null;
+
     /**
      * Creates a new instance of DynamicTextCampaignBase.
      *
@@ -40,6 +43,31 @@ class DynamicTextCampaignBase
     public function setCounterIds(array $value = null)
     {
         $this->CounterIds = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets AttributionModel.
+     *
+     * @return string|null
+     * @see AttributionModelEnum
+     */
+    public function getAttributionModel()
+    {
+        return isset($this->AttributionModel) ? $this->AttributionModel : null;
+    }
+
+    /**
+     * Sets AttributionModel.
+     *
+     * @param string|null $value
+     * @return $this
+     * @see AttributionModelEnum
+     */
+    public function setAttributionModel($value = null)
+    {
+        $this->AttributionModel = $value;
 
         return $this;
     }

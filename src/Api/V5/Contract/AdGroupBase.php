@@ -15,6 +15,9 @@ class AdGroupBase
 //    protected $NegativeKeywords = null;
 
 //    Can be omit.
+//    protected $NegativeKeywordSharedSetIds = null;
+
+//    Can be omit.
 //    protected $TrackingParams = null;
 
     /**
@@ -69,6 +72,29 @@ class AdGroupBase
     public function setNegativeKeywords(array $value = null)
     {
         $this->NegativeKeywords = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets NegativeKeywordSharedSetIds.
+     *
+     * @return float[]|null
+     */
+    public function getNegativeKeywordSharedSetIds()
+    {
+        return isset($this->NegativeKeywordSharedSetIds) ? $this->NegativeKeywordSharedSetIds : null;
+    }
+
+    /**
+     * Sets NegativeKeywordSharedSetIds.
+     *
+     * @param float[]|null $value
+     * @return $this
+     */
+    public function setNegativeKeywordSharedSetIds(array $value = null)
+    {
+        $this->NegativeKeywordSharedSetIds = $value;
 
         return $this;
     }

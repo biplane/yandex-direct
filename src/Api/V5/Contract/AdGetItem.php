@@ -65,6 +65,9 @@ class AdGetItem
 //    Can be omit.
 //    protected $CpcVideoAdBuilderAd = null;
 
+//    Can be omit.
+//    protected $CpmVideoAdBuilderAd = null;
+
     /**
      * Creates a new instance of AdGetItem.
      *
@@ -518,6 +521,29 @@ class AdGetItem
     public function setCpcVideoAdBuilderAd(CpcVideoAdBuilderAdGet $value = null)
     {
         $this->CpcVideoAdBuilderAd = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets CpmVideoAdBuilderAd.
+     *
+     * @return CpmVideoAdBuilderAdGet|null
+     */
+    public function getCpmVideoAdBuilderAd()
+    {
+        return isset($this->CpmVideoAdBuilderAd) ? $this->CpmVideoAdBuilderAd : null;
+    }
+
+    /**
+     * Sets CpmVideoAdBuilderAd.
+     *
+     * @param CpmVideoAdBuilderAdGet|null $value
+     * @return $this
+     */
+    public function setCpmVideoAdBuilderAd(CpmVideoAdBuilderAdGet $value = null)
+    {
+        $this->CpmVideoAdBuilderAd = $value;
 
         return $this;
     }

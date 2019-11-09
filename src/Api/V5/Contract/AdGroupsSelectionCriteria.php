@@ -32,6 +32,9 @@ class AdGroupsSelectionCriteria
 //    Can be omit.
 //    protected $ServingStatuses = null;
 
+//    Can be omit.
+//    protected $NegativeKeywordSharedSetIds = null;
+
     /**
      * Creates a new instance of AdGroupsSelectionCriteria.
      *
@@ -230,6 +233,29 @@ class AdGroupsSelectionCriteria
     public function setServingStatuses(array $value = null)
     {
         $this->ServingStatuses = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets NegativeKeywordSharedSetIds.
+     *
+     * @return int[]|null
+     */
+    public function getNegativeKeywordSharedSetIds()
+    {
+        return isset($this->NegativeKeywordSharedSetIds) ? $this->NegativeKeywordSharedSetIds : null;
+    }
+
+    /**
+     * Sets NegativeKeywordSharedSetIds.
+     *
+     * @param int[]|null $value
+     * @return $this
+     */
+    public function setNegativeKeywordSharedSetIds(array $value = null)
+    {
+        $this->NegativeKeywordSharedSetIds = $value;
 
         return $this;
     }

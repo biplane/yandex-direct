@@ -25,6 +25,7 @@ class Campaigns extends SoapClientV5
         parent::__construct($user->resolveWsdl(self::ENDPOINT), $dispatcher, $user, [
             'classmap' => [
                 'MobileAppAdActionEnum' => 'Biplane\YandexDirect\Api\V5\Contract\MobileAppAdActionEnum',
+                'AttributionModelEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AttributionModelEnum',
                 'ExceptionNotification' => 'Biplane\YandexDirect\Api\V5\Contract\ExceptionNotification',
                 'LimitOffset' => 'Biplane\YandexDirect\Api\V5\Contract\LimitOffset',
                 'YesNoEnum' => 'Biplane\YandexDirect\Api\V5\Contract\YesNoEnum',

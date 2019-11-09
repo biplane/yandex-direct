@@ -11,9 +11,6 @@ class StrategyNetworkDefault
 //    Can be omit.
 //    protected $LimitPercent = null;
 
-//    Can be omit.
-//    protected $BidPercent = null;
-
     /**
      * Creates a new instance of StrategyNetworkDefault.
      *
@@ -43,29 +40,6 @@ class StrategyNetworkDefault
     public function setLimitPercent($value = null)
     {
         $this->LimitPercent = $value;
-
-        return $this;
-    }
-
-    /**
-     * Gets BidPercent.
-     *
-     * @return int|null
-     */
-    public function getBidPercent()
-    {
-        return isset($this->BidPercent) ? $this->BidPercent : null;
-    }
-
-    /**
-     * Sets BidPercent.
-     *
-     * @param int|null $value
-     * @return $this
-     */
-    public function setBidPercent($value = null)
-    {
-        $this->BidPercent = $value;
 
         return $this;
     }
