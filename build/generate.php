@@ -327,6 +327,22 @@ generate($generator, [
 ] + $defaultOptions);
 
 generate($generator, [
+    'inputFile' => 'https://api.direct.yandex.com/v5/leads?wsdl',
+    'renameType' => function ($typeName) {
+        return preg_replace(
+            '#^(Get)(Request|Response)$#',
+            '$1Leads$2',
+            $typeName
+        );
+    },
+        'excludeTypes' => [
+        'ArrayOfString',
+        'ArrayOfInteger',
+        'ArrayOfLong',
+    ],
+] + $defaultOptions);
+
+generate($generator, [
     'inputFile' => 'https://api.direct.yandex.com/v5/retargetinglists?wsdl',
     'renameType' => function ($typeName) {
         return preg_replace(
@@ -348,6 +364,22 @@ generate($generator, [
         return preg_replace(
             '#^(Add|Delete|Get)(Request|Response)$#',
             '$1Sitelinks$2',
+            $typeName
+        );
+    },
+    'excludeTypes' => [
+        'ArrayOfString',
+        'ArrayOfInteger',
+        'ArrayOfLong',
+    ],
+] + $defaultOptions);
+
+generate($generator, [
+    'inputFile' => 'https://api.direct.yandex.com/v5/turbopages?wsdl',
+    'renameType' => function ($typeName) {
+        return preg_replace(
+            '#^(Get)(Request|Response)$#',
+            '$1TurboPages$2',
             $typeName
         );
     },

@@ -132,9 +132,13 @@ You can get the proxy of a service through the `User` object, to interact with Y
 
 * `User::getKeywordsResearchService()` - Service to get forecast of impressions for keywords. (API 5).
 
+* `User::getLeadsService()` - API 5
+
 * `User::getRetargetingListsService()` - Service for manage lists of retargeting (API 5).
 
 * `User::getSitelinksService()` - Service for manage sitelinks (API 5).
+
+* `User::getTurboPagesService()` - API 5
 
 * `User::getVCardsService()` - Service for manage VCards (API 5).
 

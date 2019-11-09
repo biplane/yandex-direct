@@ -18,9 +18,11 @@ use Biplane\YandexDirect\Api\V5\DynamicTextAdTargets;
 use Biplane\YandexDirect\Api\V5\KeywordBids;
 use Biplane\YandexDirect\Api\V5\Keywords;
 use Biplane\YandexDirect\Api\V5\KeywordsResearch;
+use Biplane\YandexDirect\Api\V5\Leads;
 use Biplane\YandexDirect\Api\V5\Reports;
 use Biplane\YandexDirect\Api\V5\RetargetingLists;
 use Biplane\YandexDirect\Api\V5\Sitelinks;
+use Biplane\YandexDirect\Api\V5\TurboPages;
 use Biplane\YandexDirect\Api\V5\VCards;
 use Biplane\YandexDirect\Helper\Invoker;
 use Symfony\Component\EventDispatcher\EventDispatcher;
@@ -300,6 +302,16 @@ class User
     }
 
     /**
+     * Gets the proxy of web-service to manage submissed data from the turbo-pages.
+     *
+     * @return Leads
+     */
+    public function getLeadsService()
+    {
+        return $this->getProxy(Leads::class);
+    }
+
+    /**
      * Gets the proxy of web-service for manage lists of retargeting.
      *
      * @return RetargetingLists
@@ -317,6 +329,16 @@ class User
     public function getSitelinksService()
     {
         return $this->getProxy(Sitelinks::class);
+    }
+
+    /**
+     * Gets the proxy of web-service for manage the turbo-pages.
+     *
+     * @return TurboPages
+     */
+    public function getTurboPagesService()
+    {
+        return $this->getProxy(TurboPages::class);
     }
 
     /**

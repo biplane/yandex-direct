@@ -125,8 +125,10 @@ class UserTest extends TestCase
             [V5\KeywordBids::class, 'getKeywordBidsService'],
             [V5\Keywords::class, 'getKeywordsService'],
             [V5\KeywordsResearch::class, 'getKeywordsResearchService'],
+            [V5\Leads::class, 'getLeadsService'],
             [V5\RetargetingLists::class, 'getRetargetingListsService'],
             [V5\Sitelinks::class, 'getSitelinksService'],
+            [V5\TurboPages::class, 'getTurboPagesService'],
             [V5\VCards::class, 'getVCardsService'],
             [V5\Reports::class, 'getReportsService'],
         ];
