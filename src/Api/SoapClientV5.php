@@ -17,12 +17,11 @@ class SoapClientV5 extends SoapClient
 
     public function __construct($wsdl, EventDispatcherInterface $dispatcher, User $user, array $options = [])
     {
-        $options['stream_context'] = createStreamContext(
-            [
-                'header' => self::createHttpHeaders($user),
+        $options['stream_context'] = stream_context_create([
+            'http' => [
+                'header' => $this->createHttpHeaders($user),
             ],
-            isset($options['stream_context']) ? $options['stream_context'] : null
-        );
+        ]);
 
         $typemap = isset($options['typemap']) ? $options['typemap'] : [];
 
@@ -107,7 +106,7 @@ class SoapClientV5 extends SoapClient
         return $this->getUnits();
     }
 
-    private static function createHttpHeaders(User $user)
+    private function createHttpHeaders(User $user)
     {
         $headers = [
             'Authorization: Bearer ' . $user->getAccessToken(),
@@ -122,6 +121,6 @@ class SoapClientV5 extends SoapClient
             $headers[] = 'Use-Operator-Units: true';
         }
 
-        return $headers;
+        return implode("\r\n", $headers);
     }
 }
