@@ -64,6 +64,10 @@ function createStreamContext(array $httpOptions, $originStreamContext = null)
         $options['http'] = $httpOptions;
     }
 
+    if (isset($options['http']['header']) && is_array($options['http']['header'])) {
+        $options['http']['header'] = implode("\r\n", $options['http']['header']);
+    }
+
     return stream_context_create($options, $params);
 }
 

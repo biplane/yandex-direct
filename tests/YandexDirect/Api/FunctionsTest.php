@@ -89,13 +89,13 @@ class FunctionsTest extends TestCase
             [
                 'http' => [
                     'method' => 'POST',
-                    'header' => [
+                    'header' => implode("\r\n", [
                         'Accept: */*',
                         'Content-Type: application/json',
                         'Accept-Language: ru',
                         'Client-Login: foo',
                         'Use-Operator-Units: true',
-                    ],
+                    ]),
                     'protocol_version' => '1.1',
                 ],
                 'ssl' => [
@@ -125,11 +125,11 @@ class FunctionsTest extends TestCase
 
         $streamContext = createStreamContext(
             [
-                'header' => [
+                'header' => implode("\r\n", [
                     'Accept-Language: ru',
                     'Client-Login: foo',
                     'Use-Operator-Units: true',
-                ],
+                ]),
             ],
             $originStream
         );
@@ -142,11 +142,11 @@ class FunctionsTest extends TestCase
                     'bindto' => '192.168.0.100:0',
                 ],
                 'http' => [
-                    'header' => [
+                    'header' => implode("\r\n", [
                         'Accept-Language: ru',
                         'Client-Login: foo',
                         'Use-Operator-Units: true',
-                    ],
+                    ]),
                 ],
             ],
             stream_context_get_options($streamContext)
