@@ -58,7 +58,7 @@ abstract class SoapClient extends \SoapClient implements ClientInterface
             'features' => SOAP_SINGLE_ELEMENT_ARRAYS,
         ];
 
-        parent::__construct($wsdl, $options + $user->getSoapOptions() + $defaults);
+        parent::__construct($wsdl, array_merge($defaults, $user->getSoapOptions(), $options));
 
         $this->dispatcher = $dispatcher;
         $this->user = $user;
