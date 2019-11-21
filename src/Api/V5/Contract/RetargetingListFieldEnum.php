@@ -22,6 +22,8 @@ class RetargetingListFieldEnum
 
     const SCOPE = 'Scope';
 
+    const AVAILABLE_FOR_TARGETS_IN_AD_GROUP_TYPES = 'AvailableForTargetsInAdGroupTypes';
+
 
 }
 

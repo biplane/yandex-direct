@@ -20,6 +20,9 @@ class RetargetingListGetItem extends RetargetingListBase
 //    Can be omit.
 //    protected $Scope = null;
 
+//    Can be omit.
+//    protected $AvailableForTargetsInAdGroupTypes = null;
+
     /**
      * Creates a new instance of RetargetingListGetItem.
      *
@@ -124,6 +127,29 @@ class RetargetingListGetItem extends RetargetingListBase
     public function setScope($value = null)
     {
         $this->Scope = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets AvailableForTargetsInAdGroupTypes.
+     *
+     * @return string[]|null
+     */
+    public function getAvailableForTargetsInAdGroupTypes()
+    {
+        return isset($this->AvailableForTargetsInAdGroupTypes) ? $this->AvailableForTargetsInAdGroupTypes : null;
+    }
+
+    /**
+     * Sets AvailableForTargetsInAdGroupTypes.
+     *
+     * @param string[]|null $value
+     * @return $this
+     */
+    public function setAvailableForTargetsInAdGroupTypes(array $value = null)
+    {
+        $this->AvailableForTargetsInAdGroupTypes = $value;
 
         return $this;
     }

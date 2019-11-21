@@ -25,6 +25,7 @@ class AdGroups extends SoapClientV5
         parent::__construct($user->resolveWsdl(self::ENDPOINT), $dispatcher, $user, [
             'classmap' => [
                 'MobileAppAdActionEnum' => 'Biplane\YandexDirect\Api\V5\Contract\MobileAppAdActionEnum',
+                'AdGroupTypesEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AdGroupTypesEnum',
                 'AttributionModelEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AttributionModelEnum',
                 'ExceptionNotification' => 'Biplane\YandexDirect\Api\V5\Contract\ExceptionNotification',
                 'LimitOffset' => 'Biplane\YandexDirect\Api\V5\Contract\LimitOffset',
@@ -62,7 +63,6 @@ class AdGroups extends SoapClientV5
                 'MobileAppAdGroupFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\MobileAppAdGroupFieldEnum',
                 'DynamicTextAdGroupFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\DynamicTextAdGroupFieldEnum',
                 'DynamicTextFeedAdGroupFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\DynamicTextFeedAdGroupFieldEnum',
-                'AdGroupTypesEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AdGroupTypesEnum',
                 'AdGroupSubtypeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AdGroupSubtypeEnum',
                 'AdGroupStatusSelectionEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AdGroupStatusSelectionEnum',
                 'AdGroupAppIconStatusSelectionEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AdGroupAppIconStatusSelectionEnum',

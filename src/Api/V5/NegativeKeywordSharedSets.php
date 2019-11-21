@@ -12,7 +12,7 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 class NegativeKeywordSharedSets extends SoapClientV5
 {
 
-    const ENDPOINT = 'https://api.direct.yandex.com/v5/negativekeywordsharedsets?wsdl ';
+    const ENDPOINT = 'https://api.direct.yandex.com/v5/negativekeywordsharedsets?wsdl';
 
     /**
      * Constructor.
@@ -25,6 +25,7 @@ class NegativeKeywordSharedSets extends SoapClientV5
         parent::__construct($user->resolveWsdl(self::ENDPOINT), $dispatcher, $user, [
             'classmap' => [
                 'MobileAppAdActionEnum' => 'Biplane\YandexDirect\Api\V5\Contract\MobileAppAdActionEnum',
+                'AdGroupTypesEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AdGroupTypesEnum',
                 'AttributionModelEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AttributionModelEnum',
                 'ExceptionNotification' => 'Biplane\YandexDirect\Api\V5\Contract\ExceptionNotification',
                 'LimitOffset' => 'Biplane\YandexDirect\Api\V5\Contract\LimitOffset',
