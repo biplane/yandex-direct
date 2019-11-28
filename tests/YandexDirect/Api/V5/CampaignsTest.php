@@ -28,11 +28,7 @@ class CampaignsTest extends TestCase
     {
         VCR::insertCassette('CampaignsGet_primitiveTypes');
 
-        $user = new User([
-            'access_token' => 'token',
-            'login' => 'foo',
-        ]);
-        $service = new Campaigns($this->createMock(EventDispatcherInterface::class), $user);
+        $service = new Campaigns($this->createMock(EventDispatcherInterface::class), $this->createUser());
 
         $request = GetCampaignsRequest::create()
             ->setSelectionCriteria(
@@ -57,5 +53,19 @@ class CampaignsTest extends TestCase
             'самостоятельно',
         ], $campaigns[0]->getNegativeKeywords());
         self::assertSame([123], $campaigns[0]->getTextCampaign()->getCounterIds());
+    }
+
+    private function createUser()
+    {
+        $accessToken = getenv('DIRECT_TOKEN');
+
+        if (false === $accessToken) {
+            $accessToken = 'fake';
+        }
+
+        return new User([
+            'access_token' => $accessToken,
+            'login' => getenv('DIRECT_CLIENT_LOGIN') ?: null,
+        ]);
     }
 }
