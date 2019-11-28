@@ -56,7 +56,7 @@ class CpmVideoAdBuilderAdGet extends AdBuilderAdGetBase
     /**
      * Gets TrackingPixels.
      *
-     * @return TrackingPixelGetItem[]|null
+     * @return TrackingPixelGetArray|null
      */
     public function getTrackingPixels()
     {
@@ -66,10 +66,10 @@ class CpmVideoAdBuilderAdGet extends AdBuilderAdGetBase
     /**
      * Sets TrackingPixels.
      *
-     * @param TrackingPixelGetItem[]|null $value
+     * @param TrackingPixelGetArray|null $value
      * @return $this
      */
-    public function setTrackingPixels(array $value = null)
+    public function setTrackingPixels(TrackingPixelGetArray $value = null)
     {
         $this->TrackingPixels = $value;
 

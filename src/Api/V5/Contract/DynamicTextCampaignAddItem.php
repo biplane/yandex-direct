@@ -104,7 +104,7 @@ class DynamicTextCampaignAddItem
     /**
      * Gets PriorityGoals.
      *
-     * @return PriorityGoalsItem[]|null
+     * @return PriorityGoalsArray|null
      */
     public function getPriorityGoals()
     {
@@ -114,10 +114,10 @@ class DynamicTextCampaignAddItem
     /**
      * Sets PriorityGoals.
      *
-     * @param PriorityGoalsItem[]|null $value
+     * @param PriorityGoalsArray|null $value
      * @return $this
      */
-    public function setPriorityGoals(array $value = null)
+    public function setPriorityGoals(PriorityGoalsArray $value = null)
     {
         $this->PriorityGoals = $value;
 

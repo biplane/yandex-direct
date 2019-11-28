@@ -70,7 +70,7 @@ class Generator implements GeneratorInterface
             }
 
             if ($node->isComplex()) {
-                if (NodeUtil::isArray($node)) {
+                if ($node->isArray()) {
                     $type = new Contract\ArrayType($node, $renameType($node->getName()), $namespace);
                 } else {
                     $type = new Contract\ComplexType($node, $renameType($node->getName()), $namespace);

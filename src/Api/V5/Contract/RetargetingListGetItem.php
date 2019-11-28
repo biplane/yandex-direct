@@ -134,7 +134,7 @@ class RetargetingListGetItem extends RetargetingListBase
     /**
      * Gets AvailableForTargetsInAdGroupTypes.
      *
-     * @return string[]|null
+     * @return AvailableForTargetsInAdGroupTypesArray|null
      */
     public function getAvailableForTargetsInAdGroupTypes()
     {
@@ -144,10 +144,10 @@ class RetargetingListGetItem extends RetargetingListBase
     /**
      * Sets AvailableForTargetsInAdGroupTypes.
      *
-     * @param string[]|null $value
+     * @param AvailableForTargetsInAdGroupTypesArray|null $value
      * @return $this
      */
-    public function setAvailableForTargetsInAdGroupTypes(array $value = null)
+    public function setAvailableForTargetsInAdGroupTypes(AvailableForTargetsInAdGroupTypesArray $value = null)
     {
         $this->AvailableForTargetsInAdGroupTypes = $value;
 
