@@ -6,13 +6,14 @@ use Biplane\YandexDirect\EventListener\LoggerListener;
 use Biplane\YandexDirect\Exception\ApiException;
 use Biplane\YandexDirect\Exception\NetworkException;
 use Biplane\YandexDirect\User;
+use PHPUnit\Framework\MockObject\MockObject;
 use Psr\Log\LoggerInterface;
 use Psr\Log\LogLevel;
 
 class LoggerListenerTest extends TestCase
 {
     /**
-     * @var \PHPUnit_Framework_MockObject_MockObject
+     * @var MockObject|LoggerInterface
      */
     private $logger;
 
@@ -20,6 +21,17 @@ class LoggerListenerTest extends TestCase
      * @var LoggerListener
      */
     private $listener;
+
+    protected function setUp(): void
+    {
+        $this->logger = $this->createMock(LoggerInterface::class);
+        $this->listener = new LoggerListener($this->logger);
+    }
+
+    protected function tearDown(): void
+    {
+        unset($this->logger, $this->listener);
+    }
 
     public function testHandleNetworkException()
     {
@@ -85,17 +97,6 @@ class LoggerListenerTest extends TestCase
             ]);
 
         $this->listener->onException($event);
-    }
-
-    protected function setUp()
-    {
-        $this->logger = $this->createMock(LoggerInterface::class);
-        $this->listener = new LoggerListener($this->logger);
-    }
-
-    protected function tearDown()
-    {
-        unset($this->logger, $this->listener);
     }
 
     private function getUserMock($login)

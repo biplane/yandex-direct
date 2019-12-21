@@ -29,7 +29,7 @@ class UserTest extends TestCase
             'access_token' => 'foo',
         ]);
 
-        $this->assertSame($locale, $config->getLocale());
+        self::assertSame($locale, $config->getLocale());
     }
 
     public function testLoginShouldBeNormalized()
@@ -42,11 +42,10 @@ class UserTest extends TestCase
         self::assertEquals('p-g-ivanov', $config->getLogin());
     }
 
-    /**
-     * @expectedException \InvalidArgumentException
-     */
     public function testThrowExceptionWhenSetMasterTokenAndLoginIsMissing()
     {
+        $this->expectException(\InvalidArgumentException::class);
+
         new User([
             'access_token' => 'foo',
             'master_token' => 'bar',

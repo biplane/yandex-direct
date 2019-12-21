@@ -4,19 +4,29 @@ namespace Biplane\Tests\YandexDirect\EventListener;
 
 use Biplane\YandexDirect\EventListener\DumpListener;
 use Biplane\YandexDirect\Helper\Dumper;
+use PHPUnit\Framework\MockObject\MockObject;
 
 class DumpListenerTest extends TestCase
 {
     /**
-     * @var \PHPUnit_Framework_MockObject_MockObject
+     * @var MockObject|Dumper
      */
     private $dumper;
 
-    /**
-     * @expectedException \InvalidArgumentException
-     */
+    protected function setUp(): void
+    {
+        $this->dumper = $this->createMock(Dumper::class);
+    }
+
+    protected function tearDown(): void
+    {
+        unset($this->dumper);
+    }
+
     public function testThrowExceptionWhenLevelIsInvalid()
     {
+        $this->expectException(\InvalidArgumentException::class);
+
         new DumpListener($this->dumper, 0);
     }
 
@@ -86,15 +96,5 @@ class DumpListenerTest extends TestCase
             [DumpListener::LEVEL_FAIL_REQUEST, false],
             [DumpListener::LEVEL_ALL_REQUEST, true],
         ];
-    }
-
-    protected function setUp()
-    {
-        $this->dumper = $this->createMock(Dumper::class);
-    }
-
-    protected function tearDown()
-    {
-        unset($this->dumper);
     }
 }

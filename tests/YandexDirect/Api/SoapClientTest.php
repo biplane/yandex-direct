@@ -54,12 +54,12 @@ class SoapClientTest extends BaseTestCase
         self::assertEquals($response, $this->doInvoke($client, $methodName, $methodParams));
     }
 
-    /**
-     * @expectedException \Biplane\YandexDirect\Exception\NetworkException
-     * @expectedExceptionMessage Could not connect to host.
-     */
     public function testInvokeApiMethodShouldThrowException()
     {
+        $this->expectException(NetworkException::class);
+        $this->expectExceptionMessage('Could not connect to host.');
+
+
         $methodName = 'AnyMethod';
         $methodParams = [
             'foo' => 'bar',

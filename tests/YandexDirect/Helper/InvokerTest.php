@@ -66,24 +66,22 @@ class InvokerTest extends TestCase
         self::assertSame(2, $attempts);
     }
 
-    /**
-     * @expectedException \Biplane\YandexDirect\Exception\NetworkException
-     */
     public function testThrowExceptionWhenMaxAttemptsIsReached()
     {
         $invoker = new Invoker();
+
+        $this->expectException(NetworkException::class);
 
         $invoker(function () {
             throw new NetworkException('Internal server error.', 500);
         });
     }
 
-    /**
-     * @expectedException \Biplane\YandexDirect\Exception\ApiException
-     */
     public function testThrowExceptionWhenRetryIsNotAllowed()
     {
         $invoker = new Invoker();
+
+        $this->expectException(ApiException::class);
 
         $invoker(function () {
             throw new ApiException(

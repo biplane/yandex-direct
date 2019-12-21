@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<phpunit colors="true" bootstrap="tests/bootstrap.php">
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="http://schema.phpunit.de/7.5/phpunit.xsd"
+         colors="true"
+         verbose="true"
+         bootstrap="tests/bootstrap.php">
     <testsuites>
         <testsuite name="Library Suite">
-            <directory suffix="Test.php">tests</directory>
+            <directory>tests/</directory>
         </testsuite>
     </testsuites>
 
@@ -15,13 +19,13 @@
 
     <filter>
         <whitelist>
-            <directory suffix=".php">src</directory>
+            <directory suffix=".php">src/</directory>
+            <exclude>
+                <!-- Exclude auto-generated code from the coverage report -->
+                <directory>src/Api/V4/</directory>
+                <directory>src/Api/V5/</directory>
+            </exclude>
         </whitelist>
-        <exclude>
-            <!-- Exclude auto-generated code from the coverage report. -->
-            <directory>src/Api/V4</directory>
-            <directory>src/Api/V5</directory>
-        </exclude>
     </filter>
 
     <php>

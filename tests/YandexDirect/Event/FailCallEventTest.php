@@ -15,17 +15,9 @@ class FailCallEventTest extends TestCase
         $requestId = 'request-id';
         $exception = new \Exception();
 
-        $client->expects(self::any())
-            ->method('getLastRequest')
-            ->willReturn('request content');
-
-        $client->expects(self::any())
-            ->method('getLastResponse')
-            ->willReturn('response content');
-
-        $client->expects(self::any())
-            ->method('getRequestId')
-            ->willReturn($requestId);
+        $client->method('getLastRequest')->willReturn('request content');
+        $client->method('getLastResponse')->willReturn('response content');
+        $client->method('getRequestId')->willReturn($requestId);
 
         $event = new FailCallEvent($methodRef, $methodParams, $user, $client, $exception);
 

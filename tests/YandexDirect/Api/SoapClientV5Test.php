@@ -7,13 +7,12 @@ use Biplane\YandexDirect\Exception\ApiException;
 
 class SoapClientV5Test extends BaseTestCase
 {
-    /**
-     * @expectedException \Biplane\YandexDirect\Exception\ApiException
-     * @expectedExceptionCode 53
-     * @expectedExceptionMessage You must specify the Client-Login
-     */
     public function testSoapFaultShouldBeWrappedToApiException()
     {
+        $this->expectException(ApiException::class);
+        $this->expectExceptionCode(53);
+        $this->expectExceptionMessage('You must specify the Client-Login');
+
         $methodName = 'Foo';
         $methodParams = [];
 
@@ -28,19 +27,14 @@ class SoapClientV5Test extends BaseTestCase
 
         $client = $this->getSoapClient('__soapCall', '__getLastResponseHeaders');
 
-        $client->expects(self::once())
-            ->method('__soapCall')
-            ->willThrowException($fault);
-
-        $client->expects(self::any())
-            ->method('__getLastResponseHeaders')
-            ->willReturn(
-                "HTTP/1.1 200 OK\r\n" .
-                "Content-Type: text/xml\r\n" .
-                "RequestId: 2289555458481966563\r\n" .
-                "Units: 50/39750/40000\r\n" .
-                "X-XSS-Protection: 1; mode=block\r\n"
-            );
+        $client->method('__soapCall')->willThrowException($fault);
+        $client->method('__getLastResponseHeaders')->willReturn(
+            "HTTP/1.1 200 OK\r\n" .
+            "Content-Type: text/xml\r\n" .
+            "RequestId: 2289555458481966563\r\n" .
+            "Units: 50/39750/40000\r\n" .
+            "X-XSS-Protection: 1; mode=block\r\n"
+        );
 
         try {
             $this->doInvoke($client, $methodName, $methodParams);

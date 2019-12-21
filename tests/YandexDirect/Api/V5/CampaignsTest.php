@@ -14,12 +14,12 @@ use VCR\VCR;
 
 class CampaignsTest extends TestCase
 {
-    public static function setUpBeforeClass()
+    public static function setUpBeforeClass(): void
     {
         VCR::turnOn();
     }
 
-    public static function tearDownAfterClass()
+    public static function tearDownAfterClass(): void
     {
         VCR::turnOff();
     }

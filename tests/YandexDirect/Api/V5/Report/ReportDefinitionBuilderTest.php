@@ -9,16 +9,17 @@ use Biplane\YandexDirect\Api\V5\Report\FilterOperatorEnum;
 use Biplane\YandexDirect\Api\V5\Report\ReportDefinitionBuilder;
 use Biplane\YandexDirect\Api\V5\Report\ReportTypeEnum;
 use Biplane\YandexDirect\Exception\ReportDefinitionException;
+use PHPUnit\Framework\TestCase;
 use VCR\VCR;
 
-class ReportDefinitionBuilderTest extends \PHPUnit_Framework_TestCase
+class ReportDefinitionBuilderTest extends TestCase
 {
-    public static function setUpBeforeClass()
+    public static function setUpBeforeClass(): void
     {
         VCR::turnOff();
     }
 
-    public function testBuildWithDefaults()
+    public function testBuildWithDefaults(): void
     {
         $builder = new ReportDefinitionBuilder(__DIR__ . '/fixtures/reports.xsd');
         $builder
@@ -42,7 +43,7 @@ class ReportDefinitionBuilderTest extends \PHPUnit_Framework_TestCase
     <IncludeDiscount>NO</IncludeDiscount>
 </ReportDefinition>
 XML;
-        $this->assertXmlStringEqualsXmlString($expected, $reportDefinition);
+        self::assertXmlStringEqualsXmlString($expected, $reportDefinition);
     }
 
     public function testBuildWithCustomDate()
@@ -72,7 +73,7 @@ XML;
     <IncludeDiscount>NO</IncludeDiscount>
 </ReportDefinition>
 XML;
-        $this->assertXmlStringEqualsXmlString($expected, $reportDefinition);
+        self::assertXmlStringEqualsXmlString($expected, $reportDefinition);
     }
 
     public function testBuildWithCustomParams()
@@ -108,7 +109,7 @@ XML;
         <Filter>
             <Field>Criteria</Field>
             <Operator>STARTS_WITH_IGNORE_CASE</Operator>
-            <Values>search</Values>        
+            <Values>search</Values>
         </Filter>
     </SelectionCriteria>
     <FieldNames>AdId</FieldNames>
@@ -133,7 +134,7 @@ XML;
     <IncludeDiscount>NO</IncludeDiscount>
 </ReportDefinition>
 XML;
-        $this->assertXmlStringEqualsXmlString($expected, $reportDefinition);
+        self::assertXmlStringEqualsXmlString($expected, $reportDefinition);
     }
 
     public function testBuildWithGoals()
@@ -167,7 +168,7 @@ XML;
     <IncludeDiscount>NO</IncludeDiscount>
 </ReportDefinition>
 XML;
-        $this->assertXmlStringEqualsXmlString($expected, $reportDefinition);
+        self::assertXmlStringEqualsXmlString($expected, $reportDefinition);
     }
 
     public function testBuildWithGoalsAndAttributionModels()
@@ -202,7 +203,7 @@ XML;
     <IncludeDiscount>NO</IncludeDiscount>
 </ReportDefinition>
 XML;
-        $this->assertXmlStringEqualsXmlString($expected, $reportDefinition);
+        self::assertXmlStringEqualsXmlString($expected, $reportDefinition);
     }
 
     public function testBuildWithAttributionModelsAndNoGoals()
@@ -234,7 +235,7 @@ XML;
     <IncludeDiscount>NO</IncludeDiscount>
 </ReportDefinition>
 XML;
-        $this->assertXmlStringEqualsXmlString($expected, $reportDefinition);
+        self::assertXmlStringEqualsXmlString($expected, $reportDefinition);
     }
 
     public function testBuildWithoutValidation()
@@ -255,60 +256,55 @@ XML;
     <IncludeDiscount>NO</IncludeDiscount>
 </ReportDefinition>
 XML;
-        $this->assertXmlStringEqualsXmlString($expected, $reportDefinition);
+        self::assertXmlStringEqualsXmlString($expected, $reportDefinition);
     }
 
-    /**
-     * @expectedException \LogicException
-     */
     public function testThrowExceptionWhenSetCustomDateTypeWithoutDateFrom()
     {
+        $this->expectException(\LogicException::class);
+
         $builder = new ReportDefinitionBuilder();
 
         $builder->setDateRangeType(DateRangeTypeEnum::CUSTOM_DATE);
     }
 
-    /**
-     * @expectedException \LogicException
-     */
     public function testThrowExceptionWhenSetCustomDateTypeWithoutDateTo()
     {
+        $this->expectException(\LogicException::class);
+
         $builder = new ReportDefinitionBuilder();
 
         $builder->setDateRangeType(DateRangeTypeEnum::CUSTOM_DATE, 'From');
     }
 
-    /**
-     * @expectedException \LogicException
-     */
     public function testThrowExceptionWhenDateFromNotAllowed()
     {
+        $this->expectException(\LogicException::class);
+
         $builder = new ReportDefinitionBuilder();
 
         $builder->setDateRangeType(DateRangeTypeEnum::AUTO, 'From');
     }
 
-    /**
-     * @expectedException \LogicException
-     */
     public function testThrowExceptionWhenDateToNotAllowed()
     {
+        $this->expectException(\LogicException::class);
+
         $builder = new ReportDefinitionBuilder();
 
         $builder->setDateRangeType(DateRangeTypeEnum::AUTO, null, 'To');
     }
 
-    /**
-     * @expectedException \Biplane\YandexDirect\Exception\ReportDefinitionException
-     */
     public function testThrowExceptionSchemaValidationFailed()
     {
+        $this->expectException(ReportDefinitionException::class);
+
         $builder = new ReportDefinitionBuilder();
 
         try {
             $builder->build();
         } catch (ReportDefinitionException $ex) {
-            $this->assertCount(1, $ex->getErrors());
+            self::assertCount(1, $ex->getErrors());
 
             throw $ex;
         }

@@ -5,16 +5,16 @@ namespace Biplane\Tests\YandexDirect\Api;
 use Biplane\YandexDirect\Api\SoapClientV4;
 use Biplane\YandexDirect\Api\V4\Contract\AccountManagementRequest;
 use Biplane\YandexDirect\Exception\ApiException;
+use PHPUnit\Extension\FunctionMocker;
 
 class SoapClientV4Test extends BaseTestCase
 {
-    /**
-     * @expectedException \Biplane\YandexDirect\Exception\ApiException
-     * @expectedExceptionCode 54
-     * @expectedExceptionMessage Недостаточно прав для выполнения запрошенной операции.
-     */
     public function testSoapFaultShouldBeWrappedToApiException()
     {
+        $this->expectException(ApiException::class);
+        $this->expectExceptionCode(54);
+        $this->expectExceptionMessage('Недостаточно прав для выполнения запрошенной операции.');
+
         $methodName = 'Foo';
         $methodParams = [];
         $fault = new \SoapFault(
@@ -26,13 +26,8 @@ class SoapClientV4Test extends BaseTestCase
 
         $client = $this->getSoapClient('__soapCall', 'getRequestId');
 
-        $client->expects(self::once())
-            ->method('__soapCall')
-            ->willThrowException($fault);
-
-        $client->expects(self::once())
-            ->method('getRequestId')
-            ->willReturn('f961bef9be62959982b56053366a57f2');
+        $client->method('__soapCall')->willThrowException($fault);
+        $client->method('getRequestId')->willReturn('f961bef9be62959982b56053366a57f2');
 
         try {
             $this->doInvoke($client, $methodName, $methodParams);
@@ -53,7 +48,7 @@ class SoapClientV4Test extends BaseTestCase
         $methodName,
         array $params = []
     ) {
-        $php = \PHPUnit_Extension_FunctionMocker::start($this, 'Biplane\YandexDirect\Api')
+        $php = FunctionMocker::start($this, 'Biplane\YandexDirect\Api')
             ->mockFunction('time')
             ->getMock();
 

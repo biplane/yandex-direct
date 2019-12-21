@@ -9,22 +9,22 @@ use Biplane\YandexDirect\Event\PostCallEvent;
 use Biplane\YandexDirect\Event\PreCallEvent;
 use Biplane\YandexDirect\Events;
 use Biplane\YandexDirect\Exception\ApiException;
+use Biplane\YandexDirect\Exception\NetworkException;
 use Biplane\YandexDirect\User;
 use GuzzleHttp\Client;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
 use GuzzleHttp\RequestOptions;
+use PHPUnit\Framework\MockObject\MockObject;
+use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\RequestInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
-/**
- * @author Denis Vasilev
- */
-class ReportsTest extends \PHPUnit_Framework_TestCase
+class ReportsTest extends TestCase
 {
     /**
-     * @var \PHPUnit_Framework_MockObject_MockObject
+     * @var MockObject|EventDispatcherInterface
      */
     private $dispatcher;
 
@@ -34,6 +34,27 @@ class ReportsTest extends \PHPUnit_Framework_TestCase
     private $mockHandler;
 
     private $reportFile;
+
+    protected function setUp(): void
+    {
+        $this->dispatcher = $this->getMockBuilder(EventDispatcherInterface::class)
+            ->getMock();
+        $this->mockHandler = new MockHandler();
+        $this->reportFile = sys_get_temp_dir() . '/report.tsv';
+
+        if (is_file($this->reportFile)) {
+            unlink($this->reportFile);
+        }
+    }
+
+    protected function tearDown(): void
+    {
+        unset($this->mockHandler, $this->dispatcher);
+
+        if (is_file($this->reportFile)) {
+            unlink($this->reportFile);
+        }
+    }
 
     public function testGetResultWhenNewReportIsCreated()
     {
@@ -64,8 +85,8 @@ class ReportsTest extends \PHPUnit_Framework_TestCase
 
         $result = $service->get($reportRequest);
 
-        $this->assertFalse($result->isReady());
-        $this->assertRequest($this->mockHandler->getLastRequest(), $reportRequest->getDefinition(), [
+        self::assertFalse($result->isReady());
+        self::assertRequest($this->mockHandler->getLastRequest(), $reportRequest->getDefinition(), [
             'Authorization' => 'Bearer foo',
             'Accept-Language' => 'en',
             'Client-Login' => 'bar',
@@ -88,8 +109,8 @@ class ReportsTest extends \PHPUnit_Framework_TestCase
 
         $result = $service->get($reportRequest);
 
-        $this->assertFalse($result->isReady());
-        $this->assertRequest($this->mockHandler->getLastRequest(), $reportRequest->getDefinition(), [
+        self::assertFalse($result->isReady());
+        self::assertRequest($this->mockHandler->getLastRequest(), $reportRequest->getDefinition(), [
             'Authorization' => 'Bearer foo',
             'Accept-Language' => 'ru',
             'Client-Login' => 'bar',
@@ -112,8 +133,8 @@ class ReportsTest extends \PHPUnit_Framework_TestCase
 
         $result = $service->get($reportRequest);
 
-        $this->assertTrue($result->isReady());
-        $this->assertEquals($reportContent, $result->getData());
+        self::assertTrue($result->isReady());
+        self::assertEquals($reportContent, $result->getData());
     }
 
     public function testCreateReportWithCustomOptions()
@@ -135,8 +156,8 @@ class ReportsTest extends \PHPUnit_Framework_TestCase
 
         $result = $service->get($reportRequest);
 
-        $this->assertFalse($result->isReady());
-        $this->assertRequest($this->mockHandler->getLastRequest(), $reportRequest->getDefinition(), [
+        self::assertFalse($result->isReady());
+        self::assertRequest($this->mockHandler->getLastRequest(), $reportRequest->getDefinition(), [
             'Authorization' => 'Bearer foo',
             'Accept-Language' => 'en',
             'Client-Login' => 'bar',
@@ -164,8 +185,8 @@ class ReportsTest extends \PHPUnit_Framework_TestCase
 
         $result = $service->get($reportRequest);
 
-        $this->assertFalse($result->isReady());
-        $this->assertRequest($this->mockHandler->getLastRequest(), $reportRequest->getDefinition(), [
+        self::assertFalse($result->isReady());
+        self::assertRequest($this->mockHandler->getLastRequest(), $reportRequest->getDefinition(), [
             'Authorization' => 'Bearer foo',
             'Accept-Language' => 'en',
             'Client-Login' => 'bar',
@@ -194,8 +215,8 @@ class ReportsTest extends \PHPUnit_Framework_TestCase
 
         $result = $service->getReady($reportRequest);
 
-        $this->assertTrue($result->isReady());
-        $this->assertEquals($reportContent, $result->getData());
+        self::assertTrue($result->isReady());
+        self::assertEquals($reportContent, $result->getData());
     }
 
     public function testDownloadReport()
@@ -218,16 +239,15 @@ class ReportsTest extends \PHPUnit_Framework_TestCase
 
         $requestOptions = $this->mockHandler->getLastOptions();
 
-        $this->assertArrayHasKey(RequestOptions::SINK, $requestOptions);
-        $this->assertEquals($this->reportFile, $requestOptions[RequestOptions::SINK]);
-        $this->assertEquals($reportContent, file_get_contents($this->reportFile));
+        self::assertArrayHasKey(RequestOptions::SINK, $requestOptions);
+        self::assertEquals($this->reportFile, $requestOptions[RequestOptions::SINK]);
+        self::assertEquals($reportContent, file_get_contents($this->reportFile));
     }
 
-    /**
-     * @expectedException \Biplane\YandexDirect\Exception\ApiException
-     */
     public function testThrowApiExceptionWhenBadRequest()
     {
+        $this->expectException(ApiException::class);
+
         $reportRequest = (new ReportRequest())
             ->setDefinition('<ReportDefinition />');
 
@@ -267,21 +287,20 @@ XML;
         try {
             $service->get($reportRequest);
         } catch (ApiException $ex) {
-            $this->assertEquals('Reports:request', $ex->getMethodRef());
-            $this->assertEquals('2773184281650080533', $ex->getRequestId());
-            $this->assertEquals('Token not entered', $ex->getMessage());
-            $this->assertSame(53, $ex->getCode());
+            self::assertEquals('Reports:request', $ex->getMethodRef());
+            self::assertEquals('2773184281650080533', $ex->getRequestId());
+            self::assertEquals('Token not entered', $ex->getMessage());
+            self::assertSame(53, $ex->getCode());
 
             throw $ex;
         }
     }
 
-    /**
-     * @expectedException \Biplane\YandexDirect\Exception\NetworkException
-     * @expectedExceptionCode 500
-     */
     public function testThrowNetworkException()
     {
+        $this->expectException(NetworkException::class);
+        $this->expectExceptionCode(500);
+
         $reportRequest = (new ReportRequest())
             ->setDefinition('<ReportDefinition />');
 
@@ -325,7 +344,7 @@ XML;
         } catch (\Exception $ex) {
         }
 
-        $this->assertEmpty(file_get_contents($this->reportFile));
+        self::assertEmpty(file_get_contents($this->reportFile));
     }
 
     public function testLastRequest()
@@ -356,7 +375,7 @@ returnMoneyInMicros: false
 <ReportDefinition />
 REQ;
 
-        $this->assertEquals(str_replace("\n", "\r\n", $request), $service->getLastRequest());
+        self::assertEquals(str_replace("\n", "\r\n", $request), $service->getLastRequest());
     }
 
     public function testLastResponse()
@@ -373,7 +392,7 @@ REQ;
 
         $service->get($reportRequest);
 
-        $this->assertEquals("HTTP/1.1 201 Created\r\n\r\n", $service->getLastResponse());
+        self::assertEquals("HTTP/1.1 201 Created\r\n\r\n", $service->getLastResponse());
     }
 
     public function testRequestId()
@@ -401,29 +420,8 @@ RequestId: request-id
 
 RESP;
 
-        $this->assertEquals('request-id', $service->getRequestId());
-        $this->assertEquals(str_replace("\n", "\r\n", $response), $service->getLastResponse());
-    }
-
-    protected function setUp()
-    {
-        $this->dispatcher = $this->getMockBuilder(EventDispatcherInterface::class)
-            ->getMock();
-        $this->mockHandler = new MockHandler();
-        $this->reportFile = sys_get_temp_dir() . '/report.tsv';
-
-        if (is_file($this->reportFile)) {
-            unlink($this->reportFile);
-        }
-    }
-
-    protected function tearDown()
-    {
-        unset($this->mockHandler, $this->dispatcher);
-
-        if (is_file($this->reportFile)) {
-            unlink($this->reportFile);
-        }
+        self::assertEquals('request-id', $service->getRequestId());
+        self::assertEquals(str_replace("\n", "\r\n", $response), $service->getLastResponse());
     }
 
     private function createUser(array $options)
@@ -444,17 +442,22 @@ RESP;
         return new Reports($user, $httpClient);
     }
 
-    private function assertRequest(RequestInterface $request, $body, array $headers, $endpoint = Reports::ENDPOINT)
-    {
-        $this->assertEquals($endpoint, $request->getUri());
-        $this->assertEquals($body, $request->getBody());
+    private static function assertRequest(
+        RequestInterface $request,
+        $body,
+        array $headers,
+        $endpoint = Reports::ENDPOINT
+    ): void {
+        self::assertEquals($endpoint, $request->getUri());
+        self::assertEquals($body, $request->getBody());
 
         foreach ($headers as $name => $expected) {
-            $this->assertTrue($request->hasHeader($name), sprintf('Header "%s" is missing.', $name));
+            self::assertTrue($request->hasHeader($name), sprintf('Header "%s" is missing.', $name));
+
             if (is_array($expected)) {
-                $this->assertEquals($expected, $request->getHeader($name), sprintf('Header "%s"', $name));
+                self::assertEquals($expected, $request->getHeader($name), sprintf('Header "%s"', $name));
             } else {
-                $this->assertContains($expected, $request->getHeader($name), sprintf('Header "%s"', $name));
+                self::assertContains($expected, $request->getHeader($name), sprintf('Header "%s"', $name));
             }
         }
     }

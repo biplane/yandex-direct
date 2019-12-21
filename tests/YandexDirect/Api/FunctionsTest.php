@@ -48,7 +48,7 @@ class FunctionsTest extends TestCase
             'header' => 'Accept: */*',
         ]);
 
-        self::assertInternalType('resource', $streamContext);
+        self::assertIsResource($streamContext);
         self::assertEquals(
             [
                 'http' => [
@@ -84,7 +84,7 @@ class FunctionsTest extends TestCase
             $originStream
         );
 
-        self::assertInternalType('resource', $streamContext);
+        self::assertIsResource($streamContext);
         self::assertNotSame($originStream, $streamContext);
         self::assertEquals(
             [
@@ -135,7 +135,7 @@ class FunctionsTest extends TestCase
             $originStream
         );
 
-        self::assertInternalType('resource', $streamContext);
+        self::assertIsResource($streamContext);
         self::assertNotSame($originStream, $streamContext);
         self::assertEquals(
             [
