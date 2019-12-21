@@ -44,10 +44,26 @@ class ServiceTypeTest extends TestCase
         }
 
         $typeResolver = new PhpTypeResolver([
-            'GetSubClientsRequest' => $this->createComplexType('GetSubClientsRequest', 'Acme\Api\Contract', $wsdlTypes),
-            'ClientFilter' => $this->createComplexType('ClientFilter', 'Acme\Api\Contract', $wsdlTypes),
-            'ArrayOfShortClientInfo' => $this->createArrayType('ArrayOfShortClientInfo', 'Acme\Api\Contract', $wsdlTypes),
-            'ShortClientInfo' => $this->createComplexType('ShortClientInfo', 'Acme\Api\Contract', $wsdlTypes),
+            'GetSubClientsRequest' => $this->createComplexType(
+                'GetSubClientsRequest',
+                'Acme\Api\Contract',
+                $wsdlTypes
+            ),
+            'ClientFilter' => $this->createComplexType(
+                'ClientFilter',
+                'Acme\Api\Contract',
+                $wsdlTypes
+            ),
+            'ArrayOfShortClientInfo' => $this->createArrayType(
+                'ArrayOfShortClientInfo',
+                'Acme\Api\Contract',
+                $wsdlTypes
+            ),
+            'ShortClientInfo' => $this->createComplexType(
+                'ShortClientInfo',
+                'Acme\Api\Contract',
+                $wsdlTypes
+            ),
         ]);
 
         $generator = $serviceType->generate($typeResolver);

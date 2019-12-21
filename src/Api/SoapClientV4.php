@@ -120,12 +120,14 @@ class SoapClientV4 extends SoapClient
             }
         }
 
-        if (in_array($methodName, [
+        if (
+            in_array($methodName, [
             'TransferMoney',
             'GetCreditLimits',
             'CreateInvoice',
             'PayCampaigns',
-        ])) {
+            ])
+        ) {
             return true;
         }
 

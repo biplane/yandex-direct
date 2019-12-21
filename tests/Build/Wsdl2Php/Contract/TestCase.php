@@ -26,7 +26,7 @@ abstract class TestCase extends BaseTestCase
         $this->fail(sprintf('Type "%s" not found in WSDL.', $typeName));
     }
 
-    protected function assertClassGenerator($fixtureName, ClassGenerator $generator)
+    protected static function assertClassGenerator($fixtureName, ClassGenerator $generator)
     {
         self::assertStringEqualsFile(__DIR__ . '/Fixtures/' . $fixtureName, $generator->generate(), $fixtureName);
     }

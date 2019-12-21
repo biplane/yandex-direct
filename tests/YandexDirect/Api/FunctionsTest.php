@@ -3,6 +3,7 @@
 namespace Biplane\Tests\YandexDirect\Api;
 
 use PHPUnit\Framework\TestCase;
+
 use function Biplane\YandexDirect\Api\createStreamContext;
 use function Biplane\YandexDirect\Api\parseArrayOfInt;
 use function Biplane\YandexDirect\Api\parseArrayOfLong;

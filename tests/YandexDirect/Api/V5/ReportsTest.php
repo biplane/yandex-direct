@@ -403,7 +403,6 @@ RESP;
 
         $this->assertEquals('request-id', $service->getRequestId());
         $this->assertEquals(str_replace("\n", "\r\n", $response), $service->getLastResponse());
-
     }
 
     protected function setUp()

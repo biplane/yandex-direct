@@ -72,7 +72,7 @@ XML;
     <IncludeDiscount>NO</IncludeDiscount>
 </ReportDefinition>
 XML;
-      $this->assertXmlStringEqualsXmlString($expected, $reportDefinition);
+        $this->assertXmlStringEqualsXmlString($expected, $reportDefinition);
     }
 
     public function testBuildWithCustomParams()
@@ -133,7 +133,7 @@ XML;
     <IncludeDiscount>NO</IncludeDiscount>
 </ReportDefinition>
 XML;
-      $this->assertXmlStringEqualsXmlString($expected, $reportDefinition);
+        $this->assertXmlStringEqualsXmlString($expected, $reportDefinition);
     }
 
     public function testBuildWithGoals()

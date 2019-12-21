@@ -9,6 +9,7 @@ use Biplane\Build\Wsdl2Php\Config;
 use Biplane\Build\Wsdl2Php\Generator;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
+use Wsdl2PhpGenerator\Xml\SchemaDocument;
 
 $logger = new Logger('build', [
     new StreamHandler('php://output'),
@@ -21,6 +22,20 @@ $defaultOptions = [
     'outputDir' => __DIR__ . '/../src/Api/V5',
     'namespaceName' => 'Biplane\YandexDirect\Api\V5',
 ];
+
+function generate(Generator $generator, array $options)
+{
+    static $reflProp;
+
+    if (null === $reflProp) {
+        $reflProp = new \ReflectionProperty(SchemaDocument::class, 'loadedUrls');
+        $reflProp->setAccessible(true);
+    }
+
+    $reflProp->setValue(null, []);
+
+    $generator->generate(new Config($options));
+}
 
 generate($generator, [
     'inputFile' => 'https://api.direct.yandex.ru/live/v4/wsdl/',
@@ -421,17 +436,3 @@ generate($generator, [
         'ArrayOfLong',
     ],
 ] + $defaultOptions);
-
-function generate(Generator $generator, array $options)
-{
-    static $reflProp;
-
-    if (null === $reflProp) {
-        $reflProp = new \ReflectionProperty('Wsdl2PhpGenerator\Xml\SchemaDocument', 'loadedUrls');
-        $reflProp->setAccessible(true);
-    }
-
-    $reflProp->setValue(null, []);
-
-    $generator->generate(new Config($options));
-}

@@ -45,9 +45,21 @@ class ComplexTypeTest extends TestCase
             'Acme\Api\Contract'
         );
         $typeResolver = new PhpTypeResolver([
-            'AdGroupsSelectionCriteria' => $this->createComplexType('AdGroupsSelectionCriteria', 'Acme\Api\Contract', $wsdlTypes),
-            'AdGroupFieldEnum' => $this->createEnumType('AdGroupFieldEnum', 'Acme\Api\Contract', $wsdlTypes),
-            'MobileAppAdGroupFieldEnum' => $this->createEnumType('MobileAppAdGroupFieldEnum', 'Acme\Api\Contract', $wsdlTypes),
+            'AdGroupsSelectionCriteria' => $this->createComplexType(
+                'AdGroupsSelectionCriteria',
+                'Acme\Api\Contract',
+                $wsdlTypes
+            ),
+            'AdGroupFieldEnum' => $this->createEnumType(
+                'AdGroupFieldEnum',
+                'Acme\Api\Contract',
+                $wsdlTypes
+            ),
+            'MobileAppAdGroupFieldEnum' => $this->createEnumType(
+                'MobileAppAdGroupFieldEnum',
+                'Acme\Api\Contract',
+                $wsdlTypes
+            ),
         ]);
 
         $generator = $complexType->generate($typeResolver);
