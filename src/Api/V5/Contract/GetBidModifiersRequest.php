@@ -30,6 +30,9 @@ class GetBidModifiersRequest extends GetRequestGeneral
 //    Can be omit.
 //    protected $VideoAdjustmentFieldNames = null;
 
+//    Can be omit.
+//    protected $SmartAdAdjustmentFieldNames = null;
+
     /**
      * Creates a new instance of GetBidModifiersRequest.
      *
@@ -234,6 +237,31 @@ class GetBidModifiersRequest extends GetRequestGeneral
     public function setVideoAdjustmentFieldNames(array $value = null)
     {
         $this->VideoAdjustmentFieldNames = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets SmartAdAdjustmentFieldNames.
+     *
+     * @return string[]|null
+     * @see SmartAdAdjustmentFieldEnum
+     */
+    public function getSmartAdAdjustmentFieldNames()
+    {
+        return isset($this->SmartAdAdjustmentFieldNames) ? $this->SmartAdAdjustmentFieldNames : null;
+    }
+
+    /**
+     * Sets SmartAdAdjustmentFieldNames.
+     *
+     * @param string[]|null $value
+     * @return $this
+     * @see SmartAdAdjustmentFieldEnum
+     */
+    public function setSmartAdAdjustmentFieldNames(array $value = null)
+    {
+        $this->SmartAdAdjustmentFieldNames = $value;
 
         return $this;
     }

@@ -38,6 +38,9 @@ class AdGroupAddItem
 //    Can be omit.
 //    protected $CpmVideoAdGroup = null;
 
+//    Can be omit.
+//    protected $SmartAdGroup = null;
+
     /**
      * Creates a new instance of AdGroupAddItem.
      *
@@ -297,6 +300,29 @@ class AdGroupAddItem
     public function setCpmVideoAdGroup(CpmVideoAdGroupAdd $value = null)
     {
         $this->CpmVideoAdGroup = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets SmartAdGroup.
+     *
+     * @return SmartAdGroupAdd|null
+     */
+    public function getSmartAdGroup()
+    {
+        return isset($this->SmartAdGroup) ? $this->SmartAdGroup : null;
+    }
+
+    /**
+     * Sets SmartAdGroup.
+     *
+     * @param SmartAdGroupAdd|null $value
+     * @return $this
+     */
+    public function setSmartAdGroup(SmartAdGroupAdd $value = null)
+    {
+        $this->SmartAdGroup = $value;
 
         return $this;
     }

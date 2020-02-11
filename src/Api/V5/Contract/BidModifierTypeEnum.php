@@ -20,6 +20,8 @@ class BidModifierTypeEnum
 
     const VIDEO_ADJUSTMENT = 'VIDEO_ADJUSTMENT';
 
+    const SMART_AD_ADJUSTMENT = 'SMART_AD_ADJUSTMENT';
+
 
 }
 

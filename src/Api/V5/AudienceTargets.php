@@ -12,7 +12,7 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 class AudienceTargets extends SoapClientV5
 {
 
-    const ENDPOINT = 'https://api.direct.yandex.com/v5/audiencetargets?wsdl ';
+    const ENDPOINT = 'https://api.direct.yandex.com/v5/audiencetargets?wsdl';
 
     /**
      * Constructor.

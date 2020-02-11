@@ -36,6 +36,9 @@ class AdGroupGetItem extends AdGroupBase
 //    protected $DynamicTextFeedAdGroup = null;
 
 //    Can be omit.
+//    protected $SmartAdGroup = null;
+
+//    Can be omit.
 //    protected $ServingStatus = null;
 
 //    Can be omit.
@@ -260,6 +263,29 @@ class AdGroupGetItem extends AdGroupBase
     public function setDynamicTextFeedAdGroup(DynamicTextFeedAdGroupGet $value = null)
     {
         $this->DynamicTextFeedAdGroup = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets SmartAdGroup.
+     *
+     * @return SmartAdGroupGet|null
+     */
+    public function getSmartAdGroup()
+    {
+        return isset($this->SmartAdGroup) ? $this->SmartAdGroup : null;
+    }
+
+    /**
+     * Sets SmartAdGroup.
+     *
+     * @param SmartAdGroupGet|null $value
+     * @return $this
+     */
+    public function setSmartAdGroup(SmartAdGroupGet $value = null)
+    {
+        $this->SmartAdGroup = $value;
 
         return $this;
     }

@@ -40,6 +40,9 @@ class AdUpdateItem
 //    Can be omit.
 //    protected $CpmVideoAdBuilderAd = null;
 
+//    Can be omit.
+//    protected $SmartAdBuilderAd = null;
+
     /**
      * Creates a new instance of AdUpdateItem.
      *
@@ -299,6 +302,29 @@ class AdUpdateItem
     public function setCpmVideoAdBuilderAd(CpmVideoAdBuilderAdUpdate $value = null)
     {
         $this->CpmVideoAdBuilderAd = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets SmartAdBuilderAd.
+     *
+     * @return SmartAdBuilderAdUpdate|null
+     */
+    public function getSmartAdBuilderAd()
+    {
+        return isset($this->SmartAdBuilderAd) ? $this->SmartAdBuilderAd : null;
+    }
+
+    /**
+     * Sets SmartAdBuilderAd.
+     *
+     * @param SmartAdBuilderAdUpdate|null $value
+     * @return $this
+     */
+    public function setSmartAdBuilderAd(SmartAdBuilderAdUpdate $value = null)
+    {
+        $this->SmartAdBuilderAd = $value;
 
         return $this;
     }

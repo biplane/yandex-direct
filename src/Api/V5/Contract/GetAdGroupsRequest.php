@@ -21,6 +21,9 @@ class GetAdGroupsRequest extends GetRequestGeneral
 //    Can be omit.
 //    protected $DynamicTextFeedAdGroupFieldNames = null;
 
+//    Can be omit.
+//    protected $SmartAdGroupFieldNames = null;
+
     /**
      * Creates a new instance of GetAdGroupsRequest.
      *
@@ -150,6 +153,31 @@ class GetAdGroupsRequest extends GetRequestGeneral
     public function setDynamicTextFeedAdGroupFieldNames(array $value = null)
     {
         $this->DynamicTextFeedAdGroupFieldNames = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets SmartAdGroupFieldNames.
+     *
+     * @return string[]|null
+     * @see SmartAdGroupFieldEnum
+     */
+    public function getSmartAdGroupFieldNames()
+    {
+        return isset($this->SmartAdGroupFieldNames) ? $this->SmartAdGroupFieldNames : null;
+    }
+
+    /**
+     * Sets SmartAdGroupFieldNames.
+     *
+     * @param string[]|null $value
+     * @return $this
+     * @see SmartAdGroupFieldEnum
+     */
+    public function setSmartAdGroupFieldNames(array $value = null)
+    {
+        $this->SmartAdGroupFieldNames = $value;
 
         return $this;
     }
