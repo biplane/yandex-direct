@@ -374,12 +374,15 @@ class User
     }
 
     /**
+     * Gets the AudienceTargets service.
+     *
      * @return AudienceTargets
      */
     public function getAudienceTargetsService()
     {
         return $this->getProxy(AudienceTargets::class);
     }
+
     /**
      * Creates the finance token.
      *
