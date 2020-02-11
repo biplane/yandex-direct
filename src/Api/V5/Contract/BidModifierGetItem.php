@@ -41,6 +41,9 @@ class BidModifierGetItem
 //    Can be omit.
 //    protected $VideoAdjustment = null;
 
+//    Can be omit.
+//    protected $SmartAdAdjustment = null;
+
     /**
      * Creates a new instance of BidModifierGetItem.
      *
@@ -304,6 +307,29 @@ class BidModifierGetItem
     public function setVideoAdjustment(VideoAdjustmentGet $value = null)
     {
         $this->VideoAdjustment = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets SmartAdAdjustment.
+     *
+     * @return SmartAdAdjustmentGet|null
+     */
+    public function getSmartAdAdjustment()
+    {
+        return isset($this->SmartAdAdjustment) ? $this->SmartAdAdjustment : null;
+    }
+
+    /**
+     * Sets SmartAdAdjustment.
+     *
+     * @param SmartAdAdjustmentGet|null $value
+     * @return $this
+     */
+    public function setSmartAdAdjustment(SmartAdAdjustmentGet $value = null)
+    {
+        $this->SmartAdAdjustment = $value;
 
         return $this;
     }

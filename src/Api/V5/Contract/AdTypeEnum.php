@@ -22,6 +22,8 @@ class AdTypeEnum
 
     const CPM_VIDEO_AD = 'CPM_VIDEO_AD';
 
+    const SMART_AD = 'SMART_AD';
+
 
 }
 

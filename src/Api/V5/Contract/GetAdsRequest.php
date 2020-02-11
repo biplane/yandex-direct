@@ -45,6 +45,9 @@ class GetAdsRequest extends GetRequestGeneral
 //    Can be omit.
 //    protected $CpmVideoAdBuilderAdFieldNames = null;
 
+//    Can be omit.
+//    protected $SmartAdBuilderAdFieldNames = null;
+
     /**
      * Creates a new instance of GetAdsRequest.
      *
@@ -374,6 +377,31 @@ class GetAdsRequest extends GetRequestGeneral
     public function setCpmVideoAdBuilderAdFieldNames(array $value = null)
     {
         $this->CpmVideoAdBuilderAdFieldNames = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets SmartAdBuilderAdFieldNames.
+     *
+     * @return string[]|null
+     * @see SmartAdBuilderAdFieldEnum
+     */
+    public function getSmartAdBuilderAdFieldNames()
+    {
+        return isset($this->SmartAdBuilderAdFieldNames) ? $this->SmartAdBuilderAdFieldNames : null;
+    }
+
+    /**
+     * Sets SmartAdBuilderAdFieldNames.
+     *
+     * @param string[]|null $value
+     * @return $this
+     * @see SmartAdBuilderAdFieldEnum
+     */
+    public function setSmartAdBuilderAdFieldNames(array $value = null)
+    {
+        $this->SmartAdBuilderAdFieldNames = $value;
 
         return $this;
     }
