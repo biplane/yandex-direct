@@ -1,83 +1,135 @@
 # Changelog
 
-# 4.12.0 [commit logs](https://github.com/biplane/yandex-direct/compare/4.11.0...4.12.0)
+## Unreleased
+
+### Added
+
+* Добавлена поддержка сервиса `AudienceTargets` (PR #23)
+
+### Changed
+
+* Обновлены контракты данных для совместимости с последней версией API, включая изменения от 2020-02-06.
+
+## 4.14.1 [commit logs](https://github.com/biplane/yandex-direct/compare/4.14.0...4.14.1)
+
+### Fixed
+
+* Отменены изменения в части генерации кода для массива-подобных типов, сделанные в f954f725.
+  Так как, эти изменения несовместимы с нативным `SoapClient`, в случае десериализации XML.
+
+## 4.14.0 [commit logs](https://github.com/biplane/yandex-direct/compare/4.13.0...4.14.0)
+
+### Changed
+
+* Теперь опция `stream_context` поддерживается всеми сервисами, где используется `SoapClient` (issue #20)
+
+## 4.13.0 [commit logs](https://github.com/biplane/yandex-direct/compare/4.12.0...4.13.0)
+
+### Added
+
+* Добавлена поддержка следующих сервисов: [Leads](https://yandex.ru/dev/direct/doc/ref-v5/leads/leads-docpage/),
+  [NegativeKeywordSharedSets](https://yandex.ru/dev/direct/doc/ref-v5/negativekeywordsharedsets/negativekeywordsharedsets-docpage/)
+  и [TurboPages](https://yandex.ru/dev/direct/doc/ref-v5/turbopages/turbopages-docpage/).
+
+## Changed
+
+* Обновлены контракты данных для совместимости с последней версией API, включая изменения от 01.10.2019.
+* Улучшена логика определения массивов по данным WSDL, с учетом специфики Яндекс.Директ API.
+  * [**BC Break**] Изменилась сигнатура метода `Biplane\YandexDirect\Api\V5\Contract\CpmBannerAdBuilderAdGet::setTrackingPixels()`
+
+     ```patch
+     - public function setTrackingPixels(TrackingPixelGetArray $value = null)
+     + public function setTrackingPixels(array $value = null)
+     ```
+  * [**BC Break**] Изменилась сигнатура метода `Biplane\YandexDirect\Api\V5\Contract\CpmVideoAdBuilderAdGet::setTrackingPixels()`
+  * [**BC Break**] Изменилась сигнатура метода `Biplane\YandexDirect\Api\V5\Contract\DynamicTextCampaignAddItem::setPriorityGoals()`
+
+     ```patch
+     - public function setPriorityGoals(PriorityGoalsArray $value = null)
+     + public function setPriorityGoals(array $value = null)
+     ```
+  * [**BC Break**] Изменилась сигнатура метода `Biplane\YandexDirect\Api\V5\Contract\DynamicTextCampaignGetItem::setPriorityGoals()`
+  * [**BC Break**] Изменилась сигнатура метода `Biplane\YandexDirect\Api\V5\Contract\TextCampaignAddItem::setPriorityGoals()`
+  * [**BC Break**] Изменилась сигнатура метода `Biplane\YandexDirect\Api\V5\Contract\TextCampaignGetItem::setPriorityGoals()`
+
+## 4.12.0 [commit logs](https://github.com/biplane/yandex-direct/compare/4.11.0...4.12.0)
 
 * Обновлены сервисы и контракты данных для совместимости с имзенениями в API от 15 мая 2019 г.
-  
+
   В сервисе `Sitelinks` есть изменения, нарушающие обратную совместимость.
   Метод `SitelinksSetGetItem::getItems()` возвращает массив объектов
   `Biplane\YandexDirect\Api\V5\Contract\SitelinkGetItem`, вместо
   `Biplane\YandexDirect\Api\V5\Contract\Sitelink`.
 
-# 4.11.0 [commit logs](https://github.com/biplane/yandex-direct/compare/4.10.0...4.11.0)
+## 4.11.0 [commit logs](https://github.com/biplane/yandex-direct/compare/4.10.0...4.11.0)
 
 * Для ошибок с кодом `500` резрешен повторный запрос.
 
 * Обновлены контракты данных и сервисы, для совместимости с последними изменениями **API**
   (включая изменения от 08.04.2019). (PR [#18](https://github.com/biplane/yandex-direct/pull/18))
 
-# 4.10.0 [commit logs](https://github.com/biplane/yandex-direct/compare/4.9.1...4.10.0)
+## 4.10.0 [commit logs](https://github.com/biplane/yandex-direct/compare/4.9.1...4.10.0)
 
 * Обновлены контракты данных и сервисы, для совместимости с последними изменениями **API**
   (включая изменения от 11.03.2019).
 
-# 4.9.1 [commit logs](https://github.com/biplane/yandex-direct/compare/4.9.0...4.9.1)
+## 4.9.1 [commit logs](https://github.com/biplane/yandex-direct/compare/4.9.0...4.9.1)
 
 * Добавлена поддержка *Песочницы* для сервиса `Reports` (PR [#16](https://github.com/biplane/yandex-direct/pull/16))
 
-# 4.9.0 [commit logs](https://github.com/biplane/yandex-direct/compare/4.8.0...4.9.0)
+## 4.9.0 [commit logs](https://github.com/biplane/yandex-direct/compare/4.8.0...4.9.0)
 
 * Исправлен конфликт типа `Notification` между сервисами `Campaigns` и `AgencyClients`/`Clients`.
-  
+
   Класс `Biplane\YandexDirect\Api\V5\Contract\Notification` удален. Вместо этого
   нужно использовать `Biplane\YandexDirect\Api\V5\Contract\CampaignNotification`
   или `Biplane\YandexDirect\Api\V5\Contract\ClientNotification`.
-  
+
   Так же переименованы следующие классы:
-  
+
   * `NotificationAdd` -> `ClientNotificationAdd`
   * `NotificationGet` -> `ClientNotificationGet`
 
-# 4.8.0 [commit logs](https://github.com/biplane/yandex-direct/compare/4.7.1...4.8.0)
+## 4.8.0 [commit logs](https://github.com/biplane/yandex-direct/compare/4.7.1...4.8.0)
 
-* В `ReportResult` добавлены методы, `retryIn` и `reportsInQueue`. 
+* В `ReportResult` добавлены методы, `retryIn` и `reportsInQueue`.
   Для предоставления доступа к [заголовкам ответа](https://tech.yandex.ru/direct/doc/reports/headers-docpage/#ariaid-title3).
 
-# 4.7.1 [commit logs](https://github.com/biplane/yandex-direct/compare/4.7.0...4.7.1)
+## 4.7.1 [commit logs](https://github.com/biplane/yandex-direct/compare/4.7.0...4.7.1)
 
-* Исправлена ошибка при формировании финансового токена для метода `AccountManagement` 
+* Исправлена ошибка при формировании финансового токена для метода `AccountManagement`
   (fix [#13](https://github.com/biplane/yandex-direct/issues/13))
 
-# 4.7.0 [commit logs](https://github.com/biplane/yandex-direct/compare/4.6.1...4.7.0)
+## 4.7.0 [commit logs](https://github.com/biplane/yandex-direct/compare/4.6.1...4.7.0)
 
 * Добавлена поддержка медийных кампаний.
 
-# 4.6.1 [commit logs](https://github.com/biplane/yandex-direct/compare/4.6.0...4.6.1)
+## 4.6.1 [commit logs](https://github.com/biplane/yandex-direct/compare/4.6.0...4.6.1)
 
-* Исправлена ошибка, когда XML-документ с описанием запроса не соответствует схеме. 
+* Исправлена ошибка, когда XML-документ с описанием запроса не соответствует схеме.
   (fix [#12](https://github.com/biplane/yandex-direct/issues/12))
 
-# 4.6.0 [commit logs](https://github.com/biplane/yandex-direct/compare/4.5.0...4.6.0)
+## 4.6.0 [commit logs](https://github.com/biplane/yandex-direct/compare/4.5.0...4.6.0)
 
 * В `ReportDefinitionBuilder` добавлена поддержка входных параметров:
-  `Goals` и `AttributionModels`. (close [#11](https://github.com/biplane/yandex-direct/issues/11)) 
+  `Goals` и `AttributionModels`. (close [#11](https://github.com/biplane/yandex-direct/issues/11))
 
 * Обновлены контракты данных и сервисы, для совместимости с последними изменениями
   в **API 5**.
 
-# 4.5.0 [commit logs](https://github.com/biplane/yandex-direct/compare/4.4.1...4.5.0)
+## 4.5.0 [commit logs](https://github.com/biplane/yandex-direct/compare/4.4.1...4.5.0)
 
 * Исправления в генерации PHPDoc.
 
 * Исправлено преобразование данных для WSDL-типов: `ArrayOfString`, `ArrayOfInterger` и `ArrayOfLong`.
   Теперь соответствующие геттеры в контрактах данных будут возвращать массив,
-  в соответствии с аннотацией в PHPDoc. 
+  в соответствии с аннотацией в PHPDoc.
   Например, `Biplane\YandexDirect\Api\V5\Contract\CampaignGetItem::getNegativeKeywords()`:
-  
+
   **Было**
 
         print_r($campaign->getNegativeKeywords())
-        
+
         > stdClass Object
         > (
         >     [Items] => Array
@@ -91,7 +143,7 @@
   **Стало**
 
         print_r($campaign->getNegativeKeywords())
-        
+
         > Array
         > (
         >     [0] => бесплатно
@@ -100,7 +152,7 @@
         > )
 
   Список методов, которых коснулось изменение:
-  
+
   * `Biplane\YandexDirect\Api\V5\Contract\AdGroupAddItem::getNegativeKeywords()`
   * `Biplane\YandexDirect\Api\V5\Contract\AdGroupBase::getNegativeKeywords()`
   * `Biplane\YandexDirect\Api\V5\Contract\AdGroupGetItem::getRestrictedRegionIds()`
@@ -119,41 +171,41 @@
   * `Biplane\YandexDirect\Api\V5\Contract\TextCampaignBase::getCounterIds()`
   * `Biplane\YandexDirect\Api\V5\Contract\TimeTargetingBase::getSchedule()`
 
-# 4.4.1 [commit logs](https://github.com/biplane/yandex-direct/compare/4.4.0...4.4.1)
+## 4.4.1 [commit logs](https://github.com/biplane/yandex-direct/compare/4.4.0...4.4.1)
 
 * Исправлена ошибка с отсутствующим классом для контракта `CampaignIDSInfo`.
 
-# 4.4.0 [commit logs](https://github.com/biplane/yandex-direct/compare/4.3.0...4.4.0)
+## 4.4.0 [commit logs](https://github.com/biplane/yandex-direct/compare/4.3.0...4.4.0)
 
 * Добавлена поддержка [редактирования отдельных параметров](https://tech.yandex.ru/direct/doc/dg/best-practice/part-update-docpage/).
-  Если нужно сбросить значение для какого-то параметра, необходимо явным образом 
+  Если нужно сбросить значение для какого-то параметра, необходимо явным образом
   вызвать соответствующий метод со значением `null`.
 
         TextAdUpdate::create()
             ->setTitle2(null);
 
-# 4.3.0 [commit logs](https://github.com/biplane/yandex-direct/compare/4.2.0...4.3.0)
+## 4.3.0 [commit logs](https://github.com/biplane/yandex-direct/compare/4.2.0...4.3.0)
 
 * Добавлена поддержка сервиса [KeywordBids](https://tech.yandex.ru/direct/doc/ref-v5/keywordbids/keywordbids-docpage/).
 
-# 4.2.0 [commit logs](https://github.com/biplane/yandex-direct/compare/4.1.1...4.2.0)
+## 4.2.0 [commit logs](https://github.com/biplane/yandex-direct/compare/4.1.1...4.2.0)
 
 * Добавлена поддержка Symfony 4.x
 
-# 4.1.1 [commit logs](https://github.com/biplane/yandex-direct/compare/4.1.0...4.1.1)
+## 4.1.1 [commit logs](https://github.com/biplane/yandex-direct/compare/4.1.0...4.1.1)
 
 * Добавлена поддержка типов объявлений, `TEXT_AD_BUILDER_AD` и `MOBILE_APP_AD_BUILDER_AD`.
 
 * Исправлена ошибка в методе `ReportResult::save`.
 
-# 4.1.0 [commit logs](https://github.com/biplane/yandex-direct/compare/4.1.0-beta2...4.1.0)
+## 4.1.0 [commit logs](https://github.com/biplane/yandex-direct/compare/4.1.0-beta2...4.1.0)
 
 * Добавлена поддержка сервисов [AgencyClients](https://tech.yandex.ru/direct/doc/ref-v5/agencyclients/agencyclients-docpage/)
   и [RetargetingLists](https://tech.yandex.ru/direct/doc/ref-v5/retargetinglists/retargetinglists-docpage/).
 
 * Добавлена поддержка метода `Update` в сервис `Biplane\YandexDirect\Api\V5\Contract\Clients`,
   переименованы некоторые классы:
-  
+
   **Было**
 
         Biplane\YandexDirect\Api\V5\Contract\UpdateRequest
@@ -197,8 +249,8 @@
 * Добавлена поддержка заголовка [Use-Operator-Units](https://tech.yandex.ru/direct/doc/dg/concepts/headers-docpage/#use-operator-units).
   Issue #3.
 
-* Добавлена поддержка сервисов 
-  [AdImages](https://tech.yandex.ru/direct/doc/ref-v5/adimages/adimages-docpage/) 
+* Добавлена поддержка сервисов
+  [AdImages](https://tech.yandex.ru/direct/doc/ref-v5/adimages/adimages-docpage/)
   и [KeywordsResearch](https://tech.yandex.ru/direct/doc/ref-v5/keywordsresearch/keywordsresearch-docpage/)
 
 * Удалена поддержка устаревших методов `CreateOfflineReport`, `DeleteOfflineReport`
@@ -215,7 +267,7 @@
 
 ## 4.0 [commit logs](https://github.com/biplane/yandex-direct/compare/3.4.2...4.0)
 
- * Бандл для интеграции с Symfony фреймфорком переехал в отдельный 
+ * Бандл для интеграции с Symfony фреймфорком переехал в отдельный
    [репозиторий](https://github.com/biplane/BiplaneYandexDirectBundle).
 
  * `Biplane\YandexDirect\Api\V4SoapClient` переименован в `Biplane\YandexDirect\Api\SoapClientV4`,
@@ -227,7 +279,7 @@
    например, [aego/oauth2-yandex](https://github.com/rakeev/oauth2-yandex).
 
  * В сервисы для API 5 добавлен метод `getUnits`, который возвращает информацию
-   о баллах (заголовок [Units](https://tech.yandex.ru/direct/doc/dg/concepts/headers-docpage/#units)), 
+   о баллах (заголовок [Units](https://tech.yandex.ru/direct/doc/dg/concepts/headers-docpage/#units)),
    актуальную для последнего запроса к API.
 
  * Из `YandexAPIService` удалены методы: CreateOrUpdateCampaign, GetCampaignsList,
