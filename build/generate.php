@@ -422,6 +422,22 @@ generate($generator, [
     ],
 ] + $defaultOptions);
 
+generate($generator, [
+    'inputFile' => 'https://api.direct.yandex.com/v5/audiencetargets?wsdl ',
+    'renameType' => function ($typeName) {
+        return preg_replace(
+            '#^(Add|Delete|Suspend|Resume|Get|SetBids)(Request|Response)$#',
+            '$1AudienceTargets$2',
+            $typeName
+        );
+    },
+    'excludeTypes' => [
+        'ArrayOfString',
+        'ArrayOfInteger',
+        'ArrayOfLong',
+    ],
+] + $defaultOptions);
+
 function generate(Generator $generator, array $options)
 {
     static $reflProp;

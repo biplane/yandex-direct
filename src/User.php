@@ -8,6 +8,7 @@ use Biplane\YandexDirect\Api\V5\AdGroups;
 use Biplane\YandexDirect\Api\V5\AdImages;
 use Biplane\YandexDirect\Api\V5\Ads;
 use Biplane\YandexDirect\Api\V5\AgencyClients;
+use Biplane\YandexDirect\Api\V5\AudienceTargets;
 use Biplane\YandexDirect\Api\V5\BidModifiers;
 use Biplane\YandexDirect\Api\V5\Bids;
 use Biplane\YandexDirect\Api\V5\Campaigns;
@@ -372,6 +373,13 @@ class User
         return $this->getProxy(Reports::class);
     }
 
+    /**
+     * @return AudienceTargets
+     */
+    public function getAudienceTargetsService()
+    {
+        return $this->getProxy(AudienceTargets::class);
+    }
     /**
      * Creates the finance token.
      *
