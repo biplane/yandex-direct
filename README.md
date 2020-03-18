@@ -1,7 +1,8 @@
 # Yandex.Direct API PHP Client
 
-[![Packagist](https://img.shields.io/packagist/vpre/biplane/yandex-direct.svg?maxAge=2592000)](https://packagist.org/packages/biplane/yandex-direct)
-[![Build Status](https://travis-ci.org/biplane/yandex-direct.svg?branch=master)](https://travis-ci.org/biplane/yandex-direct)
+[![Package version](https://img.shields.io/packagist/v/biplane/yandex-direct?style=flat-square)](https://packagist.org/packages/biplane/yandex-direct)
+[![Build Status](https://img.shields.io/travis/biplane/yandex-direct?style=flat-square)](https://travis-ci.org/biplane/yandex-direct)
+[![License](https://img.shields.io/packagist/l/biplane/yandex-direct?style=flat-square)](LICENSE)
 
 PHP library for [Yandex.Direct API](https://tech.yandex.ru/direct/).
 
