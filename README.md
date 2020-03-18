@@ -1,4 +1,5 @@
-# Yandex.Direct API PHP Client 
+# Yandex.Direct API PHP Client
+
 [![Packagist](https://img.shields.io/packagist/vpre/biplane/yandex-direct.svg?maxAge=2592000)](https://packagist.org/packages/biplane/yandex-direct)
 [![Build Status](https://travis-ci.org/biplane/yandex-direct.svg?branch=master)](https://travis-ci.org/biplane/yandex-direct)
 
@@ -6,7 +7,7 @@ PHP library for [Yandex.Direct API](https://tech.yandex.ru/direct/).
 
 ## Requirements
 
- * PHP >= 5.6
+ * PHP >= 7.1
  * ext-soap
 
 ## Installation
@@ -63,23 +64,23 @@ In this example will be fetched all actived ads for campaign with ID 123.
 
 The `Biplane\YandexDirect\User` object supported some options:
 
-#### access_token 
+#### access_token
 
-The [access token](https://tech.yandex.ru/direct/doc/dg-v4/concepts/auth-token-docpage/) for OAuth. **Required** 
+The [access token](https://tech.yandex.ru/direct/doc/dg-v4/concepts/auth-token-docpage/) for OAuth. **Required**
 
 #### locale
 
-You can specify the locale for messages from API. Allowed values: `ru`, `ua` or `en`. 
+You can specify the locale for messages from API. Allowed values: `ru`, `ua` or `en`.
 
 Default: `en`
 
 #### master_token
 
-The master token needs for [access to financial methods](https://tech.yandex.ru/direct/doc/dg-v4/concepts/finance-token-docpage/). 
+The master token needs for [access to financial methods](https://tech.yandex.ru/direct/doc/dg-v4/concepts/finance-token-docpage/).
 
 #### login
 
-The [client login](https://tech.yandex.ru/direct/doc/dg/concepts/headers-docpage/#request). 
+The [client login](https://tech.yandex.ru/direct/doc/dg/concepts/headers-docpage/#request).
 It's **required** for financial operations and when a request is made on behalf of the agency.
 
 #### use_operator_units
@@ -152,7 +153,7 @@ You can get the proxy of a service through the `User` object, to interact with Y
 
 ### DumpListener
 
-This listener allows write to file info about request and response from server. File names generated 
+This listener allows write to file info about request and response from server. File names generated
 on the basis of the [request identifier](https://tech.yandex.ru/direct/doc/dg/concepts/headers-docpage/#response)
 
 > **NOTE**: The request identifier will be generated on client side for API 4 requests.
@@ -172,12 +173,12 @@ $listener = new DumpListener('/var/dumps', DumpListener::LEVEL_ALL_REQUEST);
 $user->getDispatcher()->addSubscriber($listener);
 ```
 
-You can specify which requests should be dumped, all (`LEVEL_ALL_REQUEST`) 
+You can specify which requests should be dumped, all (`LEVEL_ALL_REQUEST`)
 or only with errors (`LEVEL_FAIL_REQUEST`).
 
 ### LoggerListener
 
-This listener allows to log errors from API, with the different level for network, 
+This listener allows to log errors from API, with the different level for network,
 temporary errors.
 
 ```php
