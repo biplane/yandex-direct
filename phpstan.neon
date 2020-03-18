@@ -1,0 +1,18 @@
+includes:
+  - vendor/phpstan/phpstan-phpunit/extension.neon
+  - vendor/phpstan/phpstan-phpunit/rules.neon
+
+parameters:
+  level: 3
+  inferPrivatePropertyTypeFromConstructor: true
+  paths:
+    - build
+    - src
+    - tests
+  excludes_analyse:
+    - build/generate.php
+    - src/Api/V4/*
+    - src/Api/V5/*
+  ignoreErrors:
+    - "#Access to an undefined property SoapFault::\\$faultcode#"
+    - "#Call to an undefined static method SoapClient::__construct\\(\\)#"

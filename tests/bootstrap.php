@@ -1,9 +1,10 @@
 <?php
 
 use Biplane\Tests\FixHeadersListener;
-use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use VCR\Request;
 use VCR\VCR;
+use VCR\VCRFactory;
+use VCR\Videorecorder;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
@@ -23,8 +24,8 @@ VCR::configure()
         return $filterHeaders($first->getHeaders()) === $filterHeaders($second->getHeaders());
     });
 
-VCR::turnOn();
+/** @var Videorecorder $recorder */
+$recorder = VCRFactory::get(Videorecorder::class);
+$recorder->getEventDispatcher()->addSubscriber(new FixHeadersListener());
 
-/** @var EventDispatcherInterface $dispatcher */
-$dispatcher = VCR::getEventDispatcher();
-$dispatcher->addSubscriber(new FixHeadersListener());
+$recorder->turnOn();

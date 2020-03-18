@@ -15,6 +15,9 @@ use Zend\Code\Generator\FileGenerator;
 
 class Generator implements GeneratorInterface
 {
+    /**
+     * @var LoggerInterface
+     */
     private $logger;
 
     public function __construct()

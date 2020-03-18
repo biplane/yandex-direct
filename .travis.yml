@@ -37,7 +37,15 @@ jobs:
         - vendor/bin/phpunit --coverage-text
 
     - stage: Code Quality
+      php: 7.3
       install:
         - travis_retry composer install --prefer-dist
       script:
         - vendor/bin/phpcs
+
+    - stage: Static Code Analysis
+      php: 7.3
+      install:
+        - travis_retry composer install --prefer-dist
+      script:
+        - vendor/bin/phpstan analyse

@@ -59,7 +59,7 @@ class SoapClientV5 extends SoapClient
             return $m[1];
         }
 
-        return null;
+        return '';
     }
 
     /**
