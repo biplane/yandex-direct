@@ -279,6 +279,22 @@ generate($generator, [
 ] + $defaultOptions);
 
 generate($generator, [
+    'inputFile' => 'https://api.direct.yandex.com/v5/feeds?wsdl',
+    'renameType' => function ($typeName) {
+        return preg_replace(
+            '#^(Add|Delete|Get|Update)(Request|Response)$#',
+            '$1Feeds$2',
+            $typeName
+        );
+    },
+    'excludeTypes' => [
+        'ArrayOfString',
+        'ArrayOfInteger',
+        'ArrayOfLong',
+    ],
+] + $defaultOptions);
+
+generate($generator, [
     'inputFile' => 'https://api.direct.yandex.com/v5/keywordbids?wsdl',
     'renameType' => function ($typeName) {
         return preg_replace(
@@ -380,6 +396,30 @@ generate($generator, [
         return preg_replace(
             '#^(Add|Delete|Get)(Request|Response)$#',
             '$1Sitelinks$2',
+            $typeName
+        );
+    },
+    'excludeTypes' => [
+        'ArrayOfString',
+        'ArrayOfInteger',
+        'ArrayOfLong',
+    ],
+] + $defaultOptions);
+
+generate($generator, [
+    'inputFile' => 'https://api.direct.yandex.com/v5/smartadtargets?wsdl',
+    'renameType' => function ($typeName) {
+        if ($typeName === 'SetBidsItem') {
+            return 'SmartAdTargetSetBidsItem';
+        }
+
+        if ($typeName === 'StringConditionOperatorEnum') {
+            return 'SmartAdTargetStringConditionOperatorEnum';
+        }
+
+        return preg_replace(
+            '#^(Add|Delete|Get|Resume|SetBids|Suspend|Update)(Request|Response)$#',
+            '$1SmartAdTargets$2',
             $typeName
         );
     },

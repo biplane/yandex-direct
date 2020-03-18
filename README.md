@@ -128,6 +128,8 @@ You can get the proxy of a service through the `User` object, to interact with Y
 
 * `User::getDynamicTextAdTargetsService()` - Service for manage dynamic text ads (API 5).
 
+* `User::getFeedsService` - API 5
+
 * `User::getKeywordBidsService()` - Service for manage bids for keywords. (API 5)
 
 * `User::getKeywordsService()` - Service for manage keywords (API 5).
@@ -141,6 +143,8 @@ You can get the proxy of a service through the `User` object, to interact with Y
 * `User::getRetargetingListsService()` - Service for manage lists of retargeting (API 5).
 
 * `User::getSitelinksService()` - Service for manage sitelinks (API 5).
+
+* `User::getSmartAdTargetsService()` - API 5
 
 * `User::getTurboPagesService()` - API 5
 
