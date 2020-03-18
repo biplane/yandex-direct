@@ -75,6 +75,9 @@ class CampaignGetItem extends CampaignBase
 //    protected $CpmBannerCampaign = null;
 
 //    Can be omit.
+//    protected $SmartCampaign = null;
+
+//    Can be omit.
 //    protected $TimeTargeting = null;
 
     /**
@@ -599,6 +602,29 @@ class CampaignGetItem extends CampaignBase
     public function setCpmBannerCampaign(CpmBannerCampaignGetItem $value = null)
     {
         $this->CpmBannerCampaign = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets SmartCampaign.
+     *
+     * @return SmartCampaignGetItem|null
+     */
+    public function getSmartCampaign()
+    {
+        return isset($this->SmartCampaign) ? $this->SmartCampaign : null;
+    }
+
+    /**
+     * Sets SmartCampaign.
+     *
+     * @param SmartCampaignGetItem|null $value
+     * @return $this
+     */
+    public function setSmartCampaign(SmartCampaignGetItem $value = null)
+    {
+        $this->SmartCampaign = $value;
 
         return $this;
     }

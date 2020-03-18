@@ -16,6 +16,8 @@ class CampaignTypeGetEnum
 
     const CPM_BANNER_CAMPAIGN = 'CPM_BANNER_CAMPAIGN';
 
+    const SMART_CAMPAIGN = 'SMART_CAMPAIGN';
+
     const UNKNOWN = 'UNKNOWN';
 
 
