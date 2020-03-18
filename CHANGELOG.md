@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+### Added
+
+* Добавлена поддержка сервиса [Feeds](https://yandex.ru/dev/direct/doc/ref-v5/feeds/feeds-docpage/).
+* Добавлена поддержка сервиса [SmartAdTargets](https://yandex.ru/dev/direct/doc/ref-v5/smartadtargets/smartadtargets-docpage/).
+
 ### Changed
 
 * Сервисы совместимы с изменениями в API от 16.03.2020.

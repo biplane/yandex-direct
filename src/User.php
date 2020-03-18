@@ -16,6 +16,7 @@ use Biplane\YandexDirect\Api\V5\Changes;
 use Biplane\YandexDirect\Api\V5\Clients;
 use Biplane\YandexDirect\Api\V5\Dictionaries;
 use Biplane\YandexDirect\Api\V5\DynamicTextAdTargets;
+use Biplane\YandexDirect\Api\V5\Feeds;
 use Biplane\YandexDirect\Api\V5\KeywordBids;
 use Biplane\YandexDirect\Api\V5\Keywords;
 use Biplane\YandexDirect\Api\V5\KeywordsResearch;
@@ -24,6 +25,7 @@ use Biplane\YandexDirect\Api\V5\NegativeKeywordSharedSets;
 use Biplane\YandexDirect\Api\V5\Reports;
 use Biplane\YandexDirect\Api\V5\RetargetingLists;
 use Biplane\YandexDirect\Api\V5\Sitelinks;
+use Biplane\YandexDirect\Api\V5\SmartAdTargets;
 use Biplane\YandexDirect\Api\V5\TurboPages;
 use Biplane\YandexDirect\Api\V5\VCards;
 use Biplane\YandexDirect\Helper\Invoker;
@@ -274,6 +276,16 @@ class User
     }
 
     /**
+     * Gets the proxy for service Feeds.
+     *
+     * @return Feeds
+     */
+    public function getFeedsService()
+    {
+        return $this->getProxy(Feeds::class);
+    }
+
+    /**
      * Gets the proxy of web-service for manage bids for keywords.
      *
      * @return KeywordBids
@@ -341,6 +353,16 @@ class User
     public function getSitelinksService()
     {
         return $this->getProxy(Sitelinks::class);
+    }
+
+    /**
+     * Gets the proxy for service SmartAdTargets.
+     *
+     * @return SmartAdTargets
+     */
+    public function getSmartAdTargetsService()
+    {
+        return $this->getProxy(SmartAdTargets::class);
     }
 
     /**
