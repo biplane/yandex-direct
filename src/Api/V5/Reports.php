@@ -229,39 +229,36 @@ class Reports implements ApiClientInterface
             $this->buildRequestHeaders($reportRequest),
             $reportDefinition
         );
-        $invoker = $this->user->getInvoker();
 
-        return $invoker(function () use ($request, $options, $reportRequest) {
-            $this->lastRequest = $request;
+        $this->lastRequest = $request;
 
-            $event = new PreCallEvent('Reports:request', [$reportRequest], $this->user);
-            $this->dispatcher->dispatch(Events::BEFORE_REQUEST, $event);
+        $event = new PreCallEvent('Reports:request', [$reportRequest], $this->user);
+        $this->dispatcher->dispatch(Events::BEFORE_REQUEST, $event);
 
-            $response = $this->httpClient->send($request, $options + [
-                RequestOptions::HTTP_ERRORS => false,
-            ]);
-            $this->lastResponse = $response;
+        $response = $this->httpClient->send($request, $options + [
+            RequestOptions::HTTP_ERRORS => false,
+        ]);
+        $this->lastResponse = $response;
 
-            if ($response->getStatusCode() >= 200 && $response->getStatusCode() <= 202) {
-                $event = new PostCallEvent(
-                    'Reports:request',
-                    [$reportRequest],
-                    $this->user,
-                    $this,
-                    $response->getBody()
-                );
-                $this->dispatcher->dispatch(Events::AFTER_REQUEST, $event);
+        if ($response->getStatusCode() >= 200 && $response->getStatusCode() <= 202) {
+            $event = new PostCallEvent(
+                'Reports:request',
+                [$reportRequest],
+                $this->user,
+                $this,
+                $response->getBody()
+            );
+            $this->dispatcher->dispatch(Events::AFTER_REQUEST, $event);
 
-                return $response;
-            }
+            return $response;
+        }
 
-            $exception = $this->createException($response);
+        $exception = $this->createException($response);
 
-            $event = new FailCallEvent('Reports:request', [$reportRequest], $this->user, $this, $exception);
-            $this->dispatcher->dispatch(Events::FAIL_REQUEST, $event);
+        $event = new FailCallEvent('Reports:request', [$reportRequest], $this->user, $this, $exception);
+        $this->dispatcher->dispatch(Events::FAIL_REQUEST, $event);
 
-            throw $exception;
-        });
+        throw $exception;
     }
 
     private function waitReady(ReportRequest $reportRequest, $retryInterval, array $options = [])
@@ -293,13 +290,10 @@ class Reports implements ApiClientInterface
                 $errorMessage = $xpath->evaluate('string(/r:reportDownloadError/r:ApiError/r:errorMessage)');
                 $errorDetail = $xpath->evaluate('string(/r:reportDownloadError/r:ApiError/r:errorDetail)');
 
-                return new ApiException(
-                    'Reports:request',
-                    $errorDetail ?: $errorMessage,
-                    (int)$errorCode,
-                    null,
-                    $requestId
-                );
+                $exception = new ApiException($errorMessage, (int)$errorCode, $errorDetail);
+                $exception->setRequestId($requestId);
+
+                return $exception;
             }
         }
 

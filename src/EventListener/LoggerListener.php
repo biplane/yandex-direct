@@ -11,9 +11,7 @@ use Psr\Log\LogLevel;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 /**
- * LoggerListener.
- *
- * @author Denis Vasilev
+ * @deprecated
  */
 class LoggerListener implements EventSubscriberInterface
 {
@@ -76,15 +74,17 @@ class LoggerListener implements EventSubscriberInterface
     {
         if ($exception instanceof NetworkException) {
             return LogLevel::NOTICE;
-        } elseif ($exception instanceof ApiException) {
+        }
+
+        if ($exception instanceof ApiException) {
             $temporaryErrors = [
-                ApiException::AUTHENTICATION_TEMPORARILY_UNAVAILABLE,
-                ApiException::SERVER_TEMPORARILY_UNAVAILABLE,
-                ApiException::INITIALIZATION_ERROR,
-                ApiException::OPERATION_ERROR,
+                52,
+                1000,
+                1001,
+                1002,
             ];
 
-            if (in_array($exception->getCode(), $temporaryErrors)) {
+            if (in_array($exception->getCode(), $temporaryErrors, true)) {
                 return LogLevel::WARNING;
             }
         }

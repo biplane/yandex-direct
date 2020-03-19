@@ -1,32 +1,25 @@
 namespace Acme\Api;
 
-use Biplane\YandexDirect\Api\SoapClientV4;
-use Biplane\YandexDirect\User;
-use Symfony\Component\EventDispatcher\EventDispatcherInterface;
+use Biplane\YandexDirect\Api\ApiSoapClientV4;
+use Biplane\YandexDirect\Config;
 
 /**
  * Auto-generated code.
  */
-class YandexAPIService extends SoapClientV4
+class YandexAPIService extends ApiSoapClientV4
 {
 
     const ENDPOINT = 'api/v4/wsdl';
 
-    /**
-     * Constructor.
-     *
-     * @param EventDispatcherInterface $dispatcher
-     * @param User $user
-     */
-    public function __construct(EventDispatcherInterface $dispatcher, User $user)
+    public function __construct(Config $config, array $options)
     {
-        parent::__construct($user->resolveWsdl(self::ENDPOINT), $dispatcher, $user, [
-            'classmap' => [
-                'GetSubClientsRequest' => 'Acme\Api\Contract\GetSubClientsRequest',
-                'ClientFilter' => 'Acme\Api\Contract\ClientFilter',
-                'ShortClientInfo' => 'Acme\Api\Contract\ShortClientInfo',
-            ]
-        ]);
+        $options['classmap'] = [
+            'GetSubClientsRequest' => 'Acme\Api\Contract\GetSubClientsRequest',
+            'ClientFilter' => 'Acme\Api\Contract\ClientFilter',
+            'ShortClientInfo' => 'Acme\Api\Contract\ShortClientInfo',
+        ];
+
+        parent::__construct(self::ENDPOINT, $config, $options);
     }
 
     /**
@@ -37,7 +30,7 @@ class YandexAPIService extends SoapClientV4
      */
     public function getSubClients(Contract\GetSubClientsRequest $params)
     {
-        return $this->invoke('GetSubClients', [$params]);
+        return $this->__soapCall('GetSubClients', [$params]);
     }
 
 

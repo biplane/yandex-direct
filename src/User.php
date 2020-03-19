@@ -28,16 +28,13 @@ use Biplane\YandexDirect\Api\V5\Sitelinks;
 use Biplane\YandexDirect\Api\V5\SmartAdTargets;
 use Biplane\YandexDirect\Api\V5\TurboPages;
 use Biplane\YandexDirect\Api\V5\VCards;
-use Biplane\YandexDirect\Helper\Invoker;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\OptionsResolver\Options;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**
- * Provides profile for APIs.
- *
- * @author Denis Vasilev
+ * @deprecated
  */
 class User
 {
@@ -455,16 +452,6 @@ class User
     }
 
     /**
-     * Gets the invoker.
-     *
-     * @return callable
-     */
-    public function getInvoker()
-    {
-        return $this->options['invoker'];
-    }
-
-    /**
      * Sets the default options.
      *
      * @param OptionsResolver $resolver
@@ -483,18 +470,6 @@ class User
             return $value;
         };
 
-        $invokerNormalizer = function (Options $options, $value) {
-            if (null === $value) {
-                return new Invoker(
-                    $options['retry_max_attempts'],
-                    $options['retry_factor'],
-                    $options['retry_max_delay']
-                );
-            }
-
-            return $value;
-        };
-
         $resolver
             ->setRequired(['access_token'])
             ->setDefaults([
@@ -504,10 +479,6 @@ class User
                 'sandbox' => false,
                 'use_operator_units' => false,
                 'soap_options' => [],
-                'invoker' => null,
-                'retry_factor' => 1,
-                'retry_max_attempts' => 3,
-                'retry_max_delay' => 60,
             ])
             ->setAllowedValues('locale', [self::LOCALE_EN, self::LOCALE_RU, self::LOCALE_UA])
             ->setAllowedTypes('master_token', ['null', 'string'])
@@ -515,12 +486,7 @@ class User
             ->setAllowedTypes('access_token', 'string')
             ->setAllowedTypes('sandbox', 'bool')
             ->setAllowedTypes('use_operator_units', 'bool')
-            ->setAllowedTypes('invoker', ['null', 'callable'])
-            ->setAllowedTypes('retry_factor', 'int')
-            ->setAllowedTypes('retry_max_attempts', 'int')
-            ->setAllowedTypes('retry_max_delay', ['int', 'float'])
-            ->setNormalizer('login', $loginNormalizer)
-            ->setNormalizer('invoker', $invokerNormalizer);
+            ->setNormalizer('login', $loginNormalizer);
     }
 
     private function getProxy($serviceClass)

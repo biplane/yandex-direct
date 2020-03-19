@@ -1,32 +1,25 @@
 namespace Acme\Api;
 
-use Biplane\YandexDirect\Api\SoapClientV5;
-use Biplane\YandexDirect\User;
-use Symfony\Component\EventDispatcher\EventDispatcherInterface;
+use Biplane\YandexDirect\Api\ApiSoapClientV5;
+use Biplane\YandexDirect\Config;
 
 /**
  * Auto-generated code.
  */
-class AdGroups extends SoapClientV5
+class AdGroups extends ApiSoapClientV5
 {
 
     const ENDPOINT = 'api/v5/adgroups.wsdl';
 
-    /**
-     * Constructor.
-     *
-     * @param EventDispatcherInterface $dispatcher
-     * @param User $user
-     */
-    public function __construct(EventDispatcherInterface $dispatcher, User $user)
+    public function __construct(Config $config, array $options)
     {
-        parent::__construct($user->resolveWsdl(self::ENDPOINT), $dispatcher, $user, [
-            'classmap' => [
-                'GetRequest' => 'Acme\Api\Contract\GetRequest',
-                'AddRequest' => 'Acme\Api\Contract\AddRequest',
-                'AddResponse' => 'Acme\Api\Contract\AddResponse',
-            ]
-        ]);
+        $options['classmap'] = [
+            'GetRequest' => 'Acme\Api\Contract\GetRequest',
+            'AddRequest' => 'Acme\Api\Contract\AddRequest',
+            'AddResponse' => 'Acme\Api\Contract\AddResponse',
+        ];
+
+        parent::__construct(self::ENDPOINT, $config, $options);
     }
 
     /**
@@ -37,7 +30,7 @@ class AdGroups extends SoapClientV5
      */
     public function get(Contract\GetRequest $parameters)
     {
-        return $this->invoke('get', [$parameters]);
+        return $this->__soapCall('get', [$parameters]);
     }
 
     /**
@@ -48,7 +41,7 @@ class AdGroups extends SoapClientV5
      */
     public function add(Contract\AddRequest $parameters)
     {
-        return $this->invoke('add', [$parameters]);
+        return $this->__soapCall('add', [$parameters]);
     }
 
     /**
@@ -59,7 +52,7 @@ class AdGroups extends SoapClientV5
      */
     public function update(UpdateRequest $parameters)
     {
-        return $this->invoke('update', [$parameters]);
+        return $this->__soapCall('update', [$parameters]);
     }
 
     /**
@@ -70,7 +63,7 @@ class AdGroups extends SoapClientV5
      */
     public function delete(DeleteRequest $parameters)
     {
-        return $this->invoke('delete', [$parameters]);
+        return $this->__soapCall('delete', [$parameters]);
     }
 
 

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\Tests\YandexDirect\Api\V5;
 
 use Biplane\YandexDirect\Api\V5\Campaigns;
@@ -7,6 +9,7 @@ use Biplane\YandexDirect\Api\V5\Contract\CampaignFieldEnum;
 use Biplane\YandexDirect\Api\V5\Contract\CampaignsSelectionCriteria;
 use Biplane\YandexDirect\Api\V5\Contract\GetCampaignsRequest;
 use Biplane\YandexDirect\Api\V5\Contract\TextCampaignFieldEnum;
+use Biplane\YandexDirect\Config;
 use Biplane\YandexDirect\User;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
@@ -24,11 +27,16 @@ class CampaignsTest extends TestCase
         VCR::turnOff();
     }
 
-    public function testMappingArrayOfPrimitiveTypes()
+    public function testMappingArrayOfPrimitiveTypes(): void
     {
         VCR::insertCassette('CampaignsGet_primitiveTypes');
 
-        $service = new Campaigns($this->createMock(EventDispatcherInterface::class), $this->createUser());
+        $service = new Campaigns($this->createConfig(), [
+            'soap_version' => SOAP_1_1,
+            'features' => SOAP_SINGLE_ELEMENT_ARRAYS,
+            'trace' => true,
+            'exceptions' => true,
+        ]);
 
         $request = GetCampaignsRequest::create()
             ->setSelectionCriteria(
@@ -46,16 +54,19 @@ class CampaignsTest extends TestCase
         $response = $service->get($request);
         $campaigns = $response->getCampaigns();
 
+        self::assertNotNull($campaigns);
         self::assertCount(1, $campaigns);
         self::assertSame([
-            'бесплатно',
-            'плохие отзывы',
-            'самостоятельно',
+            'вреден',
+            'вредно',
+            'пуховые',
+            'пуховый',
+            'яблоко',
         ], $campaigns[0]->getNegativeKeywords());
         self::assertSame([123], $campaigns[0]->getTextCampaign()->getCounterIds());
     }
 
-    private function createUser()
+    private function createConfig(): Config
     {
         $accessToken = getenv('DIRECT_TOKEN');
 
@@ -63,9 +74,9 @@ class CampaignsTest extends TestCase
             $accessToken = 'fake';
         }
 
-        return new User([
+        return new Config([
             'access_token' => $accessToken,
-            'login' => getenv('DIRECT_CLIENT_LOGIN') ?: null,
+            'client_login' => getenv('DIRECT_CLIENT_LOGIN') ?: null,
         ]);
     }
 }

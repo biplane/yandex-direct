@@ -2,143 +2,136 @@
 
 namespace Biplane\YandexDirect\Api\V4;
 
-use Biplane\YandexDirect\Api\SoapClientV4;
-use Biplane\YandexDirect\User;
-use Symfony\Component\EventDispatcher\EventDispatcherInterface;
+use Biplane\YandexDirect\Api\ApiSoapClientV4;
+use Biplane\YandexDirect\Config;
 
 /**
  * Auto-generated code.
  */
-class YandexAPIService extends SoapClientV4
+class YandexAPIService extends ApiSoapClientV4
 {
 
     const ENDPOINT = 'https://api.direct.yandex.ru/live/v4/wsdl/';
 
-    /**
-     * Constructor.
-     *
-     * @param EventDispatcherInterface $dispatcher
-     * @param User $user
-     */
-    public function __construct(EventDispatcherInterface $dispatcher, User $user)
+    public function __construct(Config $config, array $options)
     {
-        parent::__construct($user->resolveWsdl(self::ENDPOINT), $dispatcher, $user, [
-            'classmap' => [
-                'NewReportFilterInfo' => 'Biplane\YandexDirect\Api\V4\Contract\NewReportFilterInfo',
-                'NewReportInfo' => 'Biplane\YandexDirect\Api\V4\Contract\NewReportInfo',
-                'TimeZoneInfo' => 'Biplane\YandexDirect\Api\V4\Contract\TimeZoneInfo',
-                'StatGoalsCampaignIDInfo' => 'Biplane\YandexDirect\Api\V4\Contract\StatGoalsCampaignIDInfo',
-                'CampaignIDSInfo' => 'Biplane\YandexDirect\Api\V4\Contract\CampaignIDSInfo',
-                'DayBudgetInfo' => 'Biplane\YandexDirect\Api\V4\Contract\DayBudgetInfo',
-                'CampaignStrategy' => 'Biplane\YandexDirect\Api\V4\Contract\CampaignStrategy',
-                'CampaignContextStrategy' => 'Biplane\YandexDirect\Api\V4\Contract\CampaignContextStrategy',
-                'SmsNotificationInfo' => 'Biplane\YandexDirect\Api\V4\Contract\SmsNotificationInfo',
-                'EmailNotificationInfo' => 'Biplane\YandexDirect\Api\V4\Contract\EmailNotificationInfo',
-                'CampaignBalanceInfo' => 'Biplane\YandexDirect\Api\V4\Contract\CampaignBalanceInfo',
-                'ClientsUnitInfo' => 'Biplane\YandexDirect\Api\V4\Contract\ClientsUnitInfo',
-                'RubricInfo' => 'Biplane\YandexDirect\Api\V4\Contract\RubricInfo',
-                'ForecastStatusInfo' => 'Biplane\YandexDirect\Api\V4\Contract\ForecastStatusInfo',
-                'ReportInfo' => 'Biplane\YandexDirect\Api\V4\Contract\ReportInfo',
-                'GetSummaryStatRequest' => 'Biplane\YandexDirect\Api\V4\Contract\GetSummaryStatRequest',
-                'StatItem' => 'Biplane\YandexDirect\Api\V4\Contract\StatItem',
-                'ContactInfo' => 'Biplane\YandexDirect\Api\V4\Contract\ContactInfo',
-                'RegionInfo' => 'Biplane\YandexDirect\Api\V4\Contract\RegionInfo',
-                'MapPoint' => 'Biplane\YandexDirect\Api\V4\Contract\MapPoint',
-                'TimeTargetInfo' => 'Biplane\YandexDirect\Api\V4\Contract\TimeTargetInfo',
-                'TimeTargetItem' => 'Biplane\YandexDirect\Api\V4\Contract\TimeTargetItem',
-                'CoverageInfo' => 'Biplane\YandexDirect\Api\V4\Contract\CoverageInfo',
-                'BannerPhraseInfo' => 'Biplane\YandexDirect\Api\V4\Contract\BannerPhraseInfo',
-                'PhraseUserParams' => 'Biplane\YandexDirect\Api\V4\Contract\PhraseUserParams',
-                'PhraseAuctionBids' => 'Biplane\YandexDirect\Api\V4\Contract\PhraseAuctionBids',
-                'TransferMoneyInfo' => 'Biplane\YandexDirect\Api\V4\Contract\TransferMoneyInfo',
-                'PayCampElement' => 'Biplane\YandexDirect\Api\V4\Contract\PayCampElement',
-                'CreateInvoiceInfo' => 'Biplane\YandexDirect\Api\V4\Contract\CreateInvoiceInfo',
-                'PayCampaignsInfo' => 'Biplane\YandexDirect\Api\V4\Contract\PayCampaignsInfo',
-                'PayCampaignsByCardInfo' => 'Biplane\YandexDirect\Api\V4\Contract\PayCampaignsByCardInfo',
-                'CheckPaymentInfo' => 'Biplane\YandexDirect\Api\V4\Contract\CheckPaymentInfo',
-                'Sitelink' => 'Biplane\YandexDirect\Api\V4\Contract\Sitelink',
-                'RejectReason' => 'Biplane\YandexDirect\Api\V4\Contract\RejectReason',
-                'CampaignsFilterInfo' => 'Biplane\YandexDirect\Api\V4\Contract\CampaignsFilterInfo',
-                'BannersFilterInfo' => 'Biplane\YandexDirect\Api\V4\Contract\BannersFilterInfo',
-                'NewForecastInfo' => 'Biplane\YandexDirect\Api\V4\Contract\NewForecastInfo',
-                'ForecastCommonInfo' => 'Biplane\YandexDirect\Api\V4\Contract\ForecastCommonInfo',
-                'GetForecastInfo' => 'Biplane\YandexDirect\Api\V4\Contract\GetForecastInfo',
-                'NewWordstatReportInfo' => 'Biplane\YandexDirect\Api\V4\Contract\NewWordstatReportInfo',
-                'WordstatReportStatusInfo' => 'Biplane\YandexDirect\Api\V4\Contract\WordstatReportStatusInfo',
-                'WordstatReportInfo' => 'Biplane\YandexDirect\Api\V4\Contract\WordstatReportInfo',
-                'WordstatItem' => 'Biplane\YandexDirect\Api\V4\Contract\WordstatItem',
-                'StatGoalInfo' => 'Biplane\YandexDirect\Api\V4\Contract\StatGoalInfo',
-                'ClientInfo' => 'Biplane\YandexDirect\Api\V4\Contract\ClientInfo',
-                'ShortClientInfo' => 'Biplane\YandexDirect\Api\V4\Contract\ShortClientInfo',
-                'GetSubClientsRequest' => 'Biplane\YandexDirect\Api\V4\Contract\GetSubClientsRequest',
-                'ClientInfoRequest' => 'Biplane\YandexDirect\Api\V4\Contract\ClientInfoRequest',
-                'ClientFilter' => 'Biplane\YandexDirect\Api\V4\Contract\ClientFilter',
-                'ClientRight' => 'Biplane\YandexDirect\Api\V4\Contract\ClientRight',
-                'VersionDesc' => 'Biplane\YandexDirect\Api\V4\Contract\VersionDesc',
-                'KeywordsSuggestionInfo' => 'Biplane\YandexDirect\Api\V4\Contract\KeywordsSuggestionInfo',
-                'GetEventsLogRequest' => 'Biplane\YandexDirect\Api\V4\Contract\GetEventsLogRequest',
-                'GetEventsLogFilter' => 'Biplane\YandexDirect\Api\V4\Contract\GetEventsLogFilter',
-                'EventsLogItem' => 'Biplane\YandexDirect\Api\V4\Contract\EventsLogItem',
-                'EventsLogItemAttributes' => 'Biplane\YandexDirect\Api\V4\Contract\EventsLogItemAttributes',
-                'CampaignTagsInfo' => 'Biplane\YandexDirect\Api\V4\Contract\CampaignTagsInfo',
-                'TagInfo' => 'Biplane\YandexDirect\Api\V4\Contract\TagInfo',
-                'BannersRequestInfo' => 'Biplane\YandexDirect\Api\V4\Contract\BannersRequestInfo',
-                'BannerTagsInfo' => 'Biplane\YandexDirect\Api\V4\Contract\BannerTagsInfo',
-                'BannersStatItem' => 'Biplane\YandexDirect\Api\V4\Contract\BannersStatItem',
-                'GetBannersStatResponse' => 'Biplane\YandexDirect\Api\V4\Contract\GetBannersStatResponse',
-                'GetChangesIntData' => 'Biplane\YandexDirect\Api\V4\Contract\GetChangesIntData',
-                'GetChangesLongData' => 'Biplane\YandexDirect\Api\V4\Contract\GetChangesLongData',
-                'GetChangesStringData' => 'Biplane\YandexDirect\Api\V4\Contract\GetChangesStringData',
-                'CampaignStatChangeItem' => 'Biplane\YandexDirect\Api\V4\Contract\CampaignStatChangeItem',
-                'CreateNewSubclientRequest' => 'Biplane\YandexDirect\Api\V4\Contract\CreateNewSubclientRequest',
-                'CreateNewSubclientResponse' => 'Biplane\YandexDirect\Api\V4\Contract\CreateNewSubclientResponse',
-                'CreditLimitsInfo' => 'Biplane\YandexDirect\Api\V4\Contract\CreditLimitsInfo',
-                'CreditLimitsItem' => 'Biplane\YandexDirect\Api\V4\Contract\CreditLimitsItem',
-                'Error' => 'Biplane\YandexDirect\Api\V4\Contract\Error',
-                'Warning' => 'Biplane\YandexDirect\Api\V4\Contract\Warning',
-                'GetRetargetingGoalsRequest' => 'Biplane\YandexDirect\Api\V4\Contract\GetRetargetingGoalsRequest',
-                'RetargetingGoal' => 'Biplane\YandexDirect\Api\V4\Contract\RetargetingGoal',
-                'RetargetingConditionRequest' => 'Biplane\YandexDirect\Api\V4\Contract\RetargetingConditionRequest',
-                'RetargetingCondition' => 'Biplane\YandexDirect\Api\V4\Contract\RetargetingCondition',
-                'RetargetingConditionItem' => 'Biplane\YandexDirect\Api\V4\Contract\RetargetingConditionItem',
-                'RetargetingConditionGoalItem' => 'Biplane\YandexDirect\Api\V4\Contract\RetargetingConditionGoalItem',
-                'RetargetingConditionSelectionCriteria' => 'Biplane\YandexDirect\Api\V4\Contract\RetargetingConditionSelectionCriteria',
-                'RetargetingConditionActionResult' => 'Biplane\YandexDirect\Api\V4\Contract\RetargetingConditionActionResult',
-                'RetargetingConditionResponse' => 'Biplane\YandexDirect\Api\V4\Contract\RetargetingConditionResponse',
-                'RetargetingRequest' => 'Biplane\YandexDirect\Api\V4\Contract\RetargetingRequest',
-                'RetargetingRequestOptions' => 'Biplane\YandexDirect\Api\V4\Contract\RetargetingRequestOptions',
-                'Retargeting' => 'Biplane\YandexDirect\Api\V4\Contract\Retargeting',
-                'RetargetingSelectionCriteria' => 'Biplane\YandexDirect\Api\V4\Contract\RetargetingSelectionCriteria',
-                'RetargetingActionResult' => 'Biplane\YandexDirect\Api\V4\Contract\RetargetingActionResult',
-                'RetargetingResponse' => 'Biplane\YandexDirect\Api\V4\Contract\RetargetingResponse',
-                'AdImageRequest' => 'Biplane\YandexDirect\Api\V4\Contract\AdImageRequest',
-                'AdImageSelectionCriteria' => 'Biplane\YandexDirect\Api\V4\Contract\AdImageSelectionCriteria',
-                'AdImageRaw' => 'Biplane\YandexDirect\Api\V4\Contract\AdImageRaw',
-                'AdImageURL' => 'Biplane\YandexDirect\Api\V4\Contract\AdImageURL',
-                'AdImageResponse' => 'Biplane\YandexDirect\Api\V4\Contract\AdImageResponse',
-                'KeywordActionResult' => 'Biplane\YandexDirect\Api\V4\Contract\KeywordActionResult',
-                'QualityIndex' => 'Biplane\YandexDirect\Api\V4\Contract\QualityIndex',
-                'AdImageLimit' => 'Biplane\YandexDirect\Api\V4\Contract\AdImageLimit',
-                'AdImage' => 'Biplane\YandexDirect\Api\V4\Contract\AdImage',
-                'AdImageUpload' => 'Biplane\YandexDirect\Api\V4\Contract\AdImageUpload',
-                'AdImageActionResult' => 'Biplane\YandexDirect\Api\V4\Contract\AdImageActionResult',
-                'AdImageAssociationRequest' => 'Biplane\YandexDirect\Api\V4\Contract\AdImageAssociationRequest',
-                'AdImageAssociationSelectionCriteria' => 'Biplane\YandexDirect\Api\V4\Contract\AdImageAssociationSelectionCriteria',
-                'AdImageAssociation' => 'Biplane\YandexDirect\Api\V4\Contract\AdImageAssociation',
-                'AdImageAssociationResponse' => 'Biplane\YandexDirect\Api\V4\Contract\AdImageAssociationResponse',
-                'AdImageAssociationActionResult' => 'Biplane\YandexDirect\Api\V4\Contract\AdImageAssociationActionResult',
-                'EnableSharedAccountRequest' => 'Biplane\YandexDirect\Api\V4\Contract\EnableSharedAccountRequest',
-                'EnableSharedAccountResponse' => 'Biplane\YandexDirect\Api\V4\Contract\EnableSharedAccountResponse',
-                'AccountManagementRequest' => 'Biplane\YandexDirect\Api\V4\Contract\AccountManagementRequest',
-                'AccountSelectionCriteria' => 'Biplane\YandexDirect\Api\V4\Contract\AccountSelectionCriteria',
-                'Payment' => 'Biplane\YandexDirect\Api\V4\Contract\Payment',
-                'Transfer' => 'Biplane\YandexDirect\Api\V4\Contract\Transfer',
-                'AccountDayBudgetInfo' => 'Biplane\YandexDirect\Api\V4\Contract\AccountDayBudgetInfo',
-                'Account' => 'Biplane\YandexDirect\Api\V4\Contract\Account',
-                'AccountManagementResponse' => 'Biplane\YandexDirect\Api\V4\Contract\AccountManagementResponse',
-                'AccountActionResult' => 'Biplane\YandexDirect\Api\V4\Contract\AccountActionResult',
-            ]
-        ]);
+        $options['classmap'] = [
+            'NewReportFilterInfo' => 'Biplane\YandexDirect\Api\V4\Contract\NewReportFilterInfo',
+            'NewReportInfo' => 'Biplane\YandexDirect\Api\V4\Contract\NewReportInfo',
+            'TimeZoneInfo' => 'Biplane\YandexDirect\Api\V4\Contract\TimeZoneInfo',
+            'StatGoalsCampaignIDInfo' => 'Biplane\YandexDirect\Api\V4\Contract\StatGoalsCampaignIDInfo',
+            'CampaignIDSInfo' => 'Biplane\YandexDirect\Api\V4\Contract\CampaignIDSInfo',
+            'DayBudgetInfo' => 'Biplane\YandexDirect\Api\V4\Contract\DayBudgetInfo',
+            'CampaignStrategy' => 'Biplane\YandexDirect\Api\V4\Contract\CampaignStrategy',
+            'CampaignContextStrategy' => 'Biplane\YandexDirect\Api\V4\Contract\CampaignContextStrategy',
+            'SmsNotificationInfo' => 'Biplane\YandexDirect\Api\V4\Contract\SmsNotificationInfo',
+            'EmailNotificationInfo' => 'Biplane\YandexDirect\Api\V4\Contract\EmailNotificationInfo',
+            'CampaignBalanceInfo' => 'Biplane\YandexDirect\Api\V4\Contract\CampaignBalanceInfo',
+            'ClientsUnitInfo' => 'Biplane\YandexDirect\Api\V4\Contract\ClientsUnitInfo',
+            'RubricInfo' => 'Biplane\YandexDirect\Api\V4\Contract\RubricInfo',
+            'ForecastStatusInfo' => 'Biplane\YandexDirect\Api\V4\Contract\ForecastStatusInfo',
+            'ReportInfo' => 'Biplane\YandexDirect\Api\V4\Contract\ReportInfo',
+            'GetSummaryStatRequest' => 'Biplane\YandexDirect\Api\V4\Contract\GetSummaryStatRequest',
+            'StatItem' => 'Biplane\YandexDirect\Api\V4\Contract\StatItem',
+            'ContactInfo' => 'Biplane\YandexDirect\Api\V4\Contract\ContactInfo',
+            'RegionInfo' => 'Biplane\YandexDirect\Api\V4\Contract\RegionInfo',
+            'MapPoint' => 'Biplane\YandexDirect\Api\V4\Contract\MapPoint',
+            'TimeTargetInfo' => 'Biplane\YandexDirect\Api\V4\Contract\TimeTargetInfo',
+            'TimeTargetItem' => 'Biplane\YandexDirect\Api\V4\Contract\TimeTargetItem',
+            'CoverageInfo' => 'Biplane\YandexDirect\Api\V4\Contract\CoverageInfo',
+            'BannerPhraseInfo' => 'Biplane\YandexDirect\Api\V4\Contract\BannerPhraseInfo',
+            'PhraseUserParams' => 'Biplane\YandexDirect\Api\V4\Contract\PhraseUserParams',
+            'PhraseAuctionBids' => 'Biplane\YandexDirect\Api\V4\Contract\PhraseAuctionBids',
+            'TransferMoneyInfo' => 'Biplane\YandexDirect\Api\V4\Contract\TransferMoneyInfo',
+            'PayCampElement' => 'Biplane\YandexDirect\Api\V4\Contract\PayCampElement',
+            'CreateInvoiceInfo' => 'Biplane\YandexDirect\Api\V4\Contract\CreateInvoiceInfo',
+            'PayCampaignsInfo' => 'Biplane\YandexDirect\Api\V4\Contract\PayCampaignsInfo',
+            'PayCampaignsByCardInfo' => 'Biplane\YandexDirect\Api\V4\Contract\PayCampaignsByCardInfo',
+            'CheckPaymentInfo' => 'Biplane\YandexDirect\Api\V4\Contract\CheckPaymentInfo',
+            'Sitelink' => 'Biplane\YandexDirect\Api\V4\Contract\Sitelink',
+            'RejectReason' => 'Biplane\YandexDirect\Api\V4\Contract\RejectReason',
+            'CampaignsFilterInfo' => 'Biplane\YandexDirect\Api\V4\Contract\CampaignsFilterInfo',
+            'BannersFilterInfo' => 'Biplane\YandexDirect\Api\V4\Contract\BannersFilterInfo',
+            'NewForecastInfo' => 'Biplane\YandexDirect\Api\V4\Contract\NewForecastInfo',
+            'ForecastCommonInfo' => 'Biplane\YandexDirect\Api\V4\Contract\ForecastCommonInfo',
+            'GetForecastInfo' => 'Biplane\YandexDirect\Api\V4\Contract\GetForecastInfo',
+            'NewWordstatReportInfo' => 'Biplane\YandexDirect\Api\V4\Contract\NewWordstatReportInfo',
+            'WordstatReportStatusInfo' => 'Biplane\YandexDirect\Api\V4\Contract\WordstatReportStatusInfo',
+            'WordstatReportInfo' => 'Biplane\YandexDirect\Api\V4\Contract\WordstatReportInfo',
+            'WordstatItem' => 'Biplane\YandexDirect\Api\V4\Contract\WordstatItem',
+            'StatGoalInfo' => 'Biplane\YandexDirect\Api\V4\Contract\StatGoalInfo',
+            'ClientInfo' => 'Biplane\YandexDirect\Api\V4\Contract\ClientInfo',
+            'ShortClientInfo' => 'Biplane\YandexDirect\Api\V4\Contract\ShortClientInfo',
+            'GetSubClientsRequest' => 'Biplane\YandexDirect\Api\V4\Contract\GetSubClientsRequest',
+            'ClientInfoRequest' => 'Biplane\YandexDirect\Api\V4\Contract\ClientInfoRequest',
+            'ClientFilter' => 'Biplane\YandexDirect\Api\V4\Contract\ClientFilter',
+            'ClientRight' => 'Biplane\YandexDirect\Api\V4\Contract\ClientRight',
+            'VersionDesc' => 'Biplane\YandexDirect\Api\V4\Contract\VersionDesc',
+            'KeywordsSuggestionInfo' => 'Biplane\YandexDirect\Api\V4\Contract\KeywordsSuggestionInfo',
+            'GetEventsLogRequest' => 'Biplane\YandexDirect\Api\V4\Contract\GetEventsLogRequest',
+            'GetEventsLogFilter' => 'Biplane\YandexDirect\Api\V4\Contract\GetEventsLogFilter',
+            'EventsLogItem' => 'Biplane\YandexDirect\Api\V4\Contract\EventsLogItem',
+            'EventsLogItemAttributes' => 'Biplane\YandexDirect\Api\V4\Contract\EventsLogItemAttributes',
+            'CampaignTagsInfo' => 'Biplane\YandexDirect\Api\V4\Contract\CampaignTagsInfo',
+            'TagInfo' => 'Biplane\YandexDirect\Api\V4\Contract\TagInfo',
+            'BannersRequestInfo' => 'Biplane\YandexDirect\Api\V4\Contract\BannersRequestInfo',
+            'BannerTagsInfo' => 'Biplane\YandexDirect\Api\V4\Contract\BannerTagsInfo',
+            'BannersStatItem' => 'Biplane\YandexDirect\Api\V4\Contract\BannersStatItem',
+            'GetBannersStatResponse' => 'Biplane\YandexDirect\Api\V4\Contract\GetBannersStatResponse',
+            'GetChangesIntData' => 'Biplane\YandexDirect\Api\V4\Contract\GetChangesIntData',
+            'GetChangesLongData' => 'Biplane\YandexDirect\Api\V4\Contract\GetChangesLongData',
+            'GetChangesStringData' => 'Biplane\YandexDirect\Api\V4\Contract\GetChangesStringData',
+            'CampaignStatChangeItem' => 'Biplane\YandexDirect\Api\V4\Contract\CampaignStatChangeItem',
+            'CreateNewSubclientRequest' => 'Biplane\YandexDirect\Api\V4\Contract\CreateNewSubclientRequest',
+            'CreateNewSubclientResponse' => 'Biplane\YandexDirect\Api\V4\Contract\CreateNewSubclientResponse',
+            'CreditLimitsInfo' => 'Biplane\YandexDirect\Api\V4\Contract\CreditLimitsInfo',
+            'CreditLimitsItem' => 'Biplane\YandexDirect\Api\V4\Contract\CreditLimitsItem',
+            'Error' => 'Biplane\YandexDirect\Api\V4\Contract\Error',
+            'Warning' => 'Biplane\YandexDirect\Api\V4\Contract\Warning',
+            'GetRetargetingGoalsRequest' => 'Biplane\YandexDirect\Api\V4\Contract\GetRetargetingGoalsRequest',
+            'RetargetingGoal' => 'Biplane\YandexDirect\Api\V4\Contract\RetargetingGoal',
+            'RetargetingConditionRequest' => 'Biplane\YandexDirect\Api\V4\Contract\RetargetingConditionRequest',
+            'RetargetingCondition' => 'Biplane\YandexDirect\Api\V4\Contract\RetargetingCondition',
+            'RetargetingConditionItem' => 'Biplane\YandexDirect\Api\V4\Contract\RetargetingConditionItem',
+            'RetargetingConditionGoalItem' => 'Biplane\YandexDirect\Api\V4\Contract\RetargetingConditionGoalItem',
+            'RetargetingConditionSelectionCriteria' => 'Biplane\YandexDirect\Api\V4\Contract\RetargetingConditionSelectionCriteria',
+            'RetargetingConditionActionResult' => 'Biplane\YandexDirect\Api\V4\Contract\RetargetingConditionActionResult',
+            'RetargetingConditionResponse' => 'Biplane\YandexDirect\Api\V4\Contract\RetargetingConditionResponse',
+            'RetargetingRequest' => 'Biplane\YandexDirect\Api\V4\Contract\RetargetingRequest',
+            'RetargetingRequestOptions' => 'Biplane\YandexDirect\Api\V4\Contract\RetargetingRequestOptions',
+            'Retargeting' => 'Biplane\YandexDirect\Api\V4\Contract\Retargeting',
+            'RetargetingSelectionCriteria' => 'Biplane\YandexDirect\Api\V4\Contract\RetargetingSelectionCriteria',
+            'RetargetingActionResult' => 'Biplane\YandexDirect\Api\V4\Contract\RetargetingActionResult',
+            'RetargetingResponse' => 'Biplane\YandexDirect\Api\V4\Contract\RetargetingResponse',
+            'AdImageRequest' => 'Biplane\YandexDirect\Api\V4\Contract\AdImageRequest',
+            'AdImageSelectionCriteria' => 'Biplane\YandexDirect\Api\V4\Contract\AdImageSelectionCriteria',
+            'AdImageRaw' => 'Biplane\YandexDirect\Api\V4\Contract\AdImageRaw',
+            'AdImageURL' => 'Biplane\YandexDirect\Api\V4\Contract\AdImageURL',
+            'AdImageResponse' => 'Biplane\YandexDirect\Api\V4\Contract\AdImageResponse',
+            'KeywordActionResult' => 'Biplane\YandexDirect\Api\V4\Contract\KeywordActionResult',
+            'QualityIndex' => 'Biplane\YandexDirect\Api\V4\Contract\QualityIndex',
+            'AdImageLimit' => 'Biplane\YandexDirect\Api\V4\Contract\AdImageLimit',
+            'AdImage' => 'Biplane\YandexDirect\Api\V4\Contract\AdImage',
+            'AdImageUpload' => 'Biplane\YandexDirect\Api\V4\Contract\AdImageUpload',
+            'AdImageActionResult' => 'Biplane\YandexDirect\Api\V4\Contract\AdImageActionResult',
+            'AdImageAssociationRequest' => 'Biplane\YandexDirect\Api\V4\Contract\AdImageAssociationRequest',
+            'AdImageAssociationSelectionCriteria' => 'Biplane\YandexDirect\Api\V4\Contract\AdImageAssociationSelectionCriteria',
+            'AdImageAssociation' => 'Biplane\YandexDirect\Api\V4\Contract\AdImageAssociation',
+            'AdImageAssociationResponse' => 'Biplane\YandexDirect\Api\V4\Contract\AdImageAssociationResponse',
+            'AdImageAssociationActionResult' => 'Biplane\YandexDirect\Api\V4\Contract\AdImageAssociationActionResult',
+            'EnableSharedAccountRequest' => 'Biplane\YandexDirect\Api\V4\Contract\EnableSharedAccountRequest',
+            'EnableSharedAccountResponse' => 'Biplane\YandexDirect\Api\V4\Contract\EnableSharedAccountResponse',
+            'AccountManagementRequest' => 'Biplane\YandexDirect\Api\V4\Contract\AccountManagementRequest',
+            'AccountSelectionCriteria' => 'Biplane\YandexDirect\Api\V4\Contract\AccountSelectionCriteria',
+            'Payment' => 'Biplane\YandexDirect\Api\V4\Contract\Payment',
+            'Transfer' => 'Biplane\YandexDirect\Api\V4\Contract\Transfer',
+            'AccountDayBudgetInfo' => 'Biplane\YandexDirect\Api\V4\Contract\AccountDayBudgetInfo',
+            'Account' => 'Biplane\YandexDirect\Api\V4\Contract\Account',
+            'AccountManagementResponse' => 'Biplane\YandexDirect\Api\V4\Contract\AccountManagementResponse',
+            'AccountActionResult' => 'Biplane\YandexDirect\Api\V4\Contract\AccountActionResult',
+        ];
+
+        parent::__construct(self::ENDPOINT, $config, $options);
     }
 
     /**
@@ -148,7 +141,7 @@ class YandexAPIService extends SoapClientV4
      */
     public function getVersion()
     {
-        return $this->invoke('GetVersion', []);
+        return $this->__soapCall('GetVersion', []);
     }
 
     /**
@@ -159,7 +152,7 @@ class YandexAPIService extends SoapClientV4
      */
     public function getClientsList(Contract\ClientInfoRequest $params)
     {
-        return $this->invoke('GetClientsList', [$params]);
+        return $this->__soapCall('GetClientsList', [$params]);
     }
 
     /**
@@ -170,7 +163,7 @@ class YandexAPIService extends SoapClientV4
      */
     public function getSubClients(Contract\GetSubClientsRequest $params)
     {
-        return $this->invoke('GetSubClients', [$params]);
+        return $this->__soapCall('GetSubClients', [$params]);
     }
 
     /**
@@ -181,7 +174,7 @@ class YandexAPIService extends SoapClientV4
      */
     public function deleteReport($params)
     {
-        return $this->invoke('DeleteReport', [$params]);
+        return $this->__soapCall('DeleteReport', [$params]);
     }
 
     /**
@@ -192,7 +185,7 @@ class YandexAPIService extends SoapClientV4
      */
     public function getSummaryStat(Contract\GetSummaryStatRequest $params)
     {
-        return $this->invoke('GetSummaryStat', [$params]);
+        return $this->__soapCall('GetSummaryStat', [$params]);
     }
 
     /**
@@ -203,7 +196,7 @@ class YandexAPIService extends SoapClientV4
      */
     public function deleteForecastReport($params)
     {
-        return $this->invoke('DeleteForecastReport', [$params]);
+        return $this->__soapCall('DeleteForecastReport', [$params]);
     }
 
     /**
@@ -213,7 +206,7 @@ class YandexAPIService extends SoapClientV4
      */
     public function getReportList()
     {
-        return $this->invoke('GetReportList', []);
+        return $this->__soapCall('GetReportList', []);
     }
 
     /**
@@ -224,7 +217,7 @@ class YandexAPIService extends SoapClientV4
      */
     public function getClientsUnits(array $params)
     {
-        return $this->invoke('GetClientsUnits', [$params]);
+        return $this->__soapCall('GetClientsUnits', [$params]);
     }
 
     /**
@@ -235,7 +228,7 @@ class YandexAPIService extends SoapClientV4
      */
     public function getClientInfo(array $params)
     {
-        return $this->invoke('GetClientInfo', [$params]);
+        return $this->__soapCall('GetClientInfo', [$params]);
     }
 
     /**
@@ -246,7 +239,7 @@ class YandexAPIService extends SoapClientV4
      */
     public function updateClientInfo(array $params)
     {
-        return $this->invoke('UpdateClientInfo', [$params]);
+        return $this->__soapCall('UpdateClientInfo', [$params]);
     }
 
     /**
@@ -257,7 +250,7 @@ class YandexAPIService extends SoapClientV4
      */
     public function getBalance(array $params)
     {
-        return $this->invoke('GetBalance', [$params]);
+        return $this->__soapCall('GetBalance', [$params]);
     }
 
     /**
@@ -267,7 +260,7 @@ class YandexAPIService extends SoapClientV4
      */
     public function getRegions()
     {
-        return $this->invoke('GetRegions', []);
+        return $this->__soapCall('GetRegions', []);
     }
 
     /**
@@ -278,7 +271,7 @@ class YandexAPIService extends SoapClientV4
      */
     public function createNewReport(Contract\NewReportInfo $params)
     {
-        return $this->invoke('CreateNewReport', [$params]);
+        return $this->__soapCall('CreateNewReport', [$params]);
     }
 
     /**
@@ -289,7 +282,7 @@ class YandexAPIService extends SoapClientV4
      */
     public function getBannersStat(Contract\NewReportInfo $params)
     {
-        return $this->invoke('GetBannersStat', [$params]);
+        return $this->__soapCall('GetBannersStat', [$params]);
     }
 
     /**
@@ -300,7 +293,7 @@ class YandexAPIService extends SoapClientV4
      */
     public function createNewForecast(Contract\NewForecastInfo $params)
     {
-        return $this->invoke('CreateNewForecast', [$params]);
+        return $this->__soapCall('CreateNewForecast', [$params]);
     }
 
     /**
@@ -311,7 +304,7 @@ class YandexAPIService extends SoapClientV4
      */
     public function getForecast($params)
     {
-        return $this->invoke('GetForecast', [$params]);
+        return $this->__soapCall('GetForecast', [$params]);
     }
 
     /**
@@ -321,7 +314,7 @@ class YandexAPIService extends SoapClientV4
      */
     public function getRubrics()
     {
-        return $this->invoke('GetRubrics', []);
+        return $this->__soapCall('GetRubrics', []);
     }
 
     /**
@@ -331,7 +324,7 @@ class YandexAPIService extends SoapClientV4
      */
     public function getTimeZones()
     {
-        return $this->invoke('GetTimeZones', []);
+        return $this->__soapCall('GetTimeZones', []);
     }
 
     /**
@@ -341,7 +334,7 @@ class YandexAPIService extends SoapClientV4
      */
     public function getForecastList()
     {
-        return $this->invoke('GetForecastList', []);
+        return $this->__soapCall('GetForecastList', []);
     }
 
     /**
@@ -351,7 +344,7 @@ class YandexAPIService extends SoapClientV4
      */
     public function getAvailableVersions()
     {
-        return $this->invoke('GetAvailableVersions', []);
+        return $this->__soapCall('GetAvailableVersions', []);
     }
 
     /**
@@ -362,7 +355,7 @@ class YandexAPIService extends SoapClientV4
      */
     public function getKeywordsSuggestion(Contract\KeywordsSuggestionInfo $params)
     {
-        return $this->invoke('GetKeywordsSuggestion', [$params]);
+        return $this->__soapCall('GetKeywordsSuggestion', [$params]);
     }
 
     /**
@@ -373,7 +366,7 @@ class YandexAPIService extends SoapClientV4
      */
     public function createNewSubclient(Contract\CreateNewSubclientRequest $params)
     {
-        return $this->invoke('CreateNewSubclient', [$params]);
+        return $this->__soapCall('CreateNewSubclient', [$params]);
     }
 
     /**
@@ -384,7 +377,7 @@ class YandexAPIService extends SoapClientV4
      */
     public function createNewWordstatReport(Contract\NewWordstatReportInfo $params)
     {
-        return $this->invoke('CreateNewWordstatReport', [$params]);
+        return $this->__soapCall('CreateNewWordstatReport', [$params]);
     }
 
     /**
@@ -394,7 +387,7 @@ class YandexAPIService extends SoapClientV4
      */
     public function getWordstatReportList()
     {
-        return $this->invoke('GetWordstatReportList', []);
+        return $this->__soapCall('GetWordstatReportList', []);
     }
 
     /**
@@ -405,7 +398,7 @@ class YandexAPIService extends SoapClientV4
      */
     public function getWordstatReport($params)
     {
-        return $this->invoke('GetWordstatReport', [$params]);
+        return $this->__soapCall('GetWordstatReport', [$params]);
     }
 
     /**
@@ -416,7 +409,7 @@ class YandexAPIService extends SoapClientV4
      */
     public function deleteWordstatReport($params)
     {
-        return $this->invoke('DeleteWordstatReport', [$params]);
+        return $this->__soapCall('DeleteWordstatReport', [$params]);
     }
 
     /**
@@ -427,7 +420,7 @@ class YandexAPIService extends SoapClientV4
      */
     public function getStatGoals(Contract\StatGoalsCampaignIDInfo $params)
     {
-        return $this->invoke('GetStatGoals', [$params]);
+        return $this->__soapCall('GetStatGoals', [$params]);
     }
 
     /**
@@ -438,7 +431,7 @@ class YandexAPIService extends SoapClientV4
      */
     public function getEventsLog(Contract\GetEventsLogRequest $params)
     {
-        return $this->invoke('GetEventsLog', [$params]);
+        return $this->__soapCall('GetEventsLog', [$params]);
     }
 
     /**
@@ -449,7 +442,7 @@ class YandexAPIService extends SoapClientV4
      */
     public function getCampaignsTags(Contract\CampaignIDSInfo $params)
     {
-        return $this->invoke('GetCampaignsTags', [$params]);
+        return $this->__soapCall('GetCampaignsTags', [$params]);
     }
 
     /**
@@ -460,7 +453,7 @@ class YandexAPIService extends SoapClientV4
      */
     public function updateCampaignsTags(array $params)
     {
-        return $this->invoke('UpdateCampaignsTags', [$params]);
+        return $this->__soapCall('UpdateCampaignsTags', [$params]);
     }
 
     /**
@@ -471,7 +464,7 @@ class YandexAPIService extends SoapClientV4
      */
     public function getBannersTags(Contract\BannersRequestInfo $params)
     {
-        return $this->invoke('GetBannersTags', [$params]);
+        return $this->__soapCall('GetBannersTags', [$params]);
     }
 
     /**
@@ -482,7 +475,7 @@ class YandexAPIService extends SoapClientV4
      */
     public function updateBannersTags(array $params)
     {
-        return $this->invoke('UpdateBannersTags', [$params]);
+        return $this->__soapCall('UpdateBannersTags', [$params]);
     }
 
     /**
@@ -493,7 +486,7 @@ class YandexAPIService extends SoapClientV4
      */
     public function transferMoney(Contract\TransferMoneyInfo $params)
     {
-        return $this->invoke('TransferMoney', [$params]);
+        return $this->__soapCall('TransferMoney', [$params]);
     }
 
     /**
@@ -503,7 +496,7 @@ class YandexAPIService extends SoapClientV4
      */
     public function getCreditLimits()
     {
-        return $this->invoke('GetCreditLimits', []);
+        return $this->__soapCall('GetCreditLimits', []);
     }
 
     /**
@@ -514,7 +507,7 @@ class YandexAPIService extends SoapClientV4
      */
     public function createInvoice(Contract\CreateInvoiceInfo $params)
     {
-        return $this->invoke('CreateInvoice', [$params]);
+        return $this->__soapCall('CreateInvoice', [$params]);
     }
 
     /**
@@ -525,7 +518,7 @@ class YandexAPIService extends SoapClientV4
      */
     public function payCampaigns(Contract\PayCampaignsInfo $params)
     {
-        return $this->invoke('PayCampaigns', [$params]);
+        return $this->__soapCall('PayCampaigns', [$params]);
     }
 
     /**
@@ -536,7 +529,7 @@ class YandexAPIService extends SoapClientV4
      */
     public function payCampaignsByCard(Contract\PayCampaignsByCardInfo $params)
     {
-        return $this->invoke('PayCampaignsByCard', [$params]);
+        return $this->__soapCall('PayCampaignsByCard', [$params]);
     }
 
     /**
@@ -547,7 +540,7 @@ class YandexAPIService extends SoapClientV4
      */
     public function checkPayment(Contract\CheckPaymentInfo $params)
     {
-        return $this->invoke('CheckPayment', [$params]);
+        return $this->__soapCall('CheckPayment', [$params]);
     }
 
     /**
@@ -558,7 +551,7 @@ class YandexAPIService extends SoapClientV4
      */
     public function getRetargetingGoals(Contract\GetRetargetingGoalsRequest $params)
     {
-        return $this->invoke('GetRetargetingGoals', [$params]);
+        return $this->__soapCall('GetRetargetingGoals', [$params]);
     }
 
     /**
@@ -569,7 +562,7 @@ class YandexAPIService extends SoapClientV4
      */
     public function retargetingCondition(Contract\RetargetingConditionRequest $params)
     {
-        return $this->invoke('RetargetingCondition', [$params]);
+        return $this->__soapCall('RetargetingCondition', [$params]);
     }
 
     /**
@@ -580,7 +573,7 @@ class YandexAPIService extends SoapClientV4
      */
     public function retargeting(Contract\RetargetingRequest $params)
     {
-        return $this->invoke('Retargeting', [$params]);
+        return $this->__soapCall('Retargeting', [$params]);
     }
 
     /**
@@ -591,7 +584,7 @@ class YandexAPIService extends SoapClientV4
      */
     public function adImage(Contract\AdImageRequest $params)
     {
-        return $this->invoke('AdImage', [$params]);
+        return $this->__soapCall('AdImage', [$params]);
     }
 
     /**
@@ -602,7 +595,7 @@ class YandexAPIService extends SoapClientV4
      */
     public function adImageAssociation(Contract\AdImageAssociationRequest $params)
     {
-        return $this->invoke('AdImageAssociation', [$params]);
+        return $this->__soapCall('AdImageAssociation', [$params]);
     }
 
     /**
@@ -613,7 +606,7 @@ class YandexAPIService extends SoapClientV4
      */
     public function enableSharedAccount(Contract\EnableSharedAccountRequest $params)
     {
-        return $this->invoke('EnableSharedAccount', [$params]);
+        return $this->__soapCall('EnableSharedAccount', [$params]);
     }
 
     /**
@@ -624,7 +617,7 @@ class YandexAPIService extends SoapClientV4
      */
     public function accountManagement(Contract\AccountManagementRequest $params)
     {
-        return $this->invoke('AccountManagement', [$params]);
+        return $this->__soapCall('AccountManagement', [$params]);
     }
 
 

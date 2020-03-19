@@ -14,5 +14,4 @@ parameters:
     - src/Api/V4/*
     - src/Api/V5/*
   ignoreErrors:
-    - "#Access to an undefined property SoapFault::\\$faultcode#"
     - "#Call to an undefined static method SoapClient::__construct\\(\\)#"

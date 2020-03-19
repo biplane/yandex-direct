@@ -5,7 +5,11 @@ namespace Biplane\Build\Wsdl2Php\Contract;
 use Biplane\Build\Wsdl2Php\ClassNameUtil;
 use Biplane\Build\Wsdl2Php\Helper\ContractGeneratorTrait;
 use Biplane\Build\Wsdl2Php\PhpTypeResolver;
+use Biplane\YandexDirect\Api\ApiSoapClientV4;
+use Biplane\YandexDirect\Api\ApiSoapClientV5;
+use Biplane\YandexDirect\Config;
 use Doctrine\Common\Inflector\Inflector;
+use RuntimeException;
 use Wsdl2PhpGenerator\Xml\OperationNode;
 use Wsdl2PhpGenerator\Xml\ServiceNode;
 use Zend\Code\Generator\ClassGenerator;
@@ -40,8 +44,7 @@ class ServiceType extends AbstractType implements GeneratorInterface
         $generator
             ->addConstant('ENDPOINT', $this->wsdlUri)
             ->addUse($baseClientClass)
-            ->addUse('Biplane\YandexDirect\User')
-            ->addUse('Symfony\Component\EventDispatcher\EventDispatcherInterface')
+            ->addUse(Config::class)
             ->setExtendedClass(ClassNameUtil::unqualifiedClassName($baseClientClass))
             ->addMethodFromGenerator($this->createConstructor($typeResolver->getTypes()));
 
@@ -50,17 +53,17 @@ class ServiceType extends AbstractType implements GeneratorInterface
         }
     }
 
-    private function getBaseClientClass($wsdl)
+    private function getBaseClientClass(string $wsdl): string
     {
         if (false !== strpos($wsdl, '/v4/')) {
-            return 'Biplane\YandexDirect\Api\SoapClientV4';
+            return ApiSoapClientV4::class;
         }
 
         if (false !== strpos($wsdl, '/v5/')) {
-            return 'Biplane\YandexDirect\Api\SoapClientV5';
+            return ApiSoapClientV5::class;
         }
 
-        throw new \RuntimeException(sprintf('Could not resolve the generic client type by WSDL: %s', $wsdl));
+        throw new RuntimeException(sprintf('Could not resolve the generic client type by WSDL: %s', $wsdl));
     }
 
     /**
@@ -74,28 +77,24 @@ class ServiceType extends AbstractType implements GeneratorInterface
 
         foreach ($types as $name => $type) {
             if ($type instanceof GeneratorInterface) {
-                $classmap[] = sprintf("        '%s' => '%s',", $name, $type->getPhpIdentifier());
+                $classmap[] = sprintf("    '%s' => '%s',", $name, $type->getPhpIdentifier());
             }
         }
 
         $classmap = implode("\n", $classmap);
 
         $generator = new MethodGenerator('__construct');
-        $generator->setDocBlock('Constructor.');
         $generator->setBody(
             <<<CODE
-        parent::__construct(\$user->resolveWsdl(self::ENDPOINT), \$dispatcher, \$user, [
-    'classmap' => [
+\$options['classmap'] = [
 {$classmap}
-    ]
-]);
+];
+
+parent::__construct(self::ENDPOINT, \$config, \$options);
 CODE
         );
-        $generator->setParameter($this->createParameter('dispatcher', 'EventDispatcherInterface'));
-        $generator->setParameter($this->createParameter('user', 'User'));
-
-        $this->addTag($generator, $this->createParamTag('dispatcher', 'EventDispatcherInterface'));
-        $this->addTag($generator, $this->createParamTag('user', 'User'));
+        $generator->setParameter($this->createParameter('config', 'Config'));
+        $generator->setParameter($this->createParameter('options', 'array'));
 
         return $generator;
     }
@@ -130,7 +129,7 @@ CODE
         }
 
         $generator->setBody(sprintf(
-            "return \$this->invoke('%s', [%s]);",
+            "return \$this->__soapCall('%s', [%s]);",
             $operation->getName(),
             implode(', ', $params)
         ));

@@ -1,50 +1,25 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\Tests\YandexDirect\Api;
 
-use Biplane\YandexDirect\Api\SoapClient;
-use Biplane\YandexDirect\User;
-use PHPUnit\Extension\FunctionMocker;
+use Biplane\YandexDirect\Api\ApiSoapClient;
+use Biplane\YandexDirect\Config;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
-use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 abstract class BaseTestCase extends TestCase
 {
     /**
-     * @var MockObject|EventDispatcherInterface
+     * @template T of ApiSoapClient
+     *
+     * @param class-string<T> $soapClientClass
+     * @param array<string>   $mockMethods
+     *
+     * @return MockObject&ApiSoapClient
      */
-    protected $dispatcher;
-
-    /**
-     * @var MockObject|User
-     */
-    protected $user;
-
-    protected function setUp(): void
-    {
-        $this->dispatcher = $this->createMock(EventDispatcherInterface::class);
-        $this->user = $this->createMock(User::class);
-
-        $this->configureUser($this->user);
-    }
-
-    protected function tearDown(): void
-    {
-        FunctionMocker::tearDown();
-
-        unset($this->dispatcher, $this->client, $this->user);
-    }
-
-    protected function configureUser(MockObject $user): void
-    {
-        $user->method('getSoapOptions')->willReturn([]);
-        $user->method('getInvoker')->willReturn(function (callable $callback) {
-            return $callback();
-        });
-    }
-
-    protected function createClient($soapClientClass, array $methods = [])
+    protected function createSoapClient(string $soapClientClass, Config $config, array $mockMethods = []): MockObject
     {
         $options = [
             'uri' => 'localhost',
@@ -52,16 +27,8 @@ abstract class BaseTestCase extends TestCase
         ];
 
         return $this->getMockBuilder($soapClientClass)
-            ->setConstructorArgs([null, $this->dispatcher, $this->user, $options])
-            ->setMethods($methods)
+            ->setConstructorArgs([null, $config, $options])
+            ->setMethods($mockMethods)
             ->getMockForAbstractClass();
-    }
-
-    protected function doInvoke(SoapClient $client, $method, array $params)
-    {
-        $reflection = new \ReflectionMethod($client, 'invoke');
-        $reflection->setAccessible(true);
-
-        return $reflection->invoke($client, $method, $params);
     }
 }

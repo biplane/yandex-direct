@@ -1,19 +1,30 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api;
 
-function parseArrayOfString($xml)
+use SimpleXMLElement;
+
+/**
+ * @return array<string>|null
+ */
+function parseArrayOfString(string $xml): ?array
 {
-    if ($xml && preg_match_all('/<Items>([^<]+)<\/Items>/u', $xml, $m)) {
+    if ($xml !== '' && preg_match_all('/<Items>([^<]+)<\/Items>/u', $xml, $m)) {
         return $m[1];
     }
 
     return null;
 }
 
-function parseArrayOfInt($xml)
+/**
+ * @return array<int>|null
+ */
+function parseArrayOfInt(string $xml): ?array
 {
     $items = parseArrayOfString($xml);
+
     if (is_array($items)) {
         return array_map('intval', $items);
     }
@@ -21,9 +32,13 @@ function parseArrayOfInt($xml)
     return $items;
 }
 
-function parseArrayOfLong($xml)
+/**
+ * @return array<float>|null
+ */
+function parseArrayOfLong(string $xml): ?array
 {
     $items = parseArrayOfString($xml);
+
     if (is_array($items)) {
         return array_map('floatval', $items);
     }
@@ -76,11 +91,28 @@ function createStreamContext(array $httpOptions, $originStreamContext = null)
  *
  * @return string[]
  */
-function parseHttpHeaders($headers)
+function parseHttpHeaders($headers): array
 {
     if (is_array($headers)) {
         return $headers;
     }
 
     return explode("\r\n", $headers);
+}
+
+function fixNamespace(string $response, string $schemaNamespace): string
+{
+    if ($response === '') {
+        return $response;
+    }
+
+    $xml = new SimpleXMLElement($response);
+    $nss = array_flip($xml->getDocNamespaces(true));
+    $invalidNs = 'http://namespaces.soaplite.com/perl';
+
+    if (isset($nss[$invalidNs], $nss[$schemaNamespace])) {
+        return str_replace($nss[$invalidNs] . ':', $nss[$schemaNamespace] . ':', $response);
+    }
+
+    return $response;
 }

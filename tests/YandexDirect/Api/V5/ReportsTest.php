@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\Tests\YandexDirect\Api\V5;
 
 use Biplane\YandexDirect\Api\V5\Report\ReportRequest;
@@ -56,7 +58,7 @@ class ReportsTest extends TestCase
         }
     }
 
-    public function testGetResultWhenNewReportIsCreated()
+    public function testGetResultWhenNewReportIsCreated(): void
     {
         $reportRequest = (new ReportRequest())
             ->setDefinition('<ReportDefinition />');
@@ -94,7 +96,7 @@ class ReportsTest extends TestCase
         ]);
     }
 
-    public function testGetResultWhenReportIsProcessing()
+    public function testGetResultWhenReportIsProcessing(): void
     {
         $reportRequest = (new ReportRequest())
             ->setDefinition('<ReportDefinition />');
@@ -118,7 +120,7 @@ class ReportsTest extends TestCase
         ]);
     }
 
-    public function testGetResultWhenReportIsReady()
+    public function testGetResultWhenReportIsReady(): void
     {
         $reportRequest = (new ReportRequest())
             ->setDefinition('<ReportDefinition />');
@@ -137,7 +139,7 @@ class ReportsTest extends TestCase
         self::assertEquals($reportContent, $result->getData());
     }
 
-    public function testCreateReportWithCustomOptions()
+    public function testCreateReportWithCustomOptions(): void
     {
         $reportRequest = (new ReportRequest())
             ->setDefinition('<ReportDefinition />')
@@ -169,7 +171,7 @@ class ReportsTest extends TestCase
         ]);
     }
 
-    public function testConnectToSandbox()
+    public function testConnectToSandbox(): void
     {
         $reportRequest = (new ReportRequest())
             ->setDefinition('<ReportDefinition />')
@@ -194,7 +196,7 @@ class ReportsTest extends TestCase
         ], 'https://api-sandbox.direct.yandex.com/v5/reports');
     }
 
-    public function testWaitBuildingReport()
+    public function testWaitBuildingReport(): void
     {
         $reportRequest = (new ReportRequest())
             ->setDefinition('<ReportDefinition />');
@@ -219,7 +221,7 @@ class ReportsTest extends TestCase
         self::assertEquals($reportContent, $result->getData());
     }
 
-    public function testDownloadReport()
+    public function testDownloadReport(): void
     {
         $reportRequest = (new ReportRequest())
             ->setDefinition('<ReportDefinition />');
@@ -244,10 +246,8 @@ class ReportsTest extends TestCase
         self::assertEquals($reportContent, file_get_contents($this->reportFile));
     }
 
-    public function testThrowApiExceptionWhenBadRequest()
+    public function testThrowApiExceptionWhenBadRequest(): void
     {
-        $this->expectException(ApiException::class);
-
         $reportRequest = (new ReportRequest())
             ->setDefinition('<ReportDefinition />');
 
@@ -274,6 +274,9 @@ XML;
             ->method('dispatch')
             ->with(Events::BEFORE_REQUEST, new PreCallEvent('Reports:request', [$reportRequest], $user));
 
+        $exception = new ApiException('Authorization error', 53, 'Token not entered');
+        $exception->setRequestId('2773184281650080533');
+
         $this->dispatcher->expects($this->at(1))
             ->method('dispatch')
             ->with(Events::FAIL_REQUEST, new FailCallEvent(
@@ -281,22 +284,24 @@ XML;
                 [$reportRequest],
                 $user,
                 $service,
-                new ApiException('Reports:request', 'Token not entered', 53, null, '2773184281650080533')
+                $exception
             ));
+
+        $this->expectException(ApiException::class);
 
         try {
             $service->get($reportRequest);
-        } catch (ApiException $ex) {
-            self::assertEquals('Reports:request', $ex->getMethodRef());
-            self::assertEquals('2773184281650080533', $ex->getRequestId());
-            self::assertEquals('Token not entered', $ex->getMessage());
-            self::assertSame(53, $ex->getCode());
+        } catch (ApiException $e) {
+            self::assertEquals('2773184281650080533', $e->getRequestId());
+            self::assertEquals('Authorization error: Token not entered', $e->getMessage());
+            self::assertEquals('Token not entered', $e->getDetailMessage());
+            self::assertSame(53, $e->getCode());
 
-            throw $ex;
+            throw $e;
         }
     }
 
-    public function testThrowNetworkException()
+    public function testThrowNetworkException(): void
     {
         $this->expectException(NetworkException::class);
         $this->expectExceptionCode(500);
@@ -309,15 +314,12 @@ XML;
         $service = $this->createService([
             'access_token' => 'foo',
             'login' => 'bar',
-            'invoker' => function (callable $callback) {
-                return $callback();
-            }
         ]);
 
         $service->get($reportRequest);
     }
 
-    public function testReportFileShouldBeEmptyWhenDownloadFailed()
+    public function testReportFileShouldBeEmptyWhenDownloadFailed(): void
     {
         $reportRequest = (new ReportRequest())
             ->setDefinition('<ReportDefinition />');
@@ -347,7 +349,7 @@ XML;
         self::assertEmpty(file_get_contents($this->reportFile));
     }
 
-    public function testLastRequest()
+    public function testLastRequest(): void
     {
         $reportRequest = (new ReportRequest())
             ->setDefinition('<ReportDefinition />')
@@ -378,7 +380,7 @@ REQ;
         self::assertEquals(str_replace("\n", "\r\n", $request), $service->getLastRequest());
     }
 
-    public function testLastResponse()
+    public function testLastResponse(): void
     {
         $reportRequest = (new ReportRequest())
             ->setDefinition('<ReportDefinition />');
@@ -395,7 +397,7 @@ REQ;
         self::assertEquals("HTTP/1.1 201 Created\r\n\r\n", $service->getLastResponse());
     }
 
-    public function testRequestId()
+    public function testRequestId(): void
     {
         $reportRequest = (new ReportRequest())
             ->setDefinition('<ReportDefinition />');
@@ -424,12 +426,12 @@ RESP;
         self::assertEquals(str_replace("\n", "\r\n", $response), $service->getLastResponse());
     }
 
-    private function createUser(array $options)
+    private function createUser(array $options): User
     {
         return new User($options, $this->dispatcher);
     }
 
-    private function createService($user)
+    private function createService($user): Reports
     {
         $httpClient = new Client([
             'handler' => HandlerStack::create($this->mockHandler),

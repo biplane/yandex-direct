@@ -1,13 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Helper;
 
-use Biplane\YandexDirect\Api\SoapClient;
+use Biplane\YandexDirect\Api\ApiSoapClient;
 
 /**
- * Dumper.
- *
- * @author Denis Vasilev
+ * @deprecated
  */
 class Dumper
 {
@@ -36,7 +36,7 @@ class Dumper
      *
      * @throws \InvalidArgumentException
      */
-    public function dump($requestId, $request, $response)
+    public function dump(string $requestId, string $request, string $response): void
     {
         if (empty($requestId)) {
             throw new \InvalidArgumentException('The request ID cannot be empty.');
@@ -53,18 +53,24 @@ class Dumper
     /**
      * Dumps data of the last request.
      *
-     * @param SoapClient $client
+     * @param ApiSoapClient $client
      */
-    public function dumpLastRequest(SoapClient $client)
+    public function dumpLastRequest(ApiSoapClient $client): void
     {
-        $requestId = $client->getRequestId();
+        $requestId = $this->getRequestId($client);
 
-        if (!empty($requestId)) {
-            $this->dump($requestId, $client->getLastRequest(), $client->getLastResponse());
+        if ($requestId === null) {
+            return;
         }
+
+        $this->dump(
+            $requestId,
+            $client->__getLastRequestHeaders() . "\r\n\r\n" . $client->__getLastRequest(),
+            $client->__getLastResponseHeaders() . "\r\n\r\n" . $client->__getLastResponse()
+        );
     }
 
-    private function ensureDirectoryExists($dir)
+    private function ensureDirectoryExists(string $dir): void
     {
         if (!is_dir($dir)) {
             $this->ensureDirectoryExists(dirname($dir));
@@ -81,9 +87,20 @@ class Dumper
         }
     }
 
-    private function saveFile($filename, $content)
+    private function saveFile(string $filename, string $content): void
     {
         file_put_contents($filename, $content);
         chmod($filename, 0664);
+    }
+
+    private function getRequestId(ApiSoapClient $soapClient): ?string
+    {
+        $headers = $soapClient->__getLastResponseHeaders();
+
+        if ($headers !== '' && preg_match('/^RequestId: ([a-z\d]+)(\r|)$/im', $headers, $m)) {
+            return $m[1];
+        }
+
+        return null;
     }
 }

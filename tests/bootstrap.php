@@ -12,7 +12,7 @@ VCR::configure()
     ->setCassettePath(__DIR__ . '/fixtures/vcr')
     ->setMode(VCR::MODE_ONCE)
     ->setWhiteList([
-        'src/Api/SoapClient.php',
+        'src/Api/ApiSoapClient.php',
     ])
     ->addRequestMatcher('headers', function (Request $first, Request $second) {
         $filterHeaders = function (array $headers) {
