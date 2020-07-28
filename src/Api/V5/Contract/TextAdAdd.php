@@ -32,6 +32,12 @@ class TextAdAdd extends TextAdAddBase
 //    Can be omit.
 //    protected $TurboPageId = null;
 
+//    Can be omit.
+//    protected $BusinessId = null;
+
+//    Can be omit.
+//    protected $PreferVCardOverBusiness = null;
+
     /**
      * Creates a new instance of TextAdAdd.
      *
@@ -247,6 +253,54 @@ class TextAdAdd extends TextAdAddBase
     public function setTurboPageId($value = null)
     {
         $this->TurboPageId = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets BusinessId.
+     *
+     * @return int|null
+     */
+    public function getBusinessId()
+    {
+        return isset($this->BusinessId) ? $this->BusinessId : null;
+    }
+
+    /**
+     * Sets BusinessId.
+     *
+     * @param int|null $value
+     * @return $this
+     */
+    public function setBusinessId($value = null)
+    {
+        $this->BusinessId = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets PreferVCardOverBusiness.
+     *
+     * @return string|null
+     * @see YesNoEnum
+     */
+    public function getPreferVCardOverBusiness()
+    {
+        return isset($this->PreferVCardOverBusiness) ? $this->PreferVCardOverBusiness : null;
+    }
+
+    /**
+     * Sets PreferVCardOverBusiness.
+     *
+     * @param string|null $value
+     * @return $this
+     * @see YesNoEnum
+     */
+    public function setPreferVCardOverBusiness($value = null)
+    {
+        $this->PreferVCardOverBusiness = $value;
 
         return $this;
     }

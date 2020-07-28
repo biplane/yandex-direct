@@ -44,6 +44,10 @@ class TextAdFieldEnum
 
     const TURBO_PAGE_MODERATION = 'TurboPageModeration';
 
+    const BUSINESS_ID = 'BusinessId';
+
+    const PREFER_V_CARD_OVER_BUSINESS = 'PreferVCardOverBusiness';
+
 
 }
 

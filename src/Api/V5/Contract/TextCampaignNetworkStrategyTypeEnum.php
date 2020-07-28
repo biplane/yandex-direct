@@ -12,6 +12,8 @@ class TextCampaignNetworkStrategyTypeEnum
 
     const AVERAGE_CPA = 'AVERAGE_CPA';
 
+    const PAY_FOR_CONVERSION = 'PAY_FOR_CONVERSION';
+
     const WB_MAXIMUM_CONVERSION_RATE = 'WB_MAXIMUM_CONVERSION_RATE';
 
     const MAXIMUM_COVERAGE = 'MAXIMUM_COVERAGE';

@@ -21,6 +21,9 @@ class TextCampaignStrategyBase
 //    protected $AverageCpa = null;
 
 //    Can be omit.
+//    protected $PayForConversion = null;
+
+//    Can be omit.
 //    protected $WeeklyClickPackage = null;
 
 //    Can be omit.
@@ -124,6 +127,29 @@ class TextCampaignStrategyBase
     public function setAverageCpa(StrategyAverageCpa $value = null)
     {
         $this->AverageCpa = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets PayForConversion.
+     *
+     * @return StrategyPayForConversion|null
+     */
+    public function getPayForConversion()
+    {
+        return isset($this->PayForConversion) ? $this->PayForConversion : null;
+    }
+
+    /**
+     * Sets PayForConversion.
+     *
+     * @param StrategyPayForConversion|null $value
+     * @return $this
+     */
+    public function setPayForConversion(StrategyPayForConversion $value = null)
+    {
+        $this->PayForConversion = $value;
 
         return $this;
     }

@@ -8,7 +8,8 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class StrategyAverageCpcPerFilterAdd
 {
 
-    protected $FilterAverageCpc = null;
+//    Can be omit.
+//    protected $FilterAverageCpc = null;
 
 //    Can be omit.
 //    protected $WeeklySpendLimit = null;
@@ -29,20 +30,20 @@ class StrategyAverageCpcPerFilterAdd
     /**
      * Gets FilterAverageCpc.
      *
-     * @return int
+     * @return int|null
      */
     public function getFilterAverageCpc()
     {
-        return $this->FilterAverageCpc;
+        return isset($this->FilterAverageCpc) ? $this->FilterAverageCpc : null;
     }
 
     /**
      * Sets FilterAverageCpc.
      *
-     * @param int $value
+     * @param int|null $value
      * @return $this
      */
-    public function setFilterAverageCpc($value)
+    public function setFilterAverageCpc($value = null)
     {
         $this->FilterAverageCpc = $value;
 

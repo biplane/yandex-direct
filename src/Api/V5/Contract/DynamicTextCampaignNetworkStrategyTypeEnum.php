@@ -20,6 +20,8 @@ class DynamicTextCampaignNetworkStrategyTypeEnum
 
     const AVERAGE_CPA = 'AVERAGE_CPA';
 
+    const PAY_FOR_CONVERSION = 'PAY_FOR_CONVERSION';
+
     const AVERAGE_ROI = 'AVERAGE_ROI';
 
     const WEEKLY_CLICK_PACKAGE = 'WEEKLY_CLICK_PACKAGE';
