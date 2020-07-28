@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 4.17.0 [commit logs](https://github.com/biplane/yandex-direct/compare/4.16.0...4.17.0)
+
 ### Changed
 
 * Обновлены контракты данных для совместимости с последней версией API.
