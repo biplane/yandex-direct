@@ -48,6 +48,7 @@ class User
     private $options;
     private $dispatcher;
     private $proxies;
+    private $financeNumberGenerator = 'time';
 
     /**
      * Constructor.
@@ -426,6 +427,35 @@ class User
         }
 
         return hash('sha256', $this->options['master_token'] . $operationNum . $methodName . $this->options['login']);
+    }
+
+    /**
+     * Sets callable as generator for `operation_num` field of finance operations
+     *
+     * @param $financeNumberGenerator
+     */
+    public function setFinanceOperationNumberGenerator($financeNumberGenerator)
+    {
+        if (!is_callable($financeNumberGenerator)) {
+            throw new \LogicException('Finance operation number generator should be callable.');
+        }
+
+        $this->financeNumberGenerator = $financeNumberGenerator;
+    }
+
+    /**
+     * Returns operation number for finance requests
+     *
+     * @return int
+     */
+    public function createFinanceOperationNumber()
+    {
+        $operationNumber = call_user_func($this->financeNumberGenerator);
+        if (!is_int($operationNumber)) {
+            throw new \LogicException('Finance operation number generator should returns integer.');
+        }
+
+        return $operationNumber;
     }
 
     /**

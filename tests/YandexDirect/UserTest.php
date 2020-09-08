@@ -194,4 +194,23 @@ class UserTest extends TestCase
 
         self::assertTrue($user->useOperatorUnits());
     }
+
+    public function testCreateFinanceOperationNumber()
+    {
+        $user = new User([
+            'access_token' => 'foo',
+        ]);
+
+        $numberOfDefaultGenerator = time();
+        $numberDiff = $user->createFinanceOperationNumber() - $numberOfDefaultGenerator;
+        // Time diff can be 0 - 1 second
+        self::assertContains($numberDiff, [0, 1]);
+
+        $newGenerator = function () {
+            return 100;
+        };
+        $user->setFinanceOperationNumberGenerator($newGenerator);
+        self::assertSame(100, $user->createFinanceOperationNumber());
+
+    }
 }

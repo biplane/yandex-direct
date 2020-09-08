@@ -72,7 +72,7 @@ class SoapClientV4 extends SoapClient
                 $usedMethod .= $arguments[0]->getAction();
             }
 
-            $operationNum = time();
+            $operationNum = $this->user->createFinanceOperationNumber();
             $financeToken = $this->user->createFinanceToken($usedMethod, $operationNum);
 
             if (!is_array($inputHeaders)) {
