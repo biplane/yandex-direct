@@ -8,10 +8,7 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class StrategyAverageCpaPerCampaignAdd
 {
 
-//    Can be omit.
-//    protected $AverageCpa = null;
-
-    protected $AverageCpc = null;
+    protected $AverageCpa = null;
 
     protected $GoalId = null;
 
@@ -34,45 +31,22 @@ class StrategyAverageCpaPerCampaignAdd
     /**
      * Gets AverageCpa.
      *
-     * @return int|null
+     * @return int
      */
     public function getAverageCpa()
     {
-        return isset($this->AverageCpa) ? $this->AverageCpa : null;
+        return $this->AverageCpa;
     }
 
     /**
      * Sets AverageCpa.
      *
-     * @param int|null $value
-     * @return $this
-     */
-    public function setAverageCpa($value = null)
-    {
-        $this->AverageCpa = $value;
-
-        return $this;
-    }
-
-    /**
-     * Gets AverageCpc.
-     *
-     * @return int
-     */
-    public function getAverageCpc()
-    {
-        return $this->AverageCpc;
-    }
-
-    /**
-     * Sets AverageCpc.
-     *
      * @param int $value
      * @return $this
      */
-    public function setAverageCpc($value)
+    public function setAverageCpa($value)
     {
-        $this->AverageCpc = $value;
+        $this->AverageCpa = $value;
 
         return $this;
     }

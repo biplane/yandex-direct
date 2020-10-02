@@ -8,10 +8,7 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class StrategyAverageCpaPerFilterAdd
 {
 
-//    Can be omit.
-//    protected $FilterAverageCpa = null;
-
-    protected $FilterAverageCpc = null;
+    protected $FilterAverageCpa = null;
 
     protected $GoalId = null;
 
@@ -34,45 +31,22 @@ class StrategyAverageCpaPerFilterAdd
     /**
      * Gets FilterAverageCpa.
      *
-     * @return int|null
+     * @return int
      */
     public function getFilterAverageCpa()
     {
-        return isset($this->FilterAverageCpa) ? $this->FilterAverageCpa : null;
+        return $this->FilterAverageCpa;
     }
 
     /**
      * Sets FilterAverageCpa.
      *
-     * @param int|null $value
-     * @return $this
-     */
-    public function setFilterAverageCpa($value = null)
-    {
-        $this->FilterAverageCpa = $value;
-
-        return $this;
-    }
-
-    /**
-     * Gets FilterAverageCpc.
-     *
-     * @return int
-     */
-    public function getFilterAverageCpc()
-    {
-        return $this->FilterAverageCpc;
-    }
-
-    /**
-     * Sets FilterAverageCpc.
-     *
      * @param int $value
      * @return $this
      */
-    public function setFilterAverageCpc($value)
+    public function setFilterAverageCpa($value)
     {
-        $this->FilterAverageCpc = $value;
+        $this->FilterAverageCpa = $value;
 
         return $this;
     }

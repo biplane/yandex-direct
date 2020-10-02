@@ -12,9 +12,6 @@ class StrategyAverageCpaPerCampaign
 //    protected $AverageCpa = null;
 
 //    Can be omit.
-//    protected $AverageCpc = null;
-
-//    Can be omit.
 //    protected $GoalId = null;
 
 //    Can be omit.
@@ -52,29 +49,6 @@ class StrategyAverageCpaPerCampaign
     public function setAverageCpa($value = null)
     {
         $this->AverageCpa = $value;
-
-        return $this;
-    }
-
-    /**
-     * Gets AverageCpc.
-     *
-     * @return int|null
-     */
-    public function getAverageCpc()
-    {
-        return isset($this->AverageCpc) ? $this->AverageCpc : null;
-    }
-
-    /**
-     * Sets AverageCpc.
-     *
-     * @param int|null $value
-     * @return $this
-     */
-    public function setAverageCpc($value = null)
-    {
-        $this->AverageCpc = $value;
 
         return $this;
     }
