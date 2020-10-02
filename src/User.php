@@ -432,7 +432,7 @@ class User
     /**
      * Sets callable as generator for `operation_num` field of finance operations
      *
-     * @param $financeNumberGenerator
+     * @param callable $financeNumberGenerator
      */
     public function setFinanceOperationNumberGenerator($financeNumberGenerator)
     {

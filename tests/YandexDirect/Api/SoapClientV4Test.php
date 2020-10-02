@@ -53,12 +53,8 @@ class SoapClientV4Test extends BaseTestCase
         $methodName,
         array $params = []
     ) {
-        $php = \PHPUnit_Extension_FunctionMocker::start($this, 'Biplane\YandexDirect\Api')
-            ->mockFunction('time')
-            ->getMock();
-
-        $php->expects(self::any())
-            ->method('time')
+        $this->user->expects(self::once())
+            ->method('createFinanceOperationNumber')
             ->willReturn(10009);
 
         $this->user->expects(self::once())
