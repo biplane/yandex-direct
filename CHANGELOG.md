@@ -2,6 +2,23 @@
 
 ## Unreleased
 
+## 4.18.0 [commit logs](https://github.com/biplane/yandex-direct/compare/4.17.0...4.18.0)
+
+### Added
+
+* Добавлен метод `User::setFinanceOperationNumberGenerator`, который позволяет переопределить
+  логику получения номера операции для финансового токена. (PR #25)
+  Метод в качестве параметра принимает callback-функцию со следующей сигнатурой:
+
+  ```
+  callable(): int
+  ```
+
+
+### Changed
+
+* Обновлены контракты данных для совместимости с последней версией API (2020-08-26).
+
 ## 4.17.0 [commit logs](https://github.com/biplane/yandex-direct/compare/4.16.0...4.17.0)
 
 ### Changed
