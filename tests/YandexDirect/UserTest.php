@@ -211,6 +211,5 @@ class UserTest extends TestCase
         };
         $user->setFinanceOperationNumberGenerator($newGenerator);
         self::assertSame(100, $user->createFinanceOperationNumber());
-
     }
 }

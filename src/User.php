@@ -430,7 +430,7 @@ class User
     }
 
     /**
-     * Sets callable as generator for `operation_num` field of finance operations
+     * Sets callable as generator for `operation_num` field of finance operations.
      *
      * @param callable $financeNumberGenerator
      */
@@ -444,7 +444,7 @@ class User
     }
 
     /**
-     * Returns operation number for finance requests
+     * Returns operation number for finance requests.
      *
      * @return int
      */
