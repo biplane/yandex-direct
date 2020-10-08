@@ -3,7 +3,7 @@
 namespace Biplane\YandexDirect\Event;
 
 use Biplane\YandexDirect\User;
-use Symfony\Component\EventDispatcher\Event;
+use Symfony\Contracts\EventDispatcher\Event;
 
 /**
  * PreCallEvent.

@@ -104,8 +104,8 @@ abstract class SoapClient extends \SoapClient implements ClientInterface
 
         return $invoker(function () use ($methodRef, $method, $params) {
             $this->dispatcher->dispatch(
-                Events::BEFORE_REQUEST,
-                new PreCallEvent($methodRef, $params, $this->user)
+                new PreCallEvent($methodRef, $params, $this->user),
+                Events::BEFORE_REQUEST
             );
 
             try {
@@ -120,16 +120,16 @@ abstract class SoapClient extends \SoapClient implements ClientInterface
                 }
 
                 $this->dispatcher->dispatch(
-                    Events::FAIL_REQUEST,
-                    new FailCallEvent($methodRef, $params, $this->user, $this, $ex, $this->fetchUtits())
+                    new FailCallEvent($methodRef, $params, $this->user, $this, $ex, $this->fetchUtits()),
+                    Events::FAIL_REQUEST
                 );
 
                 throw $ex;
             }
 
             $this->dispatcher->dispatch(
-                Events::AFTER_REQUEST,
-                new PostCallEvent($methodRef, $params, $this->user, $this, $response, $this->fetchUtits())
+                new PostCallEvent($methodRef, $params, $this->user, $this, $response, $this->fetchUtits()),
+                Events::AFTER_REQUEST
             );
 
             return $response;

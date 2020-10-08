@@ -235,7 +235,7 @@ class Reports implements ApiClientInterface
             $this->lastRequest = $request;
 
             $event = new PreCallEvent('Reports:request', [$reportRequest], $this->user);
-            $this->dispatcher->dispatch(Events::BEFORE_REQUEST, $event);
+            $this->dispatcher->dispatch($event, Events::BEFORE_REQUEST);
 
             $response = $this->httpClient->send($request, $options + [
                 RequestOptions::HTTP_ERRORS => false,
@@ -250,7 +250,7 @@ class Reports implements ApiClientInterface
                     $this,
                     $response->getBody()
                 );
-                $this->dispatcher->dispatch(Events::AFTER_REQUEST, $event);
+                $this->dispatcher->dispatch($event, Events::AFTER_REQUEST);
 
                 return $response;
             }
@@ -258,7 +258,7 @@ class Reports implements ApiClientInterface
             $exception = $this->createException($response);
 
             $event = new FailCallEvent('Reports:request', [$reportRequest], $this->user, $this, $exception);
-            $this->dispatcher->dispatch(Events::FAIL_REQUEST, $event);
+            $this->dispatcher->dispatch($event, Events::FAIL_REQUEST);
 
             throw $exception;
         });
