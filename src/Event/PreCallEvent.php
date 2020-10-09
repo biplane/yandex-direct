@@ -3,14 +3,13 @@
 namespace Biplane\YandexDirect\Event;
 
 use Biplane\YandexDirect\User;
-use Symfony\Component\EventDispatcher\Event;
 
 /**
  * PreCallEvent.
  *
  * @author Ural Davletshin
  */
-class PreCallEvent extends Event
+class PreCallEvent extends BaseEvent
 {
     private $methodRef;
     private $params;

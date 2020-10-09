@@ -6,6 +6,7 @@ use Biplane\YandexDirect\ClientInterface;
 use Biplane\YandexDirect\Event\FailCallEvent;
 use Biplane\YandexDirect\Event\PostCallEvent;
 use Biplane\YandexDirect\Event\PreCallEvent;
+use Biplane\YandexDirect\EventDispatcher\SymfonyEventDispatcherAdapter;
 use Biplane\YandexDirect\Events;
 use Biplane\YandexDirect\Exception\NetworkException;
 use Biplane\YandexDirect\User;
@@ -60,7 +61,7 @@ abstract class SoapClient extends \SoapClient implements ClientInterface
 
         parent::__construct($wsdl, array_merge($defaults, $user->getSoapOptions(), $options));
 
-        $this->dispatcher = $dispatcher;
+        $this->dispatcher = new SymfonyEventDispatcherAdapter($dispatcher);
         $this->user = $user;
     }
 

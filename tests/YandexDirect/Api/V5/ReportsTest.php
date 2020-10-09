@@ -17,6 +17,7 @@ use GuzzleHttp\Psr7\Response;
 use GuzzleHttp\RequestOptions;
 use Psr\Http\Message\RequestInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
+use Symfony\Contracts\EventDispatcher\EventDispatcherInterface as ContractEventDispatcher;
 
 /**
  * @author Denis Vasilev
@@ -48,19 +49,22 @@ class ReportsTest extends \PHPUnit_Framework_TestCase
         ]);
         $service = $this->createService($user);
 
-        $this->dispatcher->expects($this->at(0))
-            ->method('dispatch')
-            ->with(Events::BEFORE_REQUEST, new PreCallEvent('Reports:request', [$reportRequest], $user));
-
-        $this->dispatcher->expects($this->at(1))
-            ->method('dispatch')
-            ->with(Events::AFTER_REQUEST, new PostCallEvent(
-                'Reports:request',
-                [$reportRequest],
-                $user,
-                $service,
-                $response->getBody()
-            ));
+        $this->configureDispatcher([
+            [
+                Events::BEFORE_REQUEST,
+                new PreCallEvent('Reports:request', [$reportRequest], $user),
+            ],
+            [
+                Events::AFTER_REQUEST,
+                new PostCallEvent(
+                    'Reports:request',
+                    [$reportRequest],
+                    $user,
+                    $service,
+                    $response->getBody()
+                ),
+            ],
+        ]);
 
         $result = $service->get($reportRequest);
 
@@ -86,6 +90,8 @@ class ReportsTest extends \PHPUnit_Framework_TestCase
             'login' => 'bar',
         ]);
 
+        $this->configureDispatcher();
+
         $result = $service->get($reportRequest);
 
         $this->assertFalse($result->isReady());
@@ -110,6 +116,8 @@ class ReportsTest extends \PHPUnit_Framework_TestCase
             'login' => 'bar',
         ]);
 
+        $this->configureDispatcher();
+
         $result = $service->get($reportRequest);
 
         $this->assertTrue($result->isReady());
@@ -132,6 +140,8 @@ class ReportsTest extends \PHPUnit_Framework_TestCase
             'access_token' => 'foo',
             'login' => 'bar',
         ]);
+
+        $this->configureDispatcher();
 
         $result = $service->get($reportRequest);
 
@@ -161,6 +171,8 @@ class ReportsTest extends \PHPUnit_Framework_TestCase
             'login' => 'bar',
             'sandbox' => true,
         ]);
+
+        $this->configureDispatcher();
 
         $result = $service->get($reportRequest);
 
@@ -192,6 +204,8 @@ class ReportsTest extends \PHPUnit_Framework_TestCase
             'login' => 'bar',
         ]);
 
+        $this->configureDispatcher();
+
         $result = $service->getReady($reportRequest);
 
         $this->assertTrue($result->isReady());
@@ -213,6 +227,8 @@ class ReportsTest extends \PHPUnit_Framework_TestCase
             'access_token' => 'foo',
             'login' => 'bar'
         ]);
+
+        $this->configureDispatcher();
 
         $service->download($this->reportFile, $reportRequest);
 
@@ -250,19 +266,22 @@ XML;
         ]);
         $service = $this->createService($user);
 
-        $this->dispatcher->expects($this->at(0))
-            ->method('dispatch')
-            ->with(Events::BEFORE_REQUEST, new PreCallEvent('Reports:request', [$reportRequest], $user));
-
-        $this->dispatcher->expects($this->at(1))
-            ->method('dispatch')
-            ->with(Events::FAIL_REQUEST, new FailCallEvent(
-                'Reports:request',
-                [$reportRequest],
-                $user,
-                $service,
-                new ApiException('Reports:request', 'Token not entered', 53, null, '2773184281650080533')
-            ));
+        $this->configureDispatcher([
+            [
+                Events::BEFORE_REQUEST,
+                new PreCallEvent('Reports:request', [$reportRequest], $user),
+            ],
+            [
+                Events::FAIL_REQUEST,
+                new FailCallEvent(
+                    'Reports:request',
+                    [$reportRequest],
+                    $user,
+                    $service,
+                    new ApiException('Reports:request', 'Token not entered', 53, null, '2773184281650080533')
+                )
+            ],
+        ]);
 
         try {
             $service->get($reportRequest);
@@ -295,6 +314,8 @@ XML;
             }
         ]);
 
+        $this->configureDispatcher();
+
         $service->get($reportRequest);
     }
 
@@ -320,6 +341,8 @@ XML;
             'login' => 'bar'
         ]);
 
+        $this->configureDispatcher();
+
         try {
             $service->download($this->reportFile, $reportRequest);
         } catch (\Exception $ex) {
@@ -341,6 +364,8 @@ XML;
             'access_token' => 'foo',
             'login' => 'bar'
         ]);
+
+        $this->configureDispatcher();
 
         $service->get($reportRequest);
 
@@ -371,6 +396,8 @@ REQ;
             'login' => 'bar'
         ]);
 
+        $this->configureDispatcher();
+
         $service->get($reportRequest);
 
         $this->assertEquals("HTTP/1.1 201 Created\r\n\r\n", $service->getLastResponse());
@@ -390,6 +417,8 @@ REQ;
             'access_token' => 'foo',
             'login' => 'bar'
         ]);
+
+        $this->configureDispatcher();
 
         $service->get($reportRequest);
 
@@ -457,6 +486,25 @@ RESP;
             } else {
                 $this->assertContains($expected, $request->getHeader($name), sprintf('Header "%s"', $name));
             }
+        }
+    }
+
+    private function configureDispatcher(array $eventsArgs = [])
+    {
+        $eventArgumentIndex = 1;
+
+        if (interface_exists(ContractEventDispatcher::class)) {
+            $eventsArgs = array_map('array_reverse', $eventsArgs);
+            $eventArgumentIndex = 0;
+        }
+
+        if (count($eventsArgs) > 0) {
+            $this->dispatcher->expects(self::exactly(count($eventsArgs)))
+                ->method('dispatch')
+                ->withConsecutive(...$eventsArgs)
+                ->willReturnArgument($eventArgumentIndex);
+        } else {
+            $this->dispatcher->method('dispatch')->willReturnArgument($eventArgumentIndex);
         }
     }
 }

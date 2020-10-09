@@ -6,6 +6,7 @@ use Biplane\YandexDirect\Api\SoapClient;
 use Biplane\YandexDirect\User;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
+use Symfony\Contracts\EventDispatcher\EventDispatcherInterface as ContractEventDispatcher;
 
 abstract class BaseTestCase extends TestCase
 {
@@ -49,6 +50,8 @@ abstract class BaseTestCase extends TestCase
             'location' => 'localhost',
         ];
 
+        $this->configureDispatcher();
+
         return $this->getMockBuilder($soapClientClass)
             ->setConstructorArgs([null, $this->dispatcher, $this->user, $options])
             ->setMethods($methods)
@@ -61,5 +64,24 @@ abstract class BaseTestCase extends TestCase
         $reflection->setAccessible(true);
 
         return $reflection->invoke($client, $method, $params);
+    }
+
+    protected function configureDispatcher(array $eventsArgs = [])
+    {
+        $eventArgumentIndex = 1;
+
+        if (interface_exists(ContractEventDispatcher::class)) {
+            $eventsArgs = array_map('array_reverse', $eventsArgs);
+            $eventArgumentIndex = 0;
+        }
+
+        if (count($eventsArgs) > 0) {
+            $this->dispatcher->expects(self::exactly(count($eventsArgs)))
+                ->method('dispatch')
+                ->withConsecutive(...$eventsArgs)
+                ->willReturnArgument($eventArgumentIndex);
+        } else {
+            $this->dispatcher->method('dispatch')->willReturnArgument($eventArgumentIndex);
+        }
     }
 }

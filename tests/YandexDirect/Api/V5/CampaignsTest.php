@@ -9,6 +9,7 @@ use Biplane\YandexDirect\Api\V5\Contract\GetCampaignsRequest;
 use Biplane\YandexDirect\Api\V5\Contract\TextCampaignFieldEnum;
 use Biplane\YandexDirect\User;
 use PHPUnit\Framework\TestCase;
+use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use VCR\VCR;
 
@@ -28,7 +29,7 @@ class CampaignsTest extends TestCase
     {
         VCR::insertCassette('CampaignsGet_primitiveTypes');
 
-        $service = new Campaigns($this->createMock(EventDispatcherInterface::class), $this->createUser());
+        $service = new Campaigns(new EventDispatcher(), $this->createUser());
 
         $request = GetCampaignsRequest::create()
             ->setSelectionCriteria(
