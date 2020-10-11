@@ -9,6 +9,7 @@ use Biplane\YandexDirect\ClientInterface as ApiClientInterface;
 use Biplane\YandexDirect\Event\FailCallEvent;
 use Biplane\YandexDirect\Event\PostCallEvent;
 use Biplane\YandexDirect\Event\PreCallEvent;
+use Biplane\YandexDirect\EventDispatcher\SymfonyEventDispatcherAdapter;
 use Biplane\YandexDirect\Events;
 use Biplane\YandexDirect\Exception\ApiException;
 use Biplane\YandexDirect\Exception\NetworkException;
@@ -70,7 +71,7 @@ class Reports implements ApiClientInterface
 
         $this->user = $user;
         $this->httpClient = $httpClient;
-        $this->dispatcher = $user->getEventDispatcher();
+        $this->dispatcher = new SymfonyEventDispatcherAdapter($user->getEventDispatcher());
     }
 
     /**
