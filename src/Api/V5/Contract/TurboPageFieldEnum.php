@@ -16,6 +16,10 @@ class TurboPageFieldEnum
 
     const PREVIEW_HREF = 'PreviewHref';
 
+    const TURBO_SITE_HREF = 'TurboSiteHref';
+
+    const BOUND_WITH_HREF = 'BoundWithHref';
+
 
 }
 

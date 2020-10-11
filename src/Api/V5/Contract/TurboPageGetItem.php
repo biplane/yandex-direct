@@ -20,6 +20,12 @@ class TurboPageGetItem
 //    Can be omit.
 //    protected $PreviewHref = null;
 
+//    Can be omit.
+//    protected $TurboSiteHref = null;
+
+//    Can be omit.
+//    protected $BoundWithHref = null;
+
     /**
      * Creates a new instance of TurboPageGetItem.
      *
@@ -118,6 +124,52 @@ class TurboPageGetItem
     public function setPreviewHref($value = null)
     {
         $this->PreviewHref = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets TurboSiteHref.
+     *
+     * @return string|null
+     */
+    public function getTurboSiteHref()
+    {
+        return isset($this->TurboSiteHref) ? $this->TurboSiteHref : null;
+    }
+
+    /**
+     * Sets TurboSiteHref.
+     *
+     * @param string|null $value
+     * @return $this
+     */
+    public function setTurboSiteHref($value = null)
+    {
+        $this->TurboSiteHref = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets BoundWithHref.
+     *
+     * @return string|null
+     */
+    public function getBoundWithHref()
+    {
+        return isset($this->BoundWithHref) ? $this->BoundWithHref : null;
+    }
+
+    /**
+     * Sets BoundWithHref.
+     *
+     * @param string|null $value
+     * @return $this
+     */
+    public function setBoundWithHref($value = null)
+    {
+        $this->BoundWithHref = $value;
 
         return $this;
     }
