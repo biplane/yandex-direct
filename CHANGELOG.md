@@ -2,9 +2,12 @@
 
 ## Unreleased
 
+## 4.19.0 [commit logs](https://github.com/biplane/yandex-direct/compare/4.18.0...4.19.0)
+
 ### Changed
 
 * Обновлены контракты данных для совместимости с последней версией API (2020-09-28).
+* Добавлена поддержка Symfony 5.x (PR #29)
 
 ### Deprecated
 
