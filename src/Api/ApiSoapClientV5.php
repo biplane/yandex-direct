@@ -48,6 +48,38 @@ class ApiSoapClientV5 extends ApiSoapClient
     /**
      * {@inheritDoc}
      */
+    public function getRequestId()
+    {
+        $headers = $this->__getLastResponseHeaders();
+
+        if ($headers !== '' && preg_match('/^RequestId: ([a-z\d]+)(\r|)$/im', $headers, $m)) {
+            return $m[1];
+        }
+
+        throw new \LogicException('You can get the identifier of request only after call a method of API.');
+    }
+
+    /**
+     * Gets info about units for the last request.
+     *
+     * @see https://tech.yandex.ru/direct/doc/dg/concepts/headers-docpage/#units
+     *
+     * @return Units
+     */
+    public function getUnits(): Units
+    {
+        $headers = $this->__getLastResponseHeaders();
+
+        if ($headers !== '' && preg_match('@^Units: (\d+)/(\d+)/(\d+)@m', $headers, $m)) {
+            return new Units($m[1], $m[2], $m[3]);
+        }
+
+        return new Units(-1, -1, -1);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     protected function handleSoapFault(SoapFault $fault): ?Throwable
     {
         $detail = property_exists($fault, 'detail') ? $fault->detail : null;

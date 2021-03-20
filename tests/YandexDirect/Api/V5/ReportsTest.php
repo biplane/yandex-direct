@@ -171,31 +171,6 @@ class ReportsTest extends TestCase
         ]);
     }
 
-    public function testConnectToSandbox(): void
-    {
-        $reportRequest = (new ReportRequest())
-            ->setDefinition('<ReportDefinition />')
-            ->setProcessingMode(ReportRequest::PROCESSING_MODE_OFFLINE);
-
-        $this->mockHandler->append(new Response(201));
-
-        $service = $this->createService([
-            'access_token' => 'foo',
-            'login' => 'bar',
-            'sandbox' => true,
-        ]);
-
-        $result = $service->get($reportRequest);
-
-        self::assertFalse($result->isReady());
-        self::assertRequest($this->mockHandler->getLastRequest(), $reportRequest->getDefinition(), [
-            'Authorization' => 'Bearer foo',
-            'Accept-Language' => 'en',
-            'Client-Login' => 'bar',
-            'processingMode' => 'offline',
-        ], 'https://api-sandbox.direct.yandex.com/v5/reports');
-    }
-
     public function testWaitBuildingReport(): void
     {
         $reportRequest = (new ReportRequest())

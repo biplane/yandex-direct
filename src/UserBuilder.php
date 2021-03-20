@@ -5,9 +5,7 @@ namespace Biplane\YandexDirect;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**
- * UserBuilder.
- *
- * @author Denis Vasilev
+ * @deprecated
  */
 class UserBuilder
 {

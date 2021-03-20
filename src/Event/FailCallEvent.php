@@ -22,7 +22,7 @@ class FailCallEvent extends BaseAfterCallEvent
      * @param array           $params    The params for method of API
      * @param User            $user      The configuration
      * @param ClientInterface $client    The client for API service
-     * @param \Exception      $exception The thrown exception
+     * @param \Throwable      $exception The thrown exception
      * @param Units|null      $units     Information of units
      */
     public function __construct(
@@ -30,7 +30,7 @@ class FailCallEvent extends BaseAfterCallEvent
         array $params,
         User $user,
         ClientInterface $client,
-        \Exception $exception,
+        \Throwable $exception,
         Units $units = null
     ) {
         parent::__construct($methodRef, $params, $user, $client, $units);
@@ -41,7 +41,7 @@ class FailCallEvent extends BaseAfterCallEvent
     /**
      * Gets the thrown exception.
      *
-     * @return \Exception
+     * @return \Throwable
      */
     public function getException()
     {

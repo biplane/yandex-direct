@@ -2,6 +2,7 @@
 
 namespace Biplane\YandexDirect;
 
+use Biplane\YandexDirect\Api\ApiSoapClientFactory;
 use Biplane\YandexDirect\Api\V4\YandexAPIService;
 use Biplane\YandexDirect\Api\V5\AdExtensions;
 use Biplane\YandexDirect\Api\V5\AdGroups;
@@ -28,6 +29,7 @@ use Biplane\YandexDirect\Api\V5\Sitelinks;
 use Biplane\YandexDirect\Api\V5\SmartAdTargets;
 use Biplane\YandexDirect\Api\V5\TurboPages;
 use Biplane\YandexDirect\Api\V5\VCards;
+use Biplane\YandexDirect\Event\EventEmitter;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\OptionsResolver\Options;
@@ -42,34 +44,31 @@ class User
     public const LOCALE_EN = 'en';
     public const LOCALE_UA = 'ua';
 
-    private $options;
     private $dispatcher;
     private $proxies;
+    private $serviceFactory;
+    private $config;
 
     /**
-     * Constructor.
-     *
-     * @param array                         $options    The options
+     * @param array<string, mixed>          $options    The options
      * @param EventDispatcherInterface|null $dispatcher The event dispatcher
      *
      * @throws \InvalidArgumentException
      */
     public function __construct(array $options = [], EventDispatcherInterface $dispatcher = null)
     {
-        $resolver = new OptionsResolver();
-        $this->setDefaultOptions($resolver);
+        if (isset($options['login'])) {
+            $options['client_login'] = $options['login'];
+            unset($options['login']);
+        }
 
         if ($dispatcher === null) {
             $dispatcher = new EventDispatcher();
         }
 
-        $this->options = $resolver->resolve($options);
+        $this->config = new Config($options);
         $this->dispatcher = $dispatcher;
         $this->proxies = [];
-
-        if (!empty($this->options['master_token']) && empty($this->options['login'])) {
-            throw new \InvalidArgumentException('The login cannot be empty when the master token is set.');
-        }
     }
 
     /**
@@ -79,7 +78,7 @@ class User
      */
     public function getHashCode()
     {
-        return md5($this->options['access_token']);
+        return md5($this->config->getAccessToken());
     }
 
     /**
@@ -99,7 +98,7 @@ class User
      */
     public function getAccessToken()
     {
-        return $this->options['access_token'];
+        return $this->config->getAccessToken();
     }
 
     /**
@@ -109,7 +108,7 @@ class User
      */
     public function getLogin()
     {
-        return $this->options['login'];
+        return $this->config->getClientLogin();
     }
 
     /**
@@ -119,7 +118,7 @@ class User
      */
     public function getLocale()
     {
-        return $this->options['locale'];
+        return $this->config->getLocale(Config::API_5);
     }
 
     /**
@@ -129,7 +128,7 @@ class User
      */
     public function getMasterToken()
     {
-        return $this->options['master_token'];
+        return $this->config->getMasterToken();
     }
 
     /**
@@ -139,7 +138,7 @@ class User
      */
     public function useOperatorUnits()
     {
-        return $this->options['use_operator_units'];
+        return $this->config->useOperatorUnits();
     }
 
     /**
@@ -414,15 +413,7 @@ class User
      */
     public function createFinanceToken($methodName, $operationNum)
     {
-        if (empty($this->options['master_token'])) {
-            throw new \LogicException('The finance token cannot be created when the master token is empty.');
-        }
-
-        if (empty($this->options['login'])) {
-            throw new \LogicException('The finance token cannot be created when the login is empty.');
-        }
-
-        return hash('sha256', $this->options['master_token'] . $operationNum . $methodName . $this->options['login']);
+        throw new \BadMethodCallException('Not used any more');
     }
 
     /**
@@ -434,11 +425,7 @@ class User
      */
     public function resolveWsdl($uri)
     {
-        if ($this->options['sandbox']) {
-            return str_replace('api.direct.yandex.', 'api-sandbox.direct.yandex.', $uri);
-        }
-
-        return $uri;
+        throw new \BadMethodCallException('Not used any more');
     }
 
     /**
@@ -448,48 +435,15 @@ class User
      */
     public function getSoapOptions()
     {
-        return $this->options['soap_options'];
+        throw new \BadMethodCallException('Not used any more');
     }
 
-    /**
-     * Sets the default options.
-     *
-     * @param OptionsResolver $resolver
-     */
-    protected function setDefaultOptions(OptionsResolver $resolver)
+    public function setServiceFactory(ApiSoapClientFactory $serviceFactory): void
     {
-        // Если логин пользователя содержит точки и символы верхнего регистра (заглавные буквы),
-        // то для получения нормализованного логина их следует заменить, соответственно, дефисами
-        // и символами нижнего регистра.
-        // http://api.yandex.ru/direct/doc/concepts/finance.xml#access
-        $loginNormalizer = function (Options $options, $value) {
-            if (is_string($value)) {
-                return strtolower(str_replace('.', '-', $value));
-            }
-
-            return $value;
-        };
-
-        $resolver
-            ->setRequired(['access_token'])
-            ->setDefaults([
-                'locale' => self::LOCALE_EN,
-                'master_token' => null,
-                'login' => null,
-                'sandbox' => false,
-                'use_operator_units' => false,
-                'soap_options' => [],
-            ])
-            ->setAllowedValues('locale', [self::LOCALE_EN, self::LOCALE_RU, self::LOCALE_UA])
-            ->setAllowedTypes('master_token', ['null', 'string'])
-            ->setAllowedTypes('login', ['null', 'string'])
-            ->setAllowedTypes('access_token', 'string')
-            ->setAllowedTypes('sandbox', 'bool')
-            ->setAllowedTypes('use_operator_units', 'bool')
-            ->setNormalizer('login', $loginNormalizer);
+        $this->serviceFactory = $serviceFactory;
     }
 
-    private function getProxy($serviceClass)
+    private function getProxy(string $serviceClass)
     {
         if (isset($this->proxies[$serviceClass])) {
             return $this->proxies[$serviceClass];
@@ -498,7 +452,15 @@ class User
         if ($serviceClass === Reports::class) {
             $service = new $serviceClass($this);
         } else {
-            $service = new $serviceClass($this->dispatcher, $this);
+            if ($this->serviceFactory === null) {
+                $this->serviceFactory = new ApiSoapClientFactory();
+            }
+
+            $service = $this->serviceFactory->createSoapClient($serviceClass);
+
+            if ($this->dispatcher !== null) {
+                $service->setEventEmitter(new EventEmitter($this->dispatcher, $this));
+            }
         }
 
         return $this->proxies[$serviceClass] = $service;

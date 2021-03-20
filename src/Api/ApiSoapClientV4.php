@@ -15,6 +15,20 @@ class ApiSoapClientV4 extends ApiSoapClient
 {
     private const SCHEMA_NAMESPACE = 'API';
 
+    private $requestId;
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getRequestId()
+    {
+        if ($this->requestId === null) {
+            throw new \LogicException('You can get the identifier of request only after call a method of API.');
+        }
+
+        return $this->requestId;
+    }
+
     /**
      * {@inheritdoc}
      *
@@ -22,6 +36,8 @@ class ApiSoapClientV4 extends ApiSoapClient
      */
     public function __doRequest($request, $location, $action, $version, $oneWay = null)
     {
+        $this->requestId = substr(str_replace(' ', '', microtime()), 2);
+
         return fixNamespace(
             parent::__doRequest($request, $location, $action, $version, $oneWay),
             self::SCHEMA_NAMESPACE
