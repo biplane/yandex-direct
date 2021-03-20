@@ -36,12 +36,13 @@ class CampaignsTest extends TestCase
             'features' => SOAP_SINGLE_ELEMENT_ARRAYS,
             'trace' => true,
             'exceptions' => true,
+            'cache_wsdl' => WSDL_CACHE_NONE,
         ]);
 
         $request = GetCampaignsRequest::create()
             ->setSelectionCriteria(
                 CampaignsSelectionCriteria::create()
-                    ->setIds([31946025])
+                    ->setIds([37605271])
             )
             ->setFieldNames([
                 CampaignFieldEnum::ID,
@@ -57,10 +58,8 @@ class CampaignsTest extends TestCase
         self::assertNotNull($campaigns);
         self::assertCount(1, $campaigns);
         self::assertSame([
-            'вреден',
             'вредно',
             'пуховые',
-            'пуховый',
             'яблоко',
         ], $campaigns[0]->getNegativeKeywords());
         self::assertSame([123], $campaigns[0]->getTextCampaign()->getCounterIds());
