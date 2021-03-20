@@ -456,7 +456,7 @@ class User
                 $this->serviceFactory = new ApiSoapClientFactory();
             }
 
-            $service = $this->serviceFactory->createSoapClient($serviceClass);
+            $service = $this->serviceFactory->createSoapClient($this->config, $serviceClass);
 
             if ($this->dispatcher !== null) {
                 $service->setEventEmitter(new EventEmitter($this->dispatcher, $this));

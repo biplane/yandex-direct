@@ -10,88 +10,6 @@ use Symfony\Component\EventDispatcher\EventDispatcher;
 
 class UserTest extends TestCase
 {
-    protected function setUp(): void
-    {
-        $this->markTestIncomplete();
-    }
-
-    public function getLocales()
-    {
-        return [
-            [User::LOCALE_EN],
-            [User::LOCALE_RU],
-            [User::LOCALE_UA],
-        ];
-    }
-
-    /**
-     * @dataProvider getLocales
-     */
-    public function testLocaleShouldBeSet($locale)
-    {
-        $config = new User([
-            'locale' => $locale,
-            'access_token' => 'foo',
-        ]);
-
-        self::assertSame($locale, $config->getLocale());
-    }
-
-    public function testLoginShouldBeNormalized()
-    {
-        $config = new User([
-            'login' => 'p.g.Ivanov',
-            'access_token' => 'foo',
-        ]);
-
-        self::assertEquals('p-g-ivanov', $config->getLogin());
-    }
-
-    public function testThrowExceptionWhenSetMasterTokenAndLoginIsMissing()
-    {
-        $this->expectException(\InvalidArgumentException::class);
-
-        new User([
-            'access_token' => 'foo',
-            'master_token' => 'bar',
-        ]);
-    }
-
-    public function testMasterTokenShouldBeSet()
-    {
-        $config = new User([
-            'master_token' => 'foo',
-            'login' => 'bar',
-            'access_token' => 'token',
-        ]);
-
-        self::assertSame('foo', $config->getMasterToken());
-        self::assertSame('bar', $config->getLogin());
-    }
-
-    public function testFinanceTokenShouldBeCreated()
-    {
-        $config = new User([
-            'master_token' => 't0ken',
-            'login' => 'log1n',
-            'access_token' => 'foo',
-        ]);
-
-        self::assertEquals(
-            'ca556216659079c5e21ae6647560b3d4ad94b950a2d613974ab934e0a9f54d7d',
-            $config->createFinanceToken('foo', 1)
-        );
-    }
-
-    public function testHashCodeShouldBeGenerated()
-    {
-        $user = new User([
-            'access_token' => 'foo',
-        ]);
-
-        self::assertEquals('acbd18db4cc2f85cedef654fccc4a4d8', $user->getHashCode());
-    }
-
     public function testEventDispatcherShouldBeCreatedWhenNotGiven()
     {
         $user = new User([
@@ -162,40 +80,5 @@ class UserTest extends TestCase
         $proxy = $user->getAdsService();
 
         self::assertSame($proxy, $user->getAdsService());
-    }
-
-    public function testResolveWSDLWhenSandboxIsDisabled()
-    {
-        $user = new User([
-            'access_token' => 'foo',
-        ]);
-
-        self::assertEquals(
-            'https://api.direct.yandex.ru/live/v4/wsdl/',
-            $user->resolveWsdl('https://api.direct.yandex.ru/live/v4/wsdl/')
-        );
-    }
-
-    public function testResolveWSDLWhenSandboxIsEnabled()
-    {
-        $user = new User([
-            'access_token' => 'foo',
-            'sandbox' => true,
-        ]);
-
-        self::assertEquals(
-            'https://api-sandbox.direct.yandex.ru/live/v4/wsdl/',
-            $user->resolveWsdl('https://api.direct.yandex.ru/live/v4/wsdl/')
-        );
-    }
-
-    public function testUseOperatorUnits()
-    {
-        $user = new User([
-            'access_token' => 'foo',
-            'use_operator_units' => true,
-        ]);
-
-        self::assertTrue($user->useOperatorUnits());
     }
 }
