@@ -14,11 +14,6 @@ use VCR\VCR;
 
 class ReportDefinitionBuilderTest extends TestCase
 {
-    public static function setUpBeforeClass(): void
-    {
-        VCR::turnOff();
-    }
-
     public function testBuildWithDefaults(): void
     {
         $builder = new ReportDefinitionBuilder(__DIR__ . '/fixtures/reports.xsd');

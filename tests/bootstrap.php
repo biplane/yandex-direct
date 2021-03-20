@@ -28,4 +28,6 @@ VCR::configure()
 $recorder = VCRFactory::get(Videorecorder::class);
 $recorder->getEventDispatcher()->addSubscriber(new FixHeadersListener());
 
+// Required for monkey patching (registration of hooks)
 $recorder->turnOn();
+$recorder->turnOff();
