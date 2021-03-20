@@ -13,5 +13,3 @@ parameters:
     - build/generate.php
     - src/Api/V4/*
     - src/Api/V5/*
-  ignoreErrors:
-    - "#Call to an undefined static method SoapClient::__construct\\(\\)#"
