@@ -38,9 +38,9 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
  */
 class User
 {
-    const LOCALE_RU = 'ru';
-    const LOCALE_EN = 'en';
-    const LOCALE_UA = 'ua';
+    public const LOCALE_RU = 'ru';
+    public const LOCALE_EN = 'en';
+    public const LOCALE_UA = 'ua';
 
     private $options;
     private $dispatcher;

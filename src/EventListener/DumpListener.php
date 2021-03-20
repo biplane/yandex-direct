@@ -16,8 +16,8 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
  */
 class DumpListener implements EventSubscriberInterface
 {
-    const LEVEL_FAIL_REQUEST = 1;
-    const LEVEL_ALL_REQUEST = 2;
+    public const LEVEL_FAIL_REQUEST = 1;
+    public const LEVEL_ALL_REQUEST = 2;
 
     private $dumper;
     private $level;
