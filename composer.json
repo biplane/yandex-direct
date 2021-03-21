@@ -19,8 +19,8 @@
     "ext-libxml": "*",
     "ext-soap": "*",
     "guzzlehttp/guzzle": "^6.3 || ^7.0",
-    "symfony/event-dispatcher": "~2.7|~3.0|~4.0",
-    "symfony/options-resolver": "~2.7|~3.0|~4.0"
+    "symfony/event-dispatcher": "^4.4 || ^5.0",
+    "symfony/options-resolver": "^4.0 || ^5.0"
   },
   "require-dev": {
     "lstrojny/phpunit-function-mocker": "^1.0",

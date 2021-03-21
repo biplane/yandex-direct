@@ -24,8 +24,8 @@ final class EventEmitter
     public function emitBeforeRequestEvent(ClientInterface $service, string $methodName, array $arguments): void
     {
         $this->dispatcher->dispatch(
-            Events::BEFORE_REQUEST,
-            new PreCallEvent(self::getMethodRef($service, $methodName), $arguments, $this->user)
+            new PreCallEvent(self::getMethodRef($service, $methodName), $arguments, $this->user),
+            Events::BEFORE_REQUEST
         );
     }
 
@@ -40,7 +40,6 @@ final class EventEmitter
         $response
     ): void {
         $this->dispatcher->dispatch(
-            Events::AFTER_REQUEST,
             new PostCallEvent(
                 self::getMethodRef($service, $methodName),
                 $arguments,
@@ -48,7 +47,8 @@ final class EventEmitter
                 $service,
                 $response,
                 self::getUnits($service)
-            )
+            ),
+            Events::AFTER_REQUEST
         );
     }
 
@@ -62,7 +62,6 @@ final class EventEmitter
         \Throwable $exception
     ): void {
         $this->dispatcher->dispatch(
-            Events::FAIL_REQUEST,
             new FailCallEvent(
                 self::getMethodRef($service, $methodName),
                 $arguments,
@@ -70,7 +69,8 @@ final class EventEmitter
                 $service,
                 $exception,
                 self::getUnits($service)
-            )
+            ),
+            Events::FAIL_REQUEST
         );
     }
 
