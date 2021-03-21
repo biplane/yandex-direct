@@ -70,7 +70,7 @@ class LoggerListener implements EventSubscriberInterface
         }
     }
 
-    protected function getLogLevel(\Exception $exception)
+    protected function getLogLevel(\Throwable $exception): string
     {
         if ($exception instanceof NetworkException) {
             return LogLevel::NOTICE;

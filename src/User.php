@@ -104,7 +104,7 @@ class User
     /**
      * Gets the login.
      *
-     * @return string
+     * @return string|null
      */
     public function getLogin()
     {
@@ -124,7 +124,7 @@ class User
     /**
      * Gets the master token for financial operations.
      *
-     * @return string
+     * @return string|null
      */
     public function getMasterToken()
     {
