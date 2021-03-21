@@ -6,6 +6,7 @@ use Biplane\YandexDirect\Api\V5\Report\ReportDefinitionBuilder;
 use Biplane\YandexDirect\Api\V5\Report\ReportRequest;
 use Biplane\YandexDirect\Api\V5\Report\ReportResult;
 use Biplane\YandexDirect\ClientInterface as ApiClientInterface;
+use Biplane\YandexDirect\Event\EventEmitter;
 use Biplane\YandexDirect\Event\FailCallEvent;
 use Biplane\YandexDirect\Event\PostCallEvent;
 use Biplane\YandexDirect\Event\PreCallEvent;
@@ -42,9 +43,9 @@ class Reports implements ApiClientInterface
     private $httpClient;
 
     /**
-     * @var EventDispatcherInterface
+     * @var EventEmitter
      */
-    private $dispatcher;
+    private $emitter;
 
     /**
      * @var RequestInterface
@@ -70,7 +71,7 @@ class Reports implements ApiClientInterface
 
         $this->user = $user;
         $this->httpClient = $httpClient;
-        $this->dispatcher = $user->getEventDispatcher();
+        $this->emitter = new EventEmitter($user->getEventDispatcher(), $user);
     }
 
     /**
@@ -232,8 +233,7 @@ class Reports implements ApiClientInterface
 
         $this->lastRequest = $request;
 
-        $event = new PreCallEvent('Reports:request', [$reportRequest], $this->user);
-        $this->dispatcher->dispatch(Events::BEFORE_REQUEST, $event);
+        $this->emitter->emitBeforeRequestEvent($this, 'request', [$reportRequest]);
 
         $response = $this->httpClient->send($request, $options + [
             RequestOptions::HTTP_ERRORS => false,
@@ -241,22 +241,14 @@ class Reports implements ApiClientInterface
         $this->lastResponse = $response;
 
         if ($response->getStatusCode() >= 200 && $response->getStatusCode() <= 202) {
-            $event = new PostCallEvent(
-                'Reports:request',
-                [$reportRequest],
-                $this->user,
-                $this,
-                $response->getBody()
-            );
-            $this->dispatcher->dispatch(Events::AFTER_REQUEST, $event);
+            $this->emitter->emitAfterRequestEvent($this, 'request', [$reportRequest], $response->getBody());
 
             return $response;
         }
 
         $exception = $this->createException($response);
 
-        $event = new FailCallEvent('Reports:request', [$reportRequest], $this->user, $this, $exception);
-        $this->dispatcher->dispatch(Events::FAIL_REQUEST, $event);
+        $this->emitter->emitFailRequestEvent($this, 'request', [$reportRequest], $exception);
 
         throw $exception;
     }
