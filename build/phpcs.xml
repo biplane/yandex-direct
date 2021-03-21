@@ -8,8 +8,5 @@
     <file>src/</file>
     <file>tests/</file>
 
-    <exclude-pattern>src/Api/V4/*</exclude-pattern>
-    <exclude-pattern>src/Api/V5/*</exclude-pattern>
-
     <rule ref="PSR12" />
 </ruleset>

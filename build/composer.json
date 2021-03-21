@@ -1,0 +1,51 @@
+{
+  "name": "biplane/yandex-direct-build",
+  "type": "project",
+  "description": "Generate code",
+  "license": "MIT",
+  "require": {
+    "php": "^7.3",
+    "ext-libxml": "*",
+    "ext-soap": "*",
+    "monolog/monolog": "^2.2",
+    "psr/log": "^1.1",
+    "wsdl2phpgenerator/wsdl2phpgenerator": "dev-inline-type as 4.0.x-dev",
+    "zendframework/zend-code": "^2.6"
+  },
+  "require-dev": {
+    "phpstan/phpstan": "^0.12.82",
+    "phpstan/phpstan-phpunit": "^0.12.18",
+    "phpunit/phpunit": "^9.5",
+    "squizlabs/php_codesniffer": "^3.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "Biplane\\Build\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Biplane\\Tests\\": "tests/"
+    }
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "scripts": {
+    "check": [
+      "@cs-check",
+      "@analyse",
+      "@test"
+    ],
+    "analyse": "phpstan analyse",
+    "cs-check": "phpcs",
+    "cs-fix": "phpcbf",
+    "test": "phpunit --colors=always"
+  },
+  "repositories": [
+    {
+      "type": "git",
+      "url": "https://github.com/yethee/wsdl2phpgenerator"
+    }
+  ]
+}

@@ -9,5 +9,4 @@ parameters:
     - src
     - tests
   excludes_analyse:
-    - src/Api/V4/*
-    - src/Api/V5/*
+    - bin/generate.php
