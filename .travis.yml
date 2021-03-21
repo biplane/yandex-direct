@@ -41,7 +41,7 @@ jobs:
       install:
         - travis_retry composer install --prefer-dist
       script:
-        - vendor/bin/phpcs
+        - vendor/bin/phpcs -n
 
     - stage: Static Code Analysis
       php: 7.3
