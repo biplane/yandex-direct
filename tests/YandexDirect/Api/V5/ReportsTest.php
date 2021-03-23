@@ -70,21 +70,23 @@ class ReportsTest extends TestCase
         ]);
         $service = $this->createService($user);
 
-        $this->dispatcher->expects($this->at(0))
+        $this->dispatcher->expects(self::exactly(2))
             ->method('dispatch')
-            ->with(new PreCallEvent('Reports:request', [$reportRequest], $user), Events::BEFORE_REQUEST);
-
-        $this->dispatcher->expects($this->at(1))
-            ->method('dispatch')
-            ->with(
-                new PostCallEvent(
-                    'Reports:request',
-                    [$reportRequest],
-                    $user,
-                    $service,
-                    $response->getBody()
-                ),
-                Events::AFTER_REQUEST
+            ->withConsecutive(
+                [
+                    new PreCallEvent('Reports:request', [$reportRequest], $user),
+                    Events::BEFORE_REQUEST
+                ],
+                [
+                    new PostCallEvent(
+                        'Reports:request',
+                        [$reportRequest],
+                        $user,
+                        $service,
+                        $response->getBody()
+                    ),
+                    Events::AFTER_REQUEST
+                ]
             );
 
         $result = $service->get($reportRequest);
@@ -247,24 +249,26 @@ XML;
         ]);
         $service = $this->createService($user);
 
-        $this->dispatcher->expects($this->at(0))
-            ->method('dispatch')
-            ->with(new PreCallEvent('Reports:request', [$reportRequest], $user), Events::BEFORE_REQUEST);
-
         $exception = new ApiException('Authorization error', 53, 'Token not entered');
         $exception->setRequestId('2773184281650080533');
 
-        $this->dispatcher->expects($this->at(1))
+        $this->dispatcher->expects(self::exactly(2))
             ->method('dispatch')
-            ->with(
-                new FailCallEvent(
-                    'Reports:request',
-                    [$reportRequest],
-                    $user,
-                    $service,
-                    $exception
-                ),
-                Events::FAIL_REQUEST
+            ->withConsecutive(
+                [
+                    new PreCallEvent('Reports:request', [$reportRequest], $user),
+                    Events::BEFORE_REQUEST
+                ],
+                [
+                    new FailCallEvent(
+                        'Reports:request',
+                        [$reportRequest],
+                        $user,
+                        $service,
+                        $exception
+                    ),
+                    Events::FAIL_REQUEST
+                ]
             );
 
         $this->expectException(ApiException::class);

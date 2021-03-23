@@ -34,7 +34,7 @@ class ApiSoapClientV4 extends ApiSoapClient
      *
      * @internal
      */
-    public function __doRequest($request, $location, $action, $version, $oneWay = null)
+    public function __doRequest($request, $location, $action, $version, $oneWay = 0)
     {
         $this->requestId = substr(str_replace(' ', '', microtime()), 2);
 

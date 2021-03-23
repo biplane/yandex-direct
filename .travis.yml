@@ -6,46 +6,38 @@ cache:
   directories:
     - $HOME/.composer/cache
 
-php:
-  - '7.1'
-  - '7.2'
-  - '7.3'
+matrix:
+  fast_finish: true
+  include:
+    - php: 7.1
+      env:
+        - DEPENDENCIES=""
+    - php: 7.1
+      env:
+        - DEPENDENCIES="--prefer-lowest --prefer-stable"
+    - php: 7.2
+      env:
+        - DEPENDENCIES=""
+    - php: 7.3
+      env:
+        - DEPENDENCIES=""
+    - php: 7.4
+      env:
+        - DEPENDENCIES=""
+        - CS_CHECK=true
+        - ANALYSE=true
+        - TEST_COVERAGE=true
+    - php: 8.0
+      env:
+        - DEPENDENCIES=""
+        - ANALYSE=true
 
-before_install:
-  - mv ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini{,.disabled} || echo "xdebug not available"
-  - travis_retry composer self-update
-
-install:
-  - travis_retry composer update --prefer-dist
+before_script:
+  - phpenv config-rm xdebug.ini
+  - composer self-update
+  - composer update $DEPENDENCIES
 
 script:
-  - vendor/bin/phpunit
-
-jobs:
-  include:
-    - stage: Test
-      env: DEPENDENCIES=low
-      install:
-        - travis_retry composer update --prefer-dist --prefer-lowest
-
-    - stage: Test
-      env: COVERAGE
-      before_script:
-        - mv ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini{.disabled,}
-        - if [[ ! $(php -m | grep -si xdebug) ]]; then echo "xdebug required for coverage"; exit 1; fi
-      script:
-        - vendor/bin/phpunit --coverage-text
-
-    - stage: Code Quality
-      php: 7.3
-      install:
-        - travis_retry composer install --prefer-dist
-      script:
-        - vendor/bin/phpcs -n
-
-    - stage: Static Code Analysis
-      php: 7.3
-      install:
-        - travis_retry composer install --prefer-dist
-      script:
-        - vendor/bin/phpstan analyse
+  - if [[ $CS_CHECK == 'true' ]]; then ./vendor/bin/phpcs -n; fi
+  - if [[ $ANALYSE == 'true' ]]; then ./vendor/bin/phpstan analyze; fi
+  - if [[ $TEST_COVERAGE == 'true' ]]; then XDEBUG_MODE=coverage php -dzend_extension=xdebug.so ./vendor/bin/phpunit --coverage-text; else ./vendor/bin/phpunit; fi
