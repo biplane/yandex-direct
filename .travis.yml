@@ -30,7 +30,6 @@ matrix:
     - php: 8.0
       env:
         - DEPENDENCIES=""
-        - ANALYSE=true
 
 before_script:
   - phpenv config-rm xdebug.ini
