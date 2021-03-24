@@ -25,7 +25,7 @@
   },
   "require-dev": {
     "lstrojny/phpunit-function-mocker": "^1.0",
-    "php-vcr/php-vcr": "^1.4",
+    "php-vcr/php-vcr": "^1.4.5",
     "phpstan/phpstan": "^0.12.82",
     "phpstan/phpstan-phpunit": "^0.12.18",
     "phpunit/phpunit": "^7.5 || ^9.5",
