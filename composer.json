@@ -15,7 +15,7 @@
   ],
   "license": "MIT",
   "require": {
-    "php": "^7.1",
+    "php": "^7.1 || ^8.0",
     "ext-libxml": "*",
     "ext-soap": "*",
     "guzzlehttp/guzzle": "^6.3 || ^7.0",
@@ -25,10 +25,10 @@
   },
   "require-dev": {
     "lstrojny/phpunit-function-mocker": "^1.0",
-    "php-vcr/php-vcr": "^1.4",
+    "php-vcr/php-vcr": "^1.4.5",
     "phpstan/phpstan": "^0.12.82",
     "phpstan/phpstan-phpunit": "^0.12.18",
-    "phpunit/phpunit": "^7.5",
+    "phpunit/phpunit": "^7.5 || ^9.5",
     "psr/log": "^1.1",
     "squizlabs/php_codesniffer": "^3.5"
   },
