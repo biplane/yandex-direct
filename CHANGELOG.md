@@ -5,6 +5,24 @@
 ### Changed
 
 * Минимальная версия PHP - 7.1
+* Совместимость с PHP 8 (PR #34)
+* [**BC Break**] `ApiException` теперь наследуется от `RuntimeException`, вместо `RequestException`.
+* [**BC Break**] Исключение с типом `ApiException` будет выброшено только в том случае,
+  когда ошибка относится к API. В остальных случаях (ошибки транспорта, парсинга XML и т.п.)
+  будет выброшено исключение с типом `SoapFault`.
+
+### Deprecated
+
+* `Biplane\YandexDirect\User` будет удален в 6.0, в пользу `Biplane\YandexDirect\Config`
+  и `Biplane\YandexDirect\Api\ApiSoapClientFactory`.
+* `Biplane\YandexDirect\UserBuilder` будет удален в 6.0.
+* `Biplane\YandexDirect\EventListener\LoggerListener` будет удален в 6.0.
+
+### Removed
+
+* Удален `Biplane\YandexDirect\Helper\Invoker`, который предоставлял логику повторных запросов
+  при временных ошибках.
+* Удалены параметры `invoker`, `retry_factor`, `retry_max_attempts` и `retry_max_delay` для `User`.
 
 ## 4.16.0 [commit logs](https://github.com/biplane/yandex-direct/compare/4.15.0...4.16.0)
 
