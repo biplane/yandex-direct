@@ -2,6 +2,7 @@
 
 namespace Biplane\Tests\YandexDirect;
 
+use Biplane\YandexDirect\Api\Finance\CallbackTransactionNumberGenerator;
 use Biplane\YandexDirect\Api\V4\YandexAPIService;
 use Biplane\YandexDirect\Api\V5;
 use Biplane\YandexDirect\User;
@@ -80,5 +81,20 @@ class UserTest extends TestCase
         $proxy = $user->getAdsService();
 
         self::assertSame($proxy, $user->getAdsService());
+    }
+
+    public function testPassCustomTransactionNumberGenerator(): void
+    {
+        $user = new User([
+            'access_token' => 'foo',
+        ]);
+        $user->setFinanceOperationNumberGenerator(function (): int {
+            return 123;
+        });
+
+        $generator = $user->getApiService()->getTransactionNumberGenerator();
+
+        self::assertInstanceOf(CallbackTransactionNumberGenerator::class, $generator);
+        self::assertSame(123, $generator->generate());
     }
 }

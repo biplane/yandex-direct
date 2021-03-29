@@ -4,15 +4,20 @@ declare(strict_types=1);
 
 namespace Biplane\YandexDirect\Api;
 
+use Biplane\YandexDirect\Api\Finance\TransactionNumberGeneratorInterface;
 use Biplane\YandexDirect\Config;
 use ReflectionClass;
 
 final class ApiSoapClientFactory
 {
     private $soapCallTimeout;
+    private $transactionNumberGenerator;
 
-    public function __construct(?int $soapCallTimeout = null)
-    {
+    public function __construct(
+        ?TransactionNumberGeneratorInterface $transactionNumberGenerator = null,
+        ?int $soapCallTimeout = null
+    ) {
+        $this->transactionNumberGenerator = $transactionNumberGenerator;
         $this->soapCallTimeout = $soapCallTimeout;
     }
 
@@ -41,6 +46,10 @@ final class ApiSoapClientFactory
 
         if ($this->soapCallTimeout > 0) {
             $soapClient->setSoapCallTimeout($this->soapCallTimeout);
+        }
+
+        if ($this->transactionNumberGenerator !== null && $soapClient instanceof ApiSoapClientV4) {
+            $soapClient->setTransactionNumberGenerator($this->transactionNumberGenerator);
         }
 
         return $soapClient;

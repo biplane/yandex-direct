@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+### Added
+
+* `Biplane\YandexDirect\Api\Finance\TransactionNumberGeneratorInterface` позволяет
+  переопределить логику генерации значения для параметра `operation_num` для финансовых методов.
+
 ### Changed
 
 * Минимальная версия PHP - 7.1

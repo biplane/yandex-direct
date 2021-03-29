@@ -3,10 +3,10 @@
 namespace Biplane\Tests\YandexDirect\Api;
 
 use Biplane\YandexDirect\Api\ApiSoapClientV4;
+use Biplane\YandexDirect\Api\Finance\TransactionNumberGeneratorInterface;
 use Biplane\YandexDirect\Api\V4\Contract\AccountManagementRequest;
 use Biplane\YandexDirect\Config;
 use Biplane\YandexDirect\Exception\ApiException;
-use PHPUnit\Extension\FunctionMocker;
 use SoapFault;
 
 class ApiSoapClientV4Test extends BaseTestCase
@@ -50,13 +50,13 @@ XML
             'client_login' => 'foo',
             'master_token' => 'fake',
         ]);
+
+        $txNumberGenerator = $this->createMock(TransactionNumberGeneratorInterface::class);
+
         $client = $this->createSoapClient(ApiSoapClientV4::class, $config, ['__doRequest']);
+        $client->setTransactionNumberGenerator($txNumberGenerator);
 
-        $php = FunctionMocker::start($this, 'Biplane\YandexDirect\Api')
-            ->mockFunction('time')
-            ->getMock();
-
-        $php->method('time')->willReturn(10009);
+        $txNumberGenerator->method('generate')->willReturn(10009);
 
         $financeToken = hash('sha256', sprintf('fake10009%sfoo', $usedMethod));
 

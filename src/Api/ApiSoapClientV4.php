@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Biplane\YandexDirect\Api;
 
+use Biplane\YandexDirect\Api\Finance\ClockTransactionNumberGenerator;
+use Biplane\YandexDirect\Api\Finance\TransactionNumberGeneratorInterface;
 use Biplane\YandexDirect\Api\V4\Contract\AccountManagementRequest;
 use Biplane\YandexDirect\Config;
 use Biplane\YandexDirect\Exception\ApiException;
@@ -16,6 +18,7 @@ class ApiSoapClientV4 extends ApiSoapClient
     private const SCHEMA_NAMESPACE = 'API';
 
     private $requestId;
+    private $transactionNumberGenerator;
 
     /**
      * {@inheritDoc}
@@ -27,6 +30,20 @@ class ApiSoapClientV4 extends ApiSoapClient
         }
 
         return $this->requestId;
+    }
+
+    public function getTransactionNumberGenerator(): TransactionNumberGeneratorInterface
+    {
+        if ($this->transactionNumberGenerator === null) {
+            $this->transactionNumberGenerator = new ClockTransactionNumberGenerator();
+        }
+
+        return $this->transactionNumberGenerator;
+    }
+
+    public function setTransactionNumberGenerator(TransactionNumberGeneratorInterface $generator): void
+    {
+        $this->transactionNumberGenerator = $generator;
     }
 
     /**
@@ -64,7 +81,7 @@ class ApiSoapClientV4 extends ApiSoapClient
                 $usedMethod .= $arguments[0]->getAction();
             }
 
-            $operationNum = time(); // phpcs:ignore
+            $operationNum = $this->getTransactionNumberGenerator()->generate();
             $financeToken = $this->generateFinanceToken($usedMethod, $operationNum);
 
             $input_headers[] = new SoapHeader(self::SCHEMA_NAMESPACE, 'finance_token', $financeToken);

@@ -17,7 +17,7 @@ abstract class BaseTestCase extends TestCase
      * @param class-string<T> $soapClientClass
      * @param array<string>   $mockMethods
      *
-     * @return MockObject&ApiSoapClient
+     * @return MockObject&T
      */
     protected function createSoapClient(string $soapClientClass, Config $config, array $mockMethods = []): MockObject
     {

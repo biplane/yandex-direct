@@ -3,6 +3,7 @@
 namespace Biplane\YandexDirect;
 
 use Biplane\YandexDirect\Api\ApiSoapClientFactory;
+use Biplane\YandexDirect\Api\Finance\CallbackTransactionNumberGenerator;
 use Biplane\YandexDirect\Api\V4\YandexAPIService;
 use Biplane\YandexDirect\Api\V5\AdExtensions;
 use Biplane\YandexDirect\Api\V5\AdGroups;
@@ -48,6 +49,7 @@ class User
     private $proxies;
     private $serviceFactory;
     private $config;
+    private $transactionNumberGenerator;
 
     /**
      * @param array<string, mixed>          $options    The options
@@ -139,6 +141,20 @@ class User
     public function useOperatorUnits()
     {
         return $this->config->useOperatorUnits();
+    }
+
+    /**
+     * Sets callable as generator for `operation_num` field of finance operations.
+     *
+     * @param callable $financeNumberGenerator
+     */
+    public function setFinanceOperationNumberGenerator($financeNumberGenerator)
+    {
+        if (!is_callable($financeNumberGenerator)) {
+            throw new \LogicException('Finance operation number generator should be callable.');
+        }
+
+        $this->transactionNumberGenerator = new CallbackTransactionNumberGenerator($financeNumberGenerator);
     }
 
     /**
@@ -453,7 +469,7 @@ class User
             $service = new $serviceClass($this);
         } else {
             if ($this->serviceFactory === null) {
-                $this->serviceFactory = new ApiSoapClientFactory();
+                $this->serviceFactory = new ApiSoapClientFactory($this->transactionNumberGenerator);
             }
 
             $service = $this->serviceFactory->createSoapClient($this->config, $serviceClass);
