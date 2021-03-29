@@ -24,9 +24,11 @@ final class ApiSoapClientFactory
     /**
      * @template T of ApiSoapClient
      *
-     * @param class-string<T> $serviceClass
+     * @param string $serviceClass
      *
-     * @return ApiSoapClient
+     * @psalm-param class-string<T> $serviceClass
+     *
+     * @psalm-return T
      */
     public function createSoapClient(Config $config, string $serviceClass): ApiSoapClient
     {
@@ -55,6 +57,13 @@ final class ApiSoapClientFactory
         return $soapClient;
     }
 
+    /**
+     * @template T of ApiSoapClient
+     *
+     * @psalm-param class-string<T> $serviceClass
+     *
+     * @psalm-return T
+     */
     private function createInstance(string $serviceClass, Config $config, array $options): ApiSoapClient
     {
         $reflection = new ReflectionClass($serviceClass);
