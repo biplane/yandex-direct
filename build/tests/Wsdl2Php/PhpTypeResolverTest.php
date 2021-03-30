@@ -40,24 +40,6 @@ class PhpTypeResolverTest extends TestCase
         self::assertEquals('Foo\Bar\SecondType[]', $resolver->resolve('secondType[]'));
     }
 
-    public function testResolveComplexTypeWithRelativeNamespace(): void
-    {
-        $resolver = new PhpTypeResolver([
-            'firstType' => $this->createComplexTypeMock('Acme\Api\Contract\FirstType'),
-        ]);
-
-        self::assertEquals('Contract\FirstType', $resolver->resolve('firstType', 'Acme\Api'));
-    }
-
-    public function testResolveComplexTypeWhenInputNamespaceIsDifferent(): void
-    {
-        $resolver = new PhpTypeResolver([
-            'firstType' => $this->createComplexTypeMock('Acme\Api\Contract\FirstType'),
-        ]);
-
-        self::assertEquals('Acme\Api\Contract\FirstType', $resolver->resolve('firstType', 'Foo\Api'));
-    }
-
     /**
      * @return array<array<string>>
      */

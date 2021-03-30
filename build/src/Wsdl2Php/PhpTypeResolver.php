@@ -27,7 +27,7 @@ class PhpTypeResolver
         return $this->typesMap;
     }
 
-    public function resolve(string $wsdlType, ?string $namespace = null): string
+    public function resolve(string $wsdlType): string
     {
         $isArray = false;
 
@@ -38,10 +38,6 @@ class PhpTypeResolver
 
         if (isset($this->typesMap[$wsdlType])) {
             $phpType = $this->typesMap[$wsdlType]->resolvePhpType($this);
-
-            if (null !== $namespace) {
-                $phpType = ClassNameUtil::qualifiedClassName($phpType, $namespace);
-            }
         } else {
             $phpType = $this->validateType($wsdlType);
         }

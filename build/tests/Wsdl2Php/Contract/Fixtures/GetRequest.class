@@ -3,7 +3,7 @@ namespace Acme\Api\Contract;
 /**
  * Auto-generated code.
  */
-class GetRequest
+class GetRequest extends GetRequestGeneral
 {
 
     protected $SelectionCriteria = null;
@@ -32,7 +32,7 @@ class GetRequest
     /**
      * Gets SelectionCriteria.
      *
-     * @return AdGroupsSelectionCriteria
+     * @return \Acme\Api\Contract\AdGroupsSelectionCriteria
      */
     public function getSelectionCriteria()
     {
@@ -42,10 +42,10 @@ class GetRequest
     /**
      * Sets SelectionCriteria.
      *
-     * @param AdGroupsSelectionCriteria $value
+     * @param \Acme\Api\Contract\AdGroupsSelectionCriteria $value
      * @return $this
      */
-    public function setSelectionCriteria(AdGroupsSelectionCriteria $value)
+    public function setSelectionCriteria(\Acme\Api\Contract\AdGroupsSelectionCriteria $value)
     {
         $this->SelectionCriteria = $value;
 

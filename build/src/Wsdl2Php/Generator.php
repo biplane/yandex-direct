@@ -8,13 +8,13 @@ use Biplane\Build\Wsdl2Php\Contract\AbstractDataType;
 use Biplane\Build\Wsdl2Php\Contract\AbstractType;
 use Biplane\Build\Wsdl2Php\Contract\GeneratorInterface as ContractGeneratorInterface;
 use Biplane\Build\Wsdl2Php\Contract\ServiceType;
+use Laminas\Code\Generator\FileGenerator;
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
 use Wsdl2PhpGenerator\ConfigInterface;
 use Wsdl2PhpGenerator\GeneratorInterface;
 use Wsdl2PhpGenerator\Xml\ServiceNode;
 use Wsdl2PhpGenerator\Xml\WsdlDocument;
-use Zend\Code\Generator\FileGenerator;
 
 class Generator implements GeneratorInterface
 {

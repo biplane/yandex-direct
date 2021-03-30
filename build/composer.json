@@ -7,10 +7,10 @@
     "php": "^7.3",
     "ext-libxml": "*",
     "ext-soap": "*",
+    "laminas/laminas-code": "^3.5",
     "monolog/monolog": "^2.2",
     "psr/log": "^1.1",
-    "wsdl2phpgenerator/wsdl2phpgenerator": "dev-inline-type as 4.0.x-dev",
-    "zendframework/zend-code": "^2.6"
+    "wsdl2phpgenerator/wsdl2phpgenerator": "dev-inline-type as 4.0.x-dev"
   },
   "require-dev": {
     "phpstan/phpstan": "0.12.94",

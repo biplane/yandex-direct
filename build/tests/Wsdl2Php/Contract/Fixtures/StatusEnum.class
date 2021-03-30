@@ -6,17 +6,17 @@ namespace Foo\Api\Contract;
 class StatusEnum
 {
 
-    const ACCEPTED = 'ACCEPTED';
+    public const ACCEPTED = 'ACCEPTED';
 
-    const DRAFT = 'DRAFT';
+    public const DRAFT = 'DRAFT';
 
-    const MODERATION = 'MODERATION';
+    public const MODERATION = 'MODERATION';
 
-    const PREACCEPTED = 'PREACCEPTED';
+    public const PREACCEPTED = 'PREACCEPTED';
 
-    const REJECTED = 'REJECTED';
+    public const REJECTED = 'REJECTED';
 
-    const UNKNOWN = 'UNKNOWN';
+    public const UNKNOWN = 'UNKNOWN';
 
 
 }

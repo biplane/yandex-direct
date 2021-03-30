@@ -1,7 +1,6 @@
 namespace Acme\Api;
 
 use Biplane\YandexDirect\Api\ApiSoapClientV4;
-use Biplane\YandexDirect\Config;
 
 /**
  * Auto-generated code.
@@ -9,9 +8,12 @@ use Biplane\YandexDirect\Config;
 class YandexAPIService extends ApiSoapClientV4
 {
 
-    const ENDPOINT = 'api/v4/wsdl';
+    public const ENDPOINT = 'api/v4/wsdl';
 
-    public function __construct(Config $config, array $options)
+    /**
+     * @param array<string, mixed> $options
+     */
+    public function __construct(\Biplane\YandexDirect\Config $config, array $options)
     {
         $options['classmap'] = [
             'GetSubClientsRequest' => 'Acme\Api\Contract\GetSubClientsRequest',
@@ -23,12 +25,10 @@ class YandexAPIService extends ApiSoapClientV4
     }
 
     /**
-     * GetSubClients.
-     *
-     * @param Contract\GetSubClientsRequest $params
-     * @return Contract\ShortClientInfo[]
+     * @param \Acme\Api\Contract\GetSubClientsRequest $params
+     * @return \Acme\Api\Contract\ShortClientInfo[]
      */
-    public function getSubClients(Contract\GetSubClientsRequest $params)
+    public function getSubClients(\Acme\Api\Contract\GetSubClientsRequest $params)
     {
         return $this->__soapCall('GetSubClients', [$params]);
     }

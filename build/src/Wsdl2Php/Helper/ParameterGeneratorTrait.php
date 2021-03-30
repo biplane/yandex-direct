@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Biplane\Build\Wsdl2Php\Helper;
 
-use Zend\Code\Generator\ParameterGenerator;
-use Zend\Code\Generator\ValueGenerator;
+use Laminas\Code\Generator\ParameterGenerator;
+use Laminas\Code\Generator\ValueGenerator;
 
 trait ParameterGeneratorTrait
 {

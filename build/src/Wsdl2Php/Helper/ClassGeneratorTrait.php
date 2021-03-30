@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Biplane\Build\Wsdl2Php\Helper;
 
-use Zend\Code\Generator\ClassGenerator;
-use Zend\Code\Generator\DocBlockGenerator;
+use Laminas\Code\Generator\ClassGenerator;
+use Laminas\Code\Generator\DocBlockGenerator;
 
 trait ClassGeneratorTrait
 {

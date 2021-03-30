@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Biplane\Build\Wsdl2Php\Helper;
 
-use Zend\Code\Generator\DocBlock\Tag\ParamTag;
-use Zend\Code\Generator\DocBlock\Tag\ReturnTag;
-use Zend\Code\Generator\DocBlock\Tag\TagInterface;
-use Zend\Code\Generator\DocBlockGenerator;
-use Zend\Code\Generator\MethodGenerator;
+use Laminas\Code\Generator\DocBlock\Tag\ParamTag;
+use Laminas\Code\Generator\DocBlock\Tag\ReturnTag;
+use Laminas\Code\Generator\DocBlock\Tag\TagInterface;
+use Laminas\Code\Generator\DocBlockGenerator;
+use Laminas\Code\Generator\MethodGenerator;
 
 trait TagTrait
 {

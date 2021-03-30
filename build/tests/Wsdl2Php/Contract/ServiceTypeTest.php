@@ -20,10 +20,11 @@ class ServiceTypeTest extends TestCase
             $serviceType->addOperation($operation);
         }
 
+        $namespace = 'Acme\Api\Contract';
         $typeResolver = new PhpTypeResolver([
-            'GetRequest' => $this->createComplexType('GetRequest', 'Acme\Api\Contract', $wsdlTypes),
-            'AddRequest' => $this->createComplexType('AddRequest', 'Acme\Api\Contract', $wsdlTypes),
-            'AddResponse' => $this->createComplexType('AddResponse', 'Acme\Api\Contract', $wsdlTypes),
+            'GetRequest' => $this->createComplexType('GetRequest', $namespace, $wsdlTypes),
+            'AddRequest' => $this->createComplexType('AddRequest', $namespace, $wsdlTypes),
+            'AddResponse' => $this->createComplexType('AddResponse', $namespace, $wsdlTypes),
         ]);
 
         $generator = $serviceType->generate($typeResolver);
@@ -45,27 +46,12 @@ class ServiceTypeTest extends TestCase
             }
         }
 
+        $namespace = 'Acme\Api\Contract';
         $typeResolver = new PhpTypeResolver([
-            'GetSubClientsRequest' => $this->createComplexType(
-                'GetSubClientsRequest',
-                'Acme\Api\Contract',
-                $wsdlTypes
-            ),
-            'ClientFilter' => $this->createComplexType(
-                'ClientFilter',
-                'Acme\Api\Contract',
-                $wsdlTypes
-            ),
-            'ArrayOfShortClientInfo' => $this->createArrayType(
-                'ArrayOfShortClientInfo',
-                'Acme\Api\Contract',
-                $wsdlTypes
-            ),
-            'ShortClientInfo' => $this->createComplexType(
-                'ShortClientInfo',
-                'Acme\Api\Contract',
-                $wsdlTypes
-            ),
+            'GetSubClientsRequest' => $this->createComplexType('GetSubClientsRequest', $namespace, $wsdlTypes),
+            'ClientFilter' => $this->createComplexType('ClientFilter', $namespace, $wsdlTypes),
+            'ArrayOfShortClientInfo' => $this->createArrayType('ArrayOfShortClientInfo', $namespace, $wsdlTypes),
+            'ShortClientInfo' => $this->createComplexType('ShortClientInfo', $namespace, $wsdlTypes),
         ]);
 
         $generator = $serviceType->generate($typeResolver);

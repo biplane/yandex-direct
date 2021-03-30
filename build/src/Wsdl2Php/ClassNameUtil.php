@@ -6,6 +6,14 @@ namespace Biplane\Build\Wsdl2Php;
 
 final class ClassNameUtil
 {
+    public static function fqcn(string $className): string
+    {
+        if (strpos($className, '\\') > 0) {
+            return '\\' . $className;
+        }
+
+        return $className;
+    }
     /**
      * Resolves Qualified Class Name for the current namespace.
      *

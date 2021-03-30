@@ -8,9 +8,9 @@ use Biplane\Build\Wsdl2Php\ClassNameUtil;
 use Biplane\Build\Wsdl2Php\Code\OmitPropertyGenerator;
 use Biplane\Build\Wsdl2Php\Helper\ContractGeneratorTrait;
 use Biplane\Build\Wsdl2Php\PhpTypeResolver;
-use Zend\Code\Generator\ClassGenerator;
-use Zend\Code\Generator\DocBlock\Tag\GenericTag;
-use Zend\Code\Generator\MethodGenerator;
+use Laminas\Code\Generator\ClassGenerator;
+use Laminas\Code\Generator\DocBlock\Tag\GenericTag;
+use Laminas\Code\Generator\MethodGenerator;
 
 class ComplexType extends AbstractDataType implements GeneratorInterface
 {
@@ -28,19 +28,17 @@ class ComplexType extends AbstractDataType implements GeneratorInterface
         if (null !== $baseType = $this->type->getBase()) {
             $baseType = $typeResolver->resolve($baseType);
 
-            if (false !== strpos($baseType, '\\')) {
-                $generator->setExtendedClass(ClassNameUtil::qualifiedClassName($baseType, $this->namespace));
-            }
+            $generator->setExtendedClass(ClassNameUtil::fqcn($baseType));
+        } else {
+            $generator->addMethodFromGenerator($this->createFactoryMethod());
         }
-
-        $generator->addMethodFromGenerator($this->createFactoryMethod($generator->getName()));
 
         foreach ($this->type->getParts() as $elemName => $elemType) {
             $isArray = $this->type->isElementArray($elemName);
             $canBeOmitted = $this->type->getElementMinOccurs($elemName) === 0;
             $nullable = $this->type->isElementNillable($elemName) || $canBeOmitted;
 
-            $phpType = $typeResolver->resolve($elemType, $this->namespace);
+            $phpType = $typeResolver->resolve($elemType);
             $enumClass = $this->getEnumClass($elemType, $typeResolver);
 
             if (substr($phpType, -2) === '[]') {

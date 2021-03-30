@@ -23,13 +23,15 @@ class ComplexTypeTest extends TestCase
 
     public function testGenerateWithExtendsAndResolvingEnumsType(): void
     {
+        $namespace = 'Foo\Api\Contract';
         $wsdlTypes = $this->loadTypes('adgroups.wsdl');
         $type = $this->findType('AdGroupGetItem', $wsdlTypes);
-        $complexType = new ComplexType($type, 'AdGroupGetItem', 'Foo\Api\Contract');
+        $complexType = new ComplexType($type, 'AdGroupGetItem', $namespace);
         $typeResolver = new PhpTypeResolver([
-            'AdGroupTypesEnum' => $this->createEnumType('AdGroupTypesEnum', 'Foo\Api\Contract', $wsdlTypes),
-            'StatusEnum' => $this->createEnumType('StatusEnum', 'Foo\Api\Contract', $wsdlTypes),
-            'AdGroupBase' => $this->createComplexType('AdGroupBase', 'Foo\Api\Contract', $wsdlTypes),
+            'AdGroupTypesEnum' => $this->createEnumType('AdGroupTypesEnum', $namespace, $wsdlTypes),
+            'StatusEnum' => $this->createEnumType('StatusEnum', $namespace, $wsdlTypes),
+            'AdGroupBase' => $this->createComplexType('AdGroupBase', $namespace, $wsdlTypes),
+            'MobileAppAdGroupGet' => $this->createComplexType('MobileAppAdGroupGet', $namespace, $wsdlTypes),
         ]);
 
         $generator = $complexType->generate($typeResolver);
@@ -40,6 +42,7 @@ class ComplexTypeTest extends TestCase
 
     public function testEmbeddedType(): void
     {
+        $namespace = 'Acme\Api\Contract';
         $wsdlTypes = $this->loadTypes('adgroups.wsdl');
         $complexType = new ComplexType(
             $this->findType('GetRequest', $wsdlTypes),
@@ -47,19 +50,16 @@ class ComplexTypeTest extends TestCase
             'Acme\Api\Contract'
         );
         $typeResolver = new PhpTypeResolver([
+            'GetRequestGeneral' => $this->createComplexType('GetRequestGeneral', $namespace, $wsdlTypes),
             'AdGroupsSelectionCriteria' => $this->createComplexType(
                 'AdGroupsSelectionCriteria',
-                'Acme\Api\Contract',
+                $namespace,
                 $wsdlTypes
             ),
-            'AdGroupFieldEnum' => $this->createEnumType(
-                'AdGroupFieldEnum',
-                'Acme\Api\Contract',
-                $wsdlTypes
-            ),
+            'AdGroupFieldEnum' => $this->createEnumType('AdGroupFieldEnum', $namespace, $wsdlTypes),
             'MobileAppAdGroupFieldEnum' => $this->createEnumType(
                 'MobileAppAdGroupFieldEnum',
-                'Acme\Api\Contract',
+                $namespace,
                 $wsdlTypes
             ),
         ]);

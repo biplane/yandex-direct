@@ -1,7 +1,6 @@
 namespace Acme\Api;
 
 use Biplane\YandexDirect\Api\ApiSoapClientV5;
-use Biplane\YandexDirect\Config;
 
 /**
  * Auto-generated code.
@@ -9,9 +8,12 @@ use Biplane\YandexDirect\Config;
 class AdGroups extends ApiSoapClientV5
 {
 
-    const ENDPOINT = 'api/v5/adgroups.wsdl';
+    public const ENDPOINT = 'api/v5/adgroups.wsdl';
 
-    public function __construct(Config $config, array $options)
+    /**
+     * @param array<string, mixed> $options
+     */
+    public function __construct(\Biplane\YandexDirect\Config $config, array $options)
     {
         $options['classmap'] = [
             'GetRequest' => 'Acme\Api\Contract\GetRequest',
@@ -23,45 +25,37 @@ class AdGroups extends ApiSoapClientV5
     }
 
     /**
-     * get.
-     *
-     * @param Contract\GetRequest $parameters
+     * @param \Acme\Api\Contract\GetRequest $parameters
      * @return GetResponse
      */
-    public function get(Contract\GetRequest $parameters)
+    public function get(\Acme\Api\Contract\GetRequest $parameters)
     {
         return $this->__soapCall('get', [$parameters]);
     }
 
     /**
-     * add.
-     *
-     * @param Contract\AddRequest $parameters
-     * @return Contract\AddResponse
+     * @param \Acme\Api\Contract\AddRequest $parameters
+     * @return \Acme\Api\Contract\AddResponse
      */
-    public function add(Contract\AddRequest $parameters)
+    public function add(\Acme\Api\Contract\AddRequest $parameters)
     {
         return $this->__soapCall('add', [$parameters]);
     }
 
     /**
-     * update.
-     *
      * @param UpdateRequest $parameters
      * @return UpdateResponse
      */
-    public function update(UpdateRequest $parameters)
+    public function update(\UpdateRequest $parameters)
     {
         return $this->__soapCall('update', [$parameters]);
     }
 
     /**
-     * delete.
-     *
      * @param DeleteRequest $parameters
      * @return DeleteResponse
      */
-    public function delete(DeleteRequest $parameters)
+    public function delete(\DeleteRequest $parameters)
     {
         return $this->__soapCall('delete', [$parameters]);
     }

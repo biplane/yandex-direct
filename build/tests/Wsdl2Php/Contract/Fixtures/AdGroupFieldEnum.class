@@ -6,23 +6,23 @@ namespace Foo\Api\Contract;
 class AdGroupFieldEnum
 {
 
-    const ID = 'Id';
+    public const ID = 'Id';
 
-    const CAMPAIGN_ID = 'CampaignId';
+    public const CAMPAIGN_ID = 'CampaignId';
 
-    const STATUS = 'Status';
+    public const STATUS = 'Status';
 
-    const NAME = 'Name';
+    public const NAME = 'Name';
 
-    const REGION_IDS = 'RegionIds';
+    public const REGION_IDS = 'RegionIds';
 
-    const NEGATIVE_KEYWORDS = 'NegativeKeywords';
+    public const NEGATIVE_KEYWORDS = 'NegativeKeywords';
 
-    const TYPE = 'Type';
+    public const TYPE = 'Type';
 
-    const TRACKING_PARAMS = 'TrackingParams';
+    public const TRACKING_PARAMS = 'TrackingParams';
 
-    const SUBTYPE = 'Subtype';
+    public const SUBTYPE = 'Subtype';
 
 
 }

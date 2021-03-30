@@ -4,9 +4,10 @@ declare(strict_types=1);
 
 namespace Biplane\Build\Wsdl2Php\Helper;
 
+use Biplane\Build\Wsdl2Php\ClassNameUtil;
 use Biplane\Build\Wsdl2Php\PhpTypeResolver;
-use Zend\Code\Generator\ClassGenerator;
-use Zend\Code\Generator\MethodGenerator;
+use Laminas\Code\Generator\ClassGenerator;
+use Laminas\Code\Generator\MethodGenerator;
 
 trait ContractGeneratorTrait
 {
@@ -37,7 +38,6 @@ trait ContractGeneratorTrait
         bool $camBeOmitted = false
     ): MethodGenerator {
         $generator = new MethodGenerator('get' . ucfirst($elemName));
-        $generator->setDocBlock(sprintf('Gets %s.', $elemName));
 
         if ($camBeOmitted) {
             $generator->setBody(sprintf('return isset($this->%1$s) ? $this->%1$s : null;', $elemName));
@@ -45,7 +45,7 @@ trait ContractGeneratorTrait
             $generator->setBody(sprintf('return $this->%s;', $elemName));
         }
 
-        $this->addTag($generator, $this->createReturnTag($phpType, $isArray, $isNullable));
+        $this->addTag($generator, $this->createReturnTag(ClassNameUtil::fqcn($phpType), $isArray, $isNullable));
 
         return $generator;
     }
@@ -57,11 +57,10 @@ trait ContractGeneratorTrait
         bool $isNullable
     ): MethodGenerator {
         $generator = new MethodGenerator('set' . ucfirst($elemName));
-        $generator->setDocBlock(sprintf('Sets %s.', $elemName));
         $generator->setBody(sprintf("\$this->%s = \$value;\n\nreturn \$this;", $elemName));
-        $generator->setParameter($this->createParameter('value', $phpType, $isArray, $isNullable));
+        $generator->setParameter($this->createParameter('value', ClassNameUtil::fqcn($phpType), $isArray, $isNullable));
 
-        $this->addTag($generator, $this->createParamTag('value', $phpType, $isArray, $isNullable));
+        $this->addTag($generator, $this->createParamTag('value', ClassNameUtil::fqcn($phpType), $isArray, $isNullable));
         $this->addTag($generator, $this->createReturnTag('$this'));
 
         return $generator;

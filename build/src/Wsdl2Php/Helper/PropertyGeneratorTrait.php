@@ -2,8 +2,8 @@
 
 namespace Biplane\Build\Wsdl2Php\Helper;
 
-use Zend\Code\Generator\PropertyGenerator;
-use Zend\Code\Generator\PropertyValueGenerator;
+use Laminas\Code\Generator\PropertyGenerator;
+use Laminas\Code\Generator\PropertyValueGenerator;
 
 trait PropertyGeneratorTrait
 {

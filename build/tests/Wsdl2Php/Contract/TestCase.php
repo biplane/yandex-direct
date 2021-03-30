@@ -8,9 +8,9 @@ use Biplane\Build\Wsdl2Php\Contract\ArrayType;
 use Biplane\Build\Wsdl2Php\Contract\ComplexType;
 use Biplane\Build\Wsdl2Php\Contract\EnumType;
 use Biplane\Tests\Wsdl2Php\ParseWsdlTrait;
+use Laminas\Code\Generator\ClassGenerator;
 use PHPUnit\Framework\TestCase as BaseTestCase;
 use Wsdl2PhpGenerator\Xml\TypeNode;
-use Zend\Code\Generator\ClassGenerator;
 
 abstract class TestCase extends BaseTestCase
 {

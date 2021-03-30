@@ -4,21 +4,20 @@ declare(strict_types=1);
 
 namespace Biplane\Build\Wsdl2Php\Helper;
 
-use Zend\Code\Generator\DocBlock\Tag\ReturnTag;
-use Zend\Code\Generator\MethodGenerator;
+use Laminas\Code\Generator\DocBlock\Tag\ReturnTag;
+use Laminas\Code\Generator\MethodGenerator;
 
 trait MethodFactoryGeneratorTrait
 {
     use TagTrait;
 
-    protected function createFactoryMethod(string $className): MethodGenerator
+    protected function createFactoryMethod(): MethodGenerator
     {
         $generator = new MethodGenerator('create');
-        $generator->setDocBlock(sprintf('Creates a new instance of %s.', $className));
         $generator->setStatic(true);
-        $generator->setBody('return new self();');
+        $generator->setBody('return new static();');
 
-        $this->addTag($generator, new ReturnTag('self'));
+        $this->addTag($generator, new ReturnTag('static'));
 
         return $generator;
     }

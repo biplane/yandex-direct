@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Biplane\Build\Wsdl2Php\Code;
 
-use Zend\Code\Generator\PropertyGenerator;
+use Laminas\Code\Generator\PropertyGenerator;
 
-class OmitPropertyGenerator extends PropertyGenerator
+final class OmitPropertyGenerator extends PropertyGenerator
 {
     public function __construct($name)
     {
@@ -20,7 +20,7 @@ class OmitPropertyGenerator extends PropertyGenerator
      */
     public function generate()
     {
-        return '//' . $this->indentation . 'Can be omit.' . self::LINE_FEED
+        return '//' . $this->indentation . 'Can be omitted.' . self::LINE_FEED
             . '//' . parent::generate();
     }
 }

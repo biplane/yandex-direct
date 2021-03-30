@@ -8,14 +8,16 @@ use Biplane\Build\Wsdl2Php\ClassNameUtil;
 use Biplane\Build\Wsdl2Php\Helper\ContractGeneratorTrait;
 use Biplane\Build\Wsdl2Php\Inflector;
 use Biplane\Build\Wsdl2Php\PhpTypeResolver;
+use Laminas\Code\Generator\ClassGenerator;
+use Laminas\Code\Generator\MethodGenerator;
 use RuntimeException;
 use Wsdl2PhpGenerator\Xml\OperationNode;
-use Zend\Code\Generator\ClassGenerator;
-use Zend\Code\Generator\MethodGenerator;
 
 class ServiceType extends AbstractType implements GeneratorInterface
 {
     use ContractGeneratorTrait;
+
+    private const CONFIG_CLASS = 'Biplane\\YandexDirect\\Config';
 
     private $wsdlUri;
 
@@ -31,9 +33,9 @@ class ServiceType extends AbstractType implements GeneratorInterface
         $this->wsdlUri = $wsdlUri;
     }
 
-    public function addOperation(OperationNode $operaion): void
+    public function addOperation(OperationNode $operation): void
     {
-        $this->operations[] = $operaion;
+        $this->operations[] = $operation;
     }
 
     /**
@@ -46,8 +48,7 @@ class ServiceType extends AbstractType implements GeneratorInterface
         $generator
             ->addConstant('ENDPOINT', $this->wsdlUri)
             ->addUse($baseClientClass)
-            ->addUse('Biplane\\YandexDirect\\Config')
-            ->setExtendedClass(ClassNameUtil::unqualifiedClassName($baseClientClass))
+            ->setExtendedClass($baseClientClass)
             ->addMethodFromGenerator($this->createConstructor($typeResolver->getTypes()));
 
         foreach ($this->operations as $operation) {
@@ -93,8 +94,10 @@ class ServiceType extends AbstractType implements GeneratorInterface
 parent::__construct(self::ENDPOINT, \$config, \$options);
 CODE
         );
-        $generator->setParameter($this->createParameter('config', 'Config'));
+        $generator->setParameter($this->createParameter('config', self::CONFIG_CLASS));
         $generator->setParameter($this->createParameter('options', 'array'));
+
+        $this->addTag($generator, $this->createParamTag('options', 'array<string, mixed>'));
 
         return $generator;
     }
@@ -102,7 +105,6 @@ CODE
     private function createApiMethod(OperationNode $operation, PhpTypeResolver $typeResolver): MethodGenerator
     {
         $generator = new MethodGenerator(Inflector::camelize($operation->getName()));
-        $generator->setDocBlock($operation->getName() . '.');
 
         $params = [];
 
@@ -118,7 +120,7 @@ CODE
                 }
 
                 $params[] = $name;
-                $phpType = $typeResolver->resolve($type, $this->namespace);
+                $phpType = ClassNameUtil::fqcn($typeResolver->resolve($type));
 
                 $isArray = substr($phpType, -2) === '[]';
 
@@ -134,9 +136,10 @@ CODE
         ));
 
         if ($operation->getReturns() !== '') {
+            $phpType = $typeResolver->resolve($operation->getReturns());
             $this->addTag(
                 $generator,
-                $this->createReturnTag($typeResolver->resolve($operation->getReturns(), $this->namespace))
+                $this->createReturnTag(ClassNameUtil::fqcn($phpType))
             );
         }
 

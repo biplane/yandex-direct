@@ -7,8 +7,8 @@ namespace Biplane\Build\Wsdl2Php\Contract;
 use Biplane\Build\Wsdl2Php\Helper\ContractGeneratorTrait;
 use Biplane\Build\Wsdl2Php\Inflector;
 use Biplane\Build\Wsdl2Php\PhpTypeResolver;
+use Laminas\Code\Generator\ClassGenerator;
 use Wsdl2PhpGenerator\Validator;
-use Zend\Code\Generator\ClassGenerator;
 
 class EnumType extends AbstractDataType implements GeneratorInterface
 {
