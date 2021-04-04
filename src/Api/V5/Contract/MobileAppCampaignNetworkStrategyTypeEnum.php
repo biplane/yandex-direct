@@ -26,6 +26,8 @@ class MobileAppCampaignNetworkStrategyTypeEnum
 
     const WEEKLY_CLICK_PACKAGE = 'WEEKLY_CLICK_PACKAGE';
 
+    const PAY_FOR_INSTALL = 'PAY_FOR_INSTALL';
+
 
 }
 

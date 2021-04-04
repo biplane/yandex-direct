@@ -12,9 +12,6 @@ class StrategyAverageCpaPerFilter
 //    protected $FilterAverageCpa = null;
 
 //    Can be omit.
-//    protected $FilterAverageCpc = null;
-
-//    Can be omit.
 //    protected $GoalId = null;
 
 //    Can be omit.
@@ -52,29 +49,6 @@ class StrategyAverageCpaPerFilter
     public function setFilterAverageCpa($value = null)
     {
         $this->FilterAverageCpa = $value;
-
-        return $this;
-    }
-
-    /**
-     * Gets FilterAverageCpc.
-     *
-     * @return int|null
-     */
-    public function getFilterAverageCpc()
-    {
-        return isset($this->FilterAverageCpc) ? $this->FilterAverageCpc : null;
-    }
-
-    /**
-     * Sets FilterAverageCpc.
-     *
-     * @param int|null $value
-     * @return $this
-     */
-    public function setFilterAverageCpc($value = null)
-    {
-        $this->FilterAverageCpc = $value;
 
         return $this;
     }

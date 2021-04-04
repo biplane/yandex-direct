@@ -26,7 +26,7 @@ class GetTurboPagesRequest extends GetRequestGeneral
     /**
      * Gets SelectionCriteria.
      *
-     * @return IdsCriteria|null
+     * @return TurboPagesSelectionCriteria|null
      */
     public function getSelectionCriteria()
     {
@@ -36,10 +36,10 @@ class GetTurboPagesRequest extends GetRequestGeneral
     /**
      * Sets SelectionCriteria.
      *
-     * @param IdsCriteria|null $value
+     * @param TurboPagesSelectionCriteria|null $value
      * @return $this
      */
-    public function setSelectionCriteria(IdsCriteria $value = null)
+    public function setSelectionCriteria(TurboPagesSelectionCriteria $value = null)
     {
         $this->SelectionCriteria = $value;
 

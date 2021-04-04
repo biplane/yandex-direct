@@ -5,21 +5,18 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 /**
  * Auto-generated code.
  */
-class StrategyAverageCpaPerCampaignAdd
+class StrategyPayForConversionPerCampaignAdd
 {
 
-    protected $AverageCpa = null;
+    protected $Cpa = null;
 
     protected $GoalId = null;
 
 //    Can be omit.
 //    protected $WeeklySpendLimit = null;
 
-//    Can be omit.
-//    protected $BidCeiling = null;
-
     /**
-     * Creates a new instance of StrategyAverageCpaPerCampaignAdd.
+     * Creates a new instance of StrategyPayForConversionPerCampaignAdd.
      *
      * @return self
      */
@@ -29,24 +26,24 @@ class StrategyAverageCpaPerCampaignAdd
     }
 
     /**
-     * Gets AverageCpa.
+     * Gets Cpa.
      *
      * @return int
      */
-    public function getAverageCpa()
+    public function getCpa()
     {
-        return $this->AverageCpa;
+        return $this->Cpa;
     }
 
     /**
-     * Sets AverageCpa.
+     * Sets Cpa.
      *
      * @param int $value
      * @return $this
      */
-    public function setAverageCpa($value)
+    public function setCpa($value)
     {
-        $this->AverageCpa = $value;
+        $this->Cpa = $value;
 
         return $this;
     }
@@ -93,29 +90,6 @@ class StrategyAverageCpaPerCampaignAdd
     public function setWeeklySpendLimit($value = null)
     {
         $this->WeeklySpendLimit = $value;
-
-        return $this;
-    }
-
-    /**
-     * Gets BidCeiling.
-     *
-     * @return int|null
-     */
-    public function getBidCeiling()
-    {
-        return isset($this->BidCeiling) ? $this->BidCeiling : null;
-    }
-
-    /**
-     * Sets BidCeiling.
-     *
-     * @param int|null $value
-     * @return $this
-     */
-    public function setBidCeiling($value = null)
-    {
-        $this->BidCeiling = $value;
 
         return $this;
     }

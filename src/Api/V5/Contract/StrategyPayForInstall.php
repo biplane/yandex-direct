@@ -5,20 +5,17 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 /**
  * Auto-generated code.
  */
-class StrategyAverageCpcPerFilterAdd
+class StrategyPayForInstall
 {
 
 //    Can be omit.
-//    protected $FilterAverageCpc = null;
+//    protected $AverageCpi = null;
 
 //    Can be omit.
 //    protected $WeeklySpendLimit = null;
 
-//    Can be omit.
-//    protected $BidCeiling = null;
-
     /**
-     * Creates a new instance of StrategyAverageCpcPerFilterAdd.
+     * Creates a new instance of StrategyPayForInstall.
      *
      * @return self
      */
@@ -28,24 +25,24 @@ class StrategyAverageCpcPerFilterAdd
     }
 
     /**
-     * Gets FilterAverageCpc.
+     * Gets AverageCpi.
      *
      * @return int|null
      */
-    public function getFilterAverageCpc()
+    public function getAverageCpi()
     {
-        return isset($this->FilterAverageCpc) ? $this->FilterAverageCpc : null;
+        return isset($this->AverageCpi) ? $this->AverageCpi : null;
     }
 
     /**
-     * Sets FilterAverageCpc.
+     * Sets AverageCpi.
      *
      * @param int|null $value
      * @return $this
      */
-    public function setFilterAverageCpc($value = null)
+    public function setAverageCpi($value = null)
     {
-        $this->FilterAverageCpc = $value;
+        $this->AverageCpi = $value;
 
         return $this;
     }
@@ -69,29 +66,6 @@ class StrategyAverageCpcPerFilterAdd
     public function setWeeklySpendLimit($value = null)
     {
         $this->WeeklySpendLimit = $value;
-
-        return $this;
-    }
-
-    /**
-     * Gets BidCeiling.
-     *
-     * @return int|null
-     */
-    public function getBidCeiling()
-    {
-        return isset($this->BidCeiling) ? $this->BidCeiling : null;
-    }
-
-    /**
-     * Sets BidCeiling.
-     *
-     * @param int|null $value
-     * @return $this
-     */
-    public function setBidCeiling($value = null)
-    {
-        $this->BidCeiling = $value;
 
         return $this;
     }

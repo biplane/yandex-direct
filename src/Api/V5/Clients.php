@@ -68,6 +68,7 @@ class Clients extends ApiSoapClientV5
             'ClientSettingUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\ClientSettingUpdateItem',
             'GrantItem' => 'Biplane\YandexDirect\Api\V5\Contract\GrantItem',
             'GrantGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\GrantGetItem',
+            'BonusesItem' => 'Biplane\YandexDirect\Api\V5\Contract\BonusesItem',
             'Representative' => 'Biplane\YandexDirect\Api\V5\Contract\Representative',
             'ClientBaseItem' => 'Biplane\YandexDirect\Api\V5\Contract\ClientBaseItem',
             'ClientGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\ClientGetItem',

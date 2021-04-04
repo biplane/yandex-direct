@@ -37,6 +37,9 @@ class GetAdsRequest extends GetRequestGeneral
 //    protected $MobileAppAdBuilderAdFieldNames = null;
 
 //    Can be omit.
+//    protected $MobileAppCpcVideoAdBuilderAdFieldNames = null;
+
+//    Can be omit.
 //    protected $CpmBannerAdBuilderAdFieldNames = null;
 
 //    Can be omit.
@@ -302,6 +305,31 @@ class GetAdsRequest extends GetRequestGeneral
     public function setMobileAppAdBuilderAdFieldNames(array $value = null)
     {
         $this->MobileAppAdBuilderAdFieldNames = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets MobileAppCpcVideoAdBuilderAdFieldNames.
+     *
+     * @return string[]|null
+     * @see MobileAppCpcVideoAdBuilderAdFieldEnum
+     */
+    public function getMobileAppCpcVideoAdBuilderAdFieldNames()
+    {
+        return isset($this->MobileAppCpcVideoAdBuilderAdFieldNames) ? $this->MobileAppCpcVideoAdBuilderAdFieldNames : null;
+    }
+
+    /**
+     * Sets MobileAppCpcVideoAdBuilderAdFieldNames.
+     *
+     * @param string[]|null $value
+     * @return $this
+     * @see MobileAppCpcVideoAdBuilderAdFieldEnum
+     */
+    public function setMobileAppCpcVideoAdBuilderAdFieldNames(array $value = null)
+    {
+        $this->MobileAppCpcVideoAdBuilderAdFieldNames = $value;
 
         return $this;
     }

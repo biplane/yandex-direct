@@ -23,6 +23,9 @@ class MobileAppCampaignStrategyAddBase
 //    Can be omit.
 //    protected $WeeklyClickPackage = null;
 
+//    Can be omit.
+//    protected $PayForInstall = null;
+
     /**
      * Creates a new instance of MobileAppCampaignStrategyAddBase.
      *
@@ -144,6 +147,29 @@ class MobileAppCampaignStrategyAddBase
     public function setWeeklyClickPackage(StrategyWeeklyClickPackageAdd $value = null)
     {
         $this->WeeklyClickPackage = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets PayForInstall.
+     *
+     * @return StrategyPayForInstallAdd|null
+     */
+    public function getPayForInstall()
+    {
+        return isset($this->PayForInstall) ? $this->PayForInstall : null;
+    }
+
+    /**
+     * Sets PayForInstall.
+     *
+     * @param StrategyPayForInstallAdd|null $value
+     * @return $this
+     */
+    public function setPayForInstall(StrategyPayForInstallAdd $value = null)
+    {
+        $this->PayForInstall = $value;
 
         return $this;
     }

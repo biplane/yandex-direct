@@ -52,6 +52,7 @@ class TurboPages extends ApiSoapClientV5
             'ExtensionModeration' => 'Biplane\YandexDirect\Api\V5\Contract\ExtensionModeration',
             'SortOrderEnum' => 'Biplane\YandexDirect\Api\V5\Contract\SortOrderEnum',
             'TurboPageFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\TurboPageFieldEnum',
+            'TurboPagesSelectionCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\TurboPagesSelectionCriteria',
             'TurboPageGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\TurboPageGetItem',
             'GetRequest' => 'Biplane\YandexDirect\Api\V5\Contract\GetTurboPagesRequest',
             'GetResponse' => 'Biplane\YandexDirect\Api\V5\Contract\GetTurboPagesResponse',

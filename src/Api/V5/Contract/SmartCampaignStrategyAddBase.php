@@ -18,6 +18,9 @@ class SmartCampaignStrategyAddBase
 //    protected $AverageCpaPerCampaign = null;
 
 //    Can be omit.
+//    protected $PayForConversionPerCampaign = null;
+
+//    Can be omit.
 //    protected $AverageCpaPerFilter = null;
 
 //    Can be omit.
@@ -98,6 +101,29 @@ class SmartCampaignStrategyAddBase
     public function setAverageCpaPerCampaign(StrategyAverageCpaPerCampaignAdd $value = null)
     {
         $this->AverageCpaPerCampaign = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets PayForConversionPerCampaign.
+     *
+     * @return StrategyPayForConversionPerCampaignAdd|null
+     */
+    public function getPayForConversionPerCampaign()
+    {
+        return isset($this->PayForConversionPerCampaign) ? $this->PayForConversionPerCampaign : null;
+    }
+
+    /**
+     * Sets PayForConversionPerCampaign.
+     *
+     * @param StrategyPayForConversionPerCampaignAdd|null $value
+     * @return $this
+     */
+    public function setPayForConversionPerCampaign(StrategyPayForConversionPerCampaignAdd $value = null)
+    {
+        $this->PayForConversionPerCampaign = $value;
 
         return $this;
     }

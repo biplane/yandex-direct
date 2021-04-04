@@ -44,6 +44,12 @@ class TextAdGet extends TextAdGetBase
 //    Can be omit.
 //    protected $TurboPageModeration = null;
 
+//    Can be omit.
+//    protected $BusinessId = null;
+
+//    Can be omit.
+//    protected $PreferVCardOverBusiness = null;
+
     /**
      * Creates a new instance of TextAdGet.
      *
@@ -328,6 +334,54 @@ class TextAdGet extends TextAdGetBase
     public function setTurboPageModeration(ExtensionModeration $value = null)
     {
         $this->TurboPageModeration = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets BusinessId.
+     *
+     * @return int|null
+     */
+    public function getBusinessId()
+    {
+        return isset($this->BusinessId) ? $this->BusinessId : null;
+    }
+
+    /**
+     * Sets BusinessId.
+     *
+     * @param int|null $value
+     * @return $this
+     */
+    public function setBusinessId($value = null)
+    {
+        $this->BusinessId = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets PreferVCardOverBusiness.
+     *
+     * @return string|null
+     * @see YesNoEnum
+     */
+    public function getPreferVCardOverBusiness()
+    {
+        return isset($this->PreferVCardOverBusiness) ? $this->PreferVCardOverBusiness : null;
+    }
+
+    /**
+     * Sets PreferVCardOverBusiness.
+     *
+     * @param string|null $value
+     * @return $this
+     * @see YesNoEnum
+     */
+    public function setPreferVCardOverBusiness($value = null)
+    {
+        $this->PreferVCardOverBusiness = $value;
 
         return $this;
     }
