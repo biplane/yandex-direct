@@ -56,7 +56,7 @@ class ApiSoapClientV5 extends ApiSoapClient
             return $m[1];
         }
 
-        throw new \LogicException('You can get the identifier of request only after call a method of API.');
+        return '';
     }
 
     /**
