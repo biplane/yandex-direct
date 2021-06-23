@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 5.0.0-beta2 [commit logs](https://github.com/biplane/yandex-direct/compare/5.0.0-beta1...5.0.0-beta2)
+
 ### Added
 
 * В `Biplane\YandexDirect\Api\V5\Report\FieldEnum` добавлены методы,
