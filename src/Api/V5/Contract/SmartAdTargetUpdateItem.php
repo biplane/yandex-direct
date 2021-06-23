@@ -25,6 +25,12 @@ class SmartAdTargetUpdateItem
 //    Can be omit.
 //    protected $Audience = null;
 
+//    Can be omit.
+//    protected $Conditions = null;
+
+//    Can be omit.
+//    protected $AvailableItemsOnly = null;
+
     /**
      * Creates a new instance of SmartAdTargetUpdateItem.
      *
@@ -173,6 +179,54 @@ class SmartAdTargetUpdateItem
     public function setAudience($value = null)
     {
         $this->Audience = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets Conditions.
+     *
+     * @return ConditionsArray|null
+     */
+    public function getConditions()
+    {
+        return isset($this->Conditions) ? $this->Conditions : null;
+    }
+
+    /**
+     * Sets Conditions.
+     *
+     * @param ConditionsArray|null $value
+     * @return $this
+     */
+    public function setConditions(ConditionsArray $value = null)
+    {
+        $this->Conditions = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets AvailableItemsOnly.
+     *
+     * @return string|null
+     * @see YesNoEnum
+     */
+    public function getAvailableItemsOnly()
+    {
+        return isset($this->AvailableItemsOnly) ? $this->AvailableItemsOnly : null;
+    }
+
+    /**
+     * Sets AvailableItemsOnly.
+     *
+     * @param string|null $value
+     * @return $this
+     * @see YesNoEnum
+     */
+    public function setAvailableItemsOnly($value = null)
+    {
+        $this->AvailableItemsOnly = $value;
 
         return $this;
     }

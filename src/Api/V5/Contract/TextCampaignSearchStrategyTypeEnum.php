@@ -30,6 +30,8 @@ class TextCampaignSearchStrategyTypeEnum
 
     const AVERAGE_ROI = 'AVERAGE_ROI';
 
+    const AVERAGE_CRR = 'AVERAGE_CRR';
+
 
 }
 

@@ -29,6 +29,9 @@ class DynamicTextCampaignStrategyBase
 //    Can be omit.
 //    protected $AverageRoi = null;
 
+//    Can be omit.
+//    protected $AverageCrr = null;
+
     /**
      * Creates a new instance of DynamicTextCampaignStrategyBase.
      *
@@ -196,6 +199,29 @@ class DynamicTextCampaignStrategyBase
     public function setAverageRoi(StrategyAverageRoi $value = null)
     {
         $this->AverageRoi = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets AverageCrr.
+     *
+     * @return StrategyAverageCrr|null
+     */
+    public function getAverageCrr()
+    {
+        return isset($this->AverageCrr) ? $this->AverageCrr : null;
+    }
+
+    /**
+     * Sets AverageCrr.
+     *
+     * @param StrategyAverageCrr|null $value
+     * @return $this
+     */
+    public function setAverageCrr(StrategyAverageCrr $value = null)
+    {
+        $this->AverageCrr = $value;
 
         return $this;
     }

@@ -16,6 +16,8 @@ class FeedFieldEnum
 
     const SOURCE_TYPE = 'SourceType';
 
+    const FILTER_SCHEMA = 'FilterSchema';
+
     const UPDATED_AT = 'UpdatedAt';
 
     const CAMPAIGN_IDS = 'CampaignIds';

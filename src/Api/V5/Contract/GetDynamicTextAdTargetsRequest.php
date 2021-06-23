@@ -25,7 +25,7 @@ class GetDynamicTextAdTargetsRequest extends GetRequestGeneral
     /**
      * Gets SelectionCriteria.
      *
-     * @return WebpagesSelectionCriteria
+     * @return AdTargetsSelectionCriteria
      */
     public function getSelectionCriteria()
     {
@@ -35,10 +35,10 @@ class GetDynamicTextAdTargetsRequest extends GetRequestGeneral
     /**
      * Sets SelectionCriteria.
      *
-     * @param WebpagesSelectionCriteria $value
+     * @param AdTargetsSelectionCriteria $value
      * @return $this
      */
-    public function setSelectionCriteria(WebpagesSelectionCriteria $value)
+    public function setSelectionCriteria(AdTargetsSelectionCriteria $value)
     {
         $this->SelectionCriteria = $value;
 

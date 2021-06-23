@@ -21,6 +21,9 @@ class FeedGetItem
 //    protected $SourceType = null;
 
 //    Can be omit.
+//    protected $FilterSchema = null;
+
+//    Can be omit.
 //    protected $UpdatedAt = null;
 
 //    Can be omit.
@@ -140,6 +143,29 @@ class FeedGetItem
     public function setSourceType($value = null)
     {
         $this->SourceType = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets FilterSchema.
+     *
+     * @return string|null
+     */
+    public function getFilterSchema()
+    {
+        return isset($this->FilterSchema) ? $this->FilterSchema : null;
+    }
+
+    /**
+     * Sets FilterSchema.
+     *
+     * @param string|null $value
+     * @return $this
+     */
+    public function setFilterSchema($value = null)
+    {
+        $this->FilterSchema = $value;
 
         return $this;
     }

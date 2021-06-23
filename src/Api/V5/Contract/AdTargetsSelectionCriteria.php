@@ -5,7 +5,7 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 /**
  * Auto-generated code.
  */
-class WebpagesSelectionCriteria
+class AdTargetsSelectionCriteria
 {
 
 //    Can be omit.
@@ -21,7 +21,7 @@ class WebpagesSelectionCriteria
 //    protected $States = null;
 
     /**
-     * Creates a new instance of WebpagesSelectionCriteria.
+     * Creates a new instance of AdTargetsSelectionCriteria.
      *
      * @return self
      */
@@ -103,7 +103,7 @@ class WebpagesSelectionCriteria
      * Gets States.
      *
      * @return string[]|null
-     * @see WebpageStateSelectionEnum
+     * @see AdTargetStateSelectionEnum
      */
     public function getStates()
     {
@@ -115,7 +115,7 @@ class WebpagesSelectionCriteria
      *
      * @param string[]|null $value
      * @return $this
-     * @see WebpageStateSelectionEnum
+     * @see AdTargetStateSelectionEnum
      */
     public function setStates(array $value = null)
     {

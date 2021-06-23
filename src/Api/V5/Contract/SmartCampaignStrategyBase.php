@@ -21,10 +21,16 @@ class SmartCampaignStrategyBase
 //    protected $PayForConversionPerCampaign = null;
 
 //    Can be omit.
+//    protected $PayForConversionPerFilter = null;
+
+//    Can be omit.
 //    protected $AverageCpaPerFilter = null;
 
 //    Can be omit.
 //    protected $AverageRoi = null;
+
+//    Can be omit.
+//    protected $AverageCrr = null;
 
     /**
      * Creates a new instance of SmartCampaignStrategyBase.
@@ -129,6 +135,29 @@ class SmartCampaignStrategyBase
     }
 
     /**
+     * Gets PayForConversionPerFilter.
+     *
+     * @return StrategyPayForConversionPerFilter|null
+     */
+    public function getPayForConversionPerFilter()
+    {
+        return isset($this->PayForConversionPerFilter) ? $this->PayForConversionPerFilter : null;
+    }
+
+    /**
+     * Sets PayForConversionPerFilter.
+     *
+     * @param StrategyPayForConversionPerFilter|null $value
+     * @return $this
+     */
+    public function setPayForConversionPerFilter(StrategyPayForConversionPerFilter $value = null)
+    {
+        $this->PayForConversionPerFilter = $value;
+
+        return $this;
+    }
+
+    /**
      * Gets AverageCpaPerFilter.
      *
      * @return StrategyAverageCpaPerFilter|null
@@ -170,6 +199,29 @@ class SmartCampaignStrategyBase
     public function setAverageRoi(StrategyAverageRoi $value = null)
     {
         $this->AverageRoi = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets AverageCrr.
+     *
+     * @return StrategyAverageCrr|null
+     */
+    public function getAverageCrr()
+    {
+        return isset($this->AverageCrr) ? $this->AverageCrr : null;
+    }
+
+    /**
+     * Sets AverageCrr.
+     *
+     * @param StrategyAverageCrr|null $value
+     * @return $this
+     */
+    public function setAverageCrr(StrategyAverageCrr $value = null)
+    {
+        $this->AverageCrr = $value;
 
         return $this;
     }
