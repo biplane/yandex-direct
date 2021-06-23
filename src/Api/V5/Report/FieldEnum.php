@@ -19,6 +19,7 @@ final class FieldEnum
     const AVG_CLICK_POSITION = 'AvgClickPosition';
     const AVG_CPC = 'AvgCpc';
     const AVG_CPM = 'AvgCpm';
+    const AVG_EFFECTIVE_BID = 'AvgEffectiveBid';
     const AVG_IMPRESSION_FREQUENCY = 'AvgImpressionFrequency';
     const AVG_IMPRESSION_POSITION = 'AvgImpressionPosition';
     const AVG_PAGEVIEWS = 'AvgPageviews';
@@ -44,14 +45,12 @@ final class FieldEnum
     const CTR = 'Ctr';
     const DATE = 'Date';
     const DEVICE = 'Device';
-    const DYNAMIC_TEXT_AD_TARGET_ID = 'DynamicTextAdTargetId';
     const EXTERNAL_NETWORK_NAME = 'ExternalNetworkName';
     const GENDER = 'Gender';
     const GOALS_ROI = 'GoalsRoi';
     const IMPRESSION_SHARE = 'ImpressionShare';
     const IMPRESSION_REACH = 'ImpressionReach';
     const IMPRESSIONS = 'Impressions';
-    const KEYWORD = 'Keyword';
     const LOCATION_OF_PRESENCE_ID = 'LocationOfPresenceId';
     const LOCATION_OF_PRESENCE_NAME = 'LocationOfPresenceName';
     const MATCH_TYPE = 'MatchType';
@@ -59,18 +58,67 @@ final class FieldEnum
     const MOBILE_PLATFORM = 'MobilePlatform';
     const MONTH = 'Month';
     const PLACEMENT = 'Placement';
+    const PROFIT = 'Profit';
     const QUARTER = 'Quarter';
     const QUERY = 'Query';
     const REVENUE = 'Revenue';
     const RL_ADJUSTMENT_ID = 'RlAdjustmentId';
     const SESSIONS = 'Sessions';
     const SLOT = 'Slot';
-    const SMART_BANNER_FILTER_ID = 'SmartBannerFilterId';
     const TARGETING_LOCATION_ID = 'TargetingLocationId';
     const TARGETING_LOCATION_NAME = 'TargetingLocationName';
     const WEEK = 'Week';
     const WEIGHTED_CTR = 'WeightedCtr';
     const WEIGHTED_IMPRESSIONS = 'WeightedImpressions';
     const YEAR = 'Year';
-    const PROFIT = 'Profit';
+
+    private const ATTRIBUTION_MODELS = ['FC', 'LC', 'LSC', 'LYDC'];
+
+    public static function generateConversionRateFieldName(int $goalId, string $attributionModel): string
+    {
+        self::assertAttributionModel($attributionModel);
+
+        return sprintf('ConversionRate_%d_%s', $goalId, $attributionModel);
+    }
+
+    public static function generateConversionsFieldName(int $goalId, string $attributionModel): string
+    {
+        self::assertAttributionModel($attributionModel);
+
+        return sprintf('Conversions_%d_%s', $goalId, $attributionModel);
+    }
+
+    public static function generateCostPerConversionFieldName(int $goalId, string $attributionModel): string
+    {
+        self::assertAttributionModel($attributionModel);
+
+        return sprintf('CostPerConversion_%d_%s', $goalId, $attributionModel);
+    }
+
+    public static function generateGoalsRoiFieldName(int $goalId, string $attributionModel): string
+    {
+        self::assertAttributionModel($attributionModel);
+
+        return sprintf('GoalsRoi_%d_%s', $goalId, $attributionModel);
+    }
+
+    public static function generateRevenueFieldName(int $goalId, string $attributionModel): string
+    {
+        self::assertAttributionModel($attributionModel);
+
+        return sprintf('Revenue_%d_%s', $goalId, $attributionModel);
+    }
+
+    private static function assertAttributionModel(string $value): void
+    {
+        if (in_array($value, self::ATTRIBUTION_MODELS, true)) {
+            return;
+        }
+
+        throw new \InvalidArgumentException(sprintf(
+            'Attribution model must be one of the following values: %s. Got: %s',
+            implode(', ', self::ATTRIBUTION_MODELS),
+            $value
+        ));
+    }
 }

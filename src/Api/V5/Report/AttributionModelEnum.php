@@ -12,4 +12,5 @@ final class AttributionModelEnum
     const FC = 'FC';
     const LC = 'LC';
     const LSC = 'LSC';
+    const LYDC = 'LYDC';
 }
