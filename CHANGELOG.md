@@ -2,6 +2,18 @@
 
 ## Unreleased
 
+### Removed
+
+* Из `Biplane\YandexDirect\Api\V5\Report\FieldEnum` удалены следующие методы:
+
+    * `generateConversionRateFieldName(int $goalId, string $attributionModel): string`
+    * `generateConversionsFieldName(int $goalId, string $attributionModel): string`
+    * `generateCostPerConversionFieldName(int $goalId, string $attributionModel): string`
+    * `generateGoalsRoiFieldName(int $goalId, string $attributionModel): string`
+    * `generateRevenueFieldName(int $goalId, string $attributionModel): string`
+
+  В них нет необходимости, не используются при сборке запроса на новый отчет.
+
 ## 5.0.0-beta2 [commit logs](https://github.com/biplane/yandex-direct/compare/5.0.0-beta1...5.0.0-beta2)
 
 ### Added
@@ -9,11 +21,11 @@
 * В `Biplane\YandexDirect\Api\V5\Report\FieldEnum` добавлены методы,
   которые позволяют сгенерировать поля для отчета, содержащие переменные.
 
-  * `generateConversionRateFieldName(int $goalId, string $attributionModel): string`
-  * `generateConversionsFieldName(int $goalId, string $attributionModel): string`
-  * `generateCostPerConversionFieldName(int $goalId, string $attributionModel): string`
-  * `generateGoalsRoiFieldName(int $goalId, string $attributionModel): string`
-  * `generateRevenueFieldName(int $goalId, string $attributionModel): string`
+    * `generateConversionRateFieldName(int $goalId, string $attributionModel): string`
+    * `generateConversionsFieldName(int $goalId, string $attributionModel): string`
+    * `generateCostPerConversionFieldName(int $goalId, string $attributionModel): string`
+    * `generateGoalsRoiFieldName(int $goalId, string $attributionModel): string`
+    * `generateRevenueFieldName(int $goalId, string $attributionModel): string`
 
 ### Changed
 
