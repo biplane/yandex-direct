@@ -2,6 +2,27 @@
 
 ## Unreleased
 
+### Added
+
+* В `Biplane\YandexDirect\Api\V5\Report\FieldEnum` добавлены методы,
+  которые позволяют сгенерировать поля для отчета, содержащие переменные.
+
+  * `generateConversionRateFieldName(int $goalId, string $attributionModel): string`
+  * `generateConversionsFieldName(int $goalId, string $attributionModel): string`
+  * `generateCostPerConversionFieldName(int $goalId, string $attributionModel): string`
+  * `generateGoalsRoiFieldName(int $goalId, string $attributionModel): string`
+  * `generateRevenueFieldName(int $goalId, string $attributionModel): string`
+
+### Changed
+
+* В `Biplane\YandexDirect\Api\V5\Report\AttributionModelEnum` и `Biplane\YandexDirect\Api\V5\Report\FieldEnum`
+  обновлены константы, добавлены недостающие и некоторые удалены, для полного соответствия
+  спецификации сервиса Report.
+* Обновлены DTO и сервисы для совместимости с последними изменениями в API,
+  включая изменения от 2021-06-02.
+* Метод `ApiSoapClientV5::getRequestId()` теперь не выбрасывает исключение,
+  когда HTTP-ответ не содержит заголовок `RequestId`. Вместо этого будет возвращена пустая строка.
+
 ## 5.0.0-beta1
 
 ### Added
