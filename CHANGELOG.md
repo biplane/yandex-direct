@@ -6,11 +6,11 @@
 
 * Из `Biplane\YandexDirect\Api\V5\Report\FieldEnum` удалены следующие методы:
 
-    * `generateConversionRateFieldName(int $goalId, string $attributionModel): string`
-    * `generateConversionsFieldName(int $goalId, string $attributionModel): string`
-    * `generateCostPerConversionFieldName(int $goalId, string $attributionModel): string`
-    * `generateGoalsRoiFieldName(int $goalId, string $attributionModel): string`
-    * `generateRevenueFieldName(int $goalId, string $attributionModel): string`
+    * `generateConversionRateFieldName()`
+    * `generateConversionsFieldName()`
+    * `generateCostPerConversionFieldName()`
+    * `generateGoalsRoiFieldName()`
+    * `generateRevenueFieldName()`
 
   В них нет необходимости, не используются при сборке запроса на новый отчет.
 
