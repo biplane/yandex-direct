@@ -53,7 +53,7 @@ class ApiSoapClientV4 extends ApiSoapClient
      */
     public function __doRequest($request, $location, $action, $version, $oneWay = 0)
     {
-        $this->requestId = substr(str_replace(' ', '', microtime()), 2);
+        $this->requestId = (string)(microtime(true) * 1000000);
 
         return fixNamespace(
             parent::__doRequest($request, $location, $action, $version, $oneWay),
