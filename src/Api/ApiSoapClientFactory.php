@@ -6,17 +6,21 @@ namespace Biplane\YandexDirect\Api;
 
 use Biplane\YandexDirect\Api\Finance\TransactionNumberGeneratorInterface;
 use Biplane\YandexDirect\Config;
+use Biplane\YandexDirect\Runner\Runner;
 use ReflectionClass;
 
 final class ApiSoapClientFactory
 {
     private $soapCallTimeout;
     private $transactionNumberGenerator;
+    private $runner;
 
     public function __construct(
+        ?Runner $runner = null,
         ?TransactionNumberGeneratorInterface $transactionNumberGenerator = null,
         ?int $soapCallTimeout = null
     ) {
+        $this->runner = $runner ?? Runner::default();
         $this->transactionNumberGenerator = $transactionNumberGenerator;
         $this->soapCallTimeout = $soapCallTimeout;
     }
@@ -45,6 +49,7 @@ final class ApiSoapClientFactory
         );
 
         $soapClient = $this->createInstance($serviceClass, $config, $options);
+        $soapClient->setRunner($this->runner);
 
         if ($this->soapCallTimeout > 0) {
             $soapClient->setSoapCallTimeout($this->soapCallTimeout);
@@ -68,7 +73,9 @@ final class ApiSoapClientFactory
     {
         $reflection = new ReflectionClass($serviceClass);
 
-        return $reflection->newInstance($config, $options);
+        return $this->runner->run(function () use ($reflection, $config, $options): ApiSoapClient {
+            return $reflection->newInstance($config, $options);
+        });
     }
 
     private function extendOptions(array $options, Config $config): array

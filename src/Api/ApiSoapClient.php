@@ -7,10 +7,14 @@ namespace Biplane\YandexDirect\Api;
 use Biplane\YandexDirect\ClientInterface;
 use Biplane\YandexDirect\Config;
 use Biplane\YandexDirect\Event\EventEmitter;
+use Biplane\YandexDirect\Runner\Runner;
+use LogicException;
+use SoapClient;
 use SoapFault;
+use SoapHeader;
 use Throwable;
 
-abstract class ApiSoapClient extends \SoapClient implements ClientInterface
+abstract class ApiSoapClient extends SoapClient implements ClientInterface
 {
     /**
      * @var Config
@@ -26,6 +30,11 @@ abstract class ApiSoapClient extends \SoapClient implements ClientInterface
      * @var EventEmitter|null
      */
     private $eventEmitter;
+
+    /**
+     * @var Runner|null
+     */
+    private $runner = null;
 
     /**
      * @param array<string, mixed> $options
@@ -65,6 +74,16 @@ abstract class ApiSoapClient extends \SoapClient implements ClientInterface
         $this->eventEmitter = $emitter;
     }
 
+    public function getRunner(): ?Runner
+    {
+        return $this->runner;
+    }
+
+    public function setRunner(Runner $runner): void
+    {
+        $this->runner = $runner;
+    }
+
     /**
      * {@inheritdoc}
      */
@@ -84,41 +103,40 @@ abstract class ApiSoapClient extends \SoapClient implements ClientInterface
     /**
      * {@inheritDoc}
      */
-    public function __soapCall(
-        $function_name,
-        $arguments,
-        $options = null,
-        $input_headers = null,
-        &$output_headers = null
-    ) {
+    public function __soapCall($name, $args, $options = null, $inputHeaders = null, &$outputHeaders = null)
+    {
         if ($this->eventEmitter !== null) {
-            $this->eventEmitter->emitBeforeRequestEvent($this, $function_name, $arguments);
+            $this->eventEmitter->emitBeforeRequestEvent($this, $name, $args);
         }
 
         try {
             ini_set('default_socket_timeout', (string)$this->soapCallTimeout);
 
-            $response = parent::__soapCall(
-                $function_name,
-                $arguments,
+            $response = ($this->runner ?? Runner::default())->run(function () use (
+                $name,
+                $args,
                 $options,
-                $input_headers,
-                $output_headers
-            );
-        } catch (SoapFault $fault) {
-            $exception = $this->handleSoapFault($fault) ?? $fault;
-
+                $inputHeaders,
+                &$outputHeaders
+            ) {
+                try {
+                    return parent::__soapCall($name, $args, $options, $inputHeaders, $outputHeaders);
+                } catch (SoapFault $fault) {
+                    throw $this->handleSoapFault($fault) ?? $fault;
+                }
+            });
+        } catch (Throwable $e) {
             if ($this->eventEmitter !== null) {
-                $this->eventEmitter->emitFailRequestEvent($this, $function_name, $arguments, $exception);
+                $this->eventEmitter->emitFailRequestEvent($this, $name, $args, $e);
             }
 
-            throw $exception;
+            throw $e;
         } finally {
             ini_restore('default_socket_timeout');
         }
 
         if ($this->eventEmitter !== null) {
-            $this->eventEmitter->emitAfterRequestEvent($this, $function_name, $arguments, $response);
+            $this->eventEmitter->emitAfterRequestEvent($this, $name, $args, $response);
         }
 
         return $response;
