@@ -30,6 +30,9 @@ class AdAddItem extends AdAddItemBase
 //    protected $MobileAppAdBuilderAd = null;
 
 //    Can be omit.
+//    protected $MobileAppCpcVideoAdBuilderAd = null;
+
+//    Can be omit.
 //    protected $CpmBannerAdBuilderAd = null;
 
 //    Can be omit.
@@ -208,6 +211,29 @@ class AdAddItem extends AdAddItemBase
     public function setMobileAppAdBuilderAd(MobileAppAdBuilderAdAdd $value = null)
     {
         $this->MobileAppAdBuilderAd = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets MobileAppCpcVideoAdBuilderAd.
+     *
+     * @return MobileAppCpcVideoAdBuilderAdAdd|null
+     */
+    public function getMobileAppCpcVideoAdBuilderAd()
+    {
+        return isset($this->MobileAppCpcVideoAdBuilderAd) ? $this->MobileAppCpcVideoAdBuilderAd : null;
+    }
+
+    /**
+     * Sets MobileAppCpcVideoAdBuilderAd.
+     *
+     * @param MobileAppCpcVideoAdBuilderAdAdd|null $value
+     * @return $this
+     */
+    public function setMobileAppCpcVideoAdBuilderAd(MobileAppCpcVideoAdBuilderAdAdd $value = null)
+    {
+        $this->MobileAppCpcVideoAdBuilderAd = $value;
 
         return $this;
     }

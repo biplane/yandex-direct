@@ -25,7 +25,7 @@ class GetSmartAdTargetsRequest extends GetRequestGeneral
     /**
      * Gets SelectionCriteria.
      *
-     * @return SmartAdTargetsSelectionCriteria
+     * @return AdTargetsSelectionCriteria
      */
     public function getSelectionCriteria()
     {
@@ -35,10 +35,10 @@ class GetSmartAdTargetsRequest extends GetRequestGeneral
     /**
      * Sets SelectionCriteria.
      *
-     * @param SmartAdTargetsSelectionCriteria $value
+     * @param AdTargetsSelectionCriteria $value
      * @return $this
      */
-    public function setSelectionCriteria(SmartAdTargetsSelectionCriteria $value)
+    public function setSelectionCriteria(AdTargetsSelectionCriteria $value)
     {
         $this->SelectionCriteria = $value;
 

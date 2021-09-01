@@ -14,6 +14,9 @@ class MobileAppAdUpdate extends MobileAppAdBase
 //    Can be omit.
 //    protected $AgeLabel = null;
 
+//    Can be omit.
+//    protected $VideoExtension = null;
+
     /**
      * Creates a new instance of MobileAppAdUpdate.
      *
@@ -68,6 +71,29 @@ class MobileAppAdUpdate extends MobileAppAdBase
     public function setAgeLabel($value = null)
     {
         $this->AgeLabel = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets VideoExtension.
+     *
+     * @return VideoExtensionUpdateItem|null
+     */
+    public function getVideoExtension()
+    {
+        return isset($this->VideoExtension) ? $this->VideoExtension : null;
+    }
+
+    /**
+     * Sets VideoExtension.
+     *
+     * @param VideoExtensionUpdateItem|null $value
+     * @return $this
+     */
+    public function setVideoExtension(VideoExtensionUpdateItem $value = null)
+    {
+        $this->VideoExtension = $value;
 
         return $this;
     }

@@ -5,7 +5,7 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 /**
  * Auto-generated code.
  */
-class SmartAdTargetStateSelectionEnum
+class AdTargetStateSelectionEnum
 {
 
     const ON = 'ON';

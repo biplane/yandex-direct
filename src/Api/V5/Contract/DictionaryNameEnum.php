@@ -34,6 +34,8 @@ class DictionaryNameEnum
 
     const AUDIENCE_INTERESTS = 'AudienceInterests';
 
+    const FILTER_SCHEMAS = 'FilterSchemas';
+
 
 }
 

@@ -29,6 +29,12 @@ class TextCampaignStrategyBase
 //    Can be omit.
 //    protected $AverageRoi = null;
 
+//    Can be omit.
+//    protected $AverageCrr = null;
+
+//    Can be omit.
+//    protected $PayForConversionCrr = null;
+
     /**
      * Creates a new instance of TextCampaignStrategyBase.
      *
@@ -196,6 +202,52 @@ class TextCampaignStrategyBase
     public function setAverageRoi(StrategyAverageRoi $value = null)
     {
         $this->AverageRoi = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets AverageCrr.
+     *
+     * @return StrategyAverageCrr|null
+     */
+    public function getAverageCrr()
+    {
+        return isset($this->AverageCrr) ? $this->AverageCrr : null;
+    }
+
+    /**
+     * Sets AverageCrr.
+     *
+     * @param StrategyAverageCrr|null $value
+     * @return $this
+     */
+    public function setAverageCrr(StrategyAverageCrr $value = null)
+    {
+        $this->AverageCrr = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets PayForConversionCrr.
+     *
+     * @return StrategyPayForConversionCrr|null
+     */
+    public function getPayForConversionCrr()
+    {
+        return isset($this->PayForConversionCrr) ? $this->PayForConversionCrr : null;
+    }
+
+    /**
+     * Sets PayForConversionCrr.
+     *
+     * @param StrategyPayForConversionCrr|null $value
+     * @return $this
+     */
+    public function setPayForConversionCrr(StrategyPayForConversionCrr $value = null)
+    {
+        $this->PayForConversionCrr = $value;
 
         return $this;
     }

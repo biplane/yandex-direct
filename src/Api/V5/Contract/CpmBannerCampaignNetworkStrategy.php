@@ -22,6 +22,12 @@ class CpmBannerCampaignNetworkStrategy
 //    Can be omit.
 //    protected $CpDecreasedPriceForRepeatedImpressions = null;
 
+//    Can be omit.
+//    protected $WbAverageCpv = null;
+
+//    Can be omit.
+//    protected $CpAverageCpv = null;
+
     /**
      * Creates a new instance of CpmBannerCampaignNetworkStrategy.
      *
@@ -145,6 +151,52 @@ class CpmBannerCampaignNetworkStrategy
     public function setCpDecreasedPriceForRepeatedImpressions(StrategyCpDecreasedPriceForRepeatedImpressions $value = null)
     {
         $this->CpDecreasedPriceForRepeatedImpressions = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets WbAverageCpv.
+     *
+     * @return StrategyWbAverageCpv|null
+     */
+    public function getWbAverageCpv()
+    {
+        return isset($this->WbAverageCpv) ? $this->WbAverageCpv : null;
+    }
+
+    /**
+     * Sets WbAverageCpv.
+     *
+     * @param StrategyWbAverageCpv|null $value
+     * @return $this
+     */
+    public function setWbAverageCpv(StrategyWbAverageCpv $value = null)
+    {
+        $this->WbAverageCpv = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets CpAverageCpv.
+     *
+     * @return StrategyCpAverageCpv|null
+     */
+    public function getCpAverageCpv()
+    {
+        return isset($this->CpAverageCpv) ? $this->CpAverageCpv : null;
+    }
+
+    /**
+     * Sets CpAverageCpv.
+     *
+     * @param StrategyCpAverageCpv|null $value
+     * @return $this
+     */
+    public function setCpAverageCpv(StrategyCpAverageCpv $value = null)
+    {
+        $this->CpAverageCpv = $value;
 
         return $this;
     }

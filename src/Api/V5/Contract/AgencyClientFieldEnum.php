@@ -24,6 +24,8 @@ class AgencyClientFieldEnum
 
     const GRANTS = 'Grants';
 
+    const BONUSES = 'Bonuses';
+
     const LOGIN = 'Login';
 
     const NOTIFICATION = 'Notification';

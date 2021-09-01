@@ -30,6 +30,9 @@ class ClientGetItem extends ClientBaseItem
 //    protected $Grants = null;
 
 //    Can be omit.
+//    protected $Bonuses = null;
+
+//    Can be omit.
 //    protected $Login = null;
 
 //    Can be omit.
@@ -224,6 +227,29 @@ class ClientGetItem extends ClientBaseItem
     public function setGrants(array $value = null)
     {
         $this->Grants = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets Bonuses.
+     *
+     * @return BonusesItem|null
+     */
+    public function getBonuses()
+    {
+        return isset($this->Bonuses) ? $this->Bonuses : null;
+    }
+
+    /**
+     * Sets Bonuses.
+     *
+     * @param BonusesItem|null $value
+     * @return $this
+     */
+    public function setBonuses(BonusesItem $value = null)
+    {
+        $this->Bonuses = $value;
 
         return $this;
     }

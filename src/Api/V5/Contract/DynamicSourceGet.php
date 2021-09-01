@@ -12,6 +12,9 @@ class DynamicSourceGet
 //    protected $Source = null;
 
 //    Can be omit.
+//    protected $FeedId = null;
+
+//    Can be omit.
 //    protected $SourceType = null;
 
 //    Can be omit.
@@ -46,6 +49,29 @@ class DynamicSourceGet
     public function setSource($value = null)
     {
         $this->Source = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets FeedId.
+     *
+     * @return int|null
+     */
+    public function getFeedId()
+    {
+        return isset($this->FeedId) ? $this->FeedId : null;
+    }
+
+    /**
+     * Sets FeedId.
+     *
+     * @param int|null $value
+     * @return $this
+     */
+    public function setFeedId($value = null)
+    {
+        $this->FeedId = $value;
 
         return $this;
     }

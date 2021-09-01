@@ -21,10 +21,19 @@ class SmartCampaignStrategyAddBase
 //    protected $PayForConversionPerCampaign = null;
 
 //    Can be omit.
+//    protected $PayForConversionPerFilter = null;
+
+//    Can be omit.
 //    protected $AverageCpaPerFilter = null;
 
 //    Can be omit.
 //    protected $AverageRoi = null;
+
+//    Can be omit.
+//    protected $AverageCrr = null;
+
+//    Can be omit.
+//    protected $PayForConversionCrr = null;
 
     /**
      * Creates a new instance of SmartCampaignStrategyAddBase.
@@ -129,6 +138,29 @@ class SmartCampaignStrategyAddBase
     }
 
     /**
+     * Gets PayForConversionPerFilter.
+     *
+     * @return StrategyPayForConversionPerFilterAdd|null
+     */
+    public function getPayForConversionPerFilter()
+    {
+        return isset($this->PayForConversionPerFilter) ? $this->PayForConversionPerFilter : null;
+    }
+
+    /**
+     * Sets PayForConversionPerFilter.
+     *
+     * @param StrategyPayForConversionPerFilterAdd|null $value
+     * @return $this
+     */
+    public function setPayForConversionPerFilter(StrategyPayForConversionPerFilterAdd $value = null)
+    {
+        $this->PayForConversionPerFilter = $value;
+
+        return $this;
+    }
+
+    /**
      * Gets AverageCpaPerFilter.
      *
      * @return StrategyAverageCpaPerFilterAdd|null
@@ -170,6 +202,52 @@ class SmartCampaignStrategyAddBase
     public function setAverageRoi(StrategyAverageRoiAdd $value = null)
     {
         $this->AverageRoi = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets AverageCrr.
+     *
+     * @return StrategyAverageCrrAdd|null
+     */
+    public function getAverageCrr()
+    {
+        return isset($this->AverageCrr) ? $this->AverageCrr : null;
+    }
+
+    /**
+     * Sets AverageCrr.
+     *
+     * @param StrategyAverageCrrAdd|null $value
+     * @return $this
+     */
+    public function setAverageCrr(StrategyAverageCrrAdd $value = null)
+    {
+        $this->AverageCrr = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets PayForConversionCrr.
+     *
+     * @return StrategyPayForConversionCrrAdd|null
+     */
+    public function getPayForConversionCrr()
+    {
+        return isset($this->PayForConversionCrr) ? $this->PayForConversionCrr : null;
+    }
+
+    /**
+     * Sets PayForConversionCrr.
+     *
+     * @param StrategyPayForConversionCrrAdd|null $value
+     * @return $this
+     */
+    public function setPayForConversionCrr(StrategyPayForConversionCrrAdd $value = null)
+    {
+        $this->PayForConversionCrr = $value;
 
         return $this;
     }

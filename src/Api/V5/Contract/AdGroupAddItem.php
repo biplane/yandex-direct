@@ -30,6 +30,9 @@ class AdGroupAddItem
 //    protected $DynamicTextAdGroup = null;
 
 //    Can be omit.
+//    protected $DynamicTextFeedAdGroup = null;
+
+//    Can be omit.
 //    protected $CpmBannerKeywordsAdGroup = null;
 
 //    Can be omit.
@@ -231,6 +234,29 @@ class AdGroupAddItem
     public function setDynamicTextAdGroup(DynamicTextAdGroup $value = null)
     {
         $this->DynamicTextAdGroup = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets DynamicTextFeedAdGroup.
+     *
+     * @return DynamicTextFeedAdGroup|null
+     */
+    public function getDynamicTextFeedAdGroup()
+    {
+        return isset($this->DynamicTextFeedAdGroup) ? $this->DynamicTextFeedAdGroup : null;
+    }
+
+    /**
+     * Sets DynamicTextFeedAdGroup.
+     *
+     * @param DynamicTextFeedAdGroup|null $value
+     * @return $this
+     */
+    public function setDynamicTextFeedAdGroup(DynamicTextFeedAdGroup $value = null)
+    {
+        $this->DynamicTextFeedAdGroup = $value;
 
         return $this;
     }

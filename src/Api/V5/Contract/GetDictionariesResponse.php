@@ -47,6 +47,9 @@ class GetDictionariesResponse
 //    Can be omit.
 //    protected $AudienceInterests = null;
 
+//    Can be omit.
+//    protected $FilterSchemas = null;
+
     /**
      * Creates a new instance of GetDictionariesResponse.
      *
@@ -352,6 +355,29 @@ class GetDictionariesResponse
     public function setAudienceInterests(array $value = null)
     {
         $this->AudienceInterests = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets FilterSchemas.
+     *
+     * @return FilterSchemasItem[]|null
+     */
+    public function getFilterSchemas()
+    {
+        return isset($this->FilterSchemas) ? $this->FilterSchemas : null;
+    }
+
+    /**
+     * Sets FilterSchemas.
+     *
+     * @param FilterSchemasItem[]|null $value
+     * @return $this
+     */
+    public function setFilterSchemas(array $value = null)
+    {
+        $this->FilterSchemas = $value;
 
         return $this;
     }

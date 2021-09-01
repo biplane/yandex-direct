@@ -18,6 +18,10 @@ class CpmBannerCampaignNetworkStrategyTypeEnum
 
     const CP_MAXIMUM_IMPRESSIONS = 'CP_MAXIMUM_IMPRESSIONS';
 
+    const WB_AVERAGE_CPV = 'WB_AVERAGE_CPV';
+
+    const CP_AVERAGE_CPV = 'CP_AVERAGE_CPV';
+
     const UNKNOWN = 'UNKNOWN';
 
 

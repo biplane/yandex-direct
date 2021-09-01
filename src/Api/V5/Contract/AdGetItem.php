@@ -60,6 +60,9 @@ class AdGetItem
 //    protected $MobileAppAdBuilderAd = null;
 
 //    Can be omit.
+//    protected $MobileAppCpcVideoAdBuilderAd = null;
+
+//    Can be omit.
 //    protected $CpmBannerAdBuilderAd = null;
 
 //    Can be omit.
@@ -478,6 +481,29 @@ class AdGetItem
     public function setMobileAppAdBuilderAd(MobileAppAdBuilderAdGet $value = null)
     {
         $this->MobileAppAdBuilderAd = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets MobileAppCpcVideoAdBuilderAd.
+     *
+     * @return MobileAppCpcVideoAdBuilderAdGet|null
+     */
+    public function getMobileAppCpcVideoAdBuilderAd()
+    {
+        return isset($this->MobileAppCpcVideoAdBuilderAd) ? $this->MobileAppCpcVideoAdBuilderAd : null;
+    }
+
+    /**
+     * Sets MobileAppCpcVideoAdBuilderAd.
+     *
+     * @param MobileAppCpcVideoAdBuilderAdGet|null $value
+     * @return $this
+     */
+    public function setMobileAppCpcVideoAdBuilderAd(MobileAppCpcVideoAdBuilderAdGet $value = null)
+    {
+        $this->MobileAppCpcVideoAdBuilderAd = $value;
 
         return $this;
     }
