@@ -26,6 +26,9 @@ class MobileAppAdAdd
 //    Can be omit.
 //    protected $AgeLabel = null;
 
+//    Can be omit.
+//    protected $VideoExtension = null;
+
     /**
      * Creates a new instance of MobileAppAdAdd.
      *
@@ -197,6 +200,29 @@ class MobileAppAdAdd
     public function setAgeLabel($value = null)
     {
         $this->AgeLabel = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets VideoExtension.
+     *
+     * @return VideoExtensionAddItem|null
+     */
+    public function getVideoExtension()
+    {
+        return isset($this->VideoExtension) ? $this->VideoExtension : null;
+    }
+
+    /**
+     * Sets VideoExtension.
+     *
+     * @param VideoExtensionAddItem|null $value
+     * @return $this
+     */
+    public function setVideoExtension(VideoExtensionAddItem $value = null)
+    {
+        $this->VideoExtension = $value;
 
         return $this;
     }

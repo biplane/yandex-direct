@@ -24,6 +24,8 @@ class SmartCampaignSearchStrategyTypeEnum
 
     const AVERAGE_CRR = 'AVERAGE_CRR';
 
+    const PAY_FOR_CONVERSION_CRR = 'PAY_FOR_CONVERSION_CRR';
+
     const SERVING_OFF = 'SERVING_OFF';
 
     const UNKNOWN = 'UNKNOWN';

@@ -14,6 +14,9 @@ class MobileAppAdGet extends MobileAppAdBase
 //    Can be omit.
 //    protected $AdImageModeration = null;
 
+//    Can be omit.
+//    protected $VideoExtension = null;
+
     /**
      * Creates a new instance of MobileAppAdGet.
      *
@@ -66,6 +69,29 @@ class MobileAppAdGet extends MobileAppAdBase
     public function setAdImageModeration(ExtensionModeration $value = null)
     {
         $this->AdImageModeration = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets VideoExtension.
+     *
+     * @return VideoExtensionGetItem|null
+     */
+    public function getVideoExtension()
+    {
+        return isset($this->VideoExtension) ? $this->VideoExtension : null;
+    }
+
+    /**
+     * Sets VideoExtension.
+     *
+     * @param VideoExtensionGetItem|null $value
+     * @return $this
+     */
+    public function setVideoExtension(VideoExtensionGetItem $value = null)
+    {
+        $this->VideoExtension = $value;
 
         return $this;
     }

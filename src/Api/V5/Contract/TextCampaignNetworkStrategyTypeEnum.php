@@ -32,6 +32,8 @@ class TextCampaignNetworkStrategyTypeEnum
 
     const AVERAGE_CRR = 'AVERAGE_CRR';
 
+    const PAY_FOR_CONVERSION_CRR = 'PAY_FOR_CONVERSION_CRR';
+
 
 }
 

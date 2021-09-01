@@ -22,6 +22,8 @@ class MobileAppAdFieldEnum
 
     const AD_IMAGE_MODERATION = 'AdImageModeration';
 
+    const VIDEO_EXTENSION = 'VideoExtension';
+
 
 }
 

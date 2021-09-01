@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+* Обновлены сервисы для совмести с последней версией API 5, включая изменения от 2021-08-02.
+
 ### Removed
 
 * Из `Biplane\YandexDirect\Api\V5\Report\FieldEnum` удалены следующие методы:

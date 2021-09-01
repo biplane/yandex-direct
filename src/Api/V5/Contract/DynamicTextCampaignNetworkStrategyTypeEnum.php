@@ -26,6 +26,8 @@ class DynamicTextCampaignNetworkStrategyTypeEnum
 
     const AVERAGE_CRR = 'AVERAGE_CRR';
 
+    const PAY_FOR_CONVERSION_CRR = 'PAY_FOR_CONVERSION_CRR';
+
     const WEEKLY_CLICK_PACKAGE = 'WEEKLY_CLICK_PACKAGE';
 
     const SERVING_OFF = 'SERVING_OFF';
