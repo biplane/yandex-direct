@@ -31,6 +31,9 @@
     "friendsofphp/php-cs-fixer": "^2.14",
     "php-vcr/php-vcr": "^1.4"
   },
+  "conflict": {
+    "guzzlehttp/psr7": "<1.7"
+  },
   "suggest": {
     "monolog/monolog": "For LoggerListener"
   },

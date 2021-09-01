@@ -3,8 +3,8 @@
 namespace Biplane\YandexDirect\Api\V5\Report;
 
 use Biplane\YandexDirect\Exception\LogicException;
+use GuzzleHttp\Psr7\Utils;
 use Psr\Http\Message\ResponseInterface;
-use GuzzleHttp\Psr7 as GuzzleFunc;
 
 /**
  * ReportResult.
@@ -123,7 +123,7 @@ class ReportResult
             );
         }
 
-        $destStream = GuzzleFunc\stream_for($destination);
-        GuzzleFunc\copy_to_stream($this->response->getBody(), $destStream);
+        $destStream = Utils::streamFor($destination);
+        Utils::copyToStream($this->response->getBody(), $destStream);
     }
 }
