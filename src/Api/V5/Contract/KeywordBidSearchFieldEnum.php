@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,11 +9,7 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class KeywordBidSearchFieldEnum
 {
+    public const BID = 'Bid';
 
-    const BID = 'Bid';
-
-    const AUCTION_BIDS = 'AuctionBids';
-
-
+    public const AUCTION_BIDS = 'AuctionBids';
 }
-

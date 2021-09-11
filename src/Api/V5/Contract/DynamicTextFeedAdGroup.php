@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,25 +9,20 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class DynamicTextFeedAdGroup
 {
-
     protected $FeedId = null;
 
     /**
      * Creates a new instance of DynamicTextFeedAdGroup.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets FeedId.
-     *
-     * @return int
      */
-    public function getFeedId()
+    public function getFeedId(): int
     {
         return $this->FeedId;
     }
@@ -33,16 +30,12 @@ class DynamicTextFeedAdGroup
     /**
      * Sets FeedId.
      *
-     * @param int $value
      * @return $this
      */
-    public function setFeedId($value)
+    public function setFeedId(int $value)
     {
         $this->FeedId = $value;
 
         return $this;
     }
-
-
 }
-

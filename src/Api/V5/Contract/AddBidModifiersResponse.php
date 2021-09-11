@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,16 +9,13 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AddBidModifiersResponse
 {
-
 //    Can be omit.
 //    protected $AddResults = null;
 
     /**
      * Creates a new instance of AddBidModifiersResponse.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -26,24 +25,22 @@ class AddBidModifiersResponse
      *
      * @return MultiIdsActionResult[]|null
      */
-    public function getAddResults()
+    public function getAddResults(): ?array
     {
-        return isset($this->AddResults) ? $this->AddResults : null;
+        return $this->AddResults ?? null;
     }
 
     /**
      * Sets AddResults.
      *
      * @param MultiIdsActionResult[]|null $value
+     *
      * @return $this
      */
-    public function setAddResults(array $value = null)
+    public function setAddResults(?array $value = null)
     {
         $this->AddResults = $value;
 
         return $this;
     }
-
-
 }
-

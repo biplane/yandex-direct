@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,17 +9,13 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AdStateSelectionEnum
 {
+    public const OFF = 'OFF';
 
-    const OFF = 'OFF';
+    public const ON = 'ON';
 
-    const ON = 'ON';
+    public const SUSPENDED = 'SUSPENDED';
 
-    const SUSPENDED = 'SUSPENDED';
+    public const OFF_BY_MONITORING = 'OFF_BY_MONITORING';
 
-    const OFF_BY_MONITORING = 'OFF_BY_MONITORING';
-
-    const ARCHIVED = 'ARCHIVED';
-
-
+    public const ARCHIVED = 'ARCHIVED';
 }
-

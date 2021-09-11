@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AddAgencyClientsResponse extends ActionResultBase
 {
-
 //    Can be omit.
 //    protected $Login = null;
 
@@ -22,31 +23,26 @@ class AddAgencyClientsResponse extends ActionResultBase
 
     /**
      * Creates a new instance of AddAgencyClientsResponse.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Login.
-     *
-     * @return string|null
      */
-    public function getLogin()
+    public function getLogin(): ?string
     {
-        return isset($this->Login) ? $this->Login : null;
+        return $this->Login ?? null;
     }
 
     /**
      * Sets Login.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setLogin($value = null)
+    public function setLogin(?string $value = null)
     {
         $this->Login = $value;
 
@@ -55,21 +51,18 @@ class AddAgencyClientsResponse extends ActionResultBase
 
     /**
      * Gets Password.
-     *
-     * @return string|null
      */
-    public function getPassword()
+    public function getPassword(): ?string
     {
-        return isset($this->Password) ? $this->Password : null;
+        return $this->Password ?? null;
     }
 
     /**
      * Sets Password.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setPassword($value = null)
+    public function setPassword(?string $value = null)
     {
         $this->Password = $value;
 
@@ -78,21 +71,18 @@ class AddAgencyClientsResponse extends ActionResultBase
 
     /**
      * Gets Email.
-     *
-     * @return string|null
      */
-    public function getEmail()
+    public function getEmail(): ?string
     {
-        return isset($this->Email) ? $this->Email : null;
+        return $this->Email ?? null;
     }
 
     /**
      * Sets Email.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setEmail($value = null)
+    public function setEmail(?string $value = null)
     {
         $this->Email = $value;
 
@@ -101,27 +91,21 @@ class AddAgencyClientsResponse extends ActionResultBase
 
     /**
      * Gets ClientId.
-     *
-     * @return int|null
      */
-    public function getClientId()
+    public function getClientId(): ?int
     {
-        return isset($this->ClientId) ? $this->ClientId : null;
+        return $this->ClientId ?? null;
     }
 
     /**
      * Sets ClientId.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setClientId($value = null)
+    public function setClientId(?int $value = null)
     {
         $this->ClientId = $value;
 
         return $this;
     }
-
-
 }
-

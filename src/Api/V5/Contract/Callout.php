@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,25 +9,20 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class Callout
 {
-
     protected $CalloutText = null;
 
     /**
      * Creates a new instance of Callout.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets CalloutText.
-     *
-     * @return string
      */
-    public function getCalloutText()
+    public function getCalloutText(): string
     {
         return $this->CalloutText;
     }
@@ -33,16 +30,12 @@ class Callout
     /**
      * Sets CalloutText.
      *
-     * @param string $value
      * @return $this
      */
-    public function setCalloutText($value)
+    public function setCalloutText(string $value)
     {
         $this->CalloutText = $value;
 
         return $this;
     }
-
-
 }
-

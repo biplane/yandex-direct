@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,27 +9,22 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class PhraseUserParams
 {
-
     protected $Param1 = null;
 
     protected $Param2 = null;
 
     /**
      * Creates a new instance of PhraseUserParams.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Param1.
-     *
-     * @return string|null
      */
-    public function getParam1()
+    public function getParam1(): ?string
     {
         return $this->Param1;
     }
@@ -35,10 +32,9 @@ class PhraseUserParams
     /**
      * Sets Param1.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setParam1($value = null)
+    public function setParam1(?string $value = null)
     {
         $this->Param1 = $value;
 
@@ -47,10 +43,8 @@ class PhraseUserParams
 
     /**
      * Gets Param2.
-     *
-     * @return string|null
      */
-    public function getParam2()
+    public function getParam2(): ?string
     {
         return $this->Param2;
     }
@@ -58,16 +52,12 @@ class PhraseUserParams
     /**
      * Sets Param2.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setParam2($value = null)
+    public function setParam2(?string $value = null)
     {
         $this->Param2 = $value;
 
         return $this;
     }
-
-
 }
-

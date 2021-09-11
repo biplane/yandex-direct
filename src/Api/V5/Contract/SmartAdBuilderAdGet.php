@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,17 +9,11 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class SmartAdBuilderAdGet extends AdBuilderAdGetBase
 {
-
     /**
      * Creates a new instance of SmartAdBuilderAdGet.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
-
-
 }
-

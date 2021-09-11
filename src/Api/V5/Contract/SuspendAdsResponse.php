@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,16 +9,13 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class SuspendAdsResponse
 {
-
 //    Can be omit.
 //    protected $SuspendResults = null;
 
     /**
      * Creates a new instance of SuspendAdsResponse.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -26,24 +25,22 @@ class SuspendAdsResponse
      *
      * @return ActionResult[]|null
      */
-    public function getSuspendResults()
+    public function getSuspendResults(): ?array
     {
-        return isset($this->SuspendResults) ? $this->SuspendResults : null;
+        return $this->SuspendResults ?? null;
     }
 
     /**
      * Sets SuspendResults.
      *
      * @param ActionResult[]|null $value
+     *
      * @return $this
      */
-    public function setSuspendResults(array $value = null)
+    public function setSuspendResults(?array $value = null)
     {
         $this->SuspendResults = $value;
 
         return $this;
     }
-
-
 }
-

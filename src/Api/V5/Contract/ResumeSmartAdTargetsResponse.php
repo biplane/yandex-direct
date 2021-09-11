@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,15 +9,12 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class ResumeSmartAdTargetsResponse
 {
-
     protected $ResumeResults = [];
 
     /**
      * Creates a new instance of ResumeSmartAdTargetsResponse.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -25,7 +24,7 @@ class ResumeSmartAdTargetsResponse
      *
      * @return ActionResult[]
      */
-    public function getResumeResults()
+    public function getResumeResults(): array
     {
         return $this->ResumeResults;
     }
@@ -34,6 +33,7 @@ class ResumeSmartAdTargetsResponse
      * Sets ResumeResults.
      *
      * @param ActionResult[] $value
+     *
      * @return $this
      */
     public function setResumeResults(array $value)
@@ -42,7 +42,4 @@ class ResumeSmartAdTargetsResponse
 
         return $this;
     }
-
-
 }
-

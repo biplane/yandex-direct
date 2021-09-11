@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class DynamicTextCampaignAddItem
 {
-
     protected $BiddingStrategy = null;
 
 //    Can be omit.
@@ -24,20 +25,16 @@ class DynamicTextCampaignAddItem
 
     /**
      * Creates a new instance of DynamicTextCampaignAddItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets BiddingStrategy.
-     *
-     * @return DynamicTextCampaignStrategyAdd
      */
-    public function getBiddingStrategy()
+    public function getBiddingStrategy(): DynamicTextCampaignStrategyAdd
     {
         return $this->BiddingStrategy;
     }
@@ -45,7 +42,6 @@ class DynamicTextCampaignAddItem
     /**
      * Sets BiddingStrategy.
      *
-     * @param DynamicTextCampaignStrategyAdd $value
      * @return $this
      */
     public function setBiddingStrategy(DynamicTextCampaignStrategyAdd $value)
@@ -60,18 +56,19 @@ class DynamicTextCampaignAddItem
      *
      * @return DynamicTextCampaignSetting[]|null
      */
-    public function getSettings()
+    public function getSettings(): ?array
     {
-        return isset($this->Settings) ? $this->Settings : null;
+        return $this->Settings ?? null;
     }
 
     /**
      * Sets Settings.
      *
      * @param DynamicTextCampaignSetting[]|null $value
+     *
      * @return $this
      */
-    public function setSettings(array $value = null)
+    public function setSettings(?array $value = null)
     {
         $this->Settings = $value;
 
@@ -83,18 +80,19 @@ class DynamicTextCampaignAddItem
      *
      * @return int[]|null
      */
-    public function getCounterIds()
+    public function getCounterIds(): ?array
     {
-        return isset($this->CounterIds) ? $this->CounterIds : null;
+        return $this->CounterIds ?? null;
     }
 
     /**
      * Sets CounterIds.
      *
      * @param int[]|null $value
+     *
      * @return $this
      */
-    public function setCounterIds(array $value = null)
+    public function setCounterIds(?array $value = null)
     {
         $this->CounterIds = $value;
 
@@ -103,21 +101,18 @@ class DynamicTextCampaignAddItem
 
     /**
      * Gets PriorityGoals.
-     *
-     * @return PriorityGoalsArray|null
      */
-    public function getPriorityGoals()
+    public function getPriorityGoals(): ?PriorityGoalsArray
     {
-        return isset($this->PriorityGoals) ? $this->PriorityGoals : null;
+        return $this->PriorityGoals ?? null;
     }
 
     /**
      * Sets PriorityGoals.
      *
-     * @param PriorityGoalsArray|null $value
      * @return $this
      */
-    public function setPriorityGoals(PriorityGoalsArray $value = null)
+    public function setPriorityGoals(?PriorityGoalsArray $value = null)
     {
         $this->PriorityGoals = $value;
 
@@ -127,28 +122,24 @@ class DynamicTextCampaignAddItem
     /**
      * Gets AttributionModel.
      *
-     * @return string|null
      * @see AttributionModelEnum
      */
-    public function getAttributionModel()
+    public function getAttributionModel(): ?string
     {
-        return isset($this->AttributionModel) ? $this->AttributionModel : null;
+        return $this->AttributionModel ?? null;
     }
 
     /**
      * Sets AttributionModel.
      *
-     * @param string|null $value
-     * @return $this
      * @see AttributionModelEnum
+     *
+     * @return $this
      */
-    public function setAttributionModel($value = null)
+    public function setAttributionModel(?string $value = null)
     {
         $this->AttributionModel = $value;
 
         return $this;
     }
-
-
 }
-

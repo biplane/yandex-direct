@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5;
 
 use Biplane\YandexDirect\Api\ApiSoapClientV5;
@@ -10,8 +12,7 @@ use Biplane\YandexDirect\Config;
  */
 class DynamicTextAdTargets extends ApiSoapClientV5
 {
-
-    const ENDPOINT = 'https://api.direct.yandex.com/v5/dynamictextadtargets?wsdl';
+    public const ENDPOINT = 'https://api.direct.yandex.com/v5/dynamictextadtargets?wsdl';
 
     public function __construct(Config $config, array $options)
     {
@@ -81,70 +82,49 @@ class DynamicTextAdTargets extends ApiSoapClientV5
 
     /**
      * add.
-     *
-     * @param Contract\AddDynamicTextAdTargetsRequest $parameters
-     * @return Contract\AddDynamicTextAdTargetsResponse
      */
-    public function add(Contract\AddDynamicTextAdTargetsRequest $parameters)
+    public function add(Contract\AddDynamicTextAdTargetsRequest $parameters): Contract\AddDynamicTextAdTargetsResponse
     {
         return $this->__soapCall('add', [$parameters]);
     }
 
     /**
      * get.
-     *
-     * @param Contract\GetDynamicTextAdTargetsRequest $parameters
-     * @return Contract\GetDynamicTextAdTargetsResponse
      */
-    public function get(Contract\GetDynamicTextAdTargetsRequest $parameters)
+    public function get(Contract\GetDynamicTextAdTargetsRequest $parameters): Contract\GetDynamicTextAdTargetsResponse
     {
         return $this->__soapCall('get', [$parameters]);
     }
 
     /**
      * delete.
-     *
-     * @param Contract\DeleteDynamicTextAdTargetsRequest $parameters
-     * @return Contract\DeleteDynamicTextAdTargetsResponse
      */
-    public function delete(Contract\DeleteDynamicTextAdTargetsRequest $parameters)
+    public function delete(Contract\DeleteDynamicTextAdTargetsRequest $parameters): Contract\DeleteDynamicTextAdTargetsResponse
     {
         return $this->__soapCall('delete', [$parameters]);
     }
 
     /**
      * suspend.
-     *
-     * @param Contract\SuspendDynamicTextAdTargetsRequest $parameters
-     * @return Contract\SuspendDynamicTextAdTargetsResponse
      */
-    public function suspend(Contract\SuspendDynamicTextAdTargetsRequest $parameters)
+    public function suspend(Contract\SuspendDynamicTextAdTargetsRequest $parameters): Contract\SuspendDynamicTextAdTargetsResponse
     {
         return $this->__soapCall('suspend', [$parameters]);
     }
 
     /**
      * resume.
-     *
-     * @param Contract\ResumeDynamicTextAdTargetsRequest $parameters
-     * @return Contract\ResumeDynamicTextAdTargetsResponse
      */
-    public function resume(Contract\ResumeDynamicTextAdTargetsRequest $parameters)
+    public function resume(Contract\ResumeDynamicTextAdTargetsRequest $parameters): Contract\ResumeDynamicTextAdTargetsResponse
     {
         return $this->__soapCall('resume', [$parameters]);
     }
 
     /**
      * setBids.
-     *
-     * @param Contract\SetBidsDynamicTextAdTargetsRequest $parameters
-     * @return Contract\SetBidsDynamicTextAdTargetsResponse
      */
-    public function setBids(Contract\SetBidsDynamicTextAdTargetsRequest $parameters)
+    public function setBids(Contract\SetBidsDynamicTextAdTargetsRequest $parameters): Contract\SetBidsDynamicTextAdTargetsResponse
     {
         return $this->__soapCall('setBids', [$parameters]);
     }
-
-
 }
-

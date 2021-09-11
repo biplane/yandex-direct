@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,15 +9,12 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class GetClientsRequest
 {
-
     protected $FieldNames = [];
 
     /**
      * Creates a new instance of GetClientsRequest.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -23,10 +22,11 @@ class GetClientsRequest
     /**
      * Gets FieldNames.
      *
-     * @return string[]
      * @see ClientFieldEnum
+     *
+     * @return string[]
      */
-    public function getFieldNames()
+    public function getFieldNames(): array
     {
         return $this->FieldNames;
     }
@@ -34,9 +34,11 @@ class GetClientsRequest
     /**
      * Sets FieldNames.
      *
-     * @param string[] $value
-     * @return $this
      * @see ClientFieldEnum
+     *
+     * @param string[] $value
+     *
+     * @return $this
      */
     public function setFieldNames(array $value)
     {
@@ -44,7 +46,4 @@ class GetClientsRequest
 
         return $this;
     }
-
-
 }
-

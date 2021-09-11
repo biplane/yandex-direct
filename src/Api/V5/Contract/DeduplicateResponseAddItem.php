@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,25 +9,20 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class DeduplicateResponseAddItem
 {
-
     protected $Keyword = null;
 
     /**
      * Creates a new instance of DeduplicateResponseAddItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Keyword.
-     *
-     * @return string
      */
-    public function getKeyword()
+    public function getKeyword(): string
     {
         return $this->Keyword;
     }
@@ -33,16 +30,12 @@ class DeduplicateResponseAddItem
     /**
      * Sets Keyword.
      *
-     * @param string $value
      * @return $this
      */
-    public function setKeyword($value)
+    public function setKeyword(string $value)
     {
         $this->Keyword = $value;
 
         return $this;
     }
-
-
 }
-

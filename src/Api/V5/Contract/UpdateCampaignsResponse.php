@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,16 +9,13 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class UpdateCampaignsResponse
 {
-
 //    Can be omit.
 //    protected $UpdateResults = null;
 
     /**
      * Creates a new instance of UpdateCampaignsResponse.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -26,24 +25,22 @@ class UpdateCampaignsResponse
      *
      * @return ActionResult[]|null
      */
-    public function getUpdateResults()
+    public function getUpdateResults(): ?array
     {
-        return isset($this->UpdateResults) ? $this->UpdateResults : null;
+        return $this->UpdateResults ?? null;
     }
 
     /**
      * Sets UpdateResults.
      *
      * @param ActionResult[]|null $value
+     *
      * @return $this
      */
-    public function setUpdateResults(array $value = null)
+    public function setUpdateResults(?array $value = null)
     {
         $this->UpdateResults = $value;
 
         return $this;
     }
-
-
 }
-

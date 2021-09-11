@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5;
 
 use Biplane\YandexDirect\Api\V5\Report\ReportDefinitionBuilder;
@@ -7,60 +9,53 @@ use Biplane\YandexDirect\Api\V5\Report\ReportRequest;
 use Biplane\YandexDirect\Api\V5\Report\ReportResult;
 use Biplane\YandexDirect\ClientInterface as ApiClientInterface;
 use Biplane\YandexDirect\Event\EventEmitter;
-use Biplane\YandexDirect\Event\FailCallEvent;
-use Biplane\YandexDirect\Event\PostCallEvent;
-use Biplane\YandexDirect\Event\PreCallEvent;
-use Biplane\YandexDirect\Events;
 use Biplane\YandexDirect\Exception\ApiException;
 use Biplane\YandexDirect\Exception\NetworkException;
 use Biplane\YandexDirect\Exception\ReportDefinitionException;
 use Biplane\YandexDirect\User;
+use DOMDocument;
+use DOMXPath;
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
-use Symfony\Component\EventDispatcher\EventDispatcherInterface;
+use Throwable;
+
+use function fclose;
+use function fopen;
+use function ftruncate;
+use function implode;
+use function is_file;
+use function is_writable;
+use function max;
+use function sleep;
+use function sprintf;
+use function strpos;
 
 class Reports implements ApiClientInterface
 {
-    const ENDPOINT = 'https://api.direct.yandex.com/v5/reports';
+    public const ENDPOINT = 'https://api.direct.yandex.com/v5/reports';
 
-    /**
-     * @var User
-     */
+    /** @var User */
     private $user;
 
-    /**
-     * @var ClientInterface
-     */
+    /** @var ClientInterface */
     private $httpClient;
 
-    /**
-     * @var EventEmitter
-     */
+    /** @var EventEmitter */
     private $emitter;
 
-    /**
-     * @var RequestInterface
-     */
+    /** @var RequestInterface */
     private $lastRequest;
 
-    /**
-     * @var ResponseInterface
-     */
+    /** @var ResponseInterface */
     private $lastResponse;
 
-    /**
-     * Constructor.
-     *
-     * @param User                 $user
-     * @param ClientInterface|null $httpClient
-     */
-    public function __construct(User $user, ClientInterface $httpClient = null)
+    public function __construct(User $user, ?ClientInterface $httpClient = null)
     {
-        if (null === $httpClient) {
+        if ($httpClient === null) {
             $httpClient = new Client();
         }
 
@@ -76,13 +71,11 @@ class Reports implements ApiClientInterface
      *
      * @param ReportRequest $reportRequest The report request
      *
-     * @return ReportResult
-     *
      * @throws ApiException
      * @throws NetworkException
      * @throws ReportDefinitionException
      */
-    public function get(ReportRequest $reportRequest)
+    public function get(ReportRequest $reportRequest): ReportResult
     {
         $response = $this->request($reportRequest);
 
@@ -97,13 +90,11 @@ class Reports implements ApiClientInterface
      * @param ReportRequest $reportRequest The report request
      * @param int|null      $retryInterval An amount of delay between requests, in seconds
      *
-     * @return ReportResult
-     *
      * @throws ApiException
      * @throws NetworkException
      * @throws ReportDefinitionException
      */
-    public function getReady(ReportRequest $reportRequest, $retryInterval = null)
+    public function getReady(ReportRequest $reportRequest, ?int $retryInterval = null): ReportResult
     {
         return $this->waitReady($reportRequest, $retryInterval ?: 0);
     }
@@ -118,17 +109,17 @@ class Reports implements ApiClientInterface
      * @throws ApiException
      * @throws NetworkException
      * @throws ReportDefinitionException
-     * @throws \Exception
+     * @throws Throwable
      */
-    public function download($reportFile, ReportRequest $reportRequest, $retryInterval = null)
+    public function download(string $reportFile, ReportRequest $reportRequest, ?int $retryInterval = null): void
     {
         try {
-            $this->waitReady($reportRequest, $retryInterval ?: 0, [
-                RequestOptions::SINK => $reportFile,
-            ]);
-        } catch (\Exception $ex) {
+            $this->waitReady($reportRequest, $retryInterval ?: 0, [RequestOptions::SINK => $reportFile]);
+        } catch (Throwable $ex) {
             if (is_file($reportFile) && is_writable($reportFile)) {
-                if (false !== $fh = fopen($reportFile, 'w')) {
+                $fh = fopen($reportFile, 'wb');
+
+                if ($fh !== false) {
                     ftruncate($fh, 0);
                     fclose($fh);
                 }
@@ -138,24 +129,18 @@ class Reports implements ApiClientInterface
         }
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getRequestId(): string
     {
-        if (null !== $this->lastResponse && $this->lastResponse->hasHeader('RequestId')) {
+        if ($this->lastResponse !== null && $this->lastResponse->hasHeader('RequestId')) {
             return $this->lastResponse->getHeaderLine('RequestId');
         }
 
-        return null;
+        return '';
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getLastRequest(): string
     {
-        if (null !== $this->lastRequest) {
+        if ($this->lastRequest !== null) {
             $request = sprintf(
                 "%s %s HTTP/%s\r\n",
                 $this->lastRequest->getMethod(),
@@ -176,12 +161,9 @@ class Reports implements ApiClientInterface
         return '';
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getLastResponse(): string
     {
-        if (null !== $this->lastResponse) {
+        if ($this->lastResponse !== null) {
             $response = sprintf(
                 "HTTP/%s %s %s\r\n",
                 $this->lastResponse->getProtocolVersion(),
@@ -203,12 +185,9 @@ class Reports implements ApiClientInterface
     }
 
     /**
-     * @param ReportRequest $reportRequest
-     * @param array         $options
-     *
-     * @return ResponseInterface
+     * @param array<string, mixed> $options
      */
-    private function request(ReportRequest $reportRequest, array $options = [])
+    private function request(ReportRequest $reportRequest, array $options = []): ResponseInterface
     {
         $reportDefinition = $reportRequest->getDefinition();
 
@@ -230,9 +209,7 @@ class Reports implements ApiClientInterface
 
         $this->emitter->emitBeforeRequestEvent($this, 'request', [$reportRequest]);
 
-        $response = $this->httpClient->send($request, $options + [
-            RequestOptions::HTTP_ERRORS => false,
-        ]);
+        $response = $this->httpClient->send($request, $options + [RequestOptions::HTTP_ERRORS => false]);
         $this->lastResponse = $response;
 
         if ($response->getStatusCode() >= 200 && $response->getStatusCode() <= 202) {
@@ -248,7 +225,10 @@ class Reports implements ApiClientInterface
         throw $exception;
     }
 
-    private function waitReady(ReportRequest $reportRequest, $retryInterval, array $options = [])
+    /**
+     * @param array<string, mixed> $options
+     */
+    private function waitReady(ReportRequest $reportRequest, int $retryInterval, array $options = []): ReportResult
     {
         while (true) {
             $result = new ReportResult($this->request($reportRequest, $options));
@@ -262,15 +242,15 @@ class Reports implements ApiClientInterface
         }
     }
 
-    private function createException(ResponseInterface $response)
+    private function createException(ResponseInterface $response): Throwable
     {
         $content = (string)$response->getBody();
 
-        if (false !== strpos($content, '<reports:reportDownloadError')) {
-            $doc = new \DOMDocument();
+        if (strpos($content, '<reports:reportDownloadError') !== false) {
+            $doc = new DOMDocument();
 
             if ($doc->loadXML($content)) {
-                $xpath = new \DOMXPath($doc);
+                $xpath = new DOMXPath($doc);
                 $xpath->registerNamespace('r', ReportDefinitionBuilder::XML_NAMESPACE);
                 $requestId = $xpath->evaluate('string(/r:reportDownloadError/r:ApiError/r:requestId)');
                 $errorCode = $xpath->evaluate('string(/r:reportDownloadError/r:ApiError/r:errorCode)');
@@ -290,7 +270,10 @@ class Reports implements ApiClientInterface
         );
     }
 
-    private function buildRequestHeaders(ReportRequest $reportRequest)
+    /**
+     * @return array<string, string>
+     */
+    private function buildRequestHeaders(ReportRequest $reportRequest): array
     {
         $headers = [
             'Authorization' => sprintf('Bearer %s', $this->user->getAccessToken()),

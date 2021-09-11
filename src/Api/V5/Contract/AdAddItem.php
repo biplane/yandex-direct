@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AdAddItem extends AdAddItemBase
 {
-
 //    Can be omit.
 //    protected $TextAd = null;
 
@@ -46,31 +47,26 @@ class AdAddItem extends AdAddItemBase
 
     /**
      * Creates a new instance of AdAddItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets TextAd.
-     *
-     * @return TextAdAdd|null
      */
-    public function getTextAd()
+    public function getTextAd(): ?TextAdAdd
     {
-        return isset($this->TextAd) ? $this->TextAd : null;
+        return $this->TextAd ?? null;
     }
 
     /**
      * Sets TextAd.
      *
-     * @param TextAdAdd|null $value
      * @return $this
      */
-    public function setTextAd(TextAdAdd $value = null)
+    public function setTextAd(?TextAdAdd $value = null)
     {
         $this->TextAd = $value;
 
@@ -79,21 +75,18 @@ class AdAddItem extends AdAddItemBase
 
     /**
      * Gets DynamicTextAd.
-     *
-     * @return DynamicTextAdAdd|null
      */
-    public function getDynamicTextAd()
+    public function getDynamicTextAd(): ?DynamicTextAdAdd
     {
-        return isset($this->DynamicTextAd) ? $this->DynamicTextAd : null;
+        return $this->DynamicTextAd ?? null;
     }
 
     /**
      * Sets DynamicTextAd.
      *
-     * @param DynamicTextAdAdd|null $value
      * @return $this
      */
-    public function setDynamicTextAd(DynamicTextAdAdd $value = null)
+    public function setDynamicTextAd(?DynamicTextAdAdd $value = null)
     {
         $this->DynamicTextAd = $value;
 
@@ -102,21 +95,18 @@ class AdAddItem extends AdAddItemBase
 
     /**
      * Gets MobileAppAd.
-     *
-     * @return MobileAppAdAdd|null
      */
-    public function getMobileAppAd()
+    public function getMobileAppAd(): ?MobileAppAdAdd
     {
-        return isset($this->MobileAppAd) ? $this->MobileAppAd : null;
+        return $this->MobileAppAd ?? null;
     }
 
     /**
      * Sets MobileAppAd.
      *
-     * @param MobileAppAdAdd|null $value
      * @return $this
      */
-    public function setMobileAppAd(MobileAppAdAdd $value = null)
+    public function setMobileAppAd(?MobileAppAdAdd $value = null)
     {
         $this->MobileAppAd = $value;
 
@@ -125,21 +115,18 @@ class AdAddItem extends AdAddItemBase
 
     /**
      * Gets TextImageAd.
-     *
-     * @return TextImageAdAdd|null
      */
-    public function getTextImageAd()
+    public function getTextImageAd(): ?TextImageAdAdd
     {
-        return isset($this->TextImageAd) ? $this->TextImageAd : null;
+        return $this->TextImageAd ?? null;
     }
 
     /**
      * Sets TextImageAd.
      *
-     * @param TextImageAdAdd|null $value
      * @return $this
      */
-    public function setTextImageAd(TextImageAdAdd $value = null)
+    public function setTextImageAd(?TextImageAdAdd $value = null)
     {
         $this->TextImageAd = $value;
 
@@ -148,21 +135,18 @@ class AdAddItem extends AdAddItemBase
 
     /**
      * Gets MobileAppImageAd.
-     *
-     * @return MobileAppImageAdAdd|null
      */
-    public function getMobileAppImageAd()
+    public function getMobileAppImageAd(): ?MobileAppImageAdAdd
     {
-        return isset($this->MobileAppImageAd) ? $this->MobileAppImageAd : null;
+        return $this->MobileAppImageAd ?? null;
     }
 
     /**
      * Sets MobileAppImageAd.
      *
-     * @param MobileAppImageAdAdd|null $value
      * @return $this
      */
-    public function setMobileAppImageAd(MobileAppImageAdAdd $value = null)
+    public function setMobileAppImageAd(?MobileAppImageAdAdd $value = null)
     {
         $this->MobileAppImageAd = $value;
 
@@ -171,21 +155,18 @@ class AdAddItem extends AdAddItemBase
 
     /**
      * Gets TextAdBuilderAd.
-     *
-     * @return TextAdBuilderAdAdd|null
      */
-    public function getTextAdBuilderAd()
+    public function getTextAdBuilderAd(): ?TextAdBuilderAdAdd
     {
-        return isset($this->TextAdBuilderAd) ? $this->TextAdBuilderAd : null;
+        return $this->TextAdBuilderAd ?? null;
     }
 
     /**
      * Sets TextAdBuilderAd.
      *
-     * @param TextAdBuilderAdAdd|null $value
      * @return $this
      */
-    public function setTextAdBuilderAd(TextAdBuilderAdAdd $value = null)
+    public function setTextAdBuilderAd(?TextAdBuilderAdAdd $value = null)
     {
         $this->TextAdBuilderAd = $value;
 
@@ -194,21 +175,18 @@ class AdAddItem extends AdAddItemBase
 
     /**
      * Gets MobileAppAdBuilderAd.
-     *
-     * @return MobileAppAdBuilderAdAdd|null
      */
-    public function getMobileAppAdBuilderAd()
+    public function getMobileAppAdBuilderAd(): ?MobileAppAdBuilderAdAdd
     {
-        return isset($this->MobileAppAdBuilderAd) ? $this->MobileAppAdBuilderAd : null;
+        return $this->MobileAppAdBuilderAd ?? null;
     }
 
     /**
      * Sets MobileAppAdBuilderAd.
      *
-     * @param MobileAppAdBuilderAdAdd|null $value
      * @return $this
      */
-    public function setMobileAppAdBuilderAd(MobileAppAdBuilderAdAdd $value = null)
+    public function setMobileAppAdBuilderAd(?MobileAppAdBuilderAdAdd $value = null)
     {
         $this->MobileAppAdBuilderAd = $value;
 
@@ -217,21 +195,18 @@ class AdAddItem extends AdAddItemBase
 
     /**
      * Gets MobileAppCpcVideoAdBuilderAd.
-     *
-     * @return MobileAppCpcVideoAdBuilderAdAdd|null
      */
-    public function getMobileAppCpcVideoAdBuilderAd()
+    public function getMobileAppCpcVideoAdBuilderAd(): ?MobileAppCpcVideoAdBuilderAdAdd
     {
-        return isset($this->MobileAppCpcVideoAdBuilderAd) ? $this->MobileAppCpcVideoAdBuilderAd : null;
+        return $this->MobileAppCpcVideoAdBuilderAd ?? null;
     }
 
     /**
      * Sets MobileAppCpcVideoAdBuilderAd.
      *
-     * @param MobileAppCpcVideoAdBuilderAdAdd|null $value
      * @return $this
      */
-    public function setMobileAppCpcVideoAdBuilderAd(MobileAppCpcVideoAdBuilderAdAdd $value = null)
+    public function setMobileAppCpcVideoAdBuilderAd(?MobileAppCpcVideoAdBuilderAdAdd $value = null)
     {
         $this->MobileAppCpcVideoAdBuilderAd = $value;
 
@@ -240,21 +215,18 @@ class AdAddItem extends AdAddItemBase
 
     /**
      * Gets CpmBannerAdBuilderAd.
-     *
-     * @return CpmBannerAdBuilderAdAdd|null
      */
-    public function getCpmBannerAdBuilderAd()
+    public function getCpmBannerAdBuilderAd(): ?CpmBannerAdBuilderAdAdd
     {
-        return isset($this->CpmBannerAdBuilderAd) ? $this->CpmBannerAdBuilderAd : null;
+        return $this->CpmBannerAdBuilderAd ?? null;
     }
 
     /**
      * Sets CpmBannerAdBuilderAd.
      *
-     * @param CpmBannerAdBuilderAdAdd|null $value
      * @return $this
      */
-    public function setCpmBannerAdBuilderAd(CpmBannerAdBuilderAdAdd $value = null)
+    public function setCpmBannerAdBuilderAd(?CpmBannerAdBuilderAdAdd $value = null)
     {
         $this->CpmBannerAdBuilderAd = $value;
 
@@ -263,21 +235,18 @@ class AdAddItem extends AdAddItemBase
 
     /**
      * Gets CpcVideoAdBuilderAd.
-     *
-     * @return CpcVideoAdBuilderAdAdd|null
      */
-    public function getCpcVideoAdBuilderAd()
+    public function getCpcVideoAdBuilderAd(): ?CpcVideoAdBuilderAdAdd
     {
-        return isset($this->CpcVideoAdBuilderAd) ? $this->CpcVideoAdBuilderAd : null;
+        return $this->CpcVideoAdBuilderAd ?? null;
     }
 
     /**
      * Sets CpcVideoAdBuilderAd.
      *
-     * @param CpcVideoAdBuilderAdAdd|null $value
      * @return $this
      */
-    public function setCpcVideoAdBuilderAd(CpcVideoAdBuilderAdAdd $value = null)
+    public function setCpcVideoAdBuilderAd(?CpcVideoAdBuilderAdAdd $value = null)
     {
         $this->CpcVideoAdBuilderAd = $value;
 
@@ -286,21 +255,18 @@ class AdAddItem extends AdAddItemBase
 
     /**
      * Gets CpmVideoAdBuilderAd.
-     *
-     * @return CpmVideoAdBuilderAdAdd|null
      */
-    public function getCpmVideoAdBuilderAd()
+    public function getCpmVideoAdBuilderAd(): ?CpmVideoAdBuilderAdAdd
     {
-        return isset($this->CpmVideoAdBuilderAd) ? $this->CpmVideoAdBuilderAd : null;
+        return $this->CpmVideoAdBuilderAd ?? null;
     }
 
     /**
      * Sets CpmVideoAdBuilderAd.
      *
-     * @param CpmVideoAdBuilderAdAdd|null $value
      * @return $this
      */
-    public function setCpmVideoAdBuilderAd(CpmVideoAdBuilderAdAdd $value = null)
+    public function setCpmVideoAdBuilderAd(?CpmVideoAdBuilderAdAdd $value = null)
     {
         $this->CpmVideoAdBuilderAd = $value;
 
@@ -309,27 +275,21 @@ class AdAddItem extends AdAddItemBase
 
     /**
      * Gets SmartAdBuilderAd.
-     *
-     * @return SmartAdBuilderAdAdd|null
      */
-    public function getSmartAdBuilderAd()
+    public function getSmartAdBuilderAd(): ?SmartAdBuilderAdAdd
     {
-        return isset($this->SmartAdBuilderAd) ? $this->SmartAdBuilderAd : null;
+        return $this->SmartAdBuilderAd ?? null;
     }
 
     /**
      * Sets SmartAdBuilderAd.
      *
-     * @param SmartAdBuilderAdAdd|null $value
      * @return $this
      */
-    public function setSmartAdBuilderAd(SmartAdBuilderAdAdd $value = null)
+    public function setSmartAdBuilderAd(?SmartAdBuilderAdAdd $value = null)
     {
         $this->SmartAdBuilderAd = $value;
 
         return $this;
     }
-
-
 }
-

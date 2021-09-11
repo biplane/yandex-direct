@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,27 +9,22 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class ConstantsItem
 {
-
     protected $Name = null;
 
     protected $Value = null;
 
     /**
      * Creates a new instance of ConstantsItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Name.
-     *
-     * @return string
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->Name;
     }
@@ -35,10 +32,9 @@ class ConstantsItem
     /**
      * Sets Name.
      *
-     * @param string $value
      * @return $this
      */
-    public function setName($value)
+    public function setName(string $value)
     {
         $this->Name = $value;
 
@@ -47,10 +43,8 @@ class ConstantsItem
 
     /**
      * Gets Value.
-     *
-     * @return string
      */
-    public function getValue()
+    public function getValue(): string
     {
         return $this->Value;
     }
@@ -58,16 +52,12 @@ class ConstantsItem
     /**
      * Sets Value.
      *
-     * @param string $value
      * @return $this
      */
-    public function setValue($value)
+    public function setValue(string $value)
     {
         $this->Value = $value;
 
         return $this;
     }
-
-
 }
-

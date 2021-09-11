@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,15 +9,12 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class EnumFilterFieldProps
 {
-
     protected $Values = [];
 
     /**
      * Creates a new instance of EnumFilterFieldProps.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -25,7 +24,7 @@ class EnumFilterFieldProps
      *
      * @return string[]
      */
-    public function getValues()
+    public function getValues(): array
     {
         return $this->Values;
     }
@@ -34,6 +33,7 @@ class EnumFilterFieldProps
      * Sets Values.
      *
      * @param string[] $value
+     *
      * @return $this
      */
     public function setValues(array $value)
@@ -42,7 +42,4 @@ class EnumFilterFieldProps
 
         return $this;
     }
-
-
 }
-

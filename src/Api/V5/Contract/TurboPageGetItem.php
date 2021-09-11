@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class TurboPageGetItem
 {
-
 //    Can be omit.
 //    protected $Id = null;
 
@@ -28,31 +29,26 @@ class TurboPageGetItem
 
     /**
      * Creates a new instance of TurboPageGetItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Id.
-     *
-     * @return int|null
      */
-    public function getId()
+    public function getId(): ?int
     {
-        return isset($this->Id) ? $this->Id : null;
+        return $this->Id ?? null;
     }
 
     /**
      * Sets Id.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setId($value = null)
+    public function setId(?int $value = null)
     {
         $this->Id = $value;
 
@@ -61,21 +57,18 @@ class TurboPageGetItem
 
     /**
      * Gets Name.
-     *
-     * @return string|null
      */
-    public function getName()
+    public function getName(): ?string
     {
-        return isset($this->Name) ? $this->Name : null;
+        return $this->Name ?? null;
     }
 
     /**
      * Sets Name.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setName($value = null)
+    public function setName(?string $value = null)
     {
         $this->Name = $value;
 
@@ -84,21 +77,18 @@ class TurboPageGetItem
 
     /**
      * Gets Href.
-     *
-     * @return string|null
      */
-    public function getHref()
+    public function getHref(): ?string
     {
-        return isset($this->Href) ? $this->Href : null;
+        return $this->Href ?? null;
     }
 
     /**
      * Sets Href.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setHref($value = null)
+    public function setHref(?string $value = null)
     {
         $this->Href = $value;
 
@@ -107,21 +97,18 @@ class TurboPageGetItem
 
     /**
      * Gets PreviewHref.
-     *
-     * @return string|null
      */
-    public function getPreviewHref()
+    public function getPreviewHref(): ?string
     {
-        return isset($this->PreviewHref) ? $this->PreviewHref : null;
+        return $this->PreviewHref ?? null;
     }
 
     /**
      * Sets PreviewHref.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setPreviewHref($value = null)
+    public function setPreviewHref(?string $value = null)
     {
         $this->PreviewHref = $value;
 
@@ -130,21 +117,18 @@ class TurboPageGetItem
 
     /**
      * Gets TurboSiteHref.
-     *
-     * @return string|null
      */
-    public function getTurboSiteHref()
+    public function getTurboSiteHref(): ?string
     {
-        return isset($this->TurboSiteHref) ? $this->TurboSiteHref : null;
+        return $this->TurboSiteHref ?? null;
     }
 
     /**
      * Sets TurboSiteHref.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setTurboSiteHref($value = null)
+    public function setTurboSiteHref(?string $value = null)
     {
         $this->TurboSiteHref = $value;
 
@@ -153,27 +137,21 @@ class TurboPageGetItem
 
     /**
      * Gets BoundWithHref.
-     *
-     * @return string|null
      */
-    public function getBoundWithHref()
+    public function getBoundWithHref(): ?string
     {
-        return isset($this->BoundWithHref) ? $this->BoundWithHref : null;
+        return $this->BoundWithHref ?? null;
     }
 
     /**
      * Sets BoundWithHref.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setBoundWithHref($value = null)
+    public function setBoundWithHref(?string $value = null)
     {
         $this->BoundWithHref = $value;
 
         return $this;
     }
-
-
 }
-

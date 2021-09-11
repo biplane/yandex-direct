@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,16 +9,13 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class SetBidsDynamicTextAdTargetsResponse
 {
-
 //    Can be omit.
 //    protected $SetBidsResults = null;
 
     /**
      * Creates a new instance of SetBidsDynamicTextAdTargetsResponse.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -26,24 +25,22 @@ class SetBidsDynamicTextAdTargetsResponse
      *
      * @return SetBidsActionResult[]|null
      */
-    public function getSetBidsResults()
+    public function getSetBidsResults(): ?array
     {
-        return isset($this->SetBidsResults) ? $this->SetBidsResults : null;
+        return $this->SetBidsResults ?? null;
     }
 
     /**
      * Sets SetBidsResults.
      *
      * @param SetBidsActionResult[]|null $value
+     *
      * @return $this
      */
-    public function setSetBidsResults(array $value = null)
+    public function setSetBidsResults(?array $value = null)
     {
         $this->SetBidsResults = $value;
 
         return $this;
     }
-
-
 }
-

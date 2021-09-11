@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class FundsParam
 {
-
     protected $Mode = null;
 
 //    Can be omit.
@@ -18,10 +19,8 @@ class FundsParam
 
     /**
      * Creates a new instance of FundsParam.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -29,10 +28,9 @@ class FundsParam
     /**
      * Gets Mode.
      *
-     * @return string
      * @see CampaignFundsEnum
      */
-    public function getMode()
+    public function getMode(): string
     {
         return $this->Mode;
     }
@@ -40,11 +38,11 @@ class FundsParam
     /**
      * Sets Mode.
      *
-     * @param string $value
-     * @return $this
      * @see CampaignFundsEnum
+     *
+     * @return $this
      */
-    public function setMode($value)
+    public function setMode(string $value)
     {
         $this->Mode = $value;
 
@@ -53,21 +51,18 @@ class FundsParam
 
     /**
      * Gets CampaignFunds.
-     *
-     * @return CampaignFundsParam|null
      */
-    public function getCampaignFunds()
+    public function getCampaignFunds(): ?CampaignFundsParam
     {
-        return isset($this->CampaignFunds) ? $this->CampaignFunds : null;
+        return $this->CampaignFunds ?? null;
     }
 
     /**
      * Sets CampaignFunds.
      *
-     * @param CampaignFundsParam|null $value
      * @return $this
      */
-    public function setCampaignFunds(CampaignFundsParam $value = null)
+    public function setCampaignFunds(?CampaignFundsParam $value = null)
     {
         $this->CampaignFunds = $value;
 
@@ -76,27 +71,21 @@ class FundsParam
 
     /**
      * Gets SharedAccountFunds.
-     *
-     * @return SharedAccountFundsParam|null
      */
-    public function getSharedAccountFunds()
+    public function getSharedAccountFunds(): ?SharedAccountFundsParam
     {
-        return isset($this->SharedAccountFunds) ? $this->SharedAccountFunds : null;
+        return $this->SharedAccountFunds ?? null;
     }
 
     /**
      * Sets SharedAccountFunds.
      *
-     * @param SharedAccountFundsParam|null $value
      * @return $this
      */
-    public function setSharedAccountFunds(SharedAccountFundsParam $value = null)
+    public function setSharedAccountFunds(?SharedAccountFundsParam $value = null)
     {
         $this->SharedAccountFunds = $value;
 
         return $this;
     }
-
-
 }
-

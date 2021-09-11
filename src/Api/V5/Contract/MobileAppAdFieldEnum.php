@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,23 +9,19 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class MobileAppAdFieldEnum
 {
+    public const AD_IMAGE_HASH = 'AdImageHash';
 
-    const AD_IMAGE_HASH = 'AdImageHash';
+    public const TITLE = 'Title';
 
-    const TITLE = 'Title';
+    public const TEXT = 'Text';
 
-    const TEXT = 'Text';
+    public const FEATURES = 'Features';
 
-    const FEATURES = 'Features';
+    public const ACTION = 'Action';
 
-    const ACTION = 'Action';
+    public const TRACKING_URL = 'TrackingUrl';
 
-    const TRACKING_URL = 'TrackingUrl';
+    public const AD_IMAGE_MODERATION = 'AdImageModeration';
 
-    const AD_IMAGE_MODERATION = 'AdImageModeration';
-
-    const VIDEO_EXTENSION = 'VideoExtension';
-
-
+    public const VIDEO_EXTENSION = 'VideoExtension';
 }
-

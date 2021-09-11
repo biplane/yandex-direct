@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class NotificationUpdate
 {
-
 //    Can be omit.
 //    protected $Email = null;
 
@@ -19,31 +20,26 @@ class NotificationUpdate
 
     /**
      * Creates a new instance of NotificationUpdate.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Email.
-     *
-     * @return string|null
      */
-    public function getEmail()
+    public function getEmail(): ?string
     {
-        return isset($this->Email) ? $this->Email : null;
+        return $this->Email ?? null;
     }
 
     /**
      * Sets Email.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setEmail($value = null)
+    public function setEmail(?string $value = null)
     {
         $this->Email = $value;
 
@@ -55,18 +51,19 @@ class NotificationUpdate
      *
      * @return EmailSubscriptionItem[]|null
      */
-    public function getEmailSubscriptions()
+    public function getEmailSubscriptions(): ?array
     {
-        return isset($this->EmailSubscriptions) ? $this->EmailSubscriptions : null;
+        return $this->EmailSubscriptions ?? null;
     }
 
     /**
      * Sets EmailSubscriptions.
      *
      * @param EmailSubscriptionItem[]|null $value
+     *
      * @return $this
      */
-    public function setEmailSubscriptions(array $value = null)
+    public function setEmailSubscriptions(?array $value = null)
     {
         $this->EmailSubscriptions = $value;
 
@@ -76,28 +73,24 @@ class NotificationUpdate
     /**
      * Gets Lang.
      *
-     * @return string|null
      * @see LangEnum
      */
-    public function getLang()
+    public function getLang(): ?string
     {
-        return isset($this->Lang) ? $this->Lang : null;
+        return $this->Lang ?? null;
     }
 
     /**
      * Sets Lang.
      *
-     * @param string|null $value
-     * @return $this
      * @see LangEnum
+     *
+     * @return $this
      */
-    public function setLang($value = null)
+    public function setLang(?string $value = null)
     {
         $this->Lang = $value;
 
         return $this;
     }
-
-
 }
-

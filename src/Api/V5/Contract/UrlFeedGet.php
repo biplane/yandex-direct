@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class UrlFeedGet extends UrlFeedBase
 {
-
 //    Can be omit.
 //    protected $Url = null;
 
@@ -16,31 +17,26 @@ class UrlFeedGet extends UrlFeedBase
 
     /**
      * Creates a new instance of UrlFeedGet.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Url.
-     *
-     * @return string|null
      */
-    public function getUrl()
+    public function getUrl(): ?string
     {
-        return isset($this->Url) ? $this->Url : null;
+        return $this->Url ?? null;
     }
 
     /**
      * Sets Url.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setUrl($value = null)
+    public function setUrl(?string $value = null)
     {
         $this->Url = $value;
 
@@ -49,27 +45,21 @@ class UrlFeedGet extends UrlFeedBase
 
     /**
      * Gets Login.
-     *
-     * @return string|null
      */
-    public function getLogin()
+    public function getLogin(): ?string
     {
-        return isset($this->Login) ? $this->Login : null;
+        return $this->Login ?? null;
     }
 
     /**
      * Sets Login.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setLogin($value = null)
+    public function setLogin(?string $value = null)
     {
         $this->Login = $value;
 
         return $this;
     }
-
-
 }
-

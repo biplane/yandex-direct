@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,25 +9,20 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class NegativeKeywordSharedSetUpdateItem extends NegativeKeywordSharedSetBase
 {
-
     protected $Id = null;
 
     /**
      * Creates a new instance of NegativeKeywordSharedSetUpdateItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Id.
-     *
-     * @return int
      */
-    public function getId()
+    public function getId(): int
     {
         return $this->Id;
     }
@@ -33,16 +30,12 @@ class NegativeKeywordSharedSetUpdateItem extends NegativeKeywordSharedSetBase
     /**
      * Sets Id.
      *
-     * @param int $value
      * @return $this
      */
-    public function setId($value)
+    public function setId(int $value)
     {
         $this->Id = $value;
 
         return $this;
     }
-
-
 }
-

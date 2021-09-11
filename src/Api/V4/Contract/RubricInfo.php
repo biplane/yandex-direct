@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class RubricInfo
 {
-
     protected $ParentID = null;
 
     protected $RubricID = null;
@@ -22,20 +23,16 @@ class RubricInfo
 
     /**
      * Creates a new instance of RubricInfo.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets ParentID.
-     *
-     * @return int
      */
-    public function getParentID()
+    public function getParentID(): int
     {
         return $this->ParentID;
     }
@@ -43,10 +40,9 @@ class RubricInfo
     /**
      * Sets ParentID.
      *
-     * @param int $value
      * @return $this
      */
-    public function setParentID($value)
+    public function setParentID(int $value)
     {
         $this->ParentID = $value;
 
@@ -55,10 +51,8 @@ class RubricInfo
 
     /**
      * Gets RubricID.
-     *
-     * @return int
      */
-    public function getRubricID()
+    public function getRubricID(): int
     {
         return $this->RubricID;
     }
@@ -66,10 +60,9 @@ class RubricInfo
     /**
      * Sets RubricID.
      *
-     * @param int $value
      * @return $this
      */
-    public function setRubricID($value)
+    public function setRubricID(int $value)
     {
         $this->RubricID = $value;
 
@@ -78,10 +71,8 @@ class RubricInfo
 
     /**
      * Gets Url.
-     *
-     * @return string
      */
-    public function getUrl()
+    public function getUrl(): string
     {
         return $this->Url;
     }
@@ -89,10 +80,9 @@ class RubricInfo
     /**
      * Sets Url.
      *
-     * @param string $value
      * @return $this
      */
-    public function setUrl($value)
+    public function setUrl(string $value)
     {
         $this->Url = $value;
 
@@ -101,10 +91,8 @@ class RubricInfo
 
     /**
      * Gets RubricFullName.
-     *
-     * @return string
      */
-    public function getRubricFullName()
+    public function getRubricFullName(): string
     {
         return $this->RubricFullName;
     }
@@ -112,10 +100,9 @@ class RubricInfo
     /**
      * Sets RubricFullName.
      *
-     * @param string $value
      * @return $this
      */
-    public function setRubricFullName($value)
+    public function setRubricFullName(string $value)
     {
         $this->RubricFullName = $value;
 
@@ -124,10 +111,8 @@ class RubricInfo
 
     /**
      * Gets RubricName.
-     *
-     * @return string
      */
-    public function getRubricName()
+    public function getRubricName(): string
     {
         return $this->RubricName;
     }
@@ -135,10 +120,9 @@ class RubricInfo
     /**
      * Sets RubricName.
      *
-     * @param string $value
      * @return $this
      */
-    public function setRubricName($value)
+    public function setRubricName(string $value)
     {
         $this->RubricName = $value;
 
@@ -147,10 +131,8 @@ class RubricInfo
 
     /**
      * Gets Checkable.
-     *
-     * @return string
      */
-    public function getCheckable()
+    public function getCheckable(): string
     {
         return $this->Checkable;
     }
@@ -158,16 +140,12 @@ class RubricInfo
     /**
      * Sets Checkable.
      *
-     * @param string $value
      * @return $this
      */
-    public function setCheckable($value)
+    public function setCheckable(string $value)
     {
         $this->Checkable = $value;
 
         return $this;
     }
-
-
 }
-

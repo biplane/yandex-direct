@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class PayCampaignsInfo
 {
-
     protected $Payments = [];
 
     protected $ContractID = null;
@@ -16,10 +17,8 @@ class PayCampaignsInfo
 
     /**
      * Creates a new instance of PayCampaignsInfo.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -29,7 +28,7 @@ class PayCampaignsInfo
      *
      * @return PayCampElement[]
      */
-    public function getPayments()
+    public function getPayments(): array
     {
         return $this->Payments;
     }
@@ -38,6 +37,7 @@ class PayCampaignsInfo
      * Sets Payments.
      *
      * @param PayCampElement[] $value
+     *
      * @return $this
      */
     public function setPayments(array $value)
@@ -49,10 +49,8 @@ class PayCampaignsInfo
 
     /**
      * Gets ContractID.
-     *
-     * @return string|null
      */
-    public function getContractID()
+    public function getContractID(): ?string
     {
         return $this->ContractID;
     }
@@ -60,10 +58,9 @@ class PayCampaignsInfo
     /**
      * Sets ContractID.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setContractID($value = null)
+    public function setContractID(?string $value = null)
     {
         $this->ContractID = $value;
 
@@ -72,10 +69,8 @@ class PayCampaignsInfo
 
     /**
      * Gets PayMethod.
-     *
-     * @return string
      */
-    public function getPayMethod()
+    public function getPayMethod(): string
     {
         return $this->PayMethod;
     }
@@ -83,16 +78,12 @@ class PayCampaignsInfo
     /**
      * Sets PayMethod.
      *
-     * @param string $value
      * @return $this
      */
-    public function setPayMethod($value)
+    public function setPayMethod(string $value)
     {
         $this->PayMethod = $value;
 
         return $this;
     }
-
-
 }
-

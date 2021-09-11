@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5;
 
 use Biplane\YandexDirect\Api\ApiSoapClientV5;
@@ -10,8 +12,7 @@ use Biplane\YandexDirect\Config;
  */
 class KeywordsResearch extends ApiSoapClientV5
 {
-
-    const ENDPOINT = 'https://api.direct.yandex.com/v5/keywordsresearch?wsdl';
+    public const ENDPOINT = 'https://api.direct.yandex.com/v5/keywordsresearch?wsdl';
 
     public function __construct(Config $config, array $options)
     {
@@ -74,26 +75,17 @@ class KeywordsResearch extends ApiSoapClientV5
 
     /**
      * hasSearchVolume.
-     *
-     * @param Contract\HasSearchVolumeKeywordsRequest $parameters
-     * @return Contract\HasSearchVolumeKeywordsResponse
      */
-    public function hasSearchVolume(Contract\HasSearchVolumeKeywordsRequest $parameters)
+    public function hasSearchVolume(Contract\HasSearchVolumeKeywordsRequest $parameters): Contract\HasSearchVolumeKeywordsResponse
     {
         return $this->__soapCall('hasSearchVolume', [$parameters]);
     }
 
     /**
      * deduplicate.
-     *
-     * @param Contract\DeduplicateRequest $parameters
-     * @return Contract\DeduplicateResponse
      */
-    public function deduplicate(Contract\DeduplicateRequest $parameters)
+    public function deduplicate(Contract\DeduplicateRequest $parameters): Contract\DeduplicateResponse
     {
         return $this->__soapCall('deduplicate', [$parameters]);
     }
-
-
 }
-

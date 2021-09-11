@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,27 +9,22 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class Sitelink
 {
-
     protected $Title = null;
 
     protected $Href = null;
 
     /**
      * Creates a new instance of Sitelink.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Title.
-     *
-     * @return string
      */
-    public function getTitle()
+    public function getTitle(): string
     {
         return $this->Title;
     }
@@ -35,10 +32,9 @@ class Sitelink
     /**
      * Sets Title.
      *
-     * @param string $value
      * @return $this
      */
-    public function setTitle($value)
+    public function setTitle(string $value)
     {
         $this->Title = $value;
 
@@ -47,10 +43,8 @@ class Sitelink
 
     /**
      * Gets Href.
-     *
-     * @return string
      */
-    public function getHref()
+    public function getHref(): string
     {
         return $this->Href;
     }
@@ -58,16 +52,12 @@ class Sitelink
     /**
      * Sets Href.
      *
-     * @param string $value
      * @return $this
      */
-    public function setHref($value)
+    public function setHref(string $value)
     {
         $this->Href = $value;
 
         return $this;
     }
-
-
 }
-

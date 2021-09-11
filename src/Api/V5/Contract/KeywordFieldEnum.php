@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,37 +9,33 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class KeywordFieldEnum
 {
+    public const ID = 'Id';
 
-    const ID = 'Id';
+    public const KEYWORD = 'Keyword';
 
-    const KEYWORD = 'Keyword';
+    public const STATE = 'State';
 
-    const STATE = 'State';
+    public const STATUS = 'Status';
 
-    const STATUS = 'Status';
+    public const AD_GROUP_ID = 'AdGroupId';
 
-    const AD_GROUP_ID = 'AdGroupId';
+    public const CAMPAIGN_ID = 'CampaignId';
 
-    const CAMPAIGN_ID = 'CampaignId';
+    public const BID = 'Bid';
 
-    const BID = 'Bid';
+    public const CONTEXT_BID = 'ContextBid';
 
-    const CONTEXT_BID = 'ContextBid';
+    public const STRATEGY_PRIORITY = 'StrategyPriority';
 
-    const STRATEGY_PRIORITY = 'StrategyPriority';
+    public const USER_PARAM1 = 'UserParam1';
 
-    const USER_PARAM1 = 'UserParam1';
+    public const USER_PARAM2 = 'UserParam2';
 
-    const USER_PARAM2 = 'UserParam2';
+    public const PRODUCTIVITY = 'Productivity';
 
-    const PRODUCTIVITY = 'Productivity';
+    public const STATISTICS_SEARCH = 'StatisticsSearch';
 
-    const STATISTICS_SEARCH = 'StatisticsSearch';
+    public const STATISTICS_NETWORK = 'StatisticsNetwork';
 
-    const STATISTICS_NETWORK = 'StatisticsNetwork';
-
-    const SERVING_STATUS = 'ServingStatus';
-
-
+    public const SERVING_STATUS = 'ServingStatus';
 }
-

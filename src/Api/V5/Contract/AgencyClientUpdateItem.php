@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AgencyClientUpdateItem extends ClientUpdateItem
 {
-
     protected $ClientId = null;
 
 //    Can be omit.
@@ -15,20 +16,16 @@ class AgencyClientUpdateItem extends ClientUpdateItem
 
     /**
      * Creates a new instance of AgencyClientUpdateItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets ClientId.
-     *
-     * @return int
      */
-    public function getClientId()
+    public function getClientId(): int
     {
         return $this->ClientId;
     }
@@ -36,10 +33,9 @@ class AgencyClientUpdateItem extends ClientUpdateItem
     /**
      * Sets ClientId.
      *
-     * @param int $value
      * @return $this
      */
-    public function setClientId($value)
+    public function setClientId(int $value)
     {
         $this->ClientId = $value;
 
@@ -51,24 +47,22 @@ class AgencyClientUpdateItem extends ClientUpdateItem
      *
      * @return GrantItem[]|null
      */
-    public function getGrants()
+    public function getGrants(): ?array
     {
-        return isset($this->Grants) ? $this->Grants : null;
+        return $this->Grants ?? null;
     }
 
     /**
      * Sets Grants.
      *
      * @param GrantItem[]|null $value
+     *
      * @return $this
      */
-    public function setGrants(array $value = null)
+    public function setGrants(?array $value = null)
     {
         $this->Grants = $value;
 
         return $this;
     }
-
-
 }
-

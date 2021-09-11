@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class AdImageRaw
 {
-
     protected $Login = null;
 
     protected $RawData = null;
@@ -16,20 +17,16 @@ class AdImageRaw
 
     /**
      * Creates a new instance of AdImageRaw.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Login.
-     *
-     * @return string|null
      */
-    public function getLogin()
+    public function getLogin(): ?string
     {
         return $this->Login;
     }
@@ -37,10 +34,9 @@ class AdImageRaw
     /**
      * Sets Login.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setLogin($value = null)
+    public function setLogin(?string $value = null)
     {
         $this->Login = $value;
 
@@ -49,10 +45,8 @@ class AdImageRaw
 
     /**
      * Gets RawData.
-     *
-     * @return string
      */
-    public function getRawData()
+    public function getRawData(): string
     {
         return $this->RawData;
     }
@@ -60,10 +54,9 @@ class AdImageRaw
     /**
      * Sets RawData.
      *
-     * @param string $value
      * @return $this
      */
-    public function setRawData($value)
+    public function setRawData(string $value)
     {
         $this->RawData = $value;
 
@@ -72,10 +65,8 @@ class AdImageRaw
 
     /**
      * Gets Name.
-     *
-     * @return string
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->Name;
     }
@@ -83,16 +74,12 @@ class AdImageRaw
     /**
      * Sets Name.
      *
-     * @param string $value
      * @return $this
      */
-    public function setName($value)
+    public function setName(string $value)
     {
         $this->Name = $value;
 
         return $this;
     }
-
-
 }
-

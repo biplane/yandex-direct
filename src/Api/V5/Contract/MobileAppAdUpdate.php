@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class MobileAppAdUpdate extends MobileAppAdBase
 {
-
 //    Can be omit.
 //    protected $Features = null;
 
@@ -19,10 +20,8 @@ class MobileAppAdUpdate extends MobileAppAdBase
 
     /**
      * Creates a new instance of MobileAppAdUpdate.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -32,18 +31,19 @@ class MobileAppAdUpdate extends MobileAppAdBase
      *
      * @return MobileAppAdFeatureItem[]|null
      */
-    public function getFeatures()
+    public function getFeatures(): ?array
     {
-        return isset($this->Features) ? $this->Features : null;
+        return $this->Features ?? null;
     }
 
     /**
      * Sets Features.
      *
      * @param MobileAppAdFeatureItem[]|null $value
+     *
      * @return $this
      */
-    public function setFeatures(array $value = null)
+    public function setFeatures(?array $value = null)
     {
         $this->Features = $value;
 
@@ -53,22 +53,21 @@ class MobileAppAdUpdate extends MobileAppAdBase
     /**
      * Gets AgeLabel.
      *
-     * @return string|null
      * @see MobAppAgeLabelEnum
      */
-    public function getAgeLabel()
+    public function getAgeLabel(): ?string
     {
-        return isset($this->AgeLabel) ? $this->AgeLabel : null;
+        return $this->AgeLabel ?? null;
     }
 
     /**
      * Sets AgeLabel.
      *
-     * @param string|null $value
-     * @return $this
      * @see MobAppAgeLabelEnum
+     *
+     * @return $this
      */
-    public function setAgeLabel($value = null)
+    public function setAgeLabel(?string $value = null)
     {
         $this->AgeLabel = $value;
 
@@ -77,27 +76,21 @@ class MobileAppAdUpdate extends MobileAppAdBase
 
     /**
      * Gets VideoExtension.
-     *
-     * @return VideoExtensionUpdateItem|null
      */
-    public function getVideoExtension()
+    public function getVideoExtension(): ?VideoExtensionUpdateItem
     {
-        return isset($this->VideoExtension) ? $this->VideoExtension : null;
+        return $this->VideoExtension ?? null;
     }
 
     /**
      * Sets VideoExtension.
      *
-     * @param VideoExtensionUpdateItem|null $value
      * @return $this
      */
-    public function setVideoExtension(VideoExtensionUpdateItem $value = null)
+    public function setVideoExtension(?VideoExtensionUpdateItem $value = null)
     {
         $this->VideoExtension = $value;
 
         return $this;
     }
-
-
 }
-

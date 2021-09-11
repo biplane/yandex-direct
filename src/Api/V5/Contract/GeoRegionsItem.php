@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class GeoRegionsItem
 {
-
     protected $GeoRegionId = null;
 
     protected $GeoRegionName = null;
@@ -18,20 +19,16 @@ class GeoRegionsItem
 
     /**
      * Creates a new instance of GeoRegionsItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets GeoRegionId.
-     *
-     * @return int
      */
-    public function getGeoRegionId()
+    public function getGeoRegionId(): int
     {
         return $this->GeoRegionId;
     }
@@ -39,10 +36,9 @@ class GeoRegionsItem
     /**
      * Sets GeoRegionId.
      *
-     * @param int $value
      * @return $this
      */
-    public function setGeoRegionId($value)
+    public function setGeoRegionId(int $value)
     {
         $this->GeoRegionId = $value;
 
@@ -51,10 +47,8 @@ class GeoRegionsItem
 
     /**
      * Gets GeoRegionName.
-     *
-     * @return string
      */
-    public function getGeoRegionName()
+    public function getGeoRegionName(): string
     {
         return $this->GeoRegionName;
     }
@@ -62,10 +56,9 @@ class GeoRegionsItem
     /**
      * Sets GeoRegionName.
      *
-     * @param string $value
      * @return $this
      */
-    public function setGeoRegionName($value)
+    public function setGeoRegionName(string $value)
     {
         $this->GeoRegionName = $value;
 
@@ -74,10 +67,8 @@ class GeoRegionsItem
 
     /**
      * Gets GeoRegionType.
-     *
-     * @return string
      */
-    public function getGeoRegionType()
+    public function getGeoRegionType(): string
     {
         return $this->GeoRegionType;
     }
@@ -85,10 +76,9 @@ class GeoRegionsItem
     /**
      * Sets GeoRegionType.
      *
-     * @param string $value
      * @return $this
      */
-    public function setGeoRegionType($value)
+    public function setGeoRegionType(string $value)
     {
         $this->GeoRegionType = $value;
 
@@ -97,10 +87,8 @@ class GeoRegionsItem
 
     /**
      * Gets ParentId.
-     *
-     * @return int|null
      */
-    public function getParentId()
+    public function getParentId(): ?int
     {
         return $this->ParentId;
     }
@@ -108,16 +96,12 @@ class GeoRegionsItem
     /**
      * Sets ParentId.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setParentId($value = null)
+    public function setParentId(?int $value = null)
     {
         $this->ParentId = $value;
 
         return $this;
     }
-
-
 }
-

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class LimitOffset
 {
-
 //    Can be omit.
 //    protected $Limit = null;
 
@@ -16,31 +17,26 @@ class LimitOffset
 
     /**
      * Creates a new instance of LimitOffset.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Limit.
-     *
-     * @return int|null
      */
-    public function getLimit()
+    public function getLimit(): ?int
     {
-        return isset($this->Limit) ? $this->Limit : null;
+        return $this->Limit ?? null;
     }
 
     /**
      * Sets Limit.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setLimit($value = null)
+    public function setLimit(?int $value = null)
     {
         $this->Limit = $value;
 
@@ -49,27 +45,21 @@ class LimitOffset
 
     /**
      * Gets Offset.
-     *
-     * @return int|null
      */
-    public function getOffset()
+    public function getOffset(): ?int
     {
-        return isset($this->Offset) ? $this->Offset : null;
+        return $this->Offset ?? null;
     }
 
     /**
      * Sets Offset.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setOffset($value = null)
+    public function setOffset(?int $value = null)
     {
         $this->Offset = $value;
 
         return $this;
     }
-
-
 }
-

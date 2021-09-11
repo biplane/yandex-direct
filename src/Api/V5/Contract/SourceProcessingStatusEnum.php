@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,15 +9,11 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class SourceProcessingStatusEnum
 {
+    public const EMPTY_RESULT = 'EMPTY_RESULT';
 
-    const EMPTY_RESULT = 'EMPTY_RESULT';
+    public const PROCESSED = 'PROCESSED';
 
-    const PROCESSED = 'PROCESSED';
+    public const UNKNOWN = 'UNKNOWN';
 
-    const UNKNOWN = 'UNKNOWN';
-
-    const UNPROCESSED = 'UNPROCESSED';
-
-
+    public const UNPROCESSED = 'UNPROCESSED';
 }
-

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class DemographicsAdjustmentAdd
 {
-
 //    Can be omit.
 //    protected $Gender = null;
 
@@ -18,10 +19,8 @@ class DemographicsAdjustmentAdd
 
     /**
      * Creates a new instance of DemographicsAdjustmentAdd.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -29,22 +28,21 @@ class DemographicsAdjustmentAdd
     /**
      * Gets Gender.
      *
-     * @return string|null
      * @see GenderEnum
      */
-    public function getGender()
+    public function getGender(): ?string
     {
-        return isset($this->Gender) ? $this->Gender : null;
+        return $this->Gender ?? null;
     }
 
     /**
      * Sets Gender.
      *
-     * @param string|null $value
-     * @return $this
      * @see GenderEnum
+     *
+     * @return $this
      */
-    public function setGender($value = null)
+    public function setGender(?string $value = null)
     {
         $this->Gender = $value;
 
@@ -54,22 +52,21 @@ class DemographicsAdjustmentAdd
     /**
      * Gets Age.
      *
-     * @return string|null
      * @see AgeRangeEnum
      */
-    public function getAge()
+    public function getAge(): ?string
     {
-        return isset($this->Age) ? $this->Age : null;
+        return $this->Age ?? null;
     }
 
     /**
      * Sets Age.
      *
-     * @param string|null $value
-     * @return $this
      * @see AgeRangeEnum
+     *
+     * @return $this
      */
-    public function setAge($value = null)
+    public function setAge(?string $value = null)
     {
         $this->Age = $value;
 
@@ -78,10 +75,8 @@ class DemographicsAdjustmentAdd
 
     /**
      * Gets BidModifier.
-     *
-     * @return int
      */
-    public function getBidModifier()
+    public function getBidModifier(): int
     {
         return $this->BidModifier;
     }
@@ -89,16 +84,12 @@ class DemographicsAdjustmentAdd
     /**
      * Sets BidModifier.
      *
-     * @param int $value
      * @return $this
      */
-    public function setBidModifier($value)
+    public function setBidModifier(int $value)
     {
         $this->BidModifier = $value;
 
         return $this;
     }
-
-
 }
-

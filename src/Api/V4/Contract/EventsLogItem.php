@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class EventsLogItem
 {
-
     protected $CampaignID = null;
 
     protected $BannerID = null;
@@ -28,20 +29,16 @@ class EventsLogItem
 
     /**
      * Creates a new instance of EventsLogItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets CampaignID.
-     *
-     * @return int|null
      */
-    public function getCampaignID()
+    public function getCampaignID(): ?int
     {
         return $this->CampaignID;
     }
@@ -49,10 +46,9 @@ class EventsLogItem
     /**
      * Sets CampaignID.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setCampaignID($value = null)
+    public function setCampaignID(?int $value = null)
     {
         $this->CampaignID = $value;
 
@@ -61,10 +57,8 @@ class EventsLogItem
 
     /**
      * Gets BannerID.
-     *
-     * @return int|null
      */
-    public function getBannerID()
+    public function getBannerID(): ?int
     {
         return $this->BannerID;
     }
@@ -72,10 +66,9 @@ class EventsLogItem
     /**
      * Sets BannerID.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setBannerID($value = null)
+    public function setBannerID(?int $value = null)
     {
         $this->BannerID = $value;
 
@@ -84,10 +77,8 @@ class EventsLogItem
 
     /**
      * Gets PhraseID.
-     *
-     * @return int|null
      */
-    public function getPhraseID()
+    public function getPhraseID(): ?int
     {
         return $this->PhraseID;
     }
@@ -95,10 +86,9 @@ class EventsLogItem
     /**
      * Sets PhraseID.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setPhraseID($value = null)
+    public function setPhraseID(?int $value = null)
     {
         $this->PhraseID = $value;
 
@@ -107,10 +97,8 @@ class EventsLogItem
 
     /**
      * Gets AccountID.
-     *
-     * @return int|null
      */
-    public function getAccountID()
+    public function getAccountID(): ?int
     {
         return $this->AccountID;
     }
@@ -118,10 +106,9 @@ class EventsLogItem
     /**
      * Sets AccountID.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setAccountID($value = null)
+    public function setAccountID(?int $value = null)
     {
         $this->AccountID = $value;
 
@@ -130,10 +117,8 @@ class EventsLogItem
 
     /**
      * Gets TextDescription.
-     *
-     * @return string|null
      */
-    public function getTextDescription()
+    public function getTextDescription(): ?string
     {
         return $this->TextDescription;
     }
@@ -141,10 +126,9 @@ class EventsLogItem
     /**
      * Sets TextDescription.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setTextDescription($value = null)
+    public function setTextDescription(?string $value = null)
     {
         $this->TextDescription = $value;
 
@@ -153,10 +137,8 @@ class EventsLogItem
 
     /**
      * Gets EventType.
-     *
-     * @return string
      */
-    public function getEventType()
+    public function getEventType(): string
     {
         return $this->EventType;
     }
@@ -164,10 +146,9 @@ class EventsLogItem
     /**
      * Sets EventType.
      *
-     * @param string $value
      * @return $this
      */
-    public function setEventType($value)
+    public function setEventType(string $value)
     {
         $this->EventType = $value;
 
@@ -176,10 +157,8 @@ class EventsLogItem
 
     /**
      * Gets Timestamp.
-     *
-     * @return string
      */
-    public function getTimestamp()
+    public function getTimestamp(): string
     {
         return $this->Timestamp;
     }
@@ -187,10 +166,9 @@ class EventsLogItem
     /**
      * Sets Timestamp.
      *
-     * @param string $value
      * @return $this
      */
-    public function setTimestamp($value)
+    public function setTimestamp(string $value)
     {
         $this->Timestamp = $value;
 
@@ -199,10 +177,8 @@ class EventsLogItem
 
     /**
      * Gets EventName.
-     *
-     * @return string
      */
-    public function getEventName()
+    public function getEventName(): string
     {
         return $this->EventName;
     }
@@ -210,10 +186,9 @@ class EventsLogItem
     /**
      * Sets EventName.
      *
-     * @param string $value
      * @return $this
      */
-    public function setEventName($value)
+    public function setEventName(string $value)
     {
         $this->EventName = $value;
 
@@ -222,10 +197,8 @@ class EventsLogItem
 
     /**
      * Gets Attributes.
-     *
-     * @return EventsLogItemAttributes|null
      */
-    public function getAttributes()
+    public function getAttributes(): ?EventsLogItemAttributes
     {
         return $this->Attributes;
     }
@@ -233,16 +206,12 @@ class EventsLogItem
     /**
      * Sets Attributes.
      *
-     * @param EventsLogItemAttributes|null $value
      * @return $this
      */
-    public function setAttributes(EventsLogItemAttributes $value = null)
+    public function setAttributes(?EventsLogItemAttributes $value = null)
     {
         $this->Attributes = $value;
 
         return $this;
     }
-
-
 }
-

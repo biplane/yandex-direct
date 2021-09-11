@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,16 +9,13 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class UrlFeedBase
 {
-
 //    Can be omit.
 //    protected $RemoveUtmTags = null;
 
     /**
      * Creates a new instance of UrlFeedBase.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -24,28 +23,24 @@ class UrlFeedBase
     /**
      * Gets RemoveUtmTags.
      *
-     * @return string|null
      * @see YesNoEnum
      */
-    public function getRemoveUtmTags()
+    public function getRemoveUtmTags(): ?string
     {
-        return isset($this->RemoveUtmTags) ? $this->RemoveUtmTags : null;
+        return $this->RemoveUtmTags ?? null;
     }
 
     /**
      * Sets RemoveUtmTags.
      *
-     * @param string|null $value
-     * @return $this
      * @see YesNoEnum
+     *
+     * @return $this
      */
-    public function setRemoveUtmTags($value = null)
+    public function setRemoveUtmTags(?string $value = null)
     {
         $this->RemoveUtmTags = $value;
 
         return $this;
     }
-
-
 }
-

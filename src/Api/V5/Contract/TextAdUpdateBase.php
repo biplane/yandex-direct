@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class TextAdUpdateBase
 {
-
 //    Can be omit.
 //    protected $VCardId = null;
 
@@ -22,31 +23,26 @@ class TextAdUpdateBase
 
     /**
      * Creates a new instance of TextAdUpdateBase.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets VCardId.
-     *
-     * @return int|null
      */
-    public function getVCardId()
+    public function getVCardId(): ?int
     {
-        return isset($this->VCardId) ? $this->VCardId : null;
+        return $this->VCardId ?? null;
     }
 
     /**
      * Sets VCardId.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setVCardId($value = null)
+    public function setVCardId(?int $value = null)
     {
         $this->VCardId = $value;
 
@@ -55,21 +51,18 @@ class TextAdUpdateBase
 
     /**
      * Gets AdImageHash.
-     *
-     * @return string|null
      */
-    public function getAdImageHash()
+    public function getAdImageHash(): ?string
     {
-        return isset($this->AdImageHash) ? $this->AdImageHash : null;
+        return $this->AdImageHash ?? null;
     }
 
     /**
      * Sets AdImageHash.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setAdImageHash($value = null)
+    public function setAdImageHash(?string $value = null)
     {
         $this->AdImageHash = $value;
 
@@ -78,21 +71,18 @@ class TextAdUpdateBase
 
     /**
      * Gets SitelinkSetId.
-     *
-     * @return int|null
      */
-    public function getSitelinkSetId()
+    public function getSitelinkSetId(): ?int
     {
-        return isset($this->SitelinkSetId) ? $this->SitelinkSetId : null;
+        return $this->SitelinkSetId ?? null;
     }
 
     /**
      * Sets SitelinkSetId.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setSitelinkSetId($value = null)
+    public function setSitelinkSetId(?int $value = null)
     {
         $this->SitelinkSetId = $value;
 
@@ -101,27 +91,21 @@ class TextAdUpdateBase
 
     /**
      * Gets CalloutSetting.
-     *
-     * @return AdExtensionSetting|null
      */
-    public function getCalloutSetting()
+    public function getCalloutSetting(): ?AdExtensionSetting
     {
-        return isset($this->CalloutSetting) ? $this->CalloutSetting : null;
+        return $this->CalloutSetting ?? null;
     }
 
     /**
      * Sets CalloutSetting.
      *
-     * @param AdExtensionSetting|null $value
      * @return $this
      */
-    public function setCalloutSetting(AdExtensionSetting $value = null)
+    public function setCalloutSetting(?AdExtensionSetting $value = null)
     {
         $this->CalloutSetting = $value;
 
         return $this;
     }
-
-
 }
-

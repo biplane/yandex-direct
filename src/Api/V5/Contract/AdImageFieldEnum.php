@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,21 +9,17 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AdImageFieldEnum
 {
+    public const AD_IMAGE_HASH = 'AdImageHash';
 
-    const AD_IMAGE_HASH = 'AdImageHash';
+    public const ORIGINAL_URL = 'OriginalUrl';
 
-    const ORIGINAL_URL = 'OriginalUrl';
+    public const PREVIEW_URL = 'PreviewUrl';
 
-    const PREVIEW_URL = 'PreviewUrl';
+    public const NAME = 'Name';
 
-    const NAME = 'Name';
+    public const TYPE = 'Type';
 
-    const TYPE = 'Type';
+    public const SUBTYPE = 'Subtype';
 
-    const SUBTYPE = 'Subtype';
-
-    const ASSOCIATED = 'Associated';
-
-
+    public const ASSOCIATED = 'Associated';
 }
-

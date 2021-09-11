@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,11 +9,7 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class MobileAppCampaignFieldEnum
 {
+    public const SETTINGS = 'Settings';
 
-    const SETTINGS = 'Settings';
-
-    const BIDDING_STRATEGY = 'BiddingStrategy';
-
-
+    public const BIDDING_STRATEGY = 'BiddingStrategy';
 }
-

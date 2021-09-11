@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,27 +9,22 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class ForecastStatusInfo
 {
-
     protected $ForecastID = null;
 
     protected $StatusForecast = null;
 
     /**
      * Creates a new instance of ForecastStatusInfo.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets ForecastID.
-     *
-     * @return int
      */
-    public function getForecastID()
+    public function getForecastID(): int
     {
         return $this->ForecastID;
     }
@@ -35,10 +32,9 @@ class ForecastStatusInfo
     /**
      * Sets ForecastID.
      *
-     * @param int $value
      * @return $this
      */
-    public function setForecastID($value)
+    public function setForecastID(int $value)
     {
         $this->ForecastID = $value;
 
@@ -47,10 +43,8 @@ class ForecastStatusInfo
 
     /**
      * Gets StatusForecast.
-     *
-     * @return string
      */
-    public function getStatusForecast()
+    public function getStatusForecast(): string
     {
         return $this->StatusForecast;
     }
@@ -58,16 +52,12 @@ class ForecastStatusInfo
     /**
      * Sets StatusForecast.
      *
-     * @param string $value
      * @return $this
      */
-    public function setStatusForecast($value)
+    public function setStatusForecast(string $value)
     {
         $this->StatusForecast = $value;
 
         return $this;
     }
-
-
 }
-

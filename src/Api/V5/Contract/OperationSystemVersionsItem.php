@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,27 +9,22 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class OperationSystemVersionsItem
 {
-
     protected $OsName = null;
 
     protected $OsVersion = null;
 
     /**
      * Creates a new instance of OperationSystemVersionsItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets OsName.
-     *
-     * @return string
      */
-    public function getOsName()
+    public function getOsName(): string
     {
         return $this->OsName;
     }
@@ -35,10 +32,9 @@ class OperationSystemVersionsItem
     /**
      * Sets OsName.
      *
-     * @param string $value
      * @return $this
      */
-    public function setOsName($value)
+    public function setOsName(string $value)
     {
         $this->OsName = $value;
 
@@ -47,10 +43,8 @@ class OperationSystemVersionsItem
 
     /**
      * Gets OsVersion.
-     *
-     * @return string
      */
-    public function getOsVersion()
+    public function getOsVersion(): string
     {
         return $this->OsVersion;
     }
@@ -58,16 +52,12 @@ class OperationSystemVersionsItem
     /**
      * Sets OsVersion.
      *
-     * @param string $value
      * @return $this
      */
-    public function setOsVersion($value)
+    public function setOsVersion(string $value)
     {
         $this->OsVersion = $value;
 
         return $this;
     }
-
-
 }
-

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class HasSearchVolumeItem
 {
-
 //    Can be omit.
 //    protected $Keyword = null;
 
@@ -28,31 +29,26 @@ class HasSearchVolumeItem
 
     /**
      * Creates a new instance of HasSearchVolumeItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Keyword.
-     *
-     * @return string|null
      */
-    public function getKeyword()
+    public function getKeyword(): ?string
     {
-        return isset($this->Keyword) ? $this->Keyword : null;
+        return $this->Keyword ?? null;
     }
 
     /**
      * Sets Keyword.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setKeyword($value = null)
+    public function setKeyword(?string $value = null)
     {
         $this->Keyword = $value;
 
@@ -64,18 +60,19 @@ class HasSearchVolumeItem
      *
      * @return int[]|null
      */
-    public function getRegionIds()
+    public function getRegionIds(): ?array
     {
-        return isset($this->RegionIds) ? $this->RegionIds : null;
+        return $this->RegionIds ?? null;
     }
 
     /**
      * Sets RegionIds.
      *
      * @param int[]|null $value
+     *
      * @return $this
      */
-    public function setRegionIds(array $value = null)
+    public function setRegionIds(?array $value = null)
     {
         $this->RegionIds = $value;
 
@@ -85,22 +82,21 @@ class HasSearchVolumeItem
     /**
      * Gets AllDevices.
      *
-     * @return string|null
      * @see YesNoEnum
      */
-    public function getAllDevices()
+    public function getAllDevices(): ?string
     {
-        return isset($this->AllDevices) ? $this->AllDevices : null;
+        return $this->AllDevices ?? null;
     }
 
     /**
      * Sets AllDevices.
      *
-     * @param string|null $value
-     * @return $this
      * @see YesNoEnum
+     *
+     * @return $this
      */
-    public function setAllDevices($value = null)
+    public function setAllDevices(?string $value = null)
     {
         $this->AllDevices = $value;
 
@@ -110,22 +106,21 @@ class HasSearchVolumeItem
     /**
      * Gets MobilePhones.
      *
-     * @return string|null
      * @see YesNoEnum
      */
-    public function getMobilePhones()
+    public function getMobilePhones(): ?string
     {
-        return isset($this->MobilePhones) ? $this->MobilePhones : null;
+        return $this->MobilePhones ?? null;
     }
 
     /**
      * Sets MobilePhones.
      *
-     * @param string|null $value
-     * @return $this
      * @see YesNoEnum
+     *
+     * @return $this
      */
-    public function setMobilePhones($value = null)
+    public function setMobilePhones(?string $value = null)
     {
         $this->MobilePhones = $value;
 
@@ -135,22 +130,21 @@ class HasSearchVolumeItem
     /**
      * Gets Tablets.
      *
-     * @return string|null
      * @see YesNoEnum
      */
-    public function getTablets()
+    public function getTablets(): ?string
     {
-        return isset($this->Tablets) ? $this->Tablets : null;
+        return $this->Tablets ?? null;
     }
 
     /**
      * Sets Tablets.
      *
-     * @param string|null $value
-     * @return $this
      * @see YesNoEnum
+     *
+     * @return $this
      */
-    public function setTablets($value = null)
+    public function setTablets(?string $value = null)
     {
         $this->Tablets = $value;
 
@@ -160,28 +154,24 @@ class HasSearchVolumeItem
     /**
      * Gets Desktops.
      *
-     * @return string|null
      * @see YesNoEnum
      */
-    public function getDesktops()
+    public function getDesktops(): ?string
     {
-        return isset($this->Desktops) ? $this->Desktops : null;
+        return $this->Desktops ?? null;
     }
 
     /**
      * Sets Desktops.
      *
-     * @param string|null $value
-     * @return $this
      * @see YesNoEnum
+     *
+     * @return $this
      */
-    public function setDesktops($value = null)
+    public function setDesktops(?string $value = null)
     {
         $this->Desktops = $value;
 
         return $this;
     }
-
-
 }
-

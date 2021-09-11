@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,17 +9,14 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class AccountSelectionCriteria
 {
-
     protected $Logins = null;
 
     protected $AccountIDS = null;
 
     /**
      * Creates a new instance of AccountSelectionCriteria.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -27,7 +26,7 @@ class AccountSelectionCriteria
      *
      * @return string[]|null
      */
-    public function getLogins()
+    public function getLogins(): ?array
     {
         return $this->Logins;
     }
@@ -36,9 +35,10 @@ class AccountSelectionCriteria
      * Sets Logins.
      *
      * @param string[]|null $value
+     *
      * @return $this
      */
-    public function setLogins(array $value = null)
+    public function setLogins(?array $value = null)
     {
         $this->Logins = $value;
 
@@ -50,7 +50,7 @@ class AccountSelectionCriteria
      *
      * @return int[]|null
      */
-    public function getAccountIDS()
+    public function getAccountIDS(): ?array
     {
         return $this->AccountIDS;
     }
@@ -59,15 +59,13 @@ class AccountSelectionCriteria
      * Sets AccountIDS.
      *
      * @param int[]|null $value
+     *
      * @return $this
      */
-    public function setAccountIDS(array $value = null)
+    public function setAccountIDS(?array $value = null)
     {
         $this->AccountIDS = $value;
 
         return $this;
     }
-
-
 }
-

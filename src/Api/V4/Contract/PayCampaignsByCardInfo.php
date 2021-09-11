@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class PayCampaignsByCardInfo
 {
-
     protected $PayMethodID = null;
 
     protected $CustomTransactionID = null;
@@ -18,20 +19,16 @@ class PayCampaignsByCardInfo
 
     /**
      * Creates a new instance of PayCampaignsByCardInfo.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets PayMethodID.
-     *
-     * @return string
      */
-    public function getPayMethodID()
+    public function getPayMethodID(): string
     {
         return $this->PayMethodID;
     }
@@ -39,10 +36,9 @@ class PayCampaignsByCardInfo
     /**
      * Sets PayMethodID.
      *
-     * @param string $value
      * @return $this
      */
-    public function setPayMethodID($value)
+    public function setPayMethodID(string $value)
     {
         $this->PayMethodID = $value;
 
@@ -51,10 +47,8 @@ class PayCampaignsByCardInfo
 
     /**
      * Gets CustomTransactionID.
-     *
-     * @return string
      */
-    public function getCustomTransactionID()
+    public function getCustomTransactionID(): string
     {
         return $this->CustomTransactionID;
     }
@@ -62,10 +56,9 @@ class PayCampaignsByCardInfo
     /**
      * Sets CustomTransactionID.
      *
-     * @param string $value
      * @return $this
      */
-    public function setCustomTransactionID($value)
+    public function setCustomTransactionID(string $value)
     {
         $this->CustomTransactionID = $value;
 
@@ -77,7 +70,7 @@ class PayCampaignsByCardInfo
      *
      * @return PayCampElement[]
      */
-    public function getPayments()
+    public function getPayments(): array
     {
         return $this->Payments;
     }
@@ -86,6 +79,7 @@ class PayCampaignsByCardInfo
      * Sets Payments.
      *
      * @param PayCampElement[] $value
+     *
      * @return $this
      */
     public function setPayments(array $value)
@@ -97,10 +91,8 @@ class PayCampaignsByCardInfo
 
     /**
      * Gets Version.
-     *
-     * @return string|null
      */
-    public function getVersion()
+    public function getVersion(): ?string
     {
         return $this->Version;
     }
@@ -108,16 +100,12 @@ class PayCampaignsByCardInfo
     /**
      * Sets Version.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setVersion($value = null)
+    public function setVersion(?string $value = null)
     {
         $this->Version = $value;
 
         return $this;
     }
-
-
 }
-

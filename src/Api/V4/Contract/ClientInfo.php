@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class ClientInfo
 {
-
     protected $Phone = null;
 
     protected $DateCreate = null;
@@ -56,20 +57,16 @@ class ClientInfo
 
     /**
      * Creates a new instance of ClientInfo.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Phone.
-     *
-     * @return string|null
      */
-    public function getPhone()
+    public function getPhone(): ?string
     {
         return $this->Phone;
     }
@@ -77,10 +74,9 @@ class ClientInfo
     /**
      * Sets Phone.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setPhone($value = null)
+    public function setPhone(?string $value = null)
     {
         $this->Phone = $value;
 
@@ -89,10 +85,8 @@ class ClientInfo
 
     /**
      * Gets DateCreate.
-     *
-     * @return string|null
      */
-    public function getDateCreate()
+    public function getDateCreate(): ?string
     {
         return $this->DateCreate;
     }
@@ -100,10 +94,9 @@ class ClientInfo
     /**
      * Sets DateCreate.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setDateCreate($value = null)
+    public function setDateCreate(?string $value = null)
     {
         $this->DateCreate = $value;
 
@@ -112,10 +105,8 @@ class ClientInfo
 
     /**
      * Gets FIO.
-     *
-     * @return string
      */
-    public function getFIO()
+    public function getFIO(): string
     {
         return $this->FIO;
     }
@@ -123,10 +114,9 @@ class ClientInfo
     /**
      * Sets FIO.
      *
-     * @param string $value
      * @return $this
      */
-    public function setFIO($value)
+    public function setFIO(string $value)
     {
         $this->FIO = $value;
 
@@ -135,10 +125,8 @@ class ClientInfo
 
     /**
      * Gets Email.
-     *
-     * @return string
      */
-    public function getEmail()
+    public function getEmail(): string
     {
         return $this->Email;
     }
@@ -146,10 +134,9 @@ class ClientInfo
     /**
      * Sets Email.
      *
-     * @param string $value
      * @return $this
      */
-    public function setEmail($value)
+    public function setEmail(string $value)
     {
         $this->Email = $value;
 
@@ -158,10 +145,8 @@ class ClientInfo
 
     /**
      * Gets Login.
-     *
-     * @return string
      */
-    public function getLogin()
+    public function getLogin(): string
     {
         return $this->Login;
     }
@@ -169,10 +154,9 @@ class ClientInfo
     /**
      * Sets Login.
      *
-     * @param string $value
      * @return $this
      */
-    public function setLogin($value)
+    public function setLogin(string $value)
     {
         $this->Login = $value;
 
@@ -181,10 +165,8 @@ class ClientInfo
 
     /**
      * Gets StatusArch.
-     *
-     * @return string|null
      */
-    public function getStatusArch()
+    public function getStatusArch(): ?string
     {
         return $this->StatusArch;
     }
@@ -192,10 +174,9 @@ class ClientInfo
     /**
      * Sets StatusArch.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setStatusArch($value = null)
+    public function setStatusArch(?string $value = null)
     {
         $this->StatusArch = $value;
 
@@ -204,10 +185,8 @@ class ClientInfo
 
     /**
      * Gets Discount.
-     *
-     * @return float|null
      */
-    public function getDiscount()
+    public function getDiscount(): ?float
     {
         return $this->Discount;
     }
@@ -215,10 +194,9 @@ class ClientInfo
     /**
      * Sets Discount.
      *
-     * @param float|null $value
      * @return $this
      */
-    public function setDiscount($value = null)
+    public function setDiscount(?float $value = null)
     {
         $this->Discount = $value;
 
@@ -227,10 +205,8 @@ class ClientInfo
 
     /**
      * Gets OverdraftSumAvailable.
-     *
-     * @return float|null
      */
-    public function getOverdraftSumAvailable()
+    public function getOverdraftSumAvailable(): ?float
     {
         return $this->OverdraftSumAvailable;
     }
@@ -238,10 +214,9 @@ class ClientInfo
     /**
      * Sets OverdraftSumAvailable.
      *
-     * @param float|null $value
      * @return $this
      */
-    public function setOverdraftSumAvailable($value = null)
+    public function setOverdraftSumAvailable(?float $value = null)
     {
         $this->OverdraftSumAvailable = $value;
 
@@ -250,10 +225,8 @@ class ClientInfo
 
     /**
      * Gets OverdraftSumAvailableInCurrency.
-     *
-     * @return float|null
      */
-    public function getOverdraftSumAvailableInCurrency()
+    public function getOverdraftSumAvailableInCurrency(): ?float
     {
         return $this->OverdraftSumAvailableInCurrency;
     }
@@ -261,10 +234,9 @@ class ClientInfo
     /**
      * Sets OverdraftSumAvailableInCurrency.
      *
-     * @param float|null $value
      * @return $this
      */
-    public function setOverdraftSumAvailableInCurrency($value = null)
+    public function setOverdraftSumAvailableInCurrency(?float $value = null)
     {
         $this->OverdraftSumAvailableInCurrency = $value;
 
@@ -273,10 +245,8 @@ class ClientInfo
 
     /**
      * Gets Currency.
-     *
-     * @return string|null
      */
-    public function getCurrency()
+    public function getCurrency(): ?string
     {
         return $this->Currency;
     }
@@ -284,10 +254,9 @@ class ClientInfo
     /**
      * Sets Currency.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setCurrency($value = null)
+    public function setCurrency(?string $value = null)
     {
         $this->Currency = $value;
 
@@ -296,10 +265,8 @@ class ClientInfo
 
     /**
      * Gets VATRate.
-     *
-     * @return float|null
      */
-    public function getVATRate()
+    public function getVATRate(): ?float
     {
         return $this->VATRate;
     }
@@ -307,10 +274,9 @@ class ClientInfo
     /**
      * Sets VATRate.
      *
-     * @param float|null $value
      * @return $this
      */
-    public function setVATRate($value = null)
+    public function setVATRate(?float $value = null)
     {
         $this->VATRate = $value;
 
@@ -322,7 +288,7 @@ class ClientInfo
      *
      * @return string[]|null
      */
-    public function getClientCurrencies()
+    public function getClientCurrencies(): ?array
     {
         return $this->ClientCurrencies;
     }
@@ -331,9 +297,10 @@ class ClientInfo
      * Sets ClientCurrencies.
      *
      * @param string[]|null $value
+     *
      * @return $this
      */
-    public function setClientCurrencies(array $value = null)
+    public function setClientCurrencies(?array $value = null)
     {
         $this->ClientCurrencies = $value;
 
@@ -342,10 +309,8 @@ class ClientInfo
 
     /**
      * Gets DisplayStoreRating.
-     *
-     * @return string|null
      */
-    public function getDisplayStoreRating()
+    public function getDisplayStoreRating(): ?string
     {
         return $this->DisplayStoreRating;
     }
@@ -353,10 +318,9 @@ class ClientInfo
     /**
      * Sets DisplayStoreRating.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setDisplayStoreRating($value = null)
+    public function setDisplayStoreRating(?string $value = null)
     {
         $this->DisplayStoreRating = $value;
 
@@ -365,10 +329,8 @@ class ClientInfo
 
     /**
      * Gets SmsPhone.
-     *
-     * @return string|null
      */
-    public function getSmsPhone()
+    public function getSmsPhone(): ?string
     {
         return $this->SmsPhone;
     }
@@ -376,10 +338,9 @@ class ClientInfo
     /**
      * Sets SmsPhone.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setSmsPhone($value = null)
+    public function setSmsPhone(?string $value = null)
     {
         $this->SmsPhone = $value;
 
@@ -391,7 +352,7 @@ class ClientInfo
      *
      * @return string[]|null
      */
-    public function getCampaignEmails()
+    public function getCampaignEmails(): ?array
     {
         return $this->CampaignEmails;
     }
@@ -400,9 +361,10 @@ class ClientInfo
      * Sets CampaignEmails.
      *
      * @param string[]|null $value
+     *
      * @return $this
      */
-    public function setCampaignEmails(array $value = null)
+    public function setCampaignEmails(?array $value = null)
     {
         $this->CampaignEmails = $value;
 
@@ -414,7 +376,7 @@ class ClientInfo
      *
      * @return ClientRight[]|null
      */
-    public function getClientRights()
+    public function getClientRights(): ?array
     {
         return $this->ClientRights;
     }
@@ -423,9 +385,10 @@ class ClientInfo
      * Sets ClientRights.
      *
      * @param ClientRight[]|null $value
+     *
      * @return $this
      */
-    public function setClientRights(array $value = null)
+    public function setClientRights(?array $value = null)
     {
         $this->ClientRights = $value;
 
@@ -434,10 +397,8 @@ class ClientInfo
 
     /**
      * Gets Role.
-     *
-     * @return string|null
      */
-    public function getRole()
+    public function getRole(): ?string
     {
         return $this->Role;
     }
@@ -445,10 +406,9 @@ class ClientInfo
     /**
      * Sets Role.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setRole($value = null)
+    public function setRole(?string $value = null)
     {
         $this->Role = $value;
 
@@ -457,10 +417,8 @@ class ClientInfo
 
     /**
      * Gets NonResident.
-     *
-     * @return string|null
      */
-    public function getNonResident()
+    public function getNonResident(): ?string
     {
         return $this->NonResident;
     }
@@ -468,10 +426,9 @@ class ClientInfo
     /**
      * Sets NonResident.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setNonResident($value = null)
+    public function setNonResident(?string $value = null)
     {
         $this->NonResident = $value;
 
@@ -480,10 +437,8 @@ class ClientInfo
 
     /**
      * Gets SendNews.
-     *
-     * @return string|null
      */
-    public function getSendNews()
+    public function getSendNews(): ?string
     {
         return $this->SendNews;
     }
@@ -491,10 +446,9 @@ class ClientInfo
     /**
      * Sets SendNews.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setSendNews($value = null)
+    public function setSendNews(?string $value = null)
     {
         $this->SendNews = $value;
 
@@ -503,10 +457,8 @@ class ClientInfo
 
     /**
      * Gets SendAccNews.
-     *
-     * @return string|null
      */
-    public function getSendAccNews()
+    public function getSendAccNews(): ?string
     {
         return $this->SendAccNews;
     }
@@ -514,10 +466,9 @@ class ClientInfo
     /**
      * Sets SendAccNews.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setSendAccNews($value = null)
+    public function setSendAccNews(?string $value = null)
     {
         $this->SendAccNews = $value;
 
@@ -526,10 +477,8 @@ class ClientInfo
 
     /**
      * Gets SendWarn.
-     *
-     * @return string|null
      */
-    public function getSendWarn()
+    public function getSendWarn(): ?string
     {
         return $this->SendWarn;
     }
@@ -537,10 +486,9 @@ class ClientInfo
     /**
      * Sets SendWarn.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setSendWarn($value = null)
+    public function setSendWarn(?string $value = null)
     {
         $this->SendWarn = $value;
 
@@ -552,7 +500,7 @@ class ClientInfo
      *
      * @return string[]|null
      */
-    public function getManagersLogins()
+    public function getManagersLogins(): ?array
     {
         return $this->ManagersLogins;
     }
@@ -561,9 +509,10 @@ class ClientInfo
      * Sets ManagersLogins.
      *
      * @param string[]|null $value
+     *
      * @return $this
      */
-    public function setManagersLogins(array $value = null)
+    public function setManagersLogins(?array $value = null)
     {
         $this->ManagersLogins = $value;
 
@@ -572,10 +521,8 @@ class ClientInfo
 
     /**
      * Gets SharedAccountEnabled.
-     *
-     * @return string|null
      */
-    public function getSharedAccountEnabled()
+    public function getSharedAccountEnabled(): ?string
     {
         return $this->SharedAccountEnabled;
     }
@@ -583,16 +530,12 @@ class ClientInfo
     /**
      * Sets SharedAccountEnabled.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setSharedAccountEnabled($value = null)
+    public function setSharedAccountEnabled(?string $value = null)
     {
         $this->SharedAccountEnabled = $value;
 
         return $this;
     }
-
-
 }
-

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,13 +9,9 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class UrlFeedFieldEnum
 {
+    public const LOGIN = 'Login';
 
-    const LOGIN = 'Login';
+    public const URL = 'Url';
 
-    const URL = 'Url';
-
-    const REMOVE_UTM_TAGS = 'RemoveUtmTags';
-
-
+    public const REMOVE_UTM_TAGS = 'RemoveUtmTags';
 }
-

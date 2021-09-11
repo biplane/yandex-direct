@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,25 +9,20 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class RetargetingRequestOptions
 {
-
     protected $Currency = null;
 
     /**
      * Creates a new instance of RetargetingRequestOptions.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Currency.
-     *
-     * @return string|null
      */
-    public function getCurrency()
+    public function getCurrency(): ?string
     {
         return $this->Currency;
     }
@@ -33,16 +30,12 @@ class RetargetingRequestOptions
     /**
      * Sets Currency.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setCurrency($value = null)
+    public function setCurrency(?string $value = null)
     {
         $this->Currency = $value;
 
         return $this;
     }
-
-
 }
-

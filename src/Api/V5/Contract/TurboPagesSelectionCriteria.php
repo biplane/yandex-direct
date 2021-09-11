@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class TurboPagesSelectionCriteria
 {
-
 //    Can be omit.
 //    protected $Ids = null;
 
@@ -16,10 +17,8 @@ class TurboPagesSelectionCriteria
 
     /**
      * Creates a new instance of TurboPagesSelectionCriteria.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -29,18 +28,19 @@ class TurboPagesSelectionCriteria
      *
      * @return int[]|null
      */
-    public function getIds()
+    public function getIds(): ?array
     {
-        return isset($this->Ids) ? $this->Ids : null;
+        return $this->Ids ?? null;
     }
 
     /**
      * Sets Ids.
      *
      * @param int[]|null $value
+     *
      * @return $this
      */
-    public function setIds(array $value = null)
+    public function setIds(?array $value = null)
     {
         $this->Ids = $value;
 
@@ -52,24 +52,22 @@ class TurboPagesSelectionCriteria
      *
      * @return string[]|null
      */
-    public function getBoundWithHrefs()
+    public function getBoundWithHrefs(): ?array
     {
-        return isset($this->BoundWithHrefs) ? $this->BoundWithHrefs : null;
+        return $this->BoundWithHrefs ?? null;
     }
 
     /**
      * Sets BoundWithHrefs.
      *
      * @param string[]|null $value
+     *
      * @return $this
      */
-    public function setBoundWithHrefs(array $value = null)
+    public function setBoundWithHrefs(?array $value = null)
     {
         $this->BoundWithHrefs = $value;
 
         return $this;
     }
-
-
 }
-

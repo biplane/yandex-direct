@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,15 +9,12 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class UpdateAgencyClientsRequest
 {
-
     protected $Clients = [];
 
     /**
      * Creates a new instance of UpdateAgencyClientsRequest.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -25,7 +24,7 @@ class UpdateAgencyClientsRequest
      *
      * @return AgencyClientUpdateItem[]
      */
-    public function getClients()
+    public function getClients(): array
     {
         return $this->Clients;
     }
@@ -34,6 +33,7 @@ class UpdateAgencyClientsRequest
      * Sets Clients.
      *
      * @param AgencyClientUpdateItem[] $value
+     *
      * @return $this
      */
     public function setClients(array $value)
@@ -42,7 +42,4 @@ class UpdateAgencyClientsRequest
 
         return $this;
     }
-
-
 }
-

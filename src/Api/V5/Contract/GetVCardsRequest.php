@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class GetVCardsRequest extends GetRequestGeneral
 {
-
 //    Can be omit.
 //    protected $SelectionCriteria = null;
 
@@ -15,31 +16,26 @@ class GetVCardsRequest extends GetRequestGeneral
 
     /**
      * Creates a new instance of GetVCardsRequest.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets SelectionCriteria.
-     *
-     * @return IdsCriteria|null
      */
-    public function getSelectionCriteria()
+    public function getSelectionCriteria(): ?IdsCriteria
     {
-        return isset($this->SelectionCriteria) ? $this->SelectionCriteria : null;
+        return $this->SelectionCriteria ?? null;
     }
 
     /**
      * Sets SelectionCriteria.
      *
-     * @param IdsCriteria|null $value
      * @return $this
      */
-    public function setSelectionCriteria(IdsCriteria $value = null)
+    public function setSelectionCriteria(?IdsCriteria $value = null)
     {
         $this->SelectionCriteria = $value;
 
@@ -49,10 +45,11 @@ class GetVCardsRequest extends GetRequestGeneral
     /**
      * Gets FieldNames.
      *
-     * @return string[]
      * @see VCardFieldEnum
+     *
+     * @return string[]
      */
-    public function getFieldNames()
+    public function getFieldNames(): array
     {
         return $this->FieldNames;
     }
@@ -60,9 +57,11 @@ class GetVCardsRequest extends GetRequestGeneral
     /**
      * Sets FieldNames.
      *
-     * @param string[] $value
-     * @return $this
      * @see VCardFieldEnum
+     *
+     * @param string[] $value
+     *
+     * @return $this
      */
     public function setFieldNames(array $value)
     {
@@ -70,7 +69,4 @@ class GetVCardsRequest extends GetRequestGeneral
 
         return $this;
     }
-
-
 }
-

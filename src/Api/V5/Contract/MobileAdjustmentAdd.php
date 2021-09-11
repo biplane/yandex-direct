@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class MobileAdjustmentAdd
 {
-
     protected $BidModifier = null;
 
 //    Can be omit.
@@ -15,20 +16,16 @@ class MobileAdjustmentAdd
 
     /**
      * Creates a new instance of MobileAdjustmentAdd.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets BidModifier.
-     *
-     * @return int
      */
-    public function getBidModifier()
+    public function getBidModifier(): int
     {
         return $this->BidModifier;
     }
@@ -36,10 +33,9 @@ class MobileAdjustmentAdd
     /**
      * Sets BidModifier.
      *
-     * @param int $value
      * @return $this
      */
-    public function setBidModifier($value)
+    public function setBidModifier(int $value)
     {
         $this->BidModifier = $value;
 
@@ -49,28 +45,24 @@ class MobileAdjustmentAdd
     /**
      * Gets OperatingSystemType.
      *
-     * @return string|null
      * @see OperatingSystemTypeEnum
      */
-    public function getOperatingSystemType()
+    public function getOperatingSystemType(): ?string
     {
-        return isset($this->OperatingSystemType) ? $this->OperatingSystemType : null;
+        return $this->OperatingSystemType ?? null;
     }
 
     /**
      * Sets OperatingSystemType.
      *
-     * @param string|null $value
-     * @return $this
      * @see OperatingSystemTypeEnum
+     *
+     * @return $this
      */
-    public function setOperatingSystemType($value = null)
+    public function setOperatingSystemType(?string $value = null)
     {
         $this->OperatingSystemType = $value;
 
         return $this;
     }
-
-
 }
-

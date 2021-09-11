@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,15 +9,12 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class HasSearchVolumeKeywordsResponse
 {
-
     protected $HasSearchVolumeResults = [];
 
     /**
      * Creates a new instance of HasSearchVolumeKeywordsResponse.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -25,7 +24,7 @@ class HasSearchVolumeKeywordsResponse
      *
      * @return HasSearchVolumeItem[]
      */
-    public function getHasSearchVolumeResults()
+    public function getHasSearchVolumeResults(): array
     {
         return $this->HasSearchVolumeResults;
     }
@@ -34,6 +33,7 @@ class HasSearchVolumeKeywordsResponse
      * Sets HasSearchVolumeResults.
      *
      * @param HasSearchVolumeItem[] $value
+     *
      * @return $this
      */
     public function setHasSearchVolumeResults(array $value)
@@ -42,7 +42,4 @@ class HasSearchVolumeKeywordsResponse
 
         return $this;
     }
-
-
 }
-

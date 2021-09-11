@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,15 +9,12 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AddAdImagesRequest
 {
-
     protected $AdImages = [];
 
     /**
      * Creates a new instance of AddAdImagesRequest.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -25,7 +24,7 @@ class AddAdImagesRequest
      *
      * @return AdImageAddItem[]
      */
-    public function getAdImages()
+    public function getAdImages(): array
     {
         return $this->AdImages;
     }
@@ -34,6 +33,7 @@ class AddAdImagesRequest
      * Sets AdImages.
      *
      * @param AdImageAddItem[] $value
+     *
      * @return $this
      */
     public function setAdImages(array $value)
@@ -42,7 +42,4 @@ class AddAdImagesRequest
 
         return $this;
     }
-
-
 }
-

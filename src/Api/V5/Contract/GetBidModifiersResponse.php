@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,16 +9,13 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class GetBidModifiersResponse extends GetResponseGeneral
 {
-
 //    Can be omit.
 //    protected $BidModifiers = null;
 
     /**
      * Creates a new instance of GetBidModifiersResponse.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -26,24 +25,22 @@ class GetBidModifiersResponse extends GetResponseGeneral
      *
      * @return BidModifierGetItem[]|null
      */
-    public function getBidModifiers()
+    public function getBidModifiers(): ?array
     {
-        return isset($this->BidModifiers) ? $this->BidModifiers : null;
+        return $this->BidModifiers ?? null;
     }
 
     /**
      * Sets BidModifiers.
      *
      * @param BidModifierGetItem[]|null $value
+     *
      * @return $this
      */
-    public function setBidModifiers(array $value = null)
+    public function setBidModifiers(?array $value = null)
     {
         $this->BidModifiers = $value;
 
         return $this;
     }
-
-
 }
-

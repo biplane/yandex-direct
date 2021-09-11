@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class BidModifiersSelectionCriteria
 {
-
 //    Can be omit.
 //    protected $CampaignIds = null;
 
@@ -24,10 +25,8 @@ class BidModifiersSelectionCriteria
 
     /**
      * Creates a new instance of BidModifiersSelectionCriteria.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -37,18 +36,19 @@ class BidModifiersSelectionCriteria
      *
      * @return int[]|null
      */
-    public function getCampaignIds()
+    public function getCampaignIds(): ?array
     {
-        return isset($this->CampaignIds) ? $this->CampaignIds : null;
+        return $this->CampaignIds ?? null;
     }
 
     /**
      * Sets CampaignIds.
      *
      * @param int[]|null $value
+     *
      * @return $this
      */
-    public function setCampaignIds(array $value = null)
+    public function setCampaignIds(?array $value = null)
     {
         $this->CampaignIds = $value;
 
@@ -60,18 +60,19 @@ class BidModifiersSelectionCriteria
      *
      * @return int[]|null
      */
-    public function getAdGroupIds()
+    public function getAdGroupIds(): ?array
     {
-        return isset($this->AdGroupIds) ? $this->AdGroupIds : null;
+        return $this->AdGroupIds ?? null;
     }
 
     /**
      * Sets AdGroupIds.
      *
      * @param int[]|null $value
+     *
      * @return $this
      */
-    public function setAdGroupIds(array $value = null)
+    public function setAdGroupIds(?array $value = null)
     {
         $this->AdGroupIds = $value;
 
@@ -83,18 +84,19 @@ class BidModifiersSelectionCriteria
      *
      * @return int[]|null
      */
-    public function getIds()
+    public function getIds(): ?array
     {
-        return isset($this->Ids) ? $this->Ids : null;
+        return $this->Ids ?? null;
     }
 
     /**
      * Sets Ids.
      *
      * @param int[]|null $value
+     *
      * @return $this
      */
-    public function setIds(array $value = null)
+    public function setIds(?array $value = null)
     {
         $this->Ids = $value;
 
@@ -104,22 +106,25 @@ class BidModifiersSelectionCriteria
     /**
      * Gets Types.
      *
-     * @return string[]|null
      * @see BidModifierTypeEnum
+     *
+     * @return string[]|null
      */
-    public function getTypes()
+    public function getTypes(): ?array
     {
-        return isset($this->Types) ? $this->Types : null;
+        return $this->Types ?? null;
     }
 
     /**
      * Sets Types.
      *
-     * @param string[]|null $value
-     * @return $this
      * @see BidModifierTypeEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
      */
-    public function setTypes(array $value = null)
+    public function setTypes(?array $value = null)
     {
         $this->Types = $value;
 
@@ -129,10 +134,11 @@ class BidModifiersSelectionCriteria
     /**
      * Gets Levels.
      *
-     * @return string[]
      * @see BidModifierLevelEnum
+     *
+     * @return string[]
      */
-    public function getLevels()
+    public function getLevels(): array
     {
         return $this->Levels;
     }
@@ -140,9 +146,11 @@ class BidModifiersSelectionCriteria
     /**
      * Sets Levels.
      *
-     * @param string[] $value
-     * @return $this
      * @see BidModifierLevelEnum
+     *
+     * @param string[] $value
+     *
+     * @return $this
      */
     public function setLevels(array $value)
     {
@@ -150,7 +158,4 @@ class BidModifiersSelectionCriteria
 
         return $this;
     }
-
-
 }
-

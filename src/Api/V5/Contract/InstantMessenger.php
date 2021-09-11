@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,27 +9,22 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class InstantMessenger
 {
-
     protected $MessengerClient = null;
 
     protected $MessengerLogin = null;
 
     /**
      * Creates a new instance of InstantMessenger.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets MessengerClient.
-     *
-     * @return string
      */
-    public function getMessengerClient()
+    public function getMessengerClient(): string
     {
         return $this->MessengerClient;
     }
@@ -35,10 +32,9 @@ class InstantMessenger
     /**
      * Sets MessengerClient.
      *
-     * @param string $value
      * @return $this
      */
-    public function setMessengerClient($value)
+    public function setMessengerClient(string $value)
     {
         $this->MessengerClient = $value;
 
@@ -47,10 +43,8 @@ class InstantMessenger
 
     /**
      * Gets MessengerLogin.
-     *
-     * @return string
      */
-    public function getMessengerLogin()
+    public function getMessengerLogin(): string
     {
         return $this->MessengerLogin;
     }
@@ -58,16 +52,12 @@ class InstantMessenger
     /**
      * Sets MessengerLogin.
      *
-     * @param string $value
      * @return $this
      */
-    public function setMessengerLogin($value)
+    public function setMessengerLogin(string $value)
     {
         $this->MessengerLogin = $value;
 
         return $this;
     }
-
-
 }
-

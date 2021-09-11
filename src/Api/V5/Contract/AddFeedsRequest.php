@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,15 +9,12 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AddFeedsRequest
 {
-
     protected $Feeds = [];
 
     /**
      * Creates a new instance of AddFeedsRequest.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -25,7 +24,7 @@ class AddFeedsRequest
      *
      * @return FeedAddItem[]
      */
-    public function getFeeds()
+    public function getFeeds(): array
     {
         return $this->Feeds;
     }
@@ -34,6 +33,7 @@ class AddFeedsRequest
      * Sets Feeds.
      *
      * @param FeedAddItem[] $value
+     *
      * @return $this
      */
     public function setFeeds(array $value)
@@ -42,7 +42,4 @@ class AddFeedsRequest
 
         return $this;
     }
-
-
 }
-

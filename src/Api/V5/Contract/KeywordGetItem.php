@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class KeywordGetItem
 {
-
 //    Can be omit.
 //    protected $Id = null;
 
@@ -55,31 +56,26 @@ class KeywordGetItem
 
     /**
      * Creates a new instance of KeywordGetItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Id.
-     *
-     * @return int|null
      */
-    public function getId()
+    public function getId(): ?int
     {
-        return isset($this->Id) ? $this->Id : null;
+        return $this->Id ?? null;
     }
 
     /**
      * Sets Id.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setId($value = null)
+    public function setId(?int $value = null)
     {
         $this->Id = $value;
 
@@ -88,21 +84,18 @@ class KeywordGetItem
 
     /**
      * Gets Keyword.
-     *
-     * @return string|null
      */
-    public function getKeyword()
+    public function getKeyword(): ?string
     {
-        return isset($this->Keyword) ? $this->Keyword : null;
+        return $this->Keyword ?? null;
     }
 
     /**
      * Sets Keyword.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setKeyword($value = null)
+    public function setKeyword(?string $value = null)
     {
         $this->Keyword = $value;
 
@@ -111,21 +104,18 @@ class KeywordGetItem
 
     /**
      * Gets AdGroupId.
-     *
-     * @return int|null
      */
-    public function getAdGroupId()
+    public function getAdGroupId(): ?int
     {
-        return isset($this->AdGroupId) ? $this->AdGroupId : null;
+        return $this->AdGroupId ?? null;
     }
 
     /**
      * Sets AdGroupId.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setAdGroupId($value = null)
+    public function setAdGroupId(?int $value = null)
     {
         $this->AdGroupId = $value;
 
@@ -134,21 +124,18 @@ class KeywordGetItem
 
     /**
      * Gets CampaignId.
-     *
-     * @return int|null
      */
-    public function getCampaignId()
+    public function getCampaignId(): ?int
     {
-        return isset($this->CampaignId) ? $this->CampaignId : null;
+        return $this->CampaignId ?? null;
     }
 
     /**
      * Sets CampaignId.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setCampaignId($value = null)
+    public function setCampaignId(?int $value = null)
     {
         $this->CampaignId = $value;
 
@@ -157,21 +144,18 @@ class KeywordGetItem
 
     /**
      * Gets Bid.
-     *
-     * @return int|null
      */
-    public function getBid()
+    public function getBid(): ?int
     {
-        return isset($this->Bid) ? $this->Bid : null;
+        return $this->Bid ?? null;
     }
 
     /**
      * Sets Bid.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setBid($value = null)
+    public function setBid(?int $value = null)
     {
         $this->Bid = $value;
 
@@ -180,21 +164,18 @@ class KeywordGetItem
 
     /**
      * Gets ContextBid.
-     *
-     * @return int|null
      */
-    public function getContextBid()
+    public function getContextBid(): ?int
     {
-        return isset($this->ContextBid) ? $this->ContextBid : null;
+        return $this->ContextBid ?? null;
     }
 
     /**
      * Sets ContextBid.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setContextBid($value = null)
+    public function setContextBid(?int $value = null)
     {
         $this->ContextBid = $value;
 
@@ -204,22 +185,21 @@ class KeywordGetItem
     /**
      * Gets StrategyPriority.
      *
-     * @return string|null
      * @see PriorityEnum
      */
-    public function getStrategyPriority()
+    public function getStrategyPriority(): ?string
     {
-        return isset($this->StrategyPriority) ? $this->StrategyPriority : null;
+        return $this->StrategyPriority ?? null;
     }
 
     /**
      * Sets StrategyPriority.
      *
-     * @param string|null $value
-     * @return $this
      * @see PriorityEnum
+     *
+     * @return $this
      */
-    public function setStrategyPriority($value = null)
+    public function setStrategyPriority(?string $value = null)
     {
         $this->StrategyPriority = $value;
 
@@ -229,22 +209,21 @@ class KeywordGetItem
     /**
      * Gets State.
      *
-     * @return string|null
      * @see StateEnum
      */
-    public function getState()
+    public function getState(): ?string
     {
-        return isset($this->State) ? $this->State : null;
+        return $this->State ?? null;
     }
 
     /**
      * Sets State.
      *
-     * @param string|null $value
-     * @return $this
      * @see StateEnum
+     *
+     * @return $this
      */
-    public function setState($value = null)
+    public function setState(?string $value = null)
     {
         $this->State = $value;
 
@@ -254,22 +233,21 @@ class KeywordGetItem
     /**
      * Gets Status.
      *
-     * @return string|null
      * @see StatusEnum
      */
-    public function getStatus()
+    public function getStatus(): ?string
     {
-        return isset($this->Status) ? $this->Status : null;
+        return $this->Status ?? null;
     }
 
     /**
      * Sets Status.
      *
-     * @param string|null $value
-     * @return $this
      * @see StatusEnum
+     *
+     * @return $this
      */
-    public function setStatus($value = null)
+    public function setStatus(?string $value = null)
     {
         $this->Status = $value;
 
@@ -278,21 +256,18 @@ class KeywordGetItem
 
     /**
      * Gets UserParam1.
-     *
-     * @return string|null
      */
-    public function getUserParam1()
+    public function getUserParam1(): ?string
     {
-        return isset($this->UserParam1) ? $this->UserParam1 : null;
+        return $this->UserParam1 ?? null;
     }
 
     /**
      * Sets UserParam1.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setUserParam1($value = null)
+    public function setUserParam1(?string $value = null)
     {
         $this->UserParam1 = $value;
 
@@ -301,21 +276,18 @@ class KeywordGetItem
 
     /**
      * Gets UserParam2.
-     *
-     * @return string|null
      */
-    public function getUserParam2()
+    public function getUserParam2(): ?string
     {
-        return isset($this->UserParam2) ? $this->UserParam2 : null;
+        return $this->UserParam2 ?? null;
     }
 
     /**
      * Sets UserParam2.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setUserParam2($value = null)
+    public function setUserParam2(?string $value = null)
     {
         $this->UserParam2 = $value;
 
@@ -324,21 +296,18 @@ class KeywordGetItem
 
     /**
      * Gets Productivity.
-     *
-     * @return KeywordProductivity|null
      */
-    public function getProductivity()
+    public function getProductivity(): ?KeywordProductivity
     {
-        return isset($this->Productivity) ? $this->Productivity : null;
+        return $this->Productivity ?? null;
     }
 
     /**
      * Sets Productivity.
      *
-     * @param KeywordProductivity|null $value
      * @return $this
      */
-    public function setProductivity(KeywordProductivity $value = null)
+    public function setProductivity(?KeywordProductivity $value = null)
     {
         $this->Productivity = $value;
 
@@ -347,21 +316,18 @@ class KeywordGetItem
 
     /**
      * Gets StatisticsSearch.
-     *
-     * @return Statistics|null
      */
-    public function getStatisticsSearch()
+    public function getStatisticsSearch(): ?Statistics
     {
-        return isset($this->StatisticsSearch) ? $this->StatisticsSearch : null;
+        return $this->StatisticsSearch ?? null;
     }
 
     /**
      * Sets StatisticsSearch.
      *
-     * @param Statistics|null $value
      * @return $this
      */
-    public function setStatisticsSearch(Statistics $value = null)
+    public function setStatisticsSearch(?Statistics $value = null)
     {
         $this->StatisticsSearch = $value;
 
@@ -370,21 +336,18 @@ class KeywordGetItem
 
     /**
      * Gets StatisticsNetwork.
-     *
-     * @return Statistics|null
      */
-    public function getStatisticsNetwork()
+    public function getStatisticsNetwork(): ?Statistics
     {
-        return isset($this->StatisticsNetwork) ? $this->StatisticsNetwork : null;
+        return $this->StatisticsNetwork ?? null;
     }
 
     /**
      * Sets StatisticsNetwork.
      *
-     * @param Statistics|null $value
      * @return $this
      */
-    public function setStatisticsNetwork(Statistics $value = null)
+    public function setStatisticsNetwork(?Statistics $value = null)
     {
         $this->StatisticsNetwork = $value;
 
@@ -394,28 +357,24 @@ class KeywordGetItem
     /**
      * Gets ServingStatus.
      *
-     * @return string|null
      * @see ServingStatusEnum
      */
-    public function getServingStatus()
+    public function getServingStatus(): ?string
     {
-        return isset($this->ServingStatus) ? $this->ServingStatus : null;
+        return $this->ServingStatus ?? null;
     }
 
     /**
      * Sets ServingStatus.
      *
-     * @param string|null $value
-     * @return $this
      * @see ServingStatusEnum
+     *
+     * @return $this
      */
-    public function setServingStatus($value = null)
+    public function setServingStatus(?string $value = null)
     {
         $this->ServingStatus = $value;
 
         return $this;
     }
-
-
 }
-

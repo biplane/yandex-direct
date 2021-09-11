@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class RetargetingAdjustmentGet
 {
-
 //    Can be omit.
 //    protected $RetargetingConditionId = null;
 
@@ -22,31 +23,26 @@ class RetargetingAdjustmentGet
 
     /**
      * Creates a new instance of RetargetingAdjustmentGet.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets RetargetingConditionId.
-     *
-     * @return int|null
      */
-    public function getRetargetingConditionId()
+    public function getRetargetingConditionId(): ?int
     {
-        return isset($this->RetargetingConditionId) ? $this->RetargetingConditionId : null;
+        return $this->RetargetingConditionId ?? null;
     }
 
     /**
      * Sets RetargetingConditionId.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setRetargetingConditionId($value = null)
+    public function setRetargetingConditionId(?int $value = null)
     {
         $this->RetargetingConditionId = $value;
 
@@ -55,21 +51,18 @@ class RetargetingAdjustmentGet
 
     /**
      * Gets BidModifier.
-     *
-     * @return int|null
      */
-    public function getBidModifier()
+    public function getBidModifier(): ?int
     {
-        return isset($this->BidModifier) ? $this->BidModifier : null;
+        return $this->BidModifier ?? null;
     }
 
     /**
      * Sets BidModifier.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setBidModifier($value = null)
+    public function setBidModifier(?int $value = null)
     {
         $this->BidModifier = $value;
 
@@ -79,22 +72,21 @@ class RetargetingAdjustmentGet
     /**
      * Gets Accessible.
      *
-     * @return string|null
      * @see YesNoEnum
      */
-    public function getAccessible()
+    public function getAccessible(): ?string
     {
-        return isset($this->Accessible) ? $this->Accessible : null;
+        return $this->Accessible ?? null;
     }
 
     /**
      * Sets Accessible.
      *
-     * @param string|null $value
-     * @return $this
      * @see YesNoEnum
+     *
+     * @return $this
      */
-    public function setAccessible($value = null)
+    public function setAccessible(?string $value = null)
     {
         $this->Accessible = $value;
 
@@ -104,28 +96,24 @@ class RetargetingAdjustmentGet
     /**
      * Gets Enabled.
      *
-     * @return string|null
      * @see YesNoEnum
      */
-    public function getEnabled()
+    public function getEnabled(): ?string
     {
-        return isset($this->Enabled) ? $this->Enabled : null;
+        return $this->Enabled ?? null;
     }
 
     /**
      * Sets Enabled.
      *
-     * @param string|null $value
-     * @return $this
      * @see YesNoEnum
+     *
+     * @return $this
      */
-    public function setEnabled($value = null)
+    public function setEnabled(?string $value = null)
     {
         $this->Enabled = $value;
 
         return $this;
     }
-
-
 }
-

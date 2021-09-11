@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class RegionalAdjustmentGet
 {
-
 //    Can be omit.
 //    protected $RegionId = null;
 
@@ -19,31 +20,26 @@ class RegionalAdjustmentGet
 
     /**
      * Creates a new instance of RegionalAdjustmentGet.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets RegionId.
-     *
-     * @return int|null
      */
-    public function getRegionId()
+    public function getRegionId(): ?int
     {
-        return isset($this->RegionId) ? $this->RegionId : null;
+        return $this->RegionId ?? null;
     }
 
     /**
      * Sets RegionId.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setRegionId($value = null)
+    public function setRegionId(?int $value = null)
     {
         $this->RegionId = $value;
 
@@ -52,21 +48,18 @@ class RegionalAdjustmentGet
 
     /**
      * Gets BidModifier.
-     *
-     * @return int|null
      */
-    public function getBidModifier()
+    public function getBidModifier(): ?int
     {
-        return isset($this->BidModifier) ? $this->BidModifier : null;
+        return $this->BidModifier ?? null;
     }
 
     /**
      * Sets BidModifier.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setBidModifier($value = null)
+    public function setBidModifier(?int $value = null)
     {
         $this->BidModifier = $value;
 
@@ -76,28 +69,24 @@ class RegionalAdjustmentGet
     /**
      * Gets Enabled.
      *
-     * @return string|null
      * @see YesNoEnum
      */
-    public function getEnabled()
+    public function getEnabled(): ?string
     {
-        return isset($this->Enabled) ? $this->Enabled : null;
+        return $this->Enabled ?? null;
     }
 
     /**
      * Sets Enabled.
      *
-     * @param string|null $value
-     * @return $this
      * @see YesNoEnum
+     *
+     * @return $this
      */
-    public function setEnabled($value = null)
+    public function setEnabled(?string $value = null)
     {
         $this->Enabled = $value;
 
         return $this;
     }
-
-
 }
-

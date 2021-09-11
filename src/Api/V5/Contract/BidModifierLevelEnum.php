@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,11 +9,7 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class BidModifierLevelEnum
 {
+    public const CAMPAIGN = 'CAMPAIGN';
 
-    const CAMPAIGN = 'CAMPAIGN';
-
-    const AD_GROUP = 'AD_GROUP';
-
-
+    public const AD_GROUP = 'AD_GROUP';
 }
-

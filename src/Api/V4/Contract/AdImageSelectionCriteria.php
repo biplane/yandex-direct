@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class AdImageSelectionCriteria
 {
-
     protected $Logins = null;
 
     protected $AdImageHashes = null;
@@ -22,10 +23,8 @@ class AdImageSelectionCriteria
 
     /**
      * Creates a new instance of AdImageSelectionCriteria.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -35,7 +34,7 @@ class AdImageSelectionCriteria
      *
      * @return string[]|null
      */
-    public function getLogins()
+    public function getLogins(): ?array
     {
         return $this->Logins;
     }
@@ -44,9 +43,10 @@ class AdImageSelectionCriteria
      * Sets Logins.
      *
      * @param string[]|null $value
+     *
      * @return $this
      */
-    public function setLogins(array $value = null)
+    public function setLogins(?array $value = null)
     {
         $this->Logins = $value;
 
@@ -58,7 +58,7 @@ class AdImageSelectionCriteria
      *
      * @return string[]|null
      */
-    public function getAdImageHashes()
+    public function getAdImageHashes(): ?array
     {
         return $this->AdImageHashes;
     }
@@ -67,9 +67,10 @@ class AdImageSelectionCriteria
      * Sets AdImageHashes.
      *
      * @param string[]|null $value
+     *
      * @return $this
      */
-    public function setAdImageHashes(array $value = null)
+    public function setAdImageHashes(?array $value = null)
     {
         $this->AdImageHashes = $value;
 
@@ -81,7 +82,7 @@ class AdImageSelectionCriteria
      *
      * @return int[]|null
      */
-    public function getAdImageUploadTaskIDS()
+    public function getAdImageUploadTaskIDS(): ?array
     {
         return $this->AdImageUploadTaskIDS;
     }
@@ -90,9 +91,10 @@ class AdImageSelectionCriteria
      * Sets AdImageUploadTaskIDS.
      *
      * @param int[]|null $value
+     *
      * @return $this
      */
-    public function setAdImageUploadTaskIDS(array $value = null)
+    public function setAdImageUploadTaskIDS(?array $value = null)
     {
         $this->AdImageUploadTaskIDS = $value;
 
@@ -104,7 +106,7 @@ class AdImageSelectionCriteria
      *
      * @return string[]|null
      */
-    public function getAssigned()
+    public function getAssigned(): ?array
     {
         return $this->Assigned;
     }
@@ -113,9 +115,10 @@ class AdImageSelectionCriteria
      * Sets Assigned.
      *
      * @param string[]|null $value
+     *
      * @return $this
      */
-    public function setAssigned(array $value = null)
+    public function setAssigned(?array $value = null)
     {
         $this->Assigned = $value;
 
@@ -124,10 +127,8 @@ class AdImageSelectionCriteria
 
     /**
      * Gets Limit.
-     *
-     * @return int|null
      */
-    public function getLimit()
+    public function getLimit(): ?int
     {
         return $this->Limit;
     }
@@ -135,10 +136,9 @@ class AdImageSelectionCriteria
     /**
      * Sets Limit.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setLimit($value = null)
+    public function setLimit(?int $value = null)
     {
         $this->Limit = $value;
 
@@ -147,10 +147,8 @@ class AdImageSelectionCriteria
 
     /**
      * Gets Offset.
-     *
-     * @return int|null
      */
-    public function getOffset()
+    public function getOffset(): ?int
     {
         return $this->Offset;
     }
@@ -158,16 +156,12 @@ class AdImageSelectionCriteria
     /**
      * Sets Offset.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setOffset($value = null)
+    public function setOffset(?int $value = null)
     {
         $this->Offset = $value;
 
         return $this;
     }
-
-
 }
-

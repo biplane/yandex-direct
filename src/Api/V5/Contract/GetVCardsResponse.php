@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,16 +9,13 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class GetVCardsResponse extends GetResponseGeneral
 {
-
 //    Can be omit.
 //    protected $VCards = null;
 
     /**
      * Creates a new instance of GetVCardsResponse.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -26,24 +25,22 @@ class GetVCardsResponse extends GetResponseGeneral
      *
      * @return VCardGetItem[]|null
      */
-    public function getVCards()
+    public function getVCards(): ?array
     {
-        return isset($this->VCards) ? $this->VCards : null;
+        return $this->VCards ?? null;
     }
 
     /**
      * Sets VCards.
      *
      * @param VCardGetItem[]|null $value
+     *
      * @return $this
      */
-    public function setVCards(array $value = null)
+    public function setVCards(?array $value = null)
     {
         $this->VCards = $value;
 
         return $this;
     }
-
-
 }
-

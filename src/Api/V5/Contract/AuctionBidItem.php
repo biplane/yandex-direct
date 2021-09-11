@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AuctionBidItem
 {
-
     protected $TrafficVolume = null;
 
     protected $Bid = null;
@@ -16,20 +17,16 @@ class AuctionBidItem
 
     /**
      * Creates a new instance of AuctionBidItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets TrafficVolume.
-     *
-     * @return int
      */
-    public function getTrafficVolume()
+    public function getTrafficVolume(): int
     {
         return $this->TrafficVolume;
     }
@@ -37,10 +34,9 @@ class AuctionBidItem
     /**
      * Sets TrafficVolume.
      *
-     * @param int $value
      * @return $this
      */
-    public function setTrafficVolume($value)
+    public function setTrafficVolume(int $value)
     {
         $this->TrafficVolume = $value;
 
@@ -49,10 +45,8 @@ class AuctionBidItem
 
     /**
      * Gets Bid.
-     *
-     * @return int
      */
-    public function getBid()
+    public function getBid(): int
     {
         return $this->Bid;
     }
@@ -60,10 +54,9 @@ class AuctionBidItem
     /**
      * Sets Bid.
      *
-     * @param int $value
      * @return $this
      */
-    public function setBid($value)
+    public function setBid(int $value)
     {
         $this->Bid = $value;
 
@@ -72,10 +65,8 @@ class AuctionBidItem
 
     /**
      * Gets Price.
-     *
-     * @return int
      */
-    public function getPrice()
+    public function getPrice(): int
     {
         return $this->Price;
     }
@@ -83,16 +74,12 @@ class AuctionBidItem
     /**
      * Sets Price.
      *
-     * @param int $value
      * @return $this
      */
-    public function setPrice($value)
+    public function setPrice(int $value)
     {
         $this->Price = $value;
 
         return $this;
     }
-
-
 }
-

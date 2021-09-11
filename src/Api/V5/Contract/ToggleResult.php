@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class ToggleResult extends ActionResultBase
 {
-
 //    Can be omit.
 //    protected $CampaignId = null;
 
@@ -19,31 +20,26 @@ class ToggleResult extends ActionResultBase
 
     /**
      * Creates a new instance of ToggleResult.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets CampaignId.
-     *
-     * @return int|null
      */
-    public function getCampaignId()
+    public function getCampaignId(): ?int
     {
-        return isset($this->CampaignId) ? $this->CampaignId : null;
+        return $this->CampaignId ?? null;
     }
 
     /**
      * Sets CampaignId.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setCampaignId($value = null)
+    public function setCampaignId(?int $value = null)
     {
         $this->CampaignId = $value;
 
@@ -52,21 +48,18 @@ class ToggleResult extends ActionResultBase
 
     /**
      * Gets AdGroupId.
-     *
-     * @return int|null
      */
-    public function getAdGroupId()
+    public function getAdGroupId(): ?int
     {
-        return isset($this->AdGroupId) ? $this->AdGroupId : null;
+        return $this->AdGroupId ?? null;
     }
 
     /**
      * Sets AdGroupId.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setAdGroupId($value = null)
+    public function setAdGroupId(?int $value = null)
     {
         $this->AdGroupId = $value;
 
@@ -76,28 +69,24 @@ class ToggleResult extends ActionResultBase
     /**
      * Gets Type.
      *
-     * @return string|null
      * @see BidModifierToggleTypeEnum
      */
-    public function getType()
+    public function getType(): ?string
     {
-        return isset($this->Type) ? $this->Type : null;
+        return $this->Type ?? null;
     }
 
     /**
      * Sets Type.
      *
-     * @param string|null $value
-     * @return $this
      * @see BidModifierToggleTypeEnum
+     *
+     * @return $this
      */
-    public function setType($value = null)
+    public function setType(?string $value = null)
     {
         $this->Type = $value;
 
         return $this;
     }
-
-
 }
-

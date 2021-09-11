@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,16 +9,13 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class GetDynamicTextAdTargetsResponse extends GetResponseGeneral
 {
-
 //    Can be omit.
 //    protected $Webpages = null;
 
     /**
      * Creates a new instance of GetDynamicTextAdTargetsResponse.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -26,24 +25,22 @@ class GetDynamicTextAdTargetsResponse extends GetResponseGeneral
      *
      * @return WebpageGetItem[]|null
      */
-    public function getWebpages()
+    public function getWebpages(): ?array
     {
-        return isset($this->Webpages) ? $this->Webpages : null;
+        return $this->Webpages ?? null;
     }
 
     /**
      * Sets Webpages.
      *
      * @param WebpageGetItem[]|null $value
+     *
      * @return $this
      */
-    public function setWebpages(array $value = null)
+    public function setWebpages(?array $value = null)
     {
         $this->Webpages = $value;
 
         return $this;
     }
-
-
 }
-

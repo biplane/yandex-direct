@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class StrategyWeeklyBudgetAddBase
 {
-
     protected $WeeklySpendLimit = null;
 
 //    Can be omit.
@@ -15,20 +16,16 @@ class StrategyWeeklyBudgetAddBase
 
     /**
      * Creates a new instance of StrategyWeeklyBudgetAddBase.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets WeeklySpendLimit.
-     *
-     * @return int
      */
-    public function getWeeklySpendLimit()
+    public function getWeeklySpendLimit(): int
     {
         return $this->WeeklySpendLimit;
     }
@@ -36,10 +33,9 @@ class StrategyWeeklyBudgetAddBase
     /**
      * Sets WeeklySpendLimit.
      *
-     * @param int $value
      * @return $this
      */
-    public function setWeeklySpendLimit($value)
+    public function setWeeklySpendLimit(int $value)
     {
         $this->WeeklySpendLimit = $value;
 
@@ -48,27 +44,21 @@ class StrategyWeeklyBudgetAddBase
 
     /**
      * Gets BidCeiling.
-     *
-     * @return int|null
      */
-    public function getBidCeiling()
+    public function getBidCeiling(): ?int
     {
-        return isset($this->BidCeiling) ? $this->BidCeiling : null;
+        return $this->BidCeiling ?? null;
     }
 
     /**
      * Sets BidCeiling.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setBidCeiling($value = null)
+    public function setBidCeiling(?int $value = null)
     {
         $this->BidCeiling = $value;
 
         return $this;
     }
-
-
 }
-

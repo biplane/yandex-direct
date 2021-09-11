@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,15 +9,12 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AddDynamicTextAdTargetsRequest
 {
-
     protected $Webpages = [];
 
     /**
      * Creates a new instance of AddDynamicTextAdTargetsRequest.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -25,7 +24,7 @@ class AddDynamicTextAdTargetsRequest
      *
      * @return WebpageAddItem[]
      */
-    public function getWebpages()
+    public function getWebpages(): array
     {
         return $this->Webpages;
     }
@@ -34,6 +33,7 @@ class AddDynamicTextAdTargetsRequest
      * Sets Webpages.
      *
      * @param WebpageAddItem[] $value
+     *
      * @return $this
      */
     public function setWebpages(array $value)
@@ -42,7 +42,4 @@ class AddDynamicTextAdTargetsRequest
 
         return $this;
     }
-
-
 }
-

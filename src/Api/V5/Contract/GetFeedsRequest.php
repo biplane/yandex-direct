@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class GetFeedsRequest extends GetRequestGeneral
 {
-
     protected $FieldNames = [];
 
 //    Can be omit.
@@ -21,10 +22,8 @@ class GetFeedsRequest extends GetRequestGeneral
 
     /**
      * Creates a new instance of GetFeedsRequest.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -32,10 +31,11 @@ class GetFeedsRequest extends GetRequestGeneral
     /**
      * Gets FieldNames.
      *
-     * @return string[]
      * @see FeedFieldEnum
+     *
+     * @return string[]
      */
-    public function getFieldNames()
+    public function getFieldNames(): array
     {
         return $this->FieldNames;
     }
@@ -43,9 +43,11 @@ class GetFeedsRequest extends GetRequestGeneral
     /**
      * Sets FieldNames.
      *
-     * @param string[] $value
-     * @return $this
      * @see FeedFieldEnum
+     *
+     * @param string[] $value
+     *
+     * @return $this
      */
     public function setFieldNames(array $value)
     {
@@ -57,22 +59,25 @@ class GetFeedsRequest extends GetRequestGeneral
     /**
      * Gets FileFeedFieldNames.
      *
-     * @return string[]|null
      * @see FileFeedFieldEnum
+     *
+     * @return string[]|null
      */
-    public function getFileFeedFieldNames()
+    public function getFileFeedFieldNames(): ?array
     {
-        return isset($this->FileFeedFieldNames) ? $this->FileFeedFieldNames : null;
+        return $this->FileFeedFieldNames ?? null;
     }
 
     /**
      * Sets FileFeedFieldNames.
      *
-     * @param string[]|null $value
-     * @return $this
      * @see FileFeedFieldEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
      */
-    public function setFileFeedFieldNames(array $value = null)
+    public function setFileFeedFieldNames(?array $value = null)
     {
         $this->FileFeedFieldNames = $value;
 
@@ -82,22 +87,25 @@ class GetFeedsRequest extends GetRequestGeneral
     /**
      * Gets UrlFeedFieldNames.
      *
-     * @return string[]|null
      * @see UrlFeedFieldEnum
+     *
+     * @return string[]|null
      */
-    public function getUrlFeedFieldNames()
+    public function getUrlFeedFieldNames(): ?array
     {
-        return isset($this->UrlFeedFieldNames) ? $this->UrlFeedFieldNames : null;
+        return $this->UrlFeedFieldNames ?? null;
     }
 
     /**
      * Sets UrlFeedFieldNames.
      *
-     * @param string[]|null $value
-     * @return $this
      * @see UrlFeedFieldEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
      */
-    public function setUrlFeedFieldNames(array $value = null)
+    public function setUrlFeedFieldNames(?array $value = null)
     {
         $this->UrlFeedFieldNames = $value;
 
@@ -106,27 +114,21 @@ class GetFeedsRequest extends GetRequestGeneral
 
     /**
      * Gets SelectionCriteria.
-     *
-     * @return FeedsSelectionCriteria|null
      */
-    public function getSelectionCriteria()
+    public function getSelectionCriteria(): ?FeedsSelectionCriteria
     {
-        return isset($this->SelectionCriteria) ? $this->SelectionCriteria : null;
+        return $this->SelectionCriteria ?? null;
     }
 
     /**
      * Sets SelectionCriteria.
      *
-     * @param FeedsSelectionCriteria|null $value
      * @return $this
      */
-    public function setSelectionCriteria(FeedsSelectionCriteria $value = null)
+    public function setSelectionCriteria(?FeedsSelectionCriteria $value = null)
     {
         $this->SelectionCriteria = $value;
 
         return $this;
     }
-
-
 }
-

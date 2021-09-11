@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class MapPoint
 {
-
     protected $x = null;
 
     protected $y = null;
@@ -22,20 +23,16 @@ class MapPoint
 
     /**
      * Creates a new instance of MapPoint.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets x.
-     *
-     * @return float
      */
-    public function getX()
+    public function getX(): float
     {
         return $this->x;
     }
@@ -43,10 +40,9 @@ class MapPoint
     /**
      * Sets x.
      *
-     * @param float $value
      * @return $this
      */
-    public function setX($value)
+    public function setX(float $value)
     {
         $this->x = $value;
 
@@ -55,10 +51,8 @@ class MapPoint
 
     /**
      * Gets y.
-     *
-     * @return float
      */
-    public function getY()
+    public function getY(): float
     {
         return $this->y;
     }
@@ -66,10 +60,9 @@ class MapPoint
     /**
      * Sets y.
      *
-     * @param float $value
      * @return $this
      */
-    public function setY($value)
+    public function setY(float $value)
     {
         $this->y = $value;
 
@@ -78,10 +71,8 @@ class MapPoint
 
     /**
      * Gets x1.
-     *
-     * @return float
      */
-    public function getX1()
+    public function getX1(): float
     {
         return $this->x1;
     }
@@ -89,10 +80,9 @@ class MapPoint
     /**
      * Sets x1.
      *
-     * @param float $value
      * @return $this
      */
-    public function setX1($value)
+    public function setX1(float $value)
     {
         $this->x1 = $value;
 
@@ -101,10 +91,8 @@ class MapPoint
 
     /**
      * Gets y1.
-     *
-     * @return float
      */
-    public function getY1()
+    public function getY1(): float
     {
         return $this->y1;
     }
@@ -112,10 +100,9 @@ class MapPoint
     /**
      * Sets y1.
      *
-     * @param float $value
      * @return $this
      */
-    public function setY1($value)
+    public function setY1(float $value)
     {
         $this->y1 = $value;
 
@@ -124,10 +111,8 @@ class MapPoint
 
     /**
      * Gets x2.
-     *
-     * @return float
      */
-    public function getX2()
+    public function getX2(): float
     {
         return $this->x2;
     }
@@ -135,10 +120,9 @@ class MapPoint
     /**
      * Sets x2.
      *
-     * @param float $value
      * @return $this
      */
-    public function setX2($value)
+    public function setX2(float $value)
     {
         $this->x2 = $value;
 
@@ -147,10 +131,8 @@ class MapPoint
 
     /**
      * Gets y2.
-     *
-     * @return float
      */
-    public function getY2()
+    public function getY2(): float
     {
         return $this->y2;
     }
@@ -158,16 +140,12 @@ class MapPoint
     /**
      * Sets y2.
      *
-     * @param float $value
      * @return $this
      */
-    public function setY2($value)
+    public function setY2(float $value)
     {
         $this->y2 = $value;
 
         return $this;
     }
-
-
 }
-

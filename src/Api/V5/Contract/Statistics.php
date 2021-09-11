@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,27 +9,22 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class Statistics
 {
-
     protected $Clicks = null;
 
     protected $Impressions = null;
 
     /**
      * Creates a new instance of Statistics.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Clicks.
-     *
-     * @return int
      */
-    public function getClicks()
+    public function getClicks(): int
     {
         return $this->Clicks;
     }
@@ -35,10 +32,9 @@ class Statistics
     /**
      * Sets Clicks.
      *
-     * @param int $value
      * @return $this
      */
-    public function setClicks($value)
+    public function setClicks(int $value)
     {
         $this->Clicks = $value;
 
@@ -47,10 +43,8 @@ class Statistics
 
     /**
      * Gets Impressions.
-     *
-     * @return int
      */
-    public function getImpressions()
+    public function getImpressions(): int
     {
         return $this->Impressions;
     }
@@ -58,16 +52,12 @@ class Statistics
     /**
      * Sets Impressions.
      *
-     * @param int $value
      * @return $this
      */
-    public function setImpressions($value)
+    public function setImpressions(int $value)
     {
         $this->Impressions = $value;
 
         return $this;
     }
-
-
 }
-

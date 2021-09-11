@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class PriorityGoalsUpdateItem
 {
-
     protected $GoalId = null;
 
     protected $Value = null;
@@ -16,20 +17,16 @@ class PriorityGoalsUpdateItem
 
     /**
      * Creates a new instance of PriorityGoalsUpdateItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets GoalId.
-     *
-     * @return int
      */
-    public function getGoalId()
+    public function getGoalId(): int
     {
         return $this->GoalId;
     }
@@ -37,10 +34,9 @@ class PriorityGoalsUpdateItem
     /**
      * Sets GoalId.
      *
-     * @param int $value
      * @return $this
      */
-    public function setGoalId($value)
+    public function setGoalId(int $value)
     {
         $this->GoalId = $value;
 
@@ -49,10 +45,8 @@ class PriorityGoalsUpdateItem
 
     /**
      * Gets Value.
-     *
-     * @return int
      */
-    public function getValue()
+    public function getValue(): int
     {
         return $this->Value;
     }
@@ -60,10 +54,9 @@ class PriorityGoalsUpdateItem
     /**
      * Sets Value.
      *
-     * @param int $value
      * @return $this
      */
-    public function setValue($value)
+    public function setValue(int $value)
     {
         $this->Value = $value;
 
@@ -73,10 +66,9 @@ class PriorityGoalsUpdateItem
     /**
      * Gets Operation.
      *
-     * @return string
      * @see OperationEnum
      */
-    public function getOperation()
+    public function getOperation(): string
     {
         return $this->Operation;
     }
@@ -84,17 +76,14 @@ class PriorityGoalsUpdateItem
     /**
      * Sets Operation.
      *
-     * @param string $value
-     * @return $this
      * @see OperationEnum
+     *
+     * @return $this
      */
-    public function setOperation($value)
+    public function setOperation(string $value)
     {
         $this->Operation = $value;
 
         return $this;
     }
-
-
 }
-

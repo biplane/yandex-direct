@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AudienceCriteriaTypesItem
 {
-
     protected $Type = null;
 
     protected $BlockElement = null;
@@ -20,20 +21,16 @@ class AudienceCriteriaTypesItem
 
     /**
      * Creates a new instance of AudienceCriteriaTypesItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Type.
-     *
-     * @return string
      */
-    public function getType()
+    public function getType(): string
     {
         return $this->Type;
     }
@@ -41,10 +38,9 @@ class AudienceCriteriaTypesItem
     /**
      * Sets Type.
      *
-     * @param string $value
      * @return $this
      */
-    public function setType($value)
+    public function setType(string $value)
     {
         $this->Type = $value;
 
@@ -53,10 +49,8 @@ class AudienceCriteriaTypesItem
 
     /**
      * Gets BlockElement.
-     *
-     * @return string
      */
-    public function getBlockElement()
+    public function getBlockElement(): string
     {
         return $this->BlockElement;
     }
@@ -64,10 +58,9 @@ class AudienceCriteriaTypesItem
     /**
      * Sets BlockElement.
      *
-     * @param string $value
      * @return $this
      */
-    public function setBlockElement($value)
+    public function setBlockElement(string $value)
     {
         $this->BlockElement = $value;
 
@@ -76,10 +69,8 @@ class AudienceCriteriaTypesItem
 
     /**
      * Gets Name.
-     *
-     * @return string
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->Name;
     }
@@ -87,10 +78,9 @@ class AudienceCriteriaTypesItem
     /**
      * Sets Name.
      *
-     * @param string $value
      * @return $this
      */
-    public function setName($value)
+    public function setName(string $value)
     {
         $this->Name = $value;
 
@@ -99,10 +89,8 @@ class AudienceCriteriaTypesItem
 
     /**
      * Gets Description.
-     *
-     * @return string
      */
-    public function getDescription()
+    public function getDescription(): string
     {
         return $this->Description;
     }
@@ -110,10 +98,9 @@ class AudienceCriteriaTypesItem
     /**
      * Sets Description.
      *
-     * @param string $value
      * @return $this
      */
-    public function setDescription($value)
+    public function setDescription(string $value)
     {
         $this->Description = $value;
 
@@ -123,10 +110,9 @@ class AudienceCriteriaTypesItem
     /**
      * Gets CanSelect.
      *
-     * @return string
      * @see CanSelectEnum
      */
-    public function getCanSelect()
+    public function getCanSelect(): string
     {
         return $this->CanSelect;
     }
@@ -134,17 +120,14 @@ class AudienceCriteriaTypesItem
     /**
      * Sets CanSelect.
      *
-     * @param string $value
-     * @return $this
      * @see CanSelectEnum
+     *
+     * @return $this
      */
-    public function setCanSelect($value)
+    public function setCanSelect(string $value)
     {
         $this->CanSelect = $value;
 
         return $this;
     }
-
-
 }
-

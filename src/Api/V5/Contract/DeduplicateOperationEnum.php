@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,11 +9,7 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class DeduplicateOperationEnum
 {
+    public const MERGE_DUPLICATES = 'MERGE_DUPLICATES';
 
-    const MERGE_DUPLICATES = 'MERGE_DUPLICATES';
-
-    const ELIMINATE_OVERLAPPING = 'ELIMINATE_OVERLAPPING';
-
-
+    public const ELIMINATE_OVERLAPPING = 'ELIMINATE_OVERLAPPING';
 }
-

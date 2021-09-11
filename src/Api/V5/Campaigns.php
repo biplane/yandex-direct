@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5;
 
 use Biplane\YandexDirect\Api\ApiSoapClientV5;
@@ -10,8 +12,7 @@ use Biplane\YandexDirect\Config;
  */
 class Campaigns extends ApiSoapClientV5
 {
-
-    const ENDPOINT = 'https://api.direct.yandex.com/v5/campaigns?wsdl';
+    public const ENDPOINT = 'https://api.direct.yandex.com/v5/campaigns?wsdl';
 
     public function __construct(Config $config, array $options)
     {
@@ -263,92 +264,65 @@ class Campaigns extends ApiSoapClientV5
 
     /**
      * add.
-     *
-     * @param Contract\AddCampaignsRequest $parameters
-     * @return Contract\AddCampaignsResponse
      */
-    public function add(Contract\AddCampaignsRequest $parameters)
+    public function add(Contract\AddCampaignsRequest $parameters): Contract\AddCampaignsResponse
     {
         return $this->__soapCall('add', [$parameters]);
     }
 
     /**
      * update.
-     *
-     * @param Contract\UpdateCampaignsRequest $parameters
-     * @return Contract\UpdateCampaignsResponse
      */
-    public function update(Contract\UpdateCampaignsRequest $parameters)
+    public function update(Contract\UpdateCampaignsRequest $parameters): Contract\UpdateCampaignsResponse
     {
         return $this->__soapCall('update', [$parameters]);
     }
 
     /**
      * get.
-     *
-     * @param Contract\GetCampaignsRequest $parameters
-     * @return Contract\GetCampaignsResponse
      */
-    public function get(Contract\GetCampaignsRequest $parameters)
+    public function get(Contract\GetCampaignsRequest $parameters): Contract\GetCampaignsResponse
     {
         return $this->__soapCall('get', [$parameters]);
     }
 
     /**
      * delete.
-     *
-     * @param Contract\DeleteCampaignsRequest $parameters
-     * @return Contract\DeleteCampaignsResponse
      */
-    public function delete(Contract\DeleteCampaignsRequest $parameters)
+    public function delete(Contract\DeleteCampaignsRequest $parameters): Contract\DeleteCampaignsResponse
     {
         return $this->__soapCall('delete', [$parameters]);
     }
 
     /**
      * archive.
-     *
-     * @param Contract\ArchiveCampaignsRequest $parameters
-     * @return Contract\ArchiveCampaignsResponse
      */
-    public function archive(Contract\ArchiveCampaignsRequest $parameters)
+    public function archive(Contract\ArchiveCampaignsRequest $parameters): Contract\ArchiveCampaignsResponse
     {
         return $this->__soapCall('archive', [$parameters]);
     }
 
     /**
      * unarchive.
-     *
-     * @param Contract\UnarchiveCampaignsRequest $parameters
-     * @return Contract\UnarchiveCampaignsResponse
      */
-    public function unarchive(Contract\UnarchiveCampaignsRequest $parameters)
+    public function unarchive(Contract\UnarchiveCampaignsRequest $parameters): Contract\UnarchiveCampaignsResponse
     {
         return $this->__soapCall('unarchive', [$parameters]);
     }
 
     /**
      * suspend.
-     *
-     * @param Contract\SuspendCampaignsRequest $parameters
-     * @return Contract\SuspendCampaignsResponse
      */
-    public function suspend(Contract\SuspendCampaignsRequest $parameters)
+    public function suspend(Contract\SuspendCampaignsRequest $parameters): Contract\SuspendCampaignsResponse
     {
         return $this->__soapCall('suspend', [$parameters]);
     }
 
     /**
      * resume.
-     *
-     * @param Contract\ResumeCampaignsRequest $parameters
-     * @return Contract\ResumeCampaignsResponse
      */
-    public function resume(Contract\ResumeCampaignsRequest $parameters)
+    public function resume(Contract\ResumeCampaignsRequest $parameters): Contract\ResumeCampaignsResponse
     {
         return $this->__soapCall('resume', [$parameters]);
     }
-
-
 }
-

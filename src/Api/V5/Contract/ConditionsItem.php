@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class ConditionsItem
 {
-
     protected $Operand = null;
 
     protected $Operator = null;
@@ -16,20 +17,16 @@ class ConditionsItem
 
     /**
      * Creates a new instance of ConditionsItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Operand.
-     *
-     * @return string
      */
-    public function getOperand()
+    public function getOperand(): string
     {
         return $this->Operand;
     }
@@ -37,10 +34,9 @@ class ConditionsItem
     /**
      * Sets Operand.
      *
-     * @param string $value
      * @return $this
      */
-    public function setOperand($value)
+    public function setOperand(string $value)
     {
         $this->Operand = $value;
 
@@ -50,10 +46,9 @@ class ConditionsItem
     /**
      * Gets Operator.
      *
-     * @return string
      * @see SmartAdTargetStringConditionOperatorEnum
      */
-    public function getOperator()
+    public function getOperator(): string
     {
         return $this->Operator;
     }
@@ -61,11 +56,11 @@ class ConditionsItem
     /**
      * Sets Operator.
      *
-     * @param string $value
-     * @return $this
      * @see SmartAdTargetStringConditionOperatorEnum
+     *
+     * @return $this
      */
-    public function setOperator($value)
+    public function setOperator(string $value)
     {
         $this->Operator = $value;
 
@@ -77,7 +72,7 @@ class ConditionsItem
      *
      * @return string[]
      */
-    public function getArguments()
+    public function getArguments(): array
     {
         return $this->Arguments;
     }
@@ -86,6 +81,7 @@ class ConditionsItem
      * Sets Arguments.
      *
      * @param string[] $value
+     *
      * @return $this
      */
     public function setArguments(array $value)
@@ -94,7 +90,4 @@ class ConditionsItem
 
         return $this;
     }
-
-
 }
-

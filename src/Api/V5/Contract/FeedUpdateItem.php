@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class FeedUpdateItem
 {
-
     protected $Id = null;
 
 //    Can be omit.
@@ -21,20 +22,16 @@ class FeedUpdateItem
 
     /**
      * Creates a new instance of FeedUpdateItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Id.
-     *
-     * @return int
      */
-    public function getId()
+    public function getId(): int
     {
         return $this->Id;
     }
@@ -42,10 +39,9 @@ class FeedUpdateItem
     /**
      * Sets Id.
      *
-     * @param int $value
      * @return $this
      */
-    public function setId($value)
+    public function setId(int $value)
     {
         $this->Id = $value;
 
@@ -54,21 +50,18 @@ class FeedUpdateItem
 
     /**
      * Gets Name.
-     *
-     * @return string|null
      */
-    public function getName()
+    public function getName(): ?string
     {
-        return isset($this->Name) ? $this->Name : null;
+        return $this->Name ?? null;
     }
 
     /**
      * Sets Name.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setName($value = null)
+    public function setName(?string $value = null)
     {
         $this->Name = $value;
 
@@ -77,21 +70,18 @@ class FeedUpdateItem
 
     /**
      * Gets UrlFeed.
-     *
-     * @return UrlFeedUpdate|null
      */
-    public function getUrlFeed()
+    public function getUrlFeed(): ?UrlFeedUpdate
     {
-        return isset($this->UrlFeed) ? $this->UrlFeed : null;
+        return $this->UrlFeed ?? null;
     }
 
     /**
      * Sets UrlFeed.
      *
-     * @param UrlFeedUpdate|null $value
      * @return $this
      */
-    public function setUrlFeed(UrlFeedUpdate $value = null)
+    public function setUrlFeed(?UrlFeedUpdate $value = null)
     {
         $this->UrlFeed = $value;
 
@@ -100,27 +90,21 @@ class FeedUpdateItem
 
     /**
      * Gets FileFeed.
-     *
-     * @return FileFeedUpdate|null
      */
-    public function getFileFeed()
+    public function getFileFeed(): ?FileFeedUpdate
     {
-        return isset($this->FileFeed) ? $this->FileFeed : null;
+        return $this->FileFeed ?? null;
     }
 
     /**
      * Sets FileFeed.
      *
-     * @param FileFeedUpdate|null $value
      * @return $this
      */
-    public function setFileFeed(FileFeedUpdate $value = null)
+    public function setFileFeed(?FileFeedUpdate $value = null)
     {
         $this->FileFeed = $value;
 
         return $this;
     }
-
-
 }
-

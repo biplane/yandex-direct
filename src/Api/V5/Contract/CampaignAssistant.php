@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class CampaignAssistant
 {
-
 //    Can be omit.
 //    protected $Manager = null;
 
@@ -16,31 +17,26 @@ class CampaignAssistant
 
     /**
      * Creates a new instance of CampaignAssistant.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Manager.
-     *
-     * @return string|null
      */
-    public function getManager()
+    public function getManager(): ?string
     {
-        return isset($this->Manager) ? $this->Manager : null;
+        return $this->Manager ?? null;
     }
 
     /**
      * Sets Manager.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setManager($value = null)
+    public function setManager(?string $value = null)
     {
         $this->Manager = $value;
 
@@ -49,27 +45,21 @@ class CampaignAssistant
 
     /**
      * Gets Agency.
-     *
-     * @return string|null
      */
-    public function getAgency()
+    public function getAgency(): ?string
     {
-        return isset($this->Agency) ? $this->Agency : null;
+        return $this->Agency ?? null;
     }
 
     /**
      * Sets Agency.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setAgency($value = null)
+    public function setAgency(?string $value = null)
     {
         $this->Agency = $value;
 
         return $this;
     }
-
-
 }
-

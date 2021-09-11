@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,27 +9,22 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class StringFilterFieldProps
 {
-
     protected $MaxLength = null;
 
     protected $MinLength = null;
 
     /**
      * Creates a new instance of StringFilterFieldProps.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets MaxLength.
-     *
-     * @return int
      */
-    public function getMaxLength()
+    public function getMaxLength(): int
     {
         return $this->MaxLength;
     }
@@ -35,10 +32,9 @@ class StringFilterFieldProps
     /**
      * Sets MaxLength.
      *
-     * @param int $value
      * @return $this
      */
-    public function setMaxLength($value)
+    public function setMaxLength(int $value)
     {
         $this->MaxLength = $value;
 
@@ -47,10 +43,8 @@ class StringFilterFieldProps
 
     /**
      * Gets MinLength.
-     *
-     * @return int
      */
-    public function getMinLength()
+    public function getMinLength(): int
     {
         return $this->MinLength;
     }
@@ -58,16 +52,12 @@ class StringFilterFieldProps
     /**
      * Sets MinLength.
      *
-     * @param int $value
      * @return $this
      */
-    public function setMinLength($value)
+    public function setMinLength(int $value)
     {
         $this->MinLength = $value;
 
         return $this;
     }
-
-
 }
-

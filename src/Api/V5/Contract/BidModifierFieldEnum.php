@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,17 +9,13 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class BidModifierFieldEnum
 {
+    public const ID = 'Id';
 
-    const ID = 'Id';
+    public const CAMPAIGN_ID = 'CampaignId';
 
-    const CAMPAIGN_ID = 'CampaignId';
+    public const AD_GROUP_ID = 'AdGroupId';
 
-    const AD_GROUP_ID = 'AdGroupId';
+    public const LEVEL = 'Level';
 
-    const LEVEL = 'Level';
-
-    const TYPE = 'Type';
-
-
+    public const TYPE = 'Type';
 }
-

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AdGroupBase
 {
-
 //    Can be omit.
 //    protected $RegionIds = null;
 
@@ -22,10 +23,8 @@ class AdGroupBase
 
     /**
      * Creates a new instance of AdGroupBase.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -35,18 +34,19 @@ class AdGroupBase
      *
      * @return int[]|null
      */
-    public function getRegionIds()
+    public function getRegionIds(): ?array
     {
-        return isset($this->RegionIds) ? $this->RegionIds : null;
+        return $this->RegionIds ?? null;
     }
 
     /**
      * Sets RegionIds.
      *
      * @param int[]|null $value
+     *
      * @return $this
      */
-    public function setRegionIds(array $value = null)
+    public function setRegionIds(?array $value = null)
     {
         $this->RegionIds = $value;
 
@@ -58,18 +58,19 @@ class AdGroupBase
      *
      * @return string[]|null
      */
-    public function getNegativeKeywords()
+    public function getNegativeKeywords(): ?array
     {
-        return isset($this->NegativeKeywords) ? $this->NegativeKeywords : null;
+        return $this->NegativeKeywords ?? null;
     }
 
     /**
      * Sets NegativeKeywords.
      *
      * @param string[]|null $value
+     *
      * @return $this
      */
-    public function setNegativeKeywords(array $value = null)
+    public function setNegativeKeywords(?array $value = null)
     {
         $this->NegativeKeywords = $value;
 
@@ -81,18 +82,19 @@ class AdGroupBase
      *
      * @return float[]|null
      */
-    public function getNegativeKeywordSharedSetIds()
+    public function getNegativeKeywordSharedSetIds(): ?array
     {
-        return isset($this->NegativeKeywordSharedSetIds) ? $this->NegativeKeywordSharedSetIds : null;
+        return $this->NegativeKeywordSharedSetIds ?? null;
     }
 
     /**
      * Sets NegativeKeywordSharedSetIds.
      *
      * @param float[]|null $value
+     *
      * @return $this
      */
-    public function setNegativeKeywordSharedSetIds(array $value = null)
+    public function setNegativeKeywordSharedSetIds(?array $value = null)
     {
         $this->NegativeKeywordSharedSetIds = $value;
 
@@ -101,27 +103,21 @@ class AdGroupBase
 
     /**
      * Gets TrackingParams.
-     *
-     * @return string|null
      */
-    public function getTrackingParams()
+    public function getTrackingParams(): ?string
     {
-        return isset($this->TrackingParams) ? $this->TrackingParams : null;
+        return $this->TrackingParams ?? null;
     }
 
     /**
      * Sets TrackingParams.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setTrackingParams($value = null)
+    public function setTrackingParams(?string $value = null)
     {
         $this->TrackingParams = $value;
 
         return $this;
     }
-
-
 }
-

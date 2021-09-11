@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class BidModifierToggleItem
 {
-
 //    Can be omit.
 //    protected $CampaignId = null;
 
@@ -20,31 +21,26 @@ class BidModifierToggleItem
 
     /**
      * Creates a new instance of BidModifierToggleItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets CampaignId.
-     *
-     * @return int|null
      */
-    public function getCampaignId()
+    public function getCampaignId(): ?int
     {
-        return isset($this->CampaignId) ? $this->CampaignId : null;
+        return $this->CampaignId ?? null;
     }
 
     /**
      * Sets CampaignId.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setCampaignId($value = null)
+    public function setCampaignId(?int $value = null)
     {
         $this->CampaignId = $value;
 
@@ -53,21 +49,18 @@ class BidModifierToggleItem
 
     /**
      * Gets AdGroupId.
-     *
-     * @return int|null
      */
-    public function getAdGroupId()
+    public function getAdGroupId(): ?int
     {
-        return isset($this->AdGroupId) ? $this->AdGroupId : null;
+        return $this->AdGroupId ?? null;
     }
 
     /**
      * Sets AdGroupId.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setAdGroupId($value = null)
+    public function setAdGroupId(?int $value = null)
     {
         $this->AdGroupId = $value;
 
@@ -77,10 +70,9 @@ class BidModifierToggleItem
     /**
      * Gets Type.
      *
-     * @return string
      * @see BidModifierToggleTypeEnum
      */
-    public function getType()
+    public function getType(): string
     {
         return $this->Type;
     }
@@ -88,11 +80,11 @@ class BidModifierToggleItem
     /**
      * Sets Type.
      *
-     * @param string $value
-     * @return $this
      * @see BidModifierToggleTypeEnum
+     *
+     * @return $this
      */
-    public function setType($value)
+    public function setType(string $value)
     {
         $this->Type = $value;
 
@@ -102,10 +94,9 @@ class BidModifierToggleItem
     /**
      * Gets Enabled.
      *
-     * @return string
      * @see YesNoEnum
      */
-    public function getEnabled()
+    public function getEnabled(): string
     {
         return $this->Enabled;
     }
@@ -113,17 +104,14 @@ class BidModifierToggleItem
     /**
      * Sets Enabled.
      *
-     * @param string $value
-     * @return $this
      * @see YesNoEnum
+     *
+     * @return $this
      */
-    public function setEnabled($value)
+    public function setEnabled(string $value)
     {
         $this->Enabled = $value;
 
         return $this;
     }
-
-
 }
-

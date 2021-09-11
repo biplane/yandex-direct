@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,17 +9,13 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class KeywordBidFieldEnum
 {
+    public const KEYWORD_ID = 'KeywordId';
 
-    const KEYWORD_ID = 'KeywordId';
+    public const AD_GROUP_ID = 'AdGroupId';
 
-    const AD_GROUP_ID = 'AdGroupId';
+    public const CAMPAIGN_ID = 'CampaignId';
 
-    const CAMPAIGN_ID = 'CampaignId';
+    public const SERVING_STATUS = 'ServingStatus';
 
-    const SERVING_STATUS = 'ServingStatus';
-
-    const STRATEGY_PRIORITY = 'StrategyPriority';
-
-
+    public const STRATEGY_PRIORITY = 'StrategyPriority';
 }
-

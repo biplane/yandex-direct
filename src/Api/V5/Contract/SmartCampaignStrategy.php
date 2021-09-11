@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class SmartCampaignStrategy
 {
-
 //    Can be omit.
 //    protected $Search = null;
 
@@ -16,31 +17,26 @@ class SmartCampaignStrategy
 
     /**
      * Creates a new instance of SmartCampaignStrategy.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Search.
-     *
-     * @return SmartCampaignSearchStrategy|null
      */
-    public function getSearch()
+    public function getSearch(): ?SmartCampaignSearchStrategy
     {
-        return isset($this->Search) ? $this->Search : null;
+        return $this->Search ?? null;
     }
 
     /**
      * Sets Search.
      *
-     * @param SmartCampaignSearchStrategy|null $value
      * @return $this
      */
-    public function setSearch(SmartCampaignSearchStrategy $value = null)
+    public function setSearch(?SmartCampaignSearchStrategy $value = null)
     {
         $this->Search = $value;
 
@@ -49,27 +45,21 @@ class SmartCampaignStrategy
 
     /**
      * Gets Network.
-     *
-     * @return SmartCampaignNetworkStrategy|null
      */
-    public function getNetwork()
+    public function getNetwork(): ?SmartCampaignNetworkStrategy
     {
-        return isset($this->Network) ? $this->Network : null;
+        return $this->Network ?? null;
     }
 
     /**
      * Sets Network.
      *
-     * @param SmartCampaignNetworkStrategy|null $value
      * @return $this
      */
-    public function setNetwork(SmartCampaignNetworkStrategy $value = null)
+    public function setNetwork(?SmartCampaignNetworkStrategy $value = null)
     {
         $this->Network = $value;
 
         return $this;
     }
-
-
 }
-

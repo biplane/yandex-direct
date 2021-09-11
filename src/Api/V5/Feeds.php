@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5;
 
 use Biplane\YandexDirect\Api\ApiSoapClientV5;
@@ -10,8 +12,7 @@ use Biplane\YandexDirect\Config;
  */
 class Feeds extends ApiSoapClientV5
 {
-
-    const ENDPOINT = 'https://api.direct.yandex.com/v5/feeds?wsdl';
+    public const ENDPOINT = 'https://api.direct.yandex.com/v5/feeds?wsdl';
 
     public function __construct(Config $config, array $options)
     {
@@ -87,48 +88,33 @@ class Feeds extends ApiSoapClientV5
 
     /**
      * add.
-     *
-     * @param Contract\AddFeedsRequest $parameters
-     * @return Contract\AddFeedsResponse
      */
-    public function add(Contract\AddFeedsRequest $parameters)
+    public function add(Contract\AddFeedsRequest $parameters): Contract\AddFeedsResponse
     {
         return $this->__soapCall('add', [$parameters]);
     }
 
     /**
      * get.
-     *
-     * @param Contract\GetFeedsRequest $parameters
-     * @return Contract\GetFeedsResponse
      */
-    public function get(Contract\GetFeedsRequest $parameters)
+    public function get(Contract\GetFeedsRequest $parameters): Contract\GetFeedsResponse
     {
         return $this->__soapCall('get', [$parameters]);
     }
 
     /**
      * update.
-     *
-     * @param Contract\UpdateFeedsRequest $parameters
-     * @return Contract\UpdateFeedsResponse
      */
-    public function update(Contract\UpdateFeedsRequest $parameters)
+    public function update(Contract\UpdateFeedsRequest $parameters): Contract\UpdateFeedsResponse
     {
         return $this->__soapCall('update', [$parameters]);
     }
 
     /**
      * delete.
-     *
-     * @param Contract\DeleteFeedsRequest $parameters
-     * @return Contract\DeleteFeedsResponse
      */
-    public function delete(Contract\DeleteFeedsRequest $parameters)
+    public function delete(Contract\DeleteFeedsRequest $parameters): Contract\DeleteFeedsResponse
     {
         return $this->__soapCall('delete', [$parameters]);
     }
-
-
 }
-

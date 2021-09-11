@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,43 +9,34 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class GrantGetItem extends GrantItem
 {
-
 //    Can be omit.
 //    protected $Agency = null;
 
     /**
      * Creates a new instance of GrantGetItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Agency.
-     *
-     * @return string|null
      */
-    public function getAgency()
+    public function getAgency(): ?string
     {
-        return isset($this->Agency) ? $this->Agency : null;
+        return $this->Agency ?? null;
     }
 
     /**
      * Sets Agency.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setAgency($value = null)
+    public function setAgency(?string $value = null)
     {
         $this->Agency = $value;
 
         return $this;
     }
-
-
 }
-

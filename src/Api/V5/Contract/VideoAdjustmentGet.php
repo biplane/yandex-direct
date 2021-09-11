@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,43 +9,34 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class VideoAdjustmentGet
 {
-
 //    Can be omit.
 //    protected $BidModifier = null;
 
     /**
      * Creates a new instance of VideoAdjustmentGet.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets BidModifier.
-     *
-     * @return int|null
      */
-    public function getBidModifier()
+    public function getBidModifier(): ?int
     {
-        return isset($this->BidModifier) ? $this->BidModifier : null;
+        return $this->BidModifier ?? null;
     }
 
     /**
      * Sets BidModifier.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setBidModifier($value = null)
+    public function setBidModifier(?int $value = null)
     {
         $this->BidModifier = $value;
 
         return $this;
     }
-
-
 }
-

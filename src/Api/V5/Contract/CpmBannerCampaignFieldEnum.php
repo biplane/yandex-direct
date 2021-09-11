@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,15 +9,11 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class CpmBannerCampaignFieldEnum
 {
+    public const COUNTER_IDS = 'CounterIds';
 
-    const COUNTER_IDS = 'CounterIds';
+    public const FREQUENCY_CAP = 'FrequencyCap';
 
-    const FREQUENCY_CAP = 'FrequencyCap';
+    public const SETTINGS = 'Settings';
 
-    const SETTINGS = 'Settings';
-
-    const BIDDING_STRATEGY = 'BiddingStrategy';
-
-
+    public const BIDDING_STRATEGY = 'BiddingStrategy';
 }
-

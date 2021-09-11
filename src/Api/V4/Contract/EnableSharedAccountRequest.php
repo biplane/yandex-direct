@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,25 +9,20 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class EnableSharedAccountRequest
 {
-
     protected $Login = null;
 
     /**
      * Creates a new instance of EnableSharedAccountRequest.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Login.
-     *
-     * @return string
      */
-    public function getLogin()
+    public function getLogin(): string
     {
         return $this->Login;
     }
@@ -33,16 +30,12 @@ class EnableSharedAccountRequest
     /**
      * Sets Login.
      *
-     * @param string $value
      * @return $this
      */
-    public function setLogin($value)
+    public function setLogin(string $value)
     {
         $this->Login = $value;
 
         return $this;
     }
-
-
 }
-

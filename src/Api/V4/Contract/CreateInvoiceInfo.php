@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,15 +9,12 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class CreateInvoiceInfo
 {
-
     protected $Payments = [];
 
     /**
      * Creates a new instance of CreateInvoiceInfo.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -25,7 +24,7 @@ class CreateInvoiceInfo
      *
      * @return PayCampElement[]
      */
-    public function getPayments()
+    public function getPayments(): array
     {
         return $this->Payments;
     }
@@ -34,6 +33,7 @@ class CreateInvoiceInfo
      * Sets Payments.
      *
      * @param PayCampElement[] $value
+     *
      * @return $this
      */
     public function setPayments(array $value)
@@ -42,7 +42,4 @@ class CreateInvoiceInfo
 
         return $this;
     }
-
-
 }
-

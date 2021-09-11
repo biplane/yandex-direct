@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class TimeTargetInfo
 {
-
     protected $ShowOnHolidays = null;
 
     protected $HolidayShowFrom = null;
@@ -22,20 +23,16 @@ class TimeTargetInfo
 
     /**
      * Creates a new instance of TimeTargetInfo.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets ShowOnHolidays.
-     *
-     * @return string|null
      */
-    public function getShowOnHolidays()
+    public function getShowOnHolidays(): ?string
     {
         return $this->ShowOnHolidays;
     }
@@ -43,10 +40,9 @@ class TimeTargetInfo
     /**
      * Sets ShowOnHolidays.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setShowOnHolidays($value = null)
+    public function setShowOnHolidays(?string $value = null)
     {
         $this->ShowOnHolidays = $value;
 
@@ -55,10 +51,8 @@ class TimeTargetInfo
 
     /**
      * Gets HolidayShowFrom.
-     *
-     * @return int|null
      */
-    public function getHolidayShowFrom()
+    public function getHolidayShowFrom(): ?int
     {
         return $this->HolidayShowFrom;
     }
@@ -66,10 +60,9 @@ class TimeTargetInfo
     /**
      * Sets HolidayShowFrom.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setHolidayShowFrom($value = null)
+    public function setHolidayShowFrom(?int $value = null)
     {
         $this->HolidayShowFrom = $value;
 
@@ -78,10 +71,8 @@ class TimeTargetInfo
 
     /**
      * Gets HolidayShowTo.
-     *
-     * @return int|null
      */
-    public function getHolidayShowTo()
+    public function getHolidayShowTo(): ?int
     {
         return $this->HolidayShowTo;
     }
@@ -89,10 +80,9 @@ class TimeTargetInfo
     /**
      * Sets HolidayShowTo.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setHolidayShowTo($value = null)
+    public function setHolidayShowTo(?int $value = null)
     {
         $this->HolidayShowTo = $value;
 
@@ -104,7 +94,7 @@ class TimeTargetInfo
      *
      * @return TimeTargetItem[]
      */
-    public function getDaysHours()
+    public function getDaysHours(): array
     {
         return $this->DaysHours;
     }
@@ -113,6 +103,7 @@ class TimeTargetInfo
      * Sets DaysHours.
      *
      * @param TimeTargetItem[] $value
+     *
      * @return $this
      */
     public function setDaysHours(array $value)
@@ -124,10 +115,8 @@ class TimeTargetInfo
 
     /**
      * Gets TimeZone.
-     *
-     * @return string|null
      */
-    public function getTimeZone()
+    public function getTimeZone(): ?string
     {
         return $this->TimeZone;
     }
@@ -135,10 +124,9 @@ class TimeTargetInfo
     /**
      * Sets TimeZone.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setTimeZone($value = null)
+    public function setTimeZone(?string $value = null)
     {
         $this->TimeZone = $value;
 
@@ -147,10 +135,8 @@ class TimeTargetInfo
 
     /**
      * Gets WorkingHolidays.
-     *
-     * @return string|null
      */
-    public function getWorkingHolidays()
+    public function getWorkingHolidays(): ?string
     {
         return $this->WorkingHolidays;
     }
@@ -158,16 +144,12 @@ class TimeTargetInfo
     /**
      * Sets WorkingHolidays.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setWorkingHolidays($value = null)
+    public function setWorkingHolidays(?string $value = null)
     {
         $this->WorkingHolidays = $value;
 
         return $this;
     }
-
-
 }
-

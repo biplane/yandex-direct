@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,16 +9,13 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class GetNegativeKeywordSharedSetsResponse extends GetResponseGeneral
 {
-
 //    Can be omit.
 //    protected $NegativeKeywordSharedSets = null;
 
     /**
      * Creates a new instance of GetNegativeKeywordSharedSetsResponse.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -26,24 +25,22 @@ class GetNegativeKeywordSharedSetsResponse extends GetResponseGeneral
      *
      * @return NegativeKeywordSharedSetGetItem[]|null
      */
-    public function getNegativeKeywordSharedSets()
+    public function getNegativeKeywordSharedSets(): ?array
     {
-        return isset($this->NegativeKeywordSharedSets) ? $this->NegativeKeywordSharedSets : null;
+        return $this->NegativeKeywordSharedSets ?? null;
     }
 
     /**
      * Sets NegativeKeywordSharedSets.
      *
      * @param NegativeKeywordSharedSetGetItem[]|null $value
+     *
      * @return $this
      */
-    public function setNegativeKeywordSharedSets(array $value = null)
+    public function setNegativeKeywordSharedSets(?array $value = null)
     {
         $this->NegativeKeywordSharedSets = $value;
 
         return $this;
     }
-
-
 }
-

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class StrategyWeeklyClickPackage
 {
-
 //    Can be omit.
 //    protected $ClicksPerWeek = null;
 
@@ -19,31 +20,26 @@ class StrategyWeeklyClickPackage
 
     /**
      * Creates a new instance of StrategyWeeklyClickPackage.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets ClicksPerWeek.
-     *
-     * @return int|null
      */
-    public function getClicksPerWeek()
+    public function getClicksPerWeek(): ?int
     {
-        return isset($this->ClicksPerWeek) ? $this->ClicksPerWeek : null;
+        return $this->ClicksPerWeek ?? null;
     }
 
     /**
      * Sets ClicksPerWeek.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setClicksPerWeek($value = null)
+    public function setClicksPerWeek(?int $value = null)
     {
         $this->ClicksPerWeek = $value;
 
@@ -52,21 +48,18 @@ class StrategyWeeklyClickPackage
 
     /**
      * Gets AverageCpc.
-     *
-     * @return int|null
      */
-    public function getAverageCpc()
+    public function getAverageCpc(): ?int
     {
-        return isset($this->AverageCpc) ? $this->AverageCpc : null;
+        return $this->AverageCpc ?? null;
     }
 
     /**
      * Sets AverageCpc.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setAverageCpc($value = null)
+    public function setAverageCpc(?int $value = null)
     {
         $this->AverageCpc = $value;
 
@@ -75,27 +68,21 @@ class StrategyWeeklyClickPackage
 
     /**
      * Gets BidCeiling.
-     *
-     * @return int|null
      */
-    public function getBidCeiling()
+    public function getBidCeiling(): ?int
     {
-        return isset($this->BidCeiling) ? $this->BidCeiling : null;
+        return $this->BidCeiling ?? null;
     }
 
     /**
      * Sets BidCeiling.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setBidCeiling($value = null)
+    public function setBidCeiling(?int $value = null)
     {
         $this->BidCeiling = $value;
 
         return $this;
     }
-
-
 }
-

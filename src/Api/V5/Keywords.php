@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5;
 
 use Biplane\YandexDirect\Api\ApiSoapClientV5;
@@ -10,8 +12,7 @@ use Biplane\YandexDirect\Config;
  */
 class Keywords extends ApiSoapClientV5
 {
-
-    const ENDPOINT = 'https://api.direct.yandex.com/v5/keywords?wsdl';
+    public const ENDPOINT = 'https://api.direct.yandex.com/v5/keywords?wsdl';
 
     public function __construct(Config $config, array $options)
     {
@@ -82,70 +83,49 @@ class Keywords extends ApiSoapClientV5
 
     /**
      * add.
-     *
-     * @param Contract\AddKeywordsRequest $parameters
-     * @return Contract\AddKeywordsResponse
      */
-    public function add(Contract\AddKeywordsRequest $parameters)
+    public function add(Contract\AddKeywordsRequest $parameters): Contract\AddKeywordsResponse
     {
         return $this->__soapCall('add', [$parameters]);
     }
 
     /**
      * get.
-     *
-     * @param Contract\GetKeywordsRequest $parameters
-     * @return Contract\GetKeywordsResponse
      */
-    public function get(Contract\GetKeywordsRequest $parameters)
+    public function get(Contract\GetKeywordsRequest $parameters): Contract\GetKeywordsResponse
     {
         return $this->__soapCall('get', [$parameters]);
     }
 
     /**
      * update.
-     *
-     * @param Contract\UpdateKeywordsRequest $parameters
-     * @return Contract\UpdateKeywordsResponse
      */
-    public function update(Contract\UpdateKeywordsRequest $parameters)
+    public function update(Contract\UpdateKeywordsRequest $parameters): Contract\UpdateKeywordsResponse
     {
         return $this->__soapCall('update', [$parameters]);
     }
 
     /**
      * delete.
-     *
-     * @param Contract\DeleteKeywordsRequest $parameters
-     * @return Contract\DeleteKeywordsResponse
      */
-    public function delete(Contract\DeleteKeywordsRequest $parameters)
+    public function delete(Contract\DeleteKeywordsRequest $parameters): Contract\DeleteKeywordsResponse
     {
         return $this->__soapCall('delete', [$parameters]);
     }
 
     /**
      * suspend.
-     *
-     * @param Contract\SuspendKeywordsRequest $parameters
-     * @return Contract\SuspendKeywordsResponse
      */
-    public function suspend(Contract\SuspendKeywordsRequest $parameters)
+    public function suspend(Contract\SuspendKeywordsRequest $parameters): Contract\SuspendKeywordsResponse
     {
         return $this->__soapCall('suspend', [$parameters]);
     }
 
     /**
      * resume.
-     *
-     * @param Contract\ResumeKeywordsRequest $parameters
-     * @return Contract\ResumeKeywordsResponse
      */
-    public function resume(Contract\ResumeKeywordsRequest $parameters)
+    public function resume(Contract\ResumeKeywordsRequest $parameters): Contract\ResumeKeywordsResponse
     {
         return $this->__soapCall('resume', [$parameters]);
     }
-
-
 }
-

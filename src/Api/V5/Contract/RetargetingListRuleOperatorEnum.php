@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,13 +9,9 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class RetargetingListRuleOperatorEnum
 {
+    public const ALL = 'ALL';
 
-    const ALL = 'ALL';
+    public const ANY = 'ANY';
 
-    const ANY = 'ANY';
-
-    const NONE = 'NONE';
-
-
+    public const NONE = 'NONE';
 }
-

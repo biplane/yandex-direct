@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,27 +9,22 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class TrackingPixelGetItem
 {
-
     protected $TrackingPixel = null;
 
     protected $Provider = null;
 
     /**
      * Creates a new instance of TrackingPixelGetItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets TrackingPixel.
-     *
-     * @return string
      */
-    public function getTrackingPixel()
+    public function getTrackingPixel(): string
     {
         return $this->TrackingPixel;
     }
@@ -35,10 +32,9 @@ class TrackingPixelGetItem
     /**
      * Sets TrackingPixel.
      *
-     * @param string $value
      * @return $this
      */
-    public function setTrackingPixel($value)
+    public function setTrackingPixel(string $value)
     {
         $this->TrackingPixel = $value;
 
@@ -47,10 +43,8 @@ class TrackingPixelGetItem
 
     /**
      * Gets Provider.
-     *
-     * @return string
      */
-    public function getProvider()
+    public function getProvider(): string
     {
         return $this->Provider;
     }
@@ -58,16 +52,12 @@ class TrackingPixelGetItem
     /**
      * Sets Provider.
      *
-     * @param string $value
      * @return $this
      */
-    public function setProvider($value)
+    public function setProvider(string $value)
     {
         $this->Provider = $value;
 
         return $this;
     }
-
-
 }
-

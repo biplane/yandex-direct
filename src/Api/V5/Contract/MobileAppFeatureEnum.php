@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,15 +9,11 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class MobileAppFeatureEnum
 {
+    public const PRICE = 'PRICE';
 
-    const PRICE = 'PRICE';
+    public const ICON = 'ICON';
 
-    const ICON = 'ICON';
+    public const CUSTOMER_RATING = 'CUSTOMER_RATING';
 
-    const CUSTOMER_RATING = 'CUSTOMER_RATING';
-
-    const RATINGS = 'RATINGS';
-
-
+    public const RATINGS = 'RATINGS';
 }
-

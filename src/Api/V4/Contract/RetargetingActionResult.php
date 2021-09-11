@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class RetargetingActionResult
 {
-
     protected $Warnings = null;
 
     protected $Errors = null;
@@ -16,10 +17,8 @@ class RetargetingActionResult
 
     /**
      * Creates a new instance of RetargetingActionResult.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -29,7 +28,7 @@ class RetargetingActionResult
      *
      * @return Warning[]|null
      */
-    public function getWarnings()
+    public function getWarnings(): ?array
     {
         return $this->Warnings;
     }
@@ -38,9 +37,10 @@ class RetargetingActionResult
      * Sets Warnings.
      *
      * @param Warning[]|null $value
+     *
      * @return $this
      */
-    public function setWarnings(array $value = null)
+    public function setWarnings(?array $value = null)
     {
         $this->Warnings = $value;
 
@@ -52,7 +52,7 @@ class RetargetingActionResult
      *
      * @return Error[]|null
      */
-    public function getErrors()
+    public function getErrors(): ?array
     {
         return $this->Errors;
     }
@@ -61,9 +61,10 @@ class RetargetingActionResult
      * Sets Errors.
      *
      * @param Error[]|null $value
+     *
      * @return $this
      */
-    public function setErrors(array $value = null)
+    public function setErrors(?array $value = null)
     {
         $this->Errors = $value;
 
@@ -72,10 +73,8 @@ class RetargetingActionResult
 
     /**
      * Gets RetargetingID.
-     *
-     * @return int|null
      */
-    public function getRetargetingID()
+    public function getRetargetingID(): ?int
     {
         return $this->RetargetingID;
     }
@@ -83,16 +82,12 @@ class RetargetingActionResult
     /**
      * Sets RetargetingID.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setRetargetingID($value = null)
+    public function setRetargetingID(?int $value = null)
     {
         $this->RetargetingID = $value;
 
         return $this;
     }
-
-
 }
-

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,15 +9,11 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class FeedStatusEnum
 {
+    public const aNEW = 'NEW';
 
-    const aNEW = 'NEW';
+    public const UPDATING = 'UPDATING';
 
-    const UPDATING = 'UPDATING';
+    public const DONE = 'DONE';
 
-    const DONE = 'DONE';
-
-    const ERROR = 'ERROR';
-
-
+    public const ERROR = 'ERROR';
 }
-

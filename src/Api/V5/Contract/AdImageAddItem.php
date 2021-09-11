@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,27 +9,22 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AdImageAddItem
 {
-
     protected $ImageData = null;
 
     protected $Name = null;
 
     /**
      * Creates a new instance of AdImageAddItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets ImageData.
-     *
-     * @return string
      */
-    public function getImageData()
+    public function getImageData(): string
     {
         return $this->ImageData;
     }
@@ -35,10 +32,9 @@ class AdImageAddItem
     /**
      * Sets ImageData.
      *
-     * @param string $value
      * @return $this
      */
-    public function setImageData($value)
+    public function setImageData(string $value)
     {
         $this->ImageData = $value;
 
@@ -47,10 +43,8 @@ class AdImageAddItem
 
     /**
      * Gets Name.
-     *
-     * @return string
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->Name;
     }
@@ -58,16 +52,12 @@ class AdImageAddItem
     /**
      * Sets Name.
      *
-     * @param string $value
      * @return $this
      */
-    public function setName($value)
+    public function setName(string $value)
     {
         $this->Name = $value;
 
         return $this;
     }
-
-
 }
-

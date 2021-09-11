@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AdImageSelectionCriteria
 {
-
 //    Can be omit.
 //    protected $AdImageHashes = null;
 
@@ -16,10 +17,8 @@ class AdImageSelectionCriteria
 
     /**
      * Creates a new instance of AdImageSelectionCriteria.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -29,18 +28,19 @@ class AdImageSelectionCriteria
      *
      * @return string[]|null
      */
-    public function getAdImageHashes()
+    public function getAdImageHashes(): ?array
     {
-        return isset($this->AdImageHashes) ? $this->AdImageHashes : null;
+        return $this->AdImageHashes ?? null;
     }
 
     /**
      * Sets AdImageHashes.
      *
      * @param string[]|null $value
+     *
      * @return $this
      */
-    public function setAdImageHashes(array $value = null)
+    public function setAdImageHashes(?array $value = null)
     {
         $this->AdImageHashes = $value;
 
@@ -50,28 +50,24 @@ class AdImageSelectionCriteria
     /**
      * Gets Associated.
      *
-     * @return string|null
      * @see YesNoEnum
      */
-    public function getAssociated()
+    public function getAssociated(): ?string
     {
-        return isset($this->Associated) ? $this->Associated : null;
+        return $this->Associated ?? null;
     }
 
     /**
      * Sets Associated.
      *
-     * @param string|null $value
-     * @return $this
      * @see YesNoEnum
+     *
+     * @return $this
      */
-    public function setAssociated($value = null)
+    public function setAssociated(?string $value = null)
     {
         $this->Associated = $value;
 
         return $this;
     }
-
-
 }
-

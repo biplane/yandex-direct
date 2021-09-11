@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class ReportInfo
 {
-
     protected $ReportID = null;
 
     protected $Url = null;
@@ -16,20 +17,16 @@ class ReportInfo
 
     /**
      * Creates a new instance of ReportInfo.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets ReportID.
-     *
-     * @return int
      */
-    public function getReportID()
+    public function getReportID(): int
     {
         return $this->ReportID;
     }
@@ -37,10 +34,9 @@ class ReportInfo
     /**
      * Sets ReportID.
      *
-     * @param int $value
      * @return $this
      */
-    public function setReportID($value)
+    public function setReportID(int $value)
     {
         $this->ReportID = $value;
 
@@ -49,10 +45,8 @@ class ReportInfo
 
     /**
      * Gets Url.
-     *
-     * @return string
      */
-    public function getUrl()
+    public function getUrl(): string
     {
         return $this->Url;
     }
@@ -60,10 +54,9 @@ class ReportInfo
     /**
      * Sets Url.
      *
-     * @param string $value
      * @return $this
      */
-    public function setUrl($value)
+    public function setUrl(string $value)
     {
         $this->Url = $value;
 
@@ -72,10 +65,8 @@ class ReportInfo
 
     /**
      * Gets StatusReport.
-     *
-     * @return string
      */
-    public function getStatusReport()
+    public function getStatusReport(): string
     {
         return $this->StatusReport;
     }
@@ -83,16 +74,12 @@ class ReportInfo
     /**
      * Sets StatusReport.
      *
-     * @param string $value
      * @return $this
      */
-    public function setStatusReport($value)
+    public function setStatusReport(string $value)
     {
         $this->StatusReport = $value;
 
         return $this;
     }
-
-
 }
-

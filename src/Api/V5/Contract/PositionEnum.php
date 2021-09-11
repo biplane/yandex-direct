@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,31 +9,27 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class PositionEnum
 {
+    public const PREMIUMFIRST = 'PREMIUMFIRST';
 
-    const PREMIUMFIRST = 'PREMIUMFIRST';
+    public const PREMIUMBLOCK = 'PREMIUMBLOCK';
 
-    const PREMIUMBLOCK = 'PREMIUMBLOCK';
+    public const FOOTERFIRST = 'FOOTERFIRST';
 
-    const FOOTERFIRST = 'FOOTERFIRST';
+    public const FOOTERBLOCK = 'FOOTERBLOCK';
 
-    const FOOTERBLOCK = 'FOOTERBLOCK';
+    public const P11 = 'P11';
 
-    const P11 = 'P11';
+    public const P12 = 'P12';
 
-    const P12 = 'P12';
+    public const P13 = 'P13';
 
-    const P13 = 'P13';
+    public const P14 = 'P14';
 
-    const P14 = 'P14';
+    public const P21 = 'P21';
 
-    const P21 = 'P21';
+    public const P22 = 'P22';
 
-    const P22 = 'P22';
+    public const P23 = 'P23';
 
-    const P23 = 'P23';
-
-    const P24 = 'P24';
-
-
+    public const P24 = 'P24';
 }
-

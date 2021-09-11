@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class MobileAppCampaignGetItem
 {
-
 //    Can be omit.
 //    protected $BiddingStrategy = null;
 
@@ -16,31 +17,26 @@ class MobileAppCampaignGetItem
 
     /**
      * Creates a new instance of MobileAppCampaignGetItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets BiddingStrategy.
-     *
-     * @return MobileAppCampaignStrategy|null
      */
-    public function getBiddingStrategy()
+    public function getBiddingStrategy(): ?MobileAppCampaignStrategy
     {
-        return isset($this->BiddingStrategy) ? $this->BiddingStrategy : null;
+        return $this->BiddingStrategy ?? null;
     }
 
     /**
      * Sets BiddingStrategy.
      *
-     * @param MobileAppCampaignStrategy|null $value
      * @return $this
      */
-    public function setBiddingStrategy(MobileAppCampaignStrategy $value = null)
+    public function setBiddingStrategy(?MobileAppCampaignStrategy $value = null)
     {
         $this->BiddingStrategy = $value;
 
@@ -52,24 +48,22 @@ class MobileAppCampaignGetItem
      *
      * @return MobileAppCampaignSettingGet[]|null
      */
-    public function getSettings()
+    public function getSettings(): ?array
     {
-        return isset($this->Settings) ? $this->Settings : null;
+        return $this->Settings ?? null;
     }
 
     /**
      * Sets Settings.
      *
      * @param MobileAppCampaignSettingGet[]|null $value
+     *
      * @return $this
      */
-    public function setSettings(array $value = null)
+    public function setSettings(?array $value = null)
     {
         $this->Settings = $value;
 
         return $this;
     }
-
-
 }
-

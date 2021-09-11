@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class GetAdExtensionsRequest extends GetRequestGeneral
 {
-
     protected $SelectionCriteria = null;
 
     protected $FieldNames = [];
@@ -17,20 +18,16 @@ class GetAdExtensionsRequest extends GetRequestGeneral
 
     /**
      * Creates a new instance of GetAdExtensionsRequest.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets SelectionCriteria.
-     *
-     * @return AdExtensionsSelectionCriteria
      */
-    public function getSelectionCriteria()
+    public function getSelectionCriteria(): AdExtensionsSelectionCriteria
     {
         return $this->SelectionCriteria;
     }
@@ -38,7 +35,6 @@ class GetAdExtensionsRequest extends GetRequestGeneral
     /**
      * Sets SelectionCriteria.
      *
-     * @param AdExtensionsSelectionCriteria $value
      * @return $this
      */
     public function setSelectionCriteria(AdExtensionsSelectionCriteria $value)
@@ -51,10 +47,11 @@ class GetAdExtensionsRequest extends GetRequestGeneral
     /**
      * Gets FieldNames.
      *
-     * @return string[]
      * @see AdExtensionFieldEnum
+     *
+     * @return string[]
      */
-    public function getFieldNames()
+    public function getFieldNames(): array
     {
         return $this->FieldNames;
     }
@@ -62,9 +59,11 @@ class GetAdExtensionsRequest extends GetRequestGeneral
     /**
      * Sets FieldNames.
      *
-     * @param string[] $value
-     * @return $this
      * @see AdExtensionFieldEnum
+     *
+     * @param string[] $value
+     *
+     * @return $this
      */
     public function setFieldNames(array $value)
     {
@@ -76,28 +75,28 @@ class GetAdExtensionsRequest extends GetRequestGeneral
     /**
      * Gets CalloutFieldNames.
      *
-     * @return string[]|null
      * @see CalloutFieldEnum
+     *
+     * @return string[]|null
      */
-    public function getCalloutFieldNames()
+    public function getCalloutFieldNames(): ?array
     {
-        return isset($this->CalloutFieldNames) ? $this->CalloutFieldNames : null;
+        return $this->CalloutFieldNames ?? null;
     }
 
     /**
      * Sets CalloutFieldNames.
      *
-     * @param string[]|null $value
-     * @return $this
      * @see CalloutFieldEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
      */
-    public function setCalloutFieldNames(array $value = null)
+    public function setCalloutFieldNames(?array $value = null)
     {
         $this->CalloutFieldNames = $value;
 
         return $this;
     }
-
-
 }
-

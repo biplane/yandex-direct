@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AdGroupGetItem extends AdGroupBase
 {
-
 //    Can be omit.
 //    protected $Id = null;
 
@@ -46,31 +47,26 @@ class AdGroupGetItem extends AdGroupBase
 
     /**
      * Creates a new instance of AdGroupGetItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Id.
-     *
-     * @return int|null
      */
-    public function getId()
+    public function getId(): ?int
     {
-        return isset($this->Id) ? $this->Id : null;
+        return $this->Id ?? null;
     }
 
     /**
      * Sets Id.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setId($value = null)
+    public function setId(?int $value = null)
     {
         $this->Id = $value;
 
@@ -79,21 +75,18 @@ class AdGroupGetItem extends AdGroupBase
 
     /**
      * Gets Name.
-     *
-     * @return string|null
      */
-    public function getName()
+    public function getName(): ?string
     {
-        return isset($this->Name) ? $this->Name : null;
+        return $this->Name ?? null;
     }
 
     /**
      * Sets Name.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setName($value = null)
+    public function setName(?string $value = null)
     {
         $this->Name = $value;
 
@@ -102,21 +95,18 @@ class AdGroupGetItem extends AdGroupBase
 
     /**
      * Gets CampaignId.
-     *
-     * @return int|null
      */
-    public function getCampaignId()
+    public function getCampaignId(): ?int
     {
-        return isset($this->CampaignId) ? $this->CampaignId : null;
+        return $this->CampaignId ?? null;
     }
 
     /**
      * Sets CampaignId.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setCampaignId($value = null)
+    public function setCampaignId(?int $value = null)
     {
         $this->CampaignId = $value;
 
@@ -126,22 +116,21 @@ class AdGroupGetItem extends AdGroupBase
     /**
      * Gets Status.
      *
-     * @return string|null
      * @see StatusEnum
      */
-    public function getStatus()
+    public function getStatus(): ?string
     {
-        return isset($this->Status) ? $this->Status : null;
+        return $this->Status ?? null;
     }
 
     /**
      * Sets Status.
      *
-     * @param string|null $value
-     * @return $this
      * @see StatusEnum
+     *
+     * @return $this
      */
-    public function setStatus($value = null)
+    public function setStatus(?string $value = null)
     {
         $this->Status = $value;
 
@@ -151,22 +140,21 @@ class AdGroupGetItem extends AdGroupBase
     /**
      * Gets Type.
      *
-     * @return string|null
      * @see AdGroupTypesEnum
      */
-    public function getType()
+    public function getType(): ?string
     {
-        return isset($this->Type) ? $this->Type : null;
+        return $this->Type ?? null;
     }
 
     /**
      * Sets Type.
      *
-     * @param string|null $value
-     * @return $this
      * @see AdGroupTypesEnum
+     *
+     * @return $this
      */
-    public function setType($value = null)
+    public function setType(?string $value = null)
     {
         $this->Type = $value;
 
@@ -176,22 +164,21 @@ class AdGroupGetItem extends AdGroupBase
     /**
      * Gets Subtype.
      *
-     * @return string|null
      * @see AdGroupSubtypeEnum
      */
-    public function getSubtype()
+    public function getSubtype(): ?string
     {
-        return isset($this->Subtype) ? $this->Subtype : null;
+        return $this->Subtype ?? null;
     }
 
     /**
      * Sets Subtype.
      *
-     * @param string|null $value
-     * @return $this
      * @see AdGroupSubtypeEnum
+     *
+     * @return $this
      */
-    public function setSubtype($value = null)
+    public function setSubtype(?string $value = null)
     {
         $this->Subtype = $value;
 
@@ -200,21 +187,18 @@ class AdGroupGetItem extends AdGroupBase
 
     /**
      * Gets MobileAppAdGroup.
-     *
-     * @return MobileAppAdGroupGet|null
      */
-    public function getMobileAppAdGroup()
+    public function getMobileAppAdGroup(): ?MobileAppAdGroupGet
     {
-        return isset($this->MobileAppAdGroup) ? $this->MobileAppAdGroup : null;
+        return $this->MobileAppAdGroup ?? null;
     }
 
     /**
      * Sets MobileAppAdGroup.
      *
-     * @param MobileAppAdGroupGet|null $value
      * @return $this
      */
-    public function setMobileAppAdGroup(MobileAppAdGroupGet $value = null)
+    public function setMobileAppAdGroup(?MobileAppAdGroupGet $value = null)
     {
         $this->MobileAppAdGroup = $value;
 
@@ -223,21 +207,18 @@ class AdGroupGetItem extends AdGroupBase
 
     /**
      * Gets DynamicTextAdGroup.
-     *
-     * @return DynamicTextAdGroupGet|null
      */
-    public function getDynamicTextAdGroup()
+    public function getDynamicTextAdGroup(): ?DynamicTextAdGroupGet
     {
-        return isset($this->DynamicTextAdGroup) ? $this->DynamicTextAdGroup : null;
+        return $this->DynamicTextAdGroup ?? null;
     }
 
     /**
      * Sets DynamicTextAdGroup.
      *
-     * @param DynamicTextAdGroupGet|null $value
      * @return $this
      */
-    public function setDynamicTextAdGroup(DynamicTextAdGroupGet $value = null)
+    public function setDynamicTextAdGroup(?DynamicTextAdGroupGet $value = null)
     {
         $this->DynamicTextAdGroup = $value;
 
@@ -246,21 +227,18 @@ class AdGroupGetItem extends AdGroupBase
 
     /**
      * Gets DynamicTextFeedAdGroup.
-     *
-     * @return DynamicTextFeedAdGroupGet|null
      */
-    public function getDynamicTextFeedAdGroup()
+    public function getDynamicTextFeedAdGroup(): ?DynamicTextFeedAdGroupGet
     {
-        return isset($this->DynamicTextFeedAdGroup) ? $this->DynamicTextFeedAdGroup : null;
+        return $this->DynamicTextFeedAdGroup ?? null;
     }
 
     /**
      * Sets DynamicTextFeedAdGroup.
      *
-     * @param DynamicTextFeedAdGroupGet|null $value
      * @return $this
      */
-    public function setDynamicTextFeedAdGroup(DynamicTextFeedAdGroupGet $value = null)
+    public function setDynamicTextFeedAdGroup(?DynamicTextFeedAdGroupGet $value = null)
     {
         $this->DynamicTextFeedAdGroup = $value;
 
@@ -269,21 +247,18 @@ class AdGroupGetItem extends AdGroupBase
 
     /**
      * Gets SmartAdGroup.
-     *
-     * @return SmartAdGroupGet|null
      */
-    public function getSmartAdGroup()
+    public function getSmartAdGroup(): ?SmartAdGroupGet
     {
-        return isset($this->SmartAdGroup) ? $this->SmartAdGroup : null;
+        return $this->SmartAdGroup ?? null;
     }
 
     /**
      * Sets SmartAdGroup.
      *
-     * @param SmartAdGroupGet|null $value
      * @return $this
      */
-    public function setSmartAdGroup(SmartAdGroupGet $value = null)
+    public function setSmartAdGroup(?SmartAdGroupGet $value = null)
     {
         $this->SmartAdGroup = $value;
 
@@ -293,22 +268,21 @@ class AdGroupGetItem extends AdGroupBase
     /**
      * Gets ServingStatus.
      *
-     * @return string|null
      * @see ServingStatusEnum
      */
-    public function getServingStatus()
+    public function getServingStatus(): ?string
     {
-        return isset($this->ServingStatus) ? $this->ServingStatus : null;
+        return $this->ServingStatus ?? null;
     }
 
     /**
      * Sets ServingStatus.
      *
-     * @param string|null $value
-     * @return $this
      * @see ServingStatusEnum
+     *
+     * @return $this
      */
-    public function setServingStatus($value = null)
+    public function setServingStatus(?string $value = null)
     {
         $this->ServingStatus = $value;
 
@@ -320,24 +294,22 @@ class AdGroupGetItem extends AdGroupBase
      *
      * @return float[]|null
      */
-    public function getRestrictedRegionIds()
+    public function getRestrictedRegionIds(): ?array
     {
-        return isset($this->RestrictedRegionIds) ? $this->RestrictedRegionIds : null;
+        return $this->RestrictedRegionIds ?? null;
     }
 
     /**
      * Sets RestrictedRegionIds.
      *
      * @param float[]|null $value
+     *
      * @return $this
      */
-    public function setRestrictedRegionIds(array $value = null)
+    public function setRestrictedRegionIds(?array $value = null)
     {
         $this->RestrictedRegionIds = $value;
 
         return $this;
     }
-
-
 }
-

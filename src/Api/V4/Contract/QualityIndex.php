@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,27 +9,22 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class QualityIndex
 {
-
     protected $Value = null;
 
     protected $References = [];
 
     /**
      * Creates a new instance of QualityIndex.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Value.
-     *
-     * @return float
      */
-    public function getValue()
+    public function getValue(): float
     {
         return $this->Value;
     }
@@ -35,10 +32,9 @@ class QualityIndex
     /**
      * Sets Value.
      *
-     * @param float $value
      * @return $this
      */
-    public function setValue($value)
+    public function setValue(float $value)
     {
         $this->Value = $value;
 
@@ -50,7 +46,7 @@ class QualityIndex
      *
      * @return int[]
      */
-    public function getReferences()
+    public function getReferences(): array
     {
         return $this->References;
     }
@@ -59,6 +55,7 @@ class QualityIndex
      * Sets References.
      *
      * @param int[] $value
+     *
      * @return $this
      */
     public function setReferences(array $value)
@@ -67,7 +64,4 @@ class QualityIndex
 
         return $this;
     }
-
-
 }
-

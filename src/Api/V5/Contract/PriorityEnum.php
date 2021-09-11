@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,13 +9,9 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class PriorityEnum
 {
+    public const LOW = 'LOW';
 
-    const LOW = 'LOW';
+    public const NORMAL = 'NORMAL';
 
-    const NORMAL = 'NORMAL';
-
-    const HIGH = 'HIGH';
-
-
+    public const HIGH = 'HIGH';
 }
-

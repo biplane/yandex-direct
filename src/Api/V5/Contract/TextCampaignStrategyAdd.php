@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,27 +9,22 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class TextCampaignStrategyAdd
 {
-
     protected $Search = null;
 
     protected $Network = null;
 
     /**
      * Creates a new instance of TextCampaignStrategyAdd.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Search.
-     *
-     * @return TextCampaignSearchStrategyAdd
      */
-    public function getSearch()
+    public function getSearch(): TextCampaignSearchStrategyAdd
     {
         return $this->Search;
     }
@@ -35,7 +32,6 @@ class TextCampaignStrategyAdd
     /**
      * Sets Search.
      *
-     * @param TextCampaignSearchStrategyAdd $value
      * @return $this
      */
     public function setSearch(TextCampaignSearchStrategyAdd $value)
@@ -47,10 +43,8 @@ class TextCampaignStrategyAdd
 
     /**
      * Gets Network.
-     *
-     * @return TextCampaignNetworkStrategyAdd
      */
-    public function getNetwork()
+    public function getNetwork(): TextCampaignNetworkStrategyAdd
     {
         return $this->Network;
     }
@@ -58,7 +52,6 @@ class TextCampaignStrategyAdd
     /**
      * Sets Network.
      *
-     * @param TextCampaignNetworkStrategyAdd $value
      * @return $this
      */
     public function setNetwork(TextCampaignNetworkStrategyAdd $value)
@@ -67,7 +60,4 @@ class TextCampaignStrategyAdd
 
         return $this;
     }
-
-
 }
-

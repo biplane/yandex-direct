@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,25 +9,20 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class ClientNotificationGet extends ClientNotification
 {
-
     protected $SmsPhoneNumber = null;
 
     /**
      * Creates a new instance of ClientNotificationGet.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets SmsPhoneNumber.
-     *
-     * @return string
      */
-    public function getSmsPhoneNumber()
+    public function getSmsPhoneNumber(): string
     {
         return $this->SmsPhoneNumber;
     }
@@ -33,16 +30,12 @@ class ClientNotificationGet extends ClientNotification
     /**
      * Sets SmsPhoneNumber.
      *
-     * @param string $value
      * @return $this
      */
-    public function setSmsPhoneNumber($value)
+    public function setSmsPhoneNumber(string $value)
     {
         $this->SmsPhoneNumber = $value;
 
         return $this;
     }
-
-
 }
-

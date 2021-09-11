@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,13 +9,9 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class PriceQualifierEnum
 {
+    public const NONE = 'NONE';
 
-    const NONE = 'NONE';
+    public const FROM = 'FROM';
 
-    const FROM = 'FROM';
-
-    const UP_TO = 'UP_TO';
-
-
+    public const UP_TO = 'UP_TO';
 }
-

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,15 +9,12 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class MobileAppAdFeatureGetItem extends MobileAppAdFeatureItem
 {
-
     protected $IsAvailable = null;
 
     /**
      * Creates a new instance of MobileAppAdFeatureGetItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -23,10 +22,9 @@ class MobileAppAdFeatureGetItem extends MobileAppAdFeatureItem
     /**
      * Gets IsAvailable.
      *
-     * @return string
      * @see YesNoUnknownEnum
      */
-    public function getIsAvailable()
+    public function getIsAvailable(): string
     {
         return $this->IsAvailable;
     }
@@ -34,17 +32,14 @@ class MobileAppAdFeatureGetItem extends MobileAppAdFeatureItem
     /**
      * Sets IsAvailable.
      *
-     * @param string $value
-     * @return $this
      * @see YesNoUnknownEnum
+     *
+     * @return $this
      */
-    public function setIsAvailable($value)
+    public function setIsAvailable(string $value)
     {
         $this->IsAvailable = $value;
 
         return $this;
     }
-
-
 }
-

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class RetargetingListAddItem
 {
-
 //    Can be omit.
 //    protected $Type = null;
 
@@ -20,10 +21,8 @@ class RetargetingListAddItem
 
     /**
      * Creates a new instance of RetargetingListAddItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -31,22 +30,21 @@ class RetargetingListAddItem
     /**
      * Gets Type.
      *
-     * @return string|null
      * @see RetargetingListTypeEnum
      */
-    public function getType()
+    public function getType(): ?string
     {
-        return isset($this->Type) ? $this->Type : null;
+        return $this->Type ?? null;
     }
 
     /**
      * Sets Type.
      *
-     * @param string|null $value
-     * @return $this
      * @see RetargetingListTypeEnum
+     *
+     * @return $this
      */
-    public function setType($value = null)
+    public function setType(?string $value = null)
     {
         $this->Type = $value;
 
@@ -55,10 +53,8 @@ class RetargetingListAddItem
 
     /**
      * Gets Name.
-     *
-     * @return string
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->Name;
     }
@@ -66,10 +62,9 @@ class RetargetingListAddItem
     /**
      * Sets Name.
      *
-     * @param string $value
      * @return $this
      */
-    public function setName($value)
+    public function setName(string $value)
     {
         $this->Name = $value;
 
@@ -78,21 +73,18 @@ class RetargetingListAddItem
 
     /**
      * Gets Description.
-     *
-     * @return string|null
      */
-    public function getDescription()
+    public function getDescription(): ?string
     {
-        return isset($this->Description) ? $this->Description : null;
+        return $this->Description ?? null;
     }
 
     /**
      * Sets Description.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setDescription($value = null)
+    public function setDescription(?string $value = null)
     {
         $this->Description = $value;
 
@@ -104,7 +96,7 @@ class RetargetingListAddItem
      *
      * @return RetargetingListRuleItem[]
      */
-    public function getRules()
+    public function getRules(): array
     {
         return $this->Rules;
     }
@@ -113,6 +105,7 @@ class RetargetingListAddItem
      * Sets Rules.
      *
      * @param RetargetingListRuleItem[] $value
+     *
      * @return $this
      */
     public function setRules(array $value)
@@ -121,7 +114,4 @@ class RetargetingListAddItem
 
         return $this;
     }
-
-
 }
-

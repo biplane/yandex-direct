@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,17 +9,14 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class CampaignIDSInfo
 {
-
     protected $CampaignIDS = [];
 
     protected $Currency = null;
 
     /**
      * Creates a new instance of CampaignIDSInfo.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -27,7 +26,7 @@ class CampaignIDSInfo
      *
      * @return int[]
      */
-    public function getCampaignIDS()
+    public function getCampaignIDS(): array
     {
         return $this->CampaignIDS;
     }
@@ -36,6 +35,7 @@ class CampaignIDSInfo
      * Sets CampaignIDS.
      *
      * @param int[] $value
+     *
      * @return $this
      */
     public function setCampaignIDS(array $value)
@@ -47,10 +47,8 @@ class CampaignIDSInfo
 
     /**
      * Gets Currency.
-     *
-     * @return string|null
      */
-    public function getCurrency()
+    public function getCurrency(): ?string
     {
         return $this->Currency;
     }
@@ -58,16 +56,12 @@ class CampaignIDSInfo
     /**
      * Sets Currency.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setCurrency($value = null)
+    public function setCurrency(?string $value = null)
     {
         $this->Currency = $value;
 
         return $this;
     }
-
-
 }
-

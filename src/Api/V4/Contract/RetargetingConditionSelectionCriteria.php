@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,17 +9,14 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class RetargetingConditionSelectionCriteria
 {
-
     protected $RetargetingConditionIDS = null;
 
     protected $Logins = null;
 
     /**
      * Creates a new instance of RetargetingConditionSelectionCriteria.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -27,7 +26,7 @@ class RetargetingConditionSelectionCriteria
      *
      * @return int[]|null
      */
-    public function getRetargetingConditionIDS()
+    public function getRetargetingConditionIDS(): ?array
     {
         return $this->RetargetingConditionIDS;
     }
@@ -36,9 +35,10 @@ class RetargetingConditionSelectionCriteria
      * Sets RetargetingConditionIDS.
      *
      * @param int[]|null $value
+     *
      * @return $this
      */
-    public function setRetargetingConditionIDS(array $value = null)
+    public function setRetargetingConditionIDS(?array $value = null)
     {
         $this->RetargetingConditionIDS = $value;
 
@@ -50,7 +50,7 @@ class RetargetingConditionSelectionCriteria
      *
      * @return string[]|null
      */
-    public function getLogins()
+    public function getLogins(): ?array
     {
         return $this->Logins;
     }
@@ -59,15 +59,13 @@ class RetargetingConditionSelectionCriteria
      * Sets Logins.
      *
      * @param string[]|null $value
+     *
      * @return $this
      */
-    public function setLogins(array $value = null)
+    public function setLogins(?array $value = null)
     {
         $this->Logins = $value;
 
         return $this;
     }
-
-
 }
-

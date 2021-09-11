@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class CampaignsFilterInfo
 {
-
     protected $StatusModerate = null;
 
     protected $IsActive = null;
@@ -20,10 +21,8 @@ class CampaignsFilterInfo
 
     /**
      * Creates a new instance of CampaignsFilterInfo.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -33,7 +32,7 @@ class CampaignsFilterInfo
      *
      * @return string[]|null
      */
-    public function getStatusModerate()
+    public function getStatusModerate(): ?array
     {
         return $this->StatusModerate;
     }
@@ -42,9 +41,10 @@ class CampaignsFilterInfo
      * Sets StatusModerate.
      *
      * @param string[]|null $value
+     *
      * @return $this
      */
-    public function setStatusModerate(array $value = null)
+    public function setStatusModerate(?array $value = null)
     {
         $this->StatusModerate = $value;
 
@@ -56,7 +56,7 @@ class CampaignsFilterInfo
      *
      * @return string[]|null
      */
-    public function getIsActive()
+    public function getIsActive(): ?array
     {
         return $this->IsActive;
     }
@@ -65,9 +65,10 @@ class CampaignsFilterInfo
      * Sets IsActive.
      *
      * @param string[]|null $value
+     *
      * @return $this
      */
-    public function setIsActive(array $value = null)
+    public function setIsActive(?array $value = null)
     {
         $this->IsActive = $value;
 
@@ -79,7 +80,7 @@ class CampaignsFilterInfo
      *
      * @return string[]|null
      */
-    public function getStatusArchive()
+    public function getStatusArchive(): ?array
     {
         return $this->StatusArchive;
     }
@@ -88,9 +89,10 @@ class CampaignsFilterInfo
      * Sets StatusArchive.
      *
      * @param string[]|null $value
+     *
      * @return $this
      */
-    public function setStatusArchive(array $value = null)
+    public function setStatusArchive(?array $value = null)
     {
         $this->StatusArchive = $value;
 
@@ -102,7 +104,7 @@ class CampaignsFilterInfo
      *
      * @return string[]|null
      */
-    public function getStatusActivating()
+    public function getStatusActivating(): ?array
     {
         return $this->StatusActivating;
     }
@@ -111,9 +113,10 @@ class CampaignsFilterInfo
      * Sets StatusActivating.
      *
      * @param string[]|null $value
+     *
      * @return $this
      */
-    public function setStatusActivating(array $value = null)
+    public function setStatusActivating(?array $value = null)
     {
         $this->StatusActivating = $value;
 
@@ -125,7 +128,7 @@ class CampaignsFilterInfo
      *
      * @return string[]|null
      */
-    public function getStatusShow()
+    public function getStatusShow(): ?array
     {
         return $this->StatusShow;
     }
@@ -134,15 +137,13 @@ class CampaignsFilterInfo
      * Sets StatusShow.
      *
      * @param string[]|null $value
+     *
      * @return $this
      */
-    public function setStatusShow(array $value = null)
+    public function setStatusShow(?array $value = null)
     {
         $this->StatusShow = $value;
 
         return $this;
     }
-
-
 }
-

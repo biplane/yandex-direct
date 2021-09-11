@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,16 +9,13 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class GetAdImagesResponse extends GetResponseGeneral
 {
-
 //    Can be omit.
 //    protected $AdImages = null;
 
     /**
      * Creates a new instance of GetAdImagesResponse.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -26,24 +25,22 @@ class GetAdImagesResponse extends GetResponseGeneral
      *
      * @return AdImageGetItem[]|null
      */
-    public function getAdImages()
+    public function getAdImages(): ?array
     {
-        return isset($this->AdImages) ? $this->AdImages : null;
+        return $this->AdImages ?? null;
     }
 
     /**
      * Sets AdImages.
      *
      * @param AdImageGetItem[]|null $value
+     *
      * @return $this
      */
-    public function setAdImages(array $value = null)
+    public function setAdImages(?array $value = null)
     {
         $this->AdImages = $value;
 
         return $this;
     }
-
-
 }
-

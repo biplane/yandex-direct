@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AdGroupsSelectionCriteria
 {
-
 //    Can be omit.
 //    protected $CampaignIds = null;
 
@@ -37,10 +38,8 @@ class AdGroupsSelectionCriteria
 
     /**
      * Creates a new instance of AdGroupsSelectionCriteria.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -50,18 +49,19 @@ class AdGroupsSelectionCriteria
      *
      * @return int[]|null
      */
-    public function getCampaignIds()
+    public function getCampaignIds(): ?array
     {
-        return isset($this->CampaignIds) ? $this->CampaignIds : null;
+        return $this->CampaignIds ?? null;
     }
 
     /**
      * Sets CampaignIds.
      *
      * @param int[]|null $value
+     *
      * @return $this
      */
-    public function setCampaignIds(array $value = null)
+    public function setCampaignIds(?array $value = null)
     {
         $this->CampaignIds = $value;
 
@@ -73,18 +73,19 @@ class AdGroupsSelectionCriteria
      *
      * @return int[]|null
      */
-    public function getIds()
+    public function getIds(): ?array
     {
-        return isset($this->Ids) ? $this->Ids : null;
+        return $this->Ids ?? null;
     }
 
     /**
      * Sets Ids.
      *
      * @param int[]|null $value
+     *
      * @return $this
      */
-    public function setIds(array $value = null)
+    public function setIds(?array $value = null)
     {
         $this->Ids = $value;
 
@@ -94,22 +95,25 @@ class AdGroupsSelectionCriteria
     /**
      * Gets Types.
      *
-     * @return string[]|null
      * @see AdGroupTypesEnum
+     *
+     * @return string[]|null
      */
-    public function getTypes()
+    public function getTypes(): ?array
     {
-        return isset($this->Types) ? $this->Types : null;
+        return $this->Types ?? null;
     }
 
     /**
      * Sets Types.
      *
-     * @param string[]|null $value
-     * @return $this
      * @see AdGroupTypesEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
      */
-    public function setTypes(array $value = null)
+    public function setTypes(?array $value = null)
     {
         $this->Types = $value;
 
@@ -119,22 +123,25 @@ class AdGroupsSelectionCriteria
     /**
      * Gets Statuses.
      *
-     * @return string[]|null
      * @see AdGroupStatusSelectionEnum
+     *
+     * @return string[]|null
      */
-    public function getStatuses()
+    public function getStatuses(): ?array
     {
-        return isset($this->Statuses) ? $this->Statuses : null;
+        return $this->Statuses ?? null;
     }
 
     /**
      * Sets Statuses.
      *
-     * @param string[]|null $value
-     * @return $this
      * @see AdGroupStatusSelectionEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
      */
-    public function setStatuses(array $value = null)
+    public function setStatuses(?array $value = null)
     {
         $this->Statuses = $value;
 
@@ -146,18 +153,19 @@ class AdGroupsSelectionCriteria
      *
      * @return int[]|null
      */
-    public function getTagIds()
+    public function getTagIds(): ?array
     {
-        return isset($this->TagIds) ? $this->TagIds : null;
+        return $this->TagIds ?? null;
     }
 
     /**
      * Sets TagIds.
      *
      * @param int[]|null $value
+     *
      * @return $this
      */
-    public function setTagIds(array $value = null)
+    public function setTagIds(?array $value = null)
     {
         $this->TagIds = $value;
 
@@ -169,18 +177,19 @@ class AdGroupsSelectionCriteria
      *
      * @return string[]|null
      */
-    public function getTags()
+    public function getTags(): ?array
     {
-        return isset($this->Tags) ? $this->Tags : null;
+        return $this->Tags ?? null;
     }
 
     /**
      * Sets Tags.
      *
      * @param string[]|null $value
+     *
      * @return $this
      */
-    public function setTags(array $value = null)
+    public function setTags(?array $value = null)
     {
         $this->Tags = $value;
 
@@ -190,22 +199,25 @@ class AdGroupsSelectionCriteria
     /**
      * Gets AppIconStatuses.
      *
-     * @return string[]|null
      * @see AdGroupAppIconStatusSelectionEnum
+     *
+     * @return string[]|null
      */
-    public function getAppIconStatuses()
+    public function getAppIconStatuses(): ?array
     {
-        return isset($this->AppIconStatuses) ? $this->AppIconStatuses : null;
+        return $this->AppIconStatuses ?? null;
     }
 
     /**
      * Sets AppIconStatuses.
      *
-     * @param string[]|null $value
-     * @return $this
      * @see AdGroupAppIconStatusSelectionEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
      */
-    public function setAppIconStatuses(array $value = null)
+    public function setAppIconStatuses(?array $value = null)
     {
         $this->AppIconStatuses = $value;
 
@@ -215,22 +227,25 @@ class AdGroupsSelectionCriteria
     /**
      * Gets ServingStatuses.
      *
-     * @return string[]|null
      * @see ServingStatusEnum
+     *
+     * @return string[]|null
      */
-    public function getServingStatuses()
+    public function getServingStatuses(): ?array
     {
-        return isset($this->ServingStatuses) ? $this->ServingStatuses : null;
+        return $this->ServingStatuses ?? null;
     }
 
     /**
      * Sets ServingStatuses.
      *
-     * @param string[]|null $value
-     * @return $this
      * @see ServingStatusEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
      */
-    public function setServingStatuses(array $value = null)
+    public function setServingStatuses(?array $value = null)
     {
         $this->ServingStatuses = $value;
 
@@ -242,24 +257,22 @@ class AdGroupsSelectionCriteria
      *
      * @return int[]|null
      */
-    public function getNegativeKeywordSharedSetIds()
+    public function getNegativeKeywordSharedSetIds(): ?array
     {
-        return isset($this->NegativeKeywordSharedSetIds) ? $this->NegativeKeywordSharedSetIds : null;
+        return $this->NegativeKeywordSharedSetIds ?? null;
     }
 
     /**
      * Sets NegativeKeywordSharedSetIds.
      *
      * @param int[]|null $value
+     *
      * @return $this
      */
-    public function setNegativeKeywordSharedSetIds(array $value = null)
+    public function setNegativeKeywordSharedSetIds(?array $value = null)
     {
         $this->NegativeKeywordSharedSetIds = $value;
 
         return $this;
     }
-
-
 }
-

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,35 +9,31 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class DictionaryNameEnum
 {
+    public const CURRENCIES = 'Currencies';
 
-    const CURRENCIES = 'Currencies';
+    public const METRO_STATIONS = 'MetroStations';
 
-    const METRO_STATIONS = 'MetroStations';
+    public const GEO_REGIONS = 'GeoRegions';
 
-    const GEO_REGIONS = 'GeoRegions';
+    public const TIME_ZONES = 'TimeZones';
 
-    const TIME_ZONES = 'TimeZones';
+    public const CONSTANTS = 'Constants';
 
-    const CONSTANTS = 'Constants';
+    public const AD_CATEGORIES = 'AdCategories';
 
-    const AD_CATEGORIES = 'AdCategories';
+    public const OPERATION_SYSTEM_VERSIONS = 'OperationSystemVersions';
 
-    const OPERATION_SYSTEM_VERSIONS = 'OperationSystemVersions';
+    public const PRODUCTIVITY_ASSERTIONS = 'ProductivityAssertions';
 
-    const PRODUCTIVITY_ASSERTIONS = 'ProductivityAssertions';
+    public const SUPPLY_SIDE_PLATFORMS = 'SupplySidePlatforms';
 
-    const SUPPLY_SIDE_PLATFORMS = 'SupplySidePlatforms';
+    public const INTERESTS = 'Interests';
 
-    const INTERESTS = 'Interests';
+    public const AUDIENCE_CRITERIA_TYPES = 'AudienceCriteriaTypes';
 
-    const AUDIENCE_CRITERIA_TYPES = 'AudienceCriteriaTypes';
+    public const AUDIENCE_DEMOGRAPHIC_PROFILES = 'AudienceDemographicProfiles';
 
-    const AUDIENCE_DEMOGRAPHIC_PROFILES = 'AudienceDemographicProfiles';
+    public const AUDIENCE_INTERESTS = 'AudienceInterests';
 
-    const AUDIENCE_INTERESTS = 'AudienceInterests';
-
-    const FILTER_SCHEMAS = 'FilterSchemas';
-
-
+    public const FILTER_SCHEMAS = 'FilterSchemas';
 }
-

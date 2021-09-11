@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class AdImageLimit
 {
-
     protected $Login = null;
 
     protected $Capacity = null;
@@ -16,20 +17,16 @@ class AdImageLimit
 
     /**
      * Creates a new instance of AdImageLimit.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Login.
-     *
-     * @return string
      */
-    public function getLogin()
+    public function getLogin(): string
     {
         return $this->Login;
     }
@@ -37,10 +34,9 @@ class AdImageLimit
     /**
      * Sets Login.
      *
-     * @param string $value
      * @return $this
      */
-    public function setLogin($value)
+    public function setLogin(string $value)
     {
         $this->Login = $value;
 
@@ -49,10 +45,8 @@ class AdImageLimit
 
     /**
      * Gets Capacity.
-     *
-     * @return int
      */
-    public function getCapacity()
+    public function getCapacity(): int
     {
         return $this->Capacity;
     }
@@ -60,10 +54,9 @@ class AdImageLimit
     /**
      * Sets Capacity.
      *
-     * @param int $value
      * @return $this
      */
-    public function setCapacity($value)
+    public function setCapacity(int $value)
     {
         $this->Capacity = $value;
 
@@ -72,10 +65,8 @@ class AdImageLimit
 
     /**
      * Gets Utilized.
-     *
-     * @return int
      */
-    public function getUtilized()
+    public function getUtilized(): int
     {
         return $this->Utilized;
     }
@@ -83,16 +74,12 @@ class AdImageLimit
     /**
      * Sets Utilized.
      *
-     * @param int $value
      * @return $this
      */
-    public function setUtilized($value)
+    public function setUtilized(int $value)
     {
         $this->Utilized = $value;
 
         return $this;
     }
-
-
 }
-

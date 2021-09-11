@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class SmartCampaignAddItem
 {
-
     protected $BiddingStrategy = null;
 
 //    Can be omit.
@@ -23,20 +24,16 @@ class SmartCampaignAddItem
 
     /**
      * Creates a new instance of SmartCampaignAddItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets BiddingStrategy.
-     *
-     * @return SmartCampaignStrategyAdd
      */
-    public function getBiddingStrategy()
+    public function getBiddingStrategy(): SmartCampaignStrategyAdd
     {
         return $this->BiddingStrategy;
     }
@@ -44,7 +41,6 @@ class SmartCampaignAddItem
     /**
      * Sets BiddingStrategy.
      *
-     * @param SmartCampaignStrategyAdd $value
      * @return $this
      */
     public function setBiddingStrategy(SmartCampaignStrategyAdd $value)
@@ -59,18 +55,19 @@ class SmartCampaignAddItem
      *
      * @return SmartCampaignSetting[]|null
      */
-    public function getSettings()
+    public function getSettings(): ?array
     {
-        return isset($this->Settings) ? $this->Settings : null;
+        return $this->Settings ?? null;
     }
 
     /**
      * Sets Settings.
      *
      * @param SmartCampaignSetting[]|null $value
+     *
      * @return $this
      */
-    public function setSettings(array $value = null)
+    public function setSettings(?array $value = null)
     {
         $this->Settings = $value;
 
@@ -79,10 +76,8 @@ class SmartCampaignAddItem
 
     /**
      * Gets CounterId.
-     *
-     * @return int
      */
-    public function getCounterId()
+    public function getCounterId(): int
     {
         return $this->CounterId;
     }
@@ -90,10 +85,9 @@ class SmartCampaignAddItem
     /**
      * Sets CounterId.
      *
-     * @param int $value
      * @return $this
      */
-    public function setCounterId($value)
+    public function setCounterId(int $value)
     {
         $this->CounterId = $value;
 
@@ -102,21 +96,18 @@ class SmartCampaignAddItem
 
     /**
      * Gets PriorityGoals.
-     *
-     * @return PriorityGoalsArray|null
      */
-    public function getPriorityGoals()
+    public function getPriorityGoals(): ?PriorityGoalsArray
     {
-        return isset($this->PriorityGoals) ? $this->PriorityGoals : null;
+        return $this->PriorityGoals ?? null;
     }
 
     /**
      * Sets PriorityGoals.
      *
-     * @param PriorityGoalsArray|null $value
      * @return $this
      */
-    public function setPriorityGoals(PriorityGoalsArray $value = null)
+    public function setPriorityGoals(?PriorityGoalsArray $value = null)
     {
         $this->PriorityGoals = $value;
 
@@ -126,28 +117,24 @@ class SmartCampaignAddItem
     /**
      * Gets AttributionModel.
      *
-     * @return string|null
      * @see AttributionModelEnum
      */
-    public function getAttributionModel()
+    public function getAttributionModel(): ?string
     {
-        return isset($this->AttributionModel) ? $this->AttributionModel : null;
+        return $this->AttributionModel ?? null;
     }
 
     /**
      * Sets AttributionModel.
      *
-     * @param string|null $value
-     * @return $this
      * @see AttributionModelEnum
+     *
+     * @return $this
      */
-    public function setAttributionModel($value = null)
+    public function setAttributionModel(?string $value = null)
     {
         $this->AttributionModel = $value;
 
         return $this;
     }
-
-
 }
-

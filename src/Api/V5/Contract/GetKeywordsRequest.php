@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,27 +9,22 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class GetKeywordsRequest extends GetRequestGeneral
 {
-
     protected $SelectionCriteria = null;
 
     protected $FieldNames = [];
 
     /**
      * Creates a new instance of GetKeywordsRequest.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets SelectionCriteria.
-     *
-     * @return KeywordsSelectionCriteria
      */
-    public function getSelectionCriteria()
+    public function getSelectionCriteria(): KeywordsSelectionCriteria
     {
         return $this->SelectionCriteria;
     }
@@ -35,7 +32,6 @@ class GetKeywordsRequest extends GetRequestGeneral
     /**
      * Sets SelectionCriteria.
      *
-     * @param KeywordsSelectionCriteria $value
      * @return $this
      */
     public function setSelectionCriteria(KeywordsSelectionCriteria $value)
@@ -48,10 +44,11 @@ class GetKeywordsRequest extends GetRequestGeneral
     /**
      * Gets FieldNames.
      *
-     * @return string[]
      * @see KeywordFieldEnum
+     *
+     * @return string[]
      */
-    public function getFieldNames()
+    public function getFieldNames(): array
     {
         return $this->FieldNames;
     }
@@ -59,9 +56,11 @@ class GetKeywordsRequest extends GetRequestGeneral
     /**
      * Sets FieldNames.
      *
-     * @param string[] $value
-     * @return $this
      * @see KeywordFieldEnum
+     *
+     * @param string[] $value
+     *
+     * @return $this
      */
     public function setFieldNames(array $value)
     {
@@ -69,7 +68,4 @@ class GetKeywordsRequest extends GetRequestGeneral
 
         return $this;
     }
-
-
 }
-

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,43 +9,39 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class VCardFieldEnum
 {
+    public const ID = 'Id';
 
-    const ID = 'Id';
+    public const COUNTRY = 'Country';
 
-    const COUNTRY = 'Country';
+    public const CITY = 'City';
 
-    const CITY = 'City';
+    public const STREET = 'Street';
 
-    const STREET = 'Street';
+    public const HOUSE = 'House';
 
-    const HOUSE = 'House';
+    public const BUILDING = 'Building';
 
-    const BUILDING = 'Building';
+    public const APARTMENT = 'Apartment';
 
-    const APARTMENT = 'Apartment';
+    public const COMPANY_NAME = 'CompanyName';
 
-    const COMPANY_NAME = 'CompanyName';
+    public const EXTRA_MESSAGE = 'ExtraMessage';
 
-    const EXTRA_MESSAGE = 'ExtraMessage';
+    public const CONTACT_PERSON = 'ContactPerson';
 
-    const CONTACT_PERSON = 'ContactPerson';
+    public const CONTACT_EMAIL = 'ContactEmail';
 
-    const CONTACT_EMAIL = 'ContactEmail';
+    public const METRO_STATION_ID = 'MetroStationId';
 
-    const METRO_STATION_ID = 'MetroStationId';
+    public const CAMPAIGN_ID = 'CampaignId';
 
-    const CAMPAIGN_ID = 'CampaignId';
+    public const OGRN = 'Ogrn';
 
-    const OGRN = 'Ogrn';
+    public const WORK_TIME = 'WorkTime';
 
-    const WORK_TIME = 'WorkTime';
+    public const INSTANT_MESSENGER = 'InstantMessenger';
 
-    const INSTANT_MESSENGER = 'InstantMessenger';
+    public const PHONE = 'Phone';
 
-    const PHONE = 'Phone';
-
-    const POINT_ON_MAP = 'PointOnMap';
-
-
+    public const POINT_ON_MAP = 'PointOnMap';
 }
-

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class BidModifierAddItem extends BidModifierAddBase
 {
-
 //    Can be omit.
 //    protected $MobileAdjustment = null;
 
@@ -31,31 +32,26 @@ class BidModifierAddItem extends BidModifierAddBase
 
     /**
      * Creates a new instance of BidModifierAddItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets MobileAdjustment.
-     *
-     * @return MobileAdjustmentAdd|null
      */
-    public function getMobileAdjustment()
+    public function getMobileAdjustment(): ?MobileAdjustmentAdd
     {
-        return isset($this->MobileAdjustment) ? $this->MobileAdjustment : null;
+        return $this->MobileAdjustment ?? null;
     }
 
     /**
      * Sets MobileAdjustment.
      *
-     * @param MobileAdjustmentAdd|null $value
      * @return $this
      */
-    public function setMobileAdjustment(MobileAdjustmentAdd $value = null)
+    public function setMobileAdjustment(?MobileAdjustmentAdd $value = null)
     {
         $this->MobileAdjustment = $value;
 
@@ -64,21 +60,18 @@ class BidModifierAddItem extends BidModifierAddBase
 
     /**
      * Gets DesktopAdjustment.
-     *
-     * @return DesktopAdjustmentAdd|null
      */
-    public function getDesktopAdjustment()
+    public function getDesktopAdjustment(): ?DesktopAdjustmentAdd
     {
-        return isset($this->DesktopAdjustment) ? $this->DesktopAdjustment : null;
+        return $this->DesktopAdjustment ?? null;
     }
 
     /**
      * Sets DesktopAdjustment.
      *
-     * @param DesktopAdjustmentAdd|null $value
      * @return $this
      */
-    public function setDesktopAdjustment(DesktopAdjustmentAdd $value = null)
+    public function setDesktopAdjustment(?DesktopAdjustmentAdd $value = null)
     {
         $this->DesktopAdjustment = $value;
 
@@ -90,18 +83,19 @@ class BidModifierAddItem extends BidModifierAddBase
      *
      * @return DemographicsAdjustmentAdd[]|null
      */
-    public function getDemographicsAdjustments()
+    public function getDemographicsAdjustments(): ?array
     {
-        return isset($this->DemographicsAdjustments) ? $this->DemographicsAdjustments : null;
+        return $this->DemographicsAdjustments ?? null;
     }
 
     /**
      * Sets DemographicsAdjustments.
      *
      * @param DemographicsAdjustmentAdd[]|null $value
+     *
      * @return $this
      */
-    public function setDemographicsAdjustments(array $value = null)
+    public function setDemographicsAdjustments(?array $value = null)
     {
         $this->DemographicsAdjustments = $value;
 
@@ -113,18 +107,19 @@ class BidModifierAddItem extends BidModifierAddBase
      *
      * @return RetargetingAdjustmentAdd[]|null
      */
-    public function getRetargetingAdjustments()
+    public function getRetargetingAdjustments(): ?array
     {
-        return isset($this->RetargetingAdjustments) ? $this->RetargetingAdjustments : null;
+        return $this->RetargetingAdjustments ?? null;
     }
 
     /**
      * Sets RetargetingAdjustments.
      *
      * @param RetargetingAdjustmentAdd[]|null $value
+     *
      * @return $this
      */
-    public function setRetargetingAdjustments(array $value = null)
+    public function setRetargetingAdjustments(?array $value = null)
     {
         $this->RetargetingAdjustments = $value;
 
@@ -136,18 +131,19 @@ class BidModifierAddItem extends BidModifierAddBase
      *
      * @return RegionalAdjustmentAdd[]|null
      */
-    public function getRegionalAdjustments()
+    public function getRegionalAdjustments(): ?array
     {
-        return isset($this->RegionalAdjustments) ? $this->RegionalAdjustments : null;
+        return $this->RegionalAdjustments ?? null;
     }
 
     /**
      * Sets RegionalAdjustments.
      *
      * @param RegionalAdjustmentAdd[]|null $value
+     *
      * @return $this
      */
-    public function setRegionalAdjustments(array $value = null)
+    public function setRegionalAdjustments(?array $value = null)
     {
         $this->RegionalAdjustments = $value;
 
@@ -156,21 +152,18 @@ class BidModifierAddItem extends BidModifierAddBase
 
     /**
      * Gets VideoAdjustment.
-     *
-     * @return VideoAdjustmentAdd|null
      */
-    public function getVideoAdjustment()
+    public function getVideoAdjustment(): ?VideoAdjustmentAdd
     {
-        return isset($this->VideoAdjustment) ? $this->VideoAdjustment : null;
+        return $this->VideoAdjustment ?? null;
     }
 
     /**
      * Sets VideoAdjustment.
      *
-     * @param VideoAdjustmentAdd|null $value
      * @return $this
      */
-    public function setVideoAdjustment(VideoAdjustmentAdd $value = null)
+    public function setVideoAdjustment(?VideoAdjustmentAdd $value = null)
     {
         $this->VideoAdjustment = $value;
 
@@ -179,27 +172,21 @@ class BidModifierAddItem extends BidModifierAddBase
 
     /**
      * Gets SmartAdAdjustment.
-     *
-     * @return SmartAdAdjustmentAdd|null
      */
-    public function getSmartAdAdjustment()
+    public function getSmartAdAdjustment(): ?SmartAdAdjustmentAdd
     {
-        return isset($this->SmartAdAdjustment) ? $this->SmartAdAdjustment : null;
+        return $this->SmartAdAdjustment ?? null;
     }
 
     /**
      * Sets SmartAdAdjustment.
      *
-     * @param SmartAdAdjustmentAdd|null $value
      * @return $this
      */
-    public function setSmartAdAdjustment(SmartAdAdjustmentAdd $value = null)
+    public function setSmartAdAdjustment(?SmartAdAdjustmentAdd $value = null)
     {
         $this->SmartAdAdjustment = $value;
 
         return $this;
     }
-
-
 }
-

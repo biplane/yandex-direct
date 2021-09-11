@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,27 +9,22 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class HasSearchVolumeKeywordsRequest
 {
-
     protected $SelectionCriteria = null;
 
     protected $FieldNames = [];
 
     /**
      * Creates a new instance of HasSearchVolumeKeywordsRequest.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets SelectionCriteria.
-     *
-     * @return HasSearchVolumeSelectionCriteria
      */
-    public function getSelectionCriteria()
+    public function getSelectionCriteria(): HasSearchVolumeSelectionCriteria
     {
         return $this->SelectionCriteria;
     }
@@ -35,7 +32,6 @@ class HasSearchVolumeKeywordsRequest
     /**
      * Sets SelectionCriteria.
      *
-     * @param HasSearchVolumeSelectionCriteria $value
      * @return $this
      */
     public function setSelectionCriteria(HasSearchVolumeSelectionCriteria $value)
@@ -48,10 +44,11 @@ class HasSearchVolumeKeywordsRequest
     /**
      * Gets FieldNames.
      *
-     * @return string[]
      * @see HasSearchVolumeFieldEnum
+     *
+     * @return string[]
      */
-    public function getFieldNames()
+    public function getFieldNames(): array
     {
         return $this->FieldNames;
     }
@@ -59,9 +56,11 @@ class HasSearchVolumeKeywordsRequest
     /**
      * Sets FieldNames.
      *
-     * @param string[] $value
-     * @return $this
      * @see HasSearchVolumeFieldEnum
+     *
+     * @param string[] $value
+     *
+     * @return $this
      */
     public function setFieldNames(array $value)
     {
@@ -69,7 +68,4 @@ class HasSearchVolumeKeywordsRequest
 
         return $this;
     }
-
-
 }
-

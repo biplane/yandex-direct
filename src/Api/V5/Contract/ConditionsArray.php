@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,15 +9,12 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class ConditionsArray
 {
-
     protected $Items = [];
 
     /**
      * Creates a new instance of ConditionsArray.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -25,7 +24,7 @@ class ConditionsArray
      *
      * @return ConditionsItem[]
      */
-    public function getItems()
+    public function getItems(): array
     {
         return $this->Items;
     }
@@ -34,6 +33,7 @@ class ConditionsArray
      * Sets Items.
      *
      * @param ConditionsItem[] $value
+     *
      * @return $this
      */
     public function setItems(array $value)
@@ -42,7 +42,4 @@ class ConditionsArray
 
         return $this;
     }
-
-
 }
-

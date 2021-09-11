@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5;
 
 use Biplane\YandexDirect\Api\ApiSoapClientV5;
@@ -10,8 +12,7 @@ use Biplane\YandexDirect\Config;
  */
 class Ads extends ApiSoapClientV5
 {
-
-    const ENDPOINT = 'https://api.direct.yandex.com/v5/ads?wsdl';
+    public const ENDPOINT = 'https://api.direct.yandex.com/v5/ads?wsdl';
 
     public function __construct(Config $config, array $options)
     {
@@ -177,103 +178,73 @@ class Ads extends ApiSoapClientV5
 
     /**
      * add.
-     *
-     * @param Contract\AddAdsRequest $parameters
-     * @return Contract\AddAdsResponse
      */
-    public function add(Contract\AddAdsRequest $parameters)
+    public function add(Contract\AddAdsRequest $parameters): Contract\AddAdsResponse
     {
         return $this->__soapCall('add', [$parameters]);
     }
 
     /**
      * update.
-     *
-     * @param Contract\UpdateAdsRequest $parameters
-     * @return Contract\UpdateAdsResponse
      */
-    public function update(Contract\UpdateAdsRequest $parameters)
+    public function update(Contract\UpdateAdsRequest $parameters): Contract\UpdateAdsResponse
     {
         return $this->__soapCall('update', [$parameters]);
     }
 
     /**
      * get.
-     *
-     * @param Contract\GetAdsRequest $parameters
-     * @return Contract\GetAdsResponse
      */
-    public function get(Contract\GetAdsRequest $parameters)
+    public function get(Contract\GetAdsRequest $parameters): Contract\GetAdsResponse
     {
         return $this->__soapCall('get', [$parameters]);
     }
 
     /**
      * delete.
-     *
-     * @param Contract\DeleteAdsRequest $parameters
-     * @return Contract\DeleteAdsResponse
      */
-    public function delete(Contract\DeleteAdsRequest $parameters)
+    public function delete(Contract\DeleteAdsRequest $parameters): Contract\DeleteAdsResponse
     {
         return $this->__soapCall('delete', [$parameters]);
     }
 
     /**
      * archive.
-     *
-     * @param Contract\ArchiveAdsRequest $parameters
-     * @return Contract\ArchiveAdsResponse
      */
-    public function archive(Contract\ArchiveAdsRequest $parameters)
+    public function archive(Contract\ArchiveAdsRequest $parameters): Contract\ArchiveAdsResponse
     {
         return $this->__soapCall('archive', [$parameters]);
     }
 
     /**
      * unarchive.
-     *
-     * @param Contract\UnarchiveAdsRequest $parameters
-     * @return Contract\UnarchiveAdsResponse
      */
-    public function unarchive(Contract\UnarchiveAdsRequest $parameters)
+    public function unarchive(Contract\UnarchiveAdsRequest $parameters): Contract\UnarchiveAdsResponse
     {
         return $this->__soapCall('unarchive', [$parameters]);
     }
 
     /**
      * suspend.
-     *
-     * @param Contract\SuspendAdsRequest $parameters
-     * @return Contract\SuspendAdsResponse
      */
-    public function suspend(Contract\SuspendAdsRequest $parameters)
+    public function suspend(Contract\SuspendAdsRequest $parameters): Contract\SuspendAdsResponse
     {
         return $this->__soapCall('suspend', [$parameters]);
     }
 
     /**
      * resume.
-     *
-     * @param Contract\ResumeAdsRequest $parameters
-     * @return Contract\ResumeAdsResponse
      */
-    public function resume(Contract\ResumeAdsRequest $parameters)
+    public function resume(Contract\ResumeAdsRequest $parameters): Contract\ResumeAdsResponse
     {
         return $this->__soapCall('resume', [$parameters]);
     }
 
     /**
      * moderate.
-     *
-     * @param Contract\ModerateAdsRequest $parameters
-     * @return Contract\ModerateAdsResponse
      */
-    public function moderate(Contract\ModerateAdsRequest $parameters)
+    public function moderate(Contract\ModerateAdsRequest $parameters): Contract\ModerateAdsResponse
     {
         return $this->__soapCall('moderate', [$parameters]);
     }
-
-
 }
-

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class CreateNewSubclientRequest
 {
-
     protected $Login = null;
 
     protected $AgencyLogin = null;
@@ -20,20 +21,16 @@ class CreateNewSubclientRequest
 
     /**
      * Creates a new instance of CreateNewSubclientRequest.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Login.
-     *
-     * @return string
      */
-    public function getLogin()
+    public function getLogin(): string
     {
         return $this->Login;
     }
@@ -41,10 +38,9 @@ class CreateNewSubclientRequest
     /**
      * Sets Login.
      *
-     * @param string $value
      * @return $this
      */
-    public function setLogin($value)
+    public function setLogin(string $value)
     {
         $this->Login = $value;
 
@@ -53,10 +49,8 @@ class CreateNewSubclientRequest
 
     /**
      * Gets AgencyLogin.
-     *
-     * @return string|null
      */
-    public function getAgencyLogin()
+    public function getAgencyLogin(): ?string
     {
         return $this->AgencyLogin;
     }
@@ -64,10 +58,9 @@ class CreateNewSubclientRequest
     /**
      * Sets AgencyLogin.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setAgencyLogin($value = null)
+    public function setAgencyLogin(?string $value = null)
     {
         $this->AgencyLogin = $value;
 
@@ -76,10 +69,8 @@ class CreateNewSubclientRequest
 
     /**
      * Gets Name.
-     *
-     * @return string|null
      */
-    public function getName()
+    public function getName(): ?string
     {
         return $this->Name;
     }
@@ -87,10 +78,9 @@ class CreateNewSubclientRequest
     /**
      * Sets Name.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setName($value = null)
+    public function setName(?string $value = null)
     {
         $this->Name = $value;
 
@@ -99,10 +89,8 @@ class CreateNewSubclientRequest
 
     /**
      * Gets Surname.
-     *
-     * @return string|null
      */
-    public function getSurname()
+    public function getSurname(): ?string
     {
         return $this->Surname;
     }
@@ -110,10 +98,9 @@ class CreateNewSubclientRequest
     /**
      * Sets Surname.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setSurname($value = null)
+    public function setSurname(?string $value = null)
     {
         $this->Surname = $value;
 
@@ -122,10 +109,8 @@ class CreateNewSubclientRequest
 
     /**
      * Gets Currency.
-     *
-     * @return string|null
      */
-    public function getCurrency()
+    public function getCurrency(): ?string
     {
         return $this->Currency;
     }
@@ -133,16 +118,12 @@ class CreateNewSubclientRequest
     /**
      * Sets Currency.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setCurrency($value = null)
+    public function setCurrency(?string $value = null)
     {
         $this->Currency = $value;
 
         return $this;
     }
-
-
 }
-

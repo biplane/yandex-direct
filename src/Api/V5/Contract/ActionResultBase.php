@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class ActionResultBase
 {
-
 //    Can be omit.
 //    protected $Warnings = null;
 
@@ -16,10 +17,8 @@ class ActionResultBase
 
     /**
      * Creates a new instance of ActionResultBase.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -29,18 +28,19 @@ class ActionResultBase
      *
      * @return ExceptionNotification[]|null
      */
-    public function getWarnings()
+    public function getWarnings(): ?array
     {
-        return isset($this->Warnings) ? $this->Warnings : null;
+        return $this->Warnings ?? null;
     }
 
     /**
      * Sets Warnings.
      *
      * @param ExceptionNotification[]|null $value
+     *
      * @return $this
      */
-    public function setWarnings(array $value = null)
+    public function setWarnings(?array $value = null)
     {
         $this->Warnings = $value;
 
@@ -52,24 +52,22 @@ class ActionResultBase
      *
      * @return ExceptionNotification[]|null
      */
-    public function getErrors()
+    public function getErrors(): ?array
     {
-        return isset($this->Errors) ? $this->Errors : null;
+        return $this->Errors ?? null;
     }
 
     /**
      * Sets Errors.
      *
      * @param ExceptionNotification[]|null $value
+     *
      * @return $this
      */
-    public function setErrors(array $value = null)
+    public function setErrors(?array $value = null)
     {
         $this->Errors = $value;
 
         return $this;
     }
-
-
 }
-

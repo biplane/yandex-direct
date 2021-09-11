@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class GetChangesLongData
 {
-
     protected $Updated = [];
 
     protected $NotUpdated = [];
@@ -16,10 +17,8 @@ class GetChangesLongData
 
     /**
      * Creates a new instance of GetChangesLongData.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -29,7 +28,7 @@ class GetChangesLongData
      *
      * @return int[]
      */
-    public function getUpdated()
+    public function getUpdated(): array
     {
         return $this->Updated;
     }
@@ -38,6 +37,7 @@ class GetChangesLongData
      * Sets Updated.
      *
      * @param int[] $value
+     *
      * @return $this
      */
     public function setUpdated(array $value)
@@ -52,7 +52,7 @@ class GetChangesLongData
      *
      * @return int[]
      */
-    public function getNotUpdated()
+    public function getNotUpdated(): array
     {
         return $this->NotUpdated;
     }
@@ -61,6 +61,7 @@ class GetChangesLongData
      * Sets NotUpdated.
      *
      * @param int[] $value
+     *
      * @return $this
      */
     public function setNotUpdated(array $value)
@@ -75,7 +76,7 @@ class GetChangesLongData
      *
      * @return int[]
      */
-    public function getNotFound()
+    public function getNotFound(): array
     {
         return $this->NotFound;
     }
@@ -84,6 +85,7 @@ class GetChangesLongData
      * Sets NotFound.
      *
      * @param int[] $value
+     *
      * @return $this
      */
     public function setNotFound(array $value)
@@ -92,7 +94,4 @@ class GetChangesLongData
 
         return $this;
     }
-
-
 }
-

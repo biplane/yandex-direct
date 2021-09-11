@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,15 +9,11 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class SitelinkFieldEnum
 {
+    public const TITLE = 'Title';
 
-    const TITLE = 'Title';
+    public const HREF = 'Href';
 
-    const HREF = 'Href';
+    public const DESCRIPTION = 'Description';
 
-    const DESCRIPTION = 'Description';
-
-    const TURBO_PAGE_ID = 'TurboPageId';
-
-
+    public const TURBO_PAGE_ID = 'TurboPageId';
 }
-

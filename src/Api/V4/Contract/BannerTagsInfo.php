@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,27 +9,22 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class BannerTagsInfo
 {
-
     protected $BannerID = null;
 
     protected $TagIDS = null;
 
     /**
      * Creates a new instance of BannerTagsInfo.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets BannerID.
-     *
-     * @return int
      */
-    public function getBannerID()
+    public function getBannerID(): int
     {
         return $this->BannerID;
     }
@@ -35,10 +32,9 @@ class BannerTagsInfo
     /**
      * Sets BannerID.
      *
-     * @param int $value
      * @return $this
      */
-    public function setBannerID($value)
+    public function setBannerID(int $value)
     {
         $this->BannerID = $value;
 
@@ -50,7 +46,7 @@ class BannerTagsInfo
      *
      * @return int[]|null
      */
-    public function getTagIDS()
+    public function getTagIDS(): ?array
     {
         return $this->TagIDS;
     }
@@ -59,15 +55,13 @@ class BannerTagsInfo
      * Sets TagIDS.
      *
      * @param int[]|null $value
+     *
      * @return $this
      */
-    public function setTagIDS(array $value = null)
+    public function setTagIDS(?array $value = null)
     {
         $this->TagIDS = $value;
 
         return $this;
     }
-
-
 }
-

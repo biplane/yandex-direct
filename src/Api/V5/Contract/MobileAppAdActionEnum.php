@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,23 +9,19 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class MobileAppAdActionEnum
 {
+    public const DOWNLOAD = 'DOWNLOAD';
 
-    const DOWNLOAD = 'DOWNLOAD';
+    public const GET = 'GET';
 
-    const GET = 'GET';
+    public const INSTALL = 'INSTALL';
 
-    const INSTALL = 'INSTALL';
+    public const MORE = 'MORE';
 
-    const MORE = 'MORE';
+    public const OPEN = 'OPEN';
 
-    const OPEN = 'OPEN';
+    public const UPDATE = 'UPDATE';
 
-    const UPDATE = 'UPDATE';
+    public const PLAY = 'PLAY';
 
-    const PLAY = 'PLAY';
-
-    const BUY_AUTODETECT = 'BUY_AUTODETECT';
-
-
+    public const BUY_AUTODETECT = 'BUY_AUTODETECT';
 }
-

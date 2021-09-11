@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class MobileAppAdBase
 {
-
 //    Can be omit.
 //    protected $Title = null;
 
@@ -25,31 +26,26 @@ class MobileAppAdBase
 
     /**
      * Creates a new instance of MobileAppAdBase.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Title.
-     *
-     * @return string|null
      */
-    public function getTitle()
+    public function getTitle(): ?string
     {
-        return isset($this->Title) ? $this->Title : null;
+        return $this->Title ?? null;
     }
 
     /**
      * Sets Title.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setTitle($value = null)
+    public function setTitle(?string $value = null)
     {
         $this->Title = $value;
 
@@ -58,21 +54,18 @@ class MobileAppAdBase
 
     /**
      * Gets Text.
-     *
-     * @return string|null
      */
-    public function getText()
+    public function getText(): ?string
     {
-        return isset($this->Text) ? $this->Text : null;
+        return $this->Text ?? null;
     }
 
     /**
      * Sets Text.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setText($value = null)
+    public function setText(?string $value = null)
     {
         $this->Text = $value;
 
@@ -81,21 +74,18 @@ class MobileAppAdBase
 
     /**
      * Gets TrackingUrl.
-     *
-     * @return string|null
      */
-    public function getTrackingUrl()
+    public function getTrackingUrl(): ?string
     {
-        return isset($this->TrackingUrl) ? $this->TrackingUrl : null;
+        return $this->TrackingUrl ?? null;
     }
 
     /**
      * Sets TrackingUrl.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setTrackingUrl($value = null)
+    public function setTrackingUrl(?string $value = null)
     {
         $this->TrackingUrl = $value;
 
@@ -105,22 +95,21 @@ class MobileAppAdBase
     /**
      * Gets Action.
      *
-     * @return string|null
      * @see MobileAppAdActionEnum
      */
-    public function getAction()
+    public function getAction(): ?string
     {
-        return isset($this->Action) ? $this->Action : null;
+        return $this->Action ?? null;
     }
 
     /**
      * Sets Action.
      *
-     * @param string|null $value
-     * @return $this
      * @see MobileAppAdActionEnum
+     *
+     * @return $this
      */
-    public function setAction($value = null)
+    public function setAction(?string $value = null)
     {
         $this->Action = $value;
 
@@ -129,27 +118,21 @@ class MobileAppAdBase
 
     /**
      * Gets AdImageHash.
-     *
-     * @return string|null
      */
-    public function getAdImageHash()
+    public function getAdImageHash(): ?string
     {
-        return isset($this->AdImageHash) ? $this->AdImageHash : null;
+        return $this->AdImageHash ?? null;
     }
 
     /**
      * Sets AdImageHash.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setAdImageHash($value = null)
+    public function setAdImageHash(?string $value = null)
     {
         $this->AdImageHash = $value;
 
         return $this;
     }
-
-
 }
-

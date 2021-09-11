@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,17 +9,13 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class SmsEventsEnum
 {
+    public const MONITORING = 'MONITORING';
 
-    const MONITORING = 'MONITORING';
+    public const MODERATION = 'MODERATION';
 
-    const MODERATION = 'MODERATION';
+    public const MONEY_IN = 'MONEY_IN';
 
-    const MONEY_IN = 'MONEY_IN';
+    public const MONEY_OUT = 'MONEY_OUT';
 
-    const MONEY_OUT = 'MONEY_OUT';
-
-    const FINISHED = 'FINISHED';
-
-
+    public const FINISHED = 'FINISHED';
 }
-

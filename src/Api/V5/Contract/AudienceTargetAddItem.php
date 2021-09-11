@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AudienceTargetAddItem extends AudienceTargetBase
 {
-
     protected $AdGroupId = null;
 
 //    Can be omit.
@@ -18,20 +19,16 @@ class AudienceTargetAddItem extends AudienceTargetBase
 
     /**
      * Creates a new instance of AudienceTargetAddItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets AdGroupId.
-     *
-     * @return int
      */
-    public function getAdGroupId()
+    public function getAdGroupId(): int
     {
         return $this->AdGroupId;
     }
@@ -39,10 +36,9 @@ class AudienceTargetAddItem extends AudienceTargetBase
     /**
      * Sets AdGroupId.
      *
-     * @param int $value
      * @return $this
      */
-    public function setAdGroupId($value)
+    public function setAdGroupId(int $value)
     {
         $this->AdGroupId = $value;
 
@@ -51,21 +47,18 @@ class AudienceTargetAddItem extends AudienceTargetBase
 
     /**
      * Gets RetargetingListId.
-     *
-     * @return int|null
      */
-    public function getRetargetingListId()
+    public function getRetargetingListId(): ?int
     {
-        return isset($this->RetargetingListId) ? $this->RetargetingListId : null;
+        return $this->RetargetingListId ?? null;
     }
 
     /**
      * Sets RetargetingListId.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setRetargetingListId($value = null)
+    public function setRetargetingListId(?int $value = null)
     {
         $this->RetargetingListId = $value;
 
@@ -74,27 +67,21 @@ class AudienceTargetAddItem extends AudienceTargetBase
 
     /**
      * Gets InterestId.
-     *
-     * @return int|null
      */
-    public function getInterestId()
+    public function getInterestId(): ?int
     {
-        return isset($this->InterestId) ? $this->InterestId : null;
+        return $this->InterestId ?? null;
     }
 
     /**
      * Sets InterestId.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setInterestId($value = null)
+    public function setInterestId(?int $value = null)
     {
         $this->InterestId = $value;
 
         return $this;
     }
-
-
 }
-

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,15 +9,12 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AddBidModifiersRequest
 {
-
     protected $BidModifiers = [];
 
     /**
      * Creates a new instance of AddBidModifiersRequest.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -25,7 +24,7 @@ class AddBidModifiersRequest
      *
      * @return BidModifierAddItem[]
      */
-    public function getBidModifiers()
+    public function getBidModifiers(): array
     {
         return $this->BidModifiers;
     }
@@ -34,6 +33,7 @@ class AddBidModifiersRequest
      * Sets BidModifiers.
      *
      * @param BidModifierAddItem[] $value
+     *
      * @return $this
      */
     public function setBidModifiers(array $value)
@@ -42,7 +42,4 @@ class AddBidModifiersRequest
 
         return $this;
     }
-
-
 }
-

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,15 +9,12 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class SetBidsAudienceTargetsResponse
 {
-
     protected $SetBidsResults = [];
 
     /**
      * Creates a new instance of SetBidsAudienceTargetsResponse.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -25,7 +24,7 @@ class SetBidsAudienceTargetsResponse
      *
      * @return SetBidsActionResult[]
      */
-    public function getSetBidsResults()
+    public function getSetBidsResults(): array
     {
         return $this->SetBidsResults;
     }
@@ -34,6 +33,7 @@ class SetBidsAudienceTargetsResponse
      * Sets SetBidsResults.
      *
      * @param SetBidsActionResult[] $value
+     *
      * @return $this
      */
     public function setSetBidsResults(array $value)
@@ -42,7 +42,4 @@ class SetBidsAudienceTargetsResponse
 
         return $this;
     }
-
-
 }
-

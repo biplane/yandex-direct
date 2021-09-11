@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class BidModifierAddBase
 {
-
 //    Can be omit.
 //    protected $CampaignId = null;
 
@@ -16,31 +17,26 @@ class BidModifierAddBase
 
     /**
      * Creates a new instance of BidModifierAddBase.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets CampaignId.
-     *
-     * @return int|null
      */
-    public function getCampaignId()
+    public function getCampaignId(): ?int
     {
-        return isset($this->CampaignId) ? $this->CampaignId : null;
+        return $this->CampaignId ?? null;
     }
 
     /**
      * Sets CampaignId.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setCampaignId($value = null)
+    public function setCampaignId(?int $value = null)
     {
         $this->CampaignId = $value;
 
@@ -49,27 +45,21 @@ class BidModifierAddBase
 
     /**
      * Gets AdGroupId.
-     *
-     * @return int|null
      */
-    public function getAdGroupId()
+    public function getAdGroupId(): ?int
     {
-        return isset($this->AdGroupId) ? $this->AdGroupId : null;
+        return $this->AdGroupId ?? null;
     }
 
     /**
      * Sets AdGroupId.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setAdGroupId($value = null)
+    public function setAdGroupId(?int $value = null)
     {
         $this->AdGroupId = $value;
 
         return $this;
     }
-
-
 }
-

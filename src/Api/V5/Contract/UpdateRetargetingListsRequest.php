@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,15 +9,12 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class UpdateRetargetingListsRequest
 {
-
     protected $RetargetingLists = [];
 
     /**
      * Creates a new instance of UpdateRetargetingListsRequest.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -25,7 +24,7 @@ class UpdateRetargetingListsRequest
      *
      * @return RetargetingListUpdateItem[]
      */
-    public function getRetargetingLists()
+    public function getRetargetingLists(): array
     {
         return $this->RetargetingLists;
     }
@@ -34,6 +33,7 @@ class UpdateRetargetingListsRequest
      * Sets RetargetingLists.
      *
      * @param RetargetingListUpdateItem[] $value
+     *
      * @return $this
      */
     public function setRetargetingLists(array $value)
@@ -42,7 +42,4 @@ class UpdateRetargetingListsRequest
 
         return $this;
     }
-
-
 }
-

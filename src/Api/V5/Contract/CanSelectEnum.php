@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,11 +9,7 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class CanSelectEnum
 {
+    public const ALL = 'ALL';
 
-    const ALL = 'ALL';
-
-    const EXCEPT_ALL = 'EXCEPT_ALL';
-
-
+    public const EXCEPT_ALL = 'EXCEPT_ALL';
 }
-

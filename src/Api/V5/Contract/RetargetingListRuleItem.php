@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,17 +9,14 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class RetargetingListRuleItem
 {
-
     protected $Arguments = [];
 
     protected $Operator = null;
 
     /**
      * Creates a new instance of RetargetingListRuleItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -27,7 +26,7 @@ class RetargetingListRuleItem
      *
      * @return RetargetingListRuleArgumentItem[]
      */
-    public function getArguments()
+    public function getArguments(): array
     {
         return $this->Arguments;
     }
@@ -36,6 +35,7 @@ class RetargetingListRuleItem
      * Sets Arguments.
      *
      * @param RetargetingListRuleArgumentItem[] $value
+     *
      * @return $this
      */
     public function setArguments(array $value)
@@ -48,10 +48,9 @@ class RetargetingListRuleItem
     /**
      * Gets Operator.
      *
-     * @return string
      * @see RetargetingListRuleOperatorEnum
      */
-    public function getOperator()
+    public function getOperator(): string
     {
         return $this->Operator;
     }
@@ -59,17 +58,14 @@ class RetargetingListRuleItem
     /**
      * Sets Operator.
      *
-     * @param string $value
-     * @return $this
      * @see RetargetingListRuleOperatorEnum
+     *
+     * @return $this
      */
-    public function setOperator($value)
+    public function setOperator(string $value)
     {
         $this->Operator = $value;
 
         return $this;
     }
-
-
 }
-

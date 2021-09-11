@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class DynamicTextCampaignNetworkStrategy extends DynamicTextCampaignStrategyBase
 {
-
     protected $BiddingStrategyType = null;
 
 //    Can be omit.
@@ -15,10 +16,8 @@ class DynamicTextCampaignNetworkStrategy extends DynamicTextCampaignStrategyBase
 
     /**
      * Creates a new instance of DynamicTextCampaignNetworkStrategy.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -26,10 +25,9 @@ class DynamicTextCampaignNetworkStrategy extends DynamicTextCampaignStrategyBase
     /**
      * Gets BiddingStrategyType.
      *
-     * @return string
      * @see DynamicTextCampaignNetworkStrategyTypeEnum
      */
-    public function getBiddingStrategyType()
+    public function getBiddingStrategyType(): string
     {
         return $this->BiddingStrategyType;
     }
@@ -37,11 +35,11 @@ class DynamicTextCampaignNetworkStrategy extends DynamicTextCampaignStrategyBase
     /**
      * Sets BiddingStrategyType.
      *
-     * @param string $value
-     * @return $this
      * @see DynamicTextCampaignNetworkStrategyTypeEnum
+     *
+     * @return $this
      */
-    public function setBiddingStrategyType($value)
+    public function setBiddingStrategyType(string $value)
     {
         $this->BiddingStrategyType = $value;
 
@@ -50,27 +48,21 @@ class DynamicTextCampaignNetworkStrategy extends DynamicTextCampaignStrategyBase
 
     /**
      * Gets NetworkDefault.
-     *
-     * @return StrategyNetworkDefault|null
      */
-    public function getNetworkDefault()
+    public function getNetworkDefault(): ?StrategyNetworkDefault
     {
-        return isset($this->NetworkDefault) ? $this->NetworkDefault : null;
+        return $this->NetworkDefault ?? null;
     }
 
     /**
      * Sets NetworkDefault.
      *
-     * @param StrategyNetworkDefault|null $value
      * @return $this
      */
-    public function setNetworkDefault(StrategyNetworkDefault $value = null)
+    public function setNetworkDefault(?StrategyNetworkDefault $value = null)
     {
         $this->NetworkDefault = $value;
 
         return $this;
     }
-
-
 }
-

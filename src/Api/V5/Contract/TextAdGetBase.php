@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class TextAdGetBase
 {
-
 //    Can be omit.
 //    protected $VCardId = null;
 
@@ -31,31 +32,26 @@ class TextAdGetBase
 
     /**
      * Creates a new instance of TextAdGetBase.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets VCardId.
-     *
-     * @return int|null
      */
-    public function getVCardId()
+    public function getVCardId(): ?int
     {
-        return isset($this->VCardId) ? $this->VCardId : null;
+        return $this->VCardId ?? null;
     }
 
     /**
      * Sets VCardId.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setVCardId($value = null)
+    public function setVCardId(?int $value = null)
     {
         $this->VCardId = $value;
 
@@ -64,21 +60,18 @@ class TextAdGetBase
 
     /**
      * Gets AdImageHash.
-     *
-     * @return string|null
      */
-    public function getAdImageHash()
+    public function getAdImageHash(): ?string
     {
-        return isset($this->AdImageHash) ? $this->AdImageHash : null;
+        return $this->AdImageHash ?? null;
     }
 
     /**
      * Sets AdImageHash.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setAdImageHash($value = null)
+    public function setAdImageHash(?string $value = null)
     {
         $this->AdImageHash = $value;
 
@@ -87,21 +80,18 @@ class TextAdGetBase
 
     /**
      * Gets SitelinkSetId.
-     *
-     * @return int|null
      */
-    public function getSitelinkSetId()
+    public function getSitelinkSetId(): ?int
     {
-        return isset($this->SitelinkSetId) ? $this->SitelinkSetId : null;
+        return $this->SitelinkSetId ?? null;
     }
 
     /**
      * Sets SitelinkSetId.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setSitelinkSetId($value = null)
+    public function setSitelinkSetId(?int $value = null)
     {
         $this->SitelinkSetId = $value;
 
@@ -110,21 +100,18 @@ class TextAdGetBase
 
     /**
      * Gets VCardModeration.
-     *
-     * @return ExtensionModeration|null
      */
-    public function getVCardModeration()
+    public function getVCardModeration(): ?ExtensionModeration
     {
-        return isset($this->VCardModeration) ? $this->VCardModeration : null;
+        return $this->VCardModeration ?? null;
     }
 
     /**
      * Sets VCardModeration.
      *
-     * @param ExtensionModeration|null $value
      * @return $this
      */
-    public function setVCardModeration(ExtensionModeration $value = null)
+    public function setVCardModeration(?ExtensionModeration $value = null)
     {
         $this->VCardModeration = $value;
 
@@ -133,21 +120,18 @@ class TextAdGetBase
 
     /**
      * Gets SitelinksModeration.
-     *
-     * @return ExtensionModeration|null
      */
-    public function getSitelinksModeration()
+    public function getSitelinksModeration(): ?ExtensionModeration
     {
-        return isset($this->SitelinksModeration) ? $this->SitelinksModeration : null;
+        return $this->SitelinksModeration ?? null;
     }
 
     /**
      * Sets SitelinksModeration.
      *
-     * @param ExtensionModeration|null $value
      * @return $this
      */
-    public function setSitelinksModeration(ExtensionModeration $value = null)
+    public function setSitelinksModeration(?ExtensionModeration $value = null)
     {
         $this->SitelinksModeration = $value;
 
@@ -156,21 +140,18 @@ class TextAdGetBase
 
     /**
      * Gets AdImageModeration.
-     *
-     * @return ExtensionModeration|null
      */
-    public function getAdImageModeration()
+    public function getAdImageModeration(): ?ExtensionModeration
     {
-        return isset($this->AdImageModeration) ? $this->AdImageModeration : null;
+        return $this->AdImageModeration ?? null;
     }
 
     /**
      * Sets AdImageModeration.
      *
-     * @param ExtensionModeration|null $value
      * @return $this
      */
-    public function setAdImageModeration(ExtensionModeration $value = null)
+    public function setAdImageModeration(?ExtensionModeration $value = null)
     {
         $this->AdImageModeration = $value;
 
@@ -182,24 +163,22 @@ class TextAdGetBase
      *
      * @return AdExtensionAdGetItem[]|null
      */
-    public function getAdExtensions()
+    public function getAdExtensions(): ?array
     {
-        return isset($this->AdExtensions) ? $this->AdExtensions : null;
+        return $this->AdExtensions ?? null;
     }
 
     /**
      * Sets AdExtensions.
      *
      * @param AdExtensionAdGetItem[]|null $value
+     *
      * @return $this
      */
-    public function setAdExtensions(array $value = null)
+    public function setAdExtensions(?array $value = null)
     {
         $this->AdExtensions = $value;
 
         return $this;
     }
-
-
 }
-

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class ClientGetItem extends ClientBaseItem
 {
-
 //    Can be omit.
 //    protected $AccountQuality = null;
 
@@ -58,31 +59,26 @@ class ClientGetItem extends ClientBaseItem
 
     /**
      * Creates a new instance of ClientGetItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets AccountQuality.
-     *
-     * @return float|null
      */
-    public function getAccountQuality()
+    public function getAccountQuality(): ?float
     {
-        return isset($this->AccountQuality) ? $this->AccountQuality : null;
+        return $this->AccountQuality ?? null;
     }
 
     /**
      * Sets AccountQuality.
      *
-     * @param float|null $value
      * @return $this
      */
-    public function setAccountQuality($value = null)
+    public function setAccountQuality(?float $value = null)
     {
         $this->AccountQuality = $value;
 
@@ -92,22 +88,21 @@ class ClientGetItem extends ClientBaseItem
     /**
      * Gets Archived.
      *
-     * @return string|null
      * @see YesNoEnum
      */
-    public function getArchived()
+    public function getArchived(): ?string
     {
-        return isset($this->Archived) ? $this->Archived : null;
+        return $this->Archived ?? null;
     }
 
     /**
      * Sets Archived.
      *
-     * @param string|null $value
-     * @return $this
      * @see YesNoEnum
+     *
+     * @return $this
      */
-    public function setArchived($value = null)
+    public function setArchived(?string $value = null)
     {
         $this->Archived = $value;
 
@@ -116,21 +111,18 @@ class ClientGetItem extends ClientBaseItem
 
     /**
      * Gets ClientId.
-     *
-     * @return int|null
      */
-    public function getClientId()
+    public function getClientId(): ?int
     {
-        return isset($this->ClientId) ? $this->ClientId : null;
+        return $this->ClientId ?? null;
     }
 
     /**
      * Sets ClientId.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setClientId($value = null)
+    public function setClientId(?int $value = null)
     {
         $this->ClientId = $value;
 
@@ -139,21 +131,18 @@ class ClientGetItem extends ClientBaseItem
 
     /**
      * Gets CountryId.
-     *
-     * @return int|null
      */
-    public function getCountryId()
+    public function getCountryId(): ?int
     {
-        return isset($this->CountryId) ? $this->CountryId : null;
+        return $this->CountryId ?? null;
     }
 
     /**
      * Sets CountryId.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setCountryId($value = null)
+    public function setCountryId(?int $value = null)
     {
         $this->CountryId = $value;
 
@@ -162,21 +151,18 @@ class ClientGetItem extends ClientBaseItem
 
     /**
      * Gets CreatedAt.
-     *
-     * @return string|null
      */
-    public function getCreatedAt()
+    public function getCreatedAt(): ?string
     {
-        return isset($this->CreatedAt) ? $this->CreatedAt : null;
+        return $this->CreatedAt ?? null;
     }
 
     /**
      * Sets CreatedAt.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setCreatedAt($value = null)
+    public function setCreatedAt(?string $value = null)
     {
         $this->CreatedAt = $value;
 
@@ -186,22 +172,21 @@ class ClientGetItem extends ClientBaseItem
     /**
      * Gets Currency.
      *
-     * @return string|null
      * @see CurrencyEnum
      */
-    public function getCurrency()
+    public function getCurrency(): ?string
     {
-        return isset($this->Currency) ? $this->Currency : null;
+        return $this->Currency ?? null;
     }
 
     /**
      * Sets Currency.
      *
-     * @param string|null $value
-     * @return $this
      * @see CurrencyEnum
+     *
+     * @return $this
      */
-    public function setCurrency($value = null)
+    public function setCurrency(?string $value = null)
     {
         $this->Currency = $value;
 
@@ -213,18 +198,19 @@ class ClientGetItem extends ClientBaseItem
      *
      * @return GrantGetItem[]|null
      */
-    public function getGrants()
+    public function getGrants(): ?array
     {
-        return isset($this->Grants) ? $this->Grants : null;
+        return $this->Grants ?? null;
     }
 
     /**
      * Sets Grants.
      *
      * @param GrantGetItem[]|null $value
+     *
      * @return $this
      */
-    public function setGrants(array $value = null)
+    public function setGrants(?array $value = null)
     {
         $this->Grants = $value;
 
@@ -233,21 +219,18 @@ class ClientGetItem extends ClientBaseItem
 
     /**
      * Gets Bonuses.
-     *
-     * @return BonusesItem|null
      */
-    public function getBonuses()
+    public function getBonuses(): ?BonusesItem
     {
-        return isset($this->Bonuses) ? $this->Bonuses : null;
+        return $this->Bonuses ?? null;
     }
 
     /**
      * Sets Bonuses.
      *
-     * @param BonusesItem|null $value
      * @return $this
      */
-    public function setBonuses(BonusesItem $value = null)
+    public function setBonuses(?BonusesItem $value = null)
     {
         $this->Bonuses = $value;
 
@@ -256,21 +239,18 @@ class ClientGetItem extends ClientBaseItem
 
     /**
      * Gets Login.
-     *
-     * @return string|null
      */
-    public function getLogin()
+    public function getLogin(): ?string
     {
-        return isset($this->Login) ? $this->Login : null;
+        return $this->Login ?? null;
     }
 
     /**
      * Sets Login.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setLogin($value = null)
+    public function setLogin(?string $value = null)
     {
         $this->Login = $value;
 
@@ -279,21 +259,18 @@ class ClientGetItem extends ClientBaseItem
 
     /**
      * Gets Notification.
-     *
-     * @return ClientNotificationGet|null
      */
-    public function getNotification()
+    public function getNotification(): ?ClientNotificationGet
     {
-        return isset($this->Notification) ? $this->Notification : null;
+        return $this->Notification ?? null;
     }
 
     /**
      * Sets Notification.
      *
-     * @param ClientNotificationGet|null $value
      * @return $this
      */
-    public function setNotification(ClientNotificationGet $value = null)
+    public function setNotification(?ClientNotificationGet $value = null)
     {
         $this->Notification = $value;
 
@@ -302,21 +279,18 @@ class ClientGetItem extends ClientBaseItem
 
     /**
      * Gets OverdraftSumAvailable.
-     *
-     * @return int|null
      */
-    public function getOverdraftSumAvailable()
+    public function getOverdraftSumAvailable(): ?int
     {
-        return isset($this->OverdraftSumAvailable) ? $this->OverdraftSumAvailable : null;
+        return $this->OverdraftSumAvailable ?? null;
     }
 
     /**
      * Sets OverdraftSumAvailable.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setOverdraftSumAvailable($value = null)
+    public function setOverdraftSumAvailable(?int $value = null)
     {
         $this->OverdraftSumAvailable = $value;
 
@@ -328,18 +302,19 @@ class ClientGetItem extends ClientBaseItem
      *
      * @return Representative[]|null
      */
-    public function getRepresentatives()
+    public function getRepresentatives(): ?array
     {
-        return isset($this->Representatives) ? $this->Representatives : null;
+        return $this->Representatives ?? null;
     }
 
     /**
      * Sets Representatives.
      *
      * @param Representative[]|null $value
+     *
      * @return $this
      */
-    public function setRepresentatives(array $value = null)
+    public function setRepresentatives(?array $value = null)
     {
         $this->Representatives = $value;
 
@@ -351,18 +326,19 @@ class ClientGetItem extends ClientBaseItem
      *
      * @return ClientRestrictionItem[]|null
      */
-    public function getRestrictions()
+    public function getRestrictions(): ?array
     {
-        return isset($this->Restrictions) ? $this->Restrictions : null;
+        return $this->Restrictions ?? null;
     }
 
     /**
      * Sets Restrictions.
      *
      * @param ClientRestrictionItem[]|null $value
+     *
      * @return $this
      */
-    public function setRestrictions(array $value = null)
+    public function setRestrictions(?array $value = null)
     {
         $this->Restrictions = $value;
 
@@ -374,18 +350,19 @@ class ClientGetItem extends ClientBaseItem
      *
      * @return ClientSettingGetItem[]|null
      */
-    public function getSettings()
+    public function getSettings(): ?array
     {
-        return isset($this->Settings) ? $this->Settings : null;
+        return $this->Settings ?? null;
     }
 
     /**
      * Sets Settings.
      *
      * @param ClientSettingGetItem[]|null $value
+     *
      * @return $this
      */
-    public function setSettings(array $value = null)
+    public function setSettings(?array $value = null)
     {
         $this->Settings = $value;
 
@@ -394,21 +371,18 @@ class ClientGetItem extends ClientBaseItem
 
     /**
      * Gets Type.
-     *
-     * @return string|null
      */
-    public function getType()
+    public function getType(): ?string
     {
-        return isset($this->Type) ? $this->Type : null;
+        return $this->Type ?? null;
     }
 
     /**
      * Sets Type.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setType($value = null)
+    public function setType(?string $value = null)
     {
         $this->Type = $value;
 
@@ -417,27 +391,21 @@ class ClientGetItem extends ClientBaseItem
 
     /**
      * Gets VatRate.
-     *
-     * @return float|null
      */
-    public function getVatRate()
+    public function getVatRate(): ?float
     {
-        return isset($this->VatRate) ? $this->VatRate : null;
+        return $this->VatRate ?? null;
     }
 
     /**
      * Sets VatRate.
      *
-     * @param float|null $value
      * @return $this
      */
-    public function setVatRate($value = null)
+    public function setVatRate(?float $value = null)
     {
         $this->VatRate = $value;
 
         return $this;
     }
-
-
 }
-

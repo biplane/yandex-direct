@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,16 +9,13 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class GetSmartAdTargetsResponse extends GetResponseGeneral
 {
-
 //    Can be omit.
 //    protected $SmartAdTargets = null;
 
     /**
      * Creates a new instance of GetSmartAdTargetsResponse.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -26,24 +25,22 @@ class GetSmartAdTargetsResponse extends GetResponseGeneral
      *
      * @return SmartAdTargetGetItem[]|null
      */
-    public function getSmartAdTargets()
+    public function getSmartAdTargets(): ?array
     {
-        return isset($this->SmartAdTargets) ? $this->SmartAdTargets : null;
+        return $this->SmartAdTargets ?? null;
     }
 
     /**
      * Sets SmartAdTargets.
      *
      * @param SmartAdTargetGetItem[]|null $value
+     *
      * @return $this
      */
-    public function setSmartAdTargets(array $value = null)
+    public function setSmartAdTargets(?array $value = null)
     {
         $this->SmartAdTargets = $value;
 
         return $this;
     }
-
-
 }
-

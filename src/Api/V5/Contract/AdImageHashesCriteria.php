@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,15 +9,12 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AdImageHashesCriteria
 {
-
     protected $AdImageHashes = [];
 
     /**
      * Creates a new instance of AdImageHashesCriteria.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -25,7 +24,7 @@ class AdImageHashesCriteria
      *
      * @return string[]
      */
-    public function getAdImageHashes()
+    public function getAdImageHashes(): array
     {
         return $this->AdImageHashes;
     }
@@ -34,6 +33,7 @@ class AdImageHashesCriteria
      * Sets AdImageHashes.
      *
      * @param string[] $value
+     *
      * @return $this
      */
     public function setAdImageHashes(array $value)
@@ -42,7 +42,4 @@ class AdImageHashesCriteria
 
         return $this;
     }
-
-
 }
-

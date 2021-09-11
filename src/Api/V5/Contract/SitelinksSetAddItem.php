@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,15 +9,12 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class SitelinksSetAddItem
 {
-
     protected $Sitelinks = [];
 
     /**
      * Creates a new instance of SitelinksSetAddItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -25,7 +24,7 @@ class SitelinksSetAddItem
      *
      * @return SitelinkAddItem[]
      */
-    public function getSitelinks()
+    public function getSitelinks(): array
     {
         return $this->Sitelinks;
     }
@@ -34,6 +33,7 @@ class SitelinksSetAddItem
      * Sets Sitelinks.
      *
      * @param SitelinkAddItem[] $value
+     *
      * @return $this
      */
     public function setSitelinks(array $value)
@@ -42,7 +42,4 @@ class SitelinksSetAddItem
 
         return $this;
     }
-
-
 }
-

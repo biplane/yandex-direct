@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,15 +9,12 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AddVCardsRequest
 {
-
     protected $VCards = [];
 
     /**
      * Creates a new instance of AddVCardsRequest.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -25,7 +24,7 @@ class AddVCardsRequest
      *
      * @return VCardAddItem[]
      */
-    public function getVCards()
+    public function getVCards(): array
     {
         return $this->VCards;
     }
@@ -34,6 +33,7 @@ class AddVCardsRequest
      * Sets VCards.
      *
      * @param VCardAddItem[] $value
+     *
      * @return $this
      */
     public function setVCards(array $value)
@@ -42,7 +42,4 @@ class AddVCardsRequest
 
         return $this;
     }
-
-
 }
-

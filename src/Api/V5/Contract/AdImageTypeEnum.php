@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,17 +9,13 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AdImageTypeEnum
 {
+    public const SMALL = 'SMALL';
 
-    const SMALL = 'SMALL';
+    public const REGULAR = 'REGULAR';
 
-    const REGULAR = 'REGULAR';
+    public const WIDE = 'WIDE';
 
-    const WIDE = 'WIDE';
+    public const FIXED_IMAGE = 'FIXED_IMAGE';
 
-    const FIXED_IMAGE = 'FIXED_IMAGE';
-
-    const UNFIT = 'UNFIT';
-
-
+    public const UNFIT = 'UNFIT';
 }
-

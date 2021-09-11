@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class TextAdBuilderAdAdd extends AdBuilderAdAddBase
 {
-
 //    Can be omit.
 //    protected $Href = null;
 
@@ -16,31 +17,26 @@ class TextAdBuilderAdAdd extends AdBuilderAdAddBase
 
     /**
      * Creates a new instance of TextAdBuilderAdAdd.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Href.
-     *
-     * @return string|null
      */
-    public function getHref()
+    public function getHref(): ?string
     {
-        return isset($this->Href) ? $this->Href : null;
+        return $this->Href ?? null;
     }
 
     /**
      * Sets Href.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setHref($value = null)
+    public function setHref(?string $value = null)
     {
         $this->Href = $value;
 
@@ -49,27 +45,21 @@ class TextAdBuilderAdAdd extends AdBuilderAdAddBase
 
     /**
      * Gets TurboPageId.
-     *
-     * @return int|null
      */
-    public function getTurboPageId()
+    public function getTurboPageId(): ?int
     {
-        return isset($this->TurboPageId) ? $this->TurboPageId : null;
+        return $this->TurboPageId ?? null;
     }
 
     /**
      * Sets TurboPageId.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setTurboPageId($value = null)
+    public function setTurboPageId(?int $value = null)
     {
         $this->TurboPageId = $value;
 
         return $this;
     }
-
-
 }
-

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,25 +9,20 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class ClientFilter
 {
-
     protected $StatusArch = null;
 
     /**
      * Creates a new instance of ClientFilter.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets StatusArch.
-     *
-     * @return string|null
      */
-    public function getStatusArch()
+    public function getStatusArch(): ?string
     {
         return $this->StatusArch;
     }
@@ -33,16 +30,12 @@ class ClientFilter
     /**
      * Sets StatusArch.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setStatusArch($value = null)
+    public function setStatusArch(?string $value = null)
     {
         $this->StatusArch = $value;
 
         return $this;
     }
-
-
 }
-

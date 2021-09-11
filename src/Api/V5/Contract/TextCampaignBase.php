@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class TextCampaignBase
 {
-
 //    Can be omit.
 //    protected $CounterIds = null;
 
@@ -19,10 +20,8 @@ class TextCampaignBase
 
     /**
      * Creates a new instance of TextCampaignBase.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -32,18 +31,19 @@ class TextCampaignBase
      *
      * @return int[]|null
      */
-    public function getCounterIds()
+    public function getCounterIds(): ?array
     {
-        return isset($this->CounterIds) ? $this->CounterIds : null;
+        return $this->CounterIds ?? null;
     }
 
     /**
      * Sets CounterIds.
      *
      * @param int[]|null $value
+     *
      * @return $this
      */
-    public function setCounterIds(array $value = null)
+    public function setCounterIds(?array $value = null)
     {
         $this->CounterIds = $value;
 
@@ -52,21 +52,18 @@ class TextCampaignBase
 
     /**
      * Gets RelevantKeywords.
-     *
-     * @return RelevantKeywordsSetting|null
      */
-    public function getRelevantKeywords()
+    public function getRelevantKeywords(): ?RelevantKeywordsSetting
     {
-        return isset($this->RelevantKeywords) ? $this->RelevantKeywords : null;
+        return $this->RelevantKeywords ?? null;
     }
 
     /**
      * Sets RelevantKeywords.
      *
-     * @param RelevantKeywordsSetting|null $value
      * @return $this
      */
-    public function setRelevantKeywords(RelevantKeywordsSetting $value = null)
+    public function setRelevantKeywords(?RelevantKeywordsSetting $value = null)
     {
         $this->RelevantKeywords = $value;
 
@@ -76,28 +73,24 @@ class TextCampaignBase
     /**
      * Gets AttributionModel.
      *
-     * @return string|null
      * @see AttributionModelEnum
      */
-    public function getAttributionModel()
+    public function getAttributionModel(): ?string
     {
-        return isset($this->AttributionModel) ? $this->AttributionModel : null;
+        return $this->AttributionModel ?? null;
     }
 
     /**
      * Sets AttributionModel.
      *
-     * @param string|null $value
-     * @return $this
      * @see AttributionModelEnum
+     *
+     * @return $this
      */
-    public function setAttributionModel($value = null)
+    public function setAttributionModel(?string $value = null)
     {
         $this->AttributionModel = $value;
 
         return $this;
     }
-
-
 }
-

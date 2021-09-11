@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,15 +9,12 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class ToggleBidModifiersRequest
 {
-
     protected $BidModifierToggleItems = [];
 
     /**
      * Creates a new instance of ToggleBidModifiersRequest.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -25,7 +24,7 @@ class ToggleBidModifiersRequest
      *
      * @return BidModifierToggleItem[]
      */
-    public function getBidModifierToggleItems()
+    public function getBidModifierToggleItems(): array
     {
         return $this->BidModifierToggleItems;
     }
@@ -34,6 +33,7 @@ class ToggleBidModifiersRequest
      * Sets BidModifierToggleItems.
      *
      * @param BidModifierToggleItem[] $value
+     *
      * @return $this
      */
     public function setBidModifierToggleItems(array $value)
@@ -42,7 +42,4 @@ class ToggleBidModifiersRequest
 
         return $this;
     }
-
-
 }
-

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class StrategyCpMaximumImpressionsAdd extends StrategyMaximumImpressionsAddBase
 {
-
     protected $StartDate = null;
 
     protected $EndDate = null;
@@ -16,20 +17,16 @@ class StrategyCpMaximumImpressionsAdd extends StrategyMaximumImpressionsAddBase
 
     /**
      * Creates a new instance of StrategyCpMaximumImpressionsAdd.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets StartDate.
-     *
-     * @return string
      */
-    public function getStartDate()
+    public function getStartDate(): string
     {
         return $this->StartDate;
     }
@@ -37,10 +34,9 @@ class StrategyCpMaximumImpressionsAdd extends StrategyMaximumImpressionsAddBase
     /**
      * Sets StartDate.
      *
-     * @param string $value
      * @return $this
      */
-    public function setStartDate($value)
+    public function setStartDate(string $value)
     {
         $this->StartDate = $value;
 
@@ -49,10 +45,8 @@ class StrategyCpMaximumImpressionsAdd extends StrategyMaximumImpressionsAddBase
 
     /**
      * Gets EndDate.
-     *
-     * @return string
      */
-    public function getEndDate()
+    public function getEndDate(): string
     {
         return $this->EndDate;
     }
@@ -60,10 +54,9 @@ class StrategyCpMaximumImpressionsAdd extends StrategyMaximumImpressionsAddBase
     /**
      * Sets EndDate.
      *
-     * @param string $value
      * @return $this
      */
-    public function setEndDate($value)
+    public function setEndDate(string $value)
     {
         $this->EndDate = $value;
 
@@ -73,10 +66,9 @@ class StrategyCpMaximumImpressionsAdd extends StrategyMaximumImpressionsAddBase
     /**
      * Gets AutoContinue.
      *
-     * @return string
      * @see YesNoEnum
      */
-    public function getAutoContinue()
+    public function getAutoContinue(): string
     {
         return $this->AutoContinue;
     }
@@ -84,17 +76,14 @@ class StrategyCpMaximumImpressionsAdd extends StrategyMaximumImpressionsAddBase
     /**
      * Sets AutoContinue.
      *
-     * @param string $value
-     * @return $this
      * @see YesNoEnum
+     *
+     * @return $this
      */
-    public function setAutoContinue($value)
+    public function setAutoContinue(string $value)
     {
         $this->AutoContinue = $value;
 
         return $this;
     }
-
-
 }
-

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class ClientUpdateItem extends ClientBaseItem
 {
-
 //    Can be omit.
 //    protected $Notification = null;
 
@@ -16,31 +17,26 @@ class ClientUpdateItem extends ClientBaseItem
 
     /**
      * Creates a new instance of ClientUpdateItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Notification.
-     *
-     * @return NotificationUpdate|null
      */
-    public function getNotification()
+    public function getNotification(): ?NotificationUpdate
     {
-        return isset($this->Notification) ? $this->Notification : null;
+        return $this->Notification ?? null;
     }
 
     /**
      * Sets Notification.
      *
-     * @param NotificationUpdate|null $value
      * @return $this
      */
-    public function setNotification(NotificationUpdate $value = null)
+    public function setNotification(?NotificationUpdate $value = null)
     {
         $this->Notification = $value;
 
@@ -52,24 +48,22 @@ class ClientUpdateItem extends ClientBaseItem
      *
      * @return ClientSettingUpdateItem[]|null
      */
-    public function getSettings()
+    public function getSettings(): ?array
     {
-        return isset($this->Settings) ? $this->Settings : null;
+        return $this->Settings ?? null;
     }
 
     /**
      * Sets Settings.
      *
      * @param ClientSettingUpdateItem[]|null $value
+     *
      * @return $this
      */
-    public function setSettings(array $value = null)
+    public function setSettings(?array $value = null)
     {
         $this->Settings = $value;
 
         return $this;
     }
-
-
 }
-

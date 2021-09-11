@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class Phone
 {
-
     protected $CountryCode = null;
 
     protected $CityCode = null;
@@ -19,20 +20,16 @@ class Phone
 
     /**
      * Creates a new instance of Phone.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets CountryCode.
-     *
-     * @return string
      */
-    public function getCountryCode()
+    public function getCountryCode(): string
     {
         return $this->CountryCode;
     }
@@ -40,10 +37,9 @@ class Phone
     /**
      * Sets CountryCode.
      *
-     * @param string $value
      * @return $this
      */
-    public function setCountryCode($value)
+    public function setCountryCode(string $value)
     {
         $this->CountryCode = $value;
 
@@ -52,10 +48,8 @@ class Phone
 
     /**
      * Gets CityCode.
-     *
-     * @return string
      */
-    public function getCityCode()
+    public function getCityCode(): string
     {
         return $this->CityCode;
     }
@@ -63,10 +57,9 @@ class Phone
     /**
      * Sets CityCode.
      *
-     * @param string $value
      * @return $this
      */
-    public function setCityCode($value)
+    public function setCityCode(string $value)
     {
         $this->CityCode = $value;
 
@@ -75,10 +68,8 @@ class Phone
 
     /**
      * Gets PhoneNumber.
-     *
-     * @return string
      */
-    public function getPhoneNumber()
+    public function getPhoneNumber(): string
     {
         return $this->PhoneNumber;
     }
@@ -86,10 +77,9 @@ class Phone
     /**
      * Sets PhoneNumber.
      *
-     * @param string $value
      * @return $this
      */
-    public function setPhoneNumber($value)
+    public function setPhoneNumber(string $value)
     {
         $this->PhoneNumber = $value;
 
@@ -98,27 +88,21 @@ class Phone
 
     /**
      * Gets Extension.
-     *
-     * @return string|null
      */
-    public function getExtension()
+    public function getExtension(): ?string
     {
-        return isset($this->Extension) ? $this->Extension : null;
+        return $this->Extension ?? null;
     }
 
     /**
      * Sets Extension.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setExtension($value = null)
+    public function setExtension(?string $value = null)
     {
         $this->Extension = $value;
 
         return $this;
     }
-
-
 }
-

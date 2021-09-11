@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5;
 
 use Biplane\YandexDirect\Api\ApiSoapClientV5;
@@ -10,8 +12,7 @@ use Biplane\YandexDirect\Config;
  */
 class SmartAdTargets extends ApiSoapClientV5
 {
-
-    const ENDPOINT = 'https://api.direct.yandex.com/v5/smartadtargets?wsdl';
+    public const ENDPOINT = 'https://api.direct.yandex.com/v5/smartadtargets?wsdl';
 
     public function __construct(Config $config, array $options)
     {
@@ -84,81 +85,57 @@ class SmartAdTargets extends ApiSoapClientV5
 
     /**
      * add.
-     *
-     * @param Contract\AddSmartAdTargetsRequest $parameters
-     * @return Contract\AddSmartAdTargetsResponse
      */
-    public function add(Contract\AddSmartAdTargetsRequest $parameters)
+    public function add(Contract\AddSmartAdTargetsRequest $parameters): Contract\AddSmartAdTargetsResponse
     {
         return $this->__soapCall('add', [$parameters]);
     }
 
     /**
      * get.
-     *
-     * @param Contract\GetSmartAdTargetsRequest $parameters
-     * @return Contract\GetSmartAdTargetsResponse
      */
-    public function get(Contract\GetSmartAdTargetsRequest $parameters)
+    public function get(Contract\GetSmartAdTargetsRequest $parameters): Contract\GetSmartAdTargetsResponse
     {
         return $this->__soapCall('get', [$parameters]);
     }
 
     /**
      * update.
-     *
-     * @param Contract\UpdateSmartAdTargetsRequest $parameters
-     * @return Contract\UpdateSmartAdTargetsResponse
      */
-    public function update(Contract\UpdateSmartAdTargetsRequest $parameters)
+    public function update(Contract\UpdateSmartAdTargetsRequest $parameters): Contract\UpdateSmartAdTargetsResponse
     {
         return $this->__soapCall('update', [$parameters]);
     }
 
     /**
      * delete.
-     *
-     * @param Contract\DeleteSmartAdTargetsRequest $parameters
-     * @return Contract\DeleteSmartAdTargetsResponse
      */
-    public function delete(Contract\DeleteSmartAdTargetsRequest $parameters)
+    public function delete(Contract\DeleteSmartAdTargetsRequest $parameters): Contract\DeleteSmartAdTargetsResponse
     {
         return $this->__soapCall('delete', [$parameters]);
     }
 
     /**
      * suspend.
-     *
-     * @param Contract\SuspendSmartAdTargetsRequest $parameters
-     * @return Contract\SuspendSmartAdTargetsResponse
      */
-    public function suspend(Contract\SuspendSmartAdTargetsRequest $parameters)
+    public function suspend(Contract\SuspendSmartAdTargetsRequest $parameters): Contract\SuspendSmartAdTargetsResponse
     {
         return $this->__soapCall('suspend', [$parameters]);
     }
 
     /**
      * resume.
-     *
-     * @param Contract\ResumeSmartAdTargetsRequest $parameters
-     * @return Contract\ResumeSmartAdTargetsResponse
      */
-    public function resume(Contract\ResumeSmartAdTargetsRequest $parameters)
+    public function resume(Contract\ResumeSmartAdTargetsRequest $parameters): Contract\ResumeSmartAdTargetsResponse
     {
         return $this->__soapCall('resume', [$parameters]);
     }
 
     /**
      * setBids.
-     *
-     * @param Contract\SetBidsSmartAdTargetsRequest $parameters
-     * @return Contract\SetBidsSmartAdTargetsResponse
      */
-    public function setBids(Contract\SetBidsSmartAdTargetsRequest $parameters)
+    public function setBids(Contract\SetBidsSmartAdTargetsRequest $parameters): Contract\SetBidsSmartAdTargetsResponse
     {
         return $this->__soapCall('setBids', [$parameters]);
     }
-
-
 }
-

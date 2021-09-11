@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,11 +9,7 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class MobileAppImageAdFieldEnum
 {
+    public const AD_IMAGE_HASH = 'AdImageHash';
 
-    const AD_IMAGE_HASH = 'AdImageHash';
-
-    const TRACKING_URL = 'TrackingUrl';
-
-
+    public const TRACKING_URL = 'TrackingUrl';
 }
-

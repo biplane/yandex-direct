@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,17 +9,14 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class RetargetingResponse
 {
-
     protected $ActionsResult = null;
 
     protected $Retargetings = null;
 
     /**
      * Creates a new instance of RetargetingResponse.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -27,7 +26,7 @@ class RetargetingResponse
      *
      * @return RetargetingActionResult[]|null
      */
-    public function getActionsResult()
+    public function getActionsResult(): ?array
     {
         return $this->ActionsResult;
     }
@@ -36,9 +35,10 @@ class RetargetingResponse
      * Sets ActionsResult.
      *
      * @param RetargetingActionResult[]|null $value
+     *
      * @return $this
      */
-    public function setActionsResult(array $value = null)
+    public function setActionsResult(?array $value = null)
     {
         $this->ActionsResult = $value;
 
@@ -50,7 +50,7 @@ class RetargetingResponse
      *
      * @return Retargeting[]|null
      */
-    public function getRetargetings()
+    public function getRetargetings(): ?array
     {
         return $this->Retargetings;
     }
@@ -59,15 +59,13 @@ class RetargetingResponse
      * Sets Retargetings.
      *
      * @param Retargeting[]|null $value
+     *
      * @return $this
      */
-    public function setRetargetings(array $value = null)
+    public function setRetargetings(?array $value = null)
     {
         $this->Retargetings = $value;
 
         return $this;
     }
-
-
 }
-

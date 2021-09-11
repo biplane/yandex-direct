@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,19 +9,15 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class CountryCodeEnum
 {
+    public const RU = 'RU';
 
-    const RU = 'RU';
+    public const TR = 'TR';
 
-    const TR = 'TR';
+    public const UA = 'UA';
 
-    const UA = 'UA';
+    public const KZ = 'KZ';
 
-    const KZ = 'KZ';
+    public const BY = 'BY';
 
-    const BY = 'BY';
-
-    const US = 'US';
-
-
+    public const US = 'US';
 }
-

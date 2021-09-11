@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,31 +9,27 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class SmartAdTargetFieldEnum
 {
+    public const ID = 'Id';
 
-    const ID = 'Id';
+    public const AD_GROUP_ID = 'AdGroupId';
 
-    const AD_GROUP_ID = 'AdGroupId';
+    public const CAMPAIGN_ID = 'CampaignId';
 
-    const CAMPAIGN_ID = 'CampaignId';
+    public const NAME = 'Name';
 
-    const NAME = 'Name';
+    public const AVERAGE_CPC = 'AverageCpc';
 
-    const AVERAGE_CPC = 'AverageCpc';
+    public const AVERAGE_CPA = 'AverageCpa';
 
-    const AVERAGE_CPA = 'AverageCpa';
+    public const STRATEGY_PRIORITY = 'StrategyPriority';
 
-    const STRATEGY_PRIORITY = 'StrategyPriority';
+    public const CONDITIONS = 'Conditions';
 
-    const CONDITIONS = 'Conditions';
+    public const CONDITION_TYPE = 'ConditionType';
 
-    const CONDITION_TYPE = 'ConditionType';
+    public const STATE = 'State';
 
-    const STATE = 'State';
+    public const AUDIENCE = 'Audience';
 
-    const AUDIENCE = 'Audience';
-
-    const AVAILABLE_ITEMS_ONLY = 'AvailableItemsOnly';
-
-
+    public const AVAILABLE_ITEMS_ONLY = 'AvailableItemsOnly';
 }
-

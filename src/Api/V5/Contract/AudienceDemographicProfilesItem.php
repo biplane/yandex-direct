@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AudienceDemographicProfilesItem
 {
-
     protected $Id = null;
 
     protected $Type = null;
@@ -18,20 +19,16 @@ class AudienceDemographicProfilesItem
 
     /**
      * Creates a new instance of AudienceDemographicProfilesItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Id.
-     *
-     * @return int
      */
-    public function getId()
+    public function getId(): int
     {
         return $this->Id;
     }
@@ -39,10 +36,9 @@ class AudienceDemographicProfilesItem
     /**
      * Sets Id.
      *
-     * @param int $value
      * @return $this
      */
-    public function setId($value)
+    public function setId(int $value)
     {
         $this->Id = $value;
 
@@ -51,10 +47,8 @@ class AudienceDemographicProfilesItem
 
     /**
      * Gets Type.
-     *
-     * @return string
      */
-    public function getType()
+    public function getType(): string
     {
         return $this->Type;
     }
@@ -62,10 +56,9 @@ class AudienceDemographicProfilesItem
     /**
      * Sets Type.
      *
-     * @param string $value
      * @return $this
      */
-    public function setType($value)
+    public function setType(string $value)
     {
         $this->Type = $value;
 
@@ -74,10 +67,8 @@ class AudienceDemographicProfilesItem
 
     /**
      * Gets Name.
-     *
-     * @return string
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->Name;
     }
@@ -85,10 +76,9 @@ class AudienceDemographicProfilesItem
     /**
      * Sets Name.
      *
-     * @param string $value
      * @return $this
      */
-    public function setName($value)
+    public function setName(string $value)
     {
         $this->Name = $value;
 
@@ -97,10 +87,8 @@ class AudienceDemographicProfilesItem
 
     /**
      * Gets Description.
-     *
-     * @return string
      */
-    public function getDescription()
+    public function getDescription(): string
     {
         return $this->Description;
     }
@@ -108,16 +96,12 @@ class AudienceDemographicProfilesItem
     /**
      * Sets Description.
      *
-     * @param string $value
      * @return $this
      */
-    public function setDescription($value)
+    public function setDescription(string $value)
     {
         $this->Description = $value;
 
         return $this;
     }
-
-
 }
-

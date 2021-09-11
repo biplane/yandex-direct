@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class SmartCampaignBase
 {
-
 //    Can be omit.
 //    protected $CounterId = null;
 
@@ -16,31 +17,26 @@ class SmartCampaignBase
 
     /**
      * Creates a new instance of SmartCampaignBase.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets CounterId.
-     *
-     * @return int|null
      */
-    public function getCounterId()
+    public function getCounterId(): ?int
     {
-        return isset($this->CounterId) ? $this->CounterId : null;
+        return $this->CounterId ?? null;
     }
 
     /**
      * Sets CounterId.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setCounterId($value = null)
+    public function setCounterId(?int $value = null)
     {
         $this->CounterId = $value;
 
@@ -50,28 +46,24 @@ class SmartCampaignBase
     /**
      * Gets AttributionModel.
      *
-     * @return string|null
      * @see AttributionModelEnum
      */
-    public function getAttributionModel()
+    public function getAttributionModel(): ?string
     {
-        return isset($this->AttributionModel) ? $this->AttributionModel : null;
+        return $this->AttributionModel ?? null;
     }
 
     /**
      * Sets AttributionModel.
      *
-     * @param string|null $value
-     * @return $this
      * @see AttributionModelEnum
+     *
+     * @return $this
      */
-    public function setAttributionModel($value = null)
+    public function setAttributionModel(?string $value = null)
     {
         $this->AttributionModel = $value;
 
         return $this;
     }
-
-
 }
-

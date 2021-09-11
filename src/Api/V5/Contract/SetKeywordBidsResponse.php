@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,16 +9,13 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class SetKeywordBidsResponse
 {
-
 //    Can be omit.
 //    protected $SetResults = null;
 
     /**
      * Creates a new instance of SetKeywordBidsResponse.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -26,24 +25,22 @@ class SetKeywordBidsResponse
      *
      * @return KeywordBidActionResult[]|null
      */
-    public function getSetResults()
+    public function getSetResults(): ?array
     {
-        return isset($this->SetResults) ? $this->SetResults : null;
+        return $this->SetResults ?? null;
     }
 
     /**
      * Sets SetResults.
      *
      * @param KeywordBidActionResult[]|null $value
+     *
      * @return $this
      */
-    public function setSetResults(array $value = null)
+    public function setSetResults(?array $value = null)
     {
         $this->SetResults = $value;
 
         return $this;
     }
-
-
 }
-

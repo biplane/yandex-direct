@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,11 +9,7 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class ServingStatusEnum
 {
+    public const ELIGIBLE = 'ELIGIBLE';
 
-    const ELIGIBLE = 'ELIGIBLE';
-
-    const RARELY_SERVED = 'RARELY_SERVED';
-
-
+    public const RARELY_SERVED = 'RARELY_SERVED';
 }
-

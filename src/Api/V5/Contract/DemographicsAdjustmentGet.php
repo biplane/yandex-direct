@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class DemographicsAdjustmentGet
 {
-
 //    Can be omit.
 //    protected $Gender = null;
 
@@ -22,10 +23,8 @@ class DemographicsAdjustmentGet
 
     /**
      * Creates a new instance of DemographicsAdjustmentGet.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -33,22 +32,21 @@ class DemographicsAdjustmentGet
     /**
      * Gets Gender.
      *
-     * @return string|null
      * @see GenderEnum
      */
-    public function getGender()
+    public function getGender(): ?string
     {
-        return isset($this->Gender) ? $this->Gender : null;
+        return $this->Gender ?? null;
     }
 
     /**
      * Sets Gender.
      *
-     * @param string|null $value
-     * @return $this
      * @see GenderEnum
+     *
+     * @return $this
      */
-    public function setGender($value = null)
+    public function setGender(?string $value = null)
     {
         $this->Gender = $value;
 
@@ -58,22 +56,21 @@ class DemographicsAdjustmentGet
     /**
      * Gets Age.
      *
-     * @return string|null
      * @see AgeRangeEnum
      */
-    public function getAge()
+    public function getAge(): ?string
     {
-        return isset($this->Age) ? $this->Age : null;
+        return $this->Age ?? null;
     }
 
     /**
      * Sets Age.
      *
-     * @param string|null $value
-     * @return $this
      * @see AgeRangeEnum
+     *
+     * @return $this
      */
-    public function setAge($value = null)
+    public function setAge(?string $value = null)
     {
         $this->Age = $value;
 
@@ -82,21 +79,18 @@ class DemographicsAdjustmentGet
 
     /**
      * Gets BidModifier.
-     *
-     * @return int|null
      */
-    public function getBidModifier()
+    public function getBidModifier(): ?int
     {
-        return isset($this->BidModifier) ? $this->BidModifier : null;
+        return $this->BidModifier ?? null;
     }
 
     /**
      * Sets BidModifier.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setBidModifier($value = null)
+    public function setBidModifier(?int $value = null)
     {
         $this->BidModifier = $value;
 
@@ -106,28 +100,24 @@ class DemographicsAdjustmentGet
     /**
      * Gets Enabled.
      *
-     * @return string|null
      * @see YesNoEnum
      */
-    public function getEnabled()
+    public function getEnabled(): ?string
     {
-        return isset($this->Enabled) ? $this->Enabled : null;
+        return $this->Enabled ?? null;
     }
 
     /**
      * Sets Enabled.
      *
-     * @param string|null $value
-     * @return $this
      * @see YesNoEnum
+     *
+     * @return $this
      */
-    public function setEnabled($value = null)
+    public function setEnabled(?string $value = null)
     {
         $this->Enabled = $value;
 
         return $this;
     }
-
-
 }
-

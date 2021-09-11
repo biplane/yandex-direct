@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class RetargetingSelectionCriteria
 {
-
     protected $RetargetingConditionIDS = null;
 
     protected $RetargetingIDS = null;
@@ -16,10 +17,8 @@ class RetargetingSelectionCriteria
 
     /**
      * Creates a new instance of RetargetingSelectionCriteria.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -29,7 +28,7 @@ class RetargetingSelectionCriteria
      *
      * @return int[]|null
      */
-    public function getRetargetingConditionIDS()
+    public function getRetargetingConditionIDS(): ?array
     {
         return $this->RetargetingConditionIDS;
     }
@@ -38,9 +37,10 @@ class RetargetingSelectionCriteria
      * Sets RetargetingConditionIDS.
      *
      * @param int[]|null $value
+     *
      * @return $this
      */
-    public function setRetargetingConditionIDS(array $value = null)
+    public function setRetargetingConditionIDS(?array $value = null)
     {
         $this->RetargetingConditionIDS = $value;
 
@@ -52,7 +52,7 @@ class RetargetingSelectionCriteria
      *
      * @return int[]|null
      */
-    public function getRetargetingIDS()
+    public function getRetargetingIDS(): ?array
     {
         return $this->RetargetingIDS;
     }
@@ -61,9 +61,10 @@ class RetargetingSelectionCriteria
      * Sets RetargetingIDS.
      *
      * @param int[]|null $value
+     *
      * @return $this
      */
-    public function setRetargetingIDS(array $value = null)
+    public function setRetargetingIDS(?array $value = null)
     {
         $this->RetargetingIDS = $value;
 
@@ -75,7 +76,7 @@ class RetargetingSelectionCriteria
      *
      * @return int[]|null
      */
-    public function getAdIDS()
+    public function getAdIDS(): ?array
     {
         return $this->AdIDS;
     }
@@ -84,15 +85,13 @@ class RetargetingSelectionCriteria
      * Sets AdIDS.
      *
      * @param int[]|null $value
+     *
      * @return $this
      */
-    public function setAdIDS(array $value = null)
+    public function setAdIDS(?array $value = null)
     {
         $this->AdIDS = $value;
 
         return $this;
     }
-
-
 }
-

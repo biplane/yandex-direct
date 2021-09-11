@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,16 +9,13 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class GetCampaignsResponse extends GetResponseGeneral
 {
-
 //    Can be omit.
 //    protected $Campaigns = null;
 
     /**
      * Creates a new instance of GetCampaignsResponse.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -26,24 +25,22 @@ class GetCampaignsResponse extends GetResponseGeneral
      *
      * @return CampaignGetItem[]|null
      */
-    public function getCampaigns()
+    public function getCampaigns(): ?array
     {
-        return isset($this->Campaigns) ? $this->Campaigns : null;
+        return $this->Campaigns ?? null;
     }
 
     /**
      * Sets Campaigns.
      *
      * @param CampaignGetItem[]|null $value
+     *
      * @return $this
      */
-    public function setCampaigns(array $value = null)
+    public function setCampaigns(?array $value = null)
     {
         $this->Campaigns = $value;
 
         return $this;
     }
-
-
 }
-

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class AdImageResponse
 {
-
     protected $AdImages = null;
 
     protected $AdImageUploads = null;
@@ -20,10 +21,8 @@ class AdImageResponse
 
     /**
      * Creates a new instance of AdImageResponse.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -33,7 +32,7 @@ class AdImageResponse
      *
      * @return AdImage[]|null
      */
-    public function getAdImages()
+    public function getAdImages(): ?array
     {
         return $this->AdImages;
     }
@@ -42,9 +41,10 @@ class AdImageResponse
      * Sets AdImages.
      *
      * @param AdImage[]|null $value
+     *
      * @return $this
      */
-    public function setAdImages(array $value = null)
+    public function setAdImages(?array $value = null)
     {
         $this->AdImages = $value;
 
@@ -56,7 +56,7 @@ class AdImageResponse
      *
      * @return AdImageUpload[]|null
      */
-    public function getAdImageUploads()
+    public function getAdImageUploads(): ?array
     {
         return $this->AdImageUploads;
     }
@@ -65,9 +65,10 @@ class AdImageResponse
      * Sets AdImageUploads.
      *
      * @param AdImageUpload[]|null $value
+     *
      * @return $this
      */
-    public function setAdImageUploads(array $value = null)
+    public function setAdImageUploads(?array $value = null)
     {
         $this->AdImageUploads = $value;
 
@@ -79,7 +80,7 @@ class AdImageResponse
      *
      * @return AdImageActionResult[]|null
      */
-    public function getActionsResult()
+    public function getActionsResult(): ?array
     {
         return $this->ActionsResult;
     }
@@ -88,9 +89,10 @@ class AdImageResponse
      * Sets ActionsResult.
      *
      * @param AdImageActionResult[]|null $value
+     *
      * @return $this
      */
-    public function setActionsResult(array $value = null)
+    public function setActionsResult(?array $value = null)
     {
         $this->ActionsResult = $value;
 
@@ -102,7 +104,7 @@ class AdImageResponse
      *
      * @return AdImageLimit[]|null
      */
-    public function getAdImageLimits()
+    public function getAdImageLimits(): ?array
     {
         return $this->AdImageLimits;
     }
@@ -111,9 +113,10 @@ class AdImageResponse
      * Sets AdImageLimits.
      *
      * @param AdImageLimit[]|null $value
+     *
      * @return $this
      */
-    public function setAdImageLimits(array $value = null)
+    public function setAdImageLimits(?array $value = null)
     {
         $this->AdImageLimits = $value;
 
@@ -122,10 +125,8 @@ class AdImageResponse
 
     /**
      * Gets TotalObjectsCount.
-     *
-     * @return int|null
      */
-    public function getTotalObjectsCount()
+    public function getTotalObjectsCount(): ?int
     {
         return $this->TotalObjectsCount;
     }
@@ -133,16 +134,12 @@ class AdImageResponse
     /**
      * Sets TotalObjectsCount.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setTotalObjectsCount($value = null)
+    public function setTotalObjectsCount(?int $value = null)
     {
         $this->TotalObjectsCount = $value;
 
         return $this;
     }
-
-
 }
-

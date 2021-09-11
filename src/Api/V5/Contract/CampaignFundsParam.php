@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class CampaignFundsParam
 {
-
     protected $Sum = null;
 
     protected $Balance = null;
@@ -19,20 +20,16 @@ class CampaignFundsParam
 
     /**
      * Creates a new instance of CampaignFundsParam.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Sum.
-     *
-     * @return int
      */
-    public function getSum()
+    public function getSum(): int
     {
         return $this->Sum;
     }
@@ -40,10 +37,9 @@ class CampaignFundsParam
     /**
      * Sets Sum.
      *
-     * @param int $value
      * @return $this
      */
-    public function setSum($value)
+    public function setSum(int $value)
     {
         $this->Sum = $value;
 
@@ -52,10 +48,8 @@ class CampaignFundsParam
 
     /**
      * Gets Balance.
-     *
-     * @return int
      */
-    public function getBalance()
+    public function getBalance(): int
     {
         return $this->Balance;
     }
@@ -63,10 +57,9 @@ class CampaignFundsParam
     /**
      * Sets Balance.
      *
-     * @param int $value
      * @return $this
      */
-    public function setBalance($value)
+    public function setBalance(int $value)
     {
         $this->Balance = $value;
 
@@ -75,10 +68,8 @@ class CampaignFundsParam
 
     /**
      * Gets BalanceBonus.
-     *
-     * @return int
      */
-    public function getBalanceBonus()
+    public function getBalanceBonus(): int
     {
         return $this->BalanceBonus;
     }
@@ -86,10 +77,9 @@ class CampaignFundsParam
     /**
      * Sets BalanceBonus.
      *
-     * @param int $value
      * @return $this
      */
-    public function setBalanceBonus($value)
+    public function setBalanceBonus(int $value)
     {
         $this->BalanceBonus = $value;
 
@@ -98,27 +88,21 @@ class CampaignFundsParam
 
     /**
      * Gets SumAvailableForTransfer.
-     *
-     * @return int|null
      */
-    public function getSumAvailableForTransfer()
+    public function getSumAvailableForTransfer(): ?int
     {
-        return isset($this->SumAvailableForTransfer) ? $this->SumAvailableForTransfer : null;
+        return $this->SumAvailableForTransfer ?? null;
     }
 
     /**
      * Sets SumAvailableForTransfer.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setSumAvailableForTransfer($value = null)
+    public function setSumAvailableForTransfer(?int $value = null)
     {
         $this->SumAvailableForTransfer = $value;
 
         return $this;
     }
-
-
 }
-

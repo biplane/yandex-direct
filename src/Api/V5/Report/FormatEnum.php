@@ -1,13 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Report;
 
-/**
- * FormatEnum.
- *
- * @author Denis Vasilev
- */
 final class FormatEnum
 {
-    const TSV = 'TSV';
+    public const TSV = 'TSV';
 }

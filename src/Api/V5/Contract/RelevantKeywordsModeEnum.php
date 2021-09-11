@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,13 +9,9 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class RelevantKeywordsModeEnum
 {
+    public const MINIMUM = 'MINIMUM';
 
-    const MINIMUM = 'MINIMUM';
+    public const OPTIMAL = 'OPTIMAL';
 
-    const OPTIMAL = 'OPTIMAL';
-
-    const MAXIMUM = 'MAXIMUM';
-
-
+    public const MAXIMUM = 'MAXIMUM';
 }
-

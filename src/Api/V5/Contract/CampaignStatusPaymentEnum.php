@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,11 +9,7 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class CampaignStatusPaymentEnum
 {
+    public const DISALLOWED = 'DISALLOWED';
 
-    const DISALLOWED = 'DISALLOWED';
-
-    const ALLOWED = 'ALLOWED';
-
-
+    public const ALLOWED = 'ALLOWED';
 }
-

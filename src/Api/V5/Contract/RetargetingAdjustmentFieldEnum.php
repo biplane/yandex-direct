@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,15 +9,11 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class RetargetingAdjustmentFieldEnum
 {
+    public const RETARGETING_CONDITION_ID = 'RetargetingConditionId';
 
-    const RETARGETING_CONDITION_ID = 'RetargetingConditionId';
+    public const BID_MODIFIER = 'BidModifier';
 
-    const BID_MODIFIER = 'BidModifier';
+    public const ACCESSIBLE = 'Accessible';
 
-    const ACCESSIBLE = 'Accessible';
-
-    const ENABLED = 'Enabled';
-
-
+    public const ENABLED = 'Enabled';
 }
-

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class TextCampaignStrategyBase
 {
-
 //    Can be omit.
 //    protected $WbMaximumClicks = null;
 
@@ -37,31 +38,26 @@ class TextCampaignStrategyBase
 
     /**
      * Creates a new instance of TextCampaignStrategyBase.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets WbMaximumClicks.
-     *
-     * @return StrategyMaximumClicks|null
      */
-    public function getWbMaximumClicks()
+    public function getWbMaximumClicks(): ?StrategyMaximumClicks
     {
-        return isset($this->WbMaximumClicks) ? $this->WbMaximumClicks : null;
+        return $this->WbMaximumClicks ?? null;
     }
 
     /**
      * Sets WbMaximumClicks.
      *
-     * @param StrategyMaximumClicks|null $value
      * @return $this
      */
-    public function setWbMaximumClicks(StrategyMaximumClicks $value = null)
+    public function setWbMaximumClicks(?StrategyMaximumClicks $value = null)
     {
         $this->WbMaximumClicks = $value;
 
@@ -70,21 +66,18 @@ class TextCampaignStrategyBase
 
     /**
      * Gets WbMaximumConversionRate.
-     *
-     * @return StrategyMaximumConversionRate|null
      */
-    public function getWbMaximumConversionRate()
+    public function getWbMaximumConversionRate(): ?StrategyMaximumConversionRate
     {
-        return isset($this->WbMaximumConversionRate) ? $this->WbMaximumConversionRate : null;
+        return $this->WbMaximumConversionRate ?? null;
     }
 
     /**
      * Sets WbMaximumConversionRate.
      *
-     * @param StrategyMaximumConversionRate|null $value
      * @return $this
      */
-    public function setWbMaximumConversionRate(StrategyMaximumConversionRate $value = null)
+    public function setWbMaximumConversionRate(?StrategyMaximumConversionRate $value = null)
     {
         $this->WbMaximumConversionRate = $value;
 
@@ -93,21 +86,18 @@ class TextCampaignStrategyBase
 
     /**
      * Gets AverageCpc.
-     *
-     * @return StrategyAverageCpc|null
      */
-    public function getAverageCpc()
+    public function getAverageCpc(): ?StrategyAverageCpc
     {
-        return isset($this->AverageCpc) ? $this->AverageCpc : null;
+        return $this->AverageCpc ?? null;
     }
 
     /**
      * Sets AverageCpc.
      *
-     * @param StrategyAverageCpc|null $value
      * @return $this
      */
-    public function setAverageCpc(StrategyAverageCpc $value = null)
+    public function setAverageCpc(?StrategyAverageCpc $value = null)
     {
         $this->AverageCpc = $value;
 
@@ -116,21 +106,18 @@ class TextCampaignStrategyBase
 
     /**
      * Gets AverageCpa.
-     *
-     * @return StrategyAverageCpa|null
      */
-    public function getAverageCpa()
+    public function getAverageCpa(): ?StrategyAverageCpa
     {
-        return isset($this->AverageCpa) ? $this->AverageCpa : null;
+        return $this->AverageCpa ?? null;
     }
 
     /**
      * Sets AverageCpa.
      *
-     * @param StrategyAverageCpa|null $value
      * @return $this
      */
-    public function setAverageCpa(StrategyAverageCpa $value = null)
+    public function setAverageCpa(?StrategyAverageCpa $value = null)
     {
         $this->AverageCpa = $value;
 
@@ -139,21 +126,18 @@ class TextCampaignStrategyBase
 
     /**
      * Gets PayForConversion.
-     *
-     * @return StrategyPayForConversion|null
      */
-    public function getPayForConversion()
+    public function getPayForConversion(): ?StrategyPayForConversion
     {
-        return isset($this->PayForConversion) ? $this->PayForConversion : null;
+        return $this->PayForConversion ?? null;
     }
 
     /**
      * Sets PayForConversion.
      *
-     * @param StrategyPayForConversion|null $value
      * @return $this
      */
-    public function setPayForConversion(StrategyPayForConversion $value = null)
+    public function setPayForConversion(?StrategyPayForConversion $value = null)
     {
         $this->PayForConversion = $value;
 
@@ -162,21 +146,18 @@ class TextCampaignStrategyBase
 
     /**
      * Gets WeeklyClickPackage.
-     *
-     * @return StrategyWeeklyClickPackage|null
      */
-    public function getWeeklyClickPackage()
+    public function getWeeklyClickPackage(): ?StrategyWeeklyClickPackage
     {
-        return isset($this->WeeklyClickPackage) ? $this->WeeklyClickPackage : null;
+        return $this->WeeklyClickPackage ?? null;
     }
 
     /**
      * Sets WeeklyClickPackage.
      *
-     * @param StrategyWeeklyClickPackage|null $value
      * @return $this
      */
-    public function setWeeklyClickPackage(StrategyWeeklyClickPackage $value = null)
+    public function setWeeklyClickPackage(?StrategyWeeklyClickPackage $value = null)
     {
         $this->WeeklyClickPackage = $value;
 
@@ -185,21 +166,18 @@ class TextCampaignStrategyBase
 
     /**
      * Gets AverageRoi.
-     *
-     * @return StrategyAverageRoi|null
      */
-    public function getAverageRoi()
+    public function getAverageRoi(): ?StrategyAverageRoi
     {
-        return isset($this->AverageRoi) ? $this->AverageRoi : null;
+        return $this->AverageRoi ?? null;
     }
 
     /**
      * Sets AverageRoi.
      *
-     * @param StrategyAverageRoi|null $value
      * @return $this
      */
-    public function setAverageRoi(StrategyAverageRoi $value = null)
+    public function setAverageRoi(?StrategyAverageRoi $value = null)
     {
         $this->AverageRoi = $value;
 
@@ -208,21 +186,18 @@ class TextCampaignStrategyBase
 
     /**
      * Gets AverageCrr.
-     *
-     * @return StrategyAverageCrr|null
      */
-    public function getAverageCrr()
+    public function getAverageCrr(): ?StrategyAverageCrr
     {
-        return isset($this->AverageCrr) ? $this->AverageCrr : null;
+        return $this->AverageCrr ?? null;
     }
 
     /**
      * Sets AverageCrr.
      *
-     * @param StrategyAverageCrr|null $value
      * @return $this
      */
-    public function setAverageCrr(StrategyAverageCrr $value = null)
+    public function setAverageCrr(?StrategyAverageCrr $value = null)
     {
         $this->AverageCrr = $value;
 
@@ -231,27 +206,21 @@ class TextCampaignStrategyBase
 
     /**
      * Gets PayForConversionCrr.
-     *
-     * @return StrategyPayForConversionCrr|null
      */
-    public function getPayForConversionCrr()
+    public function getPayForConversionCrr(): ?StrategyPayForConversionCrr
     {
-        return isset($this->PayForConversionCrr) ? $this->PayForConversionCrr : null;
+        return $this->PayForConversionCrr ?? null;
     }
 
     /**
      * Sets PayForConversionCrr.
      *
-     * @param StrategyPayForConversionCrr|null $value
      * @return $this
      */
-    public function setPayForConversionCrr(StrategyPayForConversionCrr $value = null)
+    public function setPayForConversionCrr(?StrategyPayForConversionCrr $value = null)
     {
         $this->PayForConversionCrr = $value;
 
         return $this;
     }
-
-
 }
-

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class MobileAppCampaignStrategyAddBase
 {
-
 //    Can be omit.
 //    protected $WbMaximumClicks = null;
 
@@ -28,31 +29,26 @@ class MobileAppCampaignStrategyAddBase
 
     /**
      * Creates a new instance of MobileAppCampaignStrategyAddBase.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets WbMaximumClicks.
-     *
-     * @return StrategyMaximumClicksAdd|null
      */
-    public function getWbMaximumClicks()
+    public function getWbMaximumClicks(): ?StrategyMaximumClicksAdd
     {
-        return isset($this->WbMaximumClicks) ? $this->WbMaximumClicks : null;
+        return $this->WbMaximumClicks ?? null;
     }
 
     /**
      * Sets WbMaximumClicks.
      *
-     * @param StrategyMaximumClicksAdd|null $value
      * @return $this
      */
-    public function setWbMaximumClicks(StrategyMaximumClicksAdd $value = null)
+    public function setWbMaximumClicks(?StrategyMaximumClicksAdd $value = null)
     {
         $this->WbMaximumClicks = $value;
 
@@ -61,21 +57,18 @@ class MobileAppCampaignStrategyAddBase
 
     /**
      * Gets WbMaximumAppInstalls.
-     *
-     * @return StrategyMaximumAppInstallsAdd|null
      */
-    public function getWbMaximumAppInstalls()
+    public function getWbMaximumAppInstalls(): ?StrategyMaximumAppInstallsAdd
     {
-        return isset($this->WbMaximumAppInstalls) ? $this->WbMaximumAppInstalls : null;
+        return $this->WbMaximumAppInstalls ?? null;
     }
 
     /**
      * Sets WbMaximumAppInstalls.
      *
-     * @param StrategyMaximumAppInstallsAdd|null $value
      * @return $this
      */
-    public function setWbMaximumAppInstalls(StrategyMaximumAppInstallsAdd $value = null)
+    public function setWbMaximumAppInstalls(?StrategyMaximumAppInstallsAdd $value = null)
     {
         $this->WbMaximumAppInstalls = $value;
 
@@ -84,21 +77,18 @@ class MobileAppCampaignStrategyAddBase
 
     /**
      * Gets AverageCpc.
-     *
-     * @return StrategyAverageCpcAdd|null
      */
-    public function getAverageCpc()
+    public function getAverageCpc(): ?StrategyAverageCpcAdd
     {
-        return isset($this->AverageCpc) ? $this->AverageCpc : null;
+        return $this->AverageCpc ?? null;
     }
 
     /**
      * Sets AverageCpc.
      *
-     * @param StrategyAverageCpcAdd|null $value
      * @return $this
      */
-    public function setAverageCpc(StrategyAverageCpcAdd $value = null)
+    public function setAverageCpc(?StrategyAverageCpcAdd $value = null)
     {
         $this->AverageCpc = $value;
 
@@ -107,21 +97,18 @@ class MobileAppCampaignStrategyAddBase
 
     /**
      * Gets AverageCpi.
-     *
-     * @return StrategyAverageCpiAdd|null
      */
-    public function getAverageCpi()
+    public function getAverageCpi(): ?StrategyAverageCpiAdd
     {
-        return isset($this->AverageCpi) ? $this->AverageCpi : null;
+        return $this->AverageCpi ?? null;
     }
 
     /**
      * Sets AverageCpi.
      *
-     * @param StrategyAverageCpiAdd|null $value
      * @return $this
      */
-    public function setAverageCpi(StrategyAverageCpiAdd $value = null)
+    public function setAverageCpi(?StrategyAverageCpiAdd $value = null)
     {
         $this->AverageCpi = $value;
 
@@ -130,21 +117,18 @@ class MobileAppCampaignStrategyAddBase
 
     /**
      * Gets WeeklyClickPackage.
-     *
-     * @return StrategyWeeklyClickPackageAdd|null
      */
-    public function getWeeklyClickPackage()
+    public function getWeeklyClickPackage(): ?StrategyWeeklyClickPackageAdd
     {
-        return isset($this->WeeklyClickPackage) ? $this->WeeklyClickPackage : null;
+        return $this->WeeklyClickPackage ?? null;
     }
 
     /**
      * Sets WeeklyClickPackage.
      *
-     * @param StrategyWeeklyClickPackageAdd|null $value
      * @return $this
      */
-    public function setWeeklyClickPackage(StrategyWeeklyClickPackageAdd $value = null)
+    public function setWeeklyClickPackage(?StrategyWeeklyClickPackageAdd $value = null)
     {
         $this->WeeklyClickPackage = $value;
 
@@ -153,27 +137,21 @@ class MobileAppCampaignStrategyAddBase
 
     /**
      * Gets PayForInstall.
-     *
-     * @return StrategyPayForInstallAdd|null
      */
-    public function getPayForInstall()
+    public function getPayForInstall(): ?StrategyPayForInstallAdd
     {
-        return isset($this->PayForInstall) ? $this->PayForInstall : null;
+        return $this->PayForInstall ?? null;
     }
 
     /**
      * Sets PayForInstall.
      *
-     * @param StrategyPayForInstallAdd|null $value
      * @return $this
      */
-    public function setPayForInstall(StrategyPayForInstallAdd $value = null)
+    public function setPayForInstall(?StrategyPayForInstallAdd $value = null)
     {
         $this->PayForInstall = $value;
 
         return $this;
     }
-
-
 }
-

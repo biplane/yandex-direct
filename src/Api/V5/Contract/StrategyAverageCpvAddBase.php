@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,27 +9,22 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class StrategyAverageCpvAddBase
 {
-
     protected $AverageCpv = null;
 
     protected $SpendLimit = null;
 
     /**
      * Creates a new instance of StrategyAverageCpvAddBase.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets AverageCpv.
-     *
-     * @return int
      */
-    public function getAverageCpv()
+    public function getAverageCpv(): int
     {
         return $this->AverageCpv;
     }
@@ -35,10 +32,9 @@ class StrategyAverageCpvAddBase
     /**
      * Sets AverageCpv.
      *
-     * @param int $value
      * @return $this
      */
-    public function setAverageCpv($value)
+    public function setAverageCpv(int $value)
     {
         $this->AverageCpv = $value;
 
@@ -47,10 +43,8 @@ class StrategyAverageCpvAddBase
 
     /**
      * Gets SpendLimit.
-     *
-     * @return int
      */
-    public function getSpendLimit()
+    public function getSpendLimit(): int
     {
         return $this->SpendLimit;
     }
@@ -58,16 +52,12 @@ class StrategyAverageCpvAddBase
     /**
      * Sets SpendLimit.
      *
-     * @param int $value
      * @return $this
      */
-    public function setSpendLimit($value)
+    public function setSpendLimit(int $value)
     {
         $this->SpendLimit = $value;
 
         return $this;
     }
-
-
 }
-

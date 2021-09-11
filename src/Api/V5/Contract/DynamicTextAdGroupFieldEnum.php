@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,11 +9,7 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class DynamicTextAdGroupFieldEnum
 {
+    public const DOMAIN_URL = 'DomainUrl';
 
-    const DOMAIN_URL = 'DomainUrl';
-
-    const DOMAIN_URL_PROCESSING_STATUS = 'DomainUrlProcessingStatus';
-
-
+    public const DOMAIN_URL_PROCESSING_STATUS = 'DomainUrlProcessingStatus';
 }
-

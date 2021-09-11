@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,27 +9,22 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class WordstatItem
 {
-
     protected $Phrase = null;
 
     protected $Shows = null;
 
     /**
      * Creates a new instance of WordstatItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Phrase.
-     *
-     * @return string
      */
-    public function getPhrase()
+    public function getPhrase(): string
     {
         return $this->Phrase;
     }
@@ -35,10 +32,9 @@ class WordstatItem
     /**
      * Sets Phrase.
      *
-     * @param string $value
      * @return $this
      */
-    public function setPhrase($value)
+    public function setPhrase(string $value)
     {
         $this->Phrase = $value;
 
@@ -47,10 +43,8 @@ class WordstatItem
 
     /**
      * Gets Shows.
-     *
-     * @return int
      */
-    public function getShows()
+    public function getShows(): int
     {
         return $this->Shows;
     }
@@ -58,16 +52,12 @@ class WordstatItem
     /**
      * Sets Shows.
      *
-     * @param int $value
      * @return $this
      */
-    public function setShows($value)
+    public function setShows(int $value)
     {
         $this->Shows = $value;
 
         return $this;
     }
-
-
 }
-

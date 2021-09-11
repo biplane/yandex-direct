@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class AdImageAssociation
 {
-
     protected $AdID = null;
 
     protected $AdImageHash = null;
@@ -22,20 +23,16 @@ class AdImageAssociation
 
     /**
      * Creates a new instance of AdImageAssociation.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets AdID.
-     *
-     * @return int
      */
-    public function getAdID()
+    public function getAdID(): int
     {
         return $this->AdID;
     }
@@ -43,10 +40,9 @@ class AdImageAssociation
     /**
      * Sets AdID.
      *
-     * @param int $value
      * @return $this
      */
-    public function setAdID($value)
+    public function setAdID(int $value)
     {
         $this->AdID = $value;
 
@@ -55,10 +51,8 @@ class AdImageAssociation
 
     /**
      * Gets AdImageHash.
-     *
-     * @return string|null
      */
-    public function getAdImageHash()
+    public function getAdImageHash(): ?string
     {
         return $this->AdImageHash;
     }
@@ -66,10 +60,9 @@ class AdImageAssociation
     /**
      * Sets AdImageHash.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setAdImageHash($value = null)
+    public function setAdImageHash(?string $value = null)
     {
         $this->AdImageHash = $value;
 
@@ -78,10 +71,8 @@ class AdImageAssociation
 
     /**
      * Gets Login.
-     *
-     * @return string|null
      */
-    public function getLogin()
+    public function getLogin(): ?string
     {
         return $this->Login;
     }
@@ -89,10 +80,9 @@ class AdImageAssociation
     /**
      * Sets Login.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setLogin($value = null)
+    public function setLogin(?string $value = null)
     {
         $this->Login = $value;
 
@@ -101,10 +91,8 @@ class AdImageAssociation
 
     /**
      * Gets CampaignID.
-     *
-     * @return int|null
      */
-    public function getCampaignID()
+    public function getCampaignID(): ?int
     {
         return $this->CampaignID;
     }
@@ -112,10 +100,9 @@ class AdImageAssociation
     /**
      * Sets CampaignID.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setCampaignID($value = null)
+    public function setCampaignID(?int $value = null)
     {
         $this->CampaignID = $value;
 
@@ -124,10 +111,8 @@ class AdImageAssociation
 
     /**
      * Gets StatusAdImageModerate.
-     *
-     * @return string|null
      */
-    public function getStatusAdImageModerate()
+    public function getStatusAdImageModerate(): ?string
     {
         return $this->StatusAdImageModerate;
     }
@@ -135,10 +120,9 @@ class AdImageAssociation
     /**
      * Sets StatusAdImageModerate.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setStatusAdImageModerate($value = null)
+    public function setStatusAdImageModerate(?string $value = null)
     {
         $this->StatusAdImageModerate = $value;
 
@@ -150,7 +134,7 @@ class AdImageAssociation
      *
      * @return RejectReason[]|null
      */
-    public function getModerateRejectionReasons()
+    public function getModerateRejectionReasons(): ?array
     {
         return $this->ModerateRejectionReasons;
     }
@@ -159,15 +143,13 @@ class AdImageAssociation
      * Sets ModerateRejectionReasons.
      *
      * @param RejectReason[]|null $value
+     *
      * @return $this
      */
-    public function setModerateRejectionReasons(array $value = null)
+    public function setModerateRejectionReasons(?array $value = null)
     {
         $this->ModerateRejectionReasons = $value;
 
         return $this;
     }
-
-
 }
-

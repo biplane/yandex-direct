@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class MobileAppAdGroupAdd
 {
-
     protected $StoreUrl = null;
 
     protected $TargetDeviceType = [];
@@ -18,20 +19,16 @@ class MobileAppAdGroupAdd
 
     /**
      * Creates a new instance of MobileAppAdGroupAdd.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets StoreUrl.
-     *
-     * @return string
      */
-    public function getStoreUrl()
+    public function getStoreUrl(): string
     {
         return $this->StoreUrl;
     }
@@ -39,10 +36,9 @@ class MobileAppAdGroupAdd
     /**
      * Sets StoreUrl.
      *
-     * @param string $value
      * @return $this
      */
-    public function setStoreUrl($value)
+    public function setStoreUrl(string $value)
     {
         $this->StoreUrl = $value;
 
@@ -52,10 +48,11 @@ class MobileAppAdGroupAdd
     /**
      * Gets TargetDeviceType.
      *
-     * @return string[]
      * @see TargetDeviceTypeEnum
+     *
+     * @return string[]
      */
-    public function getTargetDeviceType()
+    public function getTargetDeviceType(): array
     {
         return $this->TargetDeviceType;
     }
@@ -63,9 +60,11 @@ class MobileAppAdGroupAdd
     /**
      * Sets TargetDeviceType.
      *
-     * @param string[] $value
-     * @return $this
      * @see TargetDeviceTypeEnum
+     *
+     * @param string[] $value
+     *
+     * @return $this
      */
     public function setTargetDeviceType(array $value)
     {
@@ -77,10 +76,9 @@ class MobileAppAdGroupAdd
     /**
      * Gets TargetCarrier.
      *
-     * @return string
      * @see TargetCarrierEnum
      */
-    public function getTargetCarrier()
+    public function getTargetCarrier(): string
     {
         return $this->TargetCarrier;
     }
@@ -88,11 +86,11 @@ class MobileAppAdGroupAdd
     /**
      * Sets TargetCarrier.
      *
-     * @param string $value
-     * @return $this
      * @see TargetCarrierEnum
+     *
+     * @return $this
      */
-    public function setTargetCarrier($value)
+    public function setTargetCarrier(string $value)
     {
         $this->TargetCarrier = $value;
 
@@ -101,10 +99,8 @@ class MobileAppAdGroupAdd
 
     /**
      * Gets TargetOperatingSystemVersion.
-     *
-     * @return string
      */
-    public function getTargetOperatingSystemVersion()
+    public function getTargetOperatingSystemVersion(): string
     {
         return $this->TargetOperatingSystemVersion;
     }
@@ -112,16 +108,12 @@ class MobileAppAdGroupAdd
     /**
      * Sets TargetOperatingSystemVersion.
      *
-     * @param string $value
      * @return $this
      */
-    public function setTargetOperatingSystemVersion($value)
+    public function setTargetOperatingSystemVersion(string $value)
     {
         $this->TargetOperatingSystemVersion = $value;
 
         return $this;
     }
-
-
 }
-

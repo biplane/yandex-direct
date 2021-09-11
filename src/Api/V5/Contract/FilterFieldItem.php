@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class FilterFieldItem
 {
-
     protected $Name = null;
 
     protected $Type = null;
@@ -25,20 +26,16 @@ class FilterFieldItem
 
     /**
      * Creates a new instance of FilterFieldItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Name.
-     *
-     * @return string
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->Name;
     }
@@ -46,10 +43,9 @@ class FilterFieldItem
     /**
      * Sets Name.
      *
-     * @param string $value
      * @return $this
      */
-    public function setName($value)
+    public function setName(string $value)
     {
         $this->Name = $value;
 
@@ -59,10 +55,9 @@ class FilterFieldItem
     /**
      * Gets Type.
      *
-     * @return string
      * @see FilterFieldType
      */
-    public function getType()
+    public function getType(): string
     {
         return $this->Type;
     }
@@ -70,11 +65,11 @@ class FilterFieldItem
     /**
      * Sets Type.
      *
-     * @param string $value
-     * @return $this
      * @see FilterFieldType
+     *
+     * @return $this
      */
-    public function setType($value)
+    public function setType(string $value)
     {
         $this->Type = $value;
 
@@ -83,21 +78,18 @@ class FilterFieldItem
 
     /**
      * Gets EnumProps.
-     *
-     * @return EnumFilterFieldProps|null
      */
-    public function getEnumProps()
+    public function getEnumProps(): ?EnumFilterFieldProps
     {
-        return isset($this->EnumProps) ? $this->EnumProps : null;
+        return $this->EnumProps ?? null;
     }
 
     /**
      * Sets EnumProps.
      *
-     * @param EnumFilterFieldProps|null $value
      * @return $this
      */
-    public function setEnumProps(EnumFilterFieldProps $value = null)
+    public function setEnumProps(?EnumFilterFieldProps $value = null)
     {
         $this->EnumProps = $value;
 
@@ -106,21 +98,18 @@ class FilterFieldItem
 
     /**
      * Gets NumberProps.
-     *
-     * @return NumberFilterFieldProps|null
      */
-    public function getNumberProps()
+    public function getNumberProps(): ?NumberFilterFieldProps
     {
-        return isset($this->NumberProps) ? $this->NumberProps : null;
+        return $this->NumberProps ?? null;
     }
 
     /**
      * Sets NumberProps.
      *
-     * @param NumberFilterFieldProps|null $value
      * @return $this
      */
-    public function setNumberProps(NumberFilterFieldProps $value = null)
+    public function setNumberProps(?NumberFilterFieldProps $value = null)
     {
         $this->NumberProps = $value;
 
@@ -129,21 +118,18 @@ class FilterFieldItem
 
     /**
      * Gets StringProps.
-     *
-     * @return StringFilterFieldProps|null
      */
-    public function getStringProps()
+    public function getStringProps(): ?StringFilterFieldProps
     {
-        return isset($this->StringProps) ? $this->StringProps : null;
+        return $this->StringProps ?? null;
     }
 
     /**
      * Sets StringProps.
      *
-     * @param StringFilterFieldProps|null $value
      * @return $this
      */
-    public function setStringProps(StringFilterFieldProps $value = null)
+    public function setStringProps(?StringFilterFieldProps $value = null)
     {
         $this->StringProps = $value;
 
@@ -155,7 +141,7 @@ class FilterFieldItem
      *
      * @return FilterFieldOperator[]
      */
-    public function getOperators()
+    public function getOperators(): array
     {
         return $this->Operators;
     }
@@ -164,6 +150,7 @@ class FilterFieldItem
      * Sets Operators.
      *
      * @param FilterFieldOperator[] $value
+     *
      * @return $this
      */
     public function setOperators(array $value)
@@ -172,7 +159,4 @@ class FilterFieldItem
 
         return $this;
     }
-
-
 }
-

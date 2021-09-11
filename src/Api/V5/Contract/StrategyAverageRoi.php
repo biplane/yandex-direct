@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class StrategyAverageRoi
 {
-
 //    Can be omit.
 //    protected $ReserveReturn = null;
 
@@ -28,31 +29,26 @@ class StrategyAverageRoi
 
     /**
      * Creates a new instance of StrategyAverageRoi.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets ReserveReturn.
-     *
-     * @return int|null
      */
-    public function getReserveReturn()
+    public function getReserveReturn(): ?int
     {
-        return isset($this->ReserveReturn) ? $this->ReserveReturn : null;
+        return $this->ReserveReturn ?? null;
     }
 
     /**
      * Sets ReserveReturn.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setReserveReturn($value = null)
+    public function setReserveReturn(?int $value = null)
     {
         $this->ReserveReturn = $value;
 
@@ -61,21 +57,18 @@ class StrategyAverageRoi
 
     /**
      * Gets RoiCoef.
-     *
-     * @return int|null
      */
-    public function getRoiCoef()
+    public function getRoiCoef(): ?int
     {
-        return isset($this->RoiCoef) ? $this->RoiCoef : null;
+        return $this->RoiCoef ?? null;
     }
 
     /**
      * Sets RoiCoef.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setRoiCoef($value = null)
+    public function setRoiCoef(?int $value = null)
     {
         $this->RoiCoef = $value;
 
@@ -84,21 +77,18 @@ class StrategyAverageRoi
 
     /**
      * Gets GoalId.
-     *
-     * @return int|null
      */
-    public function getGoalId()
+    public function getGoalId(): ?int
     {
-        return isset($this->GoalId) ? $this->GoalId : null;
+        return $this->GoalId ?? null;
     }
 
     /**
      * Sets GoalId.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setGoalId($value = null)
+    public function setGoalId(?int $value = null)
     {
         $this->GoalId = $value;
 
@@ -107,21 +97,18 @@ class StrategyAverageRoi
 
     /**
      * Gets WeeklySpendLimit.
-     *
-     * @return int|null
      */
-    public function getWeeklySpendLimit()
+    public function getWeeklySpendLimit(): ?int
     {
-        return isset($this->WeeklySpendLimit) ? $this->WeeklySpendLimit : null;
+        return $this->WeeklySpendLimit ?? null;
     }
 
     /**
      * Sets WeeklySpendLimit.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setWeeklySpendLimit($value = null)
+    public function setWeeklySpendLimit(?int $value = null)
     {
         $this->WeeklySpendLimit = $value;
 
@@ -130,21 +117,18 @@ class StrategyAverageRoi
 
     /**
      * Gets BidCeiling.
-     *
-     * @return int|null
      */
-    public function getBidCeiling()
+    public function getBidCeiling(): ?int
     {
-        return isset($this->BidCeiling) ? $this->BidCeiling : null;
+        return $this->BidCeiling ?? null;
     }
 
     /**
      * Sets BidCeiling.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setBidCeiling($value = null)
+    public function setBidCeiling(?int $value = null)
     {
         $this->BidCeiling = $value;
 
@@ -153,27 +137,21 @@ class StrategyAverageRoi
 
     /**
      * Gets Profitability.
-     *
-     * @return int|null
      */
-    public function getProfitability()
+    public function getProfitability(): ?int
     {
-        return isset($this->Profitability) ? $this->Profitability : null;
+        return $this->Profitability ?? null;
     }
 
     /**
      * Sets Profitability.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setProfitability($value = null)
+    public function setProfitability(?int $value = null)
     {
         $this->Profitability = $value;
 
         return $this;
     }
-
-
 }
-

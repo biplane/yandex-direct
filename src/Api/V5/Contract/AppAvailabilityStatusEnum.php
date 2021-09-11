@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,13 +9,9 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AppAvailabilityStatusEnum
 {
+    public const UNPROCESSED = 'UNPROCESSED';
 
-    const UNPROCESSED = 'UNPROCESSED';
+    public const AVAILABLE = 'AVAILABLE';
 
-    const AVAILABLE = 'AVAILABLE';
-
-    const NOT_AVAILABLE = 'NOT_AVAILABLE';
-
-
+    public const NOT_AVAILABLE = 'NOT_AVAILABLE';
 }
-

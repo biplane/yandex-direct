@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,27 +9,22 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class GetSubClientsRequest
 {
-
     protected $Login = null;
 
     protected $Filter = null;
 
     /**
      * Creates a new instance of GetSubClientsRequest.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Login.
-     *
-     * @return string|null
      */
-    public function getLogin()
+    public function getLogin(): ?string
     {
         return $this->Login;
     }
@@ -35,10 +32,9 @@ class GetSubClientsRequest
     /**
      * Sets Login.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setLogin($value = null)
+    public function setLogin(?string $value = null)
     {
         $this->Login = $value;
 
@@ -47,10 +43,8 @@ class GetSubClientsRequest
 
     /**
      * Gets Filter.
-     *
-     * @return ClientFilter|null
      */
-    public function getFilter()
+    public function getFilter(): ?ClientFilter
     {
         return $this->Filter;
     }
@@ -58,16 +52,12 @@ class GetSubClientsRequest
     /**
      * Sets Filter.
      *
-     * @param ClientFilter|null $value
      * @return $this
      */
-    public function setFilter(ClientFilter $value = null)
+    public function setFilter(?ClientFilter $value = null)
     {
         $this->Filter = $value;
 
         return $this;
     }
-
-
 }
-

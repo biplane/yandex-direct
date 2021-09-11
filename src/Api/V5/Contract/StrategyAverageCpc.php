@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class StrategyAverageCpc
 {
-
 //    Can be omit.
 //    protected $AverageCpc = null;
 
@@ -16,31 +17,26 @@ class StrategyAverageCpc
 
     /**
      * Creates a new instance of StrategyAverageCpc.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets AverageCpc.
-     *
-     * @return int|null
      */
-    public function getAverageCpc()
+    public function getAverageCpc(): ?int
     {
-        return isset($this->AverageCpc) ? $this->AverageCpc : null;
+        return $this->AverageCpc ?? null;
     }
 
     /**
      * Sets AverageCpc.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setAverageCpc($value = null)
+    public function setAverageCpc(?int $value = null)
     {
         $this->AverageCpc = $value;
 
@@ -49,27 +45,21 @@ class StrategyAverageCpc
 
     /**
      * Gets WeeklySpendLimit.
-     *
-     * @return int|null
      */
-    public function getWeeklySpendLimit()
+    public function getWeeklySpendLimit(): ?int
     {
-        return isset($this->WeeklySpendLimit) ? $this->WeeklySpendLimit : null;
+        return $this->WeeklySpendLimit ?? null;
     }
 
     /**
      * Sets WeeklySpendLimit.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setWeeklySpendLimit($value = null)
+    public function setWeeklySpendLimit(?int $value = null)
     {
         $this->WeeklySpendLimit = $value;
 
         return $this;
     }
-
-
 }
-

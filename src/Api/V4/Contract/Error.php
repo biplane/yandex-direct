@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class Error
 {
-
     protected $FaultCode = null;
 
     protected $FaultString = null;
@@ -16,20 +17,16 @@ class Error
 
     /**
      * Creates a new instance of Error.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets FaultCode.
-     *
-     * @return int
      */
-    public function getFaultCode()
+    public function getFaultCode(): int
     {
         return $this->FaultCode;
     }
@@ -37,10 +34,9 @@ class Error
     /**
      * Sets FaultCode.
      *
-     * @param int $value
      * @return $this
      */
-    public function setFaultCode($value)
+    public function setFaultCode(int $value)
     {
         $this->FaultCode = $value;
 
@@ -49,10 +45,8 @@ class Error
 
     /**
      * Gets FaultString.
-     *
-     * @return string
      */
-    public function getFaultString()
+    public function getFaultString(): string
     {
         return $this->FaultString;
     }
@@ -60,10 +54,9 @@ class Error
     /**
      * Sets FaultString.
      *
-     * @param string $value
      * @return $this
      */
-    public function setFaultString($value)
+    public function setFaultString(string $value)
     {
         $this->FaultString = $value;
 
@@ -72,10 +65,8 @@ class Error
 
     /**
      * Gets FaultDetail.
-     *
-     * @return string|null
      */
-    public function getFaultDetail()
+    public function getFaultDetail(): ?string
     {
         return $this->FaultDetail;
     }
@@ -83,16 +74,12 @@ class Error
     /**
      * Sets FaultDetail.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setFaultDetail($value = null)
+    public function setFaultDetail(?string $value = null)
     {
         $this->FaultDetail = $value;
 
         return $this;
     }
-
-
 }
-

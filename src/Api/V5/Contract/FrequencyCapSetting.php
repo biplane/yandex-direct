@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,27 +9,22 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class FrequencyCapSetting
 {
-
     protected $Impressions = null;
 
     protected $PeriodDays = null;
 
     /**
      * Creates a new instance of FrequencyCapSetting.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Impressions.
-     *
-     * @return int
      */
-    public function getImpressions()
+    public function getImpressions(): int
     {
         return $this->Impressions;
     }
@@ -35,10 +32,9 @@ class FrequencyCapSetting
     /**
      * Sets Impressions.
      *
-     * @param int $value
      * @return $this
      */
-    public function setImpressions($value)
+    public function setImpressions(int $value)
     {
         $this->Impressions = $value;
 
@@ -47,10 +43,8 @@ class FrequencyCapSetting
 
     /**
      * Gets PeriodDays.
-     *
-     * @return int|null
      */
-    public function getPeriodDays()
+    public function getPeriodDays(): ?int
     {
         return $this->PeriodDays;
     }
@@ -58,16 +52,12 @@ class FrequencyCapSetting
     /**
      * Sets PeriodDays.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setPeriodDays($value = null)
+    public function setPeriodDays(?int $value = null)
     {
         $this->PeriodDays = $value;
 
         return $this;
     }
-
-
 }
-

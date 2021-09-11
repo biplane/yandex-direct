@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class Warning
 {
-
     protected $WarningCode = null;
 
     protected $WarningString = null;
@@ -16,20 +17,16 @@ class Warning
 
     /**
      * Creates a new instance of Warning.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets WarningCode.
-     *
-     * @return int
      */
-    public function getWarningCode()
+    public function getWarningCode(): int
     {
         return $this->WarningCode;
     }
@@ -37,10 +34,9 @@ class Warning
     /**
      * Sets WarningCode.
      *
-     * @param int $value
      * @return $this
      */
-    public function setWarningCode($value)
+    public function setWarningCode(int $value)
     {
         $this->WarningCode = $value;
 
@@ -49,10 +45,8 @@ class Warning
 
     /**
      * Gets WarningString.
-     *
-     * @return string
      */
-    public function getWarningString()
+    public function getWarningString(): string
     {
         return $this->WarningString;
     }
@@ -60,10 +54,9 @@ class Warning
     /**
      * Sets WarningString.
      *
-     * @param string $value
      * @return $this
      */
-    public function setWarningString($value)
+    public function setWarningString(string $value)
     {
         $this->WarningString = $value;
 
@@ -72,10 +65,8 @@ class Warning
 
     /**
      * Gets Description.
-     *
-     * @return string|null
      */
-    public function getDescription()
+    public function getDescription(): ?string
     {
         return $this->Description;
     }
@@ -83,16 +74,12 @@ class Warning
     /**
      * Sets Description.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setDescription($value = null)
+    public function setDescription(?string $value = null)
     {
         $this->Description = $value;
 
         return $this;
     }
-
-
 }
-

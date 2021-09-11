@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,13 +9,9 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class CampaignChangesInEnum
 {
+    public const SELF = 'SELF';
 
-    const SELF = 'SELF';
+    public const CHILDREN = 'CHILDREN';
 
-    const CHILDREN = 'CHILDREN';
-
-    const STAT = 'STAT';
-
-
+    public const STAT = 'STAT';
 }
-

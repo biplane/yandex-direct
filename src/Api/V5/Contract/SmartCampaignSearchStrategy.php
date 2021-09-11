@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,15 +9,12 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class SmartCampaignSearchStrategy extends SmartCampaignStrategyBase
 {
-
     protected $BiddingStrategyType = null;
 
     /**
      * Creates a new instance of SmartCampaignSearchStrategy.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -23,10 +22,9 @@ class SmartCampaignSearchStrategy extends SmartCampaignStrategyBase
     /**
      * Gets BiddingStrategyType.
      *
-     * @return string
      * @see SmartCampaignSearchStrategyTypeEnum
      */
-    public function getBiddingStrategyType()
+    public function getBiddingStrategyType(): string
     {
         return $this->BiddingStrategyType;
     }
@@ -34,17 +32,14 @@ class SmartCampaignSearchStrategy extends SmartCampaignStrategyBase
     /**
      * Sets BiddingStrategyType.
      *
-     * @param string $value
-     * @return $this
      * @see SmartCampaignSearchStrategyTypeEnum
+     *
+     * @return $this
      */
-    public function setBiddingStrategyType($value)
+    public function setBiddingStrategyType(string $value)
     {
         $this->BiddingStrategyType = $value;
 
         return $this;
     }
-
-
 }
-

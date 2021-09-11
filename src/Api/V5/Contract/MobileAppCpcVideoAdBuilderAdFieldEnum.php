@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,11 +9,7 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class MobileAppCpcVideoAdBuilderAdFieldEnum
 {
+    public const CREATIVE = 'Creative';
 
-    const CREATIVE = 'Creative';
-
-    const TRACKING_URL = 'TrackingUrl';
-
-
+    public const TRACKING_URL = 'TrackingUrl';
 }
-

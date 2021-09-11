@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,16 +9,13 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class GetAgencyClientsResponse extends GetResponseGeneral
 {
-
 //    Can be omit.
 //    protected $Clients = null;
 
     /**
      * Creates a new instance of GetAgencyClientsResponse.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -26,24 +25,22 @@ class GetAgencyClientsResponse extends GetResponseGeneral
      *
      * @return ClientGetItem[]|null
      */
-    public function getClients()
+    public function getClients(): ?array
     {
-        return isset($this->Clients) ? $this->Clients : null;
+        return $this->Clients ?? null;
     }
 
     /**
      * Sets Clients.
      *
      * @param ClientGetItem[]|null $value
+     *
      * @return $this
      */
-    public function setClients(array $value = null)
+    public function setClients(?array $value = null)
     {
         $this->Clients = $value;
 
         return $this;
     }
-
-
 }
-

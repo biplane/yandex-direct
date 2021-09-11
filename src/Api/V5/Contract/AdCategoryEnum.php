@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,23 +9,19 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AdCategoryEnum
 {
+    public const ABORTION = 'ABORTION';
 
-    const ABORTION = 'ABORTION';
+    public const ALCOHOL = 'ALCOHOL';
 
-    const ALCOHOL = 'ALCOHOL';
+    public const BABY_FOOD = 'BABY_FOOD';
 
-    const BABY_FOOD = 'BABY_FOOD';
+    public const DIETARY_SUPPLEMENTS = 'DIETARY_SUPPLEMENTS';
 
-    const DIETARY_SUPPLEMENTS = 'DIETARY_SUPPLEMENTS';
+    public const MEDICINE = 'MEDICINE';
 
-    const MEDICINE = 'MEDICINE';
+    public const PROJECT_DECLARATION = 'PROJECT_DECLARATION';
 
-    const PROJECT_DECLARATION = 'PROJECT_DECLARATION';
+    public const PSEUDO_WEAPON = 'PSEUDO_WEAPON';
 
-    const PSEUDO_WEAPON = 'PSEUDO_WEAPON';
-
-    const TOBACCO = 'TOBACCO';
-
-
+    public const TOBACCO = 'TOBACCO';
 }
-

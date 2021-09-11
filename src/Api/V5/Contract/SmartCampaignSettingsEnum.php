@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,11 +9,7 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class SmartCampaignSettingsEnum
 {
+    public const ADD_TO_FAVORITES = 'ADD_TO_FAVORITES';
 
-    const ADD_TO_FAVORITES = 'ADD_TO_FAVORITES';
-
-    const REQUIRE_SERVICING = 'REQUIRE_SERVICING';
-
-
+    public const REQUIRE_SERVICING = 'REQUIRE_SERVICING';
 }
-

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class BidSetAutoItem
 {
-
 //    Can be omit.
 //    protected $CampaignId = null;
 
@@ -36,31 +37,26 @@ class BidSetAutoItem
 
     /**
      * Creates a new instance of BidSetAutoItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets CampaignId.
-     *
-     * @return int|null
      */
-    public function getCampaignId()
+    public function getCampaignId(): ?int
     {
-        return isset($this->CampaignId) ? $this->CampaignId : null;
+        return $this->CampaignId ?? null;
     }
 
     /**
      * Sets CampaignId.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setCampaignId($value = null)
+    public function setCampaignId(?int $value = null)
     {
         $this->CampaignId = $value;
 
@@ -69,21 +65,18 @@ class BidSetAutoItem
 
     /**
      * Gets AdGroupId.
-     *
-     * @return int|null
      */
-    public function getAdGroupId()
+    public function getAdGroupId(): ?int
     {
-        return isset($this->AdGroupId) ? $this->AdGroupId : null;
+        return $this->AdGroupId ?? null;
     }
 
     /**
      * Sets AdGroupId.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setAdGroupId($value = null)
+    public function setAdGroupId(?int $value = null)
     {
         $this->AdGroupId = $value;
 
@@ -92,21 +85,18 @@ class BidSetAutoItem
 
     /**
      * Gets KeywordId.
-     *
-     * @return int|null
      */
-    public function getKeywordId()
+    public function getKeywordId(): ?int
     {
-        return isset($this->KeywordId) ? $this->KeywordId : null;
+        return $this->KeywordId ?? null;
     }
 
     /**
      * Sets KeywordId.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setKeywordId($value = null)
+    public function setKeywordId(?int $value = null)
     {
         $this->KeywordId = $value;
 
@@ -115,21 +105,18 @@ class BidSetAutoItem
 
     /**
      * Gets MaxBid.
-     *
-     * @return int|null
      */
-    public function getMaxBid()
+    public function getMaxBid(): ?int
     {
-        return isset($this->MaxBid) ? $this->MaxBid : null;
+        return $this->MaxBid ?? null;
     }
 
     /**
      * Sets MaxBid.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setMaxBid($value = null)
+    public function setMaxBid(?int $value = null)
     {
         $this->MaxBid = $value;
 
@@ -139,22 +126,21 @@ class BidSetAutoItem
     /**
      * Gets Position.
      *
-     * @return string|null
      * @see PositionEnum
      */
-    public function getPosition()
+    public function getPosition(): ?string
     {
-        return isset($this->Position) ? $this->Position : null;
+        return $this->Position ?? null;
     }
 
     /**
      * Sets Position.
      *
-     * @param string|null $value
-     * @return $this
      * @see PositionEnum
+     *
+     * @return $this
      */
-    public function setPosition($value = null)
+    public function setPosition(?string $value = null)
     {
         $this->Position = $value;
 
@@ -163,21 +149,18 @@ class BidSetAutoItem
 
     /**
      * Gets IncreasePercent.
-     *
-     * @return int|null
      */
-    public function getIncreasePercent()
+    public function getIncreasePercent(): ?int
     {
-        return isset($this->IncreasePercent) ? $this->IncreasePercent : null;
+        return $this->IncreasePercent ?? null;
     }
 
     /**
      * Sets IncreasePercent.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setIncreasePercent($value = null)
+    public function setIncreasePercent(?int $value = null)
     {
         $this->IncreasePercent = $value;
 
@@ -187,22 +170,21 @@ class BidSetAutoItem
     /**
      * Gets CalculateBy.
      *
-     * @return string|null
      * @see CalculateByEnum
      */
-    public function getCalculateBy()
+    public function getCalculateBy(): ?string
     {
-        return isset($this->CalculateBy) ? $this->CalculateBy : null;
+        return $this->CalculateBy ?? null;
     }
 
     /**
      * Sets CalculateBy.
      *
-     * @param string|null $value
-     * @return $this
      * @see CalculateByEnum
+     *
+     * @return $this
      */
-    public function setCalculateBy($value = null)
+    public function setCalculateBy(?string $value = null)
     {
         $this->CalculateBy = $value;
 
@@ -211,21 +193,18 @@ class BidSetAutoItem
 
     /**
      * Gets ContextCoverage.
-     *
-     * @return int|null
      */
-    public function getContextCoverage()
+    public function getContextCoverage(): ?int
     {
-        return isset($this->ContextCoverage) ? $this->ContextCoverage : null;
+        return $this->ContextCoverage ?? null;
     }
 
     /**
      * Sets ContextCoverage.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setContextCoverage($value = null)
+    public function setContextCoverage(?int $value = null)
     {
         $this->ContextCoverage = $value;
 
@@ -235,10 +214,11 @@ class BidSetAutoItem
     /**
      * Gets Scope.
      *
-     * @return string[]
      * @see ScopeEnum
+     *
+     * @return string[]
      */
-    public function getScope()
+    public function getScope(): array
     {
         return $this->Scope;
     }
@@ -246,9 +226,11 @@ class BidSetAutoItem
     /**
      * Sets Scope.
      *
-     * @param string[] $value
-     * @return $this
      * @see ScopeEnum
+     *
+     * @param string[] $value
+     *
+     * @return $this
      */
     public function setScope(array $value)
     {
@@ -256,7 +238,4 @@ class BidSetAutoItem
 
         return $this;
     }
-
-
 }
-

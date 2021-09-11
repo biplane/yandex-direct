@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,16 +9,13 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class GetFeedsResponse extends GetResponseGeneral
 {
-
 //    Can be omit.
 //    protected $Feeds = null;
 
     /**
      * Creates a new instance of GetFeedsResponse.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -26,24 +25,22 @@ class GetFeedsResponse extends GetResponseGeneral
      *
      * @return FeedGetItem[]|null
      */
-    public function getFeeds()
+    public function getFeeds(): ?array
     {
-        return isset($this->Feeds) ? $this->Feeds : null;
+        return $this->Feeds ?? null;
     }
 
     /**
      * Sets Feeds.
      *
      * @param FeedGetItem[]|null $value
+     *
      * @return $this
      */
-    public function setFeeds(array $value = null)
+    public function setFeeds(?array $value = null)
     {
         $this->Feeds = $value;
 
         return $this;
     }
-
-
 }
-

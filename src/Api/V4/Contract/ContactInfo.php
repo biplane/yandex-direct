@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class ContactInfo
 {
-
     protected $ContactPerson = null;
 
     protected $Country = null;
@@ -48,20 +49,16 @@ class ContactInfo
 
     /**
      * Creates a new instance of ContactInfo.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets ContactPerson.
-     *
-     * @return string|null
      */
-    public function getContactPerson()
+    public function getContactPerson(): ?string
     {
         return $this->ContactPerson;
     }
@@ -69,10 +66,9 @@ class ContactInfo
     /**
      * Sets ContactPerson.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setContactPerson($value = null)
+    public function setContactPerson(?string $value = null)
     {
         $this->ContactPerson = $value;
 
@@ -81,10 +77,8 @@ class ContactInfo
 
     /**
      * Gets Country.
-     *
-     * @return string
      */
-    public function getCountry()
+    public function getCountry(): string
     {
         return $this->Country;
     }
@@ -92,10 +86,9 @@ class ContactInfo
     /**
      * Sets Country.
      *
-     * @param string $value
      * @return $this
      */
-    public function setCountry($value)
+    public function setCountry(string $value)
     {
         $this->Country = $value;
 
@@ -104,10 +97,8 @@ class ContactInfo
 
     /**
      * Gets CountryCode.
-     *
-     * @return string
      */
-    public function getCountryCode()
+    public function getCountryCode(): string
     {
         return $this->CountryCode;
     }
@@ -115,10 +106,9 @@ class ContactInfo
     /**
      * Sets CountryCode.
      *
-     * @param string $value
      * @return $this
      */
-    public function setCountryCode($value)
+    public function setCountryCode(string $value)
     {
         $this->CountryCode = $value;
 
@@ -127,10 +117,8 @@ class ContactInfo
 
     /**
      * Gets City.
-     *
-     * @return string
      */
-    public function getCity()
+    public function getCity(): string
     {
         return $this->City;
     }
@@ -138,10 +126,9 @@ class ContactInfo
     /**
      * Sets City.
      *
-     * @param string $value
      * @return $this
      */
-    public function setCity($value)
+    public function setCity(string $value)
     {
         $this->City = $value;
 
@@ -150,10 +137,8 @@ class ContactInfo
 
     /**
      * Gets Street.
-     *
-     * @return string|null
      */
-    public function getStreet()
+    public function getStreet(): ?string
     {
         return $this->Street;
     }
@@ -161,10 +146,9 @@ class ContactInfo
     /**
      * Sets Street.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setStreet($value = null)
+    public function setStreet(?string $value = null)
     {
         $this->Street = $value;
 
@@ -173,10 +157,8 @@ class ContactInfo
 
     /**
      * Gets House.
-     *
-     * @return string|null
      */
-    public function getHouse()
+    public function getHouse(): ?string
     {
         return $this->House;
     }
@@ -184,10 +166,9 @@ class ContactInfo
     /**
      * Sets House.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setHouse($value = null)
+    public function setHouse(?string $value = null)
     {
         $this->House = $value;
 
@@ -196,10 +177,8 @@ class ContactInfo
 
     /**
      * Gets Build.
-     *
-     * @return string|null
      */
-    public function getBuild()
+    public function getBuild(): ?string
     {
         return $this->Build;
     }
@@ -207,10 +186,9 @@ class ContactInfo
     /**
      * Sets Build.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setBuild($value = null)
+    public function setBuild(?string $value = null)
     {
         $this->Build = $value;
 
@@ -219,10 +197,8 @@ class ContactInfo
 
     /**
      * Gets Apart.
-     *
-     * @return string|null
      */
-    public function getApart()
+    public function getApart(): ?string
     {
         return $this->Apart;
     }
@@ -230,10 +206,9 @@ class ContactInfo
     /**
      * Sets Apart.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setApart($value = null)
+    public function setApart(?string $value = null)
     {
         $this->Apart = $value;
 
@@ -242,10 +217,8 @@ class ContactInfo
 
     /**
      * Gets CityCode.
-     *
-     * @return string
      */
-    public function getCityCode()
+    public function getCityCode(): string
     {
         return $this->CityCode;
     }
@@ -253,10 +226,9 @@ class ContactInfo
     /**
      * Sets CityCode.
      *
-     * @param string $value
      * @return $this
      */
-    public function setCityCode($value)
+    public function setCityCode(string $value)
     {
         $this->CityCode = $value;
 
@@ -265,10 +237,8 @@ class ContactInfo
 
     /**
      * Gets Phone.
-     *
-     * @return string
      */
-    public function getPhone()
+    public function getPhone(): string
     {
         return $this->Phone;
     }
@@ -276,10 +246,9 @@ class ContactInfo
     /**
      * Sets Phone.
      *
-     * @param string $value
      * @return $this
      */
-    public function setPhone($value)
+    public function setPhone(string $value)
     {
         $this->Phone = $value;
 
@@ -288,10 +257,8 @@ class ContactInfo
 
     /**
      * Gets PhoneExt.
-     *
-     * @return string|null
      */
-    public function getPhoneExt()
+    public function getPhoneExt(): ?string
     {
         return $this->PhoneExt;
     }
@@ -299,10 +266,9 @@ class ContactInfo
     /**
      * Sets PhoneExt.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setPhoneExt($value = null)
+    public function setPhoneExt(?string $value = null)
     {
         $this->PhoneExt = $value;
 
@@ -311,10 +277,8 @@ class ContactInfo
 
     /**
      * Gets CompanyName.
-     *
-     * @return string
      */
-    public function getCompanyName()
+    public function getCompanyName(): string
     {
         return $this->CompanyName;
     }
@@ -322,10 +286,9 @@ class ContactInfo
     /**
      * Sets CompanyName.
      *
-     * @param string $value
      * @return $this
      */
-    public function setCompanyName($value)
+    public function setCompanyName(string $value)
     {
         $this->CompanyName = $value;
 
@@ -334,10 +297,8 @@ class ContactInfo
 
     /**
      * Gets IMClient.
-     *
-     * @return string|null
      */
-    public function getIMClient()
+    public function getIMClient(): ?string
     {
         return $this->IMClient;
     }
@@ -345,10 +306,9 @@ class ContactInfo
     /**
      * Sets IMClient.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setIMClient($value = null)
+    public function setIMClient(?string $value = null)
     {
         $this->IMClient = $value;
 
@@ -357,10 +317,8 @@ class ContactInfo
 
     /**
      * Gets IMLogin.
-     *
-     * @return string|null
      */
-    public function getIMLogin()
+    public function getIMLogin(): ?string
     {
         return $this->IMLogin;
     }
@@ -368,10 +326,9 @@ class ContactInfo
     /**
      * Sets IMLogin.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setIMLogin($value = null)
+    public function setIMLogin(?string $value = null)
     {
         $this->IMLogin = $value;
 
@@ -380,10 +337,8 @@ class ContactInfo
 
     /**
      * Gets ExtraMessage.
-     *
-     * @return string|null
      */
-    public function getExtraMessage()
+    public function getExtraMessage(): ?string
     {
         return $this->ExtraMessage;
     }
@@ -391,10 +346,9 @@ class ContactInfo
     /**
      * Sets ExtraMessage.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setExtraMessage($value = null)
+    public function setExtraMessage(?string $value = null)
     {
         $this->ExtraMessage = $value;
 
@@ -403,10 +357,8 @@ class ContactInfo
 
     /**
      * Gets ContactEmail.
-     *
-     * @return string|null
      */
-    public function getContactEmail()
+    public function getContactEmail(): ?string
     {
         return $this->ContactEmail;
     }
@@ -414,10 +366,9 @@ class ContactInfo
     /**
      * Sets ContactEmail.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setContactEmail($value = null)
+    public function setContactEmail(?string $value = null)
     {
         $this->ContactEmail = $value;
 
@@ -426,10 +377,8 @@ class ContactInfo
 
     /**
      * Gets WorkTime.
-     *
-     * @return string
      */
-    public function getWorkTime()
+    public function getWorkTime(): string
     {
         return $this->WorkTime;
     }
@@ -437,10 +386,9 @@ class ContactInfo
     /**
      * Sets WorkTime.
      *
-     * @param string $value
      * @return $this
      */
-    public function setWorkTime($value)
+    public function setWorkTime(string $value)
     {
         $this->WorkTime = $value;
 
@@ -449,10 +397,8 @@ class ContactInfo
 
     /**
      * Gets OGRN.
-     *
-     * @return string|null
      */
-    public function getOGRN()
+    public function getOGRN(): ?string
     {
         return $this->OGRN;
     }
@@ -460,10 +406,9 @@ class ContactInfo
     /**
      * Sets OGRN.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setOGRN($value = null)
+    public function setOGRN(?string $value = null)
     {
         $this->OGRN = $value;
 
@@ -472,10 +417,8 @@ class ContactInfo
 
     /**
      * Gets PointOnMap.
-     *
-     * @return MapPoint|null
      */
-    public function getPointOnMap()
+    public function getPointOnMap(): ?MapPoint
     {
         return $this->PointOnMap;
     }
@@ -483,16 +426,12 @@ class ContactInfo
     /**
      * Sets PointOnMap.
      *
-     * @param MapPoint|null $value
      * @return $this
      */
-    public function setPointOnMap(MapPoint $value = null)
+    public function setPointOnMap(?MapPoint $value = null)
     {
         $this->PointOnMap = $value;
 
         return $this;
     }
-
-
 }
-

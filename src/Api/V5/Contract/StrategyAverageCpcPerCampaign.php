@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class StrategyAverageCpcPerCampaign
 {
-
 //    Can be omit.
 //    protected $AverageCpc = null;
 
@@ -19,31 +20,26 @@ class StrategyAverageCpcPerCampaign
 
     /**
      * Creates a new instance of StrategyAverageCpcPerCampaign.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets AverageCpc.
-     *
-     * @return int|null
      */
-    public function getAverageCpc()
+    public function getAverageCpc(): ?int
     {
-        return isset($this->AverageCpc) ? $this->AverageCpc : null;
+        return $this->AverageCpc ?? null;
     }
 
     /**
      * Sets AverageCpc.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setAverageCpc($value = null)
+    public function setAverageCpc(?int $value = null)
     {
         $this->AverageCpc = $value;
 
@@ -52,21 +48,18 @@ class StrategyAverageCpcPerCampaign
 
     /**
      * Gets WeeklySpendLimit.
-     *
-     * @return int|null
      */
-    public function getWeeklySpendLimit()
+    public function getWeeklySpendLimit(): ?int
     {
-        return isset($this->WeeklySpendLimit) ? $this->WeeklySpendLimit : null;
+        return $this->WeeklySpendLimit ?? null;
     }
 
     /**
      * Sets WeeklySpendLimit.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setWeeklySpendLimit($value = null)
+    public function setWeeklySpendLimit(?int $value = null)
     {
         $this->WeeklySpendLimit = $value;
 
@@ -75,27 +68,21 @@ class StrategyAverageCpcPerCampaign
 
     /**
      * Gets BidCeiling.
-     *
-     * @return int|null
      */
-    public function getBidCeiling()
+    public function getBidCeiling(): ?int
     {
-        return isset($this->BidCeiling) ? $this->BidCeiling : null;
+        return $this->BidCeiling ?? null;
     }
 
     /**
      * Sets BidCeiling.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setBidCeiling($value = null)
+    public function setBidCeiling(?int $value = null)
     {
         $this->BidCeiling = $value;
 
         return $this;
     }
-
-
 }
-

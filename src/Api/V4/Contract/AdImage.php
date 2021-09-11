@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class AdImage
 {
-
     protected $Login = null;
 
     protected $AdImageHash = null;
@@ -20,20 +21,16 @@ class AdImage
 
     /**
      * Creates a new instance of AdImage.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Login.
-     *
-     * @return string
      */
-    public function getLogin()
+    public function getLogin(): string
     {
         return $this->Login;
     }
@@ -41,10 +38,9 @@ class AdImage
     /**
      * Sets Login.
      *
-     * @param string $value
      * @return $this
      */
-    public function setLogin($value)
+    public function setLogin(string $value)
     {
         $this->Login = $value;
 
@@ -53,10 +49,8 @@ class AdImage
 
     /**
      * Gets AdImageHash.
-     *
-     * @return string
      */
-    public function getAdImageHash()
+    public function getAdImageHash(): string
     {
         return $this->AdImageHash;
     }
@@ -64,10 +58,9 @@ class AdImage
     /**
      * Sets AdImageHash.
      *
-     * @param string $value
      * @return $this
      */
-    public function setAdImageHash($value)
+    public function setAdImageHash(string $value)
     {
         $this->AdImageHash = $value;
 
@@ -76,10 +69,8 @@ class AdImage
 
     /**
      * Gets AdImageURL.
-     *
-     * @return string
      */
-    public function getAdImageURL()
+    public function getAdImageURL(): string
     {
         return $this->AdImageURL;
     }
@@ -87,10 +78,9 @@ class AdImage
     /**
      * Sets AdImageURL.
      *
-     * @param string $value
      * @return $this
      */
-    public function setAdImageURL($value)
+    public function setAdImageURL(string $value)
     {
         $this->AdImageURL = $value;
 
@@ -99,10 +89,8 @@ class AdImage
 
     /**
      * Gets Assigned.
-     *
-     * @return string
      */
-    public function getAssigned()
+    public function getAssigned(): string
     {
         return $this->Assigned;
     }
@@ -110,10 +98,9 @@ class AdImage
     /**
      * Sets Assigned.
      *
-     * @param string $value
      * @return $this
      */
-    public function setAssigned($value)
+    public function setAssigned(string $value)
     {
         $this->Assigned = $value;
 
@@ -122,10 +109,8 @@ class AdImage
 
     /**
      * Gets Name.
-     *
-     * @return string|null
      */
-    public function getName()
+    public function getName(): ?string
     {
         return $this->Name;
     }
@@ -133,16 +118,12 @@ class AdImage
     /**
      * Sets Name.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setName($value = null)
+    public function setName(?string $value = null)
     {
         $this->Name = $value;
 
         return $this;
     }
-
-
 }
-

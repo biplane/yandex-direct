@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class AdImageAssociationResponse
 {
-
     protected $ActionsResult = null;
 
     protected $AdImageAssociations = null;
@@ -16,10 +17,8 @@ class AdImageAssociationResponse
 
     /**
      * Creates a new instance of AdImageAssociationResponse.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -29,7 +28,7 @@ class AdImageAssociationResponse
      *
      * @return AdImageAssociationActionResult[]|null
      */
-    public function getActionsResult()
+    public function getActionsResult(): ?array
     {
         return $this->ActionsResult;
     }
@@ -38,9 +37,10 @@ class AdImageAssociationResponse
      * Sets ActionsResult.
      *
      * @param AdImageAssociationActionResult[]|null $value
+     *
      * @return $this
      */
-    public function setActionsResult(array $value = null)
+    public function setActionsResult(?array $value = null)
     {
         $this->ActionsResult = $value;
 
@@ -52,7 +52,7 @@ class AdImageAssociationResponse
      *
      * @return AdImageAssociation[]|null
      */
-    public function getAdImageAssociations()
+    public function getAdImageAssociations(): ?array
     {
         return $this->AdImageAssociations;
     }
@@ -61,9 +61,10 @@ class AdImageAssociationResponse
      * Sets AdImageAssociations.
      *
      * @param AdImageAssociation[]|null $value
+     *
      * @return $this
      */
-    public function setAdImageAssociations(array $value = null)
+    public function setAdImageAssociations(?array $value = null)
     {
         $this->AdImageAssociations = $value;
 
@@ -72,10 +73,8 @@ class AdImageAssociationResponse
 
     /**
      * Gets TotalObjectsCount.
-     *
-     * @return int|null
      */
-    public function getTotalObjectsCount()
+    public function getTotalObjectsCount(): ?int
     {
         return $this->TotalObjectsCount;
     }
@@ -83,16 +82,12 @@ class AdImageAssociationResponse
     /**
      * Sets TotalObjectsCount.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setTotalObjectsCount($value = null)
+    public function setTotalObjectsCount(?int $value = null)
     {
         $this->TotalObjectsCount = $value;
 
         return $this;
     }
-
-
 }
-

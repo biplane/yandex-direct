@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,13 +9,9 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class RegionalAdjustmentFieldEnum
 {
+    public const REGION_ID = 'RegionId';
 
-    const REGION_ID = 'RegionId';
+    public const BID_MODIFIER = 'BidModifier';
 
-    const BID_MODIFIER = 'BidModifier';
-
-    const ENABLED = 'Enabled';
-
-
+    public const ENABLED = 'Enabled';
 }
-

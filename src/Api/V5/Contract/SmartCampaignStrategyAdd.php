@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,27 +9,22 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class SmartCampaignStrategyAdd
 {
-
     protected $Search = null;
 
     protected $Network = null;
 
     /**
      * Creates a new instance of SmartCampaignStrategyAdd.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Search.
-     *
-     * @return SmartCampaignSearchStrategyAdd
      */
-    public function getSearch()
+    public function getSearch(): SmartCampaignSearchStrategyAdd
     {
         return $this->Search;
     }
@@ -35,7 +32,6 @@ class SmartCampaignStrategyAdd
     /**
      * Sets Search.
      *
-     * @param SmartCampaignSearchStrategyAdd $value
      * @return $this
      */
     public function setSearch(SmartCampaignSearchStrategyAdd $value)
@@ -47,10 +43,8 @@ class SmartCampaignStrategyAdd
 
     /**
      * Gets Network.
-     *
-     * @return SmartCampaignNetworkStrategyAdd
      */
-    public function getNetwork()
+    public function getNetwork(): SmartCampaignNetworkStrategyAdd
     {
         return $this->Network;
     }
@@ -58,7 +52,6 @@ class SmartCampaignStrategyAdd
     /**
      * Sets Network.
      *
-     * @param SmartCampaignNetworkStrategyAdd $value
      * @return $this
      */
     public function setNetwork(SmartCampaignNetworkStrategyAdd $value)
@@ -67,7 +60,4 @@ class SmartCampaignStrategyAdd
 
         return $this;
     }
-
-
 }
-

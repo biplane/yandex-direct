@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,25 +9,20 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class SupplySidePlatformsItem
 {
-
     protected $Title = null;
 
     /**
      * Creates a new instance of SupplySidePlatformsItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Title.
-     *
-     * @return string
      */
-    public function getTitle()
+    public function getTitle(): string
     {
         return $this->Title;
     }
@@ -33,16 +30,12 @@ class SupplySidePlatformsItem
     /**
      * Sets Title.
      *
-     * @param string $value
      * @return $this
      */
-    public function setTitle($value)
+    public function setTitle(string $value)
     {
         $this->Title = $value;
 
         return $this;
     }
-
-
 }
-

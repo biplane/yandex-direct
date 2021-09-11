@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,27 +9,22 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class StrategyMaximumImpressionsAddBase
 {
-
     protected $AverageCpm = null;
 
     protected $SpendLimit = null;
 
     /**
      * Creates a new instance of StrategyMaximumImpressionsAddBase.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets AverageCpm.
-     *
-     * @return int
      */
-    public function getAverageCpm()
+    public function getAverageCpm(): int
     {
         return $this->AverageCpm;
     }
@@ -35,10 +32,9 @@ class StrategyMaximumImpressionsAddBase
     /**
      * Sets AverageCpm.
      *
-     * @param int $value
      * @return $this
      */
-    public function setAverageCpm($value)
+    public function setAverageCpm(int $value)
     {
         $this->AverageCpm = $value;
 
@@ -47,10 +43,8 @@ class StrategyMaximumImpressionsAddBase
 
     /**
      * Gets SpendLimit.
-     *
-     * @return int
      */
-    public function getSpendLimit()
+    public function getSpendLimit(): int
     {
         return $this->SpendLimit;
     }
@@ -58,16 +52,12 @@ class StrategyMaximumImpressionsAddBase
     /**
      * Sets SpendLimit.
      *
-     * @param int $value
      * @return $this
      */
-    public function setSpendLimit($value)
+    public function setSpendLimit(int $value)
     {
         $this->SpendLimit = $value;
 
         return $this;
     }
-
-
 }
-

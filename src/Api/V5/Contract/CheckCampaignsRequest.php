@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,25 +9,20 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class CheckCampaignsRequest
 {
-
     protected $Timestamp = null;
 
     /**
      * Creates a new instance of CheckCampaignsRequest.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Timestamp.
-     *
-     * @return string
      */
-    public function getTimestamp()
+    public function getTimestamp(): string
     {
         return $this->Timestamp;
     }
@@ -33,16 +30,12 @@ class CheckCampaignsRequest
     /**
      * Sets Timestamp.
      *
-     * @param string $value
      * @return $this
      */
-    public function setTimestamp($value)
+    public function setTimestamp(string $value)
     {
         $this->Timestamp = $value;
 
         return $this;
     }
-
-
 }
-

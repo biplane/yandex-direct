@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class SetBidsItem
 {
-
 //    Can be omit.
 //    protected $CampaignId = null;
 
@@ -28,31 +29,26 @@ class SetBidsItem
 
     /**
      * Creates a new instance of SetBidsItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets CampaignId.
-     *
-     * @return int|null
      */
-    public function getCampaignId()
+    public function getCampaignId(): ?int
     {
-        return isset($this->CampaignId) ? $this->CampaignId : null;
+        return $this->CampaignId ?? null;
     }
 
     /**
      * Sets CampaignId.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setCampaignId($value = null)
+    public function setCampaignId(?int $value = null)
     {
         $this->CampaignId = $value;
 
@@ -61,21 +57,18 @@ class SetBidsItem
 
     /**
      * Gets AdGroupId.
-     *
-     * @return int|null
      */
-    public function getAdGroupId()
+    public function getAdGroupId(): ?int
     {
-        return isset($this->AdGroupId) ? $this->AdGroupId : null;
+        return $this->AdGroupId ?? null;
     }
 
     /**
      * Sets AdGroupId.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setAdGroupId($value = null)
+    public function setAdGroupId(?int $value = null)
     {
         $this->AdGroupId = $value;
 
@@ -84,21 +77,18 @@ class SetBidsItem
 
     /**
      * Gets Id.
-     *
-     * @return int|null
      */
-    public function getId()
+    public function getId(): ?int
     {
-        return isset($this->Id) ? $this->Id : null;
+        return $this->Id ?? null;
     }
 
     /**
      * Sets Id.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setId($value = null)
+    public function setId(?int $value = null)
     {
         $this->Id = $value;
 
@@ -107,21 +97,18 @@ class SetBidsItem
 
     /**
      * Gets Bid.
-     *
-     * @return int|null
      */
-    public function getBid()
+    public function getBid(): ?int
     {
-        return isset($this->Bid) ? $this->Bid : null;
+        return $this->Bid ?? null;
     }
 
     /**
      * Sets Bid.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setBid($value = null)
+    public function setBid(?int $value = null)
     {
         $this->Bid = $value;
 
@@ -130,21 +117,18 @@ class SetBidsItem
 
     /**
      * Gets ContextBid.
-     *
-     * @return int|null
      */
-    public function getContextBid()
+    public function getContextBid(): ?int
     {
-        return isset($this->ContextBid) ? $this->ContextBid : null;
+        return $this->ContextBid ?? null;
     }
 
     /**
      * Sets ContextBid.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setContextBid($value = null)
+    public function setContextBid(?int $value = null)
     {
         $this->ContextBid = $value;
 
@@ -154,28 +138,24 @@ class SetBidsItem
     /**
      * Gets StrategyPriority.
      *
-     * @return string|null
      * @see PriorityEnum
      */
-    public function getStrategyPriority()
+    public function getStrategyPriority(): ?string
     {
-        return isset($this->StrategyPriority) ? $this->StrategyPriority : null;
+        return $this->StrategyPriority ?? null;
     }
 
     /**
      * Sets StrategyPriority.
      *
-     * @param string|null $value
-     * @return $this
      * @see PriorityEnum
+     *
+     * @return $this
      */
-    public function setStrategyPriority($value = null)
+    public function setStrategyPriority(?string $value = null)
     {
         $this->StrategyPriority = $value;
 
         return $this;
     }
-
-
 }
-

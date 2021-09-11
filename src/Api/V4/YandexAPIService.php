@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4;
 
 use Biplane\YandexDirect\Api\ApiSoapClientV4;
@@ -10,8 +12,7 @@ use Biplane\YandexDirect\Config;
  */
 class YandexAPIService extends ApiSoapClientV4
 {
-
-    const ENDPOINT = 'https://api.direct.yandex.ru/live/v4/wsdl/';
+    public const ENDPOINT = 'https://api.direct.yandex.ru/live/v4/wsdl/';
 
     public function __construct(Config $config, array $options)
     {
@@ -136,10 +137,8 @@ class YandexAPIService extends ApiSoapClientV4
 
     /**
      * GetVersion.
-     *
-     * @return int
      */
-    public function getVersion()
+    public function getVersion(): int
     {
         return $this->__soapCall('GetVersion', []);
     }
@@ -147,10 +146,9 @@ class YandexAPIService extends ApiSoapClientV4
     /**
      * GetClientsList.
      *
-     * @param Contract\ClientInfoRequest $params
      * @return Contract\ClientInfo[]
      */
-    public function getClientsList(Contract\ClientInfoRequest $params)
+    public function getClientsList(Contract\ClientInfoRequest $params): array
     {
         return $this->__soapCall('GetClientsList', [$params]);
     }
@@ -158,21 +156,17 @@ class YandexAPIService extends ApiSoapClientV4
     /**
      * GetSubClients.
      *
-     * @param Contract\GetSubClientsRequest $params
      * @return Contract\ShortClientInfo[]
      */
-    public function getSubClients(Contract\GetSubClientsRequest $params)
+    public function getSubClients(Contract\GetSubClientsRequest $params): array
     {
         return $this->__soapCall('GetSubClients', [$params]);
     }
 
     /**
      * DeleteReport.
-     *
-     * @param int $params
-     * @return int
      */
-    public function deleteReport($params)
+    public function deleteReport(int $params): int
     {
         return $this->__soapCall('DeleteReport', [$params]);
     }
@@ -180,21 +174,17 @@ class YandexAPIService extends ApiSoapClientV4
     /**
      * GetSummaryStat.
      *
-     * @param Contract\GetSummaryStatRequest $params
      * @return Contract\StatItem[]
      */
-    public function getSummaryStat(Contract\GetSummaryStatRequest $params)
+    public function getSummaryStat(Contract\GetSummaryStatRequest $params): array
     {
         return $this->__soapCall('GetSummaryStat', [$params]);
     }
 
     /**
      * DeleteForecastReport.
-     *
-     * @param int $params
-     * @return int
      */
-    public function deleteForecastReport($params)
+    public function deleteForecastReport(int $params): int
     {
         return $this->__soapCall('DeleteForecastReport', [$params]);
     }
@@ -204,7 +194,7 @@ class YandexAPIService extends ApiSoapClientV4
      *
      * @return Contract\ReportInfo[]
      */
-    public function getReportList()
+    public function getReportList(): array
     {
         return $this->__soapCall('GetReportList', []);
     }
@@ -213,9 +203,10 @@ class YandexAPIService extends ApiSoapClientV4
      * GetClientsUnits.
      *
      * @param string[] $params
+     *
      * @return Contract\ClientsUnitInfo[]
      */
-    public function getClientsUnits(array $params)
+    public function getClientsUnits(array $params): array
     {
         return $this->__soapCall('GetClientsUnits', [$params]);
     }
@@ -224,9 +215,10 @@ class YandexAPIService extends ApiSoapClientV4
      * GetClientInfo.
      *
      * @param string[] $params
+     *
      * @return Contract\ClientInfo[]
      */
-    public function getClientInfo(array $params)
+    public function getClientInfo(array $params): array
     {
         return $this->__soapCall('GetClientInfo', [$params]);
     }
@@ -235,9 +227,8 @@ class YandexAPIService extends ApiSoapClientV4
      * UpdateClientInfo.
      *
      * @param Contract\ClientInfo[] $params
-     * @return int
      */
-    public function updateClientInfo(array $params)
+    public function updateClientInfo(array $params): int
     {
         return $this->__soapCall('UpdateClientInfo', [$params]);
     }
@@ -246,9 +237,10 @@ class YandexAPIService extends ApiSoapClientV4
      * GetBalance.
      *
      * @param int[] $params
+     *
      * @return Contract\CampaignBalanceInfo[]
      */
-    public function getBalance(array $params)
+    public function getBalance(array $params): array
     {
         return $this->__soapCall('GetBalance', [$params]);
     }
@@ -258,51 +250,39 @@ class YandexAPIService extends ApiSoapClientV4
      *
      * @return Contract\RegionInfo[]
      */
-    public function getRegions()
+    public function getRegions(): array
     {
         return $this->__soapCall('GetRegions', []);
     }
 
     /**
      * CreateNewReport.
-     *
-     * @param Contract\NewReportInfo $params
-     * @return int
      */
-    public function createNewReport(Contract\NewReportInfo $params)
+    public function createNewReport(Contract\NewReportInfo $params): int
     {
         return $this->__soapCall('CreateNewReport', [$params]);
     }
 
     /**
      * GetBannersStat.
-     *
-     * @param Contract\NewReportInfo $params
-     * @return Contract\GetBannersStatResponse
      */
-    public function getBannersStat(Contract\NewReportInfo $params)
+    public function getBannersStat(Contract\NewReportInfo $params): Contract\GetBannersStatResponse
     {
         return $this->__soapCall('GetBannersStat', [$params]);
     }
 
     /**
      * CreateNewForecast.
-     *
-     * @param Contract\NewForecastInfo $params
-     * @return int
      */
-    public function createNewForecast(Contract\NewForecastInfo $params)
+    public function createNewForecast(Contract\NewForecastInfo $params): int
     {
         return $this->__soapCall('CreateNewForecast', [$params]);
     }
 
     /**
      * GetForecast.
-     *
-     * @param int $params
-     * @return Contract\GetForecastInfo
      */
-    public function getForecast($params)
+    public function getForecast(int $params): Contract\GetForecastInfo
     {
         return $this->__soapCall('GetForecast', [$params]);
     }
@@ -312,7 +292,7 @@ class YandexAPIService extends ApiSoapClientV4
      *
      * @return Contract\RubricInfo[]
      */
-    public function getRubrics()
+    public function getRubrics(): array
     {
         return $this->__soapCall('GetRubrics', []);
     }
@@ -322,7 +302,7 @@ class YandexAPIService extends ApiSoapClientV4
      *
      * @return Contract\TimeZoneInfo[]
      */
-    public function getTimeZones()
+    public function getTimeZones(): array
     {
         return $this->__soapCall('GetTimeZones', []);
     }
@@ -332,7 +312,7 @@ class YandexAPIService extends ApiSoapClientV4
      *
      * @return Contract\ForecastStatusInfo[]
      */
-    public function getForecastList()
+    public function getForecastList(): array
     {
         return $this->__soapCall('GetForecastList', []);
     }
@@ -342,7 +322,7 @@ class YandexAPIService extends ApiSoapClientV4
      *
      * @return Contract\VersionDesc[]
      */
-    public function getAvailableVersions()
+    public function getAvailableVersions(): array
     {
         return $this->__soapCall('GetAvailableVersions', []);
     }
@@ -350,32 +330,25 @@ class YandexAPIService extends ApiSoapClientV4
     /**
      * GetKeywordsSuggestion.
      *
-     * @param Contract\KeywordsSuggestionInfo $params
      * @return string[]
      */
-    public function getKeywordsSuggestion(Contract\KeywordsSuggestionInfo $params)
+    public function getKeywordsSuggestion(Contract\KeywordsSuggestionInfo $params): array
     {
         return $this->__soapCall('GetKeywordsSuggestion', [$params]);
     }
 
     /**
      * CreateNewSubclient.
-     *
-     * @param Contract\CreateNewSubclientRequest $params
-     * @return Contract\CreateNewSubclientResponse
      */
-    public function createNewSubclient(Contract\CreateNewSubclientRequest $params)
+    public function createNewSubclient(Contract\CreateNewSubclientRequest $params): Contract\CreateNewSubclientResponse
     {
         return $this->__soapCall('CreateNewSubclient', [$params]);
     }
 
     /**
      * CreateNewWordstatReport.
-     *
-     * @param Contract\NewWordstatReportInfo $params
-     * @return int
      */
-    public function createNewWordstatReport(Contract\NewWordstatReportInfo $params)
+    public function createNewWordstatReport(Contract\NewWordstatReportInfo $params): int
     {
         return $this->__soapCall('CreateNewWordstatReport', [$params]);
     }
@@ -385,7 +358,7 @@ class YandexAPIService extends ApiSoapClientV4
      *
      * @return Contract\WordstatReportStatusInfo[]
      */
-    public function getWordstatReportList()
+    public function getWordstatReportList(): array
     {
         return $this->__soapCall('GetWordstatReportList', []);
     }
@@ -393,21 +366,17 @@ class YandexAPIService extends ApiSoapClientV4
     /**
      * GetWordstatReport.
      *
-     * @param int $params
      * @return Contract\WordstatReportInfo[]
      */
-    public function getWordstatReport($params)
+    public function getWordstatReport(int $params): array
     {
         return $this->__soapCall('GetWordstatReport', [$params]);
     }
 
     /**
      * DeleteWordstatReport.
-     *
-     * @param int $params
-     * @return int
      */
-    public function deleteWordstatReport($params)
+    public function deleteWordstatReport(int $params): int
     {
         return $this->__soapCall('DeleteWordstatReport', [$params]);
     }
@@ -415,10 +384,9 @@ class YandexAPIService extends ApiSoapClientV4
     /**
      * GetStatGoals.
      *
-     * @param Contract\StatGoalsCampaignIDInfo $params
      * @return Contract\StatGoalInfo[]
      */
-    public function getStatGoals(Contract\StatGoalsCampaignIDInfo $params)
+    public function getStatGoals(Contract\StatGoalsCampaignIDInfo $params): array
     {
         return $this->__soapCall('GetStatGoals', [$params]);
     }
@@ -426,10 +394,9 @@ class YandexAPIService extends ApiSoapClientV4
     /**
      * GetEventsLog.
      *
-     * @param Contract\GetEventsLogRequest $params
      * @return Contract\EventsLogItem[]
      */
-    public function getEventsLog(Contract\GetEventsLogRequest $params)
+    public function getEventsLog(Contract\GetEventsLogRequest $params): array
     {
         return $this->__soapCall('GetEventsLog', [$params]);
     }
@@ -437,10 +404,9 @@ class YandexAPIService extends ApiSoapClientV4
     /**
      * GetCampaignsTags.
      *
-     * @param Contract\CampaignIDSInfo $params
      * @return Contract\CampaignTagsInfo[]
      */
-    public function getCampaignsTags(Contract\CampaignIDSInfo $params)
+    public function getCampaignsTags(Contract\CampaignIDSInfo $params): array
     {
         return $this->__soapCall('GetCampaignsTags', [$params]);
     }
@@ -449,9 +415,10 @@ class YandexAPIService extends ApiSoapClientV4
      * UpdateCampaignsTags.
      *
      * @param Contract\CampaignTagsInfo[] $params
+     *
      * @return Contract\CampaignTagsInfo[]
      */
-    public function updateCampaignsTags(array $params)
+    public function updateCampaignsTags(array $params): array
     {
         return $this->__soapCall('UpdateCampaignsTags', [$params]);
     }
@@ -459,10 +426,9 @@ class YandexAPIService extends ApiSoapClientV4
     /**
      * GetBannersTags.
      *
-     * @param Contract\BannersRequestInfo $params
      * @return Contract\BannerTagsInfo[]
      */
-    public function getBannersTags(Contract\BannersRequestInfo $params)
+    public function getBannersTags(Contract\BannersRequestInfo $params): array
     {
         return $this->__soapCall('GetBannersTags', [$params]);
     }
@@ -471,74 +437,56 @@ class YandexAPIService extends ApiSoapClientV4
      * UpdateBannersTags.
      *
      * @param Contract\BannerTagsInfo[] $params
-     * @return int
      */
-    public function updateBannersTags(array $params)
+    public function updateBannersTags(array $params): int
     {
         return $this->__soapCall('UpdateBannersTags', [$params]);
     }
 
     /**
      * TransferMoney.
-     *
-     * @param Contract\TransferMoneyInfo $params
-     * @return int
      */
-    public function transferMoney(Contract\TransferMoneyInfo $params)
+    public function transferMoney(Contract\TransferMoneyInfo $params): int
     {
         return $this->__soapCall('TransferMoney', [$params]);
     }
 
     /**
      * GetCreditLimits.
-     *
-     * @return Contract\CreditLimitsInfo
      */
-    public function getCreditLimits()
+    public function getCreditLimits(): Contract\CreditLimitsInfo
     {
         return $this->__soapCall('GetCreditLimits', []);
     }
 
     /**
      * CreateInvoice.
-     *
-     * @param Contract\CreateInvoiceInfo $params
-     * @return string
      */
-    public function createInvoice(Contract\CreateInvoiceInfo $params)
+    public function createInvoice(Contract\CreateInvoiceInfo $params): string
     {
         return $this->__soapCall('CreateInvoice', [$params]);
     }
 
     /**
      * PayCampaigns.
-     *
-     * @param Contract\PayCampaignsInfo $params
-     * @return int
      */
-    public function payCampaigns(Contract\PayCampaignsInfo $params)
+    public function payCampaigns(Contract\PayCampaignsInfo $params): int
     {
         return $this->__soapCall('PayCampaigns', [$params]);
     }
 
     /**
      * PayCampaignsByCard.
-     *
-     * @param Contract\PayCampaignsByCardInfo $params
-     * @return string
      */
-    public function payCampaignsByCard(Contract\PayCampaignsByCardInfo $params)
+    public function payCampaignsByCard(Contract\PayCampaignsByCardInfo $params): string
     {
         return $this->__soapCall('PayCampaignsByCard', [$params]);
     }
 
     /**
      * CheckPayment.
-     *
-     * @param Contract\CheckPaymentInfo $params
-     * @return string
      */
-    public function checkPayment(Contract\CheckPaymentInfo $params)
+    public function checkPayment(Contract\CheckPaymentInfo $params): string
     {
         return $this->__soapCall('CheckPayment', [$params]);
     }
@@ -546,80 +494,58 @@ class YandexAPIService extends ApiSoapClientV4
     /**
      * GetRetargetingGoals.
      *
-     * @param Contract\GetRetargetingGoalsRequest $params
      * @return Contract\RetargetingGoal[]
      */
-    public function getRetargetingGoals(Contract\GetRetargetingGoalsRequest $params)
+    public function getRetargetingGoals(Contract\GetRetargetingGoalsRequest $params): array
     {
         return $this->__soapCall('GetRetargetingGoals', [$params]);
     }
 
     /**
      * RetargetingCondition.
-     *
-     * @param Contract\RetargetingConditionRequest $params
-     * @return Contract\RetargetingConditionResponse
      */
-    public function retargetingCondition(Contract\RetargetingConditionRequest $params)
+    public function retargetingCondition(Contract\RetargetingConditionRequest $params): Contract\RetargetingConditionResponse
     {
         return $this->__soapCall('RetargetingCondition', [$params]);
     }
 
     /**
      * Retargeting.
-     *
-     * @param Contract\RetargetingRequest $params
-     * @return Contract\RetargetingResponse
      */
-    public function retargeting(Contract\RetargetingRequest $params)
+    public function retargeting(Contract\RetargetingRequest $params): Contract\RetargetingResponse
     {
         return $this->__soapCall('Retargeting', [$params]);
     }
 
     /**
      * AdImage.
-     *
-     * @param Contract\AdImageRequest $params
-     * @return Contract\AdImageResponse
      */
-    public function adImage(Contract\AdImageRequest $params)
+    public function adImage(Contract\AdImageRequest $params): Contract\AdImageResponse
     {
         return $this->__soapCall('AdImage', [$params]);
     }
 
     /**
      * AdImageAssociation.
-     *
-     * @param Contract\AdImageAssociationRequest $params
-     * @return Contract\AdImageAssociationResponse
      */
-    public function adImageAssociation(Contract\AdImageAssociationRequest $params)
+    public function adImageAssociation(Contract\AdImageAssociationRequest $params): Contract\AdImageAssociationResponse
     {
         return $this->__soapCall('AdImageAssociation', [$params]);
     }
 
     /**
      * EnableSharedAccount.
-     *
-     * @param Contract\EnableSharedAccountRequest $params
-     * @return Contract\EnableSharedAccountResponse
      */
-    public function enableSharedAccount(Contract\EnableSharedAccountRequest $params)
+    public function enableSharedAccount(Contract\EnableSharedAccountRequest $params): Contract\EnableSharedAccountResponse
     {
         return $this->__soapCall('EnableSharedAccount', [$params]);
     }
 
     /**
      * AccountManagement.
-     *
-     * @param Contract\AccountManagementRequest $params
-     * @return Contract\AccountManagementResponse
      */
-    public function accountManagement(Contract\AccountManagementRequest $params)
+    public function accountManagement(Contract\AccountManagementRequest $params): Contract\AccountManagementResponse
     {
         return $this->__soapCall('AccountManagement', [$params]);
     }
-
-
 }
-

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,9 +9,5 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class CalloutFieldEnum
 {
-
-    const CALLOUT_TEXT = 'CalloutText';
-
-
+    public const CALLOUT_TEXT = 'CalloutText';
 }
-

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,25 +9,20 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AdBuilderAdUpdateItem
 {
-
     protected $CreativeId = null;
 
     /**
      * Creates a new instance of AdBuilderAdUpdateItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets CreativeId.
-     *
-     * @return int
      */
-    public function getCreativeId()
+    public function getCreativeId(): int
     {
         return $this->CreativeId;
     }
@@ -33,16 +30,12 @@ class AdBuilderAdUpdateItem
     /**
      * Sets CreativeId.
      *
-     * @param int $value
      * @return $this
      */
-    public function setCreativeId($value)
+    public function setCreativeId(int $value)
     {
         $this->CreativeId = $value;
 
         return $this;
     }
-
-
 }
-

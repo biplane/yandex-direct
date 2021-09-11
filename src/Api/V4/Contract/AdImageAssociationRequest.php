@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class AdImageAssociationRequest
 {
-
     protected $Action = null;
 
     protected $SelectionCriteria = null;
@@ -16,20 +17,16 @@ class AdImageAssociationRequest
 
     /**
      * Creates a new instance of AdImageAssociationRequest.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Action.
-     *
-     * @return string
      */
-    public function getAction()
+    public function getAction(): string
     {
         return $this->Action;
     }
@@ -37,10 +34,9 @@ class AdImageAssociationRequest
     /**
      * Sets Action.
      *
-     * @param string $value
      * @return $this
      */
-    public function setAction($value)
+    public function setAction(string $value)
     {
         $this->Action = $value;
 
@@ -49,10 +45,8 @@ class AdImageAssociationRequest
 
     /**
      * Gets SelectionCriteria.
-     *
-     * @return AdImageAssociationSelectionCriteria|null
      */
-    public function getSelectionCriteria()
+    public function getSelectionCriteria(): ?AdImageAssociationSelectionCriteria
     {
         return $this->SelectionCriteria;
     }
@@ -60,10 +54,9 @@ class AdImageAssociationRequest
     /**
      * Sets SelectionCriteria.
      *
-     * @param AdImageAssociationSelectionCriteria|null $value
      * @return $this
      */
-    public function setSelectionCriteria(AdImageAssociationSelectionCriteria $value = null)
+    public function setSelectionCriteria(?AdImageAssociationSelectionCriteria $value = null)
     {
         $this->SelectionCriteria = $value;
 
@@ -75,7 +68,7 @@ class AdImageAssociationRequest
      *
      * @return AdImageAssociation[]|null
      */
-    public function getAdImageAssociations()
+    public function getAdImageAssociations(): ?array
     {
         return $this->AdImageAssociations;
     }
@@ -84,15 +77,13 @@ class AdImageAssociationRequest
      * Sets AdImageAssociations.
      *
      * @param AdImageAssociation[]|null $value
+     *
      * @return $this
      */
-    public function setAdImageAssociations(array $value = null)
+    public function setAdImageAssociations(?array $value = null)
     {
         $this->AdImageAssociations = $value;
 
         return $this;
     }
-
-
 }
-

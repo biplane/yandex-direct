@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,27 +9,22 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class CampaignChangesItem
 {
-
     protected $CampaignId = null;
 
     protected $ChangesIn = [];
 
     /**
      * Creates a new instance of CampaignChangesItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets CampaignId.
-     *
-     * @return int
      */
-    public function getCampaignId()
+    public function getCampaignId(): int
     {
         return $this->CampaignId;
     }
@@ -35,10 +32,9 @@ class CampaignChangesItem
     /**
      * Sets CampaignId.
      *
-     * @param int $value
      * @return $this
      */
-    public function setCampaignId($value)
+    public function setCampaignId(int $value)
     {
         $this->CampaignId = $value;
 
@@ -48,10 +44,11 @@ class CampaignChangesItem
     /**
      * Gets ChangesIn.
      *
-     * @return string[]
      * @see CampaignChangesInEnum
+     *
+     * @return string[]
      */
-    public function getChangesIn()
+    public function getChangesIn(): array
     {
         return $this->ChangesIn;
     }
@@ -59,9 +56,11 @@ class CampaignChangesItem
     /**
      * Sets ChangesIn.
      *
-     * @param string[] $value
-     * @return $this
      * @see CampaignChangesInEnum
+     *
+     * @param string[] $value
+     *
+     * @return $this
      */
     public function setChangesIn(array $value)
     {
@@ -69,7 +68,4 @@ class CampaignChangesItem
 
         return $this;
     }
-
-
 }
-

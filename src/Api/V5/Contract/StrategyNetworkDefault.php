@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,43 +9,34 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class StrategyNetworkDefault
 {
-
 //    Can be omit.
 //    protected $LimitPercent = null;
 
     /**
      * Creates a new instance of StrategyNetworkDefault.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets LimitPercent.
-     *
-     * @return int|null
      */
-    public function getLimitPercent()
+    public function getLimitPercent(): ?int
     {
-        return isset($this->LimitPercent) ? $this->LimitPercent : null;
+        return $this->LimitPercent ?? null;
     }
 
     /**
      * Sets LimitPercent.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setLimitPercent($value = null)
+    public function setLimitPercent(?int $value = null)
     {
         $this->LimitPercent = $value;
 
         return $this;
     }
-
-
 }
-

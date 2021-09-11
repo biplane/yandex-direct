@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AdCategoriesItem
 {
-
     protected $AdCategory = null;
 
     protected $Description = null;
@@ -16,20 +17,16 @@ class AdCategoriesItem
 
     /**
      * Creates a new instance of AdCategoriesItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets AdCategory.
-     *
-     * @return string
      */
-    public function getAdCategory()
+    public function getAdCategory(): string
     {
         return $this->AdCategory;
     }
@@ -37,10 +34,9 @@ class AdCategoriesItem
     /**
      * Sets AdCategory.
      *
-     * @param string $value
      * @return $this
      */
-    public function setAdCategory($value)
+    public function setAdCategory(string $value)
     {
         $this->AdCategory = $value;
 
@@ -49,10 +45,8 @@ class AdCategoriesItem
 
     /**
      * Gets Description.
-     *
-     * @return string
      */
-    public function getDescription()
+    public function getDescription(): string
     {
         return $this->Description;
     }
@@ -60,10 +54,9 @@ class AdCategoriesItem
     /**
      * Sets Description.
      *
-     * @param string $value
      * @return $this
      */
-    public function setDescription($value)
+    public function setDescription(string $value)
     {
         $this->Description = $value;
 
@@ -72,10 +65,8 @@ class AdCategoriesItem
 
     /**
      * Gets Message.
-     *
-     * @return string
      */
-    public function getMessage()
+    public function getMessage(): string
     {
         return $this->Message;
     }
@@ -83,16 +74,12 @@ class AdCategoriesItem
     /**
      * Sets Message.
      *
-     * @param string $value
      * @return $this
      */
-    public function setMessage($value)
+    public function setMessage(string $value)
     {
         $this->Message = $value;
 
         return $this;
     }
-
-
 }
-

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,15 +9,11 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class CampaignStatusSelectionEnum
 {
+    public const ACCEPTED = 'ACCEPTED';
 
-    const ACCEPTED = 'ACCEPTED';
+    public const DRAFT = 'DRAFT';
 
-    const DRAFT = 'DRAFT';
+    public const MODERATION = 'MODERATION';
 
-    const MODERATION = 'MODERATION';
-
-    const REJECTED = 'REJECTED';
-
-
+    public const REJECTED = 'REJECTED';
 }
-

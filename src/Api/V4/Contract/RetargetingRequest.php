@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class RetargetingRequest
 {
-
     protected $Action = null;
 
     protected $Login = null;
@@ -20,20 +21,16 @@ class RetargetingRequest
 
     /**
      * Creates a new instance of RetargetingRequest.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Action.
-     *
-     * @return string
      */
-    public function getAction()
+    public function getAction(): string
     {
         return $this->Action;
     }
@@ -41,10 +38,9 @@ class RetargetingRequest
     /**
      * Sets Action.
      *
-     * @param string $value
      * @return $this
      */
-    public function setAction($value)
+    public function setAction(string $value)
     {
         $this->Action = $value;
 
@@ -53,10 +49,8 @@ class RetargetingRequest
 
     /**
      * Gets Login.
-     *
-     * @return string|null
      */
-    public function getLogin()
+    public function getLogin(): ?string
     {
         return $this->Login;
     }
@@ -64,10 +58,9 @@ class RetargetingRequest
     /**
      * Sets Login.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setLogin($value = null)
+    public function setLogin(?string $value = null)
     {
         $this->Login = $value;
 
@@ -76,10 +69,8 @@ class RetargetingRequest
 
     /**
      * Gets SelectionCriteria.
-     *
-     * @return RetargetingSelectionCriteria|null
      */
-    public function getSelectionCriteria()
+    public function getSelectionCriteria(): ?RetargetingSelectionCriteria
     {
         return $this->SelectionCriteria;
     }
@@ -87,10 +78,9 @@ class RetargetingRequest
     /**
      * Sets SelectionCriteria.
      *
-     * @param RetargetingSelectionCriteria|null $value
      * @return $this
      */
-    public function setSelectionCriteria(RetargetingSelectionCriteria $value = null)
+    public function setSelectionCriteria(?RetargetingSelectionCriteria $value = null)
     {
         $this->SelectionCriteria = $value;
 
@@ -102,7 +92,7 @@ class RetargetingRequest
      *
      * @return Retargeting[]|null
      */
-    public function getRetargetings()
+    public function getRetargetings(): ?array
     {
         return $this->Retargetings;
     }
@@ -111,9 +101,10 @@ class RetargetingRequest
      * Sets Retargetings.
      *
      * @param Retargeting[]|null $value
+     *
      * @return $this
      */
-    public function setRetargetings(array $value = null)
+    public function setRetargetings(?array $value = null)
     {
         $this->Retargetings = $value;
 
@@ -122,10 +113,8 @@ class RetargetingRequest
 
     /**
      * Gets Options.
-     *
-     * @return RetargetingRequestOptions|null
      */
-    public function getOptions()
+    public function getOptions(): ?RetargetingRequestOptions
     {
         return $this->Options;
     }
@@ -133,16 +122,12 @@ class RetargetingRequest
     /**
      * Sets Options.
      *
-     * @param RetargetingRequestOptions|null $value
      * @return $this
      */
-    public function setOptions(RetargetingRequestOptions $value = null)
+    public function setOptions(?RetargetingRequestOptions $value = null)
     {
         $this->Options = $value;
 
         return $this;
     }
-
-
 }
-

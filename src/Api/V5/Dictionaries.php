@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5;
 
 use Biplane\YandexDirect\Api\ApiSoapClientV5;
@@ -10,8 +12,7 @@ use Biplane\YandexDirect\Config;
  */
 class Dictionaries extends ApiSoapClientV5
 {
-
-    const ENDPOINT = 'https://api.direct.yandex.com/v5/dictionaries?wsdl';
+    public const ENDPOINT = 'https://api.direct.yandex.com/v5/dictionaries?wsdl';
 
     public function __construct(Config $config, array $options)
     {
@@ -87,15 +88,9 @@ class Dictionaries extends ApiSoapClientV5
 
     /**
      * get.
-     *
-     * @param Contract\GetDictionariesRequest $parameters
-     * @return Contract\GetDictionariesResponse
      */
-    public function get(Contract\GetDictionariesRequest $parameters)
+    public function get(Contract\GetDictionariesRequest $parameters): Contract\GetDictionariesResponse
     {
         return $this->__soapCall('get', [$parameters]);
     }
-
-
 }
-

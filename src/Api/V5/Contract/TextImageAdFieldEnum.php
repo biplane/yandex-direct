@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,15 +9,11 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class TextImageAdFieldEnum
 {
+    public const AD_IMAGE_HASH = 'AdImageHash';
 
-    const AD_IMAGE_HASH = 'AdImageHash';
+    public const HREF = 'Href';
 
-    const HREF = 'Href';
+    public const TURBO_PAGE_ID = 'TurboPageId';
 
-    const TURBO_PAGE_ID = 'TurboPageId';
-
-    const TURBO_PAGE_MODERATION = 'TurboPageModeration';
-
-
+    public const TURBO_PAGE_MODERATION = 'TurboPageModeration';
 }
-

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class BiddingRule
 {
-
 //    Can be omit.
 //    protected $SearchByTrafficVolume = null;
 
@@ -16,31 +17,26 @@ class BiddingRule
 
     /**
      * Creates a new instance of BiddingRule.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets SearchByTrafficVolume.
-     *
-     * @return SearchByTrafficVolume|null
      */
-    public function getSearchByTrafficVolume()
+    public function getSearchByTrafficVolume(): ?SearchByTrafficVolume
     {
-        return isset($this->SearchByTrafficVolume) ? $this->SearchByTrafficVolume : null;
+        return $this->SearchByTrafficVolume ?? null;
     }
 
     /**
      * Sets SearchByTrafficVolume.
      *
-     * @param SearchByTrafficVolume|null $value
      * @return $this
      */
-    public function setSearchByTrafficVolume(SearchByTrafficVolume $value = null)
+    public function setSearchByTrafficVolume(?SearchByTrafficVolume $value = null)
     {
         $this->SearchByTrafficVolume = $value;
 
@@ -49,27 +45,21 @@ class BiddingRule
 
     /**
      * Gets NetworkByCoverage.
-     *
-     * @return NetworkByCoverage|null
      */
-    public function getNetworkByCoverage()
+    public function getNetworkByCoverage(): ?NetworkByCoverage
     {
-        return isset($this->NetworkByCoverage) ? $this->NetworkByCoverage : null;
+        return $this->NetworkByCoverage ?? null;
     }
 
     /**
      * Sets NetworkByCoverage.
      *
-     * @param NetworkByCoverage|null $value
      * @return $this
      */
-    public function setNetworkByCoverage(NetworkByCoverage $value = null)
+    public function setNetworkByCoverage(?NetworkByCoverage $value = null)
     {
         $this->NetworkByCoverage = $value;
 
         return $this;
     }
-
-
 }
-

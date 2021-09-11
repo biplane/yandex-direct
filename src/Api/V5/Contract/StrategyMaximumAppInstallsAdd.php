@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,17 +9,11 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class StrategyMaximumAppInstallsAdd extends StrategyWeeklyBudgetAddBase
 {
-
     /**
      * Creates a new instance of StrategyMaximumAppInstallsAdd.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
-
-
 }
-

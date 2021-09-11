@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5;
 
 use Biplane\YandexDirect\Api\ApiSoapClientV5;
@@ -10,8 +12,7 @@ use Biplane\YandexDirect\Config;
  */
 class Sitelinks extends ApiSoapClientV5
 {
-
-    const ENDPOINT = 'https://api.direct.yandex.com/v5/sitelinks?wsdl';
+    public const ENDPOINT = 'https://api.direct.yandex.com/v5/sitelinks?wsdl';
 
     public function __construct(Config $config, array $options)
     {
@@ -74,37 +75,25 @@ class Sitelinks extends ApiSoapClientV5
 
     /**
      * add.
-     *
-     * @param Contract\AddSitelinksRequest $parameters
-     * @return Contract\AddSitelinksResponse
      */
-    public function add(Contract\AddSitelinksRequest $parameters)
+    public function add(Contract\AddSitelinksRequest $parameters): Contract\AddSitelinksResponse
     {
         return $this->__soapCall('add', [$parameters]);
     }
 
     /**
      * get.
-     *
-     * @param Contract\GetSitelinksRequest $parameters
-     * @return Contract\GetSitelinksResponse
      */
-    public function get(Contract\GetSitelinksRequest $parameters)
+    public function get(Contract\GetSitelinksRequest $parameters): Contract\GetSitelinksResponse
     {
         return $this->__soapCall('get', [$parameters]);
     }
 
     /**
      * delete.
-     *
-     * @param Contract\DeleteSitelinksRequest $parameters
-     * @return Contract\DeleteSitelinksResponse
      */
-    public function delete(Contract\DeleteSitelinksRequest $parameters)
+    public function delete(Contract\DeleteSitelinksRequest $parameters): Contract\DeleteSitelinksResponse
     {
         return $this->__soapCall('delete', [$parameters]);
     }
-
-
 }
-

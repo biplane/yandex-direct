@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class GetAdGroupsRequest extends GetRequestGeneral
 {
-
     protected $SelectionCriteria = null;
 
     protected $FieldNames = [];
@@ -26,20 +27,16 @@ class GetAdGroupsRequest extends GetRequestGeneral
 
     /**
      * Creates a new instance of GetAdGroupsRequest.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets SelectionCriteria.
-     *
-     * @return AdGroupsSelectionCriteria
      */
-    public function getSelectionCriteria()
+    public function getSelectionCriteria(): AdGroupsSelectionCriteria
     {
         return $this->SelectionCriteria;
     }
@@ -47,7 +44,6 @@ class GetAdGroupsRequest extends GetRequestGeneral
     /**
      * Sets SelectionCriteria.
      *
-     * @param AdGroupsSelectionCriteria $value
      * @return $this
      */
     public function setSelectionCriteria(AdGroupsSelectionCriteria $value)
@@ -60,10 +56,11 @@ class GetAdGroupsRequest extends GetRequestGeneral
     /**
      * Gets FieldNames.
      *
-     * @return string[]
      * @see AdGroupFieldEnum
+     *
+     * @return string[]
      */
-    public function getFieldNames()
+    public function getFieldNames(): array
     {
         return $this->FieldNames;
     }
@@ -71,9 +68,11 @@ class GetAdGroupsRequest extends GetRequestGeneral
     /**
      * Sets FieldNames.
      *
-     * @param string[] $value
-     * @return $this
      * @see AdGroupFieldEnum
+     *
+     * @param string[] $value
+     *
+     * @return $this
      */
     public function setFieldNames(array $value)
     {
@@ -85,22 +84,25 @@ class GetAdGroupsRequest extends GetRequestGeneral
     /**
      * Gets MobileAppAdGroupFieldNames.
      *
-     * @return string[]|null
      * @see MobileAppAdGroupFieldEnum
+     *
+     * @return string[]|null
      */
-    public function getMobileAppAdGroupFieldNames()
+    public function getMobileAppAdGroupFieldNames(): ?array
     {
-        return isset($this->MobileAppAdGroupFieldNames) ? $this->MobileAppAdGroupFieldNames : null;
+        return $this->MobileAppAdGroupFieldNames ?? null;
     }
 
     /**
      * Sets MobileAppAdGroupFieldNames.
      *
-     * @param string[]|null $value
-     * @return $this
      * @see MobileAppAdGroupFieldEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
      */
-    public function setMobileAppAdGroupFieldNames(array $value = null)
+    public function setMobileAppAdGroupFieldNames(?array $value = null)
     {
         $this->MobileAppAdGroupFieldNames = $value;
 
@@ -110,22 +112,25 @@ class GetAdGroupsRequest extends GetRequestGeneral
     /**
      * Gets DynamicTextAdGroupFieldNames.
      *
-     * @return string[]|null
      * @see DynamicTextAdGroupFieldEnum
+     *
+     * @return string[]|null
      */
-    public function getDynamicTextAdGroupFieldNames()
+    public function getDynamicTextAdGroupFieldNames(): ?array
     {
-        return isset($this->DynamicTextAdGroupFieldNames) ? $this->DynamicTextAdGroupFieldNames : null;
+        return $this->DynamicTextAdGroupFieldNames ?? null;
     }
 
     /**
      * Sets DynamicTextAdGroupFieldNames.
      *
-     * @param string[]|null $value
-     * @return $this
      * @see DynamicTextAdGroupFieldEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
      */
-    public function setDynamicTextAdGroupFieldNames(array $value = null)
+    public function setDynamicTextAdGroupFieldNames(?array $value = null)
     {
         $this->DynamicTextAdGroupFieldNames = $value;
 
@@ -135,22 +140,25 @@ class GetAdGroupsRequest extends GetRequestGeneral
     /**
      * Gets DynamicTextFeedAdGroupFieldNames.
      *
-     * @return string[]|null
      * @see DynamicTextFeedAdGroupFieldEnum
+     *
+     * @return string[]|null
      */
-    public function getDynamicTextFeedAdGroupFieldNames()
+    public function getDynamicTextFeedAdGroupFieldNames(): ?array
     {
-        return isset($this->DynamicTextFeedAdGroupFieldNames) ? $this->DynamicTextFeedAdGroupFieldNames : null;
+        return $this->DynamicTextFeedAdGroupFieldNames ?? null;
     }
 
     /**
      * Sets DynamicTextFeedAdGroupFieldNames.
      *
-     * @param string[]|null $value
-     * @return $this
      * @see DynamicTextFeedAdGroupFieldEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
      */
-    public function setDynamicTextFeedAdGroupFieldNames(array $value = null)
+    public function setDynamicTextFeedAdGroupFieldNames(?array $value = null)
     {
         $this->DynamicTextFeedAdGroupFieldNames = $value;
 
@@ -160,28 +168,28 @@ class GetAdGroupsRequest extends GetRequestGeneral
     /**
      * Gets SmartAdGroupFieldNames.
      *
-     * @return string[]|null
      * @see SmartAdGroupFieldEnum
+     *
+     * @return string[]|null
      */
-    public function getSmartAdGroupFieldNames()
+    public function getSmartAdGroupFieldNames(): ?array
     {
-        return isset($this->SmartAdGroupFieldNames) ? $this->SmartAdGroupFieldNames : null;
+        return $this->SmartAdGroupFieldNames ?? null;
     }
 
     /**
      * Sets SmartAdGroupFieldNames.
      *
-     * @param string[]|null $value
-     * @return $this
      * @see SmartAdGroupFieldEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
      */
-    public function setSmartAdGroupFieldNames(array $value = null)
+    public function setSmartAdGroupFieldNames(?array $value = null)
     {
         $this->SmartAdGroupFieldNames = $value;
 
         return $this;
     }
-
-
 }
-

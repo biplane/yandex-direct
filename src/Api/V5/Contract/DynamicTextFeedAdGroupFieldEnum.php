@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,15 +9,11 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class DynamicTextFeedAdGroupFieldEnum
 {
+    public const SOURCE = 'Source';
 
-    const SOURCE = 'Source';
+    public const FEED_ID = 'FeedId';
 
-    const FEED_ID = 'FeedId';
+    public const SOURCE_TYPE = 'SourceType';
 
-    const SOURCE_TYPE = 'SourceType';
-
-    const SOURCE_PROCESSING_STATUS = 'SourceProcessingStatus';
-
-
+    public const SOURCE_PROCESSING_STATUS = 'SourceProcessingStatus';
 }
-

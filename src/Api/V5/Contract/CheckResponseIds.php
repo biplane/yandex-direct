@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class CheckResponseIds
 {
-
 //    Can be omit.
 //    protected $CampaignIds = null;
 
@@ -19,10 +20,8 @@ class CheckResponseIds
 
     /**
      * Creates a new instance of CheckResponseIds.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -32,18 +31,19 @@ class CheckResponseIds
      *
      * @return int[]|null
      */
-    public function getCampaignIds()
+    public function getCampaignIds(): ?array
     {
-        return isset($this->CampaignIds) ? $this->CampaignIds : null;
+        return $this->CampaignIds ?? null;
     }
 
     /**
      * Sets CampaignIds.
      *
      * @param int[]|null $value
+     *
      * @return $this
      */
-    public function setCampaignIds(array $value = null)
+    public function setCampaignIds(?array $value = null)
     {
         $this->CampaignIds = $value;
 
@@ -55,18 +55,19 @@ class CheckResponseIds
      *
      * @return int[]|null
      */
-    public function getAdGroupIds()
+    public function getAdGroupIds(): ?array
     {
-        return isset($this->AdGroupIds) ? $this->AdGroupIds : null;
+        return $this->AdGroupIds ?? null;
     }
 
     /**
      * Sets AdGroupIds.
      *
      * @param int[]|null $value
+     *
      * @return $this
      */
-    public function setAdGroupIds(array $value = null)
+    public function setAdGroupIds(?array $value = null)
     {
         $this->AdGroupIds = $value;
 
@@ -78,24 +79,22 @@ class CheckResponseIds
      *
      * @return int[]|null
      */
-    public function getAdIds()
+    public function getAdIds(): ?array
     {
-        return isset($this->AdIds) ? $this->AdIds : null;
+        return $this->AdIds ?? null;
     }
 
     /**
      * Sets AdIds.
      *
      * @param int[]|null $value
+     *
      * @return $this
      */
-    public function setAdIds(array $value = null)
+    public function setAdIds(?array $value = null)
     {
         $this->AdIds = $value;
 
         return $this;
     }
-
-
 }
-

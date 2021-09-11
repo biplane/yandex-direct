@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,15 +9,11 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class TextAdPriceExtensionFieldEnum
 {
+    public const PRICE = 'Price';
 
-    const PRICE = 'Price';
+    public const OLD_PRICE = 'OldPrice';
 
-    const OLD_PRICE = 'OldPrice';
+    public const PRICE_CURRENCY = 'PriceCurrency';
 
-    const PRICE_CURRENCY = 'PriceCurrency';
-
-    const PRICE_QUALIFIER = 'PriceQualifier';
-
-
+    public const PRICE_QUALIFIER = 'PriceQualifier';
 }
-

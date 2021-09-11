@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class GetSummaryStatRequest
 {
-
     protected $CampaignIDS = [];
 
     protected $StartDate = null;
@@ -22,10 +23,8 @@ class GetSummaryStatRequest
 
     /**
      * Creates a new instance of GetSummaryStatRequest.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -35,7 +34,7 @@ class GetSummaryStatRequest
      *
      * @return int[]
      */
-    public function getCampaignIDS()
+    public function getCampaignIDS(): array
     {
         return $this->CampaignIDS;
     }
@@ -44,6 +43,7 @@ class GetSummaryStatRequest
      * Sets CampaignIDS.
      *
      * @param int[] $value
+     *
      * @return $this
      */
     public function setCampaignIDS(array $value)
@@ -55,10 +55,8 @@ class GetSummaryStatRequest
 
     /**
      * Gets StartDate.
-     *
-     * @return string
      */
-    public function getStartDate()
+    public function getStartDate(): string
     {
         return $this->StartDate;
     }
@@ -66,10 +64,9 @@ class GetSummaryStatRequest
     /**
      * Sets StartDate.
      *
-     * @param string $value
      * @return $this
      */
-    public function setStartDate($value)
+    public function setStartDate(string $value)
     {
         $this->StartDate = $value;
 
@@ -78,10 +75,8 @@ class GetSummaryStatRequest
 
     /**
      * Gets EndDate.
-     *
-     * @return string
      */
-    public function getEndDate()
+    public function getEndDate(): string
     {
         return $this->EndDate;
     }
@@ -89,10 +84,9 @@ class GetSummaryStatRequest
     /**
      * Sets EndDate.
      *
-     * @param string $value
      * @return $this
      */
-    public function setEndDate($value)
+    public function setEndDate(string $value)
     {
         $this->EndDate = $value;
 
@@ -101,10 +95,8 @@ class GetSummaryStatRequest
 
     /**
      * Gets Currency.
-     *
-     * @return string|null
      */
-    public function getCurrency()
+    public function getCurrency(): ?string
     {
         return $this->Currency;
     }
@@ -112,10 +104,9 @@ class GetSummaryStatRequest
     /**
      * Sets Currency.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setCurrency($value = null)
+    public function setCurrency(?string $value = null)
     {
         $this->Currency = $value;
 
@@ -124,10 +115,8 @@ class GetSummaryStatRequest
 
     /**
      * Gets IncludeVAT.
-     *
-     * @return string|null
      */
-    public function getIncludeVAT()
+    public function getIncludeVAT(): ?string
     {
         return $this->IncludeVAT;
     }
@@ -135,10 +124,9 @@ class GetSummaryStatRequest
     /**
      * Sets IncludeVAT.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setIncludeVAT($value = null)
+    public function setIncludeVAT(?string $value = null)
     {
         $this->IncludeVAT = $value;
 
@@ -147,10 +135,8 @@ class GetSummaryStatRequest
 
     /**
      * Gets IncludeDiscount.
-     *
-     * @return string|null
      */
-    public function getIncludeDiscount()
+    public function getIncludeDiscount(): ?string
     {
         return $this->IncludeDiscount;
     }
@@ -158,16 +144,12 @@ class GetSummaryStatRequest
     /**
      * Sets IncludeDiscount.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setIncludeDiscount($value = null)
+    public function setIncludeDiscount(?string $value = null)
     {
         $this->IncludeDiscount = $value;
 
         return $this;
     }
-
-
 }
-

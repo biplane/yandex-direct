@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,19 +9,15 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class CampaignStateEnum
 {
+    public const ARCHIVED = 'ARCHIVED';
 
-    const ARCHIVED = 'ARCHIVED';
+    public const CONVERTED = 'CONVERTED';
 
-    const CONVERTED = 'CONVERTED';
+    public const ENDED = 'ENDED';
 
-    const ENDED = 'ENDED';
+    public const OFF = 'OFF';
 
-    const OFF = 'OFF';
+    public const ON = 'ON';
 
-    const ON = 'ON';
-
-    const SUSPENDED = 'SUSPENDED';
-
-
+    public const SUSPENDED = 'SUSPENDED';
 }
-

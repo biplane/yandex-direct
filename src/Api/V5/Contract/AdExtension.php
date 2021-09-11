@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,43 +9,34 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AdExtension extends AdExtensionBase
 {
-
 //    Can be omit.
 //    protected $AdExtensionId = null;
 
     /**
      * Creates a new instance of AdExtension.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets AdExtensionId.
-     *
-     * @return int|null
      */
-    public function getAdExtensionId()
+    public function getAdExtensionId(): ?int
     {
-        return isset($this->AdExtensionId) ? $this->AdExtensionId : null;
+        return $this->AdExtensionId ?? null;
     }
 
     /**
      * Sets AdExtensionId.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setAdExtensionId($value = null)
+    public function setAdExtensionId(?int $value = null)
     {
         $this->AdExtensionId = $value;
 
         return $this;
     }
-
-
 }
-

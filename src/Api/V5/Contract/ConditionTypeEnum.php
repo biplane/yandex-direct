@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,11 +9,7 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class ConditionTypeEnum
 {
+    public const ITEMS_ALL = 'ITEMS_ALL';
 
-    const ITEMS_ALL = 'ITEMS_ALL';
-
-    const ITEMS_SUBSET = 'ITEMS_SUBSET';
-
-
+    public const ITEMS_SUBSET = 'ITEMS_SUBSET';
 }
-

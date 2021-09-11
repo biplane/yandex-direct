@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class LeadGetItem
 {
-
     protected $Id = null;
 
     protected $SubmittedAt = null;
@@ -21,20 +22,16 @@ class LeadGetItem
 
     /**
      * Creates a new instance of LeadGetItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Id.
-     *
-     * @return string
      */
-    public function getId()
+    public function getId(): string
     {
         return $this->Id;
     }
@@ -42,10 +39,9 @@ class LeadGetItem
     /**
      * Sets Id.
      *
-     * @param string $value
      * @return $this
      */
-    public function setId($value)
+    public function setId(string $value)
     {
         $this->Id = $value;
 
@@ -54,10 +50,8 @@ class LeadGetItem
 
     /**
      * Gets SubmittedAt.
-     *
-     * @return string
      */
-    public function getSubmittedAt()
+    public function getSubmittedAt(): string
     {
         return $this->SubmittedAt;
     }
@@ -65,10 +59,9 @@ class LeadGetItem
     /**
      * Sets SubmittedAt.
      *
-     * @param string $value
      * @return $this
      */
-    public function setSubmittedAt($value)
+    public function setSubmittedAt(string $value)
     {
         $this->SubmittedAt = $value;
 
@@ -77,10 +70,8 @@ class LeadGetItem
 
     /**
      * Gets TurboPageId.
-     *
-     * @return int
      */
-    public function getTurboPageId()
+    public function getTurboPageId(): int
     {
         return $this->TurboPageId;
     }
@@ -88,10 +79,9 @@ class LeadGetItem
     /**
      * Sets TurboPageId.
      *
-     * @param int $value
      * @return $this
      */
-    public function setTurboPageId($value)
+    public function setTurboPageId(int $value)
     {
         $this->TurboPageId = $value;
 
@@ -100,10 +90,8 @@ class LeadGetItem
 
     /**
      * Gets TurboPageName.
-     *
-     * @return string
      */
-    public function getTurboPageName()
+    public function getTurboPageName(): string
     {
         return $this->TurboPageName;
     }
@@ -111,10 +99,9 @@ class LeadGetItem
     /**
      * Sets TurboPageName.
      *
-     * @param string $value
      * @return $this
      */
-    public function setTurboPageName($value)
+    public function setTurboPageName(string $value)
     {
         $this->TurboPageName = $value;
 
@@ -126,24 +113,22 @@ class LeadGetItem
      *
      * @return LeadDataItem[]|null
      */
-    public function getData()
+    public function getData(): ?array
     {
-        return isset($this->Data) ? $this->Data : null;
+        return $this->Data ?? null;
     }
 
     /**
      * Sets Data.
      *
      * @param LeadDataItem[]|null $value
+     *
      * @return $this
      */
-    public function setData(array $value = null)
+    public function setData(?array $value = null)
     {
         $this->Data = $value;
 
         return $this;
     }
-
-
 }
-

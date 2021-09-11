@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,15 +9,11 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class MobileOperatingSystemTypeEnum
 {
+    public const IOS = 'IOS';
 
-    const IOS = 'IOS';
+    public const ANDROID = 'ANDROID';
 
-    const ANDROID = 'ANDROID';
+    public const OS_TYPE_OTHER = 'OS_TYPE_OTHER';
 
-    const OS_TYPE_OTHER = 'OS_TYPE_OTHER';
-
-    const OS_TYPE_UNKNOWN = 'OS_TYPE_UNKNOWN';
-
-
+    public const OS_TYPE_UNKNOWN = 'OS_TYPE_UNKNOWN';
 }
-

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class StatGoalInfo
 {
-
     protected $GoalID = null;
 
     protected $Name = null;
@@ -24,20 +25,16 @@ class StatGoalInfo
 
     /**
      * Creates a new instance of StatGoalInfo.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets GoalID.
-     *
-     * @return int
      */
-    public function getGoalID()
+    public function getGoalID(): int
     {
         return $this->GoalID;
     }
@@ -45,10 +42,9 @@ class StatGoalInfo
     /**
      * Sets GoalID.
      *
-     * @param int $value
      * @return $this
      */
-    public function setGoalID($value)
+    public function setGoalID(int $value)
     {
         $this->GoalID = $value;
 
@@ -57,10 +53,8 @@ class StatGoalInfo
 
     /**
      * Gets Name.
-     *
-     * @return string
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->Name;
     }
@@ -68,10 +62,9 @@ class StatGoalInfo
     /**
      * Sets Name.
      *
-     * @param string $value
      * @return $this
      */
-    public function setName($value)
+    public function setName(string $value)
     {
         $this->Name = $value;
 
@@ -80,10 +73,8 @@ class StatGoalInfo
 
     /**
      * Gets AvailableForStrategy.
-     *
-     * @return string
      */
-    public function getAvailableForStrategy()
+    public function getAvailableForStrategy(): string
     {
         return $this->AvailableForStrategy;
     }
@@ -91,10 +82,9 @@ class StatGoalInfo
     /**
      * Sets AvailableForStrategy.
      *
-     * @param string $value
      * @return $this
      */
-    public function setAvailableForStrategy($value)
+    public function setAvailableForStrategy(string $value)
     {
         $this->AvailableForStrategy = $value;
 
@@ -103,10 +93,8 @@ class StatGoalInfo
 
     /**
      * Gets AvailableForContextStrategy.
-     *
-     * @return string
      */
-    public function getAvailableForContextStrategy()
+    public function getAvailableForContextStrategy(): string
     {
         return $this->AvailableForContextStrategy;
     }
@@ -114,10 +102,9 @@ class StatGoalInfo
     /**
      * Sets AvailableForContextStrategy.
      *
-     * @param string $value
      * @return $this
      */
-    public function setAvailableForContextStrategy($value)
+    public function setAvailableForContextStrategy(string $value)
     {
         $this->AvailableForContextStrategy = $value;
 
@@ -126,10 +113,8 @@ class StatGoalInfo
 
     /**
      * Gets GoalsReached.
-     *
-     * @return int
      */
-    public function getGoalsReached()
+    public function getGoalsReached(): int
     {
         return $this->GoalsReached;
     }
@@ -137,10 +122,9 @@ class StatGoalInfo
     /**
      * Sets GoalsReached.
      *
-     * @param int $value
      * @return $this
      */
-    public function setGoalsReached($value)
+    public function setGoalsReached(int $value)
     {
         $this->GoalsReached = $value;
 
@@ -149,10 +133,8 @@ class StatGoalInfo
 
     /**
      * Gets ContextGoalsReached.
-     *
-     * @return int
      */
-    public function getContextGoalsReached()
+    public function getContextGoalsReached(): int
     {
         return $this->ContextGoalsReached;
     }
@@ -160,10 +142,9 @@ class StatGoalInfo
     /**
      * Sets ContextGoalsReached.
      *
-     * @param int $value
      * @return $this
      */
-    public function setContextGoalsReached($value)
+    public function setContextGoalsReached(int $value)
     {
         $this->ContextGoalsReached = $value;
 
@@ -172,10 +153,8 @@ class StatGoalInfo
 
     /**
      * Gets CampaignID.
-     *
-     * @return int|null
      */
-    public function getCampaignID()
+    public function getCampaignID(): ?int
     {
         return $this->CampaignID;
     }
@@ -183,16 +162,12 @@ class StatGoalInfo
     /**
      * Sets CampaignID.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setCampaignID($value = null)
+    public function setCampaignID(?int $value = null)
     {
         $this->CampaignID = $value;
 
         return $this;
     }
-
-
 }
-

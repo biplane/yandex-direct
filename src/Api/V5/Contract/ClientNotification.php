@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class ClientNotification
 {
-
     protected $Email = null;
 
     protected $EmailSubscriptions = [];
@@ -16,20 +17,16 @@ class ClientNotification
 
     /**
      * Creates a new instance of ClientNotification.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Email.
-     *
-     * @return string
      */
-    public function getEmail()
+    public function getEmail(): string
     {
         return $this->Email;
     }
@@ -37,10 +34,9 @@ class ClientNotification
     /**
      * Sets Email.
      *
-     * @param string $value
      * @return $this
      */
-    public function setEmail($value)
+    public function setEmail(string $value)
     {
         $this->Email = $value;
 
@@ -52,7 +48,7 @@ class ClientNotification
      *
      * @return EmailSubscriptionItem[]
      */
-    public function getEmailSubscriptions()
+    public function getEmailSubscriptions(): array
     {
         return $this->EmailSubscriptions;
     }
@@ -61,6 +57,7 @@ class ClientNotification
      * Sets EmailSubscriptions.
      *
      * @param EmailSubscriptionItem[] $value
+     *
      * @return $this
      */
     public function setEmailSubscriptions(array $value)
@@ -73,10 +70,9 @@ class ClientNotification
     /**
      * Gets Lang.
      *
-     * @return string
      * @see LangEnum
      */
-    public function getLang()
+    public function getLang(): string
     {
         return $this->Lang;
     }
@@ -84,17 +80,14 @@ class ClientNotification
     /**
      * Sets Lang.
      *
-     * @param string $value
-     * @return $this
      * @see LangEnum
+     *
+     * @return $this
      */
-    public function setLang($value)
+    public function setLang(string $value)
     {
         $this->Lang = $value;
 
         return $this;
     }
-
-
 }
-

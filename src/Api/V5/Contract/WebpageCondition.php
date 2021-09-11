@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class WebpageCondition
 {
-
     protected $Operand = null;
 
     protected $Operator = null;
@@ -16,10 +17,8 @@ class WebpageCondition
 
     /**
      * Creates a new instance of WebpageCondition.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -27,10 +26,9 @@ class WebpageCondition
     /**
      * Gets Operand.
      *
-     * @return string
      * @see WebpageConditionOperandEnum
      */
-    public function getOperand()
+    public function getOperand(): string
     {
         return $this->Operand;
     }
@@ -38,11 +36,11 @@ class WebpageCondition
     /**
      * Sets Operand.
      *
-     * @param string $value
-     * @return $this
      * @see WebpageConditionOperandEnum
+     *
+     * @return $this
      */
-    public function setOperand($value)
+    public function setOperand(string $value)
     {
         $this->Operand = $value;
 
@@ -52,10 +50,9 @@ class WebpageCondition
     /**
      * Gets Operator.
      *
-     * @return string
      * @see StringConditionOperatorEnum
      */
-    public function getOperator()
+    public function getOperator(): string
     {
         return $this->Operator;
     }
@@ -63,11 +60,11 @@ class WebpageCondition
     /**
      * Sets Operator.
      *
-     * @param string $value
-     * @return $this
      * @see StringConditionOperatorEnum
+     *
+     * @return $this
      */
-    public function setOperator($value)
+    public function setOperator(string $value)
     {
         $this->Operator = $value;
 
@@ -79,7 +76,7 @@ class WebpageCondition
      *
      * @return string[]
      */
-    public function getArguments()
+    public function getArguments(): array
     {
         return $this->Arguments;
     }
@@ -88,6 +85,7 @@ class WebpageCondition
      * Sets Arguments.
      *
      * @param string[] $value
+     *
      * @return $this
      */
     public function setArguments(array $value)
@@ -96,7 +94,4 @@ class WebpageCondition
 
         return $this;
     }
-
-
 }
-

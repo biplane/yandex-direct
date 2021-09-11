@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class LeadsSelectionCriteria
 {
-
     protected $TurboPageIds = [];
 
 //    Can be omit.
@@ -18,10 +19,8 @@ class LeadsSelectionCriteria
 
     /**
      * Creates a new instance of LeadsSelectionCriteria.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -31,7 +30,7 @@ class LeadsSelectionCriteria
      *
      * @return int[]
      */
-    public function getTurboPageIds()
+    public function getTurboPageIds(): array
     {
         return $this->TurboPageIds;
     }
@@ -40,6 +39,7 @@ class LeadsSelectionCriteria
      * Sets TurboPageIds.
      *
      * @param int[] $value
+     *
      * @return $this
      */
     public function setTurboPageIds(array $value)
@@ -51,21 +51,18 @@ class LeadsSelectionCriteria
 
     /**
      * Gets DateTimeFrom.
-     *
-     * @return string|null
      */
-    public function getDateTimeFrom()
+    public function getDateTimeFrom(): ?string
     {
-        return isset($this->DateTimeFrom) ? $this->DateTimeFrom : null;
+        return $this->DateTimeFrom ?? null;
     }
 
     /**
      * Sets DateTimeFrom.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setDateTimeFrom($value = null)
+    public function setDateTimeFrom(?string $value = null)
     {
         $this->DateTimeFrom = $value;
 
@@ -74,27 +71,21 @@ class LeadsSelectionCriteria
 
     /**
      * Gets DateTimeTo.
-     *
-     * @return string|null
      */
-    public function getDateTimeTo()
+    public function getDateTimeTo(): ?string
     {
-        return isset($this->DateTimeTo) ? $this->DateTimeTo : null;
+        return $this->DateTimeTo ?? null;
     }
 
     /**
      * Sets DateTimeTo.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setDateTimeTo($value = null)
+    public function setDateTimeTo(?string $value = null)
     {
         $this->DateTimeTo = $value;
 
         return $this;
     }
-
-
 }
-

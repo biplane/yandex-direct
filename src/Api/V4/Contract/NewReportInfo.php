@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class NewReportInfo
 {
-
     protected $CampaignID = null;
 
     protected $StartDate = null;
@@ -38,20 +39,16 @@ class NewReportInfo
 
     /**
      * Creates a new instance of NewReportInfo.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets CampaignID.
-     *
-     * @return int
      */
-    public function getCampaignID()
+    public function getCampaignID(): int
     {
         return $this->CampaignID;
     }
@@ -59,10 +56,9 @@ class NewReportInfo
     /**
      * Sets CampaignID.
      *
-     * @param int $value
      * @return $this
      */
-    public function setCampaignID($value)
+    public function setCampaignID(int $value)
     {
         $this->CampaignID = $value;
 
@@ -71,10 +67,8 @@ class NewReportInfo
 
     /**
      * Gets StartDate.
-     *
-     * @return string
      */
-    public function getStartDate()
+    public function getStartDate(): string
     {
         return $this->StartDate;
     }
@@ -82,10 +76,9 @@ class NewReportInfo
     /**
      * Sets StartDate.
      *
-     * @param string $value
      * @return $this
      */
-    public function setStartDate($value)
+    public function setStartDate(string $value)
     {
         $this->StartDate = $value;
 
@@ -94,10 +87,8 @@ class NewReportInfo
 
     /**
      * Gets EndDate.
-     *
-     * @return string
      */
-    public function getEndDate()
+    public function getEndDate(): string
     {
         return $this->EndDate;
     }
@@ -105,10 +96,9 @@ class NewReportInfo
     /**
      * Sets EndDate.
      *
-     * @param string $value
      * @return $this
      */
-    public function setEndDate($value)
+    public function setEndDate(string $value)
     {
         $this->EndDate = $value;
 
@@ -120,7 +110,7 @@ class NewReportInfo
      *
      * @return string[]|null
      */
-    public function getGroupByColumns()
+    public function getGroupByColumns(): ?array
     {
         return $this->GroupByColumns;
     }
@@ -129,9 +119,10 @@ class NewReportInfo
      * Sets GroupByColumns.
      *
      * @param string[]|null $value
+     *
      * @return $this
      */
-    public function setGroupByColumns(array $value = null)
+    public function setGroupByColumns(?array $value = null)
     {
         $this->GroupByColumns = $value;
 
@@ -140,10 +131,8 @@ class NewReportInfo
 
     /**
      * Gets Filter.
-     *
-     * @return NewReportFilterInfo|null
      */
-    public function getFilter()
+    public function getFilter(): ?NewReportFilterInfo
     {
         return $this->Filter;
     }
@@ -151,10 +140,9 @@ class NewReportInfo
     /**
      * Sets Filter.
      *
-     * @param NewReportFilterInfo|null $value
      * @return $this
      */
-    public function setFilter(NewReportFilterInfo $value = null)
+    public function setFilter(?NewReportFilterInfo $value = null)
     {
         $this->Filter = $value;
 
@@ -163,10 +151,8 @@ class NewReportInfo
 
     /**
      * Gets Limit.
-     *
-     * @return int|null
      */
-    public function getLimit()
+    public function getLimit(): ?int
     {
         return $this->Limit;
     }
@@ -174,10 +160,9 @@ class NewReportInfo
     /**
      * Sets Limit.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setLimit($value = null)
+    public function setLimit(?int $value = null)
     {
         $this->Limit = $value;
 
@@ -186,10 +171,8 @@ class NewReportInfo
 
     /**
      * Gets Offset.
-     *
-     * @return int|null
      */
-    public function getOffset()
+    public function getOffset(): ?int
     {
         return $this->Offset;
     }
@@ -197,10 +180,9 @@ class NewReportInfo
     /**
      * Sets Offset.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setOffset($value = null)
+    public function setOffset(?int $value = null)
     {
         $this->Offset = $value;
 
@@ -209,10 +191,8 @@ class NewReportInfo
 
     /**
      * Gets GroupByDate.
-     *
-     * @return string|null
      */
-    public function getGroupByDate()
+    public function getGroupByDate(): ?string
     {
         return $this->GroupByDate;
     }
@@ -220,10 +200,9 @@ class NewReportInfo
     /**
      * Sets GroupByDate.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setGroupByDate($value = null)
+    public function setGroupByDate(?string $value = null)
     {
         $this->GroupByDate = $value;
 
@@ -235,7 +214,7 @@ class NewReportInfo
      *
      * @return string[]|null
      */
-    public function getOrderBy()
+    public function getOrderBy(): ?array
     {
         return $this->OrderBy;
     }
@@ -244,9 +223,10 @@ class NewReportInfo
      * Sets OrderBy.
      *
      * @param string[]|null $value
+     *
      * @return $this
      */
-    public function setOrderBy(array $value = null)
+    public function setOrderBy(?array $value = null)
     {
         $this->OrderBy = $value;
 
@@ -255,10 +235,8 @@ class NewReportInfo
 
     /**
      * Gets TypeResultReport.
-     *
-     * @return string|null
      */
-    public function getTypeResultReport()
+    public function getTypeResultReport(): ?string
     {
         return $this->TypeResultReport;
     }
@@ -266,10 +244,9 @@ class NewReportInfo
     /**
      * Sets TypeResultReport.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setTypeResultReport($value = null)
+    public function setTypeResultReport(?string $value = null)
     {
         $this->TypeResultReport = $value;
 
@@ -278,10 +255,8 @@ class NewReportInfo
 
     /**
      * Gets CompressReport.
-     *
-     * @return int|null
      */
-    public function getCompressReport()
+    public function getCompressReport(): ?int
     {
         return $this->CompressReport;
     }
@@ -289,10 +264,9 @@ class NewReportInfo
     /**
      * Sets CompressReport.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setCompressReport($value = null)
+    public function setCompressReport(?int $value = null)
     {
         $this->CompressReport = $value;
 
@@ -301,10 +275,8 @@ class NewReportInfo
 
     /**
      * Gets Currency.
-     *
-     * @return string|null
      */
-    public function getCurrency()
+    public function getCurrency(): ?string
     {
         return $this->Currency;
     }
@@ -312,10 +284,9 @@ class NewReportInfo
     /**
      * Sets Currency.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setCurrency($value = null)
+    public function setCurrency(?string $value = null)
     {
         $this->Currency = $value;
 
@@ -324,10 +295,8 @@ class NewReportInfo
 
     /**
      * Gets IncludeVAT.
-     *
-     * @return string|null
      */
-    public function getIncludeVAT()
+    public function getIncludeVAT(): ?string
     {
         return $this->IncludeVAT;
     }
@@ -335,10 +304,9 @@ class NewReportInfo
     /**
      * Sets IncludeVAT.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setIncludeVAT($value = null)
+    public function setIncludeVAT(?string $value = null)
     {
         $this->IncludeVAT = $value;
 
@@ -347,10 +315,8 @@ class NewReportInfo
 
     /**
      * Gets IncludeDiscount.
-     *
-     * @return string|null
      */
-    public function getIncludeDiscount()
+    public function getIncludeDiscount(): ?string
     {
         return $this->IncludeDiscount;
     }
@@ -358,16 +324,12 @@ class NewReportInfo
     /**
      * Sets IncludeDiscount.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setIncludeDiscount($value = null)
+    public function setIncludeDiscount(?string $value = null)
     {
         $this->IncludeDiscount = $value;
 
         return $this;
     }
-
-
 }
-

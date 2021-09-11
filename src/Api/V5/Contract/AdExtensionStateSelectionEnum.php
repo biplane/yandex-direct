@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,11 +9,7 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AdExtensionStateSelectionEnum
 {
+    public const ON = 'ON';
 
-    const ON = 'ON';
-
-    const DELETED = 'DELETED';
-
-
+    public const DELETED = 'DELETED';
 }
-

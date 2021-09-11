@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class ExceptionNotification
 {
-
     protected $Code = null;
 
     protected $Message = null;
@@ -17,20 +18,16 @@ class ExceptionNotification
 
     /**
      * Creates a new instance of ExceptionNotification.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Code.
-     *
-     * @return int
      */
-    public function getCode()
+    public function getCode(): int
     {
         return $this->Code;
     }
@@ -38,10 +35,9 @@ class ExceptionNotification
     /**
      * Sets Code.
      *
-     * @param int $value
      * @return $this
      */
-    public function setCode($value)
+    public function setCode(int $value)
     {
         $this->Code = $value;
 
@@ -50,10 +46,8 @@ class ExceptionNotification
 
     /**
      * Gets Message.
-     *
-     * @return string
      */
-    public function getMessage()
+    public function getMessage(): string
     {
         return $this->Message;
     }
@@ -61,10 +55,9 @@ class ExceptionNotification
     /**
      * Sets Message.
      *
-     * @param string $value
      * @return $this
      */
-    public function setMessage($value)
+    public function setMessage(string $value)
     {
         $this->Message = $value;
 
@@ -73,27 +66,21 @@ class ExceptionNotification
 
     /**
      * Gets Details.
-     *
-     * @return string|null
      */
-    public function getDetails()
+    public function getDetails(): ?string
     {
-        return isset($this->Details) ? $this->Details : null;
+        return $this->Details ?? null;
     }
 
     /**
      * Sets Details.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setDetails($value = null)
+    public function setDetails(?string $value = null)
     {
         $this->Details = $value;
 
         return $this;
     }
-
-
 }
-

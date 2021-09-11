@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,27 +9,22 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class StatGoalsCampaignIDInfo
 {
-
     protected $CampaignID = null;
 
     protected $CampaignIDS = null;
 
     /**
      * Creates a new instance of StatGoalsCampaignIDInfo.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets CampaignID.
-     *
-     * @return int|null
      */
-    public function getCampaignID()
+    public function getCampaignID(): ?int
     {
         return $this->CampaignID;
     }
@@ -35,10 +32,9 @@ class StatGoalsCampaignIDInfo
     /**
      * Sets CampaignID.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setCampaignID($value = null)
+    public function setCampaignID(?int $value = null)
     {
         $this->CampaignID = $value;
 
@@ -50,7 +46,7 @@ class StatGoalsCampaignIDInfo
      *
      * @return int[]|null
      */
-    public function getCampaignIDS()
+    public function getCampaignIDS(): ?array
     {
         return $this->CampaignIDS;
     }
@@ -59,15 +55,13 @@ class StatGoalsCampaignIDInfo
      * Sets CampaignIDS.
      *
      * @param int[]|null $value
+     *
      * @return $this
      */
-    public function setCampaignIDS(array $value = null)
+    public function setCampaignIDS(?array $value = null)
     {
         $this->CampaignIDS = $value;
 
         return $this;
     }
-
-
 }
-

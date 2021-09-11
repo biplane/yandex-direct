@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,25 +9,20 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class DeleteFeedsRequest
 {
-
     protected $SelectionCriteria = null;
 
     /**
      * Creates a new instance of DeleteFeedsRequest.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets SelectionCriteria.
-     *
-     * @return FeedsSelectionCriteria
      */
-    public function getSelectionCriteria()
+    public function getSelectionCriteria(): FeedsSelectionCriteria
     {
         return $this->SelectionCriteria;
     }
@@ -33,7 +30,6 @@ class DeleteFeedsRequest
     /**
      * Sets SelectionCriteria.
      *
-     * @param FeedsSelectionCriteria $value
      * @return $this
      */
     public function setSelectionCriteria(FeedsSelectionCriteria $value)
@@ -42,7 +38,4 @@ class DeleteFeedsRequest
 
         return $this;
     }
-
-
 }
-

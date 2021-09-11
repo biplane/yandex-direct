@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,19 +9,15 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class HasSearchVolumeFieldEnum
 {
+    public const KEYWORD = 'Keyword';
 
-    const KEYWORD = 'Keyword';
+    public const REGION_IDS = 'RegionIds';
 
-    const REGION_IDS = 'RegionIds';
+    public const ALL_DEVICES = 'AllDevices';
 
-    const ALL_DEVICES = 'AllDevices';
+    public const MOBILE_PHONES = 'MobilePhones';
 
-    const MOBILE_PHONES = 'MobilePhones';
+    public const TABLETS = 'Tablets';
 
-    const TABLETS = 'Tablets';
-
-    const DESKTOPS = 'Desktops';
-
-
+    public const DESKTOPS = 'Desktops';
 }
-

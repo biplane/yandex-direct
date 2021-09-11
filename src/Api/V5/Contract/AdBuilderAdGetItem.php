@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AdBuilderAdGetItem
 {
-
     protected $CreativeId = null;
 
 //    Can be omit.
@@ -18,20 +19,16 @@ class AdBuilderAdGetItem
 
     /**
      * Creates a new instance of AdBuilderAdGetItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets CreativeId.
-     *
-     * @return int
      */
-    public function getCreativeId()
+    public function getCreativeId(): int
     {
         return $this->CreativeId;
     }
@@ -39,10 +36,9 @@ class AdBuilderAdGetItem
     /**
      * Sets CreativeId.
      *
-     * @param int $value
      * @return $this
      */
-    public function setCreativeId($value)
+    public function setCreativeId(int $value)
     {
         $this->CreativeId = $value;
 
@@ -51,21 +47,18 @@ class AdBuilderAdGetItem
 
     /**
      * Gets ThumbnailUrl.
-     *
-     * @return string|null
      */
-    public function getThumbnailUrl()
+    public function getThumbnailUrl(): ?string
     {
-        return isset($this->ThumbnailUrl) ? $this->ThumbnailUrl : null;
+        return $this->ThumbnailUrl ?? null;
     }
 
     /**
      * Sets ThumbnailUrl.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setThumbnailUrl($value = null)
+    public function setThumbnailUrl(?string $value = null)
     {
         $this->ThumbnailUrl = $value;
 
@@ -74,27 +67,21 @@ class AdBuilderAdGetItem
 
     /**
      * Gets PreviewUrl.
-     *
-     * @return string|null
      */
-    public function getPreviewUrl()
+    public function getPreviewUrl(): ?string
     {
-        return isset($this->PreviewUrl) ? $this->PreviewUrl : null;
+        return $this->PreviewUrl ?? null;
     }
 
     /**
      * Sets PreviewUrl.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setPreviewUrl($value = null)
+    public function setPreviewUrl(?string $value = null)
     {
         $this->PreviewUrl = $value;
 
         return $this;
     }
-
-
 }
-

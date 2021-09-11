@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class TimeZoneInfo
 {
-
     protected $TimeZone = null;
 
     protected $GMTOffset = null;
@@ -16,20 +17,16 @@ class TimeZoneInfo
 
     /**
      * Creates a new instance of TimeZoneInfo.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets TimeZone.
-     *
-     * @return string
      */
-    public function getTimeZone()
+    public function getTimeZone(): string
     {
         return $this->TimeZone;
     }
@@ -37,10 +34,9 @@ class TimeZoneInfo
     /**
      * Sets TimeZone.
      *
-     * @param string $value
      * @return $this
      */
-    public function setTimeZone($value)
+    public function setTimeZone(string $value)
     {
         $this->TimeZone = $value;
 
@@ -49,10 +45,8 @@ class TimeZoneInfo
 
     /**
      * Gets GMTOffset.
-     *
-     * @return int
      */
-    public function getGMTOffset()
+    public function getGMTOffset(): int
     {
         return $this->GMTOffset;
     }
@@ -60,10 +54,9 @@ class TimeZoneInfo
     /**
      * Sets GMTOffset.
      *
-     * @param int $value
      * @return $this
      */
-    public function setGMTOffset($value)
+    public function setGMTOffset(int $value)
     {
         $this->GMTOffset = $value;
 
@@ -72,10 +65,8 @@ class TimeZoneInfo
 
     /**
      * Gets Name.
-     *
-     * @return string
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->Name;
     }
@@ -83,16 +74,12 @@ class TimeZoneInfo
     /**
      * Sets Name.
      *
-     * @param string $value
      * @return $this
      */
-    public function setName($value)
+    public function setName(string $value)
     {
         $this->Name = $value;
 
         return $this;
     }
-
-
 }
-

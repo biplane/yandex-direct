@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,16 +9,13 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class GetLeadsResponse extends GetResponseGeneral
 {
-
 //    Can be omit.
 //    protected $Leads = null;
 
     /**
      * Creates a new instance of GetLeadsResponse.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -26,24 +25,22 @@ class GetLeadsResponse extends GetResponseGeneral
      *
      * @return LeadGetItem[]|null
      */
-    public function getLeads()
+    public function getLeads(): ?array
     {
-        return isset($this->Leads) ? $this->Leads : null;
+        return $this->Leads ?? null;
     }
 
     /**
      * Sets Leads.
      *
      * @param LeadGetItem[]|null $value
+     *
      * @return $this
      */
-    public function setLeads(array $value = null)
+    public function setLeads(?array $value = null)
     {
         $this->Leads = $value;
 
         return $this;
     }
-
-
 }
-

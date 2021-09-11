@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class ShortClientInfo
 {
-
     protected $Login = null;
 
     protected $FIO = null;
@@ -18,20 +19,16 @@ class ShortClientInfo
 
     /**
      * Creates a new instance of ShortClientInfo.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Login.
-     *
-     * @return string|null
      */
-    public function getLogin()
+    public function getLogin(): ?string
     {
         return $this->Login;
     }
@@ -39,10 +36,9 @@ class ShortClientInfo
     /**
      * Sets Login.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setLogin($value = null)
+    public function setLogin(?string $value = null)
     {
         $this->Login = $value;
 
@@ -51,10 +47,8 @@ class ShortClientInfo
 
     /**
      * Gets FIO.
-     *
-     * @return string|null
      */
-    public function getFIO()
+    public function getFIO(): ?string
     {
         return $this->FIO;
     }
@@ -62,10 +56,9 @@ class ShortClientInfo
     /**
      * Sets FIO.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setFIO($value = null)
+    public function setFIO(?string $value = null)
     {
         $this->FIO = $value;
 
@@ -74,10 +67,8 @@ class ShortClientInfo
 
     /**
      * Gets Role.
-     *
-     * @return string|null
      */
-    public function getRole()
+    public function getRole(): ?string
     {
         return $this->Role;
     }
@@ -85,10 +76,9 @@ class ShortClientInfo
     /**
      * Sets Role.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setRole($value = null)
+    public function setRole(?string $value = null)
     {
         $this->Role = $value;
 
@@ -97,10 +87,8 @@ class ShortClientInfo
 
     /**
      * Gets SharedAccountEnabled.
-     *
-     * @return string|null
      */
-    public function getSharedAccountEnabled()
+    public function getSharedAccountEnabled(): ?string
     {
         return $this->SharedAccountEnabled;
     }
@@ -108,16 +96,12 @@ class ShortClientInfo
     /**
      * Sets SharedAccountEnabled.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setSharedAccountEnabled($value = null)
+    public function setSharedAccountEnabled(?string $value = null)
     {
         $this->SharedAccountEnabled = $value;
 
         return $this;
     }
-
-
 }
-

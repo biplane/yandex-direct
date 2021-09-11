@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class AdImageUpload
 {
-
     protected $Login = null;
 
     protected $AdImageHash = null;
@@ -26,20 +27,16 @@ class AdImageUpload
 
     /**
      * Creates a new instance of AdImageUpload.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Login.
-     *
-     * @return string
      */
-    public function getLogin()
+    public function getLogin(): string
     {
         return $this->Login;
     }
@@ -47,10 +44,9 @@ class AdImageUpload
     /**
      * Sets Login.
      *
-     * @param string $value
      * @return $this
      */
-    public function setLogin($value)
+    public function setLogin(string $value)
     {
         $this->Login = $value;
 
@@ -59,10 +55,8 @@ class AdImageUpload
 
     /**
      * Gets AdImageHash.
-     *
-     * @return string
      */
-    public function getAdImageHash()
+    public function getAdImageHash(): string
     {
         return $this->AdImageHash;
     }
@@ -70,10 +64,9 @@ class AdImageUpload
     /**
      * Sets AdImageHash.
      *
-     * @param string $value
      * @return $this
      */
-    public function setAdImageHash($value)
+    public function setAdImageHash(string $value)
     {
         $this->AdImageHash = $value;
 
@@ -82,10 +75,8 @@ class AdImageUpload
 
     /**
      * Gets AdImageURL.
-     *
-     * @return string
      */
-    public function getAdImageURL()
+    public function getAdImageURL(): string
     {
         return $this->AdImageURL;
     }
@@ -93,10 +84,9 @@ class AdImageUpload
     /**
      * Sets AdImageURL.
      *
-     * @param string $value
      * @return $this
      */
-    public function setAdImageURL($value)
+    public function setAdImageURL(string $value)
     {
         $this->AdImageURL = $value;
 
@@ -105,10 +95,8 @@ class AdImageUpload
 
     /**
      * Gets SourceURL.
-     *
-     * @return string
      */
-    public function getSourceURL()
+    public function getSourceURL(): string
     {
         return $this->SourceURL;
     }
@@ -116,10 +104,9 @@ class AdImageUpload
     /**
      * Sets SourceURL.
      *
-     * @param string $value
      * @return $this
      */
-    public function setSourceURL($value)
+    public function setSourceURL(string $value)
     {
         $this->SourceURL = $value;
 
@@ -128,10 +115,8 @@ class AdImageUpload
 
     /**
      * Gets Name.
-     *
-     * @return string|null
      */
-    public function getName()
+    public function getName(): ?string
     {
         return $this->Name;
     }
@@ -139,10 +124,9 @@ class AdImageUpload
     /**
      * Sets Name.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setName($value = null)
+    public function setName(?string $value = null)
     {
         $this->Name = $value;
 
@@ -151,10 +135,8 @@ class AdImageUpload
 
     /**
      * Gets Error.
-     *
-     * @return Error|null
      */
-    public function getError()
+    public function getError(): ?Error
     {
         return $this->Error;
     }
@@ -162,10 +144,9 @@ class AdImageUpload
     /**
      * Sets Error.
      *
-     * @param Error|null $value
      * @return $this
      */
-    public function setError(Error $value = null)
+    public function setError(?Error $value = null)
     {
         $this->Error = $value;
 
@@ -174,10 +155,8 @@ class AdImageUpload
 
     /**
      * Gets AdImageUploadTaskID.
-     *
-     * @return int|null
      */
-    public function getAdImageUploadTaskID()
+    public function getAdImageUploadTaskID(): ?int
     {
         return $this->AdImageUploadTaskID;
     }
@@ -185,10 +164,9 @@ class AdImageUpload
     /**
      * Sets AdImageUploadTaskID.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setAdImageUploadTaskID($value = null)
+    public function setAdImageUploadTaskID(?int $value = null)
     {
         $this->AdImageUploadTaskID = $value;
 
@@ -197,10 +175,8 @@ class AdImageUpload
 
     /**
      * Gets Status.
-     *
-     * @return string|null
      */
-    public function getStatus()
+    public function getStatus(): ?string
     {
         return $this->Status;
     }
@@ -208,16 +184,12 @@ class AdImageUpload
     /**
      * Sets Status.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setStatus($value = null)
+    public function setStatus(?string $value = null)
     {
         $this->Status = $value;
 
         return $this;
     }
-
-
 }
-

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5;
 
 use Biplane\YandexDirect\Api\ApiSoapClientV5;
@@ -10,8 +12,7 @@ use Biplane\YandexDirect\Config;
  */
 class Clients extends ApiSoapClientV5
 {
-
-    const ENDPOINT = 'https://api.direct.yandex.com/v5/clients?wsdl';
+    public const ENDPOINT = 'https://api.direct.yandex.com/v5/clients?wsdl';
 
     public function __construct(Config $config, array $options)
     {
@@ -89,26 +90,17 @@ class Clients extends ApiSoapClientV5
 
     /**
      * get.
-     *
-     * @param Contract\GetClientsRequest $parameters
-     * @return Contract\GetClientsResponse
      */
-    public function get(Contract\GetClientsRequest $parameters)
+    public function get(Contract\GetClientsRequest $parameters): Contract\GetClientsResponse
     {
         return $this->__soapCall('get', [$parameters]);
     }
 
     /**
      * update.
-     *
-     * @param Contract\UpdateClientsRequest $parameters
-     * @return Contract\UpdateClientsResponse
      */
-    public function update(Contract\UpdateClientsRequest $parameters)
+    public function update(Contract\UpdateClientsRequest $parameters): Contract\UpdateClientsResponse
     {
         return $this->__soapCall('update', [$parameters]);
     }
-
-
 }
-

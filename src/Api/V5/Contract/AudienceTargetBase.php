@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AudienceTargetBase
 {
-
 //    Can be omit.
 //    protected $ContextBid = null;
 
@@ -16,31 +17,26 @@ class AudienceTargetBase
 
     /**
      * Creates a new instance of AudienceTargetBase.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets ContextBid.
-     *
-     * @return int|null
      */
-    public function getContextBid()
+    public function getContextBid(): ?int
     {
-        return isset($this->ContextBid) ? $this->ContextBid : null;
+        return $this->ContextBid ?? null;
     }
 
     /**
      * Sets ContextBid.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setContextBid($value = null)
+    public function setContextBid(?int $value = null)
     {
         $this->ContextBid = $value;
 
@@ -50,28 +46,24 @@ class AudienceTargetBase
     /**
      * Gets StrategyPriority.
      *
-     * @return string|null
      * @see PriorityEnum
      */
-    public function getStrategyPriority()
+    public function getStrategyPriority(): ?string
     {
-        return isset($this->StrategyPriority) ? $this->StrategyPriority : null;
+        return $this->StrategyPriority ?? null;
     }
 
     /**
      * Sets StrategyPriority.
      *
-     * @param string|null $value
-     * @return $this
      * @see PriorityEnum
+     *
+     * @return $this
      */
-    public function setStrategyPriority($value = null)
+    public function setStrategyPriority(?string $value = null)
     {
         $this->StrategyPriority = $value;
 
         return $this;
     }
-
-
 }
-

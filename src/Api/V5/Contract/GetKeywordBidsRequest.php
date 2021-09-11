@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class GetKeywordBidsRequest extends GetRequestGeneral
 {
-
     protected $SelectionCriteria = null;
 
     protected $FieldNames = [];
@@ -20,20 +21,16 @@ class GetKeywordBidsRequest extends GetRequestGeneral
 
     /**
      * Creates a new instance of GetKeywordBidsRequest.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets SelectionCriteria.
-     *
-     * @return KeywordBidsSelectionCriteria
      */
-    public function getSelectionCriteria()
+    public function getSelectionCriteria(): KeywordBidsSelectionCriteria
     {
         return $this->SelectionCriteria;
     }
@@ -41,7 +38,6 @@ class GetKeywordBidsRequest extends GetRequestGeneral
     /**
      * Sets SelectionCriteria.
      *
-     * @param KeywordBidsSelectionCriteria $value
      * @return $this
      */
     public function setSelectionCriteria(KeywordBidsSelectionCriteria $value)
@@ -54,10 +50,11 @@ class GetKeywordBidsRequest extends GetRequestGeneral
     /**
      * Gets FieldNames.
      *
-     * @return string[]
      * @see KeywordBidFieldEnum
+     *
+     * @return string[]
      */
-    public function getFieldNames()
+    public function getFieldNames(): array
     {
         return $this->FieldNames;
     }
@@ -65,9 +62,11 @@ class GetKeywordBidsRequest extends GetRequestGeneral
     /**
      * Sets FieldNames.
      *
-     * @param string[] $value
-     * @return $this
      * @see KeywordBidFieldEnum
+     *
+     * @param string[] $value
+     *
+     * @return $this
      */
     public function setFieldNames(array $value)
     {
@@ -79,22 +78,25 @@ class GetKeywordBidsRequest extends GetRequestGeneral
     /**
      * Gets SearchFieldNames.
      *
-     * @return string[]|null
      * @see KeywordBidSearchFieldEnum
+     *
+     * @return string[]|null
      */
-    public function getSearchFieldNames()
+    public function getSearchFieldNames(): ?array
     {
-        return isset($this->SearchFieldNames) ? $this->SearchFieldNames : null;
+        return $this->SearchFieldNames ?? null;
     }
 
     /**
      * Sets SearchFieldNames.
      *
-     * @param string[]|null $value
-     * @return $this
      * @see KeywordBidSearchFieldEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
      */
-    public function setSearchFieldNames(array $value = null)
+    public function setSearchFieldNames(?array $value = null)
     {
         $this->SearchFieldNames = $value;
 
@@ -104,28 +106,28 @@ class GetKeywordBidsRequest extends GetRequestGeneral
     /**
      * Gets NetworkFieldNames.
      *
-     * @return string[]|null
      * @see KeywordBidNetworkFieldEnum
+     *
+     * @return string[]|null
      */
-    public function getNetworkFieldNames()
+    public function getNetworkFieldNames(): ?array
     {
-        return isset($this->NetworkFieldNames) ? $this->NetworkFieldNames : null;
+        return $this->NetworkFieldNames ?? null;
     }
 
     /**
      * Sets NetworkFieldNames.
      *
-     * @param string[]|null $value
-     * @return $this
      * @see KeywordBidNetworkFieldEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
      */
-    public function setNetworkFieldNames(array $value = null)
+    public function setNetworkFieldNames(?array $value = null)
     {
         $this->NetworkFieldNames = $value;
 
         return $this;
     }
-
-
 }
-

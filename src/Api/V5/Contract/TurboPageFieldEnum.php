@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,19 +9,15 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class TurboPageFieldEnum
 {
+    public const ID = 'Id';
 
-    const ID = 'Id';
+    public const NAME = 'Name';
 
-    const NAME = 'Name';
+    public const HREF = 'Href';
 
-    const HREF = 'Href';
+    public const PREVIEW_HREF = 'PreviewHref';
 
-    const PREVIEW_HREF = 'PreviewHref';
+    public const TURBO_SITE_HREF = 'TurboSiteHref';
 
-    const TURBO_SITE_HREF = 'TurboSiteHref';
-
-    const BOUND_WITH_HREF = 'BoundWithHref';
-
-
+    public const BOUND_WITH_HREF = 'BoundWithHref';
 }
-

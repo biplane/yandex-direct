@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,17 +9,14 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class BannersRequestInfo
 {
-
     protected $CampaignIDS = null;
 
     protected $BannerIDS = null;
 
     /**
      * Creates a new instance of BannersRequestInfo.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -27,7 +26,7 @@ class BannersRequestInfo
      *
      * @return int[]|null
      */
-    public function getCampaignIDS()
+    public function getCampaignIDS(): ?array
     {
         return $this->CampaignIDS;
     }
@@ -36,9 +35,10 @@ class BannersRequestInfo
      * Sets CampaignIDS.
      *
      * @param int[]|null $value
+     *
      * @return $this
      */
-    public function setCampaignIDS(array $value = null)
+    public function setCampaignIDS(?array $value = null)
     {
         $this->CampaignIDS = $value;
 
@@ -50,7 +50,7 @@ class BannersRequestInfo
      *
      * @return int[]|null
      */
-    public function getBannerIDS()
+    public function getBannerIDS(): ?array
     {
         return $this->BannerIDS;
     }
@@ -59,15 +59,13 @@ class BannersRequestInfo
      * Sets BannerIDS.
      *
      * @param int[]|null $value
+     *
      * @return $this
      */
-    public function setBannerIDS(array $value = null)
+    public function setBannerIDS(?array $value = null)
     {
         $this->BannerIDS = $value;
 
         return $this;
     }
-
-
 }
-

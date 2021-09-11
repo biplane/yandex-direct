@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class Representative
 {
-
     protected $Email = null;
 
     protected $Login = null;
@@ -16,20 +17,16 @@ class Representative
 
     /**
      * Creates a new instance of Representative.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Email.
-     *
-     * @return string
      */
-    public function getEmail()
+    public function getEmail(): string
     {
         return $this->Email;
     }
@@ -37,10 +34,9 @@ class Representative
     /**
      * Sets Email.
      *
-     * @param string $value
      * @return $this
      */
-    public function setEmail($value)
+    public function setEmail(string $value)
     {
         $this->Email = $value;
 
@@ -49,10 +45,8 @@ class Representative
 
     /**
      * Gets Login.
-     *
-     * @return string
      */
-    public function getLogin()
+    public function getLogin(): string
     {
         return $this->Login;
     }
@@ -60,10 +54,9 @@ class Representative
     /**
      * Sets Login.
      *
-     * @param string $value
      * @return $this
      */
-    public function setLogin($value)
+    public function setLogin(string $value)
     {
         $this->Login = $value;
 
@@ -73,10 +66,9 @@ class Representative
     /**
      * Gets Role.
      *
-     * @return string
      * @see RepresentativeRoleEnum
      */
-    public function getRole()
+    public function getRole(): string
     {
         return $this->Role;
     }
@@ -84,17 +76,14 @@ class Representative
     /**
      * Sets Role.
      *
-     * @param string $value
-     * @return $this
      * @see RepresentativeRoleEnum
+     *
+     * @return $this
      */
-    public function setRole($value)
+    public function setRole(string $value)
     {
         $this->Role = $value;
 
         return $this;
     }
-
-
 }
-

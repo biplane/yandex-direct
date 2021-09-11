@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,15 +9,12 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class DeleteRetargetingListsResponse
 {
-
     protected $DeleteResults = [];
 
     /**
      * Creates a new instance of DeleteRetargetingListsResponse.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -25,7 +24,7 @@ class DeleteRetargetingListsResponse
      *
      * @return ActionResult[]
      */
-    public function getDeleteResults()
+    public function getDeleteResults(): array
     {
         return $this->DeleteResults;
     }
@@ -34,6 +33,7 @@ class DeleteRetargetingListsResponse
      * Sets DeleteResults.
      *
      * @param ActionResult[] $value
+     *
      * @return $this
      */
     public function setDeleteResults(array $value)
@@ -42,7 +42,4 @@ class DeleteRetargetingListsResponse
 
         return $this;
     }
-
-
 }
-

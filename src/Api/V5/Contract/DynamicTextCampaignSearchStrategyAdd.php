@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,15 +9,12 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class DynamicTextCampaignSearchStrategyAdd extends DynamicTextCampaignStrategyAddBase
 {
-
     protected $BiddingStrategyType = null;
 
     /**
      * Creates a new instance of DynamicTextCampaignSearchStrategyAdd.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -23,10 +22,9 @@ class DynamicTextCampaignSearchStrategyAdd extends DynamicTextCampaignStrategyAd
     /**
      * Gets BiddingStrategyType.
      *
-     * @return string
      * @see DynamicTextCampaignSearchStrategyTypeEnum
      */
-    public function getBiddingStrategyType()
+    public function getBiddingStrategyType(): string
     {
         return $this->BiddingStrategyType;
     }
@@ -34,17 +32,14 @@ class DynamicTextCampaignSearchStrategyAdd extends DynamicTextCampaignStrategyAd
     /**
      * Sets BiddingStrategyType.
      *
-     * @param string $value
-     * @return $this
      * @see DynamicTextCampaignSearchStrategyTypeEnum
+     *
+     * @return $this
      */
-    public function setBiddingStrategyType($value)
+    public function setBiddingStrategyType(string $value)
     {
         $this->BiddingStrategyType = $value;
 
         return $this;
     }
-
-
 }
-

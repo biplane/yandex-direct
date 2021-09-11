@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class GetEventsLogRequest
 {
-
     protected $TimestampFrom = null;
 
     protected $TimestampTo = null;
@@ -28,20 +29,16 @@ class GetEventsLogRequest
 
     /**
      * Creates a new instance of GetEventsLogRequest.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets TimestampFrom.
-     *
-     * @return string
      */
-    public function getTimestampFrom()
+    public function getTimestampFrom(): string
     {
         return $this->TimestampFrom;
     }
@@ -49,10 +46,9 @@ class GetEventsLogRequest
     /**
      * Sets TimestampFrom.
      *
-     * @param string $value
      * @return $this
      */
-    public function setTimestampFrom($value)
+    public function setTimestampFrom(string $value)
     {
         $this->TimestampFrom = $value;
 
@@ -61,10 +57,8 @@ class GetEventsLogRequest
 
     /**
      * Gets TimestampTo.
-     *
-     * @return string|null
      */
-    public function getTimestampTo()
+    public function getTimestampTo(): ?string
     {
         return $this->TimestampTo;
     }
@@ -72,10 +66,9 @@ class GetEventsLogRequest
     /**
      * Sets TimestampTo.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setTimestampTo($value = null)
+    public function setTimestampTo(?string $value = null)
     {
         $this->TimestampTo = $value;
 
@@ -84,10 +77,8 @@ class GetEventsLogRequest
 
     /**
      * Gets LastEventOnly.
-     *
-     * @return string|null
      */
-    public function getLastEventOnly()
+    public function getLastEventOnly(): ?string
     {
         return $this->LastEventOnly;
     }
@@ -95,10 +86,9 @@ class GetEventsLogRequest
     /**
      * Sets LastEventOnly.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setLastEventOnly($value = null)
+    public function setLastEventOnly(?string $value = null)
     {
         $this->LastEventOnly = $value;
 
@@ -107,10 +97,8 @@ class GetEventsLogRequest
 
     /**
      * Gets WithTextDescription.
-     *
-     * @return string|null
      */
-    public function getWithTextDescription()
+    public function getWithTextDescription(): ?string
     {
         return $this->WithTextDescription;
     }
@@ -118,10 +106,9 @@ class GetEventsLogRequest
     /**
      * Sets WithTextDescription.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setWithTextDescription($value = null)
+    public function setWithTextDescription(?string $value = null)
     {
         $this->WithTextDescription = $value;
 
@@ -133,7 +120,7 @@ class GetEventsLogRequest
      *
      * @return string[]|null
      */
-    public function getLogins()
+    public function getLogins(): ?array
     {
         return $this->Logins;
     }
@@ -142,9 +129,10 @@ class GetEventsLogRequest
      * Sets Logins.
      *
      * @param string[]|null $value
+     *
      * @return $this
      */
-    public function setLogins(array $value = null)
+    public function setLogins(?array $value = null)
     {
         $this->Logins = $value;
 
@@ -153,10 +141,8 @@ class GetEventsLogRequest
 
     /**
      * Gets Filter.
-     *
-     * @return GetEventsLogFilter|null
      */
-    public function getFilter()
+    public function getFilter(): ?GetEventsLogFilter
     {
         return $this->Filter;
     }
@@ -164,10 +150,9 @@ class GetEventsLogRequest
     /**
      * Sets Filter.
      *
-     * @param GetEventsLogFilter|null $value
      * @return $this
      */
-    public function setFilter(GetEventsLogFilter $value = null)
+    public function setFilter(?GetEventsLogFilter $value = null)
     {
         $this->Filter = $value;
 
@@ -176,10 +161,8 @@ class GetEventsLogRequest
 
     /**
      * Gets Currency.
-     *
-     * @return string|null
      */
-    public function getCurrency()
+    public function getCurrency(): ?string
     {
         return $this->Currency;
     }
@@ -187,10 +170,9 @@ class GetEventsLogRequest
     /**
      * Sets Currency.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setCurrency($value = null)
+    public function setCurrency(?string $value = null)
     {
         $this->Currency = $value;
 
@@ -199,10 +181,8 @@ class GetEventsLogRequest
 
     /**
      * Gets Limit.
-     *
-     * @return int|null
      */
-    public function getLimit()
+    public function getLimit(): ?int
     {
         return $this->Limit;
     }
@@ -210,10 +190,9 @@ class GetEventsLogRequest
     /**
      * Sets Limit.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setLimit($value = null)
+    public function setLimit(?int $value = null)
     {
         $this->Limit = $value;
 
@@ -222,10 +201,8 @@ class GetEventsLogRequest
 
     /**
      * Gets Offset.
-     *
-     * @return int|null
      */
-    public function getOffset()
+    public function getOffset(): ?int
     {
         return $this->Offset;
     }
@@ -233,16 +210,12 @@ class GetEventsLogRequest
     /**
      * Sets Offset.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setOffset($value = null)
+    public function setOffset(?int $value = null)
     {
         $this->Offset = $value;
 
         return $this;
     }
-
-
 }
-

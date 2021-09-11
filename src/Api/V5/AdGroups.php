@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5;
 
 use Biplane\YandexDirect\Api\ApiSoapClientV5;
@@ -10,8 +12,7 @@ use Biplane\YandexDirect\Config;
  */
 class AdGroups extends ApiSoapClientV5
 {
-
-    const ENDPOINT = 'https://api.direct.yandex.com/v5/adgroups?wsdl';
+    public const ENDPOINT = 'https://api.direct.yandex.com/v5/adgroups?wsdl';
 
     public function __construct(Config $config, array $options)
     {
@@ -102,48 +103,33 @@ class AdGroups extends ApiSoapClientV5
 
     /**
      * get.
-     *
-     * @param Contract\GetAdGroupsRequest $parameters
-     * @return Contract\GetAdGroupsResponse
      */
-    public function get(Contract\GetAdGroupsRequest $parameters)
+    public function get(Contract\GetAdGroupsRequest $parameters): Contract\GetAdGroupsResponse
     {
         return $this->__soapCall('get', [$parameters]);
     }
 
     /**
      * add.
-     *
-     * @param Contract\AddAdGroupsRequest $parameters
-     * @return Contract\AddAdGroupsResponse
      */
-    public function add(Contract\AddAdGroupsRequest $parameters)
+    public function add(Contract\AddAdGroupsRequest $parameters): Contract\AddAdGroupsResponse
     {
         return $this->__soapCall('add', [$parameters]);
     }
 
     /**
      * update.
-     *
-     * @param Contract\UpdateAdGroupsRequest $parameters
-     * @return Contract\UpdateAdGroupsResponse
      */
-    public function update(Contract\UpdateAdGroupsRequest $parameters)
+    public function update(Contract\UpdateAdGroupsRequest $parameters): Contract\UpdateAdGroupsResponse
     {
         return $this->__soapCall('update', [$parameters]);
     }
 
     /**
      * delete.
-     *
-     * @param Contract\DeleteAdGroupsRequest $parameters
-     * @return Contract\DeleteAdGroupsResponse
      */
-    public function delete(Contract\DeleteAdGroupsRequest $parameters)
+    public function delete(Contract\DeleteAdGroupsRequest $parameters): Contract\DeleteAdGroupsResponse
     {
         return $this->__soapCall('delete', [$parameters]);
     }
-
-
 }
-

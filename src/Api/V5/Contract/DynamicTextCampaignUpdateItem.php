@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class DynamicTextCampaignUpdateItem extends DynamicTextCampaignBase
 {
-
 //    Can be omit.
 //    protected $BiddingStrategy = null;
 
@@ -19,31 +20,26 @@ class DynamicTextCampaignUpdateItem extends DynamicTextCampaignBase
 
     /**
      * Creates a new instance of DynamicTextCampaignUpdateItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets BiddingStrategy.
-     *
-     * @return DynamicTextCampaignStrategy|null
      */
-    public function getBiddingStrategy()
+    public function getBiddingStrategy(): ?DynamicTextCampaignStrategy
     {
-        return isset($this->BiddingStrategy) ? $this->BiddingStrategy : null;
+        return $this->BiddingStrategy ?? null;
     }
 
     /**
      * Sets BiddingStrategy.
      *
-     * @param DynamicTextCampaignStrategy|null $value
      * @return $this
      */
-    public function setBiddingStrategy(DynamicTextCampaignStrategy $value = null)
+    public function setBiddingStrategy(?DynamicTextCampaignStrategy $value = null)
     {
         $this->BiddingStrategy = $value;
 
@@ -55,18 +51,19 @@ class DynamicTextCampaignUpdateItem extends DynamicTextCampaignBase
      *
      * @return DynamicTextCampaignSetting[]|null
      */
-    public function getSettings()
+    public function getSettings(): ?array
     {
-        return isset($this->Settings) ? $this->Settings : null;
+        return $this->Settings ?? null;
     }
 
     /**
      * Sets Settings.
      *
      * @param DynamicTextCampaignSetting[]|null $value
+     *
      * @return $this
      */
-    public function setSettings(array $value = null)
+    public function setSettings(?array $value = null)
     {
         $this->Settings = $value;
 
@@ -75,27 +72,21 @@ class DynamicTextCampaignUpdateItem extends DynamicTextCampaignBase
 
     /**
      * Gets PriorityGoals.
-     *
-     * @return PriorityGoalsUpdateSetting|null
      */
-    public function getPriorityGoals()
+    public function getPriorityGoals(): ?PriorityGoalsUpdateSetting
     {
-        return isset($this->PriorityGoals) ? $this->PriorityGoals : null;
+        return $this->PriorityGoals ?? null;
     }
 
     /**
      * Sets PriorityGoals.
      *
-     * @param PriorityGoalsUpdateSetting|null $value
      * @return $this
      */
-    public function setPriorityGoals(PriorityGoalsUpdateSetting $value = null)
+    public function setPriorityGoals(?PriorityGoalsUpdateSetting $value = null)
     {
         $this->PriorityGoals = $value;
 
         return $this;
     }
-
-
 }
-

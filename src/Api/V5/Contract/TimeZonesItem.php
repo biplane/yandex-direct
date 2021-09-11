@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class TimeZonesItem
 {
-
     protected $TimeZone = null;
 
     protected $TimeZoneName = null;
@@ -16,20 +17,16 @@ class TimeZonesItem
 
     /**
      * Creates a new instance of TimeZonesItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets TimeZone.
-     *
-     * @return string
      */
-    public function getTimeZone()
+    public function getTimeZone(): string
     {
         return $this->TimeZone;
     }
@@ -37,10 +34,9 @@ class TimeZonesItem
     /**
      * Sets TimeZone.
      *
-     * @param string $value
      * @return $this
      */
-    public function setTimeZone($value)
+    public function setTimeZone(string $value)
     {
         $this->TimeZone = $value;
 
@@ -49,10 +45,8 @@ class TimeZonesItem
 
     /**
      * Gets TimeZoneName.
-     *
-     * @return string
      */
-    public function getTimeZoneName()
+    public function getTimeZoneName(): string
     {
         return $this->TimeZoneName;
     }
@@ -60,10 +54,9 @@ class TimeZonesItem
     /**
      * Sets TimeZoneName.
      *
-     * @param string $value
      * @return $this
      */
-    public function setTimeZoneName($value)
+    public function setTimeZoneName(string $value)
     {
         $this->TimeZoneName = $value;
 
@@ -72,10 +65,8 @@ class TimeZonesItem
 
     /**
      * Gets UtcOffset.
-     *
-     * @return int
      */
-    public function getUtcOffset()
+    public function getUtcOffset(): int
     {
         return $this->UtcOffset;
     }
@@ -83,16 +74,12 @@ class TimeZonesItem
     /**
      * Sets UtcOffset.
      *
-     * @param int $value
      * @return $this
      */
-    public function setUtcOffset($value)
+    public function setUtcOffset(int $value)
     {
         $this->UtcOffset = $value;
 
         return $this;
     }
-
-
 }
-

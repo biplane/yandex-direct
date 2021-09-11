@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,27 +9,22 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class CreditLimitsInfo
 {
-
     protected $Currency = null;
 
     protected $Limits = [];
 
     /**
      * Creates a new instance of CreditLimitsInfo.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Currency.
-     *
-     * @return string
      */
-    public function getCurrency()
+    public function getCurrency(): string
     {
         return $this->Currency;
     }
@@ -35,10 +32,9 @@ class CreditLimitsInfo
     /**
      * Sets Currency.
      *
-     * @param string $value
      * @return $this
      */
-    public function setCurrency($value)
+    public function setCurrency(string $value)
     {
         $this->Currency = $value;
 
@@ -50,7 +46,7 @@ class CreditLimitsInfo
      *
      * @return CreditLimitsItem[]
      */
-    public function getLimits()
+    public function getLimits(): array
     {
         return $this->Limits;
     }
@@ -59,6 +55,7 @@ class CreditLimitsInfo
      * Sets Limits.
      *
      * @param CreditLimitsItem[] $value
+     *
      * @return $this
      */
     public function setLimits(array $value)
@@ -67,7 +64,4 @@ class CreditLimitsInfo
 
         return $this;
     }
-
-
 }
-

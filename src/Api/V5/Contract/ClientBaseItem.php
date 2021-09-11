@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class ClientBaseItem
 {
-
 //    Can be omit.
 //    protected $ClientInfo = null;
 
@@ -16,31 +17,26 @@ class ClientBaseItem
 
     /**
      * Creates a new instance of ClientBaseItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets ClientInfo.
-     *
-     * @return string|null
      */
-    public function getClientInfo()
+    public function getClientInfo(): ?string
     {
-        return isset($this->ClientInfo) ? $this->ClientInfo : null;
+        return $this->ClientInfo ?? null;
     }
 
     /**
      * Sets ClientInfo.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setClientInfo($value = null)
+    public function setClientInfo(?string $value = null)
     {
         $this->ClientInfo = $value;
 
@@ -49,27 +45,21 @@ class ClientBaseItem
 
     /**
      * Gets Phone.
-     *
-     * @return string|null
      */
-    public function getPhone()
+    public function getPhone(): ?string
     {
-        return isset($this->Phone) ? $this->Phone : null;
+        return $this->Phone ?? null;
     }
 
     /**
      * Sets Phone.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setPhone($value = null)
+    public function setPhone(?string $value = null)
     {
         $this->Phone = $value;
 
         return $this;
     }
-
-
 }
-

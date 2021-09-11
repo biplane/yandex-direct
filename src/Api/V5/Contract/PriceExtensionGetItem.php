@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class PriceExtensionGetItem
 {
-
 //    Can be omit.
 //    protected $Price = null;
 
@@ -22,31 +23,26 @@ class PriceExtensionGetItem
 
     /**
      * Creates a new instance of PriceExtensionGetItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Price.
-     *
-     * @return int|null
      */
-    public function getPrice()
+    public function getPrice(): ?int
     {
-        return isset($this->Price) ? $this->Price : null;
+        return $this->Price ?? null;
     }
 
     /**
      * Sets Price.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setPrice($value = null)
+    public function setPrice(?int $value = null)
     {
         $this->Price = $value;
 
@@ -55,21 +51,18 @@ class PriceExtensionGetItem
 
     /**
      * Gets OldPrice.
-     *
-     * @return int|null
      */
-    public function getOldPrice()
+    public function getOldPrice(): ?int
     {
-        return isset($this->OldPrice) ? $this->OldPrice : null;
+        return $this->OldPrice ?? null;
     }
 
     /**
      * Sets OldPrice.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setOldPrice($value = null)
+    public function setOldPrice(?int $value = null)
     {
         $this->OldPrice = $value;
 
@@ -79,22 +72,21 @@ class PriceExtensionGetItem
     /**
      * Gets PriceQualifier.
      *
-     * @return string|null
      * @see PriceQualifierEnum
      */
-    public function getPriceQualifier()
+    public function getPriceQualifier(): ?string
     {
-        return isset($this->PriceQualifier) ? $this->PriceQualifier : null;
+        return $this->PriceQualifier ?? null;
     }
 
     /**
      * Sets PriceQualifier.
      *
-     * @param string|null $value
-     * @return $this
      * @see PriceQualifierEnum
+     *
+     * @return $this
      */
-    public function setPriceQualifier($value = null)
+    public function setPriceQualifier(?string $value = null)
     {
         $this->PriceQualifier = $value;
 
@@ -104,28 +96,24 @@ class PriceExtensionGetItem
     /**
      * Gets PriceCurrency.
      *
-     * @return string|null
      * @see PriceCurrencyEnum
      */
-    public function getPriceCurrency()
+    public function getPriceCurrency(): ?string
     {
-        return isset($this->PriceCurrency) ? $this->PriceCurrency : null;
+        return $this->PriceCurrency ?? null;
     }
 
     /**
      * Sets PriceCurrency.
      *
-     * @param string|null $value
-     * @return $this
      * @see PriceCurrencyEnum
+     *
+     * @return $this
      */
-    public function setPriceCurrency($value = null)
+    public function setPriceCurrency(?string $value = null)
     {
         $this->PriceCurrency = $value;
 
         return $this;
     }
-
-
 }
-

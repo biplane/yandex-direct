@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class CheckChangesRequest
 {
-
 //    Can be omit.
 //    protected $CampaignIds = null;
 
@@ -23,10 +24,8 @@ class CheckChangesRequest
 
     /**
      * Creates a new instance of CheckChangesRequest.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -36,18 +35,19 @@ class CheckChangesRequest
      *
      * @return int[]|null
      */
-    public function getCampaignIds()
+    public function getCampaignIds(): ?array
     {
-        return isset($this->CampaignIds) ? $this->CampaignIds : null;
+        return $this->CampaignIds ?? null;
     }
 
     /**
      * Sets CampaignIds.
      *
      * @param int[]|null $value
+     *
      * @return $this
      */
-    public function setCampaignIds(array $value = null)
+    public function setCampaignIds(?array $value = null)
     {
         $this->CampaignIds = $value;
 
@@ -59,18 +59,19 @@ class CheckChangesRequest
      *
      * @return int[]|null
      */
-    public function getAdGroupIds()
+    public function getAdGroupIds(): ?array
     {
-        return isset($this->AdGroupIds) ? $this->AdGroupIds : null;
+        return $this->AdGroupIds ?? null;
     }
 
     /**
      * Sets AdGroupIds.
      *
      * @param int[]|null $value
+     *
      * @return $this
      */
-    public function setAdGroupIds(array $value = null)
+    public function setAdGroupIds(?array $value = null)
     {
         $this->AdGroupIds = $value;
 
@@ -82,18 +83,19 @@ class CheckChangesRequest
      *
      * @return int[]|null
      */
-    public function getAdIds()
+    public function getAdIds(): ?array
     {
-        return isset($this->AdIds) ? $this->AdIds : null;
+        return $this->AdIds ?? null;
     }
 
     /**
      * Sets AdIds.
      *
      * @param int[]|null $value
+     *
      * @return $this
      */
-    public function setAdIds(array $value = null)
+    public function setAdIds(?array $value = null)
     {
         $this->AdIds = $value;
 
@@ -102,10 +104,8 @@ class CheckChangesRequest
 
     /**
      * Gets Timestamp.
-     *
-     * @return string
      */
-    public function getTimestamp()
+    public function getTimestamp(): string
     {
         return $this->Timestamp;
     }
@@ -113,10 +113,9 @@ class CheckChangesRequest
     /**
      * Sets Timestamp.
      *
-     * @param string $value
      * @return $this
      */
-    public function setTimestamp($value)
+    public function setTimestamp(string $value)
     {
         $this->Timestamp = $value;
 
@@ -126,10 +125,11 @@ class CheckChangesRequest
     /**
      * Gets FieldNames.
      *
-     * @return string[]
      * @see CheckFieldEnum
+     *
+     * @return string[]
      */
-    public function getFieldNames()
+    public function getFieldNames(): array
     {
         return $this->FieldNames;
     }
@@ -137,9 +137,11 @@ class CheckChangesRequest
     /**
      * Sets FieldNames.
      *
-     * @param string[] $value
-     * @return $this
      * @see CheckFieldEnum
+     *
+     * @param string[] $value
+     *
+     * @return $this
      */
     public function setFieldNames(array $value)
     {
@@ -147,7 +149,4 @@ class CheckChangesRequest
 
         return $this;
     }
-
-
 }
-

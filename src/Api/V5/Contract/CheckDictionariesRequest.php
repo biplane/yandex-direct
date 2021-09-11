@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,43 +9,34 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class CheckDictionariesRequest
 {
-
 //    Can be omit.
 //    protected $Timestamp = null;
 
     /**
      * Creates a new instance of CheckDictionariesRequest.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Timestamp.
-     *
-     * @return string|null
      */
-    public function getTimestamp()
+    public function getTimestamp(): ?string
     {
-        return isset($this->Timestamp) ? $this->Timestamp : null;
+        return $this->Timestamp ?? null;
     }
 
     /**
      * Sets Timestamp.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setTimestamp($value = null)
+    public function setTimestamp(?string $value = null)
     {
         $this->Timestamp = $value;
 
         return $this;
     }
-
-
 }
-

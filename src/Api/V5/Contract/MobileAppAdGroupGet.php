@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class MobileAppAdGroupGet
 {
-
 //    Can be omit.
 //    protected $StoreUrl = null;
 
@@ -31,31 +32,26 @@ class MobileAppAdGroupGet
 
     /**
      * Creates a new instance of MobileAppAdGroupGet.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets StoreUrl.
-     *
-     * @return string|null
      */
-    public function getStoreUrl()
+    public function getStoreUrl(): ?string
     {
-        return isset($this->StoreUrl) ? $this->StoreUrl : null;
+        return $this->StoreUrl ?? null;
     }
 
     /**
      * Sets StoreUrl.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setStoreUrl($value = null)
+    public function setStoreUrl(?string $value = null)
     {
         $this->StoreUrl = $value;
 
@@ -65,22 +61,25 @@ class MobileAppAdGroupGet
     /**
      * Gets TargetDeviceType.
      *
-     * @return string[]|null
      * @see TargetDeviceTypeEnum
+     *
+     * @return string[]|null
      */
-    public function getTargetDeviceType()
+    public function getTargetDeviceType(): ?array
     {
-        return isset($this->TargetDeviceType) ? $this->TargetDeviceType : null;
+        return $this->TargetDeviceType ?? null;
     }
 
     /**
      * Sets TargetDeviceType.
      *
-     * @param string[]|null $value
-     * @return $this
      * @see TargetDeviceTypeEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
      */
-    public function setTargetDeviceType(array $value = null)
+    public function setTargetDeviceType(?array $value = null)
     {
         $this->TargetDeviceType = $value;
 
@@ -90,22 +89,21 @@ class MobileAppAdGroupGet
     /**
      * Gets TargetCarrier.
      *
-     * @return string|null
      * @see TargetCarrierEnum
      */
-    public function getTargetCarrier()
+    public function getTargetCarrier(): ?string
     {
-        return isset($this->TargetCarrier) ? $this->TargetCarrier : null;
+        return $this->TargetCarrier ?? null;
     }
 
     /**
      * Sets TargetCarrier.
      *
-     * @param string|null $value
-     * @return $this
      * @see TargetCarrierEnum
+     *
+     * @return $this
      */
-    public function setTargetCarrier($value = null)
+    public function setTargetCarrier(?string $value = null)
     {
         $this->TargetCarrier = $value;
 
@@ -114,21 +112,18 @@ class MobileAppAdGroupGet
 
     /**
      * Gets TargetOperatingSystemVersion.
-     *
-     * @return string|null
      */
-    public function getTargetOperatingSystemVersion()
+    public function getTargetOperatingSystemVersion(): ?string
     {
-        return isset($this->TargetOperatingSystemVersion) ? $this->TargetOperatingSystemVersion : null;
+        return $this->TargetOperatingSystemVersion ?? null;
     }
 
     /**
      * Sets TargetOperatingSystemVersion.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setTargetOperatingSystemVersion($value = null)
+    public function setTargetOperatingSystemVersion(?string $value = null)
     {
         $this->TargetOperatingSystemVersion = $value;
 
@@ -137,21 +132,18 @@ class MobileAppAdGroupGet
 
     /**
      * Gets AppIconModeration.
-     *
-     * @return ExtensionModeration|null
      */
-    public function getAppIconModeration()
+    public function getAppIconModeration(): ?ExtensionModeration
     {
-        return isset($this->AppIconModeration) ? $this->AppIconModeration : null;
+        return $this->AppIconModeration ?? null;
     }
 
     /**
      * Sets AppIconModeration.
      *
-     * @param ExtensionModeration|null $value
      * @return $this
      */
-    public function setAppIconModeration(ExtensionModeration $value = null)
+    public function setAppIconModeration(?ExtensionModeration $value = null)
     {
         $this->AppIconModeration = $value;
 
@@ -161,22 +153,21 @@ class MobileAppAdGroupGet
     /**
      * Gets AppOperatingSystemType.
      *
-     * @return string|null
      * @see MobileOperatingSystemTypeEnum
      */
-    public function getAppOperatingSystemType()
+    public function getAppOperatingSystemType(): ?string
     {
-        return isset($this->AppOperatingSystemType) ? $this->AppOperatingSystemType : null;
+        return $this->AppOperatingSystemType ?? null;
     }
 
     /**
      * Sets AppOperatingSystemType.
      *
-     * @param string|null $value
-     * @return $this
      * @see MobileOperatingSystemTypeEnum
+     *
+     * @return $this
      */
-    public function setAppOperatingSystemType($value = null)
+    public function setAppOperatingSystemType(?string $value = null)
     {
         $this->AppOperatingSystemType = $value;
 
@@ -186,28 +177,24 @@ class MobileAppAdGroupGet
     /**
      * Gets AppAvailabilityStatus.
      *
-     * @return string|null
      * @see AppAvailabilityStatusEnum
      */
-    public function getAppAvailabilityStatus()
+    public function getAppAvailabilityStatus(): ?string
     {
-        return isset($this->AppAvailabilityStatus) ? $this->AppAvailabilityStatus : null;
+        return $this->AppAvailabilityStatus ?? null;
     }
 
     /**
      * Sets AppAvailabilityStatus.
      *
-     * @param string|null $value
-     * @return $this
      * @see AppAvailabilityStatusEnum
+     *
+     * @return $this
      */
-    public function setAppAvailabilityStatus($value = null)
+    public function setAppAvailabilityStatus(?string $value = null)
     {
         $this->AppAvailabilityStatus = $value;
 
         return $this;
     }
-
-
 }
-

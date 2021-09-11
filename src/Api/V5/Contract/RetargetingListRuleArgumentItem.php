@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class RetargetingListRuleArgumentItem
 {
-
 //    Can be omit.
 //    protected $MembershipLifeSpan = null;
 
@@ -15,31 +16,26 @@ class RetargetingListRuleArgumentItem
 
     /**
      * Creates a new instance of RetargetingListRuleArgumentItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets MembershipLifeSpan.
-     *
-     * @return int|null
      */
-    public function getMembershipLifeSpan()
+    public function getMembershipLifeSpan(): ?int
     {
-        return isset($this->MembershipLifeSpan) ? $this->MembershipLifeSpan : null;
+        return $this->MembershipLifeSpan ?? null;
     }
 
     /**
      * Sets MembershipLifeSpan.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setMembershipLifeSpan($value = null)
+    public function setMembershipLifeSpan(?int $value = null)
     {
         $this->MembershipLifeSpan = $value;
 
@@ -48,10 +44,8 @@ class RetargetingListRuleArgumentItem
 
     /**
      * Gets ExternalId.
-     *
-     * @return int
      */
-    public function getExternalId()
+    public function getExternalId(): int
     {
         return $this->ExternalId;
     }
@@ -59,16 +53,12 @@ class RetargetingListRuleArgumentItem
     /**
      * Sets ExternalId.
      *
-     * @param int $value
      * @return $this
      */
-    public function setExternalId($value)
+    public function setExternalId(int $value)
     {
         $this->ExternalId = $value;
 
         return $this;
     }
-
-
 }
-

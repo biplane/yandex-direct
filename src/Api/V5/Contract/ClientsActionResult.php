@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,43 +9,34 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class ClientsActionResult extends ActionResultBase
 {
-
 //    Can be omit.
 //    protected $ClientId = null;
 
     /**
      * Creates a new instance of ClientsActionResult.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets ClientId.
-     *
-     * @return int|null
      */
-    public function getClientId()
+    public function getClientId(): ?int
     {
-        return isset($this->ClientId) ? $this->ClientId : null;
+        return $this->ClientId ?? null;
     }
 
     /**
      * Sets ClientId.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setClientId($value = null)
+    public function setClientId(?int $value = null)
     {
         $this->ClientId = $value;
 
         return $this;
     }
-
-
 }
-

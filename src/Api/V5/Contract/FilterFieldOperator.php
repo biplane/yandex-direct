@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,27 +9,22 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class FilterFieldOperator
 {
-
     protected $MaxItems = null;
 
     protected $Type = null;
 
     /**
      * Creates a new instance of FilterFieldOperator.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets MaxItems.
-     *
-     * @return int
      */
-    public function getMaxItems()
+    public function getMaxItems(): int
     {
         return $this->MaxItems;
     }
@@ -35,10 +32,9 @@ class FilterFieldOperator
     /**
      * Sets MaxItems.
      *
-     * @param int $value
      * @return $this
      */
-    public function setMaxItems($value)
+    public function setMaxItems(int $value)
     {
         $this->MaxItems = $value;
 
@@ -48,10 +44,9 @@ class FilterFieldOperator
     /**
      * Gets Type.
      *
-     * @return string
      * @see StringConditionOperatorEnum
      */
-    public function getType()
+    public function getType(): string
     {
         return $this->Type;
     }
@@ -59,17 +54,14 @@ class FilterFieldOperator
     /**
      * Sets Type.
      *
-     * @param string $value
-     * @return $this
      * @see StringConditionOperatorEnum
+     *
+     * @return $this
      */
-    public function setType($value)
+    public function setType(string $value)
     {
         $this->Type = $value;
 
         return $this;
     }
-
-
 }
-

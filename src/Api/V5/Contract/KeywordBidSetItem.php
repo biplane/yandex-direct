@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class KeywordBidSetItem
 {
-
 //    Can be omit.
 //    protected $CampaignId = null;
 
@@ -28,31 +29,26 @@ class KeywordBidSetItem
 
     /**
      * Creates a new instance of KeywordBidSetItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets CampaignId.
-     *
-     * @return int|null
      */
-    public function getCampaignId()
+    public function getCampaignId(): ?int
     {
-        return isset($this->CampaignId) ? $this->CampaignId : null;
+        return $this->CampaignId ?? null;
     }
 
     /**
      * Sets CampaignId.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setCampaignId($value = null)
+    public function setCampaignId(?int $value = null)
     {
         $this->CampaignId = $value;
 
@@ -61,21 +57,18 @@ class KeywordBidSetItem
 
     /**
      * Gets AdGroupId.
-     *
-     * @return int|null
      */
-    public function getAdGroupId()
+    public function getAdGroupId(): ?int
     {
-        return isset($this->AdGroupId) ? $this->AdGroupId : null;
+        return $this->AdGroupId ?? null;
     }
 
     /**
      * Sets AdGroupId.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setAdGroupId($value = null)
+    public function setAdGroupId(?int $value = null)
     {
         $this->AdGroupId = $value;
 
@@ -84,21 +77,18 @@ class KeywordBidSetItem
 
     /**
      * Gets KeywordId.
-     *
-     * @return int|null
      */
-    public function getKeywordId()
+    public function getKeywordId(): ?int
     {
-        return isset($this->KeywordId) ? $this->KeywordId : null;
+        return $this->KeywordId ?? null;
     }
 
     /**
      * Sets KeywordId.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setKeywordId($value = null)
+    public function setKeywordId(?int $value = null)
     {
         $this->KeywordId = $value;
 
@@ -107,21 +97,18 @@ class KeywordBidSetItem
 
     /**
      * Gets SearchBid.
-     *
-     * @return int|null
      */
-    public function getSearchBid()
+    public function getSearchBid(): ?int
     {
-        return isset($this->SearchBid) ? $this->SearchBid : null;
+        return $this->SearchBid ?? null;
     }
 
     /**
      * Sets SearchBid.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setSearchBid($value = null)
+    public function setSearchBid(?int $value = null)
     {
         $this->SearchBid = $value;
 
@@ -130,21 +117,18 @@ class KeywordBidSetItem
 
     /**
      * Gets NetworkBid.
-     *
-     * @return int|null
      */
-    public function getNetworkBid()
+    public function getNetworkBid(): ?int
     {
-        return isset($this->NetworkBid) ? $this->NetworkBid : null;
+        return $this->NetworkBid ?? null;
     }
 
     /**
      * Sets NetworkBid.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setNetworkBid($value = null)
+    public function setNetworkBid(?int $value = null)
     {
         $this->NetworkBid = $value;
 
@@ -154,28 +138,24 @@ class KeywordBidSetItem
     /**
      * Gets StrategyPriority.
      *
-     * @return string|null
      * @see PriorityEnum
      */
-    public function getStrategyPriority()
+    public function getStrategyPriority(): ?string
     {
-        return isset($this->StrategyPriority) ? $this->StrategyPriority : null;
+        return $this->StrategyPriority ?? null;
     }
 
     /**
      * Sets StrategyPriority.
      *
-     * @param string|null $value
-     * @return $this
      * @see PriorityEnum
+     *
+     * @return $this
      */
-    public function setStrategyPriority($value = null)
+    public function setStrategyPriority(?string $value = null)
     {
         $this->StrategyPriority = $value;
 
         return $this;
     }
-
-
 }
-

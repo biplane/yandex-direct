@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class AccountActionResult
 {
-
     protected $Errors = null;
 
     protected $AccountID = null;
@@ -22,10 +23,8 @@ class AccountActionResult
 
     /**
      * Creates a new instance of AccountActionResult.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -35,7 +34,7 @@ class AccountActionResult
      *
      * @return Error[]|null
      */
-    public function getErrors()
+    public function getErrors(): ?array
     {
         return $this->Errors;
     }
@@ -44,9 +43,10 @@ class AccountActionResult
      * Sets Errors.
      *
      * @param Error[]|null $value
+     *
      * @return $this
      */
-    public function setErrors(array $value = null)
+    public function setErrors(?array $value = null)
     {
         $this->Errors = $value;
 
@@ -55,10 +55,8 @@ class AccountActionResult
 
     /**
      * Gets AccountID.
-     *
-     * @return int|null
      */
-    public function getAccountID()
+    public function getAccountID(): ?int
     {
         return $this->AccountID;
     }
@@ -66,10 +64,9 @@ class AccountActionResult
     /**
      * Sets AccountID.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setAccountID($value = null)
+    public function setAccountID(?int $value = null)
     {
         $this->AccountID = $value;
 
@@ -78,10 +75,8 @@ class AccountActionResult
 
     /**
      * Gets Login.
-     *
-     * @return string|null
      */
-    public function getLogin()
+    public function getLogin(): ?string
     {
         return $this->Login;
     }
@@ -89,10 +84,9 @@ class AccountActionResult
     /**
      * Sets Login.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setLogin($value = null)
+    public function setLogin(?string $value = null)
     {
         $this->Login = $value;
 
@@ -101,10 +95,8 @@ class AccountActionResult
 
     /**
      * Gets URL.
-     *
-     * @return string|null
      */
-    public function getURL()
+    public function getURL(): ?string
     {
         return $this->URL;
     }
@@ -112,10 +104,9 @@ class AccountActionResult
     /**
      * Sets URL.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setURL($value = null)
+    public function setURL(?string $value = null)
     {
         $this->URL = $value;
 
@@ -124,10 +115,8 @@ class AccountActionResult
 
     /**
      * Gets PurchaseToken.
-     *
-     * @return string|null
      */
-    public function getPurchaseToken()
+    public function getPurchaseToken(): ?string
     {
         return $this->PurchaseToken;
     }
@@ -135,10 +124,9 @@ class AccountActionResult
     /**
      * Sets PurchaseToken.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setPurchaseToken($value = null)
+    public function setPurchaseToken(?string $value = null)
     {
         $this->PurchaseToken = $value;
 
@@ -147,10 +135,8 @@ class AccountActionResult
 
     /**
      * Gets Status.
-     *
-     * @return string|null
      */
-    public function getStatus()
+    public function getStatus(): ?string
     {
         return $this->Status;
     }
@@ -158,16 +144,12 @@ class AccountActionResult
     /**
      * Sets Status.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setStatus($value = null)
+    public function setStatus(?string $value = null)
     {
         $this->Status = $value;
 
         return $this;
     }
-
-
 }
-

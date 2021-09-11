@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class ClientRight
 {
-
     protected $RightName = null;
 
     protected $Value = null;
@@ -16,20 +17,16 @@ class ClientRight
 
     /**
      * Creates a new instance of ClientRight.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets RightName.
-     *
-     * @return string
      */
-    public function getRightName()
+    public function getRightName(): string
     {
         return $this->RightName;
     }
@@ -37,10 +34,9 @@ class ClientRight
     /**
      * Sets RightName.
      *
-     * @param string $value
      * @return $this
      */
-    public function setRightName($value)
+    public function setRightName(string $value)
     {
         $this->RightName = $value;
 
@@ -49,10 +45,8 @@ class ClientRight
 
     /**
      * Gets Value.
-     *
-     * @return string
      */
-    public function getValue()
+    public function getValue(): string
     {
         return $this->Value;
     }
@@ -60,10 +54,9 @@ class ClientRight
     /**
      * Sets Value.
      *
-     * @param string $value
      * @return $this
      */
-    public function setValue($value)
+    public function setValue(string $value)
     {
         $this->Value = $value;
 
@@ -72,10 +65,8 @@ class ClientRight
 
     /**
      * Gets AgencyName.
-     *
-     * @return string|null
      */
-    public function getAgencyName()
+    public function getAgencyName(): ?string
     {
         return $this->AgencyName;
     }
@@ -83,16 +74,12 @@ class ClientRight
     /**
      * Sets AgencyName.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setAgencyName($value = null)
+    public function setAgencyName(?string $value = null)
     {
         $this->AgencyName = $value;
 
         return $this;
     }
-
-
 }
-

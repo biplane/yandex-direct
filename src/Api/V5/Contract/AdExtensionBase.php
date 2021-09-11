@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AdExtensionBase
 {
-
 //    Can be omit.
 //    protected $Type = null;
 
@@ -25,10 +26,8 @@ class AdExtensionBase
 
     /**
      * Creates a new instance of AdExtensionBase.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -36,22 +35,21 @@ class AdExtensionBase
     /**
      * Gets Type.
      *
-     * @return string|null
      * @see AdExtensionTypeEnum
      */
-    public function getType()
+    public function getType(): ?string
     {
-        return isset($this->Type) ? $this->Type : null;
+        return $this->Type ?? null;
     }
 
     /**
      * Sets Type.
      *
-     * @param string|null $value
-     * @return $this
      * @see AdExtensionTypeEnum
+     *
+     * @return $this
      */
-    public function setType($value = null)
+    public function setType(?string $value = null)
     {
         $this->Type = $value;
 
@@ -60,21 +58,18 @@ class AdExtensionBase
 
     /**
      * Gets Callout.
-     *
-     * @return Callout|null
      */
-    public function getCallout()
+    public function getCallout(): ?Callout
     {
-        return isset($this->Callout) ? $this->Callout : null;
+        return $this->Callout ?? null;
     }
 
     /**
      * Sets Callout.
      *
-     * @param Callout|null $value
      * @return $this
      */
-    public function setCallout(Callout $value = null)
+    public function setCallout(?Callout $value = null)
     {
         $this->Callout = $value;
 
@@ -84,22 +79,21 @@ class AdExtensionBase
     /**
      * Gets State.
      *
-     * @return string|null
      * @see StateEnum
      */
-    public function getState()
+    public function getState(): ?string
     {
-        return isset($this->State) ? $this->State : null;
+        return $this->State ?? null;
     }
 
     /**
      * Sets State.
      *
-     * @param string|null $value
-     * @return $this
      * @see StateEnum
+     *
+     * @return $this
      */
-    public function setState($value = null)
+    public function setState(?string $value = null)
     {
         $this->State = $value;
 
@@ -109,22 +103,21 @@ class AdExtensionBase
     /**
      * Gets Status.
      *
-     * @return string|null
      * @see StatusEnum
      */
-    public function getStatus()
+    public function getStatus(): ?string
     {
-        return isset($this->Status) ? $this->Status : null;
+        return $this->Status ?? null;
     }
 
     /**
      * Sets Status.
      *
-     * @param string|null $value
-     * @return $this
      * @see StatusEnum
+     *
+     * @return $this
      */
-    public function setStatus($value = null)
+    public function setStatus(?string $value = null)
     {
         $this->Status = $value;
 
@@ -133,27 +126,21 @@ class AdExtensionBase
 
     /**
      * Gets StatusClarification.
-     *
-     * @return string|null
      */
-    public function getStatusClarification()
+    public function getStatusClarification(): ?string
     {
-        return isset($this->StatusClarification) ? $this->StatusClarification : null;
+        return $this->StatusClarification ?? null;
     }
 
     /**
      * Sets StatusClarification.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setStatusClarification($value = null)
+    public function setStatusClarification(?string $value = null)
     {
         $this->StatusClarification = $value;
 
         return $this;
     }
-
-
 }
-

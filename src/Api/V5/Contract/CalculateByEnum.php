@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,11 +9,7 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class CalculateByEnum
 {
+    public const VALUE = 'VALUE';
 
-    const VALUE = 'VALUE';
-
-    const DIFF = 'DIFF';
-
-
+    public const DIFF = 'DIFF';
 }
-

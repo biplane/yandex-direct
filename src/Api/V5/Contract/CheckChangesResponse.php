@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class CheckChangesResponse
 {
-
 //    Can be omit.
 //    protected $Modified = null;
 
@@ -22,31 +23,26 @@ class CheckChangesResponse
 
     /**
      * Creates a new instance of CheckChangesResponse.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Modified.
-     *
-     * @return CheckResponseModified|null
      */
-    public function getModified()
+    public function getModified(): ?CheckResponseModified
     {
-        return isset($this->Modified) ? $this->Modified : null;
+        return $this->Modified ?? null;
     }
 
     /**
      * Sets Modified.
      *
-     * @param CheckResponseModified|null $value
      * @return $this
      */
-    public function setModified(CheckResponseModified $value = null)
+    public function setModified(?CheckResponseModified $value = null)
     {
         $this->Modified = $value;
 
@@ -55,21 +51,18 @@ class CheckChangesResponse
 
     /**
      * Gets NotFound.
-     *
-     * @return CheckResponseIds|null
      */
-    public function getNotFound()
+    public function getNotFound(): ?CheckResponseIds
     {
-        return isset($this->NotFound) ? $this->NotFound : null;
+        return $this->NotFound ?? null;
     }
 
     /**
      * Sets NotFound.
      *
-     * @param CheckResponseIds|null $value
      * @return $this
      */
-    public function setNotFound(CheckResponseIds $value = null)
+    public function setNotFound(?CheckResponseIds $value = null)
     {
         $this->NotFound = $value;
 
@@ -78,21 +71,18 @@ class CheckChangesResponse
 
     /**
      * Gets Unprocessed.
-     *
-     * @return CheckResponseIds|null
      */
-    public function getUnprocessed()
+    public function getUnprocessed(): ?CheckResponseIds
     {
-        return isset($this->Unprocessed) ? $this->Unprocessed : null;
+        return $this->Unprocessed ?? null;
     }
 
     /**
      * Sets Unprocessed.
      *
-     * @param CheckResponseIds|null $value
      * @return $this
      */
-    public function setUnprocessed(CheckResponseIds $value = null)
+    public function setUnprocessed(?CheckResponseIds $value = null)
     {
         $this->Unprocessed = $value;
 
@@ -101,27 +91,21 @@ class CheckChangesResponse
 
     /**
      * Gets Timestamp.
-     *
-     * @return string|null
      */
-    public function getTimestamp()
+    public function getTimestamp(): ?string
     {
-        return isset($this->Timestamp) ? $this->Timestamp : null;
+        return $this->Timestamp ?? null;
     }
 
     /**
      * Sets Timestamp.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setTimestamp($value = null)
+    public function setTimestamp(?string $value = null)
     {
         $this->Timestamp = $value;
 
         return $this;
     }
-
-
 }
-

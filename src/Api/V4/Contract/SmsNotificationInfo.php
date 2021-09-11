@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class SmsNotificationInfo
 {
-
     protected $MetricaSms = null;
 
     protected $ModerateResultSms = null;
@@ -24,20 +25,16 @@ class SmsNotificationInfo
 
     /**
      * Creates a new instance of SmsNotificationInfo.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets MetricaSms.
-     *
-     * @return string|null
      */
-    public function getMetricaSms()
+    public function getMetricaSms(): ?string
     {
         return $this->MetricaSms;
     }
@@ -45,10 +42,9 @@ class SmsNotificationInfo
     /**
      * Sets MetricaSms.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setMetricaSms($value = null)
+    public function setMetricaSms(?string $value = null)
     {
         $this->MetricaSms = $value;
 
@@ -57,10 +53,8 @@ class SmsNotificationInfo
 
     /**
      * Gets ModerateResultSms.
-     *
-     * @return string|null
      */
-    public function getModerateResultSms()
+    public function getModerateResultSms(): ?string
     {
         return $this->ModerateResultSms;
     }
@@ -68,10 +62,9 @@ class SmsNotificationInfo
     /**
      * Sets ModerateResultSms.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setModerateResultSms($value = null)
+    public function setModerateResultSms(?string $value = null)
     {
         $this->ModerateResultSms = $value;
 
@@ -80,10 +73,8 @@ class SmsNotificationInfo
 
     /**
      * Gets MoneyInSms.
-     *
-     * @return string|null
      */
-    public function getMoneyInSms()
+    public function getMoneyInSms(): ?string
     {
         return $this->MoneyInSms;
     }
@@ -91,10 +82,9 @@ class SmsNotificationInfo
     /**
      * Sets MoneyInSms.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setMoneyInSms($value = null)
+    public function setMoneyInSms(?string $value = null)
     {
         $this->MoneyInSms = $value;
 
@@ -103,10 +93,8 @@ class SmsNotificationInfo
 
     /**
      * Gets MoneyOutSms.
-     *
-     * @return string|null
      */
-    public function getMoneyOutSms()
+    public function getMoneyOutSms(): ?string
     {
         return $this->MoneyOutSms;
     }
@@ -114,10 +102,9 @@ class SmsNotificationInfo
     /**
      * Sets MoneyOutSms.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setMoneyOutSms($value = null)
+    public function setMoneyOutSms(?string $value = null)
     {
         $this->MoneyOutSms = $value;
 
@@ -126,10 +113,8 @@ class SmsNotificationInfo
 
     /**
      * Gets PausedByDayBudgetSms.
-     *
-     * @return string|null
      */
-    public function getPausedByDayBudgetSms()
+    public function getPausedByDayBudgetSms(): ?string
     {
         return $this->PausedByDayBudgetSms;
     }
@@ -137,10 +122,9 @@ class SmsNotificationInfo
     /**
      * Sets PausedByDayBudgetSms.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setPausedByDayBudgetSms($value = null)
+    public function setPausedByDayBudgetSms(?string $value = null)
     {
         $this->PausedByDayBudgetSms = $value;
 
@@ -149,10 +133,8 @@ class SmsNotificationInfo
 
     /**
      * Gets SmsTimeFrom.
-     *
-     * @return string|null
      */
-    public function getSmsTimeFrom()
+    public function getSmsTimeFrom(): ?string
     {
         return $this->SmsTimeFrom;
     }
@@ -160,10 +142,9 @@ class SmsNotificationInfo
     /**
      * Sets SmsTimeFrom.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setSmsTimeFrom($value = null)
+    public function setSmsTimeFrom(?string $value = null)
     {
         $this->SmsTimeFrom = $value;
 
@@ -172,10 +153,8 @@ class SmsNotificationInfo
 
     /**
      * Gets SmsTimeTo.
-     *
-     * @return string|null
      */
-    public function getSmsTimeTo()
+    public function getSmsTimeTo(): ?string
     {
         return $this->SmsTimeTo;
     }
@@ -183,16 +162,12 @@ class SmsNotificationInfo
     /**
      * Sets SmsTimeTo.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setSmsTimeTo($value = null)
+    public function setSmsTimeTo(?string $value = null)
     {
         $this->SmsTimeTo = $value;
 
         return $this;
     }
-
-
 }
-

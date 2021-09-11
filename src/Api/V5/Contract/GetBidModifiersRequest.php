@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class GetBidModifiersRequest extends GetRequestGeneral
 {
-
     protected $SelectionCriteria = null;
 
     protected $FieldNames = [];
@@ -35,20 +36,16 @@ class GetBidModifiersRequest extends GetRequestGeneral
 
     /**
      * Creates a new instance of GetBidModifiersRequest.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets SelectionCriteria.
-     *
-     * @return BidModifiersSelectionCriteria
      */
-    public function getSelectionCriteria()
+    public function getSelectionCriteria(): BidModifiersSelectionCriteria
     {
         return $this->SelectionCriteria;
     }
@@ -56,7 +53,6 @@ class GetBidModifiersRequest extends GetRequestGeneral
     /**
      * Sets SelectionCriteria.
      *
-     * @param BidModifiersSelectionCriteria $value
      * @return $this
      */
     public function setSelectionCriteria(BidModifiersSelectionCriteria $value)
@@ -69,10 +65,11 @@ class GetBidModifiersRequest extends GetRequestGeneral
     /**
      * Gets FieldNames.
      *
-     * @return string[]
      * @see BidModifierFieldEnum
+     *
+     * @return string[]
      */
-    public function getFieldNames()
+    public function getFieldNames(): array
     {
         return $this->FieldNames;
     }
@@ -80,9 +77,11 @@ class GetBidModifiersRequest extends GetRequestGeneral
     /**
      * Sets FieldNames.
      *
-     * @param string[] $value
-     * @return $this
      * @see BidModifierFieldEnum
+     *
+     * @param string[] $value
+     *
+     * @return $this
      */
     public function setFieldNames(array $value)
     {
@@ -94,22 +93,25 @@ class GetBidModifiersRequest extends GetRequestGeneral
     /**
      * Gets MobileAdjustmentFieldNames.
      *
-     * @return string[]|null
      * @see MobileAdjustmentFieldEnum
+     *
+     * @return string[]|null
      */
-    public function getMobileAdjustmentFieldNames()
+    public function getMobileAdjustmentFieldNames(): ?array
     {
-        return isset($this->MobileAdjustmentFieldNames) ? $this->MobileAdjustmentFieldNames : null;
+        return $this->MobileAdjustmentFieldNames ?? null;
     }
 
     /**
      * Sets MobileAdjustmentFieldNames.
      *
-     * @param string[]|null $value
-     * @return $this
      * @see MobileAdjustmentFieldEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
      */
-    public function setMobileAdjustmentFieldNames(array $value = null)
+    public function setMobileAdjustmentFieldNames(?array $value = null)
     {
         $this->MobileAdjustmentFieldNames = $value;
 
@@ -119,22 +121,25 @@ class GetBidModifiersRequest extends GetRequestGeneral
     /**
      * Gets DesktopAdjustmentFieldNames.
      *
-     * @return string[]|null
      * @see DesktopAdjustmentFieldEnum
+     *
+     * @return string[]|null
      */
-    public function getDesktopAdjustmentFieldNames()
+    public function getDesktopAdjustmentFieldNames(): ?array
     {
-        return isset($this->DesktopAdjustmentFieldNames) ? $this->DesktopAdjustmentFieldNames : null;
+        return $this->DesktopAdjustmentFieldNames ?? null;
     }
 
     /**
      * Sets DesktopAdjustmentFieldNames.
      *
-     * @param string[]|null $value
-     * @return $this
      * @see DesktopAdjustmentFieldEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
      */
-    public function setDesktopAdjustmentFieldNames(array $value = null)
+    public function setDesktopAdjustmentFieldNames(?array $value = null)
     {
         $this->DesktopAdjustmentFieldNames = $value;
 
@@ -144,22 +149,25 @@ class GetBidModifiersRequest extends GetRequestGeneral
     /**
      * Gets DemographicsAdjustmentFieldNames.
      *
-     * @return string[]|null
      * @see DemographicsAdjustmentFieldEnum
+     *
+     * @return string[]|null
      */
-    public function getDemographicsAdjustmentFieldNames()
+    public function getDemographicsAdjustmentFieldNames(): ?array
     {
-        return isset($this->DemographicsAdjustmentFieldNames) ? $this->DemographicsAdjustmentFieldNames : null;
+        return $this->DemographicsAdjustmentFieldNames ?? null;
     }
 
     /**
      * Sets DemographicsAdjustmentFieldNames.
      *
-     * @param string[]|null $value
-     * @return $this
      * @see DemographicsAdjustmentFieldEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
      */
-    public function setDemographicsAdjustmentFieldNames(array $value = null)
+    public function setDemographicsAdjustmentFieldNames(?array $value = null)
     {
         $this->DemographicsAdjustmentFieldNames = $value;
 
@@ -169,22 +177,25 @@ class GetBidModifiersRequest extends GetRequestGeneral
     /**
      * Gets RetargetingAdjustmentFieldNames.
      *
-     * @return string[]|null
      * @see RetargetingAdjustmentFieldEnum
+     *
+     * @return string[]|null
      */
-    public function getRetargetingAdjustmentFieldNames()
+    public function getRetargetingAdjustmentFieldNames(): ?array
     {
-        return isset($this->RetargetingAdjustmentFieldNames) ? $this->RetargetingAdjustmentFieldNames : null;
+        return $this->RetargetingAdjustmentFieldNames ?? null;
     }
 
     /**
      * Sets RetargetingAdjustmentFieldNames.
      *
-     * @param string[]|null $value
-     * @return $this
      * @see RetargetingAdjustmentFieldEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
      */
-    public function setRetargetingAdjustmentFieldNames(array $value = null)
+    public function setRetargetingAdjustmentFieldNames(?array $value = null)
     {
         $this->RetargetingAdjustmentFieldNames = $value;
 
@@ -194,22 +205,25 @@ class GetBidModifiersRequest extends GetRequestGeneral
     /**
      * Gets RegionalAdjustmentFieldNames.
      *
-     * @return string[]|null
      * @see RegionalAdjustmentFieldEnum
+     *
+     * @return string[]|null
      */
-    public function getRegionalAdjustmentFieldNames()
+    public function getRegionalAdjustmentFieldNames(): ?array
     {
-        return isset($this->RegionalAdjustmentFieldNames) ? $this->RegionalAdjustmentFieldNames : null;
+        return $this->RegionalAdjustmentFieldNames ?? null;
     }
 
     /**
      * Sets RegionalAdjustmentFieldNames.
      *
-     * @param string[]|null $value
-     * @return $this
      * @see RegionalAdjustmentFieldEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
      */
-    public function setRegionalAdjustmentFieldNames(array $value = null)
+    public function setRegionalAdjustmentFieldNames(?array $value = null)
     {
         $this->RegionalAdjustmentFieldNames = $value;
 
@@ -219,22 +233,25 @@ class GetBidModifiersRequest extends GetRequestGeneral
     /**
      * Gets VideoAdjustmentFieldNames.
      *
-     * @return string[]|null
      * @see VideoAdjustmentFieldEnum
+     *
+     * @return string[]|null
      */
-    public function getVideoAdjustmentFieldNames()
+    public function getVideoAdjustmentFieldNames(): ?array
     {
-        return isset($this->VideoAdjustmentFieldNames) ? $this->VideoAdjustmentFieldNames : null;
+        return $this->VideoAdjustmentFieldNames ?? null;
     }
 
     /**
      * Sets VideoAdjustmentFieldNames.
      *
-     * @param string[]|null $value
-     * @return $this
      * @see VideoAdjustmentFieldEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
      */
-    public function setVideoAdjustmentFieldNames(array $value = null)
+    public function setVideoAdjustmentFieldNames(?array $value = null)
     {
         $this->VideoAdjustmentFieldNames = $value;
 
@@ -244,28 +261,28 @@ class GetBidModifiersRequest extends GetRequestGeneral
     /**
      * Gets SmartAdAdjustmentFieldNames.
      *
-     * @return string[]|null
      * @see SmartAdAdjustmentFieldEnum
+     *
+     * @return string[]|null
      */
-    public function getSmartAdAdjustmentFieldNames()
+    public function getSmartAdAdjustmentFieldNames(): ?array
     {
-        return isset($this->SmartAdAdjustmentFieldNames) ? $this->SmartAdAdjustmentFieldNames : null;
+        return $this->SmartAdAdjustmentFieldNames ?? null;
     }
 
     /**
      * Sets SmartAdAdjustmentFieldNames.
      *
-     * @param string[]|null $value
-     * @return $this
      * @see SmartAdAdjustmentFieldEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
      */
-    public function setSmartAdAdjustmentFieldNames(array $value = null)
+    public function setSmartAdAdjustmentFieldNames(?array $value = null)
     {
         $this->SmartAdAdjustmentFieldNames = $value;
 
         return $this;
     }
-
-
 }
-

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,25 +9,20 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AdAddItemBase
 {
-
     protected $AdGroupId = null;
 
     /**
      * Creates a new instance of AdAddItemBase.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets AdGroupId.
-     *
-     * @return int
      */
-    public function getAdGroupId()
+    public function getAdGroupId(): int
     {
         return $this->AdGroupId;
     }
@@ -33,16 +30,12 @@ class AdAddItemBase
     /**
      * Sets AdGroupId.
      *
-     * @param int $value
      * @return $this
      */
-    public function setAdGroupId($value)
+    public function setAdGroupId(int $value)
     {
         $this->AdGroupId = $value;
 
         return $this;
     }
-
-
 }
-

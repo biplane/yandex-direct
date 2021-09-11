@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,25 +9,20 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class DynamicTextAdAdd extends TextAdAddBase
 {
-
     protected $Text = null;
 
     /**
      * Creates a new instance of DynamicTextAdAdd.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Text.
-     *
-     * @return string
      */
-    public function getText()
+    public function getText(): string
     {
         return $this->Text;
     }
@@ -33,16 +30,12 @@ class DynamicTextAdAdd extends TextAdAddBase
     /**
      * Sets Text.
      *
-     * @param string $value
      * @return $this
      */
-    public function setText($value)
+    public function setText(string $value)
     {
         $this->Text = $value;
 
         return $this;
     }
-
-
 }
-

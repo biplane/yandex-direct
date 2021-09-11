@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,27 +9,22 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class RetargetingAdjustmentAdd
 {
-
     protected $RetargetingConditionId = null;
 
     protected $BidModifier = null;
 
     /**
      * Creates a new instance of RetargetingAdjustmentAdd.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets RetargetingConditionId.
-     *
-     * @return int
      */
-    public function getRetargetingConditionId()
+    public function getRetargetingConditionId(): int
     {
         return $this->RetargetingConditionId;
     }
@@ -35,10 +32,9 @@ class RetargetingAdjustmentAdd
     /**
      * Sets RetargetingConditionId.
      *
-     * @param int $value
      * @return $this
      */
-    public function setRetargetingConditionId($value)
+    public function setRetargetingConditionId(int $value)
     {
         $this->RetargetingConditionId = $value;
 
@@ -47,10 +43,8 @@ class RetargetingAdjustmentAdd
 
     /**
      * Gets BidModifier.
-     *
-     * @return int
      */
-    public function getBidModifier()
+    public function getBidModifier(): int
     {
         return $this->BidModifier;
     }
@@ -58,16 +52,12 @@ class RetargetingAdjustmentAdd
     /**
      * Sets BidModifier.
      *
-     * @param int $value
      * @return $this
      */
-    public function setBidModifier($value)
+    public function setBidModifier(int $value)
     {
         $this->BidModifier = $value;
 
         return $this;
     }
-
-
 }
-

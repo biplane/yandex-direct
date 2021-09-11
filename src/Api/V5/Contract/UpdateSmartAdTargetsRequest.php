@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,15 +9,12 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class UpdateSmartAdTargetsRequest
 {
-
     protected $SmartAdTargets = [];
 
     /**
      * Creates a new instance of UpdateSmartAdTargetsRequest.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -25,7 +24,7 @@ class UpdateSmartAdTargetsRequest
      *
      * @return SmartAdTargetUpdateItem[]
      */
-    public function getSmartAdTargets()
+    public function getSmartAdTargets(): array
     {
         return $this->SmartAdTargets;
     }
@@ -34,6 +33,7 @@ class UpdateSmartAdTargetsRequest
      * Sets SmartAdTargets.
      *
      * @param SmartAdTargetUpdateItem[] $value
+     *
      * @return $this
      */
     public function setSmartAdTargets(array $value)
@@ -42,7 +42,4 @@ class UpdateSmartAdTargetsRequest
 
         return $this;
     }
-
-
 }
-

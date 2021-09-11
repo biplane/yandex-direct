@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class SmartCampaignNetworkStrategy extends SmartCampaignStrategyBase
 {
-
     protected $BiddingStrategyType = null;
 
 //    Can be omit.
@@ -15,10 +16,8 @@ class SmartCampaignNetworkStrategy extends SmartCampaignStrategyBase
 
     /**
      * Creates a new instance of SmartCampaignNetworkStrategy.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -26,10 +25,9 @@ class SmartCampaignNetworkStrategy extends SmartCampaignStrategyBase
     /**
      * Gets BiddingStrategyType.
      *
-     * @return string
      * @see SmartCampaignNetworkStrategyTypeEnum
      */
-    public function getBiddingStrategyType()
+    public function getBiddingStrategyType(): string
     {
         return $this->BiddingStrategyType;
     }
@@ -37,11 +35,11 @@ class SmartCampaignNetworkStrategy extends SmartCampaignStrategyBase
     /**
      * Sets BiddingStrategyType.
      *
-     * @param string $value
-     * @return $this
      * @see SmartCampaignNetworkStrategyTypeEnum
+     *
+     * @return $this
      */
-    public function setBiddingStrategyType($value)
+    public function setBiddingStrategyType(string $value)
     {
         $this->BiddingStrategyType = $value;
 
@@ -50,27 +48,21 @@ class SmartCampaignNetworkStrategy extends SmartCampaignStrategyBase
 
     /**
      * Gets NetworkDefault.
-     *
-     * @return StrategyNetworkDefault|null
      */
-    public function getNetworkDefault()
+    public function getNetworkDefault(): ?StrategyNetworkDefault
     {
-        return isset($this->NetworkDefault) ? $this->NetworkDefault : null;
+        return $this->NetworkDefault ?? null;
     }
 
     /**
      * Sets NetworkDefault.
      *
-     * @param StrategyNetworkDefault|null $value
      * @return $this
      */
-    public function setNetworkDefault(StrategyNetworkDefault $value = null)
+    public function setNetworkDefault(?StrategyNetworkDefault $value = null)
     {
         $this->NetworkDefault = $value;
 
         return $this;
     }
-
-
 }
-

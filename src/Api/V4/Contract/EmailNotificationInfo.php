@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class EmailNotificationInfo
 {
-
     protected $Email = null;
 
     protected $WarnPlaceInterval = null;
@@ -22,20 +23,16 @@ class EmailNotificationInfo
 
     /**
      * Creates a new instance of EmailNotificationInfo.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Email.
-     *
-     * @return string|null
      */
-    public function getEmail()
+    public function getEmail(): ?string
     {
         return $this->Email;
     }
@@ -43,10 +40,9 @@ class EmailNotificationInfo
     /**
      * Sets Email.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setEmail($value = null)
+    public function setEmail(?string $value = null)
     {
         $this->Email = $value;
 
@@ -55,10 +51,8 @@ class EmailNotificationInfo
 
     /**
      * Gets WarnPlaceInterval.
-     *
-     * @return int
      */
-    public function getWarnPlaceInterval()
+    public function getWarnPlaceInterval(): int
     {
         return $this->WarnPlaceInterval;
     }
@@ -66,10 +60,9 @@ class EmailNotificationInfo
     /**
      * Sets WarnPlaceInterval.
      *
-     * @param int $value
      * @return $this
      */
-    public function setWarnPlaceInterval($value)
+    public function setWarnPlaceInterval(int $value)
     {
         $this->WarnPlaceInterval = $value;
 
@@ -78,10 +71,8 @@ class EmailNotificationInfo
 
     /**
      * Gets MoneyWarningValue.
-     *
-     * @return int|null
      */
-    public function getMoneyWarningValue()
+    public function getMoneyWarningValue(): ?int
     {
         return $this->MoneyWarningValue;
     }
@@ -89,10 +80,9 @@ class EmailNotificationInfo
     /**
      * Sets MoneyWarningValue.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setMoneyWarningValue($value = null)
+    public function setMoneyWarningValue(?int $value = null)
     {
         $this->MoneyWarningValue = $value;
 
@@ -101,10 +91,8 @@ class EmailNotificationInfo
 
     /**
      * Gets PausedByDayBudget.
-     *
-     * @return string|null
      */
-    public function getPausedByDayBudget()
+    public function getPausedByDayBudget(): ?string
     {
         return $this->PausedByDayBudget;
     }
@@ -112,10 +100,9 @@ class EmailNotificationInfo
     /**
      * Sets PausedByDayBudget.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setPausedByDayBudget($value = null)
+    public function setPausedByDayBudget(?string $value = null)
     {
         $this->PausedByDayBudget = $value;
 
@@ -124,10 +111,8 @@ class EmailNotificationInfo
 
     /**
      * Gets SendAccNews.
-     *
-     * @return string|null
      */
-    public function getSendAccNews()
+    public function getSendAccNews(): ?string
     {
         return $this->SendAccNews;
     }
@@ -135,10 +120,9 @@ class EmailNotificationInfo
     /**
      * Sets SendAccNews.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setSendAccNews($value = null)
+    public function setSendAccNews(?string $value = null)
     {
         $this->SendAccNews = $value;
 
@@ -147,10 +131,8 @@ class EmailNotificationInfo
 
     /**
      * Gets SendWarn.
-     *
-     * @return string|null
      */
-    public function getSendWarn()
+    public function getSendWarn(): ?string
     {
         return $this->SendWarn;
     }
@@ -158,16 +140,12 @@ class EmailNotificationInfo
     /**
      * Sets SendWarn.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setSendWarn($value = null)
+    public function setSendWarn(?string $value = null)
     {
         $this->SendWarn = $value;
 
         return $this;
     }
-
-
 }
-

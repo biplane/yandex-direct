@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,23 +9,19 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class DynamicTextAdFieldEnum
 {
+    public const AD_IMAGE_HASH = 'AdImageHash';
 
-    const AD_IMAGE_HASH = 'AdImageHash';
+    public const SITELINK_SET_ID = 'SitelinkSetId';
 
-    const SITELINK_SET_ID = 'SitelinkSetId';
+    public const TEXT = 'Text';
 
-    const TEXT = 'Text';
+    public const V_CARD_ID = 'VCardId';
 
-    const V_CARD_ID = 'VCardId';
+    public const AD_IMAGE_MODERATION = 'AdImageModeration';
 
-    const AD_IMAGE_MODERATION = 'AdImageModeration';
+    public const SITELINKS_MODERATION = 'SitelinksModeration';
 
-    const SITELINKS_MODERATION = 'SitelinksModeration';
+    public const V_CARD_MODERATION = 'VCardModeration';
 
-    const V_CARD_MODERATION = 'VCardModeration';
-
-    const AD_EXTENSIONS = 'AdExtensions';
-
-
+    public const AD_EXTENSIONS = 'AdExtensions';
 }
-

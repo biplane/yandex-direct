@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,17 +9,14 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class ClientRestrictionItem
 {
-
     protected $Element = null;
 
     protected $Value = null;
 
     /**
      * Creates a new instance of ClientRestrictionItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -25,10 +24,9 @@ class ClientRestrictionItem
     /**
      * Gets Element.
      *
-     * @return string
      * @see ClientRestrictionEnum
      */
-    public function getElement()
+    public function getElement(): string
     {
         return $this->Element;
     }
@@ -36,11 +34,11 @@ class ClientRestrictionItem
     /**
      * Sets Element.
      *
-     * @param string $value
-     * @return $this
      * @see ClientRestrictionEnum
+     *
+     * @return $this
      */
-    public function setElement($value)
+    public function setElement(string $value)
     {
         $this->Element = $value;
 
@@ -49,10 +47,8 @@ class ClientRestrictionItem
 
     /**
      * Gets Value.
-     *
-     * @return int
      */
-    public function getValue()
+    public function getValue(): int
     {
         return $this->Value;
     }
@@ -60,16 +56,12 @@ class ClientRestrictionItem
     /**
      * Sets Value.
      *
-     * @param int $value
      * @return $this
      */
-    public function setValue($value)
+    public function setValue(int $value)
     {
         $this->Value = $value;
 
         return $this;
     }
-
-
 }
-

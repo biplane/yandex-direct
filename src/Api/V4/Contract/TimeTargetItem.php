@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class TimeTargetItem
 {
-
     protected $Hours = [];
 
     protected $Days = [];
@@ -16,10 +17,8 @@ class TimeTargetItem
 
     /**
      * Creates a new instance of TimeTargetItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -29,7 +28,7 @@ class TimeTargetItem
      *
      * @return int[]
      */
-    public function getHours()
+    public function getHours(): array
     {
         return $this->Hours;
     }
@@ -38,6 +37,7 @@ class TimeTargetItem
      * Sets Hours.
      *
      * @param int[] $value
+     *
      * @return $this
      */
     public function setHours(array $value)
@@ -52,7 +52,7 @@ class TimeTargetItem
      *
      * @return int[]
      */
-    public function getDays()
+    public function getDays(): array
     {
         return $this->Days;
     }
@@ -61,6 +61,7 @@ class TimeTargetItem
      * Sets Days.
      *
      * @param int[] $value
+     *
      * @return $this
      */
     public function setDays(array $value)
@@ -75,7 +76,7 @@ class TimeTargetItem
      *
      * @return int[]|null
      */
-    public function getBidCoefs()
+    public function getBidCoefs(): ?array
     {
         return $this->BidCoefs;
     }
@@ -84,15 +85,13 @@ class TimeTargetItem
      * Sets BidCoefs.
      *
      * @param int[]|null $value
+     *
      * @return $this
      */
-    public function setBidCoefs(array $value = null)
+    public function setBidCoefs(?array $value = null)
     {
         $this->BidCoefs = $value;
 
         return $this;
     }
-
-
 }
-

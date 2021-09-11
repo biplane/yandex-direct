@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class MetroStationsItem
 {
-
     protected $GeoRegionId = null;
 
     protected $MetroStationId = null;
@@ -16,20 +17,16 @@ class MetroStationsItem
 
     /**
      * Creates a new instance of MetroStationsItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets GeoRegionId.
-     *
-     * @return int
      */
-    public function getGeoRegionId()
+    public function getGeoRegionId(): int
     {
         return $this->GeoRegionId;
     }
@@ -37,10 +34,9 @@ class MetroStationsItem
     /**
      * Sets GeoRegionId.
      *
-     * @param int $value
      * @return $this
      */
-    public function setGeoRegionId($value)
+    public function setGeoRegionId(int $value)
     {
         $this->GeoRegionId = $value;
 
@@ -49,10 +45,8 @@ class MetroStationsItem
 
     /**
      * Gets MetroStationId.
-     *
-     * @return int
      */
-    public function getMetroStationId()
+    public function getMetroStationId(): int
     {
         return $this->MetroStationId;
     }
@@ -60,10 +54,9 @@ class MetroStationsItem
     /**
      * Sets MetroStationId.
      *
-     * @param int $value
      * @return $this
      */
-    public function setMetroStationId($value)
+    public function setMetroStationId(int $value)
     {
         $this->MetroStationId = $value;
 
@@ -72,10 +65,8 @@ class MetroStationsItem
 
     /**
      * Gets MetroStationName.
-     *
-     * @return string
      */
-    public function getMetroStationName()
+    public function getMetroStationName(): string
     {
         return $this->MetroStationName;
     }
@@ -83,16 +74,12 @@ class MetroStationsItem
     /**
      * Sets MetroStationName.
      *
-     * @param string $value
      * @return $this
      */
-    public function setMetroStationName($value)
+    public function setMetroStationName(string $value)
     {
         $this->MetroStationName = $value;
 
         return $this;
     }
-
-
 }
-

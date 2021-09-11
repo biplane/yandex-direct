@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,16 +9,13 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class GetKeywordsResponse extends GetResponseGeneral
 {
-
 //    Can be omit.
 //    protected $Keywords = null;
 
     /**
      * Creates a new instance of GetKeywordsResponse.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -26,24 +25,22 @@ class GetKeywordsResponse extends GetResponseGeneral
      *
      * @return KeywordGetItem[]|null
      */
-    public function getKeywords()
+    public function getKeywords(): ?array
     {
-        return isset($this->Keywords) ? $this->Keywords : null;
+        return $this->Keywords ?? null;
     }
 
     /**
      * Sets Keywords.
      *
      * @param KeywordGetItem[]|null $value
+     *
      * @return $this
      */
-    public function setKeywords(array $value = null)
+    public function setKeywords(?array $value = null)
     {
         $this->Keywords = $value;
 
         return $this;
     }
-
-
 }
-

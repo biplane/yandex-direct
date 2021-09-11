@@ -1,43 +1,60 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Report;
 
-/**
- * ReportRequest.
- *
- * @author Denis Vasilev
- */
+use InvalidArgumentException;
+
+use function implode;
+use function in_array;
+use function sprintf;
+
 class ReportRequest
 {
-    const PROCESSING_MODE_AUTO = 'auto';
-    const PROCESSING_MODE_ONLINE = 'online';
-    const PROCESSING_MODE_OFFLINE = 'offline';
+    public const PROCESSING_MODE_AUTO = 'auto';
+    public const PROCESSING_MODE_ONLINE = 'online';
+    public const PROCESSING_MODE_OFFLINE = 'offline';
 
-    const RETURN_MONEY_FORMAT_MICROS = 1;
-    const RETURN_MONEY_FORMAT_FLOAT = 2;
+    public const RETURN_MONEY_FORMAT_MICROS = 1;
+    public const RETURN_MONEY_FORMAT_FLOAT = 2;
 
+    /** @var string */
     private $processingMode = self::PROCESSING_MODE_AUTO;
-    private $returnMoneyFormat = self::RETURN_MONEY_FORMAT_MICROS;
-    private $skipColumnHeader = false;
-    private $skipReportHeader = false;
-    private $skipReportSummary = false;
-    private $definition;
 
-    public function getProcessingMode()
+    /** @var int */
+    private $returnMoneyFormat = self::RETURN_MONEY_FORMAT_MICROS;
+
+    /** @var bool */
+    private $skipColumnHeader = false;
+
+    /** @var bool */
+    private $skipReportHeader = false;
+
+    /** @var bool */
+    private $skipReportSummary = false;
+
+    /** @var string */
+    private $definition = '';
+
+    public function getProcessingMode(): string
     {
         return $this->processingMode;
     }
 
-    public function setProcessingMode($mode)
+    /**
+     * @return $this
+     */
+    public function setProcessingMode(string $mode)
     {
         $allowedModes = [
             self::PROCESSING_MODE_AUTO,
             self::PROCESSING_MODE_ONLINE,
-            self::PROCESSING_MODE_OFFLINE
+            self::PROCESSING_MODE_OFFLINE,
         ];
 
-        if (!in_array($mode, $allowedModes)) {
-            throw new \InvalidArgumentException(sprintf(
+        if (! in_array($mode, $allowedModes, true)) {
+            throw new InvalidArgumentException(sprintf(
                 'The mode must be one of the following values: %s',
                 implode(', ', $allowedModes)
             ));
@@ -48,11 +65,14 @@ class ReportRequest
         return $this;
     }
 
-    public function getReturnMoneyFormat()
+    public function getReturnMoneyFormat(): int
     {
         return $this->returnMoneyFormat;
     }
 
+    /**
+     * @return $this
+     */
     public function returnMoneyInMicros()
     {
         $this->returnMoneyFormat = self::RETURN_MONEY_FORMAT_MICROS;
@@ -60,6 +80,9 @@ class ReportRequest
         return $this;
     }
 
+    /**
+     * @return $this
+     */
     public function returnMoneyAsFloat()
     {
         $this->returnMoneyFormat = self::RETURN_MONEY_FORMAT_FLOAT;
@@ -67,11 +90,14 @@ class ReportRequest
         return $this;
     }
 
-    public function isSkipColumnHeader()
+    public function isSkipColumnHeader(): bool
     {
         return $this->skipColumnHeader;
     }
 
+    /**
+     * @return $this
+     */
     public function skipColumnHeader()
     {
         $this->skipColumnHeader = true;
@@ -79,6 +105,9 @@ class ReportRequest
         return $this;
     }
 
+    /**
+     * @return $this
+     */
     public function includeColumnHeader()
     {
         $this->skipColumnHeader = false;
@@ -86,11 +115,14 @@ class ReportRequest
         return $this;
     }
 
-    public function isSkipReportHeader()
+    public function isSkipReportHeader(): bool
     {
         return $this->skipReportHeader;
     }
 
+    /**
+     * @return $this
+     */
     public function skipReportHeader()
     {
         $this->skipReportHeader = true;
@@ -98,6 +130,9 @@ class ReportRequest
         return $this;
     }
 
+    /**
+     * @return $this
+     */
     public function includeReportHeader()
     {
         $this->skipReportHeader = false;
@@ -105,11 +140,14 @@ class ReportRequest
         return $this;
     }
 
-    public function isSkipReportSummary()
+    public function isSkipReportSummary(): bool
     {
         return $this->skipReportSummary;
     }
 
+    /**
+     * @return $this
+     */
     public function skipReportSummary()
     {
         $this->skipReportSummary = true;
@@ -117,6 +155,9 @@ class ReportRequest
         return $this;
     }
 
+    /**
+     * @return $this
+     */
     public function includeReportSummary()
     {
         $this->skipReportSummary = false;
@@ -126,10 +167,8 @@ class ReportRequest
 
     /**
      * Gets the report definition.
-     *
-     * @return string
      */
-    public function getDefinition()
+    public function getDefinition(): string
     {
         return $this->definition;
     }
@@ -139,7 +178,7 @@ class ReportRequest
      *
      * @param ReportDefinitionBuilder|string $reportDefinition The report definition, XML document
      *
-     * @return self
+     * @return $this
      */
     public function setDefinition($reportDefinition)
     {

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,17 +9,13 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class MobAppAgeLabelEnum
 {
+    public const AGE_0 = 'AGE_0';
 
-    const AGE_0 = 'AGE_0';
+    public const AGE_6 = 'AGE_6';
 
-    const AGE_6 = 'AGE_6';
+    public const AGE_12 = 'AGE_12';
 
-    const AGE_12 = 'AGE_12';
+    public const AGE_16 = 'AGE_16';
 
-    const AGE_16 = 'AGE_16';
-
-    const AGE_18 = 'AGE_18';
-
-
+    public const AGE_18 = 'AGE_18';
 }
-

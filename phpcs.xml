@@ -10,9 +10,6 @@
   <file>src/</file>
   <file>tests/</file>
 
-  <exclude-pattern>src/Api/V4/*</exclude-pattern>
-  <exclude-pattern>src/Api/V5/*</exclude-pattern>
-
   <rule ref="Doctrine">
     <exclude name="Generic.Formatting.MultipleStatementAlignment" />
 
@@ -35,5 +32,25 @@
       <property name="spacesCountAroundEqualsSign" value="0" />
       <property name="linesCountAfterDeclare" value="1" />
     </properties>
+  </rule>
+
+  <rule ref="Generic.NamingConventions.UpperCaseConstantName.ClassConstantNotUpperCase">
+    <exclude-pattern>src/Api/V4/Contract</exclude-pattern>
+    <exclude-pattern>src/Api/V5/Contract</exclude-pattern>
+  </rule>
+
+  <rule ref="Squiz.NamingConventions.ValidVariableName.MemberNotCamelCaps">
+    <exclude-pattern>src/Api/V4/Contract</exclude-pattern>
+    <exclude-pattern>src/Api/V5/Contract</exclude-pattern>
+  </rule>
+
+  <rule ref="SlevomatCodingStandard.TypeHints.PropertyTypeHint.MissingAnyTypeHint">
+    <exclude-pattern>src/Api/V4/Contract</exclude-pattern>
+    <exclude-pattern>src/Api/V5/Contract</exclude-pattern>
+  </rule>
+
+  <rule ref="SlevomatCodingStandard.TypeHints.ParameterTypeHint.MissingTraversableTypeHintSpecification">
+    <exclude-pattern>src/Api/V4</exclude-pattern>
+    <exclude-pattern>src/Api/V5</exclude-pattern>
   </rule>
 </ruleset>

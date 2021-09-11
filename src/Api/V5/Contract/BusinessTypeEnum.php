@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,19 +9,15 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class BusinessTypeEnum
 {
+    public const RETAIL = 'RETAIL';
 
-    const RETAIL = 'RETAIL';
+    public const HOTELS = 'HOTELS';
 
-    const HOTELS = 'HOTELS';
+    public const REALTY = 'REALTY';
 
-    const REALTY = 'REALTY';
+    public const AUTOMOBILES = 'AUTOMOBILES';
 
-    const AUTOMOBILES = 'AUTOMOBILES';
+    public const FLIGHTS = 'FLIGHTS';
 
-    const FLIGHTS = 'FLIGHTS';
-
-    const OTHER = 'OTHER';
-
-
+    public const OTHER = 'OTHER';
 }
-

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,27 +9,22 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class NetworkCoverageItem
 {
-
     protected $Probability = null;
 
     protected $Bid = null;
 
     /**
      * Creates a new instance of NetworkCoverageItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Probability.
-     *
-     * @return float
      */
-    public function getProbability()
+    public function getProbability(): float
     {
         return $this->Probability;
     }
@@ -35,10 +32,9 @@ class NetworkCoverageItem
     /**
      * Sets Probability.
      *
-     * @param float $value
      * @return $this
      */
-    public function setProbability($value)
+    public function setProbability(float $value)
     {
         $this->Probability = $value;
 
@@ -47,10 +43,8 @@ class NetworkCoverageItem
 
     /**
      * Gets Bid.
-     *
-     * @return int
      */
-    public function getBid()
+    public function getBid(): int
     {
         return $this->Bid;
     }
@@ -58,16 +52,12 @@ class NetworkCoverageItem
     /**
      * Sets Bid.
      *
-     * @param int $value
      * @return $this
      */
-    public function setBid($value)
+    public function setBid(int $value)
     {
         $this->Bid = $value;
 
         return $this;
     }
-
-
 }
-

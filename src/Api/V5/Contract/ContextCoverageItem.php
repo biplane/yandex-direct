@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,27 +9,22 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class ContextCoverageItem
 {
-
     protected $Probability = null;
 
     protected $Price = null;
 
     /**
      * Creates a new instance of ContextCoverageItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Probability.
-     *
-     * @return float
      */
-    public function getProbability()
+    public function getProbability(): float
     {
         return $this->Probability;
     }
@@ -35,10 +32,9 @@ class ContextCoverageItem
     /**
      * Sets Probability.
      *
-     * @param float $value
      * @return $this
      */
-    public function setProbability($value)
+    public function setProbability(float $value)
     {
         $this->Probability = $value;
 
@@ -47,10 +43,8 @@ class ContextCoverageItem
 
     /**
      * Gets Price.
-     *
-     * @return int
      */
-    public function getPrice()
+    public function getPrice(): int
     {
         return $this->Price;
     }
@@ -58,16 +52,12 @@ class ContextCoverageItem
     /**
      * Sets Price.
      *
-     * @param int $value
      * @return $this
      */
-    public function setPrice($value)
+    public function setPrice(int $value)
     {
         $this->Price = $value;
 
         return $this;
     }
-
-
 }
-

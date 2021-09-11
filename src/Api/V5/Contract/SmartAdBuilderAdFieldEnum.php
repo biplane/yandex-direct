@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,9 +9,5 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class SmartAdBuilderAdFieldEnum
 {
-
-    const CREATIVE = 'Creative';
-
-
+    public const CREATIVE = 'Creative';
 }
-

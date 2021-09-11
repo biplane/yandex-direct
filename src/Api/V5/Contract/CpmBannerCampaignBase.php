@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class CpmBannerCampaignBase
 {
-
 //    Can be omit.
 //    protected $CounterIds = null;
 
@@ -16,10 +17,8 @@ class CpmBannerCampaignBase
 
     /**
      * Creates a new instance of CpmBannerCampaignBase.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -29,18 +28,19 @@ class CpmBannerCampaignBase
      *
      * @return int[]|null
      */
-    public function getCounterIds()
+    public function getCounterIds(): ?array
     {
-        return isset($this->CounterIds) ? $this->CounterIds : null;
+        return $this->CounterIds ?? null;
     }
 
     /**
      * Sets CounterIds.
      *
      * @param int[]|null $value
+     *
      * @return $this
      */
-    public function setCounterIds(array $value = null)
+    public function setCounterIds(?array $value = null)
     {
         $this->CounterIds = $value;
 
@@ -49,27 +49,21 @@ class CpmBannerCampaignBase
 
     /**
      * Gets FrequencyCap.
-     *
-     * @return FrequencyCapSetting|null
      */
-    public function getFrequencyCap()
+    public function getFrequencyCap(): ?FrequencyCapSetting
     {
-        return isset($this->FrequencyCap) ? $this->FrequencyCap : null;
+        return $this->FrequencyCap ?? null;
     }
 
     /**
      * Sets FrequencyCap.
      *
-     * @param FrequencyCapSetting|null $value
      * @return $this
      */
-    public function setFrequencyCap(FrequencyCapSetting $value = null)
+    public function setFrequencyCap(?FrequencyCapSetting $value = null)
     {
         $this->FrequencyCap = $value;
 
         return $this;
     }
-
-
 }
-

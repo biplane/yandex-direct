@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,25 +9,21 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class FeedFieldEnum
 {
+    public const ID = 'Id';
 
-    const ID = 'Id';
+    public const NAME = 'Name';
 
-    const NAME = 'Name';
+    public const BUSINESS_TYPE = 'BusinessType';
 
-    const BUSINESS_TYPE = 'BusinessType';
+    public const SOURCE_TYPE = 'SourceType';
 
-    const SOURCE_TYPE = 'SourceType';
+    public const FILTER_SCHEMA = 'FilterSchema';
 
-    const FILTER_SCHEMA = 'FilterSchema';
+    public const UPDATED_AT = 'UpdatedAt';
 
-    const UPDATED_AT = 'UpdatedAt';
+    public const CAMPAIGN_IDS = 'CampaignIds';
 
-    const CAMPAIGN_IDS = 'CampaignIds';
+    public const NUMBER_OF_ITEMS = 'NumberOfItems';
 
-    const NUMBER_OF_ITEMS = 'NumberOfItems';
-
-    const STATUS = 'Status';
-
-
+    public const STATUS = 'Status';
 }
-

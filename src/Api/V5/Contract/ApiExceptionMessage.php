@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class ApiExceptionMessage
 {
-
     protected $requestId = null;
 
     protected $errorCode = null;
@@ -17,20 +18,16 @@ class ApiExceptionMessage
 
     /**
      * Creates a new instance of ApiExceptionMessage.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets requestId.
-     *
-     * @return string|null
      */
-    public function getRequestId()
+    public function getRequestId(): ?string
     {
         return $this->requestId;
     }
@@ -38,10 +35,9 @@ class ApiExceptionMessage
     /**
      * Sets requestId.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setRequestId($value = null)
+    public function setRequestId(?string $value = null)
     {
         $this->requestId = $value;
 
@@ -50,10 +46,8 @@ class ApiExceptionMessage
 
     /**
      * Gets errorCode.
-     *
-     * @return int|null
      */
-    public function getErrorCode()
+    public function getErrorCode(): ?int
     {
         return $this->errorCode;
     }
@@ -61,10 +55,9 @@ class ApiExceptionMessage
     /**
      * Sets errorCode.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setErrorCode($value = null)
+    public function setErrorCode(?int $value = null)
     {
         $this->errorCode = $value;
 
@@ -73,27 +66,21 @@ class ApiExceptionMessage
 
     /**
      * Gets errorDetail.
-     *
-     * @return string|null
      */
-    public function getErrorDetail()
+    public function getErrorDetail(): ?string
     {
-        return isset($this->errorDetail) ? $this->errorDetail : null;
+        return $this->errorDetail ?? null;
     }
 
     /**
      * Sets errorDetail.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setErrorDetail($value = null)
+    public function setErrorDetail(?string $value = null)
     {
         $this->errorDetail = $value;
 
         return $this;
     }
-
-
 }
-

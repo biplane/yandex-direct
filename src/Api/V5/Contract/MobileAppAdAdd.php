@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class MobileAppAdAdd
 {
-
 //    Can be omit.
 //    protected $AdImageHash = null;
 
@@ -31,31 +32,26 @@ class MobileAppAdAdd
 
     /**
      * Creates a new instance of MobileAppAdAdd.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets AdImageHash.
-     *
-     * @return string|null
      */
-    public function getAdImageHash()
+    public function getAdImageHash(): ?string
     {
-        return isset($this->AdImageHash) ? $this->AdImageHash : null;
+        return $this->AdImageHash ?? null;
     }
 
     /**
      * Sets AdImageHash.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setAdImageHash($value = null)
+    public function setAdImageHash(?string $value = null)
     {
         $this->AdImageHash = $value;
 
@@ -64,10 +60,8 @@ class MobileAppAdAdd
 
     /**
      * Gets Text.
-     *
-     * @return string
      */
-    public function getText()
+    public function getText(): string
     {
         return $this->Text;
     }
@@ -75,10 +69,9 @@ class MobileAppAdAdd
     /**
      * Sets Text.
      *
-     * @param string $value
      * @return $this
      */
-    public function setText($value)
+    public function setText(string $value)
     {
         $this->Text = $value;
 
@@ -87,10 +80,8 @@ class MobileAppAdAdd
 
     /**
      * Gets Title.
-     *
-     * @return string
      */
-    public function getTitle()
+    public function getTitle(): string
     {
         return $this->Title;
     }
@@ -98,10 +89,9 @@ class MobileAppAdAdd
     /**
      * Sets Title.
      *
-     * @param string $value
      * @return $this
      */
-    public function setTitle($value)
+    public function setTitle(string $value)
     {
         $this->Title = $value;
 
@@ -110,21 +100,18 @@ class MobileAppAdAdd
 
     /**
      * Gets TrackingUrl.
-     *
-     * @return string|null
      */
-    public function getTrackingUrl()
+    public function getTrackingUrl(): ?string
     {
-        return isset($this->TrackingUrl) ? $this->TrackingUrl : null;
+        return $this->TrackingUrl ?? null;
     }
 
     /**
      * Sets TrackingUrl.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setTrackingUrl($value = null)
+    public function setTrackingUrl(?string $value = null)
     {
         $this->TrackingUrl = $value;
 
@@ -134,10 +121,9 @@ class MobileAppAdAdd
     /**
      * Gets Action.
      *
-     * @return string
      * @see MobileAppAdActionEnum
      */
-    public function getAction()
+    public function getAction(): string
     {
         return $this->Action;
     }
@@ -145,11 +131,11 @@ class MobileAppAdAdd
     /**
      * Sets Action.
      *
-     * @param string $value
-     * @return $this
      * @see MobileAppAdActionEnum
+     *
+     * @return $this
      */
-    public function setAction($value)
+    public function setAction(string $value)
     {
         $this->Action = $value;
 
@@ -161,18 +147,19 @@ class MobileAppAdAdd
      *
      * @return MobileAppAdFeatureItem[]|null
      */
-    public function getFeatures()
+    public function getFeatures(): ?array
     {
-        return isset($this->Features) ? $this->Features : null;
+        return $this->Features ?? null;
     }
 
     /**
      * Sets Features.
      *
      * @param MobileAppAdFeatureItem[]|null $value
+     *
      * @return $this
      */
-    public function setFeatures(array $value = null)
+    public function setFeatures(?array $value = null)
     {
         $this->Features = $value;
 
@@ -182,22 +169,21 @@ class MobileAppAdAdd
     /**
      * Gets AgeLabel.
      *
-     * @return string|null
      * @see MobAppAgeLabelEnum
      */
-    public function getAgeLabel()
+    public function getAgeLabel(): ?string
     {
-        return isset($this->AgeLabel) ? $this->AgeLabel : null;
+        return $this->AgeLabel ?? null;
     }
 
     /**
      * Sets AgeLabel.
      *
-     * @param string|null $value
-     * @return $this
      * @see MobAppAgeLabelEnum
+     *
+     * @return $this
      */
-    public function setAgeLabel($value = null)
+    public function setAgeLabel(?string $value = null)
     {
         $this->AgeLabel = $value;
 
@@ -206,27 +192,21 @@ class MobileAppAdAdd
 
     /**
      * Gets VideoExtension.
-     *
-     * @return VideoExtensionAddItem|null
      */
-    public function getVideoExtension()
+    public function getVideoExtension(): ?VideoExtensionAddItem
     {
-        return isset($this->VideoExtension) ? $this->VideoExtension : null;
+        return $this->VideoExtension ?? null;
     }
 
     /**
      * Sets VideoExtension.
      *
-     * @param VideoExtensionAddItem|null $value
      * @return $this
      */
-    public function setVideoExtension(VideoExtensionAddItem $value = null)
+    public function setVideoExtension(?VideoExtensionAddItem $value = null)
     {
         $this->VideoExtension = $value;
 
         return $this;
     }
-
-
 }
-

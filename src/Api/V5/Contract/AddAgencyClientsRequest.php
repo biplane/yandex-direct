@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AddAgencyClientsRequest
 {
-
     protected $Login = null;
 
     protected $FirstName = null;
@@ -26,20 +27,16 @@ class AddAgencyClientsRequest
 
     /**
      * Creates a new instance of AddAgencyClientsRequest.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Login.
-     *
-     * @return string
      */
-    public function getLogin()
+    public function getLogin(): string
     {
         return $this->Login;
     }
@@ -47,10 +44,9 @@ class AddAgencyClientsRequest
     /**
      * Sets Login.
      *
-     * @param string $value
      * @return $this
      */
-    public function setLogin($value)
+    public function setLogin(string $value)
     {
         $this->Login = $value;
 
@@ -59,10 +55,8 @@ class AddAgencyClientsRequest
 
     /**
      * Gets FirstName.
-     *
-     * @return string
      */
-    public function getFirstName()
+    public function getFirstName(): string
     {
         return $this->FirstName;
     }
@@ -70,10 +64,9 @@ class AddAgencyClientsRequest
     /**
      * Sets FirstName.
      *
-     * @param string $value
      * @return $this
      */
-    public function setFirstName($value)
+    public function setFirstName(string $value)
     {
         $this->FirstName = $value;
 
@@ -82,10 +75,8 @@ class AddAgencyClientsRequest
 
     /**
      * Gets LastName.
-     *
-     * @return string
      */
-    public function getLastName()
+    public function getLastName(): string
     {
         return $this->LastName;
     }
@@ -93,10 +84,9 @@ class AddAgencyClientsRequest
     /**
      * Sets LastName.
      *
-     * @param string $value
      * @return $this
      */
-    public function setLastName($value)
+    public function setLastName(string $value)
     {
         $this->LastName = $value;
 
@@ -106,10 +96,9 @@ class AddAgencyClientsRequest
     /**
      * Gets Currency.
      *
-     * @return string
      * @see CurrencyEnum
      */
-    public function getCurrency()
+    public function getCurrency(): string
     {
         return $this->Currency;
     }
@@ -117,11 +106,11 @@ class AddAgencyClientsRequest
     /**
      * Sets Currency.
      *
-     * @param string $value
-     * @return $this
      * @see CurrencyEnum
+     *
+     * @return $this
      */
-    public function setCurrency($value)
+    public function setCurrency(string $value)
     {
         $this->Currency = $value;
 
@@ -130,10 +119,8 @@ class AddAgencyClientsRequest
 
     /**
      * Gets Notification.
-     *
-     * @return ClientNotificationAdd
      */
-    public function getNotification()
+    public function getNotification(): ClientNotificationAdd
     {
         return $this->Notification;
     }
@@ -141,7 +128,6 @@ class AddAgencyClientsRequest
     /**
      * Sets Notification.
      *
-     * @param ClientNotificationAdd $value
      * @return $this
      */
     public function setNotification(ClientNotificationAdd $value)
@@ -156,18 +142,19 @@ class AddAgencyClientsRequest
      *
      * @return ClientSettingAddItem[]|null
      */
-    public function getSettings()
+    public function getSettings(): ?array
     {
-        return isset($this->Settings) ? $this->Settings : null;
+        return $this->Settings ?? null;
     }
 
     /**
      * Sets Settings.
      *
      * @param ClientSettingAddItem[]|null $value
+     *
      * @return $this
      */
-    public function setSettings(array $value = null)
+    public function setSettings(?array $value = null)
     {
         $this->Settings = $value;
 
@@ -179,24 +166,22 @@ class AddAgencyClientsRequest
      *
      * @return GrantItem[]|null
      */
-    public function getGrants()
+    public function getGrants(): ?array
     {
-        return isset($this->Grants) ? $this->Grants : null;
+        return $this->Grants ?? null;
     }
 
     /**
      * Sets Grants.
      *
      * @param GrantItem[]|null $value
+     *
      * @return $this
      */
-    public function setGrants(array $value = null)
+    public function setGrants(?array $value = null)
     {
         $this->Grants = $value;
 
         return $this;
     }
-
-
 }
-

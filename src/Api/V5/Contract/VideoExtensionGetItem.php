@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class VideoExtensionGetItem
 {
-
     protected $CreativeId = null;
 
 //    Can be omit.
@@ -19,20 +20,16 @@ class VideoExtensionGetItem
 
     /**
      * Creates a new instance of VideoExtensionGetItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets CreativeId.
-     *
-     * @return int
      */
-    public function getCreativeId()
+    public function getCreativeId(): int
     {
         return $this->CreativeId;
     }
@@ -40,10 +37,9 @@ class VideoExtensionGetItem
     /**
      * Sets CreativeId.
      *
-     * @param int $value
      * @return $this
      */
-    public function setCreativeId($value)
+    public function setCreativeId(int $value)
     {
         $this->CreativeId = $value;
 
@@ -53,22 +49,21 @@ class VideoExtensionGetItem
     /**
      * Gets Status.
      *
-     * @return string|null
      * @see StatusEnum
      */
-    public function getStatus()
+    public function getStatus(): ?string
     {
-        return isset($this->Status) ? $this->Status : null;
+        return $this->Status ?? null;
     }
 
     /**
      * Sets Status.
      *
-     * @param string|null $value
-     * @return $this
      * @see StatusEnum
+     *
+     * @return $this
      */
-    public function setStatus($value = null)
+    public function setStatus(?string $value = null)
     {
         $this->Status = $value;
 
@@ -77,10 +72,8 @@ class VideoExtensionGetItem
 
     /**
      * Gets ThumbnailUrl.
-     *
-     * @return string
      */
-    public function getThumbnailUrl()
+    public function getThumbnailUrl(): string
     {
         return $this->ThumbnailUrl;
     }
@@ -88,10 +81,9 @@ class VideoExtensionGetItem
     /**
      * Sets ThumbnailUrl.
      *
-     * @param string $value
      * @return $this
      */
-    public function setThumbnailUrl($value)
+    public function setThumbnailUrl(string $value)
     {
         $this->ThumbnailUrl = $value;
 
@@ -100,10 +92,8 @@ class VideoExtensionGetItem
 
     /**
      * Gets PreviewUrl.
-     *
-     * @return string
      */
-    public function getPreviewUrl()
+    public function getPreviewUrl(): string
     {
         return $this->PreviewUrl;
     }
@@ -111,16 +101,12 @@ class VideoExtensionGetItem
     /**
      * Sets PreviewUrl.
      *
-     * @param string $value
      * @return $this
      */
-    public function setPreviewUrl($value)
+    public function setPreviewUrl(string $value)
     {
         $this->PreviewUrl = $value;
 
         return $this;
     }
-
-
 }
-

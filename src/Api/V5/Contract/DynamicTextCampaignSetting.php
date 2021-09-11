@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,17 +9,14 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class DynamicTextCampaignSetting
 {
-
     protected $Option = null;
 
     protected $Value = null;
 
     /**
      * Creates a new instance of DynamicTextCampaignSetting.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -25,10 +24,9 @@ class DynamicTextCampaignSetting
     /**
      * Gets Option.
      *
-     * @return string
      * @see DynamicTextCampaignSettingsEnum
      */
-    public function getOption()
+    public function getOption(): string
     {
         return $this->Option;
     }
@@ -36,11 +34,11 @@ class DynamicTextCampaignSetting
     /**
      * Sets Option.
      *
-     * @param string $value
-     * @return $this
      * @see DynamicTextCampaignSettingsEnum
+     *
+     * @return $this
      */
-    public function setOption($value)
+    public function setOption(string $value)
     {
         $this->Option = $value;
 
@@ -50,10 +48,9 @@ class DynamicTextCampaignSetting
     /**
      * Gets Value.
      *
-     * @return string
      * @see YesNoEnum
      */
-    public function getValue()
+    public function getValue(): string
     {
         return $this->Value;
     }
@@ -61,17 +58,14 @@ class DynamicTextCampaignSetting
     /**
      * Sets Value.
      *
-     * @param string $value
-     * @return $this
      * @see YesNoEnum
+     *
+     * @return $this
      */
-    public function setValue($value)
+    public function setValue(string $value)
     {
         $this->Value = $value;
 
         return $this;
     }
-
-
 }
-

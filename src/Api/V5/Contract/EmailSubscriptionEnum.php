@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,13 +9,9 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class EmailSubscriptionEnum
 {
+    public const RECEIVE_RECOMMENDATIONS = 'RECEIVE_RECOMMENDATIONS';
 
-    const RECEIVE_RECOMMENDATIONS = 'RECEIVE_RECOMMENDATIONS';
+    public const TRACK_MANAGED_CAMPAIGNS = 'TRACK_MANAGED_CAMPAIGNS';
 
-    const TRACK_MANAGED_CAMPAIGNS = 'TRACK_MANAGED_CAMPAIGNS';
-
-    const TRACK_POSITION_CHANGES = 'TRACK_POSITION_CHANGES';
-
-
+    public const TRACK_POSITION_CHANGES = 'TRACK_POSITION_CHANGES';
 }
-

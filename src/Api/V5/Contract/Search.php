@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class Search
 {
-
 //    Can be omit.
 //    protected $Bid = null;
 
@@ -16,31 +17,26 @@ class Search
 
     /**
      * Creates a new instance of Search.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Bid.
-     *
-     * @return int|null
      */
-    public function getBid()
+    public function getBid(): ?int
     {
-        return isset($this->Bid) ? $this->Bid : null;
+        return $this->Bid ?? null;
     }
 
     /**
      * Sets Bid.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setBid($value = null)
+    public function setBid(?int $value = null)
     {
         $this->Bid = $value;
 
@@ -49,27 +45,21 @@ class Search
 
     /**
      * Gets AuctionBids.
-     *
-     * @return AuctionBids|null
      */
-    public function getAuctionBids()
+    public function getAuctionBids(): ?AuctionBids
     {
-        return isset($this->AuctionBids) ? $this->AuctionBids : null;
+        return $this->AuctionBids ?? null;
     }
 
     /**
      * Sets AuctionBids.
      *
-     * @param AuctionBids|null $value
      * @return $this
      */
-    public function setAuctionBids(AuctionBids $value = null)
+    public function setAuctionBids(?AuctionBids $value = null)
     {
         $this->AuctionBids = $value;
 
         return $this;
     }
-
-
 }
-

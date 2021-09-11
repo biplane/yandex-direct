@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class FeedGetItem
 {
-
 //    Can be omit.
 //    protected $Id = null;
 
@@ -43,31 +44,26 @@ class FeedGetItem
 
     /**
      * Creates a new instance of FeedGetItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Id.
-     *
-     * @return int|null
      */
-    public function getId()
+    public function getId(): ?int
     {
-        return isset($this->Id) ? $this->Id : null;
+        return $this->Id ?? null;
     }
 
     /**
      * Sets Id.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setId($value = null)
+    public function setId(?int $value = null)
     {
         $this->Id = $value;
 
@@ -76,21 +72,18 @@ class FeedGetItem
 
     /**
      * Gets Name.
-     *
-     * @return string|null
      */
-    public function getName()
+    public function getName(): ?string
     {
-        return isset($this->Name) ? $this->Name : null;
+        return $this->Name ?? null;
     }
 
     /**
      * Sets Name.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setName($value = null)
+    public function setName(?string $value = null)
     {
         $this->Name = $value;
 
@@ -100,22 +93,21 @@ class FeedGetItem
     /**
      * Gets BusinessType.
      *
-     * @return string|null
      * @see BusinessTypeEnum
      */
-    public function getBusinessType()
+    public function getBusinessType(): ?string
     {
-        return isset($this->BusinessType) ? $this->BusinessType : null;
+        return $this->BusinessType ?? null;
     }
 
     /**
      * Sets BusinessType.
      *
-     * @param string|null $value
-     * @return $this
      * @see BusinessTypeEnum
+     *
+     * @return $this
      */
-    public function setBusinessType($value = null)
+    public function setBusinessType(?string $value = null)
     {
         $this->BusinessType = $value;
 
@@ -125,22 +117,21 @@ class FeedGetItem
     /**
      * Gets SourceType.
      *
-     * @return string|null
      * @see SourceTypeEnum
      */
-    public function getSourceType()
+    public function getSourceType(): ?string
     {
-        return isset($this->SourceType) ? $this->SourceType : null;
+        return $this->SourceType ?? null;
     }
 
     /**
      * Sets SourceType.
      *
-     * @param string|null $value
-     * @return $this
      * @see SourceTypeEnum
+     *
+     * @return $this
      */
-    public function setSourceType($value = null)
+    public function setSourceType(?string $value = null)
     {
         $this->SourceType = $value;
 
@@ -149,21 +140,18 @@ class FeedGetItem
 
     /**
      * Gets FilterSchema.
-     *
-     * @return string|null
      */
-    public function getFilterSchema()
+    public function getFilterSchema(): ?string
     {
-        return isset($this->FilterSchema) ? $this->FilterSchema : null;
+        return $this->FilterSchema ?? null;
     }
 
     /**
      * Sets FilterSchema.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setFilterSchema($value = null)
+    public function setFilterSchema(?string $value = null)
     {
         $this->FilterSchema = $value;
 
@@ -172,21 +160,18 @@ class FeedGetItem
 
     /**
      * Gets UpdatedAt.
-     *
-     * @return string|null
      */
-    public function getUpdatedAt()
+    public function getUpdatedAt(): ?string
     {
-        return isset($this->UpdatedAt) ? $this->UpdatedAt : null;
+        return $this->UpdatedAt ?? null;
     }
 
     /**
      * Sets UpdatedAt.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setUpdatedAt($value = null)
+    public function setUpdatedAt(?string $value = null)
     {
         $this->UpdatedAt = $value;
 
@@ -198,18 +183,19 @@ class FeedGetItem
      *
      * @return float[]|null
      */
-    public function getCampaignIds()
+    public function getCampaignIds(): ?array
     {
-        return isset($this->CampaignIds) ? $this->CampaignIds : null;
+        return $this->CampaignIds ?? null;
     }
 
     /**
      * Sets CampaignIds.
      *
      * @param float[]|null $value
+     *
      * @return $this
      */
-    public function setCampaignIds(array $value = null)
+    public function setCampaignIds(?array $value = null)
     {
         $this->CampaignIds = $value;
 
@@ -218,21 +204,18 @@ class FeedGetItem
 
     /**
      * Gets FileFeed.
-     *
-     * @return FileFeedGet|null
      */
-    public function getFileFeed()
+    public function getFileFeed(): ?FileFeedGet
     {
-        return isset($this->FileFeed) ? $this->FileFeed : null;
+        return $this->FileFeed ?? null;
     }
 
     /**
      * Sets FileFeed.
      *
-     * @param FileFeedGet|null $value
      * @return $this
      */
-    public function setFileFeed(FileFeedGet $value = null)
+    public function setFileFeed(?FileFeedGet $value = null)
     {
         $this->FileFeed = $value;
 
@@ -241,21 +224,18 @@ class FeedGetItem
 
     /**
      * Gets NumberOfItems.
-     *
-     * @return int|null
      */
-    public function getNumberOfItems()
+    public function getNumberOfItems(): ?int
     {
-        return isset($this->NumberOfItems) ? $this->NumberOfItems : null;
+        return $this->NumberOfItems ?? null;
     }
 
     /**
      * Sets NumberOfItems.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setNumberOfItems($value = null)
+    public function setNumberOfItems(?int $value = null)
     {
         $this->NumberOfItems = $value;
 
@@ -265,22 +245,21 @@ class FeedGetItem
     /**
      * Gets Status.
      *
-     * @return string|null
      * @see FeedStatusEnum
      */
-    public function getStatus()
+    public function getStatus(): ?string
     {
-        return isset($this->Status) ? $this->Status : null;
+        return $this->Status ?? null;
     }
 
     /**
      * Sets Status.
      *
-     * @param string|null $value
-     * @return $this
      * @see FeedStatusEnum
+     *
+     * @return $this
      */
-    public function setStatus($value = null)
+    public function setStatus(?string $value = null)
     {
         $this->Status = $value;
 
@@ -289,27 +268,21 @@ class FeedGetItem
 
     /**
      * Gets UrlFeed.
-     *
-     * @return UrlFeedGet|null
      */
-    public function getUrlFeed()
+    public function getUrlFeed(): ?UrlFeedGet
     {
-        return isset($this->UrlFeed) ? $this->UrlFeed : null;
+        return $this->UrlFeed ?? null;
     }
 
     /**
      * Sets UrlFeed.
      *
-     * @param UrlFeedGet|null $value
      * @return $this
      */
-    public function setUrlFeed(UrlFeedGet $value = null)
+    public function setUrlFeed(?UrlFeedGet $value = null)
     {
         $this->UrlFeed = $value;
 
         return $this;
     }
-
-
 }
-

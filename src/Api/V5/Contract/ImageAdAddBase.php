@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,25 +9,20 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class ImageAdAddBase
 {
-
     protected $AdImageHash = null;
 
     /**
      * Creates a new instance of ImageAdAddBase.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets AdImageHash.
-     *
-     * @return string
      */
-    public function getAdImageHash()
+    public function getAdImageHash(): string
     {
         return $this->AdImageHash;
     }
@@ -33,16 +30,12 @@ class ImageAdAddBase
     /**
      * Sets AdImageHash.
      *
-     * @param string $value
      * @return $this
      */
-    public function setAdImageHash($value)
+    public function setAdImageHash(string $value)
     {
         $this->AdImageHash = $value;
 
         return $this;
     }
-
-
 }
-

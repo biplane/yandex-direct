@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,11 +9,7 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class SourceTypeGetEnum
 {
+    public const RETAIL_FEED = 'RETAIL_FEED';
 
-    const RETAIL_FEED = 'RETAIL_FEED';
-
-    const UNKNOWN = 'UNKNOWN';
-
-
+    public const UNKNOWN = 'UNKNOWN';
 }
-

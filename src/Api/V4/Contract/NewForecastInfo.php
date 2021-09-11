@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class NewForecastInfo
 {
-
     protected $Categories = null;
 
     protected $Phrases = null;
@@ -20,10 +21,8 @@ class NewForecastInfo
 
     /**
      * Creates a new instance of NewForecastInfo.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -33,7 +32,7 @@ class NewForecastInfo
      *
      * @return int[]|null
      */
-    public function getCategories()
+    public function getCategories(): ?array
     {
         return $this->Categories;
     }
@@ -42,9 +41,10 @@ class NewForecastInfo
      * Sets Categories.
      *
      * @param int[]|null $value
+     *
      * @return $this
      */
-    public function setCategories(array $value = null)
+    public function setCategories(?array $value = null)
     {
         $this->Categories = $value;
 
@@ -56,7 +56,7 @@ class NewForecastInfo
      *
      * @return string[]|null
      */
-    public function getPhrases()
+    public function getPhrases(): ?array
     {
         return $this->Phrases;
     }
@@ -65,9 +65,10 @@ class NewForecastInfo
      * Sets Phrases.
      *
      * @param string[]|null $value
+     *
      * @return $this
      */
-    public function setPhrases(array $value = null)
+    public function setPhrases(?array $value = null)
     {
         $this->Phrases = $value;
 
@@ -79,7 +80,7 @@ class NewForecastInfo
      *
      * @return int[]|null
      */
-    public function getGeoID()
+    public function getGeoID(): ?array
     {
         return $this->GeoID;
     }
@@ -88,9 +89,10 @@ class NewForecastInfo
      * Sets GeoID.
      *
      * @param int[]|null $value
+     *
      * @return $this
      */
-    public function setGeoID(array $value = null)
+    public function setGeoID(?array $value = null)
     {
         $this->GeoID = $value;
 
@@ -99,10 +101,8 @@ class NewForecastInfo
 
     /**
      * Gets Currency.
-     *
-     * @return string|null
      */
-    public function getCurrency()
+    public function getCurrency(): ?string
     {
         return $this->Currency;
     }
@@ -110,10 +110,9 @@ class NewForecastInfo
     /**
      * Sets Currency.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setCurrency($value = null)
+    public function setCurrency(?string $value = null)
     {
         $this->Currency = $value;
 
@@ -122,10 +121,8 @@ class NewForecastInfo
 
     /**
      * Gets AuctionBids.
-     *
-     * @return string|null
      */
-    public function getAuctionBids()
+    public function getAuctionBids(): ?string
     {
         return $this->AuctionBids;
     }
@@ -133,16 +130,12 @@ class NewForecastInfo
     /**
      * Sets AuctionBids.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setAuctionBids($value = null)
+    public function setAuctionBids(?string $value = null)
     {
         $this->AuctionBids = $value;
 
         return $this;
     }
-
-
 }
-

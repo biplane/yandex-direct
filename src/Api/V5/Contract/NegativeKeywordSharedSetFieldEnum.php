@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,15 +9,11 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class NegativeKeywordSharedSetFieldEnum
 {
+    public const ID = 'Id';
 
-    const ID = 'Id';
+    public const NAME = 'Name';
 
-    const NAME = 'Name';
+    public const NEGATIVE_KEYWORDS = 'NegativeKeywords';
 
-    const NEGATIVE_KEYWORDS = 'NegativeKeywords';
-
-    const ASSOCIATED = 'Associated';
-
-
+    public const ASSOCIATED = 'Associated';
 }
-

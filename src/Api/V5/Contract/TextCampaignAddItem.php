@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class TextCampaignAddItem
 {
-
     protected $BiddingStrategy = null;
 
 //    Can be omit.
@@ -27,20 +28,16 @@ class TextCampaignAddItem
 
     /**
      * Creates a new instance of TextCampaignAddItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets BiddingStrategy.
-     *
-     * @return TextCampaignStrategyAdd
      */
-    public function getBiddingStrategy()
+    public function getBiddingStrategy(): TextCampaignStrategyAdd
     {
         return $this->BiddingStrategy;
     }
@@ -48,7 +45,6 @@ class TextCampaignAddItem
     /**
      * Sets BiddingStrategy.
      *
-     * @param TextCampaignStrategyAdd $value
      * @return $this
      */
     public function setBiddingStrategy(TextCampaignStrategyAdd $value)
@@ -63,18 +59,19 @@ class TextCampaignAddItem
      *
      * @return TextCampaignSetting[]|null
      */
-    public function getSettings()
+    public function getSettings(): ?array
     {
-        return isset($this->Settings) ? $this->Settings : null;
+        return $this->Settings ?? null;
     }
 
     /**
      * Sets Settings.
      *
      * @param TextCampaignSetting[]|null $value
+     *
      * @return $this
      */
-    public function setSettings(array $value = null)
+    public function setSettings(?array $value = null)
     {
         $this->Settings = $value;
 
@@ -86,18 +83,19 @@ class TextCampaignAddItem
      *
      * @return int[]|null
      */
-    public function getCounterIds()
+    public function getCounterIds(): ?array
     {
-        return isset($this->CounterIds) ? $this->CounterIds : null;
+        return $this->CounterIds ?? null;
     }
 
     /**
      * Sets CounterIds.
      *
      * @param int[]|null $value
+     *
      * @return $this
      */
-    public function setCounterIds(array $value = null)
+    public function setCounterIds(?array $value = null)
     {
         $this->CounterIds = $value;
 
@@ -106,21 +104,18 @@ class TextCampaignAddItem
 
     /**
      * Gets RelevantKeywords.
-     *
-     * @return RelevantKeywordsSettingAdd|null
      */
-    public function getRelevantKeywords()
+    public function getRelevantKeywords(): ?RelevantKeywordsSettingAdd
     {
-        return isset($this->RelevantKeywords) ? $this->RelevantKeywords : null;
+        return $this->RelevantKeywords ?? null;
     }
 
     /**
      * Sets RelevantKeywords.
      *
-     * @param RelevantKeywordsSettingAdd|null $value
      * @return $this
      */
-    public function setRelevantKeywords(RelevantKeywordsSettingAdd $value = null)
+    public function setRelevantKeywords(?RelevantKeywordsSettingAdd $value = null)
     {
         $this->RelevantKeywords = $value;
 
@@ -129,21 +124,18 @@ class TextCampaignAddItem
 
     /**
      * Gets PriorityGoals.
-     *
-     * @return PriorityGoalsArray|null
      */
-    public function getPriorityGoals()
+    public function getPriorityGoals(): ?PriorityGoalsArray
     {
-        return isset($this->PriorityGoals) ? $this->PriorityGoals : null;
+        return $this->PriorityGoals ?? null;
     }
 
     /**
      * Sets PriorityGoals.
      *
-     * @param PriorityGoalsArray|null $value
      * @return $this
      */
-    public function setPriorityGoals(PriorityGoalsArray $value = null)
+    public function setPriorityGoals(?PriorityGoalsArray $value = null)
     {
         $this->PriorityGoals = $value;
 
@@ -153,28 +145,24 @@ class TextCampaignAddItem
     /**
      * Gets AttributionModel.
      *
-     * @return string|null
      * @see AttributionModelEnum
      */
-    public function getAttributionModel()
+    public function getAttributionModel(): ?string
     {
-        return isset($this->AttributionModel) ? $this->AttributionModel : null;
+        return $this->AttributionModel ?? null;
     }
 
     /**
      * Sets AttributionModel.
      *
-     * @param string|null $value
-     * @return $this
      * @see AttributionModelEnum
+     *
+     * @return $this
      */
-    public function setAttributionModel($value = null)
+    public function setAttributionModel(?string $value = null)
     {
         $this->AttributionModel = $value;
 
         return $this;
     }
-
-
 }
-

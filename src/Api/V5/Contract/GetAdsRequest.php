@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class GetAdsRequest extends GetRequestGeneral
 {
-
     protected $SelectionCriteria = null;
 
     protected $FieldNames = [];
@@ -53,20 +54,16 @@ class GetAdsRequest extends GetRequestGeneral
 
     /**
      * Creates a new instance of GetAdsRequest.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets SelectionCriteria.
-     *
-     * @return AdsSelectionCriteria
      */
-    public function getSelectionCriteria()
+    public function getSelectionCriteria(): AdsSelectionCriteria
     {
         return $this->SelectionCriteria;
     }
@@ -74,7 +71,6 @@ class GetAdsRequest extends GetRequestGeneral
     /**
      * Sets SelectionCriteria.
      *
-     * @param AdsSelectionCriteria $value
      * @return $this
      */
     public function setSelectionCriteria(AdsSelectionCriteria $value)
@@ -87,10 +83,11 @@ class GetAdsRequest extends GetRequestGeneral
     /**
      * Gets FieldNames.
      *
-     * @return string[]
      * @see AdFieldEnum
+     *
+     * @return string[]
      */
-    public function getFieldNames()
+    public function getFieldNames(): array
     {
         return $this->FieldNames;
     }
@@ -98,9 +95,11 @@ class GetAdsRequest extends GetRequestGeneral
     /**
      * Sets FieldNames.
      *
-     * @param string[] $value
-     * @return $this
      * @see AdFieldEnum
+     *
+     * @param string[] $value
+     *
+     * @return $this
      */
     public function setFieldNames(array $value)
     {
@@ -112,22 +111,25 @@ class GetAdsRequest extends GetRequestGeneral
     /**
      * Gets TextAdFieldNames.
      *
-     * @return string[]|null
      * @see TextAdFieldEnum
+     *
+     * @return string[]|null
      */
-    public function getTextAdFieldNames()
+    public function getTextAdFieldNames(): ?array
     {
-        return isset($this->TextAdFieldNames) ? $this->TextAdFieldNames : null;
+        return $this->TextAdFieldNames ?? null;
     }
 
     /**
      * Sets TextAdFieldNames.
      *
-     * @param string[]|null $value
-     * @return $this
      * @see TextAdFieldEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
      */
-    public function setTextAdFieldNames(array $value = null)
+    public function setTextAdFieldNames(?array $value = null)
     {
         $this->TextAdFieldNames = $value;
 
@@ -137,22 +139,25 @@ class GetAdsRequest extends GetRequestGeneral
     /**
      * Gets TextAdPriceExtensionFieldNames.
      *
-     * @return string[]|null
      * @see TextAdPriceExtensionFieldEnum
+     *
+     * @return string[]|null
      */
-    public function getTextAdPriceExtensionFieldNames()
+    public function getTextAdPriceExtensionFieldNames(): ?array
     {
-        return isset($this->TextAdPriceExtensionFieldNames) ? $this->TextAdPriceExtensionFieldNames : null;
+        return $this->TextAdPriceExtensionFieldNames ?? null;
     }
 
     /**
      * Sets TextAdPriceExtensionFieldNames.
      *
-     * @param string[]|null $value
-     * @return $this
      * @see TextAdPriceExtensionFieldEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
      */
-    public function setTextAdPriceExtensionFieldNames(array $value = null)
+    public function setTextAdPriceExtensionFieldNames(?array $value = null)
     {
         $this->TextAdPriceExtensionFieldNames = $value;
 
@@ -162,22 +167,25 @@ class GetAdsRequest extends GetRequestGeneral
     /**
      * Gets MobileAppAdFieldNames.
      *
-     * @return string[]|null
      * @see MobileAppAdFieldEnum
+     *
+     * @return string[]|null
      */
-    public function getMobileAppAdFieldNames()
+    public function getMobileAppAdFieldNames(): ?array
     {
-        return isset($this->MobileAppAdFieldNames) ? $this->MobileAppAdFieldNames : null;
+        return $this->MobileAppAdFieldNames ?? null;
     }
 
     /**
      * Sets MobileAppAdFieldNames.
      *
-     * @param string[]|null $value
-     * @return $this
      * @see MobileAppAdFieldEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
      */
-    public function setMobileAppAdFieldNames(array $value = null)
+    public function setMobileAppAdFieldNames(?array $value = null)
     {
         $this->MobileAppAdFieldNames = $value;
 
@@ -187,22 +195,25 @@ class GetAdsRequest extends GetRequestGeneral
     /**
      * Gets DynamicTextAdFieldNames.
      *
-     * @return string[]|null
      * @see DynamicTextAdFieldEnum
+     *
+     * @return string[]|null
      */
-    public function getDynamicTextAdFieldNames()
+    public function getDynamicTextAdFieldNames(): ?array
     {
-        return isset($this->DynamicTextAdFieldNames) ? $this->DynamicTextAdFieldNames : null;
+        return $this->DynamicTextAdFieldNames ?? null;
     }
 
     /**
      * Sets DynamicTextAdFieldNames.
      *
-     * @param string[]|null $value
-     * @return $this
      * @see DynamicTextAdFieldEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
      */
-    public function setDynamicTextAdFieldNames(array $value = null)
+    public function setDynamicTextAdFieldNames(?array $value = null)
     {
         $this->DynamicTextAdFieldNames = $value;
 
@@ -212,22 +223,25 @@ class GetAdsRequest extends GetRequestGeneral
     /**
      * Gets TextImageAdFieldNames.
      *
-     * @return string[]|null
      * @see TextImageAdFieldEnum
+     *
+     * @return string[]|null
      */
-    public function getTextImageAdFieldNames()
+    public function getTextImageAdFieldNames(): ?array
     {
-        return isset($this->TextImageAdFieldNames) ? $this->TextImageAdFieldNames : null;
+        return $this->TextImageAdFieldNames ?? null;
     }
 
     /**
      * Sets TextImageAdFieldNames.
      *
-     * @param string[]|null $value
-     * @return $this
      * @see TextImageAdFieldEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
      */
-    public function setTextImageAdFieldNames(array $value = null)
+    public function setTextImageAdFieldNames(?array $value = null)
     {
         $this->TextImageAdFieldNames = $value;
 
@@ -237,22 +251,25 @@ class GetAdsRequest extends GetRequestGeneral
     /**
      * Gets MobileAppImageAdFieldNames.
      *
-     * @return string[]|null
      * @see MobileAppImageAdFieldEnum
+     *
+     * @return string[]|null
      */
-    public function getMobileAppImageAdFieldNames()
+    public function getMobileAppImageAdFieldNames(): ?array
     {
-        return isset($this->MobileAppImageAdFieldNames) ? $this->MobileAppImageAdFieldNames : null;
+        return $this->MobileAppImageAdFieldNames ?? null;
     }
 
     /**
      * Sets MobileAppImageAdFieldNames.
      *
-     * @param string[]|null $value
-     * @return $this
      * @see MobileAppImageAdFieldEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
      */
-    public function setMobileAppImageAdFieldNames(array $value = null)
+    public function setMobileAppImageAdFieldNames(?array $value = null)
     {
         $this->MobileAppImageAdFieldNames = $value;
 
@@ -262,22 +279,25 @@ class GetAdsRequest extends GetRequestGeneral
     /**
      * Gets TextAdBuilderAdFieldNames.
      *
-     * @return string[]|null
      * @see TextAdBuilderAdFieldEnum
+     *
+     * @return string[]|null
      */
-    public function getTextAdBuilderAdFieldNames()
+    public function getTextAdBuilderAdFieldNames(): ?array
     {
-        return isset($this->TextAdBuilderAdFieldNames) ? $this->TextAdBuilderAdFieldNames : null;
+        return $this->TextAdBuilderAdFieldNames ?? null;
     }
 
     /**
      * Sets TextAdBuilderAdFieldNames.
      *
-     * @param string[]|null $value
-     * @return $this
      * @see TextAdBuilderAdFieldEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
      */
-    public function setTextAdBuilderAdFieldNames(array $value = null)
+    public function setTextAdBuilderAdFieldNames(?array $value = null)
     {
         $this->TextAdBuilderAdFieldNames = $value;
 
@@ -287,22 +307,25 @@ class GetAdsRequest extends GetRequestGeneral
     /**
      * Gets MobileAppAdBuilderAdFieldNames.
      *
-     * @return string[]|null
      * @see MobileAppAdBuilderAdFieldEnum
+     *
+     * @return string[]|null
      */
-    public function getMobileAppAdBuilderAdFieldNames()
+    public function getMobileAppAdBuilderAdFieldNames(): ?array
     {
-        return isset($this->MobileAppAdBuilderAdFieldNames) ? $this->MobileAppAdBuilderAdFieldNames : null;
+        return $this->MobileAppAdBuilderAdFieldNames ?? null;
     }
 
     /**
      * Sets MobileAppAdBuilderAdFieldNames.
      *
-     * @param string[]|null $value
-     * @return $this
      * @see MobileAppAdBuilderAdFieldEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
      */
-    public function setMobileAppAdBuilderAdFieldNames(array $value = null)
+    public function setMobileAppAdBuilderAdFieldNames(?array $value = null)
     {
         $this->MobileAppAdBuilderAdFieldNames = $value;
 
@@ -312,22 +335,25 @@ class GetAdsRequest extends GetRequestGeneral
     /**
      * Gets MobileAppCpcVideoAdBuilderAdFieldNames.
      *
-     * @return string[]|null
      * @see MobileAppCpcVideoAdBuilderAdFieldEnum
+     *
+     * @return string[]|null
      */
-    public function getMobileAppCpcVideoAdBuilderAdFieldNames()
+    public function getMobileAppCpcVideoAdBuilderAdFieldNames(): ?array
     {
-        return isset($this->MobileAppCpcVideoAdBuilderAdFieldNames) ? $this->MobileAppCpcVideoAdBuilderAdFieldNames : null;
+        return $this->MobileAppCpcVideoAdBuilderAdFieldNames ?? null;
     }
 
     /**
      * Sets MobileAppCpcVideoAdBuilderAdFieldNames.
      *
-     * @param string[]|null $value
-     * @return $this
      * @see MobileAppCpcVideoAdBuilderAdFieldEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
      */
-    public function setMobileAppCpcVideoAdBuilderAdFieldNames(array $value = null)
+    public function setMobileAppCpcVideoAdBuilderAdFieldNames(?array $value = null)
     {
         $this->MobileAppCpcVideoAdBuilderAdFieldNames = $value;
 
@@ -337,22 +363,25 @@ class GetAdsRequest extends GetRequestGeneral
     /**
      * Gets CpmBannerAdBuilderAdFieldNames.
      *
-     * @return string[]|null
      * @see CpmBannerAdBuilderAdFieldEnum
+     *
+     * @return string[]|null
      */
-    public function getCpmBannerAdBuilderAdFieldNames()
+    public function getCpmBannerAdBuilderAdFieldNames(): ?array
     {
-        return isset($this->CpmBannerAdBuilderAdFieldNames) ? $this->CpmBannerAdBuilderAdFieldNames : null;
+        return $this->CpmBannerAdBuilderAdFieldNames ?? null;
     }
 
     /**
      * Sets CpmBannerAdBuilderAdFieldNames.
      *
-     * @param string[]|null $value
-     * @return $this
      * @see CpmBannerAdBuilderAdFieldEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
      */
-    public function setCpmBannerAdBuilderAdFieldNames(array $value = null)
+    public function setCpmBannerAdBuilderAdFieldNames(?array $value = null)
     {
         $this->CpmBannerAdBuilderAdFieldNames = $value;
 
@@ -362,22 +391,25 @@ class GetAdsRequest extends GetRequestGeneral
     /**
      * Gets CpcVideoAdBuilderAdFieldNames.
      *
-     * @return string[]|null
      * @see CpcVideoAdBuilderAdFieldEnum
+     *
+     * @return string[]|null
      */
-    public function getCpcVideoAdBuilderAdFieldNames()
+    public function getCpcVideoAdBuilderAdFieldNames(): ?array
     {
-        return isset($this->CpcVideoAdBuilderAdFieldNames) ? $this->CpcVideoAdBuilderAdFieldNames : null;
+        return $this->CpcVideoAdBuilderAdFieldNames ?? null;
     }
 
     /**
      * Sets CpcVideoAdBuilderAdFieldNames.
      *
-     * @param string[]|null $value
-     * @return $this
      * @see CpcVideoAdBuilderAdFieldEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
      */
-    public function setCpcVideoAdBuilderAdFieldNames(array $value = null)
+    public function setCpcVideoAdBuilderAdFieldNames(?array $value = null)
     {
         $this->CpcVideoAdBuilderAdFieldNames = $value;
 
@@ -387,22 +419,25 @@ class GetAdsRequest extends GetRequestGeneral
     /**
      * Gets CpmVideoAdBuilderAdFieldNames.
      *
-     * @return string[]|null
      * @see CpmVideoAdBuilderAdFieldEnum
+     *
+     * @return string[]|null
      */
-    public function getCpmVideoAdBuilderAdFieldNames()
+    public function getCpmVideoAdBuilderAdFieldNames(): ?array
     {
-        return isset($this->CpmVideoAdBuilderAdFieldNames) ? $this->CpmVideoAdBuilderAdFieldNames : null;
+        return $this->CpmVideoAdBuilderAdFieldNames ?? null;
     }
 
     /**
      * Sets CpmVideoAdBuilderAdFieldNames.
      *
-     * @param string[]|null $value
-     * @return $this
      * @see CpmVideoAdBuilderAdFieldEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
      */
-    public function setCpmVideoAdBuilderAdFieldNames(array $value = null)
+    public function setCpmVideoAdBuilderAdFieldNames(?array $value = null)
     {
         $this->CpmVideoAdBuilderAdFieldNames = $value;
 
@@ -412,28 +447,28 @@ class GetAdsRequest extends GetRequestGeneral
     /**
      * Gets SmartAdBuilderAdFieldNames.
      *
-     * @return string[]|null
      * @see SmartAdBuilderAdFieldEnum
+     *
+     * @return string[]|null
      */
-    public function getSmartAdBuilderAdFieldNames()
+    public function getSmartAdBuilderAdFieldNames(): ?array
     {
-        return isset($this->SmartAdBuilderAdFieldNames) ? $this->SmartAdBuilderAdFieldNames : null;
+        return $this->SmartAdBuilderAdFieldNames ?? null;
     }
 
     /**
      * Sets SmartAdBuilderAdFieldNames.
      *
-     * @param string[]|null $value
-     * @return $this
      * @see SmartAdBuilderAdFieldEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
      */
-    public function setSmartAdBuilderAdFieldNames(array $value = null)
+    public function setSmartAdBuilderAdFieldNames(?array $value = null)
     {
         $this->SmartAdBuilderAdFieldNames = $value;
 
         return $this;
     }
-
-
 }
-

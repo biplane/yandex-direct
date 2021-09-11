@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,27 +9,22 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class DayBudgetInfo
 {
-
     protected $Amount = null;
 
     protected $SpendMode = null;
 
     /**
      * Creates a new instance of DayBudgetInfo.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Amount.
-     *
-     * @return float
      */
-    public function getAmount()
+    public function getAmount(): float
     {
         return $this->Amount;
     }
@@ -35,10 +32,9 @@ class DayBudgetInfo
     /**
      * Sets Amount.
      *
-     * @param float $value
      * @return $this
      */
-    public function setAmount($value)
+    public function setAmount(float $value)
     {
         $this->Amount = $value;
 
@@ -47,10 +43,8 @@ class DayBudgetInfo
 
     /**
      * Gets SpendMode.
-     *
-     * @return string|null
      */
-    public function getSpendMode()
+    public function getSpendMode(): ?string
     {
         return $this->SpendMode;
     }
@@ -58,16 +52,12 @@ class DayBudgetInfo
     /**
      * Sets SpendMode.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setSpendMode($value = null)
+    public function setSpendMode(?string $value = null)
     {
         $this->SpendMode = $value;
 
         return $this;
     }
-
-
 }
-

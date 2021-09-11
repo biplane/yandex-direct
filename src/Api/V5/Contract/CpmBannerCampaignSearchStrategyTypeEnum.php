@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,11 +9,7 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class CpmBannerCampaignSearchStrategyTypeEnum
 {
+    public const SERVING_OFF = 'SERVING_OFF';
 
-    const SERVING_OFF = 'SERVING_OFF';
-
-    const UNKNOWN = 'UNKNOWN';
-
-
+    public const UNKNOWN = 'UNKNOWN';
 }
-

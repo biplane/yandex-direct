@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,16 +9,13 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class TrackingPixelGetArray
 {
-
 //    Can be omit.
 //    protected $Items = null;
 
     /**
      * Creates a new instance of TrackingPixelGetArray.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -26,24 +25,22 @@ class TrackingPixelGetArray
      *
      * @return TrackingPixelGetItem[]|null
      */
-    public function getItems()
+    public function getItems(): ?array
     {
-        return isset($this->Items) ? $this->Items : null;
+        return $this->Items ?? null;
     }
 
     /**
      * Sets Items.
      *
      * @param TrackingPixelGetItem[]|null $value
+     *
      * @return $this
      */
-    public function setItems(array $value = null)
+    public function setItems(?array $value = null)
     {
         $this->Items = $value;
 
         return $this;
     }
-
-
 }
-

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,11 +9,7 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class CampaignFundsEnum
 {
+    public const CAMPAIGN_FUNDS = 'CAMPAIGN_FUNDS';
 
-    const CAMPAIGN_FUNDS = 'CAMPAIGN_FUNDS';
-
-    const SHARED_ACCOUNT_FUNDS = 'SHARED_ACCOUNT_FUNDS';
-
-
+    public const SHARED_ACCOUNT_FUNDS = 'SHARED_ACCOUNT_FUNDS';
 }
-

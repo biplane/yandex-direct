@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class SmartCampaignStrategyBase
 {
-
 //    Can be omit.
 //    protected $AverageCpcPerCampaign = null;
 
@@ -37,31 +38,26 @@ class SmartCampaignStrategyBase
 
     /**
      * Creates a new instance of SmartCampaignStrategyBase.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets AverageCpcPerCampaign.
-     *
-     * @return StrategyAverageCpcPerCampaign|null
      */
-    public function getAverageCpcPerCampaign()
+    public function getAverageCpcPerCampaign(): ?StrategyAverageCpcPerCampaign
     {
-        return isset($this->AverageCpcPerCampaign) ? $this->AverageCpcPerCampaign : null;
+        return $this->AverageCpcPerCampaign ?? null;
     }
 
     /**
      * Sets AverageCpcPerCampaign.
      *
-     * @param StrategyAverageCpcPerCampaign|null $value
      * @return $this
      */
-    public function setAverageCpcPerCampaign(StrategyAverageCpcPerCampaign $value = null)
+    public function setAverageCpcPerCampaign(?StrategyAverageCpcPerCampaign $value = null)
     {
         $this->AverageCpcPerCampaign = $value;
 
@@ -70,21 +66,18 @@ class SmartCampaignStrategyBase
 
     /**
      * Gets AverageCpcPerFilter.
-     *
-     * @return StrategyAverageCpcPerFilter|null
      */
-    public function getAverageCpcPerFilter()
+    public function getAverageCpcPerFilter(): ?StrategyAverageCpcPerFilter
     {
-        return isset($this->AverageCpcPerFilter) ? $this->AverageCpcPerFilter : null;
+        return $this->AverageCpcPerFilter ?? null;
     }
 
     /**
      * Sets AverageCpcPerFilter.
      *
-     * @param StrategyAverageCpcPerFilter|null $value
      * @return $this
      */
-    public function setAverageCpcPerFilter(StrategyAverageCpcPerFilter $value = null)
+    public function setAverageCpcPerFilter(?StrategyAverageCpcPerFilter $value = null)
     {
         $this->AverageCpcPerFilter = $value;
 
@@ -93,21 +86,18 @@ class SmartCampaignStrategyBase
 
     /**
      * Gets AverageCpaPerCampaign.
-     *
-     * @return StrategyAverageCpaPerCampaign|null
      */
-    public function getAverageCpaPerCampaign()
+    public function getAverageCpaPerCampaign(): ?StrategyAverageCpaPerCampaign
     {
-        return isset($this->AverageCpaPerCampaign) ? $this->AverageCpaPerCampaign : null;
+        return $this->AverageCpaPerCampaign ?? null;
     }
 
     /**
      * Sets AverageCpaPerCampaign.
      *
-     * @param StrategyAverageCpaPerCampaign|null $value
      * @return $this
      */
-    public function setAverageCpaPerCampaign(StrategyAverageCpaPerCampaign $value = null)
+    public function setAverageCpaPerCampaign(?StrategyAverageCpaPerCampaign $value = null)
     {
         $this->AverageCpaPerCampaign = $value;
 
@@ -116,21 +106,18 @@ class SmartCampaignStrategyBase
 
     /**
      * Gets PayForConversionPerCampaign.
-     *
-     * @return StrategyPayForConversionPerCampaign|null
      */
-    public function getPayForConversionPerCampaign()
+    public function getPayForConversionPerCampaign(): ?StrategyPayForConversionPerCampaign
     {
-        return isset($this->PayForConversionPerCampaign) ? $this->PayForConversionPerCampaign : null;
+        return $this->PayForConversionPerCampaign ?? null;
     }
 
     /**
      * Sets PayForConversionPerCampaign.
      *
-     * @param StrategyPayForConversionPerCampaign|null $value
      * @return $this
      */
-    public function setPayForConversionPerCampaign(StrategyPayForConversionPerCampaign $value = null)
+    public function setPayForConversionPerCampaign(?StrategyPayForConversionPerCampaign $value = null)
     {
         $this->PayForConversionPerCampaign = $value;
 
@@ -139,21 +126,18 @@ class SmartCampaignStrategyBase
 
     /**
      * Gets PayForConversionPerFilter.
-     *
-     * @return StrategyPayForConversionPerFilter|null
      */
-    public function getPayForConversionPerFilter()
+    public function getPayForConversionPerFilter(): ?StrategyPayForConversionPerFilter
     {
-        return isset($this->PayForConversionPerFilter) ? $this->PayForConversionPerFilter : null;
+        return $this->PayForConversionPerFilter ?? null;
     }
 
     /**
      * Sets PayForConversionPerFilter.
      *
-     * @param StrategyPayForConversionPerFilter|null $value
      * @return $this
      */
-    public function setPayForConversionPerFilter(StrategyPayForConversionPerFilter $value = null)
+    public function setPayForConversionPerFilter(?StrategyPayForConversionPerFilter $value = null)
     {
         $this->PayForConversionPerFilter = $value;
 
@@ -162,21 +146,18 @@ class SmartCampaignStrategyBase
 
     /**
      * Gets AverageCpaPerFilter.
-     *
-     * @return StrategyAverageCpaPerFilter|null
      */
-    public function getAverageCpaPerFilter()
+    public function getAverageCpaPerFilter(): ?StrategyAverageCpaPerFilter
     {
-        return isset($this->AverageCpaPerFilter) ? $this->AverageCpaPerFilter : null;
+        return $this->AverageCpaPerFilter ?? null;
     }
 
     /**
      * Sets AverageCpaPerFilter.
      *
-     * @param StrategyAverageCpaPerFilter|null $value
      * @return $this
      */
-    public function setAverageCpaPerFilter(StrategyAverageCpaPerFilter $value = null)
+    public function setAverageCpaPerFilter(?StrategyAverageCpaPerFilter $value = null)
     {
         $this->AverageCpaPerFilter = $value;
 
@@ -185,21 +166,18 @@ class SmartCampaignStrategyBase
 
     /**
      * Gets AverageRoi.
-     *
-     * @return StrategyAverageRoi|null
      */
-    public function getAverageRoi()
+    public function getAverageRoi(): ?StrategyAverageRoi
     {
-        return isset($this->AverageRoi) ? $this->AverageRoi : null;
+        return $this->AverageRoi ?? null;
     }
 
     /**
      * Sets AverageRoi.
      *
-     * @param StrategyAverageRoi|null $value
      * @return $this
      */
-    public function setAverageRoi(StrategyAverageRoi $value = null)
+    public function setAverageRoi(?StrategyAverageRoi $value = null)
     {
         $this->AverageRoi = $value;
 
@@ -208,21 +186,18 @@ class SmartCampaignStrategyBase
 
     /**
      * Gets AverageCrr.
-     *
-     * @return StrategyAverageCrr|null
      */
-    public function getAverageCrr()
+    public function getAverageCrr(): ?StrategyAverageCrr
     {
-        return isset($this->AverageCrr) ? $this->AverageCrr : null;
+        return $this->AverageCrr ?? null;
     }
 
     /**
      * Sets AverageCrr.
      *
-     * @param StrategyAverageCrr|null $value
      * @return $this
      */
-    public function setAverageCrr(StrategyAverageCrr $value = null)
+    public function setAverageCrr(?StrategyAverageCrr $value = null)
     {
         $this->AverageCrr = $value;
 
@@ -231,27 +206,21 @@ class SmartCampaignStrategyBase
 
     /**
      * Gets PayForConversionCrr.
-     *
-     * @return StrategyPayForConversionCrr|null
      */
-    public function getPayForConversionCrr()
+    public function getPayForConversionCrr(): ?StrategyPayForConversionCrr
     {
-        return isset($this->PayForConversionCrr) ? $this->PayForConversionCrr : null;
+        return $this->PayForConversionCrr ?? null;
     }
 
     /**
      * Sets PayForConversionCrr.
      *
-     * @param StrategyPayForConversionCrr|null $value
      * @return $this
      */
-    public function setPayForConversionCrr(StrategyPayForConversionCrr $value = null)
+    public function setPayForConversionCrr(?StrategyPayForConversionCrr $value = null)
     {
         $this->PayForConversionCrr = $value;
 
         return $this;
     }
-
-
 }
-

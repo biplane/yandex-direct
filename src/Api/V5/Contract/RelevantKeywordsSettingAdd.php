@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class RelevantKeywordsSettingAdd
 {
-
     protected $BudgetPercent = null;
 
 //    Can be omit.
@@ -18,20 +19,16 @@ class RelevantKeywordsSettingAdd
 
     /**
      * Creates a new instance of RelevantKeywordsSettingAdd.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets BudgetPercent.
-     *
-     * @return int
      */
-    public function getBudgetPercent()
+    public function getBudgetPercent(): int
     {
         return $this->BudgetPercent;
     }
@@ -39,10 +36,9 @@ class RelevantKeywordsSettingAdd
     /**
      * Sets BudgetPercent.
      *
-     * @param int $value
      * @return $this
      */
-    public function setBudgetPercent($value)
+    public function setBudgetPercent(int $value)
     {
         $this->BudgetPercent = $value;
 
@@ -52,22 +48,21 @@ class RelevantKeywordsSettingAdd
     /**
      * Gets Mode.
      *
-     * @return string|null
      * @see RelevantKeywordsModeEnum
      */
-    public function getMode()
+    public function getMode(): ?string
     {
-        return isset($this->Mode) ? $this->Mode : null;
+        return $this->Mode ?? null;
     }
 
     /**
      * Sets Mode.
      *
-     * @param string|null $value
-     * @return $this
      * @see RelevantKeywordsModeEnum
+     *
+     * @return $this
      */
-    public function setMode($value = null)
+    public function setMode(?string $value = null)
     {
         $this->Mode = $value;
 
@@ -76,27 +71,21 @@ class RelevantKeywordsSettingAdd
 
     /**
      * Gets OptimizeGoalId.
-     *
-     * @return int|null
      */
-    public function getOptimizeGoalId()
+    public function getOptimizeGoalId(): ?int
     {
-        return isset($this->OptimizeGoalId) ? $this->OptimizeGoalId : null;
+        return $this->OptimizeGoalId ?? null;
     }
 
     /**
      * Sets OptimizeGoalId.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setOptimizeGoalId($value = null)
+    public function setOptimizeGoalId(?int $value = null)
     {
         $this->OptimizeGoalId = $value;
 
         return $this;
     }
-
-
 }
-

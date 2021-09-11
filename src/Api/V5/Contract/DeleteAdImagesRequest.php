@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,25 +9,20 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class DeleteAdImagesRequest
 {
-
     protected $SelectionCriteria = null;
 
     /**
      * Creates a new instance of DeleteAdImagesRequest.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets SelectionCriteria.
-     *
-     * @return AdImageHashesCriteria
      */
-    public function getSelectionCriteria()
+    public function getSelectionCriteria(): AdImageHashesCriteria
     {
         return $this->SelectionCriteria;
     }
@@ -33,7 +30,6 @@ class DeleteAdImagesRequest
     /**
      * Sets SelectionCriteria.
      *
-     * @param AdImageHashesCriteria $value
      * @return $this
      */
     public function setSelectionCriteria(AdImageHashesCriteria $value)
@@ -42,7 +38,4 @@ class DeleteAdImagesRequest
 
         return $this;
     }
-
-
 }
-

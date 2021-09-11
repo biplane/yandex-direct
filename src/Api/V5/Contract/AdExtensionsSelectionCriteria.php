@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AdExtensionsSelectionCriteria
 {
-
 //    Can be omit.
 //    protected $Ids = null;
 
@@ -25,10 +26,8 @@ class AdExtensionsSelectionCriteria
 
     /**
      * Creates a new instance of AdExtensionsSelectionCriteria.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -38,18 +37,19 @@ class AdExtensionsSelectionCriteria
      *
      * @return int[]|null
      */
-    public function getIds()
+    public function getIds(): ?array
     {
-        return isset($this->Ids) ? $this->Ids : null;
+        return $this->Ids ?? null;
     }
 
     /**
      * Sets Ids.
      *
      * @param int[]|null $value
+     *
      * @return $this
      */
-    public function setIds(array $value = null)
+    public function setIds(?array $value = null)
     {
         $this->Ids = $value;
 
@@ -59,22 +59,25 @@ class AdExtensionsSelectionCriteria
     /**
      * Gets Types.
      *
-     * @return string[]|null
      * @see AdExtensionTypeEnum
+     *
+     * @return string[]|null
      */
-    public function getTypes()
+    public function getTypes(): ?array
     {
-        return isset($this->Types) ? $this->Types : null;
+        return $this->Types ?? null;
     }
 
     /**
      * Sets Types.
      *
-     * @param string[]|null $value
-     * @return $this
      * @see AdExtensionTypeEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
      */
-    public function setTypes(array $value = null)
+    public function setTypes(?array $value = null)
     {
         $this->Types = $value;
 
@@ -84,22 +87,25 @@ class AdExtensionsSelectionCriteria
     /**
      * Gets States.
      *
-     * @return string[]|null
      * @see AdExtensionStateSelectionEnum
+     *
+     * @return string[]|null
      */
-    public function getStates()
+    public function getStates(): ?array
     {
-        return isset($this->States) ? $this->States : null;
+        return $this->States ?? null;
     }
 
     /**
      * Sets States.
      *
-     * @param string[]|null $value
-     * @return $this
      * @see AdExtensionStateSelectionEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
      */
-    public function setStates(array $value = null)
+    public function setStates(?array $value = null)
     {
         $this->States = $value;
 
@@ -109,22 +115,25 @@ class AdExtensionsSelectionCriteria
     /**
      * Gets Statuses.
      *
-     * @return string[]|null
      * @see ExtensionStatusSelectionEnum
+     *
+     * @return string[]|null
      */
-    public function getStatuses()
+    public function getStatuses(): ?array
     {
-        return isset($this->Statuses) ? $this->Statuses : null;
+        return $this->Statuses ?? null;
     }
 
     /**
      * Sets Statuses.
      *
-     * @param string[]|null $value
-     * @return $this
      * @see ExtensionStatusSelectionEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
      */
-    public function setStatuses(array $value = null)
+    public function setStatuses(?array $value = null)
     {
         $this->Statuses = $value;
 
@@ -133,27 +142,21 @@ class AdExtensionsSelectionCriteria
 
     /**
      * Gets ModifiedSince.
-     *
-     * @return string|null
      */
-    public function getModifiedSince()
+    public function getModifiedSince(): ?string
     {
-        return isset($this->ModifiedSince) ? $this->ModifiedSince : null;
+        return $this->ModifiedSince ?? null;
     }
 
     /**
      * Sets ModifiedSince.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setModifiedSince($value = null)
+    public function setModifiedSince(?string $value = null)
     {
         $this->ModifiedSince = $value;
 
         return $this;
     }
-
-
 }
-

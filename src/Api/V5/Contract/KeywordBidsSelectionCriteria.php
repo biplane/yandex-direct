@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class KeywordBidsSelectionCriteria
 {
-
 //    Can be omit.
 //    protected $CampaignIds = null;
 
@@ -22,10 +23,8 @@ class KeywordBidsSelectionCriteria
 
     /**
      * Creates a new instance of KeywordBidsSelectionCriteria.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -35,18 +34,19 @@ class KeywordBidsSelectionCriteria
      *
      * @return int[]|null
      */
-    public function getCampaignIds()
+    public function getCampaignIds(): ?array
     {
-        return isset($this->CampaignIds) ? $this->CampaignIds : null;
+        return $this->CampaignIds ?? null;
     }
 
     /**
      * Sets CampaignIds.
      *
      * @param int[]|null $value
+     *
      * @return $this
      */
-    public function setCampaignIds(array $value = null)
+    public function setCampaignIds(?array $value = null)
     {
         $this->CampaignIds = $value;
 
@@ -58,18 +58,19 @@ class KeywordBidsSelectionCriteria
      *
      * @return int[]|null
      */
-    public function getAdGroupIds()
+    public function getAdGroupIds(): ?array
     {
-        return isset($this->AdGroupIds) ? $this->AdGroupIds : null;
+        return $this->AdGroupIds ?? null;
     }
 
     /**
      * Sets AdGroupIds.
      *
      * @param int[]|null $value
+     *
      * @return $this
      */
-    public function setAdGroupIds(array $value = null)
+    public function setAdGroupIds(?array $value = null)
     {
         $this->AdGroupIds = $value;
 
@@ -81,18 +82,19 @@ class KeywordBidsSelectionCriteria
      *
      * @return int[]|null
      */
-    public function getKeywordIds()
+    public function getKeywordIds(): ?array
     {
-        return isset($this->KeywordIds) ? $this->KeywordIds : null;
+        return $this->KeywordIds ?? null;
     }
 
     /**
      * Sets KeywordIds.
      *
      * @param int[]|null $value
+     *
      * @return $this
      */
-    public function setKeywordIds(array $value = null)
+    public function setKeywordIds(?array $value = null)
     {
         $this->KeywordIds = $value;
 
@@ -102,28 +104,28 @@ class KeywordBidsSelectionCriteria
     /**
      * Gets ServingStatuses.
      *
-     * @return string[]|null
      * @see ServingStatusEnum
+     *
+     * @return string[]|null
      */
-    public function getServingStatuses()
+    public function getServingStatuses(): ?array
     {
-        return isset($this->ServingStatuses) ? $this->ServingStatuses : null;
+        return $this->ServingStatuses ?? null;
     }
 
     /**
      * Sets ServingStatuses.
      *
-     * @param string[]|null $value
-     * @return $this
      * @see ServingStatusEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
      */
-    public function setServingStatuses(array $value = null)
+    public function setServingStatuses(?array $value = null)
     {
         $this->ServingStatuses = $value;
 
         return $this;
     }
-
-
 }
-

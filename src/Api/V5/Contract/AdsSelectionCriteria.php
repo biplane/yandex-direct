@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AdsSelectionCriteria
 {
-
 //    Can be omit.
 //    protected $Ids = null;
 
@@ -52,10 +53,8 @@ class AdsSelectionCriteria
 
     /**
      * Creates a new instance of AdsSelectionCriteria.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -65,18 +64,19 @@ class AdsSelectionCriteria
      *
      * @return int[]|null
      */
-    public function getIds()
+    public function getIds(): ?array
     {
-        return isset($this->Ids) ? $this->Ids : null;
+        return $this->Ids ?? null;
     }
 
     /**
      * Sets Ids.
      *
      * @param int[]|null $value
+     *
      * @return $this
      */
-    public function setIds(array $value = null)
+    public function setIds(?array $value = null)
     {
         $this->Ids = $value;
 
@@ -86,22 +86,25 @@ class AdsSelectionCriteria
     /**
      * Gets States.
      *
-     * @return string[]|null
      * @see AdStateSelectionEnum
+     *
+     * @return string[]|null
      */
-    public function getStates()
+    public function getStates(): ?array
     {
-        return isset($this->States) ? $this->States : null;
+        return $this->States ?? null;
     }
 
     /**
      * Sets States.
      *
-     * @param string[]|null $value
-     * @return $this
      * @see AdStateSelectionEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
      */
-    public function setStates(array $value = null)
+    public function setStates(?array $value = null)
     {
         $this->States = $value;
 
@@ -111,22 +114,25 @@ class AdsSelectionCriteria
     /**
      * Gets Statuses.
      *
-     * @return string[]|null
      * @see AdStatusSelectionEnum
+     *
+     * @return string[]|null
      */
-    public function getStatuses()
+    public function getStatuses(): ?array
     {
-        return isset($this->Statuses) ? $this->Statuses : null;
+        return $this->Statuses ?? null;
     }
 
     /**
      * Sets Statuses.
      *
-     * @param string[]|null $value
-     * @return $this
      * @see AdStatusSelectionEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
      */
-    public function setStatuses(array $value = null)
+    public function setStatuses(?array $value = null)
     {
         $this->Statuses = $value;
 
@@ -138,18 +144,19 @@ class AdsSelectionCriteria
      *
      * @return int[]|null
      */
-    public function getCampaignIds()
+    public function getCampaignIds(): ?array
     {
-        return isset($this->CampaignIds) ? $this->CampaignIds : null;
+        return $this->CampaignIds ?? null;
     }
 
     /**
      * Sets CampaignIds.
      *
      * @param int[]|null $value
+     *
      * @return $this
      */
-    public function setCampaignIds(array $value = null)
+    public function setCampaignIds(?array $value = null)
     {
         $this->CampaignIds = $value;
 
@@ -161,18 +168,19 @@ class AdsSelectionCriteria
      *
      * @return int[]|null
      */
-    public function getAdGroupIds()
+    public function getAdGroupIds(): ?array
     {
-        return isset($this->AdGroupIds) ? $this->AdGroupIds : null;
+        return $this->AdGroupIds ?? null;
     }
 
     /**
      * Sets AdGroupIds.
      *
      * @param int[]|null $value
+     *
      * @return $this
      */
-    public function setAdGroupIds(array $value = null)
+    public function setAdGroupIds(?array $value = null)
     {
         $this->AdGroupIds = $value;
 
@@ -182,22 +190,25 @@ class AdsSelectionCriteria
     /**
      * Gets Types.
      *
-     * @return string[]|null
      * @see AdTypeEnum
+     *
+     * @return string[]|null
      */
-    public function getTypes()
+    public function getTypes(): ?array
     {
-        return isset($this->Types) ? $this->Types : null;
+        return $this->Types ?? null;
     }
 
     /**
      * Sets Types.
      *
-     * @param string[]|null $value
-     * @return $this
      * @see AdTypeEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
      */
-    public function setTypes(array $value = null)
+    public function setTypes(?array $value = null)
     {
         $this->Types = $value;
 
@@ -207,22 +218,21 @@ class AdsSelectionCriteria
     /**
      * Gets Mobile.
      *
-     * @return string|null
      * @see YesNoEnum
      */
-    public function getMobile()
+    public function getMobile(): ?string
     {
-        return isset($this->Mobile) ? $this->Mobile : null;
+        return $this->Mobile ?? null;
     }
 
     /**
      * Sets Mobile.
      *
-     * @param string|null $value
-     * @return $this
      * @see YesNoEnum
+     *
+     * @return $this
      */
-    public function setMobile($value = null)
+    public function setMobile(?string $value = null)
     {
         $this->Mobile = $value;
 
@@ -234,18 +244,19 @@ class AdsSelectionCriteria
      *
      * @return int[]|null
      */
-    public function getVCardIds()
+    public function getVCardIds(): ?array
     {
-        return isset($this->VCardIds) ? $this->VCardIds : null;
+        return $this->VCardIds ?? null;
     }
 
     /**
      * Sets VCardIds.
      *
      * @param int[]|null $value
+     *
      * @return $this
      */
-    public function setVCardIds(array $value = null)
+    public function setVCardIds(?array $value = null)
     {
         $this->VCardIds = $value;
 
@@ -257,18 +268,19 @@ class AdsSelectionCriteria
      *
      * @return int[]|null
      */
-    public function getSitelinkSetIds()
+    public function getSitelinkSetIds(): ?array
     {
-        return isset($this->SitelinkSetIds) ? $this->SitelinkSetIds : null;
+        return $this->SitelinkSetIds ?? null;
     }
 
     /**
      * Sets SitelinkSetIds.
      *
      * @param int[]|null $value
+     *
      * @return $this
      */
-    public function setSitelinkSetIds(array $value = null)
+    public function setSitelinkSetIds(?array $value = null)
     {
         $this->SitelinkSetIds = $value;
 
@@ -280,18 +292,19 @@ class AdsSelectionCriteria
      *
      * @return string[]|null
      */
-    public function getAdImageHashes()
+    public function getAdImageHashes(): ?array
     {
-        return isset($this->AdImageHashes) ? $this->AdImageHashes : null;
+        return $this->AdImageHashes ?? null;
     }
 
     /**
      * Sets AdImageHashes.
      *
      * @param string[]|null $value
+     *
      * @return $this
      */
-    public function setAdImageHashes(array $value = null)
+    public function setAdImageHashes(?array $value = null)
     {
         $this->AdImageHashes = $value;
 
@@ -301,22 +314,25 @@ class AdsSelectionCriteria
     /**
      * Gets VCardModerationStatuses.
      *
-     * @return string[]|null
      * @see ExtensionStatusSelectionEnum
+     *
+     * @return string[]|null
      */
-    public function getVCardModerationStatuses()
+    public function getVCardModerationStatuses(): ?array
     {
-        return isset($this->VCardModerationStatuses) ? $this->VCardModerationStatuses : null;
+        return $this->VCardModerationStatuses ?? null;
     }
 
     /**
      * Sets VCardModerationStatuses.
      *
-     * @param string[]|null $value
-     * @return $this
      * @see ExtensionStatusSelectionEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
      */
-    public function setVCardModerationStatuses(array $value = null)
+    public function setVCardModerationStatuses(?array $value = null)
     {
         $this->VCardModerationStatuses = $value;
 
@@ -326,22 +342,25 @@ class AdsSelectionCriteria
     /**
      * Gets SitelinksModerationStatuses.
      *
-     * @return string[]|null
      * @see ExtensionStatusSelectionEnum
+     *
+     * @return string[]|null
      */
-    public function getSitelinksModerationStatuses()
+    public function getSitelinksModerationStatuses(): ?array
     {
-        return isset($this->SitelinksModerationStatuses) ? $this->SitelinksModerationStatuses : null;
+        return $this->SitelinksModerationStatuses ?? null;
     }
 
     /**
      * Sets SitelinksModerationStatuses.
      *
-     * @param string[]|null $value
-     * @return $this
      * @see ExtensionStatusSelectionEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
      */
-    public function setSitelinksModerationStatuses(array $value = null)
+    public function setSitelinksModerationStatuses(?array $value = null)
     {
         $this->SitelinksModerationStatuses = $value;
 
@@ -351,22 +370,25 @@ class AdsSelectionCriteria
     /**
      * Gets AdImageModerationStatuses.
      *
-     * @return string[]|null
      * @see ExtensionStatusSelectionEnum
+     *
+     * @return string[]|null
      */
-    public function getAdImageModerationStatuses()
+    public function getAdImageModerationStatuses(): ?array
     {
-        return isset($this->AdImageModerationStatuses) ? $this->AdImageModerationStatuses : null;
+        return $this->AdImageModerationStatuses ?? null;
     }
 
     /**
      * Sets AdImageModerationStatuses.
      *
-     * @param string[]|null $value
-     * @return $this
      * @see ExtensionStatusSelectionEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
      */
-    public function setAdImageModerationStatuses(array $value = null)
+    public function setAdImageModerationStatuses(?array $value = null)
     {
         $this->AdImageModerationStatuses = $value;
 
@@ -378,24 +400,22 @@ class AdsSelectionCriteria
      *
      * @return int[]|null
      */
-    public function getAdExtensionIds()
+    public function getAdExtensionIds(): ?array
     {
-        return isset($this->AdExtensionIds) ? $this->AdExtensionIds : null;
+        return $this->AdExtensionIds ?? null;
     }
 
     /**
      * Sets AdExtensionIds.
      *
      * @param int[]|null $value
+     *
      * @return $this
      */
-    public function setAdExtensionIds(array $value = null)
+    public function setAdExtensionIds(?array $value = null)
     {
         $this->AdExtensionIds = $value;
 
         return $this;
     }
-
-
 }
-

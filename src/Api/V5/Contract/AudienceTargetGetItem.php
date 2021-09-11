@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AudienceTargetGetItem extends AudienceTargetBase
 {
-
 //    Can be omit.
 //    protected $Id = null;
 
@@ -28,31 +29,26 @@ class AudienceTargetGetItem extends AudienceTargetBase
 
     /**
      * Creates a new instance of AudienceTargetGetItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Id.
-     *
-     * @return int|null
      */
-    public function getId()
+    public function getId(): ?int
     {
-        return isset($this->Id) ? $this->Id : null;
+        return $this->Id ?? null;
     }
 
     /**
      * Sets Id.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setId($value = null)
+    public function setId(?int $value = null)
     {
         $this->Id = $value;
 
@@ -61,21 +57,18 @@ class AudienceTargetGetItem extends AudienceTargetBase
 
     /**
      * Gets AdGroupId.
-     *
-     * @return int|null
      */
-    public function getAdGroupId()
+    public function getAdGroupId(): ?int
     {
-        return isset($this->AdGroupId) ? $this->AdGroupId : null;
+        return $this->AdGroupId ?? null;
     }
 
     /**
      * Sets AdGroupId.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setAdGroupId($value = null)
+    public function setAdGroupId(?int $value = null)
     {
         $this->AdGroupId = $value;
 
@@ -84,21 +77,18 @@ class AudienceTargetGetItem extends AudienceTargetBase
 
     /**
      * Gets CampaignId.
-     *
-     * @return int|null
      */
-    public function getCampaignId()
+    public function getCampaignId(): ?int
     {
-        return isset($this->CampaignId) ? $this->CampaignId : null;
+        return $this->CampaignId ?? null;
     }
 
     /**
      * Sets CampaignId.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setCampaignId($value = null)
+    public function setCampaignId(?int $value = null)
     {
         $this->CampaignId = $value;
 
@@ -107,21 +97,18 @@ class AudienceTargetGetItem extends AudienceTargetBase
 
     /**
      * Gets RetargetingListId.
-     *
-     * @return int|null
      */
-    public function getRetargetingListId()
+    public function getRetargetingListId(): ?int
     {
-        return isset($this->RetargetingListId) ? $this->RetargetingListId : null;
+        return $this->RetargetingListId ?? null;
     }
 
     /**
      * Sets RetargetingListId.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setRetargetingListId($value = null)
+    public function setRetargetingListId(?int $value = null)
     {
         $this->RetargetingListId = $value;
 
@@ -130,21 +117,18 @@ class AudienceTargetGetItem extends AudienceTargetBase
 
     /**
      * Gets InterestId.
-     *
-     * @return int|null
      */
-    public function getInterestId()
+    public function getInterestId(): ?int
     {
-        return isset($this->InterestId) ? $this->InterestId : null;
+        return $this->InterestId ?? null;
     }
 
     /**
      * Sets InterestId.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setInterestId($value = null)
+    public function setInterestId(?int $value = null)
     {
         $this->InterestId = $value;
 
@@ -154,28 +138,24 @@ class AudienceTargetGetItem extends AudienceTargetBase
     /**
      * Gets State.
      *
-     * @return string|null
      * @see StateEnum
      */
-    public function getState()
+    public function getState(): ?string
     {
-        return isset($this->State) ? $this->State : null;
+        return $this->State ?? null;
     }
 
     /**
      * Sets State.
      *
-     * @param string|null $value
-     * @return $this
      * @see StateEnum
+     *
+     * @return $this
      */
-    public function setState($value = null)
+    public function setState(?string $value = null)
     {
         $this->State = $value;
 
         return $this;
     }
-
-
 }
-

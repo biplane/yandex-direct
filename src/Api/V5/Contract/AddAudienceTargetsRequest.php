@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,15 +9,12 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AddAudienceTargetsRequest
 {
-
     protected $AudienceTargets = [];
 
     /**
      * Creates a new instance of AddAudienceTargetsRequest.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -25,7 +24,7 @@ class AddAudienceTargetsRequest
      *
      * @return AudienceTargetAddItem[]
      */
-    public function getAudienceTargets()
+    public function getAudienceTargets(): array
     {
         return $this->AudienceTargets;
     }
@@ -34,6 +33,7 @@ class AddAudienceTargetsRequest
      * Sets AudienceTargets.
      *
      * @param AudienceTargetAddItem[] $value
+     *
      * @return $this
      */
     public function setAudienceTargets(array $value)
@@ -42,7 +42,4 @@ class AddAudienceTargetsRequest
 
         return $this;
     }
-
-
 }
-

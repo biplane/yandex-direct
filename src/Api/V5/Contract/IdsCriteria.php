@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,15 +9,12 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class IdsCriteria
 {
-
     protected $Ids = [];
 
     /**
      * Creates a new instance of IdsCriteria.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -25,7 +24,7 @@ class IdsCriteria
      *
      * @return int[]
      */
-    public function getIds()
+    public function getIds(): array
     {
         return $this->Ids;
     }
@@ -34,6 +33,7 @@ class IdsCriteria
      * Sets Ids.
      *
      * @param int[] $value
+     *
      * @return $this
      */
     public function setIds(array $value)
@@ -42,7 +42,4 @@ class IdsCriteria
 
         return $this;
     }
-
-
 }
-

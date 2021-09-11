@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,15 +9,11 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class CheckFieldEnum
 {
+    public const CAMPAIGN_IDS = 'CampaignIds';
 
-    const CAMPAIGN_IDS = 'CampaignIds';
+    public const AD_GROUP_IDS = 'AdGroupIds';
 
-    const AD_GROUP_IDS = 'AdGroupIds';
+    public const AD_IDS = 'AdIds';
 
-    const AD_IDS = 'AdIds';
-
-    const CAMPAIGNS_STAT = 'CampaignsStat';
-
-
+    public const CAMPAIGNS_STAT = 'CampaignsStat';
 }
-

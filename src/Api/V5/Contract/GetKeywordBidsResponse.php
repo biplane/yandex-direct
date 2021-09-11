@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,16 +9,13 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class GetKeywordBidsResponse extends GetResponseGeneral
 {
-
 //    Can be omit.
 //    protected $KeywordBids = null;
 
     /**
      * Creates a new instance of GetKeywordBidsResponse.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -26,24 +25,22 @@ class GetKeywordBidsResponse extends GetResponseGeneral
      *
      * @return KeywordBidGetItem[]|null
      */
-    public function getKeywordBids()
+    public function getKeywordBids(): ?array
     {
-        return isset($this->KeywordBids) ? $this->KeywordBids : null;
+        return $this->KeywordBids ?? null;
     }
 
     /**
      * Sets KeywordBids.
      *
      * @param KeywordBidGetItem[]|null $value
+     *
      * @return $this
      */
-    public function setKeywordBids(array $value = null)
+    public function setKeywordBids(?array $value = null)
     {
         $this->KeywordBids = $value;
 
         return $this;
     }
-
-
 }
-

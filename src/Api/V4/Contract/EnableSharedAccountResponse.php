@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class EnableSharedAccountResponse
 {
-
     protected $Errors = null;
 
     protected $Login = null;
@@ -16,10 +17,8 @@ class EnableSharedAccountResponse
 
     /**
      * Creates a new instance of EnableSharedAccountResponse.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -29,7 +28,7 @@ class EnableSharedAccountResponse
      *
      * @return Error[]|null
      */
-    public function getErrors()
+    public function getErrors(): ?array
     {
         return $this->Errors;
     }
@@ -38,9 +37,10 @@ class EnableSharedAccountResponse
      * Sets Errors.
      *
      * @param Error[]|null $value
+     *
      * @return $this
      */
-    public function setErrors(array $value = null)
+    public function setErrors(?array $value = null)
     {
         $this->Errors = $value;
 
@@ -49,10 +49,8 @@ class EnableSharedAccountResponse
 
     /**
      * Gets Login.
-     *
-     * @return string|null
      */
-    public function getLogin()
+    public function getLogin(): ?string
     {
         return $this->Login;
     }
@@ -60,10 +58,9 @@ class EnableSharedAccountResponse
     /**
      * Sets Login.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setLogin($value = null)
+    public function setLogin(?string $value = null)
     {
         $this->Login = $value;
 
@@ -72,10 +69,8 @@ class EnableSharedAccountResponse
 
     /**
      * Gets AccountID.
-     *
-     * @return int|null
      */
-    public function getAccountID()
+    public function getAccountID(): ?int
     {
         return $this->AccountID;
     }
@@ -83,16 +78,12 @@ class EnableSharedAccountResponse
     /**
      * Sets AccountID.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setAccountID($value = null)
+    public function setAccountID(?int $value = null)
     {
         $this->AccountID = $value;
 
         return $this;
     }
-
-
 }
-

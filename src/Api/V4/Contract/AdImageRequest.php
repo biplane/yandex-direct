@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class AdImageRequest
 {
-
     protected $Action = null;
 
     protected $SelectionCriteria = null;
@@ -18,20 +19,16 @@ class AdImageRequest
 
     /**
      * Creates a new instance of AdImageRequest.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Action.
-     *
-     * @return string
      */
-    public function getAction()
+    public function getAction(): string
     {
         return $this->Action;
     }
@@ -39,10 +36,9 @@ class AdImageRequest
     /**
      * Sets Action.
      *
-     * @param string $value
      * @return $this
      */
-    public function setAction($value)
+    public function setAction(string $value)
     {
         $this->Action = $value;
 
@@ -51,10 +47,8 @@ class AdImageRequest
 
     /**
      * Gets SelectionCriteria.
-     *
-     * @return AdImageSelectionCriteria|null
      */
-    public function getSelectionCriteria()
+    public function getSelectionCriteria(): ?AdImageSelectionCriteria
     {
         return $this->SelectionCriteria;
     }
@@ -62,10 +56,9 @@ class AdImageRequest
     /**
      * Sets SelectionCriteria.
      *
-     * @param AdImageSelectionCriteria|null $value
      * @return $this
      */
-    public function setSelectionCriteria(AdImageSelectionCriteria $value = null)
+    public function setSelectionCriteria(?AdImageSelectionCriteria $value = null)
     {
         $this->SelectionCriteria = $value;
 
@@ -77,7 +70,7 @@ class AdImageRequest
      *
      * @return AdImageRaw[]|null
      */
-    public function getAdImageRawData()
+    public function getAdImageRawData(): ?array
     {
         return $this->AdImageRawData;
     }
@@ -86,9 +79,10 @@ class AdImageRequest
      * Sets AdImageRawData.
      *
      * @param AdImageRaw[]|null $value
+     *
      * @return $this
      */
-    public function setAdImageRawData(array $value = null)
+    public function setAdImageRawData(?array $value = null)
     {
         $this->AdImageRawData = $value;
 
@@ -100,7 +94,7 @@ class AdImageRequest
      *
      * @return AdImageURL[]|null
      */
-    public function getAdImageURLData()
+    public function getAdImageURLData(): ?array
     {
         return $this->AdImageURLData;
     }
@@ -109,15 +103,13 @@ class AdImageRequest
      * Sets AdImageURLData.
      *
      * @param AdImageURL[]|null $value
+     *
      * @return $this
      */
-    public function setAdImageURLData(array $value = null)
+    public function setAdImageURLData(?array $value = null)
     {
         $this->AdImageURLData = $value;
 
         return $this;
     }
-
-
 }
-

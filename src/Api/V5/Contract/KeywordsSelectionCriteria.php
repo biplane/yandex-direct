@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class KeywordsSelectionCriteria
 {
-
 //    Can be omit.
 //    protected $Ids = null;
 
@@ -31,10 +32,8 @@ class KeywordsSelectionCriteria
 
     /**
      * Creates a new instance of KeywordsSelectionCriteria.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -44,18 +43,19 @@ class KeywordsSelectionCriteria
      *
      * @return int[]|null
      */
-    public function getIds()
+    public function getIds(): ?array
     {
-        return isset($this->Ids) ? $this->Ids : null;
+        return $this->Ids ?? null;
     }
 
     /**
      * Sets Ids.
      *
      * @param int[]|null $value
+     *
      * @return $this
      */
-    public function setIds(array $value = null)
+    public function setIds(?array $value = null)
     {
         $this->Ids = $value;
 
@@ -67,18 +67,19 @@ class KeywordsSelectionCriteria
      *
      * @return int[]|null
      */
-    public function getAdGroupIds()
+    public function getAdGroupIds(): ?array
     {
-        return isset($this->AdGroupIds) ? $this->AdGroupIds : null;
+        return $this->AdGroupIds ?? null;
     }
 
     /**
      * Sets AdGroupIds.
      *
      * @param int[]|null $value
+     *
      * @return $this
      */
-    public function setAdGroupIds(array $value = null)
+    public function setAdGroupIds(?array $value = null)
     {
         $this->AdGroupIds = $value;
 
@@ -90,18 +91,19 @@ class KeywordsSelectionCriteria
      *
      * @return int[]|null
      */
-    public function getCampaignIds()
+    public function getCampaignIds(): ?array
     {
-        return isset($this->CampaignIds) ? $this->CampaignIds : null;
+        return $this->CampaignIds ?? null;
     }
 
     /**
      * Sets CampaignIds.
      *
      * @param int[]|null $value
+     *
      * @return $this
      */
-    public function setCampaignIds(array $value = null)
+    public function setCampaignIds(?array $value = null)
     {
         $this->CampaignIds = $value;
 
@@ -111,22 +113,25 @@ class KeywordsSelectionCriteria
     /**
      * Gets States.
      *
-     * @return string[]|null
      * @see KeywordStateSelectionEnum
+     *
+     * @return string[]|null
      */
-    public function getStates()
+    public function getStates(): ?array
     {
-        return isset($this->States) ? $this->States : null;
+        return $this->States ?? null;
     }
 
     /**
      * Sets States.
      *
-     * @param string[]|null $value
-     * @return $this
      * @see KeywordStateSelectionEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
      */
-    public function setStates(array $value = null)
+    public function setStates(?array $value = null)
     {
         $this->States = $value;
 
@@ -136,22 +141,25 @@ class KeywordsSelectionCriteria
     /**
      * Gets Statuses.
      *
-     * @return string[]|null
      * @see KeywordStatusSelectionEnum
+     *
+     * @return string[]|null
      */
-    public function getStatuses()
+    public function getStatuses(): ?array
     {
-        return isset($this->Statuses) ? $this->Statuses : null;
+        return $this->Statuses ?? null;
     }
 
     /**
      * Sets Statuses.
      *
-     * @param string[]|null $value
-     * @return $this
      * @see KeywordStatusSelectionEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
      */
-    public function setStatuses(array $value = null)
+    public function setStatuses(?array $value = null)
     {
         $this->Statuses = $value;
 
@@ -160,21 +168,18 @@ class KeywordsSelectionCriteria
 
     /**
      * Gets ModifiedSince.
-     *
-     * @return string|null
      */
-    public function getModifiedSince()
+    public function getModifiedSince(): ?string
     {
-        return isset($this->ModifiedSince) ? $this->ModifiedSince : null;
+        return $this->ModifiedSince ?? null;
     }
 
     /**
      * Sets ModifiedSince.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setModifiedSince($value = null)
+    public function setModifiedSince(?string $value = null)
     {
         $this->ModifiedSince = $value;
 
@@ -184,28 +189,28 @@ class KeywordsSelectionCriteria
     /**
      * Gets ServingStatuses.
      *
-     * @return string[]|null
      * @see ServingStatusEnum
+     *
+     * @return string[]|null
      */
-    public function getServingStatuses()
+    public function getServingStatuses(): ?array
     {
-        return isset($this->ServingStatuses) ? $this->ServingStatuses : null;
+        return $this->ServingStatuses ?? null;
     }
 
     /**
      * Sets ServingStatuses.
      *
-     * @param string[]|null $value
-     * @return $this
      * @see ServingStatusEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
      */
-    public function setServingStatuses(array $value = null)
+    public function setServingStatuses(?array $value = null)
     {
         $this->ServingStatuses = $value;
 
         return $this;
     }
-
-
 }
-

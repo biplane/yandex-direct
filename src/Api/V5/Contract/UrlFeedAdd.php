@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class UrlFeedAdd extends UrlFeedBase
 {
-
     protected $Url = null;
 
 //    Can be omit.
@@ -18,20 +19,16 @@ class UrlFeedAdd extends UrlFeedBase
 
     /**
      * Creates a new instance of UrlFeedAdd.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Url.
-     *
-     * @return string
      */
-    public function getUrl()
+    public function getUrl(): string
     {
         return $this->Url;
     }
@@ -39,10 +36,9 @@ class UrlFeedAdd extends UrlFeedBase
     /**
      * Sets Url.
      *
-     * @param string $value
      * @return $this
      */
-    public function setUrl($value)
+    public function setUrl(string $value)
     {
         $this->Url = $value;
 
@@ -51,21 +47,18 @@ class UrlFeedAdd extends UrlFeedBase
 
     /**
      * Gets Login.
-     *
-     * @return string|null
      */
-    public function getLogin()
+    public function getLogin(): ?string
     {
-        return isset($this->Login) ? $this->Login : null;
+        return $this->Login ?? null;
     }
 
     /**
      * Sets Login.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setLogin($value = null)
+    public function setLogin(?string $value = null)
     {
         $this->Login = $value;
 
@@ -74,27 +67,21 @@ class UrlFeedAdd extends UrlFeedBase
 
     /**
      * Gets Password.
-     *
-     * @return string|null
      */
-    public function getPassword()
+    public function getPassword(): ?string
     {
-        return isset($this->Password) ? $this->Password : null;
+        return $this->Password ?? null;
     }
 
     /**
      * Sets Password.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setPassword($value = null)
+    public function setPassword(?string $value = null)
     {
         $this->Password = $value;
 
         return $this;
     }
-
-
 }
-

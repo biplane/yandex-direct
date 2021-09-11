@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class CheckDictionariesResponse
 {
-
 //    Can be omit.
 //    protected $TimeZonesChanged = null;
 
@@ -21,10 +22,8 @@ class CheckDictionariesResponse
 
     /**
      * Creates a new instance of CheckDictionariesResponse.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -32,22 +31,21 @@ class CheckDictionariesResponse
     /**
      * Gets TimeZonesChanged.
      *
-     * @return string|null
      * @see YesNoEnum
      */
-    public function getTimeZonesChanged()
+    public function getTimeZonesChanged(): ?string
     {
-        return isset($this->TimeZonesChanged) ? $this->TimeZonesChanged : null;
+        return $this->TimeZonesChanged ?? null;
     }
 
     /**
      * Sets TimeZonesChanged.
      *
-     * @param string|null $value
-     * @return $this
      * @see YesNoEnum
+     *
+     * @return $this
      */
-    public function setTimeZonesChanged($value = null)
+    public function setTimeZonesChanged(?string $value = null)
     {
         $this->TimeZonesChanged = $value;
 
@@ -57,22 +55,21 @@ class CheckDictionariesResponse
     /**
      * Gets RegionsChanged.
      *
-     * @return string|null
      * @see YesNoEnum
      */
-    public function getRegionsChanged()
+    public function getRegionsChanged(): ?string
     {
-        return isset($this->RegionsChanged) ? $this->RegionsChanged : null;
+        return $this->RegionsChanged ?? null;
     }
 
     /**
      * Sets RegionsChanged.
      *
-     * @param string|null $value
-     * @return $this
      * @see YesNoEnum
+     *
+     * @return $this
      */
-    public function setRegionsChanged($value = null)
+    public function setRegionsChanged(?string $value = null)
     {
         $this->RegionsChanged = $value;
 
@@ -82,22 +79,21 @@ class CheckDictionariesResponse
     /**
      * Gets InterestsChanged.
      *
-     * @return string|null
      * @see YesNoEnum
      */
-    public function getInterestsChanged()
+    public function getInterestsChanged(): ?string
     {
-        return isset($this->InterestsChanged) ? $this->InterestsChanged : null;
+        return $this->InterestsChanged ?? null;
     }
 
     /**
      * Sets InterestsChanged.
      *
-     * @param string|null $value
-     * @return $this
      * @see YesNoEnum
+     *
+     * @return $this
      */
-    public function setInterestsChanged($value = null)
+    public function setInterestsChanged(?string $value = null)
     {
         $this->InterestsChanged = $value;
 
@@ -106,10 +102,8 @@ class CheckDictionariesResponse
 
     /**
      * Gets Timestamp.
-     *
-     * @return string
      */
-    public function getTimestamp()
+    public function getTimestamp(): string
     {
         return $this->Timestamp;
     }
@@ -117,16 +111,12 @@ class CheckDictionariesResponse
     /**
      * Sets Timestamp.
      *
-     * @param string $value
      * @return $this
      */
-    public function setTimestamp($value)
+    public function setTimestamp(string $value)
     {
         $this->Timestamp = $value;
 
         return $this;
     }
-
-
 }
-

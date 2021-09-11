@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,27 +9,22 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class MobileAppCampaignStrategyAdd
 {
-
     protected $Search = null;
 
     protected $Network = null;
 
     /**
      * Creates a new instance of MobileAppCampaignStrategyAdd.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Search.
-     *
-     * @return MobileAppCampaignSearchStrategyAdd
      */
-    public function getSearch()
+    public function getSearch(): MobileAppCampaignSearchStrategyAdd
     {
         return $this->Search;
     }
@@ -35,7 +32,6 @@ class MobileAppCampaignStrategyAdd
     /**
      * Sets Search.
      *
-     * @param MobileAppCampaignSearchStrategyAdd $value
      * @return $this
      */
     public function setSearch(MobileAppCampaignSearchStrategyAdd $value)
@@ -47,10 +43,8 @@ class MobileAppCampaignStrategyAdd
 
     /**
      * Gets Network.
-     *
-     * @return MobileAppCampaignNetworkStrategyAdd
      */
-    public function getNetwork()
+    public function getNetwork(): MobileAppCampaignNetworkStrategyAdd
     {
         return $this->Network;
     }
@@ -58,7 +52,6 @@ class MobileAppCampaignStrategyAdd
     /**
      * Sets Network.
      *
-     * @param MobileAppCampaignNetworkStrategyAdd $value
      * @return $this
      */
     public function setNetwork(MobileAppCampaignNetworkStrategyAdd $value)
@@ -67,7 +60,4 @@ class MobileAppCampaignStrategyAdd
 
         return $this;
     }
-
-
 }
-

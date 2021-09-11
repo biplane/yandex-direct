@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class KeywordBidGetItem extends KeywordBidActionResult
 {
-
 //    Can be omit.
 //    protected $ServingStatus = null;
 
@@ -22,10 +23,8 @@ class KeywordBidGetItem extends KeywordBidActionResult
 
     /**
      * Creates a new instance of KeywordBidGetItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -33,22 +32,21 @@ class KeywordBidGetItem extends KeywordBidActionResult
     /**
      * Gets ServingStatus.
      *
-     * @return string|null
      * @see ServingStatusEnum
      */
-    public function getServingStatus()
+    public function getServingStatus(): ?string
     {
-        return isset($this->ServingStatus) ? $this->ServingStatus : null;
+        return $this->ServingStatus ?? null;
     }
 
     /**
      * Sets ServingStatus.
      *
-     * @param string|null $value
-     * @return $this
      * @see ServingStatusEnum
+     *
+     * @return $this
      */
-    public function setServingStatus($value = null)
+    public function setServingStatus(?string $value = null)
     {
         $this->ServingStatus = $value;
 
@@ -58,22 +56,21 @@ class KeywordBidGetItem extends KeywordBidActionResult
     /**
      * Gets StrategyPriority.
      *
-     * @return string|null
      * @see PriorityEnum
      */
-    public function getStrategyPriority()
+    public function getStrategyPriority(): ?string
     {
-        return isset($this->StrategyPriority) ? $this->StrategyPriority : null;
+        return $this->StrategyPriority ?? null;
     }
 
     /**
      * Sets StrategyPriority.
      *
-     * @param string|null $value
-     * @return $this
      * @see PriorityEnum
+     *
+     * @return $this
      */
-    public function setStrategyPriority($value = null)
+    public function setStrategyPriority(?string $value = null)
     {
         $this->StrategyPriority = $value;
 
@@ -82,21 +79,18 @@ class KeywordBidGetItem extends KeywordBidActionResult
 
     /**
      * Gets Search.
-     *
-     * @return Search|null
      */
-    public function getSearch()
+    public function getSearch(): ?Search
     {
-        return isset($this->Search) ? $this->Search : null;
+        return $this->Search ?? null;
     }
 
     /**
      * Sets Search.
      *
-     * @param Search|null $value
      * @return $this
      */
-    public function setSearch(Search $value = null)
+    public function setSearch(?Search $value = null)
     {
         $this->Search = $value;
 
@@ -105,27 +99,21 @@ class KeywordBidGetItem extends KeywordBidActionResult
 
     /**
      * Gets Network.
-     *
-     * @return Network|null
      */
-    public function getNetwork()
+    public function getNetwork(): ?Network
     {
-        return isset($this->Network) ? $this->Network : null;
+        return $this->Network ?? null;
     }
 
     /**
      * Sets Network.
      *
-     * @param Network|null $value
      * @return $this
      */
-    public function setNetwork(Network $value = null)
+    public function setNetwork(?Network $value = null)
     {
         $this->Network = $value;
 
         return $this;
     }
-
-
 }
-

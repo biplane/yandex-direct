@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,27 +9,22 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class ClientsUnitInfo
 {
-
     protected $Login = null;
 
     protected $UnitsRest = null;
 
     /**
      * Creates a new instance of ClientsUnitInfo.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Login.
-     *
-     * @return string
      */
-    public function getLogin()
+    public function getLogin(): string
     {
         return $this->Login;
     }
@@ -35,10 +32,9 @@ class ClientsUnitInfo
     /**
      * Sets Login.
      *
-     * @param string $value
      * @return $this
      */
-    public function setLogin($value)
+    public function setLogin(string $value)
     {
         $this->Login = $value;
 
@@ -47,10 +43,8 @@ class ClientsUnitInfo
 
     /**
      * Gets UnitsRest.
-     *
-     * @return int
      */
-    public function getUnitsRest()
+    public function getUnitsRest(): int
     {
         return $this->UnitsRest;
     }
@@ -58,16 +52,12 @@ class ClientsUnitInfo
     /**
      * Sets UnitsRest.
      *
-     * @param int $value
      * @return $this
      */
-    public function setUnitsRest($value)
+    public function setUnitsRest(int $value)
     {
         $this->UnitsRest = $value;
 
         return $this;
     }
-
-
 }
-

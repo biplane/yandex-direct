@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,17 +9,13 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class LeadFieldEnum
 {
+    public const ID = 'Id';
 
-    const ID = 'Id';
+    public const SUBMITTED_AT = 'SubmittedAt';
 
-    const SUBMITTED_AT = 'SubmittedAt';
+    public const TURBO_PAGE_ID = 'TurboPageId';
 
-    const TURBO_PAGE_ID = 'TurboPageId';
+    public const TURBO_PAGE_NAME = 'TurboPageName';
 
-    const TURBO_PAGE_NAME = 'TurboPageName';
-
-    const DATA = 'Data';
-
-
+    public const DATA = 'Data';
 }
-

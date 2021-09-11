@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,43 +9,34 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class DynamicTextAdGet extends TextAdGetBase
 {
-
 //    Can be omit.
 //    protected $Text = null;
 
     /**
      * Creates a new instance of DynamicTextAdGet.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Text.
-     *
-     * @return string|null
      */
-    public function getText()
+    public function getText(): ?string
     {
-        return isset($this->Text) ? $this->Text : null;
+        return $this->Text ?? null;
     }
 
     /**
      * Sets Text.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setText($value = null)
+    public function setText(?string $value = null)
     {
         $this->Text = $value;
 
         return $this;
     }
-
-
 }
-

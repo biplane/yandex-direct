@@ -1,16 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Report;
 
-/**
- * AttributionModelEnum.
- *
- * @author Denis Vasilev
- */
 final class AttributionModelEnum
 {
-    const FC = 'FC';
-    const LC = 'LC';
-    const LSC = 'LSC';
-    const LYDC = 'LYDC';
+    public const FC = 'FC';
+    public const LC = 'LC';
+    public const LSC = 'LSC';
+    public const LYDC = 'LYDC';
 }

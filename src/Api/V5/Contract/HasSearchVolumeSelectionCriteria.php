@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,17 +9,14 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class HasSearchVolumeSelectionCriteria
 {
-
     protected $RegionIds = [];
 
     protected $Keywords = [];
 
     /**
      * Creates a new instance of HasSearchVolumeSelectionCriteria.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -27,7 +26,7 @@ class HasSearchVolumeSelectionCriteria
      *
      * @return int[]
      */
-    public function getRegionIds()
+    public function getRegionIds(): array
     {
         return $this->RegionIds;
     }
@@ -36,6 +35,7 @@ class HasSearchVolumeSelectionCriteria
      * Sets RegionIds.
      *
      * @param int[] $value
+     *
      * @return $this
      */
     public function setRegionIds(array $value)
@@ -50,7 +50,7 @@ class HasSearchVolumeSelectionCriteria
      *
      * @return string[]
      */
-    public function getKeywords()
+    public function getKeywords(): array
     {
         return $this->Keywords;
     }
@@ -59,6 +59,7 @@ class HasSearchVolumeSelectionCriteria
      * Sets Keywords.
      *
      * @param string[] $value
+     *
      * @return $this
      */
     public function setKeywords(array $value)
@@ -67,7 +68,4 @@ class HasSearchVolumeSelectionCriteria
 
         return $this;
     }
-
-
 }
-

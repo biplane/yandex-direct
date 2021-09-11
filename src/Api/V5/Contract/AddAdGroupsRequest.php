@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,15 +9,12 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AddAdGroupsRequest
 {
-
     protected $AdGroups = [];
 
     /**
      * Creates a new instance of AddAdGroupsRequest.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -25,7 +24,7 @@ class AddAdGroupsRequest
      *
      * @return AdGroupAddItem[]
      */
-    public function getAdGroups()
+    public function getAdGroups(): array
     {
         return $this->AdGroups;
     }
@@ -34,6 +33,7 @@ class AddAdGroupsRequest
      * Sets AdGroups.
      *
      * @param AdGroupAddItem[] $value
+     *
      * @return $this
      */
     public function setAdGroups(array $value)
@@ -42,7 +42,4 @@ class AddAdGroupsRequest
 
         return $this;
     }
-
-
 }
-

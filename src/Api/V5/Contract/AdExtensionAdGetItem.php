@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,27 +9,22 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AdExtensionAdGetItem
 {
-
     protected $AdExtensionId = null;
 
     protected $Type = null;
 
     /**
      * Creates a new instance of AdExtensionAdGetItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets AdExtensionId.
-     *
-     * @return int
      */
-    public function getAdExtensionId()
+    public function getAdExtensionId(): int
     {
         return $this->AdExtensionId;
     }
@@ -35,10 +32,9 @@ class AdExtensionAdGetItem
     /**
      * Sets AdExtensionId.
      *
-     * @param int $value
      * @return $this
      */
-    public function setAdExtensionId($value)
+    public function setAdExtensionId(int $value)
     {
         $this->AdExtensionId = $value;
 
@@ -48,10 +44,9 @@ class AdExtensionAdGetItem
     /**
      * Gets Type.
      *
-     * @return string
      * @see AdExtensionTypeEnum
      */
-    public function getType()
+    public function getType(): string
     {
         return $this->Type;
     }
@@ -59,17 +54,14 @@ class AdExtensionAdGetItem
     /**
      * Sets Type.
      *
-     * @param string $value
-     * @return $this
      * @see AdExtensionTypeEnum
+     *
+     * @return $this
      */
-    public function setType($value)
+    public function setType(string $value)
     {
         $this->Type = $value;
 
         return $this;
     }
-
-
 }
-

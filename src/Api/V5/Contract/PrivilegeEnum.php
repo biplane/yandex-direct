@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,13 +9,9 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class PrivilegeEnum
 {
+    public const EDIT_CAMPAIGNS = 'EDIT_CAMPAIGNS';
 
-    const EDIT_CAMPAIGNS = 'EDIT_CAMPAIGNS';
+    public const IMPORT_XLS = 'IMPORT_XLS';
 
-    const IMPORT_XLS = 'IMPORT_XLS';
-
-    const TRANSFER_MONEY = 'TRANSFER_MONEY';
-
-
+    public const TRANSFER_MONEY = 'TRANSFER_MONEY';
 }
-

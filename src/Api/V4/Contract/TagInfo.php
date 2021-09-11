@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,27 +9,22 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class TagInfo
 {
-
     protected $TagID = null;
 
     protected $Tag = null;
 
     /**
      * Creates a new instance of TagInfo.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets TagID.
-     *
-     * @return int
      */
-    public function getTagID()
+    public function getTagID(): int
     {
         return $this->TagID;
     }
@@ -35,10 +32,9 @@ class TagInfo
     /**
      * Sets TagID.
      *
-     * @param int $value
      * @return $this
      */
-    public function setTagID($value)
+    public function setTagID(int $value)
     {
         $this->TagID = $value;
 
@@ -47,10 +43,8 @@ class TagInfo
 
     /**
      * Gets Tag.
-     *
-     * @return string
      */
-    public function getTag()
+    public function getTag(): string
     {
         return $this->Tag;
     }
@@ -58,16 +52,12 @@ class TagInfo
     /**
      * Sets Tag.
      *
-     * @param string $value
      * @return $this
      */
-    public function setTag($value)
+    public function setTag(string $value)
     {
         $this->Tag = $value;
 
         return $this;
     }
-
-
 }
-

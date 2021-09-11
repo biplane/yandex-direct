@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class NetworkByCoverage
 {
-
     protected $TargetCoverage = null;
 
 //    Can be omit.
@@ -18,20 +19,16 @@ class NetworkByCoverage
 
     /**
      * Creates a new instance of NetworkByCoverage.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets TargetCoverage.
-     *
-     * @return int
      */
-    public function getTargetCoverage()
+    public function getTargetCoverage(): int
     {
         return $this->TargetCoverage;
     }
@@ -39,10 +36,9 @@ class NetworkByCoverage
     /**
      * Sets TargetCoverage.
      *
-     * @param int $value
      * @return $this
      */
-    public function setTargetCoverage($value)
+    public function setTargetCoverage(int $value)
     {
         $this->TargetCoverage = $value;
 
@@ -51,21 +47,18 @@ class NetworkByCoverage
 
     /**
      * Gets IncreasePercent.
-     *
-     * @return int|null
      */
-    public function getIncreasePercent()
+    public function getIncreasePercent(): ?int
     {
-        return isset($this->IncreasePercent) ? $this->IncreasePercent : null;
+        return $this->IncreasePercent ?? null;
     }
 
     /**
      * Sets IncreasePercent.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setIncreasePercent($value = null)
+    public function setIncreasePercent(?int $value = null)
     {
         $this->IncreasePercent = $value;
 
@@ -74,27 +67,21 @@ class NetworkByCoverage
 
     /**
      * Gets BidCeiling.
-     *
-     * @return int|null
      */
-    public function getBidCeiling()
+    public function getBidCeiling(): ?int
     {
-        return isset($this->BidCeiling) ? $this->BidCeiling : null;
+        return $this->BidCeiling ?? null;
     }
 
     /**
      * Sets BidCeiling.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setBidCeiling($value = null)
+    public function setBidCeiling(?int $value = null)
     {
         $this->BidCeiling = $value;
 
         return $this;
     }
-
-
 }
-

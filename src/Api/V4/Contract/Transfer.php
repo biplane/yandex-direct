@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class Transfer
 {
-
     protected $FromAccountID = null;
 
     protected $ToAccountID = null;
@@ -18,20 +19,16 @@ class Transfer
 
     /**
      * Creates a new instance of Transfer.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets FromAccountID.
-     *
-     * @return int
      */
-    public function getFromAccountID()
+    public function getFromAccountID(): int
     {
         return $this->FromAccountID;
     }
@@ -39,10 +36,9 @@ class Transfer
     /**
      * Sets FromAccountID.
      *
-     * @param int $value
      * @return $this
      */
-    public function setFromAccountID($value)
+    public function setFromAccountID(int $value)
     {
         $this->FromAccountID = $value;
 
@@ -51,10 +47,8 @@ class Transfer
 
     /**
      * Gets ToAccountID.
-     *
-     * @return int
      */
-    public function getToAccountID()
+    public function getToAccountID(): int
     {
         return $this->ToAccountID;
     }
@@ -62,10 +56,9 @@ class Transfer
     /**
      * Sets ToAccountID.
      *
-     * @param int $value
      * @return $this
      */
-    public function setToAccountID($value)
+    public function setToAccountID(int $value)
     {
         $this->ToAccountID = $value;
 
@@ -74,10 +67,8 @@ class Transfer
 
     /**
      * Gets Amount.
-     *
-     * @return float
      */
-    public function getAmount()
+    public function getAmount(): float
     {
         return $this->Amount;
     }
@@ -85,10 +76,9 @@ class Transfer
     /**
      * Sets Amount.
      *
-     * @param float $value
      * @return $this
      */
-    public function setAmount($value)
+    public function setAmount(float $value)
     {
         $this->Amount = $value;
 
@@ -97,10 +87,8 @@ class Transfer
 
     /**
      * Gets Currency.
-     *
-     * @return string|null
      */
-    public function getCurrency()
+    public function getCurrency(): ?string
     {
         return $this->Currency;
     }
@@ -108,16 +96,12 @@ class Transfer
     /**
      * Sets Currency.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setCurrency($value = null)
+    public function setCurrency(?string $value = null)
     {
         $this->Currency = $value;
 
         return $this;
     }
-
-
 }
-

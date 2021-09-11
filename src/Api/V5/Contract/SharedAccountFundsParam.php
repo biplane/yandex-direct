@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class SharedAccountFundsParam
 {
-
 //    Can be omit.
 //    protected $Refund = null;
 
@@ -16,31 +17,26 @@ class SharedAccountFundsParam
 
     /**
      * Creates a new instance of SharedAccountFundsParam.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Refund.
-     *
-     * @return int|null
      */
-    public function getRefund()
+    public function getRefund(): ?int
     {
-        return isset($this->Refund) ? $this->Refund : null;
+        return $this->Refund ?? null;
     }
 
     /**
      * Sets Refund.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setRefund($value = null)
+    public function setRefund(?int $value = null)
     {
         $this->Refund = $value;
 
@@ -49,27 +45,21 @@ class SharedAccountFundsParam
 
     /**
      * Gets Spend.
-     *
-     * @return int|null
      */
-    public function getSpend()
+    public function getSpend(): ?int
     {
-        return isset($this->Spend) ? $this->Spend : null;
+        return $this->Spend ?? null;
     }
 
     /**
      * Sets Spend.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setSpend($value = null)
+    public function setSpend(?int $value = null)
     {
         $this->Spend = $value;
 
         return $this;
     }
-
-
 }
-

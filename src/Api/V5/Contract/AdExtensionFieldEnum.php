@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,19 +9,15 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AdExtensionFieldEnum
 {
+    public const ID = 'Id';
 
-    const ID = 'Id';
+    public const TYPE = 'Type';
 
-    const TYPE = 'Type';
+    public const STATE = 'State';
 
-    const STATE = 'State';
+    public const STATUS = 'Status';
 
-    const STATUS = 'Status';
+    public const STATUS_CLARIFICATION = 'StatusClarification';
 
-    const STATUS_CLARIFICATION = 'StatusClarification';
-
-    const ASSOCIATED = 'Associated';
-
-
+    public const ASSOCIATED = 'Associated';
 }
-

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,15 +9,12 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AddAdExtensionsRequest
 {
-
     protected $AdExtensions = [];
 
     /**
      * Creates a new instance of AddAdExtensionsRequest.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -25,7 +24,7 @@ class AddAdExtensionsRequest
      *
      * @return AdExtensionAddItem[]
      */
-    public function getAdExtensions()
+    public function getAdExtensions(): array
     {
         return $this->AdExtensions;
     }
@@ -34,6 +33,7 @@ class AddAdExtensionsRequest
      * Sets AdExtensions.
      *
      * @param AdExtensionAddItem[] $value
+     *
      * @return $this
      */
     public function setAdExtensions(array $value)
@@ -42,7 +42,4 @@ class AddAdExtensionsRequest
 
         return $this;
     }
-
-
 }
-

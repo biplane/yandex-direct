@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,16 +9,13 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class ResumeAdsResponse
 {
-
 //    Can be omit.
 //    protected $ResumeResults = null;
 
     /**
      * Creates a new instance of ResumeAdsResponse.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -26,24 +25,22 @@ class ResumeAdsResponse
      *
      * @return ActionResult[]|null
      */
-    public function getResumeResults()
+    public function getResumeResults(): ?array
     {
-        return isset($this->ResumeResults) ? $this->ResumeResults : null;
+        return $this->ResumeResults ?? null;
     }
 
     /**
      * Sets ResumeResults.
      *
      * @param ActionResult[]|null $value
+     *
      * @return $this
      */
-    public function setResumeResults(array $value = null)
+    public function setResumeResults(?array $value = null)
     {
         $this->ResumeResults = $value;
 
         return $this;
     }
-
-
 }
-

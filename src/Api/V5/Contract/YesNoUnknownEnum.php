@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,13 +9,9 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class YesNoUnknownEnum
 {
+    public const YES = 'YES';
 
-    const YES = 'YES';
+    public const NO = 'NO';
 
-    const NO = 'NO';
-
-    const UNKNOWN = 'UNKNOWN';
-
-
+    public const UNKNOWN = 'UNKNOWN';
 }
-

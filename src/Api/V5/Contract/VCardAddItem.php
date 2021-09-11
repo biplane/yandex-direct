@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class VCardAddItem
 {
-
     protected $CampaignId = null;
 
     protected $Country = null;
@@ -55,20 +56,16 @@ class VCardAddItem
 
     /**
      * Creates a new instance of VCardAddItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets CampaignId.
-     *
-     * @return int
      */
-    public function getCampaignId()
+    public function getCampaignId(): int
     {
         return $this->CampaignId;
     }
@@ -76,10 +73,9 @@ class VCardAddItem
     /**
      * Sets CampaignId.
      *
-     * @param int $value
      * @return $this
      */
-    public function setCampaignId($value)
+    public function setCampaignId(int $value)
     {
         $this->CampaignId = $value;
 
@@ -88,10 +84,8 @@ class VCardAddItem
 
     /**
      * Gets Country.
-     *
-     * @return string
      */
-    public function getCountry()
+    public function getCountry(): string
     {
         return $this->Country;
     }
@@ -99,10 +93,9 @@ class VCardAddItem
     /**
      * Sets Country.
      *
-     * @param string $value
      * @return $this
      */
-    public function setCountry($value)
+    public function setCountry(string $value)
     {
         $this->Country = $value;
 
@@ -111,10 +104,8 @@ class VCardAddItem
 
     /**
      * Gets City.
-     *
-     * @return string
      */
-    public function getCity()
+    public function getCity(): string
     {
         return $this->City;
     }
@@ -122,10 +113,9 @@ class VCardAddItem
     /**
      * Sets City.
      *
-     * @param string $value
      * @return $this
      */
-    public function setCity($value)
+    public function setCity(string $value)
     {
         $this->City = $value;
 
@@ -134,10 +124,8 @@ class VCardAddItem
 
     /**
      * Gets CompanyName.
-     *
-     * @return string
      */
-    public function getCompanyName()
+    public function getCompanyName(): string
     {
         return $this->CompanyName;
     }
@@ -145,10 +133,9 @@ class VCardAddItem
     /**
      * Sets CompanyName.
      *
-     * @param string $value
      * @return $this
      */
-    public function setCompanyName($value)
+    public function setCompanyName(string $value)
     {
         $this->CompanyName = $value;
 
@@ -157,10 +144,8 @@ class VCardAddItem
 
     /**
      * Gets WorkTime.
-     *
-     * @return string
      */
-    public function getWorkTime()
+    public function getWorkTime(): string
     {
         return $this->WorkTime;
     }
@@ -168,10 +153,9 @@ class VCardAddItem
     /**
      * Sets WorkTime.
      *
-     * @param string $value
      * @return $this
      */
-    public function setWorkTime($value)
+    public function setWorkTime(string $value)
     {
         $this->WorkTime = $value;
 
@@ -180,10 +164,8 @@ class VCardAddItem
 
     /**
      * Gets Phone.
-     *
-     * @return Phone
      */
-    public function getPhone()
+    public function getPhone(): Phone
     {
         return $this->Phone;
     }
@@ -191,7 +173,6 @@ class VCardAddItem
     /**
      * Sets Phone.
      *
-     * @param Phone $value
      * @return $this
      */
     public function setPhone(Phone $value)
@@ -203,21 +184,18 @@ class VCardAddItem
 
     /**
      * Gets Street.
-     *
-     * @return string|null
      */
-    public function getStreet()
+    public function getStreet(): ?string
     {
-        return isset($this->Street) ? $this->Street : null;
+        return $this->Street ?? null;
     }
 
     /**
      * Sets Street.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setStreet($value = null)
+    public function setStreet(?string $value = null)
     {
         $this->Street = $value;
 
@@ -226,21 +204,18 @@ class VCardAddItem
 
     /**
      * Gets House.
-     *
-     * @return string|null
      */
-    public function getHouse()
+    public function getHouse(): ?string
     {
-        return isset($this->House) ? $this->House : null;
+        return $this->House ?? null;
     }
 
     /**
      * Sets House.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setHouse($value = null)
+    public function setHouse(?string $value = null)
     {
         $this->House = $value;
 
@@ -249,21 +224,18 @@ class VCardAddItem
 
     /**
      * Gets Building.
-     *
-     * @return string|null
      */
-    public function getBuilding()
+    public function getBuilding(): ?string
     {
-        return isset($this->Building) ? $this->Building : null;
+        return $this->Building ?? null;
     }
 
     /**
      * Sets Building.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setBuilding($value = null)
+    public function setBuilding(?string $value = null)
     {
         $this->Building = $value;
 
@@ -272,21 +244,18 @@ class VCardAddItem
 
     /**
      * Gets Apartment.
-     *
-     * @return string|null
      */
-    public function getApartment()
+    public function getApartment(): ?string
     {
-        return isset($this->Apartment) ? $this->Apartment : null;
+        return $this->Apartment ?? null;
     }
 
     /**
      * Sets Apartment.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setApartment($value = null)
+    public function setApartment(?string $value = null)
     {
         $this->Apartment = $value;
 
@@ -295,21 +264,18 @@ class VCardAddItem
 
     /**
      * Gets InstantMessenger.
-     *
-     * @return InstantMessenger|null
      */
-    public function getInstantMessenger()
+    public function getInstantMessenger(): ?InstantMessenger
     {
-        return isset($this->InstantMessenger) ? $this->InstantMessenger : null;
+        return $this->InstantMessenger ?? null;
     }
 
     /**
      * Sets InstantMessenger.
      *
-     * @param InstantMessenger|null $value
      * @return $this
      */
-    public function setInstantMessenger(InstantMessenger $value = null)
+    public function setInstantMessenger(?InstantMessenger $value = null)
     {
         $this->InstantMessenger = $value;
 
@@ -318,21 +284,18 @@ class VCardAddItem
 
     /**
      * Gets ExtraMessage.
-     *
-     * @return string|null
      */
-    public function getExtraMessage()
+    public function getExtraMessage(): ?string
     {
-        return isset($this->ExtraMessage) ? $this->ExtraMessage : null;
+        return $this->ExtraMessage ?? null;
     }
 
     /**
      * Sets ExtraMessage.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setExtraMessage($value = null)
+    public function setExtraMessage(?string $value = null)
     {
         $this->ExtraMessage = $value;
 
@@ -341,21 +304,18 @@ class VCardAddItem
 
     /**
      * Gets ContactEmail.
-     *
-     * @return string|null
      */
-    public function getContactEmail()
+    public function getContactEmail(): ?string
     {
-        return isset($this->ContactEmail) ? $this->ContactEmail : null;
+        return $this->ContactEmail ?? null;
     }
 
     /**
      * Sets ContactEmail.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setContactEmail($value = null)
+    public function setContactEmail(?string $value = null)
     {
         $this->ContactEmail = $value;
 
@@ -364,21 +324,18 @@ class VCardAddItem
 
     /**
      * Gets Ogrn.
-     *
-     * @return string|null
      */
-    public function getOgrn()
+    public function getOgrn(): ?string
     {
-        return isset($this->Ogrn) ? $this->Ogrn : null;
+        return $this->Ogrn ?? null;
     }
 
     /**
      * Sets Ogrn.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setOgrn($value = null)
+    public function setOgrn(?string $value = null)
     {
         $this->Ogrn = $value;
 
@@ -387,21 +344,18 @@ class VCardAddItem
 
     /**
      * Gets MetroStationId.
-     *
-     * @return int|null
      */
-    public function getMetroStationId()
+    public function getMetroStationId(): ?int
     {
-        return isset($this->MetroStationId) ? $this->MetroStationId : null;
+        return $this->MetroStationId ?? null;
     }
 
     /**
      * Sets MetroStationId.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setMetroStationId($value = null)
+    public function setMetroStationId(?int $value = null)
     {
         $this->MetroStationId = $value;
 
@@ -410,21 +364,18 @@ class VCardAddItem
 
     /**
      * Gets PointOnMap.
-     *
-     * @return MapPoint|null
      */
-    public function getPointOnMap()
+    public function getPointOnMap(): ?MapPoint
     {
-        return isset($this->PointOnMap) ? $this->PointOnMap : null;
+        return $this->PointOnMap ?? null;
     }
 
     /**
      * Sets PointOnMap.
      *
-     * @param MapPoint|null $value
      * @return $this
      */
-    public function setPointOnMap(MapPoint $value = null)
+    public function setPointOnMap(?MapPoint $value = null)
     {
         $this->PointOnMap = $value;
 
@@ -433,27 +384,21 @@ class VCardAddItem
 
     /**
      * Gets ContactPerson.
-     *
-     * @return string|null
      */
-    public function getContactPerson()
+    public function getContactPerson(): ?string
     {
-        return isset($this->ContactPerson) ? $this->ContactPerson : null;
+        return $this->ContactPerson ?? null;
     }
 
     /**
      * Sets ContactPerson.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setContactPerson($value = null)
+    public function setContactPerson(?string $value = null)
     {
         $this->ContactPerson = $value;
 
         return $this;
     }
-
-
 }
-

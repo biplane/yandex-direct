@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,16 +9,13 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class UnarchiveAdsResponse
 {
-
 //    Can be omit.
 //    protected $UnarchiveResults = null;
 
     /**
      * Creates a new instance of UnarchiveAdsResponse.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -26,24 +25,22 @@ class UnarchiveAdsResponse
      *
      * @return ActionResult[]|null
      */
-    public function getUnarchiveResults()
+    public function getUnarchiveResults(): ?array
     {
-        return isset($this->UnarchiveResults) ? $this->UnarchiveResults : null;
+        return $this->UnarchiveResults ?? null;
     }
 
     /**
      * Sets UnarchiveResults.
      *
      * @param ActionResult[]|null $value
+     *
      * @return $this
      */
-    public function setUnarchiveResults(array $value = null)
+    public function setUnarchiveResults(?array $value = null)
     {
         $this->UnarchiveResults = $value;
 
         return $this;
     }
-
-
 }
-

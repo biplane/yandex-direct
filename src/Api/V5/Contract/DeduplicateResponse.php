@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class DeduplicateResponse
 {
-
 //    Can be omit.
 //    protected $Add = null;
 
@@ -22,10 +23,8 @@ class DeduplicateResponse
 
     /**
      * Creates a new instance of DeduplicateResponse.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -35,18 +34,19 @@ class DeduplicateResponse
      *
      * @return DeduplicateResponseAddItem[]|null
      */
-    public function getAdd()
+    public function getAdd(): ?array
     {
-        return isset($this->Add) ? $this->Add : null;
+        return $this->Add ?? null;
     }
 
     /**
      * Sets Add.
      *
      * @param DeduplicateResponseAddItem[]|null $value
+     *
      * @return $this
      */
-    public function setAdd(array $value = null)
+    public function setAdd(?array $value = null)
     {
         $this->Add = $value;
 
@@ -58,18 +58,19 @@ class DeduplicateResponse
      *
      * @return DeduplicateResponseUpdateItem[]|null
      */
-    public function getUpdate()
+    public function getUpdate(): ?array
     {
-        return isset($this->Update) ? $this->Update : null;
+        return $this->Update ?? null;
     }
 
     /**
      * Sets Update.
      *
      * @param DeduplicateResponseUpdateItem[]|null $value
+     *
      * @return $this
      */
-    public function setUpdate(array $value = null)
+    public function setUpdate(?array $value = null)
     {
         $this->Update = $value;
 
@@ -78,21 +79,18 @@ class DeduplicateResponse
 
     /**
      * Gets Delete.
-     *
-     * @return IdsCriteria|null
      */
-    public function getDelete()
+    public function getDelete(): ?IdsCriteria
     {
-        return isset($this->Delete) ? $this->Delete : null;
+        return $this->Delete ?? null;
     }
 
     /**
      * Sets Delete.
      *
-     * @param IdsCriteria|null $value
      * @return $this
      */
-    public function setDelete(IdsCriteria $value = null)
+    public function setDelete(?IdsCriteria $value = null)
     {
         $this->Delete = $value;
 
@@ -104,24 +102,22 @@ class DeduplicateResponse
      *
      * @return DeduplicateErrorItem[]|null
      */
-    public function getFailure()
+    public function getFailure(): ?array
     {
-        return isset($this->Failure) ? $this->Failure : null;
+        return $this->Failure ?? null;
     }
 
     /**
      * Sets Failure.
      *
      * @param DeduplicateErrorItem[]|null $value
+     *
      * @return $this
      */
-    public function setFailure(array $value = null)
+    public function setFailure(?array $value = null)
     {
         $this->Failure = $value;
 
         return $this;
     }
-
-
 }
-

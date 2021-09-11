@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class KeywordUpdateItem
 {
-
     protected $Id = null;
 
 //    Can be omit.
@@ -21,20 +22,16 @@ class KeywordUpdateItem
 
     /**
      * Creates a new instance of KeywordUpdateItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Id.
-     *
-     * @return int
      */
-    public function getId()
+    public function getId(): int
     {
         return $this->Id;
     }
@@ -42,10 +39,9 @@ class KeywordUpdateItem
     /**
      * Sets Id.
      *
-     * @param int $value
      * @return $this
      */
-    public function setId($value)
+    public function setId(int $value)
     {
         $this->Id = $value;
 
@@ -54,21 +50,18 @@ class KeywordUpdateItem
 
     /**
      * Gets Keyword.
-     *
-     * @return string|null
      */
-    public function getKeyword()
+    public function getKeyword(): ?string
     {
-        return isset($this->Keyword) ? $this->Keyword : null;
+        return $this->Keyword ?? null;
     }
 
     /**
      * Sets Keyword.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setKeyword($value = null)
+    public function setKeyword(?string $value = null)
     {
         $this->Keyword = $value;
 
@@ -77,21 +70,18 @@ class KeywordUpdateItem
 
     /**
      * Gets UserParam1.
-     *
-     * @return string|null
      */
-    public function getUserParam1()
+    public function getUserParam1(): ?string
     {
-        return isset($this->UserParam1) ? $this->UserParam1 : null;
+        return $this->UserParam1 ?? null;
     }
 
     /**
      * Sets UserParam1.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setUserParam1($value = null)
+    public function setUserParam1(?string $value = null)
     {
         $this->UserParam1 = $value;
 
@@ -100,27 +90,21 @@ class KeywordUpdateItem
 
     /**
      * Gets UserParam2.
-     *
-     * @return string|null
      */
-    public function getUserParam2()
+    public function getUserParam2(): ?string
     {
-        return isset($this->UserParam2) ? $this->UserParam2 : null;
+        return $this->UserParam2 ?? null;
     }
 
     /**
      * Sets UserParam2.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setUserParam2($value = null)
+    public function setUserParam2(?string $value = null)
     {
         $this->UserParam2 = $value;
 
         return $this;
     }
-
-
 }
-

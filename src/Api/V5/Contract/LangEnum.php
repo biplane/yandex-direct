@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,15 +9,11 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class LangEnum
 {
+    public const RU = 'RU';
 
-    const RU = 'RU';
+    public const UK = 'UK';
 
-    const UK = 'UK';
+    public const EN = 'EN';
 
-    const EN = 'EN';
-
-    const TR = 'TR';
-
-
+    public const TR = 'TR';
 }
-

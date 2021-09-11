@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,15 +9,12 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class UpdateClientsResponse
 {
-
     protected $UpdateResults = [];
 
     /**
      * Creates a new instance of UpdateClientsResponse.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -25,7 +24,7 @@ class UpdateClientsResponse
      *
      * @return ClientsActionResult[]
      */
-    public function getUpdateResults()
+    public function getUpdateResults(): array
     {
         return $this->UpdateResults;
     }
@@ -34,6 +33,7 @@ class UpdateClientsResponse
      * Sets UpdateResults.
      *
      * @param ClientsActionResult[] $value
+     *
      * @return $this
      */
     public function setUpdateResults(array $value)
@@ -42,7 +42,4 @@ class UpdateClientsResponse
 
         return $this;
     }
-
-
 }
-

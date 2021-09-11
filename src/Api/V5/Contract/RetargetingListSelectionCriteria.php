@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class RetargetingListSelectionCriteria
 {
-
 //    Can be omit.
 //    protected $Types = null;
 
@@ -16,10 +17,8 @@ class RetargetingListSelectionCriteria
 
     /**
      * Creates a new instance of RetargetingListSelectionCriteria.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -27,22 +26,25 @@ class RetargetingListSelectionCriteria
     /**
      * Gets Types.
      *
-     * @return string[]|null
      * @see RetargetingListTypeEnum
+     *
+     * @return string[]|null
      */
-    public function getTypes()
+    public function getTypes(): ?array
     {
-        return isset($this->Types) ? $this->Types : null;
+        return $this->Types ?? null;
     }
 
     /**
      * Sets Types.
      *
-     * @param string[]|null $value
-     * @return $this
      * @see RetargetingListTypeEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
      */
-    public function setTypes(array $value = null)
+    public function setTypes(?array $value = null)
     {
         $this->Types = $value;
 
@@ -54,24 +56,22 @@ class RetargetingListSelectionCriteria
      *
      * @return int[]|null
      */
-    public function getIds()
+    public function getIds(): ?array
     {
-        return isset($this->Ids) ? $this->Ids : null;
+        return $this->Ids ?? null;
     }
 
     /**
      * Sets Ids.
      *
      * @param int[]|null $value
+     *
      * @return $this
      */
-    public function setIds(array $value = null)
+    public function setIds(?array $value = null)
     {
         $this->Ids = $value;
 
         return $this;
     }
-
-
 }
-

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class TimeTargetingBase
 {
-
 //    Can be omit.
 //    protected $Schedule = null;
 
@@ -15,10 +16,8 @@ class TimeTargetingBase
 
     /**
      * Creates a new instance of TimeTargetingBase.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -28,18 +27,19 @@ class TimeTargetingBase
      *
      * @return string[]|null
      */
-    public function getSchedule()
+    public function getSchedule(): ?array
     {
-        return isset($this->Schedule) ? $this->Schedule : null;
+        return $this->Schedule ?? null;
     }
 
     /**
      * Sets Schedule.
      *
      * @param string[]|null $value
+     *
      * @return $this
      */
-    public function setSchedule(array $value = null)
+    public function setSchedule(?array $value = null)
     {
         $this->Schedule = $value;
 
@@ -49,10 +49,9 @@ class TimeTargetingBase
     /**
      * Gets ConsiderWorkingWeekends.
      *
-     * @return string
      * @see YesNoEnum
      */
-    public function getConsiderWorkingWeekends()
+    public function getConsiderWorkingWeekends(): string
     {
         return $this->ConsiderWorkingWeekends;
     }
@@ -60,17 +59,14 @@ class TimeTargetingBase
     /**
      * Sets ConsiderWorkingWeekends.
      *
-     * @param string $value
-     * @return $this
      * @see YesNoEnum
+     *
+     * @return $this
      */
-    public function setConsiderWorkingWeekends($value)
+    public function setConsiderWorkingWeekends(string $value)
     {
         $this->ConsiderWorkingWeekends = $value;
 
         return $this;
     }
-
-
 }
-

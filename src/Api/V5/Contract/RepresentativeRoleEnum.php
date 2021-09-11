@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,15 +9,11 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class RepresentativeRoleEnum
 {
+    public const CHIEF = 'CHIEF';
 
-    const CHIEF = 'CHIEF';
+    public const DELEGATE = 'DELEGATE';
 
-    const DELEGATE = 'DELEGATE';
+    public const LIMITED = 'LIMITED';
 
-    const LIMITED = 'LIMITED';
-
-    const UNKNOWN = 'UNKNOWN';
-
-
+    public const UNKNOWN = 'UNKNOWN';
 }
-

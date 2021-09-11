@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class PayCampElement
 {
-
     protected $CampaignID = null;
 
     protected $Sum = null;
@@ -16,20 +17,16 @@ class PayCampElement
 
     /**
      * Creates a new instance of PayCampElement.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets CampaignID.
-     *
-     * @return int
      */
-    public function getCampaignID()
+    public function getCampaignID(): int
     {
         return $this->CampaignID;
     }
@@ -37,10 +34,9 @@ class PayCampElement
     /**
      * Sets CampaignID.
      *
-     * @param int $value
      * @return $this
      */
-    public function setCampaignID($value)
+    public function setCampaignID(int $value)
     {
         $this->CampaignID = $value;
 
@@ -49,10 +45,8 @@ class PayCampElement
 
     /**
      * Gets Sum.
-     *
-     * @return float
      */
-    public function getSum()
+    public function getSum(): float
     {
         return $this->Sum;
     }
@@ -60,10 +54,9 @@ class PayCampElement
     /**
      * Sets Sum.
      *
-     * @param float $value
      * @return $this
      */
-    public function setSum($value)
+    public function setSum(float $value)
     {
         $this->Sum = $value;
 
@@ -72,10 +65,8 @@ class PayCampElement
 
     /**
      * Gets Currency.
-     *
-     * @return string|null
      */
-    public function getCurrency()
+    public function getCurrency(): ?string
     {
         return $this->Currency;
     }
@@ -83,16 +74,12 @@ class PayCampElement
     /**
      * Sets Currency.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setCurrency($value = null)
+    public function setCurrency(?string $value = null)
     {
         $this->Currency = $value;
 
         return $this;
     }
-
-
 }
-

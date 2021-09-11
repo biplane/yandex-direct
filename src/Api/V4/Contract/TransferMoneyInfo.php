@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,17 +9,14 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class TransferMoneyInfo
 {
-
     protected $FromCampaigns = [];
 
     protected $ToCampaigns = [];
 
     /**
      * Creates a new instance of TransferMoneyInfo.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -27,7 +26,7 @@ class TransferMoneyInfo
      *
      * @return PayCampElement[]
      */
-    public function getFromCampaigns()
+    public function getFromCampaigns(): array
     {
         return $this->FromCampaigns;
     }
@@ -36,6 +35,7 @@ class TransferMoneyInfo
      * Sets FromCampaigns.
      *
      * @param PayCampElement[] $value
+     *
      * @return $this
      */
     public function setFromCampaigns(array $value)
@@ -50,7 +50,7 @@ class TransferMoneyInfo
      *
      * @return PayCampElement[]
      */
-    public function getToCampaigns()
+    public function getToCampaigns(): array
     {
         return $this->ToCampaigns;
     }
@@ -59,6 +59,7 @@ class TransferMoneyInfo
      * Sets ToCampaigns.
      *
      * @param PayCampElement[] $value
+     *
      * @return $this
      */
     public function setToCampaigns(array $value)
@@ -67,7 +68,4 @@ class TransferMoneyInfo
 
         return $this;
     }
-
-
 }
-

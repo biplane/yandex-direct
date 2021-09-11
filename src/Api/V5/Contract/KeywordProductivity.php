@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class KeywordProductivity
 {
-
 //    Can be omit.
 //    protected $Value = null;
 
@@ -16,31 +17,26 @@ class KeywordProductivity
 
     /**
      * Creates a new instance of KeywordProductivity.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Value.
-     *
-     * @return float|null
      */
-    public function getValue()
+    public function getValue(): ?float
     {
-        return isset($this->Value) ? $this->Value : null;
+        return $this->Value ?? null;
     }
 
     /**
      * Sets Value.
      *
-     * @param float|null $value
      * @return $this
      */
-    public function setValue($value = null)
+    public function setValue(?float $value = null)
     {
         $this->Value = $value;
 
@@ -52,24 +48,22 @@ class KeywordProductivity
      *
      * @return int[]|null
      */
-    public function getReferences()
+    public function getReferences(): ?array
     {
-        return isset($this->References) ? $this->References : null;
+        return $this->References ?? null;
     }
 
     /**
      * Sets References.
      *
      * @param int[]|null $value
+     *
      * @return $this
      */
-    public function setReferences(array $value = null)
+    public function setReferences(?array $value = null)
     {
         $this->References = $value;
 
         return $this;
     }
-
-
 }
-

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class KeywordAddItem
 {
-
     protected $Keyword = null;
 
     protected $AdGroupId = null;
@@ -29,20 +30,16 @@ class KeywordAddItem
 
     /**
      * Creates a new instance of KeywordAddItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Keyword.
-     *
-     * @return string
      */
-    public function getKeyword()
+    public function getKeyword(): string
     {
         return $this->Keyword;
     }
@@ -50,10 +47,9 @@ class KeywordAddItem
     /**
      * Sets Keyword.
      *
-     * @param string $value
      * @return $this
      */
-    public function setKeyword($value)
+    public function setKeyword(string $value)
     {
         $this->Keyword = $value;
 
@@ -62,10 +58,8 @@ class KeywordAddItem
 
     /**
      * Gets AdGroupId.
-     *
-     * @return int
      */
-    public function getAdGroupId()
+    public function getAdGroupId(): int
     {
         return $this->AdGroupId;
     }
@@ -73,10 +67,9 @@ class KeywordAddItem
     /**
      * Sets AdGroupId.
      *
-     * @param int $value
      * @return $this
      */
-    public function setAdGroupId($value)
+    public function setAdGroupId(int $value)
     {
         $this->AdGroupId = $value;
 
@@ -85,21 +78,18 @@ class KeywordAddItem
 
     /**
      * Gets Bid.
-     *
-     * @return int|null
      */
-    public function getBid()
+    public function getBid(): ?int
     {
-        return isset($this->Bid) ? $this->Bid : null;
+        return $this->Bid ?? null;
     }
 
     /**
      * Sets Bid.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setBid($value = null)
+    public function setBid(?int $value = null)
     {
         $this->Bid = $value;
 
@@ -108,21 +98,18 @@ class KeywordAddItem
 
     /**
      * Gets ContextBid.
-     *
-     * @return int|null
      */
-    public function getContextBid()
+    public function getContextBid(): ?int
     {
-        return isset($this->ContextBid) ? $this->ContextBid : null;
+        return $this->ContextBid ?? null;
     }
 
     /**
      * Sets ContextBid.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setContextBid($value = null)
+    public function setContextBid(?int $value = null)
     {
         $this->ContextBid = $value;
 
@@ -132,22 +119,21 @@ class KeywordAddItem
     /**
      * Gets StrategyPriority.
      *
-     * @return string|null
      * @see PriorityEnum
      */
-    public function getStrategyPriority()
+    public function getStrategyPriority(): ?string
     {
-        return isset($this->StrategyPriority) ? $this->StrategyPriority : null;
+        return $this->StrategyPriority ?? null;
     }
 
     /**
      * Sets StrategyPriority.
      *
-     * @param string|null $value
-     * @return $this
      * @see PriorityEnum
+     *
+     * @return $this
      */
-    public function setStrategyPriority($value = null)
+    public function setStrategyPriority(?string $value = null)
     {
         $this->StrategyPriority = $value;
 
@@ -156,21 +142,18 @@ class KeywordAddItem
 
     /**
      * Gets UserParam1.
-     *
-     * @return string|null
      */
-    public function getUserParam1()
+    public function getUserParam1(): ?string
     {
-        return isset($this->UserParam1) ? $this->UserParam1 : null;
+        return $this->UserParam1 ?? null;
     }
 
     /**
      * Sets UserParam1.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setUserParam1($value = null)
+    public function setUserParam1(?string $value = null)
     {
         $this->UserParam1 = $value;
 
@@ -179,27 +162,21 @@ class KeywordAddItem
 
     /**
      * Gets UserParam2.
-     *
-     * @return string|null
      */
-    public function getUserParam2()
+    public function getUserParam2(): ?string
     {
-        return isset($this->UserParam2) ? $this->UserParam2 : null;
+        return $this->UserParam2 ?? null;
     }
 
     /**
      * Sets UserParam2.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setUserParam2($value = null)
+    public function setUserParam2(?string $value = null)
     {
         $this->UserParam2 = $value;
 
         return $this;
     }
-
-
 }
-

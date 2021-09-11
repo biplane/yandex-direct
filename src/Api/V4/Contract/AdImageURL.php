@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class AdImageURL
 {
-
     protected $Login = null;
 
     protected $URL = null;
@@ -16,20 +17,16 @@ class AdImageURL
 
     /**
      * Creates a new instance of AdImageURL.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Login.
-     *
-     * @return string|null
      */
-    public function getLogin()
+    public function getLogin(): ?string
     {
         return $this->Login;
     }
@@ -37,10 +34,9 @@ class AdImageURL
     /**
      * Sets Login.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setLogin($value = null)
+    public function setLogin(?string $value = null)
     {
         $this->Login = $value;
 
@@ -49,10 +45,8 @@ class AdImageURL
 
     /**
      * Gets URL.
-     *
-     * @return string
      */
-    public function getURL()
+    public function getURL(): string
     {
         return $this->URL;
     }
@@ -60,10 +54,9 @@ class AdImageURL
     /**
      * Sets URL.
      *
-     * @param string $value
      * @return $this
      */
-    public function setURL($value)
+    public function setURL(string $value)
     {
         $this->URL = $value;
 
@@ -72,10 +65,8 @@ class AdImageURL
 
     /**
      * Gets Name.
-     *
-     * @return string
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->Name;
     }
@@ -83,16 +74,12 @@ class AdImageURL
     /**
      * Sets Name.
      *
-     * @param string $value
      * @return $this
      */
-    public function setName($value)
+    public function setName(string $value)
     {
         $this->Name = $value;
 
         return $this;
     }
-
-
 }
-

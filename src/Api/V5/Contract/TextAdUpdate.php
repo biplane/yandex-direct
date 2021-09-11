@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class TextAdUpdate extends TextAdUpdateBase
 {
-
 //    Can be omit.
 //    protected $Text = null;
 
@@ -43,31 +44,26 @@ class TextAdUpdate extends TextAdUpdateBase
 
     /**
      * Creates a new instance of TextAdUpdate.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Text.
-     *
-     * @return string|null
      */
-    public function getText()
+    public function getText(): ?string
     {
-        return isset($this->Text) ? $this->Text : null;
+        return $this->Text ?? null;
     }
 
     /**
      * Sets Text.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setText($value = null)
+    public function setText(?string $value = null)
     {
         $this->Text = $value;
 
@@ -76,21 +72,18 @@ class TextAdUpdate extends TextAdUpdateBase
 
     /**
      * Gets Title.
-     *
-     * @return string|null
      */
-    public function getTitle()
+    public function getTitle(): ?string
     {
-        return isset($this->Title) ? $this->Title : null;
+        return $this->Title ?? null;
     }
 
     /**
      * Sets Title.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setTitle($value = null)
+    public function setTitle(?string $value = null)
     {
         $this->Title = $value;
 
@@ -99,21 +92,18 @@ class TextAdUpdate extends TextAdUpdateBase
 
     /**
      * Gets Title2.
-     *
-     * @return string|null
      */
-    public function getTitle2()
+    public function getTitle2(): ?string
     {
-        return isset($this->Title2) ? $this->Title2 : null;
+        return $this->Title2 ?? null;
     }
 
     /**
      * Sets Title2.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setTitle2($value = null)
+    public function setTitle2(?string $value = null)
     {
         $this->Title2 = $value;
 
@@ -122,21 +112,18 @@ class TextAdUpdate extends TextAdUpdateBase
 
     /**
      * Gets Href.
-     *
-     * @return string|null
      */
-    public function getHref()
+    public function getHref(): ?string
     {
-        return isset($this->Href) ? $this->Href : null;
+        return $this->Href ?? null;
     }
 
     /**
      * Sets Href.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setHref($value = null)
+    public function setHref(?string $value = null)
     {
         $this->Href = $value;
 
@@ -146,22 +133,21 @@ class TextAdUpdate extends TextAdUpdateBase
     /**
      * Gets AgeLabel.
      *
-     * @return string|null
      * @see AgeLabelEnum
      */
-    public function getAgeLabel()
+    public function getAgeLabel(): ?string
     {
-        return isset($this->AgeLabel) ? $this->AgeLabel : null;
+        return $this->AgeLabel ?? null;
     }
 
     /**
      * Sets AgeLabel.
      *
-     * @param string|null $value
-     * @return $this
      * @see AgeLabelEnum
+     *
+     * @return $this
      */
-    public function setAgeLabel($value = null)
+    public function setAgeLabel(?string $value = null)
     {
         $this->AgeLabel = $value;
 
@@ -170,21 +156,18 @@ class TextAdUpdate extends TextAdUpdateBase
 
     /**
      * Gets DisplayUrlPath.
-     *
-     * @return string|null
      */
-    public function getDisplayUrlPath()
+    public function getDisplayUrlPath(): ?string
     {
-        return isset($this->DisplayUrlPath) ? $this->DisplayUrlPath : null;
+        return $this->DisplayUrlPath ?? null;
     }
 
     /**
      * Sets DisplayUrlPath.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setDisplayUrlPath($value = null)
+    public function setDisplayUrlPath(?string $value = null)
     {
         $this->DisplayUrlPath = $value;
 
@@ -193,21 +176,18 @@ class TextAdUpdate extends TextAdUpdateBase
 
     /**
      * Gets VideoExtension.
-     *
-     * @return VideoExtensionUpdateItem|null
      */
-    public function getVideoExtension()
+    public function getVideoExtension(): ?VideoExtensionUpdateItem
     {
-        return isset($this->VideoExtension) ? $this->VideoExtension : null;
+        return $this->VideoExtension ?? null;
     }
 
     /**
      * Sets VideoExtension.
      *
-     * @param VideoExtensionUpdateItem|null $value
      * @return $this
      */
-    public function setVideoExtension(VideoExtensionUpdateItem $value = null)
+    public function setVideoExtension(?VideoExtensionUpdateItem $value = null)
     {
         $this->VideoExtension = $value;
 
@@ -216,21 +196,18 @@ class TextAdUpdate extends TextAdUpdateBase
 
     /**
      * Gets PriceExtension.
-     *
-     * @return PriceExtensionUpdateItem|null
      */
-    public function getPriceExtension()
+    public function getPriceExtension(): ?PriceExtensionUpdateItem
     {
-        return isset($this->PriceExtension) ? $this->PriceExtension : null;
+        return $this->PriceExtension ?? null;
     }
 
     /**
      * Sets PriceExtension.
      *
-     * @param PriceExtensionUpdateItem|null $value
      * @return $this
      */
-    public function setPriceExtension(PriceExtensionUpdateItem $value = null)
+    public function setPriceExtension(?PriceExtensionUpdateItem $value = null)
     {
         $this->PriceExtension = $value;
 
@@ -239,21 +216,18 @@ class TextAdUpdate extends TextAdUpdateBase
 
     /**
      * Gets TurboPageId.
-     *
-     * @return int|null
      */
-    public function getTurboPageId()
+    public function getTurboPageId(): ?int
     {
-        return isset($this->TurboPageId) ? $this->TurboPageId : null;
+        return $this->TurboPageId ?? null;
     }
 
     /**
      * Sets TurboPageId.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setTurboPageId($value = null)
+    public function setTurboPageId(?int $value = null)
     {
         $this->TurboPageId = $value;
 
@@ -262,21 +236,18 @@ class TextAdUpdate extends TextAdUpdateBase
 
     /**
      * Gets BusinessId.
-     *
-     * @return int|null
      */
-    public function getBusinessId()
+    public function getBusinessId(): ?int
     {
-        return isset($this->BusinessId) ? $this->BusinessId : null;
+        return $this->BusinessId ?? null;
     }
 
     /**
      * Sets BusinessId.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setBusinessId($value = null)
+    public function setBusinessId(?int $value = null)
     {
         $this->BusinessId = $value;
 
@@ -286,28 +257,24 @@ class TextAdUpdate extends TextAdUpdateBase
     /**
      * Gets PreferVCardOverBusiness.
      *
-     * @return string|null
      * @see YesNoEnum
      */
-    public function getPreferVCardOverBusiness()
+    public function getPreferVCardOverBusiness(): ?string
     {
-        return isset($this->PreferVCardOverBusiness) ? $this->PreferVCardOverBusiness : null;
+        return $this->PreferVCardOverBusiness ?? null;
     }
 
     /**
      * Sets PreferVCardOverBusiness.
      *
-     * @param string|null $value
-     * @return $this
      * @see YesNoEnum
+     *
+     * @return $this
      */
-    public function setPreferVCardOverBusiness($value = null)
+    public function setPreferVCardOverBusiness(?string $value = null)
     {
         $this->PreferVCardOverBusiness = $value;
 
         return $this;
     }
-
-
 }
-

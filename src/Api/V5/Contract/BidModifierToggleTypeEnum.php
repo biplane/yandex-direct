@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,13 +9,9 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class BidModifierToggleTypeEnum
 {
+    public const DEMOGRAPHICS_ADJUSTMENT = 'DEMOGRAPHICS_ADJUSTMENT';
 
-    const DEMOGRAPHICS_ADJUSTMENT = 'DEMOGRAPHICS_ADJUSTMENT';
+    public const RETARGETING_ADJUSTMENT = 'RETARGETING_ADJUSTMENT';
 
-    const RETARGETING_ADJUSTMENT = 'RETARGETING_ADJUSTMENT';
-
-    const REGIONAL_ADJUSTMENT = 'REGIONAL_ADJUSTMENT';
-
-
+    public const REGIONAL_ADJUSTMENT = 'REGIONAL_ADJUSTMENT';
 }
-

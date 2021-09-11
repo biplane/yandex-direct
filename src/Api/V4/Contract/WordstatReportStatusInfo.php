@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,27 +9,22 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class WordstatReportStatusInfo
 {
-
     protected $ReportID = null;
 
     protected $StatusReport = null;
 
     /**
      * Creates a new instance of WordstatReportStatusInfo.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets ReportID.
-     *
-     * @return int
      */
-    public function getReportID()
+    public function getReportID(): int
     {
         return $this->ReportID;
     }
@@ -35,10 +32,9 @@ class WordstatReportStatusInfo
     /**
      * Sets ReportID.
      *
-     * @param int $value
      * @return $this
      */
-    public function setReportID($value)
+    public function setReportID(int $value)
     {
         $this->ReportID = $value;
 
@@ -47,10 +43,8 @@ class WordstatReportStatusInfo
 
     /**
      * Gets StatusReport.
-     *
-     * @return string
      */
-    public function getStatusReport()
+    public function getStatusReport(): string
     {
         return $this->StatusReport;
     }
@@ -58,16 +52,12 @@ class WordstatReportStatusInfo
     /**
      * Sets StatusReport.
      *
-     * @param string $value
      * @return $this
      */
-    public function setStatusReport($value)
+    public function setStatusReport(string $value)
     {
         $this->StatusReport = $value;
 
         return $this;
     }
-
-
 }
-

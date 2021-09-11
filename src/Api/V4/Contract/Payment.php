@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class Payment
 {
-
     protected $AccountID = null;
 
     protected $Amount = null;
@@ -20,20 +21,16 @@ class Payment
 
     /**
      * Creates a new instance of Payment.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets AccountID.
-     *
-     * @return int
      */
-    public function getAccountID()
+    public function getAccountID(): int
     {
         return $this->AccountID;
     }
@@ -41,10 +38,9 @@ class Payment
     /**
      * Sets AccountID.
      *
-     * @param int $value
      * @return $this
      */
-    public function setAccountID($value)
+    public function setAccountID(int $value)
     {
         $this->AccountID = $value;
 
@@ -53,10 +49,8 @@ class Payment
 
     /**
      * Gets Amount.
-     *
-     * @return float
      */
-    public function getAmount()
+    public function getAmount(): float
     {
         return $this->Amount;
     }
@@ -64,10 +58,9 @@ class Payment
     /**
      * Sets Amount.
      *
-     * @param float $value
      * @return $this
      */
-    public function setAmount($value)
+    public function setAmount(float $value)
     {
         $this->Amount = $value;
 
@@ -76,10 +69,8 @@ class Payment
 
     /**
      * Gets Origin.
-     *
-     * @return string|null
      */
-    public function getOrigin()
+    public function getOrigin(): ?string
     {
         return $this->Origin;
     }
@@ -87,10 +78,9 @@ class Payment
     /**
      * Sets Origin.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setOrigin($value = null)
+    public function setOrigin(?string $value = null)
     {
         $this->Origin = $value;
 
@@ -99,10 +89,8 @@ class Payment
 
     /**
      * Gets Contract.
-     *
-     * @return string|null
      */
-    public function getContract()
+    public function getContract(): ?string
     {
         return $this->Contract;
     }
@@ -110,10 +98,9 @@ class Payment
     /**
      * Sets Contract.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setContract($value = null)
+    public function setContract(?string $value = null)
     {
         $this->Contract = $value;
 
@@ -122,10 +109,8 @@ class Payment
 
     /**
      * Gets Currency.
-     *
-     * @return string|null
      */
-    public function getCurrency()
+    public function getCurrency(): ?string
     {
         return $this->Currency;
     }
@@ -133,16 +118,12 @@ class Payment
     /**
      * Sets Currency.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setCurrency($value = null)
+    public function setCurrency(?string $value = null)
     {
         $this->Currency = $value;
 
         return $this;
     }
-
-
 }
-

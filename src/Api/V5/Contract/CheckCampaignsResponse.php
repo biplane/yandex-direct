@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class CheckCampaignsResponse
 {
-
 //    Can be omit.
 //    protected $Campaigns = null;
 
@@ -15,10 +16,8 @@ class CheckCampaignsResponse
 
     /**
      * Creates a new instance of CheckCampaignsResponse.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -28,18 +27,19 @@ class CheckCampaignsResponse
      *
      * @return CampaignChangesItem[]|null
      */
-    public function getCampaigns()
+    public function getCampaigns(): ?array
     {
-        return isset($this->Campaigns) ? $this->Campaigns : null;
+        return $this->Campaigns ?? null;
     }
 
     /**
      * Sets Campaigns.
      *
      * @param CampaignChangesItem[]|null $value
+     *
      * @return $this
      */
-    public function setCampaigns(array $value = null)
+    public function setCampaigns(?array $value = null)
     {
         $this->Campaigns = $value;
 
@@ -48,10 +48,8 @@ class CheckCampaignsResponse
 
     /**
      * Gets Timestamp.
-     *
-     * @return string
      */
-    public function getTimestamp()
+    public function getTimestamp(): string
     {
         return $this->Timestamp;
     }
@@ -59,16 +57,12 @@ class CheckCampaignsResponse
     /**
      * Sets Timestamp.
      *
-     * @param string $value
      * @return $this
      */
-    public function setTimestamp($value)
+    public function setTimestamp(string $value)
     {
         $this->Timestamp = $value;
 
         return $this;
     }
-
-
 }
-

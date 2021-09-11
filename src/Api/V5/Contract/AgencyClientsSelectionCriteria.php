@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AgencyClientsSelectionCriteria
 {
-
 //    Can be omit.
 //    protected $Logins = null;
 
@@ -16,10 +17,8 @@ class AgencyClientsSelectionCriteria
 
     /**
      * Creates a new instance of AgencyClientsSelectionCriteria.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -29,18 +28,19 @@ class AgencyClientsSelectionCriteria
      *
      * @return string[]|null
      */
-    public function getLogins()
+    public function getLogins(): ?array
     {
-        return isset($this->Logins) ? $this->Logins : null;
+        return $this->Logins ?? null;
     }
 
     /**
      * Sets Logins.
      *
      * @param string[]|null $value
+     *
      * @return $this
      */
-    public function setLogins(array $value = null)
+    public function setLogins(?array $value = null)
     {
         $this->Logins = $value;
 
@@ -50,28 +50,24 @@ class AgencyClientsSelectionCriteria
     /**
      * Gets Archived.
      *
-     * @return string|null
      * @see YesNoEnum
      */
-    public function getArchived()
+    public function getArchived(): ?string
     {
-        return isset($this->Archived) ? $this->Archived : null;
+        return $this->Archived ?? null;
     }
 
     /**
      * Sets Archived.
      *
-     * @param string|null $value
-     * @return $this
      * @see YesNoEnum
+     *
+     * @return $this
      */
-    public function setArchived($value = null)
+    public function setArchived(?string $value = null)
     {
         $this->Archived = $value;
 
         return $this;
     }
-
-
 }
-

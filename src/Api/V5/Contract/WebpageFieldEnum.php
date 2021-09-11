@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,29 +9,25 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class WebpageFieldEnum
 {
+    public const AD_GROUP_ID = 'AdGroupId';
 
-    const AD_GROUP_ID = 'AdGroupId';
+    public const BID = 'Bid';
 
-    const BID = 'Bid';
+    public const CAMPAIGN_ID = 'CampaignId';
 
-    const CAMPAIGN_ID = 'CampaignId';
+    public const CONDITIONS = 'Conditions';
 
-    const CONDITIONS = 'Conditions';
+    public const CONDITION_TYPE = 'ConditionType';
 
-    const CONDITION_TYPE = 'ConditionType';
+    public const CONTEXT_BID = 'ContextBid';
 
-    const CONTEXT_BID = 'ContextBid';
+    public const ID = 'Id';
 
-    const ID = 'Id';
+    public const NAME = 'Name';
 
-    const NAME = 'Name';
+    public const STATE = 'State';
 
-    const STATE = 'State';
+    public const STATUS_CLARIFICATION = 'StatusClarification';
 
-    const STATUS_CLARIFICATION = 'StatusClarification';
-
-    const STRATEGY_PRIORITY = 'StrategyPriority';
-
-
+    public const STRATEGY_PRIORITY = 'StrategyPriority';
 }
-

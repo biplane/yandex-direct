@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,25 +9,20 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class ClientInfoRequest
 {
-
     protected $Filter = null;
 
     /**
      * Creates a new instance of ClientInfoRequest.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Filter.
-     *
-     * @return ClientFilter|null
      */
-    public function getFilter()
+    public function getFilter(): ?ClientFilter
     {
         return $this->Filter;
     }
@@ -33,16 +30,12 @@ class ClientInfoRequest
     /**
      * Sets Filter.
      *
-     * @param ClientFilter|null $value
      * @return $this
      */
-    public function setFilter(ClientFilter $value = null)
+    public function setFilter(?ClientFilter $value = null)
     {
         $this->Filter = $value;
 
         return $this;
     }
-
-
 }
-

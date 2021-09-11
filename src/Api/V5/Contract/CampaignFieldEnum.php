@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,51 +9,47 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class CampaignFieldEnum
 {
+    public const BLOCKED_IPS = 'BlockedIps';
 
-    const BLOCKED_IPS = 'BlockedIps';
+    public const EXCLUDED_SITES = 'ExcludedSites';
 
-    const EXCLUDED_SITES = 'ExcludedSites';
+    public const CURRENCY = 'Currency';
 
-    const CURRENCY = 'Currency';
+    public const DAILY_BUDGET = 'DailyBudget';
 
-    const DAILY_BUDGET = 'DailyBudget';
+    public const NOTIFICATION = 'Notification';
 
-    const NOTIFICATION = 'Notification';
+    public const END_DATE = 'EndDate';
 
-    const END_DATE = 'EndDate';
+    public const FUNDS = 'Funds';
 
-    const FUNDS = 'Funds';
+    public const CLIENT_INFO = 'ClientInfo';
 
-    const CLIENT_INFO = 'ClientInfo';
+    public const ID = 'Id';
 
-    const ID = 'Id';
+    public const NAME = 'Name';
 
-    const NAME = 'Name';
+    public const NEGATIVE_KEYWORDS = 'NegativeKeywords';
 
-    const NEGATIVE_KEYWORDS = 'NegativeKeywords';
+    public const REPRESENTED_BY = 'RepresentedBy';
 
-    const REPRESENTED_BY = 'RepresentedBy';
+    public const START_DATE = 'StartDate';
 
-    const START_DATE = 'StartDate';
+    public const STATISTICS = 'Statistics';
 
-    const STATISTICS = 'Statistics';
+    public const STATE = 'State';
 
-    const STATE = 'State';
+    public const STATUS = 'Status';
 
-    const STATUS = 'Status';
+    public const STATUS_PAYMENT = 'StatusPayment';
 
-    const STATUS_PAYMENT = 'StatusPayment';
+    public const STATUS_CLARIFICATION = 'StatusClarification';
 
-    const STATUS_CLARIFICATION = 'StatusClarification';
+    public const SOURCE_ID = 'SourceId';
 
-    const SOURCE_ID = 'SourceId';
+    public const TIME_TARGETING = 'TimeTargeting';
 
-    const TIME_TARGETING = 'TimeTargeting';
+    public const TIME_ZONE = 'TimeZone';
 
-    const TIME_ZONE = 'TimeZone';
-
-    const TYPE = 'Type';
-
-
+    public const TYPE = 'Type';
 }
-

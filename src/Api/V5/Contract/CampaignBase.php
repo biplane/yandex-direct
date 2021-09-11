@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class CampaignBase
 {
-
 //    Can be omit.
 //    protected $ClientInfo = null;
 
@@ -19,31 +20,26 @@ class CampaignBase
 
     /**
      * Creates a new instance of CampaignBase.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets ClientInfo.
-     *
-     * @return string|null
      */
-    public function getClientInfo()
+    public function getClientInfo(): ?string
     {
-        return isset($this->ClientInfo) ? $this->ClientInfo : null;
+        return $this->ClientInfo ?? null;
     }
 
     /**
      * Sets ClientInfo.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setClientInfo($value = null)
+    public function setClientInfo(?string $value = null)
     {
         $this->ClientInfo = $value;
 
@@ -52,21 +48,18 @@ class CampaignBase
 
     /**
      * Gets Notification.
-     *
-     * @return CampaignNotification|null
      */
-    public function getNotification()
+    public function getNotification(): ?CampaignNotification
     {
-        return isset($this->Notification) ? $this->Notification : null;
+        return $this->Notification ?? null;
     }
 
     /**
      * Sets Notification.
      *
-     * @param CampaignNotification|null $value
      * @return $this
      */
-    public function setNotification(CampaignNotification $value = null)
+    public function setNotification(?CampaignNotification $value = null)
     {
         $this->Notification = $value;
 
@@ -75,27 +68,21 @@ class CampaignBase
 
     /**
      * Gets TimeZone.
-     *
-     * @return string|null
      */
-    public function getTimeZone()
+    public function getTimeZone(): ?string
     {
-        return isset($this->TimeZone) ? $this->TimeZone : null;
+        return $this->TimeZone ?? null;
     }
 
     /**
      * Sets TimeZone.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setTimeZone($value = null)
+    public function setTimeZone(?string $value = null)
     {
         $this->TimeZone = $value;
 
         return $this;
     }
-
-
 }
-

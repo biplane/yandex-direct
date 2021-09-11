@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,43 +9,39 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AgencyClientFieldEnum
 {
+    public const ACCOUNT_QUALITY = 'AccountQuality';
 
-    const ACCOUNT_QUALITY = 'AccountQuality';
+    public const ARCHIVED = 'Archived';
 
-    const ARCHIVED = 'Archived';
+    public const CLIENT_ID = 'ClientId';
 
-    const CLIENT_ID = 'ClientId';
+    public const CLIENT_INFO = 'ClientInfo';
 
-    const CLIENT_INFO = 'ClientInfo';
+    public const COUNTRY_ID = 'CountryId';
 
-    const COUNTRY_ID = 'CountryId';
+    public const CREATED_AT = 'CreatedAt';
 
-    const CREATED_AT = 'CreatedAt';
+    public const CURRENCY = 'Currency';
 
-    const CURRENCY = 'Currency';
+    public const GRANTS = 'Grants';
 
-    const GRANTS = 'Grants';
+    public const BONUSES = 'Bonuses';
 
-    const BONUSES = 'Bonuses';
+    public const LOGIN = 'Login';
 
-    const LOGIN = 'Login';
+    public const NOTIFICATION = 'Notification';
 
-    const NOTIFICATION = 'Notification';
+    public const OVERDRAFT_SUM_AVAILABLE = 'OverdraftSumAvailable';
 
-    const OVERDRAFT_SUM_AVAILABLE = 'OverdraftSumAvailable';
+    public const PHONE = 'Phone';
 
-    const PHONE = 'Phone';
+    public const REPRESENTATIVES = 'Representatives';
 
-    const REPRESENTATIVES = 'Representatives';
+    public const RESTRICTIONS = 'Restrictions';
 
-    const RESTRICTIONS = 'Restrictions';
+    public const SETTINGS = 'Settings';
 
-    const SETTINGS = 'Settings';
+    public const TYPE = 'Type';
 
-    const TYPE = 'Type';
-
-    const VAT_RATE = 'VatRate';
-
-
+    public const VAT_RATE = 'VatRate';
 }
-

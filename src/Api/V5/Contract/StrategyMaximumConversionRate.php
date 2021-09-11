@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,43 +9,34 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class StrategyMaximumConversionRate extends StrategyWeeklyBudgetBase
 {
-
 //    Can be omit.
 //    protected $GoalId = null;
 
     /**
      * Creates a new instance of StrategyMaximumConversionRate.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets GoalId.
-     *
-     * @return int|null
      */
-    public function getGoalId()
+    public function getGoalId(): ?int
     {
-        return isset($this->GoalId) ? $this->GoalId : null;
+        return $this->GoalId ?? null;
     }
 
     /**
      * Sets GoalId.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setGoalId($value = null)
+    public function setGoalId(?int $value = null)
     {
         $this->GoalId = $value;
 
         return $this;
     }
-
-
 }
-

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,25 +9,20 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class UnarchiveAdsRequest
 {
-
     protected $SelectionCriteria = null;
 
     /**
      * Creates a new instance of UnarchiveAdsRequest.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets SelectionCriteria.
-     *
-     * @return IdsCriteria
      */
-    public function getSelectionCriteria()
+    public function getSelectionCriteria(): IdsCriteria
     {
         return $this->SelectionCriteria;
     }
@@ -33,7 +30,6 @@ class UnarchiveAdsRequest
     /**
      * Sets SelectionCriteria.
      *
-     * @param IdsCriteria $value
      * @return $this
      */
     public function setSelectionCriteria(IdsCriteria $value)
@@ -42,7 +38,4 @@ class UnarchiveAdsRequest
 
         return $this;
     }
-
-
 }
-

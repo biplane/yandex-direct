@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AdGroupUpdateItem extends AdGroupBase
 {
-
     protected $Id = null;
 
 //    Can be omit.
@@ -24,20 +25,16 @@ class AdGroupUpdateItem extends AdGroupBase
 
     /**
      * Creates a new instance of AdGroupUpdateItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Id.
-     *
-     * @return int
      */
-    public function getId()
+    public function getId(): int
     {
         return $this->Id;
     }
@@ -45,10 +42,9 @@ class AdGroupUpdateItem extends AdGroupBase
     /**
      * Sets Id.
      *
-     * @param int $value
      * @return $this
      */
-    public function setId($value)
+    public function setId(int $value)
     {
         $this->Id = $value;
 
@@ -57,21 +53,18 @@ class AdGroupUpdateItem extends AdGroupBase
 
     /**
      * Gets Name.
-     *
-     * @return string|null
      */
-    public function getName()
+    public function getName(): ?string
     {
-        return isset($this->Name) ? $this->Name : null;
+        return $this->Name ?? null;
     }
 
     /**
      * Sets Name.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setName($value = null)
+    public function setName(?string $value = null)
     {
         $this->Name = $value;
 
@@ -80,21 +73,18 @@ class AdGroupUpdateItem extends AdGroupBase
 
     /**
      * Gets MobileAppAdGroup.
-     *
-     * @return MobileAppAdGroupUpdate|null
      */
-    public function getMobileAppAdGroup()
+    public function getMobileAppAdGroup(): ?MobileAppAdGroupUpdate
     {
-        return isset($this->MobileAppAdGroup) ? $this->MobileAppAdGroup : null;
+        return $this->MobileAppAdGroup ?? null;
     }
 
     /**
      * Sets MobileAppAdGroup.
      *
-     * @param MobileAppAdGroupUpdate|null $value
      * @return $this
      */
-    public function setMobileAppAdGroup(MobileAppAdGroupUpdate $value = null)
+    public function setMobileAppAdGroup(?MobileAppAdGroupUpdate $value = null)
     {
         $this->MobileAppAdGroup = $value;
 
@@ -103,21 +93,18 @@ class AdGroupUpdateItem extends AdGroupBase
 
     /**
      * Gets DynamicTextAdGroup.
-     *
-     * @return DynamicTextAdGroup|null
      */
-    public function getDynamicTextAdGroup()
+    public function getDynamicTextAdGroup(): ?DynamicTextAdGroup
     {
-        return isset($this->DynamicTextAdGroup) ? $this->DynamicTextAdGroup : null;
+        return $this->DynamicTextAdGroup ?? null;
     }
 
     /**
      * Sets DynamicTextAdGroup.
      *
-     * @param DynamicTextAdGroup|null $value
      * @return $this
      */
-    public function setDynamicTextAdGroup(DynamicTextAdGroup $value = null)
+    public function setDynamicTextAdGroup(?DynamicTextAdGroup $value = null)
     {
         $this->DynamicTextAdGroup = $value;
 
@@ -126,27 +113,21 @@ class AdGroupUpdateItem extends AdGroupBase
 
     /**
      * Gets SmartAdGroup.
-     *
-     * @return SmartAdGroupUpdate|null
      */
-    public function getSmartAdGroup()
+    public function getSmartAdGroup(): ?SmartAdGroupUpdate
     {
-        return isset($this->SmartAdGroup) ? $this->SmartAdGroup : null;
+        return $this->SmartAdGroup ?? null;
     }
 
     /**
      * Sets SmartAdGroup.
      *
-     * @param SmartAdGroupUpdate|null $value
      * @return $this
      */
-    public function setSmartAdGroup(SmartAdGroupUpdate $value = null)
+    public function setSmartAdGroup(?SmartAdGroupUpdate $value = null)
     {
         $this->SmartAdGroup = $value;
 
         return $this;
     }
-
-
 }
-

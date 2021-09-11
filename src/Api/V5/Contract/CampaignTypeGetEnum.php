@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,19 +9,15 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class CampaignTypeGetEnum
 {
+    public const TEXT_CAMPAIGN = 'TEXT_CAMPAIGN';
 
-    const TEXT_CAMPAIGN = 'TEXT_CAMPAIGN';
+    public const MOBILE_APP_CAMPAIGN = 'MOBILE_APP_CAMPAIGN';
 
-    const MOBILE_APP_CAMPAIGN = 'MOBILE_APP_CAMPAIGN';
+    public const DYNAMIC_TEXT_CAMPAIGN = 'DYNAMIC_TEXT_CAMPAIGN';
 
-    const DYNAMIC_TEXT_CAMPAIGN = 'DYNAMIC_TEXT_CAMPAIGN';
+    public const CPM_BANNER_CAMPAIGN = 'CPM_BANNER_CAMPAIGN';
 
-    const CPM_BANNER_CAMPAIGN = 'CPM_BANNER_CAMPAIGN';
+    public const SMART_CAMPAIGN = 'SMART_CAMPAIGN';
 
-    const SMART_CAMPAIGN = 'SMART_CAMPAIGN';
-
-    const UNKNOWN = 'UNKNOWN';
-
-
+    public const UNKNOWN = 'UNKNOWN';
 }
-

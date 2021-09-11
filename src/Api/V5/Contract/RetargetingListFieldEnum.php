@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,23 +9,19 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class RetargetingListFieldEnum
 {
+    public const TYPE = 'Type';
 
-    const TYPE = 'Type';
+    public const ID = 'Id';
 
-    const ID = 'Id';
+    public const NAME = 'Name';
 
-    const NAME = 'Name';
+    public const DESCRIPTION = 'Description';
 
-    const DESCRIPTION = 'Description';
+    public const RULES = 'Rules';
 
-    const RULES = 'Rules';
+    public const IS_AVAILABLE = 'IsAvailable';
 
-    const IS_AVAILABLE = 'IsAvailable';
+    public const SCOPE = 'Scope';
 
-    const SCOPE = 'Scope';
-
-    const AVAILABLE_FOR_TARGETS_IN_AD_GROUP_TYPES = 'AvailableForTargetsInAdGroupTypes';
-
-
+    public const AVAILABLE_FOR_TARGETS_IN_AD_GROUP_TYPES = 'AvailableForTargetsInAdGroupTypes';
 }
-

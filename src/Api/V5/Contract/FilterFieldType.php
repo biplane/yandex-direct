@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,13 +9,9 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class FilterFieldType
 {
+    public const ENUM = 'Enum';
 
-    const ENUM = 'Enum';
+    public const NUMBER = 'Number';
 
-    const NUMBER = 'Number';
-
-    const aSTRING = 'String';
-
-
+    public const aSTRING = 'String';
 }
-

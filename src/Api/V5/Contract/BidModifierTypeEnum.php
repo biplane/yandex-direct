@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,21 +9,17 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class BidModifierTypeEnum
 {
+    public const MOBILE_ADJUSTMENT = 'MOBILE_ADJUSTMENT';
 
-    const MOBILE_ADJUSTMENT = 'MOBILE_ADJUSTMENT';
+    public const DESKTOP_ADJUSTMENT = 'DESKTOP_ADJUSTMENT';
 
-    const DESKTOP_ADJUSTMENT = 'DESKTOP_ADJUSTMENT';
+    public const DEMOGRAPHICS_ADJUSTMENT = 'DEMOGRAPHICS_ADJUSTMENT';
 
-    const DEMOGRAPHICS_ADJUSTMENT = 'DEMOGRAPHICS_ADJUSTMENT';
+    public const RETARGETING_ADJUSTMENT = 'RETARGETING_ADJUSTMENT';
 
-    const RETARGETING_ADJUSTMENT = 'RETARGETING_ADJUSTMENT';
+    public const REGIONAL_ADJUSTMENT = 'REGIONAL_ADJUSTMENT';
 
-    const REGIONAL_ADJUSTMENT = 'REGIONAL_ADJUSTMENT';
+    public const VIDEO_ADJUSTMENT = 'VIDEO_ADJUSTMENT';
 
-    const VIDEO_ADJUSTMENT = 'VIDEO_ADJUSTMENT';
-
-    const SMART_AD_ADJUSTMENT = 'SMART_AD_ADJUSTMENT';
-
-
+    public const SMART_AD_ADJUSTMENT = 'SMART_AD_ADJUSTMENT';
 }
-

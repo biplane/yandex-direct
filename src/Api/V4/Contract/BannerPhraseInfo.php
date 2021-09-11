@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class BannerPhraseInfo
 {
-
     protected $Phrase = null;
 
     protected $IsRubric = null;
@@ -82,20 +83,16 @@ class BannerPhraseInfo
 
     /**
      * Creates a new instance of BannerPhraseInfo.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Phrase.
-     *
-     * @return string|null
      */
-    public function getPhrase()
+    public function getPhrase(): ?string
     {
         return $this->Phrase;
     }
@@ -103,10 +100,9 @@ class BannerPhraseInfo
     /**
      * Sets Phrase.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setPhrase($value = null)
+    public function setPhrase(?string $value = null)
     {
         $this->Phrase = $value;
 
@@ -115,10 +111,8 @@ class BannerPhraseInfo
 
     /**
      * Gets IsRubric.
-     *
-     * @return string|null
      */
-    public function getIsRubric()
+    public function getIsRubric(): ?string
     {
         return $this->IsRubric;
     }
@@ -126,10 +120,9 @@ class BannerPhraseInfo
     /**
      * Sets IsRubric.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setIsRubric($value = null)
+    public function setIsRubric(?string $value = null)
     {
         $this->IsRubric = $value;
 
@@ -138,10 +131,8 @@ class BannerPhraseInfo
 
     /**
      * Gets Clicks.
-     *
-     * @return int|null
      */
-    public function getClicks()
+    public function getClicks(): ?int
     {
         return $this->Clicks;
     }
@@ -149,10 +140,9 @@ class BannerPhraseInfo
     /**
      * Sets Clicks.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setClicks($value = null)
+    public function setClicks(?int $value = null)
     {
         $this->Clicks = $value;
 
@@ -161,10 +151,8 @@ class BannerPhraseInfo
 
     /**
      * Gets FirstPlaceClicks.
-     *
-     * @return int|null
      */
-    public function getFirstPlaceClicks()
+    public function getFirstPlaceClicks(): ?int
     {
         return $this->FirstPlaceClicks;
     }
@@ -172,10 +160,9 @@ class BannerPhraseInfo
     /**
      * Sets FirstPlaceClicks.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setFirstPlaceClicks($value = null)
+    public function setFirstPlaceClicks(?int $value = null)
     {
         $this->FirstPlaceClicks = $value;
 
@@ -184,10 +171,8 @@ class BannerPhraseInfo
 
     /**
      * Gets PremiumClicks.
-     *
-     * @return int|null
      */
-    public function getPremiumClicks()
+    public function getPremiumClicks(): ?int
     {
         return $this->PremiumClicks;
     }
@@ -195,10 +180,9 @@ class BannerPhraseInfo
     /**
      * Sets PremiumClicks.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setPremiumClicks($value = null)
+    public function setPremiumClicks(?int $value = null)
     {
         $this->PremiumClicks = $value;
 
@@ -207,10 +191,8 @@ class BannerPhraseInfo
 
     /**
      * Gets Shows.
-     *
-     * @return int|null
      */
-    public function getShows()
+    public function getShows(): ?int
     {
         return $this->Shows;
     }
@@ -218,10 +200,9 @@ class BannerPhraseInfo
     /**
      * Sets Shows.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setShows($value = null)
+    public function setShows(?int $value = null)
     {
         $this->Shows = $value;
 
@@ -230,10 +211,8 @@ class BannerPhraseInfo
 
     /**
      * Gets Min.
-     *
-     * @return float|null
      */
-    public function getMin()
+    public function getMin(): ?float
     {
         return $this->Min;
     }
@@ -241,10 +220,9 @@ class BannerPhraseInfo
     /**
      * Sets Min.
      *
-     * @param float|null $value
      * @return $this
      */
-    public function setMin($value = null)
+    public function setMin(?float $value = null)
     {
         $this->Min = $value;
 
@@ -253,10 +231,8 @@ class BannerPhraseInfo
 
     /**
      * Gets Max.
-     *
-     * @return float|null
      */
-    public function getMax()
+    public function getMax(): ?float
     {
         return $this->Max;
     }
@@ -264,10 +240,9 @@ class BannerPhraseInfo
     /**
      * Sets Max.
      *
-     * @param float|null $value
      * @return $this
      */
-    public function setMax($value = null)
+    public function setMax(?float $value = null)
     {
         $this->Max = $value;
 
@@ -276,10 +251,8 @@ class BannerPhraseInfo
 
     /**
      * Gets PremiumMin.
-     *
-     * @return float|null
      */
-    public function getPremiumMin()
+    public function getPremiumMin(): ?float
     {
         return $this->PremiumMin;
     }
@@ -287,10 +260,9 @@ class BannerPhraseInfo
     /**
      * Sets PremiumMin.
      *
-     * @param float|null $value
      * @return $this
      */
-    public function setPremiumMin($value = null)
+    public function setPremiumMin(?float $value = null)
     {
         $this->PremiumMin = $value;
 
@@ -299,10 +271,8 @@ class BannerPhraseInfo
 
     /**
      * Gets PremiumMax.
-     *
-     * @return float|null
      */
-    public function getPremiumMax()
+    public function getPremiumMax(): ?float
     {
         return $this->PremiumMax;
     }
@@ -310,10 +280,9 @@ class BannerPhraseInfo
     /**
      * Sets PremiumMax.
      *
-     * @param float|null $value
      * @return $this
      */
-    public function setPremiumMax($value = null)
+    public function setPremiumMax(?float $value = null)
     {
         $this->PremiumMax = $value;
 
@@ -322,10 +291,8 @@ class BannerPhraseInfo
 
     /**
      * Gets CTR.
-     *
-     * @return float|null
      */
-    public function getCTR()
+    public function getCTR(): ?float
     {
         return $this->CTR;
     }
@@ -333,10 +300,9 @@ class BannerPhraseInfo
     /**
      * Sets CTR.
      *
-     * @param float|null $value
      * @return $this
      */
-    public function setCTR($value = null)
+    public function setCTR(?float $value = null)
     {
         $this->CTR = $value;
 
@@ -345,10 +311,8 @@ class BannerPhraseInfo
 
     /**
      * Gets FirstPlaceCTR.
-     *
-     * @return float|null
      */
-    public function getFirstPlaceCTR()
+    public function getFirstPlaceCTR(): ?float
     {
         return $this->FirstPlaceCTR;
     }
@@ -356,10 +320,9 @@ class BannerPhraseInfo
     /**
      * Sets FirstPlaceCTR.
      *
-     * @param float|null $value
      * @return $this
      */
-    public function setFirstPlaceCTR($value = null)
+    public function setFirstPlaceCTR(?float $value = null)
     {
         $this->FirstPlaceCTR = $value;
 
@@ -368,10 +331,8 @@ class BannerPhraseInfo
 
     /**
      * Gets PremiumCTR.
-     *
-     * @return float|null
      */
-    public function getPremiumCTR()
+    public function getPremiumCTR(): ?float
     {
         return $this->PremiumCTR;
     }
@@ -379,10 +340,9 @@ class BannerPhraseInfo
     /**
      * Sets PremiumCTR.
      *
-     * @param float|null $value
      * @return $this
      */
-    public function setPremiumCTR($value = null)
+    public function setPremiumCTR(?float $value = null)
     {
         $this->PremiumCTR = $value;
 
@@ -391,10 +351,8 @@ class BannerPhraseInfo
 
     /**
      * Gets LowCTRWarning.
-     *
-     * @return string|null
      */
-    public function getLowCTRWarning()
+    public function getLowCTRWarning(): ?string
     {
         return $this->LowCTRWarning;
     }
@@ -402,10 +360,9 @@ class BannerPhraseInfo
     /**
      * Sets LowCTRWarning.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setLowCTRWarning($value = null)
+    public function setLowCTRWarning(?string $value = null)
     {
         $this->LowCTRWarning = $value;
 
@@ -414,10 +371,8 @@ class BannerPhraseInfo
 
     /**
      * Gets LowCTR.
-     *
-     * @return string|null
      */
-    public function getLowCTR()
+    public function getLowCTR(): ?string
     {
         return $this->LowCTR;
     }
@@ -425,10 +380,9 @@ class BannerPhraseInfo
     /**
      * Sets LowCTR.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setLowCTR($value = null)
+    public function setLowCTR(?string $value = null)
     {
         $this->LowCTR = $value;
 
@@ -437,10 +391,8 @@ class BannerPhraseInfo
 
     /**
      * Gets ContextPrice.
-     *
-     * @return float|null
      */
-    public function getContextPrice()
+    public function getContextPrice(): ?float
     {
         return $this->ContextPrice;
     }
@@ -448,10 +400,9 @@ class BannerPhraseInfo
     /**
      * Sets ContextPrice.
      *
-     * @param float|null $value
      * @return $this
      */
-    public function setContextPrice($value = null)
+    public function setContextPrice(?float $value = null)
     {
         $this->ContextPrice = $value;
 
@@ -463,7 +414,7 @@ class BannerPhraseInfo
      *
      * @return CoverageInfo[]|null
      */
-    public function getContextCoverage()
+    public function getContextCoverage(): ?array
     {
         return $this->ContextCoverage;
     }
@@ -472,9 +423,10 @@ class BannerPhraseInfo
      * Sets ContextCoverage.
      *
      * @param CoverageInfo[]|null $value
+     *
      * @return $this
      */
-    public function setContextCoverage(array $value = null)
+    public function setContextCoverage(?array $value = null)
     {
         $this->ContextCoverage = $value;
 
@@ -483,10 +435,8 @@ class BannerPhraseInfo
 
     /**
      * Gets BannerID.
-     *
-     * @return int|null
      */
-    public function getBannerID()
+    public function getBannerID(): ?int
     {
         return $this->BannerID;
     }
@@ -494,10 +444,9 @@ class BannerPhraseInfo
     /**
      * Sets BannerID.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setBannerID($value = null)
+    public function setBannerID(?int $value = null)
     {
         $this->BannerID = $value;
 
@@ -506,10 +455,8 @@ class BannerPhraseInfo
 
     /**
      * Gets Price.
-     *
-     * @return float|null
      */
-    public function getPrice()
+    public function getPrice(): ?float
     {
         return $this->Price;
     }
@@ -517,10 +464,9 @@ class BannerPhraseInfo
     /**
      * Sets Price.
      *
-     * @param float|null $value
      * @return $this
      */
-    public function setPrice($value = null)
+    public function setPrice(?float $value = null)
     {
         $this->Price = $value;
 
@@ -532,7 +478,7 @@ class BannerPhraseInfo
      *
      * @return float[]|null
      */
-    public function getPrices()
+    public function getPrices(): ?array
     {
         return $this->Prices;
     }
@@ -541,9 +487,10 @@ class BannerPhraseInfo
      * Sets Prices.
      *
      * @param float[]|null $value
+     *
      * @return $this
      */
-    public function setPrices(array $value = null)
+    public function setPrices(?array $value = null)
     {
         $this->Prices = $value;
 
@@ -555,7 +502,7 @@ class BannerPhraseInfo
      *
      * @return CoverageInfo[]|null
      */
-    public function getCoverage()
+    public function getCoverage(): ?array
     {
         return $this->Coverage;
     }
@@ -564,9 +511,10 @@ class BannerPhraseInfo
      * Sets Coverage.
      *
      * @param CoverageInfo[]|null $value
+     *
      * @return $this
      */
-    public function setCoverage(array $value = null)
+    public function setCoverage(?array $value = null)
     {
         $this->Coverage = $value;
 
@@ -575,10 +523,8 @@ class BannerPhraseInfo
 
     /**
      * Gets AutoBroker.
-     *
-     * @return string|null
      */
-    public function getAutoBroker()
+    public function getAutoBroker(): ?string
     {
         return $this->AutoBroker;
     }
@@ -586,10 +532,9 @@ class BannerPhraseInfo
     /**
      * Sets AutoBroker.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setAutoBroker($value = null)
+    public function setAutoBroker(?string $value = null)
     {
         $this->AutoBroker = $value;
 
@@ -598,10 +543,8 @@ class BannerPhraseInfo
 
     /**
      * Gets PhraseID.
-     *
-     * @return int
      */
-    public function getPhraseID()
+    public function getPhraseID(): int
     {
         return $this->PhraseID;
     }
@@ -609,10 +552,9 @@ class BannerPhraseInfo
     /**
      * Sets PhraseID.
      *
-     * @param int $value
      * @return $this
      */
-    public function setPhraseID($value)
+    public function setPhraseID(int $value)
     {
         $this->PhraseID = $value;
 
@@ -621,10 +563,8 @@ class BannerPhraseInfo
 
     /**
      * Gets CurrentOnSearch.
-     *
-     * @return float|null
      */
-    public function getCurrentOnSearch()
+    public function getCurrentOnSearch(): ?float
     {
         return $this->CurrentOnSearch;
     }
@@ -632,10 +572,9 @@ class BannerPhraseInfo
     /**
      * Sets CurrentOnSearch.
      *
-     * @param float|null $value
      * @return $this
      */
-    public function setCurrentOnSearch($value = null)
+    public function setCurrentOnSearch(?float $value = null)
     {
         $this->CurrentOnSearch = $value;
 
@@ -644,10 +583,8 @@ class BannerPhraseInfo
 
     /**
      * Gets CampaignID.
-     *
-     * @return int|null
      */
-    public function getCampaignID()
+    public function getCampaignID(): ?int
     {
         return $this->CampaignID;
     }
@@ -655,10 +592,9 @@ class BannerPhraseInfo
     /**
      * Sets CampaignID.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setCampaignID($value = null)
+    public function setCampaignID(?int $value = null)
     {
         $this->CampaignID = $value;
 
@@ -667,10 +603,8 @@ class BannerPhraseInfo
 
     /**
      * Gets MinPrice.
-     *
-     * @return float|null
      */
-    public function getMinPrice()
+    public function getMinPrice(): ?float
     {
         return $this->MinPrice;
     }
@@ -678,10 +612,9 @@ class BannerPhraseInfo
     /**
      * Sets MinPrice.
      *
-     * @param float|null $value
      * @return $this
      */
-    public function setMinPrice($value = null)
+    public function setMinPrice(?float $value = null)
     {
         $this->MinPrice = $value;
 
@@ -690,10 +623,8 @@ class BannerPhraseInfo
 
     /**
      * Gets AutoBudgetPriority.
-     *
-     * @return string|null
      */
-    public function getAutoBudgetPriority()
+    public function getAutoBudgetPriority(): ?string
     {
         return $this->AutoBudgetPriority;
     }
@@ -701,10 +632,9 @@ class BannerPhraseInfo
     /**
      * Sets AutoBudgetPriority.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setAutoBudgetPriority($value = null)
+    public function setAutoBudgetPriority(?string $value = null)
     {
         $this->AutoBudgetPriority = $value;
 
@@ -713,10 +643,8 @@ class BannerPhraseInfo
 
     /**
      * Gets StatusPhraseModerate.
-     *
-     * @return string|null
      */
-    public function getStatusPhraseModerate()
+    public function getStatusPhraseModerate(): ?string
     {
         return $this->StatusPhraseModerate;
     }
@@ -724,10 +652,9 @@ class BannerPhraseInfo
     /**
      * Sets StatusPhraseModerate.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setStatusPhraseModerate($value = null)
+    public function setStatusPhraseModerate(?string $value = null)
     {
         $this->StatusPhraseModerate = $value;
 
@@ -736,10 +663,8 @@ class BannerPhraseInfo
 
     /**
      * Gets ContextLowCTR.
-     *
-     * @return string|null
      */
-    public function getContextLowCTR()
+    public function getContextLowCTR(): ?string
     {
         return $this->ContextLowCTR;
     }
@@ -747,10 +672,9 @@ class BannerPhraseInfo
     /**
      * Sets ContextLowCTR.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setContextLowCTR($value = null)
+    public function setContextLowCTR(?string $value = null)
     {
         $this->ContextLowCTR = $value;
 
@@ -759,10 +683,8 @@ class BannerPhraseInfo
 
     /**
      * Gets UserParams.
-     *
-     * @return PhraseUserParams|null
      */
-    public function getUserParams()
+    public function getUserParams(): ?PhraseUserParams
     {
         return $this->UserParams;
     }
@@ -770,10 +692,9 @@ class BannerPhraseInfo
     /**
      * Sets UserParams.
      *
-     * @param PhraseUserParams|null $value
      * @return $this
      */
-    public function setUserParams(PhraseUserParams $value = null)
+    public function setUserParams(?PhraseUserParams $value = null)
     {
         $this->UserParams = $value;
 
@@ -785,7 +706,7 @@ class BannerPhraseInfo
      *
      * @return PhraseAuctionBids[]|null
      */
-    public function getAuctionBids()
+    public function getAuctionBids(): ?array
     {
         return $this->AuctionBids;
     }
@@ -794,9 +715,10 @@ class BannerPhraseInfo
      * Sets AuctionBids.
      *
      * @param PhraseAuctionBids[]|null $value
+     *
      * @return $this
      */
-    public function setAuctionBids(array $value = null)
+    public function setAuctionBids(?array $value = null)
     {
         $this->AuctionBids = $value;
 
@@ -805,10 +727,8 @@ class BannerPhraseInfo
 
     /**
      * Gets AdGroupID.
-     *
-     * @return int|null
      */
-    public function getAdGroupID()
+    public function getAdGroupID(): ?int
     {
         return $this->AdGroupID;
     }
@@ -816,10 +736,9 @@ class BannerPhraseInfo
     /**
      * Sets AdGroupID.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setAdGroupID($value = null)
+    public function setAdGroupID(?int $value = null)
     {
         $this->AdGroupID = $value;
 
@@ -828,10 +747,8 @@ class BannerPhraseInfo
 
     /**
      * Gets StatusPaused.
-     *
-     * @return string|null
      */
-    public function getStatusPaused()
+    public function getStatusPaused(): ?string
     {
         return $this->StatusPaused;
     }
@@ -839,10 +756,9 @@ class BannerPhraseInfo
     /**
      * Sets StatusPaused.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setStatusPaused($value = null)
+    public function setStatusPaused(?string $value = null)
     {
         $this->StatusPaused = $value;
 
@@ -851,10 +767,8 @@ class BannerPhraseInfo
 
     /**
      * Gets ContextClicks.
-     *
-     * @return int|null
      */
-    public function getContextClicks()
+    public function getContextClicks(): ?int
     {
         return $this->ContextClicks;
     }
@@ -862,10 +776,9 @@ class BannerPhraseInfo
     /**
      * Sets ContextClicks.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setContextClicks($value = null)
+    public function setContextClicks(?int $value = null)
     {
         $this->ContextClicks = $value;
 
@@ -874,10 +787,8 @@ class BannerPhraseInfo
 
     /**
      * Gets ContextShows.
-     *
-     * @return int|null
      */
-    public function getContextShows()
+    public function getContextShows(): ?int
     {
         return $this->ContextShows;
     }
@@ -885,10 +796,9 @@ class BannerPhraseInfo
     /**
      * Sets ContextShows.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setContextShows($value = null)
+    public function setContextShows(?int $value = null)
     {
         $this->ContextShows = $value;
 
@@ -897,10 +807,8 @@ class BannerPhraseInfo
 
     /**
      * Gets Currency.
-     *
-     * @return string|null
      */
-    public function getCurrency()
+    public function getCurrency(): ?string
     {
         return $this->Currency;
     }
@@ -908,16 +816,12 @@ class BannerPhraseInfo
     /**
      * Sets Currency.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setCurrency($value = null)
+    public function setCurrency(?string $value = null)
     {
         $this->Currency = $value;
 
         return $this;
     }
-
-
 }
-

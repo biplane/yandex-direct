@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,27 +9,22 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class CurrenciesItem
 {
-
     protected $Currency = null;
 
     protected $Properties = [];
 
     /**
      * Creates a new instance of CurrenciesItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Currency.
-     *
-     * @return string
      */
-    public function getCurrency()
+    public function getCurrency(): string
     {
         return $this->Currency;
     }
@@ -35,10 +32,9 @@ class CurrenciesItem
     /**
      * Sets Currency.
      *
-     * @param string $value
      * @return $this
      */
-    public function setCurrency($value)
+    public function setCurrency(string $value)
     {
         $this->Currency = $value;
 
@@ -50,7 +46,7 @@ class CurrenciesItem
      *
      * @return ConstantsItem[]
      */
-    public function getProperties()
+    public function getProperties(): array
     {
         return $this->Properties;
     }
@@ -59,6 +55,7 @@ class CurrenciesItem
      * Sets Properties.
      *
      * @param ConstantsItem[] $value
+     *
      * @return $this
      */
     public function setProperties(array $value)
@@ -67,7 +64,4 @@ class CurrenciesItem
 
         return $this;
     }
-
-
 }
-

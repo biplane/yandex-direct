@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class CampaignGetItem extends CampaignBase
 {
-
 //    Can be omit.
 //    protected $Id = null;
 
@@ -82,31 +83,26 @@ class CampaignGetItem extends CampaignBase
 
     /**
      * Creates a new instance of CampaignGetItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Id.
-     *
-     * @return int|null
      */
-    public function getId()
+    public function getId(): ?int
     {
-        return isset($this->Id) ? $this->Id : null;
+        return $this->Id ?? null;
     }
 
     /**
      * Sets Id.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setId($value = null)
+    public function setId(?int $value = null)
     {
         $this->Id = $value;
 
@@ -115,21 +111,18 @@ class CampaignGetItem extends CampaignBase
 
     /**
      * Gets Name.
-     *
-     * @return string|null
      */
-    public function getName()
+    public function getName(): ?string
     {
-        return isset($this->Name) ? $this->Name : null;
+        return $this->Name ?? null;
     }
 
     /**
      * Sets Name.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setName($value = null)
+    public function setName(?string $value = null)
     {
         $this->Name = $value;
 
@@ -138,21 +131,18 @@ class CampaignGetItem extends CampaignBase
 
     /**
      * Gets StartDate.
-     *
-     * @return string|null
      */
-    public function getStartDate()
+    public function getStartDate(): ?string
     {
-        return isset($this->StartDate) ? $this->StartDate : null;
+        return $this->StartDate ?? null;
     }
 
     /**
      * Sets StartDate.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setStartDate($value = null)
+    public function setStartDate(?string $value = null)
     {
         $this->StartDate = $value;
 
@@ -162,22 +152,21 @@ class CampaignGetItem extends CampaignBase
     /**
      * Gets Type.
      *
-     * @return string|null
      * @see CampaignTypeGetEnum
      */
-    public function getType()
+    public function getType(): ?string
     {
-        return isset($this->Type) ? $this->Type : null;
+        return $this->Type ?? null;
     }
 
     /**
      * Sets Type.
      *
-     * @param string|null $value
-     * @return $this
      * @see CampaignTypeGetEnum
+     *
+     * @return $this
      */
-    public function setType($value = null)
+    public function setType(?string $value = null)
     {
         $this->Type = $value;
 
@@ -187,22 +176,21 @@ class CampaignGetItem extends CampaignBase
     /**
      * Gets Status.
      *
-     * @return string|null
      * @see StatusEnum
      */
-    public function getStatus()
+    public function getStatus(): ?string
     {
-        return isset($this->Status) ? $this->Status : null;
+        return $this->Status ?? null;
     }
 
     /**
      * Sets Status.
      *
-     * @param string|null $value
-     * @return $this
      * @see StatusEnum
+     *
+     * @return $this
      */
-    public function setStatus($value = null)
+    public function setStatus(?string $value = null)
     {
         $this->Status = $value;
 
@@ -212,22 +200,21 @@ class CampaignGetItem extends CampaignBase
     /**
      * Gets State.
      *
-     * @return string|null
      * @see CampaignStateGetEnum
      */
-    public function getState()
+    public function getState(): ?string
     {
-        return isset($this->State) ? $this->State : null;
+        return $this->State ?? null;
     }
 
     /**
      * Sets State.
      *
-     * @param string|null $value
-     * @return $this
      * @see CampaignStateGetEnum
+     *
+     * @return $this
      */
-    public function setState($value = null)
+    public function setState(?string $value = null)
     {
         $this->State = $value;
 
@@ -237,22 +224,21 @@ class CampaignGetItem extends CampaignBase
     /**
      * Gets StatusPayment.
      *
-     * @return string|null
      * @see CampaignStatusPaymentEnum
      */
-    public function getStatusPayment()
+    public function getStatusPayment(): ?string
     {
-        return isset($this->StatusPayment) ? $this->StatusPayment : null;
+        return $this->StatusPayment ?? null;
     }
 
     /**
      * Sets StatusPayment.
      *
-     * @param string|null $value
-     * @return $this
      * @see CampaignStatusPaymentEnum
+     *
+     * @return $this
      */
-    public function setStatusPayment($value = null)
+    public function setStatusPayment(?string $value = null)
     {
         $this->StatusPayment = $value;
 
@@ -261,21 +247,18 @@ class CampaignGetItem extends CampaignBase
 
     /**
      * Gets StatusClarification.
-     *
-     * @return string|null
      */
-    public function getStatusClarification()
+    public function getStatusClarification(): ?string
     {
-        return isset($this->StatusClarification) ? $this->StatusClarification : null;
+        return $this->StatusClarification ?? null;
     }
 
     /**
      * Sets StatusClarification.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setStatusClarification($value = null)
+    public function setStatusClarification(?string $value = null)
     {
         $this->StatusClarification = $value;
 
@@ -284,21 +267,18 @@ class CampaignGetItem extends CampaignBase
 
     /**
      * Gets SourceId.
-     *
-     * @return int|null
      */
-    public function getSourceId()
+    public function getSourceId(): ?int
     {
-        return isset($this->SourceId) ? $this->SourceId : null;
+        return $this->SourceId ?? null;
     }
 
     /**
      * Sets SourceId.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setSourceId($value = null)
+    public function setSourceId(?int $value = null)
     {
         $this->SourceId = $value;
 
@@ -307,21 +287,18 @@ class CampaignGetItem extends CampaignBase
 
     /**
      * Gets Statistics.
-     *
-     * @return Statistics|null
      */
-    public function getStatistics()
+    public function getStatistics(): ?Statistics
     {
-        return isset($this->Statistics) ? $this->Statistics : null;
+        return $this->Statistics ?? null;
     }
 
     /**
      * Sets Statistics.
      *
-     * @param Statistics|null $value
      * @return $this
      */
-    public function setStatistics(Statistics $value = null)
+    public function setStatistics(?Statistics $value = null)
     {
         $this->Statistics = $value;
 
@@ -331,22 +308,21 @@ class CampaignGetItem extends CampaignBase
     /**
      * Gets Currency.
      *
-     * @return string|null
      * @see CurrencyEnum
      */
-    public function getCurrency()
+    public function getCurrency(): ?string
     {
-        return isset($this->Currency) ? $this->Currency : null;
+        return $this->Currency ?? null;
     }
 
     /**
      * Sets Currency.
      *
-     * @param string|null $value
-     * @return $this
      * @see CurrencyEnum
+     *
+     * @return $this
      */
-    public function setCurrency($value = null)
+    public function setCurrency(?string $value = null)
     {
         $this->Currency = $value;
 
@@ -355,21 +331,18 @@ class CampaignGetItem extends CampaignBase
 
     /**
      * Gets Funds.
-     *
-     * @return FundsParam|null
      */
-    public function getFunds()
+    public function getFunds(): ?FundsParam
     {
-        return isset($this->Funds) ? $this->Funds : null;
+        return $this->Funds ?? null;
     }
 
     /**
      * Sets Funds.
      *
-     * @param FundsParam|null $value
      * @return $this
      */
-    public function setFunds(FundsParam $value = null)
+    public function setFunds(?FundsParam $value = null)
     {
         $this->Funds = $value;
 
@@ -378,21 +351,18 @@ class CampaignGetItem extends CampaignBase
 
     /**
      * Gets RepresentedBy.
-     *
-     * @return CampaignAssistant|null
      */
-    public function getRepresentedBy()
+    public function getRepresentedBy(): ?CampaignAssistant
     {
-        return isset($this->RepresentedBy) ? $this->RepresentedBy : null;
+        return $this->RepresentedBy ?? null;
     }
 
     /**
      * Sets RepresentedBy.
      *
-     * @param CampaignAssistant|null $value
      * @return $this
      */
-    public function setRepresentedBy(CampaignAssistant $value = null)
+    public function setRepresentedBy(?CampaignAssistant $value = null)
     {
         $this->RepresentedBy = $value;
 
@@ -401,21 +371,18 @@ class CampaignGetItem extends CampaignBase
 
     /**
      * Gets DailyBudget.
-     *
-     * @return DailyBudget|null
      */
-    public function getDailyBudget()
+    public function getDailyBudget(): ?DailyBudget
     {
-        return isset($this->DailyBudget) ? $this->DailyBudget : null;
+        return $this->DailyBudget ?? null;
     }
 
     /**
      * Sets DailyBudget.
      *
-     * @param DailyBudget|null $value
      * @return $this
      */
-    public function setDailyBudget(DailyBudget $value = null)
+    public function setDailyBudget(?DailyBudget $value = null)
     {
         $this->DailyBudget = $value;
 
@@ -424,21 +391,18 @@ class CampaignGetItem extends CampaignBase
 
     /**
      * Gets EndDate.
-     *
-     * @return string|null
      */
-    public function getEndDate()
+    public function getEndDate(): ?string
     {
-        return isset($this->EndDate) ? $this->EndDate : null;
+        return $this->EndDate ?? null;
     }
 
     /**
      * Sets EndDate.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setEndDate($value = null)
+    public function setEndDate(?string $value = null)
     {
         $this->EndDate = $value;
 
@@ -450,18 +414,19 @@ class CampaignGetItem extends CampaignBase
      *
      * @return string[]|null
      */
-    public function getNegativeKeywords()
+    public function getNegativeKeywords(): ?array
     {
-        return isset($this->NegativeKeywords) ? $this->NegativeKeywords : null;
+        return $this->NegativeKeywords ?? null;
     }
 
     /**
      * Sets NegativeKeywords.
      *
      * @param string[]|null $value
+     *
      * @return $this
      */
-    public function setNegativeKeywords(array $value = null)
+    public function setNegativeKeywords(?array $value = null)
     {
         $this->NegativeKeywords = $value;
 
@@ -473,18 +438,19 @@ class CampaignGetItem extends CampaignBase
      *
      * @return string[]|null
      */
-    public function getBlockedIps()
+    public function getBlockedIps(): ?array
     {
-        return isset($this->BlockedIps) ? $this->BlockedIps : null;
+        return $this->BlockedIps ?? null;
     }
 
     /**
      * Sets BlockedIps.
      *
      * @param string[]|null $value
+     *
      * @return $this
      */
-    public function setBlockedIps(array $value = null)
+    public function setBlockedIps(?array $value = null)
     {
         $this->BlockedIps = $value;
 
@@ -496,18 +462,19 @@ class CampaignGetItem extends CampaignBase
      *
      * @return string[]|null
      */
-    public function getExcludedSites()
+    public function getExcludedSites(): ?array
     {
-        return isset($this->ExcludedSites) ? $this->ExcludedSites : null;
+        return $this->ExcludedSites ?? null;
     }
 
     /**
      * Sets ExcludedSites.
      *
      * @param string[]|null $value
+     *
      * @return $this
      */
-    public function setExcludedSites(array $value = null)
+    public function setExcludedSites(?array $value = null)
     {
         $this->ExcludedSites = $value;
 
@@ -516,21 +483,18 @@ class CampaignGetItem extends CampaignBase
 
     /**
      * Gets TextCampaign.
-     *
-     * @return TextCampaignGetItem|null
      */
-    public function getTextCampaign()
+    public function getTextCampaign(): ?TextCampaignGetItem
     {
-        return isset($this->TextCampaign) ? $this->TextCampaign : null;
+        return $this->TextCampaign ?? null;
     }
 
     /**
      * Sets TextCampaign.
      *
-     * @param TextCampaignGetItem|null $value
      * @return $this
      */
-    public function setTextCampaign(TextCampaignGetItem $value = null)
+    public function setTextCampaign(?TextCampaignGetItem $value = null)
     {
         $this->TextCampaign = $value;
 
@@ -539,21 +503,18 @@ class CampaignGetItem extends CampaignBase
 
     /**
      * Gets MobileAppCampaign.
-     *
-     * @return MobileAppCampaignGetItem|null
      */
-    public function getMobileAppCampaign()
+    public function getMobileAppCampaign(): ?MobileAppCampaignGetItem
     {
-        return isset($this->MobileAppCampaign) ? $this->MobileAppCampaign : null;
+        return $this->MobileAppCampaign ?? null;
     }
 
     /**
      * Sets MobileAppCampaign.
      *
-     * @param MobileAppCampaignGetItem|null $value
      * @return $this
      */
-    public function setMobileAppCampaign(MobileAppCampaignGetItem $value = null)
+    public function setMobileAppCampaign(?MobileAppCampaignGetItem $value = null)
     {
         $this->MobileAppCampaign = $value;
 
@@ -562,21 +523,18 @@ class CampaignGetItem extends CampaignBase
 
     /**
      * Gets DynamicTextCampaign.
-     *
-     * @return DynamicTextCampaignGetItem|null
      */
-    public function getDynamicTextCampaign()
+    public function getDynamicTextCampaign(): ?DynamicTextCampaignGetItem
     {
-        return isset($this->DynamicTextCampaign) ? $this->DynamicTextCampaign : null;
+        return $this->DynamicTextCampaign ?? null;
     }
 
     /**
      * Sets DynamicTextCampaign.
      *
-     * @param DynamicTextCampaignGetItem|null $value
      * @return $this
      */
-    public function setDynamicTextCampaign(DynamicTextCampaignGetItem $value = null)
+    public function setDynamicTextCampaign(?DynamicTextCampaignGetItem $value = null)
     {
         $this->DynamicTextCampaign = $value;
 
@@ -585,21 +543,18 @@ class CampaignGetItem extends CampaignBase
 
     /**
      * Gets CpmBannerCampaign.
-     *
-     * @return CpmBannerCampaignGetItem|null
      */
-    public function getCpmBannerCampaign()
+    public function getCpmBannerCampaign(): ?CpmBannerCampaignGetItem
     {
-        return isset($this->CpmBannerCampaign) ? $this->CpmBannerCampaign : null;
+        return $this->CpmBannerCampaign ?? null;
     }
 
     /**
      * Sets CpmBannerCampaign.
      *
-     * @param CpmBannerCampaignGetItem|null $value
      * @return $this
      */
-    public function setCpmBannerCampaign(CpmBannerCampaignGetItem $value = null)
+    public function setCpmBannerCampaign(?CpmBannerCampaignGetItem $value = null)
     {
         $this->CpmBannerCampaign = $value;
 
@@ -608,21 +563,18 @@ class CampaignGetItem extends CampaignBase
 
     /**
      * Gets SmartCampaign.
-     *
-     * @return SmartCampaignGetItem|null
      */
-    public function getSmartCampaign()
+    public function getSmartCampaign(): ?SmartCampaignGetItem
     {
-        return isset($this->SmartCampaign) ? $this->SmartCampaign : null;
+        return $this->SmartCampaign ?? null;
     }
 
     /**
      * Sets SmartCampaign.
      *
-     * @param SmartCampaignGetItem|null $value
      * @return $this
      */
-    public function setSmartCampaign(SmartCampaignGetItem $value = null)
+    public function setSmartCampaign(?SmartCampaignGetItem $value = null)
     {
         $this->SmartCampaign = $value;
 
@@ -631,27 +583,21 @@ class CampaignGetItem extends CampaignBase
 
     /**
      * Gets TimeTargeting.
-     *
-     * @return TimeTargeting|null
      */
-    public function getTimeTargeting()
+    public function getTimeTargeting(): ?TimeTargeting
     {
-        return isset($this->TimeTargeting) ? $this->TimeTargeting : null;
+        return $this->TimeTargeting ?? null;
     }
 
     /**
      * Sets TimeTargeting.
      *
-     * @param TimeTargeting|null $value
      * @return $this
      */
-    public function setTimeTargeting(TimeTargeting $value = null)
+    public function setTimeTargeting(?TimeTargeting $value = null)
     {
         $this->TimeTargeting = $value;
 
         return $this;
     }
-
-
 }
-

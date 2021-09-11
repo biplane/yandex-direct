@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,27 +9,23 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AdFieldEnum
 {
+    public const AD_CATEGORIES = 'AdCategories';
 
-    const AD_CATEGORIES = 'AdCategories';
+    public const AGE_LABEL = 'AgeLabel';
 
-    const AGE_LABEL = 'AgeLabel';
+    public const AD_GROUP_ID = 'AdGroupId';
 
-    const AD_GROUP_ID = 'AdGroupId';
+    public const CAMPAIGN_ID = 'CampaignId';
 
-    const CAMPAIGN_ID = 'CampaignId';
+    public const ID = 'Id';
 
-    const ID = 'Id';
+    public const STATE = 'State';
 
-    const STATE = 'State';
+    public const STATUS = 'Status';
 
-    const STATUS = 'Status';
+    public const STATUS_CLARIFICATION = 'StatusClarification';
 
-    const STATUS_CLARIFICATION = 'StatusClarification';
+    public const TYPE = 'Type';
 
-    const TYPE = 'Type';
-
-    const SUBTYPE = 'Subtype';
-
-
+    public const SUBTYPE = 'Subtype';
 }
-

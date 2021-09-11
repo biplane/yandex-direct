@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class StrategyPayForConversionPerFilter
 {
-
 //    Can be omit.
 //    protected $Cpa = null;
 
@@ -19,31 +20,26 @@ class StrategyPayForConversionPerFilter
 
     /**
      * Creates a new instance of StrategyPayForConversionPerFilter.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Cpa.
-     *
-     * @return int|null
      */
-    public function getCpa()
+    public function getCpa(): ?int
     {
-        return isset($this->Cpa) ? $this->Cpa : null;
+        return $this->Cpa ?? null;
     }
 
     /**
      * Sets Cpa.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setCpa($value = null)
+    public function setCpa(?int $value = null)
     {
         $this->Cpa = $value;
 
@@ -52,21 +48,18 @@ class StrategyPayForConversionPerFilter
 
     /**
      * Gets GoalId.
-     *
-     * @return int|null
      */
-    public function getGoalId()
+    public function getGoalId(): ?int
     {
-        return isset($this->GoalId) ? $this->GoalId : null;
+        return $this->GoalId ?? null;
     }
 
     /**
      * Sets GoalId.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setGoalId($value = null)
+    public function setGoalId(?int $value = null)
     {
         $this->GoalId = $value;
 
@@ -75,27 +68,21 @@ class StrategyPayForConversionPerFilter
 
     /**
      * Gets WeeklySpendLimit.
-     *
-     * @return int|null
      */
-    public function getWeeklySpendLimit()
+    public function getWeeklySpendLimit(): ?int
     {
-        return isset($this->WeeklySpendLimit) ? $this->WeeklySpendLimit : null;
+        return $this->WeeklySpendLimit ?? null;
     }
 
     /**
      * Sets WeeklySpendLimit.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setWeeklySpendLimit($value = null)
+    public function setWeeklySpendLimit(?int $value = null)
     {
         $this->WeeklySpendLimit = $value;
 
         return $this;
     }
-
-
 }
-

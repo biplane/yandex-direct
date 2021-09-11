@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class GetRetargetingListsRequest extends GetRequestGeneral
 {
-
 //    Can be omit.
 //    protected $SelectionCriteria = null;
 
@@ -15,31 +16,26 @@ class GetRetargetingListsRequest extends GetRequestGeneral
 
     /**
      * Creates a new instance of GetRetargetingListsRequest.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets SelectionCriteria.
-     *
-     * @return RetargetingListSelectionCriteria|null
      */
-    public function getSelectionCriteria()
+    public function getSelectionCriteria(): ?RetargetingListSelectionCriteria
     {
-        return isset($this->SelectionCriteria) ? $this->SelectionCriteria : null;
+        return $this->SelectionCriteria ?? null;
     }
 
     /**
      * Sets SelectionCriteria.
      *
-     * @param RetargetingListSelectionCriteria|null $value
      * @return $this
      */
-    public function setSelectionCriteria(RetargetingListSelectionCriteria $value = null)
+    public function setSelectionCriteria(?RetargetingListSelectionCriteria $value = null)
     {
         $this->SelectionCriteria = $value;
 
@@ -49,10 +45,11 @@ class GetRetargetingListsRequest extends GetRequestGeneral
     /**
      * Gets FieldNames.
      *
-     * @return string[]
      * @see RetargetingListFieldEnum
+     *
+     * @return string[]
      */
-    public function getFieldNames()
+    public function getFieldNames(): array
     {
         return $this->FieldNames;
     }
@@ -60,9 +57,11 @@ class GetRetargetingListsRequest extends GetRequestGeneral
     /**
      * Sets FieldNames.
      *
-     * @param string[] $value
-     * @return $this
      * @see RetargetingListFieldEnum
+     *
+     * @param string[] $value
+     *
+     * @return $this
      */
     public function setFieldNames(array $value)
     {
@@ -70,7 +69,4 @@ class GetRetargetingListsRequest extends GetRequestGeneral
 
         return $this;
     }
-
-
 }
-

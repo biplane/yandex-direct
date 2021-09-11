@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,15 +9,11 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class DemographicsAdjustmentFieldEnum
 {
+    public const GENDER = 'Gender';
 
-    const GENDER = 'Gender';
+    public const AGE = 'Age';
 
-    const AGE = 'Age';
+    public const BID_MODIFIER = 'BidModifier';
 
-    const BID_MODIFIER = 'BidModifier';
-
-    const ENABLED = 'Enabled';
-
-
+    public const ENABLED = 'Enabled';
 }
-

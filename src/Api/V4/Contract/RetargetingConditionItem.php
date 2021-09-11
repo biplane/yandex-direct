@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,27 +9,22 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class RetargetingConditionItem
 {
-
     protected $Type = null;
 
     protected $Goals = [];
 
     /**
      * Creates a new instance of RetargetingConditionItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Type.
-     *
-     * @return string
      */
-    public function getType()
+    public function getType(): string
     {
         return $this->Type;
     }
@@ -35,10 +32,9 @@ class RetargetingConditionItem
     /**
      * Sets Type.
      *
-     * @param string $value
      * @return $this
      */
-    public function setType($value)
+    public function setType(string $value)
     {
         $this->Type = $value;
 
@@ -50,7 +46,7 @@ class RetargetingConditionItem
      *
      * @return RetargetingConditionGoalItem[]
      */
-    public function getGoals()
+    public function getGoals(): array
     {
         return $this->Goals;
     }
@@ -59,6 +55,7 @@ class RetargetingConditionItem
      * Sets Goals.
      *
      * @param RetargetingConditionGoalItem[] $value
+     *
      * @return $this
      */
     public function setGoals(array $value)
@@ -67,7 +64,4 @@ class RetargetingConditionItem
 
         return $this;
     }
-
-
 }
-

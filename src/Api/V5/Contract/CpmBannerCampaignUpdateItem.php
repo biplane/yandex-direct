@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class CpmBannerCampaignUpdateItem extends CpmBannerCampaignBase
 {
-
 //    Can be omit.
 //    protected $BiddingStrategy = null;
 
@@ -16,31 +17,26 @@ class CpmBannerCampaignUpdateItem extends CpmBannerCampaignBase
 
     /**
      * Creates a new instance of CpmBannerCampaignUpdateItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets BiddingStrategy.
-     *
-     * @return CpmBannerCampaignStrategy|null
      */
-    public function getBiddingStrategy()
+    public function getBiddingStrategy(): ?CpmBannerCampaignStrategy
     {
-        return isset($this->BiddingStrategy) ? $this->BiddingStrategy : null;
+        return $this->BiddingStrategy ?? null;
     }
 
     /**
      * Sets BiddingStrategy.
      *
-     * @param CpmBannerCampaignStrategy|null $value
      * @return $this
      */
-    public function setBiddingStrategy(CpmBannerCampaignStrategy $value = null)
+    public function setBiddingStrategy(?CpmBannerCampaignStrategy $value = null)
     {
         $this->BiddingStrategy = $value;
 
@@ -52,24 +48,22 @@ class CpmBannerCampaignUpdateItem extends CpmBannerCampaignBase
      *
      * @return CpmBannerCampaignSetting[]|null
      */
-    public function getSettings()
+    public function getSettings(): ?array
     {
-        return isset($this->Settings) ? $this->Settings : null;
+        return $this->Settings ?? null;
     }
 
     /**
      * Sets Settings.
      *
      * @param CpmBannerCampaignSetting[]|null $value
+     *
      * @return $this
      */
-    public function setSettings(array $value = null)
+    public function setSettings(?array $value = null)
     {
         $this->Settings = $value;
 
         return $this;
     }
-
-
 }
-

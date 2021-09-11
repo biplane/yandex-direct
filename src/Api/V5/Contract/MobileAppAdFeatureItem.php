@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,17 +9,14 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class MobileAppAdFeatureItem
 {
-
     protected $Feature = null;
 
     protected $Enabled = null;
 
     /**
      * Creates a new instance of MobileAppAdFeatureItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -25,10 +24,9 @@ class MobileAppAdFeatureItem
     /**
      * Gets Feature.
      *
-     * @return string
      * @see MobileAppFeatureEnum
      */
-    public function getFeature()
+    public function getFeature(): string
     {
         return $this->Feature;
     }
@@ -36,11 +34,11 @@ class MobileAppAdFeatureItem
     /**
      * Sets Feature.
      *
-     * @param string $value
-     * @return $this
      * @see MobileAppFeatureEnum
+     *
+     * @return $this
      */
-    public function setFeature($value)
+    public function setFeature(string $value)
     {
         $this->Feature = $value;
 
@@ -50,10 +48,9 @@ class MobileAppAdFeatureItem
     /**
      * Gets Enabled.
      *
-     * @return string
      * @see YesNoEnum
      */
-    public function getEnabled()
+    public function getEnabled(): string
     {
         return $this->Enabled;
     }
@@ -61,17 +58,14 @@ class MobileAppAdFeatureItem
     /**
      * Sets Enabled.
      *
-     * @param string $value
-     * @return $this
      * @see YesNoEnum
+     *
+     * @return $this
      */
-    public function setEnabled($value)
+    public function setEnabled(string $value)
     {
         $this->Enabled = $value;
 
         return $this;
     }
-
-
 }
-

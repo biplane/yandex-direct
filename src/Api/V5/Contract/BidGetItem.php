@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class BidGetItem extends BidActionResult
 {
-
 //    Can be omit.
 //    protected $Bid = null;
 
@@ -40,31 +41,26 @@ class BidGetItem extends BidActionResult
 
     /**
      * Creates a new instance of BidGetItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Bid.
-     *
-     * @return int|null
      */
-    public function getBid()
+    public function getBid(): ?int
     {
-        return isset($this->Bid) ? $this->Bid : null;
+        return $this->Bid ?? null;
     }
 
     /**
      * Sets Bid.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setBid($value = null)
+    public function setBid(?int $value = null)
     {
         $this->Bid = $value;
 
@@ -73,21 +69,18 @@ class BidGetItem extends BidActionResult
 
     /**
      * Gets ContextBid.
-     *
-     * @return int|null
      */
-    public function getContextBid()
+    public function getContextBid(): ?int
     {
-        return isset($this->ContextBid) ? $this->ContextBid : null;
+        return $this->ContextBid ?? null;
     }
 
     /**
      * Sets ContextBid.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setContextBid($value = null)
+    public function setContextBid(?int $value = null)
     {
         $this->ContextBid = $value;
 
@@ -97,22 +90,21 @@ class BidGetItem extends BidActionResult
     /**
      * Gets StrategyPriority.
      *
-     * @return string|null
      * @see PriorityEnum
      */
-    public function getStrategyPriority()
+    public function getStrategyPriority(): ?string
     {
-        return isset($this->StrategyPriority) ? $this->StrategyPriority : null;
+        return $this->StrategyPriority ?? null;
     }
 
     /**
      * Sets StrategyPriority.
      *
-     * @param string|null $value
-     * @return $this
      * @see PriorityEnum
+     *
+     * @return $this
      */
-    public function setStrategyPriority($value = null)
+    public function setStrategyPriority(?string $value = null)
     {
         $this->StrategyPriority = $value;
 
@@ -124,18 +116,19 @@ class BidGetItem extends BidActionResult
      *
      * @return int[]|null
      */
-    public function getCompetitorsBids()
+    public function getCompetitorsBids(): ?array
     {
-        return isset($this->CompetitorsBids) ? $this->CompetitorsBids : null;
+        return $this->CompetitorsBids ?? null;
     }
 
     /**
      * Sets CompetitorsBids.
      *
      * @param int[]|null $value
+     *
      * @return $this
      */
-    public function setCompetitorsBids(array $value = null)
+    public function setCompetitorsBids(?array $value = null)
     {
         $this->CompetitorsBids = $value;
 
@@ -147,18 +140,19 @@ class BidGetItem extends BidActionResult
      *
      * @return SearchPrices[]|null
      */
-    public function getSearchPrices()
+    public function getSearchPrices(): ?array
     {
-        return isset($this->SearchPrices) ? $this->SearchPrices : null;
+        return $this->SearchPrices ?? null;
     }
 
     /**
      * Sets SearchPrices.
      *
      * @param SearchPrices[]|null $value
+     *
      * @return $this
      */
-    public function setSearchPrices(array $value = null)
+    public function setSearchPrices(?array $value = null)
     {
         $this->SearchPrices = $value;
 
@@ -167,21 +161,18 @@ class BidGetItem extends BidActionResult
 
     /**
      * Gets ContextCoverage.
-     *
-     * @return ContextCoverage|null
      */
-    public function getContextCoverage()
+    public function getContextCoverage(): ?ContextCoverage
     {
-        return isset($this->ContextCoverage) ? $this->ContextCoverage : null;
+        return $this->ContextCoverage ?? null;
     }
 
     /**
      * Sets ContextCoverage.
      *
-     * @param ContextCoverage|null $value
      * @return $this
      */
-    public function setContextCoverage(ContextCoverage $value = null)
+    public function setContextCoverage(?ContextCoverage $value = null)
     {
         $this->ContextCoverage = $value;
 
@@ -190,21 +181,18 @@ class BidGetItem extends BidActionResult
 
     /**
      * Gets MinSearchPrice.
-     *
-     * @return int|null
      */
-    public function getMinSearchPrice()
+    public function getMinSearchPrice(): ?int
     {
-        return isset($this->MinSearchPrice) ? $this->MinSearchPrice : null;
+        return $this->MinSearchPrice ?? null;
     }
 
     /**
      * Sets MinSearchPrice.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setMinSearchPrice($value = null)
+    public function setMinSearchPrice(?int $value = null)
     {
         $this->MinSearchPrice = $value;
 
@@ -213,21 +201,18 @@ class BidGetItem extends BidActionResult
 
     /**
      * Gets CurrentSearchPrice.
-     *
-     * @return int|null
      */
-    public function getCurrentSearchPrice()
+    public function getCurrentSearchPrice(): ?int
     {
-        return isset($this->CurrentSearchPrice) ? $this->CurrentSearchPrice : null;
+        return $this->CurrentSearchPrice ?? null;
     }
 
     /**
      * Sets CurrentSearchPrice.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setCurrentSearchPrice($value = null)
+    public function setCurrentSearchPrice(?int $value = null)
     {
         $this->CurrentSearchPrice = $value;
 
@@ -239,18 +224,19 @@ class BidGetItem extends BidActionResult
      *
      * @return AuctionBidItem[]|null
      */
-    public function getAuctionBids()
+    public function getAuctionBids(): ?array
     {
-        return isset($this->AuctionBids) ? $this->AuctionBids : null;
+        return $this->AuctionBids ?? null;
     }
 
     /**
      * Sets AuctionBids.
      *
      * @param AuctionBidItem[]|null $value
+     *
      * @return $this
      */
-    public function setAuctionBids(array $value = null)
+    public function setAuctionBids(?array $value = null)
     {
         $this->AuctionBids = $value;
 
@@ -260,28 +246,24 @@ class BidGetItem extends BidActionResult
     /**
      * Gets ServingStatus.
      *
-     * @return string|null
      * @see ServingStatusEnum
      */
-    public function getServingStatus()
+    public function getServingStatus(): ?string
     {
-        return isset($this->ServingStatus) ? $this->ServingStatus : null;
+        return $this->ServingStatus ?? null;
     }
 
     /**
      * Sets ServingStatus.
      *
-     * @param string|null $value
-     * @return $this
      * @see ServingStatusEnum
+     *
+     * @return $this
      */
-    public function setServingStatus($value = null)
+    public function setServingStatus(?string $value = null)
     {
         $this->ServingStatus = $value;
 
         return $this;
     }
-
-
 }
-

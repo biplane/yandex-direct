@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,16 +9,13 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class GetTurboPagesResponse extends GetResponseGeneral
 {
-
 //    Can be omit.
 //    protected $TurboPages = null;
 
     /**
      * Creates a new instance of GetTurboPagesResponse.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -26,24 +25,22 @@ class GetTurboPagesResponse extends GetResponseGeneral
      *
      * @return TurboPageGetItem[]|null
      */
-    public function getTurboPages()
+    public function getTurboPages(): ?array
     {
-        return isset($this->TurboPages) ? $this->TurboPages : null;
+        return $this->TurboPages ?? null;
     }
 
     /**
      * Sets TurboPages.
      *
      * @param TurboPageGetItem[]|null $value
+     *
      * @return $this
      */
-    public function setTurboPages(array $value = null)
+    public function setTurboPages(?array $value = null)
     {
         $this->TurboPages = $value;
 
         return $this;
     }
-
-
 }
-

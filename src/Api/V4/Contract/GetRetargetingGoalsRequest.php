@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,15 +9,12 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class GetRetargetingGoalsRequest
 {
-
     protected $Logins = null;
 
     /**
      * Creates a new instance of GetRetargetingGoalsRequest.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -25,7 +24,7 @@ class GetRetargetingGoalsRequest
      *
      * @return string[]|null
      */
-    public function getLogins()
+    public function getLogins(): ?array
     {
         return $this->Logins;
     }
@@ -34,15 +33,13 @@ class GetRetargetingGoalsRequest
      * Sets Logins.
      *
      * @param string[]|null $value
+     *
      * @return $this
      */
-    public function setLogins(array $value = null)
+    public function setLogins(?array $value = null)
     {
         $this->Logins = $value;
 
         return $this;
     }
-
-
 }
-

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,27 +9,22 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class DailyBudget
 {
-
     protected $Amount = null;
 
     protected $Mode = null;
 
     /**
      * Creates a new instance of DailyBudget.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Amount.
-     *
-     * @return int
      */
-    public function getAmount()
+    public function getAmount(): int
     {
         return $this->Amount;
     }
@@ -35,10 +32,9 @@ class DailyBudget
     /**
      * Sets Amount.
      *
-     * @param int $value
      * @return $this
      */
-    public function setAmount($value)
+    public function setAmount(int $value)
     {
         $this->Amount = $value;
 
@@ -48,10 +44,9 @@ class DailyBudget
     /**
      * Gets Mode.
      *
-     * @return string
      * @see DailyBudgetModeEnum
      */
-    public function getMode()
+    public function getMode(): string
     {
         return $this->Mode;
     }
@@ -59,17 +54,14 @@ class DailyBudget
     /**
      * Sets Mode.
      *
-     * @param string $value
-     * @return $this
      * @see DailyBudgetModeEnum
+     *
+     * @return $this
      */
-    public function setMode($value)
+    public function setMode(string $value)
     {
         $this->Mode = $value;
 
         return $this;
     }
-
-
 }
-

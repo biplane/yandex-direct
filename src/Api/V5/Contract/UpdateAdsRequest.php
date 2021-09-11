@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,15 +9,12 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class UpdateAdsRequest
 {
-
     protected $Ads = [];
 
     /**
      * Creates a new instance of UpdateAdsRequest.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -25,7 +24,7 @@ class UpdateAdsRequest
      *
      * @return AdUpdateItem[]
      */
-    public function getAds()
+    public function getAds(): array
     {
         return $this->Ads;
     }
@@ -34,6 +33,7 @@ class UpdateAdsRequest
      * Sets Ads.
      *
      * @param AdUpdateItem[] $value
+     *
      * @return $this
      */
     public function setAds(array $value)
@@ -42,7 +42,4 @@ class UpdateAdsRequest
 
         return $this;
     }
-
-
 }
-

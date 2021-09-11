@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class StrategyAverageCpaPerCampaign
 {
-
 //    Can be omit.
 //    protected $AverageCpa = null;
 
@@ -22,31 +23,26 @@ class StrategyAverageCpaPerCampaign
 
     /**
      * Creates a new instance of StrategyAverageCpaPerCampaign.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets AverageCpa.
-     *
-     * @return int|null
      */
-    public function getAverageCpa()
+    public function getAverageCpa(): ?int
     {
-        return isset($this->AverageCpa) ? $this->AverageCpa : null;
+        return $this->AverageCpa ?? null;
     }
 
     /**
      * Sets AverageCpa.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setAverageCpa($value = null)
+    public function setAverageCpa(?int $value = null)
     {
         $this->AverageCpa = $value;
 
@@ -55,21 +51,18 @@ class StrategyAverageCpaPerCampaign
 
     /**
      * Gets GoalId.
-     *
-     * @return int|null
      */
-    public function getGoalId()
+    public function getGoalId(): ?int
     {
-        return isset($this->GoalId) ? $this->GoalId : null;
+        return $this->GoalId ?? null;
     }
 
     /**
      * Sets GoalId.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setGoalId($value = null)
+    public function setGoalId(?int $value = null)
     {
         $this->GoalId = $value;
 
@@ -78,21 +71,18 @@ class StrategyAverageCpaPerCampaign
 
     /**
      * Gets WeeklySpendLimit.
-     *
-     * @return int|null
      */
-    public function getWeeklySpendLimit()
+    public function getWeeklySpendLimit(): ?int
     {
-        return isset($this->WeeklySpendLimit) ? $this->WeeklySpendLimit : null;
+        return $this->WeeklySpendLimit ?? null;
     }
 
     /**
      * Sets WeeklySpendLimit.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setWeeklySpendLimit($value = null)
+    public function setWeeklySpendLimit(?int $value = null)
     {
         $this->WeeklySpendLimit = $value;
 
@@ -101,27 +91,21 @@ class StrategyAverageCpaPerCampaign
 
     /**
      * Gets BidCeiling.
-     *
-     * @return int|null
      */
-    public function getBidCeiling()
+    public function getBidCeiling(): ?int
     {
-        return isset($this->BidCeiling) ? $this->BidCeiling : null;
+        return $this->BidCeiling ?? null;
     }
 
     /**
      * Sets BidCeiling.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setBidCeiling($value = null)
+    public function setBidCeiling(?int $value = null)
     {
         $this->BidCeiling = $value;
 
         return $this;
     }
-
-
 }
-

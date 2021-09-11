@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,16 +9,13 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class ModerateAdsResponse
 {
-
 //    Can be omit.
 //    protected $ModerateResults = null;
 
     /**
      * Creates a new instance of ModerateAdsResponse.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -26,24 +25,22 @@ class ModerateAdsResponse
      *
      * @return ActionResult[]|null
      */
-    public function getModerateResults()
+    public function getModerateResults(): ?array
     {
-        return isset($this->ModerateResults) ? $this->ModerateResults : null;
+        return $this->ModerateResults ?? null;
     }
 
     /**
      * Sets ModerateResults.
      *
      * @param ActionResult[]|null $value
+     *
      * @return $this
      */
-    public function setModerateResults(array $value = null)
+    public function setModerateResults(?array $value = null)
     {
         $this->ModerateResults = $value;
 
         return $this;
     }
-
-
 }
-

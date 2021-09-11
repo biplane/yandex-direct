@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class EmailSettings
 {
-
 //    Can be omit.
 //    protected $Email = null;
 
@@ -25,31 +26,26 @@ class EmailSettings
 
     /**
      * Creates a new instance of EmailSettings.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Email.
-     *
-     * @return string|null
      */
-    public function getEmail()
+    public function getEmail(): ?string
     {
-        return isset($this->Email) ? $this->Email : null;
+        return $this->Email ?? null;
     }
 
     /**
      * Sets Email.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setEmail($value = null)
+    public function setEmail(?string $value = null)
     {
         $this->Email = $value;
 
@@ -58,21 +54,18 @@ class EmailSettings
 
     /**
      * Gets CheckPositionInterval.
-     *
-     * @return int|null
      */
-    public function getCheckPositionInterval()
+    public function getCheckPositionInterval(): ?int
     {
-        return isset($this->CheckPositionInterval) ? $this->CheckPositionInterval : null;
+        return $this->CheckPositionInterval ?? null;
     }
 
     /**
      * Sets CheckPositionInterval.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setCheckPositionInterval($value = null)
+    public function setCheckPositionInterval(?int $value = null)
     {
         $this->CheckPositionInterval = $value;
 
@@ -81,21 +74,18 @@ class EmailSettings
 
     /**
      * Gets WarningBalance.
-     *
-     * @return int|null
      */
-    public function getWarningBalance()
+    public function getWarningBalance(): ?int
     {
-        return isset($this->WarningBalance) ? $this->WarningBalance : null;
+        return $this->WarningBalance ?? null;
     }
 
     /**
      * Sets WarningBalance.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setWarningBalance($value = null)
+    public function setWarningBalance(?int $value = null)
     {
         $this->WarningBalance = $value;
 
@@ -105,22 +95,21 @@ class EmailSettings
     /**
      * Gets SendAccountNews.
      *
-     * @return string|null
      * @see YesNoEnum
      */
-    public function getSendAccountNews()
+    public function getSendAccountNews(): ?string
     {
-        return isset($this->SendAccountNews) ? $this->SendAccountNews : null;
+        return $this->SendAccountNews ?? null;
     }
 
     /**
      * Sets SendAccountNews.
      *
-     * @param string|null $value
-     * @return $this
      * @see YesNoEnum
+     *
+     * @return $this
      */
-    public function setSendAccountNews($value = null)
+    public function setSendAccountNews(?string $value = null)
     {
         $this->SendAccountNews = $value;
 
@@ -130,28 +119,24 @@ class EmailSettings
     /**
      * Gets SendWarnings.
      *
-     * @return string|null
      * @see YesNoEnum
      */
-    public function getSendWarnings()
+    public function getSendWarnings(): ?string
     {
-        return isset($this->SendWarnings) ? $this->SendWarnings : null;
+        return $this->SendWarnings ?? null;
     }
 
     /**
      * Sets SendWarnings.
      *
-     * @param string|null $value
-     * @return $this
      * @see YesNoEnum
+     *
+     * @return $this
      */
-    public function setSendWarnings($value = null)
+    public function setSendWarnings(?string $value = null)
     {
         $this->SendWarnings = $value;
 
         return $this;
     }
-
-
 }
-

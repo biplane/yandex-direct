@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,27 +9,22 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class CampaignStatItem
 {
-
     protected $CampaignId = null;
 
     protected $BorderDate = null;
 
     /**
      * Creates a new instance of CampaignStatItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets CampaignId.
-     *
-     * @return int
      */
-    public function getCampaignId()
+    public function getCampaignId(): int
     {
         return $this->CampaignId;
     }
@@ -35,10 +32,9 @@ class CampaignStatItem
     /**
      * Sets CampaignId.
      *
-     * @param int $value
      * @return $this
      */
-    public function setCampaignId($value)
+    public function setCampaignId(int $value)
     {
         $this->CampaignId = $value;
 
@@ -47,10 +43,8 @@ class CampaignStatItem
 
     /**
      * Gets BorderDate.
-     *
-     * @return string
      */
-    public function getBorderDate()
+    public function getBorderDate(): string
     {
         return $this->BorderDate;
     }
@@ -58,16 +52,12 @@ class CampaignStatItem
     /**
      * Sets BorderDate.
      *
-     * @param string $value
      * @return $this
      */
-    public function setBorderDate($value)
+    public function setBorderDate(string $value)
     {
         $this->BorderDate = $value;
 
         return $this;
     }
-
-
 }
-

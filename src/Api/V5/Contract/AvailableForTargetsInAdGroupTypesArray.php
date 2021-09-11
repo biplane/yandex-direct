@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,15 +9,12 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AvailableForTargetsInAdGroupTypesArray
 {
-
     protected $Items = [];
 
     /**
      * Creates a new instance of AvailableForTargetsInAdGroupTypesArray.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -23,10 +22,11 @@ class AvailableForTargetsInAdGroupTypesArray
     /**
      * Gets Items.
      *
-     * @return string[]
      * @see AdGroupTypesEnum
+     *
+     * @return string[]
      */
-    public function getItems()
+    public function getItems(): array
     {
         return $this->Items;
     }
@@ -34,9 +34,11 @@ class AvailableForTargetsInAdGroupTypesArray
     /**
      * Sets Items.
      *
-     * @param string[] $value
-     * @return $this
      * @see AdGroupTypesEnum
+     *
+     * @param string[] $value
+     *
+     * @return $this
      */
     public function setItems(array $value)
     {
@@ -44,7 +46,4 @@ class AvailableForTargetsInAdGroupTypesArray
 
         return $this;
     }
-
-
 }
-

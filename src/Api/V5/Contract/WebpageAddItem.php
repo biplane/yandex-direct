@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class WebpageAddItem
 {
-
     protected $Name = null;
 
     protected $AdGroupId = null;
@@ -26,20 +27,16 @@ class WebpageAddItem
 
     /**
      * Creates a new instance of WebpageAddItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Name.
-     *
-     * @return string
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->Name;
     }
@@ -47,10 +44,9 @@ class WebpageAddItem
     /**
      * Sets Name.
      *
-     * @param string $value
      * @return $this
      */
-    public function setName($value)
+    public function setName(string $value)
     {
         $this->Name = $value;
 
@@ -59,10 +55,8 @@ class WebpageAddItem
 
     /**
      * Gets AdGroupId.
-     *
-     * @return int
      */
-    public function getAdGroupId()
+    public function getAdGroupId(): int
     {
         return $this->AdGroupId;
     }
@@ -70,10 +64,9 @@ class WebpageAddItem
     /**
      * Sets AdGroupId.
      *
-     * @param int $value
      * @return $this
      */
-    public function setAdGroupId($value)
+    public function setAdGroupId(int $value)
     {
         $this->AdGroupId = $value;
 
@@ -85,18 +78,19 @@ class WebpageAddItem
      *
      * @return WebpageCondition[]|null
      */
-    public function getConditions()
+    public function getConditions(): ?array
     {
-        return isset($this->Conditions) ? $this->Conditions : null;
+        return $this->Conditions ?? null;
     }
 
     /**
      * Sets Conditions.
      *
      * @param WebpageCondition[]|null $value
+     *
      * @return $this
      */
-    public function setConditions(array $value = null)
+    public function setConditions(?array $value = null)
     {
         $this->Conditions = $value;
 
@@ -105,21 +99,18 @@ class WebpageAddItem
 
     /**
      * Gets Bid.
-     *
-     * @return int|null
      */
-    public function getBid()
+    public function getBid(): ?int
     {
-        return isset($this->Bid) ? $this->Bid : null;
+        return $this->Bid ?? null;
     }
 
     /**
      * Sets Bid.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setBid($value = null)
+    public function setBid(?int $value = null)
     {
         $this->Bid = $value;
 
@@ -128,21 +119,18 @@ class WebpageAddItem
 
     /**
      * Gets ContextBid.
-     *
-     * @return int|null
      */
-    public function getContextBid()
+    public function getContextBid(): ?int
     {
-        return isset($this->ContextBid) ? $this->ContextBid : null;
+        return $this->ContextBid ?? null;
     }
 
     /**
      * Sets ContextBid.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setContextBid($value = null)
+    public function setContextBid(?int $value = null)
     {
         $this->ContextBid = $value;
 
@@ -152,28 +140,24 @@ class WebpageAddItem
     /**
      * Gets StrategyPriority.
      *
-     * @return string|null
      * @see PriorityEnum
      */
-    public function getStrategyPriority()
+    public function getStrategyPriority(): ?string
     {
-        return isset($this->StrategyPriority) ? $this->StrategyPriority : null;
+        return $this->StrategyPriority ?? null;
     }
 
     /**
      * Sets StrategyPriority.
      *
-     * @param string|null $value
-     * @return $this
      * @see PriorityEnum
+     *
+     * @return $this
      */
-    public function setStrategyPriority($value = null)
+    public function setStrategyPriority(?string $value = null)
     {
         $this->StrategyPriority = $value;
 
         return $this;
     }
-
-
 }
-

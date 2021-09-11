@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,43 +9,34 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class FileFeedGet
 {
-
 //    Can be omit.
 //    protected $Filename = null;
 
     /**
      * Creates a new instance of FileFeedGet.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Filename.
-     *
-     * @return string|null
      */
-    public function getFilename()
+    public function getFilename(): ?string
     {
-        return isset($this->Filename) ? $this->Filename : null;
+        return $this->Filename ?? null;
     }
 
     /**
      * Sets Filename.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setFilename($value = null)
+    public function setFilename(?string $value = null)
     {
         $this->Filename = $value;
 
         return $this;
     }
-
-
 }
-

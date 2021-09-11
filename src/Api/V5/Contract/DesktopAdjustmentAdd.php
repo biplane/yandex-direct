@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,25 +9,20 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class DesktopAdjustmentAdd
 {
-
     protected $BidModifier = null;
 
     /**
      * Creates a new instance of DesktopAdjustmentAdd.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets BidModifier.
-     *
-     * @return int
      */
-    public function getBidModifier()
+    public function getBidModifier(): int
     {
         return $this->BidModifier;
     }
@@ -33,16 +30,12 @@ class DesktopAdjustmentAdd
     /**
      * Sets BidModifier.
      *
-     * @param int $value
      * @return $this
      */
-    public function setBidModifier($value)
+    public function setBidModifier(int $value)
     {
         $this->BidModifier = $value;
 
         return $this;
     }
-
-
 }
-

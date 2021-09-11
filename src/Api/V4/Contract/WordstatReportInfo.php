@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class WordstatReportInfo
 {
-
     protected $Phrase = null;
 
     protected $GeoID = [];
@@ -18,20 +19,16 @@ class WordstatReportInfo
 
     /**
      * Creates a new instance of WordstatReportInfo.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Phrase.
-     *
-     * @return string
      */
-    public function getPhrase()
+    public function getPhrase(): string
     {
         return $this->Phrase;
     }
@@ -39,10 +36,9 @@ class WordstatReportInfo
     /**
      * Sets Phrase.
      *
-     * @param string $value
      * @return $this
      */
-    public function setPhrase($value)
+    public function setPhrase(string $value)
     {
         $this->Phrase = $value;
 
@@ -54,7 +50,7 @@ class WordstatReportInfo
      *
      * @return int[]
      */
-    public function getGeoID()
+    public function getGeoID(): array
     {
         return $this->GeoID;
     }
@@ -63,6 +59,7 @@ class WordstatReportInfo
      * Sets GeoID.
      *
      * @param int[] $value
+     *
      * @return $this
      */
     public function setGeoID(array $value)
@@ -77,7 +74,7 @@ class WordstatReportInfo
      *
      * @return WordstatItem[]
      */
-    public function getSearchedWith()
+    public function getSearchedWith(): array
     {
         return $this->SearchedWith;
     }
@@ -86,6 +83,7 @@ class WordstatReportInfo
      * Sets SearchedWith.
      *
      * @param WordstatItem[] $value
+     *
      * @return $this
      */
     public function setSearchedWith(array $value)
@@ -100,7 +98,7 @@ class WordstatReportInfo
      *
      * @return WordstatItem[]
      */
-    public function getSearchedAlso()
+    public function getSearchedAlso(): array
     {
         return $this->SearchedAlso;
     }
@@ -109,6 +107,7 @@ class WordstatReportInfo
      * Sets SearchedAlso.
      *
      * @param WordstatItem[] $value
+     *
      * @return $this
      */
     public function setSearchedAlso(array $value)
@@ -117,7 +116,4 @@ class WordstatReportInfo
 
         return $this;
     }
-
-
 }
-

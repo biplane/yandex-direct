@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,15 +9,12 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AddNegativeKeywordSharedSetsRequest
 {
-
     protected $NegativeKeywordSharedSets = [];
 
     /**
      * Creates a new instance of AddNegativeKeywordSharedSetsRequest.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -25,7 +24,7 @@ class AddNegativeKeywordSharedSetsRequest
      *
      * @return NegativeKeywordSharedSetAddItem[]
      */
-    public function getNegativeKeywordSharedSets()
+    public function getNegativeKeywordSharedSets(): array
     {
         return $this->NegativeKeywordSharedSets;
     }
@@ -34,6 +33,7 @@ class AddNegativeKeywordSharedSetsRequest
      * Sets NegativeKeywordSharedSets.
      *
      * @param NegativeKeywordSharedSetAddItem[] $value
+     *
      * @return $this
      */
     public function setNegativeKeywordSharedSets(array $value)
@@ -42,7 +42,4 @@ class AddNegativeKeywordSharedSetsRequest
 
         return $this;
     }
-
-
 }
-

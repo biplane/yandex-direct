@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class BannersFilterInfo
 {
-
     protected $StatusPhoneModerate = null;
 
     protected $StatusBannerModerate = null;
@@ -30,10 +31,8 @@ class BannersFilterInfo
 
     /**
      * Creates a new instance of BannersFilterInfo.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -43,7 +42,7 @@ class BannersFilterInfo
      *
      * @return string[]|null
      */
-    public function getStatusPhoneModerate()
+    public function getStatusPhoneModerate(): ?array
     {
         return $this->StatusPhoneModerate;
     }
@@ -52,9 +51,10 @@ class BannersFilterInfo
      * Sets StatusPhoneModerate.
      *
      * @param string[]|null $value
+     *
      * @return $this
      */
-    public function setStatusPhoneModerate(array $value = null)
+    public function setStatusPhoneModerate(?array $value = null)
     {
         $this->StatusPhoneModerate = $value;
 
@@ -66,7 +66,7 @@ class BannersFilterInfo
      *
      * @return string[]|null
      */
-    public function getStatusBannerModerate()
+    public function getStatusBannerModerate(): ?array
     {
         return $this->StatusBannerModerate;
     }
@@ -75,9 +75,10 @@ class BannersFilterInfo
      * Sets StatusBannerModerate.
      *
      * @param string[]|null $value
+     *
      * @return $this
      */
-    public function setStatusBannerModerate(array $value = null)
+    public function setStatusBannerModerate(?array $value = null)
     {
         $this->StatusBannerModerate = $value;
 
@@ -89,7 +90,7 @@ class BannersFilterInfo
      *
      * @return string[]|null
      */
-    public function getStatusPhrasesModerate()
+    public function getStatusPhrasesModerate(): ?array
     {
         return $this->StatusPhrasesModerate;
     }
@@ -98,9 +99,10 @@ class BannersFilterInfo
      * Sets StatusPhrasesModerate.
      *
      * @param string[]|null $value
+     *
      * @return $this
      */
-    public function setStatusPhrasesModerate(array $value = null)
+    public function setStatusPhrasesModerate(?array $value = null)
     {
         $this->StatusPhrasesModerate = $value;
 
@@ -112,7 +114,7 @@ class BannersFilterInfo
      *
      * @return string[]|null
      */
-    public function getStatusActivating()
+    public function getStatusActivating(): ?array
     {
         return $this->StatusActivating;
     }
@@ -121,9 +123,10 @@ class BannersFilterInfo
      * Sets StatusActivating.
      *
      * @param string[]|null $value
+     *
      * @return $this
      */
-    public function setStatusActivating(array $value = null)
+    public function setStatusActivating(?array $value = null)
     {
         $this->StatusActivating = $value;
 
@@ -135,7 +138,7 @@ class BannersFilterInfo
      *
      * @return string[]|null
      */
-    public function getStatusShow()
+    public function getStatusShow(): ?array
     {
         return $this->StatusShow;
     }
@@ -144,9 +147,10 @@ class BannersFilterInfo
      * Sets StatusShow.
      *
      * @param string[]|null $value
+     *
      * @return $this
      */
-    public function setStatusShow(array $value = null)
+    public function setStatusShow(?array $value = null)
     {
         $this->StatusShow = $value;
 
@@ -158,7 +162,7 @@ class BannersFilterInfo
      *
      * @return string[]|null
      */
-    public function getIsActive()
+    public function getIsActive(): ?array
     {
         return $this->IsActive;
     }
@@ -167,9 +171,10 @@ class BannersFilterInfo
      * Sets IsActive.
      *
      * @param string[]|null $value
+     *
      * @return $this
      */
-    public function setIsActive(array $value = null)
+    public function setIsActive(?array $value = null)
     {
         $this->IsActive = $value;
 
@@ -181,7 +186,7 @@ class BannersFilterInfo
      *
      * @return string[]|null
      */
-    public function getStatusArchive()
+    public function getStatusArchive(): ?array
     {
         return $this->StatusArchive;
     }
@@ -190,9 +195,10 @@ class BannersFilterInfo
      * Sets StatusArchive.
      *
      * @param string[]|null $value
+     *
      * @return $this
      */
-    public function setStatusArchive(array $value = null)
+    public function setStatusArchive(?array $value = null)
     {
         $this->StatusArchive = $value;
 
@@ -204,7 +210,7 @@ class BannersFilterInfo
      *
      * @return int[]|null
      */
-    public function getTagIDS()
+    public function getTagIDS(): ?array
     {
         return $this->TagIDS;
     }
@@ -213,9 +219,10 @@ class BannersFilterInfo
      * Sets TagIDS.
      *
      * @param int[]|null $value
+     *
      * @return $this
      */
-    public function setTagIDS(array $value = null)
+    public function setTagIDS(?array $value = null)
     {
         $this->TagIDS = $value;
 
@@ -227,7 +234,7 @@ class BannersFilterInfo
      *
      * @return string[]|null
      */
-    public function getTags()
+    public function getTags(): ?array
     {
         return $this->Tags;
     }
@@ -236,9 +243,10 @@ class BannersFilterInfo
      * Sets Tags.
      *
      * @param string[]|null $value
+     *
      * @return $this
      */
-    public function setTags(array $value = null)
+    public function setTags(?array $value = null)
     {
         $this->Tags = $value;
 
@@ -250,7 +258,7 @@ class BannersFilterInfo
      *
      * @return string[]|null
      */
-    public function getStatusAdImageModerate()
+    public function getStatusAdImageModerate(): ?array
     {
         return $this->StatusAdImageModerate;
     }
@@ -259,15 +267,13 @@ class BannersFilterInfo
      * Sets StatusAdImageModerate.
      *
      * @param string[]|null $value
+     *
      * @return $this
      */
-    public function setStatusAdImageModerate(array $value = null)
+    public function setStatusAdImageModerate(?array $value = null)
     {
         $this->StatusAdImageModerate = $value;
 
         return $this;
     }
-
-
 }
-

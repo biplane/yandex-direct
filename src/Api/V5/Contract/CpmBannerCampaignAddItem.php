@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class CpmBannerCampaignAddItem
 {
-
     protected $BiddingStrategy = null;
 
 //    Can be omit.
@@ -21,20 +22,16 @@ class CpmBannerCampaignAddItem
 
     /**
      * Creates a new instance of CpmBannerCampaignAddItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets BiddingStrategy.
-     *
-     * @return CpmBannerCampaignStrategyAdd
      */
-    public function getBiddingStrategy()
+    public function getBiddingStrategy(): CpmBannerCampaignStrategyAdd
     {
         return $this->BiddingStrategy;
     }
@@ -42,7 +39,6 @@ class CpmBannerCampaignAddItem
     /**
      * Sets BiddingStrategy.
      *
-     * @param CpmBannerCampaignStrategyAdd $value
      * @return $this
      */
     public function setBiddingStrategy(CpmBannerCampaignStrategyAdd $value)
@@ -57,18 +53,19 @@ class CpmBannerCampaignAddItem
      *
      * @return CpmBannerCampaignSetting[]|null
      */
-    public function getSettings()
+    public function getSettings(): ?array
     {
-        return isset($this->Settings) ? $this->Settings : null;
+        return $this->Settings ?? null;
     }
 
     /**
      * Sets Settings.
      *
      * @param CpmBannerCampaignSetting[]|null $value
+     *
      * @return $this
      */
-    public function setSettings(array $value = null)
+    public function setSettings(?array $value = null)
     {
         $this->Settings = $value;
 
@@ -80,18 +77,19 @@ class CpmBannerCampaignAddItem
      *
      * @return int[]|null
      */
-    public function getCounterIds()
+    public function getCounterIds(): ?array
     {
-        return isset($this->CounterIds) ? $this->CounterIds : null;
+        return $this->CounterIds ?? null;
     }
 
     /**
      * Sets CounterIds.
      *
      * @param int[]|null $value
+     *
      * @return $this
      */
-    public function setCounterIds(array $value = null)
+    public function setCounterIds(?array $value = null)
     {
         $this->CounterIds = $value;
 
@@ -100,27 +98,21 @@ class CpmBannerCampaignAddItem
 
     /**
      * Gets FrequencyCap.
-     *
-     * @return FrequencyCapSetting|null
      */
-    public function getFrequencyCap()
+    public function getFrequencyCap(): ?FrequencyCapSetting
     {
-        return isset($this->FrequencyCap) ? $this->FrequencyCap : null;
+        return $this->FrequencyCap ?? null;
     }
 
     /**
      * Sets FrequencyCap.
      *
-     * @param FrequencyCapSetting|null $value
      * @return $this
      */
-    public function setFrequencyCap(FrequencyCapSetting $value = null)
+    public function setFrequencyCap(?FrequencyCapSetting $value = null)
     {
         $this->FrequencyCap = $value;
 
         return $this;
     }
-
-
 }
-

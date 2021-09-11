@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,27 +9,22 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class CpmBannerCampaignStrategyAdd
 {
-
     protected $Search = null;
 
     protected $Network = null;
 
     /**
      * Creates a new instance of CpmBannerCampaignStrategyAdd.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Search.
-     *
-     * @return CpmBannerCampaignSearchStrategyAdd
      */
-    public function getSearch()
+    public function getSearch(): CpmBannerCampaignSearchStrategyAdd
     {
         return $this->Search;
     }
@@ -35,7 +32,6 @@ class CpmBannerCampaignStrategyAdd
     /**
      * Sets Search.
      *
-     * @param CpmBannerCampaignSearchStrategyAdd $value
      * @return $this
      */
     public function setSearch(CpmBannerCampaignSearchStrategyAdd $value)
@@ -47,10 +43,8 @@ class CpmBannerCampaignStrategyAdd
 
     /**
      * Gets Network.
-     *
-     * @return CpmBannerCampaignNetworkStrategyAdd
      */
-    public function getNetwork()
+    public function getNetwork(): CpmBannerCampaignNetworkStrategyAdd
     {
         return $this->Network;
     }
@@ -58,7 +52,6 @@ class CpmBannerCampaignStrategyAdd
     /**
      * Sets Network.
      *
-     * @param CpmBannerCampaignNetworkStrategyAdd $value
      * @return $this
      */
     public function setNetwork(CpmBannerCampaignNetworkStrategyAdd $value)
@@ -67,7 +60,4 @@ class CpmBannerCampaignStrategyAdd
 
         return $this;
     }
-
-
 }
-

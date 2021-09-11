@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,13 +9,9 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class SmartAdGroupFieldEnum
 {
+    public const FEED_ID = 'FeedId';
 
-    const FEED_ID = 'FeedId';
+    public const AD_TITLE_SOURCE = 'AdTitleSource';
 
-    const AD_TITLE_SOURCE = 'AdTitleSource';
-
-    const AD_BODY_SOURCE = 'AdBodySource';
-
-
+    public const AD_BODY_SOURCE = 'AdBodySource';
 }
-

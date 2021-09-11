@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class GetEventsLogFilter
 {
-
     protected $CampaignIDS = null;
 
     protected $BannerIDS = null;
@@ -20,10 +21,8 @@ class GetEventsLogFilter
 
     /**
      * Creates a new instance of GetEventsLogFilter.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -33,7 +32,7 @@ class GetEventsLogFilter
      *
      * @return int[]|null
      */
-    public function getCampaignIDS()
+    public function getCampaignIDS(): ?array
     {
         return $this->CampaignIDS;
     }
@@ -42,9 +41,10 @@ class GetEventsLogFilter
      * Sets CampaignIDS.
      *
      * @param int[]|null $value
+     *
      * @return $this
      */
-    public function setCampaignIDS(array $value = null)
+    public function setCampaignIDS(?array $value = null)
     {
         $this->CampaignIDS = $value;
 
@@ -56,7 +56,7 @@ class GetEventsLogFilter
      *
      * @return int[]|null
      */
-    public function getBannerIDS()
+    public function getBannerIDS(): ?array
     {
         return $this->BannerIDS;
     }
@@ -65,9 +65,10 @@ class GetEventsLogFilter
      * Sets BannerIDS.
      *
      * @param int[]|null $value
+     *
      * @return $this
      */
-    public function setBannerIDS(array $value = null)
+    public function setBannerIDS(?array $value = null)
     {
         $this->BannerIDS = $value;
 
@@ -79,7 +80,7 @@ class GetEventsLogFilter
      *
      * @return int[]|null
      */
-    public function getPhraseIDS()
+    public function getPhraseIDS(): ?array
     {
         return $this->PhraseIDS;
     }
@@ -88,9 +89,10 @@ class GetEventsLogFilter
      * Sets PhraseIDS.
      *
      * @param int[]|null $value
+     *
      * @return $this
      */
-    public function setPhraseIDS(array $value = null)
+    public function setPhraseIDS(?array $value = null)
     {
         $this->PhraseIDS = $value;
 
@@ -102,7 +104,7 @@ class GetEventsLogFilter
      *
      * @return int[]|null
      */
-    public function getAccountIDS()
+    public function getAccountIDS(): ?array
     {
         return $this->AccountIDS;
     }
@@ -111,9 +113,10 @@ class GetEventsLogFilter
      * Sets AccountIDS.
      *
      * @param int[]|null $value
+     *
      * @return $this
      */
-    public function setAccountIDS(array $value = null)
+    public function setAccountIDS(?array $value = null)
     {
         $this->AccountIDS = $value;
 
@@ -125,7 +128,7 @@ class GetEventsLogFilter
      *
      * @return string[]|null
      */
-    public function getEventType()
+    public function getEventType(): ?array
     {
         return $this->EventType;
     }
@@ -134,15 +137,13 @@ class GetEventsLogFilter
      * Sets EventType.
      *
      * @param string[]|null $value
+     *
      * @return $this
      */
-    public function setEventType(array $value = null)
+    public function setEventType(?array $value = null)
     {
         $this->EventType = $value;
 
         return $this;
     }
-
-
 }
-

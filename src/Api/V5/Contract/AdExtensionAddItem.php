@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,43 +9,34 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AdExtensionAddItem
 {
-
 //    Can be omit.
 //    protected $Callout = null;
 
     /**
      * Creates a new instance of AdExtensionAddItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Callout.
-     *
-     * @return Callout|null
      */
-    public function getCallout()
+    public function getCallout(): ?Callout
     {
-        return isset($this->Callout) ? $this->Callout : null;
+        return $this->Callout ?? null;
     }
 
     /**
      * Sets Callout.
      *
-     * @param Callout|null $value
      * @return $this
      */
-    public function setCallout(Callout $value = null)
+    public function setCallout(?Callout $value = null)
     {
         $this->Callout = $value;
 
         return $this;
     }
-
-
 }
-

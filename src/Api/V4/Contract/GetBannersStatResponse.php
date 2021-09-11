@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class GetBannersStatResponse
 {
-
     protected $CampaignID = null;
 
     protected $StartDate = null;
@@ -18,20 +19,16 @@ class GetBannersStatResponse
 
     /**
      * Creates a new instance of GetBannersStatResponse.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets CampaignID.
-     *
-     * @return int
      */
-    public function getCampaignID()
+    public function getCampaignID(): int
     {
         return $this->CampaignID;
     }
@@ -39,10 +36,9 @@ class GetBannersStatResponse
     /**
      * Sets CampaignID.
      *
-     * @param int $value
      * @return $this
      */
-    public function setCampaignID($value)
+    public function setCampaignID(int $value)
     {
         $this->CampaignID = $value;
 
@@ -51,10 +47,8 @@ class GetBannersStatResponse
 
     /**
      * Gets StartDate.
-     *
-     * @return string
      */
-    public function getStartDate()
+    public function getStartDate(): string
     {
         return $this->StartDate;
     }
@@ -62,10 +56,9 @@ class GetBannersStatResponse
     /**
      * Sets StartDate.
      *
-     * @param string $value
      * @return $this
      */
-    public function setStartDate($value)
+    public function setStartDate(string $value)
     {
         $this->StartDate = $value;
 
@@ -74,10 +67,8 @@ class GetBannersStatResponse
 
     /**
      * Gets EndDate.
-     *
-     * @return string
      */
-    public function getEndDate()
+    public function getEndDate(): string
     {
         return $this->EndDate;
     }
@@ -85,10 +76,9 @@ class GetBannersStatResponse
     /**
      * Sets EndDate.
      *
-     * @param string $value
      * @return $this
      */
-    public function setEndDate($value)
+    public function setEndDate(string $value)
     {
         $this->EndDate = $value;
 
@@ -100,7 +90,7 @@ class GetBannersStatResponse
      *
      * @return BannersStatItem[]|null
      */
-    public function getStat()
+    public function getStat(): ?array
     {
         return $this->Stat;
     }
@@ -109,15 +99,13 @@ class GetBannersStatResponse
      * Sets Stat.
      *
      * @param BannersStatItem[]|null $value
+     *
      * @return $this
      */
-    public function setStat(array $value = null)
+    public function setStat(?array $value = null)
     {
         $this->Stat = $value;
 
         return $this;
     }
-
-
 }
-

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5;
 
 use Biplane\YandexDirect\Api\ApiSoapClientV5;
@@ -10,8 +12,7 @@ use Biplane\YandexDirect\Config;
  */
 class AgencyClients extends ApiSoapClientV5
 {
-
-    const ENDPOINT = 'https://api.direct.yandex.com/v5/agencyclients?wsdl';
+    public const ENDPOINT = 'https://api.direct.yandex.com/v5/agencyclients?wsdl';
 
     public function __construct(Config $config, array $options)
     {
@@ -93,37 +94,25 @@ class AgencyClients extends ApiSoapClientV5
 
     /**
      * get.
-     *
-     * @param Contract\GetAgencyClientsRequest $parameters
-     * @return Contract\GetAgencyClientsResponse
      */
-    public function get(Contract\GetAgencyClientsRequest $parameters)
+    public function get(Contract\GetAgencyClientsRequest $parameters): Contract\GetAgencyClientsResponse
     {
         return $this->__soapCall('get', [$parameters]);
     }
 
     /**
      * add.
-     *
-     * @param Contract\AddAgencyClientsRequest $parameters
-     * @return Contract\AddAgencyClientsResponse
      */
-    public function add(Contract\AddAgencyClientsRequest $parameters)
+    public function add(Contract\AddAgencyClientsRequest $parameters): Contract\AddAgencyClientsResponse
     {
         return $this->__soapCall('add', [$parameters]);
     }
 
     /**
      * update.
-     *
-     * @param Contract\UpdateAgencyClientsRequest $parameters
-     * @return Contract\UpdateAgencyClientsResponse
      */
-    public function update(Contract\UpdateAgencyClientsRequest $parameters)
+    public function update(Contract\UpdateAgencyClientsRequest $parameters): Contract\UpdateAgencyClientsResponse
     {
         return $this->__soapCall('update', [$parameters]);
     }
-
-
 }
-

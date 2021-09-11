@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,16 +9,13 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class GetBidsResponse extends GetResponseGeneral
 {
-
 //    Can be omit.
 //    protected $Bids = null;
 
     /**
      * Creates a new instance of GetBidsResponse.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -26,24 +25,22 @@ class GetBidsResponse extends GetResponseGeneral
      *
      * @return BidGetItem[]|null
      */
-    public function getBids()
+    public function getBids(): ?array
     {
-        return isset($this->Bids) ? $this->Bids : null;
+        return $this->Bids ?? null;
     }
 
     /**
      * Sets Bids.
      *
      * @param BidGetItem[]|null $value
+     *
      * @return $this
      */
-    public function setBids(array $value = null)
+    public function setBids(?array $value = null)
     {
         $this->Bids = $value;
 
         return $this;
     }
-
-
 }
-

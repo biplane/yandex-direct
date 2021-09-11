@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,16 +9,13 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class ArchiveAdsResponse
 {
-
 //    Can be omit.
 //    protected $ArchiveResults = null;
 
     /**
      * Creates a new instance of ArchiveAdsResponse.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -26,24 +25,22 @@ class ArchiveAdsResponse
      *
      * @return ActionResult[]|null
      */
-    public function getArchiveResults()
+    public function getArchiveResults(): ?array
     {
-        return isset($this->ArchiveResults) ? $this->ArchiveResults : null;
+        return $this->ArchiveResults ?? null;
     }
 
     /**
      * Sets ArchiveResults.
      *
      * @param ActionResult[]|null $value
+     *
      * @return $this
      */
-    public function setArchiveResults(array $value = null)
+    public function setArchiveResults(?array $value = null)
     {
         $this->ArchiveResults = $value;
 
         return $this;
     }
-
-
 }
-

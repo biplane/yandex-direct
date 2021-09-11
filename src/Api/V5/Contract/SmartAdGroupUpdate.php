@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class SmartAdGroupUpdate
 {
-
 //    Can be omit.
 //    protected $AdTitleSource = null;
 
@@ -16,31 +17,26 @@ class SmartAdGroupUpdate
 
     /**
      * Creates a new instance of SmartAdGroupUpdate.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets AdTitleSource.
-     *
-     * @return string|null
      */
-    public function getAdTitleSource()
+    public function getAdTitleSource(): ?string
     {
-        return isset($this->AdTitleSource) ? $this->AdTitleSource : null;
+        return $this->AdTitleSource ?? null;
     }
 
     /**
      * Sets AdTitleSource.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setAdTitleSource($value = null)
+    public function setAdTitleSource(?string $value = null)
     {
         $this->AdTitleSource = $value;
 
@@ -49,27 +45,21 @@ class SmartAdGroupUpdate
 
     /**
      * Gets AdBodySource.
-     *
-     * @return string|null
      */
-    public function getAdBodySource()
+    public function getAdBodySource(): ?string
     {
-        return isset($this->AdBodySource) ? $this->AdBodySource : null;
+        return $this->AdBodySource ?? null;
     }
 
     /**
      * Sets AdBodySource.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setAdBodySource($value = null)
+    public function setAdBodySource(?string $value = null)
     {
         $this->AdBodySource = $value;
 
         return $this;
     }
-
-
 }
-

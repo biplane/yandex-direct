@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5;
 
 use Biplane\YandexDirect\Api\ApiSoapClientV5;
@@ -10,8 +12,7 @@ use Biplane\YandexDirect\Config;
  */
 class BidModifiers extends ApiSoapClientV5
 {
-
-    const ENDPOINT = 'https://api.direct.yandex.com/v5/bidmodifiers?wsdl';
+    public const ENDPOINT = 'https://api.direct.yandex.com/v5/bidmodifiers?wsdl';
 
     public function __construct(Config $config, array $options)
     {
@@ -105,59 +106,41 @@ class BidModifiers extends ApiSoapClientV5
 
     /**
      * add.
-     *
-     * @param Contract\AddBidModifiersRequest $parameters
-     * @return Contract\AddBidModifiersResponse
      */
-    public function add(Contract\AddBidModifiersRequest $parameters)
+    public function add(Contract\AddBidModifiersRequest $parameters): Contract\AddBidModifiersResponse
     {
         return $this->__soapCall('add', [$parameters]);
     }
 
     /**
      * set.
-     *
-     * @param Contract\SetBidModifiersRequest $parameters
-     * @return Contract\SetBidModifiersResponse
      */
-    public function set(Contract\SetBidModifiersRequest $parameters)
+    public function set(Contract\SetBidModifiersRequest $parameters): Contract\SetBidModifiersResponse
     {
         return $this->__soapCall('set', [$parameters]);
     }
 
     /**
      * get.
-     *
-     * @param Contract\GetBidModifiersRequest $parameters
-     * @return Contract\GetBidModifiersResponse
      */
-    public function get(Contract\GetBidModifiersRequest $parameters)
+    public function get(Contract\GetBidModifiersRequest $parameters): Contract\GetBidModifiersResponse
     {
         return $this->__soapCall('get', [$parameters]);
     }
 
     /**
      * delete.
-     *
-     * @param Contract\DeleteBidModifiersRequest $parameters
-     * @return Contract\DeleteBidModifiersResponse
      */
-    public function delete(Contract\DeleteBidModifiersRequest $parameters)
+    public function delete(Contract\DeleteBidModifiersRequest $parameters): Contract\DeleteBidModifiersResponse
     {
         return $this->__soapCall('delete', [$parameters]);
     }
 
     /**
      * toggle.
-     *
-     * @param Contract\ToggleBidModifiersRequest $parameters
-     * @return Contract\ToggleBidModifiersResponse
      */
-    public function toggle(Contract\ToggleBidModifiersRequest $parameters)
+    public function toggle(Contract\ToggleBidModifiersRequest $parameters): Contract\ToggleBidModifiersResponse
     {
         return $this->__soapCall('toggle', [$parameters]);
     }
-
-
 }
-

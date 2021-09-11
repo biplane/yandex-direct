@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,11 +9,7 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class MobileAdjustmentFieldEnum
 {
+    public const BID_MODIFIER = 'BidModifier';
 
-    const BID_MODIFIER = 'BidModifier';
-
-    const OPERATING_SYSTEM_TYPE = 'OperatingSystemType';
-
-
+    public const OPERATING_SYSTEM_TYPE = 'OperatingSystemType';
 }
-

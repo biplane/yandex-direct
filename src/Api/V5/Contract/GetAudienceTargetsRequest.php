@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,27 +9,22 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class GetAudienceTargetsRequest extends GetRequestGeneral
 {
-
     protected $SelectionCriteria = null;
 
     protected $FieldNames = [];
 
     /**
      * Creates a new instance of GetAudienceTargetsRequest.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets SelectionCriteria.
-     *
-     * @return AudienceTargetSelectionCriteria
      */
-    public function getSelectionCriteria()
+    public function getSelectionCriteria(): AudienceTargetSelectionCriteria
     {
         return $this->SelectionCriteria;
     }
@@ -35,7 +32,6 @@ class GetAudienceTargetsRequest extends GetRequestGeneral
     /**
      * Sets SelectionCriteria.
      *
-     * @param AudienceTargetSelectionCriteria $value
      * @return $this
      */
     public function setSelectionCriteria(AudienceTargetSelectionCriteria $value)
@@ -48,10 +44,11 @@ class GetAudienceTargetsRequest extends GetRequestGeneral
     /**
      * Gets FieldNames.
      *
-     * @return string[]
      * @see AudienceTargetFieldEnum
+     *
+     * @return string[]
      */
-    public function getFieldNames()
+    public function getFieldNames(): array
     {
         return $this->FieldNames;
     }
@@ -59,9 +56,11 @@ class GetAudienceTargetsRequest extends GetRequestGeneral
     /**
      * Sets FieldNames.
      *
-     * @param string[] $value
-     * @return $this
      * @see AudienceTargetFieldEnum
+     *
+     * @param string[] $value
+     *
+     * @return $this
      */
     public function setFieldNames(array $value)
     {
@@ -69,7 +68,4 @@ class GetAudienceTargetsRequest extends GetRequestGeneral
 
         return $this;
     }
-
-
 }
-

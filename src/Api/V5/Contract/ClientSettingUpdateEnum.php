@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,11 +9,7 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class ClientSettingUpdateEnum
 {
+    public const CORRECT_TYPOS_AUTOMATICALLY = 'CORRECT_TYPOS_AUTOMATICALLY';
 
-    const CORRECT_TYPOS_AUTOMATICALLY = 'CORRECT_TYPOS_AUTOMATICALLY';
-
-    const DISPLAY_STORE_RATING = 'DISPLAY_STORE_RATING';
-
-
+    public const DISPLAY_STORE_RATING = 'DISPLAY_STORE_RATING';
 }
-

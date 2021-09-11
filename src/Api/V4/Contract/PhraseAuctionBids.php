@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class PhraseAuctionBids
 {
-
     protected $Position = null;
 
     protected $Bid = null;
@@ -16,20 +17,16 @@ class PhraseAuctionBids
 
     /**
      * Creates a new instance of PhraseAuctionBids.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Position.
-     *
-     * @return string|null
      */
-    public function getPosition()
+    public function getPosition(): ?string
     {
         return $this->Position;
     }
@@ -37,10 +34,9 @@ class PhraseAuctionBids
     /**
      * Sets Position.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setPosition($value = null)
+    public function setPosition(?string $value = null)
     {
         $this->Position = $value;
 
@@ -49,10 +45,8 @@ class PhraseAuctionBids
 
     /**
      * Gets Bid.
-     *
-     * @return float|null
      */
-    public function getBid()
+    public function getBid(): ?float
     {
         return $this->Bid;
     }
@@ -60,10 +54,9 @@ class PhraseAuctionBids
     /**
      * Sets Bid.
      *
-     * @param float|null $value
      * @return $this
      */
-    public function setBid($value = null)
+    public function setBid(?float $value = null)
     {
         $this->Bid = $value;
 
@@ -72,10 +65,8 @@ class PhraseAuctionBids
 
     /**
      * Gets Price.
-     *
-     * @return float|null
      */
-    public function getPrice()
+    public function getPrice(): ?float
     {
         return $this->Price;
     }
@@ -83,16 +74,12 @@ class PhraseAuctionBids
     /**
      * Sets Price.
      *
-     * @param float|null $value
      * @return $this
      */
-    public function setPrice($value = null)
+    public function setPrice(?float $value = null)
     {
         $this->Price = $value;
 
         return $this;
     }
-
-
 }
-

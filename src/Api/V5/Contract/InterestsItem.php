@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class InterestsItem
 {
-
     protected $InterestId = null;
 
     protected $ParentId = null;
@@ -18,20 +19,16 @@ class InterestsItem
 
     /**
      * Creates a new instance of InterestsItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets InterestId.
-     *
-     * @return int
      */
-    public function getInterestId()
+    public function getInterestId(): int
     {
         return $this->InterestId;
     }
@@ -39,10 +36,9 @@ class InterestsItem
     /**
      * Sets InterestId.
      *
-     * @param int $value
      * @return $this
      */
-    public function setInterestId($value)
+    public function setInterestId(int $value)
     {
         $this->InterestId = $value;
 
@@ -51,10 +47,8 @@ class InterestsItem
 
     /**
      * Gets ParentId.
-     *
-     * @return int|null
      */
-    public function getParentId()
+    public function getParentId(): ?int
     {
         return $this->ParentId;
     }
@@ -62,10 +56,9 @@ class InterestsItem
     /**
      * Sets ParentId.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setParentId($value = null)
+    public function setParentId(?int $value = null)
     {
         $this->ParentId = $value;
 
@@ -74,10 +67,8 @@ class InterestsItem
 
     /**
      * Gets Name.
-     *
-     * @return string
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->Name;
     }
@@ -85,10 +76,9 @@ class InterestsItem
     /**
      * Sets Name.
      *
-     * @param string $value
      * @return $this
      */
-    public function setName($value)
+    public function setName(string $value)
     {
         $this->Name = $value;
 
@@ -98,10 +88,9 @@ class InterestsItem
     /**
      * Gets IsTargetable.
      *
-     * @return string
      * @see YesNoEnum
      */
-    public function getIsTargetable()
+    public function getIsTargetable(): string
     {
         return $this->IsTargetable;
     }
@@ -109,17 +98,14 @@ class InterestsItem
     /**
      * Sets IsTargetable.
      *
-     * @param string $value
-     * @return $this
      * @see YesNoEnum
+     *
+     * @return $this
      */
-    public function setIsTargetable($value)
+    public function setIsTargetable(string $value)
     {
         $this->IsTargetable = $value;
 
         return $this;
     }
-
-
 }
-

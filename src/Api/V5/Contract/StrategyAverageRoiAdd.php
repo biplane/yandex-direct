@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class StrategyAverageRoiAdd
 {
-
     protected $ReserveReturn = null;
 
     protected $RoiCoef = null;
@@ -25,20 +26,16 @@ class StrategyAverageRoiAdd
 
     /**
      * Creates a new instance of StrategyAverageRoiAdd.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets ReserveReturn.
-     *
-     * @return int
      */
-    public function getReserveReturn()
+    public function getReserveReturn(): int
     {
         return $this->ReserveReturn;
     }
@@ -46,10 +43,9 @@ class StrategyAverageRoiAdd
     /**
      * Sets ReserveReturn.
      *
-     * @param int $value
      * @return $this
      */
-    public function setReserveReturn($value)
+    public function setReserveReturn(int $value)
     {
         $this->ReserveReturn = $value;
 
@@ -58,10 +54,8 @@ class StrategyAverageRoiAdd
 
     /**
      * Gets RoiCoef.
-     *
-     * @return int
      */
-    public function getRoiCoef()
+    public function getRoiCoef(): int
     {
         return $this->RoiCoef;
     }
@@ -69,10 +63,9 @@ class StrategyAverageRoiAdd
     /**
      * Sets RoiCoef.
      *
-     * @param int $value
      * @return $this
      */
-    public function setRoiCoef($value)
+    public function setRoiCoef(int $value)
     {
         $this->RoiCoef = $value;
 
@@ -81,10 +74,8 @@ class StrategyAverageRoiAdd
 
     /**
      * Gets GoalId.
-     *
-     * @return int
      */
-    public function getGoalId()
+    public function getGoalId(): int
     {
         return $this->GoalId;
     }
@@ -92,10 +83,9 @@ class StrategyAverageRoiAdd
     /**
      * Sets GoalId.
      *
-     * @param int $value
      * @return $this
      */
-    public function setGoalId($value)
+    public function setGoalId(int $value)
     {
         $this->GoalId = $value;
 
@@ -104,21 +94,18 @@ class StrategyAverageRoiAdd
 
     /**
      * Gets WeeklySpendLimit.
-     *
-     * @return int|null
      */
-    public function getWeeklySpendLimit()
+    public function getWeeklySpendLimit(): ?int
     {
-        return isset($this->WeeklySpendLimit) ? $this->WeeklySpendLimit : null;
+        return $this->WeeklySpendLimit ?? null;
     }
 
     /**
      * Sets WeeklySpendLimit.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setWeeklySpendLimit($value = null)
+    public function setWeeklySpendLimit(?int $value = null)
     {
         $this->WeeklySpendLimit = $value;
 
@@ -127,21 +114,18 @@ class StrategyAverageRoiAdd
 
     /**
      * Gets BidCeiling.
-     *
-     * @return int|null
      */
-    public function getBidCeiling()
+    public function getBidCeiling(): ?int
     {
-        return isset($this->BidCeiling) ? $this->BidCeiling : null;
+        return $this->BidCeiling ?? null;
     }
 
     /**
      * Sets BidCeiling.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setBidCeiling($value = null)
+    public function setBidCeiling(?int $value = null)
     {
         $this->BidCeiling = $value;
 
@@ -150,27 +134,21 @@ class StrategyAverageRoiAdd
 
     /**
      * Gets Profitability.
-     *
-     * @return int|null
      */
-    public function getProfitability()
+    public function getProfitability(): ?int
     {
-        return isset($this->Profitability) ? $this->Profitability : null;
+        return $this->Profitability ?? null;
     }
 
     /**
      * Sets Profitability.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setProfitability($value = null)
+    public function setProfitability(?int $value = null)
     {
         $this->Profitability = $value;
 
         return $this;
     }
-
-
 }
-

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,16 +9,13 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AddAdImagesResponse
 {
-
 //    Can be omit.
 //    protected $AddResults = null;
 
     /**
      * Creates a new instance of AddAdImagesResponse.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -26,24 +25,22 @@ class AddAdImagesResponse
      *
      * @return AdImageActionResult[]|null
      */
-    public function getAddResults()
+    public function getAddResults(): ?array
     {
-        return isset($this->AddResults) ? $this->AddResults : null;
+        return $this->AddResults ?? null;
     }
 
     /**
      * Sets AddResults.
      *
      * @param AdImageActionResult[]|null $value
+     *
      * @return $this
      */
-    public function setAddResults(array $value = null)
+    public function setAddResults(?array $value = null)
     {
         $this->AddResults = $value;
 
         return $this;
     }
-
-
 }
-

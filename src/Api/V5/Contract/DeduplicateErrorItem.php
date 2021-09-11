@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,25 +9,20 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class DeduplicateErrorItem extends ActionResult
 {
-
     protected $Position = null;
 
     /**
      * Creates a new instance of DeduplicateErrorItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Position.
-     *
-     * @return int
      */
-    public function getPosition()
+    public function getPosition(): int
     {
         return $this->Position;
     }
@@ -33,16 +30,12 @@ class DeduplicateErrorItem extends ActionResult
     /**
      * Sets Position.
      *
-     * @param int $value
      * @return $this
      */
-    public function setPosition($value)
+    public function setPosition(int $value)
     {
         $this->Position = $value;
 
         return $this;
     }
-
-
 }
-

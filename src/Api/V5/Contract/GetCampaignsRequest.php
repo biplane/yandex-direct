@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class GetCampaignsRequest extends GetRequestGeneral
 {
-
     protected $SelectionCriteria = null;
 
     protected $FieldNames = [];
@@ -29,20 +30,16 @@ class GetCampaignsRequest extends GetRequestGeneral
 
     /**
      * Creates a new instance of GetCampaignsRequest.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets SelectionCriteria.
-     *
-     * @return CampaignsSelectionCriteria
      */
-    public function getSelectionCriteria()
+    public function getSelectionCriteria(): CampaignsSelectionCriteria
     {
         return $this->SelectionCriteria;
     }
@@ -50,7 +47,6 @@ class GetCampaignsRequest extends GetRequestGeneral
     /**
      * Sets SelectionCriteria.
      *
-     * @param CampaignsSelectionCriteria $value
      * @return $this
      */
     public function setSelectionCriteria(CampaignsSelectionCriteria $value)
@@ -63,10 +59,11 @@ class GetCampaignsRequest extends GetRequestGeneral
     /**
      * Gets FieldNames.
      *
-     * @return string[]
      * @see CampaignFieldEnum
+     *
+     * @return string[]
      */
-    public function getFieldNames()
+    public function getFieldNames(): array
     {
         return $this->FieldNames;
     }
@@ -74,9 +71,11 @@ class GetCampaignsRequest extends GetRequestGeneral
     /**
      * Sets FieldNames.
      *
-     * @param string[] $value
-     * @return $this
      * @see CampaignFieldEnum
+     *
+     * @param string[] $value
+     *
+     * @return $this
      */
     public function setFieldNames(array $value)
     {
@@ -88,22 +87,25 @@ class GetCampaignsRequest extends GetRequestGeneral
     /**
      * Gets TextCampaignFieldNames.
      *
-     * @return string[]|null
      * @see TextCampaignFieldEnum
+     *
+     * @return string[]|null
      */
-    public function getTextCampaignFieldNames()
+    public function getTextCampaignFieldNames(): ?array
     {
-        return isset($this->TextCampaignFieldNames) ? $this->TextCampaignFieldNames : null;
+        return $this->TextCampaignFieldNames ?? null;
     }
 
     /**
      * Sets TextCampaignFieldNames.
      *
-     * @param string[]|null $value
-     * @return $this
      * @see TextCampaignFieldEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
      */
-    public function setTextCampaignFieldNames(array $value = null)
+    public function setTextCampaignFieldNames(?array $value = null)
     {
         $this->TextCampaignFieldNames = $value;
 
@@ -113,22 +115,25 @@ class GetCampaignsRequest extends GetRequestGeneral
     /**
      * Gets MobileAppCampaignFieldNames.
      *
-     * @return string[]|null
      * @see MobileAppCampaignFieldEnum
+     *
+     * @return string[]|null
      */
-    public function getMobileAppCampaignFieldNames()
+    public function getMobileAppCampaignFieldNames(): ?array
     {
-        return isset($this->MobileAppCampaignFieldNames) ? $this->MobileAppCampaignFieldNames : null;
+        return $this->MobileAppCampaignFieldNames ?? null;
     }
 
     /**
      * Sets MobileAppCampaignFieldNames.
      *
-     * @param string[]|null $value
-     * @return $this
      * @see MobileAppCampaignFieldEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
      */
-    public function setMobileAppCampaignFieldNames(array $value = null)
+    public function setMobileAppCampaignFieldNames(?array $value = null)
     {
         $this->MobileAppCampaignFieldNames = $value;
 
@@ -138,22 +143,25 @@ class GetCampaignsRequest extends GetRequestGeneral
     /**
      * Gets DynamicTextCampaignFieldNames.
      *
-     * @return string[]|null
      * @see DynamicTextCampaignFieldEnum
+     *
+     * @return string[]|null
      */
-    public function getDynamicTextCampaignFieldNames()
+    public function getDynamicTextCampaignFieldNames(): ?array
     {
-        return isset($this->DynamicTextCampaignFieldNames) ? $this->DynamicTextCampaignFieldNames : null;
+        return $this->DynamicTextCampaignFieldNames ?? null;
     }
 
     /**
      * Sets DynamicTextCampaignFieldNames.
      *
-     * @param string[]|null $value
-     * @return $this
      * @see DynamicTextCampaignFieldEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
      */
-    public function setDynamicTextCampaignFieldNames(array $value = null)
+    public function setDynamicTextCampaignFieldNames(?array $value = null)
     {
         $this->DynamicTextCampaignFieldNames = $value;
 
@@ -163,22 +171,25 @@ class GetCampaignsRequest extends GetRequestGeneral
     /**
      * Gets CpmBannerCampaignFieldNames.
      *
-     * @return string[]|null
      * @see CpmBannerCampaignFieldEnum
+     *
+     * @return string[]|null
      */
-    public function getCpmBannerCampaignFieldNames()
+    public function getCpmBannerCampaignFieldNames(): ?array
     {
-        return isset($this->CpmBannerCampaignFieldNames) ? $this->CpmBannerCampaignFieldNames : null;
+        return $this->CpmBannerCampaignFieldNames ?? null;
     }
 
     /**
      * Sets CpmBannerCampaignFieldNames.
      *
-     * @param string[]|null $value
-     * @return $this
      * @see CpmBannerCampaignFieldEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
      */
-    public function setCpmBannerCampaignFieldNames(array $value = null)
+    public function setCpmBannerCampaignFieldNames(?array $value = null)
     {
         $this->CpmBannerCampaignFieldNames = $value;
 
@@ -188,28 +199,28 @@ class GetCampaignsRequest extends GetRequestGeneral
     /**
      * Gets SmartCampaignFieldNames.
      *
-     * @return string[]|null
      * @see SmartCampaignFieldEnum
+     *
+     * @return string[]|null
      */
-    public function getSmartCampaignFieldNames()
+    public function getSmartCampaignFieldNames(): ?array
     {
-        return isset($this->SmartCampaignFieldNames) ? $this->SmartCampaignFieldNames : null;
+        return $this->SmartCampaignFieldNames ?? null;
     }
 
     /**
      * Sets SmartCampaignFieldNames.
      *
-     * @param string[]|null $value
-     * @return $this
      * @see SmartCampaignFieldEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
      */
-    public function setSmartCampaignFieldNames(array $value = null)
+    public function setSmartCampaignFieldNames(?array $value = null)
     {
         $this->SmartCampaignFieldNames = $value;
 
         return $this;
     }
-
-
 }
-

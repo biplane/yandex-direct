@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,31 +9,27 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AdGroupFieldEnum
 {
+    public const ID = 'Id';
 
-    const ID = 'Id';
+    public const CAMPAIGN_ID = 'CampaignId';
 
-    const CAMPAIGN_ID = 'CampaignId';
+    public const STATUS = 'Status';
 
-    const STATUS = 'Status';
+    public const NAME = 'Name';
 
-    const NAME = 'Name';
+    public const REGION_IDS = 'RegionIds';
 
-    const REGION_IDS = 'RegionIds';
+    public const RESTRICTED_REGION_IDS = 'RestrictedRegionIds';
 
-    const RESTRICTED_REGION_IDS = 'RestrictedRegionIds';
+    public const NEGATIVE_KEYWORDS = 'NegativeKeywords';
 
-    const NEGATIVE_KEYWORDS = 'NegativeKeywords';
+    public const NEGATIVE_KEYWORD_SHARED_SET_IDS = 'NegativeKeywordSharedSetIds';
 
-    const NEGATIVE_KEYWORD_SHARED_SET_IDS = 'NegativeKeywordSharedSetIds';
+    public const TYPE = 'Type';
 
-    const TYPE = 'Type';
+    public const TRACKING_PARAMS = 'TrackingParams';
 
-    const TRACKING_PARAMS = 'TrackingParams';
+    public const SUBTYPE = 'Subtype';
 
-    const SUBTYPE = 'Subtype';
-
-    const SERVING_STATUS = 'ServingStatus';
-
-
+    public const SERVING_STATUS = 'ServingStatus';
 }
-

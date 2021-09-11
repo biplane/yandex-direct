@@ -145,7 +145,7 @@ XML;
                 FieldEnum::AD_ID,
                 FieldEnum::CRITERIA_ID,
             ])
-            ->setGoals(['123', '567', '123']);
+            ->setGoals([123, 567, 123]);
 
         $reportDefinition = $builder->build();
 
@@ -179,7 +179,7 @@ XML;
                 FieldEnum::AD_ID,
                 FieldEnum::CRITERIA_ID,
             ])
-            ->addGoal('123')
+            ->addGoal(123)
             ->addAttributionModel(AttributionModelEnum::LC);
 
         $reportDefinition = $builder->build();

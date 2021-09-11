@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,15 +9,11 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AttributionModelEnum
 {
+    public const LC = 'LC';
 
-    const LC = 'LC';
+    public const LSC = 'LSC';
 
-    const LSC = 'LSC';
+    public const FC = 'FC';
 
-    const FC = 'FC';
-
-    const LYDC = 'LYDC';
-
-
+    public const LYDC = 'LYDC';
 }
-

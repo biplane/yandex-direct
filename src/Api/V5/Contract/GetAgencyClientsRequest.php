@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,27 +9,22 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class GetAgencyClientsRequest extends GetRequestGeneral
 {
-
     protected $SelectionCriteria = null;
 
     protected $FieldNames = [];
 
     /**
      * Creates a new instance of GetAgencyClientsRequest.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets SelectionCriteria.
-     *
-     * @return AgencyClientsSelectionCriteria
      */
-    public function getSelectionCriteria()
+    public function getSelectionCriteria(): AgencyClientsSelectionCriteria
     {
         return $this->SelectionCriteria;
     }
@@ -35,7 +32,6 @@ class GetAgencyClientsRequest extends GetRequestGeneral
     /**
      * Sets SelectionCriteria.
      *
-     * @param AgencyClientsSelectionCriteria $value
      * @return $this
      */
     public function setSelectionCriteria(AgencyClientsSelectionCriteria $value)
@@ -48,10 +44,11 @@ class GetAgencyClientsRequest extends GetRequestGeneral
     /**
      * Gets FieldNames.
      *
-     * @return string[]
      * @see AgencyClientFieldEnum
+     *
+     * @return string[]
      */
-    public function getFieldNames()
+    public function getFieldNames(): array
     {
         return $this->FieldNames;
     }
@@ -59,9 +56,11 @@ class GetAgencyClientsRequest extends GetRequestGeneral
     /**
      * Sets FieldNames.
      *
-     * @param string[] $value
-     * @return $this
      * @see AgencyClientFieldEnum
+     *
+     * @param string[] $value
+     *
+     * @return $this
      */
     public function setFieldNames(array $value)
     {
@@ -69,7 +68,4 @@ class GetAgencyClientsRequest extends GetRequestGeneral
 
         return $this;
     }
-
-
 }
-

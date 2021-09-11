@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class DeduplicateRequest
 {
-
 //    Can be omit.
 //    protected $Operation = null;
 
@@ -15,10 +16,8 @@ class DeduplicateRequest
 
     /**
      * Creates a new instance of DeduplicateRequest.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -26,22 +25,25 @@ class DeduplicateRequest
     /**
      * Gets Operation.
      *
-     * @return string[]|null
      * @see DeduplicateOperationEnum
+     *
+     * @return string[]|null
      */
-    public function getOperation()
+    public function getOperation(): ?array
     {
-        return isset($this->Operation) ? $this->Operation : null;
+        return $this->Operation ?? null;
     }
 
     /**
      * Sets Operation.
      *
-     * @param string[]|null $value
-     * @return $this
      * @see DeduplicateOperationEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
      */
-    public function setOperation(array $value = null)
+    public function setOperation(?array $value = null)
     {
         $this->Operation = $value;
 
@@ -53,7 +55,7 @@ class DeduplicateRequest
      *
      * @return DeduplicateRequestItem[]
      */
-    public function getKeywords()
+    public function getKeywords(): array
     {
         return $this->Keywords;
     }
@@ -62,6 +64,7 @@ class DeduplicateRequest
      * Sets Keywords.
      *
      * @param DeduplicateRequestItem[] $value
+     *
      * @return $this
      */
     public function setKeywords(array $value)
@@ -70,7 +73,4 @@ class DeduplicateRequest
 
         return $this;
     }
-
-
 }
-

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class MobileAppAdGet extends MobileAppAdBase
 {
-
 //    Can be omit.
 //    protected $Features = null;
 
@@ -19,10 +20,8 @@ class MobileAppAdGet extends MobileAppAdBase
 
     /**
      * Creates a new instance of MobileAppAdGet.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -32,18 +31,19 @@ class MobileAppAdGet extends MobileAppAdBase
      *
      * @return MobileAppAdFeatureGetItem[]|null
      */
-    public function getFeatures()
+    public function getFeatures(): ?array
     {
-        return isset($this->Features) ? $this->Features : null;
+        return $this->Features ?? null;
     }
 
     /**
      * Sets Features.
      *
      * @param MobileAppAdFeatureGetItem[]|null $value
+     *
      * @return $this
      */
-    public function setFeatures(array $value = null)
+    public function setFeatures(?array $value = null)
     {
         $this->Features = $value;
 
@@ -52,21 +52,18 @@ class MobileAppAdGet extends MobileAppAdBase
 
     /**
      * Gets AdImageModeration.
-     *
-     * @return ExtensionModeration|null
      */
-    public function getAdImageModeration()
+    public function getAdImageModeration(): ?ExtensionModeration
     {
-        return isset($this->AdImageModeration) ? $this->AdImageModeration : null;
+        return $this->AdImageModeration ?? null;
     }
 
     /**
      * Sets AdImageModeration.
      *
-     * @param ExtensionModeration|null $value
      * @return $this
      */
-    public function setAdImageModeration(ExtensionModeration $value = null)
+    public function setAdImageModeration(?ExtensionModeration $value = null)
     {
         $this->AdImageModeration = $value;
 
@@ -75,27 +72,21 @@ class MobileAppAdGet extends MobileAppAdBase
 
     /**
      * Gets VideoExtension.
-     *
-     * @return VideoExtensionGetItem|null
      */
-    public function getVideoExtension()
+    public function getVideoExtension(): ?VideoExtensionGetItem
     {
-        return isset($this->VideoExtension) ? $this->VideoExtension : null;
+        return $this->VideoExtension ?? null;
     }
 
     /**
      * Sets VideoExtension.
      *
-     * @param VideoExtensionGetItem|null $value
      * @return $this
      */
-    public function setVideoExtension(VideoExtensionGetItem $value = null)
+    public function setVideoExtension(?VideoExtensionGetItem $value = null)
     {
         $this->VideoExtension = $value;
 
         return $this;
     }
-
-
 }
-

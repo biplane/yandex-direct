@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AudienceInterestsItem
 {
-
     protected $InterestKey = null;
 
     protected $Id = null;
@@ -22,20 +23,16 @@ class AudienceInterestsItem
 
     /**
      * Creates a new instance of AudienceInterestsItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets InterestKey.
-     *
-     * @return int
      */
-    public function getInterestKey()
+    public function getInterestKey(): int
     {
         return $this->InterestKey;
     }
@@ -43,10 +40,9 @@ class AudienceInterestsItem
     /**
      * Sets InterestKey.
      *
-     * @param int $value
      * @return $this
      */
-    public function setInterestKey($value)
+    public function setInterestKey(int $value)
     {
         $this->InterestKey = $value;
 
@@ -55,10 +51,8 @@ class AudienceInterestsItem
 
     /**
      * Gets Id.
-     *
-     * @return int
      */
-    public function getId()
+    public function getId(): int
     {
         return $this->Id;
     }
@@ -66,10 +60,9 @@ class AudienceInterestsItem
     /**
      * Sets Id.
      *
-     * @param int $value
      * @return $this
      */
-    public function setId($value)
+    public function setId(int $value)
     {
         $this->Id = $value;
 
@@ -78,10 +71,8 @@ class AudienceInterestsItem
 
     /**
      * Gets ParentId.
-     *
-     * @return int
      */
-    public function getParentId()
+    public function getParentId(): int
     {
         return $this->ParentId;
     }
@@ -89,10 +80,9 @@ class AudienceInterestsItem
     /**
      * Sets ParentId.
      *
-     * @param int $value
      * @return $this
      */
-    public function setParentId($value)
+    public function setParentId(int $value)
     {
         $this->ParentId = $value;
 
@@ -101,10 +91,8 @@ class AudienceInterestsItem
 
     /**
      * Gets Name.
-     *
-     * @return string
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->Name;
     }
@@ -112,10 +100,9 @@ class AudienceInterestsItem
     /**
      * Sets Name.
      *
-     * @param string $value
      * @return $this
      */
-    public function setName($value)
+    public function setName(string $value)
     {
         $this->Name = $value;
 
@@ -124,10 +111,8 @@ class AudienceInterestsItem
 
     /**
      * Gets Description.
-     *
-     * @return string
      */
-    public function getDescription()
+    public function getDescription(): string
     {
         return $this->Description;
     }
@@ -135,10 +120,9 @@ class AudienceInterestsItem
     /**
      * Sets Description.
      *
-     * @param string $value
      * @return $this
      */
-    public function setDescription($value)
+    public function setDescription(string $value)
     {
         $this->Description = $value;
 
@@ -148,10 +132,9 @@ class AudienceInterestsItem
     /**
      * Gets InterestType.
      *
-     * @return string
      * @see InterestTypeEnum
      */
-    public function getInterestType()
+    public function getInterestType(): string
     {
         return $this->InterestType;
     }
@@ -159,17 +142,14 @@ class AudienceInterestsItem
     /**
      * Sets InterestType.
      *
-     * @param string $value
-     * @return $this
      * @see InterestTypeEnum
+     *
+     * @return $this
      */
-    public function setInterestType($value)
+    public function setInterestType(string $value)
     {
         $this->InterestType = $value;
 
         return $this;
     }
-
-
 }
-

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class RetargetingConditionRequest
 {
-
     protected $Action = null;
 
     protected $SelectionCriteria = null;
@@ -16,20 +17,16 @@ class RetargetingConditionRequest
 
     /**
      * Creates a new instance of RetargetingConditionRequest.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Action.
-     *
-     * @return string
      */
-    public function getAction()
+    public function getAction(): string
     {
         return $this->Action;
     }
@@ -37,10 +34,9 @@ class RetargetingConditionRequest
     /**
      * Sets Action.
      *
-     * @param string $value
      * @return $this
      */
-    public function setAction($value)
+    public function setAction(string $value)
     {
         $this->Action = $value;
 
@@ -49,10 +45,8 @@ class RetargetingConditionRequest
 
     /**
      * Gets SelectionCriteria.
-     *
-     * @return RetargetingConditionSelectionCriteria|null
      */
-    public function getSelectionCriteria()
+    public function getSelectionCriteria(): ?RetargetingConditionSelectionCriteria
     {
         return $this->SelectionCriteria;
     }
@@ -60,10 +54,9 @@ class RetargetingConditionRequest
     /**
      * Sets SelectionCriteria.
      *
-     * @param RetargetingConditionSelectionCriteria|null $value
      * @return $this
      */
-    public function setSelectionCriteria(RetargetingConditionSelectionCriteria $value = null)
+    public function setSelectionCriteria(?RetargetingConditionSelectionCriteria $value = null)
     {
         $this->SelectionCriteria = $value;
 
@@ -75,7 +68,7 @@ class RetargetingConditionRequest
      *
      * @return RetargetingCondition[]|null
      */
-    public function getRetargetingConditions()
+    public function getRetargetingConditions(): ?array
     {
         return $this->RetargetingConditions;
     }
@@ -84,15 +77,13 @@ class RetargetingConditionRequest
      * Sets RetargetingConditions.
      *
      * @param RetargetingCondition[]|null $value
+     *
      * @return $this
      */
-    public function setRetargetingConditions(array $value = null)
+    public function setRetargetingConditions(?array $value = null)
     {
         $this->RetargetingConditions = $value;
 
         return $this;
     }
-
-
 }
-

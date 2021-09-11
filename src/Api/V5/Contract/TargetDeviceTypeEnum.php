@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,11 +9,7 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class TargetDeviceTypeEnum
 {
+    public const DEVICE_TYPE_MOBILE = 'DEVICE_TYPE_MOBILE';
 
-    const DEVICE_TYPE_MOBILE = 'DEVICE_TYPE_MOBILE';
-
-    const DEVICE_TYPE_TABLET = 'DEVICE_TYPE_TABLET';
-
-
+    public const DEVICE_TYPE_TABLET = 'DEVICE_TYPE_TABLET';
 }
-

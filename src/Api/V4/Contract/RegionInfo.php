@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class RegionInfo
 {
-
     protected $RegionID = null;
 
     protected $ParentID = null;
@@ -18,20 +19,16 @@ class RegionInfo
 
     /**
      * Creates a new instance of RegionInfo.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets RegionID.
-     *
-     * @return int
      */
-    public function getRegionID()
+    public function getRegionID(): int
     {
         return $this->RegionID;
     }
@@ -39,10 +36,9 @@ class RegionInfo
     /**
      * Sets RegionID.
      *
-     * @param int $value
      * @return $this
      */
-    public function setRegionID($value)
+    public function setRegionID(int $value)
     {
         $this->RegionID = $value;
 
@@ -51,10 +47,8 @@ class RegionInfo
 
     /**
      * Gets ParentID.
-     *
-     * @return int|null
      */
-    public function getParentID()
+    public function getParentID(): ?int
     {
         return $this->ParentID;
     }
@@ -62,10 +56,9 @@ class RegionInfo
     /**
      * Sets ParentID.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setParentID($value = null)
+    public function setParentID(?int $value = null)
     {
         $this->ParentID = $value;
 
@@ -74,10 +67,8 @@ class RegionInfo
 
     /**
      * Gets RegionName.
-     *
-     * @return string
      */
-    public function getRegionName()
+    public function getRegionName(): string
     {
         return $this->RegionName;
     }
@@ -85,10 +76,9 @@ class RegionInfo
     /**
      * Sets RegionName.
      *
-     * @param string $value
      * @return $this
      */
-    public function setRegionName($value)
+    public function setRegionName(string $value)
     {
         $this->RegionName = $value;
 
@@ -97,10 +87,8 @@ class RegionInfo
 
     /**
      * Gets RegionType.
-     *
-     * @return string
      */
-    public function getRegionType()
+    public function getRegionType(): string
     {
         return $this->RegionType;
     }
@@ -108,16 +96,12 @@ class RegionInfo
     /**
      * Sets RegionType.
      *
-     * @param string $value
      * @return $this
      */
-    public function setRegionType($value)
+    public function setRegionType(string $value)
     {
         $this->RegionType = $value;
 
         return $this;
     }
-
-
 }
-

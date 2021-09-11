@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class RetargetingConditionActionResult
 {
-
     protected $Warnings = null;
 
     protected $Errors = null;
@@ -16,10 +17,8 @@ class RetargetingConditionActionResult
 
     /**
      * Creates a new instance of RetargetingConditionActionResult.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -29,7 +28,7 @@ class RetargetingConditionActionResult
      *
      * @return Warning[]|null
      */
-    public function getWarnings()
+    public function getWarnings(): ?array
     {
         return $this->Warnings;
     }
@@ -38,9 +37,10 @@ class RetargetingConditionActionResult
      * Sets Warnings.
      *
      * @param Warning[]|null $value
+     *
      * @return $this
      */
-    public function setWarnings(array $value = null)
+    public function setWarnings(?array $value = null)
     {
         $this->Warnings = $value;
 
@@ -52,7 +52,7 @@ class RetargetingConditionActionResult
      *
      * @return Error[]|null
      */
-    public function getErrors()
+    public function getErrors(): ?array
     {
         return $this->Errors;
     }
@@ -61,9 +61,10 @@ class RetargetingConditionActionResult
      * Sets Errors.
      *
      * @param Error[]|null $value
+     *
      * @return $this
      */
-    public function setErrors(array $value = null)
+    public function setErrors(?array $value = null)
     {
         $this->Errors = $value;
 
@@ -72,10 +73,8 @@ class RetargetingConditionActionResult
 
     /**
      * Gets RetargetingConditionID.
-     *
-     * @return int|null
      */
-    public function getRetargetingConditionID()
+    public function getRetargetingConditionID(): ?int
     {
         return $this->RetargetingConditionID;
     }
@@ -83,16 +82,12 @@ class RetargetingConditionActionResult
     /**
      * Sets RetargetingConditionID.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setRetargetingConditionID($value = null)
+    public function setRetargetingConditionID(?int $value = null)
     {
         $this->RetargetingConditionID = $value;
 
         return $this;
     }
-
-
 }
-

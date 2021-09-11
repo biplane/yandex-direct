@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,27 +9,22 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class RetargetingConditionGoalItem
 {
-
     protected $Time = null;
 
     protected $GoalID = null;
 
     /**
      * Creates a new instance of RetargetingConditionGoalItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Time.
-     *
-     * @return int|null
      */
-    public function getTime()
+    public function getTime(): ?int
     {
         return $this->Time;
     }
@@ -35,10 +32,9 @@ class RetargetingConditionGoalItem
     /**
      * Sets Time.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setTime($value = null)
+    public function setTime(?int $value = null)
     {
         $this->Time = $value;
 
@@ -47,10 +43,8 @@ class RetargetingConditionGoalItem
 
     /**
      * Gets GoalID.
-     *
-     * @return int
      */
-    public function getGoalID()
+    public function getGoalID(): int
     {
         return $this->GoalID;
     }
@@ -58,16 +52,12 @@ class RetargetingConditionGoalItem
     /**
      * Sets GoalID.
      *
-     * @param int $value
      * @return $this
      */
-    public function setGoalID($value)
+    public function setGoalID(int $value)
     {
         $this->GoalID = $value;
 
         return $this;
     }
-
-
 }
-

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,13 +9,9 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class KeywordStateSelectionEnum
 {
+    public const OFF = 'OFF';
 
-    const OFF = 'OFF';
+    public const ON = 'ON';
 
-    const ON = 'ON';
-
-    const SUSPENDED = 'SUSPENDED';
-
-
+    public const SUSPENDED = 'SUSPENDED';
 }
-

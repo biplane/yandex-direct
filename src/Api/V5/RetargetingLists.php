@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5;
 
 use Biplane\YandexDirect\Api\ApiSoapClientV5;
@@ -10,8 +12,7 @@ use Biplane\YandexDirect\Config;
  */
 class RetargetingLists extends ApiSoapClientV5
 {
-
-    const ENDPOINT = 'https://api.direct.yandex.com/v5/retargetinglists?wsdl';
+    public const ENDPOINT = 'https://api.direct.yandex.com/v5/retargetinglists?wsdl';
 
     public function __construct(Config $config, array $options)
     {
@@ -82,48 +83,33 @@ class RetargetingLists extends ApiSoapClientV5
 
     /**
      * get.
-     *
-     * @param Contract\GetRetargetingListsRequest $parameters
-     * @return Contract\GetRetargetingListsResponse
      */
-    public function get(Contract\GetRetargetingListsRequest $parameters)
+    public function get(Contract\GetRetargetingListsRequest $parameters): Contract\GetRetargetingListsResponse
     {
         return $this->__soapCall('get', [$parameters]);
     }
 
     /**
      * add.
-     *
-     * @param Contract\AddRetargetingListsRequest $parameters
-     * @return Contract\AddRetargetingListsResponse
      */
-    public function add(Contract\AddRetargetingListsRequest $parameters)
+    public function add(Contract\AddRetargetingListsRequest $parameters): Contract\AddRetargetingListsResponse
     {
         return $this->__soapCall('add', [$parameters]);
     }
 
     /**
      * update.
-     *
-     * @param Contract\UpdateRetargetingListsRequest $parameters
-     * @return Contract\UpdateRetargetingListsResponse
      */
-    public function update(Contract\UpdateRetargetingListsRequest $parameters)
+    public function update(Contract\UpdateRetargetingListsRequest $parameters): Contract\UpdateRetargetingListsResponse
     {
         return $this->__soapCall('update', [$parameters]);
     }
 
     /**
      * delete.
-     *
-     * @param Contract\DeleteRetargetingListsRequest $parameters
-     * @return Contract\DeleteRetargetingListsResponse
      */
-    public function delete(Contract\DeleteRetargetingListsRequest $parameters)
+    public function delete(Contract\DeleteRetargetingListsRequest $parameters): Contract\DeleteRetargetingListsResponse
     {
         return $this->__soapCall('delete', [$parameters]);
     }
-
-
 }
-

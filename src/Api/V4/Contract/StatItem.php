@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class StatItem
 {
-
     protected $CampaignID = null;
 
     protected $StatDate = null;
@@ -40,20 +41,16 @@ class StatItem
 
     /**
      * Creates a new instance of StatItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets CampaignID.
-     *
-     * @return int
      */
-    public function getCampaignID()
+    public function getCampaignID(): int
     {
         return $this->CampaignID;
     }
@@ -61,10 +58,9 @@ class StatItem
     /**
      * Sets CampaignID.
      *
-     * @param int $value
      * @return $this
      */
-    public function setCampaignID($value)
+    public function setCampaignID(int $value)
     {
         $this->CampaignID = $value;
 
@@ -73,10 +69,8 @@ class StatItem
 
     /**
      * Gets StatDate.
-     *
-     * @return string
      */
-    public function getStatDate()
+    public function getStatDate(): string
     {
         return $this->StatDate;
     }
@@ -84,10 +78,9 @@ class StatItem
     /**
      * Sets StatDate.
      *
-     * @param string $value
      * @return $this
      */
-    public function setStatDate($value)
+    public function setStatDate(string $value)
     {
         $this->StatDate = $value;
 
@@ -96,10 +89,8 @@ class StatItem
 
     /**
      * Gets SumSearch.
-     *
-     * @return float|null
      */
-    public function getSumSearch()
+    public function getSumSearch(): ?float
     {
         return $this->SumSearch;
     }
@@ -107,10 +98,9 @@ class StatItem
     /**
      * Sets SumSearch.
      *
-     * @param float|null $value
      * @return $this
      */
-    public function setSumSearch($value = null)
+    public function setSumSearch(?float $value = null)
     {
         $this->SumSearch = $value;
 
@@ -119,10 +109,8 @@ class StatItem
 
     /**
      * Gets SumContext.
-     *
-     * @return float|null
      */
-    public function getSumContext()
+    public function getSumContext(): ?float
     {
         return $this->SumContext;
     }
@@ -130,10 +118,9 @@ class StatItem
     /**
      * Sets SumContext.
      *
-     * @param float|null $value
      * @return $this
      */
-    public function setSumContext($value = null)
+    public function setSumContext(?float $value = null)
     {
         $this->SumContext = $value;
 
@@ -142,10 +129,8 @@ class StatItem
 
     /**
      * Gets ShowsSearch.
-     *
-     * @return int|null
      */
-    public function getShowsSearch()
+    public function getShowsSearch(): ?int
     {
         return $this->ShowsSearch;
     }
@@ -153,10 +138,9 @@ class StatItem
     /**
      * Sets ShowsSearch.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setShowsSearch($value = null)
+    public function setShowsSearch(?int $value = null)
     {
         $this->ShowsSearch = $value;
 
@@ -165,10 +149,8 @@ class StatItem
 
     /**
      * Gets ShowsContext.
-     *
-     * @return int|null
      */
-    public function getShowsContext()
+    public function getShowsContext(): ?int
     {
         return $this->ShowsContext;
     }
@@ -176,10 +158,9 @@ class StatItem
     /**
      * Sets ShowsContext.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setShowsContext($value = null)
+    public function setShowsContext(?int $value = null)
     {
         $this->ShowsContext = $value;
 
@@ -188,10 +169,8 @@ class StatItem
 
     /**
      * Gets ClicksSearch.
-     *
-     * @return int|null
      */
-    public function getClicksSearch()
+    public function getClicksSearch(): ?int
     {
         return $this->ClicksSearch;
     }
@@ -199,10 +178,9 @@ class StatItem
     /**
      * Sets ClicksSearch.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setClicksSearch($value = null)
+    public function setClicksSearch(?int $value = null)
     {
         $this->ClicksSearch = $value;
 
@@ -211,10 +189,8 @@ class StatItem
 
     /**
      * Gets ClicksContext.
-     *
-     * @return int|null
      */
-    public function getClicksContext()
+    public function getClicksContext(): ?int
     {
         return $this->ClicksContext;
     }
@@ -222,10 +198,9 @@ class StatItem
     /**
      * Sets ClicksContext.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setClicksContext($value = null)
+    public function setClicksContext(?int $value = null)
     {
         $this->ClicksContext = $value;
 
@@ -234,10 +209,8 @@ class StatItem
 
     /**
      * Gets SessionDepthSearch.
-     *
-     * @return float|null
      */
-    public function getSessionDepthSearch()
+    public function getSessionDepthSearch(): ?float
     {
         return $this->SessionDepthSearch;
     }
@@ -245,10 +218,9 @@ class StatItem
     /**
      * Sets SessionDepthSearch.
      *
-     * @param float|null $value
      * @return $this
      */
-    public function setSessionDepthSearch($value = null)
+    public function setSessionDepthSearch(?float $value = null)
     {
         $this->SessionDepthSearch = $value;
 
@@ -257,10 +229,8 @@ class StatItem
 
     /**
      * Gets SessionDepthContext.
-     *
-     * @return float|null
      */
-    public function getSessionDepthContext()
+    public function getSessionDepthContext(): ?float
     {
         return $this->SessionDepthContext;
     }
@@ -268,10 +238,9 @@ class StatItem
     /**
      * Sets SessionDepthContext.
      *
-     * @param float|null $value
      * @return $this
      */
-    public function setSessionDepthContext($value = null)
+    public function setSessionDepthContext(?float $value = null)
     {
         $this->SessionDepthContext = $value;
 
@@ -280,10 +249,8 @@ class StatItem
 
     /**
      * Gets GoalConversionSearch.
-     *
-     * @return float|null
      */
-    public function getGoalConversionSearch()
+    public function getGoalConversionSearch(): ?float
     {
         return $this->GoalConversionSearch;
     }
@@ -291,10 +258,9 @@ class StatItem
     /**
      * Sets GoalConversionSearch.
      *
-     * @param float|null $value
      * @return $this
      */
-    public function setGoalConversionSearch($value = null)
+    public function setGoalConversionSearch(?float $value = null)
     {
         $this->GoalConversionSearch = $value;
 
@@ -303,10 +269,8 @@ class StatItem
 
     /**
      * Gets GoalConversionContext.
-     *
-     * @return float|null
      */
-    public function getGoalConversionContext()
+    public function getGoalConversionContext(): ?float
     {
         return $this->GoalConversionContext;
     }
@@ -314,10 +278,9 @@ class StatItem
     /**
      * Sets GoalConversionContext.
      *
-     * @param float|null $value
      * @return $this
      */
-    public function setGoalConversionContext($value = null)
+    public function setGoalConversionContext(?float $value = null)
     {
         $this->GoalConversionContext = $value;
 
@@ -326,10 +289,8 @@ class StatItem
 
     /**
      * Gets GoalCostSearch.
-     *
-     * @return float|null
      */
-    public function getGoalCostSearch()
+    public function getGoalCostSearch(): ?float
     {
         return $this->GoalCostSearch;
     }
@@ -337,10 +298,9 @@ class StatItem
     /**
      * Sets GoalCostSearch.
      *
-     * @param float|null $value
      * @return $this
      */
-    public function setGoalCostSearch($value = null)
+    public function setGoalCostSearch(?float $value = null)
     {
         $this->GoalCostSearch = $value;
 
@@ -349,10 +309,8 @@ class StatItem
 
     /**
      * Gets GoalCostContext.
-     *
-     * @return float|null
      */
-    public function getGoalCostContext()
+    public function getGoalCostContext(): ?float
     {
         return $this->GoalCostContext;
     }
@@ -360,10 +318,9 @@ class StatItem
     /**
      * Sets GoalCostContext.
      *
-     * @param float|null $value
      * @return $this
      */
-    public function setGoalCostContext($value = null)
+    public function setGoalCostContext(?float $value = null)
     {
         $this->GoalCostContext = $value;
 
@@ -372,10 +329,8 @@ class StatItem
 
     /**
      * Gets Currency.
-     *
-     * @return string|null
      */
-    public function getCurrency()
+    public function getCurrency(): ?string
     {
         return $this->Currency;
     }
@@ -383,16 +338,12 @@ class StatItem
     /**
      * Sets Currency.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setCurrency($value = null)
+    public function setCurrency(?string $value = null)
     {
         $this->Currency = $value;
 
         return $this;
     }
-
-
 }
-

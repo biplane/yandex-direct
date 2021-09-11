@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class AdImageActionResult
 {
-
     protected $Warnings = null;
 
     protected $Errors = null;
@@ -18,10 +19,8 @@ class AdImageActionResult
 
     /**
      * Creates a new instance of AdImageActionResult.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -31,7 +30,7 @@ class AdImageActionResult
      *
      * @return Warning[]|null
      */
-    public function getWarnings()
+    public function getWarnings(): ?array
     {
         return $this->Warnings;
     }
@@ -40,9 +39,10 @@ class AdImageActionResult
      * Sets Warnings.
      *
      * @param Warning[]|null $value
+     *
      * @return $this
      */
-    public function setWarnings(array $value = null)
+    public function setWarnings(?array $value = null)
     {
         $this->Warnings = $value;
 
@@ -54,7 +54,7 @@ class AdImageActionResult
      *
      * @return Error[]|null
      */
-    public function getErrors()
+    public function getErrors(): ?array
     {
         return $this->Errors;
     }
@@ -63,9 +63,10 @@ class AdImageActionResult
      * Sets Errors.
      *
      * @param Error[]|null $value
+     *
      * @return $this
      */
-    public function setErrors(array $value = null)
+    public function setErrors(?array $value = null)
     {
         $this->Errors = $value;
 
@@ -74,10 +75,8 @@ class AdImageActionResult
 
     /**
      * Gets AdImageUploadTaskID.
-     *
-     * @return int|null
      */
-    public function getAdImageUploadTaskID()
+    public function getAdImageUploadTaskID(): ?int
     {
         return $this->AdImageUploadTaskID;
     }
@@ -85,10 +84,9 @@ class AdImageActionResult
     /**
      * Sets AdImageUploadTaskID.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setAdImageUploadTaskID($value = null)
+    public function setAdImageUploadTaskID(?int $value = null)
     {
         $this->AdImageUploadTaskID = $value;
 
@@ -97,10 +95,8 @@ class AdImageActionResult
 
     /**
      * Gets AdImageHash.
-     *
-     * @return string|null
      */
-    public function getAdImageHash()
+    public function getAdImageHash(): ?string
     {
         return $this->AdImageHash;
     }
@@ -108,16 +104,12 @@ class AdImageActionResult
     /**
      * Sets AdImageHash.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setAdImageHash($value = null)
+    public function setAdImageHash(?string $value = null)
     {
         $this->AdImageHash = $value;
 
         return $this;
     }
-
-
 }
-

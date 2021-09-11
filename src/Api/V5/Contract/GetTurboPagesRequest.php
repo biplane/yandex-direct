@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class GetTurboPagesRequest extends GetRequestGeneral
 {
-
 //    Can be omit.
 //    protected $SelectionCriteria = null;
 
@@ -15,31 +16,26 @@ class GetTurboPagesRequest extends GetRequestGeneral
 
     /**
      * Creates a new instance of GetTurboPagesRequest.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets SelectionCriteria.
-     *
-     * @return TurboPagesSelectionCriteria|null
      */
-    public function getSelectionCriteria()
+    public function getSelectionCriteria(): ?TurboPagesSelectionCriteria
     {
-        return isset($this->SelectionCriteria) ? $this->SelectionCriteria : null;
+        return $this->SelectionCriteria ?? null;
     }
 
     /**
      * Sets SelectionCriteria.
      *
-     * @param TurboPagesSelectionCriteria|null $value
      * @return $this
      */
-    public function setSelectionCriteria(TurboPagesSelectionCriteria $value = null)
+    public function setSelectionCriteria(?TurboPagesSelectionCriteria $value = null)
     {
         $this->SelectionCriteria = $value;
 
@@ -49,10 +45,11 @@ class GetTurboPagesRequest extends GetRequestGeneral
     /**
      * Gets FieldNames.
      *
-     * @return string[]
      * @see TurboPageFieldEnum
+     *
+     * @return string[]
      */
-    public function getFieldNames()
+    public function getFieldNames(): array
     {
         return $this->FieldNames;
     }
@@ -60,9 +57,11 @@ class GetTurboPagesRequest extends GetRequestGeneral
     /**
      * Sets FieldNames.
      *
-     * @param string[] $value
-     * @return $this
      * @see TurboPageFieldEnum
+     *
+     * @param string[] $value
+     *
+     * @return $this
      */
     public function setFieldNames(array $value)
     {
@@ -70,7 +69,4 @@ class GetTurboPagesRequest extends GetRequestGeneral
 
         return $this;
     }
-
-
 }
-

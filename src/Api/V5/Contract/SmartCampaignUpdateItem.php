@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class SmartCampaignUpdateItem extends SmartCampaignBase
 {
-
 //    Can be omit.
 //    protected $BiddingStrategy = null;
 
@@ -19,31 +20,26 @@ class SmartCampaignUpdateItem extends SmartCampaignBase
 
     /**
      * Creates a new instance of SmartCampaignUpdateItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets BiddingStrategy.
-     *
-     * @return SmartCampaignStrategy|null
      */
-    public function getBiddingStrategy()
+    public function getBiddingStrategy(): ?SmartCampaignStrategy
     {
-        return isset($this->BiddingStrategy) ? $this->BiddingStrategy : null;
+        return $this->BiddingStrategy ?? null;
     }
 
     /**
      * Sets BiddingStrategy.
      *
-     * @param SmartCampaignStrategy|null $value
      * @return $this
      */
-    public function setBiddingStrategy(SmartCampaignStrategy $value = null)
+    public function setBiddingStrategy(?SmartCampaignStrategy $value = null)
     {
         $this->BiddingStrategy = $value;
 
@@ -55,18 +51,19 @@ class SmartCampaignUpdateItem extends SmartCampaignBase
      *
      * @return SmartCampaignSetting[]|null
      */
-    public function getSettings()
+    public function getSettings(): ?array
     {
-        return isset($this->Settings) ? $this->Settings : null;
+        return $this->Settings ?? null;
     }
 
     /**
      * Sets Settings.
      *
      * @param SmartCampaignSetting[]|null $value
+     *
      * @return $this
      */
-    public function setSettings(array $value = null)
+    public function setSettings(?array $value = null)
     {
         $this->Settings = $value;
 
@@ -75,27 +72,21 @@ class SmartCampaignUpdateItem extends SmartCampaignBase
 
     /**
      * Gets PriorityGoals.
-     *
-     * @return PriorityGoalsUpdateSetting|null
      */
-    public function getPriorityGoals()
+    public function getPriorityGoals(): ?PriorityGoalsUpdateSetting
     {
-        return isset($this->PriorityGoals) ? $this->PriorityGoals : null;
+        return $this->PriorityGoals ?? null;
     }
 
     /**
      * Sets PriorityGoals.
      *
-     * @param PriorityGoalsUpdateSetting|null $value
      * @return $this
      */
-    public function setPriorityGoals(PriorityGoalsUpdateSetting $value = null)
+    public function setPriorityGoals(?PriorityGoalsUpdateSetting $value = null)
     {
         $this->PriorityGoals = $value;
 
         return $this;
     }
-
-
 }
-

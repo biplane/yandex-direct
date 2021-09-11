@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,27 +9,22 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class FileFeedUpdate
 {
-
     protected $Data = null;
 
     protected $Filename = null;
 
     /**
      * Creates a new instance of FileFeedUpdate.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Data.
-     *
-     * @return string
      */
-    public function getData()
+    public function getData(): string
     {
         return $this->Data;
     }
@@ -35,10 +32,9 @@ class FileFeedUpdate
     /**
      * Sets Data.
      *
-     * @param string $value
      * @return $this
      */
-    public function setData($value)
+    public function setData(string $value)
     {
         $this->Data = $value;
 
@@ -47,10 +43,8 @@ class FileFeedUpdate
 
     /**
      * Gets Filename.
-     *
-     * @return string
      */
-    public function getFilename()
+    public function getFilename(): string
     {
         return $this->Filename;
     }
@@ -58,16 +52,12 @@ class FileFeedUpdate
     /**
      * Sets Filename.
      *
-     * @param string $value
      * @return $this
      */
-    public function setFilename($value)
+    public function setFilename(string $value)
     {
         $this->Filename = $value;
 
         return $this;
     }
-
-
 }
-

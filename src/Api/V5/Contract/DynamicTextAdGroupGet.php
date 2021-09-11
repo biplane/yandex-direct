@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class DynamicTextAdGroupGet
 {
-
 //    Can be omit.
 //    protected $DomainUrl = null;
 
@@ -16,31 +17,26 @@ class DynamicTextAdGroupGet
 
     /**
      * Creates a new instance of DynamicTextAdGroupGet.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets DomainUrl.
-     *
-     * @return string|null
      */
-    public function getDomainUrl()
+    public function getDomainUrl(): ?string
     {
-        return isset($this->DomainUrl) ? $this->DomainUrl : null;
+        return $this->DomainUrl ?? null;
     }
 
     /**
      * Sets DomainUrl.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setDomainUrl($value = null)
+    public function setDomainUrl(?string $value = null)
     {
         $this->DomainUrl = $value;
 
@@ -50,28 +46,24 @@ class DynamicTextAdGroupGet
     /**
      * Gets DomainUrlProcessingStatus.
      *
-     * @return string|null
      * @see SourceProcessingStatusEnum
      */
-    public function getDomainUrlProcessingStatus()
+    public function getDomainUrlProcessingStatus(): ?string
     {
-        return isset($this->DomainUrlProcessingStatus) ? $this->DomainUrlProcessingStatus : null;
+        return $this->DomainUrlProcessingStatus ?? null;
     }
 
     /**
      * Sets DomainUrlProcessingStatus.
      *
-     * @param string|null $value
-     * @return $this
      * @see SourceProcessingStatusEnum
+     *
+     * @return $this
      */
-    public function setDomainUrlProcessingStatus($value = null)
+    public function setDomainUrlProcessingStatus(?string $value = null)
     {
         $this->DomainUrlProcessingStatus = $value;
 
         return $this;
     }
-
-
 }
-

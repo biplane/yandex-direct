@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class CreditLimitsItem
 {
-
     protected $ContractID = null;
 
     protected $Limit = null;
@@ -16,20 +17,16 @@ class CreditLimitsItem
 
     /**
      * Creates a new instance of CreditLimitsItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets ContractID.
-     *
-     * @return string
      */
-    public function getContractID()
+    public function getContractID(): string
     {
         return $this->ContractID;
     }
@@ -37,10 +34,9 @@ class CreditLimitsItem
     /**
      * Sets ContractID.
      *
-     * @param string $value
      * @return $this
      */
-    public function setContractID($value)
+    public function setContractID(string $value)
     {
         $this->ContractID = $value;
 
@@ -49,10 +45,8 @@ class CreditLimitsItem
 
     /**
      * Gets Limit.
-     *
-     * @return float
      */
-    public function getLimit()
+    public function getLimit(): float
     {
         return $this->Limit;
     }
@@ -60,10 +54,9 @@ class CreditLimitsItem
     /**
      * Sets Limit.
      *
-     * @param float $value
      * @return $this
      */
-    public function setLimit($value)
+    public function setLimit(float $value)
     {
         $this->Limit = $value;
 
@@ -72,10 +65,8 @@ class CreditLimitsItem
 
     /**
      * Gets LimitSpent.
-     *
-     * @return float
      */
-    public function getLimitSpent()
+    public function getLimitSpent(): float
     {
         return $this->LimitSpent;
     }
@@ -83,16 +74,12 @@ class CreditLimitsItem
     /**
      * Sets LimitSpent.
      *
-     * @param float $value
      * @return $this
      */
-    public function setLimitSpent($value)
+    public function setLimitSpent(float $value)
     {
         $this->LimitSpent = $value;
 
         return $this;
     }
-
-
 }
-

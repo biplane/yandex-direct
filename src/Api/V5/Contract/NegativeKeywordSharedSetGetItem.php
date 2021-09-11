@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class NegativeKeywordSharedSetGetItem extends NegativeKeywordSharedSetBase
 {
-
 //    Can be omit.
 //    protected $Id = null;
 
@@ -16,31 +17,26 @@ class NegativeKeywordSharedSetGetItem extends NegativeKeywordSharedSetBase
 
     /**
      * Creates a new instance of NegativeKeywordSharedSetGetItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Id.
-     *
-     * @return int|null
      */
-    public function getId()
+    public function getId(): ?int
     {
-        return isset($this->Id) ? $this->Id : null;
+        return $this->Id ?? null;
     }
 
     /**
      * Sets Id.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setId($value = null)
+    public function setId(?int $value = null)
     {
         $this->Id = $value;
 
@@ -50,28 +46,24 @@ class NegativeKeywordSharedSetGetItem extends NegativeKeywordSharedSetBase
     /**
      * Gets Associated.
      *
-     * @return string|null
      * @see YesNoEnum
      */
-    public function getAssociated()
+    public function getAssociated(): ?string
     {
-        return isset($this->Associated) ? $this->Associated : null;
+        return $this->Associated ?? null;
     }
 
     /**
      * Sets Associated.
      *
-     * @param string|null $value
-     * @return $this
      * @see YesNoEnum
+     *
+     * @return $this
      */
-    public function setAssociated($value = null)
+    public function setAssociated(?string $value = null)
     {
         $this->Associated = $value;
 
         return $this;
     }
-
-
 }
-

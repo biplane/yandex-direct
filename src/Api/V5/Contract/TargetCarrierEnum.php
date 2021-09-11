@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,11 +9,7 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class TargetCarrierEnum
 {
+    public const WI_FI_ONLY = 'WI_FI_ONLY';
 
-    const WI_FI_ONLY = 'WI_FI_ONLY';
-
-    const WI_FI_AND_CELLULAR = 'WI_FI_AND_CELLULAR';
-
-
+    public const WI_FI_AND_CELLULAR = 'WI_FI_AND_CELLULAR';
 }
-

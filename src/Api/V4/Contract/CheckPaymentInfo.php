@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,25 +9,20 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class CheckPaymentInfo
 {
-
     protected $CustomTransactionID = null;
 
     /**
      * Creates a new instance of CheckPaymentInfo.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets CustomTransactionID.
-     *
-     * @return string
      */
-    public function getCustomTransactionID()
+    public function getCustomTransactionID(): string
     {
         return $this->CustomTransactionID;
     }
@@ -33,16 +30,12 @@ class CheckPaymentInfo
     /**
      * Sets CustomTransactionID.
      *
-     * @param string $value
      * @return $this
      */
-    public function setCustomTransactionID($value)
+    public function setCustomTransactionID(string $value)
     {
         $this->CustomTransactionID = $value;
 
         return $this;
     }
-
-
 }
-

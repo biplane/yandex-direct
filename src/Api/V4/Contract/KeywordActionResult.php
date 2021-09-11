@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class KeywordActionResult
 {
-
     protected $Warnings = null;
 
     protected $Errors = null;
@@ -18,10 +19,8 @@ class KeywordActionResult
 
     /**
      * Creates a new instance of KeywordActionResult.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -31,7 +30,7 @@ class KeywordActionResult
      *
      * @return Warning[]|null
      */
-    public function getWarnings()
+    public function getWarnings(): ?array
     {
         return $this->Warnings;
     }
@@ -40,9 +39,10 @@ class KeywordActionResult
      * Sets Warnings.
      *
      * @param Warning[]|null $value
+     *
      * @return $this
      */
-    public function setWarnings(array $value = null)
+    public function setWarnings(?array $value = null)
     {
         $this->Warnings = $value;
 
@@ -54,7 +54,7 @@ class KeywordActionResult
      *
      * @return Error[]|null
      */
-    public function getErrors()
+    public function getErrors(): ?array
     {
         return $this->Errors;
     }
@@ -63,9 +63,10 @@ class KeywordActionResult
      * Sets Errors.
      *
      * @param Error[]|null $value
+     *
      * @return $this
      */
-    public function setErrors(array $value = null)
+    public function setErrors(?array $value = null)
     {
         $this->Errors = $value;
 
@@ -74,10 +75,8 @@ class KeywordActionResult
 
     /**
      * Gets KeywordID.
-     *
-     * @return int|null
      */
-    public function getKeywordID()
+    public function getKeywordID(): ?int
     {
         return $this->KeywordID;
     }
@@ -85,10 +84,9 @@ class KeywordActionResult
     /**
      * Sets KeywordID.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setKeywordID($value = null)
+    public function setKeywordID(?int $value = null)
     {
         $this->KeywordID = $value;
 
@@ -97,10 +95,8 @@ class KeywordActionResult
 
     /**
      * Gets QualityIndex.
-     *
-     * @return QualityIndex|null
      */
-    public function getQualityIndex()
+    public function getQualityIndex(): ?QualityIndex
     {
         return $this->QualityIndex;
     }
@@ -108,16 +104,12 @@ class KeywordActionResult
     /**
      * Sets QualityIndex.
      *
-     * @param QualityIndex|null $value
      * @return $this
      */
-    public function setQualityIndex(QualityIndex $value = null)
+    public function setQualityIndex(?QualityIndex $value = null)
     {
         $this->QualityIndex = $value;
 
         return $this;
     }
-
-
 }
-

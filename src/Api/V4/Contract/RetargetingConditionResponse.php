@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,17 +9,14 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class RetargetingConditionResponse
 {
-
     protected $ActionsResult = null;
 
     protected $RetargetingConditions = null;
 
     /**
      * Creates a new instance of RetargetingConditionResponse.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -27,7 +26,7 @@ class RetargetingConditionResponse
      *
      * @return RetargetingConditionActionResult[]|null
      */
-    public function getActionsResult()
+    public function getActionsResult(): ?array
     {
         return $this->ActionsResult;
     }
@@ -36,9 +35,10 @@ class RetargetingConditionResponse
      * Sets ActionsResult.
      *
      * @param RetargetingConditionActionResult[]|null $value
+     *
      * @return $this
      */
-    public function setActionsResult(array $value = null)
+    public function setActionsResult(?array $value = null)
     {
         $this->ActionsResult = $value;
 
@@ -50,7 +50,7 @@ class RetargetingConditionResponse
      *
      * @return RetargetingCondition[]|null
      */
-    public function getRetargetingConditions()
+    public function getRetargetingConditions(): ?array
     {
         return $this->RetargetingConditions;
     }
@@ -59,15 +59,13 @@ class RetargetingConditionResponse
      * Sets RetargetingConditions.
      *
      * @param RetargetingCondition[]|null $value
+     *
      * @return $this
      */
-    public function setRetargetingConditions(array $value = null)
+    public function setRetargetingConditions(?array $value = null)
     {
         $this->RetargetingConditions = $value;
 
         return $this;
     }
-
-
 }
-

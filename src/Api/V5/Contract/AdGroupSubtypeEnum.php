@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,17 +9,13 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AdGroupSubtypeEnum
 {
+    public const WEBPAGE = 'WEBPAGE';
 
-    const WEBPAGE = 'WEBPAGE';
+    public const FEED = 'FEED';
 
-    const FEED = 'FEED';
+    public const NONE = 'NONE';
 
-    const NONE = 'NONE';
+    public const KEYWORDS = 'KEYWORDS';
 
-    const KEYWORDS = 'KEYWORDS';
-
-    const USER_PROFILE = 'USER_PROFILE';
-
-
+    public const USER_PROFILE = 'USER_PROFILE';
 }
-

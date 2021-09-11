@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,17 +9,13 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class SmartCampaignFieldEnum
 {
+    public const COUNTER_ID = 'CounterId';
 
-    const COUNTER_ID = 'CounterId';
+    public const SETTINGS = 'Settings';
 
-    const SETTINGS = 'Settings';
+    public const BIDDING_STRATEGY = 'BiddingStrategy';
 
-    const BIDDING_STRATEGY = 'BiddingStrategy';
+    public const PRIORITY_GOALS = 'PriorityGoals';
 
-    const PRIORITY_GOALS = 'PriorityGoals';
-
-    const ATTRIBUTION_MODEL = 'AttributionModel';
-
-
+    public const ATTRIBUTION_MODEL = 'AttributionModel';
 }
-

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class DynamicSourceGet
 {
-
 //    Can be omit.
 //    protected $Source = null;
 
@@ -22,31 +23,26 @@ class DynamicSourceGet
 
     /**
      * Creates a new instance of DynamicSourceGet.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Source.
-     *
-     * @return string|null
      */
-    public function getSource()
+    public function getSource(): ?string
     {
-        return isset($this->Source) ? $this->Source : null;
+        return $this->Source ?? null;
     }
 
     /**
      * Sets Source.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setSource($value = null)
+    public function setSource(?string $value = null)
     {
         $this->Source = $value;
 
@@ -55,21 +51,18 @@ class DynamicSourceGet
 
     /**
      * Gets FeedId.
-     *
-     * @return int|null
      */
-    public function getFeedId()
+    public function getFeedId(): ?int
     {
-        return isset($this->FeedId) ? $this->FeedId : null;
+        return $this->FeedId ?? null;
     }
 
     /**
      * Sets FeedId.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setFeedId($value = null)
+    public function setFeedId(?int $value = null)
     {
         $this->FeedId = $value;
 
@@ -79,22 +72,21 @@ class DynamicSourceGet
     /**
      * Gets SourceType.
      *
-     * @return string|null
      * @see SourceTypeGetEnum
      */
-    public function getSourceType()
+    public function getSourceType(): ?string
     {
-        return isset($this->SourceType) ? $this->SourceType : null;
+        return $this->SourceType ?? null;
     }
 
     /**
      * Sets SourceType.
      *
-     * @param string|null $value
-     * @return $this
      * @see SourceTypeGetEnum
+     *
+     * @return $this
      */
-    public function setSourceType($value = null)
+    public function setSourceType(?string $value = null)
     {
         $this->SourceType = $value;
 
@@ -104,28 +96,24 @@ class DynamicSourceGet
     /**
      * Gets SourceProcessingStatus.
      *
-     * @return string|null
      * @see SourceProcessingStatusEnum
      */
-    public function getSourceProcessingStatus()
+    public function getSourceProcessingStatus(): ?string
     {
-        return isset($this->SourceProcessingStatus) ? $this->SourceProcessingStatus : null;
+        return $this->SourceProcessingStatus ?? null;
     }
 
     /**
      * Sets SourceProcessingStatus.
      *
-     * @param string|null $value
-     * @return $this
      * @see SourceProcessingStatusEnum
+     *
+     * @return $this
      */
-    public function setSourceProcessingStatus($value = null)
+    public function setSourceProcessingStatus(?string $value = null)
     {
         $this->SourceProcessingStatus = $value;
 
         return $this;
     }
-
-
 }
-

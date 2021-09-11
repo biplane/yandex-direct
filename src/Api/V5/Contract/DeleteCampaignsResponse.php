@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,16 +9,13 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class DeleteCampaignsResponse
 {
-
 //    Can be omit.
 //    protected $DeleteResults = null;
 
     /**
      * Creates a new instance of DeleteCampaignsResponse.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -26,24 +25,22 @@ class DeleteCampaignsResponse
      *
      * @return ActionResult[]|null
      */
-    public function getDeleteResults()
+    public function getDeleteResults(): ?array
     {
-        return isset($this->DeleteResults) ? $this->DeleteResults : null;
+        return $this->DeleteResults ?? null;
     }
 
     /**
      * Sets DeleteResults.
      *
      * @param ActionResult[]|null $value
+     *
      * @return $this
      */
-    public function setDeleteResults(array $value = null)
+    public function setDeleteResults(?array $value = null)
     {
         $this->DeleteResults = $value;
 
         return $this;
     }
-
-
 }
-

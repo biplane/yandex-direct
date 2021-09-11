@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AdImageGetItem
 {
-
 //    Can be omit.
 //    protected $AdImageHash = null;
 
@@ -31,31 +32,26 @@ class AdImageGetItem
 
     /**
      * Creates a new instance of AdImageGetItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets AdImageHash.
-     *
-     * @return string|null
      */
-    public function getAdImageHash()
+    public function getAdImageHash(): ?string
     {
-        return isset($this->AdImageHash) ? $this->AdImageHash : null;
+        return $this->AdImageHash ?? null;
     }
 
     /**
      * Sets AdImageHash.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setAdImageHash($value = null)
+    public function setAdImageHash(?string $value = null)
     {
         $this->AdImageHash = $value;
 
@@ -64,21 +60,18 @@ class AdImageGetItem
 
     /**
      * Gets Name.
-     *
-     * @return string|null
      */
-    public function getName()
+    public function getName(): ?string
     {
-        return isset($this->Name) ? $this->Name : null;
+        return $this->Name ?? null;
     }
 
     /**
      * Sets Name.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setName($value = null)
+    public function setName(?string $value = null)
     {
         $this->Name = $value;
 
@@ -88,22 +81,21 @@ class AdImageGetItem
     /**
      * Gets Associated.
      *
-     * @return string|null
      * @see YesNoEnum
      */
-    public function getAssociated()
+    public function getAssociated(): ?string
     {
-        return isset($this->Associated) ? $this->Associated : null;
+        return $this->Associated ?? null;
     }
 
     /**
      * Sets Associated.
      *
-     * @param string|null $value
-     * @return $this
      * @see YesNoEnum
+     *
+     * @return $this
      */
-    public function setAssociated($value = null)
+    public function setAssociated(?string $value = null)
     {
         $this->Associated = $value;
 
@@ -113,22 +105,21 @@ class AdImageGetItem
     /**
      * Gets Type.
      *
-     * @return string|null
      * @see AdImageTypeEnum
      */
-    public function getType()
+    public function getType(): ?string
     {
-        return isset($this->Type) ? $this->Type : null;
+        return $this->Type ?? null;
     }
 
     /**
      * Sets Type.
      *
-     * @param string|null $value
-     * @return $this
      * @see AdImageTypeEnum
+     *
+     * @return $this
      */
-    public function setType($value = null)
+    public function setType(?string $value = null)
     {
         $this->Type = $value;
 
@@ -138,22 +129,21 @@ class AdImageGetItem
     /**
      * Gets Subtype.
      *
-     * @return string|null
      * @see AdImageSubtypeEnum
      */
-    public function getSubtype()
+    public function getSubtype(): ?string
     {
-        return isset($this->Subtype) ? $this->Subtype : null;
+        return $this->Subtype ?? null;
     }
 
     /**
      * Sets Subtype.
      *
-     * @param string|null $value
-     * @return $this
      * @see AdImageSubtypeEnum
+     *
+     * @return $this
      */
-    public function setSubtype($value = null)
+    public function setSubtype(?string $value = null)
     {
         $this->Subtype = $value;
 
@@ -162,21 +152,18 @@ class AdImageGetItem
 
     /**
      * Gets OriginalUrl.
-     *
-     * @return string|null
      */
-    public function getOriginalUrl()
+    public function getOriginalUrl(): ?string
     {
-        return isset($this->OriginalUrl) ? $this->OriginalUrl : null;
+        return $this->OriginalUrl ?? null;
     }
 
     /**
      * Sets OriginalUrl.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setOriginalUrl($value = null)
+    public function setOriginalUrl(?string $value = null)
     {
         $this->OriginalUrl = $value;
 
@@ -185,27 +172,21 @@ class AdImageGetItem
 
     /**
      * Gets PreviewUrl.
-     *
-     * @return string|null
      */
-    public function getPreviewUrl()
+    public function getPreviewUrl(): ?string
     {
-        return isset($this->PreviewUrl) ? $this->PreviewUrl : null;
+        return $this->PreviewUrl ?? null;
     }
 
     /**
      * Sets PreviewUrl.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setPreviewUrl($value = null)
+    public function setPreviewUrl(?string $value = null)
     {
         $this->PreviewUrl = $value;
 
         return $this;
     }
-
-
 }
-

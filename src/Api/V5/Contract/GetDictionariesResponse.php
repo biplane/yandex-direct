@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class GetDictionariesResponse
 {
-
 //    Can be omit.
 //    protected $Currencies = null;
 
@@ -52,10 +53,8 @@ class GetDictionariesResponse
 
     /**
      * Creates a new instance of GetDictionariesResponse.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -65,18 +64,19 @@ class GetDictionariesResponse
      *
      * @return CurrenciesItem[]|null
      */
-    public function getCurrencies()
+    public function getCurrencies(): ?array
     {
-        return isset($this->Currencies) ? $this->Currencies : null;
+        return $this->Currencies ?? null;
     }
 
     /**
      * Sets Currencies.
      *
      * @param CurrenciesItem[]|null $value
+     *
      * @return $this
      */
-    public function setCurrencies(array $value = null)
+    public function setCurrencies(?array $value = null)
     {
         $this->Currencies = $value;
 
@@ -88,18 +88,19 @@ class GetDictionariesResponse
      *
      * @return MetroStationsItem[]|null
      */
-    public function getMetroStations()
+    public function getMetroStations(): ?array
     {
-        return isset($this->MetroStations) ? $this->MetroStations : null;
+        return $this->MetroStations ?? null;
     }
 
     /**
      * Sets MetroStations.
      *
      * @param MetroStationsItem[]|null $value
+     *
      * @return $this
      */
-    public function setMetroStations(array $value = null)
+    public function setMetroStations(?array $value = null)
     {
         $this->MetroStations = $value;
 
@@ -111,18 +112,19 @@ class GetDictionariesResponse
      *
      * @return GeoRegionsItem[]|null
      */
-    public function getGeoRegions()
+    public function getGeoRegions(): ?array
     {
-        return isset($this->GeoRegions) ? $this->GeoRegions : null;
+        return $this->GeoRegions ?? null;
     }
 
     /**
      * Sets GeoRegions.
      *
      * @param GeoRegionsItem[]|null $value
+     *
      * @return $this
      */
-    public function setGeoRegions(array $value = null)
+    public function setGeoRegions(?array $value = null)
     {
         $this->GeoRegions = $value;
 
@@ -134,18 +136,19 @@ class GetDictionariesResponse
      *
      * @return TimeZonesItem[]|null
      */
-    public function getTimeZones()
+    public function getTimeZones(): ?array
     {
-        return isset($this->TimeZones) ? $this->TimeZones : null;
+        return $this->TimeZones ?? null;
     }
 
     /**
      * Sets TimeZones.
      *
      * @param TimeZonesItem[]|null $value
+     *
      * @return $this
      */
-    public function setTimeZones(array $value = null)
+    public function setTimeZones(?array $value = null)
     {
         $this->TimeZones = $value;
 
@@ -157,18 +160,19 @@ class GetDictionariesResponse
      *
      * @return ConstantsItem[]|null
      */
-    public function getConstants()
+    public function getConstants(): ?array
     {
-        return isset($this->Constants) ? $this->Constants : null;
+        return $this->Constants ?? null;
     }
 
     /**
      * Sets Constants.
      *
      * @param ConstantsItem[]|null $value
+     *
      * @return $this
      */
-    public function setConstants(array $value = null)
+    public function setConstants(?array $value = null)
     {
         $this->Constants = $value;
 
@@ -180,18 +184,19 @@ class GetDictionariesResponse
      *
      * @return AdCategoriesItem[]|null
      */
-    public function getAdCategories()
+    public function getAdCategories(): ?array
     {
-        return isset($this->AdCategories) ? $this->AdCategories : null;
+        return $this->AdCategories ?? null;
     }
 
     /**
      * Sets AdCategories.
      *
      * @param AdCategoriesItem[]|null $value
+     *
      * @return $this
      */
-    public function setAdCategories(array $value = null)
+    public function setAdCategories(?array $value = null)
     {
         $this->AdCategories = $value;
 
@@ -203,18 +208,19 @@ class GetDictionariesResponse
      *
      * @return OperationSystemVersionsItem[]|null
      */
-    public function getOperationSystemVersions()
+    public function getOperationSystemVersions(): ?array
     {
-        return isset($this->OperationSystemVersions) ? $this->OperationSystemVersions : null;
+        return $this->OperationSystemVersions ?? null;
     }
 
     /**
      * Sets OperationSystemVersions.
      *
      * @param OperationSystemVersionsItem[]|null $value
+     *
      * @return $this
      */
-    public function setOperationSystemVersions(array $value = null)
+    public function setOperationSystemVersions(?array $value = null)
     {
         $this->OperationSystemVersions = $value;
 
@@ -226,18 +232,19 @@ class GetDictionariesResponse
      *
      * @return ProductivityAssertionsItem[]|null
      */
-    public function getProductivityAssertions()
+    public function getProductivityAssertions(): ?array
     {
-        return isset($this->ProductivityAssertions) ? $this->ProductivityAssertions : null;
+        return $this->ProductivityAssertions ?? null;
     }
 
     /**
      * Sets ProductivityAssertions.
      *
      * @param ProductivityAssertionsItem[]|null $value
+     *
      * @return $this
      */
-    public function setProductivityAssertions(array $value = null)
+    public function setProductivityAssertions(?array $value = null)
     {
         $this->ProductivityAssertions = $value;
 
@@ -249,18 +256,19 @@ class GetDictionariesResponse
      *
      * @return SupplySidePlatformsItem[]|null
      */
-    public function getSupplySidePlatforms()
+    public function getSupplySidePlatforms(): ?array
     {
-        return isset($this->SupplySidePlatforms) ? $this->SupplySidePlatforms : null;
+        return $this->SupplySidePlatforms ?? null;
     }
 
     /**
      * Sets SupplySidePlatforms.
      *
      * @param SupplySidePlatformsItem[]|null $value
+     *
      * @return $this
      */
-    public function setSupplySidePlatforms(array $value = null)
+    public function setSupplySidePlatforms(?array $value = null)
     {
         $this->SupplySidePlatforms = $value;
 
@@ -272,18 +280,19 @@ class GetDictionariesResponse
      *
      * @return InterestsItem[]|null
      */
-    public function getInterests()
+    public function getInterests(): ?array
     {
-        return isset($this->Interests) ? $this->Interests : null;
+        return $this->Interests ?? null;
     }
 
     /**
      * Sets Interests.
      *
      * @param InterestsItem[]|null $value
+     *
      * @return $this
      */
-    public function setInterests(array $value = null)
+    public function setInterests(?array $value = null)
     {
         $this->Interests = $value;
 
@@ -295,18 +304,19 @@ class GetDictionariesResponse
      *
      * @return AudienceCriteriaTypesItem[]|null
      */
-    public function getAudienceCriteriaTypes()
+    public function getAudienceCriteriaTypes(): ?array
     {
-        return isset($this->AudienceCriteriaTypes) ? $this->AudienceCriteriaTypes : null;
+        return $this->AudienceCriteriaTypes ?? null;
     }
 
     /**
      * Sets AudienceCriteriaTypes.
      *
      * @param AudienceCriteriaTypesItem[]|null $value
+     *
      * @return $this
      */
-    public function setAudienceCriteriaTypes(array $value = null)
+    public function setAudienceCriteriaTypes(?array $value = null)
     {
         $this->AudienceCriteriaTypes = $value;
 
@@ -318,18 +328,19 @@ class GetDictionariesResponse
      *
      * @return AudienceDemographicProfilesItem[]|null
      */
-    public function getAudienceDemographicProfiles()
+    public function getAudienceDemographicProfiles(): ?array
     {
-        return isset($this->AudienceDemographicProfiles) ? $this->AudienceDemographicProfiles : null;
+        return $this->AudienceDemographicProfiles ?? null;
     }
 
     /**
      * Sets AudienceDemographicProfiles.
      *
      * @param AudienceDemographicProfilesItem[]|null $value
+     *
      * @return $this
      */
-    public function setAudienceDemographicProfiles(array $value = null)
+    public function setAudienceDemographicProfiles(?array $value = null)
     {
         $this->AudienceDemographicProfiles = $value;
 
@@ -341,18 +352,19 @@ class GetDictionariesResponse
      *
      * @return AudienceInterestsItem[]|null
      */
-    public function getAudienceInterests()
+    public function getAudienceInterests(): ?array
     {
-        return isset($this->AudienceInterests) ? $this->AudienceInterests : null;
+        return $this->AudienceInterests ?? null;
     }
 
     /**
      * Sets AudienceInterests.
      *
      * @param AudienceInterestsItem[]|null $value
+     *
      * @return $this
      */
-    public function setAudienceInterests(array $value = null)
+    public function setAudienceInterests(?array $value = null)
     {
         $this->AudienceInterests = $value;
 
@@ -364,24 +376,22 @@ class GetDictionariesResponse
      *
      * @return FilterSchemasItem[]|null
      */
-    public function getFilterSchemas()
+    public function getFilterSchemas(): ?array
     {
-        return isset($this->FilterSchemas) ? $this->FilterSchemas : null;
+        return $this->FilterSchemas ?? null;
     }
 
     /**
      * Sets FilterSchemas.
      *
      * @param FilterSchemasItem[]|null $value
+     *
      * @return $this
      */
-    public function setFilterSchemas(array $value = null)
+    public function setFilterSchemas(?array $value = null)
     {
         $this->FilterSchemas = $value;
 
         return $this;
     }
-
-
 }
-

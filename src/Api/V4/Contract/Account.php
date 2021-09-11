@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class Account
 {
-
     protected $AgencyName = null;
 
     protected $AccountID = null;
@@ -30,20 +31,16 @@ class Account
 
     /**
      * Creates a new instance of Account.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets AgencyName.
-     *
-     * @return string|null
      */
-    public function getAgencyName()
+    public function getAgencyName(): ?string
     {
         return $this->AgencyName;
     }
@@ -51,10 +48,9 @@ class Account
     /**
      * Sets AgencyName.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setAgencyName($value = null)
+    public function setAgencyName(?string $value = null)
     {
         $this->AgencyName = $value;
 
@@ -63,10 +59,8 @@ class Account
 
     /**
      * Gets AccountID.
-     *
-     * @return int
      */
-    public function getAccountID()
+    public function getAccountID(): int
     {
         return $this->AccountID;
     }
@@ -74,10 +68,9 @@ class Account
     /**
      * Sets AccountID.
      *
-     * @param int $value
      * @return $this
      */
-    public function setAccountID($value)
+    public function setAccountID(int $value)
     {
         $this->AccountID = $value;
 
@@ -86,10 +79,8 @@ class Account
 
     /**
      * Gets AccountDayBudget.
-     *
-     * @return AccountDayBudgetInfo|null
      */
-    public function getAccountDayBudget()
+    public function getAccountDayBudget(): ?AccountDayBudgetInfo
     {
         return $this->AccountDayBudget;
     }
@@ -97,10 +88,9 @@ class Account
     /**
      * Sets AccountDayBudget.
      *
-     * @param AccountDayBudgetInfo|null $value
      * @return $this
      */
-    public function setAccountDayBudget(AccountDayBudgetInfo $value = null)
+    public function setAccountDayBudget(?AccountDayBudgetInfo $value = null)
     {
         $this->AccountDayBudget = $value;
 
@@ -109,10 +99,8 @@ class Account
 
     /**
      * Gets Amount.
-     *
-     * @return float|null
      */
-    public function getAmount()
+    public function getAmount(): ?float
     {
         return $this->Amount;
     }
@@ -120,10 +108,9 @@ class Account
     /**
      * Sets Amount.
      *
-     * @param float|null $value
      * @return $this
      */
-    public function setAmount($value = null)
+    public function setAmount(?float $value = null)
     {
         $this->Amount = $value;
 
@@ -132,10 +119,8 @@ class Account
 
     /**
      * Gets AmountAvailableForTransfer.
-     *
-     * @return float|null
      */
-    public function getAmountAvailableForTransfer()
+    public function getAmountAvailableForTransfer(): ?float
     {
         return $this->AmountAvailableForTransfer;
     }
@@ -143,10 +128,9 @@ class Account
     /**
      * Sets AmountAvailableForTransfer.
      *
-     * @param float|null $value
      * @return $this
      */
-    public function setAmountAvailableForTransfer($value = null)
+    public function setAmountAvailableForTransfer(?float $value = null)
     {
         $this->AmountAvailableForTransfer = $value;
 
@@ -155,10 +139,8 @@ class Account
 
     /**
      * Gets Currency.
-     *
-     * @return string|null
      */
-    public function getCurrency()
+    public function getCurrency(): ?string
     {
         return $this->Currency;
     }
@@ -166,10 +148,9 @@ class Account
     /**
      * Sets Currency.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setCurrency($value = null)
+    public function setCurrency(?string $value = null)
     {
         $this->Currency = $value;
 
@@ -178,10 +159,8 @@ class Account
 
     /**
      * Gets Login.
-     *
-     * @return string|null
      */
-    public function getLogin()
+    public function getLogin(): ?string
     {
         return $this->Login;
     }
@@ -189,10 +168,9 @@ class Account
     /**
      * Sets Login.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setLogin($value = null)
+    public function setLogin(?string $value = null)
     {
         $this->Login = $value;
 
@@ -201,10 +179,8 @@ class Account
 
     /**
      * Gets Discount.
-     *
-     * @return float|null
      */
-    public function getDiscount()
+    public function getDiscount(): ?float
     {
         return $this->Discount;
     }
@@ -212,10 +188,9 @@ class Account
     /**
      * Sets Discount.
      *
-     * @param float|null $value
      * @return $this
      */
-    public function setDiscount($value = null)
+    public function setDiscount(?float $value = null)
     {
         $this->Discount = $value;
 
@@ -224,10 +199,8 @@ class Account
 
     /**
      * Gets SmsNotification.
-     *
-     * @return SmsNotificationInfo|null
      */
-    public function getSmsNotification()
+    public function getSmsNotification(): ?SmsNotificationInfo
     {
         return $this->SmsNotification;
     }
@@ -235,10 +208,9 @@ class Account
     /**
      * Sets SmsNotification.
      *
-     * @param SmsNotificationInfo|null $value
      * @return $this
      */
-    public function setSmsNotification(SmsNotificationInfo $value = null)
+    public function setSmsNotification(?SmsNotificationInfo $value = null)
     {
         $this->SmsNotification = $value;
 
@@ -247,10 +219,8 @@ class Account
 
     /**
      * Gets EmailNotification.
-     *
-     * @return EmailNotificationInfo|null
      */
-    public function getEmailNotification()
+    public function getEmailNotification(): ?EmailNotificationInfo
     {
         return $this->EmailNotification;
     }
@@ -258,16 +228,12 @@ class Account
     /**
      * Sets EmailNotification.
      *
-     * @param EmailNotificationInfo|null $value
      * @return $this
      */
-    public function setEmailNotification(EmailNotificationInfo $value = null)
+    public function setEmailNotification(?EmailNotificationInfo $value = null)
     {
         $this->EmailNotification = $value;
 
         return $this;
     }
-
-
 }
-

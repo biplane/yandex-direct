@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,16 +9,13 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class GetRetargetingListsResponse extends GetResponseGeneral
 {
-
 //    Can be omit.
 //    protected $RetargetingLists = null;
 
     /**
      * Creates a new instance of GetRetargetingListsResponse.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -26,24 +25,22 @@ class GetRetargetingListsResponse extends GetResponseGeneral
      *
      * @return RetargetingListGetItem[]|null
      */
-    public function getRetargetingLists()
+    public function getRetargetingLists(): ?array
     {
-        return isset($this->RetargetingLists) ? $this->RetargetingLists : null;
+        return $this->RetargetingLists ?? null;
     }
 
     /**
      * Sets RetargetingLists.
      *
      * @param RetargetingListGetItem[]|null $value
+     *
      * @return $this
      */
-    public function setRetargetingLists(array $value = null)
+    public function setRetargetingLists(?array $value = null)
     {
         $this->RetargetingLists = $value;
 
         return $this;
     }
-
-
 }
-

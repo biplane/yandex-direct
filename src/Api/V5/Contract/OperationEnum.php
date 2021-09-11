@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,13 +9,9 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class OperationEnum
 {
+    public const ADD = 'ADD';
 
-    const ADD = 'ADD';
+    public const REMOVE = 'REMOVE';
 
-    const REMOVE = 'REMOVE';
-
-    const SET = 'SET';
-
-
+    public const SET = 'SET';
 }
-

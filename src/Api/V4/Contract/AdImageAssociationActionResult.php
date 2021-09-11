@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class AdImageAssociationActionResult
 {
-
     protected $Warnings = null;
 
     protected $Errors = null;
@@ -16,10 +17,8 @@ class AdImageAssociationActionResult
 
     /**
      * Creates a new instance of AdImageAssociationActionResult.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -29,7 +28,7 @@ class AdImageAssociationActionResult
      *
      * @return Warning[]|null
      */
-    public function getWarnings()
+    public function getWarnings(): ?array
     {
         return $this->Warnings;
     }
@@ -38,9 +37,10 @@ class AdImageAssociationActionResult
      * Sets Warnings.
      *
      * @param Warning[]|null $value
+     *
      * @return $this
      */
-    public function setWarnings(array $value = null)
+    public function setWarnings(?array $value = null)
     {
         $this->Warnings = $value;
 
@@ -52,7 +52,7 @@ class AdImageAssociationActionResult
      *
      * @return Error[]|null
      */
-    public function getErrors()
+    public function getErrors(): ?array
     {
         return $this->Errors;
     }
@@ -61,9 +61,10 @@ class AdImageAssociationActionResult
      * Sets Errors.
      *
      * @param Error[]|null $value
+     *
      * @return $this
      */
-    public function setErrors(array $value = null)
+    public function setErrors(?array $value = null)
     {
         $this->Errors = $value;
 
@@ -72,10 +73,8 @@ class AdImageAssociationActionResult
 
     /**
      * Gets AdID.
-     *
-     * @return int|null
      */
-    public function getAdID()
+    public function getAdID(): ?int
     {
         return $this->AdID;
     }
@@ -83,16 +82,12 @@ class AdImageAssociationActionResult
     /**
      * Sets AdID.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setAdID($value = null)
+    public function setAdID(?int $value = null)
     {
         $this->AdID = $value;
 
         return $this;
     }
-
-
 }
-

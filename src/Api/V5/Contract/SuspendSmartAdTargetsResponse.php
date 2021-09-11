@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,15 +9,12 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class SuspendSmartAdTargetsResponse
 {
-
     protected $SuspendResults = [];
 
     /**
      * Creates a new instance of SuspendSmartAdTargetsResponse.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -25,7 +24,7 @@ class SuspendSmartAdTargetsResponse
      *
      * @return ActionResult[]
      */
-    public function getSuspendResults()
+    public function getSuspendResults(): array
     {
         return $this->SuspendResults;
     }
@@ -34,6 +33,7 @@ class SuspendSmartAdTargetsResponse
      * Sets SuspendResults.
      *
      * @param ActionResult[] $value
+     *
      * @return $this
      */
     public function setSuspendResults(array $value)
@@ -42,7 +42,4 @@ class SuspendSmartAdTargetsResponse
 
         return $this;
     }
-
-
 }
-

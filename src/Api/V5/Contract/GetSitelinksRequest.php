@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class GetSitelinksRequest extends GetRequestGeneral
 {
-
 //    Can be omit.
 //    protected $SelectionCriteria = null;
 
@@ -19,31 +20,26 @@ class GetSitelinksRequest extends GetRequestGeneral
 
     /**
      * Creates a new instance of GetSitelinksRequest.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets SelectionCriteria.
-     *
-     * @return IdsCriteria|null
      */
-    public function getSelectionCriteria()
+    public function getSelectionCriteria(): ?IdsCriteria
     {
-        return isset($this->SelectionCriteria) ? $this->SelectionCriteria : null;
+        return $this->SelectionCriteria ?? null;
     }
 
     /**
      * Sets SelectionCriteria.
      *
-     * @param IdsCriteria|null $value
      * @return $this
      */
-    public function setSelectionCriteria(IdsCriteria $value = null)
+    public function setSelectionCriteria(?IdsCriteria $value = null)
     {
         $this->SelectionCriteria = $value;
 
@@ -53,22 +49,25 @@ class GetSitelinksRequest extends GetRequestGeneral
     /**
      * Gets FieldNames.
      *
-     * @return string[]|null
      * @see SitelinksSetFieldEnum
+     *
+     * @return string[]|null
      */
-    public function getFieldNames()
+    public function getFieldNames(): ?array
     {
-        return isset($this->FieldNames) ? $this->FieldNames : null;
+        return $this->FieldNames ?? null;
     }
 
     /**
      * Sets FieldNames.
      *
-     * @param string[]|null $value
-     * @return $this
      * @see SitelinksSetFieldEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
      */
-    public function setFieldNames(array $value = null)
+    public function setFieldNames(?array $value = null)
     {
         $this->FieldNames = $value;
 
@@ -78,28 +77,28 @@ class GetSitelinksRequest extends GetRequestGeneral
     /**
      * Gets SitelinkFieldNames.
      *
-     * @return string[]|null
      * @see SitelinkFieldEnum
+     *
+     * @return string[]|null
      */
-    public function getSitelinkFieldNames()
+    public function getSitelinkFieldNames(): ?array
     {
-        return isset($this->SitelinkFieldNames) ? $this->SitelinkFieldNames : null;
+        return $this->SitelinkFieldNames ?? null;
     }
 
     /**
      * Sets SitelinkFieldNames.
      *
-     * @param string[]|null $value
-     * @return $this
      * @see SitelinkFieldEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
      */
-    public function setSitelinkFieldNames(array $value = null)
+    public function setSitelinkFieldNames(?array $value = null)
     {
         $this->SitelinkFieldNames = $value;
 
         return $this;
     }
-
-
 }
-

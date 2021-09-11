@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,17 +9,13 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class WebpageConditionOperandEnum
 {
+    public const DOMAIN = 'DOMAIN';
 
-    const DOMAIN = 'DOMAIN';
+    public const OFFERS_LIST_URL = 'OFFERS_LIST_URL';
 
-    const OFFERS_LIST_URL = 'OFFERS_LIST_URL';
+    public const PAGE_CONTENT = 'PAGE_CONTENT';
 
-    const PAGE_CONTENT = 'PAGE_CONTENT';
+    public const PAGE_TITLE = 'PAGE_TITLE';
 
-    const PAGE_TITLE = 'PAGE_TITLE';
-
-    const URL = 'URL';
-
-
+    public const URL = 'URL';
 }
-

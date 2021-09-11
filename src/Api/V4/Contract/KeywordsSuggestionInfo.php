@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,15 +9,12 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class KeywordsSuggestionInfo
 {
-
     protected $Keywords = [];
 
     /**
      * Creates a new instance of KeywordsSuggestionInfo.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -25,7 +24,7 @@ class KeywordsSuggestionInfo
      *
      * @return string[]
      */
-    public function getKeywords()
+    public function getKeywords(): array
     {
         return $this->Keywords;
     }
@@ -34,6 +33,7 @@ class KeywordsSuggestionInfo
      * Sets Keywords.
      *
      * @param string[] $value
+     *
      * @return $this
      */
     public function setKeywords(array $value)
@@ -42,7 +42,4 @@ class KeywordsSuggestionInfo
 
         return $this;
     }
-
-
 }
-

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class NumberFilterFieldProps
 {
-
     protected $Min = null;
 
     protected $Max = null;
@@ -16,20 +17,16 @@ class NumberFilterFieldProps
 
     /**
      * Creates a new instance of NumberFilterFieldProps.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Min.
-     *
-     * @return float
      */
-    public function getMin()
+    public function getMin(): float
     {
         return $this->Min;
     }
@@ -37,10 +34,9 @@ class NumberFilterFieldProps
     /**
      * Sets Min.
      *
-     * @param float $value
      * @return $this
      */
-    public function setMin($value)
+    public function setMin(float $value)
     {
         $this->Min = $value;
 
@@ -49,10 +45,8 @@ class NumberFilterFieldProps
 
     /**
      * Gets Max.
-     *
-     * @return float
      */
-    public function getMax()
+    public function getMax(): float
     {
         return $this->Max;
     }
@@ -60,10 +54,9 @@ class NumberFilterFieldProps
     /**
      * Sets Max.
      *
-     * @param float $value
      * @return $this
      */
-    public function setMax($value)
+    public function setMax(float $value)
     {
         $this->Max = $value;
 
@@ -72,10 +65,8 @@ class NumberFilterFieldProps
 
     /**
      * Gets Precision.
-     *
-     * @return int
      */
-    public function getPrecision()
+    public function getPrecision(): int
     {
         return $this->Precision;
     }
@@ -83,16 +74,12 @@ class NumberFilterFieldProps
     /**
      * Sets Precision.
      *
-     * @param int $value
      * @return $this
      */
-    public function setPrecision($value)
+    public function setPrecision(int $value)
     {
         $this->Precision = $value;
 
         return $this;
     }
-
-
 }
-

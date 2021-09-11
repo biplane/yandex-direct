@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class NewReportFilterInfo
 {
-
     protected $PageType = null;
 
     protected $PositionType = null;
@@ -36,20 +37,16 @@ class NewReportFilterInfo
 
     /**
      * Creates a new instance of NewReportFilterInfo.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets PageType.
-     *
-     * @return string|null
      */
-    public function getPageType()
+    public function getPageType(): ?string
     {
         return $this->PageType;
     }
@@ -57,10 +54,9 @@ class NewReportFilterInfo
     /**
      * Sets PageType.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setPageType($value = null)
+    public function setPageType(?string $value = null)
     {
         $this->PageType = $value;
 
@@ -69,10 +65,8 @@ class NewReportFilterInfo
 
     /**
      * Gets PositionType.
-     *
-     * @return string|null
      */
-    public function getPositionType()
+    public function getPositionType(): ?string
     {
         return $this->PositionType;
     }
@@ -80,10 +74,9 @@ class NewReportFilterInfo
     /**
      * Sets PositionType.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setPositionType($value = null)
+    public function setPositionType(?string $value = null)
     {
         $this->PositionType = $value;
 
@@ -95,7 +88,7 @@ class NewReportFilterInfo
      *
      * @return int[]|null
      */
-    public function getBanner()
+    public function getBanner(): ?array
     {
         return $this->Banner;
     }
@@ -104,9 +97,10 @@ class NewReportFilterInfo
      * Sets Banner.
      *
      * @param int[]|null $value
+     *
      * @return $this
      */
-    public function setBanner(array $value = null)
+    public function setBanner(?array $value = null)
     {
         $this->Banner = $value;
 
@@ -118,7 +112,7 @@ class NewReportFilterInfo
      *
      * @return int[]|null
      */
-    public function getGeo()
+    public function getGeo(): ?array
     {
         return $this->Geo;
     }
@@ -127,9 +121,10 @@ class NewReportFilterInfo
      * Sets Geo.
      *
      * @param int[]|null $value
+     *
      * @return $this
      */
-    public function setGeo(array $value = null)
+    public function setGeo(?array $value = null)
     {
         $this->Geo = $value;
 
@@ -141,7 +136,7 @@ class NewReportFilterInfo
      *
      * @return string[]|null
      */
-    public function getPhrase()
+    public function getPhrase(): ?array
     {
         return $this->Phrase;
     }
@@ -150,9 +145,10 @@ class NewReportFilterInfo
      * Sets Phrase.
      *
      * @param string[]|null $value
+     *
      * @return $this
      */
-    public function setPhrase(array $value = null)
+    public function setPhrase(?array $value = null)
     {
         $this->Phrase = $value;
 
@@ -164,7 +160,7 @@ class NewReportFilterInfo
      *
      * @return string[]|null
      */
-    public function getPageName()
+    public function getPageName(): ?array
     {
         return $this->PageName;
     }
@@ -173,9 +169,10 @@ class NewReportFilterInfo
      * Sets PageName.
      *
      * @param string[]|null $value
+     *
      * @return $this
      */
-    public function setPageName(array $value = null)
+    public function setPageName(?array $value = null)
     {
         $this->PageName = $value;
 
@@ -187,7 +184,7 @@ class NewReportFilterInfo
      *
      * @return int[]|null
      */
-    public function getStatGoals()
+    public function getStatGoals(): ?array
     {
         return $this->StatGoals;
     }
@@ -196,9 +193,10 @@ class NewReportFilterInfo
      * Sets StatGoals.
      *
      * @param int[]|null $value
+     *
      * @return $this
      */
-    public function setStatGoals(array $value = null)
+    public function setStatGoals(?array $value = null)
     {
         $this->StatGoals = $value;
 
@@ -207,10 +205,8 @@ class NewReportFilterInfo
 
     /**
      * Gets WithImage.
-     *
-     * @return string|null
      */
-    public function getWithImage()
+    public function getWithImage(): ?string
     {
         return $this->WithImage;
     }
@@ -218,10 +214,9 @@ class NewReportFilterInfo
     /**
      * Sets WithImage.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setWithImage($value = null)
+    public function setWithImage(?string $value = null)
     {
         $this->WithImage = $value;
 
@@ -230,10 +225,8 @@ class NewReportFilterInfo
 
     /**
      * Gets DeviceType.
-     *
-     * @return string|null
      */
-    public function getDeviceType()
+    public function getDeviceType(): ?string
     {
         return $this->DeviceType;
     }
@@ -241,10 +234,9 @@ class NewReportFilterInfo
     /**
      * Sets DeviceType.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setDeviceType($value = null)
+    public function setDeviceType(?string $value = null)
     {
         $this->DeviceType = $value;
 
@@ -256,7 +248,7 @@ class NewReportFilterInfo
      *
      * @return string[]|null
      */
-    public function getAge()
+    public function getAge(): ?array
     {
         return $this->Age;
     }
@@ -265,9 +257,10 @@ class NewReportFilterInfo
      * Sets Age.
      *
      * @param string[]|null $value
+     *
      * @return $this
      */
-    public function setAge(array $value = null)
+    public function setAge(?array $value = null)
     {
         $this->Age = $value;
 
@@ -279,7 +272,7 @@ class NewReportFilterInfo
      *
      * @return string[]|null
      */
-    public function getGender()
+    public function getGender(): ?array
     {
         return $this->Gender;
     }
@@ -288,9 +281,10 @@ class NewReportFilterInfo
      * Sets Gender.
      *
      * @param string[]|null $value
+     *
      * @return $this
      */
-    public function setGender(array $value = null)
+    public function setGender(?array $value = null)
     {
         $this->Gender = $value;
 
@@ -302,7 +296,7 @@ class NewReportFilterInfo
      *
      * @return string[]|null
      */
-    public function getCarrierType()
+    public function getCarrierType(): ?array
     {
         return $this->CarrierType;
     }
@@ -311,9 +305,10 @@ class NewReportFilterInfo
      * Sets CarrierType.
      *
      * @param string[]|null $value
+     *
      * @return $this
      */
-    public function setCarrierType(array $value = null)
+    public function setCarrierType(?array $value = null)
     {
         $this->CarrierType = $value;
 
@@ -325,7 +320,7 @@ class NewReportFilterInfo
      *
      * @return string[]|null
      */
-    public function getMobilePlatform()
+    public function getMobilePlatform(): ?array
     {
         return $this->MobilePlatform;
     }
@@ -334,15 +329,13 @@ class NewReportFilterInfo
      * Sets MobilePlatform.
      *
      * @param string[]|null $value
+     *
      * @return $this
      */
-    public function setMobilePlatform(array $value = null)
+    public function setMobilePlatform(?array $value = null)
     {
         $this->MobilePlatform = $value;
 
         return $this;
     }
-
-
 }
-

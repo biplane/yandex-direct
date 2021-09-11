@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class RetargetingListBase
 {
-
 //    Can be omit.
 //    protected $Name = null;
 
@@ -19,31 +20,26 @@ class RetargetingListBase
 
     /**
      * Creates a new instance of RetargetingListBase.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Name.
-     *
-     * @return string|null
      */
-    public function getName()
+    public function getName(): ?string
     {
-        return isset($this->Name) ? $this->Name : null;
+        return $this->Name ?? null;
     }
 
     /**
      * Sets Name.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setName($value = null)
+    public function setName(?string $value = null)
     {
         $this->Name = $value;
 
@@ -52,21 +48,18 @@ class RetargetingListBase
 
     /**
      * Gets Description.
-     *
-     * @return string|null
      */
-    public function getDescription()
+    public function getDescription(): ?string
     {
-        return isset($this->Description) ? $this->Description : null;
+        return $this->Description ?? null;
     }
 
     /**
      * Sets Description.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setDescription($value = null)
+    public function setDescription(?string $value = null)
     {
         $this->Description = $value;
 
@@ -78,24 +71,22 @@ class RetargetingListBase
      *
      * @return RetargetingListRuleItem[]|null
      */
-    public function getRules()
+    public function getRules(): ?array
     {
-        return isset($this->Rules) ? $this->Rules : null;
+        return $this->Rules ?? null;
     }
 
     /**
      * Sets Rules.
      *
      * @param RetargetingListRuleItem[]|null $value
+     *
      * @return $this
      */
-    public function setRules(array $value = null)
+    public function setRules(?array $value = null)
     {
         $this->Rules = $value;
 
         return $this;
     }
-
-
 }
-

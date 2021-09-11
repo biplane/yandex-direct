@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,17 +9,14 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class NewWordstatReportInfo
 {
-
     protected $Phrases = [];
 
     protected $GeoID = null;
 
     /**
      * Creates a new instance of NewWordstatReportInfo.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -27,7 +26,7 @@ class NewWordstatReportInfo
      *
      * @return string[]
      */
-    public function getPhrases()
+    public function getPhrases(): array
     {
         return $this->Phrases;
     }
@@ -36,6 +35,7 @@ class NewWordstatReportInfo
      * Sets Phrases.
      *
      * @param string[] $value
+     *
      * @return $this
      */
     public function setPhrases(array $value)
@@ -50,7 +50,7 @@ class NewWordstatReportInfo
      *
      * @return int[]|null
      */
-    public function getGeoID()
+    public function getGeoID(): ?array
     {
         return $this->GeoID;
     }
@@ -59,15 +59,13 @@ class NewWordstatReportInfo
      * Sets GeoID.
      *
      * @param int[]|null $value
+     *
      * @return $this
      */
-    public function setGeoID(array $value = null)
+    public function setGeoID(?array $value = null)
     {
         $this->GeoID = $value;
 
         return $this;
     }
-
-
 }
-

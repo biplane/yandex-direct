@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class AccountManagementRequest
 {
-
     protected $Action = null;
 
     protected $SelectionCriteria = null;
@@ -26,20 +27,16 @@ class AccountManagementRequest
 
     /**
      * Creates a new instance of AccountManagementRequest.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Action.
-     *
-     * @return string
      */
-    public function getAction()
+    public function getAction(): string
     {
         return $this->Action;
     }
@@ -47,10 +44,9 @@ class AccountManagementRequest
     /**
      * Sets Action.
      *
-     * @param string $value
      * @return $this
      */
-    public function setAction($value)
+    public function setAction(string $value)
     {
         $this->Action = $value;
 
@@ -59,10 +55,8 @@ class AccountManagementRequest
 
     /**
      * Gets SelectionCriteria.
-     *
-     * @return AccountSelectionCriteria|null
      */
-    public function getSelectionCriteria()
+    public function getSelectionCriteria(): ?AccountSelectionCriteria
     {
         return $this->SelectionCriteria;
     }
@@ -70,10 +64,9 @@ class AccountManagementRequest
     /**
      * Sets SelectionCriteria.
      *
-     * @param AccountSelectionCriteria|null $value
      * @return $this
      */
-    public function setSelectionCriteria(AccountSelectionCriteria $value = null)
+    public function setSelectionCriteria(?AccountSelectionCriteria $value = null)
     {
         $this->SelectionCriteria = $value;
 
@@ -85,7 +78,7 @@ class AccountManagementRequest
      *
      * @return Payment[]|null
      */
-    public function getPayments()
+    public function getPayments(): ?array
     {
         return $this->Payments;
     }
@@ -94,9 +87,10 @@ class AccountManagementRequest
      * Sets Payments.
      *
      * @param Payment[]|null $value
+     *
      * @return $this
      */
-    public function setPayments(array $value = null)
+    public function setPayments(?array $value = null)
     {
         $this->Payments = $value;
 
@@ -108,7 +102,7 @@ class AccountManagementRequest
      *
      * @return Transfer[]|null
      */
-    public function getTransfers()
+    public function getTransfers(): ?array
     {
         return $this->Transfers;
     }
@@ -117,9 +111,10 @@ class AccountManagementRequest
      * Sets Transfers.
      *
      * @param Transfer[]|null $value
+     *
      * @return $this
      */
-    public function setTransfers(array $value = null)
+    public function setTransfers(?array $value = null)
     {
         $this->Transfers = $value;
 
@@ -131,7 +126,7 @@ class AccountManagementRequest
      *
      * @return Account[]|null
      */
-    public function getAccounts()
+    public function getAccounts(): ?array
     {
         return $this->Accounts;
     }
@@ -140,9 +135,10 @@ class AccountManagementRequest
      * Sets Accounts.
      *
      * @param Account[]|null $value
+     *
      * @return $this
      */
-    public function setAccounts(array $value = null)
+    public function setAccounts(?array $value = null)
     {
         $this->Accounts = $value;
 
@@ -151,10 +147,8 @@ class AccountManagementRequest
 
     /**
      * Gets PayMethodID.
-     *
-     * @return string|null
      */
-    public function getPayMethodID()
+    public function getPayMethodID(): ?string
     {
         return $this->PayMethodID;
     }
@@ -162,10 +156,9 @@ class AccountManagementRequest
     /**
      * Sets PayMethodID.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setPayMethodID($value = null)
+    public function setPayMethodID(?string $value = null)
     {
         $this->PayMethodID = $value;
 
@@ -174,10 +167,8 @@ class AccountManagementRequest
 
     /**
      * Gets CustomTransactionID.
-     *
-     * @return string|null
      */
-    public function getCustomTransactionID()
+    public function getCustomTransactionID(): ?string
     {
         return $this->CustomTransactionID;
     }
@@ -185,10 +176,9 @@ class AccountManagementRequest
     /**
      * Sets CustomTransactionID.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setCustomTransactionID($value = null)
+    public function setCustomTransactionID(?string $value = null)
     {
         $this->CustomTransactionID = $value;
 
@@ -197,10 +187,8 @@ class AccountManagementRequest
 
     /**
      * Gets Version.
-     *
-     * @return string|null
      */
-    public function getVersion()
+    public function getVersion(): ?string
     {
         return $this->Version;
     }
@@ -208,16 +196,12 @@ class AccountManagementRequest
     /**
      * Sets Version.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setVersion($value = null)
+    public function setVersion(?string $value = null)
     {
         $this->Version = $value;
 
         return $this;
     }
-
-
 }
-

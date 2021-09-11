@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class StrategyAverageCrrAdd
 {
-
     protected $Crr = null;
 
     protected $GoalId = null;
@@ -17,20 +18,16 @@ class StrategyAverageCrrAdd
 
     /**
      * Creates a new instance of StrategyAverageCrrAdd.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Crr.
-     *
-     * @return int
      */
-    public function getCrr()
+    public function getCrr(): int
     {
         return $this->Crr;
     }
@@ -38,10 +35,9 @@ class StrategyAverageCrrAdd
     /**
      * Sets Crr.
      *
-     * @param int $value
      * @return $this
      */
-    public function setCrr($value)
+    public function setCrr(int $value)
     {
         $this->Crr = $value;
 
@@ -50,10 +46,8 @@ class StrategyAverageCrrAdd
 
     /**
      * Gets GoalId.
-     *
-     * @return int
      */
-    public function getGoalId()
+    public function getGoalId(): int
     {
         return $this->GoalId;
     }
@@ -61,10 +55,9 @@ class StrategyAverageCrrAdd
     /**
      * Sets GoalId.
      *
-     * @param int $value
      * @return $this
      */
-    public function setGoalId($value)
+    public function setGoalId(int $value)
     {
         $this->GoalId = $value;
 
@@ -73,27 +66,21 @@ class StrategyAverageCrrAdd
 
     /**
      * Gets WeeklySpendLimit.
-     *
-     * @return int|null
      */
-    public function getWeeklySpendLimit()
+    public function getWeeklySpendLimit(): ?int
     {
-        return isset($this->WeeklySpendLimit) ? $this->WeeklySpendLimit : null;
+        return $this->WeeklySpendLimit ?? null;
     }
 
     /**
      * Sets WeeklySpendLimit.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setWeeklySpendLimit($value = null)
+    public function setWeeklySpendLimit(?int $value = null)
     {
         $this->WeeklySpendLimit = $value;
 
         return $this;
     }
-
-
 }
-

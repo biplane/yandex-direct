@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class SmsSettings
 {
-
 //    Can be omit.
 //    protected $Events = null;
 
@@ -19,10 +20,8 @@ class SmsSettings
 
     /**
      * Creates a new instance of SmsSettings.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -30,22 +29,25 @@ class SmsSettings
     /**
      * Gets Events.
      *
-     * @return string[]|null
      * @see SmsEventsEnum
+     *
+     * @return string[]|null
      */
-    public function getEvents()
+    public function getEvents(): ?array
     {
-        return isset($this->Events) ? $this->Events : null;
+        return $this->Events ?? null;
     }
 
     /**
      * Sets Events.
      *
-     * @param string[]|null $value
-     * @return $this
      * @see SmsEventsEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
      */
-    public function setEvents(array $value = null)
+    public function setEvents(?array $value = null)
     {
         $this->Events = $value;
 
@@ -54,21 +56,18 @@ class SmsSettings
 
     /**
      * Gets TimeFrom.
-     *
-     * @return string|null
      */
-    public function getTimeFrom()
+    public function getTimeFrom(): ?string
     {
-        return isset($this->TimeFrom) ? $this->TimeFrom : null;
+        return $this->TimeFrom ?? null;
     }
 
     /**
      * Sets TimeFrom.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setTimeFrom($value = null)
+    public function setTimeFrom(?string $value = null)
     {
         $this->TimeFrom = $value;
 
@@ -77,27 +76,21 @@ class SmsSettings
 
     /**
      * Gets TimeTo.
-     *
-     * @return string|null
      */
-    public function getTimeTo()
+    public function getTimeTo(): ?string
     {
-        return isset($this->TimeTo) ? $this->TimeTo : null;
+        return $this->TimeTo ?? null;
     }
 
     /**
      * Sets TimeTo.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setTimeTo($value = null)
+    public function setTimeTo(?string $value = null)
     {
         $this->TimeTo = $value;
 
         return $this;
     }
-
-
 }
-

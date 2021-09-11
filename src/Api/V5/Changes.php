@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5;
 
 use Biplane\YandexDirect\Api\ApiSoapClientV5;
@@ -10,8 +12,7 @@ use Biplane\YandexDirect\Config;
  */
 class Changes extends ApiSoapClientV5
 {
-
-    const ENDPOINT = 'https://api.direct.yandex.com/v5/changes?wsdl';
+    public const ENDPOINT = 'https://api.direct.yandex.com/v5/changes?wsdl';
 
     public function __construct(Config $config, array $options)
     {
@@ -74,37 +75,25 @@ class Changes extends ApiSoapClientV5
 
     /**
      * checkDictionaries.
-     *
-     * @param Contract\CheckDictionariesRequest $parameters
-     * @return Contract\CheckDictionariesResponse
      */
-    public function checkDictionaries(Contract\CheckDictionariesRequest $parameters)
+    public function checkDictionaries(Contract\CheckDictionariesRequest $parameters): Contract\CheckDictionariesResponse
     {
         return $this->__soapCall('checkDictionaries', [$parameters]);
     }
 
     /**
      * checkCampaigns.
-     *
-     * @param Contract\CheckCampaignsRequest $parameters
-     * @return Contract\CheckCampaignsResponse
      */
-    public function checkCampaigns(Contract\CheckCampaignsRequest $parameters)
+    public function checkCampaigns(Contract\CheckCampaignsRequest $parameters): Contract\CheckCampaignsResponse
     {
         return $this->__soapCall('checkCampaigns', [$parameters]);
     }
 
     /**
      * check.
-     *
-     * @param Contract\CheckChangesRequest $parameters
-     * @return Contract\CheckChangesResponse
      */
-    public function check(Contract\CheckChangesRequest $parameters)
+    public function check(Contract\CheckChangesRequest $parameters): Contract\CheckChangesResponse
     {
         return $this->__soapCall('check', [$parameters]);
     }
-
-
 }
-

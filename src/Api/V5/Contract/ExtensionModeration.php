@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class ExtensionModeration
 {
-
     protected $Status = null;
 
 //    Can be omit.
@@ -15,10 +16,8 @@ class ExtensionModeration
 
     /**
      * Creates a new instance of ExtensionModeration.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -26,10 +25,9 @@ class ExtensionModeration
     /**
      * Gets Status.
      *
-     * @return string
      * @see StatusEnum
      */
-    public function getStatus()
+    public function getStatus(): string
     {
         return $this->Status;
     }
@@ -37,11 +35,11 @@ class ExtensionModeration
     /**
      * Sets Status.
      *
-     * @param string $value
-     * @return $this
      * @see StatusEnum
+     *
+     * @return $this
      */
-    public function setStatus($value)
+    public function setStatus(string $value)
     {
         $this->Status = $value;
 
@@ -50,27 +48,21 @@ class ExtensionModeration
 
     /**
      * Gets StatusClarification.
-     *
-     * @return string|null
      */
-    public function getStatusClarification()
+    public function getStatusClarification(): ?string
     {
-        return isset($this->StatusClarification) ? $this->StatusClarification : null;
+        return $this->StatusClarification ?? null;
     }
 
     /**
      * Sets StatusClarification.
      *
-     * @param string|null $value
      * @return $this
      */
-    public function setStatusClarification($value = null)
+    public function setStatusClarification(?string $value = null)
     {
         $this->StatusClarification = $value;
 
         return $this;
     }
-
-
 }
-

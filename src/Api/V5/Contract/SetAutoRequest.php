@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,15 +9,12 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class SetAutoRequest
 {
-
     protected $KeywordBids = [];
 
     /**
      * Creates a new instance of SetAutoRequest.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -25,7 +24,7 @@ class SetAutoRequest
      *
      * @return KeywordBidSetAutoItem[]
      */
-    public function getKeywordBids()
+    public function getKeywordBids(): array
     {
         return $this->KeywordBids;
     }
@@ -34,6 +33,7 @@ class SetAutoRequest
      * Sets KeywordBids.
      *
      * @param KeywordBidSetAutoItem[] $value
+     *
      * @return $this
      */
     public function setKeywordBids(array $value)
@@ -42,7 +42,4 @@ class SetAutoRequest
 
         return $this;
     }
-
-
 }
-

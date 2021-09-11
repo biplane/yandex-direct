@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,25 +9,21 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class PriceCurrencyEnum
 {
+    public const RUB = 'RUB';
 
-    const RUB = 'RUB';
+    public const UAH = 'UAH';
 
-    const UAH = 'UAH';
+    public const BYN = 'BYN';
 
-    const BYN = 'BYN';
+    public const USD = 'USD';
 
-    const USD = 'USD';
+    public const EUR = 'EUR';
 
-    const EUR = 'EUR';
+    public const KZT = 'KZT';
 
-    const KZT = 'KZT';
+    public const aTRY = 'TRY';
 
-    const aTRY = 'TRY';
+    public const CHF = 'CHF';
 
-    const CHF = 'CHF';
-
-    const UZS = 'UZS';
-
-
+    public const UZS = 'UZS';
 }
-

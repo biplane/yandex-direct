@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,27 +9,23 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class MobileAppCampaignNetworkStrategyTypeEnum
 {
+    public const NETWORK_DEFAULT = 'NETWORK_DEFAULT';
 
-    const NETWORK_DEFAULT = 'NETWORK_DEFAULT';
+    public const MAXIMUM_COVERAGE = 'MAXIMUM_COVERAGE';
 
-    const MAXIMUM_COVERAGE = 'MAXIMUM_COVERAGE';
+    public const AVERAGE_CPC = 'AVERAGE_CPC';
 
-    const AVERAGE_CPC = 'AVERAGE_CPC';
+    public const AVERAGE_CPI = 'AVERAGE_CPI';
 
-    const AVERAGE_CPI = 'AVERAGE_CPI';
+    public const WB_MAXIMUM_APP_INSTALLS = 'WB_MAXIMUM_APP_INSTALLS';
 
-    const WB_MAXIMUM_APP_INSTALLS = 'WB_MAXIMUM_APP_INSTALLS';
+    public const SERVING_OFF = 'SERVING_OFF';
 
-    const SERVING_OFF = 'SERVING_OFF';
+    public const UNKNOWN = 'UNKNOWN';
 
-    const UNKNOWN = 'UNKNOWN';
+    public const WB_MAXIMUM_CLICKS = 'WB_MAXIMUM_CLICKS';
 
-    const WB_MAXIMUM_CLICKS = 'WB_MAXIMUM_CLICKS';
+    public const WEEKLY_CLICK_PACKAGE = 'WEEKLY_CLICK_PACKAGE';
 
-    const WEEKLY_CLICK_PACKAGE = 'WEEKLY_CLICK_PACKAGE';
-
-    const PAY_FOR_INSTALL = 'PAY_FOR_INSTALL';
-
-
+    public const PAY_FOR_INSTALL = 'PAY_FOR_INSTALL';
 }
-

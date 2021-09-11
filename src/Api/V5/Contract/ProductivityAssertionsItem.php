@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class ProductivityAssertionsItem
 {
-
     protected $Reference = null;
 
     protected $Title = null;
@@ -16,20 +17,16 @@ class ProductivityAssertionsItem
 
     /**
      * Creates a new instance of ProductivityAssertionsItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Reference.
-     *
-     * @return int
      */
-    public function getReference()
+    public function getReference(): int
     {
         return $this->Reference;
     }
@@ -37,10 +34,9 @@ class ProductivityAssertionsItem
     /**
      * Sets Reference.
      *
-     * @param int $value
      * @return $this
      */
-    public function setReference($value)
+    public function setReference(int $value)
     {
         $this->Reference = $value;
 
@@ -49,10 +45,8 @@ class ProductivityAssertionsItem
 
     /**
      * Gets Title.
-     *
-     * @return string
      */
-    public function getTitle()
+    public function getTitle(): string
     {
         return $this->Title;
     }
@@ -60,10 +54,9 @@ class ProductivityAssertionsItem
     /**
      * Sets Title.
      *
-     * @param string $value
      * @return $this
      */
-    public function setTitle($value)
+    public function setTitle(string $value)
     {
         $this->Title = $value;
 
@@ -72,10 +65,8 @@ class ProductivityAssertionsItem
 
     /**
      * Gets Recommendation.
-     *
-     * @return string
      */
-    public function getRecommendation()
+    public function getRecommendation(): string
     {
         return $this->Recommendation;
     }
@@ -83,16 +74,12 @@ class ProductivityAssertionsItem
     /**
      * Sets Recommendation.
      *
-     * @param string $value
      * @return $this
      */
-    public function setRecommendation($value)
+    public function setRecommendation(string $value)
     {
         $this->Recommendation = $value;
 
         return $this;
     }
-
-
 }
-

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,15 +9,12 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class UpdateCampaignsRequest
 {
-
     protected $Campaigns = [];
 
     /**
      * Creates a new instance of UpdateCampaignsRequest.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -25,7 +24,7 @@ class UpdateCampaignsRequest
      *
      * @return CampaignUpdateItem[]
      */
-    public function getCampaigns()
+    public function getCampaigns(): array
     {
         return $this->Campaigns;
     }
@@ -34,6 +33,7 @@ class UpdateCampaignsRequest
      * Sets Campaigns.
      *
      * @param CampaignUpdateItem[] $value
+     *
      * @return $this
      */
     public function setCampaigns(array $value)
@@ -42,7 +42,4 @@ class UpdateCampaignsRequest
 
         return $this;
     }
-
-
 }
-

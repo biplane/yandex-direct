@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class CampaignNotification
 {
-
 //    Can be omit.
 //    protected $SmsSettings = null;
 
@@ -16,31 +17,26 @@ class CampaignNotification
 
     /**
      * Creates a new instance of CampaignNotification.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets SmsSettings.
-     *
-     * @return SmsSettings|null
      */
-    public function getSmsSettings()
+    public function getSmsSettings(): ?SmsSettings
     {
-        return isset($this->SmsSettings) ? $this->SmsSettings : null;
+        return $this->SmsSettings ?? null;
     }
 
     /**
      * Sets SmsSettings.
      *
-     * @param SmsSettings|null $value
      * @return $this
      */
-    public function setSmsSettings(SmsSettings $value = null)
+    public function setSmsSettings(?SmsSettings $value = null)
     {
         $this->SmsSettings = $value;
 
@@ -49,27 +45,21 @@ class CampaignNotification
 
     /**
      * Gets EmailSettings.
-     *
-     * @return EmailSettings|null
      */
-    public function getEmailSettings()
+    public function getEmailSettings(): ?EmailSettings
     {
-        return isset($this->EmailSettings) ? $this->EmailSettings : null;
+        return $this->EmailSettings ?? null;
     }
 
     /**
      * Sets EmailSettings.
      *
-     * @param EmailSettings|null $value
      * @return $this
      */
-    public function setEmailSettings(EmailSettings $value = null)
+    public function setEmailSettings(?EmailSettings $value = null)
     {
         $this->EmailSettings = $value;
 
         return $this;
     }
-
-
 }
-

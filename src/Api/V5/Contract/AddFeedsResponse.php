@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,15 +9,12 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AddFeedsResponse
 {
-
     protected $AddResults = [];
 
     /**
      * Creates a new instance of AddFeedsResponse.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -25,7 +24,7 @@ class AddFeedsResponse
      *
      * @return ActionResult[]
      */
-    public function getAddResults()
+    public function getAddResults(): array
     {
         return $this->AddResults;
     }
@@ -34,6 +33,7 @@ class AddFeedsResponse
      * Sets AddResults.
      *
      * @param ActionResult[] $value
+     *
      * @return $this
      */
     public function setAddResults(array $value)
@@ -42,7 +42,4 @@ class AddFeedsResponse
 
         return $this;
     }
-
-
 }
-

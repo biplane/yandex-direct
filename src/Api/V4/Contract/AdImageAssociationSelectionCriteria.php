@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V4\Contract;
  */
 class AdImageAssociationSelectionCriteria
 {
-
     protected $Logins = null;
 
     protected $AdImageHashes = null;
@@ -24,10 +25,8 @@ class AdImageAssociationSelectionCriteria
 
     /**
      * Creates a new instance of AdImageAssociationSelectionCriteria.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -37,7 +36,7 @@ class AdImageAssociationSelectionCriteria
      *
      * @return string[]|null
      */
-    public function getLogins()
+    public function getLogins(): ?array
     {
         return $this->Logins;
     }
@@ -46,9 +45,10 @@ class AdImageAssociationSelectionCriteria
      * Sets Logins.
      *
      * @param string[]|null $value
+     *
      * @return $this
      */
-    public function setLogins(array $value = null)
+    public function setLogins(?array $value = null)
     {
         $this->Logins = $value;
 
@@ -60,7 +60,7 @@ class AdImageAssociationSelectionCriteria
      *
      * @return string[]|null
      */
-    public function getAdImageHashes()
+    public function getAdImageHashes(): ?array
     {
         return $this->AdImageHashes;
     }
@@ -69,9 +69,10 @@ class AdImageAssociationSelectionCriteria
      * Sets AdImageHashes.
      *
      * @param string[]|null $value
+     *
      * @return $this
      */
-    public function setAdImageHashes(array $value = null)
+    public function setAdImageHashes(?array $value = null)
     {
         $this->AdImageHashes = $value;
 
@@ -83,7 +84,7 @@ class AdImageAssociationSelectionCriteria
      *
      * @return string[]|null
      */
-    public function getStatusAdImageModerate()
+    public function getStatusAdImageModerate(): ?array
     {
         return $this->StatusAdImageModerate;
     }
@@ -92,9 +93,10 @@ class AdImageAssociationSelectionCriteria
      * Sets StatusAdImageModerate.
      *
      * @param string[]|null $value
+     *
      * @return $this
      */
-    public function setStatusAdImageModerate(array $value = null)
+    public function setStatusAdImageModerate(?array $value = null)
     {
         $this->StatusAdImageModerate = $value;
 
@@ -106,7 +108,7 @@ class AdImageAssociationSelectionCriteria
      *
      * @return int[]|null
      */
-    public function getAdIDS()
+    public function getAdIDS(): ?array
     {
         return $this->AdIDS;
     }
@@ -115,9 +117,10 @@ class AdImageAssociationSelectionCriteria
      * Sets AdIDS.
      *
      * @param int[]|null $value
+     *
      * @return $this
      */
-    public function setAdIDS(array $value = null)
+    public function setAdIDS(?array $value = null)
     {
         $this->AdIDS = $value;
 
@@ -129,7 +132,7 @@ class AdImageAssociationSelectionCriteria
      *
      * @return int[]|null
      */
-    public function getCampaignIDS()
+    public function getCampaignIDS(): ?array
     {
         return $this->CampaignIDS;
     }
@@ -138,9 +141,10 @@ class AdImageAssociationSelectionCriteria
      * Sets CampaignIDS.
      *
      * @param int[]|null $value
+     *
      * @return $this
      */
-    public function setCampaignIDS(array $value = null)
+    public function setCampaignIDS(?array $value = null)
     {
         $this->CampaignIDS = $value;
 
@@ -149,10 +153,8 @@ class AdImageAssociationSelectionCriteria
 
     /**
      * Gets Limit.
-     *
-     * @return int|null
      */
-    public function getLimit()
+    public function getLimit(): ?int
     {
         return $this->Limit;
     }
@@ -160,10 +162,9 @@ class AdImageAssociationSelectionCriteria
     /**
      * Sets Limit.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setLimit($value = null)
+    public function setLimit(?int $value = null)
     {
         $this->Limit = $value;
 
@@ -172,10 +173,8 @@ class AdImageAssociationSelectionCriteria
 
     /**
      * Gets Offset.
-     *
-     * @return int|null
      */
-    public function getOffset()
+    public function getOffset(): ?int
     {
         return $this->Offset;
     }
@@ -183,16 +182,12 @@ class AdImageAssociationSelectionCriteria
     /**
      * Sets Offset.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setOffset($value = null)
+    public function setOffset(?int $value = null)
     {
         $this->Offset = $value;
 
         return $this;
     }
-
-
 }
-

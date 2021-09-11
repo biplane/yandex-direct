@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class CampaignsSelectionCriteria
 {
-
 //    Can be omit.
 //    protected $Ids = null;
 
@@ -25,10 +26,8 @@ class CampaignsSelectionCriteria
 
     /**
      * Creates a new instance of CampaignsSelectionCriteria.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -38,18 +37,19 @@ class CampaignsSelectionCriteria
      *
      * @return int[]|null
      */
-    public function getIds()
+    public function getIds(): ?array
     {
-        return isset($this->Ids) ? $this->Ids : null;
+        return $this->Ids ?? null;
     }
 
     /**
      * Sets Ids.
      *
      * @param int[]|null $value
+     *
      * @return $this
      */
-    public function setIds(array $value = null)
+    public function setIds(?array $value = null)
     {
         $this->Ids = $value;
 
@@ -59,22 +59,25 @@ class CampaignsSelectionCriteria
     /**
      * Gets Types.
      *
-     * @return string[]|null
      * @see CampaignTypeEnum
+     *
+     * @return string[]|null
      */
-    public function getTypes()
+    public function getTypes(): ?array
     {
-        return isset($this->Types) ? $this->Types : null;
+        return $this->Types ?? null;
     }
 
     /**
      * Sets Types.
      *
-     * @param string[]|null $value
-     * @return $this
      * @see CampaignTypeEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
      */
-    public function setTypes(array $value = null)
+    public function setTypes(?array $value = null)
     {
         $this->Types = $value;
 
@@ -84,22 +87,25 @@ class CampaignsSelectionCriteria
     /**
      * Gets States.
      *
-     * @return string[]|null
      * @see CampaignStateEnum
+     *
+     * @return string[]|null
      */
-    public function getStates()
+    public function getStates(): ?array
     {
-        return isset($this->States) ? $this->States : null;
+        return $this->States ?? null;
     }
 
     /**
      * Sets States.
      *
-     * @param string[]|null $value
-     * @return $this
      * @see CampaignStateEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
      */
-    public function setStates(array $value = null)
+    public function setStates(?array $value = null)
     {
         $this->States = $value;
 
@@ -109,22 +115,25 @@ class CampaignsSelectionCriteria
     /**
      * Gets Statuses.
      *
-     * @return string[]|null
      * @see CampaignStatusSelectionEnum
+     *
+     * @return string[]|null
      */
-    public function getStatuses()
+    public function getStatuses(): ?array
     {
-        return isset($this->Statuses) ? $this->Statuses : null;
+        return $this->Statuses ?? null;
     }
 
     /**
      * Sets Statuses.
      *
-     * @param string[]|null $value
-     * @return $this
      * @see CampaignStatusSelectionEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
      */
-    public function setStatuses(array $value = null)
+    public function setStatuses(?array $value = null)
     {
         $this->Statuses = $value;
 
@@ -134,28 +143,28 @@ class CampaignsSelectionCriteria
     /**
      * Gets StatusesPayment.
      *
-     * @return string[]|null
      * @see CampaignStatusPaymentEnum
+     *
+     * @return string[]|null
      */
-    public function getStatusesPayment()
+    public function getStatusesPayment(): ?array
     {
-        return isset($this->StatusesPayment) ? $this->StatusesPayment : null;
+        return $this->StatusesPayment ?? null;
     }
 
     /**
      * Sets StatusesPayment.
      *
-     * @param string[]|null $value
-     * @return $this
      * @see CampaignStatusPaymentEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
      */
-    public function setStatusesPayment(array $value = null)
+    public function setStatusesPayment(?array $value = null)
     {
         $this->StatusesPayment = $value;
 
         return $this;
     }
-
-
 }
-

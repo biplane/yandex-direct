@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5;
 
 use Biplane\YandexDirect\Api\ApiSoapClientV5;
@@ -10,8 +12,7 @@ use Biplane\YandexDirect\Config;
  */
 class AdExtensions extends ApiSoapClientV5
 {
-
-    const ENDPOINT = 'https://api.direct.yandex.com/v5/adextensions?wsdl';
+    public const ENDPOINT = 'https://api.direct.yandex.com/v5/adextensions?wsdl';
 
     public function __construct(Config $config, array $options)
     {
@@ -81,37 +82,25 @@ class AdExtensions extends ApiSoapClientV5
 
     /**
      * add.
-     *
-     * @param Contract\AddAdExtensionsRequest $parameters
-     * @return Contract\AddAdExtensionsResponse
      */
-    public function add(Contract\AddAdExtensionsRequest $parameters)
+    public function add(Contract\AddAdExtensionsRequest $parameters): Contract\AddAdExtensionsResponse
     {
         return $this->__soapCall('add', [$parameters]);
     }
 
     /**
      * get.
-     *
-     * @param Contract\GetAdExtensionsRequest $parameters
-     * @return Contract\GetAdExtensionsResponse
      */
-    public function get(Contract\GetAdExtensionsRequest $parameters)
+    public function get(Contract\GetAdExtensionsRequest $parameters): Contract\GetAdExtensionsResponse
     {
         return $this->__soapCall('get', [$parameters]);
     }
 
     /**
      * delete.
-     *
-     * @param Contract\DeleteAdExtensionsRequest $parameters
-     * @return Contract\DeleteAdExtensionsResponse
      */
-    public function delete(Contract\DeleteAdExtensionsRequest $parameters)
+    public function delete(Contract\DeleteAdExtensionsRequest $parameters): Contract\DeleteAdExtensionsResponse
     {
         return $this->__soapCall('delete', [$parameters]);
     }
-
-
 }
-

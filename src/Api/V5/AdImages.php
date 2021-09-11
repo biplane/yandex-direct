@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5;
 
 use Biplane\YandexDirect\Api\ApiSoapClientV5;
@@ -10,8 +12,7 @@ use Biplane\YandexDirect\Config;
  */
 class AdImages extends ApiSoapClientV5
 {
-
-    const ENDPOINT = 'https://api.direct.yandex.com/v5/adimages?wsdl';
+    public const ENDPOINT = 'https://api.direct.yandex.com/v5/adimages?wsdl';
 
     public function __construct(Config $config, array $options)
     {
@@ -76,37 +77,25 @@ class AdImages extends ApiSoapClientV5
 
     /**
      * add.
-     *
-     * @param Contract\AddAdImagesRequest $parameters
-     * @return Contract\AddAdImagesResponse
      */
-    public function add(Contract\AddAdImagesRequest $parameters)
+    public function add(Contract\AddAdImagesRequest $parameters): Contract\AddAdImagesResponse
     {
         return $this->__soapCall('add', [$parameters]);
     }
 
     /**
      * get.
-     *
-     * @param Contract\GetAdImagesRequest $parameters
-     * @return Contract\GetAdImagesResponse
      */
-    public function get(Contract\GetAdImagesRequest $parameters)
+    public function get(Contract\GetAdImagesRequest $parameters): Contract\GetAdImagesResponse
     {
         return $this->__soapCall('get', [$parameters]);
     }
 
     /**
      * delete.
-     *
-     * @param Contract\DeleteAdImagesRequest $parameters
-     * @return Contract\DeleteAdImagesResponse
      */
-    public function delete(Contract\DeleteAdImagesRequest $parameters)
+    public function delete(Contract\DeleteAdImagesRequest $parameters): Contract\DeleteAdImagesResponse
     {
         return $this->__soapCall('delete', [$parameters]);
     }
-
-
 }
-

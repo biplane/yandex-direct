@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,15 +9,12 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class SuspendDynamicTextAdTargetsResponse
 {
-
     protected $SuspendResults = [];
 
     /**
      * Creates a new instance of SuspendDynamicTextAdTargetsResponse.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -25,7 +24,7 @@ class SuspendDynamicTextAdTargetsResponse
      *
      * @return ActionResult[]
      */
-    public function getSuspendResults()
+    public function getSuspendResults(): array
     {
         return $this->SuspendResults;
     }
@@ -34,6 +33,7 @@ class SuspendDynamicTextAdTargetsResponse
      * Sets SuspendResults.
      *
      * @param ActionResult[] $value
+     *
      * @return $this
      */
     public function setSuspendResults(array $value)
@@ -42,7 +42,4 @@ class SuspendDynamicTextAdTargetsResponse
 
         return $this;
     }
-
-
 }
-

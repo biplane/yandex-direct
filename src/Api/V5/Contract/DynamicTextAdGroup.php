@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,25 +9,20 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class DynamicTextAdGroup
 {
-
     protected $DomainUrl = null;
 
     /**
      * Creates a new instance of DynamicTextAdGroup.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets DomainUrl.
-     *
-     * @return string
      */
-    public function getDomainUrl()
+    public function getDomainUrl(): string
     {
         return $this->DomainUrl;
     }
@@ -33,16 +30,12 @@ class DynamicTextAdGroup
     /**
      * Sets DomainUrl.
      *
-     * @param string $value
      * @return $this
      */
-    public function setDomainUrl($value)
+    public function setDomainUrl(string $value)
     {
         $this->DomainUrl = $value;
 
         return $this;
     }
-
-
 }
-

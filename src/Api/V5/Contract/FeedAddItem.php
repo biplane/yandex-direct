@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class FeedAddItem
 {
-
     protected $Name = null;
 
     protected $BusinessType = null;
@@ -22,20 +23,16 @@ class FeedAddItem
 
     /**
      * Creates a new instance of FeedAddItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
 
     /**
      * Gets Name.
-     *
-     * @return string
      */
-    public function getName()
+    public function getName(): string
     {
         return $this->Name;
     }
@@ -43,10 +40,9 @@ class FeedAddItem
     /**
      * Sets Name.
      *
-     * @param string $value
      * @return $this
      */
-    public function setName($value)
+    public function setName(string $value)
     {
         $this->Name = $value;
 
@@ -56,10 +52,9 @@ class FeedAddItem
     /**
      * Gets BusinessType.
      *
-     * @return string
      * @see BusinessTypeEnum
      */
-    public function getBusinessType()
+    public function getBusinessType(): string
     {
         return $this->BusinessType;
     }
@@ -67,11 +62,11 @@ class FeedAddItem
     /**
      * Sets BusinessType.
      *
-     * @param string $value
-     * @return $this
      * @see BusinessTypeEnum
+     *
+     * @return $this
      */
-    public function setBusinessType($value)
+    public function setBusinessType(string $value)
     {
         $this->BusinessType = $value;
 
@@ -81,10 +76,9 @@ class FeedAddItem
     /**
      * Gets SourceType.
      *
-     * @return string
      * @see SourceTypeEnum
      */
-    public function getSourceType()
+    public function getSourceType(): string
     {
         return $this->SourceType;
     }
@@ -92,11 +86,11 @@ class FeedAddItem
     /**
      * Sets SourceType.
      *
-     * @param string $value
-     * @return $this
      * @see SourceTypeEnum
+     *
+     * @return $this
      */
-    public function setSourceType($value)
+    public function setSourceType(string $value)
     {
         $this->SourceType = $value;
 
@@ -105,21 +99,18 @@ class FeedAddItem
 
     /**
      * Gets UrlFeed.
-     *
-     * @return UrlFeedAdd|null
      */
-    public function getUrlFeed()
+    public function getUrlFeed(): ?UrlFeedAdd
     {
-        return isset($this->UrlFeed) ? $this->UrlFeed : null;
+        return $this->UrlFeed ?? null;
     }
 
     /**
      * Sets UrlFeed.
      *
-     * @param UrlFeedAdd|null $value
      * @return $this
      */
-    public function setUrlFeed(UrlFeedAdd $value = null)
+    public function setUrlFeed(?UrlFeedAdd $value = null)
     {
         $this->UrlFeed = $value;
 
@@ -128,27 +119,21 @@ class FeedAddItem
 
     /**
      * Gets FileFeed.
-     *
-     * @return FileFeedAdd|null
      */
-    public function getFileFeed()
+    public function getFileFeed(): ?FileFeedAdd
     {
-        return isset($this->FileFeed) ? $this->FileFeed : null;
+        return $this->FileFeed ?? null;
     }
 
     /**
      * Sets FileFeed.
      *
-     * @param FileFeedAdd|null $value
      * @return $this
      */
-    public function setFileFeed(FileFeedAdd $value = null)
+    public function setFileFeed(?FileFeedAdd $value = null)
     {
         $this->FileFeed = $value;
 
         return $this;
     }
-
-
 }
-

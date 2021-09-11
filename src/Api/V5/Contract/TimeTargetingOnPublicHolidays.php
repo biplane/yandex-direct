@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,7 +9,6 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class TimeTargetingOnPublicHolidays
 {
-
     protected $SuspendOnHolidays = null;
 
 //    Can be omit.
@@ -21,10 +22,8 @@ class TimeTargetingOnPublicHolidays
 
     /**
      * Creates a new instance of TimeTargetingOnPublicHolidays.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -32,10 +31,9 @@ class TimeTargetingOnPublicHolidays
     /**
      * Gets SuspendOnHolidays.
      *
-     * @return string
      * @see YesNoEnum
      */
-    public function getSuspendOnHolidays()
+    public function getSuspendOnHolidays(): string
     {
         return $this->SuspendOnHolidays;
     }
@@ -43,11 +41,11 @@ class TimeTargetingOnPublicHolidays
     /**
      * Sets SuspendOnHolidays.
      *
-     * @param string $value
-     * @return $this
      * @see YesNoEnum
+     *
+     * @return $this
      */
-    public function setSuspendOnHolidays($value)
+    public function setSuspendOnHolidays(string $value)
     {
         $this->SuspendOnHolidays = $value;
 
@@ -56,21 +54,18 @@ class TimeTargetingOnPublicHolidays
 
     /**
      * Gets BidPercent.
-     *
-     * @return int|null
      */
-    public function getBidPercent()
+    public function getBidPercent(): ?int
     {
-        return isset($this->BidPercent) ? $this->BidPercent : null;
+        return $this->BidPercent ?? null;
     }
 
     /**
      * Sets BidPercent.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setBidPercent($value = null)
+    public function setBidPercent(?int $value = null)
     {
         $this->BidPercent = $value;
 
@@ -79,21 +74,18 @@ class TimeTargetingOnPublicHolidays
 
     /**
      * Gets StartHour.
-     *
-     * @return int|null
      */
-    public function getStartHour()
+    public function getStartHour(): ?int
     {
-        return isset($this->StartHour) ? $this->StartHour : null;
+        return $this->StartHour ?? null;
     }
 
     /**
      * Sets StartHour.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setStartHour($value = null)
+    public function setStartHour(?int $value = null)
     {
         $this->StartHour = $value;
 
@@ -102,27 +94,21 @@ class TimeTargetingOnPublicHolidays
 
     /**
      * Gets EndHour.
-     *
-     * @return int|null
      */
-    public function getEndHour()
+    public function getEndHour(): ?int
     {
-        return isset($this->EndHour) ? $this->EndHour : null;
+        return $this->EndHour ?? null;
     }
 
     /**
      * Sets EndHour.
      *
-     * @param int|null $value
      * @return $this
      */
-    public function setEndHour($value = null)
+    public function setEndHour(?int $value = null)
     {
         $this->EndHour = $value;
 
         return $this;
     }
-
-
 }
-

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 /**
@@ -7,17 +9,14 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class GrantItem
 {
-
     protected $Privilege = null;
 
     protected $Value = null;
 
     /**
      * Creates a new instance of GrantItem.
-     *
-     * @return self
      */
-    public static function create()
+    public static function create(): self
     {
         return new self();
     }
@@ -25,10 +24,9 @@ class GrantItem
     /**
      * Gets Privilege.
      *
-     * @return string
      * @see PrivilegeEnum
      */
-    public function getPrivilege()
+    public function getPrivilege(): string
     {
         return $this->Privilege;
     }
@@ -36,11 +34,11 @@ class GrantItem
     /**
      * Sets Privilege.
      *
-     * @param string $value
-     * @return $this
      * @see PrivilegeEnum
+     *
+     * @return $this
      */
-    public function setPrivilege($value)
+    public function setPrivilege(string $value)
     {
         $this->Privilege = $value;
 
@@ -50,10 +48,9 @@ class GrantItem
     /**
      * Gets Value.
      *
-     * @return string
      * @see YesNoEnum
      */
-    public function getValue()
+    public function getValue(): string
     {
         return $this->Value;
     }
@@ -61,17 +58,14 @@ class GrantItem
     /**
      * Sets Value.
      *
-     * @param string $value
-     * @return $this
      * @see YesNoEnum
+     *
+     * @return $this
      */
-    public function setValue($value)
+    public function setValue(string $value)
     {
         $this->Value = $value;
 
         return $this;
     }
-
-
 }
-
