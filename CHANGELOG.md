@@ -2,9 +2,33 @@
 
 ## Unreleased
 
+### Added
+
+* Добавлена возможность применения стратегии для повторного вызова метода API при ошибках.
+  (*альтернативная реализация `Invoker` из версии 4.x*).
+
+  По умолчанию данный функционал не используется. Для активации необходимо сконфигурировать
+  `Runner` и фабрику сервисов:
+
+  ```php
+  use Biplane\YandexDirect\Api\ApiSoapClientFactory;
+  use Biplane\YandexDirect\Runner\Runner;
+  use Biplane\YandexDirect\Runner\Runner\RetryStrategy\ExponentialRetryStrategy;
+
+  $maxRetries = 3;
+  $runner = new Runner(new ExponentialRetryStrategy(), $maxRetries);
+  $apiServiceFactory = new ApiSoapClientFactory($runner);
+  ```
+
 ### Changed
 
 * Обновлены сервисы для совмести с последней версией API 5, включая изменения от 2021-08-02.
+* [**BC break**] Изменена сигнатура конструктора класса `ApiSoapClientFactory`.
+
+  ```patch
+  - public function __construct(?TransactionNumberGeneratorInterface $transactionNumberGenerator = null, ?int $soapCallTimeout = null)
+  + public function __construct(?Runner $runner = null, ?TransactionNumberGeneratorInterface $transactionNumberGenerator = null, ?int $soapCallTimeout = null)
+  ```
 
 ### Removed
 
