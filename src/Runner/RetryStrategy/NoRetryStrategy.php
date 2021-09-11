@@ -6,7 +6,7 @@ use BadMethodCallException;
 use Biplane\YandexDirect\Runner\RetryStrategyInterface;
 use Throwable;
 
-final class NullRetryStrategy implements RetryStrategyInterface
+final class NoRetryStrategy implements RetryStrategyInterface
 {
     public function canRetry(Throwable $exception): bool
     {

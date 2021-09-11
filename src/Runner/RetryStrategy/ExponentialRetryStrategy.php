@@ -10,7 +10,7 @@ use InvalidArgumentException;
 use SoapFault;
 use Throwable;
 
-final class DefaultRetryStrategy implements RetryStrategyInterface
+final class ExponentialRetryStrategy implements RetryStrategyInterface
 {
     public const TEMPORARY_ERROR_CODES = [
         52,   // Сервер авторизации временно недоступен (API 4, API 5)

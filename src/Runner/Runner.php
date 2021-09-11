@@ -2,7 +2,7 @@
 
 namespace Biplane\YandexDirect\Runner;
 
-use Biplane\YandexDirect\Runner\RetryStrategy\NullRetryStrategy;
+use Biplane\YandexDirect\Runner\RetryStrategy\NoRetryStrategy;
 use InvalidArgumentException;
 use LogicException;
 use Psr\Log\LoggerInterface;
@@ -33,7 +33,7 @@ final class Runner
     public static function default(): self
     {
         if (self::$default === null) {
-            self::$default = new self(new NullRetryStrategy(), 0);
+            self::$default = new self(new NoRetryStrategy(), 0);
         }
 
         return self::$default;
