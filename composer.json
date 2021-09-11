@@ -25,7 +25,7 @@
   },
   "require-dev": {
     "php-vcr/php-vcr": "^1.4.5",
-    "phpstan/phpstan": "0.12.94",
+    "phpstan/phpstan": "0.12.98",
     "phpstan/phpstan-phpunit": "^0.12.21",
     "phpunit/phpunit": "^7.5 || ^9.5",
     "psr/log": "^1.1",
