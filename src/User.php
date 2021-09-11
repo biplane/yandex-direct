@@ -469,7 +469,7 @@ class User
             $service = new $serviceClass($this);
         } else {
             if ($this->serviceFactory === null) {
-                $this->serviceFactory = new ApiSoapClientFactory($this->transactionNumberGenerator);
+                $this->serviceFactory = new ApiSoapClientFactory(null, $this->transactionNumberGenerator);
             }
 
             $service = $this->serviceFactory->createSoapClient($this->config, $serviceClass);
