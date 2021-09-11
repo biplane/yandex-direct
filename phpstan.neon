@@ -10,5 +10,5 @@ parameters:
     - src
     - tests
   excludes_analyse:
-    - src/Api/V4/*
-    - src/Api/V5/*
+    - src/Api/V4/Contract/*
+    - src/Api/V5/Contract/*

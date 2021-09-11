@@ -111,8 +111,10 @@ class ReportResult
             $destination = $fh;
         } elseif (! is_resource($destination)) {
             throw new InvalidArgumentException(
-                'The destination must be string with path to a file or a file descriptor, but given "%s".',
-                is_object($destination) ? get_class($destination) : gettype($destination)
+                sprintf(
+                    'The destination must be string with path to a file or a file descriptor, but given "%s".',
+                    is_object($destination) ? get_class($destination) : gettype($destination)
+                )
             );
         }
 
