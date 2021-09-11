@@ -4,21 +4,18 @@ declare(strict_types=1);
 
 namespace Biplane\YandexDirect\Exception;
 
+use RuntimeException;
 use Throwable;
 
-class ApiException extends \RuntimeException
+class ApiException extends RuntimeException
 {
-    /**
-     * @var string|null
-     */
+    /** @var string|null */
     private $detailMessage;
 
-    /**
-     * @var string|null
-     */
+    /** @var string|null */
     private $requestId;
 
-    public function __construct(string $message, int $code, ?string $detailMessage, Throwable $previous = null)
+    public function __construct(string $message, int $code, ?string $detailMessage, ?Throwable $previous = null)
     {
         if ($detailMessage !== null) {
             $message .= ': ' . $detailMessage;

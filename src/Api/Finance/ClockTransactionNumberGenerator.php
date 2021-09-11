@@ -8,9 +8,6 @@ use function time;
 
 final class ClockTransactionNumberGenerator implements TransactionNumberGeneratorInterface
 {
-    /**
-     * {@inheritDoc}
-     */
     public function generate(): int
     {
         return time();

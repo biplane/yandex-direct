@@ -2,14 +2,38 @@
 <ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          name="BiplaneYandexDirect"
          xsi:noNamespaceSchemaLocation="vendor/squizlabs/php_codesniffer/phpcs.xsd">
-    <arg value="p" />
-    <arg name="colors" />
+  <arg name="basepath" value="." />
+  <arg name="extensions" value="php" />
+  <arg name="colors" />
+  <arg value="nps" />
 
-    <file>src/</file>
-    <file>tests/</file>
+  <file>src/</file>
+  <file>tests/</file>
 
-    <exclude-pattern>src/Api/V4/*</exclude-pattern>
-    <exclude-pattern>src/Api/V5/*</exclude-pattern>
+  <exclude-pattern>src/Api/V4/*</exclude-pattern>
+  <exclude-pattern>src/Api/V5/*</exclude-pattern>
 
-    <rule ref="PSR12" />
+  <rule ref="Doctrine">
+    <exclude name="Generic.Formatting.MultipleStatementAlignment" />
+
+    <exclude name="SlevomatCodingStandard.Classes.SuperfluousExceptionNaming.SuperfluousSuffix" />
+    <exclude name="SlevomatCodingStandard.Classes.SuperfluousInterfaceNaming.SuperfluousSuffix" />
+    <exclude name="SlevomatCodingStandard.ControlStructures.RequireNullCoalesceEqualOperator.RequiredNullCoalesceEqualOperator" />
+    <exclude name="SlevomatCodingStandard.TypeHints.PropertyTypeHint.MissingNativeTypeHint" />
+  </rule>
+
+  <rule ref="Generic.Formatting.SpaceAfterCast">
+    <properties>
+      <property name="spacing" value="0" />
+    </properties>
+  </rule>
+
+  <rule ref="SlevomatCodingStandard.TypeHints.DeclareStrictTypes">
+    <properties>
+      <property name="declareOnFirstLine" value="false" />
+      <property name="linesCountBeforeDeclare" value="1" />
+      <property name="spacesCountAroundEqualsSign" value="0" />
+      <property name="linesCountAfterDeclare" value="1" />
+    </properties>
+  </rule>
 </ruleset>

@@ -1,0 +1,7 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Method Biplane\\\\YandexDirect\\\\User\\:\\:getProxy\\(\\) should return T but returns Biplane\\\\YandexDirect\\\\Api\\\\ApiSoapClient\\|Biplane\\\\YandexDirect\\\\Api\\\\V5\\\\Reports\\.$#"
+			count: 2
+			path: src/User.php
+

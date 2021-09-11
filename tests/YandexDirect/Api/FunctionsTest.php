@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\Tests\YandexDirect\Api;
 
 use PHPUnit\Framework\TestCase;
@@ -9,10 +11,14 @@ use function Biplane\YandexDirect\Api\fixNamespace;
 use function Biplane\YandexDirect\Api\parseArrayOfInt;
 use function Biplane\YandexDirect\Api\parseArrayOfLong;
 use function Biplane\YandexDirect\Api\parseArrayOfString;
+use function implode;
+use function stream_context_create;
+use function stream_context_get_options;
+use function stream_context_get_params;
 
 class FunctionsTest extends TestCase
 {
-    public function testParseArrayOfStringShouldReturnArray()
+    public function testParseArrayOfStringShouldReturnArray(): void
     {
         $xml = '<NegativeKeywords><Items>бесплатно</Items><Items>плохие отзывы</Items></NegativeKeywords>';
 
@@ -22,45 +28,41 @@ class FunctionsTest extends TestCase
         ], parseArrayOfString($xml));
     }
 
-    public function testParseArrayOfStringShouldReturnNull()
+    public function testParseArrayOfStringShouldReturnNull(): void
     {
         $xml = '<NegativeKeywords xsi:nil="true"/>';
 
         self::assertNull(parseArrayOfString($xml));
     }
 
-    public function testParseArrayOfIntShouldReturnArray()
+    public function testParseArrayOfIntShouldReturnArray(): void
     {
         $xml = '<Value><Items>123</Items><Items>0</Items></Value>';
 
         self::assertSame([123, 0], parseArrayOfInt($xml));
     }
 
-    public function testParseArrayOfLongShouldReturnArray()
+    public function testParseArrayOfLongShouldReturnArray(): void
     {
         $xml = '<Value><Items>123.5</Items><Items>0</Items></Value>';
 
         self::assertSame([123.5, 0.0], parseArrayOfLong($xml));
     }
 
-    public function testCreateStreamContextWithoutMerge()
+    public function testCreateStreamContextWithoutMerge(): void
     {
-        $streamContext = createStreamContext([
-            'header' => 'Accept: */*',
-        ]);
+        $streamContext = createStreamContext(['header' => 'Accept: */*']);
 
         self::assertIsResource($streamContext);
         self::assertEquals(
             [
-                'http' => [
-                    'header' => 'Accept: */*',
-                ],
+                'http' => ['header' => 'Accept: */*'],
             ],
             stream_context_get_options($streamContext)
         );
     }
 
-    public function testCreateStreamContextWhenOriginContextHasHttpOptions()
+    public function testCreateStreamContextWhenOriginContextHasHttpOptions(): void
     {
         $originStream = stream_context_create([
             'http' => [
@@ -109,20 +111,16 @@ class FunctionsTest extends TestCase
         );
     }
 
-    public function testCreateStreamContextWhenOriginContextHasParameters()
+    public function testCreateStreamContextWhenOriginContextHasParameters(): void
     {
-        $onNotification = function () {
+        $onNotification = static function (): void {
         };
 
         $originStream = stream_context_create(
             [
-                'socket' => [
-                    'bindto' => '192.168.0.100:0',
-                ],
+                'socket' => ['bindto' => '192.168.0.100:0'],
             ],
-            [
-                'notification' => $onNotification,
-            ]
+            ['notification' => $onNotification]
         );
 
         $streamContext = createStreamContext(
@@ -140,9 +138,7 @@ class FunctionsTest extends TestCase
         self::assertNotSame($originStream, $streamContext);
         self::assertEquals(
             [
-                'socket' => [
-                    'bindto' => '192.168.0.100:0',
-                ],
+                'socket' => ['bindto' => '192.168.0.100:0'],
                 'http' => [
                     'header' => implode("\r\n", [
                         'Accept-Language: ru',

@@ -24,12 +24,12 @@
     "symfony/options-resolver": "^4.0 || ^5.0 || ^6.0"
   },
   "require-dev": {
+    "doctrine/coding-standard": "^9.0",
     "php-vcr/php-vcr": "^1.4.5",
     "phpstan/phpstan": "0.12.98",
     "phpstan/phpstan-phpunit": "^0.12.21",
     "phpunit/phpunit": "^7.5 || ^9.5",
-    "psr/log": "^1.1",
-    "squizlabs/php_codesniffer": "^3.5"
+    "psr/log": "^1.1"
   },
   "suggest": {
     "monolog/monolog": "For LoggerListener"

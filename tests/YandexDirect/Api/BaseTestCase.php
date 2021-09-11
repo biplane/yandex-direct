@@ -12,12 +12,12 @@ use PHPUnit\Framework\TestCase;
 abstract class BaseTestCase extends TestCase
 {
     /**
-     * @template T of ApiSoapClient
-     *
      * @param class-string<T> $soapClientClass
      * @param array<string>   $mockMethods
      *
      * @return MockObject&T
+     *
+     * @template T of ApiSoapClient
      */
     protected function createSoapClient(string $soapClientClass, Config $config, array $mockMethods = []): MockObject
     {

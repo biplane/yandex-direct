@@ -10,6 +10,9 @@ use InvalidArgumentException;
 use SoapFault;
 use Throwable;
 
+use function in_array;
+use function sprintf;
+
 final class ExponentialRetryStrategy implements RetryStrategyInterface
 {
     public const TEMPORARY_ERROR_CODES = [
@@ -25,12 +28,16 @@ final class ExponentialRetryStrategy implements RetryStrategyInterface
         1020, // Внутренняя ошибка сервера (API 5)
     ];
 
-    /**
-     * @var array<int>
-     */
+    /** @var array<int> */
     private $apiErrorCodes;
+
+    /** @var int */
     private $delay;
+
+    /** @var int */
     private $maxDelay;
+
+    /** @var float */
     private $multiplier;
 
     /**

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\Tests\YandexDirect\Runner\RetryStrategy;
 
 use Biplane\YandexDirect\Exception\ApiException;

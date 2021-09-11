@@ -10,10 +10,14 @@ use Biplane\YandexDirect\Api\V5\Contract\CampaignsSelectionCriteria;
 use Biplane\YandexDirect\Api\V5\Contract\GetCampaignsRequest;
 use Biplane\YandexDirect\Api\V5\Contract\TextCampaignFieldEnum;
 use Biplane\YandexDirect\Config;
-use Biplane\YandexDirect\User;
 use PHPUnit\Framework\TestCase;
-use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use VCR\VCR;
+
+use function getenv;
+
+use const SOAP_1_1;
+use const SOAP_SINGLE_ELEMENT_ARRAYS;
+use const WSDL_CACHE_NONE;
 
 class CampaignsTest extends TestCase
 {
@@ -69,7 +73,7 @@ class CampaignsTest extends TestCase
     {
         $accessToken = getenv('DIRECT_TOKEN');
 
-        if (false === $accessToken) {
+        if ($accessToken === false) {
             $accessToken = 'fake';
         }
 

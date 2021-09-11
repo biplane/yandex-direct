@@ -1,19 +1,26 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\Tests\YandexDirect\EventListener;
 
+use Biplane\YandexDirect\ClientInterface;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase as BaseTestCase;
 
 class TestCase extends BaseTestCase
 {
-    protected function getEventMock($eventType, $requestId, $request = null, $response = null)
+    /**
+     * @return MockObject&ClientInterface
+     */
+    protected function createClient(string $requestId, string $request, string $response)
     {
-        $mock = $this->createMock('Biplane\\YandexDirect\\Event\\' . $eventType);
+        $client = $this->createMock(ClientInterface::class);
 
-        $mock->method('getRequestId')->willReturn($requestId);
-        $mock->method('getRequest')->willReturn($request);
-        $mock->method('getResponse')->willReturn($response);
+        $client->method('getRequestId')->willReturn($requestId);
+        $client->method('getLastRequest')->willReturn($request);
+        $client->method('getLastResponse')->willReturn($response);
 
-        return $mock;
+        return $client;
     }
 }

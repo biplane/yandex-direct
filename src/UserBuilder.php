@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect;
 
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
@@ -9,14 +11,11 @@ use Symfony\Component\EventDispatcher\EventDispatcherInterface;
  */
 class UserBuilder
 {
+    /** @var EventDispatcherInterface */
     private $dispatcher;
+    /** @var array<string, mixed> */
     private $options;
 
-    /**
-     * Constructor.
-     *
-     * @param EventDispatcherInterface $dispatcher
-     */
     public function __construct(EventDispatcherInterface $dispatcher)
     {
         $this->dispatcher = $dispatcher;
@@ -26,12 +25,8 @@ class UserBuilder
 
     /**
      * Sets the access token.
-     *
-     * @param string $token
-     *
-     * @return self
      */
-    public function setAccessToken($token)
+    public function setAccessToken(string $token): self
     {
         $this->options['access_token'] = $token;
 
@@ -40,12 +35,8 @@ class UserBuilder
 
     /**
      * Sets the locale.
-     *
-     * @param string $locale
-     *
-     * @return self
      */
-    public function setLocale($locale)
+    public function setLocale(string $locale): self
     {
         $this->options['locale'] = $locale;
 
@@ -54,12 +45,8 @@ class UserBuilder
 
     /**
      * Sets the login.
-     *
-     * @param string $login
-     *
-     * @return self
      */
-    public function setLogin($login)
+    public function setLogin(string $login): self
     {
         $this->options['login'] = $login;
 
@@ -68,12 +55,8 @@ class UserBuilder
 
     /**
      * Sets the master token for financial operations.
-     *
-     * @param string $token
-     *
-     * @return self
      */
-    public function setMasterToken($token)
+    public function setMasterToken(string $token): self
     {
         $this->options['master_token'] = $token;
 
@@ -82,10 +65,8 @@ class UserBuilder
 
     /**
      * Enables use operator units.
-     *
-     * @return self
      */
-    public function enableUseOperatorUnits()
+    public function enableUseOperatorUnits(): self
     {
         $this->options['use_operator_units'] = true;
 
@@ -94,10 +75,8 @@ class UserBuilder
 
     /**
      * Disables use operator units.
-     *
-     * @return self
      */
-    public function disableUseOperatorUnits()
+    public function disableUseOperatorUnits(): self
     {
         $this->options['use_operator_units'] = false;
 
@@ -106,10 +85,8 @@ class UserBuilder
 
     /**
      * Enables the sandbox mode.
-     *
-     * @return self
      */
-    public function enableSandbox()
+    public function enableSandbox(): self
     {
         $this->options['sandbox'] = true;
 
@@ -118,10 +95,8 @@ class UserBuilder
 
     /**
      * Disables the sandbox mode.
-     *
-     * @return self
      */
-    public function disableSandbox()
+    public function disableSandbox(): self
     {
         $this->options['sandbox'] = false;
 
@@ -130,10 +105,8 @@ class UserBuilder
 
     /**
      * Builds the user object.
-     *
-     * @return User
      */
-    public function getUser()
+    public function getUser(): User
     {
         return new User($this->options, $this->dispatcher);
     }
@@ -141,7 +114,7 @@ class UserBuilder
     /**
      * Resets this builder.
      */
-    public function reset()
+    public function reset(): void
     {
         $this->options = [];
     }

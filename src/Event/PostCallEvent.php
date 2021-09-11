@@ -1,39 +1,36 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Event;
 
 use Biplane\YandexDirect\Api\Units;
 use Biplane\YandexDirect\ClientInterface;
 use Biplane\YandexDirect\User;
+use InvalidArgumentException;
 
-/**
- * PostCallEvent.
- *
- * @author Ural Davletshin
- */
 class PostCallEvent extends BaseAfterCallEvent
 {
+    /** @var mixed */
     private $result;
 
     /**
-     * Constructor.
-     *
      * @param string          $methodRef The fullname of API method
-     * @param array           $params    The params for method of API
+     * @param array<mixed>    $params    The params for method of API
      * @param User            $user      The user
      * @param ClientInterface $client    The client for API service
      * @param mixed           $response  The result from API
      * @param Units|null      $units     Information of units
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function __construct(
-        $methodRef,
+        string $methodRef,
         array $params,
         User $user,
         ClientInterface $client,
         $response,
-        Units $units = null
+        ?Units $units = null
     ) {
         parent::__construct($methodRef, $params, $user, $client, $units);
 

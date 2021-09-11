@@ -6,6 +6,19 @@ namespace Biplane\YandexDirect\Api;
 
 use SimpleXMLElement;
 
+use function array_flip;
+use function array_map;
+use function array_merge;
+use function explode;
+use function implode;
+use function is_array;
+use function is_resource;
+use function preg_match_all;
+use function str_replace;
+use function stream_context_create;
+use function stream_context_get_options;
+use function stream_context_get_params;
+
 /**
  * @return array<string>|null
  */
@@ -66,7 +79,7 @@ function createStreamContext(array $httpOptions, $originStreamContext = null)
 
     if (isset($options['http'])) {
         foreach ($httpOptions as $name => $value) {
-            if ('header' === $name && isset($options['http'][$name])) {
+            if ($name === 'header' && isset($options['http'][$name])) {
                 $options['http'][$name] = array_merge(
                     parseHttpHeaders($options['http'][$name]),
                     parseHttpHeaders($value)

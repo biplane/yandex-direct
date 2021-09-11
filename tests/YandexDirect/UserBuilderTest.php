@@ -1,15 +1,18 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\Tests\YandexDirect;
 
 use Biplane\YandexDirect\User;
 use Biplane\YandexDirect\UserBuilder;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 class UserBuilderTest extends TestCase
 {
-    public function testBuild()
+    public function testBuild(): void
     {
         $dispatcher = $this->getDispatcherMock();
         $builder = new UserBuilder($dispatcher);
@@ -22,7 +25,6 @@ class UserBuilderTest extends TestCase
             ->enableUseOperatorUnits()
             ->getUser();
 
-        self::assertInstanceOf(User::class, $user);
         self::assertSame($dispatcher, $user->getEventDispatcher());
         self::assertEquals('access token', $user->getAccessToken());
         self::assertEquals(User::LOCALE_RU, $user->getLocale());
@@ -31,7 +33,7 @@ class UserBuilderTest extends TestCase
         self::assertTrue($user->useOperatorUnits());
     }
 
-    public function testResetBuilder()
+    public function testResetBuilder(): void
     {
         $dispatcher = $this->getDispatcherMock();
         $builder = new UserBuilder($dispatcher);
@@ -58,6 +60,9 @@ class UserBuilderTest extends TestCase
         self::assertFalse($user2->useOperatorUnits());
     }
 
+    /**
+     * @return MockObject&EventDispatcherInterface
+     */
     private function getDispatcherMock()
     {
         return $this->createMock(EventDispatcherInterface::class);

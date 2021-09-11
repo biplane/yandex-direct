@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\Tests\YandexDirect\Api;
 
 use Biplane\YandexDirect\Api\ApiSoapClientV5;
@@ -11,9 +13,7 @@ class ApiSoapClientV5Test extends BaseTestCase
 {
     public function testThrowApiExceptionFromSoapFault(): void
     {
-        $config = new Config([
-            'access_token' => '0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f',
-        ]);
+        $config = new Config(['access_token' => '0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f']);
         $client = $this->createSoapClient(ApiSoapClientV5::class, $config, ['__doRequest']);
 
         $client->method('__doRequest')->willReturn(

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\Tests\YandexDirect\Api;
 
 use Biplane\YandexDirect\Api\ApiSoapClientV4;
@@ -9,13 +11,14 @@ use Biplane\YandexDirect\Config;
 use Biplane\YandexDirect\Exception\ApiException;
 use SoapFault;
 
+use function hash;
+use function sprintf;
+
 class ApiSoapClientV4Test extends BaseTestCase
 {
     public function testInjectSaopHeadersToRequest(): void
     {
-        $config = new Config([
-            'access_token' => '0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f',
-        ]);
+        $config = new Config(['access_token' => '0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f']);
         $client = $this->createSoapClient(ApiSoapClientV4::class, $config, ['__doRequest']);
 
         $client->expects(self::once())
@@ -38,6 +41,8 @@ XML
     }
 
     /**
+     * @param array<mixed> $params
+     *
      * @dataProvider provideFinancialMethods
      */
     public function testInjectSaopHeadersToRequestForFinancialMethod(
@@ -83,9 +88,7 @@ XML
 
     public function testThrowApiExceptionFromSoapFault(): void
     {
-        $config = new Config([
-            'access_token' => '0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f',
-        ]);
+        $config = new Config(['access_token' => '0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f']);
         $client = $this->createSoapClient(ApiSoapClientV4::class, $config, ['__doRequest']);
 
         $client->method('__doRequest')->willReturn(
@@ -124,7 +127,7 @@ XML
     }
 
     /**
-     * @return iterable<mixed>
+     * @return iterable<array{string, string, 2?: mixed}>
      */
     public function provideFinancialMethods(): iterable
     {
@@ -137,21 +140,23 @@ XML
             'AccountManagement',
             [
                 AccountManagementRequest::create()->setAction('Deposit'),
-            ]
+            ],
         ];
+
         yield [
             'AccountManagementInvoice',
             'AccountManagement',
             [
                 AccountManagementRequest::create()->setAction('Invoice'),
-            ]
+            ],
         ];
+
         yield [
             'AccountManagementTransferMoney',
             'AccountManagement',
             [
                 AccountManagementRequest::create()->setAction('TransferMoney'),
-            ]
+            ],
         ];
     }
 }

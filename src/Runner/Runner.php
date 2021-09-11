@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Runner;
 
 use Biplane\YandexDirect\Runner\RetryStrategy\NoRetryStrategy;
@@ -8,12 +10,20 @@ use LogicException;
 use Psr\Log\LoggerInterface;
 use Throwable;
 
+use function get_class;
+use function sprintf;
+use function usleep;
+
 final class Runner
 {
+    /** @var self|null */
     private static $default;
 
+    /** @var RetryStrategyInterface */
     private $retryStrategy;
+    /** @var int */
     private $maxRetries;
+    /** @var LoggerInterface|null */
     private $logger;
 
     public function __construct(RetryStrategyInterface $strategy, int $maxRetries, ?LoggerInterface $logger = null)
@@ -43,6 +53,7 @@ final class Runner
      * @param callable(): mixed $callback
      *
      * @return mixed
+     *
      * @throws Throwable
      */
     public function run(callable $callback)
@@ -59,7 +70,7 @@ final class Runner
             } catch (Throwable $e) {
                 $retryCount++;
 
-                if ($retryCount > $this->maxRetries || !$this->retryStrategy->canRetry($e)) {
+                if ($retryCount > $this->maxRetries || ! $this->retryStrategy->canRetry($e)) {
                     throw $e;
                 }
 

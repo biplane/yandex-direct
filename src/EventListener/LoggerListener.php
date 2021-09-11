@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\EventListener;
 
 use Biplane\YandexDirect\Event\FailCallEvent;
@@ -9,12 +11,18 @@ use Biplane\YandexDirect\Exception\NetworkException;
 use Psr\Log\LoggerInterface;
 use Psr\Log\LogLevel;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use Throwable;
+
+use function get_class;
+use function in_array;
+use function sprintf;
 
 /**
  * @deprecated
  */
 class LoggerListener implements EventSubscriberInterface
 {
+    /** @var LoggerInterface */
     private $logger;
 
     /**
@@ -22,16 +30,9 @@ class LoggerListener implements EventSubscriberInterface
      */
     public static function getSubscribedEvents()
     {
-        return [
-            Events::FAIL_REQUEST => 'onException',
-        ];
+        return [Events::FAIL_REQUEST => 'onException'];
     }
 
-    /**
-     * Constructor.
-     *
-     * @param LoggerInterface $logger
-     */
     public function __construct(LoggerInterface $logger)
     {
         $this->logger = $logger;
@@ -39,10 +40,8 @@ class LoggerListener implements EventSubscriberInterface
 
     /**
      * Logs the thrown exception.
-     *
-     * @param FailCallEvent $event
      */
-    public function onException(FailCallEvent $event)
+    public function onException(FailCallEvent $event): void
     {
         $exception = $event->getException();
         $logLevel = $this->getLogLevel($exception);
@@ -70,7 +69,7 @@ class LoggerListener implements EventSubscriberInterface
         }
     }
 
-    protected function getLogLevel(\Throwable $exception): string
+    protected function getLogLevel(Throwable $exception): string
     {
         if ($exception instanceof NetworkException) {
             return LogLevel::NOTICE;

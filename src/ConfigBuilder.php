@@ -1,9 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect;
 
 final class ConfigBuilder
 {
+    /** @var array<string, mixed> */
     private $options = [];
 
     public static function create(): ConfigBuilder

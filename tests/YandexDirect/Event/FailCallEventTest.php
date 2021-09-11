@@ -1,19 +1,22 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\Tests\YandexDirect\Event;
 
 use Biplane\YandexDirect\Event\FailCallEvent;
+use Exception;
 
 class FailCallEventTest extends TestCase
 {
-    public function testConstructorAndGetters()
+    public function testConstructorAndGetters(): void
     {
         $user = $this->getUserMock();
         $client = $this->getSoapClientMock();
         $methodRef = 'X:Foo';
         $methodParams = ['FooParam'];
         $requestId = 'request-id';
-        $exception = new \Exception();
+        $exception = new Exception();
 
         $client->method('getLastRequest')->willReturn('request content');
         $client->method('getLastResponse')->willReturn('response content');

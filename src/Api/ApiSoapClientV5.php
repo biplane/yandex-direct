@@ -9,10 +9,18 @@ use Biplane\YandexDirect\Exception\ApiException;
 use SoapFault;
 use Throwable;
 
+use function array_unshift;
+use function is_object;
+use function preg_match;
+use function property_exists;
+
 class ApiSoapClientV5 extends ApiSoapClient
 {
     private const GENERAL_NS = 'http://api.direct.yandex.com/v5/general';
 
+    /**
+     * @param array<string, mixed> $options
+     */
     public function __construct(?string $wsdl, Config $config, array $options = [])
     {
         $options['stream_context'] = createStreamContext(
@@ -45,10 +53,7 @@ class ApiSoapClientV5 extends ApiSoapClient
         parent::__construct($wsdl, $config, $options);
     }
 
-    /**
-     * {@inheritDoc}
-     */
-    public function getRequestId()
+    public function getRequestId(): string
     {
         $headers = $this->__getLastResponseHeaders();
 
@@ -63,8 +68,6 @@ class ApiSoapClientV5 extends ApiSoapClient
      * Gets info about units for the last request.
      *
      * @see https://tech.yandex.ru/direct/doc/dg/concepts/headers-docpage/#units
-     *
-     * @return Units
      */
     public function getUnits(): Units
     {
@@ -77,14 +80,13 @@ class ApiSoapClientV5 extends ApiSoapClient
         return new Units(-1, -1, -1);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     protected function handleSoapFault(SoapFault $fault): ?Throwable
     {
         $detail = property_exists($fault, 'detail') ? $fault->detail : null;
 
         if (is_object($detail) && property_exists($detail, 'FaultResponse')) {
+            // phpcs:disable Squiz.NamingConventions.ValidVariableName.MemberNotCamelCaps
+
             $exception = new ApiException(
                 property_exists($fault, 'faultstring') ? $fault->faultstring : $fault->getMessage(),
                 (int)$detail->FaultResponse->errorCode,
@@ -93,6 +95,8 @@ class ApiSoapClientV5 extends ApiSoapClient
             );
             $exception->setRequestId($detail->FaultResponse->requestId);
 
+            // phpcs:enable Squiz.NamingConventions.ValidVariableName.MemberNotCamelCaps
+
             return $exception;
         }
 
@@ -100,8 +104,6 @@ class ApiSoapClientV5 extends ApiSoapClient
     }
 
     /**
-     * @param Config $config
-     *
      * @return array<string>
      */
     private static function createHttpHeaders(Config $config): array

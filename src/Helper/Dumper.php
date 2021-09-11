@@ -5,22 +5,33 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Helper;
 
 use Biplane\YandexDirect\Api\ApiSoapClient;
+use InvalidArgumentException;
+use RuntimeException;
+
+use function chmod;
+use function dirname;
+use function file_put_contents;
+use function is_dir;
+use function is_writable;
+use function mkdir;
+use function preg_match;
+use function sprintf;
+use function substr;
 
 /**
  * @deprecated
  */
 class Dumper
 {
+    /** @var string */
     private $rootDir;
 
     /**
-     * Constructor.
-     *
      * @param string $destDir The base distination path
      *
-     * @throws \RuntimeException
+     * @throws RuntimeException
      */
-    public function __construct($destDir)
+    public function __construct(string $destDir)
     {
         $this->ensureDirectoryExists($destDir);
 
@@ -34,12 +45,12 @@ class Dumper
      * @param string $request   The request's content
      * @param string $response  The response's content
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function dump(string $requestId, string $request, string $response): void
     {
         if (empty($requestId)) {
-            throw new \InvalidArgumentException('The request ID cannot be empty.');
+            throw new InvalidArgumentException('The request ID cannot be empty.');
         }
 
         $dir = $this->rootDir . '/' . substr($requestId, 0, 2) . '/' . substr($requestId, 2, 1);
@@ -52,8 +63,6 @@ class Dumper
 
     /**
      * Dumps data of the last request.
-     *
-     * @param ApiSoapClient $client
      */
     public function dumpLastRequest(ApiSoapClient $client): void
     {
@@ -72,18 +81,18 @@ class Dumper
 
     private function ensureDirectoryExists(string $dir): void
     {
-        if (!is_dir($dir)) {
+        if (! is_dir($dir)) {
             $this->ensureDirectoryExists(dirname($dir));
 
-            if (!@mkdir($dir, 0775)) {
-                throw new \RuntimeException(sprintf('Could not create directory "%s".', $dir));
+            if (! @mkdir($dir, 0775)) {
+                throw new RuntimeException(sprintf('Could not create directory "%s".', $dir));
             }
 
             chmod($dir, 0775);
         }
 
-        if (!is_writable($dir)) {
-            throw new \RuntimeException(sprintf('The directory "%s" is not writable.', $dir));
+        if (! is_writable($dir)) {
+            throw new RuntimeException(sprintf('The directory "%s" is not writable.', $dir));
         }
     }
 

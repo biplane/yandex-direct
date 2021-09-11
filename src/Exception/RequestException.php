@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Exception;
+
+use RuntimeException;
 
 /**
  * Base exception for API.
- *
- * @author Denis Vasilev
  */
-class RequestException extends \RuntimeException
+class RequestException extends RuntimeException
 {
 }

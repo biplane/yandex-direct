@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\Tests\YandexDirect\Event;
 
 use Biplane\YandexDirect\Event\PostCallEvent;
 
 class PostCallEventTest extends TestCase
 {
-    public function testConstructorAndGetters()
+    public function testConstructorAndGetters(): void
     {
         $user = $this->getUserMock();
         $client = $this->getSoapClientMock();

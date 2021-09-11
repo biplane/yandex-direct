@@ -8,32 +8,28 @@ use Biplane\YandexDirect\ClientInterface;
 use Biplane\YandexDirect\Config;
 use Biplane\YandexDirect\Event\EventEmitter;
 use Biplane\YandexDirect\Runner\Runner;
-use LogicException;
+use InvalidArgumentException;
 use SoapClient;
 use SoapFault;
-use SoapHeader;
 use Throwable;
+
+use function ini_restore;
+use function ini_set;
+use function sprintf;
+use function str_replace;
 
 abstract class ApiSoapClient extends SoapClient implements ClientInterface
 {
-    /**
-     * @var Config
-     */
+    /** @var Config */
     protected $config;
 
-    /**
-     * @var int
-     */
+    /** @var int */
     private $soapCallTimeout = 180;
 
-    /**
-     * @var EventEmitter|null
-     */
+    /** @var EventEmitter|null */
     private $eventEmitter;
 
-    /**
-     * @var Runner|null
-     */
+    /** @var Runner|null */
     private $runner = null;
 
     /**
@@ -60,7 +56,7 @@ abstract class ApiSoapClient extends SoapClient implements ClientInterface
     public function setSoapCallTimeout(int $timeout): void
     {
         if ($timeout < 1) {
-            throw new \InvalidArgumentException(sprintf(
+            throw new InvalidArgumentException(sprintf(
                 'Timeout for SOAP call must be a positive number. Got: %d',
                 $timeout
             ));
@@ -84,18 +80,12 @@ abstract class ApiSoapClient extends SoapClient implements ClientInterface
         $this->runner = $runner;
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function getLastRequest()
+    public function getLastRequest(): string
     {
         return $this->__getLastRequestHeaders() . "\n\n" . $this->__getLastRequest();
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function getLastResponse()
+    public function getLastResponse(): string
     {
         return $this->__getLastResponseHeaders() . "\n\n" . $this->__getLastResponse();
     }

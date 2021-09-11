@@ -1,11 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Exception;
 
 /**
  * LogicException.
- *
- * @author Denis Vasilev
  */
 class LogicException extends \LogicException
 {

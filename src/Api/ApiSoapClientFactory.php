@@ -9,10 +9,20 @@ use Biplane\YandexDirect\Config;
 use Biplane\YandexDirect\Runner\Runner;
 use ReflectionClass;
 
+use function base64_encode;
+use function count;
+use function stream_context_create;
+
+use const SOAP_1_1;
+use const SOAP_SINGLE_ELEMENT_ARRAYS;
+
 final class ApiSoapClientFactory
 {
+    /** @var int|null */
     private $soapCallTimeout;
+    /** @var TransactionNumberGeneratorInterface|null */
     private $transactionNumberGenerator;
+    /** @var Runner */
     private $runner;
 
     public function __construct(
@@ -26,13 +36,11 @@ final class ApiSoapClientFactory
     }
 
     /**
-     * @template T of ApiSoapClient
-     *
-     * @param string $serviceClass
-     *
      * @psalm-param class-string<T> $serviceClass
      *
      * @psalm-return T
+     *
+     * @template T of ApiSoapClient
      */
     public function createSoapClient(Config $config, string $serviceClass): ApiSoapClient
     {
@@ -63,21 +71,27 @@ final class ApiSoapClientFactory
     }
 
     /**
-     * @template T of ApiSoapClient
-     *
+     * @param array<string, mixed> $options
      * @psalm-param class-string<T> $serviceClass
      *
      * @psalm-return T
+     *
+     * @template T of ApiSoapClient
      */
     private function createInstance(string $serviceClass, Config $config, array $options): ApiSoapClient
     {
         $reflection = new ReflectionClass($serviceClass);
 
-        return $this->runner->run(function () use ($reflection, $config, $options): ApiSoapClient {
+        return $this->runner->run(static function () use ($reflection, $config, $options): ApiSoapClient {
             return $reflection->newInstance($config, $options);
         });
     }
 
+    /**
+     * @param array<string, mixed> $options
+     *
+     * @return array<string, mixed>
+     */
     private function extendOptions(array $options, Config $config): array
     {
         if ($config->getProxyHost() !== null) {

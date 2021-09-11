@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use Biplane\Tests\FixHeadersListener;
 use VCR\Request;
 use VCR\VCR;
@@ -11,11 +13,9 @@ require_once __DIR__ . '/../vendor/autoload.php';
 VCR::configure()
     ->setCassettePath(__DIR__ . '/fixtures/vcr')
     ->setMode(VCR::MODE_ONCE)
-    ->setWhiteList([
-        'src/Api/ApiSoapClient.php',
-    ])
-    ->addRequestMatcher('headers', function (Request $first, Request $second) {
-        $filterHeaders = function (array $headers) {
+    ->setWhiteList(['src/Api/ApiSoapClient.php'])
+    ->addRequestMatcher('headers', static function (Request $first, Request $second) {
+        $filterHeaders = static function (array $headers) {
             unset($headers['Authorization'], $headers['Client-Login']);
 
             return array_filter($headers);
@@ -24,8 +24,8 @@ VCR::configure()
         return $filterHeaders($first->getHeaders()) === $filterHeaders($second->getHeaders());
     });
 
-/** @var Videorecorder $recorder */
 $recorder = VCRFactory::get(Videorecorder::class);
+assert($recorder instanceof Videorecorder);
 $recorder->getEventDispatcher()->addSubscriber(new FixHeadersListener());
 
 // Required for monkey patching (registration of hooks)

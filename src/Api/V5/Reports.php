@@ -23,11 +23,6 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
-/**
- * Reports.
- *
- * @author Denis Vasilev
- */
 class Reports implements ApiClientInterface
 {
     const ENDPOINT = 'https://api.direct.yandex.com/v5/reports';
@@ -146,7 +141,7 @@ class Reports implements ApiClientInterface
     /**
      * {@inheritdoc}
      */
-    public function getRequestId()
+    public function getRequestId(): string
     {
         if (null !== $this->lastResponse && $this->lastResponse->hasHeader('RequestId')) {
             return $this->lastResponse->getHeaderLine('RequestId');
@@ -158,7 +153,7 @@ class Reports implements ApiClientInterface
     /**
      * {@inheritdoc}
      */
-    public function getLastRequest()
+    public function getLastRequest(): string
     {
         if (null !== $this->lastRequest) {
             $request = sprintf(
@@ -173,18 +168,18 @@ class Reports implements ApiClientInterface
             }
 
             $request .= "\r\n";
-            $request .= (string)$this->lastRequest->getBody();
+            $request .= $this->lastRequest->getBody();
 
             return $request;
         }
 
-        return null;
+        return '';
     }
 
     /**
      * {@inheritdoc}
      */
-    public function getLastResponse()
+    public function getLastResponse(): string
     {
         if (null !== $this->lastResponse) {
             $response = sprintf(
@@ -199,12 +194,12 @@ class Reports implements ApiClientInterface
             }
 
             $response .= "\r\n";
-            $response .= (string)$this->lastResponse->getBody();
+            $response .= $this->lastResponse->getBody();
 
             return $response;
         }
 
-        return null;
+        return '';
     }
 
     /**

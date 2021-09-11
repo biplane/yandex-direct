@@ -9,10 +9,19 @@ use Biplane\YandexDirect\ClientInterface;
 use Biplane\YandexDirect\Events;
 use Biplane\YandexDirect\User;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
+use Throwable;
+
+use function get_class;
+use function method_exists;
+use function strrpos;
+use function substr;
 
 final class EventEmitter
 {
+    /** @var EventDispatcherInterface */
     private $dispatcher;
+
+    /** @var User */
     private $user;
 
     public function __construct(EventDispatcherInterface $dispatcher, User $user)
@@ -21,6 +30,9 @@ final class EventEmitter
         $this->user = $user;
     }
 
+    /**
+     * @param array<mixed> $arguments
+     */
     public function emitBeforeRequestEvent(ClientInterface $service, string $methodName, array $arguments): void
     {
         $this->dispatcher->dispatch(
@@ -31,7 +43,7 @@ final class EventEmitter
 
     /**
      * @param array<mixed> $arguments
-     * @param mixed $response
+     * @param mixed        $response
      */
     public function emitAfterRequestEvent(
         ClientInterface $service,
@@ -59,7 +71,7 @@ final class EventEmitter
         ClientInterface $service,
         string $methodName,
         array $arguments,
-        \Throwable $exception
+        Throwable $exception
     ): void {
         $this->dispatcher->dispatch(
             new FailCallEvent(
@@ -77,8 +89,9 @@ final class EventEmitter
     private static function getMethodRef(ClientInterface $service, string $methodName): string
     {
         $qualifiedClassName = get_class($service);
+        $pos = strrpos($qualifiedClassName, '\\');
 
-        if (false !== $pos = strrpos($qualifiedClassName, '\\')) {
+        if ($pos !== false) {
             return substr($qualifiedClassName, $pos + 1) . ':' . $methodName;
         }
 

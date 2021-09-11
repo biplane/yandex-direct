@@ -22,19 +22,25 @@ use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\RequestInterface;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
+use Throwable;
+
+use function file_get_contents;
+use function is_array;
+use function is_file;
+use function sprintf;
+use function str_replace;
+use function sys_get_temp_dir;
+use function unlink;
 
 class ReportsTest extends TestCase
 {
-    /**
-     * @var MockObject|EventDispatcherInterface
-     */
+    /** @var MockObject&EventDispatcherInterface */
     private $dispatcher;
 
-    /**
-     * @var MockHandler
-     */
+    /** @var MockHandler */
     private $mockHandler;
 
+    /** @var string */
     private $reportFile;
 
     protected function setUp(): void
@@ -43,18 +49,22 @@ class ReportsTest extends TestCase
         $this->mockHandler = new MockHandler();
         $this->reportFile = sys_get_temp_dir() . '/report.tsv';
 
-        if (is_file($this->reportFile)) {
-            unlink($this->reportFile);
+        if (! is_file($this->reportFile)) {
+            return;
         }
+
+        unlink($this->reportFile);
     }
 
     protected function tearDown(): void
     {
         unset($this->mockHandler, $this->dispatcher);
 
-        if (is_file($this->reportFile)) {
-            unlink($this->reportFile);
+        if (! is_file($this->reportFile)) {
+            return;
         }
+
+        unlink($this->reportFile);
     }
 
     public function testGetResultWhenNewReportIsCreated(): void
@@ -75,7 +85,7 @@ class ReportsTest extends TestCase
             ->withConsecutive(
                 [
                     new PreCallEvent('Reports:request', [$reportRequest], $user),
-                    Events::BEFORE_REQUEST
+                    Events::BEFORE_REQUEST,
                 ],
                 [
                     new PostCallEvent(
@@ -85,7 +95,7 @@ class ReportsTest extends TestCase
                         $service,
                         $response->getBody()
                     ),
-                    Events::AFTER_REQUEST
+                    Events::AFTER_REQUEST,
                 ]
             );
 
@@ -183,9 +193,7 @@ class ReportsTest extends TestCase
 
         $this->mockHandler->append(
             new Response(201),
-            new Response(202, [
-                'retryIn' => '1',
-            ]),
+            new Response(202, ['retryIn' => '1']),
             new Response(200, [], $reportContent)
         );
 
@@ -213,7 +221,7 @@ class ReportsTest extends TestCase
 
         $service = $this->createService([
             'access_token' => 'foo',
-            'login' => 'bar'
+            'login' => 'bar',
         ]);
 
         $service->download($this->reportFile, $reportRequest);
@@ -245,7 +253,7 @@ XML;
 
         $user = $this->createUser([
             'access_token' => 'foo',
-            'login' => 'bar'
+            'login' => 'bar',
         ]);
         $service = $this->createService($user);
 
@@ -257,7 +265,7 @@ XML;
             ->withConsecutive(
                 [
                     new PreCallEvent('Reports:request', [$reportRequest], $user),
-                    Events::BEFORE_REQUEST
+                    Events::BEFORE_REQUEST,
                 ],
                 [
                     new FailCallEvent(
@@ -267,7 +275,7 @@ XML;
                         $service,
                         $exception
                     ),
-                    Events::FAIL_REQUEST
+                    Events::FAIL_REQUEST,
                 ]
             );
 
@@ -322,12 +330,12 @@ XML;
 
         $service = $this->createService([
             'access_token' => 'foo',
-            'login' => 'bar'
+            'login' => 'bar',
         ]);
 
         try {
             $service->download($this->reportFile, $reportRequest);
-        } catch (\Exception $ex) {
+        } catch (Throwable $ex) {
         }
 
         self::assertEmpty(file_get_contents($this->reportFile));
@@ -344,7 +352,7 @@ XML;
 
         $service = $this->createService([
             'access_token' => 'foo',
-            'login' => 'bar'
+            'login' => 'bar',
         ]);
 
         $service->get($reportRequest);
@@ -373,7 +381,7 @@ REQ;
 
         $service = $this->createService([
             'access_token' => 'foo',
-            'login' => 'bar'
+            'login' => 'bar',
         ]);
 
         $service->get($reportRequest);
@@ -393,7 +401,7 @@ REQ;
 
         $service = $this->createService([
             'access_token' => 'foo',
-            'login' => 'bar'
+            'login' => 'bar',
         ]);
 
         $service->get($reportRequest);
@@ -410,11 +418,17 @@ RESP;
         self::assertEquals(str_replace("\n", "\r\n", $response), $service->getLastResponse());
     }
 
+    /**
+     * @param array<string, mixed> $options
+     */
     private function createUser(array $options): User
     {
         return new User($options, $this->dispatcher);
     }
 
+    /**
+     * @param User|array<string, mixed> $user
+     */
     private function createService($user): Reports
     {
         $httpClient = new Client([
@@ -428,11 +442,14 @@ RESP;
         return new Reports($user, $httpClient);
     }
 
+    /**
+     * @param array<string, mixed> $headers
+     */
     private static function assertRequest(
         RequestInterface $request,
-        $body,
+        string $body,
         array $headers,
-        $endpoint = Reports::ENDPOINT
+        string $endpoint = Reports::ENDPOINT
     ): void {
         self::assertEquals($endpoint, $request->getUri());
         self::assertEquals($body, $request->getBody());

@@ -1,28 +1,31 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\Event;
 
 use Biplane\YandexDirect\User;
 
-/**
- * PreCallEvent.
- *
- * @author Ural Davletshin
- */
+use function strpos;
+use function substr;
+
 class PreCallEvent
 {
+    /** @var string */
     private $methodRef;
+
+    /** @var array<mixed> */
     private $params;
+
+    /** @var User */
     private $user;
 
     /**
-     * Constructor.
-     *
-     * @param string $methodRef The fullname of API method
-     * @param array  $params    The params for method of API
-     * @param User   $user      The user
+     * @param string       $methodRef The fullname of API method
+     * @param array<mixed> $params    The params for method of API
+     * @param User         $user      The user
      */
-    public function __construct($methodRef, array $params, User $user)
+    public function __construct(string $methodRef, array $params, User $user)
     {
         $this->methodRef = $methodRef;
         $this->params = $params;
@@ -31,12 +34,10 @@ class PreCallEvent
 
     /**
      * Gets the method name of API.
-     *
-     * @return string|null
      */
-    public function getMethodName()
+    public function getMethodName(): ?string
     {
-        if (!empty($this->methodRef)) {
+        if (! empty($this->methodRef)) {
             return substr($this->methodRef, strpos($this->methodRef, ':') + 1);
         }
 
@@ -49,10 +50,8 @@ class PreCallEvent
      * Returns string in format {ServiceName}:{MethodName}
      * Where, {ServiceName} - local class name of proxy
      *  {MethodName} - the name of API method
-     *
-     * @return string
      */
-    public function getMethodRef()
+    public function getMethodRef(): string
     {
         return $this->methodRef;
     }
@@ -60,19 +59,17 @@ class PreCallEvent
     /**
      * Gets an array of parameters for method of API.
      *
-     * @return array
+     * @return array<mixed>
      */
-    public function getMethodParams()
+    public function getMethodParams(): array
     {
         return $this->params;
     }
 
     /**
      * Gets the user.
-     *
-     * @return User
      */
-    public function getUser()
+    public function getUser(): User
     {
         return $this->user;
     }

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect\EventListener;
 
 use Biplane\YandexDirect\Event\BaseAfterCallEvent;
@@ -7,19 +9,20 @@ use Biplane\YandexDirect\Event\FailCallEvent;
 use Biplane\YandexDirect\Event\PostCallEvent;
 use Biplane\YandexDirect\Events;
 use Biplane\YandexDirect\Helper\Dumper;
+use InvalidArgumentException;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
-/**
- * DumpListener.
- *
- * @author Denis Vasilev
- */
+use function in_array;
+
 class DumpListener implements EventSubscriberInterface
 {
     public const LEVEL_FAIL_REQUEST = 1;
     public const LEVEL_ALL_REQUEST = 2;
 
+    /** @var Dumper */
     private $dumper;
+
+    /** @var int */
     private $level;
 
     /**
@@ -34,55 +37,55 @@ class DumpListener implements EventSubscriberInterface
     }
 
     /**
-     * Constructor.
-     *
      * @param Dumper $dumper The helper
      * @param int    $level  One of constants with prefix LEVEL_
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      */
-    public function __construct(Dumper $dumper, $level = self::LEVEL_ALL_REQUEST)
+    public function __construct(Dumper $dumper, int $level = self::LEVEL_ALL_REQUEST)
     {
-        if (!in_array($level, [self::LEVEL_ALL_REQUEST, self::LEVEL_FAIL_REQUEST])) {
-            throw new \InvalidArgumentException(
+        if (! in_array($level, [self::LEVEL_ALL_REQUEST, self::LEVEL_FAIL_REQUEST])) {
+            throw new InvalidArgumentException(
                 'The level must be one of constants with prefix LEVEL_.'
             );
         }
 
         $this->dumper = $dumper;
-        $this->level = (int)$level;
+        $this->level = $level;
     }
 
     /**
      * Handle the event.
-     *
-     * @param FailCallEvent $event
      */
-    public function onFail(FailCallEvent $event)
+    public function onFail(FailCallEvent $event): void
     {
-        if ($this->level >= self::LEVEL_FAIL_REQUEST) {
-            $this->dump($event);
+        if ($this->level < self::LEVEL_FAIL_REQUEST) {
+            return;
         }
+
+        $this->dump($event);
     }
 
     /**
      * Handle the event.
-     *
-     * @param PostCallEvent $event
      */
-    public function onSuccess(PostCallEvent $event)
+    public function onSuccess(PostCallEvent $event): void
     {
-        if ($this->level >= self::LEVEL_ALL_REQUEST) {
-            $this->dump($event);
+        if ($this->level < self::LEVEL_ALL_REQUEST) {
+            return;
         }
+
+        $this->dump($event);
     }
 
-    private function dump(BaseAfterCallEvent $event)
+    private function dump(BaseAfterCallEvent $event): void
     {
         $requestId = $event->getRequestId();
 
-        if (!empty($requestId)) {
-            $this->dumper->dump($requestId, $event->getRequest(), $event->getResponse());
+        if (empty($requestId)) {
+            return;
         }
+
+        $this->dumper->dump($requestId, $event->getRequest(), $event->getResponse());
     }
 }

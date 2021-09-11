@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\Tests\YandexDirect;
 
 use Biplane\YandexDirect\Config;
@@ -10,9 +12,7 @@ class ConfigTest extends TestCase
 {
     public function testWithDefaults(): void
     {
-        $config = new Config([
-            'access_token' => 'secret',
-        ]);
+        $config = new Config(['access_token' => 'secret']);
 
         self::assertEquals('secret', $config->getAccessToken());
         self::assertNull($config->getClientLogin());
@@ -134,6 +134,9 @@ class ConfigTest extends TestCase
         ]);
     }
 
+    /**
+     * @return array<array{string, int, string}>
+     */
     public function provideLocales(): array
     {
         return [

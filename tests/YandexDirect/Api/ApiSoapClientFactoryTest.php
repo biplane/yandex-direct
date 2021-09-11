@@ -17,9 +17,7 @@ class ApiSoapClientFactoryTest extends TestCase
     public function testCreateSoapClientWithDefaults(): void
     {
         $factory = new ApiSoapClientFactory();
-        $config = new Config([
-            'access_token' => 'secret',
-        ]);
+        $config = new Config(['access_token' => 'secret']);
 
         $client = $factory->createSoapClient($config, AdGroups::class);
 
@@ -31,9 +29,7 @@ class ApiSoapClientFactoryTest extends TestCase
     public function testCreateSoapClientWithCustomCallTimeout(): void
     {
         $factory = new ApiSoapClientFactory(null, null, 150);
-        $config = new Config([
-            'access_token' => 'secret',
-        ]);
+        $config = new Config(['access_token' => 'secret']);
 
         $client = $factory->createSoapClient($config, AdGroups::class);
 
@@ -45,9 +41,7 @@ class ApiSoapClientFactoryTest extends TestCase
     {
         $generator = $this->createMock(TransactionNumberGeneratorInterface::class);
         $factory = new ApiSoapClientFactory(null, $generator);
-        $config = new Config([
-            'access_token' => 'secret',
-        ]);
+        $config = new Config(['access_token' => 'secret']);
 
         $client = $factory->createSoapClient($config, YandexAPIService::class);
 

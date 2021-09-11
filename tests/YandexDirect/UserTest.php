@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\Tests\YandexDirect;
 
 use Biplane\YandexDirect\Api\Finance\CallbackTransactionNumberGenerator;
@@ -11,25 +13,17 @@ use Symfony\Component\EventDispatcher\EventDispatcher;
 
 class UserTest extends TestCase
 {
-    public function testEventDispatcherShouldBeCreatedWhenNotGiven()
+    public function testEventDispatcherShouldBeCreatedWhenNotGiven(): void
     {
-        $user = new User([
-            'access_token' => 'foo',
-        ]);
+        $user = new User(['access_token' => 'foo']);
 
         self::assertInstanceOf(EventDispatcher::class, $user->getEventDispatcher());
     }
 
-    public function testApiServiceShouldBeCreated()
-    {
-        $user = new User([
-            'access_token' => 'foo',
-        ]);
-
-        self::assertInstanceOf(YandexAPIService::class, $user->getApiService());
-    }
-
-    public function getServicesProxies()
+    /**
+     * @return array<array{string, string}>
+     */
+    public function getServicesProxies(): array
     {
         return [
             [YandexAPIService::class, 'getApiService'],
@@ -63,20 +57,16 @@ class UserTest extends TestCase
     /**
      * @dataProvider getServicesProxies
      */
-    public function testServiceProxyShouldBeInstantiated($serviceClass, $method)
+    public function testServiceProxyShouldBeInstantiated(string $serviceClass, string $method): void
     {
-        $user = new User([
-            'access_token' => 'foo',
-        ]);
+        $user = new User(['access_token' => 'foo']);
 
         self::assertInstanceOf($serviceClass, $user->$method());
     }
 
-    public function testServiceProxyShouldBeCached()
+    public function testServiceProxyShouldBeCached(): void
     {
-        $user = new User([
-            'access_token' => 'foo',
-        ]);
+        $user = new User(['access_token' => 'foo']);
 
         $proxy = $user->getAdsService();
 
@@ -85,10 +75,8 @@ class UserTest extends TestCase
 
     public function testPassCustomTransactionNumberGenerator(): void
     {
-        $user = new User([
-            'access_token' => 'foo',
-        ]);
-        $user->setFinanceOperationNumberGenerator(function (): int {
+        $user = new User(['access_token' => 'foo']);
+        $user->setFinanceOperationNumberGenerator(static function (): int {
             return 123;
         });
 

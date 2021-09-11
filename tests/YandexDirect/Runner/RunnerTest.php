@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\Tests\YandexDirect\Runner;
 
 use Biplane\YandexDirect\Runner\RetryStrategyInterface;
@@ -18,7 +20,7 @@ class RunnerTest extends TestCase
             ->method('canRetry')
             ->willReturn(true);
 
-        $callback = function () {
+        $callback = static function (): void {
             throw new RuntimeException('Error');
         };
 
@@ -35,7 +37,7 @@ class RunnerTest extends TestCase
         $retryStrategy->method('canRetry')->willReturn(true);
 
         $callCount = 0;
-        $callback = function () use (&$callCount) {
+        $callback = static function () use (&$callCount) {
             $callCount++;
 
             if ($callCount <= 2) {

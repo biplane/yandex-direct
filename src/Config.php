@@ -1,10 +1,17 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect;
 
 use Symfony\Component\OptionsResolver\Exception\InvalidArgumentException;
 use Symfony\Component\OptionsResolver\Options;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+
+use function is_string;
+use function sprintf;
+use function str_replace;
+use function strtolower;
 
 final class Config
 {
@@ -15,12 +22,14 @@ final class Config
         'tr' => 'en',
         'uk' => 'ua',
     ];
-    private const LOCALE_ALIAS_API5 = [
-        'ua' => 'uk',
-    ];
+    private const LOCALE_ALIAS_API5 = ['ua' => 'uk'];
 
+    /** @var array<string, mixed> */
     private $options;
 
+    /**
+     * @param array<string, mixed> $options
+     */
     public function __construct(array $options)
     {
         $resolver = new OptionsResolver();
@@ -131,7 +140,7 @@ final class Config
             ->setAllowedTypes('proxy_port', ['int', 'null'])
             ->setAllowedTypes('proxy_username', ['string', 'null'])
             ->setAllowedTypes('proxy_password', ['string', 'null'])
-            ->setNormalizer('client_login', function (Options $options, $value) {
+            ->setNormalizer('client_login', static function (Options $options, $value) {
                 if (is_string($value)) {
                     return strtolower(str_replace('.', '-', $value));
                 }

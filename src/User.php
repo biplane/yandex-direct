@@ -1,9 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect;
 
+use BadMethodCallException;
+use Biplane\YandexDirect\Api\ApiSoapClient;
 use Biplane\YandexDirect\Api\ApiSoapClientFactory;
 use Biplane\YandexDirect\Api\Finance\CallbackTransactionNumberGenerator;
+use Biplane\YandexDirect\Api\Finance\TransactionNumberGeneratorInterface;
 use Biplane\YandexDirect\Api\V4\YandexAPIService;
 use Biplane\YandexDirect\Api\V5\AdExtensions;
 use Biplane\YandexDirect\Api\V5\AdGroups;
@@ -31,10 +36,13 @@ use Biplane\YandexDirect\Api\V5\SmartAdTargets;
 use Biplane\YandexDirect\Api\V5\TurboPages;
 use Biplane\YandexDirect\Api\V5\VCards;
 use Biplane\YandexDirect\Event\EventEmitter;
+use InvalidArgumentException;
+use LogicException;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
-use Symfony\Component\OptionsResolver\Options;
-use Symfony\Component\OptionsResolver\OptionsResolver;
+
+use function is_callable;
+use function md5;
 
 /**
  * @deprecated
@@ -45,19 +53,28 @@ class User
     public const LOCALE_EN = 'en';
     public const LOCALE_UA = 'ua';
 
+    /** @var EventDispatcherInterface */
     private $dispatcher;
+
+    /** @var array<string, ApiSoapClient|Reports> */
     private $proxies;
+
+    /** @var ApiSoapClientFactory|null */
     private $serviceFactory;
+
+    /** @var Config */
     private $config;
+
+    /** @var TransactionNumberGeneratorInterface|null */
     private $transactionNumberGenerator;
 
     /**
      * @param array<string, mixed>          $options    The options
      * @param EventDispatcherInterface|null $dispatcher The event dispatcher
      *
-     * @throws \InvalidArgumentException
+     * @throws InvalidArgumentException
      */
-    public function __construct(array $options = [], EventDispatcherInterface $dispatcher = null)
+    public function __construct(array $options = [], ?EventDispatcherInterface $dispatcher = null)
     {
         if (isset($options['login'])) {
             $options['client_login'] = $options['login'];
@@ -75,83 +92,67 @@ class User
 
     /**
      * Gets the hash code of this object.
-     *
-     * @return string
      */
-    public function getHashCode()
+    public function getHashCode(): string
     {
         return md5($this->config->getAccessToken());
     }
 
     /**
      * Gets the event dispatcher.
-     *
-     * @return EventDispatcherInterface
      */
-    public function getEventDispatcher()
+    public function getEventDispatcher(): EventDispatcherInterface
     {
         return $this->dispatcher;
     }
 
     /**
      * Gets the access token.
-     *
-     * @return string
      */
-    public function getAccessToken()
+    public function getAccessToken(): string
     {
         return $this->config->getAccessToken();
     }
 
     /**
      * Gets the login.
-     *
-     * @return string|null
      */
-    public function getLogin()
+    public function getLogin(): ?string
     {
         return $this->config->getClientLogin();
     }
 
     /**
      * Gets the locale.
-     *
-     * @return string
      */
-    public function getLocale()
+    public function getLocale(): string
     {
         return $this->config->getLocale(Config::API_5);
     }
 
     /**
      * Gets the master token for financial operations.
-     *
-     * @return string|null
      */
-    public function getMasterToken()
+    public function getMasterToken(): ?string
     {
         return $this->config->getMasterToken();
     }
 
     /**
      * Determines whether should be used units of agency.
-     *
-     * @return bool
      */
-    public function useOperatorUnits()
+    public function useOperatorUnits(): bool
     {
         return $this->config->useOperatorUnits();
     }
 
     /**
      * Sets callable as generator for `operation_num` field of finance operations.
-     *
-     * @param callable $financeNumberGenerator
      */
-    public function setFinanceOperationNumberGenerator($financeNumberGenerator)
+    public function setFinanceOperationNumberGenerator(callable $financeNumberGenerator): void
     {
-        if (!is_callable($financeNumberGenerator)) {
-            throw new \LogicException('Finance operation number generator should be callable.');
+        if (! is_callable($financeNumberGenerator)) {
+            throw new LogicException('Finance operation number generator should be callable.');
         }
 
         $this->transactionNumberGenerator = new CallbackTransactionNumberGenerator($financeNumberGenerator);
@@ -159,260 +160,208 @@ class User
 
     /**
      * Gets the proxy for API of version 4 Live.
-     *
-     * @return YandexAPIService
      */
-    public function getApiService()
+    public function getApiService(): YandexAPIService
     {
         return $this->getProxy(YandexAPIService::class);
     }
 
     /**
      * Gets the proxy of web-service for manage ad's extensions.
-     *
-     * @return AdExtensions
      */
-    public function getAdExtensionsService()
+    public function getAdExtensionsService(): AdExtensions
     {
         return $this->getProxy(AdExtensions::class);
     }
 
     /**
      * Gets the proxy of web-service for manage ad groups.
-     *
-     * @return AdGroups
      */
-    public function getAdGroupsService()
+    public function getAdGroupsService(): AdGroups
     {
         return $this->getProxy(AdGroups::class);
     }
 
     /**
      * Gets the proxy of web-service for manage ad images.
-     *
-     * @return AdImages
      */
-    public function getAdImagesService()
+    public function getAdImagesService(): AdImages
     {
         return $this->getProxy(AdImages::class);
     }
 
     /**
      * Gets the proxy of web-service for manage ads.
-     *
-     * @return Ads
      */
-    public function getAdsService()
+    public function getAdsService(): Ads
     {
         return $this->getProxy(Ads::class);
     }
 
     /**
      * Gets the proxy of web-service for manage an agency's clients.
-     *
-     * @return AgencyClients
      */
-    public function getAgencyClientsService()
+    public function getAgencyClientsService(): AgencyClients
     {
         return $this->getProxy(AgencyClients::class);
     }
 
     /**
      * Gets the proxy of web-service for manage bids.
-     *
-     * @return Bids
      */
-    public function getBidsService()
+    public function getBidsService(): Bids
     {
         return $this->getProxy(Bids::class);
     }
 
     /**
      * Gets the proxy of web-service for the adjustments of bids.
-     *
-     * @return BidModifiers
      */
-    public function getBidModifiersService()
+    public function getBidModifiersService(): BidModifiers
     {
         return $this->getProxy(BidModifiers::class);
     }
 
     /**
      * Gets the proxy of web-service for manage campaigns.
-     *
-     * @return Campaigns
      */
-    public function getCampaignsService()
+    public function getCampaignsService(): Campaigns
     {
         return $this->getProxy(Campaigns::class);
     }
 
     /**
      * Gets the proxy of web-service to check for changes.
-     *
-     * @return Changes
      */
-    public function getChangesService()
+    public function getChangesService(): Changes
     {
         return $this->getProxy(Changes::class);
     }
 
     /**
      * Gets the proxy of web-service for manage clients.
-     *
-     * @return Clients
      */
-    public function getClientsService()
+    public function getClientsService(): Clients
     {
         return $this->getProxy(Clients::class);
     }
 
     /**
      * Gets the proxy of web-service for fetch info about dictionaries.
-     *
-     * @return Dictionaries
      */
-    public function getDictionariesService()
+    public function getDictionariesService(): Dictionaries
     {
         return $this->getProxy(Dictionaries::class);
     }
 
     /**
      * Gets the proxy of web-service for manage dynamic text ads.
-     *
-     * @return DynamicTextAdTargets
      */
-    public function getDynamicTextAdTargetsService()
+    public function getDynamicTextAdTargetsService(): DynamicTextAdTargets
     {
         return $this->getProxy(DynamicTextAdTargets::class);
     }
 
     /**
      * Gets the proxy for service Feeds.
-     *
-     * @return Feeds
      */
-    public function getFeedsService()
+    public function getFeedsService(): Feeds
     {
         return $this->getProxy(Feeds::class);
     }
 
     /**
      * Gets the proxy of web-service for manage bids for keywords.
-     *
-     * @return KeywordBids
      */
-    public function getKeywordBidsService()
+    public function getKeywordBidsService(): KeywordBids
     {
         return $this->getProxy(KeywordBids::class);
     }
 
     /**
      * Gets the proxy of web-service for manage keywords.
-     *
-     * @return Keywords
      */
-    public function getKeywordsService()
+    public function getKeywordsService(): Keywords
     {
         return $this->getProxy(Keywords::class);
     }
 
     /**
      * Gets the proxy of web-service to get forecast of impressions for keywords.
-     *
-     * @return KeywordsResearch
      */
-    public function getKeywordsResearchService()
+    public function getKeywordsResearchService(): KeywordsResearch
     {
         return $this->getProxy(KeywordsResearch::class);
     }
 
     /**
      * Gets the proxy of web-service to manage submissed data from the turbo-pages.
-     *
-     * @return Leads
      */
-    public function getLeadsService()
+    public function getLeadsService(): Leads
     {
         return $this->getProxy(Leads::class);
     }
 
     /**
      * Gets the proxy of web-service to manage shared sets of negative keywords.
-     *
-     * @return NegativeKeywordSharedSets
      */
-    public function getNegativeKeywordSharedSetsService()
+    public function getNegativeKeywordSharedSetsService(): NegativeKeywordSharedSets
     {
         return $this->getProxy(NegativeKeywordSharedSets::class);
     }
 
     /**
      * Gets the proxy of web-service for manage lists of retargeting.
-     *
-     * @return RetargetingLists
      */
-    public function getRetargetingListsService()
+    public function getRetargetingListsService(): RetargetingLists
     {
         return $this->getProxy(RetargetingLists::class);
     }
 
     /**
      * Gets the proxy of web-service for manage sitelinks.
-     *
-     * @return Sitelinks
      */
-    public function getSitelinksService()
+    public function getSitelinksService(): Sitelinks
     {
         return $this->getProxy(Sitelinks::class);
     }
 
     /**
      * Gets the proxy for service SmartAdTargets.
-     *
-     * @return SmartAdTargets
      */
-    public function getSmartAdTargetsService()
+    public function getSmartAdTargetsService(): SmartAdTargets
     {
         return $this->getProxy(SmartAdTargets::class);
     }
 
     /**
      * Gets the proxy of web-service for manage the turbo-pages.
-     *
-     * @return TurboPages
      */
-    public function getTurboPagesService()
+    public function getTurboPagesService(): TurboPages
     {
         return $this->getProxy(TurboPages::class);
     }
 
     /**
      * Gets the proxy of web-service for manage VCards.
-     *
-     * @return VCards
      */
-    public function getVCardsService()
+    public function getVCardsService(): VCards
     {
         return $this->getProxy(VCards::class);
     }
 
     /**
      * Gets the reports service.
-     *
-     * @return Reports
      */
-    public function getReportsService()
+    public function getReportsService(): Reports
     {
         return $this->getProxy(Reports::class);
     }
 
     /**
      * Gets the AudienceTargets service.
-     *
-     * @return AudienceTargets
      */
-    public function getAudienceTargetsService()
+    public function getAudienceTargetsService(): AudienceTargets
     {
         return $this->getProxy(AudienceTargets::class);
     }
@@ -423,42 +372,49 @@ class User
      * @param string $methodName   The API method for which needed it token
      * @param int    $operationNum A number of operation
      *
-     * @throws \LogicException When the master token is empty
-     *
-     * @return string
+     * @throws LogicException When the master token is empty.
      */
-    public function createFinanceToken($methodName, $operationNum)
+    public function createFinanceToken(string $methodName, int $operationNum): string
     {
-        throw new \BadMethodCallException('Not used any more');
+        throw new BadMethodCallException('Not used any more');
     }
 
     /**
      * Resolves the URI to WSDL.
      *
      * @param string $uri The origin URI to WSDL file
-     *
-     * @return string
      */
-    public function resolveWsdl($uri)
+    public function resolveWsdl(string $uri): string
     {
-        throw new \BadMethodCallException('Not used any more');
+        throw new BadMethodCallException('Not used any more');
     }
+
+    // phpcs:disable Squiz.Commenting.FunctionComment.InvalidNoReturn
 
     /**
      * Gets the generic options for the SOAP client.
      *
-     * @return array
+     * @return array<mixed>
      */
-    public function getSoapOptions()
+    public function getSoapOptions(): array
     {
-        throw new \BadMethodCallException('Not used any more');
+        throw new BadMethodCallException('Not used any more');
     }
+
+    // phpcs:enable Squiz.Commenting.FunctionComment.InvalidNoReturn
 
     public function setServiceFactory(ApiSoapClientFactory $serviceFactory): void
     {
         $this->serviceFactory = $serviceFactory;
     }
 
+    /**
+     * @psalm-param class-string<T> $serviceClass
+     *
+     * @psalm-return T
+     *
+     * @template T
+     */
     private function getProxy(string $serviceClass)
     {
         if (isset($this->proxies[$serviceClass])) {

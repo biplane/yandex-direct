@@ -9,24 +9,32 @@ use Biplane\YandexDirect\Api\Finance\TransactionNumberGeneratorInterface;
 use Biplane\YandexDirect\Api\V4\Contract\AccountManagementRequest;
 use Biplane\YandexDirect\Config;
 use Biplane\YandexDirect\Exception\ApiException;
+use LogicException;
 use SoapFault;
 use SoapHeader;
 use Throwable;
+
+use function assert;
+use function hash;
+use function in_array;
+use function microtime;
+use function property_exists;
+use function strrpos;
+use function substr;
 
 class ApiSoapClientV4 extends ApiSoapClient
 {
     private const SCHEMA_NAMESPACE = 'API';
 
+    /** @var string|null */
     private $requestId;
+    /** @var TransactionNumberGeneratorInterface|null */
     private $transactionNumberGenerator;
 
-    /**
-     * {@inheritDoc}
-     */
-    public function getRequestId()
+    public function getRequestId(): string
     {
         if ($this->requestId === null) {
-            throw new \LogicException('You can get the identifier of request only after call a method of API.');
+            throw new LogicException('You can get the identifier of request only after call a method of API.');
         }
 
         return $this->requestId;
@@ -64,45 +72,31 @@ class ApiSoapClientV4 extends ApiSoapClient
     /**
      * {@inheritDoc}
      */
-    public function __soapCall(
-        $function_name,
-        $arguments,
-        $options = null,
-        $input_headers = null,
-        &$output_headers = null
-    ) {
-        $input_headers[] = new SoapHeader(self::SCHEMA_NAMESPACE, 'locale', $this->config->getLocale(Config::API_4));
-        $input_headers[] = new SoapHeader(self::SCHEMA_NAMESPACE, 'token', $this->config->getAccessToken());
+    public function __soapCall($name, $args, $options = null, $inputHeaders = null, &$outputHeaders = null)
+    {
+        $inputHeaders[] = new SoapHeader(self::SCHEMA_NAMESPACE, 'locale', $this->config->getLocale(Config::API_4));
+        $inputHeaders[] = new SoapHeader(self::SCHEMA_NAMESPACE, 'token', $this->config->getAccessToken());
 
-        if ($this->isFinancialMethod($function_name, $arguments)) {
-            $usedMethod = $function_name;
+        if ($this->isFinancialMethod($name, $args)) {
+            $usedMethod = $name;
 
-            if ($function_name === 'AccountManagement') {
-                $usedMethod .= $arguments[0]->getAction();
+            if ($name === 'AccountManagement') {
+                $usedMethod .= $args[0]->getAction();
             }
 
             $operationNum = $this->getTransactionNumberGenerator()->generate();
             $financeToken = $this->generateFinanceToken($usedMethod, $operationNum);
 
-            $input_headers[] = new SoapHeader(self::SCHEMA_NAMESPACE, 'finance_token', $financeToken);
-            $input_headers[] = new SoapHeader(self::SCHEMA_NAMESPACE, 'operation_num', $operationNum);
+            $inputHeaders[] = new SoapHeader(self::SCHEMA_NAMESPACE, 'finance_token', $financeToken);
+            $inputHeaders[] = new SoapHeader(self::SCHEMA_NAMESPACE, 'operation_num', $operationNum);
         }
 
-        return parent::__soapCall(
-            $function_name,
-            $arguments,
-            $options,
-            $input_headers,
-            $output_headers
-        );
+        return parent::__soapCall($name, $args, $options, $inputHeaders, $outputHeaders);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     protected function handleSoapFault(SoapFault $fault): ?Throwable
     {
-        if (!property_exists($fault, 'faultcode')) {
+        if (! property_exists($fault, 'faultcode')) {
             return null;
         }
 
@@ -137,36 +131,34 @@ class ApiSoapClientV4 extends ApiSoapClient
     private function isFinancialMethod(string $methodName, array $params): bool
     {
         if ($methodName === 'AccountManagement') {
-            /** @var AccountManagementRequest $request */
             $request = $params[0];
+            assert($request instanceof AccountManagementRequest);
 
             if (in_array($request->getAction(), ['Deposit', 'Invoice', 'TransferMoney'], true)) {
                 return true;
             }
         }
 
-        if (
-            in_array($methodName, [
+        return in_array(
+            $methodName,
+            [
                 'TransferMoney',
                 'GetCreditLimits',
                 'CreateInvoice',
                 'PayCampaigns',
-            ], true)
-        ) {
-            return true;
-        }
-
-        return false;
+            ],
+            true
+        );
     }
 
     private function generateFinanceToken(string $methodName, int $operationNum): string
     {
         if ($this->config->getMasterToken() === null) {
-            throw new \LogicException('The finance token cannot be created without the master token.');
+            throw new LogicException('The finance token cannot be created without the master token.');
         }
 
         if ($this->config->getClientLogin() === null) {
-            throw new \LogicException('The finance token cannot be created without the client login.');
+            throw new LogicException('The finance token cannot be created without the client login.');
         }
 
         return hash(

@@ -1,11 +1,17 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\Tests;
 
+use RuntimeException;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use VCR\Event\AfterHttpRequestEvent;
 use VCR\Event\BeforeHttpRequestEvent;
 use VCR\VCREvents;
+
+use function getenv;
+use function sprintf;
 
 class FixHeadersListener implements EventSubscriberInterface
 {
@@ -20,23 +26,25 @@ class FixHeadersListener implements EventSubscriberInterface
         ];
     }
 
-    public function onBeforeHttpRequestEvent(BeforeHttpRequestEvent $event)
+    public function onBeforeHttpRequestEvent(BeforeHttpRequestEvent $event): void
     {
         $accessToken = getenv('DIRECT_TOKEN');
         $clientLogin = getenv('DIRECT_CLIENT_LOGIN');
 
-        if (false === $accessToken) {
-            throw new \RuntimeException('Environment variable DIRECT_TOKEN not found');
+        if ($accessToken === false) {
+            throw new RuntimeException('Environment variable DIRECT_TOKEN not found');
         }
 
         $event->getRequest()->setHeader('Authorization', sprintf('Bearer %s', $accessToken));
 
-        if (false !== $clientLogin) {
-            $event->getRequest()->setHeader('Client-Login', $clientLogin);
+        if ($clientLogin === false) {
+            return;
         }
+
+        $event->getRequest()->setHeader('Client-Login', $clientLogin);
     }
 
-    public function onAfterHttpRequestEvent(AfterHttpRequestEvent $event)
+    public function onAfterHttpRequestEvent(AfterHttpRequestEvent $event): void
     {
         $event->getRequest()->removeHeader('Authorization');
         $event->getRequest()->removeHeader('Client-Login');

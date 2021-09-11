@@ -1,11 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect;
 
 /**
  * Yandex Direct API events.
- *
- * @author Ural Davletshin
  */
 final class Events
 {

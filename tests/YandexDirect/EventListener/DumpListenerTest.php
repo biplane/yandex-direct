@@ -1,16 +1,21 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\Tests\YandexDirect\EventListener;
 
+use Biplane\YandexDirect\Event\FailCallEvent;
+use Biplane\YandexDirect\Event\PostCallEvent;
 use Biplane\YandexDirect\EventListener\DumpListener;
 use Biplane\YandexDirect\Helper\Dumper;
+use Biplane\YandexDirect\User;
+use InvalidArgumentException;
 use PHPUnit\Framework\MockObject\MockObject;
+use RuntimeException;
 
 class DumpListenerTest extends TestCase
 {
-    /**
-     * @var MockObject|Dumper
-     */
+    /** @var MockObject&Dumper */
     private $dumper;
 
     protected function setUp(): void
@@ -23,9 +28,9 @@ class DumpListenerTest extends TestCase
         unset($this->dumper);
     }
 
-    public function testThrowExceptionWhenLevelIsInvalid()
+    public function testThrowExceptionWhenLevelIsInvalid(): void
     {
-        $this->expectException(\InvalidArgumentException::class);
+        $this->expectException(InvalidArgumentException::class);
 
         new DumpListener($this->dumper, 0);
     }
@@ -33,20 +38,25 @@ class DumpListenerTest extends TestCase
     /**
      * @dataProvider getFailEvents
      */
-    public function testHandleFailEvent($level, $success)
+    public function testHandleFailEvent(int $level, bool $success): void
     {
-        $id = 'identifier';
-
         $listener = new DumpListener($this->dumper, $level);
-        $event = $this->getEventMock('FailCallEvent', $id, 'foo', 'bar');
 
         if ($success) {
             $this->dumper->expects(self::once())
                 ->method('dump')
-                ->with($id, 'foo', 'bar');
+                ->with('requestId', 'request', 'response');
         } else {
             $this->dumper->expects(self::never())->method('dump');
         }
+
+        $event = new FailCallEvent(
+            'get',
+            [],
+            $this->createMock(User::class),
+            $this->createClient('requestId', 'request', 'response'),
+            new RuntimeException()
+        );
 
         $listener->onFail($event);
     }
@@ -54,35 +64,50 @@ class DumpListenerTest extends TestCase
     /**
      * @dataProvider getPostEvents
      */
-    public function testHandlePostEvent($level, $success)
+    public function testHandlePostEvent(int $level, bool $success): void
     {
-        $id = 'identifier';
-
         $listener = new DumpListener($this->dumper, $level);
-        $event = $this->getEventMock('PostCallEvent', $id, 'foo', 'bar');
 
         if ($success) {
             $this->dumper->expects(self::once())
                 ->method('dump')
-                ->with($id, 'foo', 'bar');
+                ->with('requestId', 'request', 'response');
         } else {
             $this->dumper->expects(self::never())->method('dump');
         }
 
+        $event = new PostCallEvent(
+            'get',
+            [],
+            $this->createMock(User::class),
+            $this->createClient('requestId', 'request', 'response'),
+            null
+        );
+
         $listener->onSuccess($event);
     }
 
-    public function testDontDumpWhenRequestIdIsEmpty()
+    public function testDontDumpWhenRequestIdIsEmpty(): void
     {
         $listener = new DumpListener($this->dumper);
-        $event = $this->getEventMock('FailCallEvent', null, 'foo', 'bar');
 
         $this->dumper->expects(self::never())->method('dump');
 
-        $listener->onFail($event);
+        $event = new PostCallEvent(
+            'get',
+            [],
+            $this->createMock(User::class),
+            $this->createClient('', 'request', 'response'),
+            null
+        );
+
+        $listener->onSuccess($event);
     }
 
-    public function getFailEvents()
+    /**
+     * @return array<array{int, bool}>
+     */
+    public function getFailEvents(): array
     {
         return [
             [DumpListener::LEVEL_FAIL_REQUEST, true],
@@ -90,7 +115,10 @@ class DumpListenerTest extends TestCase
         ];
     }
 
-    public function getPostEvents()
+    /**
+     * @return array<array{int, bool}>
+     */
+    public function getPostEvents(): array
     {
         return [
             [DumpListener::LEVEL_FAIL_REQUEST, false],

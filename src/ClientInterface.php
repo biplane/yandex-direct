@@ -1,32 +1,23 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Biplane\YandexDirect;
 
-/**
- * ClientInterface.
- *
- * @author Denis Vasilev
- */
 interface ClientInterface
 {
     /**
      * Gets the request identifier.
-     *
-     * @return string
      */
-    public function getRequestId();
+    public function getRequestId(): string;
 
     /**
      * Gets headers and content of HTTP request.
-     *
-     * @return string
      */
-    public function getLastRequest();
+    public function getLastRequest(): string;
 
     /**
      * Gets headers and content of HTTP response.
-     *
-     * @return string
      */
-    public function getLastResponse();
+    public function getLastResponse(): string;
 }
