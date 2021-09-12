@@ -12,7 +12,6 @@ use Biplane\YandexDirect\Exception\ApiException;
 use LogicException;
 use SoapFault;
 use SoapHeader;
-use Throwable;
 
 use function assert;
 use function hash;
@@ -94,7 +93,7 @@ class ApiSoapClientV4 extends ApiSoapClient
         return parent::__soapCall($name, $args, $options, $inputHeaders, $outputHeaders);
     }
 
-    protected function handleSoapFault(SoapFault $fault): ?Throwable
+    protected function parseSoapFault(SoapFault $fault): ?ApiException
     {
         if (! property_exists($fault, 'faultcode')) {
             return null;

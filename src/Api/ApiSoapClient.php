@@ -7,6 +7,7 @@ namespace Biplane\YandexDirect\Api;
 use Biplane\YandexDirect\ClientInterface;
 use Biplane\YandexDirect\Config;
 use Biplane\YandexDirect\Event\EventEmitter;
+use Biplane\YandexDirect\Exception\ApiException;
 use Biplane\YandexDirect\Runner\Runner;
 use InvalidArgumentException;
 use SoapClient;
@@ -46,7 +47,7 @@ abstract class ApiSoapClient extends SoapClient implements ClientInterface
         $this->config = $config;
     }
 
-    abstract protected function handleSoapFault(SoapFault $fault): ?Throwable;
+    abstract protected function parseSoapFault(SoapFault $fault): ?ApiException;
 
     public function getSoapCallTimeout(): int
     {
@@ -112,7 +113,7 @@ abstract class ApiSoapClient extends SoapClient implements ClientInterface
                 try {
                     return parent::__soapCall($name, $args, $options, $inputHeaders, $outputHeaders);
                 } catch (SoapFault $fault) {
-                    throw $this->handleSoapFault($fault) ?? $fault;
+                    throw $this->parseSoapFault($fault) ?? $fault;
                 }
             });
         } catch (Throwable $e) {

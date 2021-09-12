@@ -7,7 +7,6 @@ namespace Biplane\YandexDirect\Api;
 use Biplane\YandexDirect\Config;
 use Biplane\YandexDirect\Exception\ApiException;
 use SoapFault;
-use Throwable;
 
 use function array_unshift;
 use function is_object;
@@ -80,7 +79,7 @@ class ApiSoapClientV5 extends ApiSoapClient
         return new Units(-1, -1, -1);
     }
 
-    protected function handleSoapFault(SoapFault $fault): ?Throwable
+    protected function parseSoapFault(SoapFault $fault): ?ApiException
     {
         $detail = property_exists($fault, 'detail') ? $fault->detail : null;
 
