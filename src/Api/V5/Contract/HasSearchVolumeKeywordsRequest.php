@@ -14,24 +14,19 @@ class HasSearchVolumeKeywordsRequest
     protected $FieldNames = [];
 
     /**
-     * Creates a new instance of HasSearchVolumeKeywordsRequest.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets SelectionCriteria.
-     */
     public function getSelectionCriteria(): HasSearchVolumeSelectionCriteria
     {
         return $this->SelectionCriteria;
     }
 
     /**
-     * Sets SelectionCriteria.
-     *
      * @return $this
      */
     public function setSelectionCriteria(HasSearchVolumeSelectionCriteria $value)
@@ -42,8 +37,6 @@ class HasSearchVolumeKeywordsRequest
     }
 
     /**
-     * Gets FieldNames.
-     *
      * @see HasSearchVolumeFieldEnum
      *
      * @return string[]
@@ -54,8 +47,6 @@ class HasSearchVolumeKeywordsRequest
     }
 
     /**
-     * Sets FieldNames.
-     *
      * @see HasSearchVolumeFieldEnum
      *
      * @param string[] $value

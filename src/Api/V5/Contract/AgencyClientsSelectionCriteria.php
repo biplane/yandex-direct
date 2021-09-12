@@ -9,23 +9,21 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AgencyClientsSelectionCriteria
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Logins = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Archived = null;
 
     /**
-     * Creates a new instance of AgencyClientsSelectionCriteria.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Logins.
-     *
      * @return string[]|null
      */
     public function getLogins(): ?array
@@ -34,8 +32,6 @@ class AgencyClientsSelectionCriteria
     }
 
     /**
-     * Sets Logins.
-     *
      * @param string[]|null $value
      *
      * @return $this
@@ -48,8 +44,6 @@ class AgencyClientsSelectionCriteria
     }
 
     /**
-     * Gets Archived.
-     *
      * @see YesNoEnum
      */
     public function getArchived(): ?string
@@ -58,8 +52,6 @@ class AgencyClientsSelectionCriteria
     }
 
     /**
-     * Sets Archived.
-     *
      * @see YesNoEnum
      *
      * @return $this

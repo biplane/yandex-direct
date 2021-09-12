@@ -9,23 +9,21 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class RetargetingListSelectionCriteria
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Types = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Ids = null;
 
     /**
-     * Creates a new instance of RetargetingListSelectionCriteria.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Types.
-     *
      * @see RetargetingListTypeEnum
      *
      * @return string[]|null
@@ -36,8 +34,6 @@ class RetargetingListSelectionCriteria
     }
 
     /**
-     * Sets Types.
-     *
      * @see RetargetingListTypeEnum
      *
      * @param string[]|null $value
@@ -52,8 +48,6 @@ class RetargetingListSelectionCriteria
     }
 
     /**
-     * Gets Ids.
-     *
      * @return int[]|null
      */
     public function getIds(): ?array
@@ -62,8 +56,6 @@ class RetargetingListSelectionCriteria
     }
 
     /**
-     * Sets Ids.
-     *
      * @param int[]|null $value
      *
      * @return $this

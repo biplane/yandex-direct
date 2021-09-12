@@ -12,16 +12,14 @@ class AddAdsRequest
     protected $Ads = [];
 
     /**
-     * Creates a new instance of AddAdsRequest.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Ads.
-     *
      * @return AdAddItem[]
      */
     public function getAds(): array
@@ -30,8 +28,6 @@ class AddAdsRequest
     }
 
     /**
-     * Sets Ads.
-     *
      * @param AdAddItem[] $value
      *
      * @return $this

@@ -11,34 +11,29 @@ class FeedUpdateItem
 {
     protected $Id = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Name = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $UrlFeed = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $FileFeed = null;
 
     /**
-     * Creates a new instance of FeedUpdateItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Id.
-     */
     public function getId(): int
     {
         return $this->Id;
     }
 
     /**
-     * Sets Id.
-     *
      * @return $this
      */
     public function setId(int $value)
@@ -48,17 +43,12 @@ class FeedUpdateItem
         return $this;
     }
 
-    /**
-     * Gets Name.
-     */
     public function getName(): ?string
     {
         return $this->Name ?? null;
     }
 
     /**
-     * Sets Name.
-     *
      * @return $this
      */
     public function setName(?string $value = null)
@@ -68,17 +58,12 @@ class FeedUpdateItem
         return $this;
     }
 
-    /**
-     * Gets UrlFeed.
-     */
     public function getUrlFeed(): ?UrlFeedUpdate
     {
         return $this->UrlFeed ?? null;
     }
 
     /**
-     * Sets UrlFeed.
-     *
      * @return $this
      */
     public function setUrlFeed(?UrlFeedUpdate $value = null)
@@ -88,17 +73,12 @@ class FeedUpdateItem
         return $this;
     }
 
-    /**
-     * Gets FileFeed.
-     */
     public function getFileFeed(): ?FileFeedUpdate
     {
         return $this->FileFeed ?? null;
     }
 
     /**
-     * Sets FileFeed.
-     *
      * @return $this
      */
     public function setFileFeed(?FileFeedUpdate $value = null)

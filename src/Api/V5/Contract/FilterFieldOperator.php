@@ -14,24 +14,19 @@ class FilterFieldOperator
     protected $Type = null;
 
     /**
-     * Creates a new instance of FilterFieldOperator.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets MaxItems.
-     */
     public function getMaxItems(): int
     {
         return $this->MaxItems;
     }
 
     /**
-     * Sets MaxItems.
-     *
      * @return $this
      */
     public function setMaxItems(int $value)
@@ -42,8 +37,6 @@ class FilterFieldOperator
     }
 
     /**
-     * Gets Type.
-     *
      * @see StringConditionOperatorEnum
      */
     public function getType(): string
@@ -52,8 +45,6 @@ class FilterFieldOperator
     }
 
     /**
-     * Sets Type.
-     *
      * @see StringConditionOperatorEnum
      *
      * @return $this

@@ -12,24 +12,19 @@ class CheckPaymentInfo
     protected $CustomTransactionID = null;
 
     /**
-     * Creates a new instance of CheckPaymentInfo.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets CustomTransactionID.
-     */
     public function getCustomTransactionID(): string
     {
         return $this->CustomTransactionID;
     }
 
     /**
-     * Sets CustomTransactionID.
-     *
      * @return $this
      */
     public function setCustomTransactionID(string $value)

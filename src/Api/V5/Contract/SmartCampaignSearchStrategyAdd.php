@@ -12,16 +12,6 @@ class SmartCampaignSearchStrategyAdd extends SmartCampaignStrategyAddBase
     protected $BiddingStrategyType = null;
 
     /**
-     * Creates a new instance of SmartCampaignSearchStrategyAdd.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
-
-    /**
-     * Gets BiddingStrategyType.
-     *
      * @see SmartCampaignSearchStrategyTypeEnum
      */
     public function getBiddingStrategyType(): string
@@ -30,8 +20,6 @@ class SmartCampaignSearchStrategyAdd extends SmartCampaignStrategyAddBase
     }
 
     /**
-     * Sets BiddingStrategyType.
-     *
      * @see SmartCampaignSearchStrategyTypeEnum
      *
      * @return $this

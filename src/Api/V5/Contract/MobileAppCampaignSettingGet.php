@@ -14,16 +14,14 @@ class MobileAppCampaignSettingGet
     protected $Value = null;
 
     /**
-     * Creates a new instance of MobileAppCampaignSettingGet.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Option.
-     *
      * @see MobileAppCampaignSettingsGetEnum
      */
     public function getOption(): string
@@ -32,8 +30,6 @@ class MobileAppCampaignSettingGet
     }
 
     /**
-     * Sets Option.
-     *
      * @see MobileAppCampaignSettingsGetEnum
      *
      * @return $this
@@ -46,8 +42,6 @@ class MobileAppCampaignSettingGet
     }
 
     /**
-     * Gets Value.
-     *
      * @see YesNoEnum
      */
     public function getValue(): string
@@ -56,8 +50,6 @@ class MobileAppCampaignSettingGet
     }
 
     /**
-     * Sets Value.
-     *
      * @see YesNoEnum
      *
      * @return $this

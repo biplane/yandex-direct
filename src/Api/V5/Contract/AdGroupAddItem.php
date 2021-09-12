@@ -15,55 +15,50 @@ class AdGroupAddItem
 
     protected $RegionIds = [];
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $NegativeKeywords = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $NegativeKeywordSharedSetIds = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $TrackingParams = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $MobileAppAdGroup = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $DynamicTextAdGroup = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $DynamicTextFeedAdGroup = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $CpmBannerKeywordsAdGroup = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $CpmBannerUserProfileAdGroup = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $CpmVideoAdGroup = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $SmartAdGroup = null;
 
     /**
-     * Creates a new instance of AdGroupAddItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Name.
-     */
     public function getName(): string
     {
         return $this->Name;
     }
 
     /**
-     * Sets Name.
-     *
      * @return $this
      */
     public function setName(string $value)
@@ -73,17 +68,12 @@ class AdGroupAddItem
         return $this;
     }
 
-    /**
-     * Gets CampaignId.
-     */
     public function getCampaignId(): int
     {
         return $this->CampaignId;
     }
 
     /**
-     * Sets CampaignId.
-     *
      * @return $this
      */
     public function setCampaignId(int $value)
@@ -94,8 +84,6 @@ class AdGroupAddItem
     }
 
     /**
-     * Gets RegionIds.
-     *
      * @return int[]
      */
     public function getRegionIds(): array
@@ -104,8 +92,6 @@ class AdGroupAddItem
     }
 
     /**
-     * Sets RegionIds.
-     *
      * @param int[] $value
      *
      * @return $this
@@ -118,8 +104,6 @@ class AdGroupAddItem
     }
 
     /**
-     * Gets NegativeKeywords.
-     *
      * @return string[]|null
      */
     public function getNegativeKeywords(): ?array
@@ -128,8 +112,6 @@ class AdGroupAddItem
     }
 
     /**
-     * Sets NegativeKeywords.
-     *
      * @param string[]|null $value
      *
      * @return $this
@@ -142,8 +124,6 @@ class AdGroupAddItem
     }
 
     /**
-     * Gets NegativeKeywordSharedSetIds.
-     *
      * @return float[]|null
      */
     public function getNegativeKeywordSharedSetIds(): ?array
@@ -152,8 +132,6 @@ class AdGroupAddItem
     }
 
     /**
-     * Sets NegativeKeywordSharedSetIds.
-     *
      * @param float[]|null $value
      *
      * @return $this
@@ -165,17 +143,12 @@ class AdGroupAddItem
         return $this;
     }
 
-    /**
-     * Gets TrackingParams.
-     */
     public function getTrackingParams(): ?string
     {
         return $this->TrackingParams ?? null;
     }
 
     /**
-     * Sets TrackingParams.
-     *
      * @return $this
      */
     public function setTrackingParams(?string $value = null)
@@ -185,17 +158,12 @@ class AdGroupAddItem
         return $this;
     }
 
-    /**
-     * Gets MobileAppAdGroup.
-     */
     public function getMobileAppAdGroup(): ?MobileAppAdGroupAdd
     {
         return $this->MobileAppAdGroup ?? null;
     }
 
     /**
-     * Sets MobileAppAdGroup.
-     *
      * @return $this
      */
     public function setMobileAppAdGroup(?MobileAppAdGroupAdd $value = null)
@@ -205,17 +173,12 @@ class AdGroupAddItem
         return $this;
     }
 
-    /**
-     * Gets DynamicTextAdGroup.
-     */
     public function getDynamicTextAdGroup(): ?DynamicTextAdGroup
     {
         return $this->DynamicTextAdGroup ?? null;
     }
 
     /**
-     * Sets DynamicTextAdGroup.
-     *
      * @return $this
      */
     public function setDynamicTextAdGroup(?DynamicTextAdGroup $value = null)
@@ -225,17 +188,12 @@ class AdGroupAddItem
         return $this;
     }
 
-    /**
-     * Gets DynamicTextFeedAdGroup.
-     */
     public function getDynamicTextFeedAdGroup(): ?DynamicTextFeedAdGroup
     {
         return $this->DynamicTextFeedAdGroup ?? null;
     }
 
     /**
-     * Sets DynamicTextFeedAdGroup.
-     *
      * @return $this
      */
     public function setDynamicTextFeedAdGroup(?DynamicTextFeedAdGroup $value = null)
@@ -245,17 +203,12 @@ class AdGroupAddItem
         return $this;
     }
 
-    /**
-     * Gets CpmBannerKeywordsAdGroup.
-     */
     public function getCpmBannerKeywordsAdGroup(): ?CpmBannerKeywordsAdGroupAdd
     {
         return $this->CpmBannerKeywordsAdGroup ?? null;
     }
 
     /**
-     * Sets CpmBannerKeywordsAdGroup.
-     *
      * @return $this
      */
     public function setCpmBannerKeywordsAdGroup(?CpmBannerKeywordsAdGroupAdd $value = null)
@@ -265,17 +218,12 @@ class AdGroupAddItem
         return $this;
     }
 
-    /**
-     * Gets CpmBannerUserProfileAdGroup.
-     */
     public function getCpmBannerUserProfileAdGroup(): ?CpmBannerUserProfileAdGroupAdd
     {
         return $this->CpmBannerUserProfileAdGroup ?? null;
     }
 
     /**
-     * Sets CpmBannerUserProfileAdGroup.
-     *
      * @return $this
      */
     public function setCpmBannerUserProfileAdGroup(?CpmBannerUserProfileAdGroupAdd $value = null)
@@ -285,17 +233,12 @@ class AdGroupAddItem
         return $this;
     }
 
-    /**
-     * Gets CpmVideoAdGroup.
-     */
     public function getCpmVideoAdGroup(): ?CpmVideoAdGroupAdd
     {
         return $this->CpmVideoAdGroup ?? null;
     }
 
     /**
-     * Sets CpmVideoAdGroup.
-     *
      * @return $this
      */
     public function setCpmVideoAdGroup(?CpmVideoAdGroupAdd $value = null)
@@ -305,17 +248,12 @@ class AdGroupAddItem
         return $this;
     }
 
-    /**
-     * Gets SmartAdGroup.
-     */
     public function getSmartAdGroup(): ?SmartAdGroupAdd
     {
         return $this->SmartAdGroup ?? null;
     }
 
     /**
-     * Sets SmartAdGroup.
-     *
      * @return $this
      */
     public function setSmartAdGroup(?SmartAdGroupAdd $value = null)

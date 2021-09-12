@@ -9,43 +9,38 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class StrategyAverageRoi
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $ReserveReturn = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $RoiCoef = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $GoalId = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $WeeklySpendLimit = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $BidCeiling = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Profitability = null;
 
     /**
-     * Creates a new instance of StrategyAverageRoi.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets ReserveReturn.
-     */
     public function getReserveReturn(): ?int
     {
         return $this->ReserveReturn ?? null;
     }
 
     /**
-     * Sets ReserveReturn.
-     *
      * @return $this
      */
     public function setReserveReturn(?int $value = null)
@@ -55,17 +50,12 @@ class StrategyAverageRoi
         return $this;
     }
 
-    /**
-     * Gets RoiCoef.
-     */
     public function getRoiCoef(): ?int
     {
         return $this->RoiCoef ?? null;
     }
 
     /**
-     * Sets RoiCoef.
-     *
      * @return $this
      */
     public function setRoiCoef(?int $value = null)
@@ -75,17 +65,12 @@ class StrategyAverageRoi
         return $this;
     }
 
-    /**
-     * Gets GoalId.
-     */
     public function getGoalId(): ?int
     {
         return $this->GoalId ?? null;
     }
 
     /**
-     * Sets GoalId.
-     *
      * @return $this
      */
     public function setGoalId(?int $value = null)
@@ -95,17 +80,12 @@ class StrategyAverageRoi
         return $this;
     }
 
-    /**
-     * Gets WeeklySpendLimit.
-     */
     public function getWeeklySpendLimit(): ?int
     {
         return $this->WeeklySpendLimit ?? null;
     }
 
     /**
-     * Sets WeeklySpendLimit.
-     *
      * @return $this
      */
     public function setWeeklySpendLimit(?int $value = null)
@@ -115,17 +95,12 @@ class StrategyAverageRoi
         return $this;
     }
 
-    /**
-     * Gets BidCeiling.
-     */
     public function getBidCeiling(): ?int
     {
         return $this->BidCeiling ?? null;
     }
 
     /**
-     * Sets BidCeiling.
-     *
      * @return $this
      */
     public function setBidCeiling(?int $value = null)
@@ -135,17 +110,12 @@ class StrategyAverageRoi
         return $this;
     }
 
-    /**
-     * Gets Profitability.
-     */
     public function getProfitability(): ?int
     {
         return $this->Profitability ?? null;
     }
 
     /**
-     * Sets Profitability.
-     *
      * @return $this
      */
     public function setProfitability(?int $value = null)

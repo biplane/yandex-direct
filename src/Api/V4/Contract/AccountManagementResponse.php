@@ -14,16 +14,14 @@ class AccountManagementResponse
     protected $Accounts = null;
 
     /**
-     * Creates a new instance of AccountManagementResponse.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets ActionsResult.
-     *
      * @return AccountActionResult[]|null
      */
     public function getActionsResult(): ?array
@@ -32,8 +30,6 @@ class AccountManagementResponse
     }
 
     /**
-     * Sets ActionsResult.
-     *
      * @param AccountActionResult[]|null $value
      *
      * @return $this
@@ -46,8 +42,6 @@ class AccountManagementResponse
     }
 
     /**
-     * Gets Accounts.
-     *
      * @return Account[]|null
      */
     public function getAccounts(): ?array
@@ -56,8 +50,6 @@ class AccountManagementResponse
     }
 
     /**
-     * Sets Accounts.
-     *
      * @param Account[]|null $value
      *
      * @return $this

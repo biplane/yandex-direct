@@ -14,24 +14,19 @@ class DailyBudget
     protected $Mode = null;
 
     /**
-     * Creates a new instance of DailyBudget.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Amount.
-     */
     public function getAmount(): int
     {
         return $this->Amount;
     }
 
     /**
-     * Sets Amount.
-     *
      * @return $this
      */
     public function setAmount(int $value)
@@ -42,8 +37,6 @@ class DailyBudget
     }
 
     /**
-     * Gets Mode.
-     *
      * @see DailyBudgetModeEnum
      */
     public function getMode(): string
@@ -52,8 +45,6 @@ class DailyBudget
     }
 
     /**
-     * Sets Mode.
-     *
      * @see DailyBudgetModeEnum
      *
      * @return $this

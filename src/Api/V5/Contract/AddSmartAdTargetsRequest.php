@@ -12,16 +12,14 @@ class AddSmartAdTargetsRequest
     protected $SmartAdTargets = [];
 
     /**
-     * Creates a new instance of AddSmartAdTargetsRequest.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets SmartAdTargets.
-     *
      * @return SmartAdTargetAddItem[]
      */
     public function getSmartAdTargets(): array
@@ -30,8 +28,6 @@ class AddSmartAdTargetsRequest
     }
 
     /**
-     * Sets SmartAdTargets.
-     *
      * @param SmartAdTargetAddItem[] $value
      *
      * @return $this

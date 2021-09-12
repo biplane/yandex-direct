@@ -12,24 +12,19 @@ class DeleteAdImagesRequest
     protected $SelectionCriteria = null;
 
     /**
-     * Creates a new instance of DeleteAdImagesRequest.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets SelectionCriteria.
-     */
     public function getSelectionCriteria(): AdImageHashesCriteria
     {
         return $this->SelectionCriteria;
     }
 
     /**
-     * Sets SelectionCriteria.
-     *
      * @return $this
      */
     public function setSelectionCriteria(AdImageHashesCriteria $value)

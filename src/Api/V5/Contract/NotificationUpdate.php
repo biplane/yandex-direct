@@ -9,34 +9,29 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class NotificationUpdate
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Email = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $EmailSubscriptions = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Lang = null;
 
     /**
-     * Creates a new instance of NotificationUpdate.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Email.
-     */
     public function getEmail(): ?string
     {
         return $this->Email ?? null;
     }
 
     /**
-     * Sets Email.
-     *
      * @return $this
      */
     public function setEmail(?string $value = null)
@@ -47,8 +42,6 @@ class NotificationUpdate
     }
 
     /**
-     * Gets EmailSubscriptions.
-     *
      * @return EmailSubscriptionItem[]|null
      */
     public function getEmailSubscriptions(): ?array
@@ -57,8 +50,6 @@ class NotificationUpdate
     }
 
     /**
-     * Sets EmailSubscriptions.
-     *
      * @param EmailSubscriptionItem[]|null $value
      *
      * @return $this
@@ -71,8 +62,6 @@ class NotificationUpdate
     }
 
     /**
-     * Gets Lang.
-     *
      * @see LangEnum
      */
     public function getLang(): ?string
@@ -81,8 +70,6 @@ class NotificationUpdate
     }
 
     /**
-     * Sets Lang.
-     *
      * @see LangEnum
      *
      * @return $this

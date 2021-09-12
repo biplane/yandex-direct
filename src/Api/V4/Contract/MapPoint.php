@@ -22,24 +22,19 @@ class MapPoint
     protected $y2 = null;
 
     /**
-     * Creates a new instance of MapPoint.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets x.
-     */
     public function getX(): float
     {
         return $this->x;
     }
 
     /**
-     * Sets x.
-     *
      * @return $this
      */
     public function setX(float $value)
@@ -49,17 +44,12 @@ class MapPoint
         return $this;
     }
 
-    /**
-     * Gets y.
-     */
     public function getY(): float
     {
         return $this->y;
     }
 
     /**
-     * Sets y.
-     *
      * @return $this
      */
     public function setY(float $value)
@@ -69,17 +59,12 @@ class MapPoint
         return $this;
     }
 
-    /**
-     * Gets x1.
-     */
     public function getX1(): float
     {
         return $this->x1;
     }
 
     /**
-     * Sets x1.
-     *
      * @return $this
      */
     public function setX1(float $value)
@@ -89,17 +74,12 @@ class MapPoint
         return $this;
     }
 
-    /**
-     * Gets y1.
-     */
     public function getY1(): float
     {
         return $this->y1;
     }
 
     /**
-     * Sets y1.
-     *
      * @return $this
      */
     public function setY1(float $value)
@@ -109,17 +89,12 @@ class MapPoint
         return $this;
     }
 
-    /**
-     * Gets x2.
-     */
     public function getX2(): float
     {
         return $this->x2;
     }
 
     /**
-     * Sets x2.
-     *
      * @return $this
      */
     public function setX2(float $value)
@@ -129,17 +104,12 @@ class MapPoint
         return $this;
     }
 
-    /**
-     * Gets y2.
-     */
     public function getY2(): float
     {
         return $this->y2;
     }
 
     /**
-     * Sets y2.
-     *
      * @return $this
      */
     public function setY2(float $value)

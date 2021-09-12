@@ -9,26 +9,24 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class CheckResponseIds
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $CampaignIds = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AdGroupIds = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AdIds = null;
 
     /**
-     * Creates a new instance of CheckResponseIds.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets CampaignIds.
-     *
      * @return int[]|null
      */
     public function getCampaignIds(): ?array
@@ -37,8 +35,6 @@ class CheckResponseIds
     }
 
     /**
-     * Sets CampaignIds.
-     *
      * @param int[]|null $value
      *
      * @return $this
@@ -51,8 +47,6 @@ class CheckResponseIds
     }
 
     /**
-     * Gets AdGroupIds.
-     *
      * @return int[]|null
      */
     public function getAdGroupIds(): ?array
@@ -61,8 +55,6 @@ class CheckResponseIds
     }
 
     /**
-     * Sets AdGroupIds.
-     *
      * @param int[]|null $value
      *
      * @return $this
@@ -75,8 +67,6 @@ class CheckResponseIds
     }
 
     /**
-     * Gets AdIds.
-     *
      * @return int[]|null
      */
     public function getAdIds(): ?array
@@ -85,8 +75,6 @@ class CheckResponseIds
     }
 
     /**
-     * Sets AdIds.
-     *
      * @param int[]|null $value
      *
      * @return $this

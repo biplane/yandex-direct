@@ -12,16 +12,14 @@ class SetBidsRequest
     protected $Bids = null;
 
     /**
-     * Creates a new instance of SetBidsRequest.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Bids.
-     *
      * @return BidSetItem[]|null
      */
     public function getBids(): ?array
@@ -30,8 +28,6 @@ class SetBidsRequest
     }
 
     /**
-     * Sets Bids.
-     *
      * @param BidSetItem[]|null $value
      *
      * @return $this

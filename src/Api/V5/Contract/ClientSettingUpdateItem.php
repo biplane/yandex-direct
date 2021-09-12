@@ -14,16 +14,14 @@ class ClientSettingUpdateItem
     protected $Value = null;
 
     /**
-     * Creates a new instance of ClientSettingUpdateItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Option.
-     *
      * @see ClientSettingUpdateEnum
      */
     public function getOption(): string
@@ -32,8 +30,6 @@ class ClientSettingUpdateItem
     }
 
     /**
-     * Sets Option.
-     *
      * @see ClientSettingUpdateEnum
      *
      * @return $this
@@ -46,8 +42,6 @@ class ClientSettingUpdateItem
     }
 
     /**
-     * Gets Value.
-     *
      * @see YesNoEnum
      */
     public function getValue(): string
@@ -56,8 +50,6 @@ class ClientSettingUpdateItem
     }
 
     /**
-     * Sets Value.
-     *
      * @see YesNoEnum
      *
      * @return $this

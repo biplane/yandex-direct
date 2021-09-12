@@ -14,24 +14,19 @@ class TrackingPixelGetItem
     protected $Provider = null;
 
     /**
-     * Creates a new instance of TrackingPixelGetItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets TrackingPixel.
-     */
     public function getTrackingPixel(): string
     {
         return $this->TrackingPixel;
     }
 
     /**
-     * Sets TrackingPixel.
-     *
      * @return $this
      */
     public function setTrackingPixel(string $value)
@@ -41,17 +36,12 @@ class TrackingPixelGetItem
         return $this;
     }
 
-    /**
-     * Gets Provider.
-     */
     public function getProvider(): string
     {
         return $this->Provider;
     }
 
     /**
-     * Sets Provider.
-     *
      * @return $this
      */
     public function setProvider(string $value)

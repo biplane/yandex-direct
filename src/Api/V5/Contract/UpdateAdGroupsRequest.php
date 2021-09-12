@@ -12,16 +12,14 @@ class UpdateAdGroupsRequest
     protected $AdGroups = [];
 
     /**
-     * Creates a new instance of UpdateAdGroupsRequest.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets AdGroups.
-     *
      * @return AdGroupUpdateItem[]
      */
     public function getAdGroups(): array
@@ -30,8 +28,6 @@ class UpdateAdGroupsRequest
     }
 
     /**
-     * Sets AdGroups.
-     *
      * @param AdGroupUpdateItem[] $value
      *
      * @return $this

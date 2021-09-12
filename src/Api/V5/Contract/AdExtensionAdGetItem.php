@@ -14,24 +14,19 @@ class AdExtensionAdGetItem
     protected $Type = null;
 
     /**
-     * Creates a new instance of AdExtensionAdGetItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets AdExtensionId.
-     */
     public function getAdExtensionId(): int
     {
         return $this->AdExtensionId;
     }
 
     /**
-     * Sets AdExtensionId.
-     *
      * @return $this
      */
     public function setAdExtensionId(int $value)
@@ -42,8 +37,6 @@ class AdExtensionAdGetItem
     }
 
     /**
-     * Gets Type.
-     *
      * @see AdExtensionTypeEnum
      */
     public function getType(): string
@@ -52,8 +45,6 @@ class AdExtensionAdGetItem
     }
 
     /**
-     * Sets Type.
-     *
      * @see AdExtensionTypeEnum
      *
      * @return $this

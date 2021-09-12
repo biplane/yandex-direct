@@ -9,27 +9,25 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class RetargetingListAddItem
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Type = null;
 
     protected $Name = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Description = null;
 
     protected $Rules = [];
 
     /**
-     * Creates a new instance of RetargetingListAddItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Type.
-     *
      * @see RetargetingListTypeEnum
      */
     public function getType(): ?string
@@ -38,8 +36,6 @@ class RetargetingListAddItem
     }
 
     /**
-     * Sets Type.
-     *
      * @see RetargetingListTypeEnum
      *
      * @return $this
@@ -51,17 +47,12 @@ class RetargetingListAddItem
         return $this;
     }
 
-    /**
-     * Gets Name.
-     */
     public function getName(): string
     {
         return $this->Name;
     }
 
     /**
-     * Sets Name.
-     *
      * @return $this
      */
     public function setName(string $value)
@@ -71,17 +62,12 @@ class RetargetingListAddItem
         return $this;
     }
 
-    /**
-     * Gets Description.
-     */
     public function getDescription(): ?string
     {
         return $this->Description ?? null;
     }
 
     /**
-     * Sets Description.
-     *
      * @return $this
      */
     public function setDescription(?string $value = null)
@@ -92,8 +78,6 @@ class RetargetingListAddItem
     }
 
     /**
-     * Gets Rules.
-     *
      * @return RetargetingListRuleItem[]
      */
     public function getRules(): array
@@ -102,8 +86,6 @@ class RetargetingListAddItem
     }
 
     /**
-     * Sets Rules.
-     *
      * @param RetargetingListRuleItem[] $value
      *
      * @return $this

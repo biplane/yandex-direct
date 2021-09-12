@@ -13,28 +13,23 @@ class ExceptionNotification
 
     protected $Message = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Details = null;
 
     /**
-     * Creates a new instance of ExceptionNotification.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Code.
-     */
     public function getCode(): int
     {
         return $this->Code;
     }
 
     /**
-     * Sets Code.
-     *
      * @return $this
      */
     public function setCode(int $value)
@@ -44,17 +39,12 @@ class ExceptionNotification
         return $this;
     }
 
-    /**
-     * Gets Message.
-     */
     public function getMessage(): string
     {
         return $this->Message;
     }
 
     /**
-     * Sets Message.
-     *
      * @return $this
      */
     public function setMessage(string $value)
@@ -64,17 +54,12 @@ class ExceptionNotification
         return $this;
     }
 
-    /**
-     * Gets Details.
-     */
     public function getDetails(): ?string
     {
         return $this->Details ?? null;
     }
 
     /**
-     * Sets Details.
-     *
      * @return $this
      */
     public function setDetails(?string $value = null)

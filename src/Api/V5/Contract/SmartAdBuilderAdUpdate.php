@@ -9,11 +9,4 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class SmartAdBuilderAdUpdate extends AdBuilderAdUpdateBase
 {
-    /**
-     * Creates a new instance of SmartAdBuilderAdUpdate.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
 }

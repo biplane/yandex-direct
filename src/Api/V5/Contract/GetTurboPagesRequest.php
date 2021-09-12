@@ -9,30 +9,17 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class GetTurboPagesRequest extends GetRequestGeneral
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $SelectionCriteria = null;
 
     protected $FieldNames = [];
 
-    /**
-     * Creates a new instance of GetTurboPagesRequest.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
-
-    /**
-     * Gets SelectionCriteria.
-     */
     public function getSelectionCriteria(): ?TurboPagesSelectionCriteria
     {
         return $this->SelectionCriteria ?? null;
     }
 
     /**
-     * Sets SelectionCriteria.
-     *
      * @return $this
      */
     public function setSelectionCriteria(?TurboPagesSelectionCriteria $value = null)
@@ -43,8 +30,6 @@ class GetTurboPagesRequest extends GetRequestGeneral
     }
 
     /**
-     * Gets FieldNames.
-     *
      * @see TurboPageFieldEnum
      *
      * @return string[]
@@ -55,8 +40,6 @@ class GetTurboPagesRequest extends GetRequestGeneral
     }
 
     /**
-     * Sets FieldNames.
-     *
      * @see TurboPageFieldEnum
      *
      * @param string[] $value

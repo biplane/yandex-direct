@@ -9,40 +9,35 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class EmailSettings
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Email = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $CheckPositionInterval = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $WarningBalance = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $SendAccountNews = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $SendWarnings = null;
 
     /**
-     * Creates a new instance of EmailSettings.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Email.
-     */
     public function getEmail(): ?string
     {
         return $this->Email ?? null;
     }
 
     /**
-     * Sets Email.
-     *
      * @return $this
      */
     public function setEmail(?string $value = null)
@@ -52,17 +47,12 @@ class EmailSettings
         return $this;
     }
 
-    /**
-     * Gets CheckPositionInterval.
-     */
     public function getCheckPositionInterval(): ?int
     {
         return $this->CheckPositionInterval ?? null;
     }
 
     /**
-     * Sets CheckPositionInterval.
-     *
      * @return $this
      */
     public function setCheckPositionInterval(?int $value = null)
@@ -72,17 +62,12 @@ class EmailSettings
         return $this;
     }
 
-    /**
-     * Gets WarningBalance.
-     */
     public function getWarningBalance(): ?int
     {
         return $this->WarningBalance ?? null;
     }
 
     /**
-     * Sets WarningBalance.
-     *
      * @return $this
      */
     public function setWarningBalance(?int $value = null)
@@ -93,8 +78,6 @@ class EmailSettings
     }
 
     /**
-     * Gets SendAccountNews.
-     *
      * @see YesNoEnum
      */
     public function getSendAccountNews(): ?string
@@ -103,8 +86,6 @@ class EmailSettings
     }
 
     /**
-     * Sets SendAccountNews.
-     *
      * @see YesNoEnum
      *
      * @return $this
@@ -117,8 +98,6 @@ class EmailSettings
     }
 
     /**
-     * Gets SendWarnings.
-     *
      * @see YesNoEnum
      */
     public function getSendWarnings(): ?string
@@ -127,8 +106,6 @@ class EmailSettings
     }
 
     /**
-     * Sets SendWarnings.
-     *
      * @see YesNoEnum
      *
      * @return $this

@@ -9,43 +9,38 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class SetBidsItem
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $CampaignId = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AdGroupId = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Id = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Bid = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $ContextBid = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $StrategyPriority = null;
 
     /**
-     * Creates a new instance of SetBidsItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets CampaignId.
-     */
     public function getCampaignId(): ?int
     {
         return $this->CampaignId ?? null;
     }
 
     /**
-     * Sets CampaignId.
-     *
      * @return $this
      */
     public function setCampaignId(?int $value = null)
@@ -55,17 +50,12 @@ class SetBidsItem
         return $this;
     }
 
-    /**
-     * Gets AdGroupId.
-     */
     public function getAdGroupId(): ?int
     {
         return $this->AdGroupId ?? null;
     }
 
     /**
-     * Sets AdGroupId.
-     *
      * @return $this
      */
     public function setAdGroupId(?int $value = null)
@@ -75,17 +65,12 @@ class SetBidsItem
         return $this;
     }
 
-    /**
-     * Gets Id.
-     */
     public function getId(): ?int
     {
         return $this->Id ?? null;
     }
 
     /**
-     * Sets Id.
-     *
      * @return $this
      */
     public function setId(?int $value = null)
@@ -95,17 +80,12 @@ class SetBidsItem
         return $this;
     }
 
-    /**
-     * Gets Bid.
-     */
     public function getBid(): ?int
     {
         return $this->Bid ?? null;
     }
 
     /**
-     * Sets Bid.
-     *
      * @return $this
      */
     public function setBid(?int $value = null)
@@ -115,17 +95,12 @@ class SetBidsItem
         return $this;
     }
 
-    /**
-     * Gets ContextBid.
-     */
     public function getContextBid(): ?int
     {
         return $this->ContextBid ?? null;
     }
 
     /**
-     * Sets ContextBid.
-     *
      * @return $this
      */
     public function setContextBid(?int $value = null)
@@ -136,8 +111,6 @@ class SetBidsItem
     }
 
     /**
-     * Gets StrategyPriority.
-     *
      * @see PriorityEnum
      */
     public function getStrategyPriority(): ?string
@@ -146,8 +119,6 @@ class SetBidsItem
     }
 
     /**
-     * Sets StrategyPriority.
-     *
      * @see PriorityEnum
      *
      * @return $this

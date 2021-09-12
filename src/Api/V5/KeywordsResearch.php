@@ -5,6 +5,10 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5;
 
 use Biplane\YandexDirect\Api\ApiSoapClientV5;
+use Biplane\YandexDirect\Api\V5\Contract\DeduplicateRequest;
+use Biplane\YandexDirect\Api\V5\Contract\DeduplicateResponse;
+use Biplane\YandexDirect\Api\V5\Contract\HasSearchVolumeKeywordsRequest;
+use Biplane\YandexDirect\Api\V5\Contract\HasSearchVolumeKeywordsResponse;
 use Biplane\YandexDirect\Config;
 
 /**
@@ -14,6 +18,9 @@ class KeywordsResearch extends ApiSoapClientV5
 {
     public const ENDPOINT = 'https://api.direct.yandex.com/v5/keywordsresearch?wsdl';
 
+    /**
+     * @param array<string, mixed> $options
+     */
     public function __construct(Config $config, array $options)
     {
         $options['classmap'] = [
@@ -73,18 +80,12 @@ class KeywordsResearch extends ApiSoapClientV5
         parent::__construct(self::ENDPOINT, $config, $options);
     }
 
-    /**
-     * hasSearchVolume.
-     */
-    public function hasSearchVolume(Contract\HasSearchVolumeKeywordsRequest $parameters): Contract\HasSearchVolumeKeywordsResponse
+    public function hasSearchVolume(HasSearchVolumeKeywordsRequest $parameters): HasSearchVolumeKeywordsResponse
     {
         return $this->__soapCall('hasSearchVolume', [$parameters]);
     }
 
-    /**
-     * deduplicate.
-     */
-    public function deduplicate(Contract\DeduplicateRequest $parameters): Contract\DeduplicateResponse
+    public function deduplicate(DeduplicateRequest $parameters): DeduplicateResponse
     {
         return $this->__soapCall('deduplicate', [$parameters]);
     }

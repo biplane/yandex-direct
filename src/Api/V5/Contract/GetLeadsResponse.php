@@ -9,20 +9,10 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class GetLeadsResponse extends GetResponseGeneral
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Leads = null;
 
     /**
-     * Creates a new instance of GetLeadsResponse.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
-
-    /**
-     * Gets Leads.
-     *
      * @return LeadGetItem[]|null
      */
     public function getLeads(): ?array
@@ -31,8 +21,6 @@ class GetLeadsResponse extends GetResponseGeneral
     }
 
     /**
-     * Sets Leads.
-     *
      * @param LeadGetItem[]|null $value
      *
      * @return $this

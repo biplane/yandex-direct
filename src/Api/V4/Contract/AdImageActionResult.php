@@ -18,16 +18,14 @@ class AdImageActionResult
     protected $AdImageHash = null;
 
     /**
-     * Creates a new instance of AdImageActionResult.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Warnings.
-     *
      * @return Warning[]|null
      */
     public function getWarnings(): ?array
@@ -36,8 +34,6 @@ class AdImageActionResult
     }
 
     /**
-     * Sets Warnings.
-     *
      * @param Warning[]|null $value
      *
      * @return $this
@@ -50,8 +46,6 @@ class AdImageActionResult
     }
 
     /**
-     * Gets Errors.
-     *
      * @return Error[]|null
      */
     public function getErrors(): ?array
@@ -60,8 +54,6 @@ class AdImageActionResult
     }
 
     /**
-     * Sets Errors.
-     *
      * @param Error[]|null $value
      *
      * @return $this
@@ -73,17 +65,12 @@ class AdImageActionResult
         return $this;
     }
 
-    /**
-     * Gets AdImageUploadTaskID.
-     */
     public function getAdImageUploadTaskID(): ?int
     {
         return $this->AdImageUploadTaskID;
     }
 
     /**
-     * Sets AdImageUploadTaskID.
-     *
      * @return $this
      */
     public function setAdImageUploadTaskID(?int $value = null)
@@ -93,17 +80,12 @@ class AdImageActionResult
         return $this;
     }
 
-    /**
-     * Gets AdImageHash.
-     */
     public function getAdImageHash(): ?string
     {
         return $this->AdImageHash;
     }
 
     /**
-     * Sets AdImageHash.
-     *
      * @return $this
      */
     public function setAdImageHash(?string $value = null)

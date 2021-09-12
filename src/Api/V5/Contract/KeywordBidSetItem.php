@@ -9,43 +9,38 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class KeywordBidSetItem
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $CampaignId = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AdGroupId = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $KeywordId = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $SearchBid = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $NetworkBid = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $StrategyPriority = null;
 
     /**
-     * Creates a new instance of KeywordBidSetItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets CampaignId.
-     */
     public function getCampaignId(): ?int
     {
         return $this->CampaignId ?? null;
     }
 
     /**
-     * Sets CampaignId.
-     *
      * @return $this
      */
     public function setCampaignId(?int $value = null)
@@ -55,17 +50,12 @@ class KeywordBidSetItem
         return $this;
     }
 
-    /**
-     * Gets AdGroupId.
-     */
     public function getAdGroupId(): ?int
     {
         return $this->AdGroupId ?? null;
     }
 
     /**
-     * Sets AdGroupId.
-     *
      * @return $this
      */
     public function setAdGroupId(?int $value = null)
@@ -75,17 +65,12 @@ class KeywordBidSetItem
         return $this;
     }
 
-    /**
-     * Gets KeywordId.
-     */
     public function getKeywordId(): ?int
     {
         return $this->KeywordId ?? null;
     }
 
     /**
-     * Sets KeywordId.
-     *
      * @return $this
      */
     public function setKeywordId(?int $value = null)
@@ -95,17 +80,12 @@ class KeywordBidSetItem
         return $this;
     }
 
-    /**
-     * Gets SearchBid.
-     */
     public function getSearchBid(): ?int
     {
         return $this->SearchBid ?? null;
     }
 
     /**
-     * Sets SearchBid.
-     *
      * @return $this
      */
     public function setSearchBid(?int $value = null)
@@ -115,17 +95,12 @@ class KeywordBidSetItem
         return $this;
     }
 
-    /**
-     * Gets NetworkBid.
-     */
     public function getNetworkBid(): ?int
     {
         return $this->NetworkBid ?? null;
     }
 
     /**
-     * Sets NetworkBid.
-     *
      * @return $this
      */
     public function setNetworkBid(?int $value = null)
@@ -136,8 +111,6 @@ class KeywordBidSetItem
     }
 
     /**
-     * Gets StrategyPriority.
-     *
      * @see PriorityEnum
      */
     public function getStrategyPriority(): ?string
@@ -146,8 +119,6 @@ class KeywordBidSetItem
     }
 
     /**
-     * Sets StrategyPriority.
-     *
      * @see PriorityEnum
      *
      * @return $this

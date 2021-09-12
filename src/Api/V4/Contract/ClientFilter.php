@@ -12,24 +12,19 @@ class ClientFilter
     protected $StatusArch = null;
 
     /**
-     * Creates a new instance of ClientFilter.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets StatusArch.
-     */
     public function getStatusArch(): ?string
     {
         return $this->StatusArch;
     }
 
     /**
-     * Sets StatusArch.
-     *
      * @return $this
      */
     public function setStatusArch(?string $value = null)

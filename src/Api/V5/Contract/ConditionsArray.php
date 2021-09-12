@@ -12,16 +12,14 @@ class ConditionsArray
     protected $Items = [];
 
     /**
-     * Creates a new instance of ConditionsArray.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Items.
-     *
      * @return ConditionsItem[]
      */
     public function getItems(): array
@@ -30,8 +28,6 @@ class ConditionsArray
     }
 
     /**
-     * Sets Items.
-     *
      * @param ConditionsItem[] $value
      *
      * @return $this

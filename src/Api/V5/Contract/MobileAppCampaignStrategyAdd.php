@@ -14,24 +14,19 @@ class MobileAppCampaignStrategyAdd
     protected $Network = null;
 
     /**
-     * Creates a new instance of MobileAppCampaignStrategyAdd.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Search.
-     */
     public function getSearch(): MobileAppCampaignSearchStrategyAdd
     {
         return $this->Search;
     }
 
     /**
-     * Sets Search.
-     *
      * @return $this
      */
     public function setSearch(MobileAppCampaignSearchStrategyAdd $value)
@@ -41,17 +36,12 @@ class MobileAppCampaignStrategyAdd
         return $this;
     }
 
-    /**
-     * Gets Network.
-     */
     public function getNetwork(): MobileAppCampaignNetworkStrategyAdd
     {
         return $this->Network;
     }
 
     /**
-     * Sets Network.
-     *
      * @return $this
      */
     public function setNetwork(MobileAppCampaignNetworkStrategyAdd $value)

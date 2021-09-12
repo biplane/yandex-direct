@@ -12,16 +12,14 @@ class SuspendDynamicTextAdTargetsResponse
     protected $SuspendResults = [];
 
     /**
-     * Creates a new instance of SuspendDynamicTextAdTargetsResponse.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets SuspendResults.
-     *
      * @return ActionResult[]
      */
     public function getSuspendResults(): array
@@ -30,8 +28,6 @@ class SuspendDynamicTextAdTargetsResponse
     }
 
     /**
-     * Sets SuspendResults.
-     *
      * @param ActionResult[] $value
      *
      * @return $this

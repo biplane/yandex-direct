@@ -14,24 +14,19 @@ class TextCampaignStrategyAdd
     protected $Network = null;
 
     /**
-     * Creates a new instance of TextCampaignStrategyAdd.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Search.
-     */
     public function getSearch(): TextCampaignSearchStrategyAdd
     {
         return $this->Search;
     }
 
     /**
-     * Sets Search.
-     *
      * @return $this
      */
     public function setSearch(TextCampaignSearchStrategyAdd $value)
@@ -41,17 +36,12 @@ class TextCampaignStrategyAdd
         return $this;
     }
 
-    /**
-     * Gets Network.
-     */
     public function getNetwork(): TextCampaignNetworkStrategyAdd
     {
         return $this->Network;
     }
 
     /**
-     * Sets Network.
-     *
      * @return $this
      */
     public function setNetwork(TextCampaignNetworkStrategyAdd $value)

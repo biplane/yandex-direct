@@ -16,24 +16,19 @@ class ReportInfo
     protected $StatusReport = null;
 
     /**
-     * Creates a new instance of ReportInfo.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets ReportID.
-     */
     public function getReportID(): int
     {
         return $this->ReportID;
     }
 
     /**
-     * Sets ReportID.
-     *
      * @return $this
      */
     public function setReportID(int $value)
@@ -43,17 +38,12 @@ class ReportInfo
         return $this;
     }
 
-    /**
-     * Gets Url.
-     */
     public function getUrl(): string
     {
         return $this->Url;
     }
 
     /**
-     * Sets Url.
-     *
      * @return $this
      */
     public function setUrl(string $value)
@@ -63,17 +53,12 @@ class ReportInfo
         return $this;
     }
 
-    /**
-     * Gets StatusReport.
-     */
     public function getStatusReport(): string
     {
         return $this->StatusReport;
     }
 
     /**
-     * Sets StatusReport.
-     *
      * @return $this
      */
     public function setStatusReport(string $value)

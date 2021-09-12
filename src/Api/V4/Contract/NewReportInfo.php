@@ -38,24 +38,19 @@ class NewReportInfo
     protected $IncludeDiscount = null;
 
     /**
-     * Creates a new instance of NewReportInfo.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets CampaignID.
-     */
     public function getCampaignID(): int
     {
         return $this->CampaignID;
     }
 
     /**
-     * Sets CampaignID.
-     *
      * @return $this
      */
     public function setCampaignID(int $value)
@@ -65,17 +60,12 @@ class NewReportInfo
         return $this;
     }
 
-    /**
-     * Gets StartDate.
-     */
     public function getStartDate(): string
     {
         return $this->StartDate;
     }
 
     /**
-     * Sets StartDate.
-     *
      * @return $this
      */
     public function setStartDate(string $value)
@@ -85,17 +75,12 @@ class NewReportInfo
         return $this;
     }
 
-    /**
-     * Gets EndDate.
-     */
     public function getEndDate(): string
     {
         return $this->EndDate;
     }
 
     /**
-     * Sets EndDate.
-     *
      * @return $this
      */
     public function setEndDate(string $value)
@@ -106,8 +91,6 @@ class NewReportInfo
     }
 
     /**
-     * Gets GroupByColumns.
-     *
      * @return string[]|null
      */
     public function getGroupByColumns(): ?array
@@ -116,8 +99,6 @@ class NewReportInfo
     }
 
     /**
-     * Sets GroupByColumns.
-     *
      * @param string[]|null $value
      *
      * @return $this
@@ -129,17 +110,12 @@ class NewReportInfo
         return $this;
     }
 
-    /**
-     * Gets Filter.
-     */
     public function getFilter(): ?NewReportFilterInfo
     {
         return $this->Filter;
     }
 
     /**
-     * Sets Filter.
-     *
      * @return $this
      */
     public function setFilter(?NewReportFilterInfo $value = null)
@@ -149,17 +125,12 @@ class NewReportInfo
         return $this;
     }
 
-    /**
-     * Gets Limit.
-     */
     public function getLimit(): ?int
     {
         return $this->Limit;
     }
 
     /**
-     * Sets Limit.
-     *
      * @return $this
      */
     public function setLimit(?int $value = null)
@@ -169,17 +140,12 @@ class NewReportInfo
         return $this;
     }
 
-    /**
-     * Gets Offset.
-     */
     public function getOffset(): ?int
     {
         return $this->Offset;
     }
 
     /**
-     * Sets Offset.
-     *
      * @return $this
      */
     public function setOffset(?int $value = null)
@@ -189,17 +155,12 @@ class NewReportInfo
         return $this;
     }
 
-    /**
-     * Gets GroupByDate.
-     */
     public function getGroupByDate(): ?string
     {
         return $this->GroupByDate;
     }
 
     /**
-     * Sets GroupByDate.
-     *
      * @return $this
      */
     public function setGroupByDate(?string $value = null)
@@ -210,8 +171,6 @@ class NewReportInfo
     }
 
     /**
-     * Gets OrderBy.
-     *
      * @return string[]|null
      */
     public function getOrderBy(): ?array
@@ -220,8 +179,6 @@ class NewReportInfo
     }
 
     /**
-     * Sets OrderBy.
-     *
      * @param string[]|null $value
      *
      * @return $this
@@ -233,17 +190,12 @@ class NewReportInfo
         return $this;
     }
 
-    /**
-     * Gets TypeResultReport.
-     */
     public function getTypeResultReport(): ?string
     {
         return $this->TypeResultReport;
     }
 
     /**
-     * Sets TypeResultReport.
-     *
      * @return $this
      */
     public function setTypeResultReport(?string $value = null)
@@ -253,17 +205,12 @@ class NewReportInfo
         return $this;
     }
 
-    /**
-     * Gets CompressReport.
-     */
     public function getCompressReport(): ?int
     {
         return $this->CompressReport;
     }
 
     /**
-     * Sets CompressReport.
-     *
      * @return $this
      */
     public function setCompressReport(?int $value = null)
@@ -273,17 +220,12 @@ class NewReportInfo
         return $this;
     }
 
-    /**
-     * Gets Currency.
-     */
     public function getCurrency(): ?string
     {
         return $this->Currency;
     }
 
     /**
-     * Sets Currency.
-     *
      * @return $this
      */
     public function setCurrency(?string $value = null)
@@ -293,17 +235,12 @@ class NewReportInfo
         return $this;
     }
 
-    /**
-     * Gets IncludeVAT.
-     */
     public function getIncludeVAT(): ?string
     {
         return $this->IncludeVAT;
     }
 
     /**
-     * Sets IncludeVAT.
-     *
      * @return $this
      */
     public function setIncludeVAT(?string $value = null)
@@ -313,17 +250,12 @@ class NewReportInfo
         return $this;
     }
 
-    /**
-     * Gets IncludeDiscount.
-     */
     public function getIncludeDiscount(): ?string
     {
         return $this->IncludeDiscount;
     }
 
     /**
-     * Sets IncludeDiscount.
-     *
      * @return $this
      */
     public function setIncludeDiscount(?string $value = null)

@@ -22,24 +22,19 @@ class EmailNotificationInfo
     protected $SendWarn = null;
 
     /**
-     * Creates a new instance of EmailNotificationInfo.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Email.
-     */
     public function getEmail(): ?string
     {
         return $this->Email;
     }
 
     /**
-     * Sets Email.
-     *
      * @return $this
      */
     public function setEmail(?string $value = null)
@@ -49,17 +44,12 @@ class EmailNotificationInfo
         return $this;
     }
 
-    /**
-     * Gets WarnPlaceInterval.
-     */
     public function getWarnPlaceInterval(): int
     {
         return $this->WarnPlaceInterval;
     }
 
     /**
-     * Sets WarnPlaceInterval.
-     *
      * @return $this
      */
     public function setWarnPlaceInterval(int $value)
@@ -69,17 +59,12 @@ class EmailNotificationInfo
         return $this;
     }
 
-    /**
-     * Gets MoneyWarningValue.
-     */
     public function getMoneyWarningValue(): ?int
     {
         return $this->MoneyWarningValue;
     }
 
     /**
-     * Sets MoneyWarningValue.
-     *
      * @return $this
      */
     public function setMoneyWarningValue(?int $value = null)
@@ -89,17 +74,12 @@ class EmailNotificationInfo
         return $this;
     }
 
-    /**
-     * Gets PausedByDayBudget.
-     */
     public function getPausedByDayBudget(): ?string
     {
         return $this->PausedByDayBudget;
     }
 
     /**
-     * Sets PausedByDayBudget.
-     *
      * @return $this
      */
     public function setPausedByDayBudget(?string $value = null)
@@ -109,17 +89,12 @@ class EmailNotificationInfo
         return $this;
     }
 
-    /**
-     * Gets SendAccNews.
-     */
     public function getSendAccNews(): ?string
     {
         return $this->SendAccNews;
     }
 
     /**
-     * Sets SendAccNews.
-     *
      * @return $this
      */
     public function setSendAccNews(?string $value = null)
@@ -129,17 +104,12 @@ class EmailNotificationInfo
         return $this;
     }
 
-    /**
-     * Gets SendWarn.
-     */
     public function getSendWarn(): ?string
     {
         return $this->SendWarn;
     }
 
     /**
-     * Sets SendWarn.
-     *
      * @return $this
      */
     public function setSendWarn(?string $value = null)

@@ -9,20 +9,18 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class SetAutoBidsResponse
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $SetAutoResults = null;
 
     /**
-     * Creates a new instance of SetAutoBidsResponse.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets SetAutoResults.
-     *
      * @return BidActionResult[]|null
      */
     public function getSetAutoResults(): ?array
@@ -31,8 +29,6 @@ class SetAutoBidsResponse
     }
 
     /**
-     * Sets SetAutoResults.
-     *
      * @param BidActionResult[]|null $value
      *
      * @return $this

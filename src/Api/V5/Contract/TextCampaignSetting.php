@@ -14,16 +14,14 @@ class TextCampaignSetting
     protected $Value = null;
 
     /**
-     * Creates a new instance of TextCampaignSetting.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Option.
-     *
      * @see TextCampaignSettingsEnum
      */
     public function getOption(): string
@@ -32,8 +30,6 @@ class TextCampaignSetting
     }
 
     /**
-     * Sets Option.
-     *
      * @see TextCampaignSettingsEnum
      *
      * @return $this
@@ -46,8 +42,6 @@ class TextCampaignSetting
     }
 
     /**
-     * Gets Value.
-     *
      * @see YesNoEnum
      */
     public function getValue(): string
@@ -56,8 +50,6 @@ class TextCampaignSetting
     }
 
     /**
-     * Sets Value.
-     *
      * @see YesNoEnum
      *
      * @return $this

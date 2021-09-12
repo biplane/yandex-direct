@@ -14,24 +14,19 @@ class DayBudgetInfo
     protected $SpendMode = null;
 
     /**
-     * Creates a new instance of DayBudgetInfo.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Amount.
-     */
     public function getAmount(): float
     {
         return $this->Amount;
     }
 
     /**
-     * Sets Amount.
-     *
      * @return $this
      */
     public function setAmount(float $value)
@@ -41,17 +36,12 @@ class DayBudgetInfo
         return $this;
     }
 
-    /**
-     * Gets SpendMode.
-     */
     public function getSpendMode(): ?string
     {
         return $this->SpendMode;
     }
 
     /**
-     * Sets SpendMode.
-     *
      * @return $this
      */
     public function setSpendMode(?string $value = null)

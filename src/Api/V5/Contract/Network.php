@@ -9,31 +9,26 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class Network
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Bid = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Coverage = null;
 
     /**
-     * Creates a new instance of Network.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Bid.
-     */
     public function getBid(): ?int
     {
         return $this->Bid ?? null;
     }
 
     /**
-     * Sets Bid.
-     *
      * @return $this
      */
     public function setBid(?int $value = null)
@@ -43,17 +38,12 @@ class Network
         return $this;
     }
 
-    /**
-     * Gets Coverage.
-     */
     public function getCoverage(): ?Coverage
     {
         return $this->Coverage ?? null;
     }
 
     /**
-     * Sets Coverage.
-     *
      * @return $this
      */
     public function setCoverage(?Coverage $value = null)

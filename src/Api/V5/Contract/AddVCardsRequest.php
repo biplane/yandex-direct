@@ -12,16 +12,14 @@ class AddVCardsRequest
     protected $VCards = [];
 
     /**
-     * Creates a new instance of AddVCardsRequest.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets VCards.
-     *
      * @return VCardAddItem[]
      */
     public function getVCards(): array
@@ -30,8 +28,6 @@ class AddVCardsRequest
     }
 
     /**
-     * Sets VCards.
-     *
      * @param VCardAddItem[] $value
      *
      * @return $this

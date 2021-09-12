@@ -9,31 +9,26 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AudienceTargetBase
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $ContextBid = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $StrategyPriority = null;
 
     /**
-     * Creates a new instance of AudienceTargetBase.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets ContextBid.
-     */
     public function getContextBid(): ?int
     {
         return $this->ContextBid ?? null;
     }
 
     /**
-     * Sets ContextBid.
-     *
      * @return $this
      */
     public function setContextBid(?int $value = null)
@@ -44,8 +39,6 @@ class AudienceTargetBase
     }
 
     /**
-     * Gets StrategyPriority.
-     *
      * @see PriorityEnum
      */
     public function getStrategyPriority(): ?string
@@ -54,8 +47,6 @@ class AudienceTargetBase
     }
 
     /**
-     * Sets StrategyPriority.
-     *
      * @see PriorityEnum
      *
      * @return $this

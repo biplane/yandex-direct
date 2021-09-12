@@ -9,25 +9,23 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class DemographicsAdjustmentAdd
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Gender = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Age = null;
 
     protected $BidModifier = null;
 
     /**
-     * Creates a new instance of DemographicsAdjustmentAdd.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Gender.
-     *
      * @see GenderEnum
      */
     public function getGender(): ?string
@@ -36,8 +34,6 @@ class DemographicsAdjustmentAdd
     }
 
     /**
-     * Sets Gender.
-     *
      * @see GenderEnum
      *
      * @return $this
@@ -50,8 +46,6 @@ class DemographicsAdjustmentAdd
     }
 
     /**
-     * Gets Age.
-     *
      * @see AgeRangeEnum
      */
     public function getAge(): ?string
@@ -60,8 +54,6 @@ class DemographicsAdjustmentAdd
     }
 
     /**
-     * Sets Age.
-     *
      * @see AgeRangeEnum
      *
      * @return $this
@@ -73,17 +65,12 @@ class DemographicsAdjustmentAdd
         return $this;
     }
 
-    /**
-     * Gets BidModifier.
-     */
     public function getBidModifier(): int
     {
         return $this->BidModifier;
     }
 
     /**
-     * Sets BidModifier.
-     *
      * @return $this
      */
     public function setBidModifier(int $value)

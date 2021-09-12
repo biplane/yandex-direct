@@ -40,24 +40,19 @@ class StatItem
     protected $Currency = null;
 
     /**
-     * Creates a new instance of StatItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets CampaignID.
-     */
     public function getCampaignID(): int
     {
         return $this->CampaignID;
     }
 
     /**
-     * Sets CampaignID.
-     *
      * @return $this
      */
     public function setCampaignID(int $value)
@@ -67,17 +62,12 @@ class StatItem
         return $this;
     }
 
-    /**
-     * Gets StatDate.
-     */
     public function getStatDate(): string
     {
         return $this->StatDate;
     }
 
     /**
-     * Sets StatDate.
-     *
      * @return $this
      */
     public function setStatDate(string $value)
@@ -87,17 +77,12 @@ class StatItem
         return $this;
     }
 
-    /**
-     * Gets SumSearch.
-     */
     public function getSumSearch(): ?float
     {
         return $this->SumSearch;
     }
 
     /**
-     * Sets SumSearch.
-     *
      * @return $this
      */
     public function setSumSearch(?float $value = null)
@@ -107,17 +92,12 @@ class StatItem
         return $this;
     }
 
-    /**
-     * Gets SumContext.
-     */
     public function getSumContext(): ?float
     {
         return $this->SumContext;
     }
 
     /**
-     * Sets SumContext.
-     *
      * @return $this
      */
     public function setSumContext(?float $value = null)
@@ -127,17 +107,12 @@ class StatItem
         return $this;
     }
 
-    /**
-     * Gets ShowsSearch.
-     */
     public function getShowsSearch(): ?int
     {
         return $this->ShowsSearch;
     }
 
     /**
-     * Sets ShowsSearch.
-     *
      * @return $this
      */
     public function setShowsSearch(?int $value = null)
@@ -147,17 +122,12 @@ class StatItem
         return $this;
     }
 
-    /**
-     * Gets ShowsContext.
-     */
     public function getShowsContext(): ?int
     {
         return $this->ShowsContext;
     }
 
     /**
-     * Sets ShowsContext.
-     *
      * @return $this
      */
     public function setShowsContext(?int $value = null)
@@ -167,17 +137,12 @@ class StatItem
         return $this;
     }
 
-    /**
-     * Gets ClicksSearch.
-     */
     public function getClicksSearch(): ?int
     {
         return $this->ClicksSearch;
     }
 
     /**
-     * Sets ClicksSearch.
-     *
      * @return $this
      */
     public function setClicksSearch(?int $value = null)
@@ -187,17 +152,12 @@ class StatItem
         return $this;
     }
 
-    /**
-     * Gets ClicksContext.
-     */
     public function getClicksContext(): ?int
     {
         return $this->ClicksContext;
     }
 
     /**
-     * Sets ClicksContext.
-     *
      * @return $this
      */
     public function setClicksContext(?int $value = null)
@@ -207,17 +167,12 @@ class StatItem
         return $this;
     }
 
-    /**
-     * Gets SessionDepthSearch.
-     */
     public function getSessionDepthSearch(): ?float
     {
         return $this->SessionDepthSearch;
     }
 
     /**
-     * Sets SessionDepthSearch.
-     *
      * @return $this
      */
     public function setSessionDepthSearch(?float $value = null)
@@ -227,17 +182,12 @@ class StatItem
         return $this;
     }
 
-    /**
-     * Gets SessionDepthContext.
-     */
     public function getSessionDepthContext(): ?float
     {
         return $this->SessionDepthContext;
     }
 
     /**
-     * Sets SessionDepthContext.
-     *
      * @return $this
      */
     public function setSessionDepthContext(?float $value = null)
@@ -247,17 +197,12 @@ class StatItem
         return $this;
     }
 
-    /**
-     * Gets GoalConversionSearch.
-     */
     public function getGoalConversionSearch(): ?float
     {
         return $this->GoalConversionSearch;
     }
 
     /**
-     * Sets GoalConversionSearch.
-     *
      * @return $this
      */
     public function setGoalConversionSearch(?float $value = null)
@@ -267,17 +212,12 @@ class StatItem
         return $this;
     }
 
-    /**
-     * Gets GoalConversionContext.
-     */
     public function getGoalConversionContext(): ?float
     {
         return $this->GoalConversionContext;
     }
 
     /**
-     * Sets GoalConversionContext.
-     *
      * @return $this
      */
     public function setGoalConversionContext(?float $value = null)
@@ -287,17 +227,12 @@ class StatItem
         return $this;
     }
 
-    /**
-     * Gets GoalCostSearch.
-     */
     public function getGoalCostSearch(): ?float
     {
         return $this->GoalCostSearch;
     }
 
     /**
-     * Sets GoalCostSearch.
-     *
      * @return $this
      */
     public function setGoalCostSearch(?float $value = null)
@@ -307,17 +242,12 @@ class StatItem
         return $this;
     }
 
-    /**
-     * Gets GoalCostContext.
-     */
     public function getGoalCostContext(): ?float
     {
         return $this->GoalCostContext;
     }
 
     /**
-     * Sets GoalCostContext.
-     *
      * @return $this
      */
     public function setGoalCostContext(?float $value = null)
@@ -327,17 +257,12 @@ class StatItem
         return $this;
     }
 
-    /**
-     * Gets Currency.
-     */
     public function getCurrency(): ?string
     {
         return $this->Currency;
     }
 
     /**
-     * Sets Currency.
-     *
      * @return $this
      */
     public function setCurrency(?string $value = null)

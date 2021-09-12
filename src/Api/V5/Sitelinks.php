@@ -5,6 +5,12 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5;
 
 use Biplane\YandexDirect\Api\ApiSoapClientV5;
+use Biplane\YandexDirect\Api\V5\Contract\AddSitelinksRequest;
+use Biplane\YandexDirect\Api\V5\Contract\AddSitelinksResponse;
+use Biplane\YandexDirect\Api\V5\Contract\DeleteSitelinksRequest;
+use Biplane\YandexDirect\Api\V5\Contract\DeleteSitelinksResponse;
+use Biplane\YandexDirect\Api\V5\Contract\GetSitelinksRequest;
+use Biplane\YandexDirect\Api\V5\Contract\GetSitelinksResponse;
 use Biplane\YandexDirect\Config;
 
 /**
@@ -14,6 +20,9 @@ class Sitelinks extends ApiSoapClientV5
 {
     public const ENDPOINT = 'https://api.direct.yandex.com/v5/sitelinks?wsdl';
 
+    /**
+     * @param array<string, mixed> $options
+     */
     public function __construct(Config $config, array $options)
     {
         $options['classmap'] = [
@@ -73,26 +82,17 @@ class Sitelinks extends ApiSoapClientV5
         parent::__construct(self::ENDPOINT, $config, $options);
     }
 
-    /**
-     * add.
-     */
-    public function add(Contract\AddSitelinksRequest $parameters): Contract\AddSitelinksResponse
+    public function add(AddSitelinksRequest $parameters): AddSitelinksResponse
     {
         return $this->__soapCall('add', [$parameters]);
     }
 
-    /**
-     * get.
-     */
-    public function get(Contract\GetSitelinksRequest $parameters): Contract\GetSitelinksResponse
+    public function get(GetSitelinksRequest $parameters): GetSitelinksResponse
     {
         return $this->__soapCall('get', [$parameters]);
     }
 
-    /**
-     * delete.
-     */
-    public function delete(Contract\DeleteSitelinksRequest $parameters): Contract\DeleteSitelinksResponse
+    public function delete(DeleteSitelinksRequest $parameters): DeleteSitelinksResponse
     {
         return $this->__soapCall('delete', [$parameters]);
     }

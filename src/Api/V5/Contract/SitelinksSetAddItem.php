@@ -12,16 +12,14 @@ class SitelinksSetAddItem
     protected $Sitelinks = [];
 
     /**
-     * Creates a new instance of SitelinksSetAddItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Sitelinks.
-     *
      * @return SitelinkAddItem[]
      */
     public function getSitelinks(): array
@@ -30,8 +28,6 @@ class SitelinksSetAddItem
     }
 
     /**
-     * Sets Sitelinks.
-     *
      * @param SitelinkAddItem[] $value
      *
      * @return $this

@@ -9,28 +9,23 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class SmartAdAdjustmentGet
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $BidModifier = null;
 
     /**
-     * Creates a new instance of SmartAdAdjustmentGet.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets BidModifier.
-     */
     public function getBidModifier(): ?int
     {
         return $this->BidModifier ?? null;
     }
 
     /**
-     * Sets BidModifier.
-     *
      * @return $this
      */
     public function setBidModifier(?int $value = null)

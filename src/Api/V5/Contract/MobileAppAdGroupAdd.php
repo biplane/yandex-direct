@@ -18,24 +18,19 @@ class MobileAppAdGroupAdd
     protected $TargetOperatingSystemVersion = null;
 
     /**
-     * Creates a new instance of MobileAppAdGroupAdd.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets StoreUrl.
-     */
     public function getStoreUrl(): string
     {
         return $this->StoreUrl;
     }
 
     /**
-     * Sets StoreUrl.
-     *
      * @return $this
      */
     public function setStoreUrl(string $value)
@@ -46,8 +41,6 @@ class MobileAppAdGroupAdd
     }
 
     /**
-     * Gets TargetDeviceType.
-     *
      * @see TargetDeviceTypeEnum
      *
      * @return string[]
@@ -58,8 +51,6 @@ class MobileAppAdGroupAdd
     }
 
     /**
-     * Sets TargetDeviceType.
-     *
      * @see TargetDeviceTypeEnum
      *
      * @param string[] $value
@@ -74,8 +65,6 @@ class MobileAppAdGroupAdd
     }
 
     /**
-     * Gets TargetCarrier.
-     *
      * @see TargetCarrierEnum
      */
     public function getTargetCarrier(): string
@@ -84,8 +73,6 @@ class MobileAppAdGroupAdd
     }
 
     /**
-     * Sets TargetCarrier.
-     *
      * @see TargetCarrierEnum
      *
      * @return $this
@@ -97,17 +84,12 @@ class MobileAppAdGroupAdd
         return $this;
     }
 
-    /**
-     * Gets TargetOperatingSystemVersion.
-     */
     public function getTargetOperatingSystemVersion(): string
     {
         return $this->TargetOperatingSystemVersion;
     }
 
     /**
-     * Sets TargetOperatingSystemVersion.
-     *
      * @return $this
      */
     public function setTargetOperatingSystemVersion(string $value)

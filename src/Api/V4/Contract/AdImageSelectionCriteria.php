@@ -22,16 +22,14 @@ class AdImageSelectionCriteria
     protected $Offset = null;
 
     /**
-     * Creates a new instance of AdImageSelectionCriteria.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Logins.
-     *
      * @return string[]|null
      */
     public function getLogins(): ?array
@@ -40,8 +38,6 @@ class AdImageSelectionCriteria
     }
 
     /**
-     * Sets Logins.
-     *
      * @param string[]|null $value
      *
      * @return $this
@@ -54,8 +50,6 @@ class AdImageSelectionCriteria
     }
 
     /**
-     * Gets AdImageHashes.
-     *
      * @return string[]|null
      */
     public function getAdImageHashes(): ?array
@@ -64,8 +58,6 @@ class AdImageSelectionCriteria
     }
 
     /**
-     * Sets AdImageHashes.
-     *
      * @param string[]|null $value
      *
      * @return $this
@@ -78,8 +70,6 @@ class AdImageSelectionCriteria
     }
 
     /**
-     * Gets AdImageUploadTaskIDS.
-     *
      * @return int[]|null
      */
     public function getAdImageUploadTaskIDS(): ?array
@@ -88,8 +78,6 @@ class AdImageSelectionCriteria
     }
 
     /**
-     * Sets AdImageUploadTaskIDS.
-     *
      * @param int[]|null $value
      *
      * @return $this
@@ -102,8 +90,6 @@ class AdImageSelectionCriteria
     }
 
     /**
-     * Gets Assigned.
-     *
      * @return string[]|null
      */
     public function getAssigned(): ?array
@@ -112,8 +98,6 @@ class AdImageSelectionCriteria
     }
 
     /**
-     * Sets Assigned.
-     *
      * @param string[]|null $value
      *
      * @return $this
@@ -125,17 +109,12 @@ class AdImageSelectionCriteria
         return $this;
     }
 
-    /**
-     * Gets Limit.
-     */
     public function getLimit(): ?int
     {
         return $this->Limit;
     }
 
     /**
-     * Sets Limit.
-     *
      * @return $this
      */
     public function setLimit(?int $value = null)
@@ -145,17 +124,12 @@ class AdImageSelectionCriteria
         return $this;
     }
 
-    /**
-     * Gets Offset.
-     */
     public function getOffset(): ?int
     {
         return $this->Offset;
     }
 
     /**
-     * Sets Offset.
-     *
      * @return $this
      */
     public function setOffset(?int $value = null)

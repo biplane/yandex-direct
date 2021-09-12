@@ -15,34 +15,29 @@ class StrategyAverageRoiAdd
 
     protected $GoalId = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $WeeklySpendLimit = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $BidCeiling = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Profitability = null;
 
     /**
-     * Creates a new instance of StrategyAverageRoiAdd.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets ReserveReturn.
-     */
     public function getReserveReturn(): int
     {
         return $this->ReserveReturn;
     }
 
     /**
-     * Sets ReserveReturn.
-     *
      * @return $this
      */
     public function setReserveReturn(int $value)
@@ -52,17 +47,12 @@ class StrategyAverageRoiAdd
         return $this;
     }
 
-    /**
-     * Gets RoiCoef.
-     */
     public function getRoiCoef(): int
     {
         return $this->RoiCoef;
     }
 
     /**
-     * Sets RoiCoef.
-     *
      * @return $this
      */
     public function setRoiCoef(int $value)
@@ -72,17 +62,12 @@ class StrategyAverageRoiAdd
         return $this;
     }
 
-    /**
-     * Gets GoalId.
-     */
     public function getGoalId(): int
     {
         return $this->GoalId;
     }
 
     /**
-     * Sets GoalId.
-     *
      * @return $this
      */
     public function setGoalId(int $value)
@@ -92,17 +77,12 @@ class StrategyAverageRoiAdd
         return $this;
     }
 
-    /**
-     * Gets WeeklySpendLimit.
-     */
     public function getWeeklySpendLimit(): ?int
     {
         return $this->WeeklySpendLimit ?? null;
     }
 
     /**
-     * Sets WeeklySpendLimit.
-     *
      * @return $this
      */
     public function setWeeklySpendLimit(?int $value = null)
@@ -112,17 +92,12 @@ class StrategyAverageRoiAdd
         return $this;
     }
 
-    /**
-     * Gets BidCeiling.
-     */
     public function getBidCeiling(): ?int
     {
         return $this->BidCeiling ?? null;
     }
 
     /**
-     * Sets BidCeiling.
-     *
      * @return $this
      */
     public function setBidCeiling(?int $value = null)
@@ -132,17 +107,12 @@ class StrategyAverageRoiAdd
         return $this;
     }
 
-    /**
-     * Gets Profitability.
-     */
     public function getProfitability(): ?int
     {
         return $this->Profitability ?? null;
     }
 
     /**
-     * Sets Profitability.
-     *
      * @return $this
      */
     public function setProfitability(?int $value = null)

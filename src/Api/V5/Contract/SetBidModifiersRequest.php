@@ -12,16 +12,14 @@ class SetBidModifiersRequest
     protected $BidModifiers = [];
 
     /**
-     * Creates a new instance of SetBidModifiersRequest.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets BidModifiers.
-     *
      * @return BidModifierSetItem[]
      */
     public function getBidModifiers(): array
@@ -30,8 +28,6 @@ class SetBidModifiersRequest
     }
 
     /**
-     * Sets BidModifiers.
-     *
      * @param BidModifierSetItem[] $value
      *
      * @return $this

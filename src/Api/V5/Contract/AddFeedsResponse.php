@@ -12,16 +12,14 @@ class AddFeedsResponse
     protected $AddResults = [];
 
     /**
-     * Creates a new instance of AddFeedsResponse.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets AddResults.
-     *
      * @return ActionResult[]
      */
     public function getAddResults(): array
@@ -30,8 +28,6 @@ class AddFeedsResponse
     }
 
     /**
-     * Sets AddResults.
-     *
      * @param ActionResult[] $value
      *
      * @return $this

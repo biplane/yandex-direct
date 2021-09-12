@@ -9,28 +9,23 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AdBuilderAdUpdateBase
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Creative = null;
 
     /**
-     * Creates a new instance of AdBuilderAdUpdateBase.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Creative.
-     */
     public function getCreative(): ?AdBuilderAdUpdateItem
     {
         return $this->Creative ?? null;
     }
 
     /**
-     * Sets Creative.
-     *
      * @return $this
      */
     public function setCreative(?AdBuilderAdUpdateItem $value = null)

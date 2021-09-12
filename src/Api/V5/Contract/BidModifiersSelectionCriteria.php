@@ -9,31 +9,29 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class BidModifiersSelectionCriteria
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $CampaignIds = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AdGroupIds = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Ids = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Types = null;
 
     protected $Levels = [];
 
     /**
-     * Creates a new instance of BidModifiersSelectionCriteria.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets CampaignIds.
-     *
      * @return int[]|null
      */
     public function getCampaignIds(): ?array
@@ -42,8 +40,6 @@ class BidModifiersSelectionCriteria
     }
 
     /**
-     * Sets CampaignIds.
-     *
      * @param int[]|null $value
      *
      * @return $this
@@ -56,8 +52,6 @@ class BidModifiersSelectionCriteria
     }
 
     /**
-     * Gets AdGroupIds.
-     *
      * @return int[]|null
      */
     public function getAdGroupIds(): ?array
@@ -66,8 +60,6 @@ class BidModifiersSelectionCriteria
     }
 
     /**
-     * Sets AdGroupIds.
-     *
      * @param int[]|null $value
      *
      * @return $this
@@ -80,8 +72,6 @@ class BidModifiersSelectionCriteria
     }
 
     /**
-     * Gets Ids.
-     *
      * @return int[]|null
      */
     public function getIds(): ?array
@@ -90,8 +80,6 @@ class BidModifiersSelectionCriteria
     }
 
     /**
-     * Sets Ids.
-     *
      * @param int[]|null $value
      *
      * @return $this
@@ -104,8 +92,6 @@ class BidModifiersSelectionCriteria
     }
 
     /**
-     * Gets Types.
-     *
      * @see BidModifierTypeEnum
      *
      * @return string[]|null
@@ -116,8 +102,6 @@ class BidModifiersSelectionCriteria
     }
 
     /**
-     * Sets Types.
-     *
      * @see BidModifierTypeEnum
      *
      * @param string[]|null $value
@@ -132,8 +116,6 @@ class BidModifiersSelectionCriteria
     }
 
     /**
-     * Gets Levels.
-     *
      * @see BidModifierLevelEnum
      *
      * @return string[]
@@ -144,8 +126,6 @@ class BidModifiersSelectionCriteria
     }
 
     /**
-     * Sets Levels.
-     *
      * @see BidModifierLevelEnum
      *
      * @param string[] $value

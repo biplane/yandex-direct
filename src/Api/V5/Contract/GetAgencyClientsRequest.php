@@ -13,25 +13,12 @@ class GetAgencyClientsRequest extends GetRequestGeneral
 
     protected $FieldNames = [];
 
-    /**
-     * Creates a new instance of GetAgencyClientsRequest.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
-
-    /**
-     * Gets SelectionCriteria.
-     */
     public function getSelectionCriteria(): AgencyClientsSelectionCriteria
     {
         return $this->SelectionCriteria;
     }
 
     /**
-     * Sets SelectionCriteria.
-     *
      * @return $this
      */
     public function setSelectionCriteria(AgencyClientsSelectionCriteria $value)
@@ -42,8 +29,6 @@ class GetAgencyClientsRequest extends GetRequestGeneral
     }
 
     /**
-     * Gets FieldNames.
-     *
      * @see AgencyClientFieldEnum
      *
      * @return string[]
@@ -54,8 +39,6 @@ class GetAgencyClientsRequest extends GetRequestGeneral
     }
 
     /**
-     * Sets FieldNames.
-     *
      * @see AgencyClientFieldEnum
      *
      * @param string[] $value

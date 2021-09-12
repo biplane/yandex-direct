@@ -11,64 +11,51 @@ class CampaignUpdateItem extends CampaignBase
 {
     protected $Id = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Name = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $StartDate = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $DailyBudget = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $EndDate = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $NegativeKeywords = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $BlockedIps = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $ExcludedSites = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $TextCampaign = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $MobileAppCampaign = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $DynamicTextCampaign = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $CpmBannerCampaign = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $SmartCampaign = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $TimeTargeting = null;
 
-    /**
-     * Creates a new instance of CampaignUpdateItem.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
-
-    /**
-     * Gets Id.
-     */
     public function getId(): int
     {
         return $this->Id;
     }
 
     /**
-     * Sets Id.
-     *
      * @return $this
      */
     public function setId(int $value)
@@ -78,17 +65,12 @@ class CampaignUpdateItem extends CampaignBase
         return $this;
     }
 
-    /**
-     * Gets Name.
-     */
     public function getName(): ?string
     {
         return $this->Name ?? null;
     }
 
     /**
-     * Sets Name.
-     *
      * @return $this
      */
     public function setName(?string $value = null)
@@ -98,17 +80,12 @@ class CampaignUpdateItem extends CampaignBase
         return $this;
     }
 
-    /**
-     * Gets StartDate.
-     */
     public function getStartDate(): ?string
     {
         return $this->StartDate ?? null;
     }
 
     /**
-     * Sets StartDate.
-     *
      * @return $this
      */
     public function setStartDate(?string $value = null)
@@ -118,17 +95,12 @@ class CampaignUpdateItem extends CampaignBase
         return $this;
     }
 
-    /**
-     * Gets DailyBudget.
-     */
     public function getDailyBudget(): ?DailyBudget
     {
         return $this->DailyBudget ?? null;
     }
 
     /**
-     * Sets DailyBudget.
-     *
      * @return $this
      */
     public function setDailyBudget(?DailyBudget $value = null)
@@ -138,17 +110,12 @@ class CampaignUpdateItem extends CampaignBase
         return $this;
     }
 
-    /**
-     * Gets EndDate.
-     */
     public function getEndDate(): ?string
     {
         return $this->EndDate ?? null;
     }
 
     /**
-     * Sets EndDate.
-     *
      * @return $this
      */
     public function setEndDate(?string $value = null)
@@ -159,8 +126,6 @@ class CampaignUpdateItem extends CampaignBase
     }
 
     /**
-     * Gets NegativeKeywords.
-     *
      * @return string[]|null
      */
     public function getNegativeKeywords(): ?array
@@ -169,8 +134,6 @@ class CampaignUpdateItem extends CampaignBase
     }
 
     /**
-     * Sets NegativeKeywords.
-     *
      * @param string[]|null $value
      *
      * @return $this
@@ -183,8 +146,6 @@ class CampaignUpdateItem extends CampaignBase
     }
 
     /**
-     * Gets BlockedIps.
-     *
      * @return string[]|null
      */
     public function getBlockedIps(): ?array
@@ -193,8 +154,6 @@ class CampaignUpdateItem extends CampaignBase
     }
 
     /**
-     * Sets BlockedIps.
-     *
      * @param string[]|null $value
      *
      * @return $this
@@ -207,8 +166,6 @@ class CampaignUpdateItem extends CampaignBase
     }
 
     /**
-     * Gets ExcludedSites.
-     *
      * @return string[]|null
      */
     public function getExcludedSites(): ?array
@@ -217,8 +174,6 @@ class CampaignUpdateItem extends CampaignBase
     }
 
     /**
-     * Sets ExcludedSites.
-     *
      * @param string[]|null $value
      *
      * @return $this
@@ -230,17 +185,12 @@ class CampaignUpdateItem extends CampaignBase
         return $this;
     }
 
-    /**
-     * Gets TextCampaign.
-     */
     public function getTextCampaign(): ?TextCampaignUpdateItem
     {
         return $this->TextCampaign ?? null;
     }
 
     /**
-     * Sets TextCampaign.
-     *
      * @return $this
      */
     public function setTextCampaign(?TextCampaignUpdateItem $value = null)
@@ -250,17 +200,12 @@ class CampaignUpdateItem extends CampaignBase
         return $this;
     }
 
-    /**
-     * Gets MobileAppCampaign.
-     */
     public function getMobileAppCampaign(): ?MobileAppCampaignUpdateItem
     {
         return $this->MobileAppCampaign ?? null;
     }
 
     /**
-     * Sets MobileAppCampaign.
-     *
      * @return $this
      */
     public function setMobileAppCampaign(?MobileAppCampaignUpdateItem $value = null)
@@ -270,17 +215,12 @@ class CampaignUpdateItem extends CampaignBase
         return $this;
     }
 
-    /**
-     * Gets DynamicTextCampaign.
-     */
     public function getDynamicTextCampaign(): ?DynamicTextCampaignUpdateItem
     {
         return $this->DynamicTextCampaign ?? null;
     }
 
     /**
-     * Sets DynamicTextCampaign.
-     *
      * @return $this
      */
     public function setDynamicTextCampaign(?DynamicTextCampaignUpdateItem $value = null)
@@ -290,17 +230,12 @@ class CampaignUpdateItem extends CampaignBase
         return $this;
     }
 
-    /**
-     * Gets CpmBannerCampaign.
-     */
     public function getCpmBannerCampaign(): ?CpmBannerCampaignUpdateItem
     {
         return $this->CpmBannerCampaign ?? null;
     }
 
     /**
-     * Sets CpmBannerCampaign.
-     *
      * @return $this
      */
     public function setCpmBannerCampaign(?CpmBannerCampaignUpdateItem $value = null)
@@ -310,17 +245,12 @@ class CampaignUpdateItem extends CampaignBase
         return $this;
     }
 
-    /**
-     * Gets SmartCampaign.
-     */
     public function getSmartCampaign(): ?SmartCampaignUpdateItem
     {
         return $this->SmartCampaign ?? null;
     }
 
     /**
-     * Sets SmartCampaign.
-     *
      * @return $this
      */
     public function setSmartCampaign(?SmartCampaignUpdateItem $value = null)
@@ -330,17 +260,12 @@ class CampaignUpdateItem extends CampaignBase
         return $this;
     }
 
-    /**
-     * Gets TimeTargeting.
-     */
     public function getTimeTargeting(): ?TimeTargeting
     {
         return $this->TimeTargeting ?? null;
     }
 
     /**
-     * Sets TimeTargeting.
-     *
      * @return $this
      */
     public function setTimeTargeting(?TimeTargeting $value = null)

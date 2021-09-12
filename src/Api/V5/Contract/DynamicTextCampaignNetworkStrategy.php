@@ -11,20 +11,10 @@ class DynamicTextCampaignNetworkStrategy extends DynamicTextCampaignStrategyBase
 {
     protected $BiddingStrategyType = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $NetworkDefault = null;
 
     /**
-     * Creates a new instance of DynamicTextCampaignNetworkStrategy.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
-
-    /**
-     * Gets BiddingStrategyType.
-     *
      * @see DynamicTextCampaignNetworkStrategyTypeEnum
      */
     public function getBiddingStrategyType(): string
@@ -33,8 +23,6 @@ class DynamicTextCampaignNetworkStrategy extends DynamicTextCampaignStrategyBase
     }
 
     /**
-     * Sets BiddingStrategyType.
-     *
      * @see DynamicTextCampaignNetworkStrategyTypeEnum
      *
      * @return $this
@@ -46,17 +34,12 @@ class DynamicTextCampaignNetworkStrategy extends DynamicTextCampaignStrategyBase
         return $this;
     }
 
-    /**
-     * Gets NetworkDefault.
-     */
     public function getNetworkDefault(): ?StrategyNetworkDefault
     {
         return $this->NetworkDefault ?? null;
     }
 
     /**
-     * Sets NetworkDefault.
-     *
      * @return $this
      */
     public function setNetworkDefault(?StrategyNetworkDefault $value = null)

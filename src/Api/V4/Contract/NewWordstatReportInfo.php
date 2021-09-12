@@ -14,16 +14,14 @@ class NewWordstatReportInfo
     protected $GeoID = null;
 
     /**
-     * Creates a new instance of NewWordstatReportInfo.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Phrases.
-     *
      * @return string[]
      */
     public function getPhrases(): array
@@ -32,8 +30,6 @@ class NewWordstatReportInfo
     }
 
     /**
-     * Sets Phrases.
-     *
      * @param string[] $value
      *
      * @return $this
@@ -46,8 +42,6 @@ class NewWordstatReportInfo
     }
 
     /**
-     * Gets GeoID.
-     *
      * @return int[]|null
      */
     public function getGeoID(): ?array
@@ -56,8 +50,6 @@ class NewWordstatReportInfo
     }
 
     /**
-     * Sets GeoID.
-     *
      * @param int[]|null $value
      *
      * @return $this

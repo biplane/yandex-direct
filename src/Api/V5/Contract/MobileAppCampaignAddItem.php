@@ -11,28 +11,23 @@ class MobileAppCampaignAddItem
 {
     protected $BiddingStrategy = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Settings = null;
 
     /**
-     * Creates a new instance of MobileAppCampaignAddItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets BiddingStrategy.
-     */
     public function getBiddingStrategy(): MobileAppCampaignStrategyAdd
     {
         return $this->BiddingStrategy;
     }
 
     /**
-     * Sets BiddingStrategy.
-     *
      * @return $this
      */
     public function setBiddingStrategy(MobileAppCampaignStrategyAdd $value)
@@ -43,8 +38,6 @@ class MobileAppCampaignAddItem
     }
 
     /**
-     * Gets Settings.
-     *
      * @return MobileAppCampaignSetting[]|null
      */
     public function getSettings(): ?array
@@ -53,8 +46,6 @@ class MobileAppCampaignAddItem
     }
 
     /**
-     * Sets Settings.
-     *
      * @param MobileAppCampaignSetting[]|null $value
      *
      * @return $this

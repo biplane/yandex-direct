@@ -16,16 +16,14 @@ class RetargetingConditionActionResult
     protected $RetargetingConditionID = null;
 
     /**
-     * Creates a new instance of RetargetingConditionActionResult.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Warnings.
-     *
      * @return Warning[]|null
      */
     public function getWarnings(): ?array
@@ -34,8 +32,6 @@ class RetargetingConditionActionResult
     }
 
     /**
-     * Sets Warnings.
-     *
      * @param Warning[]|null $value
      *
      * @return $this
@@ -48,8 +44,6 @@ class RetargetingConditionActionResult
     }
 
     /**
-     * Gets Errors.
-     *
      * @return Error[]|null
      */
     public function getErrors(): ?array
@@ -58,8 +52,6 @@ class RetargetingConditionActionResult
     }
 
     /**
-     * Sets Errors.
-     *
      * @param Error[]|null $value
      *
      * @return $this
@@ -71,17 +63,12 @@ class RetargetingConditionActionResult
         return $this;
     }
 
-    /**
-     * Gets RetargetingConditionID.
-     */
     public function getRetargetingConditionID(): ?int
     {
         return $this->RetargetingConditionID;
     }
 
     /**
-     * Sets RetargetingConditionID.
-     *
      * @return $this
      */
     public function setRetargetingConditionID(?int $value = null)

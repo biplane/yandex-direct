@@ -14,16 +14,14 @@ class CpmBannerCampaignSettingGet
     protected $Value = null;
 
     /**
-     * Creates a new instance of CpmBannerCampaignSettingGet.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Option.
-     *
      * @see CpmBannerCampaignSettingsGetEnum
      */
     public function getOption(): string
@@ -32,8 +30,6 @@ class CpmBannerCampaignSettingGet
     }
 
     /**
-     * Sets Option.
-     *
      * @see CpmBannerCampaignSettingsGetEnum
      *
      * @return $this
@@ -46,8 +42,6 @@ class CpmBannerCampaignSettingGet
     }
 
     /**
-     * Gets Value.
-     *
      * @see YesNoEnum
      */
     public function getValue(): string
@@ -56,8 +50,6 @@ class CpmBannerCampaignSettingGet
     }
 
     /**
-     * Sets Value.
-     *
      * @see YesNoEnum
      *
      * @return $this

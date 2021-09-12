@@ -12,16 +12,14 @@ class AddCampaignsRequest
     protected $Campaigns = [];
 
     /**
-     * Creates a new instance of AddCampaignsRequest.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Campaigns.
-     *
      * @return CampaignAddItem[]
      */
     public function getCampaigns(): array
@@ -30,8 +28,6 @@ class AddCampaignsRequest
     }
 
     /**
-     * Sets Campaigns.
-     *
      * @param CampaignAddItem[] $value
      *
      * @return $this

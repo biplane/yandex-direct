@@ -13,46 +13,33 @@ class GetBidModifiersRequest extends GetRequestGeneral
 
     protected $FieldNames = [];
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $MobileAdjustmentFieldNames = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $DesktopAdjustmentFieldNames = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $DemographicsAdjustmentFieldNames = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $RetargetingAdjustmentFieldNames = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $RegionalAdjustmentFieldNames = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $VideoAdjustmentFieldNames = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $SmartAdAdjustmentFieldNames = null;
 
-    /**
-     * Creates a new instance of GetBidModifiersRequest.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
-
-    /**
-     * Gets SelectionCriteria.
-     */
     public function getSelectionCriteria(): BidModifiersSelectionCriteria
     {
         return $this->SelectionCriteria;
     }
 
     /**
-     * Sets SelectionCriteria.
-     *
      * @return $this
      */
     public function setSelectionCriteria(BidModifiersSelectionCriteria $value)
@@ -63,8 +50,6 @@ class GetBidModifiersRequest extends GetRequestGeneral
     }
 
     /**
-     * Gets FieldNames.
-     *
      * @see BidModifierFieldEnum
      *
      * @return string[]
@@ -75,8 +60,6 @@ class GetBidModifiersRequest extends GetRequestGeneral
     }
 
     /**
-     * Sets FieldNames.
-     *
      * @see BidModifierFieldEnum
      *
      * @param string[] $value
@@ -91,8 +74,6 @@ class GetBidModifiersRequest extends GetRequestGeneral
     }
 
     /**
-     * Gets MobileAdjustmentFieldNames.
-     *
      * @see MobileAdjustmentFieldEnum
      *
      * @return string[]|null
@@ -103,8 +84,6 @@ class GetBidModifiersRequest extends GetRequestGeneral
     }
 
     /**
-     * Sets MobileAdjustmentFieldNames.
-     *
      * @see MobileAdjustmentFieldEnum
      *
      * @param string[]|null $value
@@ -119,8 +98,6 @@ class GetBidModifiersRequest extends GetRequestGeneral
     }
 
     /**
-     * Gets DesktopAdjustmentFieldNames.
-     *
      * @see DesktopAdjustmentFieldEnum
      *
      * @return string[]|null
@@ -131,8 +108,6 @@ class GetBidModifiersRequest extends GetRequestGeneral
     }
 
     /**
-     * Sets DesktopAdjustmentFieldNames.
-     *
      * @see DesktopAdjustmentFieldEnum
      *
      * @param string[]|null $value
@@ -147,8 +122,6 @@ class GetBidModifiersRequest extends GetRequestGeneral
     }
 
     /**
-     * Gets DemographicsAdjustmentFieldNames.
-     *
      * @see DemographicsAdjustmentFieldEnum
      *
      * @return string[]|null
@@ -159,8 +132,6 @@ class GetBidModifiersRequest extends GetRequestGeneral
     }
 
     /**
-     * Sets DemographicsAdjustmentFieldNames.
-     *
      * @see DemographicsAdjustmentFieldEnum
      *
      * @param string[]|null $value
@@ -175,8 +146,6 @@ class GetBidModifiersRequest extends GetRequestGeneral
     }
 
     /**
-     * Gets RetargetingAdjustmentFieldNames.
-     *
      * @see RetargetingAdjustmentFieldEnum
      *
      * @return string[]|null
@@ -187,8 +156,6 @@ class GetBidModifiersRequest extends GetRequestGeneral
     }
 
     /**
-     * Sets RetargetingAdjustmentFieldNames.
-     *
      * @see RetargetingAdjustmentFieldEnum
      *
      * @param string[]|null $value
@@ -203,8 +170,6 @@ class GetBidModifiersRequest extends GetRequestGeneral
     }
 
     /**
-     * Gets RegionalAdjustmentFieldNames.
-     *
      * @see RegionalAdjustmentFieldEnum
      *
      * @return string[]|null
@@ -215,8 +180,6 @@ class GetBidModifiersRequest extends GetRequestGeneral
     }
 
     /**
-     * Sets RegionalAdjustmentFieldNames.
-     *
      * @see RegionalAdjustmentFieldEnum
      *
      * @param string[]|null $value
@@ -231,8 +194,6 @@ class GetBidModifiersRequest extends GetRequestGeneral
     }
 
     /**
-     * Gets VideoAdjustmentFieldNames.
-     *
      * @see VideoAdjustmentFieldEnum
      *
      * @return string[]|null
@@ -243,8 +204,6 @@ class GetBidModifiersRequest extends GetRequestGeneral
     }
 
     /**
-     * Sets VideoAdjustmentFieldNames.
-     *
      * @see VideoAdjustmentFieldEnum
      *
      * @param string[]|null $value
@@ -259,8 +218,6 @@ class GetBidModifiersRequest extends GetRequestGeneral
     }
 
     /**
-     * Gets SmartAdAdjustmentFieldNames.
-     *
      * @see SmartAdAdjustmentFieldEnum
      *
      * @return string[]|null
@@ -271,8 +228,6 @@ class GetBidModifiersRequest extends GetRequestGeneral
     }
 
     /**
-     * Sets SmartAdAdjustmentFieldNames.
-     *
      * @see SmartAdAdjustmentFieldEnum
      *
      * @param string[]|null $value

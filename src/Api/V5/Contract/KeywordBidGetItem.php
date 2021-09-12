@@ -9,29 +9,19 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class KeywordBidGetItem extends KeywordBidActionResult
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $ServingStatus = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $StrategyPriority = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Search = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Network = null;
 
     /**
-     * Creates a new instance of KeywordBidGetItem.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
-
-    /**
-     * Gets ServingStatus.
-     *
      * @see ServingStatusEnum
      */
     public function getServingStatus(): ?string
@@ -40,8 +30,6 @@ class KeywordBidGetItem extends KeywordBidActionResult
     }
 
     /**
-     * Sets ServingStatus.
-     *
      * @see ServingStatusEnum
      *
      * @return $this
@@ -54,8 +42,6 @@ class KeywordBidGetItem extends KeywordBidActionResult
     }
 
     /**
-     * Gets StrategyPriority.
-     *
      * @see PriorityEnum
      */
     public function getStrategyPriority(): ?string
@@ -64,8 +50,6 @@ class KeywordBidGetItem extends KeywordBidActionResult
     }
 
     /**
-     * Sets StrategyPriority.
-     *
      * @see PriorityEnum
      *
      * @return $this
@@ -77,17 +61,12 @@ class KeywordBidGetItem extends KeywordBidActionResult
         return $this;
     }
 
-    /**
-     * Gets Search.
-     */
     public function getSearch(): ?Search
     {
         return $this->Search ?? null;
     }
 
     /**
-     * Sets Search.
-     *
      * @return $this
      */
     public function setSearch(?Search $value = null)
@@ -97,17 +76,12 @@ class KeywordBidGetItem extends KeywordBidActionResult
         return $this;
     }
 
-    /**
-     * Gets Network.
-     */
     public function getNetwork(): ?Network
     {
         return $this->Network ?? null;
     }
 
     /**
-     * Sets Network.
-     *
      * @return $this
      */
     public function setNetwork(?Network $value = null)

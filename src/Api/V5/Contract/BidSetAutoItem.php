@@ -9,51 +9,46 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class BidSetAutoItem
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $CampaignId = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AdGroupId = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $KeywordId = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $MaxBid = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Position = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $IncreasePercent = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $CalculateBy = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $ContextCoverage = null;
 
     protected $Scope = [];
 
     /**
-     * Creates a new instance of BidSetAutoItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets CampaignId.
-     */
     public function getCampaignId(): ?int
     {
         return $this->CampaignId ?? null;
     }
 
     /**
-     * Sets CampaignId.
-     *
      * @return $this
      */
     public function setCampaignId(?int $value = null)
@@ -63,17 +58,12 @@ class BidSetAutoItem
         return $this;
     }
 
-    /**
-     * Gets AdGroupId.
-     */
     public function getAdGroupId(): ?int
     {
         return $this->AdGroupId ?? null;
     }
 
     /**
-     * Sets AdGroupId.
-     *
      * @return $this
      */
     public function setAdGroupId(?int $value = null)
@@ -83,17 +73,12 @@ class BidSetAutoItem
         return $this;
     }
 
-    /**
-     * Gets KeywordId.
-     */
     public function getKeywordId(): ?int
     {
         return $this->KeywordId ?? null;
     }
 
     /**
-     * Sets KeywordId.
-     *
      * @return $this
      */
     public function setKeywordId(?int $value = null)
@@ -103,17 +88,12 @@ class BidSetAutoItem
         return $this;
     }
 
-    /**
-     * Gets MaxBid.
-     */
     public function getMaxBid(): ?int
     {
         return $this->MaxBid ?? null;
     }
 
     /**
-     * Sets MaxBid.
-     *
      * @return $this
      */
     public function setMaxBid(?int $value = null)
@@ -124,8 +104,6 @@ class BidSetAutoItem
     }
 
     /**
-     * Gets Position.
-     *
      * @see PositionEnum
      */
     public function getPosition(): ?string
@@ -134,8 +112,6 @@ class BidSetAutoItem
     }
 
     /**
-     * Sets Position.
-     *
      * @see PositionEnum
      *
      * @return $this
@@ -147,17 +123,12 @@ class BidSetAutoItem
         return $this;
     }
 
-    /**
-     * Gets IncreasePercent.
-     */
     public function getIncreasePercent(): ?int
     {
         return $this->IncreasePercent ?? null;
     }
 
     /**
-     * Sets IncreasePercent.
-     *
      * @return $this
      */
     public function setIncreasePercent(?int $value = null)
@@ -168,8 +139,6 @@ class BidSetAutoItem
     }
 
     /**
-     * Gets CalculateBy.
-     *
      * @see CalculateByEnum
      */
     public function getCalculateBy(): ?string
@@ -178,8 +147,6 @@ class BidSetAutoItem
     }
 
     /**
-     * Sets CalculateBy.
-     *
      * @see CalculateByEnum
      *
      * @return $this
@@ -191,17 +158,12 @@ class BidSetAutoItem
         return $this;
     }
 
-    /**
-     * Gets ContextCoverage.
-     */
     public function getContextCoverage(): ?int
     {
         return $this->ContextCoverage ?? null;
     }
 
     /**
-     * Sets ContextCoverage.
-     *
      * @return $this
      */
     public function setContextCoverage(?int $value = null)
@@ -212,8 +174,6 @@ class BidSetAutoItem
     }
 
     /**
-     * Gets Scope.
-     *
      * @see ScopeEnum
      *
      * @return string[]
@@ -224,8 +184,6 @@ class BidSetAutoItem
     }
 
     /**
-     * Sets Scope.
-     *
      * @see ScopeEnum
      *
      * @param string[] $value

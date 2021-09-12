@@ -9,31 +9,26 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class MobileAdjustmentGet
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $BidModifier = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $OperatingSystemType = null;
 
     /**
-     * Creates a new instance of MobileAdjustmentGet.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets BidModifier.
-     */
     public function getBidModifier(): ?int
     {
         return $this->BidModifier ?? null;
     }
 
     /**
-     * Sets BidModifier.
-     *
      * @return $this
      */
     public function setBidModifier(?int $value = null)
@@ -44,8 +39,6 @@ class MobileAdjustmentGet
     }
 
     /**
-     * Gets OperatingSystemType.
-     *
      * @see OperatingSystemTypeEnum
      */
     public function getOperatingSystemType(): ?string
@@ -54,8 +47,6 @@ class MobileAdjustmentGet
     }
 
     /**
-     * Sets OperatingSystemType.
-     *
      * @see OperatingSystemTypeEnum
      *
      * @return $this

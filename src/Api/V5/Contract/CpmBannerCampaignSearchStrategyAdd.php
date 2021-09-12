@@ -12,16 +12,14 @@ class CpmBannerCampaignSearchStrategyAdd
     protected $BiddingStrategyType = null;
 
     /**
-     * Creates a new instance of CpmBannerCampaignSearchStrategyAdd.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets BiddingStrategyType.
-     *
      * @see CpmBannerCampaignSearchStrategyTypeEnum
      */
     public function getBiddingStrategyType(): string
@@ -30,8 +28,6 @@ class CpmBannerCampaignSearchStrategyAdd
     }
 
     /**
-     * Sets BiddingStrategyType.
-     *
      * @see CpmBannerCampaignSearchStrategyTypeEnum
      *
      * @return $this

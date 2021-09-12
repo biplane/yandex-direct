@@ -9,34 +9,21 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class KeywordBidActionResult extends ActionResultBase
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $CampaignId = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AdGroupId = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $KeywordId = null;
 
-    /**
-     * Creates a new instance of KeywordBidActionResult.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
-
-    /**
-     * Gets CampaignId.
-     */
     public function getCampaignId(): ?int
     {
         return $this->CampaignId ?? null;
     }
 
     /**
-     * Sets CampaignId.
-     *
      * @return $this
      */
     public function setCampaignId(?int $value = null)
@@ -46,17 +33,12 @@ class KeywordBidActionResult extends ActionResultBase
         return $this;
     }
 
-    /**
-     * Gets AdGroupId.
-     */
     public function getAdGroupId(): ?int
     {
         return $this->AdGroupId ?? null;
     }
 
     /**
-     * Sets AdGroupId.
-     *
      * @return $this
      */
     public function setAdGroupId(?int $value = null)
@@ -66,17 +48,12 @@ class KeywordBidActionResult extends ActionResultBase
         return $this;
     }
 
-    /**
-     * Gets KeywordId.
-     */
     public function getKeywordId(): ?int
     {
         return $this->KeywordId ?? null;
     }
 
     /**
-     * Sets KeywordId.
-     *
      * @return $this
      */
     public function setKeywordId(?int $value = null)

@@ -12,24 +12,19 @@ class CheckCampaignsRequest
     protected $Timestamp = null;
 
     /**
-     * Creates a new instance of CheckCampaignsRequest.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Timestamp.
-     */
     public function getTimestamp(): string
     {
         return $this->Timestamp;
     }
 
     /**
-     * Sets Timestamp.
-     *
      * @return $this
      */
     public function setTimestamp(string $value)

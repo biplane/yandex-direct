@@ -14,24 +14,19 @@ class Statistics
     protected $Impressions = null;
 
     /**
-     * Creates a new instance of Statistics.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Clicks.
-     */
     public function getClicks(): int
     {
         return $this->Clicks;
     }
 
     /**
-     * Sets Clicks.
-     *
      * @return $this
      */
     public function setClicks(int $value)
@@ -41,17 +36,12 @@ class Statistics
         return $this;
     }
 
-    /**
-     * Gets Impressions.
-     */
     public function getImpressions(): int
     {
         return $this->Impressions;
     }
 
     /**
-     * Sets Impressions.
-     *
      * @return $this
      */
     public function setImpressions(int $value)

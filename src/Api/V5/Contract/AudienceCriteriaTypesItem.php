@@ -20,24 +20,19 @@ class AudienceCriteriaTypesItem
     protected $CanSelect = null;
 
     /**
-     * Creates a new instance of AudienceCriteriaTypesItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Type.
-     */
     public function getType(): string
     {
         return $this->Type;
     }
 
     /**
-     * Sets Type.
-     *
      * @return $this
      */
     public function setType(string $value)
@@ -47,17 +42,12 @@ class AudienceCriteriaTypesItem
         return $this;
     }
 
-    /**
-     * Gets BlockElement.
-     */
     public function getBlockElement(): string
     {
         return $this->BlockElement;
     }
 
     /**
-     * Sets BlockElement.
-     *
      * @return $this
      */
     public function setBlockElement(string $value)
@@ -67,17 +57,12 @@ class AudienceCriteriaTypesItem
         return $this;
     }
 
-    /**
-     * Gets Name.
-     */
     public function getName(): string
     {
         return $this->Name;
     }
 
     /**
-     * Sets Name.
-     *
      * @return $this
      */
     public function setName(string $value)
@@ -87,17 +72,12 @@ class AudienceCriteriaTypesItem
         return $this;
     }
 
-    /**
-     * Gets Description.
-     */
     public function getDescription(): string
     {
         return $this->Description;
     }
 
     /**
-     * Sets Description.
-     *
      * @return $this
      */
     public function setDescription(string $value)
@@ -108,8 +88,6 @@ class AudienceCriteriaTypesItem
     }
 
     /**
-     * Gets CanSelect.
-     *
      * @see CanSelectEnum
      */
     public function getCanSelect(): string
@@ -118,8 +96,6 @@ class AudienceCriteriaTypesItem
     }
 
     /**
-     * Sets CanSelect.
-     *
      * @see CanSelectEnum
      *
      * @return $this

@@ -9,20 +9,18 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class TrackingPixelGetArray
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Items = null;
 
     /**
-     * Creates a new instance of TrackingPixelGetArray.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Items.
-     *
      * @return TrackingPixelGetItem[]|null
      */
     public function getItems(): ?array
@@ -31,8 +29,6 @@ class TrackingPixelGetArray
     }
 
     /**
-     * Sets Items.
-     *
      * @param TrackingPixelGetItem[]|null $value
      *
      * @return $this

@@ -14,24 +14,19 @@ class OperationSystemVersionsItem
     protected $OsVersion = null;
 
     /**
-     * Creates a new instance of OperationSystemVersionsItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets OsName.
-     */
     public function getOsName(): string
     {
         return $this->OsName;
     }
 
     /**
-     * Sets OsName.
-     *
      * @return $this
      */
     public function setOsName(string $value)
@@ -41,17 +36,12 @@ class OperationSystemVersionsItem
         return $this;
     }
 
-    /**
-     * Gets OsVersion.
-     */
     public function getOsVersion(): string
     {
         return $this->OsVersion;
     }
 
     /**
-     * Sets OsVersion.
-     *
      * @return $this
      */
     public function setOsVersion(string $value)

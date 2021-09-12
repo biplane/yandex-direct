@@ -9,26 +9,16 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class MobileAppAdUpdate extends MobileAppAdBase
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Features = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AgeLabel = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $VideoExtension = null;
 
     /**
-     * Creates a new instance of MobileAppAdUpdate.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
-
-    /**
-     * Gets Features.
-     *
      * @return MobileAppAdFeatureItem[]|null
      */
     public function getFeatures(): ?array
@@ -37,8 +27,6 @@ class MobileAppAdUpdate extends MobileAppAdBase
     }
 
     /**
-     * Sets Features.
-     *
      * @param MobileAppAdFeatureItem[]|null $value
      *
      * @return $this
@@ -51,8 +39,6 @@ class MobileAppAdUpdate extends MobileAppAdBase
     }
 
     /**
-     * Gets AgeLabel.
-     *
      * @see MobAppAgeLabelEnum
      */
     public function getAgeLabel(): ?string
@@ -61,8 +47,6 @@ class MobileAppAdUpdate extends MobileAppAdBase
     }
 
     /**
-     * Sets AgeLabel.
-     *
      * @see MobAppAgeLabelEnum
      *
      * @return $this
@@ -74,17 +58,12 @@ class MobileAppAdUpdate extends MobileAppAdBase
         return $this;
     }
 
-    /**
-     * Gets VideoExtension.
-     */
     public function getVideoExtension(): ?VideoExtensionUpdateItem
     {
         return $this->VideoExtension ?? null;
     }
 
     /**
-     * Sets VideoExtension.
-     *
      * @return $this
      */
     public function setVideoExtension(?VideoExtensionUpdateItem $value = null)

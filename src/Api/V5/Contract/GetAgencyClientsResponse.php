@@ -9,20 +9,10 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class GetAgencyClientsResponse extends GetResponseGeneral
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Clients = null;
 
     /**
-     * Creates a new instance of GetAgencyClientsResponse.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
-
-    /**
-     * Gets Clients.
-     *
      * @return ClientGetItem[]|null
      */
     public function getClients(): ?array
@@ -31,8 +21,6 @@ class GetAgencyClientsResponse extends GetResponseGeneral
     }
 
     /**
-     * Sets Clients.
-     *
      * @param ClientGetItem[]|null $value
      *
      * @return $this

@@ -12,16 +12,14 @@ class SetBidsAudienceTargetsRequest
     protected $Bids = [];
 
     /**
-     * Creates a new instance of SetBidsAudienceTargetsRequest.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Bids.
-     *
      * @return AudienceTargetSetBidsItem[]
      */
     public function getBids(): array
@@ -30,8 +28,6 @@ class SetBidsAudienceTargetsRequest
     }
 
     /**
-     * Sets Bids.
-     *
      * @param AudienceTargetSetBidsItem[] $value
      *
      * @return $this

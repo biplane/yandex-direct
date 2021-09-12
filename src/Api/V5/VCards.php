@@ -5,6 +5,12 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5;
 
 use Biplane\YandexDirect\Api\ApiSoapClientV5;
+use Biplane\YandexDirect\Api\V5\Contract\AddVCardsRequest;
+use Biplane\YandexDirect\Api\V5\Contract\AddVCardsResponse;
+use Biplane\YandexDirect\Api\V5\Contract\DeleteVCardsRequest;
+use Biplane\YandexDirect\Api\V5\Contract\DeleteVCardsResponse;
+use Biplane\YandexDirect\Api\V5\Contract\GetVCardsRequest;
+use Biplane\YandexDirect\Api\V5\Contract\GetVCardsResponse;
 use Biplane\YandexDirect\Config;
 
 /**
@@ -14,6 +20,9 @@ class VCards extends ApiSoapClientV5
 {
     public const ENDPOINT = 'https://api.direct.yandex.com/v5/vcards?wsdl';
 
+    /**
+     * @param array<string, mixed> $options
+     */
     public function __construct(Config $config, array $options)
     {
         $options['classmap'] = [
@@ -73,26 +82,17 @@ class VCards extends ApiSoapClientV5
         parent::__construct(self::ENDPOINT, $config, $options);
     }
 
-    /**
-     * add.
-     */
-    public function add(Contract\AddVCardsRequest $parameters): Contract\AddVCardsResponse
+    public function add(AddVCardsRequest $parameters): AddVCardsResponse
     {
         return $this->__soapCall('add', [$parameters]);
     }
 
-    /**
-     * get.
-     */
-    public function get(Contract\GetVCardsRequest $parameters): Contract\GetVCardsResponse
+    public function get(GetVCardsRequest $parameters): GetVCardsResponse
     {
         return $this->__soapCall('get', [$parameters]);
     }
 
-    /**
-     * delete.
-     */
-    public function delete(Contract\DeleteVCardsRequest $parameters): Contract\DeleteVCardsResponse
+    public function delete(DeleteVCardsRequest $parameters): DeleteVCardsResponse
     {
         return $this->__soapCall('delete', [$parameters]);
     }

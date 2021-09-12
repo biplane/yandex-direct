@@ -14,24 +14,19 @@ class FrequencyCapSetting
     protected $PeriodDays = null;
 
     /**
-     * Creates a new instance of FrequencyCapSetting.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Impressions.
-     */
     public function getImpressions(): int
     {
         return $this->Impressions;
     }
 
     /**
-     * Sets Impressions.
-     *
      * @return $this
      */
     public function setImpressions(int $value)
@@ -41,17 +36,12 @@ class FrequencyCapSetting
         return $this;
     }
 
-    /**
-     * Gets PeriodDays.
-     */
     public function getPeriodDays(): ?int
     {
         return $this->PeriodDays;
     }
 
     /**
-     * Sets PeriodDays.
-     *
      * @return $this
      */
     public function setPeriodDays(?int $value = null)

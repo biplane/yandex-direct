@@ -14,24 +14,19 @@ class PhraseUserParams
     protected $Param2 = null;
 
     /**
-     * Creates a new instance of PhraseUserParams.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Param1.
-     */
     public function getParam1(): ?string
     {
         return $this->Param1;
     }
 
     /**
-     * Sets Param1.
-     *
      * @return $this
      */
     public function setParam1(?string $value = null)
@@ -41,17 +36,12 @@ class PhraseUserParams
         return $this;
     }
 
-    /**
-     * Gets Param2.
-     */
     public function getParam2(): ?string
     {
         return $this->Param2;
     }
 
     /**
-     * Sets Param2.
-     *
      * @return $this
      */
     public function setParam2(?string $value = null)

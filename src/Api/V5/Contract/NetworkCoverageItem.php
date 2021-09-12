@@ -14,24 +14,19 @@ class NetworkCoverageItem
     protected $Bid = null;
 
     /**
-     * Creates a new instance of NetworkCoverageItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Probability.
-     */
     public function getProbability(): float
     {
         return $this->Probability;
     }
 
     /**
-     * Sets Probability.
-     *
      * @return $this
      */
     public function setProbability(float $value)
@@ -41,17 +36,12 @@ class NetworkCoverageItem
         return $this;
     }
 
-    /**
-     * Gets Bid.
-     */
     public function getBid(): int
     {
         return $this->Bid;
     }
 
     /**
-     * Sets Bid.
-     *
      * @return $this
      */
     public function setBid(int $value)

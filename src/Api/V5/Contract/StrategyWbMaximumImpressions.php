@@ -9,11 +9,4 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class StrategyWbMaximumImpressions extends StrategyMaximumImpressionsBase
 {
-    /**
-     * Creates a new instance of StrategyWbMaximumImpressions.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
 }

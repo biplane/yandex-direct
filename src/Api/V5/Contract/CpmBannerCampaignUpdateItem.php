@@ -9,31 +9,18 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class CpmBannerCampaignUpdateItem extends CpmBannerCampaignBase
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $BiddingStrategy = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Settings = null;
 
-    /**
-     * Creates a new instance of CpmBannerCampaignUpdateItem.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
-
-    /**
-     * Gets BiddingStrategy.
-     */
     public function getBiddingStrategy(): ?CpmBannerCampaignStrategy
     {
         return $this->BiddingStrategy ?? null;
     }
 
     /**
-     * Sets BiddingStrategy.
-     *
      * @return $this
      */
     public function setBiddingStrategy(?CpmBannerCampaignStrategy $value = null)
@@ -44,8 +31,6 @@ class CpmBannerCampaignUpdateItem extends CpmBannerCampaignBase
     }
 
     /**
-     * Gets Settings.
-     *
      * @return CpmBannerCampaignSetting[]|null
      */
     public function getSettings(): ?array
@@ -54,8 +39,6 @@ class CpmBannerCampaignUpdateItem extends CpmBannerCampaignBase
     }
 
     /**
-     * Sets Settings.
-     *
      * @param CpmBannerCampaignSetting[]|null $value
      *
      * @return $this

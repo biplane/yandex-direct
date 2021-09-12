@@ -9,31 +9,26 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class MobileAppCampaignStrategy
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Search = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Network = null;
 
     /**
-     * Creates a new instance of MobileAppCampaignStrategy.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Search.
-     */
     public function getSearch(): ?MobileAppCampaignSearchStrategy
     {
         return $this->Search ?? null;
     }
 
     /**
-     * Sets Search.
-     *
      * @return $this
      */
     public function setSearch(?MobileAppCampaignSearchStrategy $value = null)
@@ -43,17 +38,12 @@ class MobileAppCampaignStrategy
         return $this;
     }
 
-    /**
-     * Gets Network.
-     */
     public function getNetwork(): ?MobileAppCampaignNetworkStrategy
     {
         return $this->Network ?? null;
     }
 
     /**
-     * Sets Network.
-     *
      * @return $this
      */
     public function setNetwork(?MobileAppCampaignNetworkStrategy $value = null)

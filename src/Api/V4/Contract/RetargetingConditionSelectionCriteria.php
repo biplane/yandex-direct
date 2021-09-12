@@ -14,16 +14,14 @@ class RetargetingConditionSelectionCriteria
     protected $Logins = null;
 
     /**
-     * Creates a new instance of RetargetingConditionSelectionCriteria.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets RetargetingConditionIDS.
-     *
      * @return int[]|null
      */
     public function getRetargetingConditionIDS(): ?array
@@ -32,8 +30,6 @@ class RetargetingConditionSelectionCriteria
     }
 
     /**
-     * Sets RetargetingConditionIDS.
-     *
      * @param int[]|null $value
      *
      * @return $this
@@ -46,8 +42,6 @@ class RetargetingConditionSelectionCriteria
     }
 
     /**
-     * Gets Logins.
-     *
      * @return string[]|null
      */
     public function getLogins(): ?array
@@ -56,8 +50,6 @@ class RetargetingConditionSelectionCriteria
     }
 
     /**
-     * Sets Logins.
-     *
      * @param string[]|null $value
      *
      * @return $this

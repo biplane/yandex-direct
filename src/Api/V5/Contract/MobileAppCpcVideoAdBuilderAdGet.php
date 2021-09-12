@@ -9,28 +9,15 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class MobileAppCpcVideoAdBuilderAdGet extends AdBuilderAdGetBase
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $TrackingUrl = null;
 
-    /**
-     * Creates a new instance of MobileAppCpcVideoAdBuilderAdGet.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
-
-    /**
-     * Gets TrackingUrl.
-     */
     public function getTrackingUrl(): ?string
     {
         return $this->TrackingUrl ?? null;
     }
 
     /**
-     * Sets TrackingUrl.
-     *
      * @return $this
      */
     public function setTrackingUrl(?string $value = null)

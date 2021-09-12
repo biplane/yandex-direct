@@ -14,24 +14,19 @@ class RetargetingConditionItem
     protected $Goals = [];
 
     /**
-     * Creates a new instance of RetargetingConditionItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Type.
-     */
     public function getType(): string
     {
         return $this->Type;
     }
 
     /**
-     * Sets Type.
-     *
      * @return $this
      */
     public function setType(string $value)
@@ -42,8 +37,6 @@ class RetargetingConditionItem
     }
 
     /**
-     * Gets Goals.
-     *
      * @return RetargetingConditionGoalItem[]
      */
     public function getGoals(): array
@@ -52,8 +45,6 @@ class RetargetingConditionItem
     }
 
     /**
-     * Sets Goals.
-     *
      * @param RetargetingConditionGoalItem[] $value
      *
      * @return $this

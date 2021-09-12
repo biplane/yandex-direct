@@ -5,6 +5,14 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5;
 
 use Biplane\YandexDirect\Api\ApiSoapClientV5;
+use Biplane\YandexDirect\Api\V5\Contract\AddNegativeKeywordSharedSetsRequest;
+use Biplane\YandexDirect\Api\V5\Contract\AddNegativeKeywordSharedSetsResponse;
+use Biplane\YandexDirect\Api\V5\Contract\DeleteNegativeKeywordSharedSetsRequest;
+use Biplane\YandexDirect\Api\V5\Contract\DeleteNegativeKeywordSharedSetsResponse;
+use Biplane\YandexDirect\Api\V5\Contract\GetNegativeKeywordSharedSetsRequest;
+use Biplane\YandexDirect\Api\V5\Contract\GetNegativeKeywordSharedSetsResponse;
+use Biplane\YandexDirect\Api\V5\Contract\UpdateNegativeKeywordSharedSetsRequest;
+use Biplane\YandexDirect\Api\V5\Contract\UpdateNegativeKeywordSharedSetsResponse;
 use Biplane\YandexDirect\Config;
 
 /**
@@ -14,6 +22,9 @@ class NegativeKeywordSharedSets extends ApiSoapClientV5
 {
     public const ENDPOINT = 'https://api.direct.yandex.com/v5/negativekeywordsharedsets?wsdl';
 
+    /**
+     * @param array<string, mixed> $options
+     */
     public function __construct(Config $config, array $options)
     {
         $options['classmap'] = [
@@ -74,34 +85,22 @@ class NegativeKeywordSharedSets extends ApiSoapClientV5
         parent::__construct(self::ENDPOINT, $config, $options);
     }
 
-    /**
-     * get.
-     */
-    public function get(Contract\GetNegativeKeywordSharedSetsRequest $parameters): Contract\GetNegativeKeywordSharedSetsResponse
+    public function get(GetNegativeKeywordSharedSetsRequest $parameters): GetNegativeKeywordSharedSetsResponse
     {
         return $this->__soapCall('get', [$parameters]);
     }
 
-    /**
-     * add.
-     */
-    public function add(Contract\AddNegativeKeywordSharedSetsRequest $parameters): Contract\AddNegativeKeywordSharedSetsResponse
+    public function add(AddNegativeKeywordSharedSetsRequest $parameters): AddNegativeKeywordSharedSetsResponse
     {
         return $this->__soapCall('add', [$parameters]);
     }
 
-    /**
-     * update.
-     */
-    public function update(Contract\UpdateNegativeKeywordSharedSetsRequest $parameters): Contract\UpdateNegativeKeywordSharedSetsResponse
+    public function update(UpdateNegativeKeywordSharedSetsRequest $parameters): UpdateNegativeKeywordSharedSetsResponse
     {
         return $this->__soapCall('update', [$parameters]);
     }
 
-    /**
-     * delete.
-     */
-    public function delete(Contract\DeleteNegativeKeywordSharedSetsRequest $parameters): Contract\DeleteNegativeKeywordSharedSetsResponse
+    public function delete(DeleteNegativeKeywordSharedSetsRequest $parameters): DeleteNegativeKeywordSharedSetsResponse
     {
         return $this->__soapCall('delete', [$parameters]);
     }

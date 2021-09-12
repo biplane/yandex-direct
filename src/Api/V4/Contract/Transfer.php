@@ -18,24 +18,19 @@ class Transfer
     protected $Currency = null;
 
     /**
-     * Creates a new instance of Transfer.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets FromAccountID.
-     */
     public function getFromAccountID(): int
     {
         return $this->FromAccountID;
     }
 
     /**
-     * Sets FromAccountID.
-     *
      * @return $this
      */
     public function setFromAccountID(int $value)
@@ -45,17 +40,12 @@ class Transfer
         return $this;
     }
 
-    /**
-     * Gets ToAccountID.
-     */
     public function getToAccountID(): int
     {
         return $this->ToAccountID;
     }
 
     /**
-     * Sets ToAccountID.
-     *
      * @return $this
      */
     public function setToAccountID(int $value)
@@ -65,17 +55,12 @@ class Transfer
         return $this;
     }
 
-    /**
-     * Gets Amount.
-     */
     public function getAmount(): float
     {
         return $this->Amount;
     }
 
     /**
-     * Sets Amount.
-     *
      * @return $this
      */
     public function setAmount(float $value)
@@ -85,17 +70,12 @@ class Transfer
         return $this;
     }
 
-    /**
-     * Gets Currency.
-     */
     public function getCurrency(): ?string
     {
         return $this->Currency;
     }
 
     /**
-     * Sets Currency.
-     *
      * @return $this
      */
     public function setCurrency(?string $value = null)

@@ -12,16 +12,14 @@ class AvailableForTargetsInAdGroupTypesArray
     protected $Items = [];
 
     /**
-     * Creates a new instance of AvailableForTargetsInAdGroupTypesArray.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Items.
-     *
      * @see AdGroupTypesEnum
      *
      * @return string[]
@@ -32,8 +30,6 @@ class AvailableForTargetsInAdGroupTypesArray
     }
 
     /**
-     * Sets Items.
-     *
      * @see AdGroupTypesEnum
      *
      * @param string[] $value

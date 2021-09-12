@@ -9,46 +9,33 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class BidModifierAddItem extends BidModifierAddBase
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $MobileAdjustment = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $DesktopAdjustment = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $DemographicsAdjustments = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $RetargetingAdjustments = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $RegionalAdjustments = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $VideoAdjustment = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $SmartAdAdjustment = null;
 
-    /**
-     * Creates a new instance of BidModifierAddItem.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
-
-    /**
-     * Gets MobileAdjustment.
-     */
     public function getMobileAdjustment(): ?MobileAdjustmentAdd
     {
         return $this->MobileAdjustment ?? null;
     }
 
     /**
-     * Sets MobileAdjustment.
-     *
      * @return $this
      */
     public function setMobileAdjustment(?MobileAdjustmentAdd $value = null)
@@ -58,17 +45,12 @@ class BidModifierAddItem extends BidModifierAddBase
         return $this;
     }
 
-    /**
-     * Gets DesktopAdjustment.
-     */
     public function getDesktopAdjustment(): ?DesktopAdjustmentAdd
     {
         return $this->DesktopAdjustment ?? null;
     }
 
     /**
-     * Sets DesktopAdjustment.
-     *
      * @return $this
      */
     public function setDesktopAdjustment(?DesktopAdjustmentAdd $value = null)
@@ -79,8 +61,6 @@ class BidModifierAddItem extends BidModifierAddBase
     }
 
     /**
-     * Gets DemographicsAdjustments.
-     *
      * @return DemographicsAdjustmentAdd[]|null
      */
     public function getDemographicsAdjustments(): ?array
@@ -89,8 +69,6 @@ class BidModifierAddItem extends BidModifierAddBase
     }
 
     /**
-     * Sets DemographicsAdjustments.
-     *
      * @param DemographicsAdjustmentAdd[]|null $value
      *
      * @return $this
@@ -103,8 +81,6 @@ class BidModifierAddItem extends BidModifierAddBase
     }
 
     /**
-     * Gets RetargetingAdjustments.
-     *
      * @return RetargetingAdjustmentAdd[]|null
      */
     public function getRetargetingAdjustments(): ?array
@@ -113,8 +89,6 @@ class BidModifierAddItem extends BidModifierAddBase
     }
 
     /**
-     * Sets RetargetingAdjustments.
-     *
      * @param RetargetingAdjustmentAdd[]|null $value
      *
      * @return $this
@@ -127,8 +101,6 @@ class BidModifierAddItem extends BidModifierAddBase
     }
 
     /**
-     * Gets RegionalAdjustments.
-     *
      * @return RegionalAdjustmentAdd[]|null
      */
     public function getRegionalAdjustments(): ?array
@@ -137,8 +109,6 @@ class BidModifierAddItem extends BidModifierAddBase
     }
 
     /**
-     * Sets RegionalAdjustments.
-     *
      * @param RegionalAdjustmentAdd[]|null $value
      *
      * @return $this
@@ -150,17 +120,12 @@ class BidModifierAddItem extends BidModifierAddBase
         return $this;
     }
 
-    /**
-     * Gets VideoAdjustment.
-     */
     public function getVideoAdjustment(): ?VideoAdjustmentAdd
     {
         return $this->VideoAdjustment ?? null;
     }
 
     /**
-     * Sets VideoAdjustment.
-     *
      * @return $this
      */
     public function setVideoAdjustment(?VideoAdjustmentAdd $value = null)
@@ -170,17 +135,12 @@ class BidModifierAddItem extends BidModifierAddBase
         return $this;
     }
 
-    /**
-     * Gets SmartAdAdjustment.
-     */
     public function getSmartAdAdjustment(): ?SmartAdAdjustmentAdd
     {
         return $this->SmartAdAdjustment ?? null;
     }
 
     /**
-     * Sets SmartAdAdjustment.
-     *
      * @return $this
      */
     public function setSmartAdAdjustment(?SmartAdAdjustmentAdd $value = null)

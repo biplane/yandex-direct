@@ -9,31 +9,26 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class ClientBaseItem
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $ClientInfo = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Phone = null;
 
     /**
-     * Creates a new instance of ClientBaseItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets ClientInfo.
-     */
     public function getClientInfo(): ?string
     {
         return $this->ClientInfo ?? null;
     }
 
     /**
-     * Sets ClientInfo.
-     *
      * @return $this
      */
     public function setClientInfo(?string $value = null)
@@ -43,17 +38,12 @@ class ClientBaseItem
         return $this;
     }
 
-    /**
-     * Gets Phone.
-     */
     public function getPhone(): ?string
     {
         return $this->Phone ?? null;
     }
 
     /**
-     * Sets Phone.
-     *
      * @return $this
      */
     public function setPhone(?string $value = null)

@@ -16,24 +16,19 @@ class PriorityGoalsUpdateItem
     protected $Operation = null;
 
     /**
-     * Creates a new instance of PriorityGoalsUpdateItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets GoalId.
-     */
     public function getGoalId(): int
     {
         return $this->GoalId;
     }
 
     /**
-     * Sets GoalId.
-     *
      * @return $this
      */
     public function setGoalId(int $value)
@@ -43,17 +38,12 @@ class PriorityGoalsUpdateItem
         return $this;
     }
 
-    /**
-     * Gets Value.
-     */
     public function getValue(): int
     {
         return $this->Value;
     }
 
     /**
-     * Sets Value.
-     *
      * @return $this
      */
     public function setValue(int $value)
@@ -64,8 +54,6 @@ class PriorityGoalsUpdateItem
     }
 
     /**
-     * Gets Operation.
-     *
      * @see OperationEnum
      */
     public function getOperation(): string
@@ -74,8 +62,6 @@ class PriorityGoalsUpdateItem
     }
 
     /**
-     * Sets Operation.
-     *
      * @see OperationEnum
      *
      * @return $this

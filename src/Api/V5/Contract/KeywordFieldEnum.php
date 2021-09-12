@@ -38,4 +38,6 @@ class KeywordFieldEnum
     public const STATISTICS_NETWORK = 'StatisticsNetwork';
 
     public const SERVING_STATUS = 'ServingStatus';
+
+    public const AUTOTARGETING_CATEGORIES = 'AutotargetingCategories';
 }

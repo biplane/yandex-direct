@@ -16,16 +16,14 @@ class PayCampaignsInfo
     protected $PayMethod = null;
 
     /**
-     * Creates a new instance of PayCampaignsInfo.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Payments.
-     *
      * @return PayCampElement[]
      */
     public function getPayments(): array
@@ -34,8 +32,6 @@ class PayCampaignsInfo
     }
 
     /**
-     * Sets Payments.
-     *
      * @param PayCampElement[] $value
      *
      * @return $this
@@ -47,17 +43,12 @@ class PayCampaignsInfo
         return $this;
     }
 
-    /**
-     * Gets ContractID.
-     */
     public function getContractID(): ?string
     {
         return $this->ContractID;
     }
 
     /**
-     * Sets ContractID.
-     *
      * @return $this
      */
     public function setContractID(?string $value = null)
@@ -67,17 +58,12 @@ class PayCampaignsInfo
         return $this;
     }
 
-    /**
-     * Gets PayMethod.
-     */
     public function getPayMethod(): string
     {
         return $this->PayMethod;
     }
 
     /**
-     * Sets PayMethod.
-     *
      * @return $this
      */
     public function setPayMethod(string $value)

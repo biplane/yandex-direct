@@ -9,31 +9,26 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class KeywordProductivity
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Value = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $References = null;
 
     /**
-     * Creates a new instance of KeywordProductivity.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Value.
-     */
     public function getValue(): ?float
     {
         return $this->Value ?? null;
     }
 
     /**
-     * Sets Value.
-     *
      * @return $this
      */
     public function setValue(?float $value = null)
@@ -44,8 +39,6 @@ class KeywordProductivity
     }
 
     /**
-     * Gets References.
-     *
      * @return int[]|null
      */
     public function getReferences(): ?array
@@ -54,8 +47,6 @@ class KeywordProductivity
     }
 
     /**
-     * Sets References.
-     *
      * @param int[]|null $value
      *
      * @return $this

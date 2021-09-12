@@ -14,24 +14,19 @@ class RejectReason
     protected $Text = null;
 
     /**
-     * Creates a new instance of RejectReason.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Type.
-     */
     public function getType(): string
     {
         return $this->Type;
     }
 
     /**
-     * Sets Type.
-     *
      * @return $this
      */
     public function setType(string $value)
@@ -41,17 +36,12 @@ class RejectReason
         return $this;
     }
 
-    /**
-     * Gets Text.
-     */
     public function getText(): string
     {
         return $this->Text;
     }
 
     /**
-     * Sets Text.
-     *
      * @return $this
      */
     public function setText(string $value)

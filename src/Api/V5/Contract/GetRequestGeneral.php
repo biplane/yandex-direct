@@ -9,28 +9,23 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class GetRequestGeneral
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Page = null;
 
     /**
-     * Creates a new instance of GetRequestGeneral.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Page.
-     */
     public function getPage(): ?LimitOffset
     {
         return $this->Page ?? null;
     }
 
     /**
-     * Sets Page.
-     *
      * @return $this
      */
     public function setPage(?LimitOffset $value = null)

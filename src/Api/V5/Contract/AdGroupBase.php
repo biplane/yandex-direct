@@ -9,29 +9,27 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AdGroupBase
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $RegionIds = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $NegativeKeywords = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $NegativeKeywordSharedSetIds = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $TrackingParams = null;
 
     /**
-     * Creates a new instance of AdGroupBase.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets RegionIds.
-     *
      * @return int[]|null
      */
     public function getRegionIds(): ?array
@@ -40,8 +38,6 @@ class AdGroupBase
     }
 
     /**
-     * Sets RegionIds.
-     *
      * @param int[]|null $value
      *
      * @return $this
@@ -54,8 +50,6 @@ class AdGroupBase
     }
 
     /**
-     * Gets NegativeKeywords.
-     *
      * @return string[]|null
      */
     public function getNegativeKeywords(): ?array
@@ -64,8 +58,6 @@ class AdGroupBase
     }
 
     /**
-     * Sets NegativeKeywords.
-     *
      * @param string[]|null $value
      *
      * @return $this
@@ -78,8 +70,6 @@ class AdGroupBase
     }
 
     /**
-     * Gets NegativeKeywordSharedSetIds.
-     *
      * @return float[]|null
      */
     public function getNegativeKeywordSharedSetIds(): ?array
@@ -88,8 +78,6 @@ class AdGroupBase
     }
 
     /**
-     * Sets NegativeKeywordSharedSetIds.
-     *
      * @param float[]|null $value
      *
      * @return $this
@@ -101,17 +89,12 @@ class AdGroupBase
         return $this;
     }
 
-    /**
-     * Gets TrackingParams.
-     */
     public function getTrackingParams(): ?string
     {
         return $this->TrackingParams ?? null;
     }
 
     /**
-     * Sets TrackingParams.
-     *
      * @return $this
      */
     public function setTrackingParams(?string $value = null)

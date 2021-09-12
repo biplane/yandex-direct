@@ -11,20 +11,10 @@ class TextCampaignNetworkStrategy extends TextCampaignStrategyBase
 {
     protected $BiddingStrategyType = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $NetworkDefault = null;
 
     /**
-     * Creates a new instance of TextCampaignNetworkStrategy.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
-
-    /**
-     * Gets BiddingStrategyType.
-     *
      * @see TextCampaignNetworkStrategyTypeEnum
      */
     public function getBiddingStrategyType(): string
@@ -33,8 +23,6 @@ class TextCampaignNetworkStrategy extends TextCampaignStrategyBase
     }
 
     /**
-     * Sets BiddingStrategyType.
-     *
      * @see TextCampaignNetworkStrategyTypeEnum
      *
      * @return $this
@@ -46,17 +34,12 @@ class TextCampaignNetworkStrategy extends TextCampaignStrategyBase
         return $this;
     }
 
-    /**
-     * Gets NetworkDefault.
-     */
     public function getNetworkDefault(): ?StrategyNetworkDefault
     {
         return $this->NetworkDefault ?? null;
     }
 
     /**
-     * Sets NetworkDefault.
-     *
      * @return $this
      */
     public function setNetworkDefault(?StrategyNetworkDefault $value = null)

@@ -14,24 +14,19 @@ class BannerTagsInfo
     protected $TagIDS = null;
 
     /**
-     * Creates a new instance of BannerTagsInfo.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets BannerID.
-     */
     public function getBannerID(): int
     {
         return $this->BannerID;
     }
 
     /**
-     * Sets BannerID.
-     *
      * @return $this
      */
     public function setBannerID(int $value)
@@ -42,8 +37,6 @@ class BannerTagsInfo
     }
 
     /**
-     * Gets TagIDS.
-     *
      * @return int[]|null
      */
     public function getTagIDS(): ?array
@@ -52,8 +45,6 @@ class BannerTagsInfo
     }
 
     /**
-     * Sets TagIDS.
-     *
      * @param int[]|null $value
      *
      * @return $this

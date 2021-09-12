@@ -9,46 +9,41 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class TextAdGetBase
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $VCardId = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AdImageHash = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $SitelinkSetId = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $VCardModeration = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $SitelinksModeration = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AdImageModeration = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AdExtensions = null;
 
     /**
-     * Creates a new instance of TextAdGetBase.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets VCardId.
-     */
     public function getVCardId(): ?int
     {
         return $this->VCardId ?? null;
     }
 
     /**
-     * Sets VCardId.
-     *
      * @return $this
      */
     public function setVCardId(?int $value = null)
@@ -58,17 +53,12 @@ class TextAdGetBase
         return $this;
     }
 
-    /**
-     * Gets AdImageHash.
-     */
     public function getAdImageHash(): ?string
     {
         return $this->AdImageHash ?? null;
     }
 
     /**
-     * Sets AdImageHash.
-     *
      * @return $this
      */
     public function setAdImageHash(?string $value = null)
@@ -78,17 +68,12 @@ class TextAdGetBase
         return $this;
     }
 
-    /**
-     * Gets SitelinkSetId.
-     */
     public function getSitelinkSetId(): ?int
     {
         return $this->SitelinkSetId ?? null;
     }
 
     /**
-     * Sets SitelinkSetId.
-     *
      * @return $this
      */
     public function setSitelinkSetId(?int $value = null)
@@ -98,17 +83,12 @@ class TextAdGetBase
         return $this;
     }
 
-    /**
-     * Gets VCardModeration.
-     */
     public function getVCardModeration(): ?ExtensionModeration
     {
         return $this->VCardModeration ?? null;
     }
 
     /**
-     * Sets VCardModeration.
-     *
      * @return $this
      */
     public function setVCardModeration(?ExtensionModeration $value = null)
@@ -118,17 +98,12 @@ class TextAdGetBase
         return $this;
     }
 
-    /**
-     * Gets SitelinksModeration.
-     */
     public function getSitelinksModeration(): ?ExtensionModeration
     {
         return $this->SitelinksModeration ?? null;
     }
 
     /**
-     * Sets SitelinksModeration.
-     *
      * @return $this
      */
     public function setSitelinksModeration(?ExtensionModeration $value = null)
@@ -138,17 +113,12 @@ class TextAdGetBase
         return $this;
     }
 
-    /**
-     * Gets AdImageModeration.
-     */
     public function getAdImageModeration(): ?ExtensionModeration
     {
         return $this->AdImageModeration ?? null;
     }
 
     /**
-     * Sets AdImageModeration.
-     *
      * @return $this
      */
     public function setAdImageModeration(?ExtensionModeration $value = null)
@@ -159,8 +129,6 @@ class TextAdGetBase
     }
 
     /**
-     * Gets AdExtensions.
-     *
      * @return AdExtensionAdGetItem[]|null
      */
     public function getAdExtensions(): ?array
@@ -169,8 +137,6 @@ class TextAdGetBase
     }
 
     /**
-     * Sets AdExtensions.
-     *
      * @param AdExtensionAdGetItem[]|null $value
      *
      * @return $this

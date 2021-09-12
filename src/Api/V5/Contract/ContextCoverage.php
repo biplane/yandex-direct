@@ -9,20 +9,18 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class ContextCoverage
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Items = null;
 
     /**
-     * Creates a new instance of ContextCoverage.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Items.
-     *
      * @return ContextCoverageItem[]|null
      */
     public function getItems(): ?array
@@ -31,8 +29,6 @@ class ContextCoverage
     }
 
     /**
-     * Sets Items.
-     *
      * @param ContextCoverageItem[]|null $value
      *
      * @return $this

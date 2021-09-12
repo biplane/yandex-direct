@@ -24,16 +24,14 @@ class AdImageAssociationSelectionCriteria
     protected $Offset = null;
 
     /**
-     * Creates a new instance of AdImageAssociationSelectionCriteria.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Logins.
-     *
      * @return string[]|null
      */
     public function getLogins(): ?array
@@ -42,8 +40,6 @@ class AdImageAssociationSelectionCriteria
     }
 
     /**
-     * Sets Logins.
-     *
      * @param string[]|null $value
      *
      * @return $this
@@ -56,8 +52,6 @@ class AdImageAssociationSelectionCriteria
     }
 
     /**
-     * Gets AdImageHashes.
-     *
      * @return string[]|null
      */
     public function getAdImageHashes(): ?array
@@ -66,8 +60,6 @@ class AdImageAssociationSelectionCriteria
     }
 
     /**
-     * Sets AdImageHashes.
-     *
      * @param string[]|null $value
      *
      * @return $this
@@ -80,8 +72,6 @@ class AdImageAssociationSelectionCriteria
     }
 
     /**
-     * Gets StatusAdImageModerate.
-     *
      * @return string[]|null
      */
     public function getStatusAdImageModerate(): ?array
@@ -90,8 +80,6 @@ class AdImageAssociationSelectionCriteria
     }
 
     /**
-     * Sets StatusAdImageModerate.
-     *
      * @param string[]|null $value
      *
      * @return $this
@@ -104,8 +92,6 @@ class AdImageAssociationSelectionCriteria
     }
 
     /**
-     * Gets AdIDS.
-     *
      * @return int[]|null
      */
     public function getAdIDS(): ?array
@@ -114,8 +100,6 @@ class AdImageAssociationSelectionCriteria
     }
 
     /**
-     * Sets AdIDS.
-     *
      * @param int[]|null $value
      *
      * @return $this
@@ -128,8 +112,6 @@ class AdImageAssociationSelectionCriteria
     }
 
     /**
-     * Gets CampaignIDS.
-     *
      * @return int[]|null
      */
     public function getCampaignIDS(): ?array
@@ -138,8 +120,6 @@ class AdImageAssociationSelectionCriteria
     }
 
     /**
-     * Sets CampaignIDS.
-     *
      * @param int[]|null $value
      *
      * @return $this
@@ -151,17 +131,12 @@ class AdImageAssociationSelectionCriteria
         return $this;
     }
 
-    /**
-     * Gets Limit.
-     */
     public function getLimit(): ?int
     {
         return $this->Limit;
     }
 
     /**
-     * Sets Limit.
-     *
      * @return $this
      */
     public function setLimit(?int $value = null)
@@ -171,17 +146,12 @@ class AdImageAssociationSelectionCriteria
         return $this;
     }
 
-    /**
-     * Gets Offset.
-     */
     public function getOffset(): ?int
     {
         return $this->Offset;
     }
 
     /**
-     * Sets Offset.
-     *
      * @return $this
      */
     public function setOffset(?int $value = null)

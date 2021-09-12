@@ -9,52 +9,47 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class DynamicTextCampaignStrategyAddBase
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $WbMaximumClicks = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $WbMaximumConversionRate = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AverageCpc = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AverageCpa = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $PayForConversion = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $WeeklyClickPackage = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AverageRoi = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AverageCrr = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $PayForConversionCrr = null;
 
     /**
-     * Creates a new instance of DynamicTextCampaignStrategyAddBase.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets WbMaximumClicks.
-     */
     public function getWbMaximumClicks(): ?StrategyMaximumClicksAdd
     {
         return $this->WbMaximumClicks ?? null;
     }
 
     /**
-     * Sets WbMaximumClicks.
-     *
      * @return $this
      */
     public function setWbMaximumClicks(?StrategyMaximumClicksAdd $value = null)
@@ -64,17 +59,12 @@ class DynamicTextCampaignStrategyAddBase
         return $this;
     }
 
-    /**
-     * Gets WbMaximumConversionRate.
-     */
     public function getWbMaximumConversionRate(): ?StrategyMaximumConversionRateAdd
     {
         return $this->WbMaximumConversionRate ?? null;
     }
 
     /**
-     * Sets WbMaximumConversionRate.
-     *
      * @return $this
      */
     public function setWbMaximumConversionRate(?StrategyMaximumConversionRateAdd $value = null)
@@ -84,17 +74,12 @@ class DynamicTextCampaignStrategyAddBase
         return $this;
     }
 
-    /**
-     * Gets AverageCpc.
-     */
     public function getAverageCpc(): ?StrategyAverageCpcAdd
     {
         return $this->AverageCpc ?? null;
     }
 
     /**
-     * Sets AverageCpc.
-     *
      * @return $this
      */
     public function setAverageCpc(?StrategyAverageCpcAdd $value = null)
@@ -104,17 +89,12 @@ class DynamicTextCampaignStrategyAddBase
         return $this;
     }
 
-    /**
-     * Gets AverageCpa.
-     */
     public function getAverageCpa(): ?StrategyAverageCpaAdd
     {
         return $this->AverageCpa ?? null;
     }
 
     /**
-     * Sets AverageCpa.
-     *
      * @return $this
      */
     public function setAverageCpa(?StrategyAverageCpaAdd $value = null)
@@ -124,17 +104,12 @@ class DynamicTextCampaignStrategyAddBase
         return $this;
     }
 
-    /**
-     * Gets PayForConversion.
-     */
     public function getPayForConversion(): ?StrategyPayForConversionAdd
     {
         return $this->PayForConversion ?? null;
     }
 
     /**
-     * Sets PayForConversion.
-     *
      * @return $this
      */
     public function setPayForConversion(?StrategyPayForConversionAdd $value = null)
@@ -144,17 +119,12 @@ class DynamicTextCampaignStrategyAddBase
         return $this;
     }
 
-    /**
-     * Gets WeeklyClickPackage.
-     */
     public function getWeeklyClickPackage(): ?StrategyWeeklyClickPackageAdd
     {
         return $this->WeeklyClickPackage ?? null;
     }
 
     /**
-     * Sets WeeklyClickPackage.
-     *
      * @return $this
      */
     public function setWeeklyClickPackage(?StrategyWeeklyClickPackageAdd $value = null)
@@ -164,17 +134,12 @@ class DynamicTextCampaignStrategyAddBase
         return $this;
     }
 
-    /**
-     * Gets AverageRoi.
-     */
     public function getAverageRoi(): ?StrategyAverageRoiAdd
     {
         return $this->AverageRoi ?? null;
     }
 
     /**
-     * Sets AverageRoi.
-     *
      * @return $this
      */
     public function setAverageRoi(?StrategyAverageRoiAdd $value = null)
@@ -184,17 +149,12 @@ class DynamicTextCampaignStrategyAddBase
         return $this;
     }
 
-    /**
-     * Gets AverageCrr.
-     */
     public function getAverageCrr(): ?StrategyAverageCrrAdd
     {
         return $this->AverageCrr ?? null;
     }
 
     /**
-     * Sets AverageCrr.
-     *
      * @return $this
      */
     public function setAverageCrr(?StrategyAverageCrrAdd $value = null)
@@ -204,17 +164,12 @@ class DynamicTextCampaignStrategyAddBase
         return $this;
     }
 
-    /**
-     * Gets PayForConversionCrr.
-     */
     public function getPayForConversionCrr(): ?StrategyPayForConversionCrrAdd
     {
         return $this->PayForConversionCrr ?? null;
     }
 
     /**
-     * Sets PayForConversionCrr.
-     *
      * @return $this
      */
     public function setPayForConversionCrr(?StrategyPayForConversionCrrAdd $value = null)

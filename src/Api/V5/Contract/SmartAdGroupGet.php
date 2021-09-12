@@ -9,34 +9,29 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class SmartAdGroupGet
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $FeedId = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AdTitleSource = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AdBodySource = null;
 
     /**
-     * Creates a new instance of SmartAdGroupGet.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets FeedId.
-     */
     public function getFeedId(): ?int
     {
         return $this->FeedId ?? null;
     }
 
     /**
-     * Sets FeedId.
-     *
      * @return $this
      */
     public function setFeedId(?int $value = null)
@@ -46,17 +41,12 @@ class SmartAdGroupGet
         return $this;
     }
 
-    /**
-     * Gets AdTitleSource.
-     */
     public function getAdTitleSource(): ?string
     {
         return $this->AdTitleSource ?? null;
     }
 
     /**
-     * Sets AdTitleSource.
-     *
      * @return $this
      */
     public function setAdTitleSource(?string $value = null)
@@ -66,17 +56,12 @@ class SmartAdGroupGet
         return $this;
     }
 
-    /**
-     * Gets AdBodySource.
-     */
     public function getAdBodySource(): ?string
     {
         return $this->AdBodySource ?? null;
     }
 
     /**
-     * Sets AdBodySource.
-     *
      * @return $this
      */
     public function setAdBodySource(?string $value = null)

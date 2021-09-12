@@ -9,31 +9,18 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class CpcVideoAdBuilderAdUpdate extends AdBuilderAdUpdateBase
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Href = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $TurboPageId = null;
 
-    /**
-     * Creates a new instance of CpcVideoAdBuilderAdUpdate.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
-
-    /**
-     * Gets Href.
-     */
     public function getHref(): ?string
     {
         return $this->Href ?? null;
     }
 
     /**
-     * Sets Href.
-     *
      * @return $this
      */
     public function setHref(?string $value = null)
@@ -43,17 +30,12 @@ class CpcVideoAdBuilderAdUpdate extends AdBuilderAdUpdateBase
         return $this;
     }
 
-    /**
-     * Gets TurboPageId.
-     */
     public function getTurboPageId(): ?int
     {
         return $this->TurboPageId ?? null;
     }
 
     /**
-     * Sets TurboPageId.
-     *
      * @return $this
      */
     public function setTurboPageId(?int $value = null)

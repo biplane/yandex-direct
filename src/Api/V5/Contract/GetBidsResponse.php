@@ -9,20 +9,10 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class GetBidsResponse extends GetResponseGeneral
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Bids = null;
 
     /**
-     * Creates a new instance of GetBidsResponse.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
-
-    /**
-     * Gets Bids.
-     *
      * @return BidGetItem[]|null
      */
     public function getBids(): ?array
@@ -31,8 +21,6 @@ class GetBidsResponse extends GetResponseGeneral
     }
 
     /**
-     * Sets Bids.
-     *
      * @param BidGetItem[]|null $value
      *
      * @return $this

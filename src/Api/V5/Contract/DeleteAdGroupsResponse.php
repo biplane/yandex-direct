@@ -12,16 +12,14 @@ class DeleteAdGroupsResponse
     protected $DeleteResults = [];
 
     /**
-     * Creates a new instance of DeleteAdGroupsResponse.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets DeleteResults.
-     *
      * @return ActionResult[]
      */
     public function getDeleteResults(): array
@@ -30,8 +28,6 @@ class DeleteAdGroupsResponse
     }
 
     /**
-     * Sets DeleteResults.
-     *
      * @param ActionResult[] $value
      *
      * @return $this

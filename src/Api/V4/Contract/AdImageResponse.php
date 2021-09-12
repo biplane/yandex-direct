@@ -20,16 +20,14 @@ class AdImageResponse
     protected $TotalObjectsCount = null;
 
     /**
-     * Creates a new instance of AdImageResponse.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets AdImages.
-     *
      * @return AdImage[]|null
      */
     public function getAdImages(): ?array
@@ -38,8 +36,6 @@ class AdImageResponse
     }
 
     /**
-     * Sets AdImages.
-     *
      * @param AdImage[]|null $value
      *
      * @return $this
@@ -52,8 +48,6 @@ class AdImageResponse
     }
 
     /**
-     * Gets AdImageUploads.
-     *
      * @return AdImageUpload[]|null
      */
     public function getAdImageUploads(): ?array
@@ -62,8 +56,6 @@ class AdImageResponse
     }
 
     /**
-     * Sets AdImageUploads.
-     *
      * @param AdImageUpload[]|null $value
      *
      * @return $this
@@ -76,8 +68,6 @@ class AdImageResponse
     }
 
     /**
-     * Gets ActionsResult.
-     *
      * @return AdImageActionResult[]|null
      */
     public function getActionsResult(): ?array
@@ -86,8 +76,6 @@ class AdImageResponse
     }
 
     /**
-     * Sets ActionsResult.
-     *
      * @param AdImageActionResult[]|null $value
      *
      * @return $this
@@ -100,8 +88,6 @@ class AdImageResponse
     }
 
     /**
-     * Gets AdImageLimits.
-     *
      * @return AdImageLimit[]|null
      */
     public function getAdImageLimits(): ?array
@@ -110,8 +96,6 @@ class AdImageResponse
     }
 
     /**
-     * Sets AdImageLimits.
-     *
      * @param AdImageLimit[]|null $value
      *
      * @return $this
@@ -123,17 +107,12 @@ class AdImageResponse
         return $this;
     }
 
-    /**
-     * Gets TotalObjectsCount.
-     */
     public function getTotalObjectsCount(): ?int
     {
         return $this->TotalObjectsCount;
     }
 
     /**
-     * Sets TotalObjectsCount.
-     *
      * @return $this
      */
     public function setTotalObjectsCount(?int $value = null)

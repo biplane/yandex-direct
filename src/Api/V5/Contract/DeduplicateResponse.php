@@ -9,29 +9,27 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class DeduplicateResponse
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Add = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Update = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Delete = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Failure = null;
 
     /**
-     * Creates a new instance of DeduplicateResponse.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Add.
-     *
      * @return DeduplicateResponseAddItem[]|null
      */
     public function getAdd(): ?array
@@ -40,8 +38,6 @@ class DeduplicateResponse
     }
 
     /**
-     * Sets Add.
-     *
      * @param DeduplicateResponseAddItem[]|null $value
      *
      * @return $this
@@ -54,8 +50,6 @@ class DeduplicateResponse
     }
 
     /**
-     * Gets Update.
-     *
      * @return DeduplicateResponseUpdateItem[]|null
      */
     public function getUpdate(): ?array
@@ -64,8 +58,6 @@ class DeduplicateResponse
     }
 
     /**
-     * Sets Update.
-     *
      * @param DeduplicateResponseUpdateItem[]|null $value
      *
      * @return $this
@@ -77,17 +69,12 @@ class DeduplicateResponse
         return $this;
     }
 
-    /**
-     * Gets Delete.
-     */
     public function getDelete(): ?IdsCriteria
     {
         return $this->Delete ?? null;
     }
 
     /**
-     * Sets Delete.
-     *
      * @return $this
      */
     public function setDelete(?IdsCriteria $value = null)
@@ -98,8 +85,6 @@ class DeduplicateResponse
     }
 
     /**
-     * Gets Failure.
-     *
      * @return DeduplicateErrorItem[]|null
      */
     public function getFailure(): ?array
@@ -108,8 +93,6 @@ class DeduplicateResponse
     }
 
     /**
-     * Sets Failure.
-     *
      * @param DeduplicateErrorItem[]|null $value
      *
      * @return $this

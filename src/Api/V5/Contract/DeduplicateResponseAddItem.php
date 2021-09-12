@@ -12,24 +12,19 @@ class DeduplicateResponseAddItem
     protected $Keyword = null;
 
     /**
-     * Creates a new instance of DeduplicateResponseAddItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Keyword.
-     */
     public function getKeyword(): string
     {
         return $this->Keyword;
     }
 
     /**
-     * Sets Keyword.
-     *
      * @return $this
      */
     public function setKeyword(string $value)

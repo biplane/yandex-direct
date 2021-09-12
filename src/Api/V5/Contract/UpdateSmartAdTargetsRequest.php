@@ -12,16 +12,14 @@ class UpdateSmartAdTargetsRequest
     protected $SmartAdTargets = [];
 
     /**
-     * Creates a new instance of UpdateSmartAdTargetsRequest.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets SmartAdTargets.
-     *
      * @return SmartAdTargetUpdateItem[]
      */
     public function getSmartAdTargets(): array
@@ -30,8 +28,6 @@ class UpdateSmartAdTargetsRequest
     }
 
     /**
-     * Sets SmartAdTargets.
-     *
      * @param SmartAdTargetUpdateItem[] $value
      *
      * @return $this

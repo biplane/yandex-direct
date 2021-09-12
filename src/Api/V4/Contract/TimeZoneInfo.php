@@ -16,24 +16,19 @@ class TimeZoneInfo
     protected $Name = null;
 
     /**
-     * Creates a new instance of TimeZoneInfo.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets TimeZone.
-     */
     public function getTimeZone(): string
     {
         return $this->TimeZone;
     }
 
     /**
-     * Sets TimeZone.
-     *
      * @return $this
      */
     public function setTimeZone(string $value)
@@ -43,17 +38,12 @@ class TimeZoneInfo
         return $this;
     }
 
-    /**
-     * Gets GMTOffset.
-     */
     public function getGMTOffset(): int
     {
         return $this->GMTOffset;
     }
 
     /**
-     * Sets GMTOffset.
-     *
      * @return $this
      */
     public function setGMTOffset(int $value)
@@ -63,17 +53,12 @@ class TimeZoneInfo
         return $this;
     }
 
-    /**
-     * Gets Name.
-     */
     public function getName(): string
     {
         return $this->Name;
     }
 
     /**
-     * Sets Name.
-     *
      * @return $this
      */
     public function setName(string $value)

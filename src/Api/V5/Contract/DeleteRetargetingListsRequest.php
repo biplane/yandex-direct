@@ -12,24 +12,19 @@ class DeleteRetargetingListsRequest
     protected $SelectionCriteria = null;
 
     /**
-     * Creates a new instance of DeleteRetargetingListsRequest.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets SelectionCriteria.
-     */
     public function getSelectionCriteria(): IdsCriteria
     {
         return $this->SelectionCriteria;
     }
 
     /**
-     * Sets SelectionCriteria.
-     *
      * @return $this
      */
     public function setSelectionCriteria(IdsCriteria $value)

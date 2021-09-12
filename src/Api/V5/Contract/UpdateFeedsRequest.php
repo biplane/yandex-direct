@@ -12,16 +12,14 @@ class UpdateFeedsRequest
     protected $Feeds = [];
 
     /**
-     * Creates a new instance of UpdateFeedsRequest.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Feeds.
-     *
      * @return FeedUpdateItem[]
      */
     public function getFeeds(): array
@@ -30,8 +28,6 @@ class UpdateFeedsRequest
     }
 
     /**
-     * Sets Feeds.
-     *
      * @param FeedUpdateItem[] $value
      *
      * @return $this

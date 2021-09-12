@@ -12,16 +12,14 @@ class ResumeAudienceTargetsResponse
     protected $ResumeResults = [];
 
     /**
-     * Creates a new instance of ResumeAudienceTargetsResponse.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets ResumeResults.
-     *
      * @return ActionResult[]
      */
     public function getResumeResults(): array
@@ -30,8 +28,6 @@ class ResumeAudienceTargetsResponse
     }
 
     /**
-     * Sets ResumeResults.
-     *
      * @param ActionResult[] $value
      *
      * @return $this

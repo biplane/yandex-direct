@@ -12,16 +12,14 @@ class UpdateClientsRequest
     protected $Clients = [];
 
     /**
-     * Creates a new instance of UpdateClientsRequest.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Clients.
-     *
      * @return ClientUpdateItem[]
      */
     public function getClients(): array
@@ -30,8 +28,6 @@ class UpdateClientsRequest
     }
 
     /**
-     * Sets Clients.
-     *
      * @param ClientUpdateItem[] $value
      *
      * @return $this

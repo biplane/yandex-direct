@@ -9,46 +9,41 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class MobileAppAdAdd
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $AdImageHash = null;
 
     protected $Text = null;
 
     protected $Title = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $TrackingUrl = null;
 
     protected $Action = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Features = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AgeLabel = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $VideoExtension = null;
 
     /**
-     * Creates a new instance of MobileAppAdAdd.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets AdImageHash.
-     */
     public function getAdImageHash(): ?string
     {
         return $this->AdImageHash ?? null;
     }
 
     /**
-     * Sets AdImageHash.
-     *
      * @return $this
      */
     public function setAdImageHash(?string $value = null)
@@ -58,17 +53,12 @@ class MobileAppAdAdd
         return $this;
     }
 
-    /**
-     * Gets Text.
-     */
     public function getText(): string
     {
         return $this->Text;
     }
 
     /**
-     * Sets Text.
-     *
      * @return $this
      */
     public function setText(string $value)
@@ -78,17 +68,12 @@ class MobileAppAdAdd
         return $this;
     }
 
-    /**
-     * Gets Title.
-     */
     public function getTitle(): string
     {
         return $this->Title;
     }
 
     /**
-     * Sets Title.
-     *
      * @return $this
      */
     public function setTitle(string $value)
@@ -98,17 +83,12 @@ class MobileAppAdAdd
         return $this;
     }
 
-    /**
-     * Gets TrackingUrl.
-     */
     public function getTrackingUrl(): ?string
     {
         return $this->TrackingUrl ?? null;
     }
 
     /**
-     * Sets TrackingUrl.
-     *
      * @return $this
      */
     public function setTrackingUrl(?string $value = null)
@@ -119,8 +99,6 @@ class MobileAppAdAdd
     }
 
     /**
-     * Gets Action.
-     *
      * @see MobileAppAdActionEnum
      */
     public function getAction(): string
@@ -129,8 +107,6 @@ class MobileAppAdAdd
     }
 
     /**
-     * Sets Action.
-     *
      * @see MobileAppAdActionEnum
      *
      * @return $this
@@ -143,8 +119,6 @@ class MobileAppAdAdd
     }
 
     /**
-     * Gets Features.
-     *
      * @return MobileAppAdFeatureItem[]|null
      */
     public function getFeatures(): ?array
@@ -153,8 +127,6 @@ class MobileAppAdAdd
     }
 
     /**
-     * Sets Features.
-     *
      * @param MobileAppAdFeatureItem[]|null $value
      *
      * @return $this
@@ -167,8 +139,6 @@ class MobileAppAdAdd
     }
 
     /**
-     * Gets AgeLabel.
-     *
      * @see MobAppAgeLabelEnum
      */
     public function getAgeLabel(): ?string
@@ -177,8 +147,6 @@ class MobileAppAdAdd
     }
 
     /**
-     * Sets AgeLabel.
-     *
      * @see MobAppAgeLabelEnum
      *
      * @return $this
@@ -190,17 +158,12 @@ class MobileAppAdAdd
         return $this;
     }
 
-    /**
-     * Gets VideoExtension.
-     */
     public function getVideoExtension(): ?VideoExtensionAddItem
     {
         return $this->VideoExtension ?? null;
     }
 
     /**
-     * Sets VideoExtension.
-     *
      * @return $this
      */
     public function setVideoExtension(?VideoExtensionAddItem $value = null)

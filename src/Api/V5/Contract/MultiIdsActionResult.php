@@ -9,20 +9,10 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class MultiIdsActionResult extends ActionResultBase
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Ids = null;
 
     /**
-     * Creates a new instance of MultiIdsActionResult.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
-
-    /**
-     * Gets Ids.
-     *
      * @return int[]|null
      */
     public function getIds(): ?array
@@ -31,8 +21,6 @@ class MultiIdsActionResult extends ActionResultBase
     }
 
     /**
-     * Sets Ids.
-     *
      * @param int[]|null $value
      *
      * @return $this

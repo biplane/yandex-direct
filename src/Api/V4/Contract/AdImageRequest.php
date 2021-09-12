@@ -18,24 +18,19 @@ class AdImageRequest
     protected $AdImageURLData = null;
 
     /**
-     * Creates a new instance of AdImageRequest.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Action.
-     */
     public function getAction(): string
     {
         return $this->Action;
     }
 
     /**
-     * Sets Action.
-     *
      * @return $this
      */
     public function setAction(string $value)
@@ -45,17 +40,12 @@ class AdImageRequest
         return $this;
     }
 
-    /**
-     * Gets SelectionCriteria.
-     */
     public function getSelectionCriteria(): ?AdImageSelectionCriteria
     {
         return $this->SelectionCriteria;
     }
 
     /**
-     * Sets SelectionCriteria.
-     *
      * @return $this
      */
     public function setSelectionCriteria(?AdImageSelectionCriteria $value = null)
@@ -66,8 +56,6 @@ class AdImageRequest
     }
 
     /**
-     * Gets AdImageRawData.
-     *
      * @return AdImageRaw[]|null
      */
     public function getAdImageRawData(): ?array
@@ -76,8 +64,6 @@ class AdImageRequest
     }
 
     /**
-     * Sets AdImageRawData.
-     *
      * @param AdImageRaw[]|null $value
      *
      * @return $this
@@ -90,8 +76,6 @@ class AdImageRequest
     }
 
     /**
-     * Gets AdImageURLData.
-     *
      * @return AdImageURL[]|null
      */
     public function getAdImageURLData(): ?array
@@ -100,8 +84,6 @@ class AdImageRequest
     }
 
     /**
-     * Sets AdImageURLData.
-     *
      * @param AdImageURL[]|null $value
      *
      * @return $this

@@ -9,55 +9,42 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class BidGetItem extends BidActionResult
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Bid = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $ContextBid = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $StrategyPriority = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $CompetitorsBids = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $SearchPrices = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $ContextCoverage = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $MinSearchPrice = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $CurrentSearchPrice = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AuctionBids = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $ServingStatus = null;
 
-    /**
-     * Creates a new instance of BidGetItem.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
-
-    /**
-     * Gets Bid.
-     */
     public function getBid(): ?int
     {
         return $this->Bid ?? null;
     }
 
     /**
-     * Sets Bid.
-     *
      * @return $this
      */
     public function setBid(?int $value = null)
@@ -67,17 +54,12 @@ class BidGetItem extends BidActionResult
         return $this;
     }
 
-    /**
-     * Gets ContextBid.
-     */
     public function getContextBid(): ?int
     {
         return $this->ContextBid ?? null;
     }
 
     /**
-     * Sets ContextBid.
-     *
      * @return $this
      */
     public function setContextBid(?int $value = null)
@@ -88,8 +70,6 @@ class BidGetItem extends BidActionResult
     }
 
     /**
-     * Gets StrategyPriority.
-     *
      * @see PriorityEnum
      */
     public function getStrategyPriority(): ?string
@@ -98,8 +78,6 @@ class BidGetItem extends BidActionResult
     }
 
     /**
-     * Sets StrategyPriority.
-     *
      * @see PriorityEnum
      *
      * @return $this
@@ -112,8 +90,6 @@ class BidGetItem extends BidActionResult
     }
 
     /**
-     * Gets CompetitorsBids.
-     *
      * @return int[]|null
      */
     public function getCompetitorsBids(): ?array
@@ -122,8 +98,6 @@ class BidGetItem extends BidActionResult
     }
 
     /**
-     * Sets CompetitorsBids.
-     *
      * @param int[]|null $value
      *
      * @return $this
@@ -136,8 +110,6 @@ class BidGetItem extends BidActionResult
     }
 
     /**
-     * Gets SearchPrices.
-     *
      * @return SearchPrices[]|null
      */
     public function getSearchPrices(): ?array
@@ -146,8 +118,6 @@ class BidGetItem extends BidActionResult
     }
 
     /**
-     * Sets SearchPrices.
-     *
      * @param SearchPrices[]|null $value
      *
      * @return $this
@@ -159,17 +129,12 @@ class BidGetItem extends BidActionResult
         return $this;
     }
 
-    /**
-     * Gets ContextCoverage.
-     */
     public function getContextCoverage(): ?ContextCoverage
     {
         return $this->ContextCoverage ?? null;
     }
 
     /**
-     * Sets ContextCoverage.
-     *
      * @return $this
      */
     public function setContextCoverage(?ContextCoverage $value = null)
@@ -179,17 +144,12 @@ class BidGetItem extends BidActionResult
         return $this;
     }
 
-    /**
-     * Gets MinSearchPrice.
-     */
     public function getMinSearchPrice(): ?int
     {
         return $this->MinSearchPrice ?? null;
     }
 
     /**
-     * Sets MinSearchPrice.
-     *
      * @return $this
      */
     public function setMinSearchPrice(?int $value = null)
@@ -199,17 +159,12 @@ class BidGetItem extends BidActionResult
         return $this;
     }
 
-    /**
-     * Gets CurrentSearchPrice.
-     */
     public function getCurrentSearchPrice(): ?int
     {
         return $this->CurrentSearchPrice ?? null;
     }
 
     /**
-     * Sets CurrentSearchPrice.
-     *
      * @return $this
      */
     public function setCurrentSearchPrice(?int $value = null)
@@ -220,8 +175,6 @@ class BidGetItem extends BidActionResult
     }
 
     /**
-     * Gets AuctionBids.
-     *
      * @return AuctionBidItem[]|null
      */
     public function getAuctionBids(): ?array
@@ -230,8 +183,6 @@ class BidGetItem extends BidActionResult
     }
 
     /**
-     * Sets AuctionBids.
-     *
      * @param AuctionBidItem[]|null $value
      *
      * @return $this
@@ -244,8 +195,6 @@ class BidGetItem extends BidActionResult
     }
 
     /**
-     * Gets ServingStatus.
-     *
      * @see ServingStatusEnum
      */
     public function getServingStatus(): ?string
@@ -254,8 +203,6 @@ class BidGetItem extends BidActionResult
     }
 
     /**
-     * Sets ServingStatus.
-     *
      * @see ServingStatusEnum
      *
      * @return $this

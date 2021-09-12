@@ -20,24 +20,19 @@ class CreateNewSubclientResponse
     protected $ClientID = null;
 
     /**
-     * Creates a new instance of CreateNewSubclientResponse.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Login.
-     */
     public function getLogin(): string
     {
         return $this->Login;
     }
 
     /**
-     * Sets Login.
-     *
      * @return $this
      */
     public function setLogin(string $value)
@@ -47,17 +42,12 @@ class CreateNewSubclientResponse
         return $this;
     }
 
-    /**
-     * Gets Password.
-     */
     public function getPassword(): string
     {
         return $this->Password;
     }
 
     /**
-     * Sets Password.
-     *
      * @return $this
      */
     public function setPassword(string $value)
@@ -67,17 +57,12 @@ class CreateNewSubclientResponse
         return $this;
     }
 
-    /**
-     * Gets FIO.
-     */
     public function getFIO(): string
     {
         return $this->FIO;
     }
 
     /**
-     * Sets FIO.
-     *
      * @return $this
      */
     public function setFIO(string $value)
@@ -87,17 +72,12 @@ class CreateNewSubclientResponse
         return $this;
     }
 
-    /**
-     * Gets Email.
-     */
     public function getEmail(): string
     {
         return $this->Email;
     }
 
     /**
-     * Sets Email.
-     *
      * @return $this
      */
     public function setEmail(string $value)
@@ -107,17 +87,12 @@ class CreateNewSubclientResponse
         return $this;
     }
 
-    /**
-     * Gets ClientID.
-     */
     public function getClientID(): int
     {
         return $this->ClientID;
     }
 
     /**
-     * Sets ClientID.
-     *
      * @return $this
      */
     public function setClientID(int $value)

@@ -9,33 +9,28 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class DeduplicateRequestItem
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Id = null;
 
     protected $Keyword = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Weight = null;
 
     /**
-     * Creates a new instance of DeduplicateRequestItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Id.
-     */
     public function getId(): ?int
     {
         return $this->Id ?? null;
     }
 
     /**
-     * Sets Id.
-     *
      * @return $this
      */
     public function setId(?int $value = null)
@@ -45,17 +40,12 @@ class DeduplicateRequestItem
         return $this;
     }
 
-    /**
-     * Gets Keyword.
-     */
     public function getKeyword(): string
     {
         return $this->Keyword;
     }
 
     /**
-     * Sets Keyword.
-     *
      * @return $this
      */
     public function setKeyword(string $value)
@@ -65,17 +55,12 @@ class DeduplicateRequestItem
         return $this;
     }
 
-    /**
-     * Gets Weight.
-     */
     public function getWeight(): ?int
     {
         return $this->Weight ?? null;
     }
 
     /**
-     * Sets Weight.
-     *
      * @return $this
      */
     public function setWeight(?int $value = null)

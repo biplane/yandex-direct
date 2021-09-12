@@ -10,10 +10,10 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 class CpmVideoAdGroupAdd
 {
     /**
-     * Creates a new instance of CpmVideoAdGroupAdd.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 }

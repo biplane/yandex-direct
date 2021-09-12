@@ -13,25 +13,12 @@ class GetDynamicTextAdTargetsRequest extends GetRequestGeneral
 
     protected $FieldNames = [];
 
-    /**
-     * Creates a new instance of GetDynamicTextAdTargetsRequest.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
-
-    /**
-     * Gets SelectionCriteria.
-     */
     public function getSelectionCriteria(): AdTargetsSelectionCriteria
     {
         return $this->SelectionCriteria;
     }
 
     /**
-     * Sets SelectionCriteria.
-     *
      * @return $this
      */
     public function setSelectionCriteria(AdTargetsSelectionCriteria $value)
@@ -42,8 +29,6 @@ class GetDynamicTextAdTargetsRequest extends GetRequestGeneral
     }
 
     /**
-     * Gets FieldNames.
-     *
      * @see WebpageFieldEnum
      *
      * @return string[]
@@ -54,8 +39,6 @@ class GetDynamicTextAdTargetsRequest extends GetRequestGeneral
     }
 
     /**
-     * Sets FieldNames.
-     *
      * @see WebpageFieldEnum
      *
      * @param string[] $value

@@ -14,16 +14,14 @@ class SmartCampaignSetting
     protected $Value = null;
 
     /**
-     * Creates a new instance of SmartCampaignSetting.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Option.
-     *
      * @see SmartCampaignSettingsEnum
      */
     public function getOption(): string
@@ -32,8 +30,6 @@ class SmartCampaignSetting
     }
 
     /**
-     * Sets Option.
-     *
      * @see SmartCampaignSettingsEnum
      *
      * @return $this
@@ -46,8 +42,6 @@ class SmartCampaignSetting
     }
 
     /**
-     * Gets Value.
-     *
      * @see YesNoEnum
      */
     public function getValue(): string
@@ -56,8 +50,6 @@ class SmartCampaignSetting
     }
 
     /**
-     * Sets Value.
-     *
      * @see YesNoEnum
      *
      * @return $this

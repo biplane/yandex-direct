@@ -9,34 +9,29 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class RelevantKeywordsSetting
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $BudgetPercent = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Mode = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $OptimizeGoalId = null;
 
     /**
-     * Creates a new instance of RelevantKeywordsSetting.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets BudgetPercent.
-     */
     public function getBudgetPercent(): ?int
     {
         return $this->BudgetPercent ?? null;
     }
 
     /**
-     * Sets BudgetPercent.
-     *
      * @return $this
      */
     public function setBudgetPercent(?int $value = null)
@@ -47,8 +42,6 @@ class RelevantKeywordsSetting
     }
 
     /**
-     * Gets Mode.
-     *
      * @see RelevantKeywordsModeEnum
      */
     public function getMode(): ?string
@@ -57,8 +50,6 @@ class RelevantKeywordsSetting
     }
 
     /**
-     * Sets Mode.
-     *
      * @see RelevantKeywordsModeEnum
      *
      * @return $this
@@ -70,17 +61,12 @@ class RelevantKeywordsSetting
         return $this;
     }
 
-    /**
-     * Gets OptimizeGoalId.
-     */
     public function getOptimizeGoalId(): ?int
     {
         return $this->OptimizeGoalId ?? null;
     }
 
     /**
-     * Sets OptimizeGoalId.
-     *
      * @return $this
      */
     public function setOptimizeGoalId(?int $value = null)

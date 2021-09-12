@@ -9,34 +9,29 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class StrategyWeeklyClickPackage
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $ClicksPerWeek = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AverageCpc = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $BidCeiling = null;
 
     /**
-     * Creates a new instance of StrategyWeeklyClickPackage.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets ClicksPerWeek.
-     */
     public function getClicksPerWeek(): ?int
     {
         return $this->ClicksPerWeek ?? null;
     }
 
     /**
-     * Sets ClicksPerWeek.
-     *
      * @return $this
      */
     public function setClicksPerWeek(?int $value = null)
@@ -46,17 +41,12 @@ class StrategyWeeklyClickPackage
         return $this;
     }
 
-    /**
-     * Gets AverageCpc.
-     */
     public function getAverageCpc(): ?int
     {
         return $this->AverageCpc ?? null;
     }
 
     /**
-     * Sets AverageCpc.
-     *
      * @return $this
      */
     public function setAverageCpc(?int $value = null)
@@ -66,17 +56,12 @@ class StrategyWeeklyClickPackage
         return $this;
     }
 
-    /**
-     * Gets BidCeiling.
-     */
     public function getBidCeiling(): ?int
     {
         return $this->BidCeiling ?? null;
     }
 
     /**
-     * Sets BidCeiling.
-     *
      * @return $this
      */
     public function setBidCeiling(?int $value = null)

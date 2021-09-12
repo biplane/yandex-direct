@@ -14,16 +14,14 @@ class BannersRequestInfo
     protected $BannerIDS = null;
 
     /**
-     * Creates a new instance of BannersRequestInfo.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets CampaignIDS.
-     *
      * @return int[]|null
      */
     public function getCampaignIDS(): ?array
@@ -32,8 +30,6 @@ class BannersRequestInfo
     }
 
     /**
-     * Sets CampaignIDS.
-     *
      * @param int[]|null $value
      *
      * @return $this
@@ -46,8 +42,6 @@ class BannersRequestInfo
     }
 
     /**
-     * Gets BannerIDS.
-     *
      * @return int[]|null
      */
     public function getBannerIDS(): ?array
@@ -56,8 +50,6 @@ class BannersRequestInfo
     }
 
     /**
-     * Sets BannerIDS.
-     *
      * @param int[]|null $value
      *
      * @return $this

@@ -9,58 +9,45 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class TextAdUpdate extends TextAdUpdateBase
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Text = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Title = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Title2 = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Href = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AgeLabel = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $DisplayUrlPath = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $VideoExtension = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $PriceExtension = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $TurboPageId = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $BusinessId = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $PreferVCardOverBusiness = null;
 
-    /**
-     * Creates a new instance of TextAdUpdate.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
-
-    /**
-     * Gets Text.
-     */
     public function getText(): ?string
     {
         return $this->Text ?? null;
     }
 
     /**
-     * Sets Text.
-     *
      * @return $this
      */
     public function setText(?string $value = null)
@@ -70,17 +57,12 @@ class TextAdUpdate extends TextAdUpdateBase
         return $this;
     }
 
-    /**
-     * Gets Title.
-     */
     public function getTitle(): ?string
     {
         return $this->Title ?? null;
     }
 
     /**
-     * Sets Title.
-     *
      * @return $this
      */
     public function setTitle(?string $value = null)
@@ -90,17 +72,12 @@ class TextAdUpdate extends TextAdUpdateBase
         return $this;
     }
 
-    /**
-     * Gets Title2.
-     */
     public function getTitle2(): ?string
     {
         return $this->Title2 ?? null;
     }
 
     /**
-     * Sets Title2.
-     *
      * @return $this
      */
     public function setTitle2(?string $value = null)
@@ -110,17 +87,12 @@ class TextAdUpdate extends TextAdUpdateBase
         return $this;
     }
 
-    /**
-     * Gets Href.
-     */
     public function getHref(): ?string
     {
         return $this->Href ?? null;
     }
 
     /**
-     * Sets Href.
-     *
      * @return $this
      */
     public function setHref(?string $value = null)
@@ -131,8 +103,6 @@ class TextAdUpdate extends TextAdUpdateBase
     }
 
     /**
-     * Gets AgeLabel.
-     *
      * @see AgeLabelEnum
      */
     public function getAgeLabel(): ?string
@@ -141,8 +111,6 @@ class TextAdUpdate extends TextAdUpdateBase
     }
 
     /**
-     * Sets AgeLabel.
-     *
      * @see AgeLabelEnum
      *
      * @return $this
@@ -154,17 +122,12 @@ class TextAdUpdate extends TextAdUpdateBase
         return $this;
     }
 
-    /**
-     * Gets DisplayUrlPath.
-     */
     public function getDisplayUrlPath(): ?string
     {
         return $this->DisplayUrlPath ?? null;
     }
 
     /**
-     * Sets DisplayUrlPath.
-     *
      * @return $this
      */
     public function setDisplayUrlPath(?string $value = null)
@@ -174,17 +137,12 @@ class TextAdUpdate extends TextAdUpdateBase
         return $this;
     }
 
-    /**
-     * Gets VideoExtension.
-     */
     public function getVideoExtension(): ?VideoExtensionUpdateItem
     {
         return $this->VideoExtension ?? null;
     }
 
     /**
-     * Sets VideoExtension.
-     *
      * @return $this
      */
     public function setVideoExtension(?VideoExtensionUpdateItem $value = null)
@@ -194,17 +152,12 @@ class TextAdUpdate extends TextAdUpdateBase
         return $this;
     }
 
-    /**
-     * Gets PriceExtension.
-     */
     public function getPriceExtension(): ?PriceExtensionUpdateItem
     {
         return $this->PriceExtension ?? null;
     }
 
     /**
-     * Sets PriceExtension.
-     *
      * @return $this
      */
     public function setPriceExtension(?PriceExtensionUpdateItem $value = null)
@@ -214,17 +167,12 @@ class TextAdUpdate extends TextAdUpdateBase
         return $this;
     }
 
-    /**
-     * Gets TurboPageId.
-     */
     public function getTurboPageId(): ?int
     {
         return $this->TurboPageId ?? null;
     }
 
     /**
-     * Sets TurboPageId.
-     *
      * @return $this
      */
     public function setTurboPageId(?int $value = null)
@@ -234,17 +182,12 @@ class TextAdUpdate extends TextAdUpdateBase
         return $this;
     }
 
-    /**
-     * Gets BusinessId.
-     */
     public function getBusinessId(): ?int
     {
         return $this->BusinessId ?? null;
     }
 
     /**
-     * Sets BusinessId.
-     *
      * @return $this
      */
     public function setBusinessId(?int $value = null)
@@ -255,8 +198,6 @@ class TextAdUpdate extends TextAdUpdateBase
     }
 
     /**
-     * Gets PreferVCardOverBusiness.
-     *
      * @see YesNoEnum
      */
     public function getPreferVCardOverBusiness(): ?string
@@ -265,8 +206,6 @@ class TextAdUpdate extends TextAdUpdateBase
     }
 
     /**
-     * Sets PreferVCardOverBusiness.
-     *
      * @see YesNoEnum
      *
      * @return $this

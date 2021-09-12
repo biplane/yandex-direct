@@ -12,16 +12,6 @@ class DynamicTextCampaignSearchStrategyAdd extends DynamicTextCampaignStrategyAd
     protected $BiddingStrategyType = null;
 
     /**
-     * Creates a new instance of DynamicTextCampaignSearchStrategyAdd.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
-
-    /**
-     * Gets BiddingStrategyType.
-     *
      * @see DynamicTextCampaignSearchStrategyTypeEnum
      */
     public function getBiddingStrategyType(): string
@@ -30,8 +20,6 @@ class DynamicTextCampaignSearchStrategyAdd extends DynamicTextCampaignStrategyAd
     }
 
     /**
-     * Sets BiddingStrategyType.
-     *
      * @see DynamicTextCampaignSearchStrategyTypeEnum
      *
      * @return $this

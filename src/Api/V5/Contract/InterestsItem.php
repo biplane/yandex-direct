@@ -18,24 +18,19 @@ class InterestsItem
     protected $IsTargetable = null;
 
     /**
-     * Creates a new instance of InterestsItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets InterestId.
-     */
     public function getInterestId(): int
     {
         return $this->InterestId;
     }
 
     /**
-     * Sets InterestId.
-     *
      * @return $this
      */
     public function setInterestId(int $value)
@@ -45,17 +40,12 @@ class InterestsItem
         return $this;
     }
 
-    /**
-     * Gets ParentId.
-     */
     public function getParentId(): ?int
     {
         return $this->ParentId;
     }
 
     /**
-     * Sets ParentId.
-     *
      * @return $this
      */
     public function setParentId(?int $value = null)
@@ -65,17 +55,12 @@ class InterestsItem
         return $this;
     }
 
-    /**
-     * Gets Name.
-     */
     public function getName(): string
     {
         return $this->Name;
     }
 
     /**
-     * Sets Name.
-     *
      * @return $this
      */
     public function setName(string $value)
@@ -86,8 +71,6 @@ class InterestsItem
     }
 
     /**
-     * Gets IsTargetable.
-     *
      * @see YesNoEnum
      */
     public function getIsTargetable(): string
@@ -96,8 +79,6 @@ class InterestsItem
     }
 
     /**
-     * Sets IsTargetable.
-     *
      * @see YesNoEnum
      *
      * @return $this

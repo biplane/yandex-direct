@@ -9,32 +9,22 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class RetargetingListGetItem extends RetargetingListBase
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Type = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Id = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $IsAvailable = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Scope = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AvailableForTargetsInAdGroupTypes = null;
 
     /**
-     * Creates a new instance of RetargetingListGetItem.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
-
-    /**
-     * Gets Type.
-     *
      * @see RetargetingListTypeEnum
      */
     public function getType(): ?string
@@ -43,8 +33,6 @@ class RetargetingListGetItem extends RetargetingListBase
     }
 
     /**
-     * Sets Type.
-     *
      * @see RetargetingListTypeEnum
      *
      * @return $this
@@ -56,17 +44,12 @@ class RetargetingListGetItem extends RetargetingListBase
         return $this;
     }
 
-    /**
-     * Gets Id.
-     */
     public function getId(): ?int
     {
         return $this->Id ?? null;
     }
 
     /**
-     * Sets Id.
-     *
      * @return $this
      */
     public function setId(?int $value = null)
@@ -77,8 +60,6 @@ class RetargetingListGetItem extends RetargetingListBase
     }
 
     /**
-     * Gets IsAvailable.
-     *
      * @see YesNoEnum
      */
     public function getIsAvailable(): ?string
@@ -87,8 +68,6 @@ class RetargetingListGetItem extends RetargetingListBase
     }
 
     /**
-     * Sets IsAvailable.
-     *
      * @see YesNoEnum
      *
      * @return $this
@@ -101,8 +80,6 @@ class RetargetingListGetItem extends RetargetingListBase
     }
 
     /**
-     * Gets Scope.
-     *
      * @see RetargetingListScopeEnum
      */
     public function getScope(): ?string
@@ -111,8 +88,6 @@ class RetargetingListGetItem extends RetargetingListBase
     }
 
     /**
-     * Sets Scope.
-     *
      * @see RetargetingListScopeEnum
      *
      * @return $this
@@ -124,17 +99,12 @@ class RetargetingListGetItem extends RetargetingListBase
         return $this;
     }
 
-    /**
-     * Gets AvailableForTargetsInAdGroupTypes.
-     */
     public function getAvailableForTargetsInAdGroupTypes(): ?AvailableForTargetsInAdGroupTypesArray
     {
         return $this->AvailableForTargetsInAdGroupTypes ?? null;
     }
 
     /**
-     * Sets AvailableForTargetsInAdGroupTypes.
-     *
      * @return $this
      */
     public function setAvailableForTargetsInAdGroupTypes(?AvailableForTargetsInAdGroupTypesArray $value = null)

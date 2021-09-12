@@ -14,24 +14,19 @@ class NegativeKeywordSharedSetAddItem
     protected $NegativeKeywords = [];
 
     /**
-     * Creates a new instance of NegativeKeywordSharedSetAddItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Name.
-     */
     public function getName(): string
     {
         return $this->Name;
     }
 
     /**
-     * Sets Name.
-     *
      * @return $this
      */
     public function setName(string $value)
@@ -42,8 +37,6 @@ class NegativeKeywordSharedSetAddItem
     }
 
     /**
-     * Gets NegativeKeywords.
-     *
      * @return string[]
      */
     public function getNegativeKeywords(): array
@@ -52,8 +45,6 @@ class NegativeKeywordSharedSetAddItem
     }
 
     /**
-     * Sets NegativeKeywords.
-     *
      * @param string[] $value
      *
      * @return $this

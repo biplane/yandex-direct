@@ -9,29 +9,27 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class DemographicsAdjustmentGet
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Gender = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Age = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $BidModifier = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Enabled = null;
 
     /**
-     * Creates a new instance of DemographicsAdjustmentGet.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Gender.
-     *
      * @see GenderEnum
      */
     public function getGender(): ?string
@@ -40,8 +38,6 @@ class DemographicsAdjustmentGet
     }
 
     /**
-     * Sets Gender.
-     *
      * @see GenderEnum
      *
      * @return $this
@@ -54,8 +50,6 @@ class DemographicsAdjustmentGet
     }
 
     /**
-     * Gets Age.
-     *
      * @see AgeRangeEnum
      */
     public function getAge(): ?string
@@ -64,8 +58,6 @@ class DemographicsAdjustmentGet
     }
 
     /**
-     * Sets Age.
-     *
      * @see AgeRangeEnum
      *
      * @return $this
@@ -77,17 +69,12 @@ class DemographicsAdjustmentGet
         return $this;
     }
 
-    /**
-     * Gets BidModifier.
-     */
     public function getBidModifier(): ?int
     {
         return $this->BidModifier ?? null;
     }
 
     /**
-     * Sets BidModifier.
-     *
      * @return $this
      */
     public function setBidModifier(?int $value = null)
@@ -98,8 +85,6 @@ class DemographicsAdjustmentGet
     }
 
     /**
-     * Gets Enabled.
-     *
      * @see YesNoEnum
      */
     public function getEnabled(): ?string
@@ -108,8 +93,6 @@ class DemographicsAdjustmentGet
     }
 
     /**
-     * Sets Enabled.
-     *
      * @see YesNoEnum
      *
      * @return $this

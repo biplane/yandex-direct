@@ -26,24 +26,19 @@ class ForecastCommonInfo
     protected $PremiumMin = null;
 
     /**
-     * Creates a new instance of ForecastCommonInfo.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Geo.
-     */
     public function getGeo(): string
     {
         return $this->Geo;
     }
 
     /**
-     * Sets Geo.
-     *
      * @return $this
      */
     public function setGeo(string $value)
@@ -53,17 +48,12 @@ class ForecastCommonInfo
         return $this;
     }
 
-    /**
-     * Gets Shows.
-     */
     public function getShows(): int
     {
         return $this->Shows;
     }
 
     /**
-     * Sets Shows.
-     *
      * @return $this
      */
     public function setShows(int $value)
@@ -73,17 +63,12 @@ class ForecastCommonInfo
         return $this;
     }
 
-    /**
-     * Gets Clicks.
-     */
     public function getClicks(): int
     {
         return $this->Clicks;
     }
 
     /**
-     * Sets Clicks.
-     *
      * @return $this
      */
     public function setClicks(int $value)
@@ -93,17 +78,12 @@ class ForecastCommonInfo
         return $this;
     }
 
-    /**
-     * Gets FirstPlaceClicks.
-     */
     public function getFirstPlaceClicks(): int
     {
         return $this->FirstPlaceClicks;
     }
 
     /**
-     * Sets FirstPlaceClicks.
-     *
      * @return $this
      */
     public function setFirstPlaceClicks(int $value)
@@ -113,17 +93,12 @@ class ForecastCommonInfo
         return $this;
     }
 
-    /**
-     * Gets PremiumClicks.
-     */
     public function getPremiumClicks(): int
     {
         return $this->PremiumClicks;
     }
 
     /**
-     * Sets PremiumClicks.
-     *
      * @return $this
      */
     public function setPremiumClicks(int $value)
@@ -133,17 +108,12 @@ class ForecastCommonInfo
         return $this;
     }
 
-    /**
-     * Gets Min.
-     */
     public function getMin(): float
     {
         return $this->Min;
     }
 
     /**
-     * Sets Min.
-     *
      * @return $this
      */
     public function setMin(float $value)
@@ -153,17 +123,12 @@ class ForecastCommonInfo
         return $this;
     }
 
-    /**
-     * Gets Max.
-     */
     public function getMax(): float
     {
         return $this->Max;
     }
 
     /**
-     * Sets Max.
-     *
      * @return $this
      */
     public function setMax(float $value)
@@ -173,17 +138,12 @@ class ForecastCommonInfo
         return $this;
     }
 
-    /**
-     * Gets PremiumMin.
-     */
     public function getPremiumMin(): float
     {
         return $this->PremiumMin;
     }
 
     /**
-     * Sets PremiumMin.
-     *
      * @return $this
      */
     public function setPremiumMin(float $value)

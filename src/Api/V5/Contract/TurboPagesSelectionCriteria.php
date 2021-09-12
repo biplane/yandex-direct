@@ -9,23 +9,21 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class TurboPagesSelectionCriteria
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Ids = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $BoundWithHrefs = null;
 
     /**
-     * Creates a new instance of TurboPagesSelectionCriteria.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Ids.
-     *
      * @return int[]|null
      */
     public function getIds(): ?array
@@ -34,8 +32,6 @@ class TurboPagesSelectionCriteria
     }
 
     /**
-     * Sets Ids.
-     *
      * @param int[]|null $value
      *
      * @return $this
@@ -48,8 +44,6 @@ class TurboPagesSelectionCriteria
     }
 
     /**
-     * Gets BoundWithHrefs.
-     *
      * @return string[]|null
      */
     public function getBoundWithHrefs(): ?array
@@ -58,8 +52,6 @@ class TurboPagesSelectionCriteria
     }
 
     /**
-     * Sets BoundWithHrefs.
-     *
      * @param string[]|null $value
      *
      * @return $this

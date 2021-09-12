@@ -9,58 +9,53 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class FeedGetItem
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Id = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Name = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $BusinessType = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $SourceType = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $FilterSchema = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $UpdatedAt = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $CampaignIds = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $FileFeed = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $NumberOfItems = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Status = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $UrlFeed = null;
 
     /**
-     * Creates a new instance of FeedGetItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Id.
-     */
     public function getId(): ?int
     {
         return $this->Id ?? null;
     }
 
     /**
-     * Sets Id.
-     *
      * @return $this
      */
     public function setId(?int $value = null)
@@ -70,17 +65,12 @@ class FeedGetItem
         return $this;
     }
 
-    /**
-     * Gets Name.
-     */
     public function getName(): ?string
     {
         return $this->Name ?? null;
     }
 
     /**
-     * Sets Name.
-     *
      * @return $this
      */
     public function setName(?string $value = null)
@@ -91,8 +81,6 @@ class FeedGetItem
     }
 
     /**
-     * Gets BusinessType.
-     *
      * @see BusinessTypeEnum
      */
     public function getBusinessType(): ?string
@@ -101,8 +89,6 @@ class FeedGetItem
     }
 
     /**
-     * Sets BusinessType.
-     *
      * @see BusinessTypeEnum
      *
      * @return $this
@@ -115,8 +101,6 @@ class FeedGetItem
     }
 
     /**
-     * Gets SourceType.
-     *
      * @see SourceTypeEnum
      */
     public function getSourceType(): ?string
@@ -125,8 +109,6 @@ class FeedGetItem
     }
 
     /**
-     * Sets SourceType.
-     *
      * @see SourceTypeEnum
      *
      * @return $this
@@ -138,17 +120,12 @@ class FeedGetItem
         return $this;
     }
 
-    /**
-     * Gets FilterSchema.
-     */
     public function getFilterSchema(): ?string
     {
         return $this->FilterSchema ?? null;
     }
 
     /**
-     * Sets FilterSchema.
-     *
      * @return $this
      */
     public function setFilterSchema(?string $value = null)
@@ -158,17 +135,12 @@ class FeedGetItem
         return $this;
     }
 
-    /**
-     * Gets UpdatedAt.
-     */
     public function getUpdatedAt(): ?string
     {
         return $this->UpdatedAt ?? null;
     }
 
     /**
-     * Sets UpdatedAt.
-     *
      * @return $this
      */
     public function setUpdatedAt(?string $value = null)
@@ -179,8 +151,6 @@ class FeedGetItem
     }
 
     /**
-     * Gets CampaignIds.
-     *
      * @return float[]|null
      */
     public function getCampaignIds(): ?array
@@ -189,8 +159,6 @@ class FeedGetItem
     }
 
     /**
-     * Sets CampaignIds.
-     *
      * @param float[]|null $value
      *
      * @return $this
@@ -202,17 +170,12 @@ class FeedGetItem
         return $this;
     }
 
-    /**
-     * Gets FileFeed.
-     */
     public function getFileFeed(): ?FileFeedGet
     {
         return $this->FileFeed ?? null;
     }
 
     /**
-     * Sets FileFeed.
-     *
      * @return $this
      */
     public function setFileFeed(?FileFeedGet $value = null)
@@ -222,17 +185,12 @@ class FeedGetItem
         return $this;
     }
 
-    /**
-     * Gets NumberOfItems.
-     */
     public function getNumberOfItems(): ?int
     {
         return $this->NumberOfItems ?? null;
     }
 
     /**
-     * Sets NumberOfItems.
-     *
      * @return $this
      */
     public function setNumberOfItems(?int $value = null)
@@ -243,8 +201,6 @@ class FeedGetItem
     }
 
     /**
-     * Gets Status.
-     *
      * @see FeedStatusEnum
      */
     public function getStatus(): ?string
@@ -253,8 +209,6 @@ class FeedGetItem
     }
 
     /**
-     * Sets Status.
-     *
      * @see FeedStatusEnum
      *
      * @return $this
@@ -266,17 +220,12 @@ class FeedGetItem
         return $this;
     }
 
-    /**
-     * Gets UrlFeed.
-     */
     public function getUrlFeed(): ?UrlFeedGet
     {
         return $this->UrlFeed ?? null;
     }
 
     /**
-     * Sets UrlFeed.
-     *
      * @return $this
      */
     public function setUrlFeed(?UrlFeedGet $value = null)

@@ -14,24 +14,19 @@ class AdExtensionSettingItem
     protected $Operation = null;
 
     /**
-     * Creates a new instance of AdExtensionSettingItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets AdExtensionId.
-     */
     public function getAdExtensionId(): int
     {
         return $this->AdExtensionId;
     }
 
     /**
-     * Sets AdExtensionId.
-     *
      * @return $this
      */
     public function setAdExtensionId(int $value)
@@ -42,8 +37,6 @@ class AdExtensionSettingItem
     }
 
     /**
-     * Gets Operation.
-     *
      * @see OperationEnum
      */
     public function getOperation(): string
@@ -52,8 +45,6 @@ class AdExtensionSettingItem
     }
 
     /**
-     * Sets Operation.
-     *
      * @see OperationEnum
      *
      * @return $this

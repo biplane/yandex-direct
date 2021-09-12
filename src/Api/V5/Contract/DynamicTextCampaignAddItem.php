@@ -11,37 +11,32 @@ class DynamicTextCampaignAddItem
 {
     protected $BiddingStrategy = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Settings = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $CounterIds = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $PriorityGoals = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AttributionModel = null;
 
     /**
-     * Creates a new instance of DynamicTextCampaignAddItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets BiddingStrategy.
-     */
     public function getBiddingStrategy(): DynamicTextCampaignStrategyAdd
     {
         return $this->BiddingStrategy;
     }
 
     /**
-     * Sets BiddingStrategy.
-     *
      * @return $this
      */
     public function setBiddingStrategy(DynamicTextCampaignStrategyAdd $value)
@@ -52,8 +47,6 @@ class DynamicTextCampaignAddItem
     }
 
     /**
-     * Gets Settings.
-     *
      * @return DynamicTextCampaignSetting[]|null
      */
     public function getSettings(): ?array
@@ -62,8 +55,6 @@ class DynamicTextCampaignAddItem
     }
 
     /**
-     * Sets Settings.
-     *
      * @param DynamicTextCampaignSetting[]|null $value
      *
      * @return $this
@@ -76,8 +67,6 @@ class DynamicTextCampaignAddItem
     }
 
     /**
-     * Gets CounterIds.
-     *
      * @return int[]|null
      */
     public function getCounterIds(): ?array
@@ -86,8 +75,6 @@ class DynamicTextCampaignAddItem
     }
 
     /**
-     * Sets CounterIds.
-     *
      * @param int[]|null $value
      *
      * @return $this
@@ -99,17 +86,12 @@ class DynamicTextCampaignAddItem
         return $this;
     }
 
-    /**
-     * Gets PriorityGoals.
-     */
     public function getPriorityGoals(): ?PriorityGoalsArray
     {
         return $this->PriorityGoals ?? null;
     }
 
     /**
-     * Sets PriorityGoals.
-     *
      * @return $this
      */
     public function setPriorityGoals(?PriorityGoalsArray $value = null)
@@ -120,8 +102,6 @@ class DynamicTextCampaignAddItem
     }
 
     /**
-     * Gets AttributionModel.
-     *
      * @see AttributionModelEnum
      */
     public function getAttributionModel(): ?string
@@ -130,8 +110,6 @@ class DynamicTextCampaignAddItem
     }
 
     /**
-     * Sets AttributionModel.
-     *
      * @see AttributionModelEnum
      *
      * @return $this

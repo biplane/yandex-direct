@@ -16,24 +16,19 @@ class NumberFilterFieldProps
     protected $Precision = null;
 
     /**
-     * Creates a new instance of NumberFilterFieldProps.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Min.
-     */
     public function getMin(): float
     {
         return $this->Min;
     }
 
     /**
-     * Sets Min.
-     *
      * @return $this
      */
     public function setMin(float $value)
@@ -43,17 +38,12 @@ class NumberFilterFieldProps
         return $this;
     }
 
-    /**
-     * Gets Max.
-     */
     public function getMax(): float
     {
         return $this->Max;
     }
 
     /**
-     * Sets Max.
-     *
      * @return $this
      */
     public function setMax(float $value)
@@ -63,17 +53,12 @@ class NumberFilterFieldProps
         return $this;
     }
 
-    /**
-     * Gets Precision.
-     */
     public function getPrecision(): int
     {
         return $this->Precision;
     }
 
     /**
-     * Sets Precision.
-     *
      * @return $this
      */
     public function setPrecision(int $value)

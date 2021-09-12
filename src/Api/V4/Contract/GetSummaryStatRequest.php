@@ -22,16 +22,14 @@ class GetSummaryStatRequest
     protected $IncludeDiscount = null;
 
     /**
-     * Creates a new instance of GetSummaryStatRequest.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets CampaignIDS.
-     *
      * @return int[]
      */
     public function getCampaignIDS(): array
@@ -40,8 +38,6 @@ class GetSummaryStatRequest
     }
 
     /**
-     * Sets CampaignIDS.
-     *
      * @param int[] $value
      *
      * @return $this
@@ -53,17 +49,12 @@ class GetSummaryStatRequest
         return $this;
     }
 
-    /**
-     * Gets StartDate.
-     */
     public function getStartDate(): string
     {
         return $this->StartDate;
     }
 
     /**
-     * Sets StartDate.
-     *
      * @return $this
      */
     public function setStartDate(string $value)
@@ -73,17 +64,12 @@ class GetSummaryStatRequest
         return $this;
     }
 
-    /**
-     * Gets EndDate.
-     */
     public function getEndDate(): string
     {
         return $this->EndDate;
     }
 
     /**
-     * Sets EndDate.
-     *
      * @return $this
      */
     public function setEndDate(string $value)
@@ -93,17 +79,12 @@ class GetSummaryStatRequest
         return $this;
     }
 
-    /**
-     * Gets Currency.
-     */
     public function getCurrency(): ?string
     {
         return $this->Currency;
     }
 
     /**
-     * Sets Currency.
-     *
      * @return $this
      */
     public function setCurrency(?string $value = null)
@@ -113,17 +94,12 @@ class GetSummaryStatRequest
         return $this;
     }
 
-    /**
-     * Gets IncludeVAT.
-     */
     public function getIncludeVAT(): ?string
     {
         return $this->IncludeVAT;
     }
 
     /**
-     * Sets IncludeVAT.
-     *
      * @return $this
      */
     public function setIncludeVAT(?string $value = null)
@@ -133,17 +109,12 @@ class GetSummaryStatRequest
         return $this;
     }
 
-    /**
-     * Gets IncludeDiscount.
-     */
     public function getIncludeDiscount(): ?string
     {
         return $this->IncludeDiscount;
     }
 
     /**
-     * Sets IncludeDiscount.
-     *
      * @return $this
      */
     public function setIncludeDiscount(?string $value = null)

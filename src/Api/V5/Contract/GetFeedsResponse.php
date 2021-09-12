@@ -9,20 +9,10 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class GetFeedsResponse extends GetResponseGeneral
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Feeds = null;
 
     /**
-     * Creates a new instance of GetFeedsResponse.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
-
-    /**
-     * Gets Feeds.
-     *
      * @return FeedGetItem[]|null
      */
     public function getFeeds(): ?array
@@ -31,8 +21,6 @@ class GetFeedsResponse extends GetResponseGeneral
     }
 
     /**
-     * Sets Feeds.
-     *
      * @param FeedGetItem[]|null $value
      *
      * @return $this

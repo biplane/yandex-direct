@@ -20,24 +20,19 @@ class CampaignBalanceInfo
     protected $Currency = null;
 
     /**
-     * Creates a new instance of CampaignBalanceInfo.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets CampaignID.
-     */
     public function getCampaignID(): int
     {
         return $this->CampaignID;
     }
 
     /**
-     * Sets CampaignID.
-     *
      * @return $this
      */
     public function setCampaignID(int $value)
@@ -47,17 +42,12 @@ class CampaignBalanceInfo
         return $this;
     }
 
-    /**
-     * Gets Sum.
-     */
     public function getSum(): float
     {
         return $this->Sum;
     }
 
     /**
-     * Sets Sum.
-     *
      * @return $this
      */
     public function setSum(float $value)
@@ -67,17 +57,12 @@ class CampaignBalanceInfo
         return $this;
     }
 
-    /**
-     * Gets Rest.
-     */
     public function getRest(): float
     {
         return $this->Rest;
     }
 
     /**
-     * Sets Rest.
-     *
      * @return $this
      */
     public function setRest(float $value)
@@ -87,17 +72,12 @@ class CampaignBalanceInfo
         return $this;
     }
 
-    /**
-     * Gets SumAvailableForTransfer.
-     */
     public function getSumAvailableForTransfer(): float
     {
         return $this->SumAvailableForTransfer;
     }
 
     /**
-     * Sets SumAvailableForTransfer.
-     *
      * @return $this
      */
     public function setSumAvailableForTransfer(float $value)
@@ -107,17 +87,12 @@ class CampaignBalanceInfo
         return $this;
     }
 
-    /**
-     * Gets Currency.
-     */
     public function getCurrency(): ?string
     {
         return $this->Currency;
     }
 
     /**
-     * Sets Currency.
-     *
      * @return $this
      */
     public function setCurrency(?string $value = null)

@@ -16,24 +16,19 @@ class Representative
     protected $Role = null;
 
     /**
-     * Creates a new instance of Representative.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Email.
-     */
     public function getEmail(): string
     {
         return $this->Email;
     }
 
     /**
-     * Sets Email.
-     *
      * @return $this
      */
     public function setEmail(string $value)
@@ -43,17 +38,12 @@ class Representative
         return $this;
     }
 
-    /**
-     * Gets Login.
-     */
     public function getLogin(): string
     {
         return $this->Login;
     }
 
     /**
-     * Sets Login.
-     *
      * @return $this
      */
     public function setLogin(string $value)
@@ -64,8 +54,6 @@ class Representative
     }
 
     /**
-     * Gets Role.
-     *
      * @see RepresentativeRoleEnum
      */
     public function getRole(): string
@@ -74,8 +62,6 @@ class Representative
     }
 
     /**
-     * Sets Role.
-     *
      * @see RepresentativeRoleEnum
      *
      * @return $this

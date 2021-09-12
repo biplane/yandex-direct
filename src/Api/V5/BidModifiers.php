@@ -5,6 +5,16 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5;
 
 use Biplane\YandexDirect\Api\ApiSoapClientV5;
+use Biplane\YandexDirect\Api\V5\Contract\AddBidModifiersRequest;
+use Biplane\YandexDirect\Api\V5\Contract\AddBidModifiersResponse;
+use Biplane\YandexDirect\Api\V5\Contract\DeleteBidModifiersRequest;
+use Biplane\YandexDirect\Api\V5\Contract\DeleteBidModifiersResponse;
+use Biplane\YandexDirect\Api\V5\Contract\GetBidModifiersRequest;
+use Biplane\YandexDirect\Api\V5\Contract\GetBidModifiersResponse;
+use Biplane\YandexDirect\Api\V5\Contract\SetBidModifiersRequest;
+use Biplane\YandexDirect\Api\V5\Contract\SetBidModifiersResponse;
+use Biplane\YandexDirect\Api\V5\Contract\ToggleBidModifiersRequest;
+use Biplane\YandexDirect\Api\V5\Contract\ToggleBidModifiersResponse;
 use Biplane\YandexDirect\Config;
 
 /**
@@ -14,6 +24,9 @@ class BidModifiers extends ApiSoapClientV5
 {
     public const ENDPOINT = 'https://api.direct.yandex.com/v5/bidmodifiers?wsdl';
 
+    /**
+     * @param array<string, mixed> $options
+     */
     public function __construct(Config $config, array $options)
     {
         $options['classmap'] = [
@@ -104,42 +117,27 @@ class BidModifiers extends ApiSoapClientV5
         parent::__construct(self::ENDPOINT, $config, $options);
     }
 
-    /**
-     * add.
-     */
-    public function add(Contract\AddBidModifiersRequest $parameters): Contract\AddBidModifiersResponse
+    public function add(AddBidModifiersRequest $parameters): AddBidModifiersResponse
     {
         return $this->__soapCall('add', [$parameters]);
     }
 
-    /**
-     * set.
-     */
-    public function set(Contract\SetBidModifiersRequest $parameters): Contract\SetBidModifiersResponse
+    public function set(SetBidModifiersRequest $parameters): SetBidModifiersResponse
     {
         return $this->__soapCall('set', [$parameters]);
     }
 
-    /**
-     * get.
-     */
-    public function get(Contract\GetBidModifiersRequest $parameters): Contract\GetBidModifiersResponse
+    public function get(GetBidModifiersRequest $parameters): GetBidModifiersResponse
     {
         return $this->__soapCall('get', [$parameters]);
     }
 
-    /**
-     * delete.
-     */
-    public function delete(Contract\DeleteBidModifiersRequest $parameters): Contract\DeleteBidModifiersResponse
+    public function delete(DeleteBidModifiersRequest $parameters): DeleteBidModifiersResponse
     {
         return $this->__soapCall('delete', [$parameters]);
     }
 
-    /**
-     * toggle.
-     */
-    public function toggle(Contract\ToggleBidModifiersRequest $parameters): Contract\ToggleBidModifiersResponse
+    public function toggle(ToggleBidModifiersRequest $parameters): ToggleBidModifiersResponse
     {
         return $this->__soapCall('toggle', [$parameters]);
     }

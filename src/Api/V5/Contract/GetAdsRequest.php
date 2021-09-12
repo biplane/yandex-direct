@@ -13,64 +13,51 @@ class GetAdsRequest extends GetRequestGeneral
 
     protected $FieldNames = [];
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $TextAdFieldNames = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $TextAdPriceExtensionFieldNames = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $MobileAppAdFieldNames = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $DynamicTextAdFieldNames = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $TextImageAdFieldNames = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $MobileAppImageAdFieldNames = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $TextAdBuilderAdFieldNames = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $MobileAppAdBuilderAdFieldNames = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $MobileAppCpcVideoAdBuilderAdFieldNames = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $CpmBannerAdBuilderAdFieldNames = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $CpcVideoAdBuilderAdFieldNames = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $CpmVideoAdBuilderAdFieldNames = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $SmartAdBuilderAdFieldNames = null;
 
-    /**
-     * Creates a new instance of GetAdsRequest.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
-
-    /**
-     * Gets SelectionCriteria.
-     */
     public function getSelectionCriteria(): AdsSelectionCriteria
     {
         return $this->SelectionCriteria;
     }
 
     /**
-     * Sets SelectionCriteria.
-     *
      * @return $this
      */
     public function setSelectionCriteria(AdsSelectionCriteria $value)
@@ -81,8 +68,6 @@ class GetAdsRequest extends GetRequestGeneral
     }
 
     /**
-     * Gets FieldNames.
-     *
      * @see AdFieldEnum
      *
      * @return string[]
@@ -93,8 +78,6 @@ class GetAdsRequest extends GetRequestGeneral
     }
 
     /**
-     * Sets FieldNames.
-     *
      * @see AdFieldEnum
      *
      * @param string[] $value
@@ -109,8 +92,6 @@ class GetAdsRequest extends GetRequestGeneral
     }
 
     /**
-     * Gets TextAdFieldNames.
-     *
      * @see TextAdFieldEnum
      *
      * @return string[]|null
@@ -121,8 +102,6 @@ class GetAdsRequest extends GetRequestGeneral
     }
 
     /**
-     * Sets TextAdFieldNames.
-     *
      * @see TextAdFieldEnum
      *
      * @param string[]|null $value
@@ -137,8 +116,6 @@ class GetAdsRequest extends GetRequestGeneral
     }
 
     /**
-     * Gets TextAdPriceExtensionFieldNames.
-     *
      * @see TextAdPriceExtensionFieldEnum
      *
      * @return string[]|null
@@ -149,8 +126,6 @@ class GetAdsRequest extends GetRequestGeneral
     }
 
     /**
-     * Sets TextAdPriceExtensionFieldNames.
-     *
      * @see TextAdPriceExtensionFieldEnum
      *
      * @param string[]|null $value
@@ -165,8 +140,6 @@ class GetAdsRequest extends GetRequestGeneral
     }
 
     /**
-     * Gets MobileAppAdFieldNames.
-     *
      * @see MobileAppAdFieldEnum
      *
      * @return string[]|null
@@ -177,8 +150,6 @@ class GetAdsRequest extends GetRequestGeneral
     }
 
     /**
-     * Sets MobileAppAdFieldNames.
-     *
      * @see MobileAppAdFieldEnum
      *
      * @param string[]|null $value
@@ -193,8 +164,6 @@ class GetAdsRequest extends GetRequestGeneral
     }
 
     /**
-     * Gets DynamicTextAdFieldNames.
-     *
      * @see DynamicTextAdFieldEnum
      *
      * @return string[]|null
@@ -205,8 +174,6 @@ class GetAdsRequest extends GetRequestGeneral
     }
 
     /**
-     * Sets DynamicTextAdFieldNames.
-     *
      * @see DynamicTextAdFieldEnum
      *
      * @param string[]|null $value
@@ -221,8 +188,6 @@ class GetAdsRequest extends GetRequestGeneral
     }
 
     /**
-     * Gets TextImageAdFieldNames.
-     *
      * @see TextImageAdFieldEnum
      *
      * @return string[]|null
@@ -233,8 +198,6 @@ class GetAdsRequest extends GetRequestGeneral
     }
 
     /**
-     * Sets TextImageAdFieldNames.
-     *
      * @see TextImageAdFieldEnum
      *
      * @param string[]|null $value
@@ -249,8 +212,6 @@ class GetAdsRequest extends GetRequestGeneral
     }
 
     /**
-     * Gets MobileAppImageAdFieldNames.
-     *
      * @see MobileAppImageAdFieldEnum
      *
      * @return string[]|null
@@ -261,8 +222,6 @@ class GetAdsRequest extends GetRequestGeneral
     }
 
     /**
-     * Sets MobileAppImageAdFieldNames.
-     *
      * @see MobileAppImageAdFieldEnum
      *
      * @param string[]|null $value
@@ -277,8 +236,6 @@ class GetAdsRequest extends GetRequestGeneral
     }
 
     /**
-     * Gets TextAdBuilderAdFieldNames.
-     *
      * @see TextAdBuilderAdFieldEnum
      *
      * @return string[]|null
@@ -289,8 +246,6 @@ class GetAdsRequest extends GetRequestGeneral
     }
 
     /**
-     * Sets TextAdBuilderAdFieldNames.
-     *
      * @see TextAdBuilderAdFieldEnum
      *
      * @param string[]|null $value
@@ -305,8 +260,6 @@ class GetAdsRequest extends GetRequestGeneral
     }
 
     /**
-     * Gets MobileAppAdBuilderAdFieldNames.
-     *
      * @see MobileAppAdBuilderAdFieldEnum
      *
      * @return string[]|null
@@ -317,8 +270,6 @@ class GetAdsRequest extends GetRequestGeneral
     }
 
     /**
-     * Sets MobileAppAdBuilderAdFieldNames.
-     *
      * @see MobileAppAdBuilderAdFieldEnum
      *
      * @param string[]|null $value
@@ -333,8 +284,6 @@ class GetAdsRequest extends GetRequestGeneral
     }
 
     /**
-     * Gets MobileAppCpcVideoAdBuilderAdFieldNames.
-     *
      * @see MobileAppCpcVideoAdBuilderAdFieldEnum
      *
      * @return string[]|null
@@ -345,8 +294,6 @@ class GetAdsRequest extends GetRequestGeneral
     }
 
     /**
-     * Sets MobileAppCpcVideoAdBuilderAdFieldNames.
-     *
      * @see MobileAppCpcVideoAdBuilderAdFieldEnum
      *
      * @param string[]|null $value
@@ -361,8 +308,6 @@ class GetAdsRequest extends GetRequestGeneral
     }
 
     /**
-     * Gets CpmBannerAdBuilderAdFieldNames.
-     *
      * @see CpmBannerAdBuilderAdFieldEnum
      *
      * @return string[]|null
@@ -373,8 +318,6 @@ class GetAdsRequest extends GetRequestGeneral
     }
 
     /**
-     * Sets CpmBannerAdBuilderAdFieldNames.
-     *
      * @see CpmBannerAdBuilderAdFieldEnum
      *
      * @param string[]|null $value
@@ -389,8 +332,6 @@ class GetAdsRequest extends GetRequestGeneral
     }
 
     /**
-     * Gets CpcVideoAdBuilderAdFieldNames.
-     *
      * @see CpcVideoAdBuilderAdFieldEnum
      *
      * @return string[]|null
@@ -401,8 +342,6 @@ class GetAdsRequest extends GetRequestGeneral
     }
 
     /**
-     * Sets CpcVideoAdBuilderAdFieldNames.
-     *
      * @see CpcVideoAdBuilderAdFieldEnum
      *
      * @param string[]|null $value
@@ -417,8 +356,6 @@ class GetAdsRequest extends GetRequestGeneral
     }
 
     /**
-     * Gets CpmVideoAdBuilderAdFieldNames.
-     *
      * @see CpmVideoAdBuilderAdFieldEnum
      *
      * @return string[]|null
@@ -429,8 +366,6 @@ class GetAdsRequest extends GetRequestGeneral
     }
 
     /**
-     * Sets CpmVideoAdBuilderAdFieldNames.
-     *
      * @see CpmVideoAdBuilderAdFieldEnum
      *
      * @param string[]|null $value
@@ -445,8 +380,6 @@ class GetAdsRequest extends GetRequestGeneral
     }
 
     /**
-     * Gets SmartAdBuilderAdFieldNames.
-     *
      * @see SmartAdBuilderAdFieldEnum
      *
      * @return string[]|null
@@ -457,8 +390,6 @@ class GetAdsRequest extends GetRequestGeneral
     }
 
     /**
-     * Sets SmartAdBuilderAdFieldNames.
-     *
      * @see SmartAdBuilderAdFieldEnum
      *
      * @param string[]|null $value

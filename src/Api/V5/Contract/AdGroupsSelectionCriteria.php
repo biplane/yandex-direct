@@ -9,44 +9,42 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AdGroupsSelectionCriteria
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $CampaignIds = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Ids = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Types = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Statuses = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $TagIds = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Tags = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AppIconStatuses = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $ServingStatuses = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $NegativeKeywordSharedSetIds = null;
 
     /**
-     * Creates a new instance of AdGroupsSelectionCriteria.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets CampaignIds.
-     *
      * @return int[]|null
      */
     public function getCampaignIds(): ?array
@@ -55,8 +53,6 @@ class AdGroupsSelectionCriteria
     }
 
     /**
-     * Sets CampaignIds.
-     *
      * @param int[]|null $value
      *
      * @return $this
@@ -69,8 +65,6 @@ class AdGroupsSelectionCriteria
     }
 
     /**
-     * Gets Ids.
-     *
      * @return int[]|null
      */
     public function getIds(): ?array
@@ -79,8 +73,6 @@ class AdGroupsSelectionCriteria
     }
 
     /**
-     * Sets Ids.
-     *
      * @param int[]|null $value
      *
      * @return $this
@@ -93,8 +85,6 @@ class AdGroupsSelectionCriteria
     }
 
     /**
-     * Gets Types.
-     *
      * @see AdGroupTypesEnum
      *
      * @return string[]|null
@@ -105,8 +95,6 @@ class AdGroupsSelectionCriteria
     }
 
     /**
-     * Sets Types.
-     *
      * @see AdGroupTypesEnum
      *
      * @param string[]|null $value
@@ -121,8 +109,6 @@ class AdGroupsSelectionCriteria
     }
 
     /**
-     * Gets Statuses.
-     *
      * @see AdGroupStatusSelectionEnum
      *
      * @return string[]|null
@@ -133,8 +119,6 @@ class AdGroupsSelectionCriteria
     }
 
     /**
-     * Sets Statuses.
-     *
      * @see AdGroupStatusSelectionEnum
      *
      * @param string[]|null $value
@@ -149,8 +133,6 @@ class AdGroupsSelectionCriteria
     }
 
     /**
-     * Gets TagIds.
-     *
      * @return int[]|null
      */
     public function getTagIds(): ?array
@@ -159,8 +141,6 @@ class AdGroupsSelectionCriteria
     }
 
     /**
-     * Sets TagIds.
-     *
      * @param int[]|null $value
      *
      * @return $this
@@ -173,8 +153,6 @@ class AdGroupsSelectionCriteria
     }
 
     /**
-     * Gets Tags.
-     *
      * @return string[]|null
      */
     public function getTags(): ?array
@@ -183,8 +161,6 @@ class AdGroupsSelectionCriteria
     }
 
     /**
-     * Sets Tags.
-     *
      * @param string[]|null $value
      *
      * @return $this
@@ -197,8 +173,6 @@ class AdGroupsSelectionCriteria
     }
 
     /**
-     * Gets AppIconStatuses.
-     *
      * @see AdGroupAppIconStatusSelectionEnum
      *
      * @return string[]|null
@@ -209,8 +183,6 @@ class AdGroupsSelectionCriteria
     }
 
     /**
-     * Sets AppIconStatuses.
-     *
      * @see AdGroupAppIconStatusSelectionEnum
      *
      * @param string[]|null $value
@@ -225,8 +197,6 @@ class AdGroupsSelectionCriteria
     }
 
     /**
-     * Gets ServingStatuses.
-     *
      * @see ServingStatusEnum
      *
      * @return string[]|null
@@ -237,8 +207,6 @@ class AdGroupsSelectionCriteria
     }
 
     /**
-     * Sets ServingStatuses.
-     *
      * @see ServingStatusEnum
      *
      * @param string[]|null $value
@@ -253,8 +221,6 @@ class AdGroupsSelectionCriteria
     }
 
     /**
-     * Gets NegativeKeywordSharedSetIds.
-     *
      * @return int[]|null
      */
     public function getNegativeKeywordSharedSetIds(): ?array
@@ -263,8 +229,6 @@ class AdGroupsSelectionCriteria
     }
 
     /**
-     * Sets NegativeKeywordSharedSetIds.
-     *
      * @param int[]|null $value
      *
      * @return $this

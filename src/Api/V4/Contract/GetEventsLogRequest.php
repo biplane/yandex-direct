@@ -28,24 +28,19 @@ class GetEventsLogRequest
     protected $Offset = null;
 
     /**
-     * Creates a new instance of GetEventsLogRequest.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets TimestampFrom.
-     */
     public function getTimestampFrom(): string
     {
         return $this->TimestampFrom;
     }
 
     /**
-     * Sets TimestampFrom.
-     *
      * @return $this
      */
     public function setTimestampFrom(string $value)
@@ -55,17 +50,12 @@ class GetEventsLogRequest
         return $this;
     }
 
-    /**
-     * Gets TimestampTo.
-     */
     public function getTimestampTo(): ?string
     {
         return $this->TimestampTo;
     }
 
     /**
-     * Sets TimestampTo.
-     *
      * @return $this
      */
     public function setTimestampTo(?string $value = null)
@@ -75,17 +65,12 @@ class GetEventsLogRequest
         return $this;
     }
 
-    /**
-     * Gets LastEventOnly.
-     */
     public function getLastEventOnly(): ?string
     {
         return $this->LastEventOnly;
     }
 
     /**
-     * Sets LastEventOnly.
-     *
      * @return $this
      */
     public function setLastEventOnly(?string $value = null)
@@ -95,17 +80,12 @@ class GetEventsLogRequest
         return $this;
     }
 
-    /**
-     * Gets WithTextDescription.
-     */
     public function getWithTextDescription(): ?string
     {
         return $this->WithTextDescription;
     }
 
     /**
-     * Sets WithTextDescription.
-     *
      * @return $this
      */
     public function setWithTextDescription(?string $value = null)
@@ -116,8 +96,6 @@ class GetEventsLogRequest
     }
 
     /**
-     * Gets Logins.
-     *
      * @return string[]|null
      */
     public function getLogins(): ?array
@@ -126,8 +104,6 @@ class GetEventsLogRequest
     }
 
     /**
-     * Sets Logins.
-     *
      * @param string[]|null $value
      *
      * @return $this
@@ -139,17 +115,12 @@ class GetEventsLogRequest
         return $this;
     }
 
-    /**
-     * Gets Filter.
-     */
     public function getFilter(): ?GetEventsLogFilter
     {
         return $this->Filter;
     }
 
     /**
-     * Sets Filter.
-     *
      * @return $this
      */
     public function setFilter(?GetEventsLogFilter $value = null)
@@ -159,17 +130,12 @@ class GetEventsLogRequest
         return $this;
     }
 
-    /**
-     * Gets Currency.
-     */
     public function getCurrency(): ?string
     {
         return $this->Currency;
     }
 
     /**
-     * Sets Currency.
-     *
      * @return $this
      */
     public function setCurrency(?string $value = null)
@@ -179,17 +145,12 @@ class GetEventsLogRequest
         return $this;
     }
 
-    /**
-     * Gets Limit.
-     */
     public function getLimit(): ?int
     {
         return $this->Limit;
     }
 
     /**
-     * Sets Limit.
-     *
      * @return $this
      */
     public function setLimit(?int $value = null)
@@ -199,17 +160,12 @@ class GetEventsLogRequest
         return $this;
     }
 
-    /**
-     * Gets Offset.
-     */
     public function getOffset(): ?int
     {
         return $this->Offset;
     }
 
     /**
-     * Sets Offset.
-     *
      * @return $this
      */
     public function setOffset(?int $value = null)

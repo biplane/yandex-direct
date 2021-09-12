@@ -14,24 +14,19 @@ class WordstatReportStatusInfo
     protected $StatusReport = null;
 
     /**
-     * Creates a new instance of WordstatReportStatusInfo.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets ReportID.
-     */
     public function getReportID(): int
     {
         return $this->ReportID;
     }
 
     /**
-     * Sets ReportID.
-     *
      * @return $this
      */
     public function setReportID(int $value)
@@ -41,17 +36,12 @@ class WordstatReportStatusInfo
         return $this;
     }
 
-    /**
-     * Gets StatusReport.
-     */
     public function getStatusReport(): string
     {
         return $this->StatusReport;
     }
 
     /**
-     * Sets StatusReport.
-     *
      * @return $this
      */
     public function setStatusReport(string $value)

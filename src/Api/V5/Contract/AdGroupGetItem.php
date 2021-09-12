@@ -9,61 +9,48 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AdGroupGetItem extends AdGroupBase
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Id = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Name = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $CampaignId = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Status = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Type = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Subtype = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $MobileAppAdGroup = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $DynamicTextAdGroup = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $DynamicTextFeedAdGroup = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $SmartAdGroup = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $ServingStatus = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $RestrictedRegionIds = null;
 
-    /**
-     * Creates a new instance of AdGroupGetItem.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
-
-    /**
-     * Gets Id.
-     */
     public function getId(): ?int
     {
         return $this->Id ?? null;
     }
 
     /**
-     * Sets Id.
-     *
      * @return $this
      */
     public function setId(?int $value = null)
@@ -73,17 +60,12 @@ class AdGroupGetItem extends AdGroupBase
         return $this;
     }
 
-    /**
-     * Gets Name.
-     */
     public function getName(): ?string
     {
         return $this->Name ?? null;
     }
 
     /**
-     * Sets Name.
-     *
      * @return $this
      */
     public function setName(?string $value = null)
@@ -93,17 +75,12 @@ class AdGroupGetItem extends AdGroupBase
         return $this;
     }
 
-    /**
-     * Gets CampaignId.
-     */
     public function getCampaignId(): ?int
     {
         return $this->CampaignId ?? null;
     }
 
     /**
-     * Sets CampaignId.
-     *
      * @return $this
      */
     public function setCampaignId(?int $value = null)
@@ -114,8 +91,6 @@ class AdGroupGetItem extends AdGroupBase
     }
 
     /**
-     * Gets Status.
-     *
      * @see StatusEnum
      */
     public function getStatus(): ?string
@@ -124,8 +99,6 @@ class AdGroupGetItem extends AdGroupBase
     }
 
     /**
-     * Sets Status.
-     *
      * @see StatusEnum
      *
      * @return $this
@@ -138,8 +111,6 @@ class AdGroupGetItem extends AdGroupBase
     }
 
     /**
-     * Gets Type.
-     *
      * @see AdGroupTypesEnum
      */
     public function getType(): ?string
@@ -148,8 +119,6 @@ class AdGroupGetItem extends AdGroupBase
     }
 
     /**
-     * Sets Type.
-     *
      * @see AdGroupTypesEnum
      *
      * @return $this
@@ -162,8 +131,6 @@ class AdGroupGetItem extends AdGroupBase
     }
 
     /**
-     * Gets Subtype.
-     *
      * @see AdGroupSubtypeEnum
      */
     public function getSubtype(): ?string
@@ -172,8 +139,6 @@ class AdGroupGetItem extends AdGroupBase
     }
 
     /**
-     * Sets Subtype.
-     *
      * @see AdGroupSubtypeEnum
      *
      * @return $this
@@ -185,17 +150,12 @@ class AdGroupGetItem extends AdGroupBase
         return $this;
     }
 
-    /**
-     * Gets MobileAppAdGroup.
-     */
     public function getMobileAppAdGroup(): ?MobileAppAdGroupGet
     {
         return $this->MobileAppAdGroup ?? null;
     }
 
     /**
-     * Sets MobileAppAdGroup.
-     *
      * @return $this
      */
     public function setMobileAppAdGroup(?MobileAppAdGroupGet $value = null)
@@ -205,17 +165,12 @@ class AdGroupGetItem extends AdGroupBase
         return $this;
     }
 
-    /**
-     * Gets DynamicTextAdGroup.
-     */
     public function getDynamicTextAdGroup(): ?DynamicTextAdGroupGet
     {
         return $this->DynamicTextAdGroup ?? null;
     }
 
     /**
-     * Sets DynamicTextAdGroup.
-     *
      * @return $this
      */
     public function setDynamicTextAdGroup(?DynamicTextAdGroupGet $value = null)
@@ -225,17 +180,12 @@ class AdGroupGetItem extends AdGroupBase
         return $this;
     }
 
-    /**
-     * Gets DynamicTextFeedAdGroup.
-     */
     public function getDynamicTextFeedAdGroup(): ?DynamicTextFeedAdGroupGet
     {
         return $this->DynamicTextFeedAdGroup ?? null;
     }
 
     /**
-     * Sets DynamicTextFeedAdGroup.
-     *
      * @return $this
      */
     public function setDynamicTextFeedAdGroup(?DynamicTextFeedAdGroupGet $value = null)
@@ -245,17 +195,12 @@ class AdGroupGetItem extends AdGroupBase
         return $this;
     }
 
-    /**
-     * Gets SmartAdGroup.
-     */
     public function getSmartAdGroup(): ?SmartAdGroupGet
     {
         return $this->SmartAdGroup ?? null;
     }
 
     /**
-     * Sets SmartAdGroup.
-     *
      * @return $this
      */
     public function setSmartAdGroup(?SmartAdGroupGet $value = null)
@@ -266,8 +211,6 @@ class AdGroupGetItem extends AdGroupBase
     }
 
     /**
-     * Gets ServingStatus.
-     *
      * @see ServingStatusEnum
      */
     public function getServingStatus(): ?string
@@ -276,8 +219,6 @@ class AdGroupGetItem extends AdGroupBase
     }
 
     /**
-     * Sets ServingStatus.
-     *
      * @see ServingStatusEnum
      *
      * @return $this
@@ -290,8 +231,6 @@ class AdGroupGetItem extends AdGroupBase
     }
 
     /**
-     * Gets RestrictedRegionIds.
-     *
      * @return float[]|null
      */
     public function getRestrictedRegionIds(): ?array
@@ -300,8 +239,6 @@ class AdGroupGetItem extends AdGroupBase
     }
 
     /**
-     * Sets RestrictedRegionIds.
-     *
      * @param float[]|null $value
      *
      * @return $this

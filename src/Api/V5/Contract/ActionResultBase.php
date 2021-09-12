@@ -9,23 +9,21 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class ActionResultBase
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Warnings = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Errors = null;
 
     /**
-     * Creates a new instance of ActionResultBase.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Warnings.
-     *
      * @return ExceptionNotification[]|null
      */
     public function getWarnings(): ?array
@@ -34,8 +32,6 @@ class ActionResultBase
     }
 
     /**
-     * Sets Warnings.
-     *
      * @param ExceptionNotification[]|null $value
      *
      * @return $this
@@ -48,8 +44,6 @@ class ActionResultBase
     }
 
     /**
-     * Gets Errors.
-     *
      * @return ExceptionNotification[]|null
      */
     public function getErrors(): ?array
@@ -58,8 +52,6 @@ class ActionResultBase
     }
 
     /**
-     * Sets Errors.
-     *
      * @param ExceptionNotification[]|null $value
      *
      * @return $this

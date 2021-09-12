@@ -9,20 +9,18 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class ResumeAdsResponse
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $ResumeResults = null;
 
     /**
-     * Creates a new instance of ResumeAdsResponse.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets ResumeResults.
-     *
      * @return ActionResult[]|null
      */
     public function getResumeResults(): ?array
@@ -31,8 +29,6 @@ class ResumeAdsResponse
     }
 
     /**
-     * Sets ResumeResults.
-     *
      * @param ActionResult[]|null $value
      *
      * @return $this

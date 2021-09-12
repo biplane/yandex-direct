@@ -9,37 +9,32 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class RetargetingAdjustmentGet
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $RetargetingConditionId = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $BidModifier = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Accessible = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Enabled = null;
 
     /**
-     * Creates a new instance of RetargetingAdjustmentGet.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets RetargetingConditionId.
-     */
     public function getRetargetingConditionId(): ?int
     {
         return $this->RetargetingConditionId ?? null;
     }
 
     /**
-     * Sets RetargetingConditionId.
-     *
      * @return $this
      */
     public function setRetargetingConditionId(?int $value = null)
@@ -49,17 +44,12 @@ class RetargetingAdjustmentGet
         return $this;
     }
 
-    /**
-     * Gets BidModifier.
-     */
     public function getBidModifier(): ?int
     {
         return $this->BidModifier ?? null;
     }
 
     /**
-     * Sets BidModifier.
-     *
      * @return $this
      */
     public function setBidModifier(?int $value = null)
@@ -70,8 +60,6 @@ class RetargetingAdjustmentGet
     }
 
     /**
-     * Gets Accessible.
-     *
      * @see YesNoEnum
      */
     public function getAccessible(): ?string
@@ -80,8 +68,6 @@ class RetargetingAdjustmentGet
     }
 
     /**
-     * Sets Accessible.
-     *
      * @see YesNoEnum
      *
      * @return $this
@@ -94,8 +80,6 @@ class RetargetingAdjustmentGet
     }
 
     /**
-     * Gets Enabled.
-     *
      * @see YesNoEnum
      */
     public function getEnabled(): ?string
@@ -104,8 +88,6 @@ class RetargetingAdjustmentGet
     }
 
     /**
-     * Sets Enabled.
-     *
      * @see YesNoEnum
      *
      * @return $this

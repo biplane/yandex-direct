@@ -16,24 +16,19 @@ class PayCampElement
     protected $Currency = null;
 
     /**
-     * Creates a new instance of PayCampElement.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets CampaignID.
-     */
     public function getCampaignID(): int
     {
         return $this->CampaignID;
     }
 
     /**
-     * Sets CampaignID.
-     *
      * @return $this
      */
     public function setCampaignID(int $value)
@@ -43,17 +38,12 @@ class PayCampElement
         return $this;
     }
 
-    /**
-     * Gets Sum.
-     */
     public function getSum(): float
     {
         return $this->Sum;
     }
 
     /**
-     * Sets Sum.
-     *
      * @return $this
      */
     public function setSum(float $value)
@@ -63,17 +53,12 @@ class PayCampElement
         return $this;
     }
 
-    /**
-     * Gets Currency.
-     */
     public function getCurrency(): ?string
     {
         return $this->Currency;
     }
 
     /**
-     * Sets Currency.
-     *
      * @return $this
      */
     public function setCurrency(?string $value = null)

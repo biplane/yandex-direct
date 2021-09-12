@@ -15,25 +15,12 @@ class StrategyCpAverageCpv extends StrategyAverageCpvBase
 
     protected $AutoContinue = null;
 
-    /**
-     * Creates a new instance of StrategyCpAverageCpv.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
-
-    /**
-     * Gets StartDate.
-     */
     public function getStartDate(): string
     {
         return $this->StartDate;
     }
 
     /**
-     * Sets StartDate.
-     *
      * @return $this
      */
     public function setStartDate(string $value)
@@ -43,17 +30,12 @@ class StrategyCpAverageCpv extends StrategyAverageCpvBase
         return $this;
     }
 
-    /**
-     * Gets EndDate.
-     */
     public function getEndDate(): string
     {
         return $this->EndDate;
     }
 
     /**
-     * Sets EndDate.
-     *
      * @return $this
      */
     public function setEndDate(string $value)
@@ -64,8 +46,6 @@ class StrategyCpAverageCpv extends StrategyAverageCpvBase
     }
 
     /**
-     * Gets AutoContinue.
-     *
      * @see YesNoEnum
      */
     public function getAutoContinue(): string
@@ -74,8 +54,6 @@ class StrategyCpAverageCpv extends StrategyAverageCpvBase
     }
 
     /**
-     * Sets AutoContinue.
-     *
      * @see YesNoEnum
      *
      * @return $this

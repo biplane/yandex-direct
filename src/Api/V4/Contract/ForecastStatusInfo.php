@@ -14,24 +14,19 @@ class ForecastStatusInfo
     protected $StatusForecast = null;
 
     /**
-     * Creates a new instance of ForecastStatusInfo.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets ForecastID.
-     */
     public function getForecastID(): int
     {
         return $this->ForecastID;
     }
 
     /**
-     * Sets ForecastID.
-     *
      * @return $this
      */
     public function setForecastID(int $value)
@@ -41,17 +36,12 @@ class ForecastStatusInfo
         return $this;
     }
 
-    /**
-     * Gets StatusForecast.
-     */
     public function getStatusForecast(): string
     {
         return $this->StatusForecast;
     }
 
     /**
-     * Sets StatusForecast.
-     *
      * @return $this
      */
     public function setStatusForecast(string $value)

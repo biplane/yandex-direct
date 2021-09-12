@@ -14,24 +14,19 @@ class TagInfo
     protected $Tag = null;
 
     /**
-     * Creates a new instance of TagInfo.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets TagID.
-     */
     public function getTagID(): int
     {
         return $this->TagID;
     }
 
     /**
-     * Sets TagID.
-     *
      * @return $this
      */
     public function setTagID(int $value)
@@ -41,17 +36,12 @@ class TagInfo
         return $this;
     }
 
-    /**
-     * Gets Tag.
-     */
     public function getTag(): string
     {
         return $this->Tag;
     }
 
     /**
-     * Sets Tag.
-     *
      * @return $this
      */
     public function setTag(string $value)

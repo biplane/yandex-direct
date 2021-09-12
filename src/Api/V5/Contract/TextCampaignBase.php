@@ -9,26 +9,24 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class TextCampaignBase
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $CounterIds = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $RelevantKeywords = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AttributionModel = null;
 
     /**
-     * Creates a new instance of TextCampaignBase.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets CounterIds.
-     *
      * @return int[]|null
      */
     public function getCounterIds(): ?array
@@ -37,8 +35,6 @@ class TextCampaignBase
     }
 
     /**
-     * Sets CounterIds.
-     *
      * @param int[]|null $value
      *
      * @return $this
@@ -50,17 +46,12 @@ class TextCampaignBase
         return $this;
     }
 
-    /**
-     * Gets RelevantKeywords.
-     */
     public function getRelevantKeywords(): ?RelevantKeywordsSetting
     {
         return $this->RelevantKeywords ?? null;
     }
 
     /**
-     * Sets RelevantKeywords.
-     *
      * @return $this
      */
     public function setRelevantKeywords(?RelevantKeywordsSetting $value = null)
@@ -71,8 +62,6 @@ class TextCampaignBase
     }
 
     /**
-     * Gets AttributionModel.
-     *
      * @see AttributionModelEnum
      */
     public function getAttributionModel(): ?string
@@ -81,8 +70,6 @@ class TextCampaignBase
     }
 
     /**
-     * Sets AttributionModel.
-     *
      * @see AttributionModelEnum
      *
      * @return $this

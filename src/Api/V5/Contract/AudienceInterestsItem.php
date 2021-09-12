@@ -22,24 +22,19 @@ class AudienceInterestsItem
     protected $InterestType = null;
 
     /**
-     * Creates a new instance of AudienceInterestsItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets InterestKey.
-     */
     public function getInterestKey(): int
     {
         return $this->InterestKey;
     }
 
     /**
-     * Sets InterestKey.
-     *
      * @return $this
      */
     public function setInterestKey(int $value)
@@ -49,17 +44,12 @@ class AudienceInterestsItem
         return $this;
     }
 
-    /**
-     * Gets Id.
-     */
     public function getId(): int
     {
         return $this->Id;
     }
 
     /**
-     * Sets Id.
-     *
      * @return $this
      */
     public function setId(int $value)
@@ -69,17 +59,12 @@ class AudienceInterestsItem
         return $this;
     }
 
-    /**
-     * Gets ParentId.
-     */
     public function getParentId(): int
     {
         return $this->ParentId;
     }
 
     /**
-     * Sets ParentId.
-     *
      * @return $this
      */
     public function setParentId(int $value)
@@ -89,17 +74,12 @@ class AudienceInterestsItem
         return $this;
     }
 
-    /**
-     * Gets Name.
-     */
     public function getName(): string
     {
         return $this->Name;
     }
 
     /**
-     * Sets Name.
-     *
      * @return $this
      */
     public function setName(string $value)
@@ -109,17 +89,12 @@ class AudienceInterestsItem
         return $this;
     }
 
-    /**
-     * Gets Description.
-     */
     public function getDescription(): string
     {
         return $this->Description;
     }
 
     /**
-     * Sets Description.
-     *
      * @return $this
      */
     public function setDescription(string $value)
@@ -130,8 +105,6 @@ class AudienceInterestsItem
     }
 
     /**
-     * Gets InterestType.
-     *
      * @see InterestTypeEnum
      */
     public function getInterestType(): string
@@ -140,8 +113,6 @@ class AudienceInterestsItem
     }
 
     /**
-     * Sets InterestType.
-     *
      * @see InterestTypeEnum
      *
      * @return $this

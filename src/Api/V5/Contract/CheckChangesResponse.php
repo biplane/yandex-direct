@@ -9,37 +9,32 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class CheckChangesResponse
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Modified = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $NotFound = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Unprocessed = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Timestamp = null;
 
     /**
-     * Creates a new instance of CheckChangesResponse.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Modified.
-     */
     public function getModified(): ?CheckResponseModified
     {
         return $this->Modified ?? null;
     }
 
     /**
-     * Sets Modified.
-     *
      * @return $this
      */
     public function setModified(?CheckResponseModified $value = null)
@@ -49,17 +44,12 @@ class CheckChangesResponse
         return $this;
     }
 
-    /**
-     * Gets NotFound.
-     */
     public function getNotFound(): ?CheckResponseIds
     {
         return $this->NotFound ?? null;
     }
 
     /**
-     * Sets NotFound.
-     *
      * @return $this
      */
     public function setNotFound(?CheckResponseIds $value = null)
@@ -69,17 +59,12 @@ class CheckChangesResponse
         return $this;
     }
 
-    /**
-     * Gets Unprocessed.
-     */
     public function getUnprocessed(): ?CheckResponseIds
     {
         return $this->Unprocessed ?? null;
     }
 
     /**
-     * Sets Unprocessed.
-     *
      * @return $this
      */
     public function setUnprocessed(?CheckResponseIds $value = null)
@@ -89,17 +74,12 @@ class CheckChangesResponse
         return $this;
     }
 
-    /**
-     * Gets Timestamp.
-     */
     public function getTimestamp(): ?string
     {
         return $this->Timestamp ?? null;
     }
 
     /**
-     * Sets Timestamp.
-     *
      * @return $this
      */
     public function setTimestamp(?string $value = null)

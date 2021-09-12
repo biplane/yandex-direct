@@ -16,24 +16,19 @@ class Warning
     protected $Description = null;
 
     /**
-     * Creates a new instance of Warning.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets WarningCode.
-     */
     public function getWarningCode(): int
     {
         return $this->WarningCode;
     }
 
     /**
-     * Sets WarningCode.
-     *
      * @return $this
      */
     public function setWarningCode(int $value)
@@ -43,17 +38,12 @@ class Warning
         return $this;
     }
 
-    /**
-     * Gets WarningString.
-     */
     public function getWarningString(): string
     {
         return $this->WarningString;
     }
 
     /**
-     * Sets WarningString.
-     *
      * @return $this
      */
     public function setWarningString(string $value)
@@ -63,17 +53,12 @@ class Warning
         return $this;
     }
 
-    /**
-     * Gets Description.
-     */
     public function getDescription(): ?string
     {
         return $this->Description;
     }
 
     /**
-     * Sets Description.
-     *
      * @return $this
      */
     public function setDescription(?string $value = null)

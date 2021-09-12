@@ -11,28 +11,23 @@ class StrategyAverageCpcAdd
 {
     protected $AverageCpc = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $WeeklySpendLimit = null;
 
     /**
-     * Creates a new instance of StrategyAverageCpcAdd.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets AverageCpc.
-     */
     public function getAverageCpc(): int
     {
         return $this->AverageCpc;
     }
 
     /**
-     * Sets AverageCpc.
-     *
      * @return $this
      */
     public function setAverageCpc(int $value)
@@ -42,17 +37,12 @@ class StrategyAverageCpcAdd
         return $this;
     }
 
-    /**
-     * Gets WeeklySpendLimit.
-     */
     public function getWeeklySpendLimit(): ?int
     {
         return $this->WeeklySpendLimit ?? null;
     }
 
     /**
-     * Sets WeeklySpendLimit.
-     *
      * @return $this
      */
     public function setWeeklySpendLimit(?int $value = null)

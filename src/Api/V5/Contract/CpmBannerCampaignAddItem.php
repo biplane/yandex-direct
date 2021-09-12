@@ -11,34 +11,29 @@ class CpmBannerCampaignAddItem
 {
     protected $BiddingStrategy = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Settings = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $CounterIds = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $FrequencyCap = null;
 
     /**
-     * Creates a new instance of CpmBannerCampaignAddItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets BiddingStrategy.
-     */
     public function getBiddingStrategy(): CpmBannerCampaignStrategyAdd
     {
         return $this->BiddingStrategy;
     }
 
     /**
-     * Sets BiddingStrategy.
-     *
      * @return $this
      */
     public function setBiddingStrategy(CpmBannerCampaignStrategyAdd $value)
@@ -49,8 +44,6 @@ class CpmBannerCampaignAddItem
     }
 
     /**
-     * Gets Settings.
-     *
      * @return CpmBannerCampaignSetting[]|null
      */
     public function getSettings(): ?array
@@ -59,8 +52,6 @@ class CpmBannerCampaignAddItem
     }
 
     /**
-     * Sets Settings.
-     *
      * @param CpmBannerCampaignSetting[]|null $value
      *
      * @return $this
@@ -73,8 +64,6 @@ class CpmBannerCampaignAddItem
     }
 
     /**
-     * Gets CounterIds.
-     *
      * @return int[]|null
      */
     public function getCounterIds(): ?array
@@ -83,8 +72,6 @@ class CpmBannerCampaignAddItem
     }
 
     /**
-     * Sets CounterIds.
-     *
      * @param int[]|null $value
      *
      * @return $this
@@ -96,17 +83,12 @@ class CpmBannerCampaignAddItem
         return $this;
     }
 
-    /**
-     * Gets FrequencyCap.
-     */
     public function getFrequencyCap(): ?FrequencyCapSetting
     {
         return $this->FrequencyCap ?? null;
     }
 
     /**
-     * Sets FrequencyCap.
-     *
      * @return $this
      */
     public function setFrequencyCap(?FrequencyCapSetting $value = null)

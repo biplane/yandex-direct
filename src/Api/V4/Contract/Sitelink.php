@@ -14,24 +14,19 @@ class Sitelink
     protected $Href = null;
 
     /**
-     * Creates a new instance of Sitelink.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Title.
-     */
     public function getTitle(): string
     {
         return $this->Title;
     }
 
     /**
-     * Sets Title.
-     *
      * @return $this
      */
     public function setTitle(string $value)
@@ -41,17 +36,12 @@ class Sitelink
         return $this;
     }
 
-    /**
-     * Gets Href.
-     */
     public function getHref(): string
     {
         return $this->Href;
     }
 
     /**
-     * Sets Href.
-     *
      * @return $this
      */
     public function setHref(string $value)

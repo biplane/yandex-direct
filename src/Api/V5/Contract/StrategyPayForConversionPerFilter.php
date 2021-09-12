@@ -9,34 +9,29 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class StrategyPayForConversionPerFilter
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Cpa = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $GoalId = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $WeeklySpendLimit = null;
 
     /**
-     * Creates a new instance of StrategyPayForConversionPerFilter.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Cpa.
-     */
     public function getCpa(): ?int
     {
         return $this->Cpa ?? null;
     }
 
     /**
-     * Sets Cpa.
-     *
      * @return $this
      */
     public function setCpa(?int $value = null)
@@ -46,17 +41,12 @@ class StrategyPayForConversionPerFilter
         return $this;
     }
 
-    /**
-     * Gets GoalId.
-     */
     public function getGoalId(): ?int
     {
         return $this->GoalId ?? null;
     }
 
     /**
-     * Sets GoalId.
-     *
      * @return $this
      */
     public function setGoalId(?int $value = null)
@@ -66,17 +56,12 @@ class StrategyPayForConversionPerFilter
         return $this;
     }
 
-    /**
-     * Gets WeeklySpendLimit.
-     */
     public function getWeeklySpendLimit(): ?int
     {
         return $this->WeeklySpendLimit ?? null;
     }
 
     /**
-     * Sets WeeklySpendLimit.
-     *
      * @return $this
      */
     public function setWeeklySpendLimit(?int $value = null)

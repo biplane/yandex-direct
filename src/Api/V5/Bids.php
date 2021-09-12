@@ -5,6 +5,12 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5;
 
 use Biplane\YandexDirect\Api\ApiSoapClientV5;
+use Biplane\YandexDirect\Api\V5\Contract\GetBidsRequest;
+use Biplane\YandexDirect\Api\V5\Contract\GetBidsResponse;
+use Biplane\YandexDirect\Api\V5\Contract\SetAutoBidsRequest;
+use Biplane\YandexDirect\Api\V5\Contract\SetAutoBidsResponse;
+use Biplane\YandexDirect\Api\V5\Contract\SetBidsRequest;
+use Biplane\YandexDirect\Api\V5\Contract\SetBidsResponse;
 use Biplane\YandexDirect\Config;
 
 /**
@@ -14,6 +20,9 @@ class Bids extends ApiSoapClientV5
 {
     public const ENDPOINT = 'https://api.direct.yandex.com/v5/bids?wsdl';
 
+    /**
+     * @param array<string, mixed> $options
+     */
     public function __construct(Config $config, array $options)
     {
         $options['classmap'] = [
@@ -78,26 +87,17 @@ class Bids extends ApiSoapClientV5
         parent::__construct(self::ENDPOINT, $config, $options);
     }
 
-    /**
-     * get.
-     */
-    public function get(Contract\GetBidsRequest $parameters): Contract\GetBidsResponse
+    public function get(GetBidsRequest $parameters): GetBidsResponse
     {
         return $this->__soapCall('get', [$parameters]);
     }
 
-    /**
-     * set.
-     */
-    public function set(Contract\SetBidsRequest $parameters): Contract\SetBidsResponse
+    public function set(SetBidsRequest $parameters): SetBidsResponse
     {
         return $this->__soapCall('set', [$parameters]);
     }
 
-    /**
-     * setAuto.
-     */
-    public function setAuto(Contract\SetAutoBidsRequest $parameters): Contract\SetAutoBidsResponse
+    public function setAuto(SetAutoBidsRequest $parameters): SetAutoBidsResponse
     {
         return $this->__soapCall('setAuto', [$parameters]);
     }

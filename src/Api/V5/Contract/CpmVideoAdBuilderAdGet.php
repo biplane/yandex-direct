@@ -9,37 +9,24 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class CpmVideoAdBuilderAdGet extends AdBuilderAdGetBase
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Href = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $TrackingPixels = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $TurboPageId = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $TurboPageModeration = null;
 
-    /**
-     * Creates a new instance of CpmVideoAdBuilderAdGet.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
-
-    /**
-     * Gets Href.
-     */
     public function getHref(): ?string
     {
         return $this->Href ?? null;
     }
 
     /**
-     * Sets Href.
-     *
      * @return $this
      */
     public function setHref(?string $value = null)
@@ -49,17 +36,12 @@ class CpmVideoAdBuilderAdGet extends AdBuilderAdGetBase
         return $this;
     }
 
-    /**
-     * Gets TrackingPixels.
-     */
     public function getTrackingPixels(): ?TrackingPixelGetArray
     {
         return $this->TrackingPixels ?? null;
     }
 
     /**
-     * Sets TrackingPixels.
-     *
      * @return $this
      */
     public function setTrackingPixels(?TrackingPixelGetArray $value = null)
@@ -69,17 +51,12 @@ class CpmVideoAdBuilderAdGet extends AdBuilderAdGetBase
         return $this;
     }
 
-    /**
-     * Gets TurboPageId.
-     */
     public function getTurboPageId(): ?int
     {
         return $this->TurboPageId ?? null;
     }
 
     /**
-     * Sets TurboPageId.
-     *
      * @return $this
      */
     public function setTurboPageId(?int $value = null)
@@ -89,17 +66,12 @@ class CpmVideoAdBuilderAdGet extends AdBuilderAdGetBase
         return $this;
     }
 
-    /**
-     * Gets TurboPageModeration.
-     */
     public function getTurboPageModeration(): ?ExtensionModeration
     {
         return $this->TurboPageModeration ?? null;
     }
 
     /**
-     * Sets TurboPageModeration.
-     *
      * @return $this
      */
     public function setTurboPageModeration(?ExtensionModeration $value = null)

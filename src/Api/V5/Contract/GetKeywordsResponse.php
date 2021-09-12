@@ -9,20 +9,10 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class GetKeywordsResponse extends GetResponseGeneral
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Keywords = null;
 
     /**
-     * Creates a new instance of GetKeywordsResponse.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
-
-    /**
-     * Gets Keywords.
-     *
      * @return KeywordGetItem[]|null
      */
     public function getKeywords(): ?array
@@ -31,8 +21,6 @@ class GetKeywordsResponse extends GetResponseGeneral
     }
 
     /**
-     * Sets Keywords.
-     *
      * @param KeywordGetItem[]|null $value
      *
      * @return $this

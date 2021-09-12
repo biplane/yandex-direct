@@ -9,20 +9,10 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class GetAdExtensionsResponse extends GetResponseGeneral
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $AdExtensions = null;
 
     /**
-     * Creates a new instance of GetAdExtensionsResponse.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
-
-    /**
-     * Gets AdExtensions.
-     *
      * @return AdExtensionGetItem[]|null
      */
     public function getAdExtensions(): ?array
@@ -31,8 +21,6 @@ class GetAdExtensionsResponse extends GetResponseGeneral
     }
 
     /**
-     * Sets AdExtensions.
-     *
      * @param AdExtensionGetItem[]|null $value
      *
      * @return $this

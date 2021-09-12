@@ -14,16 +14,14 @@ class TransferMoneyInfo
     protected $ToCampaigns = [];
 
     /**
-     * Creates a new instance of TransferMoneyInfo.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets FromCampaigns.
-     *
      * @return PayCampElement[]
      */
     public function getFromCampaigns(): array
@@ -32,8 +30,6 @@ class TransferMoneyInfo
     }
 
     /**
-     * Sets FromCampaigns.
-     *
      * @param PayCampElement[] $value
      *
      * @return $this
@@ -46,8 +42,6 @@ class TransferMoneyInfo
     }
 
     /**
-     * Gets ToCampaigns.
-     *
      * @return PayCampElement[]
      */
     public function getToCampaigns(): array
@@ -56,8 +50,6 @@ class TransferMoneyInfo
     }
 
     /**
-     * Sets ToCampaigns.
-     *
      * @param PayCampElement[] $value
      *
      * @return $this

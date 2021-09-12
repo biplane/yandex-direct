@@ -39,6 +39,11 @@
     <exclude-pattern>src/Api/V5/Contract</exclude-pattern>
   </rule>
 
+  <rule ref="Squiz.Commenting.FunctionComment.WrongStyle">
+    <exclude-pattern>src/Api/V4/Contract</exclude-pattern>
+    <exclude-pattern>src/Api/V5/Contract</exclude-pattern>
+  </rule>
+
   <rule ref="Squiz.NamingConventions.ValidVariableName.MemberNotCamelCaps">
     <exclude-pattern>src/Api/V4/Contract</exclude-pattern>
     <exclude-pattern>src/Api/V5/Contract</exclude-pattern>

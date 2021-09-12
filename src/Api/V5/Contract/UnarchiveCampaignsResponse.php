@@ -9,20 +9,18 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class UnarchiveCampaignsResponse
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $UnarchiveResults = null;
 
     /**
-     * Creates a new instance of UnarchiveCampaignsResponse.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets UnarchiveResults.
-     *
      * @return ActionResult[]|null
      */
     public function getUnarchiveResults(): ?array
@@ -31,8 +29,6 @@ class UnarchiveCampaignsResponse
     }
 
     /**
-     * Sets UnarchiveResults.
-     *
      * @param ActionResult[]|null $value
      *
      * @return $this

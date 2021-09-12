@@ -9,43 +9,38 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class SmartAdTargetSetBidsItem
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $CampaignId = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AdGroupId = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Id = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AverageCpc = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AverageCpa = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $StrategyPriority = null;
 
     /**
-     * Creates a new instance of SmartAdTargetSetBidsItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets CampaignId.
-     */
     public function getCampaignId(): ?int
     {
         return $this->CampaignId ?? null;
     }
 
     /**
-     * Sets CampaignId.
-     *
      * @return $this
      */
     public function setCampaignId(?int $value = null)
@@ -55,17 +50,12 @@ class SmartAdTargetSetBidsItem
         return $this;
     }
 
-    /**
-     * Gets AdGroupId.
-     */
     public function getAdGroupId(): ?int
     {
         return $this->AdGroupId ?? null;
     }
 
     /**
-     * Sets AdGroupId.
-     *
      * @return $this
      */
     public function setAdGroupId(?int $value = null)
@@ -75,17 +65,12 @@ class SmartAdTargetSetBidsItem
         return $this;
     }
 
-    /**
-     * Gets Id.
-     */
     public function getId(): ?int
     {
         return $this->Id ?? null;
     }
 
     /**
-     * Sets Id.
-     *
      * @return $this
      */
     public function setId(?int $value = null)
@@ -95,17 +80,12 @@ class SmartAdTargetSetBidsItem
         return $this;
     }
 
-    /**
-     * Gets AverageCpc.
-     */
     public function getAverageCpc(): ?int
     {
         return $this->AverageCpc ?? null;
     }
 
     /**
-     * Sets AverageCpc.
-     *
      * @return $this
      */
     public function setAverageCpc(?int $value = null)
@@ -115,17 +95,12 @@ class SmartAdTargetSetBidsItem
         return $this;
     }
 
-    /**
-     * Gets AverageCpa.
-     */
     public function getAverageCpa(): ?int
     {
         return $this->AverageCpa ?? null;
     }
 
     /**
-     * Sets AverageCpa.
-     *
      * @return $this
      */
     public function setAverageCpa(?int $value = null)
@@ -136,8 +111,6 @@ class SmartAdTargetSetBidsItem
     }
 
     /**
-     * Gets StrategyPriority.
-     *
      * @see PriorityEnum
      */
     public function getStrategyPriority(): ?string
@@ -146,8 +119,6 @@ class SmartAdTargetSetBidsItem
     }
 
     /**
-     * Sets StrategyPriority.
-     *
      * @see PriorityEnum
      *
      * @return $this

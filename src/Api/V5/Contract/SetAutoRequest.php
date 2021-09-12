@@ -12,16 +12,14 @@ class SetAutoRequest
     protected $KeywordBids = [];
 
     /**
-     * Creates a new instance of SetAutoRequest.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets KeywordBids.
-     *
      * @return KeywordBidSetAutoItem[]
      */
     public function getKeywordBids(): array
@@ -30,8 +28,6 @@ class SetAutoRequest
     }
 
     /**
-     * Sets KeywordBids.
-     *
      * @param KeywordBidSetAutoItem[] $value
      *
      * @return $this

@@ -12,16 +12,14 @@ class DeleteFeedsResponse
     protected $DeleteResults = [];
 
     /**
-     * Creates a new instance of DeleteFeedsResponse.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets DeleteResults.
-     *
      * @return ActionResult[]
      */
     public function getDeleteResults(): array
@@ -30,8 +28,6 @@ class DeleteFeedsResponse
     }
 
     /**
-     * Sets DeleteResults.
-     *
      * @param ActionResult[] $value
      *
      * @return $this

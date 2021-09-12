@@ -16,24 +16,19 @@ class AdImageLimit
     protected $Utilized = null;
 
     /**
-     * Creates a new instance of AdImageLimit.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Login.
-     */
     public function getLogin(): string
     {
         return $this->Login;
     }
 
     /**
-     * Sets Login.
-     *
      * @return $this
      */
     public function setLogin(string $value)
@@ -43,17 +38,12 @@ class AdImageLimit
         return $this;
     }
 
-    /**
-     * Gets Capacity.
-     */
     public function getCapacity(): int
     {
         return $this->Capacity;
     }
 
     /**
-     * Sets Capacity.
-     *
      * @return $this
      */
     public function setCapacity(int $value)
@@ -63,17 +53,12 @@ class AdImageLimit
         return $this;
     }
 
-    /**
-     * Gets Utilized.
-     */
     public function getUtilized(): int
     {
         return $this->Utilized;
     }
 
     /**
-     * Sets Utilized.
-     *
      * @return $this
      */
     public function setUtilized(int $value)

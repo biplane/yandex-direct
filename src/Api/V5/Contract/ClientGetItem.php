@@ -9,73 +9,60 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class ClientGetItem extends ClientBaseItem
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $AccountQuality = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Archived = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $ClientId = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $CountryId = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $CreatedAt = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Currency = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Grants = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Bonuses = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Login = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Notification = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $OverdraftSumAvailable = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Representatives = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Restrictions = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Settings = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Type = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $VatRate = null;
 
-    /**
-     * Creates a new instance of ClientGetItem.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
-
-    /**
-     * Gets AccountQuality.
-     */
     public function getAccountQuality(): ?float
     {
         return $this->AccountQuality ?? null;
     }
 
     /**
-     * Sets AccountQuality.
-     *
      * @return $this
      */
     public function setAccountQuality(?float $value = null)
@@ -86,8 +73,6 @@ class ClientGetItem extends ClientBaseItem
     }
 
     /**
-     * Gets Archived.
-     *
      * @see YesNoEnum
      */
     public function getArchived(): ?string
@@ -96,8 +81,6 @@ class ClientGetItem extends ClientBaseItem
     }
 
     /**
-     * Sets Archived.
-     *
      * @see YesNoEnum
      *
      * @return $this
@@ -109,17 +92,12 @@ class ClientGetItem extends ClientBaseItem
         return $this;
     }
 
-    /**
-     * Gets ClientId.
-     */
     public function getClientId(): ?int
     {
         return $this->ClientId ?? null;
     }
 
     /**
-     * Sets ClientId.
-     *
      * @return $this
      */
     public function setClientId(?int $value = null)
@@ -129,17 +107,12 @@ class ClientGetItem extends ClientBaseItem
         return $this;
     }
 
-    /**
-     * Gets CountryId.
-     */
     public function getCountryId(): ?int
     {
         return $this->CountryId ?? null;
     }
 
     /**
-     * Sets CountryId.
-     *
      * @return $this
      */
     public function setCountryId(?int $value = null)
@@ -149,17 +122,12 @@ class ClientGetItem extends ClientBaseItem
         return $this;
     }
 
-    /**
-     * Gets CreatedAt.
-     */
     public function getCreatedAt(): ?string
     {
         return $this->CreatedAt ?? null;
     }
 
     /**
-     * Sets CreatedAt.
-     *
      * @return $this
      */
     public function setCreatedAt(?string $value = null)
@@ -170,8 +138,6 @@ class ClientGetItem extends ClientBaseItem
     }
 
     /**
-     * Gets Currency.
-     *
      * @see CurrencyEnum
      */
     public function getCurrency(): ?string
@@ -180,8 +146,6 @@ class ClientGetItem extends ClientBaseItem
     }
 
     /**
-     * Sets Currency.
-     *
      * @see CurrencyEnum
      *
      * @return $this
@@ -194,8 +158,6 @@ class ClientGetItem extends ClientBaseItem
     }
 
     /**
-     * Gets Grants.
-     *
      * @return GrantGetItem[]|null
      */
     public function getGrants(): ?array
@@ -204,8 +166,6 @@ class ClientGetItem extends ClientBaseItem
     }
 
     /**
-     * Sets Grants.
-     *
      * @param GrantGetItem[]|null $value
      *
      * @return $this
@@ -217,17 +177,12 @@ class ClientGetItem extends ClientBaseItem
         return $this;
     }
 
-    /**
-     * Gets Bonuses.
-     */
     public function getBonuses(): ?BonusesItem
     {
         return $this->Bonuses ?? null;
     }
 
     /**
-     * Sets Bonuses.
-     *
      * @return $this
      */
     public function setBonuses(?BonusesItem $value = null)
@@ -237,17 +192,12 @@ class ClientGetItem extends ClientBaseItem
         return $this;
     }
 
-    /**
-     * Gets Login.
-     */
     public function getLogin(): ?string
     {
         return $this->Login ?? null;
     }
 
     /**
-     * Sets Login.
-     *
      * @return $this
      */
     public function setLogin(?string $value = null)
@@ -257,17 +207,12 @@ class ClientGetItem extends ClientBaseItem
         return $this;
     }
 
-    /**
-     * Gets Notification.
-     */
     public function getNotification(): ?ClientNotificationGet
     {
         return $this->Notification ?? null;
     }
 
     /**
-     * Sets Notification.
-     *
      * @return $this
      */
     public function setNotification(?ClientNotificationGet $value = null)
@@ -277,17 +222,12 @@ class ClientGetItem extends ClientBaseItem
         return $this;
     }
 
-    /**
-     * Gets OverdraftSumAvailable.
-     */
     public function getOverdraftSumAvailable(): ?int
     {
         return $this->OverdraftSumAvailable ?? null;
     }
 
     /**
-     * Sets OverdraftSumAvailable.
-     *
      * @return $this
      */
     public function setOverdraftSumAvailable(?int $value = null)
@@ -298,8 +238,6 @@ class ClientGetItem extends ClientBaseItem
     }
 
     /**
-     * Gets Representatives.
-     *
      * @return Representative[]|null
      */
     public function getRepresentatives(): ?array
@@ -308,8 +246,6 @@ class ClientGetItem extends ClientBaseItem
     }
 
     /**
-     * Sets Representatives.
-     *
      * @param Representative[]|null $value
      *
      * @return $this
@@ -322,8 +258,6 @@ class ClientGetItem extends ClientBaseItem
     }
 
     /**
-     * Gets Restrictions.
-     *
      * @return ClientRestrictionItem[]|null
      */
     public function getRestrictions(): ?array
@@ -332,8 +266,6 @@ class ClientGetItem extends ClientBaseItem
     }
 
     /**
-     * Sets Restrictions.
-     *
      * @param ClientRestrictionItem[]|null $value
      *
      * @return $this
@@ -346,8 +278,6 @@ class ClientGetItem extends ClientBaseItem
     }
 
     /**
-     * Gets Settings.
-     *
      * @return ClientSettingGetItem[]|null
      */
     public function getSettings(): ?array
@@ -356,8 +286,6 @@ class ClientGetItem extends ClientBaseItem
     }
 
     /**
-     * Sets Settings.
-     *
      * @param ClientSettingGetItem[]|null $value
      *
      * @return $this
@@ -369,17 +297,12 @@ class ClientGetItem extends ClientBaseItem
         return $this;
     }
 
-    /**
-     * Gets Type.
-     */
     public function getType(): ?string
     {
         return $this->Type ?? null;
     }
 
     /**
-     * Sets Type.
-     *
      * @return $this
      */
     public function setType(?string $value = null)
@@ -389,17 +312,12 @@ class ClientGetItem extends ClientBaseItem
         return $this;
     }
 
-    /**
-     * Gets VatRate.
-     */
     public function getVatRate(): ?float
     {
         return $this->VatRate ?? null;
     }
 
     /**
-     * Sets VatRate.
-     *
      * @return $this
      */
     public function setVatRate(?float $value = null)

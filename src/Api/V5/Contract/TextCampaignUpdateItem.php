@@ -9,34 +9,21 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class TextCampaignUpdateItem extends TextCampaignBase
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $BiddingStrategy = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Settings = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $PriorityGoals = null;
 
-    /**
-     * Creates a new instance of TextCampaignUpdateItem.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
-
-    /**
-     * Gets BiddingStrategy.
-     */
     public function getBiddingStrategy(): ?TextCampaignStrategy
     {
         return $this->BiddingStrategy ?? null;
     }
 
     /**
-     * Sets BiddingStrategy.
-     *
      * @return $this
      */
     public function setBiddingStrategy(?TextCampaignStrategy $value = null)
@@ -47,8 +34,6 @@ class TextCampaignUpdateItem extends TextCampaignBase
     }
 
     /**
-     * Gets Settings.
-     *
      * @return TextCampaignSetting[]|null
      */
     public function getSettings(): ?array
@@ -57,8 +42,6 @@ class TextCampaignUpdateItem extends TextCampaignBase
     }
 
     /**
-     * Sets Settings.
-     *
      * @param TextCampaignSetting[]|null $value
      *
      * @return $this
@@ -70,17 +53,12 @@ class TextCampaignUpdateItem extends TextCampaignBase
         return $this;
     }
 
-    /**
-     * Gets PriorityGoals.
-     */
     public function getPriorityGoals(): ?PriorityGoalsUpdateSetting
     {
         return $this->PriorityGoals ?? null;
     }
 
     /**
-     * Sets PriorityGoals.
-     *
      * @return $this
      */
     public function setPriorityGoals(?PriorityGoalsUpdateSetting $value = null)

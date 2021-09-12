@@ -9,37 +9,32 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class TextAdAddBase
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $VCardId = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AdImageHash = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $SitelinkSetId = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AdExtensionIds = null;
 
     /**
-     * Creates a new instance of TextAdAddBase.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets VCardId.
-     */
     public function getVCardId(): ?int
     {
         return $this->VCardId ?? null;
     }
 
     /**
-     * Sets VCardId.
-     *
      * @return $this
      */
     public function setVCardId(?int $value = null)
@@ -49,17 +44,12 @@ class TextAdAddBase
         return $this;
     }
 
-    /**
-     * Gets AdImageHash.
-     */
     public function getAdImageHash(): ?string
     {
         return $this->AdImageHash ?? null;
     }
 
     /**
-     * Sets AdImageHash.
-     *
      * @return $this
      */
     public function setAdImageHash(?string $value = null)
@@ -69,17 +59,12 @@ class TextAdAddBase
         return $this;
     }
 
-    /**
-     * Gets SitelinkSetId.
-     */
     public function getSitelinkSetId(): ?int
     {
         return $this->SitelinkSetId ?? null;
     }
 
     /**
-     * Sets SitelinkSetId.
-     *
      * @return $this
      */
     public function setSitelinkSetId(?int $value = null)
@@ -90,8 +75,6 @@ class TextAdAddBase
     }
 
     /**
-     * Gets AdExtensionIds.
-     *
      * @return int[]|null
      */
     public function getAdExtensionIds(): ?array
@@ -100,8 +83,6 @@ class TextAdAddBase
     }
 
     /**
-     * Sets AdExtensionIds.
-     *
      * @param int[]|null $value
      *
      * @return $this

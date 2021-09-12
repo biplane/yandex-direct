@@ -16,24 +16,19 @@ class ProductivityAssertionsItem
     protected $Recommendation = null;
 
     /**
-     * Creates a new instance of ProductivityAssertionsItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Reference.
-     */
     public function getReference(): int
     {
         return $this->Reference;
     }
 
     /**
-     * Sets Reference.
-     *
      * @return $this
      */
     public function setReference(int $value)
@@ -43,17 +38,12 @@ class ProductivityAssertionsItem
         return $this;
     }
 
-    /**
-     * Gets Title.
-     */
     public function getTitle(): string
     {
         return $this->Title;
     }
 
     /**
-     * Sets Title.
-     *
      * @return $this
      */
     public function setTitle(string $value)
@@ -63,17 +53,12 @@ class ProductivityAssertionsItem
         return $this;
     }
 
-    /**
-     * Gets Recommendation.
-     */
     public function getRecommendation(): string
     {
         return $this->Recommendation;
     }
 
     /**
-     * Sets Recommendation.
-     *
      * @return $this
      */
     public function setRecommendation(string $value)

@@ -16,24 +16,19 @@ class ClientNotification
     protected $Lang = null;
 
     /**
-     * Creates a new instance of ClientNotification.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Email.
-     */
     public function getEmail(): string
     {
         return $this->Email;
     }
 
     /**
-     * Sets Email.
-     *
      * @return $this
      */
     public function setEmail(string $value)
@@ -44,8 +39,6 @@ class ClientNotification
     }
 
     /**
-     * Gets EmailSubscriptions.
-     *
      * @return EmailSubscriptionItem[]
      */
     public function getEmailSubscriptions(): array
@@ -54,8 +47,6 @@ class ClientNotification
     }
 
     /**
-     * Sets EmailSubscriptions.
-     *
      * @param EmailSubscriptionItem[] $value
      *
      * @return $this
@@ -68,8 +59,6 @@ class ClientNotification
     }
 
     /**
-     * Gets Lang.
-     *
      * @see LangEnum
      */
     public function getLang(): string
@@ -78,8 +67,6 @@ class ClientNotification
     }
 
     /**
-     * Sets Lang.
-     *
      * @see LangEnum
      *
      * @return $this

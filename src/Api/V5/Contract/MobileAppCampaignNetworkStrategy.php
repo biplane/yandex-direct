@@ -11,20 +11,10 @@ class MobileAppCampaignNetworkStrategy extends MobileAppCampaignStrategyBase
 {
     protected $BiddingStrategyType = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $NetworkDefault = null;
 
     /**
-     * Creates a new instance of MobileAppCampaignNetworkStrategy.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
-
-    /**
-     * Gets BiddingStrategyType.
-     *
      * @see MobileAppCampaignNetworkStrategyTypeEnum
      */
     public function getBiddingStrategyType(): string
@@ -33,8 +23,6 @@ class MobileAppCampaignNetworkStrategy extends MobileAppCampaignStrategyBase
     }
 
     /**
-     * Sets BiddingStrategyType.
-     *
      * @see MobileAppCampaignNetworkStrategyTypeEnum
      *
      * @return $this
@@ -46,17 +34,12 @@ class MobileAppCampaignNetworkStrategy extends MobileAppCampaignStrategyBase
         return $this;
     }
 
-    /**
-     * Gets NetworkDefault.
-     */
     public function getNetworkDefault(): ?StrategyNetworkDefault
     {
         return $this->NetworkDefault ?? null;
     }
 
     /**
-     * Sets NetworkDefault.
-     *
      * @return $this
      */
     public function setNetworkDefault(?StrategyNetworkDefault $value = null)

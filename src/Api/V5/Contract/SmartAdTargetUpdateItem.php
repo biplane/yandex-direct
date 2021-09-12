@@ -11,46 +11,41 @@ class SmartAdTargetUpdateItem
 {
     protected $Id = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Name = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AverageCpc = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AverageCpa = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $StrategyPriority = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Audience = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Conditions = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AvailableItemsOnly = null;
 
     /**
-     * Creates a new instance of SmartAdTargetUpdateItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Id.
-     */
     public function getId(): int
     {
         return $this->Id;
     }
 
     /**
-     * Sets Id.
-     *
      * @return $this
      */
     public function setId(int $value)
@@ -60,17 +55,12 @@ class SmartAdTargetUpdateItem
         return $this;
     }
 
-    /**
-     * Gets Name.
-     */
     public function getName(): ?string
     {
         return $this->Name ?? null;
     }
 
     /**
-     * Sets Name.
-     *
      * @return $this
      */
     public function setName(?string $value = null)
@@ -80,17 +70,12 @@ class SmartAdTargetUpdateItem
         return $this;
     }
 
-    /**
-     * Gets AverageCpc.
-     */
     public function getAverageCpc(): ?int
     {
         return $this->AverageCpc ?? null;
     }
 
     /**
-     * Sets AverageCpc.
-     *
      * @return $this
      */
     public function setAverageCpc(?int $value = null)
@@ -100,17 +85,12 @@ class SmartAdTargetUpdateItem
         return $this;
     }
 
-    /**
-     * Gets AverageCpa.
-     */
     public function getAverageCpa(): ?int
     {
         return $this->AverageCpa ?? null;
     }
 
     /**
-     * Sets AverageCpa.
-     *
      * @return $this
      */
     public function setAverageCpa(?int $value = null)
@@ -121,8 +101,6 @@ class SmartAdTargetUpdateItem
     }
 
     /**
-     * Gets StrategyPriority.
-     *
      * @see PriorityEnum
      */
     public function getStrategyPriority(): ?string
@@ -131,8 +109,6 @@ class SmartAdTargetUpdateItem
     }
 
     /**
-     * Sets StrategyPriority.
-     *
      * @see PriorityEnum
      *
      * @return $this
@@ -145,8 +121,6 @@ class SmartAdTargetUpdateItem
     }
 
     /**
-     * Gets Audience.
-     *
      * @see AudienceEnum
      */
     public function getAudience(): ?string
@@ -155,8 +129,6 @@ class SmartAdTargetUpdateItem
     }
 
     /**
-     * Sets Audience.
-     *
      * @see AudienceEnum
      *
      * @return $this
@@ -168,17 +140,12 @@ class SmartAdTargetUpdateItem
         return $this;
     }
 
-    /**
-     * Gets Conditions.
-     */
     public function getConditions(): ?ConditionsArray
     {
         return $this->Conditions ?? null;
     }
 
     /**
-     * Sets Conditions.
-     *
      * @return $this
      */
     public function setConditions(?ConditionsArray $value = null)
@@ -189,8 +156,6 @@ class SmartAdTargetUpdateItem
     }
 
     /**
-     * Gets AvailableItemsOnly.
-     *
      * @see YesNoEnum
      */
     public function getAvailableItemsOnly(): ?string
@@ -199,8 +164,6 @@ class SmartAdTargetUpdateItem
     }
 
     /**
-     * Sets AvailableItemsOnly.
-     *
      * @see YesNoEnum
      *
      * @return $this

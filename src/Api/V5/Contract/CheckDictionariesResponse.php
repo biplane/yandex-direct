@@ -9,28 +9,26 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class CheckDictionariesResponse
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $TimeZonesChanged = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $RegionsChanged = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $InterestsChanged = null;
 
     protected $Timestamp = null;
 
     /**
-     * Creates a new instance of CheckDictionariesResponse.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets TimeZonesChanged.
-     *
      * @see YesNoEnum
      */
     public function getTimeZonesChanged(): ?string
@@ -39,8 +37,6 @@ class CheckDictionariesResponse
     }
 
     /**
-     * Sets TimeZonesChanged.
-     *
      * @see YesNoEnum
      *
      * @return $this
@@ -53,8 +49,6 @@ class CheckDictionariesResponse
     }
 
     /**
-     * Gets RegionsChanged.
-     *
      * @see YesNoEnum
      */
     public function getRegionsChanged(): ?string
@@ -63,8 +57,6 @@ class CheckDictionariesResponse
     }
 
     /**
-     * Sets RegionsChanged.
-     *
      * @see YesNoEnum
      *
      * @return $this
@@ -77,8 +69,6 @@ class CheckDictionariesResponse
     }
 
     /**
-     * Gets InterestsChanged.
-     *
      * @see YesNoEnum
      */
     public function getInterestsChanged(): ?string
@@ -87,8 +77,6 @@ class CheckDictionariesResponse
     }
 
     /**
-     * Sets InterestsChanged.
-     *
      * @see YesNoEnum
      *
      * @return $this
@@ -100,17 +88,12 @@ class CheckDictionariesResponse
         return $this;
     }
 
-    /**
-     * Gets Timestamp.
-     */
     public function getTimestamp(): string
     {
         return $this->Timestamp;
     }
 
     /**
-     * Sets Timestamp.
-     *
      * @return $this
      */
     public function setTimestamp(string $value)

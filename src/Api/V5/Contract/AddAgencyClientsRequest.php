@@ -19,31 +19,26 @@ class AddAgencyClientsRequest
 
     protected $Notification = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Settings = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Grants = null;
 
     /**
-     * Creates a new instance of AddAgencyClientsRequest.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Login.
-     */
     public function getLogin(): string
     {
         return $this->Login;
     }
 
     /**
-     * Sets Login.
-     *
      * @return $this
      */
     public function setLogin(string $value)
@@ -53,17 +48,12 @@ class AddAgencyClientsRequest
         return $this;
     }
 
-    /**
-     * Gets FirstName.
-     */
     public function getFirstName(): string
     {
         return $this->FirstName;
     }
 
     /**
-     * Sets FirstName.
-     *
      * @return $this
      */
     public function setFirstName(string $value)
@@ -73,17 +63,12 @@ class AddAgencyClientsRequest
         return $this;
     }
 
-    /**
-     * Gets LastName.
-     */
     public function getLastName(): string
     {
         return $this->LastName;
     }
 
     /**
-     * Sets LastName.
-     *
      * @return $this
      */
     public function setLastName(string $value)
@@ -94,8 +79,6 @@ class AddAgencyClientsRequest
     }
 
     /**
-     * Gets Currency.
-     *
      * @see CurrencyEnum
      */
     public function getCurrency(): string
@@ -104,8 +87,6 @@ class AddAgencyClientsRequest
     }
 
     /**
-     * Sets Currency.
-     *
      * @see CurrencyEnum
      *
      * @return $this
@@ -117,17 +98,12 @@ class AddAgencyClientsRequest
         return $this;
     }
 
-    /**
-     * Gets Notification.
-     */
     public function getNotification(): ClientNotificationAdd
     {
         return $this->Notification;
     }
 
     /**
-     * Sets Notification.
-     *
      * @return $this
      */
     public function setNotification(ClientNotificationAdd $value)
@@ -138,8 +114,6 @@ class AddAgencyClientsRequest
     }
 
     /**
-     * Gets Settings.
-     *
      * @return ClientSettingAddItem[]|null
      */
     public function getSettings(): ?array
@@ -148,8 +122,6 @@ class AddAgencyClientsRequest
     }
 
     /**
-     * Sets Settings.
-     *
      * @param ClientSettingAddItem[]|null $value
      *
      * @return $this
@@ -162,8 +134,6 @@ class AddAgencyClientsRequest
     }
 
     /**
-     * Gets Grants.
-     *
      * @return GrantItem[]|null
      */
     public function getGrants(): ?array
@@ -172,8 +142,6 @@ class AddAgencyClientsRequest
     }
 
     /**
-     * Sets Grants.
-     *
      * @param GrantItem[]|null $value
      *
      * @return $this

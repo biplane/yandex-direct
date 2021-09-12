@@ -14,24 +14,19 @@ class BidModifierSetItem
     protected $BidModifier = null;
 
     /**
-     * Creates a new instance of BidModifierSetItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Id.
-     */
     public function getId(): int
     {
         return $this->Id;
     }
 
     /**
-     * Sets Id.
-     *
      * @return $this
      */
     public function setId(int $value)
@@ -41,17 +36,12 @@ class BidModifierSetItem
         return $this;
     }
 
-    /**
-     * Gets BidModifier.
-     */
     public function getBidModifier(): int
     {
         return $this->BidModifier;
     }
 
     /**
-     * Sets BidModifier.
-     *
      * @return $this
      */
     public function setBidModifier(int $value)

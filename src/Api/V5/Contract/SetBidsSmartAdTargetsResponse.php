@@ -9,20 +9,18 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class SetBidsSmartAdTargetsResponse
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $SetBidsResults = null;
 
     /**
-     * Creates a new instance of SetBidsSmartAdTargetsResponse.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets SetBidsResults.
-     *
      * @return SetBidsActionResult[]|null
      */
     public function getSetBidsResults(): ?array
@@ -31,8 +29,6 @@ class SetBidsSmartAdTargetsResponse
     }
 
     /**
-     * Sets SetBidsResults.
-     *
      * @param SetBidsActionResult[]|null $value
      *
      * @return $this

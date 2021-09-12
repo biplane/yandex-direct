@@ -12,16 +12,6 @@ class TextCampaignSearchStrategyAdd extends TextCampaignStrategyAddBase
     protected $BiddingStrategyType = null;
 
     /**
-     * Creates a new instance of TextCampaignSearchStrategyAdd.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
-
-    /**
-     * Gets BiddingStrategyType.
-     *
      * @see TextCampaignSearchStrategyTypeEnum
      */
     public function getBiddingStrategyType(): string
@@ -30,8 +20,6 @@ class TextCampaignSearchStrategyAdd extends TextCampaignStrategyAddBase
     }
 
     /**
-     * Sets BiddingStrategyType.
-     *
      * @see TextCampaignSearchStrategyTypeEnum
      *
      * @return $this

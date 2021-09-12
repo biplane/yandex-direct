@@ -9,20 +9,18 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class UrlFeedBase
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $RemoveUtmTags = null;
 
     /**
-     * Creates a new instance of UrlFeedBase.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets RemoveUtmTags.
-     *
      * @see YesNoEnum
      */
     public function getRemoveUtmTags(): ?string
@@ -31,8 +29,6 @@ class UrlFeedBase
     }
 
     /**
-     * Sets RemoveUtmTags.
-     *
      * @see YesNoEnum
      *
      * @return $this

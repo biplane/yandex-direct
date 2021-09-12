@@ -14,24 +14,19 @@ class StringFilterFieldProps
     protected $MinLength = null;
 
     /**
-     * Creates a new instance of StringFilterFieldProps.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets MaxLength.
-     */
     public function getMaxLength(): int
     {
         return $this->MaxLength;
     }
 
     /**
-     * Sets MaxLength.
-     *
      * @return $this
      */
     public function setMaxLength(int $value)
@@ -41,17 +36,12 @@ class StringFilterFieldProps
         return $this;
     }
 
-    /**
-     * Gets MinLength.
-     */
     public function getMinLength(): int
     {
         return $this->MinLength;
     }
 
     /**
-     * Sets MinLength.
-     *
      * @return $this
      */
     public function setMinLength(int $value)

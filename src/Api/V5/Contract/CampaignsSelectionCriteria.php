@@ -9,32 +9,30 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class CampaignsSelectionCriteria
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Ids = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Types = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $States = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Statuses = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $StatusesPayment = null;
 
     /**
-     * Creates a new instance of CampaignsSelectionCriteria.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Ids.
-     *
      * @return int[]|null
      */
     public function getIds(): ?array
@@ -43,8 +41,6 @@ class CampaignsSelectionCriteria
     }
 
     /**
-     * Sets Ids.
-     *
      * @param int[]|null $value
      *
      * @return $this
@@ -57,8 +53,6 @@ class CampaignsSelectionCriteria
     }
 
     /**
-     * Gets Types.
-     *
      * @see CampaignTypeEnum
      *
      * @return string[]|null
@@ -69,8 +63,6 @@ class CampaignsSelectionCriteria
     }
 
     /**
-     * Sets Types.
-     *
      * @see CampaignTypeEnum
      *
      * @param string[]|null $value
@@ -85,8 +77,6 @@ class CampaignsSelectionCriteria
     }
 
     /**
-     * Gets States.
-     *
      * @see CampaignStateEnum
      *
      * @return string[]|null
@@ -97,8 +87,6 @@ class CampaignsSelectionCriteria
     }
 
     /**
-     * Sets States.
-     *
      * @see CampaignStateEnum
      *
      * @param string[]|null $value
@@ -113,8 +101,6 @@ class CampaignsSelectionCriteria
     }
 
     /**
-     * Gets Statuses.
-     *
      * @see CampaignStatusSelectionEnum
      *
      * @return string[]|null
@@ -125,8 +111,6 @@ class CampaignsSelectionCriteria
     }
 
     /**
-     * Sets Statuses.
-     *
      * @see CampaignStatusSelectionEnum
      *
      * @param string[]|null $value
@@ -141,8 +125,6 @@ class CampaignsSelectionCriteria
     }
 
     /**
-     * Gets StatusesPayment.
-     *
      * @see CampaignStatusPaymentEnum
      *
      * @return string[]|null
@@ -153,8 +135,6 @@ class CampaignsSelectionCriteria
     }
 
     /**
-     * Sets StatusesPayment.
-     *
      * @see CampaignStatusPaymentEnum
      *
      * @param string[]|null $value

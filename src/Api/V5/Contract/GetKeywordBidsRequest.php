@@ -13,31 +13,18 @@ class GetKeywordBidsRequest extends GetRequestGeneral
 
     protected $FieldNames = [];
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $SearchFieldNames = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $NetworkFieldNames = null;
 
-    /**
-     * Creates a new instance of GetKeywordBidsRequest.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
-
-    /**
-     * Gets SelectionCriteria.
-     */
     public function getSelectionCriteria(): KeywordBidsSelectionCriteria
     {
         return $this->SelectionCriteria;
     }
 
     /**
-     * Sets SelectionCriteria.
-     *
      * @return $this
      */
     public function setSelectionCriteria(KeywordBidsSelectionCriteria $value)
@@ -48,8 +35,6 @@ class GetKeywordBidsRequest extends GetRequestGeneral
     }
 
     /**
-     * Gets FieldNames.
-     *
      * @see KeywordBidFieldEnum
      *
      * @return string[]
@@ -60,8 +45,6 @@ class GetKeywordBidsRequest extends GetRequestGeneral
     }
 
     /**
-     * Sets FieldNames.
-     *
      * @see KeywordBidFieldEnum
      *
      * @param string[] $value
@@ -76,8 +59,6 @@ class GetKeywordBidsRequest extends GetRequestGeneral
     }
 
     /**
-     * Gets SearchFieldNames.
-     *
      * @see KeywordBidSearchFieldEnum
      *
      * @return string[]|null
@@ -88,8 +69,6 @@ class GetKeywordBidsRequest extends GetRequestGeneral
     }
 
     /**
-     * Sets SearchFieldNames.
-     *
      * @see KeywordBidSearchFieldEnum
      *
      * @param string[]|null $value
@@ -104,8 +83,6 @@ class GetKeywordBidsRequest extends GetRequestGeneral
     }
 
     /**
-     * Gets NetworkFieldNames.
-     *
      * @see KeywordBidNetworkFieldEnum
      *
      * @return string[]|null
@@ -116,8 +93,6 @@ class GetKeywordBidsRequest extends GetRequestGeneral
     }
 
     /**
-     * Sets NetworkFieldNames.
-     *
      * @see KeywordBidNetworkFieldEnum
      *
      * @param string[]|null $value

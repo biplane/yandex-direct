@@ -12,16 +12,14 @@ class PriorityGoalsArray
     protected $Items = [];
 
     /**
-     * Creates a new instance of PriorityGoalsArray.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Items.
-     *
      * @return PriorityGoalsItem[]
      */
     public function getItems(): array
@@ -30,8 +28,6 @@ class PriorityGoalsArray
     }
 
     /**
-     * Sets Items.
-     *
      * @param PriorityGoalsItem[] $value
      *
      * @return $this

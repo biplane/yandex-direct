@@ -28,24 +28,19 @@ class EventsLogItemAttributes
     protected $Currency = null;
 
     /**
-     * Creates a new instance of EventsLogItemAttributes.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets ModerationResult.
-     */
     public function getModerationResult(): ?string
     {
         return $this->ModerationResult;
     }
 
     /**
-     * Sets ModerationResult.
-     *
      * @return $this
      */
     public function setModerationResult(?string $value = null)
@@ -55,17 +50,12 @@ class EventsLogItemAttributes
         return $this;
     }
 
-    /**
-     * Gets MinPrice.
-     */
     public function getMinPrice(): ?float
     {
         return $this->MinPrice;
     }
 
     /**
-     * Sets MinPrice.
-     *
      * @return $this
      */
     public function setMinPrice(?float $value = null)
@@ -75,17 +65,12 @@ class EventsLogItemAttributes
         return $this;
     }
 
-    /**
-     * Gets Rest.
-     */
     public function getRest(): ?float
     {
         return $this->Rest;
     }
 
     /**
-     * Sets Rest.
-     *
      * @return $this
      */
     public function setRest(?float $value = null)
@@ -95,17 +80,12 @@ class EventsLogItemAttributes
         return $this;
     }
 
-    /**
-     * Gets Payed.
-     */
     public function getPayed(): ?float
     {
         return $this->Payed;
     }
 
     /**
-     * Sets Payed.
-     *
      * @return $this
      */
     public function setPayed(?float $value = null)
@@ -115,17 +95,12 @@ class EventsLogItemAttributes
         return $this;
     }
 
-    /**
-     * Gets FinishDate.
-     */
     public function getFinishDate(): ?string
     {
         return $this->FinishDate;
     }
 
     /**
-     * Sets FinishDate.
-     *
      * @return $this
      */
     public function setFinishDate(?string $value = null)
@@ -135,17 +110,12 @@ class EventsLogItemAttributes
         return $this;
     }
 
-    /**
-     * Gets OldPlace.
-     */
     public function getOldPlace(): ?string
     {
         return $this->OldPlace;
     }
 
     /**
-     * Sets OldPlace.
-     *
      * @return $this
      */
     public function setOldPlace(?string $value = null)
@@ -155,17 +125,12 @@ class EventsLogItemAttributes
         return $this;
     }
 
-    /**
-     * Gets IsEditedByModerator.
-     */
     public function getIsEditedByModerator(): ?string
     {
         return $this->IsEditedByModerator;
     }
 
     /**
-     * Sets IsEditedByModerator.
-     *
      * @return $this
      */
     public function setIsEditedByModerator(?string $value = null)
@@ -175,17 +140,12 @@ class EventsLogItemAttributes
         return $this;
     }
 
-    /**
-     * Gets StopTime.
-     */
     public function getStopTime(): ?string
     {
         return $this->StopTime;
     }
 
     /**
-     * Sets StopTime.
-     *
      * @return $this
      */
     public function setStopTime(?string $value = null)
@@ -195,17 +155,12 @@ class EventsLogItemAttributes
         return $this;
     }
 
-    /**
-     * Gets Currency.
-     */
     public function getCurrency(): ?string
     {
         return $this->Currency;
     }
 
     /**
-     * Sets Currency.
-     *
      * @return $this
      */
     public function setCurrency(?string $value = null)

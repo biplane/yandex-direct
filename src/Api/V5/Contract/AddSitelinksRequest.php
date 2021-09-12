@@ -12,16 +12,14 @@ class AddSitelinksRequest
     protected $SitelinksSets = [];
 
     /**
-     * Creates a new instance of AddSitelinksRequest.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets SitelinksSets.
-     *
      * @return SitelinksSetAddItem[]
      */
     public function getSitelinksSets(): array
@@ -30,8 +28,6 @@ class AddSitelinksRequest
     }
 
     /**
-     * Sets SitelinksSets.
-     *
      * @param SitelinksSetAddItem[] $value
      *
      * @return $this

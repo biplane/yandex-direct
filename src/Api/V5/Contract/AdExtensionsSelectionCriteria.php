@@ -9,32 +9,30 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AdExtensionsSelectionCriteria
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Ids = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Types = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $States = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Statuses = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $ModifiedSince = null;
 
     /**
-     * Creates a new instance of AdExtensionsSelectionCriteria.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Ids.
-     *
      * @return int[]|null
      */
     public function getIds(): ?array
@@ -43,8 +41,6 @@ class AdExtensionsSelectionCriteria
     }
 
     /**
-     * Sets Ids.
-     *
      * @param int[]|null $value
      *
      * @return $this
@@ -57,8 +53,6 @@ class AdExtensionsSelectionCriteria
     }
 
     /**
-     * Gets Types.
-     *
      * @see AdExtensionTypeEnum
      *
      * @return string[]|null
@@ -69,8 +63,6 @@ class AdExtensionsSelectionCriteria
     }
 
     /**
-     * Sets Types.
-     *
      * @see AdExtensionTypeEnum
      *
      * @param string[]|null $value
@@ -85,8 +77,6 @@ class AdExtensionsSelectionCriteria
     }
 
     /**
-     * Gets States.
-     *
      * @see AdExtensionStateSelectionEnum
      *
      * @return string[]|null
@@ -97,8 +87,6 @@ class AdExtensionsSelectionCriteria
     }
 
     /**
-     * Sets States.
-     *
      * @see AdExtensionStateSelectionEnum
      *
      * @param string[]|null $value
@@ -113,8 +101,6 @@ class AdExtensionsSelectionCriteria
     }
 
     /**
-     * Gets Statuses.
-     *
      * @see ExtensionStatusSelectionEnum
      *
      * @return string[]|null
@@ -125,8 +111,6 @@ class AdExtensionsSelectionCriteria
     }
 
     /**
-     * Sets Statuses.
-     *
      * @see ExtensionStatusSelectionEnum
      *
      * @param string[]|null $value
@@ -140,17 +124,12 @@ class AdExtensionsSelectionCriteria
         return $this;
     }
 
-    /**
-     * Gets ModifiedSince.
-     */
     public function getModifiedSince(): ?string
     {
         return $this->ModifiedSince ?? null;
     }
 
     /**
-     * Sets ModifiedSince.
-     *
      * @return $this
      */
     public function setModifiedSince(?string $value = null)

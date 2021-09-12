@@ -12,16 +12,14 @@ class GetClientsRequest
     protected $FieldNames = [];
 
     /**
-     * Creates a new instance of GetClientsRequest.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets FieldNames.
-     *
      * @see ClientFieldEnum
      *
      * @return string[]
@@ -32,8 +30,6 @@ class GetClientsRequest
     }
 
     /**
-     * Sets FieldNames.
-     *
      * @see ClientFieldEnum
      *
      * @param string[] $value

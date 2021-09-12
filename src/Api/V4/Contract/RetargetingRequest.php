@@ -20,24 +20,19 @@ class RetargetingRequest
     protected $Options = null;
 
     /**
-     * Creates a new instance of RetargetingRequest.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Action.
-     */
     public function getAction(): string
     {
         return $this->Action;
     }
 
     /**
-     * Sets Action.
-     *
      * @return $this
      */
     public function setAction(string $value)
@@ -47,17 +42,12 @@ class RetargetingRequest
         return $this;
     }
 
-    /**
-     * Gets Login.
-     */
     public function getLogin(): ?string
     {
         return $this->Login;
     }
 
     /**
-     * Sets Login.
-     *
      * @return $this
      */
     public function setLogin(?string $value = null)
@@ -67,17 +57,12 @@ class RetargetingRequest
         return $this;
     }
 
-    /**
-     * Gets SelectionCriteria.
-     */
     public function getSelectionCriteria(): ?RetargetingSelectionCriteria
     {
         return $this->SelectionCriteria;
     }
 
     /**
-     * Sets SelectionCriteria.
-     *
      * @return $this
      */
     public function setSelectionCriteria(?RetargetingSelectionCriteria $value = null)
@@ -88,8 +73,6 @@ class RetargetingRequest
     }
 
     /**
-     * Gets Retargetings.
-     *
      * @return Retargeting[]|null
      */
     public function getRetargetings(): ?array
@@ -98,8 +81,6 @@ class RetargetingRequest
     }
 
     /**
-     * Sets Retargetings.
-     *
      * @param Retargeting[]|null $value
      *
      * @return $this
@@ -111,17 +92,12 @@ class RetargetingRequest
         return $this;
     }
 
-    /**
-     * Gets Options.
-     */
     public function getOptions(): ?RetargetingRequestOptions
     {
         return $this->Options;
     }
 
     /**
-     * Sets Options.
-     *
      * @return $this
      */
     public function setOptions(?RetargetingRequestOptions $value = null)

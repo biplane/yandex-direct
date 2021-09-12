@@ -14,16 +14,14 @@ class GrantItem
     protected $Value = null;
 
     /**
-     * Creates a new instance of GrantItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Privilege.
-     *
      * @see PrivilegeEnum
      */
     public function getPrivilege(): string
@@ -32,8 +30,6 @@ class GrantItem
     }
 
     /**
-     * Sets Privilege.
-     *
      * @see PrivilegeEnum
      *
      * @return $this
@@ -46,8 +42,6 @@ class GrantItem
     }
 
     /**
-     * Gets Value.
-     *
      * @see YesNoEnum
      */
     public function getValue(): string
@@ -56,8 +50,6 @@ class GrantItem
     }
 
     /**
-     * Sets Value.
-     *
      * @see YesNoEnum
      *
      * @return $this

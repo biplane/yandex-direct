@@ -12,16 +12,14 @@ class IdsCriteria
     protected $Ids = [];
 
     /**
-     * Creates a new instance of IdsCriteria.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Ids.
-     *
      * @return int[]
      */
     public function getIds(): array
@@ -30,8 +28,6 @@ class IdsCriteria
     }
 
     /**
-     * Sets Ids.
-     *
      * @param int[] $value
      *
      * @return $this

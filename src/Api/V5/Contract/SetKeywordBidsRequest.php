@@ -12,16 +12,14 @@ class SetKeywordBidsRequest
     protected $KeywordBids = [];
 
     /**
-     * Creates a new instance of SetKeywordBidsRequest.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets KeywordBids.
-     *
      * @return KeywordBidSetItem[]
      */
     public function getKeywordBids(): array
@@ -30,8 +28,6 @@ class SetKeywordBidsRequest
     }
 
     /**
-     * Sets KeywordBids.
-     *
      * @param KeywordBidSetItem[] $value
      *
      * @return $this

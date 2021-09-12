@@ -11,20 +11,18 @@ class ExtensionModeration
 {
     protected $Status = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $StatusClarification = null;
 
     /**
-     * Creates a new instance of ExtensionModeration.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Status.
-     *
      * @see StatusEnum
      */
     public function getStatus(): string
@@ -33,8 +31,6 @@ class ExtensionModeration
     }
 
     /**
-     * Sets Status.
-     *
      * @see StatusEnum
      *
      * @return $this
@@ -46,17 +42,12 @@ class ExtensionModeration
         return $this;
     }
 
-    /**
-     * Gets StatusClarification.
-     */
     public function getStatusClarification(): ?string
     {
         return $this->StatusClarification ?? null;
     }
 
     /**
-     * Sets StatusClarification.
-     *
      * @return $this
      */
     public function setStatusClarification(?string $value = null)

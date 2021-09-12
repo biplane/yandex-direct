@@ -9,20 +9,18 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class ModerateAdsResponse
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $ModerateResults = null;
 
     /**
-     * Creates a new instance of ModerateAdsResponse.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets ModerateResults.
-     *
      * @return ActionResult[]|null
      */
     public function getModerateResults(): ?array
@@ -31,8 +29,6 @@ class ModerateAdsResponse
     }
 
     /**
-     * Sets ModerateResults.
-     *
      * @param ActionResult[]|null $value
      *
      * @return $this

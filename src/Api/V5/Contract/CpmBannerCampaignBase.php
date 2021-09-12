@@ -9,23 +9,21 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class CpmBannerCampaignBase
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $CounterIds = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $FrequencyCap = null;
 
     /**
-     * Creates a new instance of CpmBannerCampaignBase.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets CounterIds.
-     *
      * @return int[]|null
      */
     public function getCounterIds(): ?array
@@ -34,8 +32,6 @@ class CpmBannerCampaignBase
     }
 
     /**
-     * Sets CounterIds.
-     *
      * @param int[]|null $value
      *
      * @return $this
@@ -47,17 +43,12 @@ class CpmBannerCampaignBase
         return $this;
     }
 
-    /**
-     * Gets FrequencyCap.
-     */
     public function getFrequencyCap(): ?FrequencyCapSetting
     {
         return $this->FrequencyCap ?? null;
     }
 
     /**
-     * Sets FrequencyCap.
-     *
      * @return $this
      */
     public function setFrequencyCap(?FrequencyCapSetting $value = null)

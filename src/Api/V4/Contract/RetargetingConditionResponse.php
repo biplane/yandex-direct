@@ -14,16 +14,14 @@ class RetargetingConditionResponse
     protected $RetargetingConditions = null;
 
     /**
-     * Creates a new instance of RetargetingConditionResponse.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets ActionsResult.
-     *
      * @return RetargetingConditionActionResult[]|null
      */
     public function getActionsResult(): ?array
@@ -32,8 +30,6 @@ class RetargetingConditionResponse
     }
 
     /**
-     * Sets ActionsResult.
-     *
      * @param RetargetingConditionActionResult[]|null $value
      *
      * @return $this
@@ -46,8 +42,6 @@ class RetargetingConditionResponse
     }
 
     /**
-     * Gets RetargetingConditions.
-     *
      * @return RetargetingCondition[]|null
      */
     public function getRetargetingConditions(): ?array
@@ -56,8 +50,6 @@ class RetargetingConditionResponse
     }
 
     /**
-     * Sets RetargetingConditions.
-     *
      * @param RetargetingCondition[]|null $value
      *
      * @return $this

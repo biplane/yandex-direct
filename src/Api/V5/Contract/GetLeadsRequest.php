@@ -13,25 +13,12 @@ class GetLeadsRequest extends GetRequestGeneral
 
     protected $FieldNames = [];
 
-    /**
-     * Creates a new instance of GetLeadsRequest.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
-
-    /**
-     * Gets SelectionCriteria.
-     */
     public function getSelectionCriteria(): LeadsSelectionCriteria
     {
         return $this->SelectionCriteria;
     }
 
     /**
-     * Sets SelectionCriteria.
-     *
      * @return $this
      */
     public function setSelectionCriteria(LeadsSelectionCriteria $value)
@@ -42,8 +29,6 @@ class GetLeadsRequest extends GetRequestGeneral
     }
 
     /**
-     * Gets FieldNames.
-     *
      * @see LeadFieldEnum
      *
      * @return string[]
@@ -54,8 +39,6 @@ class GetLeadsRequest extends GetRequestGeneral
     }
 
     /**
-     * Sets FieldNames.
-     *
      * @see LeadFieldEnum
      *
      * @param string[] $value

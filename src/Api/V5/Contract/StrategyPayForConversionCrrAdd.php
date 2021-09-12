@@ -13,28 +13,23 @@ class StrategyPayForConversionCrrAdd
 
     protected $GoalId = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $WeeklySpendLimit = null;
 
     /**
-     * Creates a new instance of StrategyPayForConversionCrrAdd.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Crr.
-     */
     public function getCrr(): int
     {
         return $this->Crr;
     }
 
     /**
-     * Sets Crr.
-     *
      * @return $this
      */
     public function setCrr(int $value)
@@ -44,17 +39,12 @@ class StrategyPayForConversionCrrAdd
         return $this;
     }
 
-    /**
-     * Gets GoalId.
-     */
     public function getGoalId(): int
     {
         return $this->GoalId;
     }
 
     /**
-     * Sets GoalId.
-     *
      * @return $this
      */
     public function setGoalId(int $value)
@@ -64,17 +54,12 @@ class StrategyPayForConversionCrrAdd
         return $this;
     }
 
-    /**
-     * Gets WeeklySpendLimit.
-     */
     public function getWeeklySpendLimit(): ?int
     {
         return $this->WeeklySpendLimit ?? null;
     }
 
     /**
-     * Sets WeeklySpendLimit.
-     *
      * @return $this
      */
     public function setWeeklySpendLimit(?int $value = null)

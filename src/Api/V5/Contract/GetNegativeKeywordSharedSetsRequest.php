@@ -9,30 +9,17 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class GetNegativeKeywordSharedSetsRequest extends GetRequestGeneral
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $SelectionCriteria = null;
 
     protected $FieldNames = [];
 
-    /**
-     * Creates a new instance of GetNegativeKeywordSharedSetsRequest.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
-
-    /**
-     * Gets SelectionCriteria.
-     */
     public function getSelectionCriteria(): ?IdsCriteria
     {
         return $this->SelectionCriteria ?? null;
     }
 
     /**
-     * Sets SelectionCriteria.
-     *
      * @return $this
      */
     public function setSelectionCriteria(?IdsCriteria $value = null)
@@ -43,8 +30,6 @@ class GetNegativeKeywordSharedSetsRequest extends GetRequestGeneral
     }
 
     /**
-     * Gets FieldNames.
-     *
      * @see NegativeKeywordSharedSetFieldEnum
      *
      * @return string[]
@@ -55,8 +40,6 @@ class GetNegativeKeywordSharedSetsRequest extends GetRequestGeneral
     }
 
     /**
-     * Sets FieldNames.
-     *
      * @see NegativeKeywordSharedSetFieldEnum
      *
      * @param string[] $value

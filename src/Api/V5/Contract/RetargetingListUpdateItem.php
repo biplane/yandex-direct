@@ -11,25 +11,12 @@ class RetargetingListUpdateItem extends RetargetingListBase
 {
     protected $Id = null;
 
-    /**
-     * Creates a new instance of RetargetingListUpdateItem.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
-
-    /**
-     * Gets Id.
-     */
     public function getId(): int
     {
         return $this->Id;
     }
 
     /**
-     * Sets Id.
-     *
      * @return $this
      */
     public function setId(int $value)

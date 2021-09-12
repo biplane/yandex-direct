@@ -36,24 +36,19 @@ class NewReportFilterInfo
     protected $MobilePlatform = null;
 
     /**
-     * Creates a new instance of NewReportFilterInfo.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets PageType.
-     */
     public function getPageType(): ?string
     {
         return $this->PageType;
     }
 
     /**
-     * Sets PageType.
-     *
      * @return $this
      */
     public function setPageType(?string $value = null)
@@ -63,17 +58,12 @@ class NewReportFilterInfo
         return $this;
     }
 
-    /**
-     * Gets PositionType.
-     */
     public function getPositionType(): ?string
     {
         return $this->PositionType;
     }
 
     /**
-     * Sets PositionType.
-     *
      * @return $this
      */
     public function setPositionType(?string $value = null)
@@ -84,8 +74,6 @@ class NewReportFilterInfo
     }
 
     /**
-     * Gets Banner.
-     *
      * @return int[]|null
      */
     public function getBanner(): ?array
@@ -94,8 +82,6 @@ class NewReportFilterInfo
     }
 
     /**
-     * Sets Banner.
-     *
      * @param int[]|null $value
      *
      * @return $this
@@ -108,8 +94,6 @@ class NewReportFilterInfo
     }
 
     /**
-     * Gets Geo.
-     *
      * @return int[]|null
      */
     public function getGeo(): ?array
@@ -118,8 +102,6 @@ class NewReportFilterInfo
     }
 
     /**
-     * Sets Geo.
-     *
      * @param int[]|null $value
      *
      * @return $this
@@ -132,8 +114,6 @@ class NewReportFilterInfo
     }
 
     /**
-     * Gets Phrase.
-     *
      * @return string[]|null
      */
     public function getPhrase(): ?array
@@ -142,8 +122,6 @@ class NewReportFilterInfo
     }
 
     /**
-     * Sets Phrase.
-     *
      * @param string[]|null $value
      *
      * @return $this
@@ -156,8 +134,6 @@ class NewReportFilterInfo
     }
 
     /**
-     * Gets PageName.
-     *
      * @return string[]|null
      */
     public function getPageName(): ?array
@@ -166,8 +142,6 @@ class NewReportFilterInfo
     }
 
     /**
-     * Sets PageName.
-     *
      * @param string[]|null $value
      *
      * @return $this
@@ -180,8 +154,6 @@ class NewReportFilterInfo
     }
 
     /**
-     * Gets StatGoals.
-     *
      * @return int[]|null
      */
     public function getStatGoals(): ?array
@@ -190,8 +162,6 @@ class NewReportFilterInfo
     }
 
     /**
-     * Sets StatGoals.
-     *
      * @param int[]|null $value
      *
      * @return $this
@@ -203,17 +173,12 @@ class NewReportFilterInfo
         return $this;
     }
 
-    /**
-     * Gets WithImage.
-     */
     public function getWithImage(): ?string
     {
         return $this->WithImage;
     }
 
     /**
-     * Sets WithImage.
-     *
      * @return $this
      */
     public function setWithImage(?string $value = null)
@@ -223,17 +188,12 @@ class NewReportFilterInfo
         return $this;
     }
 
-    /**
-     * Gets DeviceType.
-     */
     public function getDeviceType(): ?string
     {
         return $this->DeviceType;
     }
 
     /**
-     * Sets DeviceType.
-     *
      * @return $this
      */
     public function setDeviceType(?string $value = null)
@@ -244,8 +204,6 @@ class NewReportFilterInfo
     }
 
     /**
-     * Gets Age.
-     *
      * @return string[]|null
      */
     public function getAge(): ?array
@@ -254,8 +212,6 @@ class NewReportFilterInfo
     }
 
     /**
-     * Sets Age.
-     *
      * @param string[]|null $value
      *
      * @return $this
@@ -268,8 +224,6 @@ class NewReportFilterInfo
     }
 
     /**
-     * Gets Gender.
-     *
      * @return string[]|null
      */
     public function getGender(): ?array
@@ -278,8 +232,6 @@ class NewReportFilterInfo
     }
 
     /**
-     * Sets Gender.
-     *
      * @param string[]|null $value
      *
      * @return $this
@@ -292,8 +244,6 @@ class NewReportFilterInfo
     }
 
     /**
-     * Gets CarrierType.
-     *
      * @return string[]|null
      */
     public function getCarrierType(): ?array
@@ -302,8 +252,6 @@ class NewReportFilterInfo
     }
 
     /**
-     * Sets CarrierType.
-     *
      * @param string[]|null $value
      *
      * @return $this
@@ -316,8 +264,6 @@ class NewReportFilterInfo
     }
 
     /**
-     * Gets MobilePlatform.
-     *
      * @return string[]|null
      */
     public function getMobilePlatform(): ?array
@@ -326,8 +272,6 @@ class NewReportFilterInfo
     }
 
     /**
-     * Sets MobilePlatform.
-     *
      * @param string[]|null $value
      *
      * @return $this

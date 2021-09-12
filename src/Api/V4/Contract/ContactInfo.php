@@ -48,24 +48,19 @@ class ContactInfo
     protected $PointOnMap = null;
 
     /**
-     * Creates a new instance of ContactInfo.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets ContactPerson.
-     */
     public function getContactPerson(): ?string
     {
         return $this->ContactPerson;
     }
 
     /**
-     * Sets ContactPerson.
-     *
      * @return $this
      */
     public function setContactPerson(?string $value = null)
@@ -75,17 +70,12 @@ class ContactInfo
         return $this;
     }
 
-    /**
-     * Gets Country.
-     */
     public function getCountry(): string
     {
         return $this->Country;
     }
 
     /**
-     * Sets Country.
-     *
      * @return $this
      */
     public function setCountry(string $value)
@@ -95,17 +85,12 @@ class ContactInfo
         return $this;
     }
 
-    /**
-     * Gets CountryCode.
-     */
     public function getCountryCode(): string
     {
         return $this->CountryCode;
     }
 
     /**
-     * Sets CountryCode.
-     *
      * @return $this
      */
     public function setCountryCode(string $value)
@@ -115,17 +100,12 @@ class ContactInfo
         return $this;
     }
 
-    /**
-     * Gets City.
-     */
     public function getCity(): string
     {
         return $this->City;
     }
 
     /**
-     * Sets City.
-     *
      * @return $this
      */
     public function setCity(string $value)
@@ -135,17 +115,12 @@ class ContactInfo
         return $this;
     }
 
-    /**
-     * Gets Street.
-     */
     public function getStreet(): ?string
     {
         return $this->Street;
     }
 
     /**
-     * Sets Street.
-     *
      * @return $this
      */
     public function setStreet(?string $value = null)
@@ -155,17 +130,12 @@ class ContactInfo
         return $this;
     }
 
-    /**
-     * Gets House.
-     */
     public function getHouse(): ?string
     {
         return $this->House;
     }
 
     /**
-     * Sets House.
-     *
      * @return $this
      */
     public function setHouse(?string $value = null)
@@ -175,17 +145,12 @@ class ContactInfo
         return $this;
     }
 
-    /**
-     * Gets Build.
-     */
     public function getBuild(): ?string
     {
         return $this->Build;
     }
 
     /**
-     * Sets Build.
-     *
      * @return $this
      */
     public function setBuild(?string $value = null)
@@ -195,17 +160,12 @@ class ContactInfo
         return $this;
     }
 
-    /**
-     * Gets Apart.
-     */
     public function getApart(): ?string
     {
         return $this->Apart;
     }
 
     /**
-     * Sets Apart.
-     *
      * @return $this
      */
     public function setApart(?string $value = null)
@@ -215,17 +175,12 @@ class ContactInfo
         return $this;
     }
 
-    /**
-     * Gets CityCode.
-     */
     public function getCityCode(): string
     {
         return $this->CityCode;
     }
 
     /**
-     * Sets CityCode.
-     *
      * @return $this
      */
     public function setCityCode(string $value)
@@ -235,17 +190,12 @@ class ContactInfo
         return $this;
     }
 
-    /**
-     * Gets Phone.
-     */
     public function getPhone(): string
     {
         return $this->Phone;
     }
 
     /**
-     * Sets Phone.
-     *
      * @return $this
      */
     public function setPhone(string $value)
@@ -255,17 +205,12 @@ class ContactInfo
         return $this;
     }
 
-    /**
-     * Gets PhoneExt.
-     */
     public function getPhoneExt(): ?string
     {
         return $this->PhoneExt;
     }
 
     /**
-     * Sets PhoneExt.
-     *
      * @return $this
      */
     public function setPhoneExt(?string $value = null)
@@ -275,17 +220,12 @@ class ContactInfo
         return $this;
     }
 
-    /**
-     * Gets CompanyName.
-     */
     public function getCompanyName(): string
     {
         return $this->CompanyName;
     }
 
     /**
-     * Sets CompanyName.
-     *
      * @return $this
      */
     public function setCompanyName(string $value)
@@ -295,17 +235,12 @@ class ContactInfo
         return $this;
     }
 
-    /**
-     * Gets IMClient.
-     */
     public function getIMClient(): ?string
     {
         return $this->IMClient;
     }
 
     /**
-     * Sets IMClient.
-     *
      * @return $this
      */
     public function setIMClient(?string $value = null)
@@ -315,17 +250,12 @@ class ContactInfo
         return $this;
     }
 
-    /**
-     * Gets IMLogin.
-     */
     public function getIMLogin(): ?string
     {
         return $this->IMLogin;
     }
 
     /**
-     * Sets IMLogin.
-     *
      * @return $this
      */
     public function setIMLogin(?string $value = null)
@@ -335,17 +265,12 @@ class ContactInfo
         return $this;
     }
 
-    /**
-     * Gets ExtraMessage.
-     */
     public function getExtraMessage(): ?string
     {
         return $this->ExtraMessage;
     }
 
     /**
-     * Sets ExtraMessage.
-     *
      * @return $this
      */
     public function setExtraMessage(?string $value = null)
@@ -355,17 +280,12 @@ class ContactInfo
         return $this;
     }
 
-    /**
-     * Gets ContactEmail.
-     */
     public function getContactEmail(): ?string
     {
         return $this->ContactEmail;
     }
 
     /**
-     * Sets ContactEmail.
-     *
      * @return $this
      */
     public function setContactEmail(?string $value = null)
@@ -375,17 +295,12 @@ class ContactInfo
         return $this;
     }
 
-    /**
-     * Gets WorkTime.
-     */
     public function getWorkTime(): string
     {
         return $this->WorkTime;
     }
 
     /**
-     * Sets WorkTime.
-     *
      * @return $this
      */
     public function setWorkTime(string $value)
@@ -395,17 +310,12 @@ class ContactInfo
         return $this;
     }
 
-    /**
-     * Gets OGRN.
-     */
     public function getOGRN(): ?string
     {
         return $this->OGRN;
     }
 
     /**
-     * Sets OGRN.
-     *
      * @return $this
      */
     public function setOGRN(?string $value = null)
@@ -415,17 +325,12 @@ class ContactInfo
         return $this;
     }
 
-    /**
-     * Gets PointOnMap.
-     */
     public function getPointOnMap(): ?MapPoint
     {
         return $this->PointOnMap;
     }
 
     /**
-     * Sets PointOnMap.
-     *
      * @return $this
      */
     public function setPointOnMap(?MapPoint $value = null)

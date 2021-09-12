@@ -11,28 +11,15 @@ class AgencyClientUpdateItem extends ClientUpdateItem
 {
     protected $ClientId = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Grants = null;
 
-    /**
-     * Creates a new instance of AgencyClientUpdateItem.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
-
-    /**
-     * Gets ClientId.
-     */
     public function getClientId(): int
     {
         return $this->ClientId;
     }
 
     /**
-     * Sets ClientId.
-     *
      * @return $this
      */
     public function setClientId(int $value)
@@ -43,8 +30,6 @@ class AgencyClientUpdateItem extends ClientUpdateItem
     }
 
     /**
-     * Gets Grants.
-     *
      * @return GrantItem[]|null
      */
     public function getGrants(): ?array
@@ -53,8 +38,6 @@ class AgencyClientUpdateItem extends ClientUpdateItem
     }
 
     /**
-     * Sets Grants.
-     *
      * @param GrantItem[]|null $value
      *
      * @return $this

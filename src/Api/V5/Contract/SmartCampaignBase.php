@@ -9,31 +9,26 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class SmartCampaignBase
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $CounterId = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AttributionModel = null;
 
     /**
-     * Creates a new instance of SmartCampaignBase.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets CounterId.
-     */
     public function getCounterId(): ?int
     {
         return $this->CounterId ?? null;
     }
 
     /**
-     * Sets CounterId.
-     *
      * @return $this
      */
     public function setCounterId(?int $value = null)
@@ -44,8 +39,6 @@ class SmartCampaignBase
     }
 
     /**
-     * Gets AttributionModel.
-     *
      * @see AttributionModelEnum
      */
     public function getAttributionModel(): ?string
@@ -54,8 +47,6 @@ class SmartCampaignBase
     }
 
     /**
-     * Sets AttributionModel.
-     *
      * @see AttributionModelEnum
      *
      * @return $this

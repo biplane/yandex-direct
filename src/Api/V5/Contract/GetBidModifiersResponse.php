@@ -9,20 +9,10 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class GetBidModifiersResponse extends GetResponseGeneral
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $BidModifiers = null;
 
     /**
-     * Creates a new instance of GetBidModifiersResponse.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
-
-    /**
-     * Gets BidModifiers.
-     *
      * @return BidModifierGetItem[]|null
      */
     public function getBidModifiers(): ?array
@@ -31,8 +21,6 @@ class GetBidModifiersResponse extends GetResponseGeneral
     }
 
     /**
-     * Sets BidModifiers.
-     *
      * @param BidModifierGetItem[]|null $value
      *
      * @return $this

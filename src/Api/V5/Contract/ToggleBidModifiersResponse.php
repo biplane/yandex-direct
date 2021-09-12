@@ -9,20 +9,18 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class ToggleBidModifiersResponse
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $ToggleResults = null;
 
     /**
-     * Creates a new instance of ToggleBidModifiersResponse.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets ToggleResults.
-     *
      * @return ToggleResult[]|null
      */
     public function getToggleResults(): ?array
@@ -31,8 +29,6 @@ class ToggleBidModifiersResponse
     }
 
     /**
-     * Sets ToggleResults.
-     *
      * @param ToggleResult[]|null $value
      *
      * @return $this

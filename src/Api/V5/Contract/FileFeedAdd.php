@@ -14,24 +14,19 @@ class FileFeedAdd
     protected $Filename = null;
 
     /**
-     * Creates a new instance of FileFeedAdd.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Data.
-     */
     public function getData(): string
     {
         return $this->Data;
     }
 
     /**
-     * Sets Data.
-     *
      * @return $this
      */
     public function setData(string $value)
@@ -41,17 +36,12 @@ class FileFeedAdd
         return $this;
     }
 
-    /**
-     * Gets Filename.
-     */
     public function getFilename(): string
     {
         return $this->Filename;
     }
 
     /**
-     * Sets Filename.
-     *
      * @return $this
      */
     public function setFilename(string $value)

@@ -5,6 +5,20 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5;
 
 use Biplane\YandexDirect\Api\ApiSoapClientV5;
+use Biplane\YandexDirect\Api\V5\Contract\AddSmartAdTargetsRequest;
+use Biplane\YandexDirect\Api\V5\Contract\AddSmartAdTargetsResponse;
+use Biplane\YandexDirect\Api\V5\Contract\DeleteSmartAdTargetsRequest;
+use Biplane\YandexDirect\Api\V5\Contract\DeleteSmartAdTargetsResponse;
+use Biplane\YandexDirect\Api\V5\Contract\GetSmartAdTargetsRequest;
+use Biplane\YandexDirect\Api\V5\Contract\GetSmartAdTargetsResponse;
+use Biplane\YandexDirect\Api\V5\Contract\ResumeSmartAdTargetsRequest;
+use Biplane\YandexDirect\Api\V5\Contract\ResumeSmartAdTargetsResponse;
+use Biplane\YandexDirect\Api\V5\Contract\SetBidsSmartAdTargetsRequest;
+use Biplane\YandexDirect\Api\V5\Contract\SetBidsSmartAdTargetsResponse;
+use Biplane\YandexDirect\Api\V5\Contract\SuspendSmartAdTargetsRequest;
+use Biplane\YandexDirect\Api\V5\Contract\SuspendSmartAdTargetsResponse;
+use Biplane\YandexDirect\Api\V5\Contract\UpdateSmartAdTargetsRequest;
+use Biplane\YandexDirect\Api\V5\Contract\UpdateSmartAdTargetsResponse;
 use Biplane\YandexDirect\Config;
 
 /**
@@ -14,6 +28,9 @@ class SmartAdTargets extends ApiSoapClientV5
 {
     public const ENDPOINT = 'https://api.direct.yandex.com/v5/smartadtargets?wsdl';
 
+    /**
+     * @param array<string, mixed> $options
+     */
     public function __construct(Config $config, array $options)
     {
         $options['classmap'] = [
@@ -83,58 +100,37 @@ class SmartAdTargets extends ApiSoapClientV5
         parent::__construct(self::ENDPOINT, $config, $options);
     }
 
-    /**
-     * add.
-     */
-    public function add(Contract\AddSmartAdTargetsRequest $parameters): Contract\AddSmartAdTargetsResponse
+    public function add(AddSmartAdTargetsRequest $parameters): AddSmartAdTargetsResponse
     {
         return $this->__soapCall('add', [$parameters]);
     }
 
-    /**
-     * get.
-     */
-    public function get(Contract\GetSmartAdTargetsRequest $parameters): Contract\GetSmartAdTargetsResponse
+    public function get(GetSmartAdTargetsRequest $parameters): GetSmartAdTargetsResponse
     {
         return $this->__soapCall('get', [$parameters]);
     }
 
-    /**
-     * update.
-     */
-    public function update(Contract\UpdateSmartAdTargetsRequest $parameters): Contract\UpdateSmartAdTargetsResponse
+    public function update(UpdateSmartAdTargetsRequest $parameters): UpdateSmartAdTargetsResponse
     {
         return $this->__soapCall('update', [$parameters]);
     }
 
-    /**
-     * delete.
-     */
-    public function delete(Contract\DeleteSmartAdTargetsRequest $parameters): Contract\DeleteSmartAdTargetsResponse
+    public function delete(DeleteSmartAdTargetsRequest $parameters): DeleteSmartAdTargetsResponse
     {
         return $this->__soapCall('delete', [$parameters]);
     }
 
-    /**
-     * suspend.
-     */
-    public function suspend(Contract\SuspendSmartAdTargetsRequest $parameters): Contract\SuspendSmartAdTargetsResponse
+    public function suspend(SuspendSmartAdTargetsRequest $parameters): SuspendSmartAdTargetsResponse
     {
         return $this->__soapCall('suspend', [$parameters]);
     }
 
-    /**
-     * resume.
-     */
-    public function resume(Contract\ResumeSmartAdTargetsRequest $parameters): Contract\ResumeSmartAdTargetsResponse
+    public function resume(ResumeSmartAdTargetsRequest $parameters): ResumeSmartAdTargetsResponse
     {
         return $this->__soapCall('resume', [$parameters]);
     }
 
-    /**
-     * setBids.
-     */
-    public function setBids(Contract\SetBidsSmartAdTargetsRequest $parameters): Contract\SetBidsSmartAdTargetsResponse
+    public function setBids(SetBidsSmartAdTargetsRequest $parameters): SetBidsSmartAdTargetsResponse
     {
         return $this->__soapCall('setBids', [$parameters]);
     }

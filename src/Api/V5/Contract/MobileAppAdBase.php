@@ -9,40 +9,35 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class MobileAppAdBase
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Title = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Text = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $TrackingUrl = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Action = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AdImageHash = null;
 
     /**
-     * Creates a new instance of MobileAppAdBase.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Title.
-     */
     public function getTitle(): ?string
     {
         return $this->Title ?? null;
     }
 
     /**
-     * Sets Title.
-     *
      * @return $this
      */
     public function setTitle(?string $value = null)
@@ -52,17 +47,12 @@ class MobileAppAdBase
         return $this;
     }
 
-    /**
-     * Gets Text.
-     */
     public function getText(): ?string
     {
         return $this->Text ?? null;
     }
 
     /**
-     * Sets Text.
-     *
      * @return $this
      */
     public function setText(?string $value = null)
@@ -72,17 +62,12 @@ class MobileAppAdBase
         return $this;
     }
 
-    /**
-     * Gets TrackingUrl.
-     */
     public function getTrackingUrl(): ?string
     {
         return $this->TrackingUrl ?? null;
     }
 
     /**
-     * Sets TrackingUrl.
-     *
      * @return $this
      */
     public function setTrackingUrl(?string $value = null)
@@ -93,8 +78,6 @@ class MobileAppAdBase
     }
 
     /**
-     * Gets Action.
-     *
      * @see MobileAppAdActionEnum
      */
     public function getAction(): ?string
@@ -103,8 +86,6 @@ class MobileAppAdBase
     }
 
     /**
-     * Sets Action.
-     *
      * @see MobileAppAdActionEnum
      *
      * @return $this
@@ -116,17 +97,12 @@ class MobileAppAdBase
         return $this;
     }
 
-    /**
-     * Gets AdImageHash.
-     */
     public function getAdImageHash(): ?string
     {
         return $this->AdImageHash ?? null;
     }
 
     /**
-     * Sets AdImageHash.
-     *
      * @return $this
      */
     public function setAdImageHash(?string $value = null)

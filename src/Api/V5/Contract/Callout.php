@@ -12,24 +12,19 @@ class Callout
     protected $CalloutText = null;
 
     /**
-     * Creates a new instance of Callout.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets CalloutText.
-     */
     public function getCalloutText(): string
     {
         return $this->CalloutText;
     }
 
     /**
-     * Sets CalloutText.
-     *
      * @return $this
      */
     public function setCalloutText(string $value)

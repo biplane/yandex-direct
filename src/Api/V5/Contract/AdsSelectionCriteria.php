@@ -9,59 +9,57 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AdsSelectionCriteria
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Ids = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $States = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Statuses = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $CampaignIds = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AdGroupIds = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Types = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Mobile = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $VCardIds = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $SitelinkSetIds = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AdImageHashes = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $VCardModerationStatuses = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $SitelinksModerationStatuses = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AdImageModerationStatuses = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AdExtensionIds = null;
 
     /**
-     * Creates a new instance of AdsSelectionCriteria.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Ids.
-     *
      * @return int[]|null
      */
     public function getIds(): ?array
@@ -70,8 +68,6 @@ class AdsSelectionCriteria
     }
 
     /**
-     * Sets Ids.
-     *
      * @param int[]|null $value
      *
      * @return $this
@@ -84,8 +80,6 @@ class AdsSelectionCriteria
     }
 
     /**
-     * Gets States.
-     *
      * @see AdStateSelectionEnum
      *
      * @return string[]|null
@@ -96,8 +90,6 @@ class AdsSelectionCriteria
     }
 
     /**
-     * Sets States.
-     *
      * @see AdStateSelectionEnum
      *
      * @param string[]|null $value
@@ -112,8 +104,6 @@ class AdsSelectionCriteria
     }
 
     /**
-     * Gets Statuses.
-     *
      * @see AdStatusSelectionEnum
      *
      * @return string[]|null
@@ -124,8 +114,6 @@ class AdsSelectionCriteria
     }
 
     /**
-     * Sets Statuses.
-     *
      * @see AdStatusSelectionEnum
      *
      * @param string[]|null $value
@@ -140,8 +128,6 @@ class AdsSelectionCriteria
     }
 
     /**
-     * Gets CampaignIds.
-     *
      * @return int[]|null
      */
     public function getCampaignIds(): ?array
@@ -150,8 +136,6 @@ class AdsSelectionCriteria
     }
 
     /**
-     * Sets CampaignIds.
-     *
      * @param int[]|null $value
      *
      * @return $this
@@ -164,8 +148,6 @@ class AdsSelectionCriteria
     }
 
     /**
-     * Gets AdGroupIds.
-     *
      * @return int[]|null
      */
     public function getAdGroupIds(): ?array
@@ -174,8 +156,6 @@ class AdsSelectionCriteria
     }
 
     /**
-     * Sets AdGroupIds.
-     *
      * @param int[]|null $value
      *
      * @return $this
@@ -188,8 +168,6 @@ class AdsSelectionCriteria
     }
 
     /**
-     * Gets Types.
-     *
      * @see AdTypeEnum
      *
      * @return string[]|null
@@ -200,8 +178,6 @@ class AdsSelectionCriteria
     }
 
     /**
-     * Sets Types.
-     *
      * @see AdTypeEnum
      *
      * @param string[]|null $value
@@ -216,8 +192,6 @@ class AdsSelectionCriteria
     }
 
     /**
-     * Gets Mobile.
-     *
      * @see YesNoEnum
      */
     public function getMobile(): ?string
@@ -226,8 +200,6 @@ class AdsSelectionCriteria
     }
 
     /**
-     * Sets Mobile.
-     *
      * @see YesNoEnum
      *
      * @return $this
@@ -240,8 +212,6 @@ class AdsSelectionCriteria
     }
 
     /**
-     * Gets VCardIds.
-     *
      * @return int[]|null
      */
     public function getVCardIds(): ?array
@@ -250,8 +220,6 @@ class AdsSelectionCriteria
     }
 
     /**
-     * Sets VCardIds.
-     *
      * @param int[]|null $value
      *
      * @return $this
@@ -264,8 +232,6 @@ class AdsSelectionCriteria
     }
 
     /**
-     * Gets SitelinkSetIds.
-     *
      * @return int[]|null
      */
     public function getSitelinkSetIds(): ?array
@@ -274,8 +240,6 @@ class AdsSelectionCriteria
     }
 
     /**
-     * Sets SitelinkSetIds.
-     *
      * @param int[]|null $value
      *
      * @return $this
@@ -288,8 +252,6 @@ class AdsSelectionCriteria
     }
 
     /**
-     * Gets AdImageHashes.
-     *
      * @return string[]|null
      */
     public function getAdImageHashes(): ?array
@@ -298,8 +260,6 @@ class AdsSelectionCriteria
     }
 
     /**
-     * Sets AdImageHashes.
-     *
      * @param string[]|null $value
      *
      * @return $this
@@ -312,8 +272,6 @@ class AdsSelectionCriteria
     }
 
     /**
-     * Gets VCardModerationStatuses.
-     *
      * @see ExtensionStatusSelectionEnum
      *
      * @return string[]|null
@@ -324,8 +282,6 @@ class AdsSelectionCriteria
     }
 
     /**
-     * Sets VCardModerationStatuses.
-     *
      * @see ExtensionStatusSelectionEnum
      *
      * @param string[]|null $value
@@ -340,8 +296,6 @@ class AdsSelectionCriteria
     }
 
     /**
-     * Gets SitelinksModerationStatuses.
-     *
      * @see ExtensionStatusSelectionEnum
      *
      * @return string[]|null
@@ -352,8 +306,6 @@ class AdsSelectionCriteria
     }
 
     /**
-     * Sets SitelinksModerationStatuses.
-     *
      * @see ExtensionStatusSelectionEnum
      *
      * @param string[]|null $value
@@ -368,8 +320,6 @@ class AdsSelectionCriteria
     }
 
     /**
-     * Gets AdImageModerationStatuses.
-     *
      * @see ExtensionStatusSelectionEnum
      *
      * @return string[]|null
@@ -380,8 +330,6 @@ class AdsSelectionCriteria
     }
 
     /**
-     * Sets AdImageModerationStatuses.
-     *
      * @see ExtensionStatusSelectionEnum
      *
      * @param string[]|null $value
@@ -396,8 +344,6 @@ class AdsSelectionCriteria
     }
 
     /**
-     * Gets AdExtensionIds.
-     *
      * @return int[]|null
      */
     public function getAdExtensionIds(): ?array
@@ -406,8 +352,6 @@ class AdsSelectionCriteria
     }
 
     /**
-     * Sets AdExtensionIds.
-     *
      * @param int[]|null $value
      *
      * @return $this

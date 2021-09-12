@@ -13,40 +13,38 @@ class KeywordAddItem
 
     protected $AdGroupId = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Bid = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $ContextBid = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $StrategyPriority = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $UserParam1 = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $UserParam2 = null;
 
-    /**
-     * Creates a new instance of KeywordAddItem.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
+//    Can be omitted.
+//    protected $AutotargetingCategories = null;
 
     /**
-     * Gets Keyword.
+     * @return static
      */
+    public static function create()
+    {
+        return new static();
+    }
+
     public function getKeyword(): string
     {
         return $this->Keyword;
     }
 
     /**
-     * Sets Keyword.
-     *
      * @return $this
      */
     public function setKeyword(string $value)
@@ -56,17 +54,12 @@ class KeywordAddItem
         return $this;
     }
 
-    /**
-     * Gets AdGroupId.
-     */
     public function getAdGroupId(): int
     {
         return $this->AdGroupId;
     }
 
     /**
-     * Sets AdGroupId.
-     *
      * @return $this
      */
     public function setAdGroupId(int $value)
@@ -76,17 +69,12 @@ class KeywordAddItem
         return $this;
     }
 
-    /**
-     * Gets Bid.
-     */
     public function getBid(): ?int
     {
         return $this->Bid ?? null;
     }
 
     /**
-     * Sets Bid.
-     *
      * @return $this
      */
     public function setBid(?int $value = null)
@@ -96,17 +84,12 @@ class KeywordAddItem
         return $this;
     }
 
-    /**
-     * Gets ContextBid.
-     */
     public function getContextBid(): ?int
     {
         return $this->ContextBid ?? null;
     }
 
     /**
-     * Sets ContextBid.
-     *
      * @return $this
      */
     public function setContextBid(?int $value = null)
@@ -117,8 +100,6 @@ class KeywordAddItem
     }
 
     /**
-     * Gets StrategyPriority.
-     *
      * @see PriorityEnum
      */
     public function getStrategyPriority(): ?string
@@ -127,8 +108,6 @@ class KeywordAddItem
     }
 
     /**
-     * Sets StrategyPriority.
-     *
      * @see PriorityEnum
      *
      * @return $this
@@ -140,17 +119,12 @@ class KeywordAddItem
         return $this;
     }
 
-    /**
-     * Gets UserParam1.
-     */
     public function getUserParam1(): ?string
     {
         return $this->UserParam1 ?? null;
     }
 
     /**
-     * Sets UserParam1.
-     *
      * @return $this
      */
     public function setUserParam1(?string $value = null)
@@ -160,22 +134,37 @@ class KeywordAddItem
         return $this;
     }
 
-    /**
-     * Gets UserParam2.
-     */
     public function getUserParam2(): ?string
     {
         return $this->UserParam2 ?? null;
     }
 
     /**
-     * Sets UserParam2.
-     *
      * @return $this
      */
     public function setUserParam2(?string $value = null)
     {
         $this->UserParam2 = $value;
+
+        return $this;
+    }
+
+    /**
+     * @return AutotargetingCategory[]|null
+     */
+    public function getAutotargetingCategories(): ?array
+    {
+        return $this->AutotargetingCategories ?? null;
+    }
+
+    /**
+     * @param AutotargetingCategory[]|null $value
+     *
+     * @return $this
+     */
+    public function setAutotargetingCategories(?array $value = null)
+    {
+        $this->AutotargetingCategories = $value;
 
         return $this;
     }

@@ -9,37 +9,32 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class PriceExtensionGetItem
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Price = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $OldPrice = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $PriceQualifier = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $PriceCurrency = null;
 
     /**
-     * Creates a new instance of PriceExtensionGetItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Price.
-     */
     public function getPrice(): ?int
     {
         return $this->Price ?? null;
     }
 
     /**
-     * Sets Price.
-     *
      * @return $this
      */
     public function setPrice(?int $value = null)
@@ -49,17 +44,12 @@ class PriceExtensionGetItem
         return $this;
     }
 
-    /**
-     * Gets OldPrice.
-     */
     public function getOldPrice(): ?int
     {
         return $this->OldPrice ?? null;
     }
 
     /**
-     * Sets OldPrice.
-     *
      * @return $this
      */
     public function setOldPrice(?int $value = null)
@@ -70,8 +60,6 @@ class PriceExtensionGetItem
     }
 
     /**
-     * Gets PriceQualifier.
-     *
      * @see PriceQualifierEnum
      */
     public function getPriceQualifier(): ?string
@@ -80,8 +68,6 @@ class PriceExtensionGetItem
     }
 
     /**
-     * Sets PriceQualifier.
-     *
      * @see PriceQualifierEnum
      *
      * @return $this
@@ -94,8 +80,6 @@ class PriceExtensionGetItem
     }
 
     /**
-     * Gets PriceCurrency.
-     *
      * @see PriceCurrencyEnum
      */
     public function getPriceCurrency(): ?string
@@ -104,8 +88,6 @@ class PriceExtensionGetItem
     }
 
     /**
-     * Sets PriceCurrency.
-     *
      * @see PriceCurrencyEnum
      *
      * @return $this

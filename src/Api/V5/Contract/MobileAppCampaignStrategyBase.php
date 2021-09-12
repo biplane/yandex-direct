@@ -9,43 +9,38 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class MobileAppCampaignStrategyBase
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $WbMaximumClicks = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $WbMaximumAppInstalls = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AverageCpc = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AverageCpi = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $WeeklyClickPackage = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $PayForInstall = null;
 
     /**
-     * Creates a new instance of MobileAppCampaignStrategyBase.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets WbMaximumClicks.
-     */
     public function getWbMaximumClicks(): ?StrategyMaximumClicks
     {
         return $this->WbMaximumClicks ?? null;
     }
 
     /**
-     * Sets WbMaximumClicks.
-     *
      * @return $this
      */
     public function setWbMaximumClicks(?StrategyMaximumClicks $value = null)
@@ -55,17 +50,12 @@ class MobileAppCampaignStrategyBase
         return $this;
     }
 
-    /**
-     * Gets WbMaximumAppInstalls.
-     */
     public function getWbMaximumAppInstalls(): ?StrategyMaximumAppInstalls
     {
         return $this->WbMaximumAppInstalls ?? null;
     }
 
     /**
-     * Sets WbMaximumAppInstalls.
-     *
      * @return $this
      */
     public function setWbMaximumAppInstalls(?StrategyMaximumAppInstalls $value = null)
@@ -75,17 +65,12 @@ class MobileAppCampaignStrategyBase
         return $this;
     }
 
-    /**
-     * Gets AverageCpc.
-     */
     public function getAverageCpc(): ?StrategyAverageCpc
     {
         return $this->AverageCpc ?? null;
     }
 
     /**
-     * Sets AverageCpc.
-     *
      * @return $this
      */
     public function setAverageCpc(?StrategyAverageCpc $value = null)
@@ -95,17 +80,12 @@ class MobileAppCampaignStrategyBase
         return $this;
     }
 
-    /**
-     * Gets AverageCpi.
-     */
     public function getAverageCpi(): ?StrategyAverageCpi
     {
         return $this->AverageCpi ?? null;
     }
 
     /**
-     * Sets AverageCpi.
-     *
      * @return $this
      */
     public function setAverageCpi(?StrategyAverageCpi $value = null)
@@ -115,17 +95,12 @@ class MobileAppCampaignStrategyBase
         return $this;
     }
 
-    /**
-     * Gets WeeklyClickPackage.
-     */
     public function getWeeklyClickPackage(): ?StrategyWeeklyClickPackage
     {
         return $this->WeeklyClickPackage ?? null;
     }
 
     /**
-     * Sets WeeklyClickPackage.
-     *
      * @return $this
      */
     public function setWeeklyClickPackage(?StrategyWeeklyClickPackage $value = null)
@@ -135,17 +110,12 @@ class MobileAppCampaignStrategyBase
         return $this;
     }
 
-    /**
-     * Gets PayForInstall.
-     */
     public function getPayForInstall(): ?StrategyPayForInstall
     {
         return $this->PayForInstall ?? null;
     }
 
     /**
-     * Sets PayForInstall.
-     *
      * @return $this
      */
     public function setPayForInstall(?StrategyPayForInstall $value = null)

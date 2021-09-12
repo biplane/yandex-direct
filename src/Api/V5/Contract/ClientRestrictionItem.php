@@ -14,16 +14,14 @@ class ClientRestrictionItem
     protected $Value = null;
 
     /**
-     * Creates a new instance of ClientRestrictionItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Element.
-     *
      * @see ClientRestrictionEnum
      */
     public function getElement(): string
@@ -32,8 +30,6 @@ class ClientRestrictionItem
     }
 
     /**
-     * Sets Element.
-     *
      * @see ClientRestrictionEnum
      *
      * @return $this
@@ -45,17 +41,12 @@ class ClientRestrictionItem
         return $this;
     }
 
-    /**
-     * Gets Value.
-     */
     public function getValue(): int
     {
         return $this->Value;
     }
 
     /**
-     * Sets Value.
-     *
      * @return $this
      */
     public function setValue(int $value)

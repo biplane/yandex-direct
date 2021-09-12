@@ -9,20 +9,18 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class SetBidModifiersResponse
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $SetResults = null;
 
     /**
-     * Creates a new instance of SetBidModifiersResponse.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets SetResults.
-     *
      * @return ActionResult[]|null
      */
     public function getSetResults(): ?array
@@ -31,8 +29,6 @@ class SetBidModifiersResponse
     }
 
     /**
-     * Sets SetResults.
-     *
      * @param ActionResult[]|null $value
      *
      * @return $this

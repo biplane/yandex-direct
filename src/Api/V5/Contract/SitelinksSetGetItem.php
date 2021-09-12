@@ -9,31 +9,26 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class SitelinksSetGetItem
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Id = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Sitelinks = null;
 
     /**
-     * Creates a new instance of SitelinksSetGetItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Id.
-     */
     public function getId(): ?int
     {
         return $this->Id ?? null;
     }
 
     /**
-     * Sets Id.
-     *
      * @return $this
      */
     public function setId(?int $value = null)
@@ -44,8 +39,6 @@ class SitelinksSetGetItem
     }
 
     /**
-     * Gets Sitelinks.
-     *
      * @return SitelinkGetItem[]|null
      */
     public function getSitelinks(): ?array
@@ -54,8 +47,6 @@ class SitelinksSetGetItem
     }
 
     /**
-     * Sets Sitelinks.
-     *
      * @param SitelinkGetItem[]|null $value
      *
      * @return $this

@@ -9,20 +9,10 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class GetNegativeKeywordSharedSetsResponse extends GetResponseGeneral
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $NegativeKeywordSharedSets = null;
 
     /**
-     * Creates a new instance of GetNegativeKeywordSharedSetsResponse.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
-
-    /**
-     * Gets NegativeKeywordSharedSets.
-     *
      * @return NegativeKeywordSharedSetGetItem[]|null
      */
     public function getNegativeKeywordSharedSets(): ?array
@@ -31,8 +21,6 @@ class GetNegativeKeywordSharedSetsResponse extends GetResponseGeneral
     }
 
     /**
-     * Sets NegativeKeywordSharedSets.
-     *
      * @param NegativeKeywordSharedSetGetItem[]|null $value
      *
      * @return $this

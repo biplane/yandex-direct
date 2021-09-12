@@ -9,20 +9,10 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class GetAudienceTargetsResponse extends GetResponseGeneral
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $AudienceTargets = null;
 
     /**
-     * Creates a new instance of GetAudienceTargetsResponse.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
-
-    /**
-     * Gets AudienceTargets.
-     *
      * @return AudienceTargetGetItem[]|null
      */
     public function getAudienceTargets(): ?array
@@ -31,8 +21,6 @@ class GetAudienceTargetsResponse extends GetResponseGeneral
     }
 
     /**
-     * Sets AudienceTargets.
-     *
      * @param AudienceTargetGetItem[]|null $value
      *
      * @return $this

@@ -11,26 +11,24 @@ class TimeTargetingOnPublicHolidays
 {
     protected $SuspendOnHolidays = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $BidPercent = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $StartHour = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $EndHour = null;
 
     /**
-     * Creates a new instance of TimeTargetingOnPublicHolidays.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets SuspendOnHolidays.
-     *
      * @see YesNoEnum
      */
     public function getSuspendOnHolidays(): string
@@ -39,8 +37,6 @@ class TimeTargetingOnPublicHolidays
     }
 
     /**
-     * Sets SuspendOnHolidays.
-     *
      * @see YesNoEnum
      *
      * @return $this
@@ -52,17 +48,12 @@ class TimeTargetingOnPublicHolidays
         return $this;
     }
 
-    /**
-     * Gets BidPercent.
-     */
     public function getBidPercent(): ?int
     {
         return $this->BidPercent ?? null;
     }
 
     /**
-     * Sets BidPercent.
-     *
      * @return $this
      */
     public function setBidPercent(?int $value = null)
@@ -72,17 +63,12 @@ class TimeTargetingOnPublicHolidays
         return $this;
     }
 
-    /**
-     * Gets StartHour.
-     */
     public function getStartHour(): ?int
     {
         return $this->StartHour ?? null;
     }
 
     /**
-     * Sets StartHour.
-     *
      * @return $this
      */
     public function setStartHour(?int $value = null)
@@ -92,17 +78,12 @@ class TimeTargetingOnPublicHolidays
         return $this;
     }
 
-    /**
-     * Gets EndHour.
-     */
     public function getEndHour(): ?int
     {
         return $this->EndHour ?? null;
     }
 
     /**
-     * Sets EndHour.
-     *
      * @return $this
      */
     public function setEndHour(?int $value = null)

@@ -9,26 +9,24 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class SmsSettings
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Events = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $TimeFrom = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $TimeTo = null;
 
     /**
-     * Creates a new instance of SmsSettings.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Events.
-     *
      * @see SmsEventsEnum
      *
      * @return string[]|null
@@ -39,8 +37,6 @@ class SmsSettings
     }
 
     /**
-     * Sets Events.
-     *
      * @see SmsEventsEnum
      *
      * @param string[]|null $value
@@ -54,17 +50,12 @@ class SmsSettings
         return $this;
     }
 
-    /**
-     * Gets TimeFrom.
-     */
     public function getTimeFrom(): ?string
     {
         return $this->TimeFrom ?? null;
     }
 
     /**
-     * Sets TimeFrom.
-     *
      * @return $this
      */
     public function setTimeFrom(?string $value = null)
@@ -74,17 +65,12 @@ class SmsSettings
         return $this;
     }
 
-    /**
-     * Gets TimeTo.
-     */
     public function getTimeTo(): ?string
     {
         return $this->TimeTo ?? null;
     }
 
     /**
-     * Sets TimeTo.
-     *
      * @return $this
      */
     public function setTimeTo(?string $value = null)

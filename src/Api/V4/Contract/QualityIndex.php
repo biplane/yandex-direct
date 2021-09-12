@@ -14,24 +14,19 @@ class QualityIndex
     protected $References = [];
 
     /**
-     * Creates a new instance of QualityIndex.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Value.
-     */
     public function getValue(): float
     {
         return $this->Value;
     }
 
     /**
-     * Sets Value.
-     *
      * @return $this
      */
     public function setValue(float $value)
@@ -42,8 +37,6 @@ class QualityIndex
     }
 
     /**
-     * Gets References.
-     *
      * @return int[]
      */
     public function getReferences(): array
@@ -52,8 +45,6 @@ class QualityIndex
     }
 
     /**
-     * Sets References.
-     *
      * @param int[] $value
      *
      * @return $this

@@ -14,24 +14,19 @@ class ContextCoverageItem
     protected $Price = null;
 
     /**
-     * Creates a new instance of ContextCoverageItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Probability.
-     */
     public function getProbability(): float
     {
         return $this->Probability;
     }
 
     /**
-     * Sets Probability.
-     *
      * @return $this
      */
     public function setProbability(float $value)
@@ -41,17 +36,12 @@ class ContextCoverageItem
         return $this;
     }
 
-    /**
-     * Gets Price.
-     */
     public function getPrice(): int
     {
         return $this->Price;
     }
 
     /**
-     * Sets Price.
-     *
      * @return $this
      */
     public function setPrice(int $value)

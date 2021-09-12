@@ -16,24 +16,19 @@ class VersionDesc
     protected $BorderDate = null;
 
     /**
-     * Creates a new instance of VersionDesc.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets VersionNumber.
-     */
     public function getVersionNumber(): int
     {
         return $this->VersionNumber;
     }
 
     /**
-     * Sets VersionNumber.
-     *
      * @return $this
      */
     public function setVersionNumber(int $value)
@@ -43,17 +38,12 @@ class VersionDesc
         return $this;
     }
 
-    /**
-     * Gets LinkWSDL.
-     */
     public function getLinkWSDL(): string
     {
         return $this->LinkWSDL;
     }
 
     /**
-     * Sets LinkWSDL.
-     *
      * @return $this
      */
     public function setLinkWSDL(string $value)
@@ -63,17 +53,12 @@ class VersionDesc
         return $this;
     }
 
-    /**
-     * Gets BorderDate.
-     */
     public function getBorderDate(): ?string
     {
         return $this->BorderDate;
     }
 
     /**
-     * Sets BorderDate.
-     *
      * @return $this
      */
     public function setBorderDate(?string $value = null)

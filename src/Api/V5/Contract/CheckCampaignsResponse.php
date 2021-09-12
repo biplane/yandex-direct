@@ -9,22 +9,20 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class CheckCampaignsResponse
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Campaigns = null;
 
     protected $Timestamp = null;
 
     /**
-     * Creates a new instance of CheckCampaignsResponse.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Campaigns.
-     *
      * @return CampaignChangesItem[]|null
      */
     public function getCampaigns(): ?array
@@ -33,8 +31,6 @@ class CheckCampaignsResponse
     }
 
     /**
-     * Sets Campaigns.
-     *
      * @param CampaignChangesItem[]|null $value
      *
      * @return $this
@@ -46,17 +42,12 @@ class CheckCampaignsResponse
         return $this;
     }
 
-    /**
-     * Gets Timestamp.
-     */
     public function getTimestamp(): string
     {
         return $this->Timestamp;
     }
 
     /**
-     * Sets Timestamp.
-     *
      * @return $this
      */
     public function setTimestamp(string $value)

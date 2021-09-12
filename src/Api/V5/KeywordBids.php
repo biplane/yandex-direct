@@ -5,6 +5,12 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5;
 
 use Biplane\YandexDirect\Api\ApiSoapClientV5;
+use Biplane\YandexDirect\Api\V5\Contract\GetKeywordBidsRequest;
+use Biplane\YandexDirect\Api\V5\Contract\GetKeywordBidsResponse;
+use Biplane\YandexDirect\Api\V5\Contract\SetAutoRequest;
+use Biplane\YandexDirect\Api\V5\Contract\SetAutoResponse;
+use Biplane\YandexDirect\Api\V5\Contract\SetKeywordBidsRequest;
+use Biplane\YandexDirect\Api\V5\Contract\SetKeywordBidsResponse;
 use Biplane\YandexDirect\Config;
 
 /**
@@ -14,6 +20,9 @@ class KeywordBids extends ApiSoapClientV5
 {
     public const ENDPOINT = 'https://api.direct.yandex.com/v5/keywordbids?wsdl';
 
+    /**
+     * @param array<string, mixed> $options
+     */
     public function __construct(Config $config, array $options)
     {
         $options['classmap'] = [
@@ -84,26 +93,17 @@ class KeywordBids extends ApiSoapClientV5
         parent::__construct(self::ENDPOINT, $config, $options);
     }
 
-    /**
-     * get.
-     */
-    public function get(Contract\GetKeywordBidsRequest $parameters): Contract\GetKeywordBidsResponse
+    public function get(GetKeywordBidsRequest $parameters): GetKeywordBidsResponse
     {
         return $this->__soapCall('get', [$parameters]);
     }
 
-    /**
-     * set.
-     */
-    public function set(Contract\SetKeywordBidsRequest $parameters): Contract\SetKeywordBidsResponse
+    public function set(SetKeywordBidsRequest $parameters): SetKeywordBidsResponse
     {
         return $this->__soapCall('set', [$parameters]);
     }
 
-    /**
-     * setAuto.
-     */
-    public function setAuto(Contract\SetAutoRequest $parameters): Contract\SetAutoResponse
+    public function setAuto(SetAutoRequest $parameters): SetAutoResponse
     {
         return $this->__soapCall('setAuto', [$parameters]);
     }

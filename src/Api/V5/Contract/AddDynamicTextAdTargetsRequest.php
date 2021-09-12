@@ -12,16 +12,14 @@ class AddDynamicTextAdTargetsRequest
     protected $Webpages = [];
 
     /**
-     * Creates a new instance of AddDynamicTextAdTargetsRequest.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Webpages.
-     *
      * @return WebpageAddItem[]
      */
     public function getWebpages(): array
@@ -30,8 +28,6 @@ class AddDynamicTextAdTargetsRequest
     }
 
     /**
-     * Sets Webpages.
-     *
      * @param WebpageAddItem[] $value
      *
      * @return $this

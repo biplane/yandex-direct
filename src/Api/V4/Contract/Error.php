@@ -16,24 +16,19 @@ class Error
     protected $FaultDetail = null;
 
     /**
-     * Creates a new instance of Error.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets FaultCode.
-     */
     public function getFaultCode(): int
     {
         return $this->FaultCode;
     }
 
     /**
-     * Sets FaultCode.
-     *
      * @return $this
      */
     public function setFaultCode(int $value)
@@ -43,17 +38,12 @@ class Error
         return $this;
     }
 
-    /**
-     * Gets FaultString.
-     */
     public function getFaultString(): string
     {
         return $this->FaultString;
     }
 
     /**
-     * Sets FaultString.
-     *
      * @return $this
      */
     public function setFaultString(string $value)
@@ -63,17 +53,12 @@ class Error
         return $this;
     }
 
-    /**
-     * Gets FaultDetail.
-     */
     public function getFaultDetail(): ?string
     {
         return $this->FaultDetail;
     }
 
     /**
-     * Sets FaultDetail.
-     *
      * @return $this
      */
     public function setFaultDetail(?string $value = null)

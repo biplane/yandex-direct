@@ -26,24 +26,19 @@ class AdImageUpload
     protected $Status = null;
 
     /**
-     * Creates a new instance of AdImageUpload.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Login.
-     */
     public function getLogin(): string
     {
         return $this->Login;
     }
 
     /**
-     * Sets Login.
-     *
      * @return $this
      */
     public function setLogin(string $value)
@@ -53,17 +48,12 @@ class AdImageUpload
         return $this;
     }
 
-    /**
-     * Gets AdImageHash.
-     */
     public function getAdImageHash(): string
     {
         return $this->AdImageHash;
     }
 
     /**
-     * Sets AdImageHash.
-     *
      * @return $this
      */
     public function setAdImageHash(string $value)
@@ -73,17 +63,12 @@ class AdImageUpload
         return $this;
     }
 
-    /**
-     * Gets AdImageURL.
-     */
     public function getAdImageURL(): string
     {
         return $this->AdImageURL;
     }
 
     /**
-     * Sets AdImageURL.
-     *
      * @return $this
      */
     public function setAdImageURL(string $value)
@@ -93,17 +78,12 @@ class AdImageUpload
         return $this;
     }
 
-    /**
-     * Gets SourceURL.
-     */
     public function getSourceURL(): string
     {
         return $this->SourceURL;
     }
 
     /**
-     * Sets SourceURL.
-     *
      * @return $this
      */
     public function setSourceURL(string $value)
@@ -113,17 +93,12 @@ class AdImageUpload
         return $this;
     }
 
-    /**
-     * Gets Name.
-     */
     public function getName(): ?string
     {
         return $this->Name;
     }
 
     /**
-     * Sets Name.
-     *
      * @return $this
      */
     public function setName(?string $value = null)
@@ -133,17 +108,12 @@ class AdImageUpload
         return $this;
     }
 
-    /**
-     * Gets Error.
-     */
     public function getError(): ?Error
     {
         return $this->Error;
     }
 
     /**
-     * Sets Error.
-     *
      * @return $this
      */
     public function setError(?Error $value = null)
@@ -153,17 +123,12 @@ class AdImageUpload
         return $this;
     }
 
-    /**
-     * Gets AdImageUploadTaskID.
-     */
     public function getAdImageUploadTaskID(): ?int
     {
         return $this->AdImageUploadTaskID;
     }
 
     /**
-     * Sets AdImageUploadTaskID.
-     *
      * @return $this
      */
     public function setAdImageUploadTaskID(?int $value = null)
@@ -173,17 +138,12 @@ class AdImageUpload
         return $this;
     }
 
-    /**
-     * Gets Status.
-     */
     public function getStatus(): ?string
     {
         return $this->Status;
     }
 
     /**
-     * Sets Status.
-     *
      * @return $this
      */
     public function setStatus(?string $value = null)

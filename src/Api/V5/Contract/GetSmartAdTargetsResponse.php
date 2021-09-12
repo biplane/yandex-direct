@@ -9,20 +9,10 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class GetSmartAdTargetsResponse extends GetResponseGeneral
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $SmartAdTargets = null;
 
     /**
-     * Creates a new instance of GetSmartAdTargetsResponse.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
-
-    /**
-     * Gets SmartAdTargets.
-     *
      * @return SmartAdTargetGetItem[]|null
      */
     public function getSmartAdTargets(): ?array
@@ -31,8 +21,6 @@ class GetSmartAdTargetsResponse extends GetResponseGeneral
     }
 
     /**
-     * Sets SmartAdTargets.
-     *
      * @param SmartAdTargetGetItem[]|null $value
      *
      * @return $this

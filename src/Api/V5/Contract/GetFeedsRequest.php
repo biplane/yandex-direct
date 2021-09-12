@@ -11,26 +11,16 @@ class GetFeedsRequest extends GetRequestGeneral
 {
     protected $FieldNames = [];
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $FileFeedFieldNames = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $UrlFeedFieldNames = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $SelectionCriteria = null;
 
     /**
-     * Creates a new instance of GetFeedsRequest.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
-
-    /**
-     * Gets FieldNames.
-     *
      * @see FeedFieldEnum
      *
      * @return string[]
@@ -41,8 +31,6 @@ class GetFeedsRequest extends GetRequestGeneral
     }
 
     /**
-     * Sets FieldNames.
-     *
      * @see FeedFieldEnum
      *
      * @param string[] $value
@@ -57,8 +45,6 @@ class GetFeedsRequest extends GetRequestGeneral
     }
 
     /**
-     * Gets FileFeedFieldNames.
-     *
      * @see FileFeedFieldEnum
      *
      * @return string[]|null
@@ -69,8 +55,6 @@ class GetFeedsRequest extends GetRequestGeneral
     }
 
     /**
-     * Sets FileFeedFieldNames.
-     *
      * @see FileFeedFieldEnum
      *
      * @param string[]|null $value
@@ -85,8 +69,6 @@ class GetFeedsRequest extends GetRequestGeneral
     }
 
     /**
-     * Gets UrlFeedFieldNames.
-     *
      * @see UrlFeedFieldEnum
      *
      * @return string[]|null
@@ -97,8 +79,6 @@ class GetFeedsRequest extends GetRequestGeneral
     }
 
     /**
-     * Sets UrlFeedFieldNames.
-     *
      * @see UrlFeedFieldEnum
      *
      * @param string[]|null $value
@@ -112,17 +92,12 @@ class GetFeedsRequest extends GetRequestGeneral
         return $this;
     }
 
-    /**
-     * Gets SelectionCriteria.
-     */
     public function getSelectionCriteria(): ?FeedsSelectionCriteria
     {
         return $this->SelectionCriteria ?? null;
     }
 
     /**
-     * Sets SelectionCriteria.
-     *
      * @return $this
      */
     public function setSelectionCriteria(?FeedsSelectionCriteria $value = null)

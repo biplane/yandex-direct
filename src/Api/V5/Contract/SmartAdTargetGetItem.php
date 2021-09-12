@@ -9,61 +9,56 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class SmartAdTargetGetItem
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Id = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AdGroupId = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $CampaignId = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Name = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AverageCpc = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AverageCpa = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $StrategyPriority = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $State = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Audience = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Conditions = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $ConditionType = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AvailableItemsOnly = null;
 
     /**
-     * Creates a new instance of SmartAdTargetGetItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Id.
-     */
     public function getId(): ?int
     {
         return $this->Id ?? null;
     }
 
     /**
-     * Sets Id.
-     *
      * @return $this
      */
     public function setId(?int $value = null)
@@ -73,17 +68,12 @@ class SmartAdTargetGetItem
         return $this;
     }
 
-    /**
-     * Gets AdGroupId.
-     */
     public function getAdGroupId(): ?int
     {
         return $this->AdGroupId ?? null;
     }
 
     /**
-     * Sets AdGroupId.
-     *
      * @return $this
      */
     public function setAdGroupId(?int $value = null)
@@ -93,17 +83,12 @@ class SmartAdTargetGetItem
         return $this;
     }
 
-    /**
-     * Gets CampaignId.
-     */
     public function getCampaignId(): ?int
     {
         return $this->CampaignId ?? null;
     }
 
     /**
-     * Sets CampaignId.
-     *
      * @return $this
      */
     public function setCampaignId(?int $value = null)
@@ -113,17 +98,12 @@ class SmartAdTargetGetItem
         return $this;
     }
 
-    /**
-     * Gets Name.
-     */
     public function getName(): ?string
     {
         return $this->Name ?? null;
     }
 
     /**
-     * Sets Name.
-     *
      * @return $this
      */
     public function setName(?string $value = null)
@@ -133,17 +113,12 @@ class SmartAdTargetGetItem
         return $this;
     }
 
-    /**
-     * Gets AverageCpc.
-     */
     public function getAverageCpc(): ?int
     {
         return $this->AverageCpc ?? null;
     }
 
     /**
-     * Sets AverageCpc.
-     *
      * @return $this
      */
     public function setAverageCpc(?int $value = null)
@@ -153,17 +128,12 @@ class SmartAdTargetGetItem
         return $this;
     }
 
-    /**
-     * Gets AverageCpa.
-     */
     public function getAverageCpa(): ?int
     {
         return $this->AverageCpa ?? null;
     }
 
     /**
-     * Sets AverageCpa.
-     *
      * @return $this
      */
     public function setAverageCpa(?int $value = null)
@@ -174,8 +144,6 @@ class SmartAdTargetGetItem
     }
 
     /**
-     * Gets StrategyPriority.
-     *
      * @see PriorityEnum
      */
     public function getStrategyPriority(): ?string
@@ -184,8 +152,6 @@ class SmartAdTargetGetItem
     }
 
     /**
-     * Sets StrategyPriority.
-     *
      * @see PriorityEnum
      *
      * @return $this
@@ -198,8 +164,6 @@ class SmartAdTargetGetItem
     }
 
     /**
-     * Gets State.
-     *
      * @see StateEnum
      */
     public function getState(): ?string
@@ -208,8 +172,6 @@ class SmartAdTargetGetItem
     }
 
     /**
-     * Sets State.
-     *
      * @see StateEnum
      *
      * @return $this
@@ -222,8 +184,6 @@ class SmartAdTargetGetItem
     }
 
     /**
-     * Gets Audience.
-     *
      * @see AudienceEnum
      */
     public function getAudience(): ?string
@@ -232,8 +192,6 @@ class SmartAdTargetGetItem
     }
 
     /**
-     * Sets Audience.
-     *
      * @see AudienceEnum
      *
      * @return $this
@@ -245,17 +203,12 @@ class SmartAdTargetGetItem
         return $this;
     }
 
-    /**
-     * Gets Conditions.
-     */
     public function getConditions(): ?ConditionsArray
     {
         return $this->Conditions ?? null;
     }
 
     /**
-     * Sets Conditions.
-     *
      * @return $this
      */
     public function setConditions(?ConditionsArray $value = null)
@@ -266,8 +219,6 @@ class SmartAdTargetGetItem
     }
 
     /**
-     * Gets ConditionType.
-     *
      * @see ConditionTypeEnum
      */
     public function getConditionType(): ?string
@@ -276,8 +227,6 @@ class SmartAdTargetGetItem
     }
 
     /**
-     * Sets ConditionType.
-     *
      * @see ConditionTypeEnum
      *
      * @return $this
@@ -290,8 +239,6 @@ class SmartAdTargetGetItem
     }
 
     /**
-     * Gets AvailableItemsOnly.
-     *
      * @see YesNoEnum
      */
     public function getAvailableItemsOnly(): ?string
@@ -300,8 +247,6 @@ class SmartAdTargetGetItem
     }
 
     /**
-     * Sets AvailableItemsOnly.
-     *
      * @see YesNoEnum
      *
      * @return $this

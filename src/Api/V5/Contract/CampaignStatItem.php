@@ -14,24 +14,19 @@ class CampaignStatItem
     protected $BorderDate = null;
 
     /**
-     * Creates a new instance of CampaignStatItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets CampaignId.
-     */
     public function getCampaignId(): int
     {
         return $this->CampaignId;
     }
 
     /**
-     * Sets CampaignId.
-     *
      * @return $this
      */
     public function setCampaignId(int $value)
@@ -41,17 +36,12 @@ class CampaignStatItem
         return $this;
     }
 
-    /**
-     * Gets BorderDate.
-     */
     public function getBorderDate(): string
     {
         return $this->BorderDate;
     }
 
     /**
-     * Sets BorderDate.
-     *
      * @return $this
      */
     public function setBorderDate(string $value)

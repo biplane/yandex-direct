@@ -9,20 +9,18 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class GetClientsResponse
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Clients = null;
 
     /**
-     * Creates a new instance of GetClientsResponse.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Clients.
-     *
      * @return ClientGetItem[]|null
      */
     public function getClients(): ?array
@@ -31,8 +29,6 @@ class GetClientsResponse
     }
 
     /**
-     * Sets Clients.
-     *
      * @param ClientGetItem[]|null $value
      *
      * @return $this

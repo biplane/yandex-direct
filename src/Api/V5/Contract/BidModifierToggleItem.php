@@ -9,10 +9,10 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class BidModifierToggleItem
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $CampaignId = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AdGroupId = null;
 
     protected $Type = null;
@@ -20,24 +20,19 @@ class BidModifierToggleItem
     protected $Enabled = null;
 
     /**
-     * Creates a new instance of BidModifierToggleItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets CampaignId.
-     */
     public function getCampaignId(): ?int
     {
         return $this->CampaignId ?? null;
     }
 
     /**
-     * Sets CampaignId.
-     *
      * @return $this
      */
     public function setCampaignId(?int $value = null)
@@ -47,17 +42,12 @@ class BidModifierToggleItem
         return $this;
     }
 
-    /**
-     * Gets AdGroupId.
-     */
     public function getAdGroupId(): ?int
     {
         return $this->AdGroupId ?? null;
     }
 
     /**
-     * Sets AdGroupId.
-     *
      * @return $this
      */
     public function setAdGroupId(?int $value = null)
@@ -68,8 +58,6 @@ class BidModifierToggleItem
     }
 
     /**
-     * Gets Type.
-     *
      * @see BidModifierToggleTypeEnum
      */
     public function getType(): string
@@ -78,8 +66,6 @@ class BidModifierToggleItem
     }
 
     /**
-     * Sets Type.
-     *
      * @see BidModifierToggleTypeEnum
      *
      * @return $this
@@ -92,8 +78,6 @@ class BidModifierToggleItem
     }
 
     /**
-     * Gets Enabled.
-     *
      * @see YesNoEnum
      */
     public function getEnabled(): string
@@ -102,8 +86,6 @@ class BidModifierToggleItem
     }
 
     /**
-     * Sets Enabled.
-     *
      * @see YesNoEnum
      *
      * @return $this

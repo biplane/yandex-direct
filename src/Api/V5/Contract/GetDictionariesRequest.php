@@ -12,16 +12,14 @@ class GetDictionariesRequest
     protected $DictionaryNames = [];
 
     /**
-     * Creates a new instance of GetDictionariesRequest.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets DictionaryNames.
-     *
      * @see DictionaryNameEnum
      *
      * @return string[]
@@ -32,8 +30,6 @@ class GetDictionariesRequest
     }
 
     /**
-     * Sets DictionaryNames.
-     *
      * @see DictionaryNameEnum
      *
      * @param string[] $value

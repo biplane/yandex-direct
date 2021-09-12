@@ -12,16 +12,14 @@ class AddAudienceTargetsRequest
     protected $AudienceTargets = [];
 
     /**
-     * Creates a new instance of AddAudienceTargetsRequest.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets AudienceTargets.
-     *
      * @return AudienceTargetAddItem[]
      */
     public function getAudienceTargets(): array
@@ -30,8 +28,6 @@ class AddAudienceTargetsRequest
     }
 
     /**
-     * Sets AudienceTargets.
-     *
      * @param AudienceTargetAddItem[] $value
      *
      * @return $this

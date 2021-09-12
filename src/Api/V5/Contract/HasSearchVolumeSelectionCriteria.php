@@ -14,16 +14,14 @@ class HasSearchVolumeSelectionCriteria
     protected $Keywords = [];
 
     /**
-     * Creates a new instance of HasSearchVolumeSelectionCriteria.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets RegionIds.
-     *
      * @return int[]
      */
     public function getRegionIds(): array
@@ -32,8 +30,6 @@ class HasSearchVolumeSelectionCriteria
     }
 
     /**
-     * Sets RegionIds.
-     *
      * @param int[] $value
      *
      * @return $this
@@ -46,8 +42,6 @@ class HasSearchVolumeSelectionCriteria
     }
 
     /**
-     * Gets Keywords.
-     *
      * @return string[]
      */
     public function getKeywords(): array
@@ -56,8 +50,6 @@ class HasSearchVolumeSelectionCriteria
     }
 
     /**
-     * Sets Keywords.
-     *
      * @param string[] $value
      *
      * @return $this

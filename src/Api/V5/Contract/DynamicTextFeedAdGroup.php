@@ -12,24 +12,19 @@ class DynamicTextFeedAdGroup
     protected $FeedId = null;
 
     /**
-     * Creates a new instance of DynamicTextFeedAdGroup.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets FeedId.
-     */
     public function getFeedId(): int
     {
         return $this->FeedId;
     }
 
     /**
-     * Sets FeedId.
-     *
      * @return $this
      */
     public function setFeedId(int $value)

@@ -9,20 +9,18 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AddCampaignsResponse
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $AddResults = null;
 
     /**
-     * Creates a new instance of AddCampaignsResponse.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets AddResults.
-     *
      * @return ActionResult[]|null
      */
     public function getAddResults(): ?array
@@ -31,8 +29,6 @@ class AddCampaignsResponse
     }
 
     /**
-     * Sets AddResults.
-     *
      * @param ActionResult[]|null $value
      *
      * @return $this

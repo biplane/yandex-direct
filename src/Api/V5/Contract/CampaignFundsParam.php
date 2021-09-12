@@ -15,28 +15,23 @@ class CampaignFundsParam
 
     protected $BalanceBonus = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $SumAvailableForTransfer = null;
 
     /**
-     * Creates a new instance of CampaignFundsParam.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Sum.
-     */
     public function getSum(): int
     {
         return $this->Sum;
     }
 
     /**
-     * Sets Sum.
-     *
      * @return $this
      */
     public function setSum(int $value)
@@ -46,17 +41,12 @@ class CampaignFundsParam
         return $this;
     }
 
-    /**
-     * Gets Balance.
-     */
     public function getBalance(): int
     {
         return $this->Balance;
     }
 
     /**
-     * Sets Balance.
-     *
      * @return $this
      */
     public function setBalance(int $value)
@@ -66,17 +56,12 @@ class CampaignFundsParam
         return $this;
     }
 
-    /**
-     * Gets BalanceBonus.
-     */
     public function getBalanceBonus(): int
     {
         return $this->BalanceBonus;
     }
 
     /**
-     * Sets BalanceBonus.
-     *
      * @return $this
      */
     public function setBalanceBonus(int $value)
@@ -86,17 +71,12 @@ class CampaignFundsParam
         return $this;
     }
 
-    /**
-     * Gets SumAvailableForTransfer.
-     */
     public function getSumAvailableForTransfer(): ?int
     {
         return $this->SumAvailableForTransfer ?? null;
     }
 
     /**
-     * Sets SumAvailableForTransfer.
-     *
      * @return $this
      */
     public function setSumAvailableForTransfer(?int $value = null)

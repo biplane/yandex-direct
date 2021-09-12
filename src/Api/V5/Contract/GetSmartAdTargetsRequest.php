@@ -13,25 +13,12 @@ class GetSmartAdTargetsRequest extends GetRequestGeneral
 
     protected $FieldNames = [];
 
-    /**
-     * Creates a new instance of GetSmartAdTargetsRequest.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
-
-    /**
-     * Gets SelectionCriteria.
-     */
     public function getSelectionCriteria(): AdTargetsSelectionCriteria
     {
         return $this->SelectionCriteria;
     }
 
     /**
-     * Sets SelectionCriteria.
-     *
      * @return $this
      */
     public function setSelectionCriteria(AdTargetsSelectionCriteria $value)
@@ -42,8 +29,6 @@ class GetSmartAdTargetsRequest extends GetRequestGeneral
     }
 
     /**
-     * Gets FieldNames.
-     *
      * @see SmartAdTargetFieldEnum
      *
      * @return string[]
@@ -54,8 +39,6 @@ class GetSmartAdTargetsRequest extends GetRequestGeneral
     }
 
     /**
-     * Sets FieldNames.
-     *
      * @see SmartAdTargetFieldEnum
      *
      * @param string[] $value

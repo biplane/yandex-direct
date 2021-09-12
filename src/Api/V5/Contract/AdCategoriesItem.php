@@ -16,24 +16,19 @@ class AdCategoriesItem
     protected $Message = null;
 
     /**
-     * Creates a new instance of AdCategoriesItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets AdCategory.
-     */
     public function getAdCategory(): string
     {
         return $this->AdCategory;
     }
 
     /**
-     * Sets AdCategory.
-     *
      * @return $this
      */
     public function setAdCategory(string $value)
@@ -43,17 +38,12 @@ class AdCategoriesItem
         return $this;
     }
 
-    /**
-     * Gets Description.
-     */
     public function getDescription(): string
     {
         return $this->Description;
     }
 
     /**
-     * Sets Description.
-     *
      * @return $this
      */
     public function setDescription(string $value)
@@ -63,17 +53,12 @@ class AdCategoriesItem
         return $this;
     }
 
-    /**
-     * Gets Message.
-     */
     public function getMessage(): string
     {
         return $this->Message;
     }
 
     /**
-     * Sets Message.
-     *
      * @return $this
      */
     public function setMessage(string $value)

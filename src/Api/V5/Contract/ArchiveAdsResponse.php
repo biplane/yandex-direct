@@ -9,20 +9,18 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class ArchiveAdsResponse
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $ArchiveResults = null;
 
     /**
-     * Creates a new instance of ArchiveAdsResponse.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets ArchiveResults.
-     *
      * @return ActionResult[]|null
      */
     public function getArchiveResults(): ?array
@@ -31,8 +29,6 @@ class ArchiveAdsResponse
     }
 
     /**
-     * Sets ArchiveResults.
-     *
      * @param ActionResult[]|null $value
      *
      * @return $this

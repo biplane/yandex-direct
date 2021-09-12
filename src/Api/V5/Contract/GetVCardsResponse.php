@@ -9,20 +9,10 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class GetVCardsResponse extends GetResponseGeneral
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $VCards = null;
 
     /**
-     * Creates a new instance of GetVCardsResponse.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
-
-    /**
-     * Gets VCards.
-     *
      * @return VCardGetItem[]|null
      */
     public function getVCards(): ?array
@@ -31,8 +21,6 @@ class GetVCardsResponse extends GetResponseGeneral
     }
 
     /**
-     * Sets VCards.
-     *
      * @param VCardGetItem[]|null $value
      *
      * @return $this

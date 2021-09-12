@@ -9,11 +9,4 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class StrategyMaximumAppInstalls extends StrategyWeeklyBudgetBase
 {
-    /**
-     * Creates a new instance of StrategyMaximumAppInstalls.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
 }

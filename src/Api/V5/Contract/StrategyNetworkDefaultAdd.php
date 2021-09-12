@@ -9,28 +9,23 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class StrategyNetworkDefaultAdd
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $LimitPercent = null;
 
     /**
-     * Creates a new instance of StrategyNetworkDefaultAdd.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets LimitPercent.
-     */
     public function getLimitPercent(): ?int
     {
         return $this->LimitPercent ?? null;
     }
 
     /**
-     * Sets LimitPercent.
-     *
      * @return $this
      */
     public function setLimitPercent(?int $value = null)

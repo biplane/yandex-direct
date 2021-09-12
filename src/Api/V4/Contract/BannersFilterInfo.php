@@ -30,16 +30,14 @@ class BannersFilterInfo
     protected $StatusAdImageModerate = null;
 
     /**
-     * Creates a new instance of BannersFilterInfo.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets StatusPhoneModerate.
-     *
      * @return string[]|null
      */
     public function getStatusPhoneModerate(): ?array
@@ -48,8 +46,6 @@ class BannersFilterInfo
     }
 
     /**
-     * Sets StatusPhoneModerate.
-     *
      * @param string[]|null $value
      *
      * @return $this
@@ -62,8 +58,6 @@ class BannersFilterInfo
     }
 
     /**
-     * Gets StatusBannerModerate.
-     *
      * @return string[]|null
      */
     public function getStatusBannerModerate(): ?array
@@ -72,8 +66,6 @@ class BannersFilterInfo
     }
 
     /**
-     * Sets StatusBannerModerate.
-     *
      * @param string[]|null $value
      *
      * @return $this
@@ -86,8 +78,6 @@ class BannersFilterInfo
     }
 
     /**
-     * Gets StatusPhrasesModerate.
-     *
      * @return string[]|null
      */
     public function getStatusPhrasesModerate(): ?array
@@ -96,8 +86,6 @@ class BannersFilterInfo
     }
 
     /**
-     * Sets StatusPhrasesModerate.
-     *
      * @param string[]|null $value
      *
      * @return $this
@@ -110,8 +98,6 @@ class BannersFilterInfo
     }
 
     /**
-     * Gets StatusActivating.
-     *
      * @return string[]|null
      */
     public function getStatusActivating(): ?array
@@ -120,8 +106,6 @@ class BannersFilterInfo
     }
 
     /**
-     * Sets StatusActivating.
-     *
      * @param string[]|null $value
      *
      * @return $this
@@ -134,8 +118,6 @@ class BannersFilterInfo
     }
 
     /**
-     * Gets StatusShow.
-     *
      * @return string[]|null
      */
     public function getStatusShow(): ?array
@@ -144,8 +126,6 @@ class BannersFilterInfo
     }
 
     /**
-     * Sets StatusShow.
-     *
      * @param string[]|null $value
      *
      * @return $this
@@ -158,8 +138,6 @@ class BannersFilterInfo
     }
 
     /**
-     * Gets IsActive.
-     *
      * @return string[]|null
      */
     public function getIsActive(): ?array
@@ -168,8 +146,6 @@ class BannersFilterInfo
     }
 
     /**
-     * Sets IsActive.
-     *
      * @param string[]|null $value
      *
      * @return $this
@@ -182,8 +158,6 @@ class BannersFilterInfo
     }
 
     /**
-     * Gets StatusArchive.
-     *
      * @return string[]|null
      */
     public function getStatusArchive(): ?array
@@ -192,8 +166,6 @@ class BannersFilterInfo
     }
 
     /**
-     * Sets StatusArchive.
-     *
      * @param string[]|null $value
      *
      * @return $this
@@ -206,8 +178,6 @@ class BannersFilterInfo
     }
 
     /**
-     * Gets TagIDS.
-     *
      * @return int[]|null
      */
     public function getTagIDS(): ?array
@@ -216,8 +186,6 @@ class BannersFilterInfo
     }
 
     /**
-     * Sets TagIDS.
-     *
      * @param int[]|null $value
      *
      * @return $this
@@ -230,8 +198,6 @@ class BannersFilterInfo
     }
 
     /**
-     * Gets Tags.
-     *
      * @return string[]|null
      */
     public function getTags(): ?array
@@ -240,8 +206,6 @@ class BannersFilterInfo
     }
 
     /**
-     * Sets Tags.
-     *
      * @param string[]|null $value
      *
      * @return $this
@@ -254,8 +218,6 @@ class BannersFilterInfo
     }
 
     /**
-     * Gets StatusAdImageModerate.
-     *
      * @return string[]|null
      */
     public function getStatusAdImageModerate(): ?array
@@ -264,8 +226,6 @@ class BannersFilterInfo
     }
 
     /**
-     * Sets StatusAdImageModerate.
-     *
      * @param string[]|null $value
      *
      * @return $this

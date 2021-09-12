@@ -12,16 +12,14 @@ class AddNegativeKeywordSharedSetsRequest
     protected $NegativeKeywordSharedSets = [];
 
     /**
-     * Creates a new instance of AddNegativeKeywordSharedSetsRequest.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets NegativeKeywordSharedSets.
-     *
      * @return NegativeKeywordSharedSetAddItem[]
      */
     public function getNegativeKeywordSharedSets(): array
@@ -30,8 +28,6 @@ class AddNegativeKeywordSharedSetsRequest
     }
 
     /**
-     * Sets NegativeKeywordSharedSets.
-     *
      * @param NegativeKeywordSharedSetAddItem[] $value
      *
      * @return $this

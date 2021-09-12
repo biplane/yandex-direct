@@ -5,6 +5,24 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5;
 
 use Biplane\YandexDirect\Api\ApiSoapClientV5;
+use Biplane\YandexDirect\Api\V5\Contract\AddAdsRequest;
+use Biplane\YandexDirect\Api\V5\Contract\AddAdsResponse;
+use Biplane\YandexDirect\Api\V5\Contract\ArchiveAdsRequest;
+use Biplane\YandexDirect\Api\V5\Contract\ArchiveAdsResponse;
+use Biplane\YandexDirect\Api\V5\Contract\DeleteAdsRequest;
+use Biplane\YandexDirect\Api\V5\Contract\DeleteAdsResponse;
+use Biplane\YandexDirect\Api\V5\Contract\GetAdsRequest;
+use Biplane\YandexDirect\Api\V5\Contract\GetAdsResponse;
+use Biplane\YandexDirect\Api\V5\Contract\ModerateAdsRequest;
+use Biplane\YandexDirect\Api\V5\Contract\ModerateAdsResponse;
+use Biplane\YandexDirect\Api\V5\Contract\ResumeAdsRequest;
+use Biplane\YandexDirect\Api\V5\Contract\ResumeAdsResponse;
+use Biplane\YandexDirect\Api\V5\Contract\SuspendAdsRequest;
+use Biplane\YandexDirect\Api\V5\Contract\SuspendAdsResponse;
+use Biplane\YandexDirect\Api\V5\Contract\UnarchiveAdsRequest;
+use Biplane\YandexDirect\Api\V5\Contract\UnarchiveAdsResponse;
+use Biplane\YandexDirect\Api\V5\Contract\UpdateAdsRequest;
+use Biplane\YandexDirect\Api\V5\Contract\UpdateAdsResponse;
 use Biplane\YandexDirect\Config;
 
 /**
@@ -14,6 +32,9 @@ class Ads extends ApiSoapClientV5
 {
     public const ENDPOINT = 'https://api.direct.yandex.com/v5/ads?wsdl';
 
+    /**
+     * @param array<string, mixed> $options
+     */
     public function __construct(Config $config, array $options)
     {
         $options['classmap'] = [
@@ -176,74 +197,47 @@ class Ads extends ApiSoapClientV5
         parent::__construct(self::ENDPOINT, $config, $options);
     }
 
-    /**
-     * add.
-     */
-    public function add(Contract\AddAdsRequest $parameters): Contract\AddAdsResponse
+    public function add(AddAdsRequest $parameters): AddAdsResponse
     {
         return $this->__soapCall('add', [$parameters]);
     }
 
-    /**
-     * update.
-     */
-    public function update(Contract\UpdateAdsRequest $parameters): Contract\UpdateAdsResponse
+    public function update(UpdateAdsRequest $parameters): UpdateAdsResponse
     {
         return $this->__soapCall('update', [$parameters]);
     }
 
-    /**
-     * get.
-     */
-    public function get(Contract\GetAdsRequest $parameters): Contract\GetAdsResponse
+    public function get(GetAdsRequest $parameters): GetAdsResponse
     {
         return $this->__soapCall('get', [$parameters]);
     }
 
-    /**
-     * delete.
-     */
-    public function delete(Contract\DeleteAdsRequest $parameters): Contract\DeleteAdsResponse
+    public function delete(DeleteAdsRequest $parameters): DeleteAdsResponse
     {
         return $this->__soapCall('delete', [$parameters]);
     }
 
-    /**
-     * archive.
-     */
-    public function archive(Contract\ArchiveAdsRequest $parameters): Contract\ArchiveAdsResponse
+    public function archive(ArchiveAdsRequest $parameters): ArchiveAdsResponse
     {
         return $this->__soapCall('archive', [$parameters]);
     }
 
-    /**
-     * unarchive.
-     */
-    public function unarchive(Contract\UnarchiveAdsRequest $parameters): Contract\UnarchiveAdsResponse
+    public function unarchive(UnarchiveAdsRequest $parameters): UnarchiveAdsResponse
     {
         return $this->__soapCall('unarchive', [$parameters]);
     }
 
-    /**
-     * suspend.
-     */
-    public function suspend(Contract\SuspendAdsRequest $parameters): Contract\SuspendAdsResponse
+    public function suspend(SuspendAdsRequest $parameters): SuspendAdsResponse
     {
         return $this->__soapCall('suspend', [$parameters]);
     }
 
-    /**
-     * resume.
-     */
-    public function resume(Contract\ResumeAdsRequest $parameters): Contract\ResumeAdsResponse
+    public function resume(ResumeAdsRequest $parameters): ResumeAdsResponse
     {
         return $this->__soapCall('resume', [$parameters]);
     }
 
-    /**
-     * moderate.
-     */
-    public function moderate(Contract\ModerateAdsRequest $parameters): Contract\ModerateAdsResponse
+    public function moderate(ModerateAdsRequest $parameters): ModerateAdsResponse
     {
         return $this->__soapCall('moderate', [$parameters]);
     }

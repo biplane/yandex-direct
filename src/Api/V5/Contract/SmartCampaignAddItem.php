@@ -11,36 +11,31 @@ class SmartCampaignAddItem
 {
     protected $BiddingStrategy = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Settings = null;
 
     protected $CounterId = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $PriorityGoals = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AttributionModel = null;
 
     /**
-     * Creates a new instance of SmartCampaignAddItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets BiddingStrategy.
-     */
     public function getBiddingStrategy(): SmartCampaignStrategyAdd
     {
         return $this->BiddingStrategy;
     }
 
     /**
-     * Sets BiddingStrategy.
-     *
      * @return $this
      */
     public function setBiddingStrategy(SmartCampaignStrategyAdd $value)
@@ -51,8 +46,6 @@ class SmartCampaignAddItem
     }
 
     /**
-     * Gets Settings.
-     *
      * @return SmartCampaignSetting[]|null
      */
     public function getSettings(): ?array
@@ -61,8 +54,6 @@ class SmartCampaignAddItem
     }
 
     /**
-     * Sets Settings.
-     *
      * @param SmartCampaignSetting[]|null $value
      *
      * @return $this
@@ -74,17 +65,12 @@ class SmartCampaignAddItem
         return $this;
     }
 
-    /**
-     * Gets CounterId.
-     */
     public function getCounterId(): int
     {
         return $this->CounterId;
     }
 
     /**
-     * Sets CounterId.
-     *
      * @return $this
      */
     public function setCounterId(int $value)
@@ -94,17 +80,12 @@ class SmartCampaignAddItem
         return $this;
     }
 
-    /**
-     * Gets PriorityGoals.
-     */
     public function getPriorityGoals(): ?PriorityGoalsArray
     {
         return $this->PriorityGoals ?? null;
     }
 
     /**
-     * Sets PriorityGoals.
-     *
      * @return $this
      */
     public function setPriorityGoals(?PriorityGoalsArray $value = null)
@@ -115,8 +96,6 @@ class SmartCampaignAddItem
     }
 
     /**
-     * Gets AttributionModel.
-     *
      * @see AttributionModelEnum
      */
     public function getAttributionModel(): ?string
@@ -125,8 +104,6 @@ class SmartCampaignAddItem
     }
 
     /**
-     * Sets AttributionModel.
-     *
      * @see AttributionModelEnum
      *
      * @return $this

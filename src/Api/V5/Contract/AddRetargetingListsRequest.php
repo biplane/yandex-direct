@@ -12,16 +12,14 @@ class AddRetargetingListsRequest
     protected $RetargetingLists = [];
 
     /**
-     * Creates a new instance of AddRetargetingListsRequest.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets RetargetingLists.
-     *
      * @return RetargetingListAddItem[]
      */
     public function getRetargetingLists(): array
@@ -30,8 +28,6 @@ class AddRetargetingListsRequest
     }
 
     /**
-     * Sets RetargetingLists.
-     *
      * @param RetargetingListAddItem[] $value
      *
      * @return $this

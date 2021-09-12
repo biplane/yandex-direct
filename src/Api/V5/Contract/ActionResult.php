@@ -9,28 +9,15 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class ActionResult extends ActionResultBase
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Id = null;
 
-    /**
-     * Creates a new instance of ActionResult.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
-
-    /**
-     * Gets Id.
-     */
     public function getId(): ?int
     {
         return $this->Id ?? null;
     }
 
     /**
-     * Sets Id.
-     *
      * @return $this
      */
     public function setId(?int $value = null)

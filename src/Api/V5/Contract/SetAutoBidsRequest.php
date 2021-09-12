@@ -12,16 +12,14 @@ class SetAutoBidsRequest
     protected $Bids = [];
 
     /**
-     * Creates a new instance of SetAutoBidsRequest.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Bids.
-     *
      * @return BidSetAutoItem[]
      */
     public function getBids(): array
@@ -30,8 +28,6 @@ class SetAutoBidsRequest
     }
 
     /**
-     * Sets Bids.
-     *
      * @param BidSetAutoItem[] $value
      *
      * @return $this

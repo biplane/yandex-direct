@@ -12,16 +12,14 @@ class UpdateKeywordsRequest
     protected $Keywords = [];
 
     /**
-     * Creates a new instance of UpdateKeywordsRequest.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Keywords.
-     *
      * @return KeywordUpdateItem[]
      */
     public function getKeywords(): array
@@ -30,8 +28,6 @@ class UpdateKeywordsRequest
     }
 
     /**
-     * Sets Keywords.
-     *
      * @param KeywordUpdateItem[] $value
      *
      * @return $this

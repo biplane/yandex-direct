@@ -14,24 +14,19 @@ class RetargetingAdjustmentAdd
     protected $BidModifier = null;
 
     /**
-     * Creates a new instance of RetargetingAdjustmentAdd.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets RetargetingConditionId.
-     */
     public function getRetargetingConditionId(): int
     {
         return $this->RetargetingConditionId;
     }
 
     /**
-     * Sets RetargetingConditionId.
-     *
      * @return $this
      */
     public function setRetargetingConditionId(int $value)
@@ -41,17 +36,12 @@ class RetargetingAdjustmentAdd
         return $this;
     }
 
-    /**
-     * Gets BidModifier.
-     */
     public function getBidModifier(): int
     {
         return $this->BidModifier;
     }
 
     /**
-     * Sets BidModifier.
-     *
      * @return $this
      */
     public function setBidModifier(int $value)

@@ -11,31 +11,26 @@ class AdBuilderAdGetItem
 {
     protected $CreativeId = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $ThumbnailUrl = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $PreviewUrl = null;
 
     /**
-     * Creates a new instance of AdBuilderAdGetItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets CreativeId.
-     */
     public function getCreativeId(): int
     {
         return $this->CreativeId;
     }
 
     /**
-     * Sets CreativeId.
-     *
      * @return $this
      */
     public function setCreativeId(int $value)
@@ -45,17 +40,12 @@ class AdBuilderAdGetItem
         return $this;
     }
 
-    /**
-     * Gets ThumbnailUrl.
-     */
     public function getThumbnailUrl(): ?string
     {
         return $this->ThumbnailUrl ?? null;
     }
 
     /**
-     * Sets ThumbnailUrl.
-     *
      * @return $this
      */
     public function setThumbnailUrl(?string $value = null)
@@ -65,17 +55,12 @@ class AdBuilderAdGetItem
         return $this;
     }
 
-    /**
-     * Gets PreviewUrl.
-     */
     public function getPreviewUrl(): ?string
     {
         return $this->PreviewUrl ?? null;
     }
 
     /**
-     * Sets PreviewUrl.
-     *
      * @return $this
      */
     public function setPreviewUrl(?string $value = null)

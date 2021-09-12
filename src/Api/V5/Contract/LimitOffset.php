@@ -9,31 +9,26 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class LimitOffset
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Limit = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Offset = null;
 
     /**
-     * Creates a new instance of LimitOffset.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Limit.
-     */
     public function getLimit(): ?int
     {
         return $this->Limit ?? null;
     }
 
     /**
-     * Sets Limit.
-     *
      * @return $this
      */
     public function setLimit(?int $value = null)
@@ -43,17 +38,12 @@ class LimitOffset
         return $this;
     }
 
-    /**
-     * Gets Offset.
-     */
     public function getOffset(): ?int
     {
         return $this->Offset ?? null;
     }
 
     /**
-     * Sets Offset.
-     *
      * @return $this
      */
     public function setOffset(?int $value = null)

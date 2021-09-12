@@ -5,6 +5,18 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5;
 
 use Biplane\YandexDirect\Api\ApiSoapClientV5;
+use Biplane\YandexDirect\Api\V5\Contract\AddAudienceTargetsRequest;
+use Biplane\YandexDirect\Api\V5\Contract\AddAudienceTargetsResponse;
+use Biplane\YandexDirect\Api\V5\Contract\DeleteAudienceTargetsRequest;
+use Biplane\YandexDirect\Api\V5\Contract\DeleteAudienceTargetsResponse;
+use Biplane\YandexDirect\Api\V5\Contract\GetAudienceTargetsRequest;
+use Biplane\YandexDirect\Api\V5\Contract\GetAudienceTargetsResponse;
+use Biplane\YandexDirect\Api\V5\Contract\ResumeAudienceTargetsRequest;
+use Biplane\YandexDirect\Api\V5\Contract\ResumeAudienceTargetsResponse;
+use Biplane\YandexDirect\Api\V5\Contract\SetBidsAudienceTargetsRequest;
+use Biplane\YandexDirect\Api\V5\Contract\SetBidsAudienceTargetsResponse;
+use Biplane\YandexDirect\Api\V5\Contract\SuspendAudienceTargetsRequest;
+use Biplane\YandexDirect\Api\V5\Contract\SuspendAudienceTargetsResponse;
 use Biplane\YandexDirect\Config;
 
 /**
@@ -14,6 +26,9 @@ class AudienceTargets extends ApiSoapClientV5
 {
     public const ENDPOINT = 'https://api.direct.yandex.com/v5/audiencetargets?wsdl';
 
+    /**
+     * @param array<string, mixed> $options
+     */
     public function __construct(Config $config, array $options)
     {
         $options['classmap'] = [
@@ -80,50 +95,32 @@ class AudienceTargets extends ApiSoapClientV5
         parent::__construct(self::ENDPOINT, $config, $options);
     }
 
-    /**
-     * get.
-     */
-    public function get(Contract\GetAudienceTargetsRequest $parameters): Contract\GetAudienceTargetsResponse
+    public function get(GetAudienceTargetsRequest $parameters): GetAudienceTargetsResponse
     {
         return $this->__soapCall('get', [$parameters]);
     }
 
-    /**
-     * add.
-     */
-    public function add(Contract\AddAudienceTargetsRequest $parameters): Contract\AddAudienceTargetsResponse
+    public function add(AddAudienceTargetsRequest $parameters): AddAudienceTargetsResponse
     {
         return $this->__soapCall('add', [$parameters]);
     }
 
-    /**
-     * delete.
-     */
-    public function delete(Contract\DeleteAudienceTargetsRequest $parameters): Contract\DeleteAudienceTargetsResponse
+    public function delete(DeleteAudienceTargetsRequest $parameters): DeleteAudienceTargetsResponse
     {
         return $this->__soapCall('delete', [$parameters]);
     }
 
-    /**
-     * suspend.
-     */
-    public function suspend(Contract\SuspendAudienceTargetsRequest $parameters): Contract\SuspendAudienceTargetsResponse
+    public function suspend(SuspendAudienceTargetsRequest $parameters): SuspendAudienceTargetsResponse
     {
         return $this->__soapCall('suspend', [$parameters]);
     }
 
-    /**
-     * resume.
-     */
-    public function resume(Contract\ResumeAudienceTargetsRequest $parameters): Contract\ResumeAudienceTargetsResponse
+    public function resume(ResumeAudienceTargetsRequest $parameters): ResumeAudienceTargetsResponse
     {
         return $this->__soapCall('resume', [$parameters]);
     }
 
-    /**
-     * setBids.
-     */
-    public function setBids(Contract\SetBidsAudienceTargetsRequest $parameters): Contract\SetBidsAudienceTargetsResponse
+    public function setBids(SetBidsAudienceTargetsRequest $parameters): SetBidsAudienceTargetsResponse
     {
         return $this->__soapCall('setBids', [$parameters]);
     }

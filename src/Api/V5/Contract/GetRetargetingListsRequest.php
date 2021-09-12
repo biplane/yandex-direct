@@ -9,30 +9,17 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class GetRetargetingListsRequest extends GetRequestGeneral
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $SelectionCriteria = null;
 
     protected $FieldNames = [];
 
-    /**
-     * Creates a new instance of GetRetargetingListsRequest.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
-
-    /**
-     * Gets SelectionCriteria.
-     */
     public function getSelectionCriteria(): ?RetargetingListSelectionCriteria
     {
         return $this->SelectionCriteria ?? null;
     }
 
     /**
-     * Sets SelectionCriteria.
-     *
      * @return $this
      */
     public function setSelectionCriteria(?RetargetingListSelectionCriteria $value = null)
@@ -43,8 +30,6 @@ class GetRetargetingListsRequest extends GetRequestGeneral
     }
 
     /**
-     * Gets FieldNames.
-     *
      * @see RetargetingListFieldEnum
      *
      * @return string[]
@@ -55,8 +40,6 @@ class GetRetargetingListsRequest extends GetRequestGeneral
     }
 
     /**
-     * Sets FieldNames.
-     *
      * @see RetargetingListFieldEnum
      *
      * @param string[] $value

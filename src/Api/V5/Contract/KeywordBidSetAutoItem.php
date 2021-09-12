@@ -9,36 +9,31 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class KeywordBidSetAutoItem
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $CampaignId = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AdGroupId = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $KeywordId = null;
 
     protected $BiddingRule = null;
 
     /**
-     * Creates a new instance of KeywordBidSetAutoItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets CampaignId.
-     */
     public function getCampaignId(): ?int
     {
         return $this->CampaignId ?? null;
     }
 
     /**
-     * Sets CampaignId.
-     *
      * @return $this
      */
     public function setCampaignId(?int $value = null)
@@ -48,17 +43,12 @@ class KeywordBidSetAutoItem
         return $this;
     }
 
-    /**
-     * Gets AdGroupId.
-     */
     public function getAdGroupId(): ?int
     {
         return $this->AdGroupId ?? null;
     }
 
     /**
-     * Sets AdGroupId.
-     *
      * @return $this
      */
     public function setAdGroupId(?int $value = null)
@@ -68,17 +58,12 @@ class KeywordBidSetAutoItem
         return $this;
     }
 
-    /**
-     * Gets KeywordId.
-     */
     public function getKeywordId(): ?int
     {
         return $this->KeywordId ?? null;
     }
 
     /**
-     * Sets KeywordId.
-     *
      * @return $this
      */
     public function setKeywordId(?int $value = null)
@@ -88,17 +73,12 @@ class KeywordBidSetAutoItem
         return $this;
     }
 
-    /**
-     * Gets BiddingRule.
-     */
     public function getBiddingRule(): BiddingRule
     {
         return $this->BiddingRule;
     }
 
     /**
-     * Sets BiddingRule.
-     *
      * @return $this
      */
     public function setBiddingRule(BiddingRule $value)

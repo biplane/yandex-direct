@@ -16,16 +16,14 @@ class AdImageAssociationActionResult
     protected $AdID = null;
 
     /**
-     * Creates a new instance of AdImageAssociationActionResult.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Warnings.
-     *
      * @return Warning[]|null
      */
     public function getWarnings(): ?array
@@ -34,8 +32,6 @@ class AdImageAssociationActionResult
     }
 
     /**
-     * Sets Warnings.
-     *
      * @param Warning[]|null $value
      *
      * @return $this
@@ -48,8 +44,6 @@ class AdImageAssociationActionResult
     }
 
     /**
-     * Gets Errors.
-     *
      * @return Error[]|null
      */
     public function getErrors(): ?array
@@ -58,8 +52,6 @@ class AdImageAssociationActionResult
     }
 
     /**
-     * Sets Errors.
-     *
      * @param Error[]|null $value
      *
      * @return $this
@@ -71,17 +63,12 @@ class AdImageAssociationActionResult
         return $this;
     }
 
-    /**
-     * Gets AdID.
-     */
     public function getAdID(): ?int
     {
         return $this->AdID;
     }
 
     /**
-     * Sets AdID.
-     *
      * @return $this
      */
     public function setAdID(?int $value = null)

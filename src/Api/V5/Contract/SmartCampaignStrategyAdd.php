@@ -14,24 +14,19 @@ class SmartCampaignStrategyAdd
     protected $Network = null;
 
     /**
-     * Creates a new instance of SmartCampaignStrategyAdd.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Search.
-     */
     public function getSearch(): SmartCampaignSearchStrategyAdd
     {
         return $this->Search;
     }
 
     /**
-     * Sets Search.
-     *
      * @return $this
      */
     public function setSearch(SmartCampaignSearchStrategyAdd $value)
@@ -41,17 +36,12 @@ class SmartCampaignStrategyAdd
         return $this;
     }
 
-    /**
-     * Gets Network.
-     */
     public function getNetwork(): SmartCampaignNetworkStrategyAdd
     {
         return $this->Network;
     }
 
     /**
-     * Sets Network.
-     *
      * @return $this
      */
     public function setNetwork(SmartCampaignNetworkStrategyAdd $value)

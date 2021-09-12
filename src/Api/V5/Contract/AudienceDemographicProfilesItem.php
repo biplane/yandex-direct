@@ -18,24 +18,19 @@ class AudienceDemographicProfilesItem
     protected $Description = null;
 
     /**
-     * Creates a new instance of AudienceDemographicProfilesItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Id.
-     */
     public function getId(): int
     {
         return $this->Id;
     }
 
     /**
-     * Sets Id.
-     *
      * @return $this
      */
     public function setId(int $value)
@@ -45,17 +40,12 @@ class AudienceDemographicProfilesItem
         return $this;
     }
 
-    /**
-     * Gets Type.
-     */
     public function getType(): string
     {
         return $this->Type;
     }
 
     /**
-     * Sets Type.
-     *
      * @return $this
      */
     public function setType(string $value)
@@ -65,17 +55,12 @@ class AudienceDemographicProfilesItem
         return $this;
     }
 
-    /**
-     * Gets Name.
-     */
     public function getName(): string
     {
         return $this->Name;
     }
 
     /**
-     * Sets Name.
-     *
      * @return $this
      */
     public function setName(string $value)
@@ -85,17 +70,12 @@ class AudienceDemographicProfilesItem
         return $this;
     }
 
-    /**
-     * Gets Description.
-     */
     public function getDescription(): string
     {
         return $this->Description;
     }
 
     /**
-     * Sets Description.
-     *
      * @return $this
      */
     public function setDescription(string $value)

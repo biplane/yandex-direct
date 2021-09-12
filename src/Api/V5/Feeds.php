@@ -5,6 +5,14 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5;
 
 use Biplane\YandexDirect\Api\ApiSoapClientV5;
+use Biplane\YandexDirect\Api\V5\Contract\AddFeedsRequest;
+use Biplane\YandexDirect\Api\V5\Contract\AddFeedsResponse;
+use Biplane\YandexDirect\Api\V5\Contract\DeleteFeedsRequest;
+use Biplane\YandexDirect\Api\V5\Contract\DeleteFeedsResponse;
+use Biplane\YandexDirect\Api\V5\Contract\GetFeedsRequest;
+use Biplane\YandexDirect\Api\V5\Contract\GetFeedsResponse;
+use Biplane\YandexDirect\Api\V5\Contract\UpdateFeedsRequest;
+use Biplane\YandexDirect\Api\V5\Contract\UpdateFeedsResponse;
 use Biplane\YandexDirect\Config;
 
 /**
@@ -14,6 +22,9 @@ class Feeds extends ApiSoapClientV5
 {
     public const ENDPOINT = 'https://api.direct.yandex.com/v5/feeds?wsdl';
 
+    /**
+     * @param array<string, mixed> $options
+     */
     public function __construct(Config $config, array $options)
     {
         $options['classmap'] = [
@@ -86,34 +97,22 @@ class Feeds extends ApiSoapClientV5
         parent::__construct(self::ENDPOINT, $config, $options);
     }
 
-    /**
-     * add.
-     */
-    public function add(Contract\AddFeedsRequest $parameters): Contract\AddFeedsResponse
+    public function add(AddFeedsRequest $parameters): AddFeedsResponse
     {
         return $this->__soapCall('add', [$parameters]);
     }
 
-    /**
-     * get.
-     */
-    public function get(Contract\GetFeedsRequest $parameters): Contract\GetFeedsResponse
+    public function get(GetFeedsRequest $parameters): GetFeedsResponse
     {
         return $this->__soapCall('get', [$parameters]);
     }
 
-    /**
-     * update.
-     */
-    public function update(Contract\UpdateFeedsRequest $parameters): Contract\UpdateFeedsResponse
+    public function update(UpdateFeedsRequest $parameters): UpdateFeedsResponse
     {
         return $this->__soapCall('update', [$parameters]);
     }
 
-    /**
-     * delete.
-     */
-    public function delete(Contract\DeleteFeedsRequest $parameters): Contract\DeleteFeedsResponse
+    public function delete(DeleteFeedsRequest $parameters): DeleteFeedsResponse
     {
         return $this->__soapCall('delete', [$parameters]);
     }

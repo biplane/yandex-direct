@@ -9,31 +9,26 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class BiddingRule
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $SearchByTrafficVolume = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $NetworkByCoverage = null;
 
     /**
-     * Creates a new instance of BiddingRule.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets SearchByTrafficVolume.
-     */
     public function getSearchByTrafficVolume(): ?SearchByTrafficVolume
     {
         return $this->SearchByTrafficVolume ?? null;
     }
 
     /**
-     * Sets SearchByTrafficVolume.
-     *
      * @return $this
      */
     public function setSearchByTrafficVolume(?SearchByTrafficVolume $value = null)
@@ -43,17 +38,12 @@ class BiddingRule
         return $this;
     }
 
-    /**
-     * Gets NetworkByCoverage.
-     */
     public function getNetworkByCoverage(): ?NetworkByCoverage
     {
         return $this->NetworkByCoverage ?? null;
     }
 
     /**
-     * Sets NetworkByCoverage.
-     *
      * @return $this
      */
     public function setNetworkByCoverage(?NetworkByCoverage $value = null)

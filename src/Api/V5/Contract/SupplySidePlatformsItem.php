@@ -12,24 +12,19 @@ class SupplySidePlatformsItem
     protected $Title = null;
 
     /**
-     * Creates a new instance of SupplySidePlatformsItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Title.
-     */
     public function getTitle(): string
     {
         return $this->Title;
     }
 
     /**
-     * Sets Title.
-     *
      * @return $this
      */
     public function setTitle(string $value)

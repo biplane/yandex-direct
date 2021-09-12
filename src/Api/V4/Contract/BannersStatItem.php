@@ -54,24 +54,19 @@ class BannersStatItem
     protected $ROI = null;
 
     /**
-     * Creates a new instance of BannersStatItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Sum.
-     */
     public function getSum(): ?float
     {
         return $this->Sum;
     }
 
     /**
-     * Sets Sum.
-     *
      * @return $this
      */
     public function setSum(?float $value = null)
@@ -81,17 +76,12 @@ class BannersStatItem
         return $this;
     }
 
-    /**
-     * Gets SumContext.
-     */
     public function getSumContext(): ?float
     {
         return $this->SumContext;
     }
 
     /**
-     * Sets SumContext.
-     *
      * @return $this
      */
     public function setSumContext(?float $value = null)
@@ -101,17 +91,12 @@ class BannersStatItem
         return $this;
     }
 
-    /**
-     * Gets SumSearch.
-     */
     public function getSumSearch(): ?float
     {
         return $this->SumSearch;
     }
 
     /**
-     * Sets SumSearch.
-     *
      * @return $this
      */
     public function setSumSearch(?float $value = null)
@@ -121,17 +106,12 @@ class BannersStatItem
         return $this;
     }
 
-    /**
-     * Gets Clicks.
-     */
     public function getClicks(): ?int
     {
         return $this->Clicks;
     }
 
     /**
-     * Sets Clicks.
-     *
      * @return $this
      */
     public function setClicks(?int $value = null)
@@ -141,17 +121,12 @@ class BannersStatItem
         return $this;
     }
 
-    /**
-     * Gets ClicksContext.
-     */
     public function getClicksContext(): ?int
     {
         return $this->ClicksContext;
     }
 
     /**
-     * Sets ClicksContext.
-     *
      * @return $this
      */
     public function setClicksContext(?int $value = null)
@@ -161,17 +136,12 @@ class BannersStatItem
         return $this;
     }
 
-    /**
-     * Gets ClicksSearch.
-     */
     public function getClicksSearch(): ?int
     {
         return $this->ClicksSearch;
     }
 
     /**
-     * Sets ClicksSearch.
-     *
      * @return $this
      */
     public function setClicksSearch(?int $value = null)
@@ -181,17 +151,12 @@ class BannersStatItem
         return $this;
     }
 
-    /**
-     * Gets Shows.
-     */
     public function getShows(): ?int
     {
         return $this->Shows;
     }
 
     /**
-     * Sets Shows.
-     *
      * @return $this
      */
     public function setShows(?int $value = null)
@@ -201,17 +166,12 @@ class BannersStatItem
         return $this;
     }
 
-    /**
-     * Gets ShowsContext.
-     */
     public function getShowsContext(): ?int
     {
         return $this->ShowsContext;
     }
 
     /**
-     * Sets ShowsContext.
-     *
      * @return $this
      */
     public function setShowsContext(?int $value = null)
@@ -221,17 +181,12 @@ class BannersStatItem
         return $this;
     }
 
-    /**
-     * Gets ShowsSearch.
-     */
     public function getShowsSearch(): ?int
     {
         return $this->ShowsSearch;
     }
 
     /**
-     * Sets ShowsSearch.
-     *
      * @return $this
      */
     public function setShowsSearch(?int $value = null)
@@ -241,17 +196,12 @@ class BannersStatItem
         return $this;
     }
 
-    /**
-     * Gets StatDate.
-     */
     public function getStatDate(): ?string
     {
         return $this->StatDate;
     }
 
     /**
-     * Sets StatDate.
-     *
      * @return $this
      */
     public function setStatDate(?string $value = null)
@@ -261,17 +211,12 @@ class BannersStatItem
         return $this;
     }
 
-    /**
-     * Gets BannerID.
-     */
     public function getBannerID(): ?int
     {
         return $this->BannerID;
     }
 
     /**
-     * Sets BannerID.
-     *
      * @return $this
      */
     public function setBannerID(?int $value = null)
@@ -281,17 +226,12 @@ class BannersStatItem
         return $this;
     }
 
-    /**
-     * Gets PhraseID.
-     */
     public function getPhraseID(): ?int
     {
         return $this->PhraseID;
     }
 
     /**
-     * Sets PhraseID.
-     *
      * @return $this
      */
     public function setPhraseID(?int $value = null)
@@ -301,17 +241,12 @@ class BannersStatItem
         return $this;
     }
 
-    /**
-     * Gets RubricID.
-     */
     public function getRubricID(): ?int
     {
         return $this->RubricID;
     }
 
     /**
-     * Sets RubricID.
-     *
      * @return $this
      */
     public function setRubricID(?int $value = null)
@@ -321,17 +256,12 @@ class BannersStatItem
         return $this;
     }
 
-    /**
-     * Gets RetargetingID.
-     */
     public function getRetargetingID(): ?int
     {
         return $this->RetargetingID;
     }
 
     /**
-     * Sets RetargetingID.
-     *
      * @return $this
      */
     public function setRetargetingID(?int $value = null)
@@ -341,17 +271,12 @@ class BannersStatItem
         return $this;
     }
 
-    /**
-     * Gets WebpageID.
-     */
     public function getWebpageID(): ?int
     {
         return $this->WebpageID;
     }
 
     /**
-     * Sets WebpageID.
-     *
      * @return $this
      */
     public function setWebpageID(?int $value = null)
@@ -361,17 +286,12 @@ class BannersStatItem
         return $this;
     }
 
-    /**
-     * Gets Phrase.
-     */
     public function getPhrase(): ?string
     {
         return $this->Phrase;
     }
 
     /**
-     * Sets Phrase.
-     *
      * @return $this
      */
     public function setPhrase(?string $value = null)
@@ -381,17 +301,12 @@ class BannersStatItem
         return $this;
     }
 
-    /**
-     * Gets StatType.
-     */
     public function getStatType(): ?string
     {
         return $this->StatType;
     }
 
     /**
-     * Sets StatType.
-     *
      * @return $this
      */
     public function setStatType(?string $value = null)
@@ -401,17 +316,12 @@ class BannersStatItem
         return $this;
     }
 
-    /**
-     * Gets DeviceType.
-     */
     public function getDeviceType(): ?string
     {
         return $this->DeviceType;
     }
 
     /**
-     * Sets DeviceType.
-     *
      * @return $this
      */
     public function setDeviceType(?string $value = null)
@@ -421,17 +331,12 @@ class BannersStatItem
         return $this;
     }
 
-    /**
-     * Gets ShowsAveragePosition.
-     */
     public function getShowsAveragePosition(): ?float
     {
         return $this->ShowsAveragePosition;
     }
 
     /**
-     * Sets ShowsAveragePosition.
-     *
      * @return $this
      */
     public function setShowsAveragePosition(?float $value = null)
@@ -441,17 +346,12 @@ class BannersStatItem
         return $this;
     }
 
-    /**
-     * Gets ClicksAveragePosition.
-     */
     public function getClicksAveragePosition(): ?float
     {
         return $this->ClicksAveragePosition;
     }
 
     /**
-     * Sets ClicksAveragePosition.
-     *
      * @return $this
      */
     public function setClicksAveragePosition(?float $value = null)
@@ -461,17 +361,12 @@ class BannersStatItem
         return $this;
     }
 
-    /**
-     * Gets Revenue.
-     */
     public function getRevenue(): ?float
     {
         return $this->Revenue;
     }
 
     /**
-     * Sets Revenue.
-     *
      * @return $this
      */
     public function setRevenue(?float $value = null)
@@ -481,17 +376,12 @@ class BannersStatItem
         return $this;
     }
 
-    /**
-     * Gets ROI.
-     */
     public function getROI(): ?float
     {
         return $this->ROI;
     }
 
     /**
-     * Sets ROI.
-     *
      * @return $this
      */
     public function setROI(?float $value = null)

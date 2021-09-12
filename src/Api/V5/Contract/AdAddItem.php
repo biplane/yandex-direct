@@ -9,61 +9,48 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AdAddItem extends AdAddItemBase
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $TextAd = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $DynamicTextAd = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $MobileAppAd = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $TextImageAd = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $MobileAppImageAd = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $TextAdBuilderAd = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $MobileAppAdBuilderAd = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $MobileAppCpcVideoAdBuilderAd = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $CpmBannerAdBuilderAd = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $CpcVideoAdBuilderAd = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $CpmVideoAdBuilderAd = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $SmartAdBuilderAd = null;
 
-    /**
-     * Creates a new instance of AdAddItem.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
-
-    /**
-     * Gets TextAd.
-     */
     public function getTextAd(): ?TextAdAdd
     {
         return $this->TextAd ?? null;
     }
 
     /**
-     * Sets TextAd.
-     *
      * @return $this
      */
     public function setTextAd(?TextAdAdd $value = null)
@@ -73,17 +60,12 @@ class AdAddItem extends AdAddItemBase
         return $this;
     }
 
-    /**
-     * Gets DynamicTextAd.
-     */
     public function getDynamicTextAd(): ?DynamicTextAdAdd
     {
         return $this->DynamicTextAd ?? null;
     }
 
     /**
-     * Sets DynamicTextAd.
-     *
      * @return $this
      */
     public function setDynamicTextAd(?DynamicTextAdAdd $value = null)
@@ -93,17 +75,12 @@ class AdAddItem extends AdAddItemBase
         return $this;
     }
 
-    /**
-     * Gets MobileAppAd.
-     */
     public function getMobileAppAd(): ?MobileAppAdAdd
     {
         return $this->MobileAppAd ?? null;
     }
 
     /**
-     * Sets MobileAppAd.
-     *
      * @return $this
      */
     public function setMobileAppAd(?MobileAppAdAdd $value = null)
@@ -113,17 +90,12 @@ class AdAddItem extends AdAddItemBase
         return $this;
     }
 
-    /**
-     * Gets TextImageAd.
-     */
     public function getTextImageAd(): ?TextImageAdAdd
     {
         return $this->TextImageAd ?? null;
     }
 
     /**
-     * Sets TextImageAd.
-     *
      * @return $this
      */
     public function setTextImageAd(?TextImageAdAdd $value = null)
@@ -133,17 +105,12 @@ class AdAddItem extends AdAddItemBase
         return $this;
     }
 
-    /**
-     * Gets MobileAppImageAd.
-     */
     public function getMobileAppImageAd(): ?MobileAppImageAdAdd
     {
         return $this->MobileAppImageAd ?? null;
     }
 
     /**
-     * Sets MobileAppImageAd.
-     *
      * @return $this
      */
     public function setMobileAppImageAd(?MobileAppImageAdAdd $value = null)
@@ -153,17 +120,12 @@ class AdAddItem extends AdAddItemBase
         return $this;
     }
 
-    /**
-     * Gets TextAdBuilderAd.
-     */
     public function getTextAdBuilderAd(): ?TextAdBuilderAdAdd
     {
         return $this->TextAdBuilderAd ?? null;
     }
 
     /**
-     * Sets TextAdBuilderAd.
-     *
      * @return $this
      */
     public function setTextAdBuilderAd(?TextAdBuilderAdAdd $value = null)
@@ -173,17 +135,12 @@ class AdAddItem extends AdAddItemBase
         return $this;
     }
 
-    /**
-     * Gets MobileAppAdBuilderAd.
-     */
     public function getMobileAppAdBuilderAd(): ?MobileAppAdBuilderAdAdd
     {
         return $this->MobileAppAdBuilderAd ?? null;
     }
 
     /**
-     * Sets MobileAppAdBuilderAd.
-     *
      * @return $this
      */
     public function setMobileAppAdBuilderAd(?MobileAppAdBuilderAdAdd $value = null)
@@ -193,17 +150,12 @@ class AdAddItem extends AdAddItemBase
         return $this;
     }
 
-    /**
-     * Gets MobileAppCpcVideoAdBuilderAd.
-     */
     public function getMobileAppCpcVideoAdBuilderAd(): ?MobileAppCpcVideoAdBuilderAdAdd
     {
         return $this->MobileAppCpcVideoAdBuilderAd ?? null;
     }
 
     /**
-     * Sets MobileAppCpcVideoAdBuilderAd.
-     *
      * @return $this
      */
     public function setMobileAppCpcVideoAdBuilderAd(?MobileAppCpcVideoAdBuilderAdAdd $value = null)
@@ -213,17 +165,12 @@ class AdAddItem extends AdAddItemBase
         return $this;
     }
 
-    /**
-     * Gets CpmBannerAdBuilderAd.
-     */
     public function getCpmBannerAdBuilderAd(): ?CpmBannerAdBuilderAdAdd
     {
         return $this->CpmBannerAdBuilderAd ?? null;
     }
 
     /**
-     * Sets CpmBannerAdBuilderAd.
-     *
      * @return $this
      */
     public function setCpmBannerAdBuilderAd(?CpmBannerAdBuilderAdAdd $value = null)
@@ -233,17 +180,12 @@ class AdAddItem extends AdAddItemBase
         return $this;
     }
 
-    /**
-     * Gets CpcVideoAdBuilderAd.
-     */
     public function getCpcVideoAdBuilderAd(): ?CpcVideoAdBuilderAdAdd
     {
         return $this->CpcVideoAdBuilderAd ?? null;
     }
 
     /**
-     * Sets CpcVideoAdBuilderAd.
-     *
      * @return $this
      */
     public function setCpcVideoAdBuilderAd(?CpcVideoAdBuilderAdAdd $value = null)
@@ -253,17 +195,12 @@ class AdAddItem extends AdAddItemBase
         return $this;
     }
 
-    /**
-     * Gets CpmVideoAdBuilderAd.
-     */
     public function getCpmVideoAdBuilderAd(): ?CpmVideoAdBuilderAdAdd
     {
         return $this->CpmVideoAdBuilderAd ?? null;
     }
 
     /**
-     * Sets CpmVideoAdBuilderAd.
-     *
      * @return $this
      */
     public function setCpmVideoAdBuilderAd(?CpmVideoAdBuilderAdAdd $value = null)
@@ -273,17 +210,12 @@ class AdAddItem extends AdAddItemBase
         return $this;
     }
 
-    /**
-     * Gets SmartAdBuilderAd.
-     */
     public function getSmartAdBuilderAd(): ?SmartAdBuilderAdAdd
     {
         return $this->SmartAdBuilderAd ?? null;
     }
 
     /**
-     * Sets SmartAdBuilderAd.
-     *
      * @return $this
      */
     public function setSmartAdBuilderAd(?SmartAdBuilderAdAdd $value = null)

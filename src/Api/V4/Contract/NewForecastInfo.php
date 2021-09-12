@@ -20,16 +20,14 @@ class NewForecastInfo
     protected $AuctionBids = null;
 
     /**
-     * Creates a new instance of NewForecastInfo.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Categories.
-     *
      * @return int[]|null
      */
     public function getCategories(): ?array
@@ -38,8 +36,6 @@ class NewForecastInfo
     }
 
     /**
-     * Sets Categories.
-     *
      * @param int[]|null $value
      *
      * @return $this
@@ -52,8 +48,6 @@ class NewForecastInfo
     }
 
     /**
-     * Gets Phrases.
-     *
      * @return string[]|null
      */
     public function getPhrases(): ?array
@@ -62,8 +56,6 @@ class NewForecastInfo
     }
 
     /**
-     * Sets Phrases.
-     *
      * @param string[]|null $value
      *
      * @return $this
@@ -76,8 +68,6 @@ class NewForecastInfo
     }
 
     /**
-     * Gets GeoID.
-     *
      * @return int[]|null
      */
     public function getGeoID(): ?array
@@ -86,8 +76,6 @@ class NewForecastInfo
     }
 
     /**
-     * Sets GeoID.
-     *
      * @param int[]|null $value
      *
      * @return $this
@@ -99,17 +87,12 @@ class NewForecastInfo
         return $this;
     }
 
-    /**
-     * Gets Currency.
-     */
     public function getCurrency(): ?string
     {
         return $this->Currency;
     }
 
     /**
-     * Sets Currency.
-     *
      * @return $this
      */
     public function setCurrency(?string $value = null)
@@ -119,17 +102,12 @@ class NewForecastInfo
         return $this;
     }
 
-    /**
-     * Gets AuctionBids.
-     */
     public function getAuctionBids(): ?string
     {
         return $this->AuctionBids;
     }
 
     /**
-     * Sets AuctionBids.
-     *
      * @return $this
      */
     public function setAuctionBids(?string $value = null)

@@ -14,16 +14,14 @@ class MobileAppAdFeatureItem
     protected $Enabled = null;
 
     /**
-     * Creates a new instance of MobileAppAdFeatureItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Feature.
-     *
      * @see MobileAppFeatureEnum
      */
     public function getFeature(): string
@@ -32,8 +30,6 @@ class MobileAppAdFeatureItem
     }
 
     /**
-     * Sets Feature.
-     *
      * @see MobileAppFeatureEnum
      *
      * @return $this
@@ -46,8 +42,6 @@ class MobileAppAdFeatureItem
     }
 
     /**
-     * Gets Enabled.
-     *
      * @see YesNoEnum
      */
     public function getEnabled(): string
@@ -56,8 +50,6 @@ class MobileAppAdFeatureItem
     }
 
     /**
-     * Sets Enabled.
-     *
      * @see YesNoEnum
      *
      * @return $this

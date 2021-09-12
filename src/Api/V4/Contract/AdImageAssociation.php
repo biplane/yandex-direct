@@ -22,24 +22,19 @@ class AdImageAssociation
     protected $ModerateRejectionReasons = null;
 
     /**
-     * Creates a new instance of AdImageAssociation.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets AdID.
-     */
     public function getAdID(): int
     {
         return $this->AdID;
     }
 
     /**
-     * Sets AdID.
-     *
      * @return $this
      */
     public function setAdID(int $value)
@@ -49,17 +44,12 @@ class AdImageAssociation
         return $this;
     }
 
-    /**
-     * Gets AdImageHash.
-     */
     public function getAdImageHash(): ?string
     {
         return $this->AdImageHash;
     }
 
     /**
-     * Sets AdImageHash.
-     *
      * @return $this
      */
     public function setAdImageHash(?string $value = null)
@@ -69,17 +59,12 @@ class AdImageAssociation
         return $this;
     }
 
-    /**
-     * Gets Login.
-     */
     public function getLogin(): ?string
     {
         return $this->Login;
     }
 
     /**
-     * Sets Login.
-     *
      * @return $this
      */
     public function setLogin(?string $value = null)
@@ -89,17 +74,12 @@ class AdImageAssociation
         return $this;
     }
 
-    /**
-     * Gets CampaignID.
-     */
     public function getCampaignID(): ?int
     {
         return $this->CampaignID;
     }
 
     /**
-     * Sets CampaignID.
-     *
      * @return $this
      */
     public function setCampaignID(?int $value = null)
@@ -109,17 +89,12 @@ class AdImageAssociation
         return $this;
     }
 
-    /**
-     * Gets StatusAdImageModerate.
-     */
     public function getStatusAdImageModerate(): ?string
     {
         return $this->StatusAdImageModerate;
     }
 
     /**
-     * Sets StatusAdImageModerate.
-     *
      * @return $this
      */
     public function setStatusAdImageModerate(?string $value = null)
@@ -130,8 +105,6 @@ class AdImageAssociation
     }
 
     /**
-     * Gets ModerateRejectionReasons.
-     *
      * @return RejectReason[]|null
      */
     public function getModerateRejectionReasons(): ?array
@@ -140,8 +113,6 @@ class AdImageAssociation
     }
 
     /**
-     * Sets ModerateRejectionReasons.
-     *
      * @param RejectReason[]|null $value
      *
      * @return $this

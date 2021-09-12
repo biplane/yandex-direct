@@ -11,31 +11,26 @@ class NetworkByCoverage
 {
     protected $TargetCoverage = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $IncreasePercent = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $BidCeiling = null;
 
     /**
-     * Creates a new instance of NetworkByCoverage.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets TargetCoverage.
-     */
     public function getTargetCoverage(): int
     {
         return $this->TargetCoverage;
     }
 
     /**
-     * Sets TargetCoverage.
-     *
      * @return $this
      */
     public function setTargetCoverage(int $value)
@@ -45,17 +40,12 @@ class NetworkByCoverage
         return $this;
     }
 
-    /**
-     * Gets IncreasePercent.
-     */
     public function getIncreasePercent(): ?int
     {
         return $this->IncreasePercent ?? null;
     }
 
     /**
-     * Sets IncreasePercent.
-     *
      * @return $this
      */
     public function setIncreasePercent(?int $value = null)
@@ -65,17 +55,12 @@ class NetworkByCoverage
         return $this;
     }
 
-    /**
-     * Gets BidCeiling.
-     */
     public function getBidCeiling(): ?int
     {
         return $this->BidCeiling ?? null;
     }
 
     /**
-     * Sets BidCeiling.
-     *
      * @return $this
      */
     public function setBidCeiling(?int $value = null)

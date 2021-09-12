@@ -12,16 +12,14 @@ class UpdateAgencyClientsResponse
     protected $UpdateResults = [];
 
     /**
-     * Creates a new instance of UpdateAgencyClientsResponse.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets UpdateResults.
-     *
      * @return ClientsActionResult[]
      */
     public function getUpdateResults(): array
@@ -30,8 +28,6 @@ class UpdateAgencyClientsResponse
     }
 
     /**
-     * Sets UpdateResults.
-     *
      * @param ClientsActionResult[] $value
      *
      * @return $this

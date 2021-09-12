@@ -9,46 +9,41 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class MobileAppAdGroupGet
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $StoreUrl = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $TargetDeviceType = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $TargetCarrier = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $TargetOperatingSystemVersion = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AppIconModeration = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AppOperatingSystemType = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AppAvailabilityStatus = null;
 
     /**
-     * Creates a new instance of MobileAppAdGroupGet.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets StoreUrl.
-     */
     public function getStoreUrl(): ?string
     {
         return $this->StoreUrl ?? null;
     }
 
     /**
-     * Sets StoreUrl.
-     *
      * @return $this
      */
     public function setStoreUrl(?string $value = null)
@@ -59,8 +54,6 @@ class MobileAppAdGroupGet
     }
 
     /**
-     * Gets TargetDeviceType.
-     *
      * @see TargetDeviceTypeEnum
      *
      * @return string[]|null
@@ -71,8 +64,6 @@ class MobileAppAdGroupGet
     }
 
     /**
-     * Sets TargetDeviceType.
-     *
      * @see TargetDeviceTypeEnum
      *
      * @param string[]|null $value
@@ -87,8 +78,6 @@ class MobileAppAdGroupGet
     }
 
     /**
-     * Gets TargetCarrier.
-     *
      * @see TargetCarrierEnum
      */
     public function getTargetCarrier(): ?string
@@ -97,8 +86,6 @@ class MobileAppAdGroupGet
     }
 
     /**
-     * Sets TargetCarrier.
-     *
      * @see TargetCarrierEnum
      *
      * @return $this
@@ -110,17 +97,12 @@ class MobileAppAdGroupGet
         return $this;
     }
 
-    /**
-     * Gets TargetOperatingSystemVersion.
-     */
     public function getTargetOperatingSystemVersion(): ?string
     {
         return $this->TargetOperatingSystemVersion ?? null;
     }
 
     /**
-     * Sets TargetOperatingSystemVersion.
-     *
      * @return $this
      */
     public function setTargetOperatingSystemVersion(?string $value = null)
@@ -130,17 +112,12 @@ class MobileAppAdGroupGet
         return $this;
     }
 
-    /**
-     * Gets AppIconModeration.
-     */
     public function getAppIconModeration(): ?ExtensionModeration
     {
         return $this->AppIconModeration ?? null;
     }
 
     /**
-     * Sets AppIconModeration.
-     *
      * @return $this
      */
     public function setAppIconModeration(?ExtensionModeration $value = null)
@@ -151,8 +128,6 @@ class MobileAppAdGroupGet
     }
 
     /**
-     * Gets AppOperatingSystemType.
-     *
      * @see MobileOperatingSystemTypeEnum
      */
     public function getAppOperatingSystemType(): ?string
@@ -161,8 +136,6 @@ class MobileAppAdGroupGet
     }
 
     /**
-     * Sets AppOperatingSystemType.
-     *
      * @see MobileOperatingSystemTypeEnum
      *
      * @return $this
@@ -175,8 +148,6 @@ class MobileAppAdGroupGet
     }
 
     /**
-     * Gets AppAvailabilityStatus.
-     *
      * @see AppAvailabilityStatusEnum
      */
     public function getAppAvailabilityStatus(): ?string
@@ -185,8 +156,6 @@ class MobileAppAdGroupGet
     }
 
     /**
-     * Sets AppAvailabilityStatus.
-     *
      * @see AppAvailabilityStatusEnum
      *
      * @return $this

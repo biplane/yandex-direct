@@ -9,31 +9,18 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class SetBidsActionResult extends ActionResult
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $CampaignId = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AdGroupId = null;
 
-    /**
-     * Creates a new instance of SetBidsActionResult.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
-
-    /**
-     * Gets CampaignId.
-     */
     public function getCampaignId(): ?int
     {
         return $this->CampaignId ?? null;
     }
 
     /**
-     * Sets CampaignId.
-     *
      * @return $this
      */
     public function setCampaignId(?int $value = null)
@@ -43,17 +30,12 @@ class SetBidsActionResult extends ActionResult
         return $this;
     }
 
-    /**
-     * Gets AdGroupId.
-     */
     public function getAdGroupId(): ?int
     {
         return $this->AdGroupId ?? null;
     }
 
     /**
-     * Sets AdGroupId.
-     *
      * @return $this
      */
     public function setAdGroupId(?int $value = null)

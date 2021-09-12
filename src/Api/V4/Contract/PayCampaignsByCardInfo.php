@@ -18,24 +18,19 @@ class PayCampaignsByCardInfo
     protected $Version = null;
 
     /**
-     * Creates a new instance of PayCampaignsByCardInfo.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets PayMethodID.
-     */
     public function getPayMethodID(): string
     {
         return $this->PayMethodID;
     }
 
     /**
-     * Sets PayMethodID.
-     *
      * @return $this
      */
     public function setPayMethodID(string $value)
@@ -45,17 +40,12 @@ class PayCampaignsByCardInfo
         return $this;
     }
 
-    /**
-     * Gets CustomTransactionID.
-     */
     public function getCustomTransactionID(): string
     {
         return $this->CustomTransactionID;
     }
 
     /**
-     * Sets CustomTransactionID.
-     *
      * @return $this
      */
     public function setCustomTransactionID(string $value)
@@ -66,8 +56,6 @@ class PayCampaignsByCardInfo
     }
 
     /**
-     * Gets Payments.
-     *
      * @return PayCampElement[]
      */
     public function getPayments(): array
@@ -76,8 +64,6 @@ class PayCampaignsByCardInfo
     }
 
     /**
-     * Sets Payments.
-     *
      * @param PayCampElement[] $value
      *
      * @return $this
@@ -89,17 +75,12 @@ class PayCampaignsByCardInfo
         return $this;
     }
 
-    /**
-     * Gets Version.
-     */
     public function getVersion(): ?string
     {
         return $this->Version;
     }
 
     /**
-     * Sets Version.
-     *
      * @return $this
      */
     public function setVersion(?string $value = null)

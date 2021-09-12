@@ -13,36 +13,31 @@ class FilterFieldItem
 
     protected $Type = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $EnumProps = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $NumberProps = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $StringProps = null;
 
     protected $Operators = [];
 
     /**
-     * Creates a new instance of FilterFieldItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Name.
-     */
     public function getName(): string
     {
         return $this->Name;
     }
 
     /**
-     * Sets Name.
-     *
      * @return $this
      */
     public function setName(string $value)
@@ -53,8 +48,6 @@ class FilterFieldItem
     }
 
     /**
-     * Gets Type.
-     *
      * @see FilterFieldType
      */
     public function getType(): string
@@ -63,8 +56,6 @@ class FilterFieldItem
     }
 
     /**
-     * Sets Type.
-     *
      * @see FilterFieldType
      *
      * @return $this
@@ -76,17 +67,12 @@ class FilterFieldItem
         return $this;
     }
 
-    /**
-     * Gets EnumProps.
-     */
     public function getEnumProps(): ?EnumFilterFieldProps
     {
         return $this->EnumProps ?? null;
     }
 
     /**
-     * Sets EnumProps.
-     *
      * @return $this
      */
     public function setEnumProps(?EnumFilterFieldProps $value = null)
@@ -96,17 +82,12 @@ class FilterFieldItem
         return $this;
     }
 
-    /**
-     * Gets NumberProps.
-     */
     public function getNumberProps(): ?NumberFilterFieldProps
     {
         return $this->NumberProps ?? null;
     }
 
     /**
-     * Sets NumberProps.
-     *
      * @return $this
      */
     public function setNumberProps(?NumberFilterFieldProps $value = null)
@@ -116,17 +97,12 @@ class FilterFieldItem
         return $this;
     }
 
-    /**
-     * Gets StringProps.
-     */
     public function getStringProps(): ?StringFilterFieldProps
     {
         return $this->StringProps ?? null;
     }
 
     /**
-     * Sets StringProps.
-     *
      * @return $this
      */
     public function setStringProps(?StringFilterFieldProps $value = null)
@@ -137,8 +113,6 @@ class FilterFieldItem
     }
 
     /**
-     * Gets Operators.
-     *
      * @return FilterFieldOperator[]
      */
     public function getOperators(): array
@@ -147,8 +121,6 @@ class FilterFieldItem
     }
 
     /**
-     * Sets Operators.
-     *
      * @param FilterFieldOperator[] $value
      *
      * @return $this

@@ -9,91 +9,86 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AdGetItem
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Id = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $CampaignId = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AdGroupId = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Status = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $State = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $StatusClarification = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AdCategories = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AgeLabel = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Type = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Subtype = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $TextAd = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $DynamicTextAd = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $MobileAppAd = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $TextImageAd = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $MobileAppImageAd = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $TextAdBuilderAd = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $MobileAppAdBuilderAd = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $MobileAppCpcVideoAdBuilderAd = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $CpmBannerAdBuilderAd = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $CpcVideoAdBuilderAd = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $CpmVideoAdBuilderAd = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $SmartAdBuilderAd = null;
 
     /**
-     * Creates a new instance of AdGetItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Id.
-     */
     public function getId(): ?int
     {
         return $this->Id ?? null;
     }
 
     /**
-     * Sets Id.
-     *
      * @return $this
      */
     public function setId(?int $value = null)
@@ -103,17 +98,12 @@ class AdGetItem
         return $this;
     }
 
-    /**
-     * Gets CampaignId.
-     */
     public function getCampaignId(): ?int
     {
         return $this->CampaignId ?? null;
     }
 
     /**
-     * Sets CampaignId.
-     *
      * @return $this
      */
     public function setCampaignId(?int $value = null)
@@ -123,17 +113,12 @@ class AdGetItem
         return $this;
     }
 
-    /**
-     * Gets AdGroupId.
-     */
     public function getAdGroupId(): ?int
     {
         return $this->AdGroupId ?? null;
     }
 
     /**
-     * Sets AdGroupId.
-     *
      * @return $this
      */
     public function setAdGroupId(?int $value = null)
@@ -144,8 +129,6 @@ class AdGetItem
     }
 
     /**
-     * Gets Status.
-     *
      * @see StatusEnum
      */
     public function getStatus(): ?string
@@ -154,8 +137,6 @@ class AdGetItem
     }
 
     /**
-     * Sets Status.
-     *
      * @see StatusEnum
      *
      * @return $this
@@ -168,8 +149,6 @@ class AdGetItem
     }
 
     /**
-     * Gets State.
-     *
      * @see StateEnum
      */
     public function getState(): ?string
@@ -178,8 +157,6 @@ class AdGetItem
     }
 
     /**
-     * Sets State.
-     *
      * @see StateEnum
      *
      * @return $this
@@ -191,17 +168,12 @@ class AdGetItem
         return $this;
     }
 
-    /**
-     * Gets StatusClarification.
-     */
     public function getStatusClarification(): ?string
     {
         return $this->StatusClarification ?? null;
     }
 
     /**
-     * Sets StatusClarification.
-     *
      * @return $this
      */
     public function setStatusClarification(?string $value = null)
@@ -212,8 +184,6 @@ class AdGetItem
     }
 
     /**
-     * Gets AdCategories.
-     *
      * @return string[]|null
      */
     public function getAdCategories(): ?array
@@ -222,8 +192,6 @@ class AdGetItem
     }
 
     /**
-     * Sets AdCategories.
-     *
      * @param string[]|null $value
      *
      * @return $this
@@ -236,8 +204,6 @@ class AdGetItem
     }
 
     /**
-     * Gets AgeLabel.
-     *
      * @see AgeLabelEnum
      */
     public function getAgeLabel(): ?string
@@ -246,8 +212,6 @@ class AdGetItem
     }
 
     /**
-     * Sets AgeLabel.
-     *
      * @see AgeLabelEnum
      *
      * @return $this
@@ -260,8 +224,6 @@ class AdGetItem
     }
 
     /**
-     * Gets Type.
-     *
      * @see AdTypeEnum
      */
     public function getType(): ?string
@@ -270,8 +232,6 @@ class AdGetItem
     }
 
     /**
-     * Sets Type.
-     *
      * @see AdTypeEnum
      *
      * @return $this
@@ -284,8 +244,6 @@ class AdGetItem
     }
 
     /**
-     * Gets Subtype.
-     *
      * @see AdSubtypeEnum
      */
     public function getSubtype(): ?string
@@ -294,8 +252,6 @@ class AdGetItem
     }
 
     /**
-     * Sets Subtype.
-     *
      * @see AdSubtypeEnum
      *
      * @return $this
@@ -307,17 +263,12 @@ class AdGetItem
         return $this;
     }
 
-    /**
-     * Gets TextAd.
-     */
     public function getTextAd(): ?TextAdGet
     {
         return $this->TextAd ?? null;
     }
 
     /**
-     * Sets TextAd.
-     *
      * @return $this
      */
     public function setTextAd(?TextAdGet $value = null)
@@ -327,17 +278,12 @@ class AdGetItem
         return $this;
     }
 
-    /**
-     * Gets DynamicTextAd.
-     */
     public function getDynamicTextAd(): ?DynamicTextAdGet
     {
         return $this->DynamicTextAd ?? null;
     }
 
     /**
-     * Sets DynamicTextAd.
-     *
      * @return $this
      */
     public function setDynamicTextAd(?DynamicTextAdGet $value = null)
@@ -347,17 +293,12 @@ class AdGetItem
         return $this;
     }
 
-    /**
-     * Gets MobileAppAd.
-     */
     public function getMobileAppAd(): ?MobileAppAdGet
     {
         return $this->MobileAppAd ?? null;
     }
 
     /**
-     * Sets MobileAppAd.
-     *
      * @return $this
      */
     public function setMobileAppAd(?MobileAppAdGet $value = null)
@@ -367,17 +308,12 @@ class AdGetItem
         return $this;
     }
 
-    /**
-     * Gets TextImageAd.
-     */
     public function getTextImageAd(): ?TextImageAdGet
     {
         return $this->TextImageAd ?? null;
     }
 
     /**
-     * Sets TextImageAd.
-     *
      * @return $this
      */
     public function setTextImageAd(?TextImageAdGet $value = null)
@@ -387,17 +323,12 @@ class AdGetItem
         return $this;
     }
 
-    /**
-     * Gets MobileAppImageAd.
-     */
     public function getMobileAppImageAd(): ?MobileAppImageAdGet
     {
         return $this->MobileAppImageAd ?? null;
     }
 
     /**
-     * Sets MobileAppImageAd.
-     *
      * @return $this
      */
     public function setMobileAppImageAd(?MobileAppImageAdGet $value = null)
@@ -407,17 +338,12 @@ class AdGetItem
         return $this;
     }
 
-    /**
-     * Gets TextAdBuilderAd.
-     */
     public function getTextAdBuilderAd(): ?TextAdBuilderAdGet
     {
         return $this->TextAdBuilderAd ?? null;
     }
 
     /**
-     * Sets TextAdBuilderAd.
-     *
      * @return $this
      */
     public function setTextAdBuilderAd(?TextAdBuilderAdGet $value = null)
@@ -427,17 +353,12 @@ class AdGetItem
         return $this;
     }
 
-    /**
-     * Gets MobileAppAdBuilderAd.
-     */
     public function getMobileAppAdBuilderAd(): ?MobileAppAdBuilderAdGet
     {
         return $this->MobileAppAdBuilderAd ?? null;
     }
 
     /**
-     * Sets MobileAppAdBuilderAd.
-     *
      * @return $this
      */
     public function setMobileAppAdBuilderAd(?MobileAppAdBuilderAdGet $value = null)
@@ -447,17 +368,12 @@ class AdGetItem
         return $this;
     }
 
-    /**
-     * Gets MobileAppCpcVideoAdBuilderAd.
-     */
     public function getMobileAppCpcVideoAdBuilderAd(): ?MobileAppCpcVideoAdBuilderAdGet
     {
         return $this->MobileAppCpcVideoAdBuilderAd ?? null;
     }
 
     /**
-     * Sets MobileAppCpcVideoAdBuilderAd.
-     *
      * @return $this
      */
     public function setMobileAppCpcVideoAdBuilderAd(?MobileAppCpcVideoAdBuilderAdGet $value = null)
@@ -467,17 +383,12 @@ class AdGetItem
         return $this;
     }
 
-    /**
-     * Gets CpmBannerAdBuilderAd.
-     */
     public function getCpmBannerAdBuilderAd(): ?CpmBannerAdBuilderAdGet
     {
         return $this->CpmBannerAdBuilderAd ?? null;
     }
 
     /**
-     * Sets CpmBannerAdBuilderAd.
-     *
      * @return $this
      */
     public function setCpmBannerAdBuilderAd(?CpmBannerAdBuilderAdGet $value = null)
@@ -487,17 +398,12 @@ class AdGetItem
         return $this;
     }
 
-    /**
-     * Gets CpcVideoAdBuilderAd.
-     */
     public function getCpcVideoAdBuilderAd(): ?CpcVideoAdBuilderAdGet
     {
         return $this->CpcVideoAdBuilderAd ?? null;
     }
 
     /**
-     * Sets CpcVideoAdBuilderAd.
-     *
      * @return $this
      */
     public function setCpcVideoAdBuilderAd(?CpcVideoAdBuilderAdGet $value = null)
@@ -507,17 +413,12 @@ class AdGetItem
         return $this;
     }
 
-    /**
-     * Gets CpmVideoAdBuilderAd.
-     */
     public function getCpmVideoAdBuilderAd(): ?CpmVideoAdBuilderAdGet
     {
         return $this->CpmVideoAdBuilderAd ?? null;
     }
 
     /**
-     * Sets CpmVideoAdBuilderAd.
-     *
      * @return $this
      */
     public function setCpmVideoAdBuilderAd(?CpmVideoAdBuilderAdGet $value = null)
@@ -527,17 +428,12 @@ class AdGetItem
         return $this;
     }
 
-    /**
-     * Gets SmartAdBuilderAd.
-     */
     public function getSmartAdBuilderAd(): ?SmartAdBuilderAdGet
     {
         return $this->SmartAdBuilderAd ?? null;
     }
 
     /**
-     * Sets SmartAdBuilderAd.
-     *
      * @return $this
      */
     public function setSmartAdBuilderAd(?SmartAdBuilderAdGet $value = null)

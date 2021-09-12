@@ -9,20 +9,10 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class GetTurboPagesResponse extends GetResponseGeneral
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $TurboPages = null;
 
     /**
-     * Creates a new instance of GetTurboPagesResponse.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
-
-    /**
-     * Gets TurboPages.
-     *
      * @return TurboPageGetItem[]|null
      */
     public function getTurboPages(): ?array
@@ -31,8 +21,6 @@ class GetTurboPagesResponse extends GetResponseGeneral
     }
 
     /**
-     * Sets TurboPages.
-     *
      * @param TurboPageGetItem[]|null $value
      *
      * @return $this

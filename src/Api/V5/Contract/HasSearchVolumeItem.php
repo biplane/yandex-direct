@@ -9,43 +9,38 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class HasSearchVolumeItem
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Keyword = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $RegionIds = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AllDevices = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $MobilePhones = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Tablets = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Desktops = null;
 
     /**
-     * Creates a new instance of HasSearchVolumeItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Keyword.
-     */
     public function getKeyword(): ?string
     {
         return $this->Keyword ?? null;
     }
 
     /**
-     * Sets Keyword.
-     *
      * @return $this
      */
     public function setKeyword(?string $value = null)
@@ -56,8 +51,6 @@ class HasSearchVolumeItem
     }
 
     /**
-     * Gets RegionIds.
-     *
      * @return int[]|null
      */
     public function getRegionIds(): ?array
@@ -66,8 +59,6 @@ class HasSearchVolumeItem
     }
 
     /**
-     * Sets RegionIds.
-     *
      * @param int[]|null $value
      *
      * @return $this
@@ -80,8 +71,6 @@ class HasSearchVolumeItem
     }
 
     /**
-     * Gets AllDevices.
-     *
      * @see YesNoEnum
      */
     public function getAllDevices(): ?string
@@ -90,8 +79,6 @@ class HasSearchVolumeItem
     }
 
     /**
-     * Sets AllDevices.
-     *
      * @see YesNoEnum
      *
      * @return $this
@@ -104,8 +91,6 @@ class HasSearchVolumeItem
     }
 
     /**
-     * Gets MobilePhones.
-     *
      * @see YesNoEnum
      */
     public function getMobilePhones(): ?string
@@ -114,8 +99,6 @@ class HasSearchVolumeItem
     }
 
     /**
-     * Sets MobilePhones.
-     *
      * @see YesNoEnum
      *
      * @return $this
@@ -128,8 +111,6 @@ class HasSearchVolumeItem
     }
 
     /**
-     * Gets Tablets.
-     *
      * @see YesNoEnum
      */
     public function getTablets(): ?string
@@ -138,8 +119,6 @@ class HasSearchVolumeItem
     }
 
     /**
-     * Sets Tablets.
-     *
      * @see YesNoEnum
      *
      * @return $this
@@ -152,8 +131,6 @@ class HasSearchVolumeItem
     }
 
     /**
-     * Gets Desktops.
-     *
      * @see YesNoEnum
      */
     public function getDesktops(): ?string
@@ -162,8 +139,6 @@ class HasSearchVolumeItem
     }
 
     /**
-     * Sets Desktops.
-     *
      * @see YesNoEnum
      *
      * @return $this

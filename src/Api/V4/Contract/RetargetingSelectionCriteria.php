@@ -16,16 +16,14 @@ class RetargetingSelectionCriteria
     protected $AdIDS = null;
 
     /**
-     * Creates a new instance of RetargetingSelectionCriteria.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets RetargetingConditionIDS.
-     *
      * @return int[]|null
      */
     public function getRetargetingConditionIDS(): ?array
@@ -34,8 +32,6 @@ class RetargetingSelectionCriteria
     }
 
     /**
-     * Sets RetargetingConditionIDS.
-     *
      * @param int[]|null $value
      *
      * @return $this
@@ -48,8 +44,6 @@ class RetargetingSelectionCriteria
     }
 
     /**
-     * Gets RetargetingIDS.
-     *
      * @return int[]|null
      */
     public function getRetargetingIDS(): ?array
@@ -58,8 +52,6 @@ class RetargetingSelectionCriteria
     }
 
     /**
-     * Sets RetargetingIDS.
-     *
      * @param int[]|null $value
      *
      * @return $this
@@ -72,8 +64,6 @@ class RetargetingSelectionCriteria
     }
 
     /**
-     * Gets AdIDS.
-     *
      * @return int[]|null
      */
     public function getAdIDS(): ?array
@@ -82,8 +72,6 @@ class RetargetingSelectionCriteria
     }
 
     /**
-     * Sets AdIDS.
-     *
      * @param int[]|null $value
      *
      * @return $this

@@ -9,20 +9,18 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class Coverage
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $CoverageItems = null;
 
     /**
-     * Creates a new instance of Coverage.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets CoverageItems.
-     *
      * @return NetworkCoverageItem[]|null
      */
     public function getCoverageItems(): ?array
@@ -31,8 +29,6 @@ class Coverage
     }
 
     /**
-     * Sets CoverageItems.
-     *
      * @param NetworkCoverageItem[]|null $value
      *
      * @return $this

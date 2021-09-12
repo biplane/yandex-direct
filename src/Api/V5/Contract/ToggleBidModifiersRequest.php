@@ -12,16 +12,14 @@ class ToggleBidModifiersRequest
     protected $BidModifierToggleItems = [];
 
     /**
-     * Creates a new instance of ToggleBidModifiersRequest.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets BidModifierToggleItems.
-     *
      * @return BidModifierToggleItem[]
      */
     public function getBidModifierToggleItems(): array
@@ -30,8 +28,6 @@ class ToggleBidModifiersRequest
     }
 
     /**
-     * Sets BidModifierToggleItems.
-     *
      * @param BidModifierToggleItem[] $value
      *
      * @return $this

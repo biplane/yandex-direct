@@ -28,16 +28,14 @@ class Retargeting
     protected $StatusPaused = null;
 
     /**
-     * Creates a new instance of Retargeting.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Fields.
-     *
      * @return string[]|null
      */
     public function getFields(): ?array
@@ -46,8 +44,6 @@ class Retargeting
     }
 
     /**
-     * Sets Fields.
-     *
      * @param string[]|null $value
      *
      * @return $this
@@ -59,17 +55,12 @@ class Retargeting
         return $this;
     }
 
-    /**
-     * Gets RetargetingID.
-     */
     public function getRetargetingID(): ?int
     {
         return $this->RetargetingID;
     }
 
     /**
-     * Sets RetargetingID.
-     *
      * @return $this
      */
     public function setRetargetingID(?int $value = null)
@@ -79,17 +70,12 @@ class Retargeting
         return $this;
     }
 
-    /**
-     * Gets AdGroupID.
-     */
     public function getAdGroupID(): ?int
     {
         return $this->AdGroupID;
     }
 
     /**
-     * Sets AdGroupID.
-     *
      * @return $this
      */
     public function setAdGroupID(?int $value = null)
@@ -99,17 +85,12 @@ class Retargeting
         return $this;
     }
 
-    /**
-     * Gets AdID.
-     */
     public function getAdID(): ?int
     {
         return $this->AdID;
     }
 
     /**
-     * Sets AdID.
-     *
      * @return $this
      */
     public function setAdID(?int $value = null)
@@ -119,17 +100,12 @@ class Retargeting
         return $this;
     }
 
-    /**
-     * Gets RetargetingConditionID.
-     */
     public function getRetargetingConditionID(): ?int
     {
         return $this->RetargetingConditionID;
     }
 
     /**
-     * Sets RetargetingConditionID.
-     *
      * @return $this
      */
     public function setRetargetingConditionID(?int $value = null)
@@ -139,17 +115,12 @@ class Retargeting
         return $this;
     }
 
-    /**
-     * Gets ContextPrice.
-     */
     public function getContextPrice(): ?float
     {
         return $this->ContextPrice;
     }
 
     /**
-     * Sets ContextPrice.
-     *
      * @return $this
      */
     public function setContextPrice(?float $value = null)
@@ -159,17 +130,12 @@ class Retargeting
         return $this;
     }
 
-    /**
-     * Gets Currency.
-     */
     public function getCurrency(): ?string
     {
         return $this->Currency;
     }
 
     /**
-     * Sets Currency.
-     *
      * @return $this
      */
     public function setCurrency(?string $value = null)
@@ -179,17 +145,12 @@ class Retargeting
         return $this;
     }
 
-    /**
-     * Gets AutoBudgetPriority.
-     */
     public function getAutoBudgetPriority(): ?string
     {
         return $this->AutoBudgetPriority;
     }
 
     /**
-     * Sets AutoBudgetPriority.
-     *
      * @return $this
      */
     public function setAutoBudgetPriority(?string $value = null)
@@ -199,17 +160,12 @@ class Retargeting
         return $this;
     }
 
-    /**
-     * Gets StatusPaused.
-     */
     public function getStatusPaused(): ?string
     {
         return $this->StatusPaused;
     }
 
     /**
-     * Sets StatusPaused.
-     *
      * @return $this
      */
     public function setStatusPaused(?string $value = null)

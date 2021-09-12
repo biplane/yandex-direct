@@ -16,24 +16,19 @@ class RetargetingConditionRequest
     protected $RetargetingConditions = null;
 
     /**
-     * Creates a new instance of RetargetingConditionRequest.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Action.
-     */
     public function getAction(): string
     {
         return $this->Action;
     }
 
     /**
-     * Sets Action.
-     *
      * @return $this
      */
     public function setAction(string $value)
@@ -43,17 +38,12 @@ class RetargetingConditionRequest
         return $this;
     }
 
-    /**
-     * Gets SelectionCriteria.
-     */
     public function getSelectionCriteria(): ?RetargetingConditionSelectionCriteria
     {
         return $this->SelectionCriteria;
     }
 
     /**
-     * Sets SelectionCriteria.
-     *
      * @return $this
      */
     public function setSelectionCriteria(?RetargetingConditionSelectionCriteria $value = null)
@@ -64,8 +54,6 @@ class RetargetingConditionRequest
     }
 
     /**
-     * Gets RetargetingConditions.
-     *
      * @return RetargetingCondition[]|null
      */
     public function getRetargetingConditions(): ?array
@@ -74,8 +62,6 @@ class RetargetingConditionRequest
     }
 
     /**
-     * Sets RetargetingConditions.
-     *
      * @param RetargetingCondition[]|null $value
      *
      * @return $this

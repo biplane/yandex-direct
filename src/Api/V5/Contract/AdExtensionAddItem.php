@@ -9,28 +9,23 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AdExtensionAddItem
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Callout = null;
 
     /**
-     * Creates a new instance of AdExtensionAddItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Callout.
-     */
     public function getCallout(): ?Callout
     {
         return $this->Callout ?? null;
     }
 
     /**
-     * Sets Callout.
-     *
      * @return $this
      */
     public function setCallout(?Callout $value = null)

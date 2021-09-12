@@ -17,28 +17,23 @@ class LeadGetItem
 
     protected $TurboPageName = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Data = null;
 
     /**
-     * Creates a new instance of LeadGetItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Id.
-     */
     public function getId(): string
     {
         return $this->Id;
     }
 
     /**
-     * Sets Id.
-     *
      * @return $this
      */
     public function setId(string $value)
@@ -48,17 +43,12 @@ class LeadGetItem
         return $this;
     }
 
-    /**
-     * Gets SubmittedAt.
-     */
     public function getSubmittedAt(): string
     {
         return $this->SubmittedAt;
     }
 
     /**
-     * Sets SubmittedAt.
-     *
      * @return $this
      */
     public function setSubmittedAt(string $value)
@@ -68,17 +58,12 @@ class LeadGetItem
         return $this;
     }
 
-    /**
-     * Gets TurboPageId.
-     */
     public function getTurboPageId(): int
     {
         return $this->TurboPageId;
     }
 
     /**
-     * Sets TurboPageId.
-     *
      * @return $this
      */
     public function setTurboPageId(int $value)
@@ -88,17 +73,12 @@ class LeadGetItem
         return $this;
     }
 
-    /**
-     * Gets TurboPageName.
-     */
     public function getTurboPageName(): string
     {
         return $this->TurboPageName;
     }
 
     /**
-     * Sets TurboPageName.
-     *
      * @return $this
      */
     public function setTurboPageName(string $value)
@@ -109,8 +89,6 @@ class LeadGetItem
     }
 
     /**
-     * Gets Data.
-     *
      * @return LeadDataItem[]|null
      */
     public function getData(): ?array
@@ -119,8 +97,6 @@ class LeadGetItem
     }
 
     /**
-     * Sets Data.
-     *
      * @param LeadDataItem[]|null $value
      *
      * @return $this

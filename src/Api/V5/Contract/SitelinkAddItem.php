@@ -11,34 +11,29 @@ class SitelinkAddItem
 {
     protected $Title = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Href = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Description = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $TurboPageId = null;
 
     /**
-     * Creates a new instance of SitelinkAddItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Title.
-     */
     public function getTitle(): string
     {
         return $this->Title;
     }
 
     /**
-     * Sets Title.
-     *
      * @return $this
      */
     public function setTitle(string $value)
@@ -48,17 +43,12 @@ class SitelinkAddItem
         return $this;
     }
 
-    /**
-     * Gets Href.
-     */
     public function getHref(): ?string
     {
         return $this->Href ?? null;
     }
 
     /**
-     * Sets Href.
-     *
      * @return $this
      */
     public function setHref(?string $value = null)
@@ -68,17 +58,12 @@ class SitelinkAddItem
         return $this;
     }
 
-    /**
-     * Gets Description.
-     */
     public function getDescription(): ?string
     {
         return $this->Description ?? null;
     }
 
     /**
-     * Sets Description.
-     *
      * @return $this
      */
     public function setDescription(?string $value = null)
@@ -88,17 +73,12 @@ class SitelinkAddItem
         return $this;
     }
 
-    /**
-     * Gets TurboPageId.
-     */
     public function getTurboPageId(): ?int
     {
         return $this->TurboPageId ?? null;
     }
 
     /**
-     * Sets TurboPageId.
-     *
      * @return $this
      */
     public function setTurboPageId(?int $value = null)

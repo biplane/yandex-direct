@@ -12,16 +12,14 @@ class UpdateNegativeKeywordSharedSetsResponse
     protected $UpdateResults = [];
 
     /**
-     * Creates a new instance of UpdateNegativeKeywordSharedSetsResponse.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets UpdateResults.
-     *
      * @return ActionResult[]
      */
     public function getUpdateResults(): array
@@ -30,8 +28,6 @@ class UpdateNegativeKeywordSharedSetsResponse
     }
 
     /**
-     * Sets UpdateResults.
-     *
      * @param ActionResult[] $value
      *
      * @return $this

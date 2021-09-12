@@ -16,16 +16,14 @@ class WebpageCondition
     protected $Arguments = [];
 
     /**
-     * Creates a new instance of WebpageCondition.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Operand.
-     *
      * @see WebpageConditionOperandEnum
      */
     public function getOperand(): string
@@ -34,8 +32,6 @@ class WebpageCondition
     }
 
     /**
-     * Sets Operand.
-     *
      * @see WebpageConditionOperandEnum
      *
      * @return $this
@@ -48,8 +44,6 @@ class WebpageCondition
     }
 
     /**
-     * Gets Operator.
-     *
      * @see StringConditionOperatorEnum
      */
     public function getOperator(): string
@@ -58,8 +52,6 @@ class WebpageCondition
     }
 
     /**
-     * Sets Operator.
-     *
      * @see StringConditionOperatorEnum
      *
      * @return $this
@@ -72,8 +64,6 @@ class WebpageCondition
     }
 
     /**
-     * Gets Arguments.
-     *
      * @return string[]
      */
     public function getArguments(): array
@@ -82,8 +72,6 @@ class WebpageCondition
     }
 
     /**
-     * Sets Arguments.
-     *
      * @param string[] $value
      *
      * @return $this

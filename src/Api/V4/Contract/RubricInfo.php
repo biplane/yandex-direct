@@ -22,24 +22,19 @@ class RubricInfo
     protected $Checkable = null;
 
     /**
-     * Creates a new instance of RubricInfo.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets ParentID.
-     */
     public function getParentID(): int
     {
         return $this->ParentID;
     }
 
     /**
-     * Sets ParentID.
-     *
      * @return $this
      */
     public function setParentID(int $value)
@@ -49,17 +44,12 @@ class RubricInfo
         return $this;
     }
 
-    /**
-     * Gets RubricID.
-     */
     public function getRubricID(): int
     {
         return $this->RubricID;
     }
 
     /**
-     * Sets RubricID.
-     *
      * @return $this
      */
     public function setRubricID(int $value)
@@ -69,17 +59,12 @@ class RubricInfo
         return $this;
     }
 
-    /**
-     * Gets Url.
-     */
     public function getUrl(): string
     {
         return $this->Url;
     }
 
     /**
-     * Sets Url.
-     *
      * @return $this
      */
     public function setUrl(string $value)
@@ -89,17 +74,12 @@ class RubricInfo
         return $this;
     }
 
-    /**
-     * Gets RubricFullName.
-     */
     public function getRubricFullName(): string
     {
         return $this->RubricFullName;
     }
 
     /**
-     * Sets RubricFullName.
-     *
      * @return $this
      */
     public function setRubricFullName(string $value)
@@ -109,17 +89,12 @@ class RubricInfo
         return $this;
     }
 
-    /**
-     * Gets RubricName.
-     */
     public function getRubricName(): string
     {
         return $this->RubricName;
     }
 
     /**
-     * Sets RubricName.
-     *
      * @return $this
      */
     public function setRubricName(string $value)
@@ -129,17 +104,12 @@ class RubricInfo
         return $this;
     }
 
-    /**
-     * Gets Checkable.
-     */
     public function getCheckable(): string
     {
         return $this->Checkable;
     }
 
     /**
-     * Sets Checkable.
-     *
      * @return $this
      */
     public function setCheckable(string $value)

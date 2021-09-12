@@ -14,16 +14,14 @@ class RetargetingResponse
     protected $Retargetings = null;
 
     /**
-     * Creates a new instance of RetargetingResponse.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets ActionsResult.
-     *
      * @return RetargetingActionResult[]|null
      */
     public function getActionsResult(): ?array
@@ -32,8 +30,6 @@ class RetargetingResponse
     }
 
     /**
-     * Sets ActionsResult.
-     *
      * @param RetargetingActionResult[]|null $value
      *
      * @return $this
@@ -46,8 +42,6 @@ class RetargetingResponse
     }
 
     /**
-     * Gets Retargetings.
-     *
      * @return Retargeting[]|null
      */
     public function getRetargetings(): ?array
@@ -56,8 +50,6 @@ class RetargetingResponse
     }
 
     /**
-     * Sets Retargetings.
-     *
      * @param Retargeting[]|null $value
      *
      * @return $this

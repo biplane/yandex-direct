@@ -18,24 +18,19 @@ class GetBannersStatResponse
     protected $Stat = null;
 
     /**
-     * Creates a new instance of GetBannersStatResponse.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets CampaignID.
-     */
     public function getCampaignID(): int
     {
         return $this->CampaignID;
     }
 
     /**
-     * Sets CampaignID.
-     *
      * @return $this
      */
     public function setCampaignID(int $value)
@@ -45,17 +40,12 @@ class GetBannersStatResponse
         return $this;
     }
 
-    /**
-     * Gets StartDate.
-     */
     public function getStartDate(): string
     {
         return $this->StartDate;
     }
 
     /**
-     * Sets StartDate.
-     *
      * @return $this
      */
     public function setStartDate(string $value)
@@ -65,17 +55,12 @@ class GetBannersStatResponse
         return $this;
     }
 
-    /**
-     * Gets EndDate.
-     */
     public function getEndDate(): string
     {
         return $this->EndDate;
     }
 
     /**
-     * Sets EndDate.
-     *
      * @return $this
      */
     public function setEndDate(string $value)
@@ -86,8 +71,6 @@ class GetBannersStatResponse
     }
 
     /**
-     * Gets Stat.
-     *
      * @return BannersStatItem[]|null
      */
     public function getStat(): ?array
@@ -96,8 +79,6 @@ class GetBannersStatResponse
     }
 
     /**
-     * Sets Stat.
-     *
      * @param BannersStatItem[]|null $value
      *
      * @return $this

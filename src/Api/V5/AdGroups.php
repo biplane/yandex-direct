@@ -5,6 +5,14 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5;
 
 use Biplane\YandexDirect\Api\ApiSoapClientV5;
+use Biplane\YandexDirect\Api\V5\Contract\AddAdGroupsRequest;
+use Biplane\YandexDirect\Api\V5\Contract\AddAdGroupsResponse;
+use Biplane\YandexDirect\Api\V5\Contract\DeleteAdGroupsRequest;
+use Biplane\YandexDirect\Api\V5\Contract\DeleteAdGroupsResponse;
+use Biplane\YandexDirect\Api\V5\Contract\GetAdGroupsRequest;
+use Biplane\YandexDirect\Api\V5\Contract\GetAdGroupsResponse;
+use Biplane\YandexDirect\Api\V5\Contract\UpdateAdGroupsRequest;
+use Biplane\YandexDirect\Api\V5\Contract\UpdateAdGroupsResponse;
 use Biplane\YandexDirect\Config;
 
 /**
@@ -14,6 +22,9 @@ class AdGroups extends ApiSoapClientV5
 {
     public const ENDPOINT = 'https://api.direct.yandex.com/v5/adgroups?wsdl';
 
+    /**
+     * @param array<string, mixed> $options
+     */
     public function __construct(Config $config, array $options)
     {
         $options['classmap'] = [
@@ -101,34 +112,22 @@ class AdGroups extends ApiSoapClientV5
         parent::__construct(self::ENDPOINT, $config, $options);
     }
 
-    /**
-     * get.
-     */
-    public function get(Contract\GetAdGroupsRequest $parameters): Contract\GetAdGroupsResponse
+    public function get(GetAdGroupsRequest $parameters): GetAdGroupsResponse
     {
         return $this->__soapCall('get', [$parameters]);
     }
 
-    /**
-     * add.
-     */
-    public function add(Contract\AddAdGroupsRequest $parameters): Contract\AddAdGroupsResponse
+    public function add(AddAdGroupsRequest $parameters): AddAdGroupsResponse
     {
         return $this->__soapCall('add', [$parameters]);
     }
 
-    /**
-     * update.
-     */
-    public function update(Contract\UpdateAdGroupsRequest $parameters): Contract\UpdateAdGroupsResponse
+    public function update(UpdateAdGroupsRequest $parameters): UpdateAdGroupsResponse
     {
         return $this->__soapCall('update', [$parameters]);
     }
 
-    /**
-     * delete.
-     */
-    public function delete(Contract\DeleteAdGroupsRequest $parameters): Contract\DeleteAdGroupsResponse
+    public function delete(DeleteAdGroupsRequest $parameters): DeleteAdGroupsResponse
     {
         return $this->__soapCall('delete', [$parameters]);
     }

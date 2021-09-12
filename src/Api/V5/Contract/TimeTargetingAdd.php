@@ -9,28 +9,15 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class TimeTargetingAdd extends TimeTargetingBase
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $HolidaysSchedule = null;
 
-    /**
-     * Creates a new instance of TimeTargetingAdd.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
-
-    /**
-     * Gets HolidaysSchedule.
-     */
     public function getHolidaysSchedule(): ?TimeTargetingOnPublicHolidays
     {
         return $this->HolidaysSchedule ?? null;
     }
 
     /**
-     * Sets HolidaysSchedule.
-     *
      * @return $this
      */
     public function setHolidaysSchedule(?TimeTargetingOnPublicHolidays $value = null)

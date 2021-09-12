@@ -12,24 +12,19 @@ class ImageAdAddBase
     protected $AdImageHash = null;
 
     /**
-     * Creates a new instance of ImageAdAddBase.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets AdImageHash.
-     */
     public function getAdImageHash(): string
     {
         return $this->AdImageHash;
     }
 
     /**
-     * Sets AdImageHash.
-     *
      * @return $this
      */
     public function setAdImageHash(string $value)

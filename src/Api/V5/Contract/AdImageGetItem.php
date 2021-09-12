@@ -9,46 +9,41 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AdImageGetItem
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $AdImageHash = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Name = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Associated = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Type = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Subtype = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $OriginalUrl = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $PreviewUrl = null;
 
     /**
-     * Creates a new instance of AdImageGetItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets AdImageHash.
-     */
     public function getAdImageHash(): ?string
     {
         return $this->AdImageHash ?? null;
     }
 
     /**
-     * Sets AdImageHash.
-     *
      * @return $this
      */
     public function setAdImageHash(?string $value = null)
@@ -58,17 +53,12 @@ class AdImageGetItem
         return $this;
     }
 
-    /**
-     * Gets Name.
-     */
     public function getName(): ?string
     {
         return $this->Name ?? null;
     }
 
     /**
-     * Sets Name.
-     *
      * @return $this
      */
     public function setName(?string $value = null)
@@ -79,8 +69,6 @@ class AdImageGetItem
     }
 
     /**
-     * Gets Associated.
-     *
      * @see YesNoEnum
      */
     public function getAssociated(): ?string
@@ -89,8 +77,6 @@ class AdImageGetItem
     }
 
     /**
-     * Sets Associated.
-     *
      * @see YesNoEnum
      *
      * @return $this
@@ -103,8 +89,6 @@ class AdImageGetItem
     }
 
     /**
-     * Gets Type.
-     *
      * @see AdImageTypeEnum
      */
     public function getType(): ?string
@@ -113,8 +97,6 @@ class AdImageGetItem
     }
 
     /**
-     * Sets Type.
-     *
      * @see AdImageTypeEnum
      *
      * @return $this
@@ -127,8 +109,6 @@ class AdImageGetItem
     }
 
     /**
-     * Gets Subtype.
-     *
      * @see AdImageSubtypeEnum
      */
     public function getSubtype(): ?string
@@ -137,8 +117,6 @@ class AdImageGetItem
     }
 
     /**
-     * Sets Subtype.
-     *
      * @see AdImageSubtypeEnum
      *
      * @return $this
@@ -150,17 +128,12 @@ class AdImageGetItem
         return $this;
     }
 
-    /**
-     * Gets OriginalUrl.
-     */
     public function getOriginalUrl(): ?string
     {
         return $this->OriginalUrl ?? null;
     }
 
     /**
-     * Sets OriginalUrl.
-     *
      * @return $this
      */
     public function setOriginalUrl(?string $value = null)
@@ -170,17 +143,12 @@ class AdImageGetItem
         return $this;
     }
 
-    /**
-     * Gets PreviewUrl.
-     */
     public function getPreviewUrl(): ?string
     {
         return $this->PreviewUrl ?? null;
     }
 
     /**
-     * Sets PreviewUrl.
-     *
      * @return $this
      */
     public function setPreviewUrl(?string $value = null)

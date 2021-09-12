@@ -30,24 +30,19 @@ class CampaignStrategy
     protected $Profitability = null;
 
     /**
-     * Creates a new instance of CampaignStrategy.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets MaxPrice.
-     */
     public function getMaxPrice(): ?float
     {
         return $this->MaxPrice;
     }
 
     /**
-     * Sets MaxPrice.
-     *
      * @return $this
      */
     public function setMaxPrice(?float $value = null)
@@ -57,17 +52,12 @@ class CampaignStrategy
         return $this;
     }
 
-    /**
-     * Gets AveragePrice.
-     */
     public function getAveragePrice(): ?float
     {
         return $this->AveragePrice;
     }
 
     /**
-     * Sets AveragePrice.
-     *
      * @return $this
      */
     public function setAveragePrice(?float $value = null)
@@ -77,17 +67,12 @@ class CampaignStrategy
         return $this;
     }
 
-    /**
-     * Gets WeeklySumLimit.
-     */
     public function getWeeklySumLimit(): ?float
     {
         return $this->WeeklySumLimit;
     }
 
     /**
-     * Sets WeeklySumLimit.
-     *
      * @return $this
      */
     public function setWeeklySumLimit(?float $value = null)
@@ -97,17 +82,12 @@ class CampaignStrategy
         return $this;
     }
 
-    /**
-     * Gets ClicksPerWeek.
-     */
     public function getClicksPerWeek(): ?int
     {
         return $this->ClicksPerWeek;
     }
 
     /**
-     * Sets ClicksPerWeek.
-     *
      * @return $this
      */
     public function setClicksPerWeek(?int $value = null)
@@ -117,17 +97,12 @@ class CampaignStrategy
         return $this;
     }
 
-    /**
-     * Gets StrategyName.
-     */
     public function getStrategyName(): string
     {
         return $this->StrategyName;
     }
 
     /**
-     * Sets StrategyName.
-     *
      * @return $this
      */
     public function setStrategyName(string $value)
@@ -137,17 +112,12 @@ class CampaignStrategy
         return $this;
     }
 
-    /**
-     * Gets AverageCPA.
-     */
     public function getAverageCPA(): ?float
     {
         return $this->AverageCPA;
     }
 
     /**
-     * Sets AverageCPA.
-     *
      * @return $this
      */
     public function setAverageCPA(?float $value = null)
@@ -157,17 +127,12 @@ class CampaignStrategy
         return $this;
     }
 
-    /**
-     * Gets GoalID.
-     */
     public function getGoalID(): ?int
     {
         return $this->GoalID;
     }
 
     /**
-     * Sets GoalID.
-     *
      * @return $this
      */
     public function setGoalID(?int $value = null)
@@ -177,17 +142,12 @@ class CampaignStrategy
         return $this;
     }
 
-    /**
-     * Gets ReserveReturn.
-     */
     public function getReserveReturn(): ?int
     {
         return $this->ReserveReturn;
     }
 
     /**
-     * Sets ReserveReturn.
-     *
      * @return $this
      */
     public function setReserveReturn(?int $value = null)
@@ -197,17 +157,12 @@ class CampaignStrategy
         return $this;
     }
 
-    /**
-     * Gets ROICoef.
-     */
     public function getROICoef(): ?float
     {
         return $this->ROICoef;
     }
 
     /**
-     * Sets ROICoef.
-     *
      * @return $this
      */
     public function setROICoef(?float $value = null)
@@ -217,17 +172,12 @@ class CampaignStrategy
         return $this;
     }
 
-    /**
-     * Gets Profitability.
-     */
     public function getProfitability(): ?float
     {
         return $this->Profitability;
     }
 
     /**
-     * Sets Profitability.
-     *
      * @return $this
      */
     public function setProfitability(?float $value = null)

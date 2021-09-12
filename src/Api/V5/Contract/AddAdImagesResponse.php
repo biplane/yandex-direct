@@ -9,20 +9,18 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AddAdImagesResponse
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $AddResults = null;
 
     /**
-     * Creates a new instance of AddAdImagesResponse.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets AddResults.
-     *
      * @return AdImageActionResult[]|null
      */
     public function getAddResults(): ?array
@@ -31,8 +29,6 @@ class AddAdImagesResponse
     }
 
     /**
-     * Sets AddResults.
-     *
      * @param AdImageActionResult[]|null $value
      *
      * @return $this

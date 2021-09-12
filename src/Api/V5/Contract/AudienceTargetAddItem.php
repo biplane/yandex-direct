@@ -11,31 +11,18 @@ class AudienceTargetAddItem extends AudienceTargetBase
 {
     protected $AdGroupId = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $RetargetingListId = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $InterestId = null;
 
-    /**
-     * Creates a new instance of AudienceTargetAddItem.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
-
-    /**
-     * Gets AdGroupId.
-     */
     public function getAdGroupId(): int
     {
         return $this->AdGroupId;
     }
 
     /**
-     * Sets AdGroupId.
-     *
      * @return $this
      */
     public function setAdGroupId(int $value)
@@ -45,17 +32,12 @@ class AudienceTargetAddItem extends AudienceTargetBase
         return $this;
     }
 
-    /**
-     * Gets RetargetingListId.
-     */
     public function getRetargetingListId(): ?int
     {
         return $this->RetargetingListId ?? null;
     }
 
     /**
-     * Sets RetargetingListId.
-     *
      * @return $this
      */
     public function setRetargetingListId(?int $value = null)
@@ -65,17 +47,12 @@ class AudienceTargetAddItem extends AudienceTargetBase
         return $this;
     }
 
-    /**
-     * Gets InterestId.
-     */
     public function getInterestId(): ?int
     {
         return $this->InterestId ?? null;
     }
 
     /**
-     * Sets InterestId.
-     *
      * @return $this
      */
     public function setInterestId(?int $value = null)

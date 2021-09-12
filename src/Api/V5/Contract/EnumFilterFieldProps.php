@@ -12,16 +12,14 @@ class EnumFilterFieldProps
     protected $Values = [];
 
     /**
-     * Creates a new instance of EnumFilterFieldProps.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Values.
-     *
      * @return string[]
      */
     public function getValues(): array
@@ -30,8 +28,6 @@ class EnumFilterFieldProps
     }
 
     /**
-     * Sets Values.
-     *
      * @param string[] $value
      *
      * @return $this

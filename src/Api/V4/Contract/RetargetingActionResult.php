@@ -16,16 +16,14 @@ class RetargetingActionResult
     protected $RetargetingID = null;
 
     /**
-     * Creates a new instance of RetargetingActionResult.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Warnings.
-     *
      * @return Warning[]|null
      */
     public function getWarnings(): ?array
@@ -34,8 +32,6 @@ class RetargetingActionResult
     }
 
     /**
-     * Sets Warnings.
-     *
      * @param Warning[]|null $value
      *
      * @return $this
@@ -48,8 +44,6 @@ class RetargetingActionResult
     }
 
     /**
-     * Gets Errors.
-     *
      * @return Error[]|null
      */
     public function getErrors(): ?array
@@ -58,8 +52,6 @@ class RetargetingActionResult
     }
 
     /**
-     * Sets Errors.
-     *
      * @param Error[]|null $value
      *
      * @return $this
@@ -71,17 +63,12 @@ class RetargetingActionResult
         return $this;
     }
 
-    /**
-     * Gets RetargetingID.
-     */
     public function getRetargetingID(): ?int
     {
         return $this->RetargetingID;
     }
 
     /**
-     * Sets RetargetingID.
-     *
      * @return $this
      */
     public function setRetargetingID(?int $value = null)

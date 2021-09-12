@@ -9,20 +9,18 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class DeleteAdImagesResponse
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $DeleteResults = null;
 
     /**
-     * Creates a new instance of DeleteAdImagesResponse.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets DeleteResults.
-     *
      * @return AdImageActionResult[]|null
      */
     public function getDeleteResults(): ?array
@@ -31,8 +29,6 @@ class DeleteAdImagesResponse
     }
 
     /**
-     * Sets DeleteResults.
-     *
      * @param AdImageActionResult[]|null $value
      *
      * @return $this

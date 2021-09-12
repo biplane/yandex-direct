@@ -11,31 +11,26 @@ class SearchByTrafficVolume
 {
     protected $TargetTrafficVolume = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $IncreasePercent = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $BidCeiling = null;
 
     /**
-     * Creates a new instance of SearchByTrafficVolume.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets TargetTrafficVolume.
-     */
     public function getTargetTrafficVolume(): int
     {
         return $this->TargetTrafficVolume;
     }
 
     /**
-     * Sets TargetTrafficVolume.
-     *
      * @return $this
      */
     public function setTargetTrafficVolume(int $value)
@@ -45,17 +40,12 @@ class SearchByTrafficVolume
         return $this;
     }
 
-    /**
-     * Gets IncreasePercent.
-     */
     public function getIncreasePercent(): ?int
     {
         return $this->IncreasePercent ?? null;
     }
 
     /**
-     * Sets IncreasePercent.
-     *
      * @return $this
      */
     public function setIncreasePercent(?int $value = null)
@@ -65,17 +55,12 @@ class SearchByTrafficVolume
         return $this;
     }
 
-    /**
-     * Gets BidCeiling.
-     */
     public function getBidCeiling(): ?int
     {
         return $this->BidCeiling ?? null;
     }
 
     /**
-     * Sets BidCeiling.
-     *
      * @return $this
      */
     public function setBidCeiling(?int $value = null)

@@ -18,24 +18,19 @@ class RegionInfo
     protected $RegionType = null;
 
     /**
-     * Creates a new instance of RegionInfo.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets RegionID.
-     */
     public function getRegionID(): int
     {
         return $this->RegionID;
     }
 
     /**
-     * Sets RegionID.
-     *
      * @return $this
      */
     public function setRegionID(int $value)
@@ -45,17 +40,12 @@ class RegionInfo
         return $this;
     }
 
-    /**
-     * Gets ParentID.
-     */
     public function getParentID(): ?int
     {
         return $this->ParentID;
     }
 
     /**
-     * Sets ParentID.
-     *
      * @return $this
      */
     public function setParentID(?int $value = null)
@@ -65,17 +55,12 @@ class RegionInfo
         return $this;
     }
 
-    /**
-     * Gets RegionName.
-     */
     public function getRegionName(): string
     {
         return $this->RegionName;
     }
 
     /**
-     * Sets RegionName.
-     *
      * @return $this
      */
     public function setRegionName(string $value)
@@ -85,17 +70,12 @@ class RegionInfo
         return $this;
     }
 
-    /**
-     * Gets RegionType.
-     */
     public function getRegionType(): string
     {
         return $this->RegionType;
     }
 
     /**
-     * Sets RegionType.
-     *
      * @return $this
      */
     public function setRegionType(string $value)

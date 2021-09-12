@@ -12,16 +12,14 @@ class AddAdExtensionsRequest
     protected $AdExtensions = [];
 
     /**
-     * Creates a new instance of AddAdExtensionsRequest.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets AdExtensions.
-     *
      * @return AdExtensionAddItem[]
      */
     public function getAdExtensions(): array
@@ -30,8 +28,6 @@ class AddAdExtensionsRequest
     }
 
     /**
-     * Sets AdExtensions.
-     *
      * @param AdExtensionAddItem[] $value
      *
      * @return $this

@@ -16,24 +16,19 @@ class TimeZonesItem
     protected $UtcOffset = null;
 
     /**
-     * Creates a new instance of TimeZonesItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets TimeZone.
-     */
     public function getTimeZone(): string
     {
         return $this->TimeZone;
     }
 
     /**
-     * Sets TimeZone.
-     *
      * @return $this
      */
     public function setTimeZone(string $value)
@@ -43,17 +38,12 @@ class TimeZonesItem
         return $this;
     }
 
-    /**
-     * Gets TimeZoneName.
-     */
     public function getTimeZoneName(): string
     {
         return $this->TimeZoneName;
     }
 
     /**
-     * Sets TimeZoneName.
-     *
      * @return $this
      */
     public function setTimeZoneName(string $value)
@@ -63,17 +53,12 @@ class TimeZonesItem
         return $this;
     }
 
-    /**
-     * Gets UtcOffset.
-     */
     public function getUtcOffset(): int
     {
         return $this->UtcOffset;
     }
 
     /**
-     * Sets UtcOffset.
-     *
      * @return $this
      */
     public function setUtcOffset(int $value)

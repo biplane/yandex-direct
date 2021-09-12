@@ -9,26 +9,16 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class MobileAppAdGet extends MobileAppAdBase
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Features = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AdImageModeration = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $VideoExtension = null;
 
     /**
-     * Creates a new instance of MobileAppAdGet.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
-
-    /**
-     * Gets Features.
-     *
      * @return MobileAppAdFeatureGetItem[]|null
      */
     public function getFeatures(): ?array
@@ -37,8 +27,6 @@ class MobileAppAdGet extends MobileAppAdBase
     }
 
     /**
-     * Sets Features.
-     *
      * @param MobileAppAdFeatureGetItem[]|null $value
      *
      * @return $this
@@ -50,17 +38,12 @@ class MobileAppAdGet extends MobileAppAdBase
         return $this;
     }
 
-    /**
-     * Gets AdImageModeration.
-     */
     public function getAdImageModeration(): ?ExtensionModeration
     {
         return $this->AdImageModeration ?? null;
     }
 
     /**
-     * Sets AdImageModeration.
-     *
      * @return $this
      */
     public function setAdImageModeration(?ExtensionModeration $value = null)
@@ -70,17 +53,12 @@ class MobileAppAdGet extends MobileAppAdBase
         return $this;
     }
 
-    /**
-     * Gets VideoExtension.
-     */
     public function getVideoExtension(): ?VideoExtensionGetItem
     {
         return $this->VideoExtension ?? null;
     }
 
     /**
-     * Sets VideoExtension.
-     *
      * @return $this
      */
     public function setVideoExtension(?VideoExtensionGetItem $value = null)

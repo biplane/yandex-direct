@@ -11,31 +11,26 @@ class RelevantKeywordsSettingAdd
 {
     protected $BudgetPercent = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Mode = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $OptimizeGoalId = null;
 
     /**
-     * Creates a new instance of RelevantKeywordsSettingAdd.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets BudgetPercent.
-     */
     public function getBudgetPercent(): int
     {
         return $this->BudgetPercent;
     }
 
     /**
-     * Sets BudgetPercent.
-     *
      * @return $this
      */
     public function setBudgetPercent(int $value)
@@ -46,8 +41,6 @@ class RelevantKeywordsSettingAdd
     }
 
     /**
-     * Gets Mode.
-     *
      * @see RelevantKeywordsModeEnum
      */
     public function getMode(): ?string
@@ -56,8 +49,6 @@ class RelevantKeywordsSettingAdd
     }
 
     /**
-     * Sets Mode.
-     *
      * @see RelevantKeywordsModeEnum
      *
      * @return $this
@@ -69,17 +60,12 @@ class RelevantKeywordsSettingAdd
         return $this;
     }
 
-    /**
-     * Gets OptimizeGoalId.
-     */
     public function getOptimizeGoalId(): ?int
     {
         return $this->OptimizeGoalId ?? null;
     }
 
     /**
-     * Sets OptimizeGoalId.
-     *
      * @return $this
      */
     public function setOptimizeGoalId(?int $value = null)

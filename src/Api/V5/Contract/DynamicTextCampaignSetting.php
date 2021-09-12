@@ -14,16 +14,14 @@ class DynamicTextCampaignSetting
     protected $Value = null;
 
     /**
-     * Creates a new instance of DynamicTextCampaignSetting.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Option.
-     *
      * @see DynamicTextCampaignSettingsEnum
      */
     public function getOption(): string
@@ -32,8 +30,6 @@ class DynamicTextCampaignSetting
     }
 
     /**
-     * Sets Option.
-     *
      * @see DynamicTextCampaignSettingsEnum
      *
      * @return $this
@@ -46,8 +42,6 @@ class DynamicTextCampaignSetting
     }
 
     /**
-     * Gets Value.
-     *
      * @see YesNoEnum
      */
     public function getValue(): string
@@ -56,8 +50,6 @@ class DynamicTextCampaignSetting
     }
 
     /**
-     * Sets Value.
-     *
      * @see YesNoEnum
      *
      * @return $this

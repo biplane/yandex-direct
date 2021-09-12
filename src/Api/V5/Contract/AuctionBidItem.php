@@ -16,24 +16,19 @@ class AuctionBidItem
     protected $Price = null;
 
     /**
-     * Creates a new instance of AuctionBidItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets TrafficVolume.
-     */
     public function getTrafficVolume(): int
     {
         return $this->TrafficVolume;
     }
 
     /**
-     * Sets TrafficVolume.
-     *
      * @return $this
      */
     public function setTrafficVolume(int $value)
@@ -43,17 +38,12 @@ class AuctionBidItem
         return $this;
     }
 
-    /**
-     * Gets Bid.
-     */
     public function getBid(): int
     {
         return $this->Bid;
     }
 
     /**
-     * Sets Bid.
-     *
      * @return $this
      */
     public function setBid(int $value)
@@ -63,17 +53,12 @@ class AuctionBidItem
         return $this;
     }
 
-    /**
-     * Gets Price.
-     */
     public function getPrice(): int
     {
         return $this->Price;
     }
 
     /**
-     * Sets Price.
-     *
      * @return $this
      */
     public function setPrice(int $value)

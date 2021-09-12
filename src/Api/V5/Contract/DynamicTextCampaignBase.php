@@ -9,23 +9,21 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class DynamicTextCampaignBase
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $CounterIds = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AttributionModel = null;
 
     /**
-     * Creates a new instance of DynamicTextCampaignBase.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets CounterIds.
-     *
      * @return int[]|null
      */
     public function getCounterIds(): ?array
@@ -34,8 +32,6 @@ class DynamicTextCampaignBase
     }
 
     /**
-     * Sets CounterIds.
-     *
      * @param int[]|null $value
      *
      * @return $this
@@ -48,8 +44,6 @@ class DynamicTextCampaignBase
     }
 
     /**
-     * Gets AttributionModel.
-     *
      * @see AttributionModelEnum
      */
     public function getAttributionModel(): ?string
@@ -58,8 +52,6 @@ class DynamicTextCampaignBase
     }
 
     /**
-     * Sets AttributionModel.
-     *
      * @see AttributionModelEnum
      *
      * @return $this

@@ -14,16 +14,14 @@ class CampaignIDSInfo
     protected $Currency = null;
 
     /**
-     * Creates a new instance of CampaignIDSInfo.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets CampaignIDS.
-     *
      * @return int[]
      */
     public function getCampaignIDS(): array
@@ -32,8 +30,6 @@ class CampaignIDSInfo
     }
 
     /**
-     * Sets CampaignIDS.
-     *
      * @param int[] $value
      *
      * @return $this
@@ -45,17 +41,12 @@ class CampaignIDSInfo
         return $this;
     }
 
-    /**
-     * Gets Currency.
-     */
     public function getCurrency(): ?string
     {
         return $this->Currency;
     }
 
     /**
-     * Sets Currency.
-     *
      * @return $this
      */
     public function setCurrency(?string $value = null)

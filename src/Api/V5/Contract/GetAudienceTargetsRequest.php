@@ -13,25 +13,12 @@ class GetAudienceTargetsRequest extends GetRequestGeneral
 
     protected $FieldNames = [];
 
-    /**
-     * Creates a new instance of GetAudienceTargetsRequest.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
-
-    /**
-     * Gets SelectionCriteria.
-     */
     public function getSelectionCriteria(): AudienceTargetSelectionCriteria
     {
         return $this->SelectionCriteria;
     }
 
     /**
-     * Sets SelectionCriteria.
-     *
      * @return $this
      */
     public function setSelectionCriteria(AudienceTargetSelectionCriteria $value)
@@ -42,8 +29,6 @@ class GetAudienceTargetsRequest extends GetRequestGeneral
     }
 
     /**
-     * Gets FieldNames.
-     *
      * @see AudienceTargetFieldEnum
      *
      * @return string[]
@@ -54,8 +39,6 @@ class GetAudienceTargetsRequest extends GetRequestGeneral
     }
 
     /**
-     * Sets FieldNames.
-     *
      * @see AudienceTargetFieldEnum
      *
      * @param string[] $value

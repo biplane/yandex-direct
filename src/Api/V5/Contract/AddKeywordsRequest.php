@@ -12,16 +12,14 @@ class AddKeywordsRequest
     protected $Keywords = [];
 
     /**
-     * Creates a new instance of AddKeywordsRequest.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Keywords.
-     *
      * @return KeywordAddItem[]
      */
     public function getKeywords(): array
@@ -30,8 +28,6 @@ class AddKeywordsRequest
     }
 
     /**
-     * Sets Keywords.
-     *
      * @param KeywordAddItem[] $value
      *
      * @return $this

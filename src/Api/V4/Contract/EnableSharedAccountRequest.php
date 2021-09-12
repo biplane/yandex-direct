@@ -12,24 +12,19 @@ class EnableSharedAccountRequest
     protected $Login = null;
 
     /**
-     * Creates a new instance of EnableSharedAccountRequest.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Login.
-     */
     public function getLogin(): string
     {
         return $this->Login;
     }
 
     /**
-     * Sets Login.
-     *
      * @return $this
      */
     public function setLogin(string $value)

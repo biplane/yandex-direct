@@ -9,38 +9,36 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class KeywordsSelectionCriteria
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Ids = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AdGroupIds = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $CampaignIds = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $States = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Statuses = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $ModifiedSince = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $ServingStatuses = null;
 
     /**
-     * Creates a new instance of KeywordsSelectionCriteria.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Ids.
-     *
      * @return int[]|null
      */
     public function getIds(): ?array
@@ -49,8 +47,6 @@ class KeywordsSelectionCriteria
     }
 
     /**
-     * Sets Ids.
-     *
      * @param int[]|null $value
      *
      * @return $this
@@ -63,8 +59,6 @@ class KeywordsSelectionCriteria
     }
 
     /**
-     * Gets AdGroupIds.
-     *
      * @return int[]|null
      */
     public function getAdGroupIds(): ?array
@@ -73,8 +67,6 @@ class KeywordsSelectionCriteria
     }
 
     /**
-     * Sets AdGroupIds.
-     *
      * @param int[]|null $value
      *
      * @return $this
@@ -87,8 +79,6 @@ class KeywordsSelectionCriteria
     }
 
     /**
-     * Gets CampaignIds.
-     *
      * @return int[]|null
      */
     public function getCampaignIds(): ?array
@@ -97,8 +87,6 @@ class KeywordsSelectionCriteria
     }
 
     /**
-     * Sets CampaignIds.
-     *
      * @param int[]|null $value
      *
      * @return $this
@@ -111,8 +99,6 @@ class KeywordsSelectionCriteria
     }
 
     /**
-     * Gets States.
-     *
      * @see KeywordStateSelectionEnum
      *
      * @return string[]|null
@@ -123,8 +109,6 @@ class KeywordsSelectionCriteria
     }
 
     /**
-     * Sets States.
-     *
      * @see KeywordStateSelectionEnum
      *
      * @param string[]|null $value
@@ -139,8 +123,6 @@ class KeywordsSelectionCriteria
     }
 
     /**
-     * Gets Statuses.
-     *
      * @see KeywordStatusSelectionEnum
      *
      * @return string[]|null
@@ -151,8 +133,6 @@ class KeywordsSelectionCriteria
     }
 
     /**
-     * Sets Statuses.
-     *
      * @see KeywordStatusSelectionEnum
      *
      * @param string[]|null $value
@@ -166,17 +146,12 @@ class KeywordsSelectionCriteria
         return $this;
     }
 
-    /**
-     * Gets ModifiedSince.
-     */
     public function getModifiedSince(): ?string
     {
         return $this->ModifiedSince ?? null;
     }
 
     /**
-     * Sets ModifiedSince.
-     *
      * @return $this
      */
     public function setModifiedSince(?string $value = null)
@@ -187,8 +162,6 @@ class KeywordsSelectionCriteria
     }
 
     /**
-     * Gets ServingStatuses.
-     *
      * @see ServingStatusEnum
      *
      * @return string[]|null
@@ -199,8 +172,6 @@ class KeywordsSelectionCriteria
     }
 
     /**
-     * Sets ServingStatuses.
-     *
      * @see ServingStatusEnum
      *
      * @param string[]|null $value

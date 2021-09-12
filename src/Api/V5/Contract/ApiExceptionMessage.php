@@ -13,28 +13,23 @@ class ApiExceptionMessage
 
     protected $errorCode = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $errorDetail = null;
 
     /**
-     * Creates a new instance of ApiExceptionMessage.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets requestId.
-     */
     public function getRequestId(): ?string
     {
         return $this->requestId;
     }
 
     /**
-     * Sets requestId.
-     *
      * @return $this
      */
     public function setRequestId(?string $value = null)
@@ -44,17 +39,12 @@ class ApiExceptionMessage
         return $this;
     }
 
-    /**
-     * Gets errorCode.
-     */
     public function getErrorCode(): ?int
     {
         return $this->errorCode;
     }
 
     /**
-     * Sets errorCode.
-     *
      * @return $this
      */
     public function setErrorCode(?int $value = null)
@@ -64,17 +54,12 @@ class ApiExceptionMessage
         return $this;
     }
 
-    /**
-     * Gets errorDetail.
-     */
     public function getErrorDetail(): ?string
     {
         return $this->errorDetail ?? null;
     }
 
     /**
-     * Sets errorDetail.
-     *
      * @return $this
      */
     public function setErrorDetail(?string $value = null)

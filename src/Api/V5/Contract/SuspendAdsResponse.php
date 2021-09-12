@@ -9,20 +9,18 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class SuspendAdsResponse
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $SuspendResults = null;
 
     /**
-     * Creates a new instance of SuspendAdsResponse.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets SuspendResults.
-     *
      * @return ActionResult[]|null
      */
     public function getSuspendResults(): ?array
@@ -31,8 +29,6 @@ class SuspendAdsResponse
     }
 
     /**
-     * Sets SuspendResults.
-     *
      * @param ActionResult[]|null $value
      *
      * @return $this

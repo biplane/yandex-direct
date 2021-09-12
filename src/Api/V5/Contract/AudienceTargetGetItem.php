@@ -9,43 +9,30 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AudienceTargetGetItem extends AudienceTargetBase
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Id = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AdGroupId = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $CampaignId = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $RetargetingListId = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $InterestId = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $State = null;
 
-    /**
-     * Creates a new instance of AudienceTargetGetItem.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
-
-    /**
-     * Gets Id.
-     */
     public function getId(): ?int
     {
         return $this->Id ?? null;
     }
 
     /**
-     * Sets Id.
-     *
      * @return $this
      */
     public function setId(?int $value = null)
@@ -55,17 +42,12 @@ class AudienceTargetGetItem extends AudienceTargetBase
         return $this;
     }
 
-    /**
-     * Gets AdGroupId.
-     */
     public function getAdGroupId(): ?int
     {
         return $this->AdGroupId ?? null;
     }
 
     /**
-     * Sets AdGroupId.
-     *
      * @return $this
      */
     public function setAdGroupId(?int $value = null)
@@ -75,17 +57,12 @@ class AudienceTargetGetItem extends AudienceTargetBase
         return $this;
     }
 
-    /**
-     * Gets CampaignId.
-     */
     public function getCampaignId(): ?int
     {
         return $this->CampaignId ?? null;
     }
 
     /**
-     * Sets CampaignId.
-     *
      * @return $this
      */
     public function setCampaignId(?int $value = null)
@@ -95,17 +72,12 @@ class AudienceTargetGetItem extends AudienceTargetBase
         return $this;
     }
 
-    /**
-     * Gets RetargetingListId.
-     */
     public function getRetargetingListId(): ?int
     {
         return $this->RetargetingListId ?? null;
     }
 
     /**
-     * Sets RetargetingListId.
-     *
      * @return $this
      */
     public function setRetargetingListId(?int $value = null)
@@ -115,17 +87,12 @@ class AudienceTargetGetItem extends AudienceTargetBase
         return $this;
     }
 
-    /**
-     * Gets InterestId.
-     */
     public function getInterestId(): ?int
     {
         return $this->InterestId ?? null;
     }
 
     /**
-     * Sets InterestId.
-     *
      * @return $this
      */
     public function setInterestId(?int $value = null)
@@ -136,8 +103,6 @@ class AudienceTargetGetItem extends AudienceTargetBase
     }
 
     /**
-     * Gets State.
-     *
      * @see StateEnum
      */
     public function getState(): ?string
@@ -146,8 +111,6 @@ class AudienceTargetGetItem extends AudienceTargetBase
     }
 
     /**
-     * Sets State.
-     *
      * @see StateEnum
      *
      * @return $this

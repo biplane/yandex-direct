@@ -9,31 +9,26 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class CpmBannerCampaignStrategy
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Search = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Network = null;
 
     /**
-     * Creates a new instance of CpmBannerCampaignStrategy.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Search.
-     */
     public function getSearch(): ?CpmBannerCampaignSearchStrategy
     {
         return $this->Search ?? null;
     }
 
     /**
-     * Sets Search.
-     *
      * @return $this
      */
     public function setSearch(?CpmBannerCampaignSearchStrategy $value = null)
@@ -43,17 +38,12 @@ class CpmBannerCampaignStrategy
         return $this;
     }
 
-    /**
-     * Gets Network.
-     */
     public function getNetwork(): ?CpmBannerCampaignNetworkStrategy
     {
         return $this->Network ?? null;
     }
 
     /**
-     * Sets Network.
-     *
      * @return $this
      */
     public function setNetwork(?CpmBannerCampaignNetworkStrategy $value = null)

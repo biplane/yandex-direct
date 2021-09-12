@@ -5,6 +5,22 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5;
 
 use Biplane\YandexDirect\Api\ApiSoapClientV5;
+use Biplane\YandexDirect\Api\V5\Contract\AddCampaignsRequest;
+use Biplane\YandexDirect\Api\V5\Contract\AddCampaignsResponse;
+use Biplane\YandexDirect\Api\V5\Contract\ArchiveCampaignsRequest;
+use Biplane\YandexDirect\Api\V5\Contract\ArchiveCampaignsResponse;
+use Biplane\YandexDirect\Api\V5\Contract\DeleteCampaignsRequest;
+use Biplane\YandexDirect\Api\V5\Contract\DeleteCampaignsResponse;
+use Biplane\YandexDirect\Api\V5\Contract\GetCampaignsRequest;
+use Biplane\YandexDirect\Api\V5\Contract\GetCampaignsResponse;
+use Biplane\YandexDirect\Api\V5\Contract\ResumeCampaignsRequest;
+use Biplane\YandexDirect\Api\V5\Contract\ResumeCampaignsResponse;
+use Biplane\YandexDirect\Api\V5\Contract\SuspendCampaignsRequest;
+use Biplane\YandexDirect\Api\V5\Contract\SuspendCampaignsResponse;
+use Biplane\YandexDirect\Api\V5\Contract\UnarchiveCampaignsRequest;
+use Biplane\YandexDirect\Api\V5\Contract\UnarchiveCampaignsResponse;
+use Biplane\YandexDirect\Api\V5\Contract\UpdateCampaignsRequest;
+use Biplane\YandexDirect\Api\V5\Contract\UpdateCampaignsResponse;
 use Biplane\YandexDirect\Config;
 
 /**
@@ -14,6 +30,9 @@ class Campaigns extends ApiSoapClientV5
 {
     public const ENDPOINT = 'https://api.direct.yandex.com/v5/campaigns?wsdl';
 
+    /**
+     * @param array<string, mixed> $options
+     */
     public function __construct(Config $config, array $options)
     {
         $options['classmap'] = [
@@ -262,66 +281,42 @@ class Campaigns extends ApiSoapClientV5
         parent::__construct(self::ENDPOINT, $config, $options);
     }
 
-    /**
-     * add.
-     */
-    public function add(Contract\AddCampaignsRequest $parameters): Contract\AddCampaignsResponse
+    public function add(AddCampaignsRequest $parameters): AddCampaignsResponse
     {
         return $this->__soapCall('add', [$parameters]);
     }
 
-    /**
-     * update.
-     */
-    public function update(Contract\UpdateCampaignsRequest $parameters): Contract\UpdateCampaignsResponse
+    public function update(UpdateCampaignsRequest $parameters): UpdateCampaignsResponse
     {
         return $this->__soapCall('update', [$parameters]);
     }
 
-    /**
-     * get.
-     */
-    public function get(Contract\GetCampaignsRequest $parameters): Contract\GetCampaignsResponse
+    public function get(GetCampaignsRequest $parameters): GetCampaignsResponse
     {
         return $this->__soapCall('get', [$parameters]);
     }
 
-    /**
-     * delete.
-     */
-    public function delete(Contract\DeleteCampaignsRequest $parameters): Contract\DeleteCampaignsResponse
+    public function delete(DeleteCampaignsRequest $parameters): DeleteCampaignsResponse
     {
         return $this->__soapCall('delete', [$parameters]);
     }
 
-    /**
-     * archive.
-     */
-    public function archive(Contract\ArchiveCampaignsRequest $parameters): Contract\ArchiveCampaignsResponse
+    public function archive(ArchiveCampaignsRequest $parameters): ArchiveCampaignsResponse
     {
         return $this->__soapCall('archive', [$parameters]);
     }
 
-    /**
-     * unarchive.
-     */
-    public function unarchive(Contract\UnarchiveCampaignsRequest $parameters): Contract\UnarchiveCampaignsResponse
+    public function unarchive(UnarchiveCampaignsRequest $parameters): UnarchiveCampaignsResponse
     {
         return $this->__soapCall('unarchive', [$parameters]);
     }
 
-    /**
-     * suspend.
-     */
-    public function suspend(Contract\SuspendCampaignsRequest $parameters): Contract\SuspendCampaignsResponse
+    public function suspend(SuspendCampaignsRequest $parameters): SuspendCampaignsResponse
     {
         return $this->__soapCall('suspend', [$parameters]);
     }
 
-    /**
-     * resume.
-     */
-    public function resume(Contract\ResumeCampaignsRequest $parameters): Contract\ResumeCampaignsResponse
+    public function resume(ResumeCampaignsRequest $parameters): ResumeCampaignsResponse
     {
         return $this->__soapCall('resume', [$parameters]);
     }

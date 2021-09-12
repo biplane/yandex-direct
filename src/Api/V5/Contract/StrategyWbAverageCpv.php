@@ -9,11 +9,4 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class StrategyWbAverageCpv extends StrategyAverageCpvBase
 {
-    /**
-     * Creates a new instance of StrategyWbAverageCpv.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
 }

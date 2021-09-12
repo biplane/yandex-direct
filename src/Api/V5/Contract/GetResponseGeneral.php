@@ -9,28 +9,23 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class GetResponseGeneral
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $LimitedBy = null;
 
     /**
-     * Creates a new instance of GetResponseGeneral.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets LimitedBy.
-     */
     public function getLimitedBy(): ?int
     {
         return $this->LimitedBy ?? null;
     }
 
     /**
-     * Sets LimitedBy.
-     *
      * @return $this
      */
     public function setLimitedBy(?int $value = null)

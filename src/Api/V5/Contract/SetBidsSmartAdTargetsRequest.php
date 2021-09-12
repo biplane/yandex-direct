@@ -12,16 +12,14 @@ class SetBidsSmartAdTargetsRequest
     protected $Bids = [];
 
     /**
-     * Creates a new instance of SetBidsSmartAdTargetsRequest.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Bids.
-     *
      * @return SmartAdTargetSetBidsItem[]
      */
     public function getBids(): array
@@ -30,8 +28,6 @@ class SetBidsSmartAdTargetsRequest
     }
 
     /**
-     * Sets Bids.
-     *
      * @param SmartAdTargetSetBidsItem[] $value
      *
      * @return $this

@@ -9,31 +9,18 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class ClientUpdateItem extends ClientBaseItem
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Notification = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Settings = null;
 
-    /**
-     * Creates a new instance of ClientUpdateItem.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
-
-    /**
-     * Gets Notification.
-     */
     public function getNotification(): ?NotificationUpdate
     {
         return $this->Notification ?? null;
     }
 
     /**
-     * Sets Notification.
-     *
      * @return $this
      */
     public function setNotification(?NotificationUpdate $value = null)
@@ -44,8 +31,6 @@ class ClientUpdateItem extends ClientBaseItem
     }
 
     /**
-     * Gets Settings.
-     *
      * @return ClientSettingUpdateItem[]|null
      */
     public function getSettings(): ?array
@@ -54,8 +39,6 @@ class ClientUpdateItem extends ClientBaseItem
     }
 
     /**
-     * Sets Settings.
-     *
      * @param ClientSettingUpdateItem[]|null $value
      *
      * @return $this

@@ -9,11 +9,4 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class StrategyWbDecreasedPriceForRepeatedImpressions extends StrategyDecreasedPriceForRepeatedImpressionsBase
 {
-    /**
-     * Creates a new instance of StrategyWbDecreasedPriceForRepeatedImpressions.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
 }

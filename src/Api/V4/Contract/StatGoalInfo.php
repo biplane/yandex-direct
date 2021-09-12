@@ -24,24 +24,19 @@ class StatGoalInfo
     protected $CampaignID = null;
 
     /**
-     * Creates a new instance of StatGoalInfo.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets GoalID.
-     */
     public function getGoalID(): int
     {
         return $this->GoalID;
     }
 
     /**
-     * Sets GoalID.
-     *
      * @return $this
      */
     public function setGoalID(int $value)
@@ -51,17 +46,12 @@ class StatGoalInfo
         return $this;
     }
 
-    /**
-     * Gets Name.
-     */
     public function getName(): string
     {
         return $this->Name;
     }
 
     /**
-     * Sets Name.
-     *
      * @return $this
      */
     public function setName(string $value)
@@ -71,17 +61,12 @@ class StatGoalInfo
         return $this;
     }
 
-    /**
-     * Gets AvailableForStrategy.
-     */
     public function getAvailableForStrategy(): string
     {
         return $this->AvailableForStrategy;
     }
 
     /**
-     * Sets AvailableForStrategy.
-     *
      * @return $this
      */
     public function setAvailableForStrategy(string $value)
@@ -91,17 +76,12 @@ class StatGoalInfo
         return $this;
     }
 
-    /**
-     * Gets AvailableForContextStrategy.
-     */
     public function getAvailableForContextStrategy(): string
     {
         return $this->AvailableForContextStrategy;
     }
 
     /**
-     * Sets AvailableForContextStrategy.
-     *
      * @return $this
      */
     public function setAvailableForContextStrategy(string $value)
@@ -111,17 +91,12 @@ class StatGoalInfo
         return $this;
     }
 
-    /**
-     * Gets GoalsReached.
-     */
     public function getGoalsReached(): int
     {
         return $this->GoalsReached;
     }
 
     /**
-     * Sets GoalsReached.
-     *
      * @return $this
      */
     public function setGoalsReached(int $value)
@@ -131,17 +106,12 @@ class StatGoalInfo
         return $this;
     }
 
-    /**
-     * Gets ContextGoalsReached.
-     */
     public function getContextGoalsReached(): int
     {
         return $this->ContextGoalsReached;
     }
 
     /**
-     * Sets ContextGoalsReached.
-     *
      * @return $this
      */
     public function setContextGoalsReached(int $value)
@@ -151,17 +121,12 @@ class StatGoalInfo
         return $this;
     }
 
-    /**
-     * Gets CampaignID.
-     */
     public function getCampaignID(): ?int
     {
         return $this->CampaignID;
     }
 
     /**
-     * Sets CampaignID.
-     *
      * @return $this
      */
     public function setCampaignID(?int $value = null)

@@ -9,32 +9,30 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AdExtensionBase
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Type = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Callout = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $State = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Status = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $StatusClarification = null;
 
     /**
-     * Creates a new instance of AdExtensionBase.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Type.
-     *
      * @see AdExtensionTypeEnum
      */
     public function getType(): ?string
@@ -43,8 +41,6 @@ class AdExtensionBase
     }
 
     /**
-     * Sets Type.
-     *
      * @see AdExtensionTypeEnum
      *
      * @return $this
@@ -56,17 +52,12 @@ class AdExtensionBase
         return $this;
     }
 
-    /**
-     * Gets Callout.
-     */
     public function getCallout(): ?Callout
     {
         return $this->Callout ?? null;
     }
 
     /**
-     * Sets Callout.
-     *
      * @return $this
      */
     public function setCallout(?Callout $value = null)
@@ -77,8 +68,6 @@ class AdExtensionBase
     }
 
     /**
-     * Gets State.
-     *
      * @see StateEnum
      */
     public function getState(): ?string
@@ -87,8 +76,6 @@ class AdExtensionBase
     }
 
     /**
-     * Sets State.
-     *
      * @see StateEnum
      *
      * @return $this
@@ -101,8 +88,6 @@ class AdExtensionBase
     }
 
     /**
-     * Gets Status.
-     *
      * @see StatusEnum
      */
     public function getStatus(): ?string
@@ -111,8 +96,6 @@ class AdExtensionBase
     }
 
     /**
-     * Sets Status.
-     *
      * @see StatusEnum
      *
      * @return $this
@@ -124,17 +107,12 @@ class AdExtensionBase
         return $this;
     }
 
-    /**
-     * Gets StatusClarification.
-     */
     public function getStatusClarification(): ?string
     {
         return $this->StatusClarification ?? null;
     }
 
     /**
-     * Sets StatusClarification.
-     *
      * @return $this
      */
     public function setStatusClarification(?string $value = null)

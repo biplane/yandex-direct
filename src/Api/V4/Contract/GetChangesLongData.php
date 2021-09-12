@@ -16,16 +16,14 @@ class GetChangesLongData
     protected $NotFound = [];
 
     /**
-     * Creates a new instance of GetChangesLongData.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Updated.
-     *
      * @return int[]
      */
     public function getUpdated(): array
@@ -34,8 +32,6 @@ class GetChangesLongData
     }
 
     /**
-     * Sets Updated.
-     *
      * @param int[] $value
      *
      * @return $this
@@ -48,8 +44,6 @@ class GetChangesLongData
     }
 
     /**
-     * Gets NotUpdated.
-     *
      * @return int[]
      */
     public function getNotUpdated(): array
@@ -58,8 +52,6 @@ class GetChangesLongData
     }
 
     /**
-     * Sets NotUpdated.
-     *
      * @param int[] $value
      *
      * @return $this
@@ -72,8 +64,6 @@ class GetChangesLongData
     }
 
     /**
-     * Gets NotFound.
-     *
      * @return int[]
      */
     public function getNotFound(): array
@@ -82,8 +72,6 @@ class GetChangesLongData
     }
 
     /**
-     * Sets NotFound.
-     *
      * @param int[] $value
      *
      * @return $this

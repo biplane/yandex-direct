@@ -9,37 +9,32 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class DynamicSourceGet
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Source = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $FeedId = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $SourceType = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $SourceProcessingStatus = null;
 
     /**
-     * Creates a new instance of DynamicSourceGet.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Source.
-     */
     public function getSource(): ?string
     {
         return $this->Source ?? null;
     }
 
     /**
-     * Sets Source.
-     *
      * @return $this
      */
     public function setSource(?string $value = null)
@@ -49,17 +44,12 @@ class DynamicSourceGet
         return $this;
     }
 
-    /**
-     * Gets FeedId.
-     */
     public function getFeedId(): ?int
     {
         return $this->FeedId ?? null;
     }
 
     /**
-     * Sets FeedId.
-     *
      * @return $this
      */
     public function setFeedId(?int $value = null)
@@ -70,8 +60,6 @@ class DynamicSourceGet
     }
 
     /**
-     * Gets SourceType.
-     *
      * @see SourceTypeGetEnum
      */
     public function getSourceType(): ?string
@@ -80,8 +68,6 @@ class DynamicSourceGet
     }
 
     /**
-     * Sets SourceType.
-     *
      * @see SourceTypeGetEnum
      *
      * @return $this
@@ -94,8 +80,6 @@ class DynamicSourceGet
     }
 
     /**
-     * Gets SourceProcessingStatus.
-     *
      * @see SourceProcessingStatusEnum
      */
     public function getSourceProcessingStatus(): ?string
@@ -104,8 +88,6 @@ class DynamicSourceGet
     }
 
     /**
-     * Sets SourceProcessingStatus.
-     *
      * @see SourceProcessingStatusEnum
      *
      * @return $this

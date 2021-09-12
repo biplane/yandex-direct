@@ -9,29 +9,27 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class CheckResponseModified
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $CampaignIds = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AdGroupIds = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AdIds = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $CampaignsStat = null;
 
     /**
-     * Creates a new instance of CheckResponseModified.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets CampaignIds.
-     *
      * @return int[]|null
      */
     public function getCampaignIds(): ?array
@@ -40,8 +38,6 @@ class CheckResponseModified
     }
 
     /**
-     * Sets CampaignIds.
-     *
      * @param int[]|null $value
      *
      * @return $this
@@ -54,8 +50,6 @@ class CheckResponseModified
     }
 
     /**
-     * Gets AdGroupIds.
-     *
      * @return int[]|null
      */
     public function getAdGroupIds(): ?array
@@ -64,8 +58,6 @@ class CheckResponseModified
     }
 
     /**
-     * Sets AdGroupIds.
-     *
      * @param int[]|null $value
      *
      * @return $this
@@ -78,8 +70,6 @@ class CheckResponseModified
     }
 
     /**
-     * Gets AdIds.
-     *
      * @return int[]|null
      */
     public function getAdIds(): ?array
@@ -88,8 +78,6 @@ class CheckResponseModified
     }
 
     /**
-     * Sets AdIds.
-     *
      * @param int[]|null $value
      *
      * @return $this
@@ -102,8 +90,6 @@ class CheckResponseModified
     }
 
     /**
-     * Gets CampaignsStat.
-     *
      * @return CampaignStatItem[]|null
      */
     public function getCampaignsStat(): ?array
@@ -112,8 +98,6 @@ class CheckResponseModified
     }
 
     /**
-     * Sets CampaignsStat.
-     *
      * @param CampaignStatItem[]|null $value
      *
      * @return $this

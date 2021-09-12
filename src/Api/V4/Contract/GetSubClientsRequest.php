@@ -14,24 +14,19 @@ class GetSubClientsRequest
     protected $Filter = null;
 
     /**
-     * Creates a new instance of GetSubClientsRequest.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Login.
-     */
     public function getLogin(): ?string
     {
         return $this->Login;
     }
 
     /**
-     * Sets Login.
-     *
      * @return $this
      */
     public function setLogin(?string $value = null)
@@ -41,17 +36,12 @@ class GetSubClientsRequest
         return $this;
     }
 
-    /**
-     * Gets Filter.
-     */
     public function getFilter(): ?ClientFilter
     {
         return $this->Filter;
     }
 
     /**
-     * Sets Filter.
-     *
      * @return $this
      */
     public function setFilter(?ClientFilter $value = null)

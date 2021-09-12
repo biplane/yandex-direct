@@ -14,24 +14,19 @@ class CpmBannerCampaignStrategyAdd
     protected $Network = null;
 
     /**
-     * Creates a new instance of CpmBannerCampaignStrategyAdd.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Search.
-     */
     public function getSearch(): CpmBannerCampaignSearchStrategyAdd
     {
         return $this->Search;
     }
 
     /**
-     * Sets Search.
-     *
      * @return $this
      */
     public function setSearch(CpmBannerCampaignSearchStrategyAdd $value)
@@ -41,17 +36,12 @@ class CpmBannerCampaignStrategyAdd
         return $this;
     }
 
-    /**
-     * Gets Network.
-     */
     public function getNetwork(): CpmBannerCampaignNetworkStrategyAdd
     {
         return $this->Network;
     }
 
     /**
-     * Sets Network.
-     *
      * @return $this
      */
     public function setNetwork(CpmBannerCampaignNetworkStrategyAdd $value)

@@ -5,6 +5,12 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5;
 
 use Biplane\YandexDirect\Api\ApiSoapClientV5;
+use Biplane\YandexDirect\Api\V5\Contract\AddAdImagesRequest;
+use Biplane\YandexDirect\Api\V5\Contract\AddAdImagesResponse;
+use Biplane\YandexDirect\Api\V5\Contract\DeleteAdImagesRequest;
+use Biplane\YandexDirect\Api\V5\Contract\DeleteAdImagesResponse;
+use Biplane\YandexDirect\Api\V5\Contract\GetAdImagesRequest;
+use Biplane\YandexDirect\Api\V5\Contract\GetAdImagesResponse;
 use Biplane\YandexDirect\Config;
 
 /**
@@ -14,6 +20,9 @@ class AdImages extends ApiSoapClientV5
 {
     public const ENDPOINT = 'https://api.direct.yandex.com/v5/adimages?wsdl';
 
+    /**
+     * @param array<string, mixed> $options
+     */
     public function __construct(Config $config, array $options)
     {
         $options['classmap'] = [
@@ -75,26 +84,17 @@ class AdImages extends ApiSoapClientV5
         parent::__construct(self::ENDPOINT, $config, $options);
     }
 
-    /**
-     * add.
-     */
-    public function add(Contract\AddAdImagesRequest $parameters): Contract\AddAdImagesResponse
+    public function add(AddAdImagesRequest $parameters): AddAdImagesResponse
     {
         return $this->__soapCall('add', [$parameters]);
     }
 
-    /**
-     * get.
-     */
-    public function get(Contract\GetAdImagesRequest $parameters): Contract\GetAdImagesResponse
+    public function get(GetAdImagesRequest $parameters): GetAdImagesResponse
     {
         return $this->__soapCall('get', [$parameters]);
     }
 
-    /**
-     * delete.
-     */
-    public function delete(Contract\DeleteAdImagesRequest $parameters): Contract\DeleteAdImagesResponse
+    public function delete(DeleteAdImagesRequest $parameters): DeleteAdImagesResponse
     {
         return $this->__soapCall('delete', [$parameters]);
     }

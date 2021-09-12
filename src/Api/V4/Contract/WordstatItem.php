@@ -14,24 +14,19 @@ class WordstatItem
     protected $Shows = null;
 
     /**
-     * Creates a new instance of WordstatItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Phrase.
-     */
     public function getPhrase(): string
     {
         return $this->Phrase;
     }
 
     /**
-     * Sets Phrase.
-     *
      * @return $this
      */
     public function setPhrase(string $value)
@@ -41,17 +36,12 @@ class WordstatItem
         return $this;
     }
 
-    /**
-     * Gets Shows.
-     */
     public function getShows(): int
     {
         return $this->Shows;
     }
 
     /**
-     * Sets Shows.
-     *
      * @return $this
      */
     public function setShows(int $value)

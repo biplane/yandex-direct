@@ -9,22 +9,20 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class TimeTargetingBase
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Schedule = null;
 
     protected $ConsiderWorkingWeekends = null;
 
     /**
-     * Creates a new instance of TimeTargetingBase.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Schedule.
-     *
      * @return string[]|null
      */
     public function getSchedule(): ?array
@@ -33,8 +31,6 @@ class TimeTargetingBase
     }
 
     /**
-     * Sets Schedule.
-     *
      * @param string[]|null $value
      *
      * @return $this
@@ -47,8 +43,6 @@ class TimeTargetingBase
     }
 
     /**
-     * Gets ConsiderWorkingWeekends.
-     *
      * @see YesNoEnum
      */
     public function getConsiderWorkingWeekends(): string
@@ -57,8 +51,6 @@ class TimeTargetingBase
     }
 
     /**
-     * Sets ConsiderWorkingWeekends.
-     *
      * @see YesNoEnum
      *
      * @return $this

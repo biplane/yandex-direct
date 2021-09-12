@@ -13,37 +13,32 @@ class WebpageAddItem
 
     protected $AdGroupId = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Conditions = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Bid = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $ContextBid = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $StrategyPriority = null;
 
     /**
-     * Creates a new instance of WebpageAddItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Name.
-     */
     public function getName(): string
     {
         return $this->Name;
     }
 
     /**
-     * Sets Name.
-     *
      * @return $this
      */
     public function setName(string $value)
@@ -53,17 +48,12 @@ class WebpageAddItem
         return $this;
     }
 
-    /**
-     * Gets AdGroupId.
-     */
     public function getAdGroupId(): int
     {
         return $this->AdGroupId;
     }
 
     /**
-     * Sets AdGroupId.
-     *
      * @return $this
      */
     public function setAdGroupId(int $value)
@@ -74,8 +64,6 @@ class WebpageAddItem
     }
 
     /**
-     * Gets Conditions.
-     *
      * @return WebpageCondition[]|null
      */
     public function getConditions(): ?array
@@ -84,8 +72,6 @@ class WebpageAddItem
     }
 
     /**
-     * Sets Conditions.
-     *
      * @param WebpageCondition[]|null $value
      *
      * @return $this
@@ -97,17 +83,12 @@ class WebpageAddItem
         return $this;
     }
 
-    /**
-     * Gets Bid.
-     */
     public function getBid(): ?int
     {
         return $this->Bid ?? null;
     }
 
     /**
-     * Sets Bid.
-     *
      * @return $this
      */
     public function setBid(?int $value = null)
@@ -117,17 +98,12 @@ class WebpageAddItem
         return $this;
     }
 
-    /**
-     * Gets ContextBid.
-     */
     public function getContextBid(): ?int
     {
         return $this->ContextBid ?? null;
     }
 
     /**
-     * Sets ContextBid.
-     *
      * @return $this
      */
     public function setContextBid(?int $value = null)
@@ -138,8 +114,6 @@ class WebpageAddItem
     }
 
     /**
-     * Gets StrategyPriority.
-     *
      * @see PriorityEnum
      */
     public function getStrategyPriority(): ?string
@@ -148,8 +122,6 @@ class WebpageAddItem
     }
 
     /**
-     * Sets StrategyPriority.
-     *
      * @see PriorityEnum
      *
      * @return $this

@@ -14,24 +14,19 @@ class CampaignTagsInfo
     protected $Tags = null;
 
     /**
-     * Creates a new instance of CampaignTagsInfo.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets CampaignID.
-     */
     public function getCampaignID(): int
     {
         return $this->CampaignID;
     }
 
     /**
-     * Sets CampaignID.
-     *
      * @return $this
      */
     public function setCampaignID(int $value)
@@ -42,8 +37,6 @@ class CampaignTagsInfo
     }
 
     /**
-     * Gets Tags.
-     *
      * @return TagInfo[]|null
      */
     public function getTags(): ?array
@@ -52,8 +45,6 @@ class CampaignTagsInfo
     }
 
     /**
-     * Sets Tags.
-     *
      * @param TagInfo[]|null $value
      *
      * @return $this

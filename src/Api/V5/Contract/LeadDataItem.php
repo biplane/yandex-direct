@@ -14,24 +14,19 @@ class LeadDataItem
     protected $Value = null;
 
     /**
-     * Creates a new instance of LeadDataItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Name.
-     */
     public function getName(): string
     {
         return $this->Name;
     }
 
     /**
-     * Sets Name.
-     *
      * @return $this
      */
     public function setName(string $value)
@@ -41,17 +36,12 @@ class LeadDataItem
         return $this;
     }
 
-    /**
-     * Gets Value.
-     */
     public function getValue(): string
     {
         return $this->Value;
     }
 
     /**
-     * Sets Value.
-     *
      * @return $this
      */
     public function setValue(string $value)

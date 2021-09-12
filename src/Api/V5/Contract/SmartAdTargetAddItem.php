@@ -13,42 +13,37 @@ class SmartAdTargetAddItem
 
     protected $AdGroupId = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AverageCpc = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AverageCpa = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $StrategyPriority = null;
 
     protected $Audience = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Conditions = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AvailableItemsOnly = null;
 
     /**
-     * Creates a new instance of SmartAdTargetAddItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Name.
-     */
     public function getName(): string
     {
         return $this->Name;
     }
 
     /**
-     * Sets Name.
-     *
      * @return $this
      */
     public function setName(string $value)
@@ -58,17 +53,12 @@ class SmartAdTargetAddItem
         return $this;
     }
 
-    /**
-     * Gets AdGroupId.
-     */
     public function getAdGroupId(): int
     {
         return $this->AdGroupId;
     }
 
     /**
-     * Sets AdGroupId.
-     *
      * @return $this
      */
     public function setAdGroupId(int $value)
@@ -78,17 +68,12 @@ class SmartAdTargetAddItem
         return $this;
     }
 
-    /**
-     * Gets AverageCpc.
-     */
     public function getAverageCpc(): ?int
     {
         return $this->AverageCpc ?? null;
     }
 
     /**
-     * Sets AverageCpc.
-     *
      * @return $this
      */
     public function setAverageCpc(?int $value = null)
@@ -98,17 +83,12 @@ class SmartAdTargetAddItem
         return $this;
     }
 
-    /**
-     * Gets AverageCpa.
-     */
     public function getAverageCpa(): ?int
     {
         return $this->AverageCpa ?? null;
     }
 
     /**
-     * Sets AverageCpa.
-     *
      * @return $this
      */
     public function setAverageCpa(?int $value = null)
@@ -119,8 +99,6 @@ class SmartAdTargetAddItem
     }
 
     /**
-     * Gets StrategyPriority.
-     *
      * @see PriorityEnum
      */
     public function getStrategyPriority(): ?string
@@ -129,8 +107,6 @@ class SmartAdTargetAddItem
     }
 
     /**
-     * Sets StrategyPriority.
-     *
      * @see PriorityEnum
      *
      * @return $this
@@ -143,8 +119,6 @@ class SmartAdTargetAddItem
     }
 
     /**
-     * Gets Audience.
-     *
      * @see AudienceEnum
      */
     public function getAudience(): string
@@ -153,8 +127,6 @@ class SmartAdTargetAddItem
     }
 
     /**
-     * Sets Audience.
-     *
      * @see AudienceEnum
      *
      * @return $this
@@ -166,17 +138,12 @@ class SmartAdTargetAddItem
         return $this;
     }
 
-    /**
-     * Gets Conditions.
-     */
     public function getConditions(): ?ConditionsArray
     {
         return $this->Conditions ?? null;
     }
 
     /**
-     * Sets Conditions.
-     *
      * @return $this
      */
     public function setConditions(?ConditionsArray $value = null)
@@ -187,8 +154,6 @@ class SmartAdTargetAddItem
     }
 
     /**
-     * Gets AvailableItemsOnly.
-     *
      * @see YesNoEnum
      */
     public function getAvailableItemsOnly(): ?string
@@ -197,8 +162,6 @@ class SmartAdTargetAddItem
     }
 
     /**
-     * Sets AvailableItemsOnly.
-     *
      * @see YesNoEnum
      *
      * @return $this

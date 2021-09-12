@@ -9,35 +9,33 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AudienceTargetSelectionCriteria
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Ids = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AdGroupIds = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $CampaignIds = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $RetargetingListIds = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $InterestIds = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $States = null;
 
     /**
-     * Creates a new instance of AudienceTargetSelectionCriteria.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Ids.
-     *
      * @return int[]|null
      */
     public function getIds(): ?array
@@ -46,8 +44,6 @@ class AudienceTargetSelectionCriteria
     }
 
     /**
-     * Sets Ids.
-     *
      * @param int[]|null $value
      *
      * @return $this
@@ -60,8 +56,6 @@ class AudienceTargetSelectionCriteria
     }
 
     /**
-     * Gets AdGroupIds.
-     *
      * @return int[]|null
      */
     public function getAdGroupIds(): ?array
@@ -70,8 +64,6 @@ class AudienceTargetSelectionCriteria
     }
 
     /**
-     * Sets AdGroupIds.
-     *
      * @param int[]|null $value
      *
      * @return $this
@@ -84,8 +76,6 @@ class AudienceTargetSelectionCriteria
     }
 
     /**
-     * Gets CampaignIds.
-     *
      * @return int[]|null
      */
     public function getCampaignIds(): ?array
@@ -94,8 +84,6 @@ class AudienceTargetSelectionCriteria
     }
 
     /**
-     * Sets CampaignIds.
-     *
      * @param int[]|null $value
      *
      * @return $this
@@ -108,8 +96,6 @@ class AudienceTargetSelectionCriteria
     }
 
     /**
-     * Gets RetargetingListIds.
-     *
      * @return int[]|null
      */
     public function getRetargetingListIds(): ?array
@@ -118,8 +104,6 @@ class AudienceTargetSelectionCriteria
     }
 
     /**
-     * Sets RetargetingListIds.
-     *
      * @param int[]|null $value
      *
      * @return $this
@@ -132,8 +116,6 @@ class AudienceTargetSelectionCriteria
     }
 
     /**
-     * Gets InterestIds.
-     *
      * @return int[]|null
      */
     public function getInterestIds(): ?array
@@ -142,8 +124,6 @@ class AudienceTargetSelectionCriteria
     }
 
     /**
-     * Sets InterestIds.
-     *
      * @param int[]|null $value
      *
      * @return $this
@@ -156,8 +136,6 @@ class AudienceTargetSelectionCriteria
     }
 
     /**
-     * Gets States.
-     *
      * @see AudienceTargetStateEnum
      *
      * @return string[]|null
@@ -168,8 +146,6 @@ class AudienceTargetSelectionCriteria
     }
 
     /**
-     * Sets States.
-     *
      * @see AudienceTargetStateEnum
      *
      * @param string[]|null $value

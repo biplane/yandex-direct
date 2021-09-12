@@ -11,7 +11,7 @@ class VideoExtensionGetItem
 {
     protected $CreativeId = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Status = null;
 
     protected $ThumbnailUrl = null;
@@ -19,24 +19,19 @@ class VideoExtensionGetItem
     protected $PreviewUrl = null;
 
     /**
-     * Creates a new instance of VideoExtensionGetItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets CreativeId.
-     */
     public function getCreativeId(): int
     {
         return $this->CreativeId;
     }
 
     /**
-     * Sets CreativeId.
-     *
      * @return $this
      */
     public function setCreativeId(int $value)
@@ -47,8 +42,6 @@ class VideoExtensionGetItem
     }
 
     /**
-     * Gets Status.
-     *
      * @see StatusEnum
      */
     public function getStatus(): ?string
@@ -57,8 +50,6 @@ class VideoExtensionGetItem
     }
 
     /**
-     * Sets Status.
-     *
      * @see StatusEnum
      *
      * @return $this
@@ -70,17 +61,12 @@ class VideoExtensionGetItem
         return $this;
     }
 
-    /**
-     * Gets ThumbnailUrl.
-     */
     public function getThumbnailUrl(): string
     {
         return $this->ThumbnailUrl;
     }
 
     /**
-     * Sets ThumbnailUrl.
-     *
      * @return $this
      */
     public function setThumbnailUrl(string $value)
@@ -90,17 +76,12 @@ class VideoExtensionGetItem
         return $this;
     }
 
-    /**
-     * Gets PreviewUrl.
-     */
     public function getPreviewUrl(): string
     {
         return $this->PreviewUrl;
     }
 
     /**
-     * Sets PreviewUrl.
-     *
      * @return $this
      */
     public function setPreviewUrl(string $value)

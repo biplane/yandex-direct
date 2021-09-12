@@ -18,24 +18,19 @@ class ShortClientInfo
     protected $SharedAccountEnabled = null;
 
     /**
-     * Creates a new instance of ShortClientInfo.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Login.
-     */
     public function getLogin(): ?string
     {
         return $this->Login;
     }
 
     /**
-     * Sets Login.
-     *
      * @return $this
      */
     public function setLogin(?string $value = null)
@@ -45,17 +40,12 @@ class ShortClientInfo
         return $this;
     }
 
-    /**
-     * Gets FIO.
-     */
     public function getFIO(): ?string
     {
         return $this->FIO;
     }
 
     /**
-     * Sets FIO.
-     *
      * @return $this
      */
     public function setFIO(?string $value = null)
@@ -65,17 +55,12 @@ class ShortClientInfo
         return $this;
     }
 
-    /**
-     * Gets Role.
-     */
     public function getRole(): ?string
     {
         return $this->Role;
     }
 
     /**
-     * Sets Role.
-     *
      * @return $this
      */
     public function setRole(?string $value = null)
@@ -85,17 +70,12 @@ class ShortClientInfo
         return $this;
     }
 
-    /**
-     * Gets SharedAccountEnabled.
-     */
     public function getSharedAccountEnabled(): ?string
     {
         return $this->SharedAccountEnabled;
     }
 
     /**
-     * Sets SharedAccountEnabled.
-     *
      * @return $this
      */
     public function setSharedAccountEnabled(?string $value = null)

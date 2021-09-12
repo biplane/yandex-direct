@@ -24,24 +24,19 @@ class SmsNotificationInfo
     protected $SmsTimeTo = null;
 
     /**
-     * Creates a new instance of SmsNotificationInfo.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets MetricaSms.
-     */
     public function getMetricaSms(): ?string
     {
         return $this->MetricaSms;
     }
 
     /**
-     * Sets MetricaSms.
-     *
      * @return $this
      */
     public function setMetricaSms(?string $value = null)
@@ -51,17 +46,12 @@ class SmsNotificationInfo
         return $this;
     }
 
-    /**
-     * Gets ModerateResultSms.
-     */
     public function getModerateResultSms(): ?string
     {
         return $this->ModerateResultSms;
     }
 
     /**
-     * Sets ModerateResultSms.
-     *
      * @return $this
      */
     public function setModerateResultSms(?string $value = null)
@@ -71,17 +61,12 @@ class SmsNotificationInfo
         return $this;
     }
 
-    /**
-     * Gets MoneyInSms.
-     */
     public function getMoneyInSms(): ?string
     {
         return $this->MoneyInSms;
     }
 
     /**
-     * Sets MoneyInSms.
-     *
      * @return $this
      */
     public function setMoneyInSms(?string $value = null)
@@ -91,17 +76,12 @@ class SmsNotificationInfo
         return $this;
     }
 
-    /**
-     * Gets MoneyOutSms.
-     */
     public function getMoneyOutSms(): ?string
     {
         return $this->MoneyOutSms;
     }
 
     /**
-     * Sets MoneyOutSms.
-     *
      * @return $this
      */
     public function setMoneyOutSms(?string $value = null)
@@ -111,17 +91,12 @@ class SmsNotificationInfo
         return $this;
     }
 
-    /**
-     * Gets PausedByDayBudgetSms.
-     */
     public function getPausedByDayBudgetSms(): ?string
     {
         return $this->PausedByDayBudgetSms;
     }
 
     /**
-     * Sets PausedByDayBudgetSms.
-     *
      * @return $this
      */
     public function setPausedByDayBudgetSms(?string $value = null)
@@ -131,17 +106,12 @@ class SmsNotificationInfo
         return $this;
     }
 
-    /**
-     * Gets SmsTimeFrom.
-     */
     public function getSmsTimeFrom(): ?string
     {
         return $this->SmsTimeFrom;
     }
 
     /**
-     * Sets SmsTimeFrom.
-     *
      * @return $this
      */
     public function setSmsTimeFrom(?string $value = null)
@@ -151,17 +121,12 @@ class SmsNotificationInfo
         return $this;
     }
 
-    /**
-     * Gets SmsTimeTo.
-     */
     public function getSmsTimeTo(): ?string
     {
         return $this->SmsTimeTo;
     }
 
     /**
-     * Sets SmsTimeTo.
-     *
      * @return $this
      */
     public function setSmsTimeTo(?string $value = null)

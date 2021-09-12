@@ -9,31 +9,26 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class StrategyPayForInstall
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $AverageCpi = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $WeeklySpendLimit = null;
 
     /**
-     * Creates a new instance of StrategyPayForInstall.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets AverageCpi.
-     */
     public function getAverageCpi(): ?int
     {
         return $this->AverageCpi ?? null;
     }
 
     /**
-     * Sets AverageCpi.
-     *
      * @return $this
      */
     public function setAverageCpi(?int $value = null)
@@ -43,17 +38,12 @@ class StrategyPayForInstall
         return $this;
     }
 
-    /**
-     * Gets WeeklySpendLimit.
-     */
     public function getWeeklySpendLimit(): ?int
     {
         return $this->WeeklySpendLimit ?? null;
     }
 
     /**
-     * Sets WeeklySpendLimit.
-     *
      * @return $this
      */
     public function setWeeklySpendLimit(?int $value = null)

@@ -22,24 +22,19 @@ class TimeTargetInfo
     protected $WorkingHolidays = null;
 
     /**
-     * Creates a new instance of TimeTargetInfo.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets ShowOnHolidays.
-     */
     public function getShowOnHolidays(): ?string
     {
         return $this->ShowOnHolidays;
     }
 
     /**
-     * Sets ShowOnHolidays.
-     *
      * @return $this
      */
     public function setShowOnHolidays(?string $value = null)
@@ -49,17 +44,12 @@ class TimeTargetInfo
         return $this;
     }
 
-    /**
-     * Gets HolidayShowFrom.
-     */
     public function getHolidayShowFrom(): ?int
     {
         return $this->HolidayShowFrom;
     }
 
     /**
-     * Sets HolidayShowFrom.
-     *
      * @return $this
      */
     public function setHolidayShowFrom(?int $value = null)
@@ -69,17 +59,12 @@ class TimeTargetInfo
         return $this;
     }
 
-    /**
-     * Gets HolidayShowTo.
-     */
     public function getHolidayShowTo(): ?int
     {
         return $this->HolidayShowTo;
     }
 
     /**
-     * Sets HolidayShowTo.
-     *
      * @return $this
      */
     public function setHolidayShowTo(?int $value = null)
@@ -90,8 +75,6 @@ class TimeTargetInfo
     }
 
     /**
-     * Gets DaysHours.
-     *
      * @return TimeTargetItem[]
      */
     public function getDaysHours(): array
@@ -100,8 +83,6 @@ class TimeTargetInfo
     }
 
     /**
-     * Sets DaysHours.
-     *
      * @param TimeTargetItem[] $value
      *
      * @return $this
@@ -113,17 +94,12 @@ class TimeTargetInfo
         return $this;
     }
 
-    /**
-     * Gets TimeZone.
-     */
     public function getTimeZone(): ?string
     {
         return $this->TimeZone;
     }
 
     /**
-     * Sets TimeZone.
-     *
      * @return $this
      */
     public function setTimeZone(?string $value = null)
@@ -133,17 +109,12 @@ class TimeTargetInfo
         return $this;
     }
 
-    /**
-     * Gets WorkingHolidays.
-     */
     public function getWorkingHolidays(): ?string
     {
         return $this->WorkingHolidays;
     }
 
     /**
-     * Sets WorkingHolidays.
-     *
      * @return $this
      */
     public function setWorkingHolidays(?string $value = null)

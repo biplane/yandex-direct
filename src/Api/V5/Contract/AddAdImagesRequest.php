@@ -12,16 +12,14 @@ class AddAdImagesRequest
     protected $AdImages = [];
 
     /**
-     * Creates a new instance of AddAdImagesRequest.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets AdImages.
-     *
      * @return AdImageAddItem[]
      */
     public function getAdImages(): array
@@ -30,8 +28,6 @@ class AddAdImagesRequest
     }
 
     /**
-     * Sets AdImages.
-     *
      * @param AdImageAddItem[] $value
      *
      * @return $this

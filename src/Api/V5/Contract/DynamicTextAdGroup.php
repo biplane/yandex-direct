@@ -12,24 +12,19 @@ class DynamicTextAdGroup
     protected $DomainUrl = null;
 
     /**
-     * Creates a new instance of DynamicTextAdGroup.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets DomainUrl.
-     */
     public function getDomainUrl(): string
     {
         return $this->DomainUrl;
     }
 
     /**
-     * Sets DomainUrl.
-     *
      * @return $this
      */
     public function setDomainUrl(string $value)

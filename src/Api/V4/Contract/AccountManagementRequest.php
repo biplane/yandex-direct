@@ -26,24 +26,19 @@ class AccountManagementRequest
     protected $Version = null;
 
     /**
-     * Creates a new instance of AccountManagementRequest.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Action.
-     */
     public function getAction(): string
     {
         return $this->Action;
     }
 
     /**
-     * Sets Action.
-     *
      * @return $this
      */
     public function setAction(string $value)
@@ -53,17 +48,12 @@ class AccountManagementRequest
         return $this;
     }
 
-    /**
-     * Gets SelectionCriteria.
-     */
     public function getSelectionCriteria(): ?AccountSelectionCriteria
     {
         return $this->SelectionCriteria;
     }
 
     /**
-     * Sets SelectionCriteria.
-     *
      * @return $this
      */
     public function setSelectionCriteria(?AccountSelectionCriteria $value = null)
@@ -74,8 +64,6 @@ class AccountManagementRequest
     }
 
     /**
-     * Gets Payments.
-     *
      * @return Payment[]|null
      */
     public function getPayments(): ?array
@@ -84,8 +72,6 @@ class AccountManagementRequest
     }
 
     /**
-     * Sets Payments.
-     *
      * @param Payment[]|null $value
      *
      * @return $this
@@ -98,8 +84,6 @@ class AccountManagementRequest
     }
 
     /**
-     * Gets Transfers.
-     *
      * @return Transfer[]|null
      */
     public function getTransfers(): ?array
@@ -108,8 +92,6 @@ class AccountManagementRequest
     }
 
     /**
-     * Sets Transfers.
-     *
      * @param Transfer[]|null $value
      *
      * @return $this
@@ -122,8 +104,6 @@ class AccountManagementRequest
     }
 
     /**
-     * Gets Accounts.
-     *
      * @return Account[]|null
      */
     public function getAccounts(): ?array
@@ -132,8 +112,6 @@ class AccountManagementRequest
     }
 
     /**
-     * Sets Accounts.
-     *
      * @param Account[]|null $value
      *
      * @return $this
@@ -145,17 +123,12 @@ class AccountManagementRequest
         return $this;
     }
 
-    /**
-     * Gets PayMethodID.
-     */
     public function getPayMethodID(): ?string
     {
         return $this->PayMethodID;
     }
 
     /**
-     * Sets PayMethodID.
-     *
      * @return $this
      */
     public function setPayMethodID(?string $value = null)
@@ -165,17 +138,12 @@ class AccountManagementRequest
         return $this;
     }
 
-    /**
-     * Gets CustomTransactionID.
-     */
     public function getCustomTransactionID(): ?string
     {
         return $this->CustomTransactionID;
     }
 
     /**
-     * Sets CustomTransactionID.
-     *
      * @return $this
      */
     public function setCustomTransactionID(?string $value = null)
@@ -185,17 +153,12 @@ class AccountManagementRequest
         return $this;
     }
 
-    /**
-     * Gets Version.
-     */
     public function getVersion(): ?string
     {
         return $this->Version;
     }
 
     /**
-     * Sets Version.
-     *
      * @return $this
      */
     public function setVersion(?string $value = null)

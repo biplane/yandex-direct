@@ -12,16 +12,14 @@ class HasSearchVolumeKeywordsResponse
     protected $HasSearchVolumeResults = [];
 
     /**
-     * Creates a new instance of HasSearchVolumeKeywordsResponse.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets HasSearchVolumeResults.
-     *
      * @return HasSearchVolumeItem[]
      */
     public function getHasSearchVolumeResults(): array
@@ -30,8 +28,6 @@ class HasSearchVolumeKeywordsResponse
     }
 
     /**
-     * Sets HasSearchVolumeResults.
-     *
      * @param HasSearchVolumeItem[] $value
      *
      * @return $this

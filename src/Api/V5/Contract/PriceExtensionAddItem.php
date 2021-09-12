@@ -11,7 +11,7 @@ class PriceExtensionAddItem
 {
     protected $Price = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $OldPrice = null;
 
     protected $PriceQualifier = null;
@@ -19,24 +19,19 @@ class PriceExtensionAddItem
     protected $PriceCurrency = null;
 
     /**
-     * Creates a new instance of PriceExtensionAddItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Price.
-     */
     public function getPrice(): int
     {
         return $this->Price;
     }
 
     /**
-     * Sets Price.
-     *
      * @return $this
      */
     public function setPrice(int $value)
@@ -46,17 +41,12 @@ class PriceExtensionAddItem
         return $this;
     }
 
-    /**
-     * Gets OldPrice.
-     */
     public function getOldPrice(): ?int
     {
         return $this->OldPrice ?? null;
     }
 
     /**
-     * Sets OldPrice.
-     *
      * @return $this
      */
     public function setOldPrice(?int $value = null)
@@ -67,8 +57,6 @@ class PriceExtensionAddItem
     }
 
     /**
-     * Gets PriceQualifier.
-     *
      * @see PriceQualifierEnum
      */
     public function getPriceQualifier(): string
@@ -77,8 +65,6 @@ class PriceExtensionAddItem
     }
 
     /**
-     * Sets PriceQualifier.
-     *
      * @see PriceQualifierEnum
      *
      * @return $this
@@ -91,8 +77,6 @@ class PriceExtensionAddItem
     }
 
     /**
-     * Gets PriceCurrency.
-     *
      * @see PriceCurrencyEnum
      */
     public function getPriceCurrency(): string
@@ -101,8 +85,6 @@ class PriceExtensionAddItem
     }
 
     /**
-     * Sets PriceCurrency.
-     *
      * @see PriceCurrencyEnum
      *
      * @return $this

@@ -11,34 +11,32 @@ class KeywordUpdateItem
 {
     protected $Id = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Keyword = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $UserParam1 = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $UserParam2 = null;
 
-    /**
-     * Creates a new instance of KeywordUpdateItem.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
+//    Can be omitted.
+//    protected $AutotargetingCategories = null;
 
     /**
-     * Gets Id.
+     * @return static
      */
+    public static function create()
+    {
+        return new static();
+    }
+
     public function getId(): int
     {
         return $this->Id;
     }
 
     /**
-     * Sets Id.
-     *
      * @return $this
      */
     public function setId(int $value)
@@ -48,17 +46,12 @@ class KeywordUpdateItem
         return $this;
     }
 
-    /**
-     * Gets Keyword.
-     */
     public function getKeyword(): ?string
     {
         return $this->Keyword ?? null;
     }
 
     /**
-     * Sets Keyword.
-     *
      * @return $this
      */
     public function setKeyword(?string $value = null)
@@ -68,17 +61,12 @@ class KeywordUpdateItem
         return $this;
     }
 
-    /**
-     * Gets UserParam1.
-     */
     public function getUserParam1(): ?string
     {
         return $this->UserParam1 ?? null;
     }
 
     /**
-     * Sets UserParam1.
-     *
      * @return $this
      */
     public function setUserParam1(?string $value = null)
@@ -88,22 +76,37 @@ class KeywordUpdateItem
         return $this;
     }
 
-    /**
-     * Gets UserParam2.
-     */
     public function getUserParam2(): ?string
     {
         return $this->UserParam2 ?? null;
     }
 
     /**
-     * Sets UserParam2.
-     *
      * @return $this
      */
     public function setUserParam2(?string $value = null)
     {
         $this->UserParam2 = $value;
+
+        return $this;
+    }
+
+    /**
+     * @return AutotargetingCategory[]|null
+     */
+    public function getAutotargetingCategories(): ?array
+    {
+        return $this->AutotargetingCategories ?? null;
+    }
+
+    /**
+     * @param AutotargetingCategory[]|null $value
+     *
+     * @return $this
+     */
+    public function setAutotargetingCategories(?array $value = null)
+    {
+        $this->AutotargetingCategories = $value;
 
         return $this;
     }

@@ -12,24 +12,19 @@ class AdBuilderAdUpdateItem
     protected $CreativeId = null;
 
     /**
-     * Creates a new instance of AdBuilderAdUpdateItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets CreativeId.
-     */
     public function getCreativeId(): int
     {
         return $this->CreativeId;
     }
 
     /**
-     * Sets CreativeId.
-     *
      * @return $this
      */
     public function setCreativeId(int $value)

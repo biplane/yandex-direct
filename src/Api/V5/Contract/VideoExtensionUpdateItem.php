@@ -9,28 +9,23 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class VideoExtensionUpdateItem
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $CreativeId = null;
 
     /**
-     * Creates a new instance of VideoExtensionUpdateItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets CreativeId.
-     */
     public function getCreativeId(): ?int
     {
         return $this->CreativeId ?? null;
     }
 
     /**
-     * Sets CreativeId.
-     *
      * @return $this
      */
     public function setCreativeId(?int $value = null)

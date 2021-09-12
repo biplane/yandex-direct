@@ -9,23 +9,21 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AdImageSelectionCriteria
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $AdImageHashes = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Associated = null;
 
     /**
-     * Creates a new instance of AdImageSelectionCriteria.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets AdImageHashes.
-     *
      * @return string[]|null
      */
     public function getAdImageHashes(): ?array
@@ -34,8 +32,6 @@ class AdImageSelectionCriteria
     }
 
     /**
-     * Sets AdImageHashes.
-     *
      * @param string[]|null $value
      *
      * @return $this
@@ -48,8 +44,6 @@ class AdImageSelectionCriteria
     }
 
     /**
-     * Gets Associated.
-     *
      * @see YesNoEnum
      */
     public function getAssociated(): ?string
@@ -58,8 +52,6 @@ class AdImageSelectionCriteria
     }
 
     /**
-     * Sets Associated.
-     *
      * @see YesNoEnum
      *
      * @return $this

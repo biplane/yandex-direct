@@ -11,40 +11,35 @@ class TextCampaignAddItem
 {
     protected $BiddingStrategy = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Settings = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $CounterIds = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $RelevantKeywords = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $PriorityGoals = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AttributionModel = null;
 
     /**
-     * Creates a new instance of TextCampaignAddItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets BiddingStrategy.
-     */
     public function getBiddingStrategy(): TextCampaignStrategyAdd
     {
         return $this->BiddingStrategy;
     }
 
     /**
-     * Sets BiddingStrategy.
-     *
      * @return $this
      */
     public function setBiddingStrategy(TextCampaignStrategyAdd $value)
@@ -55,8 +50,6 @@ class TextCampaignAddItem
     }
 
     /**
-     * Gets Settings.
-     *
      * @return TextCampaignSetting[]|null
      */
     public function getSettings(): ?array
@@ -65,8 +58,6 @@ class TextCampaignAddItem
     }
 
     /**
-     * Sets Settings.
-     *
      * @param TextCampaignSetting[]|null $value
      *
      * @return $this
@@ -79,8 +70,6 @@ class TextCampaignAddItem
     }
 
     /**
-     * Gets CounterIds.
-     *
      * @return int[]|null
      */
     public function getCounterIds(): ?array
@@ -89,8 +78,6 @@ class TextCampaignAddItem
     }
 
     /**
-     * Sets CounterIds.
-     *
      * @param int[]|null $value
      *
      * @return $this
@@ -102,17 +89,12 @@ class TextCampaignAddItem
         return $this;
     }
 
-    /**
-     * Gets RelevantKeywords.
-     */
     public function getRelevantKeywords(): ?RelevantKeywordsSettingAdd
     {
         return $this->RelevantKeywords ?? null;
     }
 
     /**
-     * Sets RelevantKeywords.
-     *
      * @return $this
      */
     public function setRelevantKeywords(?RelevantKeywordsSettingAdd $value = null)
@@ -122,17 +104,12 @@ class TextCampaignAddItem
         return $this;
     }
 
-    /**
-     * Gets PriorityGoals.
-     */
     public function getPriorityGoals(): ?PriorityGoalsArray
     {
         return $this->PriorityGoals ?? null;
     }
 
     /**
-     * Sets PriorityGoals.
-     *
      * @return $this
      */
     public function setPriorityGoals(?PriorityGoalsArray $value = null)
@@ -143,8 +120,6 @@ class TextCampaignAddItem
     }
 
     /**
-     * Gets AttributionModel.
-     *
      * @see AttributionModelEnum
      */
     public function getAttributionModel(): ?string
@@ -153,8 +128,6 @@ class TextCampaignAddItem
     }
 
     /**
-     * Sets AttributionModel.
-     *
      * @see AttributionModelEnum
      *
      * @return $this

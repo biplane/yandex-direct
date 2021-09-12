@@ -12,24 +12,19 @@ class AdBuilderAdAddBase
     protected $Creative = null;
 
     /**
-     * Creates a new instance of AdBuilderAdAddBase.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Creative.
-     */
     public function getCreative(): AdBuilderAdAddItem
     {
         return $this->Creative;
     }
 
     /**
-     * Sets Creative.
-     *
      * @return $this
      */
     public function setCreative(AdBuilderAdAddItem $value)

@@ -16,24 +16,19 @@ class ConditionsItem
     protected $Arguments = [];
 
     /**
-     * Creates a new instance of ConditionsItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Operand.
-     */
     public function getOperand(): string
     {
         return $this->Operand;
     }
 
     /**
-     * Sets Operand.
-     *
      * @return $this
      */
     public function setOperand(string $value)
@@ -44,8 +39,6 @@ class ConditionsItem
     }
 
     /**
-     * Gets Operator.
-     *
      * @see SmartAdTargetStringConditionOperatorEnum
      */
     public function getOperator(): string
@@ -54,8 +47,6 @@ class ConditionsItem
     }
 
     /**
-     * Sets Operator.
-     *
      * @see SmartAdTargetStringConditionOperatorEnum
      *
      * @return $this
@@ -68,8 +59,6 @@ class ConditionsItem
     }
 
     /**
-     * Gets Arguments.
-     *
      * @return string[]
      */
     public function getArguments(): array
@@ -78,8 +67,6 @@ class ConditionsItem
     }
 
     /**
-     * Sets Arguments.
-     *
      * @param string[] $value
      *
      * @return $this

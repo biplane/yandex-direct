@@ -16,24 +16,19 @@ class AdImageAssociationRequest
     protected $AdImageAssociations = null;
 
     /**
-     * Creates a new instance of AdImageAssociationRequest.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Action.
-     */
     public function getAction(): string
     {
         return $this->Action;
     }
 
     /**
-     * Sets Action.
-     *
      * @return $this
      */
     public function setAction(string $value)
@@ -43,17 +38,12 @@ class AdImageAssociationRequest
         return $this;
     }
 
-    /**
-     * Gets SelectionCriteria.
-     */
     public function getSelectionCriteria(): ?AdImageAssociationSelectionCriteria
     {
         return $this->SelectionCriteria;
     }
 
     /**
-     * Sets SelectionCriteria.
-     *
      * @return $this
      */
     public function setSelectionCriteria(?AdImageAssociationSelectionCriteria $value = null)
@@ -64,8 +54,6 @@ class AdImageAssociationRequest
     }
 
     /**
-     * Gets AdImageAssociations.
-     *
      * @return AdImageAssociation[]|null
      */
     public function getAdImageAssociations(): ?array
@@ -74,8 +62,6 @@ class AdImageAssociationRequest
     }
 
     /**
-     * Sets AdImageAssociations.
-     *
      * @param AdImageAssociation[]|null $value
      *
      * @return $this

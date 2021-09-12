@@ -14,24 +14,19 @@ class StrategyMaximumImpressionsAddBase
     protected $SpendLimit = null;
 
     /**
-     * Creates a new instance of StrategyMaximumImpressionsAddBase.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets AverageCpm.
-     */
     public function getAverageCpm(): int
     {
         return $this->AverageCpm;
     }
 
     /**
-     * Sets AverageCpm.
-     *
      * @return $this
      */
     public function setAverageCpm(int $value)
@@ -41,17 +36,12 @@ class StrategyMaximumImpressionsAddBase
         return $this;
     }
 
-    /**
-     * Gets SpendLimit.
-     */
     public function getSpendLimit(): int
     {
         return $this->SpendLimit;
     }
 
     /**
-     * Sets SpendLimit.
-     *
      * @return $this
      */
     public function setSpendLimit(int $value)

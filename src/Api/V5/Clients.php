@@ -5,6 +5,10 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5;
 
 use Biplane\YandexDirect\Api\ApiSoapClientV5;
+use Biplane\YandexDirect\Api\V5\Contract\GetClientsRequest;
+use Biplane\YandexDirect\Api\V5\Contract\GetClientsResponse;
+use Biplane\YandexDirect\Api\V5\Contract\UpdateClientsRequest;
+use Biplane\YandexDirect\Api\V5\Contract\UpdateClientsResponse;
 use Biplane\YandexDirect\Config;
 
 /**
@@ -14,6 +18,9 @@ class Clients extends ApiSoapClientV5
 {
     public const ENDPOINT = 'https://api.direct.yandex.com/v5/clients?wsdl';
 
+    /**
+     * @param array<string, mixed> $options
+     */
     public function __construct(Config $config, array $options)
     {
         $options['classmap'] = [
@@ -88,18 +95,12 @@ class Clients extends ApiSoapClientV5
         parent::__construct(self::ENDPOINT, $config, $options);
     }
 
-    /**
-     * get.
-     */
-    public function get(Contract\GetClientsRequest $parameters): Contract\GetClientsResponse
+    public function get(GetClientsRequest $parameters): GetClientsResponse
     {
         return $this->__soapCall('get', [$parameters]);
     }
 
-    /**
-     * update.
-     */
-    public function update(Contract\UpdateClientsRequest $parameters): Contract\UpdateClientsResponse
+    public function update(UpdateClientsRequest $parameters): UpdateClientsResponse
     {
         return $this->__soapCall('update', [$parameters]);
     }

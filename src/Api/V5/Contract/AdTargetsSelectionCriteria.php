@@ -9,29 +9,27 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AdTargetsSelectionCriteria
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Ids = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AdGroupIds = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $CampaignIds = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $States = null;
 
     /**
-     * Creates a new instance of AdTargetsSelectionCriteria.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Ids.
-     *
      * @return int[]|null
      */
     public function getIds(): ?array
@@ -40,8 +38,6 @@ class AdTargetsSelectionCriteria
     }
 
     /**
-     * Sets Ids.
-     *
      * @param int[]|null $value
      *
      * @return $this
@@ -54,8 +50,6 @@ class AdTargetsSelectionCriteria
     }
 
     /**
-     * Gets AdGroupIds.
-     *
      * @return int[]|null
      */
     public function getAdGroupIds(): ?array
@@ -64,8 +58,6 @@ class AdTargetsSelectionCriteria
     }
 
     /**
-     * Sets AdGroupIds.
-     *
      * @param int[]|null $value
      *
      * @return $this
@@ -78,8 +70,6 @@ class AdTargetsSelectionCriteria
     }
 
     /**
-     * Gets CampaignIds.
-     *
      * @return int[]|null
      */
     public function getCampaignIds(): ?array
@@ -88,8 +78,6 @@ class AdTargetsSelectionCriteria
     }
 
     /**
-     * Sets CampaignIds.
-     *
      * @param int[]|null $value
      *
      * @return $this
@@ -102,8 +90,6 @@ class AdTargetsSelectionCriteria
     }
 
     /**
-     * Gets States.
-     *
      * @see AdTargetStateSelectionEnum
      *
      * @return string[]|null
@@ -114,8 +100,6 @@ class AdTargetsSelectionCriteria
     }
 
     /**
-     * Sets States.
-     *
      * @see AdTargetStateSelectionEnum
      *
      * @param string[]|null $value

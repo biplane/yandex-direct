@@ -12,24 +12,19 @@ class ClientInfoRequest
     protected $Filter = null;
 
     /**
-     * Creates a new instance of ClientInfoRequest.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Filter.
-     */
     public function getFilter(): ?ClientFilter
     {
         return $this->Filter;
     }
 
     /**
-     * Sets Filter.
-     *
      * @return $this
      */
     public function setFilter(?ClientFilter $value = null)

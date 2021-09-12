@@ -16,16 +16,14 @@ class GetChangesStringData
     protected $NotFound = [];
 
     /**
-     * Creates a new instance of GetChangesStringData.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Updated.
-     *
      * @return string[]
      */
     public function getUpdated(): array
@@ -34,8 +32,6 @@ class GetChangesStringData
     }
 
     /**
-     * Sets Updated.
-     *
      * @param string[] $value
      *
      * @return $this
@@ -48,8 +44,6 @@ class GetChangesStringData
     }
 
     /**
-     * Gets NotUpdated.
-     *
      * @return string[]
      */
     public function getNotUpdated(): array
@@ -58,8 +52,6 @@ class GetChangesStringData
     }
 
     /**
-     * Sets NotUpdated.
-     *
      * @param string[] $value
      *
      * @return $this
@@ -72,8 +64,6 @@ class GetChangesStringData
     }
 
     /**
-     * Gets NotFound.
-     *
      * @return string[]
      */
     public function getNotFound(): array
@@ -82,8 +72,6 @@ class GetChangesStringData
     }
 
     /**
-     * Sets NotFound.
-     *
      * @param string[] $value
      *
      * @return $this

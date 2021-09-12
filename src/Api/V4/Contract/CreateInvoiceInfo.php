@@ -12,16 +12,14 @@ class CreateInvoiceInfo
     protected $Payments = [];
 
     /**
-     * Creates a new instance of CreateInvoiceInfo.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Payments.
-     *
      * @return PayCampElement[]
      */
     public function getPayments(): array
@@ -30,8 +28,6 @@ class CreateInvoiceInfo
     }
 
     /**
-     * Sets Payments.
-     *
      * @param PayCampElement[] $value
      *
      * @return $this

@@ -9,70 +9,68 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class KeywordGetItem
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Id = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Keyword = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AdGroupId = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $CampaignId = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Bid = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $ContextBid = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $StrategyPriority = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $State = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Status = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $UserParam1 = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $UserParam2 = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Productivity = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $StatisticsSearch = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $StatisticsNetwork = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $ServingStatus = null;
 
-    /**
-     * Creates a new instance of KeywordGetItem.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
+//    Can be omitted.
+//    protected $AutotargetingCategories = null;
 
     /**
-     * Gets Id.
+     * @return static
      */
+    public static function create()
+    {
+        return new static();
+    }
+
     public function getId(): ?int
     {
         return $this->Id ?? null;
     }
 
     /**
-     * Sets Id.
-     *
      * @return $this
      */
     public function setId(?int $value = null)
@@ -82,17 +80,12 @@ class KeywordGetItem
         return $this;
     }
 
-    /**
-     * Gets Keyword.
-     */
     public function getKeyword(): ?string
     {
         return $this->Keyword ?? null;
     }
 
     /**
-     * Sets Keyword.
-     *
      * @return $this
      */
     public function setKeyword(?string $value = null)
@@ -102,17 +95,12 @@ class KeywordGetItem
         return $this;
     }
 
-    /**
-     * Gets AdGroupId.
-     */
     public function getAdGroupId(): ?int
     {
         return $this->AdGroupId ?? null;
     }
 
     /**
-     * Sets AdGroupId.
-     *
      * @return $this
      */
     public function setAdGroupId(?int $value = null)
@@ -122,17 +110,12 @@ class KeywordGetItem
         return $this;
     }
 
-    /**
-     * Gets CampaignId.
-     */
     public function getCampaignId(): ?int
     {
         return $this->CampaignId ?? null;
     }
 
     /**
-     * Sets CampaignId.
-     *
      * @return $this
      */
     public function setCampaignId(?int $value = null)
@@ -142,17 +125,12 @@ class KeywordGetItem
         return $this;
     }
 
-    /**
-     * Gets Bid.
-     */
     public function getBid(): ?int
     {
         return $this->Bid ?? null;
     }
 
     /**
-     * Sets Bid.
-     *
      * @return $this
      */
     public function setBid(?int $value = null)
@@ -162,17 +140,12 @@ class KeywordGetItem
         return $this;
     }
 
-    /**
-     * Gets ContextBid.
-     */
     public function getContextBid(): ?int
     {
         return $this->ContextBid ?? null;
     }
 
     /**
-     * Sets ContextBid.
-     *
      * @return $this
      */
     public function setContextBid(?int $value = null)
@@ -183,8 +156,6 @@ class KeywordGetItem
     }
 
     /**
-     * Gets StrategyPriority.
-     *
      * @see PriorityEnum
      */
     public function getStrategyPriority(): ?string
@@ -193,8 +164,6 @@ class KeywordGetItem
     }
 
     /**
-     * Sets StrategyPriority.
-     *
      * @see PriorityEnum
      *
      * @return $this
@@ -207,8 +176,6 @@ class KeywordGetItem
     }
 
     /**
-     * Gets State.
-     *
      * @see StateEnum
      */
     public function getState(): ?string
@@ -217,8 +184,6 @@ class KeywordGetItem
     }
 
     /**
-     * Sets State.
-     *
      * @see StateEnum
      *
      * @return $this
@@ -231,8 +196,6 @@ class KeywordGetItem
     }
 
     /**
-     * Gets Status.
-     *
      * @see StatusEnum
      */
     public function getStatus(): ?string
@@ -241,8 +204,6 @@ class KeywordGetItem
     }
 
     /**
-     * Sets Status.
-     *
      * @see StatusEnum
      *
      * @return $this
@@ -254,17 +215,12 @@ class KeywordGetItem
         return $this;
     }
 
-    /**
-     * Gets UserParam1.
-     */
     public function getUserParam1(): ?string
     {
         return $this->UserParam1 ?? null;
     }
 
     /**
-     * Sets UserParam1.
-     *
      * @return $this
      */
     public function setUserParam1(?string $value = null)
@@ -274,17 +230,12 @@ class KeywordGetItem
         return $this;
     }
 
-    /**
-     * Gets UserParam2.
-     */
     public function getUserParam2(): ?string
     {
         return $this->UserParam2 ?? null;
     }
 
     /**
-     * Sets UserParam2.
-     *
      * @return $this
      */
     public function setUserParam2(?string $value = null)
@@ -294,17 +245,12 @@ class KeywordGetItem
         return $this;
     }
 
-    /**
-     * Gets Productivity.
-     */
     public function getProductivity(): ?KeywordProductivity
     {
         return $this->Productivity ?? null;
     }
 
     /**
-     * Sets Productivity.
-     *
      * @return $this
      */
     public function setProductivity(?KeywordProductivity $value = null)
@@ -314,17 +260,12 @@ class KeywordGetItem
         return $this;
     }
 
-    /**
-     * Gets StatisticsSearch.
-     */
     public function getStatisticsSearch(): ?Statistics
     {
         return $this->StatisticsSearch ?? null;
     }
 
     /**
-     * Sets StatisticsSearch.
-     *
      * @return $this
      */
     public function setStatisticsSearch(?Statistics $value = null)
@@ -334,17 +275,12 @@ class KeywordGetItem
         return $this;
     }
 
-    /**
-     * Gets StatisticsNetwork.
-     */
     public function getStatisticsNetwork(): ?Statistics
     {
         return $this->StatisticsNetwork ?? null;
     }
 
     /**
-     * Sets StatisticsNetwork.
-     *
      * @return $this
      */
     public function setStatisticsNetwork(?Statistics $value = null)
@@ -355,8 +291,6 @@ class KeywordGetItem
     }
 
     /**
-     * Gets ServingStatus.
-     *
      * @see ServingStatusEnum
      */
     public function getServingStatus(): ?string
@@ -365,8 +299,6 @@ class KeywordGetItem
     }
 
     /**
-     * Sets ServingStatus.
-     *
      * @see ServingStatusEnum
      *
      * @return $this
@@ -374,6 +306,21 @@ class KeywordGetItem
     public function setServingStatus(?string $value = null)
     {
         $this->ServingStatus = $value;
+
+        return $this;
+    }
+
+    public function getAutotargetingCategories(): ?AutotargetingCategoryArray
+    {
+        return $this->AutotargetingCategories ?? null;
+    }
+
+    /**
+     * @return $this
+     */
+    public function setAutotargetingCategories(?AutotargetingCategoryArray $value = null)
+    {
+        $this->AutotargetingCategories = $value;
 
         return $this;
     }

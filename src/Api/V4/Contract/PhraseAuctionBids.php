@@ -16,24 +16,19 @@ class PhraseAuctionBids
     protected $Price = null;
 
     /**
-     * Creates a new instance of PhraseAuctionBids.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Position.
-     */
     public function getPosition(): ?string
     {
         return $this->Position;
     }
 
     /**
-     * Sets Position.
-     *
      * @return $this
      */
     public function setPosition(?string $value = null)
@@ -43,17 +38,12 @@ class PhraseAuctionBids
         return $this;
     }
 
-    /**
-     * Gets Bid.
-     */
     public function getBid(): ?float
     {
         return $this->Bid;
     }
 
     /**
-     * Sets Bid.
-     *
      * @return $this
      */
     public function setBid(?float $value = null)
@@ -63,17 +53,12 @@ class PhraseAuctionBids
         return $this;
     }
 
-    /**
-     * Gets Price.
-     */
     public function getPrice(): ?float
     {
         return $this->Price;
     }
 
     /**
-     * Sets Price.
-     *
      * @return $this
      */
     public function setPrice(?float $value = null)

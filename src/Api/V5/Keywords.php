@@ -5,6 +5,18 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5;
 
 use Biplane\YandexDirect\Api\ApiSoapClientV5;
+use Biplane\YandexDirect\Api\V5\Contract\AddKeywordsRequest;
+use Biplane\YandexDirect\Api\V5\Contract\AddKeywordsResponse;
+use Biplane\YandexDirect\Api\V5\Contract\DeleteKeywordsRequest;
+use Biplane\YandexDirect\Api\V5\Contract\DeleteKeywordsResponse;
+use Biplane\YandexDirect\Api\V5\Contract\GetKeywordsRequest;
+use Biplane\YandexDirect\Api\V5\Contract\GetKeywordsResponse;
+use Biplane\YandexDirect\Api\V5\Contract\ResumeKeywordsRequest;
+use Biplane\YandexDirect\Api\V5\Contract\ResumeKeywordsResponse;
+use Biplane\YandexDirect\Api\V5\Contract\SuspendKeywordsRequest;
+use Biplane\YandexDirect\Api\V5\Contract\SuspendKeywordsResponse;
+use Biplane\YandexDirect\Api\V5\Contract\UpdateKeywordsRequest;
+use Biplane\YandexDirect\Api\V5\Contract\UpdateKeywordsResponse;
 use Biplane\YandexDirect\Config;
 
 /**
@@ -14,6 +26,9 @@ class Keywords extends ApiSoapClientV5
 {
     public const ENDPOINT = 'https://api.direct.yandex.com/v5/keywords?wsdl';
 
+    /**
+     * @param array<string, mixed> $options
+     */
     public function __construct(Config $config, array $options)
     {
         $options['classmap'] = [
@@ -59,11 +74,14 @@ class Keywords extends ApiSoapClientV5
             'KeywordFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\KeywordFieldEnum',
             'KeywordStateSelectionEnum' => 'Biplane\YandexDirect\Api\V5\Contract\KeywordStateSelectionEnum',
             'KeywordStatusSelectionEnum' => 'Biplane\YandexDirect\Api\V5\Contract\KeywordStatusSelectionEnum',
+            'AutotargetingCategoriesEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategoriesEnum',
             'KeywordsSelectionCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\KeywordsSelectionCriteria',
             'KeywordAddItem' => 'Biplane\YandexDirect\Api\V5\Contract\KeywordAddItem',
             'KeywordProductivity' => 'Biplane\YandexDirect\Api\V5\Contract\KeywordProductivity',
             'KeywordGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\KeywordGetItem',
             'KeywordUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\KeywordUpdateItem',
+            'AutotargetingCategory' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategory',
+            'AutotargetingCategoryArray' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategoryArray',
             'AddRequest' => 'Biplane\YandexDirect\Api\V5\Contract\AddKeywordsRequest',
             'AddResponse' => 'Biplane\YandexDirect\Api\V5\Contract\AddKeywordsResponse',
             'GetRequest' => 'Biplane\YandexDirect\Api\V5\Contract\GetKeywordsRequest',
@@ -81,50 +99,32 @@ class Keywords extends ApiSoapClientV5
         parent::__construct(self::ENDPOINT, $config, $options);
     }
 
-    /**
-     * add.
-     */
-    public function add(Contract\AddKeywordsRequest $parameters): Contract\AddKeywordsResponse
+    public function add(AddKeywordsRequest $parameters): AddKeywordsResponse
     {
         return $this->__soapCall('add', [$parameters]);
     }
 
-    /**
-     * get.
-     */
-    public function get(Contract\GetKeywordsRequest $parameters): Contract\GetKeywordsResponse
+    public function get(GetKeywordsRequest $parameters): GetKeywordsResponse
     {
         return $this->__soapCall('get', [$parameters]);
     }
 
-    /**
-     * update.
-     */
-    public function update(Contract\UpdateKeywordsRequest $parameters): Contract\UpdateKeywordsResponse
+    public function update(UpdateKeywordsRequest $parameters): UpdateKeywordsResponse
     {
         return $this->__soapCall('update', [$parameters]);
     }
 
-    /**
-     * delete.
-     */
-    public function delete(Contract\DeleteKeywordsRequest $parameters): Contract\DeleteKeywordsResponse
+    public function delete(DeleteKeywordsRequest $parameters): DeleteKeywordsResponse
     {
         return $this->__soapCall('delete', [$parameters]);
     }
 
-    /**
-     * suspend.
-     */
-    public function suspend(Contract\SuspendKeywordsRequest $parameters): Contract\SuspendKeywordsResponse
+    public function suspend(SuspendKeywordsRequest $parameters): SuspendKeywordsResponse
     {
         return $this->__soapCall('suspend', [$parameters]);
     }
 
-    /**
-     * resume.
-     */
-    public function resume(Contract\ResumeKeywordsRequest $parameters): Contract\ResumeKeywordsResponse
+    public function resume(ResumeKeywordsRequest $parameters): ResumeKeywordsResponse
     {
         return $this->__soapCall('resume', [$parameters]);
     }

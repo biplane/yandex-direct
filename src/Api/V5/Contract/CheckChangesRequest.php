@@ -9,13 +9,13 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class CheckChangesRequest
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $CampaignIds = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AdGroupIds = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AdIds = null;
 
     protected $Timestamp = null;
@@ -23,16 +23,14 @@ class CheckChangesRequest
     protected $FieldNames = [];
 
     /**
-     * Creates a new instance of CheckChangesRequest.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets CampaignIds.
-     *
      * @return int[]|null
      */
     public function getCampaignIds(): ?array
@@ -41,8 +39,6 @@ class CheckChangesRequest
     }
 
     /**
-     * Sets CampaignIds.
-     *
      * @param int[]|null $value
      *
      * @return $this
@@ -55,8 +51,6 @@ class CheckChangesRequest
     }
 
     /**
-     * Gets AdGroupIds.
-     *
      * @return int[]|null
      */
     public function getAdGroupIds(): ?array
@@ -65,8 +59,6 @@ class CheckChangesRequest
     }
 
     /**
-     * Sets AdGroupIds.
-     *
      * @param int[]|null $value
      *
      * @return $this
@@ -79,8 +71,6 @@ class CheckChangesRequest
     }
 
     /**
-     * Gets AdIds.
-     *
      * @return int[]|null
      */
     public function getAdIds(): ?array
@@ -89,8 +79,6 @@ class CheckChangesRequest
     }
 
     /**
-     * Sets AdIds.
-     *
      * @param int[]|null $value
      *
      * @return $this
@@ -102,17 +90,12 @@ class CheckChangesRequest
         return $this;
     }
 
-    /**
-     * Gets Timestamp.
-     */
     public function getTimestamp(): string
     {
         return $this->Timestamp;
     }
 
     /**
-     * Sets Timestamp.
-     *
      * @return $this
      */
     public function setTimestamp(string $value)
@@ -123,8 +106,6 @@ class CheckChangesRequest
     }
 
     /**
-     * Gets FieldNames.
-     *
      * @see CheckFieldEnum
      *
      * @return string[]
@@ -135,8 +116,6 @@ class CheckChangesRequest
     }
 
     /**
-     * Sets FieldNames.
-     *
      * @see CheckFieldEnum
      *
      * @param string[] $value

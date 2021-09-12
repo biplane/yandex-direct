@@ -9,34 +9,21 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class TextImageAdGet extends ImageAdGetBase
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Href = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $TurboPageId = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $TurboPageModeration = null;
 
-    /**
-     * Creates a new instance of TextImageAdGet.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
-
-    /**
-     * Gets Href.
-     */
     public function getHref(): ?string
     {
         return $this->Href ?? null;
     }
 
     /**
-     * Sets Href.
-     *
      * @return $this
      */
     public function setHref(?string $value = null)
@@ -46,17 +33,12 @@ class TextImageAdGet extends ImageAdGetBase
         return $this;
     }
 
-    /**
-     * Gets TurboPageId.
-     */
     public function getTurboPageId(): ?int
     {
         return $this->TurboPageId ?? null;
     }
 
     /**
-     * Sets TurboPageId.
-     *
      * @return $this
      */
     public function setTurboPageId(?int $value = null)
@@ -66,17 +48,12 @@ class TextImageAdGet extends ImageAdGetBase
         return $this;
     }
 
-    /**
-     * Gets TurboPageModeration.
-     */
     public function getTurboPageModeration(): ?ExtensionModeration
     {
         return $this->TurboPageModeration ?? null;
     }
 
     /**
-     * Sets TurboPageModeration.
-     *
      * @return $this
      */
     public function setTurboPageModeration(?ExtensionModeration $value = null)

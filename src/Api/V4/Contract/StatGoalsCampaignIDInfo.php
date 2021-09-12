@@ -14,24 +14,19 @@ class StatGoalsCampaignIDInfo
     protected $CampaignIDS = null;
 
     /**
-     * Creates a new instance of StatGoalsCampaignIDInfo.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets CampaignID.
-     */
     public function getCampaignID(): ?int
     {
         return $this->CampaignID;
     }
 
     /**
-     * Sets CampaignID.
-     *
      * @return $this
      */
     public function setCampaignID(?int $value = null)
@@ -42,8 +37,6 @@ class StatGoalsCampaignIDInfo
     }
 
     /**
-     * Gets CampaignIDS.
-     *
      * @return int[]|null
      */
     public function getCampaignIDS(): ?array
@@ -52,8 +45,6 @@ class StatGoalsCampaignIDInfo
     }
 
     /**
-     * Sets CampaignIDS.
-     *
      * @param int[]|null $value
      *
      * @return $this

@@ -15,31 +15,26 @@ class FeedAddItem
 
     protected $SourceType = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $UrlFeed = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $FileFeed = null;
 
     /**
-     * Creates a new instance of FeedAddItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Name.
-     */
     public function getName(): string
     {
         return $this->Name;
     }
 
     /**
-     * Sets Name.
-     *
      * @return $this
      */
     public function setName(string $value)
@@ -50,8 +45,6 @@ class FeedAddItem
     }
 
     /**
-     * Gets BusinessType.
-     *
      * @see BusinessTypeEnum
      */
     public function getBusinessType(): string
@@ -60,8 +53,6 @@ class FeedAddItem
     }
 
     /**
-     * Sets BusinessType.
-     *
      * @see BusinessTypeEnum
      *
      * @return $this
@@ -74,8 +65,6 @@ class FeedAddItem
     }
 
     /**
-     * Gets SourceType.
-     *
      * @see SourceTypeEnum
      */
     public function getSourceType(): string
@@ -84,8 +73,6 @@ class FeedAddItem
     }
 
     /**
-     * Sets SourceType.
-     *
      * @see SourceTypeEnum
      *
      * @return $this
@@ -97,17 +84,12 @@ class FeedAddItem
         return $this;
     }
 
-    /**
-     * Gets UrlFeed.
-     */
     public function getUrlFeed(): ?UrlFeedAdd
     {
         return $this->UrlFeed ?? null;
     }
 
     /**
-     * Sets UrlFeed.
-     *
      * @return $this
      */
     public function setUrlFeed(?UrlFeedAdd $value = null)
@@ -117,17 +99,12 @@ class FeedAddItem
         return $this;
     }
 
-    /**
-     * Gets FileFeed.
-     */
     public function getFileFeed(): ?FileFeedAdd
     {
         return $this->FileFeed ?? null;
     }
 
     /**
-     * Sets FileFeed.
-     *
      * @return $this
      */
     public function setFileFeed(?FileFeedAdd $value = null)

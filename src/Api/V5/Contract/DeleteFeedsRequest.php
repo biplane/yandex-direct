@@ -12,24 +12,19 @@ class DeleteFeedsRequest
     protected $SelectionCriteria = null;
 
     /**
-     * Creates a new instance of DeleteFeedsRequest.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets SelectionCriteria.
-     */
     public function getSelectionCriteria(): FeedsSelectionCriteria
     {
         return $this->SelectionCriteria;
     }
 
     /**
-     * Sets SelectionCriteria.
-     *
      * @return $this
      */
     public function setSelectionCriteria(FeedsSelectionCriteria $value)

@@ -14,24 +14,19 @@ class AdImageAddItem
     protected $Name = null;
 
     /**
-     * Creates a new instance of AdImageAddItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets ImageData.
-     */
     public function getImageData(): string
     {
         return $this->ImageData;
     }
 
     /**
-     * Sets ImageData.
-     *
      * @return $this
      */
     public function setImageData(string $value)
@@ -41,17 +36,12 @@ class AdImageAddItem
         return $this;
     }
 
-    /**
-     * Gets Name.
-     */
     public function getName(): string
     {
         return $this->Name;
     }
 
     /**
-     * Sets Name.
-     *
      * @return $this
      */
     public function setName(string $value)

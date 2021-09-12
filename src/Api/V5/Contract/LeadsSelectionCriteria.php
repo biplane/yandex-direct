@@ -11,23 +11,21 @@ class LeadsSelectionCriteria
 {
     protected $TurboPageIds = [];
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $DateTimeFrom = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $DateTimeTo = null;
 
     /**
-     * Creates a new instance of LeadsSelectionCriteria.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets TurboPageIds.
-     *
      * @return int[]
      */
     public function getTurboPageIds(): array
@@ -36,8 +34,6 @@ class LeadsSelectionCriteria
     }
 
     /**
-     * Sets TurboPageIds.
-     *
      * @param int[] $value
      *
      * @return $this
@@ -49,17 +45,12 @@ class LeadsSelectionCriteria
         return $this;
     }
 
-    /**
-     * Gets DateTimeFrom.
-     */
     public function getDateTimeFrom(): ?string
     {
         return $this->DateTimeFrom ?? null;
     }
 
     /**
-     * Sets DateTimeFrom.
-     *
      * @return $this
      */
     public function setDateTimeFrom(?string $value = null)
@@ -69,17 +60,12 @@ class LeadsSelectionCriteria
         return $this;
     }
 
-    /**
-     * Gets DateTimeTo.
-     */
     public function getDateTimeTo(): ?string
     {
         return $this->DateTimeTo ?? null;
     }
 
     /**
-     * Sets DateTimeTo.
-     *
      * @return $this
      */
     public function setDateTimeTo(?string $value = null)

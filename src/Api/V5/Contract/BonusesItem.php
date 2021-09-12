@@ -14,24 +14,19 @@ class BonusesItem
     protected $AwaitingBonusWithoutNds = null;
 
     /**
-     * Creates a new instance of BonusesItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets AwaitingBonus.
-     */
     public function getAwaitingBonus(): int
     {
         return $this->AwaitingBonus;
     }
 
     /**
-     * Sets AwaitingBonus.
-     *
      * @return $this
      */
     public function setAwaitingBonus(int $value)
@@ -41,17 +36,12 @@ class BonusesItem
         return $this;
     }
 
-    /**
-     * Gets AwaitingBonusWithoutNds.
-     */
     public function getAwaitingBonusWithoutNds(): int
     {
         return $this->AwaitingBonusWithoutNds;
     }
 
     /**
-     * Sets AwaitingBonusWithoutNds.
-     *
      * @return $this
      */
     public function setAwaitingBonusWithoutNds(int $value)

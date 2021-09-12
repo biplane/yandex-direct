@@ -12,24 +12,19 @@ class RetargetingRequestOptions
     protected $Currency = null;
 
     /**
-     * Creates a new instance of RetargetingRequestOptions.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Currency.
-     */
     public function getCurrency(): ?string
     {
         return $this->Currency;
     }
 
     /**
-     * Sets Currency.
-     *
      * @return $this
      */
     public function setCurrency(?string $value = null)

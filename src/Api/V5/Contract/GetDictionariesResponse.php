@@ -9,59 +9,57 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class GetDictionariesResponse
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Currencies = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $MetroStations = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $GeoRegions = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $TimeZones = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Constants = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AdCategories = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $OperationSystemVersions = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $ProductivityAssertions = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $SupplySidePlatforms = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Interests = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AudienceCriteriaTypes = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AudienceDemographicProfiles = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AudienceInterests = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $FilterSchemas = null;
 
     /**
-     * Creates a new instance of GetDictionariesResponse.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Currencies.
-     *
      * @return CurrenciesItem[]|null
      */
     public function getCurrencies(): ?array
@@ -70,8 +68,6 @@ class GetDictionariesResponse
     }
 
     /**
-     * Sets Currencies.
-     *
      * @param CurrenciesItem[]|null $value
      *
      * @return $this
@@ -84,8 +80,6 @@ class GetDictionariesResponse
     }
 
     /**
-     * Gets MetroStations.
-     *
      * @return MetroStationsItem[]|null
      */
     public function getMetroStations(): ?array
@@ -94,8 +88,6 @@ class GetDictionariesResponse
     }
 
     /**
-     * Sets MetroStations.
-     *
      * @param MetroStationsItem[]|null $value
      *
      * @return $this
@@ -108,8 +100,6 @@ class GetDictionariesResponse
     }
 
     /**
-     * Gets GeoRegions.
-     *
      * @return GeoRegionsItem[]|null
      */
     public function getGeoRegions(): ?array
@@ -118,8 +108,6 @@ class GetDictionariesResponse
     }
 
     /**
-     * Sets GeoRegions.
-     *
      * @param GeoRegionsItem[]|null $value
      *
      * @return $this
@@ -132,8 +120,6 @@ class GetDictionariesResponse
     }
 
     /**
-     * Gets TimeZones.
-     *
      * @return TimeZonesItem[]|null
      */
     public function getTimeZones(): ?array
@@ -142,8 +128,6 @@ class GetDictionariesResponse
     }
 
     /**
-     * Sets TimeZones.
-     *
      * @param TimeZonesItem[]|null $value
      *
      * @return $this
@@ -156,8 +140,6 @@ class GetDictionariesResponse
     }
 
     /**
-     * Gets Constants.
-     *
      * @return ConstantsItem[]|null
      */
     public function getConstants(): ?array
@@ -166,8 +148,6 @@ class GetDictionariesResponse
     }
 
     /**
-     * Sets Constants.
-     *
      * @param ConstantsItem[]|null $value
      *
      * @return $this
@@ -180,8 +160,6 @@ class GetDictionariesResponse
     }
 
     /**
-     * Gets AdCategories.
-     *
      * @return AdCategoriesItem[]|null
      */
     public function getAdCategories(): ?array
@@ -190,8 +168,6 @@ class GetDictionariesResponse
     }
 
     /**
-     * Sets AdCategories.
-     *
      * @param AdCategoriesItem[]|null $value
      *
      * @return $this
@@ -204,8 +180,6 @@ class GetDictionariesResponse
     }
 
     /**
-     * Gets OperationSystemVersions.
-     *
      * @return OperationSystemVersionsItem[]|null
      */
     public function getOperationSystemVersions(): ?array
@@ -214,8 +188,6 @@ class GetDictionariesResponse
     }
 
     /**
-     * Sets OperationSystemVersions.
-     *
      * @param OperationSystemVersionsItem[]|null $value
      *
      * @return $this
@@ -228,8 +200,6 @@ class GetDictionariesResponse
     }
 
     /**
-     * Gets ProductivityAssertions.
-     *
      * @return ProductivityAssertionsItem[]|null
      */
     public function getProductivityAssertions(): ?array
@@ -238,8 +208,6 @@ class GetDictionariesResponse
     }
 
     /**
-     * Sets ProductivityAssertions.
-     *
      * @param ProductivityAssertionsItem[]|null $value
      *
      * @return $this
@@ -252,8 +220,6 @@ class GetDictionariesResponse
     }
 
     /**
-     * Gets SupplySidePlatforms.
-     *
      * @return SupplySidePlatformsItem[]|null
      */
     public function getSupplySidePlatforms(): ?array
@@ -262,8 +228,6 @@ class GetDictionariesResponse
     }
 
     /**
-     * Sets SupplySidePlatforms.
-     *
      * @param SupplySidePlatformsItem[]|null $value
      *
      * @return $this
@@ -276,8 +240,6 @@ class GetDictionariesResponse
     }
 
     /**
-     * Gets Interests.
-     *
      * @return InterestsItem[]|null
      */
     public function getInterests(): ?array
@@ -286,8 +248,6 @@ class GetDictionariesResponse
     }
 
     /**
-     * Sets Interests.
-     *
      * @param InterestsItem[]|null $value
      *
      * @return $this
@@ -300,8 +260,6 @@ class GetDictionariesResponse
     }
 
     /**
-     * Gets AudienceCriteriaTypes.
-     *
      * @return AudienceCriteriaTypesItem[]|null
      */
     public function getAudienceCriteriaTypes(): ?array
@@ -310,8 +268,6 @@ class GetDictionariesResponse
     }
 
     /**
-     * Sets AudienceCriteriaTypes.
-     *
      * @param AudienceCriteriaTypesItem[]|null $value
      *
      * @return $this
@@ -324,8 +280,6 @@ class GetDictionariesResponse
     }
 
     /**
-     * Gets AudienceDemographicProfiles.
-     *
      * @return AudienceDemographicProfilesItem[]|null
      */
     public function getAudienceDemographicProfiles(): ?array
@@ -334,8 +288,6 @@ class GetDictionariesResponse
     }
 
     /**
-     * Sets AudienceDemographicProfiles.
-     *
      * @param AudienceDemographicProfilesItem[]|null $value
      *
      * @return $this
@@ -348,8 +300,6 @@ class GetDictionariesResponse
     }
 
     /**
-     * Gets AudienceInterests.
-     *
      * @return AudienceInterestsItem[]|null
      */
     public function getAudienceInterests(): ?array
@@ -358,8 +308,6 @@ class GetDictionariesResponse
     }
 
     /**
-     * Sets AudienceInterests.
-     *
      * @param AudienceInterestsItem[]|null $value
      *
      * @return $this
@@ -372,8 +320,6 @@ class GetDictionariesResponse
     }
 
     /**
-     * Gets FilterSchemas.
-     *
      * @return FilterSchemasItem[]|null
      */
     public function getFilterSchemas(): ?array
@@ -382,8 +328,6 @@ class GetDictionariesResponse
     }
 
     /**
-     * Sets FilterSchemas.
-     *
      * @param FilterSchemasItem[]|null $value
      *
      * @return $this

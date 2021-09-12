@@ -18,24 +18,19 @@ class GeoRegionsItem
     protected $ParentId = null;
 
     /**
-     * Creates a new instance of GeoRegionsItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets GeoRegionId.
-     */
     public function getGeoRegionId(): int
     {
         return $this->GeoRegionId;
     }
 
     /**
-     * Sets GeoRegionId.
-     *
      * @return $this
      */
     public function setGeoRegionId(int $value)
@@ -45,17 +40,12 @@ class GeoRegionsItem
         return $this;
     }
 
-    /**
-     * Gets GeoRegionName.
-     */
     public function getGeoRegionName(): string
     {
         return $this->GeoRegionName;
     }
 
     /**
-     * Sets GeoRegionName.
-     *
      * @return $this
      */
     public function setGeoRegionName(string $value)
@@ -65,17 +55,12 @@ class GeoRegionsItem
         return $this;
     }
 
-    /**
-     * Gets GeoRegionType.
-     */
     public function getGeoRegionType(): string
     {
         return $this->GeoRegionType;
     }
 
     /**
-     * Sets GeoRegionType.
-     *
      * @return $this
      */
     public function setGeoRegionType(string $value)
@@ -85,17 +70,12 @@ class GeoRegionsItem
         return $this;
     }
 
-    /**
-     * Gets ParentId.
-     */
     public function getParentId(): ?int
     {
         return $this->ParentId;
     }
 
     /**
-     * Sets ParentId.
-     *
      * @return $this
      */
     public function setParentId(?int $value = null)

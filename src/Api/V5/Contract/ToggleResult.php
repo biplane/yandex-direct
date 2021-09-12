@@ -9,34 +9,21 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class ToggleResult extends ActionResultBase
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $CampaignId = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AdGroupId = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Type = null;
 
-    /**
-     * Creates a new instance of ToggleResult.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
-
-    /**
-     * Gets CampaignId.
-     */
     public function getCampaignId(): ?int
     {
         return $this->CampaignId ?? null;
     }
 
     /**
-     * Sets CampaignId.
-     *
      * @return $this
      */
     public function setCampaignId(?int $value = null)
@@ -46,17 +33,12 @@ class ToggleResult extends ActionResultBase
         return $this;
     }
 
-    /**
-     * Gets AdGroupId.
-     */
     public function getAdGroupId(): ?int
     {
         return $this->AdGroupId ?? null;
     }
 
     /**
-     * Sets AdGroupId.
-     *
      * @return $this
      */
     public function setAdGroupId(?int $value = null)
@@ -67,8 +49,6 @@ class ToggleResult extends ActionResultBase
     }
 
     /**
-     * Gets Type.
-     *
      * @see BidModifierToggleTypeEnum
      */
     public function getType(): ?string
@@ -77,8 +57,6 @@ class ToggleResult extends ActionResultBase
     }
 
     /**
-     * Sets Type.
-     *
      * @see BidModifierToggleTypeEnum
      *
      * @return $this

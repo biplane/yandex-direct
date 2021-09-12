@@ -11,23 +11,21 @@ class FundsParam
 {
     protected $Mode = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $CampaignFunds = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $SharedAccountFunds = null;
 
     /**
-     * Creates a new instance of FundsParam.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Mode.
-     *
      * @see CampaignFundsEnum
      */
     public function getMode(): string
@@ -36,8 +34,6 @@ class FundsParam
     }
 
     /**
-     * Sets Mode.
-     *
      * @see CampaignFundsEnum
      *
      * @return $this
@@ -49,17 +45,12 @@ class FundsParam
         return $this;
     }
 
-    /**
-     * Gets CampaignFunds.
-     */
     public function getCampaignFunds(): ?CampaignFundsParam
     {
         return $this->CampaignFunds ?? null;
     }
 
     /**
-     * Sets CampaignFunds.
-     *
      * @return $this
      */
     public function setCampaignFunds(?CampaignFundsParam $value = null)
@@ -69,17 +60,12 @@ class FundsParam
         return $this;
     }
 
-    /**
-     * Gets SharedAccountFunds.
-     */
     public function getSharedAccountFunds(): ?SharedAccountFundsParam
     {
         return $this->SharedAccountFunds ?? null;
     }
 
     /**
-     * Sets SharedAccountFunds.
-     *
      * @return $this
      */
     public function setSharedAccountFunds(?SharedAccountFundsParam $value = null)

@@ -16,16 +16,14 @@ class AdImageAssociationResponse
     protected $TotalObjectsCount = null;
 
     /**
-     * Creates a new instance of AdImageAssociationResponse.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets ActionsResult.
-     *
      * @return AdImageAssociationActionResult[]|null
      */
     public function getActionsResult(): ?array
@@ -34,8 +32,6 @@ class AdImageAssociationResponse
     }
 
     /**
-     * Sets ActionsResult.
-     *
      * @param AdImageAssociationActionResult[]|null $value
      *
      * @return $this
@@ -48,8 +44,6 @@ class AdImageAssociationResponse
     }
 
     /**
-     * Gets AdImageAssociations.
-     *
      * @return AdImageAssociation[]|null
      */
     public function getAdImageAssociations(): ?array
@@ -58,8 +52,6 @@ class AdImageAssociationResponse
     }
 
     /**
-     * Sets AdImageAssociations.
-     *
      * @param AdImageAssociation[]|null $value
      *
      * @return $this
@@ -71,17 +63,12 @@ class AdImageAssociationResponse
         return $this;
     }
 
-    /**
-     * Gets TotalObjectsCount.
-     */
     public function getTotalObjectsCount(): ?int
     {
         return $this->TotalObjectsCount;
     }
 
     /**
-     * Sets TotalObjectsCount.
-     *
      * @return $this
      */
     public function setTotalObjectsCount(?int $value = null)

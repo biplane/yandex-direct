@@ -16,24 +16,19 @@ class CreditLimitsItem
     protected $LimitSpent = null;
 
     /**
-     * Creates a new instance of CreditLimitsItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets ContractID.
-     */
     public function getContractID(): string
     {
         return $this->ContractID;
     }
 
     /**
-     * Sets ContractID.
-     *
      * @return $this
      */
     public function setContractID(string $value)
@@ -43,17 +38,12 @@ class CreditLimitsItem
         return $this;
     }
 
-    /**
-     * Gets Limit.
-     */
     public function getLimit(): float
     {
         return $this->Limit;
     }
 
     /**
-     * Sets Limit.
-     *
      * @return $this
      */
     public function setLimit(float $value)
@@ -63,17 +53,12 @@ class CreditLimitsItem
         return $this;
     }
 
-    /**
-     * Gets LimitSpent.
-     */
     public function getLimitSpent(): float
     {
         return $this->LimitSpent;
     }
 
     /**
-     * Sets LimitSpent.
-     *
      * @return $this
      */
     public function setLimitSpent(float $value)

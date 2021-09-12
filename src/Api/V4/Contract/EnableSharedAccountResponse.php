@@ -16,16 +16,14 @@ class EnableSharedAccountResponse
     protected $AccountID = null;
 
     /**
-     * Creates a new instance of EnableSharedAccountResponse.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Errors.
-     *
      * @return Error[]|null
      */
     public function getErrors(): ?array
@@ -34,8 +32,6 @@ class EnableSharedAccountResponse
     }
 
     /**
-     * Sets Errors.
-     *
      * @param Error[]|null $value
      *
      * @return $this
@@ -47,17 +43,12 @@ class EnableSharedAccountResponse
         return $this;
     }
 
-    /**
-     * Gets Login.
-     */
     public function getLogin(): ?string
     {
         return $this->Login;
     }
 
     /**
-     * Sets Login.
-     *
      * @return $this
      */
     public function setLogin(?string $value = null)
@@ -67,17 +58,12 @@ class EnableSharedAccountResponse
         return $this;
     }
 
-    /**
-     * Gets AccountID.
-     */
     public function getAccountID(): ?int
     {
         return $this->AccountID;
     }
 
     /**
-     * Sets AccountID.
-     *
      * @return $this
      */
     public function setAccountID(?int $value = null)

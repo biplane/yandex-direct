@@ -24,24 +24,19 @@ class RetargetingCondition
     protected $RetargetingCondition = null;
 
     /**
-     * Creates a new instance of RetargetingCondition.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets IsAccessible.
-     */
     public function getIsAccessible(): ?string
     {
         return $this->IsAccessible;
     }
 
     /**
-     * Sets IsAccessible.
-     *
      * @return $this
      */
     public function setIsAccessible(?string $value = null)
@@ -52,8 +47,6 @@ class RetargetingCondition
     }
 
     /**
-     * Gets Fields.
-     *
      * @return string[]|null
      */
     public function getFields(): ?array
@@ -62,8 +55,6 @@ class RetargetingCondition
     }
 
     /**
-     * Sets Fields.
-     *
      * @param string[]|null $value
      *
      * @return $this
@@ -75,17 +66,12 @@ class RetargetingCondition
         return $this;
     }
 
-    /**
-     * Gets RetargetingConditionName.
-     */
     public function getRetargetingConditionName(): ?string
     {
         return $this->RetargetingConditionName;
     }
 
     /**
-     * Sets RetargetingConditionName.
-     *
      * @return $this
      */
     public function setRetargetingConditionName(?string $value = null)
@@ -95,17 +81,12 @@ class RetargetingCondition
         return $this;
     }
 
-    /**
-     * Gets RetargetingConditionDescription.
-     */
     public function getRetargetingConditionDescription(): ?string
     {
         return $this->RetargetingConditionDescription;
     }
 
     /**
-     * Sets RetargetingConditionDescription.
-     *
      * @return $this
      */
     public function setRetargetingConditionDescription(?string $value = null)
@@ -115,17 +96,12 @@ class RetargetingCondition
         return $this;
     }
 
-    /**
-     * Gets Login.
-     */
     public function getLogin(): ?string
     {
         return $this->Login;
     }
 
     /**
-     * Sets Login.
-     *
      * @return $this
      */
     public function setLogin(?string $value = null)
@@ -135,17 +111,12 @@ class RetargetingCondition
         return $this;
     }
 
-    /**
-     * Gets RetargetingConditionID.
-     */
     public function getRetargetingConditionID(): ?int
     {
         return $this->RetargetingConditionID;
     }
 
     /**
-     * Sets RetargetingConditionID.
-     *
      * @return $this
      */
     public function setRetargetingConditionID(?int $value = null)
@@ -156,8 +127,6 @@ class RetargetingCondition
     }
 
     /**
-     * Gets RetargetingCondition.
-     *
      * @return RetargetingConditionItem[]|null
      */
     public function getRetargetingCondition(): ?array
@@ -166,8 +135,6 @@ class RetargetingCondition
     }
 
     /**
-     * Sets RetargetingCondition.
-     *
      * @param RetargetingConditionItem[]|null $value
      *
      * @return $this

@@ -14,16 +14,14 @@ class AccountSelectionCriteria
     protected $AccountIDS = null;
 
     /**
-     * Creates a new instance of AccountSelectionCriteria.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Logins.
-     *
      * @return string[]|null
      */
     public function getLogins(): ?array
@@ -32,8 +30,6 @@ class AccountSelectionCriteria
     }
 
     /**
-     * Sets Logins.
-     *
      * @param string[]|null $value
      *
      * @return $this
@@ -46,8 +42,6 @@ class AccountSelectionCriteria
     }
 
     /**
-     * Gets AccountIDS.
-     *
      * @return int[]|null
      */
     public function getAccountIDS(): ?array
@@ -56,8 +50,6 @@ class AccountSelectionCriteria
     }
 
     /**
-     * Sets AccountIDS.
-     *
      * @param int[]|null $value
      *
      * @return $this

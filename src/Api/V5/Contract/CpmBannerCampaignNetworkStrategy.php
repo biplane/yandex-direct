@@ -11,35 +11,33 @@ class CpmBannerCampaignNetworkStrategy
 {
     protected $BiddingStrategyType = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $WbMaximumImpressions = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $CpMaximumImpressions = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $WbDecreasedPriceForRepeatedImpressions = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $CpDecreasedPriceForRepeatedImpressions = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $WbAverageCpv = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $CpAverageCpv = null;
 
     /**
-     * Creates a new instance of CpmBannerCampaignNetworkStrategy.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets BiddingStrategyType.
-     *
      * @see CpmBannerCampaignNetworkStrategyTypeEnum
      */
     public function getBiddingStrategyType(): string
@@ -48,8 +46,6 @@ class CpmBannerCampaignNetworkStrategy
     }
 
     /**
-     * Sets BiddingStrategyType.
-     *
      * @see CpmBannerCampaignNetworkStrategyTypeEnum
      *
      * @return $this
@@ -61,17 +57,12 @@ class CpmBannerCampaignNetworkStrategy
         return $this;
     }
 
-    /**
-     * Gets WbMaximumImpressions.
-     */
     public function getWbMaximumImpressions(): ?StrategyWbMaximumImpressions
     {
         return $this->WbMaximumImpressions ?? null;
     }
 
     /**
-     * Sets WbMaximumImpressions.
-     *
      * @return $this
      */
     public function setWbMaximumImpressions(?StrategyWbMaximumImpressions $value = null)
@@ -81,17 +72,12 @@ class CpmBannerCampaignNetworkStrategy
         return $this;
     }
 
-    /**
-     * Gets CpMaximumImpressions.
-     */
     public function getCpMaximumImpressions(): ?StrategyCpMaximumImpressions
     {
         return $this->CpMaximumImpressions ?? null;
     }
 
     /**
-     * Sets CpMaximumImpressions.
-     *
      * @return $this
      */
     public function setCpMaximumImpressions(?StrategyCpMaximumImpressions $value = null)
@@ -101,17 +87,12 @@ class CpmBannerCampaignNetworkStrategy
         return $this;
     }
 
-    /**
-     * Gets WbDecreasedPriceForRepeatedImpressions.
-     */
     public function getWbDecreasedPriceForRepeatedImpressions(): ?StrategyWbDecreasedPriceForRepeatedImpressions
     {
         return $this->WbDecreasedPriceForRepeatedImpressions ?? null;
     }
 
     /**
-     * Sets WbDecreasedPriceForRepeatedImpressions.
-     *
      * @return $this
      */
     public function setWbDecreasedPriceForRepeatedImpressions(?StrategyWbDecreasedPriceForRepeatedImpressions $value = null)
@@ -121,17 +102,12 @@ class CpmBannerCampaignNetworkStrategy
         return $this;
     }
 
-    /**
-     * Gets CpDecreasedPriceForRepeatedImpressions.
-     */
     public function getCpDecreasedPriceForRepeatedImpressions(): ?StrategyCpDecreasedPriceForRepeatedImpressions
     {
         return $this->CpDecreasedPriceForRepeatedImpressions ?? null;
     }
 
     /**
-     * Sets CpDecreasedPriceForRepeatedImpressions.
-     *
      * @return $this
      */
     public function setCpDecreasedPriceForRepeatedImpressions(?StrategyCpDecreasedPriceForRepeatedImpressions $value = null)
@@ -141,17 +117,12 @@ class CpmBannerCampaignNetworkStrategy
         return $this;
     }
 
-    /**
-     * Gets WbAverageCpv.
-     */
     public function getWbAverageCpv(): ?StrategyWbAverageCpv
     {
         return $this->WbAverageCpv ?? null;
     }
 
     /**
-     * Sets WbAverageCpv.
-     *
      * @return $this
      */
     public function setWbAverageCpv(?StrategyWbAverageCpv $value = null)
@@ -161,17 +132,12 @@ class CpmBannerCampaignNetworkStrategy
         return $this;
     }
 
-    /**
-     * Gets CpAverageCpv.
-     */
     public function getCpAverageCpv(): ?StrategyCpAverageCpv
     {
         return $this->CpAverageCpv ?? null;
     }
 
     /**
-     * Sets CpAverageCpv.
-     *
      * @return $this
      */
     public function setCpAverageCpv(?StrategyCpAverageCpv $value = null)

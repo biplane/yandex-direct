@@ -20,24 +20,19 @@ class CreateNewSubclientRequest
     protected $Currency = null;
 
     /**
-     * Creates a new instance of CreateNewSubclientRequest.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Login.
-     */
     public function getLogin(): string
     {
         return $this->Login;
     }
 
     /**
-     * Sets Login.
-     *
      * @return $this
      */
     public function setLogin(string $value)
@@ -47,17 +42,12 @@ class CreateNewSubclientRequest
         return $this;
     }
 
-    /**
-     * Gets AgencyLogin.
-     */
     public function getAgencyLogin(): ?string
     {
         return $this->AgencyLogin;
     }
 
     /**
-     * Sets AgencyLogin.
-     *
      * @return $this
      */
     public function setAgencyLogin(?string $value = null)
@@ -67,17 +57,12 @@ class CreateNewSubclientRequest
         return $this;
     }
 
-    /**
-     * Gets Name.
-     */
     public function getName(): ?string
     {
         return $this->Name;
     }
 
     /**
-     * Sets Name.
-     *
      * @return $this
      */
     public function setName(?string $value = null)
@@ -87,17 +72,12 @@ class CreateNewSubclientRequest
         return $this;
     }
 
-    /**
-     * Gets Surname.
-     */
     public function getSurname(): ?string
     {
         return $this->Surname;
     }
 
     /**
-     * Sets Surname.
-     *
      * @return $this
      */
     public function setSurname(?string $value = null)
@@ -107,17 +87,12 @@ class CreateNewSubclientRequest
         return $this;
     }
 
-    /**
-     * Gets Currency.
-     */
     public function getCurrency(): ?string
     {
         return $this->Currency;
     }
 
     /**
-     * Sets Currency.
-     *
      * @return $this
      */
     public function setCurrency(?string $value = null)

@@ -9,23 +9,21 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class SearchPrices
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Position = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Price = null;
 
     /**
-     * Creates a new instance of SearchPrices.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Position.
-     *
      * @see PositionEnum
      */
     public function getPosition(): ?string
@@ -34,8 +32,6 @@ class SearchPrices
     }
 
     /**
-     * Sets Position.
-     *
      * @see PositionEnum
      *
      * @return $this
@@ -47,17 +43,12 @@ class SearchPrices
         return $this;
     }
 
-    /**
-     * Gets Price.
-     */
     public function getPrice(): ?int
     {
         return $this->Price ?? null;
     }
 
     /**
-     * Sets Price.
-     *
      * @return $this
      */
     public function setPrice(?int $value = null)

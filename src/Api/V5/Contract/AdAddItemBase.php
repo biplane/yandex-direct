@@ -12,24 +12,19 @@ class AdAddItemBase
     protected $AdGroupId = null;
 
     /**
-     * Creates a new instance of AdAddItemBase.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets AdGroupId.
-     */
     public function getAdGroupId(): int
     {
         return $this->AdGroupId;
     }
 
     /**
-     * Sets AdGroupId.
-     *
      * @return $this
      */
     public function setAdGroupId(int $value)

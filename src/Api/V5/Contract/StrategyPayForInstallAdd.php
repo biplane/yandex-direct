@@ -11,28 +11,23 @@ class StrategyPayForInstallAdd
 {
     protected $AverageCpi = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $WeeklySpendLimit = null;
 
     /**
-     * Creates a new instance of StrategyPayForInstallAdd.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets AverageCpi.
-     */
     public function getAverageCpi(): int
     {
         return $this->AverageCpi;
     }
 
     /**
-     * Sets AverageCpi.
-     *
      * @return $this
      */
     public function setAverageCpi(int $value)
@@ -42,17 +37,12 @@ class StrategyPayForInstallAdd
         return $this;
     }
 
-    /**
-     * Gets WeeklySpendLimit.
-     */
     public function getWeeklySpendLimit(): ?int
     {
         return $this->WeeklySpendLimit ?? null;
     }
 
     /**
-     * Sets WeeklySpendLimit.
-     *
      * @return $this
      */
     public function setWeeklySpendLimit(?int $value = null)

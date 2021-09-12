@@ -20,24 +20,19 @@ class RetargetingGoal
     protected $Type = null;
 
     /**
-     * Creates a new instance of RetargetingGoal.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets GoalID.
-     */
     public function getGoalID(): int
     {
         return $this->GoalID;
     }
 
     /**
-     * Sets GoalID.
-     *
      * @return $this
      */
     public function setGoalID(int $value)
@@ -47,17 +42,12 @@ class RetargetingGoal
         return $this;
     }
 
-    /**
-     * Gets Name.
-     */
     public function getName(): string
     {
         return $this->Name;
     }
 
     /**
-     * Sets Name.
-     *
      * @return $this
      */
     public function setName(string $value)
@@ -67,17 +57,12 @@ class RetargetingGoal
         return $this;
     }
 
-    /**
-     * Gets GoalDomain.
-     */
     public function getGoalDomain(): string
     {
         return $this->GoalDomain;
     }
 
     /**
-     * Sets GoalDomain.
-     *
      * @return $this
      */
     public function setGoalDomain(string $value)
@@ -87,17 +72,12 @@ class RetargetingGoal
         return $this;
     }
 
-    /**
-     * Gets Login.
-     */
     public function getLogin(): string
     {
         return $this->Login;
     }
 
     /**
-     * Sets Login.
-     *
      * @return $this
      */
     public function setLogin(string $value)
@@ -107,17 +87,12 @@ class RetargetingGoal
         return $this;
     }
 
-    /**
-     * Gets Type.
-     */
     public function getType(): string
     {
         return $this->Type;
     }
 
     /**
-     * Sets Type.
-     *
      * @return $this
      */
     public function setType(string $value)

@@ -13,37 +13,24 @@ class GetAdGroupsRequest extends GetRequestGeneral
 
     protected $FieldNames = [];
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $MobileAppAdGroupFieldNames = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $DynamicTextAdGroupFieldNames = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $DynamicTextFeedAdGroupFieldNames = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $SmartAdGroupFieldNames = null;
 
-    /**
-     * Creates a new instance of GetAdGroupsRequest.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
-
-    /**
-     * Gets SelectionCriteria.
-     */
     public function getSelectionCriteria(): AdGroupsSelectionCriteria
     {
         return $this->SelectionCriteria;
     }
 
     /**
-     * Sets SelectionCriteria.
-     *
      * @return $this
      */
     public function setSelectionCriteria(AdGroupsSelectionCriteria $value)
@@ -54,8 +41,6 @@ class GetAdGroupsRequest extends GetRequestGeneral
     }
 
     /**
-     * Gets FieldNames.
-     *
      * @see AdGroupFieldEnum
      *
      * @return string[]
@@ -66,8 +51,6 @@ class GetAdGroupsRequest extends GetRequestGeneral
     }
 
     /**
-     * Sets FieldNames.
-     *
      * @see AdGroupFieldEnum
      *
      * @param string[] $value
@@ -82,8 +65,6 @@ class GetAdGroupsRequest extends GetRequestGeneral
     }
 
     /**
-     * Gets MobileAppAdGroupFieldNames.
-     *
      * @see MobileAppAdGroupFieldEnum
      *
      * @return string[]|null
@@ -94,8 +75,6 @@ class GetAdGroupsRequest extends GetRequestGeneral
     }
 
     /**
-     * Sets MobileAppAdGroupFieldNames.
-     *
      * @see MobileAppAdGroupFieldEnum
      *
      * @param string[]|null $value
@@ -110,8 +89,6 @@ class GetAdGroupsRequest extends GetRequestGeneral
     }
 
     /**
-     * Gets DynamicTextAdGroupFieldNames.
-     *
      * @see DynamicTextAdGroupFieldEnum
      *
      * @return string[]|null
@@ -122,8 +99,6 @@ class GetAdGroupsRequest extends GetRequestGeneral
     }
 
     /**
-     * Sets DynamicTextAdGroupFieldNames.
-     *
      * @see DynamicTextAdGroupFieldEnum
      *
      * @param string[]|null $value
@@ -138,8 +113,6 @@ class GetAdGroupsRequest extends GetRequestGeneral
     }
 
     /**
-     * Gets DynamicTextFeedAdGroupFieldNames.
-     *
      * @see DynamicTextFeedAdGroupFieldEnum
      *
      * @return string[]|null
@@ -150,8 +123,6 @@ class GetAdGroupsRequest extends GetRequestGeneral
     }
 
     /**
-     * Sets DynamicTextFeedAdGroupFieldNames.
-     *
      * @see DynamicTextFeedAdGroupFieldEnum
      *
      * @param string[]|null $value
@@ -166,8 +137,6 @@ class GetAdGroupsRequest extends GetRequestGeneral
     }
 
     /**
-     * Gets SmartAdGroupFieldNames.
-     *
      * @see SmartAdGroupFieldEnum
      *
      * @return string[]|null
@@ -178,8 +147,6 @@ class GetAdGroupsRequest extends GetRequestGeneral
     }
 
     /**
-     * Sets SmartAdGroupFieldNames.
-     *
      * @see SmartAdGroupFieldEnum
      *
      * @param string[]|null $value

@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5;
 
 use Biplane\YandexDirect\Api\ApiSoapClientV5;
+use Biplane\YandexDirect\Api\V5\Contract\GetTurboPagesRequest;
+use Biplane\YandexDirect\Api\V5\Contract\GetTurboPagesResponse;
 use Biplane\YandexDirect\Config;
 
 /**
@@ -14,6 +16,9 @@ class TurboPages extends ApiSoapClientV5
 {
     public const ENDPOINT = 'https://api.direct.yandex.com/v5/turbopages?wsdl';
 
+    /**
+     * @param array<string, mixed> $options
+     */
     public function __construct(Config $config, array $options)
     {
         $options['classmap'] = [
@@ -66,10 +71,7 @@ class TurboPages extends ApiSoapClientV5
         parent::__construct(self::ENDPOINT, $config, $options);
     }
 
-    /**
-     * get.
-     */
-    public function get(Contract\GetTurboPagesRequest $parameters): Contract\GetTurboPagesResponse
+    public function get(GetTurboPagesRequest $parameters): GetTurboPagesResponse
     {
         return $this->__soapCall('get', [$parameters]);
     }

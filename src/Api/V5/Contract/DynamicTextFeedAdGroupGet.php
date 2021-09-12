@@ -9,11 +9,4 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class DynamicTextFeedAdGroupGet extends DynamicSourceGet
 {
-    /**
-     * Creates a new instance of DynamicTextFeedAdGroupGet.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
 }

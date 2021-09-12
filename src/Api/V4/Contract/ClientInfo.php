@@ -56,24 +56,19 @@ class ClientInfo
     protected $SharedAccountEnabled = null;
 
     /**
-     * Creates a new instance of ClientInfo.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Phone.
-     */
     public function getPhone(): ?string
     {
         return $this->Phone;
     }
 
     /**
-     * Sets Phone.
-     *
      * @return $this
      */
     public function setPhone(?string $value = null)
@@ -83,17 +78,12 @@ class ClientInfo
         return $this;
     }
 
-    /**
-     * Gets DateCreate.
-     */
     public function getDateCreate(): ?string
     {
         return $this->DateCreate;
     }
 
     /**
-     * Sets DateCreate.
-     *
      * @return $this
      */
     public function setDateCreate(?string $value = null)
@@ -103,17 +93,12 @@ class ClientInfo
         return $this;
     }
 
-    /**
-     * Gets FIO.
-     */
     public function getFIO(): string
     {
         return $this->FIO;
     }
 
     /**
-     * Sets FIO.
-     *
      * @return $this
      */
     public function setFIO(string $value)
@@ -123,17 +108,12 @@ class ClientInfo
         return $this;
     }
 
-    /**
-     * Gets Email.
-     */
     public function getEmail(): string
     {
         return $this->Email;
     }
 
     /**
-     * Sets Email.
-     *
      * @return $this
      */
     public function setEmail(string $value)
@@ -143,17 +123,12 @@ class ClientInfo
         return $this;
     }
 
-    /**
-     * Gets Login.
-     */
     public function getLogin(): string
     {
         return $this->Login;
     }
 
     /**
-     * Sets Login.
-     *
      * @return $this
      */
     public function setLogin(string $value)
@@ -163,17 +138,12 @@ class ClientInfo
         return $this;
     }
 
-    /**
-     * Gets StatusArch.
-     */
     public function getStatusArch(): ?string
     {
         return $this->StatusArch;
     }
 
     /**
-     * Sets StatusArch.
-     *
      * @return $this
      */
     public function setStatusArch(?string $value = null)
@@ -183,17 +153,12 @@ class ClientInfo
         return $this;
     }
 
-    /**
-     * Gets Discount.
-     */
     public function getDiscount(): ?float
     {
         return $this->Discount;
     }
 
     /**
-     * Sets Discount.
-     *
      * @return $this
      */
     public function setDiscount(?float $value = null)
@@ -203,17 +168,12 @@ class ClientInfo
         return $this;
     }
 
-    /**
-     * Gets OverdraftSumAvailable.
-     */
     public function getOverdraftSumAvailable(): ?float
     {
         return $this->OverdraftSumAvailable;
     }
 
     /**
-     * Sets OverdraftSumAvailable.
-     *
      * @return $this
      */
     public function setOverdraftSumAvailable(?float $value = null)
@@ -223,17 +183,12 @@ class ClientInfo
         return $this;
     }
 
-    /**
-     * Gets OverdraftSumAvailableInCurrency.
-     */
     public function getOverdraftSumAvailableInCurrency(): ?float
     {
         return $this->OverdraftSumAvailableInCurrency;
     }
 
     /**
-     * Sets OverdraftSumAvailableInCurrency.
-     *
      * @return $this
      */
     public function setOverdraftSumAvailableInCurrency(?float $value = null)
@@ -243,17 +198,12 @@ class ClientInfo
         return $this;
     }
 
-    /**
-     * Gets Currency.
-     */
     public function getCurrency(): ?string
     {
         return $this->Currency;
     }
 
     /**
-     * Sets Currency.
-     *
      * @return $this
      */
     public function setCurrency(?string $value = null)
@@ -263,17 +213,12 @@ class ClientInfo
         return $this;
     }
 
-    /**
-     * Gets VATRate.
-     */
     public function getVATRate(): ?float
     {
         return $this->VATRate;
     }
 
     /**
-     * Sets VATRate.
-     *
      * @return $this
      */
     public function setVATRate(?float $value = null)
@@ -284,8 +229,6 @@ class ClientInfo
     }
 
     /**
-     * Gets ClientCurrencies.
-     *
      * @return string[]|null
      */
     public function getClientCurrencies(): ?array
@@ -294,8 +237,6 @@ class ClientInfo
     }
 
     /**
-     * Sets ClientCurrencies.
-     *
      * @param string[]|null $value
      *
      * @return $this
@@ -307,17 +248,12 @@ class ClientInfo
         return $this;
     }
 
-    /**
-     * Gets DisplayStoreRating.
-     */
     public function getDisplayStoreRating(): ?string
     {
         return $this->DisplayStoreRating;
     }
 
     /**
-     * Sets DisplayStoreRating.
-     *
      * @return $this
      */
     public function setDisplayStoreRating(?string $value = null)
@@ -327,17 +263,12 @@ class ClientInfo
         return $this;
     }
 
-    /**
-     * Gets SmsPhone.
-     */
     public function getSmsPhone(): ?string
     {
         return $this->SmsPhone;
     }
 
     /**
-     * Sets SmsPhone.
-     *
      * @return $this
      */
     public function setSmsPhone(?string $value = null)
@@ -348,8 +279,6 @@ class ClientInfo
     }
 
     /**
-     * Gets CampaignEmails.
-     *
      * @return string[]|null
      */
     public function getCampaignEmails(): ?array
@@ -358,8 +287,6 @@ class ClientInfo
     }
 
     /**
-     * Sets CampaignEmails.
-     *
      * @param string[]|null $value
      *
      * @return $this
@@ -372,8 +299,6 @@ class ClientInfo
     }
 
     /**
-     * Gets ClientRights.
-     *
      * @return ClientRight[]|null
      */
     public function getClientRights(): ?array
@@ -382,8 +307,6 @@ class ClientInfo
     }
 
     /**
-     * Sets ClientRights.
-     *
      * @param ClientRight[]|null $value
      *
      * @return $this
@@ -395,17 +318,12 @@ class ClientInfo
         return $this;
     }
 
-    /**
-     * Gets Role.
-     */
     public function getRole(): ?string
     {
         return $this->Role;
     }
 
     /**
-     * Sets Role.
-     *
      * @return $this
      */
     public function setRole(?string $value = null)
@@ -415,17 +333,12 @@ class ClientInfo
         return $this;
     }
 
-    /**
-     * Gets NonResident.
-     */
     public function getNonResident(): ?string
     {
         return $this->NonResident;
     }
 
     /**
-     * Sets NonResident.
-     *
      * @return $this
      */
     public function setNonResident(?string $value = null)
@@ -435,17 +348,12 @@ class ClientInfo
         return $this;
     }
 
-    /**
-     * Gets SendNews.
-     */
     public function getSendNews(): ?string
     {
         return $this->SendNews;
     }
 
     /**
-     * Sets SendNews.
-     *
      * @return $this
      */
     public function setSendNews(?string $value = null)
@@ -455,17 +363,12 @@ class ClientInfo
         return $this;
     }
 
-    /**
-     * Gets SendAccNews.
-     */
     public function getSendAccNews(): ?string
     {
         return $this->SendAccNews;
     }
 
     /**
-     * Sets SendAccNews.
-     *
      * @return $this
      */
     public function setSendAccNews(?string $value = null)
@@ -475,17 +378,12 @@ class ClientInfo
         return $this;
     }
 
-    /**
-     * Gets SendWarn.
-     */
     public function getSendWarn(): ?string
     {
         return $this->SendWarn;
     }
 
     /**
-     * Sets SendWarn.
-     *
      * @return $this
      */
     public function setSendWarn(?string $value = null)
@@ -496,8 +394,6 @@ class ClientInfo
     }
 
     /**
-     * Gets ManagersLogins.
-     *
      * @return string[]|null
      */
     public function getManagersLogins(): ?array
@@ -506,8 +402,6 @@ class ClientInfo
     }
 
     /**
-     * Sets ManagersLogins.
-     *
      * @param string[]|null $value
      *
      * @return $this
@@ -519,17 +413,12 @@ class ClientInfo
         return $this;
     }
 
-    /**
-     * Gets SharedAccountEnabled.
-     */
     public function getSharedAccountEnabled(): ?string
     {
         return $this->SharedAccountEnabled;
     }
 
     /**
-     * Sets SharedAccountEnabled.
-     *
      * @return $this
      */
     public function setSharedAccountEnabled(?string $value = null)

@@ -21,58 +21,53 @@ class VCardAddItem
 
     protected $Phone = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Street = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $House = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Building = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Apartment = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $InstantMessenger = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $ExtraMessage = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $ContactEmail = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Ogrn = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $MetroStationId = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $PointOnMap = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $ContactPerson = null;
 
     /**
-     * Creates a new instance of VCardAddItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets CampaignId.
-     */
     public function getCampaignId(): int
     {
         return $this->CampaignId;
     }
 
     /**
-     * Sets CampaignId.
-     *
      * @return $this
      */
     public function setCampaignId(int $value)
@@ -82,17 +77,12 @@ class VCardAddItem
         return $this;
     }
 
-    /**
-     * Gets Country.
-     */
     public function getCountry(): string
     {
         return $this->Country;
     }
 
     /**
-     * Sets Country.
-     *
      * @return $this
      */
     public function setCountry(string $value)
@@ -102,17 +92,12 @@ class VCardAddItem
         return $this;
     }
 
-    /**
-     * Gets City.
-     */
     public function getCity(): string
     {
         return $this->City;
     }
 
     /**
-     * Sets City.
-     *
      * @return $this
      */
     public function setCity(string $value)
@@ -122,17 +107,12 @@ class VCardAddItem
         return $this;
     }
 
-    /**
-     * Gets CompanyName.
-     */
     public function getCompanyName(): string
     {
         return $this->CompanyName;
     }
 
     /**
-     * Sets CompanyName.
-     *
      * @return $this
      */
     public function setCompanyName(string $value)
@@ -142,17 +122,12 @@ class VCardAddItem
         return $this;
     }
 
-    /**
-     * Gets WorkTime.
-     */
     public function getWorkTime(): string
     {
         return $this->WorkTime;
     }
 
     /**
-     * Sets WorkTime.
-     *
      * @return $this
      */
     public function setWorkTime(string $value)
@@ -162,17 +137,12 @@ class VCardAddItem
         return $this;
     }
 
-    /**
-     * Gets Phone.
-     */
     public function getPhone(): Phone
     {
         return $this->Phone;
     }
 
     /**
-     * Sets Phone.
-     *
      * @return $this
      */
     public function setPhone(Phone $value)
@@ -182,17 +152,12 @@ class VCardAddItem
         return $this;
     }
 
-    /**
-     * Gets Street.
-     */
     public function getStreet(): ?string
     {
         return $this->Street ?? null;
     }
 
     /**
-     * Sets Street.
-     *
      * @return $this
      */
     public function setStreet(?string $value = null)
@@ -202,17 +167,12 @@ class VCardAddItem
         return $this;
     }
 
-    /**
-     * Gets House.
-     */
     public function getHouse(): ?string
     {
         return $this->House ?? null;
     }
 
     /**
-     * Sets House.
-     *
      * @return $this
      */
     public function setHouse(?string $value = null)
@@ -222,17 +182,12 @@ class VCardAddItem
         return $this;
     }
 
-    /**
-     * Gets Building.
-     */
     public function getBuilding(): ?string
     {
         return $this->Building ?? null;
     }
 
     /**
-     * Sets Building.
-     *
      * @return $this
      */
     public function setBuilding(?string $value = null)
@@ -242,17 +197,12 @@ class VCardAddItem
         return $this;
     }
 
-    /**
-     * Gets Apartment.
-     */
     public function getApartment(): ?string
     {
         return $this->Apartment ?? null;
     }
 
     /**
-     * Sets Apartment.
-     *
      * @return $this
      */
     public function setApartment(?string $value = null)
@@ -262,17 +212,12 @@ class VCardAddItem
         return $this;
     }
 
-    /**
-     * Gets InstantMessenger.
-     */
     public function getInstantMessenger(): ?InstantMessenger
     {
         return $this->InstantMessenger ?? null;
     }
 
     /**
-     * Sets InstantMessenger.
-     *
      * @return $this
      */
     public function setInstantMessenger(?InstantMessenger $value = null)
@@ -282,17 +227,12 @@ class VCardAddItem
         return $this;
     }
 
-    /**
-     * Gets ExtraMessage.
-     */
     public function getExtraMessage(): ?string
     {
         return $this->ExtraMessage ?? null;
     }
 
     /**
-     * Sets ExtraMessage.
-     *
      * @return $this
      */
     public function setExtraMessage(?string $value = null)
@@ -302,17 +242,12 @@ class VCardAddItem
         return $this;
     }
 
-    /**
-     * Gets ContactEmail.
-     */
     public function getContactEmail(): ?string
     {
         return $this->ContactEmail ?? null;
     }
 
     /**
-     * Sets ContactEmail.
-     *
      * @return $this
      */
     public function setContactEmail(?string $value = null)
@@ -322,17 +257,12 @@ class VCardAddItem
         return $this;
     }
 
-    /**
-     * Gets Ogrn.
-     */
     public function getOgrn(): ?string
     {
         return $this->Ogrn ?? null;
     }
 
     /**
-     * Sets Ogrn.
-     *
      * @return $this
      */
     public function setOgrn(?string $value = null)
@@ -342,17 +272,12 @@ class VCardAddItem
         return $this;
     }
 
-    /**
-     * Gets MetroStationId.
-     */
     public function getMetroStationId(): ?int
     {
         return $this->MetroStationId ?? null;
     }
 
     /**
-     * Sets MetroStationId.
-     *
      * @return $this
      */
     public function setMetroStationId(?int $value = null)
@@ -362,17 +287,12 @@ class VCardAddItem
         return $this;
     }
 
-    /**
-     * Gets PointOnMap.
-     */
     public function getPointOnMap(): ?MapPoint
     {
         return $this->PointOnMap ?? null;
     }
 
     /**
-     * Sets PointOnMap.
-     *
      * @return $this
      */
     public function setPointOnMap(?MapPoint $value = null)
@@ -382,17 +302,12 @@ class VCardAddItem
         return $this;
     }
 
-    /**
-     * Gets ContactPerson.
-     */
     public function getContactPerson(): ?string
     {
         return $this->ContactPerson ?? null;
     }
 
     /**
-     * Sets ContactPerson.
-     *
      * @return $this
      */
     public function setContactPerson(?string $value = null)

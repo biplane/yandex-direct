@@ -14,16 +14,14 @@ class RetargetingListRuleItem
     protected $Operator = null;
 
     /**
-     * Creates a new instance of RetargetingListRuleItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Arguments.
-     *
      * @return RetargetingListRuleArgumentItem[]
      */
     public function getArguments(): array
@@ -32,8 +30,6 @@ class RetargetingListRuleItem
     }
 
     /**
-     * Sets Arguments.
-     *
      * @param RetargetingListRuleArgumentItem[] $value
      *
      * @return $this
@@ -46,8 +42,6 @@ class RetargetingListRuleItem
     }
 
     /**
-     * Gets Operator.
-     *
      * @see RetargetingListRuleOperatorEnum
      */
     public function getOperator(): string
@@ -56,8 +50,6 @@ class RetargetingListRuleItem
     }
 
     /**
-     * Sets Operator.
-     *
      * @see RetargetingListRuleOperatorEnum
      *
      * @return $this

@@ -14,16 +14,14 @@ class EmailSubscriptionItem
     protected $Value = null;
 
     /**
-     * Creates a new instance of EmailSubscriptionItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Option.
-     *
      * @see EmailSubscriptionEnum
      */
     public function getOption(): string
@@ -32,8 +30,6 @@ class EmailSubscriptionItem
     }
 
     /**
-     * Sets Option.
-     *
      * @see EmailSubscriptionEnum
      *
      * @return $this
@@ -46,8 +42,6 @@ class EmailSubscriptionItem
     }
 
     /**
-     * Gets Value.
-     *
      * @see YesNoEnum
      */
     public function getValue(): string
@@ -56,8 +50,6 @@ class EmailSubscriptionItem
     }
 
     /**
-     * Sets Value.
-     *
      * @see YesNoEnum
      *
      * @return $this

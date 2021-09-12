@@ -9,20 +9,18 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class AuctionBids
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $AuctionBidItems = null;
 
     /**
-     * Creates a new instance of AuctionBids.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets AuctionBidItems.
-     *
      * @return AuctionBidItem[]|null
      */
     public function getAuctionBidItems(): ?array
@@ -31,8 +29,6 @@ class AuctionBids
     }
 
     /**
-     * Sets AuctionBidItems.
-     *
      * @param AuctionBidItem[]|null $value
      *
      * @return $this

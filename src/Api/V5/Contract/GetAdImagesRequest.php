@@ -9,30 +9,17 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class GetAdImagesRequest extends GetRequestGeneral
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $SelectionCriteria = null;
 
     protected $FieldNames = [];
 
-    /**
-     * Creates a new instance of GetAdImagesRequest.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
-
-    /**
-     * Gets SelectionCriteria.
-     */
     public function getSelectionCriteria(): ?AdImageSelectionCriteria
     {
         return $this->SelectionCriteria ?? null;
     }
 
     /**
-     * Sets SelectionCriteria.
-     *
      * @return $this
      */
     public function setSelectionCriteria(?AdImageSelectionCriteria $value = null)
@@ -43,8 +30,6 @@ class GetAdImagesRequest extends GetRequestGeneral
     }
 
     /**
-     * Gets FieldNames.
-     *
      * @see AdImageFieldEnum
      *
      * @return string[]
@@ -55,8 +40,6 @@ class GetAdImagesRequest extends GetRequestGeneral
     }
 
     /**
-     * Sets FieldNames.
-     *
      * @see AdImageFieldEnum
      *
      * @param string[] $value

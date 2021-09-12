@@ -22,16 +22,14 @@ class AccountActionResult
     protected $Status = null;
 
     /**
-     * Creates a new instance of AccountActionResult.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Errors.
-     *
      * @return Error[]|null
      */
     public function getErrors(): ?array
@@ -40,8 +38,6 @@ class AccountActionResult
     }
 
     /**
-     * Sets Errors.
-     *
      * @param Error[]|null $value
      *
      * @return $this
@@ -53,17 +49,12 @@ class AccountActionResult
         return $this;
     }
 
-    /**
-     * Gets AccountID.
-     */
     public function getAccountID(): ?int
     {
         return $this->AccountID;
     }
 
     /**
-     * Sets AccountID.
-     *
      * @return $this
      */
     public function setAccountID(?int $value = null)
@@ -73,17 +64,12 @@ class AccountActionResult
         return $this;
     }
 
-    /**
-     * Gets Login.
-     */
     public function getLogin(): ?string
     {
         return $this->Login;
     }
 
     /**
-     * Sets Login.
-     *
      * @return $this
      */
     public function setLogin(?string $value = null)
@@ -93,17 +79,12 @@ class AccountActionResult
         return $this;
     }
 
-    /**
-     * Gets URL.
-     */
     public function getURL(): ?string
     {
         return $this->URL;
     }
 
     /**
-     * Sets URL.
-     *
      * @return $this
      */
     public function setURL(?string $value = null)
@@ -113,17 +94,12 @@ class AccountActionResult
         return $this;
     }
 
-    /**
-     * Gets PurchaseToken.
-     */
     public function getPurchaseToken(): ?string
     {
         return $this->PurchaseToken;
     }
 
     /**
-     * Sets PurchaseToken.
-     *
      * @return $this
      */
     public function setPurchaseToken(?string $value = null)
@@ -133,17 +109,12 @@ class AccountActionResult
         return $this;
     }
 
-    /**
-     * Gets Status.
-     */
     public function getStatus(): ?string
     {
         return $this->Status;
     }
 
     /**
-     * Sets Status.
-     *
      * @return $this
      */
     public function setStatus(?string $value = null)

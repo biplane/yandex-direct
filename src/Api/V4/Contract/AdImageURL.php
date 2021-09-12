@@ -16,24 +16,19 @@ class AdImageURL
     protected $Name = null;
 
     /**
-     * Creates a new instance of AdImageURL.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Login.
-     */
     public function getLogin(): ?string
     {
         return $this->Login;
     }
 
     /**
-     * Sets Login.
-     *
      * @return $this
      */
     public function setLogin(?string $value = null)
@@ -43,17 +38,12 @@ class AdImageURL
         return $this;
     }
 
-    /**
-     * Gets URL.
-     */
     public function getURL(): string
     {
         return $this->URL;
     }
 
     /**
-     * Sets URL.
-     *
      * @return $this
      */
     public function setURL(string $value)
@@ -63,17 +53,12 @@ class AdImageURL
         return $this;
     }
 
-    /**
-     * Gets Name.
-     */
     public function getName(): string
     {
         return $this->Name;
     }
 
     /**
-     * Sets Name.
-     *
      * @return $this
      */
     public function setName(string $value)

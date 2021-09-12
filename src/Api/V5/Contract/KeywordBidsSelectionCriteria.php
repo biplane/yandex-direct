@@ -9,29 +9,27 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class KeywordBidsSelectionCriteria
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $CampaignIds = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AdGroupIds = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $KeywordIds = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $ServingStatuses = null;
 
     /**
-     * Creates a new instance of KeywordBidsSelectionCriteria.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets CampaignIds.
-     *
      * @return int[]|null
      */
     public function getCampaignIds(): ?array
@@ -40,8 +38,6 @@ class KeywordBidsSelectionCriteria
     }
 
     /**
-     * Sets CampaignIds.
-     *
      * @param int[]|null $value
      *
      * @return $this
@@ -54,8 +50,6 @@ class KeywordBidsSelectionCriteria
     }
 
     /**
-     * Gets AdGroupIds.
-     *
      * @return int[]|null
      */
     public function getAdGroupIds(): ?array
@@ -64,8 +58,6 @@ class KeywordBidsSelectionCriteria
     }
 
     /**
-     * Sets AdGroupIds.
-     *
      * @param int[]|null $value
      *
      * @return $this
@@ -78,8 +70,6 @@ class KeywordBidsSelectionCriteria
     }
 
     /**
-     * Gets KeywordIds.
-     *
      * @return int[]|null
      */
     public function getKeywordIds(): ?array
@@ -88,8 +78,6 @@ class KeywordBidsSelectionCriteria
     }
 
     /**
-     * Sets KeywordIds.
-     *
      * @param int[]|null $value
      *
      * @return $this
@@ -102,8 +90,6 @@ class KeywordBidsSelectionCriteria
     }
 
     /**
-     * Gets ServingStatuses.
-     *
      * @see ServingStatusEnum
      *
      * @return string[]|null
@@ -114,8 +100,6 @@ class KeywordBidsSelectionCriteria
     }
 
     /**
-     * Sets ServingStatuses.
-     *
      * @see ServingStatusEnum
      *
      * @param string[]|null $value

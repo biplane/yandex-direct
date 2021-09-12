@@ -18,16 +18,14 @@ class KeywordActionResult
     protected $QualityIndex = null;
 
     /**
-     * Creates a new instance of KeywordActionResult.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Warnings.
-     *
      * @return Warning[]|null
      */
     public function getWarnings(): ?array
@@ -36,8 +34,6 @@ class KeywordActionResult
     }
 
     /**
-     * Sets Warnings.
-     *
      * @param Warning[]|null $value
      *
      * @return $this
@@ -50,8 +46,6 @@ class KeywordActionResult
     }
 
     /**
-     * Gets Errors.
-     *
      * @return Error[]|null
      */
     public function getErrors(): ?array
@@ -60,8 +54,6 @@ class KeywordActionResult
     }
 
     /**
-     * Sets Errors.
-     *
      * @param Error[]|null $value
      *
      * @return $this
@@ -73,17 +65,12 @@ class KeywordActionResult
         return $this;
     }
 
-    /**
-     * Gets KeywordID.
-     */
     public function getKeywordID(): ?int
     {
         return $this->KeywordID;
     }
 
     /**
-     * Sets KeywordID.
-     *
      * @return $this
      */
     public function setKeywordID(?int $value = null)
@@ -93,17 +80,12 @@ class KeywordActionResult
         return $this;
     }
 
-    /**
-     * Gets QualityIndex.
-     */
     public function getQualityIndex(): ?QualityIndex
     {
         return $this->QualityIndex;
     }
 
     /**
-     * Sets QualityIndex.
-     *
      * @return $this
      */
     public function setQualityIndex(?QualityIndex $value = null)

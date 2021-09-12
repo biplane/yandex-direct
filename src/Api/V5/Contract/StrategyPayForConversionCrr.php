@@ -9,34 +9,29 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class StrategyPayForConversionCrr
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Crr = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $GoalId = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $WeeklySpendLimit = null;
 
     /**
-     * Creates a new instance of StrategyPayForConversionCrr.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Crr.
-     */
     public function getCrr(): ?int
     {
         return $this->Crr ?? null;
     }
 
     /**
-     * Sets Crr.
-     *
      * @return $this
      */
     public function setCrr(?int $value = null)
@@ -46,17 +41,12 @@ class StrategyPayForConversionCrr
         return $this;
     }
 
-    /**
-     * Gets GoalId.
-     */
     public function getGoalId(): ?int
     {
         return $this->GoalId ?? null;
     }
 
     /**
-     * Sets GoalId.
-     *
      * @return $this
      */
     public function setGoalId(?int $value = null)
@@ -66,17 +56,12 @@ class StrategyPayForConversionCrr
         return $this;
     }
 
-    /**
-     * Gets WeeklySpendLimit.
-     */
     public function getWeeklySpendLimit(): ?int
     {
         return $this->WeeklySpendLimit ?? null;
     }
 
     /**
-     * Sets WeeklySpendLimit.
-     *
      * @return $this
      */
     public function setWeeklySpendLimit(?int $value = null)

@@ -9,22 +9,20 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class DeduplicateRequest
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $Operation = null;
 
     protected $Keywords = [];
 
     /**
-     * Creates a new instance of DeduplicateRequest.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets Operation.
-     *
      * @see DeduplicateOperationEnum
      *
      * @return string[]|null
@@ -35,8 +33,6 @@ class DeduplicateRequest
     }
 
     /**
-     * Sets Operation.
-     *
      * @see DeduplicateOperationEnum
      *
      * @param string[]|null $value
@@ -51,8 +47,6 @@ class DeduplicateRequest
     }
 
     /**
-     * Gets Keywords.
-     *
      * @return DeduplicateRequestItem[]
      */
     public function getKeywords(): array
@@ -61,8 +55,6 @@ class DeduplicateRequest
     }
 
     /**
-     * Sets Keywords.
-     *
      * @param DeduplicateRequestItem[] $value
      *
      * @return $this

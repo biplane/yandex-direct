@@ -9,61 +9,56 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class BidModifierGetItem
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $CampaignId = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AdGroupId = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Id = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Level = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Type = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $MobileAdjustment = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $DesktopAdjustment = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $DemographicsAdjustment = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $RetargetingAdjustment = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $RegionalAdjustment = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $VideoAdjustment = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $SmartAdAdjustment = null;
 
     /**
-     * Creates a new instance of BidModifierGetItem.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets CampaignId.
-     */
     public function getCampaignId(): ?int
     {
         return $this->CampaignId ?? null;
     }
 
     /**
-     * Sets CampaignId.
-     *
      * @return $this
      */
     public function setCampaignId(?int $value = null)
@@ -73,17 +68,12 @@ class BidModifierGetItem
         return $this;
     }
 
-    /**
-     * Gets AdGroupId.
-     */
     public function getAdGroupId(): ?int
     {
         return $this->AdGroupId ?? null;
     }
 
     /**
-     * Sets AdGroupId.
-     *
      * @return $this
      */
     public function setAdGroupId(?int $value = null)
@@ -93,17 +83,12 @@ class BidModifierGetItem
         return $this;
     }
 
-    /**
-     * Gets Id.
-     */
     public function getId(): ?int
     {
         return $this->Id ?? null;
     }
 
     /**
-     * Sets Id.
-     *
      * @return $this
      */
     public function setId(?int $value = null)
@@ -114,8 +99,6 @@ class BidModifierGetItem
     }
 
     /**
-     * Gets Level.
-     *
      * @see BidModifierLevelEnum
      */
     public function getLevel(): ?string
@@ -124,8 +107,6 @@ class BidModifierGetItem
     }
 
     /**
-     * Sets Level.
-     *
      * @see BidModifierLevelEnum
      *
      * @return $this
@@ -138,8 +119,6 @@ class BidModifierGetItem
     }
 
     /**
-     * Gets Type.
-     *
      * @see BidModifierTypeEnum
      */
     public function getType(): ?string
@@ -148,8 +127,6 @@ class BidModifierGetItem
     }
 
     /**
-     * Sets Type.
-     *
      * @see BidModifierTypeEnum
      *
      * @return $this
@@ -161,17 +138,12 @@ class BidModifierGetItem
         return $this;
     }
 
-    /**
-     * Gets MobileAdjustment.
-     */
     public function getMobileAdjustment(): ?MobileAdjustmentGet
     {
         return $this->MobileAdjustment ?? null;
     }
 
     /**
-     * Sets MobileAdjustment.
-     *
      * @return $this
      */
     public function setMobileAdjustment(?MobileAdjustmentGet $value = null)
@@ -181,17 +153,12 @@ class BidModifierGetItem
         return $this;
     }
 
-    /**
-     * Gets DesktopAdjustment.
-     */
     public function getDesktopAdjustment(): ?DesktopAdjustmentGet
     {
         return $this->DesktopAdjustment ?? null;
     }
 
     /**
-     * Sets DesktopAdjustment.
-     *
      * @return $this
      */
     public function setDesktopAdjustment(?DesktopAdjustmentGet $value = null)
@@ -201,17 +168,12 @@ class BidModifierGetItem
         return $this;
     }
 
-    /**
-     * Gets DemographicsAdjustment.
-     */
     public function getDemographicsAdjustment(): ?DemographicsAdjustmentGet
     {
         return $this->DemographicsAdjustment ?? null;
     }
 
     /**
-     * Sets DemographicsAdjustment.
-     *
      * @return $this
      */
     public function setDemographicsAdjustment(?DemographicsAdjustmentGet $value = null)
@@ -221,17 +183,12 @@ class BidModifierGetItem
         return $this;
     }
 
-    /**
-     * Gets RetargetingAdjustment.
-     */
     public function getRetargetingAdjustment(): ?RetargetingAdjustmentGet
     {
         return $this->RetargetingAdjustment ?? null;
     }
 
     /**
-     * Sets RetargetingAdjustment.
-     *
      * @return $this
      */
     public function setRetargetingAdjustment(?RetargetingAdjustmentGet $value = null)
@@ -241,17 +198,12 @@ class BidModifierGetItem
         return $this;
     }
 
-    /**
-     * Gets RegionalAdjustment.
-     */
     public function getRegionalAdjustment(): ?RegionalAdjustmentGet
     {
         return $this->RegionalAdjustment ?? null;
     }
 
     /**
-     * Sets RegionalAdjustment.
-     *
      * @return $this
      */
     public function setRegionalAdjustment(?RegionalAdjustmentGet $value = null)
@@ -261,17 +213,12 @@ class BidModifierGetItem
         return $this;
     }
 
-    /**
-     * Gets VideoAdjustment.
-     */
     public function getVideoAdjustment(): ?VideoAdjustmentGet
     {
         return $this->VideoAdjustment ?? null;
     }
 
     /**
-     * Sets VideoAdjustment.
-     *
      * @return $this
      */
     public function setVideoAdjustment(?VideoAdjustmentGet $value = null)
@@ -281,17 +228,12 @@ class BidModifierGetItem
         return $this;
     }
 
-    /**
-     * Gets SmartAdAdjustment.
-     */
     public function getSmartAdAdjustment(): ?SmartAdAdjustmentGet
     {
         return $this->SmartAdAdjustment ?? null;
     }
 
     /**
-     * Sets SmartAdAdjustment.
-     *
      * @return $this
      */
     public function setSmartAdAdjustment(?SmartAdAdjustmentGet $value = null)

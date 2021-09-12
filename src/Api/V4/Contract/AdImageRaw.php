@@ -16,24 +16,19 @@ class AdImageRaw
     protected $Name = null;
 
     /**
-     * Creates a new instance of AdImageRaw.
+     * @return static
      */
-    public static function create(): self
+    public static function create()
     {
-        return new self();
+        return new static();
     }
 
-    /**
-     * Gets Login.
-     */
     public function getLogin(): ?string
     {
         return $this->Login;
     }
 
     /**
-     * Sets Login.
-     *
      * @return $this
      */
     public function setLogin(?string $value = null)
@@ -43,17 +38,12 @@ class AdImageRaw
         return $this;
     }
 
-    /**
-     * Gets RawData.
-     */
     public function getRawData(): string
     {
         return $this->RawData;
     }
 
     /**
-     * Sets RawData.
-     *
      * @return $this
      */
     public function setRawData(string $value)
@@ -63,17 +53,12 @@ class AdImageRaw
         return $this;
     }
 
-    /**
-     * Gets Name.
-     */
     public function getName(): string
     {
         return $this->Name;
     }
 
     /**
-     * Sets Name.
-     *
      * @return $this
      */
     public function setName(string $value)

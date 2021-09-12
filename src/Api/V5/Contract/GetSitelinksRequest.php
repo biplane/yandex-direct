@@ -9,34 +9,21 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class GetSitelinksRequest extends GetRequestGeneral
 {
-//    Can be omit.
+//    Can be omitted.
 //    protected $SelectionCriteria = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $FieldNames = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $SitelinkFieldNames = null;
 
-    /**
-     * Creates a new instance of GetSitelinksRequest.
-     */
-    public static function create(): self
-    {
-        return new self();
-    }
-
-    /**
-     * Gets SelectionCriteria.
-     */
     public function getSelectionCriteria(): ?IdsCriteria
     {
         return $this->SelectionCriteria ?? null;
     }
 
     /**
-     * Sets SelectionCriteria.
-     *
      * @return $this
      */
     public function setSelectionCriteria(?IdsCriteria $value = null)
@@ -47,8 +34,6 @@ class GetSitelinksRequest extends GetRequestGeneral
     }
 
     /**
-     * Gets FieldNames.
-     *
      * @see SitelinksSetFieldEnum
      *
      * @return string[]|null
@@ -59,8 +44,6 @@ class GetSitelinksRequest extends GetRequestGeneral
     }
 
     /**
-     * Sets FieldNames.
-     *
      * @see SitelinksSetFieldEnum
      *
      * @param string[]|null $value
@@ -75,8 +58,6 @@ class GetSitelinksRequest extends GetRequestGeneral
     }
 
     /**
-     * Gets SitelinkFieldNames.
-     *
      * @see SitelinkFieldEnum
      *
      * @return string[]|null
@@ -87,8 +68,6 @@ class GetSitelinksRequest extends GetRequestGeneral
     }
 
     /**
-     * Sets SitelinkFieldNames.
-     *
      * @see SitelinkFieldEnum
      *
      * @param string[]|null $value
