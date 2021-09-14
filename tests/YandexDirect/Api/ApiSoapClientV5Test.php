@@ -51,4 +51,22 @@ XML
             throw $e;
         }
     }
+
+    public function testParseUnitsHeader(): void
+    {
+        $config = new Config(['access_token' => '0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f']);
+        $client = $this->createSoapClient(ApiSoapClientV5::class, $config, ['__getLastResponseHeaders']);
+
+        $client->method('__getLastResponseHeaders')->willReturn(
+            "Transfer-Encoding: chunked\r\n" .
+            "Units: 11/99968/100000\r\n" .
+            "Units-Used-Login: agent\r\n"
+        );
+
+        $units = $client->getUnits();
+
+        self::assertSame(11, $units->getSpent());
+        self::assertSame(99968, $units->getRest());
+        self::assertSame(100000, $units->getLimit());
+    }
 }

@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Fixed
+
+* Исправлена ошибка несоответствия типов при разборе заголовка `Units`.
+
 ## 5.0.0-beta3 [commit logs](https://github.com/biplane/yandex-direct/compare/5.0.0-beta2...5.0.0-beta3)
 
 ### Added

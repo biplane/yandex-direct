@@ -73,7 +73,7 @@ class ApiSoapClientV5 extends ApiSoapClient
         $headers = $this->__getLastResponseHeaders();
 
         if ($headers !== '' && preg_match('@^Units: (\d+)/(\d+)/(\d+)@m', $headers, $m)) {
-            return new Units($m[1], $m[2], $m[3]);
+            return new Units((int)$m[1], (int)$m[2], (int)$m[3]);
         }
 
         return new Units(-1, -1, -1);
