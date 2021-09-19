@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Biplane\YandexDirect\Api;
 
-class Units
+final class Units
 {
     /** @var int */
     private $limit;
