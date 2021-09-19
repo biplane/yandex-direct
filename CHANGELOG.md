@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+### Added
+
+* Добавлен класс `SoapOptions`, которые позволяет переопределить
+  некоторые опции (`compression` и `cache_wsdl`) для `SoapClient`.
+
 ### Changed
 
 * Класс `Units` больше не реализует интерфейс `JsonSerializable`.

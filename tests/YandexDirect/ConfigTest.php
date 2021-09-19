@@ -8,6 +8,8 @@ use Biplane\YandexDirect\Config;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\OptionsResolver\Exception\InvalidArgumentException;
 
+use const WSDL_CACHE_MEMORY;
+
 class ConfigTest extends TestCase
 {
     public function testWithDefaults(): void
@@ -25,10 +27,12 @@ class ConfigTest extends TestCase
         self::assertNull($config->getProxyPort());
         self::assertNull($config->getProxyUsername());
         self::assertNull($config->getProxyPassword());
+        self::assertEquals(Config\SoapOptions::default(), $config->getSoapOptions());
     }
 
     public function testWithCustomOptions(): void
     {
+        $soapOptions = Config\SoapOptions::default()->withWsdlCacheType(WSDL_CACHE_MEMORY);
         $config = new Config([
             'access_token' => 'secret',
             'client_login' => 'foo',
@@ -36,6 +40,7 @@ class ConfigTest extends TestCase
             'locale' => 'ru',
             'sandbox' => true,
             'use_operator_units' => true,
+            'soap_options' => $soapOptions,
         ]);
 
         self::assertEquals('secret', $config->getAccessToken());
@@ -44,6 +49,7 @@ class ConfigTest extends TestCase
         self::assertEquals('ru', $config->getLocale(Config::API_4));
         self::assertTrue($config->useSandbox());
         self::assertTrue($config->useOperatorUnits());
+        self::assertEquals($soapOptions, $config->getSoapOptions());
     }
 
     public function testNormalizeClientLogin(): void

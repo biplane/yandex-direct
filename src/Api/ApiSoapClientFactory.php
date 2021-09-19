@@ -122,6 +122,10 @@ final class ApiSoapClientFactory
             $options['stream_context'] = stream_context_create($contextOptions);
         }
 
+        $soapOptions = $config->getSoapOptions();
+        $options['compression'] = $soapOptions->getCompression();
+        $options['cache_wsdl'] = $soapOptions->getWsdlCacheType();
+
         return $options;
     }
 }
