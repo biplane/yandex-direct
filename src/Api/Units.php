@@ -4,9 +4,7 @@ declare(strict_types=1);
 
 namespace Biplane\YandexDirect\Api;
 
-use JsonSerializable;
-
-class Units implements JsonSerializable
+class Units
 {
     /** @var int */
     private $limit;
@@ -51,17 +49,5 @@ class Units implements JsonSerializable
     public function getSpent(): int
     {
         return $this->spent;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function jsonSerialize()
-    {
-        return [
-            'spent' => $this->spent,
-            'rest' => $this->rest,
-            'limit' => $this->limit,
-        ];
     }
 }
