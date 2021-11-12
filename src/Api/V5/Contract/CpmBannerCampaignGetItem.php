@@ -15,6 +15,9 @@ class CpmBannerCampaignGetItem extends CpmBannerCampaignBase
 //    Can be omitted.
 //    protected $Settings = null;
 
+//    Can be omitted.
+//    protected $VideoTarget = null;
+
     public function getBiddingStrategy(): ?CpmBannerCampaignStrategy
     {
         return $this->BiddingStrategy ?? null;
@@ -46,6 +49,26 @@ class CpmBannerCampaignGetItem extends CpmBannerCampaignBase
     public function setSettings(?array $value = null)
     {
         $this->Settings = $value;
+
+        return $this;
+    }
+
+    /**
+     * @see VideoTargetEnum
+     */
+    public function getVideoTarget(): ?string
+    {
+        return $this->VideoTarget ?? null;
+    }
+
+    /**
+     * @see VideoTargetEnum
+     *
+     * @return $this
+     */
+    public function setVideoTarget(?string $value = null)
+    {
+        $this->VideoTarget = $value;
 
         return $this;
     }

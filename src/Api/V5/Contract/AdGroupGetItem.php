@@ -45,6 +45,9 @@ class AdGroupGetItem extends AdGroupBase
 //    Can be omitted.
 //    protected $RestrictedRegionIds = null;
 
+//    Can be omitted.
+//    protected $TextAdGroupFeedParams = null;
+
     public function getId(): ?int
     {
         return $this->Id ?? null;
@@ -246,6 +249,21 @@ class AdGroupGetItem extends AdGroupBase
     public function setRestrictedRegionIds(?array $value = null)
     {
         $this->RestrictedRegionIds = $value;
+
+        return $this;
+    }
+
+    public function getTextAdGroupFeedParams(): ?TextAdGroupFeedParamsGet
+    {
+        return $this->TextAdGroupFeedParams ?? null;
+    }
+
+    /**
+     * @return $this
+     */
+    public function setTextAdGroupFeedParams(?TextAdGroupFeedParamsGet $value = null)
+    {
+        $this->TextAdGroupFeedParams = $value;
 
         return $this;
     }

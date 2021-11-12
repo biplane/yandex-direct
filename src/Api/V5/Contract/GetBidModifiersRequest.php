@@ -34,6 +34,12 @@ class GetBidModifiersRequest extends GetRequestGeneral
 //    Can be omitted.
 //    protected $SmartAdAdjustmentFieldNames = null;
 
+//    Can be omitted.
+//    protected $SerpLayoutAdjustmentFieldNames = null;
+
+//    Can be omitted.
+//    protected $IncomeGradeAdjustmentFieldNames = null;
+
     public function getSelectionCriteria(): BidModifiersSelectionCriteria
     {
         return $this->SelectionCriteria;
@@ -237,6 +243,54 @@ class GetBidModifiersRequest extends GetRequestGeneral
     public function setSmartAdAdjustmentFieldNames(?array $value = null)
     {
         $this->SmartAdAdjustmentFieldNames = $value;
+
+        return $this;
+    }
+
+    /**
+     * @see SerpLayoutAdjustmentFieldEnum
+     *
+     * @return string[]|null
+     */
+    public function getSerpLayoutAdjustmentFieldNames(): ?array
+    {
+        return $this->SerpLayoutAdjustmentFieldNames ?? null;
+    }
+
+    /**
+     * @see SerpLayoutAdjustmentFieldEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
+     */
+    public function setSerpLayoutAdjustmentFieldNames(?array $value = null)
+    {
+        $this->SerpLayoutAdjustmentFieldNames = $value;
+
+        return $this;
+    }
+
+    /**
+     * @see IncomeGradeAdjustmentFieldEnum
+     *
+     * @return string[]|null
+     */
+    public function getIncomeGradeAdjustmentFieldNames(): ?array
+    {
+        return $this->IncomeGradeAdjustmentFieldNames ?? null;
+    }
+
+    /**
+     * @see IncomeGradeAdjustmentFieldEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
+     */
+    public function setIncomeGradeAdjustmentFieldNames(?array $value = null)
+    {
+        $this->IncomeGradeAdjustmentFieldNames = $value;
 
         return $this;
     }

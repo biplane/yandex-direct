@@ -25,6 +25,9 @@ class GetAdGroupsRequest extends GetRequestGeneral
 //    Can be omitted.
 //    protected $SmartAdGroupFieldNames = null;
 
+//    Can be omitted.
+//    protected $TextAdGroupFeedParamsFieldNames = null;
+
     public function getSelectionCriteria(): AdGroupsSelectionCriteria
     {
         return $this->SelectionCriteria;
@@ -156,6 +159,30 @@ class GetAdGroupsRequest extends GetRequestGeneral
     public function setSmartAdGroupFieldNames(?array $value = null)
     {
         $this->SmartAdGroupFieldNames = $value;
+
+        return $this;
+    }
+
+    /**
+     * @see TextAdGroupFeedParamsFieldEnum
+     *
+     * @return string[]|null
+     */
+    public function getTextAdGroupFeedParamsFieldNames(): ?array
+    {
+        return $this->TextAdGroupFeedParamsFieldNames ?? null;
+    }
+
+    /**
+     * @see TextAdGroupFeedParamsFieldEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
+     */
+    public function setTextAdGroupFeedParamsFieldNames(?array $value = null)
+    {
+        $this->TextAdGroupFeedParamsFieldNames = $value;
 
         return $this;
     }

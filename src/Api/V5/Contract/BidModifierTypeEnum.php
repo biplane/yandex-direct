@@ -22,4 +22,8 @@ class BidModifierTypeEnum
     public const VIDEO_ADJUSTMENT = 'VIDEO_ADJUSTMENT';
 
     public const SMART_AD_ADJUSTMENT = 'SMART_AD_ADJUSTMENT';
+
+    public const SERP_LAYOUT_ADJUSTMENT = 'SERP_LAYOUT_ADJUSTMENT';
+
+    public const INCOME_GRADE_ADJUSTMENT = 'INCOME_GRADE_ADJUSTMENT';
 }

@@ -30,6 +30,12 @@ class BidModifierAddItem extends BidModifierAddBase
 //    Can be omitted.
 //    protected $SmartAdAdjustment = null;
 
+//    Can be omitted.
+//    protected $SerpLayoutAdjustments = null;
+
+//    Can be omitted.
+//    protected $IncomeGradeAdjustments = null;
+
     public function getMobileAdjustment(): ?MobileAdjustmentAdd
     {
         return $this->MobileAdjustment ?? null;
@@ -146,6 +152,46 @@ class BidModifierAddItem extends BidModifierAddBase
     public function setSmartAdAdjustment(?SmartAdAdjustmentAdd $value = null)
     {
         $this->SmartAdAdjustment = $value;
+
+        return $this;
+    }
+
+    /**
+     * @return SerpLayoutAdjustmentAdd[]|null
+     */
+    public function getSerpLayoutAdjustments(): ?array
+    {
+        return $this->SerpLayoutAdjustments ?? null;
+    }
+
+    /**
+     * @param SerpLayoutAdjustmentAdd[]|null $value
+     *
+     * @return $this
+     */
+    public function setSerpLayoutAdjustments(?array $value = null)
+    {
+        $this->SerpLayoutAdjustments = $value;
+
+        return $this;
+    }
+
+    /**
+     * @return IncomeGradeAdjustmentAdd[]|null
+     */
+    public function getIncomeGradeAdjustments(): ?array
+    {
+        return $this->IncomeGradeAdjustments ?? null;
+    }
+
+    /**
+     * @param IncomeGradeAdjustmentAdd[]|null $value
+     *
+     * @return $this
+     */
+    public function setIncomeGradeAdjustments(?array $value = null)
+    {
+        $this->IncomeGradeAdjustments = $value;
 
         return $this;
     }
