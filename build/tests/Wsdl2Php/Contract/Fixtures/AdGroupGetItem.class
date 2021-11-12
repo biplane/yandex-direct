@@ -6,46 +6,34 @@ namespace Foo\Api\Contract;
 class AdGroupGetItem extends AdGroupBase
 {
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Id = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Name = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $CampaignId = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Status = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Type = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Subtype = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $MobileAppAdGroup = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $DynamicTextAdGroup = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $DynamicTextFeedAdGroup = null;
 
     /**
-     * Creates a new instance of AdGroupGetItem.
-     *
-     * @return self
-     */
-    public static function create()
-    {
-        return new self();
-    }
-
-    /**
-     * Gets Id.
-     *
      * @return int|null
      */
     public function getId()
@@ -54,8 +42,6 @@ class AdGroupGetItem extends AdGroupBase
     }
 
     /**
-     * Sets Id.
-     *
      * @param int|null $value
      * @return $this
      */
@@ -67,8 +53,6 @@ class AdGroupGetItem extends AdGroupBase
     }
 
     /**
-     * Gets Name.
-     *
      * @return string|null
      */
     public function getName()
@@ -77,8 +61,6 @@ class AdGroupGetItem extends AdGroupBase
     }
 
     /**
-     * Sets Name.
-     *
      * @param string|null $value
      * @return $this
      */
@@ -90,8 +72,6 @@ class AdGroupGetItem extends AdGroupBase
     }
 
     /**
-     * Gets CampaignId.
-     *
      * @return int|null
      */
     public function getCampaignId()
@@ -100,8 +80,6 @@ class AdGroupGetItem extends AdGroupBase
     }
 
     /**
-     * Sets CampaignId.
-     *
      * @param int|null $value
      * @return $this
      */
@@ -113,8 +91,6 @@ class AdGroupGetItem extends AdGroupBase
     }
 
     /**
-     * Gets Status.
-     *
      * @return string|null
      * @see StatusEnum
      */
@@ -124,8 +100,6 @@ class AdGroupGetItem extends AdGroupBase
     }
 
     /**
-     * Sets Status.
-     *
      * @param string|null $value
      * @return $this
      * @see StatusEnum
@@ -138,8 +112,6 @@ class AdGroupGetItem extends AdGroupBase
     }
 
     /**
-     * Gets Type.
-     *
      * @return string|null
      * @see AdGroupTypesEnum
      */
@@ -149,8 +121,6 @@ class AdGroupGetItem extends AdGroupBase
     }
 
     /**
-     * Sets Type.
-     *
      * @param string|null $value
      * @return $this
      * @see AdGroupTypesEnum
@@ -163,8 +133,6 @@ class AdGroupGetItem extends AdGroupBase
     }
 
     /**
-     * Gets Subtype.
-     *
      * @return AdGroupSubtypeEnum|null
      */
     public function getSubtype()
@@ -173,8 +141,6 @@ class AdGroupGetItem extends AdGroupBase
     }
 
     /**
-     * Sets Subtype.
-     *
      * @param AdGroupSubtypeEnum|null $value
      * @return $this
      */
@@ -186,8 +152,6 @@ class AdGroupGetItem extends AdGroupBase
     }
 
     /**
-     * Gets MobileAppAdGroup.
-     *
      * @return \Foo\Api\Contract\MobileAppAdGroupGet|null
      */
     public function getMobileAppAdGroup()
@@ -196,8 +160,6 @@ class AdGroupGetItem extends AdGroupBase
     }
 
     /**
-     * Sets MobileAppAdGroup.
-     *
      * @param \Foo\Api\Contract\MobileAppAdGroupGet|null $value
      * @return $this
      */
@@ -209,8 +171,6 @@ class AdGroupGetItem extends AdGroupBase
     }
 
     /**
-     * Gets DynamicTextAdGroup.
-     *
      * @return DynamicTextAdGroupGet|null
      */
     public function getDynamicTextAdGroup()
@@ -219,8 +179,6 @@ class AdGroupGetItem extends AdGroupBase
     }
 
     /**
-     * Sets DynamicTextAdGroup.
-     *
      * @param DynamicTextAdGroupGet|null $value
      * @return $this
      */
@@ -232,8 +190,6 @@ class AdGroupGetItem extends AdGroupBase
     }
 
     /**
-     * Gets DynamicTextFeedAdGroup.
-     *
      * @return DynamicTextFeedAdGroupGet|null
      */
     public function getDynamicTextFeedAdGroup()
@@ -242,8 +198,6 @@ class AdGroupGetItem extends AdGroupBase
     }
 
     /**
-     * Sets DynamicTextFeedAdGroup.
-     *
      * @param DynamicTextFeedAdGroupGet|null $value
      * @return $this
      */

@@ -6,40 +6,36 @@ namespace Foo\Api\Contract;
 class AdGroupsSelectionCriteria
 {
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $CampaignIds = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Ids = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Types = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Statuses = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $TagIds = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $Tags = null;
 
-//    Can be omit.
+//    Can be omitted.
 //    protected $AppIconStatuses = null;
 
     /**
-     * Creates a new instance of AdGroupsSelectionCriteria.
-     *
-     * @return self
+     * @return static
      */
     public static function create()
     {
-        return new self();
+        return new static();
     }
 
     /**
-     * Gets CampaignIds.
-     *
      * @return int[]|null
      */
     public function getCampaignIds()
@@ -48,8 +44,6 @@ class AdGroupsSelectionCriteria
     }
 
     /**
-     * Sets CampaignIds.
-     *
      * @param int[]|null $value
      * @return $this
      */
@@ -61,8 +55,6 @@ class AdGroupsSelectionCriteria
     }
 
     /**
-     * Gets Ids.
-     *
      * @return int[]|null
      */
     public function getIds()
@@ -71,8 +63,6 @@ class AdGroupsSelectionCriteria
     }
 
     /**
-     * Sets Ids.
-     *
      * @param int[]|null $value
      * @return $this
      */
@@ -84,8 +74,6 @@ class AdGroupsSelectionCriteria
     }
 
     /**
-     * Gets Types.
-     *
      * @return AdGroupTypesEnum[]|null
      */
     public function getTypes()
@@ -94,8 +82,6 @@ class AdGroupsSelectionCriteria
     }
 
     /**
-     * Sets Types.
-     *
      * @param AdGroupTypesEnum[]|null $value
      * @return $this
      */
@@ -107,8 +93,6 @@ class AdGroupsSelectionCriteria
     }
 
     /**
-     * Gets Statuses.
-     *
      * @return AdGroupStatusSelectionEnum[]|null
      */
     public function getStatuses()
@@ -117,8 +101,6 @@ class AdGroupsSelectionCriteria
     }
 
     /**
-     * Sets Statuses.
-     *
      * @param AdGroupStatusSelectionEnum[]|null $value
      * @return $this
      */
@@ -130,8 +112,6 @@ class AdGroupsSelectionCriteria
     }
 
     /**
-     * Gets TagIds.
-     *
      * @return int[]|null
      */
     public function getTagIds()
@@ -140,8 +120,6 @@ class AdGroupsSelectionCriteria
     }
 
     /**
-     * Sets TagIds.
-     *
      * @param int[]|null $value
      * @return $this
      */
@@ -153,8 +131,6 @@ class AdGroupsSelectionCriteria
     }
 
     /**
-     * Gets Tags.
-     *
      * @return string[]|null
      */
     public function getTags()
@@ -163,8 +139,6 @@ class AdGroupsSelectionCriteria
     }
 
     /**
-     * Sets Tags.
-     *
      * @param string[]|null $value
      * @return $this
      */
@@ -176,8 +150,6 @@ class AdGroupsSelectionCriteria
     }
 
     /**
-     * Gets AppIconStatuses.
-     *
      * @return AdGroupAppIconStatusSelectionEnum[]|null
      */
     public function getAppIconStatuses()
@@ -186,8 +158,6 @@ class AdGroupsSelectionCriteria
     }
 
     /**
-     * Sets AppIconStatuses.
-     *
      * @param AdGroupAppIconStatusSelectionEnum[]|null $value
      * @return $this
      */

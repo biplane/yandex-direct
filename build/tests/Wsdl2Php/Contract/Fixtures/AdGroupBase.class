@@ -23,8 +23,6 @@ class AdGroupBase
     }
 
     /**
-     * Gets RegionIds.
-     *
      * @return int[]|null
      */
     public function getRegionIds()
@@ -33,8 +31,6 @@ class AdGroupBase
     }
 
     /**
-     * Sets RegionIds.
-     *
      * @param int[]|null $value
      * @return self
      */
@@ -46,8 +42,6 @@ class AdGroupBase
     }
 
     /**
-     * Gets NegativeKeywords.
-     *
      * @return string[]|null
      */
     public function getNegativeKeywords()
@@ -56,8 +50,6 @@ class AdGroupBase
     }
 
     /**
-     * Sets NegativeKeywords.
-     *
      * @param string[]|null $value
      * @return self
      */
@@ -69,8 +61,6 @@ class AdGroupBase
     }
 
     /**
-     * Gets TrackingParams.
-     *
      * @return string|null
      */
     public function getTrackingParams()
@@ -79,8 +69,6 @@ class AdGroupBase
     }
 
     /**
-     * Sets TrackingParams.
-     *
      * @param string|null $value
      * @return self
      */
