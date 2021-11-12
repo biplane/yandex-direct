@@ -25,7 +25,7 @@
   },
   "require-dev": {
     "doctrine/coding-standard": "^9.0",
-    "php-vcr/php-vcr": "^1.4.5",
+    "php-vcr/php-vcr": "^1.4.5, <1.6",
     "phpstan/phpstan": "0.12.98",
     "phpstan/phpstan-phpunit": "^0.12.21",
     "phpunit/phpunit": "^7.5 || ^9.5",
