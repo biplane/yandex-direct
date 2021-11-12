@@ -8,5 +8,5 @@ parameters:
   paths:
     - src
     - tests
-  excludes_analyse:
+  excludePaths:
     - bin/generate.php
