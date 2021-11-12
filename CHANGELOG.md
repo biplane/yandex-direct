@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 5.0.0-beta4 [commit logs](https://github.com/biplane/yandex-direct/compare/5.0.0-beta3...5.0.0-beta4)
+
 ### Added
 
 * Добавлен класс `SoapOptions`, которые позволяет переопределить
@@ -10,6 +12,7 @@
 ### Changed
 
 * Класс `Units` больше не реализует интерфейс `JsonSerializable`.
+* Обновлены сервисы для совмести с последней версией API 5, включая изменения от 2021-11-01.
 
 ### Fixed
 
