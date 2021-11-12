@@ -22,6 +22,9 @@ class AdGroupUpdateItem extends AdGroupBase
 //    Can be omit.
 //    protected $SmartAdGroup = null;
 
+//    Can be omit.
+//    protected $TextAdGroupFeedParams = null;
+
     /**
      * Creates a new instance of AdGroupUpdateItem.
      *
@@ -143,6 +146,29 @@ class AdGroupUpdateItem extends AdGroupBase
     public function setSmartAdGroup(SmartAdGroupUpdate $value = null)
     {
         $this->SmartAdGroup = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets TextAdGroupFeedParams.
+     *
+     * @return TextAdGroupFeedParamsUpdate|null
+     */
+    public function getTextAdGroupFeedParams()
+    {
+        return isset($this->TextAdGroupFeedParams) ? $this->TextAdGroupFeedParams : null;
+    }
+
+    /**
+     * Sets TextAdGroupFeedParams.
+     *
+     * @param TextAdGroupFeedParamsUpdate|null $value
+     * @return $this
+     */
+    public function setTextAdGroupFeedParams(TextAdGroupFeedParamsUpdate $value = null)
+    {
+        $this->TextAdGroupFeedParams = $value;
 
         return $this;
     }

@@ -53,6 +53,9 @@ class KeywordGetItem
 //    Can be omit.
 //    protected $ServingStatus = null;
 
+//    Can be omit.
+//    protected $AutotargetingCategories = null;
+
     /**
      * Creates a new instance of KeywordGetItem.
      *
@@ -412,6 +415,29 @@ class KeywordGetItem
     public function setServingStatus($value = null)
     {
         $this->ServingStatus = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets AutotargetingCategories.
+     *
+     * @return AutotargetingCategoryArray|null
+     */
+    public function getAutotargetingCategories()
+    {
+        return isset($this->AutotargetingCategories) ? $this->AutotargetingCategories : null;
+    }
+
+    /**
+     * Sets AutotargetingCategories.
+     *
+     * @param AutotargetingCategoryArray|null $value
+     * @return $this
+     */
+    public function setAutotargetingCategories(AutotargetingCategoryArray $value = null)
+    {
+        $this->AutotargetingCategories = $value;
 
         return $this;
     }

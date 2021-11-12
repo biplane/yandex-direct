@@ -19,6 +19,9 @@ class CpmBannerCampaignAddItem
 //    Can be omit.
 //    protected $FrequencyCap = null;
 
+//    Can be omit.
+//    protected $VideoTarget = null;
+
     /**
      * Creates a new instance of CpmBannerCampaignAddItem.
      *
@@ -117,6 +120,31 @@ class CpmBannerCampaignAddItem
     public function setFrequencyCap(FrequencyCapSetting $value = null)
     {
         $this->FrequencyCap = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets VideoTarget.
+     *
+     * @return string|null
+     * @see VideoTargetEnum
+     */
+    public function getVideoTarget()
+    {
+        return isset($this->VideoTarget) ? $this->VideoTarget : null;
+    }
+
+    /**
+     * Sets VideoTarget.
+     *
+     * @param string|null $value
+     * @return $this
+     * @see VideoTargetEnum
+     */
+    public function setVideoTarget($value = null)
+    {
+        $this->VideoTarget = $value;
 
         return $this;
     }

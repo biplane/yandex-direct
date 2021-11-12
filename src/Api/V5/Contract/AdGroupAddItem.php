@@ -44,6 +44,9 @@ class AdGroupAddItem
 //    Can be omit.
 //    protected $SmartAdGroup = null;
 
+//    Can be omit.
+//    protected $TextAdGroupFeedParams = null;
+
     /**
      * Creates a new instance of AdGroupAddItem.
      *
@@ -349,6 +352,29 @@ class AdGroupAddItem
     public function setSmartAdGroup(SmartAdGroupAdd $value = null)
     {
         $this->SmartAdGroup = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets TextAdGroupFeedParams.
+     *
+     * @return TextAdGroupFeedParamsAdd|null
+     */
+    public function getTextAdGroupFeedParams()
+    {
+        return isset($this->TextAdGroupFeedParams) ? $this->TextAdGroupFeedParams : null;
+    }
+
+    /**
+     * Sets TextAdGroupFeedParams.
+     *
+     * @param TextAdGroupFeedParamsAdd|null $value
+     * @return $this
+     */
+    public function setTextAdGroupFeedParams(TextAdGroupFeedParamsAdd $value = null)
+    {
+        $this->TextAdGroupFeedParams = $value;
 
         return $this;
     }

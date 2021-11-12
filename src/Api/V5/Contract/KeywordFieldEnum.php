@@ -38,6 +38,8 @@ class KeywordFieldEnum
 
     const SERVING_STATUS = 'ServingStatus';
 
+    const AUTOTARGETING_CATEGORIES = 'AutotargetingCategories';
+
 
 }
 

@@ -12,6 +12,8 @@ class CpmBannerCampaignFieldEnum
 
     const FREQUENCY_CAP = 'FrequencyCap';
 
+    const VIDEO_TARGET = 'VideoTarget';
+
     const SETTINGS = 'Settings';
 
     const BIDDING_STRATEGY = 'BiddingStrategy';

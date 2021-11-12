@@ -14,6 +14,9 @@ class CpmBannerCampaignGetItem extends CpmBannerCampaignBase
 //    Can be omit.
 //    protected $Settings = null;
 
+//    Can be omit.
+//    protected $VideoTarget = null;
+
     /**
      * Creates a new instance of CpmBannerCampaignGetItem.
      *
@@ -66,6 +69,31 @@ class CpmBannerCampaignGetItem extends CpmBannerCampaignBase
     public function setSettings(array $value = null)
     {
         $this->Settings = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets VideoTarget.
+     *
+     * @return string|null
+     * @see VideoTargetEnum
+     */
+    public function getVideoTarget()
+    {
+        return isset($this->VideoTarget) ? $this->VideoTarget : null;
+    }
+
+    /**
+     * Sets VideoTarget.
+     *
+     * @param string|null $value
+     * @return $this
+     * @see VideoTargetEnum
+     */
+    public function setVideoTarget($value = null)
+    {
+        $this->VideoTarget = $value;
 
         return $this;
     }

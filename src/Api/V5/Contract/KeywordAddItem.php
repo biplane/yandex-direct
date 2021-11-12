@@ -27,6 +27,9 @@ class KeywordAddItem
 //    Can be omit.
 //    protected $UserParam2 = null;
 
+//    Can be omit.
+//    protected $AutotargetingCategories = null;
+
     /**
      * Creates a new instance of KeywordAddItem.
      *
@@ -196,6 +199,29 @@ class KeywordAddItem
     public function setUserParam2($value = null)
     {
         $this->UserParam2 = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets AutotargetingCategories.
+     *
+     * @return AutotargetingCategory[]|null
+     */
+    public function getAutotargetingCategories()
+    {
+        return isset($this->AutotargetingCategories) ? $this->AutotargetingCategories : null;
+    }
+
+    /**
+     * Sets AutotargetingCategories.
+     *
+     * @param AutotargetingCategory[]|null $value
+     * @return $this
+     */
+    public function setAutotargetingCategories(array $value = null)
+    {
+        $this->AutotargetingCategories = $value;
 
         return $this;
     }
