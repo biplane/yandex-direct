@@ -40,7 +40,7 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "Biplane\\Tests\\": "tests/"
+      "Biplane\\Tests\\YandexDirect\\": "tests/"
     }
   },
   "config": {

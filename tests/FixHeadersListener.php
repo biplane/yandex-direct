@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Biplane\Tests;
+namespace Biplane\Tests\YandexDirect;
 
 use RuntimeException;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;

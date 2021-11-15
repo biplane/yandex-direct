@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use Biplane\Tests\FixHeadersListener;
+use Biplane\Tests\YandexDirect\FixHeadersListener;
 use VCR\Request;
 use VCR\VCR;
 use VCR\VCRFactory;
