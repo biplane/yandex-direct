@@ -12,6 +12,7 @@ use function array_unshift;
 use function is_object;
 use function preg_match;
 use function property_exists;
+use function trim;
 
 class ApiSoapClientV5 extends ApiSoapClient
 {
@@ -53,19 +54,21 @@ class ApiSoapClientV5 extends ApiSoapClient
     }
 
     /**
-     * Gets info about units for the last request.
-     *
      * @see https://tech.yandex.ru/direct/doc/dg/concepts/headers-docpage/#units
      */
-    public function getUnits(): Units
+    public function getUnits(): ?Units
     {
         $headers = $this->__getLastResponseHeaders();
 
-        if ($headers !== '' && preg_match('@^Units: (\d+)/(\d+)/(\d+)@m', $headers, $m)) {
-            return new Units((int)$m[1], (int)$m[2], (int)$m[3]);
+        if (
+            $headers !== ''
+            && preg_match('@^Units:(?:\s)?(\d+)/(\d+)/(\d+)@im', $headers, $units)
+            && preg_match('@^Units-Used-Login:(.+)$@im', $headers, $usedLogin)
+        ) {
+            return new Units((int)$units[1], (int)$units[2], (int)$units[3], trim($usedLogin[1]));
         }
 
-        return new Units(-1, -1, -1);
+        return null;
     }
 
     protected function parseSoapFault(SoapFault $fault): ?ApiException

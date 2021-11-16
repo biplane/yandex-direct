@@ -65,8 +65,10 @@ XML
 
         $units = $client->getUnits();
 
+        self::assertNotNull($units);
         self::assertSame(11, $units->getSpent());
         self::assertSame(99968, $units->getRest());
         self::assertSame(100000, $units->getLimit());
+        self::assertEquals('agent', $units->getUsedLogin());
     }
 }

@@ -31,7 +31,7 @@ abstract class BaseAfterCallEvent extends PreCallEvent
         parent::__construct($methodRef, $params, $user);
 
         if ($units === null) {
-            $units = new Units(-1, -1, -1);
+            $units = new Units(-1, -1, -1, '');
         }
 
         $this->client = $client;

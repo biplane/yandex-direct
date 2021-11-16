@@ -17,6 +17,15 @@
 
 * Для `Biplane\YandexDirect\Api\V4\YandexAPIService` идентификатор запроса читается
   из HTTP-заголовков ответа, так же как для сервисов API 5.
+* [**BC break**] Изменена сигнатура метода `ApiSoapClientV5::getUnits()`. Теперь метод возвращает `null`,
+  когда нет информации по баллам.
+
+  ```patch
+  - public function getUnits(): Units
+  + public function getUnits(): ?Units
+  ```
+* В объект `Biplane\YandexDirect\Api\Units` добавлен метод `getUsedLogin`, который возвращает
+  значение заголовка `Units-Used-Login`.
 
 ### Deprecated
 

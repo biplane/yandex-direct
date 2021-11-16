@@ -15,16 +15,15 @@ final class Units
     /** @var int */
     private $spent;
 
-    /**
-     * @param int $spent A number of spent units by request
-     * @param int $rest  A number of rest units
-     * @param int $limit The daily limit of units
-     */
-    public function __construct(int $spent, int $rest, int $limit)
+    /** @var string */
+    private $usedLogin;
+
+    public function __construct(int $spent, int $rest, int $limit, string $usedLogin)
     {
         $this->spent = $spent;
         $this->rest = $rest;
         $this->limit = $limit;
+        $this->usedLogin = $usedLogin;
     }
 
     /**
@@ -49,5 +48,13 @@ final class Units
     public function getSpent(): int
     {
         return $this->spent;
+    }
+
+    /**
+     * Gets the username of the advertiser's or the agency's representative.
+     */
+    public function getUsedLogin(): string
+    {
+        return $this->usedLogin;
     }
 }
