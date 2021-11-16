@@ -14,6 +14,9 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 use function in_array;
 
+/**
+ * @deprecated Use SoapLogger instead.
+ */
 class DumpListener implements EventSubscriberInterface
 {
     public const LEVEL_FAIL_REQUEST = 1;

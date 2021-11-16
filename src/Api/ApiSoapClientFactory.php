@@ -6,6 +6,8 @@ namespace Biplane\YandexDirect\Api;
 
 use Biplane\YandexDirect\Api\Finance\TransactionNumberGeneratorInterface;
 use Biplane\YandexDirect\Config;
+use Biplane\YandexDirect\Log\SoapLogContextFactory;
+use Biplane\YandexDirect\Log\SoapLogger;
 use Biplane\YandexDirect\Runner\Runner;
 use ReflectionClass;
 
@@ -24,15 +26,28 @@ final class ApiSoapClientFactory
     private $transactionNumberGenerator;
     /** @var Runner */
     private $runner;
+    /** @var SoapLogContextFactory */
+    private $logContextFactory;
+    /** @var SoapLogger|null */
+    private $logger;
 
     public function __construct(
         ?Runner $runner = null,
         ?TransactionNumberGeneratorInterface $transactionNumberGenerator = null,
-        ?int $soapCallTimeout = null
+        ?int $soapCallTimeout = null,
+        ?SoapLogger $logger = null,
+        ?SoapLogContextFactory $logContextFactory = null
     ) {
         $this->runner = $runner ?? Runner::default();
         $this->transactionNumberGenerator = $transactionNumberGenerator;
         $this->soapCallTimeout = $soapCallTimeout;
+        $this->logger = $logger;
+        $this->logContextFactory = $logContextFactory ?? new SoapLogContextFactory(
+            ['authorization'],
+            ['token'],
+            [],
+            []
+        );
     }
 
     /**
@@ -58,6 +73,7 @@ final class ApiSoapClientFactory
 
         $soapClient = $this->createInstance($serviceClass, $config, $options);
         $soapClient->setRunner($this->runner);
+        $soapClient->setLogContextFactory($this->logContextFactory);
 
         if ($this->soapCallTimeout > 0) {
             $soapClient->setSoapCallTimeout($this->soapCallTimeout);
@@ -65,6 +81,10 @@ final class ApiSoapClientFactory
 
         if ($this->transactionNumberGenerator !== null && $soapClient instanceof ApiSoapClientV4) {
             $soapClient->setTransactionNumberGenerator($this->transactionNumberGenerator);
+        }
+
+        if ($this->logger !== null) {
+            $soapClient->setLogger($this->logger);
         }
 
         return $soapClient;

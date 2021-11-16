@@ -2,6 +2,25 @@
 
 ## Unreleased
 
+### Added
+
+* Реализован новый API для логирования запросов к API (PR #36)
+
+### Changed
+
+* Изменена сигнатура конструктора `Biplane\YandexDirect\Api\ApiSoapClientFactory`
+
+  ```patch
+  - public function __construct(?Runner $runner = null, ?TransactionNumberGeneratorInterface $transactionNumberGenerator = null, ?int $soapCallTimeout = null)
+  + public function __construct(?Runner $runner = null, ?TransactionNumberGeneratorInterface $transactionNumberGenerator = null, ?int $soapCallTimeout = null, ?SoapLogger $logger = null, ?SoapLogContextFactory $logContextFactory = null)
+  ```
+
+### Deprecated
+
+* `ClientInterface` будет удален в будущем. Используйте `SoapLogger` для полученния данных
+  по запросу/ответу.
+* `DumpListener` будет удален в будущем. Вместо этого используйте `SoapLogger`.
+
 ## 5.0.0-beta4 [commit logs](https://github.com/biplane/yandex-direct/compare/5.0.0-beta3...5.0.0-beta4)
 
 ### Added

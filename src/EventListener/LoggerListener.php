@@ -18,7 +18,7 @@ use function in_array;
 use function sprintf;
 
 /**
- * @deprecated
+ * @deprecated Use SoapLogger instead.
  */
 class LoggerListener implements EventSubscriberInterface
 {
