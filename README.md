@@ -24,173 +24,70 @@ $ composer require biplane/yandex-direct
 ```php
 <?php
 
-use Biplane\YandexDirect\Api\V5\Contract\AdFieldEnum;
-use Biplane\YandexDirect\Api\V5\Contract\AdsSelectionCriteria;
-use Biplane\YandexDirect\Api\V5\Contract\GetAdsRequest;
-use Biplane\YandexDirect\Api\V5\Contract\StateEnum;
-use Biplane\YandexDirect\User;
+use Biplane\YandexDirect\Api\ApiSoapClientFactory;
+use Biplane\YandexDirect\Api\V5\Ads;
+use Biplane\YandexDirect\Api\V5\Contract;
+use Biplane\YandexDirect\ConfigBuilder;
 
-$user = new User([
-    'access_token' => 'INSERT_YOUR_ACCESS_TOKEN',
-    'login' => 'YANDEX_DIRECT_CLIENT_LOGIN',
-    'locale' => User::LOCALE_RU,
-]);
+$serviceFactory = new ApiSoapClientFactory();
 
-$criteria = AdsSelectionCriteria::create()
+$config = ConfigBuilder::create()
+    ->setAccessToken('<INSERT_ACCESS_TOKEN>')
+    ->setClientLogin('agrom')
+    ->setLocale('ru')
+    ->getConfig();
+
+$service = $serviceFactory->createSoapClient($config, Ads::class);
+
+$criteria = Contract\AdsSelectionCriteria::create()
     ->setCampaignIds([123])
     ->setStates([
-        StateEnum::ON,
+        Contract\StateEnum::ON,
     ]);
-
-$payload = GetAdsRequest::create()
+$request = Contract\GetAdsRequest::create()
     ->setSelectionCriteria($criteria)
     ->setFieldNames([
-        AdFieldEnum::AD_CATEGORIES,
-        AdFieldEnum::AGE_LABEL,
-        AdFieldEnum::AD_GROUP_ID,
-        AdFieldEnum::ID,
-        AdFieldEnum::STATUS,
+        Contract\AdFieldEnum::AD_CATEGORIES,
+        Contract\AdFieldEnum::AGE_LABEL,
+        Contract\AdFieldEnum::AD_GROUP_ID,
+        Contract\AdFieldEnum::ID,
+        Contract\AdFieldEnum::STATUS,
     ]);
 
-$response = $user->getAdsService()->get($payload);
+$response = $service->get($request);
 
-foreach ($response->getAds() as $ad) {
-    // here $ad is instance of Biplane\YandexDirect\Api\V5\Contract\AdGetItem
+foreach ($response->getAds() ?? [] as $item) {
+    // here $item is instance of Contract\AdGetItem
+    // $item->getAgeLabel();
 }
 ```
 
-In this example will be fetched all actived ads for campaign with ID 123.
-
-## Options
-
-The `Biplane\YandexDirect\User` object supported some options:
-
-#### access_token
-
-The [access token](https://tech.yandex.ru/direct/doc/dg-v4/concepts/auth-token-docpage/) for OAuth. **Required**
-
-#### locale
-
-You can specify the locale for messages from API. Allowed values: `ru`, `ua` or `en`.
-
-Default: `en`
-
-#### master_token
-
-The master token needs for [access to financial methods](https://tech.yandex.ru/direct/doc/dg-v4/concepts/finance-token-docpage/).
-
-#### login
-
-The [client login](https://tech.yandex.ru/direct/doc/dg/concepts/headers-docpage/#request).
-It's **required** for financial operations and when a request is made on behalf of the agency.
-
-#### use_operator_units
-
-Enables to use an agency's units instead of an advertiser.
-See [documentation](https://tech.yandex.ru/direct/doc/dg/concepts/headers-docpage/#use-operator-units) for details.
-
-Default: `false`
-
-#### sandbox
-
-This option allows to enable the sandbox.
-See [documentation](https://tech.yandex.ru/direct/doc/dg/best-practice/quick-start-docpage/#sandbox) for details.
-
-Default: `false`
-
 ## Supported API Services
 
-You can get the proxy of a service through the `User` object, to interact with Yandex.Direct API.
-
-* `User::getApiService()` - Service for API Live 4.
-
-* `User::getAdExtensionsService()` - Service for manage ad's extensions (API 5).
-
-* `User::getAdGroupsService()` - Service for for manage ad groups (API 5).
-
-* `User::getAdImagesService()` - Service for for manage ad images (API 5).
-
-* `User::getAdsService()` - Service for manage ads (API 5).
-
-* `User::getAgencyClientsService()` - Service for manage an agency's clients (API 5).
-
-* `User::getBidsService()` - Service for manage bids (API 5).
-
-* `User::getBidModifiersService()` - Service for the adjustments of bids (API 5).
-
-* `User::getCampaignsService()` - Service for manage campaigns (API 5).
-
-* `User::getChangesService()` - Service to check for changes (API 5).
-
-* `User::getClientsService()` - Service for manage clients (API 5).
-
-* `User::getDictionariesService()` - Service for fetch info about dictionaries (API 5).
-
-* `User::getDynamicTextAdTargetsService()` - Service for manage dynamic text ads (API 5).
-
-* `User::getFeedsService` - API 5
-
-* `User::getKeywordBidsService()` - Service for manage bids for keywords. (API 5)
-
-* `User::getKeywordsService()` - Service for manage keywords (API 5).
-
-* `User::getKeywordsResearchService()` - Service to get forecast of impressions for keywords. (API 5).
-
-* `User::getLeadsService()` - API 5
-
-* `User::getNegativeKeywordSharedSetsService()` - API 5
-
-* `User::getRetargetingListsService()` - Service for manage lists of retargeting (API 5).
-
-* `User::getSitelinksService()` - Service for manage sitelinks (API 5).
-
-* `User::getSmartAdTargetsService()` - API 5
-
-* `User::getTurboPagesService()` - API 5
-
-* `User::getVCardsService()` - Service for manage VCards (API 5).
-
-## Event listeners
-
-### DumpListener
-
-This listener allows write to file info about request and response from server. File names generated
-on the basis of the [request identifier](https://tech.yandex.ru/direct/doc/dg/concepts/headers-docpage/#response)
-
-> **NOTE**: The request identifier will be generated on client side for API 4 requests.
-
-Instance, for the RequestId `806811001464643172` will be created two files:
-
-    80/6/806811001464643172_req.data
-    80/6/806811001464643172_resp.data
-
-You can get the RequestId from service instance or via the event object inside an event listener.
-
-```php
-use Biplane\YandexDirect\EventListener\DumpListener;
-
-$listener = new DumpListener('/var/dumps', DumpListener::LEVEL_ALL_REQUEST);
-
-$user->getDispatcher()->addSubscriber($listener);
-```
-
-You can specify which requests should be dumped, all (`LEVEL_ALL_REQUEST`)
-or only with errors (`LEVEL_FAIL_REQUEST`).
-
-### LoggerListener
-
-This listener allows to log errors from API, with the different level for network,
-temporary errors.
-
-```php
-use Biplane\YandexDirect\EventListener\LoggerListener;
-
-$listener = new LoggerListener($logger);
-
-$user->getDispatcher()->addSubscriber($listener);
-```
-
-Example a message in log:
-
-    [1970-01-01 23:59:59] app.NOTICE: Call YandexAPIService:AccountManagement completed with network error: Error Fetching http headers {"method":"YandexAPIService:AccountManagement","login":null,"request_id":"794841001487675763","error":"Error Fetching http headers"} []
-
+| Service | Description |
+|---------|-------------|
+| `V4\YandexAPIService` | [API Live 4 doc](https://yandex.ru/dev/direct/doc/dg-v4/concepts/Versions_live4.html) |
+| `V5\AdExtensions` | [Doc](https://yandex.ru/dev/direct/doc/ref-v5/adextensions/adextensions.html) |
+| `V5\AdGroups` | [Doc](https://yandex.ru/dev/direct/doc/ref-v5/adgroups/adgroups.html) |
+| `V5\AdImages` | [Doc](https://yandex.ru/dev/direct/doc/ref-v5/adimages/adimages.html) |
+| `V5\Ads` | [Doc](https://yandex.ru/dev/direct/doc/ref-v5/ads/ads.html) |
+| `V5\AgencyClients` | [Doc](https://yandex.ru/dev/direct/doc/ref-v5/agencyclients/agencyclients.html) |
+| `V5\AudienceTargets` | [Doc](https://yandex.ru/dev/direct/doc/ref-v5/audiencetargets/audiencetargets.html) |
+| `V5\BidModifiers` | [Doc](https://yandex.ru/dev/direct/doc/ref-v5/bidmodifiers/bidmodifiers.html) |
+| `V5\Bids` | [Doc](https://yandex.ru/dev/direct/doc/ref-v5/bids/bids.html) |
+| `V5\Campaigns` | [Doc](https://yandex.ru/dev/direct/doc/ref-v5/campaigns/campaigns.html) |
+| `V5\Changes` | [Doc](https://yandex.ru/dev/direct/doc/ref-v5/changes/changes.html) |
+| `V5\Clients` | [Doc](https://yandex.ru/dev/direct/doc/ref-v5/clients/clients.html) |
+| `V5\Dictionaries` | [Doc](https://yandex.ru/dev/direct/doc/ref-v5/dictionaries/dictionaries.html) |
+| `V5\DynamicTextAdTargets` | [Doc](https://yandex.ru/dev/direct/doc/ref-v5/dynamictextadtargets/dynamictextadtargets.html) |
+| `V5\Feeds` | [Doc](https://yandex.ru/dev/direct/doc/ref-v5/feeds/feeds.html) |
+| `V5\KeywordBids` | [Doc](https://yandex.ru/dev/direct/doc/ref-v5/keywordbids/keywordbids.html) |
+| `V5\Keywords` | [Doc](https://yandex.ru/dev/direct/doc/ref-v5/keywords/keywords.html) |
+| `V5\KeywordsResearch` | [Doc](https://yandex.ru/dev/direct/doc/ref-v5/keywordsresearch/keywordsresearch.html) |
+| `V5\Leads` | [Doc](https://yandex.ru/dev/direct/doc/ref-v5/leads/leads.html) |
+| `V5\NegativeKeywordSharedSets` | [Doc](https://yandex.ru/dev/direct/doc/ref-v5/negativekeywordsharedsets/negativekeywordsharedsets.html) |
+| `V5\RetargetingLists` | [Doc](https://yandex.ru/dev/direct/doc/ref-v5/retargetinglists/retargetinglists.html) |
+| `V5\Sitelinks` | [Doc](https://yandex.ru/dev/direct/doc/ref-v5/sitelinks/sitelinks.html) |
+| `V5\SmartAdTargets` | [Doc](https://yandex.ru/dev/direct/doc/ref-v5/smartadtargets/smartadtargets.html) |
+| `V5\TurboPages` | [Doc](https://yandex.ru/dev/direct/doc/ref-v5/turbopages/turbopages.html) |
+| `V5\VCards` | [Doc](https://yandex.ru/dev/direct/doc/ref-v5/vcards/vcards.html) |
