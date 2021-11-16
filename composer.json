@@ -31,9 +31,6 @@
     "phpunit/phpunit": "^7.5 || ^9.5",
     "psr/log": "^1.1"
   },
-  "suggest": {
-    "monolog/monolog": "For LoggerListener"
-  },
   "autoload": {
     "psr-4": { "Biplane\\YandexDirect\\": "src/" },
     "files": ["src/Api/functions.php"]
