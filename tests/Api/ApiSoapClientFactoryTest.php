@@ -10,6 +10,7 @@ use Biplane\YandexDirect\Api\Finance\TransactionNumberGeneratorInterface;
 use Biplane\YandexDirect\Api\V4\YandexAPIService;
 use Biplane\YandexDirect\Api\V5\AdGroups;
 use Biplane\YandexDirect\Config;
+use Biplane\YandexDirect\Log\SoapLogger;
 use Biplane\YandexDirect\Runner\Runner;
 use PHPUnit\Framework\TestCase;
 
@@ -31,6 +32,7 @@ class ApiSoapClientFactoryTest extends TestCase
         self::assertInstanceOf(AdGroups::class, $client);
         self::assertSame(180, $client->getSoapCallTimeout());
         self::assertSame(Runner::default(), $client->getRunner());
+        self::assertNotNull($client->getLogContextFactory());
     }
 
     public function testCreateSoapClientWithCustomCallTimeout(): void
@@ -83,5 +85,16 @@ class ApiSoapClientFactoryTest extends TestCase
             ],
             $client->getOptions()
         );
+    }
+
+    public function testInjectLoggerToService(): void
+    {
+        $logger = $this->createMock(SoapLogger::class);
+        $factory = new ApiSoapClientFactory(null, null, null, $logger);
+        $config = new Config(['access_token' => 'secret']);
+
+        $client = $factory->createSoapClient($config, AdGroups::class);
+
+        self::assertSame($logger, $client->getLogger());
     }
 }

@@ -8,8 +8,11 @@ use Biplane\YandexDirect\ClientInterface;
 use Biplane\YandexDirect\Config;
 use Biplane\YandexDirect\Event\EventEmitter;
 use Biplane\YandexDirect\Exception\ApiException;
+use Biplane\YandexDirect\Log\SoapLogContextFactory;
+use Biplane\YandexDirect\Log\SoapLogger;
 use Biplane\YandexDirect\Runner\Runner;
 use InvalidArgumentException;
+use ReflectionClass;
 use SoapClient;
 use SoapFault;
 use Throwable;
@@ -33,6 +36,15 @@ abstract class ApiSoapClient extends SoapClient implements ClientInterface
     /** @var Runner|null */
     private $runner = null;
 
+    /** @var SoapLogContextFactory|null  */
+    private $logContextFactory = null;
+
+    /** @var SoapLogger|null  */
+    private $logger = null;
+
+    /** @var string */
+    private $serviceName;
+
     /**
      * @param array<string, mixed> $options
      */
@@ -45,6 +57,7 @@ abstract class ApiSoapClient extends SoapClient implements ClientInterface
         parent::__construct($wsdl, $options);
 
         $this->config = $config;
+        $this->serviceName = (new ReflectionClass($this))->getShortName();
     }
 
     abstract protected function parseSoapFault(SoapFault $fault): ?ApiException;
@@ -81,6 +94,26 @@ abstract class ApiSoapClient extends SoapClient implements ClientInterface
         $this->runner = $runner;
     }
 
+    public function getLogContextFactory(): ?SoapLogContextFactory
+    {
+        return $this->logContextFactory;
+    }
+
+    public function setLogContextFactory(?SoapLogContextFactory $factory): void
+    {
+        $this->logContextFactory = $factory;
+    }
+
+    public function getLogger(): ?SoapLogger
+    {
+        return $this->logger;
+    }
+
+    public function setLogger(?SoapLogger $logger): void
+    {
+        $this->logger = $logger;
+    }
+
     public function getLastRequest(): string
     {
         return $this->__getLastRequestHeaders() . "\n\n" . $this->__getLastRequest();
@@ -111,8 +144,14 @@ abstract class ApiSoapClient extends SoapClient implements ClientInterface
                 &$outputHeaders
             ) {
                 try {
-                    return parent::__soapCall($name, $args, $options, $inputHeaders, $outputHeaders);
+                    $response = parent::__soapCall($name, $args, $options, $inputHeaders, $outputHeaders);
+
+                    $this->logSoapCall($name);
+
+                    return $response;
                 } catch (SoapFault $fault) {
+                    $this->logSoapCall($name, $fault);
+
                     throw $this->parseSoapFault($fault) ?? $fault;
                 }
             });
@@ -131,5 +170,25 @@ abstract class ApiSoapClient extends SoapClient implements ClientInterface
         }
 
         return $response;
+    }
+
+    private function logSoapCall(string $methodName, ?SoapFault $fault = null): void
+    {
+        if ($this->logger === null || $this->logContextFactory === null) {
+            return;
+        }
+
+        $this->logger->log(
+            $this->logContextFactory->create(
+                $this->serviceName,
+                $methodName,
+                $this->__getLastRequestHeaders(),
+                $this->__getLastRequest(),
+                $this->__getLastResponseHeaders(),
+                $this->__getLastResponse(),
+                $this->getRequestId(),
+                $fault
+            )
+        );
     }
 }
