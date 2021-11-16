@@ -16,7 +16,6 @@ use SoapHeader;
 use function assert;
 use function hash;
 use function in_array;
-use function microtime;
 use function property_exists;
 use function strrpos;
 use function substr;
@@ -25,19 +24,8 @@ class ApiSoapClientV4 extends ApiSoapClient
 {
     private const SCHEMA_NAMESPACE = 'API';
 
-    /** @var string|null */
-    private $requestId;
     /** @var TransactionNumberGeneratorInterface|null */
     private $transactionNumberGenerator;
-
-    public function getRequestId(): string
-    {
-        if ($this->requestId === null) {
-            throw new LogicException('You can get the identifier of request only after call a method of API.');
-        }
-
-        return $this->requestId;
-    }
 
     public function getTransactionNumberGenerator(): TransactionNumberGeneratorInterface
     {
@@ -60,8 +48,6 @@ class ApiSoapClientV4 extends ApiSoapClient
      */
     public function __doRequest($request, $location, $action, $version, $oneWay = 0)
     {
-        $this->requestId = (string)(microtime(true) * 1000000);
-
         return fixNamespace(
             parent::__doRequest($request, $location, $action, $version, $oneWay),
             self::SCHEMA_NAMESPACE

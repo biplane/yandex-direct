@@ -52,17 +52,6 @@ class ApiSoapClientV5 extends ApiSoapClient
         parent::__construct($wsdl, $config, $options);
     }
 
-    public function getRequestId(): string
-    {
-        $headers = $this->__getLastResponseHeaders();
-
-        if ($headers !== '' && preg_match('/^RequestId: ([a-z\d]+)(\r|)$/im', $headers, $m)) {
-            return $m[1];
-        }
-
-        return '';
-    }
-
     /**
      * Gets info about units for the last request.
      *

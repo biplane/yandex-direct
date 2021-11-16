@@ -19,8 +19,10 @@ use Throwable;
 
 use function ini_restore;
 use function ini_set;
+use function preg_match;
 use function sprintf;
 use function str_replace;
+use function trim;
 
 abstract class ApiSoapClient extends SoapClient implements ClientInterface
 {
@@ -112,6 +114,17 @@ abstract class ApiSoapClient extends SoapClient implements ClientInterface
     public function setLogger(?SoapLogger $logger): void
     {
         $this->logger = $logger;
+    }
+
+    public function getRequestId(): string
+    {
+        $headers = $this->__getLastResponseHeaders();
+
+        if ($headers !== '' && preg_match('/^RequestId: ([a-z\d]+)$/im', $headers, $m)) {
+            return trim($m[1]);
+        }
+
+        return '';
     }
 
     public function getLastRequest(): string

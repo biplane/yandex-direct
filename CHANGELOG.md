@@ -15,6 +15,9 @@
   + public function __construct(?Runner $runner = null, ?TransactionNumberGeneratorInterface $transactionNumberGenerator = null, ?int $soapCallTimeout = null, ?SoapLogger $logger = null, ?SoapLogContextFactory $logContextFactory = null)
   ```
 
+* Для `Biplane\YandexDirect\Api\V4\YandexAPIService` идентификатор запроса читается
+  из HTTP-заголовков ответа, так же как для сервисов API 5.
+
 ### Deprecated
 
 * `ClientInterface` будет удален в будущем. Используйте `SoapLogger` для полученния данных
