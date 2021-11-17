@@ -120,7 +120,7 @@ abstract class ApiSoapClient extends SoapClient implements ClientInterface
     {
         $headers = $this->__getLastResponseHeaders();
 
-        if ($headers !== '' && preg_match('/^RequestId: ([a-z\d]+)$/im', $headers, $m)) {
+        if ($headers !== '' && preg_match('/^RequestId:\s?(.+)$/im', $headers, $m)) {
             return trim($m[1]);
         }
 
