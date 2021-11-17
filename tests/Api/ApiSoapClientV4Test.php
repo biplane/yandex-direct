@@ -12,6 +12,7 @@ use Biplane\YandexDirect\Exception\ApiException;
 use SoapFault;
 
 use function hash;
+use function implode;
 use function sprintf;
 
 class ApiSoapClientV4Test extends BaseTestCase
@@ -89,8 +90,19 @@ XML
     public function testThrowApiExceptionFromSoapFault(): void
     {
         $config = new Config(['access_token' => '0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f']);
-        $client = $this->createSoapClient(ApiSoapClientV4::class, $config, ['__doRequest']);
+        $client = $this->createSoapClient(ApiSoapClientV4::class, $config, [
+            '__doRequest',
+            '__getLastResponseHeaders',
+        ]);
 
+        $client->method('__getLastResponseHeaders')->willReturn(
+            implode("\r\n", [
+                'HTTP/1.1 500 Internal Server Error',
+                'Content-Type: text/xml; charset=utf-8',
+                'RequestId: 1494518778014753349',
+                'SOAPServer: SOAP::Lite/Perl/0.55',
+            ])
+        );
         $client->method('__doRequest')->willReturn(
             <<<'XML'
 <?xml version="1.0" encoding="UTF-8"?>
@@ -117,10 +129,9 @@ XML
         try {
             $client->__soapCall('noop', []);
         } catch (ApiException $e) {
-            self::assertSame(24, $e->getCode());
-            self::assertEquals('Указанный отчет не существует', $e->getMessage());
             self::assertNull($e->getDetailMessage());
             self::assertInstanceOf(SoapFault::class, $e->getPrevious());
+            self::assertEquals('1494518778014753349', $e->getRequestId());
 
             throw $e;
         }

@@ -99,12 +99,19 @@ class ApiSoapClientV4 extends ApiSoapClient
                 $detailMessage = null;
             }
 
-            return new ApiException(
+            $exception = new ApiException(
                 property_exists($fault, 'faultstring') ? $fault->faultstring : $fault->getMessage(),
                 $code,
                 $detailMessage,
                 $fault
             );
+            $requestId = $this->getRequestId();
+
+            if ($requestId !== '') {
+                $exception->setRequestId($requestId);
+            }
+
+            return $exception;
         }
 
         return null;
