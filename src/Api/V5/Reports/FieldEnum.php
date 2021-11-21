@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Biplane\YandexDirect\Api\V5\Report;
+namespace Biplane\YandexDirect\Api\V5\Reports;
 
 final class FieldEnum
 {
