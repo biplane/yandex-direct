@@ -9,6 +9,7 @@ use Biplane\YandexDirect\Api\ApiSoapClient;
 use Biplane\YandexDirect\Api\ApiSoapClientFactory;
 use Biplane\YandexDirect\Api\Finance\CallbackTransactionNumberGenerator;
 use Biplane\YandexDirect\Api\Finance\TransactionNumberGeneratorInterface;
+use Biplane\YandexDirect\Api\ReportServiceFactory;
 use Biplane\YandexDirect\Api\V4\YandexAPIService;
 use Biplane\YandexDirect\Api\V5\AdExtensions;
 use Biplane\YandexDirect\Api\V5\AdGroups;
@@ -60,7 +61,10 @@ class User
     private $proxies;
 
     /** @var ApiSoapClientFactory|null */
-    private $serviceFactory;
+    private $soapClientFactory;
+
+    /** @var ReportServiceFactory|null */
+    private $reportServiceFactory;
 
     /** @var Config */
     private $config;
@@ -403,9 +407,14 @@ class User
 
     // phpcs:enable Squiz.Commenting.FunctionComment.InvalidNoReturn
 
-    public function setServiceFactory(ApiSoapClientFactory $serviceFactory): void
+    public function setServiceFactory(ApiSoapClientFactory $soapClientFactory): void
     {
-        $this->serviceFactory = $serviceFactory;
+        $this->soapClientFactory = $soapClientFactory;
+    }
+
+    public function setReportServiceFactory(ReportServiceFactory $reportServiceFactory): void
+    {
+        $this->reportServiceFactory = $reportServiceFactory;
     }
 
     /**
@@ -422,13 +431,17 @@ class User
         }
 
         if ($serviceClass === Reports::class) {
-            $service = new $serviceClass($this);
-        } else {
-            if ($this->serviceFactory === null) {
-                $this->serviceFactory = new ApiSoapClientFactory(null, $this->transactionNumberGenerator);
+            if ($this->reportServiceFactory === null) {
+                $this->reportServiceFactory = new ReportServiceFactory();
             }
 
-            $service = $this->serviceFactory->createSoapClient($this->config, $serviceClass);
+            $service = $this->reportServiceFactory->create($this->config);
+        } else {
+            if ($this->soapClientFactory === null) {
+                $this->soapClientFactory = new ApiSoapClientFactory(null, $this->transactionNumberGenerator);
+            }
+
+            $service = $this->soapClientFactory->createSoapClient($this->config, $serviceClass);
 
             if ($this->dispatcher !== null) {
                 $service->setEventEmitter(new EventEmitter($this->dispatcher, $this));
