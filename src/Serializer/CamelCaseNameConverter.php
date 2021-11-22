@@ -13,7 +13,7 @@ final class CamelCaseNameConverter implements NameConverterInterface
     /**
      * {@inheritDoc}
      */
-    public function normalize(string $propertyName)
+    public function normalize($propertyName)
     {
         return ucfirst($propertyName);
     }
@@ -21,7 +21,7 @@ final class CamelCaseNameConverter implements NameConverterInterface
     /**
      * {@inheritDoc}
      */
-    public function denormalize(string $propertyName)
+    public function denormalize($propertyName)
     {
         return $propertyName;
     }
