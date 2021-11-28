@@ -5,6 +5,11 @@
 ### Added
 
 * Реализован новый API для логирования запросов к API (PR #36)
+* Добавлен класс `Biplane\YandexDirect\Api\ReportServiceFactory`
+* Добавлен класс `Biplane\YandexDirect\Exception\DownloadReportException`.
+  Данное исключение может быть выброшено в том случае, когда запрос к сервису Reports
+  завершился с ошибкой. Например, когда HTTP-код `502`.
+* Добавлен класс `Biplane\YandexDirect\Exception\ReportNotReadyException`
 
 ### Changed
 
@@ -26,12 +31,56 @@
   ```
 * В объект `Biplane\YandexDirect\Api\Units` добавлен метод `getUsedLogin`, который возвращает
   значение заголовка `Units-Used-Login`.
+* [**BC break**] Для следующих классов изменено пространство имен.
+
+  ```patch
+  - Biplane\YandexDirect\Api\V5\Report
+  + Biplane\YandexDirect\Api\V5\Reports
+  ```
+
+  * `DateRangeTypeEnum`
+  * `FieldEnum`
+  * `FilterOperatorEnum`
+  * `ReportRequest`
+  * `ReportResult`
+
+* [**BC break**] У класса `Biplane\YandexDirect\Api\V5\Reports\ReportRequest` удалены все методы
+  изменяющие состояние. Для сборки запроса рекомендуется использовать `Biplane\YandexDirect\Api\V5\Reports\ReportRequestBuilder`
+* [**BC break**] Переработан `Biplane\YandexDirect\Api\V5\Reports\ReportResult`.
+  * Добавлен метод `getStream()`
+  * Метод `getData()` переименован в `getAsString()`
+  * Метод `save()` переименован в `saveToFile()`. Ранее метод первым аргументом принимал строку или `resource`,
+    теперь только строку - путь к файлу, куда сохранить результат.
+* [**BC break**] Сервис `Biplane\YandexDirect\Api\V5\Reports` теперь совместим с [PSR-18](https://www.php-fig.org/psr/psr-18/).
+  (PR #37)
+
+  По умолчанию используется [`php-http/discovery`](https://packagist.org/packages/php-http/discovery)
+  для поиска реализации HTTP-клиента. Но это поведение можно изменить при инициализации `ReportServiceFactory`.
+
+  Для метода `getReady()` удалена поддержка переопределения интервала для проверки готовности отчёта.
+  Теперь всегда полагаемся на данные заголовка [`retryIn`](https://yandex.ru/dev/direct/doc/reports/headers.html).
+
+  ```patch
+  - public function getReady(ReportRequest $reportRequest, ?int $retryInterval = null): ReportResult
+  + public function getReady(Reports\ReportRequest $reportRequest): Reports\ReportResult
+  ```
 
 ### Deprecated
 
 * `ClientInterface` будет удален в будущем. Используйте `SoapLogger` для полученния данных
   по запросу/ответу.
 * `DumpListener` будет удален в будущем. Вместо этого используйте `SoapLogger`.
+* Метод `Biplane\YandexDirect\Api\V5\Reports::download()` будет удален в будущем.
+  Вместо этого используйте `Biplane\YandexDirect\Api\V5\Reports\ReportResult::saveToFile()`.
+
+### Removed
+
+* Удален класс `Biplane\YandexDirect\Exception\ReportDefinitionException`.
+* Удален класс `Biplane\YandexDirect\Api\V5\Report\AttributionModelEnum`.
+  Вместо него следует использовать `Biplane\YandexDirect\Api\V5\Contract\AttributionModelEnum`.
+* Удален класс `Biplane\YandexDirect\Api\V5\Report\FormatEnum`.
+* Удален класс `Biplane\YandexDirect\Api\V5\Report\ReportDefinitionBuilder`.
+  Вместо него следует использовать `Biplane\YandexDirect\Api\V5\Reports\ReportDefinition`.
 
 ## 5.0.0-beta4 [commit logs](https://github.com/biplane/yandex-direct/compare/5.0.0-beta3...5.0.0-beta4)
 
