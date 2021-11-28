@@ -19,7 +19,6 @@ use Psr\Http\Message\StreamFactoryInterface;
 use Psr\Http\Message\StreamInterface;
 
 use function is_array;
-use function sprintf;
 
 class ReportsTest extends TestCase
 {
@@ -151,28 +150,5 @@ XML;
         });
 
         return new Reports($config, $this->httpClient, $requestFactory, $streamFactory);
-    }
-
-    /**
-     * @param array<string, mixed> $headers
-     */
-    private static function assertRequest(
-        RequestInterface $request,
-        string $body,
-        array $headers,
-        string $endpoint = Reports::ENDPOINT
-    ): void {
-        self::assertEquals($endpoint, $request->getUri());
-        self::assertEquals($body, $request->getBody());
-
-        foreach ($headers as $name => $expected) {
-            self::assertTrue($request->hasHeader($name), sprintf('Header "%s" is missing.', $name));
-
-            if (is_array($expected)) {
-                self::assertEquals($expected, $request->getHeader($name), sprintf('Header "%s"', $name));
-            } else {
-                self::assertContains($expected, $request->getHeader($name), sprintf('Header "%s"', $name));
-            }
-        }
     }
 }

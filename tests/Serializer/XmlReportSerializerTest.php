@@ -2,9 +2,8 @@
 
 declare(strict_types=1);
 
-namespace Biplane\Tests\YandexDirect\Api;
+namespace Biplane\Tests\Serializer;
 
-use Biplane\YandexDirect\Api\ReportDefinitionSerializerFactory;
 use Biplane\YandexDirect\Api\V5\Contract\AttributionModelEnum;
 use Biplane\YandexDirect\Api\V5\Contract\SortOrderEnum;
 use Biplane\YandexDirect\Api\V5\Reports\DateRangeTypeEnum;
@@ -15,24 +14,21 @@ use Biplane\YandexDirect\Api\V5\Reports\OrderBy;
 use Biplane\YandexDirect\Api\V5\Reports\ReportDefinition;
 use Biplane\YandexDirect\Api\V5\Reports\ReportTypeEnum;
 use Biplane\YandexDirect\Api\V5\Reports\SelectionCriteria;
+use Biplane\YandexDirect\Serializer\XmlReportSerializer;
 use DOMDocument;
 use LibXMLError;
 use PHPUnit\Framework\TestCase;
-use Symfony\Component\Serializer\Encoder\XmlEncoder;
 
 use function array_map;
 use function libxml_clear_errors;
 use function libxml_get_errors;
 use function libxml_use_internal_errors;
-use function sprintf;
-use function str_replace;
 
-final class ReportDefinitionSerializationTest extends TestCase
+final class XmlReportSerializerTest extends TestCase
 {
-    private const XML_NAMESPACE = 'http://api.direct.yandex.com/v5/reports';
     private const SCHEMA_URI = 'https://api.direct.yandex.com/v5/reports.xsd';
 
-    public function testSerializeWhenDefinedOnlyRequiredProperties(): void
+    public function testSerializeReportDefinitionWhenDefinedOnlyRequiredProperties(): void
     {
         $reportDefinition = ReportDefinition::create()
             ->setReportName('foo')
@@ -47,11 +43,11 @@ final class ReportDefinitionSerializationTest extends TestCase
             ->setDateRangeType(DateRangeTypeEnum::AUTO)
             ->setIncludeVAT(true);
 
-        $xml = $this->serialize($reportDefinition);
+        $xml = (new XmlReportSerializer())->serializeReportDefinition($reportDefinition);
 
         $expectedXml = <<<'XML'
 <?xml version="1.0"?>
-<ReportDefinition>
+<ReportDefinition xmlns="http://api.direct.yandex.com/v5/reports">
   <SelectionCriteria/>
   <FieldNames>Date</FieldNames>
   <FieldNames>CampaignId</FieldNames>
@@ -95,11 +91,11 @@ XML;
             ->addOrderBy(OrderBy::create(FieldEnum::DATE))
             ->addOrderBy(OrderBy::create(FieldEnum::CAMPAIGN_ID, SortOrderEnum::DESCENDING));
 
-        $xml = $this->serialize($reportDefinition);
+        $xml = (new XmlReportSerializer())->serializeReportDefinition($reportDefinition);
 
         $expectedXml = <<<'XML'
 <?xml version="1.0"?>
-<ReportDefinition>
+<ReportDefinition xmlns="http://api.direct.yandex.com/v5/reports">
   <SelectionCriteria>
     <DateFrom>2021-11-01</DateFrom>
     <DateTo>2021-11-30</DateTo>
@@ -137,17 +133,31 @@ XML;
         self::assertXmlIsValid($xml);
     }
 
-    private function serialize(ReportDefinition $reportDefinition): string
+    public function testDeserializeReportDownloadError(): void
     {
-        $serializer = ReportDefinitionSerializerFactory::create();
+        $xml = <<<XML
+<?xml version="1.0" encoding="UTF-8"?>
+<reports:reportDownloadError xmlns:reports="http://api.direct.yandex.com/v5/reports">
+    <reports:ApiError>
+        <reports:requestId>2773184281650080533</reports:requestId>
+        <reports:errorCode>53</reports:errorCode>
+        <reports:errorMessage>Authorization error</reports:errorMessage>
+        <reports:errorDetail>Token not entered</reports:errorDetail>
+    </reports:ApiError>
+</reports:reportDownloadError>
+XML;
 
-        return $serializer->serialize($reportDefinition, XmlEncoder::FORMAT);
+        $apiError = (new XmlReportSerializer())->deserializeApiError($xml);
+
+        self::assertNotNull($apiError);
+        self::assertSame('2773184281650080533', $apiError->requestId);
+        self::assertSame(53, $apiError->errorCode);
+        self::assertSame('Authorization error', $apiError->errorMessage);
+        self::assertSame('Token not entered', $apiError->errorDetail);
     }
 
     private static function assertXmlIsValid(string $xml): void
     {
-        $xml = str_replace('<ReportDefinition>', sprintf('<ReportDefinition xmlns="%s">', self::XML_NAMESPACE), $xml);
-
         $doc = new DOMDocument();
         $doc->loadXML($xml);
 

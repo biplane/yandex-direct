@@ -4,14 +4,13 @@ declare(strict_types=1);
 
 namespace Biplane\YandexDirect\Api\V5;
 
-use Biplane\YandexDirect\Api\ReportDefinitionSerializerFactory;
 use Biplane\YandexDirect\ClientInterface as ApiClientInterface;
 use Biplane\YandexDirect\Config;
 use Biplane\YandexDirect\Exception\ApiException;
 use Biplane\YandexDirect\Exception\DownloadReportException;
 use Biplane\YandexDirect\Log\Scrubber;
-use DOMDocument;
-use DOMXPath;
+use Biplane\YandexDirect\Serializer\ReportSerializerInterface;
+use Biplane\YandexDirect\Serializer\XmlReportSerializer;
 use Psr\Http\Client\ClientExceptionInterface;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestFactoryInterface;
@@ -19,19 +18,15 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\StreamFactoryInterface;
 use RuntimeException;
-use Symfony\Component\Serializer\Encoder\XmlEncoder;
-use Symfony\Component\Serializer\SerializerInterface;
 use Throwable;
 
 use function implode;
 use function sleep;
 use function sprintf;
-use function strpos;
 
 class Reports implements ApiClientInterface
 {
     public const ENDPOINT = 'https://api.direct.yandex.com/v5/reports';
-    private const XML_NAMESPACE = 'http://api.direct.yandex.com/v5/reports';
     private const RETRY_INTERVAL_DEFAULT = 3;
 
     /** @var Config */
@@ -46,7 +41,7 @@ class Reports implements ApiClientInterface
     /** @var StreamFactoryInterface */
     private $streamFactory;
 
-    /** @var SerializerInterface */
+    /** @var ReportSerializerInterface */
     private $serializer;
 
     /** @var RequestInterface */
@@ -60,13 +55,13 @@ class Reports implements ApiClientInterface
         ClientInterface $httpClient,
         RequestFactoryInterface $requestFactory,
         StreamFactoryInterface $streamFactory,
-        ?SerializerInterface $serializer = null
+        ?ReportSerializerInterface $serializer = null
     ) {
         $this->config = $config;
         $this->httpClient = $httpClient;
         $this->requestFactory = $requestFactory;
         $this->streamFactory = $streamFactory;
-        $this->serializer = $serializer ?? ReportDefinitionSerializerFactory::create();
+        $this->serializer = $serializer ?? new XmlReportSerializer();
     }
 
     /**
@@ -203,10 +198,7 @@ class Reports implements ApiClientInterface
         }
 
         $stream = $this->streamFactory->createStream(
-            $this->serializer->serialize(
-                $reportRequest->reportDefinition(),
-                XmlEncoder::FORMAT
-            )
+            $this->serializer->serializeReportDefinition($reportRequest->reportDefinition())
         );
 
         return $request->withBody($stream);
@@ -233,24 +225,17 @@ class Reports implements ApiClientInterface
 
     private function processError(ResponseInterface $response): Throwable
     {
-        $content = (string)$response->getBody();
+        $apiError = $this->serializer->deserializeApiError((string)$response->getBody());
 
-        if (strpos($content, '<reports:reportDownloadError') !== false) {
-            $doc = new DOMDocument();
+        if ($apiError !== null) {
+            $exception = new ApiException(
+                $apiError->errorMessage,
+                $apiError->errorCode,
+                $apiError->errorDetail
+            );
+            $exception->setRequestId($apiError->requestId);
 
-            if ($doc->loadXML($content)) {
-                $xpath = new DOMXPath($doc);
-                $xpath->registerNamespace('r', self::XML_NAMESPACE);
-                $requestId = $xpath->evaluate('string(/r:reportDownloadError/r:ApiError/r:requestId)');
-                $errorCode = $xpath->evaluate('string(/r:reportDownloadError/r:ApiError/r:errorCode)');
-                $errorMessage = $xpath->evaluate('string(/r:reportDownloadError/r:ApiError/r:errorMessage)');
-                $errorDetail = $xpath->evaluate('string(/r:reportDownloadError/r:ApiError/r:errorDetail)');
-
-                $exception = new ApiException($errorMessage, (int)$errorCode, $errorDetail);
-                $exception->setRequestId($requestId);
-
-                return $exception;
-            }
+            return $exception;
         }
 
         throw new DownloadReportException(
