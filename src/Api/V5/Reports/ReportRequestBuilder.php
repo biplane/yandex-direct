@@ -98,7 +98,7 @@ final class ReportRequestBuilder
         return $this;
     }
 
-    public function build(): ReportRequest
+    public function getReportRequest(): ReportRequest
     {
         if ($this->reportDefinition === null) {
             throw new LogicException('ReportRequest cannot be created. Missing the report definition.');

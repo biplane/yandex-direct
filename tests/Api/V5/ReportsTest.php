@@ -39,7 +39,7 @@ class ReportsTest extends TestCase
         $reportRequest = Reports\ReportRequestBuilder::create()
             ->skipReportHeader(true)
             ->setReportDefinition(Reports\ReportDefinition::create())
-            ->build();
+            ->getReportRequest();
 
         $this->httpClient->method('sendRequest')
             ->with(self::callback(static function (RequestInterface $request): bool {
@@ -68,7 +68,7 @@ class ReportsTest extends TestCase
         ]);
         $reportRequest = Reports\ReportRequestBuilder::create()
             ->setReportDefinition(Reports\ReportDefinition::create())
-            ->build();
+            ->getReportRequest();
 
         $this->httpClient->expects(self::exactly(2))
             ->method('sendRequest')
@@ -90,7 +90,7 @@ class ReportsTest extends TestCase
         ]);
         $reportRequest = Reports\ReportRequestBuilder::create()
             ->setReportDefinition(Reports\ReportDefinition::create())
-            ->build();
+            ->getReportRequest();
 
         $reportDownloadError = <<<XML
 <?xml version="1.0" encoding="UTF-8"?>
