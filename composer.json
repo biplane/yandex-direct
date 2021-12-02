@@ -30,8 +30,8 @@
     "nyholm/psr7": "^1.4",
     "php-http/httplug": "^2.2",
     "php-vcr/php-vcr": "^1.4.5, <1.6",
-    "phpstan/phpstan": "0.12.98",
-    "phpstan/phpstan-phpunit": "^0.12.21",
+    "phpstan/phpstan": "~1.2.0",
+    "phpstan/phpstan-phpunit": "^1.0",
     "phpunit/phpunit": "^7.5 || ^9.5",
     "psr/log": "^1.1",
     "symfony/http-client": "^4.4 || ^5.0"

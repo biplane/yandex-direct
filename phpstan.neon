@@ -9,6 +9,6 @@ parameters:
   paths:
     - src
     - tests
-  excludes_analyse:
+  excludePaths:
     - src/Api/V4/Contract/*
     - src/Api/V5/Contract/*

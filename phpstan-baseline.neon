@@ -1,6 +1,11 @@
 parameters:
 	ignoreErrors:
 		-
+			message: "#^Method Biplane\\\\YandexDirect\\\\Api\\\\ApiSoapClientFactory\\:\\:createSoapClient\\(\\) should return T of Biplane\\\\YandexDirect\\\\Api\\\\ApiSoapClient but returns \\(Biplane\\\\YandexDirect\\\\Api\\\\ApiSoapClientV4&T of Biplane\\\\YandexDirect\\\\Api\\\\ApiSoapClient\\)\\|T of Biplane\\\\YandexDirect\\\\Api\\\\ApiSoapClient\\.$#"
+			count: 1
+			path: src/Api/ApiSoapClientFactory.php
+
+		-
 			message: "#^Method Biplane\\\\YandexDirect\\\\User\\:\\:getProxy\\(\\) should return T but returns Biplane\\\\YandexDirect\\\\Api\\\\ApiSoapClient\\|Biplane\\\\YandexDirect\\\\Api\\\\V5\\\\Reports\\.$#"
 			count: 2
 			path: src/User.php
