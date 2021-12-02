@@ -4,48 +4,45 @@ declare(strict_types=1);
 
 namespace Biplane\YandexDirect\Api\V5;
 
-use Biplane\YandexDirect\Api\V5\Report\ReportDefinitionBuilder;
-use Biplane\YandexDirect\Api\V5\Report\ReportRequest;
-use Biplane\YandexDirect\Api\V5\Report\ReportResult;
 use Biplane\YandexDirect\ClientInterface as ApiClientInterface;
-use Biplane\YandexDirect\Event\EventEmitter;
+use Biplane\YandexDirect\Config;
 use Biplane\YandexDirect\Exception\ApiException;
-use Biplane\YandexDirect\Exception\NetworkException;
-use Biplane\YandexDirect\Exception\ReportDefinitionException;
-use Biplane\YandexDirect\User;
-use DOMDocument;
-use DOMXPath;
-use GuzzleHttp\Client;
-use GuzzleHttp\ClientInterface;
-use GuzzleHttp\Psr7\Request;
-use GuzzleHttp\RequestOptions;
+use Biplane\YandexDirect\Exception\DownloadReportException;
+use Biplane\YandexDirect\Log\Scrubber;
+use Biplane\YandexDirect\Serializer\ReportSerializerInterface;
+use Biplane\YandexDirect\Serializer\XmlReportSerializer;
+use Psr\Http\Client\ClientExceptionInterface;
+use Psr\Http\Client\ClientInterface;
+use Psr\Http\Message\RequestFactoryInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\StreamFactoryInterface;
+use RuntimeException;
 use Throwable;
 
-use function fclose;
-use function fopen;
-use function ftruncate;
 use function implode;
-use function is_file;
-use function is_writable;
-use function max;
 use function sleep;
 use function sprintf;
-use function strpos;
 
 class Reports implements ApiClientInterface
 {
     public const ENDPOINT = 'https://api.direct.yandex.com/v5/reports';
+    private const RETRY_INTERVAL_DEFAULT = 3;
 
-    /** @var User */
-    private $user;
+    /** @var Config */
+    private $config;
 
     /** @var ClientInterface */
     private $httpClient;
 
-    /** @var EventEmitter */
-    private $emitter;
+    /** @var RequestFactoryInterface */
+    private $requestFactory;
+
+    /** @var StreamFactoryInterface */
+    private $streamFactory;
+
+    /** @var ReportSerializerInterface */
+    private $serializer;
 
     /** @var RequestInterface */
     private $lastRequest;
@@ -53,80 +50,70 @@ class Reports implements ApiClientInterface
     /** @var ResponseInterface */
     private $lastResponse;
 
-    public function __construct(User $user, ?ClientInterface $httpClient = null)
-    {
-        if ($httpClient === null) {
-            $httpClient = new Client();
-        }
-
-        $this->user = $user;
+    public function __construct(
+        Config $config,
+        ClientInterface $httpClient,
+        RequestFactoryInterface $requestFactory,
+        StreamFactoryInterface $streamFactory,
+        ?ReportSerializerInterface $serializer = null
+    ) {
+        $this->config = $config;
         $this->httpClient = $httpClient;
-        $this->emitter = new EventEmitter($user->getEventDispatcher(), $user);
+        $this->requestFactory = $requestFactory;
+        $this->streamFactory = $streamFactory;
+        $this->serializer = $serializer ?? new XmlReportSerializer();
     }
 
     /**
-     * Gets a report result.
-     *
-     * The status can be ready or pending.
-     *
-     * @param ReportRequest $reportRequest The report request
-     *
      * @throws ApiException
-     * @throws NetworkException
-     * @throws ReportDefinitionException
+     * @throws ClientExceptionInterface
+     * @throws DownloadReportException
      */
-    public function get(ReportRequest $reportRequest): ReportResult
+    public function get(Reports\ReportRequest $reportRequest): Reports\ReportResult
     {
-        $response = $this->request($reportRequest);
-
-        return new ReportResult($response);
+        return new Reports\ReportResult($this->doRequest($this->createHttpRequest($reportRequest)));
     }
 
     /**
-     * Gets a report result.
-     *
-     * The script will be wait while report will not be ready.
-     *
-     * @param ReportRequest $reportRequest The report request
-     * @param int|null      $retryInterval An amount of delay between requests, in seconds
-     *
      * @throws ApiException
-     * @throws NetworkException
-     * @throws ReportDefinitionException
+     * @throws ClientExceptionInterface
+     * @throws DownloadReportException
      */
-    public function getReady(ReportRequest $reportRequest, ?int $retryInterval = null): ReportResult
+    public function getReady(Reports\ReportRequest $reportRequest): Reports\ReportResult
     {
-        return $this->waitReady($reportRequest, $retryInterval ?: 0);
+        $request = $this->createHttpRequest($reportRequest);
+
+        while (true) {
+            $result = new Reports\ReportResult($this->doRequest($request));
+
+            if ($result->isReady()) {
+                return $result;
+            }
+
+            $delay = $result->retryIn();
+
+            if ($delay === null || $delay < 1) {
+                $delay = self::RETRY_INTERVAL_DEFAULT;
+            }
+
+            sleep($delay);
+        }
     }
 
     /**
      * Downloads and save report to the specified file.
      *
-     * @param string        $reportFile    The path to report file
-     * @param ReportRequest $reportRequest The report request
-     * @param int|null      $retryInterval An amount of delay between requests, in seconds
+     * @deprecated Use `Reports\ReportResult::saveToFile()` instead.
      *
      * @throws ApiException
-     * @throws NetworkException
-     * @throws ReportDefinitionException
-     * @throws Throwable
+     * @throws ClientExceptionInterface
+     * @throws DownloadReportException
+     * @throws RuntimeException
      */
-    public function download(string $reportFile, ReportRequest $reportRequest, ?int $retryInterval = null): void
+    public function download(string $destFile, Reports\ReportRequest $reportRequest): void
     {
-        try {
-            $this->waitReady($reportRequest, $retryInterval ?: 0, [RequestOptions::SINK => $reportFile]);
-        } catch (Throwable $ex) {
-            if (is_file($reportFile) && is_writable($reportFile)) {
-                $fh = fopen($reportFile, 'wb');
-
-                if ($fh !== false) {
-                    ftruncate($fh, 0);
-                    fclose($fh);
-                }
-            }
-
-            throw $ex;
-        }
+        $result = $this->getReady($reportRequest);
+        $result->saveToFile($destFile);
     }
 
     public function getRequestId(): string
@@ -151,6 +138,8 @@ class Reports implements ApiClientInterface
             foreach ($this->lastRequest->getHeaders() as $name => $values) {
                 $request .= $name . ': ' . implode(', ', $values) . "\r\n";
             }
+
+            $request = Scrubber::scrubHttpHeaders($request, ['Authorization']);
 
             $request .= "\r\n";
             $request .= $this->lastRequest->getBody();
@@ -184,120 +173,77 @@ class Reports implements ApiClientInterface
         return '';
     }
 
-    /**
-     * @param array<string, mixed> $options
-     */
-    private function request(ReportRequest $reportRequest, array $options = []): ResponseInterface
+    private function createHttpRequest(Reports\ReportRequest $reportRequest): RequestInterface
     {
-        $reportDefinition = $reportRequest->getDefinition();
+        $request = $this->requestFactory->createRequest('POST', self::ENDPOINT)
+            ->withHeader('Authorization', sprintf('Bearer %s', $this->config->getAccessToken()))
+            ->withHeader('Accept-Language', $this->config->getLocale(Config::API_5))
+            ->withHeader('Client-Login', $this->config->getClientLogin())
+            ->withHeader('processingMode', $reportRequest->processingMode());
 
-        if (empty($reportDefinition)) {
-            throw new ReportDefinitionException(sprintf(
-                'The report definition cannot be empty. Was expected XML document. You can build it with builder %s.',
-                ReportDefinitionBuilder::class
-            ));
+        if (! $reportRequest->returnMoneyInMicros()) {
+            $request = $request->withHeader('returnMoneyInMicros', 'false');
         }
 
-        $request = new Request(
-            'POST',
-            self::ENDPOINT,
-            $this->buildRequestHeaders($reportRequest),
-            $reportDefinition
+        if ($reportRequest->skipColumnHeader()) {
+            $request = $request->withHeader('skipColumnHeader', 'true');
+        }
+
+        if ($reportRequest->skipReportHeader()) {
+            $request = $request->withHeader('skipReportHeader', 'true');
+        }
+
+        if ($reportRequest->skipReportSummary()) {
+            $request = $request->withHeader('skipReportSummary', 'true');
+        }
+
+        $stream = $this->streamFactory->createStream(
+            $this->serializer->serializeReportDefinition($reportRequest->reportDefinition())
         );
+
+        return $request->withBody($stream);
+    }
+
+    /**
+     * @throws ApiException
+     * @throws ClientExceptionInterface
+     * @throws DownloadReportException
+     */
+    private function doRequest(RequestInterface $request): ResponseInterface
+    {
+        $response = $this->httpClient->sendRequest($request);
 
         $this->lastRequest = $request;
-
-        $this->emitter->emitBeforeRequestEvent($this, 'request', [$reportRequest]);
-
-        $response = $this->httpClient->send($request, $options + [RequestOptions::HTTP_ERRORS => false]);
         $this->lastResponse = $response;
 
-        if ($response->getStatusCode() >= 200 && $response->getStatusCode() <= 202) {
-            $this->emitter->emitAfterRequestEvent($this, 'request', [$reportRequest], $response->getBody());
-
-            return $response;
+        if ($response->getStatusCode() >= 400) {
+            throw $this->processError($response);
         }
 
-        $exception = $this->createException($response);
-
-        $this->emitter->emitFailRequestEvent($this, 'request', [$reportRequest], $exception);
-
-        throw $exception;
+        return $response;
     }
 
-    /**
-     * @param array<string, mixed> $options
-     */
-    private function waitReady(ReportRequest $reportRequest, int $retryInterval, array $options = []): ReportResult
+    private function processError(ResponseInterface $response): Throwable
     {
-        while (true) {
-            $result = new ReportResult($this->request($reportRequest, $options));
+        $apiError = $this->serializer->deserializeApiError((string)$response->getBody());
 
-            if ($result->isReady()) {
-                return $result;
-            }
+        if ($apiError !== null) {
+            $exception = new ApiException(
+                $apiError->errorMessage,
+                $apiError->errorCode,
+                $apiError->errorDetail
+            );
+            $exception->setRequestId($apiError->requestId);
 
-            $delay = max(1, $retryInterval > 0 ? $retryInterval : $result->retryIn());
-            sleep($delay);
-        }
-    }
-
-    private function createException(ResponseInterface $response): Throwable
-    {
-        $content = (string)$response->getBody();
-
-        if (strpos($content, '<reports:reportDownloadError') !== false) {
-            $doc = new DOMDocument();
-
-            if ($doc->loadXML($content)) {
-                $xpath = new DOMXPath($doc);
-                $xpath->registerNamespace('r', ReportDefinitionBuilder::XML_NAMESPACE);
-                $requestId = $xpath->evaluate('string(/r:reportDownloadError/r:ApiError/r:requestId)');
-                $errorCode = $xpath->evaluate('string(/r:reportDownloadError/r:ApiError/r:errorCode)');
-                $errorMessage = $xpath->evaluate('string(/r:reportDownloadError/r:ApiError/r:errorMessage)');
-                $errorDetail = $xpath->evaluate('string(/r:reportDownloadError/r:ApiError/r:errorDetail)');
-
-                $exception = new ApiException($errorMessage, (int)$errorCode, $errorDetail);
-                $exception->setRequestId($requestId);
-
-                return $exception;
-            }
+            return $exception;
         }
 
-        return new NetworkException(
-            "Could not download report, server's response: " . $content,
+        throw new DownloadReportException(
+            sprintf(
+                'Could not download report. The server returned a response with status: %d',
+                $response->getStatusCode()
+            ),
             $response->getStatusCode()
         );
-    }
-
-    /**
-     * @return array<string, string>
-     */
-    private function buildRequestHeaders(ReportRequest $reportRequest): array
-    {
-        $headers = [
-            'Authorization' => sprintf('Bearer %s', $this->user->getAccessToken()),
-            'Accept-Language' => $this->user->getLocale(),
-            'Client-Login' => $this->user->getLogin(),
-            'processingMode' => $reportRequest->getProcessingMode(),
-        ];
-
-        if ($reportRequest->getReturnMoneyFormat() !== ReportRequest::RETURN_MONEY_FORMAT_MICROS) {
-            $headers['returnMoneyInMicros'] = 'false';
-        }
-
-        if ($reportRequest->isSkipReportHeader()) {
-            $headers['skipReportHeader'] = 'true';
-        }
-
-        if ($reportRequest->isSkipColumnHeader()) {
-            $headers['skipColumnHeader'] = 'true';
-        }
-
-        if ($reportRequest->isSkipReportSummary()) {
-            $headers['skipReportSummary'] = 'true';
-        }
-
-        return $headers;
     }
 }
