@@ -76,6 +76,11 @@
 ### Removed
 
 * Удален класс `Biplane\YandexDirect\Exception\ReportDefinitionException`.
+* Удален класс `Biplane\YandexDirect\Exception\LogicException`.
+* Удален класс `Biplane\YandexDirect\Exception\NetworkException`.
+  Вместо этого следует использовать `SoapFault`.
+* Удален класс `Biplane\YandexDirect\Exception\RequestException`.
+  Вместо этого следует использовать `Biplane\YandexDirect\Exception\ApiException` или `SoapFault`.
 * Удален класс `Biplane\YandexDirect\Api\V5\Report\AttributionModelEnum`.
   Вместо него следует использовать `Biplane\YandexDirect\Api\V5\Contract\AttributionModelEnum`.
 * Удален класс `Biplane\YandexDirect\Api\V5\Report\FormatEnum`.
