@@ -31,6 +31,9 @@ class ApiSoapClientV4 extends ApiSoapClient
     /** @var TransactionNumberGenerator|null */
     private $transactionNumberGenerator;
 
+    /**
+     * @internal
+     */
     public function getTransactionNumberGenerator(): TransactionNumberGenerator
     {
         if ($this->transactionNumberGenerator === null) {
@@ -40,6 +43,9 @@ class ApiSoapClientV4 extends ApiSoapClient
         return $this->transactionNumberGenerator;
     }
 
+    /**
+     * @internal
+     */
     public function setTransactionNumberGenerator(TransactionNumberGenerator $generator): void
     {
         $this->transactionNumberGenerator = $generator;

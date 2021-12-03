@@ -91,36 +91,57 @@ abstract class ApiSoapClient extends SoapClient implements ClientInterface
         $this->soapCallTimeout = $timeout;
     }
 
+    /**
+     * @internal
+     */
     public function setEventEmitter(?EventEmitter $emitter): void
     {
         $this->eventEmitter = $emitter;
     }
 
+    /**
+     * @internal
+     */
     public function getRunner(): ?Runner
     {
         return $this->runner;
     }
 
+    /**
+     * @internal
+     */
     public function setRunner(Runner $runner): void
     {
         $this->runner = $runner;
     }
 
+    /**
+     * @internal
+     */
     public function getLogContextFactory(): ?SoapLogContextFactory
     {
         return $this->logContextFactory;
     }
 
+    /**
+     * @internal
+     */
     public function setLogContextFactory(?SoapLogContextFactory $factory): void
     {
         $this->logContextFactory = $factory;
     }
 
+    /**
+     * @internal
+     */
     public function getLogger(): ?SoapLogger
     {
         return $this->logger;
     }
 
+    /**
+     * @internal
+     */
     public function setLogger(?SoapLogger $logger): void
     {
         $this->logger = $logger;
@@ -137,11 +158,17 @@ abstract class ApiSoapClient extends SoapClient implements ClientInterface
         return '';
     }
 
+    /**
+     * @deprecated
+     */
     public function getLastRequest(): string
     {
         return $this->__getLastRequestHeaders() . "\n\n" . $this->__getLastRequest();
     }
 
+    /**
+     * @deprecated
+     */
     public function getLastResponse(): string
     {
         return $this->__getLastResponseHeaders() . "\n\n" . $this->__getLastResponse();
