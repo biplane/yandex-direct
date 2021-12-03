@@ -6,6 +6,7 @@ namespace Biplane\YandexDirect\Api;
 
 use Biplane\YandexDirect\Config;
 use Biplane\YandexDirect\Exception\ApiException;
+use Biplane\YandexDirect\Util\StreamContextFactory;
 use SoapFault;
 
 use function array_unshift;
@@ -23,10 +24,8 @@ class ApiSoapClientV5 extends ApiSoapClient
      */
     public function __construct(?string $wsdl, Config $config, array $options = [])
     {
-        $options['stream_context'] = createStreamContext(
-            [
-                'header' => self::createHttpHeaders($config),
-            ],
+        $options['stream_context'] = StreamContextFactory::create(
+            self::createHttpHeaders($config),
             $options['stream_context'] ?? null
         );
 
@@ -95,21 +94,21 @@ class ApiSoapClientV5 extends ApiSoapClient
     }
 
     /**
-     * @return array<string>
+     * @return array<string, string>
      */
     private static function createHttpHeaders(Config $config): array
     {
         $headers = [
-            'Authorization: Bearer ' . $config->getAccessToken(),
-            'Accept-Language: ' . $config->getLocale(Config::API_5),
+            'Authorization' => 'Bearer ' . $config->getAccessToken(),
+            'Accept-Language' => $config->getLocale(Config::API_5),
         ];
 
         if ($config->getClientLogin() !== null) {
-            $headers[] = 'Client-Login: ' . $config->getClientLogin();
+            $headers['Client-Login'] = $config->getClientLogin();
         }
 
         if ($config->useOperatorUnits()) {
-            $headers[] = 'Use-Operator-Units: true';
+            $headers['Use-Operator-Units'] = 'true';
         }
 
         return $headers;
