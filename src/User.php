@@ -7,8 +7,8 @@ namespace Biplane\YandexDirect;
 use BadMethodCallException;
 use Biplane\YandexDirect\Api\ApiSoapClient;
 use Biplane\YandexDirect\Api\ApiSoapClientFactory;
-use Biplane\YandexDirect\Api\Finance\CallbackTransactionNumberGenerator;
-use Biplane\YandexDirect\Api\Finance\TransactionNumberGeneratorInterface;
+use Biplane\YandexDirect\Api\Finance\TransactionNumberGenerator;
+use Biplane\YandexDirect\Api\Finance\TransactionNumberGenerator\CallbackTransactionNumberGenerator;
 use Biplane\YandexDirect\Api\ReportServiceFactory;
 use Biplane\YandexDirect\Api\V4\YandexAPIService;
 use Biplane\YandexDirect\Api\V5\AdExtensions;
@@ -69,7 +69,7 @@ class User
     /** @var Config */
     private $config;
 
-    /** @var TransactionNumberGeneratorInterface|null */
+    /** @var TransactionNumberGenerator|null */
     private $transactionNumberGenerator;
 
     /**

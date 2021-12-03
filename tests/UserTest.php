@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Biplane\Tests\YandexDirect;
 
-use Biplane\YandexDirect\Api\Finance\CallbackTransactionNumberGenerator;
+use Biplane\YandexDirect\Api\Finance\TransactionNumberGenerator\CallbackTransactionNumberGenerator;
 use Biplane\YandexDirect\Api\V4\YandexAPIService;
 use Biplane\YandexDirect\Api\V5;
 use Biplane\YandexDirect\User;

@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Biplane\YandexDirect\Api;
 
-use Biplane\YandexDirect\Api\Finance\ClockTransactionNumberGenerator;
-use Biplane\YandexDirect\Api\Finance\TransactionNumberGeneratorInterface;
+use Biplane\YandexDirect\Api\Finance\TransactionNumberGenerator;
+use Biplane\YandexDirect\Api\Finance\TransactionNumberGenerator\ClockTransactionNumberGenerator;
 use Biplane\YandexDirect\Api\V4\Contract\AccountManagementRequest;
 use Biplane\YandexDirect\Config;
 use Biplane\YandexDirect\Exception\ApiException;
@@ -24,10 +24,10 @@ class ApiSoapClientV4 extends ApiSoapClient
 {
     private const SCHEMA_NAMESPACE = 'API';
 
-    /** @var TransactionNumberGeneratorInterface|null */
+    /** @var TransactionNumberGenerator|null */
     private $transactionNumberGenerator;
 
-    public function getTransactionNumberGenerator(): TransactionNumberGeneratorInterface
+    public function getTransactionNumberGenerator(): TransactionNumberGenerator
     {
         if ($this->transactionNumberGenerator === null) {
             $this->transactionNumberGenerator = new ClockTransactionNumberGenerator();
@@ -36,7 +36,7 @@ class ApiSoapClientV4 extends ApiSoapClient
         return $this->transactionNumberGenerator;
     }
 
-    public function setTransactionNumberGenerator(TransactionNumberGeneratorInterface $generator): void
+    public function setTransactionNumberGenerator(TransactionNumberGenerator $generator): void
     {
         $this->transactionNumberGenerator = $generator;
     }

@@ -2,9 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Biplane\YandexDirect\Api\Finance;
+namespace Biplane\YandexDirect\Api\Finance\TransactionNumberGenerator;
 
-final class CallbackTransactionNumberGenerator implements TransactionNumberGeneratorInterface
+use Biplane\YandexDirect\Api\Finance\TransactionNumberGenerator;
+
+final class CallbackTransactionNumberGenerator implements TransactionNumberGenerator
 {
     /** @var callable(): int */
     private $callback;

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Biplane\YandexDirect\Api;
 
-use Biplane\YandexDirect\Api\Finance\TransactionNumberGeneratorInterface;
+use Biplane\YandexDirect\Api\Finance\TransactionNumberGenerator;
 use Biplane\YandexDirect\Config;
 use Biplane\YandexDirect\Log\SoapLogContextFactory;
 use Biplane\YandexDirect\Log\SoapLogger;
@@ -22,7 +22,7 @@ final class ApiSoapClientFactory
 {
     /** @var int|null */
     private $soapCallTimeout;
-    /** @var TransactionNumberGeneratorInterface|null */
+    /** @var TransactionNumberGenerator|null */
     private $transactionNumberGenerator;
     /** @var Runner */
     private $runner;
@@ -33,7 +33,7 @@ final class ApiSoapClientFactory
 
     public function __construct(
         ?Runner $runner = null,
-        ?TransactionNumberGeneratorInterface $transactionNumberGenerator = null,
+        ?TransactionNumberGenerator $transactionNumberGenerator = null,
         ?int $soapCallTimeout = null,
         ?SoapLogger $logger = null,
         ?SoapLogContextFactory $logContextFactory = null

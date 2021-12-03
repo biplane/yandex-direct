@@ -64,6 +64,15 @@
   - public function getReady(ReportRequest $reportRequest, ?int $retryInterval = null): ReportResult
   + public function getReady(Reports\ReportRequest $reportRequest): Reports\ReportResult
   ```
+* [**BC break**] Интерфейс `TransactionNumberGeneratorInterface` переименован в `TransactionNumberGenerator`.
+  Для реализаций изменено пространство имен:
+
+  ```patch
+  - Biplane\YandexDirect\Api\Finance\CallbackTransactionNumberGenerator
+  + Biplane\YandexDirect\Api\Finance\TransactionNumberGenerator\CallbackTransactionNumberGenerator
+  - Biplane\YandexDirect\Api\Finance\ClockTransactionNumberGenerator
+  + Biplane\YandexDirect\Api\Finance\TransactionNumberGenerator\ClockTransactionNumberGenerator
+  ```
 
 ### Deprecated
 

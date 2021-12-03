@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Biplane\YandexDirect\Api\Finance;
 
-interface TransactionNumberGeneratorInterface
+interface TransactionNumberGenerator
 {
     /**
      * Generates the transaction number.

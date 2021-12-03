@@ -6,7 +6,7 @@ namespace Biplane\Tests\YandexDirect\Api;
 
 use Biplane\Tests\YandexDirect\Api\V5\MockSoapClient;
 use Biplane\YandexDirect\Api\ApiSoapClientFactory;
-use Biplane\YandexDirect\Api\Finance\TransactionNumberGeneratorInterface;
+use Biplane\YandexDirect\Api\Finance\TransactionNumberGenerator;
 use Biplane\YandexDirect\Api\V4\YandexAPIService;
 use Biplane\YandexDirect\Api\V5\AdGroups;
 use Biplane\YandexDirect\Config;
@@ -48,7 +48,7 @@ class ApiSoapClientFactoryTest extends TestCase
 
     public function testCreateSoapClientWithCustomTransactionNumberGenerator(): void
     {
-        $generator = $this->createMock(TransactionNumberGeneratorInterface::class);
+        $generator = $this->createMock(TransactionNumberGenerator::class);
         $factory = new ApiSoapClientFactory(null, $generator);
         $config = new Config(['access_token' => 'secret']);
 

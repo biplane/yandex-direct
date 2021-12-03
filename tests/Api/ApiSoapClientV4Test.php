@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Biplane\Tests\YandexDirect\Api;
 
 use Biplane\YandexDirect\Api\ApiSoapClientV4;
-use Biplane\YandexDirect\Api\Finance\TransactionNumberGeneratorInterface;
+use Biplane\YandexDirect\Api\Finance\TransactionNumberGenerator;
 use Biplane\YandexDirect\Api\V4\Contract\AccountManagementRequest;
 use Biplane\YandexDirect\Config;
 use Biplane\YandexDirect\Exception\ApiException;
@@ -57,7 +57,7 @@ XML
             'master_token' => 'fake',
         ]);
 
-        $txNumberGenerator = $this->createMock(TransactionNumberGeneratorInterface::class);
+        $txNumberGenerator = $this->createMock(TransactionNumberGenerator::class);
 
         $client = $this->createSoapClient(ApiSoapClientV4::class, $config, ['__doRequest']);
         $client->setTransactionNumberGenerator($txNumberGenerator);
