@@ -2,32 +2,37 @@
 
 declare(strict_types=1);
 
-use Biplane\Tests\YandexDirect\FixHeadersListener;
-use VCR\Request;
+use allejo\VCR\VCRCleaner;
 use VCR\VCR;
-use VCR\VCRFactory;
-use VCR\Videorecorder;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
 VCR::configure()
     ->setCassettePath(__DIR__ . '/fixtures/vcr')
     ->setMode(VCR::MODE_ONCE)
-    ->setWhiteList(['src/Api/ApiSoapClient.php'])
-    ->addRequestMatcher('headers', static function (Request $first, Request $second) {
-        $filterHeaders = static function (array $headers) {
-            unset($headers['Authorization'], $headers['Client-Login']);
+    ->setWhiteList(['src/Api/ApiSoapClient.php']);
 
-            return array_filter($headers);
-        };
+VCRCleaner::enable([
+    'request' => [
+        'ignoreHeaders' => [
+            'Authorization',
+            'Client-Login',
+        ],
+        'bodyScrubbers' => [
+            static function (?string $body): ?string {
+                if ($body === null) {
+                    return null;
+                }
 
-        return $filterHeaders($first->getHeaders()) === $filterHeaders($second->getHeaders());
-    });
-
-$recorder = VCRFactory::get(Videorecorder::class);
-assert($recorder instanceof Videorecorder);
-$recorder->getEventDispatcher()->addSubscriber(new FixHeadersListener());
+                return preg_replace('@(?<=<ns1:token>)([^<]+)(?=</ns1:token>)@iu', 'REDACTED', $body);
+            },
+        ],
+    ],
+    'response' => [
+        'ignoreHeaders' => ['*'],
+    ],
+]);
 
 // Required for monkey patching (registration of hooks)
-$recorder->turnOn();
-$recorder->turnOff();
+VCR::turnOn();
+VCR::turnOff();

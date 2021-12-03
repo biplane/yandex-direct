@@ -4,9 +4,6 @@ declare(strict_types=1);
 
 namespace Biplane\YandexDirect\Api;
 
-use SimpleXMLElement;
-
-use function array_flip;
 use function array_map;
 use function array_merge;
 use function explode;
@@ -14,7 +11,6 @@ use function implode;
 use function is_array;
 use function is_resource;
 use function preg_match_all;
-use function str_replace;
 use function stream_context_create;
 use function stream_context_get_options;
 use function stream_context_get_params;
@@ -111,21 +107,4 @@ function parseHttpHeaders($headers): array
     }
 
     return explode("\r\n", $headers);
-}
-
-function fixNamespace(string $response, string $schemaNamespace): string
-{
-    if ($response === '') {
-        return $response;
-    }
-
-    $xml = new SimpleXMLElement($response);
-    $nss = array_flip($xml->getDocNamespaces(true));
-    $invalidNs = 'http://namespaces.soaplite.com/perl';
-
-    if (isset($nss[$invalidNs], $nss[$schemaNamespace])) {
-        return str_replace($nss[$invalidNs] . ':', $nss[$schemaNamespace] . ':', $response);
-    }
-
-    return $response;
 }

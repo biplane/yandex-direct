@@ -17,12 +17,15 @@ use function assert;
 use function hash;
 use function in_array;
 use function property_exists;
+use function str_replace;
+use function strpos;
 use function strrpos;
 use function substr;
 
 class ApiSoapClientV4 extends ApiSoapClient
 {
-    private const SCHEMA_NAMESPACE = 'API';
+    private const API_NAMESPACE = 'API';
+    private const ALT_NAMESPACES = ['http://namespaces.soaplite.com/perl'];
 
     /** @var TransactionNumberGenerator|null */
     private $transactionNumberGenerator;
@@ -48,10 +51,18 @@ class ApiSoapClientV4 extends ApiSoapClient
      */
     public function __doRequest($request, $location, $action, $version, $oneWay = 0)
     {
-        return fixNamespace(
-            parent::__doRequest($request, $location, $action, $version, $oneWay),
-            self::SCHEMA_NAMESPACE
-        );
+        $response = parent::__doRequest($request, $location, $action, $version, $oneWay);
+
+        // Replace URI of some namespaces to fix mapping WSDL types to PHP classes
+        foreach (self::ALT_NAMESPACES as $searchURI) {
+            if (strpos($response, $searchURI) === false) {
+                continue;
+            }
+
+            $response = str_replace($searchURI, self::API_NAMESPACE, $response);
+        }
+
+        return $response;
     }
 
     /**
@@ -59,8 +70,8 @@ class ApiSoapClientV4 extends ApiSoapClient
      */
     public function __soapCall($name, $args, $options = null, $inputHeaders = null, &$outputHeaders = null)
     {
-        $inputHeaders[] = new SoapHeader(self::SCHEMA_NAMESPACE, 'locale', $this->config->getLocale(Config::API_4));
-        $inputHeaders[] = new SoapHeader(self::SCHEMA_NAMESPACE, 'token', $this->config->getAccessToken());
+        $inputHeaders[] = new SoapHeader(self::API_NAMESPACE, 'locale', $this->config->getLocale(Config::API_4));
+        $inputHeaders[] = new SoapHeader(self::API_NAMESPACE, 'token', $this->config->getAccessToken());
 
         if ($this->isFinancialMethod($name, $args)) {
             $usedMethod = $name;
@@ -72,8 +83,8 @@ class ApiSoapClientV4 extends ApiSoapClient
             $operationNum = $this->getTransactionNumberGenerator()->generate();
             $financeToken = $this->generateFinanceToken($usedMethod, $operationNum);
 
-            $inputHeaders[] = new SoapHeader(self::SCHEMA_NAMESPACE, 'finance_token', $financeToken);
-            $inputHeaders[] = new SoapHeader(self::SCHEMA_NAMESPACE, 'operation_num', $operationNum);
+            $inputHeaders[] = new SoapHeader(self::API_NAMESPACE, 'finance_token', $financeToken);
+            $inputHeaders[] = new SoapHeader(self::API_NAMESPACE, 'operation_num', $operationNum);
         }
 
         return parent::__soapCall($name, $args, $options, $inputHeaders, $outputHeaders);
