@@ -16,4 +16,10 @@ class AttributionModelEnum
     public const FC = 'FC';
 
     public const LYDC = 'LYDC';
+
+    public const LSCCD = 'LSCCD';
+
+    public const FCCD = 'FCCD';
+
+    public const LYDCCD = 'LYDCCD';
 }

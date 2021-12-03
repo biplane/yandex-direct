@@ -16,6 +16,9 @@ class DynamicTextCampaignGetItem extends DynamicTextCampaignBase
 //    protected $Settings = null;
 
 //    Can be omitted.
+//    protected $PlacementTypes = null;
+
+//    Can be omitted.
 //    protected $PriorityGoals = null;
 
     public function getBiddingStrategy(): ?DynamicTextCampaignStrategy
@@ -49,6 +52,21 @@ class DynamicTextCampaignGetItem extends DynamicTextCampaignBase
     public function setSettings(?array $value = null)
     {
         $this->Settings = $value;
+
+        return $this;
+    }
+
+    public function getPlacementTypes(): ?PlacementTypeArray
+    {
+        return $this->PlacementTypes ?? null;
+    }
+
+    /**
+     * @return $this
+     */
+    public function setPlacementTypes(?PlacementTypeArray $value = null)
+    {
+        $this->PlacementTypes = $value;
 
         return $this;
     }

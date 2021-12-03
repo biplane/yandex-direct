@@ -9,6 +9,8 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class DynamicTextCampaignFieldEnum
 {
+    public const PLACEMENT_TYPES = 'PlacementTypes';
+
     public const COUNTER_IDS = 'CounterIds';
 
     public const SETTINGS = 'Settings';

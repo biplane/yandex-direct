@@ -15,6 +15,9 @@ class DynamicTextCampaignAddItem
 //    protected $Settings = null;
 
 //    Can be omitted.
+//    protected $PlacementTypes = null;
+
+//    Can be omitted.
 //    protected $CounterIds = null;
 
 //    Can be omitted.
@@ -62,6 +65,26 @@ class DynamicTextCampaignAddItem
     public function setSettings(?array $value = null)
     {
         $this->Settings = $value;
+
+        return $this;
+    }
+
+    /**
+     * @return PlacementType[]|null
+     */
+    public function getPlacementTypes(): ?array
+    {
+        return $this->PlacementTypes ?? null;
+    }
+
+    /**
+     * @param PlacementType[]|null $value
+     *
+     * @return $this
+     */
+    public function setPlacementTypes(?array $value = null)
+    {
+        $this->PlacementTypes = $value;
 
         return $this;
     }
