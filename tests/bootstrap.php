@@ -10,7 +10,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
 VCR::configure()
     ->setCassettePath(__DIR__ . '/fixtures/vcr')
     ->setMode(VCR::MODE_ONCE)
-    ->setWhiteList(['src/Api/ApiSoapClient.php']);
+    ->setWhiteList(['src/Soap/ApiSoapClient.php']);
 
 VCRCleaner::enable([
     'request' => [

@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect;
 
 use BadMethodCallException;
-use Biplane\YandexDirect\Api\ApiSoapClient;
 use Biplane\YandexDirect\Api\ApiSoapClientFactory;
 use Biplane\YandexDirect\Api\Finance\TransactionNumberGenerator;
 use Biplane\YandexDirect\Api\Finance\TransactionNumberGenerator\CallbackTransactionNumberGenerator;
@@ -37,6 +36,7 @@ use Biplane\YandexDirect\Api\V5\SmartAdTargets;
 use Biplane\YandexDirect\Api\V5\TurboPages;
 use Biplane\YandexDirect\Api\V5\VCards;
 use Biplane\YandexDirect\Event\EventEmitter;
+use Biplane\YandexDirect\Soap\ApiSoapClient;
 use InvalidArgumentException;
 use LogicException;
 use Symfony\Component\EventDispatcher\EventDispatcher;

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Biplane\Tests\YandexDirect\Event;
 
-use Biplane\YandexDirect\Api\ApiSoapClient;
+use Biplane\YandexDirect\Soap\ApiSoapClient;
 use Biplane\YandexDirect\User;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase as BaseTestCase;

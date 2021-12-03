@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Biplane\Tests\YandexDirect\Api;
 
-use Biplane\YandexDirect\Api\ApiSoapClient;
 use Biplane\YandexDirect\Config;
+use Biplane\YandexDirect\Soap\ApiSoapClient;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 

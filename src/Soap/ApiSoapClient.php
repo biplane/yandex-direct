@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Biplane\YandexDirect\Api;
+namespace Biplane\YandexDirect\Soap;
 
 use Biplane\YandexDirect\ClientInterface;
 use Biplane\YandexDirect\Config;
@@ -13,10 +13,14 @@ use Biplane\YandexDirect\Log\SoapLogger;
 use Biplane\YandexDirect\Runner\Runner;
 use InvalidArgumentException;
 use ReflectionClass;
+use RuntimeException;
 use SoapClient;
 use SoapFault;
 use Throwable;
 
+use function array_map;
+use function count;
+use function in_array;
 use function ini_restore;
 use function ini_set;
 use function preg_match;
@@ -54,6 +58,12 @@ abstract class ApiSoapClient extends SoapClient implements ClientInterface
     {
         if ($wsdl !== null && $config->useSandbox()) {
             $wsdl = str_replace('api.direct.yandex.', 'api-sandbox.direct.yandex.', $wsdl);
+        }
+
+        $typemap = $this->buildTypemap($options['typemap'] ?? []);
+
+        if (count($typemap) > 0) {
+            $options['typemap'] = $typemap;
         }
 
         parent::__construct($wsdl, $options);
@@ -183,6 +193,59 @@ abstract class ApiSoapClient extends SoapClient implements ClientInterface
         }
 
         return $response;
+    }
+
+    /**
+     * @return array<TypeConverter>
+     */
+    protected function getTypeConverters(): array
+    {
+        return [];
+    }
+
+    /**
+     * @param array<array{type_name: string, type_ns: string, from_xml: callable, to_xml: callable}> $typemap
+     *
+     * @return array<array{type_name: string, type_ns: string, from_xml: callable, to_xml?: callable}>
+     */
+    private function buildTypemap(array $typemap): array
+    {
+        if (count($typemap) > 0) {
+            $existingKeys = array_map(
+                static function (array $typeMapping): string {
+                    return $typeMapping['type_ns'] . ':' . $typeMapping['type_name'];
+                },
+                $typemap
+            );
+        } else {
+            $existingKeys = [];
+        }
+
+        foreach ($this->getTypeConverters() as $converter) {
+            $key = $converter->getTypeNamespace() . ':' . $converter->getTypeName();
+
+            if (in_array($key, $existingKeys, true)) {
+                throw new RuntimeException(sprintf(
+                    'Converter already registered for type "%s" in namespace "%s"',
+                    $converter->getTypeName(),
+                    $converter->getTypeNamespace()
+                ));
+            }
+
+            $definition = [
+                'type_name' => $converter->getTypeName(),
+                'type_ns' => $converter->getTypeNamespace(),
+                'from_xml' => [$converter, 'fromXml'],
+            ];
+
+            if (! $converter instanceof DisableEncoder) {
+                $definition['to_xml'] = [$converter, 'toXml'];
+            }
+
+            $typemap[] = $definition;
+        }
+
+        return $typemap;
     }
 
     private function logSoapCall(string $methodName, ?SoapFault $fault = null): void

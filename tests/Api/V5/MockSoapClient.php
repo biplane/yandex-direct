@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace Biplane\Tests\YandexDirect\Api\V5;
 
 use BadMethodCallException;
-use Biplane\YandexDirect\Api\ApiSoapClient;
 use Biplane\YandexDirect\Config;
 use Biplane\YandexDirect\Exception\ApiException;
+use Biplane\YandexDirect\Soap\ApiSoapClient;
 use SoapFault;
 
 final class MockSoapClient extends ApiSoapClient

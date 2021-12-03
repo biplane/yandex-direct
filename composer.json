@@ -38,8 +38,7 @@
     "symfony/http-client": "^4.4 || ^5.0"
   },
   "autoload": {
-    "psr-4": { "Biplane\\YandexDirect\\": "src/" },
-    "files": ["src/Api/functions.php"]
+    "psr-4": { "Biplane\\YandexDirect\\": "src/" }
   },
   "autoload-dev": {
     "psr-4": {

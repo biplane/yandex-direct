@@ -9,6 +9,7 @@ use Biplane\YandexDirect\Api\Finance\TransactionNumberGenerator\ClockTransaction
 use Biplane\YandexDirect\Api\V4\Contract\AccountManagementRequest;
 use Biplane\YandexDirect\Config;
 use Biplane\YandexDirect\Exception\ApiException;
+use Biplane\YandexDirect\Soap\ApiSoapClient;
 use LogicException;
 use SoapFault;
 use SoapHeader;

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Biplane\YandexDirect\Helper;
 
-use Biplane\YandexDirect\Api\ApiSoapClient;
+use Biplane\YandexDirect\Soap\ApiSoapClient;
 use InvalidArgumentException;
 use RuntimeException;
 

@@ -6,10 +6,13 @@ namespace Biplane\YandexDirect\Api;
 
 use Biplane\YandexDirect\Config;
 use Biplane\YandexDirect\Exception\ApiException;
+use Biplane\YandexDirect\Soap\ApiSoapClient;
+use Biplane\YandexDirect\Soap\TypeConverter\ArrayOfIntegerConverter;
+use Biplane\YandexDirect\Soap\TypeConverter\ArrayOfLongConverter;
+use Biplane\YandexDirect\Soap\TypeConverter\ArrayOfStringConverter;
 use Biplane\YandexDirect\Util\StreamContextFactory;
 use SoapFault;
 
-use function array_unshift;
 use function is_object;
 use function preg_match;
 use function property_exists;
@@ -28,26 +31,6 @@ class ApiSoapClientV5 extends ApiSoapClient
             self::createHttpHeaders($config),
             $options['stream_context'] ?? null
         );
-
-        $typemap = $options['typemap'] ?? [];
-
-        array_unshift($typemap, [
-            'type_ns' => self::GENERAL_NS,
-            'type_name' => 'ArrayOfString',
-            'from_xml' => __NAMESPACE__ . '\\parseArrayOfString',
-        ]);
-        array_unshift($typemap, [
-            'type_ns' => self::GENERAL_NS,
-            'type_name' => 'ArrayOfInteger',
-            'from_xml' => __NAMESPACE__ . '\\parseArrayOfInt',
-        ]);
-        array_unshift($typemap, [
-            'type_ns' => self::GENERAL_NS,
-            'type_name' => 'ArrayOfLong',
-            'from_xml' => __NAMESPACE__ . '\\parseArrayOfLong',
-        ]);
-
-        $options['typemap'] = $typemap;
 
         parent::__construct($wsdl, $config, $options);
     }
@@ -68,6 +51,18 @@ class ApiSoapClientV5 extends ApiSoapClient
         }
 
         return null;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    protected function getTypeConverters(): array
+    {
+        return [
+            new ArrayOfStringConverter(self::GENERAL_NS),
+            new ArrayOfIntegerConverter(self::GENERAL_NS),
+            new ArrayOfLongConverter(self::GENERAL_NS),
+        ];
     }
 
     protected function parseSoapFault(SoapFault $fault): ?ApiException

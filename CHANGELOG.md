@@ -73,6 +73,12 @@
   - Biplane\YandexDirect\Api\Finance\ClockTransactionNumberGenerator
   + Biplane\YandexDirect\Api\Finance\TransactionNumberGenerator\ClockTransactionNumberGenerator
   ```
+* [**BC break**] Изменено пространство имен для `ApiSoapClient`
+
+  ```patch
+  - Biplane\YandexDirect\Api
+  + Biplane\YandexDirect\Soap
+  ```
 
 ### Deprecated
 

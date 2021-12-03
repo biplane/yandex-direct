@@ -9,6 +9,7 @@ use Biplane\YandexDirect\Config;
 use Biplane\YandexDirect\Log\SoapLogContextFactory;
 use Biplane\YandexDirect\Log\SoapLogger;
 use Biplane\YandexDirect\Runner\Runner;
+use Biplane\YandexDirect\Soap\ApiSoapClient;
 use ReflectionClass;
 
 use function base64_encode;
