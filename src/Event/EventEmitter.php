@@ -16,6 +16,9 @@ use function method_exists;
 use function strrpos;
 use function substr;
 
+/**
+ * @internal
+ */
 final class EventEmitter
 {
     /** @var EventDispatcherInterface */

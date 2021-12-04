@@ -91,6 +91,11 @@
 * `DumpListener` будет удален в будущем. Вместо этого используйте `SoapLogger`.
 * Метод `Biplane\YandexDirect\Api\V5\Reports::download()` будет удален в будущем.
   Вместо этого используйте `Biplane\YandexDirect\Api\V5\Reports\ReportResult::saveToFile()`.
+* Поддержка событий будет удалена в будущем.
+  * `Biplane\YandexDirect\Events`
+  * `Biplane\YandexDirect\Event\FailCallEvent`
+  * `Biplane\YandexDirect\Event\PostCallEvent`
+  * `Biplane\YandexDirect\Event\PreCallEvent`
 
 ### Removed
 

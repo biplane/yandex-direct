@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect;
 
 /**
- * Yandex Direct API events.
+ * @deprecated Will be removed in 6.0, without replacements
  */
 final class Events
 {

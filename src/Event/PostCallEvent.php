@@ -9,6 +9,9 @@ use Biplane\YandexDirect\ClientInterface;
 use Biplane\YandexDirect\User;
 use InvalidArgumentException;
 
+/**
+ * @deprecated Will be removed in 6.0, without replacements
+ */
 class PostCallEvent extends BaseAfterCallEvent
 {
     /** @var mixed */

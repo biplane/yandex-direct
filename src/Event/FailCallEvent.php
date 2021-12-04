@@ -9,6 +9,9 @@ use Biplane\YandexDirect\ClientInterface;
 use Biplane\YandexDirect\User;
 use Throwable;
 
+/**
+ * @deprecated Will be removed in 6.0, without replacements
+ */
 class FailCallEvent extends BaseAfterCallEvent
 {
     /** @var Throwable */

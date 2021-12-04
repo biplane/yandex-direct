@@ -9,6 +9,9 @@ use Biplane\YandexDirect\User;
 use function strpos;
 use function substr;
 
+/**
+ * @deprecated Will be removed in 6.0, without replacements
+ */
 class PreCallEvent
 {
     /** @var string */
