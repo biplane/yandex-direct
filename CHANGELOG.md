@@ -7,6 +7,7 @@
 * Добавлен класс `Biplane\YandexDirect\ApiServiceFactory`.
   [**BC break**] Изначально фабрика была добавлена ещё в `5.0.0-beta1`,
   но под другим именем `Biplane\YandexDirect\Api\ApiSoapClientFactory`.
+* Добавлен класс `Biplane\YandexDirect\ApiServiceFactoryBuilder`.
 * Реализован новый API для логирования запросов к API (PR #36)
 * Добавлен класс `Biplane\YandexDirect\ReportServiceFactory`
 * Добавлен класс `Biplane\YandexDirect\Exception\DownloadReportException`.
