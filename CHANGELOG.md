@@ -20,8 +20,8 @@
 * Изменена сигнатура конструктора `Biplane\YandexDirect\ApiServiceFactory`
 
   ```patch
-  - public function __construct(?Runner $runner = null, ?TransactionNumberGeneratorInterface $transactionNumberGenerator = null, ?int $soapCallTimeout = null)
-  + public function __construct(?Runner $runner = null, ?TransactionNumberGeneratorInterface $transactionNumberGenerator = null, ?int $soapCallTimeout = null, ?SoapLogger $logger = null, ?SoapLogContextFactory $logContextFactory = null)
+  - public function __construct(?Runner $runner = null, ?TransactionNumberGenerator $transactionNumberGenerator = null, ?int $soapCallTimeout = null)
+  + public function __construct(?Runner $runner = null, ?TransactionNumberGenerator $transactionNumberGenerator = null, ?int $soapCallTimeout = null, ?SoapLogger $logger = null, ?SoapLogContextFactory $logContextFactory = null)
   ```
 
 * Для `Biplane\YandexDirect\Api\V4\YandexAPIService` идентификатор запроса читается
