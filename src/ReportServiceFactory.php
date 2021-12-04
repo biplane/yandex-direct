@@ -2,10 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Biplane\YandexDirect\Api;
+namespace Biplane\YandexDirect;
 
 use Biplane\YandexDirect\Api\V5\Reports;
-use Biplane\YandexDirect\Config;
 use Http\Discovery\Psr17FactoryDiscovery;
 use Http\Discovery\Psr18ClientDiscovery;
 use Psr\Http\Client\ClientInterface;
@@ -33,7 +32,7 @@ final class ReportServiceFactory
         $this->streamFactory = $streamFactory ?? Psr17FactoryDiscovery::findStreamFactory();
     }
 
-    public function create(Config $config): Reports
+    public function createService(Config $config): Reports
     {
         return new Reports($config, $this->httpClient, $this->requestFactory, $this->streamFactory);
     }

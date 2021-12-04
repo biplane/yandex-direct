@@ -24,12 +24,12 @@ $ composer require biplane/yandex-direct
 ```php
 <?php
 
-use Biplane\YandexDirect\Api\ApiSoapClientFactory;
+use Biplane\YandexDirect\ApiServiceFactory;
 use Biplane\YandexDirect\Api\V5\Ads;
 use Biplane\YandexDirect\Api\V5\Contract;
 use Biplane\YandexDirect\ConfigBuilder;
 
-$serviceFactory = new ApiSoapClientFactory();
+$serviceFactory = new ApiServiceFactory();
 
 $config = ConfigBuilder::create()
     ->setAccessToken('<INSERT_ACCESS_TOKEN>')
@@ -37,7 +37,7 @@ $config = ConfigBuilder::create()
     ->setLocale('ru')
     ->getConfig();
 
-$service = $serviceFactory->createSoapClient($config, Ads::class);
+$service = $serviceFactory->createService($config, Ads::class);
 
 $criteria = Contract\AdsSelectionCriteria::create()
     ->setCampaignIds([123])

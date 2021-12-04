@@ -4,8 +4,11 @@
 
 ### Added
 
+* Добавлен класс `Biplane\YandexDirect\ApiServiceFactory`.
+  [**BC break**] Изначально фабрика была добавлена ещё в `5.0.0-beta1`,
+  но под другим именем `Biplane\YandexDirect\Api\ApiSoapClientFactory`.
 * Реализован новый API для логирования запросов к API (PR #36)
-* Добавлен класс `Biplane\YandexDirect\Api\ReportServiceFactory`
+* Добавлен класс `Biplane\YandexDirect\ReportServiceFactory`
 * Добавлен класс `Biplane\YandexDirect\Exception\DownloadReportException`.
   Данное исключение может быть выброшено в том случае, когда запрос к сервису Reports
   завершился с ошибкой. Например, когда HTTP-код `502`.
@@ -14,7 +17,7 @@
 ### Changed
 
 * Обновлены сервисы для совмести с последней версией API 5, включая изменения от 2021-11-22.
-* Изменена сигнатура конструктора `Biplane\YandexDirect\Api\ApiSoapClientFactory`
+* Изменена сигнатура конструктора `Biplane\YandexDirect\ApiServiceFactory`
 
   ```patch
   - public function __construct(?Runner $runner = null, ?TransactionNumberGeneratorInterface $transactionNumberGenerator = null, ?int $soapCallTimeout = null)

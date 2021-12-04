@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Biplane\Tests\YandexDirect\Api;
+namespace Biplane\Tests\YandexDirect;
 
 use Biplane\Tests\YandexDirect\Api\V5\MockSoapClient;
-use Biplane\YandexDirect\Api\ApiSoapClientFactory;
 use Biplane\YandexDirect\Api\Finance\TransactionNumberGenerator;
 use Biplane\YandexDirect\Api\V4\YandexAPIService;
 use Biplane\YandexDirect\Api\V5\AdGroups;
+use Biplane\YandexDirect\ApiServiceFactory;
 use Biplane\YandexDirect\Config;
 use Biplane\YandexDirect\Log\SoapLogger;
 use Biplane\YandexDirect\Runner\Runner;
@@ -20,47 +20,47 @@ use const SOAP_COMPRESSION_GZIP;
 use const SOAP_SINGLE_ELEMENT_ARRAYS;
 use const WSDL_CACHE_BOTH;
 
-class ApiSoapClientFactoryTest extends TestCase
+class ApiServiceFactoryTest extends TestCase
 {
     public function testCreateSoapClientWithDefaults(): void
     {
-        $factory = new ApiSoapClientFactory();
+        $factory = new ApiServiceFactory();
         $config = new Config(['access_token' => 'secret']);
 
-        $client = $factory->createSoapClient($config, AdGroups::class);
+        $service = $factory->createService($config, AdGroups::class);
 
-        self::assertInstanceOf(AdGroups::class, $client);
-        self::assertSame(180, $client->getSoapCallTimeout());
-        self::assertSame(Runner::default(), $client->getRunner());
-        self::assertNotNull($client->getLogContextFactory());
+        self::assertInstanceOf(AdGroups::class, $service);
+        self::assertSame(180, $service->getSoapCallTimeout());
+        self::assertSame(Runner::default(), $service->getRunner());
+        self::assertNotNull($service->getLogContextFactory());
     }
 
     public function testCreateSoapClientWithCustomCallTimeout(): void
     {
-        $factory = new ApiSoapClientFactory(null, null, 150);
+        $factory = new ApiServiceFactory(null, null, 150);
         $config = new Config(['access_token' => 'secret']);
 
-        $client = $factory->createSoapClient($config, AdGroups::class);
+        $service = $factory->createService($config, AdGroups::class);
 
-        self::assertInstanceOf(AdGroups::class, $client);
-        self::assertSame(150, $client->getSoapCallTimeout());
+        self::assertInstanceOf(AdGroups::class, $service);
+        self::assertSame(150, $service->getSoapCallTimeout());
     }
 
     public function testCreateSoapClientWithCustomTransactionNumberGenerator(): void
     {
         $generator = $this->createMock(TransactionNumberGenerator::class);
-        $factory = new ApiSoapClientFactory(null, $generator);
+        $factory = new ApiServiceFactory(null, $generator);
         $config = new Config(['access_token' => 'secret']);
 
-        $client = $factory->createSoapClient($config, YandexAPIService::class);
+        $service = $factory->createService($config, YandexAPIService::class);
 
-        self::assertInstanceOf(YandexAPIService::class, $client);
-        self::assertSame($generator, $client->getTransactionNumberGenerator());
+        self::assertInstanceOf(YandexAPIService::class, $service);
+        self::assertSame($generator, $service->getTransactionNumberGenerator());
     }
 
     public function testPopulateSoapOptions(): void
     {
-        $factory = new ApiSoapClientFactory();
+        $factory = new ApiServiceFactory();
         $soapOptions = Config\SoapOptions::default()
             ->withWsdlCacheType(WSDL_CACHE_BOTH)
             ->withCompression(SOAP_COMPRESSION_ACCEPT | SOAP_COMPRESSION_GZIP | 5);
@@ -69,9 +69,9 @@ class ApiSoapClientFactoryTest extends TestCase
             'soap_options' => $soapOptions,
         ]);
 
-        $client = $factory->createSoapClient($config, MockSoapClient::class);
+        $service = $factory->createService($config, MockSoapClient::class);
 
-        self::assertInstanceOf(MockSoapClient::class, $client);
+        self::assertInstanceOf(MockSoapClient::class, $service);
         self::assertSame(
             [
                 'soap_version' => SOAP_1_1,
@@ -83,18 +83,18 @@ class ApiSoapClientFactoryTest extends TestCase
                 'compression' => SOAP_COMPRESSION_ACCEPT | SOAP_COMPRESSION_GZIP | 5,
                 'cache_wsdl' => WSDL_CACHE_BOTH,
             ],
-            $client->getOptions()
+            $service->getOptions()
         );
     }
 
     public function testInjectLoggerToService(): void
     {
         $logger = $this->createMock(SoapLogger::class);
-        $factory = new ApiSoapClientFactory(null, null, null, $logger);
+        $factory = new ApiServiceFactory(null, null, null, $logger);
         $config = new Config(['access_token' => 'secret']);
 
-        $client = $factory->createSoapClient($config, AdGroups::class);
+        $service = $factory->createService($config, AdGroups::class);
 
-        self::assertSame($logger, $client->getLogger());
+        self::assertSame($logger, $service->getLogger());
     }
 }

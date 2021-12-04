@@ -5,10 +5,8 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect;
 
 use BadMethodCallException;
-use Biplane\YandexDirect\Api\ApiSoapClientFactory;
 use Biplane\YandexDirect\Api\Finance\TransactionNumberGenerator;
 use Biplane\YandexDirect\Api\Finance\TransactionNumberGenerator\CallbackTransactionNumberGenerator;
-use Biplane\YandexDirect\Api\ReportServiceFactory;
 use Biplane\YandexDirect\Api\V4\YandexAPIService;
 use Biplane\YandexDirect\Api\V5\AdExtensions;
 use Biplane\YandexDirect\Api\V5\AdGroups;
@@ -60,7 +58,7 @@ class User
     /** @var array<string, ApiSoapClient|Reports> */
     private $proxies;
 
-    /** @var ApiSoapClientFactory|null */
+    /** @var ApiServiceFactory|null */
     private $soapClientFactory;
 
     /** @var ReportServiceFactory|null */
@@ -407,7 +405,7 @@ class User
 
     // phpcs:enable Squiz.Commenting.FunctionComment.InvalidNoReturn
 
-    public function setServiceFactory(ApiSoapClientFactory $soapClientFactory): void
+    public function setServiceFactory(ApiServiceFactory $soapClientFactory): void
     {
         $this->soapClientFactory = $soapClientFactory;
     }
@@ -435,13 +433,13 @@ class User
                 $this->reportServiceFactory = new ReportServiceFactory();
             }
 
-            $service = $this->reportServiceFactory->create($this->config);
+            $service = $this->reportServiceFactory->createService($this->config);
         } else {
             if ($this->soapClientFactory === null) {
-                $this->soapClientFactory = new ApiSoapClientFactory(null, $this->transactionNumberGenerator);
+                $this->soapClientFactory = new ApiServiceFactory(null, $this->transactionNumberGenerator);
             }
 
-            $service = $this->soapClientFactory->createSoapClient($this->config, $serviceClass);
+            $service = $this->soapClientFactory->createService($this->config, $serviceClass);
 
             if ($this->dispatcher !== null) {
                 $service->setEventEmitter(new EventEmitter($this->dispatcher, $this));

@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Biplane\YandexDirect\Api;
+namespace Biplane\YandexDirect;
 
+use Biplane\YandexDirect\Api\ApiSoapClientV4;
 use Biplane\YandexDirect\Api\Finance\TransactionNumberGenerator;
-use Biplane\YandexDirect\Config;
 use Biplane\YandexDirect\Log\SoapLogContextFactory;
 use Biplane\YandexDirect\Log\SoapLogger;
 use Biplane\YandexDirect\Runner\Runner;
@@ -19,7 +19,7 @@ use function stream_context_create;
 use const SOAP_1_1;
 use const SOAP_SINGLE_ELEMENT_ARRAYS;
 
-final class ApiSoapClientFactory
+final class ApiServiceFactory
 {
     /** @var int|null */
     private $soapCallTimeout;
@@ -58,7 +58,7 @@ final class ApiSoapClientFactory
      *
      * @template T of ApiSoapClient
      */
-    public function createSoapClient(Config $config, string $serviceClass): ApiSoapClient
+    public function createService(Config $config, string $serviceClass): ApiSoapClient
     {
         $options = $this->extendOptions(
             [
