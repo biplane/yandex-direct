@@ -36,6 +36,9 @@ class ApiException extends RuntimeException
         return $this->requestId;
     }
 
+    /**
+     * @internal
+     */
     public function setRequestId(string $requestId): void
     {
         $this->requestId = $requestId;
