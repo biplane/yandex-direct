@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 5.0.0 [commit logs](https://github.com/biplane/yandex-direct/compare/5.0.0-beta4...5.0.0)
+
 ### Added
 
 * Добавлен класс `Biplane\YandexDirect\ApiServiceFactory`.
