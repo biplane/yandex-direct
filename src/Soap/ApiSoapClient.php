@@ -149,7 +149,7 @@ abstract class ApiSoapClient extends SoapClient implements ClientInterface
 
     public function getRequestId(): string
     {
-        $headers = $this->__getLastResponseHeaders();
+        $headers = (string)$this->__getLastResponseHeaders();
 
         if ($headers !== '' && preg_match('/^RequestId:\s?(.+)$/im', $headers, $m)) {
             return trim($m[1]);
@@ -285,10 +285,10 @@ abstract class ApiSoapClient extends SoapClient implements ClientInterface
             $this->logContextFactory->create(
                 $this->serviceName,
                 $methodName,
-                $this->__getLastRequestHeaders(),
-                $this->__getLastRequest(),
-                $this->__getLastResponseHeaders(),
-                $this->__getLastResponse(),
+                (string)$this->__getLastRequestHeaders(),
+                (string)$this->__getLastRequest(),
+                (string)$this->__getLastResponseHeaders(),
+                (string)$this->__getLastResponse(),
                 $this->getRequestId(),
                 $fault
             )

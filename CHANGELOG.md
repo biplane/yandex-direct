@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+### Fixed
+
+* При логировании SOAP запроса могла возникнуть ошибка `TypeError`,
+  когда соединение с сервером было разорвано (в этом случае `SoapClient::__getLastResponse()`
+  возвращает `null`).
+
 ## 5.0.0 [commit logs](https://github.com/biplane/yandex-direct/compare/5.0.0-beta4...5.0.0)
 
 ### Added
