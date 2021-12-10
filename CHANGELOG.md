@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 5.0.1 [commit logs](https://github.com/biplane/yandex-direct/compare/5.0.0...5.0.1)
+
 ### Fixed
 
 * При логировании SOAP запроса могла возникнуть ошибка `TypeError`,
