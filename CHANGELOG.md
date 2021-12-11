@@ -2,6 +2,19 @@
 
 ## Unreleased
 
+## 5.0.2 [commit logs](https://github.com/biplane/yandex-direct/compare/5.0.1...5.0.2)
+
+### Changed
+
+* Переход на psalm
+
+### Fixed
+
+* В запрос к сервису `Reports` заголовок `Client-Login` добавлялся не зависимо от того,
+  был ли задан логин в конфиге или нет.
+  Данный заголовок обязателен только когда запрос выполняется от имени агенства.
+* Исправлены ошибки с проверкой на `null`, приводившие к исключению `TypeError`.
+
 ## 5.0.1 [commit logs](https://github.com/biplane/yandex-direct/compare/5.0.0...5.0.1)
 
 ### Fixed
