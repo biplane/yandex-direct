@@ -14,7 +14,7 @@ abstract class BaseAfterCallEvent extends PreCallEvent
     /** @var ClientInterface */
     private $client;
 
-    /** @var Units|null  */
+    /** @var Units  */
     private $units;
 
     /**

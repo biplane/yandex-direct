@@ -14,13 +14,11 @@ class UserBuilder
     /** @var EventDispatcherInterface */
     private $dispatcher;
     /** @var array<string, mixed> */
-    private $options;
+    private $options = [];
 
     public function __construct(EventDispatcherInterface $dispatcher)
     {
         $this->dispatcher = $dispatcher;
-
-        $this->reset();
     }
 
     /**

@@ -99,7 +99,7 @@ class ApiSoapClientV5 extends ApiSoapClient
         ];
 
         if ($config->getClientLogin() !== null) {
-            $headers['Client-Login'] = $config->getClientLogin();
+            $headers['Client-Login'] = (string)$config->getClientLogin();
         }
 
         if ($config->useOperatorUnits()) {

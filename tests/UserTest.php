@@ -7,6 +7,7 @@ namespace Biplane\Tests\YandexDirect;
 use Biplane\YandexDirect\Api\Finance\TransactionNumberGenerator\CallbackTransactionNumberGenerator;
 use Biplane\YandexDirect\Api\V4\YandexAPIService;
 use Biplane\YandexDirect\Api\V5;
+use Biplane\YandexDirect\Soap\ApiSoapClient;
 use Biplane\YandexDirect\User;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcher;
@@ -21,7 +22,7 @@ class UserTest extends TestCase
     }
 
     /**
-     * @return array<array{string, string}>
+     * @return array<array{class-string<ApiSoapClient>|class-string<V5\Reports>, string}>
      */
     public function getServicesProxies(): array
     {
@@ -55,6 +56,8 @@ class UserTest extends TestCase
     }
 
     /**
+     * @param class-string<ApiSoapClient>|class-string<V5\Reports> $serviceClass
+     *
      * @dataProvider getServicesProxies
      */
     public function testServiceProxyShouldBeInstantiated(string $serviceClass, string $method): void

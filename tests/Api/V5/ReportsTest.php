@@ -140,14 +140,18 @@ XML;
         }
 
         $requestFactory = $this->createMock(RequestFactoryInterface::class);
-        $requestFactory->method('createRequest')->willReturnCallback(static function ($method, $uri): RequestInterface {
-            return new Request($method, $uri);
-        });
+        $requestFactory->method('createRequest')->willReturnCallback(
+            static function (string $method, $uri): RequestInterface {
+                return new Request($method, $uri);
+            }
+        );
 
         $streamFactory = $this->createMock(StreamFactoryInterface::class);
-        $streamFactory->method('createStream')->willReturnCallback(static function ($content): StreamInterface {
-            return Stream::create($content);
-        });
+        $streamFactory->method('createStream')->willReturnCallback(
+            static function (string $content): StreamInterface {
+                return Stream::create($content);
+            }
+        );
 
         return new Reports($config, $this->httpClient, $requestFactory, $streamFactory);
     }

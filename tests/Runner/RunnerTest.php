@@ -37,7 +37,7 @@ class RunnerTest extends TestCase
         $retryStrategy->method('canRetry')->willReturn(true);
 
         $callCount = 0;
-        $callback = static function () use (&$callCount) {
+        $callback = static function () use (&$callCount): string {
             $callCount++;
 
             if ($callCount <= 2) {

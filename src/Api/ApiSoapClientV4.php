@@ -60,6 +60,10 @@ class ApiSoapClientV4 extends ApiSoapClient
     {
         $response = parent::__doRequest($request, $location, $action, $version, $oneWay);
 
+        if ($response === null) {
+            return null;
+        }
+
         // Replace URI of some namespaces to fix mapping WSDL types to PHP classes
         foreach (self::ALT_NAMESPACES as $searchURI) {
             if (strpos($response, $searchURI) === false) {

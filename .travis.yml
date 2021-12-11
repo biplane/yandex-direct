@@ -38,5 +38,5 @@ before_script:
 
 script:
   - if [[ $CS_CHECK == 'true' ]]; then ./vendor/bin/phpcs -n; fi
-  - if [[ $ANALYSE == 'true' ]]; then ./vendor/bin/phpstan analyze; fi
+  - if [[ $ANALYSE == 'true' ]]; then ./vendor/bin/psalm --no-progress; fi
   - if [[ $TEST_COVERAGE == 'true' ]]; then XDEBUG_MODE=coverage php -dzend_extension=xdebug.so ./vendor/bin/phpunit --coverage-text; else ./vendor/bin/phpunit; fi

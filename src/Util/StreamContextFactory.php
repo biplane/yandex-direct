@@ -50,7 +50,7 @@ final class StreamContextFactory
     /**
      * @param array<string>|string $headers
      *
-     * @return array<string, string>
+     * @return array<string|int, string>
      */
     private static function parseHttpHeaders($headers): array
     {
@@ -67,7 +67,7 @@ final class StreamContextFactory
         foreach ($headers as $header) {
             $pos = strpos($header, ':');
 
-            if ($pos < 1) {
+            if ($pos === false || $pos < 1) {
                 $headersMap[] = $header;
 
                 continue;

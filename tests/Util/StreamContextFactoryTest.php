@@ -21,7 +21,6 @@ final class StreamContextFactoryTest extends TestCase
             'Accept-Language' => 'en',
         ]);
 
-        self::assertIsResource($streamContext);
         self::assertEquals(
             [
                 'http' => ['header' => "Accept: */*\r\nAccept-Language: en"],
@@ -52,7 +51,6 @@ final class StreamContextFactoryTest extends TestCase
             $baseStreamContext
         );
 
-        self::assertIsResource($streamContext);
         self::assertNotSame($baseStreamContext, $streamContext);
         self::assertEquals(
             [
@@ -94,7 +92,6 @@ final class StreamContextFactoryTest extends TestCase
             $baseStreamContext
         );
 
-        self::assertIsResource($streamContext);
         self::assertNotSame($baseStreamContext, $streamContext);
         self::assertEquals(
             [

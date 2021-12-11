@@ -44,11 +44,11 @@ class Reports implements ApiClientInterface
     /** @var ReportSerializerInterface */
     private $serializer;
 
-    /** @var RequestInterface */
-    private $lastRequest;
+    /** @var RequestInterface|null */
+    private $lastRequest = null;
 
-    /** @var ResponseInterface */
-    private $lastResponse;
+    /** @var ResponseInterface|null */
+    private $lastResponse = null;
 
     public function __construct(
         Config $config,
@@ -178,8 +178,11 @@ class Reports implements ApiClientInterface
         $request = $this->requestFactory->createRequest('POST', self::ENDPOINT)
             ->withHeader('Authorization', sprintf('Bearer %s', $this->config->getAccessToken()))
             ->withHeader('Accept-Language', $this->config->getLocale(Config::API_5))
-            ->withHeader('Client-Login', $this->config->getClientLogin())
             ->withHeader('processingMode', $reportRequest->processingMode());
+
+        if ($this->config->getClientLogin() !== null) {
+            $request = $request->withHeader('Client-Login', (string)$this->config->getClientLogin());
+        }
 
         if (! $reportRequest->returnMoneyInMicros()) {
             $request = $request->withHeader('returnMoneyInMicros', 'false');

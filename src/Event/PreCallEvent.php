@@ -40,8 +40,10 @@ class PreCallEvent
      */
     public function getMethodName(): ?string
     {
-        if (! empty($this->methodRef)) {
-            return substr($this->methodRef, strpos($this->methodRef, ':') + 1);
+        $pos = strpos($this->methodRef, ':');
+
+        if ($pos !== false) {
+            return substr($this->methodRef, $pos + 1);
         }
 
         return null;

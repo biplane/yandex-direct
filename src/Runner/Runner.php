@@ -91,7 +91,9 @@ final class Runner
                     );
                 }
 
-                usleep($delay);
+                if ($delay > 0) {
+                    usleep($delay);
+                }
 
                 continue;
             }

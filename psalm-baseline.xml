@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<files psalm-version="v4.15.0@a1b5e489e6fcebe40cb804793d964e99fc347820">
+  <file src="src/Api/ApiSoapClientV4.php">
+    <MissingParamType occurrences="5">
+      <code>$action</code>
+      <code>$location</code>
+      <code>$oneWay</code>
+      <code>$request</code>
+      <code>$version</code>
+    </MissingParamType>
+  </file>
+  <file src="src/Api/ApiSoapClientV5.php">
+    <TypeDoesNotContainType occurrences="1">
+      <code>is_object($detail)</code>
+    </TypeDoesNotContainType>
+  </file>
+  <file src="src/Api/V5/Reports.php">
+    <ArgumentTypeCoercion occurrences="1">
+      <code>$delay</code>
+    </ArgumentTypeCoercion>
+  </file>
+  <file src="src/Api/V5/Reports/ReportRequestBuilder.php">
+    <DocblockTypeContradiction occurrences="1">
+      <code>in_array($value, $allowedModes, true)</code>
+    </DocblockTypeContradiction>
+  </file>
+  <file src="src/Config.php">
+    <MissingClosureParamType occurrences="1">
+      <code>$value</code>
+    </MissingClosureParamType>
+  </file>
+  <file src="src/Serializer/NameConverter/UpperCamelCaseNameConverter.php">
+    <MissingParamType occurrences="2">
+      <code>$propertyName</code>
+      <code>$propertyName</code>
+    </MissingParamType>
+  </file>
+  <file src="src/Soap/ApiSoapClient.php">
+    <MissingClosureReturnType occurrences="1">
+      <code>function () use (</code>
+    </MissingClosureReturnType>
+    <TooManyArguments occurrences="1">
+      <code>buildTypemap</code>
+    </TooManyArguments>
+  </file>
+  <file src="src/User.php">
+    <InvalidReturnStatement occurrences="2">
+      <code>$this-&gt;proxies[$serviceClass]</code>
+      <code>$this-&gt;proxies[$serviceClass] = $service</code>
+    </InvalidReturnStatement>
+    <InvalidReturnType occurrences="1">
+      <code>S|R</code>
+    </InvalidReturnType>
+    <PossiblyInvalidArgument occurrences="1">
+      <code>$serviceClass</code>
+    </PossiblyInvalidArgument>
+    <PossiblyUndefinedMethod occurrences="1">
+      <code>setEventEmitter</code>
+    </PossiblyUndefinedMethod>
+  </file>
+  <file src="src/Util/StreamContextFactory.php">
+    <PossiblyNullArgument occurrences="1">
+      <code>$params</code>
+    </PossiblyNullArgument>
+  </file>
+  <file src="tests/Api/BaseTestCase.php">
+    <InvalidReturnStatement occurrences="1"/>
+    <InvalidReturnType occurrences="1">
+      <code>MockObject&amp;T</code>
+    </InvalidReturnType>
+  </file>
+  <file src="tests/Api/V5/CampaignsTest.php">
+    <PossiblyNullReference occurrences="1">
+      <code>getCounterIds</code>
+    </PossiblyNullReference>
+  </file>
+  <file src="tests/Api/V5/ReportsTest.php">
+    <MissingClosureParamType occurrences="1">
+      <code>$uri</code>
+    </MissingClosureParamType>
+  </file>
+</files>

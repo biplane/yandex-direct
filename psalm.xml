@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<psalm
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="https://getpsalm.org/schema/config"
+  xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
+  errorLevel="2"
+  errorBaseline="psalm-baseline.xml"
+>
+  <projectFiles>
+    <directory name="src" />
+    <directory name="tests" />
+    <ignoreFiles>
+      <directory name="vendor" />
+    </ignoreFiles>
+  </projectFiles>
+
+  <plugins>
+    <pluginClass class="Psalm\PhpUnitPlugin\Plugin" />
+  </plugins>
+
+  <issueHandlers>
+    <DeprecatedClass>
+      <errorLevel type="suppress">
+        <referencedClass name="Biplane\YandexDirect\ClientInterface" />
+        <referencedClass name="Biplane\YandexDirect\Event\FailCallEvent" />
+        <referencedClass name="Biplane\YandexDirect\Event\PostCallEvent" />
+        <referencedClass name="Biplane\YandexDirect\Event\PreCallEvent" />
+        <referencedClass name="Biplane\YandexDirect\EventListener\DumpListener" />
+        <referencedClass name="Biplane\YandexDirect\EventListener\LoggerListener" />
+        <referencedClass name="Biplane\YandexDirect\Helper\Dumper" />
+        <referencedClass name="Biplane\YandexDirect\Events" />
+        <referencedClass name="Biplane\YandexDirect\User" />
+        <referencedClass name="Biplane\YandexDirect\UserBuilder" />
+      </errorLevel>
+    </DeprecatedClass>
+    <DeprecatedInterface>
+      <errorLevel type="suppress">
+        <referencedClass name="Biplane\YandexDirect\ClientInterface" />
+      </errorLevel>
+    </DeprecatedInterface>
+    <DeprecatedMethod>
+      <errorLevel type="suppress">
+        <referencedMethod name="Biplane\YandexDirect\ClientInterface::getLastRequest" />
+        <referencedMethod name="Biplane\YandexDirect\ClientInterface::getLastResponse" />
+        <referencedMethod name="PHPUnit\Framework\MockObject\MockBuilder::setMethods" />
+      </errorLevel>
+    </DeprecatedMethod>
+    <MissingPropertyType>
+      <errorLevel type="suppress">
+        <directory name="src/Api/V4/Contract" />
+        <directory name="src/Api/V5/Contract" />
+      </errorLevel>
+    </MissingPropertyType>
+    <UndefinedThisPropertyAssignment>
+      <errorLevel type="suppress">
+        <directory name="src/Api/V4/Contract" />
+        <directory name="src/Api/V5/Contract" />
+      </errorLevel>
+    </UndefinedThisPropertyAssignment>
+    <UnsafeInstantiation>
+      <errorLevel type="suppress">
+        <directory name="src/Api/V4/Contract" />
+        <directory name="src/Api/V5/Contract" />
+      </errorLevel>
+    </UnsafeInstantiation>
+  </issueHandlers>
+</psalm>

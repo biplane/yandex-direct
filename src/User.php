@@ -416,11 +416,12 @@ class User
     }
 
     /**
-     * @psalm-param class-string<T> $serviceClass
+     * @psalm-param class-string<S>|class-string<R> $serviceClass
      *
-     * @psalm-return T
+     * @psalm-return S|R
      *
-     * @template T
+     * @template S of ApiSoapClient
+     * @template R of Reports
      */
     private function getProxy(string $serviceClass)
     {
@@ -440,10 +441,7 @@ class User
             }
 
             $service = $this->soapClientFactory->createService($this->config, $serviceClass);
-
-            if ($this->dispatcher !== null) {
-                $service->setEventEmitter(new EventEmitter($this->dispatcher, $this));
-            }
+            $service->setEventEmitter(new EventEmitter($this->dispatcher, $this));
         }
 
         return $this->proxies[$serviceClass] = $service;
