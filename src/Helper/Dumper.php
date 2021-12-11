@@ -14,7 +14,6 @@ use function file_put_contents;
 use function is_dir;
 use function is_writable;
 use function mkdir;
-use function preg_match;
 use function sprintf;
 use function substr;
 
@@ -66,9 +65,9 @@ class Dumper
      */
     public function dumpLastRequest(ApiSoapClient $client): void
     {
-        $requestId = $this->getRequestId($client);
+        $requestId = $client->getRequestId();
 
-        if ($requestId === null) {
+        if ($requestId === '') {
             return;
         }
 
@@ -100,16 +99,5 @@ class Dumper
     {
         file_put_contents($filename, $content);
         chmod($filename, 0664);
-    }
-
-    private function getRequestId(ApiSoapClient $soapClient): ?string
-    {
-        $headers = $soapClient->__getLastResponseHeaders();
-
-        if ($headers !== '' && preg_match('/^RequestId: ([a-z\d]+)(\r|)$/im', $headers, $m)) {
-            return $m[1];
-        }
-
-        return null;
     }
 }

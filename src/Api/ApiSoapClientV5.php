@@ -43,7 +43,7 @@ class ApiSoapClientV5 extends ApiSoapClient
         $headers = $this->__getLastResponseHeaders();
 
         if (
-            $headers !== ''
+            $headers !== null
             && preg_match('@^Units:(?:\s)?(\d+)/(\d+)/(\d+)@im', $headers, $units)
             && preg_match('@^Units-Used-Login:(.+)$@im', $headers, $usedLogin)
         ) {

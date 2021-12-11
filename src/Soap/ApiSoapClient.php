@@ -149,9 +149,9 @@ abstract class ApiSoapClient extends SoapClient implements ClientInterface
 
     public function getRequestId(): string
     {
-        $headers = (string)$this->__getLastResponseHeaders();
+        $headers = $this->__getLastResponseHeaders();
 
-        if ($headers !== '' && preg_match('/^RequestId:\s?(.+)$/im', $headers, $m)) {
+        if ($headers !== null && preg_match('/^RequestId:\s?(.+)$/im', $headers, $m)) {
             return trim($m[1]);
         }
 
