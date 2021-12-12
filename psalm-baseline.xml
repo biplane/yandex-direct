@@ -81,7 +81,7 @@
       <code>MockObject&amp;T</code>
     </InvalidReturnType>
   </file>
-  <file src="tests/Api/V5/CampaignsTest.php">
+  <file src="tests/Api/TypeConversionTest.php">
     <PossiblyNullReference occurrences="1">
       <code>getCounterIds</code>
     </PossiblyNullReference>

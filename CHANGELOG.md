@@ -2,6 +2,15 @@
 
 ## Unreleased
 
+### Fixed
+
+* Исправлено преобразование данных из XML к типу `float`, когда в схеме указан тип `xsd:decimal`.
+  SoapClient в этом случае возвращает значение с типом `string`, что приводило к `TypeError`:
+
+  ```
+  TypeError: Return value of Biplane\YandexDirect\Api\V5\Contract\ClientGetItem::getAccountQuality() must be of the type float or null, string returned
+  ```
+
 ## 5.0.2 [commit logs](https://github.com/biplane/yandex-direct/compare/5.0.1...5.0.2)
 
 ### Changed

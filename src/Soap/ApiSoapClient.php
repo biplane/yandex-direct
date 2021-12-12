@@ -11,6 +11,7 @@ use Biplane\YandexDirect\Exception\ApiException;
 use Biplane\YandexDirect\Log\SoapLogContextFactory;
 use Biplane\YandexDirect\Log\SoapLogger;
 use Biplane\YandexDirect\Runner\Runner;
+use Biplane\YandexDirect\Soap\TypeConverter\DecimalTypeConverter;
 use InvalidArgumentException;
 use ReflectionClass;
 use RuntimeException;
@@ -227,7 +228,9 @@ abstract class ApiSoapClient extends SoapClient implements ClientInterface
      */
     protected function getTypeConverters(): array
     {
-        return [];
+        return [
+            new DecimalTypeConverter(),
+        ];
     }
 
     /**

@@ -58,11 +58,13 @@ class ApiSoapClientV5 extends ApiSoapClient
      */
     protected function getTypeConverters(): array
     {
-        return [
-            new ArrayOfStringConverter(self::GENERAL_NS),
-            new ArrayOfIntegerConverter(self::GENERAL_NS),
-            new ArrayOfLongConverter(self::GENERAL_NS),
-        ];
+        $converters = parent::getTypeConverters();
+
+        $converters[] = new ArrayOfStringConverter(self::GENERAL_NS);
+        $converters[] = new ArrayOfIntegerConverter(self::GENERAL_NS);
+        $converters[] = new ArrayOfLongConverter(self::GENERAL_NS);
+
+        return $converters;
     }
 
     protected function parseSoapFault(SoapFault $fault): ?ApiException
