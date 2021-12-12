@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 5.0.3 [commit logs](https://github.com/biplane/yandex-direct/compare/5.0.2...5.0.3)
+
 ### Fixed
 
 * Исправлено преобразование данных из XML к типу `float`, когда в схеме указан тип `xsd:decimal`.
