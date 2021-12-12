@@ -26,7 +26,7 @@
     "symfony/serializer": "^4.4 || ^5.0"
   },
   "require-dev": {
-    "allejo/php-vcr-sanitizer": "^1.0",
+    "allejo/php-vcr-sanitizer": "^1.0.9",
     "doctrine/coding-standard": "^9.0",
     "nyholm/psr7": "^1.4",
     "php-http/httplug": "^2.2",
