@@ -10,7 +10,7 @@ use Biplane\YandexDirect\Soap\TypeConverter;
 
 use function preg_match_all;
 
-class ArrayOfStringConverter implements TypeConverter, DisableEncoder
+class ArrayOfStringTypeConverter implements TypeConverter, DisableEncoder
 {
     /** @var string */
     private $namespace;

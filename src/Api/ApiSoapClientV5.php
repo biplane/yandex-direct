@@ -7,9 +7,9 @@ namespace Biplane\YandexDirect\Api;
 use Biplane\YandexDirect\Config;
 use Biplane\YandexDirect\Exception\ApiException;
 use Biplane\YandexDirect\Soap\ApiSoapClient;
-use Biplane\YandexDirect\Soap\TypeConverter\ArrayOfIntegerConverter;
-use Biplane\YandexDirect\Soap\TypeConverter\ArrayOfLongConverter;
-use Biplane\YandexDirect\Soap\TypeConverter\ArrayOfStringConverter;
+use Biplane\YandexDirect\Soap\TypeConverter\ArrayOfIntegerTypeTypeConverter;
+use Biplane\YandexDirect\Soap\TypeConverter\ArrayOfLongTypeTypeConverter;
+use Biplane\YandexDirect\Soap\TypeConverter\ArrayOfStringTypeConverter;
 use Biplane\YandexDirect\Util\StreamContextFactory;
 use SoapFault;
 
@@ -60,9 +60,9 @@ class ApiSoapClientV5 extends ApiSoapClient
     {
         $converters = parent::getTypeConverters();
 
-        $converters[] = new ArrayOfStringConverter(self::GENERAL_NS);
-        $converters[] = new ArrayOfIntegerConverter(self::GENERAL_NS);
-        $converters[] = new ArrayOfLongConverter(self::GENERAL_NS);
+        $converters[] = new ArrayOfStringTypeConverter(self::GENERAL_NS);
+        $converters[] = new ArrayOfIntegerTypeTypeConverter(self::GENERAL_NS);
+        $converters[] = new ArrayOfLongTypeTypeConverter(self::GENERAL_NS);
 
         return $converters;
     }

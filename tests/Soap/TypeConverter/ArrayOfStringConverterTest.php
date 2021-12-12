@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Biplane\Tests\YandexDirect\Soap\TypeConverter;
 
-use Biplane\YandexDirect\Soap\TypeConverter\ArrayOfStringConverter;
+use Biplane\YandexDirect\Soap\TypeConverter\ArrayOfStringTypeConverter;
 use PHPUnit\Framework\TestCase;
 
 final class ArrayOfStringConverterTest extends TestCase
@@ -12,7 +12,7 @@ final class ArrayOfStringConverterTest extends TestCase
     public function testConvertXmlToArray(): void
     {
         $xml = '<NegativeKeywords><Items>бесплатно</Items><Items>плохие отзывы</Items></NegativeKeywords>';
-        $converter = new ArrayOfStringConverter('API');
+        $converter = new ArrayOfStringTypeConverter('API');
 
         $decoded = $converter->fromXml($xml);
 
@@ -27,7 +27,7 @@ final class ArrayOfStringConverterTest extends TestCase
 
     public function testConvertXmlToNull(): void
     {
-        $converter = new ArrayOfStringConverter('API');
+        $converter = new ArrayOfStringTypeConverter('API');
 
         self::assertNull($converter->fromXml('<NegativeKeywords xsi:nil="true"/>'));
     }

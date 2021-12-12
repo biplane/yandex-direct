@@ -7,11 +7,11 @@ namespace Biplane\YandexDirect\Soap\TypeConverter;
 use function array_map;
 use function is_array;
 
-final class ArrayOfIntegerConverter extends ArrayOfStringConverter
+final class ArrayOfLongTypeTypeConverter extends ArrayOfStringTypeConverter
 {
     public function getTypeName(): string
     {
-        return 'ArrayOfInteger';
+        return 'ArrayOfLong';
     }
 
     /**
@@ -22,7 +22,7 @@ final class ArrayOfIntegerConverter extends ArrayOfStringConverter
         $items = parent::fromXml($xml);
 
         if (is_array($items)) {
-            return array_map('intval', $items);
+            return array_map('floatval', $items);
         }
 
         return $items;
