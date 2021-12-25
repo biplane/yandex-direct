@@ -1,7 +1,7 @@
 # Yandex.Direct API PHP Client
 
 [![Package version](https://img.shields.io/packagist/v/biplane/yandex-direct?style=flat-square)](https://packagist.org/packages/biplane/yandex-direct)
-![Build Status](https://github.com/biplane/yandex-direct/actions/workflows/ci/badge.svg)
+![Build Status](https://github.com/biplane/yandex-direct/actions/workflows/ci.yml/badge.svg)
 [![License](https://img.shields.io/packagist/l/biplane/yandex-direct?style=flat-square)](LICENSE)
 
 Библиотека для работы с [API Директа](https://yandex.ru/dev/direct/).
