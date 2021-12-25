@@ -6,10 +6,6 @@ namespace Biplane\Tests\YandexDirect\Api;
 
 use Biplane\YandexDirect\Api\V5\Campaigns;
 use Biplane\YandexDirect\Api\V5\Contract;
-use Biplane\YandexDirect\Api\V5\Contract\CampaignFieldEnum;
-use Biplane\YandexDirect\Api\V5\Contract\CampaignsSelectionCriteria;
-use Biplane\YandexDirect\Api\V5\Contract\GetCampaignsRequest;
-use Biplane\YandexDirect\Api\V5\Contract\TextCampaignFieldEnum;
 use Biplane\YandexDirect\Api\V5\VCards;
 use Biplane\YandexDirect\Exception\ApiException;
 use VCR\VCR;
@@ -26,17 +22,17 @@ final class TypeConversionTest extends SoapClientTestCase
 
         $service = new Campaigns($this->createConfig(), $this->getSoapOptions());
 
-        $request = GetCampaignsRequest::create()
+        $request = Contract\GetCampaignsRequest::create()
             ->setSelectionCriteria(
-                CampaignsSelectionCriteria::create()
+                Contract\CampaignsSelectionCriteria::create()
                     ->setIds([37605271])
             )
             ->setFieldNames([
-                CampaignFieldEnum::ID,
-                CampaignFieldEnum::NEGATIVE_KEYWORDS,
+                Contract\CampaignFieldEnum::ID,
+                Contract\CampaignFieldEnum::NEGATIVE_KEYWORDS,
             ])
             ->setTextCampaignFieldNames([
-                TextCampaignFieldEnum::COUNTER_IDS,
+                Contract\TextCampaignFieldEnum::COUNTER_IDS,
             ]);
 
         $campaigns = $service->get($request)->getCampaigns();
@@ -108,5 +104,29 @@ final class TypeConversionTest extends SoapClientTestCase
                 $service->__getLastRequest()
             );
         }
+    }
+
+    public function testConvertLongFromXml(): void
+    {
+        VCR::turnOn();
+        VCR::insertCassette('convert_long_from_xml.yml');
+
+        $service = new Campaigns($this->createConfig(), $this->getSoapOptions());
+
+        $request = Contract\GetCampaignsRequest::create()
+            ->setSelectionCriteria(
+                Contract\CampaignsSelectionCriteria::create()
+                    ->setIds([38811657])
+            )
+            ->setFieldNames([
+                Contract\CampaignFieldEnum::ID,
+                Contract\CampaignFieldEnum::DAILY_BUDGET,
+            ]);
+
+        $items = $service->get($request)->getCampaigns();
+
+        self::assertNotNull($items);
+        /** @psalm-suppress PossiblyNullReference */
+        self::assertSame(6355930000, $items[0]->getDailyBudget()->getAmount());
     }
 }
