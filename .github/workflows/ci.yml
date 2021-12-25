@@ -1,0 +1,87 @@
+name: "CI"
+
+on: [push, pull_request]
+
+jobs:
+  coding-standards:
+    name: "Check Coding Standards"
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Checkout"
+        uses: "actions/checkout@v2"
+
+      - name: "Install PHP"
+        uses: "shivammathur/setup-php@v2"
+        with:
+          coverage: "none"
+          php-version: "7.2"
+          tools: composer:v2
+
+      - name: "Install dependencies"
+        uses: "ramsey/composer-install@v2"
+
+      - name: "Coding Standard"
+        run: vendor/bin/phpcs -n
+
+  static-analysis:
+    name: "Static Analysis"
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "Checkout"
+        uses: "actions/checkout@v2"
+
+      - name: "Install PHP"
+        uses: "shivammathur/setup-php@v2"
+        with:
+          coverage: "none"
+          php-version: "7.4"
+          tools: composer:v2
+
+      - name: "Install dependencies"
+        uses: "ramsey/composer-install@v2"
+
+      - name: "Coding Standard"
+        run: vendor/bin/psalm --no-progress
+
+  tests:
+    name: "PHPUnit tests"
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        dependencies:
+          - "highest"
+        php-version:
+          - "7.2"
+          - "7.3"
+          - "7.4"
+          - "8.0"
+          - "8.1"
+        include:
+          - php-version: "7.2"
+            dependencies: "lowest"
+          - php-version: "8.0"
+            dependencies: "lowest"
+
+    steps:
+      - name: "Checkout"
+        uses: "actions/checkout@v2"
+
+      - name: "Install PHP"
+        uses: "shivammathur/setup-php@v2"
+        with:
+          php-version: "${{ matrix.php-version }}"
+          tools: composer:v2
+
+      - name: "Install dependencies"
+        uses: "ramsey/composer-install@v2"
+        with:
+          dependency-versions: "${{ matrix.dependencies }}"
+
+      - name: "Run tests"
+        run: vendor/bin/phpunit

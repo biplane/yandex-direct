@@ -1,8 +1,8 @@
+/.github          export-ignore
 /build            export-ignore
 /tests            export-ignore
 .editorconfig     export-ignore
 .gitignore        export-ignore
-.travis.yml       export-ignore
 phpcs.xml         export-ignore
 *.neon            export-ignore
 phpunit.xml.dist  export-ignore
