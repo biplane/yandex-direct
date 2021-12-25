@@ -19,19 +19,8 @@ jobs:
           php-version: "7.2"
           tools: composer:v2
 
-      - name: "Get composer cache directory"
-        id: composer-cache
-        run: echo "::set-output name=dir::$(composer config cache-files-dir)"
-
-      - name: "Cache composer cache"
-        uses: "actions/cache@v2"
-        with:
-          path: "${{ steps.composer-cache.outputs.dir }}"
-          key: "${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}"
-          restore-keys: "${{ runner.os }}-composer-"
-
       - name: "Install dependencies"
-        run: composer install --no-interaction --no-progress
+        uses: "ramsey/composer-install@v2"
 
       - name: "Coding Standard"
         run: vendor/bin/phpcs -n
@@ -52,19 +41,8 @@ jobs:
           php-version: "7.4"
           tools: composer:v2
 
-      - name: "Get composer cache directory"
-        id: composer-cache
-        run: echo "::set-output name=dir::$(composer config cache-files-dir)"
-
-      - name: "Cache composer cache"
-        uses: "actions/cache@v2"
-        with:
-          path: "${{ steps.composer-cache.outputs.dir }}"
-          key: "${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}"
-          restore-keys: "${{ runner.os }}-composer-"
-
       - name: "Install dependencies"
-        run: composer install --no-interaction --no-progress
+        uses: "ramsey/composer-install@v2"
 
       - name: "Coding Standard"
         run: vendor/bin/psalm --no-progress
@@ -99,24 +77,10 @@ jobs:
           php-version: "${{ matrix.php-version }}"
           tools: composer:v2
 
-      - name: "Get composer cache directory"
-        id: "composer-cache"
-        run: echo "::set-output name=dir::$(composer config cache-files-dir)"
-
-      - name: "Cache composer cache"
-        uses: "actions/cache@v2"
+      - name: "Install dependencies"
+        uses: "ramsey/composer-install@v2"
         with:
-          path: "${{ steps.composer-cache.outputs.dir }}"
-          key: "${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}"
-          restore-keys: "${{ runner.os }}-composer-"
-
-      - name: "Install lowest dependencies"
-        if: "${{ matrix.dependencies == 'lowest' }}"
-        run: "composer update --prefer-lowest --no-interaction --no-progress"
-
-      - name: "Install highest dependencies"
-        if: "${{ matrix.dependencies == 'highest' }}"
-        run: "composer update --no-interaction --no-progress"
+          dependency-versions: "${{ matrix.dependencies }}"
 
       - name: "Run tests"
         run: vendor/bin/phpunit
