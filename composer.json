@@ -15,7 +15,7 @@
   ],
   "license": "MIT",
   "require": {
-    "php": "^7.2 || ^8.0",
+    "php-64bit": "^7.2 || ^8.0",
     "ext-libxml": "*",
     "ext-soap": "*",
     "php-http/discovery": "^1.14",
