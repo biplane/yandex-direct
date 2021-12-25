@@ -15,7 +15,7 @@
   ],
   "license": "MIT",
   "require": {
-    "php": "^7.1 || ^8.0",
+    "php": "^7.2 || ^8.0",
     "ext-libxml": "*",
     "ext-soap": "*",
     "php-http/discovery": "^1.14",
@@ -23,7 +23,7 @@
     "psr/http-factory": "^1.0",
     "symfony/event-dispatcher": "^4.4 || ^5.0 || ^6.0",
     "symfony/options-resolver": "^4.0 || ^5.0 || ^6.0",
-    "symfony/serializer": "^4.4 || ^5.0"
+    "symfony/serializer": "^4.4 || ^5.0 || ^6.0"
   },
   "require-dev": {
     "allejo/php-vcr-sanitizer": "^1.0.9",

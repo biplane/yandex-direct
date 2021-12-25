@@ -9,9 +9,6 @@ cache:
 matrix:
   fast_finish: true
   include:
-    - php: 7.1
-      env:
-        - DEPENDENCIES=""
     - php: 7.2
       env:
         - DEPENDENCIES=""
