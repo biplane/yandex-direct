@@ -22,7 +22,7 @@ jobs:
       - name: "Install dependencies"
         uses: "ramsey/composer-install@v2"
 
-      - name: "Coding Standard"
+      - name: "Run phpcs"
         run: vendor/bin/phpcs -n
 
   static-analysis:
@@ -44,7 +44,7 @@ jobs:
       - name: "Install dependencies"
         uses: "ramsey/composer-install@v2"
 
-      - name: "Coding Standard"
+      - name: "Run psalm"
         run: vendor/bin/psalm --no-progress
 
   tests:
