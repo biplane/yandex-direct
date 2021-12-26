@@ -2,6 +2,20 @@
 
 ## Unreleased
 
+## 5.1.0 [commit logs](https://github.com/biplane/yandex-direct/compare/5.0.3...5.1.0)
+
+### Added
+
+* Добавлена поддержка `symfony/serializer:^6` ([#38](https://github.com/biplane/yandex-direct/pull/38))
+
+### Changed
+
+* Явно указано требование 64-битной версии PHP ([#42](https://github.com/biplane/yandex-direct/pull/42))
+
+### Removed
+
+* Удалена поддержка PHP 7.1
+
 ## 5.0.3 [commit logs](https://github.com/biplane/yandex-direct/compare/5.0.2...5.0.3)
 
 ### Fixed
