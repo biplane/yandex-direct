@@ -21,6 +21,8 @@ jobs:
 
       - name: "Install dependencies"
         uses: "ramsey/composer-install@v2"
+        with:
+          dependency-versions: "highest"
 
       - name: "Run phpcs"
         run: vendor/bin/phpcs -n
@@ -43,6 +45,8 @@ jobs:
 
       - name: "Install dependencies"
         uses: "ramsey/composer-install@v2"
+        with:
+          dependency-versions: "highest"
 
       - name: "Run psalm"
         run: vendor/bin/psalm --no-progress
