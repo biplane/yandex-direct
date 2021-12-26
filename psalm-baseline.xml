@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<files psalm-version="v4.15.0@a1b5e489e6fcebe40cb804793d964e99fc347820">
+<files psalm-version="4.16.1@aa7e400908833b10c0333861f86cd48c510b60eb">
   <file src="src/Api/ApiSoapClientV4.php">
     <MissingParamType occurrences="5">
       <code>$action</code>
@@ -8,14 +8,6 @@
       <code>$request</code>
       <code>$version</code>
     </MissingParamType>
-  </file>
-  <file src="src/Api/ApiSoapClientV5.php">
-    <RedundantConditionGivenDocblockType occurrences="1">
-      <code>$headers !== null</code>
-    </RedundantConditionGivenDocblockType>
-    <TypeDoesNotContainType occurrences="1">
-      <code>is_object($detail)</code>
-    </TypeDoesNotContainType>
   </file>
   <file src="src/Api/V5/Reports.php">
     <ArgumentTypeCoercion occurrences="1">
@@ -42,15 +34,6 @@
     <MissingClosureReturnType occurrences="1">
       <code>function () use (</code>
     </MissingClosureReturnType>
-    <RedundantCastGivenDocblockType occurrences="4">
-      <code>(string)$this-&gt;__getLastRequest()</code>
-      <code>(string)$this-&gt;__getLastRequestHeaders()</code>
-      <code>(string)$this-&gt;__getLastResponse()</code>
-      <code>(string)$this-&gt;__getLastResponseHeaders()</code>
-    </RedundantCastGivenDocblockType>
-    <RedundantConditionGivenDocblockType occurrences="1">
-      <code>$headers !== null</code>
-    </RedundantConditionGivenDocblockType>
     <TooManyArguments occurrences="1">
       <code>buildTypemap</code>
     </TooManyArguments>

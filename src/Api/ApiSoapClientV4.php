@@ -108,10 +108,13 @@ class ApiSoapClientV4 extends ApiSoapClient
         }
 
         $code = 0;
-        $pos = strrpos($fault->faultcode, ':');
 
-        if ($pos > 0) {
-            $code = (int)substr($fault->faultcode, $pos + 1);
+        if ($fault->faultcode !== null) {
+            $pos = strrpos($fault->faultcode, ':');
+
+            if ($pos > 0) {
+                $code = (int)substr($fault->faultcode, $pos + 1);
+            }
         }
 
         if ($code > 0) {

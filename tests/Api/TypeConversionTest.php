@@ -101,7 +101,7 @@ final class TypeConversionTest extends SoapClientTestCase
         } catch (ApiException $e) {
             self::assertStringContainsString(
                 '<PointOnMap><X>37.69</X><Y>55.711747</Y><X1>-37.69</X1><Y1>55.71</Y1><X2>90</X2><Y2>-55.71</Y2></PointOnMap>',
-                $service->__getLastRequest()
+                (string)$service->__getLastRequest()
             );
         }
     }
