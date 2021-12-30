@@ -56,7 +56,7 @@ class ApiSoapClientV4 extends ApiSoapClient
      *
      * @internal
      */
-    public function __doRequest($request, $location, $action, $version, $oneWay = 0)
+    public function __doRequest($request, $location, $action, $version, $oneWay = 0): ?string
     {
         $response = parent::__doRequest($request, $location, $action, $version, $oneWay);
 
