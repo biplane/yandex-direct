@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 5.1.1 [commit logs](https://github.com/biplane/yandex-direct/compare/5.1.0...5.1.1)
+
+### Fixed
+
+* Исправлена совместимость с PHP 8.1 ([#43](https://github.com/biplane/yandex-direct/pull/43))
+
 ## 5.1.0 [commit logs](https://github.com/biplane/yandex-direct/compare/5.0.3...5.1.0)
 
 ### Added
