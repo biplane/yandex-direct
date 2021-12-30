@@ -17,7 +17,7 @@ use SoapHeader;
 use function assert;
 use function hash;
 use function in_array;
-use function property_exists;
+use function is_string;
 use function str_replace;
 use function strpos;
 use function strrpos;
@@ -103,10 +103,6 @@ class ApiSoapClientV4 extends ApiSoapClient
 
     protected function parseSoapFault(SoapFault $fault): ?ApiException
     {
-        if (! property_exists($fault, 'faultcode')) {
-            return null;
-        }
-
         $code = 0;
 
         if ($fault->faultcode !== null) {
@@ -118,18 +114,13 @@ class ApiSoapClientV4 extends ApiSoapClient
         }
 
         if ($code > 0) {
-            $detailMessage = property_exists($fault, 'detail') ? $fault->detail : null;
+            $detailMessage = is_string($fault->detail) ? $fault->detail : null;
 
             if ($detailMessage === '') {
                 $detailMessage = null;
             }
 
-            $exception = new ApiException(
-                property_exists($fault, 'faultstring') ? $fault->faultstring : $fault->getMessage(),
-                $code,
-                $detailMessage,
-                $fault
-            );
+            $exception = new ApiException($fault->faultstring, $code, $detailMessage, $fault);
             $requestId = $this->getRequestId();
 
             if ($requestId !== '') {
