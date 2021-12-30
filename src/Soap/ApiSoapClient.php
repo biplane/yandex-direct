@@ -14,6 +14,7 @@ use Biplane\YandexDirect\Runner\Runner;
 use Biplane\YandexDirect\Soap\TypeConverter\DecimalTypeConverter;
 use InvalidArgumentException;
 use ReflectionClass;
+use ReturnTypeWillChange;
 use RuntimeException;
 use SoapClient;
 use SoapFault;
@@ -178,6 +179,7 @@ abstract class ApiSoapClient extends SoapClient implements ClientInterface
     /**
      * {@inheritDoc}
      */
+    #[ReturnTypeWillChange]
     public function __soapCall($name, $args, $options = null, $inputHeaders = null, &$outputHeaders = null)
     {
         if ($this->eventEmitter !== null) {
