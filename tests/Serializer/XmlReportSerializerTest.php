@@ -158,6 +158,8 @@ XML;
 
     private static function assertXmlIsValid(string $xml): void
     {
+        self::assertNotEmpty($xml);
+
         $doc = new DOMDocument();
         $doc->loadXML($xml);
 
