@@ -18,6 +18,14 @@
 $ composer require biplane/yandex-direct
 ```
 
+### Дополнительно для работы с сервисом Reports
+
+Для работы с сервисом [Reports](https://yandex.ru/dev/direct/doc/reports/reports.html) нужен HTTP-клиент,
+совместимый с [PSR-18](https://packagist.org/providers/psr/http-client-implementation).
+В зависимостях не указана какая-то конкретная реализация. Вместо этого используется
+[`php-http/discovery`](https://packagist.org/packages/php-http/discovery) для поиска подходящей реализации
+среди установленных пакетов, как стратегия по умолчанию.
+
 ## Примеры использования
 
 ### Получение данных по объявлениям
