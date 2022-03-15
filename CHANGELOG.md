@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 5.2.0 [commit logs](https://github.com/biplane/yandex-direct/compare/5.1.1...5.2.0)
+
 ### Changed
 
 * Добавлена возможность передавать числовые значения в `Biplane\YandexDirect\Api\V5\Reports\FilterItem::create()` (Close #44)
