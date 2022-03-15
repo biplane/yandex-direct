@@ -4,8 +4,9 @@ declare(strict_types=1);
 
 namespace Biplane\YandexDirect\Api\V5\Reports;
 
+use function array_map;
 use function array_values;
-use function is_string;
+use function is_array;
 
 final class FilterItem
 {
@@ -29,12 +30,16 @@ final class FilterItem
     }
 
     /**
-     * @param array<string>|string $values
+     * @param array<int|string>|int|string $values
      * @psalm-param FilterOperatorEnum::* $operator
      */
     public static function create(string $field, string $operator, $values): self
     {
-        return new self($field, $operator, is_string($values) ? [$values] : array_values($values));
+        return new self(
+            $field,
+            $operator,
+            array_map('strval', is_array($values) ? array_values($values) : [$values])
+        );
     }
 
     public function getField(): string
