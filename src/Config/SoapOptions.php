@@ -26,12 +26,20 @@ final class SoapOptions
     private function __construct()
     {
         $this->compression = SOAP_COMPRESSION_ACCEPT | SOAP_COMPRESSION_GZIP;
-        $this->wsdlCacheType = WSDL_CACHE_NONE;
+        $this->wsdlCacheType = WSDL_CACHE_DISK;
     }
 
     public static function default(): self
     {
         return new self();
+    }
+
+    public static function withoutWsdlCache(): self
+    {
+        $instance = new self();
+        $instance->wsdlCacheType = WSDL_CACHE_NONE;
+
+        return $instance;
     }
 
     public function getCompression(): int
