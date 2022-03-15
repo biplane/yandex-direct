@@ -42,12 +42,14 @@ final class FieldEnum
     public const CTR = 'Ctr';
     public const DATE = 'Date';
     public const DEVICE = 'Device';
+    public const DYNAMIC_TEXT_AD_TARGET_ID = 'DynamicTextAdTargetId';
     public const EXTERNAL_NETWORK_NAME = 'ExternalNetworkName';
     public const GENDER = 'Gender';
     public const GOALS_ROI = 'GoalsRoi';
     public const IMPRESSION_SHARE = 'ImpressionShare';
     public const IMPRESSION_REACH = 'ImpressionReach';
     public const IMPRESSIONS = 'Impressions';
+    public const INCOME_GRADE = 'IncomeGrade';
     public const LOCATION_OF_PRESENCE_ID = 'LocationOfPresenceId';
     public const LOCATION_OF_PRESENCE_NAME = 'LocationOfPresenceName';
     public const MATCH_TYPE = 'MatchType';
@@ -62,6 +64,9 @@ final class FieldEnum
     public const RL_ADJUSTMENT_ID = 'RlAdjustmentId';
     public const SESSIONS = 'Sessions';
     public const SLOT = 'Slot';
+    public const SMART_BANNER_FILTER_ID = 'SmartBannerFilterId';
+    public const SMART_AD_TARGET_ID = 'SmartAdTargetId';
+    public const TARGETING_CATEGORY = 'TargetingCategory';
     public const TARGETING_LOCATION_ID = 'TargetingLocationId';
     public const TARGETING_LOCATION_NAME = 'TargetingLocationName';
     public const WEEK = 'Week';
