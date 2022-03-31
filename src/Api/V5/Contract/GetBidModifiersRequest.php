@@ -20,6 +20,12 @@ class GetBidModifiersRequest extends GetRequestGeneral
 //    protected $DesktopAdjustmentFieldNames = null;
 
 //    Can be omitted.
+//    protected $TabletAdjustmentFieldNames = null;
+
+//    Can be omitted.
+//    protected $DesktopOnlyAdjustmentFieldNames = null;
+
+//    Can be omitted.
 //    protected $DemographicsAdjustmentFieldNames = null;
 
 //    Can be omitted.
@@ -123,6 +129,54 @@ class GetBidModifiersRequest extends GetRequestGeneral
     public function setDesktopAdjustmentFieldNames(?array $value = null)
     {
         $this->DesktopAdjustmentFieldNames = $value;
+
+        return $this;
+    }
+
+    /**
+     * @see TabletAdjustmentFieldEnum
+     *
+     * @return string[]|null
+     */
+    public function getTabletAdjustmentFieldNames(): ?array
+    {
+        return $this->TabletAdjustmentFieldNames ?? null;
+    }
+
+    /**
+     * @see TabletAdjustmentFieldEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
+     */
+    public function setTabletAdjustmentFieldNames(?array $value = null)
+    {
+        $this->TabletAdjustmentFieldNames = $value;
+
+        return $this;
+    }
+
+    /**
+     * @see DesktopOnlyAdjustmentFieldEnum
+     *
+     * @return string[]|null
+     */
+    public function getDesktopOnlyAdjustmentFieldNames(): ?array
+    {
+        return $this->DesktopOnlyAdjustmentFieldNames ?? null;
+    }
+
+    /**
+     * @see DesktopOnlyAdjustmentFieldEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
+     */
+    public function setDesktopOnlyAdjustmentFieldNames(?array $value = null)
+    {
+        $this->DesktopOnlyAdjustmentFieldNames = $value;
 
         return $this;
     }

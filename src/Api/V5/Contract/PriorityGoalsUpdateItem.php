@@ -13,6 +13,9 @@ class PriorityGoalsUpdateItem
 
     protected $Value = null;
 
+//    Can be omitted.
+//    protected $IsMetrikaSourceOfValue = null;
+
     protected $Operation = null;
 
     /**
@@ -49,6 +52,26 @@ class PriorityGoalsUpdateItem
     public function setValue(int $value)
     {
         $this->Value = $value;
+
+        return $this;
+    }
+
+    /**
+     * @see YesNoEnum
+     */
+    public function getIsMetrikaSourceOfValue(): ?string
+    {
+        return $this->IsMetrikaSourceOfValue ?? null;
+    }
+
+    /**
+     * @see YesNoEnum
+     *
+     * @return $this
+     */
+    public function setIsMetrikaSourceOfValue(?string $value = null)
+    {
+        $this->IsMetrikaSourceOfValue = $value;
 
         return $this;
     }
