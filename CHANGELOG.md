@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+## 5.3.0 [commit logs](https://github.com/biplane/yandex-direct/compare/5.2.0...5.3.0)
+
+### Changed
+
+* Обновлены сервисы для совмести с последними изменениями в API 5, включая изменения от 2022-03-29.
+  В частности, добавлена поддержка новых типов корректировок, `TABLET_ADJUSTMENT` и `DESKTOP_ONLY_ADJUSTMENT`
+
 ## 5.2.0 [commit logs](https://github.com/biplane/yandex-direct/compare/5.1.1...5.2.0)
 
 ### Changed
