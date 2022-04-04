@@ -15,6 +15,12 @@ class BidModifierAddItem extends BidModifierAddBase
 //    protected $DesktopAdjustment = null;
 
 //    Can be omit.
+//    protected $TabletAdjustment = null;
+
+//    Can be omit.
+//    protected $DesktopOnlyAdjustment = null;
+
+//    Can be omit.
 //    protected $DemographicsAdjustments = null;
 
 //    Can be omit.
@@ -87,6 +93,52 @@ class BidModifierAddItem extends BidModifierAddBase
     public function setDesktopAdjustment(DesktopAdjustmentAdd $value = null)
     {
         $this->DesktopAdjustment = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets TabletAdjustment.
+     *
+     * @return TabletAdjustmentAdd|null
+     */
+    public function getTabletAdjustment()
+    {
+        return isset($this->TabletAdjustment) ? $this->TabletAdjustment : null;
+    }
+
+    /**
+     * Sets TabletAdjustment.
+     *
+     * @param TabletAdjustmentAdd|null $value
+     * @return $this
+     */
+    public function setTabletAdjustment(TabletAdjustmentAdd $value = null)
+    {
+        $this->TabletAdjustment = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets DesktopOnlyAdjustment.
+     *
+     * @return DesktopOnlyAdjustmentAdd|null
+     */
+    public function getDesktopOnlyAdjustment()
+    {
+        return isset($this->DesktopOnlyAdjustment) ? $this->DesktopOnlyAdjustment : null;
+    }
+
+    /**
+     * Sets DesktopOnlyAdjustment.
+     *
+     * @param DesktopOnlyAdjustmentAdd|null $value
+     * @return $this
+     */
+    public function setDesktopOnlyAdjustment(DesktopOnlyAdjustmentAdd $value = null)
+    {
+        $this->DesktopOnlyAdjustment = $value;
 
         return $this;
     }

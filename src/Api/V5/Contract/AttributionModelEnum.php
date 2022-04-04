@@ -16,6 +16,12 @@ class AttributionModelEnum
 
     const LYDC = 'LYDC';
 
+    const LSCCD = 'LSCCD';
+
+    const FCCD = 'FCCD';
+
+    const LYDCCD = 'LYDCCD';
+
 
 }
 

@@ -12,6 +12,9 @@ class PriorityGoalsItem
 
     protected $Value = null;
 
+//    Can be omit.
+//    protected $IsMetrikaSourceOfValue = null;
+
     /**
      * Creates a new instance of PriorityGoalsItem.
      *
@@ -64,6 +67,31 @@ class PriorityGoalsItem
     public function setValue($value)
     {
         $this->Value = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets IsMetrikaSourceOfValue.
+     *
+     * @return string|null
+     * @see YesNoEnum
+     */
+    public function getIsMetrikaSourceOfValue()
+    {
+        return isset($this->IsMetrikaSourceOfValue) ? $this->IsMetrikaSourceOfValue : null;
+    }
+
+    /**
+     * Sets IsMetrikaSourceOfValue.
+     *
+     * @param string|null $value
+     * @return $this
+     * @see YesNoEnum
+     */
+    public function setIsMetrikaSourceOfValue($value = null)
+    {
+        $this->IsMetrikaSourceOfValue = $value;
 
         return $this;
     }

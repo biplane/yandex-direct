@@ -15,6 +15,9 @@ class DynamicTextCampaignGetItem extends DynamicTextCampaignBase
 //    protected $Settings = null;
 
 //    Can be omit.
+//    protected $PlacementTypes = null;
+
+//    Can be omit.
 //    protected $PriorityGoals = null;
 
     /**
@@ -69,6 +72,29 @@ class DynamicTextCampaignGetItem extends DynamicTextCampaignBase
     public function setSettings(array $value = null)
     {
         $this->Settings = $value;
+
+        return $this;
+    }
+
+    /**
+     * Gets PlacementTypes.
+     *
+     * @return PlacementTypeArray|null
+     */
+    public function getPlacementTypes()
+    {
+        return isset($this->PlacementTypes) ? $this->PlacementTypes : null;
+    }
+
+    /**
+     * Sets PlacementTypes.
+     *
+     * @param PlacementTypeArray|null $value
+     * @return $this
+     */
+    public function setPlacementTypes(PlacementTypeArray $value = null)
+    {
+        $this->PlacementTypes = $value;
 
         return $this;
     }
