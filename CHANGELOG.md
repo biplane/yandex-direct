@@ -2,18 +2,23 @@
 
 ## Unreleased
 
+## 4.22.0 [commit logs](https://github.com/biplane/yandex-direct/compare/4.21.0...4.22.0)
+
+* Обновлены сервисы. Для совместимости с последними изменениями в API 5.
+  Включая изменения от 2022-03-29.
+
 ## 4.21.0 [commit logs](https://github.com/biplane/yandex-direct/compare/4.20.0...4.21.0)
 
 ### Changed
 
-* Обновлены сервисы для совмести с последней версией API 5, включая изменения от 2021-11-01.
+* Обновлены сервисы. Для совместимости с последними изменениями в API 5. Включая изменения от 2021-11-01.
 
 ## 4.20.0 [commit logs](https://github.com/biplane/yandex-direct/compare/4.19.0...4.20.0)
 
 ### Changed
 
-* Обновлены сервисы для совмести с последней версией API 5, включая изменения от 2021-08-02.
-  Некоторые DTO были переименованы, в пространстве имен `Biplane\YandexDirect\Api\V5\Contract`:
+* Обновлены сервисы, для совместимости с последней версией API 5. Включая изменения от 2021-08-02.
+  Некоторые DTO были переименованы в пространстве имен `Biplane\YandexDirect\Api\V5\Contract`:
 
   * `WebpageStateSelectionEnum -> AdTargetStateSelectionEnum`
   * `WebpagesSelectionCriteria -> AdTargetsSelectionCriteria`
