@@ -9,7 +9,8 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class GetCampaignsRequest extends GetRequestGeneral
 {
-    protected $SelectionCriteria = null;
+//    Can be omitted.
+//    protected $SelectionCriteria = null;
 
     protected $FieldNames = [];
 
@@ -28,15 +29,15 @@ class GetCampaignsRequest extends GetRequestGeneral
 //    Can be omitted.
 //    protected $SmartCampaignFieldNames = null;
 
-    public function getSelectionCriteria(): CampaignsSelectionCriteria
+    public function getSelectionCriteria(): ?CampaignsSelectionCriteria
     {
-        return $this->SelectionCriteria;
+        return $this->SelectionCriteria ?? null;
     }
 
     /**
      * @return $this
      */
-    public function setSelectionCriteria(CampaignsSelectionCriteria $value)
+    public function setSelectionCriteria(?CampaignsSelectionCriteria $value = null)
     {
         $this->SelectionCriteria = $value;
 

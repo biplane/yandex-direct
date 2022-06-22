@@ -7,17 +7,9 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 /**
  * Auto-generated code.
  */
-class DynamicTextFeedAdGroup
+class DynamicTextFeedAdGroup extends DynamicAdGroup
 {
     protected $FeedId = null;
-
-    /**
-     * @return static
-     */
-    public static function create()
-    {
-        return new static();
-    }
 
     public function getFeedId(): int
     {

@@ -8,19 +8,27 @@ final class Page
 {
     /** @var int */
     private $limit;
+    /** @var int */
+    private $offset;
 
-    private function __construct(int $limit)
+    private function __construct(int $limit, int $offset)
     {
         $this->limit = $limit;
+        $this->offset = $offset;
     }
 
-    public static function create(int $limit): self
+    public static function create(int $limit, int $offset = 0): self
     {
-        return new self($limit);
+        return new self($limit, $offset);
     }
 
     public function getLimit(): int
     {
         return $this->limit;
+    }
+
+    public function getOffset(): int
+    {
+        return $this->offset;
     }
 }

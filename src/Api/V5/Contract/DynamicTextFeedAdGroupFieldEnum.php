@@ -9,6 +9,8 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class DynamicTextFeedAdGroupFieldEnum
 {
+    public const AUTOTARGETING_CATEGORIES = 'AutotargetingCategories';
+
     public const SOURCE = 'Source';
 
     public const FEED_ID = 'FeedId';

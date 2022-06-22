@@ -13,6 +13,8 @@ class BidModifierTypeEnum
 
     public const DESKTOP_ADJUSTMENT = 'DESKTOP_ADJUSTMENT';
 
+    public const SMART_TV_ADJUSTMENT = 'SMART_TV_ADJUSTMENT';
+
     public const TABLET_ADJUSTMENT = 'TABLET_ADJUSTMENT';
 
     public const DESKTOP_ONLY_ADJUSTMENT = 'DESKTOP_ONLY_ADJUSTMENT';

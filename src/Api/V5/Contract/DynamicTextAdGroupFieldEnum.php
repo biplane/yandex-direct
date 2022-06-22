@@ -9,6 +9,8 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
  */
 class DynamicTextAdGroupFieldEnum
 {
+    public const AUTOTARGETING_CATEGORIES = 'AutotargetingCategories';
+
     public const DOMAIN_URL = 'DomainUrl';
 
     public const DOMAIN_URL_PROCESSING_STATUS = 'DomainUrlProcessingStatus';

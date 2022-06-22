@@ -7,17 +7,9 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 /**
  * Auto-generated code.
  */
-class DynamicTextAdGroup
+class DynamicTextAdGroup extends DynamicAdGroup
 {
     protected $DomainUrl = null;
-
-    /**
-     * @return static
-     */
-    public static function create()
-    {
-        return new static();
-    }
 
     public function getDomainUrl(): string
     {

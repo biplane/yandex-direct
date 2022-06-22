@@ -21,6 +21,9 @@ class AdGroupUpdateItem extends AdGroupBase
 //    protected $DynamicTextAdGroup = null;
 
 //    Can be omitted.
+//    protected $DynamicTextFeedAdGroup = null;
+
+//    Can be omitted.
 //    protected $SmartAdGroup = null;
 
 //    Can be omitted.
@@ -82,6 +85,21 @@ class AdGroupUpdateItem extends AdGroupBase
     public function setDynamicTextAdGroup(?DynamicTextAdGroup $value = null)
     {
         $this->DynamicTextAdGroup = $value;
+
+        return $this;
+    }
+
+    public function getDynamicTextFeedAdGroup(): ?DynamicTextFeedAdGroupUpdate
+    {
+        return $this->DynamicTextFeedAdGroup ?? null;
+    }
+
+    /**
+     * @return $this
+     */
+    public function setDynamicTextFeedAdGroup(?DynamicTextFeedAdGroupUpdate $value = null)
+    {
+        $this->DynamicTextFeedAdGroup = $value;
 
         return $this;
     }

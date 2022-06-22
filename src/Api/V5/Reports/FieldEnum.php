@@ -26,9 +26,11 @@ final class FieldEnum
     public const CAMPAIGN_ID = 'CampaignId';
     public const CAMPAIGN_NAME = 'CampaignName';
     public const CAMPAIGN_TYPE = 'CampaignType';
+    public const CAMPAIGN_URL_PATH = 'CampaignUrlPath';
     public const CARRIER_TYPE = 'CarrierType';
     public const CLICKS = 'Clicks';
     public const CLICK_TYPE = 'ClickType';
+    public const CLIENT_LOGIN = 'ClientLogin';
     public const CONVERSION_RATE = 'ConversionRate';
     public const CONVERSIONS = 'Conversions';
     public const COST = 'Cost';

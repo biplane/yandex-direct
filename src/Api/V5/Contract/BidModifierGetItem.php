@@ -31,6 +31,9 @@ class BidModifierGetItem
 //    protected $DesktopAdjustment = null;
 
 //    Can be omitted.
+//    protected $SmartTvAdjustment = null;
+
+//    Can be omitted.
 //    protected $TabletAdjustment = null;
 
 //    Can be omitted.
@@ -176,6 +179,21 @@ class BidModifierGetItem
     public function setDesktopAdjustment(?DesktopAdjustmentGet $value = null)
     {
         $this->DesktopAdjustment = $value;
+
+        return $this;
+    }
+
+    public function getSmartTvAdjustment(): ?SmartTvAdjustmentGet
+    {
+        return $this->SmartTvAdjustment ?? null;
+    }
+
+    /**
+     * @return $this
+     */
+    public function setSmartTvAdjustment(?SmartTvAdjustmentGet $value = null)
+    {
+        $this->SmartTvAdjustment = $value;
 
         return $this;
     }

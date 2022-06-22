@@ -20,6 +20,9 @@ class GetBidModifiersRequest extends GetRequestGeneral
 //    protected $DesktopAdjustmentFieldNames = null;
 
 //    Can be omitted.
+//    protected $SmartTvAdjustmentFieldNames = null;
+
+//    Can be omitted.
 //    protected $TabletAdjustmentFieldNames = null;
 
 //    Can be omitted.
@@ -129,6 +132,30 @@ class GetBidModifiersRequest extends GetRequestGeneral
     public function setDesktopAdjustmentFieldNames(?array $value = null)
     {
         $this->DesktopAdjustmentFieldNames = $value;
+
+        return $this;
+    }
+
+    /**
+     * @see SmartTvAdjustmentFieldEnum
+     *
+     * @return string[]|null
+     */
+    public function getSmartTvAdjustmentFieldNames(): ?array
+    {
+        return $this->SmartTvAdjustmentFieldNames ?? null;
+    }
+
+    /**
+     * @see SmartTvAdjustmentFieldEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
+     */
+    public function setSmartTvAdjustmentFieldNames(?array $value = null)
+    {
+        $this->SmartTvAdjustmentFieldNames = $value;
 
         return $this;
     }

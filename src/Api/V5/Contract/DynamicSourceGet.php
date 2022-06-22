@@ -7,7 +7,7 @@ namespace Biplane\YandexDirect\Api\V5\Contract;
 /**
  * Auto-generated code.
  */
-class DynamicSourceGet
+class DynamicSourceGet extends DynamicAdGroupGet
 {
 //    Can be omitted.
 //    protected $Source = null;
@@ -20,14 +20,6 @@ class DynamicSourceGet
 
 //    Can be omitted.
 //    protected $SourceProcessingStatus = null;
-
-    /**
-     * @return static
-     */
-    public static function create()
-    {
-        return new static();
-    }
 
     public function getSource(): ?string
     {
