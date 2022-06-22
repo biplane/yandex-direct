@@ -18,6 +18,7 @@ use function assert;
 use function hash;
 use function in_array;
 use function is_string;
+use function property_exists;
 use function str_replace;
 use function strpos;
 use function strrpos;
@@ -114,7 +115,7 @@ class ApiSoapClientV4 extends ApiSoapClient
         }
 
         if ($code > 0) {
-            $detailMessage = is_string($fault->detail) ? $fault->detail : null;
+            $detailMessage = property_exists($fault, 'detail') && is_string($fault->detail) ? $fault->detail : null;
 
             if ($detailMessage === '') {
                 $detailMessage = null;

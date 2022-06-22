@@ -69,7 +69,7 @@ class ApiSoapClientV5 extends ApiSoapClient
 
     protected function parseSoapFault(SoapFault $fault): ?ApiException
     {
-        $detail = $fault->detail;
+        $detail = property_exists($fault, 'detail') ? $fault->detail : null;
 
         if (is_object($detail) && property_exists($detail, 'FaultResponse')) {
             // phpcs:disable Squiz.NamingConventions.ValidVariableName.MemberNotCamelCaps

@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+### Fixed
+
+* Исправлена ошибка при обработке `SoapFault`.
+  ```
+  Warning: Undefined property: SoapFault::$detail
+  ```
+
 ## 5.3.0 [commit logs](https://github.com/biplane/yandex-direct/compare/5.2.0...5.3.0)
 
 ### Changed
