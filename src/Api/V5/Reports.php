@@ -228,17 +228,23 @@ class Reports implements ApiClientInterface
 
     private function processError(ResponseInterface $response): Throwable
     {
-        $apiError = $this->serializer->deserializeApiError((string)$response->getBody());
+        if ($response->hasHeader('content-type') && $response->getHeaderLine('content-type') === 'text/xml') {
+            $apiError = $this->serializer->deserializeApiError((string)$response->getBody());
 
-        if ($apiError !== null) {
-            $exception = new ApiException(
-                $apiError->errorMessage,
-                $apiError->errorCode,
-                $apiError->errorDetail
-            );
-            $exception->setRequestId($apiError->requestId);
+            if ($apiError !== null) {
+                $exception = new ApiException(
+                    $apiError->errorMessage,
+                    $apiError->errorCode,
+                    $apiError->errorDetail
+                );
+                $exception->setRequestId($apiError->requestId);
 
-            return $exception;
+                return $exception;
+            }
+        }
+
+        if ($response->getStatusCode() === 500) {
+            return new ApiException('Internal Server Error', $response->getStatusCode(), null);
         }
 
         throw new DownloadReportException(

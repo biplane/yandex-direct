@@ -8,6 +8,8 @@
   ```
   Warning: Undefined property: SoapFault::$detail
   ```
+* Исправлена ситуация, когда при разборе ответа от сервиса **Reports**
+  могло быть выброшено исключение `Symfony\Component\Serializer\Exception\NotEncodableValueException`.
 
 ## 5.3.0 [commit logs](https://github.com/biplane/yandex-direct/compare/5.2.0...5.3.0)
 

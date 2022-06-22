@@ -105,7 +105,11 @@ class ReportsTest extends TestCase
 XML;
 
         $this->httpClient->method('sendRequest')->willReturn(
-            new Response(400, [], $reportDownloadError)
+            new Response(
+                400,
+                ['content-type' => 'text/xml'],
+                $reportDownloadError
+            )
         );
 
         $this->expectException(ApiException::class);
@@ -117,6 +121,36 @@ XML;
             self::assertEquals('Authorization error: Token not entered', $e->getMessage());
             self::assertEquals('Token not entered', $e->getDetailMessage());
             self::assertSame(53, $e->getCode());
+
+            throw $e;
+        }
+    }
+
+    public function testProcessResponseWithStatusCode500(): void
+    {
+        $service = $this->createService([
+            'access_token' => 'secr3t',
+            'client_login' => 'agrom',
+        ]);
+        $reportRequest = Reports\ReportRequestBuilder::create()
+            ->setReportDefinition(Reports\ReportDefinition::create())
+            ->getReportRequest();
+
+        $this->httpClient->method('sendRequest')->willReturn(
+            new Response(
+                500,
+                ['content-type' => 'text/html'],
+                '<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN"> <html><head> <title>500 Internal Server Error</title> </head><body> <h1>Internal Server Error</h1> <p>The server encountered an internal error or misconfiguration and was unable to complete your request.</p> <p>Please contact the server administrator at {email} to inform them of the time this error occurred, and the actions you performed just before this error.</p> <p>More information about this error may be available in the server error log.</p> </body></html>'
+            )
+        );
+
+        $this->expectException(ApiException::class);
+
+        try {
+            $service->get($reportRequest);
+        } catch (ApiException $e) {
+            self::assertEquals('Internal Server Error', $e->getMessage());
+            self::assertSame(500, $e->getCode());
 
             throw $e;
         }
