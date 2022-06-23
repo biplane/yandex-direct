@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+### Fixed
+
+* Если параметр `Offset` явно не задан для `Page`, то запрос к сервису Reports
+  не будет содержать этот параметр.
+
 ## 5.4.0 [commit logs](https://github.com/biplane/yandex-direct/compare/5.3.0...5.4.0)
 
 ### Changed

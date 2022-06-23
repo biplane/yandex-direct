@@ -11,6 +11,7 @@ use Biplane\YandexDirect\Api\V5\Reports\FieldEnum;
 use Biplane\YandexDirect\Api\V5\Reports\FilterItem;
 use Biplane\YandexDirect\Api\V5\Reports\FilterOperatorEnum;
 use Biplane\YandexDirect\Api\V5\Reports\OrderBy;
+use Biplane\YandexDirect\Api\V5\Reports\Page;
 use Biplane\YandexDirect\Api\V5\Reports\ReportDefinition;
 use Biplane\YandexDirect\Api\V5\Reports\ReportTypeEnum;
 use Biplane\YandexDirect\Api\V5\Reports\SelectionCriteria;
@@ -89,7 +90,8 @@ XML;
             ->setGoals(['1011', '1012'])
             ->setIncludeVAT(true)
             ->addOrderBy(OrderBy::create(FieldEnum::DATE))
-            ->addOrderBy(OrderBy::create(FieldEnum::CAMPAIGN_ID, SortOrderEnum::DESCENDING));
+            ->addOrderBy(OrderBy::create(FieldEnum::CAMPAIGN_ID, SortOrderEnum::DESCENDING))
+            ->setPage(Page::create(100000, 500));
 
         $xml = (new XmlReportSerializer())->serializeReportDefinition($reportDefinition);
 
@@ -114,6 +116,10 @@ XML;
   <FieldNames>Impressions</FieldNames>
   <FieldNames>Clicks</FieldNames>
   <FieldNames>Cost</FieldNames>
+  <Page>
+    <Limit>100000</Limit>
+    <Offset>500</Offset>
+  </Page>
   <OrderBy>
     <Field>Date</Field>
     <SortOrder>ASCENDING</SortOrder>
@@ -124,6 +130,47 @@ XML;
   </OrderBy>
   <ReportName>foo</ReportName>
   <ReportType>CUSTOM_REPORT</ReportType>
+  <DateRangeType>AUTO</DateRangeType>
+  <Format>TSV</Format>
+  <IncludeVAT>YES</IncludeVAT>
+</ReportDefinition>
+XML;
+        self::assertXmlStringEqualsXmlString($expectedXml, $xml);
+        self::assertXmlIsValid($xml);
+    }
+
+    public function testSerializePageWithoutOffset(): void
+    {
+        $reportDefinition = ReportDefinition::create()
+            ->setReportName('foo')
+            ->setReportType(ReportTypeEnum::CAMPAIGN_PERFORMANCE_REPORT)
+            ->setFieldNames([
+                FieldEnum::DATE,
+                FieldEnum::CAMPAIGN_ID,
+                FieldEnum::IMPRESSIONS,
+                FieldEnum::CLICKS,
+                FieldEnum::COST,
+            ])
+            ->setDateRangeType(DateRangeTypeEnum::AUTO)
+            ->setIncludeVAT(true)
+            ->setPage(Page::create(50000));
+
+        $xml = (new XmlReportSerializer())->serializeReportDefinition($reportDefinition);
+
+        $expectedXml = <<<'XML'
+<?xml version="1.0"?>
+<ReportDefinition xmlns="http://api.direct.yandex.com/v5/reports">
+  <SelectionCriteria/>
+  <FieldNames>Date</FieldNames>
+  <FieldNames>CampaignId</FieldNames>
+  <FieldNames>Impressions</FieldNames>
+  <FieldNames>Clicks</FieldNames>
+  <FieldNames>Cost</FieldNames>
+  <Page>
+    <Limit>50000</Limit>
+  </Page>
+  <ReportName>foo</ReportName>
+  <ReportType>CAMPAIGN_PERFORMANCE_REPORT</ReportType>
   <DateRangeType>AUTO</DateRangeType>
   <Format>TSV</Format>
   <IncludeVAT>YES</IncludeVAT>
