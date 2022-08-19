@@ -32,10 +32,10 @@
     "php-http/httplug": "^2.2",
     "php-vcr/php-vcr": "^1.4.5, <1.6",
     "phpunit/phpunit": "^7.5 || ^9.5",
-    "psalm/plugin-phpunit": "^0.16.1",
+    "psalm/plugin-phpunit": "^0.17.0",
     "psr/log": "^1.1",
     "symfony/http-client": "^4.4 || ^5.0",
-    "vimeo/psalm": "~4.21.0"
+    "vimeo/psalm": "4.26.0"
   },
   "autoload": {
     "psr-4": { "Biplane\\YandexDirect\\": "src/" }
