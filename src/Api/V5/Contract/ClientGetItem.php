@@ -57,6 +57,12 @@ class ClientGetItem extends ClientBaseItem
 //    Can be omitted.
 //    protected $VatRate = null;
 
+//    Can be omitted.
+//    protected $TinInfo = null;
+
+//    Can be omitted.
+//    protected $ErirAttributes = null;
+
     public function getAccountQuality(): ?float
     {
         return $this->AccountQuality ?? null;
@@ -323,6 +329,36 @@ class ClientGetItem extends ClientBaseItem
     public function setVatRate(?float $value = null)
     {
         $this->VatRate = $value;
+
+        return $this;
+    }
+
+    public function getTinInfo(): ?TinInfoGet
+    {
+        return $this->TinInfo ?? null;
+    }
+
+    /**
+     * @return $this
+     */
+    public function setTinInfo(?TinInfoGet $value = null)
+    {
+        $this->TinInfo = $value;
+
+        return $this;
+    }
+
+    public function getErirAttributes(): ?ErirAttributesGet
+    {
+        return $this->ErirAttributes ?? null;
+    }
+
+    /**
+     * @return $this
+     */
+    public function setErirAttributes(?ErirAttributesGet $value = null)
+    {
+        $this->ErirAttributes = $value;
 
         return $this;
     }

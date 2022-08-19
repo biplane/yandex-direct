@@ -25,6 +25,9 @@ class AddAgencyClientsRequest
 //    Can be omitted.
 //    protected $Grants = null;
 
+//    Can be omitted.
+//    protected $TinInfo = null;
+
     /**
      * @return static
      */
@@ -149,6 +152,21 @@ class AddAgencyClientsRequest
     public function setGrants(?array $value = null)
     {
         $this->Grants = $value;
+
+        return $this;
+    }
+
+    public function getTinInfo(): ?TinInfoAdd
+    {
+        return $this->TinInfo ?? null;
+    }
+
+    /**
+     * @return $this
+     */
+    public function setTinInfo(?TinInfoAdd $value = null)
+    {
+        $this->TinInfo = $value;
 
         return $this;
     }

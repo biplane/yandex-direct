@@ -15,6 +15,12 @@ class ClientUpdateItem extends ClientBaseItem
 //    Can be omitted.
 //    protected $Settings = null;
 
+//    Can be omitted.
+//    protected $TinInfo = null;
+
+//    Can be omitted.
+//    protected $ErirAttributes = null;
+
     public function getNotification(): ?NotificationUpdate
     {
         return $this->Notification ?? null;
@@ -46,6 +52,36 @@ class ClientUpdateItem extends ClientBaseItem
     public function setSettings(?array $value = null)
     {
         $this->Settings = $value;
+
+        return $this;
+    }
+
+    public function getTinInfo(): ?TinInfoUpdate
+    {
+        return $this->TinInfo ?? null;
+    }
+
+    /**
+     * @return $this
+     */
+    public function setTinInfo(?TinInfoUpdate $value = null)
+    {
+        $this->TinInfo = $value;
+
+        return $this;
+    }
+
+    public function getErirAttributes(): ?ErirAttributesUpdate
+    {
+        return $this->ErirAttributes ?? null;
+    }
+
+    /**
+     * @return $this
+     */
+    public function setErirAttributes(?ErirAttributesUpdate $value = null)
+    {
+        $this->ErirAttributes = $value;
 
         return $this;
     }

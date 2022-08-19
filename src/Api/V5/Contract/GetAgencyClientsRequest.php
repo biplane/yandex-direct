@@ -13,6 +13,21 @@ class GetAgencyClientsRequest extends GetRequestGeneral
 
     protected $FieldNames = [];
 
+//    Can be omitted.
+//    protected $TinInfoFieldNames = null;
+
+//    Can be omitted.
+//    protected $OrganizationFieldNames = null;
+
+//    Can be omitted.
+//    protected $ContractFieldNames = null;
+
+//    Can be omitted.
+//    protected $ContragentFieldNames = null;
+
+//    Can be omitted.
+//    protected $ContragentTinInfoFieldNames = null;
+
     public function getSelectionCriteria(): AgencyClientsSelectionCriteria
     {
         return $this->SelectionCriteria;
@@ -48,6 +63,126 @@ class GetAgencyClientsRequest extends GetRequestGeneral
     public function setFieldNames(array $value)
     {
         $this->FieldNames = $value;
+
+        return $this;
+    }
+
+    /**
+     * @see TinInfoFieldEnum
+     *
+     * @return string[]|null
+     */
+    public function getTinInfoFieldNames(): ?array
+    {
+        return $this->TinInfoFieldNames ?? null;
+    }
+
+    /**
+     * @see TinInfoFieldEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
+     */
+    public function setTinInfoFieldNames(?array $value = null)
+    {
+        $this->TinInfoFieldNames = $value;
+
+        return $this;
+    }
+
+    /**
+     * @see OrgInfoFieldEnum
+     *
+     * @return string[]|null
+     */
+    public function getOrganizationFieldNames(): ?array
+    {
+        return $this->OrganizationFieldNames ?? null;
+    }
+
+    /**
+     * @see OrgInfoFieldEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
+     */
+    public function setOrganizationFieldNames(?array $value = null)
+    {
+        $this->OrganizationFieldNames = $value;
+
+        return $this;
+    }
+
+    /**
+     * @see ContractInfoFieldEnum
+     *
+     * @return string[]|null
+     */
+    public function getContractFieldNames(): ?array
+    {
+        return $this->ContractFieldNames ?? null;
+    }
+
+    /**
+     * @see ContractInfoFieldEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
+     */
+    public function setContractFieldNames(?array $value = null)
+    {
+        $this->ContractFieldNames = $value;
+
+        return $this;
+    }
+
+    /**
+     * @see ContragentInfoFieldEnum
+     *
+     * @return string[]|null
+     */
+    public function getContragentFieldNames(): ?array
+    {
+        return $this->ContragentFieldNames ?? null;
+    }
+
+    /**
+     * @see ContragentInfoFieldEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
+     */
+    public function setContragentFieldNames(?array $value = null)
+    {
+        $this->ContragentFieldNames = $value;
+
+        return $this;
+    }
+
+    /**
+     * @see TinInfoFieldEnum
+     *
+     * @return string[]|null
+     */
+    public function getContragentTinInfoFieldNames(): ?array
+    {
+        return $this->ContragentTinInfoFieldNames ?? null;
+    }
+
+    /**
+     * @see TinInfoFieldEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
+     */
+    public function setContragentTinInfoFieldNames(?array $value = null)
+    {
+        $this->ContragentTinInfoFieldNames = $value;
 
         return $this;
     }

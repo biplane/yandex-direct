@@ -15,5 +15,7 @@ class RepresentativeRoleEnum
 
     public const LIMITED = 'LIMITED';
 
+    public const READONLY = 'READONLY';
+
     public const UNKNOWN = 'UNKNOWN';
 }
