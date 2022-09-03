@@ -13,7 +13,7 @@ use SoapFault;
 final class MockSoapClient extends ApiSoapClient
 {
     /** @var array<string, mixed> */
-    protected $options;
+    private $opts;
 
     /**
      * @param array<string, mixed> $options
@@ -22,7 +22,7 @@ final class MockSoapClient extends ApiSoapClient
     {
         parent::__construct(__DIR__ . '/Fixtures/yandexapiservice.wsdl', $config, $options);
 
-        $this->options = $options;
+        $this->opts = $options;
     }
 
     /**
@@ -30,7 +30,7 @@ final class MockSoapClient extends ApiSoapClient
      */
     public function getOptions(): array
     {
-        return $this->options;
+        return $this->opts;
     }
 
     public function getConfig(): Config
