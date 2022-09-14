@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+## 5.6.0 [commit logs](https://github.com/biplane/yandex-direct/compare/5.5.0...5.6.0)
+
+### Changed
+
+* Для контрактор данных добавлен атрибут `#[AllowDynamicProperties]` для совместимости с PHP 8.2
+* Обновлены сервисы для совмести с последней версией API 5, включая изменения от 2022-09-06.
+
 ## 5.5.0 [commit logs](https://github.com/biplane/yandex-direct/compare/5.4.1...5.5.0)
 
 ### Changed
