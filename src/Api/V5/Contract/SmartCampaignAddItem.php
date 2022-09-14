@@ -4,9 +4,12 @@ declare(strict_types=1);
 
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
+use AllowDynamicProperties;
+
 /**
  * Auto-generated code.
  */
+#[AllowDynamicProperties]
 class SmartCampaignAddItem
 {
     protected $BiddingStrategy = null;
@@ -18,6 +21,9 @@ class SmartCampaignAddItem
 
 //    Can be omitted.
 //    protected $PriorityGoals = null;
+
+//    Can be omitted.
+//    protected $TrackingParams = null;
 
 //    Can be omitted.
 //    protected $AttributionModel = null;
@@ -91,6 +97,21 @@ class SmartCampaignAddItem
     public function setPriorityGoals(?PriorityGoalsArray $value = null)
     {
         $this->PriorityGoals = $value;
+
+        return $this;
+    }
+
+    public function getTrackingParams(): ?string
+    {
+        return $this->TrackingParams ?? null;
+    }
+
+    /**
+     * @return $this
+     */
+    public function setTrackingParams(?string $value = null)
+    {
+        $this->TrackingParams = $value;
 
         return $this;
     }

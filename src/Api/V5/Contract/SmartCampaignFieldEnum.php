@@ -17,5 +17,7 @@ class SmartCampaignFieldEnum
 
     public const PRIORITY_GOALS = 'PriorityGoals';
 
+    public const TRACKING_PARAMS = 'TrackingParams';
+
     public const ATTRIBUTION_MODEL = 'AttributionModel';
 }
