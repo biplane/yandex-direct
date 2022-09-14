@@ -3,6 +3,7 @@ namespace Acme\Api\Contract;
 /**
  * Auto-generated code.
  */
+#[\AllowDynamicProperties]
 class GetRequest extends GetRequestGeneral
 {
 

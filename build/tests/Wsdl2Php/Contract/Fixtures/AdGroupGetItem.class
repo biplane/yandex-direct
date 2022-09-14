@@ -3,6 +3,7 @@ namespace Foo\Api\Contract;
 /**
  * Auto-generated code.
  */
+#[\AllowDynamicProperties]
 class AdGroupGetItem extends AdGroupBase
 {
 

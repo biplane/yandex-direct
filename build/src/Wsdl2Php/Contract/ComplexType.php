@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Biplane\Build\Wsdl2Php\Contract;
 
 use Biplane\Build\Wsdl2Php\ClassNameUtil;
+use Biplane\Build\Wsdl2Php\Code\DocBlockWithAttributesGenerator;
 use Biplane\Build\Wsdl2Php\Code\OmitPropertyGenerator;
 use Biplane\Build\Wsdl2Php\Helper\ContractGeneratorTrait;
 use Biplane\Build\Wsdl2Php\PhpTypeResolver;
@@ -21,6 +22,12 @@ class ComplexType extends AbstractDataType implements GeneratorInterface
      */
     protected function buildClass(ClassGenerator $generator, PhpTypeResolver $typeResolver): void
     {
+        $docBlock = new DocBlockWithAttributesGenerator('Auto-generated code.');
+        $docBlock->setAttributes([
+            "\AllowDynamicProperties",
+        ]);
+        $generator->setDocBlock($docBlock);
+
         if ($this->type->isAbstract()) {
             $generator->addFlag(ClassGenerator::FLAG_ABSTRACT);
         }
