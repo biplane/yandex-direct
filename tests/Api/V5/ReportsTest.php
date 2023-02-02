@@ -156,6 +156,31 @@ XML;
         }
     }
 
+    public function testUseSandbox(): void
+    {
+        $service = $this->createService([
+            'access_token' => 'secr3t',
+            'client_login' => 'agrom',
+            'sandbox' => true,
+        ]);
+        $reportRequest = Reports\ReportRequestBuilder::create()
+            ->skipReportHeader(true)
+            ->setReportDefinition(Reports\ReportDefinition::create())
+            ->getReportRequest();
+
+        $this->httpClient->method('sendRequest')
+            ->with(self::callback(static function (RequestInterface $request): bool {
+                self::assertEquals('https://api-sandbox.direct.yandex.com/v5/reports', $request->getUri());
+
+                return true;
+            }))
+            ->willReturn(new Response());
+
+        $reportResult = $service->get($reportRequest);
+
+        self::assertTrue($reportResult->isReady());
+    }
+
     /**
      * @param array<string, mixed> $options
      */

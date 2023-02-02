@@ -23,6 +23,7 @@ use Throwable;
 use function implode;
 use function sleep;
 use function sprintf;
+use function str_replace;
 
 class Reports implements ApiClientInterface
 {
@@ -175,7 +176,13 @@ class Reports implements ApiClientInterface
 
     private function createHttpRequest(Reports\ReportRequest $reportRequest): RequestInterface
     {
-        $request = $this->requestFactory->createRequest('POST', self::ENDPOINT)
+        $endpoint = self::ENDPOINT;
+
+        if ($this->config->useSandbox()) {
+            $endpoint = str_replace('api.direct.yandex.', 'api-sandbox.direct.yandex.', $endpoint);
+        }
+
+        $request = $this->requestFactory->createRequest('POST', $endpoint)
             ->withHeader('Authorization', sprintf('Bearer %s', $this->config->getAccessToken()))
             ->withHeader('Accept-Language', $this->config->getLocale(Config::API_5))
             ->withHeader('processingMode', $reportRequest->processingMode());
