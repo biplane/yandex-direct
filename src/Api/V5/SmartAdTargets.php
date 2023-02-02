@@ -79,6 +79,7 @@ class SmartAdTargets extends ApiSoapClientV5
             'AutotargetingCategoriesEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategoriesEnum',
             'AutotargetingCategory' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategory',
             'AutotargetingCategoryArray' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategoryArray',
+            'PlatformEnum' => 'Biplane\YandexDirect\Api\V5\Contract\PlatformEnum',
             'SmartAdTargetFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\SmartAdTargetFieldEnum',
             'AudienceEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AudienceEnum',
             'ConditionsArray' => 'Biplane\YandexDirect\Api\V5\Contract\ConditionsArray',

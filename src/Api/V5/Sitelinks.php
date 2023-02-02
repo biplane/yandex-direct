@@ -71,6 +71,7 @@ class Sitelinks extends ApiSoapClientV5
             'AutotargetingCategoriesEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategoriesEnum',
             'AutotargetingCategory' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategory',
             'AutotargetingCategoryArray' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategoryArray',
+            'PlatformEnum' => 'Biplane\YandexDirect\Api\V5\Contract\PlatformEnum',
             'SitelinksSetFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\SitelinksSetFieldEnum',
             'SitelinkAddItem' => 'Biplane\YandexDirect\Api\V5\Contract\SitelinkAddItem',
             'SitelinkGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\SitelinkGetItem',

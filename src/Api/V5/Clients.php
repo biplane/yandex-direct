@@ -69,6 +69,7 @@ class Clients extends ApiSoapClientV5
             'AutotargetingCategoriesEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategoriesEnum',
             'AutotargetingCategory' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategory',
             'AutotargetingCategoryArray' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategoryArray',
+            'PlatformEnum' => 'Biplane\YandexDirect\Api\V5\Contract\PlatformEnum',
             'ClientRestrictionEnum' => 'Biplane\YandexDirect\Api\V5\Contract\ClientRestrictionEnum',
             'ClientSettingGetEnum' => 'Biplane\YandexDirect\Api\V5\Contract\ClientSettingGetEnum',
             'ClientSettingAddEnum' => 'Biplane\YandexDirect\Api\V5\Contract\ClientSettingAddEnum',

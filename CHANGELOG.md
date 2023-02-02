@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+* Синхронизация с последней версией WSDL.
+
 ## 5.6.0 [commit logs](https://github.com/biplane/yandex-direct/compare/5.5.0...5.6.0)
 
 ### Changed

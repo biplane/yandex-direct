@@ -75,6 +75,7 @@ class BidModifiers extends ApiSoapClientV5
             'AutotargetingCategoriesEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategoriesEnum',
             'AutotargetingCategory' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategory',
             'AutotargetingCategoryArray' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategoryArray',
+            'PlatformEnum' => 'Biplane\YandexDirect\Api\V5\Contract\PlatformEnum',
             'BidModifierTypeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\BidModifierTypeEnum',
             'BidModifierToggleTypeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\BidModifierToggleTypeEnum',
             'BidModifierLevelEnum' => 'Biplane\YandexDirect\Api\V5\Contract\BidModifierLevelEnum',

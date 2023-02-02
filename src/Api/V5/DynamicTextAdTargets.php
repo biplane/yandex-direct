@@ -77,6 +77,7 @@ class DynamicTextAdTargets extends ApiSoapClientV5
             'AutotargetingCategoriesEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategoriesEnum',
             'AutotargetingCategory' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategory',
             'AutotargetingCategoryArray' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategoryArray',
+            'PlatformEnum' => 'Biplane\YandexDirect\Api\V5\Contract\PlatformEnum',
             'WebpageFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\WebpageFieldEnum',
             'WebpageConditionOperandEnum' => 'Biplane\YandexDirect\Api\V5\Contract\WebpageConditionOperandEnum',
             'WebpageTypeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\WebpageTypeEnum',

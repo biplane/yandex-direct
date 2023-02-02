@@ -71,6 +71,7 @@ class VCards extends ApiSoapClientV5
             'AutotargetingCategoriesEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategoriesEnum',
             'AutotargetingCategory' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategory',
             'AutotargetingCategoryArray' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategoryArray',
+            'PlatformEnum' => 'Biplane\YandexDirect\Api\V5\Contract\PlatformEnum',
             'VCardFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\VCardFieldEnum',
             'Phone' => 'Biplane\YandexDirect\Api\V5\Contract\Phone',
             'InstantMessenger' => 'Biplane\YandexDirect\Api\V5\Contract\InstantMessenger',

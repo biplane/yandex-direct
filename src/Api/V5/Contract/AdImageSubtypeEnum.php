@@ -75,5 +75,27 @@ class AdImageSubtypeEnum
 
     public const IMG_2910_750 = 'IMG_2910_750';
 
+    public const IMG_960_1600 = 'IMG_960_1600';
+
+    public const IMG_1200_1000 = 'IMG_1200_1000';
+
+    public const IMG_1200_2000 = 'IMG_1200_2000';
+
+    public const IMG_1200_2400 = 'IMG_1200_2400';
+
+    public const IMG_1280_200 = 'IMG_1280_200';
+
+    public const IMG_1280_400 = 'IMG_1280_400';
+
+    public const IMG_1280_1920 = 'IMG_1280_1920';
+
+    public const IMG_1344_1120 = 'IMG_1344_1120';
+
+    public const IMG_1920_1280 = 'IMG_1920_1280';
+
+    public const IMG_2912_360 = 'IMG_2912_360';
+
+    public const IMG_3880_1000 = 'IMG_3880_1000';
+
     public const NONE = 'NONE';
 }

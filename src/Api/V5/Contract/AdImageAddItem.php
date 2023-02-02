@@ -14,6 +14,9 @@ class AdImageAddItem
 {
     protected $ImageData = null;
 
+//    Can be omitted.
+//    protected $Type = null;
+
     protected $Name = null;
 
     /**
@@ -35,6 +38,26 @@ class AdImageAddItem
     public function setImageData(string $value)
     {
         $this->ImageData = $value;
+
+        return $this;
+    }
+
+    /**
+     * @see AdImageAddTypeEnum
+     */
+    public function getType(): ?string
+    {
+        return $this->Type ?? null;
+    }
+
+    /**
+     * @see AdImageAddTypeEnum
+     *
+     * @return $this
+     */
+    public function setType(?string $value = null)
+    {
+        $this->Type = $value;
 
         return $this;
     }

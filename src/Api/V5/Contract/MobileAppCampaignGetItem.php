@@ -18,6 +18,12 @@ class MobileAppCampaignGetItem
 //    Can be omitted.
 //    protected $Settings = null;
 
+//    Can be omitted.
+//    protected $PackageBiddingStrategy = null;
+
+//    Can be omitted.
+//    protected $CanBeUsedAsPackageBiddingStrategySource = null;
+
     /**
      * @return static
      */
@@ -57,6 +63,41 @@ class MobileAppCampaignGetItem
     public function setSettings(?array $value = null)
     {
         $this->Settings = $value;
+
+        return $this;
+    }
+
+    public function getPackageBiddingStrategy(): ?PackageBiddingStrategyGet
+    {
+        return $this->PackageBiddingStrategy ?? null;
+    }
+
+    /**
+     * @return $this
+     */
+    public function setPackageBiddingStrategy(?PackageBiddingStrategyGet $value = null)
+    {
+        $this->PackageBiddingStrategy = $value;
+
+        return $this;
+    }
+
+    /**
+     * @see YesNoEnum
+     */
+    public function getCanBeUsedAsPackageBiddingStrategySource(): ?string
+    {
+        return $this->CanBeUsedAsPackageBiddingStrategySource ?? null;
+    }
+
+    /**
+     * @see YesNoEnum
+     *
+     * @return $this
+     */
+    public function setCanBeUsedAsPackageBiddingStrategySource(?string $value = null)
+    {
+        $this->CanBeUsedAsPackageBiddingStrategySource = $value;
 
         return $this;
     }

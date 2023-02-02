@@ -22,4 +22,8 @@ class DynamicTextCampaignFieldEnum
     public const TRACKING_PARAMS = 'TrackingParams';
 
     public const ATTRIBUTION_MODEL = 'AttributionModel';
+
+    public const PACKAGE_BIDDING_STRATEGY = 'PackageBiddingStrategy';
+
+    public const CAN_BE_USED_AS_PACKAGE_BIDDING_STRATEGY_SOURCE = 'CanBeUsedAsPackageBiddingStrategySource';
 }

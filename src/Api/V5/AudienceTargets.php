@@ -77,6 +77,7 @@ class AudienceTargets extends ApiSoapClientV5
             'AutotargetingCategoriesEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategoriesEnum',
             'AutotargetingCategory' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategory',
             'AutotargetingCategoryArray' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategoryArray',
+            'PlatformEnum' => 'Biplane\YandexDirect\Api\V5\Contract\PlatformEnum',
             'AudienceTargetStateEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AudienceTargetStateEnum',
             'AudienceTargetFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AudienceTargetFieldEnum',
             'AudienceTargetSelectionCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\AudienceTargetSelectionCriteria',

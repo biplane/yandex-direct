@@ -77,6 +77,7 @@ class Keywords extends ApiSoapClientV5
             'AutotargetingCategoriesEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategoriesEnum',
             'AutotargetingCategory' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategory',
             'AutotargetingCategoryArray' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategoryArray',
+            'PlatformEnum' => 'Biplane\YandexDirect\Api\V5\Contract\PlatformEnum',
             'KeywordFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\KeywordFieldEnum',
             'KeywordStateSelectionEnum' => 'Biplane\YandexDirect\Api\V5\Contract\KeywordStateSelectionEnum',
             'KeywordStatusSelectionEnum' => 'Biplane\YandexDirect\Api\V5\Contract\KeywordStatusSelectionEnum',

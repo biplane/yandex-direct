@@ -69,6 +69,7 @@ class KeywordsResearch extends ApiSoapClientV5
             'AutotargetingCategoriesEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategoriesEnum',
             'AutotargetingCategory' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategory',
             'AutotargetingCategoryArray' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategoryArray',
+            'PlatformEnum' => 'Biplane\YandexDirect\Api\V5\Contract\PlatformEnum',
             'HasSearchVolumeFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\HasSearchVolumeFieldEnum',
             'HasSearchVolumeItem' => 'Biplane\YandexDirect\Api\V5\Contract\HasSearchVolumeItem',
             'HasSearchVolumeSelectionCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\HasSearchVolumeSelectionCriteria',

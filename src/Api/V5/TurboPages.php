@@ -67,6 +67,7 @@ class TurboPages extends ApiSoapClientV5
             'AutotargetingCategoriesEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategoriesEnum',
             'AutotargetingCategory' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategory',
             'AutotargetingCategoryArray' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategoryArray',
+            'PlatformEnum' => 'Biplane\YandexDirect\Api\V5\Contract\PlatformEnum',
             'TurboPageFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\TurboPageFieldEnum',
             'TurboPagesSelectionCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\TurboPagesSelectionCriteria',
             'TurboPageGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\TurboPageGetItem',

@@ -24,6 +24,12 @@ class TextCampaignGetItem extends TextCampaignBase
 //    Can be omitted.
 //    protected $PriorityGoals = null;
 
+//    Can be omitted.
+//    protected $PackageBiddingStrategy = null;
+
+//    Can be omitted.
+//    protected $CanBeUsedAsPackageBiddingStrategySource = null;
+
     public function getBiddingStrategy(): ?TextCampaignStrategy
     {
         return $this->BiddingStrategy ?? null;
@@ -85,6 +91,41 @@ class TextCampaignGetItem extends TextCampaignBase
     public function setPriorityGoals(?PriorityGoalsArray $value = null)
     {
         $this->PriorityGoals = $value;
+
+        return $this;
+    }
+
+    public function getPackageBiddingStrategy(): ?PackageBiddingStrategyGet
+    {
+        return $this->PackageBiddingStrategy ?? null;
+    }
+
+    /**
+     * @return $this
+     */
+    public function setPackageBiddingStrategy(?PackageBiddingStrategyGet $value = null)
+    {
+        $this->PackageBiddingStrategy = $value;
+
+        return $this;
+    }
+
+    /**
+     * @see YesNoEnum
+     */
+    public function getCanBeUsedAsPackageBiddingStrategySource(): ?string
+    {
+        return $this->CanBeUsedAsPackageBiddingStrategySource ?? null;
+    }
+
+    /**
+     * @see YesNoEnum
+     *
+     * @return $this
+     */
+    public function setCanBeUsedAsPackageBiddingStrategySource(?string $value = null)
+    {
+        $this->CanBeUsedAsPackageBiddingStrategySource = $value;
 
         return $this;
     }

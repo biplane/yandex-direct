@@ -73,6 +73,7 @@ class AdGroups extends ApiSoapClientV5
             'AutotargetingCategoriesEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategoriesEnum',
             'AutotargetingCategory' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategory',
             'AutotargetingCategoryArray' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategoryArray',
+            'PlatformEnum' => 'Biplane\YandexDirect\Api\V5\Contract\PlatformEnum',
             'AdGroupFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AdGroupFieldEnum',
             'MobileAppAdGroupFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\MobileAppAdGroupFieldEnum',
             'DynamicTextAdGroupFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\DynamicTextAdGroupFieldEnum',

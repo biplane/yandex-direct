@@ -73,6 +73,7 @@ class RetargetingLists extends ApiSoapClientV5
             'AutotargetingCategoriesEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategoriesEnum',
             'AutotargetingCategory' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategory',
             'AutotargetingCategoryArray' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategoryArray',
+            'PlatformEnum' => 'Biplane\YandexDirect\Api\V5\Contract\PlatformEnum',
             'RetargetingListFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\RetargetingListFieldEnum',
             'RetargetingListScopeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\RetargetingListScopeEnum',
             'RetargetingListRuleOperatorEnum' => 'Biplane\YandexDirect\Api\V5\Contract\RetargetingListRuleOperatorEnum',
