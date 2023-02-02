@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 5.7.0 [commit logs](https://github.com/biplane/yandex-direct/compare/5.6.0...5.7.0)
+
 ### Added
 
 * Добавлена поддержка режима Песочницы для сервиса `Reports` (close #50)
