@@ -13,7 +13,7 @@ use function str_replace;
 final class Scrubber
 {
     private const HTTP_HEADER_REGEX = '/^(%s:\s).+$/im';
-    private const SOAP_HEADER_REGEX = '/(<SOAP-ENV:Header>.*<(?:[^:]+:)%1$s>).+(<\/(?:[^:]+:)%1$s>.*<\/SOAP-ENV:Header>)/is';
+    private const SOAP_HEADER_REGEX = '/(<SOAP-ENV:Header>.*<(?:[^:]+:)%1$s>).+(<\/(?:[^:]+:)%1$s>.*<\/SOAP-ENV:Header>)/isU';
     private const MASK = 'REDACTED';
 
     private function __construct()
