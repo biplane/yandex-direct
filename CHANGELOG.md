@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 5.7.1 [commit logs](https://github.com/biplane/yandex-direct/compare/5.7.0...5.7.1)
+
+### Fixed
+
+* Исправлена проблема с регулярным выражением в `Scrubber::scrubSoapHeaders()`
+
 ## 5.7.0 [commit logs](https://github.com/biplane/yandex-direct/compare/5.6.0...5.7.0)
 
 ### Added
