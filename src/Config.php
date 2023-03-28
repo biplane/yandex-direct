@@ -9,6 +9,8 @@ use Symfony\Component\OptionsResolver\Exception\InvalidArgumentException;
 use Symfony\Component\OptionsResolver\Options;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+use function explode;
+use function implode;
 use function is_string;
 use function sprintf;
 use function str_replace;
