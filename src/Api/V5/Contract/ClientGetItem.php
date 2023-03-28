@@ -66,6 +66,12 @@ class ClientGetItem extends ClientBaseItem
 //    Can be omitted.
 //    protected $ErirAttributes = null;
 
+//    Can be omitted.
+//    protected $ForbiddenPlatform = null;
+
+//    Can be omitted.
+//    protected $AvailableCampaignTypes = null;
+
     public function getAccountQuality(): ?float
     {
         return $this->AccountQuality ?? null;
@@ -362,6 +368,50 @@ class ClientGetItem extends ClientBaseItem
     public function setErirAttributes(?ErirAttributesGet $value = null)
     {
         $this->ErirAttributes = $value;
+
+        return $this;
+    }
+
+    /**
+     * @see ForbiddenPlatformEnum
+     */
+    public function getForbiddenPlatform(): ?string
+    {
+        return $this->ForbiddenPlatform ?? null;
+    }
+
+    /**
+     * @see ForbiddenPlatformEnum
+     *
+     * @return $this
+     */
+    public function setForbiddenPlatform(?string $value = null)
+    {
+        $this->ForbiddenPlatform = $value;
+
+        return $this;
+    }
+
+    /**
+     * @see AvailableCampaignTypeEnum
+     *
+     * @return string[]|null
+     */
+    public function getAvailableCampaignTypes(): ?array
+    {
+        return $this->AvailableCampaignTypes ?? null;
+    }
+
+    /**
+     * @see AvailableCampaignTypeEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
+     */
+    public function setAvailableCampaignTypes(?array $value = null)
+    {
+        $this->AvailableCampaignTypes = $value;
 
         return $this;
     }
