@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+## 5.8.0 [commit logs](https://github.com/biplane/yandex-direct/compare/5.7.1...5.8.0)
+
+### Added
+
+* Для `Client-Login` можно указать логин в формате email адреса. (PR #51)
+
+### Changed
+
+* Обновлены сервисы для совмести с последней версией API 5, включая изменения от 2023-03-24.
+
 ## 5.7.1 [commit logs](https://github.com/biplane/yandex-direct/compare/5.7.0...5.7.1)
 
 ### Fixed
