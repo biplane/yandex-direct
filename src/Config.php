@@ -150,7 +150,10 @@ final class Config
             ->setAllowedTypes('soap_options', [SoapOptions::class])
             ->setNormalizer('client_login', static function (Options $options, $value) {
                 if (is_string($value)) {
-                    return strtolower($value);
+                    $exploded = explode('@', $value);
+                    $exploded[0] = str_replace('.', '-', $exploded[0]);
+
+                    return strtolower(implode('@', $exploded));
                 }
 
                 return $value;
