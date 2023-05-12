@@ -153,7 +153,9 @@ final class Config
             ->setNormalizer('client_login', static function (Options $options, $value) {
                 if (is_string($value)) {
                     $exploded = explode('@', $value);
-                    $exploded[0] = str_replace('.', '-', $exploded[0]);
+                    if (count($exploded) === 1) {
+                        $exploded[0] = str_replace('.', '-', $exploded[0]);
+                    }
 
                     return strtolower(implode('@', $exploded));
                 }
