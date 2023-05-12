@@ -23,10 +23,9 @@ final class ConfigBuilder
         return $this;
     }
 
-    public function setClientLogin(string $clientLogin, bool $is_normalize = true): self
+    public function setClientLogin(string $clientLogin): self
     {
         $this->options['client_login'] = $clientLogin;
-        $this->options['is_normalize_client_login'] = $is_normalize;
 
         return $this;
     }
