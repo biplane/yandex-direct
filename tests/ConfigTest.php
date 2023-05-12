@@ -174,7 +174,7 @@ class ConfigTest extends TestCase
 
         yield 'with_domain' => [
             'input' => 'Mr.Robot@domain.local',
-            'expected' => 'mr-robot@domain.local',
+            'expected' => 'mr.robot@domain.local',
         ];
     }
 }

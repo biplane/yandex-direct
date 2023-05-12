@@ -9,11 +9,10 @@ use Symfony\Component\OptionsResolver\Exception\InvalidArgumentException;
 use Symfony\Component\OptionsResolver\Options;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-use function explode;
-use function implode;
 use function is_string;
 use function sprintf;
 use function str_replace;
+use function strpos;
 use function strtolower;
 
 final class Config
@@ -152,10 +151,11 @@ final class Config
             ->setAllowedTypes('soap_options', [SoapOptions::class])
             ->setNormalizer('client_login', static function (Options $options, $value) {
                 if (is_string($value)) {
-                    $exploded = explode('@', $value);
-                    $exploded[0] = str_replace('.', '-', $exploded[0]);
+                    if (strpos($value, '@') === false) {
+                        $value = str_replace('.', '-', $value);
+                    }
 
-                    return strtolower(implode('@', $exploded));
+                    return strtolower($value);
                 }
 
                 return $value;
