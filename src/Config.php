@@ -10,9 +10,9 @@ use Symfony\Component\OptionsResolver\Options;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 use function is_string;
-use function mb_strpos;
 use function sprintf;
 use function str_replace;
+use function strpos;
 use function strtolower;
 
 final class Config
