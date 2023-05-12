@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+## 5.8.1 [commit logs](https://github.com/biplane/yandex-direct/compare/5.8.0...5.8.1)
+
+### Fixed
+
+* Исправлена поддержка email адресов в качестве `Client-Login`. (PR #52)
+  Нормализация логина производится только для аккаунтов Яндекс.
+
 ## 5.8.0 [commit logs](https://github.com/biplane/yandex-direct/compare/5.7.1...5.8.0)
 
 ### Added
