@@ -52,14 +52,17 @@ class ConfigTest extends TestCase
         self::assertEquals($soapOptions, $config->getSoapOptions());
     }
 
-    public function testNormalizeClientLogin(): void
+    /**
+     * @dataProvider clientLoginProvider
+     */
+    public function testNormalizeClientLogin(string $input, string $expected): void
     {
         $config = new Config([
             'access_token' => 'secret',
-            'client_login' => 'Mr.Robot',
+            'client_login' => $input,
         ]);
 
-        self::assertEquals('mr-robot', $config->getClientLogin());
+        self::assertEquals($expected, $config->getClientLogin());
     }
 
     /**
@@ -143,7 +146,7 @@ class ConfigTest extends TestCase
     /**
      * @return array<array{string, int, string}>
      */
-    public function provideLocales(): array
+    public static function provideLocales(): array
     {
         return [
             ['en', Config::API_4, 'en'],
@@ -156,6 +159,22 @@ class ConfigTest extends TestCase
             ['tr', Config::API_5, 'tr'],
             ['uk', Config::API_5, 'uk'],
             ['ua', Config::API_5, 'uk'],
+        ];
+    }
+
+    /**
+     * @return iterable<array{input: string, expected: string}>
+     */
+    public static function clientLoginProvider(): iterable
+    {
+        yield 'without_domain' => [
+            'input' => 'Mr.Robot',
+            'expected' => 'mr-robot',
+        ];
+
+        yield 'with_domain' => [
+            'input' => 'Mr.Robot@domain.local',
+            'expected' => 'mr-robot@domain.local',
         ];
     }
 }

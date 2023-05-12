@@ -44,4 +44,8 @@ class ClientFieldEnum
     public const TYPE = 'Type';
 
     public const VAT_RATE = 'VatRate';
+
+    public const FORBIDDEN_PLATFORM = 'ForbiddenPlatform';
+
+    public const AVAILABLE_CAMPAIGN_TYPES = 'AvailableCampaignTypes';
 }
