@@ -15,6 +15,7 @@ use function is_string;
 use function sprintf;
 use function str_replace;
 use function strtolower;
+use function count;
 
 final class Config
 {
