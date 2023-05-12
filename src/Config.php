@@ -138,6 +138,7 @@ final class Config
                 'proxy_username' => null,
                 'proxy_password' => null,
                 'soap_options' => SoapOptions::default(),
+                'is_normalize_client_login' => true,
             ])
             ->setAllowedValues('locale', ['en', 'ru', 'tr', 'ua', 'uk'])
             ->setAllowedTypes('access_token', 'string')
@@ -150,8 +151,9 @@ final class Config
             ->setAllowedTypes('proxy_username', ['string', 'null'])
             ->setAllowedTypes('proxy_password', ['string', 'null'])
             ->setAllowedTypes('soap_options', [SoapOptions::class])
+            ->setAllowedTypes('is_normalize_client_login', ['boolean'])
             ->setNormalizer('client_login', static function (Options $options, $value) {
-                if (is_string($value)) {
+                if (is_string($value) && $options['is_normalize_client_login']) {
                     $exploded = explode('@', $value);
                     $exploded[0] = str_replace('.', '-', $exploded[0]);
 
