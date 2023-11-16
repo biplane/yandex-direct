@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 5.9.0 [commit logs](https://github.com/biplane/yandex-direct/compare/5.8.1...5.9.0)
+
+### Changed
+
+* Обновлены сервисы для совместимости с последней версией API 5, включая изменения от 2023-10-02.
+
 ## 5.8.1 [commit logs](https://github.com/biplane/yandex-direct/compare/5.8.0...5.8.1)
 
 ### Fixed
