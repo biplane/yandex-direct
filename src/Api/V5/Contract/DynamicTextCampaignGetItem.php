@@ -113,7 +113,7 @@ class DynamicTextCampaignGetItem extends DynamicTextCampaignBase
         return $this;
     }
 
-    public function getPackageBiddingStrategy(): ?PackageBiddingStrategyGet
+    public function getPackageBiddingStrategy(): ?DynamicTextCampaignPackageBiddingStrategyGet
     {
         return $this->PackageBiddingStrategy ?? null;
     }
@@ -121,7 +121,7 @@ class DynamicTextCampaignGetItem extends DynamicTextCampaignBase
     /**
      * @return $this
      */
-    public function setPackageBiddingStrategy(?PackageBiddingStrategyGet $value = null)
+    public function setPackageBiddingStrategy(?DynamicTextCampaignPackageBiddingStrategyGet $value = null)
     {
         $this->PackageBiddingStrategy = $value;
 

@@ -15,6 +15,9 @@ class AdBuilderAdUpdateBase
 //    Can be omitted.
 //    protected $Creative = null;
 
+//    Can be omitted.
+//    protected $ErirAdDescription = null;
+
     /**
      * @return static
      */
@@ -34,6 +37,21 @@ class AdBuilderAdUpdateBase
     public function setCreative(?AdBuilderAdUpdateItem $value = null)
     {
         $this->Creative = $value;
+
+        return $this;
+    }
+
+    public function getErirAdDescription(): ?string
+    {
+        return $this->ErirAdDescription ?? null;
+    }
+
+    /**
+     * @return $this
+     */
+    public function setErirAdDescription(?string $value = null)
+    {
+        $this->ErirAdDescription = $value;
 
         return $this;
     }

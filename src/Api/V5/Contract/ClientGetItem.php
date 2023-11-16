@@ -72,6 +72,9 @@ class ClientGetItem extends ClientBaseItem
 //    Can be omitted.
 //    protected $AvailableCampaignTypes = null;
 
+//    Can be omitted.
+//    protected $AvailableAdGroupTypes = null;
+
     public function getAccountQuality(): ?float
     {
         return $this->AccountQuality ?? null;
@@ -412,6 +415,30 @@ class ClientGetItem extends ClientBaseItem
     public function setAvailableCampaignTypes(?array $value = null)
     {
         $this->AvailableCampaignTypes = $value;
+
+        return $this;
+    }
+
+    /**
+     * @see AvailableAdGroupTypeEnum
+     *
+     * @return string[]|null
+     */
+    public function getAvailableAdGroupTypes(): ?array
+    {
+        return $this->AvailableAdGroupTypes ?? null;
+    }
+
+    /**
+     * @see AvailableAdGroupTypeEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
+     */
+    public function setAvailableAdGroupTypes(?array $value = null)
+    {
+        $this->AvailableAdGroupTypes = $value;
 
         return $this;
     }

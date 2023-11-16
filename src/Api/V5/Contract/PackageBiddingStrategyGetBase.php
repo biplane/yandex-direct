@@ -10,11 +10,9 @@ use AllowDynamicProperties;
  * Auto-generated code.
  */
 #[AllowDynamicProperties]
-class PackageBiddingStrategyGet
+class PackageBiddingStrategyGetBase
 {
     protected $StrategyId = null;
-
-    protected $Platform = null;
 
     /**
      * @return static
@@ -35,26 +33,6 @@ class PackageBiddingStrategyGet
     public function setStrategyId(int $value)
     {
         $this->StrategyId = $value;
-
-        return $this;
-    }
-
-    /**
-     * @see PlatformEnum
-     */
-    public function getPlatform(): string
-    {
-        return $this->Platform;
-    }
-
-    /**
-     * @see PlatformEnum
-     *
-     * @return $this
-     */
-    public function setPlatform(string $value)
-    {
-        $this->Platform = $value;
 
         return $this;
     }

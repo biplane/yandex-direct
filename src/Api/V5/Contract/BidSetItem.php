@@ -28,6 +28,9 @@ class BidSetItem
 //    protected $ContextBid = null;
 
 //    Can be omitted.
+//    protected $AutotargetingSearchBidIsAuto = null;
+
+//    Can be omitted.
 //    protected $StrategyPriority = null;
 
     /**
@@ -109,6 +112,26 @@ class BidSetItem
     public function setContextBid(?int $value = null)
     {
         $this->ContextBid = $value;
+
+        return $this;
+    }
+
+    /**
+     * @see YesNoEnum
+     */
+    public function getAutotargetingSearchBidIsAuto(): ?string
+    {
+        return $this->AutotargetingSearchBidIsAuto ?? null;
+    }
+
+    /**
+     * @see YesNoEnum
+     *
+     * @return $this
+     */
+    public function setAutotargetingSearchBidIsAuto(?string $value = null)
+    {
+        $this->AutotargetingSearchBidIsAuto = $value;
 
         return $this;
     }

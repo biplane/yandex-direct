@@ -95,7 +95,7 @@ class SmartCampaignGetItem extends SmartCampaignBase
         return $this;
     }
 
-    public function getPackageBiddingStrategy(): ?PackageBiddingStrategyGet
+    public function getPackageBiddingStrategy(): ?SmartCampaignPackageBiddingStrategyGet
     {
         return $this->PackageBiddingStrategy ?? null;
     }
@@ -103,7 +103,7 @@ class SmartCampaignGetItem extends SmartCampaignBase
     /**
      * @return $this
      */
-    public function setPackageBiddingStrategy(?PackageBiddingStrategyGet $value = null)
+    public function setPackageBiddingStrategy(?SmartCampaignPackageBiddingStrategyGet $value = null)
     {
         $this->PackageBiddingStrategy = $value;
 

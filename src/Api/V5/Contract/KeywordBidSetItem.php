@@ -25,6 +25,9 @@ class KeywordBidSetItem
 //    protected $SearchBid = null;
 
 //    Can be omitted.
+//    protected $AutotargetingSearchBidIsAuto = null;
+
+//    Can be omitted.
 //    protected $NetworkBid = null;
 
 //    Can be omitted.
@@ -94,6 +97,26 @@ class KeywordBidSetItem
     public function setSearchBid(?int $value = null)
     {
         $this->SearchBid = $value;
+
+        return $this;
+    }
+
+    /**
+     * @see YesNoEnum
+     */
+    public function getAutotargetingSearchBidIsAuto(): ?string
+    {
+        return $this->AutotargetingSearchBidIsAuto ?? null;
+    }
+
+    /**
+     * @see YesNoEnum
+     *
+     * @return $this
+     */
+    public function setAutotargetingSearchBidIsAuto(?string $value = null)
+    {
+        $this->AutotargetingSearchBidIsAuto = $value;
 
         return $this;
     }

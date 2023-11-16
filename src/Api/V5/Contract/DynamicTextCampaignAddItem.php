@@ -12,7 +12,8 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class DynamicTextCampaignAddItem
 {
-    protected $BiddingStrategy = null;
+//    Can be omitted.
+//    protected $BiddingStrategy = null;
 
 //    Can be omitted.
 //    protected $Settings = null;
@@ -32,6 +33,9 @@ class DynamicTextCampaignAddItem
 //    Can be omitted.
 //    protected $AttributionModel = null;
 
+//    Can be omitted.
+//    protected $PackageBiddingStrategy = null;
+
     /**
      * @return static
      */
@@ -40,15 +44,15 @@ class DynamicTextCampaignAddItem
         return new static();
     }
 
-    public function getBiddingStrategy(): DynamicTextCampaignStrategyAdd
+    public function getBiddingStrategy(): ?DynamicTextCampaignStrategyAdd
     {
-        return $this->BiddingStrategy;
+        return $this->BiddingStrategy ?? null;
     }
 
     /**
      * @return $this
      */
-    public function setBiddingStrategy(DynamicTextCampaignStrategyAdd $value)
+    public function setBiddingStrategy(?DynamicTextCampaignStrategyAdd $value = null)
     {
         $this->BiddingStrategy = $value;
 
@@ -161,6 +165,21 @@ class DynamicTextCampaignAddItem
     public function setAttributionModel(?string $value = null)
     {
         $this->AttributionModel = $value;
+
+        return $this;
+    }
+
+    public function getPackageBiddingStrategy(): ?DynamicTextCampaignPackageBiddingStrategyAdd
+    {
+        return $this->PackageBiddingStrategy ?? null;
+    }
+
+    /**
+     * @return $this
+     */
+    public function setPackageBiddingStrategy(?DynamicTextCampaignPackageBiddingStrategyAdd $value = null)
+    {
+        $this->PackageBiddingStrategy = $value;
 
         return $this;
     }

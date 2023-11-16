@@ -21,6 +21,9 @@ class GetCampaignsRequest extends GetRequestGeneral
 //    protected $TextCampaignFieldNames = null;
 
 //    Can be omitted.
+//    protected $TextCampaignSearchStrategyPlacementTypesFieldNames = null;
+
+//    Can be omitted.
 //    protected $MobileAppCampaignFieldNames = null;
 
 //    Can be omitted.
@@ -91,6 +94,30 @@ class GetCampaignsRequest extends GetRequestGeneral
     public function setTextCampaignFieldNames(?array $value = null)
     {
         $this->TextCampaignFieldNames = $value;
+
+        return $this;
+    }
+
+    /**
+     * @see TextCampaignSearchStrategyPlacementTypesFieldEnum
+     *
+     * @return string[]|null
+     */
+    public function getTextCampaignSearchStrategyPlacementTypesFieldNames(): ?array
+    {
+        return $this->TextCampaignSearchStrategyPlacementTypesFieldNames ?? null;
+    }
+
+    /**
+     * @see TextCampaignSearchStrategyPlacementTypesFieldEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
+     */
+    public function setTextCampaignSearchStrategyPlacementTypesFieldNames(?array $value = null)
+    {
+        $this->TextCampaignSearchStrategyPlacementTypesFieldNames = $value;
 
         return $this;
     }

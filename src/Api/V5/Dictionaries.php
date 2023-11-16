@@ -7,6 +7,8 @@ namespace Biplane\YandexDirect\Api\V5;
 use Biplane\YandexDirect\Api\ApiSoapClientV5;
 use Biplane\YandexDirect\Api\V5\Contract\GetDictionariesRequest;
 use Biplane\YandexDirect\Api\V5\Contract\GetDictionariesResponse;
+use Biplane\YandexDirect\Api\V5\Contract\GetGeoRegionsRequest;
+use Biplane\YandexDirect\Api\V5\Contract\GetGeoRegionsResponse;
 use Biplane\YandexDirect\Config;
 
 /**
@@ -67,11 +69,15 @@ class Dictionaries extends ApiSoapClientV5
             'AutotargetingCategoriesEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategoriesEnum',
             'AutotargetingCategory' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategory',
             'AutotargetingCategoryArray' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategoryArray',
-            'PlatformEnum' => 'Biplane\YandexDirect\Api\V5\Contract\PlatformEnum',
+            'AutotargetingBrandOptionsEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingBrandOptionsEnum',
+            'AutotargetingBrandOption' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingBrandOption',
+            'AutotargetingBrandOptionArray' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingBrandOptionArray',
             'DictionaryNameEnum' => 'Biplane\YandexDirect\Api\V5\Contract\DictionaryNameEnum',
+            'GeoRegionsSelectionCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\GeoRegionsSelectionCriteria',
             'CurrenciesItem' => 'Biplane\YandexDirect\Api\V5\Contract\CurrenciesItem',
             'MetroStationsItem' => 'Biplane\YandexDirect\Api\V5\Contract\MetroStationsItem',
             'GeoRegionsItem' => 'Biplane\YandexDirect\Api\V5\Contract\GeoRegionsItem',
+            'GeoRegionNamesItem' => 'Biplane\YandexDirect\Api\V5\Contract\GeoRegionNamesItem',
             'TimeZonesItem' => 'Biplane\YandexDirect\Api\V5\Contract\TimeZonesItem',
             'ConstantsItem' => 'Biplane\YandexDirect\Api\V5\Contract\ConstantsItem',
             'AdCategoriesItem' => 'Biplane\YandexDirect\Api\V5\Contract\AdCategoriesItem',
@@ -81,9 +87,11 @@ class Dictionaries extends ApiSoapClientV5
             'InterestsItem' => 'Biplane\YandexDirect\Api\V5\Contract\InterestsItem',
             'CanSelectEnum' => 'Biplane\YandexDirect\Api\V5\Contract\CanSelectEnum',
             'InterestTypeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\InterestTypeEnum',
+            'GeoRegionFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\GeoRegionFieldEnum',
             'AudienceCriteriaTypesItem' => 'Biplane\YandexDirect\Api\V5\Contract\AudienceCriteriaTypesItem',
             'AudienceDemographicProfilesItem' => 'Biplane\YandexDirect\Api\V5\Contract\AudienceDemographicProfilesItem',
             'AudienceInterestsItem' => 'Biplane\YandexDirect\Api\V5\Contract\AudienceInterestsItem',
+            'GeoRegionGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\GeoRegionGetItem',
             'FilterFieldType' => 'Biplane\YandexDirect\Api\V5\Contract\FilterFieldType',
             'EnumFilterFieldProps' => 'Biplane\YandexDirect\Api\V5\Contract\EnumFilterFieldProps',
             'NumberFilterFieldProps' => 'Biplane\YandexDirect\Api\V5\Contract\NumberFilterFieldProps',
@@ -93,6 +101,8 @@ class Dictionaries extends ApiSoapClientV5
             'FilterSchemasItem' => 'Biplane\YandexDirect\Api\V5\Contract\FilterSchemasItem',
             'GetRequest' => 'Biplane\YandexDirect\Api\V5\Contract\GetDictionariesRequest',
             'GetResponse' => 'Biplane\YandexDirect\Api\V5\Contract\GetDictionariesResponse',
+            'GetGeoRegionsRequest' => 'Biplane\YandexDirect\Api\V5\Contract\GetGeoRegionsRequest',
+            'GetGeoRegionsResponse' => 'Biplane\YandexDirect\Api\V5\Contract\GetGeoRegionsResponse',
         ];
 
         parent::__construct(self::ENDPOINT, $config, $options);
@@ -101,5 +111,10 @@ class Dictionaries extends ApiSoapClientV5
     public function get(GetDictionariesRequest $parameters): GetDictionariesResponse
     {
         return $this->__soapCall('get', [$parameters]);
+    }
+
+    public function getGeoRegions(GetGeoRegionsRequest $parameters): GetGeoRegionsResponse
+    {
+        return $this->__soapCall('getGeoRegions', [$parameters]);
     }
 }

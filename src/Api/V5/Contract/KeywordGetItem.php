@@ -28,6 +28,9 @@ class KeywordGetItem
 //    protected $Bid = null;
 
 //    Can be omitted.
+//    protected $AutotargetingSearchBidIsAuto = null;
+
+//    Can be omitted.
 //    protected $ContextBid = null;
 
 //    Can be omitted.
@@ -59,6 +62,9 @@ class KeywordGetItem
 
 //    Can be omitted.
 //    protected $AutotargetingCategories = null;
+
+//    Can be omitted.
+//    protected $AutotargetingBrandOptions = null;
 
     /**
      * @return static
@@ -139,6 +145,26 @@ class KeywordGetItem
     public function setBid(?int $value = null)
     {
         $this->Bid = $value;
+
+        return $this;
+    }
+
+    /**
+     * @see YesNoEnum
+     */
+    public function getAutotargetingSearchBidIsAuto(): ?string
+    {
+        return $this->AutotargetingSearchBidIsAuto ?? null;
+    }
+
+    /**
+     * @see YesNoEnum
+     *
+     * @return $this
+     */
+    public function setAutotargetingSearchBidIsAuto(?string $value = null)
+    {
+        $this->AutotargetingSearchBidIsAuto = $value;
 
         return $this;
     }
@@ -324,6 +350,21 @@ class KeywordGetItem
     public function setAutotargetingCategories(?AutotargetingCategoryArray $value = null)
     {
         $this->AutotargetingCategories = $value;
+
+        return $this;
+    }
+
+    public function getAutotargetingBrandOptions(): ?AutotargetingBrandOptionArray
+    {
+        return $this->AutotargetingBrandOptions ?? null;
+    }
+
+    /**
+     * @return $this
+     */
+    public function setAutotargetingBrandOptions(?AutotargetingBrandOptionArray $value = null)
+    {
+        $this->AutotargetingBrandOptions = $value;
 
         return $this;
     }

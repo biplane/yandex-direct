@@ -23,6 +23,8 @@ class KeywordFieldEnum
 
     public const BID = 'Bid';
 
+    public const AUTOTARGETING_SEARCH_BID_IS_AUTO = 'AutotargetingSearchBidIsAuto';
+
     public const CONTEXT_BID = 'ContextBid';
 
     public const STRATEGY_PRIORITY = 'StrategyPriority';
@@ -40,4 +42,6 @@ class KeywordFieldEnum
     public const SERVING_STATUS = 'ServingStatus';
 
     public const AUTOTARGETING_CATEGORIES = 'AutotargetingCategories';
+
+    public const AUTOTARGETING_BRAND_OPTIONS = 'AutotargetingBrandOptions';
 }

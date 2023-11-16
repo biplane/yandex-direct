@@ -24,6 +24,9 @@ class TextCampaignUpdateItem extends TextCampaignBase
 //    Can be omitted.
 //    protected $PriorityGoals = null;
 
+//    Can be omitted.
+//    protected $PackageBiddingStrategy = null;
+
     public function getBiddingStrategy(): ?TextCampaignStrategy
     {
         return $this->BiddingStrategy ?? null;
@@ -85,6 +88,21 @@ class TextCampaignUpdateItem extends TextCampaignBase
     public function setPriorityGoals(?PriorityGoalsUpdateSetting $value = null)
     {
         $this->PriorityGoals = $value;
+
+        return $this;
+    }
+
+    public function getPackageBiddingStrategy(): ?TextCampaignPackageBiddingStrategyUpdate
+    {
+        return $this->PackageBiddingStrategy ?? null;
+    }
+
+    /**
+     * @return $this
+     */
+    public function setPackageBiddingStrategy(?TextCampaignPackageBiddingStrategyUpdate $value = null)
+    {
+        $this->PackageBiddingStrategy = $value;
 
         return $this;
     }

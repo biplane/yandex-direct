@@ -19,6 +19,9 @@ class StrategyAverageCrrAdd
 //    Can be omitted.
 //    protected $WeeklySpendLimit = null;
 
+//    Can be omitted.
+//    protected $ExplorationBudget = null;
+
     /**
      * @return static
      */
@@ -68,6 +71,21 @@ class StrategyAverageCrrAdd
     public function setWeeklySpendLimit(?int $value = null)
     {
         $this->WeeklySpendLimit = $value;
+
+        return $this;
+    }
+
+    public function getExplorationBudget(): ?ExplorationBudget
+    {
+        return $this->ExplorationBudget ?? null;
+    }
+
+    /**
+     * @return $this
+     */
+    public function setExplorationBudget(?ExplorationBudget $value = null)
+    {
+        $this->ExplorationBudget = $value;
 
         return $this;
     }

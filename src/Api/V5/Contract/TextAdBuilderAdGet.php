@@ -13,6 +13,9 @@ use AllowDynamicProperties;
 class TextAdBuilderAdGet extends AdBuilderAdGetBase
 {
 //    Can be omitted.
+//    protected $FinalUrl = null;
+
+//    Can be omitted.
 //    protected $Href = null;
 
 //    Can be omitted.
@@ -20,6 +23,21 @@ class TextAdBuilderAdGet extends AdBuilderAdGetBase
 
 //    Can be omitted.
 //    protected $TurboPageModeration = null;
+
+    public function getFinalUrl(): ?string
+    {
+        return $this->FinalUrl ?? null;
+    }
+
+    /**
+     * @return $this
+     */
+    public function setFinalUrl(?string $value = null)
+    {
+        $this->FinalUrl = $value;
+
+        return $this;
+    }
 
     public function getHref(): ?string
     {

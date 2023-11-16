@@ -22,6 +22,9 @@ class StrategyAverageCpaPerCampaignAdd
 //    Can be omitted.
 //    protected $BidCeiling = null;
 
+//    Can be omitted.
+//    protected $ExplorationBudget = null;
+
     /**
      * @return static
      */
@@ -86,6 +89,21 @@ class StrategyAverageCpaPerCampaignAdd
     public function setBidCeiling(?int $value = null)
     {
         $this->BidCeiling = $value;
+
+        return $this;
+    }
+
+    public function getExplorationBudget(): ?ExplorationBudget
+    {
+        return $this->ExplorationBudget ?? null;
+    }
+
+    /**
+     * @return $this
+     */
+    public function setExplorationBudget(?ExplorationBudget $value = null)
+    {
+        $this->ExplorationBudget = $value;
 
         return $this;
     }

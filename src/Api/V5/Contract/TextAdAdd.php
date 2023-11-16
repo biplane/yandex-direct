@@ -20,6 +20,9 @@ class TextAdAdd extends TextAdAddBase
 //    protected $Title2 = null;
 
 //    Can be omitted.
+//    protected $FinalUrl = null;
+
+//    Can be omitted.
 //    protected $Href = null;
 
     protected $Mobile = null;
@@ -41,6 +44,9 @@ class TextAdAdd extends TextAdAddBase
 
 //    Can be omitted.
 //    protected $PreferVCardOverBusiness = null;
+
+//    Can be omitted.
+//    protected $ErirAdDescription = null;
 
     public function getText(): string
     {
@@ -83,6 +89,21 @@ class TextAdAdd extends TextAdAddBase
     public function setTitle2(?string $value = null)
     {
         $this->Title2 = $value;
+
+        return $this;
+    }
+
+    public function getFinalUrl(): ?string
+    {
+        return $this->FinalUrl ?? null;
+    }
+
+    /**
+     * @return $this
+     */
+    public function setFinalUrl(?string $value = null)
+    {
+        $this->FinalUrl = $value;
 
         return $this;
     }
@@ -213,6 +234,21 @@ class TextAdAdd extends TextAdAddBase
     public function setPreferVCardOverBusiness(?string $value = null)
     {
         $this->PreferVCardOverBusiness = $value;
+
+        return $this;
+    }
+
+    public function getErirAdDescription(): ?string
+    {
+        return $this->ErirAdDescription ?? null;
+    }
+
+    /**
+     * @return $this
+     */
+    public function setErirAdDescription(?string $value = null)
+    {
+        $this->ErirAdDescription = $value;
 
         return $this;
     }

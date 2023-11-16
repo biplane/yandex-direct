@@ -11,5 +11,7 @@ class KeywordBidSearchFieldEnum
 {
     public const BID = 'Bid';
 
+    public const AUTOTARGETING_SEARCH_BID_IS_AUTO = 'AutotargetingSearchBidIsAuto';
+
     public const AUCTION_BIDS = 'AuctionBids';
 }

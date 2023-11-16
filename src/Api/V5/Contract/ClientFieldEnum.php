@@ -48,4 +48,6 @@ class ClientFieldEnum
     public const FORBIDDEN_PLATFORM = 'ForbiddenPlatform';
 
     public const AVAILABLE_CAMPAIGN_TYPES = 'AvailableCampaignTypes';
+
+    public const AVAILABLE_AD_GROUP_TYPES = 'AvailableAdGroupTypes';
 }

@@ -30,6 +30,9 @@ class StrategyAverageRoi
 //    Can be omitted.
 //    protected $Profitability = null;
 
+//    Can be omitted.
+//    protected $ExplorationBudget = null;
+
     /**
      * @return static
      */
@@ -124,6 +127,21 @@ class StrategyAverageRoi
     public function setProfitability(?int $value = null)
     {
         $this->Profitability = $value;
+
+        return $this;
+    }
+
+    public function getExplorationBudget(): ?ExplorationBudget
+    {
+        return $this->ExplorationBudget ?? null;
+    }
+
+    /**
+     * @return $this
+     */
+    public function setExplorationBudget(?ExplorationBudget $value = null)
+    {
+        $this->ExplorationBudget = $value;
 
         return $this;
     }

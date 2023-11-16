@@ -15,6 +15,8 @@ class DictionaryNameEnum
 
     public const GEO_REGIONS = 'GeoRegions';
 
+    public const GEO_REGION_NAMES = 'GeoRegionNames';
+
     public const TIME_ZONES = 'TimeZones';
 
     public const CONSTANTS = 'Constants';

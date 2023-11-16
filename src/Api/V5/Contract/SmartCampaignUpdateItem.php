@@ -24,6 +24,9 @@ class SmartCampaignUpdateItem extends SmartCampaignBase
 //    Can be omitted.
 //    protected $PriorityGoals = null;
 
+//    Can be omitted.
+//    protected $PackageBiddingStrategy = null;
+
     public function getBiddingStrategy(): ?SmartCampaignStrategy
     {
         return $this->BiddingStrategy ?? null;
@@ -85,6 +88,21 @@ class SmartCampaignUpdateItem extends SmartCampaignBase
     public function setPriorityGoals(?PriorityGoalsUpdateSetting $value = null)
     {
         $this->PriorityGoals = $value;
+
+        return $this;
+    }
+
+    public function getPackageBiddingStrategy(): ?SmartCampaignPackageBiddingStrategyUpdate
+    {
+        return $this->PackageBiddingStrategy ?? null;
+    }
+
+    /**
+     * @return $this
+     */
+    public function setPackageBiddingStrategy(?SmartCampaignPackageBiddingStrategyUpdate $value = null)
+    {
+        $this->PackageBiddingStrategy = $value;
 
         return $this;
     }

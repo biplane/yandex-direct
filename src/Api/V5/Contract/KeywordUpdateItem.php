@@ -26,6 +26,9 @@ class KeywordUpdateItem
 //    Can be omitted.
 //    protected $AutotargetingCategories = null;
 
+//    Can be omitted.
+//    protected $AutotargetingBrandOptions = null;
+
     /**
      * @return static
      */
@@ -110,6 +113,26 @@ class KeywordUpdateItem
     public function setAutotargetingCategories(?array $value = null)
     {
         $this->AutotargetingCategories = $value;
+
+        return $this;
+    }
+
+    /**
+     * @return AutotargetingBrandOption[]|null
+     */
+    public function getAutotargetingBrandOptions(): ?array
+    {
+        return $this->AutotargetingBrandOptions ?? null;
+    }
+
+    /**
+     * @param AutotargetingBrandOption[]|null $value
+     *
+     * @return $this
+     */
+    public function setAutotargetingBrandOptions(?array $value = null)
+    {
+        $this->AutotargetingBrandOptions = $value;
 
         return $this;
     }

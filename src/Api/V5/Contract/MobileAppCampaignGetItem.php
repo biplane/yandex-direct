@@ -67,7 +67,7 @@ class MobileAppCampaignGetItem
         return $this;
     }
 
-    public function getPackageBiddingStrategy(): ?PackageBiddingStrategyGet
+    public function getPackageBiddingStrategy(): ?MobileAppCampaignPackageBiddingStrategyGet
     {
         return $this->PackageBiddingStrategy ?? null;
     }
@@ -75,7 +75,7 @@ class MobileAppCampaignGetItem
     /**
      * @return $this
      */
-    public function setPackageBiddingStrategy(?PackageBiddingStrategyGet $value = null)
+    public function setPackageBiddingStrategy(?MobileAppCampaignPackageBiddingStrategyGet $value = null)
     {
         $this->PackageBiddingStrategy = $value;
 

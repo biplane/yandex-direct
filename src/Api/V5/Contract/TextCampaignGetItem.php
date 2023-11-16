@@ -95,7 +95,7 @@ class TextCampaignGetItem extends TextCampaignBase
         return $this;
     }
 
-    public function getPackageBiddingStrategy(): ?PackageBiddingStrategyGet
+    public function getPackageBiddingStrategy(): ?TextCampaignPackageBiddingStrategyGet
     {
         return $this->PackageBiddingStrategy ?? null;
     }
@@ -103,7 +103,7 @@ class TextCampaignGetItem extends TextCampaignBase
     /**
      * @return $this
      */
-    public function setPackageBiddingStrategy(?PackageBiddingStrategyGet $value = null)
+    public function setPackageBiddingStrategy(?TextCampaignPackageBiddingStrategyGet $value = null)
     {
         $this->PackageBiddingStrategy = $value;
 

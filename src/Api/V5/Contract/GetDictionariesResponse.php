@@ -22,6 +22,9 @@ class GetDictionariesResponse
 //    protected $GeoRegions = null;
 
 //    Can be omitted.
+//    protected $GeoRegionNames = null;
+
+//    Can be omitted.
 //    protected $TimeZones = null;
 
 //    Can be omitted.
@@ -118,6 +121,26 @@ class GetDictionariesResponse
     public function setGeoRegions(?array $value = null)
     {
         $this->GeoRegions = $value;
+
+        return $this;
+    }
+
+    /**
+     * @return GeoRegionNamesItem[]|null
+     */
+    public function getGeoRegionNames(): ?array
+    {
+        return $this->GeoRegionNames ?? null;
+    }
+
+    /**
+     * @param GeoRegionNamesItem[]|null $value
+     *
+     * @return $this
+     */
+    public function setGeoRegionNames(?array $value = null)
+    {
+        $this->GeoRegionNames = $value;
 
         return $this;
     }

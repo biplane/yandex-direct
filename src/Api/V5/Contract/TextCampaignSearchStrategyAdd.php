@@ -14,6 +14,9 @@ class TextCampaignSearchStrategyAdd extends TextCampaignStrategyAddBase
 {
     protected $BiddingStrategyType = null;
 
+//    Can be omitted.
+//    protected $PlacementTypes = null;
+
     /**
      * @see TextCampaignSearchStrategyTypeEnum
      */
@@ -30,6 +33,21 @@ class TextCampaignSearchStrategyAdd extends TextCampaignStrategyAddBase
     public function setBiddingStrategyType(string $value)
     {
         $this->BiddingStrategyType = $value;
+
+        return $this;
+    }
+
+    public function getPlacementTypes(): ?TextCampaignSearchStrategyPlacementTypes
+    {
+        return $this->PlacementTypes ?? null;
+    }
+
+    /**
+     * @return $this
+     */
+    public function setPlacementTypes(?TextCampaignSearchStrategyPlacementTypes $value = null)
+    {
+        $this->PlacementTypes = $value;
 
         return $this;
     }

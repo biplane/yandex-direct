@@ -33,6 +33,9 @@ class MobileAppAdAdd
 //    Can be omitted.
 //    protected $VideoExtension = null;
 
+//    Can be omitted.
+//    protected $ErirAdDescription = null;
+
     /**
      * @return static
      */
@@ -172,6 +175,21 @@ class MobileAppAdAdd
     public function setVideoExtension(?VideoExtensionAddItem $value = null)
     {
         $this->VideoExtension = $value;
+
+        return $this;
+    }
+
+    public function getErirAdDescription(): ?string
+    {
+        return $this->ErirAdDescription ?? null;
+    }
+
+    /**
+     * @return $this
+     */
+    public function setErirAdDescription(?string $value = null)
+    {
+        $this->ErirAdDescription = $value;
 
         return $this;
     }

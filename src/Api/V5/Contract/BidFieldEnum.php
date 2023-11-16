@@ -17,6 +17,8 @@ class BidFieldEnum
 
     public const BID = 'Bid';
 
+    public const AUTOTARGETING_SEARCH_BID_IS_AUTO = 'AutotargetingSearchBidIsAuto';
+
     public const CONTEXT_BID = 'ContextBid';
 
     public const STRATEGY_PRIORITY = 'StrategyPriority';
