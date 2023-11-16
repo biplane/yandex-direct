@@ -7,11 +7,13 @@ namespace Biplane\Tests\YandexDirect\Api;
 use Biplane\YandexDirect\Config;
 use Closure;
 use PHPUnit\Framework\TestCase;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use VCR\Event\AfterHttpRequestEvent;
 use VCR\Event\BeforeHttpRequestEvent;
 use VCR\VCR;
 use VCR\VCREvents;
 
+use function assert;
 use function count;
 use function getenv;
 use function sprintf;
@@ -34,6 +36,7 @@ abstract class SoapClientTestCase extends TestCase
         }
 
         $dispatcher = VCR::getEventDispatcher();
+        assert($dispatcher instanceof EventDispatcherInterface);
 
         foreach ($this->listeners as $eventName => $listener) {
             $dispatcher->removeListener($eventName, $listener);
@@ -107,6 +110,7 @@ abstract class SoapClientTestCase extends TestCase
     private function addListener(string $eventName, Closure $listener): void
     {
         $dispatcher = VCR::getEventDispatcher();
+        assert($dispatcher instanceof EventDispatcherInterface);
 
         if (isset($this->listeners[$eventName])) {
             $dispatcher->removeListener($eventName, $this->listeners[$eventName]);
