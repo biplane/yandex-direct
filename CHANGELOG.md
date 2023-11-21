@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 5.10.0 [commit logs](https://github.com/biplane/yandex-direct/compare/5.9.0...5.10.0)
+
 ### Added
 
 * Добавлена поддержка сервиса [Strategies](https://yandex.ru/dev/direct/doc/ref-v5/strategies/strategies.html).
