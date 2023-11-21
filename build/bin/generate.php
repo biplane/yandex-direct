@@ -497,3 +497,19 @@ generate($generator, [
         'ArrayOfLong',
     ],
 ] + $defaultOptions);
+
+generate($generator, [
+    'inputFile' => 'https://api.direct.yandex.com/v5/strategies?wsdl',
+    'renameType' => function ($typeName) {
+        return preg_replace(
+            '#^(Add|Archive|Get|Unarchive|Update)(Request|Response)$#',
+            '$1Strategies$2',
+            $typeName
+        );
+    },
+    'excludeTypes' => [
+        'ArrayOfString',
+        'ArrayOfInteger',
+        'ArrayOfLong',
+    ],
+] + $defaultOptions);

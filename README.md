@@ -172,6 +172,7 @@ $serviceFactory = ApiServiceFactoryBuilder::create()
 | `V5\RetargetingLists`          | [Doc](https://yandex.ru/dev/direct/doc/ref-v5/retargetinglists/retargetinglists.html)                   |
 | `V5\Sitelinks`                 | [Doc](https://yandex.ru/dev/direct/doc/ref-v5/sitelinks/sitelinks.html)                                 |
 | `V5\SmartAdTargets`            | [Doc](https://yandex.ru/dev/direct/doc/ref-v5/smartadtargets/smartadtargets.html)                       |
+| `V5\Strategies`                | [Doc](https://yandex.ru/dev/direct/doc/ref-v5/strategies/strategies.html)                               |
 | `V5\TurboPages`                | [Doc](https://yandex.ru/dev/direct/doc/ref-v5/turbopages/turbopages.html)                               |
 | `V5\VCards`                    | [Doc](https://yandex.ru/dev/direct/doc/ref-v5/vcards/vcards.html)                                       |
 | `V5\Reports`                   | [Doc](https://yandex.ru/dev/direct/doc/reports/reports.html)                                            |
