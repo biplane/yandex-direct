@@ -66,7 +66,8 @@ class KeywordGetItem
 //    Can be omitted.
 //    protected $AutotargetingBrandOptions = null;
 
-    protected $AutotargetingSettings = null;
+//    Can be omitted.
+//    protected $AutotargetingSettings = null;
 
     /**
      * @return static
@@ -371,15 +372,15 @@ class KeywordGetItem
         return $this;
     }
 
-    public function getAutotargetingSettings(): AutotargetingSettings
+    public function getAutotargetingSettings(): ?AutotargetingSettings
     {
-        return $this->AutotargetingSettings;
+        return $this->AutotargetingSettings ?? null;
     }
 
     /**
      * @return $this
      */
-    public function setAutotargetingSettings(AutotargetingSettings $value)
+    public function setAutotargetingSettings(?AutotargetingSettings $value = null)
     {
         $this->AutotargetingSettings = $value;
 

@@ -5,8 +5,6 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 use AllowDynamicProperties;
-use AutotargetingBrandOptionsFieldEnum;
-use AutotargetingCategoriesFieldEnum;
 
 /**
  * Auto-generated code.
@@ -18,9 +16,11 @@ class GetKeywordsRequest extends GetRequestGeneral
 
     protected $FieldNames = [];
 
-    protected $AutotargetingSettingsCategoriesFieldNames = null;
+//    Can be omitted.
+//    protected $AutotargetingSettingsCategoriesFieldNames = null;
 
-    protected $AutotargetingSettingsBrandOptionsFieldNames = null;
+//    Can be omitted.
+//    protected $AutotargetingSettingsBrandOptionsFieldNames = null;
 
     public function getSelectionCriteria(): KeywordsSelectionCriteria
     {
@@ -61,30 +61,48 @@ class GetKeywordsRequest extends GetRequestGeneral
         return $this;
     }
 
-    public function getAutotargetingSettingsCategoriesFieldNames(): AutotargetingCategoriesFieldEnum
+    /**
+     * @see AutotargetingCategoriesFieldEnum
+     *
+     * @return string[]|null
+     */
+    public function getAutotargetingSettingsCategoriesFieldNames(): ?array
     {
-        return $this->AutotargetingSettingsCategoriesFieldNames;
+        return $this->AutotargetingSettingsCategoriesFieldNames ?? null;
     }
 
     /**
+     * @see AutotargetingCategoriesFieldEnum
+     *
+     * @param string[]|null $value
+     *
      * @return $this
      */
-    public function setAutotargetingSettingsCategoriesFieldNames(AutotargetingCategoriesFieldEnum $value)
+    public function setAutotargetingSettingsCategoriesFieldNames(?array $value = null)
     {
         $this->AutotargetingSettingsCategoriesFieldNames = $value;
 
         return $this;
     }
 
-    public function getAutotargetingSettingsBrandOptionsFieldNames(): AutotargetingBrandOptionsFieldEnum
+    /**
+     * @see AutotargetingBrandOptionsFieldEnum
+     *
+     * @return string[]|null
+     */
+    public function getAutotargetingSettingsBrandOptionsFieldNames(): ?array
     {
-        return $this->AutotargetingSettingsBrandOptionsFieldNames;
+        return $this->AutotargetingSettingsBrandOptionsFieldNames ?? null;
     }
 
     /**
+     * @see AutotargetingBrandOptionsFieldEnum
+     *
+     * @param string[]|null $value
+     *
      * @return $this
      */
-    public function setAutotargetingSettingsBrandOptionsFieldNames(AutotargetingBrandOptionsFieldEnum $value)
+    public function setAutotargetingSettingsBrandOptionsFieldNames(?array $value = null)
     {
         $this->AutotargetingSettingsBrandOptionsFieldNames = $value;
 
