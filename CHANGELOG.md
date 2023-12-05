@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+## 5.11.0 [commit logs](https://github.com/biplane/yandex-direct/compare/5.10.0...5.11.0)
+
+### Added
+
+* Добавлена поддержка Symfony 7
+* Добавлена поддержка кампаний с типом `UNIFIED_CAMPAIGN` (close #57)
+
 ## 5.10.0 [commit logs](https://github.com/biplane/yandex-direct/compare/5.9.0...5.10.0)
 
 ### Added
