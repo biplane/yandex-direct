@@ -39,6 +39,9 @@ class CampaignUpdateItem extends CampaignBase
 //    protected $TextCampaign = null;
 
 //    Can be omitted.
+//    protected $UnifiedCampaign = null;
+
+//    Can be omitted.
 //    protected $MobileAppCampaign = null;
 
 //    Can be omitted.
@@ -199,6 +202,21 @@ class CampaignUpdateItem extends CampaignBase
     public function setTextCampaign(?TextCampaignUpdateItem $value = null)
     {
         $this->TextCampaign = $value;
+
+        return $this;
+    }
+
+    public function getUnifiedCampaign(): ?UnifiedCampaignUpdateItem
+    {
+        return $this->UnifiedCampaign ?? null;
+    }
+
+    /**
+     * @return $this
+     */
+    public function setUnifiedCampaign(?UnifiedCampaignUpdateItem $value = null)
+    {
+        $this->UnifiedCampaign = $value;
 
         return $this;
     }

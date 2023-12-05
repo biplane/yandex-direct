@@ -78,6 +78,9 @@ class AdGetItem
 //    Can be omitted.
 //    protected $SmartAdBuilderAd = null;
 
+//    Can be omitted.
+//    protected $ShoppingAd = null;
+
     /**
      * @return static
      */
@@ -442,6 +445,21 @@ class AdGetItem
     public function setSmartAdBuilderAd(?SmartAdBuilderAdGet $value = null)
     {
         $this->SmartAdBuilderAd = $value;
+
+        return $this;
+    }
+
+    public function getShoppingAd(): ?ShoppingAdGet
+    {
+        return $this->ShoppingAd ?? null;
+    }
+
+    /**
+     * @return $this
+     */
+    public function setShoppingAd(?ShoppingAdGet $value = null)
+    {
+        $this->ShoppingAd = $value;
 
         return $this;
     }

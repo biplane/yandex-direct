@@ -50,6 +50,9 @@ class AdUpdateItem
 //    Can be omitted.
 //    protected $SmartAdBuilderAd = null;
 
+//    Can be omitted.
+//    protected $ShoppingAd = null;
+
     /**
      * @return static
      */
@@ -249,6 +252,21 @@ class AdUpdateItem
     public function setSmartAdBuilderAd(?SmartAdBuilderAdUpdate $value = null)
     {
         $this->SmartAdBuilderAd = $value;
+
+        return $this;
+    }
+
+    public function getShoppingAd(): ?ShoppingAdUpdate
+    {
+        return $this->ShoppingAd ?? null;
+    }
+
+    /**
+     * @return $this
+     */
+    public function setShoppingAd(?ShoppingAdUpdate $value = null)
+    {
+        $this->ShoppingAd = $value;
 
         return $this;
     }

@@ -35,6 +35,12 @@ class GetCampaignsRequest extends GetRequestGeneral
 //    Can be omitted.
 //    protected $SmartCampaignFieldNames = null;
 
+//    Can be omitted.
+//    protected $UnifiedCampaignFieldNames = null;
+
+//    Can be omitted.
+//    protected $UnifiedCampaignSearchStrategyPlacementTypesFieldNames = null;
+
     public function getSelectionCriteria(): ?CampaignsSelectionCriteria
     {
         return $this->SelectionCriteria ?? null;
@@ -214,6 +220,54 @@ class GetCampaignsRequest extends GetRequestGeneral
     public function setSmartCampaignFieldNames(?array $value = null)
     {
         $this->SmartCampaignFieldNames = $value;
+
+        return $this;
+    }
+
+    /**
+     * @see UnifiedCampaignFieldEnum
+     *
+     * @return string[]|null
+     */
+    public function getUnifiedCampaignFieldNames(): ?array
+    {
+        return $this->UnifiedCampaignFieldNames ?? null;
+    }
+
+    /**
+     * @see UnifiedCampaignFieldEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
+     */
+    public function setUnifiedCampaignFieldNames(?array $value = null)
+    {
+        $this->UnifiedCampaignFieldNames = $value;
+
+        return $this;
+    }
+
+    /**
+     * @see UnifiedCampaignSearchStrategyPlacementTypesFieldEnum
+     *
+     * @return string[]|null
+     */
+    public function getUnifiedCampaignSearchStrategyPlacementTypesFieldNames(): ?array
+    {
+        return $this->UnifiedCampaignSearchStrategyPlacementTypesFieldNames ?? null;
+    }
+
+    /**
+     * @see UnifiedCampaignSearchStrategyPlacementTypesFieldEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
+     */
+    public function setUnifiedCampaignSearchStrategyPlacementTypesFieldNames(?array $value = null)
+    {
+        $this->UnifiedCampaignSearchStrategyPlacementTypesFieldNames = $value;
 
         return $this;
     }

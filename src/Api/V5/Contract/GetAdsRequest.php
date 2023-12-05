@@ -55,6 +55,9 @@ class GetAdsRequest extends GetRequestGeneral
 //    Can be omitted.
 //    protected $SmartAdBuilderAdFieldNames = null;
 
+//    Can be omitted.
+//    protected $ShoppingAdFieldNames = null;
+
     public function getSelectionCriteria(): AdsSelectionCriteria
     {
         return $this->SelectionCriteria;
@@ -402,6 +405,30 @@ class GetAdsRequest extends GetRequestGeneral
     public function setSmartAdBuilderAdFieldNames(?array $value = null)
     {
         $this->SmartAdBuilderAdFieldNames = $value;
+
+        return $this;
+    }
+
+    /**
+     * @see ShoppingAdFieldEnum
+     *
+     * @return string[]|null
+     */
+    public function getShoppingAdFieldNames(): ?array
+    {
+        return $this->ShoppingAdFieldNames ?? null;
+    }
+
+    /**
+     * @see ShoppingAdFieldEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
+     */
+    public function setShoppingAdFieldNames(?array $value = null)
+    {
+        $this->ShoppingAdFieldNames = $value;
 
         return $this;
     }

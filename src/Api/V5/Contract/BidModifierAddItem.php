@@ -48,6 +48,9 @@ class BidModifierAddItem extends BidModifierAddBase
 //    Can be omitted.
 //    protected $IncomeGradeAdjustments = null;
 
+//    Can be omitted.
+//    protected $AdGroupAdjustment = null;
+
     public function getMobileAdjustment(): ?MobileAdjustmentAdd
     {
         return $this->MobileAdjustment ?? null;
@@ -249,6 +252,21 @@ class BidModifierAddItem extends BidModifierAddBase
     public function setIncomeGradeAdjustments(?array $value = null)
     {
         $this->IncomeGradeAdjustments = $value;
+
+        return $this;
+    }
+
+    public function getAdGroupAdjustment(): ?AdGroupAdjustmentAdd
+    {
+        return $this->AdGroupAdjustment ?? null;
+    }
+
+    /**
+     * @return $this
+     */
+    public function setAdGroupAdjustment(?AdGroupAdjustmentAdd $value = null)
+    {
+        $this->AdGroupAdjustment = $value;
 
         return $this;
     }

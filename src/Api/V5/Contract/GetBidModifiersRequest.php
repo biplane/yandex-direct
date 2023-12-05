@@ -52,6 +52,9 @@ class GetBidModifiersRequest extends GetRequestGeneral
 //    Can be omitted.
 //    protected $IncomeGradeAdjustmentFieldNames = null;
 
+//    Can be omitted.
+//    protected $AdGroupAdjustmentFieldNames = null;
+
     public function getSelectionCriteria(): BidModifiersSelectionCriteria
     {
         return $this->SelectionCriteria;
@@ -375,6 +378,30 @@ class GetBidModifiersRequest extends GetRequestGeneral
     public function setIncomeGradeAdjustmentFieldNames(?array $value = null)
     {
         $this->IncomeGradeAdjustmentFieldNames = $value;
+
+        return $this;
+    }
+
+    /**
+     * @see AdGroupAdjustmentFieldEnum
+     *
+     * @return string[]|null
+     */
+    public function getAdGroupAdjustmentFieldNames(): ?array
+    {
+        return $this->AdGroupAdjustmentFieldNames ?? null;
+    }
+
+    /**
+     * @see AdGroupAdjustmentFieldEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
+     */
+    public function setAdGroupAdjustmentFieldNames(?array $value = null)
+    {
+        $this->AdGroupAdjustmentFieldNames = $value;
 
         return $this;
     }

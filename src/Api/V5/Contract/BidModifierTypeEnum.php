@@ -32,4 +32,6 @@ class BidModifierTypeEnum
     public const SERP_LAYOUT_ADJUSTMENT = 'SERP_LAYOUT_ADJUSTMENT';
 
     public const INCOME_GRADE_ADJUSTMENT = 'INCOME_GRADE_ADJUSTMENT';
+
+    public const AD_GROUP_ADJUSTMENT = 'AD_GROUP_ADJUSTMENT';
 }

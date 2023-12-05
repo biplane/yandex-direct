@@ -18,4 +18,6 @@ class AdGroupTypesEnum
     public const CPM_BANNER_AD_GROUP = 'CPM_BANNER_AD_GROUP';
 
     public const CPM_VIDEO_AD_GROUP = 'CPM_VIDEO_AD_GROUP';
+
+    public const UNIFIED_AD_GROUP = 'UNIFIED_AD_GROUP';
 }

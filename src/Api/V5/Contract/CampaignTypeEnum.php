@@ -18,4 +18,6 @@ class CampaignTypeEnum
     public const CPM_BANNER_CAMPAIGN = 'CPM_BANNER_CAMPAIGN';
 
     public const SMART_CAMPAIGN = 'SMART_CAMPAIGN';
+
+    public const UNIFIED_CAMPAIGN = 'UNIFIED_CAMPAIGN';
 }

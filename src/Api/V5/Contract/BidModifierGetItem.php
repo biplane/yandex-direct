@@ -63,6 +63,9 @@ class BidModifierGetItem
 //    Can be omitted.
 //    protected $IncomeGradeAdjustment = null;
 
+//    Can be omitted.
+//    protected $AdGroupAdjustment = null;
+
     /**
      * @return static
      */
@@ -332,6 +335,21 @@ class BidModifierGetItem
     public function setIncomeGradeAdjustment(?IncomeGradeAdjustmentGet $value = null)
     {
         $this->IncomeGradeAdjustment = $value;
+
+        return $this;
+    }
+
+    public function getAdGroupAdjustment(): ?AdGroupAdjustmentGet
+    {
+        return $this->AdGroupAdjustment ?? null;
+    }
+
+    /**
+     * @return $this
+     */
+    public function setAdGroupAdjustment(?AdGroupAdjustmentGet $value = null)
+    {
+        $this->AdGroupAdjustment = $value;
 
         return $this;
     }

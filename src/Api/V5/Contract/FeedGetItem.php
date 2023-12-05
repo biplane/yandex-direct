@@ -45,6 +45,9 @@ class FeedGetItem
 //    Can be omitted.
 //    protected $UrlFeed = null;
 
+//    Can be omitted.
+//    protected $TitleAndTextSources = null;
+
     /**
      * @return static
      */
@@ -234,6 +237,26 @@ class FeedGetItem
     public function setUrlFeed(?UrlFeedGet $value = null)
     {
         $this->UrlFeed = $value;
+
+        return $this;
+    }
+
+    /**
+     * @return string[]|null
+     */
+    public function getTitleAndTextSources(): ?array
+    {
+        return $this->TitleAndTextSources ?? null;
+    }
+
+    /**
+     * @param string[]|null $value
+     *
+     * @return $this
+     */
+    public function setTitleAndTextSources(?array $value = null)
+    {
+        $this->TitleAndTextSources = $value;
 
         return $this;
     }

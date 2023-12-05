@@ -51,6 +51,9 @@ class AdGroupGetItem extends AdGroupBase
 //    Can be omitted.
 //    protected $TextAdGroupFeedParams = null;
 
+//    Can be omitted.
+//    protected $UnifiedAdGroup = null;
+
     public function getId(): ?int
     {
         return $this->Id ?? null;
@@ -267,6 +270,21 @@ class AdGroupGetItem extends AdGroupBase
     public function setTextAdGroupFeedParams(?TextAdGroupFeedParamsGet $value = null)
     {
         $this->TextAdGroupFeedParams = $value;
+
+        return $this;
+    }
+
+    public function getUnifiedAdGroup(): ?UnifiedAdGroupGet
+    {
+        return $this->UnifiedAdGroup ?? null;
+    }
+
+    /**
+     * @return $this
+     */
+    public function setUnifiedAdGroup(?UnifiedAdGroupGet $value = null)
+    {
+        $this->UnifiedAdGroup = $value;
 
         return $this;
     }

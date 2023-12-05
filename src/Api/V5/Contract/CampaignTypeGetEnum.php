@@ -19,5 +19,7 @@ class CampaignTypeGetEnum
 
     public const SMART_CAMPAIGN = 'SMART_CAMPAIGN';
 
+    public const UNIFIED_CAMPAIGN = 'UNIFIED_CAMPAIGN';
+
     public const UNKNOWN = 'UNKNOWN';
 }
