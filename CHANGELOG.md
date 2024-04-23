@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 5.12.0 [commit logs](https://github.com/biplane/yandex-direct/compare/5.11.0...5.12.0)
+
+### Changed
+
+* Обновлены сервисы для совместимости с последней версией API 5. (close #60)
+
 ## 5.11.0 [commit logs](https://github.com/biplane/yandex-direct/compare/5.10.0...5.11.0)
 
 ### Added
