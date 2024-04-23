@@ -18,6 +18,9 @@ class MobileAppCampaignUpdateItem
 //    Can be omitted.
 //    protected $Settings = null;
 
+//    Can be omitted.
+//    protected $NegativeKeywordSharedSetIds = null;
+
     /**
      * @return static
      */
@@ -57,6 +60,26 @@ class MobileAppCampaignUpdateItem
     public function setSettings(?array $value = null)
     {
         $this->Settings = $value;
+
+        return $this;
+    }
+
+    /**
+     * @return float[]|null
+     */
+    public function getNegativeKeywordSharedSetIds(): ?array
+    {
+        return $this->NegativeKeywordSharedSetIds ?? null;
+    }
+
+    /**
+     * @param float[]|null $value
+     *
+     * @return $this
+     */
+    public function setNegativeKeywordSharedSetIds(?array $value = null)
+    {
+        $this->NegativeKeywordSharedSetIds = $value;
 
         return $this;
     }

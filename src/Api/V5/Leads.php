@@ -73,6 +73,8 @@ class Leads extends ApiSoapClientV5
             'AutotargetingCategories' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategories',
             'AutotargetingBrandOptions' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingBrandOptions',
             'AutotargetingSettings' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingSettings',
+            'AutotargetingCategoriesFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategoriesFieldEnum',
+            'AutotargetingBrandOptionsFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingBrandOptionsFieldEnum',
             'LeadFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\LeadFieldEnum',
             'LeadsSelectionCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\LeadsSelectionCriteria',
             'LeadDataItem' => 'Biplane\YandexDirect\Api\V5\Contract\LeadDataItem',

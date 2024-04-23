@@ -11,6 +11,8 @@ class DynamicTextFeedAdGroupFieldEnum
 {
     public const AUTOTARGETING_CATEGORIES = 'AutotargetingCategories';
 
+    public const AUTOTARGETING_SETTINGS = 'AutotargetingSettings';
+
     public const SOURCE = 'Source';
 
     public const FEED_ID = 'FeedId';

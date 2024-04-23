@@ -36,6 +36,9 @@ class TextCampaignAddItem
 //    Can be omitted.
 //    protected $PackageBiddingStrategy = null;
 
+//    Can be omitted.
+//    protected $NegativeKeywordSharedSetIds = null;
+
     /**
      * @return static
      */
@@ -175,6 +178,26 @@ class TextCampaignAddItem
     public function setPackageBiddingStrategy(?TextCampaignPackageBiddingStrategyAdd $value = null)
     {
         $this->PackageBiddingStrategy = $value;
+
+        return $this;
+    }
+
+    /**
+     * @return float[]|null
+     */
+    public function getNegativeKeywordSharedSetIds(): ?array
+    {
+        return $this->NegativeKeywordSharedSetIds ?? null;
+    }
+
+    /**
+     * @param float[]|null $value
+     *
+     * @return $this
+     */
+    public function setNegativeKeywordSharedSetIds(?array $value = null)
+    {
+        $this->NegativeKeywordSharedSetIds = $value;
 
         return $this;
     }

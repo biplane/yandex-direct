@@ -16,6 +16,9 @@ class StrategyMaximumConversionRateBase
 //    protected $WeeklySpendLimit = null;
 
 //    Can be omitted.
+//    protected $CustomPeriodBudget = null;
+
+//    Can be omitted.
 //    protected $BidCeiling = null;
 
 //    Can be omitted.
@@ -40,6 +43,21 @@ class StrategyMaximumConversionRateBase
     public function setWeeklySpendLimit(?int $value = null)
     {
         $this->WeeklySpendLimit = $value;
+
+        return $this;
+    }
+
+    public function getCustomPeriodBudget(): ?CustomPeriodBudget
+    {
+        return $this->CustomPeriodBudget ?? null;
+    }
+
+    /**
+     * @return $this
+     */
+    public function setCustomPeriodBudget(?CustomPeriodBudget $value = null)
+    {
+        $this->CustomPeriodBudget = $value;
 
         return $this;
     }

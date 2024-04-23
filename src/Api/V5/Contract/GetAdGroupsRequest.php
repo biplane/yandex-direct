@@ -26,6 +26,12 @@ class GetAdGroupsRequest extends GetRequestGeneral
 //    protected $DynamicTextFeedAdGroupFieldNames = null;
 
 //    Can be omitted.
+//    protected $AutotargetingSettingsCategoriesFieldNames = null;
+
+//    Can be omitted.
+//    protected $AutotargetingSettingsBrandOptionsFieldNames = null;
+
+//    Can be omitted.
 //    protected $SmartAdGroupFieldNames = null;
 
 //    Can be omitted.
@@ -141,6 +147,54 @@ class GetAdGroupsRequest extends GetRequestGeneral
     public function setDynamicTextFeedAdGroupFieldNames(?array $value = null)
     {
         $this->DynamicTextFeedAdGroupFieldNames = $value;
+
+        return $this;
+    }
+
+    /**
+     * @see AutotargetingCategoriesFieldEnum
+     *
+     * @return string[]|null
+     */
+    public function getAutotargetingSettingsCategoriesFieldNames(): ?array
+    {
+        return $this->AutotargetingSettingsCategoriesFieldNames ?? null;
+    }
+
+    /**
+     * @see AutotargetingCategoriesFieldEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
+     */
+    public function setAutotargetingSettingsCategoriesFieldNames(?array $value = null)
+    {
+        $this->AutotargetingSettingsCategoriesFieldNames = $value;
+
+        return $this;
+    }
+
+    /**
+     * @see AutotargetingBrandOptionsFieldEnum
+     *
+     * @return string[]|null
+     */
+    public function getAutotargetingSettingsBrandOptionsFieldNames(): ?array
+    {
+        return $this->AutotargetingSettingsBrandOptionsFieldNames ?? null;
+    }
+
+    /**
+     * @see AutotargetingBrandOptionsFieldEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
+     */
+    public function setAutotargetingSettingsBrandOptionsFieldNames(?array $value = null)
+    {
+        $this->AutotargetingSettingsBrandOptionsFieldNames = $value;
 
         return $this;
     }

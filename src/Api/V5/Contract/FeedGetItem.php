@@ -40,6 +40,9 @@ class FeedGetItem
 //    protected $NumberOfItems = null;
 
 //    Can be omitted.
+//    protected $NumberOfListings = null;
+
+//    Can be omitted.
 //    protected $Status = null;
 
 //    Can be omitted.
@@ -202,6 +205,21 @@ class FeedGetItem
     public function setNumberOfItems(?int $value = null)
     {
         $this->NumberOfItems = $value;
+
+        return $this;
+    }
+
+    public function getNumberOfListings(): ?int
+    {
+        return $this->NumberOfListings ?? null;
+    }
+
+    /**
+     * @return $this
+     */
+    public function setNumberOfListings(?int $value = null)
+    {
+        $this->NumberOfListings = $value;
 
         return $this;
     }

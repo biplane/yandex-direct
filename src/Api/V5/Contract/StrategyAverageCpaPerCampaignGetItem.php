@@ -12,4 +12,26 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class StrategyAverageCpaPerCampaignGetItem extends StrategyAverageCpaPerCampaignBase
 {
+//    Can be omitted.
+//    protected $BudgetType = null;
+
+    /**
+     * @see BudgetTypeEnum
+     */
+    public function getBudgetType(): ?string
+    {
+        return $this->BudgetType ?? null;
+    }
+
+    /**
+     * @see BudgetTypeEnum
+     *
+     * @return $this
+     */
+    public function setBudgetType(?string $value = null)
+    {
+        $this->BudgetType = $value;
+
+        return $this;
+    }
 }

@@ -12,7 +12,8 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class StrategyWeeklyBudgetAddBase
 {
-    protected $WeeklySpendLimit = null;
+//    Can be omitted.
+//    protected $WeeklySpendLimit = null;
 
 //    Can be omitted.
 //    protected $BidCeiling = null;
@@ -25,15 +26,15 @@ class StrategyWeeklyBudgetAddBase
         return new static();
     }
 
-    public function getWeeklySpendLimit(): int
+    public function getWeeklySpendLimit(): ?int
     {
-        return $this->WeeklySpendLimit;
+        return $this->WeeklySpendLimit ?? null;
     }
 
     /**
      * @return $this
      */
-    public function setWeeklySpendLimit(int $value)
+    public function setWeeklySpendLimit(?int $value = null)
     {
         $this->WeeklySpendLimit = $value;
 

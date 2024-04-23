@@ -25,6 +25,8 @@ class FeedFieldEnum
 
     public const NUMBER_OF_ITEMS = 'NumberOfItems';
 
+    public const NUMBER_OF_LISTINGS = 'NumberOfListings';
+
     public const STATUS = 'Status';
 
     public const TITLE_AND_TEXT_SOURCES = 'TitleAndTextSources';

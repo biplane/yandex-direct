@@ -53,6 +53,9 @@ class AdUpdateItem
 //    Can be omitted.
 //    protected $ShoppingAd = null;
 
+//    Can be omitted.
+//    protected $ListingAd = null;
+
     /**
      * @return static
      */
@@ -267,6 +270,21 @@ class AdUpdateItem
     public function setShoppingAd(?ShoppingAdUpdate $value = null)
     {
         $this->ShoppingAd = $value;
+
+        return $this;
+    }
+
+    public function getListingAd(): ?ListingAdUpdate
+    {
+        return $this->ListingAd ?? null;
+    }
+
+    /**
+     * @return $this
+     */
+    public function setListingAd(?ListingAdUpdate $value = null)
+    {
+        $this->ListingAd = $value;
 
         return $this;
     }

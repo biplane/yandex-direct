@@ -81,6 +81,9 @@ class AdGetItem
 //    Can be omitted.
 //    protected $ShoppingAd = null;
 
+//    Can be omitted.
+//    protected $ListingAd = null;
+
     /**
      * @return static
      */
@@ -460,6 +463,21 @@ class AdGetItem
     public function setShoppingAd(?ShoppingAdGet $value = null)
     {
         $this->ShoppingAd = $value;
+
+        return $this;
+    }
+
+    public function getListingAd(): ?ListingAdGet
+    {
+        return $this->ListingAd ?? null;
+    }
+
+    /**
+     * @return $this
+     */
+    public function setListingAd(?ListingAdGet $value = null)
+    {
+        $this->ListingAd = $value;
 
         return $this;
     }

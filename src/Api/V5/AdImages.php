@@ -77,6 +77,8 @@ class AdImages extends ApiSoapClientV5
             'AutotargetingCategories' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategories',
             'AutotargetingBrandOptions' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingBrandOptions',
             'AutotargetingSettings' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingSettings',
+            'AutotargetingCategoriesFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategoriesFieldEnum',
+            'AutotargetingBrandOptionsFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingBrandOptionsFieldEnum',
             'AdImageFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AdImageFieldEnum',
             'AdImageTypeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AdImageTypeEnum',
             'AdImageAddTypeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AdImageAddTypeEnum',

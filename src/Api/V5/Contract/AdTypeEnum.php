@@ -26,4 +26,6 @@ class AdTypeEnum
     public const SMART_AD = 'SMART_AD';
 
     public const SHOPPING_AD = 'SHOPPING_AD';
+
+    public const LISTING_AD = 'LISTING_AD';
 }

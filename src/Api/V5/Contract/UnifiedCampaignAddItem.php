@@ -33,6 +33,9 @@ class UnifiedCampaignAddItem
 //    Can be omitted.
 //    protected $PackageBiddingStrategy = null;
 
+//    Can be omitted.
+//    protected $NegativeKeywordSharedSetIds = null;
+
     /**
      * @return static
      */
@@ -157,6 +160,26 @@ class UnifiedCampaignAddItem
     public function setPackageBiddingStrategy(?UnifiedCampaignPackageBiddingStrategyAdd $value = null)
     {
         $this->PackageBiddingStrategy = $value;
+
+        return $this;
+    }
+
+    /**
+     * @return float[]|null
+     */
+    public function getNegativeKeywordSharedSetIds(): ?array
+    {
+        return $this->NegativeKeywordSharedSetIds ?? null;
+    }
+
+    /**
+     * @param float[]|null $value
+     *
+     * @return $this
+     */
+    public function setNegativeKeywordSharedSetIds(?array $value = null)
+    {
+        $this->NegativeKeywordSharedSetIds = $value;
 
         return $this;
     }

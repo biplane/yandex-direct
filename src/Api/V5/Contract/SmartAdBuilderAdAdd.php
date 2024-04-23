@@ -10,6 +10,31 @@ use AllowDynamicProperties;
  * Auto-generated code.
  */
 #[AllowDynamicProperties]
-class SmartAdBuilderAdAdd extends AdBuilderAdAddBase
+class SmartAdBuilderAdAdd
 {
+//    Can be omitted.
+//    protected $LogoExtensionHash = null;
+
+    /**
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    public function getLogoExtensionHash(): ?string
+    {
+        return $this->LogoExtensionHash ?? null;
+    }
+
+    /**
+     * @return $this
+     */
+    public function setLogoExtensionHash(?string $value = null)
+    {
+        $this->LogoExtensionHash = $value;
+
+        return $this;
+    }
 }

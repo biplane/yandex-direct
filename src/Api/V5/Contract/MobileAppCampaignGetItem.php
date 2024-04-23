@@ -24,6 +24,9 @@ class MobileAppCampaignGetItem
 //    Can be omitted.
 //    protected $CanBeUsedAsPackageBiddingStrategySource = null;
 
+//    Can be omitted.
+//    protected $NegativeKeywordSharedSetIds = null;
+
     /**
      * @return static
      */
@@ -98,6 +101,26 @@ class MobileAppCampaignGetItem
     public function setCanBeUsedAsPackageBiddingStrategySource(?string $value = null)
     {
         $this->CanBeUsedAsPackageBiddingStrategySource = $value;
+
+        return $this;
+    }
+
+    /**
+     * @return float[]|null
+     */
+    public function getNegativeKeywordSharedSetIds(): ?array
+    {
+        return $this->NegativeKeywordSharedSetIds ?? null;
+    }
+
+    /**
+     * @param float[]|null $value
+     *
+     * @return $this
+     */
+    public function setNegativeKeywordSharedSetIds(?array $value = null)
+    {
+        $this->NegativeKeywordSharedSetIds = $value;
 
         return $this;
     }

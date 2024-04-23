@@ -14,4 +14,8 @@ class StrategyPayForConversionPerCampaignFieldEnum
     public const GOAL_ID = 'GoalId';
 
     public const WEEKLY_SPEND_LIMIT = 'WeeklySpendLimit';
+
+    public const CUSTOM_PERIOD_BUDGET = 'CustomPeriodBudget';
+
+    public const BUDGET_TYPE = 'BudgetType';
 }

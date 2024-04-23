@@ -12,4 +12,21 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class StrategyMaximumClicksAdd extends StrategyWeeklyBudgetAddBase
 {
+//    Can be omitted.
+//    protected $CustomPeriodBudget = null;
+
+    public function getCustomPeriodBudget(): ?CustomPeriodBudget
+    {
+        return $this->CustomPeriodBudget ?? null;
+    }
+
+    /**
+     * @return $this
+     */
+    public function setCustomPeriodBudget(?CustomPeriodBudget $value = null)
+    {
+        $this->CustomPeriodBudget = $value;
+
+        return $this;
+    }
 }

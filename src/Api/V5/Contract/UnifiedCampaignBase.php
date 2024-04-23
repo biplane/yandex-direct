@@ -18,6 +18,9 @@ class UnifiedCampaignBase
 //    Can be omitted.
 //    protected $AttributionModel = null;
 
+//    Can be omitted.
+//    protected $NegativeKeywordSharedSetIds = null;
+
     /**
      * @return static
      */
@@ -62,6 +65,26 @@ class UnifiedCampaignBase
     public function setAttributionModel(?string $value = null)
     {
         $this->AttributionModel = $value;
+
+        return $this;
+    }
+
+    /**
+     * @return float[]|null
+     */
+    public function getNegativeKeywordSharedSetIds(): ?array
+    {
+        return $this->NegativeKeywordSharedSetIds ?? null;
+    }
+
+    /**
+     * @param float[]|null $value
+     *
+     * @return $this
+     */
+    public function setNegativeKeywordSharedSetIds(?array $value = null)
+    {
+        $this->NegativeKeywordSharedSetIds = $value;
 
         return $this;
     }

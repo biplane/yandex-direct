@@ -51,6 +51,9 @@ class AdAddItem extends AdAddItemBase
 //    Can be omitted.
 //    protected $ShoppingAd = null;
 
+//    Can be omitted.
+//    protected $ListingAd = null;
+
     public function getTextAd(): ?TextAdAdd
     {
         return $this->TextAd ?? null;
@@ -242,6 +245,21 @@ class AdAddItem extends AdAddItemBase
     public function setShoppingAd(?ShoppingAdAdd $value = null)
     {
         $this->ShoppingAd = $value;
+
+        return $this;
+    }
+
+    public function getListingAd(): ?ListingAdAdd
+    {
+        return $this->ListingAd ?? null;
+    }
+
+    /**
+     * @return $this
+     */
+    public function setListingAd(?ListingAdAdd $value = null)
+    {
+        $this->ListingAd = $value;
 
         return $this;
     }
