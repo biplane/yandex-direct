@@ -100,7 +100,7 @@ generate($generator, [
 ] + $defaultOptions);
 
 generate($generator, [
-    'inputFile' => 'https://api.direct.yandex.com/v5/adextensions?wsdl',
+    'inputFile' => 'https://api.direct.yandex.com/v501/adextensions?wsdl',
     'renameType' => function ($typeName) {
         return preg_replace(
             '#^(Add|Delete|Get)(Request|Response)$#',
@@ -111,7 +111,7 @@ generate($generator, [
 ] + $defaultOptions);
 
 generate($generator, [
-    'inputFile' => 'https://api.direct.yandex.com/v5/adgroups?wsdl',
+    'inputFile' => 'https://api.direct.yandex.com/v501/adgroups?wsdl',
     'renameType' => function ($typeName) {
         return preg_replace(
             '#^(Add|Delete|Get|Update)(Request|Response)$#',
@@ -127,7 +127,7 @@ generate($generator, [
 ] + $defaultOptions);
 
 generate($generator, [
-    'inputFile' => 'https://api.direct.yandex.com/v5/adimages?wsdl',
+    'inputFile' => 'https://api.direct.yandex.com/v501/adimages?wsdl',
     'renameType' => function ($typeName) {
         return preg_replace(
             '#^(Add|Delete|Get)(Request|Response)$#',
@@ -143,7 +143,7 @@ generate($generator, [
 ] + $defaultOptions);
 
 generate($generator, [
-    'inputFile' => 'https://api.direct.yandex.com/v5/ads?wsdl',
+    'inputFile' => 'https://api.direct.yandex.com/v501/ads?wsdl',
     'renameType' => function ($typeName) {
         return preg_replace(
             '#^(Add|Archive|Delete|Get|Moderate|Resume|Suspend|Unarchive|Update)(Request|Response)$#',
@@ -159,7 +159,7 @@ generate($generator, [
 ] + $defaultOptions);
 
 generate($generator, [
-    'inputFile' => 'https://api.direct.yandex.com/v5/agencyclients?wsdl',
+    'inputFile' => 'https://api.direct.yandex.com/v501/agencyclients?wsdl',
     'renameType' => function ($typeName) {
         if (false !== strpos($typeName, 'Notification')) {
             return preg_replace('#^Notification(Add|Get)?$#', 'Client$0', $typeName);
@@ -179,7 +179,23 @@ generate($generator, [
 ] + $defaultOptions);
 
 generate($generator, [
-    'inputFile' => 'https://api.direct.yandex.com/v5/bids?wsdl',
+    'inputFile' => 'https://api.direct.yandex.com/v501/audiencetargets?wsdl',
+    'renameType' => function ($typeName) {
+        return preg_replace(
+            '#^(Add|Delete|Suspend|Resume|Get|SetBids)(Request|Response)$#',
+            '$1AudienceTargets$2',
+            $typeName
+        );
+    },
+    'excludeTypes' => [
+        'ArrayOfString',
+        'ArrayOfInteger',
+        'ArrayOfLong',
+    ],
+] + $defaultOptions);
+
+generate($generator, [
+    'inputFile' => 'https://api.direct.yandex.com/v501/bids?wsdl',
     'renameType' => function ($typeName) {
         return preg_replace(
             '#^(Get|Set|SetAuto)(Request|Response)$#',
@@ -195,7 +211,7 @@ generate($generator, [
 ] + $defaultOptions);
 
 generate($generator, [
-    'inputFile' => 'https://api.direct.yandex.com/v5/bidmodifiers?wsdl',
+    'inputFile' => 'https://api.direct.yandex.com/v501/bidmodifiers?wsdl',
     'renameType' => function ($typeName) {
         return preg_replace(
             '#^(Add|Delete|Get|Set|Toggle)(Request|Response)$#',
@@ -211,7 +227,7 @@ generate($generator, [
 ] + $defaultOptions);
 
 generate($generator, [
-    'inputFile' => 'https://api.direct.yandex.com/v5/campaigns?wsdl',
+    'inputFile' => 'https://api.direct.yandex.com/v501/campaigns?wsdl',
     'renameType' => function ($typeName) {
         if ('Notification' === $typeName) {
             return 'CampaignNotification';
@@ -231,7 +247,7 @@ generate($generator, [
 ] + $defaultOptions);
 
 generate($generator, [
-    'inputFile' => 'https://api.direct.yandex.com/v5/changes?wsdl',
+    'inputFile' => 'https://api.direct.yandex.com/v501/changes?wsdl',
     'renameType' => function ($typeName) {
         return preg_replace(
             '#^(Check)(Request|Response)$#',
@@ -247,7 +263,7 @@ generate($generator, [
 ] + $defaultOptions);
 
 generate($generator, [
-    'inputFile' => 'https://api.direct.yandex.com/v5/clients?wsdl',
+    'inputFile' => 'https://api.direct.yandex.com/v501/clients?wsdl',
     'renameType' => function ($typeName) {
         if (false !== strpos($typeName, 'Notification')) {
             return preg_replace('#^Notification(Add|Get)?$#', 'Client$0', $typeName);
@@ -267,7 +283,7 @@ generate($generator, [
 ] + $defaultOptions);
 
 generate($generator, [
-    'inputFile' => 'https://api.direct.yandex.com/v5/dictionaries?wsdl',
+    'inputFile' => 'https://api.direct.yandex.com/v501/dictionaries?wsdl',
     'renameType' => function ($typeName) {
         return preg_replace(
             '#^(Get)(Request|Response)$#',
@@ -283,7 +299,7 @@ generate($generator, [
 ] + $defaultOptions);
 
 generate($generator, [
-    'inputFile' => 'https://api.direct.yandex.com/v5/dynamictextadtargets?wsdl',
+    'inputFile' => 'https://api.direct.yandex.com/v501/dynamictextadtargets?wsdl',
     'renameType' => function ($typeName) {
         return preg_replace(
             '#^(Add|Delete|Suspend|Resume|Get|SetBids)(Request|Response)$#',
@@ -299,7 +315,7 @@ generate($generator, [
 ] + $defaultOptions);
 
 generate($generator, [
-    'inputFile' => 'https://api.direct.yandex.com/v5/feeds?wsdl',
+    'inputFile' => 'https://api.direct.yandex.com/v501/feeds?wsdl',
     'renameType' => function ($typeName) {
         return preg_replace(
             '#^(Add|Delete|Get|Update)(Request|Response)$#',
@@ -315,7 +331,7 @@ generate($generator, [
 ] + $defaultOptions);
 
 generate($generator, [
-    'inputFile' => 'https://api.direct.yandex.com/v5/keywordbids?wsdl',
+    'inputFile' => 'https://api.direct.yandex.com/v501/keywordbids?wsdl',
     'renameType' => function ($typeName) {
         return preg_replace(
             '#^(Get|Set)(Request|Response)$#',
@@ -331,7 +347,7 @@ generate($generator, [
 ] + $defaultOptions);
 
 generate($generator, [
-    'inputFile' => 'https://api.direct.yandex.com/v5/keywords?wsdl',
+    'inputFile' => 'https://api.direct.yandex.com/v501/keywords?wsdl',
     'renameType' => function ($typeName) {
         return preg_replace(
             '#^(Add|Delete|Get|Resume|Suspend|Update)(Request|Response)$#',
@@ -347,7 +363,7 @@ generate($generator, [
 ] + $defaultOptions);
 
 generate($generator, [
-    'inputFile' => 'https://api.direct.yandex.com/v5/keywordsresearch?wsdl',
+    'inputFile' => 'https://api.direct.yandex.com/v501/keywordsresearch?wsdl',
     'renameType' => function ($typeName) {
         return preg_replace(
             '#^(HasSearchVolume)(Request|Response)$#',
@@ -363,7 +379,7 @@ generate($generator, [
 ] + $defaultOptions);
 
 generate($generator, [
-    'inputFile' => 'https://api.direct.yandex.com/v5/leads?wsdl',
+    'inputFile' => 'https://api.direct.yandex.com/v501/leads?wsdl',
     'renameType' => function ($typeName) {
         return preg_replace(
             '#^(Get)(Request|Response)$#',
@@ -379,7 +395,7 @@ generate($generator, [
 ] + $defaultOptions);
 
 generate($generator, [
-    'inputFile' => 'https://api.direct.yandex.com/v5/negativekeywordsharedsets?wsdl',
+    'inputFile' => 'https://api.direct.yandex.com/v501/negativekeywordsharedsets?wsdl',
     'renameType' => function ($typeName) {
         return preg_replace(
             '#^(Add|Delete|Get|Update)(Request|Response)$#',
@@ -395,7 +411,7 @@ generate($generator, [
 ] + $defaultOptions);
 
 generate($generator, [
-    'inputFile' => 'https://api.direct.yandex.com/v5/retargetinglists?wsdl',
+    'inputFile' => 'https://api.direct.yandex.com/v501/retargetinglists?wsdl',
     'renameType' => function ($typeName) {
         return preg_replace(
             '#^(Add|Delete|Get|Update)(Request|Response)$#',
@@ -411,7 +427,7 @@ generate($generator, [
 ] + $defaultOptions);
 
 generate($generator, [
-    'inputFile' => 'https://api.direct.yandex.com/v5/sitelinks?wsdl',
+    'inputFile' => 'https://api.direct.yandex.com/v501/sitelinks?wsdl',
     'renameType' => function ($typeName) {
         return preg_replace(
             '#^(Add|Delete|Get)(Request|Response)$#',
@@ -427,7 +443,7 @@ generate($generator, [
 ] + $defaultOptions);
 
 generate($generator, [
-    'inputFile' => 'https://api.direct.yandex.com/v5/smartadtargets?wsdl',
+    'inputFile' => 'https://api.direct.yandex.com/v501/smartadtargets?wsdl',
     'renameType' => function ($typeName) {
         if ($typeName === 'SetBidsItem') {
             return 'SmartAdTargetSetBidsItem';
@@ -451,7 +467,23 @@ generate($generator, [
 ] + $defaultOptions);
 
 generate($generator, [
-    'inputFile' => 'https://api.direct.yandex.com/v5/turbopages?wsdl',
+    'inputFile' => 'https://api.direct.yandex.com/v501/strategies?wsdl',
+    'renameType' => function ($typeName) {
+        return preg_replace(
+            '#^(Add|Archive|Get|Unarchive|Update)(Request|Response)$#',
+            '$1Strategies$2',
+            $typeName
+        );
+    },
+    'excludeTypes' => [
+        'ArrayOfString',
+        'ArrayOfInteger',
+        'ArrayOfLong',
+    ],
+] + $defaultOptions);
+
+generate($generator, [
+    'inputFile' => 'https://api.direct.yandex.com/v501/turbopages?wsdl',
     'renameType' => function ($typeName) {
         return preg_replace(
             '#^(Get)(Request|Response)$#',
@@ -467,43 +499,11 @@ generate($generator, [
 ] + $defaultOptions);
 
 generate($generator, [
-    'inputFile' => 'https://api.direct.yandex.com/v5/vcards?wsdl',
+    'inputFile' => 'https://api.direct.yandex.com/v501/vcards?wsdl',
     'renameType' => function ($typeName) {
         return preg_replace(
             '#^(Add|Delete|Get)(Request|Response)$#',
             '$1VCards$2',
-            $typeName
-        );
-    },
-    'excludeTypes' => [
-        'ArrayOfString',
-        'ArrayOfInteger',
-        'ArrayOfLong',
-    ],
-] + $defaultOptions);
-
-generate($generator, [
-    'inputFile' => 'https://api.direct.yandex.com/v5/audiencetargets?wsdl',
-    'renameType' => function ($typeName) {
-        return preg_replace(
-            '#^(Add|Delete|Suspend|Resume|Get|SetBids)(Request|Response)$#',
-            '$1AudienceTargets$2',
-            $typeName
-        );
-    },
-    'excludeTypes' => [
-        'ArrayOfString',
-        'ArrayOfInteger',
-        'ArrayOfLong',
-    ],
-] + $defaultOptions);
-
-generate($generator, [
-    'inputFile' => 'https://api.direct.yandex.com/v5/strategies?wsdl',
-    'renameType' => function ($typeName) {
-        return preg_replace(
-            '#^(Add|Archive|Get|Unarchive|Update)(Request|Response)$#',
-            '$1Strategies$2',
             $typeName
         );
     },

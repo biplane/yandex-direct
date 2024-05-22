@@ -14,7 +14,7 @@ use Biplane\YandexDirect\Config;
  */
 class Leads extends ApiSoapClientV5
 {
-    public const ENDPOINT = 'https://api.direct.yandex.com/v5/leads?wsdl';
+    public const ENDPOINT = 'https://api.direct.yandex.com/v501/leads?wsdl';
 
     /**
      * @param array<string, mixed> $options

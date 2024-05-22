@@ -14,7 +14,7 @@ use Biplane\YandexDirect\Config;
  */
 class TurboPages extends ApiSoapClientV5
 {
-    public const ENDPOINT = 'https://api.direct.yandex.com/v5/turbopages?wsdl';
+    public const ENDPOINT = 'https://api.direct.yandex.com/v501/turbopages?wsdl';
 
     /**
      * @param array<string, mixed> $options

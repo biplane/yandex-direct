@@ -26,7 +26,7 @@ use Biplane\YandexDirect\Config;
  */
 class SmartAdTargets extends ApiSoapClientV5
 {
-    public const ENDPOINT = 'https://api.direct.yandex.com/v5/smartadtargets?wsdl';
+    public const ENDPOINT = 'https://api.direct.yandex.com/v501/smartadtargets?wsdl';
 
     /**
      * @param array<string, mixed> $options

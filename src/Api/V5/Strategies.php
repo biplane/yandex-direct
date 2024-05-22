@@ -22,7 +22,7 @@ use Biplane\YandexDirect\Config;
  */
 class Strategies extends ApiSoapClientV5
 {
-    public const ENDPOINT = 'https://api.direct.yandex.com/v5/strategies?wsdl';
+    public const ENDPOINT = 'https://api.direct.yandex.com/v501/strategies?wsdl';
 
     /**
      * @param array<string, mixed> $options

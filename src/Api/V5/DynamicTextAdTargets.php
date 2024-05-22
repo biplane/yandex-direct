@@ -24,7 +24,7 @@ use Biplane\YandexDirect\Config;
  */
 class DynamicTextAdTargets extends ApiSoapClientV5
 {
-    public const ENDPOINT = 'https://api.direct.yandex.com/v5/dynamictextadtargets?wsdl';
+    public const ENDPOINT = 'https://api.direct.yandex.com/v501/dynamictextadtargets?wsdl';
 
     /**
      * @param array<string, mixed> $options

@@ -18,7 +18,7 @@ use Biplane\YandexDirect\Config;
  */
 class AdImages extends ApiSoapClientV5
 {
-    public const ENDPOINT = 'https://api.direct.yandex.com/v5/adimages?wsdl';
+    public const ENDPOINT = 'https://api.direct.yandex.com/v501/adimages?wsdl';
 
     /**
      * @param array<string, mixed> $options

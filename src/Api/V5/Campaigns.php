@@ -28,7 +28,7 @@ use Biplane\YandexDirect\Config;
  */
 class Campaigns extends ApiSoapClientV5
 {
-    public const ENDPOINT = 'https://api.direct.yandex.com/v5/campaigns?wsdl';
+    public const ENDPOINT = 'https://api.direct.yandex.com/v501/campaigns?wsdl';
 
     /**
      * @param array<string, mixed> $options

@@ -16,7 +16,7 @@ use Biplane\YandexDirect\Config;
  */
 class KeywordsResearch extends ApiSoapClientV5
 {
-    public const ENDPOINT = 'https://api.direct.yandex.com/v5/keywordsresearch?wsdl';
+    public const ENDPOINT = 'https://api.direct.yandex.com/v501/keywordsresearch?wsdl';
 
     /**
      * @param array<string, mixed> $options

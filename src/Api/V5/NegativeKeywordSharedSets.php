@@ -20,7 +20,7 @@ use Biplane\YandexDirect\Config;
  */
 class NegativeKeywordSharedSets extends ApiSoapClientV5
 {
-    public const ENDPOINT = 'https://api.direct.yandex.com/v5/negativekeywordsharedsets?wsdl';
+    public const ENDPOINT = 'https://api.direct.yandex.com/v501/negativekeywordsharedsets?wsdl';
 
     /**
      * @param array<string, mixed> $options

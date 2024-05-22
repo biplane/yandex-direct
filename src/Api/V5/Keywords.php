@@ -24,7 +24,7 @@ use Biplane\YandexDirect\Config;
  */
 class Keywords extends ApiSoapClientV5
 {
-    public const ENDPOINT = 'https://api.direct.yandex.com/v5/keywords?wsdl';
+    public const ENDPOINT = 'https://api.direct.yandex.com/v501/keywords?wsdl';
 
     /**
      * @param array<string, mixed> $options

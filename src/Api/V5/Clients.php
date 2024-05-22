@@ -16,7 +16,7 @@ use Biplane\YandexDirect\Config;
  */
 class Clients extends ApiSoapClientV5
 {
-    public const ENDPOINT = 'https://api.direct.yandex.com/v5/clients?wsdl';
+    public const ENDPOINT = 'https://api.direct.yandex.com/v501/clients?wsdl';
 
     /**
      * @param array<string, mixed> $options

@@ -18,7 +18,7 @@ use Biplane\YandexDirect\Config;
  */
 class Sitelinks extends ApiSoapClientV5
 {
-    public const ENDPOINT = 'https://api.direct.yandex.com/v5/sitelinks?wsdl';
+    public const ENDPOINT = 'https://api.direct.yandex.com/v501/sitelinks?wsdl';
 
     /**
      * @param array<string, mixed> $options

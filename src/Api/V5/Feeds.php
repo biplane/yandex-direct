@@ -20,7 +20,7 @@ use Biplane\YandexDirect\Config;
  */
 class Feeds extends ApiSoapClientV5
 {
-    public const ENDPOINT = 'https://api.direct.yandex.com/v5/feeds?wsdl';
+    public const ENDPOINT = 'https://api.direct.yandex.com/v501/feeds?wsdl';
 
     /**
      * @param array<string, mixed> $options

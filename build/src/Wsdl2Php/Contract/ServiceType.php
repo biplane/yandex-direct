@@ -62,7 +62,7 @@ class ServiceType extends AbstractType implements GeneratorInterface
             return 'Biplane\\YandexDirect\\Api\\ApiSoapClientV4';
         }
 
-        if (false !== strpos($wsdl, '/v5/')) {
+        if (false !== strpos($wsdl, '/v5/') || false !== strpos($wsdl, '/v501/')) {
             return 'Biplane\\YandexDirect\\Api\\ApiSoapClientV5';
         }
 

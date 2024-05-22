@@ -20,7 +20,7 @@ use Biplane\YandexDirect\Config;
  */
 class AdGroups extends ApiSoapClientV5
 {
-    public const ENDPOINT = 'https://api.direct.yandex.com/v5/adgroups?wsdl';
+    public const ENDPOINT = 'https://api.direct.yandex.com/v501/adgroups?wsdl';
 
     /**
      * @param array<string, mixed> $options

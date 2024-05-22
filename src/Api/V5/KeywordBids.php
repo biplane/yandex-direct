@@ -18,7 +18,7 @@ use Biplane\YandexDirect\Config;
  */
 class KeywordBids extends ApiSoapClientV5
 {
-    public const ENDPOINT = 'https://api.direct.yandex.com/v5/keywordbids?wsdl';
+    public const ENDPOINT = 'https://api.direct.yandex.com/v501/keywordbids?wsdl';
 
     /**
      * @param array<string, mixed> $options

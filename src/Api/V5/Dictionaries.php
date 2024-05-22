@@ -16,7 +16,7 @@ use Biplane\YandexDirect\Config;
  */
 class Dictionaries extends ApiSoapClientV5
 {
-    public const ENDPOINT = 'https://api.direct.yandex.com/v5/dictionaries?wsdl';
+    public const ENDPOINT = 'https://api.direct.yandex.com/v501/dictionaries?wsdl';
 
     /**
      * @param array<string, mixed> $options
