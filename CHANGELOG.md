@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 5.13.1 [commit logs](https://github.com/biplane/yandex-direct/compare/5.13.0...5.13.1)
+
+### Fixed
+
+* Обновлен адрес для сервиса `Reports`, для согласованности с остальными сервисами API v5.
+
 ## 5.13.0 [commit logs](https://github.com/biplane/yandex-direct/compare/5.12.0...5.13.0)
 
 ### Added

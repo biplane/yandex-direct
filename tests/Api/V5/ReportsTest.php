@@ -170,7 +170,7 @@ XML;
 
         $this->httpClient->method('sendRequest')
             ->with(self::callback(static function (RequestInterface $request): bool {
-                self::assertEquals('https://api-sandbox.direct.yandex.com/v5/reports', $request->getUri());
+                self::assertEquals('https://api-sandbox.direct.yandex.com/v501/reports', $request->getUri());
 
                 return true;
             }))

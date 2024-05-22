@@ -27,7 +27,7 @@ use function str_replace;
 
 class Reports implements ApiClientInterface
 {
-    public const ENDPOINT = 'https://api.direct.yandex.com/v5/reports';
+    public const ENDPOINT = 'https://api.direct.yandex.com/v501/reports';
     private const RETRY_INTERVAL_DEFAULT = 3;
 
     /** @var Config */
