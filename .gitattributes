@@ -1,8 +1,9 @@
 /.github          export-ignore
 /build            export-ignore
 /tests            export-ignore
+.gitattributes    export-ignore
 .editorconfig     export-ignore
 .gitignore        export-ignore
-phpcs.xml         export-ignore
+*.xml             export-ignore
 *.neon            export-ignore
-phpunit.xml.dist  export-ignore
+*.xml.dist        export-ignore
