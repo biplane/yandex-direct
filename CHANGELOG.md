@@ -2,6 +2,21 @@
 
 ## Unreleased
 
+## 5.13.0 [commit logs](https://github.com/biplane/yandex-direct/compare/5.12.0...5.13.0)
+
+### Added
+
+* Добавлена поддержка единых перформанс-кампаний (ЕПК).
+
+### Changed
+
+* Для API v5 запросов используются новые адреса,
+
+  ```diff
+  - https://api.direct.yandex.com/v5
+  + https://api.direct.yandex.com/v501
+  ```
+
 ## 5.12.0 [commit logs](https://github.com/biplane/yandex-direct/compare/5.11.0...5.12.0)
 
 ### Changed
