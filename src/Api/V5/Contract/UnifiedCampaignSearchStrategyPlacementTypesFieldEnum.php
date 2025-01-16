@@ -12,4 +12,8 @@ class UnifiedCampaignSearchStrategyPlacementTypesFieldEnum
     public const SEARCH_RESULTS = 'SearchResults';
 
     public const PRODUCT_GALLERY = 'ProductGallery';
+
+    public const MAPS = 'Maps';
+
+    public const SEARCH_ORGANIZATION_LIST = 'SearchOrganizationList';
 }

@@ -41,6 +41,9 @@ class GetCampaignsRequest extends GetRequestGeneral
 //    Can be omitted.
 //    protected $UnifiedCampaignSearchStrategyPlacementTypesFieldNames = null;
 
+//    Can be omitted.
+//    protected $UnifiedCampaignPackageBiddingStrategyPlatformsFieldNames = null;
+
     public function getSelectionCriteria(): ?CampaignsSelectionCriteria
     {
         return $this->SelectionCriteria ?? null;
@@ -268,6 +271,30 @@ class GetCampaignsRequest extends GetRequestGeneral
     public function setUnifiedCampaignSearchStrategyPlacementTypesFieldNames(?array $value = null)
     {
         $this->UnifiedCampaignSearchStrategyPlacementTypesFieldNames = $value;
+
+        return $this;
+    }
+
+    /**
+     * @see UnifiedCampaignPackageBiddingStrategyPlatformsFieldEnum
+     *
+     * @return string[]|null
+     */
+    public function getUnifiedCampaignPackageBiddingStrategyPlatformsFieldNames(): ?array
+    {
+        return $this->UnifiedCampaignPackageBiddingStrategyPlatformsFieldNames ?? null;
+    }
+
+    /**
+     * @see UnifiedCampaignPackageBiddingStrategyPlatformsFieldEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
+     */
+    public function setUnifiedCampaignPackageBiddingStrategyPlatformsFieldNames(?array $value = null)
+    {
+        $this->UnifiedCampaignPackageBiddingStrategyPlatformsFieldNames = $value;
 
         return $this;
     }

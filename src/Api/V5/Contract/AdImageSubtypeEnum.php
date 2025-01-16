@@ -31,6 +31,10 @@ class AdImageSubtypeEnum
 
     public const IMG_970_250 = 'IMG_970_250';
 
+    public const IMG_516_272 = 'IMG_516_272';
+
+    public const IMG_223_159 = 'IMG_223_159';
+
     public const IMG_480_800 = 'IMG_480_800';
 
     public const IMG_600_500 = 'IMG_600_500';
@@ -52,6 +56,10 @@ class AdImageSubtypeEnum
     public const IMG_1456_180 = 'IMG_1456_180';
 
     public const IMG_1940_500 = 'IMG_1940_500';
+
+    public const IMG_1032_544 = 'IMG_1032_544';
+
+    public const IMG_446_318 = 'IMG_446_318';
 
     public const IMG_720_1200 = 'IMG_720_1200';
 
@@ -75,6 +83,10 @@ class AdImageSubtypeEnum
 
     public const IMG_2910_750 = 'IMG_2910_750';
 
+    public const IMG_1548_816 = 'IMG_1548_816';
+
+    public const IMG_669_477 = 'IMG_669_477';
+
     public const IMG_960_1600 = 'IMG_960_1600';
 
     public const IMG_1200_1000 = 'IMG_1200_1000';
@@ -96,6 +108,10 @@ class AdImageSubtypeEnum
     public const IMG_2912_360 = 'IMG_2912_360';
 
     public const IMG_3880_1000 = 'IMG_3880_1000';
+
+    public const IMG_2064_1088 = 'IMG_2064_1088';
+
+    public const IMG_892_636 = 'IMG_892_636';
 
     public const NONE = 'NONE';
 }

@@ -107,6 +107,7 @@ class Campaigns extends ApiSoapClientV5
             'TextCampaignSearchStrategyPlacementTypesFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\TextCampaignSearchStrategyPlacementTypesFieldEnum',
             'UnifiedCampaignFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\UnifiedCampaignFieldEnum',
             'UnifiedCampaignSearchStrategyPlacementTypesFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\UnifiedCampaignSearchStrategyPlacementTypesFieldEnum',
+            'UnifiedCampaignPackageBiddingStrategyPlatformsFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\UnifiedCampaignPackageBiddingStrategyPlatformsFieldEnum',
             'MobileAppCampaignFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\MobileAppCampaignFieldEnum',
             'DynamicTextCampaignFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\DynamicTextCampaignFieldEnum',
             'CpmBannerCampaignFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\CpmBannerCampaignFieldEnum',
