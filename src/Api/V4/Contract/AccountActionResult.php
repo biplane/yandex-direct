@@ -24,6 +24,8 @@ class AccountActionResult
 
     protected $Status = null;
 
+    protected $RedirectUrl = null;
+
     /**
      * @return static
      */
@@ -123,6 +125,21 @@ class AccountActionResult
     public function setStatus(?string $value = null)
     {
         $this->Status = $value;
+
+        return $this;
+    }
+
+    public function getRedirectUrl(): ?string
+    {
+        return $this->RedirectUrl;
+    }
+
+    /**
+     * @return $this
+     */
+    public function setRedirectUrl(?string $value = null)
+    {
+        $this->RedirectUrl = $value;
 
         return $this;
     }

@@ -18,6 +18,12 @@ class UnifiedCampaignSearchStrategyPlacementTypes
 //    Can be omitted.
 //    protected $ProductGallery = null;
 
+//    Can be omitted.
+//    protected $Maps = null;
+
+//    Can be omitted.
+//    protected $SearchOrganizationList = null;
+
     /**
      * @return static
      */
@@ -62,6 +68,46 @@ class UnifiedCampaignSearchStrategyPlacementTypes
     public function setProductGallery(?string $value = null)
     {
         $this->ProductGallery = $value;
+
+        return $this;
+    }
+
+    /**
+     * @see YesNoEnum
+     */
+    public function getMaps(): ?string
+    {
+        return $this->Maps ?? null;
+    }
+
+    /**
+     * @see YesNoEnum
+     *
+     * @return $this
+     */
+    public function setMaps(?string $value = null)
+    {
+        $this->Maps = $value;
+
+        return $this;
+    }
+
+    /**
+     * @see YesNoEnum
+     */
+    public function getSearchOrganizationList(): ?string
+    {
+        return $this->SearchOrganizationList ?? null;
+    }
+
+    /**
+     * @see YesNoEnum
+     *
+     * @return $this
+     */
+    public function setSearchOrganizationList(?string $value = null)
+    {
+        $this->SearchOrganizationList = $value;
 
         return $this;
     }

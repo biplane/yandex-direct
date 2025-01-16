@@ -513,3 +513,19 @@ generate($generator, [
         'ArrayOfLong',
     ],
 ] + $defaultOptions);
+
+generate($generator, [
+    'inputFile' => 'https://api.direct.yandex.com/v501/businesses?wsdl',
+    'renameType' => function ($typeName) {
+        return preg_replace(
+            '#^(Get)(Request|Response)$#',
+            '$1Businesses$2',
+            $typeName
+        );
+    },
+    'excludeTypes' => [
+        'ArrayOfString',
+        'ArrayOfInteger',
+        'ArrayOfLong',
+    ],
+] + $defaultOptions);
