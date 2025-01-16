@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 5.14.0 [commit logs](https://github.com/biplane/yandex-direct/compare/5.13.1...5.14.0)
+
+### Added
+
+* Добавлена поддержка сервиса `Businesses` (PR #62)
+
 ## 5.13.1 [commit logs](https://github.com/biplane/yandex-direct/compare/5.13.0...5.13.1)
 
 ### Fixed

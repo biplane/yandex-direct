@@ -158,6 +158,7 @@ $serviceFactory = ApiServiceFactoryBuilder::create()
 | `V5\AudienceTargets`           | [Doc](https://yandex.ru/dev/direct/doc/ref-v5/audiencetargets/audiencetargets.html)                     |
 | `V5\BidModifiers`              | [Doc](https://yandex.ru/dev/direct/doc/ref-v5/bidmodifiers/bidmodifiers.html)                           |
 | `V5\Bids`                      | [Doc](https://yandex.ru/dev/direct/doc/ref-v5/bids/bids.html)                                           |
+| `V5\Businesses`                | [Doc](https://yandex.ru/dev/direct/doc/ref-v5/businesses/businesses.html)                               |
 | `V5\Campaigns`                 | [Doc](https://yandex.ru/dev/direct/doc/ref-v5/campaigns/campaigns.html)                                 |
 | `V5\Changes`                   | [Doc](https://yandex.ru/dev/direct/doc/ref-v5/changes/changes.html)                                     |
 | `V5\Clients`                   | [Doc](https://yandex.ru/dev/direct/doc/ref-v5/clients/clients.html)                                     |
