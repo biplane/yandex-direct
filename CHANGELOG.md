@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 5.15.0 [commit logs](https://github.com/biplane/yandex-direct/compare/5.14.0...5.15.0)
+
 ### Added
 
 * Добавлен метод `ApiServiceFactoryBuilder::setSoapOptions()`.
