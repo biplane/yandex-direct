@@ -10,7 +10,7 @@ use AllowDynamicProperties;
  * Auto-generated code.
  */
 #[AllowDynamicProperties]
-class UnifiedCampaignSearchStrategyPlacementTypes
+class DynamicTextCampaignSearchStrategyPlacementTypes
 {
 //    Can be omitted.
 //    protected $SearchResults = null;
@@ -20,12 +20,6 @@ class UnifiedCampaignSearchStrategyPlacementTypes
 
 //    Can be omitted.
 //    protected $DynamicPlaces = null;
-
-//    Can be omitted.
-//    protected $Maps = null;
-
-//    Can be omitted.
-//    protected $SearchOrganizationList = null;
 
     /**
      * @return static
@@ -91,46 +85,6 @@ class UnifiedCampaignSearchStrategyPlacementTypes
     public function setDynamicPlaces(?string $value = null)
     {
         $this->DynamicPlaces = $value;
-
-        return $this;
-    }
-
-    /**
-     * @see YesNoEnum
-     */
-    public function getMaps(): ?string
-    {
-        return $this->Maps ?? null;
-    }
-
-    /**
-     * @see YesNoEnum
-     *
-     * @return $this
-     */
-    public function setMaps(?string $value = null)
-    {
-        $this->Maps = $value;
-
-        return $this;
-    }
-
-    /**
-     * @see YesNoEnum
-     */
-    public function getSearchOrganizationList(): ?string
-    {
-        return $this->SearchOrganizationList ?? null;
-    }
-
-    /**
-     * @see YesNoEnum
-     *
-     * @return $this
-     */
-    public function setSearchOrganizationList(?string $value = null)
-    {
-        $this->SearchOrganizationList = $value;
 
         return $this;
     }

@@ -24,6 +24,9 @@ class UnifiedCampaignPlatforms
 
     protected $Network = null;
 
+//    Can be omitted.
+//    protected $DynamicPlaces = null;
+
     /**
      * @return static
      */
@@ -128,6 +131,26 @@ class UnifiedCampaignPlatforms
     public function setNetwork(string $value)
     {
         $this->Network = $value;
+
+        return $this;
+    }
+
+    /**
+     * @see YesNoEnum
+     */
+    public function getDynamicPlaces(): ?string
+    {
+        return $this->DynamicPlaces ?? null;
+    }
+
+    /**
+     * @see YesNoEnum
+     *
+     * @return $this
+     */
+    public function setDynamicPlaces(?string $value = null)
+    {
+        $this->DynamicPlaces = $value;
 
         return $this;
     }

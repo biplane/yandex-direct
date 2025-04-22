@@ -30,6 +30,9 @@ class GetCampaignsRequest extends GetRequestGeneral
 //    protected $DynamicTextCampaignFieldNames = null;
 
 //    Can be omitted.
+//    protected $DynamicTextCampaignSearchStrategyPlacementTypesFieldNames = null;
+
+//    Can be omitted.
 //    protected $CpmBannerCampaignFieldNames = null;
 
 //    Can be omitted.
@@ -175,6 +178,30 @@ class GetCampaignsRequest extends GetRequestGeneral
     public function setDynamicTextCampaignFieldNames(?array $value = null)
     {
         $this->DynamicTextCampaignFieldNames = $value;
+
+        return $this;
+    }
+
+    /**
+     * @see DynamicTextCampaignSearchStrategyPlacementTypesFieldEnum
+     *
+     * @return string[]|null
+     */
+    public function getDynamicTextCampaignSearchStrategyPlacementTypesFieldNames(): ?array
+    {
+        return $this->DynamicTextCampaignSearchStrategyPlacementTypesFieldNames ?? null;
+    }
+
+    /**
+     * @see DynamicTextCampaignSearchStrategyPlacementTypesFieldEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
+     */
+    public function setDynamicTextCampaignSearchStrategyPlacementTypesFieldNames(?array $value = null)
+    {
+        $this->DynamicTextCampaignSearchStrategyPlacementTypesFieldNames = $value;
 
         return $this;
     }

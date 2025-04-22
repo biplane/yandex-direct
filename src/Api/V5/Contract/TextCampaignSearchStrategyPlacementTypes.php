@@ -18,6 +18,9 @@ class TextCampaignSearchStrategyPlacementTypes
 //    Can be omitted.
 //    protected $ProductGallery = null;
 
+//    Can be omitted.
+//    protected $DynamicPlaces = null;
+
     /**
      * @return static
      */
@@ -62,6 +65,26 @@ class TextCampaignSearchStrategyPlacementTypes
     public function setProductGallery(?string $value = null)
     {
         $this->ProductGallery = $value;
+
+        return $this;
+    }
+
+    /**
+     * @see YesNoEnum
+     */
+    public function getDynamicPlaces(): ?string
+    {
+        return $this->DynamicPlaces ?? null;
+    }
+
+    /**
+     * @see YesNoEnum
+     *
+     * @return $this
+     */
+    public function setDynamicPlaces(?string $value = null)
+    {
+        $this->DynamicPlaces = $value;
 
         return $this;
     }

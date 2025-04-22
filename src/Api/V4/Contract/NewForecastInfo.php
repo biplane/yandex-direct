@@ -16,6 +16,8 @@ class NewForecastInfo
 
     protected $Phrases = null;
 
+    protected $CommonMinusWords = null;
+
     protected $GeoID = null;
 
     protected $Currency = null;
@@ -66,6 +68,26 @@ class NewForecastInfo
     public function setPhrases(?array $value = null)
     {
         $this->Phrases = $value;
+
+        return $this;
+    }
+
+    /**
+     * @return string[]|null
+     */
+    public function getCommonMinusWords(): ?array
+    {
+        return $this->CommonMinusWords;
+    }
+
+    /**
+     * @param string[]|null $value
+     *
+     * @return $this
+     */
+    public function setCommonMinusWords(?array $value = null)
+    {
+        $this->CommonMinusWords = $value;
 
         return $this;
     }

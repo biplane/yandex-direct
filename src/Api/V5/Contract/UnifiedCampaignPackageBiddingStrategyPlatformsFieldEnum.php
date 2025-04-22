@@ -18,4 +18,6 @@ class UnifiedCampaignPackageBiddingStrategyPlatformsFieldEnum
     public const SEARCH_ORGANIZATION_LIST = 'SearchOrganizationList';
 
     public const NETWORK = 'Network';
+
+    public const DYNAMIC_PLACES = 'DynamicPlaces';
 }

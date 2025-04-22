@@ -14,6 +14,9 @@ class DynamicTextCampaignSearchStrategy extends DynamicTextCampaignStrategyBase
 {
     protected $BiddingStrategyType = null;
 
+//    Can be omitted.
+//    protected $PlacementTypes = null;
+
     /**
      * @see DynamicTextCampaignSearchStrategyTypeEnum
      */
@@ -30,6 +33,21 @@ class DynamicTextCampaignSearchStrategy extends DynamicTextCampaignStrategyBase
     public function setBiddingStrategyType(string $value)
     {
         $this->BiddingStrategyType = $value;
+
+        return $this;
+    }
+
+    public function getPlacementTypes(): ?DynamicTextCampaignSearchStrategyPlacementTypes
+    {
+        return $this->PlacementTypes ?? null;
+    }
+
+    /**
+     * @return $this
+     */
+    public function setPlacementTypes(?DynamicTextCampaignSearchStrategyPlacementTypes $value = null)
+    {
+        $this->PlacementTypes = $value;
 
         return $this;
     }

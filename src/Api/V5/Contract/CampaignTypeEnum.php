@@ -20,6 +20,4 @@ class CampaignTypeEnum
     public const SMART_CAMPAIGN = 'SMART_CAMPAIGN';
 
     public const UNIFIED_CAMPAIGN = 'UNIFIED_CAMPAIGN';
-
-    public const CPV_TELEGRAM = 'CPV_TELEGRAM';
 }
