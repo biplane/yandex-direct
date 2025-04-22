@@ -6,6 +6,7 @@ namespace Biplane\YandexDirect;
 
 use Biplane\YandexDirect\Api\ApiSoapClientV4;
 use Biplane\YandexDirect\Api\Finance\TransactionNumberGenerator;
+use Biplane\YandexDirect\Config\SoapOptions;
 use Biplane\YandexDirect\Log\SoapLogContextFactory;
 use Biplane\YandexDirect\Log\SoapLogger;
 use Biplane\YandexDirect\Runner\Runner;
@@ -31,17 +32,21 @@ final class ApiServiceFactory
     private $logContextFactory;
     /** @var SoapLogger|null */
     private $logger;
+    /** @var SoapOptions|null */
+    private $soapOptions;
 
     public function __construct(
         ?Runner $runner = null,
         ?TransactionNumberGenerator $transactionNumberGenerator = null,
         ?int $soapCallTimeout = null,
         ?SoapLogger $logger = null,
-        ?SoapLogContextFactory $logContextFactory = null
+        ?SoapLogContextFactory $logContextFactory = null,
+        ?SoapOptions $options = null
     ) {
         $this->runner = $runner ?? Runner::default();
         $this->transactionNumberGenerator = $transactionNumberGenerator;
         $this->soapCallTimeout = $soapCallTimeout;
+        $this->soapOptions = $options;
         $this->logger = $logger;
         $this->logContextFactory = $logContextFactory ?? new SoapLogContextFactory(
             ['authorization'],
@@ -143,7 +148,7 @@ final class ApiServiceFactory
             $options['stream_context'] = stream_context_create($contextOptions);
         }
 
-        $soapOptions = $config->getSoapOptions();
+        $soapOptions = $this->soapOptions ?? $config->getSoapOptions();
         $options['compression'] = $soapOptions->getCompression();
         $options['cache_wsdl'] = $soapOptions->getWsdlCacheType();
 

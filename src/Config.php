@@ -6,9 +6,11 @@ namespace Biplane\YandexDirect;
 
 use Biplane\YandexDirect\Config\SoapOptions;
 use Symfony\Component\OptionsResolver\Exception\InvalidArgumentException;
+use Symfony\Component\OptionsResolver\OptionConfigurator;
 use Symfony\Component\OptionsResolver\Options;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+use function class_exists;
 use function is_string;
 use function sprintf;
 use function str_replace;
@@ -117,6 +119,9 @@ final class Config
         return $this->options['proxy_username'] !== null;
     }
 
+    /**
+     * @deprecated Use `ApiServiceFactory` instead.
+     */
     public function getSoapOptions(): SoapOptions
     {
         return $this->options['soap_options'];
@@ -160,5 +165,11 @@ final class Config
 
                 return $value;
             });
+
+        if (class_exists(OptionConfigurator::class)) {
+            $resolver->setDeprecated('soap_options', 'biplane/yandex-direct', '5.15.0');
+        } else {
+            $resolver->setDeprecated('soap_options');
+        }
     }
 }

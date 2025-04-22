@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<files psalm-version="4.16.1@aa7e400908833b10c0333861f86cd48c510b60eb">
+<files psalm-version="4.30.0@d0bc6e25d89f649e4f36a534f330f8bb4643dd69">
   <file src="src/Api/ApiSoapClientV4.php">
     <MissingParamType occurrences="5">
       <code>$action</code>
@@ -18,6 +18,11 @@
     <DocblockTypeContradiction occurrences="1">
       <code>in_array($value, $allowedModes, true)</code>
     </DocblockTypeContradiction>
+  </file>
+  <file src="src/ApiServiceFactory.php">
+    <DeprecatedMethod occurrences="1">
+      <code>getSoapOptions</code>
+    </DeprecatedMethod>
   </file>
   <file src="src/Config.php">
     <MissingClosureParamType occurrences="1">
@@ -58,12 +63,6 @@
       <code>$params</code>
     </PossiblyNullArgument>
   </file>
-  <file src="tests/Api/BaseTestCase.php">
-    <InvalidReturnStatement occurrences="1"/>
-    <InvalidReturnType occurrences="1">
-      <code>MockObject&amp;T</code>
-    </InvalidReturnType>
-  </file>
   <file src="tests/Api/TypeConversionTest.php">
     <PossiblyNullReference occurrences="1">
       <code>getCounterIds</code>
@@ -73,5 +72,11 @@
     <MissingClosureParamType occurrences="1">
       <code>$uri</code>
     </MissingClosureParamType>
+  </file>
+  <file src="tests/ConfigTest.php">
+    <DeprecatedMethod occurrences="2">
+      <code>getSoapOptions</code>
+      <code>getSoapOptions</code>
+    </DeprecatedMethod>
   </file>
 </files>

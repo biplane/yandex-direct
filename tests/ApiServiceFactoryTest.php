@@ -19,6 +19,7 @@ use const SOAP_COMPRESSION_ACCEPT;
 use const SOAP_COMPRESSION_GZIP;
 use const SOAP_SINGLE_ELEMENT_ARRAYS;
 use const WSDL_CACHE_BOTH;
+use const WSDL_CACHE_NONE;
 
 class ApiServiceFactoryTest extends TestCase
 {
@@ -82,6 +83,40 @@ class ApiServiceFactoryTest extends TestCase
                 'keep_alive' => false,
                 'compression' => SOAP_COMPRESSION_ACCEPT | SOAP_COMPRESSION_GZIP | 5,
                 'cache_wsdl' => WSDL_CACHE_BOTH,
+            ],
+            $service->getOptions()
+        );
+    }
+
+    public function testCreateSoapClientWithCustomSoapOptions(): void
+    {
+        $factory = new ApiServiceFactory(
+            null,
+            null,
+            null,
+            null,
+            null,
+            Config\SoapOptions::default()
+                ->withWsdlCacheType(WSDL_CACHE_NONE)
+                ->withCompression(SOAP_COMPRESSION_ACCEPT | SOAP_COMPRESSION_GZIP | 5)
+        );
+
+        $service = $factory->createService(
+            new Config(['access_token' => 'secret']),
+            MockSoapClient::class
+        );
+
+        self::assertInstanceOf(MockSoapClient::class, $service);
+        self::assertSame(
+            [
+                'soap_version' => SOAP_1_1,
+                'encoding' => 'UTF-8',
+                'features' => SOAP_SINGLE_ELEMENT_ARRAYS,
+                'trace' => true,
+                'exceptions' => true,
+                'keep_alive' => false,
+                'compression' => SOAP_COMPRESSION_ACCEPT | SOAP_COMPRESSION_GZIP | 5,
+                'cache_wsdl' => WSDL_CACHE_NONE,
             ],
             $service->getOptions()
         );

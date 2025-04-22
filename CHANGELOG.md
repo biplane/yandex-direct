@@ -2,6 +2,21 @@
 
 ## Unreleased
 
+### Added
+
+* Добавлен метод `ApiServiceFactoryBuilder::setSoapOptions()`.
+
+### Changed
+
+* В конструктор `ApiServiceFactory` добавлен необязательный аргумент,
+  для переопределения опций для `SoapClient`.
+
+### Deprecated
+
+* Опция `soap_options` будет удалена из конфига в версии `6.0`.
+  Вместо этого следует напрямую конфигурировать `ApiServiceFactory`.
+* Метод `ConfigBuilder::setSoapOptions()` будет удален в версии `6.0`.
+
 ## 5.14.0 [commit logs](https://github.com/biplane/yandex-direct/compare/5.13.1...5.14.0)
 
 ### Added

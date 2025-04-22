@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect;
 
 use Biplane\YandexDirect\Api\Finance\TransactionNumberGenerator;
+use Biplane\YandexDirect\Config\SoapOptions;
 use Biplane\YandexDirect\Log\SoapLogContextFactory;
 use Biplane\YandexDirect\Log\SoapLogger;
 use Biplane\YandexDirect\Runner\Runner;
@@ -25,6 +26,9 @@ final class ApiServiceFactoryBuilder
 
     /** @var SoapLogger|null */
     private $logger;
+
+    /** @var SoapOptions|null */
+    private $soapOptions;
 
     public static function create(): self
     {
@@ -55,6 +59,13 @@ final class ApiServiceFactoryBuilder
         return $this;
     }
 
+    public function setSoapOptions(SoapOptions $options): self
+    {
+        $this->soapOptions = $options;
+
+        return $this;
+    }
+
     public function setLogger(SoapLogger $logger): self
     {
         $this->logger = $logger;
@@ -76,7 +87,8 @@ final class ApiServiceFactoryBuilder
             $this->transactionNumberGenerator,
             $this->soapCallTimeout,
             $this->logger,
-            $this->logContextFactory
+            $this->logContextFactory,
+            $this->soapOptions
         );
     }
 }
