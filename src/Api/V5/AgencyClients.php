@@ -7,6 +7,8 @@ namespace Biplane\YandexDirect\Api\V5;
 use Biplane\YandexDirect\Api\ApiSoapClientV5;
 use Biplane\YandexDirect\Api\V5\Contract\AddAgencyClientsRequest;
 use Biplane\YandexDirect\Api\V5\Contract\AddAgencyClientsResponse;
+use Biplane\YandexDirect\Api\V5\Contract\AddPassportOrganizationRequest;
+use Biplane\YandexDirect\Api\V5\Contract\AddPassportOrganizationResponse;
 use Biplane\YandexDirect\Api\V5\Contract\GetAgencyClientsRequest;
 use Biplane\YandexDirect\Api\V5\Contract\GetAgencyClientsResponse;
 use Biplane\YandexDirect\Api\V5\Contract\UpdateAgencyClientsRequest;
@@ -132,6 +134,8 @@ class AgencyClients extends ApiSoapClientV5
             'GetResponse' => 'Biplane\YandexDirect\Api\V5\Contract\GetAgencyClientsResponse',
             'AddRequest' => 'Biplane\YandexDirect\Api\V5\Contract\AddAgencyClientsRequest',
             'AddResponse' => 'Biplane\YandexDirect\Api\V5\Contract\AddAgencyClientsResponse',
+            'AddPassportOrganizationRequest' => 'Biplane\YandexDirect\Api\V5\Contract\AddPassportOrganizationRequest',
+            'AddPassportOrganizationResponse' => 'Biplane\YandexDirect\Api\V5\Contract\AddPassportOrganizationResponse',
             'UpdateRequest' => 'Biplane\YandexDirect\Api\V5\Contract\UpdateAgencyClientsRequest',
             'UpdateResponse' => 'Biplane\YandexDirect\Api\V5\Contract\UpdateAgencyClientsResponse',
         ];
@@ -147,6 +151,11 @@ class AgencyClients extends ApiSoapClientV5
     public function add(AddAgencyClientsRequest $parameters): AddAgencyClientsResponse
     {
         return $this->__soapCall('add', [$parameters]);
+    }
+
+    public function addPassportOrganization(AddPassportOrganizationRequest $parameters): AddPassportOrganizationResponse
+    {
+        return $this->__soapCall('addPassportOrganization', [$parameters]);
     }
 
     public function update(UpdateAgencyClientsRequest $parameters): UpdateAgencyClientsResponse
