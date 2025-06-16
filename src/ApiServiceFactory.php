@@ -49,7 +49,7 @@ final class ApiServiceFactory
         $this->soapOptions = $options;
         $this->logger = $logger;
         $this->logContextFactory = $logContextFactory ?? new SoapLogContextFactory(
-            ['authorization'],
+            ['authorization', 'member-authorization'],
             ['token'],
             [],
             []

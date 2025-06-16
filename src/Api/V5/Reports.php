@@ -140,7 +140,7 @@ class Reports implements ApiClientInterface
                 $request .= $name . ': ' . implode(', ', $values) . "\r\n";
             }
 
-            $request = Scrubber::scrubHttpHeaders($request, ['Authorization']);
+            $request = Scrubber::scrubHttpHeaders($request, ['Authorization', 'Member-Authorization']);
 
             $request .= "\r\n";
             $request .= $this->lastRequest->getBody();
