@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 5.17.0 [commit logs](https://github.com/biplane/yandex-direct/compare/5.16.0...5.17.0)
+
+### Added
+
+* В конфиг добавлена опция `member_token` для поддержки заголовка `Member-Authorization` (fix #65, #66)
+
 ## 5.16.0 [commit logs](https://github.com/biplane/yandex-direct/compare/5.15.0...5.16.0)
 
 ### Added
