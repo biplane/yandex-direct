@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+## 5.17.1 [commit logs](https://github.com/biplane/yandex-direct/compare/5.17.0...5.17.1)
+
+### Fixed
+
+* Добавлена маскировка значения заголовка `Member-Authorization`,
+  чтобы токен не светился в логах.
+
 ## 5.17.0 [commit logs](https://github.com/biplane/yandex-direct/compare/5.16.0...5.17.0)
 
 ### Added
