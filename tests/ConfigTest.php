@@ -19,6 +19,7 @@ class ConfigTest extends TestCase
         self::assertEquals('secret', $config->getAccessToken());
         self::assertNull($config->getClientLogin());
         self::assertNull($config->getMasterToken());
+        self::assertNull($config->getMemberToken());
         self::assertEquals('en', $config->getLocale(Config::API_4));
         self::assertEquals('en', $config->getLocale(Config::API_5));
         self::assertFalse($config->useSandbox());
@@ -37,6 +38,7 @@ class ConfigTest extends TestCase
             'access_token' => 'secret',
             'client_login' => 'foo',
             'master_token' => 'secret2',
+            'member_token' => 'member-t0kEn',
             'locale' => 'ru',
             'sandbox' => true,
             'use_operator_units' => true,
@@ -46,6 +48,7 @@ class ConfigTest extends TestCase
         self::assertEquals('secret', $config->getAccessToken());
         self::assertEquals('foo', $config->getClientLogin());
         self::assertEquals('secret2', $config->getMasterToken());
+        self::assertEquals('member-t0kEn', $config->getMemberToken());
         self::assertEquals('ru', $config->getLocale(Config::API_4));
         self::assertTrue($config->useSandbox());
         self::assertTrue($config->useOperatorUnits());

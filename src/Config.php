@@ -67,6 +67,11 @@ final class Config
         return $this->options['master_token'];
     }
 
+    public function getMemberToken(): ?string
+    {
+        return $this->options['member_token'];
+    }
+
     public function getLocale(int $apiVersion): string
     {
         if ($apiVersion === self::API_4) {
@@ -134,6 +139,7 @@ final class Config
             ->setDefaults([
                 'locale' => 'en',
                 'master_token' => null,
+                'member_token' => null,
                 'client_login' => null,
                 'sandbox' => false,
                 'use_operator_units' => false,
@@ -146,6 +152,7 @@ final class Config
             ->setAllowedValues('locale', ['en', 'ru', 'tr', 'ua', 'uk'])
             ->setAllowedTypes('access_token', 'string')
             ->setAllowedTypes('master_token', ['string', 'null'])
+            ->setAllowedTypes('member_token', ['string', 'null'])
             ->setAllowedTypes('client_login', ['string', 'null'])
             ->setAllowedTypes('sandbox', 'bool')
             ->setAllowedTypes('use_operator_units', 'bool')

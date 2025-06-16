@@ -108,6 +108,10 @@ class ApiSoapClientV5 extends ApiSoapClient
             $headers['Use-Operator-Units'] = 'true';
         }
 
+        if ($config->getMemberToken() !== null) {
+            $headers['Member-Authorization'] = (string)$config->getMemberToken();
+        }
+
         return $headers;
     }
 }

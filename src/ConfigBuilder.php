@@ -37,6 +37,13 @@ final class ConfigBuilder
         return $this;
     }
 
+    public function setMemberToken(string $token): self
+    {
+        $this->options['member_token'] = $token;
+
+        return $this;
+    }
+
     public function setLocale(string $locale): self
     {
         $this->options['locale'] = $locale;

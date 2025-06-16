@@ -30,6 +30,7 @@ class ConfigBuilderTest extends TestCase
             ->setClientLogin('mr-Robot')
             ->setLocale('ru')
             ->setMasterToken('secret2')
+            ->setMemberToken('member-t0kEn')
             ->useSandbox()
             ->useOperatorUnits()
             ->setProxy('localhost', 8888, 'user', 'pass')
@@ -38,6 +39,7 @@ class ConfigBuilderTest extends TestCase
         self::assertEquals('secret', $config->getAccessToken());
         self::assertEquals('mr-robot', $config->getClientLogin());
         self::assertEquals('secret2', $config->getMasterToken());
+        self::assertEquals('member-t0kEn', $config->getMemberToken());
         self::assertEquals('ru', $config->getLocale(Config::API_4));
         self::assertTrue($config->useSandbox());
         self::assertTrue($config->useOperatorUnits());
