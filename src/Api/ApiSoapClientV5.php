@@ -91,9 +91,11 @@ class ApiSoapClientV5 extends ApiSoapClient
     }
 
     /**
+     * @internal
+     *
      * @return array<string, string>
      */
-    private static function createHttpHeaders(Config $config): array
+    public static function createHttpHeaders(Config $config): array
     {
         $headers = [
             'Authorization' => 'Bearer ' . $config->getAccessToken(),
@@ -109,7 +111,7 @@ class ApiSoapClientV5 extends ApiSoapClient
         }
 
         if ($config->getMemberToken() !== null) {
-            $headers['Member-Authorization'] = (string)$config->getMemberToken();
+            $headers['Member-Authorization'] = 'Bearer ' . $config->getMemberToken();
         }
 
         return $headers;

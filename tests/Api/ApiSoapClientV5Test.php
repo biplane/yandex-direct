@@ -71,4 +71,27 @@ XML
         self::assertSame(100000, $units->getLimit());
         self::assertEquals('agent', $units->getUsedLogin());
     }
+
+    public function testGenerateRequestHttpHeaders(): void
+    {
+        $config = new Config([
+            'access_token' => 'access-token-secR3t',
+            'member_token' => 'member-token-secR3t',
+            'client_login' => 'foo',
+            'use_operator_units' => true,
+        ]);
+
+        $headers = ApiSoapClientV5::createHttpHeaders($config);
+
+        self::assertEquals(
+            [
+                'Authorization' => 'Bearer access-token-secR3t',
+                'Accept-Language' => 'en',
+                'Client-Login' => 'foo',
+                'Use-Operator-Units' => 'true',
+                'Member-Authorization' => 'Bearer member-token-secR3t',
+            ],
+            $headers
+        );
+    }
 }
