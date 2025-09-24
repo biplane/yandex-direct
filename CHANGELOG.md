@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+## 5.17.2 [commit logs](https://github.com/biplane/yandex-direct/compare/5.17.1...5.17.2)
+
+### Fixed
+
+* Для заголовка `Member-Authorization` добавлена схема авторизации `Bearer` (fix #68)
+
 ## 5.17.1 [commit logs](https://github.com/biplane/yandex-direct/compare/5.17.0...5.17.1)
 
 ### Fixed
