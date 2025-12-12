@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+## 5.18.0 [commit logs](https://github.com/biplane/yandex-direct/compare/5.17.2...5.18.0)
+
+### Changed
+
+* Обновлены сервисы для совместимости с последней версией API 5.
+  В частности, добавлена поддержка метода `AgencyClients.addPassportOrganizationMember()`. (close #70)
+
 ## 5.17.2 [commit logs](https://github.com/biplane/yandex-direct/compare/5.17.1...5.17.2)
 
 ### Fixed
