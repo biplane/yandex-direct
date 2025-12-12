@@ -39,6 +39,15 @@ class TextCampaignStrategyAddBase
 //    Can be omitted.
 //    protected $PayForConversionCrr = null;
 
+//    Can be omitted.
+//    protected $AverageCpaMultipleGoals = null;
+
+//    Can be omitted.
+//    protected $PayForConversionMultipleGoals = null;
+
+//    Can be omitted.
+//    protected $MaxProfit = null;
+
     /**
      * @return static
      */
@@ -178,6 +187,51 @@ class TextCampaignStrategyAddBase
     public function setPayForConversionCrr(?StrategyPayForConversionCrrAdd $value = null)
     {
         $this->PayForConversionCrr = $value;
+
+        return $this;
+    }
+
+    public function getAverageCpaMultipleGoals(): ?StrategyAverageCpaMultipleGoalsAdd
+    {
+        return $this->AverageCpaMultipleGoals ?? null;
+    }
+
+    /**
+     * @return $this
+     */
+    public function setAverageCpaMultipleGoals(?StrategyAverageCpaMultipleGoalsAdd $value = null)
+    {
+        $this->AverageCpaMultipleGoals = $value;
+
+        return $this;
+    }
+
+    public function getPayForConversionMultipleGoals(): ?StrategyPayForConversionMultipleGoalsAdd
+    {
+        return $this->PayForConversionMultipleGoals ?? null;
+    }
+
+    /**
+     * @return $this
+     */
+    public function setPayForConversionMultipleGoals(?StrategyPayForConversionMultipleGoalsAdd $value = null)
+    {
+        $this->PayForConversionMultipleGoals = $value;
+
+        return $this;
+    }
+
+    public function getMaxProfit(): ?StrategyMaxProfitAdd
+    {
+        return $this->MaxProfit ?? null;
+    }
+
+    /**
+     * @return $this
+     */
+    public function setMaxProfit(?StrategyMaxProfitAdd $value = null)
+    {
+        $this->MaxProfit = $value;
 
         return $this;
     }

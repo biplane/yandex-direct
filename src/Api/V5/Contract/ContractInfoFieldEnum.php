@@ -20,4 +20,6 @@ class ContractInfoFieldEnum
     public const ACTION_TYPE = 'ActionType';
 
     public const SUBJECT_TYPE = 'SubjectType';
+
+    public const IS_AGENCY_PAYMENT = 'IsAgencyPayment';
 }

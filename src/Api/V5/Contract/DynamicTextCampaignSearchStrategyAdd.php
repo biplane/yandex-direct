@@ -37,7 +37,7 @@ class DynamicTextCampaignSearchStrategyAdd extends DynamicTextCampaignStrategyAd
         return $this;
     }
 
-    public function getPlacementTypes(): ?DynamicTextCampaignSearchStrategyPlacementTypes
+    public function getPlacementTypes(): ?DynamicTextCampaignSearchStrategyPlacementTypesAdd
     {
         return $this->PlacementTypes ?? null;
     }
@@ -45,7 +45,7 @@ class DynamicTextCampaignSearchStrategyAdd extends DynamicTextCampaignStrategyAd
     /**
      * @return $this
      */
-    public function setPlacementTypes(?DynamicTextCampaignSearchStrategyPlacementTypes $value = null)
+    public function setPlacementTypes(?DynamicTextCampaignSearchStrategyPlacementTypesAdd $value = null)
     {
         $this->PlacementTypes = $value;
 

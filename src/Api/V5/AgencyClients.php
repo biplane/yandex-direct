@@ -7,6 +7,8 @@ namespace Biplane\YandexDirect\Api\V5;
 use Biplane\YandexDirect\Api\ApiSoapClientV5;
 use Biplane\YandexDirect\Api\V5\Contract\AddAgencyClientsRequest;
 use Biplane\YandexDirect\Api\V5\Contract\AddAgencyClientsResponse;
+use Biplane\YandexDirect\Api\V5\Contract\AddPassportOrganizationMemberRequest;
+use Biplane\YandexDirect\Api\V5\Contract\AddPassportOrganizationMemberResponse;
 use Biplane\YandexDirect\Api\V5\Contract\AddPassportOrganizationRequest;
 use Biplane\YandexDirect\Api\V5\Contract\AddPassportOrganizationResponse;
 use Biplane\YandexDirect\Api\V5\Contract\GetAgencyClientsRequest;
@@ -53,6 +55,7 @@ class AgencyClients extends ApiSoapClientV5
             'GenderEnum' => 'Biplane\YandexDirect\Api\V5\Contract\GenderEnum',
             'MobileOperatingSystemTypeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\MobileOperatingSystemTypeEnum',
             'LangEnum' => 'Biplane\YandexDirect\Api\V5\Contract\LangEnum',
+            'RoleEnum' => 'Biplane\YandexDirect\Api\V5\Contract\RoleEnum',
             'RepresentativeRoleEnum' => 'Biplane\YandexDirect\Api\V5\Contract\RepresentativeRoleEnum',
             'OperationEnum' => 'Biplane\YandexDirect\Api\V5\Contract\OperationEnum',
             'ServingStatusEnum' => 'Biplane\YandexDirect\Api\V5\Contract\ServingStatusEnum',
@@ -130,12 +133,15 @@ class AgencyClients extends ApiSoapClientV5
             'AgencyClientFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AgencyClientFieldEnum',
             'AgencyClientsSelectionCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\AgencyClientsSelectionCriteria',
             'AgencyClientUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\AgencyClientUpdateItem',
+            'SendInviteTo' => 'Biplane\YandexDirect\Api\V5\Contract\SendInviteTo',
             'GetRequest' => 'Biplane\YandexDirect\Api\V5\Contract\GetAgencyClientsRequest',
             'GetResponse' => 'Biplane\YandexDirect\Api\V5\Contract\GetAgencyClientsResponse',
             'AddRequest' => 'Biplane\YandexDirect\Api\V5\Contract\AddAgencyClientsRequest',
             'AddResponse' => 'Biplane\YandexDirect\Api\V5\Contract\AddAgencyClientsResponse',
             'AddPassportOrganizationRequest' => 'Biplane\YandexDirect\Api\V5\Contract\AddPassportOrganizationRequest',
             'AddPassportOrganizationResponse' => 'Biplane\YandexDirect\Api\V5\Contract\AddPassportOrganizationResponse',
+            'AddPassportOrganizationMemberRequest' => 'Biplane\YandexDirect\Api\V5\Contract\AddPassportOrganizationMemberRequest',
+            'AddPassportOrganizationMemberResponse' => 'Biplane\YandexDirect\Api\V5\Contract\AddPassportOrganizationMemberResponse',
             'UpdateRequest' => 'Biplane\YandexDirect\Api\V5\Contract\UpdateAgencyClientsRequest',
             'UpdateResponse' => 'Biplane\YandexDirect\Api\V5\Contract\UpdateAgencyClientsResponse',
         ];
@@ -156,6 +162,11 @@ class AgencyClients extends ApiSoapClientV5
     public function addPassportOrganization(AddPassportOrganizationRequest $parameters): AddPassportOrganizationResponse
     {
         return $this->__soapCall('addPassportOrganization', [$parameters]);
+    }
+
+    public function addPassportOrganizationMember(AddPassportOrganizationMemberRequest $parameters): AddPassportOrganizationMemberResponse
+    {
+        return $this->__soapCall('addPassportOrganizationMember', [$parameters]);
     }
 
     public function update(UpdateAgencyClientsRequest $parameters): UpdateAgencyClientsResponse

@@ -13,8 +13,6 @@ use Biplane\YandexDirect\Api\V5\Contract\GetBidModifiersRequest;
 use Biplane\YandexDirect\Api\V5\Contract\GetBidModifiersResponse;
 use Biplane\YandexDirect\Api\V5\Contract\SetBidModifiersRequest;
 use Biplane\YandexDirect\Api\V5\Contract\SetBidModifiersResponse;
-use Biplane\YandexDirect\Api\V5\Contract\ToggleBidModifiersRequest;
-use Biplane\YandexDirect\Api\V5\Contract\ToggleBidModifiersResponse;
 use Biplane\YandexDirect\Config;
 
 /**
@@ -55,6 +53,7 @@ class BidModifiers extends ApiSoapClientV5
             'GenderEnum' => 'Biplane\YandexDirect\Api\V5\Contract\GenderEnum',
             'MobileOperatingSystemTypeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\MobileOperatingSystemTypeEnum',
             'LangEnum' => 'Biplane\YandexDirect\Api\V5\Contract\LangEnum',
+            'RoleEnum' => 'Biplane\YandexDirect\Api\V5\Contract\RoleEnum',
             'RepresentativeRoleEnum' => 'Biplane\YandexDirect\Api\V5\Contract\RepresentativeRoleEnum',
             'OperationEnum' => 'Biplane\YandexDirect\Api\V5\Contract\OperationEnum',
             'ServingStatusEnum' => 'Biplane\YandexDirect\Api\V5\Contract\ServingStatusEnum',
@@ -84,7 +83,6 @@ class BidModifiers extends ApiSoapClientV5
             'AutotargetingCategoriesFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategoriesFieldEnum',
             'AutotargetingBrandOptionsFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingBrandOptionsFieldEnum',
             'BidModifierTypeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\BidModifierTypeEnum',
-            'BidModifierToggleTypeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\BidModifierToggleTypeEnum',
             'BidModifierLevelEnum' => 'Biplane\YandexDirect\Api\V5\Contract\BidModifierLevelEnum',
             'BidModifierFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\BidModifierFieldEnum',
             'MobileAdjustmentFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\MobileAdjustmentFieldEnum',
@@ -131,9 +129,7 @@ class BidModifiers extends ApiSoapClientV5
             'SerpLayoutAdjustmentAdd' => 'Biplane\YandexDirect\Api\V5\Contract\SerpLayoutAdjustmentAdd',
             'IncomeGradeAdjustmentAdd' => 'Biplane\YandexDirect\Api\V5\Contract\IncomeGradeAdjustmentAdd',
             'BidModifierAddItem' => 'Biplane\YandexDirect\Api\V5\Contract\BidModifierAddItem',
-            'ToggleResult' => 'Biplane\YandexDirect\Api\V5\Contract\ToggleResult',
             'BidModifierSetItem' => 'Biplane\YandexDirect\Api\V5\Contract\BidModifierSetItem',
-            'BidModifierToggleItem' => 'Biplane\YandexDirect\Api\V5\Contract\BidModifierToggleItem',
             'GetRequest' => 'Biplane\YandexDirect\Api\V5\Contract\GetBidModifiersRequest',
             'GetResponse' => 'Biplane\YandexDirect\Api\V5\Contract\GetBidModifiersResponse',
             'AddRequest' => 'Biplane\YandexDirect\Api\V5\Contract\AddBidModifiersRequest',
@@ -142,8 +138,6 @@ class BidModifiers extends ApiSoapClientV5
             'SetResponse' => 'Biplane\YandexDirect\Api\V5\Contract\SetBidModifiersResponse',
             'DeleteRequest' => 'Biplane\YandexDirect\Api\V5\Contract\DeleteBidModifiersRequest',
             'DeleteResponse' => 'Biplane\YandexDirect\Api\V5\Contract\DeleteBidModifiersResponse',
-            'ToggleRequest' => 'Biplane\YandexDirect\Api\V5\Contract\ToggleBidModifiersRequest',
-            'ToggleResponse' => 'Biplane\YandexDirect\Api\V5\Contract\ToggleBidModifiersResponse',
         ];
 
         parent::__construct(self::ENDPOINT, $config, $options);
@@ -167,10 +161,5 @@ class BidModifiers extends ApiSoapClientV5
     public function delete(DeleteBidModifiersRequest $parameters): DeleteBidModifiersResponse
     {
         return $this->__soapCall('delete', [$parameters]);
-    }
-
-    public function toggle(ToggleBidModifiersRequest $parameters): ToggleBidModifiersResponse
-    {
-        return $this->__soapCall('toggle', [$parameters]);
     }
 }

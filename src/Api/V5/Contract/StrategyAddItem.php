@@ -36,6 +36,9 @@ class StrategyAddItem
 //    protected $AverageCpa = null;
 
 //    Can be omitted.
+//    protected $MaxProfit = null;
+
+//    Can be omitted.
 //    protected $PayForConversion = null;
 
 //    Can be omitted.
@@ -61,6 +64,12 @@ class StrategyAddItem
 
 //    Can be omitted.
 //    protected $PayForConversionCrr = null;
+
+//    Can be omitted.
+//    protected $AverageCpaMultipleGoals = null;
+
+//    Can be omitted.
+//    protected $PayForConversionMultipleGoals = null;
 
     /**
      * @return static
@@ -200,6 +209,21 @@ class StrategyAddItem
         return $this;
     }
 
+    public function getMaxProfit(): ?StrategyMaxProfitAddItem
+    {
+        return $this->MaxProfit ?? null;
+    }
+
+    /**
+     * @return $this
+     */
+    public function setMaxProfit(?StrategyMaxProfitAddItem $value = null)
+    {
+        $this->MaxProfit = $value;
+
+        return $this;
+    }
+
     public function getPayForConversion(): ?StrategyPayForConversionAddItem
     {
         return $this->PayForConversion ?? null;
@@ -331,6 +355,36 @@ class StrategyAddItem
     public function setPayForConversionCrr(?StrategyPayForConversionCrrAddItem $value = null)
     {
         $this->PayForConversionCrr = $value;
+
+        return $this;
+    }
+
+    public function getAverageCpaMultipleGoals(): ?StrategyAverageCpaMultipleGoalsAddItem
+    {
+        return $this->AverageCpaMultipleGoals ?? null;
+    }
+
+    /**
+     * @return $this
+     */
+    public function setAverageCpaMultipleGoals(?StrategyAverageCpaMultipleGoalsAddItem $value = null)
+    {
+        $this->AverageCpaMultipleGoals = $value;
+
+        return $this;
+    }
+
+    public function getPayForConversionMultipleGoals(): ?StrategyPayForConversionMultipleGoalsAddItem
+    {
+        return $this->PayForConversionMultipleGoals ?? null;
+    }
+
+    /**
+     * @return $this
+     */
+    public function setPayForConversionMultipleGoals(?StrategyPayForConversionMultipleGoalsAddItem $value = null)
+    {
+        $this->PayForConversionMultipleGoals = $value;
 
         return $this;
     }

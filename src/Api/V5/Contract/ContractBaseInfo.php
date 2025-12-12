@@ -27,6 +27,9 @@ class ContractBaseInfo
 //    Can be omitted.
 //    protected $SubjectType = null;
 
+//    Can be omitted.
+//    protected $IsAgencyPayment = null;
+
     /**
      * @return static
      */
@@ -121,6 +124,26 @@ class ContractBaseInfo
     public function setSubjectType(?string $value = null)
     {
         $this->SubjectType = $value;
+
+        return $this;
+    }
+
+    /**
+     * @see YesNoEnum
+     */
+    public function getIsAgencyPayment(): ?string
+    {
+        return $this->IsAgencyPayment ?? null;
+    }
+
+    /**
+     * @see YesNoEnum
+     *
+     * @return $this
+     */
+    public function setIsAgencyPayment(?string $value = null)
+    {
+        $this->IsAgencyPayment = $value;
 
         return $this;
     }

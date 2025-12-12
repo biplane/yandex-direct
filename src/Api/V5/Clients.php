@@ -49,6 +49,7 @@ class Clients extends ApiSoapClientV5
             'GenderEnum' => 'Biplane\YandexDirect\Api\V5\Contract\GenderEnum',
             'MobileOperatingSystemTypeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\MobileOperatingSystemTypeEnum',
             'LangEnum' => 'Biplane\YandexDirect\Api\V5\Contract\LangEnum',
+            'RoleEnum' => 'Biplane\YandexDirect\Api\V5\Contract\RoleEnum',
             'RepresentativeRoleEnum' => 'Biplane\YandexDirect\Api\V5\Contract\RepresentativeRoleEnum',
             'OperationEnum' => 'Biplane\YandexDirect\Api\V5\Contract\OperationEnum',
             'ServingStatusEnum' => 'Biplane\YandexDirect\Api\V5\Contract\ServingStatusEnum',

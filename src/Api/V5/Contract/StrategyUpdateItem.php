@@ -39,6 +39,9 @@ class StrategyUpdateItem
 //    protected $AverageCpa = null;
 
 //    Can be omitted.
+//    protected $MaxProfit = null;
+
+//    Can be omitted.
 //    protected $PayForConversion = null;
 
 //    Can be omitted.
@@ -64,6 +67,12 @@ class StrategyUpdateItem
 
 //    Can be omitted.
 //    protected $PayForConversionCrr = null;
+
+//    Can be omitted.
+//    protected $AverageCpaMultipleGoals = null;
+
+//    Can be omitted.
+//    protected $PayForConversionMultipleGoals = null;
 
     /**
      * @return static
@@ -218,6 +227,21 @@ class StrategyUpdateItem
         return $this;
     }
 
+    public function getMaxProfit(): ?StrategyMaxProfitUpdateItem
+    {
+        return $this->MaxProfit ?? null;
+    }
+
+    /**
+     * @return $this
+     */
+    public function setMaxProfit(?StrategyMaxProfitUpdateItem $value = null)
+    {
+        $this->MaxProfit = $value;
+
+        return $this;
+    }
+
     public function getPayForConversion(): ?StrategyPayForConversionUpdateItem
     {
         return $this->PayForConversion ?? null;
@@ -349,6 +373,36 @@ class StrategyUpdateItem
     public function setPayForConversionCrr(?StrategyPayForConversionCrrUpdateItem $value = null)
     {
         $this->PayForConversionCrr = $value;
+
+        return $this;
+    }
+
+    public function getAverageCpaMultipleGoals(): ?StrategyAverageCpaMultipleGoalsUpdateItem
+    {
+        return $this->AverageCpaMultipleGoals ?? null;
+    }
+
+    /**
+     * @return $this
+     */
+    public function setAverageCpaMultipleGoals(?StrategyAverageCpaMultipleGoalsUpdateItem $value = null)
+    {
+        $this->AverageCpaMultipleGoals = $value;
+
+        return $this;
+    }
+
+    public function getPayForConversionMultipleGoals(): ?StrategyPayForConversionMultipleGoalsUpdateItem
+    {
+        return $this->PayForConversionMultipleGoals ?? null;
+    }
+
+    /**
+     * @return $this
+     */
+    public function setPayForConversionMultipleGoals(?StrategyPayForConversionMultipleGoalsUpdateItem $value = null)
+    {
+        $this->PayForConversionMultipleGoals = $value;
 
         return $this;
     }

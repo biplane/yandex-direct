@@ -34,4 +34,10 @@ class TextCampaignSearchStrategyTypeEnum
     public const AVERAGE_CRR = 'AVERAGE_CRR';
 
     public const PAY_FOR_CONVERSION_CRR = 'PAY_FOR_CONVERSION_CRR';
+
+    public const AVERAGE_CPA_MULTIPLE_GOALS = 'AVERAGE_CPA_MULTIPLE_GOALS';
+
+    public const PAY_FOR_CONVERSION_MULTIPLE_GOALS = 'PAY_FOR_CONVERSION_MULTIPLE_GOALS';
+
+    public const MAX_PROFIT = 'MAX_PROFIT';
 }

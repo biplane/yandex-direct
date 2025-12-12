@@ -29,6 +29,9 @@ class GetStrategiesRequest extends GetRequestGeneral
 //    protected $StrategyAverageCpaFieldNames = null;
 
 //    Can be omitted.
+//    protected $StrategyMaxProfitFieldNames = null;
+
+//    Can be omitted.
 //    protected $StrategyPayForConversionFieldNames = null;
 
 //    Can be omitted.
@@ -54,6 +57,12 @@ class GetStrategiesRequest extends GetRequestGeneral
 
 //    Can be omitted.
 //    protected $StrategyPayForConversionCrrFieldNames = null;
+
+//    Can be omitted.
+//    protected $StrategyAverageCpaMultipleGoalsFieldNames = null;
+
+//    Can be omitted.
+//    protected $StrategyPayForConversionMultipleGoalsFieldNames = null;
 
     public function getSelectionCriteria(): StrategiesSelectionCriteria
     {
@@ -186,6 +195,30 @@ class GetStrategiesRequest extends GetRequestGeneral
     public function setStrategyAverageCpaFieldNames(?array $value = null)
     {
         $this->StrategyAverageCpaFieldNames = $value;
+
+        return $this;
+    }
+
+    /**
+     * @see StrategyMaxProfitFieldEnum
+     *
+     * @return string[]|null
+     */
+    public function getStrategyMaxProfitFieldNames(): ?array
+    {
+        return $this->StrategyMaxProfitFieldNames ?? null;
+    }
+
+    /**
+     * @see StrategyMaxProfitFieldEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
+     */
+    public function setStrategyMaxProfitFieldNames(?array $value = null)
+    {
+        $this->StrategyMaxProfitFieldNames = $value;
 
         return $this;
     }
@@ -402,6 +435,54 @@ class GetStrategiesRequest extends GetRequestGeneral
     public function setStrategyPayForConversionCrrFieldNames(?array $value = null)
     {
         $this->StrategyPayForConversionCrrFieldNames = $value;
+
+        return $this;
+    }
+
+    /**
+     * @see StrategyAverageCpaMultipleGoalsFieldEnum
+     *
+     * @return string[]|null
+     */
+    public function getStrategyAverageCpaMultipleGoalsFieldNames(): ?array
+    {
+        return $this->StrategyAverageCpaMultipleGoalsFieldNames ?? null;
+    }
+
+    /**
+     * @see StrategyAverageCpaMultipleGoalsFieldEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
+     */
+    public function setStrategyAverageCpaMultipleGoalsFieldNames(?array $value = null)
+    {
+        $this->StrategyAverageCpaMultipleGoalsFieldNames = $value;
+
+        return $this;
+    }
+
+    /**
+     * @see StrategyPayForConversionMultipleGoalsFieldEnum
+     *
+     * @return string[]|null
+     */
+    public function getStrategyPayForConversionMultipleGoalsFieldNames(): ?array
+    {
+        return $this->StrategyPayForConversionMultipleGoalsFieldNames ?? null;
+    }
+
+    /**
+     * @see StrategyPayForConversionMultipleGoalsFieldEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
+     */
+    public function setStrategyPayForConversionMultipleGoalsFieldNames(?array $value = null)
+    {
+        $this->StrategyPayForConversionMultipleGoalsFieldNames = $value;
 
         return $this;
     }
