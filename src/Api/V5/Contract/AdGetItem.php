@@ -84,6 +84,9 @@ class AdGetItem
 //    Can be omitted.
 //    protected $ListingAd = null;
 
+//    Can be omitted.
+//    protected $ResponsiveAd = null;
+
     /**
      * @return static
      */
@@ -478,6 +481,21 @@ class AdGetItem
     public function setListingAd(?ListingAdGet $value = null)
     {
         $this->ListingAd = $value;
+
+        return $this;
+    }
+
+    public function getResponsiveAd(): ?ResponsiveAdGet
+    {
+        return $this->ResponsiveAd ?? null;
+    }
+
+    /**
+     * @return $this
+     */
+    public function setResponsiveAd(?ResponsiveAdGet $value = null)
+    {
+        $this->ResponsiveAd = $value;
 
         return $this;
     }

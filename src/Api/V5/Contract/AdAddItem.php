@@ -16,6 +16,9 @@ class AdAddItem extends AdAddItemBase
 //    protected $TextAd = null;
 
 //    Can be omitted.
+//    protected $ResponsiveAd = null;
+
+//    Can be omitted.
 //    protected $DynamicTextAd = null;
 
 //    Can be omitted.
@@ -65,6 +68,21 @@ class AdAddItem extends AdAddItemBase
     public function setTextAd(?TextAdAdd $value = null)
     {
         $this->TextAd = $value;
+
+        return $this;
+    }
+
+    public function getResponsiveAd(): ?ResponsiveAdAdd
+    {
+        return $this->ResponsiveAd ?? null;
+    }
+
+    /**
+     * @return $this
+     */
+    public function setResponsiveAd(?ResponsiveAdAdd $value = null)
+    {
+        $this->ResponsiveAd = $value;
 
         return $this;
     }

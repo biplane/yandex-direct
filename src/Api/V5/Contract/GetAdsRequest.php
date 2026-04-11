@@ -61,6 +61,9 @@ class GetAdsRequest extends GetRequestGeneral
 //    Can be omitted.
 //    protected $ListingAdFieldNames = null;
 
+//    Can be omitted.
+//    protected $ResponsiveAdFieldNames = null;
+
     public function getSelectionCriteria(): AdsSelectionCriteria
     {
         return $this->SelectionCriteria;
@@ -456,6 +459,30 @@ class GetAdsRequest extends GetRequestGeneral
     public function setListingAdFieldNames(?array $value = null)
     {
         $this->ListingAdFieldNames = $value;
+
+        return $this;
+    }
+
+    /**
+     * @see ResponsiveAdFieldEnum
+     *
+     * @return string[]|null
+     */
+    public function getResponsiveAdFieldNames(): ?array
+    {
+        return $this->ResponsiveAdFieldNames ?? null;
+    }
+
+    /**
+     * @see ResponsiveAdFieldEnum
+     *
+     * @param string[]|null $value
+     *
+     * @return $this
+     */
+    public function setResponsiveAdFieldNames(?array $value = null)
+    {
+        $this->ResponsiveAdFieldNames = $value;
 
         return $this;
     }

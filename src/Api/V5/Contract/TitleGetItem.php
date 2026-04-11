@@ -10,21 +10,21 @@ use AllowDynamicProperties;
  * Auto-generated code.
  */
 #[AllowDynamicProperties]
-class AdImageGetItem extends ExtensionModeration
+class TitleGetItem extends ExtensionModeration
 {
-    protected $ImageHash = null;
+    protected $Title = null;
 
-    public function getImageHash(): string
+    public function getTitle(): string
     {
-        return $this->ImageHash;
+        return $this->Title;
     }
 
     /**
      * @return $this
      */
-    public function setImageHash(string $value)
+    public function setTitle(string $value)
     {
-        $this->ImageHash = $value;
+        $this->Title = $value;
 
         return $this;
     }

@@ -18,6 +18,9 @@ class AdUpdateItem
 //    protected $TextAd = null;
 
 //    Can be omitted.
+//    protected $ResponsiveAd = null;
+
+//    Can be omitted.
 //    protected $DynamicTextAd = null;
 
 //    Can be omitted.
@@ -90,6 +93,21 @@ class AdUpdateItem
     public function setTextAd(?TextAdUpdate $value = null)
     {
         $this->TextAd = $value;
+
+        return $this;
+    }
+
+    public function getResponsiveAd(): ?ResponsiveAdUpdate
+    {
+        return $this->ResponsiveAd ?? null;
+    }
+
+    /**
+     * @return $this
+     */
+    public function setResponsiveAd(?ResponsiveAdUpdate $value = null)
+    {
+        $this->ResponsiveAd = $value;
 
         return $this;
     }
