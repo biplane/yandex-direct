@@ -145,6 +145,10 @@ generate($generator, [
 generate($generator, [
     'inputFile' => 'https://api.direct.yandex.com/v501/ads?wsdl',
     'renameType' => function ($typeName) {
+        if ('AdImageGetItem' === $typeName) {
+            return 'AdImageGetItemShort';
+        }
+
         return preg_replace(
             '#^(Add|Archive|Delete|Get|Moderate|Resume|Suspend|Unarchive|Update)(Request|Response)$#',
             '$1Ads$2',

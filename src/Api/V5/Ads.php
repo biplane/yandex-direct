@@ -131,7 +131,7 @@ class Ads extends ApiSoapClientV5
             'AdExtensionAdGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\AdExtensionAdGetItem',
             'TextGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\TextGetItem',
             'TitleGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\TitleGetItem',
-            'AdImageGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\AdImageGetItem',
+            'AdImageGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\AdImageGetItemShort',
             'VideoExtensionWithStatusClarificationGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\VideoExtensionWithStatusClarificationGetItem',
             'VideoExtensionGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\VideoExtensionGetItem',
             'TrackingPixelGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\TrackingPixelGetItem',

@@ -103,7 +103,7 @@ class ResponsiveAdGet
     }
 
     /**
-     * @return AdImageGetItem[]|null
+     * @return AdImageGetItemShort[]|null
      */
     public function getAdImages(): ?array
     {
@@ -111,7 +111,7 @@ class ResponsiveAdGet
     }
 
     /**
-     * @param AdImageGetItem[]|null $value
+     * @param AdImageGetItemShort[]|null $value
      *
      * @return $this
      */
