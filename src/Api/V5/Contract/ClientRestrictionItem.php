@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class ClientRestrictionItem
 {
-    protected $Element = null;
+    /** @var 'ADGROUPS_TOTAL_PER_CAMPAIGN'|'ADS_TOTAL_PER_ADGROUP'|'API_POINTS'|'CAMPAIGNS_TOTAL_PER_CLIENT'|'CAMPAIGNS_UNARCHIVED_PER_CLIENT'|'FORECAST_REPORTS_TOTAL_IN_QUEUE'|'KEYWORDS_TOTAL_PER_ADGROUP'|'STAT_REPORTS_TOTAL_IN_QUEUE'|'WORDSTAT_REPORTS_TOTAL_IN_QUEUE'|'AD_EXTENSIONS_TOTAL'|'GENERAL_DOMAIN_BLACKLIST_SIZE'|'VIDEO_DOMAIN_BLACKLIST_SIZE' */
+    protected $Element;
 
-    protected $Value = null;
+    /** @var int */
+    protected $Value;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -25,7 +29,11 @@ class ClientRestrictionItem
     }
 
     /**
-     * @see ClientRestrictionEnum
+     * Get Element
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\ClientRestrictionEnum
+     *
+     * @return 'ADGROUPS_TOTAL_PER_CAMPAIGN'|'ADS_TOTAL_PER_ADGROUP'|'API_POINTS'|'CAMPAIGNS_TOTAL_PER_CLIENT'|'CAMPAIGNS_UNARCHIVED_PER_CLIENT'|'FORECAST_REPORTS_TOTAL_IN_QUEUE'|'KEYWORDS_TOTAL_PER_ADGROUP'|'STAT_REPORTS_TOTAL_IN_QUEUE'|'WORDSTAT_REPORTS_TOTAL_IN_QUEUE'|'AD_EXTENSIONS_TOTAL'|'GENERAL_DOMAIN_BLACKLIST_SIZE'|'VIDEO_DOMAIN_BLACKLIST_SIZE'
      */
     public function getElement(): string
     {
@@ -33,7 +41,11 @@ class ClientRestrictionItem
     }
 
     /**
-     * @see ClientRestrictionEnum
+     * Set Element
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\ClientRestrictionEnum
+     *
+     * @param 'ADGROUPS_TOTAL_PER_CAMPAIGN'|'ADS_TOTAL_PER_ADGROUP'|'API_POINTS'|'CAMPAIGNS_TOTAL_PER_CLIENT'|'CAMPAIGNS_UNARCHIVED_PER_CLIENT'|'FORECAST_REPORTS_TOTAL_IN_QUEUE'|'KEYWORDS_TOTAL_PER_ADGROUP'|'STAT_REPORTS_TOTAL_IN_QUEUE'|'WORDSTAT_REPORTS_TOTAL_IN_QUEUE'|'AD_EXTENSIONS_TOTAL'|'GENERAL_DOMAIN_BLACKLIST_SIZE'|'VIDEO_DOMAIN_BLACKLIST_SIZE' $value
      *
      * @return $this
      */
@@ -44,12 +56,17 @@ class ClientRestrictionItem
         return $this;
     }
 
+    /**
+     * Get Value
+     */
     public function getValue(): int
     {
         return $this->Value;
     }
 
     /**
+     * Set Value
+     *
      * @return $this
      */
     public function setValue(int $value)

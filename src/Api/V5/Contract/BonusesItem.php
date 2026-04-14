@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class BonusesItem
 {
-    protected $AwaitingBonus = null;
+    /** @var int */
+    protected $AwaitingBonus;
 
-    protected $AwaitingBonusWithoutNds = null;
+    /** @var int */
+    protected $AwaitingBonusWithoutNds;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -24,12 +28,17 @@ class BonusesItem
         return new static();
     }
 
+    /**
+     * Get AwaitingBonus
+     */
     public function getAwaitingBonus(): int
     {
         return $this->AwaitingBonus;
     }
 
     /**
+     * Set AwaitingBonus
+     *
      * @return $this
      */
     public function setAwaitingBonus(int $value)
@@ -39,12 +48,17 @@ class BonusesItem
         return $this;
     }
 
+    /**
+     * Get AwaitingBonusWithoutNds
+     */
     public function getAwaitingBonusWithoutNds(): int
     {
         return $this->AwaitingBonusWithoutNds;
     }
 
     /**
+     * Set AwaitingBonusWithoutNds
+     *
      * @return $this
      */
     public function setAwaitingBonusWithoutNds(int $value)

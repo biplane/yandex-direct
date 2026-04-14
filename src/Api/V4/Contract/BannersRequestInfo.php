@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class BannersRequestInfo
 {
-    protected $CampaignIDS = null;
+//    Can be omitted.
+//    protected $CampaignIDS;
 
-    protected $BannerIDS = null;
+//    Can be omitted.
+//    protected $BannerIDS;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -25,19 +29,23 @@ class BannersRequestInfo
     }
 
     /**
-     * @return int[]|null
+     * Get CampaignIDS
+     *
+     * @return list<int>|null
      */
     public function getCampaignIDS(): ?array
     {
-        return $this->CampaignIDS;
+        return $this->CampaignIDS ?? null;
     }
 
     /**
-     * @param int[]|null $value
+     * Set CampaignIDS
+     *
+     * @param list<int>|null $value
      *
      * @return $this
      */
-    public function setCampaignIDS(?array $value = null)
+    public function setCampaignIDS(?array $value)
     {
         $this->CampaignIDS = $value;
 
@@ -45,19 +53,23 @@ class BannersRequestInfo
     }
 
     /**
-     * @return int[]|null
+     * Get BannerIDS
+     *
+     * @return list<int>|null
      */
     public function getBannerIDS(): ?array
     {
-        return $this->BannerIDS;
+        return $this->BannerIDS ?? null;
     }
 
     /**
-     * @param int[]|null $value
+     * Set BannerIDS
+     *
+     * @param list<int>|null $value
      *
      * @return $this
      */
-    public function setBannerIDS(?array $value = null)
+    public function setBannerIDS(?array $value)
     {
         $this->BannerIDS = $value;
 

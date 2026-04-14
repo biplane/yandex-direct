@@ -13,24 +13,26 @@ use AllowDynamicProperties;
 class MobileAppAdBase
 {
 //    Can be omitted.
-//    protected $Title = null;
+//    protected $Title;
 
 //    Can be omitted.
-//    protected $Text = null;
+//    protected $Text;
 
 //    Can be omitted.
-//    protected $TrackingUrl = null;
+//    protected $TrackingUrl;
 
 //    Can be omitted.
-//    protected $Action = null;
+//    protected $Action;
 
 //    Can be omitted.
-//    protected $AdImageHash = null;
+//    protected $AdImageHash;
 
 //    Can be omitted.
-//    protected $ErirAdDescription = null;
+//    protected $ErirAdDescription;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -38,45 +40,60 @@ class MobileAppAdBase
         return new static();
     }
 
+    /**
+     * Get Title
+     */
     public function getTitle(): ?string
     {
         return $this->Title ?? null;
     }
 
     /**
+     * Set Title
+     *
      * @return $this
      */
-    public function setTitle(?string $value = null)
+    public function setTitle(?string $value)
     {
         $this->Title = $value;
 
         return $this;
     }
 
+    /**
+     * Get Text
+     */
     public function getText(): ?string
     {
         return $this->Text ?? null;
     }
 
     /**
+     * Set Text
+     *
      * @return $this
      */
-    public function setText(?string $value = null)
+    public function setText(?string $value)
     {
         $this->Text = $value;
 
         return $this;
     }
 
+    /**
+     * Get TrackingUrl
+     */
     public function getTrackingUrl(): ?string
     {
         return $this->TrackingUrl ?? null;
     }
 
     /**
+     * Set TrackingUrl
+     *
      * @return $this
      */
-    public function setTrackingUrl(?string $value = null)
+    public function setTrackingUrl(?string $value)
     {
         $this->TrackingUrl = $value;
 
@@ -84,7 +101,11 @@ class MobileAppAdBase
     }
 
     /**
-     * @see MobileAppAdActionEnum
+     * Get Action
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\MobileAppAdActionEnum
+     *
+     * @return 'DOWNLOAD'|'GET'|'INSTALL'|'MORE'|'OPEN'|'UPDATE'|'PLAY'|'BUY_AUTODETECT'|null
      */
     public function getAction(): ?string
     {
@@ -92,41 +113,55 @@ class MobileAppAdBase
     }
 
     /**
-     * @see MobileAppAdActionEnum
+     * Set Action
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\MobileAppAdActionEnum
+     *
+     * @param 'DOWNLOAD'|'GET'|'INSTALL'|'MORE'|'OPEN'|'UPDATE'|'PLAY'|'BUY_AUTODETECT'|null $value
      *
      * @return $this
      */
-    public function setAction(?string $value = null)
+    public function setAction(?string $value)
     {
         $this->Action = $value;
 
         return $this;
     }
 
+    /**
+     * Get AdImageHash
+     */
     public function getAdImageHash(): ?string
     {
         return $this->AdImageHash ?? null;
     }
 
     /**
+     * Set AdImageHash
+     *
      * @return $this
      */
-    public function setAdImageHash(?string $value = null)
+    public function setAdImageHash(?string $value)
     {
         $this->AdImageHash = $value;
 
         return $this;
     }
 
+    /**
+     * Get ErirAdDescription
+     */
     public function getErirAdDescription(): ?string
     {
         return $this->ErirAdDescription ?? null;
     }
 
     /**
+     * Set ErirAdDescription
+     *
      * @return $this
      */
-    public function setErirAdDescription(?string $value = null)
+    public function setErirAdDescription(?string $value)
     {
         $this->ErirAdDescription = $value;
 

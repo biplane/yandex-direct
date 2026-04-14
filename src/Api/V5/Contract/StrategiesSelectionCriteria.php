@@ -13,15 +13,17 @@ use AllowDynamicProperties;
 class StrategiesSelectionCriteria
 {
 //    Can be omitted.
-//    protected $Ids = null;
+//    protected $Ids;
 
 //    Can be omitted.
-//    protected $Types = null;
+//    protected $Types;
 
 //    Can be omitted.
-//    protected $IsArchived = null;
+//    protected $IsArchived;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -30,19 +32,23 @@ class StrategiesSelectionCriteria
     }
 
     /**
-     * @return int[]|null
+     * Get Ids
+     *
+     * @return list<int>
      */
-    public function getIds(): ?array
+    public function getIds(): array
     {
-        return $this->Ids ?? null;
+        return $this->Ids ?? [];
     }
 
     /**
-     * @param int[]|null $value
+     * Set Ids
+     *
+     * @param list<int> $value
      *
      * @return $this
      */
-    public function setIds(?array $value = null)
+    public function setIds(array $value)
     {
         $this->Ids = $value;
 
@@ -50,23 +56,27 @@ class StrategiesSelectionCriteria
     }
 
     /**
-     * @see StrategyType
+     * Get Types
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\StrategyType
+     *
+     * @return list<'AVERAGE_CPC'|'AVERAGE_CPA'|'PAY_FOR_CONVERSION'|'WB_MAXIMUM_CONVERSION_RATE'|'WB_MAXIMUM_CLICKS'|'AVERAGE_CRR'|'PAY_FOR_CONVERSION_CRR'|'AVERAGE_CPC_PER_CAMPAIGN'|'AVERAGE_CPC_PER_FILTER'|'AVERAGE_CPA_PER_CAMPAIGN'|'AVERAGE_CPA_PER_FILTER'|'PAY_FOR_CONVERSION_PER_CAMPAIGN'|'PAY_FOR_CONVERSION_PER_FILTER'|'MAX_PROFIT'|'AVERAGE_CPA_MULTIPLE_GOALS'|'PAY_FOR_CONVERSION_MULTIPLE_GOALS'|'UNKNOWN'>
      */
-    public function getTypes(): ?array
+    public function getTypes(): array
     {
-        return $this->Types ?? null;
+        return $this->Types ?? [];
     }
 
     /**
-     * @see StrategyType
+     * Set Types
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\StrategyType
+     *
+     * @param list<'AVERAGE_CPC'|'AVERAGE_CPA'|'PAY_FOR_CONVERSION'|'WB_MAXIMUM_CONVERSION_RATE'|'WB_MAXIMUM_CLICKS'|'AVERAGE_CRR'|'PAY_FOR_CONVERSION_CRR'|'AVERAGE_CPC_PER_CAMPAIGN'|'AVERAGE_CPC_PER_FILTER'|'AVERAGE_CPA_PER_CAMPAIGN'|'AVERAGE_CPA_PER_FILTER'|'PAY_FOR_CONVERSION_PER_CAMPAIGN'|'PAY_FOR_CONVERSION_PER_FILTER'|'MAX_PROFIT'|'AVERAGE_CPA_MULTIPLE_GOALS'|'PAY_FOR_CONVERSION_MULTIPLE_GOALS'|'UNKNOWN'> $value
      *
      * @return $this
      */
-    public function setTypes(?array $value = null)
+    public function setTypes(array $value)
     {
         $this->Types = $value;
 
@@ -74,7 +84,11 @@ class StrategiesSelectionCriteria
     }
 
     /**
-     * @see YesNoEnum
+     * Get IsArchived
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'|null
      */
     public function getIsArchived(): ?string
     {
@@ -82,11 +96,15 @@ class StrategiesSelectionCriteria
     }
 
     /**
-     * @see YesNoEnum
+     * Set IsArchived
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO'|null $value
      *
      * @return $this
      */
-    public function setIsArchived(?string $value = null)
+    public function setIsArchived(?string $value)
     {
         $this->IsArchived = $value;
 

@@ -13,39 +13,41 @@ use AllowDynamicProperties;
 class WebpageGetItem
 {
 //    Can be omitted.
-//    protected $Id = null;
+//    protected $Id;
 
 //    Can be omitted.
-//    protected $AdGroupId = null;
+//    protected $AdGroupId;
 
 //    Can be omitted.
-//    protected $CampaignId = null;
+//    protected $CampaignId;
 
 //    Can be omitted.
-//    protected $Name = null;
+//    protected $Name;
 
 //    Can be omitted.
-//    protected $Bid = null;
+//    protected $Bid;
 
 //    Can be omitted.
-//    protected $ContextBid = null;
+//    protected $ContextBid;
 
 //    Can be omitted.
-//    protected $StrategyPriority = null;
+//    protected $StrategyPriority;
 
 //    Can be omitted.
-//    protected $State = null;
+//    protected $State;
 
 //    Can be omitted.
-//    protected $StatusClarification = null;
+//    protected $StatusClarification;
 
 //    Can be omitted.
-//    protected $Conditions = null;
+//    protected $Conditions;
 
 //    Can be omitted.
-//    protected $ConditionType = null;
+//    protected $ConditionType;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -53,90 +55,120 @@ class WebpageGetItem
         return new static();
     }
 
+    /**
+     * Get Id
+     */
     public function getId(): ?int
     {
         return $this->Id ?? null;
     }
 
     /**
+     * Set Id
+     *
      * @return $this
      */
-    public function setId(?int $value = null)
+    public function setId(?int $value)
     {
         $this->Id = $value;
 
         return $this;
     }
 
+    /**
+     * Get AdGroupId
+     */
     public function getAdGroupId(): ?int
     {
         return $this->AdGroupId ?? null;
     }
 
     /**
+     * Set AdGroupId
+     *
      * @return $this
      */
-    public function setAdGroupId(?int $value = null)
+    public function setAdGroupId(?int $value)
     {
         $this->AdGroupId = $value;
 
         return $this;
     }
 
+    /**
+     * Get CampaignId
+     */
     public function getCampaignId(): ?int
     {
         return $this->CampaignId ?? null;
     }
 
     /**
+     * Set CampaignId
+     *
      * @return $this
      */
-    public function setCampaignId(?int $value = null)
+    public function setCampaignId(?int $value)
     {
         $this->CampaignId = $value;
 
         return $this;
     }
 
+    /**
+     * Get Name
+     */
     public function getName(): ?string
     {
         return $this->Name ?? null;
     }
 
     /**
+     * Set Name
+     *
      * @return $this
      */
-    public function setName(?string $value = null)
+    public function setName(?string $value)
     {
         $this->Name = $value;
 
         return $this;
     }
 
+    /**
+     * Get Bid
+     */
     public function getBid(): ?int
     {
         return $this->Bid ?? null;
     }
 
     /**
+     * Set Bid
+     *
      * @return $this
      */
-    public function setBid(?int $value = null)
+    public function setBid(?int $value)
     {
         $this->Bid = $value;
 
         return $this;
     }
 
+    /**
+     * Get ContextBid
+     */
     public function getContextBid(): ?int
     {
         return $this->ContextBid ?? null;
     }
 
     /**
+     * Set ContextBid
+     *
      * @return $this
      */
-    public function setContextBid(?int $value = null)
+    public function setContextBid(?int $value)
     {
         $this->ContextBid = $value;
 
@@ -144,7 +176,11 @@ class WebpageGetItem
     }
 
     /**
-     * @see PriorityEnum
+     * Get StrategyPriority
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\PriorityEnum
+     *
+     * @return 'LOW'|'NORMAL'|'HIGH'|null
      */
     public function getStrategyPriority(): ?string
     {
@@ -152,11 +188,15 @@ class WebpageGetItem
     }
 
     /**
-     * @see PriorityEnum
+     * Set StrategyPriority
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\PriorityEnum
+     *
+     * @param 'LOW'|'NORMAL'|'HIGH'|null $value
      *
      * @return $this
      */
-    public function setStrategyPriority(?string $value = null)
+    public function setStrategyPriority(?string $value)
     {
         $this->StrategyPriority = $value;
 
@@ -164,7 +204,11 @@ class WebpageGetItem
     }
 
     /**
-     * @see StateEnum
+     * Get State
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\StateEnum
+     *
+     * @return 'OFF'|'ON'|'SUSPENDED'|'OFF_BY_MONITORING'|'ARCHIVED'|'DELETED'|'UNKNOWN'|null
      */
     public function getState(): ?string
     {
@@ -172,26 +216,35 @@ class WebpageGetItem
     }
 
     /**
-     * @see StateEnum
+     * Set State
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\StateEnum
+     *
+     * @param 'OFF'|'ON'|'SUSPENDED'|'OFF_BY_MONITORING'|'ARCHIVED'|'DELETED'|'UNKNOWN'|null $value
      *
      * @return $this
      */
-    public function setState(?string $value = null)
+    public function setState(?string $value)
     {
         $this->State = $value;
 
         return $this;
     }
 
+    /**
+     * Get StatusClarification
+     */
     public function getStatusClarification(): ?string
     {
         return $this->StatusClarification ?? null;
     }
 
     /**
+     * Set StatusClarification
+     *
      * @return $this
      */
-    public function setStatusClarification(?string $value = null)
+    public function setStatusClarification(?string $value)
     {
         $this->StatusClarification = $value;
 
@@ -199,19 +252,23 @@ class WebpageGetItem
     }
 
     /**
-     * @return WebpageCondition[]|null
+     * Get Conditions
+     *
+     * @return list<WebpageCondition>
      */
-    public function getConditions(): ?array
+    public function getConditions(): array
     {
-        return $this->Conditions ?? null;
+        return $this->Conditions ?? [];
     }
 
     /**
-     * @param WebpageCondition[]|null $value
+     * Set Conditions
+     *
+     * @param list<WebpageCondition> $value
      *
      * @return $this
      */
-    public function setConditions(?array $value = null)
+    public function setConditions(array $value)
     {
         $this->Conditions = $value;
 
@@ -219,7 +276,11 @@ class WebpageGetItem
     }
 
     /**
-     * @see WebpageTypeEnum
+     * Get ConditionType
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\WebpageTypeEnum
+     *
+     * @return 'PAGES_ALL'|'PAGES_SUBSET'|null
      */
     public function getConditionType(): ?string
     {
@@ -227,11 +288,15 @@ class WebpageGetItem
     }
 
     /**
-     * @see WebpageTypeEnum
+     * Set ConditionType
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\WebpageTypeEnum
+     *
+     * @param 'PAGES_ALL'|'PAGES_SUBSET'|null $value
      *
      * @return $this
      */
-    public function setConditionType(?string $value = null)
+    public function setConditionType(?string $value)
     {
         $this->ConditionType = $value;
 

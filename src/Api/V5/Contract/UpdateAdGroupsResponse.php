@@ -5,16 +5,27 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 use AllowDynamicProperties;
+use ArrayIterator;
+use Countable;
+use IteratorAggregate;
+use Override;
+
+use function count;
 
 /**
  * Auto-generated code.
+ *
+ * @implements IteratorAggregate<int, ActionResult>
  */
 #[AllowDynamicProperties]
-class UpdateAdGroupsResponse
+class UpdateAdGroupsResponse implements IteratorAggregate, Countable
 {
-    protected $UpdateResults = [];
+    /** @var non-empty-list<ActionResult> */
+    protected $UpdateResults;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -23,7 +34,9 @@ class UpdateAdGroupsResponse
     }
 
     /**
-     * @return ActionResult[]
+     * Get UpdateResults
+     *
+     * @return non-empty-list<ActionResult>
      */
     public function getUpdateResults(): array
     {
@@ -31,7 +44,9 @@ class UpdateAdGroupsResponse
     }
 
     /**
-     * @param ActionResult[] $value
+     * Set UpdateResults
+     *
+     * @param non-empty-list<ActionResult> $value
      *
      * @return $this
      */
@@ -40,5 +55,20 @@ class UpdateAdGroupsResponse
         $this->UpdateResults = $value;
 
         return $this;
+    }
+
+    #[Override]
+    public function count(): int
+    {
+        return count($this->UpdateResults);
+    }
+
+    /**
+     * @return ArrayIterator<int, ActionResult>
+     */
+    #[Override]
+    public function getIterator(): ArrayIterator
+    {
+        return new ArrayIterator($this->UpdateResults);
     }
 }

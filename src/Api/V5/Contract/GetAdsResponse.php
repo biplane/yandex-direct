@@ -5,33 +5,70 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 use AllowDynamicProperties;
+use ArrayIterator;
+use Countable;
+use IteratorAggregate;
+use Override;
+
+use function count;
 
 /**
  * Auto-generated code.
+ *
+ * @implements IteratorAggregate<int, AdGetItem>
  */
 #[AllowDynamicProperties]
-class GetAdsResponse extends GetResponseGeneral
+class GetAdsResponse extends GetResponseGeneral implements IteratorAggregate, Countable
 {
 //    Can be omitted.
-//    protected $Ads = null;
+//    protected $Ads;
 
     /**
-     * @return AdGetItem[]|null
+     * Create a new instance.
+     *
+     * @return static
      */
-    public function getAds(): ?array
+    public static function create()
     {
-        return $this->Ads ?? null;
+        return new static();
     }
 
     /**
-     * @param AdGetItem[]|null $value
+     * Get Ads
+     *
+     * @return list<AdGetItem>
+     */
+    public function getAds(): array
+    {
+        return $this->Ads ?? [];
+    }
+
+    /**
+     * Set Ads
+     *
+     * @param list<AdGetItem> $value
      *
      * @return $this
      */
-    public function setAds(?array $value = null)
+    public function setAds(array $value)
     {
         $this->Ads = $value;
 
         return $this;
+    }
+
+    #[Override]
+    public function count(): int
+    {
+        return isset($this->Ads) ? count($this->Ads) : 0;
+    }
+
+    /**
+     * @return ArrayIterator<int, AdGetItem>
+     */
+    #[Override]
+    public function getIterator(): ArrayIterator
+    {
+        return new ArrayIterator($this->Ads ?? []);
     }
 }

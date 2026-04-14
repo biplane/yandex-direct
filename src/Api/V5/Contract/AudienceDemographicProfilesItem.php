@@ -12,15 +12,21 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class AudienceDemographicProfilesItem
 {
-    protected $Id = null;
+    /** @var int */
+    protected $Id;
 
-    protected $Type = null;
+    /** @var string */
+    protected $Type;
 
-    protected $Name = null;
+    /** @var string */
+    protected $Name;
 
-    protected $Description = null;
+    /** @var string */
+    protected $Description;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -28,12 +34,17 @@ class AudienceDemographicProfilesItem
         return new static();
     }
 
+    /**
+     * Get Id
+     */
     public function getId(): int
     {
         return $this->Id;
     }
 
     /**
+     * Set Id
+     *
      * @return $this
      */
     public function setId(int $value)
@@ -43,12 +54,17 @@ class AudienceDemographicProfilesItem
         return $this;
     }
 
+    /**
+     * Get Type
+     */
     public function getType(): string
     {
         return $this->Type;
     }
 
     /**
+     * Set Type
+     *
      * @return $this
      */
     public function setType(string $value)
@@ -58,12 +74,17 @@ class AudienceDemographicProfilesItem
         return $this;
     }
 
+    /**
+     * Get Name
+     */
     public function getName(): string
     {
         return $this->Name;
     }
 
     /**
+     * Set Name
+     *
      * @return $this
      */
     public function setName(string $value)
@@ -73,12 +94,17 @@ class AudienceDemographicProfilesItem
         return $this;
     }
 
+    /**
+     * Get Description
+     */
     public function getDescription(): string
     {
         return $this->Description;
     }
 
     /**
+     * Set Description
+     *
      * @return $this
      */
     public function setDescription(string $value)

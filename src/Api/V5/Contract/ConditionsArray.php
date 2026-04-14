@@ -5,16 +5,27 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 use AllowDynamicProperties;
+use ArrayIterator;
+use Countable;
+use IteratorAggregate;
+use Override;
+
+use function count;
 
 /**
  * Auto-generated code.
+ *
+ * @implements IteratorAggregate<int, ConditionsItem>
  */
 #[AllowDynamicProperties]
-class ConditionsArray
+class ConditionsArray implements IteratorAggregate, Countable
 {
-    protected $Items = [];
+    /** @var non-empty-list<ConditionsItem> */
+    protected $Items;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -23,7 +34,9 @@ class ConditionsArray
     }
 
     /**
-     * @return ConditionsItem[]
+     * Get Items
+     *
+     * @return non-empty-list<ConditionsItem>
      */
     public function getItems(): array
     {
@@ -31,7 +44,9 @@ class ConditionsArray
     }
 
     /**
-     * @param ConditionsItem[] $value
+     * Set Items
+     *
+     * @param non-empty-list<ConditionsItem> $value
      *
      * @return $this
      */
@@ -40,5 +55,20 @@ class ConditionsArray
         $this->Items = $value;
 
         return $this;
+    }
+
+    #[Override]
+    public function count(): int
+    {
+        return count($this->Items);
+    }
+
+    /**
+     * @return ArrayIterator<int, ConditionsItem>
+     */
+    #[Override]
+    public function getIterator(): ArrayIterator
+    {
+        return new ArrayIterator($this->Items);
     }
 }

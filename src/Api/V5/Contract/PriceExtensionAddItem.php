@@ -12,16 +12,21 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class PriceExtensionAddItem
 {
-    protected $Price = null;
+    /** @var int */
+    protected $Price;
 
 //    Can be omitted.
-//    protected $OldPrice = null;
+//    protected $OldPrice;
 
-    protected $PriceQualifier = null;
+    /** @var 'NONE'|'FROM'|'UP_TO' */
+    protected $PriceQualifier;
 
-    protected $PriceCurrency = null;
+    /** @var 'RUB'|'UAH'|'BYN'|'USD'|'EUR'|'KZT'|'TRY'|'CHF'|'UZS' */
+    protected $PriceCurrency;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -29,12 +34,17 @@ class PriceExtensionAddItem
         return new static();
     }
 
+    /**
+     * Get Price
+     */
     public function getPrice(): int
     {
         return $this->Price;
     }
 
     /**
+     * Set Price
+     *
      * @return $this
      */
     public function setPrice(int $value)
@@ -44,15 +54,20 @@ class PriceExtensionAddItem
         return $this;
     }
 
+    /**
+     * Get OldPrice
+     */
     public function getOldPrice(): ?int
     {
         return $this->OldPrice ?? null;
     }
 
     /**
+     * Set OldPrice
+     *
      * @return $this
      */
-    public function setOldPrice(?int $value = null)
+    public function setOldPrice(?int $value)
     {
         $this->OldPrice = $value;
 
@@ -60,7 +75,11 @@ class PriceExtensionAddItem
     }
 
     /**
-     * @see PriceQualifierEnum
+     * Get PriceQualifier
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\PriceQualifierEnum
+     *
+     * @return 'NONE'|'FROM'|'UP_TO'
      */
     public function getPriceQualifier(): string
     {
@@ -68,7 +87,11 @@ class PriceExtensionAddItem
     }
 
     /**
-     * @see PriceQualifierEnum
+     * Set PriceQualifier
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\PriceQualifierEnum
+     *
+     * @param 'NONE'|'FROM'|'UP_TO' $value
      *
      * @return $this
      */
@@ -80,7 +103,11 @@ class PriceExtensionAddItem
     }
 
     /**
-     * @see PriceCurrencyEnum
+     * Get PriceCurrency
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\PriceCurrencyEnum
+     *
+     * @return 'RUB'|'UAH'|'BYN'|'USD'|'EUR'|'KZT'|'TRY'|'CHF'|'UZS'
      */
     public function getPriceCurrency(): string
     {
@@ -88,7 +115,11 @@ class PriceExtensionAddItem
     }
 
     /**
-     * @see PriceCurrencyEnum
+     * Set PriceCurrency
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\PriceCurrencyEnum
+     *
+     * @param 'RUB'|'UAH'|'BYN'|'USD'|'EUR'|'KZT'|'TRY'|'CHF'|'UZS' $value
      *
      * @return $this
      */

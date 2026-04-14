@@ -13,27 +13,29 @@ use AllowDynamicProperties;
 class BidSetItem
 {
 //    Can be omitted.
-//    protected $CampaignId = null;
+//    protected $CampaignId;
 
 //    Can be omitted.
-//    protected $AdGroupId = null;
+//    protected $AdGroupId;
 
 //    Can be omitted.
-//    protected $KeywordId = null;
+//    protected $KeywordId;
 
 //    Can be omitted.
-//    protected $Bid = null;
+//    protected $Bid;
 
 //    Can be omitted.
-//    protected $ContextBid = null;
+//    protected $ContextBid;
 
 //    Can be omitted.
-//    protected $AutotargetingSearchBidIsAuto = null;
+//    protected $AutotargetingSearchBidIsAuto;
 
 //    Can be omitted.
-//    protected $StrategyPriority = null;
+//    protected $StrategyPriority;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -41,75 +43,100 @@ class BidSetItem
         return new static();
     }
 
+    /**
+     * Get CampaignId
+     */
     public function getCampaignId(): ?int
     {
         return $this->CampaignId ?? null;
     }
 
     /**
+     * Set CampaignId
+     *
      * @return $this
      */
-    public function setCampaignId(?int $value = null)
+    public function setCampaignId(?int $value)
     {
         $this->CampaignId = $value;
 
         return $this;
     }
 
+    /**
+     * Get AdGroupId
+     */
     public function getAdGroupId(): ?int
     {
         return $this->AdGroupId ?? null;
     }
 
     /**
+     * Set AdGroupId
+     *
      * @return $this
      */
-    public function setAdGroupId(?int $value = null)
+    public function setAdGroupId(?int $value)
     {
         $this->AdGroupId = $value;
 
         return $this;
     }
 
+    /**
+     * Get KeywordId
+     */
     public function getKeywordId(): ?int
     {
         return $this->KeywordId ?? null;
     }
 
     /**
+     * Set KeywordId
+     *
      * @return $this
      */
-    public function setKeywordId(?int $value = null)
+    public function setKeywordId(?int $value)
     {
         $this->KeywordId = $value;
 
         return $this;
     }
 
+    /**
+     * Get Bid
+     */
     public function getBid(): ?int
     {
         return $this->Bid ?? null;
     }
 
     /**
+     * Set Bid
+     *
      * @return $this
      */
-    public function setBid(?int $value = null)
+    public function setBid(?int $value)
     {
         $this->Bid = $value;
 
         return $this;
     }
 
+    /**
+     * Get ContextBid
+     */
     public function getContextBid(): ?int
     {
         return $this->ContextBid ?? null;
     }
 
     /**
+     * Set ContextBid
+     *
      * @return $this
      */
-    public function setContextBid(?int $value = null)
+    public function setContextBid(?int $value)
     {
         $this->ContextBid = $value;
 
@@ -117,7 +144,11 @@ class BidSetItem
     }
 
     /**
-     * @see YesNoEnum
+     * Get AutotargetingSearchBidIsAuto
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'|null
      */
     public function getAutotargetingSearchBidIsAuto(): ?string
     {
@@ -125,11 +156,15 @@ class BidSetItem
     }
 
     /**
-     * @see YesNoEnum
+     * Set AutotargetingSearchBidIsAuto
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO'|null $value
      *
      * @return $this
      */
-    public function setAutotargetingSearchBidIsAuto(?string $value = null)
+    public function setAutotargetingSearchBidIsAuto(?string $value)
     {
         $this->AutotargetingSearchBidIsAuto = $value;
 
@@ -137,7 +172,11 @@ class BidSetItem
     }
 
     /**
-     * @see PriorityEnum
+     * Get StrategyPriority
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\PriorityEnum
+     *
+     * @return 'LOW'|'NORMAL'|'HIGH'|null
      */
     public function getStrategyPriority(): ?string
     {
@@ -145,11 +184,15 @@ class BidSetItem
     }
 
     /**
-     * @see PriorityEnum
+     * Set StrategyPriority
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\PriorityEnum
+     *
+     * @param 'LOW'|'NORMAL'|'HIGH'|null $value
      *
      * @return $this
      */
-    public function setStrategyPriority(?string $value = null)
+    public function setStrategyPriority(?string $value)
     {
         $this->StrategyPriority = $value;
 

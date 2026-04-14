@@ -12,20 +12,36 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class AudienceTargetAddItem extends AudienceTargetBase
 {
-    protected $AdGroupId = null;
+    /** @var int */
+    protected $AdGroupId;
 
 //    Can be omitted.
-//    protected $RetargetingListId = null;
+//    protected $RetargetingListId;
 
 //    Can be omitted.
-//    protected $InterestId = null;
+//    protected $InterestId;
 
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    /**
+     * Get AdGroupId
+     */
     public function getAdGroupId(): int
     {
         return $this->AdGroupId;
     }
 
     /**
+     * Set AdGroupId
+     *
      * @return $this
      */
     public function setAdGroupId(int $value)
@@ -35,30 +51,40 @@ class AudienceTargetAddItem extends AudienceTargetBase
         return $this;
     }
 
+    /**
+     * Get RetargetingListId
+     */
     public function getRetargetingListId(): ?int
     {
         return $this->RetargetingListId ?? null;
     }
 
     /**
+     * Set RetargetingListId
+     *
      * @return $this
      */
-    public function setRetargetingListId(?int $value = null)
+    public function setRetargetingListId(?int $value)
     {
         $this->RetargetingListId = $value;
 
         return $this;
     }
 
+    /**
+     * Get InterestId
+     */
     public function getInterestId(): ?int
     {
         return $this->InterestId ?? null;
     }
 
     /**
+     * Set InterestId
+     *
      * @return $this
      */
-    public function setInterestId(?int $value = null)
+    public function setInterestId(?int $value)
     {
         $this->InterestId = $value;
 

@@ -5,16 +5,27 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 use AllowDynamicProperties;
+use ArrayIterator;
+use Countable;
+use IteratorAggregate;
+use Override;
+
+use function count;
 
 /**
  * Auto-generated code.
+ *
+ * @implements IteratorAggregate<int, SmartAdTargetSetBidsItem>
  */
 #[AllowDynamicProperties]
-class SetBidsSmartAdTargetsRequest
+class SetBidsSmartAdTargetsRequest implements IteratorAggregate, Countable
 {
-    protected $Bids = [];
+    /** @var non-empty-list<SmartAdTargetSetBidsItem> */
+    protected $Bids;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -23,7 +34,9 @@ class SetBidsSmartAdTargetsRequest
     }
 
     /**
-     * @return SmartAdTargetSetBidsItem[]
+     * Get Bids
+     *
+     * @return non-empty-list<SmartAdTargetSetBidsItem>
      */
     public function getBids(): array
     {
@@ -31,7 +44,9 @@ class SetBidsSmartAdTargetsRequest
     }
 
     /**
-     * @param SmartAdTargetSetBidsItem[] $value
+     * Set Bids
+     *
+     * @param non-empty-list<SmartAdTargetSetBidsItem> $value
      *
      * @return $this
      */
@@ -40,5 +55,20 @@ class SetBidsSmartAdTargetsRequest
         $this->Bids = $value;
 
         return $this;
+    }
+
+    #[Override]
+    public function count(): int
+    {
+        return count($this->Bids);
+    }
+
+    /**
+     * @return ArrayIterator<int, SmartAdTargetSetBidsItem>
+     */
+    #[Override]
+    public function getIterator(): ArrayIterator
+    {
+        return new ArrayIterator($this->Bids);
     }
 }

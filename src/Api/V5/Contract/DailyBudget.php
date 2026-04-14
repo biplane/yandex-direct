@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class DailyBudget
 {
-    protected $Amount = null;
+    /** @var int */
+    protected $Amount;
 
-    protected $Mode = null;
+    /** @var 'STANDARD'|'DISTRIBUTED' */
+    protected $Mode;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -24,12 +28,17 @@ class DailyBudget
         return new static();
     }
 
+    /**
+     * Get Amount
+     */
     public function getAmount(): int
     {
         return $this->Amount;
     }
 
     /**
+     * Set Amount
+     *
      * @return $this
      */
     public function setAmount(int $value)
@@ -40,7 +49,11 @@ class DailyBudget
     }
 
     /**
-     * @see DailyBudgetModeEnum
+     * Get Mode
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\DailyBudgetModeEnum
+     *
+     * @return 'STANDARD'|'DISTRIBUTED'
      */
     public function getMode(): string
     {
@@ -48,7 +61,11 @@ class DailyBudget
     }
 
     /**
-     * @see DailyBudgetModeEnum
+     * Set Mode
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\DailyBudgetModeEnum
+     *
+     * @param 'STANDARD'|'DISTRIBUTED' $value
      *
      * @return $this
      */

@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class ForecastStatusInfo
 {
-    protected $ForecastID = null;
+    /** @var int */
+    protected $ForecastID;
 
-    protected $StatusForecast = null;
+    /** @var string */
+    protected $StatusForecast;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -24,12 +28,17 @@ class ForecastStatusInfo
         return new static();
     }
 
+    /**
+     * Get ForecastID
+     */
     public function getForecastID(): int
     {
         return $this->ForecastID;
     }
 
     /**
+     * Set ForecastID
+     *
      * @return $this
      */
     public function setForecastID(int $value)
@@ -39,12 +48,17 @@ class ForecastStatusInfo
         return $this;
     }
 
+    /**
+     * Get StatusForecast
+     */
     public function getStatusForecast(): string
     {
         return $this->StatusForecast;
     }
 
     /**
+     * Set StatusForecast
+     *
      * @return $this
      */
     public function setStatusForecast(string $value)

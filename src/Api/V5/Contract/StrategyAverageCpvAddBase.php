@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class StrategyAverageCpvAddBase
 {
-    protected $AverageCpv = null;
+    /** @var int */
+    protected $AverageCpv;
 
-    protected $SpendLimit = null;
+    /** @var int */
+    protected $SpendLimit;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -24,12 +28,17 @@ class StrategyAverageCpvAddBase
         return new static();
     }
 
+    /**
+     * Get AverageCpv
+     */
     public function getAverageCpv(): int
     {
         return $this->AverageCpv;
     }
 
     /**
+     * Set AverageCpv
+     *
      * @return $this
      */
     public function setAverageCpv(int $value)
@@ -39,12 +48,17 @@ class StrategyAverageCpvAddBase
         return $this;
     }
 
+    /**
+     * Get SpendLimit
+     */
     public function getSpendLimit(): int
     {
         return $this->SpendLimit;
     }
 
     /**
+     * Set SpendLimit
+     *
      * @return $this
      */
     public function setSpendLimit(int $value)

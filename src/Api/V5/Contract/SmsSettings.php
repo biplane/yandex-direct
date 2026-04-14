@@ -13,15 +13,17 @@ use AllowDynamicProperties;
 class SmsSettings
 {
 //    Can be omitted.
-//    protected $Events = null;
+//    protected $Events;
 
 //    Can be omitted.
-//    protected $TimeFrom = null;
+//    protected $TimeFrom;
 
 //    Can be omitted.
-//    protected $TimeTo = null;
+//    protected $TimeTo;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -30,53 +32,67 @@ class SmsSettings
     }
 
     /**
-     * @see SmsEventsEnum
+     * Get Events
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\SmsEventsEnum
+     *
+     * @return list<'MONITORING'|'MODERATION'|'MONEY_IN'|'MONEY_OUT'|'FINISHED'>
      */
-    public function getEvents(): ?array
+    public function getEvents(): array
     {
-        return $this->Events ?? null;
+        return $this->Events ?? [];
     }
 
     /**
-     * @see SmsEventsEnum
+     * Set Events
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\SmsEventsEnum
+     *
+     * @param list<'MONITORING'|'MODERATION'|'MONEY_IN'|'MONEY_OUT'|'FINISHED'> $value
      *
      * @return $this
      */
-    public function setEvents(?array $value = null)
+    public function setEvents(array $value)
     {
         $this->Events = $value;
 
         return $this;
     }
 
+    /**
+     * Get TimeFrom
+     */
     public function getTimeFrom(): ?string
     {
         return $this->TimeFrom ?? null;
     }
 
     /**
+     * Set TimeFrom
+     *
      * @return $this
      */
-    public function setTimeFrom(?string $value = null)
+    public function setTimeFrom(?string $value)
     {
         $this->TimeFrom = $value;
 
         return $this;
     }
 
+    /**
+     * Get TimeTo
+     */
     public function getTimeTo(): ?string
     {
         return $this->TimeTo ?? null;
     }
 
     /**
+     * Set TimeTo
+     *
      * @return $this
      */
-    public function setTimeTo(?string $value = null)
+    public function setTimeTo(?string $value)
     {
         $this->TimeTo = $value;
 

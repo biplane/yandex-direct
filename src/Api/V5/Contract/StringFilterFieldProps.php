@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class StringFilterFieldProps
 {
-    protected $MaxLength = null;
+    /** @var int */
+    protected $MaxLength;
 
-    protected $MinLength = null;
+    /** @var int */
+    protected $MinLength;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -24,12 +28,17 @@ class StringFilterFieldProps
         return new static();
     }
 
+    /**
+     * Get MaxLength
+     */
     public function getMaxLength(): int
     {
         return $this->MaxLength;
     }
 
     /**
+     * Set MaxLength
+     *
      * @return $this
      */
     public function setMaxLength(int $value)
@@ -39,12 +48,17 @@ class StringFilterFieldProps
         return $this;
     }
 
+    /**
+     * Get MinLength
+     */
     public function getMinLength(): int
     {
         return $this->MinLength;
     }
 
     /**
+     * Set MinLength
+     *
      * @return $this
      */
     public function setMinLength(int $value)

@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class ContractPrice
 {
-    protected $Amount = null;
+    /** @var float */
+    protected $Amount;
 
-    protected $IncludingVat = null;
+    /** @var 'YES'|'NO' */
+    protected $IncludingVat;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -24,12 +28,17 @@ class ContractPrice
         return new static();
     }
 
+    /**
+     * Get Amount
+     */
     public function getAmount(): float
     {
         return $this->Amount;
     }
 
     /**
+     * Set Amount
+     *
      * @return $this
      */
     public function setAmount(float $value)
@@ -40,7 +49,11 @@ class ContractPrice
     }
 
     /**
-     * @see YesNoEnum
+     * Get IncludingVat
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'
      */
     public function getIncludingVat(): string
     {
@@ -48,7 +61,11 @@ class ContractPrice
     }
 
     /**
-     * @see YesNoEnum
+     * Set IncludingVat
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO' $value
      *
      * @return $this
      */

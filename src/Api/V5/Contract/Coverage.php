@@ -5,17 +5,27 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 use AllowDynamicProperties;
+use ArrayIterator;
+use Countable;
+use IteratorAggregate;
+use Override;
+
+use function count;
 
 /**
  * Auto-generated code.
+ *
+ * @implements IteratorAggregate<int, NetworkCoverageItem>
  */
 #[AllowDynamicProperties]
-class Coverage
+class Coverage implements IteratorAggregate, Countable
 {
 //    Can be omitted.
-//    protected $CoverageItems = null;
+//    protected $CoverageItems;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -24,22 +34,41 @@ class Coverage
     }
 
     /**
-     * @return NetworkCoverageItem[]|null
+     * Get CoverageItems
+     *
+     * @return list<NetworkCoverageItem>
      */
-    public function getCoverageItems(): ?array
+    public function getCoverageItems(): array
     {
-        return $this->CoverageItems ?? null;
+        return $this->CoverageItems ?? [];
     }
 
     /**
-     * @param NetworkCoverageItem[]|null $value
+     * Set CoverageItems
+     *
+     * @param list<NetworkCoverageItem> $value
      *
      * @return $this
      */
-    public function setCoverageItems(?array $value = null)
+    public function setCoverageItems(array $value)
     {
         $this->CoverageItems = $value;
 
         return $this;
+    }
+
+    #[Override]
+    public function count(): int
+    {
+        return isset($this->CoverageItems) ? count($this->CoverageItems) : 0;
+    }
+
+    /**
+     * @return ArrayIterator<int, NetworkCoverageItem>
+     */
+    #[Override]
+    public function getIterator(): ArrayIterator
+    {
+        return new ArrayIterator($this->CoverageItems ?? []);
     }
 }

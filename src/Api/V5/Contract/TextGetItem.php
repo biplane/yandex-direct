@@ -12,14 +12,30 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class TextGetItem extends ExtensionModeration
 {
-    protected $Text = null;
+    /** @var string */
+    protected $Text;
 
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    /**
+     * Get Text
+     */
     public function getText(): string
     {
         return $this->Text;
     }
 
     /**
+     * Set Text
+     *
      * @return $this
      */
     public function setText(string $value)

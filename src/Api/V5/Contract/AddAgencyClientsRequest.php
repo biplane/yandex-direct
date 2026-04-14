@@ -12,26 +12,33 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class AddAgencyClientsRequest
 {
-    protected $Login = null;
+    /** @var string */
+    protected $Login;
 
-    protected $FirstName = null;
+    /** @var string */
+    protected $FirstName;
 
-    protected $LastName = null;
+    /** @var string */
+    protected $LastName;
 
-    protected $Currency = null;
+    /** @var 'YND_FIXED'|'RUB'|'CHF'|'EUR'|'KZT'|'TRY'|'UAH'|'USD'|'BYN'|'GBP' */
+    protected $Currency;
 
-    protected $Notification = null;
+    /** @var ClientNotificationAdd */
+    protected $Notification;
 
 //    Can be omitted.
-//    protected $Settings = null;
+//    protected $Settings;
 
 //    Can be omitted.
-//    protected $Grants = null;
+//    protected $Grants;
 
 //    Can be omitted.
-//    protected $TinInfo = null;
+//    protected $TinInfo;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -39,12 +46,17 @@ class AddAgencyClientsRequest
         return new static();
     }
 
+    /**
+     * Get Login
+     */
     public function getLogin(): string
     {
         return $this->Login;
     }
 
     /**
+     * Set Login
+     *
      * @return $this
      */
     public function setLogin(string $value)
@@ -54,12 +66,17 @@ class AddAgencyClientsRequest
         return $this;
     }
 
+    /**
+     * Get FirstName
+     */
     public function getFirstName(): string
     {
         return $this->FirstName;
     }
 
     /**
+     * Set FirstName
+     *
      * @return $this
      */
     public function setFirstName(string $value)
@@ -69,12 +86,17 @@ class AddAgencyClientsRequest
         return $this;
     }
 
+    /**
+     * Get LastName
+     */
     public function getLastName(): string
     {
         return $this->LastName;
     }
 
     /**
+     * Set LastName
+     *
      * @return $this
      */
     public function setLastName(string $value)
@@ -85,7 +107,11 @@ class AddAgencyClientsRequest
     }
 
     /**
-     * @see CurrencyEnum
+     * Get Currency
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\CurrencyEnum
+     *
+     * @return 'YND_FIXED'|'RUB'|'CHF'|'EUR'|'KZT'|'TRY'|'UAH'|'USD'|'BYN'|'GBP'
      */
     public function getCurrency(): string
     {
@@ -93,7 +119,11 @@ class AddAgencyClientsRequest
     }
 
     /**
-     * @see CurrencyEnum
+     * Set Currency
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\CurrencyEnum
+     *
+     * @param 'YND_FIXED'|'RUB'|'CHF'|'EUR'|'KZT'|'TRY'|'UAH'|'USD'|'BYN'|'GBP' $value
      *
      * @return $this
      */
@@ -104,12 +134,17 @@ class AddAgencyClientsRequest
         return $this;
     }
 
+    /**
+     * Get Notification
+     */
     public function getNotification(): ClientNotificationAdd
     {
         return $this->Notification;
     }
 
     /**
+     * Set Notification
+     *
      * @return $this
      */
     public function setNotification(ClientNotificationAdd $value)
@@ -120,19 +155,23 @@ class AddAgencyClientsRequest
     }
 
     /**
-     * @return ClientSettingAddItem[]|null
+     * Get Settings
+     *
+     * @return list<ClientSettingAddItem>
      */
-    public function getSettings(): ?array
+    public function getSettings(): array
     {
-        return $this->Settings ?? null;
+        return $this->Settings ?? [];
     }
 
     /**
-     * @param ClientSettingAddItem[]|null $value
+     * Set Settings
+     *
+     * @param list<ClientSettingAddItem> $value
      *
      * @return $this
      */
-    public function setSettings(?array $value = null)
+    public function setSettings(array $value)
     {
         $this->Settings = $value;
 
@@ -140,34 +179,43 @@ class AddAgencyClientsRequest
     }
 
     /**
-     * @return GrantItem[]|null
+     * Get Grants
+     *
+     * @return list<GrantItem>
      */
-    public function getGrants(): ?array
+    public function getGrants(): array
     {
-        return $this->Grants ?? null;
+        return $this->Grants ?? [];
     }
 
     /**
-     * @param GrantItem[]|null $value
+     * Set Grants
+     *
+     * @param list<GrantItem> $value
      *
      * @return $this
      */
-    public function setGrants(?array $value = null)
+    public function setGrants(array $value)
     {
         $this->Grants = $value;
 
         return $this;
     }
 
+    /**
+     * Get TinInfo
+     */
     public function getTinInfo(): ?TinInfoAdd
     {
         return $this->TinInfo ?? null;
     }
 
     /**
+     * Set TinInfo
+     *
      * @return $this
      */
-    public function setTinInfo(?TinInfoAdd $value = null)
+    public function setTinInfo(?TinInfoAdd $value)
     {
         $this->TinInfo = $value;
 

@@ -12,9 +12,12 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class PackageBiddingStrategyGetBase
 {
-    protected $StrategyId = null;
+    /** @var int */
+    protected $StrategyId;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -22,12 +25,17 @@ class PackageBiddingStrategyGetBase
         return new static();
     }
 
+    /**
+     * Get StrategyId
+     */
     public function getStrategyId(): int
     {
         return $this->StrategyId;
     }
 
     /**
+     * Set StrategyId
+     *
      * @return $this
      */
     public function setStrategyId(int $value)

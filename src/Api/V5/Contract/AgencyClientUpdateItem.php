@@ -12,17 +12,33 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class AgencyClientUpdateItem extends ClientUpdateItem
 {
-    protected $ClientId = null;
+    /** @var int */
+    protected $ClientId;
 
 //    Can be omitted.
-//    protected $Grants = null;
+//    protected $Grants;
 
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    /**
+     * Get ClientId
+     */
     public function getClientId(): int
     {
         return $this->ClientId;
     }
 
     /**
+     * Set ClientId
+     *
      * @return $this
      */
     public function setClientId(int $value)
@@ -33,19 +49,23 @@ class AgencyClientUpdateItem extends ClientUpdateItem
     }
 
     /**
-     * @return GrantItem[]|null
+     * Get Grants
+     *
+     * @return list<GrantItem>
      */
-    public function getGrants(): ?array
+    public function getGrants(): array
     {
-        return $this->Grants ?? null;
+        return $this->Grants ?? [];
     }
 
     /**
-     * @param GrantItem[]|null $value
+     * Set Grants
+     *
+     * @param list<GrantItem> $value
      *
      * @return $this
      */
-    public function setGrants(?array $value = null)
+    public function setGrants(array $value)
     {
         $this->Grants = $value;
 

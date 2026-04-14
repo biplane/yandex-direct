@@ -12,21 +12,30 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class AdImageAssociationSelectionCriteria
 {
-    protected $Logins = null;
+//    Can be omitted.
+//    protected $Logins;
 
-    protected $AdImageHashes = null;
+//    Can be omitted.
+//    protected $AdImageHashes;
 
-    protected $StatusAdImageModerate = null;
+//    Can be omitted.
+//    protected $StatusAdImageModerate;
 
-    protected $AdIDS = null;
+//    Can be omitted.
+//    protected $AdIDS;
 
-    protected $CampaignIDS = null;
+//    Can be omitted.
+//    protected $CampaignIDS;
 
+    /** @var int|null */
     protected $Limit = null;
 
+    /** @var int|null */
     protected $Offset = null;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -35,19 +44,23 @@ class AdImageAssociationSelectionCriteria
     }
 
     /**
-     * @return string[]|null
+     * Get Logins
+     *
+     * @return list<string>|null
      */
     public function getLogins(): ?array
     {
-        return $this->Logins;
+        return $this->Logins ?? null;
     }
 
     /**
-     * @param string[]|null $value
+     * Set Logins
+     *
+     * @param list<string>|null $value
      *
      * @return $this
      */
-    public function setLogins(?array $value = null)
+    public function setLogins(?array $value)
     {
         $this->Logins = $value;
 
@@ -55,19 +68,23 @@ class AdImageAssociationSelectionCriteria
     }
 
     /**
-     * @return string[]|null
+     * Get AdImageHashes
+     *
+     * @return list<string>|null
      */
     public function getAdImageHashes(): ?array
     {
-        return $this->AdImageHashes;
+        return $this->AdImageHashes ?? null;
     }
 
     /**
-     * @param string[]|null $value
+     * Set AdImageHashes
+     *
+     * @param list<string>|null $value
      *
      * @return $this
      */
-    public function setAdImageHashes(?array $value = null)
+    public function setAdImageHashes(?array $value)
     {
         $this->AdImageHashes = $value;
 
@@ -75,19 +92,23 @@ class AdImageAssociationSelectionCriteria
     }
 
     /**
-     * @return string[]|null
+     * Get StatusAdImageModerate
+     *
+     * @return list<string>|null
      */
     public function getStatusAdImageModerate(): ?array
     {
-        return $this->StatusAdImageModerate;
+        return $this->StatusAdImageModerate ?? null;
     }
 
     /**
-     * @param string[]|null $value
+     * Set StatusAdImageModerate
+     *
+     * @param list<string>|null $value
      *
      * @return $this
      */
-    public function setStatusAdImageModerate(?array $value = null)
+    public function setStatusAdImageModerate(?array $value)
     {
         $this->StatusAdImageModerate = $value;
 
@@ -95,19 +116,23 @@ class AdImageAssociationSelectionCriteria
     }
 
     /**
-     * @return int[]|null
+     * Get AdIDS
+     *
+     * @return list<int>|null
      */
     public function getAdIDS(): ?array
     {
-        return $this->AdIDS;
+        return $this->AdIDS ?? null;
     }
 
     /**
-     * @param int[]|null $value
+     * Set AdIDS
+     *
+     * @param list<int>|null $value
      *
      * @return $this
      */
-    public function setAdIDS(?array $value = null)
+    public function setAdIDS(?array $value)
     {
         $this->AdIDS = $value;
 
@@ -115,49 +140,63 @@ class AdImageAssociationSelectionCriteria
     }
 
     /**
-     * @return int[]|null
+     * Get CampaignIDS
+     *
+     * @return list<int>|null
      */
     public function getCampaignIDS(): ?array
     {
-        return $this->CampaignIDS;
+        return $this->CampaignIDS ?? null;
     }
 
     /**
-     * @param int[]|null $value
+     * Set CampaignIDS
+     *
+     * @param list<int>|null $value
      *
      * @return $this
      */
-    public function setCampaignIDS(?array $value = null)
+    public function setCampaignIDS(?array $value)
     {
         $this->CampaignIDS = $value;
 
         return $this;
     }
 
+    /**
+     * Get Limit
+     */
     public function getLimit(): ?int
     {
         return $this->Limit;
     }
 
     /**
+     * Set Limit
+     *
      * @return $this
      */
-    public function setLimit(?int $value = null)
+    public function setLimit(?int $value)
     {
         $this->Limit = $value;
 
         return $this;
     }
 
+    /**
+     * Get Offset
+     */
     public function getOffset(): ?int
     {
         return $this->Offset;
     }
 
     /**
+     * Set Offset
+     *
      * @return $this
      */
-    public function setOffset(?int $value = null)
+    public function setOffset(?int $value)
     {
         $this->Offset = $value;
 

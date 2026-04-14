@@ -13,15 +13,17 @@ use AllowDynamicProperties;
 class MobileAppAdGroupUpdate
 {
 //    Can be omitted.
-//    protected $TargetDeviceType = null;
+//    protected $TargetDeviceType;
 
 //    Can be omitted.
-//    protected $TargetCarrier = null;
+//    protected $TargetCarrier;
 
 //    Can be omitted.
-//    protected $TargetOperatingSystemVersion = null;
+//    protected $TargetOperatingSystemVersion;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -30,23 +32,27 @@ class MobileAppAdGroupUpdate
     }
 
     /**
-     * @see TargetDeviceTypeEnum
+     * Get TargetDeviceType
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\TargetDeviceTypeEnum
+     *
+     * @return list<'DEVICE_TYPE_MOBILE'|'DEVICE_TYPE_TABLET'>
      */
-    public function getTargetDeviceType(): ?array
+    public function getTargetDeviceType(): array
     {
-        return $this->TargetDeviceType ?? null;
+        return $this->TargetDeviceType ?? [];
     }
 
     /**
-     * @see TargetDeviceTypeEnum
+     * Set TargetDeviceType
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\TargetDeviceTypeEnum
+     *
+     * @param list<'DEVICE_TYPE_MOBILE'|'DEVICE_TYPE_TABLET'> $value
      *
      * @return $this
      */
-    public function setTargetDeviceType(?array $value = null)
+    public function setTargetDeviceType(array $value)
     {
         $this->TargetDeviceType = $value;
 
@@ -54,7 +60,11 @@ class MobileAppAdGroupUpdate
     }
 
     /**
-     * @see TargetCarrierEnum
+     * Get TargetCarrier
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\TargetCarrierEnum
+     *
+     * @return 'WI_FI_ONLY'|'WI_FI_AND_CELLULAR'|null
      */
     public function getTargetCarrier(): ?string
     {
@@ -62,26 +72,35 @@ class MobileAppAdGroupUpdate
     }
 
     /**
-     * @see TargetCarrierEnum
+     * Set TargetCarrier
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\TargetCarrierEnum
+     *
+     * @param 'WI_FI_ONLY'|'WI_FI_AND_CELLULAR'|null $value
      *
      * @return $this
      */
-    public function setTargetCarrier(?string $value = null)
+    public function setTargetCarrier(?string $value)
     {
         $this->TargetCarrier = $value;
 
         return $this;
     }
 
+    /**
+     * Get TargetOperatingSystemVersion
+     */
     public function getTargetOperatingSystemVersion(): ?string
     {
         return $this->TargetOperatingSystemVersion ?? null;
     }
 
     /**
+     * Set TargetOperatingSystemVersion
+     *
      * @return $this
      */
-    public function setTargetOperatingSystemVersion(?string $value = null)
+    public function setTargetOperatingSystemVersion(?string $value)
     {
         $this->TargetOperatingSystemVersion = $value;
 

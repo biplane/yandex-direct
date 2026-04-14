@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class SmartCampaignSetting
 {
-    protected $Option = null;
+    /** @var 'ADD_TO_FAVORITES'|'ENABLE_AREA_OF_INTEREST_TARGETING'|'ENABLE_CURRENT_AREA_TARGETING'|'ENABLE_REGULAR_AREA_TARGETING'|'REQUIRE_SERVICING' */
+    protected $Option;
 
-    protected $Value = null;
+    /** @var 'YES'|'NO' */
+    protected $Value;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -25,7 +29,11 @@ class SmartCampaignSetting
     }
 
     /**
-     * @see SmartCampaignSettingsEnum
+     * Get Option
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\SmartCampaignSettingsEnum
+     *
+     * @return 'ADD_TO_FAVORITES'|'ENABLE_AREA_OF_INTEREST_TARGETING'|'ENABLE_CURRENT_AREA_TARGETING'|'ENABLE_REGULAR_AREA_TARGETING'|'REQUIRE_SERVICING'
      */
     public function getOption(): string
     {
@@ -33,7 +41,11 @@ class SmartCampaignSetting
     }
 
     /**
-     * @see SmartCampaignSettingsEnum
+     * Set Option
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\SmartCampaignSettingsEnum
+     *
+     * @param 'ADD_TO_FAVORITES'|'ENABLE_AREA_OF_INTEREST_TARGETING'|'ENABLE_CURRENT_AREA_TARGETING'|'ENABLE_REGULAR_AREA_TARGETING'|'REQUIRE_SERVICING' $value
      *
      * @return $this
      */
@@ -45,7 +57,11 @@ class SmartCampaignSetting
     }
 
     /**
-     * @see YesNoEnum
+     * Get Value
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'
      */
     public function getValue(): string
     {
@@ -53,7 +69,11 @@ class SmartCampaignSetting
     }
 
     /**
-     * @see YesNoEnum
+     * Set Value
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO' $value
      *
      * @return $this
      */

@@ -5,33 +5,70 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 use AllowDynamicProperties;
+use ArrayIterator;
+use Countable;
+use IteratorAggregate;
+use Override;
+
+use function count;
 
 /**
  * Auto-generated code.
+ *
+ * @implements IteratorAggregate<int, AdExtensionGetItem>
  */
 #[AllowDynamicProperties]
-class GetAdExtensionsResponse extends GetResponseGeneral
+class GetAdExtensionsResponse extends GetResponseGeneral implements IteratorAggregate, Countable
 {
 //    Can be omitted.
-//    protected $AdExtensions = null;
+//    protected $AdExtensions;
 
     /**
-     * @return AdExtensionGetItem[]|null
+     * Create a new instance.
+     *
+     * @return static
      */
-    public function getAdExtensions(): ?array
+    public static function create()
     {
-        return $this->AdExtensions ?? null;
+        return new static();
     }
 
     /**
-     * @param AdExtensionGetItem[]|null $value
+     * Get AdExtensions
+     *
+     * @return list<AdExtensionGetItem>
+     */
+    public function getAdExtensions(): array
+    {
+        return $this->AdExtensions ?? [];
+    }
+
+    /**
+     * Set AdExtensions
+     *
+     * @param list<AdExtensionGetItem> $value
      *
      * @return $this
      */
-    public function setAdExtensions(?array $value = null)
+    public function setAdExtensions(array $value)
     {
         $this->AdExtensions = $value;
 
         return $this;
+    }
+
+    #[Override]
+    public function count(): int
+    {
+        return isset($this->AdExtensions) ? count($this->AdExtensions) : 0;
+    }
+
+    /**
+     * @return ArrayIterator<int, AdExtensionGetItem>
+     */
+    #[Override]
+    public function getIterator(): ArrayIterator
+    {
+        return new ArrayIterator($this->AdExtensions ?? []);
     }
 }

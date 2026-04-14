@@ -12,9 +12,12 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class DeleteAdImagesRequest
 {
-    protected $SelectionCriteria = null;
+    /** @var AdImageHashesCriteria */
+    protected $SelectionCriteria;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -22,12 +25,17 @@ class DeleteAdImagesRequest
         return new static();
     }
 
+    /**
+     * Get SelectionCriteria
+     */
     public function getSelectionCriteria(): AdImageHashesCriteria
     {
         return $this->SelectionCriteria;
     }
 
     /**
+     * Set SelectionCriteria
+     *
      * @return $this
      */
     public function setSelectionCriteria(AdImageHashesCriteria $value)

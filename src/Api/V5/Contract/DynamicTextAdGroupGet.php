@@ -13,20 +13,35 @@ use AllowDynamicProperties;
 class DynamicTextAdGroupGet extends DynamicAdGroupGet
 {
 //    Can be omitted.
-//    protected $DomainUrl = null;
+//    protected $DomainUrl;
 
 //    Can be omitted.
-//    protected $DomainUrlProcessingStatus = null;
+//    protected $DomainUrlProcessingStatus;
 
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    /**
+     * Get DomainUrl
+     */
     public function getDomainUrl(): ?string
     {
         return $this->DomainUrl ?? null;
     }
 
     /**
+     * Set DomainUrl
+     *
      * @return $this
      */
-    public function setDomainUrl(?string $value = null)
+    public function setDomainUrl(?string $value)
     {
         $this->DomainUrl = $value;
 
@@ -34,7 +49,11 @@ class DynamicTextAdGroupGet extends DynamicAdGroupGet
     }
 
     /**
-     * @see SourceProcessingStatusEnum
+     * Get DomainUrlProcessingStatus
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\SourceProcessingStatusEnum
+     *
+     * @return 'EMPTY_RESULT'|'PROCESSED'|'UNKNOWN'|'UNPROCESSED'|null
      */
     public function getDomainUrlProcessingStatus(): ?string
     {
@@ -42,11 +61,15 @@ class DynamicTextAdGroupGet extends DynamicAdGroupGet
     }
 
     /**
-     * @see SourceProcessingStatusEnum
+     * Set DomainUrlProcessingStatus
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\SourceProcessingStatusEnum
+     *
+     * @param 'EMPTY_RESULT'|'PROCESSED'|'UNKNOWN'|'UNPROCESSED'|null $value
      *
      * @return $this
      */
-    public function setDomainUrlProcessingStatus(?string $value = null)
+    public function setDomainUrlProcessingStatus(?string $value)
     {
         $this->DomainUrlProcessingStatus = $value;
 

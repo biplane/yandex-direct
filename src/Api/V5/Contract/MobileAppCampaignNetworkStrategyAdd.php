@@ -12,13 +12,28 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class MobileAppCampaignNetworkStrategyAdd extends MobileAppCampaignStrategyAddBase
 {
-    protected $BiddingStrategyType = null;
+    /** @var 'NETWORK_DEFAULT'|'MAXIMUM_COVERAGE'|'AVERAGE_CPC'|'AVERAGE_CPI'|'WB_MAXIMUM_APP_INSTALLS'|'SERVING_OFF'|'UNKNOWN'|'WB_MAXIMUM_CLICKS'|'WEEKLY_CLICK_PACKAGE'|'PAY_FOR_INSTALL' */
+    protected $BiddingStrategyType;
 
 //    Can be omitted.
-//    protected $NetworkDefault = null;
+//    protected $NetworkDefault;
 
     /**
-     * @see MobileAppCampaignNetworkStrategyTypeEnum
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    /**
+     * Get BiddingStrategyType
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\MobileAppCampaignNetworkStrategyTypeEnum
+     *
+     * @return 'NETWORK_DEFAULT'|'MAXIMUM_COVERAGE'|'AVERAGE_CPC'|'AVERAGE_CPI'|'WB_MAXIMUM_APP_INSTALLS'|'SERVING_OFF'|'UNKNOWN'|'WB_MAXIMUM_CLICKS'|'WEEKLY_CLICK_PACKAGE'|'PAY_FOR_INSTALL'
      */
     public function getBiddingStrategyType(): string
     {
@@ -26,7 +41,11 @@ class MobileAppCampaignNetworkStrategyAdd extends MobileAppCampaignStrategyAddBa
     }
 
     /**
-     * @see MobileAppCampaignNetworkStrategyTypeEnum
+     * Set BiddingStrategyType
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\MobileAppCampaignNetworkStrategyTypeEnum
+     *
+     * @param 'NETWORK_DEFAULT'|'MAXIMUM_COVERAGE'|'AVERAGE_CPC'|'AVERAGE_CPI'|'WB_MAXIMUM_APP_INSTALLS'|'SERVING_OFF'|'UNKNOWN'|'WB_MAXIMUM_CLICKS'|'WEEKLY_CLICK_PACKAGE'|'PAY_FOR_INSTALL' $value
      *
      * @return $this
      */
@@ -37,15 +56,20 @@ class MobileAppCampaignNetworkStrategyAdd extends MobileAppCampaignStrategyAddBa
         return $this;
     }
 
+    /**
+     * Get NetworkDefault
+     */
     public function getNetworkDefault(): ?StrategyNetworkDefaultAdd
     {
         return $this->NetworkDefault ?? null;
     }
 
     /**
+     * Set NetworkDefault
+     *
      * @return $this
      */
-    public function setNetworkDefault(?StrategyNetworkDefaultAdd $value = null)
+    public function setNetworkDefault(?StrategyNetworkDefaultAdd $value)
     {
         $this->NetworkDefault = $value;
 

@@ -12,13 +12,18 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class AdImageAssociationResponse
 {
-    protected $ActionsResult = null;
+//    Can be omitted.
+//    protected $ActionsResult;
 
-    protected $AdImageAssociations = null;
+//    Can be omitted.
+//    protected $AdImageAssociations;
 
+    /** @var int|null */
     protected $TotalObjectsCount = null;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -27,19 +32,23 @@ class AdImageAssociationResponse
     }
 
     /**
-     * @return AdImageAssociationActionResult[]|null
+     * Get ActionsResult
+     *
+     * @return list<AdImageAssociationActionResult>|null
      */
     public function getActionsResult(): ?array
     {
-        return $this->ActionsResult;
+        return $this->ActionsResult ?? null;
     }
 
     /**
-     * @param AdImageAssociationActionResult[]|null $value
+     * Set ActionsResult
+     *
+     * @param list<AdImageAssociationActionResult>|null $value
      *
      * @return $this
      */
-    public function setActionsResult(?array $value = null)
+    public function setActionsResult(?array $value)
     {
         $this->ActionsResult = $value;
 
@@ -47,34 +56,43 @@ class AdImageAssociationResponse
     }
 
     /**
-     * @return AdImageAssociation[]|null
+     * Get AdImageAssociations
+     *
+     * @return list<AdImageAssociation>|null
      */
     public function getAdImageAssociations(): ?array
     {
-        return $this->AdImageAssociations;
+        return $this->AdImageAssociations ?? null;
     }
 
     /**
-     * @param AdImageAssociation[]|null $value
+     * Set AdImageAssociations
+     *
+     * @param list<AdImageAssociation>|null $value
      *
      * @return $this
      */
-    public function setAdImageAssociations(?array $value = null)
+    public function setAdImageAssociations(?array $value)
     {
         $this->AdImageAssociations = $value;
 
         return $this;
     }
 
+    /**
+     * Get TotalObjectsCount
+     */
     public function getTotalObjectsCount(): ?int
     {
         return $this->TotalObjectsCount;
     }
 
     /**
+     * Set TotalObjectsCount
+     *
      * @return $this
      */
-    public function setTotalObjectsCount(?int $value = null)
+    public function setTotalObjectsCount(?int $value)
     {
         $this->TotalObjectsCount = $value;
 

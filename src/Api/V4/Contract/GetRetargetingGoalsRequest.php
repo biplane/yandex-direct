@@ -5,16 +5,27 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V4\Contract;
 
 use AllowDynamicProperties;
+use ArrayIterator;
+use Countable;
+use IteratorAggregate;
+use Override;
+
+use function count;
 
 /**
  * Auto-generated code.
+ *
+ * @implements IteratorAggregate<int, string>
  */
 #[AllowDynamicProperties]
-class GetRetargetingGoalsRequest
+class GetRetargetingGoalsRequest implements IteratorAggregate, Countable
 {
-    protected $Logins = null;
+//    Can be omitted.
+//    protected $Logins;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -23,22 +34,41 @@ class GetRetargetingGoalsRequest
     }
 
     /**
-     * @return string[]|null
+     * Get Logins
+     *
+     * @return list<string>|null
      */
     public function getLogins(): ?array
     {
-        return $this->Logins;
+        return $this->Logins ?? null;
     }
 
     /**
-     * @param string[]|null $value
+     * Set Logins
+     *
+     * @param list<string>|null $value
      *
      * @return $this
      */
-    public function setLogins(?array $value = null)
+    public function setLogins(?array $value)
     {
         $this->Logins = $value;
 
         return $this;
+    }
+
+    #[Override]
+    public function count(): int
+    {
+        return isset($this->Logins) ? count($this->Logins) : 0;
+    }
+
+    /**
+     * @return ArrayIterator<int, string>
+     */
+    #[Override]
+    public function getIterator(): ArrayIterator
+    {
+        return new ArrayIterator($this->Logins ?? []);
     }
 }

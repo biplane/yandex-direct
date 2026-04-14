@@ -13,11 +13,14 @@ use AllowDynamicProperties;
 class TimeTargetingBase
 {
 //    Can be omitted.
-//    protected $Schedule = null;
+//    protected $Schedule;
 
-    protected $ConsiderWorkingWeekends = null;
+    /** @var 'YES'|'NO' */
+    protected $ConsiderWorkingWeekends;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -26,7 +29,9 @@ class TimeTargetingBase
     }
 
     /**
-     * @return string[]|null
+     * Get Schedule
+     *
+     * @return non-empty-list<string>|null
      */
     public function getSchedule(): ?array
     {
@@ -34,11 +39,13 @@ class TimeTargetingBase
     }
 
     /**
-     * @param string[]|null $value
+     * Set Schedule
+     *
+     * @param non-empty-list<string>|null $value
      *
      * @return $this
      */
-    public function setSchedule(?array $value = null)
+    public function setSchedule(?array $value)
     {
         $this->Schedule = $value;
 
@@ -46,7 +53,11 @@ class TimeTargetingBase
     }
 
     /**
-     * @see YesNoEnum
+     * Get ConsiderWorkingWeekends
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'
      */
     public function getConsiderWorkingWeekends(): string
     {
@@ -54,7 +65,11 @@ class TimeTargetingBase
     }
 
     /**
-     * @see YesNoEnum
+     * Set ConsiderWorkingWeekends
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO' $value
      *
      * @return $this
      */

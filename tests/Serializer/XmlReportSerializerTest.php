@@ -2,10 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Biplane\Tests\Serializer;
+namespace Biplane\Tests\YandexDirect\Serializer;
 
 use Biplane\YandexDirect\Api\V5\Contract\AttributionModelEnum;
-use Biplane\YandexDirect\Api\V5\Contract\SortOrderEnum;
 use Biplane\YandexDirect\Api\V5\Reports\DateRangeTypeEnum;
 use Biplane\YandexDirect\Api\V5\Reports\FieldEnum;
 use Biplane\YandexDirect\Api\V5\Reports\FilterItem;
@@ -15,6 +14,7 @@ use Biplane\YandexDirect\Api\V5\Reports\Page;
 use Biplane\YandexDirect\Api\V5\Reports\ReportDefinition;
 use Biplane\YandexDirect\Api\V5\Reports\ReportTypeEnum;
 use Biplane\YandexDirect\Api\V5\Reports\SelectionCriteria;
+use Biplane\YandexDirect\Api\V5\Reports\SortOrderEnum;
 use Biplane\YandexDirect\Serializer\XmlReportSerializer;
 use DOMDocument;
 use LibXMLError;

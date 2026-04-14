@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class ClientsUnitInfo
 {
-    protected $Login = null;
+    /** @var string */
+    protected $Login;
 
-    protected $UnitsRest = null;
+    /** @var int */
+    protected $UnitsRest;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -24,12 +28,17 @@ class ClientsUnitInfo
         return new static();
     }
 
+    /**
+     * Get Login
+     */
     public function getLogin(): string
     {
         return $this->Login;
     }
 
     /**
+     * Set Login
+     *
      * @return $this
      */
     public function setLogin(string $value)
@@ -39,12 +48,17 @@ class ClientsUnitInfo
         return $this;
     }
 
+    /**
+     * Get UnitsRest
+     */
     public function getUnitsRest(): int
     {
         return $this->UnitsRest;
     }
 
     /**
+     * Set UnitsRest
+     *
      * @return $this
      */
     public function setUnitsRest(int $value)

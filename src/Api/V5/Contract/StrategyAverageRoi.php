@@ -13,33 +13,35 @@ use AllowDynamicProperties;
 class StrategyAverageRoi
 {
 //    Can be omitted.
-//    protected $ReserveReturn = null;
+//    protected $ReserveReturn;
 
 //    Can be omitted.
-//    protected $RoiCoef = null;
+//    protected $RoiCoef;
 
 //    Can be omitted.
-//    protected $GoalId = null;
+//    protected $GoalId;
 
 //    Can be omitted.
-//    protected $WeeklySpendLimit = null;
+//    protected $WeeklySpendLimit;
 
 //    Can be omitted.
-//    protected $CustomPeriodBudget = null;
+//    protected $CustomPeriodBudget;
 
 //    Can be omitted.
-//    protected $BidCeiling = null;
+//    protected $BidCeiling;
 
 //    Can be omitted.
-//    protected $Profitability = null;
+//    protected $Profitability;
 
 //    Can be omitted.
-//    protected $ExplorationBudget = null;
+//    protected $ExplorationBudget;
 
 //    Can be omitted.
-//    protected $BudgetType = null;
+//    protected $BudgetType;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -47,120 +49,160 @@ class StrategyAverageRoi
         return new static();
     }
 
+    /**
+     * Get ReserveReturn
+     */
     public function getReserveReturn(): ?int
     {
         return $this->ReserveReturn ?? null;
     }
 
     /**
+     * Set ReserveReturn
+     *
      * @return $this
      */
-    public function setReserveReturn(?int $value = null)
+    public function setReserveReturn(?int $value)
     {
         $this->ReserveReturn = $value;
 
         return $this;
     }
 
+    /**
+     * Get RoiCoef
+     */
     public function getRoiCoef(): ?int
     {
         return $this->RoiCoef ?? null;
     }
 
     /**
+     * Set RoiCoef
+     *
      * @return $this
      */
-    public function setRoiCoef(?int $value = null)
+    public function setRoiCoef(?int $value)
     {
         $this->RoiCoef = $value;
 
         return $this;
     }
 
+    /**
+     * Get GoalId
+     */
     public function getGoalId(): ?int
     {
         return $this->GoalId ?? null;
     }
 
     /**
+     * Set GoalId
+     *
      * @return $this
      */
-    public function setGoalId(?int $value = null)
+    public function setGoalId(?int $value)
     {
         $this->GoalId = $value;
 
         return $this;
     }
 
+    /**
+     * Get WeeklySpendLimit
+     */
     public function getWeeklySpendLimit(): ?int
     {
         return $this->WeeklySpendLimit ?? null;
     }
 
     /**
+     * Set WeeklySpendLimit
+     *
      * @return $this
      */
-    public function setWeeklySpendLimit(?int $value = null)
+    public function setWeeklySpendLimit(?int $value)
     {
         $this->WeeklySpendLimit = $value;
 
         return $this;
     }
 
+    /**
+     * Get CustomPeriodBudget
+     */
     public function getCustomPeriodBudget(): ?CustomPeriodBudget
     {
         return $this->CustomPeriodBudget ?? null;
     }
 
     /**
+     * Set CustomPeriodBudget
+     *
      * @return $this
      */
-    public function setCustomPeriodBudget(?CustomPeriodBudget $value = null)
+    public function setCustomPeriodBudget(?CustomPeriodBudget $value)
     {
         $this->CustomPeriodBudget = $value;
 
         return $this;
     }
 
+    /**
+     * Get BidCeiling
+     */
     public function getBidCeiling(): ?int
     {
         return $this->BidCeiling ?? null;
     }
 
     /**
+     * Set BidCeiling
+     *
      * @return $this
      */
-    public function setBidCeiling(?int $value = null)
+    public function setBidCeiling(?int $value)
     {
         $this->BidCeiling = $value;
 
         return $this;
     }
 
+    /**
+     * Get Profitability
+     */
     public function getProfitability(): ?int
     {
         return $this->Profitability ?? null;
     }
 
     /**
+     * Set Profitability
+     *
      * @return $this
      */
-    public function setProfitability(?int $value = null)
+    public function setProfitability(?int $value)
     {
         $this->Profitability = $value;
 
         return $this;
     }
 
+    /**
+     * Get ExplorationBudget
+     */
     public function getExplorationBudget(): ?ExplorationBudget
     {
         return $this->ExplorationBudget ?? null;
     }
 
     /**
+     * Set ExplorationBudget
+     *
      * @return $this
      */
-    public function setExplorationBudget(?ExplorationBudget $value = null)
+    public function setExplorationBudget(?ExplorationBudget $value)
     {
         $this->ExplorationBudget = $value;
 
@@ -168,7 +210,11 @@ class StrategyAverageRoi
     }
 
     /**
-     * @see BudgetTypeEnum
+     * Get BudgetType
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\BudgetTypeEnum
+     *
+     * @return 'WEEKLY_BUDGET'|'CUSTOM_PERIOD_BUDGET'|null
      */
     public function getBudgetType(): ?string
     {
@@ -176,11 +222,15 @@ class StrategyAverageRoi
     }
 
     /**
-     * @see BudgetTypeEnum
+     * Set BudgetType
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\BudgetTypeEnum
+     *
+     * @param 'WEEKLY_BUDGET'|'CUSTOM_PERIOD_BUDGET'|null $value
      *
      * @return $this
      */
-    public function setBudgetType(?string $value = null)
+    public function setBudgetType(?string $value)
     {
         $this->BudgetType = $value;
 

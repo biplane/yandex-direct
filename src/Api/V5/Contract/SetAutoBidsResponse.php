@@ -5,17 +5,27 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 use AllowDynamicProperties;
+use ArrayIterator;
+use Countable;
+use IteratorAggregate;
+use Override;
+
+use function count;
 
 /**
  * Auto-generated code.
+ *
+ * @implements IteratorAggregate<int, BidActionResult>
  */
 #[AllowDynamicProperties]
-class SetAutoBidsResponse
+class SetAutoBidsResponse implements IteratorAggregate, Countable
 {
 //    Can be omitted.
-//    protected $SetAutoResults = null;
+//    protected $SetAutoResults;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -24,22 +34,41 @@ class SetAutoBidsResponse
     }
 
     /**
-     * @return BidActionResult[]|null
+     * Get SetAutoResults
+     *
+     * @return list<BidActionResult>
      */
-    public function getSetAutoResults(): ?array
+    public function getSetAutoResults(): array
     {
-        return $this->SetAutoResults ?? null;
+        return $this->SetAutoResults ?? [];
     }
 
     /**
-     * @param BidActionResult[]|null $value
+     * Set SetAutoResults
+     *
+     * @param list<BidActionResult> $value
      *
      * @return $this
      */
-    public function setSetAutoResults(?array $value = null)
+    public function setSetAutoResults(array $value)
     {
         $this->SetAutoResults = $value;
 
         return $this;
+    }
+
+    #[Override]
+    public function count(): int
+    {
+        return isset($this->SetAutoResults) ? count($this->SetAutoResults) : 0;
+    }
+
+    /**
+     * @return ArrayIterator<int, BidActionResult>
+     */
+    #[Override]
+    public function getIterator(): ArrayIterator
+    {
+        return new ArrayIterator($this->SetAutoResults ?? []);
     }
 }

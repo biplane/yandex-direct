@@ -13,12 +13,14 @@ use AllowDynamicProperties;
 class MobileAppCampaignStrategy
 {
 //    Can be omitted.
-//    protected $Search = null;
+//    protected $Search;
 
 //    Can be omitted.
-//    protected $Network = null;
+//    protected $Network;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -26,30 +28,40 @@ class MobileAppCampaignStrategy
         return new static();
     }
 
+    /**
+     * Get Search
+     */
     public function getSearch(): ?MobileAppCampaignSearchStrategy
     {
         return $this->Search ?? null;
     }
 
     /**
+     * Set Search
+     *
      * @return $this
      */
-    public function setSearch(?MobileAppCampaignSearchStrategy $value = null)
+    public function setSearch(?MobileAppCampaignSearchStrategy $value)
     {
         $this->Search = $value;
 
         return $this;
     }
 
+    /**
+     * Get Network
+     */
     public function getNetwork(): ?MobileAppCampaignNetworkStrategy
     {
         return $this->Network ?? null;
     }
 
     /**
+     * Set Network
+     *
      * @return $this
      */
-    public function setNetwork(?MobileAppCampaignNetworkStrategy $value = null)
+    public function setNetwork(?MobileAppCampaignNetworkStrategy $value)
     {
         $this->Network = $value;
 

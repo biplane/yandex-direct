@@ -13,12 +13,14 @@ use AllowDynamicProperties;
 class AudienceTargetBase
 {
 //    Can be omitted.
-//    protected $ContextBid = null;
+//    protected $ContextBid;
 
 //    Can be omitted.
-//    protected $StrategyPriority = null;
+//    protected $StrategyPriority;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -26,15 +28,20 @@ class AudienceTargetBase
         return new static();
     }
 
+    /**
+     * Get ContextBid
+     */
     public function getContextBid(): ?int
     {
         return $this->ContextBid ?? null;
     }
 
     /**
+     * Set ContextBid
+     *
      * @return $this
      */
-    public function setContextBid(?int $value = null)
+    public function setContextBid(?int $value)
     {
         $this->ContextBid = $value;
 
@@ -42,7 +49,11 @@ class AudienceTargetBase
     }
 
     /**
-     * @see PriorityEnum
+     * Get StrategyPriority
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\PriorityEnum
+     *
+     * @return 'LOW'|'NORMAL'|'HIGH'|null
      */
     public function getStrategyPriority(): ?string
     {
@@ -50,11 +61,15 @@ class AudienceTargetBase
     }
 
     /**
-     * @see PriorityEnum
+     * Set StrategyPriority
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\PriorityEnum
+     *
+     * @param 'LOW'|'NORMAL'|'HIGH'|null $value
      *
      * @return $this
      */
-    public function setStrategyPriority(?string $value = null)
+    public function setStrategyPriority(?string $value)
     {
         $this->StrategyPriority = $value;
 

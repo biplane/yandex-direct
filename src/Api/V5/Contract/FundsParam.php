@@ -12,15 +12,18 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class FundsParam
 {
-    protected $Mode = null;
+    /** @var 'CAMPAIGN_FUNDS'|'SHARED_ACCOUNT_FUNDS' */
+    protected $Mode;
 
 //    Can be omitted.
-//    protected $CampaignFunds = null;
+//    protected $CampaignFunds;
 
 //    Can be omitted.
-//    protected $SharedAccountFunds = null;
+//    protected $SharedAccountFunds;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -29,7 +32,11 @@ class FundsParam
     }
 
     /**
-     * @see CampaignFundsEnum
+     * Get Mode
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\CampaignFundsEnum
+     *
+     * @return 'CAMPAIGN_FUNDS'|'SHARED_ACCOUNT_FUNDS'
      */
     public function getMode(): string
     {
@@ -37,7 +44,11 @@ class FundsParam
     }
 
     /**
-     * @see CampaignFundsEnum
+     * Set Mode
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\CampaignFundsEnum
+     *
+     * @param 'CAMPAIGN_FUNDS'|'SHARED_ACCOUNT_FUNDS' $value
      *
      * @return $this
      */
@@ -48,30 +59,40 @@ class FundsParam
         return $this;
     }
 
+    /**
+     * Get CampaignFunds
+     */
     public function getCampaignFunds(): ?CampaignFundsParam
     {
         return $this->CampaignFunds ?? null;
     }
 
     /**
+     * Set CampaignFunds
+     *
      * @return $this
      */
-    public function setCampaignFunds(?CampaignFundsParam $value = null)
+    public function setCampaignFunds(?CampaignFundsParam $value)
     {
         $this->CampaignFunds = $value;
 
         return $this;
     }
 
+    /**
+     * Get SharedAccountFunds
+     */
     public function getSharedAccountFunds(): ?SharedAccountFundsParam
     {
         return $this->SharedAccountFunds ?? null;
     }
 
     /**
+     * Set SharedAccountFunds
+     *
      * @return $this
      */
-    public function setSharedAccountFunds(?SharedAccountFundsParam $value = null)
+    public function setSharedAccountFunds(?SharedAccountFundsParam $value)
     {
         $this->SharedAccountFunds = $value;
 

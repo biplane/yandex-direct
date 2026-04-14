@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class FrequencyCapSetting
 {
-    protected $Impressions = null;
+    /** @var int */
+    protected $Impressions;
 
+    /** @var int|null */
     protected $PeriodDays = null;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -24,12 +28,17 @@ class FrequencyCapSetting
         return new static();
     }
 
+    /**
+     * Get Impressions
+     */
     public function getImpressions(): int
     {
         return $this->Impressions;
     }
 
     /**
+     * Set Impressions
+     *
      * @return $this
      */
     public function setImpressions(int $value)
@@ -39,15 +48,20 @@ class FrequencyCapSetting
         return $this;
     }
 
+    /**
+     * Get PeriodDays
+     */
     public function getPeriodDays(): ?int
     {
         return $this->PeriodDays;
     }
 
     /**
+     * Set PeriodDays
+     *
      * @return $this
      */
-    public function setPeriodDays(?int $value = null)
+    public function setPeriodDays(?int $value)
     {
         $this->PeriodDays = $value;
 

@@ -13,30 +13,32 @@ use AllowDynamicProperties;
 class UnifiedCampaignAddItem
 {
 //    Can be omitted.
-//    protected $BiddingStrategy = null;
+//    protected $BiddingStrategy;
 
 //    Can be omitted.
-//    protected $Settings = null;
+//    protected $Settings;
 
 //    Can be omitted.
-//    protected $CounterIds = null;
+//    protected $CounterIds;
 
 //    Can be omitted.
-//    protected $PriorityGoals = null;
+//    protected $PriorityGoals;
 
 //    Can be omitted.
-//    protected $TrackingParams = null;
+//    protected $TrackingParams;
 
 //    Can be omitted.
-//    protected $AttributionModel = null;
+//    protected $AttributionModel;
 
 //    Can be omitted.
-//    protected $PackageBiddingStrategy = null;
+//    protected $PackageBiddingStrategy;
 
 //    Can be omitted.
-//    protected $NegativeKeywordSharedSetIds = null;
+//    protected $NegativeKeywordSharedSetIds;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -44,15 +46,20 @@ class UnifiedCampaignAddItem
         return new static();
     }
 
+    /**
+     * Get BiddingStrategy
+     */
     public function getBiddingStrategy(): ?UnifiedCampaignStrategyAdd
     {
         return $this->BiddingStrategy ?? null;
     }
 
     /**
+     * Set BiddingStrategy
+     *
      * @return $this
      */
-    public function setBiddingStrategy(?UnifiedCampaignStrategyAdd $value = null)
+    public function setBiddingStrategy(?UnifiedCampaignStrategyAdd $value)
     {
         $this->BiddingStrategy = $value;
 
@@ -60,19 +67,23 @@ class UnifiedCampaignAddItem
     }
 
     /**
-     * @return UnifiedCampaignSetting[]|null
+     * Get Settings
+     *
+     * @return list<UnifiedCampaignSetting>
      */
-    public function getSettings(): ?array
+    public function getSettings(): array
     {
-        return $this->Settings ?? null;
+        return $this->Settings ?? [];
     }
 
     /**
-     * @param UnifiedCampaignSetting[]|null $value
+     * Set Settings
+     *
+     * @param list<UnifiedCampaignSetting> $value
      *
      * @return $this
      */
-    public function setSettings(?array $value = null)
+    public function setSettings(array $value)
     {
         $this->Settings = $value;
 
@@ -80,7 +91,9 @@ class UnifiedCampaignAddItem
     }
 
     /**
-     * @return int[]|null
+     * Get CounterIds
+     *
+     * @return non-empty-list<int>|null
      */
     public function getCounterIds(): ?array
     {
@@ -88,41 +101,53 @@ class UnifiedCampaignAddItem
     }
 
     /**
-     * @param int[]|null $value
+     * Set CounterIds
+     *
+     * @param non-empty-list<int>|null $value
      *
      * @return $this
      */
-    public function setCounterIds(?array $value = null)
+    public function setCounterIds(?array $value)
     {
         $this->CounterIds = $value;
 
         return $this;
     }
 
+    /**
+     * Get PriorityGoals
+     */
     public function getPriorityGoals(): ?PriorityGoalsArray
     {
         return $this->PriorityGoals ?? null;
     }
 
     /**
+     * Set PriorityGoals
+     *
      * @return $this
      */
-    public function setPriorityGoals(?PriorityGoalsArray $value = null)
+    public function setPriorityGoals(?PriorityGoalsArray $value)
     {
         $this->PriorityGoals = $value;
 
         return $this;
     }
 
+    /**
+     * Get TrackingParams
+     */
     public function getTrackingParams(): ?string
     {
         return $this->TrackingParams ?? null;
     }
 
     /**
+     * Set TrackingParams
+     *
      * @return $this
      */
-    public function setTrackingParams(?string $value = null)
+    public function setTrackingParams(?string $value)
     {
         $this->TrackingParams = $value;
 
@@ -130,7 +155,11 @@ class UnifiedCampaignAddItem
     }
 
     /**
-     * @see AttributionModelEnum
+     * Get AttributionModel
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\AttributionModelEnum
+     *
+     * @return 'LC'|'LSC'|'FC'|'LYDC'|'LSCCD'|'FCCD'|'LYDCCD'|'AUTO'|null
      */
     public function getAttributionModel(): ?string
     {
@@ -138,26 +167,35 @@ class UnifiedCampaignAddItem
     }
 
     /**
-     * @see AttributionModelEnum
+     * Set AttributionModel
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\AttributionModelEnum
+     *
+     * @param 'LC'|'LSC'|'FC'|'LYDC'|'LSCCD'|'FCCD'|'LYDCCD'|'AUTO'|null $value
      *
      * @return $this
      */
-    public function setAttributionModel(?string $value = null)
+    public function setAttributionModel(?string $value)
     {
         $this->AttributionModel = $value;
 
         return $this;
     }
 
+    /**
+     * Get PackageBiddingStrategy
+     */
     public function getPackageBiddingStrategy(): ?UnifiedCampaignPackageBiddingStrategyAdd
     {
         return $this->PackageBiddingStrategy ?? null;
     }
 
     /**
+     * Set PackageBiddingStrategy
+     *
      * @return $this
      */
-    public function setPackageBiddingStrategy(?UnifiedCampaignPackageBiddingStrategyAdd $value = null)
+    public function setPackageBiddingStrategy(?UnifiedCampaignPackageBiddingStrategyAdd $value)
     {
         $this->PackageBiddingStrategy = $value;
 
@@ -165,7 +203,9 @@ class UnifiedCampaignAddItem
     }
 
     /**
-     * @return float[]|null
+     * Get NegativeKeywordSharedSetIds
+     *
+     * @return non-empty-list<int>|null
      */
     public function getNegativeKeywordSharedSetIds(): ?array
     {
@@ -173,11 +213,13 @@ class UnifiedCampaignAddItem
     }
 
     /**
-     * @param float[]|null $value
+     * Set NegativeKeywordSharedSetIds
+     *
+     * @param non-empty-list<int>|null $value
      *
      * @return $this
      */
-    public function setNegativeKeywordSharedSetIds(?array $value = null)
+    public function setNegativeKeywordSharedSetIds(?array $value)
     {
         $this->NegativeKeywordSharedSetIds = $value;
 

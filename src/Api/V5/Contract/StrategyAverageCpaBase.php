@@ -13,21 +13,23 @@ use AllowDynamicProperties;
 class StrategyAverageCpaBase
 {
 //    Can be omitted.
-//    protected $AverageCpa = null;
+//    protected $AverageCpa;
 
 //    Can be omitted.
-//    protected $GoalId = null;
+//    protected $GoalId;
 
 //    Can be omitted.
-//    protected $WeeklySpendLimit = null;
+//    protected $WeeklySpendLimit;
 
 //    Can be omitted.
-//    protected $BidCeiling = null;
+//    protected $BidCeiling;
 
 //    Can be omitted.
-//    protected $ExplorationBudget = null;
+//    protected $ExplorationBudget;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -35,75 +37,100 @@ class StrategyAverageCpaBase
         return new static();
     }
 
+    /**
+     * Get AverageCpa
+     */
     public function getAverageCpa(): ?int
     {
         return $this->AverageCpa ?? null;
     }
 
     /**
+     * Set AverageCpa
+     *
      * @return $this
      */
-    public function setAverageCpa(?int $value = null)
+    public function setAverageCpa(?int $value)
     {
         $this->AverageCpa = $value;
 
         return $this;
     }
 
+    /**
+     * Get GoalId
+     */
     public function getGoalId(): ?int
     {
         return $this->GoalId ?? null;
     }
 
     /**
+     * Set GoalId
+     *
      * @return $this
      */
-    public function setGoalId(?int $value = null)
+    public function setGoalId(?int $value)
     {
         $this->GoalId = $value;
 
         return $this;
     }
 
+    /**
+     * Get WeeklySpendLimit
+     */
     public function getWeeklySpendLimit(): ?int
     {
         return $this->WeeklySpendLimit ?? null;
     }
 
     /**
+     * Set WeeklySpendLimit
+     *
      * @return $this
      */
-    public function setWeeklySpendLimit(?int $value = null)
+    public function setWeeklySpendLimit(?int $value)
     {
         $this->WeeklySpendLimit = $value;
 
         return $this;
     }
 
+    /**
+     * Get BidCeiling
+     */
     public function getBidCeiling(): ?int
     {
         return $this->BidCeiling ?? null;
     }
 
     /**
+     * Set BidCeiling
+     *
      * @return $this
      */
-    public function setBidCeiling(?int $value = null)
+    public function setBidCeiling(?int $value)
     {
         $this->BidCeiling = $value;
 
         return $this;
     }
 
+    /**
+     * Get ExplorationBudget
+     */
     public function getExplorationBudget(): ?ExplorationBudget
     {
         return $this->ExplorationBudget ?? null;
     }
 
     /**
+     * Set ExplorationBudget
+     *
      * @return $this
      */
-    public function setExplorationBudget(?ExplorationBudget $value = null)
+    public function setExplorationBudget(?ExplorationBudget $value)
     {
         $this->ExplorationBudget = $value;
 

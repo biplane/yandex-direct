@@ -12,55 +12,72 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class GetBidModifiersRequest extends GetRequestGeneral
 {
-    protected $SelectionCriteria = null;
+    /** @var BidModifiersSelectionCriteria */
+    protected $SelectionCriteria;
 
-    protected $FieldNames = [];
-
-//    Can be omitted.
-//    protected $MobileAdjustmentFieldNames = null;
-
-//    Can be omitted.
-//    protected $DesktopAdjustmentFieldNames = null;
+    /** @var non-empty-list<'Id'|'CampaignId'|'AdGroupId'|'Level'|'Type'> */
+    protected $FieldNames;
 
 //    Can be omitted.
-//    protected $SmartTvAdjustmentFieldNames = null;
+//    protected $MobileAdjustmentFieldNames;
 
 //    Can be omitted.
-//    protected $TabletAdjustmentFieldNames = null;
+//    protected $DesktopAdjustmentFieldNames;
 
 //    Can be omitted.
-//    protected $DesktopOnlyAdjustmentFieldNames = null;
+//    protected $SmartTvAdjustmentFieldNames;
 
 //    Can be omitted.
-//    protected $DemographicsAdjustmentFieldNames = null;
+//    protected $TabletAdjustmentFieldNames;
 
 //    Can be omitted.
-//    protected $RetargetingAdjustmentFieldNames = null;
+//    protected $DesktopOnlyAdjustmentFieldNames;
 
 //    Can be omitted.
-//    protected $RegionalAdjustmentFieldNames = null;
+//    protected $DemographicsAdjustmentFieldNames;
 
 //    Can be omitted.
-//    protected $VideoAdjustmentFieldNames = null;
+//    protected $RetargetingAdjustmentFieldNames;
 
 //    Can be omitted.
-//    protected $SmartAdAdjustmentFieldNames = null;
+//    protected $RegionalAdjustmentFieldNames;
 
 //    Can be omitted.
-//    protected $SerpLayoutAdjustmentFieldNames = null;
+//    protected $VideoAdjustmentFieldNames;
 
 //    Can be omitted.
-//    protected $IncomeGradeAdjustmentFieldNames = null;
+//    protected $SmartAdAdjustmentFieldNames;
 
 //    Can be omitted.
-//    protected $AdGroupAdjustmentFieldNames = null;
+//    protected $SerpLayoutAdjustmentFieldNames;
 
+//    Can be omitted.
+//    protected $IncomeGradeAdjustmentFieldNames;
+
+//    Can be omitted.
+//    protected $AdGroupAdjustmentFieldNames;
+
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    /**
+     * Get SelectionCriteria
+     */
     public function getSelectionCriteria(): BidModifiersSelectionCriteria
     {
         return $this->SelectionCriteria;
     }
 
     /**
+     * Set SelectionCriteria
+     *
      * @return $this
      */
     public function setSelectionCriteria(BidModifiersSelectionCriteria $value)
@@ -71,9 +88,11 @@ class GetBidModifiersRequest extends GetRequestGeneral
     }
 
     /**
-     * @see BidModifierFieldEnum
+     * Get FieldNames
      *
-     * @return string[]
+     * @see \Biplane\YandexDirect\Api\V5\Contract\BidModifierFieldEnum
+     *
+     * @return non-empty-list<'Id'|'CampaignId'|'AdGroupId'|'Level'|'Type'>
      */
     public function getFieldNames(): array
     {
@@ -81,9 +100,11 @@ class GetBidModifiersRequest extends GetRequestGeneral
     }
 
     /**
-     * @see BidModifierFieldEnum
+     * Set FieldNames
      *
-     * @param string[] $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\BidModifierFieldEnum
+     *
+     * @param non-empty-list<'Id'|'CampaignId'|'AdGroupId'|'Level'|'Type'> $value
      *
      * @return $this
      */
@@ -95,23 +116,27 @@ class GetBidModifiersRequest extends GetRequestGeneral
     }
 
     /**
-     * @see MobileAdjustmentFieldEnum
+     * Get MobileAdjustmentFieldNames
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\MobileAdjustmentFieldEnum
+     *
+     * @return list<'BidModifier'|'OperatingSystemType'>
      */
-    public function getMobileAdjustmentFieldNames(): ?array
+    public function getMobileAdjustmentFieldNames(): array
     {
-        return $this->MobileAdjustmentFieldNames ?? null;
+        return $this->MobileAdjustmentFieldNames ?? [];
     }
 
     /**
-     * @see MobileAdjustmentFieldEnum
+     * Set MobileAdjustmentFieldNames
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\MobileAdjustmentFieldEnum
+     *
+     * @param list<'BidModifier'|'OperatingSystemType'> $value
      *
      * @return $this
      */
-    public function setMobileAdjustmentFieldNames(?array $value = null)
+    public function setMobileAdjustmentFieldNames(array $value)
     {
         $this->MobileAdjustmentFieldNames = $value;
 
@@ -119,23 +144,27 @@ class GetBidModifiersRequest extends GetRequestGeneral
     }
 
     /**
-     * @see DesktopAdjustmentFieldEnum
+     * Get DesktopAdjustmentFieldNames
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\DesktopAdjustmentFieldEnum
+     *
+     * @return list<'BidModifier'>
      */
-    public function getDesktopAdjustmentFieldNames(): ?array
+    public function getDesktopAdjustmentFieldNames(): array
     {
-        return $this->DesktopAdjustmentFieldNames ?? null;
+        return $this->DesktopAdjustmentFieldNames ?? [];
     }
 
     /**
-     * @see DesktopAdjustmentFieldEnum
+     * Set DesktopAdjustmentFieldNames
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\DesktopAdjustmentFieldEnum
+     *
+     * @param list<'BidModifier'> $value
      *
      * @return $this
      */
-    public function setDesktopAdjustmentFieldNames(?array $value = null)
+    public function setDesktopAdjustmentFieldNames(array $value)
     {
         $this->DesktopAdjustmentFieldNames = $value;
 
@@ -143,23 +172,27 @@ class GetBidModifiersRequest extends GetRequestGeneral
     }
 
     /**
-     * @see SmartTvAdjustmentFieldEnum
+     * Get SmartTvAdjustmentFieldNames
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\SmartTvAdjustmentFieldEnum
+     *
+     * @return list<'BidModifier'>
      */
-    public function getSmartTvAdjustmentFieldNames(): ?array
+    public function getSmartTvAdjustmentFieldNames(): array
     {
-        return $this->SmartTvAdjustmentFieldNames ?? null;
+        return $this->SmartTvAdjustmentFieldNames ?? [];
     }
 
     /**
-     * @see SmartTvAdjustmentFieldEnum
+     * Set SmartTvAdjustmentFieldNames
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\SmartTvAdjustmentFieldEnum
+     *
+     * @param list<'BidModifier'> $value
      *
      * @return $this
      */
-    public function setSmartTvAdjustmentFieldNames(?array $value = null)
+    public function setSmartTvAdjustmentFieldNames(array $value)
     {
         $this->SmartTvAdjustmentFieldNames = $value;
 
@@ -167,23 +200,27 @@ class GetBidModifiersRequest extends GetRequestGeneral
     }
 
     /**
-     * @see TabletAdjustmentFieldEnum
+     * Get TabletAdjustmentFieldNames
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\TabletAdjustmentFieldEnum
+     *
+     * @return list<'BidModifier'|'OperatingSystemType'>
      */
-    public function getTabletAdjustmentFieldNames(): ?array
+    public function getTabletAdjustmentFieldNames(): array
     {
-        return $this->TabletAdjustmentFieldNames ?? null;
+        return $this->TabletAdjustmentFieldNames ?? [];
     }
 
     /**
-     * @see TabletAdjustmentFieldEnum
+     * Set TabletAdjustmentFieldNames
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\TabletAdjustmentFieldEnum
+     *
+     * @param list<'BidModifier'|'OperatingSystemType'> $value
      *
      * @return $this
      */
-    public function setTabletAdjustmentFieldNames(?array $value = null)
+    public function setTabletAdjustmentFieldNames(array $value)
     {
         $this->TabletAdjustmentFieldNames = $value;
 
@@ -191,23 +228,27 @@ class GetBidModifiersRequest extends GetRequestGeneral
     }
 
     /**
-     * @see DesktopOnlyAdjustmentFieldEnum
+     * Get DesktopOnlyAdjustmentFieldNames
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\DesktopOnlyAdjustmentFieldEnum
+     *
+     * @return list<'BidModifier'>
      */
-    public function getDesktopOnlyAdjustmentFieldNames(): ?array
+    public function getDesktopOnlyAdjustmentFieldNames(): array
     {
-        return $this->DesktopOnlyAdjustmentFieldNames ?? null;
+        return $this->DesktopOnlyAdjustmentFieldNames ?? [];
     }
 
     /**
-     * @see DesktopOnlyAdjustmentFieldEnum
+     * Set DesktopOnlyAdjustmentFieldNames
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\DesktopOnlyAdjustmentFieldEnum
+     *
+     * @param list<'BidModifier'> $value
      *
      * @return $this
      */
-    public function setDesktopOnlyAdjustmentFieldNames(?array $value = null)
+    public function setDesktopOnlyAdjustmentFieldNames(array $value)
     {
         $this->DesktopOnlyAdjustmentFieldNames = $value;
 
@@ -215,23 +256,27 @@ class GetBidModifiersRequest extends GetRequestGeneral
     }
 
     /**
-     * @see DemographicsAdjustmentFieldEnum
+     * Get DemographicsAdjustmentFieldNames
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\DemographicsAdjustmentFieldEnum
+     *
+     * @return list<'Gender'|'Age'|'BidModifier'|'Enabled'>
      */
-    public function getDemographicsAdjustmentFieldNames(): ?array
+    public function getDemographicsAdjustmentFieldNames(): array
     {
-        return $this->DemographicsAdjustmentFieldNames ?? null;
+        return $this->DemographicsAdjustmentFieldNames ?? [];
     }
 
     /**
-     * @see DemographicsAdjustmentFieldEnum
+     * Set DemographicsAdjustmentFieldNames
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\DemographicsAdjustmentFieldEnum
+     *
+     * @param list<'Gender'|'Age'|'BidModifier'|'Enabled'> $value
      *
      * @return $this
      */
-    public function setDemographicsAdjustmentFieldNames(?array $value = null)
+    public function setDemographicsAdjustmentFieldNames(array $value)
     {
         $this->DemographicsAdjustmentFieldNames = $value;
 
@@ -239,23 +284,27 @@ class GetBidModifiersRequest extends GetRequestGeneral
     }
 
     /**
-     * @see RetargetingAdjustmentFieldEnum
+     * Get RetargetingAdjustmentFieldNames
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\RetargetingAdjustmentFieldEnum
+     *
+     * @return list<'RetargetingConditionId'|'BidModifier'|'Accessible'|'Enabled'>
      */
-    public function getRetargetingAdjustmentFieldNames(): ?array
+    public function getRetargetingAdjustmentFieldNames(): array
     {
-        return $this->RetargetingAdjustmentFieldNames ?? null;
+        return $this->RetargetingAdjustmentFieldNames ?? [];
     }
 
     /**
-     * @see RetargetingAdjustmentFieldEnum
+     * Set RetargetingAdjustmentFieldNames
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\RetargetingAdjustmentFieldEnum
+     *
+     * @param list<'RetargetingConditionId'|'BidModifier'|'Accessible'|'Enabled'> $value
      *
      * @return $this
      */
-    public function setRetargetingAdjustmentFieldNames(?array $value = null)
+    public function setRetargetingAdjustmentFieldNames(array $value)
     {
         $this->RetargetingAdjustmentFieldNames = $value;
 
@@ -263,23 +312,27 @@ class GetBidModifiersRequest extends GetRequestGeneral
     }
 
     /**
-     * @see RegionalAdjustmentFieldEnum
+     * Get RegionalAdjustmentFieldNames
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\RegionalAdjustmentFieldEnum
+     *
+     * @return list<'RegionId'|'BidModifier'|'Enabled'>
      */
-    public function getRegionalAdjustmentFieldNames(): ?array
+    public function getRegionalAdjustmentFieldNames(): array
     {
-        return $this->RegionalAdjustmentFieldNames ?? null;
+        return $this->RegionalAdjustmentFieldNames ?? [];
     }
 
     /**
-     * @see RegionalAdjustmentFieldEnum
+     * Set RegionalAdjustmentFieldNames
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\RegionalAdjustmentFieldEnum
+     *
+     * @param list<'RegionId'|'BidModifier'|'Enabled'> $value
      *
      * @return $this
      */
-    public function setRegionalAdjustmentFieldNames(?array $value = null)
+    public function setRegionalAdjustmentFieldNames(array $value)
     {
         $this->RegionalAdjustmentFieldNames = $value;
 
@@ -287,23 +340,27 @@ class GetBidModifiersRequest extends GetRequestGeneral
     }
 
     /**
-     * @see VideoAdjustmentFieldEnum
+     * Get VideoAdjustmentFieldNames
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\VideoAdjustmentFieldEnum
+     *
+     * @return list<'BidModifier'>
      */
-    public function getVideoAdjustmentFieldNames(): ?array
+    public function getVideoAdjustmentFieldNames(): array
     {
-        return $this->VideoAdjustmentFieldNames ?? null;
+        return $this->VideoAdjustmentFieldNames ?? [];
     }
 
     /**
-     * @see VideoAdjustmentFieldEnum
+     * Set VideoAdjustmentFieldNames
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\VideoAdjustmentFieldEnum
+     *
+     * @param list<'BidModifier'> $value
      *
      * @return $this
      */
-    public function setVideoAdjustmentFieldNames(?array $value = null)
+    public function setVideoAdjustmentFieldNames(array $value)
     {
         $this->VideoAdjustmentFieldNames = $value;
 
@@ -311,23 +368,27 @@ class GetBidModifiersRequest extends GetRequestGeneral
     }
 
     /**
-     * @see SmartAdAdjustmentFieldEnum
+     * Get SmartAdAdjustmentFieldNames
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\SmartAdAdjustmentFieldEnum
+     *
+     * @return list<'BidModifier'>
      */
-    public function getSmartAdAdjustmentFieldNames(): ?array
+    public function getSmartAdAdjustmentFieldNames(): array
     {
-        return $this->SmartAdAdjustmentFieldNames ?? null;
+        return $this->SmartAdAdjustmentFieldNames ?? [];
     }
 
     /**
-     * @see SmartAdAdjustmentFieldEnum
+     * Set SmartAdAdjustmentFieldNames
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\SmartAdAdjustmentFieldEnum
+     *
+     * @param list<'BidModifier'> $value
      *
      * @return $this
      */
-    public function setSmartAdAdjustmentFieldNames(?array $value = null)
+    public function setSmartAdAdjustmentFieldNames(array $value)
     {
         $this->SmartAdAdjustmentFieldNames = $value;
 
@@ -335,23 +396,27 @@ class GetBidModifiersRequest extends GetRequestGeneral
     }
 
     /**
-     * @see SerpLayoutAdjustmentFieldEnum
+     * Get SerpLayoutAdjustmentFieldNames
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\SerpLayoutAdjustmentFieldEnum
+     *
+     * @return list<'SerpLayout'|'BidModifier'|'Enabled'>
      */
-    public function getSerpLayoutAdjustmentFieldNames(): ?array
+    public function getSerpLayoutAdjustmentFieldNames(): array
     {
-        return $this->SerpLayoutAdjustmentFieldNames ?? null;
+        return $this->SerpLayoutAdjustmentFieldNames ?? [];
     }
 
     /**
-     * @see SerpLayoutAdjustmentFieldEnum
+     * Set SerpLayoutAdjustmentFieldNames
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\SerpLayoutAdjustmentFieldEnum
+     *
+     * @param list<'SerpLayout'|'BidModifier'|'Enabled'> $value
      *
      * @return $this
      */
-    public function setSerpLayoutAdjustmentFieldNames(?array $value = null)
+    public function setSerpLayoutAdjustmentFieldNames(array $value)
     {
         $this->SerpLayoutAdjustmentFieldNames = $value;
 
@@ -359,23 +424,27 @@ class GetBidModifiersRequest extends GetRequestGeneral
     }
 
     /**
-     * @see IncomeGradeAdjustmentFieldEnum
+     * Get IncomeGradeAdjustmentFieldNames
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\IncomeGradeAdjustmentFieldEnum
+     *
+     * @return list<'Grade'|'BidModifier'|'Enabled'>
      */
-    public function getIncomeGradeAdjustmentFieldNames(): ?array
+    public function getIncomeGradeAdjustmentFieldNames(): array
     {
-        return $this->IncomeGradeAdjustmentFieldNames ?? null;
+        return $this->IncomeGradeAdjustmentFieldNames ?? [];
     }
 
     /**
-     * @see IncomeGradeAdjustmentFieldEnum
+     * Set IncomeGradeAdjustmentFieldNames
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\IncomeGradeAdjustmentFieldEnum
+     *
+     * @param list<'Grade'|'BidModifier'|'Enabled'> $value
      *
      * @return $this
      */
-    public function setIncomeGradeAdjustmentFieldNames(?array $value = null)
+    public function setIncomeGradeAdjustmentFieldNames(array $value)
     {
         $this->IncomeGradeAdjustmentFieldNames = $value;
 
@@ -383,23 +452,27 @@ class GetBidModifiersRequest extends GetRequestGeneral
     }
 
     /**
-     * @see AdGroupAdjustmentFieldEnum
+     * Get AdGroupAdjustmentFieldNames
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\AdGroupAdjustmentFieldEnum
+     *
+     * @return list<'BidModifier'>
      */
-    public function getAdGroupAdjustmentFieldNames(): ?array
+    public function getAdGroupAdjustmentFieldNames(): array
     {
-        return $this->AdGroupAdjustmentFieldNames ?? null;
+        return $this->AdGroupAdjustmentFieldNames ?? [];
     }
 
     /**
-     * @see AdGroupAdjustmentFieldEnum
+     * Set AdGroupAdjustmentFieldNames
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\AdGroupAdjustmentFieldEnum
+     *
+     * @param list<'BidModifier'> $value
      *
      * @return $this
      */
-    public function setAdGroupAdjustmentFieldNames(?array $value = null)
+    public function setAdGroupAdjustmentFieldNames(array $value)
     {
         $this->AdGroupAdjustmentFieldNames = $value;
 

@@ -4,9 +4,12 @@ declare(strict_types=1);
 
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
+use AllowDynamicProperties;
+
 /**
  * Auto-generated code.
  */
+#[AllowDynamicProperties]
 class ClientSettingGetEnum
 {
     public const CORRECT_TYPOS_AUTOMATICALLY = 'CORRECT_TYPOS_AUTOMATICALLY';

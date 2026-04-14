@@ -13,11 +13,14 @@ use AllowDynamicProperties;
 class DeduplicateRequest
 {
 //    Can be omitted.
-//    protected $Operation = null;
+//    protected $Operation;
 
-    protected $Keywords = [];
+    /** @var non-empty-list<DeduplicateRequestItem> */
+    protected $Keywords;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -26,23 +29,27 @@ class DeduplicateRequest
     }
 
     /**
-     * @see DeduplicateOperationEnum
+     * Get Operation
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\DeduplicateOperationEnum
+     *
+     * @return list<'MERGE_DUPLICATES'|'ELIMINATE_OVERLAPPING'>
      */
-    public function getOperation(): ?array
+    public function getOperation(): array
     {
-        return $this->Operation ?? null;
+        return $this->Operation ?? [];
     }
 
     /**
-     * @see DeduplicateOperationEnum
+     * Set Operation
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\DeduplicateOperationEnum
+     *
+     * @param list<'MERGE_DUPLICATES'|'ELIMINATE_OVERLAPPING'> $value
      *
      * @return $this
      */
-    public function setOperation(?array $value = null)
+    public function setOperation(array $value)
     {
         $this->Operation = $value;
 
@@ -50,7 +57,9 @@ class DeduplicateRequest
     }
 
     /**
-     * @return DeduplicateRequestItem[]
+     * Get Keywords
+     *
+     * @return non-empty-list<DeduplicateRequestItem>
      */
     public function getKeywords(): array
     {
@@ -58,7 +67,9 @@ class DeduplicateRequest
     }
 
     /**
-     * @param DeduplicateRequestItem[] $value
+     * Set Keywords
+     *
+     * @param non-empty-list<DeduplicateRequestItem> $value
      *
      * @return $this
      */

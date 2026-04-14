@@ -12,22 +12,27 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class UnifiedCampaignPlatforms
 {
-    protected $SearchResult = null;
+    /** @var 'YES'|'NO' */
+    protected $SearchResult;
 
-    protected $ProductGallery = null;
-
-//    Can be omitted.
-//    protected $Maps = null;
-
-//    Can be omitted.
-//    protected $SearchOrganizationList = null;
-
-    protected $Network = null;
+    /** @var 'YES'|'NO' */
+    protected $ProductGallery;
 
 //    Can be omitted.
-//    protected $DynamicPlaces = null;
+//    protected $Maps;
+
+//    Can be omitted.
+//    protected $SearchOrganizationList;
+
+    /** @var 'YES'|'NO' */
+    protected $Network;
+
+//    Can be omitted.
+//    protected $DynamicPlaces;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -36,7 +41,11 @@ class UnifiedCampaignPlatforms
     }
 
     /**
-     * @see YesNoEnum
+     * Get SearchResult
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'
      */
     public function getSearchResult(): string
     {
@@ -44,7 +53,11 @@ class UnifiedCampaignPlatforms
     }
 
     /**
-     * @see YesNoEnum
+     * Set SearchResult
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO' $value
      *
      * @return $this
      */
@@ -56,7 +69,11 @@ class UnifiedCampaignPlatforms
     }
 
     /**
-     * @see YesNoEnum
+     * Get ProductGallery
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'
      */
     public function getProductGallery(): string
     {
@@ -64,7 +81,11 @@ class UnifiedCampaignPlatforms
     }
 
     /**
-     * @see YesNoEnum
+     * Set ProductGallery
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO' $value
      *
      * @return $this
      */
@@ -76,7 +97,11 @@ class UnifiedCampaignPlatforms
     }
 
     /**
-     * @see YesNoEnum
+     * Get Maps
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'|null
      */
     public function getMaps(): ?string
     {
@@ -84,11 +109,15 @@ class UnifiedCampaignPlatforms
     }
 
     /**
-     * @see YesNoEnum
+     * Set Maps
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO'|null $value
      *
      * @return $this
      */
-    public function setMaps(?string $value = null)
+    public function setMaps(?string $value)
     {
         $this->Maps = $value;
 
@@ -96,7 +125,11 @@ class UnifiedCampaignPlatforms
     }
 
     /**
-     * @see YesNoEnum
+     * Get SearchOrganizationList
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'|null
      */
     public function getSearchOrganizationList(): ?string
     {
@@ -104,11 +137,15 @@ class UnifiedCampaignPlatforms
     }
 
     /**
-     * @see YesNoEnum
+     * Set SearchOrganizationList
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO'|null $value
      *
      * @return $this
      */
-    public function setSearchOrganizationList(?string $value = null)
+    public function setSearchOrganizationList(?string $value)
     {
         $this->SearchOrganizationList = $value;
 
@@ -116,7 +153,11 @@ class UnifiedCampaignPlatforms
     }
 
     /**
-     * @see YesNoEnum
+     * Get Network
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'
      */
     public function getNetwork(): string
     {
@@ -124,7 +165,11 @@ class UnifiedCampaignPlatforms
     }
 
     /**
-     * @see YesNoEnum
+     * Set Network
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO' $value
      *
      * @return $this
      */
@@ -136,7 +181,11 @@ class UnifiedCampaignPlatforms
     }
 
     /**
-     * @see YesNoEnum
+     * Get DynamicPlaces
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'|null
      */
     public function getDynamicPlaces(): ?string
     {
@@ -144,11 +193,15 @@ class UnifiedCampaignPlatforms
     }
 
     /**
-     * @see YesNoEnum
+     * Set DynamicPlaces
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO'|null $value
      *
      * @return $this
      */
-    public function setDynamicPlaces(?string $value = null)
+    public function setDynamicPlaces(?string $value)
     {
         $this->DynamicPlaces = $value;
 

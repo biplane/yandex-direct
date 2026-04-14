@@ -12,15 +12,21 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class Transfer
 {
-    protected $FromAccountID = null;
+    /** @var int */
+    protected $FromAccountID;
 
-    protected $ToAccountID = null;
+    /** @var int */
+    protected $ToAccountID;
 
-    protected $Amount = null;
+    /** @var float */
+    protected $Amount;
 
+    /** @var string|null */
     protected $Currency = null;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -28,12 +34,17 @@ class Transfer
         return new static();
     }
 
+    /**
+     * Get FromAccountID
+     */
     public function getFromAccountID(): int
     {
         return $this->FromAccountID;
     }
 
     /**
+     * Set FromAccountID
+     *
      * @return $this
      */
     public function setFromAccountID(int $value)
@@ -43,12 +54,17 @@ class Transfer
         return $this;
     }
 
+    /**
+     * Get ToAccountID
+     */
     public function getToAccountID(): int
     {
         return $this->ToAccountID;
     }
 
     /**
+     * Set ToAccountID
+     *
      * @return $this
      */
     public function setToAccountID(int $value)
@@ -58,12 +74,17 @@ class Transfer
         return $this;
     }
 
+    /**
+     * Get Amount
+     */
     public function getAmount(): float
     {
         return $this->Amount;
     }
 
     /**
+     * Set Amount
+     *
      * @return $this
      */
     public function setAmount(float $value)
@@ -73,15 +94,20 @@ class Transfer
         return $this;
     }
 
+    /**
+     * Get Currency
+     */
     public function getCurrency(): ?string
     {
         return $this->Currency;
     }
 
     /**
+     * Set Currency
+     *
      * @return $this
      */
-    public function setCurrency(?string $value = null)
+    public function setCurrency(?string $value)
     {
         $this->Currency = $value;
 

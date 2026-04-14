@@ -13,17 +13,32 @@ use AllowDynamicProperties;
 class DynamicTextAdUpdate extends TextAdUpdateBase
 {
 //    Can be omitted.
-//    protected $Text = null;
+//    protected $Text;
 
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    /**
+     * Get Text
+     */
     public function getText(): ?string
     {
         return $this->Text ?? null;
     }
 
     /**
+     * Set Text
+     *
      * @return $this
      */
-    public function setText(?string $value = null)
+    public function setText(?string $value)
     {
         $this->Text = $value;
 

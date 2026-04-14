@@ -13,12 +13,14 @@ use AllowDynamicProperties;
 class SmartCampaignBase
 {
 //    Can be omitted.
-//    protected $CounterId = null;
+//    protected $CounterId;
 
 //    Can be omitted.
-//    protected $AttributionModel = null;
+//    protected $AttributionModel;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -26,15 +28,20 @@ class SmartCampaignBase
         return new static();
     }
 
+    /**
+     * Get CounterId
+     */
     public function getCounterId(): ?int
     {
         return $this->CounterId ?? null;
     }
 
     /**
+     * Set CounterId
+     *
      * @return $this
      */
-    public function setCounterId(?int $value = null)
+    public function setCounterId(?int $value)
     {
         $this->CounterId = $value;
 
@@ -42,7 +49,11 @@ class SmartCampaignBase
     }
 
     /**
-     * @see AttributionModelEnum
+     * Get AttributionModel
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\AttributionModelEnum
+     *
+     * @return 'LC'|'LSC'|'FC'|'LYDC'|'LSCCD'|'FCCD'|'LYDCCD'|'AUTO'|null
      */
     public function getAttributionModel(): ?string
     {
@@ -50,11 +61,15 @@ class SmartCampaignBase
     }
 
     /**
-     * @see AttributionModelEnum
+     * Set AttributionModel
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\AttributionModelEnum
+     *
+     * @param 'LC'|'LSC'|'FC'|'LYDC'|'LSCCD'|'FCCD'|'LYDCCD'|'AUTO'|null $value
      *
      * @return $this
      */
-    public function setAttributionModel(?string $value = null)
+    public function setAttributionModel(?string $value)
     {
         $this->AttributionModel = $value;
 

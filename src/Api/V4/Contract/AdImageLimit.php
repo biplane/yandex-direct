@@ -12,13 +12,18 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class AdImageLimit
 {
-    protected $Login = null;
+    /** @var string */
+    protected $Login;
 
-    protected $Capacity = null;
+    /** @var int */
+    protected $Capacity;
 
-    protected $Utilized = null;
+    /** @var int */
+    protected $Utilized;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -26,12 +31,17 @@ class AdImageLimit
         return new static();
     }
 
+    /**
+     * Get Login
+     */
     public function getLogin(): string
     {
         return $this->Login;
     }
 
     /**
+     * Set Login
+     *
      * @return $this
      */
     public function setLogin(string $value)
@@ -41,12 +51,17 @@ class AdImageLimit
         return $this;
     }
 
+    /**
+     * Get Capacity
+     */
     public function getCapacity(): int
     {
         return $this->Capacity;
     }
 
     /**
+     * Set Capacity
+     *
      * @return $this
      */
     public function setCapacity(int $value)
@@ -56,12 +71,17 @@ class AdImageLimit
         return $this;
     }
 
+    /**
+     * Get Utilized
+     */
     public function getUtilized(): int
     {
         return $this->Utilized;
     }
 
     /**
+     * Set Utilized
+     *
      * @return $this
      */
     public function setUtilized(int $value)

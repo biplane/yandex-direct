@@ -12,49 +12,54 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class AdGroupAddItem
 {
-    protected $Name = null;
+    /** @var string */
+    protected $Name;
 
-    protected $CampaignId = null;
+    /** @var int */
+    protected $CampaignId;
 
-    protected $RegionIds = [];
-
-//    Can be omitted.
-//    protected $NegativeKeywords = null;
-
-//    Can be omitted.
-//    protected $NegativeKeywordSharedSetIds = null;
+    /** @var non-empty-list<int> */
+    protected $RegionIds;
 
 //    Can be omitted.
-//    protected $TrackingParams = null;
+//    protected $NegativeKeywords;
 
 //    Can be omitted.
-//    protected $MobileAppAdGroup = null;
+//    protected $NegativeKeywordSharedSetIds;
 
 //    Can be omitted.
-//    protected $DynamicTextAdGroup = null;
+//    protected $TrackingParams;
 
 //    Can be omitted.
-//    protected $DynamicTextFeedAdGroup = null;
+//    protected $MobileAppAdGroup;
 
 //    Can be omitted.
-//    protected $CpmBannerKeywordsAdGroup = null;
+//    protected $DynamicTextAdGroup;
 
 //    Can be omitted.
-//    protected $CpmBannerUserProfileAdGroup = null;
+//    protected $DynamicTextFeedAdGroup;
 
 //    Can be omitted.
-//    protected $CpmVideoAdGroup = null;
+//    protected $CpmBannerKeywordsAdGroup;
 
 //    Can be omitted.
-//    protected $SmartAdGroup = null;
+//    protected $CpmBannerUserProfileAdGroup;
 
 //    Can be omitted.
-//    protected $UnifiedAdGroup = null;
+//    protected $CpmVideoAdGroup;
 
 //    Can be omitted.
-//    protected $TextAdGroupFeedParams = null;
+//    protected $SmartAdGroup;
+
+//    Can be omitted.
+//    protected $UnifiedAdGroup;
+
+//    Can be omitted.
+//    protected $TextAdGroupFeedParams;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -62,12 +67,17 @@ class AdGroupAddItem
         return new static();
     }
 
+    /**
+     * Get Name
+     */
     public function getName(): string
     {
         return $this->Name;
     }
 
     /**
+     * Set Name
+     *
      * @return $this
      */
     public function setName(string $value)
@@ -77,12 +87,17 @@ class AdGroupAddItem
         return $this;
     }
 
+    /**
+     * Get CampaignId
+     */
     public function getCampaignId(): int
     {
         return $this->CampaignId;
     }
 
     /**
+     * Set CampaignId
+     *
      * @return $this
      */
     public function setCampaignId(int $value)
@@ -93,7 +108,9 @@ class AdGroupAddItem
     }
 
     /**
-     * @return int[]
+     * Get RegionIds
+     *
+     * @return non-empty-list<int>
      */
     public function getRegionIds(): array
     {
@@ -101,7 +118,9 @@ class AdGroupAddItem
     }
 
     /**
-     * @param int[] $value
+     * Set RegionIds
+     *
+     * @param non-empty-list<int> $value
      *
      * @return $this
      */
@@ -113,7 +132,9 @@ class AdGroupAddItem
     }
 
     /**
-     * @return string[]|null
+     * Get NegativeKeywords
+     *
+     * @return non-empty-list<string>|null
      */
     public function getNegativeKeywords(): ?array
     {
@@ -121,11 +142,13 @@ class AdGroupAddItem
     }
 
     /**
-     * @param string[]|null $value
+     * Set NegativeKeywords
+     *
+     * @param non-empty-list<string>|null $value
      *
      * @return $this
      */
-    public function setNegativeKeywords(?array $value = null)
+    public function setNegativeKeywords(?array $value)
     {
         $this->NegativeKeywords = $value;
 
@@ -133,7 +156,9 @@ class AdGroupAddItem
     }
 
     /**
-     * @return float[]|null
+     * Get NegativeKeywordSharedSetIds
+     *
+     * @return non-empty-list<int>|null
      */
     public function getNegativeKeywordSharedSetIds(): ?array
     {
@@ -141,161 +166,213 @@ class AdGroupAddItem
     }
 
     /**
-     * @param float[]|null $value
+     * Set NegativeKeywordSharedSetIds
+     *
+     * @param non-empty-list<int>|null $value
      *
      * @return $this
      */
-    public function setNegativeKeywordSharedSetIds(?array $value = null)
+    public function setNegativeKeywordSharedSetIds(?array $value)
     {
         $this->NegativeKeywordSharedSetIds = $value;
 
         return $this;
     }
 
+    /**
+     * Get TrackingParams
+     */
     public function getTrackingParams(): ?string
     {
         return $this->TrackingParams ?? null;
     }
 
     /**
+     * Set TrackingParams
+     *
      * @return $this
      */
-    public function setTrackingParams(?string $value = null)
+    public function setTrackingParams(?string $value)
     {
         $this->TrackingParams = $value;
 
         return $this;
     }
 
+    /**
+     * Get MobileAppAdGroup
+     */
     public function getMobileAppAdGroup(): ?MobileAppAdGroupAdd
     {
         return $this->MobileAppAdGroup ?? null;
     }
 
     /**
+     * Set MobileAppAdGroup
+     *
      * @return $this
      */
-    public function setMobileAppAdGroup(?MobileAppAdGroupAdd $value = null)
+    public function setMobileAppAdGroup(?MobileAppAdGroupAdd $value)
     {
         $this->MobileAppAdGroup = $value;
 
         return $this;
     }
 
+    /**
+     * Get DynamicTextAdGroup
+     */
     public function getDynamicTextAdGroup(): ?DynamicTextAdGroup
     {
         return $this->DynamicTextAdGroup ?? null;
     }
 
     /**
+     * Set DynamicTextAdGroup
+     *
      * @return $this
      */
-    public function setDynamicTextAdGroup(?DynamicTextAdGroup $value = null)
+    public function setDynamicTextAdGroup(?DynamicTextAdGroup $value)
     {
         $this->DynamicTextAdGroup = $value;
 
         return $this;
     }
 
+    /**
+     * Get DynamicTextFeedAdGroup
+     */
     public function getDynamicTextFeedAdGroup(): ?DynamicTextFeedAdGroup
     {
         return $this->DynamicTextFeedAdGroup ?? null;
     }
 
     /**
+     * Set DynamicTextFeedAdGroup
+     *
      * @return $this
      */
-    public function setDynamicTextFeedAdGroup(?DynamicTextFeedAdGroup $value = null)
+    public function setDynamicTextFeedAdGroup(?DynamicTextFeedAdGroup $value)
     {
         $this->DynamicTextFeedAdGroup = $value;
 
         return $this;
     }
 
+    /**
+     * Get CpmBannerKeywordsAdGroup
+     */
     public function getCpmBannerKeywordsAdGroup(): ?CpmBannerKeywordsAdGroupAdd
     {
         return $this->CpmBannerKeywordsAdGroup ?? null;
     }
 
     /**
+     * Set CpmBannerKeywordsAdGroup
+     *
      * @return $this
      */
-    public function setCpmBannerKeywordsAdGroup(?CpmBannerKeywordsAdGroupAdd $value = null)
+    public function setCpmBannerKeywordsAdGroup(?CpmBannerKeywordsAdGroupAdd $value)
     {
         $this->CpmBannerKeywordsAdGroup = $value;
 
         return $this;
     }
 
+    /**
+     * Get CpmBannerUserProfileAdGroup
+     */
     public function getCpmBannerUserProfileAdGroup(): ?CpmBannerUserProfileAdGroupAdd
     {
         return $this->CpmBannerUserProfileAdGroup ?? null;
     }
 
     /**
+     * Set CpmBannerUserProfileAdGroup
+     *
      * @return $this
      */
-    public function setCpmBannerUserProfileAdGroup(?CpmBannerUserProfileAdGroupAdd $value = null)
+    public function setCpmBannerUserProfileAdGroup(?CpmBannerUserProfileAdGroupAdd $value)
     {
         $this->CpmBannerUserProfileAdGroup = $value;
 
         return $this;
     }
 
+    /**
+     * Get CpmVideoAdGroup
+     */
     public function getCpmVideoAdGroup(): ?CpmVideoAdGroupAdd
     {
         return $this->CpmVideoAdGroup ?? null;
     }
 
     /**
+     * Set CpmVideoAdGroup
+     *
      * @return $this
      */
-    public function setCpmVideoAdGroup(?CpmVideoAdGroupAdd $value = null)
+    public function setCpmVideoAdGroup(?CpmVideoAdGroupAdd $value)
     {
         $this->CpmVideoAdGroup = $value;
 
         return $this;
     }
 
+    /**
+     * Get SmartAdGroup
+     */
     public function getSmartAdGroup(): ?SmartAdGroupAdd
     {
         return $this->SmartAdGroup ?? null;
     }
 
     /**
+     * Set SmartAdGroup
+     *
      * @return $this
      */
-    public function setSmartAdGroup(?SmartAdGroupAdd $value = null)
+    public function setSmartAdGroup(?SmartAdGroupAdd $value)
     {
         $this->SmartAdGroup = $value;
 
         return $this;
     }
 
+    /**
+     * Get UnifiedAdGroup
+     */
     public function getUnifiedAdGroup(): ?UnifiedAdGroupAdd
     {
         return $this->UnifiedAdGroup ?? null;
     }
 
     /**
+     * Set UnifiedAdGroup
+     *
      * @return $this
      */
-    public function setUnifiedAdGroup(?UnifiedAdGroupAdd $value = null)
+    public function setUnifiedAdGroup(?UnifiedAdGroupAdd $value)
     {
         $this->UnifiedAdGroup = $value;
 
         return $this;
     }
 
+    /**
+     * Get TextAdGroupFeedParams
+     */
     public function getTextAdGroupFeedParams(): ?TextAdGroupFeedParamsAdd
     {
         return $this->TextAdGroupFeedParams ?? null;
     }
 
     /**
+     * Set TextAdGroupFeedParams
+     *
      * @return $this
      */
-    public function setTextAdGroupFeedParams(?TextAdGroupFeedParamsAdd $value = null)
+    public function setTextAdGroupFeedParams(?TextAdGroupFeedParamsAdd $value)
     {
         $this->TextAdGroupFeedParams = $value;
 

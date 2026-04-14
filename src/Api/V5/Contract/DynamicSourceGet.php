@@ -13,41 +13,61 @@ use AllowDynamicProperties;
 class DynamicSourceGet extends DynamicAdGroupGet
 {
 //    Can be omitted.
-//    protected $Source = null;
+//    protected $Source;
 
 //    Can be omitted.
-//    protected $FeedId = null;
+//    protected $FeedId;
 
 //    Can be omitted.
-//    protected $SourceType = null;
+//    protected $SourceType;
 
 //    Can be omitted.
-//    protected $SourceProcessingStatus = null;
+//    protected $SourceProcessingStatus;
 
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    /**
+     * Get Source
+     */
     public function getSource(): ?string
     {
         return $this->Source ?? null;
     }
 
     /**
+     * Set Source
+     *
      * @return $this
      */
-    public function setSource(?string $value = null)
+    public function setSource(?string $value)
     {
         $this->Source = $value;
 
         return $this;
     }
 
+    /**
+     * Get FeedId
+     */
     public function getFeedId(): ?int
     {
         return $this->FeedId ?? null;
     }
 
     /**
+     * Set FeedId
+     *
      * @return $this
      */
-    public function setFeedId(?int $value = null)
+    public function setFeedId(?int $value)
     {
         $this->FeedId = $value;
 
@@ -55,7 +75,11 @@ class DynamicSourceGet extends DynamicAdGroupGet
     }
 
     /**
-     * @see SourceTypeGetEnum
+     * Get SourceType
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\SourceTypeGetEnum
+     *
+     * @return 'RETAIL_FEED'|'UNKNOWN'|null
      */
     public function getSourceType(): ?string
     {
@@ -63,11 +87,15 @@ class DynamicSourceGet extends DynamicAdGroupGet
     }
 
     /**
-     * @see SourceTypeGetEnum
+     * Set SourceType
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\SourceTypeGetEnum
+     *
+     * @param 'RETAIL_FEED'|'UNKNOWN'|null $value
      *
      * @return $this
      */
-    public function setSourceType(?string $value = null)
+    public function setSourceType(?string $value)
     {
         $this->SourceType = $value;
 
@@ -75,7 +103,11 @@ class DynamicSourceGet extends DynamicAdGroupGet
     }
 
     /**
-     * @see SourceProcessingStatusEnum
+     * Get SourceProcessingStatus
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\SourceProcessingStatusEnum
+     *
+     * @return 'EMPTY_RESULT'|'PROCESSED'|'UNKNOWN'|'UNPROCESSED'|null
      */
     public function getSourceProcessingStatus(): ?string
     {
@@ -83,11 +115,15 @@ class DynamicSourceGet extends DynamicAdGroupGet
     }
 
     /**
-     * @see SourceProcessingStatusEnum
+     * Set SourceProcessingStatus
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\SourceProcessingStatusEnum
+     *
+     * @param 'EMPTY_RESULT'|'PROCESSED'|'UNKNOWN'|'UNPROCESSED'|null $value
      *
      * @return $this
      */
-    public function setSourceProcessingStatus(?string $value = null)
+    public function setSourceProcessingStatus(?string $value)
     {
         $this->SourceProcessingStatus = $value;
 

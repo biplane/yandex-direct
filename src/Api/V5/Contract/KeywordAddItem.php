@@ -12,38 +12,42 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class KeywordAddItem
 {
-    protected $Keyword = null;
+    /** @var string */
+    protected $Keyword;
 
-    protected $AdGroupId = null;
-
-//    Can be omitted.
-//    protected $Bid = null;
-
-//    Can be omitted.
-//    protected $AutotargetingSearchBidIsAuto = null;
+    /** @var int */
+    protected $AdGroupId;
 
 //    Can be omitted.
-//    protected $ContextBid = null;
+//    protected $Bid;
 
 //    Can be omitted.
-//    protected $StrategyPriority = null;
+//    protected $AutotargetingSearchBidIsAuto;
 
 //    Can be omitted.
-//    protected $UserParam1 = null;
+//    protected $ContextBid;
 
 //    Can be omitted.
-//    protected $UserParam2 = null;
+//    protected $StrategyPriority;
 
 //    Can be omitted.
-//    protected $AutotargetingCategories = null;
+//    protected $UserParam1;
 
 //    Can be omitted.
-//    protected $AutotargetingBrandOptions = null;
+//    protected $UserParam2;
 
 //    Can be omitted.
-//    protected $AutotargetingSettings = null;
+//    protected $AutotargetingCategories;
+
+//    Can be omitted.
+//    protected $AutotargetingBrandOptions;
+
+//    Can be omitted.
+//    protected $AutotargetingSettings;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -51,12 +55,17 @@ class KeywordAddItem
         return new static();
     }
 
+    /**
+     * Get Keyword
+     */
     public function getKeyword(): string
     {
         return $this->Keyword;
     }
 
     /**
+     * Set Keyword
+     *
      * @return $this
      */
     public function setKeyword(string $value)
@@ -66,12 +75,17 @@ class KeywordAddItem
         return $this;
     }
 
+    /**
+     * Get AdGroupId
+     */
     public function getAdGroupId(): int
     {
         return $this->AdGroupId;
     }
 
     /**
+     * Set AdGroupId
+     *
      * @return $this
      */
     public function setAdGroupId(int $value)
@@ -81,15 +95,20 @@ class KeywordAddItem
         return $this;
     }
 
+    /**
+     * Get Bid
+     */
     public function getBid(): ?int
     {
         return $this->Bid ?? null;
     }
 
     /**
+     * Set Bid
+     *
      * @return $this
      */
-    public function setBid(?int $value = null)
+    public function setBid(?int $value)
     {
         $this->Bid = $value;
 
@@ -97,7 +116,11 @@ class KeywordAddItem
     }
 
     /**
-     * @see YesNoEnum
+     * Get AutotargetingSearchBidIsAuto
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'|null
      */
     public function getAutotargetingSearchBidIsAuto(): ?string
     {
@@ -105,26 +128,35 @@ class KeywordAddItem
     }
 
     /**
-     * @see YesNoEnum
+     * Set AutotargetingSearchBidIsAuto
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO'|null $value
      *
      * @return $this
      */
-    public function setAutotargetingSearchBidIsAuto(?string $value = null)
+    public function setAutotargetingSearchBidIsAuto(?string $value)
     {
         $this->AutotargetingSearchBidIsAuto = $value;
 
         return $this;
     }
 
+    /**
+     * Get ContextBid
+     */
     public function getContextBid(): ?int
     {
         return $this->ContextBid ?? null;
     }
 
     /**
+     * Set ContextBid
+     *
      * @return $this
      */
-    public function setContextBid(?int $value = null)
+    public function setContextBid(?int $value)
     {
         $this->ContextBid = $value;
 
@@ -132,7 +164,11 @@ class KeywordAddItem
     }
 
     /**
-     * @see PriorityEnum
+     * Get StrategyPriority
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\PriorityEnum
+     *
+     * @return 'LOW'|'NORMAL'|'HIGH'|null
      */
     public function getStrategyPriority(): ?string
     {
@@ -140,41 +176,55 @@ class KeywordAddItem
     }
 
     /**
-     * @see PriorityEnum
+     * Set StrategyPriority
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\PriorityEnum
+     *
+     * @param 'LOW'|'NORMAL'|'HIGH'|null $value
      *
      * @return $this
      */
-    public function setStrategyPriority(?string $value = null)
+    public function setStrategyPriority(?string $value)
     {
         $this->StrategyPriority = $value;
 
         return $this;
     }
 
+    /**
+     * Get UserParam1
+     */
     public function getUserParam1(): ?string
     {
         return $this->UserParam1 ?? null;
     }
 
     /**
+     * Set UserParam1
+     *
      * @return $this
      */
-    public function setUserParam1(?string $value = null)
+    public function setUserParam1(?string $value)
     {
         $this->UserParam1 = $value;
 
         return $this;
     }
 
+    /**
+     * Get UserParam2
+     */
     public function getUserParam2(): ?string
     {
         return $this->UserParam2 ?? null;
     }
 
     /**
+     * Set UserParam2
+     *
      * @return $this
      */
-    public function setUserParam2(?string $value = null)
+    public function setUserParam2(?string $value)
     {
         $this->UserParam2 = $value;
 
@@ -182,19 +232,23 @@ class KeywordAddItem
     }
 
     /**
-     * @return AutotargetingCategory[]|null
+     * Get AutotargetingCategories
+     *
+     * @return list<AutotargetingCategory>
      */
-    public function getAutotargetingCategories(): ?array
+    public function getAutotargetingCategories(): array
     {
-        return $this->AutotargetingCategories ?? null;
+        return $this->AutotargetingCategories ?? [];
     }
 
     /**
-     * @param AutotargetingCategory[]|null $value
+     * Set AutotargetingCategories
+     *
+     * @param list<AutotargetingCategory> $value
      *
      * @return $this
      */
-    public function setAutotargetingCategories(?array $value = null)
+    public function setAutotargetingCategories(array $value)
     {
         $this->AutotargetingCategories = $value;
 
@@ -202,34 +256,43 @@ class KeywordAddItem
     }
 
     /**
-     * @return AutotargetingBrandOption[]|null
+     * Get AutotargetingBrandOptions
+     *
+     * @return list<AutotargetingBrandOption>
      */
-    public function getAutotargetingBrandOptions(): ?array
+    public function getAutotargetingBrandOptions(): array
     {
-        return $this->AutotargetingBrandOptions ?? null;
+        return $this->AutotargetingBrandOptions ?? [];
     }
 
     /**
-     * @param AutotargetingBrandOption[]|null $value
+     * Set AutotargetingBrandOptions
+     *
+     * @param list<AutotargetingBrandOption> $value
      *
      * @return $this
      */
-    public function setAutotargetingBrandOptions(?array $value = null)
+    public function setAutotargetingBrandOptions(array $value)
     {
         $this->AutotargetingBrandOptions = $value;
 
         return $this;
     }
 
+    /**
+     * Get AutotargetingSettings
+     */
     public function getAutotargetingSettings(): ?AutotargetingSettings
     {
         return $this->AutotargetingSettings ?? null;
     }
 
     /**
+     * Set AutotargetingSettings
+     *
      * @return $this
      */
-    public function setAutotargetingSettings(?AutotargetingSettings $value = null)
+    public function setAutotargetingSettings(?AutotargetingSettings $value)
     {
         $this->AutotargetingSettings = $value;
 

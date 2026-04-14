@@ -27,115 +27,92 @@ class Keywords extends ApiSoapClientV5
     public const ENDPOINT = 'https://api.direct.yandex.com/v501/keywords?wsdl';
 
     /**
+     * Constructor
+     *
      * @param array<string, mixed> $options
      */
     public function __construct(Config $config, array $options)
     {
         $options['classmap'] = [
-            'MobileAppAdActionEnum' => 'Biplane\YandexDirect\Api\V5\Contract\MobileAppAdActionEnum',
-            'AdGroupTypesEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AdGroupTypesEnum',
-            'StringConditionOperatorEnum' => 'Biplane\YandexDirect\Api\V5\Contract\StringConditionOperatorEnum',
-            'AttributionModelEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AttributionModelEnum',
-            'ExceptionNotification' => 'Biplane\YandexDirect\Api\V5\Contract\ExceptionNotification',
-            'LimitOffset' => 'Biplane\YandexDirect\Api\V5\Contract\LimitOffset',
-            'YesNoEnum' => 'Biplane\YandexDirect\Api\V5\Contract\YesNoEnum',
-            'YesNoUnknownEnum' => 'Biplane\YandexDirect\Api\V5\Contract\YesNoUnknownEnum',
-            'VideoTargetEnum' => 'Biplane\YandexDirect\Api\V5\Contract\VideoTargetEnum',
-            'CurrencyEnum' => 'Biplane\YandexDirect\Api\V5\Contract\CurrencyEnum',
-            'ConditionTypeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\ConditionTypeEnum',
-            'AdTargetStateSelectionEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AdTargetStateSelectionEnum',
-            'AdTargetsSelectionCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\AdTargetsSelectionCriteria',
-            'StateEnum' => 'Biplane\YandexDirect\Api\V5\Contract\StateEnum',
-            'PriorityEnum' => 'Biplane\YandexDirect\Api\V5\Contract\PriorityEnum',
-            'PositionEnum' => 'Biplane\YandexDirect\Api\V5\Contract\PositionEnum',
-            'CountryCodeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\CountryCodeEnum',
-            'StatusEnum' => 'Biplane\YandexDirect\Api\V5\Contract\StatusEnum',
-            'StatusSelectionEnum' => 'Biplane\YandexDirect\Api\V5\Contract\StatusSelectionEnum',
-            'ExtensionStatusSelectionEnum' => 'Biplane\YandexDirect\Api\V5\Contract\ExtensionStatusSelectionEnum',
-            'ScopeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\ScopeEnum',
-            'AgeRangeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AgeRangeEnum',
-            'GenderEnum' => 'Biplane\YandexDirect\Api\V5\Contract\GenderEnum',
-            'MobileOperatingSystemTypeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\MobileOperatingSystemTypeEnum',
-            'LangEnum' => 'Biplane\YandexDirect\Api\V5\Contract\LangEnum',
-            'RoleEnum' => 'Biplane\YandexDirect\Api\V5\Contract\RoleEnum',
-            'RepresentativeRoleEnum' => 'Biplane\YandexDirect\Api\V5\Contract\RepresentativeRoleEnum',
-            'OperationEnum' => 'Biplane\YandexDirect\Api\V5\Contract\OperationEnum',
-            'ServingStatusEnum' => 'Biplane\YandexDirect\Api\V5\Contract\ServingStatusEnum',
-            'SerpLayoutEnum' => 'Biplane\YandexDirect\Api\V5\Contract\SerpLayoutEnum',
-            'Statistics' => 'Biplane\YandexDirect\Api\V5\Contract\Statistics',
-            'IncomeGradeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\IncomeGradeEnum',
-            'IdsCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\IdsCriteria',
-            'GetRequestGeneral' => 'Biplane\YandexDirect\Api\V5\Contract\GetRequestGeneral',
-            'GetResponseGeneral' => 'Biplane\YandexDirect\Api\V5\Contract\GetResponseGeneral',
-            'ApiExceptionMessage' => 'Biplane\YandexDirect\Api\V5\Contract\ApiExceptionMessage',
-            'ActionResultBase' => 'Biplane\YandexDirect\Api\V5\Contract\ActionResultBase',
-            'ActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\ActionResult',
-            'SetBidsActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\SetBidsActionResult',
-            'MultiIdsActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\MultiIdsActionResult',
-            'ClientsActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\ClientsActionResult',
-            'ExtensionModeration' => 'Biplane\YandexDirect\Api\V5\Contract\ExtensionModeration',
-            'SortOrderEnum' => 'Biplane\YandexDirect\Api\V5\Contract\SortOrderEnum',
-            'AutotargetingCategoriesEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategoriesEnum',
+            'AddRequest' => 'Biplane\YandexDirect\Api\V5\Contract\AddKeywordsRequest',
+            'KeywordAddItem' => 'Biplane\YandexDirect\Api\V5\Contract\KeywordAddItem',
             'AutotargetingCategory' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategory',
-            'AutotargetingCategoryArray' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategoryArray',
-            'AutotargetingBrandOptionsEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingBrandOptionsEnum',
             'AutotargetingBrandOption' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingBrandOption',
-            'AutotargetingBrandOptionArray' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingBrandOptionArray',
+            'AutotargetingSettings' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingSettings',
             'AutotargetingCategories' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategories',
             'AutotargetingBrandOptions' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingBrandOptions',
-            'AutotargetingSettings' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingSettings',
-            'AutotargetingCategoriesFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategoriesFieldEnum',
-            'AutotargetingBrandOptionsFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingBrandOptionsFieldEnum',
-            'KeywordFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\KeywordFieldEnum',
-            'KeywordStateSelectionEnum' => 'Biplane\YandexDirect\Api\V5\Contract\KeywordStateSelectionEnum',
-            'KeywordStatusSelectionEnum' => 'Biplane\YandexDirect\Api\V5\Contract\KeywordStatusSelectionEnum',
-            'KeywordsSelectionCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\KeywordsSelectionCriteria',
-            'KeywordAddItem' => 'Biplane\YandexDirect\Api\V5\Contract\KeywordAddItem',
-            'KeywordProductivity' => 'Biplane\YandexDirect\Api\V5\Contract\KeywordProductivity',
-            'KeywordGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\KeywordGetItem',
-            'KeywordUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\KeywordUpdateItem',
-            'AddRequest' => 'Biplane\YandexDirect\Api\V5\Contract\AddKeywordsRequest',
             'AddResponse' => 'Biplane\YandexDirect\Api\V5\Contract\AddKeywordsResponse',
+            'ActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\ActionResult',
+            'ActionResultBase' => 'Biplane\YandexDirect\Api\V5\Contract\ActionResultBase',
+            'ExceptionNotification' => 'Biplane\YandexDirect\Api\V5\Contract\ExceptionNotification',
             'GetRequest' => 'Biplane\YandexDirect\Api\V5\Contract\GetKeywordsRequest',
+            'KeywordsSelectionCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\KeywordsSelectionCriteria',
+            'GetRequestGeneral' => 'Biplane\YandexDirect\Api\V5\Contract\GetRequestGeneral',
+            'LimitOffset' => 'Biplane\YandexDirect\Api\V5\Contract\LimitOffset',
             'GetResponse' => 'Biplane\YandexDirect\Api\V5\Contract\GetKeywordsResponse',
+            'KeywordGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\KeywordGetItem',
+            'KeywordProductivity' => 'Biplane\YandexDirect\Api\V5\Contract\KeywordProductivity',
+            'Statistics' => 'Biplane\YandexDirect\Api\V5\Contract\Statistics',
+            'AutotargetingCategoryArray' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategoryArray',
+            'AutotargetingBrandOptionArray' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingBrandOptionArray',
+            'GetResponseGeneral' => 'Biplane\YandexDirect\Api\V5\Contract\GetResponseGeneral',
             'UpdateRequest' => 'Biplane\YandexDirect\Api\V5\Contract\UpdateKeywordsRequest',
+            'KeywordUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\KeywordUpdateItem',
             'UpdateResponse' => 'Biplane\YandexDirect\Api\V5\Contract\UpdateKeywordsResponse',
             'DeleteRequest' => 'Biplane\YandexDirect\Api\V5\Contract\DeleteKeywordsRequest',
+            'IdsCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\IdsCriteria',
             'DeleteResponse' => 'Biplane\YandexDirect\Api\V5\Contract\DeleteKeywordsResponse',
             'SuspendRequest' => 'Biplane\YandexDirect\Api\V5\Contract\SuspendKeywordsRequest',
             'SuspendResponse' => 'Biplane\YandexDirect\Api\V5\Contract\SuspendKeywordsResponse',
             'ResumeRequest' => 'Biplane\YandexDirect\Api\V5\Contract\ResumeKeywordsRequest',
             'ResumeResponse' => 'Biplane\YandexDirect\Api\V5\Contract\ResumeKeywordsResponse',
         ];
-
         parent::__construct(self::ENDPOINT, $config, $options);
     }
 
+    /**
+     * Calls operation: add
+     */
     public function add(AddKeywordsRequest $parameters): AddKeywordsResponse
     {
         return $this->__soapCall('add', [$parameters]);
     }
 
+    /**
+     * Calls operation: get
+     */
     public function get(GetKeywordsRequest $parameters): GetKeywordsResponse
     {
         return $this->__soapCall('get', [$parameters]);
     }
 
+    /**
+     * Calls operation: update
+     */
     public function update(UpdateKeywordsRequest $parameters): UpdateKeywordsResponse
     {
         return $this->__soapCall('update', [$parameters]);
     }
 
+    /**
+     * Calls operation: delete
+     */
     public function delete(DeleteKeywordsRequest $parameters): DeleteKeywordsResponse
     {
         return $this->__soapCall('delete', [$parameters]);
     }
 
+    /**
+     * Calls operation: suspend
+     */
     public function suspend(SuspendKeywordsRequest $parameters): SuspendKeywordsResponse
     {
         return $this->__soapCall('suspend', [$parameters]);
     }
 
+    /**
+     * Calls operation: resume
+     */
     public function resume(ResumeKeywordsRequest $parameters): ResumeKeywordsResponse
     {
         return $this->__soapCall('resume', [$parameters]);

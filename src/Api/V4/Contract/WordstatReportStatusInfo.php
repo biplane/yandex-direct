@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class WordstatReportStatusInfo
 {
-    protected $ReportID = null;
+    /** @var int */
+    protected $ReportID;
 
-    protected $StatusReport = null;
+    /** @var string */
+    protected $StatusReport;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -24,12 +28,17 @@ class WordstatReportStatusInfo
         return new static();
     }
 
+    /**
+     * Get ReportID
+     */
     public function getReportID(): int
     {
         return $this->ReportID;
     }
 
     /**
+     * Set ReportID
+     *
      * @return $this
      */
     public function setReportID(int $value)
@@ -39,12 +48,17 @@ class WordstatReportStatusInfo
         return $this;
     }
 
+    /**
+     * Get StatusReport
+     */
     public function getStatusReport(): string
     {
         return $this->StatusReport;
     }
 
     /**
+     * Set StatusReport
+     *
      * @return $this
      */
     public function setStatusReport(string $value)

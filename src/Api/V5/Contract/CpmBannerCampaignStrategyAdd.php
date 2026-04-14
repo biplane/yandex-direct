@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class CpmBannerCampaignStrategyAdd
 {
-    protected $Search = null;
+    /** @var CpmBannerCampaignSearchStrategyAdd */
+    protected $Search;
 
-    protected $Network = null;
+    /** @var CpmBannerCampaignNetworkStrategyAdd */
+    protected $Network;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -24,12 +28,17 @@ class CpmBannerCampaignStrategyAdd
         return new static();
     }
 
+    /**
+     * Get Search
+     */
     public function getSearch(): CpmBannerCampaignSearchStrategyAdd
     {
         return $this->Search;
     }
 
     /**
+     * Set Search
+     *
      * @return $this
      */
     public function setSearch(CpmBannerCampaignSearchStrategyAdd $value)
@@ -39,12 +48,17 @@ class CpmBannerCampaignStrategyAdd
         return $this;
     }
 
+    /**
+     * Get Network
+     */
     public function getNetwork(): CpmBannerCampaignNetworkStrategyAdd
     {
         return $this->Network;
     }
 
     /**
+     * Set Network
+     *
      * @return $this
      */
     public function setNetwork(CpmBannerCampaignNetworkStrategyAdd $value)

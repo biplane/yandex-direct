@@ -13,15 +13,17 @@ use AllowDynamicProperties;
 class StrategyAverageCpi
 {
 //    Can be omitted.
-//    protected $AverageCpi = null;
+//    protected $AverageCpi;
 
 //    Can be omitted.
-//    protected $WeeklySpendLimit = null;
+//    protected $WeeklySpendLimit;
 
 //    Can be omitted.
-//    protected $BidCeiling = null;
+//    protected $BidCeiling;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -29,45 +31,60 @@ class StrategyAverageCpi
         return new static();
     }
 
+    /**
+     * Get AverageCpi
+     */
     public function getAverageCpi(): ?int
     {
         return $this->AverageCpi ?? null;
     }
 
     /**
+     * Set AverageCpi
+     *
      * @return $this
      */
-    public function setAverageCpi(?int $value = null)
+    public function setAverageCpi(?int $value)
     {
         $this->AverageCpi = $value;
 
         return $this;
     }
 
+    /**
+     * Get WeeklySpendLimit
+     */
     public function getWeeklySpendLimit(): ?int
     {
         return $this->WeeklySpendLimit ?? null;
     }
 
     /**
+     * Set WeeklySpendLimit
+     *
      * @return $this
      */
-    public function setWeeklySpendLimit(?int $value = null)
+    public function setWeeklySpendLimit(?int $value)
     {
         $this->WeeklySpendLimit = $value;
 
         return $this;
     }
 
+    /**
+     * Get BidCeiling
+     */
     public function getBidCeiling(): ?int
     {
         return $this->BidCeiling ?? null;
     }
 
     /**
+     * Set BidCeiling
+     *
      * @return $this
      */
-    public function setBidCeiling(?int $value = null)
+    public function setBidCeiling(?int $value)
     {
         $this->BidCeiling = $value;
 

@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class MobileAppAdFeatureItem
 {
-    protected $Feature = null;
+    /** @var 'PRICE'|'ICON'|'CUSTOMER_RATING'|'RATINGS' */
+    protected $Feature;
 
-    protected $Enabled = null;
+    /** @var 'YES'|'NO' */
+    protected $Enabled;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -25,7 +29,11 @@ class MobileAppAdFeatureItem
     }
 
     /**
-     * @see MobileAppFeatureEnum
+     * Get Feature
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\MobileAppFeatureEnum
+     *
+     * @return 'PRICE'|'ICON'|'CUSTOMER_RATING'|'RATINGS'
      */
     public function getFeature(): string
     {
@@ -33,7 +41,11 @@ class MobileAppAdFeatureItem
     }
 
     /**
-     * @see MobileAppFeatureEnum
+     * Set Feature
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\MobileAppFeatureEnum
+     *
+     * @param 'PRICE'|'ICON'|'CUSTOMER_RATING'|'RATINGS' $value
      *
      * @return $this
      */
@@ -45,7 +57,11 @@ class MobileAppAdFeatureItem
     }
 
     /**
-     * @see YesNoEnum
+     * Get Enabled
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'
      */
     public function getEnabled(): string
     {
@@ -53,7 +69,11 @@ class MobileAppAdFeatureItem
     }
 
     /**
-     * @see YesNoEnum
+     * Set Enabled
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO' $value
      *
      * @return $this
      */

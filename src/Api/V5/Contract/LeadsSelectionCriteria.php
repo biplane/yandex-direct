@@ -12,15 +12,18 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class LeadsSelectionCriteria
 {
-    protected $TurboPageIds = [];
+    /** @var non-empty-list<int> */
+    protected $TurboPageIds;
 
 //    Can be omitted.
-//    protected $DateTimeFrom = null;
+//    protected $DateTimeFrom;
 
 //    Can be omitted.
-//    protected $DateTimeTo = null;
+//    protected $DateTimeTo;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -29,7 +32,9 @@ class LeadsSelectionCriteria
     }
 
     /**
-     * @return int[]
+     * Get TurboPageIds
+     *
+     * @return non-empty-list<int>
      */
     public function getTurboPageIds(): array
     {
@@ -37,7 +42,9 @@ class LeadsSelectionCriteria
     }
 
     /**
-     * @param int[] $value
+     * Set TurboPageIds
+     *
+     * @param non-empty-list<int> $value
      *
      * @return $this
      */
@@ -48,30 +55,40 @@ class LeadsSelectionCriteria
         return $this;
     }
 
+    /**
+     * Get DateTimeFrom
+     */
     public function getDateTimeFrom(): ?string
     {
         return $this->DateTimeFrom ?? null;
     }
 
     /**
+     * Set DateTimeFrom
+     *
      * @return $this
      */
-    public function setDateTimeFrom(?string $value = null)
+    public function setDateTimeFrom(?string $value)
     {
         $this->DateTimeFrom = $value;
 
         return $this;
     }
 
+    /**
+     * Get DateTimeTo
+     */
     public function getDateTimeTo(): ?string
     {
         return $this->DateTimeTo ?? null;
     }
 
     /**
+     * Set DateTimeTo
+     *
      * @return $this
      */
-    public function setDateTimeTo(?string $value = null)
+    public function setDateTimeTo(?string $value)
     {
         $this->DateTimeTo = $value;
 

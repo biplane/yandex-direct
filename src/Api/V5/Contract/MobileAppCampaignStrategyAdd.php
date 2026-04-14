@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class MobileAppCampaignStrategyAdd
 {
-    protected $Search = null;
+    /** @var MobileAppCampaignSearchStrategyAdd */
+    protected $Search;
 
-    protected $Network = null;
+    /** @var MobileAppCampaignNetworkStrategyAdd */
+    protected $Network;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -24,12 +28,17 @@ class MobileAppCampaignStrategyAdd
         return new static();
     }
 
+    /**
+     * Get Search
+     */
     public function getSearch(): MobileAppCampaignSearchStrategyAdd
     {
         return $this->Search;
     }
 
     /**
+     * Set Search
+     *
      * @return $this
      */
     public function setSearch(MobileAppCampaignSearchStrategyAdd $value)
@@ -39,12 +48,17 @@ class MobileAppCampaignStrategyAdd
         return $this;
     }
 
+    /**
+     * Get Network
+     */
     public function getNetwork(): MobileAppCampaignNetworkStrategyAdd
     {
         return $this->Network;
     }
 
     /**
+     * Set Network
+     *
      * @return $this
      */
     public function setNetwork(MobileAppCampaignNetworkStrategyAdd $value)

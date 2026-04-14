@@ -13,10 +13,24 @@ use AllowDynamicProperties;
 class StrategyPayForConversionMultipleGoalsGetItem extends StrategyPayForConversionMultipleGoalsBase
 {
 //    Can be omitted.
-//    protected $BudgetType = null;
+//    protected $BudgetType;
 
     /**
-     * @see BudgetTypeEnum
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    /**
+     * Get BudgetType
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\BudgetTypeEnum
+     *
+     * @return 'WEEKLY_BUDGET'|'CUSTOM_PERIOD_BUDGET'|null
      */
     public function getBudgetType(): ?string
     {
@@ -24,11 +38,15 @@ class StrategyPayForConversionMultipleGoalsGetItem extends StrategyPayForConvers
     }
 
     /**
-     * @see BudgetTypeEnum
+     * Set BudgetType
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\BudgetTypeEnum
+     *
+     * @param 'WEEKLY_BUDGET'|'CUSTOM_PERIOD_BUDGET'|null $value
      *
      * @return $this
      */
-    public function setBudgetType(?string $value = null)
+    public function setBudgetType(?string $value)
     {
         $this->BudgetType = $value;
 

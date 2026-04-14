@@ -12,17 +12,24 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class AdImageResponse
 {
-    protected $AdImages = null;
+//    Can be omitted.
+//    protected $AdImages;
 
-    protected $AdImageUploads = null;
+//    Can be omitted.
+//    protected $AdImageUploads;
 
-    protected $ActionsResult = null;
+//    Can be omitted.
+//    protected $ActionsResult;
 
-    protected $AdImageLimits = null;
+//    Can be omitted.
+//    protected $AdImageLimits;
 
+    /** @var int|null */
     protected $TotalObjectsCount = null;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -31,19 +38,23 @@ class AdImageResponse
     }
 
     /**
-     * @return AdImage[]|null
+     * Get AdImages
+     *
+     * @return list<AdImage>|null
      */
     public function getAdImages(): ?array
     {
-        return $this->AdImages;
+        return $this->AdImages ?? null;
     }
 
     /**
-     * @param AdImage[]|null $value
+     * Set AdImages
+     *
+     * @param list<AdImage>|null $value
      *
      * @return $this
      */
-    public function setAdImages(?array $value = null)
+    public function setAdImages(?array $value)
     {
         $this->AdImages = $value;
 
@@ -51,19 +62,23 @@ class AdImageResponse
     }
 
     /**
-     * @return AdImageUpload[]|null
+     * Get AdImageUploads
+     *
+     * @return list<AdImageUpload>|null
      */
     public function getAdImageUploads(): ?array
     {
-        return $this->AdImageUploads;
+        return $this->AdImageUploads ?? null;
     }
 
     /**
-     * @param AdImageUpload[]|null $value
+     * Set AdImageUploads
+     *
+     * @param list<AdImageUpload>|null $value
      *
      * @return $this
      */
-    public function setAdImageUploads(?array $value = null)
+    public function setAdImageUploads(?array $value)
     {
         $this->AdImageUploads = $value;
 
@@ -71,19 +86,23 @@ class AdImageResponse
     }
 
     /**
-     * @return AdImageActionResult[]|null
+     * Get ActionsResult
+     *
+     * @return list<AdImageActionResult>|null
      */
     public function getActionsResult(): ?array
     {
-        return $this->ActionsResult;
+        return $this->ActionsResult ?? null;
     }
 
     /**
-     * @param AdImageActionResult[]|null $value
+     * Set ActionsResult
+     *
+     * @param list<AdImageActionResult>|null $value
      *
      * @return $this
      */
-    public function setActionsResult(?array $value = null)
+    public function setActionsResult(?array $value)
     {
         $this->ActionsResult = $value;
 
@@ -91,34 +110,43 @@ class AdImageResponse
     }
 
     /**
-     * @return AdImageLimit[]|null
+     * Get AdImageLimits
+     *
+     * @return list<AdImageLimit>|null
      */
     public function getAdImageLimits(): ?array
     {
-        return $this->AdImageLimits;
+        return $this->AdImageLimits ?? null;
     }
 
     /**
-     * @param AdImageLimit[]|null $value
+     * Set AdImageLimits
+     *
+     * @param list<AdImageLimit>|null $value
      *
      * @return $this
      */
-    public function setAdImageLimits(?array $value = null)
+    public function setAdImageLimits(?array $value)
     {
         $this->AdImageLimits = $value;
 
         return $this;
     }
 
+    /**
+     * Get TotalObjectsCount
+     */
     public function getTotalObjectsCount(): ?int
     {
         return $this->TotalObjectsCount;
     }
 
     /**
+     * Set TotalObjectsCount
+     *
      * @return $this
      */
-    public function setTotalObjectsCount(?int $value = null)
+    public function setTotalObjectsCount(?int $value)
     {
         $this->TotalObjectsCount = $value;
 

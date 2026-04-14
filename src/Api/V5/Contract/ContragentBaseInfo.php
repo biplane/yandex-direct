@@ -13,21 +13,23 @@ use AllowDynamicProperties;
 class ContragentBaseInfo
 {
 //    Can be omitted.
-//    protected $Name = null;
+//    protected $Name;
 
 //    Can be omitted.
-//    protected $Phone = null;
+//    protected $Phone;
 
 //    Can be omitted.
-//    protected $EpayNumber = null;
+//    protected $EpayNumber;
 
 //    Can be omitted.
-//    protected $RegNumber = null;
+//    protected $RegNumber;
 
 //    Can be omitted.
-//    protected $OksmNumber = null;
+//    protected $OksmNumber;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -35,75 +37,100 @@ class ContragentBaseInfo
         return new static();
     }
 
+    /**
+     * Get Name
+     */
     public function getName(): ?string
     {
         return $this->Name ?? null;
     }
 
     /**
+     * Set Name
+     *
      * @return $this
      */
-    public function setName(?string $value = null)
+    public function setName(?string $value)
     {
         $this->Name = $value;
 
         return $this;
     }
 
+    /**
+     * Get Phone
+     */
     public function getPhone(): ?string
     {
         return $this->Phone ?? null;
     }
 
     /**
+     * Set Phone
+     *
      * @return $this
      */
-    public function setPhone(?string $value = null)
+    public function setPhone(?string $value)
     {
         $this->Phone = $value;
 
         return $this;
     }
 
+    /**
+     * Get EpayNumber
+     */
     public function getEpayNumber(): ?string
     {
         return $this->EpayNumber ?? null;
     }
 
     /**
+     * Set EpayNumber
+     *
      * @return $this
      */
-    public function setEpayNumber(?string $value = null)
+    public function setEpayNumber(?string $value)
     {
         $this->EpayNumber = $value;
 
         return $this;
     }
 
+    /**
+     * Get RegNumber
+     */
     public function getRegNumber(): ?string
     {
         return $this->RegNumber ?? null;
     }
 
     /**
+     * Set RegNumber
+     *
      * @return $this
      */
-    public function setRegNumber(?string $value = null)
+    public function setRegNumber(?string $value)
     {
         $this->RegNumber = $value;
 
         return $this;
     }
 
+    /**
+     * Get OksmNumber
+     */
     public function getOksmNumber(): ?string
     {
         return $this->OksmNumber ?? null;
     }
 
     /**
+     * Set OksmNumber
+     *
      * @return $this
      */
-    public function setOksmNumber(?string $value = null)
+    public function setOksmNumber(?string $value)
     {
         $this->OksmNumber = $value;
 

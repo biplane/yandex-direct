@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class SmartCampaignPlatforms
 {
-    protected $Search = null;
+    /** @var 'YES'|'NO' */
+    protected $Search;
 
-    protected $Network = null;
+    /** @var 'YES'|'NO' */
+    protected $Network;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -25,7 +29,11 @@ class SmartCampaignPlatforms
     }
 
     /**
-     * @see YesNoEnum
+     * Get Search
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'
      */
     public function getSearch(): string
     {
@@ -33,7 +41,11 @@ class SmartCampaignPlatforms
     }
 
     /**
-     * @see YesNoEnum
+     * Set Search
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO' $value
      *
      * @return $this
      */
@@ -45,7 +57,11 @@ class SmartCampaignPlatforms
     }
 
     /**
-     * @see YesNoEnum
+     * Get Network
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'
      */
     public function getNetwork(): string
     {
@@ -53,7 +69,11 @@ class SmartCampaignPlatforms
     }
 
     /**
-     * @see YesNoEnum
+     * Set Network
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO' $value
      *
      * @return $this
      */

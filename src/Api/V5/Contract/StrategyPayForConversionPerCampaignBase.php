@@ -13,18 +13,20 @@ use AllowDynamicProperties;
 class StrategyPayForConversionPerCampaignBase
 {
 //    Can be omitted.
-//    protected $Cpa = null;
+//    protected $Cpa;
 
 //    Can be omitted.
-//    protected $GoalId = null;
+//    protected $GoalId;
 
 //    Can be omitted.
-//    protected $WeeklySpendLimit = null;
+//    protected $WeeklySpendLimit;
 
 //    Can be omitted.
-//    protected $CustomPeriodBudget = null;
+//    protected $CustomPeriodBudget;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -32,60 +34,80 @@ class StrategyPayForConversionPerCampaignBase
         return new static();
     }
 
+    /**
+     * Get Cpa
+     */
     public function getCpa(): ?int
     {
         return $this->Cpa ?? null;
     }
 
     /**
+     * Set Cpa
+     *
      * @return $this
      */
-    public function setCpa(?int $value = null)
+    public function setCpa(?int $value)
     {
         $this->Cpa = $value;
 
         return $this;
     }
 
+    /**
+     * Get GoalId
+     */
     public function getGoalId(): ?int
     {
         return $this->GoalId ?? null;
     }
 
     /**
+     * Set GoalId
+     *
      * @return $this
      */
-    public function setGoalId(?int $value = null)
+    public function setGoalId(?int $value)
     {
         $this->GoalId = $value;
 
         return $this;
     }
 
+    /**
+     * Get WeeklySpendLimit
+     */
     public function getWeeklySpendLimit(): ?int
     {
         return $this->WeeklySpendLimit ?? null;
     }
 
     /**
+     * Set WeeklySpendLimit
+     *
      * @return $this
      */
-    public function setWeeklySpendLimit(?int $value = null)
+    public function setWeeklySpendLimit(?int $value)
     {
         $this->WeeklySpendLimit = $value;
 
         return $this;
     }
 
+    /**
+     * Get CustomPeriodBudget
+     */
     public function getCustomPeriodBudget(): ?CustomPeriodBudget
     {
         return $this->CustomPeriodBudget ?? null;
     }
 
     /**
+     * Set CustomPeriodBudget
+     *
      * @return $this
      */
-    public function setCustomPeriodBudget(?CustomPeriodBudget $value = null)
+    public function setCustomPeriodBudget(?CustomPeriodBudget $value)
     {
         $this->CustomPeriodBudget = $value;
 

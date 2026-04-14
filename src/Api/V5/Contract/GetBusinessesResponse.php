@@ -5,33 +5,70 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 use AllowDynamicProperties;
+use ArrayIterator;
+use Countable;
+use IteratorAggregate;
+use Override;
+
+use function count;
 
 /**
  * Auto-generated code.
+ *
+ * @implements IteratorAggregate<int, BusinessGetItem>
  */
 #[AllowDynamicProperties]
-class GetBusinessesResponse extends GetResponseGeneral
+class GetBusinessesResponse extends GetResponseGeneral implements IteratorAggregate, Countable
 {
 //    Can be omitted.
-//    protected $Businesses = null;
+//    protected $Businesses;
 
     /**
-     * @return BusinessGetItem[]|null
+     * Create a new instance.
+     *
+     * @return static
      */
-    public function getBusinesses(): ?array
+    public static function create()
     {
-        return $this->Businesses ?? null;
+        return new static();
     }
 
     /**
-     * @param BusinessGetItem[]|null $value
+     * Get Businesses
+     *
+     * @return list<BusinessGetItem>
+     */
+    public function getBusinesses(): array
+    {
+        return $this->Businesses ?? [];
+    }
+
+    /**
+     * Set Businesses
+     *
+     * @param list<BusinessGetItem> $value
      *
      * @return $this
      */
-    public function setBusinesses(?array $value = null)
+    public function setBusinesses(array $value)
     {
         $this->Businesses = $value;
 
         return $this;
+    }
+
+    #[Override]
+    public function count(): int
+    {
+        return isset($this->Businesses) ? count($this->Businesses) : 0;
+    }
+
+    /**
+     * @return ArrayIterator<int, BusinessGetItem>
+     */
+    #[Override]
+    public function getIterator(): ArrayIterator
+    {
+        return new ArrayIterator($this->Businesses ?? []);
     }
 }

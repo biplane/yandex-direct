@@ -13,15 +13,17 @@ use AllowDynamicProperties;
 class Search
 {
 //    Can be omitted.
-//    protected $Bid = null;
+//    protected $Bid;
 
 //    Can be omitted.
-//    protected $AutotargetingSearchBidIsAuto = null;
+//    protected $AutotargetingSearchBidIsAuto;
 
 //    Can be omitted.
-//    protected $AuctionBids = null;
+//    protected $AuctionBids;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -29,15 +31,20 @@ class Search
         return new static();
     }
 
+    /**
+     * Get Bid
+     */
     public function getBid(): ?int
     {
         return $this->Bid ?? null;
     }
 
     /**
+     * Set Bid
+     *
      * @return $this
      */
-    public function setBid(?int $value = null)
+    public function setBid(?int $value)
     {
         $this->Bid = $value;
 
@@ -45,7 +52,11 @@ class Search
     }
 
     /**
-     * @see YesNoEnum
+     * Get AutotargetingSearchBidIsAuto
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'|null
      */
     public function getAutotargetingSearchBidIsAuto(): ?string
     {
@@ -53,26 +64,35 @@ class Search
     }
 
     /**
-     * @see YesNoEnum
+     * Set AutotargetingSearchBidIsAuto
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO'|null $value
      *
      * @return $this
      */
-    public function setAutotargetingSearchBidIsAuto(?string $value = null)
+    public function setAutotargetingSearchBidIsAuto(?string $value)
     {
         $this->AutotargetingSearchBidIsAuto = $value;
 
         return $this;
     }
 
+    /**
+     * Get AuctionBids
+     */
     public function getAuctionBids(): ?AuctionBids
     {
         return $this->AuctionBids ?? null;
     }
 
     /**
+     * Set AuctionBids
+     *
      * @return $this
      */
-    public function setAuctionBids(?AuctionBids $value = null)
+    public function setAuctionBids(?AuctionBids $value)
     {
         $this->AuctionBids = $value;
 

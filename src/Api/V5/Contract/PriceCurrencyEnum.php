@@ -4,9 +4,12 @@ declare(strict_types=1);
 
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
+use AllowDynamicProperties;
+
 /**
  * Auto-generated code.
  */
+#[AllowDynamicProperties]
 class PriceCurrencyEnum
 {
     public const RUB = 'RUB';
@@ -21,7 +24,7 @@ class PriceCurrencyEnum
 
     public const KZT = 'KZT';
 
-    public const aTRY = 'TRY';
+    public const TRY = 'TRY';
 
     public const CHF = 'CHF';
 

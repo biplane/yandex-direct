@@ -13,9 +13,11 @@ use AllowDynamicProperties;
 class AdGroupAdjustmentGet
 {
 //    Can be omitted.
-//    protected $BidModifier = null;
+//    protected $BidModifier;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -23,15 +25,20 @@ class AdGroupAdjustmentGet
         return new static();
     }
 
+    /**
+     * Get BidModifier
+     */
     public function getBidModifier(): ?int
     {
         return $this->BidModifier ?? null;
     }
 
     /**
+     * Set BidModifier
+     *
      * @return $this
      */
-    public function setBidModifier(?int $value = null)
+    public function setBidModifier(?int $value)
     {
         $this->BidModifier = $value;
 

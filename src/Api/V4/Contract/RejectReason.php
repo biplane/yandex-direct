@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class RejectReason
 {
-    protected $Type = null;
+    /** @var string */
+    protected $Type;
 
-    protected $Text = null;
+    /** @var string */
+    protected $Text;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -24,12 +28,17 @@ class RejectReason
         return new static();
     }
 
+    /**
+     * Get Type
+     */
     public function getType(): string
     {
         return $this->Type;
     }
 
     /**
+     * Set Type
+     *
      * @return $this
      */
     public function setType(string $value)
@@ -39,12 +48,17 @@ class RejectReason
         return $this;
     }
 
+    /**
+     * Get Text
+     */
     public function getText(): string
     {
         return $this->Text;
     }
 
     /**
+     * Set Text
+     *
      * @return $this
      */
     public function setText(string $value)

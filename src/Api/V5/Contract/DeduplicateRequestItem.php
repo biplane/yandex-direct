@@ -13,14 +13,17 @@ use AllowDynamicProperties;
 class DeduplicateRequestItem
 {
 //    Can be omitted.
-//    protected $Id = null;
+//    protected $Id;
 
-    protected $Keyword = null;
+    /** @var string */
+    protected $Keyword;
 
 //    Can be omitted.
-//    protected $Weight = null;
+//    protected $Weight;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -28,27 +31,37 @@ class DeduplicateRequestItem
         return new static();
     }
 
+    /**
+     * Get Id
+     */
     public function getId(): ?int
     {
         return $this->Id ?? null;
     }
 
     /**
+     * Set Id
+     *
      * @return $this
      */
-    public function setId(?int $value = null)
+    public function setId(?int $value)
     {
         $this->Id = $value;
 
         return $this;
     }
 
+    /**
+     * Get Keyword
+     */
     public function getKeyword(): string
     {
         return $this->Keyword;
     }
 
     /**
+     * Set Keyword
+     *
      * @return $this
      */
     public function setKeyword(string $value)
@@ -58,15 +71,20 @@ class DeduplicateRequestItem
         return $this;
     }
 
+    /**
+     * Get Weight
+     */
     public function getWeight(): ?int
     {
         return $this->Weight ?? null;
     }
 
     /**
+     * Set Weight
+     *
      * @return $this
      */
-    public function setWeight(?int $value = null)
+    public function setWeight(?int $value)
     {
         $this->Weight = $value;
 

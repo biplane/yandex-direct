@@ -13,12 +13,14 @@ use AllowDynamicProperties;
 class ImageAdUpdateBase
 {
 //    Can be omitted.
-//    protected $AdImageHash = null;
+//    protected $AdImageHash;
 
 //    Can be omitted.
-//    protected $ErirAdDescription = null;
+//    protected $ErirAdDescription;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -26,30 +28,40 @@ class ImageAdUpdateBase
         return new static();
     }
 
+    /**
+     * Get AdImageHash
+     */
     public function getAdImageHash(): ?string
     {
         return $this->AdImageHash ?? null;
     }
 
     /**
+     * Set AdImageHash
+     *
      * @return $this
      */
-    public function setAdImageHash(?string $value = null)
+    public function setAdImageHash(?string $value)
     {
         $this->AdImageHash = $value;
 
         return $this;
     }
 
+    /**
+     * Get ErirAdDescription
+     */
     public function getErirAdDescription(): ?string
     {
         return $this->ErirAdDescription ?? null;
     }
 
     /**
+     * Set ErirAdDescription
+     *
      * @return $this
      */
-    public function setErirAdDescription(?string $value = null)
+    public function setErirAdDescription(?string $value)
     {
         $this->ErirAdDescription = $value;
 

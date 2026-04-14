@@ -13,30 +13,35 @@ use AllowDynamicProperties;
 class MobileAppAdAdd
 {
 //    Can be omitted.
-//    protected $AdImageHash = null;
+//    protected $AdImageHash;
 
-    protected $Text = null;
+    /** @var string */
+    protected $Text;
 
-    protected $Title = null;
-
-//    Can be omitted.
-//    protected $TrackingUrl = null;
-
-    protected $Action = null;
+    /** @var string */
+    protected $Title;
 
 //    Can be omitted.
-//    protected $Features = null;
+//    protected $TrackingUrl;
+
+    /** @var 'DOWNLOAD'|'GET'|'INSTALL'|'MORE'|'OPEN'|'UPDATE'|'PLAY'|'BUY_AUTODETECT' */
+    protected $Action;
 
 //    Can be omitted.
-//    protected $AgeLabel = null;
+//    protected $Features;
 
 //    Can be omitted.
-//    protected $VideoExtension = null;
+//    protected $AgeLabel;
 
 //    Can be omitted.
-//    protected $ErirAdDescription = null;
+//    protected $VideoExtension;
+
+//    Can be omitted.
+//    protected $ErirAdDescription;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -44,27 +49,37 @@ class MobileAppAdAdd
         return new static();
     }
 
+    /**
+     * Get AdImageHash
+     */
     public function getAdImageHash(): ?string
     {
         return $this->AdImageHash ?? null;
     }
 
     /**
+     * Set AdImageHash
+     *
      * @return $this
      */
-    public function setAdImageHash(?string $value = null)
+    public function setAdImageHash(?string $value)
     {
         $this->AdImageHash = $value;
 
         return $this;
     }
 
+    /**
+     * Get Text
+     */
     public function getText(): string
     {
         return $this->Text;
     }
 
     /**
+     * Set Text
+     *
      * @return $this
      */
     public function setText(string $value)
@@ -74,12 +89,17 @@ class MobileAppAdAdd
         return $this;
     }
 
+    /**
+     * Get Title
+     */
     public function getTitle(): string
     {
         return $this->Title;
     }
 
     /**
+     * Set Title
+     *
      * @return $this
      */
     public function setTitle(string $value)
@@ -89,15 +109,20 @@ class MobileAppAdAdd
         return $this;
     }
 
+    /**
+     * Get TrackingUrl
+     */
     public function getTrackingUrl(): ?string
     {
         return $this->TrackingUrl ?? null;
     }
 
     /**
+     * Set TrackingUrl
+     *
      * @return $this
      */
-    public function setTrackingUrl(?string $value = null)
+    public function setTrackingUrl(?string $value)
     {
         $this->TrackingUrl = $value;
 
@@ -105,7 +130,11 @@ class MobileAppAdAdd
     }
 
     /**
-     * @see MobileAppAdActionEnum
+     * Get Action
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\MobileAppAdActionEnum
+     *
+     * @return 'DOWNLOAD'|'GET'|'INSTALL'|'MORE'|'OPEN'|'UPDATE'|'PLAY'|'BUY_AUTODETECT'
      */
     public function getAction(): string
     {
@@ -113,7 +142,11 @@ class MobileAppAdAdd
     }
 
     /**
-     * @see MobileAppAdActionEnum
+     * Set Action
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\MobileAppAdActionEnum
+     *
+     * @param 'DOWNLOAD'|'GET'|'INSTALL'|'MORE'|'OPEN'|'UPDATE'|'PLAY'|'BUY_AUTODETECT' $value
      *
      * @return $this
      */
@@ -125,19 +158,23 @@ class MobileAppAdAdd
     }
 
     /**
-     * @return MobileAppAdFeatureItem[]|null
+     * Get Features
+     *
+     * @return list<MobileAppAdFeatureItem>
      */
-    public function getFeatures(): ?array
+    public function getFeatures(): array
     {
-        return $this->Features ?? null;
+        return $this->Features ?? [];
     }
 
     /**
-     * @param MobileAppAdFeatureItem[]|null $value
+     * Set Features
+     *
+     * @param list<MobileAppAdFeatureItem> $value
      *
      * @return $this
      */
-    public function setFeatures(?array $value = null)
+    public function setFeatures(array $value)
     {
         $this->Features = $value;
 
@@ -145,7 +182,11 @@ class MobileAppAdAdd
     }
 
     /**
-     * @see MobAppAgeLabelEnum
+     * Get AgeLabel
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\MobAppAgeLabelEnum
+     *
+     * @return 'AGE_0'|'AGE_6'|'AGE_12'|'AGE_16'|'AGE_18'|null
      */
     public function getAgeLabel(): ?string
     {
@@ -153,41 +194,55 @@ class MobileAppAdAdd
     }
 
     /**
-     * @see MobAppAgeLabelEnum
+     * Set AgeLabel
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\MobAppAgeLabelEnum
+     *
+     * @param 'AGE_0'|'AGE_6'|'AGE_12'|'AGE_16'|'AGE_18'|null $value
      *
      * @return $this
      */
-    public function setAgeLabel(?string $value = null)
+    public function setAgeLabel(?string $value)
     {
         $this->AgeLabel = $value;
 
         return $this;
     }
 
+    /**
+     * Get VideoExtension
+     */
     public function getVideoExtension(): ?VideoExtensionAddItem
     {
         return $this->VideoExtension ?? null;
     }
 
     /**
+     * Set VideoExtension
+     *
      * @return $this
      */
-    public function setVideoExtension(?VideoExtensionAddItem $value = null)
+    public function setVideoExtension(?VideoExtensionAddItem $value)
     {
         $this->VideoExtension = $value;
 
         return $this;
     }
 
+    /**
+     * Get ErirAdDescription
+     */
     public function getErirAdDescription(): ?string
     {
         return $this->ErirAdDescription ?? null;
     }
 
     /**
+     * Set ErirAdDescription
+     *
      * @return $this
      */
-    public function setErirAdDescription(?string $value = null)
+    public function setErirAdDescription(?string $value)
     {
         $this->ErirAdDescription = $value;
 

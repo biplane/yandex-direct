@@ -13,17 +13,32 @@ use AllowDynamicProperties;
 class AddPassportOrganizationMemberResponse extends ActionResultBase
 {
 //    Can be omitted.
-//    protected $PassportOrganizationLogin = null;
+//    protected $PassportOrganizationLogin;
 
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    /**
+     * Get PassportOrganizationLogin
+     */
     public function getPassportOrganizationLogin(): ?string
     {
         return $this->PassportOrganizationLogin ?? null;
     }
 
     /**
+     * Set PassportOrganizationLogin
+     *
      * @return $this
      */
-    public function setPassportOrganizationLogin(?string $value = null)
+    public function setPassportOrganizationLogin(?string $value)
     {
         $this->PassportOrganizationLogin = $value;
 

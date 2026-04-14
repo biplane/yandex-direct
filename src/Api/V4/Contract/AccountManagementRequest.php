@@ -12,23 +12,33 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class AccountManagementRequest
 {
-    protected $Action = null;
+    /** @var string */
+    protected $Action;
 
+    /** @var AccountSelectionCriteria|null */
     protected $SelectionCriteria = null;
 
-    protected $Payments = null;
+//    Can be omitted.
+//    protected $Payments;
 
-    protected $Transfers = null;
+//    Can be omitted.
+//    protected $Transfers;
 
-    protected $Accounts = null;
+//    Can be omitted.
+//    protected $Accounts;
 
+    /** @var string|null */
     protected $PayMethodID = null;
 
+    /** @var string|null */
     protected $CustomTransactionID = null;
 
+    /** @var string|null */
     protected $Version = null;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -36,12 +46,17 @@ class AccountManagementRequest
         return new static();
     }
 
+    /**
+     * Get Action
+     */
     public function getAction(): string
     {
         return $this->Action;
     }
 
     /**
+     * Set Action
+     *
      * @return $this
      */
     public function setAction(string $value)
@@ -51,15 +66,20 @@ class AccountManagementRequest
         return $this;
     }
 
+    /**
+     * Get SelectionCriteria
+     */
     public function getSelectionCriteria(): ?AccountSelectionCriteria
     {
         return $this->SelectionCriteria;
     }
 
     /**
+     * Set SelectionCriteria
+     *
      * @return $this
      */
-    public function setSelectionCriteria(?AccountSelectionCriteria $value = null)
+    public function setSelectionCriteria(?AccountSelectionCriteria $value)
     {
         $this->SelectionCriteria = $value;
 
@@ -67,19 +87,23 @@ class AccountManagementRequest
     }
 
     /**
-     * @return Payment[]|null
+     * Get Payments
+     *
+     * @return list<Payment>|null
      */
     public function getPayments(): ?array
     {
-        return $this->Payments;
+        return $this->Payments ?? null;
     }
 
     /**
-     * @param Payment[]|null $value
+     * Set Payments
+     *
+     * @param list<Payment>|null $value
      *
      * @return $this
      */
-    public function setPayments(?array $value = null)
+    public function setPayments(?array $value)
     {
         $this->Payments = $value;
 
@@ -87,19 +111,23 @@ class AccountManagementRequest
     }
 
     /**
-     * @return Transfer[]|null
+     * Get Transfers
+     *
+     * @return list<Transfer>|null
      */
     public function getTransfers(): ?array
     {
-        return $this->Transfers;
+        return $this->Transfers ?? null;
     }
 
     /**
-     * @param Transfer[]|null $value
+     * Set Transfers
+     *
+     * @param list<Transfer>|null $value
      *
      * @return $this
      */
-    public function setTransfers(?array $value = null)
+    public function setTransfers(?array $value)
     {
         $this->Transfers = $value;
 
@@ -107,64 +135,83 @@ class AccountManagementRequest
     }
 
     /**
-     * @return Account[]|null
+     * Get Accounts
+     *
+     * @return list<Account>|null
      */
     public function getAccounts(): ?array
     {
-        return $this->Accounts;
+        return $this->Accounts ?? null;
     }
 
     /**
-     * @param Account[]|null $value
+     * Set Accounts
+     *
+     * @param list<Account>|null $value
      *
      * @return $this
      */
-    public function setAccounts(?array $value = null)
+    public function setAccounts(?array $value)
     {
         $this->Accounts = $value;
 
         return $this;
     }
 
+    /**
+     * Get PayMethodID
+     */
     public function getPayMethodID(): ?string
     {
         return $this->PayMethodID;
     }
 
     /**
+     * Set PayMethodID
+     *
      * @return $this
      */
-    public function setPayMethodID(?string $value = null)
+    public function setPayMethodID(?string $value)
     {
         $this->PayMethodID = $value;
 
         return $this;
     }
 
+    /**
+     * Get CustomTransactionID
+     */
     public function getCustomTransactionID(): ?string
     {
         return $this->CustomTransactionID;
     }
 
     /**
+     * Set CustomTransactionID
+     *
      * @return $this
      */
-    public function setCustomTransactionID(?string $value = null)
+    public function setCustomTransactionID(?string $value)
     {
         $this->CustomTransactionID = $value;
 
         return $this;
     }
 
+    /**
+     * Get Version
+     */
     public function getVersion(): ?string
     {
         return $this->Version;
     }
 
     /**
+     * Set Version
+     *
      * @return $this
      */
-    public function setVersion(?string $value = null)
+    public function setVersion(?string $value)
     {
         $this->Version = $value;
 

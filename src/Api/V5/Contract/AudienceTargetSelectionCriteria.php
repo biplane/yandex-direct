@@ -13,24 +13,26 @@ use AllowDynamicProperties;
 class AudienceTargetSelectionCriteria
 {
 //    Can be omitted.
-//    protected $Ids = null;
+//    protected $Ids;
 
 //    Can be omitted.
-//    protected $AdGroupIds = null;
+//    protected $AdGroupIds;
 
 //    Can be omitted.
-//    protected $CampaignIds = null;
+//    protected $CampaignIds;
 
 //    Can be omitted.
-//    protected $RetargetingListIds = null;
+//    protected $RetargetingListIds;
 
 //    Can be omitted.
-//    protected $InterestIds = null;
+//    protected $InterestIds;
 
 //    Can be omitted.
-//    protected $States = null;
+//    protected $States;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -39,19 +41,23 @@ class AudienceTargetSelectionCriteria
     }
 
     /**
-     * @return int[]|null
+     * Get Ids
+     *
+     * @return list<int>
      */
-    public function getIds(): ?array
+    public function getIds(): array
     {
-        return $this->Ids ?? null;
+        return $this->Ids ?? [];
     }
 
     /**
-     * @param int[]|null $value
+     * Set Ids
+     *
+     * @param list<int> $value
      *
      * @return $this
      */
-    public function setIds(?array $value = null)
+    public function setIds(array $value)
     {
         $this->Ids = $value;
 
@@ -59,19 +65,23 @@ class AudienceTargetSelectionCriteria
     }
 
     /**
-     * @return int[]|null
+     * Get AdGroupIds
+     *
+     * @return list<int>
      */
-    public function getAdGroupIds(): ?array
+    public function getAdGroupIds(): array
     {
-        return $this->AdGroupIds ?? null;
+        return $this->AdGroupIds ?? [];
     }
 
     /**
-     * @param int[]|null $value
+     * Set AdGroupIds
+     *
+     * @param list<int> $value
      *
      * @return $this
      */
-    public function setAdGroupIds(?array $value = null)
+    public function setAdGroupIds(array $value)
     {
         $this->AdGroupIds = $value;
 
@@ -79,19 +89,23 @@ class AudienceTargetSelectionCriteria
     }
 
     /**
-     * @return int[]|null
+     * Get CampaignIds
+     *
+     * @return list<int>
      */
-    public function getCampaignIds(): ?array
+    public function getCampaignIds(): array
     {
-        return $this->CampaignIds ?? null;
+        return $this->CampaignIds ?? [];
     }
 
     /**
-     * @param int[]|null $value
+     * Set CampaignIds
+     *
+     * @param list<int> $value
      *
      * @return $this
      */
-    public function setCampaignIds(?array $value = null)
+    public function setCampaignIds(array $value)
     {
         $this->CampaignIds = $value;
 
@@ -99,19 +113,23 @@ class AudienceTargetSelectionCriteria
     }
 
     /**
-     * @return int[]|null
+     * Get RetargetingListIds
+     *
+     * @return list<int>
      */
-    public function getRetargetingListIds(): ?array
+    public function getRetargetingListIds(): array
     {
-        return $this->RetargetingListIds ?? null;
+        return $this->RetargetingListIds ?? [];
     }
 
     /**
-     * @param int[]|null $value
+     * Set RetargetingListIds
+     *
+     * @param list<int> $value
      *
      * @return $this
      */
-    public function setRetargetingListIds(?array $value = null)
+    public function setRetargetingListIds(array $value)
     {
         $this->RetargetingListIds = $value;
 
@@ -119,19 +137,23 @@ class AudienceTargetSelectionCriteria
     }
 
     /**
-     * @return int[]|null
+     * Get InterestIds
+     *
+     * @return list<int>
      */
-    public function getInterestIds(): ?array
+    public function getInterestIds(): array
     {
-        return $this->InterestIds ?? null;
+        return $this->InterestIds ?? [];
     }
 
     /**
-     * @param int[]|null $value
+     * Set InterestIds
+     *
+     * @param list<int> $value
      *
      * @return $this
      */
-    public function setInterestIds(?array $value = null)
+    public function setInterestIds(array $value)
     {
         $this->InterestIds = $value;
 
@@ -139,23 +161,27 @@ class AudienceTargetSelectionCriteria
     }
 
     /**
-     * @see AudienceTargetStateEnum
+     * Get States
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\AudienceTargetStateEnum
+     *
+     * @return list<'ON'|'SUSPENDED'>
      */
-    public function getStates(): ?array
+    public function getStates(): array
     {
-        return $this->States ?? null;
+        return $this->States ?? [];
     }
 
     /**
-     * @see AudienceTargetStateEnum
+     * Set States
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\AudienceTargetStateEnum
+     *
+     * @param list<'ON'|'SUSPENDED'> $value
      *
      * @return $this
      */
-    public function setStates(?array $value = null)
+    public function setStates(array $value)
     {
         $this->States = $value;
 

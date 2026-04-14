@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class FilterSchemasItem
 {
-    protected $Name = null;
+    /** @var string */
+    protected $Name;
 
-    protected $Fields = [];
+    /** @var non-empty-list<FilterFieldItem> */
+    protected $Fields;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -24,12 +28,17 @@ class FilterSchemasItem
         return new static();
     }
 
+    /**
+     * Get Name
+     */
     public function getName(): string
     {
         return $this->Name;
     }
 
     /**
+     * Set Name
+     *
      * @return $this
      */
     public function setName(string $value)
@@ -40,7 +49,9 @@ class FilterSchemasItem
     }
 
     /**
-     * @return FilterFieldItem[]
+     * Get Fields
+     *
+     * @return non-empty-list<FilterFieldItem>
      */
     public function getFields(): array
     {
@@ -48,7 +59,9 @@ class FilterSchemasItem
     }
 
     /**
-     * @param FilterFieldItem[] $value
+     * Set Fields
+     *
+     * @param non-empty-list<FilterFieldItem> $value
      *
      * @return $this
      */

@@ -12,27 +12,30 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class KeywordUpdateItem
 {
-    protected $Id = null;
+    /** @var int */
+    protected $Id;
 
 //    Can be omitted.
-//    protected $Keyword = null;
+//    protected $Keyword;
 
 //    Can be omitted.
-//    protected $UserParam1 = null;
+//    protected $UserParam1;
 
 //    Can be omitted.
-//    protected $UserParam2 = null;
+//    protected $UserParam2;
 
 //    Can be omitted.
-//    protected $AutotargetingCategories = null;
+//    protected $AutotargetingCategories;
 
 //    Can be omitted.
-//    protected $AutotargetingBrandOptions = null;
+//    protected $AutotargetingBrandOptions;
 
 //    Can be omitted.
-//    protected $AutotargetingSettings = null;
+//    protected $AutotargetingSettings;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -40,12 +43,17 @@ class KeywordUpdateItem
         return new static();
     }
 
+    /**
+     * Get Id
+     */
     public function getId(): int
     {
         return $this->Id;
     }
 
     /**
+     * Set Id
+     *
      * @return $this
      */
     public function setId(int $value)
@@ -55,45 +63,60 @@ class KeywordUpdateItem
         return $this;
     }
 
+    /**
+     * Get Keyword
+     */
     public function getKeyword(): ?string
     {
         return $this->Keyword ?? null;
     }
 
     /**
+     * Set Keyword
+     *
      * @return $this
      */
-    public function setKeyword(?string $value = null)
+    public function setKeyword(?string $value)
     {
         $this->Keyword = $value;
 
         return $this;
     }
 
+    /**
+     * Get UserParam1
+     */
     public function getUserParam1(): ?string
     {
         return $this->UserParam1 ?? null;
     }
 
     /**
+     * Set UserParam1
+     *
      * @return $this
      */
-    public function setUserParam1(?string $value = null)
+    public function setUserParam1(?string $value)
     {
         $this->UserParam1 = $value;
 
         return $this;
     }
 
+    /**
+     * Get UserParam2
+     */
     public function getUserParam2(): ?string
     {
         return $this->UserParam2 ?? null;
     }
 
     /**
+     * Set UserParam2
+     *
      * @return $this
      */
-    public function setUserParam2(?string $value = null)
+    public function setUserParam2(?string $value)
     {
         $this->UserParam2 = $value;
 
@@ -101,19 +124,23 @@ class KeywordUpdateItem
     }
 
     /**
-     * @return AutotargetingCategory[]|null
+     * Get AutotargetingCategories
+     *
+     * @return list<AutotargetingCategory>
      */
-    public function getAutotargetingCategories(): ?array
+    public function getAutotargetingCategories(): array
     {
-        return $this->AutotargetingCategories ?? null;
+        return $this->AutotargetingCategories ?? [];
     }
 
     /**
-     * @param AutotargetingCategory[]|null $value
+     * Set AutotargetingCategories
+     *
+     * @param list<AutotargetingCategory> $value
      *
      * @return $this
      */
-    public function setAutotargetingCategories(?array $value = null)
+    public function setAutotargetingCategories(array $value)
     {
         $this->AutotargetingCategories = $value;
 
@@ -121,34 +148,43 @@ class KeywordUpdateItem
     }
 
     /**
-     * @return AutotargetingBrandOption[]|null
+     * Get AutotargetingBrandOptions
+     *
+     * @return list<AutotargetingBrandOption>
      */
-    public function getAutotargetingBrandOptions(): ?array
+    public function getAutotargetingBrandOptions(): array
     {
-        return $this->AutotargetingBrandOptions ?? null;
+        return $this->AutotargetingBrandOptions ?? [];
     }
 
     /**
-     * @param AutotargetingBrandOption[]|null $value
+     * Set AutotargetingBrandOptions
+     *
+     * @param list<AutotargetingBrandOption> $value
      *
      * @return $this
      */
-    public function setAutotargetingBrandOptions(?array $value = null)
+    public function setAutotargetingBrandOptions(array $value)
     {
         $this->AutotargetingBrandOptions = $value;
 
         return $this;
     }
 
+    /**
+     * Get AutotargetingSettings
+     */
     public function getAutotargetingSettings(): ?AutotargetingSettings
     {
         return $this->AutotargetingSettings ?? null;
     }
 
     /**
+     * Set AutotargetingSettings
+     *
      * @return $this
      */
-    public function setAutotargetingSettings(?AutotargetingSettings $value = null)
+    public function setAutotargetingSettings(?AutotargetingSettings $value)
     {
         $this->AutotargetingSettings = $value;
 

@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class ContextCoverageItem
 {
-    protected $Probability = null;
+    /** @var float */
+    protected $Probability;
 
-    protected $Price = null;
+    /** @var int */
+    protected $Price;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -24,12 +28,17 @@ class ContextCoverageItem
         return new static();
     }
 
+    /**
+     * Get Probability
+     */
     public function getProbability(): float
     {
         return $this->Probability;
     }
 
     /**
+     * Set Probability
+     *
      * @return $this
      */
     public function setProbability(float $value)
@@ -39,12 +48,17 @@ class ContextCoverageItem
         return $this;
     }
 
+    /**
+     * Get Price
+     */
     public function getPrice(): int
     {
         return $this->Price;
     }
 
     /**
+     * Set Price
+     *
      * @return $this
      */
     public function setPrice(int $value)

@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class OperationSystemVersionsItem
 {
-    protected $OsName = null;
+    /** @var string */
+    protected $OsName;
 
-    protected $OsVersion = null;
+    /** @var string */
+    protected $OsVersion;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -24,12 +28,17 @@ class OperationSystemVersionsItem
         return new static();
     }
 
+    /**
+     * Get OsName
+     */
     public function getOsName(): string
     {
         return $this->OsName;
     }
 
     /**
+     * Set OsName
+     *
      * @return $this
      */
     public function setOsName(string $value)
@@ -39,12 +48,17 @@ class OperationSystemVersionsItem
         return $this;
     }
 
+    /**
+     * Get OsVersion
+     */
     public function getOsVersion(): string
     {
         return $this->OsVersion;
     }
 
     /**
+     * Set OsVersion
+     *
      * @return $this
      */
     public function setOsVersion(string $value)

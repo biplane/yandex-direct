@@ -12,17 +12,33 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class StrategyMaximumConversionRateAdd extends StrategyWeeklyBudgetAddBase
 {
-    protected $GoalId = null;
+    /** @var int */
+    protected $GoalId;
 
 //    Can be omitted.
-//    protected $CustomPeriodBudget = null;
+//    protected $CustomPeriodBudget;
 
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    /**
+     * Get GoalId
+     */
     public function getGoalId(): int
     {
         return $this->GoalId;
     }
 
     /**
+     * Set GoalId
+     *
      * @return $this
      */
     public function setGoalId(int $value)
@@ -32,15 +48,20 @@ class StrategyMaximumConversionRateAdd extends StrategyWeeklyBudgetAddBase
         return $this;
     }
 
+    /**
+     * Get CustomPeriodBudget
+     */
     public function getCustomPeriodBudget(): ?CustomPeriodBudget
     {
         return $this->CustomPeriodBudget ?? null;
     }
 
     /**
+     * Set CustomPeriodBudget
+     *
      * @return $this
      */
-    public function setCustomPeriodBudget(?CustomPeriodBudget $value = null)
+    public function setCustomPeriodBudget(?CustomPeriodBudget $value)
     {
         $this->CustomPeriodBudget = $value;
 

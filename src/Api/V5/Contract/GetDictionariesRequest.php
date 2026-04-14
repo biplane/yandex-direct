@@ -5,16 +5,27 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 use AllowDynamicProperties;
+use ArrayIterator;
+use Countable;
+use IteratorAggregate;
+use Override;
+
+use function count;
 
 /**
  * Auto-generated code.
+ *
+ * @implements IteratorAggregate<int, 'Currencies'|'MetroStations'|'GeoRegions'|'GeoRegionNames'|'TimeZones'|'Constants'|'AdCategories'|'OperationSystemVersions'|'ProductivityAssertions'|'SupplySidePlatforms'|'Interests'|'AudienceCriteriaTypes'|'AudienceDemographicProfiles'|'AudienceInterests'|'FilterSchemas'>
  */
 #[AllowDynamicProperties]
-class GetDictionariesRequest
+class GetDictionariesRequest implements IteratorAggregate, Countable
 {
-    protected $DictionaryNames = [];
+    /** @var non-empty-list<'Currencies'|'MetroStations'|'GeoRegions'|'GeoRegionNames'|'TimeZones'|'Constants'|'AdCategories'|'OperationSystemVersions'|'ProductivityAssertions'|'SupplySidePlatforms'|'Interests'|'AudienceCriteriaTypes'|'AudienceDemographicProfiles'|'AudienceInterests'|'FilterSchemas'> */
+    protected $DictionaryNames;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -23,9 +34,11 @@ class GetDictionariesRequest
     }
 
     /**
-     * @see DictionaryNameEnum
+     * Get DictionaryNames
      *
-     * @return string[]
+     * @see \Biplane\YandexDirect\Api\V5\Contract\DictionaryNameEnum
+     *
+     * @return non-empty-list<'Currencies'|'MetroStations'|'GeoRegions'|'GeoRegionNames'|'TimeZones'|'Constants'|'AdCategories'|'OperationSystemVersions'|'ProductivityAssertions'|'SupplySidePlatforms'|'Interests'|'AudienceCriteriaTypes'|'AudienceDemographicProfiles'|'AudienceInterests'|'FilterSchemas'>
      */
     public function getDictionaryNames(): array
     {
@@ -33,9 +46,11 @@ class GetDictionariesRequest
     }
 
     /**
-     * @see DictionaryNameEnum
+     * Set DictionaryNames
      *
-     * @param string[] $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\DictionaryNameEnum
+     *
+     * @param non-empty-list<'Currencies'|'MetroStations'|'GeoRegions'|'GeoRegionNames'|'TimeZones'|'Constants'|'AdCategories'|'OperationSystemVersions'|'ProductivityAssertions'|'SupplySidePlatforms'|'Interests'|'AudienceCriteriaTypes'|'AudienceDemographicProfiles'|'AudienceInterests'|'FilterSchemas'> $value
      *
      * @return $this
      */
@@ -44,5 +59,20 @@ class GetDictionariesRequest
         $this->DictionaryNames = $value;
 
         return $this;
+    }
+
+    #[Override]
+    public function count(): int
+    {
+        return count($this->DictionaryNames);
+    }
+
+    /**
+     * @return ArrayIterator<int, 'Currencies'|'MetroStations'|'GeoRegions'|'GeoRegionNames'|'TimeZones'|'Constants'|'AdCategories'|'OperationSystemVersions'|'ProductivityAssertions'|'SupplySidePlatforms'|'Interests'|'AudienceCriteriaTypes'|'AudienceDemographicProfiles'|'AudienceInterests'|'FilterSchemas'>
+     */
+    #[Override]
+    public function getIterator(): ArrayIterator
+    {
+        return new ArrayIterator($this->DictionaryNames);
     }
 }

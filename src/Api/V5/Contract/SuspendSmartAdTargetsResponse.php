@@ -5,16 +5,27 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 use AllowDynamicProperties;
+use ArrayIterator;
+use Countable;
+use IteratorAggregate;
+use Override;
+
+use function count;
 
 /**
  * Auto-generated code.
+ *
+ * @implements IteratorAggregate<int, ActionResult>
  */
 #[AllowDynamicProperties]
-class SuspendSmartAdTargetsResponse
+class SuspendSmartAdTargetsResponse implements IteratorAggregate, Countable
 {
-    protected $SuspendResults = [];
+    /** @var non-empty-list<ActionResult> */
+    protected $SuspendResults;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -23,7 +34,9 @@ class SuspendSmartAdTargetsResponse
     }
 
     /**
-     * @return ActionResult[]
+     * Get SuspendResults
+     *
+     * @return non-empty-list<ActionResult>
      */
     public function getSuspendResults(): array
     {
@@ -31,7 +44,9 @@ class SuspendSmartAdTargetsResponse
     }
 
     /**
-     * @param ActionResult[] $value
+     * Set SuspendResults
+     *
+     * @param non-empty-list<ActionResult> $value
      *
      * @return $this
      */
@@ -40,5 +55,20 @@ class SuspendSmartAdTargetsResponse
         $this->SuspendResults = $value;
 
         return $this;
+    }
+
+    #[Override]
+    public function count(): int
+    {
+        return count($this->SuspendResults);
+    }
+
+    /**
+     * @return ArrayIterator<int, ActionResult>
+     */
+    #[Override]
+    public function getIterator(): ArrayIterator
+    {
+        return new ArrayIterator($this->SuspendResults);
     }
 }

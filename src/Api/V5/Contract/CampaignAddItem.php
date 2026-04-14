@@ -12,52 +12,69 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class CampaignAddItem extends CampaignBase
 {
-    protected $Name = null;
+    /** @var string */
+    protected $Name;
 
-    protected $StartDate = null;
-
-//    Can be omitted.
-//    protected $DailyBudget = null;
-
-//    Can be omitted.
-//    protected $EndDate = null;
+    /** @var string */
+    protected $StartDate;
 
 //    Can be omitted.
-//    protected $NegativeKeywords = null;
+//    protected $DailyBudget;
 
 //    Can be omitted.
-//    protected $BlockedIps = null;
+//    protected $EndDate;
 
 //    Can be omitted.
-//    protected $ExcludedSites = null;
+//    protected $NegativeKeywords;
 
 //    Can be omitted.
-//    protected $TextCampaign = null;
+//    protected $BlockedIps;
 
 //    Can be omitted.
-//    protected $UnifiedCampaign = null;
+//    protected $ExcludedSites;
 
 //    Can be omitted.
-//    protected $MobileAppCampaign = null;
+//    protected $TextCampaign;
 
 //    Can be omitted.
-//    protected $DynamicTextCampaign = null;
+//    protected $UnifiedCampaign;
 
 //    Can be omitted.
-//    protected $CpmBannerCampaign = null;
+//    protected $MobileAppCampaign;
 
 //    Can be omitted.
-//    protected $SmartCampaign = null;
+//    protected $DynamicTextCampaign;
 
 //    Can be omitted.
-//    protected $TimeTargeting = null;
+//    protected $CpmBannerCampaign;
 
+//    Can be omitted.
+//    protected $SmartCampaign;
+
+//    Can be omitted.
+//    protected $TimeTargeting;
+
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    /**
+     * Get Name
+     */
     public function getName(): string
     {
         return $this->Name;
     }
 
     /**
+     * Set Name
+     *
      * @return $this
      */
     public function setName(string $value)
@@ -67,12 +84,17 @@ class CampaignAddItem extends CampaignBase
         return $this;
     }
 
+    /**
+     * Get StartDate
+     */
     public function getStartDate(): string
     {
         return $this->StartDate;
     }
 
     /**
+     * Set StartDate
+     *
      * @return $this
      */
     public function setStartDate(string $value)
@@ -82,30 +104,40 @@ class CampaignAddItem extends CampaignBase
         return $this;
     }
 
+    /**
+     * Get DailyBudget
+     */
     public function getDailyBudget(): ?DailyBudget
     {
         return $this->DailyBudget ?? null;
     }
 
     /**
+     * Set DailyBudget
+     *
      * @return $this
      */
-    public function setDailyBudget(?DailyBudget $value = null)
+    public function setDailyBudget(?DailyBudget $value)
     {
         $this->DailyBudget = $value;
 
         return $this;
     }
 
+    /**
+     * Get EndDate
+     */
     public function getEndDate(): ?string
     {
         return $this->EndDate ?? null;
     }
 
     /**
+     * Set EndDate
+     *
      * @return $this
      */
-    public function setEndDate(?string $value = null)
+    public function setEndDate(?string $value)
     {
         $this->EndDate = $value;
 
@@ -113,7 +145,9 @@ class CampaignAddItem extends CampaignBase
     }
 
     /**
-     * @return string[]|null
+     * Get NegativeKeywords
+     *
+     * @return non-empty-list<string>|null
      */
     public function getNegativeKeywords(): ?array
     {
@@ -121,11 +155,13 @@ class CampaignAddItem extends CampaignBase
     }
 
     /**
-     * @param string[]|null $value
+     * Set NegativeKeywords
+     *
+     * @param non-empty-list<string>|null $value
      *
      * @return $this
      */
-    public function setNegativeKeywords(?array $value = null)
+    public function setNegativeKeywords(?array $value)
     {
         $this->NegativeKeywords = $value;
 
@@ -133,7 +169,9 @@ class CampaignAddItem extends CampaignBase
     }
 
     /**
-     * @return string[]|null
+     * Get BlockedIps
+     *
+     * @return non-empty-list<string>|null
      */
     public function getBlockedIps(): ?array
     {
@@ -141,11 +179,13 @@ class CampaignAddItem extends CampaignBase
     }
 
     /**
-     * @param string[]|null $value
+     * Set BlockedIps
+     *
+     * @param non-empty-list<string>|null $value
      *
      * @return $this
      */
-    public function setBlockedIps(?array $value = null)
+    public function setBlockedIps(?array $value)
     {
         $this->BlockedIps = $value;
 
@@ -153,7 +193,9 @@ class CampaignAddItem extends CampaignBase
     }
 
     /**
-     * @return string[]|null
+     * Get ExcludedSites
+     *
+     * @return non-empty-list<string>|null
      */
     public function getExcludedSites(): ?array
     {
@@ -161,116 +203,153 @@ class CampaignAddItem extends CampaignBase
     }
 
     /**
-     * @param string[]|null $value
+     * Set ExcludedSites
+     *
+     * @param non-empty-list<string>|null $value
      *
      * @return $this
      */
-    public function setExcludedSites(?array $value = null)
+    public function setExcludedSites(?array $value)
     {
         $this->ExcludedSites = $value;
 
         return $this;
     }
 
+    /**
+     * Get TextCampaign
+     */
     public function getTextCampaign(): ?TextCampaignAddItem
     {
         return $this->TextCampaign ?? null;
     }
 
     /**
+     * Set TextCampaign
+     *
      * @return $this
      */
-    public function setTextCampaign(?TextCampaignAddItem $value = null)
+    public function setTextCampaign(?TextCampaignAddItem $value)
     {
         $this->TextCampaign = $value;
 
         return $this;
     }
 
+    /**
+     * Get UnifiedCampaign
+     */
     public function getUnifiedCampaign(): ?UnifiedCampaignAddItem
     {
         return $this->UnifiedCampaign ?? null;
     }
 
     /**
+     * Set UnifiedCampaign
+     *
      * @return $this
      */
-    public function setUnifiedCampaign(?UnifiedCampaignAddItem $value = null)
+    public function setUnifiedCampaign(?UnifiedCampaignAddItem $value)
     {
         $this->UnifiedCampaign = $value;
 
         return $this;
     }
 
+    /**
+     * Get MobileAppCampaign
+     */
     public function getMobileAppCampaign(): ?MobileAppCampaignAddItem
     {
         return $this->MobileAppCampaign ?? null;
     }
 
     /**
+     * Set MobileAppCampaign
+     *
      * @return $this
      */
-    public function setMobileAppCampaign(?MobileAppCampaignAddItem $value = null)
+    public function setMobileAppCampaign(?MobileAppCampaignAddItem $value)
     {
         $this->MobileAppCampaign = $value;
 
         return $this;
     }
 
+    /**
+     * Get DynamicTextCampaign
+     */
     public function getDynamicTextCampaign(): ?DynamicTextCampaignAddItem
     {
         return $this->DynamicTextCampaign ?? null;
     }
 
     /**
+     * Set DynamicTextCampaign
+     *
      * @return $this
      */
-    public function setDynamicTextCampaign(?DynamicTextCampaignAddItem $value = null)
+    public function setDynamicTextCampaign(?DynamicTextCampaignAddItem $value)
     {
         $this->DynamicTextCampaign = $value;
 
         return $this;
     }
 
+    /**
+     * Get CpmBannerCampaign
+     */
     public function getCpmBannerCampaign(): ?CpmBannerCampaignAddItem
     {
         return $this->CpmBannerCampaign ?? null;
     }
 
     /**
+     * Set CpmBannerCampaign
+     *
      * @return $this
      */
-    public function setCpmBannerCampaign(?CpmBannerCampaignAddItem $value = null)
+    public function setCpmBannerCampaign(?CpmBannerCampaignAddItem $value)
     {
         $this->CpmBannerCampaign = $value;
 
         return $this;
     }
 
+    /**
+     * Get SmartCampaign
+     */
     public function getSmartCampaign(): ?SmartCampaignAddItem
     {
         return $this->SmartCampaign ?? null;
     }
 
     /**
+     * Set SmartCampaign
+     *
      * @return $this
      */
-    public function setSmartCampaign(?SmartCampaignAddItem $value = null)
+    public function setSmartCampaign(?SmartCampaignAddItem $value)
     {
         $this->SmartCampaign = $value;
 
         return $this;
     }
 
+    /**
+     * Get TimeTargeting
+     */
     public function getTimeTargeting(): ?TimeTargetingAdd
     {
         return $this->TimeTargeting ?? null;
     }
 
     /**
+     * Set TimeTargeting
+     *
      * @return $this
      */
-    public function setTimeTargeting(?TimeTargetingAdd $value = null)
+    public function setTimeTargeting(?TimeTargetingAdd $value)
     {
         $this->TimeTargeting = $value;
 

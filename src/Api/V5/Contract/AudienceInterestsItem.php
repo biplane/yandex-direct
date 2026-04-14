@@ -12,19 +12,27 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class AudienceInterestsItem
 {
-    protected $InterestKey = null;
+    /** @var int */
+    protected $InterestKey;
 
-    protected $Id = null;
+    /** @var int */
+    protected $Id;
 
-    protected $ParentId = null;
+    /** @var int */
+    protected $ParentId;
 
-    protected $Name = null;
+    /** @var string */
+    protected $Name;
 
-    protected $Description = null;
+    /** @var string */
+    protected $Description;
 
-    protected $InterestType = null;
+    /** @var 'SHORT_TERM'|'LONG_TERM'|'ANY' */
+    protected $InterestType;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -32,12 +40,17 @@ class AudienceInterestsItem
         return new static();
     }
 
+    /**
+     * Get InterestKey
+     */
     public function getInterestKey(): int
     {
         return $this->InterestKey;
     }
 
     /**
+     * Set InterestKey
+     *
      * @return $this
      */
     public function setInterestKey(int $value)
@@ -47,12 +60,17 @@ class AudienceInterestsItem
         return $this;
     }
 
+    /**
+     * Get Id
+     */
     public function getId(): int
     {
         return $this->Id;
     }
 
     /**
+     * Set Id
+     *
      * @return $this
      */
     public function setId(int $value)
@@ -62,12 +80,17 @@ class AudienceInterestsItem
         return $this;
     }
 
+    /**
+     * Get ParentId
+     */
     public function getParentId(): int
     {
         return $this->ParentId;
     }
 
     /**
+     * Set ParentId
+     *
      * @return $this
      */
     public function setParentId(int $value)
@@ -77,12 +100,17 @@ class AudienceInterestsItem
         return $this;
     }
 
+    /**
+     * Get Name
+     */
     public function getName(): string
     {
         return $this->Name;
     }
 
     /**
+     * Set Name
+     *
      * @return $this
      */
     public function setName(string $value)
@@ -92,12 +120,17 @@ class AudienceInterestsItem
         return $this;
     }
 
+    /**
+     * Get Description
+     */
     public function getDescription(): string
     {
         return $this->Description;
     }
 
     /**
+     * Set Description
+     *
      * @return $this
      */
     public function setDescription(string $value)
@@ -108,7 +141,11 @@ class AudienceInterestsItem
     }
 
     /**
-     * @see InterestTypeEnum
+     * Get InterestType
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\InterestTypeEnum
+     *
+     * @return 'SHORT_TERM'|'LONG_TERM'|'ANY'
      */
     public function getInterestType(): string
     {
@@ -116,7 +153,11 @@ class AudienceInterestsItem
     }
 
     /**
-     * @see InterestTypeEnum
+     * Set InterestType
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\InterestTypeEnum
+     *
+     * @param 'SHORT_TERM'|'LONG_TERM'|'ANY' $value
      *
      * @return $this
      */

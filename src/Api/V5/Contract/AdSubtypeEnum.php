@@ -4,9 +4,12 @@ declare(strict_types=1);
 
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
+use AllowDynamicProperties;
+
 /**
  * Auto-generated code.
  */
+#[AllowDynamicProperties]
 class AdSubtypeEnum
 {
     public const MOBILE_APP_AD_BUILDER_AD = 'MOBILE_APP_AD_BUILDER_AD';

@@ -13,11 +13,14 @@ use AllowDynamicProperties;
 class CheckCampaignsResponse
 {
 //    Can be omitted.
-//    protected $Campaigns = null;
+//    protected $Campaigns;
 
-    protected $Timestamp = null;
+    /** @var string */
+    protected $Timestamp;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -26,31 +29,40 @@ class CheckCampaignsResponse
     }
 
     /**
-     * @return CampaignChangesItem[]|null
+     * Get Campaigns
+     *
+     * @return list<CampaignChangesItem>
      */
-    public function getCampaigns(): ?array
+    public function getCampaigns(): array
     {
-        return $this->Campaigns ?? null;
+        return $this->Campaigns ?? [];
     }
 
     /**
-     * @param CampaignChangesItem[]|null $value
+     * Set Campaigns
+     *
+     * @param list<CampaignChangesItem> $value
      *
      * @return $this
      */
-    public function setCampaigns(?array $value = null)
+    public function setCampaigns(array $value)
     {
         $this->Campaigns = $value;
 
         return $this;
     }
 
+    /**
+     * Get Timestamp
+     */
     public function getTimestamp(): string
     {
         return $this->Timestamp;
     }
 
     /**
+     * Set Timestamp
+     *
      * @return $this
      */
     public function setTimestamp(string $value)

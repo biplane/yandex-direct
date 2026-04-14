@@ -12,18 +12,21 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class FeedUpdateItem
 {
-    protected $Id = null;
+    /** @var int */
+    protected $Id;
 
 //    Can be omitted.
-//    protected $Name = null;
+//    protected $Name;
 
 //    Can be omitted.
-//    protected $UrlFeed = null;
+//    protected $UrlFeed;
 
 //    Can be omitted.
-//    protected $FileFeed = null;
+//    protected $FileFeed;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -31,12 +34,17 @@ class FeedUpdateItem
         return new static();
     }
 
+    /**
+     * Get Id
+     */
     public function getId(): int
     {
         return $this->Id;
     }
 
     /**
+     * Set Id
+     *
      * @return $this
      */
     public function setId(int $value)
@@ -46,45 +54,60 @@ class FeedUpdateItem
         return $this;
     }
 
+    /**
+     * Get Name
+     */
     public function getName(): ?string
     {
         return $this->Name ?? null;
     }
 
     /**
+     * Set Name
+     *
      * @return $this
      */
-    public function setName(?string $value = null)
+    public function setName(?string $value)
     {
         $this->Name = $value;
 
         return $this;
     }
 
+    /**
+     * Get UrlFeed
+     */
     public function getUrlFeed(): ?UrlFeedUpdate
     {
         return $this->UrlFeed ?? null;
     }
 
     /**
+     * Set UrlFeed
+     *
      * @return $this
      */
-    public function setUrlFeed(?UrlFeedUpdate $value = null)
+    public function setUrlFeed(?UrlFeedUpdate $value)
     {
         $this->UrlFeed = $value;
 
         return $this;
     }
 
+    /**
+     * Get FileFeed
+     */
     public function getFileFeed(): ?FileFeedUpdate
     {
         return $this->FileFeed ?? null;
     }
 
     /**
+     * Set FileFeed
+     *
      * @return $this
      */
-    public function setFileFeed(?FileFeedUpdate $value = null)
+    public function setFileFeed(?FileFeedUpdate $value)
     {
         $this->FileFeed = $value;
 

@@ -13,21 +13,23 @@ use AllowDynamicProperties;
 class AutotargetingCategories
 {
 //    Can be omitted.
-//    protected $Exact = null;
+//    protected $Exact;
 
 //    Can be omitted.
-//    protected $Narrow = null;
+//    protected $Narrow;
 
 //    Can be omitted.
-//    protected $Alternative = null;
+//    protected $Alternative;
 
 //    Can be omitted.
-//    protected $Accessory = null;
+//    protected $Accessory;
 
 //    Can be omitted.
-//    protected $Broader = null;
+//    protected $Broader;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -36,7 +38,11 @@ class AutotargetingCategories
     }
 
     /**
-     * @see YesNoEnum
+     * Get Exact
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'|null
      */
     public function getExact(): ?string
     {
@@ -44,11 +50,15 @@ class AutotargetingCategories
     }
 
     /**
-     * @see YesNoEnum
+     * Set Exact
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO'|null $value
      *
      * @return $this
      */
-    public function setExact(?string $value = null)
+    public function setExact(?string $value)
     {
         $this->Exact = $value;
 
@@ -56,7 +66,11 @@ class AutotargetingCategories
     }
 
     /**
-     * @see YesNoEnum
+     * Get Narrow
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'|null
      */
     public function getNarrow(): ?string
     {
@@ -64,11 +78,15 @@ class AutotargetingCategories
     }
 
     /**
-     * @see YesNoEnum
+     * Set Narrow
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO'|null $value
      *
      * @return $this
      */
-    public function setNarrow(?string $value = null)
+    public function setNarrow(?string $value)
     {
         $this->Narrow = $value;
 
@@ -76,7 +94,11 @@ class AutotargetingCategories
     }
 
     /**
-     * @see YesNoEnum
+     * Get Alternative
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'|null
      */
     public function getAlternative(): ?string
     {
@@ -84,11 +106,15 @@ class AutotargetingCategories
     }
 
     /**
-     * @see YesNoEnum
+     * Set Alternative
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO'|null $value
      *
      * @return $this
      */
-    public function setAlternative(?string $value = null)
+    public function setAlternative(?string $value)
     {
         $this->Alternative = $value;
 
@@ -96,7 +122,11 @@ class AutotargetingCategories
     }
 
     /**
-     * @see YesNoEnum
+     * Get Accessory
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'|null
      */
     public function getAccessory(): ?string
     {
@@ -104,11 +134,15 @@ class AutotargetingCategories
     }
 
     /**
-     * @see YesNoEnum
+     * Set Accessory
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO'|null $value
      *
      * @return $this
      */
-    public function setAccessory(?string $value = null)
+    public function setAccessory(?string $value)
     {
         $this->Accessory = $value;
 
@@ -116,7 +150,11 @@ class AutotargetingCategories
     }
 
     /**
-     * @see YesNoEnum
+     * Get Broader
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'|null
      */
     public function getBroader(): ?string
     {
@@ -124,11 +162,15 @@ class AutotargetingCategories
     }
 
     /**
-     * @see YesNoEnum
+     * Set Broader
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO'|null $value
      *
      * @return $this
      */
-    public function setBroader(?string $value = null)
+    public function setBroader(?string $value)
     {
         $this->Broader = $value;
 

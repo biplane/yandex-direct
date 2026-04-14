@@ -13,75 +13,77 @@ use AllowDynamicProperties;
 class StrategyGetItem
 {
 //    Can be omitted.
-//    protected $Id = null;
+//    protected $Id;
 
 //    Can be omitted.
-//    protected $AttributionModel = null;
+//    protected $AttributionModel;
 
 //    Can be omitted.
-//    protected $Type = null;
+//    protected $Type;
 
 //    Can be omitted.
-//    protected $PriorityGoals = null;
+//    protected $PriorityGoals;
 
 //    Can be omitted.
-//    protected $CounterIds = null;
+//    protected $CounterIds;
 
 //    Can be omitted.
-//    protected $Name = null;
+//    protected $Name;
 
 //    Can be omitted.
-//    protected $StatusArchived = null;
+//    protected $StatusArchived;
 
 //    Can be omitted.
-//    protected $WbMaximumClicks = null;
+//    protected $WbMaximumClicks;
 
 //    Can be omitted.
-//    protected $WbMaximumConversionRate = null;
+//    protected $WbMaximumConversionRate;
 
 //    Can be omitted.
-//    protected $AverageCpc = null;
+//    protected $AverageCpc;
 
 //    Can be omitted.
-//    protected $AverageCpa = null;
+//    protected $AverageCpa;
 
 //    Can be omitted.
-//    protected $MaxProfit = null;
+//    protected $MaxProfit;
 
 //    Can be omitted.
-//    protected $PayForConversion = null;
+//    protected $PayForConversion;
 
 //    Can be omitted.
-//    protected $AverageCpaPerCampaign = null;
+//    protected $AverageCpaPerCampaign;
 
 //    Can be omitted.
-//    protected $PayForConversionPerCampaign = null;
+//    protected $PayForConversionPerCampaign;
 
 //    Can be omitted.
-//    protected $PayForConversionPerFilter = null;
+//    protected $PayForConversionPerFilter;
 
 //    Can be omitted.
-//    protected $AverageCpaPerFilter = null;
+//    protected $AverageCpaPerFilter;
 
 //    Can be omitted.
-//    protected $AverageCpcPerCampaign = null;
+//    protected $AverageCpcPerCampaign;
 
 //    Can be omitted.
-//    protected $AverageCpcPerFilter = null;
+//    protected $AverageCpcPerFilter;
 
 //    Can be omitted.
-//    protected $AverageCrr = null;
+//    protected $AverageCrr;
 
 //    Can be omitted.
-//    protected $PayForConversionCrr = null;
+//    protected $PayForConversionCrr;
 
 //    Can be omitted.
-//    protected $AverageCpaMultipleGoals = null;
+//    protected $AverageCpaMultipleGoals;
 
 //    Can be omitted.
-//    protected $PayForConversionMultipleGoals = null;
+//    protected $PayForConversionMultipleGoals;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -89,15 +91,20 @@ class StrategyGetItem
         return new static();
     }
 
+    /**
+     * Get Id
+     */
     public function getId(): ?int
     {
         return $this->Id ?? null;
     }
 
     /**
+     * Set Id
+     *
      * @return $this
      */
-    public function setId(?int $value = null)
+    public function setId(?int $value)
     {
         $this->Id = $value;
 
@@ -105,7 +112,11 @@ class StrategyGetItem
     }
 
     /**
-     * @see AttributionModelEnum
+     * Get AttributionModel
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\AttributionModelEnum
+     *
+     * @return 'LC'|'LSC'|'FC'|'LYDC'|'LSCCD'|'FCCD'|'LYDCCD'|'AUTO'|null
      */
     public function getAttributionModel(): ?string
     {
@@ -113,11 +124,15 @@ class StrategyGetItem
     }
 
     /**
-     * @see AttributionModelEnum
+     * Set AttributionModel
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\AttributionModelEnum
+     *
+     * @param 'LC'|'LSC'|'FC'|'LYDC'|'LSCCD'|'FCCD'|'LYDCCD'|'AUTO'|null $value
      *
      * @return $this
      */
-    public function setAttributionModel(?string $value = null)
+    public function setAttributionModel(?string $value)
     {
         $this->AttributionModel = $value;
 
@@ -125,7 +140,11 @@ class StrategyGetItem
     }
 
     /**
-     * @see StrategyType
+     * Get Type
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\StrategyType
+     *
+     * @return 'AVERAGE_CPC'|'AVERAGE_CPA'|'PAY_FOR_CONVERSION'|'WB_MAXIMUM_CONVERSION_RATE'|'WB_MAXIMUM_CLICKS'|'AVERAGE_CRR'|'PAY_FOR_CONVERSION_CRR'|'AVERAGE_CPC_PER_CAMPAIGN'|'AVERAGE_CPC_PER_FILTER'|'AVERAGE_CPA_PER_CAMPAIGN'|'AVERAGE_CPA_PER_FILTER'|'PAY_FOR_CONVERSION_PER_CAMPAIGN'|'PAY_FOR_CONVERSION_PER_FILTER'|'MAX_PROFIT'|'AVERAGE_CPA_MULTIPLE_GOALS'|'PAY_FOR_CONVERSION_MULTIPLE_GOALS'|'UNKNOWN'|null
      */
     public function getType(): ?string
     {
@@ -133,26 +152,35 @@ class StrategyGetItem
     }
 
     /**
-     * @see StrategyType
+     * Set Type
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\StrategyType
+     *
+     * @param 'AVERAGE_CPC'|'AVERAGE_CPA'|'PAY_FOR_CONVERSION'|'WB_MAXIMUM_CONVERSION_RATE'|'WB_MAXIMUM_CLICKS'|'AVERAGE_CRR'|'PAY_FOR_CONVERSION_CRR'|'AVERAGE_CPC_PER_CAMPAIGN'|'AVERAGE_CPC_PER_FILTER'|'AVERAGE_CPA_PER_CAMPAIGN'|'AVERAGE_CPA_PER_FILTER'|'PAY_FOR_CONVERSION_PER_CAMPAIGN'|'PAY_FOR_CONVERSION_PER_FILTER'|'MAX_PROFIT'|'AVERAGE_CPA_MULTIPLE_GOALS'|'PAY_FOR_CONVERSION_MULTIPLE_GOALS'|'UNKNOWN'|null $value
      *
      * @return $this
      */
-    public function setType(?string $value = null)
+    public function setType(?string $value)
     {
         $this->Type = $value;
 
         return $this;
     }
 
+    /**
+     * Get PriorityGoals
+     */
     public function getPriorityGoals(): ?PriorityGoalsArray
     {
         return $this->PriorityGoals ?? null;
     }
 
     /**
+     * Set PriorityGoals
+     *
      * @return $this
      */
-    public function setPriorityGoals(?PriorityGoalsArray $value = null)
+    public function setPriorityGoals(?PriorityGoalsArray $value)
     {
         $this->PriorityGoals = $value;
 
@@ -160,7 +188,9 @@ class StrategyGetItem
     }
 
     /**
-     * @return float[]|null
+     * Get CounterIds
+     *
+     * @return non-empty-list<int>|null
      */
     public function getCounterIds(): ?array
     {
@@ -168,26 +198,33 @@ class StrategyGetItem
     }
 
     /**
-     * @param float[]|null $value
+     * Set CounterIds
+     *
+     * @param non-empty-list<int>|null $value
      *
      * @return $this
      */
-    public function setCounterIds(?array $value = null)
+    public function setCounterIds(?array $value)
     {
         $this->CounterIds = $value;
 
         return $this;
     }
 
+    /**
+     * Get Name
+     */
     public function getName(): ?string
     {
         return $this->Name ?? null;
     }
 
     /**
+     * Set Name
+     *
      * @return $this
      */
-    public function setName(?string $value = null)
+    public function setName(?string $value)
     {
         $this->Name = $value;
 
@@ -195,7 +232,11 @@ class StrategyGetItem
     }
 
     /**
-     * @see YesNoEnum
+     * Get StatusArchived
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'|null
      */
     public function getStatusArchived(): ?string
     {
@@ -203,251 +244,335 @@ class StrategyGetItem
     }
 
     /**
-     * @see YesNoEnum
+     * Set StatusArchived
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO'|null $value
      *
      * @return $this
      */
-    public function setStatusArchived(?string $value = null)
+    public function setStatusArchived(?string $value)
     {
         $this->StatusArchived = $value;
 
         return $this;
     }
 
+    /**
+     * Get WbMaximumClicks
+     */
     public function getWbMaximumClicks(): ?StrategyMaximumClicksGetItem
     {
         return $this->WbMaximumClicks ?? null;
     }
 
     /**
+     * Set WbMaximumClicks
+     *
      * @return $this
      */
-    public function setWbMaximumClicks(?StrategyMaximumClicksGetItem $value = null)
+    public function setWbMaximumClicks(?StrategyMaximumClicksGetItem $value)
     {
         $this->WbMaximumClicks = $value;
 
         return $this;
     }
 
+    /**
+     * Get WbMaximumConversionRate
+     */
     public function getWbMaximumConversionRate(): ?StrategyMaximumConversionRateGetItem
     {
         return $this->WbMaximumConversionRate ?? null;
     }
 
     /**
+     * Set WbMaximumConversionRate
+     *
      * @return $this
      */
-    public function setWbMaximumConversionRate(?StrategyMaximumConversionRateGetItem $value = null)
+    public function setWbMaximumConversionRate(?StrategyMaximumConversionRateGetItem $value)
     {
         $this->WbMaximumConversionRate = $value;
 
         return $this;
     }
 
+    /**
+     * Get AverageCpc
+     */
     public function getAverageCpc(): ?StrategyAverageCpcGetItem
     {
         return $this->AverageCpc ?? null;
     }
 
     /**
+     * Set AverageCpc
+     *
      * @return $this
      */
-    public function setAverageCpc(?StrategyAverageCpcGetItem $value = null)
+    public function setAverageCpc(?StrategyAverageCpcGetItem $value)
     {
         $this->AverageCpc = $value;
 
         return $this;
     }
 
+    /**
+     * Get AverageCpa
+     */
     public function getAverageCpa(): ?StrategyAverageCpaGetItem
     {
         return $this->AverageCpa ?? null;
     }
 
     /**
+     * Set AverageCpa
+     *
      * @return $this
      */
-    public function setAverageCpa(?StrategyAverageCpaGetItem $value = null)
+    public function setAverageCpa(?StrategyAverageCpaGetItem $value)
     {
         $this->AverageCpa = $value;
 
         return $this;
     }
 
+    /**
+     * Get MaxProfit
+     */
     public function getMaxProfit(): ?StrategyMaxProfitGetItem
     {
         return $this->MaxProfit ?? null;
     }
 
     /**
+     * Set MaxProfit
+     *
      * @return $this
      */
-    public function setMaxProfit(?StrategyMaxProfitGetItem $value = null)
+    public function setMaxProfit(?StrategyMaxProfitGetItem $value)
     {
         $this->MaxProfit = $value;
 
         return $this;
     }
 
+    /**
+     * Get PayForConversion
+     */
     public function getPayForConversion(): ?StrategyPayForConversionGetItem
     {
         return $this->PayForConversion ?? null;
     }
 
     /**
+     * Set PayForConversion
+     *
      * @return $this
      */
-    public function setPayForConversion(?StrategyPayForConversionGetItem $value = null)
+    public function setPayForConversion(?StrategyPayForConversionGetItem $value)
     {
         $this->PayForConversion = $value;
 
         return $this;
     }
 
+    /**
+     * Get AverageCpaPerCampaign
+     */
     public function getAverageCpaPerCampaign(): ?StrategyAverageCpaPerCampaignGetItem
     {
         return $this->AverageCpaPerCampaign ?? null;
     }
 
     /**
+     * Set AverageCpaPerCampaign
+     *
      * @return $this
      */
-    public function setAverageCpaPerCampaign(?StrategyAverageCpaPerCampaignGetItem $value = null)
+    public function setAverageCpaPerCampaign(?StrategyAverageCpaPerCampaignGetItem $value)
     {
         $this->AverageCpaPerCampaign = $value;
 
         return $this;
     }
 
+    /**
+     * Get PayForConversionPerCampaign
+     */
     public function getPayForConversionPerCampaign(): ?StrategyPayForConversionPerCampaignGetItem
     {
         return $this->PayForConversionPerCampaign ?? null;
     }
 
     /**
+     * Set PayForConversionPerCampaign
+     *
      * @return $this
      */
-    public function setPayForConversionPerCampaign(?StrategyPayForConversionPerCampaignGetItem $value = null)
+    public function setPayForConversionPerCampaign(?StrategyPayForConversionPerCampaignGetItem $value)
     {
         $this->PayForConversionPerCampaign = $value;
 
         return $this;
     }
 
+    /**
+     * Get PayForConversionPerFilter
+     */
     public function getPayForConversionPerFilter(): ?StrategyPayForConversionPerFilterGetItem
     {
         return $this->PayForConversionPerFilter ?? null;
     }
 
     /**
+     * Set PayForConversionPerFilter
+     *
      * @return $this
      */
-    public function setPayForConversionPerFilter(?StrategyPayForConversionPerFilterGetItem $value = null)
+    public function setPayForConversionPerFilter(?StrategyPayForConversionPerFilterGetItem $value)
     {
         $this->PayForConversionPerFilter = $value;
 
         return $this;
     }
 
+    /**
+     * Get AverageCpaPerFilter
+     */
     public function getAverageCpaPerFilter(): ?StrategyAverageCpaPerFilterGetItem
     {
         return $this->AverageCpaPerFilter ?? null;
     }
 
     /**
+     * Set AverageCpaPerFilter
+     *
      * @return $this
      */
-    public function setAverageCpaPerFilter(?StrategyAverageCpaPerFilterGetItem $value = null)
+    public function setAverageCpaPerFilter(?StrategyAverageCpaPerFilterGetItem $value)
     {
         $this->AverageCpaPerFilter = $value;
 
         return $this;
     }
 
+    /**
+     * Get AverageCpcPerCampaign
+     */
     public function getAverageCpcPerCampaign(): ?StrategyAverageCpcPerCampaignGetItem
     {
         return $this->AverageCpcPerCampaign ?? null;
     }
 
     /**
+     * Set AverageCpcPerCampaign
+     *
      * @return $this
      */
-    public function setAverageCpcPerCampaign(?StrategyAverageCpcPerCampaignGetItem $value = null)
+    public function setAverageCpcPerCampaign(?StrategyAverageCpcPerCampaignGetItem $value)
     {
         $this->AverageCpcPerCampaign = $value;
 
         return $this;
     }
 
+    /**
+     * Get AverageCpcPerFilter
+     */
     public function getAverageCpcPerFilter(): ?StrategyAverageCpcPerFilterGetItem
     {
         return $this->AverageCpcPerFilter ?? null;
     }
 
     /**
+     * Set AverageCpcPerFilter
+     *
      * @return $this
      */
-    public function setAverageCpcPerFilter(?StrategyAverageCpcPerFilterGetItem $value = null)
+    public function setAverageCpcPerFilter(?StrategyAverageCpcPerFilterGetItem $value)
     {
         $this->AverageCpcPerFilter = $value;
 
         return $this;
     }
 
+    /**
+     * Get AverageCrr
+     */
     public function getAverageCrr(): ?StrategyAverageCrrGetItem
     {
         return $this->AverageCrr ?? null;
     }
 
     /**
+     * Set AverageCrr
+     *
      * @return $this
      */
-    public function setAverageCrr(?StrategyAverageCrrGetItem $value = null)
+    public function setAverageCrr(?StrategyAverageCrrGetItem $value)
     {
         $this->AverageCrr = $value;
 
         return $this;
     }
 
+    /**
+     * Get PayForConversionCrr
+     */
     public function getPayForConversionCrr(): ?StrategyPayForConversionCrrGetItem
     {
         return $this->PayForConversionCrr ?? null;
     }
 
     /**
+     * Set PayForConversionCrr
+     *
      * @return $this
      */
-    public function setPayForConversionCrr(?StrategyPayForConversionCrrGetItem $value = null)
+    public function setPayForConversionCrr(?StrategyPayForConversionCrrGetItem $value)
     {
         $this->PayForConversionCrr = $value;
 
         return $this;
     }
 
+    /**
+     * Get AverageCpaMultipleGoals
+     */
     public function getAverageCpaMultipleGoals(): ?StrategyAverageCpaMultipleGoalsGetItem
     {
         return $this->AverageCpaMultipleGoals ?? null;
     }
 
     /**
+     * Set AverageCpaMultipleGoals
+     *
      * @return $this
      */
-    public function setAverageCpaMultipleGoals(?StrategyAverageCpaMultipleGoalsGetItem $value = null)
+    public function setAverageCpaMultipleGoals(?StrategyAverageCpaMultipleGoalsGetItem $value)
     {
         $this->AverageCpaMultipleGoals = $value;
 
         return $this;
     }
 
+    /**
+     * Get PayForConversionMultipleGoals
+     */
     public function getPayForConversionMultipleGoals(): ?StrategyPayForConversionMultipleGoalsGetItem
     {
         return $this->PayForConversionMultipleGoals ?? null;
     }
 
     /**
+     * Set PayForConversionMultipleGoals
+     *
      * @return $this
      */
-    public function setPayForConversionMultipleGoals(?StrategyPayForConversionMultipleGoalsGetItem $value = null)
+    public function setPayForConversionMultipleGoals(?StrategyPayForConversionMultipleGoalsGetItem $value)
     {
         $this->PayForConversionMultipleGoals = $value;
 

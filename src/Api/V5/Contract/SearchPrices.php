@@ -13,12 +13,14 @@ use AllowDynamicProperties;
 class SearchPrices
 {
 //    Can be omitted.
-//    protected $Position = null;
+//    protected $Position;
 
 //    Can be omitted.
-//    protected $Price = null;
+//    protected $Price;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -27,7 +29,11 @@ class SearchPrices
     }
 
     /**
-     * @see PositionEnum
+     * Get Position
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\PositionEnum
+     *
+     * @return 'PREMIUMFIRST'|'PREMIUMBLOCK'|'FOOTERFIRST'|'FOOTERBLOCK'|'P11'|'P12'|'P13'|'P14'|'P21'|'P22'|'P23'|'P24'|null
      */
     public function getPosition(): ?string
     {
@@ -35,26 +41,35 @@ class SearchPrices
     }
 
     /**
-     * @see PositionEnum
+     * Set Position
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\PositionEnum
+     *
+     * @param 'PREMIUMFIRST'|'PREMIUMBLOCK'|'FOOTERFIRST'|'FOOTERBLOCK'|'P11'|'P12'|'P13'|'P14'|'P21'|'P22'|'P23'|'P24'|null $value
      *
      * @return $this
      */
-    public function setPosition(?string $value = null)
+    public function setPosition(?string $value)
     {
         $this->Position = $value;
 
         return $this;
     }
 
+    /**
+     * Get Price
+     */
     public function getPrice(): ?int
     {
         return $this->Price ?? null;
     }
 
     /**
+     * Set Price
+     *
      * @return $this
      */
-    public function setPrice(?int $value = null)
+    public function setPrice(?int $value)
     {
         $this->Price = $value;
 

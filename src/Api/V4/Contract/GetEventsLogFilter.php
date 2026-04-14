@@ -12,17 +12,24 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class GetEventsLogFilter
 {
-    protected $CampaignIDS = null;
+//    Can be omitted.
+//    protected $CampaignIDS;
 
-    protected $BannerIDS = null;
+//    Can be omitted.
+//    protected $BannerIDS;
 
-    protected $PhraseIDS = null;
+//    Can be omitted.
+//    protected $PhraseIDS;
 
-    protected $AccountIDS = null;
+//    Can be omitted.
+//    protected $AccountIDS;
 
-    protected $EventType = null;
+//    Can be omitted.
+//    protected $EventType;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -31,19 +38,23 @@ class GetEventsLogFilter
     }
 
     /**
-     * @return int[]|null
+     * Get CampaignIDS
+     *
+     * @return list<int>|null
      */
     public function getCampaignIDS(): ?array
     {
-        return $this->CampaignIDS;
+        return $this->CampaignIDS ?? null;
     }
 
     /**
-     * @param int[]|null $value
+     * Set CampaignIDS
+     *
+     * @param list<int>|null $value
      *
      * @return $this
      */
-    public function setCampaignIDS(?array $value = null)
+    public function setCampaignIDS(?array $value)
     {
         $this->CampaignIDS = $value;
 
@@ -51,19 +62,23 @@ class GetEventsLogFilter
     }
 
     /**
-     * @return int[]|null
+     * Get BannerIDS
+     *
+     * @return list<int>|null
      */
     public function getBannerIDS(): ?array
     {
-        return $this->BannerIDS;
+        return $this->BannerIDS ?? null;
     }
 
     /**
-     * @param int[]|null $value
+     * Set BannerIDS
+     *
+     * @param list<int>|null $value
      *
      * @return $this
      */
-    public function setBannerIDS(?array $value = null)
+    public function setBannerIDS(?array $value)
     {
         $this->BannerIDS = $value;
 
@@ -71,19 +86,23 @@ class GetEventsLogFilter
     }
 
     /**
-     * @return int[]|null
+     * Get PhraseIDS
+     *
+     * @return list<int>|null
      */
     public function getPhraseIDS(): ?array
     {
-        return $this->PhraseIDS;
+        return $this->PhraseIDS ?? null;
     }
 
     /**
-     * @param int[]|null $value
+     * Set PhraseIDS
+     *
+     * @param list<int>|null $value
      *
      * @return $this
      */
-    public function setPhraseIDS(?array $value = null)
+    public function setPhraseIDS(?array $value)
     {
         $this->PhraseIDS = $value;
 
@@ -91,19 +110,23 @@ class GetEventsLogFilter
     }
 
     /**
-     * @return int[]|null
+     * Get AccountIDS
+     *
+     * @return list<int>|null
      */
     public function getAccountIDS(): ?array
     {
-        return $this->AccountIDS;
+        return $this->AccountIDS ?? null;
     }
 
     /**
-     * @param int[]|null $value
+     * Set AccountIDS
+     *
+     * @param list<int>|null $value
      *
      * @return $this
      */
-    public function setAccountIDS(?array $value = null)
+    public function setAccountIDS(?array $value)
     {
         $this->AccountIDS = $value;
 
@@ -111,19 +134,23 @@ class GetEventsLogFilter
     }
 
     /**
-     * @return string[]|null
+     * Get EventType
+     *
+     * @return list<string>|null
      */
     public function getEventType(): ?array
     {
-        return $this->EventType;
+        return $this->EventType ?? null;
     }
 
     /**
-     * @param string[]|null $value
+     * Set EventType
+     *
+     * @param list<string>|null $value
      *
      * @return $this
      */
-    public function setEventType(?array $value = null)
+    public function setEventType(?array $value)
     {
         $this->EventType = $value;
 

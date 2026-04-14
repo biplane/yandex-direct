@@ -12,18 +12,21 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class TimeTargetingOnPublicHolidays
 {
-    protected $SuspendOnHolidays = null;
+    /** @var 'YES'|'NO' */
+    protected $SuspendOnHolidays;
 
 //    Can be omitted.
-//    protected $BidPercent = null;
+//    protected $BidPercent;
 
 //    Can be omitted.
-//    protected $StartHour = null;
+//    protected $StartHour;
 
 //    Can be omitted.
-//    protected $EndHour = null;
+//    protected $EndHour;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -32,7 +35,11 @@ class TimeTargetingOnPublicHolidays
     }
 
     /**
-     * @see YesNoEnum
+     * Get SuspendOnHolidays
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'
      */
     public function getSuspendOnHolidays(): string
     {
@@ -40,7 +47,11 @@ class TimeTargetingOnPublicHolidays
     }
 
     /**
-     * @see YesNoEnum
+     * Set SuspendOnHolidays
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO' $value
      *
      * @return $this
      */
@@ -51,45 +62,60 @@ class TimeTargetingOnPublicHolidays
         return $this;
     }
 
+    /**
+     * Get BidPercent
+     */
     public function getBidPercent(): ?int
     {
         return $this->BidPercent ?? null;
     }
 
     /**
+     * Set BidPercent
+     *
      * @return $this
      */
-    public function setBidPercent(?int $value = null)
+    public function setBidPercent(?int $value)
     {
         $this->BidPercent = $value;
 
         return $this;
     }
 
+    /**
+     * Get StartHour
+     */
     public function getStartHour(): ?int
     {
         return $this->StartHour ?? null;
     }
 
     /**
+     * Set StartHour
+     *
      * @return $this
      */
-    public function setStartHour(?int $value = null)
+    public function setStartHour(?int $value)
     {
         $this->StartHour = $value;
 
         return $this;
     }
 
+    /**
+     * Get EndHour
+     */
     public function getEndHour(): ?int
     {
         return $this->EndHour ?? null;
     }
 
     /**
+     * Set EndHour
+     *
      * @return $this
      */
-    public function setEndHour(?int $value = null)
+    public function setEndHour(?int $value)
     {
         $this->EndHour = $value;
 

@@ -13,18 +13,20 @@ use AllowDynamicProperties;
 class TextCampaignBase
 {
 //    Can be omitted.
-//    protected $CounterIds = null;
+//    protected $CounterIds;
 
 //    Can be omitted.
-//    protected $RelevantKeywords = null;
+//    protected $RelevantKeywords;
 
 //    Can be omitted.
-//    protected $AttributionModel = null;
+//    protected $AttributionModel;
 
 //    Can be omitted.
-//    protected $NegativeKeywordSharedSetIds = null;
+//    protected $NegativeKeywordSharedSetIds;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -33,7 +35,9 @@ class TextCampaignBase
     }
 
     /**
-     * @return int[]|null
+     * Get CounterIds
+     *
+     * @return non-empty-list<int>|null
      */
     public function getCounterIds(): ?array
     {
@@ -41,26 +45,33 @@ class TextCampaignBase
     }
 
     /**
-     * @param int[]|null $value
+     * Set CounterIds
+     *
+     * @param non-empty-list<int>|null $value
      *
      * @return $this
      */
-    public function setCounterIds(?array $value = null)
+    public function setCounterIds(?array $value)
     {
         $this->CounterIds = $value;
 
         return $this;
     }
 
+    /**
+     * Get RelevantKeywords
+     */
     public function getRelevantKeywords(): ?RelevantKeywordsSetting
     {
         return $this->RelevantKeywords ?? null;
     }
 
     /**
+     * Set RelevantKeywords
+     *
      * @return $this
      */
-    public function setRelevantKeywords(?RelevantKeywordsSetting $value = null)
+    public function setRelevantKeywords(?RelevantKeywordsSetting $value)
     {
         $this->RelevantKeywords = $value;
 
@@ -68,7 +79,11 @@ class TextCampaignBase
     }
 
     /**
-     * @see AttributionModelEnum
+     * Get AttributionModel
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\AttributionModelEnum
+     *
+     * @return 'LC'|'LSC'|'FC'|'LYDC'|'LSCCD'|'FCCD'|'LYDCCD'|'AUTO'|null
      */
     public function getAttributionModel(): ?string
     {
@@ -76,11 +91,15 @@ class TextCampaignBase
     }
 
     /**
-     * @see AttributionModelEnum
+     * Set AttributionModel
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\AttributionModelEnum
+     *
+     * @param 'LC'|'LSC'|'FC'|'LYDC'|'LSCCD'|'FCCD'|'LYDCCD'|'AUTO'|null $value
      *
      * @return $this
      */
-    public function setAttributionModel(?string $value = null)
+    public function setAttributionModel(?string $value)
     {
         $this->AttributionModel = $value;
 
@@ -88,7 +107,9 @@ class TextCampaignBase
     }
 
     /**
-     * @return float[]|null
+     * Get NegativeKeywordSharedSetIds
+     *
+     * @return non-empty-list<int>|null
      */
     public function getNegativeKeywordSharedSetIds(): ?array
     {
@@ -96,11 +117,13 @@ class TextCampaignBase
     }
 
     /**
-     * @param float[]|null $value
+     * Set NegativeKeywordSharedSetIds
+     *
+     * @param non-empty-list<int>|null $value
      *
      * @return $this
      */
-    public function setNegativeKeywordSharedSetIds(?array $value = null)
+    public function setNegativeKeywordSharedSetIds(?array $value)
     {
         $this->NegativeKeywordSharedSetIds = $value;
 

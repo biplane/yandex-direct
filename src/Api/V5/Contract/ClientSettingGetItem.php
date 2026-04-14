@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class ClientSettingGetItem
 {
-    protected $Option = null;
+    /** @var 'CORRECT_TYPOS_AUTOMATICALLY'|'DISPLAY_STORE_RATING'|'SHARED_ACCOUNT_ENABLED' */
+    protected $Option;
 
-    protected $Value = null;
+    /** @var 'YES'|'NO' */
+    protected $Value;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -25,7 +29,11 @@ class ClientSettingGetItem
     }
 
     /**
-     * @see ClientSettingGetEnum
+     * Get Option
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\ClientSettingGetEnum
+     *
+     * @return 'CORRECT_TYPOS_AUTOMATICALLY'|'DISPLAY_STORE_RATING'|'SHARED_ACCOUNT_ENABLED'
      */
     public function getOption(): string
     {
@@ -33,7 +41,11 @@ class ClientSettingGetItem
     }
 
     /**
-     * @see ClientSettingGetEnum
+     * Set Option
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\ClientSettingGetEnum
+     *
+     * @param 'CORRECT_TYPOS_AUTOMATICALLY'|'DISPLAY_STORE_RATING'|'SHARED_ACCOUNT_ENABLED' $value
      *
      * @return $this
      */
@@ -45,7 +57,11 @@ class ClientSettingGetItem
     }
 
     /**
-     * @see YesNoEnum
+     * Get Value
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'
      */
     public function getValue(): string
     {
@@ -53,7 +69,11 @@ class ClientSettingGetItem
     }
 
     /**
-     * @see YesNoEnum
+     * Set Value
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO' $value
      *
      * @return $this
      */

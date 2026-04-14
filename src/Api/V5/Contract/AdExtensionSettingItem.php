@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class AdExtensionSettingItem
 {
-    protected $AdExtensionId = null;
+    /** @var int */
+    protected $AdExtensionId;
 
-    protected $Operation = null;
+    /** @var 'ADD'|'REMOVE'|'SET' */
+    protected $Operation;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -24,12 +28,17 @@ class AdExtensionSettingItem
         return new static();
     }
 
+    /**
+     * Get AdExtensionId
+     */
     public function getAdExtensionId(): int
     {
         return $this->AdExtensionId;
     }
 
     /**
+     * Set AdExtensionId
+     *
      * @return $this
      */
     public function setAdExtensionId(int $value)
@@ -40,7 +49,11 @@ class AdExtensionSettingItem
     }
 
     /**
-     * @see OperationEnum
+     * Get Operation
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\OperationEnum
+     *
+     * @return 'ADD'|'REMOVE'|'SET'
      */
     public function getOperation(): string
     {
@@ -48,7 +61,11 @@ class AdExtensionSettingItem
     }
 
     /**
-     * @see OperationEnum
+     * Set Operation
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\OperationEnum
+     *
+     * @param 'ADD'|'REMOVE'|'SET' $value
      *
      * @return $this
      */

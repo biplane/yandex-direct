@@ -12,21 +12,34 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class GetFeedsRequest extends GetRequestGeneral
 {
-    protected $FieldNames = [];
+    /** @var non-empty-list<'Id'|'Name'|'BusinessType'|'SourceType'|'FilterSchema'|'UpdatedAt'|'CampaignIds'|'NumberOfItems'|'NumberOfListings'|'Status'|'TitleAndTextSources'> */
+    protected $FieldNames;
 
 //    Can be omitted.
-//    protected $FileFeedFieldNames = null;
+//    protected $FileFeedFieldNames;
 
 //    Can be omitted.
-//    protected $UrlFeedFieldNames = null;
+//    protected $UrlFeedFieldNames;
 
 //    Can be omitted.
-//    protected $SelectionCriteria = null;
+//    protected $SelectionCriteria;
 
     /**
-     * @see FeedFieldEnum
+     * Create a new instance.
      *
-     * @return string[]
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    /**
+     * Get FieldNames
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\FeedFieldEnum
+     *
+     * @return non-empty-list<'Id'|'Name'|'BusinessType'|'SourceType'|'FilterSchema'|'UpdatedAt'|'CampaignIds'|'NumberOfItems'|'NumberOfListings'|'Status'|'TitleAndTextSources'>
      */
     public function getFieldNames(): array
     {
@@ -34,9 +47,11 @@ class GetFeedsRequest extends GetRequestGeneral
     }
 
     /**
-     * @see FeedFieldEnum
+     * Set FieldNames
      *
-     * @param string[] $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\FeedFieldEnum
+     *
+     * @param non-empty-list<'Id'|'Name'|'BusinessType'|'SourceType'|'FilterSchema'|'UpdatedAt'|'CampaignIds'|'NumberOfItems'|'NumberOfListings'|'Status'|'TitleAndTextSources'> $value
      *
      * @return $this
      */
@@ -48,23 +63,27 @@ class GetFeedsRequest extends GetRequestGeneral
     }
 
     /**
-     * @see FileFeedFieldEnum
+     * Get FileFeedFieldNames
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\FileFeedFieldEnum
+     *
+     * @return list<'Filename'>
      */
-    public function getFileFeedFieldNames(): ?array
+    public function getFileFeedFieldNames(): array
     {
-        return $this->FileFeedFieldNames ?? null;
+        return $this->FileFeedFieldNames ?? [];
     }
 
     /**
-     * @see FileFeedFieldEnum
+     * Set FileFeedFieldNames
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\FileFeedFieldEnum
+     *
+     * @param list<'Filename'> $value
      *
      * @return $this
      */
-    public function setFileFeedFieldNames(?array $value = null)
+    public function setFileFeedFieldNames(array $value)
     {
         $this->FileFeedFieldNames = $value;
 
@@ -72,38 +91,47 @@ class GetFeedsRequest extends GetRequestGeneral
     }
 
     /**
-     * @see UrlFeedFieldEnum
+     * Get UrlFeedFieldNames
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\UrlFeedFieldEnum
+     *
+     * @return list<'Login'|'Url'|'RemoveUtmTags'>
      */
-    public function getUrlFeedFieldNames(): ?array
+    public function getUrlFeedFieldNames(): array
     {
-        return $this->UrlFeedFieldNames ?? null;
+        return $this->UrlFeedFieldNames ?? [];
     }
 
     /**
-     * @see UrlFeedFieldEnum
+     * Set UrlFeedFieldNames
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\UrlFeedFieldEnum
+     *
+     * @param list<'Login'|'Url'|'RemoveUtmTags'> $value
      *
      * @return $this
      */
-    public function setUrlFeedFieldNames(?array $value = null)
+    public function setUrlFeedFieldNames(array $value)
     {
         $this->UrlFeedFieldNames = $value;
 
         return $this;
     }
 
+    /**
+     * Get SelectionCriteria
+     */
     public function getSelectionCriteria(): ?FeedsSelectionCriteria
     {
         return $this->SelectionCriteria ?? null;
     }
 
     /**
+     * Set SelectionCriteria
+     *
      * @return $this
      */
-    public function setSelectionCriteria(?FeedsSelectionCriteria $value = null)
+    public function setSelectionCriteria(?FeedsSelectionCriteria $value)
     {
         $this->SelectionCriteria = $value;
 

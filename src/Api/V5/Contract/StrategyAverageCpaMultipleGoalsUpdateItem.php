@@ -12,4 +12,13 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class StrategyAverageCpaMultipleGoalsUpdateItem extends StrategyAverageCpaMultipleGoalsBase
 {
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
 }

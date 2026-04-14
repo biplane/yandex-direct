@@ -13,15 +13,17 @@ use AllowDynamicProperties;
 class DynamicTextCampaignSearchStrategyPlacementTypes
 {
 //    Can be omitted.
-//    protected $SearchResults = null;
+//    protected $SearchResults;
 
 //    Can be omitted.
-//    protected $ProductGallery = null;
+//    protected $ProductGallery;
 
 //    Can be omitted.
-//    protected $DynamicPlaces = null;
+//    protected $DynamicPlaces;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -30,7 +32,11 @@ class DynamicTextCampaignSearchStrategyPlacementTypes
     }
 
     /**
-     * @see YesNoEnum
+     * Get SearchResults
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'|null
      */
     public function getSearchResults(): ?string
     {
@@ -38,11 +44,15 @@ class DynamicTextCampaignSearchStrategyPlacementTypes
     }
 
     /**
-     * @see YesNoEnum
+     * Set SearchResults
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO'|null $value
      *
      * @return $this
      */
-    public function setSearchResults(?string $value = null)
+    public function setSearchResults(?string $value)
     {
         $this->SearchResults = $value;
 
@@ -50,7 +60,11 @@ class DynamicTextCampaignSearchStrategyPlacementTypes
     }
 
     /**
-     * @see YesNoEnum
+     * Get ProductGallery
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'|null
      */
     public function getProductGallery(): ?string
     {
@@ -58,11 +72,15 @@ class DynamicTextCampaignSearchStrategyPlacementTypes
     }
 
     /**
-     * @see YesNoEnum
+     * Set ProductGallery
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO'|null $value
      *
      * @return $this
      */
-    public function setProductGallery(?string $value = null)
+    public function setProductGallery(?string $value)
     {
         $this->ProductGallery = $value;
 
@@ -70,7 +88,11 @@ class DynamicTextCampaignSearchStrategyPlacementTypes
     }
 
     /**
-     * @see YesNoEnum
+     * Get DynamicPlaces
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'|null
      */
     public function getDynamicPlaces(): ?string
     {
@@ -78,11 +100,15 @@ class DynamicTextCampaignSearchStrategyPlacementTypes
     }
 
     /**
-     * @see YesNoEnum
+     * Set DynamicPlaces
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO'|null $value
      *
      * @return $this
      */
-    public function setDynamicPlaces(?string $value = null)
+    public function setDynamicPlaces(?string $value)
     {
         $this->DynamicPlaces = $value;
 

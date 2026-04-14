@@ -12,14 +12,30 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class DynamicTextFeedAdGroup extends DynamicAdGroup
 {
-    protected $FeedId = null;
+    /** @var int */
+    protected $FeedId;
 
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    /**
+     * Get FeedId
+     */
     public function getFeedId(): int
     {
         return $this->FeedId;
     }
 
     /**
+     * Set FeedId
+     *
      * @return $this
      */
     public function setFeedId(int $value)

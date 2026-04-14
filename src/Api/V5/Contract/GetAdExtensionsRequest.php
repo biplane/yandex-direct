@@ -12,19 +12,36 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class GetAdExtensionsRequest extends GetRequestGeneral
 {
-    protected $SelectionCriteria = null;
+    /** @var AdExtensionsSelectionCriteria */
+    protected $SelectionCriteria;
 
-    protected $FieldNames = [];
+    /** @var non-empty-list<'Id'|'Type'|'State'|'Status'|'StatusClarification'|'Associated'> */
+    protected $FieldNames;
 
 //    Can be omitted.
-//    protected $CalloutFieldNames = null;
+//    protected $CalloutFieldNames;
 
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    /**
+     * Get SelectionCriteria
+     */
     public function getSelectionCriteria(): AdExtensionsSelectionCriteria
     {
         return $this->SelectionCriteria;
     }
 
     /**
+     * Set SelectionCriteria
+     *
      * @return $this
      */
     public function setSelectionCriteria(AdExtensionsSelectionCriteria $value)
@@ -35,9 +52,11 @@ class GetAdExtensionsRequest extends GetRequestGeneral
     }
 
     /**
-     * @see AdExtensionFieldEnum
+     * Get FieldNames
      *
-     * @return string[]
+     * @see \Biplane\YandexDirect\Api\V5\Contract\AdExtensionFieldEnum
+     *
+     * @return non-empty-list<'Id'|'Type'|'State'|'Status'|'StatusClarification'|'Associated'>
      */
     public function getFieldNames(): array
     {
@@ -45,9 +64,11 @@ class GetAdExtensionsRequest extends GetRequestGeneral
     }
 
     /**
-     * @see AdExtensionFieldEnum
+     * Set FieldNames
      *
-     * @param string[] $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\AdExtensionFieldEnum
+     *
+     * @param non-empty-list<'Id'|'Type'|'State'|'Status'|'StatusClarification'|'Associated'> $value
      *
      * @return $this
      */
@@ -59,23 +80,27 @@ class GetAdExtensionsRequest extends GetRequestGeneral
     }
 
     /**
-     * @see CalloutFieldEnum
+     * Get CalloutFieldNames
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\CalloutFieldEnum
+     *
+     * @return list<'CalloutText'>
      */
-    public function getCalloutFieldNames(): ?array
+    public function getCalloutFieldNames(): array
     {
-        return $this->CalloutFieldNames ?? null;
+        return $this->CalloutFieldNames ?? [];
     }
 
     /**
-     * @see CalloutFieldEnum
+     * Set CalloutFieldNames
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\CalloutFieldEnum
+     *
+     * @param list<'CalloutText'> $value
      *
      * @return $this
      */
-    public function setCalloutFieldNames(?array $value = null)
+    public function setCalloutFieldNames(array $value)
     {
         $this->CalloutFieldNames = $value;
 

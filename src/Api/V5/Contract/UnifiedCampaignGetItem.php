@@ -13,32 +13,47 @@ use AllowDynamicProperties;
 class UnifiedCampaignGetItem extends UnifiedCampaignBase
 {
 //    Can be omitted.
-//    protected $BiddingStrategy = null;
+//    protected $BiddingStrategy;
 
 //    Can be omitted.
-//    protected $Settings = null;
+//    protected $Settings;
 
 //    Can be omitted.
-//    protected $TrackingParams = null;
+//    protected $TrackingParams;
 
 //    Can be omitted.
-//    protected $PriorityGoals = null;
+//    protected $PriorityGoals;
 
 //    Can be omitted.
-//    protected $PackageBiddingStrategy = null;
+//    protected $PackageBiddingStrategy;
 
 //    Can be omitted.
-//    protected $CanBeUsedAsPackageBiddingStrategySource = null;
+//    protected $CanBeUsedAsPackageBiddingStrategySource;
 
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    /**
+     * Get BiddingStrategy
+     */
     public function getBiddingStrategy(): ?UnifiedCampaignStrategy
     {
         return $this->BiddingStrategy ?? null;
     }
 
     /**
+     * Set BiddingStrategy
+     *
      * @return $this
      */
-    public function setBiddingStrategy(?UnifiedCampaignStrategy $value = null)
+    public function setBiddingStrategy(?UnifiedCampaignStrategy $value)
     {
         $this->BiddingStrategy = $value;
 
@@ -46,64 +61,83 @@ class UnifiedCampaignGetItem extends UnifiedCampaignBase
     }
 
     /**
-     * @return UnifiedCampaignSettingGet[]|null
+     * Get Settings
+     *
+     * @return list<UnifiedCampaignSettingGet>
      */
-    public function getSettings(): ?array
+    public function getSettings(): array
     {
-        return $this->Settings ?? null;
+        return $this->Settings ?? [];
     }
 
     /**
-     * @param UnifiedCampaignSettingGet[]|null $value
+     * Set Settings
+     *
+     * @param list<UnifiedCampaignSettingGet> $value
      *
      * @return $this
      */
-    public function setSettings(?array $value = null)
+    public function setSettings(array $value)
     {
         $this->Settings = $value;
 
         return $this;
     }
 
+    /**
+     * Get TrackingParams
+     */
     public function getTrackingParams(): ?string
     {
         return $this->TrackingParams ?? null;
     }
 
     /**
+     * Set TrackingParams
+     *
      * @return $this
      */
-    public function setTrackingParams(?string $value = null)
+    public function setTrackingParams(?string $value)
     {
         $this->TrackingParams = $value;
 
         return $this;
     }
 
+    /**
+     * Get PriorityGoals
+     */
     public function getPriorityGoals(): ?PriorityGoalsArray
     {
         return $this->PriorityGoals ?? null;
     }
 
     /**
+     * Set PriorityGoals
+     *
      * @return $this
      */
-    public function setPriorityGoals(?PriorityGoalsArray $value = null)
+    public function setPriorityGoals(?PriorityGoalsArray $value)
     {
         $this->PriorityGoals = $value;
 
         return $this;
     }
 
+    /**
+     * Get PackageBiddingStrategy
+     */
     public function getPackageBiddingStrategy(): ?UnifiedCampaignPackageBiddingStrategyGet
     {
         return $this->PackageBiddingStrategy ?? null;
     }
 
     /**
+     * Set PackageBiddingStrategy
+     *
      * @return $this
      */
-    public function setPackageBiddingStrategy(?UnifiedCampaignPackageBiddingStrategyGet $value = null)
+    public function setPackageBiddingStrategy(?UnifiedCampaignPackageBiddingStrategyGet $value)
     {
         $this->PackageBiddingStrategy = $value;
 
@@ -111,7 +145,11 @@ class UnifiedCampaignGetItem extends UnifiedCampaignBase
     }
 
     /**
-     * @see YesNoEnum
+     * Get CanBeUsedAsPackageBiddingStrategySource
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'|null
      */
     public function getCanBeUsedAsPackageBiddingStrategySource(): ?string
     {
@@ -119,11 +157,15 @@ class UnifiedCampaignGetItem extends UnifiedCampaignBase
     }
 
     /**
-     * @see YesNoEnum
+     * Set CanBeUsedAsPackageBiddingStrategySource
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO'|null $value
      *
      * @return $this
      */
-    public function setCanBeUsedAsPackageBiddingStrategySource(?string $value = null)
+    public function setCanBeUsedAsPackageBiddingStrategySource(?string $value)
     {
         $this->CanBeUsedAsPackageBiddingStrategySource = $value;
 

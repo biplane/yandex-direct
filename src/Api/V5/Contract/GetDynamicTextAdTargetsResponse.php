@@ -5,33 +5,70 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 use AllowDynamicProperties;
+use ArrayIterator;
+use Countable;
+use IteratorAggregate;
+use Override;
+
+use function count;
 
 /**
  * Auto-generated code.
+ *
+ * @implements IteratorAggregate<int, WebpageGetItem>
  */
 #[AllowDynamicProperties]
-class GetDynamicTextAdTargetsResponse extends GetResponseGeneral
+class GetDynamicTextAdTargetsResponse extends GetResponseGeneral implements IteratorAggregate, Countable
 {
 //    Can be omitted.
-//    protected $Webpages = null;
+//    protected $Webpages;
 
     /**
-     * @return WebpageGetItem[]|null
+     * Create a new instance.
+     *
+     * @return static
      */
-    public function getWebpages(): ?array
+    public static function create()
     {
-        return $this->Webpages ?? null;
+        return new static();
     }
 
     /**
-     * @param WebpageGetItem[]|null $value
+     * Get Webpages
+     *
+     * @return list<WebpageGetItem>
+     */
+    public function getWebpages(): array
+    {
+        return $this->Webpages ?? [];
+    }
+
+    /**
+     * Set Webpages
+     *
+     * @param list<WebpageGetItem> $value
      *
      * @return $this
      */
-    public function setWebpages(?array $value = null)
+    public function setWebpages(array $value)
     {
         $this->Webpages = $value;
 
         return $this;
+    }
+
+    #[Override]
+    public function count(): int
+    {
+        return isset($this->Webpages) ? count($this->Webpages) : 0;
+    }
+
+    /**
+     * @return ArrayIterator<int, WebpageGetItem>
+     */
+    #[Override]
+    public function getIterator(): ArrayIterator
+    {
+        return new ArrayIterator($this->Webpages ?? []);
     }
 }

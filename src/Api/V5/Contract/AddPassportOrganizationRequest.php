@@ -12,22 +12,27 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class AddPassportOrganizationRequest
 {
-    protected $Name = null;
+    /** @var string */
+    protected $Name;
 
-    protected $Currency = null;
+    /** @var 'YND_FIXED'|'RUB'|'CHF'|'EUR'|'KZT'|'TRY'|'UAH'|'USD'|'BYN'|'GBP' */
+    protected $Currency;
 
-    protected $Notification = null;
-
-//    Can be omitted.
-//    protected $Settings = null;
-
-//    Can be omitted.
-//    protected $Grants = null;
+    /** @var ClientNotificationAdd */
+    protected $Notification;
 
 //    Can be omitted.
-//    protected $TinInfo = null;
+//    protected $Settings;
+
+//    Can be omitted.
+//    protected $Grants;
+
+//    Can be omitted.
+//    protected $TinInfo;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -35,12 +40,17 @@ class AddPassportOrganizationRequest
         return new static();
     }
 
+    /**
+     * Get Name
+     */
     public function getName(): string
     {
         return $this->Name;
     }
 
     /**
+     * Set Name
+     *
      * @return $this
      */
     public function setName(string $value)
@@ -51,7 +61,11 @@ class AddPassportOrganizationRequest
     }
 
     /**
-     * @see CurrencyEnum
+     * Get Currency
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\CurrencyEnum
+     *
+     * @return 'YND_FIXED'|'RUB'|'CHF'|'EUR'|'KZT'|'TRY'|'UAH'|'USD'|'BYN'|'GBP'
      */
     public function getCurrency(): string
     {
@@ -59,7 +73,11 @@ class AddPassportOrganizationRequest
     }
 
     /**
-     * @see CurrencyEnum
+     * Set Currency
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\CurrencyEnum
+     *
+     * @param 'YND_FIXED'|'RUB'|'CHF'|'EUR'|'KZT'|'TRY'|'UAH'|'USD'|'BYN'|'GBP' $value
      *
      * @return $this
      */
@@ -70,12 +88,17 @@ class AddPassportOrganizationRequest
         return $this;
     }
 
+    /**
+     * Get Notification
+     */
     public function getNotification(): ClientNotificationAdd
     {
         return $this->Notification;
     }
 
     /**
+     * Set Notification
+     *
      * @return $this
      */
     public function setNotification(ClientNotificationAdd $value)
@@ -86,19 +109,23 @@ class AddPassportOrganizationRequest
     }
 
     /**
-     * @return ClientSettingAddItem[]|null
+     * Get Settings
+     *
+     * @return list<ClientSettingAddItem>
      */
-    public function getSettings(): ?array
+    public function getSettings(): array
     {
-        return $this->Settings ?? null;
+        return $this->Settings ?? [];
     }
 
     /**
-     * @param ClientSettingAddItem[]|null $value
+     * Set Settings
+     *
+     * @param list<ClientSettingAddItem> $value
      *
      * @return $this
      */
-    public function setSettings(?array $value = null)
+    public function setSettings(array $value)
     {
         $this->Settings = $value;
 
@@ -106,34 +133,43 @@ class AddPassportOrganizationRequest
     }
 
     /**
-     * @return GrantItem[]|null
+     * Get Grants
+     *
+     * @return list<GrantItem>
      */
-    public function getGrants(): ?array
+    public function getGrants(): array
     {
-        return $this->Grants ?? null;
+        return $this->Grants ?? [];
     }
 
     /**
-     * @param GrantItem[]|null $value
+     * Set Grants
+     *
+     * @param list<GrantItem> $value
      *
      * @return $this
      */
-    public function setGrants(?array $value = null)
+    public function setGrants(array $value)
     {
         $this->Grants = $value;
 
         return $this;
     }
 
+    /**
+     * Get TinInfo
+     */
     public function getTinInfo(): ?TinInfoAdd
     {
         return $this->TinInfo ?? null;
     }
 
     /**
+     * Set TinInfo
+     *
      * @return $this
      */
-    public function setTinInfo(?TinInfoAdd $value = null)
+    public function setTinInfo(?TinInfoAdd $value)
     {
         $this->TinInfo = $value;
 

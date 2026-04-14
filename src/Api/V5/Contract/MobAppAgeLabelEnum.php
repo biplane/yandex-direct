@@ -4,9 +4,12 @@ declare(strict_types=1);
 
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
+use AllowDynamicProperties;
+
 /**
  * Auto-generated code.
  */
+#[AllowDynamicProperties]
 class MobAppAgeLabelEnum
 {
     public const AGE_0 = 'AGE_0';

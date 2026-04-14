@@ -12,13 +12,18 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class Representative
 {
-    protected $Email = null;
+    /** @var string */
+    protected $Email;
 
-    protected $Login = null;
+    /** @var string */
+    protected $Login;
 
-    protected $Role = null;
+    /** @var 'CHIEF'|'DELEGATE'|'LIMITED'|'READONLY'|'UNKNOWN' */
+    protected $Role;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -26,12 +31,17 @@ class Representative
         return new static();
     }
 
+    /**
+     * Get Email
+     */
     public function getEmail(): string
     {
         return $this->Email;
     }
 
     /**
+     * Set Email
+     *
      * @return $this
      */
     public function setEmail(string $value)
@@ -41,12 +51,17 @@ class Representative
         return $this;
     }
 
+    /**
+     * Get Login
+     */
     public function getLogin(): string
     {
         return $this->Login;
     }
 
     /**
+     * Set Login
+     *
      * @return $this
      */
     public function setLogin(string $value)
@@ -57,7 +72,11 @@ class Representative
     }
 
     /**
-     * @see RepresentativeRoleEnum
+     * Get Role
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\RepresentativeRoleEnum
+     *
+     * @return 'CHIEF'|'DELEGATE'|'LIMITED'|'READONLY'|'UNKNOWN'
      */
     public function getRole(): string
     {
@@ -65,7 +84,11 @@ class Representative
     }
 
     /**
-     * @see RepresentativeRoleEnum
+     * Set Role
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\RepresentativeRoleEnum
+     *
+     * @param 'CHIEF'|'DELEGATE'|'LIMITED'|'READONLY'|'UNKNOWN' $value
      *
      * @return $this
      */

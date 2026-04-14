@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class AccountManagementResponse
 {
-    protected $ActionsResult = null;
+//    Can be omitted.
+//    protected $ActionsResult;
 
-    protected $Accounts = null;
+//    Can be omitted.
+//    protected $Accounts;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -25,19 +29,23 @@ class AccountManagementResponse
     }
 
     /**
-     * @return AccountActionResult[]|null
+     * Get ActionsResult
+     *
+     * @return list<AccountActionResult>|null
      */
     public function getActionsResult(): ?array
     {
-        return $this->ActionsResult;
+        return $this->ActionsResult ?? null;
     }
 
     /**
-     * @param AccountActionResult[]|null $value
+     * Set ActionsResult
+     *
+     * @param list<AccountActionResult>|null $value
      *
      * @return $this
      */
-    public function setActionsResult(?array $value = null)
+    public function setActionsResult(?array $value)
     {
         $this->ActionsResult = $value;
 
@@ -45,19 +53,23 @@ class AccountManagementResponse
     }
 
     /**
-     * @return Account[]|null
+     * Get Accounts
+     *
+     * @return list<Account>|null
      */
     public function getAccounts(): ?array
     {
-        return $this->Accounts;
+        return $this->Accounts ?? null;
     }
 
     /**
-     * @param Account[]|null $value
+     * Set Accounts
+     *
+     * @param list<Account>|null $value
      *
      * @return $this
      */
-    public function setAccounts(?array $value = null)
+    public function setAccounts(?array $value)
     {
         $this->Accounts = $value;
 

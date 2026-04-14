@@ -12,4 +12,13 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class StrategyWbAverageCpvAdd extends StrategyAverageCpvAddBase
 {
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
 }

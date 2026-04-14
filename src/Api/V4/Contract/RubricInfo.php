@@ -12,19 +12,27 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class RubricInfo
 {
-    protected $ParentID = null;
+    /** @var int */
+    protected $ParentID;
 
-    protected $RubricID = null;
+    /** @var int */
+    protected $RubricID;
 
-    protected $Url = null;
+    /** @var string */
+    protected $Url;
 
-    protected $RubricFullName = null;
+    /** @var string */
+    protected $RubricFullName;
 
-    protected $RubricName = null;
+    /** @var string */
+    protected $RubricName;
 
-    protected $Checkable = null;
+    /** @var string */
+    protected $Checkable;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -32,12 +40,17 @@ class RubricInfo
         return new static();
     }
 
+    /**
+     * Get ParentID
+     */
     public function getParentID(): int
     {
         return $this->ParentID;
     }
 
     /**
+     * Set ParentID
+     *
      * @return $this
      */
     public function setParentID(int $value)
@@ -47,12 +60,17 @@ class RubricInfo
         return $this;
     }
 
+    /**
+     * Get RubricID
+     */
     public function getRubricID(): int
     {
         return $this->RubricID;
     }
 
     /**
+     * Set RubricID
+     *
      * @return $this
      */
     public function setRubricID(int $value)
@@ -62,12 +80,17 @@ class RubricInfo
         return $this;
     }
 
+    /**
+     * Get Url
+     */
     public function getUrl(): string
     {
         return $this->Url;
     }
 
     /**
+     * Set Url
+     *
      * @return $this
      */
     public function setUrl(string $value)
@@ -77,12 +100,17 @@ class RubricInfo
         return $this;
     }
 
+    /**
+     * Get RubricFullName
+     */
     public function getRubricFullName(): string
     {
         return $this->RubricFullName;
     }
 
     /**
+     * Set RubricFullName
+     *
      * @return $this
      */
     public function setRubricFullName(string $value)
@@ -92,12 +120,17 @@ class RubricInfo
         return $this;
     }
 
+    /**
+     * Get RubricName
+     */
     public function getRubricName(): string
     {
         return $this->RubricName;
     }
 
     /**
+     * Set RubricName
+     *
      * @return $this
      */
     public function setRubricName(string $value)
@@ -107,12 +140,17 @@ class RubricInfo
         return $this;
     }
 
+    /**
+     * Get Checkable
+     */
     public function getCheckable(): string
     {
         return $this->Checkable;
     }
 
     /**
+     * Set Checkable
+     *
      * @return $this
      */
     public function setCheckable(string $value)

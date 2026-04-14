@@ -13,9 +13,11 @@ use AllowDynamicProperties;
 class UrlFeedBase
 {
 //    Can be omitted.
-//    protected $RemoveUtmTags = null;
+//    protected $RemoveUtmTags;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -24,7 +26,11 @@ class UrlFeedBase
     }
 
     /**
-     * @see YesNoEnum
+     * Get RemoveUtmTags
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'|null
      */
     public function getRemoveUtmTags(): ?string
     {
@@ -32,11 +38,15 @@ class UrlFeedBase
     }
 
     /**
-     * @see YesNoEnum
+     * Set RemoveUtmTags
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO'|null $value
      *
      * @return $this
      */
-    public function setRemoveUtmTags(?string $value = null)
+    public function setRemoveUtmTags(?string $value)
     {
         $this->RemoveUtmTags = $value;
 

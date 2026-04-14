@@ -13,12 +13,14 @@ use AllowDynamicProperties;
 class Network
 {
 //    Can be omitted.
-//    protected $Bid = null;
+//    protected $Bid;
 
 //    Can be omitted.
-//    protected $Coverage = null;
+//    protected $Coverage;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -26,30 +28,40 @@ class Network
         return new static();
     }
 
+    /**
+     * Get Bid
+     */
     public function getBid(): ?int
     {
         return $this->Bid ?? null;
     }
 
     /**
+     * Set Bid
+     *
      * @return $this
      */
-    public function setBid(?int $value = null)
+    public function setBid(?int $value)
     {
         $this->Bid = $value;
 
         return $this;
     }
 
+    /**
+     * Get Coverage
+     */
     public function getCoverage(): ?Coverage
     {
         return $this->Coverage ?? null;
     }
 
     /**
+     * Set Coverage
+     *
      * @return $this
      */
-    public function setCoverage(?Coverage $value = null)
+    public function setCoverage(?Coverage $value)
     {
         $this->Coverage = $value;
 

@@ -5,17 +5,27 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 use AllowDynamicProperties;
+use ArrayIterator;
+use Countable;
+use IteratorAggregate;
+use Override;
+
+use function count;
 
 /**
  * Auto-generated code.
+ *
+ * @implements IteratorAggregate<int, TrackingPixelGetItem>
  */
 #[AllowDynamicProperties]
-class TrackingPixelGetArray
+class TrackingPixelGetArray implements IteratorAggregate, Countable
 {
 //    Can be omitted.
-//    protected $Items = null;
+//    protected $Items;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -24,22 +34,41 @@ class TrackingPixelGetArray
     }
 
     /**
-     * @return TrackingPixelGetItem[]|null
+     * Get Items
+     *
+     * @return list<TrackingPixelGetItem>
      */
-    public function getItems(): ?array
+    public function getItems(): array
     {
-        return $this->Items ?? null;
+        return $this->Items ?? [];
     }
 
     /**
-     * @param TrackingPixelGetItem[]|null $value
+     * Set Items
+     *
+     * @param list<TrackingPixelGetItem> $value
      *
      * @return $this
      */
-    public function setItems(?array $value = null)
+    public function setItems(array $value)
     {
         $this->Items = $value;
 
         return $this;
+    }
+
+    #[Override]
+    public function count(): int
+    {
+        return isset($this->Items) ? count($this->Items) : 0;
+    }
+
+    /**
+     * @return ArrayIterator<int, TrackingPixelGetItem>
+     */
+    #[Override]
+    public function getIterator(): ArrayIterator
+    {
+        return new ArrayIterator($this->Items ?? []);
     }
 }

@@ -12,19 +12,24 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class FeedAddItem
 {
-    protected $Name = null;
+    /** @var string */
+    protected $Name;
 
-    protected $BusinessType = null;
+    /** @var 'RETAIL'|'HOTELS'|'REALTY'|'AUTOMOBILES'|'FLIGHTS'|'OTHER' */
+    protected $BusinessType;
 
-    protected $SourceType = null;
+    /** @var 'URL'|'FILE' */
+    protected $SourceType;
 
 //    Can be omitted.
-//    protected $UrlFeed = null;
+//    protected $UrlFeed;
 
 //    Can be omitted.
-//    protected $FileFeed = null;
+//    protected $FileFeed;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -32,12 +37,17 @@ class FeedAddItem
         return new static();
     }
 
+    /**
+     * Get Name
+     */
     public function getName(): string
     {
         return $this->Name;
     }
 
     /**
+     * Set Name
+     *
      * @return $this
      */
     public function setName(string $value)
@@ -48,7 +58,11 @@ class FeedAddItem
     }
 
     /**
-     * @see BusinessTypeEnum
+     * Get BusinessType
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\BusinessTypeEnum
+     *
+     * @return 'RETAIL'|'HOTELS'|'REALTY'|'AUTOMOBILES'|'FLIGHTS'|'OTHER'
      */
     public function getBusinessType(): string
     {
@@ -56,7 +70,11 @@ class FeedAddItem
     }
 
     /**
-     * @see BusinessTypeEnum
+     * Set BusinessType
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\BusinessTypeEnum
+     *
+     * @param 'RETAIL'|'HOTELS'|'REALTY'|'AUTOMOBILES'|'FLIGHTS'|'OTHER' $value
      *
      * @return $this
      */
@@ -68,7 +86,11 @@ class FeedAddItem
     }
 
     /**
-     * @see SourceTypeEnum
+     * Get SourceType
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\SourceTypeEnum
+     *
+     * @return 'URL'|'FILE'
      */
     public function getSourceType(): string
     {
@@ -76,7 +98,11 @@ class FeedAddItem
     }
 
     /**
-     * @see SourceTypeEnum
+     * Set SourceType
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\SourceTypeEnum
+     *
+     * @param 'URL'|'FILE' $value
      *
      * @return $this
      */
@@ -87,30 +113,40 @@ class FeedAddItem
         return $this;
     }
 
+    /**
+     * Get UrlFeed
+     */
     public function getUrlFeed(): ?UrlFeedAdd
     {
         return $this->UrlFeed ?? null;
     }
 
     /**
+     * Set UrlFeed
+     *
      * @return $this
      */
-    public function setUrlFeed(?UrlFeedAdd $value = null)
+    public function setUrlFeed(?UrlFeedAdd $value)
     {
         $this->UrlFeed = $value;
 
         return $this;
     }
 
+    /**
+     * Get FileFeed
+     */
     public function getFileFeed(): ?FileFeedAdd
     {
         return $this->FileFeed ?? null;
     }
 
     /**
+     * Set FileFeed
+     *
      * @return $this
      */
-    public function setFileFeed(?FileFeedAdd $value = null)
+    public function setFileFeed(?FileFeedAdd $value)
     {
         $this->FileFeed = $value;
 

@@ -5,33 +5,70 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 use AllowDynamicProperties;
+use ArrayIterator;
+use Countable;
+use IteratorAggregate;
+use Override;
+
+use function count;
 
 /**
  * Auto-generated code.
+ *
+ * @implements IteratorAggregate<int, NegativeKeywordSharedSetGetItem>
  */
 #[AllowDynamicProperties]
-class GetNegativeKeywordSharedSetsResponse extends GetResponseGeneral
+class GetNegativeKeywordSharedSetsResponse extends GetResponseGeneral implements IteratorAggregate, Countable
 {
 //    Can be omitted.
-//    protected $NegativeKeywordSharedSets = null;
+//    protected $NegativeKeywordSharedSets;
 
     /**
-     * @return NegativeKeywordSharedSetGetItem[]|null
+     * Create a new instance.
+     *
+     * @return static
      */
-    public function getNegativeKeywordSharedSets(): ?array
+    public static function create()
     {
-        return $this->NegativeKeywordSharedSets ?? null;
+        return new static();
     }
 
     /**
-     * @param NegativeKeywordSharedSetGetItem[]|null $value
+     * Get NegativeKeywordSharedSets
+     *
+     * @return list<NegativeKeywordSharedSetGetItem>
+     */
+    public function getNegativeKeywordSharedSets(): array
+    {
+        return $this->NegativeKeywordSharedSets ?? [];
+    }
+
+    /**
+     * Set NegativeKeywordSharedSets
+     *
+     * @param list<NegativeKeywordSharedSetGetItem> $value
      *
      * @return $this
      */
-    public function setNegativeKeywordSharedSets(?array $value = null)
+    public function setNegativeKeywordSharedSets(array $value)
     {
         $this->NegativeKeywordSharedSets = $value;
 
         return $this;
+    }
+
+    #[Override]
+    public function count(): int
+    {
+        return isset($this->NegativeKeywordSharedSets) ? count($this->NegativeKeywordSharedSets) : 0;
+    }
+
+    /**
+     * @return ArrayIterator<int, NegativeKeywordSharedSetGetItem>
+     */
+    #[Override]
+    public function getIterator(): ArrayIterator
+    {
+        return new ArrayIterator($this->NegativeKeywordSharedSets ?? []);
     }
 }

@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class RetargetingAdjustmentAdd
 {
-    protected $RetargetingConditionId = null;
+    /** @var int */
+    protected $RetargetingConditionId;
 
-    protected $BidModifier = null;
+    /** @var int */
+    protected $BidModifier;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -24,12 +28,17 @@ class RetargetingAdjustmentAdd
         return new static();
     }
 
+    /**
+     * Get RetargetingConditionId
+     */
     public function getRetargetingConditionId(): int
     {
         return $this->RetargetingConditionId;
     }
 
     /**
+     * Set RetargetingConditionId
+     *
      * @return $this
      */
     public function setRetargetingConditionId(int $value)
@@ -39,12 +48,17 @@ class RetargetingAdjustmentAdd
         return $this;
     }
 
+    /**
+     * Get BidModifier
+     */
     public function getBidModifier(): int
     {
         return $this->BidModifier;
     }
 
     /**
+     * Set BidModifier
+     *
      * @return $this
      */
     public function setBidModifier(int $value)

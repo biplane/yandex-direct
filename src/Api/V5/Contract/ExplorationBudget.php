@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class ExplorationBudget
 {
-    protected $MinimumExplorationBudget = null;
+    /** @var int */
+    protected $MinimumExplorationBudget;
 
-    protected $IsMinimumExplorationBudgetCustom = null;
+    /** @var 'YES'|'NO' */
+    protected $IsMinimumExplorationBudgetCustom;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -24,12 +28,17 @@ class ExplorationBudget
         return new static();
     }
 
+    /**
+     * Get MinimumExplorationBudget
+     */
     public function getMinimumExplorationBudget(): int
     {
         return $this->MinimumExplorationBudget;
     }
 
     /**
+     * Set MinimumExplorationBudget
+     *
      * @return $this
      */
     public function setMinimumExplorationBudget(int $value)
@@ -40,7 +49,11 @@ class ExplorationBudget
     }
 
     /**
-     * @see YesNoEnum
+     * Get IsMinimumExplorationBudgetCustom
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'
      */
     public function getIsMinimumExplorationBudgetCustom(): string
     {
@@ -48,7 +61,11 @@ class ExplorationBudget
     }
 
     /**
-     * @see YesNoEnum
+     * Set IsMinimumExplorationBudgetCustom
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO' $value
      *
      * @return $this
      */

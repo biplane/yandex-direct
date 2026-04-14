@@ -12,13 +12,18 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class FeedFilterConditionItem
 {
-    protected $Operand = null;
+    /** @var string */
+    protected $Operand;
 
-    protected $Operator = null;
+    /** @var 'CONTAINS_ANY'|'EQUALS_ANY'|'EXISTS'|'GREATER_THAN'|'IN_RANGE'|'LESS_THAN'|'NOT_CONTAINS_ALL' */
+    protected $Operator;
 
-    protected $Arguments = [];
+    /** @var non-empty-list<string> */
+    protected $Arguments;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -26,12 +31,17 @@ class FeedFilterConditionItem
         return new static();
     }
 
+    /**
+     * Get Operand
+     */
     public function getOperand(): string
     {
         return $this->Operand;
     }
 
     /**
+     * Set Operand
+     *
      * @return $this
      */
     public function setOperand(string $value)
@@ -42,7 +52,11 @@ class FeedFilterConditionItem
     }
 
     /**
-     * @see StringConditionOperatorEnum
+     * Get Operator
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\StringConditionOperatorEnum
+     *
+     * @return 'CONTAINS_ANY'|'EQUALS_ANY'|'EXISTS'|'GREATER_THAN'|'IN_RANGE'|'LESS_THAN'|'NOT_CONTAINS_ALL'
      */
     public function getOperator(): string
     {
@@ -50,7 +64,11 @@ class FeedFilterConditionItem
     }
 
     /**
-     * @see StringConditionOperatorEnum
+     * Set Operator
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\StringConditionOperatorEnum
+     *
+     * @param 'CONTAINS_ANY'|'EQUALS_ANY'|'EXISTS'|'GREATER_THAN'|'IN_RANGE'|'LESS_THAN'|'NOT_CONTAINS_ALL' $value
      *
      * @return $this
      */
@@ -62,7 +80,9 @@ class FeedFilterConditionItem
     }
 
     /**
-     * @return string[]
+     * Get Arguments
+     *
+     * @return non-empty-list<string>
      */
     public function getArguments(): array
     {
@@ -70,7 +90,9 @@ class FeedFilterConditionItem
     }
 
     /**
-     * @param string[] $value
+     * Set Arguments
+     *
+     * @param non-empty-list<string> $value
      *
      * @return $this
      */

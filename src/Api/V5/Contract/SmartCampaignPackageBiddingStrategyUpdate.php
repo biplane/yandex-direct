@@ -13,17 +13,32 @@ use AllowDynamicProperties;
 class SmartCampaignPackageBiddingStrategyUpdate extends PackageBiddingStrategyUpdateBase
 {
 //    Can be omitted.
-//    protected $Platforms = null;
+//    protected $Platforms;
 
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    /**
+     * Get Platforms
+     */
     public function getPlatforms(): ?SmartCampaignPlatforms
     {
         return $this->Platforms ?? null;
     }
 
     /**
+     * Set Platforms
+     *
      * @return $this
      */
-    public function setPlatforms(?SmartCampaignPlatforms $value = null)
+    public function setPlatforms(?SmartCampaignPlatforms $value)
     {
         $this->Platforms = $value;
 

@@ -13,19 +13,33 @@ use AllowDynamicProperties;
 class KeywordBidGetItem extends KeywordBidActionResult
 {
 //    Can be omitted.
-//    protected $ServingStatus = null;
+//    protected $ServingStatus;
 
 //    Can be omitted.
-//    protected $StrategyPriority = null;
+//    protected $StrategyPriority;
 
 //    Can be omitted.
-//    protected $Search = null;
+//    protected $Search;
 
 //    Can be omitted.
-//    protected $Network = null;
+//    protected $Network;
 
     /**
-     * @see ServingStatusEnum
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    /**
+     * Get ServingStatus
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\ServingStatusEnum
+     *
+     * @return 'ELIGIBLE'|'RARELY_SERVED'|null
      */
     public function getServingStatus(): ?string
     {
@@ -33,11 +47,15 @@ class KeywordBidGetItem extends KeywordBidActionResult
     }
 
     /**
-     * @see ServingStatusEnum
+     * Set ServingStatus
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\ServingStatusEnum
+     *
+     * @param 'ELIGIBLE'|'RARELY_SERVED'|null $value
      *
      * @return $this
      */
-    public function setServingStatus(?string $value = null)
+    public function setServingStatus(?string $value)
     {
         $this->ServingStatus = $value;
 
@@ -45,7 +63,11 @@ class KeywordBidGetItem extends KeywordBidActionResult
     }
 
     /**
-     * @see PriorityEnum
+     * Get StrategyPriority
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\PriorityEnum
+     *
+     * @return 'LOW'|'NORMAL'|'HIGH'|null
      */
     public function getStrategyPriority(): ?string
     {
@@ -53,41 +75,55 @@ class KeywordBidGetItem extends KeywordBidActionResult
     }
 
     /**
-     * @see PriorityEnum
+     * Set StrategyPriority
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\PriorityEnum
+     *
+     * @param 'LOW'|'NORMAL'|'HIGH'|null $value
      *
      * @return $this
      */
-    public function setStrategyPriority(?string $value = null)
+    public function setStrategyPriority(?string $value)
     {
         $this->StrategyPriority = $value;
 
         return $this;
     }
 
+    /**
+     * Get Search
+     */
     public function getSearch(): ?Search
     {
         return $this->Search ?? null;
     }
 
     /**
+     * Set Search
+     *
      * @return $this
      */
-    public function setSearch(?Search $value = null)
+    public function setSearch(?Search $value)
     {
         $this->Search = $value;
 
         return $this;
     }
 
+    /**
+     * Get Network
+     */
     public function getNetwork(): ?Network
     {
         return $this->Network ?? null;
     }
 
     /**
+     * Set Network
+     *
      * @return $this
      */
-    public function setNetwork(?Network $value = null)
+    public function setNetwork(?Network $value)
     {
         $this->Network = $value;
 

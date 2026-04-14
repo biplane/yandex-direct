@@ -13,9 +13,11 @@ use AllowDynamicProperties;
 class AdExtensionAddItem
 {
 //    Can be omitted.
-//    protected $Callout = null;
+//    protected $Callout;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -23,15 +25,20 @@ class AdExtensionAddItem
         return new static();
     }
 
+    /**
+     * Get Callout
+     */
     public function getCallout(): ?Callout
     {
         return $this->Callout ?? null;
     }
 
     /**
+     * Set Callout
+     *
      * @return $this
      */
-    public function setCallout(?Callout $value = null)
+    public function setCallout(?Callout $value)
     {
         $this->Callout = $value;
 

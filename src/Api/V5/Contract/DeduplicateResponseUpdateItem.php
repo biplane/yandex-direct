@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class DeduplicateResponseUpdateItem
 {
-    protected $Id = null;
+    /** @var int */
+    protected $Id;
 
-    protected $Keyword = null;
+    /** @var string */
+    protected $Keyword;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -24,12 +28,17 @@ class DeduplicateResponseUpdateItem
         return new static();
     }
 
+    /**
+     * Get Id
+     */
     public function getId(): int
     {
         return $this->Id;
     }
 
     /**
+     * Set Id
+     *
      * @return $this
      */
     public function setId(int $value)
@@ -39,12 +48,17 @@ class DeduplicateResponseUpdateItem
         return $this;
     }
 
+    /**
+     * Get Keyword
+     */
     public function getKeyword(): string
     {
         return $this->Keyword;
     }
 
     /**
+     * Set Keyword
+     *
      * @return $this
      */
     public function setKeyword(string $value)

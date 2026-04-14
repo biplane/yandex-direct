@@ -12,30 +12,33 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class SmartAdTargetUpdateItem
 {
-    protected $Id = null;
+    /** @var int */
+    protected $Id;
 
 //    Can be omitted.
-//    protected $Name = null;
+//    protected $Name;
 
 //    Can be omitted.
-//    protected $AverageCpc = null;
+//    protected $AverageCpc;
 
 //    Can be omitted.
-//    protected $AverageCpa = null;
+//    protected $AverageCpa;
 
 //    Can be omitted.
-//    protected $StrategyPriority = null;
+//    protected $StrategyPriority;
 
 //    Can be omitted.
-//    protected $Audience = null;
+//    protected $Audience;
 
 //    Can be omitted.
-//    protected $Conditions = null;
+//    protected $Conditions;
 
 //    Can be omitted.
-//    protected $AvailableItemsOnly = null;
+//    protected $AvailableItemsOnly;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -43,12 +46,17 @@ class SmartAdTargetUpdateItem
         return new static();
     }
 
+    /**
+     * Get Id
+     */
     public function getId(): int
     {
         return $this->Id;
     }
 
     /**
+     * Set Id
+     *
      * @return $this
      */
     public function setId(int $value)
@@ -58,45 +66,60 @@ class SmartAdTargetUpdateItem
         return $this;
     }
 
+    /**
+     * Get Name
+     */
     public function getName(): ?string
     {
         return $this->Name ?? null;
     }
 
     /**
+     * Set Name
+     *
      * @return $this
      */
-    public function setName(?string $value = null)
+    public function setName(?string $value)
     {
         $this->Name = $value;
 
         return $this;
     }
 
+    /**
+     * Get AverageCpc
+     */
     public function getAverageCpc(): ?int
     {
         return $this->AverageCpc ?? null;
     }
 
     /**
+     * Set AverageCpc
+     *
      * @return $this
      */
-    public function setAverageCpc(?int $value = null)
+    public function setAverageCpc(?int $value)
     {
         $this->AverageCpc = $value;
 
         return $this;
     }
 
+    /**
+     * Get AverageCpa
+     */
     public function getAverageCpa(): ?int
     {
         return $this->AverageCpa ?? null;
     }
 
     /**
+     * Set AverageCpa
+     *
      * @return $this
      */
-    public function setAverageCpa(?int $value = null)
+    public function setAverageCpa(?int $value)
     {
         $this->AverageCpa = $value;
 
@@ -104,7 +127,11 @@ class SmartAdTargetUpdateItem
     }
 
     /**
-     * @see PriorityEnum
+     * Get StrategyPriority
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\PriorityEnum
+     *
+     * @return 'LOW'|'NORMAL'|'HIGH'|null
      */
     public function getStrategyPriority(): ?string
     {
@@ -112,11 +139,15 @@ class SmartAdTargetUpdateItem
     }
 
     /**
-     * @see PriorityEnum
+     * Set StrategyPriority
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\PriorityEnum
+     *
+     * @param 'LOW'|'NORMAL'|'HIGH'|null $value
      *
      * @return $this
      */
-    public function setStrategyPriority(?string $value = null)
+    public function setStrategyPriority(?string $value)
     {
         $this->StrategyPriority = $value;
 
@@ -124,7 +155,11 @@ class SmartAdTargetUpdateItem
     }
 
     /**
-     * @see AudienceEnum
+     * Get Audience
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\AudienceEnum
+     *
+     * @return 'INTERESTED_IN_SIMILAR_PRODUCTS'|'VISITED_PRODUCT_PAGE'|'ALL_SEGMENTS'|null
      */
     public function getAudience(): ?string
     {
@@ -132,26 +167,35 @@ class SmartAdTargetUpdateItem
     }
 
     /**
-     * @see AudienceEnum
+     * Set Audience
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\AudienceEnum
+     *
+     * @param 'INTERESTED_IN_SIMILAR_PRODUCTS'|'VISITED_PRODUCT_PAGE'|'ALL_SEGMENTS'|null $value
      *
      * @return $this
      */
-    public function setAudience(?string $value = null)
+    public function setAudience(?string $value)
     {
         $this->Audience = $value;
 
         return $this;
     }
 
+    /**
+     * Get Conditions
+     */
     public function getConditions(): ?ConditionsArray
     {
         return $this->Conditions ?? null;
     }
 
     /**
+     * Set Conditions
+     *
      * @return $this
      */
-    public function setConditions(?ConditionsArray $value = null)
+    public function setConditions(?ConditionsArray $value)
     {
         $this->Conditions = $value;
 
@@ -159,7 +203,11 @@ class SmartAdTargetUpdateItem
     }
 
     /**
-     * @see YesNoEnum
+     * Get AvailableItemsOnly
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'|null
      */
     public function getAvailableItemsOnly(): ?string
     {
@@ -167,11 +215,15 @@ class SmartAdTargetUpdateItem
     }
 
     /**
-     * @see YesNoEnum
+     * Set AvailableItemsOnly
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO'|null $value
      *
      * @return $this
      */
-    public function setAvailableItemsOnly(?string $value = null)
+    public function setAvailableItemsOnly(?string $value)
     {
         $this->AvailableItemsOnly = $value;
 

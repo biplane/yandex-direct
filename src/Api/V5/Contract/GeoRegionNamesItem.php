@@ -12,13 +12,18 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class GeoRegionNamesItem
 {
-    protected $GeoRegionId = null;
+    /** @var int */
+    protected $GeoRegionId;
 
-    protected $GeoRegionName = null;
+    /** @var string */
+    protected $GeoRegionName;
 
-    protected $GeoRegionType = null;
+    /** @var string */
+    protected $GeoRegionType;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -26,12 +31,17 @@ class GeoRegionNamesItem
         return new static();
     }
 
+    /**
+     * Get GeoRegionId
+     */
     public function getGeoRegionId(): int
     {
         return $this->GeoRegionId;
     }
 
     /**
+     * Set GeoRegionId
+     *
      * @return $this
      */
     public function setGeoRegionId(int $value)
@@ -41,12 +51,17 @@ class GeoRegionNamesItem
         return $this;
     }
 
+    /**
+     * Get GeoRegionName
+     */
     public function getGeoRegionName(): string
     {
         return $this->GeoRegionName;
     }
 
     /**
+     * Set GeoRegionName
+     *
      * @return $this
      */
     public function setGeoRegionName(string $value)
@@ -56,12 +71,17 @@ class GeoRegionNamesItem
         return $this;
     }
 
+    /**
+     * Get GeoRegionType
+     */
     public function getGeoRegionType(): string
     {
         return $this->GeoRegionType;
     }
 
     /**
+     * Set GeoRegionType
+     *
      * @return $this
      */
     public function setGeoRegionType(string $value)

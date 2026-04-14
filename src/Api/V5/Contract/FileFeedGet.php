@@ -13,9 +13,11 @@ use AllowDynamicProperties;
 class FileFeedGet
 {
 //    Can be omitted.
-//    protected $Filename = null;
+//    protected $Filename;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -23,15 +25,20 @@ class FileFeedGet
         return new static();
     }
 
+    /**
+     * Get Filename
+     */
     public function getFilename(): ?string
     {
         return $this->Filename ?? null;
     }
 
     /**
+     * Set Filename
+     *
      * @return $this
      */
-    public function setFilename(?string $value = null)
+    public function setFilename(?string $value)
     {
         $this->Filename = $value;
 

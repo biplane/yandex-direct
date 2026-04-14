@@ -12,17 +12,24 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class RetargetingGoal
 {
-    protected $GoalID = null;
+    /** @var int */
+    protected $GoalID;
 
-    protected $Name = null;
+    /** @var string */
+    protected $Name;
 
-    protected $GoalDomain = null;
+    /** @var string */
+    protected $GoalDomain;
 
-    protected $Login = null;
+    /** @var string */
+    protected $Login;
 
-    protected $Type = null;
+    /** @var string */
+    protected $Type;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -30,12 +37,17 @@ class RetargetingGoal
         return new static();
     }
 
+    /**
+     * Get GoalID
+     */
     public function getGoalID(): int
     {
         return $this->GoalID;
     }
 
     /**
+     * Set GoalID
+     *
      * @return $this
      */
     public function setGoalID(int $value)
@@ -45,12 +57,17 @@ class RetargetingGoal
         return $this;
     }
 
+    /**
+     * Get Name
+     */
     public function getName(): string
     {
         return $this->Name;
     }
 
     /**
+     * Set Name
+     *
      * @return $this
      */
     public function setName(string $value)
@@ -60,12 +77,17 @@ class RetargetingGoal
         return $this;
     }
 
+    /**
+     * Get GoalDomain
+     */
     public function getGoalDomain(): string
     {
         return $this->GoalDomain;
     }
 
     /**
+     * Set GoalDomain
+     *
      * @return $this
      */
     public function setGoalDomain(string $value)
@@ -75,12 +97,17 @@ class RetargetingGoal
         return $this;
     }
 
+    /**
+     * Get Login
+     */
     public function getLogin(): string
     {
         return $this->Login;
     }
 
     /**
+     * Set Login
+     *
      * @return $this
      */
     public function setLogin(string $value)
@@ -90,12 +117,17 @@ class RetargetingGoal
         return $this;
     }
 
+    /**
+     * Get Type
+     */
     public function getType(): string
     {
         return $this->Type;
     }
 
     /**
+     * Set Type
+     *
      * @return $this
      */
     public function setType(string $value)

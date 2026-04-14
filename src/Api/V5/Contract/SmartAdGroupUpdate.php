@@ -13,12 +13,14 @@ use AllowDynamicProperties;
 class SmartAdGroupUpdate
 {
 //    Can be omitted.
-//    protected $AdTitleSource = null;
+//    protected $AdTitleSource;
 
 //    Can be omitted.
-//    protected $AdBodySource = null;
+//    protected $AdBodySource;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -26,30 +28,40 @@ class SmartAdGroupUpdate
         return new static();
     }
 
+    /**
+     * Get AdTitleSource
+     */
     public function getAdTitleSource(): ?string
     {
         return $this->AdTitleSource ?? null;
     }
 
     /**
+     * Set AdTitleSource
+     *
      * @return $this
      */
-    public function setAdTitleSource(?string $value = null)
+    public function setAdTitleSource(?string $value)
     {
         $this->AdTitleSource = $value;
 
         return $this;
     }
 
+    /**
+     * Get AdBodySource
+     */
     public function getAdBodySource(): ?string
     {
         return $this->AdBodySource ?? null;
     }
 
     /**
+     * Set AdBodySource
+     *
      * @return $this
      */
-    public function setAdBodySource(?string $value = null)
+    public function setAdBodySource(?string $value)
     {
         $this->AdBodySource = $value;
 

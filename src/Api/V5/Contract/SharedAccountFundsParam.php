@@ -13,12 +13,14 @@ use AllowDynamicProperties;
 class SharedAccountFundsParam
 {
 //    Can be omitted.
-//    protected $Refund = null;
+//    protected $Refund;
 
 //    Can be omitted.
-//    protected $Spend = null;
+//    protected $Spend;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -26,30 +28,40 @@ class SharedAccountFundsParam
         return new static();
     }
 
+    /**
+     * Get Refund
+     */
     public function getRefund(): ?int
     {
         return $this->Refund ?? null;
     }
 
     /**
+     * Set Refund
+     *
      * @return $this
      */
-    public function setRefund(?int $value = null)
+    public function setRefund(?int $value)
     {
         $this->Refund = $value;
 
         return $this;
     }
 
+    /**
+     * Get Spend
+     */
     public function getSpend(): ?int
     {
         return $this->Spend ?? null;
     }
 
     /**
+     * Set Spend
+     *
      * @return $this
      */
-    public function setSpend(?int $value = null)
+    public function setSpend(?int $value)
     {
         $this->Spend = $value;
 

@@ -12,16 +12,33 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class GetBidsRequest extends GetRequestGeneral
 {
-    protected $SelectionCriteria = null;
+    /** @var BidsSelectionCriteria */
+    protected $SelectionCriteria;
 
-    protected $FieldNames = [];
+    /** @var non-empty-list<'KeywordId'|'AdGroupId'|'CampaignId'|'Bid'|'AutotargetingSearchBidIsAuto'|'ContextBid'|'StrategyPriority'|'CompetitorsBids'|'SearchPrices'|'ContextCoverage'|'MinSearchPrice'|'CurrentSearchPrice'|'AuctionBids'|'ServingStatus'> */
+    protected $FieldNames;
 
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    /**
+     * Get SelectionCriteria
+     */
     public function getSelectionCriteria(): BidsSelectionCriteria
     {
         return $this->SelectionCriteria;
     }
 
     /**
+     * Set SelectionCriteria
+     *
      * @return $this
      */
     public function setSelectionCriteria(BidsSelectionCriteria $value)
@@ -32,9 +49,11 @@ class GetBidsRequest extends GetRequestGeneral
     }
 
     /**
-     * @see BidFieldEnum
+     * Get FieldNames
      *
-     * @return string[]
+     * @see \Biplane\YandexDirect\Api\V5\Contract\BidFieldEnum
+     *
+     * @return non-empty-list<'KeywordId'|'AdGroupId'|'CampaignId'|'Bid'|'AutotargetingSearchBidIsAuto'|'ContextBid'|'StrategyPriority'|'CompetitorsBids'|'SearchPrices'|'ContextCoverage'|'MinSearchPrice'|'CurrentSearchPrice'|'AuctionBids'|'ServingStatus'>
      */
     public function getFieldNames(): array
     {
@@ -42,9 +61,11 @@ class GetBidsRequest extends GetRequestGeneral
     }
 
     /**
-     * @see BidFieldEnum
+     * Set FieldNames
      *
-     * @param string[] $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\BidFieldEnum
+     *
+     * @param non-empty-list<'KeywordId'|'AdGroupId'|'CampaignId'|'Bid'|'AutotargetingSearchBidIsAuto'|'ContextBid'|'StrategyPriority'|'CompetitorsBids'|'SearchPrices'|'ContextCoverage'|'MinSearchPrice'|'CurrentSearchPrice'|'AuctionBids'|'ServingStatus'> $value
      *
      * @return $this
      */

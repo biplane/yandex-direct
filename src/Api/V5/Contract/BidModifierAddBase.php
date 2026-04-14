@@ -13,12 +13,14 @@ use AllowDynamicProperties;
 class BidModifierAddBase
 {
 //    Can be omitted.
-//    protected $CampaignId = null;
+//    protected $CampaignId;
 
 //    Can be omitted.
-//    protected $AdGroupId = null;
+//    protected $AdGroupId;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -26,30 +28,40 @@ class BidModifierAddBase
         return new static();
     }
 
+    /**
+     * Get CampaignId
+     */
     public function getCampaignId(): ?int
     {
         return $this->CampaignId ?? null;
     }
 
     /**
+     * Set CampaignId
+     *
      * @return $this
      */
-    public function setCampaignId(?int $value = null)
+    public function setCampaignId(?int $value)
     {
         $this->CampaignId = $value;
 
         return $this;
     }
 
+    /**
+     * Get AdGroupId
+     */
     public function getAdGroupId(): ?int
     {
         return $this->AdGroupId ?? null;
     }
 
     /**
+     * Set AdGroupId
+     *
      * @return $this
      */
-    public function setAdGroupId(?int $value = null)
+    public function setAdGroupId(?int $value)
     {
         $this->AdGroupId = $value;
 

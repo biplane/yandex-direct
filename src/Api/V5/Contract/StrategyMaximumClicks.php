@@ -13,20 +13,35 @@ use AllowDynamicProperties;
 class StrategyMaximumClicks extends StrategyWeeklyBudgetBase
 {
 //    Can be omitted.
-//    protected $CustomPeriodBudget = null;
+//    protected $CustomPeriodBudget;
 
 //    Can be omitted.
-//    protected $BudgetType = null;
+//    protected $BudgetType;
 
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    /**
+     * Get CustomPeriodBudget
+     */
     public function getCustomPeriodBudget(): ?CustomPeriodBudget
     {
         return $this->CustomPeriodBudget ?? null;
     }
 
     /**
+     * Set CustomPeriodBudget
+     *
      * @return $this
      */
-    public function setCustomPeriodBudget(?CustomPeriodBudget $value = null)
+    public function setCustomPeriodBudget(?CustomPeriodBudget $value)
     {
         $this->CustomPeriodBudget = $value;
 
@@ -34,7 +49,11 @@ class StrategyMaximumClicks extends StrategyWeeklyBudgetBase
     }
 
     /**
-     * @see BudgetTypeEnum
+     * Get BudgetType
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\BudgetTypeEnum
+     *
+     * @return 'WEEKLY_BUDGET'|'CUSTOM_PERIOD_BUDGET'|null
      */
     public function getBudgetType(): ?string
     {
@@ -42,11 +61,15 @@ class StrategyMaximumClicks extends StrategyWeeklyBudgetBase
     }
 
     /**
-     * @see BudgetTypeEnum
+     * Set BudgetType
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\BudgetTypeEnum
+     *
+     * @param 'WEEKLY_BUDGET'|'CUSTOM_PERIOD_BUDGET'|null $value
      *
      * @return $this
      */
-    public function setBudgetType(?string $value = null)
+    public function setBudgetType(?string $value)
     {
         $this->BudgetType = $value;
 

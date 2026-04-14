@@ -13,12 +13,14 @@ use AllowDynamicProperties;
 class MobileAdjustmentGet
 {
 //    Can be omitted.
-//    protected $BidModifier = null;
+//    protected $BidModifier;
 
 //    Can be omitted.
-//    protected $OperatingSystemType = null;
+//    protected $OperatingSystemType;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -26,15 +28,20 @@ class MobileAdjustmentGet
         return new static();
     }
 
+    /**
+     * Get BidModifier
+     */
     public function getBidModifier(): ?int
     {
         return $this->BidModifier ?? null;
     }
 
     /**
+     * Set BidModifier
+     *
      * @return $this
      */
-    public function setBidModifier(?int $value = null)
+    public function setBidModifier(?int $value)
     {
         $this->BidModifier = $value;
 
@@ -42,7 +49,11 @@ class MobileAdjustmentGet
     }
 
     /**
-     * @see OperatingSystemTypeEnum
+     * Get OperatingSystemType
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\OperatingSystemTypeEnum
+     *
+     * @return 'IOS'|'ANDROID'|null
      */
     public function getOperatingSystemType(): ?string
     {
@@ -50,11 +61,15 @@ class MobileAdjustmentGet
     }
 
     /**
-     * @see OperatingSystemTypeEnum
+     * Set OperatingSystemType
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\OperatingSystemTypeEnum
+     *
+     * @param 'IOS'|'ANDROID'|null $value
      *
      * @return $this
      */
-    public function setOperatingSystemType(?string $value = null)
+    public function setOperatingSystemType(?string $value)
     {
         $this->OperatingSystemType = $value;
 

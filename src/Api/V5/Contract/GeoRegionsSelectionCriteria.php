@@ -13,15 +13,17 @@ use AllowDynamicProperties;
 class GeoRegionsSelectionCriteria
 {
 //    Can be omitted.
-//    protected $Name = null;
+//    protected $Name;
 
 //    Can be omitted.
-//    protected $RegionIds = null;
+//    protected $RegionIds;
 
 //    Can be omitted.
-//    protected $ExactNames = null;
+//    protected $ExactNames;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -29,15 +31,20 @@ class GeoRegionsSelectionCriteria
         return new static();
     }
 
+    /**
+     * Get Name
+     */
     public function getName(): ?string
     {
         return $this->Name ?? null;
     }
 
     /**
+     * Set Name
+     *
      * @return $this
      */
-    public function setName(?string $value = null)
+    public function setName(?string $value)
     {
         $this->Name = $value;
 
@@ -45,19 +52,23 @@ class GeoRegionsSelectionCriteria
     }
 
     /**
-     * @return int[]|null
+     * Get RegionIds
+     *
+     * @return list<int>
      */
-    public function getRegionIds(): ?array
+    public function getRegionIds(): array
     {
-        return $this->RegionIds ?? null;
+        return $this->RegionIds ?? [];
     }
 
     /**
-     * @param int[]|null $value
+     * Set RegionIds
+     *
+     * @param list<int> $value
      *
      * @return $this
      */
-    public function setRegionIds(?array $value = null)
+    public function setRegionIds(array $value)
     {
         $this->RegionIds = $value;
 
@@ -65,19 +76,23 @@ class GeoRegionsSelectionCriteria
     }
 
     /**
-     * @return string[]|null
+     * Get ExactNames
+     *
+     * @return list<string>
      */
-    public function getExactNames(): ?array
+    public function getExactNames(): array
     {
-        return $this->ExactNames ?? null;
+        return $this->ExactNames ?? [];
     }
 
     /**
-     * @param string[]|null $value
+     * Set ExactNames
+     *
+     * @param list<string> $value
      *
      * @return $this
      */
-    public function setExactNames(?array $value = null)
+    public function setExactNames(array $value)
     {
         $this->ExactNames = $value;
 

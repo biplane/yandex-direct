@@ -12,18 +12,36 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class VideoExtensionWithStatusClarificationGetItem extends ExtensionModeration
 {
-    protected $CreativeId = null;
+    /** @var int */
+    protected $CreativeId;
 
-    protected $ThumbnailUrl = null;
+    /** @var string */
+    protected $ThumbnailUrl;
 
-    protected $PreviewUrl = null;
+    /** @var string */
+    protected $PreviewUrl;
 
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    /**
+     * Get CreativeId
+     */
     public function getCreativeId(): int
     {
         return $this->CreativeId;
     }
 
     /**
+     * Set CreativeId
+     *
      * @return $this
      */
     public function setCreativeId(int $value)
@@ -33,12 +51,17 @@ class VideoExtensionWithStatusClarificationGetItem extends ExtensionModeration
         return $this;
     }
 
+    /**
+     * Get ThumbnailUrl
+     */
     public function getThumbnailUrl(): string
     {
         return $this->ThumbnailUrl;
     }
 
     /**
+     * Set ThumbnailUrl
+     *
      * @return $this
      */
     public function setThumbnailUrl(string $value)
@@ -48,12 +71,17 @@ class VideoExtensionWithStatusClarificationGetItem extends ExtensionModeration
         return $this;
     }
 
+    /**
+     * Get PreviewUrl
+     */
     public function getPreviewUrl(): string
     {
         return $this->PreviewUrl;
     }
 
     /**
+     * Set PreviewUrl
+     *
      * @return $this
      */
     public function setPreviewUrl(string $value)

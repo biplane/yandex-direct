@@ -12,13 +12,18 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class NumberFilterFieldProps
 {
-    protected $Min = null;
+    /** @var float */
+    protected $Min;
 
-    protected $Max = null;
+    /** @var float */
+    protected $Max;
 
-    protected $Precision = null;
+    /** @var int */
+    protected $Precision;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -26,12 +31,17 @@ class NumberFilterFieldProps
         return new static();
     }
 
+    /**
+     * Get Min
+     */
     public function getMin(): float
     {
         return $this->Min;
     }
 
     /**
+     * Set Min
+     *
      * @return $this
      */
     public function setMin(float $value)
@@ -41,12 +51,17 @@ class NumberFilterFieldProps
         return $this;
     }
 
+    /**
+     * Get Max
+     */
     public function getMax(): float
     {
         return $this->Max;
     }
 
     /**
+     * Set Max
+     *
      * @return $this
      */
     public function setMax(float $value)
@@ -56,12 +71,17 @@ class NumberFilterFieldProps
         return $this;
     }
 
+    /**
+     * Get Precision
+     */
     public function getPrecision(): int
     {
         return $this->Precision;
     }
 
     /**
+     * Set Precision
+     *
      * @return $this
      */
     public function setPrecision(int $value)

@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class TransferMoneyInfo
 {
-    protected $FromCampaigns = [];
+//    Can be omitted.
+//    protected $FromCampaigns;
 
-    protected $ToCampaigns = [];
+//    Can be omitted.
+//    protected $ToCampaigns;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -25,15 +29,19 @@ class TransferMoneyInfo
     }
 
     /**
-     * @return PayCampElement[]
+     * Get FromCampaigns
+     *
+     * @return list<PayCampElement>
      */
     public function getFromCampaigns(): array
     {
-        return $this->FromCampaigns;
+        return $this->FromCampaigns ?? [];
     }
 
     /**
-     * @param PayCampElement[] $value
+     * Set FromCampaigns
+     *
+     * @param list<PayCampElement> $value
      *
      * @return $this
      */
@@ -45,15 +53,19 @@ class TransferMoneyInfo
     }
 
     /**
-     * @return PayCampElement[]
+     * Get ToCampaigns
+     *
+     * @return list<PayCampElement>
      */
     public function getToCampaigns(): array
     {
-        return $this->ToCampaigns;
+        return $this->ToCampaigns ?? [];
     }
 
     /**
-     * @param PayCampElement[] $value
+     * Set ToCampaigns
+     *
+     * @param list<PayCampElement> $value
      *
      * @return $this
      */

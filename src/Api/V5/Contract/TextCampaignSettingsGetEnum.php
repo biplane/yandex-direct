@@ -4,9 +4,12 @@ declare(strict_types=1);
 
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
+use AllowDynamicProperties;
+
 /**
  * Auto-generated code.
  */
+#[AllowDynamicProperties]
 class TextCampaignSettingsGetEnum
 {
     public const EXCLUDE_PAUSED_COMPETING_ADS = 'EXCLUDE_PAUSED_COMPETING_ADS';

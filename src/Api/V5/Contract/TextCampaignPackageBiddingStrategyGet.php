@@ -12,14 +12,30 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class TextCampaignPackageBiddingStrategyGet extends PackageBiddingStrategyGetBase
 {
-    protected $Platforms = null;
+    /** @var TextCampaignPlatforms */
+    protected $Platforms;
 
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    /**
+     * Get Platforms
+     */
     public function getPlatforms(): TextCampaignPlatforms
     {
         return $this->Platforms;
     }
 
     /**
+     * Set Platforms
+     *
      * @return $this
      */
     public function setPlatforms(TextCampaignPlatforms $value)

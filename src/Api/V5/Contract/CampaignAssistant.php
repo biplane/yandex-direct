@@ -13,12 +13,14 @@ use AllowDynamicProperties;
 class CampaignAssistant
 {
 //    Can be omitted.
-//    protected $Manager = null;
+//    protected $Manager;
 
 //    Can be omitted.
-//    protected $Agency = null;
+//    protected $Agency;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -26,30 +28,40 @@ class CampaignAssistant
         return new static();
     }
 
+    /**
+     * Get Manager
+     */
     public function getManager(): ?string
     {
         return $this->Manager ?? null;
     }
 
     /**
+     * Set Manager
+     *
      * @return $this
      */
-    public function setManager(?string $value = null)
+    public function setManager(?string $value)
     {
         $this->Manager = $value;
 
         return $this;
     }
 
+    /**
+     * Get Agency
+     */
     public function getAgency(): ?string
     {
         return $this->Agency ?? null;
     }
 
     /**
+     * Set Agency
+     *
      * @return $this
      */
-    public function setAgency(?string $value = null)
+    public function setAgency(?string $value)
     {
         $this->Agency = $value;
 

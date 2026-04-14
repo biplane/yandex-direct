@@ -13,9 +13,11 @@ use AllowDynamicProperties;
 class GetResponseGeneral
 {
 //    Can be omitted.
-//    protected $LimitedBy = null;
+//    protected $LimitedBy;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -23,15 +25,20 @@ class GetResponseGeneral
         return new static();
     }
 
+    /**
+     * Get LimitedBy
+     */
     public function getLimitedBy(): ?int
     {
         return $this->LimitedBy ?? null;
     }
 
     /**
+     * Set LimitedBy
+     *
      * @return $this
      */
-    public function setLimitedBy(?int $value = null)
+    public function setLimitedBy(?int $value)
     {
         $this->LimitedBy = $value;
 

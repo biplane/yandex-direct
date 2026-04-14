@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class UnifiedCampaignSettingGet
 {
-    protected $Option = null;
+    /** @var 'ADD_METRICA_TAG'|'ADD_TO_FAVORITES'|'ENABLE_AREA_OF_INTEREST_TARGETING'|'ENABLE_SITE_MONITORING'|'REQUIRE_SERVICING'|'ENABLE_COMPANY_INFO'|'SHARED_ACCOUNT_ENABLED'|'CAMPAIGN_EXACT_PHRASE_MATCHING_ENABLED'|'ALTERNATIVE_TEXTS_ENABLED' */
+    protected $Option;
 
-    protected $Value = null;
+    /** @var 'YES'|'NO' */
+    protected $Value;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -25,7 +29,11 @@ class UnifiedCampaignSettingGet
     }
 
     /**
-     * @see UnifiedCampaignSettingsGetEnum
+     * Get Option
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\UnifiedCampaignSettingsGetEnum
+     *
+     * @return 'ADD_METRICA_TAG'|'ADD_TO_FAVORITES'|'ENABLE_AREA_OF_INTEREST_TARGETING'|'ENABLE_SITE_MONITORING'|'REQUIRE_SERVICING'|'ENABLE_COMPANY_INFO'|'SHARED_ACCOUNT_ENABLED'|'CAMPAIGN_EXACT_PHRASE_MATCHING_ENABLED'|'ALTERNATIVE_TEXTS_ENABLED'
      */
     public function getOption(): string
     {
@@ -33,7 +41,11 @@ class UnifiedCampaignSettingGet
     }
 
     /**
-     * @see UnifiedCampaignSettingsGetEnum
+     * Set Option
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\UnifiedCampaignSettingsGetEnum
+     *
+     * @param 'ADD_METRICA_TAG'|'ADD_TO_FAVORITES'|'ENABLE_AREA_OF_INTEREST_TARGETING'|'ENABLE_SITE_MONITORING'|'REQUIRE_SERVICING'|'ENABLE_COMPANY_INFO'|'SHARED_ACCOUNT_ENABLED'|'CAMPAIGN_EXACT_PHRASE_MATCHING_ENABLED'|'ALTERNATIVE_TEXTS_ENABLED' $value
      *
      * @return $this
      */
@@ -45,7 +57,11 @@ class UnifiedCampaignSettingGet
     }
 
     /**
-     * @see YesNoEnum
+     * Get Value
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'
      */
     public function getValue(): string
     {
@@ -53,7 +69,11 @@ class UnifiedCampaignSettingGet
     }
 
     /**
-     * @see YesNoEnum
+     * Set Value
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO' $value
      *
      * @return $this
      */

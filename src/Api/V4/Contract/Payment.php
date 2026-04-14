@@ -12,17 +12,24 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class Payment
 {
-    protected $AccountID = null;
+    /** @var int */
+    protected $AccountID;
 
-    protected $Amount = null;
+    /** @var float */
+    protected $Amount;
 
+    /** @var string|null */
     protected $Origin = null;
 
+    /** @var string|null */
     protected $Contract = null;
 
+    /** @var string|null */
     protected $Currency = null;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -30,12 +37,17 @@ class Payment
         return new static();
     }
 
+    /**
+     * Get AccountID
+     */
     public function getAccountID(): int
     {
         return $this->AccountID;
     }
 
     /**
+     * Set AccountID
+     *
      * @return $this
      */
     public function setAccountID(int $value)
@@ -45,12 +57,17 @@ class Payment
         return $this;
     }
 
+    /**
+     * Get Amount
+     */
     public function getAmount(): float
     {
         return $this->Amount;
     }
 
     /**
+     * Set Amount
+     *
      * @return $this
      */
     public function setAmount(float $value)
@@ -60,45 +77,60 @@ class Payment
         return $this;
     }
 
+    /**
+     * Get Origin
+     */
     public function getOrigin(): ?string
     {
         return $this->Origin;
     }
 
     /**
+     * Set Origin
+     *
      * @return $this
      */
-    public function setOrigin(?string $value = null)
+    public function setOrigin(?string $value)
     {
         $this->Origin = $value;
 
         return $this;
     }
 
+    /**
+     * Get Contract
+     */
     public function getContract(): ?string
     {
         return $this->Contract;
     }
 
     /**
+     * Set Contract
+     *
      * @return $this
      */
-    public function setContract(?string $value = null)
+    public function setContract(?string $value)
     {
         $this->Contract = $value;
 
         return $this;
     }
 
+    /**
+     * Get Currency
+     */
     public function getCurrency(): ?string
     {
         return $this->Currency;
     }
 
     /**
+     * Set Currency
+     *
      * @return $this
      */
-    public function setCurrency(?string $value = null)
+    public function setCurrency(?string $value)
     {
         $this->Currency = $value;
 

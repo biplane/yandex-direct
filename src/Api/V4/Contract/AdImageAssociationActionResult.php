@@ -12,13 +12,18 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class AdImageAssociationActionResult
 {
-    protected $Warnings = null;
+//    Can be omitted.
+//    protected $Warnings;
 
-    protected $Errors = null;
+//    Can be omitted.
+//    protected $Errors;
 
+    /** @var int|null */
     protected $AdID = null;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -27,19 +32,23 @@ class AdImageAssociationActionResult
     }
 
     /**
-     * @return Warning[]|null
+     * Get Warnings
+     *
+     * @return list<Warning>|null
      */
     public function getWarnings(): ?array
     {
-        return $this->Warnings;
+        return $this->Warnings ?? null;
     }
 
     /**
-     * @param Warning[]|null $value
+     * Set Warnings
+     *
+     * @param list<Warning>|null $value
      *
      * @return $this
      */
-    public function setWarnings(?array $value = null)
+    public function setWarnings(?array $value)
     {
         $this->Warnings = $value;
 
@@ -47,34 +56,43 @@ class AdImageAssociationActionResult
     }
 
     /**
-     * @return Error[]|null
+     * Get Errors
+     *
+     * @return list<Error>|null
      */
     public function getErrors(): ?array
     {
-        return $this->Errors;
+        return $this->Errors ?? null;
     }
 
     /**
-     * @param Error[]|null $value
+     * Set Errors
+     *
+     * @param list<Error>|null $value
      *
      * @return $this
      */
-    public function setErrors(?array $value = null)
+    public function setErrors(?array $value)
     {
         $this->Errors = $value;
 
         return $this;
     }
 
+    /**
+     * Get AdID
+     */
     public function getAdID(): ?int
     {
         return $this->AdID;
     }
 
     /**
+     * Set AdID
+     *
      * @return $this
      */
-    public function setAdID(?int $value = null)
+    public function setAdID(?int $value)
     {
         $this->AdID = $value;
 

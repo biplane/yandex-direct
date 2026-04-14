@@ -13,28 +13,42 @@ use AllowDynamicProperties;
 class MobileAppAdUpdate extends MobileAppAdBase
 {
 //    Can be omitted.
-//    protected $Features = null;
+//    protected $Features;
 
 //    Can be omitted.
-//    protected $AgeLabel = null;
+//    protected $AgeLabel;
 
 //    Can be omitted.
-//    protected $VideoExtension = null;
+//    protected $VideoExtension;
 
     /**
-     * @return MobileAppAdFeatureItem[]|null
+     * Create a new instance.
+     *
+     * @return static
      */
-    public function getFeatures(): ?array
+    public static function create()
     {
-        return $this->Features ?? null;
+        return new static();
     }
 
     /**
-     * @param MobileAppAdFeatureItem[]|null $value
+     * Get Features
+     *
+     * @return list<MobileAppAdFeatureItem>
+     */
+    public function getFeatures(): array
+    {
+        return $this->Features ?? [];
+    }
+
+    /**
+     * Set Features
+     *
+     * @param list<MobileAppAdFeatureItem> $value
      *
      * @return $this
      */
-    public function setFeatures(?array $value = null)
+    public function setFeatures(array $value)
     {
         $this->Features = $value;
 
@@ -42,7 +56,11 @@ class MobileAppAdUpdate extends MobileAppAdBase
     }
 
     /**
-     * @see MobAppAgeLabelEnum
+     * Get AgeLabel
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\MobAppAgeLabelEnum
+     *
+     * @return 'AGE_0'|'AGE_6'|'AGE_12'|'AGE_16'|'AGE_18'|null
      */
     public function getAgeLabel(): ?string
     {
@@ -50,26 +68,35 @@ class MobileAppAdUpdate extends MobileAppAdBase
     }
 
     /**
-     * @see MobAppAgeLabelEnum
+     * Set AgeLabel
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\MobAppAgeLabelEnum
+     *
+     * @param 'AGE_0'|'AGE_6'|'AGE_12'|'AGE_16'|'AGE_18'|null $value
      *
      * @return $this
      */
-    public function setAgeLabel(?string $value = null)
+    public function setAgeLabel(?string $value)
     {
         $this->AgeLabel = $value;
 
         return $this;
     }
 
+    /**
+     * Get VideoExtension
+     */
     public function getVideoExtension(): ?VideoExtensionUpdateItem
     {
         return $this->VideoExtension ?? null;
     }
 
     /**
+     * Set VideoExtension
+     *
      * @return $this
      */
-    public function setVideoExtension(?VideoExtensionUpdateItem $value = null)
+    public function setVideoExtension(?VideoExtensionUpdateItem $value)
     {
         $this->VideoExtension = $value;
 

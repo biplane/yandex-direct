@@ -12,13 +12,18 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class TimeZonesItem
 {
-    protected $TimeZone = null;
+    /** @var string */
+    protected $TimeZone;
 
-    protected $TimeZoneName = null;
+    /** @var string */
+    protected $TimeZoneName;
 
-    protected $UtcOffset = null;
+    /** @var int */
+    protected $UtcOffset;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -26,12 +31,17 @@ class TimeZonesItem
         return new static();
     }
 
+    /**
+     * Get TimeZone
+     */
     public function getTimeZone(): string
     {
         return $this->TimeZone;
     }
 
     /**
+     * Set TimeZone
+     *
      * @return $this
      */
     public function setTimeZone(string $value)
@@ -41,12 +51,17 @@ class TimeZonesItem
         return $this;
     }
 
+    /**
+     * Get TimeZoneName
+     */
     public function getTimeZoneName(): string
     {
         return $this->TimeZoneName;
     }
 
     /**
+     * Set TimeZoneName
+     *
      * @return $this
      */
     public function setTimeZoneName(string $value)
@@ -56,12 +71,17 @@ class TimeZonesItem
         return $this;
     }
 
+    /**
+     * Get UtcOffset
+     */
     public function getUtcOffset(): int
     {
         return $this->UtcOffset;
     }
 
     /**
+     * Set UtcOffset
+     *
      * @return $this
      */
     public function setUtcOffset(int $value)

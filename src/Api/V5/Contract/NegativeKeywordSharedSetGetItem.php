@@ -13,20 +13,35 @@ use AllowDynamicProperties;
 class NegativeKeywordSharedSetGetItem extends NegativeKeywordSharedSetBase
 {
 //    Can be omitted.
-//    protected $Id = null;
+//    protected $Id;
 
 //    Can be omitted.
-//    protected $Associated = null;
+//    protected $Associated;
 
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    /**
+     * Get Id
+     */
     public function getId(): ?int
     {
         return $this->Id ?? null;
     }
 
     /**
+     * Set Id
+     *
      * @return $this
      */
-    public function setId(?int $value = null)
+    public function setId(?int $value)
     {
         $this->Id = $value;
 
@@ -34,7 +49,11 @@ class NegativeKeywordSharedSetGetItem extends NegativeKeywordSharedSetBase
     }
 
     /**
-     * @see YesNoEnum
+     * Get Associated
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'|null
      */
     public function getAssociated(): ?string
     {
@@ -42,11 +61,15 @@ class NegativeKeywordSharedSetGetItem extends NegativeKeywordSharedSetBase
     }
 
     /**
-     * @see YesNoEnum
+     * Set Associated
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO'|null $value
      *
      * @return $this
      */
-    public function setAssociated(?string $value = null)
+    public function setAssociated(?string $value)
     {
         $this->Associated = $value;
 

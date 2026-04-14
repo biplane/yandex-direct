@@ -13,15 +13,17 @@ use AllowDynamicProperties;
 class CheckResponseIds
 {
 //    Can be omitted.
-//    protected $CampaignIds = null;
+//    protected $CampaignIds;
 
 //    Can be omitted.
-//    protected $AdGroupIds = null;
+//    protected $AdGroupIds;
 
 //    Can be omitted.
-//    protected $AdIds = null;
+//    protected $AdIds;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -30,19 +32,23 @@ class CheckResponseIds
     }
 
     /**
-     * @return int[]|null
+     * Get CampaignIds
+     *
+     * @return list<int>
      */
-    public function getCampaignIds(): ?array
+    public function getCampaignIds(): array
     {
-        return $this->CampaignIds ?? null;
+        return $this->CampaignIds ?? [];
     }
 
     /**
-     * @param int[]|null $value
+     * Set CampaignIds
+     *
+     * @param list<int> $value
      *
      * @return $this
      */
-    public function setCampaignIds(?array $value = null)
+    public function setCampaignIds(array $value)
     {
         $this->CampaignIds = $value;
 
@@ -50,19 +56,23 @@ class CheckResponseIds
     }
 
     /**
-     * @return int[]|null
+     * Get AdGroupIds
+     *
+     * @return list<int>
      */
-    public function getAdGroupIds(): ?array
+    public function getAdGroupIds(): array
     {
-        return $this->AdGroupIds ?? null;
+        return $this->AdGroupIds ?? [];
     }
 
     /**
-     * @param int[]|null $value
+     * Set AdGroupIds
+     *
+     * @param list<int> $value
      *
      * @return $this
      */
-    public function setAdGroupIds(?array $value = null)
+    public function setAdGroupIds(array $value)
     {
         $this->AdGroupIds = $value;
 
@@ -70,19 +80,23 @@ class CheckResponseIds
     }
 
     /**
-     * @return int[]|null
+     * Get AdIds
+     *
+     * @return list<int>
      */
-    public function getAdIds(): ?array
+    public function getAdIds(): array
     {
-        return $this->AdIds ?? null;
+        return $this->AdIds ?? [];
     }
 
     /**
-     * @param int[]|null $value
+     * Set AdIds
+     *
+     * @param list<int> $value
      *
      * @return $this
      */
-    public function setAdIds(?array $value = null)
+    public function setAdIds(array $value)
     {
         $this->AdIds = $value;
 

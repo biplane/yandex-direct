@@ -13,19 +13,35 @@ use AllowDynamicProperties;
 class GetRetargetingListsRequest extends GetRequestGeneral
 {
 //    Can be omitted.
-//    protected $SelectionCriteria = null;
+//    protected $SelectionCriteria;
 
-    protected $FieldNames = [];
+    /** @var non-empty-list<'Type'|'Id'|'Name'|'Description'|'Rules'|'IsAvailable'|'Scope'|'AvailableForTargetsInAdGroupTypes'> */
+    protected $FieldNames;
 
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    /**
+     * Get SelectionCriteria
+     */
     public function getSelectionCriteria(): ?RetargetingListSelectionCriteria
     {
         return $this->SelectionCriteria ?? null;
     }
 
     /**
+     * Set SelectionCriteria
+     *
      * @return $this
      */
-    public function setSelectionCriteria(?RetargetingListSelectionCriteria $value = null)
+    public function setSelectionCriteria(?RetargetingListSelectionCriteria $value)
     {
         $this->SelectionCriteria = $value;
 
@@ -33,9 +49,11 @@ class GetRetargetingListsRequest extends GetRequestGeneral
     }
 
     /**
-     * @see RetargetingListFieldEnum
+     * Get FieldNames
      *
-     * @return string[]
+     * @see \Biplane\YandexDirect\Api\V5\Contract\RetargetingListFieldEnum
+     *
+     * @return non-empty-list<'Type'|'Id'|'Name'|'Description'|'Rules'|'IsAvailable'|'Scope'|'AvailableForTargetsInAdGroupTypes'>
      */
     public function getFieldNames(): array
     {
@@ -43,9 +61,11 @@ class GetRetargetingListsRequest extends GetRequestGeneral
     }
 
     /**
-     * @see RetargetingListFieldEnum
+     * Set FieldNames
      *
-     * @param string[] $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\RetargetingListFieldEnum
+     *
+     * @param non-empty-list<'Type'|'Id'|'Name'|'Description'|'Rules'|'IsAvailable'|'Scope'|'AvailableForTargetsInAdGroupTypes'> $value
      *
      * @return $this
      */

@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class AutotargetingCategory
 {
-    protected $Category = null;
+    /** @var 'EXACT'|'ALTERNATIVE'|'COMPETITOR'|'BROADER'|'ACCESSORY' */
+    protected $Category;
 
-    protected $Value = null;
+    /** @var 'YES'|'NO' */
+    protected $Value;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -25,7 +29,11 @@ class AutotargetingCategory
     }
 
     /**
-     * @see AutotargetingCategoriesEnum
+     * Get Category
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategoriesEnum
+     *
+     * @return 'EXACT'|'ALTERNATIVE'|'COMPETITOR'|'BROADER'|'ACCESSORY'
      */
     public function getCategory(): string
     {
@@ -33,7 +41,11 @@ class AutotargetingCategory
     }
 
     /**
-     * @see AutotargetingCategoriesEnum
+     * Set Category
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategoriesEnum
+     *
+     * @param 'EXACT'|'ALTERNATIVE'|'COMPETITOR'|'BROADER'|'ACCESSORY' $value
      *
      * @return $this
      */
@@ -45,7 +57,11 @@ class AutotargetingCategory
     }
 
     /**
-     * @see YesNoEnum
+     * Get Value
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'
      */
     public function getValue(): string
     {
@@ -53,7 +69,11 @@ class AutotargetingCategory
     }
 
     /**
-     * @see YesNoEnum
+     * Set Value
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO' $value
      *
      * @return $this
      */

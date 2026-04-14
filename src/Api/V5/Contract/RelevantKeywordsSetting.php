@@ -13,15 +13,17 @@ use AllowDynamicProperties;
 class RelevantKeywordsSetting
 {
 //    Can be omitted.
-//    protected $BudgetPercent = null;
+//    protected $BudgetPercent;
 
 //    Can be omitted.
-//    protected $Mode = null;
+//    protected $Mode;
 
 //    Can be omitted.
-//    protected $OptimizeGoalId = null;
+//    protected $OptimizeGoalId;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -29,15 +31,20 @@ class RelevantKeywordsSetting
         return new static();
     }
 
+    /**
+     * Get BudgetPercent
+     */
     public function getBudgetPercent(): ?int
     {
         return $this->BudgetPercent ?? null;
     }
 
     /**
+     * Set BudgetPercent
+     *
      * @return $this
      */
-    public function setBudgetPercent(?int $value = null)
+    public function setBudgetPercent(?int $value)
     {
         $this->BudgetPercent = $value;
 
@@ -45,7 +52,11 @@ class RelevantKeywordsSetting
     }
 
     /**
-     * @see RelevantKeywordsModeEnum
+     * Get Mode
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\RelevantKeywordsModeEnum
+     *
+     * @return 'MINIMUM'|'OPTIMAL'|'MAXIMUM'|null
      */
     public function getMode(): ?string
     {
@@ -53,26 +64,35 @@ class RelevantKeywordsSetting
     }
 
     /**
-     * @see RelevantKeywordsModeEnum
+     * Set Mode
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\RelevantKeywordsModeEnum
+     *
+     * @param 'MINIMUM'|'OPTIMAL'|'MAXIMUM'|null $value
      *
      * @return $this
      */
-    public function setMode(?string $value = null)
+    public function setMode(?string $value)
     {
         $this->Mode = $value;
 
         return $this;
     }
 
+    /**
+     * Get OptimizeGoalId
+     */
     public function getOptimizeGoalId(): ?int
     {
         return $this->OptimizeGoalId ?? null;
     }
 
     /**
+     * Set OptimizeGoalId
+     *
      * @return $this
      */
-    public function setOptimizeGoalId(?int $value = null)
+    public function setOptimizeGoalId(?int $value)
     {
         $this->OptimizeGoalId = $value;
 

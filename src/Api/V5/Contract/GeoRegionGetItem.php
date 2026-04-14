@@ -13,15 +13,17 @@ use AllowDynamicProperties;
 class GeoRegionGetItem
 {
 //    Can be omitted.
-//    protected $GeoRegionId = null;
+//    protected $GeoRegionId;
 
 //    Can be omitted.
-//    protected $GeoRegionName = null;
+//    protected $GeoRegionName;
 
 //    Can be omitted.
-//    protected $ParentGeoRegionNames = null;
+//    protected $ParentGeoRegionNames;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -29,30 +31,40 @@ class GeoRegionGetItem
         return new static();
     }
 
+    /**
+     * Get GeoRegionId
+     */
     public function getGeoRegionId(): ?int
     {
         return $this->GeoRegionId ?? null;
     }
 
     /**
+     * Set GeoRegionId
+     *
      * @return $this
      */
-    public function setGeoRegionId(?int $value = null)
+    public function setGeoRegionId(?int $value)
     {
         $this->GeoRegionId = $value;
 
         return $this;
     }
 
+    /**
+     * Get GeoRegionName
+     */
     public function getGeoRegionName(): ?string
     {
         return $this->GeoRegionName ?? null;
     }
 
     /**
+     * Set GeoRegionName
+     *
      * @return $this
      */
-    public function setGeoRegionName(?string $value = null)
+    public function setGeoRegionName(?string $value)
     {
         $this->GeoRegionName = $value;
 
@@ -60,7 +72,9 @@ class GeoRegionGetItem
     }
 
     /**
-     * @return string[]|null
+     * Get ParentGeoRegionNames
+     *
+     * @return non-empty-list<string>|null
      */
     public function getParentGeoRegionNames(): ?array
     {
@@ -68,11 +82,13 @@ class GeoRegionGetItem
     }
 
     /**
-     * @param string[]|null $value
+     * Set ParentGeoRegionNames
+     *
+     * @param non-empty-list<string>|null $value
      *
      * @return $this
      */
-    public function setParentGeoRegionNames(?array $value = null)
+    public function setParentGeoRegionNames(?array $value)
     {
         $this->ParentGeoRegionNames = $value;
 

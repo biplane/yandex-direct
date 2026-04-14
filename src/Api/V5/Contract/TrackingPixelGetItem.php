@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class TrackingPixelGetItem
 {
-    protected $TrackingPixel = null;
+    /** @var string */
+    protected $TrackingPixel;
 
-    protected $Provider = null;
+    /** @var string */
+    protected $Provider;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -24,12 +28,17 @@ class TrackingPixelGetItem
         return new static();
     }
 
+    /**
+     * Get TrackingPixel
+     */
     public function getTrackingPixel(): string
     {
         return $this->TrackingPixel;
     }
 
     /**
+     * Set TrackingPixel
+     *
      * @return $this
      */
     public function setTrackingPixel(string $value)
@@ -39,12 +48,17 @@ class TrackingPixelGetItem
         return $this;
     }
 
+    /**
+     * Get Provider
+     */
     public function getProvider(): string
     {
         return $this->Provider;
     }
 
     /**
+     * Set Provider
+     *
      * @return $this
      */
     public function setProvider(string $value)

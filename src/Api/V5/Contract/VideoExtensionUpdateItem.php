@@ -13,9 +13,11 @@ use AllowDynamicProperties;
 class VideoExtensionUpdateItem
 {
 //    Can be omitted.
-//    protected $CreativeId = null;
+//    protected $CreativeId;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -23,15 +25,20 @@ class VideoExtensionUpdateItem
         return new static();
     }
 
+    /**
+     * Get CreativeId
+     */
     public function getCreativeId(): ?int
     {
         return $this->CreativeId ?? null;
     }
 
     /**
+     * Set CreativeId
+     *
      * @return $this
      */
-    public function setCreativeId(?int $value = null)
+    public function setCreativeId(?int $value)
     {
         $this->CreativeId = $value;
 

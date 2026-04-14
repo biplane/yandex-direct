@@ -5,33 +5,70 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 use AllowDynamicProperties;
+use ArrayIterator;
+use Countable;
+use IteratorAggregate;
+use Override;
+
+use function count;
 
 /**
  * Auto-generated code.
+ *
+ * @implements IteratorAggregate<int, TurboPageGetItem>
  */
 #[AllowDynamicProperties]
-class GetTurboPagesResponse extends GetResponseGeneral
+class GetTurboPagesResponse extends GetResponseGeneral implements IteratorAggregate, Countable
 {
 //    Can be omitted.
-//    protected $TurboPages = null;
+//    protected $TurboPages;
 
     /**
-     * @return TurboPageGetItem[]|null
+     * Create a new instance.
+     *
+     * @return static
      */
-    public function getTurboPages(): ?array
+    public static function create()
     {
-        return $this->TurboPages ?? null;
+        return new static();
     }
 
     /**
-     * @param TurboPageGetItem[]|null $value
+     * Get TurboPages
+     *
+     * @return list<TurboPageGetItem>
+     */
+    public function getTurboPages(): array
+    {
+        return $this->TurboPages ?? [];
+    }
+
+    /**
+     * Set TurboPages
+     *
+     * @param list<TurboPageGetItem> $value
      *
      * @return $this
      */
-    public function setTurboPages(?array $value = null)
+    public function setTurboPages(array $value)
     {
         $this->TurboPages = $value;
 
         return $this;
+    }
+
+    #[Override]
+    public function count(): int
+    {
+        return isset($this->TurboPages) ? count($this->TurboPages) : 0;
+    }
+
+    /**
+     * @return ArrayIterator<int, TurboPageGetItem>
+     */
+    #[Override]
+    public function getIterator(): ArrayIterator
+    {
+        return new ArrayIterator($this->TurboPages ?? []);
     }
 }

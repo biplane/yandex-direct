@@ -12,18 +12,24 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class LeadGetItem
 {
-    protected $Id = null;
+    /** @var string */
+    protected $Id;
 
-    protected $SubmittedAt = null;
+    /** @var string */
+    protected $SubmittedAt;
 
-    protected $TurboPageId = null;
+    /** @var int */
+    protected $TurboPageId;
 
-    protected $TurboPageName = null;
+    /** @var string */
+    protected $TurboPageName;
 
 //    Can be omitted.
-//    protected $Data = null;
+//    protected $Data;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -31,12 +37,17 @@ class LeadGetItem
         return new static();
     }
 
+    /**
+     * Get Id
+     */
     public function getId(): string
     {
         return $this->Id;
     }
 
     /**
+     * Set Id
+     *
      * @return $this
      */
     public function setId(string $value)
@@ -46,12 +57,17 @@ class LeadGetItem
         return $this;
     }
 
+    /**
+     * Get SubmittedAt
+     */
     public function getSubmittedAt(): string
     {
         return $this->SubmittedAt;
     }
 
     /**
+     * Set SubmittedAt
+     *
      * @return $this
      */
     public function setSubmittedAt(string $value)
@@ -61,12 +77,17 @@ class LeadGetItem
         return $this;
     }
 
+    /**
+     * Get TurboPageId
+     */
     public function getTurboPageId(): int
     {
         return $this->TurboPageId;
     }
 
     /**
+     * Set TurboPageId
+     *
      * @return $this
      */
     public function setTurboPageId(int $value)
@@ -76,12 +97,17 @@ class LeadGetItem
         return $this;
     }
 
+    /**
+     * Get TurboPageName
+     */
     public function getTurboPageName(): string
     {
         return $this->TurboPageName;
     }
 
     /**
+     * Set TurboPageName
+     *
      * @return $this
      */
     public function setTurboPageName(string $value)
@@ -92,19 +118,23 @@ class LeadGetItem
     }
 
     /**
-     * @return LeadDataItem[]|null
+     * Get Data
+     *
+     * @return list<LeadDataItem>
      */
-    public function getData(): ?array
+    public function getData(): array
     {
-        return $this->Data ?? null;
+        return $this->Data ?? [];
     }
 
     /**
-     * @param LeadDataItem[]|null $value
+     * Set Data
+     *
+     * @param list<LeadDataItem> $value
      *
      * @return $this
      */
-    public function setData(?array $value = null)
+    public function setData(array $value)
     {
         $this->Data = $value;
 

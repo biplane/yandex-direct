@@ -12,9 +12,12 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class EnumFilterFieldProps
 {
-    protected $Values = [];
+    /** @var non-empty-list<string> */
+    protected $Values;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -23,7 +26,9 @@ class EnumFilterFieldProps
     }
 
     /**
-     * @return string[]
+     * Get Values
+     *
+     * @return non-empty-list<string>
      */
     public function getValues(): array
     {
@@ -31,7 +36,9 @@ class EnumFilterFieldProps
     }
 
     /**
-     * @param string[] $value
+     * Set Values
+     *
+     * @param non-empty-list<string> $value
      *
      * @return $this
      */

@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class NewWordstatReportInfo
 {
-    protected $Phrases = [];
+//    Can be omitted.
+//    protected $Phrases;
 
-    protected $GeoID = null;
+//    Can be omitted.
+//    protected $GeoID;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -25,15 +29,19 @@ class NewWordstatReportInfo
     }
 
     /**
-     * @return string[]
+     * Get Phrases
+     *
+     * @return list<string>
      */
     public function getPhrases(): array
     {
-        return $this->Phrases;
+        return $this->Phrases ?? [];
     }
 
     /**
-     * @param string[] $value
+     * Set Phrases
+     *
+     * @param list<string> $value
      *
      * @return $this
      */
@@ -45,19 +53,23 @@ class NewWordstatReportInfo
     }
 
     /**
-     * @return int[]|null
+     * Get GeoID
+     *
+     * @return list<int>|null
      */
     public function getGeoID(): ?array
     {
-        return $this->GeoID;
+        return $this->GeoID ?? null;
     }
 
     /**
-     * @param int[]|null $value
+     * Set GeoID
+     *
+     * @param list<int>|null $value
      *
      * @return $this
      */
-    public function setGeoID(?array $value = null)
+    public function setGeoID(?array $value)
     {
         $this->GeoID = $value;
 

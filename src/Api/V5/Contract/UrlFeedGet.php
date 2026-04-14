@@ -13,35 +13,55 @@ use AllowDynamicProperties;
 class UrlFeedGet extends UrlFeedBase
 {
 //    Can be omitted.
-//    protected $Url = null;
+//    protected $Url;
 
 //    Can be omitted.
-//    protected $Login = null;
+//    protected $Login;
 
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    /**
+     * Get Url
+     */
     public function getUrl(): ?string
     {
         return $this->Url ?? null;
     }
 
     /**
+     * Set Url
+     *
      * @return $this
      */
-    public function setUrl(?string $value = null)
+    public function setUrl(?string $value)
     {
         $this->Url = $value;
 
         return $this;
     }
 
+    /**
+     * Get Login
+     */
     public function getLogin(): ?string
     {
         return $this->Login ?? null;
     }
 
     /**
+     * Set Login
+     *
      * @return $this
      */
-    public function setLogin(?string $value = null)
+    public function setLogin(?string $value)
     {
         $this->Login = $value;
 

@@ -12,18 +12,21 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class SitelinkAddItem
 {
-    protected $Title = null;
+    /** @var string */
+    protected $Title;
 
 //    Can be omitted.
-//    protected $Href = null;
+//    protected $Href;
 
 //    Can be omitted.
-//    protected $Description = null;
+//    protected $Description;
 
 //    Can be omitted.
-//    protected $TurboPageId = null;
+//    protected $TurboPageId;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -31,12 +34,17 @@ class SitelinkAddItem
         return new static();
     }
 
+    /**
+     * Get Title
+     */
     public function getTitle(): string
     {
         return $this->Title;
     }
 
     /**
+     * Set Title
+     *
      * @return $this
      */
     public function setTitle(string $value)
@@ -46,45 +54,60 @@ class SitelinkAddItem
         return $this;
     }
 
+    /**
+     * Get Href
+     */
     public function getHref(): ?string
     {
         return $this->Href ?? null;
     }
 
     /**
+     * Set Href
+     *
      * @return $this
      */
-    public function setHref(?string $value = null)
+    public function setHref(?string $value)
     {
         $this->Href = $value;
 
         return $this;
     }
 
+    /**
+     * Get Description
+     */
     public function getDescription(): ?string
     {
         return $this->Description ?? null;
     }
 
     /**
+     * Set Description
+     *
      * @return $this
      */
-    public function setDescription(?string $value = null)
+    public function setDescription(?string $value)
     {
         $this->Description = $value;
 
         return $this;
     }
 
+    /**
+     * Get TurboPageId
+     */
     public function getTurboPageId(): ?int
     {
         return $this->TurboPageId ?? null;
     }
 
     /**
+     * Set TurboPageId
+     *
      * @return $this
      */
-    public function setTurboPageId(?int $value = null)
+    public function setTurboPageId(?int $value)
     {
         $this->TurboPageId = $value;
 

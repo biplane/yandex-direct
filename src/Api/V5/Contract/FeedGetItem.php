@@ -13,45 +13,47 @@ use AllowDynamicProperties;
 class FeedGetItem
 {
 //    Can be omitted.
-//    protected $Id = null;
+//    protected $Id;
 
 //    Can be omitted.
-//    protected $Name = null;
+//    protected $Name;
 
 //    Can be omitted.
-//    protected $BusinessType = null;
+//    protected $BusinessType;
 
 //    Can be omitted.
-//    protected $SourceType = null;
+//    protected $SourceType;
 
 //    Can be omitted.
-//    protected $FilterSchema = null;
+//    protected $FilterSchema;
 
 //    Can be omitted.
-//    protected $UpdatedAt = null;
+//    protected $UpdatedAt;
 
 //    Can be omitted.
-//    protected $CampaignIds = null;
+//    protected $CampaignIds;
 
 //    Can be omitted.
-//    protected $FileFeed = null;
+//    protected $FileFeed;
 
 //    Can be omitted.
-//    protected $NumberOfItems = null;
+//    protected $NumberOfItems;
 
 //    Can be omitted.
-//    protected $NumberOfListings = null;
+//    protected $NumberOfListings;
 
 //    Can be omitted.
-//    protected $Status = null;
+//    protected $Status;
 
 //    Can be omitted.
-//    protected $UrlFeed = null;
+//    protected $UrlFeed;
 
 //    Can be omitted.
-//    protected $TitleAndTextSources = null;
+//    protected $TitleAndTextSources;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -59,30 +61,40 @@ class FeedGetItem
         return new static();
     }
 
+    /**
+     * Get Id
+     */
     public function getId(): ?int
     {
         return $this->Id ?? null;
     }
 
     /**
+     * Set Id
+     *
      * @return $this
      */
-    public function setId(?int $value = null)
+    public function setId(?int $value)
     {
         $this->Id = $value;
 
         return $this;
     }
 
+    /**
+     * Get Name
+     */
     public function getName(): ?string
     {
         return $this->Name ?? null;
     }
 
     /**
+     * Set Name
+     *
      * @return $this
      */
-    public function setName(?string $value = null)
+    public function setName(?string $value)
     {
         $this->Name = $value;
 
@@ -90,7 +102,11 @@ class FeedGetItem
     }
 
     /**
-     * @see BusinessTypeEnum
+     * Get BusinessType
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\BusinessTypeEnum
+     *
+     * @return 'RETAIL'|'HOTELS'|'REALTY'|'AUTOMOBILES'|'FLIGHTS'|'OTHER'|null
      */
     public function getBusinessType(): ?string
     {
@@ -98,11 +114,15 @@ class FeedGetItem
     }
 
     /**
-     * @see BusinessTypeEnum
+     * Set BusinessType
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\BusinessTypeEnum
+     *
+     * @param 'RETAIL'|'HOTELS'|'REALTY'|'AUTOMOBILES'|'FLIGHTS'|'OTHER'|null $value
      *
      * @return $this
      */
-    public function setBusinessType(?string $value = null)
+    public function setBusinessType(?string $value)
     {
         $this->BusinessType = $value;
 
@@ -110,7 +130,11 @@ class FeedGetItem
     }
 
     /**
-     * @see SourceTypeEnum
+     * Get SourceType
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\SourceTypeEnum
+     *
+     * @return 'URL'|'FILE'|null
      */
     public function getSourceType(): ?string
     {
@@ -118,41 +142,55 @@ class FeedGetItem
     }
 
     /**
-     * @see SourceTypeEnum
+     * Set SourceType
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\SourceTypeEnum
+     *
+     * @param 'URL'|'FILE'|null $value
      *
      * @return $this
      */
-    public function setSourceType(?string $value = null)
+    public function setSourceType(?string $value)
     {
         $this->SourceType = $value;
 
         return $this;
     }
 
+    /**
+     * Get FilterSchema
+     */
     public function getFilterSchema(): ?string
     {
         return $this->FilterSchema ?? null;
     }
 
     /**
+     * Set FilterSchema
+     *
      * @return $this
      */
-    public function setFilterSchema(?string $value = null)
+    public function setFilterSchema(?string $value)
     {
         $this->FilterSchema = $value;
 
         return $this;
     }
 
+    /**
+     * Get UpdatedAt
+     */
     public function getUpdatedAt(): ?string
     {
         return $this->UpdatedAt ?? null;
     }
 
     /**
+     * Set UpdatedAt
+     *
      * @return $this
      */
-    public function setUpdatedAt(?string $value = null)
+    public function setUpdatedAt(?string $value)
     {
         $this->UpdatedAt = $value;
 
@@ -160,7 +198,9 @@ class FeedGetItem
     }
 
     /**
-     * @return float[]|null
+     * Get CampaignIds
+     *
+     * @return non-empty-list<int>|null
      */
     public function getCampaignIds(): ?array
     {
@@ -168,56 +208,73 @@ class FeedGetItem
     }
 
     /**
-     * @param float[]|null $value
+     * Set CampaignIds
+     *
+     * @param non-empty-list<int>|null $value
      *
      * @return $this
      */
-    public function setCampaignIds(?array $value = null)
+    public function setCampaignIds(?array $value)
     {
         $this->CampaignIds = $value;
 
         return $this;
     }
 
+    /**
+     * Get FileFeed
+     */
     public function getFileFeed(): ?FileFeedGet
     {
         return $this->FileFeed ?? null;
     }
 
     /**
+     * Set FileFeed
+     *
      * @return $this
      */
-    public function setFileFeed(?FileFeedGet $value = null)
+    public function setFileFeed(?FileFeedGet $value)
     {
         $this->FileFeed = $value;
 
         return $this;
     }
 
+    /**
+     * Get NumberOfItems
+     */
     public function getNumberOfItems(): ?int
     {
         return $this->NumberOfItems ?? null;
     }
 
     /**
+     * Set NumberOfItems
+     *
      * @return $this
      */
-    public function setNumberOfItems(?int $value = null)
+    public function setNumberOfItems(?int $value)
     {
         $this->NumberOfItems = $value;
 
         return $this;
     }
 
+    /**
+     * Get NumberOfListings
+     */
     public function getNumberOfListings(): ?int
     {
         return $this->NumberOfListings ?? null;
     }
 
     /**
+     * Set NumberOfListings
+     *
      * @return $this
      */
-    public function setNumberOfListings(?int $value = null)
+    public function setNumberOfListings(?int $value)
     {
         $this->NumberOfListings = $value;
 
@@ -225,7 +282,11 @@ class FeedGetItem
     }
 
     /**
-     * @see FeedStatusEnum
+     * Get Status
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\FeedStatusEnum
+     *
+     * @return 'NEW'|'UPDATING'|'DONE'|'ERROR'|null
      */
     public function getStatus(): ?string
     {
@@ -233,26 +294,35 @@ class FeedGetItem
     }
 
     /**
-     * @see FeedStatusEnum
+     * Set Status
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\FeedStatusEnum
+     *
+     * @param 'NEW'|'UPDATING'|'DONE'|'ERROR'|null $value
      *
      * @return $this
      */
-    public function setStatus(?string $value = null)
+    public function setStatus(?string $value)
     {
         $this->Status = $value;
 
         return $this;
     }
 
+    /**
+     * Get UrlFeed
+     */
     public function getUrlFeed(): ?UrlFeedGet
     {
         return $this->UrlFeed ?? null;
     }
 
     /**
+     * Set UrlFeed
+     *
      * @return $this
      */
-    public function setUrlFeed(?UrlFeedGet $value = null)
+    public function setUrlFeed(?UrlFeedGet $value)
     {
         $this->UrlFeed = $value;
 
@@ -260,7 +330,9 @@ class FeedGetItem
     }
 
     /**
-     * @return string[]|null
+     * Get TitleAndTextSources
+     *
+     * @return non-empty-list<string>|null
      */
     public function getTitleAndTextSources(): ?array
     {
@@ -268,11 +340,13 @@ class FeedGetItem
     }
 
     /**
-     * @param string[]|null $value
+     * Set TitleAndTextSources
+     *
+     * @param non-empty-list<string>|null $value
      *
      * @return $this
      */
-    public function setTitleAndTextSources(?array $value = null)
+    public function setTitleAndTextSources(?array $value)
     {
         $this->TitleAndTextSources = $value;
 

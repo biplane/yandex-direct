@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class InstantMessenger
 {
-    protected $MessengerClient = null;
+    /** @var string */
+    protected $MessengerClient;
 
-    protected $MessengerLogin = null;
+    /** @var string */
+    protected $MessengerLogin;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -24,12 +28,17 @@ class InstantMessenger
         return new static();
     }
 
+    /**
+     * Get MessengerClient
+     */
     public function getMessengerClient(): string
     {
         return $this->MessengerClient;
     }
 
     /**
+     * Set MessengerClient
+     *
      * @return $this
      */
     public function setMessengerClient(string $value)
@@ -39,12 +48,17 @@ class InstantMessenger
         return $this;
     }
 
+    /**
+     * Get MessengerLogin
+     */
     public function getMessengerLogin(): string
     {
         return $this->MessengerLogin;
     }
 
     /**
+     * Set MessengerLogin
+     *
      * @return $this
      */
     public function setMessengerLogin(string $value)

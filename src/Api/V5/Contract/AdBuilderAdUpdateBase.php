@@ -13,12 +13,14 @@ use AllowDynamicProperties;
 class AdBuilderAdUpdateBase
 {
 //    Can be omitted.
-//    protected $Creative = null;
+//    protected $Creative;
 
 //    Can be omitted.
-//    protected $ErirAdDescription = null;
+//    protected $ErirAdDescription;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -26,30 +28,40 @@ class AdBuilderAdUpdateBase
         return new static();
     }
 
+    /**
+     * Get Creative
+     */
     public function getCreative(): ?AdBuilderAdUpdateItem
     {
         return $this->Creative ?? null;
     }
 
     /**
+     * Set Creative
+     *
      * @return $this
      */
-    public function setCreative(?AdBuilderAdUpdateItem $value = null)
+    public function setCreative(?AdBuilderAdUpdateItem $value)
     {
         $this->Creative = $value;
 
         return $this;
     }
 
+    /**
+     * Get ErirAdDescription
+     */
     public function getErirAdDescription(): ?string
     {
         return $this->ErirAdDescription ?? null;
     }
 
     /**
+     * Set ErirAdDescription
+     *
      * @return $this
      */
-    public function setErirAdDescription(?string $value = null)
+    public function setErirAdDescription(?string $value)
     {
         $this->ErirAdDescription = $value;
 

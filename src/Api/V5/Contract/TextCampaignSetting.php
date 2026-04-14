@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class TextCampaignSetting
 {
-    protected $Option = null;
+    /** @var 'EXCLUDE_PAUSED_COMPETING_ADS'|'ADD_OPENSTAT_TAG'|'ADD_METRICA_TAG'|'ADD_TO_FAVORITES'|'ENABLE_AREA_OF_INTEREST_TARGETING'|'ENABLE_CURRENT_AREA_TARGETING'|'ENABLE_REGULAR_AREA_TARGETING'|'ENABLE_SITE_MONITORING'|'ENABLE_BEHAVIORAL_TARGETING'|'ENABLE_AUTOFOCUS'|'REQUIRE_SERVICING'|'ENABLE_RELATED_KEYWORDS'|'ENABLE_EXTENDED_AD_TITLE'|'MAINTAIN_NETWORK_CPC'|'ENABLE_COMPANY_INFO'|'CAMPAIGN_EXACT_PHRASE_MATCHING_ENABLED'|'ALTERNATIVE_TEXTS_ENABLED' */
+    protected $Option;
 
-    protected $Value = null;
+    /** @var 'YES'|'NO' */
+    protected $Value;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -25,7 +29,11 @@ class TextCampaignSetting
     }
 
     /**
-     * @see TextCampaignSettingsEnum
+     * Get Option
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\TextCampaignSettingsEnum
+     *
+     * @return 'EXCLUDE_PAUSED_COMPETING_ADS'|'ADD_OPENSTAT_TAG'|'ADD_METRICA_TAG'|'ADD_TO_FAVORITES'|'ENABLE_AREA_OF_INTEREST_TARGETING'|'ENABLE_CURRENT_AREA_TARGETING'|'ENABLE_REGULAR_AREA_TARGETING'|'ENABLE_SITE_MONITORING'|'ENABLE_BEHAVIORAL_TARGETING'|'ENABLE_AUTOFOCUS'|'REQUIRE_SERVICING'|'ENABLE_RELATED_KEYWORDS'|'ENABLE_EXTENDED_AD_TITLE'|'MAINTAIN_NETWORK_CPC'|'ENABLE_COMPANY_INFO'|'CAMPAIGN_EXACT_PHRASE_MATCHING_ENABLED'|'ALTERNATIVE_TEXTS_ENABLED'
      */
     public function getOption(): string
     {
@@ -33,7 +41,11 @@ class TextCampaignSetting
     }
 
     /**
-     * @see TextCampaignSettingsEnum
+     * Set Option
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\TextCampaignSettingsEnum
+     *
+     * @param 'EXCLUDE_PAUSED_COMPETING_ADS'|'ADD_OPENSTAT_TAG'|'ADD_METRICA_TAG'|'ADD_TO_FAVORITES'|'ENABLE_AREA_OF_INTEREST_TARGETING'|'ENABLE_CURRENT_AREA_TARGETING'|'ENABLE_REGULAR_AREA_TARGETING'|'ENABLE_SITE_MONITORING'|'ENABLE_BEHAVIORAL_TARGETING'|'ENABLE_AUTOFOCUS'|'REQUIRE_SERVICING'|'ENABLE_RELATED_KEYWORDS'|'ENABLE_EXTENDED_AD_TITLE'|'MAINTAIN_NETWORK_CPC'|'ENABLE_COMPANY_INFO'|'CAMPAIGN_EXACT_PHRASE_MATCHING_ENABLED'|'ALTERNATIVE_TEXTS_ENABLED' $value
      *
      * @return $this
      */
@@ -45,7 +57,11 @@ class TextCampaignSetting
     }
 
     /**
-     * @see YesNoEnum
+     * Get Value
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'
      */
     public function getValue(): string
     {
@@ -53,7 +69,11 @@ class TextCampaignSetting
     }
 
     /**
-     * @see YesNoEnum
+     * Set Value
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO' $value
      *
      * @return $this
      */

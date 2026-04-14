@@ -13,15 +13,17 @@ use AllowDynamicProperties;
 class RetargetingListBase
 {
 //    Can be omitted.
-//    protected $Name = null;
+//    protected $Name;
 
 //    Can be omitted.
-//    protected $Description = null;
+//    protected $Description;
 
 //    Can be omitted.
-//    protected $Rules = null;
+//    protected $Rules;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -29,30 +31,40 @@ class RetargetingListBase
         return new static();
     }
 
+    /**
+     * Get Name
+     */
     public function getName(): ?string
     {
         return $this->Name ?? null;
     }
 
     /**
+     * Set Name
+     *
      * @return $this
      */
-    public function setName(?string $value = null)
+    public function setName(?string $value)
     {
         $this->Name = $value;
 
         return $this;
     }
 
+    /**
+     * Get Description
+     */
     public function getDescription(): ?string
     {
         return $this->Description ?? null;
     }
 
     /**
+     * Set Description
+     *
      * @return $this
      */
-    public function setDescription(?string $value = null)
+    public function setDescription(?string $value)
     {
         $this->Description = $value;
 
@@ -60,19 +72,23 @@ class RetargetingListBase
     }
 
     /**
-     * @return RetargetingListRuleItem[]|null
+     * Get Rules
+     *
+     * @return list<RetargetingListRuleItem>
      */
-    public function getRules(): ?array
+    public function getRules(): array
     {
-        return $this->Rules ?? null;
+        return $this->Rules ?? [];
     }
 
     /**
-     * @param RetargetingListRuleItem[]|null $value
+     * Set Rules
+     *
+     * @param list<RetargetingListRuleItem> $value
      *
      * @return $this
      */
-    public function setRules(?array $value = null)
+    public function setRules(array $value)
     {
         $this->Rules = $value;
 

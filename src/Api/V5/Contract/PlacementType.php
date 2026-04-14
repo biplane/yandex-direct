@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class PlacementType
 {
-    protected $Type = null;
+    /** @var 'SEARCH_RESULTS'|'PRODUCT_GALLERY' */
+    protected $Type;
 
-    protected $Value = null;
+    /** @var 'YES'|'NO' */
+    protected $Value;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -25,7 +29,11 @@ class PlacementType
     }
 
     /**
-     * @see PlacementTypesEnum
+     * Get Type
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\PlacementTypesEnum
+     *
+     * @return 'SEARCH_RESULTS'|'PRODUCT_GALLERY'
      */
     public function getType(): string
     {
@@ -33,7 +41,11 @@ class PlacementType
     }
 
     /**
-     * @see PlacementTypesEnum
+     * Set Type
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\PlacementTypesEnum
+     *
+     * @param 'SEARCH_RESULTS'|'PRODUCT_GALLERY' $value
      *
      * @return $this
      */
@@ -45,7 +57,11 @@ class PlacementType
     }
 
     /**
-     * @see YesNoEnum
+     * Get Value
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'
      */
     public function getValue(): string
     {
@@ -53,7 +69,11 @@ class PlacementType
     }
 
     /**
-     * @see YesNoEnum
+     * Set Value
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO' $value
      *
      * @return $this
      */

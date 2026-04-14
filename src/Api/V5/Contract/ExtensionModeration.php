@@ -12,12 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class ExtensionModeration
 {
-    protected $Status = null;
+    /** @var 'ACCEPTED'|'DRAFT'|'MODERATION'|'PREACCEPTED'|'REJECTED'|'UNKNOWN' */
+    protected $Status;
 
 //    Can be omitted.
-//    protected $StatusClarification = null;
+//    protected $StatusClarification;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -26,7 +29,11 @@ class ExtensionModeration
     }
 
     /**
-     * @see StatusEnum
+     * Get Status
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\StatusEnum
+     *
+     * @return 'ACCEPTED'|'DRAFT'|'MODERATION'|'PREACCEPTED'|'REJECTED'|'UNKNOWN'
      */
     public function getStatus(): string
     {
@@ -34,7 +41,11 @@ class ExtensionModeration
     }
 
     /**
-     * @see StatusEnum
+     * Set Status
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\StatusEnum
+     *
+     * @param 'ACCEPTED'|'DRAFT'|'MODERATION'|'PREACCEPTED'|'REJECTED'|'UNKNOWN' $value
      *
      * @return $this
      */
@@ -45,15 +56,20 @@ class ExtensionModeration
         return $this;
     }
 
+    /**
+     * Get StatusClarification
+     */
     public function getStatusClarification(): ?string
     {
         return $this->StatusClarification ?? null;
     }
 
     /**
+     * Set StatusClarification
+     *
      * @return $this
      */
-    public function setStatusClarification(?string $value = null)
+    public function setStatusClarification(?string $value)
     {
         $this->StatusClarification = $value;
 

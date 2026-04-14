@@ -12,15 +12,21 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class MobileAppAdGroupAdd
 {
-    protected $StoreUrl = null;
+    /** @var string */
+    protected $StoreUrl;
 
-    protected $TargetDeviceType = [];
+    /** @var non-empty-list<'DEVICE_TYPE_MOBILE'|'DEVICE_TYPE_TABLET'> */
+    protected $TargetDeviceType;
 
-    protected $TargetCarrier = null;
+    /** @var 'WI_FI_ONLY'|'WI_FI_AND_CELLULAR' */
+    protected $TargetCarrier;
 
-    protected $TargetOperatingSystemVersion = null;
+    /** @var string */
+    protected $TargetOperatingSystemVersion;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -28,12 +34,17 @@ class MobileAppAdGroupAdd
         return new static();
     }
 
+    /**
+     * Get StoreUrl
+     */
     public function getStoreUrl(): string
     {
         return $this->StoreUrl;
     }
 
     /**
+     * Set StoreUrl
+     *
      * @return $this
      */
     public function setStoreUrl(string $value)
@@ -44,9 +55,11 @@ class MobileAppAdGroupAdd
     }
 
     /**
-     * @see TargetDeviceTypeEnum
+     * Get TargetDeviceType
      *
-     * @return string[]
+     * @see \Biplane\YandexDirect\Api\V5\Contract\TargetDeviceTypeEnum
+     *
+     * @return non-empty-list<'DEVICE_TYPE_MOBILE'|'DEVICE_TYPE_TABLET'>
      */
     public function getTargetDeviceType(): array
     {
@@ -54,9 +67,11 @@ class MobileAppAdGroupAdd
     }
 
     /**
-     * @see TargetDeviceTypeEnum
+     * Set TargetDeviceType
      *
-     * @param string[] $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\TargetDeviceTypeEnum
+     *
+     * @param non-empty-list<'DEVICE_TYPE_MOBILE'|'DEVICE_TYPE_TABLET'> $value
      *
      * @return $this
      */
@@ -68,7 +83,11 @@ class MobileAppAdGroupAdd
     }
 
     /**
-     * @see TargetCarrierEnum
+     * Get TargetCarrier
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\TargetCarrierEnum
+     *
+     * @return 'WI_FI_ONLY'|'WI_FI_AND_CELLULAR'
      */
     public function getTargetCarrier(): string
     {
@@ -76,7 +95,11 @@ class MobileAppAdGroupAdd
     }
 
     /**
-     * @see TargetCarrierEnum
+     * Set TargetCarrier
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\TargetCarrierEnum
+     *
+     * @param 'WI_FI_ONLY'|'WI_FI_AND_CELLULAR' $value
      *
      * @return $this
      */
@@ -87,12 +110,17 @@ class MobileAppAdGroupAdd
         return $this;
     }
 
+    /**
+     * Get TargetOperatingSystemVersion
+     */
     public function getTargetOperatingSystemVersion(): string
     {
         return $this->TargetOperatingSystemVersion;
     }
 
     /**
+     * Set TargetOperatingSystemVersion
+     *
      * @return $this
      */
     public function setTargetOperatingSystemVersion(string $value)

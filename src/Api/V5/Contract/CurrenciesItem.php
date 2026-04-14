@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class CurrenciesItem
 {
-    protected $Currency = null;
+    /** @var string */
+    protected $Currency;
 
-    protected $Properties = [];
+    /** @var non-empty-list<ConstantsItem> */
+    protected $Properties;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -24,12 +28,17 @@ class CurrenciesItem
         return new static();
     }
 
+    /**
+     * Get Currency
+     */
     public function getCurrency(): string
     {
         return $this->Currency;
     }
 
     /**
+     * Set Currency
+     *
      * @return $this
      */
     public function setCurrency(string $value)
@@ -40,7 +49,9 @@ class CurrenciesItem
     }
 
     /**
-     * @return ConstantsItem[]
+     * Get Properties
+     *
+     * @return non-empty-list<ConstantsItem>
      */
     public function getProperties(): array
     {
@@ -48,7 +59,9 @@ class CurrenciesItem
     }
 
     /**
-     * @param ConstantsItem[] $value
+     * Set Properties
+     *
+     * @param non-empty-list<ConstantsItem> $value
      *
      * @return $this
      */

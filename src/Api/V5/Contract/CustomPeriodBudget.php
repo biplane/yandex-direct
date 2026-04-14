@@ -12,15 +12,21 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class CustomPeriodBudget
 {
-    protected $SpendLimit = null;
+    /** @var int */
+    protected $SpendLimit;
 
-    protected $StartDate = null;
+    /** @var string */
+    protected $StartDate;
 
-    protected $EndDate = null;
+    /** @var string */
+    protected $EndDate;
 
-    protected $AutoContinue = null;
+    /** @var 'YES'|'NO' */
+    protected $AutoContinue;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -28,12 +34,17 @@ class CustomPeriodBudget
         return new static();
     }
 
+    /**
+     * Get SpendLimit
+     */
     public function getSpendLimit(): int
     {
         return $this->SpendLimit;
     }
 
     /**
+     * Set SpendLimit
+     *
      * @return $this
      */
     public function setSpendLimit(int $value)
@@ -43,12 +54,17 @@ class CustomPeriodBudget
         return $this;
     }
 
+    /**
+     * Get StartDate
+     */
     public function getStartDate(): string
     {
         return $this->StartDate;
     }
 
     /**
+     * Set StartDate
+     *
      * @return $this
      */
     public function setStartDate(string $value)
@@ -58,12 +74,17 @@ class CustomPeriodBudget
         return $this;
     }
 
+    /**
+     * Get EndDate
+     */
     public function getEndDate(): string
     {
         return $this->EndDate;
     }
 
     /**
+     * Set EndDate
+     *
      * @return $this
      */
     public function setEndDate(string $value)
@@ -74,7 +95,11 @@ class CustomPeriodBudget
     }
 
     /**
-     * @see YesNoEnum
+     * Get AutoContinue
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'
      */
     public function getAutoContinue(): string
     {
@@ -82,7 +107,11 @@ class CustomPeriodBudget
     }
 
     /**
-     * @see YesNoEnum
+     * Set AutoContinue
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO' $value
      *
      * @return $this
      */

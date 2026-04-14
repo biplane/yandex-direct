@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class TextCampaignStrategyAdd
 {
-    protected $Search = null;
+    /** @var TextCampaignSearchStrategyAdd */
+    protected $Search;
 
-    protected $Network = null;
+    /** @var TextCampaignNetworkStrategyAdd */
+    protected $Network;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -24,12 +28,17 @@ class TextCampaignStrategyAdd
         return new static();
     }
 
+    /**
+     * Get Search
+     */
     public function getSearch(): TextCampaignSearchStrategyAdd
     {
         return $this->Search;
     }
 
     /**
+     * Set Search
+     *
      * @return $this
      */
     public function setSearch(TextCampaignSearchStrategyAdd $value)
@@ -39,12 +48,17 @@ class TextCampaignStrategyAdd
         return $this;
     }
 
+    /**
+     * Get Network
+     */
     public function getNetwork(): TextCampaignNetworkStrategyAdd
     {
         return $this->Network;
     }
 
     /**
+     * Set Network
+     *
      * @return $this
      */
     public function setNetwork(TextCampaignNetworkStrategyAdd $value)

@@ -13,21 +13,23 @@ use AllowDynamicProperties;
 class AdExtensionsSelectionCriteria
 {
 //    Can be omitted.
-//    protected $Ids = null;
+//    protected $Ids;
 
 //    Can be omitted.
-//    protected $Types = null;
+//    protected $Types;
 
 //    Can be omitted.
-//    protected $States = null;
+//    protected $States;
 
 //    Can be omitted.
-//    protected $Statuses = null;
+//    protected $Statuses;
 
 //    Can be omitted.
-//    protected $ModifiedSince = null;
+//    protected $ModifiedSince;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -36,19 +38,23 @@ class AdExtensionsSelectionCriteria
     }
 
     /**
-     * @return int[]|null
+     * Get Ids
+     *
+     * @return list<int>
      */
-    public function getIds(): ?array
+    public function getIds(): array
     {
-        return $this->Ids ?? null;
+        return $this->Ids ?? [];
     }
 
     /**
-     * @param int[]|null $value
+     * Set Ids
+     *
+     * @param list<int> $value
      *
      * @return $this
      */
-    public function setIds(?array $value = null)
+    public function setIds(array $value)
     {
         $this->Ids = $value;
 
@@ -56,23 +62,27 @@ class AdExtensionsSelectionCriteria
     }
 
     /**
-     * @see AdExtensionTypeEnum
+     * Get Types
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\AdExtensionTypeEnum
+     *
+     * @return list<'CALLOUT'|'UNKNOWN'>
      */
-    public function getTypes(): ?array
+    public function getTypes(): array
     {
-        return $this->Types ?? null;
+        return $this->Types ?? [];
     }
 
     /**
-     * @see AdExtensionTypeEnum
+     * Set Types
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\AdExtensionTypeEnum
+     *
+     * @param list<'CALLOUT'|'UNKNOWN'> $value
      *
      * @return $this
      */
-    public function setTypes(?array $value = null)
+    public function setTypes(array $value)
     {
         $this->Types = $value;
 
@@ -80,23 +90,27 @@ class AdExtensionsSelectionCriteria
     }
 
     /**
-     * @see AdExtensionStateSelectionEnum
+     * Get States
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\AdExtensionStateSelectionEnum
+     *
+     * @return list<'ON'|'DELETED'>
      */
-    public function getStates(): ?array
+    public function getStates(): array
     {
-        return $this->States ?? null;
+        return $this->States ?? [];
     }
 
     /**
-     * @see AdExtensionStateSelectionEnum
+     * Set States
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\AdExtensionStateSelectionEnum
+     *
+     * @param list<'ON'|'DELETED'> $value
      *
      * @return $this
      */
-    public function setStates(?array $value = null)
+    public function setStates(array $value)
     {
         $this->States = $value;
 
@@ -104,38 +118,47 @@ class AdExtensionsSelectionCriteria
     }
 
     /**
-     * @see ExtensionStatusSelectionEnum
+     * Get Statuses
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\ExtensionStatusSelectionEnum
+     *
+     * @return list<'DRAFT'|'MODERATION'|'ACCEPTED'|'REJECTED'>
      */
-    public function getStatuses(): ?array
+    public function getStatuses(): array
     {
-        return $this->Statuses ?? null;
+        return $this->Statuses ?? [];
     }
 
     /**
-     * @see ExtensionStatusSelectionEnum
+     * Set Statuses
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\ExtensionStatusSelectionEnum
+     *
+     * @param list<'DRAFT'|'MODERATION'|'ACCEPTED'|'REJECTED'> $value
      *
      * @return $this
      */
-    public function setStatuses(?array $value = null)
+    public function setStatuses(array $value)
     {
         $this->Statuses = $value;
 
         return $this;
     }
 
+    /**
+     * Get ModifiedSince
+     */
     public function getModifiedSince(): ?string
     {
         return $this->ModifiedSince ?? null;
     }
 
     /**
+     * Set ModifiedSince
+     *
      * @return $this
      */
-    public function setModifiedSince(?string $value = null)
+    public function setModifiedSince(?string $value)
     {
         $this->ModifiedSince = $value;
 

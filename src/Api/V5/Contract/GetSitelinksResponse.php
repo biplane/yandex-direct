@@ -5,33 +5,70 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 use AllowDynamicProperties;
+use ArrayIterator;
+use Countable;
+use IteratorAggregate;
+use Override;
+
+use function count;
 
 /**
  * Auto-generated code.
+ *
+ * @implements IteratorAggregate<int, SitelinksSetGetItem>
  */
 #[AllowDynamicProperties]
-class GetSitelinksResponse extends GetResponseGeneral
+class GetSitelinksResponse extends GetResponseGeneral implements IteratorAggregate, Countable
 {
 //    Can be omitted.
-//    protected $SitelinksSets = null;
+//    protected $SitelinksSets;
 
     /**
-     * @return SitelinksSetGetItem[]|null
+     * Create a new instance.
+     *
+     * @return static
      */
-    public function getSitelinksSets(): ?array
+    public static function create()
     {
-        return $this->SitelinksSets ?? null;
+        return new static();
     }
 
     /**
-     * @param SitelinksSetGetItem[]|null $value
+     * Get SitelinksSets
+     *
+     * @return list<SitelinksSetGetItem>
+     */
+    public function getSitelinksSets(): array
+    {
+        return $this->SitelinksSets ?? [];
+    }
+
+    /**
+     * Set SitelinksSets
+     *
+     * @param list<SitelinksSetGetItem> $value
      *
      * @return $this
      */
-    public function setSitelinksSets(?array $value = null)
+    public function setSitelinksSets(array $value)
     {
         $this->SitelinksSets = $value;
 
         return $this;
+    }
+
+    #[Override]
+    public function count(): int
+    {
+        return isset($this->SitelinksSets) ? count($this->SitelinksSets) : 0;
+    }
+
+    /**
+     * @return ArrayIterator<int, SitelinksSetGetItem>
+     */
+    #[Override]
+    public function getIterator(): ArrayIterator
+    {
+        return new ArrayIterator($this->SitelinksSets ?? []);
     }
 }

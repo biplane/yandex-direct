@@ -13,35 +13,55 @@ use AllowDynamicProperties;
 class CpcVideoAdBuilderAdUpdate extends AdBuilderAdUpdateBase
 {
 //    Can be omitted.
-//    protected $Href = null;
+//    protected $Href;
 
 //    Can be omitted.
-//    protected $TurboPageId = null;
+//    protected $TurboPageId;
 
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    /**
+     * Get Href
+     */
     public function getHref(): ?string
     {
         return $this->Href ?? null;
     }
 
     /**
+     * Set Href
+     *
      * @return $this
      */
-    public function setHref(?string $value = null)
+    public function setHref(?string $value)
     {
         $this->Href = $value;
 
         return $this;
     }
 
+    /**
+     * Get TurboPageId
+     */
     public function getTurboPageId(): ?int
     {
         return $this->TurboPageId ?? null;
     }
 
     /**
+     * Set TurboPageId
+     *
      * @return $this
      */
-    public function setTurboPageId(?int $value = null)
+    public function setTurboPageId(?int $value)
     {
         $this->TurboPageId = $value;
 

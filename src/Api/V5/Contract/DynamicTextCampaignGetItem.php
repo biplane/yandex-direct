@@ -13,35 +13,50 @@ use AllowDynamicProperties;
 class DynamicTextCampaignGetItem extends DynamicTextCampaignBase
 {
 //    Can be omitted.
-//    protected $BiddingStrategy = null;
+//    protected $BiddingStrategy;
 
 //    Can be omitted.
-//    protected $Settings = null;
+//    protected $Settings;
 
 //    Can be omitted.
-//    protected $PlacementTypes = null;
+//    protected $PlacementTypes;
 
 //    Can be omitted.
-//    protected $TrackingParams = null;
+//    protected $TrackingParams;
 
 //    Can be omitted.
-//    protected $PriorityGoals = null;
+//    protected $PriorityGoals;
 
 //    Can be omitted.
-//    protected $PackageBiddingStrategy = null;
+//    protected $PackageBiddingStrategy;
 
 //    Can be omitted.
-//    protected $CanBeUsedAsPackageBiddingStrategySource = null;
+//    protected $CanBeUsedAsPackageBiddingStrategySource;
 
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    /**
+     * Get BiddingStrategy
+     */
     public function getBiddingStrategy(): ?DynamicTextCampaignStrategy
     {
         return $this->BiddingStrategy ?? null;
     }
 
     /**
+     * Set BiddingStrategy
+     *
      * @return $this
      */
-    public function setBiddingStrategy(?DynamicTextCampaignStrategy $value = null)
+    public function setBiddingStrategy(?DynamicTextCampaignStrategy $value)
     {
         $this->BiddingStrategy = $value;
 
@@ -49,79 +64,103 @@ class DynamicTextCampaignGetItem extends DynamicTextCampaignBase
     }
 
     /**
-     * @return DynamicTextCampaignSettingGet[]|null
+     * Get Settings
+     *
+     * @return list<DynamicTextCampaignSettingGet>
      */
-    public function getSettings(): ?array
+    public function getSettings(): array
     {
-        return $this->Settings ?? null;
+        return $this->Settings ?? [];
     }
 
     /**
-     * @param DynamicTextCampaignSettingGet[]|null $value
+     * Set Settings
+     *
+     * @param list<DynamicTextCampaignSettingGet> $value
      *
      * @return $this
      */
-    public function setSettings(?array $value = null)
+    public function setSettings(array $value)
     {
         $this->Settings = $value;
 
         return $this;
     }
 
+    /**
+     * Get PlacementTypes
+     */
     public function getPlacementTypes(): ?PlacementTypeArray
     {
         return $this->PlacementTypes ?? null;
     }
 
     /**
+     * Set PlacementTypes
+     *
      * @return $this
      */
-    public function setPlacementTypes(?PlacementTypeArray $value = null)
+    public function setPlacementTypes(?PlacementTypeArray $value)
     {
         $this->PlacementTypes = $value;
 
         return $this;
     }
 
+    /**
+     * Get TrackingParams
+     */
     public function getTrackingParams(): ?string
     {
         return $this->TrackingParams ?? null;
     }
 
     /**
+     * Set TrackingParams
+     *
      * @return $this
      */
-    public function setTrackingParams(?string $value = null)
+    public function setTrackingParams(?string $value)
     {
         $this->TrackingParams = $value;
 
         return $this;
     }
 
+    /**
+     * Get PriorityGoals
+     */
     public function getPriorityGoals(): ?PriorityGoalsArray
     {
         return $this->PriorityGoals ?? null;
     }
 
     /**
+     * Set PriorityGoals
+     *
      * @return $this
      */
-    public function setPriorityGoals(?PriorityGoalsArray $value = null)
+    public function setPriorityGoals(?PriorityGoalsArray $value)
     {
         $this->PriorityGoals = $value;
 
         return $this;
     }
 
+    /**
+     * Get PackageBiddingStrategy
+     */
     public function getPackageBiddingStrategy(): ?DynamicTextCampaignPackageBiddingStrategyGet
     {
         return $this->PackageBiddingStrategy ?? null;
     }
 
     /**
+     * Set PackageBiddingStrategy
+     *
      * @return $this
      */
-    public function setPackageBiddingStrategy(?DynamicTextCampaignPackageBiddingStrategyGet $value = null)
+    public function setPackageBiddingStrategy(?DynamicTextCampaignPackageBiddingStrategyGet $value)
     {
         $this->PackageBiddingStrategy = $value;
 
@@ -129,7 +168,11 @@ class DynamicTextCampaignGetItem extends DynamicTextCampaignBase
     }
 
     /**
-     * @see YesNoEnum
+     * Get CanBeUsedAsPackageBiddingStrategySource
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'|null
      */
     public function getCanBeUsedAsPackageBiddingStrategySource(): ?string
     {
@@ -137,11 +180,15 @@ class DynamicTextCampaignGetItem extends DynamicTextCampaignBase
     }
 
     /**
-     * @see YesNoEnum
+     * Set CanBeUsedAsPackageBiddingStrategySource
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO'|null $value
      *
      * @return $this
      */
-    public function setCanBeUsedAsPackageBiddingStrategySource(?string $value = null)
+    public function setCanBeUsedAsPackageBiddingStrategySource(?string $value)
     {
         $this->CanBeUsedAsPackageBiddingStrategySource = $value;
 

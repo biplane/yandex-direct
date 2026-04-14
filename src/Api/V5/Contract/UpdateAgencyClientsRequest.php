@@ -5,16 +5,27 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 use AllowDynamicProperties;
+use ArrayIterator;
+use Countable;
+use IteratorAggregate;
+use Override;
+
+use function count;
 
 /**
  * Auto-generated code.
+ *
+ * @implements IteratorAggregate<int, AgencyClientUpdateItem>
  */
 #[AllowDynamicProperties]
-class UpdateAgencyClientsRequest
+class UpdateAgencyClientsRequest implements IteratorAggregate, Countable
 {
-    protected $Clients = [];
+    /** @var non-empty-list<AgencyClientUpdateItem> */
+    protected $Clients;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -23,7 +34,9 @@ class UpdateAgencyClientsRequest
     }
 
     /**
-     * @return AgencyClientUpdateItem[]
+     * Get Clients
+     *
+     * @return non-empty-list<AgencyClientUpdateItem>
      */
     public function getClients(): array
     {
@@ -31,7 +44,9 @@ class UpdateAgencyClientsRequest
     }
 
     /**
-     * @param AgencyClientUpdateItem[] $value
+     * Set Clients
+     *
+     * @param non-empty-list<AgencyClientUpdateItem> $value
      *
      * @return $this
      */
@@ -40,5 +55,20 @@ class UpdateAgencyClientsRequest
         $this->Clients = $value;
 
         return $this;
+    }
+
+    #[Override]
+    public function count(): int
+    {
+        return count($this->Clients);
+    }
+
+    /**
+     * @return ArrayIterator<int, AgencyClientUpdateItem>
+     */
+    #[Override]
+    public function getIterator(): ArrayIterator
+    {
+        return new ArrayIterator($this->Clients);
     }
 }

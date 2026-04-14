@@ -13,24 +13,26 @@ use AllowDynamicProperties;
 class StrategyAverageCrr
 {
 //    Can be omitted.
-//    protected $Crr = null;
+//    protected $Crr;
 
 //    Can be omitted.
-//    protected $GoalId = null;
+//    protected $GoalId;
 
 //    Can be omitted.
-//    protected $WeeklySpendLimit = null;
+//    protected $WeeklySpendLimit;
 
 //    Can be omitted.
-//    protected $CustomPeriodBudget = null;
+//    protected $CustomPeriodBudget;
 
 //    Can be omitted.
-//    protected $ExplorationBudget = null;
+//    protected $ExplorationBudget;
 
 //    Can be omitted.
-//    protected $BudgetType = null;
+//    protected $BudgetType;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -38,75 +40,100 @@ class StrategyAverageCrr
         return new static();
     }
 
+    /**
+     * Get Crr
+     */
     public function getCrr(): ?int
     {
         return $this->Crr ?? null;
     }
 
     /**
+     * Set Crr
+     *
      * @return $this
      */
-    public function setCrr(?int $value = null)
+    public function setCrr(?int $value)
     {
         $this->Crr = $value;
 
         return $this;
     }
 
+    /**
+     * Get GoalId
+     */
     public function getGoalId(): ?int
     {
         return $this->GoalId ?? null;
     }
 
     /**
+     * Set GoalId
+     *
      * @return $this
      */
-    public function setGoalId(?int $value = null)
+    public function setGoalId(?int $value)
     {
         $this->GoalId = $value;
 
         return $this;
     }
 
+    /**
+     * Get WeeklySpendLimit
+     */
     public function getWeeklySpendLimit(): ?int
     {
         return $this->WeeklySpendLimit ?? null;
     }
 
     /**
+     * Set WeeklySpendLimit
+     *
      * @return $this
      */
-    public function setWeeklySpendLimit(?int $value = null)
+    public function setWeeklySpendLimit(?int $value)
     {
         $this->WeeklySpendLimit = $value;
 
         return $this;
     }
 
+    /**
+     * Get CustomPeriodBudget
+     */
     public function getCustomPeriodBudget(): ?CustomPeriodBudget
     {
         return $this->CustomPeriodBudget ?? null;
     }
 
     /**
+     * Set CustomPeriodBudget
+     *
      * @return $this
      */
-    public function setCustomPeriodBudget(?CustomPeriodBudget $value = null)
+    public function setCustomPeriodBudget(?CustomPeriodBudget $value)
     {
         $this->CustomPeriodBudget = $value;
 
         return $this;
     }
 
+    /**
+     * Get ExplorationBudget
+     */
     public function getExplorationBudget(): ?ExplorationBudget
     {
         return $this->ExplorationBudget ?? null;
     }
 
     /**
+     * Set ExplorationBudget
+     *
      * @return $this
      */
-    public function setExplorationBudget(?ExplorationBudget $value = null)
+    public function setExplorationBudget(?ExplorationBudget $value)
     {
         $this->ExplorationBudget = $value;
 
@@ -114,7 +141,11 @@ class StrategyAverageCrr
     }
 
     /**
-     * @see BudgetTypeEnum
+     * Get BudgetType
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\BudgetTypeEnum
+     *
+     * @return 'WEEKLY_BUDGET'|'CUSTOM_PERIOD_BUDGET'|null
      */
     public function getBudgetType(): ?string
     {
@@ -122,11 +153,15 @@ class StrategyAverageCrr
     }
 
     /**
-     * @see BudgetTypeEnum
+     * Set BudgetType
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\BudgetTypeEnum
+     *
+     * @param 'WEEKLY_BUDGET'|'CUSTOM_PERIOD_BUDGET'|null $value
      *
      * @return $this
      */
-    public function setBudgetType(?string $value = null)
+    public function setBudgetType(?string $value)
     {
         $this->BudgetType = $value;
 

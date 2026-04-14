@@ -13,21 +13,23 @@ use AllowDynamicProperties;
 class StrategyAverageCpcPerFilter
 {
 //    Can be omitted.
-//    protected $FilterAverageCpc = null;
+//    protected $FilterAverageCpc;
 
 //    Can be omitted.
-//    protected $WeeklySpendLimit = null;
+//    protected $WeeklySpendLimit;
 
 //    Can be omitted.
-//    protected $CustomPeriodBudget = null;
+//    protected $CustomPeriodBudget;
 
 //    Can be omitted.
-//    protected $BidCeiling = null;
+//    protected $BidCeiling;
 
 //    Can be omitted.
-//    protected $BudgetType = null;
+//    protected $BudgetType;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -35,60 +37,80 @@ class StrategyAverageCpcPerFilter
         return new static();
     }
 
+    /**
+     * Get FilterAverageCpc
+     */
     public function getFilterAverageCpc(): ?int
     {
         return $this->FilterAverageCpc ?? null;
     }
 
     /**
+     * Set FilterAverageCpc
+     *
      * @return $this
      */
-    public function setFilterAverageCpc(?int $value = null)
+    public function setFilterAverageCpc(?int $value)
     {
         $this->FilterAverageCpc = $value;
 
         return $this;
     }
 
+    /**
+     * Get WeeklySpendLimit
+     */
     public function getWeeklySpendLimit(): ?int
     {
         return $this->WeeklySpendLimit ?? null;
     }
 
     /**
+     * Set WeeklySpendLimit
+     *
      * @return $this
      */
-    public function setWeeklySpendLimit(?int $value = null)
+    public function setWeeklySpendLimit(?int $value)
     {
         $this->WeeklySpendLimit = $value;
 
         return $this;
     }
 
+    /**
+     * Get CustomPeriodBudget
+     */
     public function getCustomPeriodBudget(): ?CustomPeriodBudget
     {
         return $this->CustomPeriodBudget ?? null;
     }
 
     /**
+     * Set CustomPeriodBudget
+     *
      * @return $this
      */
-    public function setCustomPeriodBudget(?CustomPeriodBudget $value = null)
+    public function setCustomPeriodBudget(?CustomPeriodBudget $value)
     {
         $this->CustomPeriodBudget = $value;
 
         return $this;
     }
 
+    /**
+     * Get BidCeiling
+     */
     public function getBidCeiling(): ?int
     {
         return $this->BidCeiling ?? null;
     }
 
     /**
+     * Set BidCeiling
+     *
      * @return $this
      */
-    public function setBidCeiling(?int $value = null)
+    public function setBidCeiling(?int $value)
     {
         $this->BidCeiling = $value;
 
@@ -96,7 +118,11 @@ class StrategyAverageCpcPerFilter
     }
 
     /**
-     * @see BudgetTypeEnum
+     * Get BudgetType
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\BudgetTypeEnum
+     *
+     * @return 'WEEKLY_BUDGET'|'CUSTOM_PERIOD_BUDGET'|null
      */
     public function getBudgetType(): ?string
     {
@@ -104,11 +130,15 @@ class StrategyAverageCpcPerFilter
     }
 
     /**
-     * @see BudgetTypeEnum
+     * Set BudgetType
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\BudgetTypeEnum
+     *
+     * @param 'WEEKLY_BUDGET'|'CUSTOM_PERIOD_BUDGET'|null $value
      *
      * @return $this
      */
-    public function setBudgetType(?string $value = null)
+    public function setBudgetType(?string $value)
     {
         $this->BudgetType = $value;
 

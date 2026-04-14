@@ -13,17 +13,32 @@ use AllowDynamicProperties;
 class MobileAppImageAdUpdate extends ImageAdUpdateBase
 {
 //    Can be omitted.
-//    protected $TrackingUrl = null;
+//    protected $TrackingUrl;
 
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    /**
+     * Get TrackingUrl
+     */
     public function getTrackingUrl(): ?string
     {
         return $this->TrackingUrl ?? null;
     }
 
     /**
+     * Set TrackingUrl
+     *
      * @return $this
      */
-    public function setTrackingUrl(?string $value = null)
+    public function setTrackingUrl(?string $value)
     {
         $this->TrackingUrl = $value;
 

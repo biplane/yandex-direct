@@ -13,12 +13,14 @@ use AllowDynamicProperties;
 class ClientBaseItem
 {
 //    Can be omitted.
-//    protected $ClientInfo = null;
+//    protected $ClientInfo;
 
 //    Can be omitted.
-//    protected $Phone = null;
+//    protected $Phone;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -26,30 +28,40 @@ class ClientBaseItem
         return new static();
     }
 
+    /**
+     * Get ClientInfo
+     */
     public function getClientInfo(): ?string
     {
         return $this->ClientInfo ?? null;
     }
 
     /**
+     * Set ClientInfo
+     *
      * @return $this
      */
-    public function setClientInfo(?string $value = null)
+    public function setClientInfo(?string $value)
     {
         $this->ClientInfo = $value;
 
         return $this;
     }
 
+    /**
+     * Get Phone
+     */
     public function getPhone(): ?string
     {
         return $this->Phone ?? null;
     }
 
     /**
+     * Set Phone
+     *
      * @return $this
      */
-    public function setPhone(?string $value = null)
+    public function setPhone(?string $value)
     {
         $this->Phone = $value;
 

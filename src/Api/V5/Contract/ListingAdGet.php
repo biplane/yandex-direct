@@ -13,36 +13,38 @@ use AllowDynamicProperties;
 class ListingAdGet
 {
 //    Can be omitted.
-//    protected $SitelinkSetId = null;
+//    protected $SitelinkSetId;
 
 //    Can be omitted.
-//    protected $SitelinksModeration = null;
+//    protected $SitelinksModeration;
 
 //    Can be omitted.
-//    protected $AdExtensions = null;
+//    protected $AdExtensions;
 
 //    Can be omitted.
-//    protected $BusinessId = null;
+//    protected $BusinessId;
 
 //    Can be omitted.
-//    protected $FeedId = null;
+//    protected $FeedId;
 
 //    Can be omitted.
-//    protected $FeedFilterConditions = null;
+//    protected $FeedFilterConditions;
 
 //    Can be omitted.
-//    protected $FeedProcessingStatus = null;
+//    protected $FeedProcessingStatus;
 
 //    Can be omitted.
-//    protected $TitleSources = null;
+//    protected $TitleSources;
 
 //    Can be omitted.
-//    protected $TextSources = null;
+//    protected $TextSources;
 
 //    Can be omitted.
-//    protected $DefaultTexts = null;
+//    protected $DefaultTexts;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -50,30 +52,40 @@ class ListingAdGet
         return new static();
     }
 
+    /**
+     * Get SitelinkSetId
+     */
     public function getSitelinkSetId(): ?int
     {
         return $this->SitelinkSetId ?? null;
     }
 
     /**
+     * Set SitelinkSetId
+     *
      * @return $this
      */
-    public function setSitelinkSetId(?int $value = null)
+    public function setSitelinkSetId(?int $value)
     {
         $this->SitelinkSetId = $value;
 
         return $this;
     }
 
+    /**
+     * Get SitelinksModeration
+     */
     public function getSitelinksModeration(): ?ExtensionModeration
     {
         return $this->SitelinksModeration ?? null;
     }
 
     /**
+     * Set SitelinksModeration
+     *
      * @return $this
      */
-    public function setSitelinksModeration(?ExtensionModeration $value = null)
+    public function setSitelinksModeration(?ExtensionModeration $value)
     {
         $this->SitelinksModeration = $value;
 
@@ -81,49 +93,63 @@ class ListingAdGet
     }
 
     /**
-     * @return AdExtensionAdGetItem[]|null
+     * Get AdExtensions
+     *
+     * @return list<AdExtensionAdGetItem>
      */
-    public function getAdExtensions(): ?array
+    public function getAdExtensions(): array
     {
-        return $this->AdExtensions ?? null;
+        return $this->AdExtensions ?? [];
     }
 
     /**
-     * @param AdExtensionAdGetItem[]|null $value
+     * Set AdExtensions
+     *
+     * @param list<AdExtensionAdGetItem> $value
      *
      * @return $this
      */
-    public function setAdExtensions(?array $value = null)
+    public function setAdExtensions(array $value)
     {
         $this->AdExtensions = $value;
 
         return $this;
     }
 
+    /**
+     * Get BusinessId
+     */
     public function getBusinessId(): ?int
     {
         return $this->BusinessId ?? null;
     }
 
     /**
+     * Set BusinessId
+     *
      * @return $this
      */
-    public function setBusinessId(?int $value = null)
+    public function setBusinessId(?int $value)
     {
         $this->BusinessId = $value;
 
         return $this;
     }
 
+    /**
+     * Get FeedId
+     */
     public function getFeedId(): ?int
     {
         return $this->FeedId ?? null;
     }
 
     /**
+     * Set FeedId
+     *
      * @return $this
      */
-    public function setFeedId(?int $value = null)
+    public function setFeedId(?int $value)
     {
         $this->FeedId = $value;
 
@@ -131,19 +157,19 @@ class ListingAdGet
     }
 
     /**
-     * @return FeedFilterConditionItem[]|null
+     * Get FeedFilterConditions
      */
-    public function getFeedFilterConditions(): ?array
+    public function getFeedFilterConditions(): ?ArrayOfFeedFilterCondition
     {
         return $this->FeedFilterConditions ?? null;
     }
 
     /**
-     * @param FeedFilterConditionItem[]|null $value
+     * Set FeedFilterConditions
      *
      * @return $this
      */
-    public function setFeedFilterConditions(?array $value = null)
+    public function setFeedFilterConditions(?ArrayOfFeedFilterCondition $value)
     {
         $this->FeedFilterConditions = $value;
 
@@ -151,7 +177,11 @@ class ListingAdGet
     }
 
     /**
-     * @see FeedProcessingStatusEnum
+     * Get FeedProcessingStatus
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\FeedProcessingStatusEnum
+     *
+     * @return 'EMPTY_RESULT'|'PROCESSED'|'UNKNOWN'|'UNPROCESSED'|null
      */
     public function getFeedProcessingStatus(): ?string
     {
@@ -159,11 +189,15 @@ class ListingAdGet
     }
 
     /**
-     * @see FeedProcessingStatusEnum
+     * Set FeedProcessingStatus
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\FeedProcessingStatusEnum
+     *
+     * @param 'EMPTY_RESULT'|'PROCESSED'|'UNKNOWN'|'UNPROCESSED'|null $value
      *
      * @return $this
      */
-    public function setFeedProcessingStatus(?string $value = null)
+    public function setFeedProcessingStatus(?string $value)
     {
         $this->FeedProcessingStatus = $value;
 
@@ -171,7 +205,9 @@ class ListingAdGet
     }
 
     /**
-     * @return string[]|null
+     * Get TitleSources
+     *
+     * @return non-empty-list<string>|null
      */
     public function getTitleSources(): ?array
     {
@@ -179,11 +215,13 @@ class ListingAdGet
     }
 
     /**
-     * @param string[]|null $value
+     * Set TitleSources
+     *
+     * @param non-empty-list<string>|null $value
      *
      * @return $this
      */
-    public function setTitleSources(?array $value = null)
+    public function setTitleSources(?array $value)
     {
         $this->TitleSources = $value;
 
@@ -191,7 +229,9 @@ class ListingAdGet
     }
 
     /**
-     * @return string[]|null
+     * Get TextSources
+     *
+     * @return non-empty-list<string>|null
      */
     public function getTextSources(): ?array
     {
@@ -199,11 +239,13 @@ class ListingAdGet
     }
 
     /**
-     * @param string[]|null $value
+     * Set TextSources
+     *
+     * @param non-empty-list<string>|null $value
      *
      * @return $this
      */
-    public function setTextSources(?array $value = null)
+    public function setTextSources(?array $value)
     {
         $this->TextSources = $value;
 
@@ -211,19 +253,23 @@ class ListingAdGet
     }
 
     /**
-     * @return string[]|null
+     * Get DefaultTexts
+     *
+     * @return list<string>
      */
-    public function getDefaultTexts(): ?array
+    public function getDefaultTexts(): array
     {
-        return $this->DefaultTexts ?? null;
+        return $this->DefaultTexts ?? [];
     }
 
     /**
-     * @param string[]|null $value
+     * Set DefaultTexts
+     *
+     * @param list<string> $value
      *
      * @return $this
      */
-    public function setDefaultTexts(?array $value = null)
+    public function setDefaultTexts(array $value)
     {
         $this->DefaultTexts = $value;
 

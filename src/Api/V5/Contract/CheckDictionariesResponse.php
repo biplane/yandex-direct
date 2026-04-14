@@ -13,17 +13,20 @@ use AllowDynamicProperties;
 class CheckDictionariesResponse
 {
 //    Can be omitted.
-//    protected $TimeZonesChanged = null;
+//    protected $TimeZonesChanged;
 
 //    Can be omitted.
-//    protected $RegionsChanged = null;
+//    protected $RegionsChanged;
 
 //    Can be omitted.
-//    protected $InterestsChanged = null;
+//    protected $InterestsChanged;
 
-    protected $Timestamp = null;
+    /** @var string */
+    protected $Timestamp;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -32,7 +35,11 @@ class CheckDictionariesResponse
     }
 
     /**
-     * @see YesNoEnum
+     * Get TimeZonesChanged
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'|null
      */
     public function getTimeZonesChanged(): ?string
     {
@@ -40,11 +47,15 @@ class CheckDictionariesResponse
     }
 
     /**
-     * @see YesNoEnum
+     * Set TimeZonesChanged
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO'|null $value
      *
      * @return $this
      */
-    public function setTimeZonesChanged(?string $value = null)
+    public function setTimeZonesChanged(?string $value)
     {
         $this->TimeZonesChanged = $value;
 
@@ -52,7 +63,11 @@ class CheckDictionariesResponse
     }
 
     /**
-     * @see YesNoEnum
+     * Get RegionsChanged
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'|null
      */
     public function getRegionsChanged(): ?string
     {
@@ -60,11 +75,15 @@ class CheckDictionariesResponse
     }
 
     /**
-     * @see YesNoEnum
+     * Set RegionsChanged
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO'|null $value
      *
      * @return $this
      */
-    public function setRegionsChanged(?string $value = null)
+    public function setRegionsChanged(?string $value)
     {
         $this->RegionsChanged = $value;
 
@@ -72,7 +91,11 @@ class CheckDictionariesResponse
     }
 
     /**
-     * @see YesNoEnum
+     * Get InterestsChanged
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'|null
      */
     public function getInterestsChanged(): ?string
     {
@@ -80,23 +103,32 @@ class CheckDictionariesResponse
     }
 
     /**
-     * @see YesNoEnum
+     * Set InterestsChanged
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO'|null $value
      *
      * @return $this
      */
-    public function setInterestsChanged(?string $value = null)
+    public function setInterestsChanged(?string $value)
     {
         $this->InterestsChanged = $value;
 
         return $this;
     }
 
+    /**
+     * Get Timestamp
+     */
     public function getTimestamp(): string
     {
         return $this->Timestamp;
     }
 
     /**
+     * Set Timestamp
+     *
      * @return $this
      */
     public function setTimestamp(string $value)

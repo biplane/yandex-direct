@@ -13,18 +13,20 @@ use AllowDynamicProperties;
 class AdGroupBase
 {
 //    Can be omitted.
-//    protected $RegionIds = null;
+//    protected $RegionIds;
 
 //    Can be omitted.
-//    protected $NegativeKeywords = null;
+//    protected $NegativeKeywords;
 
 //    Can be omitted.
-//    protected $NegativeKeywordSharedSetIds = null;
+//    protected $NegativeKeywordSharedSetIds;
 
 //    Can be omitted.
-//    protected $TrackingParams = null;
+//    protected $TrackingParams;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -33,19 +35,23 @@ class AdGroupBase
     }
 
     /**
-     * @return int[]|null
+     * Get RegionIds
+     *
+     * @return list<int>
      */
-    public function getRegionIds(): ?array
+    public function getRegionIds(): array
     {
-        return $this->RegionIds ?? null;
+        return $this->RegionIds ?? [];
     }
 
     /**
-     * @param int[]|null $value
+     * Set RegionIds
+     *
+     * @param list<int> $value
      *
      * @return $this
      */
-    public function setRegionIds(?array $value = null)
+    public function setRegionIds(array $value)
     {
         $this->RegionIds = $value;
 
@@ -53,7 +59,9 @@ class AdGroupBase
     }
 
     /**
-     * @return string[]|null
+     * Get NegativeKeywords
+     *
+     * @return non-empty-list<string>|null
      */
     public function getNegativeKeywords(): ?array
     {
@@ -61,11 +69,13 @@ class AdGroupBase
     }
 
     /**
-     * @param string[]|null $value
+     * Set NegativeKeywords
+     *
+     * @param non-empty-list<string>|null $value
      *
      * @return $this
      */
-    public function setNegativeKeywords(?array $value = null)
+    public function setNegativeKeywords(?array $value)
     {
         $this->NegativeKeywords = $value;
 
@@ -73,7 +83,9 @@ class AdGroupBase
     }
 
     /**
-     * @return float[]|null
+     * Get NegativeKeywordSharedSetIds
+     *
+     * @return non-empty-list<int>|null
      */
     public function getNegativeKeywordSharedSetIds(): ?array
     {
@@ -81,26 +93,33 @@ class AdGroupBase
     }
 
     /**
-     * @param float[]|null $value
+     * Set NegativeKeywordSharedSetIds
+     *
+     * @param non-empty-list<int>|null $value
      *
      * @return $this
      */
-    public function setNegativeKeywordSharedSetIds(?array $value = null)
+    public function setNegativeKeywordSharedSetIds(?array $value)
     {
         $this->NegativeKeywordSharedSetIds = $value;
 
         return $this;
     }
 
+    /**
+     * Get TrackingParams
+     */
     public function getTrackingParams(): ?string
     {
         return $this->TrackingParams ?? null;
     }
 
     /**
+     * Set TrackingParams
+     *
      * @return $this
      */
-    public function setTrackingParams(?string $value = null)
+    public function setTrackingParams(?string $value)
     {
         $this->TrackingParams = $value;
 

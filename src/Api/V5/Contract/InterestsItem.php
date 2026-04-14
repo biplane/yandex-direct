@@ -12,15 +12,21 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class InterestsItem
 {
-    protected $InterestId = null;
+    /** @var int */
+    protected $InterestId;
 
+    /** @var int|null */
     protected $ParentId = null;
 
-    protected $Name = null;
+    /** @var string */
+    protected $Name;
 
-    protected $IsTargetable = null;
+    /** @var 'YES'|'NO' */
+    protected $IsTargetable;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -28,12 +34,17 @@ class InterestsItem
         return new static();
     }
 
+    /**
+     * Get InterestId
+     */
     public function getInterestId(): int
     {
         return $this->InterestId;
     }
 
     /**
+     * Set InterestId
+     *
      * @return $this
      */
     public function setInterestId(int $value)
@@ -43,27 +54,37 @@ class InterestsItem
         return $this;
     }
 
+    /**
+     * Get ParentId
+     */
     public function getParentId(): ?int
     {
         return $this->ParentId;
     }
 
     /**
+     * Set ParentId
+     *
      * @return $this
      */
-    public function setParentId(?int $value = null)
+    public function setParentId(?int $value)
     {
         $this->ParentId = $value;
 
         return $this;
     }
 
+    /**
+     * Get Name
+     */
     public function getName(): string
     {
         return $this->Name;
     }
 
     /**
+     * Set Name
+     *
      * @return $this
      */
     public function setName(string $value)
@@ -74,7 +95,11 @@ class InterestsItem
     }
 
     /**
-     * @see YesNoEnum
+     * Get IsTargetable
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'
      */
     public function getIsTargetable(): string
     {
@@ -82,7 +107,11 @@ class InterestsItem
     }
 
     /**
-     * @see YesNoEnum
+     * Set IsTargetable
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO' $value
      *
      * @return $this
      */

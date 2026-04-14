@@ -12,24 +12,27 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class GetClientsRequest
 {
-    protected $FieldNames = [];
+    /** @var non-empty-list<'AccountQuality'|'Archived'|'ClientId'|'ClientInfo'|'CountryId'|'CreatedAt'|'Currency'|'Grants'|'Bonuses'|'Login'|'Notification'|'OverdraftSumAvailable'|'Phone'|'Representatives'|'Restrictions'|'Settings'|'Type'|'VatRate'|'ForbiddenPlatform'|'AvailableCampaignTypes'|'AvailableAdGroupTypes'> */
+    protected $FieldNames;
 
 //    Can be omitted.
-//    protected $TinInfoFieldNames = null;
+//    protected $TinInfoFieldNames;
 
 //    Can be omitted.
-//    protected $OrganizationFieldNames = null;
+//    protected $OrganizationFieldNames;
 
 //    Can be omitted.
-//    protected $ContractFieldNames = null;
+//    protected $ContractFieldNames;
 
 //    Can be omitted.
-//    protected $ContragentFieldNames = null;
+//    protected $ContragentFieldNames;
 
 //    Can be omitted.
-//    protected $ContragentTinInfoFieldNames = null;
+//    protected $ContragentTinInfoFieldNames;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -38,9 +41,11 @@ class GetClientsRequest
     }
 
     /**
-     * @see ClientFieldEnum
+     * Get FieldNames
      *
-     * @return string[]
+     * @see \Biplane\YandexDirect\Api\V5\Contract\ClientFieldEnum
+     *
+     * @return non-empty-list<'AccountQuality'|'Archived'|'ClientId'|'ClientInfo'|'CountryId'|'CreatedAt'|'Currency'|'Grants'|'Bonuses'|'Login'|'Notification'|'OverdraftSumAvailable'|'Phone'|'Representatives'|'Restrictions'|'Settings'|'Type'|'VatRate'|'ForbiddenPlatform'|'AvailableCampaignTypes'|'AvailableAdGroupTypes'>
      */
     public function getFieldNames(): array
     {
@@ -48,9 +53,11 @@ class GetClientsRequest
     }
 
     /**
-     * @see ClientFieldEnum
+     * Set FieldNames
      *
-     * @param string[] $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\ClientFieldEnum
+     *
+     * @param non-empty-list<'AccountQuality'|'Archived'|'ClientId'|'ClientInfo'|'CountryId'|'CreatedAt'|'Currency'|'Grants'|'Bonuses'|'Login'|'Notification'|'OverdraftSumAvailable'|'Phone'|'Representatives'|'Restrictions'|'Settings'|'Type'|'VatRate'|'ForbiddenPlatform'|'AvailableCampaignTypes'|'AvailableAdGroupTypes'> $value
      *
      * @return $this
      */
@@ -62,23 +69,27 @@ class GetClientsRequest
     }
 
     /**
-     * @see TinInfoFieldEnum
+     * Get TinInfoFieldNames
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\TinInfoFieldEnum
+     *
+     * @return list<'TinType'|'Tin'>
      */
-    public function getTinInfoFieldNames(): ?array
+    public function getTinInfoFieldNames(): array
     {
-        return $this->TinInfoFieldNames ?? null;
+        return $this->TinInfoFieldNames ?? [];
     }
 
     /**
-     * @see TinInfoFieldEnum
+     * Set TinInfoFieldNames
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\TinInfoFieldEnum
+     *
+     * @param list<'TinType'|'Tin'> $value
      *
      * @return $this
      */
-    public function setTinInfoFieldNames(?array $value = null)
+    public function setTinInfoFieldNames(array $value)
     {
         $this->TinInfoFieldNames = $value;
 
@@ -86,23 +97,27 @@ class GetClientsRequest
     }
 
     /**
-     * @see OrgInfoFieldEnum
+     * Get OrganizationFieldNames
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\OrgInfoFieldEnum
+     *
+     * @return list<'Name'|'EpayNumber'|'RegNumber'|'OksmNumber'|'OkvedCode'>
      */
-    public function getOrganizationFieldNames(): ?array
+    public function getOrganizationFieldNames(): array
     {
-        return $this->OrganizationFieldNames ?? null;
+        return $this->OrganizationFieldNames ?? [];
     }
 
     /**
-     * @see OrgInfoFieldEnum
+     * Set OrganizationFieldNames
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\OrgInfoFieldEnum
+     *
+     * @param list<'Name'|'EpayNumber'|'RegNumber'|'OksmNumber'|'OkvedCode'> $value
      *
      * @return $this
      */
-    public function setOrganizationFieldNames(?array $value = null)
+    public function setOrganizationFieldNames(array $value)
     {
         $this->OrganizationFieldNames = $value;
 
@@ -110,23 +125,27 @@ class GetClientsRequest
     }
 
     /**
-     * @see ContractInfoFieldEnum
+     * Get ContractFieldNames
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\ContractInfoFieldEnum
+     *
+     * @return list<'Number'|'Date'|'Price'|'Type'|'ActionType'|'SubjectType'|'IsAgencyPayment'>
      */
-    public function getContractFieldNames(): ?array
+    public function getContractFieldNames(): array
     {
-        return $this->ContractFieldNames ?? null;
+        return $this->ContractFieldNames ?? [];
     }
 
     /**
-     * @see ContractInfoFieldEnum
+     * Set ContractFieldNames
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\ContractInfoFieldEnum
+     *
+     * @param list<'Number'|'Date'|'Price'|'Type'|'ActionType'|'SubjectType'|'IsAgencyPayment'> $value
      *
      * @return $this
      */
-    public function setContractFieldNames(?array $value = null)
+    public function setContractFieldNames(array $value)
     {
         $this->ContractFieldNames = $value;
 
@@ -134,23 +153,27 @@ class GetClientsRequest
     }
 
     /**
-     * @see ContragentInfoFieldEnum
+     * Get ContragentFieldNames
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\ContragentInfoFieldEnum
+     *
+     * @return list<'Name'|'Phone'|'EpayNumber'|'RegNumber'|'OksmNumber'>
      */
-    public function getContragentFieldNames(): ?array
+    public function getContragentFieldNames(): array
     {
-        return $this->ContragentFieldNames ?? null;
+        return $this->ContragentFieldNames ?? [];
     }
 
     /**
-     * @see ContragentInfoFieldEnum
+     * Set ContragentFieldNames
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\ContragentInfoFieldEnum
+     *
+     * @param list<'Name'|'Phone'|'EpayNumber'|'RegNumber'|'OksmNumber'> $value
      *
      * @return $this
      */
-    public function setContragentFieldNames(?array $value = null)
+    public function setContragentFieldNames(array $value)
     {
         $this->ContragentFieldNames = $value;
 
@@ -158,23 +181,27 @@ class GetClientsRequest
     }
 
     /**
-     * @see TinInfoFieldEnum
+     * Get ContragentTinInfoFieldNames
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\TinInfoFieldEnum
+     *
+     * @return list<'TinType'|'Tin'>
      */
-    public function getContragentTinInfoFieldNames(): ?array
+    public function getContragentTinInfoFieldNames(): array
     {
-        return $this->ContragentTinInfoFieldNames ?? null;
+        return $this->ContragentTinInfoFieldNames ?? [];
     }
 
     /**
-     * @see TinInfoFieldEnum
+     * Set ContragentTinInfoFieldNames
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\TinInfoFieldEnum
+     *
+     * @param list<'TinType'|'Tin'> $value
      *
      * @return $this
      */
-    public function setContragentTinInfoFieldNames(?array $value = null)
+    public function setContragentTinInfoFieldNames(array $value)
     {
         $this->ContragentTinInfoFieldNames = $value;
 

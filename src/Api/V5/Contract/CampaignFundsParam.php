@@ -12,16 +12,21 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class CampaignFundsParam
 {
-    protected $Sum = null;
+    /** @var int */
+    protected $Sum;
 
-    protected $Balance = null;
+    /** @var int */
+    protected $Balance;
 
-    protected $BalanceBonus = null;
+    /** @var int */
+    protected $BalanceBonus;
 
 //    Can be omitted.
-//    protected $SumAvailableForTransfer = null;
+//    protected $SumAvailableForTransfer;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -29,12 +34,17 @@ class CampaignFundsParam
         return new static();
     }
 
+    /**
+     * Get Sum
+     */
     public function getSum(): int
     {
         return $this->Sum;
     }
 
     /**
+     * Set Sum
+     *
      * @return $this
      */
     public function setSum(int $value)
@@ -44,12 +54,17 @@ class CampaignFundsParam
         return $this;
     }
 
+    /**
+     * Get Balance
+     */
     public function getBalance(): int
     {
         return $this->Balance;
     }
 
     /**
+     * Set Balance
+     *
      * @return $this
      */
     public function setBalance(int $value)
@@ -59,12 +74,17 @@ class CampaignFundsParam
         return $this;
     }
 
+    /**
+     * Get BalanceBonus
+     */
     public function getBalanceBonus(): int
     {
         return $this->BalanceBonus;
     }
 
     /**
+     * Set BalanceBonus
+     *
      * @return $this
      */
     public function setBalanceBonus(int $value)
@@ -74,15 +94,20 @@ class CampaignFundsParam
         return $this;
     }
 
+    /**
+     * Get SumAvailableForTransfer
+     */
     public function getSumAvailableForTransfer(): ?int
     {
         return $this->SumAvailableForTransfer ?? null;
     }
 
     /**
+     * Set SumAvailableForTransfer
+     *
      * @return $this
      */
-    public function setSumAvailableForTransfer(?int $value = null)
+    public function setSumAvailableForTransfer(?int $value)
     {
         $this->SumAvailableForTransfer = $value;
 

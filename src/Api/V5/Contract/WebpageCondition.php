@@ -12,13 +12,18 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class WebpageCondition
 {
-    protected $Operand = null;
+    /** @var 'DOMAIN'|'OFFERS_LIST_URL'|'PAGE_CONTENT'|'PAGE_TITLE'|'URL' */
+    protected $Operand;
 
-    protected $Operator = null;
+    /** @var 'EQUALS_ANY'|'NOT_EQUALS_ALL'|'CONTAINS_ANY'|'NOT_CONTAINS_ALL' */
+    protected $Operator;
 
-    protected $Arguments = [];
+    /** @var non-empty-list<string> */
+    protected $Arguments;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -27,7 +32,11 @@ class WebpageCondition
     }
 
     /**
-     * @see WebpageConditionOperandEnum
+     * Get Operand
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\WebpageConditionOperandEnum
+     *
+     * @return 'DOMAIN'|'OFFERS_LIST_URL'|'PAGE_CONTENT'|'PAGE_TITLE'|'URL'
      */
     public function getOperand(): string
     {
@@ -35,7 +44,11 @@ class WebpageCondition
     }
 
     /**
-     * @see WebpageConditionOperandEnum
+     * Set Operand
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\WebpageConditionOperandEnum
+     *
+     * @param 'DOMAIN'|'OFFERS_LIST_URL'|'PAGE_CONTENT'|'PAGE_TITLE'|'URL' $value
      *
      * @return $this
      */
@@ -47,7 +60,11 @@ class WebpageCondition
     }
 
     /**
-     * @see StringConditionOperatorEnum
+     * Get Operator
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\StringConditionOperatorEnum
+     *
+     * @return 'EQUALS_ANY'|'NOT_EQUALS_ALL'|'CONTAINS_ANY'|'NOT_CONTAINS_ALL'
      */
     public function getOperator(): string
     {
@@ -55,7 +72,11 @@ class WebpageCondition
     }
 
     /**
-     * @see StringConditionOperatorEnum
+     * Set Operator
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\StringConditionOperatorEnum
+     *
+     * @param 'EQUALS_ANY'|'NOT_EQUALS_ALL'|'CONTAINS_ANY'|'NOT_CONTAINS_ALL' $value
      *
      * @return $this
      */
@@ -67,7 +88,9 @@ class WebpageCondition
     }
 
     /**
-     * @return string[]
+     * Get Arguments
+     *
+     * @return non-empty-list<string>
      */
     public function getArguments(): array
     {
@@ -75,7 +98,9 @@ class WebpageCondition
     }
 
     /**
-     * @param string[] $value
+     * Set Arguments
+     *
+     * @param non-empty-list<string> $value
      *
      * @return $this
      */

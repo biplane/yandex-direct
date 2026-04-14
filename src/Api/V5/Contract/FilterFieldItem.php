@@ -12,22 +12,27 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class FilterFieldItem
 {
-    protected $Name = null;
+    /** @var string */
+    protected $Name;
 
-    protected $Type = null;
-
-//    Can be omitted.
-//    protected $EnumProps = null;
-
-//    Can be omitted.
-//    protected $NumberProps = null;
+    /** @var 'Enum'|'Number'|'String' */
+    protected $Type;
 
 //    Can be omitted.
-//    protected $StringProps = null;
+//    protected $EnumProps;
 
-    protected $Operators = [];
+//    Can be omitted.
+//    protected $NumberProps;
+
+//    Can be omitted.
+//    protected $StringProps;
+
+    /** @var non-empty-list<FilterFieldOperator> */
+    protected $Operators;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -35,12 +40,17 @@ class FilterFieldItem
         return new static();
     }
 
+    /**
+     * Get Name
+     */
     public function getName(): string
     {
         return $this->Name;
     }
 
     /**
+     * Set Name
+     *
      * @return $this
      */
     public function setName(string $value)
@@ -51,7 +61,11 @@ class FilterFieldItem
     }
 
     /**
-     * @see FilterFieldType
+     * Get Type
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\FilterFieldType
+     *
+     * @return 'Enum'|'Number'|'String'
      */
     public function getType(): string
     {
@@ -59,7 +73,11 @@ class FilterFieldItem
     }
 
     /**
-     * @see FilterFieldType
+     * Set Type
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\FilterFieldType
+     *
+     * @param 'Enum'|'Number'|'String' $value
      *
      * @return $this
      */
@@ -70,45 +88,60 @@ class FilterFieldItem
         return $this;
     }
 
+    /**
+     * Get EnumProps
+     */
     public function getEnumProps(): ?EnumFilterFieldProps
     {
         return $this->EnumProps ?? null;
     }
 
     /**
+     * Set EnumProps
+     *
      * @return $this
      */
-    public function setEnumProps(?EnumFilterFieldProps $value = null)
+    public function setEnumProps(?EnumFilterFieldProps $value)
     {
         $this->EnumProps = $value;
 
         return $this;
     }
 
+    /**
+     * Get NumberProps
+     */
     public function getNumberProps(): ?NumberFilterFieldProps
     {
         return $this->NumberProps ?? null;
     }
 
     /**
+     * Set NumberProps
+     *
      * @return $this
      */
-    public function setNumberProps(?NumberFilterFieldProps $value = null)
+    public function setNumberProps(?NumberFilterFieldProps $value)
     {
         $this->NumberProps = $value;
 
         return $this;
     }
 
+    /**
+     * Get StringProps
+     */
     public function getStringProps(): ?StringFilterFieldProps
     {
         return $this->StringProps ?? null;
     }
 
     /**
+     * Set StringProps
+     *
      * @return $this
      */
-    public function setStringProps(?StringFilterFieldProps $value = null)
+    public function setStringProps(?StringFilterFieldProps $value)
     {
         $this->StringProps = $value;
 
@@ -116,7 +149,9 @@ class FilterFieldItem
     }
 
     /**
-     * @return FilterFieldOperator[]
+     * Get Operators
+     *
+     * @return non-empty-list<FilterFieldOperator>
      */
     public function getOperators(): array
     {
@@ -124,7 +159,9 @@ class FilterFieldItem
     }
 
     /**
-     * @param FilterFieldOperator[] $value
+     * Set Operators
+     *
+     * @param non-empty-list<FilterFieldOperator> $value
      *
      * @return $this
      */

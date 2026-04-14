@@ -13,32 +13,47 @@ use AllowDynamicProperties;
 class DynamicTextCampaignUpdateItem extends DynamicTextCampaignBase
 {
 //    Can be omitted.
-//    protected $BiddingStrategy = null;
+//    protected $BiddingStrategy;
 
 //    Can be omitted.
-//    protected $Settings = null;
+//    protected $Settings;
 
 //    Can be omitted.
-//    protected $PlacementTypes = null;
+//    protected $PlacementTypes;
 
 //    Can be omitted.
-//    protected $TrackingParams = null;
+//    protected $TrackingParams;
 
 //    Can be omitted.
-//    protected $PriorityGoals = null;
+//    protected $PriorityGoals;
 
 //    Can be omitted.
-//    protected $PackageBiddingStrategy = null;
+//    protected $PackageBiddingStrategy;
 
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    /**
+     * Get BiddingStrategy
+     */
     public function getBiddingStrategy(): ?DynamicTextCampaignStrategy
     {
         return $this->BiddingStrategy ?? null;
     }
 
     /**
+     * Set BiddingStrategy
+     *
      * @return $this
      */
-    public function setBiddingStrategy(?DynamicTextCampaignStrategy $value = null)
+    public function setBiddingStrategy(?DynamicTextCampaignStrategy $value)
     {
         $this->BiddingStrategy = $value;
 
@@ -46,19 +61,23 @@ class DynamicTextCampaignUpdateItem extends DynamicTextCampaignBase
     }
 
     /**
-     * @return DynamicTextCampaignSetting[]|null
+     * Get Settings
+     *
+     * @return list<DynamicTextCampaignSetting>
      */
-    public function getSettings(): ?array
+    public function getSettings(): array
     {
-        return $this->Settings ?? null;
+        return $this->Settings ?? [];
     }
 
     /**
-     * @param DynamicTextCampaignSetting[]|null $value
+     * Set Settings
+     *
+     * @param list<DynamicTextCampaignSetting> $value
      *
      * @return $this
      */
-    public function setSettings(?array $value = null)
+    public function setSettings(array $value)
     {
         $this->Settings = $value;
 
@@ -66,64 +85,83 @@ class DynamicTextCampaignUpdateItem extends DynamicTextCampaignBase
     }
 
     /**
-     * @return PlacementType[]|null
+     * Get PlacementTypes
+     *
+     * @return list<PlacementType>
      */
-    public function getPlacementTypes(): ?array
+    public function getPlacementTypes(): array
     {
-        return $this->PlacementTypes ?? null;
+        return $this->PlacementTypes ?? [];
     }
 
     /**
-     * @param PlacementType[]|null $value
+     * Set PlacementTypes
+     *
+     * @param list<PlacementType> $value
      *
      * @return $this
      */
-    public function setPlacementTypes(?array $value = null)
+    public function setPlacementTypes(array $value)
     {
         $this->PlacementTypes = $value;
 
         return $this;
     }
 
+    /**
+     * Get TrackingParams
+     */
     public function getTrackingParams(): ?string
     {
         return $this->TrackingParams ?? null;
     }
 
     /**
+     * Set TrackingParams
+     *
      * @return $this
      */
-    public function setTrackingParams(?string $value = null)
+    public function setTrackingParams(?string $value)
     {
         $this->TrackingParams = $value;
 
         return $this;
     }
 
+    /**
+     * Get PriorityGoals
+     */
     public function getPriorityGoals(): ?PriorityGoalsUpdateSetting
     {
         return $this->PriorityGoals ?? null;
     }
 
     /**
+     * Set PriorityGoals
+     *
      * @return $this
      */
-    public function setPriorityGoals(?PriorityGoalsUpdateSetting $value = null)
+    public function setPriorityGoals(?PriorityGoalsUpdateSetting $value)
     {
         $this->PriorityGoals = $value;
 
         return $this;
     }
 
+    /**
+     * Get PackageBiddingStrategy
+     */
     public function getPackageBiddingStrategy(): ?DynamicTextCampaignPackageBiddingStrategyUpdate
     {
         return $this->PackageBiddingStrategy ?? null;
     }
 
     /**
+     * Set PackageBiddingStrategy
+     *
      * @return $this
      */
-    public function setPackageBiddingStrategy(?DynamicTextCampaignPackageBiddingStrategyUpdate $value = null)
+    public function setPackageBiddingStrategy(?DynamicTextCampaignPackageBiddingStrategyUpdate $value)
     {
         $this->PackageBiddingStrategy = $value;
 

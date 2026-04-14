@@ -13,19 +13,35 @@ use AllowDynamicProperties;
 class GetNegativeKeywordSharedSetsRequest extends GetRequestGeneral
 {
 //    Can be omitted.
-//    protected $SelectionCriteria = null;
+//    protected $SelectionCriteria;
 
-    protected $FieldNames = [];
+    /** @var non-empty-list<'Id'|'Name'|'NegativeKeywords'|'Associated'> */
+    protected $FieldNames;
 
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    /**
+     * Get SelectionCriteria
+     */
     public function getSelectionCriteria(): ?IdsCriteria
     {
         return $this->SelectionCriteria ?? null;
     }
 
     /**
+     * Set SelectionCriteria
+     *
      * @return $this
      */
-    public function setSelectionCriteria(?IdsCriteria $value = null)
+    public function setSelectionCriteria(?IdsCriteria $value)
     {
         $this->SelectionCriteria = $value;
 
@@ -33,9 +49,11 @@ class GetNegativeKeywordSharedSetsRequest extends GetRequestGeneral
     }
 
     /**
-     * @see NegativeKeywordSharedSetFieldEnum
+     * Get FieldNames
      *
-     * @return string[]
+     * @see \Biplane\YandexDirect\Api\V5\Contract\NegativeKeywordSharedSetFieldEnum
+     *
+     * @return non-empty-list<'Id'|'Name'|'NegativeKeywords'|'Associated'>
      */
     public function getFieldNames(): array
     {
@@ -43,9 +61,11 @@ class GetNegativeKeywordSharedSetsRequest extends GetRequestGeneral
     }
 
     /**
-     * @see NegativeKeywordSharedSetFieldEnum
+     * Set FieldNames
      *
-     * @param string[] $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\NegativeKeywordSharedSetFieldEnum
+     *
+     * @param non-empty-list<'Id'|'Name'|'NegativeKeywords'|'Associated'> $value
      *
      * @return $this
      */

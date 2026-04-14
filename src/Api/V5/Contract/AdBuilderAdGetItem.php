@@ -12,15 +12,18 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class AdBuilderAdGetItem
 {
-    protected $CreativeId = null;
+    /** @var int */
+    protected $CreativeId;
 
 //    Can be omitted.
-//    protected $ThumbnailUrl = null;
+//    protected $ThumbnailUrl;
 
 //    Can be omitted.
-//    protected $PreviewUrl = null;
+//    protected $PreviewUrl;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -28,12 +31,17 @@ class AdBuilderAdGetItem
         return new static();
     }
 
+    /**
+     * Get CreativeId
+     */
     public function getCreativeId(): int
     {
         return $this->CreativeId;
     }
 
     /**
+     * Set CreativeId
+     *
      * @return $this
      */
     public function setCreativeId(int $value)
@@ -43,30 +51,40 @@ class AdBuilderAdGetItem
         return $this;
     }
 
+    /**
+     * Get ThumbnailUrl
+     */
     public function getThumbnailUrl(): ?string
     {
         return $this->ThumbnailUrl ?? null;
     }
 
     /**
+     * Set ThumbnailUrl
+     *
      * @return $this
      */
-    public function setThumbnailUrl(?string $value = null)
+    public function setThumbnailUrl(?string $value)
     {
         $this->ThumbnailUrl = $value;
 
         return $this;
     }
 
+    /**
+     * Get PreviewUrl
+     */
     public function getPreviewUrl(): ?string
     {
         return $this->PreviewUrl ?? null;
     }
 
     /**
+     * Set PreviewUrl
+     *
      * @return $this
      */
-    public function setPreviewUrl(?string $value = null)
+    public function setPreviewUrl(?string $value)
     {
         $this->PreviewUrl = $value;
 

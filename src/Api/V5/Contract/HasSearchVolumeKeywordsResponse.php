@@ -5,16 +5,27 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 use AllowDynamicProperties;
+use ArrayIterator;
+use Countable;
+use IteratorAggregate;
+use Override;
+
+use function count;
 
 /**
  * Auto-generated code.
+ *
+ * @implements IteratorAggregate<int, HasSearchVolumeItem>
  */
 #[AllowDynamicProperties]
-class HasSearchVolumeKeywordsResponse
+class HasSearchVolumeKeywordsResponse implements IteratorAggregate, Countable
 {
-    protected $HasSearchVolumeResults = [];
+    /** @var non-empty-list<HasSearchVolumeItem> */
+    protected $HasSearchVolumeResults;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -23,7 +34,9 @@ class HasSearchVolumeKeywordsResponse
     }
 
     /**
-     * @return HasSearchVolumeItem[]
+     * Get HasSearchVolumeResults
+     *
+     * @return non-empty-list<HasSearchVolumeItem>
      */
     public function getHasSearchVolumeResults(): array
     {
@@ -31,7 +44,9 @@ class HasSearchVolumeKeywordsResponse
     }
 
     /**
-     * @param HasSearchVolumeItem[] $value
+     * Set HasSearchVolumeResults
+     *
+     * @param non-empty-list<HasSearchVolumeItem> $value
      *
      * @return $this
      */
@@ -40,5 +55,20 @@ class HasSearchVolumeKeywordsResponse
         $this->HasSearchVolumeResults = $value;
 
         return $this;
+    }
+
+    #[Override]
+    public function count(): int
+    {
+        return count($this->HasSearchVolumeResults);
+    }
+
+    /**
+     * @return ArrayIterator<int, HasSearchVolumeItem>
+     */
+    #[Override]
+    public function getIterator(): ArrayIterator
+    {
+        return new ArrayIterator($this->HasSearchVolumeResults);
     }
 }

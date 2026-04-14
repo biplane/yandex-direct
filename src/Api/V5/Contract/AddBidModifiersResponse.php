@@ -5,17 +5,27 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 use AllowDynamicProperties;
+use ArrayIterator;
+use Countable;
+use IteratorAggregate;
+use Override;
+
+use function count;
 
 /**
  * Auto-generated code.
+ *
+ * @implements IteratorAggregate<int, MultiIdsActionResult>
  */
 #[AllowDynamicProperties]
-class AddBidModifiersResponse
+class AddBidModifiersResponse implements IteratorAggregate, Countable
 {
 //    Can be omitted.
-//    protected $AddResults = null;
+//    protected $AddResults;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -24,22 +34,41 @@ class AddBidModifiersResponse
     }
 
     /**
-     * @return MultiIdsActionResult[]|null
+     * Get AddResults
+     *
+     * @return list<MultiIdsActionResult>
      */
-    public function getAddResults(): ?array
+    public function getAddResults(): array
     {
-        return $this->AddResults ?? null;
+        return $this->AddResults ?? [];
     }
 
     /**
-     * @param MultiIdsActionResult[]|null $value
+     * Set AddResults
+     *
+     * @param list<MultiIdsActionResult> $value
      *
      * @return $this
      */
-    public function setAddResults(?array $value = null)
+    public function setAddResults(array $value)
     {
         $this->AddResults = $value;
 
         return $this;
+    }
+
+    #[Override]
+    public function count(): int
+    {
+        return isset($this->AddResults) ? count($this->AddResults) : 0;
+    }
+
+    /**
+     * @return ArrayIterator<int, MultiIdsActionResult>
+     */
+    #[Override]
+    public function getIterator(): ArrayIterator
+    {
+        return new ArrayIterator($this->AddResults ?? []);
     }
 }
