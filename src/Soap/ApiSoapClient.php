@@ -6,7 +6,6 @@ namespace Biplane\YandexDirect\Soap;
 
 use Biplane\YandexDirect\ClientInterface;
 use Biplane\YandexDirect\Config;
-use Biplane\YandexDirect\Event\EventEmitter;
 use Biplane\YandexDirect\Exception\ApiException;
 use Biplane\YandexDirect\Log\SoapLogContextFactory;
 use Biplane\YandexDirect\Log\SoapLogger;
@@ -18,7 +17,6 @@ use ReturnTypeWillChange;
 use RuntimeException;
 use SoapClient;
 use SoapFault;
-use Throwable;
 
 use function array_map;
 use function count;
@@ -37,9 +35,6 @@ abstract class ApiSoapClient extends SoapClient implements ClientInterface
 
     /** @var int */
     private $soapCallTimeout = 180;
-
-    /** @var EventEmitter|null */
-    private $eventEmitter;
 
     /** @var Runner|null */
     private $runner = null;
@@ -91,14 +86,6 @@ abstract class ApiSoapClient extends SoapClient implements ClientInterface
         }
 
         $this->soapCallTimeout = $timeout;
-    }
-
-    /**
-     * @internal
-     */
-    public function setEventEmitter(?EventEmitter $emitter): void
-    {
-        $this->eventEmitter = $emitter;
     }
 
     /**
@@ -182,10 +169,6 @@ abstract class ApiSoapClient extends SoapClient implements ClientInterface
     #[ReturnTypeWillChange]
     public function __soapCall($name, $args, $options = null, $inputHeaders = null, &$outputHeaders = null)
     {
-        if ($this->eventEmitter !== null) {
-            $this->eventEmitter->emitBeforeRequestEvent($this, $name, $args);
-        }
-
         try {
             ini_set('default_socket_timeout', (string)$this->soapCallTimeout);
 
@@ -208,18 +191,8 @@ abstract class ApiSoapClient extends SoapClient implements ClientInterface
                     throw $this->parseSoapFault($fault) ?? $fault;
                 }
             });
-        } catch (Throwable $e) {
-            if ($this->eventEmitter !== null) {
-                $this->eventEmitter->emitFailRequestEvent($this, $name, $args, $e);
-            }
-
-            throw $e;
         } finally {
             ini_restore('default_socket_timeout');
-        }
-
-        if ($this->eventEmitter !== null) {
-            $this->eventEmitter->emitAfterRequestEvent($this, $name, $args, $response);
         }
 
         return $response;

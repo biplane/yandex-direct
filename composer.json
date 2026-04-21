@@ -21,7 +21,6 @@
     "php-http/discovery": "^1.14",
     "psr/http-client": "^1.0",
     "psr/http-factory": "^1.0",
-    "symfony/event-dispatcher": "^4.4 || ^5.0 || ^6.0 || ^7.0",
     "symfony/options-resolver": "^4.4 || ^5.0 || ^6.0 || ^7.0",
     "symfony/serializer": "^4.4 || ^5.0 || ^6.0 || ^7.0"
   },

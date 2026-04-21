@@ -2,6 +2,17 @@
 
 ## Unreleased
 
+### Removed
+
+* Удален класс `Biplane\YandexDirect\Event\FailCallEvent`
+* Удален класс `Biplane\YandexDirect\Event\PostCallEvent`
+* Удален класс `Biplane\YandexDirect\Event\PreCallEvent`
+* Удален класс `Biplane\YandexDirect\EventListener\DumpListener`
+* Удален класс `Biplane\YandexDirect\EventListener\LoggerListener`
+* Удален класс `Biplane\YandexDirect\Events`
+* Удален класс `Biplane\YandexDirect\User`
+* Удален класс `Biplane\YandexDirect\UserBuilder`
+
 ## 5.20.0 [commit logs](https://github.com/biplane/yandex-direct/compare/5.19.0...5.20.0)
 
 * [**BC break**] Полностью переработана логика генерации кода по данным WSDL.
