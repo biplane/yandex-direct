@@ -12,13 +12,18 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class AdImageRaw
 {
+    /** @var string|null */
     protected $Login = null;
 
-    protected $RawData = null;
+    /** @var string */
+    protected $RawData;
 
-    protected $Name = null;
+    /** @var string */
+    protected $Name;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -26,27 +31,37 @@ class AdImageRaw
         return new static();
     }
 
+    /**
+     * Get Login
+     */
     public function getLogin(): ?string
     {
         return $this->Login;
     }
 
     /**
+     * Set Login
+     *
      * @return $this
      */
-    public function setLogin(?string $value = null)
+    public function setLogin(?string $value)
     {
         $this->Login = $value;
 
         return $this;
     }
 
+    /**
+     * Get RawData
+     */
     public function getRawData(): string
     {
         return $this->RawData;
     }
 
     /**
+     * Set RawData
+     *
      * @return $this
      */
     public function setRawData(string $value)
@@ -56,12 +71,17 @@ class AdImageRaw
         return $this;
     }
 
+    /**
+     * Get Name
+     */
     public function getName(): string
     {
         return $this->Name;
     }
 
     /**
+     * Set Name
+     *
      * @return $this
      */
     public function setName(string $value)

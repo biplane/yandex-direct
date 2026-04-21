@@ -13,12 +13,14 @@ use AllowDynamicProperties;
 class KeywordProductivity
 {
 //    Can be omitted.
-//    protected $Value = null;
+//    protected $Value;
 
 //    Can be omitted.
-//    protected $References = null;
+//    protected $References;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -26,15 +28,20 @@ class KeywordProductivity
         return new static();
     }
 
+    /**
+     * Get Value
+     */
     public function getValue(): ?float
     {
         return $this->Value ?? null;
     }
 
     /**
+     * Set Value
+     *
      * @return $this
      */
-    public function setValue(?float $value = null)
+    public function setValue(?float $value)
     {
         $this->Value = $value;
 
@@ -42,19 +49,23 @@ class KeywordProductivity
     }
 
     /**
-     * @return int[]|null
+     * Get References
+     *
+     * @return list<int>
      */
-    public function getReferences(): ?array
+    public function getReferences(): array
     {
-        return $this->References ?? null;
+        return $this->References ?? [];
     }
 
     /**
-     * @param int[]|null $value
+     * Set References
+     *
+     * @param list<int> $value
      *
      * @return $this
      */
-    public function setReferences(?array $value = null)
+    public function setReferences(array $value)
     {
         $this->References = $value;
 

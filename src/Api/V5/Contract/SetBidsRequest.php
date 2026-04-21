@@ -5,16 +5,27 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 use AllowDynamicProperties;
+use ArrayIterator;
+use Countable;
+use IteratorAggregate;
+use Override;
+
+use function count;
 
 /**
  * Auto-generated code.
+ *
+ * @implements IteratorAggregate<int, BidSetItem>
  */
 #[AllowDynamicProperties]
-class SetBidsRequest
+class SetBidsRequest implements IteratorAggregate, Countable
 {
-    protected $Bids = null;
+    /** @var non-empty-list<BidSetItem> */
+    protected $Bids;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -23,22 +34,41 @@ class SetBidsRequest
     }
 
     /**
-     * @return BidSetItem[]|null
+     * Get Bids
+     *
+     * @return non-empty-list<BidSetItem>
      */
-    public function getBids(): ?array
+    public function getBids(): array
     {
         return $this->Bids;
     }
 
     /**
-     * @param BidSetItem[]|null $value
+     * Set Bids
+     *
+     * @param non-empty-list<BidSetItem> $value
      *
      * @return $this
      */
-    public function setBids(?array $value = null)
+    public function setBids(array $value)
     {
         $this->Bids = $value;
 
         return $this;
+    }
+
+    #[Override]
+    public function count(): int
+    {
+        return count($this->Bids);
+    }
+
+    /**
+     * @return ArrayIterator<int, BidSetItem>
+     */
+    #[Override]
+    public function getIterator(): ArrayIterator
+    {
+        return new ArrayIterator($this->Bids);
     }
 }

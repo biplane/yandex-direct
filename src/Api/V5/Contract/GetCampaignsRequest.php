@@ -13,49 +13,65 @@ use AllowDynamicProperties;
 class GetCampaignsRequest extends GetRequestGeneral
 {
 //    Can be omitted.
-//    protected $SelectionCriteria = null;
+//    protected $SelectionCriteria;
 
-    protected $FieldNames = [];
-
-//    Can be omitted.
-//    protected $TextCampaignFieldNames = null;
+    /** @var non-empty-list<'BlockedIps'|'ExcludedSites'|'Currency'|'DailyBudget'|'Notification'|'EndDate'|'Funds'|'ClientInfo'|'Id'|'Name'|'NegativeKeywords'|'RepresentedBy'|'StartDate'|'Statistics'|'State'|'Status'|'StatusPayment'|'StatusClarification'|'SourceId'|'TimeTargeting'|'TimeZone'|'Type'> */
+    protected $FieldNames;
 
 //    Can be omitted.
-//    protected $TextCampaignSearchStrategyPlacementTypesFieldNames = null;
+//    protected $TextCampaignFieldNames;
 
 //    Can be omitted.
-//    protected $MobileAppCampaignFieldNames = null;
+//    protected $TextCampaignSearchStrategyPlacementTypesFieldNames;
 
 //    Can be omitted.
-//    protected $DynamicTextCampaignFieldNames = null;
+//    protected $MobileAppCampaignFieldNames;
 
 //    Can be omitted.
-//    protected $DynamicTextCampaignSearchStrategyPlacementTypesFieldNames = null;
+//    protected $DynamicTextCampaignFieldNames;
 
 //    Can be omitted.
-//    protected $CpmBannerCampaignFieldNames = null;
+//    protected $DynamicTextCampaignSearchStrategyPlacementTypesFieldNames;
 
 //    Can be omitted.
-//    protected $SmartCampaignFieldNames = null;
+//    protected $CpmBannerCampaignFieldNames;
 
 //    Can be omitted.
-//    protected $UnifiedCampaignFieldNames = null;
+//    protected $SmartCampaignFieldNames;
 
 //    Can be omitted.
-//    protected $UnifiedCampaignSearchStrategyPlacementTypesFieldNames = null;
+//    protected $UnifiedCampaignFieldNames;
 
 //    Can be omitted.
-//    protected $UnifiedCampaignPackageBiddingStrategyPlatformsFieldNames = null;
+//    protected $UnifiedCampaignSearchStrategyPlacementTypesFieldNames;
 
+//    Can be omitted.
+//    protected $UnifiedCampaignPackageBiddingStrategyPlatformsFieldNames;
+
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    /**
+     * Get SelectionCriteria
+     */
     public function getSelectionCriteria(): ?CampaignsSelectionCriteria
     {
         return $this->SelectionCriteria ?? null;
     }
 
     /**
+     * Set SelectionCriteria
+     *
      * @return $this
      */
-    public function setSelectionCriteria(?CampaignsSelectionCriteria $value = null)
+    public function setSelectionCriteria(?CampaignsSelectionCriteria $value)
     {
         $this->SelectionCriteria = $value;
 
@@ -63,9 +79,11 @@ class GetCampaignsRequest extends GetRequestGeneral
     }
 
     /**
-     * @see CampaignFieldEnum
+     * Get FieldNames
      *
-     * @return string[]
+     * @see \Biplane\YandexDirect\Api\V5\Contract\CampaignFieldEnum
+     *
+     * @return non-empty-list<'BlockedIps'|'ExcludedSites'|'Currency'|'DailyBudget'|'Notification'|'EndDate'|'Funds'|'ClientInfo'|'Id'|'Name'|'NegativeKeywords'|'RepresentedBy'|'StartDate'|'Statistics'|'State'|'Status'|'StatusPayment'|'StatusClarification'|'SourceId'|'TimeTargeting'|'TimeZone'|'Type'>
      */
     public function getFieldNames(): array
     {
@@ -73,9 +91,11 @@ class GetCampaignsRequest extends GetRequestGeneral
     }
 
     /**
-     * @see CampaignFieldEnum
+     * Set FieldNames
      *
-     * @param string[] $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\CampaignFieldEnum
+     *
+     * @param non-empty-list<'BlockedIps'|'ExcludedSites'|'Currency'|'DailyBudget'|'Notification'|'EndDate'|'Funds'|'ClientInfo'|'Id'|'Name'|'NegativeKeywords'|'RepresentedBy'|'StartDate'|'Statistics'|'State'|'Status'|'StatusPayment'|'StatusClarification'|'SourceId'|'TimeTargeting'|'TimeZone'|'Type'> $value
      *
      * @return $this
      */
@@ -87,23 +107,27 @@ class GetCampaignsRequest extends GetRequestGeneral
     }
 
     /**
-     * @see TextCampaignFieldEnum
+     * Get TextCampaignFieldNames
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\TextCampaignFieldEnum
+     *
+     * @return list<'CounterIds'|'RelevantKeywords'|'Settings'|'BiddingStrategy'|'PriorityGoals'|'TrackingParams'|'AttributionModel'|'PackageBiddingStrategy'|'CanBeUsedAsPackageBiddingStrategySource'|'NegativeKeywordSharedSetIds'>
      */
-    public function getTextCampaignFieldNames(): ?array
+    public function getTextCampaignFieldNames(): array
     {
-        return $this->TextCampaignFieldNames ?? null;
+        return $this->TextCampaignFieldNames ?? [];
     }
 
     /**
-     * @see TextCampaignFieldEnum
+     * Set TextCampaignFieldNames
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\TextCampaignFieldEnum
+     *
+     * @param list<'CounterIds'|'RelevantKeywords'|'Settings'|'BiddingStrategy'|'PriorityGoals'|'TrackingParams'|'AttributionModel'|'PackageBiddingStrategy'|'CanBeUsedAsPackageBiddingStrategySource'|'NegativeKeywordSharedSetIds'> $value
      *
      * @return $this
      */
-    public function setTextCampaignFieldNames(?array $value = null)
+    public function setTextCampaignFieldNames(array $value)
     {
         $this->TextCampaignFieldNames = $value;
 
@@ -111,23 +135,27 @@ class GetCampaignsRequest extends GetRequestGeneral
     }
 
     /**
-     * @see TextCampaignSearchStrategyPlacementTypesFieldEnum
+     * Get TextCampaignSearchStrategyPlacementTypesFieldNames
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\TextCampaignSearchStrategyPlacementTypesFieldEnum
+     *
+     * @return list<'SearchResults'|'ProductGallery'|'DynamicPlaces'>
      */
-    public function getTextCampaignSearchStrategyPlacementTypesFieldNames(): ?array
+    public function getTextCampaignSearchStrategyPlacementTypesFieldNames(): array
     {
-        return $this->TextCampaignSearchStrategyPlacementTypesFieldNames ?? null;
+        return $this->TextCampaignSearchStrategyPlacementTypesFieldNames ?? [];
     }
 
     /**
-     * @see TextCampaignSearchStrategyPlacementTypesFieldEnum
+     * Set TextCampaignSearchStrategyPlacementTypesFieldNames
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\TextCampaignSearchStrategyPlacementTypesFieldEnum
+     *
+     * @param list<'SearchResults'|'ProductGallery'|'DynamicPlaces'> $value
      *
      * @return $this
      */
-    public function setTextCampaignSearchStrategyPlacementTypesFieldNames(?array $value = null)
+    public function setTextCampaignSearchStrategyPlacementTypesFieldNames(array $value)
     {
         $this->TextCampaignSearchStrategyPlacementTypesFieldNames = $value;
 
@@ -135,23 +163,27 @@ class GetCampaignsRequest extends GetRequestGeneral
     }
 
     /**
-     * @see MobileAppCampaignFieldEnum
+     * Get MobileAppCampaignFieldNames
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\MobileAppCampaignFieldEnum
+     *
+     * @return list<'Settings'|'BiddingStrategy'|'PackageBiddingStrategy'|'CanBeUsedAsPackageBiddingStrategySource'|'NegativeKeywordSharedSetIds'>
      */
-    public function getMobileAppCampaignFieldNames(): ?array
+    public function getMobileAppCampaignFieldNames(): array
     {
-        return $this->MobileAppCampaignFieldNames ?? null;
+        return $this->MobileAppCampaignFieldNames ?? [];
     }
 
     /**
-     * @see MobileAppCampaignFieldEnum
+     * Set MobileAppCampaignFieldNames
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\MobileAppCampaignFieldEnum
+     *
+     * @param list<'Settings'|'BiddingStrategy'|'PackageBiddingStrategy'|'CanBeUsedAsPackageBiddingStrategySource'|'NegativeKeywordSharedSetIds'> $value
      *
      * @return $this
      */
-    public function setMobileAppCampaignFieldNames(?array $value = null)
+    public function setMobileAppCampaignFieldNames(array $value)
     {
         $this->MobileAppCampaignFieldNames = $value;
 
@@ -159,23 +191,27 @@ class GetCampaignsRequest extends GetRequestGeneral
     }
 
     /**
-     * @see DynamicTextCampaignFieldEnum
+     * Get DynamicTextCampaignFieldNames
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\DynamicTextCampaignFieldEnum
+     *
+     * @return list<'PlacementTypes'|'CounterIds'|'Settings'|'BiddingStrategy'|'PriorityGoals'|'TrackingParams'|'AttributionModel'|'PackageBiddingStrategy'|'CanBeUsedAsPackageBiddingStrategySource'|'NegativeKeywordSharedSetIds'>
      */
-    public function getDynamicTextCampaignFieldNames(): ?array
+    public function getDynamicTextCampaignFieldNames(): array
     {
-        return $this->DynamicTextCampaignFieldNames ?? null;
+        return $this->DynamicTextCampaignFieldNames ?? [];
     }
 
     /**
-     * @see DynamicTextCampaignFieldEnum
+     * Set DynamicTextCampaignFieldNames
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\DynamicTextCampaignFieldEnum
+     *
+     * @param list<'PlacementTypes'|'CounterIds'|'Settings'|'BiddingStrategy'|'PriorityGoals'|'TrackingParams'|'AttributionModel'|'PackageBiddingStrategy'|'CanBeUsedAsPackageBiddingStrategySource'|'NegativeKeywordSharedSetIds'> $value
      *
      * @return $this
      */
-    public function setDynamicTextCampaignFieldNames(?array $value = null)
+    public function setDynamicTextCampaignFieldNames(array $value)
     {
         $this->DynamicTextCampaignFieldNames = $value;
 
@@ -183,23 +219,27 @@ class GetCampaignsRequest extends GetRequestGeneral
     }
 
     /**
-     * @see DynamicTextCampaignSearchStrategyPlacementTypesFieldEnum
+     * Get DynamicTextCampaignSearchStrategyPlacementTypesFieldNames
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\DynamicTextCampaignSearchStrategyPlacementTypesFieldEnum
+     *
+     * @return list<'SearchResults'|'ProductGallery'|'DynamicPlaces'>
      */
-    public function getDynamicTextCampaignSearchStrategyPlacementTypesFieldNames(): ?array
+    public function getDynamicTextCampaignSearchStrategyPlacementTypesFieldNames(): array
     {
-        return $this->DynamicTextCampaignSearchStrategyPlacementTypesFieldNames ?? null;
+        return $this->DynamicTextCampaignSearchStrategyPlacementTypesFieldNames ?? [];
     }
 
     /**
-     * @see DynamicTextCampaignSearchStrategyPlacementTypesFieldEnum
+     * Set DynamicTextCampaignSearchStrategyPlacementTypesFieldNames
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\DynamicTextCampaignSearchStrategyPlacementTypesFieldEnum
+     *
+     * @param list<'SearchResults'|'ProductGallery'|'DynamicPlaces'> $value
      *
      * @return $this
      */
-    public function setDynamicTextCampaignSearchStrategyPlacementTypesFieldNames(?array $value = null)
+    public function setDynamicTextCampaignSearchStrategyPlacementTypesFieldNames(array $value)
     {
         $this->DynamicTextCampaignSearchStrategyPlacementTypesFieldNames = $value;
 
@@ -207,23 +247,27 @@ class GetCampaignsRequest extends GetRequestGeneral
     }
 
     /**
-     * @see CpmBannerCampaignFieldEnum
+     * Get CpmBannerCampaignFieldNames
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\CpmBannerCampaignFieldEnum
+     *
+     * @return list<'CounterIds'|'FrequencyCap'|'VideoTarget'|'Settings'|'BiddingStrategy'>
      */
-    public function getCpmBannerCampaignFieldNames(): ?array
+    public function getCpmBannerCampaignFieldNames(): array
     {
-        return $this->CpmBannerCampaignFieldNames ?? null;
+        return $this->CpmBannerCampaignFieldNames ?? [];
     }
 
     /**
-     * @see CpmBannerCampaignFieldEnum
+     * Set CpmBannerCampaignFieldNames
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\CpmBannerCampaignFieldEnum
+     *
+     * @param list<'CounterIds'|'FrequencyCap'|'VideoTarget'|'Settings'|'BiddingStrategy'> $value
      *
      * @return $this
      */
-    public function setCpmBannerCampaignFieldNames(?array $value = null)
+    public function setCpmBannerCampaignFieldNames(array $value)
     {
         $this->CpmBannerCampaignFieldNames = $value;
 
@@ -231,23 +275,27 @@ class GetCampaignsRequest extends GetRequestGeneral
     }
 
     /**
-     * @see SmartCampaignFieldEnum
+     * Get SmartCampaignFieldNames
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\SmartCampaignFieldEnum
+     *
+     * @return list<'CounterId'|'Settings'|'BiddingStrategy'|'PriorityGoals'|'TrackingParams'|'AttributionModel'|'PackageBiddingStrategy'|'CanBeUsedAsPackageBiddingStrategySource'>
      */
-    public function getSmartCampaignFieldNames(): ?array
+    public function getSmartCampaignFieldNames(): array
     {
-        return $this->SmartCampaignFieldNames ?? null;
+        return $this->SmartCampaignFieldNames ?? [];
     }
 
     /**
-     * @see SmartCampaignFieldEnum
+     * Set SmartCampaignFieldNames
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\SmartCampaignFieldEnum
+     *
+     * @param list<'CounterId'|'Settings'|'BiddingStrategy'|'PriorityGoals'|'TrackingParams'|'AttributionModel'|'PackageBiddingStrategy'|'CanBeUsedAsPackageBiddingStrategySource'> $value
      *
      * @return $this
      */
-    public function setSmartCampaignFieldNames(?array $value = null)
+    public function setSmartCampaignFieldNames(array $value)
     {
         $this->SmartCampaignFieldNames = $value;
 
@@ -255,23 +303,27 @@ class GetCampaignsRequest extends GetRequestGeneral
     }
 
     /**
-     * @see UnifiedCampaignFieldEnum
+     * Get UnifiedCampaignFieldNames
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\UnifiedCampaignFieldEnum
+     *
+     * @return list<'CounterIds'|'Settings'|'BiddingStrategy'|'PriorityGoals'|'TrackingParams'|'AttributionModel'|'PackageBiddingStrategy'|'CanBeUsedAsPackageBiddingStrategySource'|'NegativeKeywordSharedSetIds'>
      */
-    public function getUnifiedCampaignFieldNames(): ?array
+    public function getUnifiedCampaignFieldNames(): array
     {
-        return $this->UnifiedCampaignFieldNames ?? null;
+        return $this->UnifiedCampaignFieldNames ?? [];
     }
 
     /**
-     * @see UnifiedCampaignFieldEnum
+     * Set UnifiedCampaignFieldNames
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\UnifiedCampaignFieldEnum
+     *
+     * @param list<'CounterIds'|'Settings'|'BiddingStrategy'|'PriorityGoals'|'TrackingParams'|'AttributionModel'|'PackageBiddingStrategy'|'CanBeUsedAsPackageBiddingStrategySource'|'NegativeKeywordSharedSetIds'> $value
      *
      * @return $this
      */
-    public function setUnifiedCampaignFieldNames(?array $value = null)
+    public function setUnifiedCampaignFieldNames(array $value)
     {
         $this->UnifiedCampaignFieldNames = $value;
 
@@ -279,23 +331,27 @@ class GetCampaignsRequest extends GetRequestGeneral
     }
 
     /**
-     * @see UnifiedCampaignSearchStrategyPlacementTypesFieldEnum
+     * Get UnifiedCampaignSearchStrategyPlacementTypesFieldNames
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\UnifiedCampaignSearchStrategyPlacementTypesFieldEnum
+     *
+     * @return list<'SearchResults'|'ProductGallery'|'DynamicPlaces'|'Maps'|'SearchOrganizationList'>
      */
-    public function getUnifiedCampaignSearchStrategyPlacementTypesFieldNames(): ?array
+    public function getUnifiedCampaignSearchStrategyPlacementTypesFieldNames(): array
     {
-        return $this->UnifiedCampaignSearchStrategyPlacementTypesFieldNames ?? null;
+        return $this->UnifiedCampaignSearchStrategyPlacementTypesFieldNames ?? [];
     }
 
     /**
-     * @see UnifiedCampaignSearchStrategyPlacementTypesFieldEnum
+     * Set UnifiedCampaignSearchStrategyPlacementTypesFieldNames
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\UnifiedCampaignSearchStrategyPlacementTypesFieldEnum
+     *
+     * @param list<'SearchResults'|'ProductGallery'|'DynamicPlaces'|'Maps'|'SearchOrganizationList'> $value
      *
      * @return $this
      */
-    public function setUnifiedCampaignSearchStrategyPlacementTypesFieldNames(?array $value = null)
+    public function setUnifiedCampaignSearchStrategyPlacementTypesFieldNames(array $value)
     {
         $this->UnifiedCampaignSearchStrategyPlacementTypesFieldNames = $value;
 
@@ -303,23 +359,27 @@ class GetCampaignsRequest extends GetRequestGeneral
     }
 
     /**
-     * @see UnifiedCampaignPackageBiddingStrategyPlatformsFieldEnum
+     * Get UnifiedCampaignPackageBiddingStrategyPlatformsFieldNames
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\UnifiedCampaignPackageBiddingStrategyPlatformsFieldEnum
+     *
+     * @return list<'SearchResult'|'ProductGallery'|'Maps'|'SearchOrganizationList'|'Network'|'DynamicPlaces'>
      */
-    public function getUnifiedCampaignPackageBiddingStrategyPlatformsFieldNames(): ?array
+    public function getUnifiedCampaignPackageBiddingStrategyPlatformsFieldNames(): array
     {
-        return $this->UnifiedCampaignPackageBiddingStrategyPlatformsFieldNames ?? null;
+        return $this->UnifiedCampaignPackageBiddingStrategyPlatformsFieldNames ?? [];
     }
 
     /**
-     * @see UnifiedCampaignPackageBiddingStrategyPlatformsFieldEnum
+     * Set UnifiedCampaignPackageBiddingStrategyPlatformsFieldNames
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\UnifiedCampaignPackageBiddingStrategyPlatformsFieldEnum
+     *
+     * @param list<'SearchResult'|'ProductGallery'|'Maps'|'SearchOrganizationList'|'Network'|'DynamicPlaces'> $value
      *
      * @return $this
      */
-    public function setUnifiedCampaignPackageBiddingStrategyPlatformsFieldNames(?array $value = null)
+    public function setUnifiedCampaignPackageBiddingStrategyPlatformsFieldNames(array $value)
     {
         $this->UnifiedCampaignPackageBiddingStrategyPlatformsFieldNames = $value;
 

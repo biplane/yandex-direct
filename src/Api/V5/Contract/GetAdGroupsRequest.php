@@ -12,40 +12,57 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class GetAdGroupsRequest extends GetRequestGeneral
 {
-    protected $SelectionCriteria = null;
+    /** @var AdGroupsSelectionCriteria */
+    protected $SelectionCriteria;
 
-    protected $FieldNames = [];
-
-//    Can be omitted.
-//    protected $MobileAppAdGroupFieldNames = null;
-
-//    Can be omitted.
-//    protected $DynamicTextAdGroupFieldNames = null;
+    /** @var non-empty-list<'Id'|'CampaignId'|'Status'|'Name'|'RegionIds'|'RestrictedRegionIds'|'NegativeKeywords'|'NegativeKeywordSharedSetIds'|'Type'|'TrackingParams'|'Subtype'|'ServingStatus'> */
+    protected $FieldNames;
 
 //    Can be omitted.
-//    protected $DynamicTextFeedAdGroupFieldNames = null;
+//    protected $MobileAppAdGroupFieldNames;
 
 //    Can be omitted.
-//    protected $AutotargetingSettingsCategoriesFieldNames = null;
+//    protected $DynamicTextAdGroupFieldNames;
 
 //    Can be omitted.
-//    protected $AutotargetingSettingsBrandOptionsFieldNames = null;
+//    protected $DynamicTextFeedAdGroupFieldNames;
 
 //    Can be omitted.
-//    protected $SmartAdGroupFieldNames = null;
+//    protected $AutotargetingSettingsCategoriesFieldNames;
 
 //    Can be omitted.
-//    protected $TextAdGroupFeedParamsFieldNames = null;
+//    protected $AutotargetingSettingsBrandOptionsFieldNames;
 
 //    Can be omitted.
-//    protected $UnifiedAdGroupFieldNames = null;
+//    protected $SmartAdGroupFieldNames;
 
+//    Can be omitted.
+//    protected $TextAdGroupFeedParamsFieldNames;
+
+//    Can be omitted.
+//    protected $UnifiedAdGroupFieldNames;
+
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    /**
+     * Get SelectionCriteria
+     */
     public function getSelectionCriteria(): AdGroupsSelectionCriteria
     {
         return $this->SelectionCriteria;
     }
 
     /**
+     * Set SelectionCriteria
+     *
      * @return $this
      */
     public function setSelectionCriteria(AdGroupsSelectionCriteria $value)
@@ -56,9 +73,11 @@ class GetAdGroupsRequest extends GetRequestGeneral
     }
 
     /**
-     * @see AdGroupFieldEnum
+     * Get FieldNames
      *
-     * @return string[]
+     * @see \Biplane\YandexDirect\Api\V5\Contract\AdGroupFieldEnum
+     *
+     * @return non-empty-list<'Id'|'CampaignId'|'Status'|'Name'|'RegionIds'|'RestrictedRegionIds'|'NegativeKeywords'|'NegativeKeywordSharedSetIds'|'Type'|'TrackingParams'|'Subtype'|'ServingStatus'>
      */
     public function getFieldNames(): array
     {
@@ -66,9 +85,11 @@ class GetAdGroupsRequest extends GetRequestGeneral
     }
 
     /**
-     * @see AdGroupFieldEnum
+     * Set FieldNames
      *
-     * @param string[] $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\AdGroupFieldEnum
+     *
+     * @param non-empty-list<'Id'|'CampaignId'|'Status'|'Name'|'RegionIds'|'RestrictedRegionIds'|'NegativeKeywords'|'NegativeKeywordSharedSetIds'|'Type'|'TrackingParams'|'Subtype'|'ServingStatus'> $value
      *
      * @return $this
      */
@@ -80,23 +101,27 @@ class GetAdGroupsRequest extends GetRequestGeneral
     }
 
     /**
-     * @see MobileAppAdGroupFieldEnum
+     * Get MobileAppAdGroupFieldNames
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\MobileAppAdGroupFieldEnum
+     *
+     * @return list<'StoreUrl'|'TargetDeviceType'|'TargetCarrier'|'TargetOperatingSystemVersion'|'AppIconModeration'|'AppAvailabilityStatus'|'AppOperatingSystemType'>
      */
-    public function getMobileAppAdGroupFieldNames(): ?array
+    public function getMobileAppAdGroupFieldNames(): array
     {
-        return $this->MobileAppAdGroupFieldNames ?? null;
+        return $this->MobileAppAdGroupFieldNames ?? [];
     }
 
     /**
-     * @see MobileAppAdGroupFieldEnum
+     * Set MobileAppAdGroupFieldNames
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\MobileAppAdGroupFieldEnum
+     *
+     * @param list<'StoreUrl'|'TargetDeviceType'|'TargetCarrier'|'TargetOperatingSystemVersion'|'AppIconModeration'|'AppAvailabilityStatus'|'AppOperatingSystemType'> $value
      *
      * @return $this
      */
-    public function setMobileAppAdGroupFieldNames(?array $value = null)
+    public function setMobileAppAdGroupFieldNames(array $value)
     {
         $this->MobileAppAdGroupFieldNames = $value;
 
@@ -104,23 +129,27 @@ class GetAdGroupsRequest extends GetRequestGeneral
     }
 
     /**
-     * @see DynamicTextAdGroupFieldEnum
+     * Get DynamicTextAdGroupFieldNames
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\DynamicTextAdGroupFieldEnum
+     *
+     * @return list<'AutotargetingCategories'|'AutotargetingSettings'|'DomainUrl'|'DomainUrlProcessingStatus'>
      */
-    public function getDynamicTextAdGroupFieldNames(): ?array
+    public function getDynamicTextAdGroupFieldNames(): array
     {
-        return $this->DynamicTextAdGroupFieldNames ?? null;
+        return $this->DynamicTextAdGroupFieldNames ?? [];
     }
 
     /**
-     * @see DynamicTextAdGroupFieldEnum
+     * Set DynamicTextAdGroupFieldNames
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\DynamicTextAdGroupFieldEnum
+     *
+     * @param list<'AutotargetingCategories'|'AutotargetingSettings'|'DomainUrl'|'DomainUrlProcessingStatus'> $value
      *
      * @return $this
      */
-    public function setDynamicTextAdGroupFieldNames(?array $value = null)
+    public function setDynamicTextAdGroupFieldNames(array $value)
     {
         $this->DynamicTextAdGroupFieldNames = $value;
 
@@ -128,23 +157,27 @@ class GetAdGroupsRequest extends GetRequestGeneral
     }
 
     /**
-     * @see DynamicTextFeedAdGroupFieldEnum
+     * Get DynamicTextFeedAdGroupFieldNames
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\DynamicTextFeedAdGroupFieldEnum
+     *
+     * @return list<'AutotargetingCategories'|'AutotargetingSettings'|'Source'|'FeedId'|'SourceType'|'SourceProcessingStatus'>
      */
-    public function getDynamicTextFeedAdGroupFieldNames(): ?array
+    public function getDynamicTextFeedAdGroupFieldNames(): array
     {
-        return $this->DynamicTextFeedAdGroupFieldNames ?? null;
+        return $this->DynamicTextFeedAdGroupFieldNames ?? [];
     }
 
     /**
-     * @see DynamicTextFeedAdGroupFieldEnum
+     * Set DynamicTextFeedAdGroupFieldNames
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\DynamicTextFeedAdGroupFieldEnum
+     *
+     * @param list<'AutotargetingCategories'|'AutotargetingSettings'|'Source'|'FeedId'|'SourceType'|'SourceProcessingStatus'> $value
      *
      * @return $this
      */
-    public function setDynamicTextFeedAdGroupFieldNames(?array $value = null)
+    public function setDynamicTextFeedAdGroupFieldNames(array $value)
     {
         $this->DynamicTextFeedAdGroupFieldNames = $value;
 
@@ -152,23 +185,27 @@ class GetAdGroupsRequest extends GetRequestGeneral
     }
 
     /**
-     * @see AutotargetingCategoriesFieldEnum
+     * Get AutotargetingSettingsCategoriesFieldNames
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategoriesFieldEnum
+     *
+     * @return list<'Exact'|'Narrow'|'Alternative'|'Accessory'|'Broader'>
      */
-    public function getAutotargetingSettingsCategoriesFieldNames(): ?array
+    public function getAutotargetingSettingsCategoriesFieldNames(): array
     {
-        return $this->AutotargetingSettingsCategoriesFieldNames ?? null;
+        return $this->AutotargetingSettingsCategoriesFieldNames ?? [];
     }
 
     /**
-     * @see AutotargetingCategoriesFieldEnum
+     * Set AutotargetingSettingsCategoriesFieldNames
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategoriesFieldEnum
+     *
+     * @param list<'Exact'|'Narrow'|'Alternative'|'Accessory'|'Broader'> $value
      *
      * @return $this
      */
-    public function setAutotargetingSettingsCategoriesFieldNames(?array $value = null)
+    public function setAutotargetingSettingsCategoriesFieldNames(array $value)
     {
         $this->AutotargetingSettingsCategoriesFieldNames = $value;
 
@@ -176,23 +213,27 @@ class GetAdGroupsRequest extends GetRequestGeneral
     }
 
     /**
-     * @see AutotargetingBrandOptionsFieldEnum
+     * Get AutotargetingSettingsBrandOptionsFieldNames
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\AutotargetingBrandOptionsFieldEnum
+     *
+     * @return list<'WithoutBrands'|'WithAdvertiserBrand'|'WithCompetitorsBrand'>
      */
-    public function getAutotargetingSettingsBrandOptionsFieldNames(): ?array
+    public function getAutotargetingSettingsBrandOptionsFieldNames(): array
     {
-        return $this->AutotargetingSettingsBrandOptionsFieldNames ?? null;
+        return $this->AutotargetingSettingsBrandOptionsFieldNames ?? [];
     }
 
     /**
-     * @see AutotargetingBrandOptionsFieldEnum
+     * Set AutotargetingSettingsBrandOptionsFieldNames
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\AutotargetingBrandOptionsFieldEnum
+     *
+     * @param list<'WithoutBrands'|'WithAdvertiserBrand'|'WithCompetitorsBrand'> $value
      *
      * @return $this
      */
-    public function setAutotargetingSettingsBrandOptionsFieldNames(?array $value = null)
+    public function setAutotargetingSettingsBrandOptionsFieldNames(array $value)
     {
         $this->AutotargetingSettingsBrandOptionsFieldNames = $value;
 
@@ -200,23 +241,27 @@ class GetAdGroupsRequest extends GetRequestGeneral
     }
 
     /**
-     * @see SmartAdGroupFieldEnum
+     * Get SmartAdGroupFieldNames
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\SmartAdGroupFieldEnum
+     *
+     * @return list<'FeedId'|'AdTitleSource'|'AdBodySource'>
      */
-    public function getSmartAdGroupFieldNames(): ?array
+    public function getSmartAdGroupFieldNames(): array
     {
-        return $this->SmartAdGroupFieldNames ?? null;
+        return $this->SmartAdGroupFieldNames ?? [];
     }
 
     /**
-     * @see SmartAdGroupFieldEnum
+     * Set SmartAdGroupFieldNames
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\SmartAdGroupFieldEnum
+     *
+     * @param list<'FeedId'|'AdTitleSource'|'AdBodySource'> $value
      *
      * @return $this
      */
-    public function setSmartAdGroupFieldNames(?array $value = null)
+    public function setSmartAdGroupFieldNames(array $value)
     {
         $this->SmartAdGroupFieldNames = $value;
 
@@ -224,23 +269,27 @@ class GetAdGroupsRequest extends GetRequestGeneral
     }
 
     /**
-     * @see TextAdGroupFeedParamsFieldEnum
+     * Get TextAdGroupFeedParamsFieldNames
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\TextAdGroupFeedParamsFieldEnum
+     *
+     * @return list<'FeedId'|'FeedCategoryIds'>
      */
-    public function getTextAdGroupFeedParamsFieldNames(): ?array
+    public function getTextAdGroupFeedParamsFieldNames(): array
     {
-        return $this->TextAdGroupFeedParamsFieldNames ?? null;
+        return $this->TextAdGroupFeedParamsFieldNames ?? [];
     }
 
     /**
-     * @see TextAdGroupFeedParamsFieldEnum
+     * Set TextAdGroupFeedParamsFieldNames
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\TextAdGroupFeedParamsFieldEnum
+     *
+     * @param list<'FeedId'|'FeedCategoryIds'> $value
      *
      * @return $this
      */
-    public function setTextAdGroupFeedParamsFieldNames(?array $value = null)
+    public function setTextAdGroupFeedParamsFieldNames(array $value)
     {
         $this->TextAdGroupFeedParamsFieldNames = $value;
 
@@ -248,23 +297,27 @@ class GetAdGroupsRequest extends GetRequestGeneral
     }
 
     /**
-     * @see UnifiedAdGroupFieldEnum
+     * Get UnifiedAdGroupFieldNames
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\UnifiedAdGroupFieldEnum
+     *
+     * @return list<'OfferRetargeting'>
      */
-    public function getUnifiedAdGroupFieldNames(): ?array
+    public function getUnifiedAdGroupFieldNames(): array
     {
-        return $this->UnifiedAdGroupFieldNames ?? null;
+        return $this->UnifiedAdGroupFieldNames ?? [];
     }
 
     /**
-     * @see UnifiedAdGroupFieldEnum
+     * Set UnifiedAdGroupFieldNames
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\UnifiedAdGroupFieldEnum
+     *
+     * @param list<'OfferRetargeting'> $value
      *
      * @return $this
      */
-    public function setUnifiedAdGroupFieldNames(?array $value = null)
+    public function setUnifiedAdGroupFieldNames(array $value)
     {
         $this->UnifiedAdGroupFieldNames = $value;
 

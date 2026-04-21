@@ -12,14 +12,30 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class DynamicTextAdGroup extends DynamicAdGroup
 {
-    protected $DomainUrl = null;
+    /** @var string */
+    protected $DomainUrl;
 
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    /**
+     * Get DomainUrl
+     */
     public function getDomainUrl(): string
     {
         return $this->DomainUrl;
     }
 
     /**
+     * Set DomainUrl
+     *
      * @return $this
      */
     public function setDomainUrl(string $value)

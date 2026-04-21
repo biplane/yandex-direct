@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class GrantItem
 {
-    protected $Privilege = null;
+    /** @var 'EDIT_CAMPAIGNS'|'IMPORT_XLS'|'TRANSFER_MONEY' */
+    protected $Privilege;
 
-    protected $Value = null;
+    /** @var 'YES'|'NO' */
+    protected $Value;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -25,7 +29,11 @@ class GrantItem
     }
 
     /**
-     * @see PrivilegeEnum
+     * Get Privilege
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\PrivilegeEnum
+     *
+     * @return 'EDIT_CAMPAIGNS'|'IMPORT_XLS'|'TRANSFER_MONEY'
      */
     public function getPrivilege(): string
     {
@@ -33,7 +41,11 @@ class GrantItem
     }
 
     /**
-     * @see PrivilegeEnum
+     * Set Privilege
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\PrivilegeEnum
+     *
+     * @param 'EDIT_CAMPAIGNS'|'IMPORT_XLS'|'TRANSFER_MONEY' $value
      *
      * @return $this
      */
@@ -45,7 +57,11 @@ class GrantItem
     }
 
     /**
-     * @see YesNoEnum
+     * Get Value
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'
      */
     public function getValue(): string
     {
@@ -53,7 +69,11 @@ class GrantItem
     }
 
     /**
-     * @see YesNoEnum
+     * Set Value
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO' $value
      *
      * @return $this
      */

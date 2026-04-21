@@ -25,150 +25,100 @@ class AgencyClients extends ApiSoapClientV5
     public const ENDPOINT = 'https://api.direct.yandex.com/v501/agencyclients?wsdl';
 
     /**
+     * Constructor
+     *
      * @param array<string, mixed> $options
      */
     public function __construct(Config $config, array $options)
     {
         $options['classmap'] = [
-            'MobileAppAdActionEnum' => 'Biplane\YandexDirect\Api\V5\Contract\MobileAppAdActionEnum',
-            'AdGroupTypesEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AdGroupTypesEnum',
-            'StringConditionOperatorEnum' => 'Biplane\YandexDirect\Api\V5\Contract\StringConditionOperatorEnum',
-            'AttributionModelEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AttributionModelEnum',
-            'ExceptionNotification' => 'Biplane\YandexDirect\Api\V5\Contract\ExceptionNotification',
-            'LimitOffset' => 'Biplane\YandexDirect\Api\V5\Contract\LimitOffset',
-            'YesNoEnum' => 'Biplane\YandexDirect\Api\V5\Contract\YesNoEnum',
-            'YesNoUnknownEnum' => 'Biplane\YandexDirect\Api\V5\Contract\YesNoUnknownEnum',
-            'VideoTargetEnum' => 'Biplane\YandexDirect\Api\V5\Contract\VideoTargetEnum',
-            'CurrencyEnum' => 'Biplane\YandexDirect\Api\V5\Contract\CurrencyEnum',
-            'ConditionTypeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\ConditionTypeEnum',
-            'AdTargetStateSelectionEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AdTargetStateSelectionEnum',
-            'AdTargetsSelectionCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\AdTargetsSelectionCriteria',
-            'StateEnum' => 'Biplane\YandexDirect\Api\V5\Contract\StateEnum',
-            'PriorityEnum' => 'Biplane\YandexDirect\Api\V5\Contract\PriorityEnum',
-            'PositionEnum' => 'Biplane\YandexDirect\Api\V5\Contract\PositionEnum',
-            'CountryCodeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\CountryCodeEnum',
-            'StatusEnum' => 'Biplane\YandexDirect\Api\V5\Contract\StatusEnum',
-            'StatusSelectionEnum' => 'Biplane\YandexDirect\Api\V5\Contract\StatusSelectionEnum',
-            'ExtensionStatusSelectionEnum' => 'Biplane\YandexDirect\Api\V5\Contract\ExtensionStatusSelectionEnum',
-            'ScopeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\ScopeEnum',
-            'AgeRangeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AgeRangeEnum',
-            'GenderEnum' => 'Biplane\YandexDirect\Api\V5\Contract\GenderEnum',
-            'MobileOperatingSystemTypeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\MobileOperatingSystemTypeEnum',
-            'LangEnum' => 'Biplane\YandexDirect\Api\V5\Contract\LangEnum',
-            'RoleEnum' => 'Biplane\YandexDirect\Api\V5\Contract\RoleEnum',
-            'RepresentativeRoleEnum' => 'Biplane\YandexDirect\Api\V5\Contract\RepresentativeRoleEnum',
-            'OperationEnum' => 'Biplane\YandexDirect\Api\V5\Contract\OperationEnum',
-            'ServingStatusEnum' => 'Biplane\YandexDirect\Api\V5\Contract\ServingStatusEnum',
-            'SerpLayoutEnum' => 'Biplane\YandexDirect\Api\V5\Contract\SerpLayoutEnum',
-            'Statistics' => 'Biplane\YandexDirect\Api\V5\Contract\Statistics',
-            'IncomeGradeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\IncomeGradeEnum',
-            'IdsCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\IdsCriteria',
+            'GetRequest' => 'Biplane\YandexDirect\Api\V5\Contract\GetAgencyClientsRequest',
+            'AgencyClientsSelectionCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\AgencyClientsSelectionCriteria',
             'GetRequestGeneral' => 'Biplane\YandexDirect\Api\V5\Contract\GetRequestGeneral',
-            'GetResponseGeneral' => 'Biplane\YandexDirect\Api\V5\Contract\GetResponseGeneral',
-            'ApiExceptionMessage' => 'Biplane\YandexDirect\Api\V5\Contract\ApiExceptionMessage',
-            'ActionResultBase' => 'Biplane\YandexDirect\Api\V5\Contract\ActionResultBase',
-            'ActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\ActionResult',
-            'SetBidsActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\SetBidsActionResult',
-            'MultiIdsActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\MultiIdsActionResult',
-            'ClientsActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\ClientsActionResult',
-            'ExtensionModeration' => 'Biplane\YandexDirect\Api\V5\Contract\ExtensionModeration',
-            'SortOrderEnum' => 'Biplane\YandexDirect\Api\V5\Contract\SortOrderEnum',
-            'AutotargetingCategoriesEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategoriesEnum',
-            'AutotargetingCategory' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategory',
-            'AutotargetingCategoryArray' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategoryArray',
-            'AutotargetingBrandOptionsEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingBrandOptionsEnum',
-            'AutotargetingBrandOption' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingBrandOption',
-            'AutotargetingBrandOptionArray' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingBrandOptionArray',
-            'AutotargetingCategories' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategories',
-            'AutotargetingBrandOptions' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingBrandOptions',
-            'AutotargetingSettings' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingSettings',
-            'AutotargetingCategoriesFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategoriesFieldEnum',
-            'AutotargetingBrandOptionsFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingBrandOptionsFieldEnum',
-            'ClientRestrictionEnum' => 'Biplane\YandexDirect\Api\V5\Contract\ClientRestrictionEnum',
-            'ClientSettingGetEnum' => 'Biplane\YandexDirect\Api\V5\Contract\ClientSettingGetEnum',
-            'AvailableCampaignTypeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AvailableCampaignTypeEnum',
-            'AvailableAdGroupTypeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AvailableAdGroupTypeEnum',
-            'ClientSettingAddEnum' => 'Biplane\YandexDirect\Api\V5\Contract\ClientSettingAddEnum',
-            'ClientSettingUpdateEnum' => 'Biplane\YandexDirect\Api\V5\Contract\ClientSettingUpdateEnum',
-            'PrivilegeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\PrivilegeEnum',
-            'ForbiddenPlatformEnum' => 'Biplane\YandexDirect\Api\V5\Contract\ForbiddenPlatformEnum',
-            'TinTypeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\TinTypeEnum',
-            'TinInfoFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\TinInfoFieldEnum',
-            'TinInfoGet' => 'Biplane\YandexDirect\Api\V5\Contract\TinInfoGet',
-            'TinInfoAdd' => 'Biplane\YandexDirect\Api\V5\Contract\TinInfoAdd',
-            'TinInfoUpdate' => 'Biplane\YandexDirect\Api\V5\Contract\TinInfoUpdate',
-            'OrgInfoFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\OrgInfoFieldEnum',
-            'ContragentInfoFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\ContragentInfoFieldEnum',
-            'ContractInfoFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\ContractInfoFieldEnum',
-            'ContractTypeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\ContractTypeEnum',
-            'ContractActionTypeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\ContractActionTypeEnum',
-            'ContractSubjectTypeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\ContractSubjectTypeEnum',
-            'OrgInfo' => 'Biplane\YandexDirect\Api\V5\Contract\OrgInfo',
-            'ContractBaseInfo' => 'Biplane\YandexDirect\Api\V5\Contract\ContractBaseInfo',
-            'ContractInfoGet' => 'Biplane\YandexDirect\Api\V5\Contract\ContractInfoGet',
-            'ContractInfoUpdate' => 'Biplane\YandexDirect\Api\V5\Contract\ContractInfoUpdate',
-            'ContractPrice' => 'Biplane\YandexDirect\Api\V5\Contract\ContractPrice',
-            'ContragentBaseInfo' => 'Biplane\YandexDirect\Api\V5\Contract\ContragentBaseInfo',
-            'ContragentInfoGet' => 'Biplane\YandexDirect\Api\V5\Contract\ContragentInfoGet',
-            'ContragentInfoUpdate' => 'Biplane\YandexDirect\Api\V5\Contract\ContragentInfoUpdate',
-            'ErirAttributesGet' => 'Biplane\YandexDirect\Api\V5\Contract\ErirAttributesGet',
-            'ErirAttributesUpdate' => 'Biplane\YandexDirect\Api\V5\Contract\ErirAttributesUpdate',
-            'EmailSubscriptionEnum' => 'Biplane\YandexDirect\Api\V5\Contract\EmailSubscriptionEnum',
-            'EmailSubscriptionItem' => 'Biplane\YandexDirect\Api\V5\Contract\EmailSubscriptionItem',
-            'Notification' => 'Biplane\YandexDirect\Api\V5\Contract\ClientNotification',
-            'NotificationAdd' => 'Biplane\YandexDirect\Api\V5\Contract\ClientNotificationAdd',
-            'NotificationUpdate' => 'Biplane\YandexDirect\Api\V5\Contract\NotificationUpdate',
+            'LimitOffset' => 'Biplane\YandexDirect\Api\V5\Contract\LimitOffset',
+            'GetResponse' => 'Biplane\YandexDirect\Api\V5\Contract\GetAgencyClientsResponse',
+            'ClientGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\ClientGetItem',
+            'GrantGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\GrantGetItem',
+            'GrantItem' => 'Biplane\YandexDirect\Api\V5\Contract\GrantItem',
+            'BonusesItem' => 'Biplane\YandexDirect\Api\V5\Contract\BonusesItem',
             'NotificationGet' => 'Biplane\YandexDirect\Api\V5\Contract\ClientNotificationGet',
+            'Notification' => 'Biplane\YandexDirect\Api\V5\Contract\ClientNotification',
+            'EmailSubscriptionItem' => 'Biplane\YandexDirect\Api\V5\Contract\EmailSubscriptionItem',
+            'Representative' => 'Biplane\YandexDirect\Api\V5\Contract\Representative',
             'ClientRestrictionItem' => 'Biplane\YandexDirect\Api\V5\Contract\ClientRestrictionItem',
             'ClientSettingGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\ClientSettingGetItem',
-            'ClientSettingAddItem' => 'Biplane\YandexDirect\Api\V5\Contract\ClientSettingAddItem',
-            'ClientSettingUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\ClientSettingUpdateItem',
-            'GrantItem' => 'Biplane\YandexDirect\Api\V5\Contract\GrantItem',
-            'GrantGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\GrantGetItem',
-            'BonusesItem' => 'Biplane\YandexDirect\Api\V5\Contract\BonusesItem',
-            'Representative' => 'Biplane\YandexDirect\Api\V5\Contract\Representative',
+            'TinInfoGet' => 'Biplane\YandexDirect\Api\V5\Contract\TinInfoGet',
+            'ErirAttributesGet' => 'Biplane\YandexDirect\Api\V5\Contract\ErirAttributesGet',
+            'OrgInfo' => 'Biplane\YandexDirect\Api\V5\Contract\OrgInfo',
+            'ContractInfoGet' => 'Biplane\YandexDirect\Api\V5\Contract\ContractInfoGet',
+            'ContractPrice' => 'Biplane\YandexDirect\Api\V5\Contract\ContractPrice',
+            'ContractBaseInfo' => 'Biplane\YandexDirect\Api\V5\Contract\ContractBaseInfo',
+            'ContragentInfoGet' => 'Biplane\YandexDirect\Api\V5\Contract\ContragentInfoGet',
+            'ContragentBaseInfo' => 'Biplane\YandexDirect\Api\V5\Contract\ContragentBaseInfo',
             'ClientBaseItem' => 'Biplane\YandexDirect\Api\V5\Contract\ClientBaseItem',
-            'ClientGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\ClientGetItem',
-            'ClientUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\ClientUpdateItem',
-            'AgencyClientFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AgencyClientFieldEnum',
-            'AgencyClientsSelectionCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\AgencyClientsSelectionCriteria',
-            'AgencyClientUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\AgencyClientUpdateItem',
-            'SendInviteTo' => 'Biplane\YandexDirect\Api\V5\Contract\SendInviteTo',
-            'GetRequest' => 'Biplane\YandexDirect\Api\V5\Contract\GetAgencyClientsRequest',
-            'GetResponse' => 'Biplane\YandexDirect\Api\V5\Contract\GetAgencyClientsResponse',
+            'GetResponseGeneral' => 'Biplane\YandexDirect\Api\V5\Contract\GetResponseGeneral',
             'AddRequest' => 'Biplane\YandexDirect\Api\V5\Contract\AddAgencyClientsRequest',
+            'NotificationAdd' => 'Biplane\YandexDirect\Api\V5\Contract\ClientNotificationAdd',
+            'ClientSettingAddItem' => 'Biplane\YandexDirect\Api\V5\Contract\ClientSettingAddItem',
+            'TinInfoAdd' => 'Biplane\YandexDirect\Api\V5\Contract\TinInfoAdd',
             'AddResponse' => 'Biplane\YandexDirect\Api\V5\Contract\AddAgencyClientsResponse',
+            'ActionResultBase' => 'Biplane\YandexDirect\Api\V5\Contract\ActionResultBase',
+            'ExceptionNotification' => 'Biplane\YandexDirect\Api\V5\Contract\ExceptionNotification',
             'AddPassportOrganizationRequest' => 'Biplane\YandexDirect\Api\V5\Contract\AddPassportOrganizationRequest',
             'AddPassportOrganizationResponse' => 'Biplane\YandexDirect\Api\V5\Contract\AddPassportOrganizationResponse',
             'AddPassportOrganizationMemberRequest' => 'Biplane\YandexDirect\Api\V5\Contract\AddPassportOrganizationMemberRequest',
+            'SendInviteTo' => 'Biplane\YandexDirect\Api\V5\Contract\SendInviteTo',
             'AddPassportOrganizationMemberResponse' => 'Biplane\YandexDirect\Api\V5\Contract\AddPassportOrganizationMemberResponse',
             'UpdateRequest' => 'Biplane\YandexDirect\Api\V5\Contract\UpdateAgencyClientsRequest',
+            'AgencyClientUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\AgencyClientUpdateItem',
+            'ClientUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\ClientUpdateItem',
+            'NotificationUpdate' => 'Biplane\YandexDirect\Api\V5\Contract\ClientNotificationUpdate',
+            'ClientSettingUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\ClientSettingUpdateItem',
+            'TinInfoUpdate' => 'Biplane\YandexDirect\Api\V5\Contract\TinInfoUpdate',
+            'ErirAttributesUpdate' => 'Biplane\YandexDirect\Api\V5\Contract\ErirAttributesUpdate',
+            'ContractInfoUpdate' => 'Biplane\YandexDirect\Api\V5\Contract\ContractInfoUpdate',
+            'ContragentInfoUpdate' => 'Biplane\YandexDirect\Api\V5\Contract\ContragentInfoUpdate',
             'UpdateResponse' => 'Biplane\YandexDirect\Api\V5\Contract\UpdateAgencyClientsResponse',
+            'ClientsActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\ClientsActionResult',
         ];
-
         parent::__construct(self::ENDPOINT, $config, $options);
     }
 
+    /**
+     * Calls operation: get
+     */
     public function get(GetAgencyClientsRequest $parameters): GetAgencyClientsResponse
     {
         return $this->__soapCall('get', [$parameters]);
     }
 
+    /**
+     * Calls operation: add
+     */
     public function add(AddAgencyClientsRequest $parameters): AddAgencyClientsResponse
     {
         return $this->__soapCall('add', [$parameters]);
     }
 
+    /**
+     * Calls operation: addPassportOrganization
+     */
     public function addPassportOrganization(AddPassportOrganizationRequest $parameters): AddPassportOrganizationResponse
     {
         return $this->__soapCall('addPassportOrganization', [$parameters]);
     }
 
+    /**
+     * Calls operation: addPassportOrganizationMember
+     */
     public function addPassportOrganizationMember(AddPassportOrganizationMemberRequest $parameters): AddPassportOrganizationMemberResponse
     {
         return $this->__soapCall('addPassportOrganizationMember', [$parameters]);
     }
 
+    /**
+     * Calls operation: update
+     */
     public function update(UpdateAgencyClientsRequest $parameters): UpdateAgencyClientsResponse
     {
         return $this->__soapCall('update', [$parameters]);

@@ -12,22 +12,39 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class GetKeywordBidsRequest extends GetRequestGeneral
 {
-    protected $SelectionCriteria = null;
+    /** @var KeywordBidsSelectionCriteria */
+    protected $SelectionCriteria;
 
-    protected $FieldNames = [];
+    /** @var non-empty-list<'KeywordId'|'AdGroupId'|'CampaignId'|'ServingStatus'|'StrategyPriority'> */
+    protected $FieldNames;
 
 //    Can be omitted.
-//    protected $SearchFieldNames = null;
+//    protected $SearchFieldNames;
 
 //    Can be omitted.
-//    protected $NetworkFieldNames = null;
+//    protected $NetworkFieldNames;
 
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    /**
+     * Get SelectionCriteria
+     */
     public function getSelectionCriteria(): KeywordBidsSelectionCriteria
     {
         return $this->SelectionCriteria;
     }
 
     /**
+     * Set SelectionCriteria
+     *
      * @return $this
      */
     public function setSelectionCriteria(KeywordBidsSelectionCriteria $value)
@@ -38,9 +55,11 @@ class GetKeywordBidsRequest extends GetRequestGeneral
     }
 
     /**
-     * @see KeywordBidFieldEnum
+     * Get FieldNames
      *
-     * @return string[]
+     * @see \Biplane\YandexDirect\Api\V5\Contract\KeywordBidFieldEnum
+     *
+     * @return non-empty-list<'KeywordId'|'AdGroupId'|'CampaignId'|'ServingStatus'|'StrategyPriority'>
      */
     public function getFieldNames(): array
     {
@@ -48,9 +67,11 @@ class GetKeywordBidsRequest extends GetRequestGeneral
     }
 
     /**
-     * @see KeywordBidFieldEnum
+     * Set FieldNames
      *
-     * @param string[] $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\KeywordBidFieldEnum
+     *
+     * @param non-empty-list<'KeywordId'|'AdGroupId'|'CampaignId'|'ServingStatus'|'StrategyPriority'> $value
      *
      * @return $this
      */
@@ -62,23 +83,27 @@ class GetKeywordBidsRequest extends GetRequestGeneral
     }
 
     /**
-     * @see KeywordBidSearchFieldEnum
+     * Get SearchFieldNames
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\KeywordBidSearchFieldEnum
+     *
+     * @return list<'Bid'|'AutotargetingSearchBidIsAuto'|'AuctionBids'>
      */
-    public function getSearchFieldNames(): ?array
+    public function getSearchFieldNames(): array
     {
-        return $this->SearchFieldNames ?? null;
+        return $this->SearchFieldNames ?? [];
     }
 
     /**
-     * @see KeywordBidSearchFieldEnum
+     * Set SearchFieldNames
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\KeywordBidSearchFieldEnum
+     *
+     * @param list<'Bid'|'AutotargetingSearchBidIsAuto'|'AuctionBids'> $value
      *
      * @return $this
      */
-    public function setSearchFieldNames(?array $value = null)
+    public function setSearchFieldNames(array $value)
     {
         $this->SearchFieldNames = $value;
 
@@ -86,23 +111,27 @@ class GetKeywordBidsRequest extends GetRequestGeneral
     }
 
     /**
-     * @see KeywordBidNetworkFieldEnum
+     * Get NetworkFieldNames
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\KeywordBidNetworkFieldEnum
+     *
+     * @return list<'Bid'|'Coverage'>
      */
-    public function getNetworkFieldNames(): ?array
+    public function getNetworkFieldNames(): array
     {
-        return $this->NetworkFieldNames ?? null;
+        return $this->NetworkFieldNames ?? [];
     }
 
     /**
-     * @see KeywordBidNetworkFieldEnum
+     * Set NetworkFieldNames
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\KeywordBidNetworkFieldEnum
+     *
+     * @param list<'Bid'|'Coverage'> $value
      *
      * @return $this
      */
-    public function setNetworkFieldNames(?array $value = null)
+    public function setNetworkFieldNames(array $value)
     {
         $this->NetworkFieldNames = $value;
 

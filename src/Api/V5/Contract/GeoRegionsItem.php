@@ -12,15 +12,21 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class GeoRegionsItem
 {
-    protected $GeoRegionId = null;
+    /** @var int */
+    protected $GeoRegionId;
 
-    protected $GeoRegionName = null;
+    /** @var string */
+    protected $GeoRegionName;
 
-    protected $GeoRegionType = null;
+    /** @var string */
+    protected $GeoRegionType;
 
+    /** @var int|null */
     protected $ParentId = null;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -28,12 +34,17 @@ class GeoRegionsItem
         return new static();
     }
 
+    /**
+     * Get GeoRegionId
+     */
     public function getGeoRegionId(): int
     {
         return $this->GeoRegionId;
     }
 
     /**
+     * Set GeoRegionId
+     *
      * @return $this
      */
     public function setGeoRegionId(int $value)
@@ -43,12 +54,17 @@ class GeoRegionsItem
         return $this;
     }
 
+    /**
+     * Get GeoRegionName
+     */
     public function getGeoRegionName(): string
     {
         return $this->GeoRegionName;
     }
 
     /**
+     * Set GeoRegionName
+     *
      * @return $this
      */
     public function setGeoRegionName(string $value)
@@ -58,12 +74,17 @@ class GeoRegionsItem
         return $this;
     }
 
+    /**
+     * Get GeoRegionType
+     */
     public function getGeoRegionType(): string
     {
         return $this->GeoRegionType;
     }
 
     /**
+     * Set GeoRegionType
+     *
      * @return $this
      */
     public function setGeoRegionType(string $value)
@@ -73,15 +94,20 @@ class GeoRegionsItem
         return $this;
     }
 
+    /**
+     * Get ParentId
+     */
     public function getParentId(): ?int
     {
         return $this->ParentId;
     }
 
     /**
+     * Set ParentId
+     *
      * @return $this
      */
-    public function setParentId(?int $value = null)
+    public function setParentId(?int $value)
     {
         $this->ParentId = $value;
 

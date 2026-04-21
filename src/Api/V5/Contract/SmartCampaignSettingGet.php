@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class SmartCampaignSettingGet
 {
-    protected $Option = null;
+    /** @var 'ADD_TO_FAVORITES'|'ENABLE_AREA_OF_INTEREST_TARGETING'|'ENABLE_CURRENT_AREA_TARGETING'|'ENABLE_REGULAR_AREA_TARGETING'|'REQUIRE_SERVICING'|'SHARED_ACCOUNT_ENABLED'|'DAILY_BUDGET_ALLOWED' */
+    protected $Option;
 
-    protected $Value = null;
+    /** @var 'YES'|'NO' */
+    protected $Value;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -25,7 +29,11 @@ class SmartCampaignSettingGet
     }
 
     /**
-     * @see SmartCampaignSettingsGetEnum
+     * Get Option
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\SmartCampaignSettingsGetEnum
+     *
+     * @return 'ADD_TO_FAVORITES'|'ENABLE_AREA_OF_INTEREST_TARGETING'|'ENABLE_CURRENT_AREA_TARGETING'|'ENABLE_REGULAR_AREA_TARGETING'|'REQUIRE_SERVICING'|'SHARED_ACCOUNT_ENABLED'|'DAILY_BUDGET_ALLOWED'
      */
     public function getOption(): string
     {
@@ -33,7 +41,11 @@ class SmartCampaignSettingGet
     }
 
     /**
-     * @see SmartCampaignSettingsGetEnum
+     * Set Option
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\SmartCampaignSettingsGetEnum
+     *
+     * @param 'ADD_TO_FAVORITES'|'ENABLE_AREA_OF_INTEREST_TARGETING'|'ENABLE_CURRENT_AREA_TARGETING'|'ENABLE_REGULAR_AREA_TARGETING'|'REQUIRE_SERVICING'|'SHARED_ACCOUNT_ENABLED'|'DAILY_BUDGET_ALLOWED' $value
      *
      * @return $this
      */
@@ -45,7 +57,11 @@ class SmartCampaignSettingGet
     }
 
     /**
-     * @see YesNoEnum
+     * Get Value
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'
      */
     public function getValue(): string
     {
@@ -53,7 +69,11 @@ class SmartCampaignSettingGet
     }
 
     /**
-     * @see YesNoEnum
+     * Set Value
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO' $value
      *
      * @return $this
      */

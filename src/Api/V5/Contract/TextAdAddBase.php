@@ -13,18 +13,20 @@ use AllowDynamicProperties;
 class TextAdAddBase
 {
 //    Can be omitted.
-//    protected $VCardId = null;
+//    protected $VCardId;
 
 //    Can be omitted.
-//    protected $AdImageHash = null;
+//    protected $AdImageHash;
 
 //    Can be omitted.
-//    protected $SitelinkSetId = null;
+//    protected $SitelinkSetId;
 
 //    Can be omitted.
-//    protected $AdExtensionIds = null;
+//    protected $AdExtensionIds;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -32,45 +34,60 @@ class TextAdAddBase
         return new static();
     }
 
+    /**
+     * Get VCardId
+     */
     public function getVCardId(): ?int
     {
         return $this->VCardId ?? null;
     }
 
     /**
+     * Set VCardId
+     *
      * @return $this
      */
-    public function setVCardId(?int $value = null)
+    public function setVCardId(?int $value)
     {
         $this->VCardId = $value;
 
         return $this;
     }
 
+    /**
+     * Get AdImageHash
+     */
     public function getAdImageHash(): ?string
     {
         return $this->AdImageHash ?? null;
     }
 
     /**
+     * Set AdImageHash
+     *
      * @return $this
      */
-    public function setAdImageHash(?string $value = null)
+    public function setAdImageHash(?string $value)
     {
         $this->AdImageHash = $value;
 
         return $this;
     }
 
+    /**
+     * Get SitelinkSetId
+     */
     public function getSitelinkSetId(): ?int
     {
         return $this->SitelinkSetId ?? null;
     }
 
     /**
+     * Set SitelinkSetId
+     *
      * @return $this
      */
-    public function setSitelinkSetId(?int $value = null)
+    public function setSitelinkSetId(?int $value)
     {
         $this->SitelinkSetId = $value;
 
@@ -78,19 +95,23 @@ class TextAdAddBase
     }
 
     /**
-     * @return int[]|null
+     * Get AdExtensionIds
+     *
+     * @return list<int>
      */
-    public function getAdExtensionIds(): ?array
+    public function getAdExtensionIds(): array
     {
-        return $this->AdExtensionIds ?? null;
+        return $this->AdExtensionIds ?? [];
     }
 
     /**
-     * @param int[]|null $value
+     * Set AdExtensionIds
+     *
+     * @param list<int> $value
      *
      * @return $this
      */
-    public function setAdExtensionIds(?array $value = null)
+    public function setAdExtensionIds(array $value)
     {
         $this->AdExtensionIds = $value;
 

@@ -13,9 +13,11 @@ use AllowDynamicProperties;
 class GetRequestGeneral
 {
 //    Can be omitted.
-//    protected $Page = null;
+//    protected $Page;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -23,15 +25,20 @@ class GetRequestGeneral
         return new static();
     }
 
+    /**
+     * Get Page
+     */
     public function getPage(): ?LimitOffset
     {
         return $this->Page ?? null;
     }
 
     /**
+     * Set Page
+     *
      * @return $this
      */
-    public function setPage(?LimitOffset $value = null)
+    public function setPage(?LimitOffset $value)
     {
         $this->Page = $value;
 

@@ -13,12 +13,14 @@ use AllowDynamicProperties;
 class DynamicAdGroupGet
 {
 //    Can be omitted.
-//    protected $AutotargetingCategories = null;
+//    protected $AutotargetingCategories;
 
 //    Can be omitted.
-//    protected $AutotargetingSettings = null;
+//    protected $AutotargetingSettings;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -26,30 +28,40 @@ class DynamicAdGroupGet
         return new static();
     }
 
+    /**
+     * Get AutotargetingCategories
+     */
     public function getAutotargetingCategories(): ?AutotargetingCategoryArray
     {
         return $this->AutotargetingCategories ?? null;
     }
 
     /**
+     * Set AutotargetingCategories
+     *
      * @return $this
      */
-    public function setAutotargetingCategories(?AutotargetingCategoryArray $value = null)
+    public function setAutotargetingCategories(?AutotargetingCategoryArray $value)
     {
         $this->AutotargetingCategories = $value;
 
         return $this;
     }
 
+    /**
+     * Get AutotargetingSettings
+     */
     public function getAutotargetingSettings(): ?AutotargetingSettings
     {
         return $this->AutotargetingSettings ?? null;
     }
 
     /**
+     * Set AutotargetingSettings
+     *
      * @return $this
      */
-    public function setAutotargetingSettings(?AutotargetingSettings $value = null)
+    public function setAutotargetingSettings(?AutotargetingSettings $value)
     {
         $this->AutotargetingSettings = $value;
 

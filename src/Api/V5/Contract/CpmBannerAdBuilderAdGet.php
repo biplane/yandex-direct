@@ -13,71 +13,101 @@ use AllowDynamicProperties;
 class CpmBannerAdBuilderAdGet extends AdBuilderAdGetBase
 {
 //    Can be omitted.
-//    protected $Href = null;
+//    protected $Href;
 
 //    Can be omitted.
-//    protected $TrackingPixels = null;
+//    protected $TrackingPixels;
 
 //    Can be omitted.
-//    protected $TurboPageId = null;
+//    protected $TurboPageId;
 
 //    Can be omitted.
-//    protected $TurboPageModeration = null;
+//    protected $TurboPageModeration;
 
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    /**
+     * Get Href
+     */
     public function getHref(): ?string
     {
         return $this->Href ?? null;
     }
 
     /**
+     * Set Href
+     *
      * @return $this
      */
-    public function setHref(?string $value = null)
+    public function setHref(?string $value)
     {
         $this->Href = $value;
 
         return $this;
     }
 
+    /**
+     * Get TrackingPixels
+     */
     public function getTrackingPixels(): ?TrackingPixelGetArray
     {
         return $this->TrackingPixels ?? null;
     }
 
     /**
+     * Set TrackingPixels
+     *
      * @return $this
      */
-    public function setTrackingPixels(?TrackingPixelGetArray $value = null)
+    public function setTrackingPixels(?TrackingPixelGetArray $value)
     {
         $this->TrackingPixels = $value;
 
         return $this;
     }
 
+    /**
+     * Get TurboPageId
+     */
     public function getTurboPageId(): ?int
     {
         return $this->TurboPageId ?? null;
     }
 
     /**
+     * Set TurboPageId
+     *
      * @return $this
      */
-    public function setTurboPageId(?int $value = null)
+    public function setTurboPageId(?int $value)
     {
         $this->TurboPageId = $value;
 
         return $this;
     }
 
+    /**
+     * Get TurboPageModeration
+     */
     public function getTurboPageModeration(): ?ExtensionModeration
     {
         return $this->TurboPageModeration ?? null;
     }
 
     /**
+     * Set TurboPageModeration
+     *
      * @return $this
      */
-    public function setTurboPageModeration(?ExtensionModeration $value = null)
+    public function setTurboPageModeration(?ExtensionModeration $value)
     {
         $this->TurboPageModeration = $value;
 

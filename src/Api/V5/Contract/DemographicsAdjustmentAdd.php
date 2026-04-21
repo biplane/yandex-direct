@@ -13,14 +13,17 @@ use AllowDynamicProperties;
 class DemographicsAdjustmentAdd
 {
 //    Can be omitted.
-//    protected $Gender = null;
+//    protected $Gender;
 
 //    Can be omitted.
-//    protected $Age = null;
+//    protected $Age;
 
-    protected $BidModifier = null;
+    /** @var int */
+    protected $BidModifier;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -29,7 +32,11 @@ class DemographicsAdjustmentAdd
     }
 
     /**
-     * @see GenderEnum
+     * Get Gender
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\GenderEnum
+     *
+     * @return 'GENDER_MALE'|'GENDER_FEMALE'|null
      */
     public function getGender(): ?string
     {
@@ -37,11 +44,15 @@ class DemographicsAdjustmentAdd
     }
 
     /**
-     * @see GenderEnum
+     * Set Gender
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\GenderEnum
+     *
+     * @param 'GENDER_MALE'|'GENDER_FEMALE'|null $value
      *
      * @return $this
      */
-    public function setGender(?string $value = null)
+    public function setGender(?string $value)
     {
         $this->Gender = $value;
 
@@ -49,7 +60,11 @@ class DemographicsAdjustmentAdd
     }
 
     /**
-     * @see AgeRangeEnum
+     * Get Age
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\AgeRangeEnum
+     *
+     * @return 'AGE_0_17'|'AGE_18_24'|'AGE_25_34'|'AGE_35_44'|'AGE_45'|'AGE_45_54'|'AGE_55'|null
      */
     public function getAge(): ?string
     {
@@ -57,23 +72,32 @@ class DemographicsAdjustmentAdd
     }
 
     /**
-     * @see AgeRangeEnum
+     * Set Age
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\AgeRangeEnum
+     *
+     * @param 'AGE_0_17'|'AGE_18_24'|'AGE_25_34'|'AGE_35_44'|'AGE_45'|'AGE_45_54'|'AGE_55'|null $value
      *
      * @return $this
      */
-    public function setAge(?string $value = null)
+    public function setAge(?string $value)
     {
         $this->Age = $value;
 
         return $this;
     }
 
+    /**
+     * Get BidModifier
+     */
     public function getBidModifier(): int
     {
         return $this->BidModifier;
     }
 
     /**
+     * Set BidModifier
+     *
      * @return $this
      */
     public function setBidModifier(int $value)

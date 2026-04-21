@@ -12,23 +12,33 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class ForecastCommonInfo
 {
-    protected $Geo = null;
+    /** @var string */
+    protected $Geo;
 
-    protected $Shows = null;
+    /** @var int */
+    protected $Shows;
 
-    protected $Clicks = null;
+    /** @var int */
+    protected $Clicks;
 
-    protected $FirstPlaceClicks = null;
+    /** @var int */
+    protected $FirstPlaceClicks;
 
-    protected $PremiumClicks = null;
+    /** @var int */
+    protected $PremiumClicks;
 
-    protected $Min = null;
+    /** @var float */
+    protected $Min;
 
-    protected $Max = null;
+    /** @var float */
+    protected $Max;
 
-    protected $PremiumMin = null;
+    /** @var float */
+    protected $PremiumMin;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -36,12 +46,17 @@ class ForecastCommonInfo
         return new static();
     }
 
+    /**
+     * Get Geo
+     */
     public function getGeo(): string
     {
         return $this->Geo;
     }
 
     /**
+     * Set Geo
+     *
      * @return $this
      */
     public function setGeo(string $value)
@@ -51,12 +66,17 @@ class ForecastCommonInfo
         return $this;
     }
 
+    /**
+     * Get Shows
+     */
     public function getShows(): int
     {
         return $this->Shows;
     }
 
     /**
+     * Set Shows
+     *
      * @return $this
      */
     public function setShows(int $value)
@@ -66,12 +86,17 @@ class ForecastCommonInfo
         return $this;
     }
 
+    /**
+     * Get Clicks
+     */
     public function getClicks(): int
     {
         return $this->Clicks;
     }
 
     /**
+     * Set Clicks
+     *
      * @return $this
      */
     public function setClicks(int $value)
@@ -81,12 +106,17 @@ class ForecastCommonInfo
         return $this;
     }
 
+    /**
+     * Get FirstPlaceClicks
+     */
     public function getFirstPlaceClicks(): int
     {
         return $this->FirstPlaceClicks;
     }
 
     /**
+     * Set FirstPlaceClicks
+     *
      * @return $this
      */
     public function setFirstPlaceClicks(int $value)
@@ -96,12 +126,17 @@ class ForecastCommonInfo
         return $this;
     }
 
+    /**
+     * Get PremiumClicks
+     */
     public function getPremiumClicks(): int
     {
         return $this->PremiumClicks;
     }
 
     /**
+     * Set PremiumClicks
+     *
      * @return $this
      */
     public function setPremiumClicks(int $value)
@@ -111,12 +146,17 @@ class ForecastCommonInfo
         return $this;
     }
 
+    /**
+     * Get Min
+     */
     public function getMin(): float
     {
         return $this->Min;
     }
 
     /**
+     * Set Min
+     *
      * @return $this
      */
     public function setMin(float $value)
@@ -126,12 +166,17 @@ class ForecastCommonInfo
         return $this;
     }
 
+    /**
+     * Get Max
+     */
     public function getMax(): float
     {
         return $this->Max;
     }
 
     /**
+     * Set Max
+     *
      * @return $this
      */
     public function setMax(float $value)
@@ -141,12 +186,17 @@ class ForecastCommonInfo
         return $this;
     }
 
+    /**
+     * Get PremiumMin
+     */
     public function getPremiumMin(): float
     {
         return $this->PremiumMin;
     }
 
     /**
+     * Set PremiumMin
+     *
      * @return $this
      */
     public function setPremiumMin(float $value)

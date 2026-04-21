@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class AutotargetingBrandOption
 {
-    protected $Option = null;
+    /** @var 'WITHOUT_BRANDS'|'WITH_ADVERTISER_BRAND' */
+    protected $Option;
 
-    protected $Value = null;
+    /** @var 'YES'|'NO' */
+    protected $Value;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -25,7 +29,11 @@ class AutotargetingBrandOption
     }
 
     /**
-     * @see AutotargetingBrandOptionsEnum
+     * Get Option
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\AutotargetingBrandOptionsEnum
+     *
+     * @return 'WITHOUT_BRANDS'|'WITH_ADVERTISER_BRAND'
      */
     public function getOption(): string
     {
@@ -33,7 +41,11 @@ class AutotargetingBrandOption
     }
 
     /**
-     * @see AutotargetingBrandOptionsEnum
+     * Set Option
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\AutotargetingBrandOptionsEnum
+     *
+     * @param 'WITHOUT_BRANDS'|'WITH_ADVERTISER_BRAND' $value
      *
      * @return $this
      */
@@ -45,7 +57,11 @@ class AutotargetingBrandOption
     }
 
     /**
-     * @see YesNoEnum
+     * Get Value
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'
      */
     public function getValue(): string
     {
@@ -53,7 +69,11 @@ class AutotargetingBrandOption
     }
 
     /**
-     * @see YesNoEnum
+     * Set Value
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO' $value
      *
      * @return $this
      */

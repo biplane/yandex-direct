@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class TagInfo
 {
-    protected $TagID = null;
+    /** @var int */
+    protected $TagID;
 
-    protected $Tag = null;
+    /** @var string */
+    protected $Tag;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -24,12 +28,17 @@ class TagInfo
         return new static();
     }
 
+    /**
+     * Get TagID
+     */
     public function getTagID(): int
     {
         return $this->TagID;
     }
 
     /**
+     * Set TagID
+     *
      * @return $this
      */
     public function setTagID(int $value)
@@ -39,12 +48,17 @@ class TagInfo
         return $this;
     }
 
+    /**
+     * Get Tag
+     */
     public function getTag(): string
     {
         return $this->Tag;
     }
 
     /**
+     * Set Tag
+     *
      * @return $this
      */
     public function setTag(string $value)

@@ -4,9 +4,12 @@ declare(strict_types=1);
 
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
+use AllowDynamicProperties;
+
 /**
  * Auto-generated code.
  */
+#[AllowDynamicProperties]
 class EmailSubscriptionEnum
 {
     public const RECEIVE_RECOMMENDATIONS = 'RECEIVE_RECOMMENDATIONS';

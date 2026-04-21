@@ -12,13 +12,18 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class AddPassportOrganizationMemberRequest
 {
-    protected $PassportOrganizationLogin = null;
+    /** @var string */
+    protected $PassportOrganizationLogin;
 
-    protected $Role = null;
+    /** @var 'ADMIN'|'USER' */
+    protected $Role;
 
-    protected $SendInviteTo = null;
+    /** @var SendInviteTo */
+    protected $SendInviteTo;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -26,12 +31,17 @@ class AddPassportOrganizationMemberRequest
         return new static();
     }
 
+    /**
+     * Get PassportOrganizationLogin
+     */
     public function getPassportOrganizationLogin(): string
     {
         return $this->PassportOrganizationLogin;
     }
 
     /**
+     * Set PassportOrganizationLogin
+     *
      * @return $this
      */
     public function setPassportOrganizationLogin(string $value)
@@ -42,7 +52,11 @@ class AddPassportOrganizationMemberRequest
     }
 
     /**
-     * @see RoleEnum
+     * Get Role
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\RoleEnum
+     *
+     * @return 'ADMIN'|'USER'
      */
     public function getRole(): string
     {
@@ -50,7 +64,11 @@ class AddPassportOrganizationMemberRequest
     }
 
     /**
-     * @see RoleEnum
+     * Set Role
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\RoleEnum
+     *
+     * @param 'ADMIN'|'USER' $value
      *
      * @return $this
      */
@@ -61,12 +79,17 @@ class AddPassportOrganizationMemberRequest
         return $this;
     }
 
+    /**
+     * Get SendInviteTo
+     */
     public function getSendInviteTo(): SendInviteTo
     {
         return $this->SendInviteTo;
     }
 
     /**
+     * Set SendInviteTo
+     *
      * @return $this
      */
     public function setSendInviteTo(SendInviteTo $value)

@@ -13,23 +13,38 @@ use AllowDynamicProperties;
 class GetSitelinksRequest extends GetRequestGeneral
 {
 //    Can be omitted.
-//    protected $SelectionCriteria = null;
+//    protected $SelectionCriteria;
 
 //    Can be omitted.
-//    protected $FieldNames = null;
+//    protected $FieldNames;
 
 //    Can be omitted.
-//    protected $SitelinkFieldNames = null;
+//    protected $SitelinkFieldNames;
 
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    /**
+     * Get SelectionCriteria
+     */
     public function getSelectionCriteria(): ?IdsCriteria
     {
         return $this->SelectionCriteria ?? null;
     }
 
     /**
+     * Set SelectionCriteria
+     *
      * @return $this
      */
-    public function setSelectionCriteria(?IdsCriteria $value = null)
+    public function setSelectionCriteria(?IdsCriteria $value)
     {
         $this->SelectionCriteria = $value;
 
@@ -37,23 +52,27 @@ class GetSitelinksRequest extends GetRequestGeneral
     }
 
     /**
-     * @see SitelinksSetFieldEnum
+     * Get FieldNames
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\SitelinksSetFieldEnum
+     *
+     * @return list<'Id'|'Sitelinks'>
      */
-    public function getFieldNames(): ?array
+    public function getFieldNames(): array
     {
-        return $this->FieldNames ?? null;
+        return $this->FieldNames ?? [];
     }
 
     /**
-     * @see SitelinksSetFieldEnum
+     * Set FieldNames
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\SitelinksSetFieldEnum
+     *
+     * @param list<'Id'|'Sitelinks'> $value
      *
      * @return $this
      */
-    public function setFieldNames(?array $value = null)
+    public function setFieldNames(array $value)
     {
         $this->FieldNames = $value;
 
@@ -61,23 +80,27 @@ class GetSitelinksRequest extends GetRequestGeneral
     }
 
     /**
-     * @see SitelinkFieldEnum
+     * Get SitelinkFieldNames
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\SitelinkFieldEnum
+     *
+     * @return list<'Title'|'Href'|'Description'|'TurboPageId'>
      */
-    public function getSitelinkFieldNames(): ?array
+    public function getSitelinkFieldNames(): array
     {
-        return $this->SitelinkFieldNames ?? null;
+        return $this->SitelinkFieldNames ?? [];
     }
 
     /**
-     * @see SitelinkFieldEnum
+     * Set SitelinkFieldNames
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\SitelinkFieldEnum
+     *
+     * @param list<'Title'|'Href'|'Description'|'TurboPageId'> $value
      *
      * @return $this
      */
-    public function setSitelinkFieldNames(?array $value = null)
+    public function setSitelinkFieldNames(array $value)
     {
         $this->SitelinkFieldNames = $value;
 

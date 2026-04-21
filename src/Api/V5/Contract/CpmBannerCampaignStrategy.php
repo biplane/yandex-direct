@@ -13,12 +13,14 @@ use AllowDynamicProperties;
 class CpmBannerCampaignStrategy
 {
 //    Can be omitted.
-//    protected $Search = null;
+//    protected $Search;
 
 //    Can be omitted.
-//    protected $Network = null;
+//    protected $Network;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -26,30 +28,40 @@ class CpmBannerCampaignStrategy
         return new static();
     }
 
+    /**
+     * Get Search
+     */
     public function getSearch(): ?CpmBannerCampaignSearchStrategy
     {
         return $this->Search ?? null;
     }
 
     /**
+     * Set Search
+     *
      * @return $this
      */
-    public function setSearch(?CpmBannerCampaignSearchStrategy $value = null)
+    public function setSearch(?CpmBannerCampaignSearchStrategy $value)
     {
         $this->Search = $value;
 
         return $this;
     }
 
+    /**
+     * Get Network
+     */
     public function getNetwork(): ?CpmBannerCampaignNetworkStrategy
     {
         return $this->Network ?? null;
     }
 
     /**
+     * Set Network
+     *
      * @return $this
      */
-    public function setNetwork(?CpmBannerCampaignNetworkStrategy $value = null)
+    public function setNetwork(?CpmBannerCampaignNetworkStrategy $value)
     {
         $this->Network = $value;
 

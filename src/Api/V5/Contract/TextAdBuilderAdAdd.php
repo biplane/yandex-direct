@@ -13,53 +13,78 @@ use AllowDynamicProperties;
 class TextAdBuilderAdAdd extends AdBuilderAdAddBase
 {
 //    Can be omitted.
-//    protected $FinalUrl = null;
+//    protected $FinalUrl;
 
 //    Can be omitted.
-//    protected $Href = null;
+//    protected $Href;
 
 //    Can be omitted.
-//    protected $TurboPageId = null;
+//    protected $TurboPageId;
 
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    /**
+     * Get FinalUrl
+     */
     public function getFinalUrl(): ?string
     {
         return $this->FinalUrl ?? null;
     }
 
     /**
+     * Set FinalUrl
+     *
      * @return $this
      */
-    public function setFinalUrl(?string $value = null)
+    public function setFinalUrl(?string $value)
     {
         $this->FinalUrl = $value;
 
         return $this;
     }
 
+    /**
+     * Get Href
+     */
     public function getHref(): ?string
     {
         return $this->Href ?? null;
     }
 
     /**
+     * Set Href
+     *
      * @return $this
      */
-    public function setHref(?string $value = null)
+    public function setHref(?string $value)
     {
         $this->Href = $value;
 
         return $this;
     }
 
+    /**
+     * Get TurboPageId
+     */
     public function getTurboPageId(): ?int
     {
         return $this->TurboPageId ?? null;
     }
 
     /**
+     * Set TurboPageId
+     *
      * @return $this
      */
-    public function setTurboPageId(?int $value = null)
+    public function setTurboPageId(?int $value)
     {
         $this->TurboPageId = $value;
 

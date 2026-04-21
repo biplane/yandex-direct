@@ -13,22 +13,36 @@ use AllowDynamicProperties;
 class RetargetingListGetItem extends RetargetingListBase
 {
 //    Can be omitted.
-//    protected $Type = null;
+//    protected $Type;
 
 //    Can be omitted.
-//    protected $Id = null;
+//    protected $Id;
 
 //    Can be omitted.
-//    protected $IsAvailable = null;
+//    protected $IsAvailable;
 
 //    Can be omitted.
-//    protected $Scope = null;
+//    protected $Scope;
 
 //    Can be omitted.
-//    protected $AvailableForTargetsInAdGroupTypes = null;
+//    protected $AvailableForTargetsInAdGroupTypes;
 
     /**
-     * @see RetargetingListTypeEnum
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    /**
+     * Get Type
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\RetargetingListTypeEnum
+     *
+     * @return 'RETARGETING'|'AUDIENCE'|null
      */
     public function getType(): ?string
     {
@@ -36,26 +50,35 @@ class RetargetingListGetItem extends RetargetingListBase
     }
 
     /**
-     * @see RetargetingListTypeEnum
+     * Set Type
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\RetargetingListTypeEnum
+     *
+     * @param 'RETARGETING'|'AUDIENCE'|null $value
      *
      * @return $this
      */
-    public function setType(?string $value = null)
+    public function setType(?string $value)
     {
         $this->Type = $value;
 
         return $this;
     }
 
+    /**
+     * Get Id
+     */
     public function getId(): ?int
     {
         return $this->Id ?? null;
     }
 
     /**
+     * Set Id
+     *
      * @return $this
      */
-    public function setId(?int $value = null)
+    public function setId(?int $value)
     {
         $this->Id = $value;
 
@@ -63,7 +86,11 @@ class RetargetingListGetItem extends RetargetingListBase
     }
 
     /**
-     * @see YesNoEnum
+     * Get IsAvailable
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'|null
      */
     public function getIsAvailable(): ?string
     {
@@ -71,11 +98,15 @@ class RetargetingListGetItem extends RetargetingListBase
     }
 
     /**
-     * @see YesNoEnum
+     * Set IsAvailable
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO'|null $value
      *
      * @return $this
      */
-    public function setIsAvailable(?string $value = null)
+    public function setIsAvailable(?string $value)
     {
         $this->IsAvailable = $value;
 
@@ -83,7 +114,11 @@ class RetargetingListGetItem extends RetargetingListBase
     }
 
     /**
-     * @see RetargetingListScopeEnum
+     * Get Scope
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\RetargetingListScopeEnum
+     *
+     * @return 'FOR_TARGETS_AND_ADJUSTMENTS'|'FOR_ADJUSTMENTS_ONLY'|'FOR_TARGETS_ONLY'|null
      */
     public function getScope(): ?string
     {
@@ -91,26 +126,35 @@ class RetargetingListGetItem extends RetargetingListBase
     }
 
     /**
-     * @see RetargetingListScopeEnum
+     * Set Scope
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\RetargetingListScopeEnum
+     *
+     * @param 'FOR_TARGETS_AND_ADJUSTMENTS'|'FOR_ADJUSTMENTS_ONLY'|'FOR_TARGETS_ONLY'|null $value
      *
      * @return $this
      */
-    public function setScope(?string $value = null)
+    public function setScope(?string $value)
     {
         $this->Scope = $value;
 
         return $this;
     }
 
+    /**
+     * Get AvailableForTargetsInAdGroupTypes
+     */
     public function getAvailableForTargetsInAdGroupTypes(): ?AvailableForTargetsInAdGroupTypesArray
     {
         return $this->AvailableForTargetsInAdGroupTypes ?? null;
     }
 
     /**
+     * Set AvailableForTargetsInAdGroupTypes
+     *
      * @return $this
      */
-    public function setAvailableForTargetsInAdGroupTypes(?AvailableForTargetsInAdGroupTypesArray $value = null)
+    public function setAvailableForTargetsInAdGroupTypes(?AvailableForTargetsInAdGroupTypesArray $value)
     {
         $this->AvailableForTargetsInAdGroupTypes = $value;
 

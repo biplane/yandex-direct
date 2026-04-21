@@ -13,27 +13,29 @@ use AllowDynamicProperties;
 class ListingAdUpdate
 {
 //    Can be omitted.
-//    protected $SitelinkSetId = null;
+//    protected $SitelinkSetId;
 
 //    Can be omitted.
-//    protected $CalloutSetting = null;
+//    protected $CalloutSetting;
 
 //    Can be omitted.
-//    protected $BusinessId = null;
+//    protected $BusinessId;
 
 //    Can be omitted.
-//    protected $FeedFilterConditions = null;
+//    protected $FeedFilterConditions;
 
 //    Can be omitted.
-//    protected $TitleSources = null;
+//    protected $TitleSources;
 
 //    Can be omitted.
-//    protected $TextSources = null;
+//    protected $TextSources;
 
 //    Can be omitted.
-//    protected $DefaultTexts = null;
+//    protected $DefaultTexts;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -41,45 +43,60 @@ class ListingAdUpdate
         return new static();
     }
 
+    /**
+     * Get SitelinkSetId
+     */
     public function getSitelinkSetId(): ?int
     {
         return $this->SitelinkSetId ?? null;
     }
 
     /**
+     * Set SitelinkSetId
+     *
      * @return $this
      */
-    public function setSitelinkSetId(?int $value = null)
+    public function setSitelinkSetId(?int $value)
     {
         $this->SitelinkSetId = $value;
 
         return $this;
     }
 
+    /**
+     * Get CalloutSetting
+     */
     public function getCalloutSetting(): ?AdExtensionSetting
     {
         return $this->CalloutSetting ?? null;
     }
 
     /**
+     * Set CalloutSetting
+     *
      * @return $this
      */
-    public function setCalloutSetting(?AdExtensionSetting $value = null)
+    public function setCalloutSetting(?AdExtensionSetting $value)
     {
         $this->CalloutSetting = $value;
 
         return $this;
     }
 
+    /**
+     * Get BusinessId
+     */
     public function getBusinessId(): ?int
     {
         return $this->BusinessId ?? null;
     }
 
     /**
+     * Set BusinessId
+     *
      * @return $this
      */
-    public function setBusinessId(?int $value = null)
+    public function setBusinessId(?int $value)
     {
         $this->BusinessId = $value;
 
@@ -87,19 +104,19 @@ class ListingAdUpdate
     }
 
     /**
-     * @return FeedFilterConditionItem[]|null
+     * Get FeedFilterConditions
      */
-    public function getFeedFilterConditions(): ?array
+    public function getFeedFilterConditions(): ?ArrayOfFeedFilterCondition
     {
         return $this->FeedFilterConditions ?? null;
     }
 
     /**
-     * @param FeedFilterConditionItem[]|null $value
+     * Set FeedFilterConditions
      *
      * @return $this
      */
-    public function setFeedFilterConditions(?array $value = null)
+    public function setFeedFilterConditions(?ArrayOfFeedFilterCondition $value)
     {
         $this->FeedFilterConditions = $value;
 
@@ -107,7 +124,9 @@ class ListingAdUpdate
     }
 
     /**
-     * @return string[]|null
+     * Get TitleSources
+     *
+     * @return non-empty-list<string>|null
      */
     public function getTitleSources(): ?array
     {
@@ -115,11 +134,13 @@ class ListingAdUpdate
     }
 
     /**
-     * @param string[]|null $value
+     * Set TitleSources
+     *
+     * @param non-empty-list<string>|null $value
      *
      * @return $this
      */
-    public function setTitleSources(?array $value = null)
+    public function setTitleSources(?array $value)
     {
         $this->TitleSources = $value;
 
@@ -127,7 +148,9 @@ class ListingAdUpdate
     }
 
     /**
-     * @return string[]|null
+     * Get TextSources
+     *
+     * @return non-empty-list<string>|null
      */
     public function getTextSources(): ?array
     {
@@ -135,11 +158,13 @@ class ListingAdUpdate
     }
 
     /**
-     * @param string[]|null $value
+     * Set TextSources
+     *
+     * @param non-empty-list<string>|null $value
      *
      * @return $this
      */
-    public function setTextSources(?array $value = null)
+    public function setTextSources(?array $value)
     {
         $this->TextSources = $value;
 
@@ -147,19 +172,23 @@ class ListingAdUpdate
     }
 
     /**
-     * @return string[]|null
+     * Get DefaultTexts
+     *
+     * @return list<string>
      */
-    public function getDefaultTexts(): ?array
+    public function getDefaultTexts(): array
     {
-        return $this->DefaultTexts ?? null;
+        return $this->DefaultTexts ?? [];
     }
 
     /**
-     * @param string[]|null $value
+     * Set DefaultTexts
+     *
+     * @param list<string> $value
      *
      * @return $this
      */
-    public function setDefaultTexts(?array $value = null)
+    public function setDefaultTexts(array $value)
     {
         $this->DefaultTexts = $value;
 

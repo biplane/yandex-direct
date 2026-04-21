@@ -13,19 +13,35 @@ use AllowDynamicProperties;
 class GetBusinessesRequest extends GetRequestGeneral
 {
 //    Can be omitted.
-//    protected $SelectionCriteria = null;
+//    protected $SelectionCriteria;
 
-    protected $FieldNames = [];
+    /** @var non-empty-list<'Id'|'Name'|'Address'|'Phone'|'ProfileUrl'|'InternalUrl'|'IsPublished'|'MergedIds'|'Rubric'|'Urls'|'HasOffice'> */
+    protected $FieldNames;
 
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    /**
+     * Get SelectionCriteria
+     */
     public function getSelectionCriteria(): ?IdsCriteria
     {
         return $this->SelectionCriteria ?? null;
     }
 
     /**
+     * Set SelectionCriteria
+     *
      * @return $this
      */
-    public function setSelectionCriteria(?IdsCriteria $value = null)
+    public function setSelectionCriteria(?IdsCriteria $value)
     {
         $this->SelectionCriteria = $value;
 
@@ -33,9 +49,11 @@ class GetBusinessesRequest extends GetRequestGeneral
     }
 
     /**
-     * @see BusinessFieldEnum
+     * Get FieldNames
      *
-     * @return string[]
+     * @see \Biplane\YandexDirect\Api\V5\Contract\BusinessFieldEnum
+     *
+     * @return non-empty-list<'Id'|'Name'|'Address'|'Phone'|'ProfileUrl'|'InternalUrl'|'IsPublished'|'MergedIds'|'Rubric'|'Urls'|'HasOffice'>
      */
     public function getFieldNames(): array
     {
@@ -43,9 +61,11 @@ class GetBusinessesRequest extends GetRequestGeneral
     }
 
     /**
-     * @see BusinessFieldEnum
+     * Set FieldNames
      *
-     * @param string[] $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\BusinessFieldEnum
+     *
+     * @param non-empty-list<'Id'|'Name'|'Address'|'Phone'|'ProfileUrl'|'InternalUrl'|'IsPublished'|'MergedIds'|'Rubric'|'Urls'|'HasOffice'> $value
      *
      * @return $this
      */

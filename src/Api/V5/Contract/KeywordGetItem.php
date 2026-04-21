@@ -13,63 +13,65 @@ use AllowDynamicProperties;
 class KeywordGetItem
 {
 //    Can be omitted.
-//    protected $Id = null;
+//    protected $Id;
 
 //    Can be omitted.
-//    protected $Keyword = null;
+//    protected $Keyword;
 
 //    Can be omitted.
-//    protected $AdGroupId = null;
+//    protected $AdGroupId;
 
 //    Can be omitted.
-//    protected $CampaignId = null;
+//    protected $CampaignId;
 
 //    Can be omitted.
-//    protected $Bid = null;
+//    protected $Bid;
 
 //    Can be omitted.
-//    protected $AutotargetingSearchBidIsAuto = null;
+//    protected $AutotargetingSearchBidIsAuto;
 
 //    Can be omitted.
-//    protected $ContextBid = null;
+//    protected $ContextBid;
 
 //    Can be omitted.
-//    protected $StrategyPriority = null;
+//    protected $StrategyPriority;
 
 //    Can be omitted.
-//    protected $State = null;
+//    protected $State;
 
 //    Can be omitted.
-//    protected $Status = null;
+//    protected $Status;
 
 //    Can be omitted.
-//    protected $UserParam1 = null;
+//    protected $UserParam1;
 
 //    Can be omitted.
-//    protected $UserParam2 = null;
+//    protected $UserParam2;
 
 //    Can be omitted.
-//    protected $Productivity = null;
+//    protected $Productivity;
 
 //    Can be omitted.
-//    protected $StatisticsSearch = null;
+//    protected $StatisticsSearch;
 
 //    Can be omitted.
-//    protected $StatisticsNetwork = null;
+//    protected $StatisticsNetwork;
 
 //    Can be omitted.
-//    protected $ServingStatus = null;
+//    protected $ServingStatus;
 
 //    Can be omitted.
-//    protected $AutotargetingCategories = null;
+//    protected $AutotargetingCategories;
 
 //    Can be omitted.
-//    protected $AutotargetingBrandOptions = null;
+//    protected $AutotargetingBrandOptions;
 
 //    Can be omitted.
-//    protected $AutotargetingSettings = null;
+//    protected $AutotargetingSettings;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -77,75 +79,100 @@ class KeywordGetItem
         return new static();
     }
 
+    /**
+     * Get Id
+     */
     public function getId(): ?int
     {
         return $this->Id ?? null;
     }
 
     /**
+     * Set Id
+     *
      * @return $this
      */
-    public function setId(?int $value = null)
+    public function setId(?int $value)
     {
         $this->Id = $value;
 
         return $this;
     }
 
+    /**
+     * Get Keyword
+     */
     public function getKeyword(): ?string
     {
         return $this->Keyword ?? null;
     }
 
     /**
+     * Set Keyword
+     *
      * @return $this
      */
-    public function setKeyword(?string $value = null)
+    public function setKeyword(?string $value)
     {
         $this->Keyword = $value;
 
         return $this;
     }
 
+    /**
+     * Get AdGroupId
+     */
     public function getAdGroupId(): ?int
     {
         return $this->AdGroupId ?? null;
     }
 
     /**
+     * Set AdGroupId
+     *
      * @return $this
      */
-    public function setAdGroupId(?int $value = null)
+    public function setAdGroupId(?int $value)
     {
         $this->AdGroupId = $value;
 
         return $this;
     }
 
+    /**
+     * Get CampaignId
+     */
     public function getCampaignId(): ?int
     {
         return $this->CampaignId ?? null;
     }
 
     /**
+     * Set CampaignId
+     *
      * @return $this
      */
-    public function setCampaignId(?int $value = null)
+    public function setCampaignId(?int $value)
     {
         $this->CampaignId = $value;
 
         return $this;
     }
 
+    /**
+     * Get Bid
+     */
     public function getBid(): ?int
     {
         return $this->Bid ?? null;
     }
 
     /**
+     * Set Bid
+     *
      * @return $this
      */
-    public function setBid(?int $value = null)
+    public function setBid(?int $value)
     {
         $this->Bid = $value;
 
@@ -153,7 +180,11 @@ class KeywordGetItem
     }
 
     /**
-     * @see YesNoEnum
+     * Get AutotargetingSearchBidIsAuto
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'|null
      */
     public function getAutotargetingSearchBidIsAuto(): ?string
     {
@@ -161,26 +192,35 @@ class KeywordGetItem
     }
 
     /**
-     * @see YesNoEnum
+     * Set AutotargetingSearchBidIsAuto
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO'|null $value
      *
      * @return $this
      */
-    public function setAutotargetingSearchBidIsAuto(?string $value = null)
+    public function setAutotargetingSearchBidIsAuto(?string $value)
     {
         $this->AutotargetingSearchBidIsAuto = $value;
 
         return $this;
     }
 
+    /**
+     * Get ContextBid
+     */
     public function getContextBid(): ?int
     {
         return $this->ContextBid ?? null;
     }
 
     /**
+     * Set ContextBid
+     *
      * @return $this
      */
-    public function setContextBid(?int $value = null)
+    public function setContextBid(?int $value)
     {
         $this->ContextBid = $value;
 
@@ -188,7 +228,11 @@ class KeywordGetItem
     }
 
     /**
-     * @see PriorityEnum
+     * Get StrategyPriority
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\PriorityEnum
+     *
+     * @return 'LOW'|'NORMAL'|'HIGH'|null
      */
     public function getStrategyPriority(): ?string
     {
@@ -196,11 +240,15 @@ class KeywordGetItem
     }
 
     /**
-     * @see PriorityEnum
+     * Set StrategyPriority
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\PriorityEnum
+     *
+     * @param 'LOW'|'NORMAL'|'HIGH'|null $value
      *
      * @return $this
      */
-    public function setStrategyPriority(?string $value = null)
+    public function setStrategyPriority(?string $value)
     {
         $this->StrategyPriority = $value;
 
@@ -208,7 +256,11 @@ class KeywordGetItem
     }
 
     /**
-     * @see StateEnum
+     * Get State
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\StateEnum
+     *
+     * @return 'OFF'|'ON'|'SUSPENDED'|'OFF_BY_MONITORING'|'ARCHIVED'|'DELETED'|'UNKNOWN'|null
      */
     public function getState(): ?string
     {
@@ -216,11 +268,15 @@ class KeywordGetItem
     }
 
     /**
-     * @see StateEnum
+     * Set State
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\StateEnum
+     *
+     * @param 'OFF'|'ON'|'SUSPENDED'|'OFF_BY_MONITORING'|'ARCHIVED'|'DELETED'|'UNKNOWN'|null $value
      *
      * @return $this
      */
-    public function setState(?string $value = null)
+    public function setState(?string $value)
     {
         $this->State = $value;
 
@@ -228,7 +284,11 @@ class KeywordGetItem
     }
 
     /**
-     * @see StatusEnum
+     * Get Status
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\StatusEnum
+     *
+     * @return 'ACCEPTED'|'DRAFT'|'MODERATION'|'PREACCEPTED'|'REJECTED'|'UNKNOWN'|null
      */
     public function getStatus(): ?string
     {
@@ -236,86 +296,115 @@ class KeywordGetItem
     }
 
     /**
-     * @see StatusEnum
+     * Set Status
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\StatusEnum
+     *
+     * @param 'ACCEPTED'|'DRAFT'|'MODERATION'|'PREACCEPTED'|'REJECTED'|'UNKNOWN'|null $value
      *
      * @return $this
      */
-    public function setStatus(?string $value = null)
+    public function setStatus(?string $value)
     {
         $this->Status = $value;
 
         return $this;
     }
 
+    /**
+     * Get UserParam1
+     */
     public function getUserParam1(): ?string
     {
         return $this->UserParam1 ?? null;
     }
 
     /**
+     * Set UserParam1
+     *
      * @return $this
      */
-    public function setUserParam1(?string $value = null)
+    public function setUserParam1(?string $value)
     {
         $this->UserParam1 = $value;
 
         return $this;
     }
 
+    /**
+     * Get UserParam2
+     */
     public function getUserParam2(): ?string
     {
         return $this->UserParam2 ?? null;
     }
 
     /**
+     * Set UserParam2
+     *
      * @return $this
      */
-    public function setUserParam2(?string $value = null)
+    public function setUserParam2(?string $value)
     {
         $this->UserParam2 = $value;
 
         return $this;
     }
 
+    /**
+     * Get Productivity
+     */
     public function getProductivity(): ?KeywordProductivity
     {
         return $this->Productivity ?? null;
     }
 
     /**
+     * Set Productivity
+     *
      * @return $this
      */
-    public function setProductivity(?KeywordProductivity $value = null)
+    public function setProductivity(?KeywordProductivity $value)
     {
         $this->Productivity = $value;
 
         return $this;
     }
 
+    /**
+     * Get StatisticsSearch
+     */
     public function getStatisticsSearch(): ?Statistics
     {
         return $this->StatisticsSearch ?? null;
     }
 
     /**
+     * Set StatisticsSearch
+     *
      * @return $this
      */
-    public function setStatisticsSearch(?Statistics $value = null)
+    public function setStatisticsSearch(?Statistics $value)
     {
         $this->StatisticsSearch = $value;
 
         return $this;
     }
 
+    /**
+     * Get StatisticsNetwork
+     */
     public function getStatisticsNetwork(): ?Statistics
     {
         return $this->StatisticsNetwork ?? null;
     }
 
     /**
+     * Set StatisticsNetwork
+     *
      * @return $this
      */
-    public function setStatisticsNetwork(?Statistics $value = null)
+    public function setStatisticsNetwork(?Statistics $value)
     {
         $this->StatisticsNetwork = $value;
 
@@ -323,7 +412,11 @@ class KeywordGetItem
     }
 
     /**
-     * @see ServingStatusEnum
+     * Get ServingStatus
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\ServingStatusEnum
+     *
+     * @return 'ELIGIBLE'|'RARELY_SERVED'|null
      */
     public function getServingStatus(): ?string
     {
@@ -331,56 +424,75 @@ class KeywordGetItem
     }
 
     /**
-     * @see ServingStatusEnum
+     * Set ServingStatus
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\ServingStatusEnum
+     *
+     * @param 'ELIGIBLE'|'RARELY_SERVED'|null $value
      *
      * @return $this
      */
-    public function setServingStatus(?string $value = null)
+    public function setServingStatus(?string $value)
     {
         $this->ServingStatus = $value;
 
         return $this;
     }
 
+    /**
+     * Get AutotargetingCategories
+     */
     public function getAutotargetingCategories(): ?AutotargetingCategoryArray
     {
         return $this->AutotargetingCategories ?? null;
     }
 
     /**
+     * Set AutotargetingCategories
+     *
      * @return $this
      */
-    public function setAutotargetingCategories(?AutotargetingCategoryArray $value = null)
+    public function setAutotargetingCategories(?AutotargetingCategoryArray $value)
     {
         $this->AutotargetingCategories = $value;
 
         return $this;
     }
 
+    /**
+     * Get AutotargetingBrandOptions
+     */
     public function getAutotargetingBrandOptions(): ?AutotargetingBrandOptionArray
     {
         return $this->AutotargetingBrandOptions ?? null;
     }
 
     /**
+     * Set AutotargetingBrandOptions
+     *
      * @return $this
      */
-    public function setAutotargetingBrandOptions(?AutotargetingBrandOptionArray $value = null)
+    public function setAutotargetingBrandOptions(?AutotargetingBrandOptionArray $value)
     {
         $this->AutotargetingBrandOptions = $value;
 
         return $this;
     }
 
+    /**
+     * Get AutotargetingSettings
+     */
     public function getAutotargetingSettings(): ?AutotargetingSettings
     {
         return $this->AutotargetingSettings ?? null;
     }
 
     /**
+     * Set AutotargetingSettings
+     *
      * @return $this
      */
-    public function setAutotargetingSettings(?AutotargetingSettings $value = null)
+    public function setAutotargetingSettings(?AutotargetingSettings $value)
     {
         $this->AutotargetingSettings = $value;
 

@@ -12,9 +12,12 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class EnableSharedAccountRequest
 {
-    protected $Login = null;
+    /** @var string */
+    protected $Login;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -22,12 +25,17 @@ class EnableSharedAccountRequest
         return new static();
     }
 
+    /**
+     * Get Login
+     */
     public function getLogin(): string
     {
         return $this->Login;
     }
 
     /**
+     * Set Login
+     *
      * @return $this
      */
     public function setLogin(string $value)

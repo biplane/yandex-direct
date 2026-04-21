@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class RetargetingListRuleItem
 {
-    protected $Arguments = [];
+    /** @var non-empty-list<RetargetingListRuleArgumentItem> */
+    protected $Arguments;
 
-    protected $Operator = null;
+    /** @var 'ALL'|'ANY'|'NONE' */
+    protected $Operator;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -25,7 +29,9 @@ class RetargetingListRuleItem
     }
 
     /**
-     * @return RetargetingListRuleArgumentItem[]
+     * Get Arguments
+     *
+     * @return non-empty-list<RetargetingListRuleArgumentItem>
      */
     public function getArguments(): array
     {
@@ -33,7 +39,9 @@ class RetargetingListRuleItem
     }
 
     /**
-     * @param RetargetingListRuleArgumentItem[] $value
+     * Set Arguments
+     *
+     * @param non-empty-list<RetargetingListRuleArgumentItem> $value
      *
      * @return $this
      */
@@ -45,7 +53,11 @@ class RetargetingListRuleItem
     }
 
     /**
-     * @see RetargetingListRuleOperatorEnum
+     * Get Operator
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\RetargetingListRuleOperatorEnum
+     *
+     * @return 'ALL'|'ANY'|'NONE'
      */
     public function getOperator(): string
     {
@@ -53,7 +65,11 @@ class RetargetingListRuleItem
     }
 
     /**
-     * @see RetargetingListRuleOperatorEnum
+     * Set Operator
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\RetargetingListRuleOperatorEnum
+     *
+     * @param 'ALL'|'ANY'|'NONE' $value
      *
      * @return $this
      */

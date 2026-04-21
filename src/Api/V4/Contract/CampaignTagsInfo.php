@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class CampaignTagsInfo
 {
-    protected $CampaignID = null;
+    /** @var int */
+    protected $CampaignID;
 
-    protected $Tags = null;
+//    Can be omitted.
+//    protected $Tags;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -24,12 +28,17 @@ class CampaignTagsInfo
         return new static();
     }
 
+    /**
+     * Get CampaignID
+     */
     public function getCampaignID(): int
     {
         return $this->CampaignID;
     }
 
     /**
+     * Set CampaignID
+     *
      * @return $this
      */
     public function setCampaignID(int $value)
@@ -40,19 +49,23 @@ class CampaignTagsInfo
     }
 
     /**
-     * @return TagInfo[]|null
+     * Get Tags
+     *
+     * @return list<TagInfo>|null
      */
     public function getTags(): ?array
     {
-        return $this->Tags;
+        return $this->Tags ?? null;
     }
 
     /**
-     * @param TagInfo[]|null $value
+     * Set Tags
+     *
+     * @param list<TagInfo>|null $value
      *
      * @return $this
      */
-    public function setTags(?array $value = null)
+    public function setTags(?array $value)
     {
         $this->Tags = $value;
 

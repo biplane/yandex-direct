@@ -5,16 +5,27 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 use AllowDynamicProperties;
+use ArrayIterator;
+use Countable;
+use IteratorAggregate;
+use Override;
+
+use function count;
 
 /**
  * Auto-generated code.
+ *
+ * @implements IteratorAggregate<int, SmartAdTargetUpdateItem>
  */
 #[AllowDynamicProperties]
-class UpdateSmartAdTargetsRequest
+class UpdateSmartAdTargetsRequest implements IteratorAggregate, Countable
 {
-    protected $SmartAdTargets = [];
+    /** @var non-empty-list<SmartAdTargetUpdateItem> */
+    protected $SmartAdTargets;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -23,7 +34,9 @@ class UpdateSmartAdTargetsRequest
     }
 
     /**
-     * @return SmartAdTargetUpdateItem[]
+     * Get SmartAdTargets
+     *
+     * @return non-empty-list<SmartAdTargetUpdateItem>
      */
     public function getSmartAdTargets(): array
     {
@@ -31,7 +44,9 @@ class UpdateSmartAdTargetsRequest
     }
 
     /**
-     * @param SmartAdTargetUpdateItem[] $value
+     * Set SmartAdTargets
+     *
+     * @param non-empty-list<SmartAdTargetUpdateItem> $value
      *
      * @return $this
      */
@@ -40,5 +55,20 @@ class UpdateSmartAdTargetsRequest
         $this->SmartAdTargets = $value;
 
         return $this;
+    }
+
+    #[Override]
+    public function count(): int
+    {
+        return count($this->SmartAdTargets);
+    }
+
+    /**
+     * @return ArrayIterator<int, SmartAdTargetUpdateItem>
+     */
+    #[Override]
+    public function getIterator(): ArrayIterator
+    {
+        return new ArrayIterator($this->SmartAdTargets);
     }
 }

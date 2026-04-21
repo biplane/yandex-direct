@@ -13,9 +13,11 @@ use AllowDynamicProperties;
 class UnifiedAdGroupUpdate
 {
 //    Can be omitted.
-//    protected $OfferRetargeting = null;
+//    protected $OfferRetargeting;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -24,7 +26,11 @@ class UnifiedAdGroupUpdate
     }
 
     /**
-     * @see YesNoEnum
+     * Get OfferRetargeting
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'|null
      */
     public function getOfferRetargeting(): ?string
     {
@@ -32,11 +38,15 @@ class UnifiedAdGroupUpdate
     }
 
     /**
-     * @see YesNoEnum
+     * Set OfferRetargeting
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO'|null $value
      *
      * @return $this
      */
-    public function setOfferRetargeting(?string $value = null)
+    public function setOfferRetargeting(?string $value)
     {
         $this->OfferRetargeting = $value;
 

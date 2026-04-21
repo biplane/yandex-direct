@@ -12,13 +12,18 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class Warning
 {
-    protected $WarningCode = null;
+    /** @var int */
+    protected $WarningCode;
 
-    protected $WarningString = null;
+    /** @var string */
+    protected $WarningString;
 
+    /** @var string|null */
     protected $Description = null;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -26,12 +31,17 @@ class Warning
         return new static();
     }
 
+    /**
+     * Get WarningCode
+     */
     public function getWarningCode(): int
     {
         return $this->WarningCode;
     }
 
     /**
+     * Set WarningCode
+     *
      * @return $this
      */
     public function setWarningCode(int $value)
@@ -41,12 +51,17 @@ class Warning
         return $this;
     }
 
+    /**
+     * Get WarningString
+     */
     public function getWarningString(): string
     {
         return $this->WarningString;
     }
 
     /**
+     * Set WarningString
+     *
      * @return $this
      */
     public function setWarningString(string $value)
@@ -56,15 +71,20 @@ class Warning
         return $this;
     }
 
+    /**
+     * Get Description
+     */
     public function getDescription(): ?string
     {
         return $this->Description;
     }
 
     /**
+     * Set Description
+     *
      * @return $this
      */
-    public function setDescription(?string $value = null)
+    public function setDescription(?string $value)
     {
         $this->Description = $value;
 

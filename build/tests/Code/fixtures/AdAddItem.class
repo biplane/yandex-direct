@@ -1,0 +1,411 @@
+<?php
+
+namespace Acme\Api\Dto;
+
+/**
+ * Auto-generated code.
+ */
+#[\AllowDynamicProperties]
+class AdAddItem extends AdAddItemBase
+{
+//    Can be omitted.
+//    protected $TextAd;
+
+//    Can be omitted.
+//    protected $ResponsiveAd;
+
+//    Can be omitted.
+//    protected $DynamicTextAd;
+
+//    Can be omitted.
+//    protected $MobileAppAd;
+
+//    Can be omitted.
+//    protected $TextImageAd;
+
+//    Can be omitted.
+//    protected $MobileAppImageAd;
+
+//    Can be omitted.
+//    protected $TextAdBuilderAd;
+
+//    Can be omitted.
+//    protected $MobileAppAdBuilderAd;
+
+//    Can be omitted.
+//    protected $MobileAppCpcVideoAdBuilderAd;
+
+//    Can be omitted.
+//    protected $CpmBannerAdBuilderAd;
+
+//    Can be omitted.
+//    protected $CpcVideoAdBuilderAd;
+
+//    Can be omitted.
+//    protected $CpmVideoAdBuilderAd;
+
+//    Can be omitted.
+//    protected $SmartAdBuilderAd;
+
+//    Can be omitted.
+//    protected $ShoppingAd;
+
+//    Can be omitted.
+//    protected $ListingAd;
+
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create(): static
+    {
+        return new static();
+    }
+
+    /**
+     * Get TextAd
+     *
+     * @return \Acme\Api\Dto\TextAdAdd|null
+     */
+    public function getTextAd(): \Acme\Api\Dto\TextAdAdd|null
+    {
+        return isset($this->TextAd) ? $this->TextAd : null;
+    }
+
+    /**
+     * Set TextAd
+     *
+     * @param \Acme\Api\Dto\TextAdAdd|null $value
+     * @return $this
+     */
+    public function setTextAd(\Acme\Api\Dto\TextAdAdd|null $value)
+    {
+        $this->TextAd = $value;
+
+        return $this;
+    }
+
+    /**
+     * Get ResponsiveAd
+     *
+     * @return \Acme\Api\Dto\ResponsiveAdAdd|null
+     */
+    public function getResponsiveAd(): \Acme\Api\Dto\ResponsiveAdAdd|null
+    {
+        return isset($this->ResponsiveAd) ? $this->ResponsiveAd : null;
+    }
+
+    /**
+     * Set ResponsiveAd
+     *
+     * @param \Acme\Api\Dto\ResponsiveAdAdd|null $value
+     * @return $this
+     */
+    public function setResponsiveAd(\Acme\Api\Dto\ResponsiveAdAdd|null $value)
+    {
+        $this->ResponsiveAd = $value;
+
+        return $this;
+    }
+
+    /**
+     * Get DynamicTextAd
+     *
+     * @return \Acme\Api\Dto\DynamicTextAdAdd|null
+     */
+    public function getDynamicTextAd(): \Acme\Api\Dto\DynamicTextAdAdd|null
+    {
+        return isset($this->DynamicTextAd) ? $this->DynamicTextAd : null;
+    }
+
+    /**
+     * Set DynamicTextAd
+     *
+     * @param \Acme\Api\Dto\DynamicTextAdAdd|null $value
+     * @return $this
+     */
+    public function setDynamicTextAd(\Acme\Api\Dto\DynamicTextAdAdd|null $value)
+    {
+        $this->DynamicTextAd = $value;
+
+        return $this;
+    }
+
+    /**
+     * Get MobileAppAd
+     *
+     * @return \Acme\Api\Dto\MobileAppAdAdd|null
+     */
+    public function getMobileAppAd(): \Acme\Api\Dto\MobileAppAdAdd|null
+    {
+        return isset($this->MobileAppAd) ? $this->MobileAppAd : null;
+    }
+
+    /**
+     * Set MobileAppAd
+     *
+     * @param \Acme\Api\Dto\MobileAppAdAdd|null $value
+     * @return $this
+     */
+    public function setMobileAppAd(\Acme\Api\Dto\MobileAppAdAdd|null $value)
+    {
+        $this->MobileAppAd = $value;
+
+        return $this;
+    }
+
+    /**
+     * Get TextImageAd
+     *
+     * @return \Acme\Api\Dto\TextImageAdAdd|null
+     */
+    public function getTextImageAd(): \Acme\Api\Dto\TextImageAdAdd|null
+    {
+        return isset($this->TextImageAd) ? $this->TextImageAd : null;
+    }
+
+    /**
+     * Set TextImageAd
+     *
+     * @param \Acme\Api\Dto\TextImageAdAdd|null $value
+     * @return $this
+     */
+    public function setTextImageAd(\Acme\Api\Dto\TextImageAdAdd|null $value)
+    {
+        $this->TextImageAd = $value;
+
+        return $this;
+    }
+
+    /**
+     * Get MobileAppImageAd
+     *
+     * @return \Acme\Api\Dto\MobileAppImageAdAdd|null
+     */
+    public function getMobileAppImageAd(): \Acme\Api\Dto\MobileAppImageAdAdd|null
+    {
+        return isset($this->MobileAppImageAd) ? $this->MobileAppImageAd : null;
+    }
+
+    /**
+     * Set MobileAppImageAd
+     *
+     * @param \Acme\Api\Dto\MobileAppImageAdAdd|null $value
+     * @return $this
+     */
+    public function setMobileAppImageAd(\Acme\Api\Dto\MobileAppImageAdAdd|null $value)
+    {
+        $this->MobileAppImageAd = $value;
+
+        return $this;
+    }
+
+    /**
+     * Get TextAdBuilderAd
+     *
+     * @return \Acme\Api\Dto\TextAdBuilderAdAdd|null
+     */
+    public function getTextAdBuilderAd(): \Acme\Api\Dto\TextAdBuilderAdAdd|null
+    {
+        return isset($this->TextAdBuilderAd) ? $this->TextAdBuilderAd : null;
+    }
+
+    /**
+     * Set TextAdBuilderAd
+     *
+     * @param \Acme\Api\Dto\TextAdBuilderAdAdd|null $value
+     * @return $this
+     */
+    public function setTextAdBuilderAd(\Acme\Api\Dto\TextAdBuilderAdAdd|null $value)
+    {
+        $this->TextAdBuilderAd = $value;
+
+        return $this;
+    }
+
+    /**
+     * Get MobileAppAdBuilderAd
+     *
+     * @return \Acme\Api\Dto\MobileAppAdBuilderAdAdd|null
+     */
+    public function getMobileAppAdBuilderAd(): \Acme\Api\Dto\MobileAppAdBuilderAdAdd|null
+    {
+        return isset($this->MobileAppAdBuilderAd) ? $this->MobileAppAdBuilderAd : null;
+    }
+
+    /**
+     * Set MobileAppAdBuilderAd
+     *
+     * @param \Acme\Api\Dto\MobileAppAdBuilderAdAdd|null $value
+     * @return $this
+     */
+    public function setMobileAppAdBuilderAd(\Acme\Api\Dto\MobileAppAdBuilderAdAdd|null $value)
+    {
+        $this->MobileAppAdBuilderAd = $value;
+
+        return $this;
+    }
+
+    /**
+     * Get MobileAppCpcVideoAdBuilderAd
+     *
+     * @return \Acme\Api\Dto\MobileAppCpcVideoAdBuilderAdAdd|null
+     */
+    public function getMobileAppCpcVideoAdBuilderAd(): \Acme\Api\Dto\MobileAppCpcVideoAdBuilderAdAdd|null
+    {
+        return isset($this->MobileAppCpcVideoAdBuilderAd) ? $this->MobileAppCpcVideoAdBuilderAd : null;
+    }
+
+    /**
+     * Set MobileAppCpcVideoAdBuilderAd
+     *
+     * @param \Acme\Api\Dto\MobileAppCpcVideoAdBuilderAdAdd|null $value
+     * @return $this
+     */
+    public function setMobileAppCpcVideoAdBuilderAd(\Acme\Api\Dto\MobileAppCpcVideoAdBuilderAdAdd|null $value)
+    {
+        $this->MobileAppCpcVideoAdBuilderAd = $value;
+
+        return $this;
+    }
+
+    /**
+     * Get CpmBannerAdBuilderAd
+     *
+     * @return \Acme\Api\Dto\CpmBannerAdBuilderAdAdd|null
+     */
+    public function getCpmBannerAdBuilderAd(): \Acme\Api\Dto\CpmBannerAdBuilderAdAdd|null
+    {
+        return isset($this->CpmBannerAdBuilderAd) ? $this->CpmBannerAdBuilderAd : null;
+    }
+
+    /**
+     * Set CpmBannerAdBuilderAd
+     *
+     * @param \Acme\Api\Dto\CpmBannerAdBuilderAdAdd|null $value
+     * @return $this
+     */
+    public function setCpmBannerAdBuilderAd(\Acme\Api\Dto\CpmBannerAdBuilderAdAdd|null $value)
+    {
+        $this->CpmBannerAdBuilderAd = $value;
+
+        return $this;
+    }
+
+    /**
+     * Get CpcVideoAdBuilderAd
+     *
+     * @return \Acme\Api\Dto\CpcVideoAdBuilderAdAdd|null
+     */
+    public function getCpcVideoAdBuilderAd(): \Acme\Api\Dto\CpcVideoAdBuilderAdAdd|null
+    {
+        return isset($this->CpcVideoAdBuilderAd) ? $this->CpcVideoAdBuilderAd : null;
+    }
+
+    /**
+     * Set CpcVideoAdBuilderAd
+     *
+     * @param \Acme\Api\Dto\CpcVideoAdBuilderAdAdd|null $value
+     * @return $this
+     */
+    public function setCpcVideoAdBuilderAd(\Acme\Api\Dto\CpcVideoAdBuilderAdAdd|null $value)
+    {
+        $this->CpcVideoAdBuilderAd = $value;
+
+        return $this;
+    }
+
+    /**
+     * Get CpmVideoAdBuilderAd
+     *
+     * @return \Acme\Api\Dto\CpmVideoAdBuilderAdAdd|null
+     */
+    public function getCpmVideoAdBuilderAd(): \Acme\Api\Dto\CpmVideoAdBuilderAdAdd|null
+    {
+        return isset($this->CpmVideoAdBuilderAd) ? $this->CpmVideoAdBuilderAd : null;
+    }
+
+    /**
+     * Set CpmVideoAdBuilderAd
+     *
+     * @param \Acme\Api\Dto\CpmVideoAdBuilderAdAdd|null $value
+     * @return $this
+     */
+    public function setCpmVideoAdBuilderAd(\Acme\Api\Dto\CpmVideoAdBuilderAdAdd|null $value)
+    {
+        $this->CpmVideoAdBuilderAd = $value;
+
+        return $this;
+    }
+
+    /**
+     * Get SmartAdBuilderAd
+     *
+     * @return \Acme\Api\Dto\SmartAdBuilderAdAdd|null
+     */
+    public function getSmartAdBuilderAd(): \Acme\Api\Dto\SmartAdBuilderAdAdd|null
+    {
+        return isset($this->SmartAdBuilderAd) ? $this->SmartAdBuilderAd : null;
+    }
+
+    /**
+     * Set SmartAdBuilderAd
+     *
+     * @param \Acme\Api\Dto\SmartAdBuilderAdAdd|null $value
+     * @return $this
+     */
+    public function setSmartAdBuilderAd(\Acme\Api\Dto\SmartAdBuilderAdAdd|null $value)
+    {
+        $this->SmartAdBuilderAd = $value;
+
+        return $this;
+    }
+
+    /**
+     * Get ShoppingAd
+     *
+     * @return \Acme\Api\Dto\ShoppingAdAdd|null
+     */
+    public function getShoppingAd(): \Acme\Api\Dto\ShoppingAdAdd|null
+    {
+        return isset($this->ShoppingAd) ? $this->ShoppingAd : null;
+    }
+
+    /**
+     * Set ShoppingAd
+     *
+     * @param \Acme\Api\Dto\ShoppingAdAdd|null $value
+     * @return $this
+     */
+    public function setShoppingAd(\Acme\Api\Dto\ShoppingAdAdd|null $value)
+    {
+        $this->ShoppingAd = $value;
+
+        return $this;
+    }
+
+    /**
+     * Get ListingAd
+     *
+     * @return \Acme\Api\Dto\ListingAdAdd|null
+     */
+    public function getListingAd(): \Acme\Api\Dto\ListingAdAdd|null
+    {
+        return isset($this->ListingAd) ? $this->ListingAd : null;
+    }
+
+    /**
+     * Set ListingAd
+     *
+     * @param \Acme\Api\Dto\ListingAdAdd|null $value
+     * @return $this
+     */
+    public function setListingAd(\Acme\Api\Dto\ListingAdAdd|null $value)
+    {
+        $this->ListingAd = $value;
+
+        return $this;
+    }
+}
+

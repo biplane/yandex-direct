@@ -13,9 +13,11 @@ use AllowDynamicProperties;
 class CheckDictionariesRequest
 {
 //    Can be omitted.
-//    protected $Timestamp = null;
+//    protected $Timestamp;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -23,15 +25,20 @@ class CheckDictionariesRequest
         return new static();
     }
 
+    /**
+     * Get Timestamp
+     */
     public function getTimestamp(): ?string
     {
         return $this->Timestamp ?? null;
     }
 
     /**
+     * Set Timestamp
+     *
      * @return $this
      */
-    public function setTimestamp(?string $value = null)
+    public function setTimestamp(?string $value)
     {
         $this->Timestamp = $value;
 

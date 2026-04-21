@@ -13,15 +13,17 @@ use AllowDynamicProperties;
 class IncomeGradeAdjustmentGet
 {
 //    Can be omitted.
-//    protected $Grade = null;
+//    protected $Grade;
 
 //    Can be omitted.
-//    protected $BidModifier = null;
+//    protected $BidModifier;
 
 //    Can be omitted.
-//    protected $Enabled = null;
+//    protected $Enabled;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -30,7 +32,11 @@ class IncomeGradeAdjustmentGet
     }
 
     /**
-     * @see IncomeGradeEnum
+     * Get Grade
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\IncomeGradeEnum
+     *
+     * @return 'VERY_HIGH'|'HIGH'|'ABOVE_AVERAGE'|null
      */
     public function getGrade(): ?string
     {
@@ -38,26 +44,35 @@ class IncomeGradeAdjustmentGet
     }
 
     /**
-     * @see IncomeGradeEnum
+     * Set Grade
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\IncomeGradeEnum
+     *
+     * @param 'VERY_HIGH'|'HIGH'|'ABOVE_AVERAGE'|null $value
      *
      * @return $this
      */
-    public function setGrade(?string $value = null)
+    public function setGrade(?string $value)
     {
         $this->Grade = $value;
 
         return $this;
     }
 
+    /**
+     * Get BidModifier
+     */
     public function getBidModifier(): ?int
     {
         return $this->BidModifier ?? null;
     }
 
     /**
+     * Set BidModifier
+     *
      * @return $this
      */
-    public function setBidModifier(?int $value = null)
+    public function setBidModifier(?int $value)
     {
         $this->BidModifier = $value;
 
@@ -65,7 +80,11 @@ class IncomeGradeAdjustmentGet
     }
 
     /**
-     * @see YesNoEnum
+     * Get Enabled
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'|null
      */
     public function getEnabled(): ?string
     {
@@ -73,11 +92,15 @@ class IncomeGradeAdjustmentGet
     }
 
     /**
-     * @see YesNoEnum
+     * Set Enabled
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO'|null $value
      *
      * @return $this
      */
-    public function setEnabled(?string $value = null)
+    public function setEnabled(?string $value)
     {
         $this->Enabled = $value;
 

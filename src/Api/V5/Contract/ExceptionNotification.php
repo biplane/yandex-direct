@@ -12,14 +12,18 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class ExceptionNotification
 {
-    protected $Code = null;
+    /** @var int */
+    protected $Code;
 
-    protected $Message = null;
+    /** @var string */
+    protected $Message;
 
 //    Can be omitted.
-//    protected $Details = null;
+//    protected $Details;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -27,12 +31,17 @@ class ExceptionNotification
         return new static();
     }
 
+    /**
+     * Get Code
+     */
     public function getCode(): int
     {
         return $this->Code;
     }
 
     /**
+     * Set Code
+     *
      * @return $this
      */
     public function setCode(int $value)
@@ -42,12 +51,17 @@ class ExceptionNotification
         return $this;
     }
 
+    /**
+     * Get Message
+     */
     public function getMessage(): string
     {
         return $this->Message;
     }
 
     /**
+     * Set Message
+     *
      * @return $this
      */
     public function setMessage(string $value)
@@ -57,15 +71,20 @@ class ExceptionNotification
         return $this;
     }
 
+    /**
+     * Get Details
+     */
     public function getDetails(): ?string
     {
         return $this->Details ?? null;
     }
 
     /**
+     * Set Details
+     *
      * @return $this
      */
-    public function setDetails(?string $value = null)
+    public function setDetails(?string $value)
     {
         $this->Details = $value;
 

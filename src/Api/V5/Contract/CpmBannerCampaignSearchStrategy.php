@@ -12,9 +12,12 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class CpmBannerCampaignSearchStrategy
 {
-    protected $BiddingStrategyType = null;
+    /** @var 'SERVING_OFF'|'UNKNOWN' */
+    protected $BiddingStrategyType;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -23,7 +26,11 @@ class CpmBannerCampaignSearchStrategy
     }
 
     /**
-     * @see CpmBannerCampaignSearchStrategyTypeEnum
+     * Get BiddingStrategyType
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\CpmBannerCampaignSearchStrategyTypeEnum
+     *
+     * @return 'SERVING_OFF'|'UNKNOWN'
      */
     public function getBiddingStrategyType(): string
     {
@@ -31,7 +38,11 @@ class CpmBannerCampaignSearchStrategy
     }
 
     /**
-     * @see CpmBannerCampaignSearchStrategyTypeEnum
+     * Set BiddingStrategyType
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\CpmBannerCampaignSearchStrategyTypeEnum
+     *
+     * @param 'SERVING_OFF'|'UNKNOWN' $value
      *
      * @return $this
      */

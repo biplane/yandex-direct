@@ -12,13 +12,18 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class ProductivityAssertionsItem
 {
-    protected $Reference = null;
+    /** @var int */
+    protected $Reference;
 
-    protected $Title = null;
+    /** @var string */
+    protected $Title;
 
-    protected $Recommendation = null;
+    /** @var string */
+    protected $Recommendation;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -26,12 +31,17 @@ class ProductivityAssertionsItem
         return new static();
     }
 
+    /**
+     * Get Reference
+     */
     public function getReference(): int
     {
         return $this->Reference;
     }
 
     /**
+     * Set Reference
+     *
      * @return $this
      */
     public function setReference(int $value)
@@ -41,12 +51,17 @@ class ProductivityAssertionsItem
         return $this;
     }
 
+    /**
+     * Get Title
+     */
     public function getTitle(): string
     {
         return $this->Title;
     }
 
     /**
+     * Set Title
+     *
      * @return $this
      */
     public function setTitle(string $value)
@@ -56,12 +71,17 @@ class ProductivityAssertionsItem
         return $this;
     }
 
+    /**
+     * Get Recommendation
+     */
     public function getRecommendation(): string
     {
         return $this->Recommendation;
     }
 
     /**
+     * Set Recommendation
+     *
      * @return $this
      */
     public function setRecommendation(string $value)

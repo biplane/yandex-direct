@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class AccountSelectionCriteria
 {
-    protected $Logins = null;
+//    Can be omitted.
+//    protected $Logins;
 
-    protected $AccountIDS = null;
+//    Can be omitted.
+//    protected $AccountIDS;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -25,19 +29,23 @@ class AccountSelectionCriteria
     }
 
     /**
-     * @return string[]|null
+     * Get Logins
+     *
+     * @return list<string>|null
      */
     public function getLogins(): ?array
     {
-        return $this->Logins;
+        return $this->Logins ?? null;
     }
 
     /**
-     * @param string[]|null $value
+     * Set Logins
+     *
+     * @param list<string>|null $value
      *
      * @return $this
      */
-    public function setLogins(?array $value = null)
+    public function setLogins(?array $value)
     {
         $this->Logins = $value;
 
@@ -45,19 +53,23 @@ class AccountSelectionCriteria
     }
 
     /**
-     * @return int[]|null
+     * Get AccountIDS
+     *
+     * @return list<int>|null
      */
     public function getAccountIDS(): ?array
     {
-        return $this->AccountIDS;
+        return $this->AccountIDS ?? null;
     }
 
     /**
-     * @param int[]|null $value
+     * Set AccountIDS
+     *
+     * @param list<int>|null $value
      *
      * @return $this
      */
-    public function setAccountIDS(?array $value = null)
+    public function setAccountIDS(?array $value)
     {
         $this->AccountIDS = $value;
 

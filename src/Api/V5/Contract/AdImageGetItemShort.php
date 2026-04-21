@@ -12,14 +12,30 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class AdImageGetItemShort extends ExtensionModeration
 {
-    protected $ImageHash = null;
+    /** @var string */
+    protected $ImageHash;
 
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    /**
+     * Get ImageHash
+     */
     public function getImageHash(): string
     {
         return $this->ImageHash;
     }
 
     /**
+     * Set ImageHash
+     *
      * @return $this
      */
     public function setImageHash(string $value)

@@ -13,28 +13,32 @@ use AllowDynamicProperties;
 class ShoppingAdAdd
 {
 //    Can be omitted.
-//    protected $SitelinkSetId = null;
+//    protected $SitelinkSetId;
 
 //    Can be omitted.
-//    protected $AdExtensionIds = null;
+//    protected $AdExtensionIds;
 
 //    Can be omitted.
-//    protected $BusinessId = null;
+//    protected $BusinessId;
 
-    protected $FeedId = null;
-
-//    Can be omitted.
-//    protected $FeedFilterConditions = null;
+    /** @var int */
+    protected $FeedId;
 
 //    Can be omitted.
-//    protected $TitleSources = null;
+//    protected $FeedFilterConditions;
 
 //    Can be omitted.
-//    protected $TextSources = null;
+//    protected $TitleSources;
 
-    protected $DefaultTexts = [];
+//    Can be omitted.
+//    protected $TextSources;
+
+    /** @var non-empty-list<string> */
+    protected $DefaultTexts;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -42,15 +46,20 @@ class ShoppingAdAdd
         return new static();
     }
 
+    /**
+     * Get SitelinkSetId
+     */
     public function getSitelinkSetId(): ?int
     {
         return $this->SitelinkSetId ?? null;
     }
 
     /**
+     * Set SitelinkSetId
+     *
      * @return $this
      */
-    public function setSitelinkSetId(?int $value = null)
+    public function setSitelinkSetId(?int $value)
     {
         $this->SitelinkSetId = $value;
 
@@ -58,46 +67,60 @@ class ShoppingAdAdd
     }
 
     /**
-     * @return int[]|null
+     * Get AdExtensionIds
+     *
+     * @return list<int>
      */
-    public function getAdExtensionIds(): ?array
+    public function getAdExtensionIds(): array
     {
-        return $this->AdExtensionIds ?? null;
+        return $this->AdExtensionIds ?? [];
     }
 
     /**
-     * @param int[]|null $value
+     * Set AdExtensionIds
+     *
+     * @param list<int> $value
      *
      * @return $this
      */
-    public function setAdExtensionIds(?array $value = null)
+    public function setAdExtensionIds(array $value)
     {
         $this->AdExtensionIds = $value;
 
         return $this;
     }
 
+    /**
+     * Get BusinessId
+     */
     public function getBusinessId(): ?int
     {
         return $this->BusinessId ?? null;
     }
 
     /**
+     * Set BusinessId
+     *
      * @return $this
      */
-    public function setBusinessId(?int $value = null)
+    public function setBusinessId(?int $value)
     {
         $this->BusinessId = $value;
 
         return $this;
     }
 
+    /**
+     * Get FeedId
+     */
     public function getFeedId(): int
     {
         return $this->FeedId;
     }
 
     /**
+     * Set FeedId
+     *
      * @return $this
      */
     public function setFeedId(int $value)
@@ -108,19 +131,23 @@ class ShoppingAdAdd
     }
 
     /**
-     * @return FeedFilterConditionItem[]|null
+     * Get FeedFilterConditions
+     *
+     * @return list<FeedFilterConditionItem>
      */
-    public function getFeedFilterConditions(): ?array
+    public function getFeedFilterConditions(): array
     {
-        return $this->FeedFilterConditions ?? null;
+        return $this->FeedFilterConditions ?? [];
     }
 
     /**
-     * @param FeedFilterConditionItem[]|null $value
+     * Set FeedFilterConditions
+     *
+     * @param list<FeedFilterConditionItem> $value
      *
      * @return $this
      */
-    public function setFeedFilterConditions(?array $value = null)
+    public function setFeedFilterConditions(array $value)
     {
         $this->FeedFilterConditions = $value;
 
@@ -128,19 +155,23 @@ class ShoppingAdAdd
     }
 
     /**
-     * @return string[]|null
+     * Get TitleSources
+     *
+     * @return list<string>
      */
-    public function getTitleSources(): ?array
+    public function getTitleSources(): array
     {
-        return $this->TitleSources ?? null;
+        return $this->TitleSources ?? [];
     }
 
     /**
-     * @param string[]|null $value
+     * Set TitleSources
+     *
+     * @param list<string> $value
      *
      * @return $this
      */
-    public function setTitleSources(?array $value = null)
+    public function setTitleSources(array $value)
     {
         $this->TitleSources = $value;
 
@@ -148,19 +179,23 @@ class ShoppingAdAdd
     }
 
     /**
-     * @return string[]|null
+     * Get TextSources
+     *
+     * @return list<string>
      */
-    public function getTextSources(): ?array
+    public function getTextSources(): array
     {
-        return $this->TextSources ?? null;
+        return $this->TextSources ?? [];
     }
 
     /**
-     * @param string[]|null $value
+     * Set TextSources
+     *
+     * @param list<string> $value
      *
      * @return $this
      */
-    public function setTextSources(?array $value = null)
+    public function setTextSources(array $value)
     {
         $this->TextSources = $value;
 
@@ -168,7 +203,9 @@ class ShoppingAdAdd
     }
 
     /**
-     * @return string[]
+     * Get DefaultTexts
+     *
+     * @return non-empty-list<string>
      */
     public function getDefaultTexts(): array
     {
@@ -176,7 +213,9 @@ class ShoppingAdAdd
     }
 
     /**
-     * @param string[] $value
+     * Set DefaultTexts
+     *
+     * @param non-empty-list<string> $value
      *
      * @return $this
      */

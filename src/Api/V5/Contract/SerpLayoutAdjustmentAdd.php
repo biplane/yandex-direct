@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class SerpLayoutAdjustmentAdd
 {
-    protected $SerpLayout = null;
+    /** @var 'ALONE'|'SUGGEST' */
+    protected $SerpLayout;
 
-    protected $BidModifier = null;
+    /** @var int */
+    protected $BidModifier;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -25,7 +29,11 @@ class SerpLayoutAdjustmentAdd
     }
 
     /**
-     * @see SerpLayoutEnum
+     * Get SerpLayout
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\SerpLayoutEnum
+     *
+     * @return 'ALONE'|'SUGGEST'
      */
     public function getSerpLayout(): string
     {
@@ -33,7 +41,11 @@ class SerpLayoutAdjustmentAdd
     }
 
     /**
-     * @see SerpLayoutEnum
+     * Set SerpLayout
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\SerpLayoutEnum
+     *
+     * @param 'ALONE'|'SUGGEST' $value
      *
      * @return $this
      */
@@ -44,12 +56,17 @@ class SerpLayoutAdjustmentAdd
         return $this;
     }
 
+    /**
+     * Get BidModifier
+     */
     public function getBidModifier(): int
     {
         return $this->BidModifier;
     }
 
     /**
+     * Set BidModifier
+     *
      * @return $this
      */
     public function setBidModifier(int $value)

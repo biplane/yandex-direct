@@ -12,15 +12,18 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class StrategyWeeklyClickPackageAdd
 {
-    protected $ClicksPerWeek = null;
+    /** @var int */
+    protected $ClicksPerWeek;
 
 //    Can be omitted.
-//    protected $AverageCpc = null;
+//    protected $AverageCpc;
 
 //    Can be omitted.
-//    protected $BidCeiling = null;
+//    protected $BidCeiling;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -28,12 +31,17 @@ class StrategyWeeklyClickPackageAdd
         return new static();
     }
 
+    /**
+     * Get ClicksPerWeek
+     */
     public function getClicksPerWeek(): int
     {
         return $this->ClicksPerWeek;
     }
 
     /**
+     * Set ClicksPerWeek
+     *
      * @return $this
      */
     public function setClicksPerWeek(int $value)
@@ -43,30 +51,40 @@ class StrategyWeeklyClickPackageAdd
         return $this;
     }
 
+    /**
+     * Get AverageCpc
+     */
     public function getAverageCpc(): ?int
     {
         return $this->AverageCpc ?? null;
     }
 
     /**
+     * Set AverageCpc
+     *
      * @return $this
      */
-    public function setAverageCpc(?int $value = null)
+    public function setAverageCpc(?int $value)
     {
         $this->AverageCpc = $value;
 
         return $this;
     }
 
+    /**
+     * Get BidCeiling
+     */
     public function getBidCeiling(): ?int
     {
         return $this->BidCeiling ?? null;
     }
 
     /**
+     * Set BidCeiling
+     *
      * @return $this
      */
-    public function setBidCeiling(?int $value = null)
+    public function setBidCeiling(?int $value)
     {
         $this->BidCeiling = $value;
 

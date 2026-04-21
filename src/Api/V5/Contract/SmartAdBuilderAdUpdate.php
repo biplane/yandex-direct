@@ -13,12 +13,14 @@ use AllowDynamicProperties;
 class SmartAdBuilderAdUpdate
 {
 //    Can be omitted.
-//    protected $LogoExtensionHash = null;
+//    protected $LogoExtensionHash;
 
 //    Can be omitted.
-//    protected $ErirAdDescription = null;
+//    protected $ErirAdDescription;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -26,30 +28,40 @@ class SmartAdBuilderAdUpdate
         return new static();
     }
 
+    /**
+     * Get LogoExtensionHash
+     */
     public function getLogoExtensionHash(): ?string
     {
         return $this->LogoExtensionHash ?? null;
     }
 
     /**
+     * Set LogoExtensionHash
+     *
      * @return $this
      */
-    public function setLogoExtensionHash(?string $value = null)
+    public function setLogoExtensionHash(?string $value)
     {
         $this->LogoExtensionHash = $value;
 
         return $this;
     }
 
+    /**
+     * Get ErirAdDescription
+     */
     public function getErirAdDescription(): ?string
     {
         return $this->ErirAdDescription ?? null;
     }
 
     /**
+     * Set ErirAdDescription
+     *
      * @return $this
      */
-    public function setErirAdDescription(?string $value = null)
+    public function setErirAdDescription(?string $value)
     {
         $this->ErirAdDescription = $value;
 

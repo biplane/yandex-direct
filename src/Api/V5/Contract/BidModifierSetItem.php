@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class BidModifierSetItem
 {
-    protected $Id = null;
+    /** @var int */
+    protected $Id;
 
-    protected $BidModifier = null;
+    /** @var int */
+    protected $BidModifier;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -24,12 +28,17 @@ class BidModifierSetItem
         return new static();
     }
 
+    /**
+     * Get Id
+     */
     public function getId(): int
     {
         return $this->Id;
     }
 
     /**
+     * Set Id
+     *
      * @return $this
      */
     public function setId(int $value)
@@ -39,12 +48,17 @@ class BidModifierSetItem
         return $this;
     }
 
+    /**
+     * Get BidModifier
+     */
     public function getBidModifier(): int
     {
         return $this->BidModifier;
     }
 
     /**
+     * Set BidModifier
+     *
      * @return $this
      */
     public function setBidModifier(int $value)

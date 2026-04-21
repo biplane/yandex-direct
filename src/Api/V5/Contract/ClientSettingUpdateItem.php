@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class ClientSettingUpdateItem
 {
-    protected $Option = null;
+    /** @var 'CORRECT_TYPOS_AUTOMATICALLY'|'DISPLAY_STORE_RATING' */
+    protected $Option;
 
-    protected $Value = null;
+    /** @var 'YES'|'NO' */
+    protected $Value;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -25,7 +29,11 @@ class ClientSettingUpdateItem
     }
 
     /**
-     * @see ClientSettingUpdateEnum
+     * Get Option
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\ClientSettingUpdateEnum
+     *
+     * @return 'CORRECT_TYPOS_AUTOMATICALLY'|'DISPLAY_STORE_RATING'
      */
     public function getOption(): string
     {
@@ -33,7 +41,11 @@ class ClientSettingUpdateItem
     }
 
     /**
-     * @see ClientSettingUpdateEnum
+     * Set Option
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\ClientSettingUpdateEnum
+     *
+     * @param 'CORRECT_TYPOS_AUTOMATICALLY'|'DISPLAY_STORE_RATING' $value
      *
      * @return $this
      */
@@ -45,7 +57,11 @@ class ClientSettingUpdateItem
     }
 
     /**
-     * @see YesNoEnum
+     * Get Value
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'
      */
     public function getValue(): string
     {
@@ -53,7 +69,11 @@ class ClientSettingUpdateItem
     }
 
     /**
-     * @see YesNoEnum
+     * Set Value
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO' $value
      *
      * @return $this
      */

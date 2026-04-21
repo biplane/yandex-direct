@@ -13,19 +13,35 @@ use AllowDynamicProperties;
 class GetVCardsRequest extends GetRequestGeneral
 {
 //    Can be omitted.
-//    protected $SelectionCriteria = null;
+//    protected $SelectionCriteria;
 
-    protected $FieldNames = [];
+    /** @var non-empty-list<'Id'|'Country'|'City'|'Street'|'House'|'Building'|'Apartment'|'CompanyName'|'ExtraMessage'|'ContactPerson'|'ContactEmail'|'MetroStationId'|'CampaignId'|'Ogrn'|'WorkTime'|'InstantMessenger'|'Phone'|'PointOnMap'> */
+    protected $FieldNames;
 
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    /**
+     * Get SelectionCriteria
+     */
     public function getSelectionCriteria(): ?IdsCriteria
     {
         return $this->SelectionCriteria ?? null;
     }
 
     /**
+     * Set SelectionCriteria
+     *
      * @return $this
      */
-    public function setSelectionCriteria(?IdsCriteria $value = null)
+    public function setSelectionCriteria(?IdsCriteria $value)
     {
         $this->SelectionCriteria = $value;
 
@@ -33,9 +49,11 @@ class GetVCardsRequest extends GetRequestGeneral
     }
 
     /**
-     * @see VCardFieldEnum
+     * Get FieldNames
      *
-     * @return string[]
+     * @see \Biplane\YandexDirect\Api\V5\Contract\VCardFieldEnum
+     *
+     * @return non-empty-list<'Id'|'Country'|'City'|'Street'|'House'|'Building'|'Apartment'|'CompanyName'|'ExtraMessage'|'ContactPerson'|'ContactEmail'|'MetroStationId'|'CampaignId'|'Ogrn'|'WorkTime'|'InstantMessenger'|'Phone'|'PointOnMap'>
      */
     public function getFieldNames(): array
     {
@@ -43,9 +61,11 @@ class GetVCardsRequest extends GetRequestGeneral
     }
 
     /**
-     * @see VCardFieldEnum
+     * Set FieldNames
      *
-     * @param string[] $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\VCardFieldEnum
+     *
+     * @param non-empty-list<'Id'|'Country'|'City'|'Street'|'House'|'Building'|'Apartment'|'CompanyName'|'ExtraMessage'|'ContactPerson'|'ContactEmail'|'MetroStationId'|'CampaignId'|'Ogrn'|'WorkTime'|'InstantMessenger'|'Phone'|'PointOnMap'> $value
      *
      * @return $this
      */

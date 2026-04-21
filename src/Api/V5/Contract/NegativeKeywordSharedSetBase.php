@@ -13,12 +13,14 @@ use AllowDynamicProperties;
 class NegativeKeywordSharedSetBase
 {
 //    Can be omitted.
-//    protected $Name = null;
+//    protected $Name;
 
 //    Can be omitted.
-//    protected $NegativeKeywords = null;
+//    protected $NegativeKeywords;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -26,15 +28,20 @@ class NegativeKeywordSharedSetBase
         return new static();
     }
 
+    /**
+     * Get Name
+     */
     public function getName(): ?string
     {
         return $this->Name ?? null;
     }
 
     /**
+     * Set Name
+     *
      * @return $this
      */
-    public function setName(?string $value = null)
+    public function setName(?string $value)
     {
         $this->Name = $value;
 
@@ -42,19 +49,23 @@ class NegativeKeywordSharedSetBase
     }
 
     /**
-     * @return string[]|null
+     * Get NegativeKeywords
+     *
+     * @return list<string>
      */
-    public function getNegativeKeywords(): ?array
+    public function getNegativeKeywords(): array
     {
-        return $this->NegativeKeywords ?? null;
+        return $this->NegativeKeywords ?? [];
     }
 
     /**
-     * @param string[]|null $value
+     * Set NegativeKeywords
+     *
+     * @param list<string> $value
      *
      * @return $this
      */
-    public function setNegativeKeywords(?array $value = null)
+    public function setNegativeKeywords(array $value)
     {
         $this->NegativeKeywords = $value;
 

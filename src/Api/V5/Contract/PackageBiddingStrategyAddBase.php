@@ -13,12 +13,14 @@ use AllowDynamicProperties;
 class PackageBiddingStrategyAddBase
 {
 //    Can be omitted.
-//    protected $StrategyId = null;
+//    protected $StrategyId;
 
 //    Can be omitted.
-//    protected $StrategyFromCampaignId = null;
+//    protected $StrategyFromCampaignId;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -26,30 +28,40 @@ class PackageBiddingStrategyAddBase
         return new static();
     }
 
+    /**
+     * Get StrategyId
+     */
     public function getStrategyId(): ?int
     {
         return $this->StrategyId ?? null;
     }
 
     /**
+     * Set StrategyId
+     *
      * @return $this
      */
-    public function setStrategyId(?int $value = null)
+    public function setStrategyId(?int $value)
     {
         $this->StrategyId = $value;
 
         return $this;
     }
 
+    /**
+     * Get StrategyFromCampaignId
+     */
     public function getStrategyFromCampaignId(): ?int
     {
         return $this->StrategyFromCampaignId ?? null;
     }
 
     /**
+     * Set StrategyFromCampaignId
+     *
      * @return $this
      */
-    public function setStrategyFromCampaignId(?int $value = null)
+    public function setStrategyFromCampaignId(?int $value)
     {
         $this->StrategyFromCampaignId = $value;
 

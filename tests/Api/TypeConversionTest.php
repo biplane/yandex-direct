@@ -37,7 +37,7 @@ final class TypeConversionTest extends SoapClientTestCase
 
         $campaigns = $service->get($request)->getCampaigns();
 
-        self::assertNotNull($campaigns);
+        self::assertNotEmpty($campaigns);
 
         $campaign = $campaigns[0];
 
@@ -66,7 +66,7 @@ final class TypeConversionTest extends SoapClientTestCase
 
         $items = $service->get($request)->getVCards();
 
-        self::assertNotNull($items);
+        self::assertNotEmpty($items);
 
         $pointOnMap = $items[0]->getPointOnMap();
         self::assertNotNull($pointOnMap);
@@ -125,7 +125,7 @@ final class TypeConversionTest extends SoapClientTestCase
 
         $items = $service->get($request)->getCampaigns();
 
-        self::assertNotNull($items);
+        self::assertNotEmpty($items);
         /** @psalm-suppress PossiblyNullReference */
         self::assertSame(6355930000, $items[0]->getDailyBudget()->getAmount());
     }

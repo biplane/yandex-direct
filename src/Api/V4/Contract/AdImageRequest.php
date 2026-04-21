@@ -12,15 +12,21 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class AdImageRequest
 {
-    protected $Action = null;
+    /** @var string */
+    protected $Action;
 
+    /** @var AdImageSelectionCriteria|null */
     protected $SelectionCriteria = null;
 
-    protected $AdImageRawData = null;
+//    Can be omitted.
+//    protected $AdImageRawData;
 
-    protected $AdImageURLData = null;
+//    Can be omitted.
+//    protected $AdImageURLData;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -28,12 +34,17 @@ class AdImageRequest
         return new static();
     }
 
+    /**
+     * Get Action
+     */
     public function getAction(): string
     {
         return $this->Action;
     }
 
     /**
+     * Set Action
+     *
      * @return $this
      */
     public function setAction(string $value)
@@ -43,15 +54,20 @@ class AdImageRequest
         return $this;
     }
 
+    /**
+     * Get SelectionCriteria
+     */
     public function getSelectionCriteria(): ?AdImageSelectionCriteria
     {
         return $this->SelectionCriteria;
     }
 
     /**
+     * Set SelectionCriteria
+     *
      * @return $this
      */
-    public function setSelectionCriteria(?AdImageSelectionCriteria $value = null)
+    public function setSelectionCriteria(?AdImageSelectionCriteria $value)
     {
         $this->SelectionCriteria = $value;
 
@@ -59,19 +75,23 @@ class AdImageRequest
     }
 
     /**
-     * @return AdImageRaw[]|null
+     * Get AdImageRawData
+     *
+     * @return list<AdImageRaw>|null
      */
     public function getAdImageRawData(): ?array
     {
-        return $this->AdImageRawData;
+        return $this->AdImageRawData ?? null;
     }
 
     /**
-     * @param AdImageRaw[]|null $value
+     * Set AdImageRawData
+     *
+     * @param list<AdImageRaw>|null $value
      *
      * @return $this
      */
-    public function setAdImageRawData(?array $value = null)
+    public function setAdImageRawData(?array $value)
     {
         $this->AdImageRawData = $value;
 
@@ -79,19 +99,23 @@ class AdImageRequest
     }
 
     /**
-     * @return AdImageURL[]|null
+     * Get AdImageURLData
+     *
+     * @return list<AdImageURL>|null
      */
     public function getAdImageURLData(): ?array
     {
-        return $this->AdImageURLData;
+        return $this->AdImageURLData ?? null;
     }
 
     /**
-     * @param AdImageURL[]|null $value
+     * Set AdImageURLData
+     *
+     * @param list<AdImageURL>|null $value
      *
      * @return $this
      */
-    public function setAdImageURLData(?array $value = null)
+    public function setAdImageURLData(?array $value)
     {
         $this->AdImageURLData = $value;
 

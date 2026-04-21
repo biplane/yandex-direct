@@ -13,24 +13,26 @@ use AllowDynamicProperties;
 class ContractBaseInfo
 {
 //    Can be omitted.
-//    protected $Number = null;
+//    protected $Number;
 
 //    Can be omitted.
-//    protected $Date = null;
+//    protected $Date;
 
 //    Can be omitted.
-//    protected $Type = null;
+//    protected $Type;
 
 //    Can be omitted.
-//    protected $ActionType = null;
+//    protected $ActionType;
 
 //    Can be omitted.
-//    protected $SubjectType = null;
+//    protected $SubjectType;
 
 //    Can be omitted.
-//    protected $IsAgencyPayment = null;
+//    protected $IsAgencyPayment;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -38,30 +40,40 @@ class ContractBaseInfo
         return new static();
     }
 
+    /**
+     * Get Number
+     */
     public function getNumber(): ?string
     {
         return $this->Number ?? null;
     }
 
     /**
+     * Set Number
+     *
      * @return $this
      */
-    public function setNumber(?string $value = null)
+    public function setNumber(?string $value)
     {
         $this->Number = $value;
 
         return $this;
     }
 
+    /**
+     * Get Date
+     */
     public function getDate(): ?string
     {
         return $this->Date ?? null;
     }
 
     /**
+     * Set Date
+     *
      * @return $this
      */
-    public function setDate(?string $value = null)
+    public function setDate(?string $value)
     {
         $this->Date = $value;
 
@@ -69,7 +81,11 @@ class ContractBaseInfo
     }
 
     /**
-     * @see ContractTypeEnum
+     * Get Type
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\ContractTypeEnum
+     *
+     * @return 'CONTRACT'|'INTERMEDIARY_CONTRACT'|'ADDITIONAL_AGREEMENT'|null
      */
     public function getType(): ?string
     {
@@ -77,11 +93,15 @@ class ContractBaseInfo
     }
 
     /**
-     * @see ContractTypeEnum
+     * Set Type
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\ContractTypeEnum
+     *
+     * @param 'CONTRACT'|'INTERMEDIARY_CONTRACT'|'ADDITIONAL_AGREEMENT'|null $value
      *
      * @return $this
      */
-    public function setType(?string $value = null)
+    public function setType(?string $value)
     {
         $this->Type = $value;
 
@@ -89,7 +109,11 @@ class ContractBaseInfo
     }
 
     /**
-     * @see ContractActionTypeEnum
+     * Get ActionType
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\ContractActionTypeEnum
+     *
+     * @return 'COMMERCIAL'|'DISTRIBUTION'|'CONCLUDE'|'OTHER'|null
      */
     public function getActionType(): ?string
     {
@@ -97,11 +121,15 @@ class ContractBaseInfo
     }
 
     /**
-     * @see ContractActionTypeEnum
+     * Set ActionType
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\ContractActionTypeEnum
+     *
+     * @param 'COMMERCIAL'|'DISTRIBUTION'|'CONCLUDE'|'OTHER'|null $value
      *
      * @return $this
      */
-    public function setActionType(?string $value = null)
+    public function setActionType(?string $value)
     {
         $this->ActionType = $value;
 
@@ -109,7 +137,11 @@ class ContractBaseInfo
     }
 
     /**
-     * @see ContractSubjectTypeEnum
+     * Get SubjectType
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\ContractSubjectTypeEnum
+     *
+     * @return 'REPRESENTATION'|'MEDIATION'|'DISTRIBUTION'|'ORG_DISTRIBUTION'|'OTHER'|null
      */
     public function getSubjectType(): ?string
     {
@@ -117,11 +149,15 @@ class ContractBaseInfo
     }
 
     /**
-     * @see ContractSubjectTypeEnum
+     * Set SubjectType
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\ContractSubjectTypeEnum
+     *
+     * @param 'REPRESENTATION'|'MEDIATION'|'DISTRIBUTION'|'ORG_DISTRIBUTION'|'OTHER'|null $value
      *
      * @return $this
      */
-    public function setSubjectType(?string $value = null)
+    public function setSubjectType(?string $value)
     {
         $this->SubjectType = $value;
 
@@ -129,7 +165,11 @@ class ContractBaseInfo
     }
 
     /**
-     * @see YesNoEnum
+     * Get IsAgencyPayment
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'|null
      */
     public function getIsAgencyPayment(): ?string
     {
@@ -137,11 +177,15 @@ class ContractBaseInfo
     }
 
     /**
-     * @see YesNoEnum
+     * Set IsAgencyPayment
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO'|null $value
      *
      * @return $this
      */
-    public function setIsAgencyPayment(?string $value = null)
+    public function setIsAgencyPayment(?string $value)
     {
         $this->IsAgencyPayment = $value;
 

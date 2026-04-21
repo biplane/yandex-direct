@@ -13,18 +13,20 @@ use AllowDynamicProperties;
 class BidsSelectionCriteria
 {
 //    Can be omitted.
-//    protected $CampaignIds = null;
+//    protected $CampaignIds;
 
 //    Can be omitted.
-//    protected $AdGroupIds = null;
+//    protected $AdGroupIds;
 
 //    Can be omitted.
-//    protected $KeywordIds = null;
+//    protected $KeywordIds;
 
 //    Can be omitted.
-//    protected $ServingStatuses = null;
+//    protected $ServingStatuses;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -33,19 +35,23 @@ class BidsSelectionCriteria
     }
 
     /**
-     * @return int[]|null
+     * Get CampaignIds
+     *
+     * @return list<int>
      */
-    public function getCampaignIds(): ?array
+    public function getCampaignIds(): array
     {
-        return $this->CampaignIds ?? null;
+        return $this->CampaignIds ?? [];
     }
 
     /**
-     * @param int[]|null $value
+     * Set CampaignIds
+     *
+     * @param list<int> $value
      *
      * @return $this
      */
-    public function setCampaignIds(?array $value = null)
+    public function setCampaignIds(array $value)
     {
         $this->CampaignIds = $value;
 
@@ -53,19 +59,23 @@ class BidsSelectionCriteria
     }
 
     /**
-     * @return int[]|null
+     * Get AdGroupIds
+     *
+     * @return list<int>
      */
-    public function getAdGroupIds(): ?array
+    public function getAdGroupIds(): array
     {
-        return $this->AdGroupIds ?? null;
+        return $this->AdGroupIds ?? [];
     }
 
     /**
-     * @param int[]|null $value
+     * Set AdGroupIds
+     *
+     * @param list<int> $value
      *
      * @return $this
      */
-    public function setAdGroupIds(?array $value = null)
+    public function setAdGroupIds(array $value)
     {
         $this->AdGroupIds = $value;
 
@@ -73,19 +83,23 @@ class BidsSelectionCriteria
     }
 
     /**
-     * @return int[]|null
+     * Get KeywordIds
+     *
+     * @return list<int>
      */
-    public function getKeywordIds(): ?array
+    public function getKeywordIds(): array
     {
-        return $this->KeywordIds ?? null;
+        return $this->KeywordIds ?? [];
     }
 
     /**
-     * @param int[]|null $value
+     * Set KeywordIds
+     *
+     * @param list<int> $value
      *
      * @return $this
      */
-    public function setKeywordIds(?array $value = null)
+    public function setKeywordIds(array $value)
     {
         $this->KeywordIds = $value;
 
@@ -93,23 +107,27 @@ class BidsSelectionCriteria
     }
 
     /**
-     * @see ServingStatusEnum
+     * Get ServingStatuses
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\ServingStatusEnum
+     *
+     * @return list<'ELIGIBLE'|'RARELY_SERVED'>
      */
-    public function getServingStatuses(): ?array
+    public function getServingStatuses(): array
     {
-        return $this->ServingStatuses ?? null;
+        return $this->ServingStatuses ?? [];
     }
 
     /**
-     * @see ServingStatusEnum
+     * Set ServingStatuses
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\ServingStatusEnum
+     *
+     * @param list<'ELIGIBLE'|'RARELY_SERVED'> $value
      *
      * @return $this
      */
-    public function setServingStatuses(?array $value = null)
+    public function setServingStatuses(array $value)
     {
         $this->ServingStatuses = $value;
 

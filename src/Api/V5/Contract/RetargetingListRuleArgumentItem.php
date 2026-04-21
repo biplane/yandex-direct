@@ -13,11 +13,14 @@ use AllowDynamicProperties;
 class RetargetingListRuleArgumentItem
 {
 //    Can be omitted.
-//    protected $MembershipLifeSpan = null;
+//    protected $MembershipLifeSpan;
 
-    protected $ExternalId = null;
+    /** @var int */
+    protected $ExternalId;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -25,27 +28,37 @@ class RetargetingListRuleArgumentItem
         return new static();
     }
 
+    /**
+     * Get MembershipLifeSpan
+     */
     public function getMembershipLifeSpan(): ?int
     {
         return $this->MembershipLifeSpan ?? null;
     }
 
     /**
+     * Set MembershipLifeSpan
+     *
      * @return $this
      */
-    public function setMembershipLifeSpan(?int $value = null)
+    public function setMembershipLifeSpan(?int $value)
     {
         $this->MembershipLifeSpan = $value;
 
         return $this;
     }
 
+    /**
+     * Get ExternalId
+     */
     public function getExternalId(): int
     {
         return $this->ExternalId;
     }
 
     /**
+     * Set ExternalId
+     *
      * @return $this
      */
     public function setExternalId(int $value)

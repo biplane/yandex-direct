@@ -13,33 +13,35 @@ use AllowDynamicProperties;
 class TextCampaignAddItem
 {
 //    Can be omitted.
-//    protected $BiddingStrategy = null;
+//    protected $BiddingStrategy;
 
 //    Can be omitted.
-//    protected $Settings = null;
+//    protected $Settings;
 
 //    Can be omitted.
-//    protected $CounterIds = null;
+//    protected $CounterIds;
 
 //    Can be omitted.
-//    protected $RelevantKeywords = null;
+//    protected $RelevantKeywords;
 
 //    Can be omitted.
-//    protected $PriorityGoals = null;
+//    protected $PriorityGoals;
 
 //    Can be omitted.
-//    protected $TrackingParams = null;
+//    protected $TrackingParams;
 
 //    Can be omitted.
-//    protected $AttributionModel = null;
+//    protected $AttributionModel;
 
 //    Can be omitted.
-//    protected $PackageBiddingStrategy = null;
+//    protected $PackageBiddingStrategy;
 
 //    Can be omitted.
-//    protected $NegativeKeywordSharedSetIds = null;
+//    protected $NegativeKeywordSharedSetIds;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -47,15 +49,20 @@ class TextCampaignAddItem
         return new static();
     }
 
+    /**
+     * Get BiddingStrategy
+     */
     public function getBiddingStrategy(): ?TextCampaignStrategyAdd
     {
         return $this->BiddingStrategy ?? null;
     }
 
     /**
+     * Set BiddingStrategy
+     *
      * @return $this
      */
-    public function setBiddingStrategy(?TextCampaignStrategyAdd $value = null)
+    public function setBiddingStrategy(?TextCampaignStrategyAdd $value)
     {
         $this->BiddingStrategy = $value;
 
@@ -63,19 +70,23 @@ class TextCampaignAddItem
     }
 
     /**
-     * @return TextCampaignSetting[]|null
+     * Get Settings
+     *
+     * @return list<TextCampaignSetting>
      */
-    public function getSettings(): ?array
+    public function getSettings(): array
     {
-        return $this->Settings ?? null;
+        return $this->Settings ?? [];
     }
 
     /**
-     * @param TextCampaignSetting[]|null $value
+     * Set Settings
+     *
+     * @param list<TextCampaignSetting> $value
      *
      * @return $this
      */
-    public function setSettings(?array $value = null)
+    public function setSettings(array $value)
     {
         $this->Settings = $value;
 
@@ -83,7 +94,9 @@ class TextCampaignAddItem
     }
 
     /**
-     * @return int[]|null
+     * Get CounterIds
+     *
+     * @return non-empty-list<int>|null
      */
     public function getCounterIds(): ?array
     {
@@ -91,56 +104,73 @@ class TextCampaignAddItem
     }
 
     /**
-     * @param int[]|null $value
+     * Set CounterIds
+     *
+     * @param non-empty-list<int>|null $value
      *
      * @return $this
      */
-    public function setCounterIds(?array $value = null)
+    public function setCounterIds(?array $value)
     {
         $this->CounterIds = $value;
 
         return $this;
     }
 
+    /**
+     * Get RelevantKeywords
+     */
     public function getRelevantKeywords(): ?RelevantKeywordsSettingAdd
     {
         return $this->RelevantKeywords ?? null;
     }
 
     /**
+     * Set RelevantKeywords
+     *
      * @return $this
      */
-    public function setRelevantKeywords(?RelevantKeywordsSettingAdd $value = null)
+    public function setRelevantKeywords(?RelevantKeywordsSettingAdd $value)
     {
         $this->RelevantKeywords = $value;
 
         return $this;
     }
 
+    /**
+     * Get PriorityGoals
+     */
     public function getPriorityGoals(): ?PriorityGoalsArray
     {
         return $this->PriorityGoals ?? null;
     }
 
     /**
+     * Set PriorityGoals
+     *
      * @return $this
      */
-    public function setPriorityGoals(?PriorityGoalsArray $value = null)
+    public function setPriorityGoals(?PriorityGoalsArray $value)
     {
         $this->PriorityGoals = $value;
 
         return $this;
     }
 
+    /**
+     * Get TrackingParams
+     */
     public function getTrackingParams(): ?string
     {
         return $this->TrackingParams ?? null;
     }
 
     /**
+     * Set TrackingParams
+     *
      * @return $this
      */
-    public function setTrackingParams(?string $value = null)
+    public function setTrackingParams(?string $value)
     {
         $this->TrackingParams = $value;
 
@@ -148,7 +178,11 @@ class TextCampaignAddItem
     }
 
     /**
-     * @see AttributionModelEnum
+     * Get AttributionModel
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\AttributionModelEnum
+     *
+     * @return 'LC'|'LSC'|'FC'|'LYDC'|'LSCCD'|'FCCD'|'LYDCCD'|'AUTO'|null
      */
     public function getAttributionModel(): ?string
     {
@@ -156,26 +190,35 @@ class TextCampaignAddItem
     }
 
     /**
-     * @see AttributionModelEnum
+     * Set AttributionModel
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\AttributionModelEnum
+     *
+     * @param 'LC'|'LSC'|'FC'|'LYDC'|'LSCCD'|'FCCD'|'LYDCCD'|'AUTO'|null $value
      *
      * @return $this
      */
-    public function setAttributionModel(?string $value = null)
+    public function setAttributionModel(?string $value)
     {
         $this->AttributionModel = $value;
 
         return $this;
     }
 
+    /**
+     * Get PackageBiddingStrategy
+     */
     public function getPackageBiddingStrategy(): ?TextCampaignPackageBiddingStrategyAdd
     {
         return $this->PackageBiddingStrategy ?? null;
     }
 
     /**
+     * Set PackageBiddingStrategy
+     *
      * @return $this
      */
-    public function setPackageBiddingStrategy(?TextCampaignPackageBiddingStrategyAdd $value = null)
+    public function setPackageBiddingStrategy(?TextCampaignPackageBiddingStrategyAdd $value)
     {
         $this->PackageBiddingStrategy = $value;
 
@@ -183,7 +226,9 @@ class TextCampaignAddItem
     }
 
     /**
-     * @return float[]|null
+     * Get NegativeKeywordSharedSetIds
+     *
+     * @return non-empty-list<int>|null
      */
     public function getNegativeKeywordSharedSetIds(): ?array
     {
@@ -191,11 +236,13 @@ class TextCampaignAddItem
     }
 
     /**
-     * @param float[]|null $value
+     * Set NegativeKeywordSharedSetIds
+     *
+     * @param non-empty-list<int>|null $value
      *
      * @return $this
      */
-    public function setNegativeKeywordSharedSetIds(?array $value = null)
+    public function setNegativeKeywordSharedSetIds(?array $value)
     {
         $this->NegativeKeywordSharedSetIds = $value;
 

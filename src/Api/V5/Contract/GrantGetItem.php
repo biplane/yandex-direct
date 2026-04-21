@@ -13,17 +13,32 @@ use AllowDynamicProperties;
 class GrantGetItem extends GrantItem
 {
 //    Can be omitted.
-//    protected $Agency = null;
+//    protected $Agency;
 
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    /**
+     * Get Agency
+     */
     public function getAgency(): ?string
     {
         return $this->Agency ?? null;
     }
 
     /**
+     * Set Agency
+     *
      * @return $this
      */
-    public function setAgency(?string $value = null)
+    public function setAgency(?string $value)
     {
         $this->Agency = $value;
 

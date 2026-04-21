@@ -5,16 +5,27 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 use AllowDynamicProperties;
+use ArrayIterator;
+use Countable;
+use IteratorAggregate;
+use Override;
+
+use function count;
 
 /**
  * Auto-generated code.
+ *
+ * @implements IteratorAggregate<int, NegativeKeywordSharedSetUpdateItem>
  */
 #[AllowDynamicProperties]
-class UpdateNegativeKeywordSharedSetsRequest
+class UpdateNegativeKeywordSharedSetsRequest implements IteratorAggregate, Countable
 {
-    protected $NegativeKeywordSharedSets = [];
+    /** @var non-empty-list<NegativeKeywordSharedSetUpdateItem> */
+    protected $NegativeKeywordSharedSets;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -23,7 +34,9 @@ class UpdateNegativeKeywordSharedSetsRequest
     }
 
     /**
-     * @return NegativeKeywordSharedSetUpdateItem[]
+     * Get NegativeKeywordSharedSets
+     *
+     * @return non-empty-list<NegativeKeywordSharedSetUpdateItem>
      */
     public function getNegativeKeywordSharedSets(): array
     {
@@ -31,7 +44,9 @@ class UpdateNegativeKeywordSharedSetsRequest
     }
 
     /**
-     * @param NegativeKeywordSharedSetUpdateItem[] $value
+     * Set NegativeKeywordSharedSets
+     *
+     * @param non-empty-list<NegativeKeywordSharedSetUpdateItem> $value
      *
      * @return $this
      */
@@ -40,5 +55,20 @@ class UpdateNegativeKeywordSharedSetsRequest
         $this->NegativeKeywordSharedSets = $value;
 
         return $this;
+    }
+
+    #[Override]
+    public function count(): int
+    {
+        return count($this->NegativeKeywordSharedSets);
+    }
+
+    /**
+     * @return ArrayIterator<int, NegativeKeywordSharedSetUpdateItem>
+     */
+    #[Override]
+    public function getIterator(): ArrayIterator
+    {
+        return new ArrayIterator($this->NegativeKeywordSharedSets);
     }
 }

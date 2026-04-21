@@ -12,13 +12,18 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class PayCampaignsInfo
 {
-    protected $Payments = [];
+//    Can be omitted.
+//    protected $Payments;
 
+    /** @var string|null */
     protected $ContractID = null;
 
-    protected $PayMethod = null;
+    /** @var string */
+    protected $PayMethod;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -27,15 +32,19 @@ class PayCampaignsInfo
     }
 
     /**
-     * @return PayCampElement[]
+     * Get Payments
+     *
+     * @return list<PayCampElement>
      */
     public function getPayments(): array
     {
-        return $this->Payments;
+        return $this->Payments ?? [];
     }
 
     /**
-     * @param PayCampElement[] $value
+     * Set Payments
+     *
+     * @param list<PayCampElement> $value
      *
      * @return $this
      */
@@ -46,27 +55,37 @@ class PayCampaignsInfo
         return $this;
     }
 
+    /**
+     * Get ContractID
+     */
     public function getContractID(): ?string
     {
         return $this->ContractID;
     }
 
     /**
+     * Set ContractID
+     *
      * @return $this
      */
-    public function setContractID(?string $value = null)
+    public function setContractID(?string $value)
     {
         $this->ContractID = $value;
 
         return $this;
     }
 
+    /**
+     * Get PayMethod
+     */
     public function getPayMethod(): string
     {
         return $this->PayMethod;
     }
 
     /**
+     * Set PayMethod
+     *
      * @return $this
      */
     public function setPayMethod(string $value)

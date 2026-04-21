@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class DynamicTextCampaignSetting
 {
-    protected $Option = null;
+    /** @var 'ADD_OPENSTAT_TAG'|'ADD_METRICA_TAG'|'ADD_TO_FAVORITES'|'ENABLE_AREA_OF_INTEREST_TARGETING'|'ENABLE_CURRENT_AREA_TARGETING'|'ENABLE_REGULAR_AREA_TARGETING'|'ENABLE_SITE_MONITORING'|'ENABLE_BEHAVIORAL_TARGETING'|'REQUIRE_SERVICING'|'ENABLE_EXTENDED_AD_TITLE'|'ENABLE_COMPANY_INFO'|'CAMPAIGN_EXACT_PHRASE_MATCHING_ENABLED' */
+    protected $Option;
 
-    protected $Value = null;
+    /** @var 'YES'|'NO' */
+    protected $Value;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -25,7 +29,11 @@ class DynamicTextCampaignSetting
     }
 
     /**
-     * @see DynamicTextCampaignSettingsEnum
+     * Get Option
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\DynamicTextCampaignSettingsEnum
+     *
+     * @return 'ADD_OPENSTAT_TAG'|'ADD_METRICA_TAG'|'ADD_TO_FAVORITES'|'ENABLE_AREA_OF_INTEREST_TARGETING'|'ENABLE_CURRENT_AREA_TARGETING'|'ENABLE_REGULAR_AREA_TARGETING'|'ENABLE_SITE_MONITORING'|'ENABLE_BEHAVIORAL_TARGETING'|'REQUIRE_SERVICING'|'ENABLE_EXTENDED_AD_TITLE'|'ENABLE_COMPANY_INFO'|'CAMPAIGN_EXACT_PHRASE_MATCHING_ENABLED'
      */
     public function getOption(): string
     {
@@ -33,7 +41,11 @@ class DynamicTextCampaignSetting
     }
 
     /**
-     * @see DynamicTextCampaignSettingsEnum
+     * Set Option
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\DynamicTextCampaignSettingsEnum
+     *
+     * @param 'ADD_OPENSTAT_TAG'|'ADD_METRICA_TAG'|'ADD_TO_FAVORITES'|'ENABLE_AREA_OF_INTEREST_TARGETING'|'ENABLE_CURRENT_AREA_TARGETING'|'ENABLE_REGULAR_AREA_TARGETING'|'ENABLE_SITE_MONITORING'|'ENABLE_BEHAVIORAL_TARGETING'|'REQUIRE_SERVICING'|'ENABLE_EXTENDED_AD_TITLE'|'ENABLE_COMPANY_INFO'|'CAMPAIGN_EXACT_PHRASE_MATCHING_ENABLED' $value
      *
      * @return $this
      */
@@ -45,7 +57,11 @@ class DynamicTextCampaignSetting
     }
 
     /**
-     * @see YesNoEnum
+     * Get Value
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'
      */
     public function getValue(): string
     {
@@ -53,7 +69,11 @@ class DynamicTextCampaignSetting
     }
 
     /**
-     * @see YesNoEnum
+     * Set Value
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO' $value
      *
      * @return $this
      */

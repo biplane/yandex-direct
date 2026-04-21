@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class PhraseUserParams
 {
+    /** @var string|null */
     protected $Param1 = null;
 
+    /** @var string|null */
     protected $Param2 = null;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -24,30 +28,40 @@ class PhraseUserParams
         return new static();
     }
 
+    /**
+     * Get Param1
+     */
     public function getParam1(): ?string
     {
         return $this->Param1;
     }
 
     /**
+     * Set Param1
+     *
      * @return $this
      */
-    public function setParam1(?string $value = null)
+    public function setParam1(?string $value)
     {
         $this->Param1 = $value;
 
         return $this;
     }
 
+    /**
+     * Get Param2
+     */
     public function getParam2(): ?string
     {
         return $this->Param2;
     }
 
     /**
+     * Set Param2
+     *
      * @return $this
      */
-    public function setParam2(?string $value = null)
+    public function setParam2(?string $value)
     {
         $this->Param2 = $value;
 

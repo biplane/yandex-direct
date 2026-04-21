@@ -13,21 +13,23 @@ use AllowDynamicProperties;
 class UnifiedCampaignSearchStrategyPlacementTypes
 {
 //    Can be omitted.
-//    protected $SearchResults = null;
+//    protected $SearchResults;
 
 //    Can be omitted.
-//    protected $ProductGallery = null;
+//    protected $ProductGallery;
 
 //    Can be omitted.
-//    protected $DynamicPlaces = null;
+//    protected $DynamicPlaces;
 
 //    Can be omitted.
-//    protected $Maps = null;
+//    protected $Maps;
 
 //    Can be omitted.
-//    protected $SearchOrganizationList = null;
+//    protected $SearchOrganizationList;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -36,7 +38,11 @@ class UnifiedCampaignSearchStrategyPlacementTypes
     }
 
     /**
-     * @see YesNoEnum
+     * Get SearchResults
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'|null
      */
     public function getSearchResults(): ?string
     {
@@ -44,11 +50,15 @@ class UnifiedCampaignSearchStrategyPlacementTypes
     }
 
     /**
-     * @see YesNoEnum
+     * Set SearchResults
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO'|null $value
      *
      * @return $this
      */
-    public function setSearchResults(?string $value = null)
+    public function setSearchResults(?string $value)
     {
         $this->SearchResults = $value;
 
@@ -56,7 +66,11 @@ class UnifiedCampaignSearchStrategyPlacementTypes
     }
 
     /**
-     * @see YesNoEnum
+     * Get ProductGallery
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'|null
      */
     public function getProductGallery(): ?string
     {
@@ -64,11 +78,15 @@ class UnifiedCampaignSearchStrategyPlacementTypes
     }
 
     /**
-     * @see YesNoEnum
+     * Set ProductGallery
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO'|null $value
      *
      * @return $this
      */
-    public function setProductGallery(?string $value = null)
+    public function setProductGallery(?string $value)
     {
         $this->ProductGallery = $value;
 
@@ -76,7 +94,11 @@ class UnifiedCampaignSearchStrategyPlacementTypes
     }
 
     /**
-     * @see YesNoEnum
+     * Get DynamicPlaces
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'|null
      */
     public function getDynamicPlaces(): ?string
     {
@@ -84,11 +106,15 @@ class UnifiedCampaignSearchStrategyPlacementTypes
     }
 
     /**
-     * @see YesNoEnum
+     * Set DynamicPlaces
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO'|null $value
      *
      * @return $this
      */
-    public function setDynamicPlaces(?string $value = null)
+    public function setDynamicPlaces(?string $value)
     {
         $this->DynamicPlaces = $value;
 
@@ -96,7 +122,11 @@ class UnifiedCampaignSearchStrategyPlacementTypes
     }
 
     /**
-     * @see YesNoEnum
+     * Get Maps
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'|null
      */
     public function getMaps(): ?string
     {
@@ -104,11 +134,15 @@ class UnifiedCampaignSearchStrategyPlacementTypes
     }
 
     /**
-     * @see YesNoEnum
+     * Set Maps
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO'|null $value
      *
      * @return $this
      */
-    public function setMaps(?string $value = null)
+    public function setMaps(?string $value)
     {
         $this->Maps = $value;
 
@@ -116,7 +150,11 @@ class UnifiedCampaignSearchStrategyPlacementTypes
     }
 
     /**
-     * @see YesNoEnum
+     * Get SearchOrganizationList
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'|null
      */
     public function getSearchOrganizationList(): ?string
     {
@@ -124,11 +162,15 @@ class UnifiedCampaignSearchStrategyPlacementTypes
     }
 
     /**
-     * @see YesNoEnum
+     * Set SearchOrganizationList
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO'|null $value
      *
      * @return $this
      */
-    public function setSearchOrganizationList(?string $value = null)
+    public function setSearchOrganizationList(?string $value)
     {
         $this->SearchOrganizationList = $value;
 

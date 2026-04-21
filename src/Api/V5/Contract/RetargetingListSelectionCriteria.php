@@ -13,12 +13,14 @@ use AllowDynamicProperties;
 class RetargetingListSelectionCriteria
 {
 //    Can be omitted.
-//    protected $Types = null;
+//    protected $Types;
 
 //    Can be omitted.
-//    protected $Ids = null;
+//    protected $Ids;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -27,23 +29,27 @@ class RetargetingListSelectionCriteria
     }
 
     /**
-     * @see RetargetingListTypeEnum
+     * Get Types
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\RetargetingListTypeEnum
+     *
+     * @return list<'RETARGETING'|'AUDIENCE'>
      */
-    public function getTypes(): ?array
+    public function getTypes(): array
     {
-        return $this->Types ?? null;
+        return $this->Types ?? [];
     }
 
     /**
-     * @see RetargetingListTypeEnum
+     * Set Types
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\RetargetingListTypeEnum
+     *
+     * @param list<'RETARGETING'|'AUDIENCE'> $value
      *
      * @return $this
      */
-    public function setTypes(?array $value = null)
+    public function setTypes(array $value)
     {
         $this->Types = $value;
 
@@ -51,19 +57,23 @@ class RetargetingListSelectionCriteria
     }
 
     /**
-     * @return int[]|null
+     * Get Ids
+     *
+     * @return list<int>
      */
-    public function getIds(): ?array
+    public function getIds(): array
     {
-        return $this->Ids ?? null;
+        return $this->Ids ?? [];
     }
 
     /**
-     * @param int[]|null $value
+     * Set Ids
+     *
+     * @param list<int> $value
      *
      * @return $this
      */
-    public function setIds(?array $value = null)
+    public function setIds(array $value)
     {
         $this->Ids = $value;
 

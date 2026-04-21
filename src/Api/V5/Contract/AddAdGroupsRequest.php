@@ -5,16 +5,27 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 use AllowDynamicProperties;
+use ArrayIterator;
+use Countable;
+use IteratorAggregate;
+use Override;
+
+use function count;
 
 /**
  * Auto-generated code.
+ *
+ * @implements IteratorAggregate<int, AdGroupAddItem>
  */
 #[AllowDynamicProperties]
-class AddAdGroupsRequest
+class AddAdGroupsRequest implements IteratorAggregate, Countable
 {
-    protected $AdGroups = [];
+    /** @var non-empty-list<AdGroupAddItem> */
+    protected $AdGroups;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -23,7 +34,9 @@ class AddAdGroupsRequest
     }
 
     /**
-     * @return AdGroupAddItem[]
+     * Get AdGroups
+     *
+     * @return non-empty-list<AdGroupAddItem>
      */
     public function getAdGroups(): array
     {
@@ -31,7 +44,9 @@ class AddAdGroupsRequest
     }
 
     /**
-     * @param AdGroupAddItem[] $value
+     * Set AdGroups
+     *
+     * @param non-empty-list<AdGroupAddItem> $value
      *
      * @return $this
      */
@@ -40,5 +55,20 @@ class AddAdGroupsRequest
         $this->AdGroups = $value;
 
         return $this;
+    }
+
+    #[Override]
+    public function count(): int
+    {
+        return count($this->AdGroups);
+    }
+
+    /**
+     * @return ArrayIterator<int, AdGroupAddItem>
+     */
+    #[Override]
+    public function getIterator(): ArrayIterator
+    {
+        return new ArrayIterator($this->AdGroups);
     }
 }

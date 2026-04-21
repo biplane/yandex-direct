@@ -13,32 +13,35 @@ use AllowDynamicProperties;
 class BidSetAutoItem
 {
 //    Can be omitted.
-//    protected $CampaignId = null;
+//    protected $CampaignId;
 
 //    Can be omitted.
-//    protected $AdGroupId = null;
+//    protected $AdGroupId;
 
 //    Can be omitted.
-//    protected $KeywordId = null;
+//    protected $KeywordId;
 
 //    Can be omitted.
-//    protected $MaxBid = null;
+//    protected $MaxBid;
 
 //    Can be omitted.
-//    protected $Position = null;
+//    protected $Position;
 
 //    Can be omitted.
-//    protected $IncreasePercent = null;
+//    protected $IncreasePercent;
 
 //    Can be omitted.
-//    protected $CalculateBy = null;
+//    protected $CalculateBy;
 
 //    Can be omitted.
-//    protected $ContextCoverage = null;
+//    protected $ContextCoverage;
 
-    protected $Scope = [];
+    /** @var non-empty-list<'SEARCH'|'NETWORK'> */
+    protected $Scope;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -46,60 +49,80 @@ class BidSetAutoItem
         return new static();
     }
 
+    /**
+     * Get CampaignId
+     */
     public function getCampaignId(): ?int
     {
         return $this->CampaignId ?? null;
     }
 
     /**
+     * Set CampaignId
+     *
      * @return $this
      */
-    public function setCampaignId(?int $value = null)
+    public function setCampaignId(?int $value)
     {
         $this->CampaignId = $value;
 
         return $this;
     }
 
+    /**
+     * Get AdGroupId
+     */
     public function getAdGroupId(): ?int
     {
         return $this->AdGroupId ?? null;
     }
 
     /**
+     * Set AdGroupId
+     *
      * @return $this
      */
-    public function setAdGroupId(?int $value = null)
+    public function setAdGroupId(?int $value)
     {
         $this->AdGroupId = $value;
 
         return $this;
     }
 
+    /**
+     * Get KeywordId
+     */
     public function getKeywordId(): ?int
     {
         return $this->KeywordId ?? null;
     }
 
     /**
+     * Set KeywordId
+     *
      * @return $this
      */
-    public function setKeywordId(?int $value = null)
+    public function setKeywordId(?int $value)
     {
         $this->KeywordId = $value;
 
         return $this;
     }
 
+    /**
+     * Get MaxBid
+     */
     public function getMaxBid(): ?int
     {
         return $this->MaxBid ?? null;
     }
 
     /**
+     * Set MaxBid
+     *
      * @return $this
      */
-    public function setMaxBid(?int $value = null)
+    public function setMaxBid(?int $value)
     {
         $this->MaxBid = $value;
 
@@ -107,7 +130,11 @@ class BidSetAutoItem
     }
 
     /**
-     * @see PositionEnum
+     * Get Position
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\PositionEnum
+     *
+     * @return 'PREMIUMFIRST'|'PREMIUMBLOCK'|'FOOTERFIRST'|'FOOTERBLOCK'|'P11'|'P12'|'P13'|'P14'|'P21'|'P22'|'P23'|'P24'|null
      */
     public function getPosition(): ?string
     {
@@ -115,26 +142,35 @@ class BidSetAutoItem
     }
 
     /**
-     * @see PositionEnum
+     * Set Position
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\PositionEnum
+     *
+     * @param 'PREMIUMFIRST'|'PREMIUMBLOCK'|'FOOTERFIRST'|'FOOTERBLOCK'|'P11'|'P12'|'P13'|'P14'|'P21'|'P22'|'P23'|'P24'|null $value
      *
      * @return $this
      */
-    public function setPosition(?string $value = null)
+    public function setPosition(?string $value)
     {
         $this->Position = $value;
 
         return $this;
     }
 
+    /**
+     * Get IncreasePercent
+     */
     public function getIncreasePercent(): ?int
     {
         return $this->IncreasePercent ?? null;
     }
 
     /**
+     * Set IncreasePercent
+     *
      * @return $this
      */
-    public function setIncreasePercent(?int $value = null)
+    public function setIncreasePercent(?int $value)
     {
         $this->IncreasePercent = $value;
 
@@ -142,7 +178,11 @@ class BidSetAutoItem
     }
 
     /**
-     * @see CalculateByEnum
+     * Get CalculateBy
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\CalculateByEnum
+     *
+     * @return 'VALUE'|'DIFF'|null
      */
     public function getCalculateBy(): ?string
     {
@@ -150,26 +190,35 @@ class BidSetAutoItem
     }
 
     /**
-     * @see CalculateByEnum
+     * Set CalculateBy
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\CalculateByEnum
+     *
+     * @param 'VALUE'|'DIFF'|null $value
      *
      * @return $this
      */
-    public function setCalculateBy(?string $value = null)
+    public function setCalculateBy(?string $value)
     {
         $this->CalculateBy = $value;
 
         return $this;
     }
 
+    /**
+     * Get ContextCoverage
+     */
     public function getContextCoverage(): ?int
     {
         return $this->ContextCoverage ?? null;
     }
 
     /**
+     * Set ContextCoverage
+     *
      * @return $this
      */
-    public function setContextCoverage(?int $value = null)
+    public function setContextCoverage(?int $value)
     {
         $this->ContextCoverage = $value;
 
@@ -177,9 +226,11 @@ class BidSetAutoItem
     }
 
     /**
-     * @see ScopeEnum
+     * Get Scope
      *
-     * @return string[]
+     * @see \Biplane\YandexDirect\Api\V5\Contract\ScopeEnum
+     *
+     * @return non-empty-list<'SEARCH'|'NETWORK'>
      */
     public function getScope(): array
     {
@@ -187,9 +238,11 @@ class BidSetAutoItem
     }
 
     /**
-     * @see ScopeEnum
+     * Set Scope
      *
-     * @param string[] $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\ScopeEnum
+     *
+     * @param non-empty-list<'SEARCH'|'NETWORK'> $value
      *
      * @return $this
      */

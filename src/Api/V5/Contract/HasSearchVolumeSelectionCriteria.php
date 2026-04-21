@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class HasSearchVolumeSelectionCriteria
 {
-    protected $RegionIds = [];
+    /** @var non-empty-list<int> */
+    protected $RegionIds;
 
-    protected $Keywords = [];
+    /** @var non-empty-list<string> */
+    protected $Keywords;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -25,7 +29,9 @@ class HasSearchVolumeSelectionCriteria
     }
 
     /**
-     * @return int[]
+     * Get RegionIds
+     *
+     * @return non-empty-list<int>
      */
     public function getRegionIds(): array
     {
@@ -33,7 +39,9 @@ class HasSearchVolumeSelectionCriteria
     }
 
     /**
-     * @param int[] $value
+     * Set RegionIds
+     *
+     * @param non-empty-list<int> $value
      *
      * @return $this
      */
@@ -45,7 +53,9 @@ class HasSearchVolumeSelectionCriteria
     }
 
     /**
-     * @return string[]
+     * Get Keywords
+     *
+     * @return non-empty-list<string>
      */
     public function getKeywords(): array
     {
@@ -53,7 +63,9 @@ class HasSearchVolumeSelectionCriteria
     }
 
     /**
-     * @param string[] $value
+     * Set Keywords
+     *
+     * @param non-empty-list<string> $value
      *
      * @return $this
      */

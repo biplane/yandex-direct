@@ -12,9 +12,12 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class SuspendKeywordsRequest
 {
-    protected $SelectionCriteria = null;
+    /** @var IdsCriteria */
+    protected $SelectionCriteria;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -22,12 +25,17 @@ class SuspendKeywordsRequest
         return new static();
     }
 
+    /**
+     * Get SelectionCriteria
+     */
     public function getSelectionCriteria(): IdsCriteria
     {
         return $this->SelectionCriteria;
     }
 
     /**
+     * Set SelectionCriteria
+     *
      * @return $this
      */
     public function setSelectionCriteria(IdsCriteria $value)

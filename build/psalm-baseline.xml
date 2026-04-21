@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<files psalm-version="6.16.1@f1f5de594dc76faf8784e02d3dc4716c91c6f6ac">
+  <file src="src/Code/ServiceGenerator.php">
+    <LessSpecificReturnStatement>
+      <code><![CDATA[$className]]></code>
+    </LessSpecificReturnStatement>
+    <MoreSpecificReturnType>
+      <code><![CDATA[class-string]]></code>
+    </MoreSpecificReturnType>
+  </file>
+  <file src="src/Code/TypeGenerator.php">
+    <ArgumentTypeCoercion>
+      <code><![CDATA[$type->baseType->getFQN()]]></code>
+    </ArgumentTypeCoercion>
+  </file>
+  <file src="src/Model/ModelFactory.php">
+    <PossiblyInvalidArrayOffset>
+      <code><![CDATA[$this->renameTypeMap[$type->getXmlNamespace()]]]></code>
+      <code><![CDATA[$this->renameTypeMap[$type->getXmlNamespace()][$type->getName()]]]></code>
+      <code><![CDATA[$this->schemaNamespaceMap[$type->getXmlNamespace()]]]></code>
+    </PossiblyInvalidArrayOffset>
+  </file>
+  <file src="src/Util/Normalizer.php">
+    <LessSpecificReturnStatement>
+      <code><![CDATA[ucfirst(self::camelCase($name))]]></code>
+    </LessSpecificReturnStatement>
+    <MoreSpecificReturnType>
+      <code><![CDATA[non-empty-string]]></code>
+    </MoreSpecificReturnType>
+  </file>
+</files>

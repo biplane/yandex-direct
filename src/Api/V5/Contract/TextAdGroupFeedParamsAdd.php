@@ -12,12 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class TextAdGroupFeedParamsAdd
 {
-    protected $FeedId = null;
+    /** @var int */
+    protected $FeedId;
 
 //    Can be omitted.
-//    protected $FeedCategoryIds = null;
+//    protected $FeedCategoryIds;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -25,12 +28,17 @@ class TextAdGroupFeedParamsAdd
         return new static();
     }
 
+    /**
+     * Get FeedId
+     */
     public function getFeedId(): int
     {
         return $this->FeedId;
     }
 
     /**
+     * Set FeedId
+     *
      * @return $this
      */
     public function setFeedId(int $value)
@@ -41,7 +49,9 @@ class TextAdGroupFeedParamsAdd
     }
 
     /**
-     * @return float[]|null
+     * Get FeedCategoryIds
+     *
+     * @return non-empty-list<int>|null
      */
     public function getFeedCategoryIds(): ?array
     {
@@ -49,11 +59,13 @@ class TextAdGroupFeedParamsAdd
     }
 
     /**
-     * @param float[]|null $value
+     * Set FeedCategoryIds
+     *
+     * @param non-empty-list<int>|null $value
      *
      * @return $this
      */
-    public function setFeedCategoryIds(?array $value = null)
+    public function setFeedCategoryIds(?array $value)
     {
         $this->FeedCategoryIds = $value;
 

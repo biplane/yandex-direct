@@ -13,29 +13,44 @@ use AllowDynamicProperties;
 class SmartCampaignUpdateItem extends SmartCampaignBase
 {
 //    Can be omitted.
-//    protected $BiddingStrategy = null;
+//    protected $BiddingStrategy;
 
 //    Can be omitted.
-//    protected $Settings = null;
+//    protected $Settings;
 
 //    Can be omitted.
-//    protected $TrackingParams = null;
+//    protected $TrackingParams;
 
 //    Can be omitted.
-//    protected $PriorityGoals = null;
+//    protected $PriorityGoals;
 
 //    Can be omitted.
-//    protected $PackageBiddingStrategy = null;
+//    protected $PackageBiddingStrategy;
 
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    /**
+     * Get BiddingStrategy
+     */
     public function getBiddingStrategy(): ?SmartCampaignStrategy
     {
         return $this->BiddingStrategy ?? null;
     }
 
     /**
+     * Set BiddingStrategy
+     *
      * @return $this
      */
-    public function setBiddingStrategy(?SmartCampaignStrategy $value = null)
+    public function setBiddingStrategy(?SmartCampaignStrategy $value)
     {
         $this->BiddingStrategy = $value;
 
@@ -43,64 +58,83 @@ class SmartCampaignUpdateItem extends SmartCampaignBase
     }
 
     /**
-     * @return SmartCampaignSetting[]|null
+     * Get Settings
+     *
+     * @return list<SmartCampaignSetting>
      */
-    public function getSettings(): ?array
+    public function getSettings(): array
     {
-        return $this->Settings ?? null;
+        return $this->Settings ?? [];
     }
 
     /**
-     * @param SmartCampaignSetting[]|null $value
+     * Set Settings
+     *
+     * @param list<SmartCampaignSetting> $value
      *
      * @return $this
      */
-    public function setSettings(?array $value = null)
+    public function setSettings(array $value)
     {
         $this->Settings = $value;
 
         return $this;
     }
 
+    /**
+     * Get TrackingParams
+     */
     public function getTrackingParams(): ?string
     {
         return $this->TrackingParams ?? null;
     }
 
     /**
+     * Set TrackingParams
+     *
      * @return $this
      */
-    public function setTrackingParams(?string $value = null)
+    public function setTrackingParams(?string $value)
     {
         $this->TrackingParams = $value;
 
         return $this;
     }
 
+    /**
+     * Get PriorityGoals
+     */
     public function getPriorityGoals(): ?PriorityGoalsUpdateSetting
     {
         return $this->PriorityGoals ?? null;
     }
 
     /**
+     * Set PriorityGoals
+     *
      * @return $this
      */
-    public function setPriorityGoals(?PriorityGoalsUpdateSetting $value = null)
+    public function setPriorityGoals(?PriorityGoalsUpdateSetting $value)
     {
         $this->PriorityGoals = $value;
 
         return $this;
     }
 
+    /**
+     * Get PackageBiddingStrategy
+     */
     public function getPackageBiddingStrategy(): ?SmartCampaignPackageBiddingStrategyUpdate
     {
         return $this->PackageBiddingStrategy ?? null;
     }
 
     /**
+     * Set PackageBiddingStrategy
+     *
      * @return $this
      */
-    public function setPackageBiddingStrategy(?SmartCampaignPackageBiddingStrategyUpdate $value = null)
+    public function setPackageBiddingStrategy(?SmartCampaignPackageBiddingStrategyUpdate $value)
     {
         $this->PackageBiddingStrategy = $value;
 

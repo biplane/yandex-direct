@@ -13,15 +13,17 @@ use AllowDynamicProperties;
 class AutotargetingBrandOptions
 {
 //    Can be omitted.
-//    protected $WithoutBrands = null;
+//    protected $WithoutBrands;
 
 //    Can be omitted.
-//    protected $WithAdvertiserBrand = null;
+//    protected $WithAdvertiserBrand;
 
 //    Can be omitted.
-//    protected $WithCompetitorsBrand = null;
+//    protected $WithCompetitorsBrand;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -30,7 +32,11 @@ class AutotargetingBrandOptions
     }
 
     /**
-     * @see YesNoEnum
+     * Get WithoutBrands
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'|null
      */
     public function getWithoutBrands(): ?string
     {
@@ -38,11 +44,15 @@ class AutotargetingBrandOptions
     }
 
     /**
-     * @see YesNoEnum
+     * Set WithoutBrands
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO'|null $value
      *
      * @return $this
      */
-    public function setWithoutBrands(?string $value = null)
+    public function setWithoutBrands(?string $value)
     {
         $this->WithoutBrands = $value;
 
@@ -50,7 +60,11 @@ class AutotargetingBrandOptions
     }
 
     /**
-     * @see YesNoEnum
+     * Get WithAdvertiserBrand
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'|null
      */
     public function getWithAdvertiserBrand(): ?string
     {
@@ -58,11 +72,15 @@ class AutotargetingBrandOptions
     }
 
     /**
-     * @see YesNoEnum
+     * Set WithAdvertiserBrand
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO'|null $value
      *
      * @return $this
      */
-    public function setWithAdvertiserBrand(?string $value = null)
+    public function setWithAdvertiserBrand(?string $value)
     {
         $this->WithAdvertiserBrand = $value;
 
@@ -70,7 +88,11 @@ class AutotargetingBrandOptions
     }
 
     /**
-     * @see YesNoEnum
+     * Get WithCompetitorsBrand
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'|null
      */
     public function getWithCompetitorsBrand(): ?string
     {
@@ -78,11 +100,15 @@ class AutotargetingBrandOptions
     }
 
     /**
-     * @see YesNoEnum
+     * Set WithCompetitorsBrand
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO'|null $value
      *
      * @return $this
      */
-    public function setWithCompetitorsBrand(?string $value = null)
+    public function setWithCompetitorsBrand(?string $value)
     {
         $this->WithCompetitorsBrand = $value;
 

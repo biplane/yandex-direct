@@ -12,10 +12,25 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class MobileAppAdFeatureGetItem extends MobileAppAdFeatureItem
 {
-    protected $IsAvailable = null;
+    /** @var 'YES'|'NO'|'UNKNOWN' */
+    protected $IsAvailable;
 
     /**
-     * @see YesNoUnknownEnum
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    /**
+     * Get IsAvailable
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoUnknownEnum
+     *
+     * @return 'YES'|'NO'|'UNKNOWN'
      */
     public function getIsAvailable(): string
     {
@@ -23,7 +38,11 @@ class MobileAppAdFeatureGetItem extends MobileAppAdFeatureItem
     }
 
     /**
-     * @see YesNoUnknownEnum
+     * Set IsAvailable
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoUnknownEnum
+     *
+     * @param 'YES'|'NO'|'UNKNOWN' $value
      *
      * @return $this
      */

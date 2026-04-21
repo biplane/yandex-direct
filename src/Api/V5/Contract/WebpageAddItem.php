@@ -12,23 +12,27 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class WebpageAddItem
 {
-    protected $Name = null;
+    /** @var string */
+    protected $Name;
 
-    protected $AdGroupId = null;
-
-//    Can be omitted.
-//    protected $Conditions = null;
-
-//    Can be omitted.
-//    protected $Bid = null;
+    /** @var int */
+    protected $AdGroupId;
 
 //    Can be omitted.
-//    protected $ContextBid = null;
+//    protected $Conditions;
 
 //    Can be omitted.
-//    protected $StrategyPriority = null;
+//    protected $Bid;
+
+//    Can be omitted.
+//    protected $ContextBid;
+
+//    Can be omitted.
+//    protected $StrategyPriority;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -36,12 +40,17 @@ class WebpageAddItem
         return new static();
     }
 
+    /**
+     * Get Name
+     */
     public function getName(): string
     {
         return $this->Name;
     }
 
     /**
+     * Set Name
+     *
      * @return $this
      */
     public function setName(string $value)
@@ -51,12 +60,17 @@ class WebpageAddItem
         return $this;
     }
 
+    /**
+     * Get AdGroupId
+     */
     public function getAdGroupId(): int
     {
         return $this->AdGroupId;
     }
 
     /**
+     * Set AdGroupId
+     *
      * @return $this
      */
     public function setAdGroupId(int $value)
@@ -67,49 +81,63 @@ class WebpageAddItem
     }
 
     /**
-     * @return WebpageCondition[]|null
+     * Get Conditions
+     *
+     * @return list<WebpageCondition>
      */
-    public function getConditions(): ?array
+    public function getConditions(): array
     {
-        return $this->Conditions ?? null;
+        return $this->Conditions ?? [];
     }
 
     /**
-     * @param WebpageCondition[]|null $value
+     * Set Conditions
+     *
+     * @param list<WebpageCondition> $value
      *
      * @return $this
      */
-    public function setConditions(?array $value = null)
+    public function setConditions(array $value)
     {
         $this->Conditions = $value;
 
         return $this;
     }
 
+    /**
+     * Get Bid
+     */
     public function getBid(): ?int
     {
         return $this->Bid ?? null;
     }
 
     /**
+     * Set Bid
+     *
      * @return $this
      */
-    public function setBid(?int $value = null)
+    public function setBid(?int $value)
     {
         $this->Bid = $value;
 
         return $this;
     }
 
+    /**
+     * Get ContextBid
+     */
     public function getContextBid(): ?int
     {
         return $this->ContextBid ?? null;
     }
 
     /**
+     * Set ContextBid
+     *
      * @return $this
      */
-    public function setContextBid(?int $value = null)
+    public function setContextBid(?int $value)
     {
         $this->ContextBid = $value;
 
@@ -117,7 +145,11 @@ class WebpageAddItem
     }
 
     /**
-     * @see PriorityEnum
+     * Get StrategyPriority
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\PriorityEnum
+     *
+     * @return 'LOW'|'NORMAL'|'HIGH'|null
      */
     public function getStrategyPriority(): ?string
     {
@@ -125,11 +157,15 @@ class WebpageAddItem
     }
 
     /**
-     * @see PriorityEnum
+     * Set StrategyPriority
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\PriorityEnum
+     *
+     * @param 'LOW'|'NORMAL'|'HIGH'|null $value
      *
      * @return $this
      */
-    public function setStrategyPriority(?string $value = null)
+    public function setStrategyPriority(?string $value)
     {
         $this->StrategyPriority = $value;
 

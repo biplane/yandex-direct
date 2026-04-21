@@ -13,48 +13,50 @@ use AllowDynamicProperties;
 class ResponsiveAdGet
 {
 //    Can be omitted.
-//    protected $Texts = null;
+//    protected $Texts;
 
 //    Can be omitted.
-//    protected $Titles = null;
+//    protected $Titles;
 
 //    Can be omitted.
-//    protected $AdImages = null;
+//    protected $AdImages;
 
 //    Can be omitted.
-//    protected $VideoExtensions = null;
+//    protected $VideoExtensions;
 
 //    Can be omitted.
-//    protected $Href = null;
+//    protected $Href;
 
 //    Can be omitted.
-//    protected $DisplayDomain = null;
+//    protected $DisplayDomain;
 
 //    Can be omitted.
-//    protected $DisplayUrlPath = null;
+//    protected $DisplayUrlPath;
 
 //    Can be omitted.
-//    protected $DisplayUrlPathModeration = null;
+//    protected $DisplayUrlPathModeration;
 
 //    Can be omitted.
-//    protected $PriceExtension = null;
+//    protected $PriceExtension;
 
 //    Can be omitted.
-//    protected $BusinessId = null;
+//    protected $BusinessId;
 
 //    Can be omitted.
-//    protected $ErirAdDescription = null;
+//    protected $ErirAdDescription;
 
 //    Can be omitted.
-//    protected $SitelinkSetId = null;
+//    protected $SitelinkSetId;
 
 //    Can be omitted.
-//    protected $SitelinksModeration = null;
+//    protected $SitelinksModeration;
 
 //    Can be omitted.
-//    protected $AdExtensions = null;
+//    protected $AdExtensions;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -63,19 +65,23 @@ class ResponsiveAdGet
     }
 
     /**
-     * @return TextGetItem[]|null
+     * Get Texts
+     *
+     * @return list<TextGetItem>
      */
-    public function getTexts(): ?array
+    public function getTexts(): array
     {
-        return $this->Texts ?? null;
+        return $this->Texts ?? [];
     }
 
     /**
-     * @param TextGetItem[]|null $value
+     * Set Texts
+     *
+     * @param list<TextGetItem> $value
      *
      * @return $this
      */
-    public function setTexts(?array $value = null)
+    public function setTexts(array $value)
     {
         $this->Texts = $value;
 
@@ -83,19 +89,23 @@ class ResponsiveAdGet
     }
 
     /**
-     * @return TitleGetItem[]|null
+     * Get Titles
+     *
+     * @return list<TitleGetItem>
      */
-    public function getTitles(): ?array
+    public function getTitles(): array
     {
-        return $this->Titles ?? null;
+        return $this->Titles ?? [];
     }
 
     /**
-     * @param TitleGetItem[]|null $value
+     * Set Titles
+     *
+     * @param list<TitleGetItem> $value
      *
      * @return $this
      */
-    public function setTitles(?array $value = null)
+    public function setTitles(array $value)
     {
         $this->Titles = $value;
 
@@ -103,19 +113,19 @@ class ResponsiveAdGet
     }
 
     /**
-     * @return AdImageGetItemShort[]|null
+     * Get AdImages
      */
-    public function getAdImages(): ?array
+    public function getAdImages(): ?ArrayOfAdImageGet
     {
         return $this->AdImages ?? null;
     }
 
     /**
-     * @param AdImageGetItemShort[]|null $value
+     * Set AdImages
      *
      * @return $this
      */
-    public function setAdImages(?array $value = null)
+    public function setAdImages(?ArrayOfAdImageGet $value)
     {
         $this->AdImages = $value;
 
@@ -123,154 +133,199 @@ class ResponsiveAdGet
     }
 
     /**
-     * @return VideoExtensionWithStatusClarificationGetItem[]|null
+     * Get VideoExtensions
      */
-    public function getVideoExtensions(): ?array
+    public function getVideoExtensions(): ?ArrayOfVideoExtensionGet
     {
         return $this->VideoExtensions ?? null;
     }
 
     /**
-     * @param VideoExtensionWithStatusClarificationGetItem[]|null $value
+     * Set VideoExtensions
      *
      * @return $this
      */
-    public function setVideoExtensions(?array $value = null)
+    public function setVideoExtensions(?ArrayOfVideoExtensionGet $value)
     {
         $this->VideoExtensions = $value;
 
         return $this;
     }
 
+    /**
+     * Get Href
+     */
     public function getHref(): ?string
     {
         return $this->Href ?? null;
     }
 
     /**
+     * Set Href
+     *
      * @return $this
      */
-    public function setHref(?string $value = null)
+    public function setHref(?string $value)
     {
         $this->Href = $value;
 
         return $this;
     }
 
+    /**
+     * Get DisplayDomain
+     */
     public function getDisplayDomain(): ?string
     {
         return $this->DisplayDomain ?? null;
     }
 
     /**
+     * Set DisplayDomain
+     *
      * @return $this
      */
-    public function setDisplayDomain(?string $value = null)
+    public function setDisplayDomain(?string $value)
     {
         $this->DisplayDomain = $value;
 
         return $this;
     }
 
+    /**
+     * Get DisplayUrlPath
+     */
     public function getDisplayUrlPath(): ?string
     {
         return $this->DisplayUrlPath ?? null;
     }
 
     /**
+     * Set DisplayUrlPath
+     *
      * @return $this
      */
-    public function setDisplayUrlPath(?string $value = null)
+    public function setDisplayUrlPath(?string $value)
     {
         $this->DisplayUrlPath = $value;
 
         return $this;
     }
 
+    /**
+     * Get DisplayUrlPathModeration
+     */
     public function getDisplayUrlPathModeration(): ?ExtensionModeration
     {
         return $this->DisplayUrlPathModeration ?? null;
     }
 
     /**
+     * Set DisplayUrlPathModeration
+     *
      * @return $this
      */
-    public function setDisplayUrlPathModeration(?ExtensionModeration $value = null)
+    public function setDisplayUrlPathModeration(?ExtensionModeration $value)
     {
         $this->DisplayUrlPathModeration = $value;
 
         return $this;
     }
 
+    /**
+     * Get PriceExtension
+     */
     public function getPriceExtension(): ?PriceExtensionGetItem
     {
         return $this->PriceExtension ?? null;
     }
 
     /**
+     * Set PriceExtension
+     *
      * @return $this
      */
-    public function setPriceExtension(?PriceExtensionGetItem $value = null)
+    public function setPriceExtension(?PriceExtensionGetItem $value)
     {
         $this->PriceExtension = $value;
 
         return $this;
     }
 
+    /**
+     * Get BusinessId
+     */
     public function getBusinessId(): ?int
     {
         return $this->BusinessId ?? null;
     }
 
     /**
+     * Set BusinessId
+     *
      * @return $this
      */
-    public function setBusinessId(?int $value = null)
+    public function setBusinessId(?int $value)
     {
         $this->BusinessId = $value;
 
         return $this;
     }
 
+    /**
+     * Get ErirAdDescription
+     */
     public function getErirAdDescription(): ?string
     {
         return $this->ErirAdDescription ?? null;
     }
 
     /**
+     * Set ErirAdDescription
+     *
      * @return $this
      */
-    public function setErirAdDescription(?string $value = null)
+    public function setErirAdDescription(?string $value)
     {
         $this->ErirAdDescription = $value;
 
         return $this;
     }
 
+    /**
+     * Get SitelinkSetId
+     */
     public function getSitelinkSetId(): ?int
     {
         return $this->SitelinkSetId ?? null;
     }
 
     /**
+     * Set SitelinkSetId
+     *
      * @return $this
      */
-    public function setSitelinkSetId(?int $value = null)
+    public function setSitelinkSetId(?int $value)
     {
         $this->SitelinkSetId = $value;
 
         return $this;
     }
 
+    /**
+     * Get SitelinksModeration
+     */
     public function getSitelinksModeration(): ?ExtensionModeration
     {
         return $this->SitelinksModeration ?? null;
     }
 
     /**
+     * Set SitelinksModeration
+     *
      * @return $this
      */
-    public function setSitelinksModeration(?ExtensionModeration $value = null)
+    public function setSitelinksModeration(?ExtensionModeration $value)
     {
         $this->SitelinksModeration = $value;
 
@@ -278,19 +333,23 @@ class ResponsiveAdGet
     }
 
     /**
-     * @return AdExtensionAdGetItem[]|null
+     * Get AdExtensions
+     *
+     * @return list<AdExtensionAdGetItem>
      */
-    public function getAdExtensions(): ?array
+    public function getAdExtensions(): array
     {
-        return $this->AdExtensions ?? null;
+        return $this->AdExtensions ?? [];
     }
 
     /**
-     * @param AdExtensionAdGetItem[]|null $value
+     * Set AdExtensions
+     *
+     * @param list<AdExtensionAdGetItem> $value
      *
      * @return $this
      */
-    public function setAdExtensions(?array $value = null)
+    public function setAdExtensions(array $value)
     {
         $this->AdExtensions = $value;
 

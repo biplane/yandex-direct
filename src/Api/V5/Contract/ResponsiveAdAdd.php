@@ -12,41 +12,45 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class ResponsiveAdAdd
 {
-    protected $Texts = [];
+    /** @var non-empty-list<string> */
+    protected $Texts;
 
-    protected $Titles = [];
-
-//    Can be omitted.
-//    protected $AdImageHashes = null;
-
-//    Can be omitted.
-//    protected $VideoExtensionIds = null;
+    /** @var non-empty-list<string> */
+    protected $Titles;
 
 //    Can be omitted.
-//    protected $Href = null;
+//    protected $AdImageHashes;
 
 //    Can be omitted.
-//    protected $AgeLabel = null;
+//    protected $VideoExtensionIds;
 
 //    Can be omitted.
-//    protected $DisplayUrlPath = null;
+//    protected $Href;
 
 //    Can be omitted.
-//    protected $SitelinkSetId = null;
+//    protected $AgeLabel;
 
 //    Can be omitted.
-//    protected $AdExtensionIds = null;
+//    protected $DisplayUrlPath;
 
 //    Can be omitted.
-//    protected $PriceExtension = null;
+//    protected $SitelinkSetId;
 
 //    Can be omitted.
-//    protected $BusinessId = null;
+//    protected $AdExtensionIds;
 
 //    Can be omitted.
-//    protected $ErirAdDescription = null;
+//    protected $PriceExtension;
+
+//    Can be omitted.
+//    protected $BusinessId;
+
+//    Can be omitted.
+//    protected $ErirAdDescription;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -55,7 +59,9 @@ class ResponsiveAdAdd
     }
 
     /**
-     * @return string[]
+     * Get Texts
+     *
+     * @return non-empty-list<string>
      */
     public function getTexts(): array
     {
@@ -63,7 +69,9 @@ class ResponsiveAdAdd
     }
 
     /**
-     * @param string[] $value
+     * Set Texts
+     *
+     * @param non-empty-list<string> $value
      *
      * @return $this
      */
@@ -75,7 +83,9 @@ class ResponsiveAdAdd
     }
 
     /**
-     * @return string[]
+     * Get Titles
+     *
+     * @return non-empty-list<string>
      */
     public function getTitles(): array
     {
@@ -83,7 +93,9 @@ class ResponsiveAdAdd
     }
 
     /**
-     * @param string[] $value
+     * Set Titles
+     *
+     * @param non-empty-list<string> $value
      *
      * @return $this
      */
@@ -95,19 +107,23 @@ class ResponsiveAdAdd
     }
 
     /**
-     * @return string[]|null
+     * Get AdImageHashes
+     *
+     * @return list<string>
      */
-    public function getAdImageHashes(): ?array
+    public function getAdImageHashes(): array
     {
-        return $this->AdImageHashes ?? null;
+        return $this->AdImageHashes ?? [];
     }
 
     /**
-     * @param string[]|null $value
+     * Set AdImageHashes
+     *
+     * @param list<string> $value
      *
      * @return $this
      */
-    public function setAdImageHashes(?array $value = null)
+    public function setAdImageHashes(array $value)
     {
         $this->AdImageHashes = $value;
 
@@ -115,34 +131,43 @@ class ResponsiveAdAdd
     }
 
     /**
-     * @return int[]|null
+     * Get VideoExtensionIds
+     *
+     * @return list<int>
      */
-    public function getVideoExtensionIds(): ?array
+    public function getVideoExtensionIds(): array
     {
-        return $this->VideoExtensionIds ?? null;
+        return $this->VideoExtensionIds ?? [];
     }
 
     /**
-     * @param int[]|null $value
+     * Set VideoExtensionIds
+     *
+     * @param list<int> $value
      *
      * @return $this
      */
-    public function setVideoExtensionIds(?array $value = null)
+    public function setVideoExtensionIds(array $value)
     {
         $this->VideoExtensionIds = $value;
 
         return $this;
     }
 
+    /**
+     * Get Href
+     */
     public function getHref(): ?string
     {
         return $this->Href ?? null;
     }
 
     /**
+     * Set Href
+     *
      * @return $this
      */
-    public function setHref(?string $value = null)
+    public function setHref(?string $value)
     {
         $this->Href = $value;
 
@@ -150,7 +175,11 @@ class ResponsiveAdAdd
     }
 
     /**
-     * @see AgeLabelEnum
+     * Get AgeLabel
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\AgeLabelEnum
+     *
+     * @return 'MONTHS_0'|'MONTHS_1'|'MONTHS_2'|'MONTHS_3'|'MONTHS_4'|'MONTHS_5'|'MONTHS_6'|'MONTHS_7'|'MONTHS_8'|'MONTHS_9'|'MONTHS_10'|'MONTHS_11'|'MONTHS_12'|'AGE_0'|'AGE_6'|'AGE_12'|'AGE_16'|'AGE_18'|null
      */
     public function getAgeLabel(): ?string
     {
@@ -158,41 +187,55 @@ class ResponsiveAdAdd
     }
 
     /**
-     * @see AgeLabelEnum
+     * Set AgeLabel
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\AgeLabelEnum
+     *
+     * @param 'MONTHS_0'|'MONTHS_1'|'MONTHS_2'|'MONTHS_3'|'MONTHS_4'|'MONTHS_5'|'MONTHS_6'|'MONTHS_7'|'MONTHS_8'|'MONTHS_9'|'MONTHS_10'|'MONTHS_11'|'MONTHS_12'|'AGE_0'|'AGE_6'|'AGE_12'|'AGE_16'|'AGE_18'|null $value
      *
      * @return $this
      */
-    public function setAgeLabel(?string $value = null)
+    public function setAgeLabel(?string $value)
     {
         $this->AgeLabel = $value;
 
         return $this;
     }
 
+    /**
+     * Get DisplayUrlPath
+     */
     public function getDisplayUrlPath(): ?string
     {
         return $this->DisplayUrlPath ?? null;
     }
 
     /**
+     * Set DisplayUrlPath
+     *
      * @return $this
      */
-    public function setDisplayUrlPath(?string $value = null)
+    public function setDisplayUrlPath(?string $value)
     {
         $this->DisplayUrlPath = $value;
 
         return $this;
     }
 
+    /**
+     * Get SitelinkSetId
+     */
     public function getSitelinkSetId(): ?int
     {
         return $this->SitelinkSetId ?? null;
     }
 
     /**
+     * Set SitelinkSetId
+     *
      * @return $this
      */
-    public function setSitelinkSetId(?int $value = null)
+    public function setSitelinkSetId(?int $value)
     {
         $this->SitelinkSetId = $value;
 
@@ -200,64 +243,83 @@ class ResponsiveAdAdd
     }
 
     /**
-     * @return int[]|null
+     * Get AdExtensionIds
+     *
+     * @return list<int>
      */
-    public function getAdExtensionIds(): ?array
+    public function getAdExtensionIds(): array
     {
-        return $this->AdExtensionIds ?? null;
+        return $this->AdExtensionIds ?? [];
     }
 
     /**
-     * @param int[]|null $value
+     * Set AdExtensionIds
+     *
+     * @param list<int> $value
      *
      * @return $this
      */
-    public function setAdExtensionIds(?array $value = null)
+    public function setAdExtensionIds(array $value)
     {
         $this->AdExtensionIds = $value;
 
         return $this;
     }
 
+    /**
+     * Get PriceExtension
+     */
     public function getPriceExtension(): ?PriceExtensionAddItem
     {
         return $this->PriceExtension ?? null;
     }
 
     /**
+     * Set PriceExtension
+     *
      * @return $this
      */
-    public function setPriceExtension(?PriceExtensionAddItem $value = null)
+    public function setPriceExtension(?PriceExtensionAddItem $value)
     {
         $this->PriceExtension = $value;
 
         return $this;
     }
 
+    /**
+     * Get BusinessId
+     */
     public function getBusinessId(): ?int
     {
         return $this->BusinessId ?? null;
     }
 
     /**
+     * Set BusinessId
+     *
      * @return $this
      */
-    public function setBusinessId(?int $value = null)
+    public function setBusinessId(?int $value)
     {
         $this->BusinessId = $value;
 
         return $this;
     }
 
+    /**
+     * Get ErirAdDescription
+     */
     public function getErirAdDescription(): ?string
     {
         return $this->ErirAdDescription ?? null;
     }
 
     /**
+     * Set ErirAdDescription
+     *
      * @return $this
      */
-    public function setErirAdDescription(?string $value = null)
+    public function setErirAdDescription(?string $value)
     {
         $this->ErirAdDescription = $value;
 

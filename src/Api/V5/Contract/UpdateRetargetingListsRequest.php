@@ -5,16 +5,27 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 use AllowDynamicProperties;
+use ArrayIterator;
+use Countable;
+use IteratorAggregate;
+use Override;
+
+use function count;
 
 /**
  * Auto-generated code.
+ *
+ * @implements IteratorAggregate<int, RetargetingListUpdateItem>
  */
 #[AllowDynamicProperties]
-class UpdateRetargetingListsRequest
+class UpdateRetargetingListsRequest implements IteratorAggregate, Countable
 {
-    protected $RetargetingLists = [];
+    /** @var non-empty-list<RetargetingListUpdateItem> */
+    protected $RetargetingLists;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -23,7 +34,9 @@ class UpdateRetargetingListsRequest
     }
 
     /**
-     * @return RetargetingListUpdateItem[]
+     * Get RetargetingLists
+     *
+     * @return non-empty-list<RetargetingListUpdateItem>
      */
     public function getRetargetingLists(): array
     {
@@ -31,7 +44,9 @@ class UpdateRetargetingListsRequest
     }
 
     /**
-     * @param RetargetingListUpdateItem[] $value
+     * Set RetargetingLists
+     *
+     * @param non-empty-list<RetargetingListUpdateItem> $value
      *
      * @return $this
      */
@@ -40,5 +55,20 @@ class UpdateRetargetingListsRequest
         $this->RetargetingLists = $value;
 
         return $this;
+    }
+
+    #[Override]
+    public function count(): int
+    {
+        return count($this->RetargetingLists);
+    }
+
+    /**
+     * @return ArrayIterator<int, RetargetingListUpdateItem>
+     */
+    #[Override]
+    public function getIterator(): ArrayIterator
+    {
+        return new ArrayIterator($this->RetargetingLists);
     }
 }

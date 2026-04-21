@@ -5,17 +5,27 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 use AllowDynamicProperties;
+use ArrayIterator;
+use Countable;
+use IteratorAggregate;
+use Override;
+
+use function count;
 
 /**
  * Auto-generated code.
+ *
+ * @implements IteratorAggregate<int, ActionResult>
  */
 #[AllowDynamicProperties]
-class UnarchiveAdsResponse
+class UnarchiveAdsResponse implements IteratorAggregate, Countable
 {
 //    Can be omitted.
-//    protected $UnarchiveResults = null;
+//    protected $UnarchiveResults;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -24,22 +34,41 @@ class UnarchiveAdsResponse
     }
 
     /**
-     * @return ActionResult[]|null
+     * Get UnarchiveResults
+     *
+     * @return list<ActionResult>
      */
-    public function getUnarchiveResults(): ?array
+    public function getUnarchiveResults(): array
     {
-        return $this->UnarchiveResults ?? null;
+        return $this->UnarchiveResults ?? [];
     }
 
     /**
-     * @param ActionResult[]|null $value
+     * Set UnarchiveResults
+     *
+     * @param list<ActionResult> $value
      *
      * @return $this
      */
-    public function setUnarchiveResults(?array $value = null)
+    public function setUnarchiveResults(array $value)
     {
         $this->UnarchiveResults = $value;
 
         return $this;
+    }
+
+    #[Override]
+    public function count(): int
+    {
+        return isset($this->UnarchiveResults) ? count($this->UnarchiveResults) : 0;
+    }
+
+    /**
+     * @return ArrayIterator<int, ActionResult>
+     */
+    #[Override]
+    public function getIterator(): ArrayIterator
+    {
+        return new ArrayIterator($this->UnarchiveResults ?? []);
     }
 }

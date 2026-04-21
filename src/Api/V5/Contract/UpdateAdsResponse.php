@@ -5,17 +5,27 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 use AllowDynamicProperties;
+use ArrayIterator;
+use Countable;
+use IteratorAggregate;
+use Override;
+
+use function count;
 
 /**
  * Auto-generated code.
+ *
+ * @implements IteratorAggregate<int, ActionResult>
  */
 #[AllowDynamicProperties]
-class UpdateAdsResponse
+class UpdateAdsResponse implements IteratorAggregate, Countable
 {
 //    Can be omitted.
-//    protected $UpdateResults = null;
+//    protected $UpdateResults;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -24,22 +34,41 @@ class UpdateAdsResponse
     }
 
     /**
-     * @return ActionResult[]|null
+     * Get UpdateResults
+     *
+     * @return list<ActionResult>
      */
-    public function getUpdateResults(): ?array
+    public function getUpdateResults(): array
     {
-        return $this->UpdateResults ?? null;
+        return $this->UpdateResults ?? [];
     }
 
     /**
-     * @param ActionResult[]|null $value
+     * Set UpdateResults
+     *
+     * @param list<ActionResult> $value
      *
      * @return $this
      */
-    public function setUpdateResults(?array $value = null)
+    public function setUpdateResults(array $value)
     {
         $this->UpdateResults = $value;
 
         return $this;
+    }
+
+    #[Override]
+    public function count(): int
+    {
+        return isset($this->UpdateResults) ? count($this->UpdateResults) : 0;
+    }
+
+    /**
+     * @return ArrayIterator<int, ActionResult>
+     */
+    #[Override]
+    public function getIterator(): ArrayIterator
+    {
+        return new ArrayIterator($this->UpdateResults ?? []);
     }
 }

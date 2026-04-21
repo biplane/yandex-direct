@@ -13,17 +13,32 @@ use AllowDynamicProperties;
 class AdImageActionResult extends ActionResultBase
 {
 //    Can be omitted.
-//    protected $AdImageHash = null;
+//    protected $AdImageHash;
 
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    /**
+     * Get AdImageHash
+     */
     public function getAdImageHash(): ?string
     {
         return $this->AdImageHash ?? null;
     }
 
     /**
+     * Set AdImageHash
+     *
      * @return $this
      */
-    public function setAdImageHash(?string $value = null)
+    public function setAdImageHash(?string $value)
     {
         $this->AdImageHash = $value;
 

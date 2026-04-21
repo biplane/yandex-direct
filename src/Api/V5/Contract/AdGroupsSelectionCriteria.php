@@ -13,33 +13,35 @@ use AllowDynamicProperties;
 class AdGroupsSelectionCriteria
 {
 //    Can be omitted.
-//    protected $CampaignIds = null;
+//    protected $CampaignIds;
 
 //    Can be omitted.
-//    protected $Ids = null;
+//    protected $Ids;
 
 //    Can be omitted.
-//    protected $Types = null;
+//    protected $Types;
 
 //    Can be omitted.
-//    protected $Statuses = null;
+//    protected $Statuses;
 
 //    Can be omitted.
-//    protected $TagIds = null;
+//    protected $TagIds;
 
 //    Can be omitted.
-//    protected $Tags = null;
+//    protected $Tags;
 
 //    Can be omitted.
-//    protected $AppIconStatuses = null;
+//    protected $AppIconStatuses;
 
 //    Can be omitted.
-//    protected $ServingStatuses = null;
+//    protected $ServingStatuses;
 
 //    Can be omitted.
-//    protected $NegativeKeywordSharedSetIds = null;
+//    protected $NegativeKeywordSharedSetIds;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -48,19 +50,23 @@ class AdGroupsSelectionCriteria
     }
 
     /**
-     * @return int[]|null
+     * Get CampaignIds
+     *
+     * @return list<int>
      */
-    public function getCampaignIds(): ?array
+    public function getCampaignIds(): array
     {
-        return $this->CampaignIds ?? null;
+        return $this->CampaignIds ?? [];
     }
 
     /**
-     * @param int[]|null $value
+     * Set CampaignIds
+     *
+     * @param list<int> $value
      *
      * @return $this
      */
-    public function setCampaignIds(?array $value = null)
+    public function setCampaignIds(array $value)
     {
         $this->CampaignIds = $value;
 
@@ -68,19 +74,23 @@ class AdGroupsSelectionCriteria
     }
 
     /**
-     * @return int[]|null
+     * Get Ids
+     *
+     * @return list<int>
      */
-    public function getIds(): ?array
+    public function getIds(): array
     {
-        return $this->Ids ?? null;
+        return $this->Ids ?? [];
     }
 
     /**
-     * @param int[]|null $value
+     * Set Ids
+     *
+     * @param list<int> $value
      *
      * @return $this
      */
-    public function setIds(?array $value = null)
+    public function setIds(array $value)
     {
         $this->Ids = $value;
 
@@ -88,23 +98,27 @@ class AdGroupsSelectionCriteria
     }
 
     /**
-     * @see AdGroupTypesEnum
+     * Get Types
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\AdGroupTypesEnum
+     *
+     * @return list<'DYNAMIC_TEXT_AD_GROUP'|'MOBILE_APP_AD_GROUP'|'TEXT_AD_GROUP'|'CPM_BANNER_AD_GROUP'|'CPM_VIDEO_AD_GROUP'|'UNIFIED_AD_GROUP'>
      */
-    public function getTypes(): ?array
+    public function getTypes(): array
     {
-        return $this->Types ?? null;
+        return $this->Types ?? [];
     }
 
     /**
-     * @see AdGroupTypesEnum
+     * Set Types
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\AdGroupTypesEnum
+     *
+     * @param list<'DYNAMIC_TEXT_AD_GROUP'|'MOBILE_APP_AD_GROUP'|'TEXT_AD_GROUP'|'CPM_BANNER_AD_GROUP'|'CPM_VIDEO_AD_GROUP'|'UNIFIED_AD_GROUP'> $value
      *
      * @return $this
      */
-    public function setTypes(?array $value = null)
+    public function setTypes(array $value)
     {
         $this->Types = $value;
 
@@ -112,23 +126,27 @@ class AdGroupsSelectionCriteria
     }
 
     /**
-     * @see AdGroupStatusSelectionEnum
+     * Get Statuses
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\AdGroupStatusSelectionEnum
+     *
+     * @return list<'ACCEPTED'|'DRAFT'|'MODERATION'|'REJECTED'|'PREACCEPTED'>
      */
-    public function getStatuses(): ?array
+    public function getStatuses(): array
     {
-        return $this->Statuses ?? null;
+        return $this->Statuses ?? [];
     }
 
     /**
-     * @see AdGroupStatusSelectionEnum
+     * Set Statuses
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\AdGroupStatusSelectionEnum
+     *
+     * @param list<'ACCEPTED'|'DRAFT'|'MODERATION'|'REJECTED'|'PREACCEPTED'> $value
      *
      * @return $this
      */
-    public function setStatuses(?array $value = null)
+    public function setStatuses(array $value)
     {
         $this->Statuses = $value;
 
@@ -136,19 +154,23 @@ class AdGroupsSelectionCriteria
     }
 
     /**
-     * @return int[]|null
+     * Get TagIds
+     *
+     * @return list<int>
      */
-    public function getTagIds(): ?array
+    public function getTagIds(): array
     {
-        return $this->TagIds ?? null;
+        return $this->TagIds ?? [];
     }
 
     /**
-     * @param int[]|null $value
+     * Set TagIds
+     *
+     * @param list<int> $value
      *
      * @return $this
      */
-    public function setTagIds(?array $value = null)
+    public function setTagIds(array $value)
     {
         $this->TagIds = $value;
 
@@ -156,19 +178,23 @@ class AdGroupsSelectionCriteria
     }
 
     /**
-     * @return string[]|null
+     * Get Tags
+     *
+     * @return list<string>
      */
-    public function getTags(): ?array
+    public function getTags(): array
     {
-        return $this->Tags ?? null;
+        return $this->Tags ?? [];
     }
 
     /**
-     * @param string[]|null $value
+     * Set Tags
+     *
+     * @param list<string> $value
      *
      * @return $this
      */
-    public function setTags(?array $value = null)
+    public function setTags(array $value)
     {
         $this->Tags = $value;
 
@@ -176,23 +202,27 @@ class AdGroupsSelectionCriteria
     }
 
     /**
-     * @see AdGroupAppIconStatusSelectionEnum
+     * Get AppIconStatuses
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\AdGroupAppIconStatusSelectionEnum
+     *
+     * @return list<'ACCEPTED'|'MODERATION'|'REJECTED'>
      */
-    public function getAppIconStatuses(): ?array
+    public function getAppIconStatuses(): array
     {
-        return $this->AppIconStatuses ?? null;
+        return $this->AppIconStatuses ?? [];
     }
 
     /**
-     * @see AdGroupAppIconStatusSelectionEnum
+     * Set AppIconStatuses
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\AdGroupAppIconStatusSelectionEnum
+     *
+     * @param list<'ACCEPTED'|'MODERATION'|'REJECTED'> $value
      *
      * @return $this
      */
-    public function setAppIconStatuses(?array $value = null)
+    public function setAppIconStatuses(array $value)
     {
         $this->AppIconStatuses = $value;
 
@@ -200,23 +230,27 @@ class AdGroupsSelectionCriteria
     }
 
     /**
-     * @see ServingStatusEnum
+     * Get ServingStatuses
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\ServingStatusEnum
+     *
+     * @return list<'ELIGIBLE'|'RARELY_SERVED'>
      */
-    public function getServingStatuses(): ?array
+    public function getServingStatuses(): array
     {
-        return $this->ServingStatuses ?? null;
+        return $this->ServingStatuses ?? [];
     }
 
     /**
-     * @see ServingStatusEnum
+     * Set ServingStatuses
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\ServingStatusEnum
+     *
+     * @param list<'ELIGIBLE'|'RARELY_SERVED'> $value
      *
      * @return $this
      */
-    public function setServingStatuses(?array $value = null)
+    public function setServingStatuses(array $value)
     {
         $this->ServingStatuses = $value;
 
@@ -224,19 +258,23 @@ class AdGroupsSelectionCriteria
     }
 
     /**
-     * @return int[]|null
+     * Get NegativeKeywordSharedSetIds
+     *
+     * @return list<int>
      */
-    public function getNegativeKeywordSharedSetIds(): ?array
+    public function getNegativeKeywordSharedSetIds(): array
     {
-        return $this->NegativeKeywordSharedSetIds ?? null;
+        return $this->NegativeKeywordSharedSetIds ?? [];
     }
 
     /**
-     * @param int[]|null $value
+     * Set NegativeKeywordSharedSetIds
+     *
+     * @param list<int> $value
      *
      * @return $this
      */
-    public function setNegativeKeywordSharedSetIds(?array $value = null)
+    public function setNegativeKeywordSharedSetIds(array $value)
     {
         $this->NegativeKeywordSharedSetIds = $value;
 

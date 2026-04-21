@@ -12,15 +12,18 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class SearchByTrafficVolume
 {
-    protected $TargetTrafficVolume = null;
+    /** @var int */
+    protected $TargetTrafficVolume;
 
 //    Can be omitted.
-//    protected $IncreasePercent = null;
+//    protected $IncreasePercent;
 
 //    Can be omitted.
-//    protected $BidCeiling = null;
+//    protected $BidCeiling;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -28,12 +31,17 @@ class SearchByTrafficVolume
         return new static();
     }
 
+    /**
+     * Get TargetTrafficVolume
+     */
     public function getTargetTrafficVolume(): int
     {
         return $this->TargetTrafficVolume;
     }
 
     /**
+     * Set TargetTrafficVolume
+     *
      * @return $this
      */
     public function setTargetTrafficVolume(int $value)
@@ -43,30 +51,40 @@ class SearchByTrafficVolume
         return $this;
     }
 
+    /**
+     * Get IncreasePercent
+     */
     public function getIncreasePercent(): ?int
     {
         return $this->IncreasePercent ?? null;
     }
 
     /**
+     * Set IncreasePercent
+     *
      * @return $this
      */
-    public function setIncreasePercent(?int $value = null)
+    public function setIncreasePercent(?int $value)
     {
         $this->IncreasePercent = $value;
 
         return $this;
     }
 
+    /**
+     * Get BidCeiling
+     */
     public function getBidCeiling(): ?int
     {
         return $this->BidCeiling ?? null;
     }
 
     /**
+     * Set BidCeiling
+     *
      * @return $this
      */
-    public function setBidCeiling(?int $value = null)
+    public function setBidCeiling(?int $value)
     {
         $this->BidCeiling = $value;
 

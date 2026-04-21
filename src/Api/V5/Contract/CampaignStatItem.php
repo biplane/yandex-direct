@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class CampaignStatItem
 {
-    protected $CampaignId = null;
+    /** @var int */
+    protected $CampaignId;
 
-    protected $BorderDate = null;
+    /** @var string */
+    protected $BorderDate;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -24,12 +28,17 @@ class CampaignStatItem
         return new static();
     }
 
+    /**
+     * Get CampaignId
+     */
     public function getCampaignId(): int
     {
         return $this->CampaignId;
     }
 
     /**
+     * Set CampaignId
+     *
      * @return $this
      */
     public function setCampaignId(int $value)
@@ -39,12 +48,17 @@ class CampaignStatItem
         return $this;
     }
 
+    /**
+     * Get BorderDate
+     */
     public function getBorderDate(): string
     {
         return $this->BorderDate;
     }
 
     /**
+     * Set BorderDate
+     *
      * @return $this
      */
     public function setBorderDate(string $value)

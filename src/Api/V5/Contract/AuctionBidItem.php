@@ -12,13 +12,18 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class AuctionBidItem
 {
-    protected $TrafficVolume = null;
+    /** @var int */
+    protected $TrafficVolume;
 
-    protected $Bid = null;
+    /** @var int */
+    protected $Bid;
 
-    protected $Price = null;
+    /** @var int */
+    protected $Price;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -26,12 +31,17 @@ class AuctionBidItem
         return new static();
     }
 
+    /**
+     * Get TrafficVolume
+     */
     public function getTrafficVolume(): int
     {
         return $this->TrafficVolume;
     }
 
     /**
+     * Set TrafficVolume
+     *
      * @return $this
      */
     public function setTrafficVolume(int $value)
@@ -41,12 +51,17 @@ class AuctionBidItem
         return $this;
     }
 
+    /**
+     * Get Bid
+     */
     public function getBid(): int
     {
         return $this->Bid;
     }
 
     /**
+     * Set Bid
+     *
      * @return $this
      */
     public function setBid(int $value)
@@ -56,12 +71,17 @@ class AuctionBidItem
         return $this;
     }
 
+    /**
+     * Get Price
+     */
     public function getPrice(): int
     {
         return $this->Price;
     }
 
     /**
+     * Set Price
+     *
      * @return $this
      */
     public function setPrice(int $value)

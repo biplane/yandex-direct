@@ -1,0 +1,273 @@
+<?php
+
+namespace Acme\Api\Dto;
+
+/**
+ * Auto-generated code.
+ */
+#[\AllowDynamicProperties]
+class EventsLogItem
+{
+    /**
+     * @var int|null
+     */
+    protected int|null $CampaignID = null;
+
+    /**
+     * @var int|null
+     */
+    protected int|null $BannerID = null;
+
+    /**
+     * @var int|null
+     */
+    protected int|null $PhraseID = null;
+
+    /**
+     * @var int|null
+     */
+    protected int|null $AccountID = null;
+
+    /**
+     * @var string|null
+     */
+    protected string|null $TextDescription = null;
+
+    /**
+     * @var string
+     */
+    protected string $EventType;
+
+    /**
+     * @var string
+     */
+    protected string $Timestamp;
+
+    /**
+     * @var string
+     */
+    protected string $EventName;
+
+    /**
+     * @var \Acme\Api\Dto\EventsLogItemAttributes|null
+     */
+    protected \Acme\Api\Dto\EventsLogItemAttributes|null $Attributes = null;
+
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create(): static
+    {
+        return new static();
+    }
+
+    /**
+     * Get CampaignID
+     *
+     * @return int|null
+     */
+    public function getCampaignID(): int|null
+    {
+        return $this->CampaignID;
+    }
+
+    /**
+     * Set CampaignID
+     *
+     * @param int|null $value
+     * @return $this
+     */
+    public function setCampaignID(int|null $value)
+    {
+        $this->CampaignID = $value;
+
+        return $this;
+    }
+
+    /**
+     * Get BannerID
+     *
+     * @return int|null
+     */
+    public function getBannerID(): int|null
+    {
+        return $this->BannerID;
+    }
+
+    /**
+     * Set BannerID
+     *
+     * @param int|null $value
+     * @return $this
+     */
+    public function setBannerID(int|null $value)
+    {
+        $this->BannerID = $value;
+
+        return $this;
+    }
+
+    /**
+     * Get PhraseID
+     *
+     * @return int|null
+     */
+    public function getPhraseID(): int|null
+    {
+        return $this->PhraseID;
+    }
+
+    /**
+     * Set PhraseID
+     *
+     * @param int|null $value
+     * @return $this
+     */
+    public function setPhraseID(int|null $value)
+    {
+        $this->PhraseID = $value;
+
+        return $this;
+    }
+
+    /**
+     * Get AccountID
+     *
+     * @return int|null
+     */
+    public function getAccountID(): int|null
+    {
+        return $this->AccountID;
+    }
+
+    /**
+     * Set AccountID
+     *
+     * @param int|null $value
+     * @return $this
+     */
+    public function setAccountID(int|null $value)
+    {
+        $this->AccountID = $value;
+
+        return $this;
+    }
+
+    /**
+     * Get TextDescription
+     *
+     * @return string|null
+     */
+    public function getTextDescription(): string|null
+    {
+        return $this->TextDescription;
+    }
+
+    /**
+     * Set TextDescription
+     *
+     * @param string|null $value
+     * @return $this
+     */
+    public function setTextDescription(string|null $value)
+    {
+        $this->TextDescription = $value;
+
+        return $this;
+    }
+
+    /**
+     * Get EventType
+     *
+     * @return string
+     */
+    public function getEventType(): string
+    {
+        return $this->EventType;
+    }
+
+    /**
+     * Set EventType
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setEventType(string $value)
+    {
+        $this->EventType = $value;
+
+        return $this;
+    }
+
+    /**
+     * Get Timestamp
+     *
+     * @return string
+     */
+    public function getTimestamp(): string
+    {
+        return $this->Timestamp;
+    }
+
+    /**
+     * Set Timestamp
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setTimestamp(string $value)
+    {
+        $this->Timestamp = $value;
+
+        return $this;
+    }
+
+    /**
+     * Get EventName
+     *
+     * @return string
+     */
+    public function getEventName(): string
+    {
+        return $this->EventName;
+    }
+
+    /**
+     * Set EventName
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setEventName(string $value)
+    {
+        $this->EventName = $value;
+
+        return $this;
+    }
+
+    /**
+     * Get Attributes
+     *
+     * @return \Acme\Api\Dto\EventsLogItemAttributes|null
+     */
+    public function getAttributes(): \Acme\Api\Dto\EventsLogItemAttributes|null
+    {
+        return $this->Attributes;
+    }
+
+    /**
+     * Set Attributes
+     *
+     * @param \Acme\Api\Dto\EventsLogItemAttributes|null $value
+     * @return $this
+     */
+    public function setAttributes(\Acme\Api\Dto\EventsLogItemAttributes|null $value)
+    {
+        $this->Attributes = $value;
+
+        return $this;
+    }
+}
+

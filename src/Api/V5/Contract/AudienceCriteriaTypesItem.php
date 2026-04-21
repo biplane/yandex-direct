@@ -12,17 +12,24 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class AudienceCriteriaTypesItem
 {
-    protected $Type = null;
+    /** @var string */
+    protected $Type;
 
-    protected $BlockElement = null;
+    /** @var string */
+    protected $BlockElement;
 
-    protected $Name = null;
+    /** @var string */
+    protected $Name;
 
-    protected $Description = null;
+    /** @var string */
+    protected $Description;
 
-    protected $CanSelect = null;
+    /** @var 'ALL'|'EXCEPT_ALL' */
+    protected $CanSelect;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -30,12 +37,17 @@ class AudienceCriteriaTypesItem
         return new static();
     }
 
+    /**
+     * Get Type
+     */
     public function getType(): string
     {
         return $this->Type;
     }
 
     /**
+     * Set Type
+     *
      * @return $this
      */
     public function setType(string $value)
@@ -45,12 +57,17 @@ class AudienceCriteriaTypesItem
         return $this;
     }
 
+    /**
+     * Get BlockElement
+     */
     public function getBlockElement(): string
     {
         return $this->BlockElement;
     }
 
     /**
+     * Set BlockElement
+     *
      * @return $this
      */
     public function setBlockElement(string $value)
@@ -60,12 +77,17 @@ class AudienceCriteriaTypesItem
         return $this;
     }
 
+    /**
+     * Get Name
+     */
     public function getName(): string
     {
         return $this->Name;
     }
 
     /**
+     * Set Name
+     *
      * @return $this
      */
     public function setName(string $value)
@@ -75,12 +97,17 @@ class AudienceCriteriaTypesItem
         return $this;
     }
 
+    /**
+     * Get Description
+     */
     public function getDescription(): string
     {
         return $this->Description;
     }
 
     /**
+     * Set Description
+     *
      * @return $this
      */
     public function setDescription(string $value)
@@ -91,7 +118,11 @@ class AudienceCriteriaTypesItem
     }
 
     /**
-     * @see CanSelectEnum
+     * Get CanSelect
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\CanSelectEnum
+     *
+     * @return 'ALL'|'EXCEPT_ALL'
      */
     public function getCanSelect(): string
     {
@@ -99,7 +130,11 @@ class AudienceCriteriaTypesItem
     }
 
     /**
-     * @see CanSelectEnum
+     * Set CanSelect
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\CanSelectEnum
+     *
+     * @param 'ALL'|'EXCEPT_ALL' $value
      *
      * @return $this
      */

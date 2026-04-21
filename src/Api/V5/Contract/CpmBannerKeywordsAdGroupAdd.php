@@ -13,6 +13,8 @@ use AllowDynamicProperties;
 class CpmBannerKeywordsAdGroupAdd
 {
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()

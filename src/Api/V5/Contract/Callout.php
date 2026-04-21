@@ -12,9 +12,12 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class Callout
 {
-    protected $CalloutText = null;
+    /** @var string */
+    protected $CalloutText;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -22,12 +25,17 @@ class Callout
         return new static();
     }
 
+    /**
+     * Get CalloutText
+     */
     public function getCalloutText(): string
     {
         return $this->CalloutText;
     }
 
     /**
+     * Set CalloutText
+     *
      * @return $this
      */
     public function setCalloutText(string $value)

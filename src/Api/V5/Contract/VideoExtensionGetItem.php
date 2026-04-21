@@ -12,16 +12,21 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class VideoExtensionGetItem
 {
-    protected $CreativeId = null;
+    /** @var int */
+    protected $CreativeId;
 
 //    Can be omitted.
-//    protected $Status = null;
+//    protected $Status;
 
-    protected $ThumbnailUrl = null;
+    /** @var string */
+    protected $ThumbnailUrl;
 
-    protected $PreviewUrl = null;
+    /** @var string */
+    protected $PreviewUrl;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -29,12 +34,17 @@ class VideoExtensionGetItem
         return new static();
     }
 
+    /**
+     * Get CreativeId
+     */
     public function getCreativeId(): int
     {
         return $this->CreativeId;
     }
 
     /**
+     * Set CreativeId
+     *
      * @return $this
      */
     public function setCreativeId(int $value)
@@ -45,7 +55,11 @@ class VideoExtensionGetItem
     }
 
     /**
-     * @see StatusEnum
+     * Get Status
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\StatusEnum
+     *
+     * @return 'ACCEPTED'|'DRAFT'|'MODERATION'|'PREACCEPTED'|'REJECTED'|'UNKNOWN'|null
      */
     public function getStatus(): ?string
     {
@@ -53,23 +67,32 @@ class VideoExtensionGetItem
     }
 
     /**
-     * @see StatusEnum
+     * Set Status
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\StatusEnum
+     *
+     * @param 'ACCEPTED'|'DRAFT'|'MODERATION'|'PREACCEPTED'|'REJECTED'|'UNKNOWN'|null $value
      *
      * @return $this
      */
-    public function setStatus(?string $value = null)
+    public function setStatus(?string $value)
     {
         $this->Status = $value;
 
         return $this;
     }
 
+    /**
+     * Get ThumbnailUrl
+     */
     public function getThumbnailUrl(): string
     {
         return $this->ThumbnailUrl;
     }
 
     /**
+     * Set ThumbnailUrl
+     *
      * @return $this
      */
     public function setThumbnailUrl(string $value)
@@ -79,12 +102,17 @@ class VideoExtensionGetItem
         return $this;
     }
 
+    /**
+     * Get PreviewUrl
+     */
     public function getPreviewUrl(): string
     {
         return $this->PreviewUrl;
     }
 
     /**
+     * Set PreviewUrl
+     *
      * @return $this
      */
     public function setPreviewUrl(string $value)

@@ -12,9 +12,12 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class CheckPaymentInfo
 {
-    protected $CustomTransactionID = null;
+    /** @var string */
+    protected $CustomTransactionID;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -22,12 +25,17 @@ class CheckPaymentInfo
         return new static();
     }
 
+    /**
+     * Get CustomTransactionID
+     */
     public function getCustomTransactionID(): string
     {
         return $this->CustomTransactionID;
     }
 
     /**
+     * Set CustomTransactionID
+     *
      * @return $this
      */
     public function setCustomTransactionID(string $value)

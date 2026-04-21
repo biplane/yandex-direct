@@ -12,17 +12,24 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class AdImage
 {
-    protected $Login = null;
+    /** @var string */
+    protected $Login;
 
-    protected $AdImageHash = null;
+    /** @var string */
+    protected $AdImageHash;
 
-    protected $AdImageURL = null;
+    /** @var string */
+    protected $AdImageURL;
 
-    protected $Assigned = null;
+    /** @var string */
+    protected $Assigned;
 
+    /** @var string|null */
     protected $Name = null;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -30,12 +37,17 @@ class AdImage
         return new static();
     }
 
+    /**
+     * Get Login
+     */
     public function getLogin(): string
     {
         return $this->Login;
     }
 
     /**
+     * Set Login
+     *
      * @return $this
      */
     public function setLogin(string $value)
@@ -45,12 +57,17 @@ class AdImage
         return $this;
     }
 
+    /**
+     * Get AdImageHash
+     */
     public function getAdImageHash(): string
     {
         return $this->AdImageHash;
     }
 
     /**
+     * Set AdImageHash
+     *
      * @return $this
      */
     public function setAdImageHash(string $value)
@@ -60,12 +77,17 @@ class AdImage
         return $this;
     }
 
+    /**
+     * Get AdImageURL
+     */
     public function getAdImageURL(): string
     {
         return $this->AdImageURL;
     }
 
     /**
+     * Set AdImageURL
+     *
      * @return $this
      */
     public function setAdImageURL(string $value)
@@ -75,12 +97,17 @@ class AdImage
         return $this;
     }
 
+    /**
+     * Get Assigned
+     */
     public function getAssigned(): string
     {
         return $this->Assigned;
     }
 
     /**
+     * Set Assigned
+     *
      * @return $this
      */
     public function setAssigned(string $value)
@@ -90,15 +117,20 @@ class AdImage
         return $this;
     }
 
+    /**
+     * Get Name
+     */
     public function getName(): ?string
     {
         return $this->Name;
     }
 
     /**
+     * Set Name
+     *
      * @return $this
      */
-    public function setName(?string $value = null)
+    public function setName(?string $value)
     {
         $this->Name = $value;
 

@@ -13,21 +13,23 @@ use AllowDynamicProperties;
 class MobileAppCampaignGetItem
 {
 //    Can be omitted.
-//    protected $BiddingStrategy = null;
+//    protected $BiddingStrategy;
 
 //    Can be omitted.
-//    protected $Settings = null;
+//    protected $Settings;
 
 //    Can be omitted.
-//    protected $PackageBiddingStrategy = null;
+//    protected $PackageBiddingStrategy;
 
 //    Can be omitted.
-//    protected $CanBeUsedAsPackageBiddingStrategySource = null;
+//    protected $CanBeUsedAsPackageBiddingStrategySource;
 
 //    Can be omitted.
-//    protected $NegativeKeywordSharedSetIds = null;
+//    protected $NegativeKeywordSharedSetIds;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -35,15 +37,20 @@ class MobileAppCampaignGetItem
         return new static();
     }
 
+    /**
+     * Get BiddingStrategy
+     */
     public function getBiddingStrategy(): ?MobileAppCampaignStrategy
     {
         return $this->BiddingStrategy ?? null;
     }
 
     /**
+     * Set BiddingStrategy
+     *
      * @return $this
      */
-    public function setBiddingStrategy(?MobileAppCampaignStrategy $value = null)
+    public function setBiddingStrategy(?MobileAppCampaignStrategy $value)
     {
         $this->BiddingStrategy = $value;
 
@@ -51,34 +58,43 @@ class MobileAppCampaignGetItem
     }
 
     /**
-     * @return MobileAppCampaignSettingGet[]|null
+     * Get Settings
+     *
+     * @return list<MobileAppCampaignSettingGet>
      */
-    public function getSettings(): ?array
+    public function getSettings(): array
     {
-        return $this->Settings ?? null;
+        return $this->Settings ?? [];
     }
 
     /**
-     * @param MobileAppCampaignSettingGet[]|null $value
+     * Set Settings
+     *
+     * @param list<MobileAppCampaignSettingGet> $value
      *
      * @return $this
      */
-    public function setSettings(?array $value = null)
+    public function setSettings(array $value)
     {
         $this->Settings = $value;
 
         return $this;
     }
 
+    /**
+     * Get PackageBiddingStrategy
+     */
     public function getPackageBiddingStrategy(): ?MobileAppCampaignPackageBiddingStrategyGet
     {
         return $this->PackageBiddingStrategy ?? null;
     }
 
     /**
+     * Set PackageBiddingStrategy
+     *
      * @return $this
      */
-    public function setPackageBiddingStrategy(?MobileAppCampaignPackageBiddingStrategyGet $value = null)
+    public function setPackageBiddingStrategy(?MobileAppCampaignPackageBiddingStrategyGet $value)
     {
         $this->PackageBiddingStrategy = $value;
 
@@ -86,7 +102,11 @@ class MobileAppCampaignGetItem
     }
 
     /**
-     * @see YesNoEnum
+     * Get CanBeUsedAsPackageBiddingStrategySource
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'|null
      */
     public function getCanBeUsedAsPackageBiddingStrategySource(): ?string
     {
@@ -94,11 +114,15 @@ class MobileAppCampaignGetItem
     }
 
     /**
-     * @see YesNoEnum
+     * Set CanBeUsedAsPackageBiddingStrategySource
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO'|null $value
      *
      * @return $this
      */
-    public function setCanBeUsedAsPackageBiddingStrategySource(?string $value = null)
+    public function setCanBeUsedAsPackageBiddingStrategySource(?string $value)
     {
         $this->CanBeUsedAsPackageBiddingStrategySource = $value;
 
@@ -106,7 +130,9 @@ class MobileAppCampaignGetItem
     }
 
     /**
-     * @return float[]|null
+     * Get NegativeKeywordSharedSetIds
+     *
+     * @return non-empty-list<int>|null
      */
     public function getNegativeKeywordSharedSetIds(): ?array
     {
@@ -114,11 +140,13 @@ class MobileAppCampaignGetItem
     }
 
     /**
-     * @param float[]|null $value
+     * Set NegativeKeywordSharedSetIds
+     *
+     * @param non-empty-list<int>|null $value
      *
      * @return $this
      */
-    public function setNegativeKeywordSharedSetIds(?array $value = null)
+    public function setNegativeKeywordSharedSetIds(?array $value)
     {
         $this->NegativeKeywordSharedSetIds = $value;
 

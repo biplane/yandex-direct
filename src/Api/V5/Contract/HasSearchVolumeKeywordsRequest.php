@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class HasSearchVolumeKeywordsRequest
 {
-    protected $SelectionCriteria = null;
+    /** @var HasSearchVolumeSelectionCriteria */
+    protected $SelectionCriteria;
 
-    protected $FieldNames = [];
+    /** @var non-empty-list<'Keyword'|'RegionIds'|'AllDevices'|'MobilePhones'|'Tablets'|'Desktops'> */
+    protected $FieldNames;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -24,12 +28,17 @@ class HasSearchVolumeKeywordsRequest
         return new static();
     }
 
+    /**
+     * Get SelectionCriteria
+     */
     public function getSelectionCriteria(): HasSearchVolumeSelectionCriteria
     {
         return $this->SelectionCriteria;
     }
 
     /**
+     * Set SelectionCriteria
+     *
      * @return $this
      */
     public function setSelectionCriteria(HasSearchVolumeSelectionCriteria $value)
@@ -40,9 +49,11 @@ class HasSearchVolumeKeywordsRequest
     }
 
     /**
-     * @see HasSearchVolumeFieldEnum
+     * Get FieldNames
      *
-     * @return string[]
+     * @see \Biplane\YandexDirect\Api\V5\Contract\HasSearchVolumeFieldEnum
+     *
+     * @return non-empty-list<'Keyword'|'RegionIds'|'AllDevices'|'MobilePhones'|'Tablets'|'Desktops'>
      */
     public function getFieldNames(): array
     {
@@ -50,9 +61,11 @@ class HasSearchVolumeKeywordsRequest
     }
 
     /**
-     * @see HasSearchVolumeFieldEnum
+     * Set FieldNames
      *
-     * @param string[] $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\HasSearchVolumeFieldEnum
+     *
+     * @param non-empty-list<'Keyword'|'RegionIds'|'AllDevices'|'MobilePhones'|'Tablets'|'Desktops'> $value
      *
      * @return $this
      */

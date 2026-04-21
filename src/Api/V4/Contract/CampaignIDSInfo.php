@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class CampaignIDSInfo
 {
-    protected $CampaignIDS = [];
+//    Can be omitted.
+//    protected $CampaignIDS;
 
+    /** @var string|null */
     protected $Currency = null;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -25,15 +29,19 @@ class CampaignIDSInfo
     }
 
     /**
-     * @return int[]
+     * Get CampaignIDS
+     *
+     * @return list<int>
      */
     public function getCampaignIDS(): array
     {
-        return $this->CampaignIDS;
+        return $this->CampaignIDS ?? [];
     }
 
     /**
-     * @param int[] $value
+     * Set CampaignIDS
+     *
+     * @param list<int> $value
      *
      * @return $this
      */
@@ -44,15 +52,20 @@ class CampaignIDSInfo
         return $this;
     }
 
+    /**
+     * Get Currency
+     */
     public function getCurrency(): ?string
     {
         return $this->Currency;
     }
 
     /**
+     * Set Currency
+     *
      * @return $this
      */
-    public function setCurrency(?string $value = null)
+    public function setCurrency(?string $value)
     {
         $this->Currency = $value;
 

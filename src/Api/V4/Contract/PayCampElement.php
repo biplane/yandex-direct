@@ -12,13 +12,18 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class PayCampElement
 {
-    protected $CampaignID = null;
+    /** @var int */
+    protected $CampaignID;
 
-    protected $Sum = null;
+    /** @var float */
+    protected $Sum;
 
+    /** @var string|null */
     protected $Currency = null;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -26,12 +31,17 @@ class PayCampElement
         return new static();
     }
 
+    /**
+     * Get CampaignID
+     */
     public function getCampaignID(): int
     {
         return $this->CampaignID;
     }
 
     /**
+     * Set CampaignID
+     *
      * @return $this
      */
     public function setCampaignID(int $value)
@@ -41,12 +51,17 @@ class PayCampElement
         return $this;
     }
 
+    /**
+     * Get Sum
+     */
     public function getSum(): float
     {
         return $this->Sum;
     }
 
     /**
+     * Set Sum
+     *
      * @return $this
      */
     public function setSum(float $value)
@@ -56,15 +71,20 @@ class PayCampElement
         return $this;
     }
 
+    /**
+     * Get Currency
+     */
     public function getCurrency(): ?string
     {
         return $this->Currency;
     }
 
     /**
+     * Set Currency
+     *
      * @return $this
      */
-    public function setCurrency(?string $value = null)
+    public function setCurrency(?string $value)
     {
         $this->Currency = $value;
 

@@ -5,16 +5,27 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 use AllowDynamicProperties;
+use ArrayIterator;
+use Countable;
+use IteratorAggregate;
+use Override;
+
+use function count;
 
 /**
  * Auto-generated code.
+ *
+ * @implements IteratorAggregate<int, ActionResult>
  */
 #[AllowDynamicProperties]
-class ResumeSmartAdTargetsResponse
+class ResumeSmartAdTargetsResponse implements IteratorAggregate, Countable
 {
-    protected $ResumeResults = [];
+    /** @var non-empty-list<ActionResult> */
+    protected $ResumeResults;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -23,7 +34,9 @@ class ResumeSmartAdTargetsResponse
     }
 
     /**
-     * @return ActionResult[]
+     * Get ResumeResults
+     *
+     * @return non-empty-list<ActionResult>
      */
     public function getResumeResults(): array
     {
@@ -31,7 +44,9 @@ class ResumeSmartAdTargetsResponse
     }
 
     /**
-     * @param ActionResult[] $value
+     * Set ResumeResults
+     *
+     * @param non-empty-list<ActionResult> $value
      *
      * @return $this
      */
@@ -40,5 +55,20 @@ class ResumeSmartAdTargetsResponse
         $this->ResumeResults = $value;
 
         return $this;
+    }
+
+    #[Override]
+    public function count(): int
+    {
+        return count($this->ResumeResults);
+    }
+
+    /**
+     * @return ArrayIterator<int, ActionResult>
+     */
+    #[Override]
+    public function getIterator(): ArrayIterator
+    {
+        return new ArrayIterator($this->ResumeResults);
     }
 }

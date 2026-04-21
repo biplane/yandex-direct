@@ -12,13 +12,18 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class AdImageAssociationRequest
 {
-    protected $Action = null;
+    /** @var string */
+    protected $Action;
 
+    /** @var AdImageAssociationSelectionCriteria|null */
     protected $SelectionCriteria = null;
 
-    protected $AdImageAssociations = null;
+//    Can be omitted.
+//    protected $AdImageAssociations;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -26,12 +31,17 @@ class AdImageAssociationRequest
         return new static();
     }
 
+    /**
+     * Get Action
+     */
     public function getAction(): string
     {
         return $this->Action;
     }
 
     /**
+     * Set Action
+     *
      * @return $this
      */
     public function setAction(string $value)
@@ -41,15 +51,20 @@ class AdImageAssociationRequest
         return $this;
     }
 
+    /**
+     * Get SelectionCriteria
+     */
     public function getSelectionCriteria(): ?AdImageAssociationSelectionCriteria
     {
         return $this->SelectionCriteria;
     }
 
     /**
+     * Set SelectionCriteria
+     *
      * @return $this
      */
-    public function setSelectionCriteria(?AdImageAssociationSelectionCriteria $value = null)
+    public function setSelectionCriteria(?AdImageAssociationSelectionCriteria $value)
     {
         $this->SelectionCriteria = $value;
 
@@ -57,19 +72,23 @@ class AdImageAssociationRequest
     }
 
     /**
-     * @return AdImageAssociation[]|null
+     * Get AdImageAssociations
+     *
+     * @return list<AdImageAssociation>|null
      */
     public function getAdImageAssociations(): ?array
     {
-        return $this->AdImageAssociations;
+        return $this->AdImageAssociations ?? null;
     }
 
     /**
-     * @param AdImageAssociation[]|null $value
+     * Set AdImageAssociations
+     *
+     * @param list<AdImageAssociation>|null $value
      *
      * @return $this
      */
-    public function setAdImageAssociations(?array $value = null)
+    public function setAdImageAssociations(?array $value)
     {
         $this->AdImageAssociations = $value;
 

@@ -13,48 +13,50 @@ use AllowDynamicProperties;
 class AdsSelectionCriteria
 {
 //    Can be omitted.
-//    protected $Ids = null;
+//    protected $Ids;
 
 //    Can be omitted.
-//    protected $States = null;
+//    protected $States;
 
 //    Can be omitted.
-//    protected $Statuses = null;
+//    protected $Statuses;
 
 //    Can be omitted.
-//    protected $CampaignIds = null;
+//    protected $CampaignIds;
 
 //    Can be omitted.
-//    protected $AdGroupIds = null;
+//    protected $AdGroupIds;
 
 //    Can be omitted.
-//    protected $Types = null;
+//    protected $Types;
 
 //    Can be omitted.
-//    protected $Mobile = null;
+//    protected $Mobile;
 
 //    Can be omitted.
-//    protected $VCardIds = null;
+//    protected $VCardIds;
 
 //    Can be omitted.
-//    protected $SitelinkSetIds = null;
+//    protected $SitelinkSetIds;
 
 //    Can be omitted.
-//    protected $AdImageHashes = null;
+//    protected $AdImageHashes;
 
 //    Can be omitted.
-//    protected $VCardModerationStatuses = null;
+//    protected $VCardModerationStatuses;
 
 //    Can be omitted.
-//    protected $SitelinksModerationStatuses = null;
+//    protected $SitelinksModerationStatuses;
 
 //    Can be omitted.
-//    protected $AdImageModerationStatuses = null;
+//    protected $AdImageModerationStatuses;
 
 //    Can be omitted.
-//    protected $AdExtensionIds = null;
+//    protected $AdExtensionIds;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -63,19 +65,23 @@ class AdsSelectionCriteria
     }
 
     /**
-     * @return int[]|null
+     * Get Ids
+     *
+     * @return list<int>
      */
-    public function getIds(): ?array
+    public function getIds(): array
     {
-        return $this->Ids ?? null;
+        return $this->Ids ?? [];
     }
 
     /**
-     * @param int[]|null $value
+     * Set Ids
+     *
+     * @param list<int> $value
      *
      * @return $this
      */
-    public function setIds(?array $value = null)
+    public function setIds(array $value)
     {
         $this->Ids = $value;
 
@@ -83,23 +89,27 @@ class AdsSelectionCriteria
     }
 
     /**
-     * @see AdStateSelectionEnum
+     * Get States
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\AdStateSelectionEnum
+     *
+     * @return list<'OFF'|'ON'|'SUSPENDED'|'OFF_BY_MONITORING'|'ARCHIVED'>
      */
-    public function getStates(): ?array
+    public function getStates(): array
     {
-        return $this->States ?? null;
+        return $this->States ?? [];
     }
 
     /**
-     * @see AdStateSelectionEnum
+     * Set States
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\AdStateSelectionEnum
+     *
+     * @param list<'OFF'|'ON'|'SUSPENDED'|'OFF_BY_MONITORING'|'ARCHIVED'> $value
      *
      * @return $this
      */
-    public function setStates(?array $value = null)
+    public function setStates(array $value)
     {
         $this->States = $value;
 
@@ -107,23 +117,27 @@ class AdsSelectionCriteria
     }
 
     /**
-     * @see AdStatusSelectionEnum
+     * Get Statuses
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\AdStatusSelectionEnum
+     *
+     * @return list<'DRAFT'|'MODERATION'|'PREACCEPTED'|'ACCEPTED'|'REJECTED'>
      */
-    public function getStatuses(): ?array
+    public function getStatuses(): array
     {
-        return $this->Statuses ?? null;
+        return $this->Statuses ?? [];
     }
 
     /**
-     * @see AdStatusSelectionEnum
+     * Set Statuses
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\AdStatusSelectionEnum
+     *
+     * @param list<'DRAFT'|'MODERATION'|'PREACCEPTED'|'ACCEPTED'|'REJECTED'> $value
      *
      * @return $this
      */
-    public function setStatuses(?array $value = null)
+    public function setStatuses(array $value)
     {
         $this->Statuses = $value;
 
@@ -131,19 +145,23 @@ class AdsSelectionCriteria
     }
 
     /**
-     * @return int[]|null
+     * Get CampaignIds
+     *
+     * @return list<int>
      */
-    public function getCampaignIds(): ?array
+    public function getCampaignIds(): array
     {
-        return $this->CampaignIds ?? null;
+        return $this->CampaignIds ?? [];
     }
 
     /**
-     * @param int[]|null $value
+     * Set CampaignIds
+     *
+     * @param list<int> $value
      *
      * @return $this
      */
-    public function setCampaignIds(?array $value = null)
+    public function setCampaignIds(array $value)
     {
         $this->CampaignIds = $value;
 
@@ -151,19 +169,23 @@ class AdsSelectionCriteria
     }
 
     /**
-     * @return int[]|null
+     * Get AdGroupIds
+     *
+     * @return list<int>
      */
-    public function getAdGroupIds(): ?array
+    public function getAdGroupIds(): array
     {
-        return $this->AdGroupIds ?? null;
+        return $this->AdGroupIds ?? [];
     }
 
     /**
-     * @param int[]|null $value
+     * Set AdGroupIds
+     *
+     * @param list<int> $value
      *
      * @return $this
      */
-    public function setAdGroupIds(?array $value = null)
+    public function setAdGroupIds(array $value)
     {
         $this->AdGroupIds = $value;
 
@@ -171,23 +193,27 @@ class AdsSelectionCriteria
     }
 
     /**
-     * @see AdTypeEnum
+     * Get Types
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\AdTypeEnum
+     *
+     * @return list<'TEXT_AD'|'MOBILE_APP_AD'|'DYNAMIC_TEXT_AD'|'IMAGE_AD'|'CPC_VIDEO_AD'|'CPM_BANNER_AD'|'CPM_VIDEO_AD'|'SMART_AD'|'SHOPPING_AD'|'LISTING_AD'>
      */
-    public function getTypes(): ?array
+    public function getTypes(): array
     {
-        return $this->Types ?? null;
+        return $this->Types ?? [];
     }
 
     /**
-     * @see AdTypeEnum
+     * Set Types
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\AdTypeEnum
+     *
+     * @param list<'TEXT_AD'|'MOBILE_APP_AD'|'DYNAMIC_TEXT_AD'|'IMAGE_AD'|'CPC_VIDEO_AD'|'CPM_BANNER_AD'|'CPM_VIDEO_AD'|'SMART_AD'|'SHOPPING_AD'|'LISTING_AD'> $value
      *
      * @return $this
      */
-    public function setTypes(?array $value = null)
+    public function setTypes(array $value)
     {
         $this->Types = $value;
 
@@ -195,7 +221,11 @@ class AdsSelectionCriteria
     }
 
     /**
-     * @see YesNoEnum
+     * Get Mobile
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'|null
      */
     public function getMobile(): ?string
     {
@@ -203,11 +233,15 @@ class AdsSelectionCriteria
     }
 
     /**
-     * @see YesNoEnum
+     * Set Mobile
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO'|null $value
      *
      * @return $this
      */
-    public function setMobile(?string $value = null)
+    public function setMobile(?string $value)
     {
         $this->Mobile = $value;
 
@@ -215,19 +249,23 @@ class AdsSelectionCriteria
     }
 
     /**
-     * @return int[]|null
+     * Get VCardIds
+     *
+     * @return list<int>
      */
-    public function getVCardIds(): ?array
+    public function getVCardIds(): array
     {
-        return $this->VCardIds ?? null;
+        return $this->VCardIds ?? [];
     }
 
     /**
-     * @param int[]|null $value
+     * Set VCardIds
+     *
+     * @param list<int> $value
      *
      * @return $this
      */
-    public function setVCardIds(?array $value = null)
+    public function setVCardIds(array $value)
     {
         $this->VCardIds = $value;
 
@@ -235,19 +273,23 @@ class AdsSelectionCriteria
     }
 
     /**
-     * @return int[]|null
+     * Get SitelinkSetIds
+     *
+     * @return list<int>
      */
-    public function getSitelinkSetIds(): ?array
+    public function getSitelinkSetIds(): array
     {
-        return $this->SitelinkSetIds ?? null;
+        return $this->SitelinkSetIds ?? [];
     }
 
     /**
-     * @param int[]|null $value
+     * Set SitelinkSetIds
+     *
+     * @param list<int> $value
      *
      * @return $this
      */
-    public function setSitelinkSetIds(?array $value = null)
+    public function setSitelinkSetIds(array $value)
     {
         $this->SitelinkSetIds = $value;
 
@@ -255,19 +297,23 @@ class AdsSelectionCriteria
     }
 
     /**
-     * @return string[]|null
+     * Get AdImageHashes
+     *
+     * @return list<string>
      */
-    public function getAdImageHashes(): ?array
+    public function getAdImageHashes(): array
     {
-        return $this->AdImageHashes ?? null;
+        return $this->AdImageHashes ?? [];
     }
 
     /**
-     * @param string[]|null $value
+     * Set AdImageHashes
+     *
+     * @param list<string> $value
      *
      * @return $this
      */
-    public function setAdImageHashes(?array $value = null)
+    public function setAdImageHashes(array $value)
     {
         $this->AdImageHashes = $value;
 
@@ -275,23 +321,27 @@ class AdsSelectionCriteria
     }
 
     /**
-     * @see ExtensionStatusSelectionEnum
+     * Get VCardModerationStatuses
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\ExtensionStatusSelectionEnum
+     *
+     * @return list<'DRAFT'|'MODERATION'|'ACCEPTED'|'REJECTED'>
      */
-    public function getVCardModerationStatuses(): ?array
+    public function getVCardModerationStatuses(): array
     {
-        return $this->VCardModerationStatuses ?? null;
+        return $this->VCardModerationStatuses ?? [];
     }
 
     /**
-     * @see ExtensionStatusSelectionEnum
+     * Set VCardModerationStatuses
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\ExtensionStatusSelectionEnum
+     *
+     * @param list<'DRAFT'|'MODERATION'|'ACCEPTED'|'REJECTED'> $value
      *
      * @return $this
      */
-    public function setVCardModerationStatuses(?array $value = null)
+    public function setVCardModerationStatuses(array $value)
     {
         $this->VCardModerationStatuses = $value;
 
@@ -299,23 +349,27 @@ class AdsSelectionCriteria
     }
 
     /**
-     * @see ExtensionStatusSelectionEnum
+     * Get SitelinksModerationStatuses
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\ExtensionStatusSelectionEnum
+     *
+     * @return list<'DRAFT'|'MODERATION'|'ACCEPTED'|'REJECTED'>
      */
-    public function getSitelinksModerationStatuses(): ?array
+    public function getSitelinksModerationStatuses(): array
     {
-        return $this->SitelinksModerationStatuses ?? null;
+        return $this->SitelinksModerationStatuses ?? [];
     }
 
     /**
-     * @see ExtensionStatusSelectionEnum
+     * Set SitelinksModerationStatuses
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\ExtensionStatusSelectionEnum
+     *
+     * @param list<'DRAFT'|'MODERATION'|'ACCEPTED'|'REJECTED'> $value
      *
      * @return $this
      */
-    public function setSitelinksModerationStatuses(?array $value = null)
+    public function setSitelinksModerationStatuses(array $value)
     {
         $this->SitelinksModerationStatuses = $value;
 
@@ -323,23 +377,27 @@ class AdsSelectionCriteria
     }
 
     /**
-     * @see ExtensionStatusSelectionEnum
+     * Get AdImageModerationStatuses
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\ExtensionStatusSelectionEnum
+     *
+     * @return list<'DRAFT'|'MODERATION'|'ACCEPTED'|'REJECTED'>
      */
-    public function getAdImageModerationStatuses(): ?array
+    public function getAdImageModerationStatuses(): array
     {
-        return $this->AdImageModerationStatuses ?? null;
+        return $this->AdImageModerationStatuses ?? [];
     }
 
     /**
-     * @see ExtensionStatusSelectionEnum
+     * Set AdImageModerationStatuses
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\ExtensionStatusSelectionEnum
+     *
+     * @param list<'DRAFT'|'MODERATION'|'ACCEPTED'|'REJECTED'> $value
      *
      * @return $this
      */
-    public function setAdImageModerationStatuses(?array $value = null)
+    public function setAdImageModerationStatuses(array $value)
     {
         $this->AdImageModerationStatuses = $value;
 
@@ -347,19 +405,23 @@ class AdsSelectionCriteria
     }
 
     /**
-     * @return int[]|null
+     * Get AdExtensionIds
+     *
+     * @return list<int>
      */
-    public function getAdExtensionIds(): ?array
+    public function getAdExtensionIds(): array
     {
-        return $this->AdExtensionIds ?? null;
+        return $this->AdExtensionIds ?? [];
     }
 
     /**
-     * @param int[]|null $value
+     * Set AdExtensionIds
+     *
+     * @param list<int> $value
      *
      * @return $this
      */
-    public function setAdExtensionIds(?array $value = null)
+    public function setAdExtensionIds(array $value)
     {
         $this->AdExtensionIds = $value;
 

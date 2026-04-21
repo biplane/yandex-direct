@@ -12,12 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class StrategyPayForInstallAdd
 {
-    protected $AverageCpi = null;
+    /** @var int */
+    protected $AverageCpi;
 
 //    Can be omitted.
-//    protected $WeeklySpendLimit = null;
+//    protected $WeeklySpendLimit;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -25,12 +28,17 @@ class StrategyPayForInstallAdd
         return new static();
     }
 
+    /**
+     * Get AverageCpi
+     */
     public function getAverageCpi(): int
     {
         return $this->AverageCpi;
     }
 
     /**
+     * Set AverageCpi
+     *
      * @return $this
      */
     public function setAverageCpi(int $value)
@@ -40,15 +48,20 @@ class StrategyPayForInstallAdd
         return $this;
     }
 
+    /**
+     * Get WeeklySpendLimit
+     */
     public function getWeeklySpendLimit(): ?int
     {
         return $this->WeeklySpendLimit ?? null;
     }
 
     /**
+     * Set WeeklySpendLimit
+     *
      * @return $this
      */
-    public function setWeeklySpendLimit(?int $value = null)
+    public function setWeeklySpendLimit(?int $value)
     {
         $this->WeeklySpendLimit = $value;
 

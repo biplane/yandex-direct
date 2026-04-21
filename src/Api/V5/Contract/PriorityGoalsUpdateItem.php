@@ -12,16 +12,21 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class PriorityGoalsUpdateItem
 {
-    protected $GoalId = null;
+    /** @var int */
+    protected $GoalId;
 
-    protected $Value = null;
+    /** @var int */
+    protected $Value;
 
 //    Can be omitted.
-//    protected $IsMetrikaSourceOfValue = null;
+//    protected $IsMetrikaSourceOfValue;
 
-    protected $Operation = null;
+    /** @var 'ADD'|'REMOVE'|'SET' */
+    protected $Operation;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -29,12 +34,17 @@ class PriorityGoalsUpdateItem
         return new static();
     }
 
+    /**
+     * Get GoalId
+     */
     public function getGoalId(): int
     {
         return $this->GoalId;
     }
 
     /**
+     * Set GoalId
+     *
      * @return $this
      */
     public function setGoalId(int $value)
@@ -44,12 +54,17 @@ class PriorityGoalsUpdateItem
         return $this;
     }
 
+    /**
+     * Get Value
+     */
     public function getValue(): int
     {
         return $this->Value;
     }
 
     /**
+     * Set Value
+     *
      * @return $this
      */
     public function setValue(int $value)
@@ -60,7 +75,11 @@ class PriorityGoalsUpdateItem
     }
 
     /**
-     * @see YesNoEnum
+     * Get IsMetrikaSourceOfValue
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'|null
      */
     public function getIsMetrikaSourceOfValue(): ?string
     {
@@ -68,11 +87,15 @@ class PriorityGoalsUpdateItem
     }
 
     /**
-     * @see YesNoEnum
+     * Set IsMetrikaSourceOfValue
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO'|null $value
      *
      * @return $this
      */
-    public function setIsMetrikaSourceOfValue(?string $value = null)
+    public function setIsMetrikaSourceOfValue(?string $value)
     {
         $this->IsMetrikaSourceOfValue = $value;
 
@@ -80,7 +103,11 @@ class PriorityGoalsUpdateItem
     }
 
     /**
-     * @see OperationEnum
+     * Get Operation
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\OperationEnum
+     *
+     * @return 'ADD'|'REMOVE'|'SET'
      */
     public function getOperation(): string
     {
@@ -88,7 +115,11 @@ class PriorityGoalsUpdateItem
     }
 
     /**
-     * @see OperationEnum
+     * Set Operation
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\OperationEnum
+     *
+     * @param 'ADD'|'REMOVE'|'SET' $value
      *
      * @return $this
      */

@@ -12,15 +12,21 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class WordstatReportInfo
 {
-    protected $Phrase = null;
+    /** @var string */
+    protected $Phrase;
 
-    protected $GeoID = [];
+//    Can be omitted.
+//    protected $GeoID;
 
-    protected $SearchedWith = [];
+//    Can be omitted.
+//    protected $SearchedWith;
 
-    protected $SearchedAlso = [];
+//    Can be omitted.
+//    protected $SearchedAlso;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -28,12 +34,17 @@ class WordstatReportInfo
         return new static();
     }
 
+    /**
+     * Get Phrase
+     */
     public function getPhrase(): string
     {
         return $this->Phrase;
     }
 
     /**
+     * Set Phrase
+     *
      * @return $this
      */
     public function setPhrase(string $value)
@@ -44,15 +55,19 @@ class WordstatReportInfo
     }
 
     /**
-     * @return int[]
+     * Get GeoID
+     *
+     * @return list<int>
      */
     public function getGeoID(): array
     {
-        return $this->GeoID;
+        return $this->GeoID ?? [];
     }
 
     /**
-     * @param int[] $value
+     * Set GeoID
+     *
+     * @param list<int> $value
      *
      * @return $this
      */
@@ -64,15 +79,19 @@ class WordstatReportInfo
     }
 
     /**
-     * @return WordstatItem[]
+     * Get SearchedWith
+     *
+     * @return list<WordstatItem>
      */
     public function getSearchedWith(): array
     {
-        return $this->SearchedWith;
+        return $this->SearchedWith ?? [];
     }
 
     /**
-     * @param WordstatItem[] $value
+     * Set SearchedWith
+     *
+     * @param list<WordstatItem> $value
      *
      * @return $this
      */
@@ -84,15 +103,19 @@ class WordstatReportInfo
     }
 
     /**
-     * @return WordstatItem[]
+     * Get SearchedAlso
+     *
+     * @return list<WordstatItem>
      */
     public function getSearchedAlso(): array
     {
-        return $this->SearchedAlso;
+        return $this->SearchedAlso ?? [];
     }
 
     /**
-     * @param WordstatItem[] $value
+     * Set SearchedAlso
+     *
+     * @param list<WordstatItem> $value
      *
      * @return $this
      */

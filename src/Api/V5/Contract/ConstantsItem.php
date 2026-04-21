@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class ConstantsItem
 {
-    protected $Name = null;
+    /** @var string */
+    protected $Name;
 
-    protected $Value = null;
+    /** @var string */
+    protected $Value;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -24,12 +28,17 @@ class ConstantsItem
         return new static();
     }
 
+    /**
+     * Get Name
+     */
     public function getName(): string
     {
         return $this->Name;
     }
 
     /**
+     * Set Name
+     *
      * @return $this
      */
     public function setName(string $value)
@@ -39,12 +48,17 @@ class ConstantsItem
         return $this;
     }
 
+    /**
+     * Get Value
+     */
     public function getValue(): string
     {
         return $this->Value;
     }
 
     /**
+     * Set Value
+     *
      * @return $this
      */
     public function setValue(string $value)

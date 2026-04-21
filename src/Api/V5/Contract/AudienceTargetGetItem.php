@@ -13,92 +13,127 @@ use AllowDynamicProperties;
 class AudienceTargetGetItem extends AudienceTargetBase
 {
 //    Can be omitted.
-//    protected $Id = null;
+//    protected $Id;
 
 //    Can be omitted.
-//    protected $AdGroupId = null;
+//    protected $AdGroupId;
 
 //    Can be omitted.
-//    protected $CampaignId = null;
+//    protected $CampaignId;
 
 //    Can be omitted.
-//    protected $RetargetingListId = null;
+//    protected $RetargetingListId;
 
 //    Can be omitted.
-//    protected $InterestId = null;
+//    protected $InterestId;
 
 //    Can be omitted.
-//    protected $State = null;
+//    protected $State;
 
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    /**
+     * Get Id
+     */
     public function getId(): ?int
     {
         return $this->Id ?? null;
     }
 
     /**
+     * Set Id
+     *
      * @return $this
      */
-    public function setId(?int $value = null)
+    public function setId(?int $value)
     {
         $this->Id = $value;
 
         return $this;
     }
 
+    /**
+     * Get AdGroupId
+     */
     public function getAdGroupId(): ?int
     {
         return $this->AdGroupId ?? null;
     }
 
     /**
+     * Set AdGroupId
+     *
      * @return $this
      */
-    public function setAdGroupId(?int $value = null)
+    public function setAdGroupId(?int $value)
     {
         $this->AdGroupId = $value;
 
         return $this;
     }
 
+    /**
+     * Get CampaignId
+     */
     public function getCampaignId(): ?int
     {
         return $this->CampaignId ?? null;
     }
 
     /**
+     * Set CampaignId
+     *
      * @return $this
      */
-    public function setCampaignId(?int $value = null)
+    public function setCampaignId(?int $value)
     {
         $this->CampaignId = $value;
 
         return $this;
     }
 
+    /**
+     * Get RetargetingListId
+     */
     public function getRetargetingListId(): ?int
     {
         return $this->RetargetingListId ?? null;
     }
 
     /**
+     * Set RetargetingListId
+     *
      * @return $this
      */
-    public function setRetargetingListId(?int $value = null)
+    public function setRetargetingListId(?int $value)
     {
         $this->RetargetingListId = $value;
 
         return $this;
     }
 
+    /**
+     * Get InterestId
+     */
     public function getInterestId(): ?int
     {
         return $this->InterestId ?? null;
     }
 
     /**
+     * Set InterestId
+     *
      * @return $this
      */
-    public function setInterestId(?int $value = null)
+    public function setInterestId(?int $value)
     {
         $this->InterestId = $value;
 
@@ -106,7 +141,11 @@ class AudienceTargetGetItem extends AudienceTargetBase
     }
 
     /**
-     * @see StateEnum
+     * Get State
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\StateEnum
+     *
+     * @return 'OFF'|'ON'|'SUSPENDED'|'OFF_BY_MONITORING'|'ARCHIVED'|'DELETED'|'UNKNOWN'|null
      */
     public function getState(): ?string
     {
@@ -114,11 +153,15 @@ class AudienceTargetGetItem extends AudienceTargetBase
     }
 
     /**
-     * @see StateEnum
+     * Set State
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\StateEnum
+     *
+     * @param 'OFF'|'ON'|'SUSPENDED'|'OFF_BY_MONITORING'|'ARCHIVED'|'DELETED'|'UNKNOWN'|null $value
      *
      * @return $this
      */
-    public function setState(?string $value = null)
+    public function setState(?string $value)
     {
         $this->State = $value;
 

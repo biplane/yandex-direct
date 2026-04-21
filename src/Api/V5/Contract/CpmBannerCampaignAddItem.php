@@ -12,21 +12,24 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class CpmBannerCampaignAddItem
 {
-    protected $BiddingStrategy = null;
+    /** @var CpmBannerCampaignStrategyAdd */
+    protected $BiddingStrategy;
 
 //    Can be omitted.
-//    protected $Settings = null;
+//    protected $Settings;
 
 //    Can be omitted.
-//    protected $CounterIds = null;
+//    protected $CounterIds;
 
 //    Can be omitted.
-//    protected $FrequencyCap = null;
+//    protected $FrequencyCap;
 
 //    Can be omitted.
-//    protected $VideoTarget = null;
+//    protected $VideoTarget;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -34,12 +37,17 @@ class CpmBannerCampaignAddItem
         return new static();
     }
 
+    /**
+     * Get BiddingStrategy
+     */
     public function getBiddingStrategy(): CpmBannerCampaignStrategyAdd
     {
         return $this->BiddingStrategy;
     }
 
     /**
+     * Set BiddingStrategy
+     *
      * @return $this
      */
     public function setBiddingStrategy(CpmBannerCampaignStrategyAdd $value)
@@ -50,19 +58,23 @@ class CpmBannerCampaignAddItem
     }
 
     /**
-     * @return CpmBannerCampaignSetting[]|null
+     * Get Settings
+     *
+     * @return list<CpmBannerCampaignSetting>
      */
-    public function getSettings(): ?array
+    public function getSettings(): array
     {
-        return $this->Settings ?? null;
+        return $this->Settings ?? [];
     }
 
     /**
-     * @param CpmBannerCampaignSetting[]|null $value
+     * Set Settings
+     *
+     * @param list<CpmBannerCampaignSetting> $value
      *
      * @return $this
      */
-    public function setSettings(?array $value = null)
+    public function setSettings(array $value)
     {
         $this->Settings = $value;
 
@@ -70,7 +82,9 @@ class CpmBannerCampaignAddItem
     }
 
     /**
-     * @return int[]|null
+     * Get CounterIds
+     *
+     * @return non-empty-list<int>|null
      */
     public function getCounterIds(): ?array
     {
@@ -78,26 +92,33 @@ class CpmBannerCampaignAddItem
     }
 
     /**
-     * @param int[]|null $value
+     * Set CounterIds
+     *
+     * @param non-empty-list<int>|null $value
      *
      * @return $this
      */
-    public function setCounterIds(?array $value = null)
+    public function setCounterIds(?array $value)
     {
         $this->CounterIds = $value;
 
         return $this;
     }
 
+    /**
+     * Get FrequencyCap
+     */
     public function getFrequencyCap(): ?FrequencyCapSetting
     {
         return $this->FrequencyCap ?? null;
     }
 
     /**
+     * Set FrequencyCap
+     *
      * @return $this
      */
-    public function setFrequencyCap(?FrequencyCapSetting $value = null)
+    public function setFrequencyCap(?FrequencyCapSetting $value)
     {
         $this->FrequencyCap = $value;
 
@@ -105,7 +126,11 @@ class CpmBannerCampaignAddItem
     }
 
     /**
-     * @see VideoTargetEnum
+     * Get VideoTarget
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\VideoTargetEnum
+     *
+     * @return 'VIEWS'|'CLICKS'|null
      */
     public function getVideoTarget(): ?string
     {
@@ -113,11 +138,15 @@ class CpmBannerCampaignAddItem
     }
 
     /**
-     * @see VideoTargetEnum
+     * Set VideoTarget
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\VideoTargetEnum
+     *
+     * @param 'VIEWS'|'CLICKS'|null $value
      *
      * @return $this
      */
-    public function setVideoTarget(?string $value = null)
+    public function setVideoTarget(?string $value)
     {
         $this->VideoTarget = $value;
 

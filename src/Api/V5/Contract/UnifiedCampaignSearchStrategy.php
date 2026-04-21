@@ -12,13 +12,28 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class UnifiedCampaignSearchStrategy extends UnifiedCampaignStrategyBase
 {
-    protected $BiddingStrategyType = null;
+    /** @var 'AVERAGE_CPC'|'AVERAGE_CPA'|'PAY_FOR_CONVERSION'|'WB_MAXIMUM_CONVERSION_RATE'|'HIGHEST_POSITION'|'SERVING_OFF'|'UNKNOWN'|'WB_MAXIMUM_CLICKS'|'AVERAGE_CRR'|'PAY_FOR_CONVERSION_CRR'|'AVERAGE_CPA_MULTIPLE_GOALS'|'PAY_FOR_CONVERSION_MULTIPLE_GOALS'|'MAX_PROFIT' */
+    protected $BiddingStrategyType;
 
 //    Can be omitted.
-//    protected $PlacementTypes = null;
+//    protected $PlacementTypes;
 
     /**
-     * @see UnifiedCampaignSearchStrategyTypeEnum
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    /**
+     * Get BiddingStrategyType
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\UnifiedCampaignSearchStrategyTypeEnum
+     *
+     * @return 'AVERAGE_CPC'|'AVERAGE_CPA'|'PAY_FOR_CONVERSION'|'WB_MAXIMUM_CONVERSION_RATE'|'HIGHEST_POSITION'|'SERVING_OFF'|'UNKNOWN'|'WB_MAXIMUM_CLICKS'|'AVERAGE_CRR'|'PAY_FOR_CONVERSION_CRR'|'AVERAGE_CPA_MULTIPLE_GOALS'|'PAY_FOR_CONVERSION_MULTIPLE_GOALS'|'MAX_PROFIT'
      */
     public function getBiddingStrategyType(): string
     {
@@ -26,7 +41,11 @@ class UnifiedCampaignSearchStrategy extends UnifiedCampaignStrategyBase
     }
 
     /**
-     * @see UnifiedCampaignSearchStrategyTypeEnum
+     * Set BiddingStrategyType
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\UnifiedCampaignSearchStrategyTypeEnum
+     *
+     * @param 'AVERAGE_CPC'|'AVERAGE_CPA'|'PAY_FOR_CONVERSION'|'WB_MAXIMUM_CONVERSION_RATE'|'HIGHEST_POSITION'|'SERVING_OFF'|'UNKNOWN'|'WB_MAXIMUM_CLICKS'|'AVERAGE_CRR'|'PAY_FOR_CONVERSION_CRR'|'AVERAGE_CPA_MULTIPLE_GOALS'|'PAY_FOR_CONVERSION_MULTIPLE_GOALS'|'MAX_PROFIT' $value
      *
      * @return $this
      */
@@ -37,15 +56,20 @@ class UnifiedCampaignSearchStrategy extends UnifiedCampaignStrategyBase
         return $this;
     }
 
+    /**
+     * Get PlacementTypes
+     */
     public function getPlacementTypes(): ?UnifiedCampaignSearchStrategyPlacementTypes
     {
         return $this->PlacementTypes ?? null;
     }
 
     /**
+     * Set PlacementTypes
+     *
      * @return $this
      */
-    public function setPlacementTypes(?UnifiedCampaignSearchStrategyPlacementTypes $value = null)
+    public function setPlacementTypes(?UnifiedCampaignSearchStrategyPlacementTypes $value)
     {
         $this->PlacementTypes = $value;
 

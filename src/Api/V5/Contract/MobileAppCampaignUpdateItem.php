@@ -13,15 +13,17 @@ use AllowDynamicProperties;
 class MobileAppCampaignUpdateItem
 {
 //    Can be omitted.
-//    protected $BiddingStrategy = null;
+//    protected $BiddingStrategy;
 
 //    Can be omitted.
-//    protected $Settings = null;
+//    protected $Settings;
 
 //    Can be omitted.
-//    protected $NegativeKeywordSharedSetIds = null;
+//    protected $NegativeKeywordSharedSetIds;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -29,15 +31,20 @@ class MobileAppCampaignUpdateItem
         return new static();
     }
 
+    /**
+     * Get BiddingStrategy
+     */
     public function getBiddingStrategy(): ?MobileAppCampaignStrategy
     {
         return $this->BiddingStrategy ?? null;
     }
 
     /**
+     * Set BiddingStrategy
+     *
      * @return $this
      */
-    public function setBiddingStrategy(?MobileAppCampaignStrategy $value = null)
+    public function setBiddingStrategy(?MobileAppCampaignStrategy $value)
     {
         $this->BiddingStrategy = $value;
 
@@ -45,19 +52,23 @@ class MobileAppCampaignUpdateItem
     }
 
     /**
-     * @return MobileAppCampaignSetting[]|null
+     * Get Settings
+     *
+     * @return list<MobileAppCampaignSetting>
      */
-    public function getSettings(): ?array
+    public function getSettings(): array
     {
-        return $this->Settings ?? null;
+        return $this->Settings ?? [];
     }
 
     /**
-     * @param MobileAppCampaignSetting[]|null $value
+     * Set Settings
+     *
+     * @param list<MobileAppCampaignSetting> $value
      *
      * @return $this
      */
-    public function setSettings(?array $value = null)
+    public function setSettings(array $value)
     {
         $this->Settings = $value;
 
@@ -65,7 +76,9 @@ class MobileAppCampaignUpdateItem
     }
 
     /**
-     * @return float[]|null
+     * Get NegativeKeywordSharedSetIds
+     *
+     * @return non-empty-list<int>|null
      */
     public function getNegativeKeywordSharedSetIds(): ?array
     {
@@ -73,11 +86,13 @@ class MobileAppCampaignUpdateItem
     }
 
     /**
-     * @param float[]|null $value
+     * Set NegativeKeywordSharedSetIds
+     *
+     * @param non-empty-list<int>|null $value
      *
      * @return $this
      */
-    public function setNegativeKeywordSharedSetIds(?array $value = null)
+    public function setNegativeKeywordSharedSetIds(?array $value)
     {
         $this->NegativeKeywordSharedSetIds = $value;
 

@@ -12,16 +12,21 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class Phone
 {
-    protected $CountryCode = null;
+    /** @var string */
+    protected $CountryCode;
 
-    protected $CityCode = null;
+    /** @var string */
+    protected $CityCode;
 
-    protected $PhoneNumber = null;
+    /** @var string */
+    protected $PhoneNumber;
 
 //    Can be omitted.
-//    protected $Extension = null;
+//    protected $Extension;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -29,12 +34,17 @@ class Phone
         return new static();
     }
 
+    /**
+     * Get CountryCode
+     */
     public function getCountryCode(): string
     {
         return $this->CountryCode;
     }
 
     /**
+     * Set CountryCode
+     *
      * @return $this
      */
     public function setCountryCode(string $value)
@@ -44,12 +54,17 @@ class Phone
         return $this;
     }
 
+    /**
+     * Get CityCode
+     */
     public function getCityCode(): string
     {
         return $this->CityCode;
     }
 
     /**
+     * Set CityCode
+     *
      * @return $this
      */
     public function setCityCode(string $value)
@@ -59,12 +74,17 @@ class Phone
         return $this;
     }
 
+    /**
+     * Get PhoneNumber
+     */
     public function getPhoneNumber(): string
     {
         return $this->PhoneNumber;
     }
 
     /**
+     * Set PhoneNumber
+     *
      * @return $this
      */
     public function setPhoneNumber(string $value)
@@ -74,15 +94,20 @@ class Phone
         return $this;
     }
 
+    /**
+     * Get Extension
+     */
     public function getExtension(): ?string
     {
         return $this->Extension ?? null;
     }
 
     /**
+     * Set Extension
+     *
      * @return $this
      */
-    public function setExtension(?string $value = null)
+    public function setExtension(?string $value)
     {
         $this->Extension = $value;
 

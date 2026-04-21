@@ -12,4 +12,13 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class StrategyWbDecreasedPriceForRepeatedImpressionsAdd extends StrategyDecreasedPriceForRepeatedImpressionsAddBase
 {
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
 }

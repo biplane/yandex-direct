@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class AccountDayBudgetInfo
 {
-    protected $Amount = null;
+    /** @var float */
+    protected $Amount;
 
-    protected $SpendMode = null;
+    /** @var string */
+    protected $SpendMode;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -24,12 +28,17 @@ class AccountDayBudgetInfo
         return new static();
     }
 
+    /**
+     * Get Amount
+     */
     public function getAmount(): float
     {
         return $this->Amount;
     }
 
     /**
+     * Set Amount
+     *
      * @return $this
      */
     public function setAmount(float $value)
@@ -39,12 +48,17 @@ class AccountDayBudgetInfo
         return $this;
     }
 
+    /**
+     * Get SpendMode
+     */
     public function getSpendMode(): string
     {
         return $this->SpendMode;
     }
 
     /**
+     * Set SpendMode
+     *
      * @return $this
      */
     public function setSpendMode(string $value)

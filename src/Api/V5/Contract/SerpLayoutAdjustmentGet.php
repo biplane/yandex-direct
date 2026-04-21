@@ -13,15 +13,17 @@ use AllowDynamicProperties;
 class SerpLayoutAdjustmentGet
 {
 //    Can be omitted.
-//    protected $SerpLayout = null;
+//    protected $SerpLayout;
 
 //    Can be omitted.
-//    protected $BidModifier = null;
+//    protected $BidModifier;
 
 //    Can be omitted.
-//    protected $Enabled = null;
+//    protected $Enabled;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -30,7 +32,11 @@ class SerpLayoutAdjustmentGet
     }
 
     /**
-     * @see SerpLayoutEnum
+     * Get SerpLayout
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\SerpLayoutEnum
+     *
+     * @return 'ALONE'|'SUGGEST'|null
      */
     public function getSerpLayout(): ?string
     {
@@ -38,26 +44,35 @@ class SerpLayoutAdjustmentGet
     }
 
     /**
-     * @see SerpLayoutEnum
+     * Set SerpLayout
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\SerpLayoutEnum
+     *
+     * @param 'ALONE'|'SUGGEST'|null $value
      *
      * @return $this
      */
-    public function setSerpLayout(?string $value = null)
+    public function setSerpLayout(?string $value)
     {
         $this->SerpLayout = $value;
 
         return $this;
     }
 
+    /**
+     * Get BidModifier
+     */
     public function getBidModifier(): ?int
     {
         return $this->BidModifier ?? null;
     }
 
     /**
+     * Set BidModifier
+     *
      * @return $this
      */
-    public function setBidModifier(?int $value = null)
+    public function setBidModifier(?int $value)
     {
         $this->BidModifier = $value;
 
@@ -65,7 +80,11 @@ class SerpLayoutAdjustmentGet
     }
 
     /**
-     * @see YesNoEnum
+     * Get Enabled
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'|null
      */
     public function getEnabled(): ?string
     {
@@ -73,11 +92,15 @@ class SerpLayoutAdjustmentGet
     }
 
     /**
-     * @see YesNoEnum
+     * Set Enabled
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO'|null $value
      *
      * @return $this
      */
-    public function setEnabled(?string $value = null)
+    public function setEnabled(?string $value)
     {
         $this->Enabled = $value;
 

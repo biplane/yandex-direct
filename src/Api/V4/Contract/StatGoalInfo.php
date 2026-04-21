@@ -12,21 +12,30 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class StatGoalInfo
 {
-    protected $GoalID = null;
+    /** @var int */
+    protected $GoalID;
 
-    protected $Name = null;
+    /** @var string */
+    protected $Name;
 
-    protected $AvailableForStrategy = null;
+    /** @var string */
+    protected $AvailableForStrategy;
 
-    protected $AvailableForContextStrategy = null;
+    /** @var string */
+    protected $AvailableForContextStrategy;
 
-    protected $GoalsReached = null;
+    /** @var int */
+    protected $GoalsReached;
 
-    protected $ContextGoalsReached = null;
+    /** @var int */
+    protected $ContextGoalsReached;
 
+    /** @var int|null */
     protected $CampaignID = null;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -34,12 +43,17 @@ class StatGoalInfo
         return new static();
     }
 
+    /**
+     * Get GoalID
+     */
     public function getGoalID(): int
     {
         return $this->GoalID;
     }
 
     /**
+     * Set GoalID
+     *
      * @return $this
      */
     public function setGoalID(int $value)
@@ -49,12 +63,17 @@ class StatGoalInfo
         return $this;
     }
 
+    /**
+     * Get Name
+     */
     public function getName(): string
     {
         return $this->Name;
     }
 
     /**
+     * Set Name
+     *
      * @return $this
      */
     public function setName(string $value)
@@ -64,12 +83,17 @@ class StatGoalInfo
         return $this;
     }
 
+    /**
+     * Get AvailableForStrategy
+     */
     public function getAvailableForStrategy(): string
     {
         return $this->AvailableForStrategy;
     }
 
     /**
+     * Set AvailableForStrategy
+     *
      * @return $this
      */
     public function setAvailableForStrategy(string $value)
@@ -79,12 +103,17 @@ class StatGoalInfo
         return $this;
     }
 
+    /**
+     * Get AvailableForContextStrategy
+     */
     public function getAvailableForContextStrategy(): string
     {
         return $this->AvailableForContextStrategy;
     }
 
     /**
+     * Set AvailableForContextStrategy
+     *
      * @return $this
      */
     public function setAvailableForContextStrategy(string $value)
@@ -94,12 +123,17 @@ class StatGoalInfo
         return $this;
     }
 
+    /**
+     * Get GoalsReached
+     */
     public function getGoalsReached(): int
     {
         return $this->GoalsReached;
     }
 
     /**
+     * Set GoalsReached
+     *
      * @return $this
      */
     public function setGoalsReached(int $value)
@@ -109,12 +143,17 @@ class StatGoalInfo
         return $this;
     }
 
+    /**
+     * Get ContextGoalsReached
+     */
     public function getContextGoalsReached(): int
     {
         return $this->ContextGoalsReached;
     }
 
     /**
+     * Set ContextGoalsReached
+     *
      * @return $this
      */
     public function setContextGoalsReached(int $value)
@@ -124,15 +163,20 @@ class StatGoalInfo
         return $this;
     }
 
+    /**
+     * Get CampaignID
+     */
     public function getCampaignID(): ?int
     {
         return $this->CampaignID;
     }
 
     /**
+     * Set CampaignID
+     *
      * @return $this
      */
-    public function setCampaignID(?int $value = null)
+    public function setCampaignID(?int $value)
     {
         $this->CampaignID = $value;
 

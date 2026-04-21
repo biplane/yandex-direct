@@ -12,15 +12,21 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class PayCampaignsByCardInfo
 {
-    protected $PayMethodID = null;
+    /** @var string */
+    protected $PayMethodID;
 
-    protected $CustomTransactionID = null;
+    /** @var string */
+    protected $CustomTransactionID;
 
-    protected $Payments = [];
+//    Can be omitted.
+//    protected $Payments;
 
+    /** @var string|null */
     protected $Version = null;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -28,12 +34,17 @@ class PayCampaignsByCardInfo
         return new static();
     }
 
+    /**
+     * Get PayMethodID
+     */
     public function getPayMethodID(): string
     {
         return $this->PayMethodID;
     }
 
     /**
+     * Set PayMethodID
+     *
      * @return $this
      */
     public function setPayMethodID(string $value)
@@ -43,12 +54,17 @@ class PayCampaignsByCardInfo
         return $this;
     }
 
+    /**
+     * Get CustomTransactionID
+     */
     public function getCustomTransactionID(): string
     {
         return $this->CustomTransactionID;
     }
 
     /**
+     * Set CustomTransactionID
+     *
      * @return $this
      */
     public function setCustomTransactionID(string $value)
@@ -59,15 +75,19 @@ class PayCampaignsByCardInfo
     }
 
     /**
-     * @return PayCampElement[]
+     * Get Payments
+     *
+     * @return list<PayCampElement>
      */
     public function getPayments(): array
     {
-        return $this->Payments;
+        return $this->Payments ?? [];
     }
 
     /**
-     * @param PayCampElement[] $value
+     * Set Payments
+     *
+     * @param list<PayCampElement> $value
      *
      * @return $this
      */
@@ -78,15 +98,20 @@ class PayCampaignsByCardInfo
         return $this;
     }
 
+    /**
+     * Get Version
+     */
     public function getVersion(): ?string
     {
         return $this->Version;
     }
 
     /**
+     * Set Version
+     *
      * @return $this
      */
-    public function setVersion(?string $value = null)
+    public function setVersion(?string $value)
     {
         $this->Version = $value;
 

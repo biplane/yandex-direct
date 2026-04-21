@@ -12,13 +12,18 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class VersionDesc
 {
-    protected $VersionNumber = null;
+    /** @var int */
+    protected $VersionNumber;
 
-    protected $LinkWSDL = null;
+    /** @var string */
+    protected $LinkWSDL;
 
+    /** @var string|null */
     protected $BorderDate = null;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -26,12 +31,17 @@ class VersionDesc
         return new static();
     }
 
+    /**
+     * Get VersionNumber
+     */
     public function getVersionNumber(): int
     {
         return $this->VersionNumber;
     }
 
     /**
+     * Set VersionNumber
+     *
      * @return $this
      */
     public function setVersionNumber(int $value)
@@ -41,12 +51,17 @@ class VersionDesc
         return $this;
     }
 
+    /**
+     * Get LinkWSDL
+     */
     public function getLinkWSDL(): string
     {
         return $this->LinkWSDL;
     }
 
     /**
+     * Set LinkWSDL
+     *
      * @return $this
      */
     public function setLinkWSDL(string $value)
@@ -56,15 +71,20 @@ class VersionDesc
         return $this;
     }
 
+    /**
+     * Get BorderDate
+     */
     public function getBorderDate(): ?string
     {
         return $this->BorderDate;
     }
 
     /**
+     * Set BorderDate
+     *
      * @return $this
      */
-    public function setBorderDate(?string $value = null)
+    public function setBorderDate(?string $value)
     {
         $this->BorderDate = $value;
 

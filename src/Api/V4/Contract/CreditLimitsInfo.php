@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class CreditLimitsInfo
 {
-    protected $Currency = null;
+    /** @var string */
+    protected $Currency;
 
-    protected $Limits = [];
+//    Can be omitted.
+//    protected $Limits;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -24,12 +28,17 @@ class CreditLimitsInfo
         return new static();
     }
 
+    /**
+     * Get Currency
+     */
     public function getCurrency(): string
     {
         return $this->Currency;
     }
 
     /**
+     * Set Currency
+     *
      * @return $this
      */
     public function setCurrency(string $value)
@@ -40,15 +49,19 @@ class CreditLimitsInfo
     }
 
     /**
-     * @return CreditLimitsItem[]
+     * Get Limits
+     *
+     * @return list<CreditLimitsItem>
      */
     public function getLimits(): array
     {
-        return $this->Limits;
+        return $this->Limits ?? [];
     }
 
     /**
-     * @param CreditLimitsItem[] $value
+     * Set Limits
+     *
+     * @param list<CreditLimitsItem> $value
      *
      * @return $this
      */

@@ -12,16 +12,33 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class GetSmartAdTargetsRequest extends GetRequestGeneral
 {
-    protected $SelectionCriteria = null;
+    /** @var AdTargetsSelectionCriteria */
+    protected $SelectionCriteria;
 
-    protected $FieldNames = [];
+    /** @var non-empty-list<'Id'|'AdGroupId'|'CampaignId'|'Name'|'AverageCpc'|'AverageCpa'|'StrategyPriority'|'Conditions'|'ConditionType'|'State'|'Audience'|'AvailableItemsOnly'> */
+    protected $FieldNames;
 
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    /**
+     * Get SelectionCriteria
+     */
     public function getSelectionCriteria(): AdTargetsSelectionCriteria
     {
         return $this->SelectionCriteria;
     }
 
     /**
+     * Set SelectionCriteria
+     *
      * @return $this
      */
     public function setSelectionCriteria(AdTargetsSelectionCriteria $value)
@@ -32,9 +49,11 @@ class GetSmartAdTargetsRequest extends GetRequestGeneral
     }
 
     /**
-     * @see SmartAdTargetFieldEnum
+     * Get FieldNames
      *
-     * @return string[]
+     * @see \Biplane\YandexDirect\Api\V5\Contract\SmartAdTargetFieldEnum
+     *
+     * @return non-empty-list<'Id'|'AdGroupId'|'CampaignId'|'Name'|'AverageCpc'|'AverageCpa'|'StrategyPriority'|'Conditions'|'ConditionType'|'State'|'Audience'|'AvailableItemsOnly'>
      */
     public function getFieldNames(): array
     {
@@ -42,9 +61,11 @@ class GetSmartAdTargetsRequest extends GetRequestGeneral
     }
 
     /**
-     * @see SmartAdTargetFieldEnum
+     * Set FieldNames
      *
-     * @param string[] $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\SmartAdTargetFieldEnum
+     *
+     * @param non-empty-list<'Id'|'AdGroupId'|'CampaignId'|'Name'|'AverageCpc'|'AverageCpa'|'StrategyPriority'|'Conditions'|'ConditionType'|'State'|'Audience'|'AvailableItemsOnly'> $value
      *
      * @return $this
      */

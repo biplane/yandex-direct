@@ -4,19 +4,22 @@
   "description": "Generate code",
   "license": "MIT",
   "require": {
-    "php": "^7.3",
+    "php": "^8.3",
     "ext-libxml": "*",
     "ext-soap": "*",
-    "laminas/laminas-code": "^3.5",
-    "monolog/monolog": "^2.2",
-    "psr/log": "^1.1",
-    "wsdl2phpgenerator/wsdl2phpgenerator": "dev-inline-type as 4.0.x-dev"
+    "laminas/laminas-code": "^4.17",
+    "php-soap/wsdl-reader": "^0.31.0",
+    "php-standard-library/php-standard-library": "^4.3",
+    "symfony/console": "^7.4",
+    "symfony/filesystem": "^7.4"
   },
   "require-dev": {
-    "phpstan/phpstan": "^1.1",
-    "phpstan/phpstan-phpunit": "^1.0",
-    "phpunit/phpunit": "^9.5",
-    "squizlabs/php_codesniffer": "^3.5"
+    "doctrine/coding-standard": "^14.0",
+    "php-standard-library/psalm-plugin": "^2.4",
+    "phpunit/phpunit": "^12.5",
+    "psalm/plugin-phpunit": "^0.19.6",
+    "rector/rector": "^2.4",
+    "vimeo/psalm": "^6.16"
   },
   "autoload": {
     "psr-4": {
@@ -29,23 +32,20 @@
     }
   },
   "config": {
-    "sort-packages": true
+    "sort-packages": true,
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
   },
   "scripts": {
-    "check": [
+    "qa": [
       "@cs-check",
       "@analyse",
       "@test"
     ],
-    "analyse": "phpstan analyse",
+    "analyse": "psalm",
     "cs-check": "phpcs",
     "cs-fix": "phpcbf",
     "test": "phpunit --colors=always"
-  },
-  "repositories": [
-    {
-      "type": "git",
-      "url": "https://github.com/yethee/wsdl2phpgenerator"
-    }
-  ]
+  }
 }

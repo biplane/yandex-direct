@@ -5,16 +5,27 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 use AllowDynamicProperties;
+use ArrayIterator;
+use Countable;
+use IteratorAggregate;
+use Override;
+
+use function count;
 
 /**
  * Auto-generated code.
+ *
+ * @implements IteratorAggregate<int, KeywordAddItem>
  */
 #[AllowDynamicProperties]
-class AddKeywordsRequest
+class AddKeywordsRequest implements IteratorAggregate, Countable
 {
-    protected $Keywords = [];
+    /** @var non-empty-list<KeywordAddItem> */
+    protected $Keywords;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -23,7 +34,9 @@ class AddKeywordsRequest
     }
 
     /**
-     * @return KeywordAddItem[]
+     * Get Keywords
+     *
+     * @return non-empty-list<KeywordAddItem>
      */
     public function getKeywords(): array
     {
@@ -31,7 +44,9 @@ class AddKeywordsRequest
     }
 
     /**
-     * @param KeywordAddItem[] $value
+     * Set Keywords
+     *
+     * @param non-empty-list<KeywordAddItem> $value
      *
      * @return $this
      */
@@ -40,5 +55,20 @@ class AddKeywordsRequest
         $this->Keywords = $value;
 
         return $this;
+    }
+
+    #[Override]
+    public function count(): int
+    {
+        return count($this->Keywords);
+    }
+
+    /**
+     * @return ArrayIterator<int, KeywordAddItem>
+     */
+    #[Override]
+    public function getIterator(): ArrayIterator
+    {
+        return new ArrayIterator($this->Keywords);
     }
 }

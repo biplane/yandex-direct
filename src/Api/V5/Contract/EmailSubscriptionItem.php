@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class EmailSubscriptionItem
 {
-    protected $Option = null;
+    /** @var 'RECEIVE_RECOMMENDATIONS'|'TRACK_MANAGED_CAMPAIGNS'|'TRACK_POSITION_CHANGES' */
+    protected $Option;
 
-    protected $Value = null;
+    /** @var 'YES'|'NO' */
+    protected $Value;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -25,7 +29,11 @@ class EmailSubscriptionItem
     }
 
     /**
-     * @see EmailSubscriptionEnum
+     * Get Option
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\EmailSubscriptionEnum
+     *
+     * @return 'RECEIVE_RECOMMENDATIONS'|'TRACK_MANAGED_CAMPAIGNS'|'TRACK_POSITION_CHANGES'
      */
     public function getOption(): string
     {
@@ -33,7 +41,11 @@ class EmailSubscriptionItem
     }
 
     /**
-     * @see EmailSubscriptionEnum
+     * Set Option
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\EmailSubscriptionEnum
+     *
+     * @param 'RECEIVE_RECOMMENDATIONS'|'TRACK_MANAGED_CAMPAIGNS'|'TRACK_POSITION_CHANGES' $value
      *
      * @return $this
      */
@@ -45,7 +57,11 @@ class EmailSubscriptionItem
     }
 
     /**
-     * @see YesNoEnum
+     * Get Value
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'
      */
     public function getValue(): string
     {
@@ -53,7 +69,11 @@ class EmailSubscriptionItem
     }
 
     /**
-     * @see YesNoEnum
+     * Set Value
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO' $value
      *
      * @return $this
      */

@@ -12,13 +12,18 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class Error
 {
-    protected $FaultCode = null;
+    /** @var int */
+    protected $FaultCode;
 
-    protected $FaultString = null;
+    /** @var string */
+    protected $FaultString;
 
+    /** @var string|null */
     protected $FaultDetail = null;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -26,12 +31,17 @@ class Error
         return new static();
     }
 
+    /**
+     * Get FaultCode
+     */
     public function getFaultCode(): int
     {
         return $this->FaultCode;
     }
 
     /**
+     * Set FaultCode
+     *
      * @return $this
      */
     public function setFaultCode(int $value)
@@ -41,12 +51,17 @@ class Error
         return $this;
     }
 
+    /**
+     * Get FaultString
+     */
     public function getFaultString(): string
     {
         return $this->FaultString;
     }
 
     /**
+     * Set FaultString
+     *
      * @return $this
      */
     public function setFaultString(string $value)
@@ -56,15 +71,20 @@ class Error
         return $this;
     }
 
+    /**
+     * Get FaultDetail
+     */
     public function getFaultDetail(): ?string
     {
         return $this->FaultDetail;
     }
 
     /**
+     * Set FaultDetail
+     *
      * @return $this
      */
-    public function setFaultDetail(?string $value = null)
+    public function setFaultDetail(?string $value)
     {
         $this->FaultDetail = $value;
 

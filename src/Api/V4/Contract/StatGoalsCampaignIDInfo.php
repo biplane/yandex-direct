@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class StatGoalsCampaignIDInfo
 {
+    /** @var int|null */
     protected $CampaignID = null;
 
-    protected $CampaignIDS = null;
+//    Can be omitted.
+//    protected $CampaignIDS;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -24,15 +28,20 @@ class StatGoalsCampaignIDInfo
         return new static();
     }
 
+    /**
+     * Get CampaignID
+     */
     public function getCampaignID(): ?int
     {
         return $this->CampaignID;
     }
 
     /**
+     * Set CampaignID
+     *
      * @return $this
      */
-    public function setCampaignID(?int $value = null)
+    public function setCampaignID(?int $value)
     {
         $this->CampaignID = $value;
 
@@ -40,19 +49,23 @@ class StatGoalsCampaignIDInfo
     }
 
     /**
-     * @return int[]|null
+     * Get CampaignIDS
+     *
+     * @return list<int>|null
      */
     public function getCampaignIDS(): ?array
     {
-        return $this->CampaignIDS;
+        return $this->CampaignIDS ?? null;
     }
 
     /**
-     * @param int[]|null $value
+     * Set CampaignIDS
+     *
+     * @param list<int>|null $value
      *
      * @return $this
      */
-    public function setCampaignIDS(?array $value = null)
+    public function setCampaignIDS(?array $value)
     {
         $this->CampaignIDS = $value;
 

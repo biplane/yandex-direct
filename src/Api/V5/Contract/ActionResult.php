@@ -13,17 +13,32 @@ use AllowDynamicProperties;
 class ActionResult extends ActionResultBase
 {
 //    Can be omitted.
-//    protected $Id = null;
+//    protected $Id;
 
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    /**
+     * Get Id
+     */
     public function getId(): ?int
     {
         return $this->Id ?? null;
     }
 
     /**
+     * Set Id
+     *
      * @return $this
      */
-    public function setId(?int $value = null)
+    public function setId(?int $value)
     {
         $this->Id = $value;
 

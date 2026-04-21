@@ -12,16 +12,33 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class GetAudienceTargetsRequest extends GetRequestGeneral
 {
-    protected $SelectionCriteria = null;
+    /** @var AudienceTargetSelectionCriteria */
+    protected $SelectionCriteria;
 
-    protected $FieldNames = [];
+    /** @var non-empty-list<'Id'|'AdGroupId'|'CampaignId'|'RetargetingListId'|'InterestId'|'ContextBid'|'StrategyPriority'|'State'> */
+    protected $FieldNames;
 
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    /**
+     * Get SelectionCriteria
+     */
     public function getSelectionCriteria(): AudienceTargetSelectionCriteria
     {
         return $this->SelectionCriteria;
     }
 
     /**
+     * Set SelectionCriteria
+     *
      * @return $this
      */
     public function setSelectionCriteria(AudienceTargetSelectionCriteria $value)
@@ -32,9 +49,11 @@ class GetAudienceTargetsRequest extends GetRequestGeneral
     }
 
     /**
-     * @see AudienceTargetFieldEnum
+     * Get FieldNames
      *
-     * @return string[]
+     * @see \Biplane\YandexDirect\Api\V5\Contract\AudienceTargetFieldEnum
+     *
+     * @return non-empty-list<'Id'|'AdGroupId'|'CampaignId'|'RetargetingListId'|'InterestId'|'ContextBid'|'StrategyPriority'|'State'>
      */
     public function getFieldNames(): array
     {
@@ -42,9 +61,11 @@ class GetAudienceTargetsRequest extends GetRequestGeneral
     }
 
     /**
-     * @see AudienceTargetFieldEnum
+     * Set FieldNames
      *
-     * @param string[] $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\AudienceTargetFieldEnum
+     *
+     * @param non-empty-list<'Id'|'AdGroupId'|'CampaignId'|'RetargetingListId'|'InterestId'|'ContextBid'|'StrategyPriority'|'State'> $value
      *
      * @return $this
      */

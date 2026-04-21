@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class NegativeKeywordSharedSetAddItem
 {
-    protected $Name = null;
+    /** @var string */
+    protected $Name;
 
-    protected $NegativeKeywords = [];
+    /** @var non-empty-list<string> */
+    protected $NegativeKeywords;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -24,12 +28,17 @@ class NegativeKeywordSharedSetAddItem
         return new static();
     }
 
+    /**
+     * Get Name
+     */
     public function getName(): string
     {
         return $this->Name;
     }
 
     /**
+     * Set Name
+     *
      * @return $this
      */
     public function setName(string $value)
@@ -40,7 +49,9 @@ class NegativeKeywordSharedSetAddItem
     }
 
     /**
-     * @return string[]
+     * Get NegativeKeywords
+     *
+     * @return non-empty-list<string>
      */
     public function getNegativeKeywords(): array
     {
@@ -48,7 +59,9 @@ class NegativeKeywordSharedSetAddItem
     }
 
     /**
-     * @param string[] $value
+     * Set NegativeKeywords
+     *
+     * @param non-empty-list<string> $value
      *
      * @return $this
      */

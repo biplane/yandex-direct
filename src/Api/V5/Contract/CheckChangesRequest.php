@@ -13,19 +13,23 @@ use AllowDynamicProperties;
 class CheckChangesRequest
 {
 //    Can be omitted.
-//    protected $CampaignIds = null;
+//    protected $CampaignIds;
 
 //    Can be omitted.
-//    protected $AdGroupIds = null;
+//    protected $AdGroupIds;
 
 //    Can be omitted.
-//    protected $AdIds = null;
+//    protected $AdIds;
 
-    protected $Timestamp = null;
+    /** @var string */
+    protected $Timestamp;
 
-    protected $FieldNames = [];
+    /** @var non-empty-list<'CampaignIds'|'AdGroupIds'|'AdIds'|'CampaignsStat'> */
+    protected $FieldNames;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -34,19 +38,23 @@ class CheckChangesRequest
     }
 
     /**
-     * @return int[]|null
+     * Get CampaignIds
+     *
+     * @return list<int>
      */
-    public function getCampaignIds(): ?array
+    public function getCampaignIds(): array
     {
-        return $this->CampaignIds ?? null;
+        return $this->CampaignIds ?? [];
     }
 
     /**
-     * @param int[]|null $value
+     * Set CampaignIds
+     *
+     * @param list<int> $value
      *
      * @return $this
      */
-    public function setCampaignIds(?array $value = null)
+    public function setCampaignIds(array $value)
     {
         $this->CampaignIds = $value;
 
@@ -54,19 +62,23 @@ class CheckChangesRequest
     }
 
     /**
-     * @return int[]|null
+     * Get AdGroupIds
+     *
+     * @return list<int>
      */
-    public function getAdGroupIds(): ?array
+    public function getAdGroupIds(): array
     {
-        return $this->AdGroupIds ?? null;
+        return $this->AdGroupIds ?? [];
     }
 
     /**
-     * @param int[]|null $value
+     * Set AdGroupIds
+     *
+     * @param list<int> $value
      *
      * @return $this
      */
-    public function setAdGroupIds(?array $value = null)
+    public function setAdGroupIds(array $value)
     {
         $this->AdGroupIds = $value;
 
@@ -74,31 +86,40 @@ class CheckChangesRequest
     }
 
     /**
-     * @return int[]|null
+     * Get AdIds
+     *
+     * @return list<int>
      */
-    public function getAdIds(): ?array
+    public function getAdIds(): array
     {
-        return $this->AdIds ?? null;
+        return $this->AdIds ?? [];
     }
 
     /**
-     * @param int[]|null $value
+     * Set AdIds
+     *
+     * @param list<int> $value
      *
      * @return $this
      */
-    public function setAdIds(?array $value = null)
+    public function setAdIds(array $value)
     {
         $this->AdIds = $value;
 
         return $this;
     }
 
+    /**
+     * Get Timestamp
+     */
     public function getTimestamp(): string
     {
         return $this->Timestamp;
     }
 
     /**
+     * Set Timestamp
+     *
      * @return $this
      */
     public function setTimestamp(string $value)
@@ -109,9 +130,11 @@ class CheckChangesRequest
     }
 
     /**
-     * @see CheckFieldEnum
+     * Get FieldNames
      *
-     * @return string[]
+     * @see \Biplane\YandexDirect\Api\V5\Contract\CheckFieldEnum
+     *
+     * @return non-empty-list<'CampaignIds'|'AdGroupIds'|'AdIds'|'CampaignsStat'>
      */
     public function getFieldNames(): array
     {
@@ -119,9 +142,11 @@ class CheckChangesRequest
     }
 
     /**
-     * @see CheckFieldEnum
+     * Set FieldNames
      *
-     * @param string[] $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\CheckFieldEnum
+     *
+     * @param non-empty-list<'CampaignIds'|'AdGroupIds'|'AdIds'|'CampaignsStat'> $value
      *
      * @return $this
      */

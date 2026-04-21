@@ -5,33 +5,70 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 use AllowDynamicProperties;
+use ArrayIterator;
+use Countable;
+use IteratorAggregate;
+use Override;
+
+use function count;
 
 /**
  * Auto-generated code.
+ *
+ * @implements IteratorAggregate<int, KeywordBidGetItem>
  */
 #[AllowDynamicProperties]
-class GetKeywordBidsResponse extends GetResponseGeneral
+class GetKeywordBidsResponse extends GetResponseGeneral implements IteratorAggregate, Countable
 {
 //    Can be omitted.
-//    protected $KeywordBids = null;
+//    protected $KeywordBids;
 
     /**
-     * @return KeywordBidGetItem[]|null
+     * Create a new instance.
+     *
+     * @return static
      */
-    public function getKeywordBids(): ?array
+    public static function create()
     {
-        return $this->KeywordBids ?? null;
+        return new static();
     }
 
     /**
-     * @param KeywordBidGetItem[]|null $value
+     * Get KeywordBids
+     *
+     * @return list<KeywordBidGetItem>
+     */
+    public function getKeywordBids(): array
+    {
+        return $this->KeywordBids ?? [];
+    }
+
+    /**
+     * Set KeywordBids
+     *
+     * @param list<KeywordBidGetItem> $value
      *
      * @return $this
      */
-    public function setKeywordBids(?array $value = null)
+    public function setKeywordBids(array $value)
     {
         $this->KeywordBids = $value;
 
         return $this;
+    }
+
+    #[Override]
+    public function count(): int
+    {
+        return isset($this->KeywordBids) ? count($this->KeywordBids) : 0;
+    }
+
+    /**
+     * @return ArrayIterator<int, KeywordBidGetItem>
+     */
+    #[Override]
+    public function getIterator(): ArrayIterator
+    {
+        return new ArrayIterator($this->KeywordBids ?? []);
     }
 }

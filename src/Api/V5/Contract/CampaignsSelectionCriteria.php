@@ -13,21 +13,23 @@ use AllowDynamicProperties;
 class CampaignsSelectionCriteria
 {
 //    Can be omitted.
-//    protected $Ids = null;
+//    protected $Ids;
 
 //    Can be omitted.
-//    protected $Types = null;
+//    protected $Types;
 
 //    Can be omitted.
-//    protected $States = null;
+//    protected $States;
 
 //    Can be omitted.
-//    protected $Statuses = null;
+//    protected $Statuses;
 
 //    Can be omitted.
-//    protected $StatusesPayment = null;
+//    protected $StatusesPayment;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -36,19 +38,23 @@ class CampaignsSelectionCriteria
     }
 
     /**
-     * @return int[]|null
+     * Get Ids
+     *
+     * @return list<int>
      */
-    public function getIds(): ?array
+    public function getIds(): array
     {
-        return $this->Ids ?? null;
+        return $this->Ids ?? [];
     }
 
     /**
-     * @param int[]|null $value
+     * Set Ids
+     *
+     * @param list<int> $value
      *
      * @return $this
      */
-    public function setIds(?array $value = null)
+    public function setIds(array $value)
     {
         $this->Ids = $value;
 
@@ -56,23 +62,27 @@ class CampaignsSelectionCriteria
     }
 
     /**
-     * @see CampaignTypeEnum
+     * Get Types
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\CampaignTypeEnum
+     *
+     * @return list<'TEXT_CAMPAIGN'|'MOBILE_APP_CAMPAIGN'|'DYNAMIC_TEXT_CAMPAIGN'|'CPM_BANNER_CAMPAIGN'|'SMART_CAMPAIGN'|'UNIFIED_CAMPAIGN'>
      */
-    public function getTypes(): ?array
+    public function getTypes(): array
     {
-        return $this->Types ?? null;
+        return $this->Types ?? [];
     }
 
     /**
-     * @see CampaignTypeEnum
+     * Set Types
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\CampaignTypeEnum
+     *
+     * @param list<'TEXT_CAMPAIGN'|'MOBILE_APP_CAMPAIGN'|'DYNAMIC_TEXT_CAMPAIGN'|'CPM_BANNER_CAMPAIGN'|'SMART_CAMPAIGN'|'UNIFIED_CAMPAIGN'> $value
      *
      * @return $this
      */
-    public function setTypes(?array $value = null)
+    public function setTypes(array $value)
     {
         $this->Types = $value;
 
@@ -80,23 +90,27 @@ class CampaignsSelectionCriteria
     }
 
     /**
-     * @see CampaignStateEnum
+     * Get States
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\CampaignStateEnum
+     *
+     * @return list<'ARCHIVED'|'CONVERTED'|'ENDED'|'OFF'|'ON'|'SUSPENDED'>
      */
-    public function getStates(): ?array
+    public function getStates(): array
     {
-        return $this->States ?? null;
+        return $this->States ?? [];
     }
 
     /**
-     * @see CampaignStateEnum
+     * Set States
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\CampaignStateEnum
+     *
+     * @param list<'ARCHIVED'|'CONVERTED'|'ENDED'|'OFF'|'ON'|'SUSPENDED'> $value
      *
      * @return $this
      */
-    public function setStates(?array $value = null)
+    public function setStates(array $value)
     {
         $this->States = $value;
 
@@ -104,23 +118,27 @@ class CampaignsSelectionCriteria
     }
 
     /**
-     * @see CampaignStatusSelectionEnum
+     * Get Statuses
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\CampaignStatusSelectionEnum
+     *
+     * @return list<'ACCEPTED'|'DRAFT'|'MODERATION'|'REJECTED'>
      */
-    public function getStatuses(): ?array
+    public function getStatuses(): array
     {
-        return $this->Statuses ?? null;
+        return $this->Statuses ?? [];
     }
 
     /**
-     * @see CampaignStatusSelectionEnum
+     * Set Statuses
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\CampaignStatusSelectionEnum
+     *
+     * @param list<'ACCEPTED'|'DRAFT'|'MODERATION'|'REJECTED'> $value
      *
      * @return $this
      */
-    public function setStatuses(?array $value = null)
+    public function setStatuses(array $value)
     {
         $this->Statuses = $value;
 
@@ -128,23 +146,27 @@ class CampaignsSelectionCriteria
     }
 
     /**
-     * @see CampaignStatusPaymentEnum
+     * Get StatusesPayment
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\CampaignStatusPaymentEnum
+     *
+     * @return list<'DISALLOWED'|'ALLOWED'>
      */
-    public function getStatusesPayment(): ?array
+    public function getStatusesPayment(): array
     {
-        return $this->StatusesPayment ?? null;
+        return $this->StatusesPayment ?? [];
     }
 
     /**
-     * @see CampaignStatusPaymentEnum
+     * Set StatusesPayment
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\CampaignStatusPaymentEnum
+     *
+     * @param list<'DISALLOWED'|'ALLOWED'> $value
      *
      * @return $this
      */
-    public function setStatusesPayment(?array $value = null)
+    public function setStatusesPayment(array $value)
     {
         $this->StatusesPayment = $value;
 

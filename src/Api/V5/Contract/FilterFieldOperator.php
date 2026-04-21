@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class FilterFieldOperator
 {
-    protected $MaxItems = null;
+    /** @var int */
+    protected $MaxItems;
 
-    protected $Type = null;
+    /** @var 'CONTAINS_ANY'|'EQUALS_ANY'|'EXISTS'|'GREATER_THAN'|'IN_RANGE'|'LESS_THAN'|'NOT_CONTAINS_ALL' */
+    protected $Type;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -24,12 +28,17 @@ class FilterFieldOperator
         return new static();
     }
 
+    /**
+     * Get MaxItems
+     */
     public function getMaxItems(): int
     {
         return $this->MaxItems;
     }
 
     /**
+     * Set MaxItems
+     *
      * @return $this
      */
     public function setMaxItems(int $value)
@@ -40,7 +49,11 @@ class FilterFieldOperator
     }
 
     /**
-     * @see StringConditionOperatorEnum
+     * Get Type
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\StringConditionOperatorEnum
+     *
+     * @return 'CONTAINS_ANY'|'EQUALS_ANY'|'EXISTS'|'GREATER_THAN'|'IN_RANGE'|'LESS_THAN'|'NOT_CONTAINS_ALL'
      */
     public function getType(): string
     {
@@ -48,7 +61,11 @@ class FilterFieldOperator
     }
 
     /**
-     * @see StringConditionOperatorEnum
+     * Set Type
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\StringConditionOperatorEnum
+     *
+     * @param 'CONTAINS_ANY'|'EQUALS_ANY'|'EXISTS'|'GREATER_THAN'|'IN_RANGE'|'LESS_THAN'|'NOT_CONTAINS_ALL' $value
      *
      * @return $this
      */

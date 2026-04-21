@@ -12,13 +12,18 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class MetroStationsItem
 {
-    protected $GeoRegionId = null;
+    /** @var int */
+    protected $GeoRegionId;
 
-    protected $MetroStationId = null;
+    /** @var int */
+    protected $MetroStationId;
 
-    protected $MetroStationName = null;
+    /** @var string */
+    protected $MetroStationName;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -26,12 +31,17 @@ class MetroStationsItem
         return new static();
     }
 
+    /**
+     * Get GeoRegionId
+     */
     public function getGeoRegionId(): int
     {
         return $this->GeoRegionId;
     }
 
     /**
+     * Set GeoRegionId
+     *
      * @return $this
      */
     public function setGeoRegionId(int $value)
@@ -41,12 +51,17 @@ class MetroStationsItem
         return $this;
     }
 
+    /**
+     * Get MetroStationId
+     */
     public function getMetroStationId(): int
     {
         return $this->MetroStationId;
     }
 
     /**
+     * Set MetroStationId
+     *
      * @return $this
      */
     public function setMetroStationId(int $value)
@@ -56,12 +71,17 @@ class MetroStationsItem
         return $this;
     }
 
+    /**
+     * Get MetroStationName
+     */
     public function getMetroStationName(): string
     {
         return $this->MetroStationName;
     }
 
     /**
+     * Set MetroStationName
+     *
      * @return $this
      */
     public function setMetroStationName(string $value)

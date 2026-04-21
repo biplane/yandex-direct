@@ -13,12 +13,14 @@ use AllowDynamicProperties;
 class TextCampaignStrategy
 {
 //    Can be omitted.
-//    protected $Search = null;
+//    protected $Search;
 
 //    Can be omitted.
-//    protected $Network = null;
+//    protected $Network;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -26,30 +28,40 @@ class TextCampaignStrategy
         return new static();
     }
 
+    /**
+     * Get Search
+     */
     public function getSearch(): ?TextCampaignSearchStrategy
     {
         return $this->Search ?? null;
     }
 
     /**
+     * Set Search
+     *
      * @return $this
      */
-    public function setSearch(?TextCampaignSearchStrategy $value = null)
+    public function setSearch(?TextCampaignSearchStrategy $value)
     {
         $this->Search = $value;
 
         return $this;
     }
 
+    /**
+     * Get Network
+     */
     public function getNetwork(): ?TextCampaignNetworkStrategy
     {
         return $this->Network ?? null;
     }
 
     /**
+     * Set Network
+     *
      * @return $this
      */
-    public function setNetwork(?TextCampaignNetworkStrategy $value = null)
+    public function setNetwork(?TextCampaignNetworkStrategy $value)
     {
         $this->Network = $value;
 

@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class MobileAppCampaignSettingGet
 {
-    protected $Option = null;
+    /** @var 'ADD_TO_FAVORITES'|'ENABLE_AREA_OF_INTEREST_TARGETING'|'ENABLE_CURRENT_AREA_TARGETING'|'ENABLE_REGULAR_AREA_TARGETING'|'ENABLE_BEHAVIORAL_TARGETING'|'ENABLE_AUTOFOCUS'|'REQUIRE_SERVICING'|'MAINTAIN_NETWORK_CPC'|'SHARED_ACCOUNT_ENABLED'|'DAILY_BUDGET_ALLOWED'|'CAMPAIGN_EXACT_PHRASE_MATCHING_ENABLED' */
+    protected $Option;
 
-    protected $Value = null;
+    /** @var 'YES'|'NO' */
+    protected $Value;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -25,7 +29,11 @@ class MobileAppCampaignSettingGet
     }
 
     /**
-     * @see MobileAppCampaignSettingsGetEnum
+     * Get Option
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\MobileAppCampaignSettingsGetEnum
+     *
+     * @return 'ADD_TO_FAVORITES'|'ENABLE_AREA_OF_INTEREST_TARGETING'|'ENABLE_CURRENT_AREA_TARGETING'|'ENABLE_REGULAR_AREA_TARGETING'|'ENABLE_BEHAVIORAL_TARGETING'|'ENABLE_AUTOFOCUS'|'REQUIRE_SERVICING'|'MAINTAIN_NETWORK_CPC'|'SHARED_ACCOUNT_ENABLED'|'DAILY_BUDGET_ALLOWED'|'CAMPAIGN_EXACT_PHRASE_MATCHING_ENABLED'
      */
     public function getOption(): string
     {
@@ -33,7 +41,11 @@ class MobileAppCampaignSettingGet
     }
 
     /**
-     * @see MobileAppCampaignSettingsGetEnum
+     * Set Option
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\MobileAppCampaignSettingsGetEnum
+     *
+     * @param 'ADD_TO_FAVORITES'|'ENABLE_AREA_OF_INTEREST_TARGETING'|'ENABLE_CURRENT_AREA_TARGETING'|'ENABLE_REGULAR_AREA_TARGETING'|'ENABLE_BEHAVIORAL_TARGETING'|'ENABLE_AUTOFOCUS'|'REQUIRE_SERVICING'|'MAINTAIN_NETWORK_CPC'|'SHARED_ACCOUNT_ENABLED'|'DAILY_BUDGET_ALLOWED'|'CAMPAIGN_EXACT_PHRASE_MATCHING_ENABLED' $value
      *
      * @return $this
      */
@@ -45,7 +57,11 @@ class MobileAppCampaignSettingGet
     }
 
     /**
-     * @see YesNoEnum
+     * Get Value
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'
      */
     public function getValue(): string
     {
@@ -53,7 +69,11 @@ class MobileAppCampaignSettingGet
     }
 
     /**
-     * @see YesNoEnum
+     * Set Value
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO' $value
      *
      * @return $this
      */

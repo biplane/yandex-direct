@@ -5,16 +5,27 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 use AllowDynamicProperties;
+use ArrayIterator;
+use Countable;
+use IteratorAggregate;
+use Override;
+
+use function count;
 
 /**
  * Auto-generated code.
+ *
+ * @implements IteratorAggregate<int, StrategyAddItem>
  */
 #[AllowDynamicProperties]
-class AddStrategiesRequest
+class AddStrategiesRequest implements IteratorAggregate, Countable
 {
-    protected $Strategies = [];
+    /** @var non-empty-list<StrategyAddItem> */
+    protected $Strategies;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -23,7 +34,9 @@ class AddStrategiesRequest
     }
 
     /**
-     * @return StrategyAddItem[]
+     * Get Strategies
+     *
+     * @return non-empty-list<StrategyAddItem>
      */
     public function getStrategies(): array
     {
@@ -31,7 +44,9 @@ class AddStrategiesRequest
     }
 
     /**
-     * @param StrategyAddItem[] $value
+     * Set Strategies
+     *
+     * @param non-empty-list<StrategyAddItem> $value
      *
      * @return $this
      */
@@ -40,5 +55,20 @@ class AddStrategiesRequest
         $this->Strategies = $value;
 
         return $this;
+    }
+
+    #[Override]
+    public function count(): int
+    {
+        return count($this->Strategies);
+    }
+
+    /**
+     * @return ArrayIterator<int, StrategyAddItem>
+     */
+    #[Override]
+    public function getIterator(): ArrayIterator
+    {
+        return new ArrayIterator($this->Strategies);
     }
 }

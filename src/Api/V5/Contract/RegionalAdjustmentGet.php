@@ -13,15 +13,17 @@ use AllowDynamicProperties;
 class RegionalAdjustmentGet
 {
 //    Can be omitted.
-//    protected $RegionId = null;
+//    protected $RegionId;
 
 //    Can be omitted.
-//    protected $BidModifier = null;
+//    protected $BidModifier;
 
 //    Can be omitted.
-//    protected $Enabled = null;
+//    protected $Enabled;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -29,30 +31,40 @@ class RegionalAdjustmentGet
         return new static();
     }
 
+    /**
+     * Get RegionId
+     */
     public function getRegionId(): ?int
     {
         return $this->RegionId ?? null;
     }
 
     /**
+     * Set RegionId
+     *
      * @return $this
      */
-    public function setRegionId(?int $value = null)
+    public function setRegionId(?int $value)
     {
         $this->RegionId = $value;
 
         return $this;
     }
 
+    /**
+     * Get BidModifier
+     */
     public function getBidModifier(): ?int
     {
         return $this->BidModifier ?? null;
     }
 
     /**
+     * Set BidModifier
+     *
      * @return $this
      */
-    public function setBidModifier(?int $value = null)
+    public function setBidModifier(?int $value)
     {
         $this->BidModifier = $value;
 
@@ -60,7 +72,11 @@ class RegionalAdjustmentGet
     }
 
     /**
-     * @see YesNoEnum
+     * Get Enabled
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'|null
      */
     public function getEnabled(): ?string
     {
@@ -68,11 +84,15 @@ class RegionalAdjustmentGet
     }
 
     /**
-     * @see YesNoEnum
+     * Set Enabled
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO'|null $value
      *
      * @return $this
      */
-    public function setEnabled(?string $value = null)
+    public function setEnabled(?string $value)
     {
         $this->Enabled = $value;
 

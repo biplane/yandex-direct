@@ -13,18 +13,20 @@ use AllowDynamicProperties;
 class AdTargetsSelectionCriteria
 {
 //    Can be omitted.
-//    protected $Ids = null;
+//    protected $Ids;
 
 //    Can be omitted.
-//    protected $AdGroupIds = null;
+//    protected $AdGroupIds;
 
 //    Can be omitted.
-//    protected $CampaignIds = null;
+//    protected $CampaignIds;
 
 //    Can be omitted.
-//    protected $States = null;
+//    protected $States;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -33,19 +35,23 @@ class AdTargetsSelectionCriteria
     }
 
     /**
-     * @return int[]|null
+     * Get Ids
+     *
+     * @return list<int>
      */
-    public function getIds(): ?array
+    public function getIds(): array
     {
-        return $this->Ids ?? null;
+        return $this->Ids ?? [];
     }
 
     /**
-     * @param int[]|null $value
+     * Set Ids
+     *
+     * @param list<int> $value
      *
      * @return $this
      */
-    public function setIds(?array $value = null)
+    public function setIds(array $value)
     {
         $this->Ids = $value;
 
@@ -53,19 +59,23 @@ class AdTargetsSelectionCriteria
     }
 
     /**
-     * @return int[]|null
+     * Get AdGroupIds
+     *
+     * @return list<int>
      */
-    public function getAdGroupIds(): ?array
+    public function getAdGroupIds(): array
     {
-        return $this->AdGroupIds ?? null;
+        return $this->AdGroupIds ?? [];
     }
 
     /**
-     * @param int[]|null $value
+     * Set AdGroupIds
+     *
+     * @param list<int> $value
      *
      * @return $this
      */
-    public function setAdGroupIds(?array $value = null)
+    public function setAdGroupIds(array $value)
     {
         $this->AdGroupIds = $value;
 
@@ -73,19 +83,23 @@ class AdTargetsSelectionCriteria
     }
 
     /**
-     * @return int[]|null
+     * Get CampaignIds
+     *
+     * @return list<int>
      */
-    public function getCampaignIds(): ?array
+    public function getCampaignIds(): array
     {
-        return $this->CampaignIds ?? null;
+        return $this->CampaignIds ?? [];
     }
 
     /**
-     * @param int[]|null $value
+     * Set CampaignIds
+     *
+     * @param list<int> $value
      *
      * @return $this
      */
-    public function setCampaignIds(?array $value = null)
+    public function setCampaignIds(array $value)
     {
         $this->CampaignIds = $value;
 
@@ -93,23 +107,27 @@ class AdTargetsSelectionCriteria
     }
 
     /**
-     * @see AdTargetStateSelectionEnum
+     * Get States
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\AdTargetStateSelectionEnum
+     *
+     * @return list<'ON'|'OFF'|'SUSPENDED'|'DELETED'>
      */
-    public function getStates(): ?array
+    public function getStates(): array
     {
-        return $this->States ?? null;
+        return $this->States ?? [];
     }
 
     /**
-     * @see AdTargetStateSelectionEnum
+     * Set States
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\AdTargetStateSelectionEnum
+     *
+     * @param list<'ON'|'OFF'|'SUSPENDED'|'DELETED'> $value
      *
      * @return $this
      */
-    public function setStates(?array $value = null)
+    public function setStates(array $value)
     {
         $this->States = $value;
 

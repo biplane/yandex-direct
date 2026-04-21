@@ -12,16 +12,33 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class GetLeadsRequest extends GetRequestGeneral
 {
-    protected $SelectionCriteria = null;
+    /** @var LeadsSelectionCriteria */
+    protected $SelectionCriteria;
 
-    protected $FieldNames = [];
+    /** @var non-empty-list<'Id'|'SubmittedAt'|'TurboPageId'|'TurboPageName'|'Data'> */
+    protected $FieldNames;
 
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    /**
+     * Get SelectionCriteria
+     */
     public function getSelectionCriteria(): LeadsSelectionCriteria
     {
         return $this->SelectionCriteria;
     }
 
     /**
+     * Set SelectionCriteria
+     *
      * @return $this
      */
     public function setSelectionCriteria(LeadsSelectionCriteria $value)
@@ -32,9 +49,11 @@ class GetLeadsRequest extends GetRequestGeneral
     }
 
     /**
-     * @see LeadFieldEnum
+     * Get FieldNames
      *
-     * @return string[]
+     * @see \Biplane\YandexDirect\Api\V5\Contract\LeadFieldEnum
+     *
+     * @return non-empty-list<'Id'|'SubmittedAt'|'TurboPageId'|'TurboPageName'|'Data'>
      */
     public function getFieldNames(): array
     {
@@ -42,9 +61,11 @@ class GetLeadsRequest extends GetRequestGeneral
     }
 
     /**
-     * @see LeadFieldEnum
+     * Set FieldNames
      *
-     * @param string[] $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\LeadFieldEnum
+     *
+     * @param non-empty-list<'Id'|'SubmittedAt'|'TurboPageId'|'TurboPageName'|'Data'> $value
      *
      * @return $this
      */

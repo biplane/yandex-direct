@@ -12,10 +12,25 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class SmartCampaignSearchStrategy extends SmartCampaignStrategyBase
 {
-    protected $BiddingStrategyType = null;
+    /** @var 'AVERAGE_CPC_PER_CAMPAIGN'|'AVERAGE_CPC_PER_FILTER'|'AVERAGE_CPA_PER_CAMPAIGN'|'AVERAGE_CPA_PER_FILTER'|'PAY_FOR_CONVERSION_PER_CAMPAIGN'|'PAY_FOR_CONVERSION_PER_FILTER'|'AVERAGE_ROI'|'AVERAGE_CRR'|'PAY_FOR_CONVERSION_CRR'|'SERVING_OFF'|'UNKNOWN' */
+    protected $BiddingStrategyType;
 
     /**
-     * @see SmartCampaignSearchStrategyTypeEnum
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    /**
+     * Get BiddingStrategyType
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\SmartCampaignSearchStrategyTypeEnum
+     *
+     * @return 'AVERAGE_CPC_PER_CAMPAIGN'|'AVERAGE_CPC_PER_FILTER'|'AVERAGE_CPA_PER_CAMPAIGN'|'AVERAGE_CPA_PER_FILTER'|'PAY_FOR_CONVERSION_PER_CAMPAIGN'|'PAY_FOR_CONVERSION_PER_FILTER'|'AVERAGE_ROI'|'AVERAGE_CRR'|'PAY_FOR_CONVERSION_CRR'|'SERVING_OFF'|'UNKNOWN'
      */
     public function getBiddingStrategyType(): string
     {
@@ -23,7 +38,11 @@ class SmartCampaignSearchStrategy extends SmartCampaignStrategyBase
     }
 
     /**
-     * @see SmartCampaignSearchStrategyTypeEnum
+     * Set BiddingStrategyType
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\SmartCampaignSearchStrategyTypeEnum
+     *
+     * @param 'AVERAGE_CPC_PER_CAMPAIGN'|'AVERAGE_CPC_PER_FILTER'|'AVERAGE_CPA_PER_CAMPAIGN'|'AVERAGE_CPA_PER_FILTER'|'PAY_FOR_CONVERSION_PER_CAMPAIGN'|'PAY_FOR_CONVERSION_PER_FILTER'|'AVERAGE_ROI'|'AVERAGE_CRR'|'PAY_FOR_CONVERSION_CRR'|'SERVING_OFF'|'UNKNOWN' $value
      *
      * @return $this
      */

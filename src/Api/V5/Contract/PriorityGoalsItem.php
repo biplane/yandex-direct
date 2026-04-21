@@ -12,14 +12,18 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class PriorityGoalsItem
 {
-    protected $GoalId = null;
+    /** @var int */
+    protected $GoalId;
 
-    protected $Value = null;
+    /** @var int */
+    protected $Value;
 
 //    Can be omitted.
-//    protected $IsMetrikaSourceOfValue = null;
+//    protected $IsMetrikaSourceOfValue;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -27,12 +31,17 @@ class PriorityGoalsItem
         return new static();
     }
 
+    /**
+     * Get GoalId
+     */
     public function getGoalId(): int
     {
         return $this->GoalId;
     }
 
     /**
+     * Set GoalId
+     *
      * @return $this
      */
     public function setGoalId(int $value)
@@ -42,12 +51,17 @@ class PriorityGoalsItem
         return $this;
     }
 
+    /**
+     * Get Value
+     */
     public function getValue(): int
     {
         return $this->Value;
     }
 
     /**
+     * Set Value
+     *
      * @return $this
      */
     public function setValue(int $value)
@@ -58,7 +72,11 @@ class PriorityGoalsItem
     }
 
     /**
-     * @see YesNoEnum
+     * Get IsMetrikaSourceOfValue
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'|null
      */
     public function getIsMetrikaSourceOfValue(): ?string
     {
@@ -66,11 +84,15 @@ class PriorityGoalsItem
     }
 
     /**
-     * @see YesNoEnum
+     * Set IsMetrikaSourceOfValue
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO'|null $value
      *
      * @return $this
      */
-    public function setIsMetrikaSourceOfValue(?string $value = null)
+    public function setIsMetrikaSourceOfValue(?string $value)
     {
         $this->IsMetrikaSourceOfValue = $value;
 

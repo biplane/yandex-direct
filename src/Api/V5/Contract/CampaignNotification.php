@@ -13,12 +13,14 @@ use AllowDynamicProperties;
 class CampaignNotification
 {
 //    Can be omitted.
-//    protected $SmsSettings = null;
+//    protected $SmsSettings;
 
 //    Can be omitted.
-//    protected $EmailSettings = null;
+//    protected $EmailSettings;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -26,30 +28,40 @@ class CampaignNotification
         return new static();
     }
 
+    /**
+     * Get SmsSettings
+     */
     public function getSmsSettings(): ?SmsSettings
     {
         return $this->SmsSettings ?? null;
     }
 
     /**
+     * Set SmsSettings
+     *
      * @return $this
      */
-    public function setSmsSettings(?SmsSettings $value = null)
+    public function setSmsSettings(?SmsSettings $value)
     {
         $this->SmsSettings = $value;
 
         return $this;
     }
 
+    /**
+     * Get EmailSettings
+     */
     public function getEmailSettings(): ?EmailSettings
     {
         return $this->EmailSettings ?? null;
     }
 
     /**
+     * Set EmailSettings
+     *
      * @return $this
      */
-    public function setEmailSettings(?EmailSettings $value = null)
+    public function setEmailSettings(?EmailSettings $value)
     {
         $this->EmailSettings = $value;
 

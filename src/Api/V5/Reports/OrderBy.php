@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Biplane\YandexDirect\Api\V5\Reports;
 
-use Biplane\YandexDirect\Api\V5\Contract\SortOrderEnum;
-
 final class OrderBy
 {
     /** @var string */

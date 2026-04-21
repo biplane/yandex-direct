@@ -13,9 +13,11 @@ use AllowDynamicProperties;
 class StrategyNetworkDefaultAdd
 {
 //    Can be omitted.
-//    protected $LimitPercent = null;
+//    protected $LimitPercent;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -23,15 +25,20 @@ class StrategyNetworkDefaultAdd
         return new static();
     }
 
+    /**
+     * Get LimitPercent
+     */
     public function getLimitPercent(): ?int
     {
         return $this->LimitPercent ?? null;
     }
 
     /**
+     * Set LimitPercent
+     *
      * @return $this
      */
-    public function setLimitPercent(?int $value = null)
+    public function setLimitPercent(?int $value)
     {
         $this->LimitPercent = $value;
 

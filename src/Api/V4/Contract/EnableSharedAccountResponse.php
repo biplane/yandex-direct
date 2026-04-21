@@ -12,13 +12,18 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class EnableSharedAccountResponse
 {
-    protected $Errors = null;
+//    Can be omitted.
+//    protected $Errors;
 
+    /** @var string|null */
     protected $Login = null;
 
+    /** @var int|null */
     protected $AccountID = null;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -27,49 +32,63 @@ class EnableSharedAccountResponse
     }
 
     /**
-     * @return Error[]|null
+     * Get Errors
+     *
+     * @return list<Error>|null
      */
     public function getErrors(): ?array
     {
-        return $this->Errors;
+        return $this->Errors ?? null;
     }
 
     /**
-     * @param Error[]|null $value
+     * Set Errors
+     *
+     * @param list<Error>|null $value
      *
      * @return $this
      */
-    public function setErrors(?array $value = null)
+    public function setErrors(?array $value)
     {
         $this->Errors = $value;
 
         return $this;
     }
 
+    /**
+     * Get Login
+     */
     public function getLogin(): ?string
     {
         return $this->Login;
     }
 
     /**
+     * Set Login
+     *
      * @return $this
      */
-    public function setLogin(?string $value = null)
+    public function setLogin(?string $value)
     {
         $this->Login = $value;
 
         return $this;
     }
 
+    /**
+     * Get AccountID
+     */
     public function getAccountID(): ?int
     {
         return $this->AccountID;
     }
 
     /**
+     * Set AccountID
+     *
      * @return $this
      */
-    public function setAccountID(?int $value = null)
+    public function setAccountID(?int $value)
     {
         $this->AccountID = $value;
 

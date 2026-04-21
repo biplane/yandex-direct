@@ -13,60 +13,62 @@ use AllowDynamicProperties;
 class VCardGetItem
 {
 //    Can be omitted.
-//    protected $Id = null;
+//    protected $Id;
 
 //    Can be omitted.
-//    protected $CampaignId = null;
+//    protected $CampaignId;
 
 //    Can be omitted.
-//    protected $Country = null;
+//    protected $Country;
 
 //    Can be omitted.
-//    protected $City = null;
+//    protected $City;
 
 //    Can be omitted.
-//    protected $WorkTime = null;
+//    protected $WorkTime;
 
 //    Can be omitted.
-//    protected $Phone = null;
+//    protected $Phone;
 
 //    Can be omitted.
-//    protected $Street = null;
+//    protected $Street;
 
 //    Can be omitted.
-//    protected $House = null;
+//    protected $House;
 
 //    Can be omitted.
-//    protected $Building = null;
+//    protected $Building;
 
 //    Can be omitted.
-//    protected $Apartment = null;
+//    protected $Apartment;
 
 //    Can be omitted.
-//    protected $InstantMessenger = null;
+//    protected $InstantMessenger;
 
 //    Can be omitted.
-//    protected $CompanyName = null;
+//    protected $CompanyName;
 
 //    Can be omitted.
-//    protected $ExtraMessage = null;
+//    protected $ExtraMessage;
 
 //    Can be omitted.
-//    protected $ContactEmail = null;
+//    protected $ContactEmail;
 
 //    Can be omitted.
-//    protected $Ogrn = null;
+//    protected $Ogrn;
 
 //    Can be omitted.
-//    protected $MetroStationId = null;
+//    protected $MetroStationId;
 
 //    Can be omitted.
-//    protected $PointOnMap = null;
+//    protected $PointOnMap;
 
 //    Can be omitted.
-//    protected $ContactPerson = null;
+//    protected $ContactPerson;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -74,270 +76,360 @@ class VCardGetItem
         return new static();
     }
 
+    /**
+     * Get Id
+     */
     public function getId(): ?int
     {
         return $this->Id ?? null;
     }
 
     /**
+     * Set Id
+     *
      * @return $this
      */
-    public function setId(?int $value = null)
+    public function setId(?int $value)
     {
         $this->Id = $value;
 
         return $this;
     }
 
+    /**
+     * Get CampaignId
+     */
     public function getCampaignId(): ?int
     {
         return $this->CampaignId ?? null;
     }
 
     /**
+     * Set CampaignId
+     *
      * @return $this
      */
-    public function setCampaignId(?int $value = null)
+    public function setCampaignId(?int $value)
     {
         $this->CampaignId = $value;
 
         return $this;
     }
 
+    /**
+     * Get Country
+     */
     public function getCountry(): ?string
     {
         return $this->Country ?? null;
     }
 
     /**
+     * Set Country
+     *
      * @return $this
      */
-    public function setCountry(?string $value = null)
+    public function setCountry(?string $value)
     {
         $this->Country = $value;
 
         return $this;
     }
 
+    /**
+     * Get City
+     */
     public function getCity(): ?string
     {
         return $this->City ?? null;
     }
 
     /**
+     * Set City
+     *
      * @return $this
      */
-    public function setCity(?string $value = null)
+    public function setCity(?string $value)
     {
         $this->City = $value;
 
         return $this;
     }
 
+    /**
+     * Get WorkTime
+     */
     public function getWorkTime(): ?string
     {
         return $this->WorkTime ?? null;
     }
 
     /**
+     * Set WorkTime
+     *
      * @return $this
      */
-    public function setWorkTime(?string $value = null)
+    public function setWorkTime(?string $value)
     {
         $this->WorkTime = $value;
 
         return $this;
     }
 
+    /**
+     * Get Phone
+     */
     public function getPhone(): ?Phone
     {
         return $this->Phone ?? null;
     }
 
     /**
+     * Set Phone
+     *
      * @return $this
      */
-    public function setPhone(?Phone $value = null)
+    public function setPhone(?Phone $value)
     {
         $this->Phone = $value;
 
         return $this;
     }
 
+    /**
+     * Get Street
+     */
     public function getStreet(): ?string
     {
         return $this->Street ?? null;
     }
 
     /**
+     * Set Street
+     *
      * @return $this
      */
-    public function setStreet(?string $value = null)
+    public function setStreet(?string $value)
     {
         $this->Street = $value;
 
         return $this;
     }
 
+    /**
+     * Get House
+     */
     public function getHouse(): ?string
     {
         return $this->House ?? null;
     }
 
     /**
+     * Set House
+     *
      * @return $this
      */
-    public function setHouse(?string $value = null)
+    public function setHouse(?string $value)
     {
         $this->House = $value;
 
         return $this;
     }
 
+    /**
+     * Get Building
+     */
     public function getBuilding(): ?string
     {
         return $this->Building ?? null;
     }
 
     /**
+     * Set Building
+     *
      * @return $this
      */
-    public function setBuilding(?string $value = null)
+    public function setBuilding(?string $value)
     {
         $this->Building = $value;
 
         return $this;
     }
 
+    /**
+     * Get Apartment
+     */
     public function getApartment(): ?string
     {
         return $this->Apartment ?? null;
     }
 
     /**
+     * Set Apartment
+     *
      * @return $this
      */
-    public function setApartment(?string $value = null)
+    public function setApartment(?string $value)
     {
         $this->Apartment = $value;
 
         return $this;
     }
 
+    /**
+     * Get InstantMessenger
+     */
     public function getInstantMessenger(): ?InstantMessenger
     {
         return $this->InstantMessenger ?? null;
     }
 
     /**
+     * Set InstantMessenger
+     *
      * @return $this
      */
-    public function setInstantMessenger(?InstantMessenger $value = null)
+    public function setInstantMessenger(?InstantMessenger $value)
     {
         $this->InstantMessenger = $value;
 
         return $this;
     }
 
+    /**
+     * Get CompanyName
+     */
     public function getCompanyName(): ?string
     {
         return $this->CompanyName ?? null;
     }
 
     /**
+     * Set CompanyName
+     *
      * @return $this
      */
-    public function setCompanyName(?string $value = null)
+    public function setCompanyName(?string $value)
     {
         $this->CompanyName = $value;
 
         return $this;
     }
 
+    /**
+     * Get ExtraMessage
+     */
     public function getExtraMessage(): ?string
     {
         return $this->ExtraMessage ?? null;
     }
 
     /**
+     * Set ExtraMessage
+     *
      * @return $this
      */
-    public function setExtraMessage(?string $value = null)
+    public function setExtraMessage(?string $value)
     {
         $this->ExtraMessage = $value;
 
         return $this;
     }
 
+    /**
+     * Get ContactEmail
+     */
     public function getContactEmail(): ?string
     {
         return $this->ContactEmail ?? null;
     }
 
     /**
+     * Set ContactEmail
+     *
      * @return $this
      */
-    public function setContactEmail(?string $value = null)
+    public function setContactEmail(?string $value)
     {
         $this->ContactEmail = $value;
 
         return $this;
     }
 
+    /**
+     * Get Ogrn
+     */
     public function getOgrn(): ?string
     {
         return $this->Ogrn ?? null;
     }
 
     /**
+     * Set Ogrn
+     *
      * @return $this
      */
-    public function setOgrn(?string $value = null)
+    public function setOgrn(?string $value)
     {
         $this->Ogrn = $value;
 
         return $this;
     }
 
+    /**
+     * Get MetroStationId
+     */
     public function getMetroStationId(): ?int
     {
         return $this->MetroStationId ?? null;
     }
 
     /**
+     * Set MetroStationId
+     *
      * @return $this
      */
-    public function setMetroStationId(?int $value = null)
+    public function setMetroStationId(?int $value)
     {
         $this->MetroStationId = $value;
 
         return $this;
     }
 
+    /**
+     * Get PointOnMap
+     */
     public function getPointOnMap(): ?MapPoint
     {
         return $this->PointOnMap ?? null;
     }
 
     /**
+     * Set PointOnMap
+     *
      * @return $this
      */
-    public function setPointOnMap(?MapPoint $value = null)
+    public function setPointOnMap(?MapPoint $value)
     {
         $this->PointOnMap = $value;
 
         return $this;
     }
 
+    /**
+     * Get ContactPerson
+     */
     public function getContactPerson(): ?string
     {
         return $this->ContactPerson ?? null;
     }
 
     /**
+     * Set ContactPerson
+     *
      * @return $this
      */
-    public function setContactPerson(?string $value = null)
+    public function setContactPerson(?string $value)
     {
         $this->ContactPerson = $value;
 

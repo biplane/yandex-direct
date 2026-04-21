@@ -12,12 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class TinInfoAdd
 {
-    protected $TinType = null;
+    /** @var 'PHYSICAL'|'FOREIGN_PHYSICAL'|'LEGAL'|'FOREIGN_LEGAL'|'INDIVIDUAL' */
+    protected $TinType;
 
 //    Can be omitted.
-//    protected $Tin = null;
+//    protected $Tin;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -26,7 +29,11 @@ class TinInfoAdd
     }
 
     /**
-     * @see TinTypeEnum
+     * Get TinType
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\TinTypeEnum
+     *
+     * @return 'PHYSICAL'|'FOREIGN_PHYSICAL'|'LEGAL'|'FOREIGN_LEGAL'|'INDIVIDUAL'
      */
     public function getTinType(): string
     {
@@ -34,7 +41,11 @@ class TinInfoAdd
     }
 
     /**
-     * @see TinTypeEnum
+     * Set TinType
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\TinTypeEnum
+     *
+     * @param 'PHYSICAL'|'FOREIGN_PHYSICAL'|'LEGAL'|'FOREIGN_LEGAL'|'INDIVIDUAL' $value
      *
      * @return $this
      */
@@ -45,15 +56,20 @@ class TinInfoAdd
         return $this;
     }
 
+    /**
+     * Get Tin
+     */
     public function getTin(): ?string
     {
         return $this->Tin ?? null;
     }
 
     /**
+     * Set Tin
+     *
      * @return $this
      */
-    public function setTin(?string $value = null)
+    public function setTin(?string $value)
     {
         $this->Tin = $value;
 

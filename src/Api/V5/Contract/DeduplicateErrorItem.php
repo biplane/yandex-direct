@@ -12,14 +12,30 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class DeduplicateErrorItem extends ActionResult
 {
-    protected $Position = null;
+    /** @var int */
+    protected $Position;
 
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    /**
+     * Get Position
+     */
     public function getPosition(): int
     {
         return $this->Position;
     }
 
     /**
+     * Set Position
+     *
      * @return $this
      */
     public function setPosition(int $value)

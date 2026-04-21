@@ -12,13 +12,18 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class ClientNotification
 {
-    protected $Email = null;
+    /** @var string */
+    protected $Email;
 
-    protected $EmailSubscriptions = [];
+    /** @var non-empty-list<EmailSubscriptionItem> */
+    protected $EmailSubscriptions;
 
-    protected $Lang = null;
+    /** @var 'RU'|'UK'|'EN'|'TR' */
+    protected $Lang;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -26,12 +31,17 @@ class ClientNotification
         return new static();
     }
 
+    /**
+     * Get Email
+     */
     public function getEmail(): string
     {
         return $this->Email;
     }
 
     /**
+     * Set Email
+     *
      * @return $this
      */
     public function setEmail(string $value)
@@ -42,7 +52,9 @@ class ClientNotification
     }
 
     /**
-     * @return EmailSubscriptionItem[]
+     * Get EmailSubscriptions
+     *
+     * @return non-empty-list<EmailSubscriptionItem>
      */
     public function getEmailSubscriptions(): array
     {
@@ -50,7 +62,9 @@ class ClientNotification
     }
 
     /**
-     * @param EmailSubscriptionItem[] $value
+     * Set EmailSubscriptions
+     *
+     * @param non-empty-list<EmailSubscriptionItem> $value
      *
      * @return $this
      */
@@ -62,7 +76,11 @@ class ClientNotification
     }
 
     /**
-     * @see LangEnum
+     * Get Lang
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\LangEnum
+     *
+     * @return 'RU'|'UK'|'EN'|'TR'
      */
     public function getLang(): string
     {
@@ -70,7 +88,11 @@ class ClientNotification
     }
 
     /**
-     * @see LangEnum
+     * Set Lang
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\LangEnum
+     *
+     * @param 'RU'|'UK'|'EN'|'TR' $value
      *
      * @return $this
      */

@@ -12,13 +12,18 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class GetForecastInfo
 {
-    protected $Categories = [];
+//    Can be omitted.
+//    protected $Categories;
 
-    protected $Phrases = [];
+//    Can be omitted.
+//    protected $Phrases;
 
-    protected $Common = null;
+    /** @var ForecastCommonInfo */
+    protected $Common;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -27,15 +32,19 @@ class GetForecastInfo
     }
 
     /**
-     * @return BannerPhraseInfo[]
+     * Get Categories
+     *
+     * @return list<BannerPhraseInfo>
      */
     public function getCategories(): array
     {
-        return $this->Categories;
+        return $this->Categories ?? [];
     }
 
     /**
-     * @param BannerPhraseInfo[] $value
+     * Set Categories
+     *
+     * @param list<BannerPhraseInfo> $value
      *
      * @return $this
      */
@@ -47,15 +56,19 @@ class GetForecastInfo
     }
 
     /**
-     * @return BannerPhraseInfo[]
+     * Get Phrases
+     *
+     * @return list<BannerPhraseInfo>
      */
     public function getPhrases(): array
     {
-        return $this->Phrases;
+        return $this->Phrases ?? [];
     }
 
     /**
-     * @param BannerPhraseInfo[] $value
+     * Set Phrases
+     *
+     * @param list<BannerPhraseInfo> $value
      *
      * @return $this
      */
@@ -66,12 +79,17 @@ class GetForecastInfo
         return $this;
     }
 
+    /**
+     * Get Common
+     */
     public function getCommon(): ForecastCommonInfo
     {
         return $this->Common;
     }
 
     /**
+     * Set Common
+     *
      * @return $this
      */
     public function setCommon(ForecastCommonInfo $value)

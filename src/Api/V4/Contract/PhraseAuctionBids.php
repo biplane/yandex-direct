@@ -12,13 +12,18 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class PhraseAuctionBids
 {
+    /** @var string|null */
     protected $Position = null;
 
+    /** @var float|null */
     protected $Bid = null;
 
+    /** @var float|null */
     protected $Price = null;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -26,45 +31,60 @@ class PhraseAuctionBids
         return new static();
     }
 
+    /**
+     * Get Position
+     */
     public function getPosition(): ?string
     {
         return $this->Position;
     }
 
     /**
+     * Set Position
+     *
      * @return $this
      */
-    public function setPosition(?string $value = null)
+    public function setPosition(?string $value)
     {
         $this->Position = $value;
 
         return $this;
     }
 
+    /**
+     * Get Bid
+     */
     public function getBid(): ?float
     {
         return $this->Bid;
     }
 
     /**
+     * Set Bid
+     *
      * @return $this
      */
-    public function setBid(?float $value = null)
+    public function setBid(?float $value)
     {
         $this->Bid = $value;
 
         return $this;
     }
 
+    /**
+     * Get Price
+     */
     public function getPrice(): ?float
     {
         return $this->Price;
     }
 
     /**
+     * Set Price
+     *
      * @return $this
      */
-    public function setPrice(?float $value = null)
+    public function setPrice(?float $value)
     {
         $this->Price = $value;
 

@@ -5,16 +5,27 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 use AllowDynamicProperties;
+use ArrayIterator;
+use Countable;
+use IteratorAggregate;
+use Override;
+
+use function count;
 
 /**
  * Auto-generated code.
+ *
+ * @implements IteratorAggregate<int, BidSetAutoItem>
  */
 #[AllowDynamicProperties]
-class SetAutoBidsRequest
+class SetAutoBidsRequest implements IteratorAggregate, Countable
 {
-    protected $Bids = [];
+    /** @var non-empty-list<BidSetAutoItem> */
+    protected $Bids;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -23,7 +34,9 @@ class SetAutoBidsRequest
     }
 
     /**
-     * @return BidSetAutoItem[]
+     * Get Bids
+     *
+     * @return non-empty-list<BidSetAutoItem>
      */
     public function getBids(): array
     {
@@ -31,7 +44,9 @@ class SetAutoBidsRequest
     }
 
     /**
-     * @param BidSetAutoItem[] $value
+     * Set Bids
+     *
+     * @param non-empty-list<BidSetAutoItem> $value
      *
      * @return $this
      */
@@ -40,5 +55,20 @@ class SetAutoBidsRequest
         $this->Bids = $value;
 
         return $this;
+    }
+
+    #[Override]
+    public function count(): int
+    {
+        return count($this->Bids);
+    }
+
+    /**
+     * @return ArrayIterator<int, BidSetAutoItem>
+     */
+    #[Override]
+    public function getIterator(): ArrayIterator
+    {
+        return new ArrayIterator($this->Bids);
     }
 }

@@ -12,9 +12,12 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class AdAddItemBase
 {
-    protected $AdGroupId = null;
+    /** @var int */
+    protected $AdGroupId;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -22,12 +25,17 @@ class AdAddItemBase
         return new static();
     }
 
+    /**
+     * Get AdGroupId
+     */
     public function getAdGroupId(): int
     {
         return $this->AdGroupId;
     }
 
     /**
+     * Set AdGroupId
+     *
      * @return $this
      */
     public function setAdGroupId(int $value)

@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class CampaignChangesItem
 {
-    protected $CampaignId = null;
+    /** @var int */
+    protected $CampaignId;
 
-    protected $ChangesIn = [];
+    /** @var non-empty-list<'SELF'|'CHILDREN'|'STAT'> */
+    protected $ChangesIn;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -24,12 +28,17 @@ class CampaignChangesItem
         return new static();
     }
 
+    /**
+     * Get CampaignId
+     */
     public function getCampaignId(): int
     {
         return $this->CampaignId;
     }
 
     /**
+     * Set CampaignId
+     *
      * @return $this
      */
     public function setCampaignId(int $value)
@@ -40,9 +49,11 @@ class CampaignChangesItem
     }
 
     /**
-     * @see CampaignChangesInEnum
+     * Get ChangesIn
      *
-     * @return string[]
+     * @see \Biplane\YandexDirect\Api\V5\Contract\CampaignChangesInEnum
+     *
+     * @return non-empty-list<'SELF'|'CHILDREN'|'STAT'>
      */
     public function getChangesIn(): array
     {
@@ -50,9 +61,11 @@ class CampaignChangesItem
     }
 
     /**
-     * @see CampaignChangesInEnum
+     * Set ChangesIn
      *
-     * @param string[] $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\CampaignChangesInEnum
+     *
+     * @param non-empty-list<'SELF'|'CHILDREN'|'STAT'> $value
      *
      * @return $this
      */

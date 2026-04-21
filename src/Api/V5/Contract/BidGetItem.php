@@ -13,47 +13,62 @@ use AllowDynamicProperties;
 class BidGetItem extends BidActionResult
 {
 //    Can be omitted.
-//    protected $Bid = null;
+//    protected $Bid;
 
 //    Can be omitted.
-//    protected $AutotargetingSearchBidIsAuto = null;
+//    protected $AutotargetingSearchBidIsAuto;
 
 //    Can be omitted.
-//    protected $ContextBid = null;
+//    protected $ContextBid;
 
 //    Can be omitted.
-//    protected $StrategyPriority = null;
+//    protected $StrategyPriority;
 
 //    Can be omitted.
-//    protected $CompetitorsBids = null;
+//    protected $CompetitorsBids;
 
 //    Can be omitted.
-//    protected $SearchPrices = null;
+//    protected $SearchPrices;
 
 //    Can be omitted.
-//    protected $ContextCoverage = null;
+//    protected $ContextCoverage;
 
 //    Can be omitted.
-//    protected $MinSearchPrice = null;
+//    protected $MinSearchPrice;
 
 //    Can be omitted.
-//    protected $CurrentSearchPrice = null;
+//    protected $CurrentSearchPrice;
 
 //    Can be omitted.
-//    protected $AuctionBids = null;
+//    protected $AuctionBids;
 
 //    Can be omitted.
-//    protected $ServingStatus = null;
+//    protected $ServingStatus;
 
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    /**
+     * Get Bid
+     */
     public function getBid(): ?int
     {
         return $this->Bid ?? null;
     }
 
     /**
+     * Set Bid
+     *
      * @return $this
      */
-    public function setBid(?int $value = null)
+    public function setBid(?int $value)
     {
         $this->Bid = $value;
 
@@ -61,7 +76,11 @@ class BidGetItem extends BidActionResult
     }
 
     /**
-     * @see YesNoEnum
+     * Get AutotargetingSearchBidIsAuto
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'|null
      */
     public function getAutotargetingSearchBidIsAuto(): ?string
     {
@@ -69,26 +88,35 @@ class BidGetItem extends BidActionResult
     }
 
     /**
-     * @see YesNoEnum
+     * Set AutotargetingSearchBidIsAuto
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO'|null $value
      *
      * @return $this
      */
-    public function setAutotargetingSearchBidIsAuto(?string $value = null)
+    public function setAutotargetingSearchBidIsAuto(?string $value)
     {
         $this->AutotargetingSearchBidIsAuto = $value;
 
         return $this;
     }
 
+    /**
+     * Get ContextBid
+     */
     public function getContextBid(): ?int
     {
         return $this->ContextBid ?? null;
     }
 
     /**
+     * Set ContextBid
+     *
      * @return $this
      */
-    public function setContextBid(?int $value = null)
+    public function setContextBid(?int $value)
     {
         $this->ContextBid = $value;
 
@@ -96,7 +124,11 @@ class BidGetItem extends BidActionResult
     }
 
     /**
-     * @see PriorityEnum
+     * Get StrategyPriority
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\PriorityEnum
+     *
+     * @return 'LOW'|'NORMAL'|'HIGH'|null
      */
     public function getStrategyPriority(): ?string
     {
@@ -104,11 +136,15 @@ class BidGetItem extends BidActionResult
     }
 
     /**
-     * @see PriorityEnum
+     * Set StrategyPriority
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\PriorityEnum
+     *
+     * @param 'LOW'|'NORMAL'|'HIGH'|null $value
      *
      * @return $this
      */
-    public function setStrategyPriority(?string $value = null)
+    public function setStrategyPriority(?string $value)
     {
         $this->StrategyPriority = $value;
 
@@ -116,19 +152,23 @@ class BidGetItem extends BidActionResult
     }
 
     /**
-     * @return int[]|null
+     * Get CompetitorsBids
+     *
+     * @return list<int>
      */
-    public function getCompetitorsBids(): ?array
+    public function getCompetitorsBids(): array
     {
-        return $this->CompetitorsBids ?? null;
+        return $this->CompetitorsBids ?? [];
     }
 
     /**
-     * @param int[]|null $value
+     * Set CompetitorsBids
+     *
+     * @param list<int> $value
      *
      * @return $this
      */
-    public function setCompetitorsBids(?array $value = null)
+    public function setCompetitorsBids(array $value)
     {
         $this->CompetitorsBids = $value;
 
@@ -136,64 +176,83 @@ class BidGetItem extends BidActionResult
     }
 
     /**
-     * @return SearchPrices[]|null
+     * Get SearchPrices
+     *
+     * @return list<SearchPrices>
      */
-    public function getSearchPrices(): ?array
+    public function getSearchPrices(): array
     {
-        return $this->SearchPrices ?? null;
+        return $this->SearchPrices ?? [];
     }
 
     /**
-     * @param SearchPrices[]|null $value
+     * Set SearchPrices
+     *
+     * @param list<SearchPrices> $value
      *
      * @return $this
      */
-    public function setSearchPrices(?array $value = null)
+    public function setSearchPrices(array $value)
     {
         $this->SearchPrices = $value;
 
         return $this;
     }
 
+    /**
+     * Get ContextCoverage
+     */
     public function getContextCoverage(): ?ContextCoverage
     {
         return $this->ContextCoverage ?? null;
     }
 
     /**
+     * Set ContextCoverage
+     *
      * @return $this
      */
-    public function setContextCoverage(?ContextCoverage $value = null)
+    public function setContextCoverage(?ContextCoverage $value)
     {
         $this->ContextCoverage = $value;
 
         return $this;
     }
 
+    /**
+     * Get MinSearchPrice
+     */
     public function getMinSearchPrice(): ?int
     {
         return $this->MinSearchPrice ?? null;
     }
 
     /**
+     * Set MinSearchPrice
+     *
      * @return $this
      */
-    public function setMinSearchPrice(?int $value = null)
+    public function setMinSearchPrice(?int $value)
     {
         $this->MinSearchPrice = $value;
 
         return $this;
     }
 
+    /**
+     * Get CurrentSearchPrice
+     */
     public function getCurrentSearchPrice(): ?int
     {
         return $this->CurrentSearchPrice ?? null;
     }
 
     /**
+     * Set CurrentSearchPrice
+     *
      * @return $this
      */
-    public function setCurrentSearchPrice(?int $value = null)
+    public function setCurrentSearchPrice(?int $value)
     {
         $this->CurrentSearchPrice = $value;
 
@@ -201,19 +260,23 @@ class BidGetItem extends BidActionResult
     }
 
     /**
-     * @return AuctionBidItem[]|null
+     * Get AuctionBids
+     *
+     * @return list<AuctionBidItem>
      */
-    public function getAuctionBids(): ?array
+    public function getAuctionBids(): array
     {
-        return $this->AuctionBids ?? null;
+        return $this->AuctionBids ?? [];
     }
 
     /**
-     * @param AuctionBidItem[]|null $value
+     * Set AuctionBids
+     *
+     * @param list<AuctionBidItem> $value
      *
      * @return $this
      */
-    public function setAuctionBids(?array $value = null)
+    public function setAuctionBids(array $value)
     {
         $this->AuctionBids = $value;
 
@@ -221,7 +284,11 @@ class BidGetItem extends BidActionResult
     }
 
     /**
-     * @see ServingStatusEnum
+     * Get ServingStatus
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\ServingStatusEnum
+     *
+     * @return 'ELIGIBLE'|'RARELY_SERVED'|null
      */
     public function getServingStatus(): ?string
     {
@@ -229,11 +296,15 @@ class BidGetItem extends BidActionResult
     }
 
     /**
-     * @see ServingStatusEnum
+     * Set ServingStatus
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\ServingStatusEnum
+     *
+     * @param 'ELIGIBLE'|'RARELY_SERVED'|null $value
      *
      * @return $this
      */
-    public function setServingStatus(?string $value = null)
+    public function setServingStatus(?string $value)
     {
         $this->ServingStatus = $value;
 

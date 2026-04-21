@@ -12,13 +12,18 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class TimeZoneInfo
 {
-    protected $TimeZone = null;
+    /** @var string */
+    protected $TimeZone;
 
-    protected $GMTOffset = null;
+    /** @var int */
+    protected $GMTOffset;
 
-    protected $Name = null;
+    /** @var string */
+    protected $Name;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -26,12 +31,17 @@ class TimeZoneInfo
         return new static();
     }
 
+    /**
+     * Get TimeZone
+     */
     public function getTimeZone(): string
     {
         return $this->TimeZone;
     }
 
     /**
+     * Set TimeZone
+     *
      * @return $this
      */
     public function setTimeZone(string $value)
@@ -41,12 +51,17 @@ class TimeZoneInfo
         return $this;
     }
 
+    /**
+     * Get GMTOffset
+     */
     public function getGMTOffset(): int
     {
         return $this->GMTOffset;
     }
 
     /**
+     * Set GMTOffset
+     *
      * @return $this
      */
     public function setGMTOffset(int $value)
@@ -56,12 +71,17 @@ class TimeZoneInfo
         return $this;
     }
 
+    /**
+     * Get Name
+     */
     public function getName(): string
     {
         return $this->Name;
     }
 
     /**
+     * Set Name
+     *
      * @return $this
      */
     public function setName(string $value)

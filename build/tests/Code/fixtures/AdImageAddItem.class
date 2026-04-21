@@ -1,0 +1,105 @@
+<?php
+
+namespace Acme\Api\Dto;
+
+/**
+ * Auto-generated code.
+ */
+#[\AllowDynamicProperties]
+class AdImageAddItem
+{
+    /**
+     * @var string
+     */
+    protected string $ImageData;
+
+//    Can be omitted.
+//    protected $Type;
+
+    /**
+     * @var string
+     */
+    protected string $Name;
+
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create(): static
+    {
+        return new static();
+    }
+
+    /**
+     * Get ImageData
+     *
+     * @return string
+     */
+    public function getImageData(): string
+    {
+        return $this->ImageData;
+    }
+
+    /**
+     * Set ImageData
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setImageData(string $value)
+    {
+        $this->ImageData = $value;
+
+        return $this;
+    }
+
+    /**
+     * Get Type
+     *
+     * @return 'REGULAR'|'WIDE'|'FIXED_IMAGE'|'AUTO'|null
+     * @see \Acme\Api\Dto\AdImageAddTypeEnum
+     */
+    public function getType(): string|null
+    {
+        return isset($this->Type) ? $this->Type : null;
+    }
+
+    /**
+     * Set Type
+     *
+     * @param 'REGULAR'|'WIDE'|'FIXED_IMAGE'|'AUTO'|null $value
+     * @return $this
+     * @see \Acme\Api\Dto\AdImageAddTypeEnum
+     */
+    public function setType(string|null $value)
+    {
+        $this->Type = $value;
+
+        return $this;
+    }
+
+    /**
+     * Get Name
+     *
+     * @return string
+     */
+    public function getName(): string
+    {
+        return $this->Name;
+    }
+
+    /**
+     * Set Name
+     *
+     * @param string $value
+     * @return $this
+     */
+    public function setName(string $value)
+    {
+        $this->Name = $value;
+
+        return $this;
+    }
+}
+

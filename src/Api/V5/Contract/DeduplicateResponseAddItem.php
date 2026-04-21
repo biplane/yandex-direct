@@ -12,9 +12,12 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class DeduplicateResponseAddItem
 {
-    protected $Keyword = null;
+    /** @var string */
+    protected $Keyword;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -22,12 +25,17 @@ class DeduplicateResponseAddItem
         return new static();
     }
 
+    /**
+     * Get Keyword
+     */
     public function getKeyword(): string
     {
         return $this->Keyword;
     }
 
     /**
+     * Set Keyword
+     *
      * @return $this
      */
     public function setKeyword(string $value)

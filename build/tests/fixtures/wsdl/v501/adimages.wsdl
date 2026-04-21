@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                  xmlns:general="http://api.direct.yandex.com/v5/general"
+                  xmlns:ns="http://api.direct.yandex.com/v5/adimages"
+                  name="AdImages"
+                  targetNamespace="http://api.direct.yandex.com/v5/adimages">
+    <wsdl:types>
+        <xsd:schema targetNamespace="http://api.direct.yandex.com/v5/adimages">
+            <xsd:import namespace="http://api.direct.yandex.com/v5/general" schemaLocation="general.xsd" />
+            <xsd:simpleType name="AdImageFieldEnum">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="AdImageHash"/>
+                    <xsd:enumeration value="OriginalUrl"/>
+                    <xsd:enumeration value="PreviewUrl"/>
+                    <xsd:enumeration value="Name"/>
+                    <xsd:enumeration value="Type"/>
+                    <xsd:enumeration value="Subtype"/>
+                    <xsd:enumeration value="Associated"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="AdImageTypeEnum">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="SMALL"/>
+                    <xsd:enumeration value="REGULAR"/>
+                    <xsd:enumeration value="WIDE"/>
+                    <xsd:enumeration value="FIXED_IMAGE"/>
+                    <xsd:enumeration value="UNFIT"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="AdImageAddTypeEnum">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="REGULAR"/>
+                    <xsd:enumeration value="WIDE"/>
+                    <xsd:enumeration value="FIXED_IMAGE"/>
+                    <xsd:enumeration value="AUTO"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:simpleType name="AdImageSubtypeEnum">
+                <xsd:restriction base="xsd:string">
+                    <xsd:enumeration value="IMG_240_400"/>
+                    <xsd:enumeration value="IMG_300_250"/>
+                    <xsd:enumeration value="IMG_300_500"/>
+                    <xsd:enumeration value="IMG_300_600"/>
+                    <xsd:enumeration value="IMG_320_50"/>
+                    <xsd:enumeration value="IMG_320_100"/>
+                    <xsd:enumeration value="IMG_320_480"/>
+                    <xsd:enumeration value="IMG_336_280"/>
+                    <xsd:enumeration value="IMG_480_320"/>
+                    <xsd:enumeration value="IMG_728_90"/>
+                    <xsd:enumeration value="IMG_970_250"/>
+                    <xsd:enumeration value="IMG_516_272"/>
+                    <xsd:enumeration value="IMG_223_159"/>
+                    <xsd:enumeration value="IMG_480_800"/>
+                    <xsd:enumeration value="IMG_600_500"/>
+                    <xsd:enumeration value="IMG_600_1000"/>
+                    <xsd:enumeration value="IMG_600_1200"/>
+                    <xsd:enumeration value="IMG_640_100"/>
+                    <xsd:enumeration value="IMG_640_200"/>
+                    <xsd:enumeration value="IMG_640_960"/>
+                    <xsd:enumeration value="IMG_672_560"/>
+                    <xsd:enumeration value="IMG_960_640"/>
+                    <xsd:enumeration value="IMG_1456_180"/>
+                    <xsd:enumeration value="IMG_1940_500"/>
+                    <xsd:enumeration value="IMG_1032_544"/>
+		    <xsd:enumeration value="IMG_446_318"/>
+                    <xsd:enumeration value="IMG_720_1200"/>
+                    <xsd:enumeration value="IMG_900_750"/>
+                    <xsd:enumeration value="IMG_900_1500"/>
+                    <xsd:enumeration value="IMG_900_1800"/>
+                    <xsd:enumeration value="IMG_960_150"/>
+                    <xsd:enumeration value="IMG_960_300"/>
+                    <xsd:enumeration value="IMG_960_1440"/>
+                    <xsd:enumeration value="IMG_1008_840"/>
+                    <xsd:enumeration value="IMG_1440_960"/>
+                    <xsd:enumeration value="IMG_2184_270"/>
+                    <xsd:enumeration value="IMG_2910_750"/>
+                    <xsd:enumeration value="IMG_1548_816"/>
+		    <xsd:enumeration value="IMG_669_477"/>
+                    <xsd:enumeration value="IMG_960_1600"/>
+                    <xsd:enumeration value="IMG_1200_1000"/>
+                    <xsd:enumeration value="IMG_1200_2000"/>
+                    <xsd:enumeration value="IMG_1200_2400"/>
+                    <xsd:enumeration value="IMG_1280_200"/>
+                    <xsd:enumeration value="IMG_1280_400"/>
+                    <xsd:enumeration value="IMG_1280_1920"/>
+                    <xsd:enumeration value="IMG_1344_1120"/>
+                    <xsd:enumeration value="IMG_1920_1280"/>
+                    <xsd:enumeration value="IMG_2912_360"/>
+                    <xsd:enumeration value="IMG_3880_1000"/>
+                    <xsd:enumeration value="IMG_2064_1088"/>
+		    <xsd:enumeration value="IMG_892_636"/>
+                    <xsd:enumeration value="NONE"/>
+                </xsd:restriction>
+            </xsd:simpleType>
+            <xsd:complexType name="AdImageAddItem">
+                <xsd:sequence>
+                    <xsd:element name="ImageData" type="xsd:base64Binary" minOccurs="1" maxOccurs="1"/>
+                    <xsd:element name="Type" type="ns:AdImageAddTypeEnum" minOccurs="0" maxOccurs="1"/>
+                    <xsd:element name="Name" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="AdImageGetItem">
+                <xsd:sequence>
+                    <xsd:element name="AdImageHash" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                    <xsd:element name="Name" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                    <xsd:element name="Associated" type="general:YesNoEnum" minOccurs="0" maxOccurs="1"/>
+                    <xsd:element name="Type" type="ns:AdImageTypeEnum" minOccurs="0" maxOccurs="1"/>
+                    <xsd:element name="Subtype" type="ns:AdImageSubtypeEnum" minOccurs="0" maxOccurs="1"/>
+                    <xsd:element name="OriginalUrl" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true" />
+                    <xsd:element name="PreviewUrl" type="xsd:string" minOccurs="0" maxOccurs="1" nillable="true" />
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="AdImageSelectionCriteria">
+                <xsd:sequence>
+                    <xsd:element name="AdImageHashes" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element name="Associated" type="general:YesNoEnum" minOccurs="0" maxOccurs="1"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="AdImageHashesCriteria">
+                <xsd:sequence>
+                    <xsd:element name="AdImageHashes" type="xsd:string" minOccurs="1" maxOccurs="unbounded"/>
+                </xsd:sequence>
+            </xsd:complexType>
+            <xsd:complexType name="AdImageActionResult">
+                <xsd:complexContent>
+                    <xsd:extension base="general:ActionResultBase">
+                        <xsd:sequence>
+                            <xsd:element name="AdImageHash" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+                        </xsd:sequence>
+                    </xsd:extension>
+                </xsd:complexContent>
+            </xsd:complexType>
+            <xsd:element name="GetRequest">
+                <xsd:complexType>
+                    <xsd:complexContent>
+                        <xsd:extension base="general:GetRequestGeneral">
+                            <xsd:sequence>
+                                <xsd:element name="SelectionCriteria" type="ns:AdImageSelectionCriteria" minOccurs="0" maxOccurs="1"/>
+                                <xsd:element name="FieldNames" type="ns:AdImageFieldEnum" minOccurs="1" maxOccurs="unbounded"/>
+                            </xsd:sequence>
+                        </xsd:extension>
+                    </xsd:complexContent>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="GetResponse">
+                <xsd:complexType>
+                    <xsd:complexContent>
+                        <xsd:extension base="general:GetResponseGeneral">
+                            <xsd:sequence>
+                                <xsd:element name="AdImages" type="ns:AdImageGetItem" minOccurs="0" maxOccurs="unbounded"/>
+                            </xsd:sequence>
+                        </xsd:extension>
+                    </xsd:complexContent>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="AddRequest">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="AdImages" type="ns:AdImageAddItem" minOccurs="1" maxOccurs="unbounded"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="AddResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="AddResults" type="ns:AdImageActionResult" minOccurs="0" maxOccurs="unbounded"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="DeleteRequest">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="SelectionCriteria" type="ns:AdImageHashesCriteria" minOccurs="1" maxOccurs="1"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+            <xsd:element name="DeleteResponse">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="DeleteResults" type="ns:AdImageActionResult" minOccurs="0" maxOccurs="unbounded"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:schema>
+    </wsdl:types>
+    <wsdl:message name="ApiException">
+        <wsdl:part element="general:FaultResponse" name="faultMessage"/>
+    </wsdl:message>
+    <wsdl:message name="AddOperationRequest">
+        <wsdl:part name="parameters" element="ns:AddRequest"/>
+    </wsdl:message>
+    <wsdl:message name="AddOperationResponse">
+        <wsdl:part name="parameters" element="ns:AddResponse"/>
+    </wsdl:message>
+    <wsdl:message name="GetOperationRequest">
+        <wsdl:part name="parameters" element="ns:GetRequest"/>
+    </wsdl:message>
+    <wsdl:message name="GetOperationResponse">
+        <wsdl:part name="parameters" element="ns:GetResponse"/>
+    </wsdl:message>
+    <wsdl:message name="DeleteOperationRequest">
+        <wsdl:part name="parameters" element="ns:DeleteRequest"/>
+    </wsdl:message>
+    <wsdl:message name="DeleteOperationResponse">
+        <wsdl:part name="parameters" element="ns:DeleteResponse"/>
+    </wsdl:message>
+    <wsdl:portType name="AdImagesPort">
+        <wsdl:operation name="add">
+            <wsdl:input name="addRequest" message="ns:AddOperationRequest"/>
+            <wsdl:output message="ns:AddOperationResponse"/>
+            <wsdl:fault message="ns:ApiException" name="ApiException"/>
+        </wsdl:operation>
+        <wsdl:operation name="get">
+            <wsdl:input name="getRequest" message="ns:GetOperationRequest"/>
+            <wsdl:output message="ns:GetOperationResponse"/>
+            <wsdl:fault message="ns:ApiException" name="ApiException"/>
+        </wsdl:operation>
+        <wsdl:operation name="delete">
+            <wsdl:input name="deleteRequest" message="ns:DeleteOperationRequest"/>
+            <wsdl:output message="ns:DeleteOperationResponse"/>
+            <wsdl:fault message="ns:ApiException" name="ApiException"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="AdImagesSOAP" type="ns:AdImagesPort">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="add">
+            <soap:operation soapAction="https://api.direct.yandex.com/v5/adimages/add"/>
+            <wsdl:input name="addRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ApiException">
+                <soap:fault name="ApiException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="get">
+            <soap:operation soapAction="https://api.direct.yandex.com/v5/adimages/get"/>
+            <wsdl:input name="getRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ApiException">
+                <soap:fault name="ApiException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+        <wsdl:operation name="delete">
+            <soap:operation soapAction="https://api.direct.yandex.com/v5/adimages/delete"/>
+            <wsdl:input name="deleteRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="ApiException">
+                <soap:fault name="ApiException" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="AdImages">
+        <wsdl:port name="AdImagesSOAP" binding="ns:AdImagesSOAP">
+            <soap:address location="https://soap.direct.yandex.ru/v501/adimages"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

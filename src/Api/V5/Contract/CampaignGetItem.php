@@ -13,90 +13,92 @@ use AllowDynamicProperties;
 class CampaignGetItem
 {
 //    Can be omitted.
-//    protected $ClientInfo = null;
+//    protected $ClientInfo;
 
 //    Can be omitted.
-//    protected $Notification = null;
+//    protected $Notification;
 
 //    Can be omitted.
-//    protected $TimeZone = null;
+//    protected $TimeZone;
 
 //    Can be omitted.
-//    protected $Id = null;
+//    protected $Id;
 
 //    Can be omitted.
-//    protected $Name = null;
+//    protected $Name;
 
 //    Can be omitted.
-//    protected $StartDate = null;
+//    protected $StartDate;
 
 //    Can be omitted.
-//    protected $Type = null;
+//    protected $Type;
 
 //    Can be omitted.
-//    protected $Status = null;
+//    protected $Status;
 
 //    Can be omitted.
-//    protected $State = null;
+//    protected $State;
 
 //    Can be omitted.
-//    protected $StatusPayment = null;
+//    protected $StatusPayment;
 
 //    Can be omitted.
-//    protected $StatusClarification = null;
+//    protected $StatusClarification;
 
 //    Can be omitted.
-//    protected $SourceId = null;
+//    protected $SourceId;
 
 //    Can be omitted.
-//    protected $Statistics = null;
+//    protected $Statistics;
 
 //    Can be omitted.
-//    protected $Currency = null;
+//    protected $Currency;
 
 //    Can be omitted.
-//    protected $Funds = null;
+//    protected $Funds;
 
 //    Can be omitted.
-//    protected $RepresentedBy = null;
+//    protected $RepresentedBy;
 
 //    Can be omitted.
-//    protected $DailyBudget = null;
+//    protected $DailyBudget;
 
 //    Can be omitted.
-//    protected $EndDate = null;
+//    protected $EndDate;
 
 //    Can be omitted.
-//    protected $NegativeKeywords = null;
+//    protected $NegativeKeywords;
 
 //    Can be omitted.
-//    protected $BlockedIps = null;
+//    protected $BlockedIps;
 
 //    Can be omitted.
-//    protected $ExcludedSites = null;
+//    protected $ExcludedSites;
 
 //    Can be omitted.
-//    protected $TextCampaign = null;
+//    protected $TextCampaign;
 
 //    Can be omitted.
-//    protected $UnifiedCampaign = null;
+//    protected $UnifiedCampaign;
 
 //    Can be omitted.
-//    protected $MobileAppCampaign = null;
+//    protected $MobileAppCampaign;
 
 //    Can be omitted.
-//    protected $DynamicTextCampaign = null;
+//    protected $DynamicTextCampaign;
 
 //    Can be omitted.
-//    protected $CpmBannerCampaign = null;
+//    protected $CpmBannerCampaign;
 
 //    Can be omitted.
-//    protected $SmartCampaign = null;
+//    protected $SmartCampaign;
 
 //    Can be omitted.
-//    protected $TimeTargeting = null;
+//    protected $TimeTargeting;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -104,90 +106,120 @@ class CampaignGetItem
         return new static();
     }
 
+    /**
+     * Get ClientInfo
+     */
     public function getClientInfo(): ?string
     {
         return $this->ClientInfo ?? null;
     }
 
     /**
+     * Set ClientInfo
+     *
      * @return $this
      */
-    public function setClientInfo(?string $value = null)
+    public function setClientInfo(?string $value)
     {
         $this->ClientInfo = $value;
 
         return $this;
     }
 
+    /**
+     * Get Notification
+     */
     public function getNotification(): ?CampaignNotification
     {
         return $this->Notification ?? null;
     }
 
     /**
+     * Set Notification
+     *
      * @return $this
      */
-    public function setNotification(?CampaignNotification $value = null)
+    public function setNotification(?CampaignNotification $value)
     {
         $this->Notification = $value;
 
         return $this;
     }
 
+    /**
+     * Get TimeZone
+     */
     public function getTimeZone(): ?string
     {
         return $this->TimeZone ?? null;
     }
 
     /**
+     * Set TimeZone
+     *
      * @return $this
      */
-    public function setTimeZone(?string $value = null)
+    public function setTimeZone(?string $value)
     {
         $this->TimeZone = $value;
 
         return $this;
     }
 
+    /**
+     * Get Id
+     */
     public function getId(): ?int
     {
         return $this->Id ?? null;
     }
 
     /**
+     * Set Id
+     *
      * @return $this
      */
-    public function setId(?int $value = null)
+    public function setId(?int $value)
     {
         $this->Id = $value;
 
         return $this;
     }
 
+    /**
+     * Get Name
+     */
     public function getName(): ?string
     {
         return $this->Name ?? null;
     }
 
     /**
+     * Set Name
+     *
      * @return $this
      */
-    public function setName(?string $value = null)
+    public function setName(?string $value)
     {
         $this->Name = $value;
 
         return $this;
     }
 
+    /**
+     * Get StartDate
+     */
     public function getStartDate(): ?string
     {
         return $this->StartDate ?? null;
     }
 
     /**
+     * Set StartDate
+     *
      * @return $this
      */
-    public function setStartDate(?string $value = null)
+    public function setStartDate(?string $value)
     {
         $this->StartDate = $value;
 
@@ -195,7 +227,11 @@ class CampaignGetItem
     }
 
     /**
-     * @see CampaignTypeGetEnum
+     * Get Type
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\CampaignTypeGetEnum
+     *
+     * @return 'TEXT_CAMPAIGN'|'MOBILE_APP_CAMPAIGN'|'DYNAMIC_TEXT_CAMPAIGN'|'CPM_BANNER_CAMPAIGN'|'SMART_CAMPAIGN'|'UNIFIED_CAMPAIGN'|'UNKNOWN'|null
      */
     public function getType(): ?string
     {
@@ -203,11 +239,15 @@ class CampaignGetItem
     }
 
     /**
-     * @see CampaignTypeGetEnum
+     * Set Type
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\CampaignTypeGetEnum
+     *
+     * @param 'TEXT_CAMPAIGN'|'MOBILE_APP_CAMPAIGN'|'DYNAMIC_TEXT_CAMPAIGN'|'CPM_BANNER_CAMPAIGN'|'SMART_CAMPAIGN'|'UNIFIED_CAMPAIGN'|'UNKNOWN'|null $value
      *
      * @return $this
      */
-    public function setType(?string $value = null)
+    public function setType(?string $value)
     {
         $this->Type = $value;
 
@@ -215,7 +255,11 @@ class CampaignGetItem
     }
 
     /**
-     * @see StatusEnum
+     * Get Status
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\StatusEnum
+     *
+     * @return 'ACCEPTED'|'DRAFT'|'MODERATION'|'PREACCEPTED'|'REJECTED'|'UNKNOWN'|null
      */
     public function getStatus(): ?string
     {
@@ -223,11 +267,15 @@ class CampaignGetItem
     }
 
     /**
-     * @see StatusEnum
+     * Set Status
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\StatusEnum
+     *
+     * @param 'ACCEPTED'|'DRAFT'|'MODERATION'|'PREACCEPTED'|'REJECTED'|'UNKNOWN'|null $value
      *
      * @return $this
      */
-    public function setStatus(?string $value = null)
+    public function setStatus(?string $value)
     {
         $this->Status = $value;
 
@@ -235,7 +283,11 @@ class CampaignGetItem
     }
 
     /**
-     * @see CampaignStateGetEnum
+     * Get State
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\CampaignStateGetEnum
+     *
+     * @return 'ARCHIVED'|'CONVERTED'|'ENDED'|'OFF'|'ON'|'SUSPENDED'|'UNKNOWN'|null
      */
     public function getState(): ?string
     {
@@ -243,11 +295,15 @@ class CampaignGetItem
     }
 
     /**
-     * @see CampaignStateGetEnum
+     * Set State
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\CampaignStateGetEnum
+     *
+     * @param 'ARCHIVED'|'CONVERTED'|'ENDED'|'OFF'|'ON'|'SUSPENDED'|'UNKNOWN'|null $value
      *
      * @return $this
      */
-    public function setState(?string $value = null)
+    public function setState(?string $value)
     {
         $this->State = $value;
 
@@ -255,7 +311,11 @@ class CampaignGetItem
     }
 
     /**
-     * @see CampaignStatusPaymentEnum
+     * Get StatusPayment
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\CampaignStatusPaymentEnum
+     *
+     * @return 'DISALLOWED'|'ALLOWED'|null
      */
     public function getStatusPayment(): ?string
     {
@@ -263,56 +323,75 @@ class CampaignGetItem
     }
 
     /**
-     * @see CampaignStatusPaymentEnum
+     * Set StatusPayment
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\CampaignStatusPaymentEnum
+     *
+     * @param 'DISALLOWED'|'ALLOWED'|null $value
      *
      * @return $this
      */
-    public function setStatusPayment(?string $value = null)
+    public function setStatusPayment(?string $value)
     {
         $this->StatusPayment = $value;
 
         return $this;
     }
 
+    /**
+     * Get StatusClarification
+     */
     public function getStatusClarification(): ?string
     {
         return $this->StatusClarification ?? null;
     }
 
     /**
+     * Set StatusClarification
+     *
      * @return $this
      */
-    public function setStatusClarification(?string $value = null)
+    public function setStatusClarification(?string $value)
     {
         $this->StatusClarification = $value;
 
         return $this;
     }
 
+    /**
+     * Get SourceId
+     */
     public function getSourceId(): ?int
     {
         return $this->SourceId ?? null;
     }
 
     /**
+     * Set SourceId
+     *
      * @return $this
      */
-    public function setSourceId(?int $value = null)
+    public function setSourceId(?int $value)
     {
         $this->SourceId = $value;
 
         return $this;
     }
 
+    /**
+     * Get Statistics
+     */
     public function getStatistics(): ?Statistics
     {
         return $this->Statistics ?? null;
     }
 
     /**
+     * Set Statistics
+     *
      * @return $this
      */
-    public function setStatistics(?Statistics $value = null)
+    public function setStatistics(?Statistics $value)
     {
         $this->Statistics = $value;
 
@@ -320,7 +399,11 @@ class CampaignGetItem
     }
 
     /**
-     * @see CurrencyEnum
+     * Get Currency
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\CurrencyEnum
+     *
+     * @return 'YND_FIXED'|'RUB'|'CHF'|'EUR'|'KZT'|'TRY'|'UAH'|'USD'|'BYN'|'GBP'|null
      */
     public function getCurrency(): ?string
     {
@@ -328,71 +411,95 @@ class CampaignGetItem
     }
 
     /**
-     * @see CurrencyEnum
+     * Set Currency
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\CurrencyEnum
+     *
+     * @param 'YND_FIXED'|'RUB'|'CHF'|'EUR'|'KZT'|'TRY'|'UAH'|'USD'|'BYN'|'GBP'|null $value
      *
      * @return $this
      */
-    public function setCurrency(?string $value = null)
+    public function setCurrency(?string $value)
     {
         $this->Currency = $value;
 
         return $this;
     }
 
+    /**
+     * Get Funds
+     */
     public function getFunds(): ?FundsParam
     {
         return $this->Funds ?? null;
     }
 
     /**
+     * Set Funds
+     *
      * @return $this
      */
-    public function setFunds(?FundsParam $value = null)
+    public function setFunds(?FundsParam $value)
     {
         $this->Funds = $value;
 
         return $this;
     }
 
+    /**
+     * Get RepresentedBy
+     */
     public function getRepresentedBy(): ?CampaignAssistant
     {
         return $this->RepresentedBy ?? null;
     }
 
     /**
+     * Set RepresentedBy
+     *
      * @return $this
      */
-    public function setRepresentedBy(?CampaignAssistant $value = null)
+    public function setRepresentedBy(?CampaignAssistant $value)
     {
         $this->RepresentedBy = $value;
 
         return $this;
     }
 
+    /**
+     * Get DailyBudget
+     */
     public function getDailyBudget(): ?DailyBudget
     {
         return $this->DailyBudget ?? null;
     }
 
     /**
+     * Set DailyBudget
+     *
      * @return $this
      */
-    public function setDailyBudget(?DailyBudget $value = null)
+    public function setDailyBudget(?DailyBudget $value)
     {
         $this->DailyBudget = $value;
 
         return $this;
     }
 
+    /**
+     * Get EndDate
+     */
     public function getEndDate(): ?string
     {
         return $this->EndDate ?? null;
     }
 
     /**
+     * Set EndDate
+     *
      * @return $this
      */
-    public function setEndDate(?string $value = null)
+    public function setEndDate(?string $value)
     {
         $this->EndDate = $value;
 
@@ -400,7 +507,9 @@ class CampaignGetItem
     }
 
     /**
-     * @return string[]|null
+     * Get NegativeKeywords
+     *
+     * @return non-empty-list<string>|null
      */
     public function getNegativeKeywords(): ?array
     {
@@ -408,11 +517,13 @@ class CampaignGetItem
     }
 
     /**
-     * @param string[]|null $value
+     * Set NegativeKeywords
+     *
+     * @param non-empty-list<string>|null $value
      *
      * @return $this
      */
-    public function setNegativeKeywords(?array $value = null)
+    public function setNegativeKeywords(?array $value)
     {
         $this->NegativeKeywords = $value;
 
@@ -420,7 +531,9 @@ class CampaignGetItem
     }
 
     /**
-     * @return string[]|null
+     * Get BlockedIps
+     *
+     * @return non-empty-list<string>|null
      */
     public function getBlockedIps(): ?array
     {
@@ -428,11 +541,13 @@ class CampaignGetItem
     }
 
     /**
-     * @param string[]|null $value
+     * Set BlockedIps
+     *
+     * @param non-empty-list<string>|null $value
      *
      * @return $this
      */
-    public function setBlockedIps(?array $value = null)
+    public function setBlockedIps(?array $value)
     {
         $this->BlockedIps = $value;
 
@@ -440,7 +555,9 @@ class CampaignGetItem
     }
 
     /**
-     * @return string[]|null
+     * Get ExcludedSites
+     *
+     * @return non-empty-list<string>|null
      */
     public function getExcludedSites(): ?array
     {
@@ -448,116 +565,153 @@ class CampaignGetItem
     }
 
     /**
-     * @param string[]|null $value
+     * Set ExcludedSites
+     *
+     * @param non-empty-list<string>|null $value
      *
      * @return $this
      */
-    public function setExcludedSites(?array $value = null)
+    public function setExcludedSites(?array $value)
     {
         $this->ExcludedSites = $value;
 
         return $this;
     }
 
+    /**
+     * Get TextCampaign
+     */
     public function getTextCampaign(): ?TextCampaignGetItem
     {
         return $this->TextCampaign ?? null;
     }
 
     /**
+     * Set TextCampaign
+     *
      * @return $this
      */
-    public function setTextCampaign(?TextCampaignGetItem $value = null)
+    public function setTextCampaign(?TextCampaignGetItem $value)
     {
         $this->TextCampaign = $value;
 
         return $this;
     }
 
+    /**
+     * Get UnifiedCampaign
+     */
     public function getUnifiedCampaign(): ?UnifiedCampaignGetItem
     {
         return $this->UnifiedCampaign ?? null;
     }
 
     /**
+     * Set UnifiedCampaign
+     *
      * @return $this
      */
-    public function setUnifiedCampaign(?UnifiedCampaignGetItem $value = null)
+    public function setUnifiedCampaign(?UnifiedCampaignGetItem $value)
     {
         $this->UnifiedCampaign = $value;
 
         return $this;
     }
 
+    /**
+     * Get MobileAppCampaign
+     */
     public function getMobileAppCampaign(): ?MobileAppCampaignGetItem
     {
         return $this->MobileAppCampaign ?? null;
     }
 
     /**
+     * Set MobileAppCampaign
+     *
      * @return $this
      */
-    public function setMobileAppCampaign(?MobileAppCampaignGetItem $value = null)
+    public function setMobileAppCampaign(?MobileAppCampaignGetItem $value)
     {
         $this->MobileAppCampaign = $value;
 
         return $this;
     }
 
+    /**
+     * Get DynamicTextCampaign
+     */
     public function getDynamicTextCampaign(): ?DynamicTextCampaignGetItem
     {
         return $this->DynamicTextCampaign ?? null;
     }
 
     /**
+     * Set DynamicTextCampaign
+     *
      * @return $this
      */
-    public function setDynamicTextCampaign(?DynamicTextCampaignGetItem $value = null)
+    public function setDynamicTextCampaign(?DynamicTextCampaignGetItem $value)
     {
         $this->DynamicTextCampaign = $value;
 
         return $this;
     }
 
+    /**
+     * Get CpmBannerCampaign
+     */
     public function getCpmBannerCampaign(): ?CpmBannerCampaignGetItem
     {
         return $this->CpmBannerCampaign ?? null;
     }
 
     /**
+     * Set CpmBannerCampaign
+     *
      * @return $this
      */
-    public function setCpmBannerCampaign(?CpmBannerCampaignGetItem $value = null)
+    public function setCpmBannerCampaign(?CpmBannerCampaignGetItem $value)
     {
         $this->CpmBannerCampaign = $value;
 
         return $this;
     }
 
+    /**
+     * Get SmartCampaign
+     */
     public function getSmartCampaign(): ?SmartCampaignGetItem
     {
         return $this->SmartCampaign ?? null;
     }
 
     /**
+     * Set SmartCampaign
+     *
      * @return $this
      */
-    public function setSmartCampaign(?SmartCampaignGetItem $value = null)
+    public function setSmartCampaign(?SmartCampaignGetItem $value)
     {
         $this->SmartCampaign = $value;
 
         return $this;
     }
 
+    /**
+     * Get TimeTargeting
+     */
     public function getTimeTargeting(): ?TimeTargeting
     {
         return $this->TimeTargeting ?? null;
     }
 
     /**
+     * Set TimeTargeting
+     *
      * @return $this
      */
-    public function setTimeTargeting(?TimeTargeting $value = null)
+    public function setTimeTargeting(?TimeTargeting $value)
     {
         $this->TimeTargeting = $value;
 

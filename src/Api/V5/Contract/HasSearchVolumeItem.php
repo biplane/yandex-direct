@@ -13,24 +13,26 @@ use AllowDynamicProperties;
 class HasSearchVolumeItem
 {
 //    Can be omitted.
-//    protected $Keyword = null;
+//    protected $Keyword;
 
 //    Can be omitted.
-//    protected $RegionIds = null;
+//    protected $RegionIds;
 
 //    Can be omitted.
-//    protected $AllDevices = null;
+//    protected $AllDevices;
 
 //    Can be omitted.
-//    protected $MobilePhones = null;
+//    protected $MobilePhones;
 
 //    Can be omitted.
-//    protected $Tablets = null;
+//    protected $Tablets;
 
 //    Can be omitted.
-//    protected $Desktops = null;
+//    protected $Desktops;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -38,15 +40,20 @@ class HasSearchVolumeItem
         return new static();
     }
 
+    /**
+     * Get Keyword
+     */
     public function getKeyword(): ?string
     {
         return $this->Keyword ?? null;
     }
 
     /**
+     * Set Keyword
+     *
      * @return $this
      */
-    public function setKeyword(?string $value = null)
+    public function setKeyword(?string $value)
     {
         $this->Keyword = $value;
 
@@ -54,19 +61,23 @@ class HasSearchVolumeItem
     }
 
     /**
-     * @return int[]|null
+     * Get RegionIds
+     *
+     * @return list<int>
      */
-    public function getRegionIds(): ?array
+    public function getRegionIds(): array
     {
-        return $this->RegionIds ?? null;
+        return $this->RegionIds ?? [];
     }
 
     /**
-     * @param int[]|null $value
+     * Set RegionIds
+     *
+     * @param list<int> $value
      *
      * @return $this
      */
-    public function setRegionIds(?array $value = null)
+    public function setRegionIds(array $value)
     {
         $this->RegionIds = $value;
 
@@ -74,7 +85,11 @@ class HasSearchVolumeItem
     }
 
     /**
-     * @see YesNoEnum
+     * Get AllDevices
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'|null
      */
     public function getAllDevices(): ?string
     {
@@ -82,11 +97,15 @@ class HasSearchVolumeItem
     }
 
     /**
-     * @see YesNoEnum
+     * Set AllDevices
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO'|null $value
      *
      * @return $this
      */
-    public function setAllDevices(?string $value = null)
+    public function setAllDevices(?string $value)
     {
         $this->AllDevices = $value;
 
@@ -94,7 +113,11 @@ class HasSearchVolumeItem
     }
 
     /**
-     * @see YesNoEnum
+     * Get MobilePhones
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'|null
      */
     public function getMobilePhones(): ?string
     {
@@ -102,11 +125,15 @@ class HasSearchVolumeItem
     }
 
     /**
-     * @see YesNoEnum
+     * Set MobilePhones
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO'|null $value
      *
      * @return $this
      */
-    public function setMobilePhones(?string $value = null)
+    public function setMobilePhones(?string $value)
     {
         $this->MobilePhones = $value;
 
@@ -114,7 +141,11 @@ class HasSearchVolumeItem
     }
 
     /**
-     * @see YesNoEnum
+     * Get Tablets
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'|null
      */
     public function getTablets(): ?string
     {
@@ -122,11 +153,15 @@ class HasSearchVolumeItem
     }
 
     /**
-     * @see YesNoEnum
+     * Set Tablets
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO'|null $value
      *
      * @return $this
      */
-    public function setTablets(?string $value = null)
+    public function setTablets(?string $value)
     {
         $this->Tablets = $value;
 
@@ -134,7 +169,11 @@ class HasSearchVolumeItem
     }
 
     /**
-     * @see YesNoEnum
+     * Get Desktops
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'|null
      */
     public function getDesktops(): ?string
     {
@@ -142,11 +181,15 @@ class HasSearchVolumeItem
     }
 
     /**
-     * @see YesNoEnum
+     * Set Desktops
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO'|null $value
      *
      * @return $this
      */
-    public function setDesktops(?string $value = null)
+    public function setDesktops(?string $value)
     {
         $this->Desktops = $value;
 

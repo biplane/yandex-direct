@@ -13,12 +13,14 @@ use AllowDynamicProperties;
 class SitelinksSetGetItem
 {
 //    Can be omitted.
-//    protected $Id = null;
+//    protected $Id;
 
 //    Can be omitted.
-//    protected $Sitelinks = null;
+//    protected $Sitelinks;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -26,15 +28,20 @@ class SitelinksSetGetItem
         return new static();
     }
 
+    /**
+     * Get Id
+     */
     public function getId(): ?int
     {
         return $this->Id ?? null;
     }
 
     /**
+     * Set Id
+     *
      * @return $this
      */
-    public function setId(?int $value = null)
+    public function setId(?int $value)
     {
         $this->Id = $value;
 
@@ -42,19 +49,23 @@ class SitelinksSetGetItem
     }
 
     /**
-     * @return SitelinkGetItem[]|null
+     * Get Sitelinks
+     *
+     * @return list<SitelinkGetItem>
      */
-    public function getSitelinks(): ?array
+    public function getSitelinks(): array
     {
-        return $this->Sitelinks ?? null;
+        return $this->Sitelinks ?? [];
     }
 
     /**
-     * @param SitelinkGetItem[]|null $value
+     * Set Sitelinks
+     *
+     * @param list<SitelinkGetItem> $value
      *
      * @return $this
      */
-    public function setSitelinks(?array $value = null)
+    public function setSitelinks(array $value)
     {
         $this->Sitelinks = $value;
 

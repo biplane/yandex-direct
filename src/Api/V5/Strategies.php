@@ -25,90 +25,23 @@ class Strategies extends ApiSoapClientV5
     public const ENDPOINT = 'https://api.direct.yandex.com/v501/strategies?wsdl';
 
     /**
+     * Constructor
+     *
      * @param array<string, mixed> $options
      */
     public function __construct(Config $config, array $options)
     {
         $options['classmap'] = [
-            'MobileAppAdActionEnum' => 'Biplane\YandexDirect\Api\V5\Contract\MobileAppAdActionEnum',
-            'AdGroupTypesEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AdGroupTypesEnum',
-            'StringConditionOperatorEnum' => 'Biplane\YandexDirect\Api\V5\Contract\StringConditionOperatorEnum',
-            'AttributionModelEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AttributionModelEnum',
-            'ExceptionNotification' => 'Biplane\YandexDirect\Api\V5\Contract\ExceptionNotification',
-            'LimitOffset' => 'Biplane\YandexDirect\Api\V5\Contract\LimitOffset',
-            'YesNoEnum' => 'Biplane\YandexDirect\Api\V5\Contract\YesNoEnum',
-            'YesNoUnknownEnum' => 'Biplane\YandexDirect\Api\V5\Contract\YesNoUnknownEnum',
-            'VideoTargetEnum' => 'Biplane\YandexDirect\Api\V5\Contract\VideoTargetEnum',
-            'CurrencyEnum' => 'Biplane\YandexDirect\Api\V5\Contract\CurrencyEnum',
-            'ConditionTypeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\ConditionTypeEnum',
-            'AdTargetStateSelectionEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AdTargetStateSelectionEnum',
-            'AdTargetsSelectionCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\AdTargetsSelectionCriteria',
-            'StateEnum' => 'Biplane\YandexDirect\Api\V5\Contract\StateEnum',
-            'PriorityEnum' => 'Biplane\YandexDirect\Api\V5\Contract\PriorityEnum',
-            'PositionEnum' => 'Biplane\YandexDirect\Api\V5\Contract\PositionEnum',
-            'CountryCodeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\CountryCodeEnum',
-            'StatusEnum' => 'Biplane\YandexDirect\Api\V5\Contract\StatusEnum',
-            'StatusSelectionEnum' => 'Biplane\YandexDirect\Api\V5\Contract\StatusSelectionEnum',
-            'ExtensionStatusSelectionEnum' => 'Biplane\YandexDirect\Api\V5\Contract\ExtensionStatusSelectionEnum',
-            'ScopeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\ScopeEnum',
-            'AgeRangeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AgeRangeEnum',
-            'GenderEnum' => 'Biplane\YandexDirect\Api\V5\Contract\GenderEnum',
-            'MobileOperatingSystemTypeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\MobileOperatingSystemTypeEnum',
-            'LangEnum' => 'Biplane\YandexDirect\Api\V5\Contract\LangEnum',
-            'RoleEnum' => 'Biplane\YandexDirect\Api\V5\Contract\RoleEnum',
-            'RepresentativeRoleEnum' => 'Biplane\YandexDirect\Api\V5\Contract\RepresentativeRoleEnum',
-            'OperationEnum' => 'Biplane\YandexDirect\Api\V5\Contract\OperationEnum',
-            'ServingStatusEnum' => 'Biplane\YandexDirect\Api\V5\Contract\ServingStatusEnum',
-            'SerpLayoutEnum' => 'Biplane\YandexDirect\Api\V5\Contract\SerpLayoutEnum',
-            'Statistics' => 'Biplane\YandexDirect\Api\V5\Contract\Statistics',
-            'IncomeGradeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\IncomeGradeEnum',
-            'IdsCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\IdsCriteria',
-            'GetRequestGeneral' => 'Biplane\YandexDirect\Api\V5\Contract\GetRequestGeneral',
-            'GetResponseGeneral' => 'Biplane\YandexDirect\Api\V5\Contract\GetResponseGeneral',
-            'ApiExceptionMessage' => 'Biplane\YandexDirect\Api\V5\Contract\ApiExceptionMessage',
-            'ActionResultBase' => 'Biplane\YandexDirect\Api\V5\Contract\ActionResultBase',
-            'ActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\ActionResult',
-            'SetBidsActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\SetBidsActionResult',
-            'MultiIdsActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\MultiIdsActionResult',
-            'ClientsActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\ClientsActionResult',
-            'ExtensionModeration' => 'Biplane\YandexDirect\Api\V5\Contract\ExtensionModeration',
-            'SortOrderEnum' => 'Biplane\YandexDirect\Api\V5\Contract\SortOrderEnum',
-            'AutotargetingCategoriesEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategoriesEnum',
-            'AutotargetingCategory' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategory',
-            'AutotargetingCategoryArray' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategoryArray',
-            'AutotargetingBrandOptionsEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingBrandOptionsEnum',
-            'AutotargetingBrandOption' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingBrandOption',
-            'AutotargetingBrandOptionArray' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingBrandOptionArray',
-            'AutotargetingCategories' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategories',
-            'AutotargetingBrandOptions' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingBrandOptions',
-            'AutotargetingSettings' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingSettings',
-            'AutotargetingCategoriesFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategoriesFieldEnum',
-            'AutotargetingBrandOptionsFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingBrandOptionsFieldEnum',
-            'StrategyFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyFieldEnum',
-            'StrategyMaximumClicksFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyMaximumClicksFieldEnum',
-            'StrategyMaximumConversionRateFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyMaximumConversionRateFieldEnum',
-            'StrategyAverageCpcFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyAverageCpcFieldEnum',
-            'StrategyAverageCpaFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyAverageCpaFieldEnum',
-            'StrategyMaxProfitFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyMaxProfitFieldEnum',
-            'StrategyPayForConversionFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyPayForConversionFieldEnum',
-            'StrategyAverageCpaPerCampaignFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyAverageCpaPerCampaignFieldEnum',
-            'StrategyPayForConversionPerCampaignFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyPayForConversionPerCampaignFieldEnum',
-            'StrategyPayForConversionPerFilterFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyPayForConversionPerFilterFieldEnum',
-            'StrategyAverageCpaPerFilterFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyAverageCpaPerFilterFieldEnum',
-            'StrategyAverageCpcPerCampaignFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyAverageCpcPerCampaignFieldEnum',
-            'StrategyAverageCpcPerFilterFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyAverageCpcPerFilterFieldEnum',
-            'StrategyAverageCrrFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyAverageCrrFieldEnum',
-            'StrategyPayForConversionCrrFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyPayForConversionCrrFieldEnum',
-            'StrategyAverageCpaMultipleGoalsFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyAverageCpaMultipleGoalsFieldEnum',
-            'StrategyPayForConversionMultipleGoalsFieldEnum' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyPayForConversionMultipleGoalsFieldEnum',
-            'StrategyType' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyType',
-            'BudgetTypeEnum' => 'Biplane\YandexDirect\Api\V5\Contract\BudgetTypeEnum',
-            'ExplorationBudget' => 'Biplane\YandexDirect\Api\V5\Contract\ExplorationBudget',
-            'CustomPeriodBudget' => 'Biplane\YandexDirect\Api\V5\Contract\CustomPeriodBudget',
+            'AddRequest' => 'Biplane\YandexDirect\Api\V5\Contract\AddStrategiesRequest',
+            'StrategyAddItem' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyAddItem',
+            'PriorityGoalsArray' => 'Biplane\YandexDirect\Api\V5\Contract\PriorityGoalsArray',
+            'PriorityGoalsItem' => 'Biplane\YandexDirect\Api\V5\Contract\PriorityGoalsItem',
             'StrategyMaximumClicksAddItem' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyMaximumClicksAddItem',
+            'CustomPeriodBudget' => 'Biplane\YandexDirect\Api\V5\Contract\CustomPeriodBudget',
             'StrategyMaximumConversionRateAddItem' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyMaximumConversionRateAddItem',
             'StrategyAverageCpcAddItem' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyAverageCpcAddItem',
             'StrategyAverageCpaAddItem' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyAverageCpaAddItem',
+            'ExplorationBudget' => 'Biplane\YandexDirect\Api\V5\Contract\ExplorationBudget',
             'StrategyMaxProfitAddItem' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyMaxProfitAddItem',
             'StrategyPayForConversionAddItem' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyPayForConversionAddItem',
             'StrategyAverageCpaPerCampaignAddItem' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyAverageCpaPerCampaignAddItem',
@@ -121,25 +54,51 @@ class Strategies extends ApiSoapClientV5
             'StrategyPayForConversionCrrAddItem' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyPayForConversionCrrAddItem',
             'StrategyAverageCpaMultipleGoalsAddItem' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyAverageCpaMultipleGoalsAddItem',
             'StrategyPayForConversionMultipleGoalsAddItem' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyPayForConversionMultipleGoalsAddItem',
+            'AddResponse' => 'Biplane\YandexDirect\Api\V5\Contract\AddStrategiesResponse',
+            'ActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\ActionResult',
+            'ActionResultBase' => 'Biplane\YandexDirect\Api\V5\Contract\ActionResultBase',
+            'ExceptionNotification' => 'Biplane\YandexDirect\Api\V5\Contract\ExceptionNotification',
+            'UpdateRequest' => 'Biplane\YandexDirect\Api\V5\Contract\UpdateStrategiesRequest',
+            'StrategyUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyUpdateItem',
+            'StrategyMaximumClicksUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyMaximumClicksUpdateItem',
             'StrategyMaximumClicksBase' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyMaximumClicksBase',
+            'StrategyMaximumConversionRateUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyMaximumConversionRateUpdateItem',
             'StrategyMaximumConversionRateBase' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyMaximumConversionRateBase',
+            'StrategyAverageCpcUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyAverageCpcUpdateItem',
             'StrategyAverageCpcBase' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyAverageCpcBase',
+            'StrategyAverageCpaUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyAverageCpaUpdateItem',
             'StrategyAverageCpaBase' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyAverageCpaBase',
+            'StrategyMaxProfitUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyMaxProfitUpdateItem',
             'StrategyMaxProfitBase' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyMaxProfitBase',
+            'StrategyPayForConversionUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyPayForConversionUpdateItem',
             'StrategyPayForConversionBase' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyPayForConversionBase',
+            'StrategyAverageCpaPerCampaignUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyAverageCpaPerCampaignUpdateItem',
             'StrategyAverageCpaPerCampaignBase' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyAverageCpaPerCampaignBase',
+            'StrategyPayForConversionPerCampaignUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyPayForConversionPerCampaignUpdateItem',
             'StrategyPayForConversionPerCampaignBase' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyPayForConversionPerCampaignBase',
+            'StrategyPayForConversionPerFilterUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyPayForConversionPerFilterUpdateItem',
             'StrategyPayForConversionPerFilterBase' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyPayForConversionPerFilterBase',
+            'StrategyAverageCpaPerFilterUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyAverageCpaPerFilterUpdateItem',
             'StrategyAverageCpaPerFilterBase' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyAverageCpaPerFilterBase',
+            'StrategyAverageCpcPerCampaignUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyAverageCpcPerCampaignUpdateItem',
             'StrategyAverageCpcPerCampaignBase' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyAverageCpcPerCampaignBase',
+            'StrategyAverageCpcPerFilterUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyAverageCpcPerFilterUpdateItem',
             'StrategyAverageCpcPerFilterBase' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyAverageCpcPerFilterBase',
+            'StrategyAverageCrrUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyAverageCrrUpdateItem',
             'StrategyAverageCrrBase' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyAverageCrrBase',
+            'StrategyPayForConversionCrrUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyPayForConversionCrrUpdateItem',
             'StrategyPayForConversionCrrBase' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyPayForConversionCrrBase',
+            'StrategyAverageCpaMultipleGoalsUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyAverageCpaMultipleGoalsUpdateItem',
             'StrategyAverageCpaMultipleGoalsBase' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyAverageCpaMultipleGoalsBase',
+            'StrategyPayForConversionMultipleGoalsUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyPayForConversionMultipleGoalsUpdateItem',
             'StrategyPayForConversionMultipleGoalsBase' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyPayForConversionMultipleGoalsBase',
-            'PriorityGoalsItem' => 'Biplane\YandexDirect\Api\V5\Contract\PriorityGoalsItem',
-            'PriorityGoalsArray' => 'Biplane\YandexDirect\Api\V5\Contract\PriorityGoalsArray',
-            'StrategyAddItem' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyAddItem',
+            'UpdateResponse' => 'Biplane\YandexDirect\Api\V5\Contract\UpdateStrategiesResponse',
+            'GetRequest' => 'Biplane\YandexDirect\Api\V5\Contract\GetStrategiesRequest',
+            'StrategiesSelectionCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\StrategiesSelectionCriteria',
+            'GetRequestGeneral' => 'Biplane\YandexDirect\Api\V5\Contract\GetRequestGeneral',
+            'LimitOffset' => 'Biplane\YandexDirect\Api\V5\Contract\LimitOffset',
+            'GetResponse' => 'Biplane\YandexDirect\Api\V5\Contract\GetStrategiesResponse',
+            'StrategyGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyGetItem',
             'StrategyMaximumClicksGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyMaximumClicksGetItem',
             'StrategyMaximumConversionRateGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyMaximumConversionRateGetItem',
             'StrategyAverageCpcGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyAverageCpcGetItem',
@@ -156,60 +115,51 @@ class Strategies extends ApiSoapClientV5
             'StrategyPayForConversionCrrGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyPayForConversionCrrGetItem',
             'StrategyAverageCpaMultipleGoalsGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyAverageCpaMultipleGoalsGetItem',
             'StrategyPayForConversionMultipleGoalsGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyPayForConversionMultipleGoalsGetItem',
-            'StrategyGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyGetItem',
-            'StrategiesSelectionCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\StrategiesSelectionCriteria',
-            'GetRequest' => 'Biplane\YandexDirect\Api\V5\Contract\GetStrategiesRequest',
-            'StrategyMaximumClicksUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyMaximumClicksUpdateItem',
-            'StrategyMaximumConversionRateUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyMaximumConversionRateUpdateItem',
-            'StrategyAverageCpcUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyAverageCpcUpdateItem',
-            'StrategyAverageCpaUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyAverageCpaUpdateItem',
-            'StrategyMaxProfitUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyMaxProfitUpdateItem',
-            'StrategyPayForConversionUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyPayForConversionUpdateItem',
-            'StrategyAverageCpaPerCampaignUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyAverageCpaPerCampaignUpdateItem',
-            'StrategyPayForConversionPerCampaignUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyPayForConversionPerCampaignUpdateItem',
-            'StrategyPayForConversionPerFilterUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyPayForConversionPerFilterUpdateItem',
-            'StrategyAverageCpaPerFilterUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyAverageCpaPerFilterUpdateItem',
-            'StrategyAverageCpcPerCampaignUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyAverageCpcPerCampaignUpdateItem',
-            'StrategyAverageCpcPerFilterUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyAverageCpcPerFilterUpdateItem',
-            'StrategyAverageCrrUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyAverageCrrUpdateItem',
-            'StrategyPayForConversionCrrUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyPayForConversionCrrUpdateItem',
-            'StrategyAverageCpaMultipleGoalsUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyAverageCpaMultipleGoalsUpdateItem',
-            'StrategyPayForConversionMultipleGoalsUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyPayForConversionMultipleGoalsUpdateItem',
-            'StrategyUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\StrategyUpdateItem',
-            'AddRequest' => 'Biplane\YandexDirect\Api\V5\Contract\AddStrategiesRequest',
-            'AddResponse' => 'Biplane\YandexDirect\Api\V5\Contract\AddStrategiesResponse',
-            'GetResponse' => 'Biplane\YandexDirect\Api\V5\Contract\GetStrategiesResponse',
-            'UpdateRequest' => 'Biplane\YandexDirect\Api\V5\Contract\UpdateStrategiesRequest',
-            'UpdateResponse' => 'Biplane\YandexDirect\Api\V5\Contract\UpdateStrategiesResponse',
+            'GetResponseGeneral' => 'Biplane\YandexDirect\Api\V5\Contract\GetResponseGeneral',
             'ArchiveRequest' => 'Biplane\YandexDirect\Api\V5\Contract\ArchiveStrategiesRequest',
+            'IdsCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\IdsCriteria',
             'ArchiveResponse' => 'Biplane\YandexDirect\Api\V5\Contract\ArchiveStrategiesResponse',
             'UnarchiveRequest' => 'Biplane\YandexDirect\Api\V5\Contract\UnarchiveStrategiesRequest',
             'UnarchiveResponse' => 'Biplane\YandexDirect\Api\V5\Contract\UnarchiveStrategiesResponse',
         ];
-
         parent::__construct(self::ENDPOINT, $config, $options);
     }
 
+    /**
+     * Calls operation: add
+     */
     public function add(AddStrategiesRequest $parameters): AddStrategiesResponse
     {
         return $this->__soapCall('add', [$parameters]);
     }
 
+    /**
+     * Calls operation: update
+     */
     public function update(UpdateStrategiesRequest $parameters): UpdateStrategiesResponse
     {
         return $this->__soapCall('update', [$parameters]);
     }
 
+    /**
+     * Calls operation: get
+     */
     public function get(GetStrategiesRequest $parameters): GetStrategiesResponse
     {
         return $this->__soapCall('get', [$parameters]);
     }
 
+    /**
+     * Calls operation: archive
+     */
     public function archive(ArchiveStrategiesRequest $parameters): ArchiveStrategiesResponse
     {
         return $this->__soapCall('archive', [$parameters]);
     }
 
+    /**
+     * Calls operation: unarchive
+     */
     public function unarchive(UnarchiveStrategiesRequest $parameters): UnarchiveStrategiesResponse
     {
         return $this->__soapCall('unarchive', [$parameters]);

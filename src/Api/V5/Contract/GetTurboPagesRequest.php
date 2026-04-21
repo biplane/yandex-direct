@@ -13,19 +13,35 @@ use AllowDynamicProperties;
 class GetTurboPagesRequest extends GetRequestGeneral
 {
 //    Can be omitted.
-//    protected $SelectionCriteria = null;
+//    protected $SelectionCriteria;
 
-    protected $FieldNames = [];
+    /** @var non-empty-list<'Id'|'Name'|'Href'|'PreviewHref'|'TurboSiteHref'|'BoundWithHref'> */
+    protected $FieldNames;
 
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    /**
+     * Get SelectionCriteria
+     */
     public function getSelectionCriteria(): ?TurboPagesSelectionCriteria
     {
         return $this->SelectionCriteria ?? null;
     }
 
     /**
+     * Set SelectionCriteria
+     *
      * @return $this
      */
-    public function setSelectionCriteria(?TurboPagesSelectionCriteria $value = null)
+    public function setSelectionCriteria(?TurboPagesSelectionCriteria $value)
     {
         $this->SelectionCriteria = $value;
 
@@ -33,9 +49,11 @@ class GetTurboPagesRequest extends GetRequestGeneral
     }
 
     /**
-     * @see TurboPageFieldEnum
+     * Get FieldNames
      *
-     * @return string[]
+     * @see \Biplane\YandexDirect\Api\V5\Contract\TurboPageFieldEnum
+     *
+     * @return non-empty-list<'Id'|'Name'|'Href'|'PreviewHref'|'TurboSiteHref'|'BoundWithHref'>
      */
     public function getFieldNames(): array
     {
@@ -43,9 +61,11 @@ class GetTurboPagesRequest extends GetRequestGeneral
     }
 
     /**
-     * @see TurboPageFieldEnum
+     * Set FieldNames
      *
-     * @param string[] $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\TurboPageFieldEnum
+     *
+     * @param non-empty-list<'Id'|'Name'|'Href'|'PreviewHref'|'TurboSiteHref'|'BoundWithHref'> $value
      *
      * @return $this
      */

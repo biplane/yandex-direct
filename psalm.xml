@@ -45,6 +45,12 @@
         <referencedMethod name="PHPUnit\Framework\MockObject\MockBuilder::setMethods" />
       </errorLevel>
     </DeprecatedMethod>
+    <MissingConstructor>
+      <errorLevel type="suppress">
+        <directory name="src/Api/V4/Contract" />
+        <directory name="src/Api/V5/Contract" />
+      </errorLevel>
+    </MissingConstructor>
     <MissingPropertyType>
       <errorLevel type="suppress">
         <directory name="src/Api/V4/Contract" />

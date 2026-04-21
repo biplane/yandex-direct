@@ -12,13 +12,28 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class SmartCampaignNetworkStrategyAdd extends SmartCampaignStrategyAddBase
 {
-    protected $BiddingStrategyType = null;
+    /** @var 'NETWORK_DEFAULT'|'AVERAGE_CPC_PER_CAMPAIGN'|'AVERAGE_CPC_PER_FILTER'|'AVERAGE_CPA_PER_CAMPAIGN'|'AVERAGE_CPA_PER_FILTER'|'PAY_FOR_CONVERSION_PER_CAMPAIGN'|'PAY_FOR_CONVERSION_PER_FILTER'|'AVERAGE_ROI'|'AVERAGE_CRR'|'PAY_FOR_CONVERSION_CRR'|'SERVING_OFF'|'UNKNOWN' */
+    protected $BiddingStrategyType;
 
 //    Can be omitted.
-//    protected $NetworkDefault = null;
+//    protected $NetworkDefault;
 
     /**
-     * @see SmartCampaignNetworkStrategyTypeEnum
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    /**
+     * Get BiddingStrategyType
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\SmartCampaignNetworkStrategyTypeEnum
+     *
+     * @return 'NETWORK_DEFAULT'|'AVERAGE_CPC_PER_CAMPAIGN'|'AVERAGE_CPC_PER_FILTER'|'AVERAGE_CPA_PER_CAMPAIGN'|'AVERAGE_CPA_PER_FILTER'|'PAY_FOR_CONVERSION_PER_CAMPAIGN'|'PAY_FOR_CONVERSION_PER_FILTER'|'AVERAGE_ROI'|'AVERAGE_CRR'|'PAY_FOR_CONVERSION_CRR'|'SERVING_OFF'|'UNKNOWN'
      */
     public function getBiddingStrategyType(): string
     {
@@ -26,7 +41,11 @@ class SmartCampaignNetworkStrategyAdd extends SmartCampaignStrategyAddBase
     }
 
     /**
-     * @see SmartCampaignNetworkStrategyTypeEnum
+     * Set BiddingStrategyType
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\SmartCampaignNetworkStrategyTypeEnum
+     *
+     * @param 'NETWORK_DEFAULT'|'AVERAGE_CPC_PER_CAMPAIGN'|'AVERAGE_CPC_PER_FILTER'|'AVERAGE_CPA_PER_CAMPAIGN'|'AVERAGE_CPA_PER_FILTER'|'PAY_FOR_CONVERSION_PER_CAMPAIGN'|'PAY_FOR_CONVERSION_PER_FILTER'|'AVERAGE_ROI'|'AVERAGE_CRR'|'PAY_FOR_CONVERSION_CRR'|'SERVING_OFF'|'UNKNOWN' $value
      *
      * @return $this
      */
@@ -37,15 +56,20 @@ class SmartCampaignNetworkStrategyAdd extends SmartCampaignStrategyAddBase
         return $this;
     }
 
+    /**
+     * Get NetworkDefault
+     */
     public function getNetworkDefault(): ?StrategyNetworkDefaultAdd
     {
         return $this->NetworkDefault ?? null;
     }
 
     /**
+     * Set NetworkDefault
+     *
      * @return $this
      */
-    public function setNetworkDefault(?StrategyNetworkDefaultAdd $value = null)
+    public function setNetworkDefault(?StrategyNetworkDefaultAdd $value)
     {
         $this->NetworkDefault = $value;
 

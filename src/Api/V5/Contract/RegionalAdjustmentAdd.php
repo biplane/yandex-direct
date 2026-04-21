@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class RegionalAdjustmentAdd
 {
-    protected $RegionId = null;
+    /** @var int */
+    protected $RegionId;
 
-    protected $BidModifier = null;
+    /** @var int */
+    protected $BidModifier;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -24,12 +28,17 @@ class RegionalAdjustmentAdd
         return new static();
     }
 
+    /**
+     * Get RegionId
+     */
     public function getRegionId(): int
     {
         return $this->RegionId;
     }
 
     /**
+     * Set RegionId
+     *
      * @return $this
      */
     public function setRegionId(int $value)
@@ -39,12 +48,17 @@ class RegionalAdjustmentAdd
         return $this;
     }
 
+    /**
+     * Get BidModifier
+     */
     public function getBidModifier(): int
     {
         return $this->BidModifier;
     }
 
     /**
+     * Set BidModifier
+     *
      * @return $this
      */
     public function setBidModifier(int $value)

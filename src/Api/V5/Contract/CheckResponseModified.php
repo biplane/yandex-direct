@@ -13,18 +13,20 @@ use AllowDynamicProperties;
 class CheckResponseModified
 {
 //    Can be omitted.
-//    protected $CampaignIds = null;
+//    protected $CampaignIds;
 
 //    Can be omitted.
-//    protected $AdGroupIds = null;
+//    protected $AdGroupIds;
 
 //    Can be omitted.
-//    protected $AdIds = null;
+//    protected $AdIds;
 
 //    Can be omitted.
-//    protected $CampaignsStat = null;
+//    protected $CampaignsStat;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -33,19 +35,23 @@ class CheckResponseModified
     }
 
     /**
-     * @return int[]|null
+     * Get CampaignIds
+     *
+     * @return list<int>
      */
-    public function getCampaignIds(): ?array
+    public function getCampaignIds(): array
     {
-        return $this->CampaignIds ?? null;
+        return $this->CampaignIds ?? [];
     }
 
     /**
-     * @param int[]|null $value
+     * Set CampaignIds
+     *
+     * @param list<int> $value
      *
      * @return $this
      */
-    public function setCampaignIds(?array $value = null)
+    public function setCampaignIds(array $value)
     {
         $this->CampaignIds = $value;
 
@@ -53,19 +59,23 @@ class CheckResponseModified
     }
 
     /**
-     * @return int[]|null
+     * Get AdGroupIds
+     *
+     * @return list<int>
      */
-    public function getAdGroupIds(): ?array
+    public function getAdGroupIds(): array
     {
-        return $this->AdGroupIds ?? null;
+        return $this->AdGroupIds ?? [];
     }
 
     /**
-     * @param int[]|null $value
+     * Set AdGroupIds
+     *
+     * @param list<int> $value
      *
      * @return $this
      */
-    public function setAdGroupIds(?array $value = null)
+    public function setAdGroupIds(array $value)
     {
         $this->AdGroupIds = $value;
 
@@ -73,19 +83,23 @@ class CheckResponseModified
     }
 
     /**
-     * @return int[]|null
+     * Get AdIds
+     *
+     * @return list<int>
      */
-    public function getAdIds(): ?array
+    public function getAdIds(): array
     {
-        return $this->AdIds ?? null;
+        return $this->AdIds ?? [];
     }
 
     /**
-     * @param int[]|null $value
+     * Set AdIds
+     *
+     * @param list<int> $value
      *
      * @return $this
      */
-    public function setAdIds(?array $value = null)
+    public function setAdIds(array $value)
     {
         $this->AdIds = $value;
 
@@ -93,19 +107,23 @@ class CheckResponseModified
     }
 
     /**
-     * @return CampaignStatItem[]|null
+     * Get CampaignsStat
+     *
+     * @return list<CampaignStatItem>
      */
-    public function getCampaignsStat(): ?array
+    public function getCampaignsStat(): array
     {
-        return $this->CampaignsStat ?? null;
+        return $this->CampaignsStat ?? [];
     }
 
     /**
-     * @param CampaignStatItem[]|null $value
+     * Set CampaignsStat
+     *
+     * @param list<CampaignStatItem> $value
      *
      * @return $this
      */
-    public function setCampaignsStat(?array $value = null)
+    public function setCampaignsStat(array $value)
     {
         $this->CampaignsStat = $value;
 

@@ -12,9 +12,12 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class AdBuilderAdAddItem
 {
-    protected $CreativeId = null;
+    /** @var int */
+    protected $CreativeId;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -22,12 +25,17 @@ class AdBuilderAdAddItem
         return new static();
     }
 
+    /**
+     * Get CreativeId
+     */
     public function getCreativeId(): int
     {
         return $this->CreativeId;
     }
 
     /**
+     * Set CreativeId
+     *
      * @return $this
      */
     public function setCreativeId(int $value)

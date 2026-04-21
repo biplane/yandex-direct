@@ -13,12 +13,14 @@ use AllowDynamicProperties;
 class ActionResultBase
 {
 //    Can be omitted.
-//    protected $Warnings = null;
+//    protected $Warnings;
 
 //    Can be omitted.
-//    protected $Errors = null;
+//    protected $Errors;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -27,19 +29,23 @@ class ActionResultBase
     }
 
     /**
-     * @return ExceptionNotification[]|null
+     * Get Warnings
+     *
+     * @return list<ExceptionNotification>
      */
-    public function getWarnings(): ?array
+    public function getWarnings(): array
     {
-        return $this->Warnings ?? null;
+        return $this->Warnings ?? [];
     }
 
     /**
-     * @param ExceptionNotification[]|null $value
+     * Set Warnings
+     *
+     * @param list<ExceptionNotification> $value
      *
      * @return $this
      */
-    public function setWarnings(?array $value = null)
+    public function setWarnings(array $value)
     {
         $this->Warnings = $value;
 
@@ -47,19 +53,23 @@ class ActionResultBase
     }
 
     /**
-     * @return ExceptionNotification[]|null
+     * Get Errors
+     *
+     * @return list<ExceptionNotification>
      */
-    public function getErrors(): ?array
+    public function getErrors(): array
     {
-        return $this->Errors ?? null;
+        return $this->Errors ?? [];
     }
 
     /**
-     * @param ExceptionNotification[]|null $value
+     * Set Errors
+     *
+     * @param list<ExceptionNotification> $value
      *
      * @return $this
      */
-    public function setErrors(?array $value = null)
+    public function setErrors(array $value)
     {
         $this->Errors = $value;
 

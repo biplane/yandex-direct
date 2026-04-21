@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class NetworkCoverageItem
 {
-    protected $Probability = null;
+    /** @var float */
+    protected $Probability;
 
-    protected $Bid = null;
+    /** @var int */
+    protected $Bid;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -24,12 +28,17 @@ class NetworkCoverageItem
         return new static();
     }
 
+    /**
+     * Get Probability
+     */
     public function getProbability(): float
     {
         return $this->Probability;
     }
 
     /**
+     * Set Probability
+     *
      * @return $this
      */
     public function setProbability(float $value)
@@ -39,12 +48,17 @@ class NetworkCoverageItem
         return $this;
     }
 
+    /**
+     * Get Bid
+     */
     public function getBid(): int
     {
         return $this->Bid;
     }
 
     /**
+     * Set Bid
+     *
      * @return $this
      */
     public function setBid(int $value)

@@ -13,12 +13,14 @@ use AllowDynamicProperties;
 class SmartCampaignStrategy
 {
 //    Can be omitted.
-//    protected $Search = null;
+//    protected $Search;
 
 //    Can be omitted.
-//    protected $Network = null;
+//    protected $Network;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -26,30 +28,40 @@ class SmartCampaignStrategy
         return new static();
     }
 
+    /**
+     * Get Search
+     */
     public function getSearch(): ?SmartCampaignSearchStrategy
     {
         return $this->Search ?? null;
     }
 
     /**
+     * Set Search
+     *
      * @return $this
      */
-    public function setSearch(?SmartCampaignSearchStrategy $value = null)
+    public function setSearch(?SmartCampaignSearchStrategy $value)
     {
         $this->Search = $value;
 
         return $this;
     }
 
+    /**
+     * Get Network
+     */
     public function getNetwork(): ?SmartCampaignNetworkStrategy
     {
         return $this->Network ?? null;
     }
 
     /**
+     * Set Network
+     *
      * @return $this
      */
-    public function setNetwork(?SmartCampaignNetworkStrategy $value = null)
+    public function setNetwork(?SmartCampaignNetworkStrategy $value)
     {
         $this->Network = $value;
 

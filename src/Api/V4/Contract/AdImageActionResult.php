@@ -12,15 +12,21 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class AdImageActionResult
 {
-    protected $Warnings = null;
+//    Can be omitted.
+//    protected $Warnings;
 
-    protected $Errors = null;
+//    Can be omitted.
+//    protected $Errors;
 
+    /** @var int|null */
     protected $AdImageUploadTaskID = null;
 
+    /** @var string|null */
     protected $AdImageHash = null;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -29,19 +35,23 @@ class AdImageActionResult
     }
 
     /**
-     * @return Warning[]|null
+     * Get Warnings
+     *
+     * @return list<Warning>|null
      */
     public function getWarnings(): ?array
     {
-        return $this->Warnings;
+        return $this->Warnings ?? null;
     }
 
     /**
-     * @param Warning[]|null $value
+     * Set Warnings
+     *
+     * @param list<Warning>|null $value
      *
      * @return $this
      */
-    public function setWarnings(?array $value = null)
+    public function setWarnings(?array $value)
     {
         $this->Warnings = $value;
 
@@ -49,49 +59,63 @@ class AdImageActionResult
     }
 
     /**
-     * @return Error[]|null
+     * Get Errors
+     *
+     * @return list<Error>|null
      */
     public function getErrors(): ?array
     {
-        return $this->Errors;
+        return $this->Errors ?? null;
     }
 
     /**
-     * @param Error[]|null $value
+     * Set Errors
+     *
+     * @param list<Error>|null $value
      *
      * @return $this
      */
-    public function setErrors(?array $value = null)
+    public function setErrors(?array $value)
     {
         $this->Errors = $value;
 
         return $this;
     }
 
+    /**
+     * Get AdImageUploadTaskID
+     */
     public function getAdImageUploadTaskID(): ?int
     {
         return $this->AdImageUploadTaskID;
     }
 
     /**
+     * Set AdImageUploadTaskID
+     *
      * @return $this
      */
-    public function setAdImageUploadTaskID(?int $value = null)
+    public function setAdImageUploadTaskID(?int $value)
     {
         $this->AdImageUploadTaskID = $value;
 
         return $this;
     }
 
+    /**
+     * Get AdImageHash
+     */
     public function getAdImageHash(): ?string
     {
         return $this->AdImageHash;
     }
 
     /**
+     * Set AdImageHash
+     *
      * @return $this
      */
-    public function setAdImageHash(?string $value = null)
+    public function setAdImageHash(?string $value)
     {
         $this->AdImageHash = $value;
 

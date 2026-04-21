@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class StrategyDecreasedPriceForRepeatedImpressionsAddBase
 {
-    protected $AverageCpm = null;
+    /** @var int */
+    protected $AverageCpm;
 
-    protected $SpendLimit = null;
+    /** @var int */
+    protected $SpendLimit;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -24,12 +28,17 @@ class StrategyDecreasedPriceForRepeatedImpressionsAddBase
         return new static();
     }
 
+    /**
+     * Get AverageCpm
+     */
     public function getAverageCpm(): int
     {
         return $this->AverageCpm;
     }
 
     /**
+     * Set AverageCpm
+     *
      * @return $this
      */
     public function setAverageCpm(int $value)
@@ -39,12 +48,17 @@ class StrategyDecreasedPriceForRepeatedImpressionsAddBase
         return $this;
     }
 
+    /**
+     * Get SpendLimit
+     */
     public function getSpendLimit(): int
     {
         return $this->SpendLimit;
     }
 
     /**
+     * Set SpendLimit
+     *
      * @return $this
      */
     public function setSpendLimit(int $value)

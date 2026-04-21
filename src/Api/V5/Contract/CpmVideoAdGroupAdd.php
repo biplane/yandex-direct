@@ -13,6 +13,8 @@ use AllowDynamicProperties;
 class CpmVideoAdGroupAdd
 {
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()

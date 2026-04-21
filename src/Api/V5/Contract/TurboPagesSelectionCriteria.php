@@ -13,12 +13,14 @@ use AllowDynamicProperties;
 class TurboPagesSelectionCriteria
 {
 //    Can be omitted.
-//    protected $Ids = null;
+//    protected $Ids;
 
 //    Can be omitted.
-//    protected $BoundWithHrefs = null;
+//    protected $BoundWithHrefs;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -27,19 +29,23 @@ class TurboPagesSelectionCriteria
     }
 
     /**
-     * @return int[]|null
+     * Get Ids
+     *
+     * @return list<int>
      */
-    public function getIds(): ?array
+    public function getIds(): array
     {
-        return $this->Ids ?? null;
+        return $this->Ids ?? [];
     }
 
     /**
-     * @param int[]|null $value
+     * Set Ids
+     *
+     * @param list<int> $value
      *
      * @return $this
      */
-    public function setIds(?array $value = null)
+    public function setIds(array $value)
     {
         $this->Ids = $value;
 
@@ -47,19 +53,23 @@ class TurboPagesSelectionCriteria
     }
 
     /**
-     * @return string[]|null
+     * Get BoundWithHrefs
+     *
+     * @return list<string>
      */
-    public function getBoundWithHrefs(): ?array
+    public function getBoundWithHrefs(): array
     {
-        return $this->BoundWithHrefs ?? null;
+        return $this->BoundWithHrefs ?? [];
     }
 
     /**
-     * @param string[]|null $value
+     * Set BoundWithHrefs
+     *
+     * @param list<string> $value
      *
      * @return $this
      */
-    public function setBoundWithHrefs(?array $value = null)
+    public function setBoundWithHrefs(array $value)
     {
         $this->BoundWithHrefs = $value;
 

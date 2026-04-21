@@ -13,12 +13,14 @@ use AllowDynamicProperties;
 class AgencyClientsSelectionCriteria
 {
 //    Can be omitted.
-//    protected $Logins = null;
+//    protected $Logins;
 
 //    Can be omitted.
-//    protected $Archived = null;
+//    protected $Archived;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -27,19 +29,23 @@ class AgencyClientsSelectionCriteria
     }
 
     /**
-     * @return string[]|null
+     * Get Logins
+     *
+     * @return list<string>
      */
-    public function getLogins(): ?array
+    public function getLogins(): array
     {
-        return $this->Logins ?? null;
+        return $this->Logins ?? [];
     }
 
     /**
-     * @param string[]|null $value
+     * Set Logins
+     *
+     * @param list<string> $value
      *
      * @return $this
      */
-    public function setLogins(?array $value = null)
+    public function setLogins(array $value)
     {
         $this->Logins = $value;
 
@@ -47,7 +53,11 @@ class AgencyClientsSelectionCriteria
     }
 
     /**
-     * @see YesNoEnum
+     * Get Archived
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'|null
      */
     public function getArchived(): ?string
     {
@@ -55,11 +65,15 @@ class AgencyClientsSelectionCriteria
     }
 
     /**
-     * @see YesNoEnum
+     * Set Archived
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO'|null $value
      *
      * @return $this
      */
-    public function setArchived(?string $value = null)
+    public function setArchived(?string $value)
     {
         $this->Archived = $value;
 

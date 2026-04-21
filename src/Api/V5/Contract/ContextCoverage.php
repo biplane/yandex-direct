@@ -5,17 +5,27 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 use AllowDynamicProperties;
+use ArrayIterator;
+use Countable;
+use IteratorAggregate;
+use Override;
+
+use function count;
 
 /**
  * Auto-generated code.
+ *
+ * @implements IteratorAggregate<int, ContextCoverageItem>
  */
 #[AllowDynamicProperties]
-class ContextCoverage
+class ContextCoverage implements IteratorAggregate, Countable
 {
 //    Can be omitted.
-//    protected $Items = null;
+//    protected $Items;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -24,22 +34,41 @@ class ContextCoverage
     }
 
     /**
-     * @return ContextCoverageItem[]|null
+     * Get Items
+     *
+     * @return list<ContextCoverageItem>
      */
-    public function getItems(): ?array
+    public function getItems(): array
     {
-        return $this->Items ?? null;
+        return $this->Items ?? [];
     }
 
     /**
-     * @param ContextCoverageItem[]|null $value
+     * Set Items
+     *
+     * @param list<ContextCoverageItem> $value
      *
      * @return $this
      */
-    public function setItems(?array $value = null)
+    public function setItems(array $value)
     {
         $this->Items = $value;
 
         return $this;
+    }
+
+    #[Override]
+    public function count(): int
+    {
+        return isset($this->Items) ? count($this->Items) : 0;
+    }
+
+    /**
+     * @return ArrayIterator<int, ContextCoverageItem>
+     */
+    #[Override]
+    public function getIterator(): ArrayIterator
+    {
+        return new ArrayIterator($this->Items ?? []);
     }
 }

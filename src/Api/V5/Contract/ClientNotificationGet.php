@@ -12,14 +12,30 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class ClientNotificationGet extends ClientNotification
 {
-    protected $SmsPhoneNumber = null;
+    /** @var string */
+    protected $SmsPhoneNumber;
 
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    /**
+     * Get SmsPhoneNumber
+     */
     public function getSmsPhoneNumber(): string
     {
         return $this->SmsPhoneNumber;
     }
 
     /**
+     * Set SmsPhoneNumber
+     *
      * @return $this
      */
     public function setSmsPhoneNumber(string $value)

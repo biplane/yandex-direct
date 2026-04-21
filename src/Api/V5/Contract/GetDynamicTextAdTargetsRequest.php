@@ -12,16 +12,33 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class GetDynamicTextAdTargetsRequest extends GetRequestGeneral
 {
-    protected $SelectionCriteria = null;
+    /** @var AdTargetsSelectionCriteria */
+    protected $SelectionCriteria;
 
-    protected $FieldNames = [];
+    /** @var non-empty-list<'AdGroupId'|'Bid'|'CampaignId'|'Conditions'|'ConditionType'|'ContextBid'|'Id'|'Name'|'State'|'StatusClarification'|'StrategyPriority'> */
+    protected $FieldNames;
 
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    /**
+     * Get SelectionCriteria
+     */
     public function getSelectionCriteria(): AdTargetsSelectionCriteria
     {
         return $this->SelectionCriteria;
     }
 
     /**
+     * Set SelectionCriteria
+     *
      * @return $this
      */
     public function setSelectionCriteria(AdTargetsSelectionCriteria $value)
@@ -32,9 +49,11 @@ class GetDynamicTextAdTargetsRequest extends GetRequestGeneral
     }
 
     /**
-     * @see WebpageFieldEnum
+     * Get FieldNames
      *
-     * @return string[]
+     * @see \Biplane\YandexDirect\Api\V5\Contract\WebpageFieldEnum
+     *
+     * @return non-empty-list<'AdGroupId'|'Bid'|'CampaignId'|'Conditions'|'ConditionType'|'ContextBid'|'Id'|'Name'|'State'|'StatusClarification'|'StrategyPriority'>
      */
     public function getFieldNames(): array
     {
@@ -42,9 +61,11 @@ class GetDynamicTextAdTargetsRequest extends GetRequestGeneral
     }
 
     /**
-     * @see WebpageFieldEnum
+     * Set FieldNames
      *
-     * @param string[] $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\WebpageFieldEnum
+     *
+     * @param non-empty-list<'AdGroupId'|'Bid'|'CampaignId'|'Conditions'|'ConditionType'|'ContextBid'|'Id'|'Name'|'State'|'StatusClarification'|'StrategyPriority'> $value
      *
      * @return $this
      */

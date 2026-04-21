@@ -13,18 +13,20 @@ use AllowDynamicProperties;
 class DeduplicateResponse
 {
 //    Can be omitted.
-//    protected $Add = null;
+//    protected $Add;
 
 //    Can be omitted.
-//    protected $Update = null;
+//    protected $Update;
 
 //    Can be omitted.
-//    protected $Delete = null;
+//    protected $Delete;
 
 //    Can be omitted.
-//    protected $Failure = null;
+//    protected $Failure;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -33,19 +35,23 @@ class DeduplicateResponse
     }
 
     /**
-     * @return DeduplicateResponseAddItem[]|null
+     * Get Add
+     *
+     * @return list<DeduplicateResponseAddItem>
      */
-    public function getAdd(): ?array
+    public function getAdd(): array
     {
-        return $this->Add ?? null;
+        return $this->Add ?? [];
     }
 
     /**
-     * @param DeduplicateResponseAddItem[]|null $value
+     * Set Add
+     *
+     * @param list<DeduplicateResponseAddItem> $value
      *
      * @return $this
      */
-    public function setAdd(?array $value = null)
+    public function setAdd(array $value)
     {
         $this->Add = $value;
 
@@ -53,34 +59,43 @@ class DeduplicateResponse
     }
 
     /**
-     * @return DeduplicateResponseUpdateItem[]|null
+     * Get Update
+     *
+     * @return list<DeduplicateResponseUpdateItem>
      */
-    public function getUpdate(): ?array
+    public function getUpdate(): array
     {
-        return $this->Update ?? null;
+        return $this->Update ?? [];
     }
 
     /**
-     * @param DeduplicateResponseUpdateItem[]|null $value
+     * Set Update
+     *
+     * @param list<DeduplicateResponseUpdateItem> $value
      *
      * @return $this
      */
-    public function setUpdate(?array $value = null)
+    public function setUpdate(array $value)
     {
         $this->Update = $value;
 
         return $this;
     }
 
+    /**
+     * Get Delete
+     */
     public function getDelete(): ?IdsCriteria
     {
         return $this->Delete ?? null;
     }
 
     /**
+     * Set Delete
+     *
      * @return $this
      */
-    public function setDelete(?IdsCriteria $value = null)
+    public function setDelete(?IdsCriteria $value)
     {
         $this->Delete = $value;
 
@@ -88,19 +103,23 @@ class DeduplicateResponse
     }
 
     /**
-     * @return DeduplicateErrorItem[]|null
+     * Get Failure
+     *
+     * @return list<DeduplicateErrorItem>
      */
-    public function getFailure(): ?array
+    public function getFailure(): array
     {
-        return $this->Failure ?? null;
+        return $this->Failure ?? [];
     }
 
     /**
-     * @param DeduplicateErrorItem[]|null $value
+     * Set Failure
+     *
+     * @param list<DeduplicateErrorItem> $value
      *
      * @return $this
      */
-    public function setFailure(?array $value = null)
+    public function setFailure(array $value)
     {
         $this->Failure = $value;
 

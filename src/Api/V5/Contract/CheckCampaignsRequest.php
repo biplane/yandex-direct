@@ -12,9 +12,12 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class CheckCampaignsRequest
 {
-    protected $Timestamp = null;
+    /** @var string */
+    protected $Timestamp;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -22,12 +25,17 @@ class CheckCampaignsRequest
         return new static();
     }
 
+    /**
+     * Get Timestamp
+     */
     public function getTimestamp(): string
     {
         return $this->Timestamp;
     }
 
     /**
+     * Set Timestamp
+     *
      * @return $this
      */
     public function setTimestamp(string $value)

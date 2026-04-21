@@ -13,17 +13,32 @@ use AllowDynamicProperties;
 class TimeTargetingAdd extends TimeTargetingBase
 {
 //    Can be omitted.
-//    protected $HolidaysSchedule = null;
+//    protected $HolidaysSchedule;
 
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    /**
+     * Get HolidaysSchedule
+     */
     public function getHolidaysSchedule(): ?TimeTargetingOnPublicHolidays
     {
         return $this->HolidaysSchedule ?? null;
     }
 
     /**
+     * Set HolidaysSchedule
+     *
      * @return $this
      */
-    public function setHolidaysSchedule(?TimeTargetingOnPublicHolidays $value = null)
+    public function setHolidaysSchedule(?TimeTargetingOnPublicHolidays $value)
     {
         $this->HolidaysSchedule = $value;
 

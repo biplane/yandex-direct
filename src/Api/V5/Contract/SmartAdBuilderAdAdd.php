@@ -13,9 +13,11 @@ use AllowDynamicProperties;
 class SmartAdBuilderAdAdd
 {
 //    Can be omitted.
-//    protected $LogoExtensionHash = null;
+//    protected $LogoExtensionHash;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -23,15 +25,20 @@ class SmartAdBuilderAdAdd
         return new static();
     }
 
+    /**
+     * Get LogoExtensionHash
+     */
     public function getLogoExtensionHash(): ?string
     {
         return $this->LogoExtensionHash ?? null;
     }
 
     /**
+     * Set LogoExtensionHash
+     *
      * @return $this
      */
-    public function setLogoExtensionHash(?string $value = null)
+    public function setLogoExtensionHash(?string $value)
     {
         $this->LogoExtensionHash = $value;
 

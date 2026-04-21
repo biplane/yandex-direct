@@ -13,12 +13,14 @@ use AllowDynamicProperties;
 class SendInviteTo
 {
 //    Can be omitted.
-//    protected $Phone = null;
+//    protected $Phone;
 
 //    Can be omitted.
-//    protected $Email = null;
+//    protected $Email;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -26,30 +28,40 @@ class SendInviteTo
         return new static();
     }
 
+    /**
+     * Get Phone
+     */
     public function getPhone(): ?string
     {
         return $this->Phone ?? null;
     }
 
     /**
+     * Set Phone
+     *
      * @return $this
      */
-    public function setPhone(?string $value = null)
+    public function setPhone(?string $value)
     {
         $this->Phone = $value;
 
         return $this;
     }
 
+    /**
+     * Get Email
+     */
     public function getEmail(): ?string
     {
         return $this->Email ?? null;
     }
 
     /**
+     * Set Email
+     *
      * @return $this
      */
-    public function setEmail(?string $value = null)
+    public function setEmail(?string $value)
     {
         $this->Email = $value;
 

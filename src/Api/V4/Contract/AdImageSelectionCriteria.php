@@ -12,19 +12,27 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class AdImageSelectionCriteria
 {
-    protected $Logins = null;
+//    Can be omitted.
+//    protected $Logins;
 
-    protected $AdImageHashes = null;
+//    Can be omitted.
+//    protected $AdImageHashes;
 
-    protected $AdImageUploadTaskIDS = null;
+//    Can be omitted.
+//    protected $AdImageUploadTaskIDS;
 
-    protected $Assigned = null;
+//    Can be omitted.
+//    protected $Assigned;
 
+    /** @var int|null */
     protected $Limit = null;
 
+    /** @var int|null */
     protected $Offset = null;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -33,19 +41,23 @@ class AdImageSelectionCriteria
     }
 
     /**
-     * @return string[]|null
+     * Get Logins
+     *
+     * @return list<string>|null
      */
     public function getLogins(): ?array
     {
-        return $this->Logins;
+        return $this->Logins ?? null;
     }
 
     /**
-     * @param string[]|null $value
+     * Set Logins
+     *
+     * @param list<string>|null $value
      *
      * @return $this
      */
-    public function setLogins(?array $value = null)
+    public function setLogins(?array $value)
     {
         $this->Logins = $value;
 
@@ -53,19 +65,23 @@ class AdImageSelectionCriteria
     }
 
     /**
-     * @return string[]|null
+     * Get AdImageHashes
+     *
+     * @return list<string>|null
      */
     public function getAdImageHashes(): ?array
     {
-        return $this->AdImageHashes;
+        return $this->AdImageHashes ?? null;
     }
 
     /**
-     * @param string[]|null $value
+     * Set AdImageHashes
+     *
+     * @param list<string>|null $value
      *
      * @return $this
      */
-    public function setAdImageHashes(?array $value = null)
+    public function setAdImageHashes(?array $value)
     {
         $this->AdImageHashes = $value;
 
@@ -73,19 +89,23 @@ class AdImageSelectionCriteria
     }
 
     /**
-     * @return int[]|null
+     * Get AdImageUploadTaskIDS
+     *
+     * @return list<int>|null
      */
     public function getAdImageUploadTaskIDS(): ?array
     {
-        return $this->AdImageUploadTaskIDS;
+        return $this->AdImageUploadTaskIDS ?? null;
     }
 
     /**
-     * @param int[]|null $value
+     * Set AdImageUploadTaskIDS
+     *
+     * @param list<int>|null $value
      *
      * @return $this
      */
-    public function setAdImageUploadTaskIDS(?array $value = null)
+    public function setAdImageUploadTaskIDS(?array $value)
     {
         $this->AdImageUploadTaskIDS = $value;
 
@@ -93,49 +113,63 @@ class AdImageSelectionCriteria
     }
 
     /**
-     * @return string[]|null
+     * Get Assigned
+     *
+     * @return list<string>|null
      */
     public function getAssigned(): ?array
     {
-        return $this->Assigned;
+        return $this->Assigned ?? null;
     }
 
     /**
-     * @param string[]|null $value
+     * Set Assigned
+     *
+     * @param list<string>|null $value
      *
      * @return $this
      */
-    public function setAssigned(?array $value = null)
+    public function setAssigned(?array $value)
     {
         $this->Assigned = $value;
 
         return $this;
     }
 
+    /**
+     * Get Limit
+     */
     public function getLimit(): ?int
     {
         return $this->Limit;
     }
 
     /**
+     * Set Limit
+     *
      * @return $this
      */
-    public function setLimit(?int $value = null)
+    public function setLimit(?int $value)
     {
         $this->Limit = $value;
 
         return $this;
     }
 
+    /**
+     * Get Offset
+     */
     public function getOffset(): ?int
     {
         return $this->Offset;
     }
 
     /**
+     * Set Offset
+     *
      * @return $this
      */
-    public function setOffset(?int $value = null)
+    public function setOffset(?int $value)
     {
         $this->Offset = $value;
 

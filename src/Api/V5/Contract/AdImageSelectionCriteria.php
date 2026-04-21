@@ -13,12 +13,14 @@ use AllowDynamicProperties;
 class AdImageSelectionCriteria
 {
 //    Can be omitted.
-//    protected $AdImageHashes = null;
+//    protected $AdImageHashes;
 
 //    Can be omitted.
-//    protected $Associated = null;
+//    protected $Associated;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -27,19 +29,23 @@ class AdImageSelectionCriteria
     }
 
     /**
-     * @return string[]|null
+     * Get AdImageHashes
+     *
+     * @return list<string>
      */
-    public function getAdImageHashes(): ?array
+    public function getAdImageHashes(): array
     {
-        return $this->AdImageHashes ?? null;
+        return $this->AdImageHashes ?? [];
     }
 
     /**
-     * @param string[]|null $value
+     * Set AdImageHashes
+     *
+     * @param list<string> $value
      *
      * @return $this
      */
-    public function setAdImageHashes(?array $value = null)
+    public function setAdImageHashes(array $value)
     {
         $this->AdImageHashes = $value;
 
@@ -47,7 +53,11 @@ class AdImageSelectionCriteria
     }
 
     /**
-     * @see YesNoEnum
+     * Get Associated
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @return 'YES'|'NO'|null
      */
     public function getAssociated(): ?string
     {
@@ -55,11 +65,15 @@ class AdImageSelectionCriteria
     }
 
     /**
-     * @see YesNoEnum
+     * Set Associated
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\YesNoEnum
+     *
+     * @param 'YES'|'NO'|null $value
      *
      * @return $this
      */
-    public function setAssociated(?string $value = null)
+    public function setAssociated(?string $value)
     {
         $this->Associated = $value;
 

@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class FileFeedAdd
 {
-    protected $Data = null;
+    /** @var string */
+    protected $Data;
 
-    protected $Filename = null;
+    /** @var string */
+    protected $Filename;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -24,12 +28,17 @@ class FileFeedAdd
         return new static();
     }
 
+    /**
+     * Get Data
+     */
     public function getData(): string
     {
         return $this->Data;
     }
 
     /**
+     * Set Data
+     *
      * @return $this
      */
     public function setData(string $value)
@@ -39,12 +48,17 @@ class FileFeedAdd
         return $this;
     }
 
+    /**
+     * Get Filename
+     */
     public function getFilename(): string
     {
         return $this->Filename;
     }
 
     /**
+     * Set Filename
+     *
      * @return $this
      */
     public function setFilename(string $value)

@@ -12,22 +12,39 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class GetKeywordsRequest extends GetRequestGeneral
 {
-    protected $SelectionCriteria = null;
+    /** @var KeywordsSelectionCriteria */
+    protected $SelectionCriteria;
 
-    protected $FieldNames = [];
+    /** @var non-empty-list<'Id'|'Keyword'|'State'|'Status'|'AdGroupId'|'CampaignId'|'Bid'|'AutotargetingSearchBidIsAuto'|'ContextBid'|'StrategyPriority'|'UserParam1'|'UserParam2'|'Productivity'|'StatisticsSearch'|'StatisticsNetwork'|'ServingStatus'|'AutotargetingCategories'|'AutotargetingBrandOptions'> */
+    protected $FieldNames;
 
 //    Can be omitted.
-//    protected $AutotargetingSettingsCategoriesFieldNames = null;
+//    protected $AutotargetingSettingsCategoriesFieldNames;
 
 //    Can be omitted.
-//    protected $AutotargetingSettingsBrandOptionsFieldNames = null;
+//    protected $AutotargetingSettingsBrandOptionsFieldNames;
 
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    /**
+     * Get SelectionCriteria
+     */
     public function getSelectionCriteria(): KeywordsSelectionCriteria
     {
         return $this->SelectionCriteria;
     }
 
     /**
+     * Set SelectionCriteria
+     *
      * @return $this
      */
     public function setSelectionCriteria(KeywordsSelectionCriteria $value)
@@ -38,9 +55,11 @@ class GetKeywordsRequest extends GetRequestGeneral
     }
 
     /**
-     * @see KeywordFieldEnum
+     * Get FieldNames
      *
-     * @return string[]
+     * @see \Biplane\YandexDirect\Api\V5\Contract\KeywordFieldEnum
+     *
+     * @return non-empty-list<'Id'|'Keyword'|'State'|'Status'|'AdGroupId'|'CampaignId'|'Bid'|'AutotargetingSearchBidIsAuto'|'ContextBid'|'StrategyPriority'|'UserParam1'|'UserParam2'|'Productivity'|'StatisticsSearch'|'StatisticsNetwork'|'ServingStatus'|'AutotargetingCategories'|'AutotargetingBrandOptions'>
      */
     public function getFieldNames(): array
     {
@@ -48,9 +67,11 @@ class GetKeywordsRequest extends GetRequestGeneral
     }
 
     /**
-     * @see KeywordFieldEnum
+     * Set FieldNames
      *
-     * @param string[] $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\KeywordFieldEnum
+     *
+     * @param non-empty-list<'Id'|'Keyword'|'State'|'Status'|'AdGroupId'|'CampaignId'|'Bid'|'AutotargetingSearchBidIsAuto'|'ContextBid'|'StrategyPriority'|'UserParam1'|'UserParam2'|'Productivity'|'StatisticsSearch'|'StatisticsNetwork'|'ServingStatus'|'AutotargetingCategories'|'AutotargetingBrandOptions'> $value
      *
      * @return $this
      */
@@ -62,23 +83,27 @@ class GetKeywordsRequest extends GetRequestGeneral
     }
 
     /**
-     * @see AutotargetingCategoriesFieldEnum
+     * Get AutotargetingSettingsCategoriesFieldNames
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategoriesFieldEnum
+     *
+     * @return list<'Exact'|'Narrow'|'Alternative'|'Accessory'|'Broader'>
      */
-    public function getAutotargetingSettingsCategoriesFieldNames(): ?array
+    public function getAutotargetingSettingsCategoriesFieldNames(): array
     {
-        return $this->AutotargetingSettingsCategoriesFieldNames ?? null;
+        return $this->AutotargetingSettingsCategoriesFieldNames ?? [];
     }
 
     /**
-     * @see AutotargetingCategoriesFieldEnum
+     * Set AutotargetingSettingsCategoriesFieldNames
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategoriesFieldEnum
+     *
+     * @param list<'Exact'|'Narrow'|'Alternative'|'Accessory'|'Broader'> $value
      *
      * @return $this
      */
-    public function setAutotargetingSettingsCategoriesFieldNames(?array $value = null)
+    public function setAutotargetingSettingsCategoriesFieldNames(array $value)
     {
         $this->AutotargetingSettingsCategoriesFieldNames = $value;
 
@@ -86,23 +111,27 @@ class GetKeywordsRequest extends GetRequestGeneral
     }
 
     /**
-     * @see AutotargetingBrandOptionsFieldEnum
+     * Get AutotargetingSettingsBrandOptionsFieldNames
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\AutotargetingBrandOptionsFieldEnum
+     *
+     * @return list<'WithoutBrands'|'WithAdvertiserBrand'|'WithCompetitorsBrand'>
      */
-    public function getAutotargetingSettingsBrandOptionsFieldNames(): ?array
+    public function getAutotargetingSettingsBrandOptionsFieldNames(): array
     {
-        return $this->AutotargetingSettingsBrandOptionsFieldNames ?? null;
+        return $this->AutotargetingSettingsBrandOptionsFieldNames ?? [];
     }
 
     /**
-     * @see AutotargetingBrandOptionsFieldEnum
+     * Set AutotargetingSettingsBrandOptionsFieldNames
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\AutotargetingBrandOptionsFieldEnum
+     *
+     * @param list<'WithoutBrands'|'WithAdvertiserBrand'|'WithCompetitorsBrand'> $value
      *
      * @return $this
      */
-    public function setAutotargetingSettingsBrandOptionsFieldNames(?array $value = null)
+    public function setAutotargetingSettingsBrandOptionsFieldNames(array $value)
     {
         $this->AutotargetingSettingsBrandOptionsFieldNames = $value;
 

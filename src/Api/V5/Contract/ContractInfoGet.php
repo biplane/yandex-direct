@@ -13,17 +13,32 @@ use AllowDynamicProperties;
 class ContractInfoGet extends ContractBaseInfo
 {
 //    Can be omitted.
-//    protected $Price = null;
+//    protected $Price;
 
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    /**
+     * Get Price
+     */
     public function getPrice(): ?ContractPrice
     {
         return $this->Price ?? null;
     }
 
     /**
+     * Set Price
+     *
      * @return $this
      */
-    public function setPrice(?ContractPrice $value = null)
+    public function setPrice(?ContractPrice $value)
     {
         $this->Price = $value;
 

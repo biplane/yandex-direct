@@ -12,16 +12,33 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class GetGeoRegionsRequest extends GetRequestGeneral
 {
-    protected $SelectionCriteria = null;
+    /** @var GeoRegionsSelectionCriteria */
+    protected $SelectionCriteria;
 
-    protected $FieldNames = [];
+    /** @var non-empty-list<'GeoRegionId'|'GeoRegionName'|'ParentGeoRegionNames'> */
+    protected $FieldNames;
 
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    /**
+     * Get SelectionCriteria
+     */
     public function getSelectionCriteria(): GeoRegionsSelectionCriteria
     {
         return $this->SelectionCriteria;
     }
 
     /**
+     * Set SelectionCriteria
+     *
      * @return $this
      */
     public function setSelectionCriteria(GeoRegionsSelectionCriteria $value)
@@ -32,9 +49,11 @@ class GetGeoRegionsRequest extends GetRequestGeneral
     }
 
     /**
-     * @see GeoRegionFieldEnum
+     * Get FieldNames
      *
-     * @return string[]
+     * @see \Biplane\YandexDirect\Api\V5\Contract\GeoRegionFieldEnum
+     *
+     * @return non-empty-list<'GeoRegionId'|'GeoRegionName'|'ParentGeoRegionNames'>
      */
     public function getFieldNames(): array
     {
@@ -42,9 +61,11 @@ class GetGeoRegionsRequest extends GetRequestGeneral
     }
 
     /**
-     * @see GeoRegionFieldEnum
+     * Set FieldNames
      *
-     * @param string[] $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\GeoRegionFieldEnum
+     *
+     * @param non-empty-list<'GeoRegionId'|'GeoRegionName'|'ParentGeoRegionNames'> $value
      *
      * @return $this
      */

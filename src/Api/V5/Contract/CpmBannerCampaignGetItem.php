@@ -13,23 +13,38 @@ use AllowDynamicProperties;
 class CpmBannerCampaignGetItem extends CpmBannerCampaignBase
 {
 //    Can be omitted.
-//    protected $BiddingStrategy = null;
+//    protected $BiddingStrategy;
 
 //    Can be omitted.
-//    protected $Settings = null;
+//    protected $Settings;
 
 //    Can be omitted.
-//    protected $VideoTarget = null;
+//    protected $VideoTarget;
 
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    /**
+     * Get BiddingStrategy
+     */
     public function getBiddingStrategy(): ?CpmBannerCampaignStrategy
     {
         return $this->BiddingStrategy ?? null;
     }
 
     /**
+     * Set BiddingStrategy
+     *
      * @return $this
      */
-    public function setBiddingStrategy(?CpmBannerCampaignStrategy $value = null)
+    public function setBiddingStrategy(?CpmBannerCampaignStrategy $value)
     {
         $this->BiddingStrategy = $value;
 
@@ -37,19 +52,23 @@ class CpmBannerCampaignGetItem extends CpmBannerCampaignBase
     }
 
     /**
-     * @return CpmBannerCampaignSettingGet[]|null
+     * Get Settings
+     *
+     * @return list<CpmBannerCampaignSettingGet>
      */
-    public function getSettings(): ?array
+    public function getSettings(): array
     {
-        return $this->Settings ?? null;
+        return $this->Settings ?? [];
     }
 
     /**
-     * @param CpmBannerCampaignSettingGet[]|null $value
+     * Set Settings
+     *
+     * @param list<CpmBannerCampaignSettingGet> $value
      *
      * @return $this
      */
-    public function setSettings(?array $value = null)
+    public function setSettings(array $value)
     {
         $this->Settings = $value;
 
@@ -57,7 +76,11 @@ class CpmBannerCampaignGetItem extends CpmBannerCampaignBase
     }
 
     /**
-     * @see VideoTargetEnum
+     * Get VideoTarget
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\VideoTargetEnum
+     *
+     * @return 'VIEWS'|'CLICKS'|null
      */
     public function getVideoTarget(): ?string
     {
@@ -65,11 +88,15 @@ class CpmBannerCampaignGetItem extends CpmBannerCampaignBase
     }
 
     /**
-     * @see VideoTargetEnum
+     * Set VideoTarget
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\VideoTargetEnum
+     *
+     * @param 'VIEWS'|'CLICKS'|null $value
      *
      * @return $this
      */
-    public function setVideoTarget(?string $value = null)
+    public function setVideoTarget(?string $value)
     {
         $this->VideoTarget = $value;
 

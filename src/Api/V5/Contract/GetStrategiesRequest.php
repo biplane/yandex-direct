@@ -12,64 +12,81 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class GetStrategiesRequest extends GetRequestGeneral
 {
-    protected $SelectionCriteria = null;
+    /** @var StrategiesSelectionCriteria */
+    protected $SelectionCriteria;
 
-    protected $FieldNames = [];
-
-//    Can be omitted.
-//    protected $StrategyMaximumClicksFieldNames = null;
-
-//    Can be omitted.
-//    protected $StrategyMaximumConversionRateFieldNames = null;
+    /** @var non-empty-list<'Id'|'AttributionModel'|'CounterIds'|'PriorityGoals'|'Type'|'Name'|'StatusArchived'> */
+    protected $FieldNames;
 
 //    Can be omitted.
-//    protected $StrategyAverageCpcFieldNames = null;
+//    protected $StrategyMaximumClicksFieldNames;
 
 //    Can be omitted.
-//    protected $StrategyAverageCpaFieldNames = null;
+//    protected $StrategyMaximumConversionRateFieldNames;
 
 //    Can be omitted.
-//    protected $StrategyMaxProfitFieldNames = null;
+//    protected $StrategyAverageCpcFieldNames;
 
 //    Can be omitted.
-//    protected $StrategyPayForConversionFieldNames = null;
+//    protected $StrategyAverageCpaFieldNames;
 
 //    Can be omitted.
-//    protected $StrategyAverageCpaPerCampaignFieldNames = null;
+//    protected $StrategyMaxProfitFieldNames;
 
 //    Can be omitted.
-//    protected $StrategyPayForConversionPerCampaignFieldNames = null;
+//    protected $StrategyPayForConversionFieldNames;
 
 //    Can be omitted.
-//    protected $StrategyPayForConversionPerFilterFieldNames = null;
+//    protected $StrategyAverageCpaPerCampaignFieldNames;
 
 //    Can be omitted.
-//    protected $StrategyAverageCpaPerFilterFieldNames = null;
+//    protected $StrategyPayForConversionPerCampaignFieldNames;
 
 //    Can be omitted.
-//    protected $StrategyAverageCpcPerCampaignFieldNames = null;
+//    protected $StrategyPayForConversionPerFilterFieldNames;
 
 //    Can be omitted.
-//    protected $StrategyAverageCpcPerFilterFieldNames = null;
+//    protected $StrategyAverageCpaPerFilterFieldNames;
 
 //    Can be omitted.
-//    protected $StrategyAverageCrrFieldNames = null;
+//    protected $StrategyAverageCpcPerCampaignFieldNames;
 
 //    Can be omitted.
-//    protected $StrategyPayForConversionCrrFieldNames = null;
+//    protected $StrategyAverageCpcPerFilterFieldNames;
 
 //    Can be omitted.
-//    protected $StrategyAverageCpaMultipleGoalsFieldNames = null;
+//    protected $StrategyAverageCrrFieldNames;
 
 //    Can be omitted.
-//    protected $StrategyPayForConversionMultipleGoalsFieldNames = null;
+//    protected $StrategyPayForConversionCrrFieldNames;
 
+//    Can be omitted.
+//    protected $StrategyAverageCpaMultipleGoalsFieldNames;
+
+//    Can be omitted.
+//    protected $StrategyPayForConversionMultipleGoalsFieldNames;
+
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create()
+    {
+        return new static();
+    }
+
+    /**
+     * Get SelectionCriteria
+     */
     public function getSelectionCriteria(): StrategiesSelectionCriteria
     {
         return $this->SelectionCriteria;
     }
 
     /**
+     * Set SelectionCriteria
+     *
      * @return $this
      */
     public function setSelectionCriteria(StrategiesSelectionCriteria $value)
@@ -80,9 +97,11 @@ class GetStrategiesRequest extends GetRequestGeneral
     }
 
     /**
-     * @see StrategyFieldEnum
+     * Get FieldNames
      *
-     * @return string[]
+     * @see \Biplane\YandexDirect\Api\V5\Contract\StrategyFieldEnum
+     *
+     * @return non-empty-list<'Id'|'AttributionModel'|'CounterIds'|'PriorityGoals'|'Type'|'Name'|'StatusArchived'>
      */
     public function getFieldNames(): array
     {
@@ -90,9 +109,11 @@ class GetStrategiesRequest extends GetRequestGeneral
     }
 
     /**
-     * @see StrategyFieldEnum
+     * Set FieldNames
      *
-     * @param string[] $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\StrategyFieldEnum
+     *
+     * @param non-empty-list<'Id'|'AttributionModel'|'CounterIds'|'PriorityGoals'|'Type'|'Name'|'StatusArchived'> $value
      *
      * @return $this
      */
@@ -104,23 +125,27 @@ class GetStrategiesRequest extends GetRequestGeneral
     }
 
     /**
-     * @see StrategyMaximumClicksFieldEnum
+     * Get StrategyMaximumClicksFieldNames
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\StrategyMaximumClicksFieldEnum
+     *
+     * @return list<'WeeklySpendLimit'|'CustomPeriodBudget'|'BudgetType'|'BidCeiling'>
      */
-    public function getStrategyMaximumClicksFieldNames(): ?array
+    public function getStrategyMaximumClicksFieldNames(): array
     {
-        return $this->StrategyMaximumClicksFieldNames ?? null;
+        return $this->StrategyMaximumClicksFieldNames ?? [];
     }
 
     /**
-     * @see StrategyMaximumClicksFieldEnum
+     * Set StrategyMaximumClicksFieldNames
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\StrategyMaximumClicksFieldEnum
+     *
+     * @param list<'WeeklySpendLimit'|'CustomPeriodBudget'|'BudgetType'|'BidCeiling'> $value
      *
      * @return $this
      */
-    public function setStrategyMaximumClicksFieldNames(?array $value = null)
+    public function setStrategyMaximumClicksFieldNames(array $value)
     {
         $this->StrategyMaximumClicksFieldNames = $value;
 
@@ -128,23 +153,27 @@ class GetStrategiesRequest extends GetRequestGeneral
     }
 
     /**
-     * @see StrategyMaximumConversionRateFieldEnum
+     * Get StrategyMaximumConversionRateFieldNames
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\StrategyMaximumConversionRateFieldEnum
+     *
+     * @return list<'WeeklySpendLimit'|'CustomPeriodBudget'|'BudgetType'|'BidCeiling'|'GoalId'>
      */
-    public function getStrategyMaximumConversionRateFieldNames(): ?array
+    public function getStrategyMaximumConversionRateFieldNames(): array
     {
-        return $this->StrategyMaximumConversionRateFieldNames ?? null;
+        return $this->StrategyMaximumConversionRateFieldNames ?? [];
     }
 
     /**
-     * @see StrategyMaximumConversionRateFieldEnum
+     * Set StrategyMaximumConversionRateFieldNames
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\StrategyMaximumConversionRateFieldEnum
+     *
+     * @param list<'WeeklySpendLimit'|'CustomPeriodBudget'|'BudgetType'|'BidCeiling'|'GoalId'> $value
      *
      * @return $this
      */
-    public function setStrategyMaximumConversionRateFieldNames(?array $value = null)
+    public function setStrategyMaximumConversionRateFieldNames(array $value)
     {
         $this->StrategyMaximumConversionRateFieldNames = $value;
 
@@ -152,23 +181,27 @@ class GetStrategiesRequest extends GetRequestGeneral
     }
 
     /**
-     * @see StrategyAverageCpcFieldEnum
+     * Get StrategyAverageCpcFieldNames
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\StrategyAverageCpcFieldEnum
+     *
+     * @return list<'AverageCpc'|'WeeklySpendLimit'|'CustomPeriodBudget'|'BudgetType'>
      */
-    public function getStrategyAverageCpcFieldNames(): ?array
+    public function getStrategyAverageCpcFieldNames(): array
     {
-        return $this->StrategyAverageCpcFieldNames ?? null;
+        return $this->StrategyAverageCpcFieldNames ?? [];
     }
 
     /**
-     * @see StrategyAverageCpcFieldEnum
+     * Set StrategyAverageCpcFieldNames
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\StrategyAverageCpcFieldEnum
+     *
+     * @param list<'AverageCpc'|'WeeklySpendLimit'|'CustomPeriodBudget'|'BudgetType'> $value
      *
      * @return $this
      */
-    public function setStrategyAverageCpcFieldNames(?array $value = null)
+    public function setStrategyAverageCpcFieldNames(array $value)
     {
         $this->StrategyAverageCpcFieldNames = $value;
 
@@ -176,23 +209,27 @@ class GetStrategiesRequest extends GetRequestGeneral
     }
 
     /**
-     * @see StrategyAverageCpaFieldEnum
+     * Get StrategyAverageCpaFieldNames
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\StrategyAverageCpaFieldEnum
+     *
+     * @return list<'AverageCpa'|'GoalId'|'WeeklySpendLimit'|'CustomPeriodBudget'|'BudgetType'|'BidCeiling'|'ExplorationBudget'>
      */
-    public function getStrategyAverageCpaFieldNames(): ?array
+    public function getStrategyAverageCpaFieldNames(): array
     {
-        return $this->StrategyAverageCpaFieldNames ?? null;
+        return $this->StrategyAverageCpaFieldNames ?? [];
     }
 
     /**
-     * @see StrategyAverageCpaFieldEnum
+     * Set StrategyAverageCpaFieldNames
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\StrategyAverageCpaFieldEnum
+     *
+     * @param list<'AverageCpa'|'GoalId'|'WeeklySpendLimit'|'CustomPeriodBudget'|'BudgetType'|'BidCeiling'|'ExplorationBudget'> $value
      *
      * @return $this
      */
-    public function setStrategyAverageCpaFieldNames(?array $value = null)
+    public function setStrategyAverageCpaFieldNames(array $value)
     {
         $this->StrategyAverageCpaFieldNames = $value;
 
@@ -200,23 +237,27 @@ class GetStrategiesRequest extends GetRequestGeneral
     }
 
     /**
-     * @see StrategyMaxProfitFieldEnum
+     * Get StrategyMaxProfitFieldNames
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\StrategyMaxProfitFieldEnum
+     *
+     * @return list<'WeeklySpendLimit'|'CustomPeriodBudget'|'BudgetType'|'ExplorationBudget'>
      */
-    public function getStrategyMaxProfitFieldNames(): ?array
+    public function getStrategyMaxProfitFieldNames(): array
     {
-        return $this->StrategyMaxProfitFieldNames ?? null;
+        return $this->StrategyMaxProfitFieldNames ?? [];
     }
 
     /**
-     * @see StrategyMaxProfitFieldEnum
+     * Set StrategyMaxProfitFieldNames
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\StrategyMaxProfitFieldEnum
+     *
+     * @param list<'WeeklySpendLimit'|'CustomPeriodBudget'|'BudgetType'|'ExplorationBudget'> $value
      *
      * @return $this
      */
-    public function setStrategyMaxProfitFieldNames(?array $value = null)
+    public function setStrategyMaxProfitFieldNames(array $value)
     {
         $this->StrategyMaxProfitFieldNames = $value;
 
@@ -224,23 +265,27 @@ class GetStrategiesRequest extends GetRequestGeneral
     }
 
     /**
-     * @see StrategyPayForConversionFieldEnum
+     * Get StrategyPayForConversionFieldNames
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\StrategyPayForConversionFieldEnum
+     *
+     * @return list<'Cpa'|'GoalId'|'WeeklySpendLimit'|'CustomPeriodBudget'|'BudgetType'>
      */
-    public function getStrategyPayForConversionFieldNames(): ?array
+    public function getStrategyPayForConversionFieldNames(): array
     {
-        return $this->StrategyPayForConversionFieldNames ?? null;
+        return $this->StrategyPayForConversionFieldNames ?? [];
     }
 
     /**
-     * @see StrategyPayForConversionFieldEnum
+     * Set StrategyPayForConversionFieldNames
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\StrategyPayForConversionFieldEnum
+     *
+     * @param list<'Cpa'|'GoalId'|'WeeklySpendLimit'|'CustomPeriodBudget'|'BudgetType'> $value
      *
      * @return $this
      */
-    public function setStrategyPayForConversionFieldNames(?array $value = null)
+    public function setStrategyPayForConversionFieldNames(array $value)
     {
         $this->StrategyPayForConversionFieldNames = $value;
 
@@ -248,23 +293,27 @@ class GetStrategiesRequest extends GetRequestGeneral
     }
 
     /**
-     * @see StrategyAverageCpaPerCampaignFieldEnum
+     * Get StrategyAverageCpaPerCampaignFieldNames
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\StrategyAverageCpaPerCampaignFieldEnum
+     *
+     * @return list<'AverageCpa'|'GoalId'|'WeeklySpendLimit'|'CustomPeriodBudget'|'BudgetType'|'BidCeiling'|'ExplorationBudget'>
      */
-    public function getStrategyAverageCpaPerCampaignFieldNames(): ?array
+    public function getStrategyAverageCpaPerCampaignFieldNames(): array
     {
-        return $this->StrategyAverageCpaPerCampaignFieldNames ?? null;
+        return $this->StrategyAverageCpaPerCampaignFieldNames ?? [];
     }
 
     /**
-     * @see StrategyAverageCpaPerCampaignFieldEnum
+     * Set StrategyAverageCpaPerCampaignFieldNames
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\StrategyAverageCpaPerCampaignFieldEnum
+     *
+     * @param list<'AverageCpa'|'GoalId'|'WeeklySpendLimit'|'CustomPeriodBudget'|'BudgetType'|'BidCeiling'|'ExplorationBudget'> $value
      *
      * @return $this
      */
-    public function setStrategyAverageCpaPerCampaignFieldNames(?array $value = null)
+    public function setStrategyAverageCpaPerCampaignFieldNames(array $value)
     {
         $this->StrategyAverageCpaPerCampaignFieldNames = $value;
 
@@ -272,23 +321,27 @@ class GetStrategiesRequest extends GetRequestGeneral
     }
 
     /**
-     * @see StrategyPayForConversionPerCampaignFieldEnum
+     * Get StrategyPayForConversionPerCampaignFieldNames
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\StrategyPayForConversionPerCampaignFieldEnum
+     *
+     * @return list<'Cpa'|'GoalId'|'WeeklySpendLimit'|'CustomPeriodBudget'|'BudgetType'>
      */
-    public function getStrategyPayForConversionPerCampaignFieldNames(): ?array
+    public function getStrategyPayForConversionPerCampaignFieldNames(): array
     {
-        return $this->StrategyPayForConversionPerCampaignFieldNames ?? null;
+        return $this->StrategyPayForConversionPerCampaignFieldNames ?? [];
     }
 
     /**
-     * @see StrategyPayForConversionPerCampaignFieldEnum
+     * Set StrategyPayForConversionPerCampaignFieldNames
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\StrategyPayForConversionPerCampaignFieldEnum
+     *
+     * @param list<'Cpa'|'GoalId'|'WeeklySpendLimit'|'CustomPeriodBudget'|'BudgetType'> $value
      *
      * @return $this
      */
-    public function setStrategyPayForConversionPerCampaignFieldNames(?array $value = null)
+    public function setStrategyPayForConversionPerCampaignFieldNames(array $value)
     {
         $this->StrategyPayForConversionPerCampaignFieldNames = $value;
 
@@ -296,23 +349,27 @@ class GetStrategiesRequest extends GetRequestGeneral
     }
 
     /**
-     * @see StrategyPayForConversionPerFilterFieldEnum
+     * Get StrategyPayForConversionPerFilterFieldNames
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\StrategyPayForConversionPerFilterFieldEnum
+     *
+     * @return list<'Cpa'|'GoalId'|'WeeklySpendLimit'|'CustomPeriodBudget'|'BudgetType'>
      */
-    public function getStrategyPayForConversionPerFilterFieldNames(): ?array
+    public function getStrategyPayForConversionPerFilterFieldNames(): array
     {
-        return $this->StrategyPayForConversionPerFilterFieldNames ?? null;
+        return $this->StrategyPayForConversionPerFilterFieldNames ?? [];
     }
 
     /**
-     * @see StrategyPayForConversionPerFilterFieldEnum
+     * Set StrategyPayForConversionPerFilterFieldNames
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\StrategyPayForConversionPerFilterFieldEnum
+     *
+     * @param list<'Cpa'|'GoalId'|'WeeklySpendLimit'|'CustomPeriodBudget'|'BudgetType'> $value
      *
      * @return $this
      */
-    public function setStrategyPayForConversionPerFilterFieldNames(?array $value = null)
+    public function setStrategyPayForConversionPerFilterFieldNames(array $value)
     {
         $this->StrategyPayForConversionPerFilterFieldNames = $value;
 
@@ -320,23 +377,27 @@ class GetStrategiesRequest extends GetRequestGeneral
     }
 
     /**
-     * @see StrategyAverageCpaPerFilterFieldEnum
+     * Get StrategyAverageCpaPerFilterFieldNames
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\StrategyAverageCpaPerFilterFieldEnum
+     *
+     * @return list<'FilterAverageCpa'|'GoalId'|'WeeklySpendLimit'|'CustomPeriodBudget'|'BudgetType'|'BidCeiling'|'ExplorationBudget'>
      */
-    public function getStrategyAverageCpaPerFilterFieldNames(): ?array
+    public function getStrategyAverageCpaPerFilterFieldNames(): array
     {
-        return $this->StrategyAverageCpaPerFilterFieldNames ?? null;
+        return $this->StrategyAverageCpaPerFilterFieldNames ?? [];
     }
 
     /**
-     * @see StrategyAverageCpaPerFilterFieldEnum
+     * Set StrategyAverageCpaPerFilterFieldNames
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\StrategyAverageCpaPerFilterFieldEnum
+     *
+     * @param list<'FilterAverageCpa'|'GoalId'|'WeeklySpendLimit'|'CustomPeriodBudget'|'BudgetType'|'BidCeiling'|'ExplorationBudget'> $value
      *
      * @return $this
      */
-    public function setStrategyAverageCpaPerFilterFieldNames(?array $value = null)
+    public function setStrategyAverageCpaPerFilterFieldNames(array $value)
     {
         $this->StrategyAverageCpaPerFilterFieldNames = $value;
 
@@ -344,23 +405,27 @@ class GetStrategiesRequest extends GetRequestGeneral
     }
 
     /**
-     * @see StrategyAverageCpcPerCampaignFieldEnum
+     * Get StrategyAverageCpcPerCampaignFieldNames
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\StrategyAverageCpcPerCampaignFieldEnum
+     *
+     * @return list<'AverageCpc'|'WeeklySpendLimit'|'CustomPeriodBudget'|'BudgetType'|'BidCeiling'>
      */
-    public function getStrategyAverageCpcPerCampaignFieldNames(): ?array
+    public function getStrategyAverageCpcPerCampaignFieldNames(): array
     {
-        return $this->StrategyAverageCpcPerCampaignFieldNames ?? null;
+        return $this->StrategyAverageCpcPerCampaignFieldNames ?? [];
     }
 
     /**
-     * @see StrategyAverageCpcPerCampaignFieldEnum
+     * Set StrategyAverageCpcPerCampaignFieldNames
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\StrategyAverageCpcPerCampaignFieldEnum
+     *
+     * @param list<'AverageCpc'|'WeeklySpendLimit'|'CustomPeriodBudget'|'BudgetType'|'BidCeiling'> $value
      *
      * @return $this
      */
-    public function setStrategyAverageCpcPerCampaignFieldNames(?array $value = null)
+    public function setStrategyAverageCpcPerCampaignFieldNames(array $value)
     {
         $this->StrategyAverageCpcPerCampaignFieldNames = $value;
 
@@ -368,23 +433,27 @@ class GetStrategiesRequest extends GetRequestGeneral
     }
 
     /**
-     * @see StrategyAverageCpcPerFilterFieldEnum
+     * Get StrategyAverageCpcPerFilterFieldNames
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\StrategyAverageCpcPerFilterFieldEnum
+     *
+     * @return list<'FilterAverageCpc'|'WeeklySpendLimit'|'CustomPeriodBudget'|'BudgetType'|'BidCeiling'>
      */
-    public function getStrategyAverageCpcPerFilterFieldNames(): ?array
+    public function getStrategyAverageCpcPerFilterFieldNames(): array
     {
-        return $this->StrategyAverageCpcPerFilterFieldNames ?? null;
+        return $this->StrategyAverageCpcPerFilterFieldNames ?? [];
     }
 
     /**
-     * @see StrategyAverageCpcPerFilterFieldEnum
+     * Set StrategyAverageCpcPerFilterFieldNames
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\StrategyAverageCpcPerFilterFieldEnum
+     *
+     * @param list<'FilterAverageCpc'|'WeeklySpendLimit'|'CustomPeriodBudget'|'BudgetType'|'BidCeiling'> $value
      *
      * @return $this
      */
-    public function setStrategyAverageCpcPerFilterFieldNames(?array $value = null)
+    public function setStrategyAverageCpcPerFilterFieldNames(array $value)
     {
         $this->StrategyAverageCpcPerFilterFieldNames = $value;
 
@@ -392,23 +461,27 @@ class GetStrategiesRequest extends GetRequestGeneral
     }
 
     /**
-     * @see StrategyAverageCrrFieldEnum
+     * Get StrategyAverageCrrFieldNames
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\StrategyAverageCrrFieldEnum
+     *
+     * @return list<'Crr'|'GoalId'|'WeeklySpendLimit'|'CustomPeriodBudget'|'BudgetType'|'ExplorationBudget'>
      */
-    public function getStrategyAverageCrrFieldNames(): ?array
+    public function getStrategyAverageCrrFieldNames(): array
     {
-        return $this->StrategyAverageCrrFieldNames ?? null;
+        return $this->StrategyAverageCrrFieldNames ?? [];
     }
 
     /**
-     * @see StrategyAverageCrrFieldEnum
+     * Set StrategyAverageCrrFieldNames
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\StrategyAverageCrrFieldEnum
+     *
+     * @param list<'Crr'|'GoalId'|'WeeklySpendLimit'|'CustomPeriodBudget'|'BudgetType'|'ExplorationBudget'> $value
      *
      * @return $this
      */
-    public function setStrategyAverageCrrFieldNames(?array $value = null)
+    public function setStrategyAverageCrrFieldNames(array $value)
     {
         $this->StrategyAverageCrrFieldNames = $value;
 
@@ -416,23 +489,27 @@ class GetStrategiesRequest extends GetRequestGeneral
     }
 
     /**
-     * @see StrategyPayForConversionCrrFieldEnum
+     * Get StrategyPayForConversionCrrFieldNames
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\StrategyPayForConversionCrrFieldEnum
+     *
+     * @return list<'Crr'|'GoalId'|'WeeklySpendLimit'|'CustomPeriodBudget'|'BudgetType'>
      */
-    public function getStrategyPayForConversionCrrFieldNames(): ?array
+    public function getStrategyPayForConversionCrrFieldNames(): array
     {
-        return $this->StrategyPayForConversionCrrFieldNames ?? null;
+        return $this->StrategyPayForConversionCrrFieldNames ?? [];
     }
 
     /**
-     * @see StrategyPayForConversionCrrFieldEnum
+     * Set StrategyPayForConversionCrrFieldNames
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\StrategyPayForConversionCrrFieldEnum
+     *
+     * @param list<'Crr'|'GoalId'|'WeeklySpendLimit'|'CustomPeriodBudget'|'BudgetType'> $value
      *
      * @return $this
      */
-    public function setStrategyPayForConversionCrrFieldNames(?array $value = null)
+    public function setStrategyPayForConversionCrrFieldNames(array $value)
     {
         $this->StrategyPayForConversionCrrFieldNames = $value;
 
@@ -440,23 +517,27 @@ class GetStrategiesRequest extends GetRequestGeneral
     }
 
     /**
-     * @see StrategyAverageCpaMultipleGoalsFieldEnum
+     * Get StrategyAverageCpaMultipleGoalsFieldNames
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\StrategyAverageCpaMultipleGoalsFieldEnum
+     *
+     * @return list<'WeeklySpendLimit'|'CustomPeriodBudget'|'BudgetType'|'ExplorationBudget'|'BidCeiling'>
      */
-    public function getStrategyAverageCpaMultipleGoalsFieldNames(): ?array
+    public function getStrategyAverageCpaMultipleGoalsFieldNames(): array
     {
-        return $this->StrategyAverageCpaMultipleGoalsFieldNames ?? null;
+        return $this->StrategyAverageCpaMultipleGoalsFieldNames ?? [];
     }
 
     /**
-     * @see StrategyAverageCpaMultipleGoalsFieldEnum
+     * Set StrategyAverageCpaMultipleGoalsFieldNames
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\StrategyAverageCpaMultipleGoalsFieldEnum
+     *
+     * @param list<'WeeklySpendLimit'|'CustomPeriodBudget'|'BudgetType'|'ExplorationBudget'|'BidCeiling'> $value
      *
      * @return $this
      */
-    public function setStrategyAverageCpaMultipleGoalsFieldNames(?array $value = null)
+    public function setStrategyAverageCpaMultipleGoalsFieldNames(array $value)
     {
         $this->StrategyAverageCpaMultipleGoalsFieldNames = $value;
 
@@ -464,23 +545,27 @@ class GetStrategiesRequest extends GetRequestGeneral
     }
 
     /**
-     * @see StrategyPayForConversionMultipleGoalsFieldEnum
+     * Get StrategyPayForConversionMultipleGoalsFieldNames
      *
-     * @return string[]|null
+     * @see \Biplane\YandexDirect\Api\V5\Contract\StrategyPayForConversionMultipleGoalsFieldEnum
+     *
+     * @return list<'WeeklySpendLimit'|'CustomPeriodBudget'|'BudgetType'>
      */
-    public function getStrategyPayForConversionMultipleGoalsFieldNames(): ?array
+    public function getStrategyPayForConversionMultipleGoalsFieldNames(): array
     {
-        return $this->StrategyPayForConversionMultipleGoalsFieldNames ?? null;
+        return $this->StrategyPayForConversionMultipleGoalsFieldNames ?? [];
     }
 
     /**
-     * @see StrategyPayForConversionMultipleGoalsFieldEnum
+     * Set StrategyPayForConversionMultipleGoalsFieldNames
      *
-     * @param string[]|null $value
+     * @see \Biplane\YandexDirect\Api\V5\Contract\StrategyPayForConversionMultipleGoalsFieldEnum
+     *
+     * @param list<'WeeklySpendLimit'|'CustomPeriodBudget'|'BudgetType'> $value
      *
      * @return $this
      */
-    public function setStrategyPayForConversionMultipleGoalsFieldNames(?array $value = null)
+    public function setStrategyPayForConversionMultipleGoalsFieldNames(array $value)
     {
         $this->StrategyPayForConversionMultipleGoalsFieldNames = $value;
 

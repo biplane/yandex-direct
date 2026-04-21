@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class Statistics
 {
-    protected $Clicks = null;
+    /** @var int */
+    protected $Clicks;
 
-    protected $Impressions = null;
+    /** @var int */
+    protected $Impressions;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -24,12 +28,17 @@ class Statistics
         return new static();
     }
 
+    /**
+     * Get Clicks
+     */
     public function getClicks(): int
     {
         return $this->Clicks;
     }
 
     /**
+     * Set Clicks
+     *
      * @return $this
      */
     public function setClicks(int $value)
@@ -39,12 +48,17 @@ class Statistics
         return $this;
     }
 
+    /**
+     * Get Impressions
+     */
     public function getImpressions(): int
     {
         return $this->Impressions;
     }
 
     /**
+     * Set Impressions
+     *
      * @return $this
      */
     public function setImpressions(int $value)

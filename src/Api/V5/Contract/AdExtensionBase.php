@@ -13,21 +13,23 @@ use AllowDynamicProperties;
 class AdExtensionBase
 {
 //    Can be omitted.
-//    protected $Type = null;
+//    protected $Type;
 
 //    Can be omitted.
-//    protected $Callout = null;
+//    protected $Callout;
 
 //    Can be omitted.
-//    protected $State = null;
+//    protected $State;
 
 //    Can be omitted.
-//    protected $Status = null;
+//    protected $Status;
 
 //    Can be omitted.
-//    protected $StatusClarification = null;
+//    protected $StatusClarification;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -36,7 +38,11 @@ class AdExtensionBase
     }
 
     /**
-     * @see AdExtensionTypeEnum
+     * Get Type
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\AdExtensionTypeEnum
+     *
+     * @return 'CALLOUT'|'UNKNOWN'|null
      */
     public function getType(): ?string
     {
@@ -44,26 +50,35 @@ class AdExtensionBase
     }
 
     /**
-     * @see AdExtensionTypeEnum
+     * Set Type
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\AdExtensionTypeEnum
+     *
+     * @param 'CALLOUT'|'UNKNOWN'|null $value
      *
      * @return $this
      */
-    public function setType(?string $value = null)
+    public function setType(?string $value)
     {
         $this->Type = $value;
 
         return $this;
     }
 
+    /**
+     * Get Callout
+     */
     public function getCallout(): ?Callout
     {
         return $this->Callout ?? null;
     }
 
     /**
+     * Set Callout
+     *
      * @return $this
      */
-    public function setCallout(?Callout $value = null)
+    public function setCallout(?Callout $value)
     {
         $this->Callout = $value;
 
@@ -71,7 +86,11 @@ class AdExtensionBase
     }
 
     /**
-     * @see StateEnum
+     * Get State
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\StateEnum
+     *
+     * @return 'OFF'|'ON'|'SUSPENDED'|'OFF_BY_MONITORING'|'ARCHIVED'|'DELETED'|'UNKNOWN'|null
      */
     public function getState(): ?string
     {
@@ -79,11 +98,15 @@ class AdExtensionBase
     }
 
     /**
-     * @see StateEnum
+     * Set State
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\StateEnum
+     *
+     * @param 'OFF'|'ON'|'SUSPENDED'|'OFF_BY_MONITORING'|'ARCHIVED'|'DELETED'|'UNKNOWN'|null $value
      *
      * @return $this
      */
-    public function setState(?string $value = null)
+    public function setState(?string $value)
     {
         $this->State = $value;
 
@@ -91,7 +114,11 @@ class AdExtensionBase
     }
 
     /**
-     * @see StatusEnum
+     * Get Status
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\StatusEnum
+     *
+     * @return 'ACCEPTED'|'DRAFT'|'MODERATION'|'PREACCEPTED'|'REJECTED'|'UNKNOWN'|null
      */
     public function getStatus(): ?string
     {
@@ -99,26 +126,35 @@ class AdExtensionBase
     }
 
     /**
-     * @see StatusEnum
+     * Set Status
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\StatusEnum
+     *
+     * @param 'ACCEPTED'|'DRAFT'|'MODERATION'|'PREACCEPTED'|'REJECTED'|'UNKNOWN'|null $value
      *
      * @return $this
      */
-    public function setStatus(?string $value = null)
+    public function setStatus(?string $value)
     {
         $this->Status = $value;
 
         return $this;
     }
 
+    /**
+     * Get StatusClarification
+     */
     public function getStatusClarification(): ?string
     {
         return $this->StatusClarification ?? null;
     }
 
     /**
+     * Set StatusClarification
+     *
      * @return $this
      */
-    public function setStatusClarification(?string $value = null)
+    public function setStatusClarification(?string $value)
     {
         $this->StatusClarification = $value;
 

@@ -12,11 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class WordstatItem
 {
-    protected $Phrase = null;
+    /** @var string */
+    protected $Phrase;
 
-    protected $Shows = null;
+    /** @var int */
+    protected $Shows;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -24,12 +28,17 @@ class WordstatItem
         return new static();
     }
 
+    /**
+     * Get Phrase
+     */
     public function getPhrase(): string
     {
         return $this->Phrase;
     }
 
     /**
+     * Set Phrase
+     *
      * @return $this
      */
     public function setPhrase(string $value)
@@ -39,12 +48,17 @@ class WordstatItem
         return $this;
     }
 
+    /**
+     * Get Shows
+     */
     public function getShows(): int
     {
         return $this->Shows;
     }
 
     /**
+     * Set Shows
+     *
      * @return $this
      */
     public function setShows(int $value)

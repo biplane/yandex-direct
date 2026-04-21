@@ -13,17 +13,20 @@ use AllowDynamicProperties;
 class KeywordBidSetAutoItem
 {
 //    Can be omitted.
-//    protected $CampaignId = null;
+//    protected $CampaignId;
 
 //    Can be omitted.
-//    protected $AdGroupId = null;
+//    protected $AdGroupId;
 
 //    Can be omitted.
-//    protected $KeywordId = null;
+//    protected $KeywordId;
 
-    protected $BiddingRule = null;
+    /** @var BiddingRule */
+    protected $BiddingRule;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -31,57 +34,77 @@ class KeywordBidSetAutoItem
         return new static();
     }
 
+    /**
+     * Get CampaignId
+     */
     public function getCampaignId(): ?int
     {
         return $this->CampaignId ?? null;
     }
 
     /**
+     * Set CampaignId
+     *
      * @return $this
      */
-    public function setCampaignId(?int $value = null)
+    public function setCampaignId(?int $value)
     {
         $this->CampaignId = $value;
 
         return $this;
     }
 
+    /**
+     * Get AdGroupId
+     */
     public function getAdGroupId(): ?int
     {
         return $this->AdGroupId ?? null;
     }
 
     /**
+     * Set AdGroupId
+     *
      * @return $this
      */
-    public function setAdGroupId(?int $value = null)
+    public function setAdGroupId(?int $value)
     {
         $this->AdGroupId = $value;
 
         return $this;
     }
 
+    /**
+     * Get KeywordId
+     */
     public function getKeywordId(): ?int
     {
         return $this->KeywordId ?? null;
     }
 
     /**
+     * Set KeywordId
+     *
      * @return $this
      */
-    public function setKeywordId(?int $value = null)
+    public function setKeywordId(?int $value)
     {
         $this->KeywordId = $value;
 
         return $this;
     }
 
+    /**
+     * Get BiddingRule
+     */
     public function getBiddingRule(): BiddingRule
     {
         return $this->BiddingRule;
     }
 
     /**
+     * Set BiddingRule
+     *
      * @return $this
      */
     public function setBiddingRule(BiddingRule $value)

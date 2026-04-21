@@ -13,26 +13,29 @@ use AllowDynamicProperties;
 class SmartCampaignAddItem
 {
 //    Can be omitted.
-//    protected $BiddingStrategy = null;
+//    protected $BiddingStrategy;
 
 //    Can be omitted.
-//    protected $Settings = null;
+//    protected $Settings;
 
-    protected $CounterId = null;
-
-//    Can be omitted.
-//    protected $PriorityGoals = null;
+    /** @var int */
+    protected $CounterId;
 
 //    Can be omitted.
-//    protected $TrackingParams = null;
+//    protected $PriorityGoals;
 
 //    Can be omitted.
-//    protected $AttributionModel = null;
+//    protected $TrackingParams;
 
 //    Can be omitted.
-//    protected $PackageBiddingStrategy = null;
+//    protected $AttributionModel;
+
+//    Can be omitted.
+//    protected $PackageBiddingStrategy;
 
     /**
+     * Create a new instance.
+     *
      * @return static
      */
     public static function create()
@@ -40,15 +43,20 @@ class SmartCampaignAddItem
         return new static();
     }
 
+    /**
+     * Get BiddingStrategy
+     */
     public function getBiddingStrategy(): ?SmartCampaignStrategyAdd
     {
         return $this->BiddingStrategy ?? null;
     }
 
     /**
+     * Set BiddingStrategy
+     *
      * @return $this
      */
-    public function setBiddingStrategy(?SmartCampaignStrategyAdd $value = null)
+    public function setBiddingStrategy(?SmartCampaignStrategyAdd $value)
     {
         $this->BiddingStrategy = $value;
 
@@ -56,31 +64,40 @@ class SmartCampaignAddItem
     }
 
     /**
-     * @return SmartCampaignSetting[]|null
+     * Get Settings
+     *
+     * @return list<SmartCampaignSetting>
      */
-    public function getSettings(): ?array
+    public function getSettings(): array
     {
-        return $this->Settings ?? null;
+        return $this->Settings ?? [];
     }
 
     /**
-     * @param SmartCampaignSetting[]|null $value
+     * Set Settings
+     *
+     * @param list<SmartCampaignSetting> $value
      *
      * @return $this
      */
-    public function setSettings(?array $value = null)
+    public function setSettings(array $value)
     {
         $this->Settings = $value;
 
         return $this;
     }
 
+    /**
+     * Get CounterId
+     */
     public function getCounterId(): int
     {
         return $this->CounterId;
     }
 
     /**
+     * Set CounterId
+     *
      * @return $this
      */
     public function setCounterId(int $value)
@@ -90,30 +107,40 @@ class SmartCampaignAddItem
         return $this;
     }
 
+    /**
+     * Get PriorityGoals
+     */
     public function getPriorityGoals(): ?PriorityGoalsArray
     {
         return $this->PriorityGoals ?? null;
     }
 
     /**
+     * Set PriorityGoals
+     *
      * @return $this
      */
-    public function setPriorityGoals(?PriorityGoalsArray $value = null)
+    public function setPriorityGoals(?PriorityGoalsArray $value)
     {
         $this->PriorityGoals = $value;
 
         return $this;
     }
 
+    /**
+     * Get TrackingParams
+     */
     public function getTrackingParams(): ?string
     {
         return $this->TrackingParams ?? null;
     }
 
     /**
+     * Set TrackingParams
+     *
      * @return $this
      */
-    public function setTrackingParams(?string $value = null)
+    public function setTrackingParams(?string $value)
     {
         $this->TrackingParams = $value;
 
@@ -121,7 +148,11 @@ class SmartCampaignAddItem
     }
 
     /**
-     * @see AttributionModelEnum
+     * Get AttributionModel
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\AttributionModelEnum
+     *
+     * @return 'LC'|'LSC'|'FC'|'LYDC'|'LSCCD'|'FCCD'|'LYDCCD'|'AUTO'|null
      */
     public function getAttributionModel(): ?string
     {
@@ -129,26 +160,35 @@ class SmartCampaignAddItem
     }
 
     /**
-     * @see AttributionModelEnum
+     * Set AttributionModel
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Contract\AttributionModelEnum
+     *
+     * @param 'LC'|'LSC'|'FC'|'LYDC'|'LSCCD'|'FCCD'|'LYDCCD'|'AUTO'|null $value
      *
      * @return $this
      */
-    public function setAttributionModel(?string $value = null)
+    public function setAttributionModel(?string $value)
     {
         $this->AttributionModel = $value;
 
         return $this;
     }
 
+    /**
+     * Get PackageBiddingStrategy
+     */
     public function getPackageBiddingStrategy(): ?SmartCampaignPackageBiddingStrategyAdd
     {
         return $this->PackageBiddingStrategy ?? null;
     }
 
     /**
+     * Set PackageBiddingStrategy
+     *
      * @return $this
      */
-    public function setPackageBiddingStrategy(?SmartCampaignPackageBiddingStrategyAdd $value = null)
+    public function setPackageBiddingStrategy(?SmartCampaignPackageBiddingStrategyAdd $value)
     {
         $this->PackageBiddingStrategy = $value;
 
