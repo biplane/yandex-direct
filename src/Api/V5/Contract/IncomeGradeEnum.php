@@ -12,9 +12,9 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class IncomeGradeEnum
 {
-    public const VERY_HIGH = 'VERY_HIGH';
+    public const string VERY_HIGH = 'VERY_HIGH';
 
-    public const HIGH = 'HIGH';
+    public const string HIGH = 'HIGH';
 
-    public const ABOVE_AVERAGE = 'ABOVE_AVERAGE';
+    public const string ABOVE_AVERAGE = 'ABOVE_AVERAGE';
 }

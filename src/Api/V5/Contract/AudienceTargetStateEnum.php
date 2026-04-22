@@ -12,7 +12,7 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class AudienceTargetStateEnum
 {
-    public const ON = 'ON';
+    public const string ON = 'ON';
 
-    public const SUSPENDED = 'SUSPENDED';
+    public const string SUSPENDED = 'SUSPENDED';
 }

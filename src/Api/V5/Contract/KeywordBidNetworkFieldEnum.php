@@ -12,7 +12,7 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class KeywordBidNetworkFieldEnum
 {
-    public const BID = 'Bid';
+    public const string BID = 'Bid';
 
-    public const COVERAGE = 'Coverage';
+    public const string COVERAGE = 'Coverage';
 }

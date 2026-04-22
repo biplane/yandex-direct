@@ -12,23 +12,23 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class CurrencyEnum
 {
-    public const YND_FIXED = 'YND_FIXED';
+    public const string YND_FIXED = 'YND_FIXED';
 
-    public const RUB = 'RUB';
+    public const string RUB = 'RUB';
 
-    public const CHF = 'CHF';
+    public const string CHF = 'CHF';
 
-    public const EUR = 'EUR';
+    public const string EUR = 'EUR';
 
-    public const KZT = 'KZT';
+    public const string KZT = 'KZT';
 
-    public const TRY = 'TRY';
+    public const string TRY = 'TRY';
 
-    public const UAH = 'UAH';
+    public const string UAH = 'UAH';
 
-    public const USD = 'USD';
+    public const string USD = 'USD';
 
-    public const BYN = 'BYN';
+    public const string BYN = 'BYN';
 
-    public const GBP = 'GBP';
+    public const string GBP = 'GBP';
 }

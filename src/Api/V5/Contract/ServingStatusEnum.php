@@ -12,7 +12,7 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class ServingStatusEnum
 {
-    public const ELIGIBLE = 'ELIGIBLE';
+    public const string ELIGIBLE = 'ELIGIBLE';
 
-    public const RARELY_SERVED = 'RARELY_SERVED';
+    public const string RARELY_SERVED = 'RARELY_SERVED';
 }

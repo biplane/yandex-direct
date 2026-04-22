@@ -12,7 +12,7 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class VideoTargetEnum
 {
-    public const VIEWS = 'VIEWS';
+    public const string VIEWS = 'VIEWS';
 
-    public const CLICKS = 'CLICKS';
+    public const string CLICKS = 'CLICKS';
 }

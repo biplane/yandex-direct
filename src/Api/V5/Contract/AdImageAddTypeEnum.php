@@ -12,11 +12,11 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class AdImageAddTypeEnum
 {
-    public const REGULAR = 'REGULAR';
+    public const string REGULAR = 'REGULAR';
 
-    public const WIDE = 'WIDE';
+    public const string WIDE = 'WIDE';
 
-    public const FIXED_IMAGE = 'FIXED_IMAGE';
+    public const string FIXED_IMAGE = 'FIXED_IMAGE';
 
-    public const AUTO = 'AUTO';
+    public const string AUTO = 'AUTO';
 }

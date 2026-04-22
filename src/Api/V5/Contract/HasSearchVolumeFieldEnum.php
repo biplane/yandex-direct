@@ -12,15 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class HasSearchVolumeFieldEnum
 {
-    public const KEYWORD = 'Keyword';
+    public const string KEYWORD = 'Keyword';
 
-    public const REGION_IDS = 'RegionIds';
+    public const string REGION_IDS = 'RegionIds';
 
-    public const ALL_DEVICES = 'AllDevices';
+    public const string ALL_DEVICES = 'AllDevices';
 
-    public const MOBILE_PHONES = 'MobilePhones';
+    public const string MOBILE_PHONES = 'MobilePhones';
 
-    public const TABLETS = 'Tablets';
+    public const string TABLETS = 'Tablets';
 
-    public const DESKTOPS = 'Desktops';
+    public const string DESKTOPS = 'Desktops';
 }

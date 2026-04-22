@@ -12,7 +12,7 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class PlacementTypesEnum
 {
-    public const SEARCH_RESULTS = 'SEARCH_RESULTS';
+    public const string SEARCH_RESULTS = 'SEARCH_RESULTS';
 
-    public const PRODUCT_GALLERY = 'PRODUCT_GALLERY';
+    public const string PRODUCT_GALLERY = 'PRODUCT_GALLERY';
 }

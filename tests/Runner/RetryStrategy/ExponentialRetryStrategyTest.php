@@ -6,16 +6,15 @@ namespace Biplane\Tests\YandexDirect\Runner\RetryStrategy;
 
 use Biplane\YandexDirect\Exception\ApiException;
 use Biplane\YandexDirect\Runner\RetryStrategy\ExponentialRetryStrategy;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 use RuntimeException;
 use SoapFault;
 use Throwable;
 
-class ExponentialRetryStrategyTest extends TestCase
+final class ExponentialRetryStrategyTest extends TestCase
 {
-    /**
-     * @dataProvider provideExceptions
-     */
+    #[DataProvider('provideExceptions')]
     public function testCanRetry(Throwable $exception, bool $expected): void
     {
         $strategy = new ExponentialRetryStrategy();
@@ -37,10 +36,8 @@ class ExponentialRetryStrategyTest extends TestCase
         self::assertSame(5000000, $strategy->getDelay(3, new RuntimeException()));
     }
 
-    /**
-     * @return iterable<mixed>
-     */
-    public function provideExceptions(): iterable
+    /** @return iterable<array{Throwable, bool}> */
+    public static function provideExceptions(): iterable
     {
         yield [new SoapFault('SOAP-ERROR', 'Parsing WSDL: Couldn\'t load from ...'), true];
         yield [new ApiException('API error', 52, null), true];

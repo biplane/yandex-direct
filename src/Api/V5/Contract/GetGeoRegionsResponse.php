@@ -28,7 +28,8 @@ class GetGeoRegionsResponse extends GetResponseGeneral implements IteratorAggreg
      *
      * @return static
      */
-    public static function create()
+    #[Override]
+    public static function create(): static
     {
         return new static();
     }
@@ -63,9 +64,7 @@ class GetGeoRegionsResponse extends GetResponseGeneral implements IteratorAggreg
         return isset($this->GeoRegions) ? count($this->GeoRegions) : 0;
     }
 
-    /**
-     * @return ArrayIterator<int, GeoRegionGetItem>
-     */
+    /** @return ArrayIterator<int, GeoRegionGetItem> */
     #[Override]
     public function getIterator(): ArrayIterator
     {

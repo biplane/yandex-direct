@@ -18,7 +18,7 @@ use Biplane\YandexDirect\Config;
  */
 class Sitelinks extends ApiSoapClientV5
 {
-    public const ENDPOINT = 'https://api.direct.yandex.com/v501/sitelinks?wsdl';
+    public const string ENDPOINT = 'https://api.direct.yandex.com/v501/sitelinks?wsdl';
 
     /**
      * Constructor
@@ -46,6 +46,7 @@ class Sitelinks extends ApiSoapClientV5
             'DeleteRequest' => 'Biplane\YandexDirect\Api\V5\Contract\DeleteSitelinksRequest',
             'DeleteResponse' => 'Biplane\YandexDirect\Api\V5\Contract\DeleteSitelinksResponse',
         ];
+
         parent::__construct(self::ENDPOINT, $config, $options);
     }
 

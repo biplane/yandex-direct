@@ -22,7 +22,7 @@ use Biplane\YandexDirect\Config;
  */
 class AgencyClients extends ApiSoapClientV5
 {
-    public const ENDPOINT = 'https://api.direct.yandex.com/v501/agencyclients?wsdl';
+    public const string ENDPOINT = 'https://api.direct.yandex.com/v501/agencyclients?wsdl';
 
     /**
      * Constructor
@@ -81,6 +81,7 @@ class AgencyClients extends ApiSoapClientV5
             'UpdateResponse' => 'Biplane\YandexDirect\Api\V5\Contract\UpdateAgencyClientsResponse',
             'ClientsActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\ClientsActionResult',
         ];
+
         parent::__construct(self::ENDPOINT, $config, $options);
     }
 

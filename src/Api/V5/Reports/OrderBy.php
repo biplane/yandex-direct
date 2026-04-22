@@ -18,9 +18,7 @@ final class OrderBy
         $this->sortOrder = $sortOrder;
     }
 
-    /**
-     * @psalm-param SortOrderEnum::* $sortOrder
-     */
+    /** @psalm-param SortOrderEnum::* $sortOrder */
     public static function create(string $field, string $sortOrder = SortOrderEnum::ASCENDING): self
     {
         return new self($field, $sortOrder);

@@ -12,11 +12,11 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class NegativeKeywordSharedSetFieldEnum
 {
-    public const ID = 'Id';
+    public const string ID = 'Id';
 
-    public const NAME = 'Name';
+    public const string NAME = 'Name';
 
-    public const NEGATIVE_KEYWORDS = 'NegativeKeywords';
+    public const string NEGATIVE_KEYWORDS = 'NegativeKeywords';
 
-    public const ASSOCIATED = 'Associated';
+    public const string ASSOCIATED = 'Associated';
 }

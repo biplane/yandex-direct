@@ -16,7 +16,7 @@ use Biplane\YandexDirect\Config;
  */
 class Dictionaries extends ApiSoapClientV5
 {
-    public const ENDPOINT = 'https://api.direct.yandex.com/v501/dictionaries?wsdl';
+    public const string ENDPOINT = 'https://api.direct.yandex.com/v501/dictionaries?wsdl';
 
     /**
      * Constructor
@@ -56,6 +56,7 @@ class Dictionaries extends ApiSoapClientV5
             'GeoRegionGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\GeoRegionGetItem',
             'GetResponseGeneral' => 'Biplane\YandexDirect\Api\V5\Contract\GetResponseGeneral',
         ];
+
         parent::__construct(self::ENDPOINT, $config, $options);
     }
 

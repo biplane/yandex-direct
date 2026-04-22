@@ -12,13 +12,13 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class WebpageConditionOperandEnum
 {
-    public const DOMAIN = 'DOMAIN';
+    public const string DOMAIN = 'DOMAIN';
 
-    public const OFFERS_LIST_URL = 'OFFERS_LIST_URL';
+    public const string OFFERS_LIST_URL = 'OFFERS_LIST_URL';
 
-    public const PAGE_CONTENT = 'PAGE_CONTENT';
+    public const string PAGE_CONTENT = 'PAGE_CONTENT';
 
-    public const PAGE_TITLE = 'PAGE_TITLE';
+    public const string PAGE_TITLE = 'PAGE_TITLE';
 
-    public const URL = 'URL';
+    public const string URL = 'URL';
 }

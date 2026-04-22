@@ -47,9 +47,7 @@ final class ReportRequestBuilder
         return $this;
     }
 
-    /**
-     * @psalm-param ReportRequest::PROCESSING_MODE_* $value
-     */
+    /** @psalm-param ReportRequest::PROCESSING_MODE_* $value */
     public function setProcessingMode(string $value): self
     {
         $allowedModes = [
@@ -61,7 +59,7 @@ final class ReportRequestBuilder
         if (! in_array($value, $allowedModes, true)) {
             throw new InvalidArgumentException(sprintf(
                 'The processing mode must be one of the following values: %s',
-                implode(', ', $allowedModes)
+                implode(', ', $allowedModes),
             ));
         }
 
@@ -110,7 +108,7 @@ final class ReportRequestBuilder
             $this->returnMoneyInMicros,
             $this->skipReportHeader,
             $this->skipReportSummary,
-            $this->skipColumnHeader
+            $this->skipColumnHeader,
         );
     }
 }

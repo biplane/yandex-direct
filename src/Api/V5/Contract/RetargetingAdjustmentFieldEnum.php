@@ -12,11 +12,11 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class RetargetingAdjustmentFieldEnum
 {
-    public const RETARGETING_CONDITION_ID = 'RetargetingConditionId';
+    public const string RETARGETING_CONDITION_ID = 'RetargetingConditionId';
 
-    public const BID_MODIFIER = 'BidModifier';
+    public const string BID_MODIFIER = 'BidModifier';
 
-    public const ACCESSIBLE = 'Accessible';
+    public const string ACCESSIBLE = 'Accessible';
 
-    public const ENABLED = 'Enabled';
+    public const string ENABLED = 'Enabled';
 }

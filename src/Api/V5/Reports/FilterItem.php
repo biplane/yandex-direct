@@ -19,9 +19,7 @@ final class FilterItem
     /** @var array<string> */
     private $values;
 
-    /**
-     * @param array<string> $values
-     */
+    /** @param array<string> $values */
     private function __construct(string $field, string $operator, array $values)
     {
         $this->field = $field;
@@ -33,12 +31,12 @@ final class FilterItem
      * @param array<int|string>|int|string $values
      * @psalm-param FilterOperatorEnum::* $operator
      */
-    public static function create(string $field, string $operator, $values): self
+    public static function create(string $field, string $operator, array|int|string $values): self
     {
         return new self(
             $field,
             $operator,
-            array_map('strval', is_array($values) ? array_values($values) : [$values])
+            array_map('strval', is_array($values) ? array_values($values) : [$values]),
         );
     }
 
@@ -52,9 +50,7 @@ final class FilterItem
         return $this->operator;
     }
 
-    /**
-     * @return array<string>
-     */
+    /** @return array<string> */
     public function getValues(): array
     {
         return $this->values;

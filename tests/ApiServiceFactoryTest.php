@@ -21,7 +21,7 @@ use const SOAP_SINGLE_ELEMENT_ARRAYS;
 use const WSDL_CACHE_BOTH;
 use const WSDL_CACHE_NONE;
 
-class ApiServiceFactoryTest extends TestCase
+final class ApiServiceFactoryTest extends TestCase
 {
     public function testCreateSoapClientWithDefaults(): void
     {
@@ -49,7 +49,7 @@ class ApiServiceFactoryTest extends TestCase
 
     public function testCreateSoapClientWithCustomTransactionNumberGenerator(): void
     {
-        $generator = $this->createMock(TransactionNumberGenerator::class);
+        $generator = $this->createStub(TransactionNumberGenerator::class);
         $factory = new ApiServiceFactory(null, $generator);
         $config = new Config(['access_token' => 'secret']);
 
@@ -84,7 +84,7 @@ class ApiServiceFactoryTest extends TestCase
                 'compression' => SOAP_COMPRESSION_ACCEPT | SOAP_COMPRESSION_GZIP | 5,
                 'cache_wsdl' => WSDL_CACHE_BOTH,
             ],
-            $service->getOptions()
+            $service->getOptions(),
         );
     }
 
@@ -98,12 +98,12 @@ class ApiServiceFactoryTest extends TestCase
             null,
             Config\SoapOptions::default()
                 ->withWsdlCacheType(WSDL_CACHE_NONE)
-                ->withCompression(SOAP_COMPRESSION_ACCEPT | SOAP_COMPRESSION_GZIP | 5)
+                ->withCompression(SOAP_COMPRESSION_ACCEPT | SOAP_COMPRESSION_GZIP | 5),
         );
 
         $service = $factory->createService(
             new Config(['access_token' => 'secret']),
-            MockSoapClient::class
+            MockSoapClient::class,
         );
 
         self::assertInstanceOf(MockSoapClient::class, $service);
@@ -118,13 +118,13 @@ class ApiServiceFactoryTest extends TestCase
                 'compression' => SOAP_COMPRESSION_ACCEPT | SOAP_COMPRESSION_GZIP | 5,
                 'cache_wsdl' => WSDL_CACHE_NONE,
             ],
-            $service->getOptions()
+            $service->getOptions(),
         );
     }
 
     public function testInjectLoggerToService(): void
     {
-        $logger = $this->createMock(SoapLogger::class);
+        $logger = $this->createStub(SoapLogger::class);
         $factory = new ApiServiceFactory(null, null, null, $logger);
         $config = new Config(['access_token' => 'secret']);
 

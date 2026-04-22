@@ -12,5 +12,5 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class FileFeedFieldEnum
 {
-    public const FILENAME = 'Filename';
+    public const string FILENAME = 'Filename';
 }

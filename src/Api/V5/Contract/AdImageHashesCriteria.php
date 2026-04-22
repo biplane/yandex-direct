@@ -28,7 +28,7 @@ class AdImageHashesCriteria implements IteratorAggregate, Countable
      *
      * @return static
      */
-    public static function create()
+    public static function create(): static
     {
         return new static();
     }
@@ -63,9 +63,7 @@ class AdImageHashesCriteria implements IteratorAggregate, Countable
         return count($this->AdImageHashes);
     }
 
-    /**
-     * @return ArrayIterator<int, string>
-     */
+    /** @return ArrayIterator<int, string> */
     #[Override]
     public function getIterator(): ArrayIterator
     {

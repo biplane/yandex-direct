@@ -11,6 +11,7 @@ use Biplane\YandexDirect\Soap\TypeConverter\ArrayOfIntegerTypeTypeConverter;
 use Biplane\YandexDirect\Soap\TypeConverter\ArrayOfLongTypeTypeConverter;
 use Biplane\YandexDirect\Soap\TypeConverter\ArrayOfStringTypeConverter;
 use Biplane\YandexDirect\Util\StreamContextFactory;
+use Override;
 use SoapFault;
 
 use function is_object;
@@ -20,24 +21,20 @@ use function trim;
 
 class ApiSoapClientV5 extends ApiSoapClient
 {
-    private const GENERAL_NS = 'http://api.direct.yandex.com/v5/general';
+    private const string GENERAL_NS = 'http://api.direct.yandex.com/v5/general';
 
-    /**
-     * @param array<string, mixed> $options
-     */
+    /** @param array<string, mixed> $options */
     public function __construct(?string $wsdl, Config $config, array $options = [])
     {
         $options['stream_context'] = StreamContextFactory::create(
             self::createHttpHeaders($config),
-            $options['stream_context'] ?? null
+            $options['stream_context'] ?? null,
         );
 
         parent::__construct($wsdl, $config, $options);
     }
 
-    /**
-     * @see https://tech.yandex.ru/direct/doc/dg/concepts/headers-docpage/#units
-     */
+    /** @see https://tech.yandex.ru/direct/doc/dg/concepts/headers-docpage/#units */
     public function getUnits(): ?Units
     {
         $headers = $this->__getLastResponseHeaders();
@@ -56,6 +53,7 @@ class ApiSoapClientV5 extends ApiSoapClient
     /**
      * {@inheritDoc}
      */
+    #[Override]
     protected function getTypeConverters(): array
     {
         $converters = parent::getTypeConverters();
@@ -67,6 +65,7 @@ class ApiSoapClientV5 extends ApiSoapClient
         return $converters;
     }
 
+    #[Override]
     protected function parseSoapFault(SoapFault $fault): ?ApiException
     {
         $detail = property_exists($fault, 'detail') ? $fault->detail : null;
@@ -78,7 +77,7 @@ class ApiSoapClientV5 extends ApiSoapClient
                 $fault->faultstring,
                 (int)$detail->FaultResponse->errorCode,
                 $detail->FaultResponse->errorDetail,
-                $fault
+                $fault,
             );
             $exception->setRequestId($detail->FaultResponse->requestId);
 

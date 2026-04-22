@@ -12,15 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class TurboPageFieldEnum
 {
-    public const ID = 'Id';
+    public const string ID = 'Id';
 
-    public const NAME = 'Name';
+    public const string NAME = 'Name';
 
-    public const HREF = 'Href';
+    public const string HREF = 'Href';
 
-    public const PREVIEW_HREF = 'PreviewHref';
+    public const string PREVIEW_HREF = 'PreviewHref';
 
-    public const TURBO_SITE_HREF = 'TurboSiteHref';
+    public const string TURBO_SITE_HREF = 'TurboSiteHref';
 
-    public const BOUND_WITH_HREF = 'BoundWithHref';
+    public const string BOUND_WITH_HREF = 'BoundWithHref';
 }

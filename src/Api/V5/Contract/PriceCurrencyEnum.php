@@ -12,21 +12,21 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class PriceCurrencyEnum
 {
-    public const RUB = 'RUB';
+    public const string RUB = 'RUB';
 
-    public const UAH = 'UAH';
+    public const string UAH = 'UAH';
 
-    public const BYN = 'BYN';
+    public const string BYN = 'BYN';
 
-    public const USD = 'USD';
+    public const string USD = 'USD';
 
-    public const EUR = 'EUR';
+    public const string EUR = 'EUR';
 
-    public const KZT = 'KZT';
+    public const string KZT = 'KZT';
 
-    public const TRY = 'TRY';
+    public const string TRY = 'TRY';
 
-    public const CHF = 'CHF';
+    public const string CHF = 'CHF';
 
-    public const UZS = 'UZS';
+    public const string UZS = 'UZS';
 }

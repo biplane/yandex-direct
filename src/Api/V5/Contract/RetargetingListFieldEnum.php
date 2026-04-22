@@ -12,19 +12,19 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class RetargetingListFieldEnum
 {
-    public const TYPE = 'Type';
+    public const string TYPE = 'Type';
 
-    public const ID = 'Id';
+    public const string ID = 'Id';
 
-    public const NAME = 'Name';
+    public const string NAME = 'Name';
 
-    public const DESCRIPTION = 'Description';
+    public const string DESCRIPTION = 'Description';
 
-    public const RULES = 'Rules';
+    public const string RULES = 'Rules';
 
-    public const IS_AVAILABLE = 'IsAvailable';
+    public const string IS_AVAILABLE = 'IsAvailable';
 
-    public const SCOPE = 'Scope';
+    public const string SCOPE = 'Scope';
 
-    public const AVAILABLE_FOR_TARGETS_IN_AD_GROUP_TYPES = 'AvailableForTargetsInAdGroupTypes';
+    public const string AVAILABLE_FOR_TARGETS_IN_AD_GROUP_TYPES = 'AvailableForTargetsInAdGroupTypes';
 }

@@ -12,25 +12,25 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class BusinessFieldEnum
 {
-    public const ID = 'Id';
+    public const string ID = 'Id';
 
-    public const NAME = 'Name';
+    public const string NAME = 'Name';
 
-    public const ADDRESS = 'Address';
+    public const string ADDRESS = 'Address';
 
-    public const PHONE = 'Phone';
+    public const string PHONE = 'Phone';
 
-    public const PROFILE_URL = 'ProfileUrl';
+    public const string PROFILE_URL = 'ProfileUrl';
 
-    public const INTERNAL_URL = 'InternalUrl';
+    public const string INTERNAL_URL = 'InternalUrl';
 
-    public const IS_PUBLISHED = 'IsPublished';
+    public const string IS_PUBLISHED = 'IsPublished';
 
-    public const MERGED_IDS = 'MergedIds';
+    public const string MERGED_IDS = 'MergedIds';
 
-    public const RUBRIC = 'Rubric';
+    public const string RUBRIC = 'Rubric';
 
-    public const URLS = 'Urls';
+    public const string URLS = 'Urls';
 
-    public const HAS_OFFICE = 'HasOffice';
+    public const string HAS_OFFICE = 'HasOffice';
 }

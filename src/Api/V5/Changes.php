@@ -18,7 +18,7 @@ use Biplane\YandexDirect\Config;
  */
 class Changes extends ApiSoapClientV5
 {
-    public const ENDPOINT = 'https://api.direct.yandex.com/v501/changes?wsdl';
+    public const string ENDPOINT = 'https://api.direct.yandex.com/v501/changes?wsdl';
 
     /**
      * Constructor
@@ -39,6 +39,7 @@ class Changes extends ApiSoapClientV5
             'CampaignStatItem' => 'Biplane\YandexDirect\Api\V5\Contract\CampaignStatItem',
             'CheckResponseIds' => 'Biplane\YandexDirect\Api\V5\Contract\CheckResponseIds',
         ];
+
         parent::__construct(self::ENDPOINT, $config, $options);
     }
 

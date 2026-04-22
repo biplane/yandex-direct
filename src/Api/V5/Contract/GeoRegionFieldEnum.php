@@ -12,9 +12,9 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class GeoRegionFieldEnum
 {
-    public const GEO_REGION_ID = 'GeoRegionId';
+    public const string GEO_REGION_ID = 'GeoRegionId';
 
-    public const GEO_REGION_NAME = 'GeoRegionName';
+    public const string GEO_REGION_NAME = 'GeoRegionName';
 
-    public const PARENT_GEO_REGION_NAMES = 'ParentGeoRegionNames';
+    public const string PARENT_GEO_REGION_NAMES = 'ParentGeoRegionNames';
 }

@@ -12,11 +12,11 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class SourceProcessingStatusEnum
 {
-    public const EMPTY_RESULT = 'EMPTY_RESULT';
+    public const string EMPTY_RESULT = 'EMPTY_RESULT';
 
-    public const PROCESSED = 'PROCESSED';
+    public const string PROCESSED = 'PROCESSED';
 
-    public const UNKNOWN = 'UNKNOWN';
+    public const string UNKNOWN = 'UNKNOWN';
 
-    public const UNPROCESSED = 'UNPROCESSED';
+    public const string UNPROCESSED = 'UNPROCESSED';
 }

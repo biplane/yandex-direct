@@ -12,19 +12,19 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class SmartCampaignFieldEnum
 {
-    public const COUNTER_ID = 'CounterId';
+    public const string COUNTER_ID = 'CounterId';
 
-    public const SETTINGS = 'Settings';
+    public const string SETTINGS = 'Settings';
 
-    public const BIDDING_STRATEGY = 'BiddingStrategy';
+    public const string BIDDING_STRATEGY = 'BiddingStrategy';
 
-    public const PRIORITY_GOALS = 'PriorityGoals';
+    public const string PRIORITY_GOALS = 'PriorityGoals';
 
-    public const TRACKING_PARAMS = 'TrackingParams';
+    public const string TRACKING_PARAMS = 'TrackingParams';
 
-    public const ATTRIBUTION_MODEL = 'AttributionModel';
+    public const string ATTRIBUTION_MODEL = 'AttributionModel';
 
-    public const PACKAGE_BIDDING_STRATEGY = 'PackageBiddingStrategy';
+    public const string PACKAGE_BIDDING_STRATEGY = 'PackageBiddingStrategy';
 
-    public const CAN_BE_USED_AS_PACKAGE_BIDDING_STRATEGY_SOURCE = 'CanBeUsedAsPackageBiddingStrategySource';
+    public const string CAN_BE_USED_AS_PACKAGE_BIDDING_STRATEGY_SOURCE = 'CanBeUsedAsPackageBiddingStrategySource';
 }

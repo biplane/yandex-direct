@@ -28,7 +28,7 @@ class UpdateCampaignsRequest implements IteratorAggregate, Countable
      *
      * @return static
      */
-    public static function create()
+    public static function create(): static
     {
         return new static();
     }
@@ -63,9 +63,7 @@ class UpdateCampaignsRequest implements IteratorAggregate, Countable
         return count($this->Campaigns);
     }
 
-    /**
-     * @return ArrayIterator<int, CampaignUpdateItem>
-     */
+    /** @return ArrayIterator<int, CampaignUpdateItem> */
     #[Override]
     public function getIterator(): ArrayIterator
     {

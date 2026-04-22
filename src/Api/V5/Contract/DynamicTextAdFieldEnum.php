@@ -12,19 +12,19 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class DynamicTextAdFieldEnum
 {
-    public const AD_IMAGE_HASH = 'AdImageHash';
+    public const string AD_IMAGE_HASH = 'AdImageHash';
 
-    public const SITELINK_SET_ID = 'SitelinkSetId';
+    public const string SITELINK_SET_ID = 'SitelinkSetId';
 
-    public const TEXT = 'Text';
+    public const string TEXT = 'Text';
 
-    public const V_CARD_ID = 'VCardId';
+    public const string V_CARD_ID = 'VCardId';
 
-    public const AD_IMAGE_MODERATION = 'AdImageModeration';
+    public const string AD_IMAGE_MODERATION = 'AdImageModeration';
 
-    public const SITELINKS_MODERATION = 'SitelinksModeration';
+    public const string SITELINKS_MODERATION = 'SitelinksModeration';
 
-    public const V_CARD_MODERATION = 'VCardModeration';
+    public const string V_CARD_MODERATION = 'VCardModeration';
 
-    public const AD_EXTENSIONS = 'AdExtensions';
+    public const string AD_EXTENSIONS = 'AdExtensions';
 }

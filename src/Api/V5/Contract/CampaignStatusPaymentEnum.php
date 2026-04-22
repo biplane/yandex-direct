@@ -12,7 +12,7 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class CampaignStatusPaymentEnum
 {
-    public const DISALLOWED = 'DISALLOWED';
+    public const string DISALLOWED = 'DISALLOWED';
 
-    public const ALLOWED = 'ALLOWED';
+    public const string ALLOWED = 'ALLOWED';
 }

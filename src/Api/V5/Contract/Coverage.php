@@ -28,7 +28,7 @@ class Coverage implements IteratorAggregate, Countable
      *
      * @return static
      */
-    public static function create()
+    public static function create(): static
     {
         return new static();
     }
@@ -63,9 +63,7 @@ class Coverage implements IteratorAggregate, Countable
         return isset($this->CoverageItems) ? count($this->CoverageItems) : 0;
     }
 
-    /**
-     * @return ArrayIterator<int, NetworkCoverageItem>
-     */
+    /** @return ArrayIterator<int, NetworkCoverageItem> */
     #[Override]
     public function getIterator(): ArrayIterator
     {

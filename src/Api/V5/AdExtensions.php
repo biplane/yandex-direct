@@ -18,7 +18,7 @@ use Biplane\YandexDirect\Config;
  */
 class AdExtensions extends ApiSoapClientV5
 {
-    public const ENDPOINT = 'https://api.direct.yandex.com/v501/adextensions?wsdl';
+    public const string ENDPOINT = 'https://api.direct.yandex.com/v501/adextensions?wsdl';
 
     /**
      * Constructor
@@ -47,6 +47,7 @@ class AdExtensions extends ApiSoapClientV5
             'IdsCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\IdsCriteria',
             'DeleteResponse' => 'Biplane\YandexDirect\Api\V5\Contract\DeleteAdExtensionsResponse',
         ];
+
         parent::__construct(self::ENDPOINT, $config, $options);
     }
 

@@ -51,17 +51,13 @@ final class SelectionCriteria
         return $this;
     }
 
-    /**
-     * @return array<FilterItem>
-     */
+    /** @return array<FilterItem> */
     public function getFilter(): array
     {
         return $this->filter ?? [];
     }
 
-    /**
-     * @param array<FilterItem> $filter
-     */
+    /** @param array<FilterItem> $filter */
     public function setFilter(array $filter): self
     {
         if (count($filter) === 0) {

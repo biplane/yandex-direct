@@ -4,19 +4,16 @@ declare(strict_types=1);
 
 namespace Biplane\YandexDirect\Soap;
 
+/** @template T */
 interface TypeConverter
 {
     public function getTypeNamespace(): string;
 
     public function getTypeName(): string;
 
-    /**
-     * @return mixed
-     */
-    public function fromXml(string $xml);
+    /** @return T */
+    public function fromXml(string $xml): mixed;
 
-    /**
-     * @param mixed $data
-     */
-    public function toXml($data): string;
+    /** @param T $data */
+    public function toXml(mixed $data): string;
 }

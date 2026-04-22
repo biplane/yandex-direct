@@ -12,7 +12,7 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class CalculateByEnum
 {
-    public const VALUE = 'VALUE';
+    public const string VALUE = 'VALUE';
 
-    public const DIFF = 'DIFF';
+    public const string DIFF = 'DIFF';
 }

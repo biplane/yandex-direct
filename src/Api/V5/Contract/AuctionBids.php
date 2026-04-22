@@ -28,7 +28,7 @@ class AuctionBids implements IteratorAggregate, Countable
      *
      * @return static
      */
-    public static function create()
+    public static function create(): static
     {
         return new static();
     }
@@ -63,9 +63,7 @@ class AuctionBids implements IteratorAggregate, Countable
         return isset($this->AuctionBidItems) ? count($this->AuctionBidItems) : 0;
     }
 
-    /**
-     * @return ArrayIterator<int, AuctionBidItem>
-     */
+    /** @return ArrayIterator<int, AuctionBidItem> */
     #[Override]
     public function getIterator(): ArrayIterator
     {

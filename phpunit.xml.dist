@@ -1,37 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:noNamespaceSchemaLocation="http://schema.phpunit.de/7.5/phpunit.xsd"
-         colors="true"
-         verbose="true"
-         bootstrap="tests/bootstrap.php">
+         xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
+         bootstrap="tests/bootstrap.php"
+         cacheDirectory=".phpunit.cache"
+         executionOrder="depends,defects"
+         beStrictAboutCoverageMetadata="true"
+         beStrictAboutOutputDuringTests="true"
+         displayDetailsOnPhpunitDeprecations="true"
+         failOnPhpunitDeprecation="true"
+         failOnRisky="true"
+         failOnWarning="true">
     <testsuites>
-        <testsuite name="Library Suite">
-            <directory>tests/</directory>
+        <testsuite name="default">
+            <directory>tests</directory>
         </testsuite>
     </testsuites>
 
-    <groups>
+    <source ignoreIndirectDeprecations="true" restrictNotices="true" restrictWarnings="true">
+        <include>
+            <directory>src</directory>
+        </include>
         <exclude>
-            <group>yandex_api</group>
+            <directory>src/Api/V4</directory>
+            <directory>src/Api/V5</directory>
         </exclude>
-    </groups>
-
-    <filter>
-        <whitelist>
-            <directory suffix=".php">src/</directory>
-            <exclude>
-                <!-- Exclude auto-generated code from the coverage report -->
-                <directory>src/Api/V4/</directory>
-                <directory>src/Api/V5/</directory>
-            </exclude>
-        </whitelist>
-    </filter>
-
-    <php>
-        <var name="PROXY_HOST" value="" />
-        <var name="PROXY_PORT" value="" />
-        <var name="YANDEX_LOCAL_CERT" value="" />
-        <var name="YANDEX_LOGIN" value="" />
-    </php>
+    </source>
 </phpunit>

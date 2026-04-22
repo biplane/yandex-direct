@@ -28,7 +28,7 @@ class TrackingPixelGetArray implements IteratorAggregate, Countable
      *
      * @return static
      */
-    public static function create()
+    public static function create(): static
     {
         return new static();
     }
@@ -63,9 +63,7 @@ class TrackingPixelGetArray implements IteratorAggregate, Countable
         return isset($this->Items) ? count($this->Items) : 0;
     }
 
-    /**
-     * @return ArrayIterator<int, TrackingPixelGetItem>
-     */
+    /** @return ArrayIterator<int, TrackingPixelGetItem> */
     #[Override]
     public function getIterator(): ArrayIterator
     {

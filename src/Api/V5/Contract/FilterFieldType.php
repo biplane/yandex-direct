@@ -12,9 +12,9 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class FilterFieldType
 {
-    public const ENUM = 'Enum';
+    public const string ENUM = 'Enum';
 
-    public const NUMBER = 'Number';
+    public const string NUMBER = 'Number';
 
-    public const STRING = 'String';
+    public const string STRING = 'String';
 }

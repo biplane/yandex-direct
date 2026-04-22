@@ -12,15 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class AdExtensionFieldEnum
 {
-    public const ID = 'Id';
+    public const string ID = 'Id';
 
-    public const TYPE = 'Type';
+    public const string TYPE = 'Type';
 
-    public const STATE = 'State';
+    public const string STATE = 'State';
 
-    public const STATUS = 'Status';
+    public const string STATUS = 'Status';
 
-    public const STATUS_CLARIFICATION = 'StatusClarification';
+    public const string STATUS_CLARIFICATION = 'StatusClarification';
 
-    public const ASSOCIATED = 'Associated';
+    public const string ASSOCIATED = 'Associated';
 }

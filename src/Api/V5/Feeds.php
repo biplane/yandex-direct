@@ -20,7 +20,7 @@ use Biplane\YandexDirect\Config;
  */
 class Feeds extends ApiSoapClientV5
 {
-    public const ENDPOINT = 'https://api.direct.yandex.com/v501/feeds?wsdl';
+    public const string ENDPOINT = 'https://api.direct.yandex.com/v501/feeds?wsdl';
 
     /**
      * Constructor
@@ -56,6 +56,7 @@ class Feeds extends ApiSoapClientV5
             'DeleteRequest' => 'Biplane\YandexDirect\Api\V5\Contract\DeleteFeedsRequest',
             'DeleteResponse' => 'Biplane\YandexDirect\Api\V5\Contract\DeleteFeedsResponse',
         ];
+
         parent::__construct(self::ENDPOINT, $config, $options);
     }
 

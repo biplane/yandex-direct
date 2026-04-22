@@ -12,39 +12,39 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class KeywordFieldEnum
 {
-    public const ID = 'Id';
+    public const string ID = 'Id';
 
-    public const KEYWORD = 'Keyword';
+    public const string KEYWORD = 'Keyword';
 
-    public const STATE = 'State';
+    public const string STATE = 'State';
 
-    public const STATUS = 'Status';
+    public const string STATUS = 'Status';
 
-    public const AD_GROUP_ID = 'AdGroupId';
+    public const string AD_GROUP_ID = 'AdGroupId';
 
-    public const CAMPAIGN_ID = 'CampaignId';
+    public const string CAMPAIGN_ID = 'CampaignId';
 
-    public const BID = 'Bid';
+    public const string BID = 'Bid';
 
-    public const AUTOTARGETING_SEARCH_BID_IS_AUTO = 'AutotargetingSearchBidIsAuto';
+    public const string AUTOTARGETING_SEARCH_BID_IS_AUTO = 'AutotargetingSearchBidIsAuto';
 
-    public const CONTEXT_BID = 'ContextBid';
+    public const string CONTEXT_BID = 'ContextBid';
 
-    public const STRATEGY_PRIORITY = 'StrategyPriority';
+    public const string STRATEGY_PRIORITY = 'StrategyPriority';
 
-    public const USER_PARAM1 = 'UserParam1';
+    public const string USER_PARAM1 = 'UserParam1';
 
-    public const USER_PARAM2 = 'UserParam2';
+    public const string USER_PARAM2 = 'UserParam2';
 
-    public const PRODUCTIVITY = 'Productivity';
+    public const string PRODUCTIVITY = 'Productivity';
 
-    public const STATISTICS_SEARCH = 'StatisticsSearch';
+    public const string STATISTICS_SEARCH = 'StatisticsSearch';
 
-    public const STATISTICS_NETWORK = 'StatisticsNetwork';
+    public const string STATISTICS_NETWORK = 'StatisticsNetwork';
 
-    public const SERVING_STATUS = 'ServingStatus';
+    public const string SERVING_STATUS = 'ServingStatus';
 
-    public const AUTOTARGETING_CATEGORIES = 'AutotargetingCategories';
+    public const string AUTOTARGETING_CATEGORIES = 'AutotargetingCategories';
 
-    public const AUTOTARGETING_BRAND_OPTIONS = 'AutotargetingBrandOptions';
+    public const string AUTOTARGETING_BRAND_OPTIONS = 'AutotargetingBrandOptions';
 }

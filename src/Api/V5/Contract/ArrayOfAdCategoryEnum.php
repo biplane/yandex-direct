@@ -28,7 +28,7 @@ class ArrayOfAdCategoryEnum implements IteratorAggregate, Countable
      *
      * @return static
      */
-    public static function create()
+    public static function create(): static
     {
         return new static();
     }
@@ -67,9 +67,7 @@ class ArrayOfAdCategoryEnum implements IteratorAggregate, Countable
         return count($this->Items);
     }
 
-    /**
-     * @return ArrayIterator<int, 'ABORTION'|'ALCOHOL'|'BABY_FOOD'|'DIETARY_SUPPLEMENTS'|'MEDICINE'|'PROJECT_DECLARATION'|'PSEUDO_WEAPON'|'TOBACCO'>
-     */
+    /** @return ArrayIterator<int, 'ABORTION'|'ALCOHOL'|'BABY_FOOD'|'DIETARY_SUPPLEMENTS'|'MEDICINE'|'PROJECT_DECLARATION'|'PSEUDO_WEAPON'|'TOBACCO'> */
     #[Override]
     public function getIterator(): ArrayIterator
     {

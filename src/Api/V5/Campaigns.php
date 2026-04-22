@@ -28,7 +28,7 @@ use Biplane\YandexDirect\Config;
  */
 class Campaigns extends ApiSoapClientV5
 {
-    public const ENDPOINT = 'https://api.direct.yandex.com/v501/campaigns?wsdl';
+    public const string ENDPOINT = 'https://api.direct.yandex.com/v501/campaigns?wsdl';
 
     /**
      * Constructor
@@ -259,6 +259,7 @@ class Campaigns extends ApiSoapClientV5
             'ResumeRequest' => 'Biplane\YandexDirect\Api\V5\Contract\ResumeCampaignsRequest',
             'ResumeResponse' => 'Biplane\YandexDirect\Api\V5\Contract\ResumeCampaignsResponse',
         ];
+
         parent::__construct(self::ENDPOINT, $config, $options);
     }
 

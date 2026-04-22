@@ -12,11 +12,11 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class MobileAppFeatureEnum
 {
-    public const PRICE = 'PRICE';
+    public const string PRICE = 'PRICE';
 
-    public const ICON = 'ICON';
+    public const string ICON = 'ICON';
 
-    public const CUSTOMER_RATING = 'CUSTOMER_RATING';
+    public const string CUSTOMER_RATING = 'CUSTOMER_RATING';
 
-    public const RATINGS = 'RATINGS';
+    public const string RATINGS = 'RATINGS';
 }

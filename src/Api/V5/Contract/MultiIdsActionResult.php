@@ -28,7 +28,8 @@ class MultiIdsActionResult extends ActionResultBase implements IteratorAggregate
      *
      * @return static
      */
-    public static function create()
+    #[Override]
+    public static function create(): static
     {
         return new static();
     }
@@ -63,9 +64,7 @@ class MultiIdsActionResult extends ActionResultBase implements IteratorAggregate
         return isset($this->Ids) ? count($this->Ids) : 0;
     }
 
-    /**
-     * @return ArrayIterator<int, int>
-     */
+    /** @return ArrayIterator<int, int> */
     #[Override]
     public function getIterator(): ArrayIterator
     {

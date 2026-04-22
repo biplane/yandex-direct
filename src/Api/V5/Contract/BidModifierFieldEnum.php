@@ -12,13 +12,13 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class BidModifierFieldEnum
 {
-    public const ID = 'Id';
+    public const string ID = 'Id';
 
-    public const CAMPAIGN_ID = 'CampaignId';
+    public const string CAMPAIGN_ID = 'CampaignId';
 
-    public const AD_GROUP_ID = 'AdGroupId';
+    public const string AD_GROUP_ID = 'AdGroupId';
 
-    public const LEVEL = 'Level';
+    public const string LEVEL = 'Level';
 
-    public const TYPE = 'Type';
+    public const string TYPE = 'Type';
 }

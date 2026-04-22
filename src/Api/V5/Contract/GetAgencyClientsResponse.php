@@ -28,7 +28,8 @@ class GetAgencyClientsResponse extends GetResponseGeneral implements IteratorAgg
      *
      * @return static
      */
-    public static function create()
+    #[Override]
+    public static function create(): static
     {
         return new static();
     }
@@ -63,9 +64,7 @@ class GetAgencyClientsResponse extends GetResponseGeneral implements IteratorAgg
         return isset($this->Clients) ? count($this->Clients) : 0;
     }
 
-    /**
-     * @return ArrayIterator<int, ClientGetItem>
-     */
+    /** @return ArrayIterator<int, ClientGetItem> */
     #[Override]
     public function getIterator(): ArrayIterator
     {

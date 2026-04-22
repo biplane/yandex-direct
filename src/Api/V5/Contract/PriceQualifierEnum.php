@@ -12,9 +12,9 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class PriceQualifierEnum
 {
-    public const NONE = 'NONE';
+    public const string NONE = 'NONE';
 
-    public const FROM = 'FROM';
+    public const string FROM = 'FROM';
 
-    public const UP_TO = 'UP_TO';
+    public const string UP_TO = 'UP_TO';
 }

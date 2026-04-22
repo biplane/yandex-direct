@@ -28,7 +28,7 @@ class SetBidsResponse implements IteratorAggregate, Countable
      *
      * @return static
      */
-    public static function create()
+    public static function create(): static
     {
         return new static();
     }
@@ -63,9 +63,7 @@ class SetBidsResponse implements IteratorAggregate, Countable
         return isset($this->SetResults) ? count($this->SetResults) : 0;
     }
 
-    /**
-     * @return ArrayIterator<int, BidActionResult>
-     */
+    /** @return ArrayIterator<int, BidActionResult> */
     #[Override]
     public function getIterator(): ArrayIterator
     {

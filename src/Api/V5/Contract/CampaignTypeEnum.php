@@ -12,15 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class CampaignTypeEnum
 {
-    public const TEXT_CAMPAIGN = 'TEXT_CAMPAIGN';
+    public const string TEXT_CAMPAIGN = 'TEXT_CAMPAIGN';
 
-    public const MOBILE_APP_CAMPAIGN = 'MOBILE_APP_CAMPAIGN';
+    public const string MOBILE_APP_CAMPAIGN = 'MOBILE_APP_CAMPAIGN';
 
-    public const DYNAMIC_TEXT_CAMPAIGN = 'DYNAMIC_TEXT_CAMPAIGN';
+    public const string DYNAMIC_TEXT_CAMPAIGN = 'DYNAMIC_TEXT_CAMPAIGN';
 
-    public const CPM_BANNER_CAMPAIGN = 'CPM_BANNER_CAMPAIGN';
+    public const string CPM_BANNER_CAMPAIGN = 'CPM_BANNER_CAMPAIGN';
 
-    public const SMART_CAMPAIGN = 'SMART_CAMPAIGN';
+    public const string SMART_CAMPAIGN = 'SMART_CAMPAIGN';
 
-    public const UNIFIED_CAMPAIGN = 'UNIFIED_CAMPAIGN';
+    public const string UNIFIED_CAMPAIGN = 'UNIFIED_CAMPAIGN';
 }

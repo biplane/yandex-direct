@@ -28,7 +28,7 @@ class UpdateNegativeKeywordSharedSetsRequest implements IteratorAggregate, Count
      *
      * @return static
      */
-    public static function create()
+    public static function create(): static
     {
         return new static();
     }
@@ -63,9 +63,7 @@ class UpdateNegativeKeywordSharedSetsRequest implements IteratorAggregate, Count
         return count($this->NegativeKeywordSharedSets);
     }
 
-    /**
-     * @return ArrayIterator<int, NegativeKeywordSharedSetUpdateItem>
-     */
+    /** @return ArrayIterator<int, NegativeKeywordSharedSetUpdateItem> */
     #[Override]
     public function getIterator(): ArrayIterator
     {

@@ -12,9 +12,9 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class PrivilegeEnum
 {
-    public const EDIT_CAMPAIGNS = 'EDIT_CAMPAIGNS';
+    public const string EDIT_CAMPAIGNS = 'EDIT_CAMPAIGNS';
 
-    public const IMPORT_XLS = 'IMPORT_XLS';
+    public const string IMPORT_XLS = 'IMPORT_XLS';
 
-    public const TRANSFER_MONEY = 'TRANSFER_MONEY';
+    public const string TRANSFER_MONEY = 'TRANSFER_MONEY';
 }

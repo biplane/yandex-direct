@@ -12,15 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class DynamicTextFeedAdGroupFieldEnum
 {
-    public const AUTOTARGETING_CATEGORIES = 'AutotargetingCategories';
+    public const string AUTOTARGETING_CATEGORIES = 'AutotargetingCategories';
 
-    public const AUTOTARGETING_SETTINGS = 'AutotargetingSettings';
+    public const string AUTOTARGETING_SETTINGS = 'AutotargetingSettings';
 
-    public const SOURCE = 'Source';
+    public const string SOURCE = 'Source';
 
-    public const FEED_ID = 'FeedId';
+    public const string FEED_ID = 'FeedId';
 
-    public const SOURCE_TYPE = 'SourceType';
+    public const string SOURCE_TYPE = 'SourceType';
 
-    public const SOURCE_PROCESSING_STATUS = 'SourceProcessingStatus';
+    public const string SOURCE_PROCESSING_STATUS = 'SourceProcessingStatus';
 }

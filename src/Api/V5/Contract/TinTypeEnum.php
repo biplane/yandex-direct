@@ -12,13 +12,13 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class TinTypeEnum
 {
-    public const PHYSICAL = 'PHYSICAL';
+    public const string PHYSICAL = 'PHYSICAL';
 
-    public const FOREIGN_PHYSICAL = 'FOREIGN_PHYSICAL';
+    public const string FOREIGN_PHYSICAL = 'FOREIGN_PHYSICAL';
 
-    public const LEGAL = 'LEGAL';
+    public const string LEGAL = 'LEGAL';
 
-    public const FOREIGN_LEGAL = 'FOREIGN_LEGAL';
+    public const string FOREIGN_LEGAL = 'FOREIGN_LEGAL';
 
-    public const INDIVIDUAL = 'INDIVIDUAL';
+    public const string INDIVIDUAL = 'INDIVIDUAL';
 }

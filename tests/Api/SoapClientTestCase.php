@@ -6,6 +6,7 @@ namespace Biplane\Tests\YandexDirect\Api;
 
 use Biplane\YandexDirect\Config;
 use Closure;
+use Override;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use VCR\Event\AfterHttpRequestEvent;
@@ -27,6 +28,7 @@ abstract class SoapClientTestCase extends TestCase
     /** @var array<string, Closure> */
     private $listeners = [];
 
+    #[Override]
     protected function tearDown(): void
     {
         VCR::turnOff();
@@ -65,19 +67,20 @@ abstract class SoapClientTestCase extends TestCase
                 }
 
                 $request->setHeader('Use-Operator-Units', 'true');
-            }
+            },
         );
         $this->addListener(
             VCREvents::VCR_AFTER_HTTP_REQUEST,
             static function (AfterHttpRequestEvent $event): void {
                 $event->getRequest()->removeHeader('Authorization');
-            }
+            },
         );
     }
 
     protected function createConfig(): Config
     {
         $accessToken = getenv('DIRECT_TOKEN');
+        $clientLogin = getenv('DIRECT_CLIENT_LOGIN');
 
         if ($accessToken === false) {
             $accessToken = 'fake';
@@ -85,7 +88,7 @@ abstract class SoapClientTestCase extends TestCase
 
         $config = new Config([
             'access_token' => $accessToken,
-            'client_login' => getenv('DIRECT_CLIENT_LOGIN') ?: null,
+            'client_login' => $clientLogin !== false ? $clientLogin : null,
         ]);
 
         $this->configureVCR($config);
@@ -93,9 +96,7 @@ abstract class SoapClientTestCase extends TestCase
         return $config;
     }
 
-    /**
-     * @return array<string, mixed>
-     */
+    /** @return array<string, mixed> */
     protected function getSoapOptions(): array
     {
         return [

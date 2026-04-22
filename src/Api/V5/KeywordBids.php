@@ -18,7 +18,7 @@ use Biplane\YandexDirect\Config;
  */
 class KeywordBids extends ApiSoapClientV5
 {
-    public const ENDPOINT = 'https://api.direct.yandex.com/v501/keywordbids?wsdl';
+    public const string ENDPOINT = 'https://api.direct.yandex.com/v501/keywordbids?wsdl';
 
     /**
      * Constructor
@@ -54,6 +54,7 @@ class KeywordBids extends ApiSoapClientV5
             'NetworkByCoverage' => 'Biplane\YandexDirect\Api\V5\Contract\NetworkByCoverage',
             'SetAutoResponse' => 'Biplane\YandexDirect\Api\V5\Contract\SetAutoResponse',
         ];
+
         parent::__construct(self::ENDPOINT, $config, $options);
     }
 

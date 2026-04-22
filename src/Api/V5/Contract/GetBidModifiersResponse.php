@@ -28,7 +28,8 @@ class GetBidModifiersResponse extends GetResponseGeneral implements IteratorAggr
      *
      * @return static
      */
-    public static function create()
+    #[Override]
+    public static function create(): static
     {
         return new static();
     }
@@ -63,9 +64,7 @@ class GetBidModifiersResponse extends GetResponseGeneral implements IteratorAggr
         return isset($this->BidModifiers) ? count($this->BidModifiers) : 0;
     }
 
-    /**
-     * @return ArrayIterator<int, BidModifierGetItem>
-     */
+    /** @return ArrayIterator<int, BidModifierGetItem> */
     #[Override]
     public function getIterator(): ArrayIterator
     {

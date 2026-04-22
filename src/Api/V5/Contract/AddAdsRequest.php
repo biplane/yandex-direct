@@ -28,7 +28,7 @@ class AddAdsRequest implements IteratorAggregate, Countable
      *
      * @return static
      */
-    public static function create()
+    public static function create(): static
     {
         return new static();
     }
@@ -63,9 +63,7 @@ class AddAdsRequest implements IteratorAggregate, Countable
         return count($this->Ads);
     }
 
-    /**
-     * @return ArrayIterator<int, AdAddItem>
-     */
+    /** @return ArrayIterator<int, AdAddItem> */
     #[Override]
     public function getIterator(): ArrayIterator
     {

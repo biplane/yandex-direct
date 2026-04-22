@@ -28,7 +28,8 @@ class GetVCardsResponse extends GetResponseGeneral implements IteratorAggregate,
      *
      * @return static
      */
-    public static function create()
+    #[Override]
+    public static function create(): static
     {
         return new static();
     }
@@ -63,9 +64,7 @@ class GetVCardsResponse extends GetResponseGeneral implements IteratorAggregate,
         return isset($this->VCards) ? count($this->VCards) : 0;
     }
 
-    /**
-     * @return ArrayIterator<int, VCardGetItem>
-     */
+    /** @return ArrayIterator<int, VCardGetItem> */
     #[Override]
     public function getIterator(): ArrayIterator
     {

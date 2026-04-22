@@ -31,7 +31,7 @@
     url: 'https://soap.direct.yandex.ru/v501/vcards'
     headers:
       Host: soap.direct.yandex.ru
-      Content-Type: 'text/xml; charset=utf-8;'
+      Content-Type: 'text/xml; charset=utf-8'
       SOAPAction: 'https://api.direct.yandex.com/v5/vcards/add'
       Client-Login: ''
     body: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://api.direct.yandex.com/v5/vcards\"><SOAP-ENV:Body><ns1:AddRequest><VCards><CampaignId/><Country/><City/><CompanyName/><WorkTime/><Phone/><PointOnMap><X>37.69</X><Y>55.711747</Y><X1>-37.69</X1><Y1>55.71</Y1><X2>90</X2><Y2>-55.71</Y2></PointOnMap></VCards></ns1:AddRequest></SOAP-ENV:Body></SOAP-ENV:Envelope>\n"

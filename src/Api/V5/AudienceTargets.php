@@ -24,7 +24,7 @@ use Biplane\YandexDirect\Config;
  */
 class AudienceTargets extends ApiSoapClientV5
 {
-    public const ENDPOINT = 'https://api.direct.yandex.com/v501/audiencetargets?wsdl';
+    public const string ENDPOINT = 'https://api.direct.yandex.com/v501/audiencetargets?wsdl';
 
     /**
      * Constructor
@@ -60,6 +60,7 @@ class AudienceTargets extends ApiSoapClientV5
             'SetBidsResponse' => 'Biplane\YandexDirect\Api\V5\Contract\SetBidsAudienceTargetsResponse',
             'SetBidsActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\SetBidsActionResult',
         ];
+
         parent::__construct(self::ENDPOINT, $config, $options);
     }
 

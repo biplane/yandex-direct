@@ -24,7 +24,7 @@ final class ReportResultTest extends TestCase
                 'retryIn' => '5',
                 'requestId' => '1637522068',
                 'reportsInQueue' => '1',
-            ])
+            ]),
         );
 
         self::assertSame(5, $result->retryIn());
@@ -34,7 +34,7 @@ final class ReportResultTest extends TestCase
 
     public function testGetStreamWhenReportIsReady(): void
     {
-        $stream = $this->createMock(StreamInterface::class);
+        $stream = $this->createStub(StreamInterface::class);
 
         $result = new ReportResult(new Response(200, [], $stream));
 
@@ -61,6 +61,8 @@ final class ReportResultTest extends TestCase
     {
         $result = new ReportResult(new Response(200, [], 'report content'));
         $destFile = tempnam(sys_get_temp_dir(), 'test_report_result');
+
+        self::assertNotFalse($destFile);
 
         try {
             $result->saveToFile($destFile);

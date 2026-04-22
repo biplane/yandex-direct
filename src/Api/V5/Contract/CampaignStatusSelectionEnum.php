@@ -12,11 +12,11 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class CampaignStatusSelectionEnum
 {
-    public const ACCEPTED = 'ACCEPTED';
+    public const string ACCEPTED = 'ACCEPTED';
 
-    public const DRAFT = 'DRAFT';
+    public const string DRAFT = 'DRAFT';
 
-    public const MODERATION = 'MODERATION';
+    public const string MODERATION = 'MODERATION';
 
-    public const REJECTED = 'REJECTED';
+    public const string REJECTED = 'REJECTED';
 }

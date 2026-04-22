@@ -12,11 +12,11 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class FeedStatusEnum
 {
-    public const NEW = 'NEW';
+    public const string NEW = 'NEW';
 
-    public const UPDATING = 'UPDATING';
+    public const string UPDATING = 'UPDATING';
 
-    public const DONE = 'DONE';
+    public const string DONE = 'DONE';
 
-    public const ERROR = 'ERROR';
+    public const string ERROR = 'ERROR';
 }

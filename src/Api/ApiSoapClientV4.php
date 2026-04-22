@@ -11,6 +11,7 @@ use Biplane\YandexDirect\Config;
 use Biplane\YandexDirect\Exception\ApiException;
 use Biplane\YandexDirect\Soap\ApiSoapClient;
 use LogicException;
+use Override;
 use SoapFault;
 use SoapHeader;
 
@@ -19,22 +20,20 @@ use function hash;
 use function in_array;
 use function is_string;
 use function property_exists;
+use function str_contains;
 use function str_replace;
-use function strpos;
 use function strrpos;
 use function substr;
 
 class ApiSoapClientV4 extends ApiSoapClient
 {
-    private const API_NAMESPACE = 'API';
-    private const ALT_NAMESPACES = ['http://namespaces.soaplite.com/perl'];
+    private const string API_NAMESPACE = 'API';
+    private const array ALT_NAMESPACES = ['http://namespaces.soaplite.com/perl'];
 
     /** @var TransactionNumberGenerator|null */
     private $transactionNumberGenerator;
 
-    /**
-     * @internal
-     */
+    /** @internal */
     public function getTransactionNumberGenerator(): TransactionNumberGenerator
     {
         if ($this->transactionNumberGenerator === null) {
@@ -44,20 +43,19 @@ class ApiSoapClientV4 extends ApiSoapClient
         return $this->transactionNumberGenerator;
     }
 
-    /**
-     * @internal
-     */
+    /** @internal */
     public function setTransactionNumberGenerator(TransactionNumberGenerator $generator): void
     {
         $this->transactionNumberGenerator = $generator;
     }
 
     /**
-     * {@inheritdoc}
+     * {@inheritDoc}
      *
      * @internal
      */
-    public function __doRequest($request, $location, $action, $version, $oneWay = 0): ?string
+    #[Override]
+    public function __doRequest(string $request, string $location, string $action, int $version, bool $oneWay = false, ?string $uriParserClass = null): ?string
     {
         $response = parent::__doRequest($request, $location, $action, $version, $oneWay);
 
@@ -67,7 +65,7 @@ class ApiSoapClientV4 extends ApiSoapClient
 
         // Replace URI of some namespaces to fix mapping WSDL types to PHP classes
         foreach (self::ALT_NAMESPACES as $searchURI) {
-            if (strpos($response, $searchURI) === false) {
+            if (! str_contains($response, $searchURI)) {
                 continue;
             }
 
@@ -80,7 +78,8 @@ class ApiSoapClientV4 extends ApiSoapClient
     /**
      * {@inheritDoc}
      */
-    public function __soapCall($name, $args, $options = null, $inputHeaders = null, &$outputHeaders = null)
+    #[Override]
+    public function __soapCall(string $name, array $args, ?array $options = null, $inputHeaders = null, &$outputHeaders = null): mixed
     {
         $inputHeaders[] = new SoapHeader(self::API_NAMESPACE, 'locale', $this->config->getLocale(Config::API_4));
         $inputHeaders[] = new SoapHeader(self::API_NAMESPACE, 'token', $this->config->getAccessToken());
@@ -102,6 +101,7 @@ class ApiSoapClientV4 extends ApiSoapClient
         return parent::__soapCall($name, $args, $options, $inputHeaders, $outputHeaders);
     }
 
+    #[Override]
     protected function parseSoapFault(SoapFault $fault): ?ApiException
     {
         $code = 0;
@@ -134,9 +134,7 @@ class ApiSoapClientV4 extends ApiSoapClient
         return null;
     }
 
-    /**
-     * @param array<mixed> $params
-     */
+    /** @param array<mixed> $params */
     private function isFinancialMethod(string $methodName, array $params): bool
     {
         if ($methodName === 'AccountManagement') {
@@ -156,7 +154,7 @@ class ApiSoapClientV4 extends ApiSoapClient
                 'CreateInvoice',
                 'PayCampaigns',
             ],
-            true
+            true,
         );
     }
 
@@ -172,7 +170,7 @@ class ApiSoapClientV4 extends ApiSoapClient
 
         return hash(
             'sha256',
-            $this->config->getMasterToken() . $operationNum . $methodName . $this->config->getClientLogin()
+            $this->config->getMasterToken() . $operationNum . $methodName . $this->config->getClientLogin(),
         );
     }
 }

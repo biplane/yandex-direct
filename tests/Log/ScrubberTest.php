@@ -37,7 +37,7 @@ final class ScrubberTest extends TestCase
                 'Accept-Language: ru',
                 'Client-Login: REDACTED',
             ]),
-            $result
+            $result,
         );
     }
 

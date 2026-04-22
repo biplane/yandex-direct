@@ -33,7 +33,7 @@
     url: 'https://soap.direct.yandex.ru/v501/campaigns'
     headers:
       Host: soap.direct.yandex.ru
-      Content-Type: 'text/xml; charset=utf-8;'
+      Content-Type: 'text/xml; charset=utf-8'
       SOAPAction: 'http://api.direct.yandex.com/v5/campaigns/get'
       Client-Login: ''
     body: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"http://api.direct.yandex.com/v5/campaigns\"><SOAP-ENV:Body><ns1:GetRequest><SelectionCriteria><Ids>1111191</Ids></SelectionCriteria><FieldNames>Id</FieldNames><FieldNames>NegativeKeywords</FieldNames><FieldNames>TimeTargeting</FieldNames><UnifiedCampaignFieldNames>CounterIds</UnifiedCampaignFieldNames><UnifiedCampaignFieldNames>PriorityGoals</UnifiedCampaignFieldNames></ns1:GetRequest></SOAP-ENV:Body></SOAP-ENV:Envelope>\n"

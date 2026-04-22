@@ -12,17 +12,17 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class AdImageFieldEnum
 {
-    public const AD_IMAGE_HASH = 'AdImageHash';
+    public const string AD_IMAGE_HASH = 'AdImageHash';
 
-    public const ORIGINAL_URL = 'OriginalUrl';
+    public const string ORIGINAL_URL = 'OriginalUrl';
 
-    public const PREVIEW_URL = 'PreviewUrl';
+    public const string PREVIEW_URL = 'PreviewUrl';
 
-    public const NAME = 'Name';
+    public const string NAME = 'Name';
 
-    public const TYPE = 'Type';
+    public const string TYPE = 'Type';
 
-    public const SUBTYPE = 'Subtype';
+    public const string SUBTYPE = 'Subtype';
 
-    public const ASSOCIATED = 'Associated';
+    public const string ASSOCIATED = 'Associated';
 }

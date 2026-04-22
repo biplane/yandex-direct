@@ -28,7 +28,8 @@ class GetSmartAdTargetsResponse extends GetResponseGeneral implements IteratorAg
      *
      * @return static
      */
-    public static function create()
+    #[Override]
+    public static function create(): static
     {
         return new static();
     }
@@ -63,9 +64,7 @@ class GetSmartAdTargetsResponse extends GetResponseGeneral implements IteratorAg
         return isset($this->SmartAdTargets) ? count($this->SmartAdTargets) : 0;
     }
 
-    /**
-     * @return ArrayIterator<int, SmartAdTargetGetItem>
-     */
+    /** @return ArrayIterator<int, SmartAdTargetGetItem> */
     #[Override]
     public function getIterator(): ArrayIterator
     {

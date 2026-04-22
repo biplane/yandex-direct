@@ -28,7 +28,7 @@ class AddFeedsRequest implements IteratorAggregate, Countable
      *
      * @return static
      */
-    public static function create()
+    public static function create(): static
     {
         return new static();
     }
@@ -63,9 +63,7 @@ class AddFeedsRequest implements IteratorAggregate, Countable
         return count($this->Feeds);
     }
 
-    /**
-     * @return ArrayIterator<int, FeedAddItem>
-     */
+    /** @return ArrayIterator<int, FeedAddItem> */
     #[Override]
     public function getIterator(): ArrayIterator
     {

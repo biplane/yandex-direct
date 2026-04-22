@@ -12,13 +12,13 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class MobileAppCampaignFieldEnum
 {
-    public const SETTINGS = 'Settings';
+    public const string SETTINGS = 'Settings';
 
-    public const BIDDING_STRATEGY = 'BiddingStrategy';
+    public const string BIDDING_STRATEGY = 'BiddingStrategy';
 
-    public const PACKAGE_BIDDING_STRATEGY = 'PackageBiddingStrategy';
+    public const string PACKAGE_BIDDING_STRATEGY = 'PackageBiddingStrategy';
 
-    public const CAN_BE_USED_AS_PACKAGE_BIDDING_STRATEGY_SOURCE = 'CanBeUsedAsPackageBiddingStrategySource';
+    public const string CAN_BE_USED_AS_PACKAGE_BIDDING_STRATEGY_SOURCE = 'CanBeUsedAsPackageBiddingStrategySource';
 
-    public const NEGATIVE_KEYWORD_SHARED_SET_IDS = 'NegativeKeywordSharedSetIds';
+    public const string NEGATIVE_KEYWORD_SHARED_SET_IDS = 'NegativeKeywordSharedSetIds';
 }

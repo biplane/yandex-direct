@@ -28,7 +28,7 @@ class AddVCardsRequest implements IteratorAggregate, Countable
      *
      * @return static
      */
-    public static function create()
+    public static function create(): static
     {
         return new static();
     }
@@ -63,9 +63,7 @@ class AddVCardsRequest implements IteratorAggregate, Countable
         return count($this->VCards);
     }
 
-    /**
-     * @return ArrayIterator<int, VCardAddItem>
-     */
+    /** @return ArrayIterator<int, VCardAddItem> */
     #[Override]
     public function getIterator(): ArrayIterator
     {

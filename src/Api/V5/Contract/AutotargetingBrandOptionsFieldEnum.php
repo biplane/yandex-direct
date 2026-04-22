@@ -12,9 +12,9 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class AutotargetingBrandOptionsFieldEnum
 {
-    public const WITHOUT_BRANDS = 'WithoutBrands';
+    public const string WITHOUT_BRANDS = 'WithoutBrands';
 
-    public const WITH_ADVERTISER_BRAND = 'WithAdvertiserBrand';
+    public const string WITH_ADVERTISER_BRAND = 'WithAdvertiserBrand';
 
-    public const WITH_COMPETITORS_BRAND = 'WithCompetitorsBrand';
+    public const string WITH_COMPETITORS_BRAND = 'WithCompetitorsBrand';
 }

@@ -28,7 +28,8 @@ class GetNegativeKeywordSharedSetsResponse extends GetResponseGeneral implements
      *
      * @return static
      */
-    public static function create()
+    #[Override]
+    public static function create(): static
     {
         return new static();
     }
@@ -63,9 +64,7 @@ class GetNegativeKeywordSharedSetsResponse extends GetResponseGeneral implements
         return isset($this->NegativeKeywordSharedSets) ? count($this->NegativeKeywordSharedSets) : 0;
     }
 
-    /**
-     * @return ArrayIterator<int, NegativeKeywordSharedSetGetItem>
-     */
+    /** @return ArrayIterator<int, NegativeKeywordSharedSetGetItem> */
     #[Override]
     public function getIterator(): ArrayIterator
     {

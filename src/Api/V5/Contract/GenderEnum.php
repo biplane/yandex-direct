@@ -12,7 +12,7 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class GenderEnum
 {
-    public const GENDER_MALE = 'GENDER_MALE';
+    public const string GENDER_MALE = 'GENDER_MALE';
 
-    public const GENDER_FEMALE = 'GENDER_FEMALE';
+    public const string GENDER_FEMALE = 'GENDER_FEMALE';
 }

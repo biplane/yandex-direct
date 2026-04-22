@@ -16,7 +16,7 @@ use Biplane\YandexDirect\Config;
  */
 class Clients extends ApiSoapClientV5
 {
-    public const ENDPOINT = 'https://api.direct.yandex.com/v501/clients?wsdl';
+    public const string ENDPOINT = 'https://api.direct.yandex.com/v501/clients?wsdl';
 
     /**
      * Constructor
@@ -60,6 +60,7 @@ class Clients extends ApiSoapClientV5
             'ActionResultBase' => 'Biplane\YandexDirect\Api\V5\Contract\ActionResultBase',
             'ExceptionNotification' => 'Biplane\YandexDirect\Api\V5\Contract\ExceptionNotification',
         ];
+
         parent::__construct(self::ENDPOINT, $config, $options);
     }
 

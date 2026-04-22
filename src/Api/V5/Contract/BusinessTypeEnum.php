@@ -12,15 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class BusinessTypeEnum
 {
-    public const RETAIL = 'RETAIL';
+    public const string RETAIL = 'RETAIL';
 
-    public const HOTELS = 'HOTELS';
+    public const string HOTELS = 'HOTELS';
 
-    public const REALTY = 'REALTY';
+    public const string REALTY = 'REALTY';
 
-    public const AUTOMOBILES = 'AUTOMOBILES';
+    public const string AUTOMOBILES = 'AUTOMOBILES';
 
-    public const FLIGHTS = 'FLIGHTS';
+    public const string FLIGHTS = 'FLIGHTS';
 
-    public const OTHER = 'OTHER';
+    public const string OTHER = 'OTHER';
 }

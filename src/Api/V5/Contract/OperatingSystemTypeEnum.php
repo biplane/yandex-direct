@@ -12,7 +12,7 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class OperatingSystemTypeEnum
 {
-    public const IOS = 'IOS';
+    public const string IOS = 'IOS';
 
-    public const ANDROID = 'ANDROID';
+    public const string ANDROID = 'ANDROID';
 }

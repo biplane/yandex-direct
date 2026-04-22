@@ -12,13 +12,13 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class UnifiedCampaignSearchStrategyPlacementTypesFieldEnum
 {
-    public const SEARCH_RESULTS = 'SearchResults';
+    public const string SEARCH_RESULTS = 'SearchResults';
 
-    public const PRODUCT_GALLERY = 'ProductGallery';
+    public const string PRODUCT_GALLERY = 'ProductGallery';
 
-    public const DYNAMIC_PLACES = 'DynamicPlaces';
+    public const string DYNAMIC_PLACES = 'DynamicPlaces';
 
-    public const MAPS = 'Maps';
+    public const string MAPS = 'Maps';
 
-    public const SEARCH_ORGANIZATION_LIST = 'SearchOrganizationList';
+    public const string SEARCH_ORGANIZATION_LIST = 'SearchOrganizationList';
 }

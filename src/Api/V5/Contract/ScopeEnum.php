@@ -12,7 +12,7 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class ScopeEnum
 {
-    public const SEARCH = 'SEARCH';
+    public const string SEARCH = 'SEARCH';
 
-    public const NETWORK = 'NETWORK';
+    public const string NETWORK = 'NETWORK';
 }

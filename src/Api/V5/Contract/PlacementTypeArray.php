@@ -28,7 +28,7 @@ class PlacementTypeArray implements IteratorAggregate, Countable
      *
      * @return static
      */
-    public static function create()
+    public static function create(): static
     {
         return new static();
     }
@@ -63,9 +63,7 @@ class PlacementTypeArray implements IteratorAggregate, Countable
         return count($this->Items);
     }
 
-    /**
-     * @return ArrayIterator<int, PlacementType>
-     */
+    /** @return ArrayIterator<int, PlacementType> */
     #[Override]
     public function getIterator(): ArrayIterator
     {

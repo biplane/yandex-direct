@@ -28,7 +28,8 @@ class GetKeywordBidsResponse extends GetResponseGeneral implements IteratorAggre
      *
      * @return static
      */
-    public static function create()
+    #[Override]
+    public static function create(): static
     {
         return new static();
     }
@@ -63,9 +64,7 @@ class GetKeywordBidsResponse extends GetResponseGeneral implements IteratorAggre
         return isset($this->KeywordBids) ? count($this->KeywordBids) : 0;
     }
 
-    /**
-     * @return ArrayIterator<int, KeywordBidGetItem>
-     */
+    /** @return ArrayIterator<int, KeywordBidGetItem> */
     #[Override]
     public function getIterator(): ArrayIterator
     {

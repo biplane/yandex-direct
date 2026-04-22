@@ -12,9 +12,9 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class ForbiddenPlatformEnum
 {
-    public const SEARCH = 'SEARCH';
+    public const string SEARCH = 'SEARCH';
 
-    public const NETWORK = 'NETWORK';
+    public const string NETWORK = 'NETWORK';
 
-    public const NONE = 'NONE';
+    public const string NONE = 'NONE';
 }

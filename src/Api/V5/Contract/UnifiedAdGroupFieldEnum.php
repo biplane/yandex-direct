@@ -12,5 +12,5 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class UnifiedAdGroupFieldEnum
 {
-    public const OFFER_RETARGETING = 'OfferRetargeting';
+    public const string OFFER_RETARGETING = 'OfferRetargeting';
 }

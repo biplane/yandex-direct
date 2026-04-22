@@ -12,9 +12,9 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class AppAvailabilityStatusEnum
 {
-    public const UNPROCESSED = 'UNPROCESSED';
+    public const string UNPROCESSED = 'UNPROCESSED';
 
-    public const AVAILABLE = 'AVAILABLE';
+    public const string AVAILABLE = 'AVAILABLE';
 
-    public const NOT_AVAILABLE = 'NOT_AVAILABLE';
+    public const string NOT_AVAILABLE = 'NOT_AVAILABLE';
 }

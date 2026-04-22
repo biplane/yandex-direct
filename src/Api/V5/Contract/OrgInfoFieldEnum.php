@@ -12,13 +12,13 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class OrgInfoFieldEnum
 {
-    public const NAME = 'Name';
+    public const string NAME = 'Name';
 
-    public const EPAY_NUMBER = 'EpayNumber';
+    public const string EPAY_NUMBER = 'EpayNumber';
 
-    public const REG_NUMBER = 'RegNumber';
+    public const string REG_NUMBER = 'RegNumber';
 
-    public const OKSM_NUMBER = 'OksmNumber';
+    public const string OKSM_NUMBER = 'OksmNumber';
 
-    public const OKVED_CODE = 'OkvedCode';
+    public const string OKVED_CODE = 'OkvedCode';
 }

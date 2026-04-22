@@ -12,9 +12,9 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class OperationEnum
 {
-    public const ADD = 'ADD';
+    public const string ADD = 'ADD';
 
-    public const REMOVE = 'REMOVE';
+    public const string REMOVE = 'REMOVE';
 
-    public const SET = 'SET';
+    public const string SET = 'SET';
 }

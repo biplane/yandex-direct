@@ -12,7 +12,7 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class WebpageTypeEnum
 {
-    public const PAGES_ALL = 'PAGES_ALL';
+    public const string PAGES_ALL = 'PAGES_ALL';
 
-    public const PAGES_SUBSET = 'PAGES_SUBSET';
+    public const string PAGES_SUBSET = 'PAGES_SUBSET';
 }

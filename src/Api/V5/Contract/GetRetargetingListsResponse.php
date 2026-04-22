@@ -28,7 +28,8 @@ class GetRetargetingListsResponse extends GetResponseGeneral implements Iterator
      *
      * @return static
      */
-    public static function create()
+    #[Override]
+    public static function create(): static
     {
         return new static();
     }
@@ -63,9 +64,7 @@ class GetRetargetingListsResponse extends GetResponseGeneral implements Iterator
         return isset($this->RetargetingLists) ? count($this->RetargetingLists) : 0;
     }
 
-    /**
-     * @return ArrayIterator<int, RetargetingListGetItem>
-     */
+    /** @return ArrayIterator<int, RetargetingListGetItem> */
     #[Override]
     public function getIterator(): ArrayIterator
     {

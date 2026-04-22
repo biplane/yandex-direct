@@ -12,27 +12,27 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class PositionEnum
 {
-    public const PREMIUMFIRST = 'PREMIUMFIRST';
+    public const string PREMIUMFIRST = 'PREMIUMFIRST';
 
-    public const PREMIUMBLOCK = 'PREMIUMBLOCK';
+    public const string PREMIUMBLOCK = 'PREMIUMBLOCK';
 
-    public const FOOTERFIRST = 'FOOTERFIRST';
+    public const string FOOTERFIRST = 'FOOTERFIRST';
 
-    public const FOOTERBLOCK = 'FOOTERBLOCK';
+    public const string FOOTERBLOCK = 'FOOTERBLOCK';
 
-    public const P11 = 'P11';
+    public const string P11 = 'P11';
 
-    public const P12 = 'P12';
+    public const string P12 = 'P12';
 
-    public const P13 = 'P13';
+    public const string P13 = 'P13';
 
-    public const P14 = 'P14';
+    public const string P14 = 'P14';
 
-    public const P21 = 'P21';
+    public const string P21 = 'P21';
 
-    public const P22 = 'P22';
+    public const string P22 = 'P22';
 
-    public const P23 = 'P23';
+    public const string P23 = 'P23';
 
-    public const P24 = 'P24';
+    public const string P24 = 'P24';
 }

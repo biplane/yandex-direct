@@ -26,7 +26,7 @@ use Biplane\YandexDirect\Config;
  */
 class SmartAdTargets extends ApiSoapClientV5
 {
-    public const ENDPOINT = 'https://api.direct.yandex.com/v501/smartadtargets?wsdl';
+    public const string ENDPOINT = 'https://api.direct.yandex.com/v501/smartadtargets?wsdl';
 
     /**
      * Constructor
@@ -66,6 +66,7 @@ class SmartAdTargets extends ApiSoapClientV5
             'SetBidsResponse' => 'Biplane\YandexDirect\Api\V5\Contract\SetBidsSmartAdTargetsResponse',
             'SetBidsActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\SetBidsActionResult',
         ];
+
         parent::__construct(self::ENDPOINT, $config, $options);
     }
 

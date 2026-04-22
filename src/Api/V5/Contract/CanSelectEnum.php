@@ -12,7 +12,7 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class CanSelectEnum
 {
-    public const ALL = 'ALL';
+    public const string ALL = 'ALL';
 
-    public const EXCEPT_ALL = 'EXCEPT_ALL';
+    public const string EXCEPT_ALL = 'EXCEPT_ALL';
 }

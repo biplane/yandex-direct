@@ -12,9 +12,9 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class UrlFeedFieldEnum
 {
-    public const LOGIN = 'Login';
+    public const string LOGIN = 'Login';
 
-    public const URL = 'Url';
+    public const string URL = 'Url';
 
-    public const REMOVE_UTM_TAGS = 'RemoveUtmTags';
+    public const string REMOVE_UTM_TAGS = 'RemoveUtmTags';
 }

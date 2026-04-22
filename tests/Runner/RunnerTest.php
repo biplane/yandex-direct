@@ -9,7 +9,7 @@ use Biplane\YandexDirect\Runner\Runner;
 use PHPUnit\Framework\TestCase;
 use RuntimeException;
 
-class RunnerTest extends TestCase
+final class RunnerTest extends TestCase
 {
     public function testRunWhenRetryLimitReached(): void
     {
@@ -31,7 +31,7 @@ class RunnerTest extends TestCase
 
     public function testRetryRun(): void
     {
-        $retryStrategy = $this->createMock(RetryStrategyInterface::class);
+        $retryStrategy = $this->createStub(RetryStrategyInterface::class);
         $runner = new Runner($retryStrategy, 3);
 
         $retryStrategy->method('canRetry')->willReturn(true);

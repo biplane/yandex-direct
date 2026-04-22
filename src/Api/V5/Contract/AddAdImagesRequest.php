@@ -28,7 +28,7 @@ class AddAdImagesRequest implements IteratorAggregate, Countable
      *
      * @return static
      */
-    public static function create()
+    public static function create(): static
     {
         return new static();
     }
@@ -63,9 +63,7 @@ class AddAdImagesRequest implements IteratorAggregate, Countable
         return count($this->AdImages);
     }
 
-    /**
-     * @return ArrayIterator<int, AdImageAddItem>
-     */
+    /** @return ArrayIterator<int, AdImageAddItem> */
     #[Override]
     public function getIterator(): ArrayIterator
     {

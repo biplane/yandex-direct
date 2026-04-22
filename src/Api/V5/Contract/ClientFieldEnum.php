@@ -12,45 +12,45 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class ClientFieldEnum
 {
-    public const ACCOUNT_QUALITY = 'AccountQuality';
+    public const string ACCOUNT_QUALITY = 'AccountQuality';
 
-    public const ARCHIVED = 'Archived';
+    public const string ARCHIVED = 'Archived';
 
-    public const CLIENT_ID = 'ClientId';
+    public const string CLIENT_ID = 'ClientId';
 
-    public const CLIENT_INFO = 'ClientInfo';
+    public const string CLIENT_INFO = 'ClientInfo';
 
-    public const COUNTRY_ID = 'CountryId';
+    public const string COUNTRY_ID = 'CountryId';
 
-    public const CREATED_AT = 'CreatedAt';
+    public const string CREATED_AT = 'CreatedAt';
 
-    public const CURRENCY = 'Currency';
+    public const string CURRENCY = 'Currency';
 
-    public const GRANTS = 'Grants';
+    public const string GRANTS = 'Grants';
 
-    public const BONUSES = 'Bonuses';
+    public const string BONUSES = 'Bonuses';
 
-    public const LOGIN = 'Login';
+    public const string LOGIN = 'Login';
 
-    public const NOTIFICATION = 'Notification';
+    public const string NOTIFICATION = 'Notification';
 
-    public const OVERDRAFT_SUM_AVAILABLE = 'OverdraftSumAvailable';
+    public const string OVERDRAFT_SUM_AVAILABLE = 'OverdraftSumAvailable';
 
-    public const PHONE = 'Phone';
+    public const string PHONE = 'Phone';
 
-    public const REPRESENTATIVES = 'Representatives';
+    public const string REPRESENTATIVES = 'Representatives';
 
-    public const RESTRICTIONS = 'Restrictions';
+    public const string RESTRICTIONS = 'Restrictions';
 
-    public const SETTINGS = 'Settings';
+    public const string SETTINGS = 'Settings';
 
-    public const TYPE = 'Type';
+    public const string TYPE = 'Type';
 
-    public const VAT_RATE = 'VatRate';
+    public const string VAT_RATE = 'VatRate';
 
-    public const FORBIDDEN_PLATFORM = 'ForbiddenPlatform';
+    public const string FORBIDDEN_PLATFORM = 'ForbiddenPlatform';
 
-    public const AVAILABLE_CAMPAIGN_TYPES = 'AvailableCampaignTypes';
+    public const string AVAILABLE_CAMPAIGN_TYPES = 'AvailableCampaignTypes';
 
-    public const AVAILABLE_AD_GROUP_TYPES = 'AvailableAdGroupTypes';
+    public const string AVAILABLE_AD_GROUP_TYPES = 'AvailableAdGroupTypes';
 }

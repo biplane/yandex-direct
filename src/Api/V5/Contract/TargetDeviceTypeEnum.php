@@ -12,7 +12,7 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class TargetDeviceTypeEnum
 {
-    public const DEVICE_TYPE_MOBILE = 'DEVICE_TYPE_MOBILE';
+    public const string DEVICE_TYPE_MOBILE = 'DEVICE_TYPE_MOBILE';
 
-    public const DEVICE_TYPE_TABLET = 'DEVICE_TYPE_TABLET';
+    public const string DEVICE_TYPE_TABLET = 'DEVICE_TYPE_TABLET';
 }

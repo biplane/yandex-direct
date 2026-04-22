@@ -12,9 +12,9 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class YesNoUnknownEnum
 {
-    public const YES = 'YES';
+    public const string YES = 'YES';
 
-    public const NO = 'NO';
+    public const string NO = 'NO';
 
-    public const UNKNOWN = 'UNKNOWN';
+    public const string UNKNOWN = 'UNKNOWN';
 }

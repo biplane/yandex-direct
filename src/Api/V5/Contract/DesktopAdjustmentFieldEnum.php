@@ -12,5 +12,5 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class DesktopAdjustmentFieldEnum
 {
-    public const BID_MODIFIER = 'BidModifier';
+    public const string BID_MODIFIER = 'BidModifier';
 }

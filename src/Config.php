@@ -6,34 +6,30 @@ namespace Biplane\YandexDirect;
 
 use Biplane\YandexDirect\Config\SoapOptions;
 use Symfony\Component\OptionsResolver\Exception\InvalidArgumentException;
-use Symfony\Component\OptionsResolver\OptionConfigurator;
 use Symfony\Component\OptionsResolver\Options;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-use function class_exists;
 use function is_string;
 use function sprintf;
+use function str_contains;
 use function str_replace;
-use function strpos;
 use function strtolower;
 
 final class Config
 {
-    public const API_4 = 4;
-    public const API_5 = 5;
+    public const int API_4 = 4;
+    public const int API_5 = 5;
 
-    private const LOCALE_ALIAS_API4 = [
+    private const array LOCALE_ALIAS_API4 = [
         'tr' => 'en',
         'uk' => 'ua',
     ];
-    private const LOCALE_ALIAS_API5 = ['ua' => 'uk'];
+    private const array LOCALE_ALIAS_API5 = ['ua' => 'uk'];
 
     /** @var array<string, mixed> */
-    private $options;
+    private array $options;
 
-    /**
-     * @param array<string, mixed> $options
-     */
+    /** @param array<string, mixed> $options */
     public function __construct(array $options)
     {
         $resolver = new OptionsResolver();
@@ -85,7 +81,7 @@ final class Config
         throw new \InvalidArgumentException(sprintf(
             'Unknown API version (%d). Use one of constants from %s: API_4 or API_5',
             $apiVersion,
-            self::class
+            self::class,
         ));
     }
 
@@ -124,9 +120,7 @@ final class Config
         return $this->options['proxy_username'] !== null;
     }
 
-    /**
-     * @deprecated Use `ApiServiceFactory` instead.
-     */
+    /** @deprecated Use `ApiServiceFactory` instead. */
     public function getSoapOptions(): SoapOptions
     {
         return $this->options['soap_options'];
@@ -163,7 +157,7 @@ final class Config
             ->setAllowedTypes('soap_options', [SoapOptions::class])
             ->setNormalizer('client_login', static function (Options $options, $value) {
                 if (is_string($value)) {
-                    if (strpos($value, '@') === false) {
+                    if (! str_contains($value, '@')) {
                         $value = str_replace('.', '-', $value);
                     }
 
@@ -173,10 +167,6 @@ final class Config
                 return $value;
             });
 
-        if (class_exists(OptionConfigurator::class)) {
-            $resolver->setDeprecated('soap_options', 'biplane/yandex-direct', '5.15.0');
-        } else {
-            $resolver->setDeprecated('soap_options');
-        }
+        $resolver->setDeprecated('soap_options', 'biplane/yandex-direct', '5.15.0');
     }
 }

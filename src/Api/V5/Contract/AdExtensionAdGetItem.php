@@ -23,7 +23,7 @@ class AdExtensionAdGetItem
      *
      * @return static
      */
-    public static function create()
+    public static function create(): static
     {
         return new static();
     }

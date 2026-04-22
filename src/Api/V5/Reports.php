@@ -11,6 +11,7 @@ use Biplane\YandexDirect\Exception\DownloadReportException;
 use Biplane\YandexDirect\Log\Scrubber;
 use Biplane\YandexDirect\Serializer\ReportSerializerInterface;
 use Biplane\YandexDirect\Serializer\XmlReportSerializer;
+use Override;
 use Psr\Http\Client\ClientExceptionInterface;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestFactoryInterface;
@@ -27,41 +28,22 @@ use function str_replace;
 
 class Reports implements ApiClientInterface
 {
-    public const ENDPOINT = 'https://api.direct.yandex.com/v501/reports';
-    private const RETRY_INTERVAL_DEFAULT = 3;
+    public const string ENDPOINT = 'https://api.direct.yandex.com/v501/reports';
+    private const int RETRY_INTERVAL_DEFAULT = 3;
 
-    /** @var Config */
-    private $config;
+    private ReportSerializerInterface $serializer;
 
-    /** @var ClientInterface */
-    private $httpClient;
+    private ?RequestInterface $lastRequest = null;
 
-    /** @var RequestFactoryInterface */
-    private $requestFactory;
-
-    /** @var StreamFactoryInterface */
-    private $streamFactory;
-
-    /** @var ReportSerializerInterface */
-    private $serializer;
-
-    /** @var RequestInterface|null */
-    private $lastRequest = null;
-
-    /** @var ResponseInterface|null */
-    private $lastResponse = null;
+    private ?ResponseInterface $lastResponse = null;
 
     public function __construct(
-        Config $config,
-        ClientInterface $httpClient,
-        RequestFactoryInterface $requestFactory,
-        StreamFactoryInterface $streamFactory,
-        ?ReportSerializerInterface $serializer = null
+        private Config $config,
+        private ClientInterface $httpClient,
+        private RequestFactoryInterface $requestFactory,
+        private StreamFactoryInterface $streamFactory,
+        ?ReportSerializerInterface $serializer = null,
     ) {
-        $this->config = $config;
-        $this->httpClient = $httpClient;
-        $this->requestFactory = $requestFactory;
-        $this->streamFactory = $streamFactory;
         $this->serializer = $serializer ?? new XmlReportSerializer();
     }
 
@@ -117,6 +99,7 @@ class Reports implements ApiClientInterface
         $result->saveToFile($destFile);
     }
 
+    #[Override]
     public function getRequestId(): string
     {
         if ($this->lastResponse !== null && $this->lastResponse->hasHeader('RequestId')) {
@@ -126,6 +109,7 @@ class Reports implements ApiClientInterface
         return '';
     }
 
+    #[Override]
     public function getLastRequest(): string
     {
         if ($this->lastRequest !== null) {
@@ -133,7 +117,7 @@ class Reports implements ApiClientInterface
                 "%s %s HTTP/%s\r\n",
                 $this->lastRequest->getMethod(),
                 $this->lastRequest->getUri()->getPath(),
-                $this->lastRequest->getProtocolVersion()
+                $this->lastRequest->getProtocolVersion(),
             );
 
             foreach ($this->lastRequest->getHeaders() as $name => $values) {
@@ -143,7 +127,7 @@ class Reports implements ApiClientInterface
             $request = Scrubber::scrubHttpHeaders($request, ['Authorization', 'Member-Authorization']);
 
             $request .= "\r\n";
-            $request .= $this->lastRequest->getBody();
+            $request .= (string)$this->lastRequest->getBody();
 
             return $request;
         }
@@ -151,6 +135,7 @@ class Reports implements ApiClientInterface
         return '';
     }
 
+    #[Override]
     public function getLastResponse(): string
     {
         if ($this->lastResponse !== null) {
@@ -158,7 +143,7 @@ class Reports implements ApiClientInterface
                 "HTTP/%s %s %s\r\n",
                 $this->lastResponse->getProtocolVersion(),
                 $this->lastResponse->getStatusCode(),
-                $this->lastResponse->getReasonPhrase()
+                $this->lastResponse->getReasonPhrase(),
             );
 
             foreach ($this->lastResponse->getHeaders() as $name => $values) {
@@ -166,7 +151,7 @@ class Reports implements ApiClientInterface
             }
 
             $response .= "\r\n";
-            $response .= $this->lastResponse->getBody();
+            $response .= (string)$this->lastResponse->getBody();
 
             return $response;
         }
@@ -208,7 +193,7 @@ class Reports implements ApiClientInterface
         }
 
         $stream = $this->streamFactory->createStream(
-            $this->serializer->serializeReportDefinition($reportRequest->reportDefinition())
+            $this->serializer->serializeReportDefinition($reportRequest->reportDefinition()),
         );
 
         return $request->withBody($stream);
@@ -242,7 +227,7 @@ class Reports implements ApiClientInterface
                 $exception = new ApiException(
                     $apiError->errorMessage,
                     $apiError->errorCode,
-                    $apiError->errorDetail
+                    $apiError->errorDetail,
                 );
                 $exception->setRequestId($apiError->requestId);
 
@@ -257,9 +242,9 @@ class Reports implements ApiClientInterface
         throw new DownloadReportException(
             sprintf(
                 'Could not download report. The server returned a response with status: %d',
-                $response->getStatusCode()
+                $response->getStatusCode(),
             ),
-            $response->getStatusCode()
+            $response->getStatusCode(),
         );
     }
 }

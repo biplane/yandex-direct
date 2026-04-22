@@ -28,7 +28,7 @@ class UpdateKeywordsResponse implements IteratorAggregate, Countable
      *
      * @return static
      */
-    public static function create()
+    public static function create(): static
     {
         return new static();
     }
@@ -63,9 +63,7 @@ class UpdateKeywordsResponse implements IteratorAggregate, Countable
         return count($this->UpdateResults);
     }
 
-    /**
-     * @return ArrayIterator<int, ActionResult>
-     */
+    /** @return ArrayIterator<int, ActionResult> */
     #[Override]
     public function getIterator(): ArrayIterator
     {

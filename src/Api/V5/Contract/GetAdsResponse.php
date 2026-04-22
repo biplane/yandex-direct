@@ -28,7 +28,8 @@ class GetAdsResponse extends GetResponseGeneral implements IteratorAggregate, Co
      *
      * @return static
      */
-    public static function create()
+    #[Override]
+    public static function create(): static
     {
         return new static();
     }
@@ -63,9 +64,7 @@ class GetAdsResponse extends GetResponseGeneral implements IteratorAggregate, Co
         return isset($this->Ads) ? count($this->Ads) : 0;
     }
 
-    /**
-     * @return ArrayIterator<int, AdGetItem>
-     */
+    /** @return ArrayIterator<int, AdGetItem> */
     #[Override]
     public function getIterator(): ArrayIterator
     {

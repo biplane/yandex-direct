@@ -12,9 +12,9 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class DynamicTextCampaignSearchStrategyPlacementTypesFieldEnum
 {
-    public const SEARCH_RESULTS = 'SearchResults';
+    public const string SEARCH_RESULTS = 'SearchResults';
 
-    public const PRODUCT_GALLERY = 'ProductGallery';
+    public const string PRODUCT_GALLERY = 'ProductGallery';
 
-    public const DYNAMIC_PLACES = 'DynamicPlaces';
+    public const string DYNAMIC_PLACES = 'DynamicPlaces';
 }

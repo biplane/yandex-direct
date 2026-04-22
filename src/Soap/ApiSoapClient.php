@@ -12,6 +12,7 @@ use Biplane\YandexDirect\Log\SoapLogger;
 use Biplane\YandexDirect\Runner\Runner;
 use Biplane\YandexDirect\Soap\TypeConverter\DecimalTypeConverter;
 use InvalidArgumentException;
+use Override;
 use ReflectionClass;
 use ReturnTypeWillChange;
 use RuntimeException;
@@ -33,7 +34,7 @@ abstract class ApiSoapClient extends SoapClient implements ClientInterface
     /** @var Config */
     protected $config;
 
-    /** @var int */
+    /** @var positive-int */
     private $soapCallTimeout = 180;
 
     /** @var Runner|null */
@@ -48,9 +49,7 @@ abstract class ApiSoapClient extends SoapClient implements ClientInterface
     /** @var string */
     private $serviceName;
 
-    /**
-     * @param array<string, mixed> $options
-     */
+    /** @param array<string, mixed> $options */
     public function __construct(?string $wsdl, Config $config, array $options = [])
     {
         if ($wsdl !== null && $config->useSandbox()) {
@@ -71,6 +70,7 @@ abstract class ApiSoapClient extends SoapClient implements ClientInterface
 
     abstract protected function parseSoapFault(SoapFault $fault): ?ApiException;
 
+    /** @return positive-int */
     public function getSoapCallTimeout(): int
     {
         return $this->soapCallTimeout;
@@ -81,61 +81,50 @@ abstract class ApiSoapClient extends SoapClient implements ClientInterface
         if ($timeout < 1) {
             throw new InvalidArgumentException(sprintf(
                 'Timeout for SOAP call must be a positive number. Got: %d',
-                $timeout
+                $timeout,
             ));
         }
 
         $this->soapCallTimeout = $timeout;
     }
 
-    /**
-     * @internal
-     */
+    /** @internal */
     public function getRunner(): ?Runner
     {
         return $this->runner;
     }
 
-    /**
-     * @internal
-     */
+    /** @internal */
     public function setRunner(Runner $runner): void
     {
         $this->runner = $runner;
     }
 
-    /**
-     * @internal
-     */
+    /** @internal */
     public function getLogContextFactory(): ?SoapLogContextFactory
     {
         return $this->logContextFactory;
     }
 
-    /**
-     * @internal
-     */
+    /** @internal */
     public function setLogContextFactory(?SoapLogContextFactory $factory): void
     {
         $this->logContextFactory = $factory;
     }
 
-    /**
-     * @internal
-     */
+    /** @internal */
     public function getLogger(): ?SoapLogger
     {
         return $this->logger;
     }
 
-    /**
-     * @internal
-     */
+    /** @internal */
     public function setLogger(?SoapLogger $logger): void
     {
         $this->logger = $logger;
     }
 
+    #[Override]
     public function getRequestId(): string
     {
         $headers = $this->__getLastResponseHeaders();
@@ -147,17 +136,15 @@ abstract class ApiSoapClient extends SoapClient implements ClientInterface
         return '';
     }
 
-    /**
-     * @deprecated
-     */
+    /** @deprecated */
+    #[Override]
     public function getLastRequest(): string
     {
         return $this->__getLastRequestHeaders() . "\n\n" . $this->__getLastRequest();
     }
 
-    /**
-     * @deprecated
-     */
+    /** @deprecated */
+    #[Override]
     public function getLastResponse(): string
     {
         return $this->__getLastResponseHeaders() . "\n\n" . $this->__getLastResponse();
@@ -166,8 +153,9 @@ abstract class ApiSoapClient extends SoapClient implements ClientInterface
     /**
      * {@inheritDoc}
      */
+    #[Override]
     #[ReturnTypeWillChange]
-    public function __soapCall($name, $args, $options = null, $inputHeaders = null, &$outputHeaders = null)
+    public function __soapCall(string $name, array $args, ?array $options = null, $inputHeaders = null, &$outputHeaders = null): mixed
     {
         try {
             ini_set('default_socket_timeout', (string)$this->soapCallTimeout);
@@ -177,7 +165,7 @@ abstract class ApiSoapClient extends SoapClient implements ClientInterface
                 $args,
                 $options,
                 $inputHeaders,
-                &$outputHeaders
+                &$outputHeaders,
             ) {
                 try {
                     $response = parent::__soapCall($name, $args, $options, $inputHeaders, $outputHeaders);
@@ -198,9 +186,7 @@ abstract class ApiSoapClient extends SoapClient implements ClientInterface
         return $response;
     }
 
-    /**
-     * @return array<TypeConverter>
-     */
+    /** @return array<TypeConverter> */
     protected function getTypeConverters(): array
     {
         return [
@@ -220,7 +206,7 @@ abstract class ApiSoapClient extends SoapClient implements ClientInterface
                 static function (array $typeMapping): string {
                     return $typeMapping['type_ns'] . ':' . $typeMapping['type_name'];
                 },
-                $typemap
+                $typemap,
             );
         } else {
             $existingKeys = [];
@@ -233,7 +219,7 @@ abstract class ApiSoapClient extends SoapClient implements ClientInterface
                 throw new RuntimeException(sprintf(
                     'Converter already registered for type "%s" in namespace "%s"',
                     $converter->getTypeName(),
-                    $converter->getTypeNamespace()
+                    $converter->getTypeNamespace(),
                 ));
             }
 
@@ -268,8 +254,8 @@ abstract class ApiSoapClient extends SoapClient implements ClientInterface
                 (string)$this->__getLastResponseHeaders(),
                 (string)$this->__getLastResponse(),
                 $this->getRequestId(),
-                $fault
-            )
+                $fault,
+            ),
         );
     }
 }

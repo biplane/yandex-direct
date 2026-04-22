@@ -12,13 +12,13 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class AdGroupSubtypeEnum
 {
-    public const WEBPAGE = 'WEBPAGE';
+    public const string WEBPAGE = 'WEBPAGE';
 
-    public const FEED = 'FEED';
+    public const string FEED = 'FEED';
 
-    public const NONE = 'NONE';
+    public const string NONE = 'NONE';
 
-    public const KEYWORDS = 'KEYWORDS';
+    public const string KEYWORDS = 'KEYWORDS';
 
-    public const USER_PROFILE = 'USER_PROFILE';
+    public const string USER_PROFILE = 'USER_PROFILE';
 }

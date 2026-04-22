@@ -28,7 +28,8 @@ class GetAdExtensionsResponse extends GetResponseGeneral implements IteratorAggr
      *
      * @return static
      */
-    public static function create()
+    #[Override]
+    public static function create(): static
     {
         return new static();
     }
@@ -63,9 +64,7 @@ class GetAdExtensionsResponse extends GetResponseGeneral implements IteratorAggr
         return isset($this->AdExtensions) ? count($this->AdExtensions) : 0;
     }
 
-    /**
-     * @return ArrayIterator<int, AdExtensionGetItem>
-     */
+    /** @return ArrayIterator<int, AdExtensionGetItem> */
     #[Override]
     public function getIterator(): ArrayIterator
     {

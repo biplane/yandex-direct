@@ -12,13 +12,13 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class AutotargetingCategoriesEnum
 {
-    public const EXACT = 'EXACT';
+    public const string EXACT = 'EXACT';
 
-    public const ALTERNATIVE = 'ALTERNATIVE';
+    public const string ALTERNATIVE = 'ALTERNATIVE';
 
-    public const COMPETITOR = 'COMPETITOR';
+    public const string COMPETITOR = 'COMPETITOR';
 
-    public const BROADER = 'BROADER';
+    public const string BROADER = 'BROADER';
 
-    public const ACCESSORY = 'ACCESSORY';
+    public const string ACCESSORY = 'ACCESSORY';
 }

@@ -28,7 +28,8 @@ class GetAudienceTargetsResponse extends GetResponseGeneral implements IteratorA
      *
      * @return static
      */
-    public static function create()
+    #[Override]
+    public static function create(): static
     {
         return new static();
     }
@@ -63,9 +64,7 @@ class GetAudienceTargetsResponse extends GetResponseGeneral implements IteratorA
         return isset($this->AudienceTargets) ? count($this->AudienceTargets) : 0;
     }
 
-    /**
-     * @return ArrayIterator<int, AudienceTargetGetItem>
-     */
+    /** @return ArrayIterator<int, AudienceTargetGetItem> */
     #[Override]
     public function getIterator(): ArrayIterator
     {

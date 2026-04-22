@@ -12,11 +12,11 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class TextAdPriceExtensionFieldEnum
 {
-    public const PRICE = 'Price';
+    public const string PRICE = 'Price';
 
-    public const OLD_PRICE = 'OldPrice';
+    public const string OLD_PRICE = 'OldPrice';
 
-    public const PRICE_CURRENCY = 'PriceCurrency';
+    public const string PRICE_CURRENCY = 'PriceCurrency';
 
-    public const PRICE_QUALIFIER = 'PriceQualifier';
+    public const string PRICE_QUALIFIER = 'PriceQualifier';
 }

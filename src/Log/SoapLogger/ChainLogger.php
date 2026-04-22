@@ -5,10 +5,9 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Log\SoapLogger;
 
 use Biplane\YandexDirect\Log\SoapLogger;
+use Override;
 use Psr\Log\LoggerInterface;
 use Throwable;
-
-use function get_class;
 
 final class ChainLogger implements SoapLogger
 {
@@ -18,9 +17,7 @@ final class ChainLogger implements SoapLogger
     /** @var LoggerInterface|null */
     private $errorLogger;
 
-    /**
-     * @param array<SoapLogger> $loggers
-     */
+    /** @param array<SoapLogger> $loggers */
     public function __construct(array $loggers, ?LoggerInterface $errorLogger = null)
     {
         $this->loggers = $loggers;
@@ -30,6 +27,7 @@ final class ChainLogger implements SoapLogger
     /**
      * {@inheritDoc}
      */
+    #[Override]
     public function log(array $context): void
     {
         foreach ($this->loggers as $logger) {
@@ -41,7 +39,7 @@ final class ChainLogger implements SoapLogger
                 }
 
                 $this->errorLogger->error('Failed to write to log: ' . $e->getMessage(), [
-                    'logger' => get_class($logger),
+                    'logger' => $logger::class,
                     'exception' => $e,
                 ]);
             }

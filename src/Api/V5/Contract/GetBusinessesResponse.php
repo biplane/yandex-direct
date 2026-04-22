@@ -28,7 +28,8 @@ class GetBusinessesResponse extends GetResponseGeneral implements IteratorAggreg
      *
      * @return static
      */
-    public static function create()
+    #[Override]
+    public static function create(): static
     {
         return new static();
     }
@@ -63,9 +64,7 @@ class GetBusinessesResponse extends GetResponseGeneral implements IteratorAggreg
         return isset($this->Businesses) ? count($this->Businesses) : 0;
     }
 
-    /**
-     * @return ArrayIterator<int, BusinessGetItem>
-     */
+    /** @return ArrayIterator<int, BusinessGetItem> */
     #[Override]
     public function getIterator(): ArrayIterator
     {

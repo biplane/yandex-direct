@@ -28,7 +28,7 @@ class AddVCardsResponse implements IteratorAggregate, Countable
      *
      * @return static
      */
-    public static function create()
+    public static function create(): static
     {
         return new static();
     }
@@ -63,9 +63,7 @@ class AddVCardsResponse implements IteratorAggregate, Countable
         return isset($this->AddResults) ? count($this->AddResults) : 0;
     }
 
-    /**
-     * @return ArrayIterator<int, ActionResult>
-     */
+    /** @return ArrayIterator<int, ActionResult> */
     #[Override]
     public function getIterator(): ArrayIterator
     {

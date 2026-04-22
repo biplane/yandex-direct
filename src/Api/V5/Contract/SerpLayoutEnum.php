@@ -12,7 +12,7 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class SerpLayoutEnum
 {
-    public const ALONE = 'ALONE';
+    public const string ALONE = 'ALONE';
 
-    public const SUGGEST = 'SUGGEST';
+    public const string SUGGEST = 'SUGGEST';
 }

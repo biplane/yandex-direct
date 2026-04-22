@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Changed
+
+* [**BC break**] Минимальная поддерживаемся версия PHP 8.3
+
 ### Removed
 
 * Удален класс `Biplane\YandexDirect\Event\FailCallEvent`

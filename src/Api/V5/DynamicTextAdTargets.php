@@ -24,7 +24,7 @@ use Biplane\YandexDirect\Config;
  */
 class DynamicTextAdTargets extends ApiSoapClientV5
 {
-    public const ENDPOINT = 'https://api.direct.yandex.com/v501/dynamictextadtargets?wsdl';
+    public const string ENDPOINT = 'https://api.direct.yandex.com/v501/dynamictextadtargets?wsdl';
 
     /**
      * Constructor
@@ -60,6 +60,7 @@ class DynamicTextAdTargets extends ApiSoapClientV5
             'SetBidsResponse' => 'Biplane\YandexDirect\Api\V5\Contract\SetBidsDynamicTextAdTargetsResponse',
             'SetBidsActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\SetBidsActionResult',
         ];
+
         parent::__construct(self::ENDPOINT, $config, $options);
     }
 

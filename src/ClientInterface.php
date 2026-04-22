@@ -4,9 +4,7 @@ declare(strict_types=1);
 
 namespace Biplane\YandexDirect;
 
-/**
- * @deprecated Use SoapLogger to get request/response instead.
- */
+/** @deprecated Use SoapLogger to get request/response instead. */
 interface ClientInterface
 {
     /**

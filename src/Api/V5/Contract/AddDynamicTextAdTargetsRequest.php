@@ -28,7 +28,7 @@ class AddDynamicTextAdTargetsRequest implements IteratorAggregate, Countable
      *
      * @return static
      */
-    public static function create()
+    public static function create(): static
     {
         return new static();
     }
@@ -63,9 +63,7 @@ class AddDynamicTextAdTargetsRequest implements IteratorAggregate, Countable
         return count($this->Webpages);
     }
 
-    /**
-     * @return ArrayIterator<int, WebpageAddItem>
-     */
+    /** @return ArrayIterator<int, WebpageAddItem> */
     #[Override]
     public function getIterator(): ArrayIterator
     {

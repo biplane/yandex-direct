@@ -21,7 +21,7 @@ final class ArrayOfStringConverterTest extends TestCase
                 'бесплатно',
                 'плохие отзывы',
             ],
-            $decoded
+            $decoded,
         );
     }
 

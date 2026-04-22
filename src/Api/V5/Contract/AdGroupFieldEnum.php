@@ -12,27 +12,27 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class AdGroupFieldEnum
 {
-    public const ID = 'Id';
+    public const string ID = 'Id';
 
-    public const CAMPAIGN_ID = 'CampaignId';
+    public const string CAMPAIGN_ID = 'CampaignId';
 
-    public const STATUS = 'Status';
+    public const string STATUS = 'Status';
 
-    public const NAME = 'Name';
+    public const string NAME = 'Name';
 
-    public const REGION_IDS = 'RegionIds';
+    public const string REGION_IDS = 'RegionIds';
 
-    public const RESTRICTED_REGION_IDS = 'RestrictedRegionIds';
+    public const string RESTRICTED_REGION_IDS = 'RestrictedRegionIds';
 
-    public const NEGATIVE_KEYWORDS = 'NegativeKeywords';
+    public const string NEGATIVE_KEYWORDS = 'NegativeKeywords';
 
-    public const NEGATIVE_KEYWORD_SHARED_SET_IDS = 'NegativeKeywordSharedSetIds';
+    public const string NEGATIVE_KEYWORD_SHARED_SET_IDS = 'NegativeKeywordSharedSetIds';
 
-    public const TYPE = 'Type';
+    public const string TYPE = 'Type';
 
-    public const TRACKING_PARAMS = 'TrackingParams';
+    public const string TRACKING_PARAMS = 'TrackingParams';
 
-    public const SUBTYPE = 'Subtype';
+    public const string SUBTYPE = 'Subtype';
 
-    public const SERVING_STATUS = 'ServingStatus';
+    public const string SERVING_STATUS = 'ServingStatus';
 }

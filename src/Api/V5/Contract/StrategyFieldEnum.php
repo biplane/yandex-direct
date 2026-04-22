@@ -12,17 +12,17 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class StrategyFieldEnum
 {
-    public const ID = 'Id';
+    public const string ID = 'Id';
 
-    public const ATTRIBUTION_MODEL = 'AttributionModel';
+    public const string ATTRIBUTION_MODEL = 'AttributionModel';
 
-    public const COUNTER_IDS = 'CounterIds';
+    public const string COUNTER_IDS = 'CounterIds';
 
-    public const PRIORITY_GOALS = 'PriorityGoals';
+    public const string PRIORITY_GOALS = 'PriorityGoals';
 
-    public const TYPE = 'Type';
+    public const string TYPE = 'Type';
 
-    public const NAME = 'Name';
+    public const string NAME = 'Name';
 
-    public const STATUS_ARCHIVED = 'StatusArchived';
+    public const string STATUS_ARCHIVED = 'StatusArchived';
 }

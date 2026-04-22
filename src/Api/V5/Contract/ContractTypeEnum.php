@@ -12,9 +12,9 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class ContractTypeEnum
 {
-    public const CONTRACT = 'CONTRACT';
+    public const string CONTRACT = 'CONTRACT';
 
-    public const INTERMEDIARY_CONTRACT = 'INTERMEDIARY_CONTRACT';
+    public const string INTERMEDIARY_CONTRACT = 'INTERMEDIARY_CONTRACT';
 
-    public const ADDITIONAL_AGREEMENT = 'ADDITIONAL_AGREEMENT';
+    public const string ADDITIONAL_AGREEMENT = 'ADDITIONAL_AGREEMENT';
 }

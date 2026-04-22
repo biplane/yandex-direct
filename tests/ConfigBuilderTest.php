@@ -8,7 +8,7 @@ use Biplane\YandexDirect\Config;
 use Biplane\YandexDirect\ConfigBuilder;
 use PHPUnit\Framework\TestCase;
 
-class ConfigBuilderTest extends TestCase
+final class ConfigBuilderTest extends TestCase
 {
     public function testWithDefaults(): void
     {

@@ -28,7 +28,8 @@ class GetDynamicTextAdTargetsResponse extends GetResponseGeneral implements Iter
      *
      * @return static
      */
-    public static function create()
+    #[Override]
+    public static function create(): static
     {
         return new static();
     }
@@ -63,9 +64,7 @@ class GetDynamicTextAdTargetsResponse extends GetResponseGeneral implements Iter
         return isset($this->Webpages) ? count($this->Webpages) : 0;
     }
 
-    /**
-     * @return ArrayIterator<int, WebpageGetItem>
-     */
+    /** @return ArrayIterator<int, WebpageGetItem> */
     #[Override]
     public function getIterator(): ArrayIterator
     {

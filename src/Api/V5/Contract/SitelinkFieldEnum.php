@@ -12,11 +12,11 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class SitelinkFieldEnum
 {
-    public const TITLE = 'Title';
+    public const string TITLE = 'Title';
 
-    public const HREF = 'Href';
+    public const string HREF = 'Href';
 
-    public const DESCRIPTION = 'Description';
+    public const string DESCRIPTION = 'Description';
 
-    public const TURBO_PAGE_ID = 'TurboPageId';
+    public const string TURBO_PAGE_ID = 'TurboPageId';
 }

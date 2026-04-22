@@ -12,7 +12,7 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class AdExtensionStateSelectionEnum
 {
-    public const ON = 'ON';
+    public const string ON = 'ON';
 
-    public const DELETED = 'DELETED';
+    public const string DELETED = 'DELETED';
 }

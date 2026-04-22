@@ -28,7 +28,8 @@ class GetFeedsResponse extends GetResponseGeneral implements IteratorAggregate, 
      *
      * @return static
      */
-    public static function create()
+    #[Override]
+    public static function create(): static
     {
         return new static();
     }
@@ -63,9 +64,7 @@ class GetFeedsResponse extends GetResponseGeneral implements IteratorAggregate, 
         return isset($this->Feeds) ? count($this->Feeds) : 0;
     }
 
-    /**
-     * @return ArrayIterator<int, FeedGetItem>
-     */
+    /** @return ArrayIterator<int, FeedGetItem> */
     #[Override]
     public function getIterator(): ArrayIterator
     {

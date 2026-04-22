@@ -28,7 +28,8 @@ class GetCampaignsResponse extends GetResponseGeneral implements IteratorAggrega
      *
      * @return static
      */
-    public static function create()
+    #[Override]
+    public static function create(): static
     {
         return new static();
     }
@@ -63,9 +64,7 @@ class GetCampaignsResponse extends GetResponseGeneral implements IteratorAggrega
         return isset($this->Campaigns) ? count($this->Campaigns) : 0;
     }
 
-    /**
-     * @return ArrayIterator<int, CampaignGetItem>
-     */
+    /** @return ArrayIterator<int, CampaignGetItem> */
     #[Override]
     public function getIterator(): ArrayIterator
     {

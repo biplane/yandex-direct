@@ -12,11 +12,11 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class DynamicTextAdGroupFieldEnum
 {
-    public const AUTOTARGETING_CATEGORIES = 'AutotargetingCategories';
+    public const string AUTOTARGETING_CATEGORIES = 'AutotargetingCategories';
 
-    public const AUTOTARGETING_SETTINGS = 'AutotargetingSettings';
+    public const string AUTOTARGETING_SETTINGS = 'AutotargetingSettings';
 
-    public const DOMAIN_URL = 'DomainUrl';
+    public const string DOMAIN_URL = 'DomainUrl';
 
-    public const DOMAIN_URL_PROCESSING_STATUS = 'DomainUrlProcessingStatus';
+    public const string DOMAIN_URL_PROCESSING_STATUS = 'DomainUrlProcessingStatus';
 }

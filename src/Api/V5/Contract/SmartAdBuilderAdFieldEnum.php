@@ -12,5 +12,5 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class SmartAdBuilderAdFieldEnum
 {
-    public const CREATIVE = 'Creative';
+    public const string CREATIVE = 'Creative';
 }

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5\Contract;
 
 use AllowDynamicProperties;
+use Override;
 
 /**
  * Auto-generated code.
@@ -62,7 +63,8 @@ class GetBidModifiersRequest extends GetRequestGeneral
      *
      * @return static
      */
-    public static function create()
+    #[Override]
+    public static function create(): static
     {
         return new static();
     }

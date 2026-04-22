@@ -12,5 +12,5 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class AdGroupAdjustmentFieldEnum
 {
-    public const BID_MODIFIER = 'BidModifier';
+    public const string BID_MODIFIER = 'BidModifier';
 }

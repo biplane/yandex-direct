@@ -8,6 +8,7 @@ use BadMethodCallException;
 use Biplane\YandexDirect\Config;
 use Biplane\YandexDirect\Exception\ApiException;
 use Biplane\YandexDirect\Soap\ApiSoapClient;
+use Override;
 use SoapFault;
 
 final class MockSoapClient extends ApiSoapClient
@@ -15,9 +16,7 @@ final class MockSoapClient extends ApiSoapClient
     /** @var array<string, mixed> */
     private $opts;
 
-    /**
-     * @param array<string, mixed> $options
-     */
+    /** @param array<string, mixed> $options */
     public function __construct(Config $config, array $options = [])
     {
         parent::__construct(__DIR__ . '/Fixtures/yandexapiservice.wsdl', $config, $options);
@@ -25,9 +24,7 @@ final class MockSoapClient extends ApiSoapClient
         $this->opts = $options;
     }
 
-    /**
-     * @return array<string, mixed>
-     */
+    /** @return array<string, mixed> */
     public function getOptions(): array
     {
         return $this->opts;
@@ -38,11 +35,13 @@ final class MockSoapClient extends ApiSoapClient
         return $this->config;
     }
 
+    #[Override]
     protected function parseSoapFault(SoapFault $fault): ?ApiException
     {
         throw new BadMethodCallException('Not implemented');
     }
 
+    #[Override]
     public function getRequestId(): string
     {
         throw new BadMethodCallException('Not implemented');

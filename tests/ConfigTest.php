@@ -5,12 +5,13 @@ declare(strict_types=1);
 namespace Biplane\Tests\YandexDirect;
 
 use Biplane\YandexDirect\Config;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\OptionsResolver\Exception\InvalidArgumentException;
 
 use const WSDL_CACHE_MEMORY;
 
-class ConfigTest extends TestCase
+final class ConfigTest extends TestCase
 {
     public function testWithDefaults(): void
     {
@@ -55,9 +56,7 @@ class ConfigTest extends TestCase
         self::assertEquals($soapOptions, $config->getSoapOptions());
     }
 
-    /**
-     * @dataProvider clientLoginProvider
-     */
+    #[DataProvider('clientLoginProvider')]
     public function testNormalizeClientLogin(string $input, string $expected): void
     {
         $config = new Config([
@@ -68,9 +67,7 @@ class ConfigTest extends TestCase
         self::assertEquals($expected, $config->getClientLogin());
     }
 
-    /**
-     * @dataProvider provideLocales
-     */
+    #[DataProvider('provideLocales')]
     public function testLocale(string $locale, int $apiVersion, string $expected): void
     {
         $config = new Config([
@@ -146,9 +143,7 @@ class ConfigTest extends TestCase
         ]);
     }
 
-    /**
-     * @return array<array{string, int, string}>
-     */
+    /** @return array<array{string, int, string}> */
     public static function provideLocales(): array
     {
         return [
@@ -165,9 +160,7 @@ class ConfigTest extends TestCase
         ];
     }
 
-    /**
-     * @return iterable<array{input: string, expected: string}>
-     */
+    /** @return iterable<array{input: string, expected: string}> */
     public static function clientLoginProvider(): iterable
     {
         yield 'without_domain' => [

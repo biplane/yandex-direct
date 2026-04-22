@@ -12,47 +12,47 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class CampaignFieldEnum
 {
-    public const BLOCKED_IPS = 'BlockedIps';
+    public const string BLOCKED_IPS = 'BlockedIps';
 
-    public const EXCLUDED_SITES = 'ExcludedSites';
+    public const string EXCLUDED_SITES = 'ExcludedSites';
 
-    public const CURRENCY = 'Currency';
+    public const string CURRENCY = 'Currency';
 
-    public const DAILY_BUDGET = 'DailyBudget';
+    public const string DAILY_BUDGET = 'DailyBudget';
 
-    public const NOTIFICATION = 'Notification';
+    public const string NOTIFICATION = 'Notification';
 
-    public const END_DATE = 'EndDate';
+    public const string END_DATE = 'EndDate';
 
-    public const FUNDS = 'Funds';
+    public const string FUNDS = 'Funds';
 
-    public const CLIENT_INFO = 'ClientInfo';
+    public const string CLIENT_INFO = 'ClientInfo';
 
-    public const ID = 'Id';
+    public const string ID = 'Id';
 
-    public const NAME = 'Name';
+    public const string NAME = 'Name';
 
-    public const NEGATIVE_KEYWORDS = 'NegativeKeywords';
+    public const string NEGATIVE_KEYWORDS = 'NegativeKeywords';
 
-    public const REPRESENTED_BY = 'RepresentedBy';
+    public const string REPRESENTED_BY = 'RepresentedBy';
 
-    public const START_DATE = 'StartDate';
+    public const string START_DATE = 'StartDate';
 
-    public const STATISTICS = 'Statistics';
+    public const string STATISTICS = 'Statistics';
 
-    public const STATE = 'State';
+    public const string STATE = 'State';
 
-    public const STATUS = 'Status';
+    public const string STATUS = 'Status';
 
-    public const STATUS_PAYMENT = 'StatusPayment';
+    public const string STATUS_PAYMENT = 'StatusPayment';
 
-    public const STATUS_CLARIFICATION = 'StatusClarification';
+    public const string STATUS_CLARIFICATION = 'StatusClarification';
 
-    public const SOURCE_ID = 'SourceId';
+    public const string SOURCE_ID = 'SourceId';
 
-    public const TIME_TARGETING = 'TimeTargeting';
+    public const string TIME_TARGETING = 'TimeTargeting';
 
-    public const TIME_ZONE = 'TimeZone';
+    public const string TIME_ZONE = 'TimeZone';
 
-    public const TYPE = 'Type';
+    public const string TYPE = 'Type';
 }

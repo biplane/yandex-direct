@@ -28,7 +28,7 @@ class SuspendDynamicTextAdTargetsResponse implements IteratorAggregate, Countabl
      *
      * @return static
      */
-    public static function create()
+    public static function create(): static
     {
         return new static();
     }
@@ -63,9 +63,7 @@ class SuspendDynamicTextAdTargetsResponse implements IteratorAggregate, Countabl
         return count($this->SuspendResults);
     }
 
-    /**
-     * @return ArrayIterator<int, ActionResult>
-     */
+    /** @return ArrayIterator<int, ActionResult> */
     #[Override]
     public function getIterator(): ArrayIterator
     {

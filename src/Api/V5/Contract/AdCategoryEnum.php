@@ -12,19 +12,19 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class AdCategoryEnum
 {
-    public const ABORTION = 'ABORTION';
+    public const string ABORTION = 'ABORTION';
 
-    public const ALCOHOL = 'ALCOHOL';
+    public const string ALCOHOL = 'ALCOHOL';
 
-    public const BABY_FOOD = 'BABY_FOOD';
+    public const string BABY_FOOD = 'BABY_FOOD';
 
-    public const DIETARY_SUPPLEMENTS = 'DIETARY_SUPPLEMENTS';
+    public const string DIETARY_SUPPLEMENTS = 'DIETARY_SUPPLEMENTS';
 
-    public const MEDICINE = 'MEDICINE';
+    public const string MEDICINE = 'MEDICINE';
 
-    public const PROJECT_DECLARATION = 'PROJECT_DECLARATION';
+    public const string PROJECT_DECLARATION = 'PROJECT_DECLARATION';
 
-    public const PSEUDO_WEAPON = 'PSEUDO_WEAPON';
+    public const string PSEUDO_WEAPON = 'PSEUDO_WEAPON';
 
-    public const TOBACCO = 'TOBACCO';
+    public const string TOBACCO = 'TOBACCO';
 }

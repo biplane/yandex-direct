@@ -22,7 +22,7 @@ use Biplane\YandexDirect\Config;
  */
 class Strategies extends ApiSoapClientV5
 {
-    public const ENDPOINT = 'https://api.direct.yandex.com/v501/strategies?wsdl';
+    public const string ENDPOINT = 'https://api.direct.yandex.com/v501/strategies?wsdl';
 
     /**
      * Constructor
@@ -122,6 +122,7 @@ class Strategies extends ApiSoapClientV5
             'UnarchiveRequest' => 'Biplane\YandexDirect\Api\V5\Contract\UnarchiveStrategiesRequest',
             'UnarchiveResponse' => 'Biplane\YandexDirect\Api\V5\Contract\UnarchiveStrategiesResponse',
         ];
+
         parent::__construct(self::ENDPOINT, $config, $options);
     }
 

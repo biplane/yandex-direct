@@ -20,7 +20,7 @@ use Biplane\YandexDirect\Config;
  */
 class AdGroups extends ApiSoapClientV5
 {
-    public const ENDPOINT = 'https://api.direct.yandex.com/v501/adgroups?wsdl';
+    public const string ENDPOINT = 'https://api.direct.yandex.com/v501/adgroups?wsdl';
 
     /**
      * Constructor
@@ -80,6 +80,7 @@ class AdGroups extends ApiSoapClientV5
             'IdsCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\IdsCriteria',
             'DeleteResponse' => 'Biplane\YandexDirect\Api\V5\Contract\DeleteAdGroupsResponse',
         ];
+
         parent::__construct(self::ENDPOINT, $config, $options);
     }
 

@@ -12,31 +12,31 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class ResponsiveAdFieldEnum
 {
-    public const AD_IMAGES = 'AdImages';
+    public const string AD_IMAGES = 'AdImages';
 
-    public const DISPLAY_DOMAIN = 'DisplayDomain';
+    public const string DISPLAY_DOMAIN = 'DisplayDomain';
 
-    public const HREF = 'Href';
+    public const string HREF = 'Href';
 
-    public const SITELINK_SET_ID = 'SitelinkSetId';
+    public const string SITELINK_SET_ID = 'SitelinkSetId';
 
-    public const TEXTS = 'Texts';
+    public const string TEXTS = 'Texts';
 
-    public const TITLES = 'Titles';
+    public const string TITLES = 'Titles';
 
-    public const DISPLAY_URL_PATH = 'DisplayUrlPath';
+    public const string DISPLAY_URL_PATH = 'DisplayUrlPath';
 
-    public const SITELINKS_MODERATION = 'SitelinksModeration';
+    public const string SITELINKS_MODERATION = 'SitelinksModeration';
 
-    public const AD_EXTENSIONS = 'AdExtensions';
+    public const string AD_EXTENSIONS = 'AdExtensions';
 
-    public const DISPLAY_URL_PATH_MODERATION = 'DisplayUrlPathModeration';
+    public const string DISPLAY_URL_PATH_MODERATION = 'DisplayUrlPathModeration';
 
-    public const PRICE_EXTENSION = 'PriceExtension';
+    public const string PRICE_EXTENSION = 'PriceExtension';
 
-    public const VIDEO_EXTENSIONS = 'VideoExtensions';
+    public const string VIDEO_EXTENSIONS = 'VideoExtensions';
 
-    public const BUSINESS_ID = 'BusinessId';
+    public const string BUSINESS_ID = 'BusinessId';
 
-    public const ERIR_AD_DESCRIPTION = 'ErirAdDescription';
+    public const string ERIR_AD_DESCRIPTION = 'ErirAdDescription';
 }

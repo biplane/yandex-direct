@@ -12,33 +12,33 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class DictionaryNameEnum
 {
-    public const CURRENCIES = 'Currencies';
+    public const string CURRENCIES = 'Currencies';
 
-    public const METRO_STATIONS = 'MetroStations';
+    public const string METRO_STATIONS = 'MetroStations';
 
-    public const GEO_REGIONS = 'GeoRegions';
+    public const string GEO_REGIONS = 'GeoRegions';
 
-    public const GEO_REGION_NAMES = 'GeoRegionNames';
+    public const string GEO_REGION_NAMES = 'GeoRegionNames';
 
-    public const TIME_ZONES = 'TimeZones';
+    public const string TIME_ZONES = 'TimeZones';
 
-    public const CONSTANTS = 'Constants';
+    public const string CONSTANTS = 'Constants';
 
-    public const AD_CATEGORIES = 'AdCategories';
+    public const string AD_CATEGORIES = 'AdCategories';
 
-    public const OPERATION_SYSTEM_VERSIONS = 'OperationSystemVersions';
+    public const string OPERATION_SYSTEM_VERSIONS = 'OperationSystemVersions';
 
-    public const PRODUCTIVITY_ASSERTIONS = 'ProductivityAssertions';
+    public const string PRODUCTIVITY_ASSERTIONS = 'ProductivityAssertions';
 
-    public const SUPPLY_SIDE_PLATFORMS = 'SupplySidePlatforms';
+    public const string SUPPLY_SIDE_PLATFORMS = 'SupplySidePlatforms';
 
-    public const INTERESTS = 'Interests';
+    public const string INTERESTS = 'Interests';
 
-    public const AUDIENCE_CRITERIA_TYPES = 'AudienceCriteriaTypes';
+    public const string AUDIENCE_CRITERIA_TYPES = 'AudienceCriteriaTypes';
 
-    public const AUDIENCE_DEMOGRAPHIC_PROFILES = 'AudienceDemographicProfiles';
+    public const string AUDIENCE_DEMOGRAPHIC_PROFILES = 'AudienceDemographicProfiles';
 
-    public const AUDIENCE_INTERESTS = 'AudienceInterests';
+    public const string AUDIENCE_INTERESTS = 'AudienceInterests';
 
-    public const FILTER_SCHEMAS = 'FilterSchemas';
+    public const string FILTER_SCHEMAS = 'FilterSchemas';
 }

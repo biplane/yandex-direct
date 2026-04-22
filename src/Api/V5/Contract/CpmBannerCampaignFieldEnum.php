@@ -12,13 +12,13 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class CpmBannerCampaignFieldEnum
 {
-    public const COUNTER_IDS = 'CounterIds';
+    public const string COUNTER_IDS = 'CounterIds';
 
-    public const FREQUENCY_CAP = 'FrequencyCap';
+    public const string FREQUENCY_CAP = 'FrequencyCap';
 
-    public const VIDEO_TARGET = 'VideoTarget';
+    public const string VIDEO_TARGET = 'VideoTarget';
 
-    public const SETTINGS = 'Settings';
+    public const string SETTINGS = 'Settings';
 
-    public const BIDDING_STRATEGY = 'BiddingStrategy';
+    public const string BIDDING_STRATEGY = 'BiddingStrategy';
 }

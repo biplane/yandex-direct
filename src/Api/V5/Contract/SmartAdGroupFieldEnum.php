@@ -12,9 +12,9 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class SmartAdGroupFieldEnum
 {
-    public const FEED_ID = 'FeedId';
+    public const string FEED_ID = 'FeedId';
 
-    public const AD_TITLE_SOURCE = 'AdTitleSource';
+    public const string AD_TITLE_SOURCE = 'AdTitleSource';
 
-    public const AD_BODY_SOURCE = 'AdBodySource';
+    public const string AD_BODY_SOURCE = 'AdBodySource';
 }

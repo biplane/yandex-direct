@@ -12,13 +12,13 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class KeywordBidFieldEnum
 {
-    public const KEYWORD_ID = 'KeywordId';
+    public const string KEYWORD_ID = 'KeywordId';
 
-    public const AD_GROUP_ID = 'AdGroupId';
+    public const string AD_GROUP_ID = 'AdGroupId';
 
-    public const CAMPAIGN_ID = 'CampaignId';
+    public const string CAMPAIGN_ID = 'CampaignId';
 
-    public const SERVING_STATUS = 'ServingStatus';
+    public const string SERVING_STATUS = 'ServingStatus';
 
-    public const STRATEGY_PRIORITY = 'StrategyPriority';
+    public const string STRATEGY_PRIORITY = 'StrategyPriority';
 }

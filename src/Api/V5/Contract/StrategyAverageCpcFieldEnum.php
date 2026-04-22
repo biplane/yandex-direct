@@ -12,11 +12,11 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class StrategyAverageCpcFieldEnum
 {
-    public const AVERAGE_CPC = 'AverageCpc';
+    public const string AVERAGE_CPC = 'AverageCpc';
 
-    public const WEEKLY_SPEND_LIMIT = 'WeeklySpendLimit';
+    public const string WEEKLY_SPEND_LIMIT = 'WeeklySpendLimit';
 
-    public const CUSTOM_PERIOD_BUDGET = 'CustomPeriodBudget';
+    public const string CUSTOM_PERIOD_BUDGET = 'CustomPeriodBudget';
 
-    public const BUDGET_TYPE = 'BudgetType';
+    public const string BUDGET_TYPE = 'BudgetType';
 }

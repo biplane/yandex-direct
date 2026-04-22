@@ -12,7 +12,7 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class BidModifierLevelEnum
 {
-    public const CAMPAIGN = 'CAMPAIGN';
+    public const string CAMPAIGN = 'CAMPAIGN';
 
-    public const AD_GROUP = 'AD_GROUP';
+    public const string AD_GROUP = 'AD_GROUP';
 }

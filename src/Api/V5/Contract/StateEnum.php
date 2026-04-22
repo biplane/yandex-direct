@@ -12,17 +12,17 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class StateEnum
 {
-    public const OFF = 'OFF';
+    public const string OFF = 'OFF';
 
-    public const ON = 'ON';
+    public const string ON = 'ON';
 
-    public const SUSPENDED = 'SUSPENDED';
+    public const string SUSPENDED = 'SUSPENDED';
 
-    public const OFF_BY_MONITORING = 'OFF_BY_MONITORING';
+    public const string OFF_BY_MONITORING = 'OFF_BY_MONITORING';
 
-    public const ARCHIVED = 'ARCHIVED';
+    public const string ARCHIVED = 'ARCHIVED';
 
-    public const DELETED = 'DELETED';
+    public const string DELETED = 'DELETED';
 
-    public const UNKNOWN = 'UNKNOWN';
+    public const string UNKNOWN = 'UNKNOWN';
 }

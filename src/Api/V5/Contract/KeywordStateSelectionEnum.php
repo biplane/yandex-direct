@@ -12,9 +12,9 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class KeywordStateSelectionEnum
 {
-    public const OFF = 'OFF';
+    public const string OFF = 'OFF';
 
-    public const ON = 'ON';
+    public const string ON = 'ON';
 
-    public const SUSPENDED = 'SUSPENDED';
+    public const string SUSPENDED = 'SUSPENDED';
 }

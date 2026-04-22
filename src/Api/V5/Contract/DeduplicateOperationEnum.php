@@ -12,7 +12,7 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class DeduplicateOperationEnum
 {
-    public const MERGE_DUPLICATES = 'MERGE_DUPLICATES';
+    public const string MERGE_DUPLICATES = 'MERGE_DUPLICATES';
 
-    public const ELIMINATE_OVERLAPPING = 'ELIMINATE_OVERLAPPING';
+    public const string ELIMINATE_OVERLAPPING = 'ELIMINATE_OVERLAPPING';
 }

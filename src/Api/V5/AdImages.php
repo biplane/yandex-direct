@@ -18,7 +18,7 @@ use Biplane\YandexDirect\Config;
  */
 class AdImages extends ApiSoapClientV5
 {
-    public const ENDPOINT = 'https://api.direct.yandex.com/v501/adimages?wsdl';
+    public const string ENDPOINT = 'https://api.direct.yandex.com/v501/adimages?wsdl';
 
     /**
      * Constructor
@@ -45,6 +45,7 @@ class AdImages extends ApiSoapClientV5
             'AdImageHashesCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\AdImageHashesCriteria',
             'DeleteResponse' => 'Biplane\YandexDirect\Api\V5\Contract\DeleteAdImagesResponse',
         ];
+
         parent::__construct(self::ENDPOINT, $config, $options);
     }
 

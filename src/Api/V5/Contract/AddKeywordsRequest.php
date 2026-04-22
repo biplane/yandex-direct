@@ -28,7 +28,7 @@ class AddKeywordsRequest implements IteratorAggregate, Countable
      *
      * @return static
      */
-    public static function create()
+    public static function create(): static
     {
         return new static();
     }
@@ -63,9 +63,7 @@ class AddKeywordsRequest implements IteratorAggregate, Countable
         return count($this->Keywords);
     }
 
-    /**
-     * @return ArrayIterator<int, KeywordAddItem>
-     */
+    /** @return ArrayIterator<int, KeywordAddItem> */
     #[Override]
     public function getIterator(): ArrayIterator
     {

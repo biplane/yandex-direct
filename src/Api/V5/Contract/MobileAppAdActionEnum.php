@@ -12,19 +12,19 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class MobileAppAdActionEnum
 {
-    public const DOWNLOAD = 'DOWNLOAD';
+    public const string DOWNLOAD = 'DOWNLOAD';
 
-    public const GET = 'GET';
+    public const string GET = 'GET';
 
-    public const INSTALL = 'INSTALL';
+    public const string INSTALL = 'INSTALL';
 
-    public const MORE = 'MORE';
+    public const string MORE = 'MORE';
 
-    public const OPEN = 'OPEN';
+    public const string OPEN = 'OPEN';
 
-    public const UPDATE = 'UPDATE';
+    public const string UPDATE = 'UPDATE';
 
-    public const PLAY = 'PLAY';
+    public const string PLAY = 'PLAY';
 
-    public const BUY_AUTODETECT = 'BUY_AUTODETECT';
+    public const string BUY_AUTODETECT = 'BUY_AUTODETECT';
 }

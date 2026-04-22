@@ -28,7 +28,7 @@ class HasSearchVolumeKeywordsResponse implements IteratorAggregate, Countable
      *
      * @return static
      */
-    public static function create()
+    public static function create(): static
     {
         return new static();
     }
@@ -63,9 +63,7 @@ class HasSearchVolumeKeywordsResponse implements IteratorAggregate, Countable
         return count($this->HasSearchVolumeResults);
     }
 
-    /**
-     * @return ArrayIterator<int, HasSearchVolumeItem>
-     */
+    /** @return ArrayIterator<int, HasSearchVolumeItem> */
     #[Override]
     public function getIterator(): ArrayIterator
     {

@@ -28,7 +28,7 @@ class UpdateStrategiesRequest implements IteratorAggregate, Countable
      *
      * @return static
      */
-    public static function create()
+    public static function create(): static
     {
         return new static();
     }
@@ -63,9 +63,7 @@ class UpdateStrategiesRequest implements IteratorAggregate, Countable
         return count($this->Strategies);
     }
 
-    /**
-     * @return ArrayIterator<int, StrategyUpdateItem>
-     */
+    /** @return ArrayIterator<int, StrategyUpdateItem> */
     #[Override]
     public function getIterator(): ArrayIterator
     {

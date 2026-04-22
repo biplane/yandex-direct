@@ -12,9 +12,9 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class CampaignChangesInEnum
 {
-    public const SELF = 'SELF';
+    public const string SELF = 'SELF';
 
-    public const CHILDREN = 'CHILDREN';
+    public const string CHILDREN = 'CHILDREN';
 
-    public const STAT = 'STAT';
+    public const string STAT = 'STAT';
 }

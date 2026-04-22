@@ -24,7 +24,7 @@ use Biplane\YandexDirect\Config;
  */
 class Keywords extends ApiSoapClientV5
 {
-    public const ENDPOINT = 'https://api.direct.yandex.com/v501/keywords?wsdl';
+    public const string ENDPOINT = 'https://api.direct.yandex.com/v501/keywords?wsdl';
 
     /**
      * Constructor
@@ -67,6 +67,7 @@ class Keywords extends ApiSoapClientV5
             'ResumeRequest' => 'Biplane\YandexDirect\Api\V5\Contract\ResumeKeywordsRequest',
             'ResumeResponse' => 'Biplane\YandexDirect\Api\V5\Contract\ResumeKeywordsResponse',
         ];
+
         parent::__construct(self::ENDPOINT, $config, $options);
     }
 

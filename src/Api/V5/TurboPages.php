@@ -14,7 +14,7 @@ use Biplane\YandexDirect\Config;
  */
 class TurboPages extends ApiSoapClientV5
 {
-    public const ENDPOINT = 'https://api.direct.yandex.com/v501/turbopages?wsdl';
+    public const string ENDPOINT = 'https://api.direct.yandex.com/v501/turbopages?wsdl';
 
     /**
      * Constructor
@@ -32,6 +32,7 @@ class TurboPages extends ApiSoapClientV5
             'TurboPageGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\TurboPageGetItem',
             'GetResponseGeneral' => 'Biplane\YandexDirect\Api\V5\Contract\GetResponseGeneral',
         ];
+
         parent::__construct(self::ENDPOINT, $config, $options);
     }
 

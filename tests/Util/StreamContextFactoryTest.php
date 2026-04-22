@@ -25,7 +25,7 @@ final class StreamContextFactoryTest extends TestCase
             [
                 'http' => ['header' => "Accept: */*\r\nAccept-Language: en"],
             ],
-            stream_context_get_options($streamContext)
+            stream_context_get_options($streamContext),
         );
     }
 
@@ -48,7 +48,7 @@ final class StreamContextFactoryTest extends TestCase
                 'Client-Login' => 'foo',
                 'Use-Operator-Units' => 'true',
             ],
-            $baseStreamContext
+            $baseStreamContext,
         );
 
         self::assertNotSame($baseStreamContext, $streamContext);
@@ -68,11 +68,11 @@ final class StreamContextFactoryTest extends TestCase
                     'verify_peer' => true,
                 ],
             ],
-            stream_context_get_options($streamContext)
+            stream_context_get_options($streamContext),
         );
     }
 
-    public function testCeateStreamContextWithParamsInheritance(): void
+    public function testCreateStreamContextWithParamsInheritance(): void
     {
         $onNotification = static function (): void {
         };
@@ -81,7 +81,7 @@ final class StreamContextFactoryTest extends TestCase
             [
                 'socket' => ['bindto' => '192.168.0.100:0'],
             ],
-            ['notification' => $onNotification]
+            ['notification' => $onNotification],
         );
 
         $streamContext = StreamContextFactory::create(
@@ -89,7 +89,7 @@ final class StreamContextFactoryTest extends TestCase
                 'Accept-Language' => 'ru',
                 'Client-Login' => 'foo',
             ],
-            $baseStreamContext
+            $baseStreamContext,
         );
 
         self::assertNotSame($baseStreamContext, $streamContext);
@@ -103,12 +103,13 @@ final class StreamContextFactoryTest extends TestCase
                 ],
                 'socket' => ['bindto' => '192.168.0.100:0'],
             ],
-            stream_context_get_options($streamContext)
+            stream_context_get_options($streamContext),
         );
 
         $params = stream_context_get_params($streamContext);
 
         self::assertArrayHasKey('notification', $params);
+        /** @psalm-suppress TypeDoesNotContainType */
         self::assertSame($onNotification, $params['notification']);
     }
 }

@@ -6,9 +6,9 @@ namespace Biplane\YandexDirect\Api\V5\Reports;
 
 final class ReportRequest
 {
-    public const PROCESSING_MODE_AUTO = 'auto';
-    public const PROCESSING_MODE_ONLINE = 'online';
-    public const PROCESSING_MODE_OFFLINE = 'offline';
+    public const string PROCESSING_MODE_AUTO = 'auto';
+    public const string PROCESSING_MODE_ONLINE = 'online';
+    public const string PROCESSING_MODE_OFFLINE = 'offline';
 
     /** @var string */
     private $processingMode;
@@ -34,7 +34,7 @@ final class ReportRequest
         bool $returnMoneyInMicros = false,
         bool $skipReportHeader = false,
         bool $skipReportSummary = false,
-        bool $skipColumnHeader = false
+        bool $skipColumnHeader = false,
     ) {
         $this->reportDefinition = $reportDefinition;
         $this->processingMode = $processingMode;

@@ -17,10 +17,8 @@ use function mkdir;
 use function sprintf;
 use function substr;
 
-/**
- * @deprecated
- */
-class Dumper
+/** @deprecated */
+final class Dumper
 {
     /** @var string */
     private $rootDir;
@@ -74,7 +72,7 @@ class Dumper
         $this->dump(
             $requestId,
             $client->__getLastRequestHeaders() . "\r\n\r\n" . $client->__getLastRequest(),
-            $client->__getLastResponseHeaders() . "\r\n\r\n" . $client->__getLastResponse()
+            $client->__getLastResponseHeaders() . "\r\n\r\n" . $client->__getLastResponse(),
         );
     }
 

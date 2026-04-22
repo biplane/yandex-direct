@@ -14,7 +14,7 @@ use Biplane\YandexDirect\Config;
  */
 class Businesses extends ApiSoapClientV5
 {
-    public const ENDPOINT = 'https://api.direct.yandex.com/v501/businesses?wsdl';
+    public const string ENDPOINT = 'https://api.direct.yandex.com/v501/businesses?wsdl';
 
     /**
      * Constructor
@@ -32,6 +32,7 @@ class Businesses extends ApiSoapClientV5
             'BusinessGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\BusinessGetItem',
             'GetResponseGeneral' => 'Biplane\YandexDirect\Api\V5\Contract\GetResponseGeneral',
         ];
+
         parent::__construct(self::ENDPOINT, $config, $options);
     }
 

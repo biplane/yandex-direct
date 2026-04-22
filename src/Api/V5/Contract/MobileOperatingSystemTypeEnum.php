@@ -12,11 +12,11 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class MobileOperatingSystemTypeEnum
 {
-    public const IOS = 'IOS';
+    public const string IOS = 'IOS';
 
-    public const ANDROID = 'ANDROID';
+    public const string ANDROID = 'ANDROID';
 
-    public const OS_TYPE_OTHER = 'OS_TYPE_OTHER';
+    public const string OS_TYPE_OTHER = 'OS_TYPE_OTHER';
 
-    public const OS_TYPE_UNKNOWN = 'OS_TYPE_UNKNOWN';
+    public const string OS_TYPE_UNKNOWN = 'OS_TYPE_UNKNOWN';
 }

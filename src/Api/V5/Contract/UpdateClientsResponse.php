@@ -28,7 +28,7 @@ class UpdateClientsResponse implements IteratorAggregate, Countable
      *
      * @return static
      */
-    public static function create()
+    public static function create(): static
     {
         return new static();
     }
@@ -63,9 +63,7 @@ class UpdateClientsResponse implements IteratorAggregate, Countable
         return count($this->UpdateResults);
     }
 
-    /**
-     * @return ArrayIterator<int, ClientsActionResult>
-     */
+    /** @return ArrayIterator<int, ClientsActionResult> */
     #[Override]
     public function getIterator(): ArrayIterator
     {

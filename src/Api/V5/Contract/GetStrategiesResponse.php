@@ -28,7 +28,8 @@ class GetStrategiesResponse extends GetResponseGeneral implements IteratorAggreg
      *
      * @return static
      */
-    public static function create()
+    #[Override]
+    public static function create(): static
     {
         return new static();
     }
@@ -63,9 +64,7 @@ class GetStrategiesResponse extends GetResponseGeneral implements IteratorAggreg
         return isset($this->Strategies) ? count($this->Strategies) : 0;
     }
 
-    /**
-     * @return ArrayIterator<int, StrategyGetItem>
-     */
+    /** @return ArrayIterator<int, StrategyGetItem> */
     #[Override]
     public function getIterator(): ArrayIterator
     {

@@ -28,7 +28,7 @@ class UpdateAgencyClientsRequest implements IteratorAggregate, Countable
      *
      * @return static
      */
-    public static function create()
+    public static function create(): static
     {
         return new static();
     }
@@ -63,9 +63,7 @@ class UpdateAgencyClientsRequest implements IteratorAggregate, Countable
         return count($this->Clients);
     }
 
-    /**
-     * @return ArrayIterator<int, AgencyClientUpdateItem>
-     */
+    /** @return ArrayIterator<int, AgencyClientUpdateItem> */
     #[Override]
     public function getIterator(): ArrayIterator
     {

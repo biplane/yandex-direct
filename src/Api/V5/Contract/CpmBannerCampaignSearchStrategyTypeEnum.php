@@ -12,7 +12,7 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class CpmBannerCampaignSearchStrategyTypeEnum
 {
-    public const SERVING_OFF = 'SERVING_OFF';
+    public const string SERVING_OFF = 'SERVING_OFF';
 
-    public const UNKNOWN = 'UNKNOWN';
+    public const string UNKNOWN = 'UNKNOWN';
 }

@@ -27,7 +27,7 @@ use function libxml_use_internal_errors;
 
 final class XmlReportSerializerTest extends TestCase
 {
-    private const SCHEMA_URI = 'https://api.direct.yandex.com/v5/reports.xsd';
+    private const string SCHEMA_URI = 'https://api.direct.yandex.com/v5/reports.xsd';
 
     public function testSerializeReportDefinitionWhenDefinedOnlyRequiredProperties(): void
     {
@@ -182,15 +182,15 @@ XML;
 
     public function testDeserializeReportDownloadError(): void
     {
-        $xml = <<<XML
+        $xml = <<<'XML'
 <?xml version="1.0" encoding="UTF-8"?>
 <reports:reportDownloadError xmlns:reports="http://api.direct.yandex.com/v5/reports">
-    <reports:ApiError>
-        <reports:requestId>2773184281650080533</reports:requestId>
-        <reports:errorCode>53</reports:errorCode>
-        <reports:errorMessage>Authorization error</reports:errorMessage>
-        <reports:errorDetail>Token not entered</reports:errorDetail>
-    </reports:ApiError>
+	<reports:ApiError>
+		<reports:requestId>2773184281650080533</reports:requestId>
+		<reports:errorCode>53</reports:errorCode>
+		<reports:errorMessage>Authorization error</reports:errorMessage>
+		<reports:errorDetail>Token not entered</reports:errorDetail>
+	</reports:ApiError>
 </reports:reportDownloadError>
 XML;
 
@@ -203,6 +203,7 @@ XML;
         self::assertSame('Token not entered', $apiError->errorDetail);
     }
 
+    /** @param non-empty-string $xml */
     private static function assertXmlIsValid(string $xml): void
     {
         self::assertNotEmpty($xml);
@@ -221,8 +222,8 @@ XML;
                     static function (LibXMLError $error): string {
                         return $error->message;
                     },
-                    libxml_get_errors()
-                )
+                    libxml_get_errors(),
+                ),
             );
         } finally {
             libxml_clear_errors();

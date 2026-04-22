@@ -52,7 +52,7 @@ final class StreamContextFactory
      *
      * @return array<string|int, string>
      */
-    private static function parseHttpHeaders($headers): array
+    private static function parseHttpHeaders(array|string $headers): array
     {
         if (is_string($headers)) {
             $headers = explode("\r\n", $headers);

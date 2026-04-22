@@ -12,9 +12,9 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class PriorityEnum
 {
-    public const LOW = 'LOW';
+    public const string LOW = 'LOW';
 
-    public const NORMAL = 'NORMAL';
+    public const string NORMAL = 'NORMAL';
 
-    public const HIGH = 'HIGH';
+    public const string HIGH = 'HIGH';
 }

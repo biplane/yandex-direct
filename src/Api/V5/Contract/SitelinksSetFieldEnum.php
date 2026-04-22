@@ -12,7 +12,7 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class SitelinksSetFieldEnum
 {
-    public const ID = 'Id';
+    public const string ID = 'Id';
 
-    public const SITELINKS = 'Sitelinks';
+    public const string SITELINKS = 'Sitelinks';
 }

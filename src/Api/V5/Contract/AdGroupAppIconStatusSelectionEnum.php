@@ -12,9 +12,9 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class AdGroupAppIconStatusSelectionEnum
 {
-    public const ACCEPTED = 'ACCEPTED';
+    public const string ACCEPTED = 'ACCEPTED';
 
-    public const MODERATION = 'MODERATION';
+    public const string MODERATION = 'MODERATION';
 
-    public const REJECTED = 'REJECTED';
+    public const string REJECTED = 'REJECTED';
 }

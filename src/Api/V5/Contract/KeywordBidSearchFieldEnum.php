@@ -12,9 +12,9 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class KeywordBidSearchFieldEnum
 {
-    public const BID = 'Bid';
+    public const string BID = 'Bid';
 
-    public const AUTOTARGETING_SEARCH_BID_IS_AUTO = 'AutotargetingSearchBidIsAuto';
+    public const string AUTOTARGETING_SEARCH_BID_IS_AUTO = 'AutotargetingSearchBidIsAuto';
 
-    public const AUCTION_BIDS = 'AuctionBids';
+    public const string AUCTION_BIDS = 'AuctionBids';
 }

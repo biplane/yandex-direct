@@ -7,35 +7,43 @@ namespace Biplane\Tests\YandexDirect\Api;
 use Biplane\YandexDirect\Api\ApiSoapClientV5;
 use Biplane\YandexDirect\Config;
 use Biplane\YandexDirect\Exception\ApiException;
+use Override;
+use PHPUnit\Framework\TestCase;
 use SoapFault;
 
-class ApiSoapClientV5Test extends BaseTestCase
+final class ApiSoapClientV5Test extends TestCase
 {
     public function testThrowApiExceptionFromSoapFault(): void
     {
         $config = new Config(['access_token' => '0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f']);
-        $client = $this->createSoapClient(ApiSoapClientV5::class, $config, ['__doRequest']);
 
-        $client->method('__doRequest')->willReturn(
-            <<<'XML'
-<?xml version="1.0" encoding="UTF-8"?> <SOAP-ENV:Envelope
-    xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
-  <SOAP-ENV:Body>
-    <SOAP-ENV:Fault>
-      <faultcode>SOAP-ENV:Client</faultcode>
-      <faultstring>Некорректный запрос</faultstring>
-      <detail>
-        <ns3:FaultResponse xmlns:ns3="http://api.direct.yandex.com/v5/general">
-          <requestId>1010101010101010101</requestId>
-          <errorCode>8000</errorCode>
-          <errorDetail>В TextAd отсутствует обязательное поле Text</errorDetail>
-        </ns3:FaultResponse>
-      </detail>
-    </SOAP-ENV:Fault>
-  </SOAP-ENV:Body>
-</SOAP-ENV:Envelope>
-XML
-        );
+        $client = new class (null, $config, [
+            'uri' => 'localhost',
+            'location' => 'localhost',
+        ]) extends ApiSoapClientV5 {
+            #[Override]
+            public function __doRequest(string $request, string $location, string $action, int $version, bool $oneWay = false, ?string $uriParserClass = null): ?string
+            {
+                return <<<'XML'
+                    <?xml version="1.0" encoding="UTF-8"?> <SOAP-ENV:Envelope
+                        xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/">
+                      <SOAP-ENV:Body>
+                        <SOAP-ENV:Fault>
+                          <faultcode>SOAP-ENV:Client</faultcode>
+                          <faultstring>Некорректный запрос</faultstring>
+                          <detail>
+                            <ns3:FaultResponse xmlns:ns3="http://api.direct.yandex.com/v5/general">
+                              <requestId>1010101010101010101</requestId>
+                              <errorCode>8000</errorCode>
+                              <errorDetail>В TextAd отсутствует обязательное поле Text</errorDetail>
+                            </ns3:FaultResponse>
+                          </detail>
+                        </SOAP-ENV:Fault>
+                      </SOAP-ENV:Body>
+                    </SOAP-ENV:Envelope>
+                    XML;
+            }
+        };
 
         $this->expectException(ApiException::class);
 
@@ -55,13 +63,19 @@ XML
     public function testParseUnitsHeader(): void
     {
         $config = new Config(['access_token' => '0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f0f']);
-        $client = $this->createSoapClient(ApiSoapClientV5::class, $config, ['__getLastResponseHeaders']);
 
-        $client->method('__getLastResponseHeaders')->willReturn(
-            "Transfer-Encoding: chunked\r\n" .
-            "Units: 11/99968/100000\r\n" .
-            "Units-Used-Login: agent\r\n"
-        );
+        $client = new class (null, $config, [
+            'uri' => 'localhost',
+            'location' => 'localhost',
+        ]) extends ApiSoapClientV5 {
+            #[Override]
+            public function __getLastResponseHeaders(): ?string
+            {
+                return "Transfer-Encoding: chunked\r\n" .
+                    "Units: 11/99968/100000\r\n" .
+                    "Units-Used-Login: agent\r\n";
+            }
+        };
 
         $units = $client->getUnits();
 
@@ -91,7 +105,7 @@ XML
                 'Use-Operator-Units' => 'true',
                 'Member-Authorization' => 'Bearer member-token-secR3t',
             ],
-            $headers
+            $headers,
         );
     }
 }

@@ -28,7 +28,7 @@ class ArrayOfAdImageGet implements IteratorAggregate, Countable
      *
      * @return static
      */
-    public static function create()
+    public static function create(): static
     {
         return new static();
     }
@@ -63,9 +63,7 @@ class ArrayOfAdImageGet implements IteratorAggregate, Countable
         return isset($this->Items) ? count($this->Items) : 0;
     }
 
-    /**
-     * @return ArrayIterator<int, AdImageGetItemShort>
-     */
+    /** @return ArrayIterator<int, AdImageGetItemShort> */
     #[Override]
     public function getIterator(): ArrayIterator
     {

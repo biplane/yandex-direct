@@ -12,7 +12,7 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class CampaignFundsEnum
 {
-    public const CAMPAIGN_FUNDS = 'CAMPAIGN_FUNDS';
+    public const string CAMPAIGN_FUNDS = 'CAMPAIGN_FUNDS';
 
-    public const SHARED_ACCOUNT_FUNDS = 'SHARED_ACCOUNT_FUNDS';
+    public const string SHARED_ACCOUNT_FUNDS = 'SHARED_ACCOUNT_FUNDS';
 }

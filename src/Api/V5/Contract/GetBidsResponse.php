@@ -28,7 +28,8 @@ class GetBidsResponse extends GetResponseGeneral implements IteratorAggregate, C
      *
      * @return static
      */
-    public static function create()
+    #[Override]
+    public static function create(): static
     {
         return new static();
     }
@@ -63,9 +64,7 @@ class GetBidsResponse extends GetResponseGeneral implements IteratorAggregate, C
         return isset($this->Bids) ? count($this->Bids) : 0;
     }
 
-    /**
-     * @return ArrayIterator<int, BidGetItem>
-     */
+    /** @return ArrayIterator<int, BidGetItem> */
     #[Override]
     public function getIterator(): ArrayIterator
     {

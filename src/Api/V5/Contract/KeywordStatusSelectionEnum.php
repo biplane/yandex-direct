@@ -12,9 +12,9 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class KeywordStatusSelectionEnum
 {
-    public const DRAFT = 'DRAFT';
+    public const string DRAFT = 'DRAFT';
 
-    public const ACCEPTED = 'ACCEPTED';
+    public const string ACCEPTED = 'ACCEPTED';
 
-    public const REJECTED = 'REJECTED';
+    public const string REJECTED = 'REJECTED';
 }

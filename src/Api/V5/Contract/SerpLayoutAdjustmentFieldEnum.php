@@ -12,9 +12,9 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class SerpLayoutAdjustmentFieldEnum
 {
-    public const SERP_LAYOUT = 'SerpLayout';
+    public const string SERP_LAYOUT = 'SerpLayout';
 
-    public const BID_MODIFIER = 'BidModifier';
+    public const string BID_MODIFIER = 'BidModifier';
 
-    public const ENABLED = 'Enabled';
+    public const string ENABLED = 'Enabled';
 }

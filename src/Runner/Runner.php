@@ -10,7 +10,6 @@ use LogicException;
 use Psr\Log\LoggerInterface;
 use Throwable;
 
-use function get_class;
 use function sprintf;
 use function usleep;
 
@@ -31,7 +30,7 @@ final class Runner
         if ($maxRetries < 0) {
             throw new InvalidArgumentException(sprintf(
                 'Max retries must be greater than or equal to zero. Got: %d',
-                $maxRetries
+                $maxRetries,
             ));
         }
 
@@ -52,11 +51,9 @@ final class Runner
     /**
      * @param callable(): mixed $callback
      *
-     * @return mixed
-     *
      * @throws Throwable
      */
-    public function run(callable $callback)
+    public function run(callable $callback): mixed
     {
         if ($this->maxRetries < 1) {
             return $callback();
@@ -80,14 +77,14 @@ final class Runner
                     $this->logger->info(
                         sprintf(
                             'Try #{count} after {delay}ms, %s [%s]: %s',
-                            get_class($e),
+                            $e::class,
                             $e->getCode(),
-                            $e->getMessage()
+                            $e->getMessage(),
                         ),
                         [
                             'count' => $retryCount,
                             'delay' => (int)($delay / 1000),
-                        ]
+                        ],
                     );
                 }
 

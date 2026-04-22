@@ -48,7 +48,7 @@ use Biplane\YandexDirect\Config;
  */
 class YandexAPIService extends ApiSoapClientV4
 {
-    public const ENDPOINT = 'https://api.direct.yandex.ru/live/v4/wsdl/';
+    public const string ENDPOINT = 'https://api.direct.yandex.ru/live/v4/wsdl/';
 
     /**
      * Constructor
@@ -127,6 +127,7 @@ class YandexAPIService extends ApiSoapClientV4
             'AccountManagementResponse' => 'Biplane\YandexDirect\Api\V4\Contract\AccountManagementResponse',
             'AccountActionResult' => 'Biplane\YandexDirect\Api\V4\Contract\AccountActionResult',
         ];
+
         parent::__construct(self::ENDPOINT, $config, $options);
     }
 

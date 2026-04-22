@@ -12,7 +12,7 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class RetargetingListTypeEnum
 {
-    public const RETARGETING = 'RETARGETING';
+    public const string RETARGETING = 'RETARGETING';
 
-    public const AUDIENCE = 'AUDIENCE';
+    public const string AUDIENCE = 'AUDIENCE';
 }

@@ -12,7 +12,7 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class SourceTypeEnum
 {
-    public const URL = 'URL';
+    public const string URL = 'URL';
 
-    public const FILE = 'FILE';
+    public const string FILE = 'FILE';
 }

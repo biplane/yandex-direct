@@ -12,13 +12,13 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class LeadFieldEnum
 {
-    public const ID = 'Id';
+    public const string ID = 'Id';
 
-    public const SUBMITTED_AT = 'SubmittedAt';
+    public const string SUBMITTED_AT = 'SubmittedAt';
 
-    public const TURBO_PAGE_ID = 'TurboPageId';
+    public const string TURBO_PAGE_ID = 'TurboPageId';
 
-    public const TURBO_PAGE_NAME = 'TurboPageName';
+    public const string TURBO_PAGE_NAME = 'TurboPageName';
 
-    public const DATA = 'Data';
+    public const string DATA = 'Data';
 }

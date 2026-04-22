@@ -12,7 +12,7 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class TextAdGroupFeedParamsFieldEnum
 {
-    public const FEED_ID = 'FeedId';
+    public const string FEED_ID = 'FeedId';
 
-    public const FEED_CATEGORY_IDS = 'FeedCategoryIds';
+    public const string FEED_CATEGORY_IDS = 'FeedCategoryIds';
 }

@@ -6,6 +6,6 @@ namespace Biplane\YandexDirect\Api\V5\Reports;
 
 final class SortOrderEnum
 {
-    public const ASCENDING = 'ASCENDING';
-    public const DESCENDING = 'DESCENDING';
+    public const string ASCENDING = 'ASCENDING';
+    public const string DESCENDING = 'DESCENDING';
 }

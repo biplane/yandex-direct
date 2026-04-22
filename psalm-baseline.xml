@@ -1,82 +1,906 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<files psalm-version="4.30.0@d0bc6e25d89f649e4f36a534f330f8bb4643dd69">
+<files psalm-version="6.16.1@f1f5de594dc76faf8784e02d3dc4716c91c6f6ac">
   <file src="src/Api/ApiSoapClientV4.php">
-    <MissingParamType occurrences="5">
-      <code>$action</code>
-      <code>$location</code>
-      <code>$oneWay</code>
-      <code>$request</code>
-      <code>$version</code>
-    </MissingParamType>
+    <DeprecatedInterface>
+      <code><![CDATA[ApiSoapClientV4]]></code>
+    </DeprecatedInterface>
+  </file>
+  <file src="src/Api/ApiSoapClientV5.php">
+    <DeprecatedInterface>
+      <code><![CDATA[ApiSoapClientV5]]></code>
+    </DeprecatedInterface>
+  </file>
+  <file src="src/Api/V4/YandexAPIService.php">
+    <DeprecatedInterface>
+      <code><![CDATA[YandexAPIService]]></code>
+    </DeprecatedInterface>
+  </file>
+  <file src="src/Api/V5/AdExtensions.php">
+    <DeprecatedInterface>
+      <code><![CDATA[AdExtensions]]></code>
+    </DeprecatedInterface>
+  </file>
+  <file src="src/Api/V5/AdGroups.php">
+    <DeprecatedInterface>
+      <code><![CDATA[AdGroups]]></code>
+    </DeprecatedInterface>
+  </file>
+  <file src="src/Api/V5/AdImages.php">
+    <DeprecatedInterface>
+      <code><![CDATA[AdImages]]></code>
+    </DeprecatedInterface>
+  </file>
+  <file src="src/Api/V5/Ads.php">
+    <DeprecatedInterface>
+      <code><![CDATA[Ads]]></code>
+    </DeprecatedInterface>
+  </file>
+  <file src="src/Api/V5/AgencyClients.php">
+    <DeprecatedInterface>
+      <code><![CDATA[AgencyClients]]></code>
+    </DeprecatedInterface>
+  </file>
+  <file src="src/Api/V5/AudienceTargets.php">
+    <DeprecatedInterface>
+      <code><![CDATA[AudienceTargets]]></code>
+    </DeprecatedInterface>
+  </file>
+  <file src="src/Api/V5/BidModifiers.php">
+    <DeprecatedInterface>
+      <code><![CDATA[BidModifiers]]></code>
+    </DeprecatedInterface>
+  </file>
+  <file src="src/Api/V5/Bids.php">
+    <DeprecatedInterface>
+      <code><![CDATA[Bids]]></code>
+    </DeprecatedInterface>
+  </file>
+  <file src="src/Api/V5/Businesses.php">
+    <DeprecatedInterface>
+      <code><![CDATA[Businesses]]></code>
+    </DeprecatedInterface>
+  </file>
+  <file src="src/Api/V5/Campaigns.php">
+    <DeprecatedInterface>
+      <code><![CDATA[Campaigns]]></code>
+    </DeprecatedInterface>
+  </file>
+  <file src="src/Api/V5/Changes.php">
+    <DeprecatedInterface>
+      <code><![CDATA[Changes]]></code>
+    </DeprecatedInterface>
+  </file>
+  <file src="src/Api/V5/Clients.php">
+    <DeprecatedInterface>
+      <code><![CDATA[Clients]]></code>
+    </DeprecatedInterface>
+  </file>
+  <file src="src/Api/V5/Contract/AdExtensionSetting.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->AdExtensions)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, AdExtensionSettingItem>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/AdImageHashesCriteria.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->AdImageHashes)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, string>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/AddAdExtensionsRequest.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->AdExtensions)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, AdExtensionAddItem>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/AddAdGroupsRequest.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->AdGroups)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, AdGroupAddItem>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/AddAdGroupsResponse.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->AddResults)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, ActionResult>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/AddAdImagesRequest.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->AdImages)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, AdImageAddItem>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/AddAdsRequest.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->Ads)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, AdAddItem>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/AddAudienceTargetsRequest.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->AudienceTargets)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, AudienceTargetAddItem>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/AddAudienceTargetsResponse.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->AddResults)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, ActionResult>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/AddBidModifiersRequest.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->BidModifiers)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, BidModifierAddItem>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/AddCampaignsRequest.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->Campaigns)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, CampaignAddItem>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/AddDynamicTextAdTargetsRequest.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->Webpages)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, WebpageAddItem>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/AddDynamicTextAdTargetsResponse.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->AddResults)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, ActionResult>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/AddFeedsRequest.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->Feeds)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, FeedAddItem>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/AddFeedsResponse.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->AddResults)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, ActionResult>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/AddKeywordsRequest.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->Keywords)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, KeywordAddItem>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/AddKeywordsResponse.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->AddResults)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, ActionResult>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/AddNegativeKeywordSharedSetsRequest.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->NegativeKeywordSharedSets)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, NegativeKeywordSharedSetAddItem>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/AddNegativeKeywordSharedSetsResponse.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->AddResults)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, ActionResult>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/AddRetargetingListsRequest.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->RetargetingLists)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, RetargetingListAddItem>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/AddRetargetingListsResponse.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->AddResults)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, ActionResult>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/AddSitelinksRequest.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->SitelinksSets)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, SitelinksSetAddItem>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/AddSmartAdTargetsRequest.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->SmartAdTargets)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, SmartAdTargetAddItem>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/AddSmartAdTargetsResponse.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->AddResults)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, ActionResult>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/AddStrategiesRequest.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->Strategies)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, StrategyAddItem>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/AddVCardsRequest.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->VCards)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, VCardAddItem>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/ArrayOfAdCategoryEnum.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->Items)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, 'ABORTION'|'ALCOHOL'|'BABY_FOOD'|'DIETARY_SUPPLEMENTS'|'MEDICINE'|'PROJECT_DECLARATION'|'PSEUDO_WEAPON'|'TOBACCO'>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/ArrayOfFeedFilterCondition.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->Items)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, FeedFilterConditionItem>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/AutotargetingBrandOptionArray.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->Items)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, AutotargetingBrandOption>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/AutotargetingCategoryArray.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->Items)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, AutotargetingCategory>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/AvailableForTargetsInAdGroupTypesArray.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->Items)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, 'DYNAMIC_TEXT_AD_GROUP'|'MOBILE_APP_AD_GROUP'|'TEXT_AD_GROUP'|'CPM_BANNER_AD_GROUP'|'CPM_VIDEO_AD_GROUP'|'UNIFIED_AD_GROUP'>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/ConditionsArray.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->Items)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, ConditionsItem>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/DeleteAdGroupsResponse.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->DeleteResults)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, ActionResult>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/DeleteAudienceTargetsResponse.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->DeleteResults)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, ActionResult>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/DeleteDynamicTextAdTargetsResponse.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->DeleteResults)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, ActionResult>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/DeleteFeedsResponse.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->DeleteResults)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, ActionResult>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/DeleteKeywordsResponse.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->DeleteResults)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, ActionResult>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/DeleteNegativeKeywordSharedSetsResponse.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->DeleteResults)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, ActionResult>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/DeleteRetargetingListsResponse.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->DeleteResults)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, ActionResult>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/DeleteSmartAdTargetsResponse.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->DeleteResults)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, ActionResult>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/FeedsSelectionCriteria.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->Ids)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, int>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/GetDictionariesRequest.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->DictionaryNames)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, 'Currencies'|'MetroStations'|'GeoRegions'|'GeoRegionNames'|'TimeZones'|'Constants'|'AdCategories'|'OperationSystemVersions'|'ProductivityAssertions'|'SupplySidePlatforms'|'Interests'|'AudienceCriteriaTypes'|'AudienceDemographicProfiles'|'AudienceInterests'|'FilterSchemas'>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/HasSearchVolumeKeywordsResponse.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->HasSearchVolumeResults)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, HasSearchVolumeItem>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/IdsCriteria.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->Ids)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, int>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/PlacementTypeArray.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->Items)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, PlacementType>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/PriorityGoalsArray.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->Items)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, PriorityGoalsItem>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/PriorityGoalsUpdateSetting.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->Items)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, PriorityGoalsUpdateItem>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/ResumeAudienceTargetsResponse.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->ResumeResults)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, ActionResult>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/ResumeDynamicTextAdTargetsResponse.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->ResumeResults)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, ActionResult>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/ResumeKeywordsResponse.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->ResumeResults)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, ActionResult>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/ResumeSmartAdTargetsResponse.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->ResumeResults)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, ActionResult>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/SetAutoBidsRequest.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->Bids)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, BidSetAutoItem>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/SetAutoRequest.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->KeywordBids)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, KeywordBidSetAutoItem>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/SetBidModifiersRequest.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->BidModifiers)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, BidModifierSetItem>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/SetBidsAudienceTargetsRequest.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->Bids)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, AudienceTargetSetBidsItem>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/SetBidsAudienceTargetsResponse.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->SetBidsResults)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, SetBidsActionResult>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/SetBidsDynamicTextAdTargetsRequest.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->Bids)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, SetBidsItem>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/SetBidsRequest.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->Bids)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, BidSetItem>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/SetBidsSmartAdTargetsRequest.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->Bids)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, SmartAdTargetSetBidsItem>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/SetKeywordBidsRequest.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->KeywordBids)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, KeywordBidSetItem>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/SitelinksSetAddItem.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->Sitelinks)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, SitelinkAddItem>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/SuspendAudienceTargetsResponse.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->SuspendResults)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, ActionResult>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/SuspendDynamicTextAdTargetsResponse.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->SuspendResults)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, ActionResult>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/SuspendKeywordsResponse.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->SuspendResults)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, ActionResult>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/SuspendSmartAdTargetsResponse.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->SuspendResults)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, ActionResult>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/UpdateAdGroupsRequest.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->AdGroups)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, AdGroupUpdateItem>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/UpdateAdGroupsResponse.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->UpdateResults)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, ActionResult>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/UpdateAdsRequest.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->Ads)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, AdUpdateItem>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/UpdateAgencyClientsRequest.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->Clients)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, AgencyClientUpdateItem>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/UpdateAgencyClientsResponse.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->UpdateResults)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, ClientsActionResult>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/UpdateCampaignsRequest.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->Campaigns)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, CampaignUpdateItem>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/UpdateClientsRequest.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->Clients)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, ClientUpdateItem>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/UpdateClientsResponse.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->UpdateResults)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, ClientsActionResult>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/UpdateFeedsRequest.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->Feeds)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, FeedUpdateItem>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/UpdateFeedsResponse.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->UpdateResults)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, ActionResult>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/UpdateKeywordsRequest.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->Keywords)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, KeywordUpdateItem>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/UpdateKeywordsResponse.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->UpdateResults)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, ActionResult>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/UpdateNegativeKeywordSharedSetsRequest.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->NegativeKeywordSharedSets)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, NegativeKeywordSharedSetUpdateItem>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/UpdateNegativeKeywordSharedSetsResponse.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->UpdateResults)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, ActionResult>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/UpdateRetargetingListsRequest.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->RetargetingLists)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, RetargetingListUpdateItem>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/UpdateRetargetingListsResponse.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->UpdateResults)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, ActionResult>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/UpdateSmartAdTargetsRequest.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->SmartAdTargets)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, SmartAdTargetUpdateItem>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/UpdateSmartAdTargetsResponse.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->UpdateResults)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, ActionResult>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Contract/UpdateStrategiesRequest.php">
+    <InvalidReturnStatement>
+      <code><![CDATA[new ArrayIterator($this->Strategies)]]></code>
+    </InvalidReturnStatement>
+    <InvalidReturnType>
+      <code><![CDATA[ArrayIterator<int, StrategyUpdateItem>]]></code>
+    </InvalidReturnType>
+  </file>
+  <file src="src/Api/V5/Dictionaries.php">
+    <DeprecatedInterface>
+      <code><![CDATA[Dictionaries]]></code>
+    </DeprecatedInterface>
+  </file>
+  <file src="src/Api/V5/DynamicTextAdTargets.php">
+    <DeprecatedInterface>
+      <code><![CDATA[DynamicTextAdTargets]]></code>
+    </DeprecatedInterface>
+  </file>
+  <file src="src/Api/V5/Feeds.php">
+    <DeprecatedInterface>
+      <code><![CDATA[Feeds]]></code>
+    </DeprecatedInterface>
+  </file>
+  <file src="src/Api/V5/KeywordBids.php">
+    <DeprecatedInterface>
+      <code><![CDATA[KeywordBids]]></code>
+    </DeprecatedInterface>
+  </file>
+  <file src="src/Api/V5/Keywords.php">
+    <DeprecatedInterface>
+      <code><![CDATA[Keywords]]></code>
+    </DeprecatedInterface>
+  </file>
+  <file src="src/Api/V5/KeywordsResearch.php">
+    <DeprecatedInterface>
+      <code><![CDATA[KeywordsResearch]]></code>
+    </DeprecatedInterface>
+  </file>
+  <file src="src/Api/V5/Leads.php">
+    <DeprecatedInterface>
+      <code><![CDATA[Leads]]></code>
+    </DeprecatedInterface>
+  </file>
+  <file src="src/Api/V5/NegativeKeywordSharedSets.php">
+    <DeprecatedInterface>
+      <code><![CDATA[NegativeKeywordSharedSets]]></code>
+    </DeprecatedInterface>
   </file>
   <file src="src/Api/V5/Reports.php">
-    <ArgumentTypeCoercion occurrences="1">
-      <code>$delay</code>
-    </ArgumentTypeCoercion>
+    <DeprecatedInterface>
+      <code><![CDATA[Reports]]></code>
+    </DeprecatedInterface>
   </file>
   <file src="src/Api/V5/Reports/ReportRequestBuilder.php">
-    <DocblockTypeContradiction occurrences="1">
-      <code>in_array($value, $allowedModes, true)</code>
+    <DocblockTypeContradiction>
+      <code><![CDATA[in_array($value, $allowedModes, true)]]></code>
     </DocblockTypeContradiction>
   </file>
+  <file src="src/Api/V5/RetargetingLists.php">
+    <DeprecatedInterface>
+      <code><![CDATA[RetargetingLists]]></code>
+    </DeprecatedInterface>
+  </file>
+  <file src="src/Api/V5/Sitelinks.php">
+    <DeprecatedInterface>
+      <code><![CDATA[Sitelinks]]></code>
+    </DeprecatedInterface>
+  </file>
+  <file src="src/Api/V5/SmartAdTargets.php">
+    <DeprecatedInterface>
+      <code><![CDATA[SmartAdTargets]]></code>
+    </DeprecatedInterface>
+  </file>
+  <file src="src/Api/V5/Strategies.php">
+    <DeprecatedInterface>
+      <code><![CDATA[Strategies]]></code>
+    </DeprecatedInterface>
+  </file>
+  <file src="src/Api/V5/TurboPages.php">
+    <DeprecatedInterface>
+      <code><![CDATA[TurboPages]]></code>
+    </DeprecatedInterface>
+  </file>
+  <file src="src/Api/V5/VCards.php">
+    <DeprecatedInterface>
+      <code><![CDATA[VCards]]></code>
+    </DeprecatedInterface>
+  </file>
   <file src="src/ApiServiceFactory.php">
-    <DeprecatedMethod occurrences="1">
-      <code>getSoapOptions</code>
+    <DeprecatedMethod>
+      <code><![CDATA[getSoapOptions]]></code>
     </DeprecatedMethod>
+    <InvalidOperand>
+      <code><![CDATA[$config->getProxyPort()]]></code>
+    </InvalidOperand>
   </file>
   <file src="src/Config.php">
-    <MissingClosureParamType occurrences="1">
-      <code>$value</code>
+    <MissingClosureParamType>
+      <code><![CDATA[$value]]></code>
     </MissingClosureParamType>
   </file>
-  <file src="src/Serializer/NameConverter/UpperCamelCaseNameConverter.php">
-    <MissingParamType occurrences="2">
-      <code>$propertyName</code>
-      <code>$propertyName</code>
-    </MissingParamType>
+  <file src="src/Serializer/XmlReportSerializer.php">
+    <LessSpecificReturnStatement>
+      <code><![CDATA[$this->serializer->serialize(
+            [
+                '@xmlns' => self::XML_NAMESPACE,
+                '#' => $reportDefinition,
+            ],
+            XmlEncoder::FORMAT,
+            [
+                XmlEncoder::ROOT_NODE_NAME => 'ReportDefinition',
+                XmlEncoder::REMOVE_EMPTY_TAGS => true,
+            ],
+        )]]></code>
+    </LessSpecificReturnStatement>
+    <MoreSpecificReturnType>
+      <code><![CDATA[non-empty-string]]></code>
+    </MoreSpecificReturnType>
   </file>
   <file src="src/Soap/ApiSoapClient.php">
-    <MissingClosureReturnType occurrences="1">
-      <code>function () use (</code>
+    <DeprecatedInterface>
+      <code><![CDATA[ApiSoapClient]]></code>
+    </DeprecatedInterface>
+    <MissingClosureReturnType>
+      <code><![CDATA[function () use (]]></code>
     </MissingClosureReturnType>
-    <TooManyArguments occurrences="1">
-      <code>buildTypemap</code>
-    </TooManyArguments>
   </file>
-  <file src="src/User.php">
-    <InvalidReturnStatement occurrences="2">
-      <code>$this-&gt;proxies[$serviceClass]</code>
-      <code>$this-&gt;proxies[$serviceClass] = $service</code>
-    </InvalidReturnStatement>
-    <InvalidReturnType occurrences="1">
-      <code>S|R</code>
-    </InvalidReturnType>
-    <PossiblyInvalidArgument occurrences="1">
-      <code>$serviceClass</code>
-    </PossiblyInvalidArgument>
-    <PossiblyUndefinedMethod occurrences="1">
-      <code>setEventEmitter</code>
-    </PossiblyUndefinedMethod>
+  <file src="tests/Api/ApiSoapClientV4Test.php">
+    <DeprecatedInterface>
+      <code><![CDATA[class ($config, $expectedFinanceToken) extends ApiSoapClientV4 {]]></code>
+      <code><![CDATA[class (null, $config, []]></code>
+      <code><![CDATA[class (null, $config, []]></code>
+    </DeprecatedInterface>
+    <InvalidDocblock>
+      <code><![CDATA[public static function provideFinancialMethods(): iterable]]></code>
+    </InvalidDocblock>
   </file>
-  <file src="src/Util/StreamContextFactory.php">
-    <PossiblyNullArgument occurrences="1">
-      <code>$params</code>
-    </PossiblyNullArgument>
+  <file src="tests/Api/ApiSoapClientV5Test.php">
+    <DeprecatedInterface>
+      <code><![CDATA[class (null, $config, []]></code>
+      <code><![CDATA[class (null, $config, []]></code>
+    </DeprecatedInterface>
   </file>
   <file src="tests/Api/TypeConversionTest.php">
-    <PossiblyNullReference occurrences="1">
-      <code>getCounterIds</code>
+    <PossiblyNullReference>
+      <code><![CDATA[getCounterIds]]></code>
     </PossiblyNullReference>
   </file>
+  <file src="tests/Api/V5/MockSoapClient.php">
+    <DeprecatedInterface>
+      <code><![CDATA[MockSoapClient]]></code>
+    </DeprecatedInterface>
+  </file>
   <file src="tests/Api/V5/ReportsTest.php">
-    <MissingClosureParamType occurrences="1">
-      <code>$uri</code>
+    <MissingClosureParamType>
+      <code><![CDATA[$uri]]></code>
     </MissingClosureParamType>
   </file>
   <file src="tests/ConfigTest.php">
-    <DeprecatedMethod occurrences="2">
-      <code>getSoapOptions</code>
-      <code>getSoapOptions</code>
+    <DeprecatedMethod>
+      <code><![CDATA[getSoapOptions]]></code>
+      <code><![CDATA[getSoapOptions]]></code>
     </DeprecatedMethod>
   </file>
 </files>

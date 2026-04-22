@@ -12,13 +12,13 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class ContractSubjectTypeEnum
 {
-    public const REPRESENTATION = 'REPRESENTATION';
+    public const string REPRESENTATION = 'REPRESENTATION';
 
-    public const MEDIATION = 'MEDIATION';
+    public const string MEDIATION = 'MEDIATION';
 
-    public const DISTRIBUTION = 'DISTRIBUTION';
+    public const string DISTRIBUTION = 'DISTRIBUTION';
 
-    public const ORG_DISTRIBUTION = 'ORG_DISTRIBUTION';
+    public const string ORG_DISTRIBUTION = 'ORG_DISTRIBUTION';
 
-    public const OTHER = 'OTHER';
+    public const string OTHER = 'OTHER';
 }

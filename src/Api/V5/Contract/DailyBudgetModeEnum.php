@@ -12,7 +12,7 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class DailyBudgetModeEnum
 {
-    public const STANDARD = 'STANDARD';
+    public const string STANDARD = 'STANDARD';
 
-    public const DISTRIBUTED = 'DISTRIBUTED';
+    public const string DISTRIBUTED = 'DISTRIBUTED';
 }

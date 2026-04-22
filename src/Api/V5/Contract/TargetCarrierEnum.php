@@ -12,7 +12,7 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class TargetCarrierEnum
 {
-    public const WI_FI_ONLY = 'WI_FI_ONLY';
+    public const string WI_FI_ONLY = 'WI_FI_ONLY';
 
-    public const WI_FI_AND_CELLULAR = 'WI_FI_AND_CELLULAR';
+    public const string WI_FI_AND_CELLULAR = 'WI_FI_AND_CELLULAR';
 }

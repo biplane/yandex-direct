@@ -12,7 +12,7 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class SourceTypeGetEnum
 {
-    public const RETAIL_FEED = 'RETAIL_FEED';
+    public const string RETAIL_FEED = 'RETAIL_FEED';
 
-    public const UNKNOWN = 'UNKNOWN';
+    public const string UNKNOWN = 'UNKNOWN';
 }

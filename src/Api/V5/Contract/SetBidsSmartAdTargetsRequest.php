@@ -28,7 +28,7 @@ class SetBidsSmartAdTargetsRequest implements IteratorAggregate, Countable
      *
      * @return static
      */
-    public static function create()
+    public static function create(): static
     {
         return new static();
     }
@@ -63,9 +63,7 @@ class SetBidsSmartAdTargetsRequest implements IteratorAggregate, Countable
         return count($this->Bids);
     }
 
-    /**
-     * @return ArrayIterator<int, SmartAdTargetSetBidsItem>
-     */
+    /** @return ArrayIterator<int, SmartAdTargetSetBidsItem> */
     #[Override]
     public function getIterator(): ArrayIterator
     {

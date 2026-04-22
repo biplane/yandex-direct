@@ -18,7 +18,7 @@ use Biplane\YandexDirect\Config;
  */
 class Bids extends ApiSoapClientV5
 {
-    public const ENDPOINT = 'https://api.direct.yandex.com/v501/bids?wsdl';
+    public const string ENDPOINT = 'https://api.direct.yandex.com/v501/bids?wsdl';
 
     /**
      * Constructor
@@ -49,6 +49,7 @@ class Bids extends ApiSoapClientV5
             'BidSetAutoItem' => 'Biplane\YandexDirect\Api\V5\Contract\BidSetAutoItem',
             'SetAutoResponse' => 'Biplane\YandexDirect\Api\V5\Contract\SetAutoBidsResponse',
         ];
+
         parent::__construct(self::ENDPOINT, $config, $options);
     }
 

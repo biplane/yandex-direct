@@ -68,17 +68,13 @@ final class ReportDefinition
         return $this;
     }
 
-    /**
-     * @return array<string>
-     */
+    /** @return array<string> */
     public function getGoals(): array
     {
         return $this->goals ?? [];
     }
 
-    /**
-     * @param array<string> $goals
-     */
+    /** @param array<string> $goals */
     public function setGoals(array $goals): self
     {
         if (count($goals) === 0) {
@@ -90,9 +86,7 @@ final class ReportDefinition
         return $this;
     }
 
-    /**
-     * @return array<string>
-     */
+    /** @return array<string> */
     public function getAttributionModels(): array
     {
         return $this->attributionModels ?? [];
@@ -113,9 +107,7 @@ final class ReportDefinition
         return $this;
     }
 
-    /**
-     * @return array<string>
-     */
+    /** @return array<string> */
     public function getFieldNames(): array
     {
         return $this->fieldNames;
@@ -144,17 +136,13 @@ final class ReportDefinition
         return $this;
     }
 
-    /**
-     * @return array<OrderBy>
-     */
+    /** @return array<OrderBy> */
     public function getOrderBy(): array
     {
         return $this->orderBy ?? [];
     }
 
-    /**
-     * @param array<OrderBy> $items
-     */
+    /** @param array<OrderBy> $items */
     public function setOrderBy(array $items): self
     {
         if (count($items) === 0) {
@@ -190,9 +178,7 @@ final class ReportDefinition
         return $this->reportType;
     }
 
-    /**
-     * @psalm-param ReportTypeEnum::* $reportType
-     */
+    /** @psalm-param ReportTypeEnum::* $reportType */
     public function setReportType(string $reportType): self
     {
         $this->reportType = $reportType;
@@ -205,9 +191,7 @@ final class ReportDefinition
         return $this->dateRangeType;
     }
 
-    /**
-     * @psalm-param DateRangeTypeEnum::* $dateRangeType
-     */
+    /** @psalm-param DateRangeTypeEnum::* $dateRangeType */
     public function setDateRangeType(string $dateRangeType): self
     {
         $this->dateRangeType = $dateRangeType;
@@ -225,11 +209,8 @@ final class ReportDefinition
         return $this->includeVAT;
     }
 
-    /**
-     * @param string|bool $includeVAT
-     * @psalm-param YesNoEnum::*|bool $includeVAT
-     */
-    public function setIncludeVAT($includeVAT): self
+    /** @psalm-param YesNoEnum::*|bool $includeVAT */
+    public function setIncludeVAT(string|bool $includeVAT): self
     {
         if (is_bool($includeVAT)) {
             $includeVAT = $includeVAT ? YesNoEnum::YES : YesNoEnum::NO;

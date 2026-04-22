@@ -41,7 +41,7 @@ final class ApiServiceFactory
         ?int $soapCallTimeout = null,
         ?SoapLogger $logger = null,
         ?SoapLogContextFactory $logContextFactory = null,
-        ?SoapOptions $options = null
+        ?SoapOptions $options = null,
     ) {
         $this->runner = $runner ?? Runner::default();
         $this->transactionNumberGenerator = $transactionNumberGenerator;
@@ -52,7 +52,7 @@ final class ApiServiceFactory
             ['authorization', 'member-authorization'],
             ['token'],
             [],
-            []
+            [],
         );
     }
 
@@ -74,7 +74,7 @@ final class ApiServiceFactory
                 'exceptions' => true,
                 'keep_alive' => false,
             ],
-            $config
+            $config,
         );
 
         $soapClient = $this->createInstance($serviceClass, $config, $options);

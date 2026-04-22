@@ -11,9 +11,7 @@ use VCR\VCR;
 
 use function iterator_to_array;
 
-/**
- * @group functional
- */
+/** @group functional */
 final class TypeMappingTest extends SoapClientTestCase
 {
     public function testArrayType(): void
@@ -26,7 +24,7 @@ final class TypeMappingTest extends SoapClientTestCase
         $request = Contract\GetCampaignsRequest::create()
             ->setSelectionCriteria(
                 Contract\CampaignsSelectionCriteria::create()
-                    ->setIds([1111191])
+                    ->setIds([1111191]),
             )
             ->setFieldNames([
                 Contract\CampaignFieldEnum::ID,
@@ -50,7 +48,7 @@ final class TypeMappingTest extends SoapClientTestCase
 
         self::assertSame(
             ['!on', 'луна', 'яблоко', 'юнь'],
-            $campaign->getNegativeKeywords()
+            $campaign->getNegativeKeywords(),
         );
 
         self::assertSame([22200551, 22200556], $unifiedCampaign->getCounterIds());
@@ -89,7 +87,7 @@ final class TypeMappingTest extends SoapClientTestCase
                 '6,0,0,0,0,0,0,0,0,100,100,100,100,100,100,100,100,100,100,100,100,100,0,0,0',
                 '7,0,0,0,0,0,0,0,0,0,100,100,100,100,100,100,100,100,100,100,100,0,0,0,0',
             ],
-            $timeTargeting->getSchedule()
+            $timeTargeting->getSchedule(),
         );
     }
 }

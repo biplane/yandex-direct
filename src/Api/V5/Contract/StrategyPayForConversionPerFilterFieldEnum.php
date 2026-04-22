@@ -12,13 +12,13 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class StrategyPayForConversionPerFilterFieldEnum
 {
-    public const CPA = 'Cpa';
+    public const string CPA = 'Cpa';
 
-    public const GOAL_ID = 'GoalId';
+    public const string GOAL_ID = 'GoalId';
 
-    public const WEEKLY_SPEND_LIMIT = 'WeeklySpendLimit';
+    public const string WEEKLY_SPEND_LIMIT = 'WeeklySpendLimit';
 
-    public const CUSTOM_PERIOD_BUDGET = 'CustomPeriodBudget';
+    public const string CUSTOM_PERIOD_BUDGET = 'CustomPeriodBudget';
 
-    public const BUDGET_TYPE = 'BudgetType';
+    public const string BUDGET_TYPE = 'BudgetType';
 }

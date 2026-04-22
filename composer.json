@@ -15,26 +15,26 @@
   ],
   "license": "MIT",
   "require": {
-    "php-64bit": "^7.2 || ^8.0",
+    "php-64bit": "^8.3",
     "ext-libxml": "*",
     "ext-soap": "*",
     "php-http/discovery": "^1.14",
     "psr/http-client": "^1.0",
     "psr/http-factory": "^1.0",
-    "symfony/options-resolver": "^4.4 || ^5.0 || ^6.0 || ^7.0",
-    "symfony/serializer": "^4.4 || ^5.0 || ^6.0 || ^7.0"
+    "symfony/options-resolver": "^6.4 || ^7.0 || ^8.0",
+    "symfony/serializer": "^6.4 || ^7.0 || ^8.0"
   },
   "require-dev": {
-    "allejo/php-vcr-sanitizer": "^1.0.9",
-    "doctrine/coding-standard": "^9.0",
-    "nyholm/psr7": "^1.4",
-    "php-http/httplug": "^2.2",
-    "php-vcr/php-vcr": ">=1.5.5,<1.8",
-    "phpunit/phpunit": "^7.5 || ^9.5",
-    "psalm/plugin-phpunit": "^0.17.0",
+    "allejo/php-vcr-sanitizer": "^1.1",
+    "doctrine/coding-standard": "^14.0",
+    "nyholm/psr7": "^1.8",
+    "php-http/httplug": "^2.4",
+    "php-vcr/php-vcr": "^1.8",
+    "phpunit/phpunit": "^12.5.23",
+    "psalm/plugin-phpunit": "^0.19.7",
     "psr/log": "^1.1",
-    "symfony/http-client": "^4.4 || ^5.0",
-    "vimeo/psalm": "4.30.0"
+    "symfony/http-client": "^6.4 || ^7.0 || ^8.0",
+    "vimeo/psalm": "6.16.1"
   },
   "autoload": {
     "psr-4": { "Biplane\\YandexDirect\\": "src/" }

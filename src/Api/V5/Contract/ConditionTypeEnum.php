@@ -12,7 +12,7 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class ConditionTypeEnum
 {
-    public const ITEMS_ALL = 'ITEMS_ALL';
+    public const string ITEMS_ALL = 'ITEMS_ALL';
 
-    public const ITEMS_SUBSET = 'ITEMS_SUBSET';
+    public const string ITEMS_SUBSET = 'ITEMS_SUBSET';
 }

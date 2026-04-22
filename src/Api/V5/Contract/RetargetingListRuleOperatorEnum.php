@@ -12,9 +12,9 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class RetargetingListRuleOperatorEnum
 {
-    public const ALL = 'ALL';
+    public const string ALL = 'ALL';
 
-    public const ANY = 'ANY';
+    public const string ANY = 'ANY';
 
-    public const NONE = 'NONE';
+    public const string NONE = 'NONE';
 }

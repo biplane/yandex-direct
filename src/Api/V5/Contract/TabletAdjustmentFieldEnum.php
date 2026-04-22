@@ -12,7 +12,7 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class TabletAdjustmentFieldEnum
 {
-    public const BID_MODIFIER = 'BidModifier';
+    public const string BID_MODIFIER = 'BidModifier';
 
-    public const OPERATING_SYSTEM_TYPE = 'OperatingSystemType';
+    public const string OPERATING_SYSTEM_TYPE = 'OperatingSystemType';
 }

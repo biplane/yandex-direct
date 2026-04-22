@@ -78,7 +78,7 @@ XML;
             $responseHeaders,
             $responseBody,
             '1306575703286509578',
-            new SoapFault('SOAP-ENV:Client', 'Bad request')
+            new SoapFault('SOAP-ENV:Client', 'Bad request'),
         );
 
         self::assertEquals('Stub', $context['service']);
@@ -91,7 +91,7 @@ XML;
                 'Authorization: REDACTED',
                 'Client-Login: alice',
             ]),
-            $context['request_headers']
+            $context['request_headers'],
         );
         self::assertStringContainsString('<ns1:token>REDACTED</ns1:token>', $context['request']);
         self::assertEquals(
@@ -104,7 +104,7 @@ XML;
                 'Units-Used-Login: REDACTED',
                 'X-XSS-Protection: 1; mode=block',
             ]),
-            $context['response_headers']
+            $context['response_headers'],
         );
         self::assertStringContainsString('<ns1:locale>REDACTED</ns1:locale>', $context['response']);
         self::assertEquals('Bad request', $context['fault']);

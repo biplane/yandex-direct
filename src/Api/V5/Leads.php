@@ -14,7 +14,7 @@ use Biplane\YandexDirect\Config;
  */
 class Leads extends ApiSoapClientV5
 {
-    public const ENDPOINT = 'https://api.direct.yandex.com/v501/leads?wsdl';
+    public const string ENDPOINT = 'https://api.direct.yandex.com/v501/leads?wsdl';
 
     /**
      * Constructor
@@ -33,6 +33,7 @@ class Leads extends ApiSoapClientV5
             'LeadDataItem' => 'Biplane\YandexDirect\Api\V5\Contract\LeadDataItem',
             'GetResponseGeneral' => 'Biplane\YandexDirect\Api\V5\Contract\GetResponseGeneral',
         ];
+
         parent::__construct(self::ENDPOINT, $config, $options);
     }
 

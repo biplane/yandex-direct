@@ -6,9 +6,7 @@ namespace Biplane\YandexDirect\Log;
 
 use SoapFault;
 
-/**
- * @psalm-import-type Context from SoapLogger
- */
+/** @psalm-import-type Context from SoapLogger */
 final class SoapLogContextFactory
 {
     /** @var array<string> */
@@ -33,7 +31,7 @@ final class SoapLogContextFactory
         array $requestHttpHeadersToScrub,
         array $requestSoapHeadersToScrub,
         array $responseHttpHeadersToScrub,
-        array $responseSoapHeadersToScrub
+        array $responseSoapHeadersToScrub,
     ) {
         $this->requestHttpHeadersToScrub = $requestHttpHeadersToScrub;
         $this->requestSoapHeadersToScrub = $requestSoapHeadersToScrub;
@@ -61,7 +59,7 @@ final class SoapLogContextFactory
         string $responseHeaders,
         string $responseBody,
         ?string $requestId = null,
-        ?SoapFault $soapFault = null
+        ?SoapFault $soapFault = null,
     ): array {
         return [
             'service' => $serviceName,

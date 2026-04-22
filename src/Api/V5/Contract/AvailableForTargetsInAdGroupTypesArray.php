@@ -28,7 +28,7 @@ class AvailableForTargetsInAdGroupTypesArray implements IteratorAggregate, Count
      *
      * @return static
      */
-    public static function create()
+    public static function create(): static
     {
         return new static();
     }
@@ -67,9 +67,7 @@ class AvailableForTargetsInAdGroupTypesArray implements IteratorAggregate, Count
         return count($this->Items);
     }
 
-    /**
-     * @return ArrayIterator<int, 'DYNAMIC_TEXT_AD_GROUP'|'MOBILE_APP_AD_GROUP'|'TEXT_AD_GROUP'|'CPM_BANNER_AD_GROUP'|'CPM_VIDEO_AD_GROUP'|'UNIFIED_AD_GROUP'>
-     */
+    /** @return ArrayIterator<int, 'DYNAMIC_TEXT_AD_GROUP'|'MOBILE_APP_AD_GROUP'|'TEXT_AD_GROUP'|'CPM_BANNER_AD_GROUP'|'CPM_VIDEO_AD_GROUP'|'UNIFIED_AD_GROUP'> */
     #[Override]
     public function getIterator(): ArrayIterator
     {

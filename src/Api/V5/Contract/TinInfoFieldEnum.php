@@ -12,7 +12,7 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class TinInfoFieldEnum
 {
-    public const TIN_TYPE = 'TinType';
+    public const string TIN_TYPE = 'TinType';
 
-    public const TIN = 'Tin';
+    public const string TIN = 'Tin';
 }

@@ -12,17 +12,17 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class ContractInfoFieldEnum
 {
-    public const NUMBER = 'Number';
+    public const string NUMBER = 'Number';
 
-    public const DATE = 'Date';
+    public const string DATE = 'Date';
 
-    public const PRICE = 'Price';
+    public const string PRICE = 'Price';
 
-    public const TYPE = 'Type';
+    public const string TYPE = 'Type';
 
-    public const ACTION_TYPE = 'ActionType';
+    public const string ACTION_TYPE = 'ActionType';
 
-    public const SUBJECT_TYPE = 'SubjectType';
+    public const string SUBJECT_TYPE = 'SubjectType';
 
-    public const IS_AGENCY_PAYMENT = 'IsAgencyPayment';
+    public const string IS_AGENCY_PAYMENT = 'IsAgencyPayment';
 }

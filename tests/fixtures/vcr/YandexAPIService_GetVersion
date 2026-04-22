@@ -68,7 +68,7 @@
         url: 'https://soap.direct.yandex.ru/live/v4/soap/'
         headers:
             Host: soap.direct.yandex.ru
-            Content-Type: 'text/xml; charset=utf-8;'
+            Content-Type: 'text/xml; charset=utf-8'
             SOAPAction: 'API#GetAvailableVersions'
         body: "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:ns1=\"API\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:SOAP-ENC=\"http://schemas.xmlsoap.org/soap/encoding/\" SOAP-ENV:encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\"><SOAP-ENV:Header><ns1:locale>en</ns1:locale><ns1:token>REDACTED</ns1:token></SOAP-ENV:Header><SOAP-ENV:Body><ns1:GetAvailableVersions/></SOAP-ENV:Body></SOAP-ENV:Envelope>\n"
     response:

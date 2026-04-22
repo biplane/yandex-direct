@@ -12,7 +12,7 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class BudgetTypeEnum
 {
-    public const WEEKLY_BUDGET = 'WEEKLY_BUDGET';
+    public const string WEEKLY_BUDGET = 'WEEKLY_BUDGET';
 
-    public const CUSTOM_PERIOD_BUDGET = 'CUSTOM_PERIOD_BUDGET';
+    public const string CUSTOM_PERIOD_BUDGET = 'CUSTOM_PERIOD_BUDGET';
 }

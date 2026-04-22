@@ -12,7 +12,7 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class AdExtensionTypeEnum
 {
-    public const CALLOUT = 'CALLOUT';
+    public const string CALLOUT = 'CALLOUT';
 
-    public const UNKNOWN = 'UNKNOWN';
+    public const string UNKNOWN = 'UNKNOWN';
 }

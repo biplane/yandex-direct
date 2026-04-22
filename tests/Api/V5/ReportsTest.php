@@ -10,21 +10,22 @@ use Biplane\YandexDirect\Exception\ApiException;
 use Nyholm\Psr7\Request;
 use Nyholm\Psr7\Response;
 use Nyholm\Psr7\Stream;
+use Override;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestFactoryInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\StreamFactoryInterface;
-use Psr\Http\Message\StreamInterface;
 
 use function is_array;
 
-class ReportsTest extends TestCase
+final class ReportsTest extends TestCase
 {
     /** @var MockObject&ClientInterface */
     private $httpClient;
 
+    #[Override]
     protected function setUp(): void
     {
         $this->httpClient = $this->createMock(ClientInterface::class);
@@ -74,7 +75,7 @@ class ReportsTest extends TestCase
             ->method('sendRequest')
             ->willReturnOnConsecutiveCalls(
                 new Response(202, ['retryIn' => '1']),
-                new Response()
+                new Response(),
             );
 
         $reportResult = $service->getReady($reportRequest);
@@ -92,25 +93,28 @@ class ReportsTest extends TestCase
             ->setReportDefinition(Reports\ReportDefinition::create())
             ->getReportRequest();
 
-        $reportDownloadError = <<<XML
+        $reportDownloadError = <<<'XML'
 <?xml version="1.0" encoding="UTF-8"?>
 <reports:reportDownloadError xmlns:reports="http://api.direct.yandex.com/v5/reports">
-    <reports:ApiError>
-        <reports:requestId>2773184281650080533</reports:requestId>
-        <reports:errorCode>53</reports:errorCode>
-        <reports:errorMessage>Authorization error</reports:errorMessage>
-        <reports:errorDetail>Token not entered</reports:errorDetail>
-    </reports:ApiError>
+	<reports:ApiError>
+		<reports:requestId>2773184281650080533</reports:requestId>
+		<reports:errorCode>53</reports:errorCode>
+		<reports:errorMessage>Authorization error</reports:errorMessage>
+		<reports:errorDetail>Token not entered</reports:errorDetail>
+	</reports:ApiError>
 </reports:reportDownloadError>
 XML;
 
-        $this->httpClient->method('sendRequest')->willReturn(
-            new Response(
-                400,
-                ['content-type' => 'text/xml'],
-                $reportDownloadError
-            )
-        );
+        $this->httpClient
+            ->expects(self::once())
+            ->method('sendRequest')
+            ->willReturn(
+                new Response(
+                    400,
+                    ['content-type' => 'text/xml'],
+                    $reportDownloadError,
+                ),
+            );
 
         $this->expectException(ApiException::class);
 
@@ -136,13 +140,16 @@ XML;
             ->setReportDefinition(Reports\ReportDefinition::create())
             ->getReportRequest();
 
-        $this->httpClient->method('sendRequest')->willReturn(
-            new Response(
-                500,
-                ['content-type' => 'text/html'],
-                '<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN"> <html><head> <title>500 Internal Server Error</title> </head><body> <h1>Internal Server Error</h1> <p>The server encountered an internal error or misconfiguration and was unable to complete your request.</p> <p>Please contact the server administrator at {email} to inform them of the time this error occurred, and the actions you performed just before this error.</p> <p>More information about this error may be available in the server error log.</p> </body></html>'
-            )
-        );
+        $this->httpClient
+            ->expects(self::once())
+            ->method('sendRequest')
+            ->willReturn(
+                new Response(
+                    500,
+                    ['content-type' => 'text/html'],
+                    '<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN"> <html><head> <title>500 Internal Server Error</title> </head><body> <h1>Internal Server Error</h1> <p>The server encountered an internal error or misconfiguration and was unable to complete your request.</p> <p>Please contact the server administrator at {email} to inform them of the time this error occurred, and the actions you performed just before this error.</p> <p>More information about this error may be available in the server error log.</p> </body></html>',
+                ),
+            );
 
         $this->expectException(ApiException::class);
 
@@ -181,36 +188,26 @@ XML;
         self::assertTrue($reportResult->isReady());
     }
 
-    /**
-     * @param array<string, mixed> $options
-     */
+    /** @param array<string, mixed> $options */
     private function createConfig(array $options): Config
     {
         return new Config($options);
     }
 
-    /**
-     * @param Config|array<string, mixed> $config
-     */
-    private function createService($config): Reports
+    /** @param Config|array<string, mixed> $config */
+    private function createService(Config|array $config): Reports
     {
         if (is_array($config)) {
             $config = $this->createConfig($config);
         }
 
-        $requestFactory = $this->createMock(RequestFactoryInterface::class);
+        $requestFactory = $this->createStub(RequestFactoryInterface::class);
         $requestFactory->method('createRequest')->willReturnCallback(
-            static function (string $method, $uri): RequestInterface {
-                return new Request($method, $uri);
-            }
+            static fn (string $method, $uri): RequestInterface => new Request($method, $uri),
         );
 
-        $streamFactory = $this->createMock(StreamFactoryInterface::class);
-        $streamFactory->method('createStream')->willReturnCallback(
-            static function (string $content): StreamInterface {
-                return Stream::create($content);
-            }
-        );
+        $streamFactory = $this->createStub(StreamFactoryInterface::class);
+        $streamFactory->method('createStream')->willReturnCallback(Stream::create(...));
 
         return new Reports($config, $this->httpClient, $requestFactory, $streamFactory);
     }

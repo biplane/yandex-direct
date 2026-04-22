@@ -10,9 +10,7 @@ use Biplane\YandexDirect\Api\V5\VCards;
 use Biplane\YandexDirect\Exception\ApiException;
 use VCR\VCR;
 
-/**
- * @group functional
- */
+/** @group functional */
 final class TypeConversionTest extends SoapClientTestCase
 {
     public function testConvertArrayOfStringAndIntegerFromXml(): void
@@ -25,7 +23,7 @@ final class TypeConversionTest extends SoapClientTestCase
         $request = Contract\GetCampaignsRequest::create()
             ->setSelectionCriteria(
                 Contract\CampaignsSelectionCriteria::create()
-                    ->setIds([37605271])
+                    ->setIds([37605271]),
             )
             ->setFieldNames([
                 Contract\CampaignFieldEnum::ID,
@@ -43,7 +41,7 @@ final class TypeConversionTest extends SoapClientTestCase
 
         self::assertSame(
             ['вредно', 'пуховые', 'яблоко'],
-            $campaign->getNegativeKeywords()
+            $campaign->getNegativeKeywords(),
         );
         self::assertSame([123], $campaign->getTextCampaign()->getCounterIds());
     }
@@ -57,7 +55,7 @@ final class TypeConversionTest extends SoapClientTestCase
 
         $request = Contract\GetVCardsRequest::create()
             ->setSelectionCriteria(
-                Contract\IdsCriteria::create()->setIds([45367044])
+                Contract\IdsCriteria::create()->setIds([45367044]),
             )
             ->setFieldNames([
                 Contract\VCardFieldEnum::ID,
@@ -92,16 +90,16 @@ final class TypeConversionTest extends SoapClientTestCase
                             ->setX1(-37.69)
                             ->setY1(55.71)
                             ->setX2(90.0)
-                            ->setY2(-55.71)
+                            ->setY2(-55.71),
                     ),
             ]);
 
         try {
             $service->add($request);
-        } catch (ApiException $e) {
+        } catch (ApiException) {
             self::assertStringContainsString(
                 '<PointOnMap><X>37.69</X><Y>55.711747</Y><X1>-37.69</X1><Y1>55.71</Y1><X2>90</X2><Y2>-55.71</Y2></PointOnMap>',
-                (string)$service->__getLastRequest()
+                (string)$service->__getLastRequest(),
             );
         }
     }
@@ -116,7 +114,7 @@ final class TypeConversionTest extends SoapClientTestCase
         $request = Contract\GetCampaignsRequest::create()
             ->setSelectionCriteria(
                 Contract\CampaignsSelectionCriteria::create()
-                    ->setIds([38811657])
+                    ->setIds([38811657]),
             )
             ->setFieldNames([
                 Contract\CampaignFieldEnum::ID,

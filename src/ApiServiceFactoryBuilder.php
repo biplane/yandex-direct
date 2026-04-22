@@ -49,9 +49,7 @@ final class ApiServiceFactoryBuilder
         return $this;
     }
 
-    /**
-     * @psalm-param positive-int $timeout
-     */
+    /** @psalm-param positive-int $timeout */
     public function setSoapCallTimeout(int $timeout): self
     {
         $this->soapCallTimeout = $timeout;
@@ -88,7 +86,7 @@ final class ApiServiceFactoryBuilder
             $this->soapCallTimeout,
             $this->logger,
             $this->logContextFactory,
-            $this->soapOptions
+            $this->soapOptions,
         );
     }
 }

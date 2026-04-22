@@ -12,11 +12,11 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class ContractActionTypeEnum
 {
-    public const COMMERCIAL = 'COMMERCIAL';
+    public const string COMMERCIAL = 'COMMERCIAL';
 
-    public const DISTRIBUTION = 'DISTRIBUTION';
+    public const string DISTRIBUTION = 'DISTRIBUTION';
 
-    public const CONCLUDE = 'CONCLUDE';
+    public const string CONCLUDE = 'CONCLUDE';
 
-    public const OTHER = 'OTHER';
+    public const string OTHER = 'OTHER';
 }

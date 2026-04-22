@@ -28,7 +28,8 @@ class GetTurboPagesResponse extends GetResponseGeneral implements IteratorAggreg
      *
      * @return static
      */
-    public static function create()
+    #[Override]
+    public static function create(): static
     {
         return new static();
     }
@@ -63,9 +64,7 @@ class GetTurboPagesResponse extends GetResponseGeneral implements IteratorAggreg
         return isset($this->TurboPages) ? count($this->TurboPages) : 0;
     }
 
-    /**
-     * @return ArrayIterator<int, TurboPageGetItem>
-     */
+    /** @return ArrayIterator<int, TurboPageGetItem> */
     #[Override]
     public function getIterator(): ArrayIterator
     {

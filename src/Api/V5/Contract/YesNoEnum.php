@@ -12,7 +12,7 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class YesNoEnum
 {
-    public const YES = 'YES';
+    public const string YES = 'YES';
 
-    public const NO = 'NO';
+    public const string NO = 'NO';
 }

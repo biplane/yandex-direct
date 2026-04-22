@@ -12,9 +12,9 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class RelevantKeywordsModeEnum
 {
-    public const MINIMUM = 'MINIMUM';
+    public const string MINIMUM = 'MINIMUM';
 
-    public const OPTIMAL = 'OPTIMAL';
+    public const string OPTIMAL = 'OPTIMAL';
 
-    public const MAXIMUM = 'MAXIMUM';
+    public const string MAXIMUM = 'MAXIMUM';
 }

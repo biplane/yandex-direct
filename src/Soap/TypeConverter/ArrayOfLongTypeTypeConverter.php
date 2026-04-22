@@ -4,27 +4,54 @@ declare(strict_types=1);
 
 namespace Biplane\YandexDirect\Soap\TypeConverter;
 
-use function array_map;
-use function is_array;
+use BadMethodCallException;
+use Biplane\YandexDirect\Soap\DisableEncoder;
+use Biplane\YandexDirect\Soap\TypeConverter;
+use Override;
 
-final class ArrayOfLongTypeTypeConverter extends ArrayOfStringTypeConverter
+use function array_map;
+use function preg_match_all;
+use function str_contains;
+
+/** @implements TypeConverter<list<float>|null> */
+final class ArrayOfLongTypeTypeConverter implements TypeConverter, DisableEncoder
 {
+    public function __construct(private string $namespace)
+    {
+    }
+
+    #[Override]
+    public function getTypeNamespace(): string
+    {
+        return $this->namespace;
+    }
+
+    #[Override]
     public function getTypeName(): string
     {
         return 'ArrayOfLong';
     }
 
+    #[Override]
+    public function fromXml(string $xml): mixed
+    {
+        if (str_contains($xml, 'xsi:nil="true"')) {
+            return null;
+        }
+
+        if ($xml !== '' && preg_match_all('/<Items>([^<]+)<\/Items>/u', $xml, $m) !== false) {
+            return array_map('floatval', $m[1]);
+        }
+
+        return null;
+    }
+
     /**
      * {@inheritDoc}
      */
-    public function fromXml(string $xml)
+    #[Override]
+    public function toXml($data): string
     {
-        $items = parent::fromXml($xml);
-
-        if (is_array($items)) {
-            return array_map('floatval', $items);
-        }
-
-        return $items;
+        throw new BadMethodCallException('Not implemented');
     }
 }

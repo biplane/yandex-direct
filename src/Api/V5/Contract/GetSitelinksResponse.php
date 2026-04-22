@@ -28,7 +28,8 @@ class GetSitelinksResponse extends GetResponseGeneral implements IteratorAggrega
      *
      * @return static
      */
-    public static function create()
+    #[Override]
+    public static function create(): static
     {
         return new static();
     }
@@ -63,9 +64,7 @@ class GetSitelinksResponse extends GetResponseGeneral implements IteratorAggrega
         return isset($this->SitelinksSets) ? count($this->SitelinksSets) : 0;
     }
 
-    /**
-     * @return ArrayIterator<int, SitelinksSetGetItem>
-     */
+    /** @return ArrayIterator<int, SitelinksSetGetItem> */
     #[Override]
     public function getIterator(): ArrayIterator
     {

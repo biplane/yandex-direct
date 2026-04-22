@@ -12,13 +12,13 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class RepresentativeRoleEnum
 {
-    public const CHIEF = 'CHIEF';
+    public const string CHIEF = 'CHIEF';
 
-    public const DELEGATE = 'DELEGATE';
+    public const string DELEGATE = 'DELEGATE';
 
-    public const LIMITED = 'LIMITED';
+    public const string LIMITED = 'LIMITED';
 
-    public const READONLY = 'READONLY';
+    public const string READONLY = 'READONLY';
 
-    public const UNKNOWN = 'UNKNOWN';
+    public const string UNKNOWN = 'UNKNOWN';
 }

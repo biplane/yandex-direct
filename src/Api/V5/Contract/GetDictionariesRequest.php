@@ -28,7 +28,7 @@ class GetDictionariesRequest implements IteratorAggregate, Countable
      *
      * @return static
      */
-    public static function create()
+    public static function create(): static
     {
         return new static();
     }
@@ -67,9 +67,7 @@ class GetDictionariesRequest implements IteratorAggregate, Countable
         return count($this->DictionaryNames);
     }
 
-    /**
-     * @return ArrayIterator<int, 'Currencies'|'MetroStations'|'GeoRegions'|'GeoRegionNames'|'TimeZones'|'Constants'|'AdCategories'|'OperationSystemVersions'|'ProductivityAssertions'|'SupplySidePlatforms'|'Interests'|'AudienceCriteriaTypes'|'AudienceDemographicProfiles'|'AudienceInterests'|'FilterSchemas'>
-     */
+    /** @return ArrayIterator<int, 'Currencies'|'MetroStations'|'GeoRegions'|'GeoRegionNames'|'TimeZones'|'Constants'|'AdCategories'|'OperationSystemVersions'|'ProductivityAssertions'|'SupplySidePlatforms'|'Interests'|'AudienceCriteriaTypes'|'AudienceDemographicProfiles'|'AudienceInterests'|'FilterSchemas'> */
     #[Override]
     public function getIterator(): ArrayIterator
     {

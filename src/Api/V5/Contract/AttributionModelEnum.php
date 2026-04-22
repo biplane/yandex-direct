@@ -12,19 +12,19 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class AttributionModelEnum
 {
-    public const LC = 'LC';
+    public const string LC = 'LC';
 
-    public const LSC = 'LSC';
+    public const string LSC = 'LSC';
 
-    public const FC = 'FC';
+    public const string FC = 'FC';
 
-    public const LYDC = 'LYDC';
+    public const string LYDC = 'LYDC';
 
-    public const LSCCD = 'LSCCD';
+    public const string LSCCD = 'LSCCD';
 
-    public const FCCD = 'FCCD';
+    public const string FCCD = 'FCCD';
 
-    public const LYDCCD = 'LYDCCD';
+    public const string LYDCCD = 'LYDCCD';
 
-    public const AUTO = 'AUTO';
+    public const string AUTO = 'AUTO';
 }

@@ -28,7 +28,7 @@ class GetRetargetingGoalsRequest implements IteratorAggregate, Countable
      *
      * @return static
      */
-    public static function create()
+    public static function create(): static
     {
         return new static();
     }
@@ -63,9 +63,7 @@ class GetRetargetingGoalsRequest implements IteratorAggregate, Countable
         return isset($this->Logins) ? count($this->Logins) : 0;
     }
 
-    /**
-     * @return ArrayIterator<int, string>
-     */
+    /** @return ArrayIterator<int, string> */
     #[Override]
     public function getIterator(): ArrayIterator
     {

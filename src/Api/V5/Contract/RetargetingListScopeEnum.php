@@ -12,9 +12,9 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class RetargetingListScopeEnum
 {
-    public const FOR_TARGETS_AND_ADJUSTMENTS = 'FOR_TARGETS_AND_ADJUSTMENTS';
+    public const string FOR_TARGETS_AND_ADJUSTMENTS = 'FOR_TARGETS_AND_ADJUSTMENTS';
 
-    public const FOR_ADJUSTMENTS_ONLY = 'FOR_ADJUSTMENTS_ONLY';
+    public const string FOR_ADJUSTMENTS_ONLY = 'FOR_ADJUSTMENTS_ONLY';
 
-    public const FOR_TARGETS_ONLY = 'FOR_TARGETS_ONLY';
+    public const string FOR_TARGETS_ONLY = 'FOR_TARGETS_ONLY';
 }

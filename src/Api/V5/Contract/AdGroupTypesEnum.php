@@ -12,15 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class AdGroupTypesEnum
 {
-    public const DYNAMIC_TEXT_AD_GROUP = 'DYNAMIC_TEXT_AD_GROUP';
+    public const string DYNAMIC_TEXT_AD_GROUP = 'DYNAMIC_TEXT_AD_GROUP';
 
-    public const MOBILE_APP_AD_GROUP = 'MOBILE_APP_AD_GROUP';
+    public const string MOBILE_APP_AD_GROUP = 'MOBILE_APP_AD_GROUP';
 
-    public const TEXT_AD_GROUP = 'TEXT_AD_GROUP';
+    public const string TEXT_AD_GROUP = 'TEXT_AD_GROUP';
 
-    public const CPM_BANNER_AD_GROUP = 'CPM_BANNER_AD_GROUP';
+    public const string CPM_BANNER_AD_GROUP = 'CPM_BANNER_AD_GROUP';
 
-    public const CPM_VIDEO_AD_GROUP = 'CPM_VIDEO_AD_GROUP';
+    public const string CPM_VIDEO_AD_GROUP = 'CPM_VIDEO_AD_GROUP';
 
-    public const UNIFIED_AD_GROUP = 'UNIFIED_AD_GROUP';
+    public const string UNIFIED_AD_GROUP = 'UNIFIED_AD_GROUP';
 }

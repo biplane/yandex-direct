@@ -12,15 +12,15 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class StatusEnum
 {
-    public const ACCEPTED = 'ACCEPTED';
+    public const string ACCEPTED = 'ACCEPTED';
 
-    public const DRAFT = 'DRAFT';
+    public const string DRAFT = 'DRAFT';
 
-    public const MODERATION = 'MODERATION';
+    public const string MODERATION = 'MODERATION';
 
-    public const PREACCEPTED = 'PREACCEPTED';
+    public const string PREACCEPTED = 'PREACCEPTED';
 
-    public const REJECTED = 'REJECTED';
+    public const string REJECTED = 'REJECTED';
 
-    public const UNKNOWN = 'UNKNOWN';
+    public const string UNKNOWN = 'UNKNOWN';
 }

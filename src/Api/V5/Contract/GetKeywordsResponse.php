@@ -28,7 +28,8 @@ class GetKeywordsResponse extends GetResponseGeneral implements IteratorAggregat
      *
      * @return static
      */
-    public static function create()
+    #[Override]
+    public static function create(): static
     {
         return new static();
     }
@@ -63,9 +64,7 @@ class GetKeywordsResponse extends GetResponseGeneral implements IteratorAggregat
         return isset($this->Keywords) ? count($this->Keywords) : 0;
     }
 
-    /**
-     * @return ArrayIterator<int, KeywordGetItem>
-     */
+    /** @return ArrayIterator<int, KeywordGetItem> */
     #[Override]
     public function getIterator(): ArrayIterator
     {

@@ -12,23 +12,23 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class AdFieldEnum
 {
-    public const AD_CATEGORIES = 'AdCategories';
+    public const string AD_CATEGORIES = 'AdCategories';
 
-    public const AGE_LABEL = 'AgeLabel';
+    public const string AGE_LABEL = 'AgeLabel';
 
-    public const AD_GROUP_ID = 'AdGroupId';
+    public const string AD_GROUP_ID = 'AdGroupId';
 
-    public const CAMPAIGN_ID = 'CampaignId';
+    public const string CAMPAIGN_ID = 'CampaignId';
 
-    public const ID = 'Id';
+    public const string ID = 'Id';
 
-    public const STATE = 'State';
+    public const string STATE = 'State';
 
-    public const STATUS = 'Status';
+    public const string STATUS = 'Status';
 
-    public const STATUS_CLARIFICATION = 'StatusClarification';
+    public const string STATUS_CLARIFICATION = 'StatusClarification';
 
-    public const TYPE = 'Type';
+    public const string TYPE = 'Type';
 
-    public const SUBTYPE = 'Subtype';
+    public const string SUBTYPE = 'Subtype';
 }

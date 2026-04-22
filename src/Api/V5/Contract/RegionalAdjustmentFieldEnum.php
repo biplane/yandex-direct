@@ -12,9 +12,9 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class RegionalAdjustmentFieldEnum
 {
-    public const REGION_ID = 'RegionId';
+    public const string REGION_ID = 'RegionId';
 
-    public const BID_MODIFIER = 'BidModifier';
+    public const string BID_MODIFIER = 'BidModifier';
 
-    public const ENABLED = 'Enabled';
+    public const string ENABLED = 'Enabled';
 }

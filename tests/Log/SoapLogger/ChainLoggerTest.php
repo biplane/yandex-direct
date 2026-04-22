@@ -10,8 +10,6 @@ use PHPUnit\Framework\TestCase;
 use Psr\Log\LoggerInterface;
 use RuntimeException;
 
-use function get_class;
-
 final class ChainLoggerTest extends TestCase
 {
     public function testHandleException(): void
@@ -34,9 +32,9 @@ final class ChainLoggerTest extends TestCase
             ->with(
                 self::stringContains('Failed to write to log'),
                 self::equalTo([
-                    'logger' => get_class($logger1),
+                    'logger' => $logger1::class,
                     'exception' => $exception,
-                ])
+                ]),
             );
 
         $chain->log([

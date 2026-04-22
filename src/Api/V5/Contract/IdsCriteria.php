@@ -28,7 +28,7 @@ class IdsCriteria implements IteratorAggregate, Countable
      *
      * @return static
      */
-    public static function create()
+    public static function create(): static
     {
         return new static();
     }
@@ -63,9 +63,7 @@ class IdsCriteria implements IteratorAggregate, Countable
         return count($this->Ids);
     }
 
-    /**
-     * @return ArrayIterator<int, int>
-     */
+    /** @return ArrayIterator<int, int> */
     #[Override]
     public function getIterator(): ArrayIterator
     {

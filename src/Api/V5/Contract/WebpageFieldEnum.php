@@ -12,25 +12,25 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class WebpageFieldEnum
 {
-    public const AD_GROUP_ID = 'AdGroupId';
+    public const string AD_GROUP_ID = 'AdGroupId';
 
-    public const BID = 'Bid';
+    public const string BID = 'Bid';
 
-    public const CAMPAIGN_ID = 'CampaignId';
+    public const string CAMPAIGN_ID = 'CampaignId';
 
-    public const CONDITIONS = 'Conditions';
+    public const string CONDITIONS = 'Conditions';
 
-    public const CONDITION_TYPE = 'ConditionType';
+    public const string CONDITION_TYPE = 'ConditionType';
 
-    public const CONTEXT_BID = 'ContextBid';
+    public const string CONTEXT_BID = 'ContextBid';
 
-    public const ID = 'Id';
+    public const string ID = 'Id';
 
-    public const NAME = 'Name';
+    public const string NAME = 'Name';
 
-    public const STATE = 'State';
+    public const string STATE = 'State';
 
-    public const STATUS_CLARIFICATION = 'StatusClarification';
+    public const string STATUS_CLARIFICATION = 'StatusClarification';
 
-    public const STRATEGY_PRIORITY = 'StrategyPriority';
+    public const string STRATEGY_PRIORITY = 'StrategyPriority';
 }

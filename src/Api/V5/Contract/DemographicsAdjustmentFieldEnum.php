@@ -12,11 +12,11 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class DemographicsAdjustmentFieldEnum
 {
-    public const GENDER = 'Gender';
+    public const string GENDER = 'Gender';
 
-    public const AGE = 'Age';
+    public const string AGE = 'Age';
 
-    public const BID_MODIFIER = 'BidModifier';
+    public const string BID_MODIFIER = 'BidModifier';
 
-    public const ENABLED = 'Enabled';
+    public const string ENABLED = 'Enabled';
 }

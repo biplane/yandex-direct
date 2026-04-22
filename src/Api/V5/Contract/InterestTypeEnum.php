@@ -12,9 +12,9 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class InterestTypeEnum
 {
-    public const SHORT_TERM = 'SHORT_TERM';
+    public const string SHORT_TERM = 'SHORT_TERM';
 
-    public const LONG_TERM = 'LONG_TERM';
+    public const string LONG_TERM = 'LONG_TERM';
 
-    public const ANY = 'ANY';
+    public const string ANY = 'ANY';
 }

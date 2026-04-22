@@ -28,7 +28,7 @@ class AddRetargetingListsRequest implements IteratorAggregate, Countable
      *
      * @return static
      */
-    public static function create()
+    public static function create(): static
     {
         return new static();
     }
@@ -63,9 +63,7 @@ class AddRetargetingListsRequest implements IteratorAggregate, Countable
         return count($this->RetargetingLists);
     }
 
-    /**
-     * @return ArrayIterator<int, RetargetingListAddItem>
-     */
+    /** @return ArrayIterator<int, RetargetingListAddItem> */
     #[Override]
     public function getIterator(): ArrayIterator
     {

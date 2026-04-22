@@ -30,7 +30,7 @@ use Biplane\YandexDirect\Config;
  */
 class Ads extends ApiSoapClientV5
 {
-    public const ENDPOINT = 'https://api.direct.yandex.com/v501/ads?wsdl';
+    public const string ENDPOINT = 'https://api.direct.yandex.com/v501/ads?wsdl';
 
     /**
      * Constructor
@@ -152,6 +152,7 @@ class Ads extends ApiSoapClientV5
             'ModerateRequest' => 'Biplane\YandexDirect\Api\V5\Contract\ModerateAdsRequest',
             'ModerateResponse' => 'Biplane\YandexDirect\Api\V5\Contract\ModerateAdsResponse',
         ];
+
         parent::__construct(self::ENDPOINT, $config, $options);
     }
 

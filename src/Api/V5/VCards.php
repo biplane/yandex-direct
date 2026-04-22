@@ -18,7 +18,7 @@ use Biplane\YandexDirect\Config;
  */
 class VCards extends ApiSoapClientV5
 {
-    public const ENDPOINT = 'https://api.direct.yandex.com/v501/vcards?wsdl';
+    public const string ENDPOINT = 'https://api.direct.yandex.com/v501/vcards?wsdl';
 
     /**
      * Constructor
@@ -47,6 +47,7 @@ class VCards extends ApiSoapClientV5
             'DeleteRequest' => 'Biplane\YandexDirect\Api\V5\Contract\DeleteVCardsRequest',
             'DeleteResponse' => 'Biplane\YandexDirect\Api\V5\Contract\DeleteVCardsResponse',
         ];
+
         parent::__construct(self::ENDPOINT, $config, $options);
     }
 

@@ -81,9 +81,7 @@ final class ConfigBuilder
         return $this;
     }
 
-    /**
-     * @deprecated Use `ApiServiceFactory` or `ApiServiceFactoryBuilder::setSoapOptions()` instead.
-     */
+    /** @deprecated Use `ApiServiceFactory` or `ApiServiceFactoryBuilder::setSoapOptions()` instead. */
     public function setSoapOptions(SoapOptions $options): self
     {
         $this->options['soap_options'] = $options;

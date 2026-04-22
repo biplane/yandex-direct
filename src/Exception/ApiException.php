@@ -7,23 +7,17 @@ namespace Biplane\YandexDirect\Exception;
 use RuntimeException;
 use Throwable;
 
-class ApiException extends RuntimeException
+final class ApiException extends RuntimeException
 {
-    /** @var string|null */
-    private $detailMessage;
+    private ?string $requestId = null;
 
-    /** @var string|null */
-    private $requestId;
-
-    public function __construct(string $message, int $code, ?string $detailMessage, ?Throwable $previous = null)
+    public function __construct(string $message, int $code, private ?string $detailMessage, ?Throwable $previous = null)
     {
         if ($detailMessage !== null) {
             $message .= ': ' . $detailMessage;
         }
 
         parent::__construct($message, $code, $previous);
-
-        $this->detailMessage = $detailMessage;
     }
 
     public function getDetailMessage(): ?string
@@ -36,9 +30,7 @@ class ApiException extends RuntimeException
         return $this->requestId;
     }
 
-    /**
-     * @internal
-     */
+    /** @internal */
     public function setRequestId(string $requestId): void
     {
         $this->requestId = $requestId;

@@ -12,5 +12,5 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class CalloutFieldEnum
 {
-    public const CALLOUT_TEXT = 'CalloutText';
+    public const string CALLOUT_TEXT = 'CalloutText';
 }

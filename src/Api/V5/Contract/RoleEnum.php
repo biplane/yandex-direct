@@ -12,7 +12,7 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class RoleEnum
 {
-    public const ADMIN = 'ADMIN';
+    public const string ADMIN = 'ADMIN';
 
-    public const USER = 'USER';
+    public const string USER = 'USER';
 }

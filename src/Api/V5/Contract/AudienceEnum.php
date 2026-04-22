@@ -12,9 +12,9 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class AudienceEnum
 {
-    public const INTERESTED_IN_SIMILAR_PRODUCTS = 'INTERESTED_IN_SIMILAR_PRODUCTS';
+    public const string INTERESTED_IN_SIMILAR_PRODUCTS = 'INTERESTED_IN_SIMILAR_PRODUCTS';
 
-    public const VISITED_PRODUCT_PAGE = 'VISITED_PRODUCT_PAGE';
+    public const string VISITED_PRODUCT_PAGE = 'VISITED_PRODUCT_PAGE';
 
-    public const ALL_SEGMENTS = 'ALL_SEGMENTS';
+    public const string ALL_SEGMENTS = 'ALL_SEGMENTS';
 }

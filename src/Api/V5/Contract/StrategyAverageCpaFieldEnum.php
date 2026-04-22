@@ -12,17 +12,17 @@ use AllowDynamicProperties;
 #[AllowDynamicProperties]
 class StrategyAverageCpaFieldEnum
 {
-    public const AVERAGE_CPA = 'AverageCpa';
+    public const string AVERAGE_CPA = 'AverageCpa';
 
-    public const GOAL_ID = 'GoalId';
+    public const string GOAL_ID = 'GoalId';
 
-    public const WEEKLY_SPEND_LIMIT = 'WeeklySpendLimit';
+    public const string WEEKLY_SPEND_LIMIT = 'WeeklySpendLimit';
 
-    public const CUSTOM_PERIOD_BUDGET = 'CustomPeriodBudget';
+    public const string CUSTOM_PERIOD_BUDGET = 'CustomPeriodBudget';
 
-    public const BUDGET_TYPE = 'BudgetType';
+    public const string BUDGET_TYPE = 'BudgetType';
 
-    public const BID_CEILING = 'BidCeiling';
+    public const string BID_CEILING = 'BidCeiling';
 
-    public const EXPLORATION_BUDGET = 'ExplorationBudget';
+    public const string EXPLORATION_BUDGET = 'ExplorationBudget';
 }
