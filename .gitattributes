@@ -1,10 +1,13 @@
-/.cache           export-ignore
-/.github          export-ignore
-/build            export-ignore
-/tests            export-ignore
-.gitattributes    export-ignore
-.editorconfig     export-ignore
-.gitignore        export-ignore
-*.xml             export-ignore
-*.neon            export-ignore
-*.xml.dist        export-ignore
+* text=auto eol=lf
+
+*.phar binary
+
+*.php diff=php
+
+* export-ignore
+/src/ -export-ignore
+/src/** -export-ignore
+/CHANGELOG.md -export-ignore
+/composer.json -export-ignore
+/LICENSE -export-ignore
+/README.md -export-ignore
