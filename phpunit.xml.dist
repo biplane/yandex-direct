@@ -10,19 +10,19 @@
          failOnPhpunitDeprecation="true"
          failOnRisky="true"
          failOnWarning="true">
-    <testsuites>
-        <testsuite name="default">
-            <directory>tests</directory>
-        </testsuite>
-    </testsuites>
+  <testsuites>
+    <testsuite name="default">
+      <directory>tests</directory>
+    </testsuite>
+  </testsuites>
 
-    <source ignoreIndirectDeprecations="true" restrictNotices="true" restrictWarnings="true">
-        <include>
-            <directory>src</directory>
-        </include>
-        <exclude>
-            <directory>src/Api/V4</directory>
-            <directory>src/Api/V5</directory>
-        </exclude>
-    </source>
+  <source ignoreIndirectDeprecations="true" restrictNotices="true" restrictWarnings="true">
+    <include>
+      <directory>src</directory>
+    </include>
+    <exclude>
+      <directory>src/Api/V4</directory>
+      <directory>src/Api/V5</directory>
+    </exclude>
+  </source>
 </phpunit>

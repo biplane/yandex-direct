@@ -11,46 +11,46 @@
   errorBaseline="psalm-baseline.xml"
 >
   <projectFiles>
-    <directory name="src" />
-    <directory name="tests" />
+    <directory name="src"/>
+    <directory name="tests"/>
     <ignoreFiles>
-      <directory name="vendor" />
+      <directory name="vendor"/>
     </ignoreFiles>
   </projectFiles>
 
   <plugins>
-    <pluginClass class="Psalm\PhpUnitPlugin\Plugin" />
+    <pluginClass class="Psalm\PhpUnitPlugin\Plugin"/>
   </plugins>
 
   <issueHandlers>
     <ClassMustBeFinal>
       <errorLevel type="suppress">
-        <directory name="src/Api/V4" />
-        <directory name="src/Api/V5" />
+        <directory name="src/Api/V4"/>
+        <directory name="src/Api/V5"/>
       </errorLevel>
     </ClassMustBeFinal>
     <MissingConstructor>
       <errorLevel type="suppress">
-        <directory name="src/Api/V4/Contract" />
-        <directory name="src/Api/V5/Contract" />
+        <directory name="src/Api/V4/Contract"/>
+        <directory name="src/Api/V5/Contract"/>
       </errorLevel>
     </MissingConstructor>
     <UndefinedThisPropertyAssignment>
       <errorLevel type="suppress">
-        <directory name="src/Api/V4/Contract" />
-        <directory name="src/Api/V5/Contract" />
+        <directory name="src/Api/V4/Contract"/>
+        <directory name="src/Api/V5/Contract"/>
       </errorLevel>
     </UndefinedThisPropertyAssignment>
     <UndefinedThisPropertyFetch>
       <errorLevel type="suppress">
-        <directory name="src/Api/V4/Contract" />
-        <directory name="src/Api/V5/Contract" />
+        <directory name="src/Api/V4/Contract"/>
+        <directory name="src/Api/V5/Contract"/>
       </errorLevel>
     </UndefinedThisPropertyFetch>
     <UnsafeInstantiation>
       <errorLevel type="suppress">
-        <directory name="src/Api/V4/Contract" />
-        <directory name="src/Api/V5/Contract" />
+        <directory name="src/Api/V4/Contract"/>
+        <directory name="src/Api/V5/Contract"/>
       </errorLevel>
     </UnsafeInstantiation>
   </issueHandlers>

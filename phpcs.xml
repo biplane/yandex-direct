@@ -2,39 +2,40 @@
 <ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          name="BiplaneYandexDirect"
          xsi:noNamespaceSchemaLocation="vendor/squizlabs/php_codesniffer/phpcs.xsd">
-  <arg name="basepath" value="." />
-  <arg name="extensions" value="php" />
-  <arg name="colors" />
-  <arg name="cache" value=".cache/phpcs" />
-  <arg value="nps" />
+  <arg name="basepath" value="."/>
+  <arg name="extensions" value="php"/>
+  <arg name="colors"/>
+  <arg name="cache" value=".cache/phpcs"/>
+  <arg value="nps"/>
 
-  <config name="php_version" value="80300" />
+  <config name="php_version" value="80300"/>
 
   <file>src/</file>
   <file>tests/</file>
 
   <rule ref="Doctrine">
-    <exclude name="Generic.Formatting.MultipleStatementAlignment" />
+    <exclude name="Generic.Formatting.MultipleStatementAlignment"/>
 
-    <exclude name="SlevomatCodingStandard.Classes.SuperfluousExceptionNaming.SuperfluousSuffix" />
-    <exclude name="SlevomatCodingStandard.Classes.SuperfluousInterfaceNaming.SuperfluousSuffix" />
-    <exclude name="SlevomatCodingStandard.ControlStructures.RequireNullCoalesceEqualOperator.RequiredNullCoalesceEqualOperator" />
-    <exclude name="SlevomatCodingStandard.TypeHints.DNFTypeHintFormat.DisallowedShortNullable" />
-    <exclude name="SlevomatCodingStandard.TypeHints.PropertyTypeHint.MissingNativeTypeHint" />
+    <exclude name="SlevomatCodingStandard.Classes.SuperfluousExceptionNaming.SuperfluousSuffix"/>
+    <exclude name="SlevomatCodingStandard.Classes.SuperfluousInterfaceNaming.SuperfluousSuffix"/>
+    <exclude
+      name="SlevomatCodingStandard.ControlStructures.RequireNullCoalesceEqualOperator.RequiredNullCoalesceEqualOperator"/>
+    <exclude name="SlevomatCodingStandard.TypeHints.DNFTypeHintFormat.DisallowedShortNullable"/>
+    <exclude name="SlevomatCodingStandard.TypeHints.PropertyTypeHint.MissingNativeTypeHint"/>
   </rule>
 
   <rule ref="Generic.Formatting.SpaceAfterCast">
     <properties>
-      <property name="spacing" value="0" />
+      <property name="spacing" value="0"/>
     </properties>
   </rule>
 
   <rule ref="SlevomatCodingStandard.TypeHints.DeclareStrictTypes">
     <properties>
-      <property name="declareOnFirstLine" value="false" />
-      <property name="linesCountBeforeDeclare" value="1" />
-      <property name="spacesCountAroundEqualsSign" value="0" />
-      <property name="linesCountAfterDeclare" value="1" />
+      <property name="declareOnFirstLine" value="false"/>
+      <property name="linesCountBeforeDeclare" value="1"/>
+      <property name="spacesCountAroundEqualsSign" value="0"/>
+      <property name="linesCountAfterDeclare" value="1"/>
     </properties>
   </rule>
 
