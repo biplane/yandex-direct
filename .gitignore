@@ -1,6 +1,5 @@
-/vendor/
-/composer.lock
-/.php_cs.cache
-/.phpunit.result.cache
-/.phpunit.cache/
-/phpunit.xml
+.cache/*
+!.cache/.gitkeep
+vendor/
+composer.lock
+phpunit.xml

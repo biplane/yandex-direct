@@ -1,3 +1,4 @@
+/.cache           export-ignore
 /.github          export-ignore
 /build            export-ignore
 /tests            export-ignore

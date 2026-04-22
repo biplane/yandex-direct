@@ -5,6 +5,7 @@
   <arg name="basepath" value="." />
   <arg name="extensions" value="php" />
   <arg name="colors" />
+  <arg name="cache" value=".cache/phpcs" />
   <arg value="nps" />
 
   <config name="php_version" value="80300" />
