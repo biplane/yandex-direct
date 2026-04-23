@@ -50,11 +50,6 @@
       "dealerdirect/phpcodesniffer-composer-installer": true,
       "composer/package-versions-deprecated": true,
       "php-http/discovery": false
-    },
-    "audit": {
-      "ignore": {
-        "CVE-2026-24765": "Not critical in our context"
-      }
     }
   },
   "extra": {
