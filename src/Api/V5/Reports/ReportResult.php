@@ -17,12 +17,8 @@ use function stream_copy_to_stream;
 
 final class ReportResult
 {
-    /** @var ResponseInterface */
-    private $response;
-
-    public function __construct(ResponseInterface $response)
+    public function __construct(private ResponseInterface $response)
     {
-        $this->response = $response;
     }
 
     /**

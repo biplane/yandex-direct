@@ -30,8 +30,7 @@ class ApiSoapClientV4 extends ApiSoapClient
     private const string API_NAMESPACE = 'API';
     private const array ALT_NAMESPACES = ['http://namespaces.soaplite.com/perl'];
 
-    /** @var TransactionNumberGenerator|null */
-    private $transactionNumberGenerator;
+    private ?TransactionNumberGenerator $transactionNumberGenerator = null;
 
     /** @internal */
     public function getTransactionNumberGenerator(): TransactionNumberGenerator

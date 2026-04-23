@@ -22,32 +22,20 @@ use const SOAP_SINGLE_ELEMENT_ARRAYS;
 
 final class ApiServiceFactory
 {
-    /** @var int|null */
-    private $soapCallTimeout;
-    /** @var TransactionNumberGenerator|null */
-    private $transactionNumberGenerator;
-    /** @var Runner */
-    private $runner;
-    /** @var SoapLogContextFactory */
-    private $logContextFactory;
-    /** @var SoapLogger|null */
-    private $logger;
-    /** @var SoapOptions|null */
-    private $soapOptions;
+    private Runner $runner;
+    private SoapLogContextFactory $logContextFactory;
+    private ?SoapOptions $soapOptions = null;
 
     public function __construct(
         ?Runner $runner = null,
-        ?TransactionNumberGenerator $transactionNumberGenerator = null,
-        ?int $soapCallTimeout = null,
-        ?SoapLogger $logger = null,
+        private ?TransactionNumberGenerator $transactionNumberGenerator = null,
+        private ?int $soapCallTimeout = null,
+        private ?SoapLogger $logger = null,
         ?SoapLogContextFactory $logContextFactory = null,
         ?SoapOptions $options = null,
     ) {
         $this->runner = $runner ?? Runner::default();
-        $this->transactionNumberGenerator = $transactionNumberGenerator;
-        $this->soapCallTimeout = $soapCallTimeout;
         $this->soapOptions = $options;
-        $this->logger = $logger;
         $this->logContextFactory = $logContextFactory ?? new SoapLogContextFactory(
             ['authorization', 'member-authorization'],
             ['token'],

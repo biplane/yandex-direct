@@ -14,7 +14,7 @@ use SoapFault;
 final class MockSoapClient extends ApiSoapClient
 {
     /** @var array<string, mixed> */
-    private $opts;
+    private array $opts;
 
     /** @param array<string, mixed> $options */
     public function __construct(Config $config, array $options = [])

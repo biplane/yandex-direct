@@ -13,14 +13,11 @@ use Psr\Http\Message\StreamFactoryInterface;
 
 final class ReportServiceFactory
 {
-    /** @var ClientInterface */
-    private $httpClient;
+    private ClientInterface $httpClient;
 
-    /** @var RequestFactoryInterface */
-    private $requestFactory;
+    private RequestFactoryInterface $requestFactory;
 
-    /** @var StreamFactoryInterface */
-    private $streamFactory;
+    private StreamFactoryInterface $streamFactory;
 
     public function __construct(
         ?ClientInterface $httpClient = null,

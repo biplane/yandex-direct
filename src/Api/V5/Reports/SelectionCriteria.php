@@ -9,14 +9,12 @@ use function count;
 
 final class SelectionCriteria
 {
-    /** @var string|null */
-    private $dateFrom;
+    private ?string $dateFrom = null;
 
-    /** @var string|null */
-    private $dateTo;
+    private ?string $dateTo = null;
 
     /** @var array<FilterItem>|null */
-    private $filter;
+    private ?array $filter = null;
 
     private function __construct()
     {

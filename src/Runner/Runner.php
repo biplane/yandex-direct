@@ -15,17 +15,11 @@ use function usleep;
 
 final class Runner
 {
-    /** @var self|null */
-    private static $default;
+    private static ?self $default = null;
 
-    /** @var RetryStrategyInterface */
-    private $retryStrategy;
-    /** @var int */
-    private $maxRetries;
-    /** @var LoggerInterface|null */
-    private $logger;
+    private RetryStrategyInterface $retryStrategy;
 
-    public function __construct(RetryStrategyInterface $strategy, int $maxRetries, ?LoggerInterface $logger = null)
+    public function __construct(RetryStrategyInterface $strategy, private int $maxRetries, private ?LoggerInterface $logger = null)
     {
         if ($maxRetries < 0) {
             throw new InvalidArgumentException(sprintf(
@@ -35,8 +29,6 @@ final class Runner
         }
 
         $this->retryStrategy = $strategy;
-        $this->maxRetries = $maxRetries;
-        $this->logger = $logger;
     }
 
     public static function default(): self

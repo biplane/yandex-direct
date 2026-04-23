@@ -22,8 +22,7 @@ use function is_array;
 
 final class ReportsTest extends TestCase
 {
-    /** @var MockObject&ClientInterface */
-    private $httpClient;
+    private MockObject&ClientInterface $httpClient;
 
     #[Override]
     protected function setUp(): void

@@ -9,7 +9,7 @@ use Biplane\YandexDirect\Config\SoapOptions;
 final class ConfigBuilder
 {
     /** @var array<string, mixed> */
-    private $options = [];
+    private array $options = [];
 
     public static function create(): ConfigBuilder
     {

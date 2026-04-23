@@ -13,23 +13,17 @@ use function sprintf;
 
 final class ReportRequestBuilder
 {
-    /** @var string */
-    private $processingMode = ReportRequest::PROCESSING_MODE_AUTO;
+    private string $processingMode = ReportRequest::PROCESSING_MODE_AUTO;
 
-    /** @var bool */
-    private $returnMoneyInMicros = true;
+    private bool $returnMoneyInMicros = true;
 
-    /** @var bool */
-    private $skipReportHeader = false;
+    private bool $skipReportHeader = false;
 
-    /** @var bool */
-    private $skipReportSummary = false;
+    private bool $skipReportSummary = false;
 
-    /** @var bool */
-    private $skipColumnHeader = false;
+    private bool $skipColumnHeader = false;
 
-    /** @var ReportDefinition|null  */
-    private $reportDefinition = null;
+    private ?ReportDefinition $reportDefinition = null;
 
     private function __construct()
     {

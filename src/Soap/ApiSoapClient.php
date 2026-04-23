@@ -31,26 +31,19 @@ use function trim;
 
 abstract class ApiSoapClient extends SoapClient implements ClientInterface
 {
-    /** @var Config */
-    protected $config;
-
     /** @var positive-int */
-    private $soapCallTimeout = 180;
+    private int $soapCallTimeout = 180;
 
-    /** @var Runner|null */
-    private $runner = null;
+    private ?Runner $runner = null;
 
-    /** @var SoapLogContextFactory|null  */
-    private $logContextFactory = null;
+    private ?SoapLogContextFactory $logContextFactory = null;
 
-    /** @var SoapLogger|null  */
-    private $logger = null;
+    private ?SoapLogger $logger = null;
 
-    /** @var string */
-    private $serviceName;
+    private string $serviceName;
 
     /** @param array<string, mixed> $options */
-    public function __construct(?string $wsdl, Config $config, array $options = [])
+    public function __construct(?string $wsdl, protected Config $config, array $options = [])
     {
         if ($wsdl !== null && $config->useSandbox()) {
             $wsdl = str_replace('api.direct.yandex.', 'api-sandbox.direct.yandex.', $wsdl);
@@ -64,7 +57,6 @@ abstract class ApiSoapClient extends SoapClient implements ClientInterface
 
         parent::__construct($wsdl, $options);
 
-        $this->config = $config;
         $this->serviceName = (new ReflectionClass($this))->getShortName();
     }
 

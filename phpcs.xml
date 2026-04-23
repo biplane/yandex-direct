@@ -18,10 +18,7 @@
 
     <exclude name="SlevomatCodingStandard.Classes.SuperfluousExceptionNaming.SuperfluousSuffix"/>
     <exclude name="SlevomatCodingStandard.Classes.SuperfluousInterfaceNaming.SuperfluousSuffix"/>
-    <exclude
-      name="SlevomatCodingStandard.ControlStructures.RequireNullCoalesceEqualOperator.RequiredNullCoalesceEqualOperator"/>
     <exclude name="SlevomatCodingStandard.TypeHints.DNFTypeHintFormat.DisallowedShortNullable"/>
-    <exclude name="SlevomatCodingStandard.TypeHints.PropertyTypeHint.MissingNativeTypeHint"/>
   </rule>
 
   <rule ref="Generic.Formatting.SpaceAfterCast">
@@ -55,6 +52,11 @@
   </rule>
 
   <rule ref="SlevomatCodingStandard.TypeHints.PropertyTypeHint.MissingAnyTypeHint">
+    <exclude-pattern>src/Api/V4/Contract</exclude-pattern>
+    <exclude-pattern>src/Api/V5/Contract</exclude-pattern>
+  </rule>
+
+  <rule ref="SlevomatCodingStandard.TypeHints.PropertyTypeHint.MissingNativeTypeHint">
     <exclude-pattern>src/Api/V4/Contract</exclude-pattern>
     <exclude-pattern>src/Api/V5/Contract</exclude-pattern>
   </rule>

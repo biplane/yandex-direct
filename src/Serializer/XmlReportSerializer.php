@@ -19,8 +19,7 @@ final class XmlReportSerializer implements ReportSerializerInterface
 {
     private const string XML_NAMESPACE = 'http://api.direct.yandex.com/v5/reports';
 
-    /** @var Serializer */
-    private $serializer;
+    private Serializer $serializer;
 
     public function __construct()
     {

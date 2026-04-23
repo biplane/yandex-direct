@@ -12,23 +12,17 @@ use Biplane\YandexDirect\Runner\Runner;
 
 final class ApiServiceFactoryBuilder
 {
-    /** @var int|null */
-    private $soapCallTimeout;
+    private ?int $soapCallTimeout = null;
 
-    /** @var TransactionNumberGenerator|null */
-    private $transactionNumberGenerator;
+    private ?TransactionNumberGenerator $transactionNumberGenerator = null;
 
-    /** @var Runner|null */
-    private $runner;
+    private ?Runner $runner = null;
 
-    /** @var SoapLogContextFactory|null */
-    private $logContextFactory;
+    private ?SoapLogContextFactory $logContextFactory = null;
 
-    /** @var SoapLogger|null */
-    private $logger;
+    private ?SoapLogger $logger = null;
 
-    /** @var SoapOptions|null */
-    private $soapOptions;
+    private ?SoapOptions $soapOptions = null;
 
     public static function create(): self
     {

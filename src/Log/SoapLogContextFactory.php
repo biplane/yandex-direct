@@ -9,18 +9,6 @@ use SoapFault;
 /** @psalm-import-type Context from SoapLogger */
 final class SoapLogContextFactory
 {
-    /** @var array<string> */
-    private $requestHttpHeadersToScrub;
-
-    /** @var array<string> */
-    private $requestSoapHeadersToScrub;
-
-    /** @var array<string> */
-    private $responseHttpHeadersToScrub;
-
-    /** @var array<string> */
-    private $responseSoapHeadersToScrub;
-
     /**
      * @param array<string> $requestHttpHeadersToScrub
      * @param array<string> $requestSoapHeadersToScrub
@@ -28,15 +16,11 @@ final class SoapLogContextFactory
      * @param array<string> $responseSoapHeadersToScrub
      */
     public function __construct(
-        array $requestHttpHeadersToScrub,
-        array $requestSoapHeadersToScrub,
-        array $responseHttpHeadersToScrub,
-        array $responseSoapHeadersToScrub,
+        private array $requestHttpHeadersToScrub,
+        private array $requestSoapHeadersToScrub,
+        private array $responseHttpHeadersToScrub,
+        private array $responseSoapHeadersToScrub,
     ) {
-        $this->requestHttpHeadersToScrub = $requestHttpHeadersToScrub;
-        $this->requestSoapHeadersToScrub = $requestSoapHeadersToScrub;
-        $this->responseHttpHeadersToScrub = $responseHttpHeadersToScrub;
-        $this->responseSoapHeadersToScrub = $responseSoapHeadersToScrub;
     }
 
     /**

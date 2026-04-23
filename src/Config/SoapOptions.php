@@ -17,11 +17,9 @@ use const WSDL_CACHE_NONE;
 
 final class SoapOptions
 {
-    /** @var int */
-    private $compression;
+    private int $compression;
 
-    /** @var int */
-    private $wsdlCacheType;
+    private int $wsdlCacheType;
 
     private function __construct()
     {

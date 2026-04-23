@@ -8,19 +8,11 @@ use InvalidArgumentException;
 
 final class Page
 {
-    /** @var int */
-    private $limit;
-    /** @var int|null */
-    private $offset;
-
-    private function __construct(int $limit, ?int $offset)
+    private function __construct(private int $limit, private ?int $offset = null)
     {
         if ($offset !== null && $offset < 0) {
             throw new InvalidArgumentException('Offset must be more than or equal to 0');
         }
-
-        $this->limit = $limit;
-        $this->offset = $offset;
     }
 
     public static function create(int $limit, ?int $offset = null): self

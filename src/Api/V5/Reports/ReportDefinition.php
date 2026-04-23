@@ -13,38 +13,32 @@ use function is_bool;
 
 final class ReportDefinition
 {
-    /** @var SelectionCriteria */
-    private $selectionCriteria;
+    /** @phpcsSuppress SlevomatCodingStandard.Classes.RequireConstructorPropertyPromotion.RequiredConstructorPropertyPromotion */
+    private SelectionCriteria $selectionCriteria;
 
     /** @var array<string>|null */
-    private $goals;
+    private ?array $goals = null;
 
     /** @var array<string>|null */
-    private $attributionModels;
+    private ?array $attributionModels = null;
 
     /** @var array<string> */
-    private $fieldNames = [];
+    private array $fieldNames = [];
 
-    /** @var Page|null */
-    private $page;
+    private ?Page $page = null;
 
     /** @var array<OrderBy>|null */
-    private $orderBy;
+    private ?array $orderBy = null;
 
-    /** @var string|null */
-    private $reportName;
+    private ?string $reportName = null;
 
-    /** @var string|null */
-    private $reportType;
+    private ?string $reportType = null;
 
-    /** @var string|null */
-    private $dateRangeType;
+    private ?string $dateRangeType = null;
 
-    /** @var string */
-    private $format = 'TSV';
+    private string $format = 'TSV';
 
-    /** @var string|null */
-    private $includeVAT;
+    private ?string $includeVAT = null;
 
     private function __construct(SelectionCriteria $selectionCriteria)
     {

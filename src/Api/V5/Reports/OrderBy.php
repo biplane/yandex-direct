@@ -6,16 +6,8 @@ namespace Biplane\YandexDirect\Api\V5\Reports;
 
 final class OrderBy
 {
-    /** @var string */
-    private $field;
-
-    /** @var string */
-    private $sortOrder;
-
-    private function __construct(string $field, string $sortOrder)
+    private function __construct(private string $field, private string $sortOrder)
     {
-        $this->field = $field;
-        $this->sortOrder = $sortOrder;
     }
 
     /** @psalm-param SortOrderEnum::* $sortOrder */

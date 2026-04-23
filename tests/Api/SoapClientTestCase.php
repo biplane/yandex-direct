@@ -26,7 +26,7 @@ use const WSDL_CACHE_NONE;
 abstract class SoapClientTestCase extends TestCase
 {
     /** @var array<string, Closure> */
-    private $listeners = [];
+    private array $listeners = [];
 
     #[Override]
     protected function tearDown(): void

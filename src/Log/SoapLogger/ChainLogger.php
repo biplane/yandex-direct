@@ -11,17 +11,9 @@ use Throwable;
 
 final class ChainLogger implements SoapLogger
 {
-    /** @var array<SoapLogger> */
-    private $loggers;
-
-    /** @var LoggerInterface|null */
-    private $errorLogger;
-
     /** @param array<SoapLogger> $loggers */
-    public function __construct(array $loggers, ?LoggerInterface $errorLogger = null)
+    public function __construct(private array $loggers, private ?LoggerInterface $errorLogger = null)
     {
-        $this->loggers = $loggers;
-        $this->errorLogger = $errorLogger;
     }
 
     /**

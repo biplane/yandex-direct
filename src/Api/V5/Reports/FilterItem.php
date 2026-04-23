@@ -10,21 +10,9 @@ use function is_array;
 
 final class FilterItem
 {
-    /** @var string */
-    private $field;
-
-    /** @var string */
-    private $operator;
-
-    /** @var array<string> */
-    private $values;
-
     /** @param array<string> $values */
-    private function __construct(string $field, string $operator, array $values)
+    private function __construct(private string $field, private string $operator, private array $values)
     {
-        $this->field = $field;
-        $this->operator = $operator;
-        $this->values = $values;
     }
 
     /**

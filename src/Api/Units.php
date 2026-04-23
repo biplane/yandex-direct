@@ -6,24 +6,8 @@ namespace Biplane\YandexDirect\Api;
 
 final class Units
 {
-    /** @var int */
-    private $limit;
-
-    /** @var int */
-    private $rest;
-
-    /** @var int */
-    private $spent;
-
-    /** @var string */
-    private $usedLogin;
-
-    public function __construct(int $spent, int $rest, int $limit, string $usedLogin)
+    public function __construct(private int $spent, private int $rest, private int $limit, private string $usedLogin)
     {
-        $this->spent = $spent;
-        $this->rest = $rest;
-        $this->limit = $limit;
-        $this->usedLogin = $usedLogin;
     }
 
     /**

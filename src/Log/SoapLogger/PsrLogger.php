@@ -13,17 +13,9 @@ final class PsrLogger implements SoapLogger
 {
     private const string MESSAGE = 'service={service} method={method} requestId={request_id} fault={fault}';
 
-    /** @var LoggerInterface */
-    private $logger;
-
-    /** @var string */
-    private $errorLogLevel;
-
     /** @psalm-param LogLevel::* $errorLogLevel */
-    public function __construct(LoggerInterface $logger, string $errorLogLevel = LogLevel::ERROR)
+    public function __construct(private LoggerInterface $logger, private string $errorLogLevel = LogLevel::ERROR)
     {
-        $this->logger = $logger;
-        $this->errorLogLevel = $errorLogLevel;
     }
 
     /**
