@@ -46,6 +46,10 @@
     <exclude-pattern>src/Api/V5/Contract</exclude-pattern>
   </rule>
 
+  <rule ref="SlevomatCodingStandard.Namespaces.ReferenceUsedNamesOnly.ReferenceViaFullyQualifiedName">
+    <exclude-pattern>src/Config/SoapOptions.php</exclude-pattern>
+  </rule>
+
   <rule ref="Squiz.NamingConventions.ValidVariableName.MemberNotCamelCaps">
     <exclude-pattern>src/Api/V4/Contract</exclude-pattern>
     <exclude-pattern>src/Api/V5/Contract</exclude-pattern>

@@ -16,6 +16,7 @@ use PHPUnit\Framework\TestCase;
 
 use const SOAP_1_1;
 use const SOAP_COMPRESSION_ACCEPT;
+use const SOAP_COMPRESSION_DEFLATE;
 use const SOAP_COMPRESSION_GZIP;
 use const SOAP_SINGLE_ELEMENT_ARRAYS;
 use const WSDL_CACHE_BOTH;
@@ -63,8 +64,7 @@ final class ApiServiceFactoryTest extends TestCase
     {
         $factory = new ApiServiceFactory();
         $soapOptions = Config\SoapOptions::default()
-            ->withWsdlCacheType(WSDL_CACHE_BOTH)
-            ->withCompression(SOAP_COMPRESSION_ACCEPT | SOAP_COMPRESSION_GZIP | 5);
+            ->withWsdlCacheType(WSDL_CACHE_BOTH);
         $config = new Config([
             'access_token' => 'secret',
             'soap_options' => $soapOptions,
@@ -81,7 +81,7 @@ final class ApiServiceFactoryTest extends TestCase
                 'trace' => true,
                 'exceptions' => true,
                 'keep_alive' => false,
-                'compression' => SOAP_COMPRESSION_ACCEPT | SOAP_COMPRESSION_GZIP | 5,
+                'compression' => SOAP_COMPRESSION_ACCEPT | SOAP_COMPRESSION_GZIP,
                 'cache_wsdl' => WSDL_CACHE_BOTH,
             ],
             $service->getOptions(),
@@ -98,7 +98,7 @@ final class ApiServiceFactoryTest extends TestCase
             null,
             Config\SoapOptions::default()
                 ->withWsdlCacheType(WSDL_CACHE_NONE)
-                ->withCompression(SOAP_COMPRESSION_ACCEPT | SOAP_COMPRESSION_GZIP | 5),
+                ->withCompression(SOAP_COMPRESSION_ACCEPT | SOAP_COMPRESSION_DEFLATE),
         );
 
         $service = $factory->createService(
@@ -115,7 +115,7 @@ final class ApiServiceFactoryTest extends TestCase
                 'trace' => true,
                 'exceptions' => true,
                 'keep_alive' => false,
-                'compression' => SOAP_COMPRESSION_ACCEPT | SOAP_COMPRESSION_GZIP | 5,
+                'compression' => SOAP_COMPRESSION_ACCEPT | SOAP_COMPRESSION_DEFLATE,
                 'cache_wsdl' => WSDL_CACHE_NONE,
             ],
             $service->getOptions(),
