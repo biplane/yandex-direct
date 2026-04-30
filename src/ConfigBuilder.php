@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace Biplane\YandexDirect;
 
-use Biplane\YandexDirect\Config\SoapOptions;
-
 final class ConfigBuilder
 {
     /** @var array<string, mixed> */
@@ -77,14 +75,6 @@ final class ConfigBuilder
         if ($password !== null) {
             $this->options['proxy_password'] = $password;
         }
-
-        return $this;
-    }
-
-    /** @deprecated Use `ApiServiceFactory` or `ApiServiceFactoryBuilder::setSoapOptions()` instead. */
-    public function setSoapOptions(SoapOptions $options): self
-    {
-        $this->options['soap_options'] = $options;
 
         return $this;
     }

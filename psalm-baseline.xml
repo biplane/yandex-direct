@@ -828,9 +828,6 @@
     </DeprecatedInterface>
   </file>
   <file src="src/ApiServiceFactory.php">
-    <DeprecatedMethod>
-      <code><![CDATA[getSoapOptions]]></code>
-    </DeprecatedMethod>
     <InvalidOperand>
       <code><![CDATA[$config->getProxyPort()]]></code>
     </InvalidOperand>
@@ -896,11 +893,5 @@
     <MissingClosureParamType>
       <code><![CDATA[$uri]]></code>
     </MissingClosureParamType>
-  </file>
-  <file src="tests/ConfigTest.php">
-    <DeprecatedMethod>
-      <code><![CDATA[getSoapOptions]]></code>
-      <code><![CDATA[getSoapOptions]]></code>
-    </DeprecatedMethod>
   </file>
 </files>

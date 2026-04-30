@@ -16,6 +16,7 @@
 * Удален класс `Biplane\YandexDirect\Events`
 * Удален класс `Biplane\YandexDirect\User`
 * Удален класс `Biplane\YandexDirect\UserBuilder`
+* Удалена опция `soap_options` из `Biplane\YandexDirect\Config`
 
 ## 5.20.0 [commit logs](https://github.com/biplane/yandex-direct/compare/5.19.0...5.20.0)
 

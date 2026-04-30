@@ -9,8 +9,6 @@ use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\OptionsResolver\Exception\InvalidArgumentException;
 
-use const WSDL_CACHE_MEMORY;
-
 final class ConfigTest extends TestCase
 {
     public function testWithDefaults(): void
@@ -29,12 +27,10 @@ final class ConfigTest extends TestCase
         self::assertNull($config->getProxyPort());
         self::assertNull($config->getProxyUsername());
         self::assertNull($config->getProxyPassword());
-        self::assertEquals(Config\SoapOptions::default(), $config->getSoapOptions());
     }
 
     public function testWithCustomOptions(): void
     {
-        $soapOptions = Config\SoapOptions::default()->withWsdlCacheType(WSDL_CACHE_MEMORY);
         $config = new Config([
             'access_token' => 'secret',
             'client_login' => 'foo',
@@ -43,7 +39,6 @@ final class ConfigTest extends TestCase
             'locale' => 'ru',
             'sandbox' => true,
             'use_operator_units' => true,
-            'soap_options' => $soapOptions,
         ]);
 
         self::assertEquals('secret', $config->getAccessToken());
@@ -53,7 +48,6 @@ final class ConfigTest extends TestCase
         self::assertEquals('ru', $config->getLocale(Config::API_4));
         self::assertTrue($config->useSandbox());
         self::assertTrue($config->useOperatorUnits());
-        self::assertEquals($soapOptions, $config->getSoapOptions());
     }
 
     #[DataProvider('clientLoginProvider')]

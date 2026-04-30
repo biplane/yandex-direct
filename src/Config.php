@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Biplane\YandexDirect;
 
-use Biplane\YandexDirect\Config\SoapOptions;
 use Symfony\Component\OptionsResolver\Exception\InvalidArgumentException;
 use Symfony\Component\OptionsResolver\Options;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -120,12 +119,6 @@ final class Config
         return $this->options['proxy_username'] !== null;
     }
 
-    /** @deprecated Use `ApiServiceFactory` instead. */
-    public function getSoapOptions(): SoapOptions
-    {
-        return $this->options['soap_options'];
-    }
-
     private function configureOptions(OptionsResolver $resolver): void
     {
         $resolver
@@ -141,7 +134,6 @@ final class Config
                 'proxy_port' => null,
                 'proxy_username' => null,
                 'proxy_password' => null,
-                'soap_options' => SoapOptions::default(),
             ])
             ->setAllowedValues('locale', ['en', 'ru', 'tr', 'ua', 'uk'])
             ->setAllowedTypes('access_token', 'string')
@@ -154,7 +146,6 @@ final class Config
             ->setAllowedTypes('proxy_port', ['int', 'null'])
             ->setAllowedTypes('proxy_username', ['string', 'null'])
             ->setAllowedTypes('proxy_password', ['string', 'null'])
-            ->setAllowedTypes('soap_options', [SoapOptions::class])
             ->setNormalizer('client_login', static function (Options $options, $value) {
                 if (is_string($value)) {
                     if (! str_contains($value, '@')) {
@@ -166,7 +157,5 @@ final class Config
 
                 return $value;
             });
-
-        $resolver->setDeprecated('soap_options', 'biplane/yandex-direct', '5.15.0');
     }
 }

@@ -19,7 +19,7 @@ use const SOAP_COMPRESSION_ACCEPT;
 use const SOAP_COMPRESSION_DEFLATE;
 use const SOAP_COMPRESSION_GZIP;
 use const SOAP_SINGLE_ELEMENT_ARRAYS;
-use const WSDL_CACHE_BOTH;
+use const WSDL_CACHE_DISK;
 use const WSDL_CACHE_NONE;
 
 final class ApiServiceFactoryTest extends TestCase
@@ -63,12 +63,7 @@ final class ApiServiceFactoryTest extends TestCase
     public function testPopulateSoapOptions(): void
     {
         $factory = new ApiServiceFactory();
-        $soapOptions = Config\SoapOptions::default()
-            ->withWsdlCacheType(WSDL_CACHE_BOTH);
-        $config = new Config([
-            'access_token' => 'secret',
-            'soap_options' => $soapOptions,
-        ]);
+        $config = new Config(['access_token' => 'secret']);
 
         $service = $factory->createService($config, MockSoapClient::class);
 
@@ -82,7 +77,7 @@ final class ApiServiceFactoryTest extends TestCase
                 'exceptions' => true,
                 'keep_alive' => false,
                 'compression' => SOAP_COMPRESSION_ACCEPT | SOAP_COMPRESSION_GZIP,
-                'cache_wsdl' => WSDL_CACHE_BOTH,
+                'cache_wsdl' => WSDL_CACHE_DISK,
             ],
             $service->getOptions(),
         );
@@ -96,8 +91,7 @@ final class ApiServiceFactoryTest extends TestCase
             null,
             null,
             null,
-            Config\SoapOptions::default()
-                ->withWsdlCacheType(WSDL_CACHE_NONE)
+            Config\SoapOptions::withoutWsdlCache()
                 ->withCompression(SOAP_COMPRESSION_ACCEPT | SOAP_COMPRESSION_DEFLATE),
         );
 

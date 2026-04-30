@@ -24,7 +24,7 @@ final class ApiServiceFactory
 {
     private Runner $runner;
     private SoapLogContextFactory $logContextFactory;
-    private ?SoapOptions $soapOptions = null;
+    private SoapOptions $soapOptions;
 
     public function __construct(
         ?Runner $runner = null,
@@ -35,7 +35,7 @@ final class ApiServiceFactory
         ?SoapOptions $options = null,
     ) {
         $this->runner = $runner ?? Runner::default();
-        $this->soapOptions = $options;
+        $this->soapOptions = $options ?? SoapOptions::default();
         $this->logContextFactory = $logContextFactory ?? new SoapLogContextFactory(
             ['authorization', 'member-authorization'],
             ['token'],
@@ -136,9 +136,8 @@ final class ApiServiceFactory
             $options['stream_context'] = stream_context_create($contextOptions);
         }
 
-        $soapOptions = $this->soapOptions ?? $config->getSoapOptions();
-        $options['compression'] = $soapOptions->getCompression();
-        $options['cache_wsdl'] = $soapOptions->getWsdlCacheType();
+        $options['compression'] = $this->soapOptions->getCompression();
+        $options['cache_wsdl'] = $this->soapOptions->getWsdlCacheType();
 
         return $options;
     }
