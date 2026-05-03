@@ -14,6 +14,7 @@
   <file>src/</file>
   <file>tests/</file>
   <file>config.php</file>
+  <file>rector.php</file>
 
   <rule ref="Doctrine">
     <exclude name="Generic.Formatting.MultipleStatementAlignment" />
