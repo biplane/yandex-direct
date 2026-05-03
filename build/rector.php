@@ -10,7 +10,7 @@ return RectorConfig::configure()
         __DIR__ . '/../src/Api/V5',
     ])
     ->withCache(__DIR__ . '/.cache/rector')
-    ->withDowngradeSets(php72: true)
+    ->withDowngradeSets(php83: true)
     ->withTypeCoverageLevel(0)
     ->withDeadCodeLevel(0)
     ->withCodeQualityLevel(0);

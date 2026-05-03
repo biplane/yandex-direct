@@ -11,47 +11,47 @@ class EventsLogItem
     /**
      * @var int|null
      */
-    protected int|null $CampaignID = null;
+    protected $CampaignID = null;
 
     /**
      * @var int|null
      */
-    protected int|null $BannerID = null;
+    protected $BannerID = null;
 
     /**
      * @var int|null
      */
-    protected int|null $PhraseID = null;
+    protected $PhraseID = null;
 
     /**
      * @var int|null
      */
-    protected int|null $AccountID = null;
+    protected $AccountID = null;
 
     /**
      * @var string|null
      */
-    protected string|null $TextDescription = null;
+    protected $TextDescription = null;
 
     /**
      * @var string
      */
-    protected string $EventType;
+    protected $EventType;
 
     /**
      * @var string
      */
-    protected string $Timestamp;
+    protected $Timestamp;
 
     /**
      * @var string
      */
-    protected string $EventName;
+    protected $EventName;
 
     /**
      * @var \Acme\Api\Dto\EventsLogItemAttributes|null
      */
-    protected \Acme\Api\Dto\EventsLogItemAttributes|null $Attributes = null;
+    protected $Attributes = null;
 
     /**
      * Create a new instance.

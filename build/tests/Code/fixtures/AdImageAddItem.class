@@ -11,7 +11,7 @@ class AdImageAddItem
     /**
      * @var string
      */
-    protected string $ImageData;
+    protected $ImageData;
 
 //    Can be omitted.
 //    protected $Type;
@@ -19,7 +19,7 @@ class AdImageAddItem
     /**
      * @var string
      */
-    protected string $Name;
+    protected $Name;
 
     /**
      * Create a new instance.

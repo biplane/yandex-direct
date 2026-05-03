@@ -19,7 +19,6 @@ use Laminas\Code\Generator\DocBlockGenerator;
 use Laminas\Code\Generator\FileGenerator;
 use Laminas\Code\Generator\MethodGenerator;
 use Laminas\Code\Generator\ParameterGenerator;
-use Laminas\Code\Generator\TypeGenerator as LaminasTypeGenerator;
 
 use function count;
 use function implode;
@@ -91,7 +90,6 @@ final class TypeGenerator
         $generator->setCanBeOmitted($property->canBeOmitted());
 
         if (! $property->canBeOmitted()) {
-            $generator->setType(LaminasTypeGenerator::fromTypeString($property->asPhpType()));
             $generator->setDocBlock(
                 (new DocBlockGenerator())
                     ->setWordWrap(false)
