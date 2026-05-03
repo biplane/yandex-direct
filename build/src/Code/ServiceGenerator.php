@@ -87,6 +87,7 @@ final class ServiceGenerator
             ->setParameter(new ParameterGenerator('options', 'array'))
             ->setDocBlock(
                 (new DocBlockGenerator())
+                    ->setWordWrap(false)
                     ->setShortDescription('Constructor')
                     ->setTag(new ParamTag('options', ['array<string, mixed>'])),
             )
@@ -98,6 +99,7 @@ final class ServiceGenerator
     private function createMethod(ServiceMethod $method): MethodGenerator
     {
         $docGenerator = (new DocBlockGenerator())
+            ->setWordWrap(false)
             ->setShortDescription(sprintf('Calls operation: %s', $method->getOperationName()))
             ->setLongDescription($method->getDoc());
 
