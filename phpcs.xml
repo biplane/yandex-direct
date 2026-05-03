@@ -18,7 +18,6 @@
 
     <exclude name="SlevomatCodingStandard.Classes.SuperfluousExceptionNaming.SuperfluousSuffix"/>
     <exclude name="SlevomatCodingStandard.Classes.SuperfluousInterfaceNaming.SuperfluousSuffix"/>
-    <exclude name="SlevomatCodingStandard.TypeHints.DNFTypeHintFormat.DisallowedShortNullable"/>
   </rule>
 
   <rule ref="Generic.Formatting.SpaceAfterCast">
@@ -33,6 +32,15 @@
       <property name="linesCountBeforeDeclare" value="1"/>
       <property name="spacesCountAroundEqualsSign" value="0"/>
       <property name="linesCountAfterDeclare" value="1"/>
+    </properties>
+  </rule>
+
+  <rule ref="SlevomatCodingStandard.TypeHints.DNFTypeHintFormat">
+    <properties>
+      <property name="withSpacesAroundOperators" value="no"/>
+      <property name="withSpacesInsideParentheses" value="no"/>
+      <property name="shortNullable" value="yes"/>
+      <property name="nullPosition" value="last"/>
     </properties>
   </rule>
 
