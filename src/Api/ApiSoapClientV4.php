@@ -120,14 +120,15 @@ class ApiSoapClientV4 extends ApiSoapClient
                 $detailMessage = null;
             }
 
-            $exception = new ApiException($fault->faultstring, $code, $detailMessage, $fault);
             $requestId = $this->getRequestId();
 
-            if ($requestId !== '') {
-                $exception->setRequestId($requestId);
-            }
-
-            return $exception;
+            return new ApiException(
+                message: $fault->faultstring,
+                code: $code,
+                detailMessage: $detailMessage,
+                previous: $fault,
+                requestId: $requestId !== '' ? $requestId : null,
+            );
         }
 
         return null;

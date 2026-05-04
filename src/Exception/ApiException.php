@@ -9,9 +9,7 @@ use Throwable;
 
 final class ApiException extends RuntimeException
 {
-    private ?string $requestId = null;
-
-    public function __construct(string $message, int $code, private ?string $detailMessage, ?Throwable $previous = null)
+    public function __construct(string $message, int $code, private readonly ?string $detailMessage, ?Throwable $previous = null, private readonly ?string $requestId = null)
     {
         if ($detailMessage !== null) {
             $message .= ': ' . $detailMessage;
@@ -28,11 +26,5 @@ final class ApiException extends RuntimeException
     public function getRequestId(): ?string
     {
         return $this->requestId;
-    }
-
-    /** @internal */
-    public function setRequestId(string $requestId): void
-    {
-        $this->requestId = $requestId;
     }
 }

@@ -73,17 +73,15 @@ class ApiSoapClientV5 extends ApiSoapClient
         if (is_object($detail) && property_exists($detail, 'FaultResponse')) {
             // phpcs:disable Squiz.NamingConventions.ValidVariableName.MemberNotCamelCaps
 
-            $exception = new ApiException(
-                $fault->faultstring,
-                (int)$detail->FaultResponse->errorCode,
-                $detail->FaultResponse->errorDetail,
-                $fault,
+            return new ApiException(
+                message: $fault->faultstring,
+                code: (int)$detail->FaultResponse->errorCode,
+                detailMessage: $detail->FaultResponse->errorDetail,
+                previous: $fault,
+                requestId: $detail->FaultResponse->requestId,
             );
-            $exception->setRequestId($detail->FaultResponse->requestId);
 
             // phpcs:enable Squiz.NamingConventions.ValidVariableName.MemberNotCamelCaps
-
-            return $exception;
         }
 
         return null;

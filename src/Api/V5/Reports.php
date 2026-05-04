@@ -224,19 +224,21 @@ class Reports implements ApiClientInterface
             $apiError = $this->serializer->deserializeApiError((string)$response->getBody());
 
             if ($apiError !== null) {
-                $exception = new ApiException(
-                    $apiError->errorMessage,
-                    $apiError->errorCode,
-                    $apiError->errorDetail,
+                return new ApiException(
+                    message: $apiError->errorMessage,
+                    code: $apiError->errorCode,
+                    detailMessage: $apiError->errorDetail,
+                    requestId: $apiError->requestId,
                 );
-                $exception->setRequestId($apiError->requestId);
-
-                return $exception;
             }
         }
 
         if ($response->getStatusCode() === 500) {
-            return new ApiException('Internal Server Error', $response->getStatusCode(), null);
+            return new ApiException(
+                message: 'Internal Server Error',
+                code: $response->getStatusCode(),
+                detailMessage: null,
+            );
         }
 
         throw new DownloadReportException(
