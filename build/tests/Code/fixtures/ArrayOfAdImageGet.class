@@ -5,7 +5,7 @@ namespace Acme\Api\Dto;
 /**
  * Auto-generated code.
  *
- * @implements \IteratorAggregate<int, \Acme\Api\Dto\AdImageGetItem>
+ * @implements \IteratorAggregate<int<0, max>, \Acme\Api\Dto\AdImageGetItem>
  */
 #[\AllowDynamicProperties]
 class ArrayOfAdImageGet implements \IteratorAggregate, \Countable
@@ -56,7 +56,7 @@ class ArrayOfAdImageGet implements \IteratorAggregate, \Countable
     }
 
     /**
-     * @return \ArrayIterator<int, \Acme\Api\Dto\AdImageGetItem>
+     * @return \ArrayIterator<int<0, max>, \Acme\Api\Dto\AdImageGetItem>
      */
     #[\Override]
     public function getIterator(): \ArrayIterator
