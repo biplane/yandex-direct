@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5;
 
 use Biplane\YandexDirect\Api\ApiSoapClientV5;
-use Biplane\YandexDirect\Api\V5\Contract\GetDictionariesRequest;
-use Biplane\YandexDirect\Api\V5\Contract\GetDictionariesResponse;
-use Biplane\YandexDirect\Api\V5\Contract\GetGeoRegionsRequest;
-use Biplane\YandexDirect\Api\V5\Contract\GetGeoRegionsResponse;
+use Biplane\YandexDirect\Api\V5\Dictionaries\GetGeoRegionsRequest;
+use Biplane\YandexDirect\Api\V5\Dictionaries\GetGeoRegionsResponse;
+use Biplane\YandexDirect\Api\V5\Dictionaries\GetRequest;
+use Biplane\YandexDirect\Api\V5\Dictionaries\GetResponse;
 use Biplane\YandexDirect\Config;
 
 /**
@@ -26,35 +26,35 @@ class Dictionaries extends ApiSoapClientV5
     public function __construct(Config $config, array $options)
     {
         $options['classmap'] = [
-            'GetRequest' => 'Biplane\YandexDirect\Api\V5\Contract\GetDictionariesRequest',
-            'GetResponse' => 'Biplane\YandexDirect\Api\V5\Contract\GetDictionariesResponse',
-            'CurrenciesItem' => 'Biplane\YandexDirect\Api\V5\Contract\CurrenciesItem',
-            'ConstantsItem' => 'Biplane\YandexDirect\Api\V5\Contract\ConstantsItem',
-            'MetroStationsItem' => 'Biplane\YandexDirect\Api\V5\Contract\MetroStationsItem',
-            'GeoRegionsItem' => 'Biplane\YandexDirect\Api\V5\Contract\GeoRegionsItem',
-            'GeoRegionNamesItem' => 'Biplane\YandexDirect\Api\V5\Contract\GeoRegionNamesItem',
-            'TimeZonesItem' => 'Biplane\YandexDirect\Api\V5\Contract\TimeZonesItem',
-            'AdCategoriesItem' => 'Biplane\YandexDirect\Api\V5\Contract\AdCategoriesItem',
-            'OperationSystemVersionsItem' => 'Biplane\YandexDirect\Api\V5\Contract\OperationSystemVersionsItem',
-            'ProductivityAssertionsItem' => 'Biplane\YandexDirect\Api\V5\Contract\ProductivityAssertionsItem',
-            'SupplySidePlatformsItem' => 'Biplane\YandexDirect\Api\V5\Contract\SupplySidePlatformsItem',
-            'InterestsItem' => 'Biplane\YandexDirect\Api\V5\Contract\InterestsItem',
-            'AudienceCriteriaTypesItem' => 'Biplane\YandexDirect\Api\V5\Contract\AudienceCriteriaTypesItem',
-            'AudienceDemographicProfilesItem' => 'Biplane\YandexDirect\Api\V5\Contract\AudienceDemographicProfilesItem',
-            'AudienceInterestsItem' => 'Biplane\YandexDirect\Api\V5\Contract\AudienceInterestsItem',
-            'FilterSchemasItem' => 'Biplane\YandexDirect\Api\V5\Contract\FilterSchemasItem',
-            'FilterFieldItem' => 'Biplane\YandexDirect\Api\V5\Contract\FilterFieldItem',
-            'EnumFilterFieldProps' => 'Biplane\YandexDirect\Api\V5\Contract\EnumFilterFieldProps',
-            'NumberFilterFieldProps' => 'Biplane\YandexDirect\Api\V5\Contract\NumberFilterFieldProps',
-            'StringFilterFieldProps' => 'Biplane\YandexDirect\Api\V5\Contract\StringFilterFieldProps',
-            'FilterFieldOperator' => 'Biplane\YandexDirect\Api\V5\Contract\FilterFieldOperator',
-            'GetGeoRegionsRequest' => 'Biplane\YandexDirect\Api\V5\Contract\GetGeoRegionsRequest',
-            'GeoRegionsSelectionCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\GeoRegionsSelectionCriteria',
-            'GetRequestGeneral' => 'Biplane\YandexDirect\Api\V5\Contract\GetRequestGeneral',
-            'LimitOffset' => 'Biplane\YandexDirect\Api\V5\Contract\LimitOffset',
-            'GetGeoRegionsResponse' => 'Biplane\YandexDirect\Api\V5\Contract\GetGeoRegionsResponse',
-            'GeoRegionGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\GeoRegionGetItem',
-            'GetResponseGeneral' => 'Biplane\YandexDirect\Api\V5\Contract\GetResponseGeneral',
+            'GetRequest' => 'Biplane\YandexDirect\Api\V5\Dictionaries\GetRequest',
+            'GetResponse' => 'Biplane\YandexDirect\Api\V5\Dictionaries\GetResponse',
+            'CurrenciesItem' => 'Biplane\YandexDirect\Api\V5\Dictionaries\CurrenciesItem',
+            'ConstantsItem' => 'Biplane\YandexDirect\Api\V5\Dictionaries\ConstantsItem',
+            'MetroStationsItem' => 'Biplane\YandexDirect\Api\V5\Dictionaries\MetroStationsItem',
+            'GeoRegionsItem' => 'Biplane\YandexDirect\Api\V5\Dictionaries\GeoRegionsItem',
+            'GeoRegionNamesItem' => 'Biplane\YandexDirect\Api\V5\Dictionaries\GeoRegionNamesItem',
+            'TimeZonesItem' => 'Biplane\YandexDirect\Api\V5\Dictionaries\TimeZonesItem',
+            'AdCategoriesItem' => 'Biplane\YandexDirect\Api\V5\Dictionaries\AdCategoriesItem',
+            'OperationSystemVersionsItem' => 'Biplane\YandexDirect\Api\V5\Dictionaries\OperationSystemVersionsItem',
+            'ProductivityAssertionsItem' => 'Biplane\YandexDirect\Api\V5\Dictionaries\ProductivityAssertionsItem',
+            'SupplySidePlatformsItem' => 'Biplane\YandexDirect\Api\V5\Dictionaries\SupplySidePlatformsItem',
+            'InterestsItem' => 'Biplane\YandexDirect\Api\V5\Dictionaries\InterestsItem',
+            'AudienceCriteriaTypesItem' => 'Biplane\YandexDirect\Api\V5\Dictionaries\AudienceCriteriaTypesItem',
+            'AudienceDemographicProfilesItem' => 'Biplane\YandexDirect\Api\V5\Dictionaries\AudienceDemographicProfilesItem',
+            'AudienceInterestsItem' => 'Biplane\YandexDirect\Api\V5\Dictionaries\AudienceInterestsItem',
+            'FilterSchemasItem' => 'Biplane\YandexDirect\Api\V5\Dictionaries\FilterSchemasItem',
+            'FilterFieldItem' => 'Biplane\YandexDirect\Api\V5\Dictionaries\FilterFieldItem',
+            'EnumFilterFieldProps' => 'Biplane\YandexDirect\Api\V5\Dictionaries\EnumFilterFieldProps',
+            'NumberFilterFieldProps' => 'Biplane\YandexDirect\Api\V5\Dictionaries\NumberFilterFieldProps',
+            'StringFilterFieldProps' => 'Biplane\YandexDirect\Api\V5\Dictionaries\StringFilterFieldProps',
+            'FilterFieldOperator' => 'Biplane\YandexDirect\Api\V5\Dictionaries\FilterFieldOperator',
+            'GetGeoRegionsRequest' => 'Biplane\YandexDirect\Api\V5\Dictionaries\GetGeoRegionsRequest',
+            'GeoRegionsSelectionCriteria' => 'Biplane\YandexDirect\Api\V5\Dictionaries\GeoRegionsSelectionCriteria',
+            'GetRequestGeneral' => 'Biplane\YandexDirect\Api\V5\General\GetRequestGeneral',
+            'LimitOffset' => 'Biplane\YandexDirect\Api\V5\General\LimitOffset',
+            'GetGeoRegionsResponse' => 'Biplane\YandexDirect\Api\V5\Dictionaries\GetGeoRegionsResponse',
+            'GeoRegionGetItem' => 'Biplane\YandexDirect\Api\V5\Dictionaries\GeoRegionGetItem',
+            'GetResponseGeneral' => 'Biplane\YandexDirect\Api\V5\General\GetResponseGeneral',
         ];
 
         parent::__construct(self::ENDPOINT, $config, $options);
@@ -63,7 +63,7 @@ class Dictionaries extends ApiSoapClientV5
     /**
      * Calls operation: get
      */
-    public function get(GetDictionariesRequest $parameters): GetDictionariesResponse
+    public function get(GetRequest $parameters): GetResponse
     {
         return $this->__soapCall('get', [$parameters]);
     }

@@ -5,6 +5,25 @@
 ### Changed
 
 * [**BC break**] Минимальная поддерживаемся версия PHP 8.3
+* [**BC break**] Теперь DTO для каждого сервиса имеют отдельный namespace.
+  Что позволяет избежать конфликтов в именах классов.
+  Некоторые примеры того, как было/стало:
+  ```diff
+  - Biplane\YandexDirect\Api\V4\Contract\AccountActionResult
+  + Biplane\YandexDirect\Api\V4\YandexApiService\AccountActionResult
+  - Biplane\YandexDirect\Api\V5\Contract\Callout
+  + Biplane\YandexDirect\Api\V5\AdExtensionTypes\Callout
+  - Biplane\YandexDirect\Api\V5\Contract\GetAdExtensionsRequest
+  + Biplane\YandexDirect\Api\V5\AdExtensions\GetRequest
+  - Biplane\YandexDirect\Api\V5\Contract\AdImageGetItemShort
+  + Biplane\YandexDirect\Api\V5\Ads\AdImageGetItem
+  + Biplane\YandexDirect\Api\V5\AdImages\AdImageGetItem
+  ```
+* [**BC break**] Переименован класс сервиса для работы с API V4.Live
+  ```diff
+  - Biplane\YandexDirect\Api\V4\YandexAPIService
+  + Biplane\YandexDirect\Api\V4\YandexApiService
+  ```
 
 ### Removed
 

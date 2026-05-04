@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Biplane\Tests\YandexDirect\Serializer;
 
-use Biplane\YandexDirect\Api\V5\Contract\AttributionModelEnum;
+use Biplane\YandexDirect\Api\V5\General\AttributionModelEnum;
 use Biplane\YandexDirect\Api\V5\Reports\DateRangeTypeEnum;
 use Biplane\YandexDirect\Api\V5\Reports\FieldEnum;
 use Biplane\YandexDirect\Api\V5\Reports\FilterItem;

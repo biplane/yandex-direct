@@ -1,0 +1,24 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Biplane\YandexDirect\Api\V5\AdGroups;
+
+use AllowDynamicProperties;
+
+/**
+ * Auto-generated code.
+ */
+#[AllowDynamicProperties]
+class CpmBannerKeywordsAdGroupAdd
+{
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create(): static
+    {
+        return new static();
+    }
+}

@@ -5,24 +5,24 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5;
 
 use Biplane\YandexDirect\Api\ApiSoapClientV5;
-use Biplane\YandexDirect\Api\V5\Contract\AddAdsRequest;
-use Biplane\YandexDirect\Api\V5\Contract\AddAdsResponse;
-use Biplane\YandexDirect\Api\V5\Contract\ArchiveAdsRequest;
-use Biplane\YandexDirect\Api\V5\Contract\ArchiveAdsResponse;
-use Biplane\YandexDirect\Api\V5\Contract\DeleteAdsRequest;
-use Biplane\YandexDirect\Api\V5\Contract\DeleteAdsResponse;
-use Biplane\YandexDirect\Api\V5\Contract\GetAdsRequest;
-use Biplane\YandexDirect\Api\V5\Contract\GetAdsResponse;
-use Biplane\YandexDirect\Api\V5\Contract\ModerateAdsRequest;
-use Biplane\YandexDirect\Api\V5\Contract\ModerateAdsResponse;
-use Biplane\YandexDirect\Api\V5\Contract\ResumeAdsRequest;
-use Biplane\YandexDirect\Api\V5\Contract\ResumeAdsResponse;
-use Biplane\YandexDirect\Api\V5\Contract\SuspendAdsRequest;
-use Biplane\YandexDirect\Api\V5\Contract\SuspendAdsResponse;
-use Biplane\YandexDirect\Api\V5\Contract\UnarchiveAdsRequest;
-use Biplane\YandexDirect\Api\V5\Contract\UnarchiveAdsResponse;
-use Biplane\YandexDirect\Api\V5\Contract\UpdateAdsRequest;
-use Biplane\YandexDirect\Api\V5\Contract\UpdateAdsResponse;
+use Biplane\YandexDirect\Api\V5\Ads\AddRequest;
+use Biplane\YandexDirect\Api\V5\Ads\AddResponse;
+use Biplane\YandexDirect\Api\V5\Ads\ArchiveRequest;
+use Biplane\YandexDirect\Api\V5\Ads\ArchiveResponse;
+use Biplane\YandexDirect\Api\V5\Ads\DeleteRequest;
+use Biplane\YandexDirect\Api\V5\Ads\DeleteResponse;
+use Biplane\YandexDirect\Api\V5\Ads\GetRequest;
+use Biplane\YandexDirect\Api\V5\Ads\GetResponse;
+use Biplane\YandexDirect\Api\V5\Ads\ModerateRequest;
+use Biplane\YandexDirect\Api\V5\Ads\ModerateResponse;
+use Biplane\YandexDirect\Api\V5\Ads\ResumeRequest;
+use Biplane\YandexDirect\Api\V5\Ads\ResumeResponse;
+use Biplane\YandexDirect\Api\V5\Ads\SuspendRequest;
+use Biplane\YandexDirect\Api\V5\Ads\SuspendResponse;
+use Biplane\YandexDirect\Api\V5\Ads\UnarchiveRequest;
+use Biplane\YandexDirect\Api\V5\Ads\UnarchiveResponse;
+use Biplane\YandexDirect\Api\V5\Ads\UpdateRequest;
+use Biplane\YandexDirect\Api\V5\Ads\UpdateResponse;
 use Biplane\YandexDirect\Config;
 
 /**
@@ -40,117 +40,117 @@ class Ads extends ApiSoapClientV5
     public function __construct(Config $config, array $options)
     {
         $options['classmap'] = [
-            'AddRequest' => 'Biplane\YandexDirect\Api\V5\Contract\AddAdsRequest',
-            'AdAddItem' => 'Biplane\YandexDirect\Api\V5\Contract\AdAddItem',
-            'TextAdAdd' => 'Biplane\YandexDirect\Api\V5\Contract\TextAdAdd',
-            'VideoExtensionAddItem' => 'Biplane\YandexDirect\Api\V5\Contract\VideoExtensionAddItem',
-            'PriceExtensionAddItem' => 'Biplane\YandexDirect\Api\V5\Contract\PriceExtensionAddItem',
-            'TextAdAddBase' => 'Biplane\YandexDirect\Api\V5\Contract\TextAdAddBase',
-            'ResponsiveAdAdd' => 'Biplane\YandexDirect\Api\V5\Contract\ResponsiveAdAdd',
-            'DynamicTextAdAdd' => 'Biplane\YandexDirect\Api\V5\Contract\DynamicTextAdAdd',
-            'MobileAppAdAdd' => 'Biplane\YandexDirect\Api\V5\Contract\MobileAppAdAdd',
-            'MobileAppAdFeatureItem' => 'Biplane\YandexDirect\Api\V5\Contract\MobileAppAdFeatureItem',
-            'TextImageAdAdd' => 'Biplane\YandexDirect\Api\V5\Contract\TextImageAdAdd',
-            'ImageAdAddBase' => 'Biplane\YandexDirect\Api\V5\Contract\ImageAdAddBase',
-            'MobileAppImageAdAdd' => 'Biplane\YandexDirect\Api\V5\Contract\MobileAppImageAdAdd',
-            'TextAdBuilderAdAdd' => 'Biplane\YandexDirect\Api\V5\Contract\TextAdBuilderAdAdd',
-            'AdBuilderAdAddBase' => 'Biplane\YandexDirect\Api\V5\Contract\AdBuilderAdAddBase',
-            'AdBuilderAdAddItem' => 'Biplane\YandexDirect\Api\V5\Contract\AdBuilderAdAddItem',
-            'MobileAppAdBuilderAdAdd' => 'Biplane\YandexDirect\Api\V5\Contract\MobileAppAdBuilderAdAdd',
-            'MobileAppCpcVideoAdBuilderAdAdd' => 'Biplane\YandexDirect\Api\V5\Contract\MobileAppCpcVideoAdBuilderAdAdd',
-            'CpmBannerAdBuilderAdAdd' => 'Biplane\YandexDirect\Api\V5\Contract\CpmBannerAdBuilderAdAdd',
-            'CpcVideoAdBuilderAdAdd' => 'Biplane\YandexDirect\Api\V5\Contract\CpcVideoAdBuilderAdAdd',
-            'CpmVideoAdBuilderAdAdd' => 'Biplane\YandexDirect\Api\V5\Contract\CpmVideoAdBuilderAdAdd',
-            'SmartAdBuilderAdAdd' => 'Biplane\YandexDirect\Api\V5\Contract\SmartAdBuilderAdAdd',
-            'ShoppingAdAdd' => 'Biplane\YandexDirect\Api\V5\Contract\ShoppingAdAdd',
-            'FeedFilterConditionItem' => 'Biplane\YandexDirect\Api\V5\Contract\FeedFilterConditionItem',
-            'ListingAdAdd' => 'Biplane\YandexDirect\Api\V5\Contract\ListingAdAdd',
-            'AdAddItemBase' => 'Biplane\YandexDirect\Api\V5\Contract\AdAddItemBase',
-            'AddResponse' => 'Biplane\YandexDirect\Api\V5\Contract\AddAdsResponse',
-            'ActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\ActionResult',
-            'ActionResultBase' => 'Biplane\YandexDirect\Api\V5\Contract\ActionResultBase',
-            'ExceptionNotification' => 'Biplane\YandexDirect\Api\V5\Contract\ExceptionNotification',
-            'UpdateRequest' => 'Biplane\YandexDirect\Api\V5\Contract\UpdateAdsRequest',
-            'AdUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\AdUpdateItem',
-            'TextAdUpdate' => 'Biplane\YandexDirect\Api\V5\Contract\TextAdUpdate',
-            'VideoExtensionUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\VideoExtensionUpdateItem',
-            'PriceExtensionUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\PriceExtensionUpdateItem',
-            'TextAdUpdateBase' => 'Biplane\YandexDirect\Api\V5\Contract\TextAdUpdateBase',
-            'AdExtensionSetting' => 'Biplane\YandexDirect\Api\V5\Contract\AdExtensionSetting',
-            'AdExtensionSettingItem' => 'Biplane\YandexDirect\Api\V5\Contract\AdExtensionSettingItem',
-            'ResponsiveAdUpdate' => 'Biplane\YandexDirect\Api\V5\Contract\ResponsiveAdUpdate',
-            'DynamicTextAdUpdate' => 'Biplane\YandexDirect\Api\V5\Contract\DynamicTextAdUpdate',
-            'MobileAppAdUpdate' => 'Biplane\YandexDirect\Api\V5\Contract\MobileAppAdUpdate',
-            'MobileAppAdBase' => 'Biplane\YandexDirect\Api\V5\Contract\MobileAppAdBase',
-            'TextImageAdUpdate' => 'Biplane\YandexDirect\Api\V5\Contract\TextImageAdUpdate',
-            'ImageAdUpdateBase' => 'Biplane\YandexDirect\Api\V5\Contract\ImageAdUpdateBase',
-            'MobileAppImageAdUpdate' => 'Biplane\YandexDirect\Api\V5\Contract\MobileAppImageAdUpdate',
-            'MobileAppCpcVideoAdBuilderAdUpdate' => 'Biplane\YandexDirect\Api\V5\Contract\MobileAppCpcVideoAdBuilderAdUpdate',
-            'AdBuilderAdUpdateBase' => 'Biplane\YandexDirect\Api\V5\Contract\AdBuilderAdUpdateBase',
-            'AdBuilderAdUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\AdBuilderAdUpdateItem',
-            'TextAdBuilderAdUpdate' => 'Biplane\YandexDirect\Api\V5\Contract\TextAdBuilderAdUpdate',
-            'MobileAppAdBuilderAdUpdate' => 'Biplane\YandexDirect\Api\V5\Contract\MobileAppAdBuilderAdUpdate',
-            'CpcVideoAdBuilderAdUpdate' => 'Biplane\YandexDirect\Api\V5\Contract\CpcVideoAdBuilderAdUpdate',
-            'CpmBannerAdBuilderAdUpdate' => 'Biplane\YandexDirect\Api\V5\Contract\CpmBannerAdBuilderAdUpdate',
-            'CpmVideoAdBuilderAdUpdate' => 'Biplane\YandexDirect\Api\V5\Contract\CpmVideoAdBuilderAdUpdate',
-            'SmartAdBuilderAdUpdate' => 'Biplane\YandexDirect\Api\V5\Contract\SmartAdBuilderAdUpdate',
-            'ShoppingAdUpdate' => 'Biplane\YandexDirect\Api\V5\Contract\ShoppingAdUpdate',
-            'ArrayOfFeedFilterCondition' => 'Biplane\YandexDirect\Api\V5\Contract\ArrayOfFeedFilterCondition',
-            'ListingAdUpdate' => 'Biplane\YandexDirect\Api\V5\Contract\ListingAdUpdate',
-            'UpdateResponse' => 'Biplane\YandexDirect\Api\V5\Contract\UpdateAdsResponse',
-            'GetRequest' => 'Biplane\YandexDirect\Api\V5\Contract\GetAdsRequest',
-            'AdsSelectionCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\AdsSelectionCriteria',
-            'GetRequestGeneral' => 'Biplane\YandexDirect\Api\V5\Contract\GetRequestGeneral',
-            'LimitOffset' => 'Biplane\YandexDirect\Api\V5\Contract\LimitOffset',
-            'GetResponse' => 'Biplane\YandexDirect\Api\V5\Contract\GetAdsResponse',
-            'AdGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\AdGetItem',
-            'ArrayOfAdCategoryEnum' => 'Biplane\YandexDirect\Api\V5\Contract\ArrayOfAdCategoryEnum',
-            'TextAdGet' => 'Biplane\YandexDirect\Api\V5\Contract\TextAdGet',
-            'ExtensionModeration' => 'Biplane\YandexDirect\Api\V5\Contract\ExtensionModeration',
-            'VideoExtensionGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\VideoExtensionGetItem',
-            'PriceExtensionGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\PriceExtensionGetItem',
-            'TextAdGetBase' => 'Biplane\YandexDirect\Api\V5\Contract\TextAdGetBase',
-            'AdExtensionAdGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\AdExtensionAdGetItem',
-            'DynamicTextAdGet' => 'Biplane\YandexDirect\Api\V5\Contract\DynamicTextAdGet',
-            'MobileAppAdGet' => 'Biplane\YandexDirect\Api\V5\Contract\MobileAppAdGet',
-            'MobileAppAdFeatureGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\MobileAppAdFeatureGetItem',
-            'TextImageAdGet' => 'Biplane\YandexDirect\Api\V5\Contract\TextImageAdGet',
-            'ImageAdGetBase' => 'Biplane\YandexDirect\Api\V5\Contract\ImageAdGetBase',
-            'MobileAppImageAdGet' => 'Biplane\YandexDirect\Api\V5\Contract\MobileAppImageAdGet',
-            'TextAdBuilderAdGet' => 'Biplane\YandexDirect\Api\V5\Contract\TextAdBuilderAdGet',
-            'AdBuilderAdGetBase' => 'Biplane\YandexDirect\Api\V5\Contract\AdBuilderAdGetBase',
-            'AdBuilderAdGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\AdBuilderAdGetItem',
-            'MobileAppAdBuilderAdGet' => 'Biplane\YandexDirect\Api\V5\Contract\MobileAppAdBuilderAdGet',
-            'MobileAppCpcVideoAdBuilderAdGet' => 'Biplane\YandexDirect\Api\V5\Contract\MobileAppCpcVideoAdBuilderAdGet',
-            'CpmBannerAdBuilderAdGet' => 'Biplane\YandexDirect\Api\V5\Contract\CpmBannerAdBuilderAdGet',
-            'TrackingPixelGetArray' => 'Biplane\YandexDirect\Api\V5\Contract\TrackingPixelGetArray',
-            'TrackingPixelGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\TrackingPixelGetItem',
-            'CpcVideoAdBuilderAdGet' => 'Biplane\YandexDirect\Api\V5\Contract\CpcVideoAdBuilderAdGet',
-            'CpmVideoAdBuilderAdGet' => 'Biplane\YandexDirect\Api\V5\Contract\CpmVideoAdBuilderAdGet',
-            'SmartAdBuilderAdGet' => 'Biplane\YandexDirect\Api\V5\Contract\SmartAdBuilderAdGet',
-            'ShoppingAdGet' => 'Biplane\YandexDirect\Api\V5\Contract\ShoppingAdGet',
-            'ListingAdGet' => 'Biplane\YandexDirect\Api\V5\Contract\ListingAdGet',
-            'ResponsiveAdGet' => 'Biplane\YandexDirect\Api\V5\Contract\ResponsiveAdGet',
-            'TextGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\TextGetItem',
-            'TitleGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\TitleGetItem',
-            'ArrayOfAdImageGet' => 'Biplane\YandexDirect\Api\V5\Contract\ArrayOfAdImageGet',
-            'AdImageGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\AdImageGetItemShort',
-            'ArrayOfVideoExtensionGet' => 'Biplane\YandexDirect\Api\V5\Contract\ArrayOfVideoExtensionGet',
-            'VideoExtensionWithStatusClarificationGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\VideoExtensionWithStatusClarificationGetItem',
-            'GetResponseGeneral' => 'Biplane\YandexDirect\Api\V5\Contract\GetResponseGeneral',
-            'DeleteRequest' => 'Biplane\YandexDirect\Api\V5\Contract\DeleteAdsRequest',
-            'IdsCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\IdsCriteria',
-            'DeleteResponse' => 'Biplane\YandexDirect\Api\V5\Contract\DeleteAdsResponse',
-            'ArchiveRequest' => 'Biplane\YandexDirect\Api\V5\Contract\ArchiveAdsRequest',
-            'ArchiveResponse' => 'Biplane\YandexDirect\Api\V5\Contract\ArchiveAdsResponse',
-            'UnarchiveRequest' => 'Biplane\YandexDirect\Api\V5\Contract\UnarchiveAdsRequest',
-            'UnarchiveResponse' => 'Biplane\YandexDirect\Api\V5\Contract\UnarchiveAdsResponse',
-            'SuspendRequest' => 'Biplane\YandexDirect\Api\V5\Contract\SuspendAdsRequest',
-            'SuspendResponse' => 'Biplane\YandexDirect\Api\V5\Contract\SuspendAdsResponse',
-            'ResumeRequest' => 'Biplane\YandexDirect\Api\V5\Contract\ResumeAdsRequest',
-            'ResumeResponse' => 'Biplane\YandexDirect\Api\V5\Contract\ResumeAdsResponse',
-            'ModerateRequest' => 'Biplane\YandexDirect\Api\V5\Contract\ModerateAdsRequest',
-            'ModerateResponse' => 'Biplane\YandexDirect\Api\V5\Contract\ModerateAdsResponse',
+            'AddRequest' => 'Biplane\YandexDirect\Api\V5\Ads\AddRequest',
+            'AdAddItem' => 'Biplane\YandexDirect\Api\V5\Ads\AdAddItem',
+            'TextAdAdd' => 'Biplane\YandexDirect\Api\V5\Ads\TextAdAdd',
+            'VideoExtensionAddItem' => 'Biplane\YandexDirect\Api\V5\Ads\VideoExtensionAddItem',
+            'PriceExtensionAddItem' => 'Biplane\YandexDirect\Api\V5\Ads\PriceExtensionAddItem',
+            'TextAdAddBase' => 'Biplane\YandexDirect\Api\V5\Ads\TextAdAddBase',
+            'ResponsiveAdAdd' => 'Biplane\YandexDirect\Api\V5\Ads\ResponsiveAdAdd',
+            'DynamicTextAdAdd' => 'Biplane\YandexDirect\Api\V5\Ads\DynamicTextAdAdd',
+            'MobileAppAdAdd' => 'Biplane\YandexDirect\Api\V5\Ads\MobileAppAdAdd',
+            'MobileAppAdFeatureItem' => 'Biplane\YandexDirect\Api\V5\Ads\MobileAppAdFeatureItem',
+            'TextImageAdAdd' => 'Biplane\YandexDirect\Api\V5\Ads\TextImageAdAdd',
+            'ImageAdAddBase' => 'Biplane\YandexDirect\Api\V5\Ads\ImageAdAddBase',
+            'MobileAppImageAdAdd' => 'Biplane\YandexDirect\Api\V5\Ads\MobileAppImageAdAdd',
+            'TextAdBuilderAdAdd' => 'Biplane\YandexDirect\Api\V5\Ads\TextAdBuilderAdAdd',
+            'AdBuilderAdAddBase' => 'Biplane\YandexDirect\Api\V5\Ads\AdBuilderAdAddBase',
+            'AdBuilderAdAddItem' => 'Biplane\YandexDirect\Api\V5\Ads\AdBuilderAdAddItem',
+            'MobileAppAdBuilderAdAdd' => 'Biplane\YandexDirect\Api\V5\Ads\MobileAppAdBuilderAdAdd',
+            'MobileAppCpcVideoAdBuilderAdAdd' => 'Biplane\YandexDirect\Api\V5\Ads\MobileAppCpcVideoAdBuilderAdAdd',
+            'CpmBannerAdBuilderAdAdd' => 'Biplane\YandexDirect\Api\V5\Ads\CpmBannerAdBuilderAdAdd',
+            'CpcVideoAdBuilderAdAdd' => 'Biplane\YandexDirect\Api\V5\Ads\CpcVideoAdBuilderAdAdd',
+            'CpmVideoAdBuilderAdAdd' => 'Biplane\YandexDirect\Api\V5\Ads\CpmVideoAdBuilderAdAdd',
+            'SmartAdBuilderAdAdd' => 'Biplane\YandexDirect\Api\V5\Ads\SmartAdBuilderAdAdd',
+            'ShoppingAdAdd' => 'Biplane\YandexDirect\Api\V5\Ads\ShoppingAdAdd',
+            'FeedFilterConditionItem' => 'Biplane\YandexDirect\Api\V5\Ads\FeedFilterConditionItem',
+            'ListingAdAdd' => 'Biplane\YandexDirect\Api\V5\Ads\ListingAdAdd',
+            'AdAddItemBase' => 'Biplane\YandexDirect\Api\V5\Ads\AdAddItemBase',
+            'AddResponse' => 'Biplane\YandexDirect\Api\V5\Ads\AddResponse',
+            'ActionResult' => 'Biplane\YandexDirect\Api\V5\General\ActionResult',
+            'ActionResultBase' => 'Biplane\YandexDirect\Api\V5\General\ActionResultBase',
+            'ExceptionNotification' => 'Biplane\YandexDirect\Api\V5\General\ExceptionNotification',
+            'UpdateRequest' => 'Biplane\YandexDirect\Api\V5\Ads\UpdateRequest',
+            'AdUpdateItem' => 'Biplane\YandexDirect\Api\V5\Ads\AdUpdateItem',
+            'TextAdUpdate' => 'Biplane\YandexDirect\Api\V5\Ads\TextAdUpdate',
+            'VideoExtensionUpdateItem' => 'Biplane\YandexDirect\Api\V5\Ads\VideoExtensionUpdateItem',
+            'PriceExtensionUpdateItem' => 'Biplane\YandexDirect\Api\V5\Ads\PriceExtensionUpdateItem',
+            'TextAdUpdateBase' => 'Biplane\YandexDirect\Api\V5\Ads\TextAdUpdateBase',
+            'AdExtensionSetting' => 'Biplane\YandexDirect\Api\V5\AdExtensionTypes\AdExtensionSetting',
+            'AdExtensionSettingItem' => 'Biplane\YandexDirect\Api\V5\AdExtensionTypes\AdExtensionSettingItem',
+            'ResponsiveAdUpdate' => 'Biplane\YandexDirect\Api\V5\Ads\ResponsiveAdUpdate',
+            'DynamicTextAdUpdate' => 'Biplane\YandexDirect\Api\V5\Ads\DynamicTextAdUpdate',
+            'MobileAppAdUpdate' => 'Biplane\YandexDirect\Api\V5\Ads\MobileAppAdUpdate',
+            'MobileAppAdBase' => 'Biplane\YandexDirect\Api\V5\Ads\MobileAppAdBase',
+            'TextImageAdUpdate' => 'Biplane\YandexDirect\Api\V5\Ads\TextImageAdUpdate',
+            'ImageAdUpdateBase' => 'Biplane\YandexDirect\Api\V5\Ads\ImageAdUpdateBase',
+            'MobileAppImageAdUpdate' => 'Biplane\YandexDirect\Api\V5\Ads\MobileAppImageAdUpdate',
+            'MobileAppCpcVideoAdBuilderAdUpdate' => 'Biplane\YandexDirect\Api\V5\Ads\MobileAppCpcVideoAdBuilderAdUpdate',
+            'AdBuilderAdUpdateBase' => 'Biplane\YandexDirect\Api\V5\Ads\AdBuilderAdUpdateBase',
+            'AdBuilderAdUpdateItem' => 'Biplane\YandexDirect\Api\V5\Ads\AdBuilderAdUpdateItem',
+            'TextAdBuilderAdUpdate' => 'Biplane\YandexDirect\Api\V5\Ads\TextAdBuilderAdUpdate',
+            'MobileAppAdBuilderAdUpdate' => 'Biplane\YandexDirect\Api\V5\Ads\MobileAppAdBuilderAdUpdate',
+            'CpcVideoAdBuilderAdUpdate' => 'Biplane\YandexDirect\Api\V5\Ads\CpcVideoAdBuilderAdUpdate',
+            'CpmBannerAdBuilderAdUpdate' => 'Biplane\YandexDirect\Api\V5\Ads\CpmBannerAdBuilderAdUpdate',
+            'CpmVideoAdBuilderAdUpdate' => 'Biplane\YandexDirect\Api\V5\Ads\CpmVideoAdBuilderAdUpdate',
+            'SmartAdBuilderAdUpdate' => 'Biplane\YandexDirect\Api\V5\Ads\SmartAdBuilderAdUpdate',
+            'ShoppingAdUpdate' => 'Biplane\YandexDirect\Api\V5\Ads\ShoppingAdUpdate',
+            'ArrayOfFeedFilterCondition' => 'Biplane\YandexDirect\Api\V5\Ads\ArrayOfFeedFilterCondition',
+            'ListingAdUpdate' => 'Biplane\YandexDirect\Api\V5\Ads\ListingAdUpdate',
+            'UpdateResponse' => 'Biplane\YandexDirect\Api\V5\Ads\UpdateResponse',
+            'GetRequest' => 'Biplane\YandexDirect\Api\V5\Ads\GetRequest',
+            'AdsSelectionCriteria' => 'Biplane\YandexDirect\Api\V5\Ads\AdsSelectionCriteria',
+            'GetRequestGeneral' => 'Biplane\YandexDirect\Api\V5\General\GetRequestGeneral',
+            'LimitOffset' => 'Biplane\YandexDirect\Api\V5\General\LimitOffset',
+            'GetResponse' => 'Biplane\YandexDirect\Api\V5\Ads\GetResponse',
+            'AdGetItem' => 'Biplane\YandexDirect\Api\V5\Ads\AdGetItem',
+            'ArrayOfAdCategoryEnum' => 'Biplane\YandexDirect\Api\V5\Ads\ArrayOfAdCategoryEnum',
+            'TextAdGet' => 'Biplane\YandexDirect\Api\V5\Ads\TextAdGet',
+            'ExtensionModeration' => 'Biplane\YandexDirect\Api\V5\General\ExtensionModeration',
+            'VideoExtensionGetItem' => 'Biplane\YandexDirect\Api\V5\Ads\VideoExtensionGetItem',
+            'PriceExtensionGetItem' => 'Biplane\YandexDirect\Api\V5\Ads\PriceExtensionGetItem',
+            'TextAdGetBase' => 'Biplane\YandexDirect\Api\V5\Ads\TextAdGetBase',
+            'AdExtensionAdGetItem' => 'Biplane\YandexDirect\Api\V5\Ads\AdExtensionAdGetItem',
+            'DynamicTextAdGet' => 'Biplane\YandexDirect\Api\V5\Ads\DynamicTextAdGet',
+            'MobileAppAdGet' => 'Biplane\YandexDirect\Api\V5\Ads\MobileAppAdGet',
+            'MobileAppAdFeatureGetItem' => 'Biplane\YandexDirect\Api\V5\Ads\MobileAppAdFeatureGetItem',
+            'TextImageAdGet' => 'Biplane\YandexDirect\Api\V5\Ads\TextImageAdGet',
+            'ImageAdGetBase' => 'Biplane\YandexDirect\Api\V5\Ads\ImageAdGetBase',
+            'MobileAppImageAdGet' => 'Biplane\YandexDirect\Api\V5\Ads\MobileAppImageAdGet',
+            'TextAdBuilderAdGet' => 'Biplane\YandexDirect\Api\V5\Ads\TextAdBuilderAdGet',
+            'AdBuilderAdGetBase' => 'Biplane\YandexDirect\Api\V5\Ads\AdBuilderAdGetBase',
+            'AdBuilderAdGetItem' => 'Biplane\YandexDirect\Api\V5\Ads\AdBuilderAdGetItem',
+            'MobileAppAdBuilderAdGet' => 'Biplane\YandexDirect\Api\V5\Ads\MobileAppAdBuilderAdGet',
+            'MobileAppCpcVideoAdBuilderAdGet' => 'Biplane\YandexDirect\Api\V5\Ads\MobileAppCpcVideoAdBuilderAdGet',
+            'CpmBannerAdBuilderAdGet' => 'Biplane\YandexDirect\Api\V5\Ads\CpmBannerAdBuilderAdGet',
+            'TrackingPixelGetArray' => 'Biplane\YandexDirect\Api\V5\Ads\TrackingPixelGetArray',
+            'TrackingPixelGetItem' => 'Biplane\YandexDirect\Api\V5\Ads\TrackingPixelGetItem',
+            'CpcVideoAdBuilderAdGet' => 'Biplane\YandexDirect\Api\V5\Ads\CpcVideoAdBuilderAdGet',
+            'CpmVideoAdBuilderAdGet' => 'Biplane\YandexDirect\Api\V5\Ads\CpmVideoAdBuilderAdGet',
+            'SmartAdBuilderAdGet' => 'Biplane\YandexDirect\Api\V5\Ads\SmartAdBuilderAdGet',
+            'ShoppingAdGet' => 'Biplane\YandexDirect\Api\V5\Ads\ShoppingAdGet',
+            'ListingAdGet' => 'Biplane\YandexDirect\Api\V5\Ads\ListingAdGet',
+            'ResponsiveAdGet' => 'Biplane\YandexDirect\Api\V5\Ads\ResponsiveAdGet',
+            'TextGetItem' => 'Biplane\YandexDirect\Api\V5\Ads\TextGetItem',
+            'TitleGetItem' => 'Biplane\YandexDirect\Api\V5\Ads\TitleGetItem',
+            'ArrayOfAdImageGet' => 'Biplane\YandexDirect\Api\V5\Ads\ArrayOfAdImageGet',
+            'AdImageGetItem' => 'Biplane\YandexDirect\Api\V5\Ads\AdImageGetItem',
+            'ArrayOfVideoExtensionGet' => 'Biplane\YandexDirect\Api\V5\Ads\ArrayOfVideoExtensionGet',
+            'VideoExtensionWithStatusClarificationGetItem' => 'Biplane\YandexDirect\Api\V5\Ads\VideoExtensionWithStatusClarificationGetItem',
+            'GetResponseGeneral' => 'Biplane\YandexDirect\Api\V5\General\GetResponseGeneral',
+            'DeleteRequest' => 'Biplane\YandexDirect\Api\V5\Ads\DeleteRequest',
+            'IdsCriteria' => 'Biplane\YandexDirect\Api\V5\General\IdsCriteria',
+            'DeleteResponse' => 'Biplane\YandexDirect\Api\V5\Ads\DeleteResponse',
+            'ArchiveRequest' => 'Biplane\YandexDirect\Api\V5\Ads\ArchiveRequest',
+            'ArchiveResponse' => 'Biplane\YandexDirect\Api\V5\Ads\ArchiveResponse',
+            'UnarchiveRequest' => 'Biplane\YandexDirect\Api\V5\Ads\UnarchiveRequest',
+            'UnarchiveResponse' => 'Biplane\YandexDirect\Api\V5\Ads\UnarchiveResponse',
+            'SuspendRequest' => 'Biplane\YandexDirect\Api\V5\Ads\SuspendRequest',
+            'SuspendResponse' => 'Biplane\YandexDirect\Api\V5\Ads\SuspendResponse',
+            'ResumeRequest' => 'Biplane\YandexDirect\Api\V5\Ads\ResumeRequest',
+            'ResumeResponse' => 'Biplane\YandexDirect\Api\V5\Ads\ResumeResponse',
+            'ModerateRequest' => 'Biplane\YandexDirect\Api\V5\Ads\ModerateRequest',
+            'ModerateResponse' => 'Biplane\YandexDirect\Api\V5\Ads\ModerateResponse',
         ];
 
         parent::__construct(self::ENDPOINT, $config, $options);
@@ -159,7 +159,7 @@ class Ads extends ApiSoapClientV5
     /**
      * Calls operation: add
      */
-    public function add(AddAdsRequest $parameters): AddAdsResponse
+    public function add(AddRequest $parameters): AddResponse
     {
         return $this->__soapCall('add', [$parameters]);
     }
@@ -167,7 +167,7 @@ class Ads extends ApiSoapClientV5
     /**
      * Calls operation: update
      */
-    public function update(UpdateAdsRequest $parameters): UpdateAdsResponse
+    public function update(UpdateRequest $parameters): UpdateResponse
     {
         return $this->__soapCall('update', [$parameters]);
     }
@@ -175,7 +175,7 @@ class Ads extends ApiSoapClientV5
     /**
      * Calls operation: get
      */
-    public function get(GetAdsRequest $parameters): GetAdsResponse
+    public function get(GetRequest $parameters): GetResponse
     {
         return $this->__soapCall('get', [$parameters]);
     }
@@ -183,7 +183,7 @@ class Ads extends ApiSoapClientV5
     /**
      * Calls operation: delete
      */
-    public function delete(DeleteAdsRequest $parameters): DeleteAdsResponse
+    public function delete(DeleteRequest $parameters): DeleteResponse
     {
         return $this->__soapCall('delete', [$parameters]);
     }
@@ -191,7 +191,7 @@ class Ads extends ApiSoapClientV5
     /**
      * Calls operation: archive
      */
-    public function archive(ArchiveAdsRequest $parameters): ArchiveAdsResponse
+    public function archive(ArchiveRequest $parameters): ArchiveResponse
     {
         return $this->__soapCall('archive', [$parameters]);
     }
@@ -199,7 +199,7 @@ class Ads extends ApiSoapClientV5
     /**
      * Calls operation: unarchive
      */
-    public function unarchive(UnarchiveAdsRequest $parameters): UnarchiveAdsResponse
+    public function unarchive(UnarchiveRequest $parameters): UnarchiveResponse
     {
         return $this->__soapCall('unarchive', [$parameters]);
     }
@@ -207,7 +207,7 @@ class Ads extends ApiSoapClientV5
     /**
      * Calls operation: suspend
      */
-    public function suspend(SuspendAdsRequest $parameters): SuspendAdsResponse
+    public function suspend(SuspendRequest $parameters): SuspendResponse
     {
         return $this->__soapCall('suspend', [$parameters]);
     }
@@ -215,7 +215,7 @@ class Ads extends ApiSoapClientV5
     /**
      * Calls operation: resume
      */
-    public function resume(ResumeAdsRequest $parameters): ResumeAdsResponse
+    public function resume(ResumeRequest $parameters): ResumeResponse
     {
         return $this->__soapCall('resume', [$parameters]);
     }
@@ -223,7 +223,7 @@ class Ads extends ApiSoapClientV5
     /**
      * Calls operation: moderate
      */
-    public function moderate(ModerateAdsRequest $parameters): ModerateAdsResponse
+    public function moderate(ModerateRequest $parameters): ModerateResponse
     {
         return $this->__soapCall('moderate', [$parameters]);
     }

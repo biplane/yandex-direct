@@ -5,18 +5,18 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5;
 
 use Biplane\YandexDirect\Api\ApiSoapClientV5;
-use Biplane\YandexDirect\Api\V5\Contract\AddDynamicTextAdTargetsRequest;
-use Biplane\YandexDirect\Api\V5\Contract\AddDynamicTextAdTargetsResponse;
-use Biplane\YandexDirect\Api\V5\Contract\DeleteDynamicTextAdTargetsRequest;
-use Biplane\YandexDirect\Api\V5\Contract\DeleteDynamicTextAdTargetsResponse;
-use Biplane\YandexDirect\Api\V5\Contract\GetDynamicTextAdTargetsRequest;
-use Biplane\YandexDirect\Api\V5\Contract\GetDynamicTextAdTargetsResponse;
-use Biplane\YandexDirect\Api\V5\Contract\ResumeDynamicTextAdTargetsRequest;
-use Biplane\YandexDirect\Api\V5\Contract\ResumeDynamicTextAdTargetsResponse;
-use Biplane\YandexDirect\Api\V5\Contract\SetBidsDynamicTextAdTargetsRequest;
-use Biplane\YandexDirect\Api\V5\Contract\SetBidsDynamicTextAdTargetsResponse;
-use Biplane\YandexDirect\Api\V5\Contract\SuspendDynamicTextAdTargetsRequest;
-use Biplane\YandexDirect\Api\V5\Contract\SuspendDynamicTextAdTargetsResponse;
+use Biplane\YandexDirect\Api\V5\DynamicTextAdTargets\AddRequest;
+use Biplane\YandexDirect\Api\V5\DynamicTextAdTargets\AddResponse;
+use Biplane\YandexDirect\Api\V5\DynamicTextAdTargets\DeleteRequest;
+use Biplane\YandexDirect\Api\V5\DynamicTextAdTargets\DeleteResponse;
+use Biplane\YandexDirect\Api\V5\DynamicTextAdTargets\GetRequest;
+use Biplane\YandexDirect\Api\V5\DynamicTextAdTargets\GetResponse;
+use Biplane\YandexDirect\Api\V5\DynamicTextAdTargets\ResumeRequest;
+use Biplane\YandexDirect\Api\V5\DynamicTextAdTargets\ResumeResponse;
+use Biplane\YandexDirect\Api\V5\DynamicTextAdTargets\SetBidsRequest;
+use Biplane\YandexDirect\Api\V5\DynamicTextAdTargets\SetBidsResponse;
+use Biplane\YandexDirect\Api\V5\DynamicTextAdTargets\SuspendRequest;
+use Biplane\YandexDirect\Api\V5\DynamicTextAdTargets\SuspendResponse;
 use Biplane\YandexDirect\Config;
 
 /**
@@ -34,31 +34,31 @@ class DynamicTextAdTargets extends ApiSoapClientV5
     public function __construct(Config $config, array $options)
     {
         $options['classmap'] = [
-            'AddRequest' => 'Biplane\YandexDirect\Api\V5\Contract\AddDynamicTextAdTargetsRequest',
-            'WebpageAddItem' => 'Biplane\YandexDirect\Api\V5\Contract\WebpageAddItem',
-            'WebpageCondition' => 'Biplane\YandexDirect\Api\V5\Contract\WebpageCondition',
-            'AddResponse' => 'Biplane\YandexDirect\Api\V5\Contract\AddDynamicTextAdTargetsResponse',
-            'ActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\ActionResult',
-            'ActionResultBase' => 'Biplane\YandexDirect\Api\V5\Contract\ActionResultBase',
-            'ExceptionNotification' => 'Biplane\YandexDirect\Api\V5\Contract\ExceptionNotification',
-            'GetRequest' => 'Biplane\YandexDirect\Api\V5\Contract\GetDynamicTextAdTargetsRequest',
-            'AdTargetsSelectionCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\AdTargetsSelectionCriteria',
-            'GetRequestGeneral' => 'Biplane\YandexDirect\Api\V5\Contract\GetRequestGeneral',
-            'LimitOffset' => 'Biplane\YandexDirect\Api\V5\Contract\LimitOffset',
-            'GetResponse' => 'Biplane\YandexDirect\Api\V5\Contract\GetDynamicTextAdTargetsResponse',
-            'WebpageGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\WebpageGetItem',
-            'GetResponseGeneral' => 'Biplane\YandexDirect\Api\V5\Contract\GetResponseGeneral',
-            'DeleteRequest' => 'Biplane\YandexDirect\Api\V5\Contract\DeleteDynamicTextAdTargetsRequest',
-            'IdsCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\IdsCriteria',
-            'DeleteResponse' => 'Biplane\YandexDirect\Api\V5\Contract\DeleteDynamicTextAdTargetsResponse',
-            'SuspendRequest' => 'Biplane\YandexDirect\Api\V5\Contract\SuspendDynamicTextAdTargetsRequest',
-            'SuspendResponse' => 'Biplane\YandexDirect\Api\V5\Contract\SuspendDynamicTextAdTargetsResponse',
-            'ResumeRequest' => 'Biplane\YandexDirect\Api\V5\Contract\ResumeDynamicTextAdTargetsRequest',
-            'ResumeResponse' => 'Biplane\YandexDirect\Api\V5\Contract\ResumeDynamicTextAdTargetsResponse',
-            'SetBidsRequest' => 'Biplane\YandexDirect\Api\V5\Contract\SetBidsDynamicTextAdTargetsRequest',
-            'SetBidsItem' => 'Biplane\YandexDirect\Api\V5\Contract\SetBidsItem',
-            'SetBidsResponse' => 'Biplane\YandexDirect\Api\V5\Contract\SetBidsDynamicTextAdTargetsResponse',
-            'SetBidsActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\SetBidsActionResult',
+            'AddRequest' => 'Biplane\YandexDirect\Api\V5\DynamicTextAdTargets\AddRequest',
+            'WebpageAddItem' => 'Biplane\YandexDirect\Api\V5\DynamicTextAdTargets\WebpageAddItem',
+            'WebpageCondition' => 'Biplane\YandexDirect\Api\V5\DynamicTextAdTargets\WebpageCondition',
+            'AddResponse' => 'Biplane\YandexDirect\Api\V5\DynamicTextAdTargets\AddResponse',
+            'ActionResult' => 'Biplane\YandexDirect\Api\V5\General\ActionResult',
+            'ActionResultBase' => 'Biplane\YandexDirect\Api\V5\General\ActionResultBase',
+            'ExceptionNotification' => 'Biplane\YandexDirect\Api\V5\General\ExceptionNotification',
+            'GetRequest' => 'Biplane\YandexDirect\Api\V5\DynamicTextAdTargets\GetRequest',
+            'AdTargetsSelectionCriteria' => 'Biplane\YandexDirect\Api\V5\General\AdTargetsSelectionCriteria',
+            'GetRequestGeneral' => 'Biplane\YandexDirect\Api\V5\General\GetRequestGeneral',
+            'LimitOffset' => 'Biplane\YandexDirect\Api\V5\General\LimitOffset',
+            'GetResponse' => 'Biplane\YandexDirect\Api\V5\DynamicTextAdTargets\GetResponse',
+            'WebpageGetItem' => 'Biplane\YandexDirect\Api\V5\DynamicTextAdTargets\WebpageGetItem',
+            'GetResponseGeneral' => 'Biplane\YandexDirect\Api\V5\General\GetResponseGeneral',
+            'DeleteRequest' => 'Biplane\YandexDirect\Api\V5\DynamicTextAdTargets\DeleteRequest',
+            'IdsCriteria' => 'Biplane\YandexDirect\Api\V5\General\IdsCriteria',
+            'DeleteResponse' => 'Biplane\YandexDirect\Api\V5\DynamicTextAdTargets\DeleteResponse',
+            'SuspendRequest' => 'Biplane\YandexDirect\Api\V5\DynamicTextAdTargets\SuspendRequest',
+            'SuspendResponse' => 'Biplane\YandexDirect\Api\V5\DynamicTextAdTargets\SuspendResponse',
+            'ResumeRequest' => 'Biplane\YandexDirect\Api\V5\DynamicTextAdTargets\ResumeRequest',
+            'ResumeResponse' => 'Biplane\YandexDirect\Api\V5\DynamicTextAdTargets\ResumeResponse',
+            'SetBidsRequest' => 'Biplane\YandexDirect\Api\V5\DynamicTextAdTargets\SetBidsRequest',
+            'SetBidsItem' => 'Biplane\YandexDirect\Api\V5\DynamicTextAdTargets\SetBidsItem',
+            'SetBidsResponse' => 'Biplane\YandexDirect\Api\V5\DynamicTextAdTargets\SetBidsResponse',
+            'SetBidsActionResult' => 'Biplane\YandexDirect\Api\V5\General\SetBidsActionResult',
         ];
 
         parent::__construct(self::ENDPOINT, $config, $options);
@@ -67,7 +67,7 @@ class DynamicTextAdTargets extends ApiSoapClientV5
     /**
      * Calls operation: add
      */
-    public function add(AddDynamicTextAdTargetsRequest $parameters): AddDynamicTextAdTargetsResponse
+    public function add(AddRequest $parameters): AddResponse
     {
         return $this->__soapCall('add', [$parameters]);
     }
@@ -75,7 +75,7 @@ class DynamicTextAdTargets extends ApiSoapClientV5
     /**
      * Calls operation: get
      */
-    public function get(GetDynamicTextAdTargetsRequest $parameters): GetDynamicTextAdTargetsResponse
+    public function get(GetRequest $parameters): GetResponse
     {
         return $this->__soapCall('get', [$parameters]);
     }
@@ -83,7 +83,7 @@ class DynamicTextAdTargets extends ApiSoapClientV5
     /**
      * Calls operation: delete
      */
-    public function delete(DeleteDynamicTextAdTargetsRequest $parameters): DeleteDynamicTextAdTargetsResponse
+    public function delete(DeleteRequest $parameters): DeleteResponse
     {
         return $this->__soapCall('delete', [$parameters]);
     }
@@ -91,7 +91,7 @@ class DynamicTextAdTargets extends ApiSoapClientV5
     /**
      * Calls operation: suspend
      */
-    public function suspend(SuspendDynamicTextAdTargetsRequest $parameters): SuspendDynamicTextAdTargetsResponse
+    public function suspend(SuspendRequest $parameters): SuspendResponse
     {
         return $this->__soapCall('suspend', [$parameters]);
     }
@@ -99,7 +99,7 @@ class DynamicTextAdTargets extends ApiSoapClientV5
     /**
      * Calls operation: resume
      */
-    public function resume(ResumeDynamicTextAdTargetsRequest $parameters): ResumeDynamicTextAdTargetsResponse
+    public function resume(ResumeRequest $parameters): ResumeResponse
     {
         return $this->__soapCall('resume', [$parameters]);
     }
@@ -107,7 +107,7 @@ class DynamicTextAdTargets extends ApiSoapClientV5
     /**
      * Calls operation: setBids
      */
-    public function setBids(SetBidsDynamicTextAdTargetsRequest $parameters): SetBidsDynamicTextAdTargetsResponse
+    public function setBids(SetBidsRequest $parameters): SetBidsResponse
     {
         return $this->__soapCall('setBids', [$parameters]);
     }

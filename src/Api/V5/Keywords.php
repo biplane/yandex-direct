@@ -5,18 +5,18 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5;
 
 use Biplane\YandexDirect\Api\ApiSoapClientV5;
-use Biplane\YandexDirect\Api\V5\Contract\AddKeywordsRequest;
-use Biplane\YandexDirect\Api\V5\Contract\AddKeywordsResponse;
-use Biplane\YandexDirect\Api\V5\Contract\DeleteKeywordsRequest;
-use Biplane\YandexDirect\Api\V5\Contract\DeleteKeywordsResponse;
-use Biplane\YandexDirect\Api\V5\Contract\GetKeywordsRequest;
-use Biplane\YandexDirect\Api\V5\Contract\GetKeywordsResponse;
-use Biplane\YandexDirect\Api\V5\Contract\ResumeKeywordsRequest;
-use Biplane\YandexDirect\Api\V5\Contract\ResumeKeywordsResponse;
-use Biplane\YandexDirect\Api\V5\Contract\SuspendKeywordsRequest;
-use Biplane\YandexDirect\Api\V5\Contract\SuspendKeywordsResponse;
-use Biplane\YandexDirect\Api\V5\Contract\UpdateKeywordsRequest;
-use Biplane\YandexDirect\Api\V5\Contract\UpdateKeywordsResponse;
+use Biplane\YandexDirect\Api\V5\Keywords\AddRequest;
+use Biplane\YandexDirect\Api\V5\Keywords\AddResponse;
+use Biplane\YandexDirect\Api\V5\Keywords\DeleteRequest;
+use Biplane\YandexDirect\Api\V5\Keywords\DeleteResponse;
+use Biplane\YandexDirect\Api\V5\Keywords\GetRequest;
+use Biplane\YandexDirect\Api\V5\Keywords\GetResponse;
+use Biplane\YandexDirect\Api\V5\Keywords\ResumeRequest;
+use Biplane\YandexDirect\Api\V5\Keywords\ResumeResponse;
+use Biplane\YandexDirect\Api\V5\Keywords\SuspendRequest;
+use Biplane\YandexDirect\Api\V5\Keywords\SuspendResponse;
+use Biplane\YandexDirect\Api\V5\Keywords\UpdateRequest;
+use Biplane\YandexDirect\Api\V5\Keywords\UpdateResponse;
 use Biplane\YandexDirect\Config;
 
 /**
@@ -34,38 +34,38 @@ class Keywords extends ApiSoapClientV5
     public function __construct(Config $config, array $options)
     {
         $options['classmap'] = [
-            'AddRequest' => 'Biplane\YandexDirect\Api\V5\Contract\AddKeywordsRequest',
-            'KeywordAddItem' => 'Biplane\YandexDirect\Api\V5\Contract\KeywordAddItem',
-            'AutotargetingCategory' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategory',
-            'AutotargetingBrandOption' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingBrandOption',
-            'AutotargetingSettings' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingSettings',
-            'AutotargetingCategories' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategories',
-            'AutotargetingBrandOptions' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingBrandOptions',
-            'AddResponse' => 'Biplane\YandexDirect\Api\V5\Contract\AddKeywordsResponse',
-            'ActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\ActionResult',
-            'ActionResultBase' => 'Biplane\YandexDirect\Api\V5\Contract\ActionResultBase',
-            'ExceptionNotification' => 'Biplane\YandexDirect\Api\V5\Contract\ExceptionNotification',
-            'GetRequest' => 'Biplane\YandexDirect\Api\V5\Contract\GetKeywordsRequest',
-            'KeywordsSelectionCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\KeywordsSelectionCriteria',
-            'GetRequestGeneral' => 'Biplane\YandexDirect\Api\V5\Contract\GetRequestGeneral',
-            'LimitOffset' => 'Biplane\YandexDirect\Api\V5\Contract\LimitOffset',
-            'GetResponse' => 'Biplane\YandexDirect\Api\V5\Contract\GetKeywordsResponse',
-            'KeywordGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\KeywordGetItem',
-            'KeywordProductivity' => 'Biplane\YandexDirect\Api\V5\Contract\KeywordProductivity',
-            'Statistics' => 'Biplane\YandexDirect\Api\V5\Contract\Statistics',
-            'AutotargetingCategoryArray' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategoryArray',
-            'AutotargetingBrandOptionArray' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingBrandOptionArray',
-            'GetResponseGeneral' => 'Biplane\YandexDirect\Api\V5\Contract\GetResponseGeneral',
-            'UpdateRequest' => 'Biplane\YandexDirect\Api\V5\Contract\UpdateKeywordsRequest',
-            'KeywordUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\KeywordUpdateItem',
-            'UpdateResponse' => 'Biplane\YandexDirect\Api\V5\Contract\UpdateKeywordsResponse',
-            'DeleteRequest' => 'Biplane\YandexDirect\Api\V5\Contract\DeleteKeywordsRequest',
-            'IdsCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\IdsCriteria',
-            'DeleteResponse' => 'Biplane\YandexDirect\Api\V5\Contract\DeleteKeywordsResponse',
-            'SuspendRequest' => 'Biplane\YandexDirect\Api\V5\Contract\SuspendKeywordsRequest',
-            'SuspendResponse' => 'Biplane\YandexDirect\Api\V5\Contract\SuspendKeywordsResponse',
-            'ResumeRequest' => 'Biplane\YandexDirect\Api\V5\Contract\ResumeKeywordsRequest',
-            'ResumeResponse' => 'Biplane\YandexDirect\Api\V5\Contract\ResumeKeywordsResponse',
+            'AddRequest' => 'Biplane\YandexDirect\Api\V5\Keywords\AddRequest',
+            'KeywordAddItem' => 'Biplane\YandexDirect\Api\V5\Keywords\KeywordAddItem',
+            'AutotargetingCategory' => 'Biplane\YandexDirect\Api\V5\General\AutotargetingCategory',
+            'AutotargetingBrandOption' => 'Biplane\YandexDirect\Api\V5\General\AutotargetingBrandOption',
+            'AutotargetingSettings' => 'Biplane\YandexDirect\Api\V5\General\AutotargetingSettings',
+            'AutotargetingCategories' => 'Biplane\YandexDirect\Api\V5\General\AutotargetingCategories',
+            'AutotargetingBrandOptions' => 'Biplane\YandexDirect\Api\V5\General\AutotargetingBrandOptions',
+            'AddResponse' => 'Biplane\YandexDirect\Api\V5\Keywords\AddResponse',
+            'ActionResult' => 'Biplane\YandexDirect\Api\V5\General\ActionResult',
+            'ActionResultBase' => 'Biplane\YandexDirect\Api\V5\General\ActionResultBase',
+            'ExceptionNotification' => 'Biplane\YandexDirect\Api\V5\General\ExceptionNotification',
+            'GetRequest' => 'Biplane\YandexDirect\Api\V5\Keywords\GetRequest',
+            'KeywordsSelectionCriteria' => 'Biplane\YandexDirect\Api\V5\Keywords\KeywordsSelectionCriteria',
+            'GetRequestGeneral' => 'Biplane\YandexDirect\Api\V5\General\GetRequestGeneral',
+            'LimitOffset' => 'Biplane\YandexDirect\Api\V5\General\LimitOffset',
+            'GetResponse' => 'Biplane\YandexDirect\Api\V5\Keywords\GetResponse',
+            'KeywordGetItem' => 'Biplane\YandexDirect\Api\V5\Keywords\KeywordGetItem',
+            'KeywordProductivity' => 'Biplane\YandexDirect\Api\V5\Keywords\KeywordProductivity',
+            'Statistics' => 'Biplane\YandexDirect\Api\V5\General\Statistics',
+            'AutotargetingCategoryArray' => 'Biplane\YandexDirect\Api\V5\General\AutotargetingCategoryArray',
+            'AutotargetingBrandOptionArray' => 'Biplane\YandexDirect\Api\V5\General\AutotargetingBrandOptionArray',
+            'GetResponseGeneral' => 'Biplane\YandexDirect\Api\V5\General\GetResponseGeneral',
+            'UpdateRequest' => 'Biplane\YandexDirect\Api\V5\Keywords\UpdateRequest',
+            'KeywordUpdateItem' => 'Biplane\YandexDirect\Api\V5\Keywords\KeywordUpdateItem',
+            'UpdateResponse' => 'Biplane\YandexDirect\Api\V5\Keywords\UpdateResponse',
+            'DeleteRequest' => 'Biplane\YandexDirect\Api\V5\Keywords\DeleteRequest',
+            'IdsCriteria' => 'Biplane\YandexDirect\Api\V5\General\IdsCriteria',
+            'DeleteResponse' => 'Biplane\YandexDirect\Api\V5\Keywords\DeleteResponse',
+            'SuspendRequest' => 'Biplane\YandexDirect\Api\V5\Keywords\SuspendRequest',
+            'SuspendResponse' => 'Biplane\YandexDirect\Api\V5\Keywords\SuspendResponse',
+            'ResumeRequest' => 'Biplane\YandexDirect\Api\V5\Keywords\ResumeRequest',
+            'ResumeResponse' => 'Biplane\YandexDirect\Api\V5\Keywords\ResumeResponse',
         ];
 
         parent::__construct(self::ENDPOINT, $config, $options);
@@ -74,7 +74,7 @@ class Keywords extends ApiSoapClientV5
     /**
      * Calls operation: add
      */
-    public function add(AddKeywordsRequest $parameters): AddKeywordsResponse
+    public function add(AddRequest $parameters): AddResponse
     {
         return $this->__soapCall('add', [$parameters]);
     }
@@ -82,7 +82,7 @@ class Keywords extends ApiSoapClientV5
     /**
      * Calls operation: get
      */
-    public function get(GetKeywordsRequest $parameters): GetKeywordsResponse
+    public function get(GetRequest $parameters): GetResponse
     {
         return $this->__soapCall('get', [$parameters]);
     }
@@ -90,7 +90,7 @@ class Keywords extends ApiSoapClientV5
     /**
      * Calls operation: update
      */
-    public function update(UpdateKeywordsRequest $parameters): UpdateKeywordsResponse
+    public function update(UpdateRequest $parameters): UpdateResponse
     {
         return $this->__soapCall('update', [$parameters]);
     }
@@ -98,7 +98,7 @@ class Keywords extends ApiSoapClientV5
     /**
      * Calls operation: delete
      */
-    public function delete(DeleteKeywordsRequest $parameters): DeleteKeywordsResponse
+    public function delete(DeleteRequest $parameters): DeleteResponse
     {
         return $this->__soapCall('delete', [$parameters]);
     }
@@ -106,7 +106,7 @@ class Keywords extends ApiSoapClientV5
     /**
      * Calls operation: suspend
      */
-    public function suspend(SuspendKeywordsRequest $parameters): SuspendKeywordsResponse
+    public function suspend(SuspendRequest $parameters): SuspendResponse
     {
         return $this->__soapCall('suspend', [$parameters]);
     }
@@ -114,7 +114,7 @@ class Keywords extends ApiSoapClientV5
     /**
      * Calls operation: resume
      */
-    public function resume(ResumeKeywordsRequest $parameters): ResumeKeywordsResponse
+    public function resume(ResumeRequest $parameters): ResumeResponse
     {
         return $this->__soapCall('resume', [$parameters]);
     }

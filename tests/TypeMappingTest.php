@@ -6,7 +6,7 @@ namespace Biplane\Tests\YandexDirect;
 
 use Biplane\Tests\YandexDirect\Api\SoapClientTestCase;
 use Biplane\YandexDirect\Api\V5\Campaigns;
-use Biplane\YandexDirect\Api\V5\Contract;
+use Biplane\YandexDirect\Api\V5\General;
 use VCR\VCR;
 
 use function iterator_to_array;
@@ -21,19 +21,19 @@ final class TypeMappingTest extends SoapClientTestCase
 
         $service = new Campaigns($this->createConfig(), $this->getSoapOptions());
 
-        $request = Contract\GetCampaignsRequest::create()
+        $request = Campaigns\GetRequest::create()
             ->setSelectionCriteria(
-                Contract\CampaignsSelectionCriteria::create()
+                Campaigns\CampaignsSelectionCriteria::create()
                     ->setIds([1111191]),
             )
             ->setFieldNames([
-                Contract\CampaignFieldEnum::ID,
-                Contract\CampaignFieldEnum::NEGATIVE_KEYWORDS,
-                Contract\CampaignFieldEnum::TIME_TARGETING,
+                Campaigns\CampaignFieldEnum::ID,
+                Campaigns\CampaignFieldEnum::NEGATIVE_KEYWORDS,
+                Campaigns\CampaignFieldEnum::TIME_TARGETING,
             ])
             ->setUnifiedCampaignFieldNames([
-                Contract\UnifiedCampaignFieldEnum::COUNTER_IDS,
-                Contract\UnifiedCampaignFieldEnum::PRIORITY_GOALS,
+                Campaigns\UnifiedCampaignFieldEnum::COUNTER_IDS,
+                Campaigns\UnifiedCampaignFieldEnum::PRIORITY_GOALS,
 
             ]);
 
@@ -55,21 +55,21 @@ final class TypeMappingTest extends SoapClientTestCase
 
         $priorityGoals = $unifiedCampaign->getPriorityGoals();
         $expectedPriorityGoalItems = [
-            Contract\PriorityGoalsItem::create()
+            Campaigns\PriorityGoalsItem::create()
                 ->setGoalId(322345348)
                 ->setValue(900000000)
-                ->setIsMetrikaSourceOfValue(Contract\YesNoEnum::NO),
-            Contract\PriorityGoalsItem::create()
+                ->setIsMetrikaSourceOfValue(General\YesNoEnum::NO),
+            Campaigns\PriorityGoalsItem::create()
                 ->setGoalId(339155787)
                 ->setValue(900000000)
-                ->setIsMetrikaSourceOfValue(Contract\YesNoEnum::NO),
-            Contract\PriorityGoalsItem::create()
+                ->setIsMetrikaSourceOfValue(General\YesNoEnum::NO),
+            Campaigns\PriorityGoalsItem::create()
                 ->setGoalId(417641159)
                 ->setValue(900000000)
-                ->setIsMetrikaSourceOfValue(Contract\YesNoEnum::NO),
+                ->setIsMetrikaSourceOfValue(General\YesNoEnum::NO),
         ];
 
-        self::assertInstanceOf(Contract\PriorityGoalsArray::class, $priorityGoals);
+        self::assertInstanceOf(Campaigns\PriorityGoalsArray::class, $priorityGoals);
         self::assertCount(3, $priorityGoals);
         self::assertEquals($expectedPriorityGoalItems, $priorityGoals->getItems());
         self::assertEquals($expectedPriorityGoalItems, iterator_to_array($priorityGoals));

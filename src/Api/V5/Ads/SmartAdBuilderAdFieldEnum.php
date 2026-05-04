@@ -1,0 +1,16 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Biplane\YandexDirect\Api\V5\Ads;
+
+use AllowDynamicProperties;
+
+/**
+ * Auto-generated code.
+ */
+#[AllowDynamicProperties]
+class SmartAdBuilderAdFieldEnum
+{
+    public const string CREATIVE = 'Creative';
+}

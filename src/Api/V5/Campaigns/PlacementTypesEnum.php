@@ -1,0 +1,18 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Biplane\YandexDirect\Api\V5\Campaigns;
+
+use AllowDynamicProperties;
+
+/**
+ * Auto-generated code.
+ */
+#[AllowDynamicProperties]
+class PlacementTypesEnum
+{
+    public const string SEARCH_RESULTS = 'SEARCH_RESULTS';
+
+    public const string PRODUCT_GALLERY = 'PRODUCT_GALLERY';
+}

@@ -1,0 +1,47 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Biplane\YandexDirect\Api\V5\Feeds;
+
+use AllowDynamicProperties;
+
+/**
+ * Auto-generated code.
+ */
+#[AllowDynamicProperties]
+class DeleteRequest
+{
+    /** @var FeedsSelectionCriteria */
+    protected $SelectionCriteria;
+
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create(): static
+    {
+        return new static();
+    }
+
+    /**
+     * Get SelectionCriteria
+     */
+    public function getSelectionCriteria(): FeedsSelectionCriteria
+    {
+        return $this->SelectionCriteria;
+    }
+
+    /**
+     * Set SelectionCriteria
+     *
+     * @return $this
+     */
+    public function setSelectionCriteria(FeedsSelectionCriteria $value)
+    {
+        $this->SelectionCriteria = $value;
+
+        return $this;
+    }
+}

@@ -5,14 +5,14 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5;
 
 use Biplane\YandexDirect\Api\ApiSoapClientV5;
-use Biplane\YandexDirect\Api\V5\Contract\AddAdGroupsRequest;
-use Biplane\YandexDirect\Api\V5\Contract\AddAdGroupsResponse;
-use Biplane\YandexDirect\Api\V5\Contract\DeleteAdGroupsRequest;
-use Biplane\YandexDirect\Api\V5\Contract\DeleteAdGroupsResponse;
-use Biplane\YandexDirect\Api\V5\Contract\GetAdGroupsRequest;
-use Biplane\YandexDirect\Api\V5\Contract\GetAdGroupsResponse;
-use Biplane\YandexDirect\Api\V5\Contract\UpdateAdGroupsRequest;
-use Biplane\YandexDirect\Api\V5\Contract\UpdateAdGroupsResponse;
+use Biplane\YandexDirect\Api\V5\AdGroups\AddRequest;
+use Biplane\YandexDirect\Api\V5\AdGroups\AddResponse;
+use Biplane\YandexDirect\Api\V5\AdGroups\DeleteRequest;
+use Biplane\YandexDirect\Api\V5\AdGroups\DeleteResponse;
+use Biplane\YandexDirect\Api\V5\AdGroups\GetRequest;
+use Biplane\YandexDirect\Api\V5\AdGroups\GetResponse;
+use Biplane\YandexDirect\Api\V5\AdGroups\UpdateRequest;
+use Biplane\YandexDirect\Api\V5\AdGroups\UpdateResponse;
 use Biplane\YandexDirect\Config;
 
 /**
@@ -30,55 +30,55 @@ class AdGroups extends ApiSoapClientV5
     public function __construct(Config $config, array $options)
     {
         $options['classmap'] = [
-            'GetRequest' => 'Biplane\YandexDirect\Api\V5\Contract\GetAdGroupsRequest',
-            'AdGroupsSelectionCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\AdGroupsSelectionCriteria',
-            'GetRequestGeneral' => 'Biplane\YandexDirect\Api\V5\Contract\GetRequestGeneral',
-            'LimitOffset' => 'Biplane\YandexDirect\Api\V5\Contract\LimitOffset',
-            'GetResponse' => 'Biplane\YandexDirect\Api\V5\Contract\GetAdGroupsResponse',
-            'AdGroupGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\AdGroupGetItem',
-            'MobileAppAdGroupGet' => 'Biplane\YandexDirect\Api\V5\Contract\MobileAppAdGroupGet',
-            'ExtensionModeration' => 'Biplane\YandexDirect\Api\V5\Contract\ExtensionModeration',
-            'DynamicTextAdGroupGet' => 'Biplane\YandexDirect\Api\V5\Contract\DynamicTextAdGroupGet',
-            'DynamicAdGroupGet' => 'Biplane\YandexDirect\Api\V5\Contract\DynamicAdGroupGet',
-            'AutotargetingCategoryArray' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategoryArray',
-            'AutotargetingCategory' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategory',
-            'AutotargetingSettings' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingSettings',
-            'AutotargetingCategories' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingCategories',
-            'AutotargetingBrandOptions' => 'Biplane\YandexDirect\Api\V5\Contract\AutotargetingBrandOptions',
-            'DynamicTextFeedAdGroupGet' => 'Biplane\YandexDirect\Api\V5\Contract\DynamicTextFeedAdGroupGet',
-            'DynamicSourceGet' => 'Biplane\YandexDirect\Api\V5\Contract\DynamicSourceGet',
-            'SmartAdGroupGet' => 'Biplane\YandexDirect\Api\V5\Contract\SmartAdGroupGet',
-            'TextAdGroupFeedParamsGet' => 'Biplane\YandexDirect\Api\V5\Contract\TextAdGroupFeedParamsGet',
-            'UnifiedAdGroupGet' => 'Biplane\YandexDirect\Api\V5\Contract\UnifiedAdGroupGet',
-            'AdGroupBase' => 'Biplane\YandexDirect\Api\V5\Contract\AdGroupBase',
-            'GetResponseGeneral' => 'Biplane\YandexDirect\Api\V5\Contract\GetResponseGeneral',
-            'AddRequest' => 'Biplane\YandexDirect\Api\V5\Contract\AddAdGroupsRequest',
-            'AdGroupAddItem' => 'Biplane\YandexDirect\Api\V5\Contract\AdGroupAddItem',
-            'MobileAppAdGroupAdd' => 'Biplane\YandexDirect\Api\V5\Contract\MobileAppAdGroupAdd',
-            'DynamicTextAdGroup' => 'Biplane\YandexDirect\Api\V5\Contract\DynamicTextAdGroup',
-            'DynamicAdGroup' => 'Biplane\YandexDirect\Api\V5\Contract\DynamicAdGroup',
-            'DynamicTextFeedAdGroup' => 'Biplane\YandexDirect\Api\V5\Contract\DynamicTextFeedAdGroup',
-            'CpmBannerKeywordsAdGroupAdd' => 'Biplane\YandexDirect\Api\V5\Contract\CpmBannerKeywordsAdGroupAdd',
-            'CpmBannerUserProfileAdGroupAdd' => 'Biplane\YandexDirect\Api\V5\Contract\CpmBannerUserProfileAdGroupAdd',
-            'CpmVideoAdGroupAdd' => 'Biplane\YandexDirect\Api\V5\Contract\CpmVideoAdGroupAdd',
-            'SmartAdGroupAdd' => 'Biplane\YandexDirect\Api\V5\Contract\SmartAdGroupAdd',
-            'UnifiedAdGroupAdd' => 'Biplane\YandexDirect\Api\V5\Contract\UnifiedAdGroupAdd',
-            'TextAdGroupFeedParamsAdd' => 'Biplane\YandexDirect\Api\V5\Contract\TextAdGroupFeedParamsAdd',
-            'AddResponse' => 'Biplane\YandexDirect\Api\V5\Contract\AddAdGroupsResponse',
-            'ActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\ActionResult',
-            'ActionResultBase' => 'Biplane\YandexDirect\Api\V5\Contract\ActionResultBase',
-            'ExceptionNotification' => 'Biplane\YandexDirect\Api\V5\Contract\ExceptionNotification',
-            'UpdateRequest' => 'Biplane\YandexDirect\Api\V5\Contract\UpdateAdGroupsRequest',
-            'AdGroupUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\AdGroupUpdateItem',
-            'MobileAppAdGroupUpdate' => 'Biplane\YandexDirect\Api\V5\Contract\MobileAppAdGroupUpdate',
-            'DynamicTextFeedAdGroupUpdate' => 'Biplane\YandexDirect\Api\V5\Contract\DynamicTextFeedAdGroupUpdate',
-            'SmartAdGroupUpdate' => 'Biplane\YandexDirect\Api\V5\Contract\SmartAdGroupUpdate',
-            'TextAdGroupFeedParamsUpdate' => 'Biplane\YandexDirect\Api\V5\Contract\TextAdGroupFeedParamsUpdate',
-            'UnifiedAdGroupUpdate' => 'Biplane\YandexDirect\Api\V5\Contract\UnifiedAdGroupUpdate',
-            'UpdateResponse' => 'Biplane\YandexDirect\Api\V5\Contract\UpdateAdGroupsResponse',
-            'DeleteRequest' => 'Biplane\YandexDirect\Api\V5\Contract\DeleteAdGroupsRequest',
-            'IdsCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\IdsCriteria',
-            'DeleteResponse' => 'Biplane\YandexDirect\Api\V5\Contract\DeleteAdGroupsResponse',
+            'GetRequest' => 'Biplane\YandexDirect\Api\V5\AdGroups\GetRequest',
+            'AdGroupsSelectionCriteria' => 'Biplane\YandexDirect\Api\V5\AdGroups\AdGroupsSelectionCriteria',
+            'GetRequestGeneral' => 'Biplane\YandexDirect\Api\V5\General\GetRequestGeneral',
+            'LimitOffset' => 'Biplane\YandexDirect\Api\V5\General\LimitOffset',
+            'GetResponse' => 'Biplane\YandexDirect\Api\V5\AdGroups\GetResponse',
+            'AdGroupGetItem' => 'Biplane\YandexDirect\Api\V5\AdGroups\AdGroupGetItem',
+            'MobileAppAdGroupGet' => 'Biplane\YandexDirect\Api\V5\AdGroups\MobileAppAdGroupGet',
+            'ExtensionModeration' => 'Biplane\YandexDirect\Api\V5\General\ExtensionModeration',
+            'DynamicTextAdGroupGet' => 'Biplane\YandexDirect\Api\V5\AdGroups\DynamicTextAdGroupGet',
+            'DynamicAdGroupGet' => 'Biplane\YandexDirect\Api\V5\AdGroups\DynamicAdGroupGet',
+            'AutotargetingCategoryArray' => 'Biplane\YandexDirect\Api\V5\General\AutotargetingCategoryArray',
+            'AutotargetingCategory' => 'Biplane\YandexDirect\Api\V5\General\AutotargetingCategory',
+            'AutotargetingSettings' => 'Biplane\YandexDirect\Api\V5\General\AutotargetingSettings',
+            'AutotargetingCategories' => 'Biplane\YandexDirect\Api\V5\General\AutotargetingCategories',
+            'AutotargetingBrandOptions' => 'Biplane\YandexDirect\Api\V5\General\AutotargetingBrandOptions',
+            'DynamicTextFeedAdGroupGet' => 'Biplane\YandexDirect\Api\V5\AdGroups\DynamicTextFeedAdGroupGet',
+            'DynamicSourceGet' => 'Biplane\YandexDirect\Api\V5\AdGroups\DynamicSourceGet',
+            'SmartAdGroupGet' => 'Biplane\YandexDirect\Api\V5\AdGroups\SmartAdGroupGet',
+            'TextAdGroupFeedParamsGet' => 'Biplane\YandexDirect\Api\V5\AdGroups\TextAdGroupFeedParamsGet',
+            'UnifiedAdGroupGet' => 'Biplane\YandexDirect\Api\V5\AdGroups\UnifiedAdGroupGet',
+            'AdGroupBase' => 'Biplane\YandexDirect\Api\V5\AdGroups\AdGroupBase',
+            'GetResponseGeneral' => 'Biplane\YandexDirect\Api\V5\General\GetResponseGeneral',
+            'AddRequest' => 'Biplane\YandexDirect\Api\V5\AdGroups\AddRequest',
+            'AdGroupAddItem' => 'Biplane\YandexDirect\Api\V5\AdGroups\AdGroupAddItem',
+            'MobileAppAdGroupAdd' => 'Biplane\YandexDirect\Api\V5\AdGroups\MobileAppAdGroupAdd',
+            'DynamicTextAdGroup' => 'Biplane\YandexDirect\Api\V5\AdGroups\DynamicTextAdGroup',
+            'DynamicAdGroup' => 'Biplane\YandexDirect\Api\V5\AdGroups\DynamicAdGroup',
+            'DynamicTextFeedAdGroup' => 'Biplane\YandexDirect\Api\V5\AdGroups\DynamicTextFeedAdGroup',
+            'CpmBannerKeywordsAdGroupAdd' => 'Biplane\YandexDirect\Api\V5\AdGroups\CpmBannerKeywordsAdGroupAdd',
+            'CpmBannerUserProfileAdGroupAdd' => 'Biplane\YandexDirect\Api\V5\AdGroups\CpmBannerUserProfileAdGroupAdd',
+            'CpmVideoAdGroupAdd' => 'Biplane\YandexDirect\Api\V5\AdGroups\CpmVideoAdGroupAdd',
+            'SmartAdGroupAdd' => 'Biplane\YandexDirect\Api\V5\AdGroups\SmartAdGroupAdd',
+            'UnifiedAdGroupAdd' => 'Biplane\YandexDirect\Api\V5\AdGroups\UnifiedAdGroupAdd',
+            'TextAdGroupFeedParamsAdd' => 'Biplane\YandexDirect\Api\V5\AdGroups\TextAdGroupFeedParamsAdd',
+            'AddResponse' => 'Biplane\YandexDirect\Api\V5\AdGroups\AddResponse',
+            'ActionResult' => 'Biplane\YandexDirect\Api\V5\General\ActionResult',
+            'ActionResultBase' => 'Biplane\YandexDirect\Api\V5\General\ActionResultBase',
+            'ExceptionNotification' => 'Biplane\YandexDirect\Api\V5\General\ExceptionNotification',
+            'UpdateRequest' => 'Biplane\YandexDirect\Api\V5\AdGroups\UpdateRequest',
+            'AdGroupUpdateItem' => 'Biplane\YandexDirect\Api\V5\AdGroups\AdGroupUpdateItem',
+            'MobileAppAdGroupUpdate' => 'Biplane\YandexDirect\Api\V5\AdGroups\MobileAppAdGroupUpdate',
+            'DynamicTextFeedAdGroupUpdate' => 'Biplane\YandexDirect\Api\V5\AdGroups\DynamicTextFeedAdGroupUpdate',
+            'SmartAdGroupUpdate' => 'Biplane\YandexDirect\Api\V5\AdGroups\SmartAdGroupUpdate',
+            'TextAdGroupFeedParamsUpdate' => 'Biplane\YandexDirect\Api\V5\AdGroups\TextAdGroupFeedParamsUpdate',
+            'UnifiedAdGroupUpdate' => 'Biplane\YandexDirect\Api\V5\AdGroups\UnifiedAdGroupUpdate',
+            'UpdateResponse' => 'Biplane\YandexDirect\Api\V5\AdGroups\UpdateResponse',
+            'DeleteRequest' => 'Biplane\YandexDirect\Api\V5\AdGroups\DeleteRequest',
+            'IdsCriteria' => 'Biplane\YandexDirect\Api\V5\General\IdsCriteria',
+            'DeleteResponse' => 'Biplane\YandexDirect\Api\V5\AdGroups\DeleteResponse',
         ];
 
         parent::__construct(self::ENDPOINT, $config, $options);
@@ -87,7 +87,7 @@ class AdGroups extends ApiSoapClientV5
     /**
      * Calls operation: get
      */
-    public function get(GetAdGroupsRequest $parameters): GetAdGroupsResponse
+    public function get(GetRequest $parameters): GetResponse
     {
         return $this->__soapCall('get', [$parameters]);
     }
@@ -95,7 +95,7 @@ class AdGroups extends ApiSoapClientV5
     /**
      * Calls operation: add
      */
-    public function add(AddAdGroupsRequest $parameters): AddAdGroupsResponse
+    public function add(AddRequest $parameters): AddResponse
     {
         return $this->__soapCall('add', [$parameters]);
     }
@@ -103,7 +103,7 @@ class AdGroups extends ApiSoapClientV5
     /**
      * Calls operation: update
      */
-    public function update(UpdateAdGroupsRequest $parameters): UpdateAdGroupsResponse
+    public function update(UpdateRequest $parameters): UpdateResponse
     {
         return $this->__soapCall('update', [$parameters]);
     }
@@ -111,7 +111,7 @@ class AdGroups extends ApiSoapClientV5
     /**
      * Calls operation: delete
      */
-    public function delete(DeleteAdGroupsRequest $parameters): DeleteAdGroupsResponse
+    public function delete(DeleteRequest $parameters): DeleteResponse
     {
         return $this->__soapCall('delete', [$parameters]);
     }

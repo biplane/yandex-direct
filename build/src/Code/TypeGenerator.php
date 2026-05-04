@@ -72,7 +72,7 @@ final class TypeGenerator
                 new GenericTag(
                     name: 'implements',
                     content: sprintf(
-                        '\\IteratorAggregate<int, %s>',
+                        '\\IteratorAggregate<int<0, max>, %s>',
                         TypeUtil::extractListItemType($type->properties[0]->asDocBlockType()),
                     ),
                 ),
@@ -210,7 +210,7 @@ final class TypeGenerator
                     ->setTag(
                         new ReturnTag(
                             sprintf(
-                                '\\ArrayIterator<int, %s>',
+                                '\\ArrayIterator<int<0, max>, %s>',
                                 TypeUtil::extractListItemType($list->asDocBlockType()),
                             ),
                         ),

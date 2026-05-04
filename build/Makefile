@@ -6,8 +6,13 @@ $(eval $(sort $(subst :,\:,$(CLI_ARGS))):;@:)
 ## -----
 
 clear: ## Remove auto-generated code
-	@rm -rf ../src/Api/V4/Contract
-	@rm -rf ../src/Api/V5/Contract
+ifeq ($(OS),Windows_NT)
+	@powershell -Command "Get-ChildItem -Path '../src/Api/V4' -Directory | Remove-Item -Recurse -Force"
+	@powershell -Command "Get-ChildItem -Path '../src/Api/V5' -Directory | Where-Object {\$$_.Name -ne 'Reports'} | Remove-Item -Recurse -Force"
+else
+	@find ../src/Api/V4 -mindepth 1 -maxdepth 1 -type d -exec rm -rf {} \;
+	@find ../src/Api/V5 -mindepth 1 -maxdepth 1 -type d -not -name "Reports" -exec rm -rf {} \;
+endif
 .PHONY: clear
 
 generate: clear ## Generate contracts from WSDL

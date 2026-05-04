@@ -1,0 +1,24 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Biplane\YandexDirect\Api\V5\Ads;
+
+use AllowDynamicProperties;
+
+/**
+ * Auto-generated code.
+ */
+#[AllowDynamicProperties]
+class AdStateSelectionEnum
+{
+    public const string OFF = 'OFF';
+
+    public const string ON = 'ON';
+
+    public const string SUSPENDED = 'SUSPENDED';
+
+    public const string OFF_BY_MONITORING = 'OFF_BY_MONITORING';
+
+    public const string ARCHIVED = 'ARCHIVED';
+}

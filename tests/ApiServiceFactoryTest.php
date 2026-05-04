@@ -6,7 +6,7 @@ namespace Biplane\Tests\YandexDirect;
 
 use Biplane\Tests\YandexDirect\Api\V5\MockSoapClient;
 use Biplane\YandexDirect\Api\Finance\TransactionNumberGenerator;
-use Biplane\YandexDirect\Api\V4\YandexAPIService;
+use Biplane\YandexDirect\Api\V4\YandexApiService;
 use Biplane\YandexDirect\Api\V5\AdGroups;
 use Biplane\YandexDirect\ApiServiceFactory;
 use Biplane\YandexDirect\Config;
@@ -54,9 +54,9 @@ final class ApiServiceFactoryTest extends TestCase
         $factory = new ApiServiceFactory(null, $generator);
         $config = new Config(['access_token' => 'secret']);
 
-        $service = $factory->createService($config, YandexAPIService::class);
+        $service = $factory->createService($config, YandexApiService::class);
 
-        self::assertInstanceOf(YandexAPIService::class, $service);
+        self::assertInstanceOf(YandexApiService::class, $service);
         self::assertSame($generator, $service->getTransactionNumberGenerator());
     }
 

@@ -31,26 +31,26 @@
     </ClassMustBeFinal>
     <MissingConstructor>
       <errorLevel type="suppress">
-        <directory name="src/Api/V4/Contract"/>
-        <directory name="src/Api/V5/Contract"/>
+        <directory name="src/Api/V4"/>
+        <directory name="src/Api/V5"/>
       </errorLevel>
     </MissingConstructor>
     <UndefinedThisPropertyAssignment>
       <errorLevel type="suppress">
-        <directory name="src/Api/V4/Contract"/>
-        <directory name="src/Api/V5/Contract"/>
+        <directory name="src/Api/V4"/>
+        <directory name="src/Api/V5"/>
       </errorLevel>
     </UndefinedThisPropertyAssignment>
     <UndefinedThisPropertyFetch>
       <errorLevel type="suppress">
-        <directory name="src/Api/V4/Contract"/>
-        <directory name="src/Api/V5/Contract"/>
+        <directory name="src/Api/V4"/>
+        <directory name="src/Api/V5"/>
       </errorLevel>
     </UndefinedThisPropertyFetch>
     <UnsafeInstantiation>
       <errorLevel type="suppress">
-        <directory name="src/Api/V4/Contract"/>
-        <directory name="src/Api/V5/Contract"/>
+        <directory name="src/Api/V4"/>
+        <directory name="src/Api/V5"/>
       </errorLevel>
     </UnsafeInstantiation>
   </issueHandlers>

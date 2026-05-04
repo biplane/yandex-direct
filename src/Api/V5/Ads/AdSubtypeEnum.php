@@ -1,0 +1,26 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Biplane\YandexDirect\Api\V5\Ads;
+
+use AllowDynamicProperties;
+
+/**
+ * Auto-generated code.
+ */
+#[AllowDynamicProperties]
+class AdSubtypeEnum
+{
+    public const string MOBILE_APP_AD_BUILDER_AD = 'MOBILE_APP_AD_BUILDER_AD';
+
+    public const string MOBILE_APP_IMAGE_AD = 'MOBILE_APP_IMAGE_AD';
+
+    public const string MOBILE_APP_CPC_VIDEO_AD_BUILDER_AD = 'MOBILE_APP_CPC_VIDEO_AD_BUILDER_AD';
+
+    public const string NONE = 'NONE';
+
+    public const string TEXT_AD_BUILDER_AD = 'TEXT_AD_BUILDER_AD';
+
+    public const string TEXT_IMAGE_AD = 'TEXT_IMAGE_AD';
+}

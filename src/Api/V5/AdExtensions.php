@@ -5,12 +5,12 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5;
 
 use Biplane\YandexDirect\Api\ApiSoapClientV5;
-use Biplane\YandexDirect\Api\V5\Contract\AddAdExtensionsRequest;
-use Biplane\YandexDirect\Api\V5\Contract\AddAdExtensionsResponse;
-use Biplane\YandexDirect\Api\V5\Contract\DeleteAdExtensionsRequest;
-use Biplane\YandexDirect\Api\V5\Contract\DeleteAdExtensionsResponse;
-use Biplane\YandexDirect\Api\V5\Contract\GetAdExtensionsRequest;
-use Biplane\YandexDirect\Api\V5\Contract\GetAdExtensionsResponse;
+use Biplane\YandexDirect\Api\V5\AdExtensions\AddRequest;
+use Biplane\YandexDirect\Api\V5\AdExtensions\AddResponse;
+use Biplane\YandexDirect\Api\V5\AdExtensions\DeleteRequest;
+use Biplane\YandexDirect\Api\V5\AdExtensions\DeleteResponse;
+use Biplane\YandexDirect\Api\V5\AdExtensions\GetRequest;
+use Biplane\YandexDirect\Api\V5\AdExtensions\GetResponse;
 use Biplane\YandexDirect\Config;
 
 /**
@@ -28,24 +28,24 @@ class AdExtensions extends ApiSoapClientV5
     public function __construct(Config $config, array $options)
     {
         $options['classmap'] = [
-            'AddRequest' => 'Biplane\YandexDirect\Api\V5\Contract\AddAdExtensionsRequest',
-            'AdExtensionAddItem' => 'Biplane\YandexDirect\Api\V5\Contract\AdExtensionAddItem',
-            'Callout' => 'Biplane\YandexDirect\Api\V5\Contract\Callout',
-            'AddResponse' => 'Biplane\YandexDirect\Api\V5\Contract\AddAdExtensionsResponse',
-            'ActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\ActionResult',
-            'ActionResultBase' => 'Biplane\YandexDirect\Api\V5\Contract\ActionResultBase',
-            'ExceptionNotification' => 'Biplane\YandexDirect\Api\V5\Contract\ExceptionNotification',
-            'GetRequest' => 'Biplane\YandexDirect\Api\V5\Contract\GetAdExtensionsRequest',
-            'AdExtensionsSelectionCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\AdExtensionsSelectionCriteria',
-            'GetRequestGeneral' => 'Biplane\YandexDirect\Api\V5\Contract\GetRequestGeneral',
-            'LimitOffset' => 'Biplane\YandexDirect\Api\V5\Contract\LimitOffset',
-            'GetResponse' => 'Biplane\YandexDirect\Api\V5\Contract\GetAdExtensionsResponse',
-            'AdExtensionGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\AdExtensionGetItem',
-            'AdExtensionBase' => 'Biplane\YandexDirect\Api\V5\Contract\AdExtensionBase',
-            'GetResponseGeneral' => 'Biplane\YandexDirect\Api\V5\Contract\GetResponseGeneral',
-            'DeleteRequest' => 'Biplane\YandexDirect\Api\V5\Contract\DeleteAdExtensionsRequest',
-            'IdsCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\IdsCriteria',
-            'DeleteResponse' => 'Biplane\YandexDirect\Api\V5\Contract\DeleteAdExtensionsResponse',
+            'AddRequest' => 'Biplane\YandexDirect\Api\V5\AdExtensions\AddRequest',
+            'AdExtensionAddItem' => 'Biplane\YandexDirect\Api\V5\AdExtensions\AdExtensionAddItem',
+            'Callout' => 'Biplane\YandexDirect\Api\V5\AdExtensionTypes\Callout',
+            'AddResponse' => 'Biplane\YandexDirect\Api\V5\AdExtensions\AddResponse',
+            'ActionResult' => 'Biplane\YandexDirect\Api\V5\General\ActionResult',
+            'ActionResultBase' => 'Biplane\YandexDirect\Api\V5\General\ActionResultBase',
+            'ExceptionNotification' => 'Biplane\YandexDirect\Api\V5\General\ExceptionNotification',
+            'GetRequest' => 'Biplane\YandexDirect\Api\V5\AdExtensions\GetRequest',
+            'AdExtensionsSelectionCriteria' => 'Biplane\YandexDirect\Api\V5\AdExtensions\AdExtensionsSelectionCriteria',
+            'GetRequestGeneral' => 'Biplane\YandexDirect\Api\V5\General\GetRequestGeneral',
+            'LimitOffset' => 'Biplane\YandexDirect\Api\V5\General\LimitOffset',
+            'GetResponse' => 'Biplane\YandexDirect\Api\V5\AdExtensions\GetResponse',
+            'AdExtensionGetItem' => 'Biplane\YandexDirect\Api\V5\AdExtensions\AdExtensionGetItem',
+            'AdExtensionBase' => 'Biplane\YandexDirect\Api\V5\AdExtensionTypes\AdExtensionBase',
+            'GetResponseGeneral' => 'Biplane\YandexDirect\Api\V5\General\GetResponseGeneral',
+            'DeleteRequest' => 'Biplane\YandexDirect\Api\V5\AdExtensions\DeleteRequest',
+            'IdsCriteria' => 'Biplane\YandexDirect\Api\V5\General\IdsCriteria',
+            'DeleteResponse' => 'Biplane\YandexDirect\Api\V5\AdExtensions\DeleteResponse',
         ];
 
         parent::__construct(self::ENDPOINT, $config, $options);
@@ -54,7 +54,7 @@ class AdExtensions extends ApiSoapClientV5
     /**
      * Calls operation: add
      */
-    public function add(AddAdExtensionsRequest $parameters): AddAdExtensionsResponse
+    public function add(AddRequest $parameters): AddResponse
     {
         return $this->__soapCall('add', [$parameters]);
     }
@@ -62,7 +62,7 @@ class AdExtensions extends ApiSoapClientV5
     /**
      * Calls operation: get
      */
-    public function get(GetAdExtensionsRequest $parameters): GetAdExtensionsResponse
+    public function get(GetRequest $parameters): GetResponse
     {
         return $this->__soapCall('get', [$parameters]);
     }
@@ -70,7 +70,7 @@ class AdExtensions extends ApiSoapClientV5
     /**
      * Calls operation: delete
      */
-    public function delete(DeleteAdExtensionsRequest $parameters): DeleteAdExtensionsResponse
+    public function delete(DeleteRequest $parameters): DeleteResponse
     {
         return $this->__soapCall('delete', [$parameters]);
     }

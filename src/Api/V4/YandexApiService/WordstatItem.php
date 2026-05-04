@@ -1,0 +1,70 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Biplane\YandexDirect\Api\V4\YandexApiService;
+
+use AllowDynamicProperties;
+
+/**
+ * Auto-generated code.
+ */
+#[AllowDynamicProperties]
+class WordstatItem
+{
+    /** @var string */
+    protected $Phrase;
+
+    /** @var int */
+    protected $Shows;
+
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create(): static
+    {
+        return new static();
+    }
+
+    /**
+     * Get Phrase
+     */
+    public function getPhrase(): string
+    {
+        return $this->Phrase;
+    }
+
+    /**
+     * Set Phrase
+     *
+     * @return $this
+     */
+    public function setPhrase(string $value)
+    {
+        $this->Phrase = $value;
+
+        return $this;
+    }
+
+    /**
+     * Get Shows
+     */
+    public function getShows(): int
+    {
+        return $this->Shows;
+    }
+
+    /**
+     * Set Shows
+     *
+     * @return $this
+     */
+    public function setShows(int $value)
+    {
+        $this->Shows = $value;
+
+        return $this;
+    }
+}
