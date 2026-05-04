@@ -22,6 +22,8 @@ use Biplane\YandexDirect\Api\V5\Campaigns\UnarchiveResponse;
 use Biplane\YandexDirect\Api\V5\Campaigns\UpdateRequest;
 use Biplane\YandexDirect\Api\V5\Campaigns\UpdateResponse;
 use Biplane\YandexDirect\Config;
+use Biplane\YandexDirect\Exception\ApiException;
+use SoapFault;
 
 /**
  * Auto-generated code.
@@ -265,6 +267,9 @@ class Campaigns extends ApiSoapClientV5
 
     /**
      * Calls operation: add
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function add(AddRequest $parameters): AddResponse
     {
@@ -273,6 +278,9 @@ class Campaigns extends ApiSoapClientV5
 
     /**
      * Calls operation: update
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function update(UpdateRequest $parameters): UpdateResponse
     {
@@ -281,6 +289,9 @@ class Campaigns extends ApiSoapClientV5
 
     /**
      * Calls operation: get
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function get(GetRequest $parameters): GetResponse
     {
@@ -289,6 +300,9 @@ class Campaigns extends ApiSoapClientV5
 
     /**
      * Calls operation: delete
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function delete(DeleteRequest $parameters): DeleteResponse
     {
@@ -297,6 +311,9 @@ class Campaigns extends ApiSoapClientV5
 
     /**
      * Calls operation: archive
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function archive(ArchiveRequest $parameters): ArchiveResponse
     {
@@ -305,6 +322,9 @@ class Campaigns extends ApiSoapClientV5
 
     /**
      * Calls operation: unarchive
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function unarchive(UnarchiveRequest $parameters): UnarchiveResponse
     {
@@ -313,6 +333,9 @@ class Campaigns extends ApiSoapClientV5
 
     /**
      * Calls operation: suspend
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function suspend(SuspendRequest $parameters): SuspendResponse
     {
@@ -321,6 +344,9 @@ class Campaigns extends ApiSoapClientV5
 
     /**
      * Calls operation: resume
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function resume(ResumeRequest $parameters): ResumeResponse
     {

@@ -8,6 +8,8 @@ use Biplane\YandexDirect\Api\ApiSoapClientV5;
 use Biplane\YandexDirect\Api\V5\TurboPages\GetRequest;
 use Biplane\YandexDirect\Api\V5\TurboPages\GetResponse;
 use Biplane\YandexDirect\Config;
+use Biplane\YandexDirect\Exception\ApiException;
+use SoapFault;
 
 /**
  * Auto-generated code.
@@ -38,6 +40,9 @@ class TurboPages extends ApiSoapClientV5
 
     /**
      * Calls operation: get
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function get(GetRequest $parameters): GetResponse
     {

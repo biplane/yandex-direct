@@ -16,6 +16,8 @@ use Biplane\YandexDirect\Api\V5\AgencyClients\GetResponse;
 use Biplane\YandexDirect\Api\V5\AgencyClients\UpdateRequest;
 use Biplane\YandexDirect\Api\V5\AgencyClients\UpdateResponse;
 use Biplane\YandexDirect\Config;
+use Biplane\YandexDirect\Exception\ApiException;
+use SoapFault;
 
 /**
  * Auto-generated code.
@@ -87,6 +89,9 @@ class AgencyClients extends ApiSoapClientV5
 
     /**
      * Calls operation: get
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function get(GetRequest $parameters): GetResponse
     {
@@ -95,6 +100,9 @@ class AgencyClients extends ApiSoapClientV5
 
     /**
      * Calls operation: add
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function add(AddRequest $parameters): AddResponse
     {
@@ -103,6 +111,9 @@ class AgencyClients extends ApiSoapClientV5
 
     /**
      * Calls operation: addPassportOrganization
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function addPassportOrganization(AddPassportOrganizationRequest $parameters): AddPassportOrganizationResponse
     {
@@ -111,6 +122,9 @@ class AgencyClients extends ApiSoapClientV5
 
     /**
      * Calls operation: addPassportOrganizationMember
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function addPassportOrganizationMember(AddPassportOrganizationMemberRequest $parameters): AddPassportOrganizationMemberResponse
     {
@@ -119,6 +133,9 @@ class AgencyClients extends ApiSoapClientV5
 
     /**
      * Calls operation: update
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function update(UpdateRequest $parameters): UpdateResponse
     {

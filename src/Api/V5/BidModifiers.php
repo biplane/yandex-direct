@@ -14,6 +14,8 @@ use Biplane\YandexDirect\Api\V5\BidModifiers\GetResponse;
 use Biplane\YandexDirect\Api\V5\BidModifiers\SetRequest;
 use Biplane\YandexDirect\Api\V5\BidModifiers\SetResponse;
 use Biplane\YandexDirect\Config;
+use Biplane\YandexDirect\Exception\ApiException;
+use SoapFault;
 
 /**
  * Auto-generated code.
@@ -84,6 +86,9 @@ class BidModifiers extends ApiSoapClientV5
 
     /**
      * Calls operation: add
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function add(AddRequest $parameters): AddResponse
     {
@@ -92,6 +97,9 @@ class BidModifiers extends ApiSoapClientV5
 
     /**
      * Calls operation: set
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function set(SetRequest $parameters): SetResponse
     {
@@ -100,6 +108,9 @@ class BidModifiers extends ApiSoapClientV5
 
     /**
      * Calls operation: get
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function get(GetRequest $parameters): GetResponse
     {
@@ -108,6 +119,9 @@ class BidModifiers extends ApiSoapClientV5
 
     /**
      * Calls operation: delete
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function delete(DeleteRequest $parameters): DeleteResponse
     {

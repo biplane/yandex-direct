@@ -11,6 +11,7 @@ use Biplane\Build\Util\TypeUtil;
 use Laminas\Code\Generator\ClassGenerator;
 use Laminas\Code\Generator\DocBlock\Tag\ParamTag;
 use Laminas\Code\Generator\DocBlock\Tag\ReturnTag;
+use Laminas\Code\Generator\DocBlock\Tag\ThrowsTag;
 use Laminas\Code\Generator\DocBlockGenerator;
 use Laminas\Code\Generator\FileGenerator;
 use Laminas\Code\Generator\MethodGenerator;
@@ -31,6 +32,11 @@ final class ServiceGenerator
     private const array SOAP_CLIENT_CLASS_MAP = [
         '@/v4/@' => 'Biplane\\YandexDirect\\Api\\ApiSoapClientV4',
         '@/(v5|v501)/@' => 'Biplane\\YandexDirect\\Api\\ApiSoapClientV5',
+    ];
+
+    private const array METHOD_EXCEPTIONS = [
+        '\\Biplane\\YandexDirect\\Exception\\ApiException',
+        '\\SoapFault',
     ];
 
     public function generate(FileGenerator $file, Service $model): void
@@ -119,6 +125,10 @@ final class ServiceGenerator
             );
 
             $args[] = '$' . $param->name;
+        }
+
+        foreach (self::METHOD_EXCEPTIONS as $exceptionClass) {
+            $docGenerator->setTag(new ThrowsTag($exceptionClass));
         }
 
         $generator->setBody(sprintf(

@@ -18,6 +18,8 @@ use Biplane\YandexDirect\Api\V5\Keywords\SuspendResponse;
 use Biplane\YandexDirect\Api\V5\Keywords\UpdateRequest;
 use Biplane\YandexDirect\Api\V5\Keywords\UpdateResponse;
 use Biplane\YandexDirect\Config;
+use Biplane\YandexDirect\Exception\ApiException;
+use SoapFault;
 
 /**
  * Auto-generated code.
@@ -73,6 +75,9 @@ class Keywords extends ApiSoapClientV5
 
     /**
      * Calls operation: add
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function add(AddRequest $parameters): AddResponse
     {
@@ -81,6 +86,9 @@ class Keywords extends ApiSoapClientV5
 
     /**
      * Calls operation: get
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function get(GetRequest $parameters): GetResponse
     {
@@ -89,6 +97,9 @@ class Keywords extends ApiSoapClientV5
 
     /**
      * Calls operation: update
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function update(UpdateRequest $parameters): UpdateResponse
     {
@@ -97,6 +108,9 @@ class Keywords extends ApiSoapClientV5
 
     /**
      * Calls operation: delete
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function delete(DeleteRequest $parameters): DeleteResponse
     {
@@ -105,6 +119,9 @@ class Keywords extends ApiSoapClientV5
 
     /**
      * Calls operation: suspend
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function suspend(SuspendRequest $parameters): SuspendResponse
     {
@@ -113,6 +130,9 @@ class Keywords extends ApiSoapClientV5
 
     /**
      * Calls operation: resume
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function resume(ResumeRequest $parameters): ResumeResponse
     {

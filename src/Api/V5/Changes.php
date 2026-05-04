@@ -12,6 +12,8 @@ use Biplane\YandexDirect\Api\V5\Changes\CheckDictionariesResponse;
 use Biplane\YandexDirect\Api\V5\Changes\CheckRequest;
 use Biplane\YandexDirect\Api\V5\Changes\CheckResponse;
 use Biplane\YandexDirect\Config;
+use Biplane\YandexDirect\Exception\ApiException;
+use SoapFault;
 
 /**
  * Auto-generated code.
@@ -45,6 +47,9 @@ class Changes extends ApiSoapClientV5
 
     /**
      * Calls operation: checkDictionaries
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function checkDictionaries(CheckDictionariesRequest $parameters): CheckDictionariesResponse
     {
@@ -53,6 +58,9 @@ class Changes extends ApiSoapClientV5
 
     /**
      * Calls operation: checkCampaigns
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function checkCampaigns(CheckCampaignsRequest $parameters): CheckCampaignsResponse
     {
@@ -61,6 +69,9 @@ class Changes extends ApiSoapClientV5
 
     /**
      * Calls operation: check
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function check(CheckRequest $parameters): CheckResponse
     {

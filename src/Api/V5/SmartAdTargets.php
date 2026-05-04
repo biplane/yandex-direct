@@ -20,6 +20,8 @@ use Biplane\YandexDirect\Api\V5\SmartAdTargets\SuspendResponse;
 use Biplane\YandexDirect\Api\V5\SmartAdTargets\UpdateRequest;
 use Biplane\YandexDirect\Api\V5\SmartAdTargets\UpdateResponse;
 use Biplane\YandexDirect\Config;
+use Biplane\YandexDirect\Exception\ApiException;
+use SoapFault;
 
 /**
  * Auto-generated code.
@@ -72,6 +74,9 @@ class SmartAdTargets extends ApiSoapClientV5
 
     /**
      * Calls operation: add
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function add(AddRequest $parameters): AddResponse
     {
@@ -80,6 +85,9 @@ class SmartAdTargets extends ApiSoapClientV5
 
     /**
      * Calls operation: get
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function get(GetRequest $parameters): GetResponse
     {
@@ -88,6 +96,9 @@ class SmartAdTargets extends ApiSoapClientV5
 
     /**
      * Calls operation: update
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function update(UpdateRequest $parameters): UpdateResponse
     {
@@ -96,6 +107,9 @@ class SmartAdTargets extends ApiSoapClientV5
 
     /**
      * Calls operation: delete
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function delete(DeleteRequest $parameters): DeleteResponse
     {
@@ -104,6 +118,9 @@ class SmartAdTargets extends ApiSoapClientV5
 
     /**
      * Calls operation: suspend
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function suspend(SuspendRequest $parameters): SuspendResponse
     {
@@ -112,6 +129,9 @@ class SmartAdTargets extends ApiSoapClientV5
 
     /**
      * Calls operation: resume
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function resume(ResumeRequest $parameters): ResumeResponse
     {
@@ -120,6 +140,9 @@ class SmartAdTargets extends ApiSoapClientV5
 
     /**
      * Calls operation: setBids
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function setBids(SetBidsRequest $parameters): SetBidsResponse
     {

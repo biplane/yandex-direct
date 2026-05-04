@@ -18,6 +18,8 @@ use Biplane\YandexDirect\Api\V5\DynamicTextAdTargets\SetBidsResponse;
 use Biplane\YandexDirect\Api\V5\DynamicTextAdTargets\SuspendRequest;
 use Biplane\YandexDirect\Api\V5\DynamicTextAdTargets\SuspendResponse;
 use Biplane\YandexDirect\Config;
+use Biplane\YandexDirect\Exception\ApiException;
+use SoapFault;
 
 /**
  * Auto-generated code.
@@ -66,6 +68,9 @@ class DynamicTextAdTargets extends ApiSoapClientV5
 
     /**
      * Calls operation: add
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function add(AddRequest $parameters): AddResponse
     {
@@ -74,6 +79,9 @@ class DynamicTextAdTargets extends ApiSoapClientV5
 
     /**
      * Calls operation: get
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function get(GetRequest $parameters): GetResponse
     {
@@ -82,6 +90,9 @@ class DynamicTextAdTargets extends ApiSoapClientV5
 
     /**
      * Calls operation: delete
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function delete(DeleteRequest $parameters): DeleteResponse
     {
@@ -90,6 +101,9 @@ class DynamicTextAdTargets extends ApiSoapClientV5
 
     /**
      * Calls operation: suspend
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function suspend(SuspendRequest $parameters): SuspendResponse
     {
@@ -98,6 +112,9 @@ class DynamicTextAdTargets extends ApiSoapClientV5
 
     /**
      * Calls operation: resume
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function resume(ResumeRequest $parameters): ResumeResponse
     {
@@ -106,6 +123,9 @@ class DynamicTextAdTargets extends ApiSoapClientV5
 
     /**
      * Calls operation: setBids
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function setBids(SetBidsRequest $parameters): SetBidsResponse
     {

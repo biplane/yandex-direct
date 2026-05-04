@@ -16,6 +16,8 @@ use Biplane\YandexDirect\Api\V5\Strategies\UnarchiveResponse;
 use Biplane\YandexDirect\Api\V5\Strategies\UpdateRequest;
 use Biplane\YandexDirect\Api\V5\Strategies\UpdateResponse;
 use Biplane\YandexDirect\Config;
+use Biplane\YandexDirect\Exception\ApiException;
+use SoapFault;
 
 /**
  * Auto-generated code.
@@ -128,6 +130,9 @@ class Strategies extends ApiSoapClientV5
 
     /**
      * Calls operation: add
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function add(AddRequest $parameters): AddResponse
     {
@@ -136,6 +141,9 @@ class Strategies extends ApiSoapClientV5
 
     /**
      * Calls operation: update
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function update(UpdateRequest $parameters): UpdateResponse
     {
@@ -144,6 +152,9 @@ class Strategies extends ApiSoapClientV5
 
     /**
      * Calls operation: get
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function get(GetRequest $parameters): GetResponse
     {
@@ -152,6 +163,9 @@ class Strategies extends ApiSoapClientV5
 
     /**
      * Calls operation: archive
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function archive(ArchiveRequest $parameters): ArchiveResponse
     {
@@ -160,6 +174,9 @@ class Strategies extends ApiSoapClientV5
 
     /**
      * Calls operation: unarchive
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function unarchive(UnarchiveRequest $parameters): UnarchiveResponse
     {

@@ -10,6 +10,8 @@ use Biplane\YandexDirect\Api\V5\KeywordsResearch\DeduplicateResponse;
 use Biplane\YandexDirect\Api\V5\KeywordsResearch\HasSearchVolumeRequest;
 use Biplane\YandexDirect\Api\V5\KeywordsResearch\HasSearchVolumeResponse;
 use Biplane\YandexDirect\Config;
+use Biplane\YandexDirect\Exception\ApiException;
+use SoapFault;
 
 /**
  * Auto-generated code.
@@ -47,6 +49,9 @@ class KeywordsResearch extends ApiSoapClientV5
 
     /**
      * Calls operation: hasSearchVolume
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function hasSearchVolume(HasSearchVolumeRequest $parameters): HasSearchVolumeResponse
     {
@@ -55,6 +60,9 @@ class KeywordsResearch extends ApiSoapClientV5
 
     /**
      * Calls operation: deduplicate
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function deduplicate(DeduplicateRequest $parameters): DeduplicateResponse
     {

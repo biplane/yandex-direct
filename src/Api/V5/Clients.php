@@ -10,6 +10,8 @@ use Biplane\YandexDirect\Api\V5\Clients\GetResponse;
 use Biplane\YandexDirect\Api\V5\Clients\UpdateRequest;
 use Biplane\YandexDirect\Api\V5\Clients\UpdateResponse;
 use Biplane\YandexDirect\Config;
+use Biplane\YandexDirect\Exception\ApiException;
+use SoapFault;
 
 /**
  * Auto-generated code.
@@ -66,6 +68,9 @@ class Clients extends ApiSoapClientV5
 
     /**
      * Calls operation: get
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function get(GetRequest $parameters): GetResponse
     {
@@ -74,6 +79,9 @@ class Clients extends ApiSoapClientV5
 
     /**
      * Calls operation: update
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function update(UpdateRequest $parameters): UpdateResponse
     {

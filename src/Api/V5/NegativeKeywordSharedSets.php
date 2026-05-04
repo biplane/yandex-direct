@@ -14,6 +14,8 @@ use Biplane\YandexDirect\Api\V5\NegativeKeywordSharedSets\GetResponse;
 use Biplane\YandexDirect\Api\V5\NegativeKeywordSharedSets\UpdateRequest;
 use Biplane\YandexDirect\Api\V5\NegativeKeywordSharedSets\UpdateResponse;
 use Biplane\YandexDirect\Config;
+use Biplane\YandexDirect\Exception\ApiException;
+use SoapFault;
 
 /**
  * Auto-generated code.
@@ -56,6 +58,9 @@ class NegativeKeywordSharedSets extends ApiSoapClientV5
 
     /**
      * Calls operation: get
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function get(GetRequest $parameters): GetResponse
     {
@@ -64,6 +69,9 @@ class NegativeKeywordSharedSets extends ApiSoapClientV5
 
     /**
      * Calls operation: add
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function add(AddRequest $parameters): AddResponse
     {
@@ -72,6 +80,9 @@ class NegativeKeywordSharedSets extends ApiSoapClientV5
 
     /**
      * Calls operation: update
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function update(UpdateRequest $parameters): UpdateResponse
     {
@@ -80,6 +91,9 @@ class NegativeKeywordSharedSets extends ApiSoapClientV5
 
     /**
      * Calls operation: delete
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function delete(DeleteRequest $parameters): DeleteResponse
     {

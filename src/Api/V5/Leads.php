@@ -8,6 +8,8 @@ use Biplane\YandexDirect\Api\ApiSoapClientV5;
 use Biplane\YandexDirect\Api\V5\Leads\GetRequest;
 use Biplane\YandexDirect\Api\V5\Leads\GetResponse;
 use Biplane\YandexDirect\Config;
+use Biplane\YandexDirect\Exception\ApiException;
+use SoapFault;
 
 /**
  * Auto-generated code.
@@ -39,6 +41,9 @@ class Leads extends ApiSoapClientV5
 
     /**
      * Calls operation: get
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function get(GetRequest $parameters): GetResponse
     {

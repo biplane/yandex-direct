@@ -12,6 +12,8 @@ use Biplane\YandexDirect\Api\V5\VCards\DeleteResponse;
 use Biplane\YandexDirect\Api\V5\VCards\GetRequest;
 use Biplane\YandexDirect\Api\V5\VCards\GetResponse;
 use Biplane\YandexDirect\Config;
+use Biplane\YandexDirect\Exception\ApiException;
+use SoapFault;
 
 /**
  * Auto-generated code.
@@ -53,6 +55,9 @@ class VCards extends ApiSoapClientV5
 
     /**
      * Calls operation: add
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function add(AddRequest $parameters): AddResponse
     {
@@ -61,6 +66,9 @@ class VCards extends ApiSoapClientV5
 
     /**
      * Calls operation: get
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function get(GetRequest $parameters): GetResponse
     {
@@ -69,6 +77,9 @@ class VCards extends ApiSoapClientV5
 
     /**
      * Calls operation: delete
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function delete(DeleteRequest $parameters): DeleteResponse
     {

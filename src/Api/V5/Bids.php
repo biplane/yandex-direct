@@ -12,6 +12,8 @@ use Biplane\YandexDirect\Api\V5\Bids\SetAutoResponse;
 use Biplane\YandexDirect\Api\V5\Bids\SetRequest;
 use Biplane\YandexDirect\Api\V5\Bids\SetResponse;
 use Biplane\YandexDirect\Config;
+use Biplane\YandexDirect\Exception\ApiException;
+use SoapFault;
 
 /**
  * Auto-generated code.
@@ -55,6 +57,9 @@ class Bids extends ApiSoapClientV5
 
     /**
      * Calls operation: get
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function get(GetRequest $parameters): GetResponse
     {
@@ -63,6 +68,9 @@ class Bids extends ApiSoapClientV5
 
     /**
      * Calls operation: set
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function set(SetRequest $parameters): SetResponse
     {
@@ -71,6 +79,9 @@ class Bids extends ApiSoapClientV5
 
     /**
      * Calls operation: setAuto
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function setAuto(SetAutoRequest $parameters): SetAutoResponse
     {

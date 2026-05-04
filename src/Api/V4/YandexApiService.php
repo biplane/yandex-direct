@@ -42,6 +42,8 @@ use Biplane\YandexDirect\Api\V4\YandexApiService\VersionDesc;
 use Biplane\YandexDirect\Api\V4\YandexApiService\WordstatReportInfo;
 use Biplane\YandexDirect\Api\V4\YandexApiService\WordstatReportStatusInfo;
 use Biplane\YandexDirect\Config;
+use Biplane\YandexDirect\Exception\ApiException;
+use SoapFault;
 
 /**
  * Auto-generated code.
@@ -133,6 +135,9 @@ class YandexApiService extends ApiSoapClientV4
 
     /**
      * Calls operation: GetVersion
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function getVersion(): int
     {
@@ -141,6 +146,9 @@ class YandexApiService extends ApiSoapClientV4
 
     /**
      * Calls operation: DeleteForecastReport
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function deleteForecastReport(int $params): int
     {
@@ -149,6 +157,9 @@ class YandexApiService extends ApiSoapClientV4
 
     /**
      * Calls operation: PingAPI
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function pingAPI(): int
     {
@@ -161,6 +172,9 @@ class YandexApiService extends ApiSoapClientV4
      * @param list<string> $params
      *
      * @return list<ClientsUnitInfo>
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function getClientsUnits(array $params): array
     {
@@ -171,6 +185,9 @@ class YandexApiService extends ApiSoapClientV4
      * Calls operation: GetRegions
      *
      * @return list<RegionInfo>
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function getRegions(): array
     {
@@ -179,6 +196,9 @@ class YandexApiService extends ApiSoapClientV4
 
     /**
      * Calls operation: CreateNewForecast
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function createNewForecast(NewForecastInfo $params): int
     {
@@ -187,6 +207,9 @@ class YandexApiService extends ApiSoapClientV4
 
     /**
      * Calls operation: GetForecast
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function getForecast(int $params): GetForecastInfo
     {
@@ -197,6 +220,9 @@ class YandexApiService extends ApiSoapClientV4
      * Calls operation: GetRubrics
      *
      * @return list<RubricInfo>
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function getRubrics(): array
     {
@@ -207,6 +233,9 @@ class YandexApiService extends ApiSoapClientV4
      * Calls operation: GetTimeZones
      *
      * @return list<TimeZoneInfo>
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function getTimeZones(): array
     {
@@ -217,6 +246,9 @@ class YandexApiService extends ApiSoapClientV4
      * Calls operation: GetForecastList
      *
      * @return list<ForecastStatusInfo>
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function getForecastList(): array
     {
@@ -227,6 +259,9 @@ class YandexApiService extends ApiSoapClientV4
      * Calls operation: GetAvailableVersions
      *
      * @return list<VersionDesc>
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function getAvailableVersions(): array
     {
@@ -237,6 +272,9 @@ class YandexApiService extends ApiSoapClientV4
      * Calls operation: GetKeywordsSuggestion
      *
      * @return list<string>
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function getKeywordsSuggestion(KeywordsSuggestionInfo $params): array
     {
@@ -245,6 +283,9 @@ class YandexApiService extends ApiSoapClientV4
 
     /**
      * Calls operation: CreateNewWordstatReport
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function createNewWordstatReport(NewWordstatReportInfo $params): int
     {
@@ -255,6 +296,9 @@ class YandexApiService extends ApiSoapClientV4
      * Calls operation: GetWordstatReportList
      *
      * @return list<WordstatReportStatusInfo>
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function getWordstatReportList(): array
     {
@@ -265,6 +309,9 @@ class YandexApiService extends ApiSoapClientV4
      * Calls operation: GetWordstatReport
      *
      * @return list<WordstatReportInfo>
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function getWordstatReport(int $params): array
     {
@@ -273,6 +320,9 @@ class YandexApiService extends ApiSoapClientV4
 
     /**
      * Calls operation: DeleteWordstatReport
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function deleteWordstatReport(int $params): int
     {
@@ -283,6 +333,9 @@ class YandexApiService extends ApiSoapClientV4
      * Calls operation: GetStatGoals
      *
      * @return list<StatGoalInfo>
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function getStatGoals(StatGoalsCampaignIDInfo $params): array
     {
@@ -293,6 +346,9 @@ class YandexApiService extends ApiSoapClientV4
      * Calls operation: GetEventsLog
      *
      * @return list<EventsLogItem>
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function getEventsLog(GetEventsLogRequest $params): array
     {
@@ -303,6 +359,9 @@ class YandexApiService extends ApiSoapClientV4
      * Calls operation: GetCampaignsTags
      *
      * @return list<CampaignTagsInfo>
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function getCampaignsTags(CampaignIDSInfo $params): array
     {
@@ -315,6 +374,9 @@ class YandexApiService extends ApiSoapClientV4
      * @param list<CampaignTagsInfo> $params
      *
      * @return list<CampaignTagsInfo>
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function updateCampaignsTags(array $params): array
     {
@@ -325,6 +387,9 @@ class YandexApiService extends ApiSoapClientV4
      * Calls operation: GetBannersTags
      *
      * @return list<BannerTagsInfo>
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function getBannersTags(BannersRequestInfo $params): array
     {
@@ -335,6 +400,9 @@ class YandexApiService extends ApiSoapClientV4
      * Calls operation: UpdateBannersTags
      *
      * @param list<BannerTagsInfo> $params
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function updateBannersTags(array $params): int
     {
@@ -343,6 +411,9 @@ class YandexApiService extends ApiSoapClientV4
 
     /**
      * Calls operation: TransferMoney
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function transferMoney(TransferMoneyInfo $params): int
     {
@@ -351,6 +422,9 @@ class YandexApiService extends ApiSoapClientV4
 
     /**
      * Calls operation: GetCreditLimits
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function getCreditLimits(): CreditLimitsInfo
     {
@@ -359,6 +433,9 @@ class YandexApiService extends ApiSoapClientV4
 
     /**
      * Calls operation: CreateInvoice
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function createInvoice(CreateInvoiceInfo $params): string
     {
@@ -367,6 +444,9 @@ class YandexApiService extends ApiSoapClientV4
 
     /**
      * Calls operation: PayCampaigns
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function payCampaigns(PayCampaignsInfo $params): int
     {
@@ -375,6 +455,9 @@ class YandexApiService extends ApiSoapClientV4
 
     /**
      * Calls operation: PayCampaignsByCard
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function payCampaignsByCard(PayCampaignsByCardInfo $params): string
     {
@@ -383,6 +466,9 @@ class YandexApiService extends ApiSoapClientV4
 
     /**
      * Calls operation: CheckPayment
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function checkPayment(CheckPaymentInfo $params): string
     {
@@ -393,6 +479,9 @@ class YandexApiService extends ApiSoapClientV4
      * Calls operation: GetRetargetingGoals
      *
      * @return list<RetargetingGoal>
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function getRetargetingGoals(GetRetargetingGoalsRequest $params): array
     {
@@ -401,6 +490,9 @@ class YandexApiService extends ApiSoapClientV4
 
     /**
      * Calls operation: AdImage
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function adImage(AdImageRequest $params): AdImageResponse
     {
@@ -409,6 +501,9 @@ class YandexApiService extends ApiSoapClientV4
 
     /**
      * Calls operation: AdImageAssociation
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function adImageAssociation(AdImageAssociationRequest $params): AdImageAssociationResponse
     {
@@ -417,6 +512,9 @@ class YandexApiService extends ApiSoapClientV4
 
     /**
      * Calls operation: EnableSharedAccount
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function enableSharedAccount(EnableSharedAccountRequest $params): EnableSharedAccountResponse
     {
@@ -425,6 +523,9 @@ class YandexApiService extends ApiSoapClientV4
 
     /**
      * Calls operation: AccountManagement
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function accountManagement(AccountManagementRequest $params): AccountManagementResponse
     {

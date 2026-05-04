@@ -24,6 +24,8 @@ use Biplane\YandexDirect\Api\V5\Ads\UnarchiveResponse;
 use Biplane\YandexDirect\Api\V5\Ads\UpdateRequest;
 use Biplane\YandexDirect\Api\V5\Ads\UpdateResponse;
 use Biplane\YandexDirect\Config;
+use Biplane\YandexDirect\Exception\ApiException;
+use SoapFault;
 
 /**
  * Auto-generated code.
@@ -158,6 +160,9 @@ class Ads extends ApiSoapClientV5
 
     /**
      * Calls operation: add
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function add(AddRequest $parameters): AddResponse
     {
@@ -166,6 +171,9 @@ class Ads extends ApiSoapClientV5
 
     /**
      * Calls operation: update
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function update(UpdateRequest $parameters): UpdateResponse
     {
@@ -174,6 +182,9 @@ class Ads extends ApiSoapClientV5
 
     /**
      * Calls operation: get
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function get(GetRequest $parameters): GetResponse
     {
@@ -182,6 +193,9 @@ class Ads extends ApiSoapClientV5
 
     /**
      * Calls operation: delete
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function delete(DeleteRequest $parameters): DeleteResponse
     {
@@ -190,6 +204,9 @@ class Ads extends ApiSoapClientV5
 
     /**
      * Calls operation: archive
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function archive(ArchiveRequest $parameters): ArchiveResponse
     {
@@ -198,6 +215,9 @@ class Ads extends ApiSoapClientV5
 
     /**
      * Calls operation: unarchive
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function unarchive(UnarchiveRequest $parameters): UnarchiveResponse
     {
@@ -206,6 +226,9 @@ class Ads extends ApiSoapClientV5
 
     /**
      * Calls operation: suspend
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function suspend(SuspendRequest $parameters): SuspendResponse
     {
@@ -214,6 +237,9 @@ class Ads extends ApiSoapClientV5
 
     /**
      * Calls operation: resume
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function resume(ResumeRequest $parameters): ResumeResponse
     {
@@ -222,6 +248,9 @@ class Ads extends ApiSoapClientV5
 
     /**
      * Calls operation: moderate
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function moderate(ModerateRequest $parameters): ModerateResponse
     {

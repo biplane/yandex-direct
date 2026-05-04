@@ -10,6 +10,8 @@ use Biplane\YandexDirect\Api\V5\Dictionaries\GetGeoRegionsResponse;
 use Biplane\YandexDirect\Api\V5\Dictionaries\GetRequest;
 use Biplane\YandexDirect\Api\V5\Dictionaries\GetResponse;
 use Biplane\YandexDirect\Config;
+use Biplane\YandexDirect\Exception\ApiException;
+use SoapFault;
 
 /**
  * Auto-generated code.
@@ -62,6 +64,9 @@ class Dictionaries extends ApiSoapClientV5
 
     /**
      * Calls operation: get
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function get(GetRequest $parameters): GetResponse
     {
@@ -70,6 +75,9 @@ class Dictionaries extends ApiSoapClientV5
 
     /**
      * Calls operation: getGeoRegions
+     *
+     * @throws ApiException
+     * @throws SoapFault
      */
     public function getGeoRegions(GetGeoRegionsRequest $parameters): GetGeoRegionsResponse
     {
