@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5;
 
 use Biplane\YandexDirect\Api\ApiSoapClientV5;
-use Biplane\YandexDirect\Api\V5\Contract\GetTurboPagesRequest;
-use Biplane\YandexDirect\Api\V5\Contract\GetTurboPagesResponse;
+use Biplane\YandexDirect\Api\V5\TurboPages\GetRequest;
+use Biplane\YandexDirect\Api\V5\TurboPages\GetResponse;
 use Biplane\YandexDirect\Config;
 
 /**
@@ -24,13 +24,13 @@ class TurboPages extends ApiSoapClientV5
     public function __construct(Config $config, array $options)
     {
         $options['classmap'] = [
-            'GetRequest' => 'Biplane\YandexDirect\Api\V5\Contract\GetTurboPagesRequest',
-            'TurboPagesSelectionCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\TurboPagesSelectionCriteria',
-            'GetRequestGeneral' => 'Biplane\YandexDirect\Api\V5\Contract\GetRequestGeneral',
-            'LimitOffset' => 'Biplane\YandexDirect\Api\V5\Contract\LimitOffset',
-            'GetResponse' => 'Biplane\YandexDirect\Api\V5\Contract\GetTurboPagesResponse',
-            'TurboPageGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\TurboPageGetItem',
-            'GetResponseGeneral' => 'Biplane\YandexDirect\Api\V5\Contract\GetResponseGeneral',
+            'GetRequest' => 'Biplane\YandexDirect\Api\V5\TurboPages\GetRequest',
+            'TurboPagesSelectionCriteria' => 'Biplane\YandexDirect\Api\V5\TurboPages\TurboPagesSelectionCriteria',
+            'GetRequestGeneral' => 'Biplane\YandexDirect\Api\V5\General\GetRequestGeneral',
+            'LimitOffset' => 'Biplane\YandexDirect\Api\V5\General\LimitOffset',
+            'GetResponse' => 'Biplane\YandexDirect\Api\V5\TurboPages\GetResponse',
+            'TurboPageGetItem' => 'Biplane\YandexDirect\Api\V5\TurboPages\TurboPageGetItem',
+            'GetResponseGeneral' => 'Biplane\YandexDirect\Api\V5\General\GetResponseGeneral',
         ];
 
         parent::__construct(self::ENDPOINT, $config, $options);
@@ -39,7 +39,7 @@ class TurboPages extends ApiSoapClientV5
     /**
      * Calls operation: get
      */
-    public function get(GetTurboPagesRequest $parameters): GetTurboPagesResponse
+    public function get(GetRequest $parameters): GetResponse
     {
         return $this->__soapCall('get', [$parameters]);
     }

@@ -1,0 +1,20 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Biplane\YandexDirect\Api\V5\RetargetingLists;
+
+use AllowDynamicProperties;
+
+/**
+ * Auto-generated code.
+ */
+#[AllowDynamicProperties]
+class RetargetingListScopeEnum
+{
+    public const string FOR_TARGETS_AND_ADJUSTMENTS = 'FOR_TARGETS_AND_ADJUSTMENTS';
+
+    public const string FOR_ADJUSTMENTS_ONLY = 'FOR_ADJUSTMENTS_ONLY';
+
+    public const string FOR_TARGETS_ONLY = 'FOR_TARGETS_ONLY';
+}

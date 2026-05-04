@@ -6,7 +6,7 @@ namespace Biplane\Tests\YandexDirect\Api;
 
 use Biplane\YandexDirect\Api\ApiSoapClientV4;
 use Biplane\YandexDirect\Api\Finance\TransactionNumberGenerator;
-use Biplane\YandexDirect\Api\V4\Contract\AccountManagementRequest;
+use Biplane\YandexDirect\Api\V4\YandexApiService\AccountManagementRequest;
 use Biplane\YandexDirect\Config;
 use Biplane\YandexDirect\Exception\ApiException;
 use Override;

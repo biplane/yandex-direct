@@ -5,18 +5,18 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5;
 
 use Biplane\YandexDirect\Api\ApiSoapClientV5;
-use Biplane\YandexDirect\Api\V5\Contract\AddAudienceTargetsRequest;
-use Biplane\YandexDirect\Api\V5\Contract\AddAudienceTargetsResponse;
-use Biplane\YandexDirect\Api\V5\Contract\DeleteAudienceTargetsRequest;
-use Biplane\YandexDirect\Api\V5\Contract\DeleteAudienceTargetsResponse;
-use Biplane\YandexDirect\Api\V5\Contract\GetAudienceTargetsRequest;
-use Biplane\YandexDirect\Api\V5\Contract\GetAudienceTargetsResponse;
-use Biplane\YandexDirect\Api\V5\Contract\ResumeAudienceTargetsRequest;
-use Biplane\YandexDirect\Api\V5\Contract\ResumeAudienceTargetsResponse;
-use Biplane\YandexDirect\Api\V5\Contract\SetBidsAudienceTargetsRequest;
-use Biplane\YandexDirect\Api\V5\Contract\SetBidsAudienceTargetsResponse;
-use Biplane\YandexDirect\Api\V5\Contract\SuspendAudienceTargetsRequest;
-use Biplane\YandexDirect\Api\V5\Contract\SuspendAudienceTargetsResponse;
+use Biplane\YandexDirect\Api\V5\AudienceTargets\AddRequest;
+use Biplane\YandexDirect\Api\V5\AudienceTargets\AddResponse;
+use Biplane\YandexDirect\Api\V5\AudienceTargets\DeleteRequest;
+use Biplane\YandexDirect\Api\V5\AudienceTargets\DeleteResponse;
+use Biplane\YandexDirect\Api\V5\AudienceTargets\GetRequest;
+use Biplane\YandexDirect\Api\V5\AudienceTargets\GetResponse;
+use Biplane\YandexDirect\Api\V5\AudienceTargets\ResumeRequest;
+use Biplane\YandexDirect\Api\V5\AudienceTargets\ResumeResponse;
+use Biplane\YandexDirect\Api\V5\AudienceTargets\SetBidsRequest;
+use Biplane\YandexDirect\Api\V5\AudienceTargets\SetBidsResponse;
+use Biplane\YandexDirect\Api\V5\AudienceTargets\SuspendRequest;
+use Biplane\YandexDirect\Api\V5\AudienceTargets\SuspendResponse;
 use Biplane\YandexDirect\Config;
 
 /**
@@ -34,31 +34,31 @@ class AudienceTargets extends ApiSoapClientV5
     public function __construct(Config $config, array $options)
     {
         $options['classmap'] = [
-            'GetRequest' => 'Biplane\YandexDirect\Api\V5\Contract\GetAudienceTargetsRequest',
-            'AudienceTargetSelectionCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\AudienceTargetSelectionCriteria',
-            'GetRequestGeneral' => 'Biplane\YandexDirect\Api\V5\Contract\GetRequestGeneral',
-            'LimitOffset' => 'Biplane\YandexDirect\Api\V5\Contract\LimitOffset',
-            'GetResponse' => 'Biplane\YandexDirect\Api\V5\Contract\GetAudienceTargetsResponse',
-            'AudienceTargetGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\AudienceTargetGetItem',
-            'AudienceTargetBase' => 'Biplane\YandexDirect\Api\V5\Contract\AudienceTargetBase',
-            'GetResponseGeneral' => 'Biplane\YandexDirect\Api\V5\Contract\GetResponseGeneral',
-            'AddRequest' => 'Biplane\YandexDirect\Api\V5\Contract\AddAudienceTargetsRequest',
-            'AudienceTargetAddItem' => 'Biplane\YandexDirect\Api\V5\Contract\AudienceTargetAddItem',
-            'AddResponse' => 'Biplane\YandexDirect\Api\V5\Contract\AddAudienceTargetsResponse',
-            'ActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\ActionResult',
-            'ActionResultBase' => 'Biplane\YandexDirect\Api\V5\Contract\ActionResultBase',
-            'ExceptionNotification' => 'Biplane\YandexDirect\Api\V5\Contract\ExceptionNotification',
-            'DeleteRequest' => 'Biplane\YandexDirect\Api\V5\Contract\DeleteAudienceTargetsRequest',
-            'IdsCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\IdsCriteria',
-            'DeleteResponse' => 'Biplane\YandexDirect\Api\V5\Contract\DeleteAudienceTargetsResponse',
-            'SuspendRequest' => 'Biplane\YandexDirect\Api\V5\Contract\SuspendAudienceTargetsRequest',
-            'SuspendResponse' => 'Biplane\YandexDirect\Api\V5\Contract\SuspendAudienceTargetsResponse',
-            'ResumeRequest' => 'Biplane\YandexDirect\Api\V5\Contract\ResumeAudienceTargetsRequest',
-            'ResumeResponse' => 'Biplane\YandexDirect\Api\V5\Contract\ResumeAudienceTargetsResponse',
-            'SetBidsRequest' => 'Biplane\YandexDirect\Api\V5\Contract\SetBidsAudienceTargetsRequest',
-            'AudienceTargetSetBidsItem' => 'Biplane\YandexDirect\Api\V5\Contract\AudienceTargetSetBidsItem',
-            'SetBidsResponse' => 'Biplane\YandexDirect\Api\V5\Contract\SetBidsAudienceTargetsResponse',
-            'SetBidsActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\SetBidsActionResult',
+            'GetRequest' => 'Biplane\YandexDirect\Api\V5\AudienceTargets\GetRequest',
+            'AudienceTargetSelectionCriteria' => 'Biplane\YandexDirect\Api\V5\AudienceTargets\AudienceTargetSelectionCriteria',
+            'GetRequestGeneral' => 'Biplane\YandexDirect\Api\V5\General\GetRequestGeneral',
+            'LimitOffset' => 'Biplane\YandexDirect\Api\V5\General\LimitOffset',
+            'GetResponse' => 'Biplane\YandexDirect\Api\V5\AudienceTargets\GetResponse',
+            'AudienceTargetGetItem' => 'Biplane\YandexDirect\Api\V5\AudienceTargets\AudienceTargetGetItem',
+            'AudienceTargetBase' => 'Biplane\YandexDirect\Api\V5\AudienceTargets\AudienceTargetBase',
+            'GetResponseGeneral' => 'Biplane\YandexDirect\Api\V5\General\GetResponseGeneral',
+            'AddRequest' => 'Biplane\YandexDirect\Api\V5\AudienceTargets\AddRequest',
+            'AudienceTargetAddItem' => 'Biplane\YandexDirect\Api\V5\AudienceTargets\AudienceTargetAddItem',
+            'AddResponse' => 'Biplane\YandexDirect\Api\V5\AudienceTargets\AddResponse',
+            'ActionResult' => 'Biplane\YandexDirect\Api\V5\General\ActionResult',
+            'ActionResultBase' => 'Biplane\YandexDirect\Api\V5\General\ActionResultBase',
+            'ExceptionNotification' => 'Biplane\YandexDirect\Api\V5\General\ExceptionNotification',
+            'DeleteRequest' => 'Biplane\YandexDirect\Api\V5\AudienceTargets\DeleteRequest',
+            'IdsCriteria' => 'Biplane\YandexDirect\Api\V5\General\IdsCriteria',
+            'DeleteResponse' => 'Biplane\YandexDirect\Api\V5\AudienceTargets\DeleteResponse',
+            'SuspendRequest' => 'Biplane\YandexDirect\Api\V5\AudienceTargets\SuspendRequest',
+            'SuspendResponse' => 'Biplane\YandexDirect\Api\V5\AudienceTargets\SuspendResponse',
+            'ResumeRequest' => 'Biplane\YandexDirect\Api\V5\AudienceTargets\ResumeRequest',
+            'ResumeResponse' => 'Biplane\YandexDirect\Api\V5\AudienceTargets\ResumeResponse',
+            'SetBidsRequest' => 'Biplane\YandexDirect\Api\V5\AudienceTargets\SetBidsRequest',
+            'AudienceTargetSetBidsItem' => 'Biplane\YandexDirect\Api\V5\AudienceTargets\AudienceTargetSetBidsItem',
+            'SetBidsResponse' => 'Biplane\YandexDirect\Api\V5\AudienceTargets\SetBidsResponse',
+            'SetBidsActionResult' => 'Biplane\YandexDirect\Api\V5\General\SetBidsActionResult',
         ];
 
         parent::__construct(self::ENDPOINT, $config, $options);
@@ -67,7 +67,7 @@ class AudienceTargets extends ApiSoapClientV5
     /**
      * Calls operation: get
      */
-    public function get(GetAudienceTargetsRequest $parameters): GetAudienceTargetsResponse
+    public function get(GetRequest $parameters): GetResponse
     {
         return $this->__soapCall('get', [$parameters]);
     }
@@ -75,7 +75,7 @@ class AudienceTargets extends ApiSoapClientV5
     /**
      * Calls operation: add
      */
-    public function add(AddAudienceTargetsRequest $parameters): AddAudienceTargetsResponse
+    public function add(AddRequest $parameters): AddResponse
     {
         return $this->__soapCall('add', [$parameters]);
     }
@@ -83,7 +83,7 @@ class AudienceTargets extends ApiSoapClientV5
     /**
      * Calls operation: delete
      */
-    public function delete(DeleteAudienceTargetsRequest $parameters): DeleteAudienceTargetsResponse
+    public function delete(DeleteRequest $parameters): DeleteResponse
     {
         return $this->__soapCall('delete', [$parameters]);
     }
@@ -91,7 +91,7 @@ class AudienceTargets extends ApiSoapClientV5
     /**
      * Calls operation: suspend
      */
-    public function suspend(SuspendAudienceTargetsRequest $parameters): SuspendAudienceTargetsResponse
+    public function suspend(SuspendRequest $parameters): SuspendResponse
     {
         return $this->__soapCall('suspend', [$parameters]);
     }
@@ -99,7 +99,7 @@ class AudienceTargets extends ApiSoapClientV5
     /**
      * Calls operation: resume
      */
-    public function resume(ResumeAudienceTargetsRequest $parameters): ResumeAudienceTargetsResponse
+    public function resume(ResumeRequest $parameters): ResumeResponse
     {
         return $this->__soapCall('resume', [$parameters]);
     }
@@ -107,7 +107,7 @@ class AudienceTargets extends ApiSoapClientV5
     /**
      * Calls operation: setBids
      */
-    public function setBids(SetBidsAudienceTargetsRequest $parameters): SetBidsAudienceTargetsResponse
+    public function setBids(SetBidsRequest $parameters): SetBidsResponse
     {
         return $this->__soapCall('setBids', [$parameters]);
     }

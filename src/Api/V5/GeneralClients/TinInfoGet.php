@@ -1,0 +1,78 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Biplane\YandexDirect\Api\V5\GeneralClients;
+
+use AllowDynamicProperties;
+
+/**
+ * Auto-generated code.
+ */
+#[AllowDynamicProperties]
+class TinInfoGet
+{
+//    Can be omitted.
+//    protected $TinType;
+
+//    Can be omitted.
+//    protected $Tin;
+
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create(): static
+    {
+        return new static();
+    }
+
+    /**
+     * Get TinType
+     *
+     * @see \Biplane\YandexDirect\Api\V5\GeneralClients\TinTypeEnum
+     *
+     * @return 'PHYSICAL'|'FOREIGN_PHYSICAL'|'LEGAL'|'FOREIGN_LEGAL'|'INDIVIDUAL'|null
+     */
+    public function getTinType(): ?string
+    {
+        return $this->TinType ?? null;
+    }
+
+    /**
+     * Set TinType
+     *
+     * @see \Biplane\YandexDirect\Api\V5\GeneralClients\TinTypeEnum
+     *
+     * @param 'PHYSICAL'|'FOREIGN_PHYSICAL'|'LEGAL'|'FOREIGN_LEGAL'|'INDIVIDUAL'|null $value
+     *
+     * @return $this
+     */
+    public function setTinType(?string $value)
+    {
+        $this->TinType = $value;
+
+        return $this;
+    }
+
+    /**
+     * Get Tin
+     */
+    public function getTin(): ?string
+    {
+        return $this->Tin ?? null;
+    }
+
+    /**
+     * Set Tin
+     *
+     * @return $this
+     */
+    public function setTin(?string $value)
+    {
+        $this->Tin = $value;
+
+        return $this;
+    }
+}

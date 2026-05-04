@@ -1,0 +1,80 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Biplane\YandexDirect\Api\V5\NegativeKeywordSharedSets;
+
+use AllowDynamicProperties;
+use Override;
+
+/**
+ * Auto-generated code.
+ */
+#[AllowDynamicProperties]
+class NegativeKeywordSharedSetGetItem extends NegativeKeywordSharedSetBase
+{
+//    Can be omitted.
+//    protected $Id;
+
+//    Can be omitted.
+//    protected $Associated;
+
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    #[Override]
+    public static function create(): static
+    {
+        return new static();
+    }
+
+    /**
+     * Get Id
+     */
+    public function getId(): ?int
+    {
+        return $this->Id ?? null;
+    }
+
+    /**
+     * Set Id
+     *
+     * @return $this
+     */
+    public function setId(?int $value)
+    {
+        $this->Id = $value;
+
+        return $this;
+    }
+
+    /**
+     * Get Associated
+     *
+     * @see \Biplane\YandexDirect\Api\V5\General\YesNoEnum
+     *
+     * @return 'YES'|'NO'|null
+     */
+    public function getAssociated(): ?string
+    {
+        return $this->Associated ?? null;
+    }
+
+    /**
+     * Set Associated
+     *
+     * @see \Biplane\YandexDirect\Api\V5\General\YesNoEnum
+     *
+     * @param 'YES'|'NO'|null $value
+     *
+     * @return $this
+     */
+    public function setAssociated(?string $value)
+    {
+        $this->Associated = $value;
+
+        return $this;
+    }
+}

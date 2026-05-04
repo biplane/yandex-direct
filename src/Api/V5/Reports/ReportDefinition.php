@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Biplane\YandexDirect\Api\V5\Reports;
 
-use Biplane\YandexDirect\Api\V5\Contract\AttributionModelEnum;
-use Biplane\YandexDirect\Api\V5\Contract\YesNoEnum;
+use Biplane\YandexDirect\Api\V5\General\AttributionModelEnum;
+use Biplane\YandexDirect\Api\V5\General\YesNoEnum;
 
 use function array_values;
 use function count;

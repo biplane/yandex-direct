@@ -1,0 +1,81 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Biplane\YandexDirect\Api\V5\RetargetingLists;
+
+use AllowDynamicProperties;
+use Biplane\YandexDirect\Api\V5\General\GetRequestGeneral;
+use Override;
+
+/**
+ * Auto-generated code.
+ */
+#[AllowDynamicProperties]
+class GetRequest extends GetRequestGeneral
+{
+//    Can be omitted.
+//    protected $SelectionCriteria;
+
+    /** @var non-empty-list<'Type'|'Id'|'Name'|'Description'|'Rules'|'IsAvailable'|'Scope'|'AvailableForTargetsInAdGroupTypes'> */
+    protected $FieldNames;
+
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    #[Override]
+    public static function create(): static
+    {
+        return new static();
+    }
+
+    /**
+     * Get SelectionCriteria
+     */
+    public function getSelectionCriteria(): ?RetargetingListSelectionCriteria
+    {
+        return $this->SelectionCriteria ?? null;
+    }
+
+    /**
+     * Set SelectionCriteria
+     *
+     * @return $this
+     */
+    public function setSelectionCriteria(?RetargetingListSelectionCriteria $value)
+    {
+        $this->SelectionCriteria = $value;
+
+        return $this;
+    }
+
+    /**
+     * Get FieldNames
+     *
+     * @see \Biplane\YandexDirect\Api\V5\RetargetingLists\RetargetingListFieldEnum
+     *
+     * @return non-empty-list<'Type'|'Id'|'Name'|'Description'|'Rules'|'IsAvailable'|'Scope'|'AvailableForTargetsInAdGroupTypes'>
+     */
+    public function getFieldNames(): array
+    {
+        return $this->FieldNames;
+    }
+
+    /**
+     * Set FieldNames
+     *
+     * @see \Biplane\YandexDirect\Api\V5\RetargetingLists\RetargetingListFieldEnum
+     *
+     * @param non-empty-list<'Type'|'Id'|'Name'|'Description'|'Rules'|'IsAvailable'|'Scope'|'AvailableForTargetsInAdGroupTypes'> $value
+     *
+     * @return $this
+     */
+    public function setFieldNames(array $value)
+    {
+        $this->FieldNames = $value;
+
+        return $this;
+    }
+}

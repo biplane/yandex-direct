@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5;
 
 use Biplane\YandexDirect\Api\ApiSoapClientV5;
-use Biplane\YandexDirect\Api\V5\Contract\GetBusinessesRequest;
-use Biplane\YandexDirect\Api\V5\Contract\GetBusinessesResponse;
+use Biplane\YandexDirect\Api\V5\Businesses\GetRequest;
+use Biplane\YandexDirect\Api\V5\Businesses\GetResponse;
 use Biplane\YandexDirect\Config;
 
 /**
@@ -24,13 +24,13 @@ class Businesses extends ApiSoapClientV5
     public function __construct(Config $config, array $options)
     {
         $options['classmap'] = [
-            'GetRequest' => 'Biplane\YandexDirect\Api\V5\Contract\GetBusinessesRequest',
-            'IdsCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\IdsCriteria',
-            'GetRequestGeneral' => 'Biplane\YandexDirect\Api\V5\Contract\GetRequestGeneral',
-            'LimitOffset' => 'Biplane\YandexDirect\Api\V5\Contract\LimitOffset',
-            'GetResponse' => 'Biplane\YandexDirect\Api\V5\Contract\GetBusinessesResponse',
-            'BusinessGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\BusinessGetItem',
-            'GetResponseGeneral' => 'Biplane\YandexDirect\Api\V5\Contract\GetResponseGeneral',
+            'GetRequest' => 'Biplane\YandexDirect\Api\V5\Businesses\GetRequest',
+            'IdsCriteria' => 'Biplane\YandexDirect\Api\V5\General\IdsCriteria',
+            'GetRequestGeneral' => 'Biplane\YandexDirect\Api\V5\General\GetRequestGeneral',
+            'LimitOffset' => 'Biplane\YandexDirect\Api\V5\General\LimitOffset',
+            'GetResponse' => 'Biplane\YandexDirect\Api\V5\Businesses\GetResponse',
+            'BusinessGetItem' => 'Biplane\YandexDirect\Api\V5\Businesses\BusinessGetItem',
+            'GetResponseGeneral' => 'Biplane\YandexDirect\Api\V5\General\GetResponseGeneral',
         ];
 
         parent::__construct(self::ENDPOINT, $config, $options);
@@ -39,7 +39,7 @@ class Businesses extends ApiSoapClientV5
     /**
      * Calls operation: get
      */
-    public function get(GetBusinessesRequest $parameters): GetBusinessesResponse
+    public function get(GetRequest $parameters): GetResponse
     {
         return $this->__soapCall('get', [$parameters]);
     }

@@ -45,13 +45,13 @@
   </rule>
 
   <rule ref="Generic.NamingConventions.UpperCaseConstantName.ClassConstantNotUpperCase">
-    <exclude-pattern>src/Api/V4/Contract</exclude-pattern>
-    <exclude-pattern>src/Api/V5/Contract</exclude-pattern>
+    <exclude-pattern>src/Api/V4</exclude-pattern>
+    <exclude-pattern>src/Api/V5</exclude-pattern>
   </rule>
 
   <rule ref="Squiz.Commenting.FunctionComment.WrongStyle">
-    <exclude-pattern>src/Api/V4/Contract</exclude-pattern>
-    <exclude-pattern>src/Api/V5/Contract</exclude-pattern>
+    <exclude-pattern>src/Api/V4</exclude-pattern>
+    <exclude-pattern>src/Api/V5</exclude-pattern>
   </rule>
 
   <rule ref="SlevomatCodingStandard.Namespaces.ReferenceUsedNamesOnly.ReferenceViaFullyQualifiedName">
@@ -59,18 +59,18 @@
   </rule>
 
   <rule ref="Squiz.NamingConventions.ValidVariableName.MemberNotCamelCaps">
-    <exclude-pattern>src/Api/V4/Contract</exclude-pattern>
-    <exclude-pattern>src/Api/V5/Contract</exclude-pattern>
+    <exclude-pattern>src/Api/V4</exclude-pattern>
+    <exclude-pattern>src/Api/V5</exclude-pattern>
   </rule>
 
   <rule ref="SlevomatCodingStandard.TypeHints.PropertyTypeHint.MissingAnyTypeHint">
-    <exclude-pattern>src/Api/V4/Contract</exclude-pattern>
-    <exclude-pattern>src/Api/V5/Contract</exclude-pattern>
+    <exclude-pattern>src/Api/V4</exclude-pattern>
+    <exclude-pattern>src/Api/V5</exclude-pattern>
   </rule>
 
   <rule ref="SlevomatCodingStandard.TypeHints.PropertyTypeHint.MissingNativeTypeHint">
-    <exclude-pattern>src/Api/V4/Contract</exclude-pattern>
-    <exclude-pattern>src/Api/V5/Contract</exclude-pattern>
+    <exclude-pattern>src/Api/V4</exclude-pattern>
+    <exclude-pattern>src/Api/V5</exclude-pattern>
   </rule>
 
   <rule ref="SlevomatCodingStandard.TypeHints.ParameterTypeHint.MissingTraversableTypeHintSpecification">

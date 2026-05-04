@@ -1,0 +1,182 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Biplane\YandexDirect\Api\V5\AgencyClients;
+
+use AllowDynamicProperties;
+use Biplane\YandexDirect\Api\V5\GeneralClients\ClientSettingAddItem;
+use Biplane\YandexDirect\Api\V5\GeneralClients\GrantItem;
+use Biplane\YandexDirect\Api\V5\GeneralClients\NotificationAdd;
+use Biplane\YandexDirect\Api\V5\GeneralClients\TinInfoAdd;
+
+/**
+ * Auto-generated code.
+ */
+#[AllowDynamicProperties]
+class AddPassportOrganizationRequest
+{
+    /** @var string */
+    protected $Name;
+
+    /** @var 'YND_FIXED'|'RUB'|'CHF'|'EUR'|'KZT'|'TRY'|'UAH'|'USD'|'BYN'|'GBP' */
+    protected $Currency;
+
+    /** @var NotificationAdd */
+    protected $Notification;
+
+//    Can be omitted.
+//    protected $Settings;
+
+//    Can be omitted.
+//    protected $Grants;
+
+//    Can be omitted.
+//    protected $TinInfo;
+
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create(): static
+    {
+        return new static();
+    }
+
+    /**
+     * Get Name
+     */
+    public function getName(): string
+    {
+        return $this->Name;
+    }
+
+    /**
+     * Set Name
+     *
+     * @return $this
+     */
+    public function setName(string $value)
+    {
+        $this->Name = $value;
+
+        return $this;
+    }
+
+    /**
+     * Get Currency
+     *
+     * @see \Biplane\YandexDirect\Api\V5\General\CurrencyEnum
+     *
+     * @return 'YND_FIXED'|'RUB'|'CHF'|'EUR'|'KZT'|'TRY'|'UAH'|'USD'|'BYN'|'GBP'
+     */
+    public function getCurrency(): string
+    {
+        return $this->Currency;
+    }
+
+    /**
+     * Set Currency
+     *
+     * @see \Biplane\YandexDirect\Api\V5\General\CurrencyEnum
+     *
+     * @param 'YND_FIXED'|'RUB'|'CHF'|'EUR'|'KZT'|'TRY'|'UAH'|'USD'|'BYN'|'GBP' $value
+     *
+     * @return $this
+     */
+    public function setCurrency(string $value)
+    {
+        $this->Currency = $value;
+
+        return $this;
+    }
+
+    /**
+     * Get Notification
+     */
+    public function getNotification(): NotificationAdd
+    {
+        return $this->Notification;
+    }
+
+    /**
+     * Set Notification
+     *
+     * @return $this
+     */
+    public function setNotification(NotificationAdd $value)
+    {
+        $this->Notification = $value;
+
+        return $this;
+    }
+
+    /**
+     * Get Settings
+     *
+     * @return list<ClientSettingAddItem>
+     */
+    public function getSettings(): array
+    {
+        return $this->Settings ?? [];
+    }
+
+    /**
+     * Set Settings
+     *
+     * @param list<ClientSettingAddItem> $value
+     *
+     * @return $this
+     */
+    public function setSettings(array $value)
+    {
+        $this->Settings = $value;
+
+        return $this;
+    }
+
+    /**
+     * Get Grants
+     *
+     * @return list<GrantItem>
+     */
+    public function getGrants(): array
+    {
+        return $this->Grants ?? [];
+    }
+
+    /**
+     * Set Grants
+     *
+     * @param list<GrantItem> $value
+     *
+     * @return $this
+     */
+    public function setGrants(array $value)
+    {
+        $this->Grants = $value;
+
+        return $this;
+    }
+
+    /**
+     * Get TinInfo
+     */
+    public function getTinInfo(): ?TinInfoAdd
+    {
+        return $this->TinInfo ?? null;
+    }
+
+    /**
+     * Set TinInfo
+     *
+     * @return $this
+     */
+    public function setTinInfo(?TinInfoAdd $value)
+    {
+        $this->TinInfo = $value;
+
+        return $this;
+    }
+}

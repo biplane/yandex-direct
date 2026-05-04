@@ -5,14 +5,14 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5;
 
 use Biplane\YandexDirect\Api\ApiSoapClientV5;
-use Biplane\YandexDirect\Api\V5\Contract\AddBidModifiersRequest;
-use Biplane\YandexDirect\Api\V5\Contract\AddBidModifiersResponse;
-use Biplane\YandexDirect\Api\V5\Contract\DeleteBidModifiersRequest;
-use Biplane\YandexDirect\Api\V5\Contract\DeleteBidModifiersResponse;
-use Biplane\YandexDirect\Api\V5\Contract\GetBidModifiersRequest;
-use Biplane\YandexDirect\Api\V5\Contract\GetBidModifiersResponse;
-use Biplane\YandexDirect\Api\V5\Contract\SetBidModifiersRequest;
-use Biplane\YandexDirect\Api\V5\Contract\SetBidModifiersResponse;
+use Biplane\YandexDirect\Api\V5\BidModifiers\AddRequest;
+use Biplane\YandexDirect\Api\V5\BidModifiers\AddResponse;
+use Biplane\YandexDirect\Api\V5\BidModifiers\DeleteRequest;
+use Biplane\YandexDirect\Api\V5\BidModifiers\DeleteResponse;
+use Biplane\YandexDirect\Api\V5\BidModifiers\GetRequest;
+use Biplane\YandexDirect\Api\V5\BidModifiers\GetResponse;
+use Biplane\YandexDirect\Api\V5\BidModifiers\SetRequest;
+use Biplane\YandexDirect\Api\V5\BidModifiers\SetResponse;
 use Biplane\YandexDirect\Config;
 
 /**
@@ -30,53 +30,53 @@ class BidModifiers extends ApiSoapClientV5
     public function __construct(Config $config, array $options)
     {
         $options['classmap'] = [
-            'AddRequest' => 'Biplane\YandexDirect\Api\V5\Contract\AddBidModifiersRequest',
-            'BidModifierAddItem' => 'Biplane\YandexDirect\Api\V5\Contract\BidModifierAddItem',
-            'MobileAdjustmentAdd' => 'Biplane\YandexDirect\Api\V5\Contract\MobileAdjustmentAdd',
-            'DesktopAdjustmentAdd' => 'Biplane\YandexDirect\Api\V5\Contract\DesktopAdjustmentAdd',
-            'SmartTvAdjustmentAdd' => 'Biplane\YandexDirect\Api\V5\Contract\SmartTvAdjustmentAdd',
-            'TabletAdjustmentAdd' => 'Biplane\YandexDirect\Api\V5\Contract\TabletAdjustmentAdd',
-            'DesktopOnlyAdjustmentAdd' => 'Biplane\YandexDirect\Api\V5\Contract\DesktopOnlyAdjustmentAdd',
-            'DemographicsAdjustmentAdd' => 'Biplane\YandexDirect\Api\V5\Contract\DemographicsAdjustmentAdd',
-            'RetargetingAdjustmentAdd' => 'Biplane\YandexDirect\Api\V5\Contract\RetargetingAdjustmentAdd',
-            'RegionalAdjustmentAdd' => 'Biplane\YandexDirect\Api\V5\Contract\RegionalAdjustmentAdd',
-            'VideoAdjustmentAdd' => 'Biplane\YandexDirect\Api\V5\Contract\VideoAdjustmentAdd',
-            'SmartAdAdjustmentAdd' => 'Biplane\YandexDirect\Api\V5\Contract\SmartAdAdjustmentAdd',
-            'SerpLayoutAdjustmentAdd' => 'Biplane\YandexDirect\Api\V5\Contract\SerpLayoutAdjustmentAdd',
-            'IncomeGradeAdjustmentAdd' => 'Biplane\YandexDirect\Api\V5\Contract\IncomeGradeAdjustmentAdd',
-            'AdGroupAdjustmentAdd' => 'Biplane\YandexDirect\Api\V5\Contract\AdGroupAdjustmentAdd',
-            'BidModifierAddBase' => 'Biplane\YandexDirect\Api\V5\Contract\BidModifierAddBase',
-            'AddResponse' => 'Biplane\YandexDirect\Api\V5\Contract\AddBidModifiersResponse',
-            'MultiIdsActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\MultiIdsActionResult',
-            'ActionResultBase' => 'Biplane\YandexDirect\Api\V5\Contract\ActionResultBase',
-            'ExceptionNotification' => 'Biplane\YandexDirect\Api\V5\Contract\ExceptionNotification',
-            'SetRequest' => 'Biplane\YandexDirect\Api\V5\Contract\SetBidModifiersRequest',
-            'BidModifierSetItem' => 'Biplane\YandexDirect\Api\V5\Contract\BidModifierSetItem',
-            'SetResponse' => 'Biplane\YandexDirect\Api\V5\Contract\SetBidModifiersResponse',
-            'ActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\ActionResult',
-            'GetRequest' => 'Biplane\YandexDirect\Api\V5\Contract\GetBidModifiersRequest',
-            'BidModifiersSelectionCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\BidModifiersSelectionCriteria',
-            'GetRequestGeneral' => 'Biplane\YandexDirect\Api\V5\Contract\GetRequestGeneral',
-            'LimitOffset' => 'Biplane\YandexDirect\Api\V5\Contract\LimitOffset',
-            'GetResponse' => 'Biplane\YandexDirect\Api\V5\Contract\GetBidModifiersResponse',
-            'BidModifierGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\BidModifierGetItem',
-            'MobileAdjustmentGet' => 'Biplane\YandexDirect\Api\V5\Contract\MobileAdjustmentGet',
-            'DesktopAdjustmentGet' => 'Biplane\YandexDirect\Api\V5\Contract\DesktopAdjustmentGet',
-            'SmartTvAdjustmentGet' => 'Biplane\YandexDirect\Api\V5\Contract\SmartTvAdjustmentGet',
-            'TabletAdjustmentGet' => 'Biplane\YandexDirect\Api\V5\Contract\TabletAdjustmentGet',
-            'DesktopOnlyAdjustmentGet' => 'Biplane\YandexDirect\Api\V5\Contract\DesktopOnlyAdjustmentGet',
-            'DemographicsAdjustmentGet' => 'Biplane\YandexDirect\Api\V5\Contract\DemographicsAdjustmentGet',
-            'RetargetingAdjustmentGet' => 'Biplane\YandexDirect\Api\V5\Contract\RetargetingAdjustmentGet',
-            'RegionalAdjustmentGet' => 'Biplane\YandexDirect\Api\V5\Contract\RegionalAdjustmentGet',
-            'VideoAdjustmentGet' => 'Biplane\YandexDirect\Api\V5\Contract\VideoAdjustmentGet',
-            'SmartAdAdjustmentGet' => 'Biplane\YandexDirect\Api\V5\Contract\SmartAdAdjustmentGet',
-            'SerpLayoutAdjustmentGet' => 'Biplane\YandexDirect\Api\V5\Contract\SerpLayoutAdjustmentGet',
-            'IncomeGradeAdjustmentGet' => 'Biplane\YandexDirect\Api\V5\Contract\IncomeGradeAdjustmentGet',
-            'AdGroupAdjustmentGet' => 'Biplane\YandexDirect\Api\V5\Contract\AdGroupAdjustmentGet',
-            'GetResponseGeneral' => 'Biplane\YandexDirect\Api\V5\Contract\GetResponseGeneral',
-            'DeleteRequest' => 'Biplane\YandexDirect\Api\V5\Contract\DeleteBidModifiersRequest',
-            'IdsCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\IdsCriteria',
-            'DeleteResponse' => 'Biplane\YandexDirect\Api\V5\Contract\DeleteBidModifiersResponse',
+            'AddRequest' => 'Biplane\YandexDirect\Api\V5\BidModifiers\AddRequest',
+            'BidModifierAddItem' => 'Biplane\YandexDirect\Api\V5\BidModifiers\BidModifierAddItem',
+            'MobileAdjustmentAdd' => 'Biplane\YandexDirect\Api\V5\BidModifiers\MobileAdjustmentAdd',
+            'DesktopAdjustmentAdd' => 'Biplane\YandexDirect\Api\V5\BidModifiers\DesktopAdjustmentAdd',
+            'SmartTvAdjustmentAdd' => 'Biplane\YandexDirect\Api\V5\BidModifiers\SmartTvAdjustmentAdd',
+            'TabletAdjustmentAdd' => 'Biplane\YandexDirect\Api\V5\BidModifiers\TabletAdjustmentAdd',
+            'DesktopOnlyAdjustmentAdd' => 'Biplane\YandexDirect\Api\V5\BidModifiers\DesktopOnlyAdjustmentAdd',
+            'DemographicsAdjustmentAdd' => 'Biplane\YandexDirect\Api\V5\BidModifiers\DemographicsAdjustmentAdd',
+            'RetargetingAdjustmentAdd' => 'Biplane\YandexDirect\Api\V5\BidModifiers\RetargetingAdjustmentAdd',
+            'RegionalAdjustmentAdd' => 'Biplane\YandexDirect\Api\V5\BidModifiers\RegionalAdjustmentAdd',
+            'VideoAdjustmentAdd' => 'Biplane\YandexDirect\Api\V5\BidModifiers\VideoAdjustmentAdd',
+            'SmartAdAdjustmentAdd' => 'Biplane\YandexDirect\Api\V5\BidModifiers\SmartAdAdjustmentAdd',
+            'SerpLayoutAdjustmentAdd' => 'Biplane\YandexDirect\Api\V5\BidModifiers\SerpLayoutAdjustmentAdd',
+            'IncomeGradeAdjustmentAdd' => 'Biplane\YandexDirect\Api\V5\BidModifiers\IncomeGradeAdjustmentAdd',
+            'AdGroupAdjustmentAdd' => 'Biplane\YandexDirect\Api\V5\BidModifiers\AdGroupAdjustmentAdd',
+            'BidModifierAddBase' => 'Biplane\YandexDirect\Api\V5\BidModifiers\BidModifierAddBase',
+            'AddResponse' => 'Biplane\YandexDirect\Api\V5\BidModifiers\AddResponse',
+            'MultiIdsActionResult' => 'Biplane\YandexDirect\Api\V5\General\MultiIdsActionResult',
+            'ActionResultBase' => 'Biplane\YandexDirect\Api\V5\General\ActionResultBase',
+            'ExceptionNotification' => 'Biplane\YandexDirect\Api\V5\General\ExceptionNotification',
+            'SetRequest' => 'Biplane\YandexDirect\Api\V5\BidModifiers\SetRequest',
+            'BidModifierSetItem' => 'Biplane\YandexDirect\Api\V5\BidModifiers\BidModifierSetItem',
+            'SetResponse' => 'Biplane\YandexDirect\Api\V5\BidModifiers\SetResponse',
+            'ActionResult' => 'Biplane\YandexDirect\Api\V5\General\ActionResult',
+            'GetRequest' => 'Biplane\YandexDirect\Api\V5\BidModifiers\GetRequest',
+            'BidModifiersSelectionCriteria' => 'Biplane\YandexDirect\Api\V5\BidModifiers\BidModifiersSelectionCriteria',
+            'GetRequestGeneral' => 'Biplane\YandexDirect\Api\V5\General\GetRequestGeneral',
+            'LimitOffset' => 'Biplane\YandexDirect\Api\V5\General\LimitOffset',
+            'GetResponse' => 'Biplane\YandexDirect\Api\V5\BidModifiers\GetResponse',
+            'BidModifierGetItem' => 'Biplane\YandexDirect\Api\V5\BidModifiers\BidModifierGetItem',
+            'MobileAdjustmentGet' => 'Biplane\YandexDirect\Api\V5\BidModifiers\MobileAdjustmentGet',
+            'DesktopAdjustmentGet' => 'Biplane\YandexDirect\Api\V5\BidModifiers\DesktopAdjustmentGet',
+            'SmartTvAdjustmentGet' => 'Biplane\YandexDirect\Api\V5\BidModifiers\SmartTvAdjustmentGet',
+            'TabletAdjustmentGet' => 'Biplane\YandexDirect\Api\V5\BidModifiers\TabletAdjustmentGet',
+            'DesktopOnlyAdjustmentGet' => 'Biplane\YandexDirect\Api\V5\BidModifiers\DesktopOnlyAdjustmentGet',
+            'DemographicsAdjustmentGet' => 'Biplane\YandexDirect\Api\V5\BidModifiers\DemographicsAdjustmentGet',
+            'RetargetingAdjustmentGet' => 'Biplane\YandexDirect\Api\V5\BidModifiers\RetargetingAdjustmentGet',
+            'RegionalAdjustmentGet' => 'Biplane\YandexDirect\Api\V5\BidModifiers\RegionalAdjustmentGet',
+            'VideoAdjustmentGet' => 'Biplane\YandexDirect\Api\V5\BidModifiers\VideoAdjustmentGet',
+            'SmartAdAdjustmentGet' => 'Biplane\YandexDirect\Api\V5\BidModifiers\SmartAdAdjustmentGet',
+            'SerpLayoutAdjustmentGet' => 'Biplane\YandexDirect\Api\V5\BidModifiers\SerpLayoutAdjustmentGet',
+            'IncomeGradeAdjustmentGet' => 'Biplane\YandexDirect\Api\V5\BidModifiers\IncomeGradeAdjustmentGet',
+            'AdGroupAdjustmentGet' => 'Biplane\YandexDirect\Api\V5\BidModifiers\AdGroupAdjustmentGet',
+            'GetResponseGeneral' => 'Biplane\YandexDirect\Api\V5\General\GetResponseGeneral',
+            'DeleteRequest' => 'Biplane\YandexDirect\Api\V5\BidModifiers\DeleteRequest',
+            'IdsCriteria' => 'Biplane\YandexDirect\Api\V5\General\IdsCriteria',
+            'DeleteResponse' => 'Biplane\YandexDirect\Api\V5\BidModifiers\DeleteResponse',
         ];
 
         parent::__construct(self::ENDPOINT, $config, $options);
@@ -85,7 +85,7 @@ class BidModifiers extends ApiSoapClientV5
     /**
      * Calls operation: add
      */
-    public function add(AddBidModifiersRequest $parameters): AddBidModifiersResponse
+    public function add(AddRequest $parameters): AddResponse
     {
         return $this->__soapCall('add', [$parameters]);
     }
@@ -93,7 +93,7 @@ class BidModifiers extends ApiSoapClientV5
     /**
      * Calls operation: set
      */
-    public function set(SetBidModifiersRequest $parameters): SetBidModifiersResponse
+    public function set(SetRequest $parameters): SetResponse
     {
         return $this->__soapCall('set', [$parameters]);
     }
@@ -101,7 +101,7 @@ class BidModifiers extends ApiSoapClientV5
     /**
      * Calls operation: get
      */
-    public function get(GetBidModifiersRequest $parameters): GetBidModifiersResponse
+    public function get(GetRequest $parameters): GetResponse
     {
         return $this->__soapCall('get', [$parameters]);
     }
@@ -109,7 +109,7 @@ class BidModifiers extends ApiSoapClientV5
     /**
      * Calls operation: delete
      */
-    public function delete(DeleteBidModifiersRequest $parameters): DeleteBidModifiersResponse
+    public function delete(DeleteRequest $parameters): DeleteResponse
     {
         return $this->__soapCall('delete', [$parameters]);
     }

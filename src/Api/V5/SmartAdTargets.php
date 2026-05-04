@@ -5,20 +5,20 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5;
 
 use Biplane\YandexDirect\Api\ApiSoapClientV5;
-use Biplane\YandexDirect\Api\V5\Contract\AddSmartAdTargetsRequest;
-use Biplane\YandexDirect\Api\V5\Contract\AddSmartAdTargetsResponse;
-use Biplane\YandexDirect\Api\V5\Contract\DeleteSmartAdTargetsRequest;
-use Biplane\YandexDirect\Api\V5\Contract\DeleteSmartAdTargetsResponse;
-use Biplane\YandexDirect\Api\V5\Contract\GetSmartAdTargetsRequest;
-use Biplane\YandexDirect\Api\V5\Contract\GetSmartAdTargetsResponse;
-use Biplane\YandexDirect\Api\V5\Contract\ResumeSmartAdTargetsRequest;
-use Biplane\YandexDirect\Api\V5\Contract\ResumeSmartAdTargetsResponse;
-use Biplane\YandexDirect\Api\V5\Contract\SetBidsSmartAdTargetsRequest;
-use Biplane\YandexDirect\Api\V5\Contract\SetBidsSmartAdTargetsResponse;
-use Biplane\YandexDirect\Api\V5\Contract\SuspendSmartAdTargetsRequest;
-use Biplane\YandexDirect\Api\V5\Contract\SuspendSmartAdTargetsResponse;
-use Biplane\YandexDirect\Api\V5\Contract\UpdateSmartAdTargetsRequest;
-use Biplane\YandexDirect\Api\V5\Contract\UpdateSmartAdTargetsResponse;
+use Biplane\YandexDirect\Api\V5\SmartAdTargets\AddRequest;
+use Biplane\YandexDirect\Api\V5\SmartAdTargets\AddResponse;
+use Biplane\YandexDirect\Api\V5\SmartAdTargets\DeleteRequest;
+use Biplane\YandexDirect\Api\V5\SmartAdTargets\DeleteResponse;
+use Biplane\YandexDirect\Api\V5\SmartAdTargets\GetRequest;
+use Biplane\YandexDirect\Api\V5\SmartAdTargets\GetResponse;
+use Biplane\YandexDirect\Api\V5\SmartAdTargets\ResumeRequest;
+use Biplane\YandexDirect\Api\V5\SmartAdTargets\ResumeResponse;
+use Biplane\YandexDirect\Api\V5\SmartAdTargets\SetBidsRequest;
+use Biplane\YandexDirect\Api\V5\SmartAdTargets\SetBidsResponse;
+use Biplane\YandexDirect\Api\V5\SmartAdTargets\SuspendRequest;
+use Biplane\YandexDirect\Api\V5\SmartAdTargets\SuspendResponse;
+use Biplane\YandexDirect\Api\V5\SmartAdTargets\UpdateRequest;
+use Biplane\YandexDirect\Api\V5\SmartAdTargets\UpdateResponse;
 use Biplane\YandexDirect\Config;
 
 /**
@@ -36,35 +36,35 @@ class SmartAdTargets extends ApiSoapClientV5
     public function __construct(Config $config, array $options)
     {
         $options['classmap'] = [
-            'AddRequest' => 'Biplane\YandexDirect\Api\V5\Contract\AddSmartAdTargetsRequest',
-            'SmartAdTargetAddItem' => 'Biplane\YandexDirect\Api\V5\Contract\SmartAdTargetAddItem',
-            'ConditionsArray' => 'Biplane\YandexDirect\Api\V5\Contract\ConditionsArray',
-            'ConditionsItem' => 'Biplane\YandexDirect\Api\V5\Contract\ConditionsItem',
-            'AddResponse' => 'Biplane\YandexDirect\Api\V5\Contract\AddSmartAdTargetsResponse',
-            'ActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\ActionResult',
-            'ActionResultBase' => 'Biplane\YandexDirect\Api\V5\Contract\ActionResultBase',
-            'ExceptionNotification' => 'Biplane\YandexDirect\Api\V5\Contract\ExceptionNotification',
-            'GetRequest' => 'Biplane\YandexDirect\Api\V5\Contract\GetSmartAdTargetsRequest',
-            'AdTargetsSelectionCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\AdTargetsSelectionCriteria',
-            'GetRequestGeneral' => 'Biplane\YandexDirect\Api\V5\Contract\GetRequestGeneral',
-            'LimitOffset' => 'Biplane\YandexDirect\Api\V5\Contract\LimitOffset',
-            'GetResponse' => 'Biplane\YandexDirect\Api\V5\Contract\GetSmartAdTargetsResponse',
-            'SmartAdTargetGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\SmartAdTargetGetItem',
-            'GetResponseGeneral' => 'Biplane\YandexDirect\Api\V5\Contract\GetResponseGeneral',
-            'UpdateRequest' => 'Biplane\YandexDirect\Api\V5\Contract\UpdateSmartAdTargetsRequest',
-            'SmartAdTargetUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\SmartAdTargetUpdateItem',
-            'UpdateResponse' => 'Biplane\YandexDirect\Api\V5\Contract\UpdateSmartAdTargetsResponse',
-            'DeleteRequest' => 'Biplane\YandexDirect\Api\V5\Contract\DeleteSmartAdTargetsRequest',
-            'IdsCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\IdsCriteria',
-            'DeleteResponse' => 'Biplane\YandexDirect\Api\V5\Contract\DeleteSmartAdTargetsResponse',
-            'SuspendRequest' => 'Biplane\YandexDirect\Api\V5\Contract\SuspendSmartAdTargetsRequest',
-            'SuspendResponse' => 'Biplane\YandexDirect\Api\V5\Contract\SuspendSmartAdTargetsResponse',
-            'ResumeRequest' => 'Biplane\YandexDirect\Api\V5\Contract\ResumeSmartAdTargetsRequest',
-            'ResumeResponse' => 'Biplane\YandexDirect\Api\V5\Contract\ResumeSmartAdTargetsResponse',
-            'SetBidsRequest' => 'Biplane\YandexDirect\Api\V5\Contract\SetBidsSmartAdTargetsRequest',
-            'SetBidsItem' => 'Biplane\YandexDirect\Api\V5\Contract\SmartAdTargetSetBidsItem',
-            'SetBidsResponse' => 'Biplane\YandexDirect\Api\V5\Contract\SetBidsSmartAdTargetsResponse',
-            'SetBidsActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\SetBidsActionResult',
+            'AddRequest' => 'Biplane\YandexDirect\Api\V5\SmartAdTargets\AddRequest',
+            'SmartAdTargetAddItem' => 'Biplane\YandexDirect\Api\V5\SmartAdTargets\SmartAdTargetAddItem',
+            'ConditionsArray' => 'Biplane\YandexDirect\Api\V5\SmartAdTargets\ConditionsArray',
+            'ConditionsItem' => 'Biplane\YandexDirect\Api\V5\SmartAdTargets\ConditionsItem',
+            'AddResponse' => 'Biplane\YandexDirect\Api\V5\SmartAdTargets\AddResponse',
+            'ActionResult' => 'Biplane\YandexDirect\Api\V5\General\ActionResult',
+            'ActionResultBase' => 'Biplane\YandexDirect\Api\V5\General\ActionResultBase',
+            'ExceptionNotification' => 'Biplane\YandexDirect\Api\V5\General\ExceptionNotification',
+            'GetRequest' => 'Biplane\YandexDirect\Api\V5\SmartAdTargets\GetRequest',
+            'AdTargetsSelectionCriteria' => 'Biplane\YandexDirect\Api\V5\General\AdTargetsSelectionCriteria',
+            'GetRequestGeneral' => 'Biplane\YandexDirect\Api\V5\General\GetRequestGeneral',
+            'LimitOffset' => 'Biplane\YandexDirect\Api\V5\General\LimitOffset',
+            'GetResponse' => 'Biplane\YandexDirect\Api\V5\SmartAdTargets\GetResponse',
+            'SmartAdTargetGetItem' => 'Biplane\YandexDirect\Api\V5\SmartAdTargets\SmartAdTargetGetItem',
+            'GetResponseGeneral' => 'Biplane\YandexDirect\Api\V5\General\GetResponseGeneral',
+            'UpdateRequest' => 'Biplane\YandexDirect\Api\V5\SmartAdTargets\UpdateRequest',
+            'SmartAdTargetUpdateItem' => 'Biplane\YandexDirect\Api\V5\SmartAdTargets\SmartAdTargetUpdateItem',
+            'UpdateResponse' => 'Biplane\YandexDirect\Api\V5\SmartAdTargets\UpdateResponse',
+            'DeleteRequest' => 'Biplane\YandexDirect\Api\V5\SmartAdTargets\DeleteRequest',
+            'IdsCriteria' => 'Biplane\YandexDirect\Api\V5\General\IdsCriteria',
+            'DeleteResponse' => 'Biplane\YandexDirect\Api\V5\SmartAdTargets\DeleteResponse',
+            'SuspendRequest' => 'Biplane\YandexDirect\Api\V5\SmartAdTargets\SuspendRequest',
+            'SuspendResponse' => 'Biplane\YandexDirect\Api\V5\SmartAdTargets\SuspendResponse',
+            'ResumeRequest' => 'Biplane\YandexDirect\Api\V5\SmartAdTargets\ResumeRequest',
+            'ResumeResponse' => 'Biplane\YandexDirect\Api\V5\SmartAdTargets\ResumeResponse',
+            'SetBidsRequest' => 'Biplane\YandexDirect\Api\V5\SmartAdTargets\SetBidsRequest',
+            'SetBidsItem' => 'Biplane\YandexDirect\Api\V5\SmartAdTargets\SetBidsItem',
+            'SetBidsResponse' => 'Biplane\YandexDirect\Api\V5\SmartAdTargets\SetBidsResponse',
+            'SetBidsActionResult' => 'Biplane\YandexDirect\Api\V5\General\SetBidsActionResult',
         ];
 
         parent::__construct(self::ENDPOINT, $config, $options);
@@ -73,7 +73,7 @@ class SmartAdTargets extends ApiSoapClientV5
     /**
      * Calls operation: add
      */
-    public function add(AddSmartAdTargetsRequest $parameters): AddSmartAdTargetsResponse
+    public function add(AddRequest $parameters): AddResponse
     {
         return $this->__soapCall('add', [$parameters]);
     }
@@ -81,7 +81,7 @@ class SmartAdTargets extends ApiSoapClientV5
     /**
      * Calls operation: get
      */
-    public function get(GetSmartAdTargetsRequest $parameters): GetSmartAdTargetsResponse
+    public function get(GetRequest $parameters): GetResponse
     {
         return $this->__soapCall('get', [$parameters]);
     }
@@ -89,7 +89,7 @@ class SmartAdTargets extends ApiSoapClientV5
     /**
      * Calls operation: update
      */
-    public function update(UpdateSmartAdTargetsRequest $parameters): UpdateSmartAdTargetsResponse
+    public function update(UpdateRequest $parameters): UpdateResponse
     {
         return $this->__soapCall('update', [$parameters]);
     }
@@ -97,7 +97,7 @@ class SmartAdTargets extends ApiSoapClientV5
     /**
      * Calls operation: delete
      */
-    public function delete(DeleteSmartAdTargetsRequest $parameters): DeleteSmartAdTargetsResponse
+    public function delete(DeleteRequest $parameters): DeleteResponse
     {
         return $this->__soapCall('delete', [$parameters]);
     }
@@ -105,7 +105,7 @@ class SmartAdTargets extends ApiSoapClientV5
     /**
      * Calls operation: suspend
      */
-    public function suspend(SuspendSmartAdTargetsRequest $parameters): SuspendSmartAdTargetsResponse
+    public function suspend(SuspendRequest $parameters): SuspendResponse
     {
         return $this->__soapCall('suspend', [$parameters]);
     }
@@ -113,7 +113,7 @@ class SmartAdTargets extends ApiSoapClientV5
     /**
      * Calls operation: resume
      */
-    public function resume(ResumeSmartAdTargetsRequest $parameters): ResumeSmartAdTargetsResponse
+    public function resume(ResumeRequest $parameters): ResumeResponse
     {
         return $this->__soapCall('resume', [$parameters]);
     }
@@ -121,7 +121,7 @@ class SmartAdTargets extends ApiSoapClientV5
     /**
      * Calls operation: setBids
      */
-    public function setBids(SetBidsSmartAdTargetsRequest $parameters): SetBidsSmartAdTargetsResponse
+    public function setBids(SetBidsRequest $parameters): SetBidsResponse
     {
         return $this->__soapCall('setBids', [$parameters]);
     }

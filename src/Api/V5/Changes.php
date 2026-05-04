@@ -5,12 +5,12 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5;
 
 use Biplane\YandexDirect\Api\ApiSoapClientV5;
-use Biplane\YandexDirect\Api\V5\Contract\CheckCampaignsRequest;
-use Biplane\YandexDirect\Api\V5\Contract\CheckCampaignsResponse;
-use Biplane\YandexDirect\Api\V5\Contract\CheckChangesRequest;
-use Biplane\YandexDirect\Api\V5\Contract\CheckChangesResponse;
-use Biplane\YandexDirect\Api\V5\Contract\CheckDictionariesRequest;
-use Biplane\YandexDirect\Api\V5\Contract\CheckDictionariesResponse;
+use Biplane\YandexDirect\Api\V5\Changes\CheckCampaignsRequest;
+use Biplane\YandexDirect\Api\V5\Changes\CheckCampaignsResponse;
+use Biplane\YandexDirect\Api\V5\Changes\CheckDictionariesRequest;
+use Biplane\YandexDirect\Api\V5\Changes\CheckDictionariesResponse;
+use Biplane\YandexDirect\Api\V5\Changes\CheckRequest;
+use Biplane\YandexDirect\Api\V5\Changes\CheckResponse;
 use Biplane\YandexDirect\Config;
 
 /**
@@ -28,16 +28,16 @@ class Changes extends ApiSoapClientV5
     public function __construct(Config $config, array $options)
     {
         $options['classmap'] = [
-            'CheckDictionariesRequest' => 'Biplane\YandexDirect\Api\V5\Contract\CheckDictionariesRequest',
-            'CheckDictionariesResponse' => 'Biplane\YandexDirect\Api\V5\Contract\CheckDictionariesResponse',
-            'CheckCampaignsRequest' => 'Biplane\YandexDirect\Api\V5\Contract\CheckCampaignsRequest',
-            'CheckCampaignsResponse' => 'Biplane\YandexDirect\Api\V5\Contract\CheckCampaignsResponse',
-            'CampaignChangesItem' => 'Biplane\YandexDirect\Api\V5\Contract\CampaignChangesItem',
-            'CheckRequest' => 'Biplane\YandexDirect\Api\V5\Contract\CheckChangesRequest',
-            'CheckResponse' => 'Biplane\YandexDirect\Api\V5\Contract\CheckChangesResponse',
-            'CheckResponseModified' => 'Biplane\YandexDirect\Api\V5\Contract\CheckResponseModified',
-            'CampaignStatItem' => 'Biplane\YandexDirect\Api\V5\Contract\CampaignStatItem',
-            'CheckResponseIds' => 'Biplane\YandexDirect\Api\V5\Contract\CheckResponseIds',
+            'CheckDictionariesRequest' => 'Biplane\YandexDirect\Api\V5\Changes\CheckDictionariesRequest',
+            'CheckDictionariesResponse' => 'Biplane\YandexDirect\Api\V5\Changes\CheckDictionariesResponse',
+            'CheckCampaignsRequest' => 'Biplane\YandexDirect\Api\V5\Changes\CheckCampaignsRequest',
+            'CheckCampaignsResponse' => 'Biplane\YandexDirect\Api\V5\Changes\CheckCampaignsResponse',
+            'CampaignChangesItem' => 'Biplane\YandexDirect\Api\V5\Changes\CampaignChangesItem',
+            'CheckRequest' => 'Biplane\YandexDirect\Api\V5\Changes\CheckRequest',
+            'CheckResponse' => 'Biplane\YandexDirect\Api\V5\Changes\CheckResponse',
+            'CheckResponseModified' => 'Biplane\YandexDirect\Api\V5\Changes\CheckResponseModified',
+            'CampaignStatItem' => 'Biplane\YandexDirect\Api\V5\Changes\CampaignStatItem',
+            'CheckResponseIds' => 'Biplane\YandexDirect\Api\V5\Changes\CheckResponseIds',
         ];
 
         parent::__construct(self::ENDPOINT, $config, $options);
@@ -62,7 +62,7 @@ class Changes extends ApiSoapClientV5
     /**
      * Calls operation: check
      */
-    public function check(CheckChangesRequest $parameters): CheckChangesResponse
+    public function check(CheckRequest $parameters): CheckResponse
     {
         return $this->__soapCall('check', [$parameters]);
     }

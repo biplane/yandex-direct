@@ -5,12 +5,12 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5;
 
 use Biplane\YandexDirect\Api\ApiSoapClientV5;
-use Biplane\YandexDirect\Api\V5\Contract\AddVCardsRequest;
-use Biplane\YandexDirect\Api\V5\Contract\AddVCardsResponse;
-use Biplane\YandexDirect\Api\V5\Contract\DeleteVCardsRequest;
-use Biplane\YandexDirect\Api\V5\Contract\DeleteVCardsResponse;
-use Biplane\YandexDirect\Api\V5\Contract\GetVCardsRequest;
-use Biplane\YandexDirect\Api\V5\Contract\GetVCardsResponse;
+use Biplane\YandexDirect\Api\V5\VCards\AddRequest;
+use Biplane\YandexDirect\Api\V5\VCards\AddResponse;
+use Biplane\YandexDirect\Api\V5\VCards\DeleteRequest;
+use Biplane\YandexDirect\Api\V5\VCards\DeleteResponse;
+use Biplane\YandexDirect\Api\V5\VCards\GetRequest;
+use Biplane\YandexDirect\Api\V5\VCards\GetResponse;
 use Biplane\YandexDirect\Config;
 
 /**
@@ -28,24 +28,24 @@ class VCards extends ApiSoapClientV5
     public function __construct(Config $config, array $options)
     {
         $options['classmap'] = [
-            'AddRequest' => 'Biplane\YandexDirect\Api\V5\Contract\AddVCardsRequest',
-            'VCardAddItem' => 'Biplane\YandexDirect\Api\V5\Contract\VCardAddItem',
-            'Phone' => 'Biplane\YandexDirect\Api\V5\Contract\Phone',
-            'InstantMessenger' => 'Biplane\YandexDirect\Api\V5\Contract\InstantMessenger',
-            'MapPoint' => 'Biplane\YandexDirect\Api\V5\Contract\MapPoint',
-            'AddResponse' => 'Biplane\YandexDirect\Api\V5\Contract\AddVCardsResponse',
-            'ActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\ActionResult',
-            'ActionResultBase' => 'Biplane\YandexDirect\Api\V5\Contract\ActionResultBase',
-            'ExceptionNotification' => 'Biplane\YandexDirect\Api\V5\Contract\ExceptionNotification',
-            'GetRequest' => 'Biplane\YandexDirect\Api\V5\Contract\GetVCardsRequest',
-            'IdsCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\IdsCriteria',
-            'GetRequestGeneral' => 'Biplane\YandexDirect\Api\V5\Contract\GetRequestGeneral',
-            'LimitOffset' => 'Biplane\YandexDirect\Api\V5\Contract\LimitOffset',
-            'GetResponse' => 'Biplane\YandexDirect\Api\V5\Contract\GetVCardsResponse',
-            'VCardGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\VCardGetItem',
-            'GetResponseGeneral' => 'Biplane\YandexDirect\Api\V5\Contract\GetResponseGeneral',
-            'DeleteRequest' => 'Biplane\YandexDirect\Api\V5\Contract\DeleteVCardsRequest',
-            'DeleteResponse' => 'Biplane\YandexDirect\Api\V5\Contract\DeleteVCardsResponse',
+            'AddRequest' => 'Biplane\YandexDirect\Api\V5\VCards\AddRequest',
+            'VCardAddItem' => 'Biplane\YandexDirect\Api\V5\VCards\VCardAddItem',
+            'Phone' => 'Biplane\YandexDirect\Api\V5\VCards\Phone',
+            'InstantMessenger' => 'Biplane\YandexDirect\Api\V5\VCards\InstantMessenger',
+            'MapPoint' => 'Biplane\YandexDirect\Api\V5\VCards\MapPoint',
+            'AddResponse' => 'Biplane\YandexDirect\Api\V5\VCards\AddResponse',
+            'ActionResult' => 'Biplane\YandexDirect\Api\V5\General\ActionResult',
+            'ActionResultBase' => 'Biplane\YandexDirect\Api\V5\General\ActionResultBase',
+            'ExceptionNotification' => 'Biplane\YandexDirect\Api\V5\General\ExceptionNotification',
+            'GetRequest' => 'Biplane\YandexDirect\Api\V5\VCards\GetRequest',
+            'IdsCriteria' => 'Biplane\YandexDirect\Api\V5\General\IdsCriteria',
+            'GetRequestGeneral' => 'Biplane\YandexDirect\Api\V5\General\GetRequestGeneral',
+            'LimitOffset' => 'Biplane\YandexDirect\Api\V5\General\LimitOffset',
+            'GetResponse' => 'Biplane\YandexDirect\Api\V5\VCards\GetResponse',
+            'VCardGetItem' => 'Biplane\YandexDirect\Api\V5\VCards\VCardGetItem',
+            'GetResponseGeneral' => 'Biplane\YandexDirect\Api\V5\General\GetResponseGeneral',
+            'DeleteRequest' => 'Biplane\YandexDirect\Api\V5\VCards\DeleteRequest',
+            'DeleteResponse' => 'Biplane\YandexDirect\Api\V5\VCards\DeleteResponse',
         ];
 
         parent::__construct(self::ENDPOINT, $config, $options);
@@ -54,7 +54,7 @@ class VCards extends ApiSoapClientV5
     /**
      * Calls operation: add
      */
-    public function add(AddVCardsRequest $parameters): AddVCardsResponse
+    public function add(AddRequest $parameters): AddResponse
     {
         return $this->__soapCall('add', [$parameters]);
     }
@@ -62,7 +62,7 @@ class VCards extends ApiSoapClientV5
     /**
      * Calls operation: get
      */
-    public function get(GetVCardsRequest $parameters): GetVCardsResponse
+    public function get(GetRequest $parameters): GetResponse
     {
         return $this->__soapCall('get', [$parameters]);
     }
@@ -70,7 +70,7 @@ class VCards extends ApiSoapClientV5
     /**
      * Calls operation: delete
      */
-    public function delete(DeleteVCardsRequest $parameters): DeleteVCardsResponse
+    public function delete(DeleteRequest $parameters): DeleteResponse
     {
         return $this->__soapCall('delete', [$parameters]);
     }

@@ -1,0 +1,18 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Biplane\YandexDirect\Api\V5\AdGroups;
+
+use AllowDynamicProperties;
+
+/**
+ * Auto-generated code.
+ */
+#[AllowDynamicProperties]
+class SourceTypeGetEnum
+{
+    public const string RETAIL_FEED = 'RETAIL_FEED';
+
+    public const string UNKNOWN = 'UNKNOWN';
+}

@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5;
 
 use Biplane\YandexDirect\Api\ApiSoapClientV5;
-use Biplane\YandexDirect\Api\V5\Contract\GetLeadsRequest;
-use Biplane\YandexDirect\Api\V5\Contract\GetLeadsResponse;
+use Biplane\YandexDirect\Api\V5\Leads\GetRequest;
+use Biplane\YandexDirect\Api\V5\Leads\GetResponse;
 use Biplane\YandexDirect\Config;
 
 /**
@@ -24,14 +24,14 @@ class Leads extends ApiSoapClientV5
     public function __construct(Config $config, array $options)
     {
         $options['classmap'] = [
-            'GetRequest' => 'Biplane\YandexDirect\Api\V5\Contract\GetLeadsRequest',
-            'LeadsSelectionCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\LeadsSelectionCriteria',
-            'GetRequestGeneral' => 'Biplane\YandexDirect\Api\V5\Contract\GetRequestGeneral',
-            'LimitOffset' => 'Biplane\YandexDirect\Api\V5\Contract\LimitOffset',
-            'GetResponse' => 'Biplane\YandexDirect\Api\V5\Contract\GetLeadsResponse',
-            'LeadGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\LeadGetItem',
-            'LeadDataItem' => 'Biplane\YandexDirect\Api\V5\Contract\LeadDataItem',
-            'GetResponseGeneral' => 'Biplane\YandexDirect\Api\V5\Contract\GetResponseGeneral',
+            'GetRequest' => 'Biplane\YandexDirect\Api\V5\Leads\GetRequest',
+            'LeadsSelectionCriteria' => 'Biplane\YandexDirect\Api\V5\Leads\LeadsSelectionCriteria',
+            'GetRequestGeneral' => 'Biplane\YandexDirect\Api\V5\General\GetRequestGeneral',
+            'LimitOffset' => 'Biplane\YandexDirect\Api\V5\General\LimitOffset',
+            'GetResponse' => 'Biplane\YandexDirect\Api\V5\Leads\GetResponse',
+            'LeadGetItem' => 'Biplane\YandexDirect\Api\V5\Leads\LeadGetItem',
+            'LeadDataItem' => 'Biplane\YandexDirect\Api\V5\Leads\LeadDataItem',
+            'GetResponseGeneral' => 'Biplane\YandexDirect\Api\V5\General\GetResponseGeneral',
         ];
 
         parent::__construct(self::ENDPOINT, $config, $options);
@@ -40,7 +40,7 @@ class Leads extends ApiSoapClientV5
     /**
      * Calls operation: get
      */
-    public function get(GetLeadsRequest $parameters): GetLeadsResponse
+    public function get(GetRequest $parameters): GetResponse
     {
         return $this->__soapCall('get', [$parameters]);
     }

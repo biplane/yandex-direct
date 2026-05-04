@@ -5,12 +5,12 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5;
 
 use Biplane\YandexDirect\Api\ApiSoapClientV5;
-use Biplane\YandexDirect\Api\V5\Contract\GetBidsRequest;
-use Biplane\YandexDirect\Api\V5\Contract\GetBidsResponse;
-use Biplane\YandexDirect\Api\V5\Contract\SetAutoBidsRequest;
-use Biplane\YandexDirect\Api\V5\Contract\SetAutoBidsResponse;
-use Biplane\YandexDirect\Api\V5\Contract\SetBidsRequest;
-use Biplane\YandexDirect\Api\V5\Contract\SetBidsResponse;
+use Biplane\YandexDirect\Api\V5\Bids\GetRequest;
+use Biplane\YandexDirect\Api\V5\Bids\GetResponse;
+use Biplane\YandexDirect\Api\V5\Bids\SetAutoRequest;
+use Biplane\YandexDirect\Api\V5\Bids\SetAutoResponse;
+use Biplane\YandexDirect\Api\V5\Bids\SetRequest;
+use Biplane\YandexDirect\Api\V5\Bids\SetResponse;
 use Biplane\YandexDirect\Config;
 
 /**
@@ -28,26 +28,26 @@ class Bids extends ApiSoapClientV5
     public function __construct(Config $config, array $options)
     {
         $options['classmap'] = [
-            'GetRequest' => 'Biplane\YandexDirect\Api\V5\Contract\GetBidsRequest',
-            'BidsSelectionCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\BidsSelectionCriteria',
-            'GetRequestGeneral' => 'Biplane\YandexDirect\Api\V5\Contract\GetRequestGeneral',
-            'LimitOffset' => 'Biplane\YandexDirect\Api\V5\Contract\LimitOffset',
-            'GetResponse' => 'Biplane\YandexDirect\Api\V5\Contract\GetBidsResponse',
-            'BidGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\BidGetItem',
-            'SearchPrices' => 'Biplane\YandexDirect\Api\V5\Contract\SearchPrices',
-            'ContextCoverage' => 'Biplane\YandexDirect\Api\V5\Contract\ContextCoverage',
-            'ContextCoverageItem' => 'Biplane\YandexDirect\Api\V5\Contract\ContextCoverageItem',
-            'AuctionBidItem' => 'Biplane\YandexDirect\Api\V5\Contract\AuctionBidItem',
-            'BidActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\BidActionResult',
-            'ActionResultBase' => 'Biplane\YandexDirect\Api\V5\Contract\ActionResultBase',
-            'ExceptionNotification' => 'Biplane\YandexDirect\Api\V5\Contract\ExceptionNotification',
-            'GetResponseGeneral' => 'Biplane\YandexDirect\Api\V5\Contract\GetResponseGeneral',
-            'SetRequest' => 'Biplane\YandexDirect\Api\V5\Contract\SetBidsRequest',
-            'BidSetItem' => 'Biplane\YandexDirect\Api\V5\Contract\BidSetItem',
-            'SetResponse' => 'Biplane\YandexDirect\Api\V5\Contract\SetBidsResponse',
-            'SetAutoRequest' => 'Biplane\YandexDirect\Api\V5\Contract\SetAutoBidsRequest',
-            'BidSetAutoItem' => 'Biplane\YandexDirect\Api\V5\Contract\BidSetAutoItem',
-            'SetAutoResponse' => 'Biplane\YandexDirect\Api\V5\Contract\SetAutoBidsResponse',
+            'GetRequest' => 'Biplane\YandexDirect\Api\V5\Bids\GetRequest',
+            'BidsSelectionCriteria' => 'Biplane\YandexDirect\Api\V5\Bids\BidsSelectionCriteria',
+            'GetRequestGeneral' => 'Biplane\YandexDirect\Api\V5\General\GetRequestGeneral',
+            'LimitOffset' => 'Biplane\YandexDirect\Api\V5\General\LimitOffset',
+            'GetResponse' => 'Biplane\YandexDirect\Api\V5\Bids\GetResponse',
+            'BidGetItem' => 'Biplane\YandexDirect\Api\V5\Bids\BidGetItem',
+            'SearchPrices' => 'Biplane\YandexDirect\Api\V5\Bids\SearchPrices',
+            'ContextCoverage' => 'Biplane\YandexDirect\Api\V5\Bids\ContextCoverage',
+            'ContextCoverageItem' => 'Biplane\YandexDirect\Api\V5\Bids\ContextCoverageItem',
+            'AuctionBidItem' => 'Biplane\YandexDirect\Api\V5\Bids\AuctionBidItem',
+            'BidActionResult' => 'Biplane\YandexDirect\Api\V5\Bids\BidActionResult',
+            'ActionResultBase' => 'Biplane\YandexDirect\Api\V5\General\ActionResultBase',
+            'ExceptionNotification' => 'Biplane\YandexDirect\Api\V5\General\ExceptionNotification',
+            'GetResponseGeneral' => 'Biplane\YandexDirect\Api\V5\General\GetResponseGeneral',
+            'SetRequest' => 'Biplane\YandexDirect\Api\V5\Bids\SetRequest',
+            'BidSetItem' => 'Biplane\YandexDirect\Api\V5\Bids\BidSetItem',
+            'SetResponse' => 'Biplane\YandexDirect\Api\V5\Bids\SetResponse',
+            'SetAutoRequest' => 'Biplane\YandexDirect\Api\V5\Bids\SetAutoRequest',
+            'BidSetAutoItem' => 'Biplane\YandexDirect\Api\V5\Bids\BidSetAutoItem',
+            'SetAutoResponse' => 'Biplane\YandexDirect\Api\V5\Bids\SetAutoResponse',
         ];
 
         parent::__construct(self::ENDPOINT, $config, $options);
@@ -56,7 +56,7 @@ class Bids extends ApiSoapClientV5
     /**
      * Calls operation: get
      */
-    public function get(GetBidsRequest $parameters): GetBidsResponse
+    public function get(GetRequest $parameters): GetResponse
     {
         return $this->__soapCall('get', [$parameters]);
     }
@@ -64,7 +64,7 @@ class Bids extends ApiSoapClientV5
     /**
      * Calls operation: set
      */
-    public function set(SetBidsRequest $parameters): SetBidsResponse
+    public function set(SetRequest $parameters): SetResponse
     {
         return $this->__soapCall('set', [$parameters]);
     }
@@ -72,7 +72,7 @@ class Bids extends ApiSoapClientV5
     /**
      * Calls operation: setAuto
      */
-    public function setAuto(SetAutoBidsRequest $parameters): SetAutoBidsResponse
+    public function setAuto(SetAutoRequest $parameters): SetAutoResponse
     {
         return $this->__soapCall('setAuto', [$parameters]);
     }

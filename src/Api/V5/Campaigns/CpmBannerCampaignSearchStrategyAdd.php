@@ -1,0 +1,55 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Biplane\YandexDirect\Api\V5\Campaigns;
+
+use AllowDynamicProperties;
+
+/**
+ * Auto-generated code.
+ */
+#[AllowDynamicProperties]
+class CpmBannerCampaignSearchStrategyAdd
+{
+    /** @var 'SERVING_OFF'|'UNKNOWN' */
+    protected $BiddingStrategyType;
+
+    /**
+     * Create a new instance.
+     *
+     * @return static
+     */
+    public static function create(): static
+    {
+        return new static();
+    }
+
+    /**
+     * Get BiddingStrategyType
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Campaigns\CpmBannerCampaignSearchStrategyTypeEnum
+     *
+     * @return 'SERVING_OFF'|'UNKNOWN'
+     */
+    public function getBiddingStrategyType(): string
+    {
+        return $this->BiddingStrategyType;
+    }
+
+    /**
+     * Set BiddingStrategyType
+     *
+     * @see \Biplane\YandexDirect\Api\V5\Campaigns\CpmBannerCampaignSearchStrategyTypeEnum
+     *
+     * @param 'SERVING_OFF'|'UNKNOWN' $value
+     *
+     * @return $this
+     */
+    public function setBiddingStrategyType(string $value)
+    {
+        $this->BiddingStrategyType = $value;
+
+        return $this;
+    }
+}

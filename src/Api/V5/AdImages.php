@@ -5,12 +5,12 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5;
 
 use Biplane\YandexDirect\Api\ApiSoapClientV5;
-use Biplane\YandexDirect\Api\V5\Contract\AddAdImagesRequest;
-use Biplane\YandexDirect\Api\V5\Contract\AddAdImagesResponse;
-use Biplane\YandexDirect\Api\V5\Contract\DeleteAdImagesRequest;
-use Biplane\YandexDirect\Api\V5\Contract\DeleteAdImagesResponse;
-use Biplane\YandexDirect\Api\V5\Contract\GetAdImagesRequest;
-use Biplane\YandexDirect\Api\V5\Contract\GetAdImagesResponse;
+use Biplane\YandexDirect\Api\V5\AdImages\AddRequest;
+use Biplane\YandexDirect\Api\V5\AdImages\AddResponse;
+use Biplane\YandexDirect\Api\V5\AdImages\DeleteRequest;
+use Biplane\YandexDirect\Api\V5\AdImages\DeleteResponse;
+use Biplane\YandexDirect\Api\V5\AdImages\GetRequest;
+use Biplane\YandexDirect\Api\V5\AdImages\GetResponse;
 use Biplane\YandexDirect\Config;
 
 /**
@@ -28,22 +28,22 @@ class AdImages extends ApiSoapClientV5
     public function __construct(Config $config, array $options)
     {
         $options['classmap'] = [
-            'AddRequest' => 'Biplane\YandexDirect\Api\V5\Contract\AddAdImagesRequest',
-            'AdImageAddItem' => 'Biplane\YandexDirect\Api\V5\Contract\AdImageAddItem',
-            'AddResponse' => 'Biplane\YandexDirect\Api\V5\Contract\AddAdImagesResponse',
-            'AdImageActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\AdImageActionResult',
-            'ActionResultBase' => 'Biplane\YandexDirect\Api\V5\Contract\ActionResultBase',
-            'ExceptionNotification' => 'Biplane\YandexDirect\Api\V5\Contract\ExceptionNotification',
-            'GetRequest' => 'Biplane\YandexDirect\Api\V5\Contract\GetAdImagesRequest',
-            'AdImageSelectionCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\AdImageSelectionCriteria',
-            'GetRequestGeneral' => 'Biplane\YandexDirect\Api\V5\Contract\GetRequestGeneral',
-            'LimitOffset' => 'Biplane\YandexDirect\Api\V5\Contract\LimitOffset',
-            'GetResponse' => 'Biplane\YandexDirect\Api\V5\Contract\GetAdImagesResponse',
-            'AdImageGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\AdImageGetItem',
-            'GetResponseGeneral' => 'Biplane\YandexDirect\Api\V5\Contract\GetResponseGeneral',
-            'DeleteRequest' => 'Biplane\YandexDirect\Api\V5\Contract\DeleteAdImagesRequest',
-            'AdImageHashesCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\AdImageHashesCriteria',
-            'DeleteResponse' => 'Biplane\YandexDirect\Api\V5\Contract\DeleteAdImagesResponse',
+            'AddRequest' => 'Biplane\YandexDirect\Api\V5\AdImages\AddRequest',
+            'AdImageAddItem' => 'Biplane\YandexDirect\Api\V5\AdImages\AdImageAddItem',
+            'AddResponse' => 'Biplane\YandexDirect\Api\V5\AdImages\AddResponse',
+            'AdImageActionResult' => 'Biplane\YandexDirect\Api\V5\AdImages\AdImageActionResult',
+            'ActionResultBase' => 'Biplane\YandexDirect\Api\V5\General\ActionResultBase',
+            'ExceptionNotification' => 'Biplane\YandexDirect\Api\V5\General\ExceptionNotification',
+            'GetRequest' => 'Biplane\YandexDirect\Api\V5\AdImages\GetRequest',
+            'AdImageSelectionCriteria' => 'Biplane\YandexDirect\Api\V5\AdImages\AdImageSelectionCriteria',
+            'GetRequestGeneral' => 'Biplane\YandexDirect\Api\V5\General\GetRequestGeneral',
+            'LimitOffset' => 'Biplane\YandexDirect\Api\V5\General\LimitOffset',
+            'GetResponse' => 'Biplane\YandexDirect\Api\V5\AdImages\GetResponse',
+            'AdImageGetItem' => 'Biplane\YandexDirect\Api\V5\AdImages\AdImageGetItem',
+            'GetResponseGeneral' => 'Biplane\YandexDirect\Api\V5\General\GetResponseGeneral',
+            'DeleteRequest' => 'Biplane\YandexDirect\Api\V5\AdImages\DeleteRequest',
+            'AdImageHashesCriteria' => 'Biplane\YandexDirect\Api\V5\AdImages\AdImageHashesCriteria',
+            'DeleteResponse' => 'Biplane\YandexDirect\Api\V5\AdImages\DeleteResponse',
         ];
 
         parent::__construct(self::ENDPOINT, $config, $options);
@@ -52,7 +52,7 @@ class AdImages extends ApiSoapClientV5
     /**
      * Calls operation: add
      */
-    public function add(AddAdImagesRequest $parameters): AddAdImagesResponse
+    public function add(AddRequest $parameters): AddResponse
     {
         return $this->__soapCall('add', [$parameters]);
     }
@@ -60,7 +60,7 @@ class AdImages extends ApiSoapClientV5
     /**
      * Calls operation: get
      */
-    public function get(GetAdImagesRequest $parameters): GetAdImagesResponse
+    public function get(GetRequest $parameters): GetResponse
     {
         return $this->__soapCall('get', [$parameters]);
     }
@@ -68,7 +68,7 @@ class AdImages extends ApiSoapClientV5
     /**
      * Calls operation: delete
      */
-    public function delete(DeleteAdImagesRequest $parameters): DeleteAdImagesResponse
+    public function delete(DeleteRequest $parameters): DeleteResponse
     {
         return $this->__soapCall('delete', [$parameters]);
     }

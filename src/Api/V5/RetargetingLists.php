@@ -5,14 +5,14 @@ declare(strict_types=1);
 namespace Biplane\YandexDirect\Api\V5;
 
 use Biplane\YandexDirect\Api\ApiSoapClientV5;
-use Biplane\YandexDirect\Api\V5\Contract\AddRetargetingListsRequest;
-use Biplane\YandexDirect\Api\V5\Contract\AddRetargetingListsResponse;
-use Biplane\YandexDirect\Api\V5\Contract\DeleteRetargetingListsRequest;
-use Biplane\YandexDirect\Api\V5\Contract\DeleteRetargetingListsResponse;
-use Biplane\YandexDirect\Api\V5\Contract\GetRetargetingListsRequest;
-use Biplane\YandexDirect\Api\V5\Contract\GetRetargetingListsResponse;
-use Biplane\YandexDirect\Api\V5\Contract\UpdateRetargetingListsRequest;
-use Biplane\YandexDirect\Api\V5\Contract\UpdateRetargetingListsResponse;
+use Biplane\YandexDirect\Api\V5\RetargetingLists\AddRequest;
+use Biplane\YandexDirect\Api\V5\RetargetingLists\AddResponse;
+use Biplane\YandexDirect\Api\V5\RetargetingLists\DeleteRequest;
+use Biplane\YandexDirect\Api\V5\RetargetingLists\DeleteResponse;
+use Biplane\YandexDirect\Api\V5\RetargetingLists\GetRequest;
+use Biplane\YandexDirect\Api\V5\RetargetingLists\GetResponse;
+use Biplane\YandexDirect\Api\V5\RetargetingLists\UpdateRequest;
+use Biplane\YandexDirect\Api\V5\RetargetingLists\UpdateResponse;
 use Biplane\YandexDirect\Config;
 
 /**
@@ -30,29 +30,29 @@ class RetargetingLists extends ApiSoapClientV5
     public function __construct(Config $config, array $options)
     {
         $options['classmap'] = [
-            'GetRequest' => 'Biplane\YandexDirect\Api\V5\Contract\GetRetargetingListsRequest',
-            'RetargetingListSelectionCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\RetargetingListSelectionCriteria',
-            'GetRequestGeneral' => 'Biplane\YandexDirect\Api\V5\Contract\GetRequestGeneral',
-            'LimitOffset' => 'Biplane\YandexDirect\Api\V5\Contract\LimitOffset',
-            'GetResponse' => 'Biplane\YandexDirect\Api\V5\Contract\GetRetargetingListsResponse',
-            'RetargetingListGetItem' => 'Biplane\YandexDirect\Api\V5\Contract\RetargetingListGetItem',
-            'AvailableForTargetsInAdGroupTypesArray' => 'Biplane\YandexDirect\Api\V5\Contract\AvailableForTargetsInAdGroupTypesArray',
-            'RetargetingListBase' => 'Biplane\YandexDirect\Api\V5\Contract\RetargetingListBase',
-            'RetargetingListRuleItem' => 'Biplane\YandexDirect\Api\V5\Contract\RetargetingListRuleItem',
-            'RetargetingListRuleArgumentItem' => 'Biplane\YandexDirect\Api\V5\Contract\RetargetingListRuleArgumentItem',
-            'GetResponseGeneral' => 'Biplane\YandexDirect\Api\V5\Contract\GetResponseGeneral',
-            'AddRequest' => 'Biplane\YandexDirect\Api\V5\Contract\AddRetargetingListsRequest',
-            'RetargetingListAddItem' => 'Biplane\YandexDirect\Api\V5\Contract\RetargetingListAddItem',
-            'AddResponse' => 'Biplane\YandexDirect\Api\V5\Contract\AddRetargetingListsResponse',
-            'ActionResult' => 'Biplane\YandexDirect\Api\V5\Contract\ActionResult',
-            'ActionResultBase' => 'Biplane\YandexDirect\Api\V5\Contract\ActionResultBase',
-            'ExceptionNotification' => 'Biplane\YandexDirect\Api\V5\Contract\ExceptionNotification',
-            'UpdateRequest' => 'Biplane\YandexDirect\Api\V5\Contract\UpdateRetargetingListsRequest',
-            'RetargetingListUpdateItem' => 'Biplane\YandexDirect\Api\V5\Contract\RetargetingListUpdateItem',
-            'UpdateResponse' => 'Biplane\YandexDirect\Api\V5\Contract\UpdateRetargetingListsResponse',
-            'DeleteRequest' => 'Biplane\YandexDirect\Api\V5\Contract\DeleteRetargetingListsRequest',
-            'IdsCriteria' => 'Biplane\YandexDirect\Api\V5\Contract\IdsCriteria',
-            'DeleteResponse' => 'Biplane\YandexDirect\Api\V5\Contract\DeleteRetargetingListsResponse',
+            'GetRequest' => 'Biplane\YandexDirect\Api\V5\RetargetingLists\GetRequest',
+            'RetargetingListSelectionCriteria' => 'Biplane\YandexDirect\Api\V5\RetargetingLists\RetargetingListSelectionCriteria',
+            'GetRequestGeneral' => 'Biplane\YandexDirect\Api\V5\General\GetRequestGeneral',
+            'LimitOffset' => 'Biplane\YandexDirect\Api\V5\General\LimitOffset',
+            'GetResponse' => 'Biplane\YandexDirect\Api\V5\RetargetingLists\GetResponse',
+            'RetargetingListGetItem' => 'Biplane\YandexDirect\Api\V5\RetargetingLists\RetargetingListGetItem',
+            'AvailableForTargetsInAdGroupTypesArray' => 'Biplane\YandexDirect\Api\V5\RetargetingLists\AvailableForTargetsInAdGroupTypesArray',
+            'RetargetingListBase' => 'Biplane\YandexDirect\Api\V5\RetargetingLists\RetargetingListBase',
+            'RetargetingListRuleItem' => 'Biplane\YandexDirect\Api\V5\RetargetingLists\RetargetingListRuleItem',
+            'RetargetingListRuleArgumentItem' => 'Biplane\YandexDirect\Api\V5\RetargetingLists\RetargetingListRuleArgumentItem',
+            'GetResponseGeneral' => 'Biplane\YandexDirect\Api\V5\General\GetResponseGeneral',
+            'AddRequest' => 'Biplane\YandexDirect\Api\V5\RetargetingLists\AddRequest',
+            'RetargetingListAddItem' => 'Biplane\YandexDirect\Api\V5\RetargetingLists\RetargetingListAddItem',
+            'AddResponse' => 'Biplane\YandexDirect\Api\V5\RetargetingLists\AddResponse',
+            'ActionResult' => 'Biplane\YandexDirect\Api\V5\General\ActionResult',
+            'ActionResultBase' => 'Biplane\YandexDirect\Api\V5\General\ActionResultBase',
+            'ExceptionNotification' => 'Biplane\YandexDirect\Api\V5\General\ExceptionNotification',
+            'UpdateRequest' => 'Biplane\YandexDirect\Api\V5\RetargetingLists\UpdateRequest',
+            'RetargetingListUpdateItem' => 'Biplane\YandexDirect\Api\V5\RetargetingLists\RetargetingListUpdateItem',
+            'UpdateResponse' => 'Biplane\YandexDirect\Api\V5\RetargetingLists\UpdateResponse',
+            'DeleteRequest' => 'Biplane\YandexDirect\Api\V5\RetargetingLists\DeleteRequest',
+            'IdsCriteria' => 'Biplane\YandexDirect\Api\V5\General\IdsCriteria',
+            'DeleteResponse' => 'Biplane\YandexDirect\Api\V5\RetargetingLists\DeleteResponse',
         ];
 
         parent::__construct(self::ENDPOINT, $config, $options);
@@ -61,7 +61,7 @@ class RetargetingLists extends ApiSoapClientV5
     /**
      * Calls operation: get
      */
-    public function get(GetRetargetingListsRequest $parameters): GetRetargetingListsResponse
+    public function get(GetRequest $parameters): GetResponse
     {
         return $this->__soapCall('get', [$parameters]);
     }
@@ -69,7 +69,7 @@ class RetargetingLists extends ApiSoapClientV5
     /**
      * Calls operation: add
      */
-    public function add(AddRetargetingListsRequest $parameters): AddRetargetingListsResponse
+    public function add(AddRequest $parameters): AddResponse
     {
         return $this->__soapCall('add', [$parameters]);
     }
@@ -77,7 +77,7 @@ class RetargetingLists extends ApiSoapClientV5
     /**
      * Calls operation: update
      */
-    public function update(UpdateRetargetingListsRequest $parameters): UpdateRetargetingListsResponse
+    public function update(UpdateRequest $parameters): UpdateResponse
     {
         return $this->__soapCall('update', [$parameters]);
     }
@@ -85,7 +85,7 @@ class RetargetingLists extends ApiSoapClientV5
     /**
      * Calls operation: delete
      */
-    public function delete(DeleteRetargetingListsRequest $parameters): DeleteRetargetingListsResponse
+    public function delete(DeleteRequest $parameters): DeleteResponse
     {
         return $this->__soapCall('delete', [$parameters]);
     }
