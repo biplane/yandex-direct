@@ -50,11 +50,6 @@
       <code><![CDATA[BidModifiers]]></code>
     </DeprecatedInterface>
   </file>
-  <file src="src/Api/V5/Bids.php">
-    <DeprecatedInterface>
-      <code><![CDATA[Bids]]></code>
-    </DeprecatedInterface>
-  </file>
   <file src="src/Api/V5/Businesses.php">
     <DeprecatedInterface>
       <code><![CDATA[Businesses]]></code>

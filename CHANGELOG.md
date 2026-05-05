@@ -36,6 +36,10 @@
 * Удален класс `Biplane\YandexDirect\User`
 * Удален класс `Biplane\YandexDirect\UserBuilder`
 * Удалена опция `soap_options` из `Biplane\YandexDirect\Config`
+* Удален сервис `Biplane\YandexDirect\Api\V5\Bids`.
+
+  Этот сервис считается устаревшим, вместо него рекомендуется использовать
+  `Biplane\YandexDirect\Api\V5\KeywordBids`.
 
 ## 5.20.0 [commit logs](https://github.com/biplane/yandex-direct/compare/5.19.0...5.20.0)
 

@@ -16,7 +16,6 @@ return [
         'http://api.direct.yandex.com/v5/agencyclients' => 'Biplane\\YandexDirect\\Api\\V5\\AgencyClients',
         'http://api.direct.yandex.com/v5/audiencetargets' => 'Biplane\\YandexDirect\\Api\\V5\\AudienceTargets',
         'http://api.direct.yandex.com/v5/bidmodifiers' => 'Biplane\\YandexDirect\\Api\\V5\\BidModifiers',
-        'http://api.direct.yandex.com/v5/bids' => 'Biplane\\YandexDirect\\Api\\V5\\Bids',
         'http://api.direct.yandex.com/v5/businesses' => 'Biplane\\YandexDirect\\Api\\V5\\Businesses',
         'http://api.direct.yandex.com/v5/campaigns' => 'Biplane\\YandexDirect\\Api\\V5\\Campaigns',
         'http://api.direct.yandex.com/v5/changes' => 'Biplane\\YandexDirect\\Api\\V5\\Changes',
@@ -121,11 +120,6 @@ return [
         [
             'wsdl' => 'https://api.direct.yandex.com/v501/bidmodifiers?wsdl',
             'service_name' => 'BidModifiers',
-            'namespace' => 'Biplane\\YandexDirect\\Api\\V5',
-        ],
-        [
-            'wsdl' => 'https://api.direct.yandex.com/v501/bids?wsdl',
-            'service_name' => 'Bids',
             'namespace' => 'Biplane\\YandexDirect\\Api\\V5',
         ],
         [
