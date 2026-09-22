@@ -13,6 +13,8 @@ use Symfony\Component\Filesystem\Path;
 use function sprintf;
 use function strlen;
 
+use const DIRECTORY_SEPARATOR;
+
 final readonly class Config
 {
     /** @var array<non-empty-string, non-empty-string> */
@@ -50,7 +52,7 @@ final readonly class Config
                 return $path;
             }
 
-            return Type\non_empty_string()->assert(Path::makeAbsolute($subNs, $path));
+            return Type\non_empty_string()->assert(Path::makeAbsolute(Str\replace($subNs, '\\', DIRECTORY_SEPARATOR), $path));
         }
 
         throw new RuntimeException(sprintf('Could not resolve path for namespace "%s"', $namespace));
