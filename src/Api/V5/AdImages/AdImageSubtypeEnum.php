@@ -116,5 +116,13 @@ class AdImageSubtypeEnum
 
     public const string IMG_892_636 = 'IMG_892_636';
 
+    public const string IMG_3840_2160 = 'IMG_3840_2160';
+
+    public const string IMG_7680_4320 = 'IMG_7680_4320';
+
+    public const string IMG_11520_6480 = 'IMG_11520_6480';
+
+    public const string IMG_15360_8640 = 'IMG_15360_8640';
+
     public const string NONE = 'NONE';
 }

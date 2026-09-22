@@ -31,6 +31,9 @@ class UnifiedCampaignGetItem extends UnifiedCampaignBase
 //    Can be omitted.
 //    protected $CanBeUsedAsPackageBiddingStrategySource;
 
+//    Can be omitted.
+//    protected $WeeklyBudgetRollover;
+
     /**
      * Create a new instance.
      *
@@ -170,6 +173,26 @@ class UnifiedCampaignGetItem extends UnifiedCampaignBase
     public function setCanBeUsedAsPackageBiddingStrategySource(?string $value)
     {
         $this->CanBeUsedAsPackageBiddingStrategySource = $value;
+
+        return $this;
+    }
+
+    /**
+     * Get WeeklyBudgetRollover
+     */
+    public function getWeeklyBudgetRollover(): ?int
+    {
+        return $this->WeeklyBudgetRollover ?? null;
+    }
+
+    /**
+     * Set WeeklyBudgetRollover
+     *
+     * @return $this
+     */
+    public function setWeeklyBudgetRollover(?int $value)
+    {
+        $this->WeeklyBudgetRollover = $value;
 
         return $this;
     }

@@ -14,6 +14,8 @@ class OrgInfoFieldEnum
 {
     public const string NAME = 'Name';
 
+    public const string KPP = 'Kpp';
+
     public const string EPAY_NUMBER = 'EpayNumber';
 
     public const string REG_NUMBER = 'RegNumber';

@@ -21,4 +21,6 @@ class MobileAppCampaignFieldEnum
     public const string CAN_BE_USED_AS_PACKAGE_BIDDING_STRATEGY_SOURCE = 'CanBeUsedAsPackageBiddingStrategySource';
 
     public const string NEGATIVE_KEYWORD_SHARED_SET_IDS = 'NegativeKeywordSharedSetIds';
+
+    public const string WEEKLY_BUDGET_ROLLOVER = 'WeeklyBudgetRollover';
 }
