@@ -132,7 +132,7 @@ class GetRequest extends GetRequestGeneral
      *
      * @see \Biplane\YandexDirect\Api\V5\Strategies\StrategyMaximumClicksFieldEnum
      *
-     * @return list<'WeeklySpendLimit'|'CustomPeriodBudget'|'BudgetType'|'BidCeiling'>
+     * @return list<'WeeklySpendLimit'|'WeeklyBudgetRollover'|'CustomPeriodBudget'|'BudgetType'|'BidCeiling'>
      */
     public function getStrategyMaximumClicksFieldNames(): array
     {
@@ -144,7 +144,7 @@ class GetRequest extends GetRequestGeneral
      *
      * @see \Biplane\YandexDirect\Api\V5\Strategies\StrategyMaximumClicksFieldEnum
      *
-     * @param list<'WeeklySpendLimit'|'CustomPeriodBudget'|'BudgetType'|'BidCeiling'> $value
+     * @param list<'WeeklySpendLimit'|'WeeklyBudgetRollover'|'CustomPeriodBudget'|'BudgetType'|'BidCeiling'> $value
      *
      * @return $this
      */
@@ -160,7 +160,7 @@ class GetRequest extends GetRequestGeneral
      *
      * @see \Biplane\YandexDirect\Api\V5\Strategies\StrategyMaximumConversionRateFieldEnum
      *
-     * @return list<'WeeklySpendLimit'|'CustomPeriodBudget'|'BudgetType'|'BidCeiling'|'GoalId'>
+     * @return list<'WeeklySpendLimit'|'WeeklyBudgetRollover'|'CustomPeriodBudget'|'BudgetType'|'BidCeiling'|'GoalId'>
      */
     public function getStrategyMaximumConversionRateFieldNames(): array
     {
@@ -172,7 +172,7 @@ class GetRequest extends GetRequestGeneral
      *
      * @see \Biplane\YandexDirect\Api\V5\Strategies\StrategyMaximumConversionRateFieldEnum
      *
-     * @param list<'WeeklySpendLimit'|'CustomPeriodBudget'|'BudgetType'|'BidCeiling'|'GoalId'> $value
+     * @param list<'WeeklySpendLimit'|'WeeklyBudgetRollover'|'CustomPeriodBudget'|'BudgetType'|'BidCeiling'|'GoalId'> $value
      *
      * @return $this
      */
@@ -188,7 +188,7 @@ class GetRequest extends GetRequestGeneral
      *
      * @see \Biplane\YandexDirect\Api\V5\Strategies\StrategyAverageCpcFieldEnum
      *
-     * @return list<'AverageCpc'|'WeeklySpendLimit'|'CustomPeriodBudget'|'BudgetType'>
+     * @return list<'AverageCpc'|'WeeklySpendLimit'|'WeeklyBudgetRollover'|'CustomPeriodBudget'|'BudgetType'>
      */
     public function getStrategyAverageCpcFieldNames(): array
     {
@@ -200,7 +200,7 @@ class GetRequest extends GetRequestGeneral
      *
      * @see \Biplane\YandexDirect\Api\V5\Strategies\StrategyAverageCpcFieldEnum
      *
-     * @param list<'AverageCpc'|'WeeklySpendLimit'|'CustomPeriodBudget'|'BudgetType'> $value
+     * @param list<'AverageCpc'|'WeeklySpendLimit'|'WeeklyBudgetRollover'|'CustomPeriodBudget'|'BudgetType'> $value
      *
      * @return $this
      */
@@ -216,7 +216,7 @@ class GetRequest extends GetRequestGeneral
      *
      * @see \Biplane\YandexDirect\Api\V5\Strategies\StrategyAverageCpaFieldEnum
      *
-     * @return list<'AverageCpa'|'GoalId'|'WeeklySpendLimit'|'CustomPeriodBudget'|'BudgetType'|'BidCeiling'|'ExplorationBudget'>
+     * @return list<'AverageCpa'|'GoalId'|'WeeklySpendLimit'|'WeeklyBudgetRollover'|'CustomPeriodBudget'|'BudgetType'|'BidCeiling'|'ExplorationBudget'>
      */
     public function getStrategyAverageCpaFieldNames(): array
     {
@@ -228,7 +228,7 @@ class GetRequest extends GetRequestGeneral
      *
      * @see \Biplane\YandexDirect\Api\V5\Strategies\StrategyAverageCpaFieldEnum
      *
-     * @param list<'AverageCpa'|'GoalId'|'WeeklySpendLimit'|'CustomPeriodBudget'|'BudgetType'|'BidCeiling'|'ExplorationBudget'> $value
+     * @param list<'AverageCpa'|'GoalId'|'WeeklySpendLimit'|'WeeklyBudgetRollover'|'CustomPeriodBudget'|'BudgetType'|'BidCeiling'|'ExplorationBudget'> $value
      *
      * @return $this
      */
@@ -244,7 +244,7 @@ class GetRequest extends GetRequestGeneral
      *
      * @see \Biplane\YandexDirect\Api\V5\Strategies\StrategyMaxProfitFieldEnum
      *
-     * @return list<'WeeklySpendLimit'|'CustomPeriodBudget'|'BudgetType'|'ExplorationBudget'>
+     * @return list<'WeeklySpendLimit'|'WeeklyBudgetRollover'|'CustomPeriodBudget'|'BudgetType'|'ExplorationBudget'>
      */
     public function getStrategyMaxProfitFieldNames(): array
     {
@@ -256,7 +256,7 @@ class GetRequest extends GetRequestGeneral
      *
      * @see \Biplane\YandexDirect\Api\V5\Strategies\StrategyMaxProfitFieldEnum
      *
-     * @param list<'WeeklySpendLimit'|'CustomPeriodBudget'|'BudgetType'|'ExplorationBudget'> $value
+     * @param list<'WeeklySpendLimit'|'WeeklyBudgetRollover'|'CustomPeriodBudget'|'BudgetType'|'ExplorationBudget'> $value
      *
      * @return $this
      */
@@ -468,7 +468,7 @@ class GetRequest extends GetRequestGeneral
      *
      * @see \Biplane\YandexDirect\Api\V5\Strategies\StrategyAverageCrrFieldEnum
      *
-     * @return list<'Crr'|'GoalId'|'WeeklySpendLimit'|'CustomPeriodBudget'|'BudgetType'|'ExplorationBudget'>
+     * @return list<'Crr'|'GoalId'|'WeeklySpendLimit'|'WeeklyBudgetRollover'|'CustomPeriodBudget'|'BudgetType'|'ExplorationBudget'>
      */
     public function getStrategyAverageCrrFieldNames(): array
     {
@@ -480,7 +480,7 @@ class GetRequest extends GetRequestGeneral
      *
      * @see \Biplane\YandexDirect\Api\V5\Strategies\StrategyAverageCrrFieldEnum
      *
-     * @param list<'Crr'|'GoalId'|'WeeklySpendLimit'|'CustomPeriodBudget'|'BudgetType'|'ExplorationBudget'> $value
+     * @param list<'Crr'|'GoalId'|'WeeklySpendLimit'|'WeeklyBudgetRollover'|'CustomPeriodBudget'|'BudgetType'|'ExplorationBudget'> $value
      *
      * @return $this
      */
@@ -524,7 +524,7 @@ class GetRequest extends GetRequestGeneral
      *
      * @see \Biplane\YandexDirect\Api\V5\Strategies\StrategyAverageCpaMultipleGoalsFieldEnum
      *
-     * @return list<'WeeklySpendLimit'|'CustomPeriodBudget'|'BudgetType'|'ExplorationBudget'|'BidCeiling'>
+     * @return list<'WeeklySpendLimit'|'WeeklyBudgetRollover'|'CustomPeriodBudget'|'BudgetType'|'ExplorationBudget'|'BidCeiling'>
      */
     public function getStrategyAverageCpaMultipleGoalsFieldNames(): array
     {
@@ -536,7 +536,7 @@ class GetRequest extends GetRequestGeneral
      *
      * @see \Biplane\YandexDirect\Api\V5\Strategies\StrategyAverageCpaMultipleGoalsFieldEnum
      *
-     * @param list<'WeeklySpendLimit'|'CustomPeriodBudget'|'BudgetType'|'ExplorationBudget'|'BidCeiling'> $value
+     * @param list<'WeeklySpendLimit'|'WeeklyBudgetRollover'|'CustomPeriodBudget'|'BudgetType'|'ExplorationBudget'|'BidCeiling'> $value
      *
      * @return $this
      */
