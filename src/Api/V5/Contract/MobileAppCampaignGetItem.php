@@ -27,6 +27,9 @@ class MobileAppCampaignGetItem
 //    Can be omitted.
 //    protected $NegativeKeywordSharedSetIds;
 
+//    Can be omitted.
+//    protected $WeeklyBudgetRollover;
+
     /**
      * Create a new instance.
      *
@@ -149,6 +152,26 @@ class MobileAppCampaignGetItem
     public function setNegativeKeywordSharedSetIds(?array $value)
     {
         $this->NegativeKeywordSharedSetIds = $value;
+
+        return $this;
+    }
+
+    /**
+     * Get WeeklyBudgetRollover
+     */
+    public function getWeeklyBudgetRollover(): ?int
+    {
+        return $this->WeeklyBudgetRollover ?? null;
+    }
+
+    /**
+     * Set WeeklyBudgetRollover
+     *
+     * @return $this
+     */
+    public function setWeeklyBudgetRollover(?int $value)
+    {
+        $this->WeeklyBudgetRollover = $value;
 
         return $this;
     }

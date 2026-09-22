@@ -111,7 +111,7 @@ class GetCampaignsRequest extends GetRequestGeneral
      *
      * @see \Biplane\YandexDirect\Api\V5\Contract\TextCampaignFieldEnum
      *
-     * @return list<'CounterIds'|'RelevantKeywords'|'Settings'|'BiddingStrategy'|'PriorityGoals'|'TrackingParams'|'AttributionModel'|'PackageBiddingStrategy'|'CanBeUsedAsPackageBiddingStrategySource'|'NegativeKeywordSharedSetIds'>
+     * @return list<'CounterIds'|'RelevantKeywords'|'Settings'|'BiddingStrategy'|'PriorityGoals'|'TrackingParams'|'AttributionModel'|'PackageBiddingStrategy'|'CanBeUsedAsPackageBiddingStrategySource'|'NegativeKeywordSharedSetIds'|'WeeklyBudgetRollover'>
      */
     public function getTextCampaignFieldNames(): array
     {
@@ -123,7 +123,7 @@ class GetCampaignsRequest extends GetRequestGeneral
      *
      * @see \Biplane\YandexDirect\Api\V5\Contract\TextCampaignFieldEnum
      *
-     * @param list<'CounterIds'|'RelevantKeywords'|'Settings'|'BiddingStrategy'|'PriorityGoals'|'TrackingParams'|'AttributionModel'|'PackageBiddingStrategy'|'CanBeUsedAsPackageBiddingStrategySource'|'NegativeKeywordSharedSetIds'> $value
+     * @param list<'CounterIds'|'RelevantKeywords'|'Settings'|'BiddingStrategy'|'PriorityGoals'|'TrackingParams'|'AttributionModel'|'PackageBiddingStrategy'|'CanBeUsedAsPackageBiddingStrategySource'|'NegativeKeywordSharedSetIds'|'WeeklyBudgetRollover'> $value
      *
      * @return $this
      */
@@ -167,7 +167,7 @@ class GetCampaignsRequest extends GetRequestGeneral
      *
      * @see \Biplane\YandexDirect\Api\V5\Contract\MobileAppCampaignFieldEnum
      *
-     * @return list<'Settings'|'BiddingStrategy'|'PackageBiddingStrategy'|'CanBeUsedAsPackageBiddingStrategySource'|'NegativeKeywordSharedSetIds'>
+     * @return list<'Settings'|'BiddingStrategy'|'PackageBiddingStrategy'|'CanBeUsedAsPackageBiddingStrategySource'|'NegativeKeywordSharedSetIds'|'WeeklyBudgetRollover'>
      */
     public function getMobileAppCampaignFieldNames(): array
     {
@@ -179,7 +179,7 @@ class GetCampaignsRequest extends GetRequestGeneral
      *
      * @see \Biplane\YandexDirect\Api\V5\Contract\MobileAppCampaignFieldEnum
      *
-     * @param list<'Settings'|'BiddingStrategy'|'PackageBiddingStrategy'|'CanBeUsedAsPackageBiddingStrategySource'|'NegativeKeywordSharedSetIds'> $value
+     * @param list<'Settings'|'BiddingStrategy'|'PackageBiddingStrategy'|'CanBeUsedAsPackageBiddingStrategySource'|'NegativeKeywordSharedSetIds'|'WeeklyBudgetRollover'> $value
      *
      * @return $this
      */
@@ -307,7 +307,7 @@ class GetCampaignsRequest extends GetRequestGeneral
      *
      * @see \Biplane\YandexDirect\Api\V5\Contract\UnifiedCampaignFieldEnum
      *
-     * @return list<'CounterIds'|'Settings'|'BiddingStrategy'|'PriorityGoals'|'TrackingParams'|'AttributionModel'|'PackageBiddingStrategy'|'CanBeUsedAsPackageBiddingStrategySource'|'NegativeKeywordSharedSetIds'>
+     * @return list<'CounterIds'|'Settings'|'BiddingStrategy'|'PriorityGoals'|'TrackingParams'|'AttributionModel'|'PackageBiddingStrategy'|'CanBeUsedAsPackageBiddingStrategySource'|'NegativeKeywordSharedSetIds'|'WeeklyBudgetRollover'>
      */
     public function getUnifiedCampaignFieldNames(): array
     {
@@ -319,7 +319,7 @@ class GetCampaignsRequest extends GetRequestGeneral
      *
      * @see \Biplane\YandexDirect\Api\V5\Contract\UnifiedCampaignFieldEnum
      *
-     * @param list<'CounterIds'|'Settings'|'BiddingStrategy'|'PriorityGoals'|'TrackingParams'|'AttributionModel'|'PackageBiddingStrategy'|'CanBeUsedAsPackageBiddingStrategySource'|'NegativeKeywordSharedSetIds'> $value
+     * @param list<'CounterIds'|'Settings'|'BiddingStrategy'|'PriorityGoals'|'TrackingParams'|'AttributionModel'|'PackageBiddingStrategy'|'CanBeUsedAsPackageBiddingStrategySource'|'NegativeKeywordSharedSetIds'|'WeeklyBudgetRollover'> $value
      *
      * @return $this
      */

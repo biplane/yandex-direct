@@ -31,4 +31,6 @@ class TextCampaignFieldEnum
     public const CAN_BE_USED_AS_PACKAGE_BIDDING_STRATEGY_SOURCE = 'CanBeUsedAsPackageBiddingStrategySource';
 
     public const NEGATIVE_KEYWORD_SHARED_SET_IDS = 'NegativeKeywordSharedSetIds';
+
+    public const WEEKLY_BUDGET_ROLLOVER = 'WeeklyBudgetRollover';
 }

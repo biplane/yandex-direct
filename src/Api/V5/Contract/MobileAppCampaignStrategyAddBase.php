@@ -13,6 +13,9 @@ use AllowDynamicProperties;
 class MobileAppCampaignStrategyAddBase
 {
 //    Can be omitted.
+//    protected $HighestPosition;
+
+//    Can be omitted.
 //    protected $WbMaximumClicks;
 
 //    Can be omitted.
@@ -38,6 +41,26 @@ class MobileAppCampaignStrategyAddBase
     public static function create()
     {
         return new static();
+    }
+
+    /**
+     * Get HighestPosition
+     */
+    public function getHighestPosition(): ?StrategyHighestPositionAdd
+    {
+        return $this->HighestPosition ?? null;
+    }
+
+    /**
+     * Set HighestPosition
+     *
+     * @return $this
+     */
+    public function setHighestPosition(?StrategyHighestPositionAdd $value)
+    {
+        $this->HighestPosition = $value;
+
+        return $this;
     }
 
     /**

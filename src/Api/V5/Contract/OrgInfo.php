@@ -16,6 +16,9 @@ class OrgInfo
 //    protected $Name;
 
 //    Can be omitted.
+//    protected $Kpp;
+
+//    Can be omitted.
 //    protected $EpayNumber;
 
 //    Can be omitted.
@@ -53,6 +56,26 @@ class OrgInfo
     public function setName(?string $value)
     {
         $this->Name = $value;
+
+        return $this;
+    }
+
+    /**
+     * Get Kpp
+     */
+    public function getKpp(): ?string
+    {
+        return $this->Kpp ?? null;
+    }
+
+    /**
+     * Set Kpp
+     *
+     * @return $this
+     */
+    public function setKpp(?string $value)
+    {
+        $this->Kpp = $value;
 
         return $this;
     }

@@ -13,6 +13,9 @@ use AllowDynamicProperties;
 class UnifiedCampaignStrategyBase
 {
 //    Can be omitted.
+//    protected $HighestPosition;
+
+//    Can be omitted.
 //    protected $WbMaximumClicks;
 
 //    Can be omitted.
@@ -50,6 +53,26 @@ class UnifiedCampaignStrategyBase
     public static function create()
     {
         return new static();
+    }
+
+    /**
+     * Get HighestPosition
+     */
+    public function getHighestPosition(): ?StrategyHighestPosition
+    {
+        return $this->HighestPosition ?? null;
+    }
+
+    /**
+     * Set HighestPosition
+     *
+     * @return $this
+     */
+    public function setHighestPosition(?StrategyHighestPosition $value)
+    {
+        $this->HighestPosition = $value;
+
+        return $this;
     }
 
     /**

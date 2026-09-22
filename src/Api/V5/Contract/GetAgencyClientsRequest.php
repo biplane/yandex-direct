@@ -124,7 +124,7 @@ class GetAgencyClientsRequest extends GetRequestGeneral
      *
      * @see \Biplane\YandexDirect\Api\V5\Contract\OrgInfoFieldEnum
      *
-     * @return list<'Name'|'EpayNumber'|'RegNumber'|'OksmNumber'|'OkvedCode'>
+     * @return list<'Name'|'Kpp'|'EpayNumber'|'RegNumber'|'OksmNumber'|'OkvedCode'>
      */
     public function getOrganizationFieldNames(): array
     {
@@ -136,7 +136,7 @@ class GetAgencyClientsRequest extends GetRequestGeneral
      *
      * @see \Biplane\YandexDirect\Api\V5\Contract\OrgInfoFieldEnum
      *
-     * @param list<'Name'|'EpayNumber'|'RegNumber'|'OksmNumber'|'OkvedCode'> $value
+     * @param list<'Name'|'Kpp'|'EpayNumber'|'RegNumber'|'OksmNumber'|'OkvedCode'> $value
      *
      * @return $this
      */

@@ -13,6 +13,9 @@ use AllowDynamicProperties;
 class StrategyMaxProfitGetItem extends StrategyMaxProfitBase
 {
 //    Can be omitted.
+//    protected $WeeklyBudgetRollover;
+
+//    Can be omitted.
 //    protected $BudgetType;
 
     /**
@@ -23,6 +26,26 @@ class StrategyMaxProfitGetItem extends StrategyMaxProfitBase
     public static function create()
     {
         return new static();
+    }
+
+    /**
+     * Get WeeklyBudgetRollover
+     */
+    public function getWeeklyBudgetRollover(): ?int
+    {
+        return $this->WeeklyBudgetRollover ?? null;
+    }
+
+    /**
+     * Set WeeklyBudgetRollover
+     *
+     * @return $this
+     */
+    public function setWeeklyBudgetRollover(?int $value)
+    {
+        $this->WeeklyBudgetRollover = $value;
+
+        return $this;
     }
 
     /**

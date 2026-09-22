@@ -16,6 +16,9 @@ class CpmBannerCampaignNetworkStrategy
     protected $BiddingStrategyType;
 
 //    Can be omitted.
+//    protected $ManualCpm;
+
+//    Can be omitted.
 //    protected $WbMaximumImpressions;
 
 //    Can be omitted.
@@ -67,6 +70,26 @@ class CpmBannerCampaignNetworkStrategy
     public function setBiddingStrategyType(string $value)
     {
         $this->BiddingStrategyType = $value;
+
+        return $this;
+    }
+
+    /**
+     * Get ManualCpm
+     */
+    public function getManualCpm(): ?StrategyManualCpm
+    {
+        return $this->ManualCpm ?? null;
+    }
+
+    /**
+     * Set ManualCpm
+     *
+     * @return $this
+     */
+    public function setManualCpm(?StrategyManualCpm $value)
+    {
+        $this->ManualCpm = $value;
 
         return $this;
     }

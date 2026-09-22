@@ -16,6 +16,8 @@ class StrategyAverageCpcFieldEnum
 
     public const WEEKLY_SPEND_LIMIT = 'WeeklySpendLimit';
 
+    public const WEEKLY_BUDGET_ROLLOVER = 'WeeklyBudgetRollover';
+
     public const CUSTOM_PERIOD_BUDGET = 'CustomPeriodBudget';
 
     public const BUDGET_TYPE = 'BudgetType';
