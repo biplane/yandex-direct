@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## 5.21.0 [commit logs](https://github.com/biplane/yandex-direct/compare/5.18.0...5.19.0)
+
+* Обновлены сервисы для совместимости с последней версией API 5.
+
 ## 5.20.0 [commit logs](https://github.com/biplane/yandex-direct/compare/5.19.0...5.20.0)
 
 * [**BC break**] Полностью переработана логика генерации кода по данным WSDL.
